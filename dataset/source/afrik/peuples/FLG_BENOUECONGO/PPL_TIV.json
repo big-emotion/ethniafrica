@@ -94,10 +94,30 @@
       ]
     },
     "sources": [
-      "Minority Rights Group, Tiv in Nigeria: https://minorityrights.org/communities/tiv/",
-      "Joshua Project, Tiv people group all countries: https://joshuaproject.net/people_groups/15505",
-      "Agaku, J.M. (2008). The Girinya Dance Theatre of the Tiv People of Nigeria. International Journal of Intangible Heritage. https://www.ijih.org/volumes/article/32",
-      "TribeGuess, Tiv Tribe Culture, Names and History: https://www.tribeguess.com/learn/tiv"
+      {
+        "title": "Minority Rights Group, Tiv in Nigeria",
+        "url": "https://minorityrights.org/communities/tiv/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project, Tiv people group all countries",
+        "url": "https://joshuaproject.net/people_groups/15505",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Agaku, J.M. (2008). The Girinya Dance Theatre of the Tiv People of Nigeria. International Journal of Intangible Heritage",
+        "url": "https://www.ijih.org/volumes/article/32",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijih.org; the tier awaits editorial review."
+      },
+      {
+        "title": "TribeGuess, Tiv Tribe Culture, Names and History",
+        "url": "https://www.tribeguess.com/learn/tiv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tribeguess.com."
+      }
     ]
   }
 }

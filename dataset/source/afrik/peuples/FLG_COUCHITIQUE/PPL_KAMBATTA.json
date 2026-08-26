@@ -65,10 +65,30 @@
       ]
     },
     "sources": [
-      "Kambaata Language (KTB) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/ktb/)",
-      "Kambata in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12468)",
-      "Kambata of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011602/)",
-      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
+      {
+        "title": "Kambaata Language (KTB) – Ethnologue, SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/ktb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kambata in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12468",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kambata of Ethiopia – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg011602/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress",
+        "url": "https://countrystudies.us/ethiopia/50.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      }
     ]
   }
 }

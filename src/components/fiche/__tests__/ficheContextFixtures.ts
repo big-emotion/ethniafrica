@@ -18,6 +18,7 @@ import type {
 } from "@/types/afrik-frontend";
 import type { SourcedRelation } from "@/types/relations";
 
+// @req REQ-091
 export const YORUBA: PeopleDetail = {
   id: "PPL_YORUBA",
   nameMain: "Yoruba",
@@ -35,6 +36,7 @@ export const YORUBA: PeopleDetail = {
   },
 };
 
+// @req REQ-091
 export const NIGERIA: CountryDetail = {
   id: "NGA",
   nameFr: "Nigéria",
@@ -48,9 +50,12 @@ export const NIGERIA: CountryDetail = {
       { name: "Yoruba", population: 38_000_000, percentageInCountry: 18 },
     ],
   },
-  sources: ["CIA World Factbook, 2025"],
+  sources: [
+    { title: "CIA World Factbook, 2025", url: null, tier: "unverified" },
+  ],
 };
 
+// @req REQ-091
 export const NIGER_CONGO: LanguageFamilyDetail = {
   id: "FLG_NIGER_CONGO",
   nameFr: "Niger-Congo",
@@ -62,9 +67,10 @@ export const NIGER_CONGO: LanguageFamilyDetail = {
   linguisticCharacteristics: { typology: "Classes nominales" },
   associatedPeoples: [{ name: "Yoruba", peopleId: "PPL_YORUBA" }],
   historyAndOrigins: { probableOrigin: "Bassin du Niger" },
-  sources: ["Glottolog 5.0"],
+  sources: [{ title: "Glottolog 5.0", url: null, tier: "unverified" }],
 };
 
+// @req REQ-091
 export const YORUBA_NAMES_DOSSIER: PeopleNamesDossier = {
   peopleId: "PPL_YORUBA",
   autonym: null,
@@ -84,11 +90,13 @@ export const YORUBA_NAMES_DOSSIER: PeopleNamesDossier = {
   ],
 };
 
+// @req REQ-091
 export const YORUBA_DISTRIBUTIONS: CountryDistributionRow[] = [
   { country: "NGA", percentage: 70, populationFormatted: "29,4M" },
   { country: "BEN", percentage: 30, populationFormatted: "12,6M" },
 ];
 
+// @req REQ-091
 export const YORUBA_FRAGMENTATION: PeopleFragmentation = {
   peopleId: "PPL_YORUBA",
   autonym: null,
@@ -101,6 +109,7 @@ export const YORUBA_FRAGMENTATION: PeopleFragmentation = {
   borderPairs: [{ a: "NGA", b: "BEN" }],
 };
 
+// @req REQ-091
 export const RELATIONS: SourcedRelation[] = [
   {
     id: "REL_YORUBA_FON_MIGRATION",
@@ -114,6 +123,7 @@ export const RELATIONS: SourcedRelation[] = [
   },
 ];
 
+// @req REQ-091
 export const NIGER_CONGO_BRANCHES: TonguePanelBranch[] = [
   { id: "yor", name: "Yoruba", peopleCount: 3 },
 ];

@@ -98,12 +98,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bankal (jjr). https://www.ethnologue.com/language/jjr/",
-      "SIL Ethnologue — Jarawan subgroup. https://www.ethnologue.com/subgroup/622/",
-      "Glottolog — Jarawa (Nigeria). https://glottolog.org/resource/languoid/id/jara1263",
-      "Kunzaar.com — History and Origin of Jarawa Tribe. https://kunzaar.com.ng/",
-      "Scribd — Jos-Bauchi Plateau Peoples Overview. https://www.scribd.com/document/790271702/THE-JOS-BAUCHI",
-      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+      {
+        "title": "SIL Ethnologue — Bankal (jjr)",
+        "url": "https://www.ethnologue.com/language/jjr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Jarawan subgroup",
+        "url": "https://www.ethnologue.com/subgroup/622/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Jarawa (Nigeria)",
+        "url": "https://glottolog.org/resource/languoid/id/jara1263",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kunzaar.com — History and Origin of Jarawa Tribe",
+        "url": "https://kunzaar.com.ng/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kunzaar.com.ng."
+      },
+      {
+        "title": "Scribd — Jos-Bauchi Plateau Peoples Overview",
+        "url": "https://www.scribd.com/document/790271702/THE-JOS-BAUCHI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria",
+        "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

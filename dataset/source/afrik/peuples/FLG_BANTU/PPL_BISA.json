@@ -80,12 +80,42 @@
       ]
     },
     "sources": [
-      "Bisa in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10875)",
-      "Bisa – Zambia's Traditional History – Scribd (https://www.scribd.com/document/707190467/Bisa-Zambia-s-Traditional-History)",
-      "Bisa people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bisa.html)",
-      "Lala-Bisa Language (LEB) – Ethnologue SIL (https://www.ethnologue.com/language/leb/)",
-      "Lala-Bisa – Glottolog (https://glottolog.org/resource/languoid/id/lala1264)",
-      "Bisa Tribe Safari Tours – Kingsfari (https://www.kingsfari.com/experiences/bisa-tribe-of-zambia)"
+      {
+        "title": "Bisa in Zambia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10875",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bisa – Zambia's Traditional History – Scribd",
+        "url": "https://www.scribd.com/document/707190467/Bisa-Zambia-s-Traditional-History",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com."
+      },
+      {
+        "title": "Bisa people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/bisa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Lala-Bisa Language (LEB) – Ethnologue SIL",
+        "url": "https://www.ethnologue.com/language/leb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Lala-Bisa – Glottolog",
+        "url": "https://glottolog.org/resource/languoid/id/lala1264",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Bisa Tribe Safari Tours – Kingsfari",
+        "url": "https://www.kingsfari.com/experiences/bisa-tribe-of-zambia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kingsfari.com."
+      }
     ]
   }
 }

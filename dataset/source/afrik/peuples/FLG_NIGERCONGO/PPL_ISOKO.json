@@ -99,14 +99,54 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL — Isoko (iso). https://www.ethnologue.com/language/iso/",
-      "WALS Online — Isoko language. https://wals.info/languoid/lect/wals_code_iso",
-      "Joshua Project — Isoko in Nigeria. https://joshuaproject.net/people_groups/print/12266/NI",
-      "isoko.com.ng — Isoko History. https://isoko.com.ng/isoko-history/",
-      "isokovibe.com.ng — 6 Isoko Traditions. https://isokovibe.com.ng/blog/6-isoko-traditions-outsiders-always-find-strange/",
-      "CityPopulation.de — Delta State, Nigeria. https://www.citypopulation.de/en/nigeria/admin/NGA010__delta/",
-      "Nigeria National Population Commission — Census 2006 and projections 2022.",
-      "Ugboh, Isi — Isoko Nation: Her Origins, Culture and Tradition. 2017."
+      {
+        "title": "Ethnologue SIL — Isoko (iso)",
+        "url": "https://www.ethnologue.com/language/iso/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "WALS Online — Isoko language",
+        "url": "https://wals.info/languoid/lect/wals_code_iso",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      },
+      {
+        "title": "Joshua Project — Isoko in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/print/12266/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "isoko.com.ng — Isoko History",
+        "url": "https://isoko.com.ng/isoko-history/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers isoko.com.ng; the tier awaits editorial review."
+      },
+      {
+        "title": "isokovibe.com.ng — 6 Isoko Traditions",
+        "url": "https://isokovibe.com.ng/blog/6-isoko-traditions-outsiders-always-find-strange/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers isokovibe.com.ng; the tier awaits editorial review."
+      },
+      {
+        "title": "CityPopulation.de — Delta State, Nigeria",
+        "url": "https://www.citypopulation.de/en/nigeria/admin/NGA010__delta/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Nigeria National Population Commission — Census 2006 and projections 2022",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ugboh, Isi — Isoko Nation: Her Origins, Culture and Tradition. 2017",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

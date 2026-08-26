@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bassa (bsq). https://www.ethnologue.com/language/bsq/",
-      "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023). https://wadr.org/the-bassa-tribe-of-liberia/",
-      "Minority Rights Group — Liberia. https://minorityrights.org/country/liberia/",
-      "Sage Reference — Encyclopedia of African Religion, Bassa. https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bassa",
-      "Liberia Census 2022 (General Population and Housing Census, Liberia Institute of Statistics).",
-      "StudyGuides.com — Bassa (People). https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc"
+      {
+        "title": "SIL Ethnologue — Bassa (bsq)",
+        "url": "https://www.ethnologue.com/language/bsq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023)",
+        "url": "https://wadr.org/the-bassa-tribe-of-liberia/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wadr.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group — Liberia",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Sage Reference — Encyclopedia of African Religion, Bassa",
+        "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bassa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
+      },
+      {
+        "title": "Liberia Census 2022 (General Population and Housing Census, Liberia Institute of Statistics)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "StudyGuides.com — Bassa (People)",
+        "url": "https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for studyguides.com."
+      }
     ]
   }
 }

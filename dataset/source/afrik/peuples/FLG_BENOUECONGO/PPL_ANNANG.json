@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Anaang (ANW). https://www.ethnologue.com/language/anw/ (consulté 2025)",
-      "Joshua Project, Anaang in Nigeria. https://joshuaproject.net/people_groups/10305 (consulté 2025)",
-      "Glottolog, Anaang. https://glottolog.org/resource/languoid/id/anaa1238 (consulté 2025)",
-      "101 Last Tribes, Annang people — Africa. http://www.101lasttribes.com/tribes/annang.html (consulté 2025)",
-      "Ette, Mercy. Annang People: History and Culture. Uyo: University of Uyo Press, 2008."
+      {
+        "title": "Ethnologue, Anaang (ANW). (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/anw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project, Anaang in Nigeria. (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/10305",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Glottolog, Anaang. (consulté 2025)",
+        "url": "https://glottolog.org/resource/languoid/id/anaa1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "101 Last Tribes, Annang people — Africa. (consulté 2025)",
+        "url": "http://www.101lasttribes.com/tribes/annang.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ette, Mercy. Annang People: History and Culture. Uyo: University of Uyo Press, 2008",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

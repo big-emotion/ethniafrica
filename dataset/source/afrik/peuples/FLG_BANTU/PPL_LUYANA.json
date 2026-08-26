@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Luyana Language (LYN) – Ethnologue, SIL International (https://www.ethnologue.com/language/lyn/)",
-      "Luyana in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)",
-      "How the Luyana people came to be known as Barotse – Barotse Network, Facebook, 2022 (https://www.facebook.com/Barotsenetwork/posts/4986331461405612/)",
-      "A history of the Lozi kingdom ca. 1750-1911 – African History Extra, 2024 (https://www.africanhistoryextra.com/p/a-history-of-the-lozi-kingdom-ca)",
-      "The Barotse Cultural Landscape – UNESCO World Heritage Centre (https://whc.unesco.org/fr/listesindicatives/5428/)"
+      {
+        "title": "Luyana Language (LYN) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/lyn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Luyana in Zambia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13166/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "How the Luyana people came to be known as Barotse – Barotse Network, Facebook, 2022",
+        "url": "https://www.facebook.com/Barotsenetwork/posts/4986331461405612/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "A history of the Lozi kingdom ca. 1750-1911 – African History Extra, 2024",
+        "url": "https://www.africanhistoryextra.com/p/a-history-of-the-lozi-kingdom-ca",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africanhistoryextra.com."
+      },
+      {
+        "title": "The Barotse Cultural Landscape – UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/fr/listesindicatives/5428/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

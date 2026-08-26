@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kota language (koq). https://www.ethnologue.com/language/koq/",
-      "Endangered Language Alliance — Ikota. https://www.elalliance.org/languages/kota",
-      "Smithsonian Institution — Reliquary guardian figure. https://www.si.edu/object/nmafa_78-14-12",
-      "Barakat Gallery — Bakota Reliquary Guardian Figure. https://barakatgallery.eu/artworks/categories/889/95879-bakota-reliquary-guardian-figure-mbulu-ngulu-19th-early-20th-century/",
-      "Kimbell Art Museum — Kota Reliquary Guardian Figure. https://kimbellart.org/news-and-stories/kimbell-reliquary-guardian-figure-and-kwele-mask"
+      {
+        "title": "SIL Ethnologue — Kota language (koq)",
+        "url": "https://www.ethnologue.com/language/koq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Endangered Language Alliance — Ikota",
+        "url": "https://www.elalliance.org/languages/kota",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers elalliance.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Institution — Reliquary guardian figure",
+        "url": "https://www.si.edu/object/nmafa_78-14-12",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for si.edu."
+      },
+      {
+        "title": "Barakat Gallery — Bakota Reliquary Guardian Figure",
+        "url": "https://barakatgallery.eu/artworks/categories/889/95879-bakota-reliquary-guardian-figure-mbulu-ngulu-19th-early-20th-century/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers barakatgallery.eu; the tier awaits editorial review."
+      },
+      {
+        "title": "Kimbell Art Museum — Kota Reliquary Guardian Figure",
+        "url": "https://kimbellart.org/news-and-stories/kimbell-reliquary-guardian-figure-and-kwele-mask",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kimbellart.org; the tier awaits editorial review."
+      }
     ]
   }
 }

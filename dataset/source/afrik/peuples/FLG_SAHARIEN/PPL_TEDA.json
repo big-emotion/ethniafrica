@@ -106,13 +106,48 @@
       ]
     },
     "sources": [
-      "Britannica — Teda people. https://www.britannica.com/topic/Teda",
-      "Joshua Project — Tedaga language (tuq). https://joshuaproject.net/languages/tuq",
-      "Joshua Project — Tubu Teda in Chad. https://joshuaproject.net/people_groups/15316/CD",
-      "Amara Accessibility Media — Tedaga language now supported on Amara. https://blog.amara.org/2020/09/14/tedaga-language-now-supported-on-amara/",
-      "SIL Ethnologue — Tedaga language (tuq). https://www.ethnologue.com/language/tuq/",
-      "Country Studies US — Chad. https://countrystudies.us/chad/19.htm",
-      "CIA World Factbook — Chad, Libya, Niger. https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "Britannica — Teda people",
+        "url": "https://www.britannica.com/topic/Teda",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Tedaga language (tuq)",
+        "url": "https://joshuaproject.net/languages/tuq",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Tubu Teda in Chad",
+        "url": "https://joshuaproject.net/people_groups/15316/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Amara Accessibility Media — Tedaga language now supported on Amara",
+        "url": "https://blog.amara.org/2020/09/14/tedaga-language-now-supported-on-amara/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blog.amara.org; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Tedaga language (tuq)",
+        "url": "https://www.ethnologue.com/language/tuq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Country Studies US — Chad",
+        "url": "https://countrystudies.us/chad/19.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "CIA World Factbook — Chad, Libya, Niger",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

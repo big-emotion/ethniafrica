@@ -74,11 +74,36 @@
       ]
     },
     "sources": [
-      "The Irob People – IRROB.ORG, 2018 (https://irrob.org/irob-history/the-irob-people/)",
-      "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
-      "Saho Archive – History, Language and Culture of the Saho, 2023 (https://www.sahoarchive.org/history/)",
-      "Saho Language (SSY) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/ssy/)",
-      "Cushitic Language Groups – Ethiopia Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
+      {
+        "title": "The Irob People – IRROB.ORG, 2018",
+        "url": "https://irrob.org/irob-history/the-irob-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers irrob.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Saho, Irob in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14641/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Saho Archive – History, Language and Culture of the Saho, 2023",
+        "url": "https://www.sahoarchive.org/history/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for sahoarchive.org."
+      },
+      {
+        "title": "Saho Language (SSY) – Ethnologue, SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/ssy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Cushitic Language Groups – Ethiopia Country Studies, US Library of Congress",
+        "url": "https://countrystudies.us/ethiopia/50.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      }
     ]
   }
 }

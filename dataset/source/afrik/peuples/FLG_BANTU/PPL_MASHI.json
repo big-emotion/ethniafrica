@@ -77,12 +77,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Masi in Zambia, 2025 (https://joshuaproject.net/people_groups/13569/ZA)",
-      "Joshua Project – Mashi (Zambia) language resources (https://joshuaproject.net/languages/mho)",
-      "Kwamashi Community – mashibible.com (https://mashibible.com)",
-      "PeopleGroups.org – Mashi of Zambia (https://peoplegroups.org/people_groups/pg015606/)",
-      "Lughayangu – Mashi language dictionary (https://lughayangu.com/mashi)",
-      "ISO 639-3 – Mashi (Zambia) code mho (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+      {
+        "title": "Joshua Project – Masi in Zambia, 2025",
+        "url": "https://joshuaproject.net/people_groups/13569/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Mashi (Zambia) language resources",
+        "url": "https://joshuaproject.net/languages/mho",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kwamashi Community – mashibible.com",
+        "url": "https://mashibible.com",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mashibible.com; the tier awaits editorial review."
+      },
+      {
+        "title": "PeopleGroups.org – Mashi of Zambia",
+        "url": "https://peoplegroups.org/people_groups/pg015606/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Lughayangu – Mashi language dictionary",
+        "url": "https://lughayangu.com/mashi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "ISO 639-3 – Mashi (Zambia) code mho",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

@@ -7,6 +7,8 @@
  * - New sections can be added to TXT files without schema migration
  */
 
+import type { SourceTier } from "@/types/sources";
+
 // ==========================================
 // STABLE IDENTIFIERS (IMMUTABLE)
 // ==========================================
@@ -165,6 +167,27 @@ export interface People {
 // ==========================================
 
 /**
+ * A `sources[]` entry on a peuple, pays or famille fiche, as emitted by
+ * `scripts/codemods/tierStringSources.ts`.
+ *
+ * `needs_review` is deliberately NOT a `SourceTier`: the doctrine is that
+ * every source carries an explicit tier, and `needs_review` marks the tail
+ * that has not been ruled on yet — the count the coverage gate ratchets to
+ * zero. It lives here, at the corpus boundary, and never in the canonical
+ * union.
+ *
+ * The nom, relation, migration and frontière-coloniale fiches still carry the
+ * numeric tier `1 | 2` (see `public/modele-source.json`); their loaders
+ * normalise it through `sourceTierFromLegacyNumber`.
+ */
+export interface FicheSource {
+  title: string;
+  url: string | null;
+  tier: SourceTier | "needs_review";
+  notes?: string;
+}
+
+/**
  * Country content (evolutionary)
  * All sections from modele-pays.txt stored here
  * New sections can be added without schema migration
@@ -186,7 +209,7 @@ export interface CountryContent {
   historicalFacts?: HistoricalFactsSection;
 
   // Section 7: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Demographics data
   demographics?: DemographicsSection;
@@ -239,7 +262,7 @@ export interface LanguageFamilyContent {
   };
 
   // Section 6: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Allow new sections
   [key: string]: unknown;
@@ -288,7 +311,7 @@ export interface PeopleContent {
   demography?: GlobalDemographySection;
 
   // Section 8: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Allow new sections
   [key: string]: unknown;

@@ -73,8 +73,18 @@
       ]
     },
     "sources": [
-      "Gonja people – 101 Last Tribes, www.101lasttribes.com/tribes/gonja.html (consulte 2025)",
-      "Ghana Statistical Service – 2021 Population and Housing Census, census2021.statsghana.gov.gh (2022)"
+      {
+        "title": "Gonja people – 101 Last Tribes, www.101lasttribes.com/tribes/gonja.html (consulte 2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ghana Statistical Service – 2021 Population and Housing Census, census2021.statsghana.gov.gh (2022)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

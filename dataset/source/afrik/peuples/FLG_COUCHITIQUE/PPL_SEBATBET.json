@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Sebat Bet Gurage (sgw). https://www.ethnologue.com/language/sgw/",
-      "Glottolog — Sebat Bet Gurage (seba1251). https://glottolog.org/resource/languoid/id/seba1251",
-      "Encyclopaedia Britannica — Gurage. https://www.britannica.com/topic/Gurage",
-      "Nature — Cultural, economic, and symbolic value of the enset crop in Sebat Bet Gurage, 2022. https://www.nature.com/articles/s41599-022-01179-4",
-      "Joshua Project — Gurage, West in Ethiopia. https://joshuaproject.net/people_groups/15917",
-      "William Shack — The Gurage: A People of the Ensete Culture. Oxford University Press, 1966."
+      {
+        "title": "SIL Ethnologue — Sebat Bet Gurage (sgw)",
+        "url": "https://www.ethnologue.com/language/sgw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Sebat Bet Gurage (seba1251)",
+        "url": "https://glottolog.org/resource/languoid/id/seba1251",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Gurage",
+        "url": "https://www.britannica.com/topic/Gurage",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Nature — Cultural, economic, and symbolic value of the enset crop in Sebat Bet Gurage, 2022",
+        "url": "https://www.nature.com/articles/s41599-022-01179-4",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nature.com."
+      },
+      {
+        "title": "Joshua Project — Gurage, West in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/15917",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "William Shack — The Gurage: A People of the Ensete Culture. Oxford University Press, 1966",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

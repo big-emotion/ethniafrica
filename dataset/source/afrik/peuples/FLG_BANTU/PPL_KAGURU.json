@@ -77,10 +77,30 @@
       ]
     },
     "sources": [
-      "Kagulu, Northern Sagara in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12414)",
-      "Kaguru – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kaguru.pdf)",
-      "Kagulu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kagu1239)",
-      "Beidelman, Thomas O. – The Kaguru: A Matrilineal People of East Africa, 1971"
+      {
+        "title": "Kagulu, Northern Sagara in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12414",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kaguru – DICE Database, University of Missouri",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Kaguru.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Kagulu – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/kagu1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Beidelman, Thomas O. – The Kaguru: A Matrilineal People of East Africa, 1971",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

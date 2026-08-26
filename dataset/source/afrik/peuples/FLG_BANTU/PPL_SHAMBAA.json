@@ -77,10 +77,30 @@
       ]
     },
     "sources": [
-      "Shambala in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14890)",
-      "Shambaa – Encyclopedia.com (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/shambaa)",
-      "101 Last Tribes – Shambaa people (http://www.101lasttribes.com/tribes/shambaa.html)",
-      "Omniglot – Shambala language (https://www.omniglot.com/writing/shambala.htm)"
+      {
+        "title": "Shambala in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14890",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Shambaa – Encyclopedia.com",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/shambaa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "101 Last Tribes – Shambaa people",
+        "url": "http://www.101lasttribes.com/tribes/shambaa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Omniglot – Shambala language",
+        "url": "https://www.omniglot.com/writing/shambala.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      }
     ]
   }
 }

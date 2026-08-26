@@ -72,13 +72,48 @@
       ]
     },
     "sources": [
-      "Nkhumbi in Angola – Joshua Project (https://joshuaproject.net/people_groups/13417)",
-      "The Nyaneka-Nkhumbi – Capoeira History (https://capoeirahistory.com/the-nyaneka-nkhumbi/)",
-      "Nyaneka in Angola – Joshua Project (https://joshuaproject.net/people_groups/14084)",
-      "Angola – Ovambo, Nyaneka-Humbe, Herero, and Others – Country Studies (https://countrystudies.us/angola/64.htm)",
-      "Angola – Ethnic Groups and Languages – Country Studies (https://countrystudies.us/angola/56.htm)",
-      "Britannica – Angola People: Nyaneka-Nkhumbi (https://www.britannica.com/place/Angola/People)",
-      "World Directory of Minorities – Angola – UNHCR Refworld (https://www.refworld.org/country,COI,,COUNTRYREP,ago,,49749d6232,0.html)"
+      {
+        "title": "Nkhumbi in Angola – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13417",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Nyaneka-Nkhumbi – Capoeira History",
+        "url": "https://capoeirahistory.com/the-nyaneka-nkhumbi/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for capoeirahistory.com."
+      },
+      {
+        "title": "Nyaneka in Angola – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14084",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Angola – Ovambo, Nyaneka-Humbe, Herero, and Others – Country Studies",
+        "url": "https://countrystudies.us/angola/64.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Angola – Ethnic Groups and Languages – Country Studies",
+        "url": "https://countrystudies.us/angola/56.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Britannica – Angola People: Nyaneka-Nkhumbi",
+        "url": "https://www.britannica.com/place/Angola/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "World Directory of Minorities – Angola – UNHCR Refworld",
+        "url": "https://www.refworld.org/country,COI,,COUNTRYREP,ago,,49749d6232,0.html",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for refworld.org."
+      }
     ]
   }
 }

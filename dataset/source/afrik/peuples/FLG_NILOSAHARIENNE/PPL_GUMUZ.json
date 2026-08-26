@@ -88,10 +88,30 @@
       ]
     },
     "sources": [
-      "Gumuz Language (GUK) – Ethnologue, SIL International (https://www.ethnologue.com/language/guk/)",
-      "Wolde-Selassie Abbute, Gumuz and Highland Resettlers – Ethiopian Studies, 2004",
-      "Bender, M. L. – Gumuz: A Sketch of Grammar and Lexicon, Afrika und Ubersee, 62-1, 1979, p. 38-69",
-      "Ahland, Colleen – A grammar of Northern and Southern Gumuz (these de PhD), University of Oregon, 2004"
+      {
+        "title": "Gumuz Language (GUK) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/guk/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Wolde-Selassie Abbute, Gumuz and Highland Resettlers – Ethiopian Studies, 2004",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. L. – Gumuz: A Sketch of Grammar and Lexicon, Afrika und Ubersee, 62-1, 1979, p. 38-69",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ahland, Colleen – A grammar of Northern and Southern Gumuz (these de PhD), University of Oregon, 2004",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

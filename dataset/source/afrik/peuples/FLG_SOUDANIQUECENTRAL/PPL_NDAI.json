@@ -66,10 +66,30 @@
       ]
     },
     "sources": [
-      "Glottolog — Ndai (ndai1238). https://glottolog.org/resource/languoid/id/ndai1238",
-      "Ethnologue (SIL International) — Ndai (gke). Langue Mbum, Cameroun.",
-      "SIL International — enquête de terrain 2002, Tcholliré, Région Nord du Cameroun.",
-      "Wiktionary — Appendix:ISO 639-3 codes/Africa. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+      {
+        "title": "Glottolog — Ndai (ndai1238)",
+        "url": "https://glottolog.org/resource/languoid/id/ndai1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethnologue (SIL International) — Ndai (gke). Langue Mbum, Cameroun",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL International — enquête de terrain 2002, Tcholliré, Région Nord du Cameroun",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Wiktionary — Appendix:ISO 639-3 codes/Africa",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

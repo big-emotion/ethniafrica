@@ -88,9 +88,24 @@
       ]
     },
     "sources": [
-      "UNESCO Patrimoine immatériel — Bigwala, musique et danse des trompettes en gourde de Busoga (inscrit 2012) : https://ich.unesco.org/en/USL/bigwala-gourd-trumpet-music-and-dance-of-the-busoga-kingdom-in-uganda-00749",
-      "101 Last Tribes — Basoga people : https://www.101lasttribes.com/tribes/basoga.html",
-      "SIL Ethnologue — Soga language (xog) : https://www.ethnologue.com/language/xog/"
+      {
+        "title": "UNESCO Patrimoine immatériel — Bigwala, musique et danse des trompettes en gourde de Busoga (inscrit 2012)",
+        "url": "https://ich.unesco.org/en/USL/bigwala-gourd-trumpet-music-and-dance-of-the-busoga-kingdom-in-uganda-00749",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "101 Last Tribes — Basoga people",
+        "url": "https://www.101lasttribes.com/tribes/basoga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Soga language (xog)",
+        "url": "https://www.ethnologue.com/language/xog/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

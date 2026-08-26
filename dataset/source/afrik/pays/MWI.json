@@ -197,14 +197,54 @@
       "postIndependence": "1964-1994 : Présidence de Hastings Kamuzu Banda, régime autoritaire, parti unique. 1994-présent : Transition démocratique, élections multipartites, présidence de Bakili Muluzi (1994-2004), Bingu wa Mutharika (2004-2012), Joyce Banda (2012-2014), Peter Mutharika (2014-2020), Lazarus Chakwera (depuis 2020). Défis : pauvreté, développement économique, VIH/sida, sécurité alimentaire. Le Malawi est l'un des pays les plus pauvres d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Malawi",
-      "CIA World Factbook – Malawi",
-      "ONU / UNFPA – Démographie Malawi 2025",
-      "Recensements malawiens",
-      "Études anthropologiques sur les peuples du Malawi",
-      "Études historiques sur le royaume de Maravi",
-      "CIA World Factbook – Malawi (ethnic groups, 2018 census)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Malawi 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements malawiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume de Maravi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi (ethnic groups, 2018 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

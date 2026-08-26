@@ -92,10 +92,30 @@
       ]
     },
     "sources": [
-      "UNESCO World Heritage Centre — Sukur Cultural Landscape (1999). https://whc.unesco.org/en/list/938/",
-      "SIL Ethnologue — Marghi Central (mrt). https://www.ethnologue.com/language/mrt/",
-      "World Monuments Fund — Sukur Cultural Landscape. https://www.wmf.org/monuments/sukur-cultural-landscape",
-      "Rosetta Project — Marghi Central Language (mrt). https://rosettapanglossia.longnow.org/index.php?title=Marghi_Central_Language"
+      {
+        "title": "UNESCO World Heritage Centre — Sukur Cultural Landscape (1999)",
+        "url": "https://whc.unesco.org/en/list/938/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue — Marghi Central (mrt)",
+        "url": "https://www.ethnologue.com/language/mrt/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "World Monuments Fund — Sukur Cultural Landscape",
+        "url": "https://www.wmf.org/monuments/sukur-cultural-landscape",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wmf.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Rosetta Project — Marghi Central Language (mrt)",
+        "url": "https://rosettapanglossia.longnow.org/index.php?title=Marghi_Central_Language",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      }
     ]
   }
 }

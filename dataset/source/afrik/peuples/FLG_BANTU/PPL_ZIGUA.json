@@ -75,9 +75,24 @@
       ]
     },
     "sources": [
-      "Zigula Language (ZIW) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/ziw/)",
-      "Grottanelli, V.L. – Peoples of Africa, 1963",
-      "Moyo wa Uzigua na Nguu – Historical Society Records, Tanzania, 1938"
+      {
+        "title": "Zigula Language (ZIW) – Ethnologue / SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/ziw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Grottanelli, V.L. – Peoples of Africa, 1963",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Moyo wa Uzigua na Nguu – Historical Society Records, Tanzania, 1938",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

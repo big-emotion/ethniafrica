@@ -68,10 +68,30 @@
       ]
     },
     "sources": [
-      "K'abeena in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/21539/ET)",
-      "Kebena of Ethiopia – Horn of Africa Evangelical Mission, 2019 (https://hornofafrica.org/wp-content/uploads/2019/12/Kabena.pdf)",
-      "K'abeena phonology – Macrolinguistics and Microlinguistics, Yibekal Aemero, 2024 (https://mami.nyc/index.php/journal/article/view/31)",
-      "Cushitic Language Groups – Ethiopia Country Studies / Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
+      {
+        "title": "K'abeena in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/print/21539/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kebena of Ethiopia – Horn of Africa Evangelical Mission, 2019",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Kabena.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+      },
+      {
+        "title": "K'abeena phonology – Macrolinguistics and Microlinguistics, Yibekal Aemero, 2024",
+        "url": "https://mami.nyc/index.php/journal/article/view/31",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mami.nyc; the tier awaits editorial review."
+      },
+      {
+        "title": "Cushitic Language Groups – Ethiopia Country Studies / Library of Congress",
+        "url": "https://countrystudies.us/ethiopia/50.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      }
     ]
   }
 }

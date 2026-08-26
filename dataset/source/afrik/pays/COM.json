@@ -82,15 +82,60 @@
       "postIndependence": "Histoire politique mouvementée avec plusieurs coups d'État (1975, 1995, 1999). Instabilité politique et séparatisme à Anjouan. Adoption de la Constitution de l'Union des Comores en 2001 établissant une fédération. Adoption de l'islam comme religion d'État en 2018. Défis économiques et sociaux persistants."
     },
     "sources": [
-      "CIA World Factbook – Comoros",
-      "SIL Ethnologue – Comorian languages (swb, wni, zdj, wlc)",
-      "Recensements nationaux comoriens",
-      "Études anthropologiques sur les peuples bantous de l'océan Indien",
-      "Comoros Cultural Studies",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "CIA World Factbook – Comoros (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "CIA World Factbook – Comoros",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Comorian languages (swb, wni, zdj, wlc)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux comoriens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples bantous de l'océan Indien",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Comoros Cultural Studies",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Comoros (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

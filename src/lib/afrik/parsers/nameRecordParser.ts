@@ -5,6 +5,7 @@
 
 import { z } from "zod";
 import type { NameRecordDossier } from "@/types/names";
+import { ficheSourceTierSchema } from "./ficheSourceTier";
 
 const nameRecordMetaSchema = z
   .object({
@@ -23,11 +24,7 @@ const nameRecordSourceSchema = z
     author: z.string().min(1),
     year: z.number().int(),
     url: z.string().min(1),
-    tier: z.union([z.literal(1), z.literal(2)], {
-      errorMap: () => ({
-        message: "tier must be 1 or 2 — Tier 3 sources are forbidden",
-      }),
-    }),
+    tier: ficheSourceTierSchema,
     notes: z.string().optional(),
   })
   .strict();
@@ -60,7 +57,7 @@ const nameRecordEntrySchema = z
     contemporaryUsage: z.string().nullable(),
     sortRank: z.number().int(),
     sources: z.array(nameRecordSourceSchema).min(1, {
-      message: "at least one source (Tier 1 or Tier 2) is required",
+      message: "at least one tiered source is required",
     }),
   })
   .strict()
@@ -79,6 +76,7 @@ const nameRecordEntrySchema = z
     }
   });
 
+// @req REQ-056
 export const nameRecordDossierSchema = z
   .object({
     _meta: nameRecordMetaSchema,
@@ -105,6 +103,7 @@ export interface ParsedNameRecordFile {
   errors?: NameRecordParseFieldError[];
 }
 
+// @req REQ-056
 export function parseNameRecordFile(raw: unknown): ParsedNameRecordFile {
   const result = nameRecordDossierSchema.safeParse(raw);
 

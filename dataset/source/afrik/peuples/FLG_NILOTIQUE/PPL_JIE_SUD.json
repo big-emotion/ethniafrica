@@ -82,10 +82,30 @@
       ]
     },
     "sources": [
-      "Blog Trip Down Memory Lane — Jiye people: Small Nilotic but Fierce Fighters in South Sudan (2013). https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/jiye-people-small-nilotic-but-fierce.html",
-      "Facebook — Jiye people, South Sudan (Nimule, Eastern Equatorial State). https://www.facebook.com/groups/275114380263865/posts/701811924260773/",
-      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj (inclut Jiye comme nom alternatif). https://map.swordshare.com/kdj",
-      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/"
+      {
+        "title": "Blog Trip Down Memory Lane — Jiye people: Small Nilotic but Fierce Fighters in South Sudan (2013)",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/jiye-people-small-nilotic-but-fierce.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Facebook — Jiye people, South Sudan (Nimule, Eastern Equatorial State)",
+        "url": "https://www.facebook.com/groups/275114380263865/posts/701811924260773/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Swordshare Map — Ng'akarimojong ISO 639-3 kdj (inclut Jiye comme nom alternatif)",
+        "url": "https://map.swordshare.com/kdj",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Kara-Tunga — Karamoja Bibliography",
+        "url": "https://www.kara-tunga.com/karamoja-bibliography/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kara-tunga.com."
+      }
     ]
   }
 }

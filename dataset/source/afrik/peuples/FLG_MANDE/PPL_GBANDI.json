@@ -78,11 +78,36 @@
       ]
     },
     "sources": [
-      "Bandi in Liberia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16125/LI)",
-      "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",
-      "The Gbandi Language: Editor's Note – Gbandi Landers Association in the Americas (http://www.gbandilanders.com/advocacy-organization-about/the-gbandi-language-editors-note)",
-      "Grossmann – Discourse Grammar of Bandi, SIL International / The Swiss Bay",
-      "Liberia Population and Housing Census 2022 – LISGIS (https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf)"
+      {
+        "title": "Bandi in Liberia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/16125/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group – Liberia, 2024",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "The Gbandi Language: Editor's Note – Gbandi Landers Association in the Americas",
+        "url": "http://www.gbandilanders.com/advocacy-organization-about/the-gbandi-language-editors-note",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers gbandilanders.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Grossmann – Discourse Grammar of Bandi, SIL International / The Swiss Bay",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Liberia Population and Housing Census 2022 – LISGIS",
+        "url": "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for lisgis.gov.lr."
+      }
     ]
   }
 }

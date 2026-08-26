@@ -82,11 +82,36 @@
       ]
     },
     "sources": [
-      "Ijaw Heritage TV : Origin of the Bille Ijaw People https://ijawheritagetv.com/2024/09/18/origin-of-the-bille-ijaw-people/",
-      "Joshua Project : Bile, Billanchi in Nigeria https://joshuaproject.net/people_groups/10847",
-      "Ethnologue : Bille Language (BIL) https://www.ethnologue.com/language/bil/",
-      "YouTube : Agiri Festival - The Spirit of Ancient Bille Kingdom https://www.youtube.com/watch?v=ynoNfSjyw9s",
-      "Facebook EveAfriquenews : Ancient Bille Kingdom and the Agiri Festival https://www.facebook.com/EveAfriqueNews/posts/ancient-bille-kingdom-is-agog"
+      {
+        "title": "Ijaw Heritage TV : Origin of the Bille Ijaw People",
+        "url": "https://ijawheritagetv.com/2024/09/18/origin-of-the-bille-ijaw-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijawheritagetv.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project : Bile, Billanchi in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/10847",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue : Bille Language (BIL)",
+        "url": "https://www.ethnologue.com/language/bil/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "YouTube : Agiri Festival - The Spirit of Ancient Bille Kingdom",
+        "url": "https://www.youtube.com/watch?v=ynoNfSjyw9s",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Facebook EveAfriquenews : Ancient Bille Kingdom and the Agiri Festival",
+        "url": "https://www.facebook.com/EveAfriqueNews/posts/ancient-bille-kingdom-is-agog",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

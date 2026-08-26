@@ -99,11 +99,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bisa language (bib). https://www.ethnologue.com/language/bib/",
-      "Joshua Project — Busanga in Burkina Faso. https://joshuaproject.net/people_groups/11042/UV",
-      "Discover Burkina Faso — Culture des Bissa. https://discover-burkinafaso.com/culture-languages-religions/",
-      "101 Last Tribes — Bissa people. http://www.101lasttribes.com/tribes/bissa.html",
-      "McFarland, Daniel. Historical Dictionary of Upper Volta. Scarecrow Press, 1978."
+      {
+        "title": "SIL Ethnologue — Bisa language (bib)",
+        "url": "https://www.ethnologue.com/language/bib/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Busanga in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/11042/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Discover Burkina Faso — Culture des Bissa",
+        "url": "https://discover-burkinafaso.com/culture-languages-religions/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers discover-burkinafaso.com; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes — Bissa people",
+        "url": "http://www.101lasttribes.com/tribes/bissa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "McFarland, Daniel. Historical Dictionary of Upper Volta. Scarecrow Press, 1978",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

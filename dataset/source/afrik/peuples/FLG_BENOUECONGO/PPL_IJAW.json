@@ -95,10 +95,30 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Izon language (ijc) : https://www.ethnologue.com/language/ijc/",
-      "All Ijaw Culture — History of Ijaw People : https://allijawculture.org/blog/history-of-ijaw-people/",
-      "Niger Delta Cultural Archives — traditions culturelles du delta",
-      "The Guardian Nigeria — The Ijaw quest for Nigeria's fourth pillar : https://guardian.ng/politics/the-ijaw-quest-for-nigerias-fourth-pillar/"
+      {
+        "title": "Ethnologue (SIL International) — Izon language (ijc)",
+        "url": "https://www.ethnologue.com/language/ijc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "All Ijaw Culture — History of Ijaw People",
+        "url": "https://allijawculture.org/blog/history-of-ijaw-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers allijawculture.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Niger Delta Cultural Archives — traditions culturelles du delta",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Guardian Nigeria — The Ijaw quest for Nigeria's fourth pillar",
+        "url": "https://guardian.ng/politics/the-ijaw-quest-for-nigerias-fourth-pillar/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for guardian.ng."
+      }
     ]
   }
 }

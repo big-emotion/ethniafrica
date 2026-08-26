@@ -128,12 +128,42 @@
       ]
     },
     "sources": [
-      "Britannica — Nguni peoples. https://www.britannica.com/topic/Nguni",
-      "South African History Online — Zulu. https://sahistory.org.za/article/zulu",
-      "Ethnologue SIL — Zulu (zul). https://www.ethnologue.com/language/zul/",
-      "Ethnologue SIL — Xhosa (xho). https://www.ethnologue.com/language/xho/",
-      "UNESCO — Isicathamiya (Zulu choral music). https://ich.unesco.org/",
-      "Statistics South Africa — Census 2022. https://www.statssa.gov.za/"
+      {
+        "title": "Britannica — Nguni peoples",
+        "url": "https://www.britannica.com/topic/Nguni",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "South African History Online — Zulu",
+        "url": "https://sahistory.org.za/article/zulu",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Ethnologue SIL — Zulu (zul)",
+        "url": "https://www.ethnologue.com/language/zul/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue SIL — Xhosa (xho)",
+        "url": "https://www.ethnologue.com/language/xho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO — Isicathamiya (Zulu choral music)",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Statistics South Africa — Census 2022",
+        "url": "https://www.statssa.gov.za/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      }
     ]
   }
 }

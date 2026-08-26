@@ -77,11 +77,36 @@
       ]
     },
     "sources": [
-      "The Establishment and Expansion of the Lambya Kingdom c1600-1750 – African Studies Review, Cambridge University Press, 1993 (https://www.cambridge.org/core/journals/african-studies-review/article/establishment-and-expansion-of-the-lambya-kingdom-c16001750/2A73651C94DF84588BD88A712D777AAF)",
-      "Lambya language and alphabet – Omniglot (https://www.omniglot.com/writing/lambya.htm)",
-      "Lambya, Rambia in Zambia – Joshua Project (https://joshuaproject.net/people_groups/12970/ZA)",
-      "Lambya – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/lamb1272)",
-      "Lambya – 101 Last Tribes (https://www.101lasttribes.com/tribes/lambya.html)"
+      {
+        "title": "The Establishment and Expansion of the Lambya Kingdom c1600-1750 – African Studies Review, Cambridge University Press, 1993",
+        "url": "https://www.cambridge.org/core/journals/african-studies-review/article/establishment-and-expansion-of-the-lambya-kingdom-c16001750/2A73651C94DF84588BD88A712D777AAF",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      },
+      {
+        "title": "Lambya language and alphabet – Omniglot",
+        "url": "https://www.omniglot.com/writing/lambya.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Lambya, Rambia in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12970/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lambya – Glottolog 5.3, SIL International",
+        "url": "https://glottolog.org/resource/languoid/id/lamb1272",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Lambya – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/lambya.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

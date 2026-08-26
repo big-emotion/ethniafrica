@@ -107,14 +107,54 @@
       ]
     },
     "sources": [
-      "Britannica — Rundi people. https://www.britannica.com/topic/Rundi-people",
-      "Britannica — Kingdom of Burundi. https://www.britannica.com/place/Kingdom-of-Burundi",
-      "SIL Ethnologue — Rundi / Kirundi (run). https://www.ethnologue.com/language/run/",
-      "eHRAF World Cultures — Barundi. https://ehrafworldcultures.yale.edu/cultures/fo58/summary",
-      "Lugha Yangu — Karyenda and the Royal Burundi Drummers. https://lughayangu.com/post/karyenda-and-the-royal-burundi-drummers",
-      "UNESCO — Ritual dance of the royal drum of Burundi (inscription 2014). https://ich.unesco.org/",
-      "BBC News — Burundi country profile. https://www.bbc.com/news/world-africa-13085064",
-      "ISTEEBU — Institut de Statistiques et d'Etudes Economiques du Burundi. https://www.isteebu.bi/"
+      {
+        "title": "Britannica — Rundi people",
+        "url": "https://www.britannica.com/topic/Rundi-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Britannica — Kingdom of Burundi",
+        "url": "https://www.britannica.com/place/Kingdom-of-Burundi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL Ethnologue — Rundi / Kirundi (run)",
+        "url": "https://www.ethnologue.com/language/run/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "eHRAF World Cultures — Barundi",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fo58/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Lugha Yangu — Karyenda and the Royal Burundi Drummers",
+        "url": "https://lughayangu.com/post/karyenda-and-the-royal-burundi-drummers",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "UNESCO — Ritual dance of the royal drum of Burundi (inscription 2014)",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "BBC News — Burundi country profile",
+        "url": "https://www.bbc.com/news/world-africa-13085064",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for bbc.com."
+      },
+      {
+        "title": "ISTEEBU — Institut de Statistiques et d'Etudes Economiques du Burundi",
+        "url": "https://www.isteebu.bi/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers isteebu.bi; the tier awaits editorial review."
+      }
     ]
   }
 }

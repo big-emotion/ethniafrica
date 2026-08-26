@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Joshua Project – Zambia People Groups, Lamba (https://joshuaproject.net/countries/ZA)",
-      "Ethnologue – Lamba Language LAM (https://www.ethnologue.com/language/lam/)",
-      "Lamba language – Chalo Chatu, Zambia Encyclopedia (http://chalochatu.org/Lamba_language)",
-      "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory (https://www.africabib.org/rec.php?RID=326712321)"
+      {
+        "title": "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008",
+        "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+      },
+      {
+        "title": "Joshua Project – Zambia People Groups, Lamba",
+        "url": "https://joshuaproject.net/countries/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Lamba Language LAM",
+        "url": "https://www.ethnologue.com/language/lam/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Lamba language – Chalo Chatu, Zambia Encyclopedia",
+        "url": "http://chalochatu.org/Lamba_language",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for chalochatu.org."
+      },
+      {
+        "title": "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory",
+        "url": "https://www.africabib.org/rec.php?RID=326712321",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africabib.org."
+      }
     ]
   }
 }

@@ -91,13 +91,48 @@
       ]
     },
     "sources": [
-      "Britannica - Hehe : https://www.britannica.com/topic/Hehe",
-      "Glottolog - Hehe : https://glottolog.org/resource/languoid/id/hehe1240",
-      "Omniglot - Hehe language : https://www.omniglot.com/writing/hehe.htm",
-      "Mkwawa Memorial : https://mkwawa.com/chiefmkwawa",
-      "101 Last Tribes - Hehe people : https://www.101lasttribes.com/tribes/hehe.html",
-      "Joshua Project - Hehe in Tanzania : https://joshuaproject.net/people_groups/12078",
-      "African Union Library - Mkwawa and the Hehe Wars : https://library.au.int/mkwawa-and-hehe-wars-2"
+      {
+        "title": "Britannica - Hehe",
+        "url": "https://www.britannica.com/topic/Hehe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Glottolog - Hehe",
+        "url": "https://glottolog.org/resource/languoid/id/hehe1240",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Omniglot - Hehe language",
+        "url": "https://www.omniglot.com/writing/hehe.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Mkwawa Memorial",
+        "url": "https://mkwawa.com/chiefmkwawa",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mkwawa.com; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes - Hehe people",
+        "url": "https://www.101lasttribes.com/tribes/hehe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project - Hehe in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/12078",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "African Union Library - Mkwawa and the Hehe Wars",
+        "url": "https://library.au.int/mkwawa-and-hehe-wars-2",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"african-union\" (au.int), matched as a parent of library.au.int."
+      }
     ]
   }
 }

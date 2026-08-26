@@ -87,12 +87,42 @@
       ]
     },
     "sources": [
-      "Living Culture Foundation Namibia — Ethnology of the Ovahimba. https://www.lcfn.info/ovahimba/information/ethnology",
-      "Global Recordings Network — Himba language. https://globalrecordings.net/en/language/23778",
-      "Rothschild Safaris — The Himba: Namibia's fascinating people. https://rothschildsafaris.com/blog/the-himba-namibias-fascinating-people",
-      "Culture and the Mind, University of Sheffield — Himba fieldsites. https://cultureandmind.sites.sheffield.ac.uk/fieldsites/himba",
-      "Africa Travel — Cultural Spotlight: The Himba of Namibia. https://www.africatravel.com/traveltips/cultural-spotlight-the-himba-of-namibia",
-      "SIL Ethnologue — Herero (her). https://www.ethnologue.com/language/her/"
+      {
+        "title": "Living Culture Foundation Namibia — Ethnology of the Ovahimba",
+        "url": "https://www.lcfn.info/ovahimba/information/ethnology",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lcfn.info."
+      },
+      {
+        "title": "Global Recordings Network — Himba language",
+        "url": "https://globalrecordings.net/en/language/23778",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalrecordings.net."
+      },
+      {
+        "title": "Rothschild Safaris — The Himba: Namibia's fascinating people",
+        "url": "https://rothschildsafaris.com/blog/the-himba-namibias-fascinating-people",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers rothschildsafaris.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Culture and the Mind, University of Sheffield — Himba fieldsites",
+        "url": "https://cultureandmind.sites.sheffield.ac.uk/fieldsites/himba",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cultureandmind.sites.sheffield.ac.uk."
+      },
+      {
+        "title": "Africa Travel — Cultural Spotlight: The Himba of Namibia",
+        "url": "https://www.africatravel.com/traveltips/cultural-spotlight-the-himba-of-namibia",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africatravel.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Herero (her)",
+        "url": "https://www.ethnologue.com/language/her/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -12,3 +12,8 @@ import "@testing-library/jest-dom/vitest";
 process.env.NEXT_PUBLIC_SUPABASE_URL ??= "http://localhost:54321";
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??= "test-anon-key";
 process.env.SUPABASE_SERVICE_ROLE_KEY ??= "test-service-role-key";
+
+// applyCorsHeaders omits Access-Control-Allow-Origin entirely when no origin is
+// configured, so route tests asserting on that header need one. Tests that
+// exercise the unconfigured case delete this variable themselves.
+process.env.CORS_ALLOWED_ORIGIN ??= "http://localhost:3000";

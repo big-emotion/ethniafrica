@@ -99,10 +99,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Susu people (https://www.101lasttribes.com/tribes/susu.html)",
-      "Ethnologue – Susu Language (SUS) (https://www.ethnologue.com/language/sus/)",
-      "Indiana University Center for Language Technology – Susu Language Portal (https://celt.indiana.edu/portal/Susu/index.html)",
-      "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)"
+      {
+        "title": "101 Last Tribes – Susu people",
+        "url": "https://www.101lasttribes.com/tribes/susu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue – Susu Language (SUS)",
+        "url": "https://www.ethnologue.com/language/sus/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Indiana University Center for Language Technology – Susu Language Portal",
+        "url": "https://celt.indiana.edu/portal/Susu/index.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers celt.indiana.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021",
+        "url": "https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for indexmundi.com."
+      }
     ]
   }
 }

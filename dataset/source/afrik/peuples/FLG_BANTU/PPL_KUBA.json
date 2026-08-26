@@ -102,12 +102,42 @@
       ]
     },
     "sources": [
-      "Gateway Africa — Kuba Tribe. https://www.gateway-africa.com/tribe/kuba_tribe.html",
-      "101 Last Tribes — Kuba people. https://www.101lasttribes.com/tribes/kuba.html",
-      "PNAS — Genetic legacy of state centralization in the Kuba Kingdom (2018). https://www.pnas.org/doi/10.1073/pnas.1811211115",
-      "Ethnologue (SIL) — Bushoong [buf]. https://www.ethnologue.com/language/buf/",
-      "Localizely — ISO 639-3 List (buf: Bushoong). https://localizely.com/iso-639-3-list/",
-      "Jan Vansina — The Children of Woot: A History of the Kuba Peoples. University of Wisconsin Press, 1978."
+      {
+        "title": "Gateway Africa — Kuba Tribe",
+        "url": "https://www.gateway-africa.com/tribe/kuba_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "101 Last Tribes — Kuba people",
+        "url": "https://www.101lasttribes.com/tribes/kuba.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "PNAS — Genetic legacy of state centralization in the Kuba Kingdom (2018)",
+        "url": "https://www.pnas.org/doi/10.1073/pnas.1811211115",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pnas.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue (SIL) — Bushoong [buf]",
+        "url": "https://www.ethnologue.com/language/buf/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Localizely — ISO 639-3 List (buf: Bushoong)",
+        "url": "https://localizely.com/iso-639-3-list/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      },
+      {
+        "title": "Jan Vansina — The Children of Woot: A History of the Kuba Peoples. University of Wisconsin Press, 1978",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

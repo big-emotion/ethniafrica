@@ -69,9 +69,24 @@
       ]
     },
     "sources": [
-      "Kara, Regi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/19160)",
-      "About Tribal Chiefs and Cultures – Ukerewe District (http://mpayukaji.blogspot.com/2022/06/about-tribal-chiefs-and-cultures.html)",
-      "Kara (Tanzania) – Glottolog 5.3, code kara1481 (https://glottolog.org)"
+      {
+        "title": "Kara, Regi in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/19160",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "About Tribal Chiefs and Cultures – Ukerewe District",
+        "url": "http://mpayukaji.blogspot.com/2022/06/about-tribal-chiefs-and-cultures.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blogspot.com, matched as a parent of mpayukaji.blogspot.com."
+      },
+      {
+        "title": "Kara (Tanzania) – Glottolog 5.3, code kara1481",
+        "url": "https://glottolog.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

@@ -90,8 +90,18 @@
       ]
     },
     "sources": [
-      "Ethnologue - Anyin (ANY) (https://www.ethnologue.com/language/any/)",
-      "DICE Missouri - Agni (Anyin) database (https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf)"
+      {
+        "title": "Ethnologue - Anyin (ANY)",
+        "url": "https://www.ethnologue.com/language/any/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "DICE Missouri - Agni (Anyin) database",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      }
     ]
   }
 }

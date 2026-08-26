@@ -93,11 +93,36 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Ma'di (mhi). https://www.ethnologue.com/language/mhi/",
-      "PeopleGroups.org — Madi of Uganda. https://peoplegroups.org/people_groups/pg015114/",
-      "Joshua Project — Ma'adi in South Sudan. https://joshuaproject.net/people_groups/13196/OD",
-      "Uganda Bureau of Statistics — Madi Sub Region Census 2024 Report. https://www.ubos.org/wp-content/uploads/2025/06/Madi-Sub-Region-Census-2024-Report.pdf",
-      "CIA World Factbook — Uganda, South Sudan."
+      {
+        "title": "Ethnologue (SIL International) — Ma'di (mhi)",
+        "url": "https://www.ethnologue.com/language/mhi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org — Madi of Uganda",
+        "url": "https://peoplegroups.org/people_groups/pg015114/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Joshua Project — Ma'adi in South Sudan",
+        "url": "https://joshuaproject.net/people_groups/13196/OD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Uganda Bureau of Statistics — Madi Sub Region Census 2024 Report",
+        "url": "https://www.ubos.org/wp-content/uploads/2025/06/Madi-Sub-Region-Census-2024-Report.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "CIA World Factbook — Uganda, South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

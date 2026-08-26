@@ -87,9 +87,24 @@
       ]
     },
     "sources": [
-      "CultureCongo — Brève étude sur les Manianga et leurs musiques. https://culturecongo.com/breve-etude-manianga-leurs-musiques/",
-      "SIL Ethnologue — Kikongo (kon). https://www.ethnologue.com/language/kon",
-      "CIA World Factbook — Democratic Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/"
+      {
+        "title": "CultureCongo — Brève étude sur les Manianga et leurs musiques",
+        "url": "https://culturecongo.com/breve-etude-manianga-leurs-musiques/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers culturecongo.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Kikongo (kon)",
+        "url": "https://www.ethnologue.com/language/kon",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

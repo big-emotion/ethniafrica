@@ -77,11 +77,36 @@
       ]
     },
     "sources": [
-      "Segeju Language (SEG) – Ethnologue, SIL International (https://www.ethnologue.com/language/seg/)",
-      "Segeju in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14816/TZ)",
-      "Segeju in Kenya Profile – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14816/KE)",
-      "Segeju of Tanzania (PGID: PG015035) – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015035/)",
-      "Segeju Tribe: People of the North Tanganyika Coast – Institute of Current World Affairs, 1956 (http://www.icwa.org/wp-content/uploads/2015/10/RFG-22.pdf)"
+      {
+        "title": "Segeju Language (SEG) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/seg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Segeju in Tanzania Profile – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14816/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Segeju in Kenya Profile – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/14816/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Segeju of Tanzania (PGID: PG015035) – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015035/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Segeju Tribe: People of the North Tanganyika Coast – Institute of Current World Affairs, 1956",
+        "url": "http://www.icwa.org/wp-content/uploads/2015/10/RFG-22.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for icwa.org."
+      }
     ]
   }
 }

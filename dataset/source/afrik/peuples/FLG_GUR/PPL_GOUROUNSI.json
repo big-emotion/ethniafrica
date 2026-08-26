@@ -86,9 +86,24 @@
       ]
     },
     "sources": [
-      "Gurunsi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gurunsi.html)",
-      "Burkina Faso people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/uv)",
-      "The Gurunsi (Kassena) tribe – Tiébélé, Untamed Travelling (https://www.untamedtravelling.com/en/destinations/africa/burkina-faso/gurunsi)"
+      {
+        "title": "Gurunsi people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/gurunsi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Burkina Faso people groups – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/countries/uv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Gurunsi (Kassena) tribe – Tiébélé, Untamed Travelling",
+        "url": "https://www.untamedtravelling.com/en/destinations/africa/burkina-faso/gurunsi",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers untamedtravelling.com; the tier awaits editorial review."
+      }
     ]
   }
 }

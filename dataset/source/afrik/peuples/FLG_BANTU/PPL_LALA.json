@@ -79,11 +79,36 @@
       ]
     },
     "sources": [
-      "Mkandawire, S.B. & Daka, H. – Cultural Preservation Literacy in Zambia: A Case Study of the Lala People of Serenje District, University of Zambia (https://dspace.unza.zm/server/api/core/bitstreams/c53ebc1e-2380-4aff-9b69-2b4d9fd13057/content)",
-      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "PeopleGroups.org – Lala of Zambia (https://peoplegroups.org/people_groups/pg015588/)",
-      "Ethnologue – Lala-Bisa Language (LEB) (https://www.ethnologue.com/language/leb/)",
-      "Joshua Project – Zambia People Groups (https://joshuaproject.net/countries/ZA)"
+      {
+        "title": "Mkandawire, S.B. & Daka, H. – Cultural Preservation Literacy in Zambia: A Case Study of the Lala People of Serenje District, University of Zambia",
+        "url": "https://dspace.unza.zm/server/api/core/bitstreams/c53ebc1e-2380-4aff-9b69-2b4d9fd13057/content",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dspace.unza.zm."
+      },
+      {
+        "title": "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008",
+        "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+      },
+      {
+        "title": "PeopleGroups.org – Lala of Zambia",
+        "url": "https://peoplegroups.org/people_groups/pg015588/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Ethnologue – Lala-Bisa Language (LEB)",
+        "url": "https://www.ethnologue.com/language/leb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project – Zambia People Groups",
+        "url": "https://joshuaproject.net/countries/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "Chopi in Mozambique – Joshua Project (https://joshuaproject.net/people_groups/11368)",
-      "UNESCO – Chopi Timbila (Representative List of the Intangible Cultural Heritage of Humanity, 2008) (https://www.youtube.com/watch?v=IgZV9nR-m2o)",
-      "Tracey, Hugh (1948, reprint 1970). Chopi Musicians: Their Music, Poetry, and Instruments. Oxford University Press. ISBN 0-19-724182-4",
-      "Locating the Chopi Xylophone Ensembles of Southern Mozambique – Ethnomusicology Review, UCLA (https://ethnomusicologyreview.ucla.edu/journal/volume/11/piece/513)",
-      "Smithsonian Folkways – Music from Mozambique Vol. 2: Chopi Timbila (https://folkways.si.edu/music-from-mozambique-vol-2-chopi-timbila-two-orchestral-performances/world/album/smithsonian)"
+      {
+        "title": "Chopi in Mozambique – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11368",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO – Chopi Timbila (Representative List of the Intangible Cultural Heritage of Humanity, 2008)",
+        "url": "https://www.youtube.com/watch?v=IgZV9nR-m2o",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Tracey, Hugh (1948, reprint 1970). Chopi Musicians: Their Music, Poetry, and Instruments. Oxford University Press. ISBN 0-19-724182-4",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Locating the Chopi Xylophone Ensembles of Southern Mozambique – Ethnomusicology Review, UCLA",
+        "url": "https://ethnomusicologyreview.ucla.edu/journal/volume/11/piece/513",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ethnomusicologyreview.ucla.edu."
+      },
+      {
+        "title": "Smithsonian Folkways – Music from Mozambique Vol. 2: Chopi Timbila",
+        "url": "https://folkways.si.edu/music-from-mozambique-vol-2-chopi-timbila-two-orchestral-performances/world/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      }
     ]
   }
 }

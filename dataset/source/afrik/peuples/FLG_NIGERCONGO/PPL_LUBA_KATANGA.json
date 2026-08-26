@@ -90,11 +90,36 @@
       ]
     },
     "sources": [
-      "Omniglot — Luba-Katanga language. https://www.omniglot.com/writing/lubakatanga.htm",
-      "SIL Ethnologue — Luba-Katanga (lub). https://www.ethnologue.com/language/lub/",
-      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
-      "Smarthistory — Lukasa (Memory Board), Luba peoples. https://smarthistory.org/lukasa-memory-board-luba-peoples/",
-      "Trailblazer Travelz — The Luba People, DRC. https://www.trailblazertravelz.com/the-luba-people-democratic-republic-of-the-congo/"
+      {
+        "title": "Omniglot — Luba-Katanga language",
+        "url": "https://www.omniglot.com/writing/lubakatanga.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "SIL Ethnologue — Luba-Katanga (lub)",
+        "url": "https://www.ethnologue.com/language/lub/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Luba",
+        "url": "https://www.britannica.com/topic/Luba-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Smarthistory — Lukasa (Memory Board), Luba peoples",
+        "url": "https://smarthistory.org/lukasa-memory-board-luba-peoples/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "Trailblazer Travelz — The Luba People, DRC",
+        "url": "https://www.trailblazertravelz.com/the-luba-people-democratic-republic-of-the-congo/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for trailblazertravelz.com."
+      }
     ]
   }
 }

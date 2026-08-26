@@ -87,13 +87,48 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL International — Haiǁom language (hgm). https://www.ethnologue.com/language/hgm/",
-      "Dieckmann, Ute (ed.) — Hai//om in the Etosha Region: A History of Colonial Settlement, Ethnicity and Nature Conservation. Open Book Publishers, 2019. https://books.openbookpublishers.com/10.11647/obp.0402/ch4.xhtml",
-      "Xoms Omis — The Hai//om and their history in the Etosha National Park. https://www.xoms-omis.org/knowledge-base/the-hai-om/history-in-etosha",
-      "Namibian Sun — Hai//om fight for recognition of Etosha land rights, mars 2026. https://www.namibiansun.com/nmh-hub/haiom-fight-for-recognition-of-etosha-land-rights",
-      "Joshua Project — Heikum San in Botswana. https://joshuaproject.net/countries/bc",
-      "Glottolog — Hainum subgroup, code haio1238. https://glottolog.org/resource/languoid/id/haio1238",
-      "Cultural Survival — The Hunter-Gatherer Myth in Southern Africa. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/hunter-gatherer-myth-southern-africa"
+      {
+        "title": "Ethnologue SIL International — Haiǁom language (hgm)",
+        "url": "https://www.ethnologue.com/language/hgm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Dieckmann, Ute (ed.) — Hai//om in the Etosha Region: A History of Colonial Settlement, Ethnicity and Nature Conservation. Open Book Publishers, 2019",
+        "url": "https://books.openbookpublishers.com/10.11647/obp.0402/ch4.xhtml",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for books.openbookpublishers.com."
+      },
+      {
+        "title": "Xoms Omis — The Hai//om and their history in the Etosha National Park",
+        "url": "https://www.xoms-omis.org/knowledge-base/the-hai-om/history-in-etosha",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers xoms-omis.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Namibian Sun — Hai//om fight for recognition of Etosha land rights, mars 2026",
+        "url": "https://www.namibiansun.com/nmh-hub/haiom-fight-for-recognition-of-etosha-land-rights",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers namibiansun.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Heikum San in Botswana",
+        "url": "https://joshuaproject.net/countries/bc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Glottolog — Hainum subgroup, code haio1238",
+        "url": "https://glottolog.org/resource/languoid/id/haio1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Cultural Survival — The Hunter-Gatherer Myth in Southern Africa",
+        "url": "https://www.culturalsurvival.org/publications/cultural-survival-quarterly/hunter-gatherer-myth-southern-africa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for culturalsurvival.org."
+      }
     ]
   }
 }

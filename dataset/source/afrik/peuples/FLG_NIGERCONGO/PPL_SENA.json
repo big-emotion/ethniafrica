@@ -101,13 +101,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Sena (seh). https://www.ethnologue.com/language/seh/",
-      "Joshua Project — Sena in Mozambique. https://joshuaproject.net/people_groups/14848/mz",
-      "Allen F. Isaacman, Mozambique: The Africanization of a European Institution — The Zambezi Prazos 1750-1902, University of Wisconsin Press, 1972",
-      "Kevin Shillington, History of Africa, Macmillan, 1989",
-      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "CIA World Factbook — Malawi. https://www.cia.gov/the-world-factbook/countries/malawi/",
-      "Rhodian G. Munyenyembe, Christianity and African Traditional Religion, 2011 (sur la Buku Lopatulika utilisée par les Sena)"
+      {
+        "title": "SIL Ethnologue — Sena (seh)",
+        "url": "https://www.ethnologue.com/language/seh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Sena in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/14848/mz",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Allen F. Isaacman, Mozambique: The Africanization of a European Institution — The Zambezi Prazos 1750-1902, University of Wisconsin Press, 1972",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kevin Shillington, History of Africa, Macmillan, 1989",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Malawi",
+        "url": "https://www.cia.gov/the-world-factbook/countries/malawi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Rhodian G. Munyenyembe, Christianity and African Traditional Religion, 2011 (sur la Buku Lopatulika utilisée par les Sena)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

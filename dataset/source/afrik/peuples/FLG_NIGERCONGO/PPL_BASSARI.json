@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Bassari in Senegal. https://joshuaproject.net/people_groups/10711/SG",
-      "Joshua Project — Bassari in Guinea. https://joshuaproject.net/people_groups/10711/GV",
-      "UNESCO — Bassari Country and the Cultural Landscape of Bassari, Fula and Bedik Communities (Senegal). https://whc.unesco.org/en/list/1369",
-      "ISO 639-3 : code bsc (Bassari). https://localizely.com/iso-639-3-list/",
-      "ISO 639-3 codes Africa list. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+      {
+        "title": "Joshua Project — Bassari in Senegal",
+        "url": "https://joshuaproject.net/people_groups/10711/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Bassari in Guinea",
+        "url": "https://joshuaproject.net/people_groups/10711/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO — Bassari Country and the Cultural Landscape of Bassari, Fula and Bedik Communities (Senegal)",
+        "url": "https://whc.unesco.org/en/list/1369",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "ISO 639-3 : code bsc (Bassari)",
+        "url": "https://localizely.com/iso-639-3-list/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      },
+      {
+        "title": "ISO 639-3 codes Africa list",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

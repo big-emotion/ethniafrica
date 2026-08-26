@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "Kissi in Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12722/gv)",
-      "The Peoples of Africa – éd. Murdock G.P., 1959, McGraw-Hill",
-      "Ethnologue – Kissi, Northern (kqs), SIL International, 2024 (https://www.ethnologue.com/language/kqs/)",
-      "Supplement to a Handbook of the Kissi Language – Kilson M., 1966"
+      {
+        "title": "Kissi in Guinea – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12722/gv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Peoples of Africa – éd. Murdock G.P., 1959, McGraw-Hill",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Kissi, Northern (kqs), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/kqs/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Supplement to a Handbook of the Kissi Language – Kilson M., 1966",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

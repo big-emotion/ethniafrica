@@ -107,11 +107,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Yalunka in Guinea : https://joshuaproject.net/people_groups/15967/GV",
-      "Joshua Project – Yalunka in Sierra Leone : https://joshuaproject.net/people_groups/15967/SL",
-      "Ethnologue – Yalunka (yal) : https://www.ethnologue.com/language/yal/",
-      "University of Missouri DICE – Yalunka ethnographic profile : https://dice.missouri.edu/assets/docs/niger-congo/Yalunka.pdf",
-      "Encyclopaedia Britannica – Yalunka : https://www.britannica.com/topic/Yalunka"
+      {
+        "title": "Joshua Project – Yalunka in Guinea",
+        "url": "https://joshuaproject.net/people_groups/15967/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Yalunka in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/15967/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Yalunka (yal)",
+        "url": "https://www.ethnologue.com/language/yal/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "University of Missouri DICE – Yalunka ethnographic profile",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Yalunka.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Encyclopaedia Britannica – Yalunka",
+        "url": "https://www.britannica.com/topic/Yalunka",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

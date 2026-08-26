@@ -16,7 +16,7 @@ import {
 import { ContributionFormFields } from "./ContributionFormFields";
 import { ReferenceLibraryFlow } from "./ReferenceLibraryFlow";
 import { Language } from "@/types/shared";
-import { getContributionSourcePolicyIssues } from "@/lib/validations/contribution";
+import { getContributionSourceCitations } from "@/lib/validations/contribution";
 import { FormFieldError } from "@/components/forms/FormFieldError";
 
 interface ContributionFormProps {
@@ -65,29 +65,28 @@ export function ContributionForm({
     newLanguageFamily: "Nouvelle famille linguistique",
     updateLanguageFamily: "Modifier une famille linguistique",
     requiredFields: "Veuillez remplir tous les champs obligatoires",
-    sourceNotAllowed: "Cette source ne peut pas être utilisée comme preuve.",
-    sourceReviewRequired: "Cette source devra être examinée avant publication.",
+    sourceUnverified:
+      "Cette source sera publiée avec la mention « Non vérifiée » : la " +
+      "contribution est acceptée, mais l'indice de confiance affiché sur la " +
+      "fiche en tiendra compte et sera plus bas.",
   };
 
-  const sourcePolicyIssues = (() => {
-    if (inputMode === "form")
-      return getContributionSourcePolicyIssues(formData);
+  const sourceCitations = (() => {
+    if (inputMode === "form") return getContributionSourceCitations(formData);
 
     try {
       const parsedPayload = JSON.parse(payload);
       return parsedPayload && typeof parsedPayload === "object"
-        ? getContributionSourcePolicyIssues(parsedPayload)
+        ? getContributionSourceCitations(parsedPayload)
         : [];
     } catch {
       return [];
     }
   })();
-  const hasBlockedSource = sourcePolicyIssues.some(
-    (issue) =>
-      issue.admission === "discovery_only" || issue.admission === "prohibited"
-  );
-  const hasSourceRequiringReview = sourcePolicyIssues.some(
-    (issue) => issue.admission === "review_required"
+  // Advisory, never a gate: the contributor is told how their citation will be
+  // labelled, and submits anyway.
+  const hasUnverifiedSource = sourceCitations.some(
+    (citation) => citation.tier === "unverified"
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -126,18 +125,6 @@ export function ContributionForm({
           setLoading(false);
           return;
         }
-      }
-
-      if (
-        getContributionSourcePolicyIssues(parsedPayload).some(
-          (issue) =>
-            issue.admission === "discovery_only" ||
-            issue.admission === "prohibited"
-        )
-      ) {
-        setError(t.sourceNotAllowed);
-        setLoading(false);
-        return;
       }
 
       const response = await fetch("/api/contributions", {
@@ -310,15 +297,9 @@ export function ContributionForm({
 
         {error && <FormFieldError>{error}</FormFieldError>}
 
-        {hasBlockedSource && (
-          <div className="text-sm text-red-600" role="alert">
-            {t.sourceNotAllowed}
-          </div>
-        )}
-
-        {hasSourceRequiringReview && (
+        {hasUnverifiedSource && (
           <div className="text-sm text-amber-700" role="status">
-            {t.sourceReviewRequired}
+            {t.sourceUnverified}
           </div>
         )}
 
@@ -327,7 +308,7 @@ export function ContributionForm({
         <Button
           type="submit"
           className="w-full md:w-auto"
-          disabled={loading || !type || hasBlockedSource}
+          disabled={loading || !type}
         >
           {loading ? t.submitting : t.submit}
         </Button>

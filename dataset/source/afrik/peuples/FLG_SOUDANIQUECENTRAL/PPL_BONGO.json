@@ -86,13 +86,48 @@
       ]
     },
     "sources": [
-      "Britannica — Bongo people. https://www.britannica.com/topic/Bongo-people",
-      "Metropolitan Museum of Art — Reclaiming the Histories of The Met's Bongo Ngya (2018). https://www.metmuseum.org/perspectives/bongo-commemorative-post-ngya",
-      "SIL Ethnologue — Bongo language (bot). https://www.ethnologue.com/language/bot/",
-      "Joshua Project — Bongo in South Sudan. https://joshuaproject.net/people_groups/10939",
-      "Pacific Lutheran University — Bongo Grave Post. https://www.plu.edu/africanartcollection/figures/bongo-grave-post/learn-more-bongo-grave-post/",
-      "Santandrea, Stefano. Concise grammar outline of the Bongo language. 1963.",
-      "Schweinfurth, Georg. Au Coeur de l'Afrique 1868-1871. Paris, 1875."
+      {
+        "title": "Britannica — Bongo people",
+        "url": "https://www.britannica.com/topic/Bongo-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Metropolitan Museum of Art — Reclaiming the Histories of The Met's Bongo Ngya (2018)",
+        "url": "https://www.metmuseum.org/perspectives/bongo-commemorative-post-ngya",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      },
+      {
+        "title": "SIL Ethnologue — Bongo language (bot)",
+        "url": "https://www.ethnologue.com/language/bot/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Bongo in South Sudan",
+        "url": "https://joshuaproject.net/people_groups/10939",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pacific Lutheran University — Bongo Grave Post",
+        "url": "https://www.plu.edu/africanartcollection/figures/bongo-grave-post/learn-more-bongo-grave-post/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for plu.edu."
+      },
+      {
+        "title": "Santandrea, Stefano. Concise grammar outline of the Bongo language. 1963",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Schweinfurth, Georg. Au Coeur de l'Afrique 1868-1871. Paris, 1875",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -91,10 +91,30 @@
       ]
     },
     "sources": [
-      "UNESCO — Maloya, patrimoine immatériel (2009). https://ich.unesco.org/en/RL/maloya-00183",
-      "SIL Ethnologue — Réunion French Creole (rcf). https://www.ethnologue.com/language/rcf/",
-      "APiCS Online — Survey chapter: Reunion Creole. https://apics-online.info/surveys/54",
-      "Portail esclavage Réunion — Maloya et séga, héritage musical de l'esclavage. https://www.portail-esclavage-reunion.fr/en/documentaires/memory-of-slavery/artistic-works/maloya-and-sega-slaverys-musical-legacy/"
+      {
+        "title": "UNESCO — Maloya, patrimoine immatériel (2009)",
+        "url": "https://ich.unesco.org/en/RL/maloya-00183",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue — Réunion French Creole (rcf)",
+        "url": "https://www.ethnologue.com/language/rcf/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "APiCS Online — Survey chapter: Reunion Creole",
+        "url": "https://apics-online.info/surveys/54",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for apics-online.info."
+      },
+      {
+        "title": "Portail esclavage Réunion — Maloya et séga, héritage musical de l'esclavage",
+        "url": "https://www.portail-esclavage-reunion.fr/en/documentaires/memory-of-slavery/artistic-works/maloya-and-sega-slaverys-musical-legacy/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers portail-esclavage-reunion.fr; the tier awaits editorial review."
+      }
     ]
   }
 }

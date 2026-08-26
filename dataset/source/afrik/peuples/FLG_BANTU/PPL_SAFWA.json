@@ -70,10 +70,30 @@
       ]
     },
     "sources": [
-      "Safwa in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14634/TZ)",
-      "Safwa Language (SBK) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbk/)",
-      "Roth, Tim – Master Wungu Thesis – Canada Institute of Linguistics, 2012 (https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf)",
-      "Safwa of Tanzania (PGID: PG015031) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015031/)"
+      {
+        "title": "Safwa in Tanzania Profile – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14634/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Safwa Language (SBK) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/sbk/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Roth, Tim – Master Wungu Thesis – Canada Institute of Linguistics, 2012",
+        "url": "https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for canil.ca."
+      },
+      {
+        "title": "Safwa of Tanzania (PGID: PG015031) – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg015031/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

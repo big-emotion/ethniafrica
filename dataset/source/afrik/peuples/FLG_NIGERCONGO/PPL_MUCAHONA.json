@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Hakaona people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/hakaona.html)",
-      "Africanlanders – The southern tribes of Angola (https://africanlanders.com/en/angola-en/angola-the-southern-tribes-of-angola/)",
-      "Kumakonda African Travel Experience – Tribes of Angola (https://kumakonda.com/tribes-of-angola/)",
-      "Ovaherero People – OvaHerero Genocide Foundation (https://ogfnamibia.org/ovaherero-people/)",
-      "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017) (https://www.biorxiv.org/content/10.1101/162230v1.full)"
+      {
+        "title": "Hakaona people – AFRICA 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/hakaona.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Africanlanders – The southern tribes of Angola",
+        "url": "https://africanlanders.com/en/angola-en/angola-the-southern-tribes-of-angola/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africanlanders.com."
+      },
+      {
+        "title": "Kumakonda African Travel Experience – Tribes of Angola",
+        "url": "https://kumakonda.com/tribes-of-angola/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+      },
+      {
+        "title": "Ovaherero People – OvaHerero Genocide Foundation",
+        "url": "https://ogfnamibia.org/ovaherero-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for ogfnamibia.org."
+      },
+      {
+        "title": "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017)",
+        "url": "https://www.biorxiv.org/content/10.1101/162230v1.full",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for biorxiv.org."
+      }
     ]
   }
 }

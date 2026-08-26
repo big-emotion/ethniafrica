@@ -91,12 +91,42 @@
       ]
     },
     "sources": [
-      "Britannica — Idi Amin. https://www.britannica.com/biography/Idi-Amin",
-      "SIL Ethnologue — Kakwa language (keo).",
-      "Muwado — My Kakwa Culture. https://muwado.com/my-kakwa-culture/",
-      "ACCORD — The Hidden Population (2020). https://www.accord.org.za/conflict-trends/the-hidden-population/",
-      "Kyemba, Henry. State of Blood: The Inside Story of Idi Amin. 1977.",
-      "IJESSR — The East African Community: People Who Straddle Borders. https://ijessr.com/uploads2026/ijessr_09_1193.pdf"
+      {
+        "title": "Britannica — Idi Amin",
+        "url": "https://www.britannica.com/biography/Idi-Amin",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL Ethnologue — Kakwa language (keo)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Muwado — My Kakwa Culture",
+        "url": "https://muwado.com/my-kakwa-culture/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers muwado.com; the tier awaits editorial review."
+      },
+      {
+        "title": "ACCORD — The Hidden Population (2020)",
+        "url": "https://www.accord.org.za/conflict-trends/the-hidden-population/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for accord.org.za."
+      },
+      {
+        "title": "Kyemba, Henry. State of Blood: The Inside Story of Idi Amin. 1977",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "IJESSR — The East African Community: People Who Straddle Borders",
+        "url": "https://ijessr.com/uploads2026/ijessr_09_1193.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijessr.com; the tier awaits editorial review."
+      }
     ]
   }
 }

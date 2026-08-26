@@ -199,15 +199,60 @@
       "postIndependence": "Guerre du Biafra (1967-1970) : sécession igbo, conflit meurtrier. Régimes militaires (1966-1979, 1983-1999). Transition démocratique depuis 1999. Développement économique (pétrole), défis de gouvernance et de sécurité."
     },
     "sources": [
-      "CIA World Factbook – Nigeria",
-      "SIL Ethnologue – Languages of Nigeria",
-      "Recensements nationaux nigérians",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples nigérians",
-      "Études historiques sur les royaumes précoloniaux",
-      "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "CIA World Factbook – Nigeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Nigeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux nigérians",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples nigérians",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les royaumes précoloniaux",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

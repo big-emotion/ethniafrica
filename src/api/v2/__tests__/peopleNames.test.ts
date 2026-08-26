@@ -125,14 +125,14 @@ function mockTables({
       title: "Ethnologue",
       url: "https://ethnologue.com",
       year: 2023,
-      tier: "primary",
+      tier: "official",
     },
     {
       id: "src-2",
       title: "UNESCO report",
       url: "https://unesco.org",
       year: 2019,
-      tier: "primary",
+      tier: "official",
     },
   ],
 }: {
@@ -189,7 +189,7 @@ describe("names service — getPeopleNamesDossier", () => {
         title: "Ethnologue",
         url: "https://ethnologue.com",
         year: 2023,
-        tier: "primary",
+        tier: "official",
       },
     ]);
     expect(result.names[0].confidence).toEqual({

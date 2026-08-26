@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Abidji – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10127/IV)",
-      "Le peuple Abidji – Rezo-Ivoire, 2011 (https://rezoivoire.net/ivoire/patrimoine/3811/le-peuple-abidji.html)",
-      "Le Dipri chez les Abidji de Cote d'Ivoire – Revue du GRALIFAH, J.J. Essoh et M. Yeo, 2024 (https://www.revuedugralifah.com/wp-content/uploads/2024/12/13-J-J-ESSOH-et-M-YEO-_170-180.pdf)",
-      "Abidji Language (ABI) – Ethnologue / SIL International (https://www.ethnologue.com/language/abi/)",
-      "Abidji – Glottolog, abid1235 (https://glottolog.org/resource/languoid/id/abid1235)"
+      {
+        "title": "Abidji – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10127/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Le peuple Abidji – Rezo-Ivoire, 2011",
+        "url": "https://rezoivoire.net/ivoire/patrimoine/3811/le-peuple-abidji.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rezoivoire.net."
+      },
+      {
+        "title": "Le Dipri chez les Abidji de Cote d'Ivoire – Revue du GRALIFAH, J.J. Essoh et M. Yeo, 2024",
+        "url": "https://www.revuedugralifah.com/wp-content/uploads/2024/12/13-J-J-ESSOH-et-M-YEO-_170-180.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers revuedugralifah.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Abidji Language (ABI) – Ethnologue / SIL International",
+        "url": "https://www.ethnologue.com/language/abi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Abidji – Glottolog, abid1235",
+        "url": "https://glottolog.org/resource/languoid/id/abid1235",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

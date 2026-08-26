@@ -98,9 +98,24 @@
       ]
     },
     "sources": [
-      "Joshua Project - Kuranko in Sierra Leone (2025) : https://joshuaproject.net/people_groups/12872/SL",
-      "Joshua Project - Kuranko in Guinea (2025) : https://joshuaproject.net/people_groups/12872/GV",
-      "Ethnologue - Kuranko language (knk) : https://www.ethnologue.com/language/knk/"
+      {
+        "title": "Joshua Project - Kuranko in Sierra Leone (2025)",
+        "url": "https://joshuaproject.net/people_groups/12872/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project - Kuranko in Guinea (2025)",
+        "url": "https://joshuaproject.net/people_groups/12872/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue - Kuranko language (knk)",
+        "url": "https://www.ethnologue.com/language/knk/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

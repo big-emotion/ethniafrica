@@ -74,12 +74,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica – Zaramo (https://www.britannica.com/topic/Zaramo)",
-      "Encyclopedia.com – Zaramo (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/zaramo)",
-      "Africa 101 Last Tribes – Zaramo people (http://www.101lasttribes.com/tribes/zaramo.html)",
-      "Joshua Project – Zaramo in Tanzania (https://joshuaproject.net/people_groups/16090)",
-      "PeopleGroups.org – Zaramo of Tanzania PG015064 (https://peoplegroups.org/people_groups/pg015064/)",
-      "Gateway Africa Safaris – Zaramo Tribe (https://www.gateway-africa.com/tribe/zaramo_tribe.html)"
+      {
+        "title": "Encyclopaedia Britannica – Zaramo",
+        "url": "https://www.britannica.com/topic/Zaramo",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Encyclopedia.com – Zaramo",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/zaramo",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "Africa 101 Last Tribes – Zaramo people",
+        "url": "http://www.101lasttribes.com/tribes/zaramo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Zaramo in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/16090",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org – Zaramo of Tanzania PG015064",
+        "url": "https://peoplegroups.org/people_groups/pg015064/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Gateway Africa Safaris – Zaramo Tribe",
+        "url": "https://www.gateway-africa.com/tribe/zaramo_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      }
     ]
   }
 }

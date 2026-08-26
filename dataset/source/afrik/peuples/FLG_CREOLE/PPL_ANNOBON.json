@@ -77,12 +77,42 @@
       ]
     },
     "sources": [
-      "Fa d'Ambu in Equatorial Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11173/EK)",
-      "Survey chapter: Fa d'Ambô – APiCS Online (Atlas of Pidgin and Creole Language Structures) (https://apics-online.info/surveys/38)",
-      "Fa d'Ambô (Equatorial Guinea) – Language Documentation and Description Journal, 2021 (https://www.lddjournal.org/article/id/1262/)",
-      "Annobonese tribe: History, Culture and Traditions – Rumbo Malabo, 2025 (https://rumbomalabo.com/en/annobon/)",
-      "Annobon Was Free a Century Before Haiti – New Lines Magazine, 2025 (https://newlinesmag.com/spotlight/annobon-was-free-a-century-before-haiti-can-it-find-independence-again/)",
-      "Annobón, the African island that wants independence – El País, 2025 (https://english.elpais.com/international/2025-08-30/annobon-the-african-island-that-wants-independence-or-to-be-part-of-argentina.html)"
+      {
+        "title": "Fa d'Ambu in Equatorial Guinea – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11173/EK",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Survey chapter: Fa d'Ambô – APiCS Online (Atlas of Pidgin and Creole Language Structures)",
+        "url": "https://apics-online.info/surveys/38",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for apics-online.info."
+      },
+      {
+        "title": "Fa d'Ambô (Equatorial Guinea) – Language Documentation and Description Journal, 2021",
+        "url": "https://www.lddjournal.org/article/id/1262/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lddjournal.org."
+      },
+      {
+        "title": "Annobonese tribe: History, Culture and Traditions – Rumbo Malabo, 2025",
+        "url": "https://rumbomalabo.com/en/annobon/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rumbomalabo.com."
+      },
+      {
+        "title": "Annobon Was Free a Century Before Haiti – New Lines Magazine, 2025",
+        "url": "https://newlinesmag.com/spotlight/annobon-was-free-a-century-before-haiti-can-it-find-independence-again/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers newlinesmag.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Annobón, the African island that wants independence – El País, 2025",
+        "url": "https://english.elpais.com/international/2025-08-30/annobon-the-african-island-that-wants-independence-or-to-be-part-of-argentina.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for elpais.com, matched as a parent of english.elpais.com."
+      }
     ]
   }
 }

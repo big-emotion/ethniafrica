@@ -1,9 +1,9 @@
 import { z } from "zod";
 import {
   evaluateSourceUrl,
-  type SourceAdmission,
   type SourceKind,
 } from "@/lib/sources/authorized-source-catalog";
+import type { SourceTier } from "@/types/sources";
 
 // @req REQ-092
 export const contributionTypeSchema = z.enum([
@@ -15,10 +15,10 @@ export const contributionTypeSchema = z.enum([
   "update_language_family",
 ]);
 
-export interface ContributionSourcePolicyIssue {
+export interface ContributionSourceCitation {
   url: string;
   path: (string | number)[];
-  admission: SourceAdmission;
+  tier: SourceTier;
   sourceKind: SourceKind;
 }
 
@@ -42,11 +42,18 @@ function sourceUrlsFromValue(value: unknown): string[] {
   return [];
 }
 
+/**
+ * Tiers every source URL a submitted contribution cites.
+ *
+ * No citation is refused: the tier is the signal, and an off-catalogue or
+ * discovery-only domain simply comes back `unverified`. Callers use this to
+ * tell the contributor how their evidence will be labelled, not to gate them.
+ */
 // @req REQ-092
-export function getContributionSourcePolicyIssues(
+export function getContributionSourceCitations(
   payload: Record<string, unknown>
-): ContributionSourcePolicyIssue[] {
-  const issues: ContributionSourcePolicyIssue[] = [];
+): ContributionSourceCitation[] {
+  const citations: ContributionSourceCitation[] = [];
 
   const visit = (value: unknown, path: (string | number)[]) => {
     if (Array.isArray(value)) {
@@ -66,19 +73,15 @@ export function getContributionSourcePolicyIssues(
 
           urls.forEach((url) => {
             const outcome = evaluateSourceUrl(url);
-            if (!outcome.publishable) {
-              issues.push({
-                url,
-                path:
-                  typeof source === "object" &&
-                  source !== null &&
-                  "url" in source
-                    ? [...sourcePath, "url"]
-                    : sourcePath,
-                admission: outcome.admission,
-                sourceKind: outcome.sourceKind,
-              });
-            }
+            citations.push({
+              url,
+              path:
+                typeof source === "object" && source !== null && "url" in source
+                  ? [...sourcePath, "url"]
+                  : sourcePath,
+              tier: outcome.tier,
+              sourceKind: outcome.sourceKind,
+            });
           });
 
           visit(source, sourcePath);
@@ -91,46 +94,26 @@ export function getContributionSourcePolicyIssues(
   };
 
   visit(payload, []);
-  return issues;
+  return citations;
 }
 
 // @req REQ-092
-export const contributionSchema = z
-  .object({
-    type: contributionTypeSchema,
-    proposed_payload: z.record(z.unknown()),
-    contributor_email: z.preprocess(
-      (val) => (val === null || val === "" ? undefined : val),
-      z.string().email().optional()
-    ),
-    contributor_name: z.preprocess(
-      (val) => (val === null || val === "" ? undefined : val),
-      z.string().min(1).max(200).optional()
-    ),
-    notes: z.preprocess(
-      (val) => (val === null || val === "" ? undefined : val),
-      z.string().max(2000).optional()
-    ),
-    honeypot: z.string().optional(),
-  })
-  .superRefine((contribution, ctx) => {
-    for (const issue of getContributionSourcePolicyIssues(
-      contribution.proposed_payload
-    )) {
-      if (
-        issue.admission === "discovery_only" ||
-        issue.admission === "prohibited"
-      ) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          path: ["proposed_payload", ...issue.path],
-          message:
-            issue.admission === "discovery_only"
-              ? "discovery-only citations cannot be submitted as evidence"
-              : "prohibited citations cannot be submitted as evidence",
-        });
-      }
-    }
-  });
+export const contributionSchema = z.object({
+  type: contributionTypeSchema,
+  proposed_payload: z.record(z.unknown()),
+  contributor_email: z.preprocess(
+    (val) => (val === null || val === "" ? undefined : val),
+    z.string().email().optional()
+  ),
+  contributor_name: z.preprocess(
+    (val) => (val === null || val === "" ? undefined : val),
+    z.string().min(1).max(200).optional()
+  ),
+  notes: z.preprocess(
+    (val) => (val === null || val === "" ? undefined : val),
+    z.string().max(2000).optional()
+  ),
+  honeypot: z.string().optional(),
+});
 
 export type ContributionInput = z.infer<typeof contributionSchema>;

@@ -47,7 +47,7 @@ const BANTU: LanguageFamily = {
       totalSpeakers: 350_000_000,
       distributionByCountry: { COD: 80_000_000, TZA: 60_000_000 },
     },
-    sources: ["Glottolog 5.0"],
+    sources: [{ title: "Glottolog 5.0", url: null, tier: "unverified" }],
   },
 };
 

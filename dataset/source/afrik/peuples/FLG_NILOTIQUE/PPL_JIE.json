@@ -77,13 +77,48 @@
       ]
     },
     "sources": [
-      "Gulliver, P.H. (1953). The Age-Set Organization of the Jie Tribe. Journal of the Royal Anthropological Institute, 83. https://www.semanticscholar.org/paper/The-Age-Set-Organization-of-the-Jie-Tribe-Gulliver/848ca133307012084047e26a165f36f395504282",
-      "Gulliver, P.H. (1953). The Family Herds: A Study of Two Pastoral Tribes in East Africa, the Jie and Turkana.",
-      "SOAS Research Online — The traditional history of the Jie of Uganda (thesis). https://soas-repository.worktribe.com/output/418348",
-      "Kyu Space — Rites of passage of the Jie community of Kotido District. https://kyuspace.kyu.ac.ug/bitstreams/e023ad71-0771-485c-ba59-ec4f0e6d1a68/download",
-      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/",
-      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj. https://map.swordshare.com/kdj",
-      "Uganda Bureau of Statistics — National Population and Housing Census 2014."
+      {
+        "title": "Gulliver, P.H. (1953). The Age-Set Organization of the Jie Tribe. Journal of the Royal Anthropological Institute, 83",
+        "url": "https://www.semanticscholar.org/paper/The-Age-Set-Organization-of-the-Jie-Tribe-Gulliver/848ca133307012084047e26a165f36f395504282",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for semanticscholar.org."
+      },
+      {
+        "title": "Gulliver, P.H. (1953). The Family Herds: A Study of Two Pastoral Tribes in East Africa, the Jie and Turkana",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SOAS Research Online — The traditional history of the Jie of Uganda (thesis)",
+        "url": "https://soas-repository.worktribe.com/output/418348",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for soas-repository.worktribe.com."
+      },
+      {
+        "title": "Kyu Space — Rites of passage of the Jie community of Kotido District",
+        "url": "https://kyuspace.kyu.ac.ug/bitstreams/e023ad71-0771-485c-ba59-ec4f0e6d1a68/download",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kyuspace.kyu.ac.ug; the tier awaits editorial review."
+      },
+      {
+        "title": "Kara-Tunga — Karamoja Bibliography",
+        "url": "https://www.kara-tunga.com/karamoja-bibliography/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kara-tunga.com."
+      },
+      {
+        "title": "Swordshare Map — Ng'akarimojong ISO 639-3 kdj",
+        "url": "https://map.swordshare.com/kdj",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

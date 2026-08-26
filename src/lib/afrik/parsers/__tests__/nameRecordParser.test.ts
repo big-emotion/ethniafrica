@@ -27,8 +27,10 @@ describe("parseNameRecordFile", () => {
       nameType: "endonym",
       sortRank: 0,
     });
-    expect(result.data?.names[0].sources[0].tier).toBe(1);
-    expect(result.data?.names[1].sources[0].tier).toBe(2);
+    // The fixture still carries the legacy numeric tiers; the parser
+    // normalises them onto the tier vocabulary.
+    expect(result.data?.names[0].sources[0].tier).toBe("official");
+    expect(result.data?.names[1].sources[0].tier).toBe("referenced");
   });
 
   // @req REQ-056

@@ -75,9 +75,24 @@
       ]
     },
     "sources": [
-      "Joshua Project – Luvale, Lwena in Angola, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
-      "101 Last Tribes – Luvale people (https://www.101lasttribes.com/tribes/luvale.html)",
-      "Gateway Africa Safaris – Luvale Tribe (https://www.gateway-africa.com/tribe/luvale_tribe.html)"
+      {
+        "title": "Joshua Project – Luvale, Lwena in Angola, 2025",
+        "url": "https://joshuaproject.net/people_groups/13168/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Luvale people",
+        "url": "https://www.101lasttribes.com/tribes/luvale.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Gateway Africa Safaris – Luvale Tribe",
+        "url": "https://www.gateway-africa.com/tribe/luvale_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      }
     ]
   }
 }

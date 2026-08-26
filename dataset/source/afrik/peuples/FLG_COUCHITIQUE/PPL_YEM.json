@@ -71,10 +71,30 @@
       ]
     },
     "sources": [
-      "Yem in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16022)",
-      "Yem of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011656/)",
-      "Hebo: New Year Ritual of Yem People in South West Ethiopia – International Journal of Multidisciplinary and Current Research, 2019 (https://ijmmu.com/index.php/ijmmu/article/download/1207/898)",
-      "The Yem people – The Tribal Society, 2025 (https://thetribalsociety.com/the-yem-people/)"
+      {
+        "title": "Yem in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/16022",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Yem of Ethiopia – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg011656/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Hebo: New Year Ritual of Yem People in South West Ethiopia – International Journal of Multidisciplinary and Current Research, 2019",
+        "url": "https://ijmmu.com/index.php/ijmmu/article/download/1207/898",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijmmu.com; the tier awaits editorial review."
+      },
+      {
+        "title": "The Yem people – The Tribal Society, 2025",
+        "url": "https://thetribalsociety.com/the-yem-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+      }
     ]
   }
 }

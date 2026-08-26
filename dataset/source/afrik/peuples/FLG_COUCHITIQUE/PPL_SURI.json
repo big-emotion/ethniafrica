@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Suri Tribe – Atlas of Humanity (https://www.atlasofhumanity.com/suri)",
-      "Why the Surma People of Ethiopia Wear Lip Plates – Africa Rebirth, 2024 (https://www.africarebirth.com/the-origin-and-significance-of-wearing-lip-plates-among-ethiopias-surma-people/)",
-      "The Surma Tribe of Ethiopia, History, Culture and Facts – Kabira Safaris, 2025 (https://kabirasafaris.com/surma/)",
-      "Suri people – 101 Last Tribes (https://www.101lasttribes.com/tribes/suri.html)",
-      "Suri Tribe – Simien Ethiopia Tours (https://simienethiopiatours.com/south-omo-tribes/suri-tribe/)"
+      {
+        "title": "Suri Tribe – Atlas of Humanity",
+        "url": "https://www.atlasofhumanity.com/suri",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers atlasofhumanity.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Why the Surma People of Ethiopia Wear Lip Plates – Africa Rebirth, 2024",
+        "url": "https://www.africarebirth.com/the-origin-and-significance-of-wearing-lip-plates-among-ethiopias-surma-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africarebirth.com; the tier awaits editorial review."
+      },
+      {
+        "title": "The Surma Tribe of Ethiopia, History, Culture and Facts – Kabira Safaris, 2025",
+        "url": "https://kabirasafaris.com/surma/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kabirasafaris.com."
+      },
+      {
+        "title": "Suri people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/suri.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Suri Tribe – Simien Ethiopia Tours",
+        "url": "https://simienethiopiatours.com/south-omo-tribes/suri-tribe/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers simienethiopiatours.com; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -76,14 +76,54 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL International — Kwadi language (kwz, extinct). https://www.ethnologue.com/language/kwz/",
-      "Glottolog — Kwadi, code kwad1244. https://glottolog.org/resource/languoid/id/kwad1244",
-      "Science Advances 2023 — Genome-wide variation in the Angolan Namib Desert reveals unique pre-Bantu heritage. https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
-      "Human Molecular Genetics 2021 — The genomic prehistory of peoples speaking Khoisan languages. https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
-      "Britannica — Khoisan languages. https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
-      "UNESCO Atlas of the World's Languages in Danger — Kwadi. https://en.unesco.org/",
-      "Rosetta Panglossia — Kwadi language (kwz). https://rosettapanglossia.longnow.org/index.php?title=Kwadi_language_%28kwz%29",
-      "Cambridge Core — Tracing contact and migration in pre-Bantu Southern Africa. https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/tracing-contact-and-migration-in-prebantu-southern-africa-through-lexical-borrowing/"
+      {
+        "title": "Ethnologue SIL International — Kwadi language (kwz, extinct)",
+        "url": "https://www.ethnologue.com/language/kwz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Kwadi, code kwad1244",
+        "url": "https://glottolog.org/resource/languoid/id/kwad1244",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Science Advances 2023 — Genome-wide variation in the Angolan Namib Desert reveals unique pre-Bantu heritage",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "Human Molecular Genetics 2021 — The genomic prehistory of peoples speaking Khoisan languages",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "Britannica — Khoisan languages",
+        "url": "https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "UNESCO Atlas of the World's Languages in Danger — Kwadi",
+        "url": "https://en.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+      },
+      {
+        "title": "Rosetta Panglossia — Kwadi language (kwz)",
+        "url": "https://rosettapanglossia.longnow.org/index.php?title=Kwadi_language_%28kwz%29",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      },
+      {
+        "title": "Cambridge Core — Tracing contact and migration in pre-Bantu Southern Africa",
+        "url": "https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/tracing-contact-and-migration-in-prebantu-southern-africa-through-lexical-borrowing/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      }
     ]
   }
 }

@@ -69,10 +69,30 @@
       ]
     },
     "sources": [
-      "Tsemay in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15589)",
-      "Tsamai of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011650/)",
-      "Tsamai language (tsb) – Ethnologue, SIL International, 2022 (https://www.ethnologue.com/language/tsb/)",
-      "Tsemai people – 101 Last Tribes (https://www.101lasttribes.com/tribes/tsemai.html)"
+      {
+        "title": "Tsemay in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/15589",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tsamai of Ethiopia – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg011650/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Tsamai language (tsb) – Ethnologue, SIL International, 2022",
+        "url": "https://www.ethnologue.com/language/tsb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Tsemai people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/tsemai.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

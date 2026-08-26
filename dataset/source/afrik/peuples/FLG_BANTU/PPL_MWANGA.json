@@ -74,10 +74,30 @@
       ]
     },
     "sources": [
-      "Nyamwanga in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13901/ZA)",
-      "Namwanga language – Chalo Chatu, Zambia online encyclopedia (https://chalochatu.org/Namwanga_language)",
-      "African Cultures by Young Africans: Namwanga Tribe – Afrikan Princess (https://afrikanprincess.com/2015/12/03/african-cultures-by-young-africans-namwanga/)",
-      "Mwanga of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015612/)"
+      {
+        "title": "Nyamwanga in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13901/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Namwanga language – Chalo Chatu, Zambia online encyclopedia",
+        "url": "https://chalochatu.org/Namwanga_language",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for chalochatu.org."
+      },
+      {
+        "title": "African Cultures by Young Africans: Namwanga Tribe – Afrikan Princess",
+        "url": "https://afrikanprincess.com/2015/12/03/african-cultures-by-young-africans-namwanga/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers afrikanprincess.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Mwanga of Zambia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015612/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

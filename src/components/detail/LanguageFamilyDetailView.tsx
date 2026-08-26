@@ -23,6 +23,7 @@ import type {
   LanguageFamilyDetail,
   PeopleReference,
 } from "@/types/afrik-frontend";
+import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { getLanguageFamily } from "@/lib/afrikLoader";
 import { getLocalizedRoute } from "@/lib/routing";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
@@ -37,6 +38,7 @@ interface LanguageFamilyDetailViewProps {
   onPeopleClick?: (peopleId: string) => void;
 }
 
+// @req REQ-004
 export const LanguageFamilyDetailView = ({
   familyId,
   language,
@@ -539,7 +541,7 @@ export const LanguageFamilyDetailView = ({
                         key={idx}
                         className="text-sm flex items-center gap-2 flex-wrap"
                       >
-                        <span>{source}</span>
+                        <span>{ficheSourceLabel(source)}</span>
                         {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}

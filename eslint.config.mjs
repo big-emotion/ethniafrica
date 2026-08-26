@@ -22,14 +22,6 @@ const require = createRequire(import.meta.url);
 const afhPlugin = require("./eslint/plugins/afh.js");
 
 const eslintConfig = [
-  // The reference mockups under docs/design/mockups/ are not application code:
-  // each page is assembled by build.js, which injects the shared parts and a
-  // three.js bundle into one standalone artifact. Read on their own, the parts
-  // declare functions nothing in the same file calls and read globals the build
-  // step supplies — true of every fragment, and meaningless to lint. They ship
-  // as design references, never imported by src/.
-  { ignores: ["docs/design/mockups/**"] },
-
   ...nextConfig,
   ...tsConfig,
 

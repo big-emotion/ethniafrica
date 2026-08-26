@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Mafa people. http://www.101lasttribes.com/tribes/mafa.html",
-      "Gerhard Muller-Kosack — The Way of the Beer. Mandaras Publishing, London 2003. https://www.mandaras.info/MandarasPublishing/TheWayoftheBeer-MullerKosack2003.pdf",
-      "Mandaras.info — Mafa bull festival (maray) Zlama slideshow. https://www.mandaras.info/bull-festival/bull-festival-slides.htm",
-      "SIL Ethnologue — Mafa (maf). https://www.ethnologue.com/language/maf",
-      "Gbaya Art Blog — The Mafa community. https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/"
+      {
+        "title": "101 Last Tribes — Mafa people",
+        "url": "http://www.101lasttribes.com/tribes/mafa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Gerhard Muller-Kosack — The Way of the Beer. Mandaras Publishing, London 2003",
+        "url": "https://www.mandaras.info/MandarasPublishing/TheWayoftheBeer-MullerKosack2003.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mandaras.info."
+      },
+      {
+        "title": "Mandaras.info — Mafa bull festival (maray) Zlama slideshow",
+        "url": "https://www.mandaras.info/bull-festival/bull-festival-slides.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mandaras.info."
+      },
+      {
+        "title": "SIL Ethnologue — Mafa (maf)",
+        "url": "https://www.ethnologue.com/language/maf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gbaya Art Blog — The Mafa community",
+        "url": "https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of gbayaart.wordpress.com."
+      }
     ]
   }
 }

@@ -87,12 +87,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Aringa language (luc). https://www.ethnologue.com/language/luc/",
-      "Joshua Project — Aringa in Uganda. https://joshuaproject.net/people_groups/19162",
-      "JSTOR — The Lugbara States (reference to Aringa-Ole'ba and Bari origins). https://www.jstor.org/stable/24328592",
-      "Uganda Bureau of Statistics — National Population and Housing Census 2014. https://www.ubos.org/",
-      "101 Last Tribes — Aringa. http://www.101lasttribes.com/tribes/aringa.html",
-      "CIA World Factbook — Uganda. https://www.cia.gov/the-world-factbook/countries/uganda/"
+      {
+        "title": "SIL Ethnologue — Aringa language (luc)",
+        "url": "https://www.ethnologue.com/language/luc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Aringa in Uganda",
+        "url": "https://joshuaproject.net/people_groups/19162",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "JSTOR — The Lugbara States (reference to Aringa-Ole'ba and Bari origins)",
+        "url": "https://www.jstor.org/stable/24328592",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
+        "url": "https://www.ubos.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "101 Last Tribes — Aringa",
+        "url": "http://www.101lasttribes.com/tribes/aringa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook — Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

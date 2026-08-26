@@ -78,11 +78,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Alaba in Ethiopia. https://joshuaproject.net/people_groups/10255",
-      "Horn of Africa Evangelical Mission — Allaaba of Ethiopia (PDF). https://hornofafrica.org/wp-content/uploads/2019/12/Allaaba.pdf",
-      "Al Mujtama Magazine — Ethiopia's Halaba Ethnicity: Arabic Speakers Committed to Islamic Values. https://www.en.mugtama.com/public/index.php/articles/ethiopia_s_halaba_ethnicity_arabic_speakers_committed_to_islamic_values",
-      "Day Translations — Alaba-K'abeena language data (Ethnologue excerpt). https://www.daytranslations.com/blog/guide/ethiopia/4/",
-      "SIL Ethnologue — Alaba-K'abeena language (alw). https://www.ethnologue.com/language/alw/"
+      {
+        "title": "Joshua Project — Alaba in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/10255",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Horn of Africa Evangelical Mission — Allaaba of Ethiopia (PDF)",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Allaaba.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+      },
+      {
+        "title": "Al Mujtama Magazine — Ethiopia's Halaba Ethnicity: Arabic Speakers Committed to Islamic Values",
+        "url": "https://www.en.mugtama.com/public/index.php/articles/ethiopia_s_halaba_ethnicity_arabic_speakers_committed_to_islamic_values",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers en.mugtama.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Day Translations — Alaba-K'abeena language data (Ethnologue excerpt)",
+        "url": "https://www.daytranslations.com/blog/guide/ethiopia/4/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for daytranslations.com."
+      },
+      {
+        "title": "SIL Ethnologue — Alaba-K'abeena language (alw)",
+        "url": "https://www.ethnologue.com/language/alw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

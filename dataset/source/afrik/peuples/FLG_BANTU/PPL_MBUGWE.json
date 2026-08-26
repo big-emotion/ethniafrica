@@ -72,12 +72,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Mbugwe in Tanzania (https://joshuaproject.net/people_groups/13637)",
-      "101 Last Tribes – Mbugwe people (https://www.101lasttribes.com/tribes/mbugwe.html)",
-      "PeopleGroups.org – Mbugwe of Tanzania (https://peoplegroups.org/people_groups/pg014989/)",
-      "Mous, Maarten – Towards the linguistic history of Rangi and Mbugwe, 2021 (https://www.youtube.com/watch?v=YBw5KY7LNoc)",
-      "Dunham, Gordon – A Grammatical Sketch of Mbugwe (Bantu F.34, Tanzania), Koeppe Verlag (https://www.koeppe.de/titel_print_a-grammatical-sketch-of-mbugwe-bantu-f-34-tanzania)",
-      "Mous, Maarten – Language and Identity among marginal people in East Africa, Universiteit Leiden (https://scholarlypublications.universiteitleiden.nl/access/item:3144215/download)"
+      {
+        "title": "Joshua Project – Mbugwe in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/13637",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Mbugwe people",
+        "url": "https://www.101lasttribes.com/tribes/mbugwe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "PeopleGroups.org – Mbugwe of Tanzania",
+        "url": "https://peoplegroups.org/people_groups/pg014989/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Mous, Maarten – Towards the linguistic history of Rangi and Mbugwe, 2021",
+        "url": "https://www.youtube.com/watch?v=YBw5KY7LNoc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Dunham, Gordon – A Grammatical Sketch of Mbugwe (Bantu F.34, Tanzania), Koeppe Verlag",
+        "url": "https://www.koeppe.de/titel_print_a-grammatical-sketch-of-mbugwe-bantu-f-34-tanzania",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for koeppe.de."
+      },
+      {
+        "title": "Mous, Maarten – Language and Identity among marginal people in East Africa, Universiteit Leiden",
+        "url": "https://scholarlypublications.universiteitleiden.nl/access/item:3144215/download",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarlypublications.universiteitleiden.nl."
+      }
     ]
   }
 }

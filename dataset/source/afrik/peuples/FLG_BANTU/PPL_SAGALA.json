@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Sagala Language (SBM) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbm/)",
-      "Jenkins, Orville – The Sagara (Sagala) People of Tanzania, Dr. Orville Jenkins (http://orvillejenkins.com/profiles/sagara.html)",
-      "Sagara in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14636)",
-      "Sagara of Tanzania (PGID: PG015032) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015032/)",
-      "Bollaert, Flore – The synchronic phonology and nominal morphology of Sagala (Bantu G39, Tanzania): A preliminary study – Universiteit Gent, 2018 (https://www.africanstudies.ugent.be/wp-content/uploads/2018/03/BA-Thesis-Flore-Bollaert.pdf)"
+      {
+        "title": "Sagala Language (SBM) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/sbm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Jenkins, Orville – The Sagara (Sagala) People of Tanzania, Dr. Orville Jenkins",
+        "url": "http://orvillejenkins.com/profiles/sagara.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Sagara in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14636",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sagara of Tanzania (PGID: PG015032) – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg015032/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Bollaert, Flore – The synchronic phonology and nominal morphology of Sagala (Bantu G39, Tanzania): A preliminary study – Universiteit Gent, 2018",
+        "url": "https://www.africanstudies.ugent.be/wp-content/uploads/2018/03/BA-Thesis-Flore-Bollaert.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africanstudies.ugent.be."
+      }
     ]
   }
 }

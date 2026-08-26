@@ -19,6 +19,7 @@ import {
   type ApiEnvelope,
   type ApiError,
 } from "@/api/v2/utils/response";
+import { sourceTierSchema } from "@/lib/sources/authorized-source-catalog";
 
 const sourceKinds = [
   "intergovernmental",
@@ -49,7 +50,7 @@ export const referenceCreateSchema = z.object({
   authors: z.array(requiredString.max(300)).min(1).max(20),
   publication_year: z.coerce.number().int().min(1000).max(9999),
   source_kind: z.enum(sourceKinds),
-  evidence_tier: z.union([z.literal(1), z.literal(2)]).nullable(),
+  tier: sourceTierSchema,
   identifiers: z.record(requiredString.max(300)).default({}),
   publisher: z.string().trim().max(500).nullable().optional().default(null),
   url: z.string().trim().url().nullable().optional().default(null),
@@ -207,7 +208,7 @@ export async function handleReferenceCreate(
     authors: parsed.data.authors,
     publicationYear: parsed.data.publication_year,
     sourceKind: parsed.data.source_kind,
-    evidenceTier: parsed.data.evidence_tier,
+    tier: parsed.data.tier,
     identifiers: parsed.data.identifiers,
     publisher: parsed.data.publisher,
     url: parsed.data.url,

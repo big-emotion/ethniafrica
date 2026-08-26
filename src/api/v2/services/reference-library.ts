@@ -1,8 +1,9 @@
 import { logger } from "@/lib/api/logger";
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { SourceTier } from "@/types/sources";
 
 const SOURCE_COLUMNS =
-  "id, source_key, title, author, year, source_kind, evidence_tier, identifiers, publisher, url";
+  "id, source_key, title, author, year, source_kind, tier, identifiers, publisher, url";
 const WORKING_ASSET_BUCKET = "source-working-assets";
 
 export type ReferenceSourceKind =
@@ -24,7 +25,7 @@ export interface ReferenceCreateInput {
   authors: string[];
   publicationYear: number;
   sourceKind: ReferenceSourceKind;
-  evidenceTier: 1 | 2 | null;
+  tier: SourceTier;
   identifiers: Record<string, string>;
   publisher: string | null;
   url: string | null;
@@ -37,7 +38,7 @@ export interface ReferenceSource {
   author: string;
   year: number;
   source_kind: ReferenceSourceKind;
-  evidence_tier: 1 | 2 | null;
+  tier: SourceTier;
   identifiers: Record<string, string>;
   publisher: string | null;
   url: string | null;
@@ -163,7 +164,7 @@ export async function createReference(
       author,
       year: input.publicationYear,
       source_kind: input.sourceKind,
-      evidence_tier: input.evidenceTier,
+      tier: input.tier,
       identifiers: input.identifiers,
       publisher: input.publisher,
       url: input.url,

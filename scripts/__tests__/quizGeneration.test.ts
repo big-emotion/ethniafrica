@@ -65,7 +65,7 @@ const pools: QuizCandidatePools = {
 const eligibleInput: QuizEligibilityInput = {
   confidenceScore: 90,
   lastHumanAuditAt: "2026-01-01T00:00:00.000Z",
-  assertionSources: [{ type: "primary", resolvable: true }],
+  assertionSources: [{ tier: "official", resolvable: true }],
   openFlagCount: 0,
 };
 

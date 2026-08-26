@@ -97,11 +97,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Morisyen (mfe). https://www.ethnologue.com/language/mfe/",
-      "Glottolog — Morisyen (mori1278). https://glottolog.org/resource/languoid/id/mori1278",
-      "UNESCO — Sega Tipik Morisien (patrimoine immatériel, 2014). https://ich.unesco.org/doc/src/26081-EN.pdf",
-      "CIA World Factbook — Mauritius. https://www.cia.gov/the-world-factbook/countries/mauritius/",
-      "Creole Mauritius — The History of Mauritian Creole. https://creolemauritius.com/blog/the-history-of-mauritian-creole-from-past-to-present/"
+      {
+        "title": "SIL Ethnologue — Morisyen (mfe)",
+        "url": "https://www.ethnologue.com/language/mfe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Morisyen (mori1278)",
+        "url": "https://glottolog.org/resource/languoid/id/mori1278",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "UNESCO — Sega Tipik Morisien (patrimoine immatériel, 2014)",
+        "url": "https://ich.unesco.org/doc/src/26081-EN.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "CIA World Factbook — Mauritius",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mauritius/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Creole Mauritius — The History of Mauritian Creole",
+        "url": "https://creolemauritius.com/blog/the-history-of-mauritian-creole-from-past-to-present/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers creolemauritius.com; the tier awaits editorial review."
+      }
     ]
   }
 }

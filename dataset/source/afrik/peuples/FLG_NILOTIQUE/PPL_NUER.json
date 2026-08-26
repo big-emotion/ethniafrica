@@ -100,15 +100,60 @@
       ]
     },
     "sources": [
-      "Evans-Pritchard, E. E. The Nuer: A Description of the Modes of Livelihood and Political Institutions of a Nilotic People. Oxford: Clarendon Press, 1940.",
-      "Evans-Pritchard, E. E. Nuer Religion. Oxford: Clarendon Press, 1956.",
-      "Evans-Pritchard, E. E. Kinship and Marriage among the Nuer. Oxford: Clarendon Press, 1951.",
-      "Hutchinson, Sharon E. Nuer Dilemmas: Coping with Money, War, and the State. Berkeley: University of California Press, 1996.",
-      "101 Last Tribes — Nuer people. http://www.101lasttribes.com/tribes/nuer.html",
-      "Ethnologue — Nuer (NUS). https://www.ethnologue.com/language/nus/",
-      "University of Edinburgh Research Explorer — Nuer Collection (dialectologie). https://www.research.ed.ac.uk/en/datasets/nuer-collection/",
-      "Joshua Project — Nuer in Ethiopia. https://joshuaproject.net/people_groups/13909/ET",
-      "Britannica — Nuer. https://www.britannica.com/topic/Nuer"
+      {
+        "title": "Evans-Pritchard, E. E. The Nuer: A Description of the Modes of Livelihood and Political Institutions of a Nilotic People. Oxford: Clarendon Press, 1940",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Evans-Pritchard, E. E. Nuer Religion. Oxford: Clarendon Press, 1956",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Evans-Pritchard, E. E. Kinship and Marriage among the Nuer. Oxford: Clarendon Press, 1951",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hutchinson, Sharon E. Nuer Dilemmas: Coping with Money, War, and the State. Berkeley: University of California Press, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "101 Last Tribes — Nuer people",
+        "url": "http://www.101lasttribes.com/tribes/nuer.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue — Nuer (NUS)",
+        "url": "https://www.ethnologue.com/language/nus/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "University of Edinburgh Research Explorer — Nuer Collection (dialectologie)",
+        "url": "https://www.research.ed.ac.uk/en/datasets/nuer-collection/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for research.ed.ac.uk."
+      },
+      {
+        "title": "Joshua Project — Nuer in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/13909/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Britannica — Nuer",
+        "url": "https://www.britannica.com/topic/Nuer",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

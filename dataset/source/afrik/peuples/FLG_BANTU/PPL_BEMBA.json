@@ -107,10 +107,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bemba language (bem) : https://www.ethnologue.com/language/bem/",
-      "Joshua Project — Bemba in Zambia : https://joshuaproject.net/people_groups/10782/za",
-      "Richards, Audrey I. — Chisungu : A Girl's Initiation Ceremony Among the Bemba of Zambia. Faber and Faber, 1956. eHRAF World Cultures : https://ehrafworldcultures.yale.edu/cultures/fq05/documents/003",
-      "Nkwazi Magazine — Kalindula : A Rhythmic Journey Through Zambian Culture (2024) : https://nkwazimagazine.com/kalindula-a-rhythmic-journey-through-zambian-culture/"
+      {
+        "title": "SIL Ethnologue — Bemba language (bem)",
+        "url": "https://www.ethnologue.com/language/bem/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Bemba in Zambia",
+        "url": "https://joshuaproject.net/people_groups/10782/za",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Richards, Audrey I. — Chisungu : A Girl's Initiation Ceremony Among the Bemba of Zambia. Faber and Faber, 1956. eHRAF World Cultures",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fq05/documents/003",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Nkwazi Magazine — Kalindula : A Rhythmic Journey Through Zambian Culture (2024)",
+        "url": "https://nkwazimagazine.com/kalindula-a-rhythmic-journey-through-zambian-culture/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for nkwazimagazine.com."
+      }
     ]
   }
 }

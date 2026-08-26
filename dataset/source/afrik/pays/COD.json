@@ -228,16 +228,66 @@
       "postIndependence": "Régime Mobutu (1965-1997) : Zaïre, dictature, corruption. Première guerre du Congo (1996-1997) : chute de Mobutu. Deuxième guerre du Congo (1998-2003) : \"guerre mondiale africaine\". Transition démocratique difficile. Défis de reconstruction et de stabilisation."
     },
     "sources": [
-      "CIA World Factbook – Democratic Republic of the Congo",
-      "SIL Ethnologue – Languages of DRC",
-      "Recensements nationaux congolais",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples congolais",
-      "Études historiques sur les royaumes précoloniaux",
-      "Ethnologie du Congo",
-      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "CIA World Factbook – Democratic Republic of the Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of DRC",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux congolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples congolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les royaumes précoloniaux",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologie du Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

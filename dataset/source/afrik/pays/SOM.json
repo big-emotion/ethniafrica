@@ -158,14 +158,54 @@
       "postIndependence": "République de Somalie (1960), présidence d'Aden Abdullah Osman Daar (1960-1967), Abdirashid Ali Shermarke (1967-1969), coup d'État (1969), présidence de Siad Barre (1969-1991, régime socialiste, guerre avec l'Éthiopie, 1977-1978), guerre civile (depuis 1991, État effondré, conflits claniques, famine, interventions internationales), transition fédérale (2012), proclamation de la République fédérale de Somalie, Hassan Sheikh Mohamud (2012-2017, 2022-), Mohamed Abdullahi Mohamed (2017-2022). Stabilité politique fragile, État fédéral, reconstruction post-conflit, développement économique (élevage, agriculture, pêche). La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Somalia",
-      "SIL Ethnologue – Languages of Somalia",
-      "Recensements somaliens",
-      "Études anthropologiques sur les peuples de Somalie",
-      "Études historiques sur la colonisation britannique et italienne",
-      "CIA World Factbook – Somalia (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Somalia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Somalia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements somaliens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Somalie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique et italienne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Somalia (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

@@ -99,11 +99,36 @@
       ]
     },
     "sources": [
-      "UNESCO — Gadaa System, inscribed 2016. https://www.unesco.org/archives/multimedia/document-4375",
-      "UNESCO ICH — Fichee-Chambalaalla (contexte Cushitique regional). https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
-      "SIL Ethnologue — Oromo (orm). https://www.ethnologue.com/language/orm/",
-      "Mekuria Bulcha — Oromia Irreecha Festival, Advocacy for Oromia, 2015. https://advocacy4oromia.org/irreechaa/oromias-irreecha-festival-a-revival-of-an-ancient-african-culture-an-attempt-to-understand-and-explain/",
-      "Joshua Project — Oromo, Borana in Ethiopia. https://joshuaproject.net"
+      {
+        "title": "UNESCO — Gadaa System, inscribed 2016",
+        "url": "https://www.unesco.org/archives/multimedia/document-4375",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "UNESCO ICH — Fichee-Chambalaalla (contexte Cushitique regional)",
+        "url": "https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue — Oromo (orm)",
+        "url": "https://www.ethnologue.com/language/orm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Mekuria Bulcha — Oromia Irreecha Festival, Advocacy for Oromia, 2015",
+        "url": "https://advocacy4oromia.org/irreechaa/oromias-irreecha-festival-a-revival-of-an-ancient-african-culture-an-attempt-to-understand-and-explain/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for advocacy4oromia.org."
+      },
+      {
+        "title": "Joshua Project — Oromo, Borana in Ethiopia",
+        "url": "https://joshuaproject.net",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

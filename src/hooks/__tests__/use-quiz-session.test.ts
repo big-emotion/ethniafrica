@@ -28,7 +28,7 @@ function makeQuestion(
     optionsFr: ["A", "B", "C", "D"],
     correctOption: 0,
     explanationFr: "Explication.",
-    source: { title: "Source", year: 2020, tier: "primary", url: null },
+    source: { title: "Source", year: 2020, tier: "official", url: null },
     assertionId: `assertion-${overrides.id}`,
     entity: {
       type: "people",

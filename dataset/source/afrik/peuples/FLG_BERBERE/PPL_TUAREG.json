@@ -118,12 +118,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Tuareg macrolanguage (tmh). https://www.ethnologue.com/language/tmh/",
-      "UNESCO — Patrimoine culturel immatériel : musique Ishumar touareg. https://ich.unesco.org/",
-      "Claudot-Hawad, Helene. Touaregs : Voix solitaires sous l'horizon confisque. Paris: Editions de l'EHESS, 1996.",
-      "Prasse, Karl-Gottfried. The Tuareg: The Blue People. Copenhagen: Museum Tusculanum Press, 1995.",
-      "Imuhar / Tamahaq Dictionary. http://imuhar.eu/site/en_dictionary/tamahaq-dictionary-with-grammar.php",
-      "Joshua Project — Tuareg people groups. https://joshuaproject.net/"
+      {
+        "title": "Ethnologue — Tuareg macrolanguage (tmh)",
+        "url": "https://www.ethnologue.com/language/tmh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO — Patrimoine culturel immatériel : musique Ishumar touareg",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Claudot-Hawad, Helene. Touaregs : Voix solitaires sous l'horizon confisque. Paris: Editions de l'EHESS, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Prasse, Karl-Gottfried. The Tuareg: The Blue People. Copenhagen: Museum Tusculanum Press, 1995",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Imuhar / Tamahaq Dictionary",
+        "url": "http://imuhar.eu/site/en_dictionary/tamahaq-dictionary-with-grammar.php",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers imuhar.eu; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Tuareg people groups",
+        "url": "https://joshuaproject.net/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -92,10 +92,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Luo language (luo). https://www.ethnologue.com/language/luo/",
-      "YouTube — NYATITI The Queen of the Clan (feat. Ayub Ogada). https://www.youtube.com/watch?v=mAW1JIIufgE",
-      "UNESCO — Patrimoine immateriel (Kenya). https://ich.unesco.org/en/state/kenya-KE",
-      "RSIS International — Population Movements and the Gem Community in Western Kenya. https://rsisinternational.org/journals/ijriss/articles/population-movements-and-the-consolidation-of-authority-in-the-inter-lacustrine-region-of-western-kenya-a-political-transformation-of-gem-community-in-pre-colonial-times/"
+      {
+        "title": "SIL Ethnologue — Luo language (luo)",
+        "url": "https://www.ethnologue.com/language/luo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "YouTube — NYATITI The Queen of the Clan (feat. Ayub Ogada)",
+        "url": "https://www.youtube.com/watch?v=mAW1JIIufgE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "UNESCO — Patrimoine immateriel (Kenya)",
+        "url": "https://ich.unesco.org/en/state/kenya-KE",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "RSIS International — Population Movements and the Gem Community in Western Kenya",
+        "url": "https://rsisinternational.org/journals/ijriss/articles/population-movements-and-the-consolidation-of-authority-in-the-inter-lacustrine-region-of-western-kenya-a-political-transformation-of-gem-community-in-pre-colonial-times/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+      }
     ]
   }
 }

@@ -91,12 +91,42 @@
       ]
     },
     "sources": [
-      "Joshua Project — Shona-Karanga in Zimbabwe. https://joshuaproject.net/people_groups/12530",
-      "PeopleGroups.org — Shona-Karanga of Zimbabwe. https://peoplegroups.org/people_groups/pg015659/",
-      "SIL Ethnologue — Shona language (sna). https://www.ethnologue.com/language/sna/",
-      "Britannica — Karanga people. https://www.britannica.com/topic/Karanga-people",
-      "HTS Theological Studies — Karanga people Masvingo. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-94222016000400109",
-      "Chigwedere, Aeneas. The Karanga Empire. Books for Africa, Harare, 1986. https://michaelharrison.org.uk/wp-content/uploads/2021/04/The-Karanga-Empire-Aeneas-Chigwedere-Books-for-Africa-Harare-1986.pdf"
+      {
+        "title": "Joshua Project — Shona-Karanga in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/12530",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Shona-Karanga of Zimbabwe",
+        "url": "https://peoplegroups.org/people_groups/pg015659/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "SIL Ethnologue — Shona language (sna)",
+        "url": "https://www.ethnologue.com/language/sna/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Karanga people",
+        "url": "https://www.britannica.com/topic/Karanga-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "HTS Theological Studies — Karanga people Masvingo",
+        "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-94222016000400109",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+      },
+      {
+        "title": "Chigwedere, Aeneas. The Karanga Empire. Books for Africa, Harare, 1986",
+        "url": "https://michaelharrison.org.uk/wp-content/uploads/2021/04/The-Karanga-Empire-Aeneas-Chigwedere-Books-for-Africa-Harare-1986.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for michaelharrison.org.uk."
+      }
     ]
   }
 }

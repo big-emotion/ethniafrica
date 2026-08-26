@@ -93,10 +93,30 @@
       ]
     },
     "sources": [
-      "Mbukushu people – 101 Last Tribes (https://www.101lasttribes.com/tribes/mbukushu.html)",
-      "Mbukushu, Gova in Namibia – Joshua Project (https://joshuaproject.net/people_groups/print/13639/WA)",
-      "Ethnologie des Mbunza / histoire Kavango – LCFN Namibia (https://www.lcfn.info/mbunza/information/ethnology)",
-      "Fisch Maria, The Mbukushu in Angola (1730-2002): A History of Migration, Flight and Royal Rainmaking – Koeppe Verlag, 2005"
+      {
+        "title": "Mbukushu people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/mbukushu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Mbukushu, Gova in Namibia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/13639/WA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologie des Mbunza / histoire Kavango – LCFN Namibia",
+        "url": "https://www.lcfn.info/mbunza/information/ethnology",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lcfn.info."
+      },
+      {
+        "title": "Fisch Maria, The Mbukushu in Angola (1730-2002): A History of Migration, Flight and Royal Rainmaking – Koeppe Verlag, 2005",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

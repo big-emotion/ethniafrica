@@ -74,10 +74,30 @@
       ]
     },
     "sources": [
-      "Upper Denkyira West – Citypopulation.de (https://www.citypopulation.de/en/ghana/admin/central/0217__upper_denkyira_west/)",
-      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
-      "Oral Traditions of Denkyira – in The Akan People: A Documentary History, Markus Wiener Publishers (https://markuswiener.com/table_of_contents/akan-people/)",
-      "Fynn, John K. – Asante and Its Neighbours 1700-1807, Longman, 1971"
+      {
+        "title": "Upper Denkyira West – Citypopulation.de",
+        "url": "https://www.citypopulation.de/en/ghana/admin/central/0217__upper_denkyira_west/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Ghana Statistical Service, Population and Housing Census 2021",
+        "url": "https://census2021.statsghana.gov.gh",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census2021.statsghana.gov.gh."
+      },
+      {
+        "title": "Oral Traditions of Denkyira – in The Akan People: A Documentary History, Markus Wiener Publishers",
+        "url": "https://markuswiener.com/table_of_contents/akan-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers markuswiener.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Fynn, John K. – Asante and Its Neighbours 1700-1807, Longman, 1971",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

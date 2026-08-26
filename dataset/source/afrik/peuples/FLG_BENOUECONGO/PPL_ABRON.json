@@ -72,9 +72,24 @@
       ]
     },
     "sources": [
-      "Ethnologue - Abron language ABR (https://www.ethnologue.com/language/abr/)",
-      "Joshua Project - Brong in Ghana (https://joshuaproject.net/people_groups/10971/GH)",
-      "Terray, Emmanuel - A History of the Abron Kingdom of Gyaman, Michigan State University, 1980 (https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F1980v12n1%2Fasrv012001002.pdf)"
+      {
+        "title": "Ethnologue - Abron language ABR",
+        "url": "https://www.ethnologue.com/language/abr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project - Brong in Ghana",
+        "url": "https://joshuaproject.net/people_groups/10971/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Terray, Emmanuel - A History of the Abron Kingdom of Gyaman, Michigan State University, 1980",
+        "url": "https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F1980v12n1%2Fasrv012001002.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pdfproc.lib.msu.edu."
+      }
     ]
   }
 }

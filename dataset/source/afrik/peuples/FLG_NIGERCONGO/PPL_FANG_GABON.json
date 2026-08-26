@@ -106,12 +106,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — The Fang People: History, Culture, Organization. https://www.101lasttribes.com/tribes/fang.html",
-      "Smarthistory — Male Reliquary Guardian Figure (Fang peoples). https://smarthistory.org/fang-reliquary-figure/",
-      "Metropolitan Museum of Art — Male Reliquary Figure (Nlo Bieri), Fang peoples. https://www.metmuseum.org/art/collection/search/312334",
-      "Joshua Project — Fang in Gabon. https://joshuaproject.net/people_groups/11187/GB",
-      "Britannica — Fang, Central African peoples. https://www.britannica.com/topic/Fang-people",
-      "SIL Ethnologue — Fang language (fan). https://www.ethnologue.com/language/fan/"
+      {
+        "title": "101 Last Tribes — The Fang People: History, Culture, Organization",
+        "url": "https://www.101lasttribes.com/tribes/fang.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Smarthistory — Male Reliquary Guardian Figure (Fang peoples)",
+        "url": "https://smarthistory.org/fang-reliquary-figure/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "Metropolitan Museum of Art — Male Reliquary Figure (Nlo Bieri), Fang peoples",
+        "url": "https://www.metmuseum.org/art/collection/search/312334",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      },
+      {
+        "title": "Joshua Project — Fang in Gabon",
+        "url": "https://joshuaproject.net/people_groups/11187/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Britannica — Fang, Central African peoples",
+        "url": "https://www.britannica.com/topic/Fang-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL Ethnologue — Fang language (fan)",
+        "url": "https://www.ethnologue.com/language/fan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

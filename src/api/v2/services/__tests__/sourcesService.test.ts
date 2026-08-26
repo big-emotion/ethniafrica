@@ -44,7 +44,7 @@ describe("sources service", () => {
         title: "Archives nationales du Cameroun, dossier 1912",
         url: null,
         source_kind: "archive",
-        evidence_tier: 2,
+        tier: "referenced",
         identifiers: { callNumber: "ACM-1912-7" },
         author: null,
         year: 1912,
@@ -58,7 +58,7 @@ describe("sources service", () => {
       expect(result.data[0]).toMatchObject({
         sourceKey: "archive-cameroon-1912",
         sourceKind: "archive",
-        evidenceTier: 2,
+        tier: "referenced",
         identifiers: { callNumber: "ACM-1912-7" },
         url: null,
       });
@@ -69,7 +69,7 @@ describe("sources service", () => {
         id: "11111111-1111-1111-1111-111111111111",
         title: "World Bank Open Data",
         url: "https://data.worldbank.org",
-        type: "tertiary",
+        tier: "official",
         pinned_url: null,
         year: 2024,
         author: null,
@@ -89,7 +89,7 @@ describe("sources service", () => {
       expect(result.data[0]).toMatchObject({
         id: row.id,
         title: row.title,
-        type: "tertiary",
+        tier: "official",
         pinnedUrl: null,
         publisher: "World Bank",
         resolvable: true,
@@ -103,7 +103,6 @@ describe("sources service", () => {
         id: "33333333-3333-3333-3333-333333333333",
         title: "Glottolog",
         url: "https://glottolog.org/resource/languoid/id/yoru1245",
-        type: "primary",
       };
       const query = buildListQuery([row], 1);
       fromMock.mockReturnValue(query);
@@ -113,10 +112,8 @@ describe("sources service", () => {
       expect(result.data[0]).toMatchObject({
         policy: {
           key: "glottolog",
-          admission: "preferred",
-          evidenceTier: 1,
+          tier: "official",
           sourceKind: "linguistic_reference",
-          publishable: true,
         },
       });
     });
@@ -126,7 +123,6 @@ describe("sources service", () => {
         id: "22222222-2222-2222-2222-222222222222",
         title: "Pre-014 source",
         url: null,
-        type: null,
       };
       const query = buildListQuery([row], 1);
       fromMock.mockReturnValue(query);
@@ -136,6 +132,7 @@ describe("sources service", () => {
       expect(result.data[0]).toMatchObject({
         id: row.id,
         title: "Pre-014 source",
+        tier: null,
         pinnedUrl: null,
         year: null,
         author: null,
@@ -170,7 +167,6 @@ describe("sources service", () => {
         id: "11111111-1111-1111-1111-111111111111",
         title: "UN Population",
         url: "https://population.un.org",
-        type: "primary",
         pinned_url: "https://population.un.org/snapshot",
         year: 2025,
         author: null,
@@ -187,7 +183,6 @@ describe("sources service", () => {
       expect(query.eq).toHaveBeenCalledWith("id", row.id);
       expect(result).toMatchObject({
         id: row.id,
-        type: "primary",
         publisher: "UN DESA",
         pinnedUrl: "https://population.un.org/snapshot",
       });

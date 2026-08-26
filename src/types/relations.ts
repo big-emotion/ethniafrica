@@ -7,6 +7,7 @@
  */
 
 import type { PeopleId } from "@/types/afrik";
+import type { SourceTier } from "@/types/sources";
 
 export type RelationType = "migratory" | "commercial" | "religious";
 
@@ -23,7 +24,7 @@ export interface RelationSource {
   author: string;
   year: number;
   url: string;
-  tier: 1 | 2;
+  tier: SourceTier;
   notes?: string;
 }
 
@@ -61,7 +62,7 @@ export interface RelationSourceRef {
   id: string;
   title: string;
   url: string | null;
-  tier: string | null;
+  tier: SourceTier | null;
 }
 
 export interface SourcedRelation {

@@ -94,12 +94,42 @@
       ]
     },
     "sources": [
-      "Britannica — Lobi. https://www.britannica.com/topic/Lobi",
-      "Joshua Project — Lobi in all countries. https://joshuaproject.net/people_groups/13082",
-      "Ethnologue — Lobi Language (LOB). https://www.ethnologue.com/language/lob/",
-      "Glottolog — Lobi. https://glottolog.org/resource/languoid/id/lobi1245",
-      "Encyclopedia.com — Lobi-Dagarti Peoples. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lobi-dagarti-peoples",
-      "101 Last Tribes — Lobi people. https://www.101lasttribes.com/tribes/lobi.html"
+      {
+        "title": "Britannica — Lobi",
+        "url": "https://www.britannica.com/topic/Lobi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Lobi in all countries",
+        "url": "https://joshuaproject.net/people_groups/13082",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Lobi Language (LOB)",
+        "url": "https://www.ethnologue.com/language/lob/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Lobi",
+        "url": "https://glottolog.org/resource/languoid/id/lobi1245",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Encyclopedia.com — Lobi-Dagarti Peoples",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lobi-dagarti-peoples",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "101 Last Tribes — Lobi people",
+        "url": "https://www.101lasttribes.com/tribes/lobi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

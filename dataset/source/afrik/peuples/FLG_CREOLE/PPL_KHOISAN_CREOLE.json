@@ -95,12 +95,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Griqua. https://www.britannica.com/topic/Griqua",
-      "Encyclopaedia Britannica — Baster. https://www.britannica.com/topic/Baster",
-      "IWGIA — The Indigenous World 2024: South Africa. https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html",
-      "South African History Online — Rehoboth. https://sahistory.org.za/place/rehoboth",
-      "Namibia Safari Tours — The Rehoboth Basters and their culture. https://namibiasafaritours.com/the-rehoboth-basters-and-their-culture/",
-      "UCT Humanities — Coloured is not an Identity. https://humanities.uct.ac.za/apc/coloured-not-identity-learning-speak-my-ancestors-tongue-again"
+      {
+        "title": "Encyclopaedia Britannica — Griqua",
+        "url": "https://www.britannica.com/topic/Griqua",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Baster",
+        "url": "https://www.britannica.com/topic/Baster",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "IWGIA — The Indigenous World 2024: South Africa",
+        "url": "https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "South African History Online — Rehoboth",
+        "url": "https://sahistory.org.za/place/rehoboth",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Namibia Safari Tours — The Rehoboth Basters and their culture",
+        "url": "https://namibiasafaritours.com/the-rehoboth-basters-and-their-culture/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers namibiasafaritours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "UCT Humanities — Coloured is not an Identity",
+        "url": "https://humanities.uct.ac.za/apc/coloured-not-identity-learning-speak-my-ancestors-tongue-again",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for humanities.uct.ac.za."
+      }
     ]
   }
 }

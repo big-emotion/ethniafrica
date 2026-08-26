@@ -22,11 +22,11 @@ describe("parseRelationFile", () => {
       period: { startYear: 1200, endYear: 1450, label: expect.any(String) },
     });
     expect(result.data?.sources).toHaveLength(1);
-    expect(result.data?.sources[0].tier).toBe(1);
+    expect(result.data?.sources[0].tier).toBe("official");
   });
 
   // @req REQ-032
-  it("parses a valid commercial relation fixture (bidirectional, tier 2 source) into a typed RelationRecord", () => {
+  it("parses a valid commercial relation fixture (bidirectional, referenced source) into a typed RelationRecord", () => {
     const result = parseRelationFile(validCommercialRelation);
 
     expect(result.success).toBe(true);
@@ -36,7 +36,7 @@ describe("parseRelationFile", () => {
       direction: "bidirectional",
       period: { startYear: null, endYear: null },
     });
-    expect(result.data?.sources[0].tier).toBe(2);
+    expect(result.data?.sources[0].tier).toBe("referenced");
   });
 
   // @req REQ-032

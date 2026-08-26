@@ -97,13 +97,48 @@
       ]
     },
     "sources": [
-      "Joshua Project — Mende people group all countries (2025). https://joshuaproject.net/people_groups/16123",
-      "PeopleGroups.org — Mende of Sierra Leone (PG014291). https://peoplegroups.org/people_groups/pg014291/",
-      "Qiraat Africa — Mende people of Sierra Leone. https://qiraatafrican.com/en/12327/mende-people-of-sierra-leone/",
-      "SIL Ethnologue — Mende language (men). https://www.ethnologue.com/language/men/",
-      "Translators without Borders — Language data for Sierra Leone. https://translatorswithoutborders.org/language-data-sierra-leone/",
-      "British Museum — Ndoli jowei Sande society mask collection (Sierra Leone).",
-      "SIL CEDS — ISO 639-3: Mende = men. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+      {
+        "title": "Joshua Project — Mende people group all countries (2025)",
+        "url": "https://joshuaproject.net/people_groups/16123",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Mende of Sierra Leone (PG014291)",
+        "url": "https://peoplegroups.org/people_groups/pg014291/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Qiraat Africa — Mende people of Sierra Leone",
+        "url": "https://qiraatafrican.com/en/12327/mende-people-of-sierra-leone/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "SIL Ethnologue — Mende language (men)",
+        "url": "https://www.ethnologue.com/language/men/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Translators without Borders — Language data for Sierra Leone",
+        "url": "https://translatorswithoutborders.org/language-data-sierra-leone/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for translatorswithoutborders.org."
+      },
+      {
+        "title": "British Museum — Ndoli jowei Sande society mask collection (Sierra Leone)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL CEDS — ISO 639-3: Mende = men",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

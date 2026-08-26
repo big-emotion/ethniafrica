@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bade (bde). https://www.ethnologue.com/subgroup/2040/",
-      "UCLA African Languages — Bade. https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/bade/",
-      "Joshua Project — Bade in Nigeria. https://joshuaproject.net/people_groups/10548/NI",
-      "Britannica — Bedde Emirate. https://www.britannica.com/place/Bedde",
-      "Glottolog 5.3 — Bade (bade1248). https://glottolog.org/glottolog?search=bade",
-      "Wiktionary ISO 639-3 codes/Africa — bde Bade. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+      {
+        "title": "SIL Ethnologue — Bade (bde)",
+        "url": "https://www.ethnologue.com/subgroup/2040/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UCLA African Languages — Bade",
+        "url": "https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/bade/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for aflang.humanities.ucla.edu."
+      },
+      {
+        "title": "Joshua Project — Bade in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/10548/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Britannica — Bedde Emirate",
+        "url": "https://www.britannica.com/place/Bedde",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Glottolog 5.3 — Bade (bade1248)",
+        "url": "https://glottolog.org/glottolog?search=bade",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Wiktionary ISO 639-3 codes/Africa — bde Bade",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

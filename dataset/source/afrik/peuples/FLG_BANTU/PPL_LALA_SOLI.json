@@ -68,11 +68,36 @@
       ]
     },
     "sources": [
-      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
-      "Zambia – Ethnic Groups, Languages, Religions – Encyclopaedia Britannica, 2026 (https://www.britannica.com/place/Zambia/People)",
-      "Soli language – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/soli1239)",
-      "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)"
+      {
+        "title": "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025",
+        "url": "https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for explorelusaka.com."
+      },
+      {
+        "title": "Zambia – Ethnic Groups, Languages, Religions – Encyclopaedia Britannica, 2026",
+        "url": "https://www.britannica.com/place/Zambia/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Soli language – Glottolog 5.3, SIL International",
+        "url": "https://glottolog.org/resource/languoid/id/soli1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008",
+        "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+      },
+      {
+        "title": "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023",
+        "url": "https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+      }
     ]
   }
 }

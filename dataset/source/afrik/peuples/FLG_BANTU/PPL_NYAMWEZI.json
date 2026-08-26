@@ -90,12 +90,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Nyamwezi (nym) : https://www.ethnologue.com/subgroup/3292/",
-      "Omniglot – Nyamwezi language and alphabet : https://www.omniglot.com/writing/nyamwezi.htm",
-      "Pray Africa – Nyamwezi of Tanzania (2024) : https://prayafrica.org/project/nyamwezi-of-tanzania/",
-      "Cambridge Core – The Major Dialects of Nyamwezi and Their Relationship to Sukuma (2014) : https://www.cambridge.org/core/journals/journal-of-linguistic-geography/article/major-dialects-of-nyamwezi-and-their-relationship-to-sukuma-a-timebased-perspective/9A1872A4C2E9A1BB915492E359F3586D",
-      "ASJP Database – Nyamwezi (nym) : https://asjp.clld.org/languages/NYAMWEZI",
-      "kwekudee-tripdownmemorylane – Nyamwezi People: Africa's Bantu People of the Moon (2014) : https://kwekudee-tripdownmemorylane.blogspot.com/2014/05/nyamwezi-people-africas-bantu-people-of.html"
+      {
+        "title": "SIL Ethnologue – Nyamwezi (nym)",
+        "url": "https://www.ethnologue.com/subgroup/3292/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Omniglot – Nyamwezi language and alphabet",
+        "url": "https://www.omniglot.com/writing/nyamwezi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Pray Africa – Nyamwezi of Tanzania (2024)",
+        "url": "https://prayafrica.org/project/nyamwezi-of-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for prayafrica.org."
+      },
+      {
+        "title": "Cambridge Core – The Major Dialects of Nyamwezi and Their Relationship to Sukuma (2014)",
+        "url": "https://www.cambridge.org/core/journals/journal-of-linguistic-geography/article/major-dialects-of-nyamwezi-and-their-relationship-to-sukuma-a-timebased-perspective/9A1872A4C2E9A1BB915492E359F3586D",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      },
+      {
+        "title": "ASJP Database – Nyamwezi (nym)",
+        "url": "https://asjp.clld.org/languages/NYAMWEZI",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asjp.clld.org."
+      },
+      {
+        "title": "kwekudee-tripdownmemorylane – Nyamwezi People: Africa's Bantu People of the Moon (2014)",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2014/05/nyamwezi-people-africas-bantu-people-of.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      }
     ]
   }
 }

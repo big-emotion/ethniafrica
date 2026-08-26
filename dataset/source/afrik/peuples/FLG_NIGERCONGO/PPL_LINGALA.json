@@ -108,13 +108,48 @@
       ]
     },
     "sources": [
-      "APiCS Online — Survey chapter: Lingala (Koen Bostoen et al.). https://apics-online.info/surveys/60",
-      "Britannica — Lingala language. https://www.britannica.com/topic/Lingala-language",
-      "Joshua Project — Lingala in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/13068/CG",
-      "SIL Ethnologue — Lingala (lin). https://www.ethnologue.com/language/lin/",
-      "Translators Without Borders — The four National Languages of DRC. https://translatorswithoutborders.org/wp-content/uploads/2020/07/The-four-National-Languages-of-DRC-EN.pdf",
-      "CLEAR Global — Four national languages of DRC (2022). https://clearglobal.org/four-national-languages-drc/",
-      "101 Last Tribes — Bangala people. https://www.101lasttribes.com/tribes/bangala.html"
+      {
+        "title": "APiCS Online — Survey chapter: Lingala (Koen Bostoen et al.)",
+        "url": "https://apics-online.info/surveys/60",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for apics-online.info."
+      },
+      {
+        "title": "Britannica — Lingala language",
+        "url": "https://www.britannica.com/topic/Lingala-language",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Lingala in Congo, Democratic Republic of",
+        "url": "https://joshuaproject.net/people_groups/13068/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Lingala (lin)",
+        "url": "https://www.ethnologue.com/language/lin/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Translators Without Borders — The four National Languages of DRC",
+        "url": "https://translatorswithoutborders.org/wp-content/uploads/2020/07/The-four-National-Languages-of-DRC-EN.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for translatorswithoutborders.org."
+      },
+      {
+        "title": "CLEAR Global — Four national languages of DRC (2022)",
+        "url": "https://clearglobal.org/four-national-languages-drc/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for clearglobal.org."
+      },
+      {
+        "title": "101 Last Tribes — Bangala people",
+        "url": "https://www.101lasttribes.com/tribes/bangala.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

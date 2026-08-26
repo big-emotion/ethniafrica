@@ -89,13 +89,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Amharic (amh). https://www.ethnologue.com/language/amh/",
-      "Glottolog - Amharic (amha1245). https://glottolog.org/resource/languoid/id/amha1245",
-      "Ethiopian Central Statistics Agency - Census 2007. https://www.csa.gov.et/",
-      "Encyclopaedia Aethiopica. Harrassowitz Verlag, 2003-2014.",
-      "Phillipson, David W. - Ancient Ethiopia. The British Museum Press, 1998.",
-      "Levine, Donald N. - Wax and Gold : Tradition and Innovation in Ethiopian Culture. University of Chicago Press, 1965.",
-      "CIA World Factbook - Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
+      {
+        "title": "SIL Ethnologue - Amharic (amh)",
+        "url": "https://www.ethnologue.com/language/amh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog - Amharic (amha1245)",
+        "url": "https://glottolog.org/resource/languoid/id/amha1245",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethiopian Central Statistics Agency - Census 2007",
+        "url": "https://www.csa.gov.et/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica. Harrassowitz Verlag, 2003-2014",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Phillipson, David W. - Ancient Ethiopia. The British Museum Press, 1998",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Levine, Donald N. - Wax and Gold : Tradition and Innovation in Ethiopian Culture. University of Chicago Press, 1965",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook - Ethiopia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }
