@@ -7,7 +7,10 @@ export type {
   CultureChips,
   LanguageChips,
 } from "./ProseWithChip";
-export { PeopleHero } from "./PeopleHero";
+export { PeopleFicheHead } from "./PeopleFicheHead";
+export { PeopleNamingBlock } from "./PeopleNamingBlock";
+export { PeopleFieldExplainer } from "./PeopleFieldExplainer";
+export { PeopleFieldLegend } from "./PeopleFieldLegend";
 export { PeopleOriginBlock } from "./PeopleOriginBlock";
 export { PeopleLanguageSection } from "./PeopleLanguageSection";
 export { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";

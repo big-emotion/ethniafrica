@@ -9,6 +9,7 @@ export type AutonymExonymHeadingVariant =
   | "card"
   | "people-hero"
   | "people-section"
+  | "people-naming"
   | "compact";
 
 export interface AutonymExonymHeadingProps {
@@ -86,6 +87,71 @@ export function AutonymExonymHeading({
   variant = "hero",
 }: AutonymExonymHeadingProps) {
   const [expanded, setExpanded] = useState(false);
+
+  /**
+   * The fiche's opening statement: the name borne, and the names imposed, set
+   * side by side — autonym on the accent, exonyms on the colonial red.
+   *
+   * It lives inside this component rather than in the section that uses it
+   * because the pairing *is* the doctrine: keep colonial-era names, explain
+   * why they are problematic, and never let one reach the page without the
+   * autonym beside it. A section assembling that layout from the outside would
+   * be free to drift out of it, and afh/no-bare-people-name would have nothing
+   * to say — the rule only reaches names passed through here.
+   */
+  if (variant === "people-naming") {
+    const imposedNames = exonyms ?? [];
+
+    return (
+      <div className={cn("grid gap-afh-sm md:grid-cols-2", className)}>
+        <div
+          className="rounded-afh-md border p-afh-sm"
+          style={{
+            backgroundColor: "var(--accent-tint)",
+            borderColor: "var(--accent)",
+          }}
+        >
+          <h3 className="mb-afh-xs text-afh-caption font-bold uppercase tracking-[0.11em]">
+            Auto-appellation
+          </h3>
+          <p
+            data-autonym="true"
+            lang={autonymIso639_3}
+            className="font-afh-display text-afh-h3 font-black leading-tight"
+          >
+            {autonym ?? nameMain}
+          </p>
+        </div>
+
+        {/* Four fiches record no exonym at all. An empty red block would read
+            as "no colonial name exists for this people" — a claim, where the
+            corpus only has an absence. */}
+        {imposedNames.length > 0 && (
+          <div
+            className="rounded-afh-md border p-afh-sm"
+            style={{
+              backgroundColor: "var(--afh-color-colonial-bg)",
+              borderColor: "var(--afh-color-colonial)",
+            }}
+          >
+            <h3
+              className="mb-afh-xs text-afh-caption font-bold uppercase tracking-[0.11em]"
+              style={{ color: "var(--afh-color-colonial)" }}
+            >
+              Exonymes
+            </h3>
+            <ul data-exonyms="true" className="flex flex-col gap-1 pl-4">
+              {imposedNames.map((imposed) => (
+                <li key={imposed} className="list-disc text-afh-small">
+                  {imposed}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   if (variant === "people-hero" || variant === "people-section") {
     const {

@@ -133,8 +133,8 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // The three legacy detail views are stubbed down to a marker each: the reading
 // gate is counted below, and a <details> buried inside a real detail view would
 // make that count say nothing about the route's own wiring.
-vi.mock("@/components/detail/PeopleDetailView", () => ({
-  PeopleDetailView: () => <div data-testid="people-record-view" />,
+vi.mock("@/components/people/PeopleDetailViewV2", () => ({
+  PeopleDetailViewV2: () => <div data-testid="people-record-view" />,
 }));
 
 vi.mock("@/components/detail/CountryDetailViewV2", () => ({

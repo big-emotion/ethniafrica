@@ -1,7 +1,10 @@
+import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 import type { LabelledFicheSource } from "@/lib/afrik/ficheSourceLabel";
 
 interface PeopleSourcesFooterProps {
   sources: LabelledFicheSource[];
+  /** An open flag on this fiche's sourcing — someone has contested it and the reader should know before reading on. */
+  hasSourceFlag?: boolean;
 }
 
 /**
@@ -14,7 +17,10 @@ interface PeopleSourcesFooterProps {
  * of looking like any other.
  */
 // @req REQ-092
-export function PeopleSourcesFooter({ sources }: PeopleSourcesFooterProps) {
+export function PeopleSourcesFooter({
+  sources,
+  hasSourceFlag = false,
+}: PeopleSourcesFooterProps) {
   if (!sources || sources.length === 0) return null;
 
   return (
@@ -31,6 +37,11 @@ export function PeopleSourcesFooter({ sources }: PeopleSourcesFooterProps) {
       >
         Sources &amp; Références
       </p>
+      {hasSourceFlag && (
+        <div className="mb-afh-xs">
+          <SourceVerifyBadge />
+        </div>
+      )}
       <ul className="flex flex-col gap-afh-xs">
         {sources.map((source) => (
           <li

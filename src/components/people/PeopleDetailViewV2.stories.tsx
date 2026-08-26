@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
-import { PeopleHero } from "./PeopleHero";
+import { PeopleFicheHead } from "./PeopleFicheHead";
 import { PeopleOriginBlock } from "./PeopleOriginBlock";
 import { PeopleLanguageSection } from "./PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
@@ -231,19 +231,18 @@ export const AutonymHeading_Desktop: Story = {
 };
 
 // ==========================================
-// PeopleHero — 430 / 720 / 1200
+// PeopleFicheHead — 430 / 720 / 1200
 // ==========================================
 
 // @req REQ-115
 export const Hero_Mobile: Story = {
-  name: "PeopleHero — 430px",
+  name: "PeopleFicheHead — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
-      <PeopleHero
-        data={yorubaHero}
-        onBack={() => {}}
-        onFlagCtaClick={() => {}}
+      <PeopleFicheHead
+        hero={yorubaHero}
+        countries={countries}
         confidenceScore={null}
         sourceCount={null}
         lastHumanAuditAt={null}
@@ -254,14 +253,14 @@ export const Hero_Mobile: Story = {
 
 // @req REQ-115
 export const Hero_Tablet: Story = {
-  name: "PeopleHero — 720px",
+  name: "PeopleFicheHead — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Hero_Mobile.render,
 };
 
 // @req REQ-115
 export const Hero_Desktop: Story = {
-  name: "PeopleHero — 1200px",
+  name: "PeopleFicheHead — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Hero_Mobile.render,
 };

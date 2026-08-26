@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import type { ParagraphChipData } from "../ProseWithChip";
-import { PeopleHero } from "../PeopleHero";
 import { PeopleOriginBlock } from "../PeopleOriginBlock";
 import { PeopleLanguageSection } from "../PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "../PeopleHistoryTimeline";
@@ -11,7 +10,6 @@ import { PeopleCountriesSection } from "../PeopleCountriesSection";
 import { PeopleSourcesFooter } from "../PeopleSourcesFooter";
 import { ficheSources } from "@/lib/afrik/ficheSourceLabel";
 import type {
-  PeopleHeroData,
   PeopleOriginData,
   PeopleLanguageData,
   PeopleHistoryData,
@@ -21,68 +19,11 @@ import type {
 } from "@/lib/peopleDataTransformer";
 
 // ==========================================
-// PeopleHero
+// PeopleFicheHead replaced PeopleHero: the mockup's fiche head is an
+// overline, a title, a lede and two chips on parchment, where the old hero
+// was a teal gradient card — teal is the country accent, and a people fiche
+// is ocre (atlas-charter §2). Its own tests live in PeopleFicheHead.test.tsx.
 // ==========================================
-
-describe("PeopleHero", () => {
-  const baseHero: PeopleHeroData = {
-    peopleId: "PPL_YORUBA",
-    nameMain: "Yoruba",
-    selfAppellation: "Ọmọ Oòduà",
-    exonyms: ["Yariba"],
-    languageFamilyId: "FLG_NIGER_CONGO",
-    languageFamilyName: "Niger-Congo",
-    currentCountries: ["NGA", "BEN", "TGO"],
-    classificationStatus: null,
-  };
-
-  it("renders nameMain in hero", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Yoruba")).toBeTruthy();
-  });
-
-  it("renders selfAppellation when provided", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Ọmọ Oòduà")).toBeTruthy();
-  });
-
-  it("renders exonyms", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Yariba")).toBeTruthy();
-  });
-
-  it("renders languageFamilyName badge when provided", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Niger-Congo")).toBeTruthy();
-  });
-
-  it("renders country count badge", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText(/3 pays/)).toBeTruthy();
-  });
-
-  it("shows confidence fallback link when no confidence data", () => {
-    render(
-      <PeopleHero
-        data={baseHero}
-        confidenceScore={null}
-        sourceCount={null}
-        lastHumanAuditAt={null}
-      />
-    );
-    expect(screen.getByText("voir les sources")).toBeTruthy();
-  });
-
-  it("renders flag CTA button when onFlagCtaClick provided", () => {
-    render(<PeopleHero data={baseHero} onFlagCtaClick={() => {}} />);
-    expect(screen.getByRole("button", { name: /signaler/i })).toBeTruthy();
-  });
-
-  it("renders back button when onBack provided", () => {
-    render(<PeopleHero data={baseHero} onBack={() => {}} />);
-    expect(screen.getByRole("button", { name: /retour/i })).toBeTruthy();
-  });
-});
 
 // ==========================================
 // PeopleOriginBlock

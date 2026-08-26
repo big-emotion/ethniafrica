@@ -5,7 +5,7 @@ import {
   getLatestEntityRevisionVersion,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
+import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
@@ -231,11 +231,15 @@ export default async function PeoplesSlugPage({
             />
           }
           record={
-            <PeopleDetailView
-              peopleId={parsed.slug}
-              language="fr"
-              initialData={peopleDetail}
-              initialSourceFlag={sourceFlags.length > 0}
+            // Server-rendered, from what this route already awaited. The view
+            // it replaces fetched the same fiche, fragmentation and names
+            // dossier again from the browser, which cost the page its server
+            // rendering — and with it the axe audit and the Lighthouse score.
+            <PeopleDetailViewV2
+              people={peopleDetail}
+              namesDossier={namesDossier}
+              fragmentation={fragmentation}
+              hasSourceFlag={sourceFlags.length > 0}
             />
           }
         />
