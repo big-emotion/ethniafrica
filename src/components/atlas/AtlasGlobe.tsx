@@ -22,6 +22,10 @@ import {
 } from "@/lib/atlas/markerPlacement";
 import type { AtlasOverlay, Ring } from "@/lib/atlas/overlays";
 import {
+  orderedPeopleFieldAreas,
+  peopleFieldIntensity,
+} from "@/lib/atlas/peopleField";
+import {
   biasForPanel,
   resolvePanelAnchor,
   type PanelAnchor,
@@ -30,6 +34,8 @@ import { BASEMAP_VIEWBOX, projectLonLat } from "@/lib/atlas/projection";
 import { buildAtlasTargets, type AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
+import { useGlobeDrag } from "@/hooks/use-globe-drag";
+import { useGlobeMorph } from "@/hooks/use-globe-morph";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
@@ -170,7 +176,9 @@ function AtlasGlobeFallback({
             <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
           </radialGradient>
         </defs>
-        {overlay.areas.map((area) => {
+        {/* Largest first, so the smallest presence paints last and survives
+            under the big ones — the same order the WebGL path emits. */}
+        {orderedPeopleFieldAreas(overlay.areas).map((area) => {
           const { x, y } = projectLonLat(
             area.center.lon,
             area.center.lat,
@@ -185,7 +193,10 @@ function AtlasGlobeFallback({
               r={radius}
               fill="url(#atlas-people-field-gradient)"
               stroke="none"
-              opacity={focus && focus.countryId !== area.countryId ? 0.4 : 1}
+              opacity={peopleFieldIntensity(
+                area.countryId,
+                focus?.countryId ?? null
+              )}
             />
           );
         })}
@@ -289,6 +300,70 @@ function AtlasTargetMarker({
   );
 }
 
+/**
+ * The commands sitting on the night band, under the globe.
+ *
+ * "Ce que la carte plate en fait" is the one control on this stage that is an
+ * argument rather than a convenience: it unrolls the sphere into Mercator so
+ * the reader watches Africa shrink against the high latitudes instead of being
+ * told that it does. It is hidden without WebGL, where the fallback is already
+ * a flat map and the button would name a change nothing can show.
+ */
+// @req REQ-117
+function AtlasGlobeTools({
+  flattened,
+  canFlatten,
+  onToggleFlatten,
+  onRecentre,
+}: {
+  flattened: boolean;
+  canFlatten: boolean;
+  onToggleFlatten: () => void;
+  onRecentre: () => void;
+}) {
+  return (
+    <div
+      data-atlas-tools=""
+      className="absolute inset-x-0 bottom-afh-sm flex flex-wrap justify-center gap-afh-xs px-afh-sm"
+      // The stage paints itself night inline, outside the cascade a class
+      // would travel through, so these buttons cannot inherit their surface.
+      style={{ color: "var(--afh-night-ink)" }}
+    >
+      {canFlatten && (
+        <button
+          type="button"
+          data-atlas-tool="flatten"
+          aria-pressed={flattened}
+          onClick={onToggleFlatten}
+          className="rounded-afh-full border px-afh-sm py-afh-xs text-afh-small focus-visible:outline-none focus-visible:ring-2"
+          style={{
+            borderColor: "var(--afh-night-line)",
+            backgroundColor: flattened
+              ? "var(--accent)"
+              : "var(--afh-night-surface)",
+            color: flattened ? "var(--accent-ink)" : "var(--afh-night-ink)",
+          }}
+        >
+          {flattened ? "Revenir au globe" : "Ce que la carte plate en fait"}
+        </button>
+      )}
+      <button
+        type="button"
+        data-atlas-tool="recentre"
+        onClick={onRecentre}
+        className="rounded-afh-full border px-afh-sm py-afh-xs text-afh-small focus-visible:outline-none focus-visible:ring-2"
+        style={{
+          borderColor: "var(--afh-night-line)",
+          backgroundColor: "var(--afh-night-surface)",
+          color: "var(--afh-night-ink)",
+        }}
+      >
+        Recentrer
+      </button>
+    </div>
+  );
+}
+
 export interface AtlasGlobeProps {
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
@@ -357,8 +432,11 @@ export function AtlasGlobe({
   const [chosenCountryId, setChosenCountryId] = useState<CountryId | null>(
     null
   );
+  const [flattened, setFlattened] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
   const anchor = usePanelAnchor();
+  const morph = useGlobeMorph(flattened, reducedMotion);
+  const { nudge, resetNudge, dragHandlers } = useGlobeDrag();
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -376,7 +454,15 @@ export function AtlasGlobe({
     () => (chosen ? poseForTarget(chosen, biasForPanel(anchor)) : null),
     [chosen, anchor]
   );
-  const pose = useGlobeCamera(destination, reducedMotion);
+  const cameraPose = useGlobeCamera(destination, reducedMotion);
+  // The reader's own turning, laid over wherever the camera has settled. The
+  // markers are placed from this same pose, which is what keeps a button on
+  // top of the shape it names while the surface is being dragged.
+  const pose = {
+    ...cameraPose,
+    yaw: cameraPose.yaw + nudge.yaw,
+    pitch: cameraPose.pitch + nudge.pitch,
+  };
 
   if (!overlay || overlay.kind === "people-field-missing") {
     return (
@@ -396,11 +482,18 @@ export function AtlasGlobe({
     <div
       ref={setStage}
       data-atlas-stage=""
+      data-atlas-flattened={flattened ? "true" : "false"}
       className={cn(className)}
       style={NIGHT_STAGE_STYLE}
+      {...dragHandlers}
     >
       {webglSupported ? (
-        <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
+        <LazyAtlasGlobeCanvas
+          overlay={overlay}
+          pose={pose}
+          morph={morph}
+          focusedCountryId={chosenCountryId}
+        />
       ) : (
         <AtlasGlobeFallback
           overlay={overlay}
@@ -417,9 +510,27 @@ export function AtlasGlobe({
           placement={place(target)}
           chosen={target.countryId === chosenCountryId}
           label={targetFacts(target).title}
-          onChoose={() => setChosenCountryId(target.countryId)}
+          onChoose={() => {
+            // A fly-to that landed somewhere other than the country it named
+            // would be lying, so the reader's own turning is cleared first.
+            resetNudge();
+            setChosenCountryId(target.countryId);
+          }}
         />
       ))}
+
+      <AtlasGlobeTools
+        flattened={flattened}
+        // The fallback is already a flat map. Offering to flatten it would
+        // name a change the reader cannot be shown.
+        canFlatten={webglSupported}
+        onToggleFlatten={() => setFlattened((current) => !current)}
+        onRecentre={() => {
+          setFlattened(false);
+          resetNudge();
+          setChosenCountryId(null);
+        }}
+      />
 
       {facts && (
         <AtlasFactsPanel

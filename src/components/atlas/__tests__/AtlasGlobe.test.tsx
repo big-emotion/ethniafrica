@@ -13,8 +13,27 @@ import {
   SIDE_PANEL_VIEW_FRACTION,
 } from "@/lib/atlas/panelBias";
 
+// The mock reflects the props back as attributes: what AtlasGlobe hands the
+// WebGL path is the contract under test here, and a real GL context in
+// happy-dom would test the driver instead.
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
-  AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
+  AtlasGlobeCanvas: ({
+    morph,
+    focusedCountryId,
+    pose,
+  }: {
+    morph?: number;
+    focusedCountryId?: string | null;
+    pose: { yaw: number; pitch: number };
+  }) => (
+    <canvas
+      data-testid="atlas-globe-canvas-mock"
+      data-morph={String(morph)}
+      data-focused={focusedCountryId ?? ""}
+      data-yaw={pose.yaw.toFixed(4)}
+      data-pitch={pose.pitch.toFixed(4)}
+    />
+  ),
 }));
 
 const square: Ring = [
@@ -303,6 +322,211 @@ describe("AtlasGlobe", () => {
       expect(
         document.querySelector("[data-atlas-target]")
       ).not.toBeInTheDocument();
+    });
+  });
+
+  /**
+   * Focus dimming shipped in the SVG fallback and nowhere else: choosing a
+   * country faded the other halos without WebGL and did nothing with it. Both
+   * renderers now read the same peopleField.ts, and these assertions are about
+   * each path actually being handed the state.
+   */
+  describe("focusing one country of a people's field (REQ-116)", () => {
+    beforeEach(() => {
+      stubMatchMedia({ reducedMotion: true });
+    });
+
+    // @req REQ-116
+    it("tells the WebGL path which country holds attention", async () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+        {} as unknown as RenderingContext
+      );
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      await waitFor(() => {
+        expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+          "data-focused",
+          ""
+        );
+      });
+
+      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
+
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-focused",
+        "NGA"
+      );
+    });
+
+    // The hard rule (charter §1) under a state that did not exist when it was
+    // written: dimming must scale the halo's falloff, never draw its edge.
+    // @req REQ-116
+    it("dims the other halos without giving any of them a border", () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
+
+      const halos = [...document.querySelectorAll("circle")];
+      expect(halos).toHaveLength(2);
+      halos.forEach((halo) => {
+        expect(halo).toHaveAttribute("stroke", "none");
+        expect(Number(halo.getAttribute("opacity"))).toBeGreaterThan(0);
+      });
+      expect(document.querySelector("polygon")).not.toBeInTheDocument();
+    });
+  });
+
+  describe("the globe's own commands (REQ-117)", () => {
+    beforeEach(() => {
+      stubMatchMedia({ reducedMotion: true });
+    });
+
+    // Flattening is the one control here that makes an argument rather than a
+    // convenience: the reader watches Africa shrink against the high latitudes
+    // instead of being told that it does.
+    // @req REQ-116
+    it("unrolls the sphere into Mercator and back", async () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+        {} as unknown as RenderingContext
+      );
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      await waitFor(() => {
+        expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+          "data-morph",
+          "1"
+        );
+      });
+
+      fireEvent.click(
+        screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+      );
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-morph",
+        "0"
+      );
+
+      fireEvent.click(screen.getByRole("button", { name: "Revenir au globe" }));
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-morph",
+        "1"
+      );
+    });
+
+    // The fallback IS the flat map. Offering to flatten it would name a change
+    // the reader cannot be shown.
+    // @req REQ-116
+    it("does not offer to flatten a map that is already flat", () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      expect(
+        screen.queryByRole("button", { name: /carte plate/ })
+      ).not.toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Recentrer" })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("recentring drops the choice, the flattening and the reader's turning at once", async () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+        {} as unknown as RenderingContext
+      );
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      await waitFor(() => {
+        expect(
+          screen.getByTestId("atlas-globe-canvas-mock")
+        ).toBeInTheDocument();
+      });
+      fireEvent.click(
+        screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+      );
+      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
+      expect(screen.getByRole("dialog", { name: "Nigeria" })).toBeVisible();
+
+      fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+      await waitFor(() => {
+        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+      });
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-morph",
+        "1"
+      );
+      expect(markerFor("NGA")).toHaveAttribute("aria-pressed", "false");
+    });
+  });
+
+  describe("turning the globe by hand (REQ-117)", () => {
+    beforeEach(() => {
+      stubMatchMedia({ reducedMotion: true });
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+        {} as unknown as RenderingContext
+      );
+    });
+
+    // A country on the far side of the sphere has no marker to click, so
+    // without a drag it is unreachable — the picker in the toolbar is the
+    // other half of the same problem.
+    // @req REQ-117
+    it("turns the surface with the pointer instead of leaving the far side unreachable", async () => {
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      await waitFor(() => {
+        expect(
+          screen.getByTestId("atlas-globe-canvas-mock")
+        ).toBeInTheDocument();
+      });
+      const stage = document.querySelector<HTMLElement>("[data-atlas-stage]");
+      if (!stage) throw new Error("no stage rendered");
+      const yawBefore = Number(
+        screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw
+      );
+
+      fireEvent.pointerDown(stage, {
+        pointerId: 1,
+        clientX: 100,
+        clientY: 100,
+      });
+      fireEvent.pointerMove(stage, {
+        pointerId: 1,
+        clientX: 160,
+        clientY: 100,
+      });
+      fireEvent.pointerUp(stage, { pointerId: 1 });
+
+      expect(
+        Number(screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw)
+      ).not.toBeCloseTo(yawBefore, 3);
+    });
+
+    // @req REQ-117
+    it("leaves the surface where it is until a pointer is actually down", async () => {
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      await waitFor(() => {
+        expect(
+          screen.getByTestId("atlas-globe-canvas-mock")
+        ).toBeInTheDocument();
+      });
+      const stage = document.querySelector<HTMLElement>("[data-atlas-stage]");
+      if (!stage) throw new Error("no stage rendered");
+      const yawBefore = Number(
+        screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw
+      );
+
+      fireEvent.pointerMove(stage, {
+        pointerId: 1,
+        clientX: 300,
+        clientY: 100,
+      });
+
+      expect(
+        Number(screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw)
+      ).toBeCloseTo(yawBefore, 4);
     });
   });
 });

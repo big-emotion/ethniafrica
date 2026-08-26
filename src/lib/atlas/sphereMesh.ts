@@ -21,6 +21,31 @@ const DEG2RAD = Math.PI / 180;
 export const mercatorY = (lat: number): number =>
   Math.log(Math.tan(Math.PI / 4 + (lat * DEG2RAD) / 2));
 
+/**
+ * Where a lon/lat lands on the flat Mercator plane the surface morphs into.
+ *
+ * Extracted so the people field's points and the terrain mesh are laid out by
+ * one formula: a halo placed by a second, near-identical derivation would
+ * drift off the country under it as soon as either was touched.
+ *
+ * Latitude is clamped to the Mercator limit — past it the projection runs away
+ * to infinity — which parks anything polar on the plane's edge.
+ */
+// @req REQ-112
+export function lonLatToFlat(
+  lon: number,
+  lat: number
+): { x: number; y: number } {
+  const clampedLat = Math.min(
+    MERCATOR_LATITUDE_LIMIT,
+    Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
+  );
+  return {
+    x: GLOBE_RADIUS * lon * DEG2RAD,
+    y: GLOBE_RADIUS * mercatorY(clampedLat),
+  };
+}
+
 export interface FlatHalfExtent {
   halfWidth: number;
   halfHeight: number;
@@ -79,17 +104,13 @@ export function buildSphereMesh(): SphereMesh {
     // which makes their quads zero-height — they rasterize to nothing, so
     // closing the sphere costs the flat map neither framing nor a
     // squashed polar band.
-    const flatLat = Math.min(
-      MERCATOR_LATITUDE_LIMIT,
-      Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
-    );
-
     for (let i = 0; i <= segX; i++) {
       const u = i / segX;
       const lon = -180 + u * 360;
 
-      flatPositions[vertex * 3] = GLOBE_RADIUS * lon * DEG2RAD;
-      flatPositions[vertex * 3 + 1] = GLOBE_RADIUS * mercatorY(flatLat);
+      const flat = lonLatToFlat(lon, lat);
+      flatPositions[vertex * 3] = flat.x;
+      flatPositions[vertex * 3 + 1] = flat.y;
       flatPositions[vertex * 3 + 2] = 0;
 
       const phi = lat * DEG2RAD;
