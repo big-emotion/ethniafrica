@@ -1,24 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 
+import { AxisModulePanel } from "@/components/home/AxisModulePanel";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
-  getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 /**
  * The three entry points (REQ-113): not a menu to read, three targets to
- * hit. Each carries a live glyph, a figure and one verb — the ten modules
- * live behind the click, on the axis hub the card opens (REQ-114).
+ * hit. Each carries a live glyph, a figure and one verb — and the modules
+ * behind it deploy on the home itself, around the card the reader clicked,
+ * rather than on a hub page one load away (REQ-114).
  *
  * Every figure counts entries that exist. The card that once promised
  * "3 000 ans" was describing a span the corpus never held (ETNI-1198).
@@ -178,35 +180,62 @@ function AxisGlyph({
 }
 
 /**
- * An axis is only as live as the modules behind it. Asking the registry's
- * own `isModuleEnabled` — the same predicate the hub behind the card uses —
- * is what keeps the two from disagreeing: a `flagged` module with its flag
- * dark is not `unavailable`, so a card merely skipping `unavailable` would
- * promise an action over a hub showing nothing. The card also starts
- * promising again by itself the day a module ships or a flag lights, with
- * nothing here to remember to undo.
+ * An axis is only as live as the modules behind it — and since the card now
+ * deploys those very modules, it reads its promise off the same resolved
+ * list it is about to show. That is stricter than asking the registry: the
+ * server has already applied `isModuleEnabled` (so a `flagged` module with
+ * its flag dark cannot pass for live) *and* probed the backing table, so an
+ * axis whose only module is a route over an empty table stops promising
+ * too. The card starts promising again by itself the day a module ships or
+ * a flag lights, with nothing here to remember to undo.
  */
-function axisHasLiveModule(mode: AccessMode): boolean {
-  return getModulesForAccessMode(mode).some(isModuleEnabled);
+function axisHasLiveModule(modules: HubModule[]): boolean {
+  return modules.some((module) => module.available);
 }
 
 const PENDING_CTA = "Bientôt";
 
-function pendingFigure(mode: AccessMode): string {
-  const count = getModulesForAccessMode(mode).length;
+function pendingFigure(modules: HubModule[]): string {
+  const count = modules.length;
   return `${count} module${count > 1 ? "s" : ""} en préparation`;
 }
 
 export interface AccessAxesProps {
   language: Language;
   counts: CorpusCounts;
+  modulesByAxis: Record<AccessMode, HubModule[]>;
 }
 
 // @req REQ-113
 // @req REQ-114
-export function AccessAxes({ language, counts }: AccessAxesProps) {
+export function AccessAxes({
+  language,
+  counts,
+  modulesByAxis,
+}: AccessAxesProps) {
   const reducedMotion = usePrefersReducedMotion();
   const animated = !reducedMotion;
+
+  const [openAxis, setOpenAxis] = useState<AccessMode | null>(null);
+  const cardRefs = useRef<Partial<Record<AccessMode, HTMLAnchorElement>>>({});
+
+  const close = useCallback(() => {
+    setOpenAxis((current) => {
+      // The card is where the reader's attention was when they opened the
+      // panel, so it is where the focus has to come back to.
+      if (current) cardRefs.current[current]?.focus();
+      return null;
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!openAxis) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [openAxis, close]);
 
   return (
     <>
@@ -220,25 +249,45 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
       <nav
         aria-label="Les trois axes"
         data-testid="access-axes"
+        data-open={openAxis ?? "none"}
         className="access-axes"
       >
         {AXES.map((axis, index) => {
-          const available = axisHasLiveModule(axis.id);
+          const modules = modulesByAxis[axis.id] ?? [];
+          const available = axisHasLiveModule(modules);
+          const open = openAxis === axis.id;
 
           return (
             <Link
               key={axis.id}
+              // The hub route stays on the anchor as the path for a reader
+              // without JavaScript and for a crawler. With JavaScript the
+              // click never spends a page load on the axis slug — it opens
+              // the modules here, and the next click is the module itself.
               href={getLocalizedRoute(language, axis.page)}
+              ref={(element) => {
+                if (element) cardRefs.current[axis.id] = element;
+              }}
               data-testid={`access-axis-${axis.id}`}
               data-available={available ? "true" : "false"}
+              data-state={open ? "open" : undefined}
+              aria-expanded={open}
+              aria-controls={`axis-panel-${axis.id}`}
+              onClick={(event) => {
+                event.preventDefault();
+                if (open) close();
+                else setOpenAxis(axis.id);
+              }}
               className={cn(
                 "access-axis min-h-11",
                 ACCENT_BY_ACCESS_MODE[axis.id],
-                animated && "access-axis-reveal",
+                animated && !openAxis && "access-axis-reveal",
                 !available && "access-axis-pending"
               )}
               style={
-                animated ? { animationDelay: `${index * 90}ms` } : undefined
+                animated && !openAxis
+                  ? { animationDelay: `${index * 90}ms` }
+                  : undefined
               }
             >
               <span
@@ -248,7 +297,7 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
               >
                 <AxisGlyph axis={axis.id} animated={animated} />
               </span>
-              <h2>{axis.name}</h2>
+              <h2 id={`access-axis-title-${axis.id}`}>{axis.name}</h2>
               <p
                 data-testid={`access-axis-stake-${axis.id}`}
                 className="access-axis-stake"
@@ -259,20 +308,37 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
                 data-testid={`access-axis-figure-${axis.id}`}
                 className="access-axis-figure"
               >
-                {available ? axis.figure(counts) : pendingFigure(axis.id)}
+                {available ? axis.figure(counts) : pendingFigure(modules)}
               </p>
-              <span
-                data-testid={`access-axis-cta-${axis.id}`}
-                className="access-axis-cta"
-              >
-                {available ? axis.cta : PENDING_CTA}
-                <span className="access-axis-arrow" aria-hidden="true">
-                  →
+              {/* The verb is a promise about the click. Once the click has
+                  landed and the modules are deployed around the card,
+                  there is nothing left for it to promise. */}
+              {open ? null : (
+                <span
+                  data-testid={`access-axis-cta-${axis.id}`}
+                  className="access-axis-cta"
+                >
+                  {available ? axis.cta : PENDING_CTA}
+                  <span className="access-axis-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </span>
-              </span>
+              )}
             </Link>
           );
         })}
+
+        {openAxis ? (
+          <div className="axis-stage">
+            <AxisModulePanel
+              language={language}
+              mode={openAxis}
+              modules={modulesByAxis[openAxis] ?? []}
+              labelledBy={`access-axis-title-${openAxis}`}
+              onClose={close}
+            />
+          </div>
+        ) : null}
       </nav>
 
       <style>{`
@@ -293,6 +359,47 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           gap: 18px;
           max-width: 1140px;
           margin: 0 auto;
+        }
+
+        /* An axis opens on the page rather than on a route of its own: the
+           group becomes a stage, the two other cards step out of it, and
+           the chosen one takes the centre with its modules deployed
+           around it. */
+        .access-axes:not([data-open="none"]) {
+          display: block;
+          position: relative;
+        }
+        .access-axes:not([data-open="none"])
+          .access-axis:not([data-state="open"]) {
+          display: none;
+        }
+        .access-axes:not([data-open="none"]) .access-axis[data-state="open"] {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 264px;
+          transform: translate(-50%, -50%);
+          /* Sits mid-stack on purpose: the module nodes carry a z-index
+             derived from their depth, so the ones behind the ring pass
+             behind the card and the ones in front pass over it. Putting
+             the card on top would flatten the scene it stands in. */
+          z-index: 10;
+          animation: axis-card-centre var(--afh-duration-slow)
+            var(--afh-ease-out) both;
+        }
+        @keyframes axis-card-centre {
+          from {
+            opacity: 0.5;
+            transform: translate(-50%, -50%) scale(0.88);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+
+        .axis-stage {
+          position: relative;
         }
 
         .access-axis {
@@ -473,6 +580,28 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           .access-axes {
             grid-template-columns: 1fr;
             gap: 12px;
+          }
+          /* No stage on a phone: the opened card stays in flow and its
+             modules stack under it, which is also where AxisModulePanel
+             drops the graph and its second WebGL context.
+
+             It also leaves the three-column row below — that grid places
+             its children by named area, and the panel that follows the
+             card has no area of its own. */
+          .access-axes:not([data-open="none"]) .access-axis[data-state="open"] {
+            position: static;
+            width: auto;
+            transform: none;
+            animation: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 18px;
+          }
+          .access-axis[data-state="open"] .access-axis-stake,
+          .access-axis[data-state="open"] .access-axis-figure {
+            margin: -4px 0 0;
           }
           .access-axis {
             display: grid;
