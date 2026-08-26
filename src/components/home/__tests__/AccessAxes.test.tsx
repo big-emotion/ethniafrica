@@ -10,7 +10,9 @@ import { getLocalizedRoute } from "@/lib/routing";
 import {
   ACCESS_MODES,
   getModulesForAccessMode,
+  isModuleEnabled,
   type AccessMode,
+  type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
@@ -22,17 +24,26 @@ const counts: CorpusCounts = {
   migrations: 6,
 };
 
-// The axes now carry the modules the server resolved, so the fixture is
-// the registry with every route-bearing module live — the state the corpus
-// is actually in.
-const modulesByAxis = Object.fromEntries(
-  ACCESS_MODES.map((mode) => [
-    mode,
-    getModulesForAccessMode(mode).map((definition) => ({
+/**
+ * What getHubModules hands the page for one axis: dark-flagged modules
+ * dropped, the rest carrying their resolved `available`. `isModuleEnabled`
+ * is the real implementation here — it is the lock the card's promise
+ * ultimately rests on — and a data module counts as live, which is the
+ * state the corpus is actually in.
+ */
+const resolveModules = (mode: AccessMode): HubModule[] =>
+  getModulesForAccessMode(mode)
+    .filter(
+      (definition) =>
+        definition.availability !== "flagged" || isModuleEnabled(definition)
+    )
+    .map((definition) => ({
       ...definition,
-      available: definition.availability !== "unavailable",
-    })),
-  ])
+      available: isModuleEnabled(definition),
+    }));
+
+const modulesByAxis = Object.fromEntries(
+  ACCESS_MODES.map((mode) => [mode, resolveModules(mode)])
 ) as Record<AccessMode, HubModule[]>;
 
 const renderAxes = (props: Partial<AccessAxesProps> = {}) =>
@@ -75,6 +86,39 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     expect(
       screen.getByRole("heading", { level: 2, name: "Jouer" })
     ).toBeInTheDocument();
+  });
+
+  // The filing criterion behind the three axes, said out loud. It orients
+  // the reader; it is not a level in the outline, and the home pins its h3
+  // count at zero — so it must render as a paragraph, never a heading.
+  // @req REQ-113
+  it("states the filing criterion above the cards without adding a heading", () => {
+    renderAxes();
+
+    expect(screen.getByTestId("access-axes-lead")).toHaveTextContent(
+      "Avec quoi le lecteur arrive, avec quoi il repart."
+    );
+    expect(
+      screen.queryByRole("heading", { name: /Avec quoi le lecteur/ })
+    ).toBeNull();
+  });
+
+  // Each card restates the criterion in its own terms: what the reader hands
+  // the axis, what the axis hands back.
+  // @req REQ-113
+  it.each([
+    ["explorer", "Il arrive avec un nom. Il repart avec une fiche."],
+    [
+      "comprendre",
+      "Il arrive avec une question. Il repart avec une explication.",
+    ],
+    ["jouer", "Il arrive sans rien. Il repart avec un résultat."],
+  ])("spells out what %s takes in and gives back", (id, stake) => {
+    renderAxes();
+
+    expect(screen.getByTestId(`access-axis-stake-${id}`)).toHaveTextContent(
+      stake
+    );
   });
 
   // The href survives as the no-JS and crawler path, but a reader with
@@ -137,7 +181,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "Remonter"
     );
     expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Bientôt"
+      "Comparer"
     );
   });
 
@@ -192,23 +236,94 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   });
 });
 
-// Both modules behind Jouer are `unavailable`, so /fr/jouer holds nothing
-// but "Bientôt" rows. A primary home CTA reading "Comparer" over a figure
-// promising "2 peuples face à face" sends the reader to a dead end. The
-// axis reads its own state off the registry so it starts promising again
-// by itself the day a module ships — nothing here to remember to undo.
+// A card that promises an action the hub behind it cannot deliver sends the
+// reader to a dead end. The axis reads its own state off the registry, so it
+// starts and stops promising by itself — nothing here to remember to undo.
 describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
   const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
 
+  // `comparer` is a static route that renders whatever the corpus holds, so
+  // Jouer has had something real behind it since it was filed there.
   // @req REQ-114
-  it("marks an axis whose every module is unavailable as coming soon", () => {
+  it("promises the action once one module behind the axis is live", () => {
     renderAxes({ counts });
 
-    const jouer = screen.getByTestId("access-axis-jouer");
-    expect(jouer).toHaveAttribute("data-available", "false");
-    expect(
-      screen.getByTestId("access-axis-figure-jouer")
-    ).not.toHaveTextContent("2 peuples face à face");
+    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+      "data-available",
+      "true"
+    );
+    expect(screen.getByTestId("access-axis-figure-jouer")).toHaveTextContent(
+      "2 peuples face à face"
+    );
+    expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+      "Comparer"
+    );
+  });
+
+  // The regression that matters: a `flagged` module is not `unavailable`, so
+  // an axis that merely counted non-unavailable entries would advertise
+  // modules it is about to deploy as "Bientôt" rows or not at all. The lock
+  // itself now lives one layer down — getHubModules drops a dark-flagged
+  // module and resolves `available` through isModuleEnabled, and has its own
+  // tests — so what is asserted here is the card's own rule: it promises an
+  // action only if something in the list it received is live. The flag is
+  // driven for real, through the same predicate the server applies.
+  // @req REQ-106
+  it("stays pending when nothing in the list it received is live", () => {
+    const quizFlag = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+
+    const darkJouer: HubModuleDefinition[] = [
+      {
+        id: "quiz",
+        name: "Le quiz des parcours",
+        accessMode: "jouer",
+        page: "quiz",
+        availability: "flagged",
+        featureFlag: "quiz",
+      },
+      {
+        id: "liens",
+        name: "Les liens invisibles",
+        accessMode: "jouer",
+        page: null,
+        availability: "unavailable",
+      },
+    ];
+
+    try {
+      renderAxes({
+        counts,
+        modulesByAxis: {
+          ...modulesByAxis,
+          jouer: darkJouer
+            .filter(
+              (definition) =>
+                definition.availability !== "flagged" ||
+                isModuleEnabled(definition)
+            )
+            .map((definition) => ({
+              ...definition,
+              available: isModuleEnabled(definition),
+            })),
+        },
+      });
+
+      const jouer = screen.getByTestId("access-axis-jouer");
+      expect(jouer).toHaveAttribute("data-available", "false");
+      expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+        "Bientôt"
+      );
+      // Still a link: without JavaScript the hub is where the reader sees
+      // what is coming.
+      expect(jouer).toHaveAttribute("href", "/fr/jouer");
+    } finally {
+      if (quizFlag === undefined) {
+        delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+      } else {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = quizFlag;
+      }
+    }
   });
 
   // Explorer and Comprendre both have live modules, so neither may be
@@ -248,18 +363,6 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       expect(rule).not.toContain(".access-axis-cta");
       expect(rule).not.toContain(".access-axis-figure");
     }
-  });
-
-  // Still a link: the hub is where the reader sees what is coming. What is
-  // removed is the promise of a live action, not the route.
-  // @req REQ-114
-  it("keeps the pending axis reachable rather than inert", () => {
-    renderAxes({ counts });
-
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
-      "href",
-      "/fr/jouer"
-    );
   });
 });
 
@@ -332,6 +435,19 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
     );
   });
 
+  // The verb promised what the click would do. Once the click has landed
+  // and the modules are on screen, it has nothing left to promise.
+  // @req REQ-114
+  it("drops the action verb from the card it has opened", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+
+    expect(
+      screen.queryByTestId("access-axis-cta-explorer")
+    ).not.toBeInTheDocument();
+  });
+
   // Escape is the way out of anything that opened over what you were
   // reading, and the focus has to come back where it was taken from.
   // @req REQ-114
@@ -367,7 +483,7 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
     await userEvent.click(screen.getByTestId("access-axis-jouer"));
 
     expect(
-      screen.getByTestId("axis-module-unavailable-comparer")
+      screen.getByTestId("axis-module-unavailable-liens")
     ).toHaveTextContent("Bientôt");
   });
 });

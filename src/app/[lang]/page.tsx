@@ -49,7 +49,7 @@ export default async function Home() {
   return (
     <PageLayout language="fr" hideHeader flushTop>
       <HomeHero />
-      <section className="home-axes-section" aria-label="Les trois axes">
+      <section className="home-axes-section">
         <AccessAxes
           language="fr"
           counts={counts}

@@ -165,6 +165,12 @@ export interface AtlasGlobeCanvasProps {
  * never the other geometry, so a people overlay is structurally incapable
  * of producing a closed line here.
  *
+ * The continent scene reaches this file as its frame only: the radial fields
+ * are still SVG-side, pending the ring-batching measurements that decide
+ * whether 52 outlines belong in one GL_LINES buffer. The frame draws no fill
+ * either way, so what is rendered here cannot contradict the SVG path — it is
+ * a smaller scene, not a different one.
+ *
  * It no longer owns any camera state: the pose arrives as a prop, so the only
  * animation left in this file is the country outline's trace-in reveal, and
  * that is the only reason a frame loop still runs.
@@ -321,14 +327,27 @@ export function AtlasGlobeCanvas({
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
 
       const fillOpacity =
-        overlay.kind === "country-outline"
-          ? overlay.fillOpacity
-          : overlay.tint * FAMILY_FILL_MAX_OPACITY;
+        overlay.kind === "family-footprint"
+          ? overlay.tint * FAMILY_FILL_MAX_OPACITY
+          : overlay.fillOpacity;
       const dashRepeats =
         overlay.kind === "family-footprint" ? FAMILY_DASH_REPEATS_PER_RING : 0;
 
-      const rings = overlay.rings.map((ring) => ({
-        fan: buildRingFan(ring),
+      // The continent frame is 51 reference outlines and carries no count of
+      // its own, so it reaches this program as rings like any other boundary.
+      const ringSource =
+        overlay.kind === "continent-field"
+          ? overlay.frame.flatMap((country) => country.rings)
+          : overlay.rings;
+
+      // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
+      // draw a transparent area, it draws no area at all — skipping the pass
+      // is what makes a per-country fill impossible rather than merely
+      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
+      const fillsRings = fillOpacity > 0;
+
+      const rings = ringSource.map((ring) => ({
+        fan: fillsRings ? buildRingFan(ring) : null,
         loop: buildRingLineLoop(ring),
       }));
 
@@ -354,17 +373,19 @@ export function AtlasGlobeCanvas({
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
 
         rings.forEach(({ fan, loop }) => {
-          gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
-          gl.enableVertexAttribArray(aSpherePos);
-          gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-          gl.disableVertexAttribArray(aArcFraction);
-          gl.vertexAttrib1f(aArcFraction, 0);
-          gl.uniform1f(uIsStroke, 0);
-          gl.uniform1f(uProgress, 1);
-          gl.uniform1f(uDashRepeats, 0);
-          gl.uniform4f(uColor, r, g, b, fillOpacity);
-          gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          if (fan) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
+            gl.enableVertexAttribArray(aSpherePos);
+            gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+            gl.disableVertexAttribArray(aArcFraction);
+            gl.vertexAttrib1f(aArcFraction, 0);
+            gl.uniform1f(uIsStroke, 0);
+            gl.uniform1f(uProgress, 1);
+            gl.uniform1f(uDashRepeats, 0);
+            gl.uniform4f(uColor, r, g, b, fillOpacity);
+            gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          }
 
           gl.bindBuffer(gl.ARRAY_BUFFER, loopPositionBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, loop.positions, gl.STATIC_DRAW);

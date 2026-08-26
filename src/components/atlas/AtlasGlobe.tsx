@@ -20,7 +20,7 @@ import {
   placeTargetOnSphere,
   type StagePlacement,
 } from "@/lib/atlas/markerPlacement";
-import type { AtlasOverlay, Ring } from "@/lib/atlas/overlays";
+import type { AtlasOverlay, LonLat, Ring } from "@/lib/atlas/overlays";
 import {
   biasForPanel,
   resolvePanelAnchor,
@@ -136,8 +136,77 @@ function TraceInPolygon({
   );
 }
 
+const FIELD_GRADIENT_ID = "atlas-people-field-gradient";
+const FIELD_MIN_RADIUS = 6;
+const FIELD_RADIUS_RANGE = 34;
+
 /**
- * The non-WebGL fallback: same three encodings as AtlasGlobeCanvas, drawn as
+ * Radius ∝ √weight, so the eye reads the blob's area rather than its diameter
+ * (atlas-charter §1). A people fiche weighs population and the continent scene
+ * weighs documented peoples, but a weight of 1 has to draw the same blob in
+ * both — hence one formula, called from both, rather than two that drift.
+ */
+function fieldRadius(weight: number): number {
+  return FIELD_MIN_RADIUS + FIELD_RADIUS_RANGE * Math.sqrt(Math.max(weight, 0));
+}
+
+function PeopleFieldDefs() {
+  return (
+    <defs>
+      <radialGradient id={FIELD_GRADIENT_ID}>
+        <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.9} />
+        <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
+      </radialGradient>
+    </defs>
+  );
+}
+
+/** One country's radial field, reduced to what the drawing needs: a centre and a 0..1 weight. */
+interface FieldBlob {
+  countryId: CountryId;
+  center: LonLat;
+  weight: number;
+}
+
+/**
+ * Circles with no stroke, ever. This component is handed centres and weights
+ * and nothing else — it has no ring to close even if a caller wanted one.
+ */
+function PeopleFieldCircles({
+  blobs,
+  chosenCountryId,
+}: {
+  blobs: FieldBlob[];
+  chosenCountryId: CountryId | null;
+}) {
+  return (
+    <>
+      {blobs.map((blob) => {
+        const { x, y } = projectLonLat(
+          blob.center.lon,
+          blob.center.lat,
+          BASEMAP_VIEWBOX
+        );
+        return (
+          <circle
+            key={blob.countryId}
+            cx={x}
+            cy={y}
+            r={fieldRadius(blob.weight)}
+            fill={`url(#${FIELD_GRADIENT_ID})`}
+            stroke="none"
+            opacity={
+              chosenCountryId && chosenCountryId !== blob.countryId ? 0.4 : 1
+            }
+          />
+        );
+      })}
+    </>
+  );
+}
+
+/**
+ * The non-WebGL fallback: the same encodings as AtlasGlobeCanvas, drawn as
  * flat SVG on the committed AfricaBasemap instead of a rotating sphere —
  * atlas-charter §1's rules (a people never gets a closed line) hold exactly
  * as much here as in the WebGL path, because both read the same overlay
@@ -152,43 +221,65 @@ function AtlasGlobeFallback({
   overlay,
   reducedMotion,
   pose,
-  focus,
+  cameraFocus,
+  chosenCountryId,
 }: {
   overlay: Exclude<AtlasOverlay, { kind: "people-field-missing" }>;
   reducedMotion: boolean;
   pose: CameraPose;
-  focus: AtlasTarget | null;
+  /** What the camera is pointed at, which is not always what the reader chose — the continent scene never flies. */
+  cameraFocus: LonLat | null;
+  chosenCountryId: CountryId | null;
 }) {
-  const figureTransform = basemapTransform(pose, focus?.center ?? null);
+  const figureTransform = basemapTransform(pose, cameraFocus);
 
   if (overlay.kind === "people-field") {
     return (
       <AfricaBasemap figureTransform={figureTransform}>
-        <defs>
-          <radialGradient id="atlas-people-field-gradient">
-            <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.9} />
-            <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
-          </radialGradient>
-        </defs>
-        {overlay.areas.map((area) => {
-          const { x, y } = projectLonLat(
-            area.center.lon,
-            area.center.lat,
-            BASEMAP_VIEWBOX
-          );
-          const radius = 6 + 34 * Math.sqrt(Math.max(area.populationShare, 0));
-          return (
-            <circle
-              key={area.countryId}
-              cx={x}
-              cy={y}
-              r={radius}
-              fill="url(#atlas-people-field-gradient)"
-              stroke="none"
-              opacity={focus && focus.countryId !== area.countryId ? 0.4 : 1}
+        <PeopleFieldDefs />
+        <PeopleFieldCircles
+          blobs={overlay.areas.map((area) => ({
+            countryId: area.countryId,
+            center: area.center,
+            weight: area.populationShare,
+          }))}
+          chosenCountryId={chosenCountryId}
+        />
+      </AfricaBasemap>
+    );
+  }
+
+  /**
+   * The continent scene: a geographic frame that locates, and radial fields
+   * that measure. `fill="none"` on every ring is the invariant — a filled
+   * country would encode the peoples counted inside it as a closed-border
+   * area, which is exactly what atlas-charter §1 forbids for a people. The
+   * areas carry no rings at all, so nothing here can outline one.
+   */
+  if (overlay.kind === "continent-field") {
+    return (
+      <AfricaBasemap figureTransform={figureTransform}>
+        <PeopleFieldDefs />
+        {overlay.frame.flatMap((country) =>
+          country.rings.map((ring, index) => (
+            <polygon
+              key={`${country.countryId}-${index}`}
+              points={ringToSvgPoints(ring)}
+              fill="none"
+              stroke="var(--afh-night-line)"
+              strokeWidth={1}
+              vectorEffect="non-scaling-stroke"
             />
-          );
-        })}
+          ))
+        )}
+        <PeopleFieldCircles
+          blobs={overlay.areas.map((area) => ({
+            countryId: area.countryId,
+            center: area.center,
+            weight: area.documentedPeopleShare,
+          }))}
+          chosenCountryId={chosenCountryId}
+        />
       </AfricaBasemap>
     );
   }
@@ -372,11 +463,25 @@ export function AtlasGlobe({
   const chosen =
     targets.find((target) => target.countryId === chosenCountryId) ?? null;
 
+  /**
+   * The continent scene is already framed on its whole subject, so choosing a
+   * country reveals facts without moving the map: every other marker stays
+   * where the reader last saw it, and picking a second one stays one click
+   * rather than a hunt. Holding the camera still is the same route reduced
+   * motion takes — pose is IDLE_POSE and no frame loop ever starts.
+   */
+  const cameraFollowsChoice = overlay?.kind !== "continent-field";
+  const cameraFocus = cameraFollowsChoice ? chosen : null;
+
   const destination = useMemo(
-    () => (chosen ? poseForTarget(chosen, biasForPanel(anchor)) : null),
-    [chosen, anchor]
+    () =>
+      cameraFocus ? poseForTarget(cameraFocus, biasForPanel(anchor)) : null,
+    [cameraFocus, anchor]
   );
-  const pose = useGlobeCamera(destination, reducedMotion);
+  const pose = useGlobeCamera(
+    destination,
+    reducedMotion || !cameraFollowsChoice
+  );
 
   if (!overlay || overlay.kind === "people-field-missing") {
     return (
@@ -386,11 +491,18 @@ export function AtlasGlobe({
     );
   }
 
+  // The continent scene stays on the SVG stage even where WebGL is
+  // available: the canvas does not draw its radial field, so climbing to it
+  // would trade the one signal the scene carries for a bare frame. Raising
+  // the sphere under the continent is step B of the plan, and it is gated
+  // on marker legibility, TTFB and Lighthouse budgets not yet measured.
+  const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
+
   const facts = chosen ? targetFacts(chosen) : null;
   const place = (target: AtlasTarget): StagePlacement =>
-    webglSupported
+    stageIsSphere
       ? placeTargetOnSphere(target, pose)
-      : placeTargetOnBasemap(target, pose, chosen?.center ?? null);
+      : placeTargetOnBasemap(target, pose, cameraFocus?.center ?? null);
 
   return (
     <div
@@ -399,14 +511,15 @@ export function AtlasGlobe({
       className={cn(className)}
       style={NIGHT_STAGE_STYLE}
     >
-      {webglSupported ? (
+      {stageIsSphere ? (
         <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
       ) : (
         <AtlasGlobeFallback
           overlay={overlay}
           reducedMotion={reducedMotion}
           pose={pose}
-          focus={chosen}
+          cameraFocus={cameraFocus?.center ?? null}
+          chosenCountryId={chosenCountryId}
         />
       )}
 
