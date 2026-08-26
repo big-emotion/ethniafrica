@@ -707,11 +707,22 @@ describe("transformPeopleData", () => {
     expect(result).toHaveProperty("sources");
   });
 
-  it("joins sources with separator", () => {
+  // Joining them into one line destroyed tier, url and notes before any
+  // component could see them, which is why no people fiche could show a tier.
+  // @req REQ-001
+  it("hands each source through whole, rather than as one joined line", () => {
     const result = transformPeopleData(yorubaPeople);
-    expect(result.sources).toContain(" · ");
-    expect(result.sources).toContain("SIL Ethnologue");
-    expect(result.sources).toContain("UNESCO");
+
+    expect(Array.isArray(result.sources)).toBe(true);
+    expect(result.sources.map((source) => source.label)).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("SIL Ethnologue"),
+        expect.stringContaining("UNESCO"),
+      ])
+    );
+    result.sources.forEach((source) => {
+      expect(source.standing).toBeTruthy();
+    });
   });
 
   it("handles a minimal PeopleDetail without throwing", () => {
@@ -723,7 +734,7 @@ describe("transformPeopleData", () => {
     expect(result.culture.intermediates).toEqual([]);
     expect(result.relatedPeoples.ethnicities).toEqual([]);
     expect(result.countries.distributions).toEqual([]);
-    expect(result.sources).toBe("");
+    expect(result.sources).toEqual([]);
   });
 
   // @req REQ-054

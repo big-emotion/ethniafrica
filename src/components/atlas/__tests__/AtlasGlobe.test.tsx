@@ -38,6 +38,7 @@ const countryOverlay: CountryOutlineOverlay = {
 const peopleOverlay: PeopleFieldOverlay = {
   kind: "people-field",
   areas: [{ countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 }],
+  undrawn: [],
 };
 
 /** Two countries at different densities, so a per-country tint is distinguishable from a flat wash. */
@@ -69,6 +70,7 @@ const familyPeopleOverlay: PeopleFieldOverlay = {
     { countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 },
     { countryId: "ZAF", center: { lon: 25, lat: -29 }, populationShare: 0.4 },
   ],
+  undrawn: [],
 };
 
 /** Three well-separated countries, so no marker is dropped by the 22px de-duplication. */
@@ -181,7 +183,7 @@ describe("AtlasGlobe", () => {
   it("renders the declared-missing placeholder for a people-field-missing overlay", () => {
     render(
       <AtlasGlobe
-        overlay={{ kind: "people-field-missing" }}
+        overlay={{ kind: "people-field-missing", undrawn: [] }}
         missingMessage="Répartition non renseignée"
       />
     );
@@ -354,7 +356,7 @@ describe("AtlasGlobe", () => {
     it("offers nothing to choose on a globe that declared itself empty", () => {
       render(
         <AtlasGlobe
-          overlay={{ kind: "people-field-missing" }}
+          overlay={{ kind: "people-field-missing", undrawn: [] }}
           missingMessage="Répartition non renseignée"
         />
       );
@@ -385,6 +387,47 @@ describe("AtlasGlobe", () => {
     });
 
     // @req REQ-117
+    // 394 of the corpus's 789 people fiches declare exactly one country. A
+    // dropdown with one entry offers a choice that is not one, and the button
+    // that returns from a choice has nothing to return to, so the markers
+    // stand in and neither is rendered.
+    // @req REQ-117
+    it("keeps the pastilles on a fiche with one country to choose from", () => {
+      render(
+        <AtlasGlobe
+          overlay={peopleOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+          wholeAreaLabel="Toute l'aire"
+        />
+      );
+
+      expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /Toute l'aire/ })
+      ).not.toBeInTheDocument();
+      expect(document.querySelector("[data-atlas-target]")).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("names the return-to-everything button for the entity it describes", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+          wholeAreaLabel="Toute l'aire"
+        />
+      );
+
+      expect(
+        screen.getByRole("button", { name: "Toute l'aire" })
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /Toute l'empreinte/ })
+      ).not.toBeInTheDocument();
+    });
+
     it("replaces the pastilles with a list when asked for one", () => {
       render(
         <AtlasGlobe
@@ -566,16 +609,25 @@ describe("AtlasGlobe", () => {
   describe("the continent scene (REQ-116)", () => {
     // @req REQ-116
     it("frames every committed country with a stroked outline and no fill", () => {
+      const overlay = continentOverlayFrom(CONTINENT_COUNTS);
       const { container } = render(
         <AtlasGlobe
-          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          overlay={overlay}
           missingMessage="n/a"
           targetFacts={continentTargetFacts}
         />
       );
 
+      // Counted off the overlay rather than pinned: a country contributes one
+      // polygon per ring, so an archipelago contributes several, and adding
+      // geometry to the asset should not make this test red for a framing it
+      // still draws correctly.
+      const expectedPolygons = overlay.frame.reduce(
+        (total, country) => total + country.rings.length,
+        0
+      );
       const polygons = Array.from(container.querySelectorAll("polygon"));
-      expect(polygons).toHaveLength(52);
+      expect(polygons).toHaveLength(expectedPolygons);
       expect(
         polygons.every((polygon) => polygon.getAttribute("fill") === "none")
       ).toBe(true);

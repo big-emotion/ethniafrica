@@ -1,53 +1,39 @@
-import { describe, it, expect, vi, afterEach, beforeEach } from "vitest";
-import { render, screen, cleanup, waitFor } from "@testing-library/react";
+import { describe, it, expect, afterEach } from "vitest";
+import { render, screen, cleanup } from "@testing-library/react";
+
 import { PeopleDetailViewV2 } from "../PeopleDetailViewV2";
-import type { PeoplePageData } from "@/lib/peopleDataTransformer";
+import type { PeopleDetail } from "@/types/afrik-frontend";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 
-vi.mock("@/lib/afrikLoader", () => ({
-  getPeople: vi.fn(async () => ({ id: "PPL_EWE" })),
-}));
-
-const { mockTransformPeopleData, mockFetchPeopleNamesDossier } = vi.hoisted(
-  () => ({
-    mockTransformPeopleData: vi.fn(),
-    mockFetchPeopleNamesDossier: vi.fn(async () => null),
-  })
-);
-
-vi.mock("@/lib/peopleDataTransformer", () => ({
-  transformPeopleData: mockTransformPeopleData,
-  fetchPeopleNamesDossier: mockFetchPeopleNamesDossier,
-}));
-
-const basePageData: PeoplePageData = {
-  hero: {
-    peopleId: "PPL_EWE",
-    nameMain: "Ewe",
-    exonyms: [],
-    languageFamilyId: "FLG_KWA",
-    currentCountries: ["GHA", "TGO"],
+const ewe: PeopleDetail = {
+  id: "PPL_EWE",
+  nameMain: "Ewe",
+  languageFamilyId: "FLG_KWA",
+  languageFamilyName: "Kwa",
+  currentCountries: ["GHA", "TGO"],
+  appellations: {
+    mainName: "Ewe",
+    selfAppellation: "Eʋeawo",
+    exonyms: ["Ewhe (graphie coloniale)"],
+    whyProblematic: "La graphie « Ewhe » vient des rapports coloniaux.",
   },
-  origin: {
-    migrationRoutes: [],
-    historicalSettlementZones: [],
+  languages: { mainLanguage: "Ewe", isoCodes: ["ewe"], dialects: ["Anlo"] },
+  origins: { ancientOrigins: "Migrations depuis Notsé." },
+  demography: {
+    totalPopulation: 7000000,
+    referenceYear: 2025,
+    distributionByCountry: [
+      { country: "GHA", population: 4000000 },
+      { country: "TGO", population: 3000000 },
+    ],
   },
-  language: { isoCodes: [], dialects: [] },
-  history: {},
-  culture: { intermediates: [], symbols: [] },
-  relatedPeoples: { ethnicities: [] },
-  countries: {
-    totalPopulation: 0,
-    totalPopulationFormatted: "0",
-    distributions: [],
-  },
-  sources: "",
-  names: null,
+  sources: [
+    { title: "SIL Ethnologue 2025", url: null, tier: "official" },
+    { title: "Note de terrain", url: null, tier: "needs_review" },
+  ],
 };
 
-mockTransformPeopleData.mockReturnValue(basePageData);
-
-const twoCountryFragmentation: PeopleFragmentation = {
+const fragmentation: PeopleFragmentation = {
   peopleId: "PPL_EWE",
   autonym: "Eʋeawo",
   exonym: "Ewe",
@@ -59,109 +45,94 @@ const twoCountryFragmentation: PeopleFragmentation = {
   borderPairs: [],
 };
 
-function mockFragmentationFetch(
-  response: { ok: boolean; json: () => Promise<unknown> } | null
-) {
-  global.fetch = vi.fn(async (url: string | URL) => {
-    if (String(url).includes("/fragmentation")) {
-      return (response ?? { ok: false, json: async () => ({}) }) as Response;
-    }
-    return { ok: false, json: async () => ({}) } as Response;
-  }) as unknown as typeof fetch;
-}
+describe("PeopleDetailViewV2", () => {
+  afterEach(cleanup);
 
-describe("PeopleDetailViewV2 — fragmentation wiring", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    mockTransformPeopleData.mockReturnValue(basePageData);
-    mockFetchPeopleNamesDossier.mockResolvedValue(null);
+  // The view was a client component that fetched its own fiche, which cost the
+  // page its server rendering — and with it the axe audit and the Lighthouse
+  // score, on a fiche measured by both. The route already awaits all of this.
+  // @req REQ-091
+  it("renders from the props it is handed, with no fetching of its own", () => {
+    render(<PeopleDetailViewV2 people={ewe} />);
+
+    expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Migrations depuis Notsé/)).toBeInTheDocument();
   });
 
-  afterEach(() => {
+  // The mockup opens on the naming section, before any figure: it is the
+  // fiche's editorial position, not a detail of its identity block.
+  // @req REQ-115
+  it("opens on the name borne and the names imposed", () => {
+    render(<PeopleDetailViewV2 people={ewe} />);
+
+    expect(
+      screen.getByText("Le nom porté, les noms subis")
+    ).toBeInTheDocument();
+    // The hero carries the autonym too, so this asserts presence rather than
+    // uniqueness; PeopleNamingBlock's own test pins where it sits.
+    expect(screen.getAllByText("Eʋeawo").length).toBeGreaterThan(0);
+    expect(screen.getByText(/Ewhe \(graphie coloniale\)/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Pourquoi ces noms posent problème/)
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-116
+  it("explains the globe's grammar rather than leaving the halo to be guessed at", () => {
+    render(<PeopleDetailViewV2 people={ewe} />);
+
+    expect(
+      screen.getByText("Pourquoi la carte ne trace pas de frontière")
+    ).toBeInTheDocument();
+    expect(screen.getByText(/2 populations par pays/)).toBeInTheDocument();
+  });
+
+  // 316 of 789 fiches carry no whyProblematic, and 4 record no exonym. Each
+  // absence has to cost its own block, never a heading standing over nothing.
+  // @req REQ-115
+  it("drops the parts of the naming section the fiche cannot fill", () => {
+    render(
+      <PeopleDetailViewV2
+        people={{
+          ...ewe,
+          appellations: { mainName: "Ewe", selfAppellation: "Eʋeawo" },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText("Le nom porté, les noms subis")
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Exonymes")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Pourquoi ces noms posent problème/)
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-116
+  it("omits the cartographic grammar for a fiche declaring no distribution", () => {
+    render(<PeopleDetailViewV2 people={{ ...ewe, demography: undefined }} />);
+
+    expect(
+      screen.queryByText("Pourquoi la carte ne trace pas de frontière")
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-092
+  it("shows each source with the tier it carries", () => {
+    render(<PeopleDetailViewV2 people={ewe} />);
+
+    expect(screen.getByText("Officielle")).toBeInTheDocument();
+    expect(screen.getByText("En attente d'examen")).toBeInTheDocument();
+  });
+
+  // @req REQ-091
+  it("renders the colonial fragmentation the route resolved, and nothing when there is none", () => {
+    render(<PeopleDetailViewV2 people={ewe} fragmentation={fragmentation} />);
+    expect(screen.getByText("Fragmentation coloniale")).toBeInTheDocument();
+
     cleanup();
-  });
-
-  // @req REQ-091
-  it("renders the fragmentation section when the endpoint returns >= 2 countries", async () => {
-    mockFragmentationFetch({
-      ok: true,
-      json: async () => ({ data: twoCountryFragmentation }),
-    });
-
-    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
-
-    await waitFor(() => {
-      expect(screen.getByText("Fragmentation coloniale")).toBeInTheDocument();
-    });
-    expect(screen.getByRole("table")).toBeInTheDocument();
-  });
-
-  // @req REQ-091
-  it("does not render the section when the endpoint has no data (single-country / 422)", async () => {
-    mockFragmentationFetch({ ok: false, json: async () => ({}) });
-
-    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
-
-    await waitFor(() => {
-      expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
-    });
+    render(<PeopleDetailViewV2 people={ewe} />);
     expect(screen.queryByText("Fragmentation coloniale")).toBeNull();
-  });
-
-  // @req REQ-091
-  it("does not break the rest of the fiche when the fragmentation fetch errors", async () => {
-    global.fetch = vi.fn(async () => {
-      throw new Error("network error");
-    }) as unknown as typeof fetch;
-
-    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
-
-    await waitFor(() => {
-      expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
-    });
-    expect(screen.queryByText("Fragmentation coloniale")).toBeNull();
-  });
-});
-
-describe("PeopleDetailViewV2 — names wiring", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    mockTransformPeopleData.mockReturnValue(basePageData);
-    mockFetchPeopleNamesDossier.mockResolvedValue(null);
-  });
-
-  afterEach(() => {
-    cleanup();
-  });
-
-  // @req REQ-054 REQ-056
-  it("threads the fetched names dossier into transformPeopleData", async () => {
-    const dossier = { peopleId: "PPL_EWE", autonym: "Eʋeawo", names: [] };
-    mockFetchPeopleNamesDossier.mockResolvedValue(dossier);
-    mockFragmentationFetch({ ok: false, json: async () => ({}) });
-
-    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
-
-    await waitFor(() => {
-      expect(mockFetchPeopleNamesDossier).toHaveBeenCalledWith("PPL_EWE");
-    });
-    await waitFor(() => {
-      expect(mockTransformPeopleData).toHaveBeenLastCalledWith(
-        expect.anything(),
-        dossier
-      );
-    });
-  });
-
-  // @req REQ-054 (UX-DR31)
-  it("does not break the rest of the fiche when the names fetch errors", async () => {
-    mockFetchPeopleNamesDossier.mockRejectedValue(new Error("network error"));
-    mockFragmentationFetch({ ok: false, json: async () => ({}) });
-
-    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
-
-    await waitFor(() => {
-      expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
-    });
   });
 });

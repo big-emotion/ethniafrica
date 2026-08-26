@@ -41,6 +41,7 @@ export interface Admin0Country {
   rings: [number, number][][];
 }
 
+// @req REQ-116
 export const AFRICA_ADMIN0: Record<string, Admin0Country> = {
 ${entries.join("\n")}
 };

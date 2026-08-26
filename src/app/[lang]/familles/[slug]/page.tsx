@@ -239,7 +239,7 @@ export default async function FamillesSlugPage({
             <AtlasGlobe
               overlay={familyOverlay}
               targetPicker="list"
-              targetFactsById={familyTargetFacts}
+              facts={familyTargetFacts}
               legend={<FamilyFootprintLegend />}
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />

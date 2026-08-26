@@ -31,6 +31,7 @@ import {
   SOURCE_KINDS,
   SOURCE_TIERS,
   SOURCE_TIER_LABELS_FR,
+  sourceStandingLabelFr,
   SOURCE_TIER_WEIGHTS,
 } from "@/types/sources";
 
@@ -314,5 +315,38 @@ describe("source tier vocabulary contract — Supabase schema", () => {
       "CREATE OR REPLACE FUNCTION enforce_name_record_sources()"
     );
     expect(sql).toContain("tier IN ('official', 'referenced')");
+  });
+});
+
+describe("sourceStandingLabelFr", () => {
+  // A source nobody has judged is not a source judged weak. Folding
+  // needs_review into "Non vérifiée" states a verdict no one reached, which
+  // is the distinction the tier policy exists to keep visible.
+  // @req REQ-092
+  it("gives a source awaiting review a label of its own", () => {
+    expect(sourceStandingLabelFr("needs_review")).toBe("En attente d'examen");
+    expect(sourceStandingLabelFr("needs_review")).not.toBe(
+      sourceStandingLabelFr("unverified")
+    );
+  });
+
+  // @req REQ-092
+  it("labels the three authority tiers as the policy names them", () => {
+    expect(sourceStandingLabelFr("official")).toBe("Officielle");
+    expect(sourceStandingLabelFr("referenced")).toBe("Référencée");
+    expect(sourceStandingLabelFr("unverified")).toBe("Non vérifiée");
+  });
+
+  // strictNullChecks is off here, so an uncovered value resolves to undefined
+  // and renders as literally nothing — a source with no visible provenance at
+  // all, which is the one outcome the policy forbids.
+  // @req REQ-092
+  it("never renders nothing for a standing it does not recognise", () => {
+    expect(sourceStandingLabelFr("tier-1" as never)).toBe(
+      "En attente d'examen"
+    );
+    expect(sourceStandingLabelFr(undefined as never)).toBe(
+      "En attente d'examen"
+    );
   });
 });

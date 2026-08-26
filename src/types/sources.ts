@@ -70,9 +70,12 @@ export const SOURCE_PENDING_REVIEW_LABEL_FR = "En attente d'examen";
 export function sourceStandingLabelFr(
   standing: SourceTier | "needs_review"
 ): string {
-  return standing === "needs_review"
-    ? SOURCE_PENDING_REVIEW_LABEL_FR
-    : SOURCE_TIER_LABELS_FR[standing];
+  // Anything the vocabulary does not recognise reads as awaiting review, not
+  // as blank. strictNullChecks is off in this repo, so an uncovered value
+  // resolves to `undefined` and renders as literally nothing — a source with
+  // no visible provenance at all, the one outcome the tier policy forbids.
+  // Falling back here claims the least rather than the most.
+  return SOURCE_TIER_LABELS_FR[standing] ?? SOURCE_PENDING_REVIEW_LABEL_FR;
 }
 
 /**

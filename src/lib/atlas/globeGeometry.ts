@@ -4,12 +4,14 @@
  * sight, so the geometry math is unit-testable without a real context.
  */
 import { lonLatToSphere, type SpherePoint } from "@/lib/atlas/projection";
-import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 import {
   ringCentroid,
   type PeopleFieldArea,
   type Ring,
 } from "@/lib/atlas/overlays";
+import { orderedPeopleFieldAreas } from "@/lib/atlas/peopleField";
+import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
+import type { CountryId } from "@/types/afrik";
 
 function sphereDistance(a: SpherePoint, b: SpherePoint): number {
   const dx = a.x - b.x;
@@ -118,16 +120,25 @@ export interface PointFieldGeometry {
   flatPositions: Float32Array;
   /** 1 float per point — populationShare, 0..1. Never a boundary. */
   weights: Float32Array;
+  /** The country each point stands for, in emitted order, so the caller can key focus to a vertex. */
+  countryIds: CountryId[];
   vertexCount: number;
 }
 
-/** GL_POINTS for the people field — structurally incapable of drawing a line. */
+/**
+ * GL_POINTS for the people field — structurally incapable of drawing a line.
+ *
+ * Emitted largest share first (peopleField.ts), so the smallest presence is
+ * rasterized last and survives under the big ones.
+ */
 // @req REQ-116
 export function buildPointField(areas: PeopleFieldArea[]): PointFieldGeometry {
-  const positions = new Float32Array(areas.length * 3);
-  const flatPositions = new Float32Array(areas.length * 3);
-  const weights = new Float32Array(areas.length);
-  areas.forEach((area, i) => {
+  const ordered = orderedPeopleFieldAreas(areas);
+  const positions = new Float32Array(ordered.length * 3);
+  const flatPositions = new Float32Array(ordered.length * 3);
+  const weights = new Float32Array(ordered.length);
+
+  ordered.forEach((area, i) => {
     const point = lonLatToSphere(area.center.lon, area.center.lat);
     positions[i * 3] = point.x;
     positions[i * 3 + 1] = point.y;
@@ -140,5 +151,12 @@ export function buildPointField(areas: PeopleFieldArea[]): PointFieldGeometry {
 
     weights[i] = area.populationShare;
   });
-  return { positions, flatPositions, weights, vertexCount: areas.length };
+
+  return {
+    positions,
+    flatPositions,
+    weights,
+    countryIds: ordered.map((area) => area.countryId),
+    vertexCount: ordered.length,
+  };
 }

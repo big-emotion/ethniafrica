@@ -5,10 +5,12 @@ import {
   getLatestEntityRevisionVersion,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
+import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
+import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
+import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
@@ -194,6 +196,9 @@ export default async function PeoplesSlugPage({
   }
 
   const peopleDetail = mapPeopleDetail(people);
+  const peopleFieldOverlay = buildPeopleFieldOverlay(
+    peopleDetail.demography?.distributionByCountry
+  );
 
   // Live version (revalidate = 3600 at segment level)
   return (
@@ -212,18 +217,35 @@ export default async function PeoplesSlugPage({
           }}
           globe={
             <AtlasGlobe
-              overlay={buildPeopleFieldOverlay(
-                peopleDetail.demography?.distributionByCountry
-              )}
+              overlay={peopleFieldOverlay}
               missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
+              facts={buildPeoplePresenceFacts({
+                peopleName: peopleDetail.nameMain,
+                peopleId: parsed.slug,
+                demography: peopleDetail.demography,
+              })}
+              fallbackNote={peopleFallbackNote(
+                peopleDetail.nameMain,
+                peopleFieldOverlay
+              )}
+              // Markers sit on the sphere, so a country that has rotated
+              // behind it has no button to click. AtlasGlobe falls back to
+              // markers on a fiche with a single country, where a one-entry
+              // list would be furniture.
+              targetPicker="list"
+              wholeAreaLabel="Toute l'aire"
             />
           }
           record={
-            <PeopleDetailView
-              peopleId={parsed.slug}
-              language="fr"
-              initialData={peopleDetail}
-              initialSourceFlag={sourceFlags.length > 0}
+            // Server-rendered, from what this route already awaited. The view
+            // it replaces fetched the same fiche, fragmentation and names
+            // dossier again from the browser, which cost the page its server
+            // rendering — and with it the axe audit and the Lighthouse score.
+            <PeopleDetailViewV2
+              people={peopleDetail}
+              namesDossier={namesDossier}
+              fragmentation={fragmentation}
+              hasSourceFlag={sourceFlags.length > 0}
             />
           }
         />

@@ -9,6 +9,7 @@ interface AfrikBreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
+// @req REQ-115
 export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
   if (!items.length) return null;
 
@@ -34,7 +35,17 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
                 {item.label}
               </Link>
             ) : (
-              <span className="font-medium opacity-80">{item.label}</span>
+              // The crumb with no href is where the reader actually is, and it
+              // was the only one dimmed — soft text made softer, which axe
+              // reads as a serious contrast failure. It gets full ink instead;
+              // the path back is the part that can afford to be quiet.
+              <span
+                className="font-medium"
+                style={{ color: "var(--afh-text, #111827)" }}
+                aria-current="page"
+              >
+                {item.label}
+              </span>
             )}
           </li>
         ))}

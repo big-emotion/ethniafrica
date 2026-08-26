@@ -8,8 +8,8 @@
  * reads an overlay, so a new encoding costs a case here and nothing else.
  */
 import type { CountryId } from "@/types/afrik";
-import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import {
+  getAdmin0NameFr,
   getAdmin0Rings,
   ringCentroid,
   type AtlasOverlay,
@@ -70,7 +70,7 @@ function targetForCountry(
 
   return {
     countryId,
-    nameFr: AFRICA_ADMIN0[countryId].nameFr,
+    nameFr: getAdmin0NameFr(countryId) ?? countryId,
     center: center ?? ringCentroid(largest),
     angularSpanDeg: ringsAngularSpanDeg(rings),
   };
