@@ -40,6 +40,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
   },
 };
 
+// @req REQ-091
 export const getLocalizedRoute = (
   language: Language,
   page: PageType
@@ -53,6 +54,7 @@ export const getLocalizedRoute = (
  * `regards/colonisation-et-resistances`) isn't shadowed by a shorter one
  * sharing its first segment.
  */
+// @req REQ-091
 export const getPageFromRoute = (pathname: string): PageType | null => {
   // Format: /{lang}/{slug...}
   const parts = pathname.split("/").filter(Boolean);
@@ -74,6 +76,7 @@ export const getPageFromRoute = (pathname: string): PageType | null => {
   return null;
 };
 
+// @req REQ-091
 export const getLanguageFromRoute = (pathname: string): Language | null => {
   // Format: /{lang}/{slug}
   const parts = pathname.split("/").filter(Boolean);
@@ -87,6 +90,7 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   return null;
 };
 
+// @req REQ-091
 export const getSlugFromRoute = (pathname: string): string | null => {
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length < 2) return null;
@@ -97,12 +101,15 @@ export const getSlugFromRoute = (pathname: string): string | null => {
 // Entity routes — localized href to a single fiche (ContextTriad, ETNI-818)
 // ---------------------------------------------------------------------------
 
+// @req REQ-091
 export const getCountryRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "countries")}/${id}`;
 
+// @req REQ-091
 export const getFamilyRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "families")}/${id}`;
 
+// @req REQ-097
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
 

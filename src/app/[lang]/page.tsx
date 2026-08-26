@@ -6,7 +6,7 @@ import { TrustStrip } from "@/components/home/TrustStrip";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
-// @req FR95
+// @req REQ-044 FR95
 export const metadata: Metadata = {
   title: OG_TITLE,
   description: OG_DESCRIPTION,

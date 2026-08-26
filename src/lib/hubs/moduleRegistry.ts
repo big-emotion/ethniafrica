@@ -12,12 +12,14 @@ import type { PageType } from "@/lib/routing";
 // looking for a fiche was always going to land.
 export type AccessMode = "explorer" | "comprendre" | "jouer";
 
+// @req REQ-114
 export const ACCESS_MODES: AccessMode[] = ["explorer", "comprendre", "jouer"];
 
 // One categorical accent per mode, from the CVD-validated four (color.css
 // §"Categorical accents"). Terre stays out: it is the fiche-level accent
 // for families, and reusing it for an axis would make the axis and the
 // entity read as the same scope.
+// @req REQ-114
 export const ACCENT_BY_ACCESS_MODE: Record<AccessMode, string> = {
   explorer: "afh-accent-ocre",
   comprendre: "afh-accent-teal",
@@ -52,6 +54,7 @@ export interface HubModuleDefinition {
   dataSource?: ModuleDataSource;
 }
 
+// @req REQ-114
 export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "peuples",
@@ -132,6 +135,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
 ];
 
+// @req REQ-114
 export const getModulesForAccessMode = (
   mode: AccessMode
 ): HubModuleDefinition[] =>

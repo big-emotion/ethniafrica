@@ -125,6 +125,7 @@ function compile(
  * Half-extent the surface occupies at a given morph, so the camera frames
  * the flat map and the sphere equally well without a perspective matrix.
  */
+// @req REQ-112
 export function fitScale(
   morph: number,
   aspect: number,

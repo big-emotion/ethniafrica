@@ -25,6 +25,7 @@ interface MobileNavBarProps {
 }
 
 // @req [14.5]
+// @req REQ-115
 export const MobileNavBar = ({
   language,
   onSearchClick,

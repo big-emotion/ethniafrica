@@ -26,6 +26,7 @@ const TOKEN_BY_ROLE: Record<keyof GlobePalette, string> = {
 // getComputedStyle cannot answer — server rendering, a detached canvas in
 // a test — so the globe never falls back to an unpainted texture.
 // globePalette.test.ts reads color.css and fails if the two drift apart.
+// @req REQ-112
 export const GLOBE_PALETTE_FALLBACK: GlobePalette = {
   ocean: "#120e0a",
   graticule: "#42341f",

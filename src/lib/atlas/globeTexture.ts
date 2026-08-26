@@ -12,9 +12,11 @@ import { AFRICA_LANDMASS_PATH } from "@/lib/atlas/assets/africaLandmassPath";
 // @req REQ-112
 export const GLOBE_TEXTURE_SIZE = { width: 2048, height: 1024 } as const;
 
+// @req REQ-112
 export const GRATICULE_STEP_DEGREES = 15;
 
 /** Beyond this latitude the Mercator flat view runs away to infinity. */
+// @req REQ-112
 export const MERCATOR_LATITUDE_LIMIT = 80;
 
 export interface GlobePalette {
@@ -35,14 +37,19 @@ export interface GlobePalette {
  * into Mercator they swell toward the poles by sec²(latitude), ×4 at 60°.
  * The reader is shown the distortion rather than told about it.
  */
+// @req REQ-112
 export const TISSOT_RADIUS_DEGREES = 4.2;
+// @req REQ-112
 export const TISSOT_SPACING_DEGREES = 30;
 /** Past this latitude the discs crowd into an unreadable band. */
+// @req REQ-112
 export const TISSOT_LATITUDE_LIMIT = 60;
 
+// @req REQ-112
 export const lonToTextureX = (lon: number): number =>
   ((lon + 180) / 360) * GLOBE_TEXTURE_SIZE.width;
 
+// @req REQ-112
 export const latToTextureY = (lat: number): number =>
   ((90 - lat) / 180) * GLOBE_TEXTURE_SIZE.height;
 
@@ -61,6 +68,7 @@ export interface Graticule {
   parallels: Parallel[];
 }
 
+// @req REQ-112
 export function buildGraticule(): Graticule {
   const meridians: Meridian[] = [];
   for (let lon = -180; lon <= 180; lon += GRATICULE_STEP_DEGREES) {
@@ -88,6 +96,7 @@ export interface LandmassTransform {
  * Places the committed basemap path — authored in its own 800x758 viewBox
  * (assets/README.md) — at Africa's real bounds inside the world texture.
  */
+// @req REQ-112
 export function landmassTransform(): LandmassTransform {
   const { lonMin, lonMax, latMin, latMax } = AFRICA_GEO_BOUNDS;
   return {
@@ -110,6 +119,7 @@ export interface LonLatDegrees {
  * lon/lat — the great-circle offset formula, so the ring stays a true
  * circle on the sphere rather than an ellipse drawn in map coordinates.
  */
+// @req REQ-112
 export function geodesicCircle(
   centre: LonLatDegrees,
   radiusDegrees: number,
@@ -143,6 +153,7 @@ export function geodesicCircle(
 }
 
 /** Centres of the indicatrix grid, one every TISSOT_SPACING_DEGREES. */
+// @req REQ-112
 export function tissotCentres(): LonLatDegrees[] {
   const centres: LonLatDegrees[] = [];
   for (
