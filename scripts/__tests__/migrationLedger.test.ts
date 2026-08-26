@@ -158,6 +158,50 @@ describe("reconcileMigrations", () => {
     expect(result.drifted).toEqual([]);
   });
 
+  // Measured against the real recette ledger: the Supabase CLI splits a file
+  // into statements and drops each terminator, so `END $$;` is stored as
+  // `END $$`. Counting that separator as content marked 41 of 42 migrations
+  // drifted on first contact — a gate that cries wolf on everything is worse
+  // than none, because it teaches people to ignore it.
+  // @req REQ-032
+  it("does not call a file drifted over the statement terminators the ledger strips", () => {
+    const result = reconcileMigrations(
+      [
+        file(
+          "003",
+          "add_unique_constraint",
+          "DO $$\nBEGIN\n  ALTER TABLE sources ADD x int;\nEND $$;\n"
+        ),
+      ],
+      [
+        row("003", "add_unique_constraint", [
+          "DO $$\nBEGIN\n  ALTER TABLE sources ADD x int;\nEND $$",
+        ]),
+      ]
+    );
+
+    expect(result.drifted).toEqual([]);
+    expect(result.applied).toHaveLength(1);
+  });
+
+  // @req REQ-032
+  it("still sees a real edit once terminators are discounted", () => {
+    const result = reconcileMigrations(
+      [
+        file(
+          "003",
+          "add_unique_constraint",
+          "ALTER TABLE sources ADD x int;\n"
+        ),
+      ],
+      [row("003", "add_unique_constraint", ["ALTER TABLE sources ADD y int"])]
+    );
+
+    expect(result.drifted.map((entry) => entry.name)).toEqual([
+      "add_unique_constraint",
+    ]);
+  });
+
   // @req REQ-032
   it("cannot judge drift on a row the ledger stored without its statements", () => {
     const result = reconcileMigrations(
@@ -261,15 +305,23 @@ describe("auditMigrationFiles", () => {
 });
 
 describe("normaliseSql", () => {
+  // Terminators go too: the ledger stores statements without them, so keeping
+  // them would make every file differ from its own recorded form.
   // @req REQ-032
-  it("drops line comments, block comments and repeated whitespace", () => {
+  it("drops comments, repeated whitespace and statement terminators", () => {
     expect(normaliseSql("-- header\n/* block */\nSELECT   1,\n       2;")).toBe(
-      "select 1, 2;"
+      "select 1, 2"
     );
   });
 
   // @req REQ-032
   it("keeps a double dash that sits inside a string literal", () => {
-    expect(normaliseSql("SELECT 'a -- b';")).toBe("select 'a -- b';");
+    expect(normaliseSql("SELECT 'a -- b';")).toBe("select 'a -- b'");
+  });
+
+  // A semicolon inside a literal is content, not a separator.
+  // @req REQ-032
+  it("keeps a semicolon that sits inside a string literal", () => {
+    expect(normaliseSql("SELECT 'a; b';")).toBe("select 'a; b'");
   });
 });

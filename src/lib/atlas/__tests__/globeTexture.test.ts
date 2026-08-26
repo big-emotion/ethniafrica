@@ -15,6 +15,7 @@ import {
   tissotCentres,
   type GlobePalette,
 } from "@/lib/atlas/globeTexture";
+import { WORLD_LANDMASS_PATH } from "@/lib/atlas/assets/worldLandmassPath";
 import { AFRICA_GEO_BOUNDS, BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
 
 const palette: GlobePalette = {
@@ -22,6 +23,7 @@ const palette: GlobePalette = {
   graticule: "#42341f",
   graticuleMajor: "#5d4a2e",
   land: "#6b4a22",
+  landFar: "rgba(241,231,216,0.40)",
   coast: "#e8b96a",
   equator: "#7a8ce8",
   tissot: "rgba(51,163,144,0.30)",
@@ -215,6 +217,43 @@ describe("paintGlobeTexture — the painted result (REQ-112)", () => {
     expect(strokeStyles).toContain(palette.graticuleMajor);
     expect(strokeStyles).toContain(palette.equator);
     expect(strokeStyles).toContain(palette.coast);
+  });
+
+  // The other continents place Africa on a real planet without competing
+  // with it: painting them first is what leaves Africa the last landmass
+  // laid down, and the only one drawn at full strength.
+  // @req REQ-112
+  it("paints the rest of the world under Africa, never over it", () => {
+    const { ctx, fillStyles } = recordingContext();
+
+    paintGlobeTexture(ctx as unknown as CanvasRenderingContext2D, palette);
+
+    expect(fillStyles).toContain(palette.landFar);
+    expect(fillStyles.indexOf(palette.landFar)).toBeGreaterThan(
+      fillStyles.indexOf(palette.ocean)
+    );
+    expect(fillStyles.indexOf(palette.landFar)).toBeLessThan(
+      fillStyles.indexOf(palette.land)
+    );
+  });
+
+  // The path is committed pre-projected into texture pixels, so a
+  // regenerated asset that used different bounds would silently paint the
+  // world off the edge of the sphere instead of failing.
+  // @req REQ-112
+  it("keeps the committed world silhouette inside the texture bounds", () => {
+    const coordinates = WORLD_LANDMASS_PATH.match(
+      /-?\d+(\.\d+)?,-?\d+(\.\d+)?/g
+    );
+
+    expect(coordinates?.length ?? 0).toBeGreaterThan(1000);
+    for (const pair of coordinates ?? []) {
+      const [x, y] = pair.split(",").map(Number);
+      expect(x).toBeGreaterThanOrEqual(0);
+      expect(x).toBeLessThanOrEqual(GLOBE_TEXTURE_SIZE.width);
+      expect(y).toBeGreaterThanOrEqual(0);
+      expect(y).toBeLessThanOrEqual(GLOBE_TEXTURE_SIZE.height);
+    }
   });
 
   // The landmass is drawn under a transform; leaving it applied would drag

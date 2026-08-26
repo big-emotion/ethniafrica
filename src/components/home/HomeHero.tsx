@@ -2,12 +2,15 @@ import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
- * The home's opening band (REQ-115). It is night whatever surface the
- * reader chose for the rest of the site: the globe is dataviz, and DEC-022
- * keeps dataviz on the night surface — a lit body only reads as a body
- * against a dark sky. The `afh-on-night` scope is the same token swap the
- * page theme applies, narrowed to this subtree, so the two can never drift
- * into two different nights.
+ * The home's opening band (REQ-115). DEC-022 keeps dataviz on the night
+ * surface whatever the reader chose — a lit body only reads as a body
+ * against a dark sky — so the `afh-on-night` scope is narrowed to the
+ * globe's own panel rather than wrapping the whole band. It is the same
+ * token swap the page theme applies, so the panel and a night page can
+ * never drift into two different nights, while the copy above it follows
+ * the reader's choice like every other route. The band used to be night
+ * end to end, which made the theme control read as broken here: it fills
+ * the viewport, so nothing the reader could see answered the press.
  *
  * The band ends on a seam rather than a fade: the edge where the sky stops
  * and the archive starts is the page's one large gesture, and a gradient
@@ -22,7 +25,7 @@ export function HomeHero() {
       // 6ae60726) — restored here (ETNI-822) because e2e/home-visual.spec.ts
       // resolves the hero's crop origin via this exact locator.
       aria-label={PRODUCT_NAME}
-      className="home-hero afh-on-night"
+      className="home-hero"
     >
       <header className="home-hero-copy">
         <h1>
@@ -34,7 +37,7 @@ export function HomeHero() {
       {/* The globe says what it is from its own readout (HomeGlobe), which
           also tracks the morph — a second static caption beside it said
           less and covered it. */}
-      <div className="home-globe-holder">
+      <div className="home-globe-holder afh-on-night">
         <HomeGlobeStage />
       </div>
 
@@ -49,8 +52,8 @@ export function HomeHero() {
           margin-right: calc(50% - 50vw);
           display: flex;
           flex-direction: column;
-          background: var(--afh-night-ground);
-          color: var(--afh-night-ink);
+          background: var(--afh-bg);
+          color: var(--afh-text);
         }
 
         .home-hero-copy {
@@ -66,23 +69,29 @@ export function HomeHero() {
           line-height: 1.04;
           margin: 0 0 16px;
           text-wrap: balance;
-          color: var(--afh-night-ink);
+          color: var(--afh-text);
         }
         .home-hero-copy h1 em {
           font-style: italic;
-          color: var(--afh-night-ocre-soft);
+          color: var(--afh-display-accent);
         }
         .home-hero-copy p {
           margin: 0 auto;
           max-width: 56ch;
           font-size: 15.5px;
           line-height: 1.6;
-          color: var(--afh-night-ink-2);
+          color: var(--afh-text-soft);
         }
 
+        /* The panel, not the band, is what has to be night: it is the sky
+           the globe is lit against. It runs edge to edge and joins the seam
+           below it, so on a parchment page the dark region reads as one
+           deliberate block rather than a floating card. */
         .home-globe-holder {
           position: relative;
-          margin-top: 8px;
+          background: var(--afh-night-ground);
+          padding-top: 16px;
+          margin-top: 16px;
           flex: 1 1 auto;
           display: flex;
           flex-direction: column;

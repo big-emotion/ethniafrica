@@ -26,9 +26,7 @@ export default async function Home() {
   const counts = await getCorpusCounts();
 
   return (
-    // navOnNight: the nav is the top of the hero band, not a parchment
-    // strip above it — the sky has to start at the top of the page.
-    <PageLayout language="fr" hideHeader flushTop navOnNight>
+    <PageLayout language="fr" hideHeader flushTop>
       <HomeHero />
       <section className="home-axes-section">
         <AccessAxes language="fr" counts={counts} />
