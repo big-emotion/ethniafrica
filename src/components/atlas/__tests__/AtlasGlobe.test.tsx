@@ -371,6 +371,92 @@ describe("AtlasGlobe", () => {
     });
   });
 
+  describe("how targets are offered", () => {
+    beforeEach(() => {
+      stubMatchMedia({ reducedMotion: true });
+    });
+
+    // @req REQ-117
+    it("keeps pastilles, and no view controls, for the fiches that pass no picker", () => {
+      // The country and people fiches must come through this work unchanged.
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      expect(document.querySelector("[data-atlas-target]")).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /pays de l'empreinte/i })
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId("atlas-view-controls")
+      ).not.toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("replaces the pastilles with a list when asked for one", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      // Seventeen overlapping pastilles are why this option exists; none may
+      // survive alongside the list.
+      expect(
+        document.querySelector("[data-atlas-target]")
+      ).not.toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("counts each country's peoples in the list from the overlay itself", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      );
+      expect(screen.getByRole("option", { name: /Nigeria/ })).toHaveTextContent(
+        "4 peuples"
+      );
+      expect(screen.getByRole("option", { name: /Bénin/ })).toHaveTextContent(
+        "1 peuple"
+      );
+    });
+
+    // @req REQ-117
+    it("un-presses « toute l'empreinte » as soon as one country is chosen", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      const whole = () =>
+        screen.getByRole("button", { name: /toute l'empreinte/i });
+      expect(whole()).toHaveAttribute("aria-pressed", "true");
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      );
+      fireEvent.click(screen.getByRole("option", { name: /Nigeria/ }));
+
+      expect(whole()).toHaveAttribute("aria-pressed", "false");
+
+      fireEvent.click(whole());
+      expect(whole()).toHaveAttribute("aria-pressed", "true");
+    });
+  });
+
   /**
    * atlas-charter §1: an encoding may not exist in only one rendering
    * technique. Whatever the WebGL path says about the footprint, the fallback

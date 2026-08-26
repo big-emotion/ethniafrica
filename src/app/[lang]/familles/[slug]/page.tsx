@@ -8,6 +8,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
+import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
@@ -213,6 +214,8 @@ export default async function FamillesSlugPage({
             <AtlasGlobe
               overlay={familyOverlay}
               stageVariant="band"
+              targetPicker="list"
+              legend={<FamilyFootprintLegend />}
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />
           </FicheHeroBand>

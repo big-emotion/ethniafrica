@@ -12,6 +12,8 @@ import {
 } from "react";
 
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
+import { AtlasTargetPicker } from "@/components/atlas/AtlasTargetPicker";
+import { AtlasViewControls } from "@/components/atlas/AtlasViewControls";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { poseForTarget, type CameraPose } from "@/lib/atlas/camera";
 import {
@@ -332,6 +334,15 @@ export interface AtlasGlobeProps {
   className?: string;
   /** Defaults to the rounded card the country and people fiches already use. */
   stageVariant?: AtlasStageVariant;
+  /**
+   * How a target is offered. "markers" pins a pastille on each one, which reads
+   * well for the one or few targets a country or people fiche has. "list" is
+   * for a footprint of seventeen countries, where the pastilles would overlap
+   * into noise and the small ones would stop being clickable.
+   */
+  targetPicker?: "markers" | "list";
+  /** Sits over the globe, top left: what the drawn shape is, and what it is not. */
+  legend?: ReactNode;
 }
 
 /**
@@ -371,6 +382,15 @@ const BAND_STAGE_STYLE: CSSProperties = {
   backgroundColor: "var(--afh-night-ground)",
   borderRadius: 0,
   overflow: "hidden",
+};
+
+/** Top-centre of the band, clear of the legend in the top-left corner. */
+const PICKER_SLOT_STYLE: CSSProperties = {
+  position: "absolute",
+  top: 14,
+  left: "50%",
+  transform: "translateX(-50%)",
+  zIndex: 7,
 };
 
 function stageStyle(variant: AtlasStageVariant): CSSProperties {
@@ -415,6 +435,8 @@ export function AtlasGlobe({
   targetFacts = defaultTargetFacts,
   className,
   stageVariant = "card",
+  targetPicker = "markers",
+  legend,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
@@ -430,6 +452,18 @@ export function AtlasGlobe({
   }, []);
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
+  // Read off the overlay rather than passed in: the counts and the targets have
+  // to describe the same footprint, and deriving both from one source is what
+  // guarantees it.
+  const memberCountByCountry = useMemo(() => {
+    if (overlay?.kind !== "family-footprint") return {};
+    return Object.fromEntries(
+      overlay.countries.map((country) => [
+        country.countryId,
+        country.memberCount,
+      ])
+    );
+  }, [overlay]);
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.
@@ -488,16 +522,37 @@ export function AtlasGlobe({
         />
       )}
 
-      {targets.map((target) => (
-        <AtlasTargetMarker
-          key={target.countryId}
-          target={target}
-          placement={place(target)}
-          chosen={target.countryId === chosenCountryId}
-          label={targetFacts(target).title}
-          onChoose={() => setChosenCountryId(target.countryId)}
+      {legend}
+
+      {targetPicker === "markers" &&
+        targets.map((target) => (
+          <AtlasTargetMarker
+            key={target.countryId}
+            target={target}
+            placement={place(target)}
+            chosen={target.countryId === chosenCountryId}
+            label={targetFacts(target).title}
+            onChoose={() => setChosenCountryId(target.countryId)}
+          />
+        ))}
+
+      {targetPicker === "list" && targets.length > 0 && (
+        <div style={PICKER_SLOT_STYLE}>
+          <AtlasTargetPicker
+            targets={targets}
+            memberCountByCountry={memberCountByCountry}
+            chosenCountryId={chosenCountryId}
+            onChoose={setChosenCountryId}
+          />
+        </div>
+      )}
+
+      {targetPicker === "list" && (
+        <AtlasViewControls
+          wholeIsShown={chosenCountryId === null}
+          onShowWhole={() => setChosenCountryId(null)}
         />
-      ))}
+      )}
 
       {facts && (
         <AtlasFactsPanel
