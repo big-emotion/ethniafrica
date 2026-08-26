@@ -17,6 +17,7 @@ import {
   checkSourceUrls,
   checkPopulationPercentageDrift,
   checkAuthorizedSourceAdmissions,
+  checkCountryNameFrDistinctFromOfficial,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -102,6 +103,19 @@ function writePays(
       id: isoCode,
       content: { demographics: { peoples } },
     })
+  );
+}
+
+function writePaysNames(
+  root: string,
+  isoCode: string,
+  names: { nameFr?: string; nameOfficial?: string }
+) {
+  const dir = join(root, "pays");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${isoCode}.json`),
+    JSON.stringify({ id: isoCode, ...names, content: {} })
   );
 }
 
@@ -608,6 +622,68 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPopulationPercentageDrift(tmpDir, missingCsv);
       expect(result.ok).toBe(true);
       expect(result.warnings.some((w) => w.includes("not found"))).toBe(true);
+    });
+  });
+
+  describe("checkCountryNameFrDistinctFromOfficial (FR33)", () => {
+    // @req REQ-033
+    it("returns ok:true when nameFr differs from nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "Nigeria",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-033
+    it("returns ok:true when nameOfficial is absent", () => {
+      writePaysNames(tmpDir, "NGA", { nameFr: "Nigeria" });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false (hard error) when nameFr duplicates nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "République fédérale du Nigeria (Federal Republic of Nigeria)",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("NGA"))).toBe(true);
+      expect(
+        result.errors.some((e) => e.includes("duplicates nameOfficial"))
+      ).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false when nameFr is missing or empty", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("missing or empty"))).toBe(
+        true
+      );
+    });
+
+    // @req REQ-033
+    it("returns ok:true when pays directory has no JSON files", () => {
+      mkdirSync(join(tmpDir, "pays"), { recursive: true });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
     });
   });
 

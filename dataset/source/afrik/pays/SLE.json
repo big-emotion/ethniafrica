@@ -1,6 +1,6 @@
 {
   "id": "SLE",
-  "nameFr": "République de Sierra Leone (Republic of Sierra Leone)",
+  "nameFr": "Sierra Leone",
   "nameOfficial": "République de Sierra Leone (Republic of Sierra Leone)",
   "etymology": "Le nom \"Sierra Leone\" vient de l'espagnol \"Sierra Leona\" (montagnes du lion), donné par l'explorateur portugais Pedro de Sintra en 1462. Il aurait vu des montagnes qui ressemblaient à des lions rugissants, d'où le nom \"Serra Lyoa\" (montagnes du lion) en portugais, qui est devenu \"Sierra Leone\" en espagnol puis en anglais. Le nom a été conservé par les Britanniques lors de la colonisation.",
   "nameOriginActor": "L'explorateur portugais Pedro de Sintra a nommé la région \"Serra Lyoa\" (montagnes du lion) en 1462, en référence aux montagnes qui ressemblaient à des lions rugissants. Le nom a été anglicisé en \"Sierra Leone\" par les Britanniques.",
@@ -179,7 +179,8 @@
       "SIL Ethnologue – Languages of Sierra Leone",
       "Recensements sierra-léonais",
       "Études anthropologiques sur les peuples de Sierra Leone",
-      "Études historiques sur la colonisation britannique"
+      "Études historiques sur la colonisation britannique",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

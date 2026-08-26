@@ -1,6 +1,6 @@
 {
   "id": "GHA",
-  "nameFr": "République du Ghana (Republic of Ghana)",
+  "nameFr": "Ghana",
   "nameOfficial": "République du Ghana (Republic of Ghana)",
   "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
   "nameOriginActor": "Le nom \"Ghana\" a été choisi par Kwame Nkrumah et les nationalistes ghanéens lors de l'indépendance en 1957 pour honorer l'héritage historique de l'empire du Ghana, bien que l'empire historique ne se trouvait pas sur le territoire actuel.",
@@ -157,7 +157,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples ghanéens",
       "Études historiques sur le royaume Ashanti",
-      "CIA World Factbook – Ghana (ethnic groups, 2010 census)"
+      "CIA World Factbook – Ghana (ethnic groups, 2010 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

@@ -1,6 +1,6 @@
 {
   "id": "BDI",
-  "nameFr": "République du Burundi (Republika y'Uburundi)",
+  "nameFr": "Burundi",
   "nameOfficial": "République du Burundi (Republika y'Uburundi)",
   "etymology": "Le nom \"Burundi\" vient probablement du kirundi \"Uburundi\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Burundi.",
   "nameOriginActor": "Le nom vient du royaume précolonial du Burundi (Royaume du Burundi), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
@@ -102,7 +102,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les Grands Lacs",
       "Études historiques sur le royaume du Burundi",
-      "CIA World Factbook – Burundi (ethnic groups)"
+      "CIA World Factbook – Burundi (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

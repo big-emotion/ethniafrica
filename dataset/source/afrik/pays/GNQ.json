@@ -1,6 +1,6 @@
 {
   "id": "GNQ",
-  "nameFr": "République de Guinée équatoriale (República de Guinea Ecuatorial)",
+  "nameFr": "Guinée équatoriale",
   "nameOfficial": "République de Guinée équatoriale (República de Guinea Ecuatorial)",
   "etymology": "Le nom \"Guinée équatoriale\" provient de \"Guinée\" (du portugais \"Guiné\", terme utilisé pour désigner la côte ouest-africaine) et \"équatoriale\" (en référence à la position du pays près de l'équateur). Le nom espagnol \"Guinea Ecuatorial\" a été officialisé lors de la colonisation espagnole.",
   "nameOriginActor": "Le nom \"Guinée équatoriale\" a été donné par les Espagnols lors de la colonisation. Le terme \"Guinée\" vient des navigateurs portugais, et \"équatoriale\" fait référence à la position géographique du pays près de l'équateur. Le nom a été officialisé à l'indépendance en 1968.",
@@ -170,7 +170,8 @@
       "ONU / UNFPA – Démographie Guinée équatoriale 2025",
       "Recensements équato-guinéens",
       "Études anthropologiques sur les peuples de la Guinée équatoriale",
-      "Études sur l'art équato-guinéen (masques, sculptures)"
+      "Études sur l'art équato-guinéen (masques, sculptures)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

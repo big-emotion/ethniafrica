@@ -1,6 +1,6 @@
 {
   "id": "SDN",
-  "nameFr": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
+  "nameFr": "Soudan",
   "nameOfficial": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
   "etymology": "Le nom \"Soudan\" provient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Ce terme était historiquement utilisé par les géographes arabes pour désigner la région subsaharienne habitée par des populations noires africaines, par opposition au \"Bilād al-Bayḍā\" (pays des Blancs) qui désignait l'Afrique du Nord. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle.",
   "nameOriginActor": "Les géographes arabes médiévaux ont utilisé le terme \"Bilād as-Sūdān\" (pays des Noirs) pour désigner la région. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle lors de la création du Soudan anglo-égyptien.",
@@ -182,7 +182,8 @@
       "SIL Ethnologue – Languages of Sudan",
       "Recensements soudanais",
       "Études anthropologiques sur les peuples du Soudan",
-      "Études historiques sur la colonisation britannique et égyptienne"
+      "Études historiques sur la colonisation britannique et égyptienne",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

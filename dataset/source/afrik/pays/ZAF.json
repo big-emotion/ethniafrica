@@ -1,6 +1,6 @@
 {
   "id": "ZAF",
-  "nameFr": "République d'Afrique du Sud (Republic of South Africa)",
+  "nameFr": "Afrique du Sud",
   "nameOfficial": "République d'Afrique du Sud (Republic of South Africa)",
   "etymology": "Le nom \"Afrique du Sud\" est géographique, désignant la position du pays à l'extrémité australe du continent africain. Le nom a été officialisé en 1961 lors de la proclamation de la République. Avant cela, le territoire était appelé \"Union sud-africaine\" (1910-1961).",
   "nameOriginActor": "Le nom \"Afrique du Sud\" est géographique et a été officialisé par les autorités sud-africaines en 1961. Les navigateurs portugais utilisaient \"Cabo da Boa Esperança\" (Cap de Bonne-Espérance) pour désigner la région du Cap.",
@@ -202,7 +202,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples sud-africains",
       "Études historiques sur l'apartheid et la transition démocratique",
-      "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022) – https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
+      "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022) – https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

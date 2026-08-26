@@ -1,6 +1,6 @@
 {
   "id": "COG",
-  "nameFr": "République du Congo",
+  "nameFr": "Congo",
   "nameOfficial": "République du Congo (République du Congo)",
   "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. Le pays est aussi appelé \"Congo-Brazzaville\" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).",
   "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Congo-Brazzaville\" a été utilisé pour distinguer ce pays de la République démocratique du Congo (Congo-Kinshasa) après l'indépendance des deux pays en 1960.",
@@ -134,7 +134,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples congolais",
       "Études historiques sur le royaume Kongo et le royaume Tio",
-      "CIA World Factbook – Republic of the Congo (ethnic groups)"
+      "CIA World Factbook – Republic of the Congo (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

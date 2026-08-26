@@ -1,6 +1,6 @@
 {
   "id": "RWA",
-  "nameFr": "République du Rwanda (Repubulika y'u Rwanda)",
+  "nameFr": "Rwanda",
   "nameOfficial": "République du Rwanda (Repubulika y'u Rwanda)",
   "etymology": "Le nom \"Rwanda\" vient probablement du verbe \"kwanda\" signifiant \"s'étendre\" en kinyarwanda, ou de \"ruanda\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Rwanda.",
   "nameOriginActor": "Le nom vient du royaume précolonial du Rwanda (Royaume du Rwanda), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
@@ -104,7 +104,8 @@
       "Études anthropologiques sur les Grands Lacs",
       "Études historiques sur le royaume du Rwanda",
       "Commission nationale de lutte contre le génocide",
-      "CIA World Factbook – Rwanda (ethnic groups, pre-1994 census)"
+      "CIA World Factbook – Rwanda (ethnic groups, pre-1994 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

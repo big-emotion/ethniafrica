@@ -1,6 +1,6 @@
 {
   "id": "BWA",
-  "nameFr": "République du Botswana (Republic of Botswana)",
+  "nameFr": "Botswana",
   "nameOfficial": "République du Botswana (Republic of Botswana)",
   "etymology": "Le nom \"Botswana\" dérive de \"Tswana\", le nom du peuple majoritaire, avec le préfixe \"Bo-\" qui signifie \"pays de\" en setswana. \"Botswana\" signifie donc \"pays des Tswana\". Le nom a été adopté à l'indépendance en 1966 pour remplacer \"Bechuanaland\", nom colonial britannique.",
   "nameOriginActor": "Le nom \"Botswana\" a été choisi par les dirigeants tswana à l'indépendance en 1966. Il remplace \"Bechuanaland\", nom colonial britannique dérivé de \"Bechuana\" (ancienne orthographe de \"Tswana\"). Le nom \"Botswana\" reflète l'identité du peuple majoritaire (Batswana).",
@@ -196,7 +196,8 @@
       "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
       "Recensements botswanais",
       "Études anthropologiques sur les peuples du Botswana",
-      "CIA World Factbook – Botswana (ethnic groups)"
+      "CIA World Factbook – Botswana (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

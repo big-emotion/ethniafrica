@@ -1,6 +1,6 @@
 {
   "id": "EGY",
-  "nameFr": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
+  "nameFr": "Égypte",
   "nameOfficial": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
   "etymology": "Le nom \"Égypte\" vient du grec \"Aigyptos\", lui-même dérivé de \"Hikuptah\" (nom d'un temple de Memphis). Le nom arabe \"Miṣr\" (مصر) signifie \"pays\" ou \"frontière\" et est utilisé depuis l'Antiquité. L'ancien nom égyptien était \"Kemet\" (terre noire).",
   "nameOriginActor": "Le nom \"Égypte\" a été donné par les Grecs. Le nom arabe \"Miṣr\" est utilisé depuis la conquête arabe (VIIe siècle).",
@@ -186,7 +186,8 @@
       "Joshua Project – Coptic in Egypt",
       "Encyclopaedia of Islam – Egypt",
       "Recensements égyptiens",
-      "Siwa Heritage Foundation"
+      "Siwa Heritage Foundation",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

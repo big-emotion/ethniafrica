@@ -1,6 +1,6 @@
 {
   "id": "TUN",
-  "nameFr": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
+  "nameFr": "Tunisie",
   "nameOfficial": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
   "etymology": "Le nom \"Tunisie\" vient de \"Tunis\", la capitale. Le nom \"Tunis\" vient probablement de \"Tynes\" (ancien nom berbère) ou de \"Tunès\" (nom punique). Le nom arabe \"Tūnis\" (تونس) est utilisé depuis le Moyen Âge.",
   "nameOriginActor": "Le nom \"Tunisie\" vient de \"Tunis\", fondée par les Berbères puis développée par les Arabes. Le nom a été officialisé lors de la colonisation française.",
@@ -145,7 +145,8 @@
       "CIA World Factbook – Tunisia",
       "Ethnologue – Languages of Tunisia",
       "Minority Rights Group – Amazigh in Tunisia",
-      "Recensements tunisiens"
+      "Recensements tunisiens",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

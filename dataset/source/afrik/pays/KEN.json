@@ -1,6 +1,6 @@
 {
   "id": "KEN",
-  "nameFr": "République du Kenya (Republic of Kenya)",
+  "nameFr": "Kenya",
   "nameOfficial": "République du Kenya (Republic of Kenya)",
   "etymology": "Le nom \"Kenya\" vient du mont Kenya, appelé \"Kirinyaga\" (montagne de blancheur) par les Kikuyu. Les explorateurs européens du XIXe siècle ont utilisé \"Kenya\" d'après le mont Kenya. Le nom a été officialisé lors de la colonisation britannique.",
   "nameOriginActor": "Le nom vient du mont Kenya, appelé \"Kirinyaga\" par les Kikuyu. Les explorateurs européens ont popularisé le terme \"Kenya\" au XIXe siècle. Le nom a été officialisé par les Britanniques lors de la colonisation.",
@@ -203,7 +203,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples kenyans",
       "Études historiques sur la colonisation et l'indépendance",
-      "CIA World Factbook – Kenya (ethnic groups, 2019 census)"
+      "CIA World Factbook – Kenya (ethnic groups, 2019 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [
