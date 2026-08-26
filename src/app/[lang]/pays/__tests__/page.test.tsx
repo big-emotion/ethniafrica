@@ -4,17 +4,20 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
   mockGetCountryById,
+  mockGetCountryIndex,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
   mockGetActiveSourceFlags,
 } = vi.hoisted(() => ({
   mockGetCountryById: vi.fn(),
+  mockGetCountryIndex: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
   mockGetActiveSourceFlags: vi.fn(),
 }));
 
 vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn() }),
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),
@@ -31,6 +34,7 @@ vi.mock("@/api/v2/services/revisions", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => mockGetCountryById(...args),
+  getCountryIndex: () => mockGetCountryIndex(),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
@@ -184,6 +188,10 @@ describe("/[lang]/pays/[slug] page", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
+    mockGetCountryIndex.mockResolvedValue([
+      { id: "NGA", nameFr: "Nigeria" },
+      { id: "KEN", nameFr: "Kenya" },
+    ]);
   });
 
   // @req REQ-019
@@ -306,6 +314,10 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
+    mockGetCountryIndex.mockResolvedValue([
+      { id: "NGA", nameFr: "Nigeria" },
+      { id: "KEN", nameFr: "Kenya" },
+    ]);
   });
 
   // @req REQ-091

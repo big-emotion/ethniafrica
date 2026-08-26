@@ -8,9 +8,14 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { CountryPicker } from "@/components/country/CountryPicker";
+import { flagFromISO3 } from "@/lib/countryDataTransformer";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
-import { getCountryById } from "@/api/v2/services/countryService";
+import {
+  getCountryById,
+  getCountryIndex,
+} from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
@@ -158,9 +163,10 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags] = await Promise.all([
+  const [country, sourceFlags, allCountries] = await Promise.all([
     getCountryById(parsed.slug),
     getActiveSourceFlags("country", parsed.slug),
+    getCountryIndex(),
   ]);
   if (!country) {
     notFound();
@@ -168,6 +174,17 @@ export default async function PaysSlugPage({
 
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
+
+  // From the corpus, never from the admin-0 asset: the two sets do not
+  // coincide, so a geometry-fed list would offer dead ends and hide the six
+  // countries that have a fiche but no outline.
+  const pickerCountries = allCountries
+    .map((entry) => ({
+      id: entry.id,
+      nameFr: entry.nameFr,
+      flag: flagFromISO3(entry.id),
+    }))
+    .sort((first, second) => first.nameFr.localeCompare(second.nameFr, "fr"));
 
   // Live version (revalidate = 3600 at segment level).
   //
@@ -185,10 +202,18 @@ export default async function PaysSlugPage({
         <FicheSequence
           context={{ entityType: "country", payload: countryDetail }}
           globe={
-            <AtlasGlobe
-              overlay={buildCountryOutlineOverlay(countryDetail.id)}
-              missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
-            />
+            <>
+              <div className="mx-auto flex w-full max-w-4xl justify-end px-4">
+                <CountryPicker
+                  countries={pickerCountries}
+                  currentCountryId={countryDetail.id}
+                />
+              </div>
+              <AtlasGlobe
+                overlay={buildCountryOutlineOverlay(countryDetail.id)}
+                missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
+              />
+            </>
           }
           record={
             <CountryDetailViewV2
