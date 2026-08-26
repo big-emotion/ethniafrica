@@ -10,6 +10,7 @@
 @import "./styles/country-tokens.css";
 @import "./styles/people-tokens.css";
 @import "./styles/fiche-band.css";
+@import "./styles/fiche-parchment.css";
 
 @tailwind base;
 @tailwind components;

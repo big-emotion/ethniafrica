@@ -205,6 +205,9 @@ export default async function FamillesSlugPage({
   const recordView = (
     <LanguageFamilyDetailViewV2
       family={family}
+      footprintCountries={familyOverlay?.countries ?? []}
+      memberPeoples={memberPeoples}
+      memberPeopleCount={memberPeoples.length}
       classificationTree={
         tree ? (
           <FamilyClassificationTreeSection familyId={parsed.slug} tree={tree} />
