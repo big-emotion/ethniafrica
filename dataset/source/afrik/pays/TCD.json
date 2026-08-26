@@ -1,6 +1,6 @@
 {
   "id": "TCD",
-  "nameFr": "République du Tchad (Republic of Chad, جمهورية تشاد)",
+  "nameFr": "Tchad",
   "nameOfficial": "République du Tchad (Republic of Chad, جمهورية تشاد)",
   "etymology": "Le nom \"Tchad\" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme \"Tchad\" (ou \"Chad\" en anglais) est dérivé du mot kanembu \"tsade\" ou \"sade\", signifiant \"grande étendue d'eau\" ou \"lac\". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle.",
   "nameOriginActor": "Le nom \"Tchad\" vient du lac Tchad, nommé par les peuples locaux (Kanembu). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle lors de la création de la colonie du Tchad.",
@@ -160,7 +160,8 @@
       "SIL Ethnologue – Languages of Chad",
       "Recensements tchadiens",
       "Études anthropologiques sur les peuples du Tchad",
-      "Études historiques sur la colonisation française"
+      "Études historiques sur la colonisation française",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

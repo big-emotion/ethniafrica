@@ -5,8 +5,8 @@
     "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
   },
   "id": "XXX",
-  "nameFr": "<Nom officiel en français>",
-  "nameOfficial": "<Nom officiel complet>",
+  "nameFr": "<Nom d'usage courant en français — le nom utilisé dans le langage ordinaire, distinct du nom officiel (ex: 'Nigeria', pas 'République fédérale du Nigeria')>",
+  "nameOfficial": "<Nom officiel complet — nom protocolaire (ex: 'République fédérale du Nigeria (Federal Republic of Nigeria)')>",
   "etymology": "<Étymologie du nom du pays — origine, sens, histoire du terme>",
   "nameOriginActor": "<Personne / peuple / administration à l'origine du nom>",
   "content": {

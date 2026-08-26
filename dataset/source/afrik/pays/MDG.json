@@ -1,6 +1,6 @@
 {
   "id": "MDG",
-  "nameFr": "République de Madagascar (Repoblikan'i Madagasikara)",
+  "nameFr": "Madagascar",
   "nameOfficial": "République de Madagascar (Repoblikan'i Madagasikara)",
   "etymology": "Le nom \"Madagascar\" vient probablement de \"Madageiscar\", mentionné par Marco Polo au XIIIe siècle, qui faisait référence à Mogadiscio en Somalie. Les Portugais ont ensuite appliqué ce nom à l'île qu'ils appelaient \"São Lourenço\". En malgache, le pays est appelé \"Madagasikara\".",
   "nameOriginActor": "Le nom a été popularisé par les navigateurs européens (portugais, français) à partir du XVIe siècle. L'origine exacte est incertaine, mais pourrait provenir d'une confusion avec Mogadiscio.",
@@ -154,7 +154,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples malgaches",
       "Études historiques sur les royaumes malgaches",
-      "Encyclopédie de Madagascar"
+      "Encyclopédie de Madagascar",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": null
   }

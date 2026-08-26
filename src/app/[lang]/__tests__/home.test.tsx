@@ -4,6 +4,17 @@ import React from "react";
 
 import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
 
+// Home renders whatever counts getCorpusCounts resolves to; these tests
+// exercise page layout/content, not the Supabase query layer (covered by
+// src/lib/home/__tests__/corpusCounts.test.ts), so the counts are replaced
+// with a deterministic fixture that is deliberately not 803/54/24 — proving
+// the rendered figures track the mock rather than a literal.
+const fixtureCounts = { peoples: 4213, countries: 91, families: 37 };
+
+vi.mock("@/lib/home/corpusCounts", () => ({
+  getCorpusCounts: vi.fn(async () => fixtureCounts),
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="page-layout">{children}</div>
@@ -15,8 +26,8 @@ import Home, { metadata } from "../page";
 describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
   // @req FR91 @req FR95
   // @req REQ-044
-  it("renders the parchment hero with a single verbatim H1 and zero H3", () => {
-    render(<Home />);
+  it("renders the parchment hero with a single verbatim H1 and zero H3", async () => {
+    render(await Home());
 
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
@@ -26,18 +37,38 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // @req FR92 @req FR95
-  // @req REQ-044
-  it("renders the filterable module grid below the hero with exactly 10 cards", () => {
-    render(<Home />);
+  // @req REQ-113
+  it("renders exactly three entry points below the hero and no per-module card grid", async () => {
+    render(await Home());
 
-    expect(screen.getAllByTestId(/^module-card-/)).toHaveLength(10);
+    expect(
+      screen.getAllByTestId(/^entry-point-(peuples|pays|familles)$/)
+    ).toHaveLength(3);
+    expect(screen.queryAllByTestId(/^module-card-/)).toHaveLength(0);
+    expect(
+      screen.queryByRole("group", { name: "Filtrer les modules" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-113
+  it("sources each entry point's count from getCorpusCounts, not a literal", async () => {
+    render(await Home());
+
+    expect(screen.getByTestId("entry-point-count-peuples")).toHaveTextContent(
+      String(fixtureCounts.peoples)
+    );
+    expect(screen.getByTestId("entry-point-count-pays")).toHaveTextContent(
+      String(fixtureCounts.countries)
+    );
+    expect(screen.getByTestId("entry-point-count-familles")).toHaveTextContent(
+      String(fixtureCounts.families)
+    );
   });
 
   // @req FR95
   // @req REQ-044
-  it("sources the brand line from src/lib/brand.ts, never a literal", () => {
-    render(<Home />);
+  it("sources the brand line from src/lib/brand.ts, never a literal", async () => {
+    render(await Home());
     // The brand line was dropped from the hero (ETNI-852); brand.ts remains
     // the single source of truth for anything that does render it (e.g. OG
     // metadata), asserted below.
@@ -46,8 +77,8 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
 
   // @req FR95
   // @req REQ-044
-  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", () => {
-    render(<Home />);
+  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", async () => {
+    render(await Home());
 
     expect(
       screen.queryByText("EXPLORER · COMPRENDRE · JOUER")

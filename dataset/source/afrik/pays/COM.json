@@ -1,6 +1,6 @@
 {
   "id": "COM",
-  "nameFr": "Union des Comores (Udzima wa Komori en comorien)",
+  "nameFr": "Comores",
   "nameOfficial": "Union des Comores (Udzima wa Komori en comorien)",
   "etymology": "Le nom \"Comores\" vient de l'arabe \"جزر القمر\" (Juzur al-Qamar), signifiant \"îles de la lune\". En comorien, le pays est appelé \"Komori\" ou \"Udzima wa Komori\" (Union des Comores).",
   "nameOriginActor": "Le nom a été donné par les navigateurs arabes et perses qui ont visité l'archipel dès le IXe siècle, en référence à la beauté des îles sous la lune.",
@@ -89,7 +89,8 @@
       "Comoros Cultural Studies",
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
-      "CIA World Factbook – Comoros (ethnic groups)"
+      "CIA World Factbook – Comoros (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

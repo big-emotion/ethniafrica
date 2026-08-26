@@ -17,6 +17,8 @@ import {
   checkSourceUrls,
   checkPopulationPercentageDrift,
   checkAuthorizedSourceAdmissions,
+  checkCountryNameFrDistinctFromOfficial,
+  checkFamilyStructuralCompleteness,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -102,6 +104,19 @@ function writePays(
       id: isoCode,
       content: { demographics: { peoples } },
     })
+  );
+}
+
+function writePaysNames(
+  root: string,
+  isoCode: string,
+  names: { nameFr?: string; nameOfficial?: string }
+) {
+  const dir = join(root, "pays");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${isoCode}.json`),
+    JSON.stringify({ id: isoCode, ...names, content: {} })
   );
 }
 
@@ -377,6 +392,114 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
+  // ── FR90 : checkFamilyStructuralCompleteness ───────────────────────────────
+
+  describe("checkFamilyStructuralCompleteness (FR90)", () => {
+    function writeFlgWithContent(
+      root: string,
+      id: string,
+      overrides: {
+        branches?: unknown;
+        distributionByCountry?: unknown;
+      } = {}
+    ) {
+      const dir = join(root, "famille_linguistique");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, `${id}.json`),
+        JSON.stringify({
+          id,
+          content: {
+            generalInfo: {
+              branches: overrides.branches ?? ["Bénoué-Congo"],
+            },
+            distribution: {
+              distributionByCountry: overrides.distributionByCountry ?? {
+                COD: 50000000,
+              },
+            },
+          },
+        })
+      );
+    }
+
+    // @req REQ-119
+    it("returns ok:true when branches and distributionByCountry are populated", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU");
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { branches: [] });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches contains a blank entry", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        branches: ["Bantoïde", "  "],
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when distributionByCountry is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { distributionByCountry: {} });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) =>
+          e.includes("distribution.distributionByCountry")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a country code is not ISO 3166-1 α-3", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { cod: 50000000 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("cod"))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a speaker count is not a positive number", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { COD: 0 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes('["COD"]'))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:true when famille_linguistique directory is empty", () => {
+      mkdirSync(join(tmpDir, "famille_linguistique"), { recursive: true });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+  });
+
   // ── FR30/FR31 : checkSourceUrls ────────────────────────────────────────────
 
   describe("checkSourceUrls (FR30/FR31)", () => {
@@ -608,6 +731,68 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPopulationPercentageDrift(tmpDir, missingCsv);
       expect(result.ok).toBe(true);
       expect(result.warnings.some((w) => w.includes("not found"))).toBe(true);
+    });
+  });
+
+  describe("checkCountryNameFrDistinctFromOfficial (FR33)", () => {
+    // @req REQ-033
+    it("returns ok:true when nameFr differs from nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "Nigeria",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-033
+    it("returns ok:true when nameOfficial is absent", () => {
+      writePaysNames(tmpDir, "NGA", { nameFr: "Nigeria" });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false (hard error) when nameFr duplicates nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "République fédérale du Nigeria (Federal Republic of Nigeria)",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("NGA"))).toBe(true);
+      expect(
+        result.errors.some((e) => e.includes("duplicates nameOfficial"))
+      ).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false when nameFr is missing or empty", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("missing or empty"))).toBe(
+        true
+      );
+    });
+
+    // @req REQ-033
+    it("returns ok:true when pays directory has no JSON files", () => {
+      mkdirSync(join(tmpDir, "pays"), { recursive: true });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
     });
   });
 

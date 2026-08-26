@@ -11,7 +11,12 @@
       "originOfHistoricalTerm": " Le terme « tchadique » (Chadic) provient géographiquement du bassin du lac Tchad, où se concentrent les principales langues du groupe. L'origine académique du terme remonte à la classification afro-asiatique moderne :"
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Ouest tchadique",
+        "Tchadique central (Biu-Mandara)",
+        "Tchadique oriental",
+        "Masa"
+      ],
       "geographicArea": "Bassin du lac Tchad (Sahel et savanes du centre-ouest de l'Afrique), s'étendant du Nigeria septentrional et du Niger méridional à travers le Tchad méridional et le Cameroun septentrional jusqu'au nord de la République centrafricaine.",
       "numberOfLanguages": 150,
       "totalSpeakers": 150000000
@@ -44,7 +49,9 @@
     },
     "distribution": {
       "totalSpeakers": 150000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NGA": 61481627
+      }
     },
     "sources": [
       "[Müller, F.] ([1876]) – *Grundriss der Sprachwissenschaft*. [Vienne]",
@@ -67,7 +74,9 @@
       "[SIL Ethnologue] ([2025]) – *Languages of Nigeria / Niger / Chad / Cameroon*. [https://www.ethnologue.com/]",
       "[Glottolog] ([2025]) – *Chadic Overview*. [https://glottolog.org/resource/languoid/id/chad1250]",
       "[Britannica] ([2025]) – *Chadic Languages*. [https://www.britannica.com/topic/Chadic-languages]",
-      "[UNFPA] ([2025]) – *West & Central Africa Regional Profiles*. [https://wcaro.unfpa.org/en/overview]"
+      "[UNFPA] ([2025]) – *West & Central Africa Regional Profiles*. [https://wcaro.unfpa.org/en/overview]",
+      "Glottolog 5.2 – classification génétique \"Chadic [chad1250]\", 4 branches immédiates (Biu-Mandara, East Chadic, Masa, West Chadic). https://glottolog.org/resource/languoid/id/chad1250",
+      "The DHS Program / ICF – Nigeria Demographic and Health Survey 2018, Final Report (FR359), p. 55 : le hausa (tchadique occidental) est l'ethnie principale de 30 % des femmes et 31 % des hommes enquêtés au Nigeria. https://dhsprogram.com/pubs/pdf/FR359/FR359.pdf ; taux de 30 % appliqué à la population totale du Nigeria (204 938 755 en 2018, World Bank – SP.POP.TOTL) pour estimer ~61,5 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NG"
     ]
   }
 }

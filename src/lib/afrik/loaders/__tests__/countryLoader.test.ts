@@ -55,5 +55,31 @@ describe("Country Loader", () => {
         expect(country.id).toMatch(/^[A-Z]{3}$/);
       }
     });
+
+    // ETNI-1290: nameFr is the name of ordinary use, nameOfficial the
+    // protocol name — see docs/adr/0008-country-namefr-common-name.md.
+    // @req REQ-033
+    it("should surface nameFr as the name of ordinary use, distinct from nameOfficial, for every country", async () => {
+      const countries = await loadAllCountries();
+
+      for (const country of countries) {
+        expect(country.nameFr).toBeTruthy();
+        if (country.nameOfficial) {
+          expect(country.nameFr).not.toBe(country.nameOfficial);
+        }
+      }
+    });
+
+    // @req REQ-033
+    it("should surface the documented ADR-0008 exceptions correctly", async () => {
+      const countries = await loadAllCountries();
+      const byId = Object.fromEntries(countries.map((c) => [c.id, c]));
+
+      expect(byId.NGA?.nameFr).toBe("Nigeria");
+      expect(byId.COD?.nameFr).toBe("République démocratique du Congo");
+      expect(byId.COG?.nameFr).toBe("Congo");
+      // The two Congos must stay distinguishable without extra display logic.
+      expect(byId.COD?.nameFr).not.toBe(byId.COG?.nameFr);
+    });
   });
 });

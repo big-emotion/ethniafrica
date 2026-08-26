@@ -1,6 +1,6 @@
 {
   "id": "ERI",
-  "nameFr": "État d'Érythrée (State of Eritrea, Hagere Ertra)",
+  "nameFr": "Érythrée",
   "nameOfficial": "État d'Érythrée (State of Eritrea, Hagere Ertra)",
   "etymology": "Le nom \"Érythrée\" vient du grec \"Erythraia\" (Ἐρυθραία), dérivé de \"Mare Erythraeum\" (mer Érythrée), nom donné par les Grecs à la mer Rouge. Le terme signifie \"rouge\" en grec, en référence à la couleur de la mer Rouge. Les Italiens ont adopté ce nom pour leur colonie en 1890.",
   "nameOriginActor": "Le nom \"Érythrée\" a été donné par les Italiens lors de la création de la colonie italienne en 1890, en référence à la \"mer Érythrée\" (mer Rouge) mentionnée par les Grecs anciens. Le nom a été officialisé à l'indépendance en 1993.",
@@ -224,7 +224,8 @@
       "The Making of a Nation\"",
       "Recensements érythréens",
       "Études anthropologiques sur les peuples de l'Érythrée",
-      "Encyclopaedia Aethiopica"
+      "Encyclopaedia Aethiopica",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

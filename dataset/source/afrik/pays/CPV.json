@@ -1,6 +1,6 @@
 {
   "id": "CPV",
-  "nameFr": "République du Cabo Verde (República de Cabo Verde)",
+  "nameFr": "Cabo Verde",
   "nameOfficial": "République du Cabo Verde (República de Cabo Verde)",
   "etymology": "Le nom \"Cabo Verde\" (Cap-Vert en français) provient du portugais \"Cabo Verde\" (Cap Vert), en référence au Cap Vert continental situé au Sénégal, près duquel les îles ont été découvertes. Les navigateurs portugais ont nommé les îles \"Ilhas de Cabo Verde\" (Îles du Cap Vert) en référence à ce cap. Le nom officiel international a été normalisé en \"Cabo Verde\" en 2013.",
   "nameOriginActor": "Le nom \"Cabo Verde\" a été donné par les navigateurs portugais et génois qui ont découvert les îles en 1456-1462. Le nom fait référence au Cap Vert continental (Sénégal), près duquel les îles sont situées. Le nom officiel international a été normalisé en \"Cabo Verde\" en 2013 par les autorités cap-verdiennes.",
@@ -95,7 +95,8 @@
       "ONU / UNFPA – Démographie Cap-Vert 2025",
       "Speeches and Writings\"",
       "Recensements cap-verdiens",
-      "Études anthropologiques sur les peuples créoles du Cap-Vert"
+      "Études anthropologiques sur les peuples créoles du Cap-Vert",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

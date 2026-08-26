@@ -1,6 +1,6 @@
 {
   "id": "SOM",
-  "nameFr": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
+  "nameFr": "Somalie",
   "nameOfficial": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
   "etymology": "Le nom \"Somalie\" provient du peuple Somali (Soomaali), majoritaire dans le pays. Le terme \"Somali\" est utilisé par ce peuple pour se désigner lui-même. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960, fusionnant les territoires britannique (Somaliland britannique) et italien (Somalie italienne). Le nom \"Somaliland\" (terre des Somalis) était utilisé par les Britanniques.",
   "nameOriginActor": "Le peuple Somali (Soomaali) est à l'origine du nom. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960 par le gouvernement somalien, fusionnant les territoires britannique et italien.",
@@ -164,7 +164,8 @@
       "Recensements somaliens",
       "Études anthropologiques sur les peuples de Somalie",
       "Études historiques sur la colonisation britannique et italienne",
-      "CIA World Factbook – Somalia (ethnic groups)"
+      "CIA World Factbook – Somalia (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

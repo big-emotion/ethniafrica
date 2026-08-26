@@ -1,0 +1,33 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+
+describe("FieldProvenanceMarker (REQ-119)", () => {
+  // @req REQ-119
+  it("renders a visible missing marker for an empty structurally-expected field", () => {
+    render(<FieldProvenanceMarker state="missing" />);
+
+    expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
+  });
+
+  // @req REQ-119
+  it("names the origin when the value is derived", () => {
+    render(
+      <FieldProvenanceMarker
+        state="derived"
+        origin="peuples rattachés à la famille"
+      />
+    );
+
+    expect(
+      screen.getByText("Dérivée de : peuples rattachés à la famille")
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-119
+  it("renders no provenance marker for a declared value", () => {
+    const { container } = render(<FieldProvenanceMarker state="declared" />);
+
+    expect(container).toBeEmptyDOMElement();
+  });
+});

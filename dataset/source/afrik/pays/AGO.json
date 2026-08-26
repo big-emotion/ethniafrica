@@ -1,6 +1,6 @@
 {
   "id": "AGO",
-  "nameFr": "République d'Angola (República de Angola)",
+  "nameFr": "Angola",
   "nameOfficial": "République d'Angola (República de Angola)",
   "etymology": "Le nom \"Angola\" dérive de \"Ngola\", titre des rois du royaume Ndongo. Les Portugais ont utilisé ce terme pour désigner la région qu'ils colonisaient à partir du XVIe siècle. \"Ngola\" était le titre royal du souverain du royaume Ndongo, l'un des royaumes précoloniaux les plus puissants de la région.",
   "nameOriginActor": "Le nom provient du royaume Ndongo et de son titre royal \"Ngola\". Les Portugais ont adopté et généralisé ce terme lors de la colonisation à partir de 1575. Le nom a été officialisé comme \"Colónia de Angola\" pendant la période coloniale portugaise (1575-1975).",
@@ -235,7 +235,8 @@
       "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
       "Recensements angolais",
       "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
-      "CIA World Factbook – Angola (ethnic groups, 2000 est.)"
+      "CIA World Factbook – Angola (ethnic groups, 2000 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

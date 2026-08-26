@@ -85,4 +85,50 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
 
     expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
   });
+
+  // @req REQ-115
+  it("lays out the globe stage after the headline and lede in document order", () => {
+    const { container } = render(<HomeHero />);
+    const heading = screen.getByRole("heading", { level: 1 });
+    const lede = screen.getByText(/source vérifiable/i);
+    const stage = container.querySelector(".home-globe-stage");
+
+    expect(stage).not.toBeNull();
+    expect(
+      heading.compareDocumentPosition(stage as Element) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    expect(
+      lede.compareDocumentPosition(stage as Element) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  // @req REQ-115
+  it("declares a full-viewport min-height rule for the hero at desktop widths (>=1200px)", () => {
+    const { container } = render(<HomeHero />);
+    const section = container.querySelector("section.home-hero");
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
+
+    expect(section).not.toBeNull();
+    expect(styles).toMatch(
+      /\.home-hero\s*{[^}]*min-height:\s*100dvh[^}]*}\s*}/
+    );
+    expect(styles).toMatch(/@media \(min-width:\s*1200px\)\s*{\s*\.home-hero/);
+  });
+
+  // @req REQ-115
+  it("no longer overlays the globe stage absolutely behind the copy — it follows it in flow", () => {
+    const { container } = render(<HomeHero />);
+    const copy = container.querySelector("h1")?.closest("div");
+    const stage = container.querySelector(".home-globe-stage");
+
+    expect(copy).not.toBeNull();
+    expect(stage).not.toBeNull();
+    // The old layout rendered the stage as the section's FIRST child,
+    // absolutely positioned behind the copy block that followed it.
+    expect(container.querySelector("section")?.firstElementChild).toBe(copy);
+  });
 });

@@ -1,6 +1,6 @@
 {
   "id": "NGA",
-  "nameFr": "République fédérale du Nigeria (Federal Republic of Nigeria)",
+  "nameFr": "Nigeria",
   "nameOfficial": "République fédérale du Nigeria (Federal Republic of Nigeria)",
   "etymology": "Le nom \"Nigeria\" a été créé en 1914 par Flora Shaw (épouse de Lord Lugard, gouverneur général de la colonie) en combinant \"Niger\" (fleuve Niger) avec le suffixe \"-ia\" (pays). Le nom fait référence au fleuve Niger qui traverse le pays.",
   "nameOriginActor": "Le nom a été créé par Flora Shaw en 1914 lors de l'\"Amalgamation\" (unification) des protectorats du Nord et du Sud par les Britanniques. C'est un nom colonial qui ne reflète pas les appellations précoloniales.",
@@ -206,7 +206,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples nigérians",
       "Études historiques sur les royaumes précoloniaux",
-      "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)"
+      "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

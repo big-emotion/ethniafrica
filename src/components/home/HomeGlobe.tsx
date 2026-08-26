@@ -159,6 +159,7 @@ interface HomeGlobeProps {
  * Mounted only once HomeGlobeStage has confirmed WebGL support.
  */
 // @req REQ-112
+// @req REQ-115
 export function HomeGlobe({
   dotColorHex = CHARTER_OCRE_HEX,
 }: HomeGlobeProps = {}) {
@@ -377,6 +378,9 @@ export function HomeGlobe({
   };
 
   return (
+    // Fills HomeGlobeStage's .home-globe-stage box (REQ-115) — previously
+    // this filled the whole hero as an overlay behind the copy; the sizing
+    // now comes from the stage's own declared min-height, not from here.
     <div style={{ position: "absolute", inset: 0 }}>
       <button
         type="button"

@@ -1,6 +1,6 @@
 {
   "id": "GAB",
-  "nameFr": "République gabonaise",
+  "nameFr": "Gabon",
   "nameOfficial": "République gabonaise (République gabonaise)",
   "etymology": "Le nom \"Gabon\" provient du portugais \"Gabão\" (gabardine, manteau), donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo qui ressemble à une gabardine. Le terme a été adapté en \"Gabon\" par les Français.",
   "nameOriginActor": "Le nom \"Gabon\" a été donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo. Les Français ont adapté ce nom lors de la colonisation. Le nom a été officialisé lors de l'indépendance en 1960.",
@@ -190,7 +190,8 @@
       "Recensements gabonais",
       "Études anthropologiques sur les peuples du Gabon",
       "Études sur l'art gabonais (masques, sculptures)",
-      "CIA World Factbook – Gabon (ethnic groups, 2021 est.)"
+      "CIA World Factbook – Gabon (ethnic groups, 2021 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

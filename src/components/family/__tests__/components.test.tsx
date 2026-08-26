@@ -112,20 +112,93 @@ describe("LanguageFamilyDetailViewV2", () => {
       screen.queryByRole("heading", { name: "Appellations et décolonisation" })
     ).toBeNull();
     expect(
-      screen.queryByRole("heading", { name: "Informations générales" })
-    ).toBeNull();
-    expect(
       screen.queryByRole("heading", { name: "Caractéristiques linguistiques" })
     ).toBeNull();
     expect(
       screen.queryByRole("heading", { name: "Histoire et origines" })
     ).toBeNull();
     expect(
-      screen.queryByRole("heading", { name: "Répartition géographique" })
-    ).toBeNull();
-    expect(
       screen.queryByRole("heading", { name: "Sources et références" })
     ).toBeNull();
+  });
+
+  // @req REQ-119
+  it("shows structurally-expected but empty fields as missing rather than hiding their section", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{ id: "FLG_EMPTY", nameFr: "Sans contenu", content: {} }}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Informations générales" })
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("heading", { name: "Répartition géographique" })
+    ).toBeTruthy();
+    expect(screen.getAllByText("Donnée manquante").length).toBeGreaterThan(0);
+  });
+
+  // @req REQ-119
+  it("names the origin of a derived footprint instead of presenting it as declared", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{
+          id: "FLG_BANTU",
+          nameFr: "Bantou",
+          content: {},
+          footprintByCountry: { COD: 3 },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText("Dérivée de : peuples rattachés à la famille")
+    ).toBeInTheDocument();
+    expect(screen.getByText("COD")).toBeInTheDocument();
+  });
+
+  // @req REQ-119
+  it("shows the declared distribution as missing alongside the derived footprint instead of the footprint hiding the gap", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{
+          id: "FLG_BANTU",
+          nameFr: "Bantou",
+          content: {},
+          footprintByCountry: { COD: 3 },
+        }}
+      />
+    );
+
+    expect(screen.getAllByText("Donnée manquante").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Dérivée de : peuples rattachés à la famille")
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-119
+  it("renders no marker for a declared value while still flagging a sibling empty field as missing", () => {
+    const family = {
+      id: "FLG_AFROASIATIQUE",
+      nameFr: "Afroasiatique",
+      content: {
+        generalInfo: {
+          branches: [],
+          geographicArea: "Corne de l'Afrique, Sahara, Afrique du Nord.",
+        },
+        distribution: { distributionByCountry: {} },
+      },
+    };
+
+    render(<LanguageFamilyDetailViewV2 family={family} />);
+
+    expect(
+      screen.getByText(family.content.generalInfo.geographicArea)
+    ).toBeInTheDocument();
+    // Both branches (generalInfo) and distributionByCountry (distribution)
+    // are structurally expected yet empty in this fixture.
+    expect(screen.getAllByText("Donnée manquante").length).toBe(2);
   });
 
   // @req REQ-047

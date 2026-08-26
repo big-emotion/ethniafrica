@@ -1,6 +1,6 @@
 {
   "id": "LBY",
-  "nameFr": "État de Libye (Dawlat Lībiyā)",
+  "nameFr": "Libye",
   "nameOfficial": "État de Libye (Dawlat Lībiyā)",
   "etymology": "Le nom \"Libye\" vient du grec \"Libya\", qui désignait l'Afrique du Nord dans l'Antiquité. Le nom arabe \"Lībiyā\" (ليبيا) est utilisé depuis le XXe siècle. L'ancien nom était \"Tripolitaine\" (région de Tripoli) et \"Cyrénaïque\" (région de Benghazi).",
   "nameOriginActor": "Le nom \"Libye\" a été officialisé lors de l'indépendance (1951). Le nom vient de l'Antiquité grecque.",
@@ -155,7 +155,8 @@
       "Ethnologue – Languages of Libya",
       "Minority Rights Group – Amazigh in Libya",
       "CNRS – Berbères",
-      "Recensements libyens"
+      "Recensements libyens",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

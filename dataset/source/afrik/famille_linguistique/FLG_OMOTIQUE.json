@@ -10,7 +10,10 @@
       "originOfHistoricalTerm": " Le terme « Omotic » a été créé par le linguiste Harold C. Fleming en 1969 dans son œuvre « A Classification of the North Omotic Languages » présentée lors de la Première Conférence internationale sur les études éthiopiennes (Proceedings of the First International Conference on Ethiopian Studies). Le nom dérive du fleuve Omo en Éthiopie, région centrale de répartition de nombreuses langues concernées (vallée de l'Omo, sud-ouest de l'Éthiopie). La classification omotique comme branche distincte a été consolidée par M. Lionel Bender en 1971 puis en 1975 dans « Omotic: a new Afroasiatic language family » (University Museum, Southern Illinois University)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Ta-Ne-Omotique (Nord-Omotique)",
+        "Omotique méridional (Sud-Omotique)"
+      ],
       "geographicArea": "Sud-ouest de l'Éthiopie (vallée de l'Omo, régions SNNPRS, zones Bench-Maji, Wolaytta, Gamo-Gofa, zones Mao à la frontière soudanaise). Enclaves dans les régions Oromia, Amhara, Benishangul-Gumuz. Présence limitée au Soudan (Blue Nile State) pour certaines langues Mao.",
       "numberOfLanguages": 25,
       "totalSpeakers": 8000000
@@ -55,7 +58,9 @@
     },
     "distribution": {
       "totalSpeakers": 8000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 5536085
+      }
     },
     "sources": [
       "Fleming, Harold C. (1969) – « A Classification of the North Omotic Languages ». In: Proceedings of the First International Conference on Ethiopian Studies. Michigan State University Press.",
@@ -76,7 +81,9 @@
       "Recensement éthiopien 2007 – Central Statistical Agency of Ethiopia.",
       "Recensement éthiopien 2010 – Central Statistical Agency of Ethiopia.",
       "ONU/UNFPA – Estimations démographiques Éthiopie 2025.",
-      "CIA World Factbook – Éthiopie 2025."
+      "CIA World Factbook – Éthiopie 2025.",
+      "Glottolog 5.2 – dans la classification actuelle, l'« omotique » traditionnel ne forme plus une seule famille : \"Ta-Ne-Omotic [gong1255]\" (4 branches : Bench, Kefoid, Ometo, Yemsa) et \"South Omotic [sout2845]\" (2 branches : AHK [Aari-Gayil + Hamer-Karo], Dime) sont deux familles indépendantes sans ancêtre commun reconnu. https://glottolog.org/resource/languoid/id/gong1255 ; https://glottolog.org/resource/languoid/id/sout2845",
+      "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2/Annexe : somme des nationalités omotiques recensées (Welaita 1 707 074, Gamo 1 107 163, Kefficho 870 213, Dawro 543 148, Goffa 363 009, Bench 353 526, Ari 290 453, Malie 98 114, Basketo 78 284, Shekecho 77 678, Hamer 46 532, Dime 891) = 5 536 085. https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf"
     ]
   }
 }

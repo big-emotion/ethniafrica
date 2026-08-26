@@ -1,6 +1,6 @@
 {
   "id": "GMB",
-  "nameFr": "République de Gambie (Republic of The Gambia)",
+  "nameFr": "Gambie",
   "nameOfficial": "République de Gambie (Republic of The Gambia)",
   "etymology": "Le nom \"Gambie\" provient du fleuve Gambie qui traverse le pays. Le nom du fleuve vient probablement du portugais \"Gambia\" ou du terme local \"Kambra\" / \"Kambaa\". Les Britanniques ont adopté ce nom pour leur colonie. Le nom officiel inclut l'article \"The\" (La Gambie) pour le distinguer de la Zambie.",
   "nameOriginActor": "Le nom \"Gambie\" a été donné par les navigateurs portugais au XVe siècle en référence au fleuve Gambie. Les Britanniques ont officialisé ce nom lors de la colonisation. Le nom a été officialisé à l'indépendance en 1965.",
@@ -200,7 +200,8 @@
       "Recensements gambiens",
       "Études anthropologiques sur les peuples de la Gambie",
       "Études historiques sur l'empire du Mali et la Sénégambie",
-      "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)"
+      "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [
