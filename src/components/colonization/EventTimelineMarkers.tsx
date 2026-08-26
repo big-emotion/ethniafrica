@@ -107,7 +107,9 @@ export function EventTimelineMarkers({
           value={year}
           onChange={setYear}
         />
-        <div className="relative mt-2 h-6" aria-label={t.title}>
+        {/* role="group": the strip names itself, and ARIA forbids aria-label
+            on the generic role a bare div carries. */}
+        <div className="relative mt-2 h-6" role="group" aria-label={t.title}>
           {visibleEvents.map((event) => (
             <button
               key={event.id}

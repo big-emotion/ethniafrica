@@ -166,4 +166,20 @@ describe("EntryPoints — three access-mode entry points (ETNI-1328, REQ-113)", 
     expect(icon.className).not.toMatch(/entry-point-glyph/);
     expect(icon).toBeVisible();
   });
+
+  // The card sits on --accent-tint, where --accent is a fill colour and fails
+  // AA as text (axe-core flagged all six count/verb spans on live /fr). Only
+  // the icon, which is decorative and aria-hidden, may stay on --accent.
+  // @req REQ-113
+  it("tints every readable label with an ink token rather than the fill accent", () => {
+    render(<EntryPoints language="fr" counts={counts} />);
+
+    for (const id of ["peuples", "pays", "familles"]) {
+      const verb = screen.getByTestId(`entry-point-verb-${id}`);
+      const count = screen.getByTestId(`entry-point-count-${id}`);
+
+      expect(verb.getAttribute("style")).toContain("color: var(--accent-ink)");
+      expect(count.getAttribute("style")).toContain("color: var(--afh-text)");
+    }
+  });
 });

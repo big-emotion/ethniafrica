@@ -36,12 +36,16 @@ describe("charter categorical accent tokens (ETNI-798)", () => {
     expect(catTokens).toEqual({
       "--afh-cat-ocre": "#C9821F",
       "--afh-cat-ocre-tint": "#F1D9AE",
+      "--afh-cat-ocre-ink": "#835514",
       "--afh-cat-teal": "#33A390",
       "--afh-cat-teal-tint": "#CBE7DF",
+      "--afh-cat-teal-ink": "#226D60",
       "--afh-cat-terre": "#C4573F",
       "--afh-cat-terre-tint": "#F0D2C8",
+      "--afh-cat-terre-ink": "#974331",
       "--afh-cat-perv": "#7A8CE8",
       "--afh-cat-perv-tint": "#DCE1F9",
+      "--afh-cat-perv-ink": "#535F9E",
     });
   });
 
