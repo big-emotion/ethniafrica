@@ -10,6 +10,8 @@ import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
+  getModulesForAccessMode,
+  isModuleEnabled,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -64,11 +66,22 @@ const AXES: AxisDefinition[] = [
     id: "jouer",
     name: "Jouer",
     page: "jouerHub",
-    cta: "Comparer",
+    cta: "Se tester",
     stake: "Il arrive sans rien. Il repart avec un résultat.",
-    // Not a count of the corpus but of what the comparison puts in front
-    // of the reader — two fiches, side by side.
-    figure: () => "2 peuples face à face",
+    // Counted off the registry, not written down: the axis promised
+    // « 2 peuples face à face » back when Jouer held one comparison module,
+    // and that sentence survived REQ-120 turning the hub into twelve games
+    // as a plain falsehood. A count that reads itself cannot go stale again.
+    //
+    // Filtered through the same lock the hub uses, so the card and the hub
+    // behind it count the same entries: a module behind a dark flag is not
+    // listed there and must not be counted here.
+    figure: () =>
+      plural(
+        getModulesForAccessMode("jouer").filter(isModuleEnabled).length,
+        "jeu",
+        "jeux"
+      ),
   },
 ];
 

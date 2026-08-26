@@ -181,7 +181,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "Remonter"
     );
     expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Comparer"
+      "Se tester"
     );
   });
 
@@ -242,9 +242,9 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
   const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
 
-  // `comparer` is a static route that renders whatever the corpus holds, so
-  // Jouer has had something real behind it since it was filed there.
-  // @req REQ-114
+  // Jouer has had something real behind it since REQ-120 turned its two
+  // `unavailable` placeholders into live games.
+  // @req REQ-114 @req REQ-120
   it("promises the action once one module behind the axis is live", () => {
     renderAxes({ counts });
 
@@ -252,12 +252,22 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       "data-available",
       "true"
     );
-    expect(screen.getByTestId("access-axis-figure-jouer")).toHaveTextContent(
-      "2 peuples face à face"
-    );
-    expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Comparer"
-    );
+    expect(
+      screen.getByTestId("access-axis-figure-jouer")
+    ).not.toHaveTextContent("en préparation");
+  });
+
+  // The axis used to promise « 2 peuples face à face », a sentence written
+  // when Jouer held one comparison module. Counting the entries the hub
+  // itself lists is what stops it going stale a second time — and it is the
+  // same list, so the card and the hub behind it cannot disagree.
+  // @req REQ-120
+  it("counts the games it offers rather than describing one of them", () => {
+    renderAxes({ counts });
+
+    const figure = screen.getByTestId("access-axis-figure-jouer");
+    expect(figure).toHaveTextContent(`${modulesByAxis.jouer.length} jeux`);
+    expect(figure).not.toHaveTextContent("2 peuples face à face");
   });
 
   // The regression that matters: a `flagged` module is not `unavailable`, so

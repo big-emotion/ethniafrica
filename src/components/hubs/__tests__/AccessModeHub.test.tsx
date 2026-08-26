@@ -48,11 +48,22 @@ const explorerModules: HubModule[] = [
 
 const jouerModules: HubModule[] = [
   {
-    id: "comparer",
-    name: "Comparer deux peuples",
+    id: "quiz",
+    name: "Le quiz",
     accessMode: "jouer",
-    page: "compare",
-    availability: "static",
+    page: "quiz",
+    availability: "flagged",
+    featureFlag: "quiz",
+    available: true,
+  },
+  {
+    id: "comparer",
+    name: "Vraie taille",
+    accessMode: "jouer",
+    page: null,
+    gameSlug: "vraie-taille",
+    availability: "data",
+    dataSource: "afrik_countries",
     available: true,
   },
   {
@@ -60,7 +71,9 @@ const jouerModules: HubModule[] = [
     name: "Les liens invisibles",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    gameSlug: "liens",
+    availability: "data",
+    dataSource: "afrik_people_relations",
     available: false,
   },
 ];
@@ -130,8 +143,31 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
     ).toBeNull();
   });
 
-  // @req REQ-114 @req REQ-106
-  it("renders a module with no route (liens) with no anchor element", () => {
+  // A game has no PageType of its own: it is reached by slug under the
+  // Jouer hub, and the slug has to win over whatever page the module carries.
+  // @req REQ-120
+  it("links a game to its slug under the jouer hub", () => {
+    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
+
+    const link = screen.getByTestId("hub-module-link-comparer");
+    expect(link.tagName).toBe("A");
+    expect(link).toHaveAttribute("href", "/fr/jouer/vraie-taille");
+    expect(link).toHaveTextContent("Vraie taille");
+  });
+
+  // The quiz keeps a real PageType, so it must still route through it.
+  // @req REQ-120
+  it("links the quiz to its own route rather than to a game slug", () => {
+    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
+
+    expect(screen.getByTestId("hub-module-link-quiz")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "quiz")
+    );
+  });
+
+  // @req REQ-120
+  it("renders a game whose data source is empty with no anchor element", () => {
     render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
 
     expect(
@@ -140,18 +176,6 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
     expect(
       screen.queryByTestId("hub-module-link-liens")
     ).not.toBeInTheDocument();
-  });
-
-  // Comparer stopped being a shell once its picker was wired, so the axis
-  // no longer opens on an entry the reader cannot act on.
-  // @req REQ-114 @req REQ-106
-  it("renders comparer as a live link now that its picker exists", () => {
-    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
-
-    expect(screen.getByTestId("hub-module-link-comparer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "compare")
-    );
   });
 
   // @req REQ-106

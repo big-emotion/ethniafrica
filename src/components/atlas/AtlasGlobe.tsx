@@ -345,20 +345,39 @@ function AtlasGlobeFallback({
     );
   }
 
+  // A country-set (REQ-120) borrows the country outline's solid encoding —
+  // the dash is the charter's mark of a *derived* boundary, and a round's
+  // choices are not derived from anything. It skips the trace-in reveal all
+  // the same: a reader answering a round needs every choice legible on the
+  // first frame, not drawing itself in.
+  const isTracedCountry = overlay.kind === "country-outline";
+
   return (
     <AfricaBasemap figureTransform={figureTransform}>
-      {overlay.rings.map((ring, index) => (
-        <TraceInPolygon
-          key={`country-${index}`}
-          points={ringToSvgPoints(ring)}
-          reducedMotion={reducedMotion}
-          fill="var(--accent)"
-          fillOpacity={overlay.fillOpacity}
-          stroke="var(--accent)"
-          strokeWidth={1.5}
-          vectorEffect="non-scaling-stroke"
-        />
-      ))}
+      {overlay.rings.map((ring, index) =>
+        isTracedCountry ? (
+          <TraceInPolygon
+            key={`country-${index}`}
+            points={ringToSvgPoints(ring)}
+            reducedMotion={reducedMotion}
+            fill="var(--accent)"
+            fillOpacity={overlay.fillOpacity}
+            stroke="var(--accent)"
+            strokeWidth={1.5}
+            vectorEffect="non-scaling-stroke"
+          />
+        ) : (
+          <polygon
+            key={`ring-${index}`}
+            points={ringToSvgPoints(ring)}
+            fill="var(--accent)"
+            fillOpacity={overlay.fillOpacity}
+            stroke="var(--accent)"
+            strokeWidth={1.5}
+            vectorEffect="non-scaling-stroke"
+          />
+        )
+      )}
     </AfricaBasemap>
   );
 }
@@ -449,6 +468,12 @@ export interface AtlasGlobeProps {
    * a fiche link per country, so it has to be one).
    */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
+  /**
+   * Called when the reader chooses a target. The globe keeps owning its own
+   * chosen-target state and its facts panel; this only reports the choice
+   * outward, so a game can score it without a second globe (REQ-120).
+   */
+  onTargetChosen?: (target: AtlasTarget) => void;
   /**
    * The same facts as data, keyed by country.
    *
@@ -543,10 +568,12 @@ function usePanelAnchor(): PanelAnchor {
  */
 // @req REQ-116
 // @req REQ-117
+// @req REQ-120
 export function AtlasGlobe({
   overlay,
   missingMessage,
   targetFacts = defaultTargetFacts,
+  onTargetChosen,
   facts,
   fallbackNote,
   wholeAreaLabel = "Toute l'empreinte",
@@ -632,6 +659,16 @@ export function AtlasGlobe({
     setTurn({ yaw: 0, pitch: 0 });
     setFlat(false);
     setChosenCountryId(null);
+  };
+
+  // Both pickers land here so a caller watching for choices — a game round
+  // waiting on a tap (REQ-120) — is notified whichever one the fiche mounted.
+  const chooseTarget = (countryId: CountryId) => {
+    setChosenCountryId(countryId);
+    const target = targets.find(
+      (candidate) => candidate.countryId === countryId
+    );
+    if (target) onTargetChosen?.(target);
   };
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -763,7 +800,7 @@ export function AtlasGlobe({
             placement={place(target)}
             chosen={target.countryId === chosenCountryId}
             label={factsFor(target, facts, targetFacts).title}
-            onChoose={() => setChosenCountryId(target.countryId)}
+            onChoose={() => chooseTarget(target.countryId)}
           />
         ))}
 
@@ -773,7 +810,7 @@ export function AtlasGlobe({
             targets={targets}
             memberCountByCountry={memberCountByCountry}
             chosenCountryId={chosenCountryId}
-            onChoose={setChosenCountryId}
+            onChoose={chooseTarget}
           />
         </div>
       )}
