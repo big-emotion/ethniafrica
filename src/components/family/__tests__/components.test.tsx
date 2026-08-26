@@ -6,8 +6,6 @@ import {
   waitFor,
   within,
 } from "@testing-library/react";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 
@@ -180,17 +178,18 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
 
   // @req REQ-119
-  it("renders no marker when the corpus declares a value, using a real corpus fixture with an empty branches list", () => {
-    const fixturePath = join(
-      process.cwd(),
-      "dataset/source/afrik/famille_linguistique/FLG_AFROASIATIQUE.json"
-    );
-    const family = JSON.parse(readFileSync(fixturePath, "utf-8"));
-
-    // Sanity-check the fixture still represents the case this ticket
-    // documents (declared geographicArea, empty branches).
-    expect(family.content.generalInfo.branches).toEqual([]);
-    expect(family.content.generalInfo.geographicArea).toBeTruthy();
+  it("renders no marker for a declared value while still flagging a sibling empty field as missing", () => {
+    const family = {
+      id: "FLG_AFROASIATIQUE",
+      nameFr: "Afroasiatique",
+      content: {
+        generalInfo: {
+          branches: [],
+          geographicArea: "Corne de l'Afrique, Sahara, Afrique du Nord.",
+        },
+        distribution: { distributionByCountry: {} },
+      },
+    };
 
     render(<LanguageFamilyDetailViewV2 family={family} />);
 
@@ -198,7 +197,7 @@ describe("LanguageFamilyDetailViewV2", () => {
       screen.getByText(family.content.generalInfo.geographicArea)
     ).toBeInTheDocument();
     // Both branches (generalInfo) and distributionByCountry (distribution)
-    // are structurally expected yet empty in this real fixture.
+    // are structurally expected yet empty in this fixture.
     expect(screen.getAllByText("Donnée manquante").length).toBe(2);
   });
 

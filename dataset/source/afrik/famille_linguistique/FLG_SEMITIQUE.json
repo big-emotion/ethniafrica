@@ -11,7 +11,11 @@
       "originOfHistoricalTerm": " Le terme « sémitique » (allemand *Semitisch*, anglais *Semitic*) a été créé en **1781** par **August Ludwig von Schlözer** (1735-1809) dans son article *\"Von den Chaldäern\"* publié dans le *Repertorium für biblische und morgenländische Literatur* de Johann Gottfried Eichhorn. Schlözer proposa ce terme pour désigner les langues apparentées à l'hébreu, l'arabe et l'araméen, en référence biblique au personnage de Sem (hébreu *Šēm*), fils de Noé dans la Genèse. Le terme fut popularisé par **Johann Gottfried Eichhorn** (1752-1827) dans son article *\"Semitische Sprachen\"* en **1795** et dans son ouvrage *Einleitung ins Alte Testament* (1787). Les linguistes du XIXe siècle, notamment **Friedrich Müller** (1876) dans *Grundriss der Sprachwissenschaft*, ont ensuite construit la catégorie « chamito-sémitique » (ou « chamito-sémitique ») en y ajoutant d'autres peuples africains selon une logique biblique non scientifique, opposant les « Sémites » aux « Chamites » (descendants de Cham, autre fils de Noé)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Sémitique oriental (akkadien-éblaïte, éteint)",
+        "Sémitique non classé (amorite, éteint)",
+        "Sémitique occidental"
+      ],
       "geographicArea": "Afrique du Nord-Est (Égypte, Soudan, Maghreb), Corne de l'Afrique (Éthiopie, Érythrée, Djibouti, Somalie), péninsule Arabique (Arabie Saoudite, Yémen, Oman), Levant (Syrie, Liban, Palestine/Israël, Jordanie), Mésopotamie (Irak).",
       "numberOfLanguages": 40,
       "totalSpeakers": 460000000
@@ -49,7 +53,9 @@
     },
     "distribution": {
       "totalSpeakers": 460000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 27191578
+      }
     },
     "sources": [
       "Kitchen, Andrew ; Ehret, Christopher ; Assefa, Shiferaw ; Mulligan, Connie J. (2009) – *Bayesian phylogenetic analysis of Semitic languages identifies an Early Bronze Age origin of Semitic in the Near East*. Proceedings of the Royal Society B: Biological Sciences, vol. 276, n° 1668, p. 2703-2710. DOI: 10.1098/rspb.2009.0408",
@@ -69,7 +75,9 @@
       "SIL International / Ethnologue (2025) – *Languages of the World*. 26e édition. Dallas: SIL International.",
       "CIA World Factbook (2025) – *Field Listing: Languages*. Central Intelligence Agency. Consulté en 2025.",
       "United Nations / UNFPA (2025) – *World Population Prospects*. United Nations Department of Economic and Social Affairs. Consulté en 2025.",
-      "Global Mission Data (2025) – *Language Portal*. Consulté en 2025."
+      "Global Mission Data (2025) – *Language Portal*. Consulté en 2025.",
+      "Glottolog 5.2 – classification génétique \"Semitic [semi1276]\", 3 branches immédiates (East Semitic, Unclassified Semitic, West Semitic) ; les langues sémitiques africaines vivantes (arabe, éthiosémitique) appartiennent toutes au Sémitique occidental. https://glottolog.org/resource/languoid/id/semi1276",
+      "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2/Annexe : somme des nationalités éthiosémitiques recensées (Amhara 19 867 817, Tigrie/Tigrinya 4 483 776, Guragie 1 867 350, Silte 940 766, Hareri 31 869) = 27 191 578. https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf"
     ]
   }
 }

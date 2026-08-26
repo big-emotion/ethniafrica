@@ -11,7 +11,7 @@
       "originOfHistoricalTerm": " Le terme « Khoisan » a été créé en 1928 par l'anthropologue et médecin allemand Leonhard Schultze (1871-1955), dans son ouvrage *Zur Kenntnis des Körpers der Hottentotten und Buschmänner* (Jena: Gustav Fischer, 1928). Schultze, membre d'une expédition scientifique allemande en Afrique du Sud-Ouest (actuelle Namibie) entre 1926 et 1927, a combiné les termes « Khoi » (du nom Khoikhoi) et « San » pour créer une catégorie anthropologique censée regrouper les peuples autochtones d'Afrique australe sur des critères biométriques et raciaux. Les linguistes ont ensuite repris cette étiquette pour désigner un ensemble de langues à clics, même si aucune filiation génétique solide n'a été démontrée."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Khoe-Kwadi", "Kx'a", "Tuu"],
       "geographicArea": "Afrique australe : principalement Namibie (régions centrales et nord), Botswana (désert du Kalahari, Okavango), Afrique du Sud (province du Cap-Nord, Cap-Occidental), Angola (sud, région de Cuando Cubango), Zambie (extrême ouest), Zimbabwe (très minoritaire).",
       "numberOfLanguages": 30,
       "totalSpeakers": null
@@ -58,7 +58,11 @@
     },
     "distribution": {
       "totalSpeakers": null,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NAM": 234700,
+        "BWA": 15750,
+        "ZAF": 2000
+      }
     },
     "sources": [
       "Schultze, L. (1928) – *Zur Kenntnis des Körpers der Hottentotten und Buschmänner*. Jena: Gustav Fischer.",
@@ -88,7 +92,14 @@
       "SIL Ethnologue (2024) – *Khoisan languages*. https://www.ethnologue.com/subgroups/khoisan",
       "Glottolog (2024) – *Khoisan languages classification*. https://glottolog.org/",
       "ONU / UNFPA (2025) – *World Population Prospects 2025* (estimations démographiques).",
-      "CIA World Factbook (2025) – *Namibie, Botswana, Afrique du Sud, Angola* (données démographiques)."
+      "CIA World Factbook (2025) – *Namibie, Botswana, Afrique du Sud, Angola* (données démographiques).",
+      "Glottolog 5.0 (2024) – Familles \"Khoe-Kwadi\" [khoe1240], \"Kxa\" [kxaa1236] et \"Tuu\" [tuuu1241] : trois nœuds génétiques indépendants (aucun ancêtre commun reconstruit), confirmant que « Khoïsan » regroupe trois familles sans parenté prouvée. https://glottolog.org/resource/languoid/id/khoe1240 ; https://glottolog.org/resource/languoid/id/kxaa1236 ; https://glottolog.org/resource/languoid/id/tuuu1241",
+      "Brenzinger, Matthias (2011) – \"The twelve modern Khoisan languages\". In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium* (Research in Khoisan Studies 29). Cologne: Rüdiger Köppe Verlag. [Nama : Namibie ≈200 000 ; Khwe : Namibie ≈3 700 ; Naro : Namibie ≈1 000 locuteurs]",
+      "SIL Ethnologue – Khoekhoegowab/Nama [naq] : Namibie ≈200 000, Afrique du Sud ≈2 000, Botswana ≈200 locuteurs. https://www.ethnologue.com/language/naq/ (chiffres vérifiés via Wikipédia FR « Nama (langue) », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+      "SIL Ethnologue (16e éd., 2009) – Juǀʼhoan [ktz] : Namibie ≈30 000, Botswana ≈5 000 locuteurs. https://www.ethnologue.com/language/ktz/ (chiffres vérifiés via Wikipédia FR « Juǀʼhoan », consulté en 2026)",
+      "SIL Ethnologue (18e éd., 2015) – Naro [nhr] : Botswana ≈8 000 locuteurs (2014). https://www.ethnologue.com/language/nhr/ (chiffre vérifié via Wikipédia EN « Naro language », consulté en 2026)",
+      "SIL Ethnologue (19e éd., 2016) – Taa/ǃXóõ [nmn] : ≈2 500 locuteurs (2011), pour l'essentiel au Botswana. https://www.ethnologue.com/language/nmn/ (chiffre vérifié via Wikipédia EN « Taa language », consulté en 2026)",
+      "Gerlach, Linda (2015) – *Phonetic and phonological description of the Nǃaqriaxe variety of ǂʼAmkoe and the impact of language contact*. PhD dissertation, Humboldt University of Berlin, p. 14-15. [ǂʼAmkoe occidental : 20-50 locuteurs, Botswana]"
     ]
   }
 }

@@ -11,7 +11,12 @@
       "originOfHistoricalTerm": " Le terme « Cushitic » a été créé par le linguiste autrichien Friedrich Müller (1834-1898) en 1876 dans son ouvrage *Grundriss der Sprachwissenschaft* (Vienne, 1876-1888). Müller a dérivé ce terme de « Koush/Cush », figure biblique mentionnée dans la Genèse (10:6-8) comme fils de Cham et petit-fils de Noé, considéré comme l'ancêtre éponyme des peuples de la région de Koush (Nubie, Éthiopie). Cette appellation a été adoptée par les linguistes européens du XIXᵉ siècle selon une vision pseudo-généalogique inspirée de la Bible, dans le cadre de la théorie « chamito-couchitique » qui classait les langues africaines selon des critères raciaux."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Beja (couchitique septentrional)",
+        "Agaw (couchitique central)",
+        "Couchitique oriental",
+        "Couchitique méridional"
+      ],
       "geographicArea": "Corne de l'Afrique (Éthiopie, Somalie, Djibouti, Érythrée, nord du Kenya, est du Soudan)",
       "numberOfLanguages": 40,
       "totalSpeakers": 45000000
@@ -55,7 +60,10 @@
     },
     "distribution": {
       "totalSpeakers": 45000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 25488344,
+        "KEN": 3558307
+      }
     },
     "sources": [
       "Appleyard, D. (2006) – *A Comparative Dictionary of the Agaw Languages*. Köppe, Cologne.",
@@ -82,7 +90,10 @@
       "Rilly, C. (2010) – *Le méroïtique et sa famille linguistique*. Peeters, Louvain.",
       "SIL Ethnologue (2025) – *Languages of the World: Cushitic languages*. SIL International. URL : https://www.ethnologue.com/",
       "UNFPA (2025) – *State of World Population 2025*. Fonds des Nations Unies pour la population. URL : https://www.unfpa.org/",
-      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. Organisation des Nations Unies pour l'éducation, la science et la culture. URL : https://www.unesco.org/"
+      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. Organisation des Nations Unies pour l'éducation, la science et la culture. URL : https://www.unesco.org/",
+      "Glottolog 5.2 – classification génétique \"Cushitic [cush1243]\", 4 branches immédiates (Beja, Agaw, East Cushitic, South Cushitic). https://glottolog.org/resource/languoid/id/cush1243",
+      "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2 : population Oromo (couchitique oriental) = 25 488 344. https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+      "Kenya National Bureau of Statistics (2019) – 2019 Kenya Population and Housing Census, Volume IV: Distribution of Population by Socio-Economic Characteristics, Table 2.31 : somme des nationalités couchitiques recensées (Kenyan Somali 2 780 502, Borana 276 236, Orma 158 993, Gabra 141 200, Rendile 96 313, Sakuye 27 006, Burji 36 938, Aweer/Waata 20 103, Dasenach 19 337, El Molo 1 104, Dahalo 575) = 3 558 307. https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf"
     ]
   }
 }

@@ -10,7 +10,7 @@
       "originOfHistoricalTerm": " Le terme « Mandé » (ou « Mandéga ») a été introduit pour la première fois par le missionnaire allemand **Sigismund Wilhelm Koelle** en **1854**, dans son ouvrage *Polyglotta Africana*, où il classe treize langues sous le nom « North-Western High-Sudan Family, or Mandéga Family of Languages ». Koelle recueillait des vocabulaires auprès d'anciens esclaves originaires d'Afrique de l'Ouest à Freetown (Sierra Leone). Il a segmenté le mot *mandenka* (qui signifie « habitant du pays Manden ») en supposant à tort que *-nka* était un suffixe « habitant », donnant *Mandé*, alors que le suffixe est *-ka*. Le terme a ensuite été affiné par **Maurice Delafosse** (1901) qui distingue deux sous-groupes « mandé-tan » (nord) et « mandé-fu » (sud) selon leur mot pour « dix », puis par **Louis Tauxier** (1924), **William E. Welmers** (1958), et **Joseph Greenberg** (1963) dans *The Languages of Africa*."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Eastern Mande", "Western Mande"],
       "geographicArea": "Mali, Guinée, Côte d'Ivoire, Burkina Faso, Sierra Leone, Liberia, Sénégal, Gambie, Guinée-Bissau, Mauritanie, Ghana, Bénin, Nigeria",
       "numberOfLanguages": 60,
       "totalSpeakers": 60000000
@@ -48,7 +48,10 @@
     },
     "distribution": {
       "totalSpeakers": 60000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "SEN": 465052,
+        "CIV": 6433783
+      }
     },
     "sources": [
       "Koelle, Sigismund Wilhelm (1854) – *Polyglotta Africana or a comparative vocabulary of nearly three hundred words and phrases, in more than one hundred distinct African languages*. Church Missionary House, Londres.",
@@ -67,7 +70,10 @@
       "Nikitina, Tatiana (2019) – \"Missionary descriptions of Mande languages: verbal morphology…\", *Folia Linguistica* 50(2).",
       "Ethnologue/SIL International – \"Mande languages\" entrée pour 2025.",
       "UNESCO – *Atlas des langues en danger dans le monde*.",
-      "Britannica – \"Mande languages\" et \"Mande peoples\" articles."
+      "Britannica – \"Mande languages\" et \"Mande peoples\" articles.",
+      "Glottolog (2025) – \"Mande\". https://glottolog.org/resource/languoid/id/mand1469",
+      "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Mandinka / Màndienka langue courante). https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
+      "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique Mandé du Nord + Mandé du Sud, agrégat, classification Bouquet). https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique"
     ]
   }
 }

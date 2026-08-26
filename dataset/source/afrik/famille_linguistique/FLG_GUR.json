@@ -11,7 +11,14 @@
       "originOfHistoricalTerm": " Le terme « Voltaic » (français : « voltaïque ») a été créé par des administrateurs et linguistes coloniaux français au milieu du XIXe siècle pour désigner les langues parlées autour des affluents du fleuve Volta (Burkina Faso, Ghana). Sigismund Wilhelm Koelle mentionne pour la première fois ces langues sous l'appellation « North-Eastern High Sudan » dans son ouvrage *Polyglotta Africana* (Koelle 1854), correspondant à ce qui sera plus tard classé comme Gur. Le terme « Gur » lui-même a été adopté par les linguistes du XXe siècle, notamment par John T. Bendor-Samuel dans les années 1970 et Gabriel Manessy dans ses travaux sur les langues Oti-Volta (Manessy 1975, 1979), pour remplacer « Voltaic » dans un souci de classification plus cohérente."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Central Gur",
+        "Kulango-Lorom",
+        "Samu",
+        "Tiefoic",
+        "Tusia",
+        "Viemo"
+      ],
       "geographicArea": "Sahel et savanes d'Afrique de l'Ouest, du sud du Mali au nord du Ghana, du Niger occidental au nord du Bénin",
       "numberOfLanguages": 70,
       "totalSpeakers": 20000000
@@ -45,7 +52,9 @@
     },
     "distribution": {
       "totalSpeakers": 20000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "CIV": 4834900
+      }
     },
     "sources": [
       "Koelle, Sigismund Wilhelm (1854) – *Polyglotta Africana*. Londres : Church Missionary Society.",
@@ -64,7 +73,9 @@
       "SIL Ethnologue – Gur languages. Dallas : SIL International.",
       "UNESCO – Atlas des langues africaines.",
       "Britannica Editors (2024-2025) – \"Gur languages\". *Encyclopædia Britannica*. Chicago : Encyclopædia Britannica, Inc.",
-      "LanguagesGulper – Gur family overview. URL : languagesgulper.com/eng/Gur.html"
+      "LanguagesGulper – Gur family overview. URL : languagesgulper.com/eng/Gur.html",
+      "Glottolog (2025) – \"Gur\". https://glottolog.org/resource/languoid/id/gura1261",
+      "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique Gur/Voltaïque, classification Bouquet). https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique"
     ]
   }
 }

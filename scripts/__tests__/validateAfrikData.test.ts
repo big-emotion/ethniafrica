@@ -18,6 +18,7 @@ import {
   checkPopulationPercentageDrift,
   checkAuthorizedSourceAdmissions,
   checkCountryNameFrDistinctFromOfficial,
+  checkFamilyStructuralCompleteness,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -387,6 +388,114 @@ describe("validateAfrikData – new integrity checks", () => {
       mkdirSync(join(tmpDir, "peuples"), { recursive: true });
 
       const result = checkIsoValidity(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+  });
+
+  // ── FR90 : checkFamilyStructuralCompleteness ───────────────────────────────
+
+  describe("checkFamilyStructuralCompleteness (FR90)", () => {
+    function writeFlgWithContent(
+      root: string,
+      id: string,
+      overrides: {
+        branches?: unknown;
+        distributionByCountry?: unknown;
+      } = {}
+    ) {
+      const dir = join(root, "famille_linguistique");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, `${id}.json`),
+        JSON.stringify({
+          id,
+          content: {
+            generalInfo: {
+              branches: overrides.branches ?? ["Bénoué-Congo"],
+            },
+            distribution: {
+              distributionByCountry: overrides.distributionByCountry ?? {
+                COD: 50000000,
+              },
+            },
+          },
+        })
+      );
+    }
+
+    // @req REQ-119
+    it("returns ok:true when branches and distributionByCountry are populated", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU");
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { branches: [] });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches contains a blank entry", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        branches: ["Bantoïde", "  "],
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when distributionByCountry is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { distributionByCountry: {} });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) =>
+          e.includes("distribution.distributionByCountry")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a country code is not ISO 3166-1 α-3", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { cod: 50000000 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("cod"))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a speaker count is not a positive number", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { COD: 0 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes('["COD"]'))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:true when famille_linguistique directory is empty", () => {
+      mkdirSync(join(tmpDir, "famille_linguistique"), { recursive: true });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
       expect(result.ok).toBe(true);
     });
   });

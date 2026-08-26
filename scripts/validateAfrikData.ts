@@ -1038,6 +1038,95 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/** Collect all FLG_*.json files under famille_linguistique/, returning {file, fullPath} */
+function collectFlgFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const flgDir = path.join(datasetRoot, "famille_linguistique");
+  if (!fs.existsSync(flgDir)) return [];
+
+  return fs
+    .readdirSync(flgDir)
+    .filter((f) => f.startsWith("FLG_") && f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(flgDir, file) }));
+}
+
+/**
+ * FR90 – Family structural completeness:
+ *   - content.generalInfo.branches must be a non-empty array of non-empty strings.
+ *   - content.distribution.distributionByCountry must be a non-empty object whose
+ *     keys are valid ISO 3166-1 α-3 codes and whose values are positive numbers.
+ *
+ * A language family is a top-level AFRIK entity: a fiche that declares neither its
+ * internal branches nor where it is spoken can only ever show a reconstruction
+ * (ETNI-1289). REQ-119 already renders an empty value as "missing" in the UI; this
+ * check turns that same gap into a build-time gate so it cannot silently return.
+ */
+export function checkFamilyStructuralCompleteness(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const iso3166Regex = /^[A-Z]{3}$/;
+
+  for (const { file, fullPath } of collectFlgFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        generalInfo?: { branches?: unknown };
+        distribution?: { distributionByCountry?: unknown };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const branches = data?.content?.generalInfo?.branches;
+    if (
+      !Array.isArray(branches) ||
+      branches.length === 0 ||
+      branches.some((b) => typeof b !== "string" || b.trim() === "")
+    ) {
+      errors.push(
+        `${file}: content.generalInfo.branches must be a non-empty array of non-empty strings`
+      );
+    }
+
+    const distribution = data?.content?.distribution?.distributionByCountry;
+    if (
+      !distribution ||
+      typeof distribution !== "object" ||
+      Array.isArray(distribution) ||
+      Object.keys(distribution).length === 0
+    ) {
+      errors.push(
+        `${file}: content.distribution.distributionByCountry must be a non-empty object`
+      );
+      continue;
+    }
+
+    for (const [country, speakers] of Object.entries(
+      distribution as Record<string, unknown>
+    )) {
+      if (!iso3166Regex.test(country)) {
+        errors.push(
+          `${file}: content.distribution.distributionByCountry has invalid ISO 3166-1 α-3 country code "${country}"`
+        );
+      }
+      if (typeof speakers !== "number" || speakers <= 0) {
+        errors.push(
+          `${file}: content.distribution.distributionByCountry["${country}"] must be a positive number`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 function collectJsonFiles(root: string): string[] {
   if (!fs.existsSync(root)) return [];
 
@@ -3097,6 +3186,14 @@ async function main() {
   newChecks.push({
     name: "FR29 ISO validity",
     result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log(
+    "FR90 – Family structural completeness (branches + distribution)..."
+  );
+  newChecks.push({
+    name: "FR90 Family structural completeness",
+    result: checkFamilyStructuralCompleteness(datasetRoot),
   });
 
   console.log("Source catalogue admissions...");
