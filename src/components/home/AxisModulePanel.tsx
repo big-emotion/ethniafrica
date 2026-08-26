@@ -22,10 +22,14 @@ import {
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { AxisGraphLayer } from "@/lib/home/axisGraphLayer";
 import {
+  BASE_TILT_X,
   LAYOUT_BY_AXIS,
+  MODULE_CARD_HEIGHT,
+  MODULE_CARD_WIDTH,
   entranceProgress,
   layoutNodes,
   nearestEdge,
+  panelHeightFor,
   projectNode,
   type PanelBox,
   type ProjectedNode,
@@ -40,9 +44,6 @@ import type { Language } from "@/types/shared";
  * WebGL context off every phone rather than only the smallest ones.
  */
 const GRAPH_MIN_WIDTH = 860;
-
-/** The scene sits back on its heels so the ring reads as a ring. */
-const BASE_TILT_X = 0.42;
 
 /** How far the pointer can swing the scene, in radians. */
 const PARALLAX_X = 0.16;
@@ -123,6 +124,8 @@ export function AxisModulePanel({
     () => layoutNodes(layout, modules.length),
     [layout, modules.length]
   );
+
+  const sceneHeight = panelHeightFor(layout, modules.length);
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -271,6 +274,7 @@ export function AxisModulePanel({
       aria-labelledby={labelledBy}
       tabIndex={-1}
       data-layout={layout}
+      style={sceneHeight > 0 ? { minHeight: sceneHeight } : undefined}
       className={cn("axis-panel", ACCENT_BY_ACCESS_MODE[mode])}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
@@ -348,19 +352,11 @@ export function AxisModulePanel({
           gap: 12px;
           padding-top: 14px;
         }
-        /* The vertical radius is a fraction of the panel's half-height, so
-           each layout needs exactly the height that clears the opened card
-           at its centre and no more — a ring five wide needs the room, a
-           facing pair would only leave it empty. */
-        .axis-panel[data-layout="ring"] {
-          min-height: 600px;
-        }
-        .axis-panel[data-layout="arc"] {
-          min-height: 560px;
-        }
-        .axis-panel[data-layout="pair"] {
-          min-height: 420px;
-        }
+        /* The height comes from panelHeightFor, inline: the vertical radius
+           is a fraction of the panel's half-height, so a scene needs room
+           in proportion to how tightly its modules stack. Three hand-tuned
+           values here is how the pair layout kept the 420px it was given
+           for two modules while rendering eleven. */
 
         .axis-graph {
           position: absolute;
@@ -388,13 +384,16 @@ export function AxisModulePanel({
           position: absolute;
           left: 50%;
           top: 50%;
-          margin: -26px 0 0 -110px;
-          width: 220px;
+          margin: ${-MODULE_CARD_HEIGHT / 2}px 0 0 ${-MODULE_CARD_WIDTH / 2}px;
+          width: ${MODULE_CARD_WIDTH}px;
           will-change: transform, opacity;
         }
 
         .axis-module-face {
           display: flex;
+          /* The geometry reserves exactly this much room per card, so a
+             label wrapping to two lines must not quietly claim more. */
+          min-height: ${MODULE_CARD_HEIGHT}px;
           align-items: center;
           justify-content: center;
           gap: 10px;
