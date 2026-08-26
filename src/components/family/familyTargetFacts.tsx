@@ -1,11 +1,16 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
-import type { AtlasTarget } from "@/lib/atlas/targets";
 
 /**
  * What the globe's panel says when a reader picks one country of a family's
  * footprint.
+ *
+ * A plain record keyed by country, never a resolver function. The family fiche
+ * is a server component and AtlasGlobe is a client one; a function cannot cross
+ * that boundary, and passing one made every family route answer HTTP 500. React
+ * elements serialize, functions do not — so the return type is what keeps the
+ * mistake from coming back, not a comment asking nobody to repeat it.
  *
  * Every number here is derived — counted from the member peoples' declared
  * currentCountries — and none of it is stated by the family fiche, which
@@ -22,6 +27,8 @@ export interface FamilyTargetFactsInput {
   memberPeopleCount: number;
   /** Member peoples present in each country, by ISO 3166-1 alpha-3. */
   peopleNamesByCountry: Record<string, string[]>;
+  /** French country names, so a panel titles itself without reaching for the globe's targets. */
+  countryNamesFr: Record<string, string>;
 }
 
 const NUMBER_STYLE: CSSProperties = {
@@ -72,15 +79,18 @@ export function buildFamilyTargetFacts({
   familyNameFr,
   memberPeopleCount,
   peopleNamesByCountry,
-}: FamilyTargetFactsInput): (target: AtlasTarget) => AtlasTargetFacts {
-  return (target) => {
-    const present = peopleNamesByCountry[target.countryId] ?? [];
+  countryNamesFr,
+}: FamilyTargetFactsInput): Record<string, AtlasTargetFacts> {
+  const factsByCountry: Record<string, AtlasTargetFacts> = {};
+
+  for (const countryId of Object.keys(peopleNamesByCountry)) {
+    const present = peopleNamesByCountry[countryId] ?? [];
     const share =
       memberPeopleCount > 0 ? (present.length / memberPeopleCount) * 100 : 0;
 
-    return {
-      title: target.nameFr,
-      description: `${target.countryId} · part de l'empreinte ${familyNameFr}`,
+    factsByCountry[countryId] = {
+      title: countryNamesFr[countryId] ?? countryId,
+      description: `${countryId} · part de l'empreinte ${familyNameFr}`,
       body: (
         <div style={{ display: "grid", gap: 14 }}>
           <div>
@@ -145,5 +155,7 @@ export function buildFamilyTargetFacts({
         </div>
       ),
     };
-  };
+  }
+
+  return factsByCountry;
 }

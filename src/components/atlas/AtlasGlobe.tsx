@@ -424,8 +424,15 @@ export interface AtlasGlobeProps {
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
   missingMessage: string;
-  /** The facts the panel opens with for a chosen target. */
+  /** The facts the panel opens with for a chosen target. Client callers only — a function cannot cross the server/client boundary. */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
+  /**
+   * The same facts, precomputed and keyed by country. This is what a server
+   * component passes: React elements serialize across the boundary and
+   * functions do not, so a server page handing over `targetFacts` renders
+   * HTTP 500. Takes precedence over `targetFacts` for the countries it covers.
+   */
+  targetFactsById?: Record<string, AtlasTargetFacts>;
   className?: string;
   /**
    * How a target is offered. "markers" pins a pastille on each one, which reads
@@ -502,6 +509,7 @@ export function AtlasGlobe({
   overlay,
   missingMessage,
   targetFacts = defaultTargetFacts,
+  targetFactsById,
   className,
   targetPicker = "markers",
   legend,
@@ -643,7 +651,9 @@ export function AtlasGlobe({
   // on marker legibility, TTFB and Lighthouse budgets not yet measured.
   const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
 
-  const facts = chosen ? targetFacts(chosen) : null;
+  const factsFor = (target: AtlasTarget): AtlasTargetFacts =>
+    targetFactsById?.[target.countryId] ?? targetFacts(target);
+  const facts = chosen ? factsFor(chosen) : null;
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
       ? placeTargetOnSphere(target, pose)
@@ -696,7 +706,7 @@ export function AtlasGlobe({
             target={target}
             placement={place(target)}
             chosen={target.countryId === chosenCountryId}
-            label={targetFacts(target).title}
+            label={factsFor(target).title}
             onChoose={() => setChosenCountryId(target.countryId)}
           />
         ))}
