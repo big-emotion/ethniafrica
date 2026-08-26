@@ -5,7 +5,45 @@ import {
   checkExportTraceability,
   checkNewExports,
   checkTestAnnotations,
+  resolveLintMode,
 } from "../lintReqAnnotations";
+
+describe("resolveLintMode", () => {
+  // The 1245 unannotated tests already in the tree mean a repo-wide strict run
+  // can never gate. Both enforcing modes are therefore diff-scoped: pre-commit
+  // against HEAD, CI against the PR base, so only what a change introduces has
+  // to comply.
+  // @req REQ-085
+  it("leaves a bare run lenient so it stays usable as a local survey", () => {
+    expect(resolveLintMode([])).toEqual({
+      strictTests: false,
+      diffBase: undefined,
+    });
+  });
+
+  // @req REQ-085
+  it("enforces against HEAD when run from the pre-commit hook", () => {
+    expect(resolveLintMode(["--staged"])).toEqual({
+      strictTests: true,
+      diffBase: "HEAD",
+    });
+  });
+
+  // @req REQ-085
+  it("enforces against the pull request base when CI supplies one", () => {
+    expect(resolveLintMode(["--base", "origin/recette"])).toEqual({
+      strictTests: true,
+      diffBase: "origin/recette",
+    });
+  });
+
+  // Without this the flag reads as `--base undefined` and the git diff resolves
+  // to the whole tree, silently re-running the repo-wide mode that cannot pass.
+  // @req REQ-085
+  it("rejects --base with no ref rather than falling back to the whole tree", () => {
+    expect(() => resolveLintMode(["--base"])).toThrow(/--base/);
+  });
+});
 
 describe("checkTestAnnotations", () => {
   // @req REQ-085
