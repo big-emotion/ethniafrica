@@ -102,6 +102,7 @@ export const PageLayout = ({
         <DesktopNavBar
           language={language}
           onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
         />
       )}
 

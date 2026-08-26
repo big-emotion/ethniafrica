@@ -156,6 +156,46 @@ describe("MobileNavBar — global shell (all routes, ETNI-820 retires the home n
   });
 });
 
+// @req REQ-111
+describe("MobileNavBar — home hub route keeps every destination reachable (ETNI-1193, REQ-111)", () => {
+  it("exposes every destination from the FLG dropdown on the home route at 430px", async () => {
+    mockPathname = "/fr";
+    Object.defineProperty(window, "innerWidth", {
+      writable: true,
+      configurable: true,
+      value: 430,
+    });
+
+    render(<MobileNavBar language="fr" />);
+    const trigger = screen.getByRole("button", { name: "Navigation FLG" });
+    fireEvent.pointerDown(trigger, { pointerId: 1, button: 0 });
+    fireEvent.click(trigger);
+
+    expect(
+      await screen.findByRole("menuitem", { name: "Pays" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "Peuples" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "Familles" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "Migrations" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "Colonisation" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "À propos" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: "Doctrine" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("menuitem", { name: "API" })).toBeInTheDocument();
+  });
+});
+
 // @req REQ-103 FR66
 describe("MobileNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   it("does not offer a quiz item in the FLG dropdown when the feature flag is off", async () => {
