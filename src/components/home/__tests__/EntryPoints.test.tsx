@@ -53,21 +53,21 @@ describe("EntryPoints — three access-mode entry points (ETNI-1328, REQ-113)", 
     ).toHaveLength(3);
   });
 
-  // @req REQ-113
-  it("links each entry point to its localized route", () => {
+  // @req REQ-114
+  it("links each entry point to its access-mode hub route (ETNI-1216)", () => {
     render(<EntryPoints language="fr" counts={counts} />);
 
     expect(screen.getByTestId("entry-point-peuples")).toHaveAttribute(
       "href",
-      getLocalizedRoute("fr", "peoples")
+      getLocalizedRoute("fr", "peoplesHub")
     );
     expect(screen.getByTestId("entry-point-pays")).toHaveAttribute(
       "href",
-      getLocalizedRoute("fr", "countries")
+      getLocalizedRoute("fr", "countriesHub")
     );
     expect(screen.getByTestId("entry-point-familles")).toHaveAttribute(
       "href",
-      getLocalizedRoute("fr", "families")
+      getLocalizedRoute("fr", "familiesHub")
     );
   });
 

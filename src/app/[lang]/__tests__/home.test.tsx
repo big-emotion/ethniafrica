@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // Home renders whatever counts getCorpusCounts resolves to; these tests
 // exercise page layout/content, not the Supabase query layer (covered by
@@ -93,6 +94,24 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
     expect(
       screen.queryByText(/données illustratives/i)
     ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-114
+  it("routes each entry point to its access-mode hub, one click from home (ETNI-1216)", async () => {
+    render(await Home());
+
+    expect(screen.getByTestId("entry-point-peuples")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "peoplesHub")
+    );
+    expect(screen.getByTestId("entry-point-pays")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "countriesHub")
+    );
+    expect(screen.getByTestId("entry-point-familles")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "familiesHub")
+    );
   });
 
   // @req FR95
