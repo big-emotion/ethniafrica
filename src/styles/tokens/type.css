@@ -25,7 +25,8 @@
   --afh-font-body:
     var(--font-nunito-sans), "Nunito Sans", system-ui, sans-serif;
   --afh-font-mono:
-    "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+    var(--font-jetbrains-mono), "JetBrains Mono", "Fira Code", ui-monospace,
+    SFMono-Regular, monospace;
 
   /* ─── 9-role scale · mobile (≥ 430 px base) ───────────────── */
   --afh-text-hero: 34px;
