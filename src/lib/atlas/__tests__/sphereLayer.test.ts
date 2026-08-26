@@ -59,6 +59,7 @@ function fakeGl() {
     uniformMatrix3fv: vi.fn(),
     uniform1f: vi.fn(),
     uniform1i: vi.fn(),
+    uniform2f: vi.fn(),
     uniform3f: vi.fn(),
     drawElements: vi.fn(),
     deleteTexture: vi.fn(),
@@ -184,6 +185,50 @@ describe("sphereLayer — the shared textured globe (REQ-112)", () => {
       new Float32Array(rotation)
     );
     expect(gl.uniform1f).toHaveBeenCalledWith("uMorph", 0.25);
+  });
+
+  // A caller that knows nothing of the atlas camera — the still hero globe
+  // — must keep the framing it had before the camera existed, so the
+  // identity transform is the default rather than something every caller
+  // has to remember to pass.
+  // @req REQ-112
+  it("leaves the body where it fits when no camera is given", () => {
+    const gl = fakeGl();
+    const layer = createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      textureCanvas()
+    );
+
+    layer!.draw({ rotation: buildRotationMatrix(0, 0), morph: 1, aspect: 1 });
+
+    expect(gl.uniform1f).toHaveBeenCalledWith("uZoom", 1);
+    expect(gl.uniform2f).toHaveBeenCalledWith("uOffset", 0, 0);
+  });
+
+  // On a fiche this layer is the ground under an entity outline. Both ride
+  // the atlas camera, so a dolly the terrain ignored would leave the
+  // boundary tracing a coastline that had moved out from under it.
+  // @req REQ-112
+  it("applies the camera dolly and panel bias it is handed", () => {
+    const gl = fakeGl();
+    const layer = createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      textureCanvas()
+    );
+
+    layer!.draw({
+      rotation: buildRotationMatrix(0, 0),
+      morph: 1,
+      aspect: 1,
+      zoom: 2.5,
+      offsetX: -0.38,
+      offsetY: 0.1,
+    });
+
+    expect(gl.uniform1f).toHaveBeenCalledWith("uZoom", 2.5);
+    expect(gl.uniform2f).toHaveBeenCalledWith("uOffset", -0.38, 0.1);
   });
 
   // The indicatrices are a teal instrument laid over the terrain; on a

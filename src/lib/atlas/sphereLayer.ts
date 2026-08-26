@@ -28,6 +28,8 @@ const VERTEX_SHADER = `
   uniform float uMorph;
   uniform float uAspect;
   uniform float uScale;
+  uniform float uZoom;
+  uniform vec2 uOffset;
   varying vec2 vUv;
   varying vec3 vNormal;
 
@@ -42,6 +44,11 @@ const VERTEX_SHADER = `
 
     vec2 screen = position.xy * uScale;
     screen.x = screen.x / uAspect;
+    // Same order as the overlay programs: aspect first, then dolly, then
+    // the share of the stage the open facts panel has claimed. Applying
+    // them in any other order would slide the terrain off the boundary
+    // drawn over it.
+    screen = screen * uZoom + uOffset;
     gl_Position = vec4(screen, 0.0, 1.0);
   }
 `;
@@ -95,6 +102,11 @@ export interface SphereDrawState {
   morph: number;
   /** Canvas width / height, in device pixels. */
   aspect: number;
+  /** Camera dolly. 1 — the default — leaves the body where it fits. */
+  zoom?: number;
+  /** Stage-unit bias, as panelBias.ts computes it. Defaults to centred. */
+  offsetX?: number;
+  offsetY?: number;
 }
 
 export interface SphereLayer {
@@ -217,6 +229,8 @@ export function createSphereLayer(
   const uMorph = gl.getUniformLocation(program, "uMorph");
   const uAspect = gl.getUniformLocation(program, "uAspect");
   const uScale = gl.getUniformLocation(program, "uScale");
+  const uZoom = gl.getUniformLocation(program, "uZoom");
+  const uOffset = gl.getUniformLocation(program, "uOffset");
   const uMap = gl.getUniformLocation(program, "uMap");
   const uLight = gl.getUniformLocation(program, "uLight");
   const uAmbient = gl.getUniformLocation(program, "uAmbient");
@@ -225,7 +239,7 @@ export function createSphereLayer(
   let disposed = false;
 
   return {
-    draw({ rotation, morph, aspect }) {
+    draw({ rotation, morph, aspect, zoom = 1, offsetX = 0, offsetY = 0 }) {
       if (disposed) return;
 
       gl.useProgram(program);
@@ -266,6 +280,8 @@ export function createSphereLayer(
       gl.uniform1f(uMorph, morph);
       gl.uniform1f(uAspect, aspect);
       gl.uniform1f(uScale, fitScale(morph, aspect, margin));
+      gl.uniform1f(uZoom, zoom);
+      gl.uniform2f(uOffset, offsetX, offsetY);
       gl.uniform3f(uLight, 0.5, 0.42, 0.9);
       gl.uniform1f(uAmbient, AMBIENT);
       gl.uniform1f(uRim, LIMB_LIFT);

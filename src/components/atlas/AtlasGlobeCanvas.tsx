@@ -3,29 +3,35 @@
 import { useEffect, useRef } from "react";
 
 import { CHARTER_OCRE_HEX } from "@/components/home/DottedContinent";
+import type { CameraPose } from "@/lib/atlas/camera";
 import {
   buildPointField,
   buildRingFan,
   buildRingLineLoop,
 } from "@/lib/atlas/globeGeometry";
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
-import { AFRICA_CENTER_LON, buildRotationMatrix } from "@/lib/atlas/projection";
+import { buildRotationMatrix } from "@/lib/atlas/projection";
 import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
 import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
-const AUTO_ROTATE_RADIANS_PER_SECOND = 0.1;
 const REVEAL_DURATION_SECONDS = 0.9;
 const FAMILY_FILL_MAX_OPACITY = 0.35;
 const FAMILY_DASH_REPEATS_PER_RING = 18;
 const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 
+// uZoom / uOffset are the REQ-117 camera: the dolly is a clip-space scale
+// because this globe is orthographic, and the offset is the share of the stage
+// the open facts panel has claimed. Applying both AFTER the aspect division
+// keeps the offset in stage units, which is what panelBias.ts computes.
 const BOUNDARY_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
   attribute float aArcFraction;
   uniform mat3 uRotation;
   uniform float uAspect;
+  uniform float uZoom;
+  uniform vec2 uOffset;
   varying float vArcFraction;
   varying float vVisible;
 
@@ -33,6 +39,7 @@ const BOUNDARY_VERTEX_SHADER = `
     vec3 rotated = uRotation * aSpherePos;
     vec2 mixed = rotated.xy;
     mixed.x = mixed.x / uAspect;
+    mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
     vArcFraction = aArcFraction;
     vVisible = step(0.0, rotated.z);
@@ -71,6 +78,8 @@ const FIELD_VERTEX_SHADER = `
   attribute float aWeight;
   uniform mat3 uRotation;
   uniform float uAspect;
+  uniform float uZoom;
+  uniform vec2 uOffset;
   uniform float uBasePointSize;
   varying float vVisible;
 
@@ -78,8 +87,9 @@ const FIELD_VERTEX_SHADER = `
     vec3 rotated = uRotation * aSpherePos;
     vec2 mixed = rotated.xy;
     mixed.x = mixed.x / uAspect;
+    mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
-    gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05));
+    gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05)) * uZoom;
     vVisible = step(0.0, rotated.z);
   }
 `;
@@ -143,6 +153,8 @@ function createProgram(
 
 export interface AtlasGlobeCanvasProps {
   overlay: Exclude<AtlasOverlay, { kind: "people-field-missing" }>;
+  /** The camera AtlasGlobe owns (REQ-117). Every change to it repaints one frame. */
+  pose: CameraPose;
   accentHex?: string;
 }
 
@@ -152,15 +164,22 @@ export interface AtlasGlobeCanvasProps {
  * GL_LINE_LOOP + GL_TRIANGLE_FAN pair, or a people field as GL_POINTS —
  * never the other geometry, so a people overlay is structurally incapable
  * of producing a closed line here.
+ *
+ * It no longer owns any camera state: the pose arrives as a prop, so the only
+ * animation left in this file is the country outline's trace-in reveal, and
+ * that is the only reason a frame loop still runs.
  */
 // @req REQ-116
 export function AtlasGlobeCanvas({
   overlay,
+  pose,
   accentHex,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
+  const poseRef = useRef(pose);
+  const drawRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     reducedMotionRef.current = reducedMotion;
@@ -188,7 +207,6 @@ export function AtlasGlobeCanvas({
     let frameId: number | null = null;
     let lastTimestamp: number | null = null;
 
-    const yawRef = { current: -(AFRICA_CENTER_LON * Math.PI) / 180 };
     const progressRef = { current: overlay.kind === "country-outline" ? 0 : 1 };
 
     // The same lit sphere the home hero stands on. Drawn at margin 1 so it
@@ -203,12 +221,19 @@ export function AtlasGlobeCanvas({
       document.createElement("canvas")
     );
 
-    const paintBase = () => {
+    // The terrain rides the same camera as the overlay drawn over it. A
+    // boundary that dollies toward the reader while the ground stays put
+    // would be tracing a coastline it no longer touches — the very thing
+    // drawing this layer at margin 1 was meant to prevent.
+    const paintBase = (camera: CameraPose) => {
       gl.clear(gl.COLOR_BUFFER_BIT);
       sphere?.draw({
-        rotation: buildRotationMatrix(yawRef.current, 0),
+        rotation: buildRotationMatrix(camera.yaw, camera.pitch),
         morph: 1,
         aspect,
+        zoom: camera.zoom,
+        offsetX: camera.offsetX,
+        offsetY: camera.offsetY,
       });
     };
 
@@ -240,11 +265,15 @@ export function AtlasGlobeCanvas({
 
       const uRotation = gl.getUniformLocation(program, "uRotation");
       const uAspect = gl.getUniformLocation(program, "uAspect");
+      const uZoom = gl.getUniformLocation(program, "uZoom");
+      const uOffset = gl.getUniformLocation(program, "uOffset");
       const uBasePointSize = gl.getUniformLocation(program, "uBasePointSize");
       const uColorRgb = gl.getUniformLocation(program, "uColorRgb");
 
       draw = () => {
-        paintBase();
+        const camera = poseRef.current;
+        // paintBase clears, so the overlay must not clear again after it.
+        paintBase(camera);
         // The sphere layer left its own program and buffers bound, so the
         // field's have to be restated every frame rather than once at
         // setup.
@@ -256,11 +285,14 @@ export function AtlasGlobeCanvas({
         gl.enableVertexAttribArray(aWeight);
         gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
 
-        const rotation = new Float32Array(
-          buildRotationMatrix(yawRef.current, 0)
+        gl.uniformMatrix3fv(
+          uRotation,
+          false,
+          new Float32Array(buildRotationMatrix(camera.yaw, camera.pitch))
         );
-        gl.uniformMatrix3fv(uRotation, false, rotation);
         gl.uniform1f(uAspect, aspect);
+        gl.uniform1f(uZoom, camera.zoom);
+        gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
         gl.uniform1f(
           uBasePointSize,
           PEOPLE_BASE_POINT_SIZE_CSS_PX * devicePixelRatio
@@ -281,6 +313,8 @@ export function AtlasGlobeCanvas({
       const aArcFraction = gl.getAttribLocation(program, "aArcFraction");
       const uRotation = gl.getUniformLocation(program, "uRotation");
       const uAspect = gl.getUniformLocation(program, "uAspect");
+      const uZoom = gl.getUniformLocation(program, "uZoom");
+      const uOffset = gl.getUniformLocation(program, "uOffset");
       const uColor = gl.getUniformLocation(program, "uColor");
       const uIsStroke = gl.getUniformLocation(program, "uIsStroke");
       const uProgress = gl.getUniformLocation(program, "uProgress");
@@ -303,16 +337,21 @@ export function AtlasGlobeCanvas({
       const loopArcBuffer = gl.createBuffer();
 
       draw = () => {
-        paintBase();
+        const camera = poseRef.current;
+        // paintBase clears, so the overlay must not clear again after it.
+        paintBase(camera);
         // The sphere layer bound its own program; the boundary's has to be
         // made current again before its uniforms mean anything.
         gl.useProgram(program);
 
-        const rotation = new Float32Array(
-          buildRotationMatrix(yawRef.current, 0)
+        gl.uniformMatrix3fv(
+          uRotation,
+          false,
+          new Float32Array(buildRotationMatrix(camera.yaw, camera.pitch))
         );
-        gl.uniformMatrix3fv(uRotation, false, rotation);
         gl.uniform1f(uAspect, aspect);
+        gl.uniform1f(uZoom, camera.zoom);
+        gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
 
         rings.forEach(({ fan, loop }) => {
           gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
@@ -346,6 +385,8 @@ export function AtlasGlobeCanvas({
       };
     }
 
+    drawRef.current = draw;
+
     const resize = () => {
       const width = canvas.clientWidth || parent.clientWidth;
       const height = parent.clientHeight || canvas.clientHeight;
@@ -359,30 +400,30 @@ export function AtlasGlobeCanvas({
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
-    const scheduleFrame = () => {
+    /** The reveal is the only thing left that needs successive frames; the camera repaints on demand. */
+    const scheduleReveal = () => {
       if (disposed || !visible || frameId !== null) return;
+      if (progressRef.current >= 1) return;
+
       frameId = window.requestAnimationFrame((timestamp) => {
         frameId = null;
         if (disposed || !visible) return;
 
-        const dt =
+        const seconds =
           lastTimestamp === null ? 0 : (timestamp - lastTimestamp) / 1000;
         lastTimestamp = timestamp;
-        yawRef.current += AUTO_ROTATE_RADIANS_PER_SECOND * dt;
-        if (progressRef.current < 1) {
-          progressRef.current = Math.min(
-            1,
-            progressRef.current + dt / REVEAL_DURATION_SECONDS
-          );
-        }
+        progressRef.current = Math.min(
+          1,
+          progressRef.current + seconds / REVEAL_DURATION_SECONDS
+        );
         draw();
-        scheduleFrame();
+        scheduleReveal();
       });
     };
 
     const handleResize = () => {
       resize();
-      if (reducedMotionRef.current) draw();
+      draw();
     };
 
     const observer = new IntersectionObserver(
@@ -393,8 +434,8 @@ export function AtlasGlobeCanvas({
         if (!visible && frameId !== null) {
           window.cancelAnimationFrame(frameId);
           frameId = null;
-        } else if (visible && !reducedMotionRef.current) {
-          scheduleFrame();
+        } else if (visible) {
+          scheduleReveal();
         }
       },
       { threshold: 0.05 }
@@ -410,11 +451,13 @@ export function AtlasGlobeCanvas({
       progressRef.current = 1;
       draw();
     } else {
-      scheduleFrame();
+      draw();
+      scheduleReveal();
     }
 
     return () => {
       disposed = true;
+      drawRef.current = null;
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener("resize", handleResize);
@@ -422,6 +465,11 @@ export function AtlasGlobeCanvas({
       sphere?.dispose();
     };
   }, [overlay, accentHex]);
+
+  useEffect(() => {
+    poseRef.current = pose;
+    drawRef.current?.();
+  }, [pose]);
 
   return (
     <canvas

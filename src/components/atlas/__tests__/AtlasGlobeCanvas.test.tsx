@@ -2,6 +2,7 @@ import { act, render } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AtlasGlobeCanvas } from "@/components/atlas/AtlasGlobeCanvas";
+import { IDLE_POSE } from "@/lib/atlas/camera";
 import type {
   CountryOutlineOverlay,
   FamilyFootprintOverlay,
@@ -103,6 +104,7 @@ function createFakeGl() {
     viewport: vi.fn(),
     uniformMatrix3fv: vi.fn(),
     uniform1f: vi.fn(),
+    uniform2f: vi.fn(),
     uniform3f: vi.fn(),
     uniform4f: vi.fn(),
     drawArrays: vi.fn(),
@@ -216,7 +218,9 @@ describe("AtlasGlobeCanvas", () => {
 
   // @req REQ-116
   it("renders a decorative canvas", () => {
-    const { container } = render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+    const { container } = render(
+      <AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />
+    );
     const canvas = container.querySelector("canvas");
     expect(canvas).toHaveAttribute("aria-hidden", "true");
   });
@@ -225,14 +229,14 @@ describe("AtlasGlobeCanvas", () => {
   it("never throws when no WebGL context can be created", () => {
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
     expect(() =>
-      render(<AtlasGlobeCanvas overlay={countryOverlay} />)
+      render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />)
     ).not.toThrow();
   });
 
   // @req REQ-116 — the people encoding guard: GL_POINTS only, never a line or fill.
   it("draws a people field with GL_POINTS only, never LINE_LOOP or TRIANGLE_FAN", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={peopleOverlay} />);
+    render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.POINTS,
@@ -254,7 +258,7 @@ describe("AtlasGlobeCanvas", () => {
   // @req REQ-116
   it("draws a country outline as a filled fan plus a stroked line loop per ring", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+    render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.TRIANGLE_FAN,
@@ -271,7 +275,7 @@ describe("AtlasGlobeCanvas", () => {
   // @req REQ-116
   it("draws a family footprint as a dashed, tinted fan plus line loop per ring", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={familyOverlay} />);
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.TRIANGLE_FAN,
@@ -287,7 +291,7 @@ describe("AtlasGlobeCanvas", () => {
 
   // @req REQ-116
   it("starts a country outline's stroke reveal at zero progress and advances it toward one over the next frame", () => {
-    render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+    render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
     fakeGl.uniform1f.mockClear();
 
     const firstFrame = frameCallbacks.get(1);
@@ -307,15 +311,75 @@ describe("AtlasGlobeCanvas", () => {
   });
 
   // @req REQ-116
-  it("runs a continuous render loop when motion is not reduced", () => {
-    render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+  it("schedules a frame loop for a country outline's trace-in when motion is not reduced", () => {
+    render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
     expect(window.requestAnimationFrame).toHaveBeenCalledOnce();
+  });
+
+  /**
+   * The camera moved out of this component (REQ-117), so a fly-to reaches it
+   * as successive poses rather than as a loop it drives itself. If a new pose
+   * did not repaint, the globe would simply stop following the camera.
+   */
+  // @req REQ-117
+  it("repaints on a new camera pose without re-creating its WebGL programs", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />
+    );
+    const programsBefore = fakeGl.createProgram.mock.calls.length;
+    fakeGl.drawArrays.mockClear();
+
+    rerender(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={{ ...IDLE_POSE, yaw: IDLE_POSE.yaw + 0.5, zoom: 2 }}
+      />
+    );
+
+    expect(fakeGl.drawArrays).toHaveBeenCalled();
+    expect(fakeGl.createProgram.mock.calls.length).toBe(programsBefore);
+  });
+
+  // @req REQ-117
+  it("hands the dolly and the panel bias to the shader as it draws", () => {
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={{ ...IDLE_POSE, zoom: 2.5, offsetX: -0.38, offsetY: 0 }}
+      />
+    );
+
+    expect(fakeGl.uniform1f).toHaveBeenCalledWith(expect.anything(), 2.5);
+    expect(fakeGl.uniform2f).toHaveBeenCalledWith(expect.anything(), -0.38, 0);
+  });
+
+  // Terrain and boundary ride one camera. The sphere layer runs its own
+  // program, so the dolly and the bias have to reach it separately — miss
+  // it and the outline slides off the ground it traces the moment the
+  // facts panel opens.
+  // @req REQ-117
+  it("hands the same dolly and bias to the terrain as to the overlay", () => {
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={{ ...IDLE_POSE, zoom: 2.5, offsetX: -0.38, offsetY: 0 }}
+      />
+    );
+
+    const dollies = fakeGl.uniform1f.mock.calls.filter(
+      ([, value]) => value === 2.5
+    );
+    const biases = fakeGl.uniform2f.mock.calls.filter(
+      ([, x, y]) => x === -0.38 && y === 0
+    );
+    expect(dollies.length).toBeGreaterThanOrEqual(2);
+    expect(biases.length).toBeGreaterThanOrEqual(2);
   });
 
   // @req REQ-116
   it("draws exactly one still frame and schedules no loop under reduced motion", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+    render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
 
     expect(window.requestAnimationFrame).not.toHaveBeenCalled();
     expect(fakeGl.drawArrays).toHaveBeenCalled();
@@ -323,7 +387,9 @@ describe("AtlasGlobeCanvas", () => {
 
   // @req REQ-116
   it("cancels the pending animation frame on unmount", () => {
-    const { unmount } = render(<AtlasGlobeCanvas overlay={countryOverlay} />);
+    const { unmount } = render(
+      <AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />
+    );
     expect(window.requestAnimationFrame).toHaveBeenCalledOnce();
 
     unmount();
@@ -340,7 +406,7 @@ describe("AtlasGlobeCanvas", () => {
     ["a people field", peopleOverlay],
   ])("draws the shared textured sphere beneath %s", (_label, overlay) => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={overlay} />);
+    render(<AtlasGlobeCanvas overlay={overlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawElements).toHaveBeenCalledWith(
       fakeGl.TRIANGLES,
@@ -356,7 +422,7 @@ describe("AtlasGlobeCanvas", () => {
   // @req REQ-116
   it("rebinds the overlay's program after the sphere layer has drawn", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={peopleOverlay} />);
+    render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
 
     const programCalls = fakeGl.useProgram.mock.calls.length;
     expect(programCalls).toBeGreaterThan(2);
@@ -367,7 +433,7 @@ describe("AtlasGlobeCanvas", () => {
   // @req REQ-116
   it("keeps the people field on GL_POINTS over the new terrain", () => {
     matchMediaMatches = true;
-    render(<AtlasGlobeCanvas overlay={peopleOverlay} />);
+    render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
 
     const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
     expect(modes).toContain(fakeGl.POINTS);
