@@ -51,6 +51,8 @@ const ALL_LIVE_RESULTS: Record<string, TableResult> = {
   afrik_language_families: { count: 5, error: null },
   name_records: { count: 5, error: null },
   migration_events: { count: 5, error: null },
+  afrik_people_relations: { count: 5, error: null },
+  quiz_questions: { count: 5, error: null },
 };
 
 describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", () => {
@@ -134,6 +136,36 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     expect(eq).toHaveBeenCalledWith("entity_type", "people");
   });
 
+  // Both games shipped as inert placeholders, so a wrong table name here
+  // would read as "still coming soon" rather than as a broken probe.
+  // @req REQ-120
+  it("probes the relations table for the liens game", async () => {
+    const supabase = buildSupabaseMock(ALL_LIVE_RESULTS);
+    createServerClientMock.mockReturnValue(supabase);
+
+    const modules = await getHubModules("jouer");
+
+    expect(supabase.from).toHaveBeenCalledWith("afrik_people_relations");
+    expect(modules.find((m) => m.id === "liens")?.available).toBe(true);
+  });
+
+  // Each game stands on its own table, so one empty source darkens one game
+  // and leaves the other eleven alone.
+  // @req REQ-120
+  it("takes a game off the hub when its own table is empty", async () => {
+    createServerClientMock.mockReturnValue(
+      buildSupabaseMock({
+        ...ALL_LIVE_RESULTS,
+        afrik_people_relations: { count: 0, error: null },
+      })
+    );
+
+    const modules = await getHubModules("jouer");
+
+    expect(modules.find((m) => m.id === "liens")?.available).toBe(false);
+    expect(modules.find((m) => m.id === "mercator")?.available).toBe(true);
+  });
+
   // @req REQ-106 @req REQ-114
   it("keeps a static module live without ever touching the database", async () => {
     const available = await isModuleAvailable({ availability: "static" });
@@ -166,7 +198,8 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       const modules = await getHubModules("jouer");
 
       expect(modules.map((m) => m.id)).not.toContain("quiz");
-      // The unbuilt module still shows, because that one really is coming.
+      // A game beside it is untouched: the flag settles one module, never
+      // the axis.
       expect(modules.map((m) => m.id)).toContain("liens");
     } finally {
       if (original !== undefined) {

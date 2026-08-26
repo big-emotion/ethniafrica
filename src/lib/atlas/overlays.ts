@@ -458,8 +458,51 @@ export function buildContinentOverlay(
   };
 }
 
+// ─── Country set: the same closed outlines, offered as a round's choices ───
+
+/**
+ * An arbitrary set of countries offered as choices — the shape a game round
+ * needs (REQ-120). Distinct from `FamilyFootprintOverlay`, which asserts "this
+ * family lives here": this one asserts nothing about the countries it draws,
+ * it only says "pick one of these". Same encoding as a country outline, so a
+ * round introduces no visual language the atlas does not already speak.
+ */
+export interface CountrySetOverlay {
+  kind: "country-set";
+  countryIds: CountryId[];
+  rings: Ring[];
+  fillOpacity: number;
+}
+
+/**
+ * Order is the caller's, not sorted: a round decides which choice comes first
+ * and the markers follow it. Ids absent from the committed admin-0 asset drop
+ * out one by one rather than voiding the round — only a round where nothing at
+ * all resolves is null, which is what makes AtlasGlobe declare it missing
+ * (REQ-119) instead of drawing an empty globe.
+ */
+// @req REQ-120
+export function buildCountrySetOverlay(
+  countryIds: CountryId[]
+): CountrySetOverlay | null {
+  const resolvedCountryIds = Array.from(new Set(countryIds)).filter((id) =>
+    Boolean(getAdmin0Rings(id))
+  );
+  const rings = resolvedCountryIds.flatMap((id) => getAdmin0Rings(id) ?? []);
+
+  if (rings.length === 0) return null;
+
+  return {
+    kind: "country-set",
+    countryIds: resolvedCountryIds,
+    rings,
+    fillOpacity: COUNTRY_FILL_OPACITY,
+  };
+}
+
 export type AtlasOverlay =
   | CountryOutlineOverlay
+  | CountrySetOverlay
   | PeopleFieldOverlay
   | PeopleFieldMissingOverlay
   | FamilyFootprintOverlay

@@ -6,6 +6,7 @@ import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import {
   buildContinentOverlay,
   buildCountryOutlineOverlay,
+  buildCountrySetOverlay,
   buildFamilyFootprintOverlay,
   buildPeopleFieldOverlay,
   CONTINENT_FRAME_FILL_OPACITY,
@@ -285,6 +286,48 @@ describe("buildFamilyFootprintOverlay (REQ-116 AC4)", () => {
   it("is null (missing) when no member country resolves to committed geometry", () => {
     expect(buildFamilyFootprintOverlay([["XYZ"]], 3)).toBeNull();
     expect(buildFamilyFootprintOverlay([], 0)).toBeNull();
+  });
+});
+
+describe("buildCountrySetOverlay (REQ-120)", () => {
+  // @req REQ-120
+  it("outlines every proposed country, keeping the order the round proposed them in", () => {
+    const overlay = buildCountrySetOverlay(["TGO", "NGA", "BEN"]);
+
+    expect(overlay?.kind).toBe("country-set");
+    expect(overlay?.countryIds).toEqual(["TGO", "NGA", "BEN"]);
+    expect(overlay?.rings.length).toBeGreaterThan(0);
+    expect(overlay?.rings[0].length).toBeGreaterThan(2);
+  });
+
+  // @req REQ-120
+  it("fills at the shared country fill opacity rather than inventing a visual language of its own", () => {
+    expect(buildCountrySetOverlay(["NGA"])?.fillOpacity).toBe(
+      COUNTRY_FILL_OPACITY
+    );
+  });
+
+  // @req REQ-120
+  it("keeps the countries that resolve when one of them is absent from the committed admin-0 asset", () => {
+    const overlay = buildCountrySetOverlay(["NGA", "XYZ"]);
+
+    expect(overlay?.countryIds).toEqual(["NGA"]);
+  });
+
+  // @req REQ-120
+  it("offers a country proposed twice as a single choice, so one country never gets two markers", () => {
+    expect(buildCountrySetOverlay(["NGA", "NGA"])?.countryIds).toEqual(["NGA"]);
+  });
+
+  // @req REQ-119
+  it("is null (missing) when no proposed country resolves to committed geometry", () => {
+    expect(buildCountrySetOverlay(["XYZ"])).toBeNull();
+    expect(buildCountrySetOverlay([])).toBeNull();
+  });
+
+  // @req REQ-120
+  it("never emits a people kind, so a round can never close a line around a people", () => {
+    expect(buildCountrySetOverlay(["NGA", "BEN"])?.kind).not.toMatch(/^people/);
   });
 });
 

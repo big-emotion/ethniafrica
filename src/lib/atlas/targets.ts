@@ -103,6 +103,12 @@ export function buildAtlasTargets(overlay: AtlasOverlay | null): AtlasTarget[] {
       return overlay.countries
         .map((country) => targetForCountry(country.countryId))
         .filter((target): target is AtlasTarget => target !== null);
+    // A game's country set carries no ranking of its own — the round decides
+    // the order, so the targets keep the order the round handed in.
+    case "country-set":
+      return overlay.countryIds
+        .map((countryId) => targetForCountry(countryId))
+        .filter((target): target is AtlasTarget => target !== null);
     // The frame is 51 countries of geographic reference; only an area is a
     // claim about the corpus, so only an area earns a marker.
     case "continent-field":

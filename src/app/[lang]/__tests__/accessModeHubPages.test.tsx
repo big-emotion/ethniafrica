@@ -86,11 +86,22 @@ const comprendreModules: HubModule[] = [
 
 const jouerModules: HubModule[] = [
   {
-    id: "comparer",
-    name: "Comparer deux peuples",
+    id: "quiz",
+    name: "Le quiz",
     accessMode: "jouer",
-    page: "compare",
-    availability: "static",
+    page: "quiz",
+    availability: "flagged",
+    featureFlag: "quiz",
+    available: true,
+  },
+  {
+    id: "comparer",
+    name: "Vraie taille",
+    accessMode: "jouer",
+    page: null,
+    gameSlug: "vraie-taille",
+    availability: "data",
+    dataSource: "afrik_countries",
     available: true,
   },
   {
@@ -98,7 +109,9 @@ const jouerModules: HubModule[] = [
     name: "Les liens invisibles",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    gameSlug: "liens",
+    availability: "data",
+    dataSource: "afrik_people_relations",
     available: false,
   },
 ];
@@ -192,7 +205,11 @@ describe("access-mode hub routes (REQ-114)", () => {
 
     expect(getHubModulesMock).toHaveBeenCalledWith("jouer");
     expect(screen.getByTestId("access-mode-hub-jouer")).toBeInTheDocument();
-    expect(screen.getByTestId("hub-module-link-comparer")).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-quiz")).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-comparer")).toHaveAttribute(
+      "href",
+      "/fr/jouer/vraie-taille"
+    );
     expect(
       screen.getByTestId("hub-module-unavailable-liens")
     ).toBeInTheDocument();

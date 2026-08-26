@@ -58,10 +58,23 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual(["noms", "frise", "doctrine"]);
   });
 
-  // @req REQ-114
-  it("gives jouer the modules that answer a reader who brought nothing", () => {
+  // @req REQ-114 @req REQ-120
+  it("gives jouer the quiz and the eleven games, in playing order", () => {
     const ids = getModulesForAccessMode("jouer").map((m) => m.id);
-    expect(ids).toEqual(["comparer", "quiz", "liens"]);
+    expect(ids).toEqual([
+      "quiz",
+      "appellations",
+      "plus-ou-moins",
+      "mercator",
+      "comparer",
+      "repartition",
+      "pays-davant",
+      "royaumes",
+      "migrations",
+      "liens",
+      "jeu-familles",
+      "frontieres",
+    ]);
   });
 
   // "Noms & appellations" answers *why does this people carry this name* —
@@ -79,6 +92,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(MODULE_DEFINITIONS.map((m) => m.id)).not.toContain("about");
   });
 
+  // The quiz is gated on its build flag rather than on a row count: with the
+  // flag dark its route answers notFound(), and a corpus probe cannot see
+  // that.
   // @req REQ-114
   it("registers the quiz behind its feature flag under jouer", () => {
     const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
@@ -88,11 +104,52 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(quiz?.page).toBe("quiz");
   });
 
-  // @req REQ-114
-  it("keeps liens unavailable because it has no standalone route", () => {
+  // comparer and liens shipped as "Bientôt" placeholders; the surfaces they
+  // stood in for now exist, so their ids are reused rather than duplicated.
+  // @req REQ-120
+  it("leaves no jouer module stranded on the unavailable placeholder", () => {
+    for (const def of getModulesForAccessMode("jouer")) {
+      expect(def.availability).not.toBe("unavailable");
+    }
+  });
+
+  // A game is addressed by slug under /jouer, which keeps PageType a closed
+  // union instead of growing one variant per game.
+  // @req REQ-120
+  it("addresses every game by slug and the quiz by its own page", () => {
+    const jouer = getModulesForAccessMode("jouer");
+    const quiz = jouer.find((m) => m.id === "quiz");
+    expect(quiz?.page).toBe("quiz");
+    expect(quiz?.gameSlug).toBeUndefined();
+
+    for (const game of jouer.filter((m) => m.id !== "quiz")) {
+      expect(game.gameSlug).toBeTruthy();
+      expect(game.page).toBeNull();
+    }
+  });
+
+  // @req REQ-120
+  it("keeps every game slug distinct so two games cannot share a route", () => {
+    const slugs = MODULE_DEFINITIONS.map((m) => m.gameSlug).filter(Boolean);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  // The placeholder's id survives so nothing referencing it breaks, but the
+  // game it became is named and routed for what it does.
+  // @req REQ-120
+  it("keeps the comparer id while routing it to the vraie-taille game", () => {
+    const comparer = MODULE_DEFINITIONS.find((m) => m.id === "comparer");
+    expect(comparer?.name).toBe("Vraie taille");
+    expect(comparer?.gameSlug).toBe("vraie-taille");
+  });
+
+  // liens shipped without one because it had no surface of its own; the game
+  // it became reads the relations table like any other.
+  // @req REQ-120
+  it("backs the liens game with the relations it questions", () => {
     const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
-    expect(liens?.availability).toBe("unavailable");
-    expect(liens?.page).toBeNull();
+    expect(liens?.dataSource).toBe("afrik_people_relations");
+    expect(liens?.gameSlug).toBe("liens");
   });
 
   // @req REQ-114
@@ -113,11 +170,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     const staticModules = MODULE_DEFINITIONS.filter(
       (m) => m.availability === "static"
     );
-    expect(staticModules.map((m) => m.id)).toEqual([
-      "recherche",
-      "doctrine",
-      "comparer",
-    ]);
+    expect(staticModules.map((m) => m.id)).toEqual(["recherche", "doctrine"]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
     }
@@ -165,10 +218,14 @@ describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
     expect(isModuleEnabled(flaggedQuiz(undefined))).toBe(false);
   });
 
+  // Stated against a definition built here: REQ-120 left no registry entry
+  // in the `unavailable` state, and the rule outlives the last module that
+  // was in it.
   // @req REQ-106
   it("never enables a module forced unavailable", () => {
-    const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
-    expect(isModuleEnabled(liens)).toBe(false);
+    expect(
+      isModuleEnabled({ availability: "unavailable", featureFlag: "quiz" })
+    ).toBe(false);
   });
 
   // Data and static modules are decided elsewhere — by the corpus and by

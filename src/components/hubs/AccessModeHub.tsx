@@ -77,44 +77,54 @@ export function AccessModeHub({
         )}
       >
         <ul className="flex flex-col gap-3" role="list">
-          {modules.map((module) => (
-            <li key={module.id} data-testid={`hub-module-${module.id}`}>
-              {module.available && module.page ? (
-                <Link
-                  href={getLocalizedRoute(language, module.page)}
-                  data-testid={`hub-module-link-${module.id}`}
-                  className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4 no-underline"
-                  style={{
-                    borderColor: "var(--accent)",
-                    backgroundColor: "var(--accent-tint)",
-                    color: "var(--afh-text)",
-                  }}
-                >
-                  {module.name}
-                </Link>
-              ) : (
-                <div
-                  data-testid={`hub-module-unavailable-${module.id}`}
-                  className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4"
-                  style={{
-                    borderColor: "var(--afh-text-soft)",
-                    color: "var(--afh-text-soft)",
-                  }}
-                >
-                  <span>{module.name}</span>
-                  <span
-                    className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-medium"
+          {modules.map((module) => {
+            // A game has no PageType of its own — it is addressed by slug
+            // under the Jouer hub — so the slug wins over any page.
+            const href = module.gameSlug
+              ? `/${language}/jouer/${module.gameSlug}`
+              : module.page
+                ? getLocalizedRoute(language, module.page)
+                : null;
+
+            return (
+              <li key={module.id} data-testid={`hub-module-${module.id}`}>
+                {module.available && href ? (
+                  <Link
+                    href={href}
+                    data-testid={`hub-module-link-${module.id}`}
+                    className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4 no-underline"
                     style={{
-                      backgroundColor: "var(--afh-surface)",
+                      borderColor: "var(--accent)",
+                      backgroundColor: "var(--accent-tint)",
+                      color: "var(--afh-text)",
+                    }}
+                  >
+                    {module.name}
+                  </Link>
+                ) : (
+                  <div
+                    data-testid={`hub-module-unavailable-${module.id}`}
+                    className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4"
+                    style={{
+                      borderColor: "var(--afh-text-soft)",
                       color: "var(--afh-text-soft)",
                     }}
                   >
-                    {t.hubs.unavailableLabel}
-                  </span>
-                </div>
-              )}
-            </li>
-          ))}
+                    <span>{module.name}</span>
+                    <span
+                      className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-medium"
+                      style={{
+                        backgroundColor: "var(--afh-surface)",
+                        color: "var(--afh-text-soft)",
+                      }}
+                    >
+                      {t.hubs.unavailableLabel}
+                    </span>
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {children ? (

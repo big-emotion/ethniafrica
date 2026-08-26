@@ -1,0 +1,111 @@
+"use client";
+
+import * as React from "react";
+import { CheckCircle2, XCircle } from "lucide-react";
+
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import type { GameRound } from "@/lib/games/gameKinds";
+import { cn } from "@/lib/utils";
+
+const COPY_FR = {
+  correctVerdict: "Bonne réponse",
+  incorrectVerdict: "Ce n'est pas ça",
+  provenanceLabel: "Champ de la fiche",
+  nextRound: "Tour suivant",
+  seeScore: "Voir le score",
+} as const;
+
+/**
+ * Floor height of the panel. Exported so a caller can reserve the same space
+ * under the answering state and keep the reveal from shifting the page.
+ */
+// @req REQ-120
+export const GAME_REVEAL_MIN_HEIGHT_CLASS = "min-h-[18rem]";
+
+export interface GameAnswerRevealProps {
+  round: GameRound;
+  isCorrect: boolean;
+  isLastRound: boolean;
+  onNext: () => void;
+  className?: string;
+}
+
+/**
+ * What the reader is shown after answering (REQ-120).
+ *
+ * `reveal.textFr` is printed exactly as the corpus holds it: FR65/FR66 forbid
+ * a paraphrase as firmly as an invented option, so there is no summarising and
+ * no clamping here. `reveal.fieldPath` rides along as the provenance line —
+ * the reader can go and check the same field on the fiche.
+ */
+// @req REQ-120
+export const GameAnswerReveal = ({
+  round,
+  isCorrect,
+  isLastRound,
+  onNext,
+  className,
+}: GameAnswerRevealProps) => {
+  const reducedMotion = usePrefersReducedMotion();
+  const headingRef = React.useRef<HTMLHeadingElement>(null);
+
+  React.useEffect(() => {
+    headingRef.current?.focus();
+  }, [round]);
+
+  const VerdictIcon = isCorrect ? CheckCircle2 : XCircle;
+
+  return (
+    <div
+      data-testid="game-answer-reveal"
+      data-reduced-motion={reducedMotion ? "true" : "false"}
+      style={reducedMotion ? { transitionDuration: "0.01ms" } : undefined}
+      className={cn(
+        GAME_REVEAL_MIN_HEIGHT_CLASS,
+        "flex flex-col gap-4 rounded-afh-lg border border-afh-border bg-afh-surface p-4 opacity-100 transition-opacity duration-afh-base",
+        className
+      )}
+    >
+      <div data-testid="game-reveal-live-region" aria-live="polite">
+        <h2
+          ref={headingRef}
+          tabIndex={-1}
+          className={cn(
+            "flex items-center gap-2 font-afh-display text-afh-h2 font-black outline-none",
+            isCorrect ? "text-afh-conf-high" : "text-afh-terracotta"
+          )}
+        >
+          <VerdictIcon aria-hidden="true" className="h-6 w-6" />
+          {isCorrect ? COPY_FR.correctVerdict : COPY_FR.incorrectVerdict}
+        </h2>
+        <p
+          data-testid="game-reveal-text"
+          className="mt-3 text-afh-body text-afh-text"
+        >
+          {round.reveal.textFr}
+        </p>
+      </div>
+
+      <p
+        data-testid="game-reveal-provenance"
+        className="border-t border-afh-border pt-3 text-afh-small text-afh-text-soft"
+      >
+        {COPY_FR.provenanceLabel} : <code>{round.reveal.fieldPath}</code>
+      </p>
+
+      <button
+        type="button"
+        onClick={onNext}
+        className="mt-auto min-h-11 w-full rounded-afh-lg px-4 py-2 font-medium"
+        style={{
+          backgroundColor: "var(--accent)",
+          color: "var(--accent-foreground)",
+        }}
+      >
+        {isLastRound ? COPY_FR.seeScore : COPY_FR.nextRound}
+      </button>
+    </div>
+  );
+};
+
+export default GameAnswerReveal;
