@@ -33,10 +33,15 @@ const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
   side: { width: `${SIDE_PANEL_VIEW_FRACTION * 100}%` },
 };
 
-/** Anchored inside the stage, never to the viewport — the bias is stage-relative. */
+/**
+ * Anchored inside the stage, never to the viewport — the bias is
+ * stage-relative. Above the breakpoint the panel is a card posed on the
+ * globe, inset from the edge and rounded on every side; below it, a sheet
+ * rising from the bottom, rounded only where it leaves the edge.
+ */
 const ANCHOR_POSITION: Record<PanelAnchor, string> = {
-  bottom: "absolute inset-x-0 bottom-0 border-t",
-  side: "absolute inset-y-0 right-0 border-l",
+  bottom: "absolute inset-x-0 bottom-0 rounded-t-afh-lg border-t",
+  side: "absolute right-[22px] top-[22px] bottom-[22px] rounded-afh-lg border",
 };
 
 /**
@@ -94,6 +99,14 @@ export function AtlasFactsPanel({
           // letting Radix dismiss on it would close the panel on every pick.
           onInteractOutside={(event) => event.preventDefault()}
         >
+          {anchor === "bottom" ? (
+            <div
+              data-atlas-panel-handle=""
+              aria-hidden="true"
+              className="mx-auto h-1 w-9 shrink-0 rounded-full opacity-40"
+              style={{ backgroundColor: "var(--afh-night-ink-2)" }}
+            />
+          ) : null}
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-col gap-1">
               <DialogPrimitive.Title className="text-base font-semibold leading-tight">
