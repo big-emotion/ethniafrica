@@ -96,6 +96,13 @@ jobs:
 
       - run: npm run check:env-example
 
+      # Pre-merge, only what is knowable without a database: no two files
+      # claiming the same version or name, no hole in the sequence. Whether a
+      # migration is *applied* is meaningless here — the one this PR adds is
+      # pending by definition — so that check runs after the merge, in
+      # migrate-recette.yml, and nightly in data-integrity.yml.
+      - run: npm run check:migration-files
+
       - run: npm run typecheck
 
       - run: npm run format:check
