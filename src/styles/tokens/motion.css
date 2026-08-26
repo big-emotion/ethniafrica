@@ -25,6 +25,10 @@
   --afh-ease-out: cubic-bezier(0, 0, 0.2, 1);
   --afh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --afh-ease-default: ease;
+  /* Reserved for things arriving on screen — panel, sheet, drawer, card
+     (atlas charter §6). State changes keep the flat curves above: a spring
+     on a colour change reads as a glitch, not as an arrival. */
+  --afh-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Composed transitions */
   --afh-transition-color:
@@ -50,6 +54,11 @@
     --afh-duration-slow: 0.01ms;
     --afh-duration-fade: 0.01ms;
     --afh-duration-pageload: 0.01ms;
+
+    /* The one easing worth neutralising at the source: a spring overshoots
+       its destination and comes back, which stays visible for any caller
+       that pairs the curve with a duration of its own rather than a token. */
+    --afh-ease-spring: linear;
 
     --afh-transition-color: opacity 0.01ms linear;
     --afh-transition-opacity: opacity 0.01ms linear;
