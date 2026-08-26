@@ -77,7 +77,10 @@ export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
 // ─── Country: closed outline, stroked as it draws, 22% fill ────────────────
 
 // @req REQ-116
-export const COUNTRY_FILL_OPACITY = 0.22;
+// Raised from 0.22 once the terrain gained national boundaries: against a
+// bordered continent the old fill no longer separated the chosen country
+// from the graticule and neighbour lines crossing underneath it.
+export const COUNTRY_FILL_OPACITY = 0.34;
 
 export interface CountryOutlineOverlay {
   kind: "country-outline";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
 import { headers } from "next/headers";
-import { Fraunces, JetBrains_Mono, Nunito_Sans } from "next/font/google";
+import { Fraunces, Nunito_Sans, JetBrains_Mono } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
@@ -25,9 +25,9 @@ const nunitoSans = Nunito_Sans({
 // figure that has to align in a column (--afh-font-mono in type.css). Until it
 // was loaded here the token fell through to the system monospace, whose metrics
 // differ enough that a tabular-nums column stops lining up.
-const jetBrainsMono = JetBrains_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
   variable: "--font-jetbrains-mono",
 });
 
@@ -75,7 +75,7 @@ export default async function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${fraunces.variable} ${nunitoSans.variable} ${jetBrainsMono.variable}`}
+      className={`${fraunces.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">

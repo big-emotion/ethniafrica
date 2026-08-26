@@ -3,8 +3,6 @@ import { describe, expect, it } from "vitest";
 
 import {
   FICHE_BAND_BREAKPOINT_PX,
-  FICHE_GLOBE_HEIGHT_COMPACT_PX,
-  FICHE_GLOBE_HEIGHT_WIDE_PX,
   FicheHeroBand,
 } from "@/components/fiche/FicheHeroBand";
 
@@ -67,13 +65,9 @@ describe("FicheHeroBand", () => {
   });
 
   // @req REQ-116
-  it("states the two globe heights and the width that switches between them", () => {
-    expect(FICHE_GLOBE_HEIGHT_COMPACT_PX).toBe(470);
-    expect(FICHE_GLOBE_HEIGHT_WIDE_PX).toBe(520);
+  it("names the width the band changes shape at", () => {
+    // The globe's own heights live in --afh-globe-stage-height (space.css);
+    // this is only the width the band's own container query answers to.
     expect(FICHE_BAND_BREAKPOINT_PX).toBe(760);
-    // Mobile first: the smaller height is the one that applies by default.
-    expect(FICHE_GLOBE_HEIGHT_COMPACT_PX).toBeLessThan(
-      FICHE_GLOBE_HEIGHT_WIDE_PX
-    );
   });
 });

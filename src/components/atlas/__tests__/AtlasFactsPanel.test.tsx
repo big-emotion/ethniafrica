@@ -8,7 +8,7 @@ import {
 } from "@/components/atlas/AtlasFactsPanel";
 import {
   BOTTOM_SHEET_VIEW_FRACTION,
-  SIDE_PANEL_WIDTH_PX,
+  SIDE_PANEL_VIEW_FRACTION,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 
@@ -124,26 +124,20 @@ describe("AtlasFactsPanel", () => {
   });
 
   // @req REQ-117
-  it("never covers more of the stage, as a bottom sheet, than the camera bias allows for", () => {
+  it("covers, as a bottom sheet, exactly the share of the stage the camera bias assumes", () => {
     renderPanel({ anchor: "bottom" });
 
-    // A ceiling, not a fixed height: the sheet is as tall as its facts need.
-    // What must hold is that it cannot grow past the share panelBias.ts
-    // computed the free region against.
     expect(screen.getByRole("dialog")).toHaveStyle({
-      maxHeight: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%`,
+      height: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%`,
     });
   });
 
   // @req REQ-117
-  it("takes a readable column width, as a side panel, rather than a share of the stage", () => {
+  it("covers, as a side panel, exactly the share of the stage the camera bias assumes", () => {
     renderPanel({ anchor: "side" });
 
-    // A share of the stage would make the facts column narrow on a small
-    // desktop and needlessly wide on a large one; a column of prose has a
-    // width that reads well and it does not depend on the map behind it.
     expect(screen.getByRole("dialog")).toHaveStyle({
-      width: `${SIDE_PANEL_WIDTH_PX}px`,
+      width: `${SIDE_PANEL_VIEW_FRACTION * 100}%`,
     });
   });
 
@@ -188,5 +182,33 @@ describe("AtlasFactsPanel", () => {
 
     expect(onClose).not.toHaveBeenCalled();
     expect(screen.getByRole("dialog", { name: "Yoruba" })).toBeInTheDocument();
+  });
+});
+
+describe("AtlasFactsPanel — a card posed on the globe (REQ-117)", () => {
+  // @req REQ-117
+  it("gives the rising sheet a handle, and the posed card none", () => {
+    const { reanchor } = renderPanel({ anchor: "bottom" });
+    expect(document.querySelector("[data-atlas-panel-handle]")).not.toBeNull();
+
+    reanchor("side");
+
+    expect(document.querySelector("[data-atlas-panel-handle]")).toBeNull();
+  });
+
+  // @req REQ-117
+  it("insets the posed card from the stage edge, so it reads as laid on the globe", () => {
+    renderPanel({ anchor: "side" });
+
+    const panel = screen.getByRole("dialog");
+    expect(panel.className).toContain("right-[22px]");
+    expect(panel.className).toContain("rounded-afh-lg");
+  });
+
+  // @req REQ-117
+  it("keeps the sheet's own edge square where it meets the stage bottom", () => {
+    renderPanel({ anchor: "bottom" });
+
+    expect(screen.getByRole("dialog").className).toContain("rounded-t-afh-lg");
   });
 });

@@ -6,7 +6,7 @@ import type { CSSProperties, ReactElement, ReactNode } from "react";
 
 import {
   BOTTOM_SHEET_VIEW_FRACTION,
-  SIDE_PANEL_WIDTH_PX,
+  SIDE_PANEL_VIEW_FRACTION,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { cn } from "@/lib/utils";
@@ -23,25 +23,25 @@ export interface AtlasFactsPanelProps {
 }
 
 /**
- * The panel must not cover more of the stage than panelBias.ts assumes, so the
- * size is read off that module rather than retyped: should the CSS and the
- * constants drift apart, the camera parks the chosen subject underneath the
- * panel instead of beside it. The bias is a separate, smaller number — see the
- * note at the top of panelBias.ts for why the two stopped being equal.
+ * The panel must cover exactly the share of the stage `biasForPanel()` assumes,
+ * so the size is read off panelBias.ts rather than retyped: should the CSS and
+ * the constant drift apart, the camera parks the chosen subject underneath the
+ * panel instead of beside it.
  */
 const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
-  // maxHeight, not height: the sheet is as tall as its facts need, up to the
-  // share the camera bias was computed against. A fixed height would pad a
-  // short panel with empty space below its last fact.
-  bottom: { maxHeight: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%` },
-  // A column of facts has a readable width; a share of the stage does not.
-  side: { width: SIDE_PANEL_WIDTH_PX, maxWidth: "100%" },
+  bottom: { height: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%` },
+  side: { width: `${SIDE_PANEL_VIEW_FRACTION * 100}%` },
 };
 
-/** Anchored inside the stage, never to the viewport — the bias is stage-relative. */
+/**
+ * Anchored inside the stage, never to the viewport — the bias is
+ * stage-relative. Above the breakpoint the panel is a card posed on the
+ * globe, inset from the edge and rounded on every side; below it, a sheet
+ * rising from the bottom, rounded only where it leaves the edge.
+ */
 const ANCHOR_POSITION: Record<PanelAnchor, string> = {
-  bottom: "absolute inset-x-0 bottom-0 border-t",
-  side: "absolute inset-y-0 right-0 border-l",
+  bottom: "absolute inset-x-0 bottom-0 rounded-t-afh-lg border-t",
+  side: "absolute right-[22px] top-[22px] bottom-[22px] rounded-afh-lg border",
 };
 
 /**
@@ -54,7 +54,7 @@ const ANCHOR_POSITION: Record<PanelAnchor, string> = {
  * the fiche, lifted out and laid over the map. Painted night it reads as one
  * more layer of the map; painted parchment it reads as what it is, a piece of
  * the page's own reading placed on top. That distinction is the reason this is
- * a panel and not a tooltip.
+ * a panel and not a tooltip, and it is what the mockup asks for.
  *
  * (The shadcn Sheet parts are styled for the light palette — hence the bare
  * Radix primitives here.)
@@ -108,6 +108,14 @@ export function AtlasFactsPanel({
           // letting Radix dismiss on it would close the panel on every pick.
           onInteractOutside={(event) => event.preventDefault()}
         >
+          {anchor === "bottom" ? (
+            <div
+              data-atlas-panel-handle=""
+              aria-hidden="true"
+              className="mx-auto h-1 w-9 shrink-0 rounded-full opacity-40"
+              style={{ backgroundColor: "var(--afh-text-muted)" }}
+            />
+          ) : null}
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-col gap-1">
               <DialogPrimitive.Title className="text-base font-semibold leading-tight">

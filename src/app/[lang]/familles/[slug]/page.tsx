@@ -234,7 +234,6 @@ export default async function FamillesSlugPage({
           <FicheHeroBand>
             <AtlasGlobe
               overlay={familyOverlay}
-              stageVariant="band"
               targetPicker="list"
               targetFacts={familyTargetFacts}
               legend={<FamilyFootprintLegend />}

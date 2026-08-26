@@ -31,6 +31,7 @@ const TOKEN_BY_ROLE: Record<
     equator: "--afh-globe-equator",
     tissot: "--afh-globe-tissot",
     tissotEdge: "--afh-globe-tissot-edge",
+    border: "--afh-globe-border",
   },
   parchment: {
     ocean: "--afh-globe-parchment-ocean",
@@ -42,6 +43,7 @@ const TOKEN_BY_ROLE: Record<
     equator: "--afh-globe-parchment-equator",
     tissot: "--afh-globe-parchment-tissot",
     tissotEdge: "--afh-globe-parchment-tissot-edge",
+    border: "--afh-globe-parchment-border",
   },
 };
 
@@ -61,6 +63,7 @@ export const GLOBE_PALETTE_FALLBACK: Record<GlobeSurface, GlobePalette> = {
     equator: "#7a8ce8",
     tissot: "rgba(51, 163, 144, 0.3)",
     tissotEdge: "#33a390",
+    border: "rgba(232, 185, 106, 0.28)",
   },
   parchment: {
     ocean: "#e6dcc7",
@@ -72,6 +75,7 @@ export const GLOBE_PALETTE_FALLBACK: Record<GlobeSurface, GlobePalette> = {
     equator: "#7a8ce8",
     tissot: "rgba(51, 163, 144, 0.28)",
     tissotEdge: "#33a390",
+    border: "rgba(107, 58, 28, 0.26)",
   },
 };
 
@@ -89,6 +93,16 @@ export const GLOBE_LIGHTING: Record<GlobeSurface, SphereLighting> = {
   night: { ambient: 0.44, rim: 0.3 },
   parchment: { ambient: 0.86, rim: 0 },
 };
+
+/**
+ * The home looks at the globe from far off; a fiche comes close. At that
+ * framing the night palette turns to black — the terminator eats the half
+ * of the subject the reader came for, and the limb rim, sized for a small
+ * disc, becomes a bright band across it. So the floor comes up and the rim
+ * comes down. Same palette, different distance.
+ */
+// @req REQ-112
+export const FICHE_LIGHTING: SphereLighting = { ambient: 0.6, rim: 0.24 };
 
 function readToken(surface: GlobeSurface, role: keyof GlobePalette): string {
   if (typeof window === "undefined")
@@ -115,5 +129,6 @@ export function resolveGlobePalette(
     equator: readToken(surface, "equator"),
     tissot: readToken(surface, "tissot"),
     tissotEdge: readToken(surface, "tissotEdge"),
+    border: readToken(surface, "border"),
   };
 }

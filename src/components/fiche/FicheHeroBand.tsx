@@ -19,11 +19,10 @@ import type { CSSProperties, ReactNode } from "react";
  * it stops being true the moment anyone gives this band a viewport height.
  */
 
-/** Globe heights, mobile first. The band is a fixed height, never an aspect ratio: it is a band, not a picture. */
-// @req REQ-116
-export const FICHE_GLOBE_HEIGHT_COMPACT_PX = 470;
-// @req REQ-116
-export const FICHE_GLOBE_HEIGHT_WIDE_PX = 520;
+/**
+ * The globe's own heights are --afh-globe-stage-height (space.css), which
+ * AtlasGlobe reads directly. They are not restated here: one band, one source.
+ */
 
 /** Container width, not viewport width — see the container query below. */
 // @req REQ-116
