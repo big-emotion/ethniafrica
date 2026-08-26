@@ -48,6 +48,16 @@ const jouerModules: HubModule[] = [
     name: "Les liens invisibles",
     accessMode: "jouer",
     page: null,
+    gameSlug: "liens",
+    availability: "data",
+    dataSource: "afrik_people_relations",
+    available: true,
+  },
+  {
+    id: "annonce",
+    name: "Un module annonce\u0301 avant sa route",
+    accessMode: "jouer",
+    page: null,
     availability: "unavailable",
     available: false,
   },
@@ -120,10 +130,35 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
     ).not.toBeInTheDocument();
   });
 
-  // A module with no route at all is the other way a module can be
+  // A game carries `page: null` by design — it is addressed by slug so
+  // PageType stays a closed union — so a panel that reads `page` alone
+  // renders every live game as "Bientot". That is how eleven playable
+  // games sat inert on the home while the hub linked all eleven.
+  // @req REQ-114
+  it("addresses a game by its slug rather than leaving it on Bientot", () => {
+    render(
+      <AxisModulePanel
+        language="fr"
+        mode="jouer"
+        modules={jouerModules}
+        labelledBy="access-axis-title-jouer"
+        onClose={vi.fn()}
+      />
+    );
+
+    expect(screen.getByTestId("axis-module-link-liens")).toHaveAttribute(
+      "href",
+      "/fr/jouer/liens"
+    );
+    expect(
+      screen.queryByTestId("axis-module-unavailable-liens")
+    ).not.toBeInTheDocument();
+  });
+
+  // A module with neither slug nor page is the other way a module can be
   // unavailable, and it must not become a link to nowhere.
   // @req REQ-106
-  it("renders a module that has no route as inert too", () => {
+  it("renders a module that has no route at all as inert", () => {
     render(
       <AxisModulePanel
         language="fr"
@@ -135,9 +170,11 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
     );
 
     expect(
-      screen.getByTestId("axis-module-unavailable-liens")
+      screen.getByTestId("axis-module-unavailable-annonce")
     ).toBeInTheDocument();
-    expect(screen.queryAllByRole("link")).toHaveLength(0);
+    expect(
+      screen.queryByTestId("axis-module-link-annonce")
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-114

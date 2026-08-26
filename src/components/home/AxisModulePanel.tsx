@@ -12,7 +12,7 @@ import {
 
 import { AxisGraphCanvas } from "@/components/home/AxisGraphCanvas";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import {
@@ -281,7 +281,8 @@ export function AxisModulePanel({
 
       <ul className="axis-panel-modules" role="list">
         {modules.map((module, index) => {
-          const live = module.available && module.page !== null;
+          const href = getModuleHref(module, language);
+          const live = module.available && href !== null;
           const shared = {
             className: "axis-module-face min-h-11",
             onMouseEnter: () => setActiveIndex(index),
@@ -304,7 +305,7 @@ export function AxisModulePanel({
             >
               {live ? (
                 <Link
-                  href={getLocalizedRoute(language, module.page)}
+                  href={href}
                   data-testid={`axis-module-link-${module.id}`}
                   {...shared}
                 >

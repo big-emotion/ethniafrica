@@ -486,14 +486,33 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
 
   // A pending axis is still worth opening: that is where the reader sees
   // what is coming, which is what the hub used to be for.
+  //
+  // The pending module is declared here rather than borrowed from the
+  // registry. This test used to point at `liens`, which only read as
+  // pending because the panel resolved hrefs from `page` alone and every
+  // game carries `page: null` — it was asserting the bug.
   // @req REQ-106
-  it("opens a pending axis too, onto its Bientôt modules", async () => {
-    renderAxes();
+  it("opens an axis onto the modules that really are still to come", async () => {
+    renderAxes({
+      modulesByAxis: {
+        ...modulesByAxis,
+        jouer: [
+          {
+            id: "annonce",
+            name: "Un module annoncé avant sa route",
+            accessMode: "jouer",
+            page: null,
+            availability: "unavailable",
+            available: false,
+          },
+        ],
+      },
+    });
 
     await userEvent.click(screen.getByTestId("access-axis-jouer"));
 
     expect(
-      screen.getByTestId("axis-module-unavailable-liens")
+      screen.getByTestId("axis-module-unavailable-annonce")
     ).toHaveTextContent("Bientôt");
   });
 });
