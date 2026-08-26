@@ -516,3 +516,40 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
     ).toHaveTextContent("Bientôt");
   });
 });
+
+describe("AccessAxes — Escape across the two levels Jouer now has (REQ-120)", () => {
+  // The panel intercepts Escape while a shelf is open and this listener
+  // takes it once there is nothing left to step back to. Neither half is
+  // worth much alone: the contract is that one wrong turn costs the reader
+  // a level, and only a second Escape costs them the panel.
+  // @req REQ-120
+  it("gives back the shelves first, and the panel only on a second press", async () => {
+    renderAxes();
+    const jouer = screen.getByTestId("access-axis-jouer");
+
+    await userEvent.click(jouer);
+    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-peuples"));
+    expect(
+      screen.getByTestId("axis-module-link-appellations")
+    ).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-shelf-jeux-peuples")).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    expect(screen.queryByTestId("axis-panel-jouer")).not.toBeInTheDocument();
+    expect(jouer).toHaveFocus();
+  });
+
+  // Explorer carries no shelf, so nothing changed for it: one Escape.
+  // @req REQ-120
+  it("still closes an unfiled axis on the first press", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.keyboard("{Escape}");
+
+    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+  });
+});
