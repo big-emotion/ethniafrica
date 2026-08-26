@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/lint-edited-file.sh",
+            "timeout": 60,
+            "statusMessage": "Linting edited file..."
+          }
+        ]
+      }
+    ]
+  }
+}

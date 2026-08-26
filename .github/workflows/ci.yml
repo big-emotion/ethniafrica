@@ -46,7 +46,11 @@ jobs:
       contents: read
 
     steps:
+      # Full history: `lint:req --base` diffs against the merge base with the
+      # target branch, which a shallow clone cannot resolve.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -77,7 +81,14 @@ jobs:
 
       - run: npm run lint
 
-      - run: npm run lint:req
+      # Diff-scoped, like the pre-commit hook but against the PR base instead of
+      # HEAD. A bare run only surveys (the tree still holds ~1245 tests that
+      # predate the rule); `--base` is what makes it block, and it blocks on the
+      # same two rules the hook enforces — every new test carries a @req, every
+      # new export carries one and is covered by a test with the same ID. Without
+      # it CI checked neither, so `--no-verify` or a GitHub web edit walked past
+      # the rule entirely.
+      - run: npm run lint:req -- --base origin/${{ github.base_ref }}
 
       - run: npm run check:jira-template
 

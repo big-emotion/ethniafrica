@@ -1,9 +1,10 @@
 name: Data Integrity Gate
 
 on:
+  # Pre-merge only, matching ci.yml. The `push` trigger duplicated every PR run
+  # on merge; corpus drift that appears without a PR (an external source moving)
+  # is what the nightly schedule below is for.
   pull_request:
-    branches: [main, recette]
-  push:
     branches: [main, recette]
   schedule:
     - cron: "0 2 * * *"
