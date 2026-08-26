@@ -119,14 +119,14 @@ export function EntryPoints({ language, counts }: EntryPointsProps) {
               <span
                 data-testid={`entry-point-count-${entry.id}`}
                 className="text-sm"
-                style={{ color: "var(--afh-text-soft)" }}
+                style={{ color: "var(--afh-text)" }}
               >
                 {entry.count(counts)}
               </span>
               <span
                 data-testid={`entry-point-verb-${entry.id}`}
                 className="text-sm font-medium"
-                style={{ color: "var(--accent)" }}
+                style={{ color: "var(--accent-ink)" }}
               >
                 {VERB}
               </span>
