@@ -9,6 +9,7 @@ interface AfrikBreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
+// @req REQ-115
 export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
   if (!items.length) return null;
 
