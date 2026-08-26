@@ -1,4 +1,4 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { DesktopNavBar } from "@/components/layout/DesktopNavBar";
@@ -22,8 +22,10 @@ vi.mock("@/lib/featureFlags", () => ({
 // @req [14.5]
 // @req REQ-044
 describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home night skin)", () => {
-  it("keeps the same nav links and destinations on the home route as elsewhere (IA unchanged)", () => {
-    for (const pathname of ["/fr", "/fr/pays"]) {
+  // @req REQ-111 — the home hub route narrows this to brand + search only,
+  // see the "hub route reduction" describe block below.
+  it("keeps the same nav links and destinations on non-hub routes (IA unchanged)", () => {
+    for (const pathname of ["/fr/pays", "/fr/peuples"]) {
       mockPathname = pathname;
       render(<DesktopNavBar language="fr" />);
 
@@ -157,11 +159,73 @@ describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home 
   });
 });
 
+// @req REQ-111
+describe("DesktopNavBar — hub route reduction (ETNI-1193, REQ-111)", () => {
+  it("shows only brand and search on the home route, none of the module entry points", () => {
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Rechercher" })
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Pays" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Peuples" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Familles" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Migrations" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Colonisation" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "À propos" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "Doctrine" })).toBeNull();
+    expect(screen.queryByRole("link", { name: "API" })).toBeNull();
+  });
+
+  // @req REQ-111
+  it("calls onSearchClick when the reduced hub nav's search control is activated", () => {
+    mockPathname = "/fr";
+    const onSearchClick = vi.fn();
+    render(<DesktopNavBar language="fr" onSearchClick={onSearchClick} />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Rechercher" }));
+    expect(onSearchClick).toHaveBeenCalledTimes(1);
+  });
+
+  // @req REQ-111
+  it("keeps the full navigation present and unchanged on non-hub routes", () => {
+    mockPathname = "/fr/pays";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.getByRole("link", { name: "Pays" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Peuples" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Familles" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Migrations" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Colonisation" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "À propos" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Doctrine" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "API" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Rechercher" })).toBeNull();
+  });
+
+  // @req REQ-111
+  it("keeps the navigation landmark and home indicator on the reduced hub nav", () => {
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(
+      screen.getByRole("navigation", { name: "Navigation principale" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Accueil")).toBeInTheDocument();
+  });
+});
+
 // @req REQ-103 FR66
 describe("DesktopNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   it("does not render a quiz entry when the feature flag is off", () => {
     mockQuizFeatureEnabled = false;
-    mockPathname = "/fr";
+    mockPathname = "/fr/pays";
     render(<DesktopNavBar language="fr" />);
 
     expect(screen.queryByRole("link", { name: "Quiz" })).toBeNull();
@@ -170,7 +234,7 @@ describe("DesktopNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)
   // @req REQ-103 FR66
   it("renders a quiz entry linking to /fr/quiz when the feature flag is on", () => {
     mockQuizFeatureEnabled = true;
-    mockPathname = "/fr";
+    mockPathname = "/fr/pays";
     render(<DesktopNavBar language="fr" />);
 
     expect(screen.getByRole("link", { name: "Quiz" })).toHaveAttribute(

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Search } from "lucide-react";
 import { Language } from "@/types/shared";
 import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import Image from "next/image";
@@ -11,10 +12,15 @@ import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 interface DesktopNavBarProps {
   language: Language;
   onLanguageChange?: (lang: Language) => void;
+  onSearchClick?: () => void;
 }
 
 // @req [14.5]
-export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
+// @req REQ-111
+export const DesktopNavBar = ({
+  language,
+  onSearchClick,
+}: DesktopNavBarProps) => {
   const pathname = usePathname();
 
   const familiesRoute = getLocalizedRoute(language, "families");
@@ -74,59 +80,78 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
             </span>
           </Link>
 
+          {/* Hub route (REQ-111): the page body already offers the module
+              entry points as cards, so the nav retains only brand + search. */}
+          {isHome && (
+            <button
+              type="button"
+              onClick={onSearchClick}
+              className={navLinkClass(false) + " gap-2"}
+              aria-label="Rechercher"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+              Rechercher
+            </button>
+          )}
+
           {/* Inline nav: Pays · Peuples · Familles · À propos · Doctrine · API */}
-          <div className="flex items-center gap-1">
-            <Link
-              href={countriesRoute}
-              className={navLinkClass(currentPage === "countries")}
-            >
-              Pays
-            </Link>
-            <Link
-              href={peoplesRoute}
-              className={navLinkClass(currentPage === "peoples")}
-            >
-              Peuples
-            </Link>
-            <Link
-              href={familiesRoute}
-              className={navLinkClass(currentPage === "families")}
-            >
-              Familles
-            </Link>
-            <Link
-              href={migrationsRoute}
-              className={navLinkClass(currentPage === "migrations")}
-            >
-              Migrations
-            </Link>
-            <Link
-              href={colonizationRoute}
-              className={navLinkClass(currentPage === "colonization")}
-            >
-              Colonisation
-            </Link>
-            {isQuizFeatureEnabled() && (
+          {!isHome && (
+            <div className="flex items-center gap-1">
               <Link
-                href={quizRoute}
-                className={navLinkClass(currentPage === "quiz")}
+                href={countriesRoute}
+                className={navLinkClass(currentPage === "countries")}
               >
-                Quiz
+                Pays
               </Link>
-            )}
-            <Link href={`/${language}/about`} className={navLinkClass(isAbout)}>
-              À propos
-            </Link>
-            <Link
-              href={`/${language}/doctrine`}
-              className={navLinkClass(isDoctrine)}
-            >
-              Doctrine
-            </Link>
-            <Link href="/docs/api/v2" className={navLinkClass(isApi)}>
-              API
-            </Link>
-          </div>
+              <Link
+                href={peoplesRoute}
+                className={navLinkClass(currentPage === "peoples")}
+              >
+                Peuples
+              </Link>
+              <Link
+                href={familiesRoute}
+                className={navLinkClass(currentPage === "families")}
+              >
+                Familles
+              </Link>
+              <Link
+                href={migrationsRoute}
+                className={navLinkClass(currentPage === "migrations")}
+              >
+                Migrations
+              </Link>
+              <Link
+                href={colonizationRoute}
+                className={navLinkClass(currentPage === "colonization")}
+              >
+                Colonisation
+              </Link>
+              {isQuizFeatureEnabled() && (
+                <Link
+                  href={quizRoute}
+                  className={navLinkClass(currentPage === "quiz")}
+                >
+                  Quiz
+                </Link>
+              )}
+              <Link
+                href={`/${language}/about`}
+                className={navLinkClass(isAbout)}
+              >
+                À propos
+              </Link>
+              <Link
+                href={`/${language}/doctrine`}
+                className={navLinkClass(isDoctrine)}
+              >
+                Doctrine
+              </Link>
+              <Link href="/docs/api/v2" className={navLinkClass(isApi)}>
+                API
+              </Link>
+            </div>
+          )}
 
           {/* Home indicator (visually hidden, semantic only) */}
           <span className="sr-only">{isHome ? "Accueil" : ""}</span>
