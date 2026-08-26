@@ -1,0 +1,87 @@
+name: Apply Migrations — Recette
+
+# Deploying code and applying its migrations were two separate manual acts, and
+# the second one kept not happening: 037 and 038 were marked Done in Jira with
+# their pull requests merged while neither was live on any database, and the
+# corpora that depended on them loaded zero rows until somebody checked by hand.
+#
+# This closes that gap for recette. A merge into `recette` deploys the code via
+# Vercel and applies the pending migrations here, in the same beat. Production
+# stays deliberately manual — the two-step rollout rule is recette first, verify
+# on the recette application, then production — so this workflow never touches
+# the production project.
+
+on:
+  push:
+    branches: [recette]
+    paths:
+      - "supabase/migrations/**"
+      - ".github/workflows/migrate-recette.yml"
+  workflow_dispatch:
+
+# A second merge landing mid-apply would race the first on the same ledger.
+concurrency:
+  group: recette-migrations
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: recette
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Forks and Dependabot cannot read secrets. Skipping loudly beats failing
+      # with an authentication error that reads like a broken workflow.
+      - name: Check for the recette database credential
+        id: secrets
+        run: |
+          if [ -n "${{ secrets.RECETTE_SUPABASE_DB_URL }}" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::RECETTE_SUPABASE_DB_URL is not set — migrations were NOT applied. See docs/runbooks/migration-state.md."
+          fi
+
+      # What would run, before it runs. The log is the record of what this
+      # deploy changed in the database.
+      - name: Report the pending migrations
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run migrations:diff -- --sql
+        continue-on-error: true
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - uses: supabase/setup-cli@46f7f98c7f948ad727d22c1e67fab04c223a0520 # v3.0.0
+        if: steps.secrets.outputs.present == 'true'
+        with:
+          version: latest
+
+      # `db push` reads the ledger, applies only what is missing, and records
+      # each migration with the statements it ran — which is what makes drift
+      # detectable later. Re-running it on an up-to-date database is a no-op.
+      - name: Apply pending migrations
+        if: steps.secrets.outputs.present == 'true'
+        run: supabase db push --db-url "$RECETTE_SUPABASE_DB_URL" --include-all
+        env:
+          RECETTE_SUPABASE_DB_URL: ${{ secrets.RECETTE_SUPABASE_DB_URL }}
+
+      # Proves the apply did what it claimed. Without this the job could report
+      # success on a partial push, which is the failure this workflow exists to
+      # stop happening silently.
+      - name: Verify nothing is left pending
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run check:migration-state
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

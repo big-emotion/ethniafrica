@@ -181,10 +181,12 @@ tablet `md` 720px · desktop `xl` 800px.
 | [`docs/adr/README.md`](docs/adr/README.md)                             | where architecture decisions live now                                                     |
 | [`CHANGELOG.md`](CHANGELOG.md)                                         | release history                                                                           |
 
-**Operators, read this first:** two Supabase projects are both labelled "production" — one
-backs recette, one backs production. Every migration is a two-step rollout, recette first.
-Applying one and calling it done has already left a corpus loaded on one database and missing
-on the other.
+**Operators, read this first:** both Supabase projects label their environment "production",
+because a Supabase project has exactly one environment and Supabase names it that — the label
+describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` backs recette; a
+second project backs production. Every migration is a two-step rollout, recette first. Applying
+one and calling it done has already left a corpus loaded on one database and missing on the
+other.
 
 ---
 

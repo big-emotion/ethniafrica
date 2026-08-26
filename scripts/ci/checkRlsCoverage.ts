@@ -14,8 +14,10 @@
  * carried) and fails on any table still live at the end of the timeline that
  * never received `ALTER TABLE ... ENABLE ROW LEVEL SECURITY`.
  *
- * It reads the migration files, not the database — the two Supabase projects
- * both labelled "production" drift, and the files are the only shared truth.
+ * It reads the migration files, not the database — the recette and production
+ * projects drift whenever a migration reaches only one, and the files are the
+ * only truth both are supposed to converge on. `check:migration-state` is the
+ * gate that measures how far each has drifted from them.
  * Enabling RLS with no policy at all denies everything to anon, which is safe;
  * the gate deliberately does not audit policy *contents*, only their absence
  * at the RLS switch.

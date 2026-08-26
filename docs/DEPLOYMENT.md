@@ -16,18 +16,23 @@ two-step operation that no pipeline performs for you.
 | Recette     | `recette` | `shmrjtnfbqzceovroqjj`                     | the integration environment; protected branch |
 | Production  | `main`    | a second project, ref not recorded in-repo | serves `ethniafrica.com`                      |
 
-**Two Supabase projects are both labelled "production".** One backs recette, one backs
-production. The dashboard label does not tell you which. Before touching a database, read
+**Both Supabase projects call their environment "production", and neither label means what it
+looks like.** A Supabase project has exactly one environment, and Supabase names it
+"production" — there is no staging branch inside a project. The label therefore describes the
+project's own environment, not the application environment it serves. `shmrjtnfbqzceovroqjj`
+serves **recette**; the production application is served by the other project, whose ref is not
+recorded in this repository. Before touching a database, read
 [`runbooks/migration-state.md`](./runbooks/migration-state.md) — it carries the project
 identity table, the applied-migration state, and the two-step rollout rule.
 
-> **Unresolved, and worth knowing before you trust that table.** Two things in the repository
-> disagree about which project production uses. `scripts/lib/afrikMigrationTarget.ts` and
+> **Known mis-wiring, unfixed.** `scripts/lib/afrikMigrationTarget.ts` and
 > `.github/workflows/production-data-sync.yml` both hard-code `shmrjtnfbqzceovroqjj` as the
-> production target — and that workflow fires on a Vercel _Production_ deploy of `main` and
-> then revalidates `ethniafrica.com`. Project records from 2026-08 say that same ref backs
-> **recette**. Both cannot be right. Until someone reconciles them, confirm the destination
-> with the environment owner rather than reading it off a constant, a flag name, or this page.
+> "production" target — but that ref is recette. The workflow fires on a Vercel _Production_
+> deploy of `main`, writes the AFRIK corpus into the recette database, and then revalidates
+> `ethniafrica.com`, which it did not write to. Nothing has been changed to correct this:
+> repointing the constant or the workflow is an environment decision for the owner. Until then,
+> confirm the destination with the environment owner rather than reading it off a constant, a
+> flag name, or this page.
 
 ---
 
@@ -173,7 +178,8 @@ before running with `--apply`.
 `.github/workflows/production-data-sync.yml` runs the same validate → preview → apply sequence
 automatically after a successful Vercel _Production_ deployment of `main`, then POSTs a cache
 revalidation to `https://ethniafrica.com/api/admin/revalidate`. It targets the same hard-coded
-project ref, so it inherits the naming trap above.
+project ref — the recette one — so every production deploy loads the corpus into recette and
+revalidates a site it did not write to. See the note at the top of this page.
 
 Requires **Node ≥ 22** for the loaders: `@supabase/supabase-js` needs a native `WebSocket`, and
 on Node 20 the run dies with `native WebSocket not found` before the target guard is reached.
