@@ -91,12 +91,42 @@
       ]
     },
     "sources": [
-      "Travel News Namibia — The people of Kavango and Zambezi. https://travelnam.com/people-kavango-zambezi/",
-      "Namibia Biodiversity Database — Namibian Languages (ISO codes). https://biodiversity.org.na/NamLanguages.php",
-      "CityPopulation.de — Kavango East census 2023. https://www.citypopulation.de/en/namibia/admin/02__kavango_east/",
-      "GlobalPopulations.com — Kavango West 2025. https://globalpopulations.com/na/3278824-kavango-west-region/",
-      "University of Cape Town — Education in Kavango Region (pre-colonial to 1966). https://open.uct.ac.za/server/api/core/bitstreams/7c26adea-1094-4744-aca7-5376f0a05cd8/content",
-      "SIL Ethnologue — Kwangali language (kwn). https://www.ethnologue.com/language/kwn/"
+      {
+        "title": "Travel News Namibia — The people of Kavango and Zambezi",
+        "url": "https://travelnam.com/people-kavango-zambezi/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers travelnam.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Namibia Biodiversity Database — Namibian Languages (ISO codes)",
+        "url": "https://biodiversity.org.na/NamLanguages.php",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers biodiversity.org.na; the tier awaits editorial review."
+      },
+      {
+        "title": "CityPopulation.de — Kavango East census 2023",
+        "url": "https://www.citypopulation.de/en/namibia/admin/02__kavango_east/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "GlobalPopulations.com — Kavango West 2025",
+        "url": "https://globalpopulations.com/na/3278824-kavango-west-region/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for globalpopulations.com."
+      },
+      {
+        "title": "University of Cape Town — Education in Kavango Region (pre-colonial to 1966)",
+        "url": "https://open.uct.ac.za/server/api/core/bitstreams/7c26adea-1094-4744-aca7-5376f0a05cd8/content",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers open.uct.ac.za; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Kwangali language (kwn)",
+        "url": "https://www.ethnologue.com/language/kwn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

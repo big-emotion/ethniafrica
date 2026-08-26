@@ -77,11 +77,36 @@
       ]
     },
     "sources": [
-      "Glottolog — Sheko, glottocode shek1245, ISO 639-3: she. https://glottolog.org/resource/languoid/id/shek1245",
-      "Ethnologue — Sheko language (SHE). https://www.ethnologue.com/language/she/",
-      "Aklilu Yilma. The Sheko Language. SIL/Addis Ababa University, 1988.",
-      "Joshua Project — Sheko in Ethiopia. https://joshuaproject.net/people_groups/14902",
-      "Recensement éthiopien 2007 — Sheko : 37 573 individus."
+      {
+        "title": "Glottolog — Sheko, glottocode shek1245, ISO 639-3: she",
+        "url": "https://glottolog.org/resource/languoid/id/shek1245",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethnologue — Sheko language (SHE)",
+        "url": "https://www.ethnologue.com/language/she/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Aklilu Yilma. The Sheko Language. SIL/Addis Ababa University, 1988",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Sheko in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/14902",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Recensement éthiopien 2007 — Sheko : 37 573 individus",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

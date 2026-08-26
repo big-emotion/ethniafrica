@@ -84,13 +84,48 @@
       ]
     },
     "sources": [
-      "UNESCO — Ritual dance of the royal drum (2014) : https://ich.unesco.org/en/RL/ritual-dance-of-the-royal-drum-00989",
-      "World Without Genocide — Burundi 1972 : https://worldwithoutgenocide.org/genocides-and-conflicts/burundi",
-      "Encyclopaedia Britannica — Burundi, Ethnic Conflict : https://www.britannica.com/place/Burundi/The-Third-Republic",
-      "Global Voices — Burundis troubled history 1972 (2023) : https://globalvoices.org/2023/07/13/burundis-troubled-history-of-the-untold-1972-hutu-genocide/",
-      "Africa Faith and Justice Network — Ubushingantahe Council (2009) : https://afjn.org/post-conflict-burundi-and-the-role-of-ubushingantahe-council/",
-      "USF Digital Commons — Burundi Building Democracy on Ethnically Divided Society : https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1264&context=jacaps",
-      "Western Washington University RWI — Genocide Burundi (historical overview) : https://rwi.wwu.edu/genocide-burundi"
+      {
+        "title": "UNESCO — Ritual dance of the royal drum (2014)",
+        "url": "https://ich.unesco.org/en/RL/ritual-dance-of-the-royal-drum-00989",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "World Without Genocide — Burundi 1972",
+        "url": "https://worldwithoutgenocide.org/genocides-and-conflicts/burundi",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers worldwithoutgenocide.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Burundi, Ethnic Conflict",
+        "url": "https://www.britannica.com/place/Burundi/The-Third-Republic",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Global Voices — Burundis troubled history 1972 (2023)",
+        "url": "https://globalvoices.org/2023/07/13/burundis-troubled-history-of-the-untold-1972-hutu-genocide/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalvoices.org."
+      },
+      {
+        "title": "Africa Faith and Justice Network — Ubushingantahe Council (2009)",
+        "url": "https://afjn.org/post-conflict-burundi-and-the-role-of-ubushingantahe-council/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers afjn.org; the tier awaits editorial review."
+      },
+      {
+        "title": "USF Digital Commons — Burundi Building Democracy on Ethnically Divided Society",
+        "url": "https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1264&context=jacaps",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for digitalcommons.usf.edu."
+      },
+      {
+        "title": "Western Washington University RWI — Genocide Burundi (historical overview)",
+        "url": "https://rwi.wwu.edu/genocide-burundi",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers rwi.wwu.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

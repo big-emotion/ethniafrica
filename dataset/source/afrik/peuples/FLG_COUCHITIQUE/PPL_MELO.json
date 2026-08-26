@@ -65,12 +65,42 @@
       ]
     },
     "sources": [
-      "Melo language – Ethnologue (SIL International), 18e edition, 2015 (https://www.ethnologue.com/language/mfx/)",
-      "Melo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13668)",
-      "Melo language resources – Joshua Project, 2025 (https://joshuaproject.net/languages/mfx)",
-      "ISO 639-3 Language Codes – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
-      "Ethiopian Languages: Semitic, Cushitic, Omotic and Nilo-Saharan – Ethiopian Treasures (http://www.ethiopiantreasures.co.uk/pages/language.htm)",
-      "Melo of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011618/)"
+      {
+        "title": "Melo language – Ethnologue (SIL International), 18e edition, 2015",
+        "url": "https://www.ethnologue.com/language/mfx/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Melo in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13668",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Melo language resources – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/languages/mfx",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ISO 639-3 Language Codes – SIL International / CEDS",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Ethiopian Languages: Semitic, Cushitic, Omotic and Nilo-Saharan – Ethiopian Treasures",
+        "url": "http://www.ethiopiantreasures.co.uk/pages/language.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ethiopiantreasures.co.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "Melo of Ethiopia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg011618/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

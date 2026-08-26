@@ -37,6 +37,24 @@ jobs:
         env:
           CHECK_SOURCE_URLS: "true"
 
+      # Descending ratchet on sources with no explicit tier (needs_review or
+      # absent). Fails when the count grows; the threshold lives in the script.
+      - name: Check source tier coverage
+        run: npx tsx scripts/ci/checkSourceTierCoverage.ts
+
+      # Reports the tier mix and the untiered tail across the 789 people
+      # fiches, and writes the Prismic eligibility manifest.
+      - name: Run people source tier audit
+        run: npm run audit:people-sources
+
+      - name: Upload people source tier audit artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: people-source-tier-audit
+          path: dataset/source/afrik/logs/people-source-tier-audit.*
+          if-no-files-found: ignore
+
       - name: Upload source-url-health log (nightly only)
         if: github.event_name == 'schedule' && always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

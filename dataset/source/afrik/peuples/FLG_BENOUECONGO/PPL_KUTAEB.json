@@ -96,11 +96,36 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL) — Kutep (kub) : https://www.ethnologue.com/language/kub/",
-      "Joshua Project — Kuteb in Nigeria : https://joshuaproject.net/people_groups/12889/NI",
-      "Taraba State Government — Comprehensive brief on the Chieftaincy Stool of Takum Chiefdom Taraba State (1997), reference historique interne.",
-      "Roger Blench — Documentation linguistique du kuteb (tons et phonologie), Universite de Cambridge.",
-      "SIL International — Ethnologue 26th edition (2023), langue kub (Kutep) : https://www.ethnologue.com/language/kub/"
+      {
+        "title": "Ethnologue (SIL) — Kutep (kub)",
+        "url": "https://www.ethnologue.com/language/kub/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Kuteb in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/12889/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Taraba State Government — Comprehensive brief on the Chieftaincy Stool of Takum Chiefdom Taraba State (1997), reference historique interne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Roger Blench — Documentation linguistique du kuteb (tons et phonologie), Universite de Cambridge",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL International — Ethnologue 26th edition (2023), langue kub (Kutep)",
+        "url": "https://www.ethnologue.com/language/kub/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

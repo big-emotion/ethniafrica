@@ -98,10 +98,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Mwera (Nyasa), code mjh. https://www.ethnologue.com/language/mjh/",
-      "Glottolog — Mwera (Nyasa), N201. https://glottolog.org/resource/languoid/id/mwer1247",
-      "Britannica — Malawi: History and People. https://www.britannica.com/place/Malawi/People",
-      "Joshua Project — Nyanja, Chewa in Malawi. https://joshuaproject.net/people_groups/14091/MI"
+      {
+        "title": "SIL Ethnologue — Mwera (Nyasa), code mjh",
+        "url": "https://www.ethnologue.com/language/mjh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Mwera (Nyasa), N201",
+        "url": "https://glottolog.org/resource/languoid/id/mwer1247",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Britannica — Malawi: History and People",
+        "url": "https://www.britannica.com/place/Malawi/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Nyanja, Chewa in Malawi",
+        "url": "https://joshuaproject.net/people_groups/14091/MI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

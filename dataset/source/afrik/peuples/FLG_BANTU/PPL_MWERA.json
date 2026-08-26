@@ -72,9 +72,24 @@
       ]
     },
     "sources": [
-      "The Mwera People – Religion, Society, Culture – UnitedRepublicofTanzania.com (https://unitedrepublicoftanzania.com/the-people-of-tanzania/daily-life-in-tanzania-and-social-customs/major-tanzania-ethnic-groups/how-many-tanzania-tribes-biggest/the-mwera-people-religion-society-culture/)",
-      "Mwera in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13906)",
-      "Mwera – Significance and symbolism, Wisdomlib (Maji Maji) (https://www.wisdomlib.org/concept/mwera)"
+      {
+        "title": "The Mwera People – Religion, Society, Culture – UnitedRepublicofTanzania.com",
+        "url": "https://unitedrepublicoftanzania.com/the-people-of-tanzania/daily-life-in-tanzania-and-social-customs/major-tanzania-ethnic-groups/how-many-tanzania-tribes-biggest/the-mwera-people-religion-society-culture/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers unitedrepublicoftanzania.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Mwera in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13906",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mwera – Significance and symbolism, Wisdomlib (Maji Maji)",
+        "url": "https://www.wisdomlib.org/concept/mwera",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wisdomlib.org; the tier awaits editorial review."
+      }
     ]
   }
 }

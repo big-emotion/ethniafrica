@@ -163,10 +163,30 @@
       ]
     },
     "sources": [
-      "Britannica. African Atlantic languages. https://www.britannica.com/topic/African-Atlantic-languages",
-      "Language Gulper. Atlantic. https://languagesgulper.com/eng/Atlantic.html (2014)",
-      "Ethnologue (SIL International). Guinea Languages. https://www.ethnologue.com/country/GN/",
-      "Creissels, Denis. Presentation de quelques langues ouest-africaines appartenant aux familles mande et atlantique. CNRS LGIDF, 2017. https://lgidf.cnrs.fr/sites/lgidf.cnrs.fr/files/images/Creissels.langues.afric.jan.%202017.pdf"
+      {
+        "title": "Britannica. African Atlantic languages",
+        "url": "https://www.britannica.com/topic/African-Atlantic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Language Gulper. Atlantic. (2014)",
+        "url": "https://languagesgulper.com/eng/Atlantic.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for languagesgulper.com."
+      },
+      {
+        "title": "Ethnologue (SIL International). Guinea Languages",
+        "url": "https://www.ethnologue.com/country/GN/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Creissels, Denis. Presentation de quelques langues ouest-africaines appartenant aux familles mande et atlantique. CNRS LGIDF, 2017",
+        "url": "https://lgidf.cnrs.fr/sites/lgidf.cnrs.fr/files/images/Creissels.langues.afric.jan.%202017.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lgidf.cnrs.fr."
+      }
     ]
   }
 }

@@ -126,11 +126,36 @@
       ]
     },
     "sources": [
-      "Qiraat Africa, The Kirdi People of West and Central Africa – Qiraat Africa, aout 2024 (https://qiraatafrican.com/en/12847/the-kirdi-people-of-west-central-africa/)",
-      "CIA World Factbook, Cameroon – CIA 2024 (https://www.cia.gov/the-world-factbook/countries/cameroon/)",
-      "Jean Hurault, Quelques aspects de la structure sociale des montagnards kirdi du nord Cameroun – Bulletin de l'IFAN, Dakar, serie B, 1958, p.111-122",
-      "Jeanne-Francoise Vincent, Sur les traces du major Denham : le Nord-Cameroun il y a cent cinquante ans – Cahiers d'etudes africaines, Paris, 1978, vol.18(4), n.72, p.575-606",
-      "Ethnologue, Mafa (maf) – SIL International 2024 (https://www.ethnologue.com/language/maf/)"
+      {
+        "title": "Qiraat Africa, The Kirdi People of West and Central Africa – Qiraat Africa, aout 2024",
+        "url": "https://qiraatafrican.com/en/12847/the-kirdi-people-of-west-central-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "CIA World Factbook, Cameroon – CIA 2024",
+        "url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Jean Hurault, Quelques aspects de la structure sociale des montagnards kirdi du nord Cameroun – Bulletin de l'IFAN, Dakar, serie B, 1958, p.111-122",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Jeanne-Francoise Vincent, Sur les traces du major Denham : le Nord-Cameroun il y a cent cinquante ans – Cahiers d'etudes africaines, Paris, 1978, vol.18(4), n.72, p.575-606",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue, Mafa (maf) – SIL International 2024",
+        "url": "https://www.ethnologue.com/language/maf/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "Joshua Project - Berber Chenoua in Algeria : https://joshuaproject.net/people_groups/11321",
-      "Ethnologue SIL International - Chenoua (cnu) : https://www.ethnologue.com/language/cnu/",
-      "The Tribal Society - The Chenouis : https://thetribalsociety.com/the-chenouis/",
-      "Glottolog - Shenwa (chen1266) : https://glottolog.org/resource/languoid/id/chen1266",
-      "UNESCO World Heritage - Tipaza : https://whc.unesco.org/en/list/193/"
+      {
+        "title": "Joshua Project - Berber Chenoua in Algeria",
+        "url": "https://joshuaproject.net/people_groups/11321",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue SIL International - Chenoua (cnu)",
+        "url": "https://www.ethnologue.com/language/cnu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "The Tribal Society - The Chenouis",
+        "url": "https://thetribalsociety.com/the-chenouis/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+      },
+      {
+        "title": "Glottolog - Shenwa (chen1266)",
+        "url": "https://glottolog.org/resource/languoid/id/chen1266",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "UNESCO World Heritage - Tipaza",
+        "url": "https://whc.unesco.org/en/list/193/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

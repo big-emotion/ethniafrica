@@ -89,11 +89,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Plateau Malagasy (plt) : https://www.ethnologue.com/language/plt/",
-      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
-      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "UNESCO - Colline d'Ambohimanga, patrimoine mondial : https://whc.unesco.org/fr/list/950/",
-      "Banque mondiale - Madagascar : https://data.worldbank.org/country/madagascar"
+      {
+        "title": "SIL Ethnologue - Plateau Malagasy (plt)",
+        "url": "https://www.ethnologue.com/language/plt/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook - Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "UNESCO - Colline d'Ambohimanga, patrimoine mondial",
+        "url": "https://whc.unesco.org/fr/list/950/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Banque mondiale - Madagascar",
+        "url": "https://data.worldbank.org/country/madagascar",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+      }
     ]
   }
 }

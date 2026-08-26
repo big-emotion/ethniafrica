@@ -95,12 +95,42 @@
       ]
     },
     "sources": [
-      "Bubi – Encyclopaedia Britannica (https://www.britannica.com/topic/Bubi)",
-      "Bioko's indigenous Bubi tribe – The Bubis on Fernando Po, Colleen Truelsen (https://www.thebubis.com/Overview.html)",
-      "Introduction – The Bubis on Fernando Po (https://thebubis.com/Introduction.html)",
-      "Bubi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bubi.html)",
-      "Bubi in Equatorial Guinea – Minority Rights Group (https://minorityrights.org/communities/bubi/)",
-      "Spirits of the Forest, Guardians of the Island – Art of the Motherland (https://artofthemotherland.com/spirits-of-the-forest-guardians-of-the-island/)"
+      {
+        "title": "Bubi – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Bubi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Bioko's indigenous Bubi tribe – The Bubis on Fernando Po, Colleen Truelsen",
+        "url": "https://www.thebubis.com/Overview.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thebubis.com."
+      },
+      {
+        "title": "Introduction – The Bubis on Fernando Po",
+        "url": "https://thebubis.com/Introduction.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thebubis.com."
+      },
+      {
+        "title": "Bubi people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/bubi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Bubi in Equatorial Guinea – Minority Rights Group",
+        "url": "https://minorityrights.org/communities/bubi/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Spirits of the Forest, Guardians of the Island – Art of the Motherland",
+        "url": "https://artofthemotherland.com/spirits-of-the-forest-guardians-of-the-island/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for artofthemotherland.com."
+      }
     ]
   }
 }

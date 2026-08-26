@@ -77,10 +77,30 @@
       ]
     },
     "sources": [
-      "Peacock, Wesley – An Overview of the Phonology of Nkonya, Collected Language Notes No. 27, Institute of African Studies, University of Ghana, Legon, 2007 (https://www.webonary.org/nkonya/files/Nkonya_Phonology_FINAL.pdf)",
-      "Joshua Project – Nkonya in Ghana, 2025 (https://joshuaproject.net/people_groups/13420/GH)",
-      "Ethnologue – Nkonya Language (NKO), SIL International, 2024 (https://www.ethnologue.com/language/nko/)",
-      "Ghana Place Names – Guang peoples (https://sites.google.com/site/ghanaplacenames/peoples-states/guang)"
+      {
+        "title": "Peacock, Wesley – An Overview of the Phonology of Nkonya, Collected Language Notes No. 27, Institute of African Studies, University of Ghana, Legon, 2007",
+        "url": "https://www.webonary.org/nkonya/files/Nkonya_Phonology_FINAL.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for webonary.org."
+      },
+      {
+        "title": "Joshua Project – Nkonya in Ghana, 2025",
+        "url": "https://joshuaproject.net/people_groups/13420/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Nkonya Language (NKO), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/nko/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ghana Place Names – Guang peoples",
+        "url": "https://sites.google.com/site/ghanaplacenames/peoples-states/guang",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for sites.google.com."
+      }
     ]
   }
 }

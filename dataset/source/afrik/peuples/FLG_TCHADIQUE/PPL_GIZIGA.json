@@ -84,14 +84,54 @@
       ]
     },
     "sources": [
-      "Barreteau, Daniel (1984). Description du musey (langue tchadique du Cameroun). Paris : ORSTOM. Classification des dialectes giziga.",
-      "Pontie, Guy (1973). Les Guiziga du Cameroun septentrional. Paris : ORSTOM. https://horizon.documentation.ird.fr/",
-      "Podlewski, A.M. (1966). La dynamique des principales populations du Nord-Cameroun. Cahiers ORSTOM, serie Sciences Humaines.",
-      "SIL Ethnologue — Giziga (giz). https://www.ethnologue.com/language/giz/",
-      "SIL Ethnologue — Giziga, North (gis). https://www.ethnologue.com/language/gis/",
-      "101 Last Tribes — Gisiga people. https://www.101lasttribes.com/tribes/gisiga.html",
-      "PeopleGroups.org — South Gisiga of Cameroon (PG012783). https://peoplegroups.org/people_groups/pg012783/",
-      "Kupi.com — Maroua history (Giziga founding peoples). https://www.kupi.com/en-ae/explore/cameroon-united-republic-of/maroua/history"
+      {
+        "title": "Barreteau, Daniel (1984). Description du musey (langue tchadique du Cameroun). Paris : ORSTOM. Classification des dialectes giziga",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pontie, Guy (1973). Les Guiziga du Cameroun septentrional. Paris : ORSTOM",
+        "url": "https://horizon.documentation.ird.fr/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for horizon.documentation.ird.fr."
+      },
+      {
+        "title": "Podlewski, A.M. (1966). La dynamique des principales populations du Nord-Cameroun. Cahiers ORSTOM, serie Sciences Humaines",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue — Giziga (giz)",
+        "url": "https://www.ethnologue.com/language/giz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Giziga, North (gis)",
+        "url": "https://www.ethnologue.com/language/gis/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Gisiga people",
+        "url": "https://www.101lasttribes.com/tribes/gisiga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "PeopleGroups.org — South Gisiga of Cameroon (PG012783)",
+        "url": "https://peoplegroups.org/people_groups/pg012783/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Kupi.com — Maroua history (Giziga founding peoples)",
+        "url": "https://www.kupi.com/en-ae/explore/cameroon-united-republic-of/maroua/history",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kupi.com; the tier awaits editorial review."
+      }
     ]
   }
 }

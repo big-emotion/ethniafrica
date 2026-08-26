@@ -106,11 +106,36 @@
       ]
     },
     "sources": [
-      "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999). https://www.hrw.org/reports/1999/rwanda/",
-      "Council on Foreign Relations — Thirty Years After Rwanda Genocide (2024). https://www.cfr.org/articles/thirty-years-after-rwandas-genocide-where-country-stands-today",
-      "CIA World Factbook — Rwanda. https://www.cia.gov/the-world-factbook/countries/rwanda/",
-      "NISR Rwanda — Recensement 2022. https://www.statistics.gov.rw/",
-      "Big Ape Africa Safaris — Intore, Rwanda Traditional Dance. https://bigapesafricasafaris.com/intore-traditional-dance-and-music/"
+      {
+        "title": "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999)",
+        "url": "https://www.hrw.org/reports/1999/rwanda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "Council on Foreign Relations — Thirty Years After Rwanda Genocide (2024)",
+        "url": "https://www.cfr.org/articles/thirty-years-after-rwandas-genocide-where-country-stands-today",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cfr.org."
+      },
+      {
+        "title": "CIA World Factbook — Rwanda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/rwanda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "NISR Rwanda — Recensement 2022",
+        "url": "https://www.statistics.gov.rw/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statistics.gov.rw."
+      },
+      {
+        "title": "Big Ape Africa Safaris — Intore, Rwanda Traditional Dance",
+        "url": "https://bigapesafricasafaris.com/intore-traditional-dance-and-music/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bigapesafricasafaris.com; the tier awaits editorial review."
+      }
     ]
   }
 }

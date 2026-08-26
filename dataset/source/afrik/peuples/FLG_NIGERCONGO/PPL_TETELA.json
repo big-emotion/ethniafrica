@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Omniglot – Tetela language and alphabet, 2025 (https://www.omniglot.com/writing/tetela.htm)",
-      "101 Last Tribes – Tetela people, 2024 (https://www.101lasttribes.com/tribes/tetela.html)",
-      "South African History Online – Patrice Emery Lumumba, 2014 (https://sahistory.org.za/people/patrice-emery-lumumba)",
-      "Ubuntu National Institute – Culture: Tetela/Batetela, Bantu People of DRC, 2020 (https://ubuntunationalinstitute.wordpress.com/2020/06/02/culture-tetela-batetela-bantu-people-of-drc/)",
-      "Tangaza University – A Collection of 100 Tetela Proverbs (https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_tetela.pdf)"
+      {
+        "title": "Omniglot – Tetela language and alphabet, 2025",
+        "url": "https://www.omniglot.com/writing/tetela.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "101 Last Tribes – Tetela people, 2024",
+        "url": "https://www.101lasttribes.com/tribes/tetela.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "South African History Online – Patrice Emery Lumumba, 2014",
+        "url": "https://sahistory.org.za/people/patrice-emery-lumumba",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Ubuntu National Institute – Culture: Tetela/Batetela, Bantu People of DRC, 2020",
+        "url": "https://ubuntunationalinstitute.wordpress.com/2020/06/02/culture-tetela-batetela-bantu-people-of-drc/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of ubuntunationalinstitute.wordpress.com."
+      },
+      {
+        "title": "Tangaza University – A Collection of 100 Tetela Proverbs",
+        "url": "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_tetela.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for afriprov.tangaza.ac.ke."
+      }
     ]
   }
 }

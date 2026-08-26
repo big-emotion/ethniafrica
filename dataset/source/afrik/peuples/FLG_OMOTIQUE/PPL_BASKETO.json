@@ -86,10 +86,30 @@
       ]
     },
     "sources": [
-      "Ethnologue — Basketo language (bst). https://www.ethnologue.com/language/bst/",
-      "Azeb Amha et Dirk Bustorf : 'Basketo'. In: Encyclopaedia Aethiopica, vol. 1. Wiesbaden, 2003, pp. 499-500.",
-      "Haberland, Eike : 'Die Basketto und verwandte Stämme'. In: Altvölker Süd-Äthiopiens. Stuttgart, 1959, pp. 189-226.",
-      "The Tribal Society — The Basketo people. https://thetribalsociety.com/the-basketo-people/"
+      {
+        "title": "Ethnologue — Basketo language (bst)",
+        "url": "https://www.ethnologue.com/language/bst/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Azeb Amha et Dirk Bustorf : 'Basketo'. In: Encyclopaedia Aethiopica, vol. 1. Wiesbaden, 2003, pp. 499-500",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Haberland, Eike : 'Die Basketto und verwandte Stämme'. In: Altvölker Süd-Äthiopiens. Stuttgart, 1959, pp. 189-226",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "The Tribal Society — The Basketo people",
+        "url": "https://thetribalsociety.com/the-basketo-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+      }
     ]
   }
 }

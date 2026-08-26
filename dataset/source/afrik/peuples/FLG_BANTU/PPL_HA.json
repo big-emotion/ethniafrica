@@ -69,10 +69,30 @@
       ]
     },
     "sources": [
-      "Ha in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12023)",
-      "Ha – Encyclopaedia Britannica (https://www.britannica.com/topic/Ha)",
-      "Ha people – Africa 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/ha.html)",
-      "Scherer, J.H. – Marriage and Bride-Wealth in the Highlands of Buha (Tanganyika), Dissertation Utrecht University, 1965"
+      {
+        "title": "Ha in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12023",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ha – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Ha",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Ha people – Africa 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/ha.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Scherer, J.H. – Marriage and Bride-Wealth in the Highlands of Buha (Tanganyika), Dissertation Utrecht University, 1965",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

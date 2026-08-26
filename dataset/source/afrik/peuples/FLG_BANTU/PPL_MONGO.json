@@ -104,10 +104,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Mongo-Nkundu (lol) : https://www.ethnologue.com/language/lol/",
-      "Qiraat Africa – The Mongo People in Congo (2024) : https://qiraatafrican.com/en/12635/the-mongo-people-in-congo/",
-      "Mabel Ross, On Another Day: Tales Told among the Nkundo of Zaire, Archon Books, 1979",
-      "Vanderkerken, G., L'ethnie mongo, Institut Royal Colonial Belge, 1944"
+      {
+        "title": "SIL Ethnologue – Mongo-Nkundu (lol)",
+        "url": "https://www.ethnologue.com/language/lol/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Qiraat Africa – The Mongo People in Congo (2024)",
+        "url": "https://qiraatafrican.com/en/12635/the-mongo-people-in-congo/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Mabel Ross, On Another Day: Tales Told among the Nkundo of Zaire, Archon Books, 1979",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vanderkerken, G., L'ethnie mongo, Institut Royal Colonial Belge, 1944",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

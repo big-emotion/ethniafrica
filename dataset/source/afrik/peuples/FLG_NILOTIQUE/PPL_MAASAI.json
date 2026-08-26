@@ -97,11 +97,36 @@
       ]
     },
     "sources": [
-      "UNESCO ICH — Enkipaata, Eunoto et Olng'esherr (2018). https://ich.unesco.org/en/USL/enkipaata-eunoto-and-olng-esherr-three-male-rites-of-passage-of-the-maasai-community-01390",
-      "SIL Ethnologue — Maasai language (mas). https://www.ethnologue.com/language/mas/",
-      "University of Missouri — Maasai PDF profile. https://dice.missouri.edu/assets/docs/niger-saharan/maasai.pdf",
-      "Lion Guardians — Tradition in Motion: Welcoming Irmiponyi Age Set. https://lionguardians.org/tradition-in-motion-welcoming-irmiponyi-age-set/",
-      "Joshua Project — Maasai, Arusha in Tanzania. https://joshuaproject.net/people_groups/10441"
+      {
+        "title": "UNESCO ICH — Enkipaata, Eunoto et Olng'esherr (2018)",
+        "url": "https://ich.unesco.org/en/USL/enkipaata-eunoto-and-olng-esherr-three-male-rites-of-passage-of-the-maasai-community-01390",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue — Maasai language (mas)",
+        "url": "https://www.ethnologue.com/language/mas/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "University of Missouri — Maasai PDF profile",
+        "url": "https://dice.missouri.edu/assets/docs/niger-saharan/maasai.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Lion Guardians — Tradition in Motion: Welcoming Irmiponyi Age Set",
+        "url": "https://lionguardians.org/tradition-in-motion-welcoming-irmiponyi-age-set/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers lionguardians.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Maasai, Arusha in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/10441",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

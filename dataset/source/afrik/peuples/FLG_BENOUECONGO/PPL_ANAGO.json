@@ -95,11 +95,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Yoruba (YOR). https://www.ethnologue.com/language/yor/ (consulté 2025)",
-      "Joshua Project, Yoruba in Togo. https://joshuaproject.net/people_groups/16057/TO (consulté 2025)",
-      "Joshua Project, Yoruba in Benin. https://joshuaproject.net/people_groups/16057/BN (consulté 2025)",
-      "Anago Adventures Blog, The Anago in Benin Republic, Togo and Nigeria (2016). https://anagoadventures.blogspot.com/2016/04/the-anago-in-benin-republic-and-nigeria.html",
-      "Law, Robin. The Slave Coast of West Africa 1550-1750. Oxford: Clarendon Press, 1991."
+      {
+        "title": "Ethnologue, Yoruba (YOR). (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/yor/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project, Yoruba in Togo. (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/16057/TO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project, Yoruba in Benin. (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/16057/BN",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Anago Adventures Blog, The Anago in Benin Republic, Togo and Nigeria (2016)",
+        "url": "https://anagoadventures.blogspot.com/2016/04/the-anago-in-benin-republic-and-nigeria.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blogspot.com, matched as a parent of anagoadventures.blogspot.com."
+      },
+      {
+        "title": "Law, Robin. The Slave Coast of West Africa 1550-1750. Oxford: Clarendon Press, 1991",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

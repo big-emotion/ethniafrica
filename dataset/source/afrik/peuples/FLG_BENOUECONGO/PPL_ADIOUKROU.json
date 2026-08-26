@@ -81,10 +81,30 @@
       ]
     },
     "sources": [
-      "Ethnologue - Adioukrou ADJ (https://www.ethnologue.com/language/adj/)",
-      "Joshua Project - Adjoukrou in Cote d'Ivoire (https://joshuaproject.net/people_groups/10162/IV)",
-      "Lebutu Socraf - Les Adjoukrou et la democratie (https://lebutusocraf.wordpress.com/2017/07/19/les-adjoukrou-et-la-democratie-lecon-dune-vie/)",
-      "Isrra Journal - Cultural Identities and Food Habits in Adjoukrou Country (https://ijsscfrtjournal.isrra.org/Social_Science_Journal/article/download/1115/86/917)"
+      {
+        "title": "Ethnologue - Adioukrou ADJ",
+        "url": "https://www.ethnologue.com/language/adj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project - Adjoukrou in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/10162/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lebutu Socraf - Les Adjoukrou et la democratie",
+        "url": "https://lebutusocraf.wordpress.com/2017/07/19/les-adjoukrou-et-la-democratie-lecon-dune-vie/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of lebutusocraf.wordpress.com."
+      },
+      {
+        "title": "Isrra Journal - Cultural Identities and Food Habits in Adjoukrou Country",
+        "url": "https://ijsscfrtjournal.isrra.org/Social_Science_Journal/article/download/1115/86/917",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijsscfrtjournal.isrra.org; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -89,11 +89,36 @@
       ]
     },
     "sources": [
-      "South African History Online — Inkatha Freedom Party. https://sahistory.org.za/article/inkatha-freedom-party-ifp",
-      "Britannica — KwaZulu. https://www.britannica.com/place/KwaZulu",
-      "Statistics South Africa — Mid-year population estimates 2025. https://www.statssa.gov.za/?p=18613",
-      "Parliament of South Africa — KwaZulu-Natal Provincial Profile 2025. https://www.parliament.gov.za/storage/app/media/Pages/2025/07-11-2025_NCOP_Provincial_week/background/KwaZulu-Natal_Profile.pdf",
-      "BBC — Goodwill Zwelithini. https://www.bbc.com/news/world-africa-56371742"
+      {
+        "title": "South African History Online — Inkatha Freedom Party",
+        "url": "https://sahistory.org.za/article/inkatha-freedom-party-ifp",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Britannica — KwaZulu",
+        "url": "https://www.britannica.com/place/KwaZulu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Statistics South Africa — Mid-year population estimates 2025",
+        "url": "https://www.statssa.gov.za/?p=18613",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      },
+      {
+        "title": "Parliament of South Africa — KwaZulu-Natal Provincial Profile 2025",
+        "url": "https://www.parliament.gov.za/storage/app/media/Pages/2025/07-11-2025_NCOP_Provincial_week/background/KwaZulu-Natal_Profile.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers parliament.gov.za; the tier awaits editorial review."
+      },
+      {
+        "title": "BBC — Goodwill Zwelithini",
+        "url": "https://www.bbc.com/news/world-africa-56371742",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for bbc.com."
+      }
     ]
   }
 }

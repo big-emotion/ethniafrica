@@ -81,11 +81,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Oromo, Arsi in Ethiopia. https://joshuaproject.net/people_groups/19652",
-      "Bulcha, Jilo Wolde — Arsi Oromo Descent and Indigenous Moral System in Ethiopia. IJISRT, 2021. https://ijisrt.com/assets/upload/files/IJISRT21JUL1215.pdf",
-      "Advocacy for Oromia — Reviving Oromo Identity: Sikkoo Mandoo Gadaa Assembly 2026. https://advocacy4oromia.org/2026/01/07/reviving-oromo-identity-sikkoo-mandoo-gadaa-assembly-2026/",
-      "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax). https://www.ethnologue.com/language/gax/",
-      "Baxter, P.T.W. — Being and Becoming Oromo. Uppsala: Nordiska Afrikainstitutet, 1996."
+      {
+        "title": "Joshua Project — Oromo, Arsi in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/19652",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bulcha, Jilo Wolde — Arsi Oromo Descent and Indigenous Moral System in Ethiopia. IJISRT, 2021",
+        "url": "https://ijisrt.com/assets/upload/files/IJISRT21JUL1215.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijisrt.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Advocacy for Oromia — Reviving Oromo Identity: Sikkoo Mandoo Gadaa Assembly 2026",
+        "url": "https://advocacy4oromia.org/2026/01/07/reviving-oromo-identity-sikkoo-mandoo-gadaa-assembly-2026/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for advocacy4oromia.org."
+      },
+      {
+        "title": "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax)",
+        "url": "https://www.ethnologue.com/language/gax/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Baxter, P.T.W. — Being and Becoming Oromo. Uppsala: Nordiska Afrikainstitutet, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

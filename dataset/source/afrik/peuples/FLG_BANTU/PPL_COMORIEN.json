@@ -92,10 +92,30 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica, Comoros: https://www.britannica.com/place/Comoros",
-      "UNFPA, Comoros Population 2025: https://www.unfpa.org/data/world-population/KM",
-      "Joshua Project, Comorian in France: https://joshuaproject.net/people_groups/19179",
-      "ISS Africa, Comoros-Mayotte migration: https://issafrica.org/iss-today/comoros-mayotte-saga-a-microcosm-of-africa-europe-migration-crisis"
+      {
+        "title": "Encyclopaedia Britannica, Comoros",
+        "url": "https://www.britannica.com/place/Comoros",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "UNFPA, Comoros Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/KM",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Joshua Project, Comorian in France",
+        "url": "https://joshuaproject.net/people_groups/19179",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ISS Africa, Comoros-Mayotte migration",
+        "url": "https://issafrica.org/iss-today/comoros-mayotte-saga-a-microcosm-of-africa-europe-migration-crisis",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers issafrica.org; the tier awaits editorial review."
+      }
     ]
   }
 }

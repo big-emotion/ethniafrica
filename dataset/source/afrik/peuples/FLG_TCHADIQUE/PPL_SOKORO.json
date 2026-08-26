@@ -78,12 +78,42 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL – Sokoro language (sok). https://www.ethnologue.com/language/sok/",
-      "Joshua Project – Sokoro, Tunjur in Chad. https://joshuaproject.net/people_groups/14975/CD",
-      "WorldMap Chad Profile (WMI). http://www.worldmap.org/uploads/9/3/4/4/9344303/chad_profile.pdf",
-      "US Library of Congress Country Studies – Chad, Chadic Languages. https://countrystudies.us/chad/20.htm",
-      "Chesley, William, and David Faris. 1994. Une enquete sociolinguistique parmi les Sokoro du Guera. N'Djamena : SIL. Manuscript.",
-      "Mirjam de Bruijn. 2014. The Guera inspiration. Counter Voices in Africa. https://mirjamdebruijn.wordpress.com/2014/04/15/the-guera-inspiration/"
+      {
+        "title": "Ethnologue SIL – Sokoro language (sok)",
+        "url": "https://www.ethnologue.com/language/sok/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project – Sokoro, Tunjur in Chad",
+        "url": "https://joshuaproject.net/people_groups/14975/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "WorldMap Chad Profile (WMI)",
+        "url": "http://www.worldmap.org/uploads/9/3/4/4/9344303/chad_profile.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldmap.org."
+      },
+      {
+        "title": "US Library of Congress Country Studies – Chad, Chadic Languages",
+        "url": "https://countrystudies.us/chad/20.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Chesley, William, and David Faris. 1994. Une enquete sociolinguistique parmi les Sokoro du Guera. N'Djamena : SIL. Manuscript",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Mirjam de Bruijn. 2014. The Guera inspiration. Counter Voices in Africa",
+        "url": "https://mirjamdebruijn.wordpress.com/2014/04/15/the-guera-inspiration/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of mirjamdebruijn.wordpress.com."
+      }
     ]
   }
 }

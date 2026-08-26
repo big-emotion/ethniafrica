@@ -80,13 +80,48 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Kenga people. https://www.101lasttribes.com/tribes/kenga.html",
-      "Joshua Project — Kenga in Chad (profil complet). https://joshuaproject.net/people_groups/12620/CD",
-      "Joshua Project — Kenga in Chad (fiche imprimable). https://joshuaproject.net/people_groups/print/12620/CD",
-      "SIL Ethnologue — Kenga language (kyq). https://www.ethnologue.com/language/kyq",
-      "Peoplegroups.org — Kenga of Chad. https://peoplegroups.org/",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
-      "Joshua Project — Chad people groups (vue generale). https://joshuaproject.net/countries/CD"
+      {
+        "title": "101 Last Tribes — Kenga people",
+        "url": "https://www.101lasttribes.com/tribes/kenga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Kenga in Chad (profil complet)",
+        "url": "https://joshuaproject.net/people_groups/12620/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Kenga in Chad (fiche imprimable)",
+        "url": "https://joshuaproject.net/people_groups/print/12620/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Kenga language (kyq)",
+        "url": "https://www.ethnologue.com/language/kyq",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Peoplegroups.org — Kenga of Chad",
+        "url": "https://peoplegroups.org/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Joshua Project — Chad people groups (vue generale)",
+        "url": "https://joshuaproject.net/countries/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

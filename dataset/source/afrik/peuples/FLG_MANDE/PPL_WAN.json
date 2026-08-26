@@ -74,10 +74,30 @@
       ]
     },
     "sources": [
-      "KOFFI Kouakou Sylvain - The Wan and their migrations in Cote d'Ivoire, Revue ASTR-Ghana / e.f.u.a editions, 2024 (https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/11/7-KOFFI-Kouakou-Sylvain.pdf)",
-      "Ravenhill P. L. - The Wan Language, LLACAN-CNRS (https://llacan.cnrs.fr/PDF/AutresMandenkan/ravenhil1.PDF)",
-      "Joshua Project - Wan, Nwa in Cote d'Ivoire (https://joshuaproject.net/people_groups/15848)",
-      "Ethnologue - Wan Language (WAN) (https://www.ethnologue.com/language/wan/)"
+      {
+        "title": "KOFFI Kouakou Sylvain - The Wan and their migrations in Cote d'Ivoire, Revue ASTR-Ghana / e.f.u.a editions, 2024",
+        "url": "https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/11/7-KOFFI-Kouakou-Sylvain.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for acaref.net, matched as a parent of edition-efua.acaref.net."
+      },
+      {
+        "title": "Ravenhill P. L. - The Wan Language, LLACAN-CNRS",
+        "url": "https://llacan.cnrs.fr/PDF/AutresMandenkan/ravenhil1.PDF",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for llacan.cnrs.fr."
+      },
+      {
+        "title": "Joshua Project - Wan, Nwa in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/15848",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue - Wan Language (WAN)",
+        "url": "https://www.ethnologue.com/language/wan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

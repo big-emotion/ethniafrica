@@ -96,13 +96,48 @@
       ]
     },
     "sources": [
-      "Council on Foreign Relations — Conflict in Ethiopia. https://www.cfr.org/global-conflict-tracker/conflict/conflict-ethiopia",
-      "Ethnologue — Tigrinya (tir). https://www.ethnologue.com/language/tir",
-      "EthnoMed — Tigrean Cultural Profile. https://ethnomed.org/resource/tigrean-cultural-profile/",
-      "PMC Population Health Metrics — Civilian death and injury from airstrikes in Tigray. https://pmc.ncbi.nlm.nih.gov/articles/PMC11909939/",
-      "Martin Plaut — Tigray, evidence of the death toll. https://martinplaut.com/2025/05/30/tigray-evidence-of-the-death-toll-in-the-2020-2020-war/",
-      "Encyclopaedia Aethiopica, vol. 4 (Uhlig ed.), Harrassowitz Verlag, 2010",
-      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et"
+      {
+        "title": "Council on Foreign Relations — Conflict in Ethiopia",
+        "url": "https://www.cfr.org/global-conflict-tracker/conflict/conflict-ethiopia",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cfr.org."
+      },
+      {
+        "title": "Ethnologue — Tigrinya (tir)",
+        "url": "https://www.ethnologue.com/language/tir",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "EthnoMed — Tigrean Cultural Profile",
+        "url": "https://ethnomed.org/resource/tigrean-cultural-profile/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ethnomed.org; the tier awaits editorial review."
+      },
+      {
+        "title": "PMC Population Health Metrics — Civilian death and injury from airstrikes in Tigray",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11909939/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "Martin Plaut — Tigray, evidence of the death toll",
+        "url": "https://martinplaut.com/2025/05/30/tigray-evidence-of-the-death-toll-in-the-2020-2020-war/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers martinplaut.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica, vol. 4 (Uhlig ed.), Harrassowitz Verlag, 2010",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007",
+        "url": "https://www.csa.gov.et",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      }
     ]
   }
 }

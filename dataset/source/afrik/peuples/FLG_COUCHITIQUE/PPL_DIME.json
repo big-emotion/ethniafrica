@@ -69,12 +69,42 @@
       ]
     },
     "sources": [
-      "Dime in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11559/ET)",
-      "Dimé – Endangered Languages Project ELCAT (http://elcat.colo.hawaii.edu/lang/5247)",
-      "Dime Language (DIM) – Ethnologue (https://www.ethnologue.com/language/dim/)",
-      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Dizi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/dizi.html)",
-      "Omotic languages – Encyclopaedia Britannica (https://www.britannica.com/topic/Omotic-languages)"
+      {
+        "title": "Dime in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/11559/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Dimé – Endangered Languages Project ELCAT",
+        "url": "http://elcat.colo.hawaii.edu/lang/5247",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for elcat.colo.hawaii.edu."
+      },
+      {
+        "title": "Dime Language (DIM) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/dim/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Appendix ISO 639-3 codes/Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Dizi people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/dizi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Omotic languages – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Omotic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

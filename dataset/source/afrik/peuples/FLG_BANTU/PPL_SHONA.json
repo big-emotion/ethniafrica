@@ -94,13 +94,48 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL — Shona (sna) : https://www.ethnologue.com/language/sna/",
-      "Joshua Project — Shona in Zimbabwe : https://joshuaproject.net/people_groups/14917/ZI",
-      "Encyclopaedia Britannica — Shona : https://www.britannica.com/topic/Shona",
-      "Encyclopaedia Britannica — Great Zimbabwe : https://www.britannica.com/place/Great-Zimbabwe",
-      "CIA World Factbook — Zimbabwe : https://www.cia.gov/the-world-factbook/countries/zimbabwe/",
-      "Glottolog — Shona (shon1251) : https://glottolog.org/resource/languoid/id/shon1251",
-      "Zimbabwe National Statistics Agency — Census 2022 : https://www.zimstat.co.zw/"
+      {
+        "title": "Ethnologue SIL — Shona (sna)",
+        "url": "https://www.ethnologue.com/language/sna/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Shona in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/14917/ZI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Shona",
+        "url": "https://www.britannica.com/topic/Shona",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Great Zimbabwe",
+        "url": "https://www.britannica.com/place/Great-Zimbabwe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "CIA World Factbook — Zimbabwe",
+        "url": "https://www.cia.gov/the-world-factbook/countries/zimbabwe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Glottolog — Shona (shon1251)",
+        "url": "https://glottolog.org/resource/languoid/id/shon1251",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Zimbabwe National Statistics Agency — Census 2022",
+        "url": "https://www.zimstat.co.zw/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for zimstat.co.zw."
+      }
     ]
   }
 }

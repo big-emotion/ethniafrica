@@ -100,16 +100,66 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Taa language (nmn). https://www.ethnologue.com/language/nmn/",
-      "Glottolog — West !Xoon. https://glottolog.org/resource/languoid/id/xooo1239",
-      "Sorosoro — Tuu languages. https://www.sorosoro.org/en/tuu-languages/",
-      "Güldemann, Tom — Studies in Tuu (Southern Khoisan) Linguistics. Various publications.",
-      "Traill, Anthony — Phonetic and Phonological Studies of !Xóõ Bushman. Hamburg: Helmut Buske, 1985.",
-      "Bleek, Wilhelm H.I. & Lloyd, Lucy — Specimens of Bushman Folklore. London: George Allen, 1911.",
-      "Adhikari, Mohamed — The Destruction of Cape San Society under Dutch Colonial Rule. South African Historical Journal, 2010.",
-      "Boden, Gertrud — Khoisan Kinship Terminologies in Diachronic Perspective. University of Edinburgh / Kalahari Basin Area project.",
-      "IWGIA — Indigenous Peoples in Africa. https://www.iwgia.org/en/africa.html",
-      "UNESCO Memory of the World — Bleek and Lloyd Collection, 1997."
+      {
+        "title": "Ethnologue (SIL International) — Taa language (nmn)",
+        "url": "https://www.ethnologue.com/language/nmn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — West !Xoon",
+        "url": "https://glottolog.org/resource/languoid/id/xooo1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Sorosoro — Tuu languages",
+        "url": "https://www.sorosoro.org/en/tuu-languages/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sorosoro.org."
+      },
+      {
+        "title": "Güldemann, Tom — Studies in Tuu (Southern Khoisan) Linguistics. Various publications",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Traill, Anthony — Phonetic and Phonological Studies of !Xóõ Bushman. Hamburg: Helmut Buske, 1985",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bleek, Wilhelm H.I. & Lloyd, Lucy — Specimens of Bushman Folklore. London: George Allen, 1911",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Adhikari, Mohamed — The Destruction of Cape San Society under Dutch Colonial Rule. South African Historical Journal, 2010",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Boden, Gertrud — Khoisan Kinship Terminologies in Diachronic Perspective. University of Edinburgh / Kalahari Basin Area project",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "IWGIA — Indigenous Peoples in Africa",
+        "url": "https://www.iwgia.org/en/africa.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "UNESCO Memory of the World — Bleek and Lloyd Collection, 1997",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -101,13 +101,48 @@
       ]
     },
     "sources": [
-      "Sawa Convention North America — History of Sawa : https://www.sawaconna.org/historyofsawa",
-      "Sawa Convention North America — Histoire des Sawa (FR) : https://www.sawaconna.org/fr/historyofsawa",
-      "Le Tamtam du Mboa — L'organisation traditionnelle de la societe Sawa : https://tamtamdumboa.com/lorganisation-traditionnelle-de-la-societe-sawa/",
-      "Peuple Sawa — The Duala peoples (PDF) : https://www.peuplesawa.com/downloads/56.pdf",
-      "101 Last Tribes — Duala people : https://www.101lasttribes.com/tribes/duala.html",
-      "SIL Ethnologue — Duala (dua) : https://www.ethnologue.com/language/dua",
-      "VertigO — Le Ngondo chez les peuples Sawa du Cameroun : https://journals.openedition.org/vertigo/2685"
+      {
+        "title": "Sawa Convention North America — History of Sawa",
+        "url": "https://www.sawaconna.org/historyofsawa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for sawaconna.org."
+      },
+      {
+        "title": "Sawa Convention North America — Histoire des Sawa (FR)",
+        "url": "https://www.sawaconna.org/fr/historyofsawa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for sawaconna.org."
+      },
+      {
+        "title": "Le Tamtam du Mboa — L'organisation traditionnelle de la societe Sawa",
+        "url": "https://tamtamdumboa.com/lorganisation-traditionnelle-de-la-societe-sawa/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers tamtamdumboa.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Peuple Sawa — The Duala peoples (PDF)",
+        "url": "https://www.peuplesawa.com/downloads/56.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers peuplesawa.com; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes — Duala people",
+        "url": "https://www.101lasttribes.com/tribes/duala.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Duala (dua)",
+        "url": "https://www.ethnologue.com/language/dua",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "VertigO — Le Ngondo chez les peuples Sawa du Cameroun",
+        "url": "https://journals.openedition.org/vertigo/2685",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      }
     ]
   }
 }

@@ -88,13 +88,48 @@
       ]
     },
     "sources": [
-      "Britannica — Dagomba. https://www.britannica.com/topic/Dagomba",
-      "Joshua Project — Dagomba in Ghana. https://joshuaproject.net/people_groups/11470/GH",
-      "Tufts University — About the Dagomba. https://sites.tufts.edu/dagomba/about-the-dagomba/",
-      "Tufts University — Dagomba Dance Drumming (Lunsi). https://sites.tufts.edu/dagomba/",
-      "Melodigging — Dagomba Music. https://www.melodigging.com/genre/dagomba-music",
-      "Dagbon Kingdom — Damba Festival. https://dagbonkingdom.com/damba-festival/",
-      "Joshua Project — Dagomba in Togo. https://joshuaproject.net/people_groups/print/11470/TO"
+      {
+        "title": "Britannica — Dagomba",
+        "url": "https://www.britannica.com/topic/Dagomba",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Dagomba in Ghana",
+        "url": "https://joshuaproject.net/people_groups/11470/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tufts University — About the Dagomba",
+        "url": "https://sites.tufts.edu/dagomba/about-the-dagomba/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sites.tufts.edu."
+      },
+      {
+        "title": "Tufts University — Dagomba Dance Drumming (Lunsi)",
+        "url": "https://sites.tufts.edu/dagomba/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sites.tufts.edu."
+      },
+      {
+        "title": "Melodigging — Dagomba Music",
+        "url": "https://www.melodigging.com/genre/dagomba-music",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers melodigging.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Dagbon Kingdom — Damba Festival",
+        "url": "https://dagbonkingdom.com/damba-festival/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers dagbonkingdom.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Dagomba in Togo",
+        "url": "https://joshuaproject.net/people_groups/print/11470/TO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

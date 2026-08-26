@@ -99,12 +99,42 @@
       ]
     },
     "sources": [
-      "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999). https://www.hrw.org/reports/1999/rwanda/",
-      "CIA World Factbook — Rwanda. https://www.cia.gov/the-world-factbook/countries/rwanda/",
-      "NISR (Institut National de la Statistique du Rwanda) — Recensement 2022. https://www.statistics.gov.rw/",
-      "Jonathan Beloff, The Conversation — 30 years after genocide: Rwanda's older generations. https://jonathanrbeloff.com/2024/04/03/",
-      "USF Digital Commons — I am Rwandan: Unity and Reconciliation in Post-Genocide Rwanda. https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1480&context=gsp",
-      "Berkeley Law — Teaching of History of Rwanda resource book. https://www.law.berkeley.edu/files/HRC/Rwanda_resource_book_for_teachers_version_10._rwandan_history_book.pdf"
+      {
+        "title": "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999)",
+        "url": "https://www.hrw.org/reports/1999/rwanda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "CIA World Factbook — Rwanda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/rwanda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "NISR (Institut National de la Statistique du Rwanda) — Recensement 2022",
+        "url": "https://www.statistics.gov.rw/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statistics.gov.rw."
+      },
+      {
+        "title": "Jonathan Beloff, The Conversation — 30 years after genocide: Rwanda's older generations",
+        "url": "https://jonathanrbeloff.com/2024/04/03/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers jonathanrbeloff.com; the tier awaits editorial review."
+      },
+      {
+        "title": "USF Digital Commons — I am Rwandan: Unity and Reconciliation in Post-Genocide Rwanda",
+        "url": "https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1480&context=gsp",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for digitalcommons.usf.edu."
+      },
+      {
+        "title": "Berkeley Law — Teaching of History of Rwanda resource book",
+        "url": "https://www.law.berkeley.edu/files/HRC/Rwanda_resource_book_for_teachers_version_10._rwandan_history_book.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers law.berkeley.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -74,9 +74,24 @@
       ]
     },
     "sources": [
-      "Luvale Language (LUE) – Ethnologue, SIL International (https://www.ethnologue.com/language/lue/)",
-      "Luvale, Lwena in Angola – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
-      "Luvale in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)"
+      {
+        "title": "Luvale Language (LUE) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/lue/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Luvale, Lwena in Angola – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13168/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Luvale in Zambia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13166/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

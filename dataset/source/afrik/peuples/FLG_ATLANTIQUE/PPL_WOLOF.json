@@ -95,10 +95,30 @@
       ]
     },
     "sources": [
-      "Ethnologue – Wolof (wol) : https://www.ethnologue.com/language/wol/",
-      "World History Encyclopedia – Wolof Empire : https://www.worldhistory.org/Wolof_Empire/",
-      "Agence Nationale de la Statistique et de la Demographie du Senegal (ANSD), Recensement 2023 : https://www.ansd.sn",
-      "CIA World Factbook – Senegal : https://www.cia.gov/the-world-factbook/countries/senegal/"
+      {
+        "title": "Ethnologue – Wolof (wol)",
+        "url": "https://www.ethnologue.com/language/wol/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "World History Encyclopedia – Wolof Empire",
+        "url": "https://www.worldhistory.org/Wolof_Empire/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldhistory.org."
+      },
+      {
+        "title": "Agence Nationale de la Statistique et de la Demographie du Senegal (ANSD), Recensement 2023",
+        "url": "https://www.ansd.sn",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ansd.sn."
+      },
+      {
+        "title": "CIA World Factbook – Senegal",
+        "url": "https://www.cia.gov/the-world-factbook/countries/senegal/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

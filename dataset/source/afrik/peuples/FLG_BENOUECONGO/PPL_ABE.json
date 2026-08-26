@@ -82,10 +82,30 @@
       ]
     },
     "sources": [
-      "Abe, Abbey – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10141/IV)",
-      "Cote d'Ivoire people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/iv)",
-      "Global Recordings Network – Abe ISO aba (https://globalrecordings.net/af/country/iv)",
-      "Ethnologue – Cote d'Ivoire Languages (https://www.ethnologue.com/country/CI/)"
+      {
+        "title": "Abe, Abbey – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10141/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Cote d'Ivoire people groups – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/countries/iv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Global Recordings Network – Abe ISO aba",
+        "url": "https://globalrecordings.net/af/country/iv",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalrecordings.net."
+      },
+      {
+        "title": "Ethnologue – Cote d'Ivoire Languages",
+        "url": "https://www.ethnologue.com/country/CI/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

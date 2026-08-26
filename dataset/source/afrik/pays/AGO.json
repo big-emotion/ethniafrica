@@ -227,16 +227,66 @@
       "postIndependence": "1975-2002 : Guerre civile angolaise entre le MPLA (soutenu par l'URSS et Cuba) et l'UNITA (soutenu par les États-Unis et l'Afrique du Sud). Conflit long et destructeur, millions de déplacés et de réfugiés. 2002 : Fin de la guerre civile après la mort de Jonas Savimbi (leader de l'UNITA). Période de reconstruction et de développement économique (pétrole, diamants). Défis de développement, pauvreté, inégalités sociales."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Angola",
-      "CIA World Factbook – Angola",
-      "ONU / UNFPA – Démographie Angola 2025",
-      "Governance in West Central Africa Before 1600\"",
-      "Early Mbundu States in Angola\"",
-      "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
-      "Recensements angolais",
-      "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
-      "CIA World Factbook – Angola (ethnic groups, 2000 est.)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Angola 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Governance in West Central Africa Before 1600\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Early Mbundu States in Angola\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements angolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Angola (ethnic groups, 2000 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

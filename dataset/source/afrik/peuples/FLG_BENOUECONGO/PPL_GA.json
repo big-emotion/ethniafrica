@@ -88,10 +88,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Ga language (gaa) : https://www.ethnologue.com/language/gaa/",
-      "African Roots Travel — Ga Homowo Festival : https://www.africanrootstravel.com/post/the-origin-story-of-homowo-hooting-at-hunger",
-      "Ghana Statistical Service — Greater Accra Region Census 2021 : https://www.citypopulation.de/en/ghana/admin/03__greater_accra/",
-      "Carleton University — The Ga People and Homowo Festival (Osabu-Kle) : https://carleton.ca/africanstudies/wp-content/uploads/Ga-People-and-Homowo-Festival.pdf"
+      {
+        "title": "SIL Ethnologue — Ga language (gaa)",
+        "url": "https://www.ethnologue.com/language/gaa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "African Roots Travel — Ga Homowo Festival",
+        "url": "https://www.africanrootstravel.com/post/the-origin-story-of-homowo-hooting-at-hunger",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africanrootstravel.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ghana Statistical Service — Greater Accra Region Census 2021",
+        "url": "https://www.citypopulation.de/en/ghana/admin/03__greater_accra/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Carleton University — The Ga People and Homowo Festival (Osabu-Kle)",
+        "url": "https://carleton.ca/africanstudies/wp-content/uploads/Ga-People-and-Homowo-Festival.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for carleton.ca."
+      }
     ]
   }
 }

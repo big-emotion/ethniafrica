@@ -92,10 +92,30 @@
       ]
     },
     "sources": [
-      "Joshua Project, Fur/Forok in Sudan – Joshua Project 2024 (https://joshuaproject.net/people_groups/11779/SU)",
-      "Ethnologue, Fur (fvr) – SIL International 2024 (https://www.ethnologue.com/language/fvr/)",
-      "UK Government, Country policy and information note: non-Arab Darfuris – GOV.UK, aout 2024 (https://www.gov.uk/government/publications/sudan-country-policy-and-information-notes/country-policy-and-information-note-non-arab-darfuri-august-2024-accessible)",
-      "Jorg Adelberger, Vom Sultanat zur Republik : Veranderungen in der Sozialorganisation der Fur (Sudan) – F. Steiner, Stuttgart, 1990 (ISBN 3515055126)"
+      {
+        "title": "Joshua Project, Fur/Forok in Sudan – Joshua Project 2024",
+        "url": "https://joshuaproject.net/people_groups/11779/SU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue, Fur (fvr) – SIL International 2024",
+        "url": "https://www.ethnologue.com/language/fvr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UK Government, Country policy and information note: non-Arab Darfuris – GOV.UK, aout 2024",
+        "url": "https://www.gov.uk/government/publications/sudan-country-policy-and-information-notes/country-policy-and-information-note-non-arab-darfuri-august-2024-accessible",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers gov.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "Jorg Adelberger, Vom Sultanat zur Republik : Veranderungen in der Sozialorganisation der Fur (Sudan) – F. Steiner, Stuttgart, 1990 (ISBN 3515055126)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

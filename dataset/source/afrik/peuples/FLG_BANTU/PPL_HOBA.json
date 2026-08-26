@@ -73,11 +73,36 @@
       ]
     },
     "sources": [
-      "Axl CEFAN - Congo-Brazzaville, donnees demographiques et linguistiques : https://www.axl.cefan.ulaval.ca/afrique/congo.htm",
-      "Revue SLC - Contribution a l'identification des peuples du Congo Brazzaville : https://www.revue-slc.org/wp-content/uploads/2023/11/12-EKONDI-Fulbert_RISLC-n%C2%B015-Decembre-2021-1.pdf",
-      "Ethnologue - Langues du Congo (COG) : https://www.ethnologue.com/country/CG/",
-      "Ambassade du Congo aux Etats-Unis - Peoples and Culture : http://www.ambacongo-us.org/en/about-congo/people-culture/people",
-      "Britannica - Republic of the Congo Cultural Life : https://www.britannica.com/place/Republic-of-the-Congo/Cultural-life"
+      {
+        "title": "Axl CEFAN - Congo-Brazzaville, donnees demographiques et linguistiques",
+        "url": "https://www.axl.cefan.ulaval.ca/afrique/congo.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for axl.cefan.ulaval.ca."
+      },
+      {
+        "title": "Revue SLC - Contribution a l'identification des peuples du Congo Brazzaville",
+        "url": "https://www.revue-slc.org/wp-content/uploads/2023/11/12-EKONDI-Fulbert_RISLC-n%C2%B015-Decembre-2021-1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for revue-slc.org."
+      },
+      {
+        "title": "Ethnologue - Langues du Congo (COG)",
+        "url": "https://www.ethnologue.com/country/CG/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ambassade du Congo aux Etats-Unis - Peoples and Culture",
+        "url": "http://www.ambacongo-us.org/en/about-congo/people-culture/people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for ambacongo-us.org."
+      },
+      {
+        "title": "Britannica - Republic of the Congo Cultural Life",
+        "url": "https://www.britannica.com/place/Republic-of-the-Congo/Cultural-life",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

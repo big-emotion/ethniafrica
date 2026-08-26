@@ -76,11 +76,36 @@
       ]
     },
     "sources": [
-      "Senga in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/19620/ZA)",
-      "Senga of Zambia (PGID: PG015625) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015625/)",
-      "Senga people – 101 Last Tribes (https://www.101lasttribes.com/tribes/senga.html)",
-      "Senga – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/senga/)",
-      "Partners in Bible Translation – Senga Survey 2015 (http://partnersinbibletranslation.org/wp-content/uploads/2018/03/SengaSurvey_2015.pdf)"
+      {
+        "title": "Senga in Zambia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/19620/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Senga of Zambia (PGID: PG015625) – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg015625/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Senga people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/senga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Senga – Zambia's Traditional History",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/senga/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "Partners in Bible Translation – Senga Survey 2015",
+        "url": "http://partnersinbibletranslation.org/wp-content/uploads/2018/03/SengaSurvey_2015.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for partnersinbibletranslation.org."
+      }
     ]
   }
 }

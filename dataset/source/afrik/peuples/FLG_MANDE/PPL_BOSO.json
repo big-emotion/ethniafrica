@@ -100,13 +100,48 @@
       ]
     },
     "sources": [
-      "Joshua Project — Bozo, Jenaama in Mali. https://joshuaproject.net/people_groups/15003/ML",
-      "PeopleGroups.org — Bozo of Mali. https://peoplegroups.org/people_groups/pg023174/",
-      "SIL Ethnologue — Tiemacewe Bozo (boo). https://www.ethnologue.com/language/boo/",
-      "Trip Down Memory Lane — Bozo People, Masters of the River (2013). https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/the-bozo-boso-sorogo-tieyaxo-bozo.html",
-      "UNESCO ICH — Coming forth of the masks and puppets in Markala. https://ich.unesco.org/en/RL/coming-forth-of-the-masks-and-puppets-in-markala-01004",
-      "Elisabeth den Otter — Masquerades of the Bozo, Kirango (Mali). https://www.elisabethdenotter.nl/site1/bozo_circumcision_and_masquerades/",
-      "Genaro Bardy — Bozo in Mali, Masters of the River (2018). https://genarobardy.com/blog/2018/11/17/bozo-in-mali-masters-of-the-river"
+      {
+        "title": "Joshua Project — Bozo, Jenaama in Mali",
+        "url": "https://joshuaproject.net/people_groups/15003/ML",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Bozo of Mali",
+        "url": "https://peoplegroups.org/people_groups/pg023174/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "SIL Ethnologue — Tiemacewe Bozo (boo)",
+        "url": "https://www.ethnologue.com/language/boo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Trip Down Memory Lane — Bozo People, Masters of the River (2013)",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/the-bozo-boso-sorogo-tieyaxo-bozo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "UNESCO ICH — Coming forth of the masks and puppets in Markala",
+        "url": "https://ich.unesco.org/en/RL/coming-forth-of-the-masks-and-puppets-in-markala-01004",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Elisabeth den Otter — Masquerades of the Bozo, Kirango (Mali)",
+        "url": "https://www.elisabethdenotter.nl/site1/bozo_circumcision_and_masquerades/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers elisabethdenotter.nl; the tier awaits editorial review."
+      },
+      {
+        "title": "Genaro Bardy — Bozo in Mali, Masters of the River (2018)",
+        "url": "https://genarobardy.com/blog/2018/11/17/bozo-in-mali-masters-of-the-river",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers genarobardy.com; the tier awaits editorial review."
+      }
     ]
   }
 }

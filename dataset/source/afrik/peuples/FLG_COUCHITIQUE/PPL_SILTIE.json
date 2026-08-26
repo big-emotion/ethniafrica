@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "Joshua Project — Silt'e in Ethiopia. https://joshuaproject.net/people_groups/11677",
-      "Horn of Africa Evangelical Mission — Silti people profile. https://hornofafrica.org/wp-content/uploads/2019/12/Silti.pdf",
-      "Glottolog — Silt'e language (stv). https://glottolog.org/resource/languoid/id/silt1240",
-      "CIA World Factbook — Ethiopia (Silte : 1,3% de la population). https://www.cia.gov/the-world-factbook/countries/ethiopia/",
-      "Dirk Bustorf 2011 : Lebendige Überlieferung : Geschichte und Erinnerung der muslimischen Silt'e Äthiopiens. Wiesbaden : Harrassowitz.",
-      "Nishi Makoto 2005 : Making and Unmaking of the National-State and Ethnicity in Modern Ethiopia. African Study Monographs, Supplementary Issue 29."
+      {
+        "title": "Joshua Project — Silt'e in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/11677",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Horn of Africa Evangelical Mission — Silti people profile",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Silti.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+      },
+      {
+        "title": "Glottolog — Silt'e language (stv)",
+        "url": "https://glottolog.org/resource/languoid/id/silt1240",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "CIA World Factbook — Ethiopia (Silte : 1,3% de la population)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Dirk Bustorf 2011 : Lebendige Überlieferung : Geschichte und Erinnerung der muslimischen Silt'e Äthiopiens. Wiesbaden : Harrassowitz",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Nishi Makoto 2005 : Making and Unmaking of the National-State and Ethnicity in Modern Ethiopia. African Study Monographs, Supplementary Issue 29",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

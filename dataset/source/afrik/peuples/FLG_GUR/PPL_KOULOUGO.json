@@ -93,13 +93,48 @@
       ]
     },
     "sources": [
-      "Joshua Project — Kulango, Bondoukou in Cote d'Ivoire. https://joshuaproject.net/people_groups/10931/IV",
-      "Joshua Project — Kulango, Bouna in Cote d'Ivoire. https://joshuaproject.net/people_groups/10955/IV",
-      "Ethnologue — Kulango, Bondoukou (KZC). https://www.ethnologue.com/language/kzc/",
-      "Ethnologue — Kulango subgroup. https://www.ethnologue.com/subgroup/967/",
-      "101 Last Tribes — Kulango people. http://www.101lasttribes.com/tribes/kulango.html",
-      "Contemporary African Diaspora Art (CADA) — Kulango Ceremonial Dance Mask. https://www.cada.us/symbols-of-spirit-by-ludlow-bailey/",
-      "Facebook Terroir — The Complete History of the Koulango People (2025). https://www.facebook.com/100090158294667/posts/terroir-the-complete-history-of-the-koulango-peopleby-francis-kofi-mensahfebruar/598624119819526/"
+      {
+        "title": "Joshua Project — Kulango, Bondoukou in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/10931/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Kulango, Bouna in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/10955/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Kulango, Bondoukou (KZC)",
+        "url": "https://www.ethnologue.com/language/kzc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue — Kulango subgroup",
+        "url": "https://www.ethnologue.com/subgroup/967/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Kulango people",
+        "url": "http://www.101lasttribes.com/tribes/kulango.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Contemporary African Diaspora Art (CADA) — Kulango Ceremonial Dance Mask",
+        "url": "https://www.cada.us/symbols-of-spirit-by-ludlow-bailey/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers cada.us; the tier awaits editorial review."
+      },
+      {
+        "title": "Facebook Terroir — The Complete History of the Koulango People (2025)",
+        "url": "https://www.facebook.com/100090158294667/posts/terroir-the-complete-history-of-the-koulango-peopleby-francis-kofi-mensahfebruar/598624119819526/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

@@ -89,13 +89,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Haya language (hay) : https://www.ethnologue.com/language/hay/",
-      "Glottolog - Haya : https://glottolog.org/resource/languoid/id/haya1250",
-      "Peter Schmidt & Donald Avery, 'Complex iron smelting and prehistoric culture in Tanzania', Science, 1978 : https://pubmed.ncbi.nlm.nih.gov/17830304/",
-      "Joshua Project - Haya, Ziba in Tanzania : https://joshuaproject.net/people_groups/12075/TZ",
-      "University of Missouri - DICE cross-cultural database : https://dice.missouri.edu/assets/docs/niger-congo/Haya.pdf",
-      "BLAC Foundation - Self-Praise Verses in Haya Ethnic Groups : https://www.blacfoundation.org/pdf/historia_yake.pdf",
-      "TIME Magazine - 'Africa's Ancient Steelmakers', 25 septembre 1978 : https://time.com/archive/6845911/science-africas-ancient-steelmakers/"
+      {
+        "title": "SIL Ethnologue - Haya language (hay)",
+        "url": "https://www.ethnologue.com/language/hay/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog - Haya",
+        "url": "https://glottolog.org/resource/languoid/id/haya1250",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Peter Schmidt & Donald Avery, 'Complex iron smelting and prehistoric culture in Tanzania', Science, 1978",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17830304/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pubmed.ncbi.nlm.nih.gov; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project - Haya, Ziba in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/12075/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "University of Missouri - DICE cross-cultural database",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Haya.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "BLAC Foundation - Self-Praise Verses in Haya Ethnic Groups",
+        "url": "https://www.blacfoundation.org/pdf/historia_yake.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blacfoundation.org; the tier awaits editorial review."
+      },
+      {
+        "title": "TIME Magazine - 'Africa's Ancient Steelmakers', 25 septembre 1978",
+        "url": "https://time.com/archive/6845911/science-africas-ancient-steelmakers/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers time.com; the tier awaits editorial review."
+      }
     ]
   }
 }

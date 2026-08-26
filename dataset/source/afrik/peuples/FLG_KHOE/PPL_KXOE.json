@@ -115,14 +115,54 @@
       ]
     },
     "sources": [
-      "Glottolog 5.3 — Kxoe (kxoe1243), ISO 639-3 : xuu. https://glottolog.org/resource/languoid/id/kxoe1243",
-      "Joshua Project — Kxoe, Xun in Botswana. https://joshuaproject.net/people_groups/10676/BC",
-      "Kilian-Hatz, Christa. Khwe Dictionary. Koln : Rudiger Koppe Verlag, 2003.",
-      "Kilian-Hatz, Christa & Naude, David. Khwe Folktales. Koln, 1999.",
-      "IWGIA — The Indigenous World 2025 : Namibia. https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
-      "UNESCO — Tsodilo Hills World Heritage Site. https://whc.unesco.org/en/list/1021/",
-      "Brenzinger, Matthias. Language endangerment in Africa. In Encyclopedia of Language and Linguistics, 2011.",
-      "SciELO — The case of Khoisan languages of Botswana. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012"
+      {
+        "title": "Glottolog 5.3 — Kxoe (kxoe1243), ISO 639-3 : xuu",
+        "url": "https://glottolog.org/resource/languoid/id/kxoe1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Kxoe, Xun in Botswana",
+        "url": "https://joshuaproject.net/people_groups/10676/BC",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kilian-Hatz, Christa. Khwe Dictionary. Koln : Rudiger Koppe Verlag, 2003",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kilian-Hatz, Christa & Naude, David. Khwe Folktales. Koln, 1999",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "IWGIA — The Indigenous World 2025 : Namibia",
+        "url": "https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "UNESCO — Tsodilo Hills World Heritage Site",
+        "url": "https://whc.unesco.org/en/list/1021/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Brenzinger, Matthias. Language endangerment in Africa. In Encyclopedia of Language and Linguistics, 2011",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SciELO — The case of Khoisan languages of Botswana",
+        "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+      }
     ]
   }
 }

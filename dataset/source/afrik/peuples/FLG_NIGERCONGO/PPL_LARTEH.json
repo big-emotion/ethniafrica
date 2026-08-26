@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Larteh, Gua in Ghana (https://joshuaproject.net/people_groups/11948)",
-      "Sabinet – An Account of Lɛtɛ Language Context (https://journals.co.za/doi/10.4314/contjas.v11i1.1)",
-      "Medwin Publishers – The Guan-Kyerepon in the Suzerainty of the Asante 1635-1750 (https://medwinpublishers.com/PhIJ/the-guan-kyerepon-in-the-suzerainty-of-the-asante-1635-1750.pdf)",
-      "Swordshare Map – Larteh Language ISO lar (https://map.swordshare.com/lar)",
-      "ISO 639-3 Code lar – Larteh (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+      {
+        "title": "Joshua Project – Larteh, Gua in Ghana",
+        "url": "https://joshuaproject.net/people_groups/11948",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sabinet – An Account of Lɛtɛ Language Context",
+        "url": "https://journals.co.za/doi/10.4314/contjas.v11i1.1",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for journals.co.za."
+      },
+      {
+        "title": "Medwin Publishers – The Guan-Kyerepon in the Suzerainty of the Asante 1635-1750",
+        "url": "https://medwinpublishers.com/PhIJ/the-guan-kyerepon-in-the-suzerainty-of-the-asante-1635-1750.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers medwinpublishers.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Swordshare Map – Larteh Language ISO lar",
+        "url": "https://map.swordshare.com/lar",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "ISO 639-3 Code lar – Larteh",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

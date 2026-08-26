@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Kisi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12720)",
-      "Kisi – Omniglot, 2021 (https://www.omniglot.com/writing/kisi.htm)",
-      "Kisi – Ethnologue (https://www.ethnologue.com/language/kiz/)",
-      "Kisi of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014965/)",
-      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+      {
+        "title": "Kisi in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12720",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kisi – Omniglot, 2021",
+        "url": "https://www.omniglot.com/writing/kisi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Kisi – Ethnologue",
+        "url": "https://www.ethnologue.com/language/kiz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kisi of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg014965/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Bantu, Central-Tanzania People Cluster – Joshua Project",
+        "url": "https://www.joshuaproject.net/clusters/341",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

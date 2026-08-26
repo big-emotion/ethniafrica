@@ -72,10 +72,30 @@
       ]
     },
     "sources": [
-      "Berta language (WTI) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/wti/)",
-      "Berta, Benishangul in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10793/ET)",
-      "1994 Population and Housing Census of Ethiopia – IPUMS / World Bank (https://microdata.worldbank.org/catalog/2746)",
-      "Between Domination and Resistance: The Bertha – Inlibra (https://www.inlibra.com/853968.pdf)"
+      {
+        "title": "Berta language (WTI) – Ethnologue / SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/wti/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Berta, Benishangul in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10793/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "1994 Population and Housing Census of Ethiopia – IPUMS / World Bank",
+        "url": "https://microdata.worldbank.org/catalog/2746",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of microdata.worldbank.org."
+      },
+      {
+        "title": "Between Domination and Resistance: The Bertha – Inlibra",
+        "url": "https://www.inlibra.com/853968.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers inlibra.com; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -105,12 +105,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Marka people of Mali and Burkina Faso. https://www.101lasttribes.com/tribes/marka.html",
-      "Qiraat Africa — Marka, people of Mali and Burkina Faso (2025). https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
-      "SIL Ethnologue — Marka language (rkm). https://www.ethnologue.com/language/rkm/",
-      "Joshua Project — Marka Dafing in Burkina Faso. https://joshuaproject.net/people_groups/13550/UV",
-      "CEDS / SIL — ISO 639-3 Language Code Table: Marka = rkm. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-      "Glottolog — Marka. https://glottolog.org/resource/languoid/id/mark1256"
+      {
+        "title": "101 Last Tribes — Marka people of Mali and Burkina Faso",
+        "url": "https://www.101lasttribes.com/tribes/marka.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Qiraat Africa — Marka, people of Mali and Burkina Faso (2025)",
+        "url": "https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "SIL Ethnologue — Marka language (rkm)",
+        "url": "https://www.ethnologue.com/language/rkm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Marka Dafing in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/13550/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "CEDS / SIL — ISO 639-3 Language Code Table: Marka = rkm",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Glottolog — Marka",
+        "url": "https://glottolog.org/resource/languoid/id/mark1256",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

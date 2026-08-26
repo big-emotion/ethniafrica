@@ -107,12 +107,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Makhuwa (vmw). https://www.ethnologue.com/country/MZ/",
-      "Britannica — Makua. https://www.britannica.com/topic/Makua",
-      "Joshua Project — Makhuwa-Makhuwana in Mozambique. https://joshuaproject.net/people_groups/18875/MZ",
-      "Trip Down Memory Lane — Makua People: Mozambique's Largest Matriarchical Group. https://kwekudee-tripdownmemorylane.blogspot.com/2013/03/makua-people-mozambiques-larhest.html",
-      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "INE Mozambique — Censo 2017. https://www.ine.gov.mz/"
+      {
+        "title": "SIL Ethnologue — Makhuwa (vmw)",
+        "url": "https://www.ethnologue.com/country/MZ/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Makua",
+        "url": "https://www.britannica.com/topic/Makua",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Makhuwa-Makhuwana in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/18875/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Trip Down Memory Lane — Makua People: Mozambique's Largest Matriarchical Group",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/03/makua-people-mozambiques-larhest.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "INE Mozambique — Censo 2017",
+        "url": "https://www.ine.gov.mz/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ine.gov.mz."
+      }
     ]
   }
 }

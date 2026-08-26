@@ -87,20 +87,90 @@
       }
     },
     "sources": [
-      "Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon.",
-      "Meinhof, C. (1906) – Grundzüge einer vergleichenden Grammatik der Bantusprachen. Berlin : Reimer.",
-      "Guthrie, M. (1948) – The Classification of the Bantu Languages. London : International African Institute, Oxford University Press.",
-      "Greenberg, J. H. (1963) – The Languages of Africa. Bloomington : Indiana University.",
-      "Nurse, D. & Philippson, G. (2003) – The Bantu Languages. London : Routledge.",
-      "Vansina, J. (1990) – Paths in the Rainforests. Madison : University of Wisconsin Press.",
-      "Ehret, C. (1998) – An African Classical Age. Charlottesville : University Press of Virginia.",
-      "Berniell-Lee, G. et al. (2009) – \"Genetic and Demographic Implications of the Bantu Expansion\", Molecular Biology and Evolution, vol. 26, n°7, pp. 1581-1589.",
-      "Henn, B. M. et al. (2011) – \"Hunter-gatherer genomic diversity suggests a southern African origin for modern humans\", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162.",
-      "ONU (2025) – World Population Prospects 2025. New York : United Nations.",
-      "UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA.",
-      "SIL Ethnologue (2025) – \"Bantu languages\". https://www.ethnologue.com/subgroups/bantu",
-      "Glottolog (2025) – \"Narrow Bantu\". https://glottolog.org/resource/languoid/id/narr1281",
-      "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiZulu home language). https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
+      {
+        "title": "Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Meinhof, C. (1906) – Grundzüge einer vergleichenden Grammatik der Bantusprachen. Berlin : Reimer",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Guthrie, M. (1948) – The Classification of the Bantu Languages. London : International African Institute, Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, J. H. (1963) – The Languages of Africa. Bloomington : Indiana University",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Nurse, D. & Philippson, G. (2003) – The Bantu Languages. London : Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vansina, J. (1990) – Paths in the Rainforests. Madison : University of Wisconsin Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ehret, C. (1998) – An African Classical Age. Charlottesville : University Press of Virginia",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Berniell-Lee, G. et al. (2009) – \"Genetic and Demographic Implications of the Bantu Expansion\", Molecular Biology and Evolution, vol. 26, n°7, pp. 1581-1589",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henn, B. M. et al. (2011) – \"Hunter-gatherer genomic diversity suggests a southern African origin for modern humans\", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "ONU (2025) – World Population Prospects 2025. New York : United Nations",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue (2025) – \"Bantu languages\"",
+        "url": "https://www.ethnologue.com/subgroups/bantu",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog (2025) – \"Narrow Bantu\"",
+        "url": "https://glottolog.org/resource/languoid/id/narr1281",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiZulu home language)",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      }
     ]
   }
 }

@@ -98,11 +98,36 @@
       ]
     },
     "sources": [
-      "Subiya – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/subiya/)",
-      "Subia people group in all countries – Joshua Project (https://joshuaproject.net/people_groups/15102)",
-      "Subia in Zambia – Joshua Project (https://joshuaproject.net/people_groups/15102/ZA)",
-      "Ramsey, Jeff – Document sur les Bekuhane, Botswana Government (cite dans Zambia's Traditional History)",
-      "Subia – Justapedia (https://justapedia.org/wiki/Subia_people)"
+      {
+        "title": "Subiya – Zambia's Traditional History",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/subiya/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "Subia people group in all countries – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/15102",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Subia in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/15102/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ramsey, Jeff – Document sur les Bekuhane, Botswana Government (cite dans Zambia's Traditional History)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Subia – Justapedia",
+        "url": "https://justapedia.org/wiki/Subia_people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for justapedia.org."
+      }
     ]
   }
 }

@@ -91,11 +91,36 @@
       ]
     },
     "sources": [
-      "Ethnologue – Ewondo (ewo): https://www.ethnologue.com/language/ewo/",
-      "PeopleGroups.org – Ewondo of Cameroon: https://peoplegroups.org/people_groups/pg012592/",
-      "African Music Library – Bikutsi genre: https://www.africanmusiclibrary.org/genre/Bikutsi",
-      "Glottolog – Beti: https://glottolog.org/resource/languoid/id/beti1250",
-      "101 Last Tribes – Ewondo people: https://www.101lasttribes.com/tribes/ewondo.html"
+      {
+        "title": "Ethnologue – Ewondo (ewo)",
+        "url": "https://www.ethnologue.com/language/ewo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org – Ewondo of Cameroon",
+        "url": "https://peoplegroups.org/people_groups/pg012592/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "African Music Library – Bikutsi genre",
+        "url": "https://www.africanmusiclibrary.org/genre/Bikutsi",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africanmusiclibrary.org."
+      },
+      {
+        "title": "Glottolog – Beti",
+        "url": "https://glottolog.org/resource/languoid/id/beti1250",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "101 Last Tribes – Ewondo people",
+        "url": "https://www.101lasttribes.com/tribes/ewondo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

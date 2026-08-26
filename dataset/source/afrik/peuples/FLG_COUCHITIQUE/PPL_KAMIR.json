@@ -76,12 +76,42 @@
       ]
     },
     "sources": [
-      "Xamtanga language, alphabet and pronunciation – Omniglot, 2023 (https://www.omniglot.com/writing/xamtanga.htm)",
-      "Xamtanga Language (XAN) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/xan/)",
-      "Xamtanga – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/xamt1239)",
-      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)",
-      "Sociolinguistic Survey Report of the Khamir Language of Ethiopia – Academia.edu, 2015 (https://www.academia.edu/10128423/Sociolinguistic_Survey_Report_of_the_Khamir_Language_of_Ethiopia)",
-      "Agew People: History and Culture – Horn of Africa Evangelical Mission (https://hornofafrica.org/wp-content/uploads/2019/12/Agew.pdf)"
+      {
+        "title": "Xamtanga language, alphabet and pronunciation – Omniglot, 2023",
+        "url": "https://www.omniglot.com/writing/xamtanga.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Xamtanga Language (XAN) – Ethnologue, SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/xan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Xamtanga – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/xamt1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress",
+        "url": "https://countrystudies.us/ethiopia/50.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Sociolinguistic Survey Report of the Khamir Language of Ethiopia – Academia.edu, 2015",
+        "url": "https://www.academia.edu/10128423/Sociolinguistic_Survey_Report_of_the_Khamir_Language_of_Ethiopia",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      },
+      {
+        "title": "Agew People: History and Culture – Horn of Africa Evangelical Mission",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Agew.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+      }
     ]
   }
 }

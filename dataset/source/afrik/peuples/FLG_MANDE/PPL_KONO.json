@@ -91,12 +91,42 @@
       ]
     },
     "sources": [
-      "KDDA UK — History of the Kono People. https://www.kdda.co.uk/index-aboutus-history.html",
-      "Joshua Project — Kono in Sierra Leone. https://joshuaproject.net/people_groups/18920",
-      "Ethnologue — Kono language (kno). https://www.ethnologue.com/language/kno/",
-      "City Population — Kono District Sierra Leone Census 2021. https://www.citypopulation.de/en/sierraleone/admin/13__kono/",
-      "Britannica — Sierra Leone cultural life (Poro and Sande societies). https://www.britannica.com/place/Sierra-Leone/Cultural-life",
-      "101 Last Tribes — Kono people. https://www.101lasttribes.com/tribes/kono.html"
+      {
+        "title": "KDDA UK — History of the Kono People",
+        "url": "https://www.kdda.co.uk/index-aboutus-history.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kdda.co.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Kono in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/18920",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Kono language (kno)",
+        "url": "https://www.ethnologue.com/language/kno/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "City Population — Kono District Sierra Leone Census 2021",
+        "url": "https://www.citypopulation.de/en/sierraleone/admin/13__kono/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Britannica — Sierra Leone cultural life (Poro and Sande societies)",
+        "url": "https://www.britannica.com/place/Sierra-Leone/Cultural-life",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes — Kono people",
+        "url": "https://www.101lasttribes.com/tribes/kono.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

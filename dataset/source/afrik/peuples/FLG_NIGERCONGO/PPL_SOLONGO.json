@@ -90,11 +90,36 @@
       ]
     },
     "sources": [
-      "Country Studies US — Angola: Bakongo. https://countrystudies.us/angola/61.htm",
-      "IRB Canada — Angola: Situation and treatment of Bakongo people (2024). https://www.ecoi.net/en/document/2110281.html",
-      "Ethnologue (SIL) — Kongo language (kon). https://www.ethnologue.com/language/kon/",
-      "CIA World Factbook — Angola. https://www.cia.gov/the-world-factbook/countries/angola/",
-      "Reddit Angola — Bakongo subgroups including Solongo (Soyo). https://www.reddit.com/r/Angola/comments/1k0opk0/bakongo_angolans/"
+      {
+        "title": "Country Studies US — Angola: Bakongo",
+        "url": "https://countrystudies.us/angola/61.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "IRB Canada — Angola: Situation and treatment of Bakongo people (2024)",
+        "url": "https://www.ecoi.net/en/document/2110281.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      },
+      {
+        "title": "Ethnologue (SIL) — Kongo language (kon)",
+        "url": "https://www.ethnologue.com/language/kon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Angola",
+        "url": "https://www.cia.gov/the-world-factbook/countries/angola/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Reddit Angola — Bakongo subgroups including Solongo (Soyo)",
+        "url": "https://www.reddit.com/r/Angola/comments/1k0opk0/bakongo_angolans/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for reddit.com."
+      }
     ]
   }
 }

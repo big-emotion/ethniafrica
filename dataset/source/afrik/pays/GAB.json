@@ -184,14 +184,54 @@
       "postIndependence": "1960-1967 : Présidence de Léon M'ba. 1967-2009 : Présidence d'Omar Bongo (1967-2009), période de stabilité politique et de développement économique basé sur le pétrole. 2009-présent : Présidence d'Ali Bongo Ondimba (fils d'Omar Bongo). Défis : dépendance au pétrole, inégalités sociales, corruption. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne grâce à ses ressources pétrolières et forestières."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Gabon",
-      "CIA World Factbook – Gabon",
-      "ONU / UNFPA – Démographie Gabon 2025",
-      "Recensements gabonais",
-      "Études anthropologiques sur les peuples du Gabon",
-      "Études sur l'art gabonais (masques, sculptures)",
-      "CIA World Factbook – Gabon (ethnic groups, 2021 est.)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Gabon 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements gabonais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études sur l'art gabonais (masques, sculptures)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Gabon (ethnic groups, 2021 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

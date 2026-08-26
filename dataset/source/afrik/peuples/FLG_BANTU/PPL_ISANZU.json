@@ -67,11 +67,36 @@
       ]
     },
     "sources": [
-      "Isanzu in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12260)",
-      "Isanzu Language – Ethnologue (https://www.ethnologue.com/language/isn/)",
-      "Isanzu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/isan1243)",
-      "Isanzu Community Perspectives on Ancestral Human Remains – Open Restitution Africa, 2025 (https://openrestitution.africa/case-study/isanzu-community-perspectives-on-ancestral-human-remains-restitution-to-tanzania/)",
-      "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025 (https://www.joshuaproject.net/clusters/341)"
+      {
+        "title": "Isanzu in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12260",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Isanzu Language – Ethnologue",
+        "url": "https://www.ethnologue.com/language/isn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Isanzu – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/isan1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Isanzu Community Perspectives on Ancestral Human Remains – Open Restitution Africa, 2025",
+        "url": "https://openrestitution.africa/case-study/isanzu-community-perspectives-on-ancestral-human-remains-restitution-to-tanzania/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers openrestitution.africa; the tier awaits editorial review."
+      },
+      {
+        "title": "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025",
+        "url": "https://www.joshuaproject.net/clusters/341",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -90,11 +90,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Nalu (naj) : https://www.ethnologue.com/language/naj",
-      "Joshua Project, Nalu in Guinea : https://joshuaproject.net/people_groups/13930/GV",
-      "Joshua Project, Nalu in Guinea-Bissau : https://joshuaproject.net/people_groups/13930/PU",
-      "Bouju, Stephane. Historique sur les populations cotieres de Guinee et de Sierra Leone. IRD Editions, OpenEdition Books, 2013 : https://books.openedition.org/irdeditions/3745",
-      "101 Last Tribes, Nalu people : https://www.101lasttribes.com/tribes/nalu.html"
+      {
+        "title": "Ethnologue, Nalu (naj)",
+        "url": "https://www.ethnologue.com/language/naj",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project, Nalu in Guinea",
+        "url": "https://joshuaproject.net/people_groups/13930/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project, Nalu in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/13930/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bouju, Stephane. Historique sur les populations cotieres de Guinee et de Sierra Leone. IRD Editions, OpenEdition Books, 2013",
+        "url": "https://books.openedition.org/irdeditions/3745",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of books.openedition.org."
+      },
+      {
+        "title": "101 Last Tribes, Nalu people",
+        "url": "https://www.101lasttribes.com/tribes/nalu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

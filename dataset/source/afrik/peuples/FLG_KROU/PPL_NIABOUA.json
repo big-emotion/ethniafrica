@@ -76,11 +76,36 @@
       ]
     },
     "sources": [
-      "Aka Konin, L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire – Royal Museum for Central Africa, 2012 (https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf)",
-      "Nyabwa-Nyedebwa in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14076)",
-      "Ethnologue – Nyabwa language (nwb), SIL International, 2024 (https://www.ethnologue.com/language/nwb/)",
-      "Niaboua of Côte d'Ivoire – PeopleGroups.org, consulté 2025 (https://peoplegroups.org/people_groups/pg013118/)",
-      "Zézé-Béké (P.), Les interdits alimentaires chez les Nyabwa de Côte d'Ivoire – Journal des africanistes, 1989, tome 59, fascicule 1-2, p. 229"
+      {
+        "title": "Aka Konin, L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire – Royal Museum for Central Africa, 2012",
+        "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africamuseum.be."
+      },
+      {
+        "title": "Nyabwa-Nyedebwa in Côte d'Ivoire – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14076",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Nyabwa language (nwb), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/nwb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Niaboua of Côte d'Ivoire – PeopleGroups.org, consulté 2025",
+        "url": "https://peoplegroups.org/people_groups/pg013118/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Zézé-Béké (P.), Les interdits alimentaires chez les Nyabwa de Côte d'Ivoire – Journal des africanistes, 1989, tome 59, fascicule 1-2, p. 229",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

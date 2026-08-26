@@ -91,9 +91,24 @@
       ]
     },
     "sources": [
-      "Musgu Language (MUG) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/mug/)",
-      "Musgum, Mulwi in Chad – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13840/cd)",
-      "Adaptive Architecture: Mousgoum dwellings Pouss, Cameroon – Radio Future Africa, s.d. (https://radio-future-africa.org/adaptive-architecture-mousgoum-dwellings-pouss-cameroon/)"
+      {
+        "title": "Musgu Language (MUG) – Ethnologue / SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/mug/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Musgum, Mulwi in Chad – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13840/cd",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Adaptive Architecture: Mousgoum dwellings Pouss, Cameroon – Radio Future Africa, s.d",
+        "url": "https://radio-future-africa.org/adaptive-architecture-mousgoum-dwellings-pouss-cameroon/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers radio-future-africa.org; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -69,9 +69,24 @@
       ]
     },
     "sources": [
-      "Berom in Nigeria – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10811)",
-      "Berom – Glottolog 5.3, ISO 639-3 bom (https://glottolog.org/resource/languoid/id/bero1242)",
-      "Berom Language (BOM) – Ethnologue, SIL International (https://www.ethnologue.com/language/bom/)"
+      {
+        "title": "Berom in Nigeria – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/10811",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Berom – Glottolog 5.3, ISO 639-3 bom",
+        "url": "https://glottolog.org/resource/languoid/id/bero1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Berom Language (BOM) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/bom/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

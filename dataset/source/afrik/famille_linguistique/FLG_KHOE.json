@@ -44,29 +44,144 @@
       }
     },
     "sources": [
-      "Fauvelle-Aymar, François-Xavier (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Publications de la Sorbonne.",
-      "Merians, Linda Evi (2001) – *Envisioning the Worst: Representations of \"Hottentots\" in Early-modern England*. University of Delaware Press.",
-      "Jeffreys, M. D. W. (1947) – « The Origin of the Name Hottentot ». *African Affairs*, vol. 46, n° 184, p. 163-165. Oxford University Press.",
-      "Van Riebeeck, Jan (milieu 1650s) – Journaux de la Compagnie néerlandaise des Indes orientales (VOC), station du Cap. Archives VOC.",
-      "Greenberg, Joseph H. (1955/1963) – *The Languages of Africa*. Indiana University / Mouton.",
-      "Sands, Bonny Eva (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Research School of Pacific and Asian Studies, Australian National University.",
-      "Güldemann, Tom (années 2000s) – Travaux sur classification des langues à clics, reconstruction Khoe-Kwadi, rejet de « Khoisan » comme famille génétique. Multiple publications.",
-      "Jakobsson, Mattias et al. (2024) – *Homo sapiens-specific evolution unveiled by ancient southern African genomes*. *Nature*. DOI: 10.1038/s41586-025-09811-4.",
-      "Lipson, Mark, Sawchuk, E. A., Thompson, J. C. et al. (2022) – *Ancient DNA and deep population structure in sub-Saharan African foragers*. *Nature*. DOI: 10.1038/s41586-022-04430-9.",
-      "Barbieri, Chiara, Schlebusch, Carina et al. (2021-2022) – *Revised timeline and distribution of the earliest diverged human maternal lineages in southern Africa*. *Human Molecular Genetics*. DOI: 10.1093/hmg/ddac158.",
-      "Pickrell, Joseph K. et al. (2012) – *The genetic prehistory of southern Africa*. *Nature Communications*. arXiv:1207.5552.",
-      "Ethnologue (27e édition, 2024) – *Khoekhoegowab* (ISO 639-3: naq), *Khwe*, *Naro*. SIL International. https://www.ethnologue.com/",
-      "SIL Ethnologue – Khoekhoe, Naro, Khwe. SIL International.",
-      "Database of Southern African Languages (DBS, 2024) – *Khoekhoegowab*. https://dbs.org/en/research/languages/naq/",
-      "ASJP (Automated Similarity Judgment Program) – *Khwe* (Kxoe/Ani). https://asjp.clld.org/languages/KHWE",
-      "Endangered Languages Project – *Khoekhoegowab*, *Language Vitality Among the Nama of Tshabong*. https://www.endangeredlanguages.com/",
-      "Grokipedia / Namibie Population and Housing Census (2023) – *Demographics of Namibia*. https://grokipedia.com/page/Demographics_of_Namibia",
-      "UNESCO – Langues en danger (Afrique australe). UNESCO Atlas of the World's Languages in Danger.",
-      "Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations.",
-      "Glottolog 5.0 (2024) – Classification du nœud \"Khoe\" [khoe1241] : deux branches directes, \"Khoekhoe\" [khoe1242] et \"Non-Khoekhoe\" [nonk1236]. https://glottolog.org/resource/languoid/id/khoe1241",
-      "SIL Ethnologue – Khoekhoegowab/Nama [naq] : Namibie ≈200 000, Afrique du Sud ≈2 000, Botswana ≈200 locuteurs. https://www.ethnologue.com/language/naq/ (chiffres vérifiés via Wikipédia FR « Nama (langue) », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
-      "Brenzinger, Matthias (2011) – \"The twelve modern Khoisan languages\". In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium* (Research in Khoisan Studies 29). Cologne: Rüdiger Köppe Verlag. [Khwe : Namibie ≈3 700 ; Naro : Namibie ≈1 000 locuteurs]",
-      "SIL Ethnologue (18e éd., 2015) – Naro [nhr] : Botswana ≈8 000 locuteurs (2014). https://www.ethnologue.com/language/nhr/ (chiffre vérifié via Wikipédia EN « Naro language », consulté en 2026)"
+      {
+        "title": "Fauvelle-Aymar, François-Xavier (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Publications de la Sorbonne",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Merians, Linda Evi (2001) – *Envisioning the Worst: Representations of \"Hottentots\" in Early-modern England*. University of Delaware Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Jeffreys, M. D. W. (1947) – « The Origin of the Name Hottentot ». *African Affairs*, vol. 46, n° 184, p. 163-165. Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Van Riebeeck, Jan (milieu 1650s) – Journaux de la Compagnie néerlandaise des Indes orientales (VOC), station du Cap. Archives VOC",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1955/1963) – *The Languages of Africa*. Indiana University / Mouton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Sands, Bonny Eva (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Research School of Pacific and Asian Studies, Australian National University",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Güldemann, Tom (années 2000s) – Travaux sur classification des langues à clics, reconstruction Khoe-Kwadi, rejet de « Khoisan » comme famille génétique. Multiple publications",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Jakobsson, Mattias et al. (2024) – *Homo sapiens-specific evolution unveiled by ancient southern African genomes*. *Nature*. DOI: 10.1038/s41586-025-09811-4",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Lipson, Mark, Sawchuk, E. A., Thompson, J. C. et al. (2022) – *Ancient DNA and deep population structure in sub-Saharan African foragers*. *Nature*. DOI: 10.1038/s41586-022-04430-9",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Barbieri, Chiara, Schlebusch, Carina et al. (2021-2022) – *Revised timeline and distribution of the earliest diverged human maternal lineages in southern Africa*. *Human Molecular Genetics*. DOI: 10.1093/hmg/ddac158",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pickrell, Joseph K. et al. (2012) – *The genetic prehistory of southern Africa*. *Nature Communications*. arXiv:1207.5552",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue (27e édition, 2024) – *Khoekhoegowab* (ISO 639-3: naq), *Khwe*, *Naro*. SIL International",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue – Khoekhoe, Naro, Khwe. SIL International",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Database of Southern African Languages (DBS, 2024) – *Khoekhoegowab*",
+        "url": "https://dbs.org/en/research/languages/naq/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers dbs.org; the tier awaits editorial review."
+      },
+      {
+        "title": "ASJP (Automated Similarity Judgment Program) – *Khwe* (Kxoe/Ani)",
+        "url": "https://asjp.clld.org/languages/KHWE",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asjp.clld.org."
+      },
+      {
+        "title": "Endangered Languages Project – *Khoekhoegowab*, *Language Vitality Among the Nama of Tshabong*",
+        "url": "https://www.endangeredlanguages.com/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for endangeredlanguages.com."
+      },
+      {
+        "title": "Grokipedia / Namibie Population and Housing Census (2023) – *Demographics of Namibia*",
+        "url": "https://grokipedia.com/page/Demographics_of_Namibia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for grokipedia.com."
+      },
+      {
+        "title": "UNESCO – Langues en danger (Afrique australe). UNESCO Atlas of the World's Languages in Danger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.0 (2024) – Classification du nœud \"Khoe\" [khoe1241] : deux branches directes, \"Khoekhoe\" [khoe1242] et \"Non-Khoekhoe\" [nonk1236]",
+        "url": "https://glottolog.org/resource/languoid/id/khoe1241",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue – Khoekhoegowab/Nama [naq] : Namibie ≈200 000, Afrique du Sud ≈2 000, Botswana ≈200 locuteurs. (chiffres vérifiés via Wikipédia FR « Nama (langue) », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+        "url": "https://www.ethnologue.com/language/naq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Brenzinger, Matthias (2011) – \"The twelve modern Khoisan languages\". In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium* (Research in Khoisan Studies 29). Cologne: Rüdiger Köppe Verlag. [Khwe : Namibie ≈3 700 ; Naro : Namibie ≈1 000 locuteurs]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue (18e éd., 2015) – Naro [nhr] : Botswana ≈8 000 locuteurs (2014). (chiffre vérifié via Wikipédia EN « Naro language », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/nhr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

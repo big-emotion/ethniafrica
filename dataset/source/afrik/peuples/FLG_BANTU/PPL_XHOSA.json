@@ -100,11 +100,36 @@
       ]
     },
     "sources": [
-      "South African History Online — Xhosa : https://sahistory.org.za/article/xhosa",
-      "South African Tourism — Xhosa culture : https://www.southafrica.net/za/en/travel/article/xhosa-culture-the-clans-and-customs",
-      "Statistics South Africa — Population trends 2025 : https://www.statssa.gov.za/?p=18613",
-      "SIL Ethnologue — isiXhosa (xho) : https://www.ethnologue.com/language/xho/",
-      "Kruger Park — Xhosa people : https://www.krugerpark.co.za/africa_xhosa.html"
+      {
+        "title": "South African History Online — Xhosa",
+        "url": "https://sahistory.org.za/article/xhosa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "South African Tourism — Xhosa culture",
+        "url": "https://www.southafrica.net/za/en/travel/article/xhosa-culture-the-clans-and-customs",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for southafrica.net."
+      },
+      {
+        "title": "Statistics South Africa — Population trends 2025",
+        "url": "https://www.statssa.gov.za/?p=18613",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      },
+      {
+        "title": "SIL Ethnologue — isiXhosa (xho)",
+        "url": "https://www.ethnologue.com/language/xho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kruger Park — Xhosa people",
+        "url": "https://www.krugerpark.co.za/africa_xhosa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for krugerpark.co.za."
+      }
     ]
   }
 }

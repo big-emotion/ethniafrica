@@ -89,14 +89,54 @@
       ]
     },
     "sources": [
-      "Comboni Missionaries — Uganda. Karimojong. Akiriket - Joint Togetherness. https://combonimissionaries.co.uk/index.php/2026/01/15/uganda-karimojong-akiriket-joint-togetherness/",
-      "Omniglot — Karamojong language and alphabet. https://www.omniglot.com/writing/karamojong.php",
-      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj. https://map.swordshare.com/kdj",
-      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/",
-      "Brookings Institution — Karamoja Integrated Disarmament and Development Programme (KIDDP) 2007. https://www.brookings.edu/wp-content/uploads/2016/07/Uganda_Karamoja_2007.pdf",
-      "Conciliation Resources — Part 2: Karamoja-Turkana - Interlocking insecurities. https://www.c-r.org/accord/peace-and-security-pastoralist-communities-african-borderlands/part-2-karamoja%E2%80%93turkana-0",
-      "The New Humanitarian — Uganda's fight against cattle raiders is dividing Karamoja communities (2024). https://www.thenewhumanitarian.org/analysis/2024/04/12/ugandas-fight-against-cattle-raiders-dividing-karamoja-communities",
-      "University of Wisconsin — Ngakarimojong: Animals and the Age Set System. https://wisc.pb.unizin.org/lctlresources/chapter/ngakarimojong-animals-and-the-age-set-system/"
+      {
+        "title": "Comboni Missionaries — Uganda. Karimojong. Akiriket - Joint Togetherness",
+        "url": "https://combonimissionaries.co.uk/index.php/2026/01/15/uganda-karimojong-akiriket-joint-togetherness/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers combonimissionaries.co.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "Omniglot — Karamojong language and alphabet",
+        "url": "https://www.omniglot.com/writing/karamojong.php",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Swordshare Map — Ng'akarimojong ISO 639-3 kdj",
+        "url": "https://map.swordshare.com/kdj",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Kara-Tunga — Karamoja Bibliography",
+        "url": "https://www.kara-tunga.com/karamoja-bibliography/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kara-tunga.com."
+      },
+      {
+        "title": "Brookings Institution — Karamoja Integrated Disarmament and Development Programme (KIDDP) 2007",
+        "url": "https://www.brookings.edu/wp-content/uploads/2016/07/Uganda_Karamoja_2007.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for brookings.edu."
+      },
+      {
+        "title": "Conciliation Resources — Part 2: Karamoja-Turkana - Interlocking insecurities",
+        "url": "https://www.c-r.org/accord/peace-and-security-pastoralist-communities-african-borderlands/part-2-karamoja%E2%80%93turkana-0",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for c-r.org."
+      },
+      {
+        "title": "The New Humanitarian — Uganda's fight against cattle raiders is dividing Karamoja communities (2024)",
+        "url": "https://www.thenewhumanitarian.org/analysis/2024/04/12/ugandas-fight-against-cattle-raiders-dividing-karamoja-communities",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for thenewhumanitarian.org."
+      },
+      {
+        "title": "University of Wisconsin — Ngakarimojong: Animals and the Age Set System",
+        "url": "https://wisc.pb.unizin.org/lctlresources/chapter/ngakarimojong-animals-and-the-age-set-system/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for wisc.pb.unizin.org."
+      }
     ]
   }
 }

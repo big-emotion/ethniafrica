@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Makonde (kde). https://www.ethnologue.com/language/kde/",
-      "Joshua Project — Makonde in Tanzania. https://joshuaproject.net/people_groups/13427/TZ",
-      "African Blackwood Conservation Project — Makonde Art. https://www.blackwoodconservation.org/makonde-art/",
-      "Smithsonian Institution Libraries — Makonde Sculpture bibliography. https://www.sil.si.edu/silpublications/modernafricanart/maadetail.cfm?subCategory=Tanzania+--+Makonde+Sculpture",
-      "Safaris Rwanda Safari — Cultural Heritage of the Makonde People. https://www.safarisrwandasafari.com/information/the-cultural-heritage-of-the-makonde-people/",
-      "CIA World Factbook — Tanzania. https://www.cia.gov/the-world-factbook/countries/tanzania/"
+      {
+        "title": "SIL Ethnologue — Makonde (kde)",
+        "url": "https://www.ethnologue.com/language/kde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Makonde in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/13427/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "African Blackwood Conservation Project — Makonde Art",
+        "url": "https://www.blackwoodconservation.org/makonde-art/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blackwoodconservation.org."
+      },
+      {
+        "title": "Smithsonian Institution Libraries — Makonde Sculpture bibliography",
+        "url": "https://www.sil.si.edu/silpublications/modernafricanart/maadetail.cfm?subCategory=Tanzania+--+Makonde+Sculpture",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for si.edu, matched as a parent of sil.si.edu."
+      },
+      {
+        "title": "Safaris Rwanda Safari — Cultural Heritage of the Makonde People",
+        "url": "https://www.safarisrwandasafari.com/information/the-cultural-heritage-of-the-makonde-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers safarisrwandasafari.com; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Tanzania",
+        "url": "https://www.cia.gov/the-world-factbook/countries/tanzania/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

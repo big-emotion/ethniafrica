@@ -90,12 +90,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Luba-Kasai (lua). https://www.ethnologue.com/language/lua/",
-      "Minority Rights Group — Kasaians of Luba origin. https://minorityrights.org/communities/kasaians-of-luba-origin/",
-      "Columbia Academic Commons — Luba-Kasai: A Working Bibliography. https://academiccommons.columbia.edu/doi/10.7916/q2kx-9m66/download",
-      "101 Last Tribes — Luba people. http://www.101lasttribes.com/tribes/luba.html",
-      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
-      "IJREHC — Luba People and Politeness in their Everyday Speeches. https://ijrehc.com/uploads2024/ijrehc05_55.pdf"
+      {
+        "title": "SIL Ethnologue — Luba-Kasai (lua)",
+        "url": "https://www.ethnologue.com/language/lua/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Minority Rights Group — Kasaians of Luba origin",
+        "url": "https://minorityrights.org/communities/kasaians-of-luba-origin/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Columbia Academic Commons — Luba-Kasai: A Working Bibliography",
+        "url": "https://academiccommons.columbia.edu/doi/10.7916/q2kx-9m66/download",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academiccommons.columbia.edu."
+      },
+      {
+        "title": "101 Last Tribes — Luba people",
+        "url": "http://www.101lasttribes.com/tribes/luba.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Luba",
+        "url": "https://www.britannica.com/topic/Luba-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "IJREHC — Luba People and Politeness in their Everyday Speeches",
+        "url": "https://ijrehc.com/uploads2024/ijrehc05_55.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ijrehc.com."
+      }
     ]
   }
 }

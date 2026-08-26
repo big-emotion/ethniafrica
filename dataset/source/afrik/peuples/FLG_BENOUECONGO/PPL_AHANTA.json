@@ -68,8 +68,18 @@
       ]
     },
     "sources": [
-      "Ethnologue - Ahanta (AHA) (https://www.ethnologue.com/language/aha/)",
-      "Ghana Statistical Service - 2021 Population and Housing Census, Ahanta West Municipal District (https://datacommons.org/place/wikidataId/Q399949)"
+      {
+        "title": "Ethnologue - Ahanta (AHA)",
+        "url": "https://www.ethnologue.com/language/aha/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ghana Statistical Service - 2021 Population and Housing Census, Ahanta West Municipal District",
+        "url": "https://datacommons.org/place/wikidataId/Q399949",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for datacommons.org."
+      }
     ]
   }
 }

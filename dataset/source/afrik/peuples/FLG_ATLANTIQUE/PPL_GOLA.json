@@ -85,10 +85,30 @@
       ]
     },
     "sources": [
-      "Joshua Project — Gola in Sierra Leone. https://joshuaproject.net/people_groups/11920/SL",
-      "101 Last Tribes — Gola people. https://www.101lasttribes.com/tribes/gola.html",
-      "SIL Ethnologue — Gola language (gol). https://www.ethnologue.com/language/gol/",
-      "The Advocates for Human Rights — Background on Liberia and the Conflict. https://www.theadvocatesforhumanrights.org/Res/chapter_4-background_on_liberia_and_the_conflict.pdf"
+      {
+        "title": "Joshua Project — Gola in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/11920/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — Gola people",
+        "url": "https://www.101lasttribes.com/tribes/gola.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Gola language (gol)",
+        "url": "https://www.ethnologue.com/language/gol/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "The Advocates for Human Rights — Background on Liberia and the Conflict",
+        "url": "https://www.theadvocatesforhumanrights.org/Res/chapter_4-background_on_liberia_and_the_conflict.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers theadvocatesforhumanrights.org; the tier awaits editorial review."
+      }
     ]
   }
 }

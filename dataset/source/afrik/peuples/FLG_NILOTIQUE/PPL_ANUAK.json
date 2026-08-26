@@ -93,12 +93,42 @@
       ]
     },
     "sources": [
-      "Human Rights Watch — Targeting the Anuak: Human Rights Violations and Crimes Against Humanity in Ethiopia's Gambella Region (2005). https://www.hrw.org/reports/2005/ethiopia0305/",
-      "Cultural Survival — The Anuak: A Threatened Culture (2010). https://www.culturalsurvival.org/publications/cultural-survival-quarterly/anuak-threatened-culture",
-      "Osterlund, David — The Music of the Anuak of Ethiopia (these de doctorat, 1978). In Social and Cultural Characteristics of the Anuak Tribe. University of Northwestern. https://mlpp.pressbooks.pub/isbn9781732566125/",
-      "SIL Ethnologue — Anuak language (anu). https://www.ethnologue.com/language/anu/",
-      "Anuak Justice Council — Documentation des violations des droits humains. https://www.anuakjustice.org/",
-      "Glottolog — Anuak. https://glottolog.org/resource/languoid/id/anua1241"
+      {
+        "title": "Human Rights Watch — Targeting the Anuak: Human Rights Violations and Crimes Against Humanity in Ethiopia's Gambella Region (2005)",
+        "url": "https://www.hrw.org/reports/2005/ethiopia0305/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "Cultural Survival — The Anuak: A Threatened Culture (2010)",
+        "url": "https://www.culturalsurvival.org/publications/cultural-survival-quarterly/anuak-threatened-culture",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for culturalsurvival.org."
+      },
+      {
+        "title": "Osterlund, David — The Music of the Anuak of Ethiopia (these de doctorat, 1978). In Social and Cultural Characteristics of the Anuak Tribe. University of Northwestern",
+        "url": "https://mlpp.pressbooks.pub/isbn9781732566125/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mlpp.pressbooks.pub; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Anuak language (anu)",
+        "url": "https://www.ethnologue.com/language/anu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Anuak Justice Council — Documentation des violations des droits humains",
+        "url": "https://www.anuakjustice.org/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers anuakjustice.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog — Anuak",
+        "url": "https://glottolog.org/resource/languoid/id/anua1241",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

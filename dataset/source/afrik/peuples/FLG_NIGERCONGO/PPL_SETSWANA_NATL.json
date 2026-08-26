@@ -108,12 +108,42 @@
       ]
     },
     "sources": [
-      "Participedia — Kgotla (Botswana Public Assembly). https://participedia.net/method/kgotla-botswana-public-assembly",
-      "The Conversation — Botswana's kgotla system and democracy (2024). https://theconversation.com/in-a-world-where-political-polarization-and-disengagement-are-denting-democracy-does-botswanas-kgotla-system-hold-the-key-242358",
-      "South African History Online — Tswana. https://sahistory.org.za/article/tswana",
-      "EBSCO Research Starters — Tswana or Setswana language. https://www.ebsco.com/research-starters/language-and-linguistics/tswana-or-setswana-language",
-      "SIL Ethnologue — Setswana (tsn). https://www.ethnologue.com/language/tsn/",
-      "CIA World Factbook — Botswana. https://www.cia.gov/the-world-factbook/countries/botswana/"
+      {
+        "title": "Participedia — Kgotla (Botswana Public Assembly)",
+        "url": "https://participedia.net/method/kgotla-botswana-public-assembly",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for participedia.net."
+      },
+      {
+        "title": "The Conversation — Botswana's kgotla system and democracy (2024)",
+        "url": "https://theconversation.com/in-a-world-where-political-polarization-and-disengagement-are-denting-democracy-does-botswanas-kgotla-system-hold-the-key-242358",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for theconversation.com."
+      },
+      {
+        "title": "South African History Online — Tswana",
+        "url": "https://sahistory.org.za/article/tswana",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "EBSCO Research Starters — Tswana or Setswana language",
+        "url": "https://www.ebsco.com/research-starters/language-and-linguistics/tswana-or-setswana-language",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "SIL Ethnologue — Setswana (tsn)",
+        "url": "https://www.ethnologue.com/language/tsn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Botswana",
+        "url": "https://www.cia.gov/the-world-factbook/countries/botswana/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

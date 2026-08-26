@@ -83,9 +83,24 @@
       ]
     },
     "sources": [
-      "Senegal Shuttle — Ndeup: exploring Lebou culture. https://www.senegal-shuttle.com/ndeup-in-senegal/",
-      "NBC News — Senegal tribe swaps fishing boats for surfboards. https://www.nbcnews.com/id/wbna9503277",
-      "Glottolog — Lebu Wolof. https://glottolog.org/resource/languoid/id/lebu1234"
+      {
+        "title": "Senegal Shuttle — Ndeup: exploring Lebou culture",
+        "url": "https://www.senegal-shuttle.com/ndeup-in-senegal/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers senegal-shuttle.com; the tier awaits editorial review."
+      },
+      {
+        "title": "NBC News — Senegal tribe swaps fishing boats for surfboards",
+        "url": "https://www.nbcnews.com/id/wbna9503277",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nbcnews.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog — Lebu Wolof",
+        "url": "https://glottolog.org/resource/languoid/id/lebu1234",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

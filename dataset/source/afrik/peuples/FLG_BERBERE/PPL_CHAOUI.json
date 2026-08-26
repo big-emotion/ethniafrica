@@ -85,10 +85,30 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica - Shawiya : https://www.britannica.com/topic/Shawiya",
-      "Joshua Project - Berber Shawiya in Algeria : https://joshuaproject.net/people_groups/14899/AG",
-      "Algeria.com - The Chaouis of Algeria : https://www.algeria.com/blog/the-chaouis-of-algeria/",
-      "Ethnologue SIL International - Tachawit (shy) : https://www.ethnologue.com/language/shy/"
+      {
+        "title": "Encyclopaedia Britannica - Shawiya",
+        "url": "https://www.britannica.com/topic/Shawiya",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project - Berber Shawiya in Algeria",
+        "url": "https://joshuaproject.net/people_groups/14899/AG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Algeria.com - The Chaouis of Algeria",
+        "url": "https://www.algeria.com/blog/the-chaouis-of-algeria/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers algeria.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue SIL International - Tachawit (shy)",
+        "url": "https://www.ethnologue.com/language/shy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

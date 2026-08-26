@@ -90,11 +90,36 @@
       ]
     },
     "sources": [
-      "Statistics South Africa – Cultural Dynamics in South Africa, basé sur le Recensement 2022 : https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
-      "SIL Ethnologue – Southern Ndebele (nbl) : code ISO 639-3 nbl",
-      "Wataka Africa – The Vibrant World of Ndebele Art and Culture (2023) : https://wataka.africa/blogs/stories/the-vibrant-world-of-ndebele-art-and-culture",
-      "Amusing Planet – The Painted Houses of The Ndebeles (2014) : https://www.amusingplanet.com/2014/09/the-painted-houses-of-ndebeles.html",
-      "StatsSA – Census 2022 Statistical Release : https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
+      {
+        "title": "Statistics South Africa – Cultural Dynamics in South Africa, basé sur le Recensement 2022",
+        "url": "https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for southafrica-info.com."
+      },
+      {
+        "title": "SIL Ethnologue – Southern Ndebele (nbl) : code ISO 639-3 nbl",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Wataka Africa – The Vibrant World of Ndebele Art and Culture (2023)",
+        "url": "https://wataka.africa/blogs/stories/the-vibrant-world-of-ndebele-art-and-culture",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wataka.africa; the tier awaits editorial review."
+      },
+      {
+        "title": "Amusing Planet – The Painted Houses of The Ndebeles (2014)",
+        "url": "https://www.amusingplanet.com/2014/09/the-painted-houses-of-ndebeles.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers amusingplanet.com; the tier awaits editorial review."
+      },
+      {
+        "title": "StatsSA – Census 2022 Statistical Release",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      }
     ]
   }
 }

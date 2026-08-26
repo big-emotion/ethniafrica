@@ -97,11 +97,36 @@
       ]
     },
     "sources": [
-      "Tonga – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/tonga/)",
-      "The Tonga: Left High and Dry – The New Humanitarian, 2007 (https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry)",
-      "Tonga people – Chalo Chatu, Zambia Online Encyclopedia (http://www.chalochatu.org/index.php?title=Tonga_people)",
-      "Tonga (Batonga) Tribe – TribeGuess (https://www.tribeguess.com/learn/tonga-zambia)",
-      "Mashingaidze T.M., The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements – Journal of African Historical Studies, 2024 (https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf)"
+      {
+        "title": "Tonga – Zambia's Traditional History",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/tonga/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "The Tonga: Left High and Dry – The New Humanitarian, 2007",
+        "url": "https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for thenewhumanitarian.org."
+      },
+      {
+        "title": "Tonga people – Chalo Chatu, Zambia Online Encyclopedia",
+        "url": "http://www.chalochatu.org/index.php?title=Tonga_people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for chalochatu.org."
+      },
+      {
+        "title": "Tonga (Batonga) Tribe – TribeGuess",
+        "url": "https://www.tribeguess.com/learn/tonga-zambia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tribeguess.com."
+      },
+      {
+        "title": "Mashingaidze T.M., The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements – Journal of African Historical Studies, 2024",
+        "url": "https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+      }
     ]
   }
 }

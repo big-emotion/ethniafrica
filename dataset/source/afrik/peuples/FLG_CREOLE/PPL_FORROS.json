@@ -95,11 +95,36 @@
       ]
     },
     "sources": [
-      "SaoTomeExpert — The Forro Population of São Tomé and Príncipe. https://www.saotomeexpert.pt/en/sao-tome-and-principe-forro-population/",
-      "SaoTomeExpert — Creole Society and Forros. https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-society-and-forros/",
-      "Britannica — Forros, people of São Tomé and Príncipe. https://www.britannica.com/topic/Forros",
-      "Navetur — Our Population. https://navetur.st/index.php/guide/population",
-      "SOAS — Forro in the European Diaspora. https://glocal.soas.ac.uk/comela2020-5/"
+      {
+        "title": "SaoTomeExpert — The Forro Population of São Tomé and Príncipe",
+        "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-forro-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+      },
+      {
+        "title": "SaoTomeExpert — Creole Society and Forros",
+        "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-society-and-forros/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+      },
+      {
+        "title": "Britannica — Forros, people of São Tomé and Príncipe",
+        "url": "https://www.britannica.com/topic/Forros",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Navetur — Our Population",
+        "url": "https://navetur.st/index.php/guide/population",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers navetur.st; the tier awaits editorial review."
+      },
+      {
+        "title": "SOAS — Forro in the European Diaspora",
+        "url": "https://glocal.soas.ac.uk/comela2020-5/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for glocal.soas.ac.uk."
+      }
     ]
   }
 }

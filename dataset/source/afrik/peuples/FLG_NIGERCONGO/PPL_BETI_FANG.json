@@ -109,11 +109,36 @@
       ]
     },
     "sources": [
-      "Encyclopedia Britannica — Fang. https://www.britannica.com/topic/Fang-people",
-      "101 Last Tribes — Fang people. https://www.101lasttribes.com/tribes/fang.html",
-      "Sociology International Journal — The Fang-Bulu-Beti (1665-1850). https://medcraveonline.com/SIJ/the-fang-bulu-beti-1665-1850-origin-and-migrations-in-central-africa.html",
-      "Kunzaar — The Fang People: History, Culture, Festivals. https://kunzaar.com.ng/fang-people-gabon-culture-history-festivals-religion/",
-      "SIL Ethnologue — Fang (fan). https://www.ethnologue.com/language/fan/"
+      {
+        "title": "Encyclopedia Britannica — Fang",
+        "url": "https://www.britannica.com/topic/Fang-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes — Fang people",
+        "url": "https://www.101lasttribes.com/tribes/fang.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Sociology International Journal — The Fang-Bulu-Beti (1665-1850)",
+        "url": "https://medcraveonline.com/SIJ/the-fang-bulu-beti-1665-1850-origin-and-migrations-in-central-africa.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers medcraveonline.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kunzaar — The Fang People: History, Culture, Festivals",
+        "url": "https://kunzaar.com.ng/fang-people-gabon-culture-history-festivals-religion/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kunzaar.com.ng."
+      },
+      {
+        "title": "SIL Ethnologue — Fang (fan)",
+        "url": "https://www.ethnologue.com/language/fan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

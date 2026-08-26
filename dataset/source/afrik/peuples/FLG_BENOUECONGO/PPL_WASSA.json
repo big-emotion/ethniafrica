@@ -73,8 +73,18 @@
       ]
     },
     "sources": [
-      "Wasa Language (WSS) – Ethnologue (https://www.ethnologue.com/language/wss/)",
-      "Akan Heritage – History of Wassa (https://akanheritage.com.gh/history.html)"
+      {
+        "title": "Wasa Language (WSS) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/wss/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Akan Heritage – History of Wassa",
+        "url": "https://akanheritage.com.gh/history.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for akanheritage.com.gh."
+      }
     ]
   }
 }

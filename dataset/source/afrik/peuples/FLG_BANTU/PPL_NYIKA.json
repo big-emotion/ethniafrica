@@ -84,10 +84,30 @@
       ]
     },
     "sources": [
-      "Nyika (Malawi and Zambia) – Glottolog 5.3, ISO 639-3: nkv (https://glottolog.org/resource/languoid/id/nyik1246)",
-      "Nyika in Zambia – Joshua Project (https://joshuaproject.net/people_groups/18985/ZA)",
-      "Tumbuka – Encyclopaedia Britannica (https://www.britannica.com/topic/Tumbuka)",
-      "Nyiha, Tanzania in Zambia – Joshua Project (https://joshuaproject.net/people_groups/14096/ZA)"
+      {
+        "title": "Nyika (Malawi and Zambia) – Glottolog 5.3, ISO 639-3: nkv",
+        "url": "https://glottolog.org/resource/languoid/id/nyik1246",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Nyika in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/18985/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tumbuka – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Tumbuka",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Nyiha, Tanzania in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14096/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

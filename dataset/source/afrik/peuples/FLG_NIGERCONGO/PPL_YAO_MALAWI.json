@@ -86,12 +86,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Yao language (yao). https://www.ethnologue.com/language/yao/",
-      "Joshua Project — Yao in Malawi. https://joshuaproject.net/people_groups/15988/MI",
-      "Qiraat Africa — The Yao/Wayao people of Lake Malawi. https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
-      "The I Am Yawo Project — Who are the Yawo? https://www.ciyawo.org/who-are-yawo",
-      "Smithsonian Folkways — Ceremonial, dance, and story songs from the Yao people of Malawi. https://folkways.si.edu/ceremonial-dance-and-story-songs-from-the-yao-people-of-malawi/world/music/album/smithsonian",
-      "CIA World Factbook — Malawi. https://www.cia.gov/the-world-factbook/countries/malawi/"
+      {
+        "title": "Ethnologue — Yao language (yao)",
+        "url": "https://www.ethnologue.com/language/yao/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Yao in Malawi",
+        "url": "https://joshuaproject.net/people_groups/15988/MI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Qiraat Africa — The Yao/Wayao people of Lake Malawi",
+        "url": "https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "The I Am Yawo Project — Who are the Yawo?",
+        "url": "https://www.ciyawo.org/who-are-yawo",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ciyawo.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Folkways — Ceremonial, dance, and story songs from the Yao people of Malawi",
+        "url": "https://folkways.si.edu/ceremonial-dance-and-story-songs-from-the-yao-people-of-malawi/world/music/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      },
+      {
+        "title": "CIA World Factbook — Malawi",
+        "url": "https://www.cia.gov/the-world-factbook/countries/malawi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

@@ -74,12 +74,42 @@
       ]
     },
     "sources": [
-      "Rungwa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14594/TZ)",
-      "Rungwa of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015029/)",
-      "Rungwa – Language Info, Swordshare Map (https://map.swordshare.com/rnw)",
-      "Rungwa – ScriptSource (https://www.scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=vl25fkvzt2)",
-      "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
-      "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+      {
+        "title": "Rungwa in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14594/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Rungwa of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015029/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Rungwa – Language Info, Swordshare Map",
+        "url": "https://map.swordshare.com/rnw",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Rungwa – ScriptSource",
+        "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=vl25fkvzt2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      },
+      {
+        "title": "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1",
+        "url": "https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asq.africa.ufl.edu."
+      },
+      {
+        "title": "ISO 639-3 Language Codes – National Center for Education Statistics",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

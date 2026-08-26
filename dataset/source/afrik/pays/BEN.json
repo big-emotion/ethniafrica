@@ -224,16 +224,66 @@
       "postIndependence": "1972-1990 : Régime marxiste-léniniste sous Mathieu Kérékou, changement de nom pour \"République populaire du Bénin\" (1975). 1990 : Retour à la démocratie multipartite, nouvelle constitution, changement de nom pour \"République du Bénin\". Période de démocratisation et de développement économique. Défis de développement, pauvreté, inégalités sociales. Le Bénin est considéré comme un modèle de démocratie en Afrique de l'Ouest."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Benin",
-      "CIA World Factbook – Benin",
-      "ONU / UNFPA – Démographie Bénin 2025",
-      "Law, Robin – \"The Kingdom of Allada\"",
-      "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
-      "Archives du Royaume d'Abomey",
-      "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
-      "Recensements béninois",
-      "Études anthropologiques sur les peuples du Bénin",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Bénin 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Law, Robin – \"The Kingdom of Allada\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives du Royaume d'Abomey",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements béninois",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Bénin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

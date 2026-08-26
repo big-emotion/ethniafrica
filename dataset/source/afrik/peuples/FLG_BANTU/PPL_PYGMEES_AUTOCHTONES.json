@@ -88,11 +88,36 @@
       ]
     },
     "sources": [
-      "La Conservation et le peuple Baka au Cameroun – Ritimo, 2020 (https://www.ritimo.org/Violence-corruption-et-fausses-promesses-La-Conservation-et-le-peuple-Baka-au)",
-      "Gardiens de la foret : les Baka et l'esprit vivant du Dja – UNESCO, 2025 (https://www.unesco.org/fr/articles/gardiens-de-la-foret-les-baka-et-lesprit-vivant-du-dja)",
-      "Statut des Peuples Autochtones – Greenpeace Afrique, 2025 (https://www.greenpeace.org/africa/fr/les-blogs/58654/peuples-autochtones-trois-decennies-dattente-pour-une-reconnaissance-legale-et-juridique/)",
-      "Les Baka : Territoires et Modes de Vie Traditionnels – IWGIA, Pyhala Aili (https://iwgia.org/images/publications/0584_informe_13_fre_opt.pdf)",
-      "Des leaders Baka et Bagyeli exposent les problemes – Forest Peoples Programme, 2010 (https://www.forestpeoples.org/fr/publications-resources/news/article/des-leaders-baka-et-bagyeli-exposent-les-problemes-de-leur-forets-aupres-des-medias-et-du-public/)"
+      {
+        "title": "La Conservation et le peuple Baka au Cameroun – Ritimo, 2020",
+        "url": "https://www.ritimo.org/Violence-corruption-et-fausses-promesses-La-Conservation-et-le-peuple-Baka-au",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ritimo.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Gardiens de la foret : les Baka et l'esprit vivant du Dja – UNESCO, 2025",
+        "url": "https://www.unesco.org/fr/articles/gardiens-de-la-foret-les-baka-et-lesprit-vivant-du-dja",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Statut des Peuples Autochtones – Greenpeace Afrique, 2025",
+        "url": "https://www.greenpeace.org/africa/fr/les-blogs/58654/peuples-autochtones-trois-decennies-dattente-pour-une-reconnaissance-legale-et-juridique/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers greenpeace.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Les Baka : Territoires et Modes de Vie Traditionnels – IWGIA, Pyhala Aili",
+        "url": "https://iwgia.org/images/publications/0584_informe_13_fre_opt.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Des leaders Baka et Bagyeli exposent les problemes – Forest Peoples Programme, 2010",
+        "url": "https://www.forestpeoples.org/fr/publications-resources/news/article/des-leaders-baka-et-bagyeli-exposent-les-problemes-de-leur-forets-aupres-des-medias-et-du-public/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for forestpeoples.org."
+      }
     ]
   }
 }

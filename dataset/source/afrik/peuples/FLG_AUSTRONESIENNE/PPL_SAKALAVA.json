@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Sakalava Malagasy (skg) : https://www.ethnologue.com/language/skg/",
-      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
-      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "Banque mondiale - Madagascar : https://data.worldbank.org/country/madagascar",
-      "Joshua Project - Sakalava in Madagascar : https://joshuaproject.net/people_groups/15284"
+      {
+        "title": "SIL Ethnologue - Sakalava Malagasy (skg)",
+        "url": "https://www.ethnologue.com/language/skg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook - Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Banque mondiale - Madagascar",
+        "url": "https://data.worldbank.org/country/madagascar",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+      },
+      {
+        "title": "Joshua Project - Sakalava in Madagascar",
+        "url": "https://joshuaproject.net/people_groups/15284",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -98,12 +98,42 @@
       ]
     },
     "sources": [
-      "United Nations — 1994 Genocide against the Tutsi in Rwanda : https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
-      "US Holocaust Memorial Museum — Rwanda : https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
-      "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda : https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",
-      "Canadian Museum for Human Rights — What led to the genocide against the Tutsi in Rwanda : https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",
-      "SIL Ethnologue — Kinyarwanda (kin) : https://www.ethnologue.com/language/kin",
-      "CIA World Factbook — Rwanda : https://www.cia.gov/the-world-factbook/countries/rwanda/"
+      {
+        "title": "United Nations — 1994 Genocide against the Tutsi in Rwanda",
+        "url": "https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+      },
+      {
+        "title": "US Holocaust Memorial Museum — Rwanda",
+        "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ushmm.org."
+      },
+      {
+        "title": "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda",
+        "url": "https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for museeholocauste.ca."
+      },
+      {
+        "title": "Canadian Museum for Human Rights — What led to the genocide against the Tutsi in Rwanda",
+        "url": "https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for humanrights.ca."
+      },
+      {
+        "title": "SIL Ethnologue — Kinyarwanda (kin)",
+        "url": "https://www.ethnologue.com/language/kin",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Rwanda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/rwanda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

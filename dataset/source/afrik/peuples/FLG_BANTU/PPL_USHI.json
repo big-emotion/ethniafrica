@@ -76,11 +76,36 @@
       ]
     },
     "sources": [
-      "Kingsfari – Kalela dance: the soulful rhythms of the Ushi people in Zambia, 2025 (https://www.kingsfari.com/blog-posts/kalela-dance-the-soulful-rhythms-of-the-ushi-people-in-zambia)",
-      "Omniglot – Aushi language and alphabet (https://www.omniglot.com/writing/aushi.htm)",
-      "Joshua Project – Aushi in Zambia (https://joshuaproject.net/people_groups/10490/ZA)",
-      "Facebook – Chabuka Baushi Royal Foundation / Chief Matanda obituary, Daily Times Zambia, 2025",
-      "UNESCO – Liste representative du patrimoine culturel immateriel : Kalela (2022)"
+      {
+        "title": "Kingsfari – Kalela dance: the soulful rhythms of the Ushi people in Zambia, 2025",
+        "url": "https://www.kingsfari.com/blog-posts/kalela-dance-the-soulful-rhythms-of-the-ushi-people-in-zambia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kingsfari.com."
+      },
+      {
+        "title": "Omniglot – Aushi language and alphabet",
+        "url": "https://www.omniglot.com/writing/aushi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Joshua Project – Aushi in Zambia",
+        "url": "https://joshuaproject.net/people_groups/10490/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Facebook – Chabuka Baushi Royal Foundation / Chief Matanda obituary, Daily Times Zambia, 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Liste representative du patrimoine culturel immateriel : Kalela (2022)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

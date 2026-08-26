@@ -203,15 +203,60 @@
       "postIndependence": "1973-1980 : Présidence de Luís Cabral (frère d'Amílcar Cabral). 1980-présent : Coup d'État, présidence de João Bernardo Vieira (1980-1999, 2005-2009), puis périodes d'instabilité politique, coups d'État récurrents. Défis : pauvreté, instabilité politique, développement économique, trafic de drogue. La Guinée-Bissau est l'un des pays les plus pauvres d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Guinea-Bissau",
-      "CIA World Factbook – Guinea-Bissau",
-      "ONU / UNFPA – Démographie Guinée-Bissau 2025",
-      "Speeches and Writings\"",
-      "Recensements guinéens-bissau",
-      "Études anthropologiques sur les peuples de la Guinée-Bissau",
-      "Études historiques sur le royaume de Kaabu",
-      "CIA World Factbook – Guinea-Bissau (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Guinea-Bissau",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Guinea-Bissau",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Guinée-Bissau 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Speeches and Writings\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements guinéens-bissau",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Guinée-Bissau",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume de Kaabu",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Guinea-Bissau (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

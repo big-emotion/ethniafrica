@@ -86,10 +86,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Havu in Congo DRC: https://joshuaproject.net/people_groups/12071",
-      "SIL Ethnologue – Havu (hav): https://www.ethnologue.com/language/hav/",
-      "Newbury, David S. – Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840. Madison: University of Wisconsin Press, 1991. https://archive.org/details/kingsclansijwiis0000newb",
-      "PeopleGroups.org – Havu (hav): https://peoplegroups.org/language/hav/"
+      {
+        "title": "Joshua Project – Havu in Congo DRC",
+        "url": "https://joshuaproject.net/people_groups/12071",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue – Havu (hav)",
+        "url": "https://www.ethnologue.com/language/hav/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Newbury, David S. – Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840. Madison: University of Wisconsin Press, 1991",
+        "url": "https://archive.org/details/kingsclansijwiis0000newb",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.org."
+      },
+      {
+        "title": "PeopleGroups.org – Havu (hav)",
+        "url": "https://peoplegroups.org/language/hav/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

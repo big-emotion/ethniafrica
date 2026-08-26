@@ -133,13 +133,48 @@
       "postIndependence": "1977-présent : République de Djibouti, présidence de Hassan Gouled Aptidon (1977-1999) puis d'Ismaïl Omar Guelleh (depuis 1999). Stabilité politique relative. Défis : pauvreté, dépendance aux services portuaires et aux bases militaires étrangères, tensions ethniques (Afar/Somali). Le port de Djibouti est stratégique pour l'Éthiopie (accès à la mer) et accueille des bases militaires étrangères (France, États-Unis, Chine, etc.)."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Djibouti",
-      "CIA World Factbook – Djibouti",
-      "ONU / UNFPA – Démographie Djibouti 2025",
-      "Recensements djiboutiens",
-      "Études anthropologiques sur les peuples de Djibouti",
-      "Études historiques sur le sultanat d'Adal",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Djibouti 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements djiboutiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le sultanat d'Adal",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

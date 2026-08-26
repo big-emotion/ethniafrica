@@ -96,12 +96,42 @@
       ]
     },
     "sources": [
-      "Glottolog — Lagwan (lagw1237). https://glottolog.org/resource/languoid/id/lagw1237",
-      "Joshua Project — Kotoko, Lagwan in Cameroon. https://joshuaproject.net/people_groups/print/12816/CM",
-      "Peoplegroups.org — Kotoko-Logone of Chad. https://peoplegroups.org/people_groups/pg011389/",
-      "101 Last Tribes — Kotoko people. https://www.101lasttribes.com/tribes/kotoko.html",
-      "SIL Ethnologue — Lagwan (kot). https://www.ethnologue.com/language/kot",
-      "Wiktionary — ISO 639-3 codes Africa (kot classification). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+      {
+        "title": "Glottolog — Lagwan (lagw1237)",
+        "url": "https://glottolog.org/resource/languoid/id/lagw1237",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Kotoko, Lagwan in Cameroon",
+        "url": "https://joshuaproject.net/people_groups/print/12816/CM",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Peoplegroups.org — Kotoko-Logone of Chad",
+        "url": "https://peoplegroups.org/people_groups/pg011389/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "101 Last Tribes — Kotoko people",
+        "url": "https://www.101lasttribes.com/tribes/kotoko.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Lagwan (kot)",
+        "url": "https://www.ethnologue.com/language/kot",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Wiktionary — ISO 639-3 codes Africa (kot classification)",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

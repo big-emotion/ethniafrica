@@ -68,10 +68,30 @@
       ]
     },
     "sources": [
-      "Kwangwa – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/)",
-      "History of the Kwangwa people – Facebook/Barotsenetwork, 2023 (https://www.facebook.com/groups/759153900821468/posts/10082861068450658/)",
-      "About Zambia – Western Province Provincial Administration (https://www.wes.gov.zm/?page_id=1186)",
-      "Understanding the history of Lozi people – Facebook, 2022 (https://www.facebook.com/groups/759153900821468/posts/8230979013638882/)"
+      {
+        "title": "Kwangwa – Zambia's Traditional History, 2020",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "History of the Kwangwa people – Facebook/Barotsenetwork, 2023",
+        "url": "https://www.facebook.com/groups/759153900821468/posts/10082861068450658/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "About Zambia – Western Province Provincial Administration",
+        "url": "https://www.wes.gov.zm/?page_id=1186",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for wes.gov.zm."
+      },
+      {
+        "title": "Understanding the history of Lozi people – Facebook, 2022",
+        "url": "https://www.facebook.com/groups/759153900821468/posts/8230979013638882/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

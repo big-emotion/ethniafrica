@@ -74,11 +74,36 @@
       ]
     },
     "sources": [
-      "Ndamba in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13271)",
-      "Ndamba tribe – Hadzabetribe.com (https://www.hadzabetribe.com/ndamba-tribe/)",
-      "Ndamba – Glottolog 5.3, ISO 639-3: ndj (https://glottolog.org/resource/languoid/id/ndam1239)",
-      "Ndamba – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndamba.html)",
-      "Memory, Migration and the Authority of History in Southern Tanzania – JSTOR (https://www.jstor.org/stable/183473)"
+      {
+        "title": "Ndamba in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13271",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ndamba tribe – Hadzabetribe.com",
+        "url": "https://www.hadzabetribe.com/ndamba-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hadzabetribe.com."
+      },
+      {
+        "title": "Ndamba – Glottolog 5.3, ISO 639-3: ndj",
+        "url": "https://glottolog.org/resource/languoid/id/ndam1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ndamba – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/ndamba.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Memory, Migration and the Authority of History in Southern Tanzania – JSTOR",
+        "url": "https://www.jstor.org/stable/183473",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      }
     ]
   }
 }

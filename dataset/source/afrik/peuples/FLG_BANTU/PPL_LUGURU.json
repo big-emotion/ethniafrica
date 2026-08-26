@@ -83,11 +83,36 @@
       ]
     },
     "sources": [
-      "Luguru – Encyclopaedia Britannica (https://www.britannica.com/topic/Luguru)",
-      "Joshua Project – Luguru, Ruguru in Tanzania, 2025 (https://joshuaproject.net/people_groups/print/13143/TZ)",
-      "Beidelman, T.O. – The Matrilineal Peoples of Eastern Tanzania (Zaramo, Luguru, Kaguru, Ngulu), Routledge/IAI, 1967 (https://www.taylorfrancis.com/books/mono/10.4324/9781315309613)",
-      "Luguru Language – Lugha Yangu, 2023 (https://lughayangu.com/luguru)",
-      "Luguru – Database of Religious History, 2022 (https://religiondatabase.org/browse/1323)"
+      {
+        "title": "Luguru – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Luguru",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project – Luguru, Ruguru in Tanzania, 2025",
+        "url": "https://joshuaproject.net/people_groups/print/13143/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Beidelman, T.O. – The Matrilineal Peoples of Eastern Tanzania (Zaramo, Luguru, Kaguru, Ngulu), Routledge/IAI, 1967",
+        "url": "https://www.taylorfrancis.com/books/mono/10.4324/9781315309613",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for taylorfrancis.com."
+      },
+      {
+        "title": "Luguru Language – Lugha Yangu, 2023",
+        "url": "https://lughayangu.com/luguru",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "Luguru – Database of Religious History, 2022",
+        "url": "https://religiondatabase.org/browse/1323",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers religiondatabase.org; the tier awaits editorial review."
+      }
     ]
   }
 }

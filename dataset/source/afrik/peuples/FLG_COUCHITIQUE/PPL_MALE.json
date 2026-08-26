@@ -65,12 +65,42 @@
       ]
     },
     "sources": [
-      "Male in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13451)",
-      "Male (Ethiopia) – Glottolog 5.1 (https://glottolog.org/resource/languoid/id/male1284)",
-      "Male (Ethiopia) – ISO 639-3 / Swordshare Map (https://map.swordshare.com/mdy)",
-      "The Maale people – The Tribal Society, 2024 (https://thetribalsociety.com/the-maale-people/)",
-      "Maale Tribe – Local Tour Ethiopia (https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/)",
-      "Donham, Donald L. – Revolution and modernity in Maale: Ethiopia, 1974 to 1987 – Comparative Studies in Society and History, 1992"
+      {
+        "title": "Male in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13451",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Male (Ethiopia) – Glottolog 5.1",
+        "url": "https://glottolog.org/resource/languoid/id/male1284",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Male (Ethiopia) – ISO 639-3 / Swordshare Map",
+        "url": "https://map.swordshare.com/mdy",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "The Maale people – The Tribal Society, 2024",
+        "url": "https://thetribalsociety.com/the-maale-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+      },
+      {
+        "title": "Maale Tribe – Local Tour Ethiopia",
+        "url": "https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localtourethiopia.com."
+      },
+      {
+        "title": "Donham, Donald L. – Revolution and modernity in Maale: Ethiopia, 1974 to 1987 – Comparative Studies in Society and History, 1992",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

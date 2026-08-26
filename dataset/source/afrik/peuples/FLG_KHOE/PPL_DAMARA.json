@@ -97,12 +97,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Khoekhoe language (naq): https://www.ethnologue.com/language/naq/",
-      "Namibia Statistics Agency – 2023 Population and Housing Census Main Report: https://nsa.org.na/census/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
-      "The Namibian – Aakwanyama, Aandonga and Ovaherero named largest ethnic groups (2024): https://www.namibian.com.na/aakwanyama-aandonga-and-ovaherero-named-largest-ethnic-groups-in-namibia-2023-census/",
-      "Bradshaw Foundation – The Damara People: https://www.bradshawfoundation.com/africa/namibia/damara/index.php",
-      "Tsammalex – Khoekhoe/Damara language: https://tsammalex.clld.org/languages/naq-d",
-      "101 Last Tribes – Damara people: https://www.101lasttribes.com/tribes/damara.html"
+      {
+        "title": "SIL Ethnologue – Khoekhoe language (naq)",
+        "url": "https://www.ethnologue.com/language/naq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Namibia Statistics Agency – 2023 Population and Housing Census Main Report",
+        "url": "https://nsa.org.na/census/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for nsa.org.na."
+      },
+      {
+        "title": "The Namibian – Aakwanyama, Aandonga and Ovaherero named largest ethnic groups (2024)",
+        "url": "https://www.namibian.com.na/aakwanyama-aandonga-and-ovaherero-named-largest-ethnic-groups-in-namibia-2023-census/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for namibian.com.na."
+      },
+      {
+        "title": "Bradshaw Foundation – The Damara People",
+        "url": "https://www.bradshawfoundation.com/africa/namibia/damara/index.php",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bradshawfoundation.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Tsammalex – Khoekhoe/Damara language",
+        "url": "https://tsammalex.clld.org/languages/naq-d",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for tsammalex.clld.org."
+      },
+      {
+        "title": "101 Last Tribes – Damara people",
+        "url": "https://www.101lasttribes.com/tribes/damara.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

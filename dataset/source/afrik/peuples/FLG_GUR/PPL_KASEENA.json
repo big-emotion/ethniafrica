@@ -91,12 +91,42 @@
       ]
     },
     "sources": [
-      "UNESCO World Heritage Centre — Royal Court of Tiebelé (inscrit 2024). https://whc.unesco.org/en/list/1713/",
-      "Joshua Project — Kasem in Ghana (2024). https://joshuaproject.net/people_groups/12556/GH",
-      "Ethnologue — Kasem Language (XSM). https://www.ethnologue.com/language/xsm/",
-      "Right for Education Africa — The Kassena of Tiebelé Houses (2024). https://rightforeducation.org/2024/07/29/the-kassena-of-tiebele-houses/",
-      "101 Last Tribes — Kassena people. https://www.101lasttribes.com/tribes/kassena.html",
-      "Mabia VP — Kasem language introduction. http://mabia-vp.com/tiki-index.php?page=Kasem"
+      {
+        "title": "UNESCO World Heritage Centre — Royal Court of Tiebelé (inscrit 2024)",
+        "url": "https://whc.unesco.org/en/list/1713/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Joshua Project — Kasem in Ghana (2024)",
+        "url": "https://joshuaproject.net/people_groups/12556/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Kasem Language (XSM)",
+        "url": "https://www.ethnologue.com/language/xsm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Right for Education Africa — The Kassena of Tiebelé Houses (2024)",
+        "url": "https://rightforeducation.org/2024/07/29/the-kassena-of-tiebele-houses/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rightforeducation.org."
+      },
+      {
+        "title": "101 Last Tribes — Kassena people",
+        "url": "https://www.101lasttribes.com/tribes/kassena.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Mabia VP — Kasem language introduction",
+        "url": "http://mabia-vp.com/tiki-index.php?page=Kasem",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mabia-vp.com; the tier awaits editorial review."
+      }
     ]
   }
 }

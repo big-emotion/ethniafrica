@@ -194,14 +194,54 @@
       "postIndependence": "1965-1994 : Présidence de Dawda Jawara, période de stabilité politique et de démocratie. 1994 : Coup d'État militaire, présidence de Yahya Jammeh (1994-2017). 2017 : Transition démocratique, élection d'Adama Barrow. Défis : pauvreté, dépendance économique du Sénégal, développement économique. La Gambie est l'un des plus petits pays d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of The Gambia",
-      "CIA World Factbook – The Gambia",
-      "ONU / UNFPA – Démographie Gambie 2025",
-      "Recensements gambiens",
-      "Études anthropologiques sur les peuples de la Gambie",
-      "Études historiques sur l'empire du Mali et la Sénégambie",
-      "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of The Gambia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – The Gambia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Gambie 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements gambiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Gambie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Mali et la Sénégambie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

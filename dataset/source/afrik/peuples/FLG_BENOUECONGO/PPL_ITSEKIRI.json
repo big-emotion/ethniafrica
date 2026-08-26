@@ -102,15 +102,60 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Isekiri language (its) : https://www.ethnologue.com/language/its/",
-      "Britannica — Itsekiri : https://www.britannica.com/topic/Itsekiri",
-      "Itsekiri National Association of Washington, D.C. — Itsekiri Language and Culture : https://www.itsekirinawb.org/itsekiri-language-and-culture",
-      "101 Last Tribes — Itsekiri : https://www.101lasttribes.com/tribes/itsekiri.html",
-      "Joshua Project — Itsekiri in Nigeria : https://joshuaproject.net/people_groups/12264",
-      "Warri Kingdom Archives — traditions orales et histoire du royaume de Warri",
-      "Ayomike, J.O.S. — A Focus on the Itsekiri (histoire publiee)",
-      "ibusa.net — Itsekiris Today, Culture, Religion and Language : https://www.ibusa.net/Itsekiri.htm",
-      "warripeople.business.blog — History of The Warri Kingdom : https://warripeople.business.blog/history-of-the-warri-kingdom/"
+      {
+        "title": "Ethnologue (SIL International) — Isekiri language (its)",
+        "url": "https://www.ethnologue.com/language/its/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Itsekiri",
+        "url": "https://www.britannica.com/topic/Itsekiri",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Itsekiri National Association of Washington, D.C. — Itsekiri Language and Culture",
+        "url": "https://www.itsekirinawb.org/itsekiri-language-and-culture",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers itsekirinawb.org; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes — Itsekiri",
+        "url": "https://www.101lasttribes.com/tribes/itsekiri.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Itsekiri in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/12264",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Warri Kingdom Archives — traditions orales et histoire du royaume de Warri",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ayomike, J.O.S. — A Focus on the Itsekiri (histoire publiee)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ibusa.net — Itsekiris Today, Culture, Religion and Language",
+        "url": "https://www.ibusa.net/Itsekiri.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ibusa.net; the tier awaits editorial review."
+      },
+      {
+        "title": "warripeople.business.blog — History of The Warri Kingdom",
+        "url": "https://warripeople.business.blog/history-of-the-warri-kingdom/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers warripeople.business.blog; the tier awaits editorial review."
+      }
     ]
   }
 }

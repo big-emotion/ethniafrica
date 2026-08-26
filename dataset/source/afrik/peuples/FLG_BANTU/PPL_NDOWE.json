@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Ndowe people – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndowe.html)",
-      "Ndowe Tribe : History, Culture and Legacy – Rumbo Malabo (https://rumbomalabo.com/en/ndowe/)",
-      "Benga language and alphabet – Omniglot (https://www.omniglot.com/writing/benga.htm)",
-      "What are the different tribes of Equatorial Guinea – SAIGA Tours (https://www.saigatours.com/article/what-are-the-different-tribes-of-equatorial-guinea)",
-      "Equatorial Guinea – South African History Online (https://sahistory.org.za/place/equatorial-guinea)"
+      {
+        "title": "Ndowe people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/ndowe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ndowe Tribe : History, Culture and Legacy – Rumbo Malabo",
+        "url": "https://rumbomalabo.com/en/ndowe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rumbomalabo.com."
+      },
+      {
+        "title": "Benga language and alphabet – Omniglot",
+        "url": "https://www.omniglot.com/writing/benga.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "What are the different tribes of Equatorial Guinea – SAIGA Tours",
+        "url": "https://www.saigatours.com/article/what-are-the-different-tribes-of-equatorial-guinea",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers saigatours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Equatorial Guinea – South African History Online",
+        "url": "https://sahistory.org.za/place/equatorial-guinea",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      }
     ]
   }
 }

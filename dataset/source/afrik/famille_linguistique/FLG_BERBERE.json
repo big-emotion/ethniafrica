@@ -46,13 +46,48 @@
       }
     },
     "sources": [
-      "[Chaker] ([1995]) – *Textes en linguistique berbère*. [CNRS Éditions]",
-      "[Camps] ([1987]) – *Les Berbères : mémoire et identité*. [Errance]",
-      "[Basset] ([1952]) – *La langue berbère*. [Oxford University Press]",
-      "[Galand] ([2010]) – *Regards sur le berbère*. [Bouchène]",
-      "[UNESCO] ([2011]) – *Atlas des langues en danger dans le monde*. [UNESCO]",
-      "Glottolog 5.2 – classification génétique \"Berber [berb1260]\", 8 branches immédiates (Awjilah, Ghadames, Greater Zenatic, Kabyle-Atlas Berber, Nafusi, Tuareg, Unclassified Berber, Western Berber). https://glottolog.org/resource/languoid/id/berb1260",
-      "Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \"Les expressions linguistiques de la langue Amazighe utilisées par la population\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh au quotidien (33,3 % en milieu rural, 19,9 % en milieu urbain). https://www.hcp.ma/file/244434/ ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MA"
+      {
+        "title": "[Chaker] ([1995]) – *Textes en linguistique berbère*. [CNRS Éditions]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Camps] ([1987]) – *Les Berbères : mémoire et identité*. [Errance]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Basset] ([1952]) – *La langue berbère*. [Oxford University Press]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Galand] ([2010]) – *Regards sur le berbère*. [Bouchène]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[UNESCO] ([2011]) – *Atlas des langues en danger dans le monde*. [UNESCO]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.2 – classification génétique \"Berber [berb1260]\", 8 branches immédiates (Awjilah, Ghadames, Greater Zenatic, Kabyle-Atlas Berber, Nafusi, Tuareg, Unclassified Berber, Western Berber)",
+        "url": "https://glottolog.org/resource/languoid/id/berb1260",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \"Les expressions linguistiques de la langue Amazighe utilisées par la population\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh au quotidien (33,3 % en milieu rural, 19,9 % en milieu urbain). ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs",
+        "url": "https://www.hcp.ma/file/244434/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for hcp.ma. Original entry: \"Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \\\"Les expressions linguistiques de la langue Amazighe utilisées par la population\\\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh au quotidien (33,3 % en milieu rural, 19,9 % en milieu urbain). https://www.hcp.ma/file/244434/ ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MA\""
+      }
     ]
   }
 }

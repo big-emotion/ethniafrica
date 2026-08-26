@@ -158,14 +158,54 @@
       "postIndependence": "République du Soudan du Sud (2011), présidence de Salva Kiir Mayardit (depuis 2011), guerre civile (2013-2020, conflit entre forces gouvernementales et rebelles, violences ethniques, crimes de guerre), accord de paix (2020), transition politique, reconstruction post-conflit. Stabilité politique fragile, État en transition, conflits récents (guerre civile 2013-2020), développement économique (élevage, agriculture, exploitation pétrolière). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – South Sudan",
-      "SIL Ethnologue – Languages of South Sudan",
-      "Recensements sud-soudanais",
-      "Études anthropologiques sur les peuples du Soudan du Sud",
-      "Études historiques sur la colonisation britannique et égyptienne",
-      "CIA World Factbook – South Sudan (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements sud-soudanais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Soudan du Sud",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique et égyptienne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – South Sudan (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

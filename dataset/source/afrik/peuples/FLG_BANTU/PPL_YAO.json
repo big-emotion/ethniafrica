@@ -106,11 +106,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Yao all countries (2025) : https://joshuaproject.net/people_groups/15988",
-      "Joshua Project — Yao in Malawi : https://joshuaproject.net/people_groups/15988/MI",
-      "Qiraat Africa — The Yao/Wayao people of Lake Malawi (2026) : https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
-      "101 Last Tribes — Yao people : https://www.101lasttribes.com/tribes/yao.html",
-      "SIL Ethnologue — Yao language (yao) : https://www.ethnologue.com/language/yao/"
+      {
+        "title": "Joshua Project — Yao all countries (2025)",
+        "url": "https://joshuaproject.net/people_groups/15988",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Yao in Malawi",
+        "url": "https://joshuaproject.net/people_groups/15988/MI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Qiraat Africa — The Yao/Wayao people of Lake Malawi (2026)",
+        "url": "https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "101 Last Tribes — Yao people",
+        "url": "https://www.101lasttribes.com/tribes/yao.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Yao language (yao)",
+        "url": "https://www.ethnologue.com/language/yao/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

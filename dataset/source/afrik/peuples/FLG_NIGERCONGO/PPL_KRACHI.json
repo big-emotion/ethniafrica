@@ -72,13 +72,48 @@
       ]
     },
     "sources": [
-      "National Commission on Culture Ghana – Oti Region : Krachi history and culture (https://ghanaculture.gov.gh/oti-region/)",
-      "Krachi Dente Worship – Preface and Introduction (https://www.hypertextile.net/blakhud/dente/dente0.htm)",
-      "Krache in Ghana – Joshua Project (https://joshuaproject.net/people_groups/12832/GH)",
-      "Krachi West district population – CityPopulation.de (https://www.citypopulation.de/en/ghana/admin/oti/1505__krachi_west/)",
-      "Krachi East Municipality – Department of Urban Roads Ghana (https://dur.gov.gh/oti/)",
-      "Paramount Chief of Krachi Traditional Area Visits Institute of African Studies, UG, 2025 (https://ias.ug.edu.gh/content/paramount-chief-krachi-traditional-area-visits-institute-african-studies)",
-      "Glottolog : Krache, ISO 639-3 : kye (https://glottolog.org/resource/languoid/id/krac1238)"
+      {
+        "title": "National Commission on Culture Ghana – Oti Region : Krachi history and culture",
+        "url": "https://ghanaculture.gov.gh/oti-region/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ghanaculture.gov.gh."
+      },
+      {
+        "title": "Krachi Dente Worship – Preface and Introduction",
+        "url": "https://www.hypertextile.net/blakhud/dente/dente0.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers hypertextile.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Krache in Ghana – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12832/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Krachi West district population – CityPopulation.de",
+        "url": "https://www.citypopulation.de/en/ghana/admin/oti/1505__krachi_west/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Krachi East Municipality – Department of Urban Roads Ghana",
+        "url": "https://dur.gov.gh/oti/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers dur.gov.gh; the tier awaits editorial review."
+      },
+      {
+        "title": "Paramount Chief of Krachi Traditional Area Visits Institute of African Studies, UG, 2025",
+        "url": "https://ias.ug.edu.gh/content/paramount-chief-krachi-traditional-area-visits-institute-african-studies",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ias.ug.edu.gh; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog : Krache, ISO 639-3 : kye",
+        "url": "https://glottolog.org/resource/languoid/id/krac1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

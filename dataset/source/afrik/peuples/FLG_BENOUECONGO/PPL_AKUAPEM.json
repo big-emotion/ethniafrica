@@ -76,10 +76,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Akan-Akwapem in Ghana, 2025 (https://joshuaproject.net/countries/gh)",
-      "AkanArchives – Christaller Bible Translation 1870-1872 (https://x.com/AkanArchives/status/1948756016897597836)",
-      "Trip Down Memory Lane – The Akuapem People, 2013 (https://kwekudee-tripdownmemorylane.blogspot.com/2013/09/the-akuapem-people-are-amalgamation-of.html)",
-      "Visit Akuapem – Cultural Heritage (https://visitakuapem.com/heritage)"
+      {
+        "title": "Joshua Project – Akan-Akwapem in Ghana, 2025",
+        "url": "https://joshuaproject.net/countries/gh",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "AkanArchives – Christaller Bible Translation 1870-1872",
+        "url": "https://x.com/AkanArchives/status/1948756016897597836",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers x.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Trip Down Memory Lane – The Akuapem People, 2013",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/09/the-akuapem-people-are-amalgamation-of.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Visit Akuapem – Cultural Heritage",
+        "url": "https://visitakuapem.com/heritage",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers visitakuapem.com; the tier awaits editorial review."
+      }
     ]
   }
 }

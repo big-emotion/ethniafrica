@@ -84,11 +84,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Bodi in Ethiopia (https://joshuaproject.net/people_groups/21546)",
-      "Joshua Project – Me'en in Ethiopia (https://joshuaproject.net/people_groups/13654/ET)",
-      "101 Last Tribes – Me'en people (https://www.101lasttribes.com/tribes/meen.html)",
-      "Orville Jenkins – Meen People Profile (http://orvillejenkins.com/profiles/meen.html)",
-      "Ayu Ethiopian Tribal Tours – Ka'el Festival (https://ayuethiopiantribaltours.com/the-bodi-tribes-kael-festival-ethiopias-remarkable-celebration-of-strength-and-prosperity/)"
+      {
+        "title": "Joshua Project – Bodi in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/21546",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Me'en in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/13654/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Me'en people",
+        "url": "https://www.101lasttribes.com/tribes/meen.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Orville Jenkins – Meen People Profile",
+        "url": "http://orvillejenkins.com/profiles/meen.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Ayu Ethiopian Tribal Tours – Ka'el Festival",
+        "url": "https://ayuethiopiantribaltours.com/the-bodi-tribes-kael-festival-ethiopias-remarkable-celebration-of-strength-and-prosperity/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ayuethiopiantribaltours.com; the tier awaits editorial review."
+      }
     ]
   }
 }

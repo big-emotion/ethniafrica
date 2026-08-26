@@ -135,14 +135,54 @@
       "postIndependence": "République démocratique de São Tomé-et-Príncipe (1975), présidence de Manuel Pinto da Costa (1975-1991), transition démocratique (1991), élections multipartites, présidence de Miguel Trovoada (1991-2001), Fradique de Menezes (2001-2011), Manuel Pinto da Costa (2011-2016), Evaristo Carvalho (2016-2021), Carlos Vila Nova (depuis 2021). Stabilité politique relative, démocratie multipartite, développement économique. Défis : pauvreté, développement économique, dépendance aux exportations de cacao et café, potentiel pétrolier offshore. São Tomé-et-Príncipe est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (pétrole offshore, tourisme)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – São Tomé and Príncipe",
-      "SIL Ethnologue – Languages of São Tomé and Príncipe",
-      "Recensements santoméens",
-      "Études anthropologiques sur les peuples de São Tomé-et-Príncipe",
-      "Études historiques sur la colonisation portugaise et le développement des peuples créoles",
-      "CIA World Factbook – São Tomé and Príncipe (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – São Tomé and Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of São Tomé and Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements santoméens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de São Tomé-et-Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation portugaise et le développement des peuples créoles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – São Tomé and Príncipe (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
