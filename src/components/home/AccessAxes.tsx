@@ -8,6 +8,7 @@ import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
+  getModulesForAccessMode,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { Language } from "@/types/shared";
@@ -166,6 +167,25 @@ function AxisGlyph({
   );
 }
 
+/**
+ * An axis is only as live as the modules behind it. Reading that off the
+ * registry rather than a flag here means the day a module stops being
+ * `unavailable` the axis starts advertising its action again on its own —
+ * there is nothing to remember to undo.
+ */
+function axisHasLiveModule(mode: AccessMode): boolean {
+  return getModulesForAccessMode(mode).some(
+    (module) => module.availability !== "unavailable"
+  );
+}
+
+const PENDING_CTA = "Bientôt";
+
+function pendingFigure(mode: AccessMode): string {
+  const count = getModulesForAccessMode(mode).length;
+  return `${count} module${count > 1 ? "s" : ""} en préparation`;
+}
+
 export interface AccessAxesProps {
   language: Language;
   counts: CorpusCounts;
@@ -183,43 +203,49 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
       data-testid="access-axes"
       className="access-axes"
     >
-      {AXES.map((axis, index) => (
-        <Link
-          key={axis.id}
-          href={getLocalizedRoute(language, axis.page)}
-          data-testid={`access-axis-${axis.id}`}
-          className={cn(
-            "access-axis min-h-11",
-            ACCENT_BY_ACCESS_MODE[axis.id],
-            animated && "access-axis-reveal"
-          )}
-          style={animated ? { animationDelay: `${index * 90}ms` } : undefined}
-        >
-          <span
-            data-testid={`access-axis-glyph-${axis.id}`}
-            aria-hidden="true"
-            className="access-axis-glyph"
+      {AXES.map((axis, index) => {
+        const available = axisHasLiveModule(axis.id);
+
+        return (
+          <Link
+            key={axis.id}
+            href={getLocalizedRoute(language, axis.page)}
+            data-testid={`access-axis-${axis.id}`}
+            data-available={available ? "true" : "false"}
+            className={cn(
+              "access-axis min-h-11",
+              ACCENT_BY_ACCESS_MODE[axis.id],
+              animated && "access-axis-reveal",
+              !available && "access-axis-pending"
+            )}
+            style={animated ? { animationDelay: `${index * 90}ms` } : undefined}
           >
-            <AxisGlyph axis={axis.id} animated={animated} />
-          </span>
-          <h2>{axis.name}</h2>
-          <p
-            data-testid={`access-axis-figure-${axis.id}`}
-            className="access-axis-figure"
-          >
-            {axis.figure(counts)}
-          </p>
-          <span
-            data-testid={`access-axis-cta-${axis.id}`}
-            className="access-axis-cta"
-          >
-            {axis.cta}
-            <span className="access-axis-arrow" aria-hidden="true">
-              →
+            <span
+              data-testid={`access-axis-glyph-${axis.id}`}
+              aria-hidden="true"
+              className="access-axis-glyph"
+            >
+              <AxisGlyph axis={axis.id} animated={animated} />
             </span>
-          </span>
-        </Link>
-      ))}
+            <h2>{axis.name}</h2>
+            <p
+              data-testid={`access-axis-figure-${axis.id}`}
+              className="access-axis-figure"
+            >
+              {available ? axis.figure(counts) : pendingFigure(axis.id)}
+            </p>
+            <span
+              data-testid={`access-axis-cta-${axis.id}`}
+              className="access-axis-cta"
+            >
+              {available ? axis.cta : PENDING_CTA}
+              <span className="access-axis-arrow" aria-hidden="true">
+                →
+              </span>
+            </span>
+          </Link>
+        );
+      })}
 
       <style>{`
         .access-axes {
@@ -312,6 +338,14 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           z-index: 1;
         }
 
+        /* Pending, not disabled: the hub behind it is where the reader
+           sees what is coming, so it stays reachable and keyboard-
+           operable. Only the promise is dialled back. */
+        .access-axis-pending .access-axis-glyph,
+        .access-axis-pending .access-axis-cta {
+          opacity: 0.62;
+        }
+
         .access-axis-cta {
           margin-top: auto;
           display: inline-flex;
@@ -398,7 +432,15 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
             margin: 0;
             font-size: 11.5px;
           }
-          .access-axis-cta { grid-area: arrow; margin: 0; font-size: 0; }
+          /* Pending, not disabled: the hub behind it is where the reader
+           sees what is coming, so it stays reachable and keyboard-
+           operable. Only the promise is dialled back. */
+        .access-axis-pending .access-axis-glyph,
+        .access-axis-pending .access-axis-cta {
+          opacity: 0.62;
+        }
+
+        .access-axis-cta { grid-area: arrow; margin: 0; font-size: 0; }
           .access-axis-arrow { font-size: 19px; }
           .access-axis:hover { transform: none; }
         }

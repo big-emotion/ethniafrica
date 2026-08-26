@@ -21,6 +21,7 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
 });
 
+// @req REQ-044
 export const metadata: Metadata = {
   metadataBase: new URL(
     (() => {
@@ -49,6 +50,7 @@ export const metadata: Metadata = {
   },
 };
 
+// @req REQ-115
 export default async function RootLayout({
   children,
 }: Readonly<{

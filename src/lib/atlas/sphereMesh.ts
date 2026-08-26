@@ -68,14 +68,28 @@ export function buildSphereMesh(): SphereMesh {
 
   let vertex = 0;
   for (let j = 0; j <= segY; j++) {
-    const lat =
-      MERCATOR_LATITUDE_LIMIT - (j / segY) * (2 * MERCATOR_LATITUDE_LIMIT);
+    // The grid spans pole to pole so the sphere closes. Reusing the
+    // Mercator limit for both states left it a band with two open
+    // boundaries, and the home globe pitches far enough to bring them
+    // into view as holes.
+    const lat = 90 - (j / segY) * 180;
+
+    // Only the plane is clamped: past the limit Mercator runs away to
+    // infinity. The rows beyond it therefore land on the plane's edge,
+    // which makes their quads zero-height — they rasterize to nothing, so
+    // closing the sphere costs the flat map neither framing nor a
+    // squashed polar band.
+    const flatLat = Math.min(
+      MERCATOR_LATITUDE_LIMIT,
+      Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
+    );
+
     for (let i = 0; i <= segX; i++) {
       const u = i / segX;
       const lon = -180 + u * 360;
 
       flatPositions[vertex * 3] = GLOBE_RADIUS * lon * DEG2RAD;
-      flatPositions[vertex * 3 + 1] = GLOBE_RADIUS * mercatorY(lat);
+      flatPositions[vertex * 3 + 1] = GLOBE_RADIUS * mercatorY(flatLat);
       flatPositions[vertex * 3 + 2] = 0;
 
       const phi = lat * DEG2RAD;

@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { HomeGlobeFallback } from "@/components/home/HomeGlobeFallback";
 
@@ -41,15 +41,29 @@ function canCreateWebglContext(): boolean {
 // @req REQ-115
 export function HomeGlobeStage() {
   const [webglSupported, setWebglSupported] = useState(false);
+  // The probe above only proves a context can be created. Compiling and
+  // linking the globe's shaders on it can still fail — the common case on
+  // low-end hardware — and by then the fallback has already been swapped
+  // out. This latches that late failure so the committed basemap comes
+  // back rather than leaving the hero blank (REQ-112 AC2).
+  const [globeUnavailable, setGlobeUnavailable] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setWebglSupported(canCreateWebglContext());
   }, []);
 
+  const handleGlobeUnavailable = useCallback(() => {
+    setGlobeUnavailable(true);
+  }, []);
+
   return (
     <div className="home-globe-stage">
-      {webglSupported ? <LazyHomeGlobe /> : <HomeGlobeFallback />}
+      {webglSupported && !globeUnavailable ? (
+        <LazyHomeGlobe onUnavailable={handleGlobeUnavailable} />
+      ) : (
+        <HomeGlobeFallback />
+      )}
       <style>{`
         /* 380 / 460 px are the reference demo's own stage heights: the
            globe reads as a body rather than a marble at those, and the

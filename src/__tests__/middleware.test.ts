@@ -220,6 +220,7 @@ describe("middleware", () => {
   // gave them verbs. They were published, so they are indexed and
   // bookmarked: the rename has to leave a trail rather than a 404.
   describe("legacy hub redirects (REQ-114)", () => {
+    // @req REQ-114
     it.each([
       ["peuples-hub", "comprendre"],
       ["pays-hub", "explorer"],
@@ -234,6 +235,7 @@ describe("middleware", () => {
       );
     });
 
+    // @req REQ-114
     it("carries the query string across the rename", async () => {
       const request = new NextRequest(
         "http://localhost:3000/fr/pays-hub?from=newsletter"
@@ -246,6 +248,7 @@ describe("middleware", () => {
       );
     });
 
+    // @req REQ-114
     it("normalizes a trailing slash rather than 404ing on it", async () => {
       const request = new NextRequest("http://localhost:3000/fr/peuples-hub/");
       const response = await middleware(request);
@@ -259,6 +262,7 @@ describe("middleware", () => {
     // The rename moved a hub, not the resource pages it groups. /fr/peuples
     // is a live route and must not be swept up by a prefix match on
     // "peuples".
+    // @req REQ-114
     it("leaves the resource pages the hubs group untouched", async () => {
       const request = new NextRequest("http://localhost:3000/fr/peuples");
       const response = await middleware(request);

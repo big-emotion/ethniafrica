@@ -392,3 +392,43 @@ describe("HomeGlobe — the hero's textured sphere (REQ-112)", () => {
     expect(disposeMock).toHaveBeenCalledTimes(1);
   });
 });
+
+// The slider is the whole demonstration: it is what turns "Mercator inflates
+// area" from a claim into something the reader watches happen. A screen
+// reader was given a bare 0-100 and a paragraph that changed without saying
+// so, which is the one reading of this control that carries none of that.
+describe("HomeGlobe — the morph control says what it is showing (REQ-112)", () => {
+  // @req REQ-112
+  it("names the surface rather than reciting a number at each end", () => {
+    render(<HomeGlobe />);
+    const range = screen.getByTestId("home-globe-morph-range");
+
+    expect(range).toHaveAttribute("aria-valuetext", "Globe");
+
+    fireEvent.change(range, { target: { value: "0" } });
+    expect(range).toHaveAttribute("aria-valuetext", "Carte plate");
+  });
+
+  // @req REQ-112
+  it("names the in-between state instead of falling silent mid-morph", () => {
+    render(<HomeGlobe />);
+    const range = screen.getByTestId("home-globe-morph-range");
+
+    fireEvent.change(range, { target: { value: "50" } });
+
+    const valueText = range.getAttribute("aria-valuetext");
+    expect(valueText).toBeTruthy();
+    expect(valueText).not.toBe("Globe");
+    expect(valueText).not.toBe("Carte plate");
+  });
+
+  // The readout carries the explanation the control exists for, so a change
+  // to it has to reach a screen reader without the user going looking.
+  // @req REQ-112
+  it("announces the explanation politely when the surface changes", () => {
+    render(<HomeGlobe />);
+
+    const readout = screen.getByTestId("home-globe-readout");
+    expect(readout).toHaveAttribute("aria-live", "polite");
+  });
+});

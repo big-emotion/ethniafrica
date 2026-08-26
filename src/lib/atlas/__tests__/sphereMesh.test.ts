@@ -78,7 +78,8 @@ describe("sphereMesh — the morphable globe surface (REQ-112)", () => {
 
     expect(lowest(us)).toBeCloseTo(0);
     expect(highest(us)).toBeCloseTo(1);
-    expect(lowest(vs)).toBeCloseTo((90 - MERCATOR_LATITUDE_LIMIT) / 180, 5);
+    expect(lowest(vs)).toBeCloseTo(0, 5);
+    expect(highest(vs)).toBeCloseTo(1, 5);
   });
 
   // @req REQ-112
@@ -88,5 +89,48 @@ describe("sphereMesh — the morphable globe surface (REQ-112)", () => {
     expect(halfWidth).toBeCloseTo(Math.PI);
     expect(halfHeight).toBeCloseTo(mercatorY(MERCATOR_LATITUDE_LIMIT));
     expect(halfWidth).toBeGreaterThan(1);
+  });
+});
+
+// The mesh reused the Mercator latitude limit for both states, so the
+// sphere was a band from +80 to -80 with two open boundaries. The home
+// globe pitches through +-1.1 rad, which is enough to bring them into
+// view as holes. The plane still has to stop at the limit — Mercator runs
+// away to infinity past it — so only the sphere closes.
+describe("sphereMesh — closed at the poles (REQ-112)", () => {
+  const GLOBE_RADIUS = 1;
+
+  // @req REQ-112
+  it("carries a vertex at each pole so the sphere has no open boundary", () => {
+    const { spherePositions } = buildSphereMesh();
+    const ys: number[] = [];
+    for (let i = 1; i < spherePositions.length; i += 3) {
+      ys.push(spherePositions[i]);
+    }
+
+    expect(Math.max(...ys)).toBeCloseTo(GLOBE_RADIUS, 5);
+    expect(Math.min(...ys)).toBeCloseTo(-GLOBE_RADIUS, 5);
+  });
+
+  // @req REQ-112
+  it("keeps the flat plane clamped to the Mercator limit", () => {
+    const { flatPositions } = buildSphereMesh();
+    const ys: number[] = [];
+    for (let i = 1; i < flatPositions.length; i += 3) {
+      ys.push(flatPositions[i]);
+    }
+
+    expect(Math.max(...ys)).toBeCloseTo(mercatorY(MERCATOR_LATITUDE_LIMIT), 5);
+    expect(Math.min(...ys)).toBeCloseTo(-mercatorY(MERCATOR_LATITUDE_LIMIT), 5);
+  });
+
+  // The rows past the limit collapse onto the plane's edge, so their quads
+  // have zero height and rasterize to nothing. That is what lets the sphere
+  // close without the flat map growing a squashed polar band.
+  // @req REQ-112
+  it("leaves the flat map's framing unchanged by the added polar rows", () => {
+    const { halfHeight } = flatHalfExtent();
+
+    expect(halfHeight).toBeCloseTo(mercatorY(MERCATOR_LATITUDE_LIMIT), 5);
   });
 });

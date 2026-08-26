@@ -121,6 +121,12 @@ export interface SphereLayer {
   dispose(): void;
 }
 
+/**
+ * A driver that refuses a shader reports it through COMPILE_STATUS, not by
+ * withholding the handle. Returning the handle unchecked yields a program
+ * that links to nothing and draws nothing — a blank canvas where the
+ * caller's committed SVG basemap should have been.
+ */
 function compile(
   gl: WebGLRenderingContext,
   type: number,
@@ -130,6 +136,10 @@ function compile(
   if (!shader) return null;
   gl.shaderSource(shader, source);
   gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    gl.deleteShader(shader);
+    return null;
+  }
   return shader;
 }
 
@@ -165,11 +175,25 @@ export function createSphereLayer(
   const vertexShader = compile(gl, gl.VERTEX_SHADER, VERTEX_SHADER);
   const fragmentShader = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
   const program = gl.createProgram();
-  if (!program || !vertexShader || !fragmentShader) return null;
+  if (!program || !vertexShader || !fragmentShader) {
+    // Whichever half succeeded still holds GL objects. Releasing them here
+    // matters most on the low-end devices likeliest to reach this path.
+    if (vertexShader) gl.deleteShader(vertexShader);
+    if (fragmentShader) gl.deleteShader(fragmentShader);
+    if (program) gl.deleteProgram(program);
+    return null;
+  }
 
   gl.attachShader(program, vertexShader);
   gl.attachShader(program, fragmentShader);
   gl.linkProgram(program);
+
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    gl.deleteShader(vertexShader);
+    gl.deleteShader(fragmentShader);
+    gl.deleteProgram(program);
+    return null;
+  }
 
   const mesh = buildSphereMesh();
 

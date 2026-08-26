@@ -105,7 +105,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "Remonter"
     );
     expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Comparer"
+      "Bientôt"
     );
   });
 
@@ -157,5 +157,56 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
         "min-h-11"
       );
     }
+  });
+});
+
+// Both modules behind Jouer are `unavailable`, so /fr/jouer holds nothing
+// but "Bientôt" rows. A primary home CTA reading "Comparer" over a figure
+// promising "2 peuples face à face" sends the reader to a dead end. The
+// axis reads its own state off the registry so it starts promising again
+// by itself the day a module ships — nothing here to remember to undo.
+describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
+  const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
+
+  // @req REQ-114
+  it("marks an axis whose every module is unavailable as coming soon", () => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    const jouer = screen.getByTestId("access-axis-jouer");
+    expect(jouer).toHaveAttribute("data-available", "false");
+    expect(
+      screen.getByTestId("access-axis-figure-jouer")
+    ).not.toHaveTextContent("2 peuples face à face");
+  });
+
+  // Explorer and Comprendre both have live modules, so neither may be
+  // dressed as pending — the state has to discriminate, not blanket.
+  // @req REQ-114
+  it("leaves the axes with live modules promising their action", () => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
+      "data-available",
+      "true"
+    );
+    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
+      "data-available",
+      "true"
+    );
+    expect(screen.getByTestId("access-axis-cta-explorer")).toHaveTextContent(
+      "Parcourir"
+    );
+  });
+
+  // Still a link: the hub is where the reader sees what is coming. What is
+  // removed is the promise of a live action, not the route.
+  // @req REQ-114
+  it("keeps the pending axis reachable rather than inert", () => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+      "href",
+      "/fr/jouer"
+    );
   });
 });

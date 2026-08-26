@@ -32,6 +32,18 @@ const MORPH_MAX = 100;
  * the demonstration rests on: Africa's real area is 30.4 M km², and a flat
  * Mercator map is what hides it.
  */
+/**
+ * The same three states the readout describes, named in two words for the
+ * slider's value. A screen reader announcing "47" says nothing about a
+ * surface; this is the semantic the sighted reader gets from watching the
+ * shape, so it is what the value has to carry.
+ */
+function surfaceNameFor(morph: number): string {
+  if (morph > 0.92) return "Globe";
+  if (morph < 0.08) return "Carte plate";
+  return "Projection intermédiaire";
+}
+
 function readoutFor(morph: number): string {
   if (morph > 0.92) {
     return "Globe — chaque pastille retrouve sa surface réelle. L'Afrique fait 30,4 M km².";
@@ -56,7 +68,17 @@ function readoutFor(morph: number): string {
  */
 // @req REQ-112
 // @req REQ-115
-export function HomeGlobe() {
+export function HomeGlobe({
+  onUnavailable,
+}: {
+  /**
+   * Called once when the globe cannot run after all — no context, or a
+   * driver that refuses the shaders. The stage's probe only proves a
+   * context can be created, so without this it has already swapped the
+   * committed basemap out and the hero is left blank.
+   */
+  onUnavailable?: () => void;
+} = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
 
@@ -88,7 +110,10 @@ export function HomeGlobe() {
 
     const gl = (canvas.getContext("webgl") ||
       canvas.getContext("experimental-webgl")) as WebGLRenderingContext | null;
-    if (!gl) return;
+    if (!gl) {
+      onUnavailable?.();
+      return;
+    }
 
     const layer = createSphereLayer(
       gl,
@@ -99,7 +124,10 @@ export function HomeGlobe() {
       HERO_FIT_MARGIN,
       true
     );
-    if (!layer) return;
+    if (!layer) {
+      onUnavailable?.();
+      return;
+    }
     layerRef.current = layer;
 
     let aspect = 1;
@@ -295,7 +323,13 @@ export function HomeGlobe() {
 
   return (
     <div style={{ position: "absolute", inset: 0 }}>
-      <p className="home-globe-readout" data-testid="home-globe-readout">
+      {/* Polite, not assertive: the reader is driving the slider, so the
+          announcement should follow the gesture rather than cut across it. */}
+      <p
+        className="home-globe-readout"
+        data-testid="home-globe-readout"
+        aria-live="polite"
+      >
         {readout}
       </p>
 
@@ -343,6 +377,7 @@ export function HomeGlobe() {
             value={morphPercent}
             data-testid="home-globe-morph-range"
             aria-label="Morphing de la carte plate vers le globe"
+            aria-valuetext={surfaceNameFor(morphPercent / MORPH_MAX)}
             onChange={(event) => applyMorph(Number(event.target.value))}
           />
           <label htmlFor="home-globe-morph-range">Globe</label>

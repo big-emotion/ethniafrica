@@ -37,12 +37,19 @@ function fakeGl() {
     LINEAR: 17,
     REPEAT: 18,
     CLAMP_TO_EDGE: 19,
+    COMPILE_STATUS: 20,
+    LINK_STATUS: 21,
     createShader: vi.fn(() => ({})),
     shaderSource: vi.fn(),
     compileShader: vi.fn(),
+    getShaderParameter: vi.fn(() => true),
+    getShaderInfoLog: vi.fn(() => ""),
+    deleteShader: vi.fn(),
     createProgram: vi.fn(() => ({})),
     attachShader: vi.fn(),
     linkProgram: vi.fn(),
+    getProgramParameter: vi.fn(() => true),
+    getProgramInfoLog: vi.fn(() => ""),
     useProgram: vi.fn(),
     createBuffer: vi.fn(() => ({})),
     bindBuffer: vi.fn(),
@@ -309,5 +316,58 @@ describe("fitScale — framing both states (REQ-112)", () => {
     const { halfHeight } = flatHalfExtent();
 
     expect(fitScale(0, 0.5) * halfHeight).toBeLessThanOrEqual(1);
+  });
+});
+
+// createSphereLayer already promised its caller null on failure — the hero
+// and the fiche both restore their committed SVG basemap on it. But a
+// driver that refuses a shader says so through COMPILE_STATUS, not by
+// returning a falsy handle, so an unusable program was being handed back as
+// if it worked and the canvas went blank instead of falling back.
+describe("sphereLayer — refuses an unusable program (REQ-112)", () => {
+  // @req REQ-112
+  it("returns null when a shader will not compile", () => {
+    const gl = fakeGl();
+    gl.getShaderParameter = vi.fn(() => false);
+
+    const layer = createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      textureCanvas()
+    );
+
+    expect(layer).toBeNull();
+  });
+
+  // @req REQ-112
+  it("returns null when the program will not link", () => {
+    const gl = fakeGl();
+    gl.getProgramParameter = vi.fn(() => false);
+
+    const layer = createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      textureCanvas()
+    );
+
+    expect(layer).toBeNull();
+  });
+
+  // A refused program still allocated GL objects; leaving them attached to
+  // a context the page keeps using is a leak on exactly the low-end devices
+  // most likely to hit this path.
+  // @req REQ-112
+  it("releases what it allocated before giving up", () => {
+    const gl = fakeGl();
+    gl.getProgramParameter = vi.fn(() => false);
+
+    createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      textureCanvas()
+    );
+
+    expect(gl.deleteProgram).toHaveBeenCalled();
+    expect(gl.deleteShader).toHaveBeenCalled();
   });
 });

@@ -1,10 +1,14 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 
+let reportFailureOnMount = false;
 vi.mock("@/components/home/HomeGlobe", () => ({
-  HomeGlobe: () => <div data-testid="home-globe-mock" />,
+  HomeGlobe: ({ onUnavailable }: { onUnavailable?: () => void }) => {
+    if (reportFailureOnMount) onUnavailable?.();
+    return <div data-testid="home-globe-mock" />;
+  },
 }));
 
 describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
@@ -79,5 +83,47 @@ describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
     expect(stage).not.toBeNull();
     expect(stage?.firstElementChild).not.toBeNull();
     expect(stage?.querySelector("path#africa-landmass")).toBeInTheDocument();
+  });
+});
+
+// The probe only proves a context can be created. Creating the layer on it
+// can still fail — a driver that refuses to compile or link the shaders is
+// the common case on low-end hardware — and the stage had already swapped
+// the committed basemap out by then, leaving a blank canvas in the hero.
+describe("HomeGlobeStage — recovers when the globe gives up (REQ-112)", () => {
+  beforeEach(() => {
+    reportFailureOnMount = false;
+  });
+
+  afterEach(() => {
+    reportFailureOnMount = false;
+  });
+
+  // @req REQ-112
+  it("restores the committed basemap when the globe reports it cannot run", async () => {
+    reportFailureOnMount = true;
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
+
+    render(<HomeGlobeStage />);
+
+    await waitFor(() =>
+      expect(screen.queryByTestId("home-globe-mock")).not.toBeInTheDocument()
+    );
+    expect(document.querySelector("path#africa-landmass")).toBeInTheDocument();
+  });
+
+  // @req REQ-112
+  it("keeps the globe mounted when it initializes cleanly", async () => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
+
+    render(<HomeGlobeStage />);
+
+    await waitFor(() =>
+      expect(screen.getByTestId("home-globe-mock")).toBeInTheDocument()
+    );
   });
 });
