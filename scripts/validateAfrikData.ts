@@ -18,6 +18,9 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
+// The same resolver the globe uses, so this gate and the rendering can never
+// disagree about which countries are drawable.
+import { getAdmin0Rings } from "../src/lib/atlas/overlays";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -1031,6 +1034,74 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
           `${file}: invalid ISO 3166-1 α-3 country code "${country}" (expected 3 uppercase letters)`
         );
       }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * Countries outside the atlas's Africa scope that the corpus legitimately
+ * cites, as declared diaspora presences. They are not drawn — the admin-0
+ * asset is Africa-only — but they are real, and the fiche counts them in its
+ * total population.
+ *
+ * The list is explicit so that adding one is a deliberate act. FR29 only ever
+ * checked that a code was three uppercase letters, which is how "GBN" stood in
+ * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
+ * meaningless, and silently undrawable.
+ */
+export const OFF_MAP_COUNTRIES = new Set([
+  "AUS",
+  "CAN",
+  "ESP",
+  "FRA",
+  "GBR",
+  "NLD",
+  "OMN",
+  "PRT",
+  "USA",
+  "YEM",
+]);
+
+/**
+ * Every declared country either resolves to admin-0 geometry — through the
+ * same resolver the globe uses, aliases included — or is a declared off-map
+ * presence. Anything else is a data defect, not a rendering limitation.
+ */
+export function checkCountryCodesResolve(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        demography?: {
+          distributionByCountry?: Array<{ country?: unknown }>;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const distribution = data?.content?.demography?.distributionByCountry ?? [];
+    for (const entry of distribution) {
+      const country = entry?.country;
+      if (typeof country !== "string") continue;
+      if (OFF_MAP_COUNTRIES.has(country)) continue;
+      if (getAdmin0Rings(country)) continue;
+
+      errors.push(
+        `${file}: country "${country}" resolves to no admin-0 geometry and is ` +
+          `not a declared off-map presence — fix the code, add the geometry, ` +
+          `or add it to OFF_MAP_COUNTRIES`
+      );
     }
   }
 
@@ -3253,6 +3324,12 @@ async function main() {
   newChecks.push({
     name: "FR29 ISO validity",
     result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log("Country codes resolve to geometry or a declared off-map...");
+  newChecks.push({
+    name: "Country codes resolve",
+    result: checkCountryCodesResolve(datasetRoot),
   });
 
   console.log(

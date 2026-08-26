@@ -19,6 +19,7 @@ import {
   checkAuthorizedSourceTiers,
   checkCountryNameFrDistinctFromOfficial,
   checkFamilyStructuralCompleteness,
+  checkCountryCodesResolve,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -389,6 +390,69 @@ describe("validateAfrikData – new integrity checks", () => {
 
       const result = checkIsoValidity(tmpDir);
       expect(result.ok).toBe(true);
+    });
+  });
+
+  // ── checkCountryCodesResolve ───────────────────────────────────────────────
+
+  describe("checkCountryCodesResolve", () => {
+    function writeDistribution(
+      countries: Array<{ country: string; population: number }>
+    ): void {
+      const dir = join(tmpDir, "peuples", "FLG_BANTU");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, "PPL_ZULU.json"),
+        JSON.stringify({
+          id: "PPL_ZULU",
+          content: {
+            languages: { isoCodes: ["zul"] },
+            demography: { distributionByCountry: countries },
+            sources: [],
+          },
+        })
+      );
+    }
+
+    // "GBN" for Gabon passed FR29 for as long as it existed: the shape check
+    // only asks for three uppercase letters, so a typo reads as valid and the
+    // presence silently stops being drawable. This is the check that fails.
+    // @req REQ-119
+    it("rejects a well-formed code that names no country the atlas knows", () => {
+      writeDistribution([{ country: "GBN", population: 50000 }]);
+
+      const result = checkCountryCodesResolve(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((error) => error.includes("GBN"))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("accepts a country the admin-0 asset draws", () => {
+      writeDistribution([{ country: "ZAF", population: 10000000 }]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // The asset is keyed by Natural Earth codes for two territories; the
+    // corpus writes ISO. Both spellings name geometry that exists.
+    // @req REQ-119
+    it("accepts an ISO code the asset holds under its Natural Earth key", () => {
+      writeDistribution([{ country: "SSD", population: 1000000 }]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // A diaspora outside Africa is a real declared presence, not an error —
+    // but it has to be declared here too, so a new one is a deliberate act
+    // rather than a typo that happens to fall through.
+    // @req REQ-119
+    it("accepts an off-map country only when it is on the declared list", () => {
+      writeDistribution([{ country: "USA", population: 1200000 }]);
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+
+      writeDistribution([{ country: "JPN", population: 1200 }]);
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(false);
     });
   });
 

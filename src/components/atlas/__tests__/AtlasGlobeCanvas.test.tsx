@@ -38,6 +38,7 @@ const peopleOverlay: PeopleFieldOverlay = {
     { countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 },
     { countryId: "BEN", center: { lon: 2, lat: 9 }, populationShare: 0.3 },
   ],
+  undrawn: [],
 };
 
 function createFakeGl() {

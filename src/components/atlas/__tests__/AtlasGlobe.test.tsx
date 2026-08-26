@@ -34,6 +34,7 @@ const countryOverlay: CountryOutlineOverlay = {
 const peopleOverlay: PeopleFieldOverlay = {
   kind: "people-field",
   areas: [{ countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 }],
+  undrawn: [],
 };
 
 /** The two peoples of the family fiche below sit far enough apart to tell their markers apart. */
@@ -43,6 +44,7 @@ const familyPeopleOverlay: PeopleFieldOverlay = {
     { countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 },
     { countryId: "ZAF", center: { lon: 25, lat: -29 }, populationShare: 0.4 },
   ],
+  undrawn: [],
 };
 
 function percentOf(value: string): number {
@@ -125,7 +127,7 @@ describe("AtlasGlobe", () => {
   it("renders the declared-missing placeholder for a people-field-missing overlay", () => {
     render(
       <AtlasGlobe
-        overlay={{ kind: "people-field-missing" }}
+        overlay={{ kind: "people-field-missing", undrawn: [] }}
         missingMessage="Répartition non renseignée"
       />
     );
@@ -293,7 +295,7 @@ describe("AtlasGlobe", () => {
     it("offers nothing to choose on a globe that declared itself empty", () => {
       render(
         <AtlasGlobe
-          overlay={{ kind: "people-field-missing" }}
+          overlay={{ kind: "people-field-missing", undrawn: [] }}
           missingMessage="Répartition non renseignée"
         />
       );

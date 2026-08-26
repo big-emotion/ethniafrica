@@ -27,6 +27,7 @@ function toRings(rawRings: readonly (readonly [number, number])[][]): Ring[] {
  * planar — a stylised placement, not a survey-grade one, the same tradeoff
  * projection.ts's HomeGlobe geometry already makes.
  */
+// @req REQ-116
 export function ringCentroid(ring: Ring): LonLat {
   let area = 0;
   let cx = 0;
@@ -60,14 +61,33 @@ function largestRingCentroid(rings: Ring[]): LonLat {
   return ringCentroid(largest);
 }
 
-/** Undefined for any country absent from the committed 51-country asset — treated as missing, never as a silently dropped shape. */
+/**
+ * Natural Earth's admin-0 layer keys two territories by its own codes rather
+ * than by ISO 3166-1 alpha-3, and the asset is generated from it verbatim.
+ * The corpus writes ISO. Without this bridge the geometry is present and
+ * unreachable — 27 declared South Sudan presences read as unmappable purely
+ * over a nomenclature disagreement.
+ *
+ * Somaliland is deliberately absent: the asset holds it as SOL and it has no
+ * ISO code at all, so aliasing it onto SOM would make the atlas assert a
+ * sovereignty claim no source in the corpus supports.
+ */
+const ADMIN0_KEY_BY_ISO: Record<string, string> = {
+  SSD: "SDS", // South Sudan
+  ESH: "SAH", // Western Sahara
+};
+
+/** Undefined for any country absent from the committed asset — treated as missing, never as a silently dropped shape. */
+// @req REQ-116
 export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
-  const country = AFRICA_ADMIN0[countryId];
+  const country =
+    AFRICA_ADMIN0[countryId] ?? AFRICA_ADMIN0[ADMIN0_KEY_BY_ISO[countryId]];
   return country ? toRings(country.rings) : undefined;
 }
 
 // ─── Country: closed outline, stroked as it draws, 22% fill ────────────────
 
+// @req REQ-116
 export const COUNTRY_FILL_OPACITY = 0.22;
 
 export interface CountryOutlineOverlay {
@@ -105,14 +125,32 @@ export interface PeopleFieldArea {
   populationShare: number;
 }
 
+/**
+ * A declared presence the globe has no geometry for: a diaspora outside the
+ * atlas's Africa scope, or a country code the asset does not carry.
+ *
+ * It is carried rather than filtered so the surrounding UI can name it —
+ * charter §4 asks for an unresolved country to be shown as missing, never
+ * dropped. It has no `center`, because inventing one would place a halo the
+ * corpus cannot justify.
+ */
+export interface PeopleFieldUndrawnArea {
+  countryId: CountryId;
+  /** The declared figure, on whichever axis the fiche used (percentage, else population). */
+  rawWeight: number;
+}
+
 export interface PeopleFieldOverlay {
   kind: "people-field";
   areas: PeopleFieldArea[];
+  undrawn: PeopleFieldUndrawnArea[];
 }
 
-/** REQ-119: a fiche with no distributionByCountry renders as declared-missing, not as an empty globe. */
+/** REQ-119: a fiche with no drawable distribution renders as declared-missing, not as an empty globe. */
 export interface PeopleFieldMissingOverlay {
   kind: "people-field-missing";
+  /** Present even here: a fiche whose every presence is off-map still declared those presences. */
+  undrawn: PeopleFieldUndrawnArea[];
 }
 
 // @req REQ-116
@@ -120,33 +158,39 @@ export function buildPeopleFieldOverlay(
   distributionByCountry: CountryDistribution[] | undefined
 ): PeopleFieldOverlay | PeopleFieldMissingOverlay {
   if (!distributionByCountry || distributionByCountry.length === 0) {
-    return { kind: "people-field-missing" };
+    return { kind: "people-field-missing", undrawn: [] };
   }
 
-  const resolved = distributionByCountry
-    .map((entry) => ({
-      countryId: entry.country,
-      rawWeight: entry.percentage ?? entry.population ?? 0,
-      rings: getAdmin0Rings(entry.country),
-    }))
-    .filter(
-      (entry): entry is typeof entry & { rings: Ring[] } =>
-        Boolean(entry.rings) && entry.rawWeight > 0
-    );
+  const declared = distributionByCountry.map((entry) => ({
+    countryId: entry.country,
+    rawWeight: entry.percentage ?? entry.population ?? 0,
+    rings: getAdmin0Rings(entry.country),
+  }));
 
-  if (resolved.length === 0) {
-    return { kind: "people-field-missing" };
+  const drawable = declared.filter(
+    (entry): entry is typeof entry & { rings: Ring[] } =>
+      Boolean(entry.rings) && entry.rawWeight > 0
+  );
+  const undrawn: PeopleFieldUndrawnArea[] = declared
+    .filter((entry) => !entry.rings || entry.rawWeight <= 0)
+    .map(({ countryId, rawWeight }) => ({ countryId, rawWeight }));
+
+  if (drawable.length === 0) {
+    return { kind: "people-field-missing", undrawn };
   }
 
-  const maxWeight = Math.max(...resolved.map((entry) => entry.rawWeight));
+  // Normalised over what is drawn, so a large off-map diaspora cannot shrink
+  // every halo on the continent. What share a country holds of the whole
+  // people is a different figure, and the panel reads it from the demography.
+  const maxWeight = Math.max(...drawable.map((entry) => entry.rawWeight));
 
-  const areas: PeopleFieldArea[] = resolved.map((entry) => ({
+  const areas: PeopleFieldArea[] = drawable.map((entry) => ({
     countryId: entry.countryId,
     center: largestRingCentroid(entry.rings),
     populationShare: maxWeight > 0 ? entry.rawWeight / maxWeight : 0,
   }));
 
-  return { kind: "people-field", areas };
+  return { kind: "people-field", areas, undrawn };
 }
 
 // ─── Language family: derived choropleth, dashed boundary, tint by member count ─
