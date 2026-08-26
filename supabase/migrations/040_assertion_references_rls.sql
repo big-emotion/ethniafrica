@@ -14,8 +14,10 @@
 -- set and fails on any table that never reaches an ENABLE ROW LEVEL SECURITY,
 -- so the next occurrence is caught on the pull request instead of an audit.
 --
--- Rollout is two-step, recette first then prod — the two Supabase projects are
--- both labelled "production" and drift when a migration is applied to only one.
+-- Rollout is two-step, recette first then prod. Both Supabase projects label
+-- their environment "production" — a project has exactly one environment and
+-- Supabase names it that — so the label says nothing about which application
+-- the project serves. shmrjtnfbqzceovroqjj serves recette.
 -- All statements are idempotent (DROP POLICY IF EXISTS, ALTER TABLE ... ENABLE
 -- RLS), so re-applying is a safe no-op.
 --

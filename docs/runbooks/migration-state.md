@@ -3,9 +3,16 @@
 **Last verified:** 2026-08-26 (live read via the Supabase MCP `list_migrations`)
 **Applies to:** every file under `supabase/migrations/`
 
-Two Supabase projects are both labelled **production**. That collision is the reason this
-document exists: "we pushed it to production" does not identify a database here. Always name
-the environment the project _backs_, never the label the dashboard shows.
+There are two Supabase projects, and both look like "production" for a structural reason: **a
+Supabase project has exactly one environment, and Supabase itself calls that environment
+"production".** There is no staging branch inside a project. So "production" in a Supabase
+dashboard names the project's only environment — never the application environment that
+project serves.
+
+The mapping is settled. **`shmrjtnfbqzceovroqjj` backs the recette application; it is not the
+production database.** A second project backs production; this repository cannot see it (see
+below). "We pushed it to production" still does not identify a database here — always name the
+application environment the project _backs_, never the label the dashboard shows.
 
 ---
 
@@ -31,13 +38,13 @@ reaches real users.
 |                       | Backs **recette**                                                       | Backs **production**       |
 | --------------------- | ----------------------------------------------------------------------- | -------------------------- |
 | Supabase project ref  | `shmrjtnfbqzceovroqjj`                                                  | _not recorded — see below_ |
-| Dashboard name        | `ethniafrica` (has also been labelled _prod_)                           | _unknown_                  |
+| Dashboard name        | `ethniafrica` — its environment is labelled _production_ by Supabase    | _unknown_                  |
 | Region                | `eu-west-1`                                                             | _unknown_                  |
 | Created               | 2026-07-24                                                              | _unknown_                  |
 | Named in this repo as | `AFRIK_PRODUCTION_SUPABASE_URL` (`scripts/lib/afrikMigrationTarget.ts`) | —                          |
 | Reached by the flag   | `--target=production`                                                   | —                          |
 
-Two consequences of that third row, both traps:
+Two consequences of the last two rows, both traps:
 
 - `scripts/lib/afrikMigrationTarget.ts` hard-codes `shmrjtnfbqzceovroqjj` as
   `AFRIK_PRODUCTION_SUPABASE_URL`. So `npx tsx scripts/migrateAfrikToDatabase.ts
@@ -50,25 +57,19 @@ Two consequences of that third row, both traps:
 Renaming that constant is an open follow-up. Until it is renamed, confirm the target with the
 environment owner before any run with `--apply`.
 
-### The identity above is not fully settled
+### What this resolves, and what it leaves open
 
-Two signals in the repository disagree, and this document cannot resolve it from the tree alone:
+The identity is no longer in doubt: `shmrjtnfbqzceovroqjj` backs **recette**. Migration `039`'s
+own header comment agrees — it records the corpora "loaded 0 rows against **recette**" against
+that project.
 
-- Project records from 2026-08 (and migration `039`'s own header comment, which says the corpora
-  "loaded 0 rows against **recette**") place `shmrjtnfbqzceovroqjj` behind the **recette**
-  application.
-- `.github/workflows/production-data-sync.yml` targets that same ref on a successful Vercel
-  **Production** deployment of `main`, and then POSTs a cache revalidation to
-  `https://ethniafrica.com`.
-
-If the first is right, a production deploy is syncing the corpus into the recette database and
-revalidating a site it did not write to. If the second is right, the recette application has
-been reading the production database. Either way something is mis-wired.
-
-**Resolving this is a prerequisite for trusting the state table below.** Confirm with the
-environment owner which application each project actually serves, then correct this section —
-and note that the fix probably belongs in the workflow or the constant, not only in this
-document.
+What remains open is `.github/workflows/production-data-sync.yml`. It fires on a successful
+Vercel **Production** deployment of `main`, syncs the AFRIK corpus into
+`shmrjtnfbqzceovroqjj` — the recette database — and then POSTs a cache revalidation to
+`https://ethniafrica.com`, a site it did not write to. Every production deploy has therefore
+been loading the corpus into the wrong database. Neither the workflow nor the constant has been
+changed, because redirecting either one is an environment decision, not a documentation fix.
+Until the owner decides, treat that workflow's output as landing in recette.
 
 ### Why the production-backing project has no row here
 
@@ -91,8 +92,10 @@ update the "Last verified" date.
 
 ## State table
 
-Read from the recette-backing project's `supabase_migrations.schema_migrations` ledger on
-2026-08-26.
+Read from the recette-backing project's (`shmrjtnfbqzceovroqjj`)
+`supabase_migrations.schema_migrations` ledger on 2026-08-26. **Only the recette column is a
+measurement.** The production column is not "presumed unapplied" — it is unread, because this
+repository's credentials cannot reach that project.
 
 | File                                          | Recette (`shmrjtnfbqzceovroqjj`)           | Production (`?`) |
 | --------------------------------------------- | ------------------------------------------ | ---------------- |
@@ -135,7 +138,9 @@ Read from the recette-backing project's `supabase_migrations.schema_migrations` 
 | `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`  | unknown          |
 | `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`  | unknown          |
 | `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`  | unknown          |
-| `040_assertion_references_rls.sql`            | **not applied**                            | **not applied**  |
+| `040_assertion_references_rls.sql`            | **not applied**                            | unknown          |
+| `041_one_source_tier_vocabulary.sql`          | **not applied**                            | unknown          |
+| `042_migration_ledger_introspection.sql`      | **not applied**                            | unknown          |
 
 `040` enables row-level security on `assertion_references`, which `031` created with no RLS, no
 policy and no grants — leaving it writable by anyone holding the anon key that ships in the
@@ -204,11 +209,98 @@ objects explicitly in the new migration. Verify the object, not the ledger row.
 
 ---
 
+## The automation, and what it does not cover
+
+Two of the three failures above are now measured rather than remembered. The third — an object
+dropped out from under a migration that stays recorded as applied — is not detectable from the
+ledger, and the checklist below is what covers it.
+
+### On every pull request — `check:migration-files`
+
+`npm run check:migration-files` (in `ci.yml`) checks only what is knowable without a database:
+no two files claiming the same version, no two sharing a name, no hole in the numbered
+sequence. Whether a migration is _applied_ is deliberately not checked here — the migration a
+pull request adds is pending by definition, so the question has no meaningful answer before
+the merge.
+
+Version and name collisions are the parallel-branch failure: two branches each add `043_`, git
+merges both without complaint, and Postgres then applies them in filename order — so which one
+wins is decided by the rest of the name rather than by anyone. A shared name is worse: the
+ledger keys on name, so reconciliation can no longer tell which file a row refers to.
+
+### On merge into `recette` — `migrate-recette.yml`
+
+A push to `recette` that touches `supabase/migrations/**` applies the pending migrations to the
+recette project, then re-runs the reconciliation to prove the apply did what it claimed. It
+logs the SQL it is about to run first, so the job output is the record of what that deploy
+changed in the database.
+
+It needs one secret, **`RECETTE_SUPABASE_DB_URL`** — the recette project's Postgres connection
+string (Supabase dashboard → Project Settings → Database → Connection string → URI, with the
+password filled in). Without it the job **skips loudly** with a warning rather than failing, so
+a fork or Dependabot pull request does not read as broken. Nothing is applied while that secret
+is absent, which means the gap this workflow exists to close stays open until it is set.
+
+Production is deliberately **not** automated. The two-step rule is recette first, verify on the
+recette application, then production — and the second step is a decision, not a consequence of
+a merge.
+
+### Nightly, and on demand — `check:migration-state`
+
+`npm run check:migration-state` reconciles every file against the ledger and fails on three
+states, all of which have occurred here:
+
+| State      | Meaning                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------ |
+| `pending`  | On disk, never applied. The database is behind the code.                                         |
+| `orphaned` | Applied, but no file describes it any more. The schema cannot be rebuilt from the repository.    |
+| `drifted`  | Applied, but the file changed afterwards. The two disagree, and the file is the one people read. |
+
+A fourth, `unverifiable`, is reported but does not fail: migrations applied before the ledger
+began storing statements cannot be checked for drift, and failing on them would flag the whole
+early history.
+
+It runs nightly in `data-integrity.yml` and inside `migrate-recette.yml`. It matches files to
+ledger rows **by name, never by version** — see failure mode 2 above.
+
+### Seeing what is pending
+
+```bash
+npm run migrations:diff            # what would run, names only
+npm run migrations:diff -- --sql   # …with the statements
+```
+
+Both read `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`, so pointing them at the
+production project is a matter of exporting that project's values first. That is currently the
+only way to fill in the production column of the state table.
+
+### What the automation still cannot see
+
+- **The production project.** Nothing automated reaches it. Its column in the state table stays
+  unread until someone runs `migrations:diff` against it.
+- **Failure mode 3 — an object dropped by a later migration.** The ledger still says the earlier
+  migration was applied, and it was. Comparing files to the ledger cannot catch it; only
+  verifying the object can. The checklist below is what covers that.
+- **Anything applied by hand through the dashboard.** It lands in the ledger with no
+  corresponding file and surfaces as `orphaned` on the next nightly run — which is the point,
+  but only after the fact.
+
+### Prerequisite
+
+All of this reads the ledger through `public.applied_migrations()`, added by migration
+`042_migration_ledger_introspection.sql`. Until `042` is applied to a database, the check
+against it fails with a message naming that migration. Apply it first.
+
+---
+
 ## Applying a migration — the checklist
 
 Copy this into the ticket. Both halves, every time.
 
-**Recette-backing project**
+**Recette-backing project** — the merge applies the migration and reads the ledger back for
+you (`migrate-recette.yml`), so on recette these boxes are a verification, not a procedure.
+What CI cannot do is check that the object actually exists: it reads the ledger, and the ledger
+records intent, not outcome. That box is still yours.
 
 - [ ] Snapshot taken (Supabase dashboard → Database → Backups) and restorable.
 - [ ] Migration applied.

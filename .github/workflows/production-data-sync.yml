@@ -19,6 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
+      # WARNING — this ref backs the *recette* application, not production. The job triggers on
+      # a Vercel Production deploy of `main` and revalidates ethniafrica.com, so as written it
+      # syncs the AFRIK corpus into recette and busts caches on a site it did not write to.
+      # Left unchanged on purpose: repointing it is an environment decision for the owner.
+      # See docs/runbooks/migration-state.md.
       NEXT_PUBLIC_SUPABASE_URL: https://shmrjtnfbqzceovroqjj.supabase.co
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       PRODUCTION_REVALIDATE_SECRET: ${{ secrets.PRODUCTION_REVALIDATE_SECRET }}

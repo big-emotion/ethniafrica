@@ -1,3 +1,12 @@
+// KNOWN MISNAMED. This ref is the project backing the *recette* application, not production.
+// The name comes from Supabase's own labelling: a project has exactly one environment and
+// Supabase calls it "production", so the label describes the project, never the application
+// environment it serves. The production application is served by a different project whose ref
+// is not recorded in this repository.
+//
+// The name is kept because `--target=production` and
+// .github/workflows/production-data-sync.yml both resolve through it, and repointing them is
+// an environment decision, not a rename. See docs/runbooks/migration-state.md.
 export const AFRIK_PRODUCTION_SUPABASE_URL =
   "https://shmrjtnfbqzceovroqjj.supabase.co";
 

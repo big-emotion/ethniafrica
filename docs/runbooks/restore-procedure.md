@@ -7,8 +7,10 @@ Restores go to a **throwaway project**, never over a live one. You validate the 
 first, then decide whether to cut over. Restoring in place destroys the evidence you would need
 if the restore itself turns out to be wrong.
 
-Before you start, know which database you are recovering. Two Supabase projects are both
-labelled "production" — one backs recette, one backs production. Identity table:
+Before you start, know which database you are recovering. Both Supabase projects label their
+environment "production" — a Supabase project has exactly one environment and Supabase names it
+that, so the label describes the project, not the application it serves.
+`shmrjtnfbqzceovroqjj` backs recette; a second project backs production. Identity table:
 [`migration-state.md`](./migration-state.md).
 
 ---

@@ -15,14 +15,15 @@ has already cost an audit real time (ETNI-1199).
 
 | What                                    | Value                                                                   |
 | --------------------------------------- | ----------------------------------------------------------------------- |
-| Supabase project `shmrjtnfbqzceovroqjj` | labelled **prod** in the Supabase dashboard                             |
-| The application environment it backs    | **recette**                                                             |
+| Supabase project `shmrjtnfbqzceovroqjj` | its environment is labelled **production** by Supabase                  |
+| The application environment it backs    | **recette** — not production                                            |
 | The constant naming it in this repo     | `AFRIK_PRODUCTION_SUPABASE_URL` (`scripts/lib/afrikMigrationTarget.ts`) |
 | The flag that reaches it                | `--target=production`                                                   |
 
-So `--target=production` writes to the project Supabase calls prod, which backs the
-application's recette. Confirm the destination with whoever owns the environment before running
-with `--apply`; do not infer it from the flag name.
+Every Supabase project has exactly one environment and Supabase calls it "production", so that
+label never identifies the application environment. Here it backs **recette**, which means
+`--target=production` writes to the recette database. Confirm the destination with whoever owns
+the environment before running with `--apply`; do not infer it from the flag name.
 
 `--target=staging` requires `AFRIK_STAGING_SUPABASE_URL` to be set and to equal
 `NEXT_PUBLIC_SUPABASE_URL`. Where that variable is unset — which is the normal state on a dev

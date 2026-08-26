@@ -41,6 +41,8 @@ npm run storybook           # :6006
 npm run lint:req                    # @req annotation traceability (see below)
 npm run check:jira-template         # docs/templates/jira-ticket-template.md must exist and match
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
+npm run check:env-example           # every env var read in src/ or scripts/ is documented
+npm run check:migration-files       # no duplicate version or name, no hole in the sequence
 npm run test:charter-contracts      # aggregated design-charter contract suite
 npx tsx scripts/validateAfrikData.ts        # AFRIK data integrity (FR26–FR52)
 npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules on fiches
@@ -91,7 +93,7 @@ Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-cu
 - `src/lib/supabase/server.ts` — SSR / server components
 - `src/lib/supabase/admin.ts` — service-role key, **server-only**
 
-Migrations are numbered and sequential in `supabase/migrations/` (041 at last count). Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Two Supabase projects are both labelled "production"** — the recette one and the real prod one. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
+Migrations are numbered and sequential in `supabase/migrations/` (042 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret); production stays manual on purpose. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**; a second project, not visible from this repo's credentials, serves production. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
 ### Frontend
 
