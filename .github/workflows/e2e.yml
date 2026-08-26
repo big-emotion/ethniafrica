@@ -1,9 +1,10 @@
 name: E2E — Playwright
 
 on:
+  # Pre-merge only, matching ci.yml: every change reaches recette/main through a
+  # PR, so `push` on the same branches re-ran the whole suite a second time for
+  # each merge without gating anything — nothing reads the post-merge result.
   pull_request:
-    branches: [main, recette]
-  push:
     branches: [main, recette]
 
 permissions:

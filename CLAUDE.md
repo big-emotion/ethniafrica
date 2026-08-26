@@ -187,6 +187,7 @@ Keep colonial-era names but explain why they are problematic, and always surface
 
 ### Git
 
+- **One worktree per agent session.** Any agent task that writes to the repo — a background job, a Ferry run, `/ethniafrica-ticket`, a hand-launched sub-agent — must first isolate itself in its own git worktree (`EnterWorktree`, or `git worktree add .claude/worktrees/<name>`), never edit in the shared checkout. Parallel sessions sharing one working copy overwrite each other's edits and switch branches under each other. Read-only work — search, audit, answering a question — stays in place. Commit and push before the session ends: the worktree can be deleted with it.
 - `recette` is the integration branch; `main` is the base. **`recette` is protected** — always branch and open a PR, never push directly.
 - `recette ↔ main` sync PRs must use a **merge commit**, not a squash; squashing has broken the ancestry before.
 - Conventional commits (commitlint on `commit-msg`). Pre-commit runs `type-check` + `lint-staged`.
