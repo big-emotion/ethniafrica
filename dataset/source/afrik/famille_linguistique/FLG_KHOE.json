@@ -9,7 +9,10 @@
       "historicalAppellations": "Khoe / Khoeid"
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Khoekhoe (Nama-Damara, Kora, Xiri)",
+        "Non-Khoekhoe / Khoe du Kalahari (Shua, Tshwa, Kxoe-Ani, Naro-Ana)"
+      ],
       "geographicArea": "Namibie, Botswana, Afrique du Sud, Angola",
       "numberOfLanguages": 10,
       "totalSpeakers": null
@@ -34,7 +37,11 @@
     "historyAndOrigins": {},
     "distribution": {
       "totalSpeakers": null,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NAM": 204700,
+        "BWA": 8200,
+        "ZAF": 2000
+      }
     },
     "sources": [
       "Fauvelle-Aymar, François-Xavier (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Publications de la Sorbonne.",
@@ -55,7 +62,11 @@
       "Endangered Languages Project – *Khoekhoegowab*, *Language Vitality Among the Nama of Tshabong*. https://www.endangeredlanguages.com/",
       "Grokipedia / Namibie Population and Housing Census (2023) – *Demographics of Namibia*. https://grokipedia.com/page/Demographics_of_Namibia",
       "UNESCO – Langues en danger (Afrique australe). UNESCO Atlas of the World's Languages in Danger.",
-      "Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations."
+      "Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations.",
+      "Glottolog 5.0 (2024) – Classification du nœud \"Khoe\" [khoe1241] : deux branches directes, \"Khoekhoe\" [khoe1242] et \"Non-Khoekhoe\" [nonk1236]. https://glottolog.org/resource/languoid/id/khoe1241",
+      "SIL Ethnologue – Khoekhoegowab/Nama [naq] : Namibie ≈200 000, Afrique du Sud ≈2 000, Botswana ≈200 locuteurs. https://www.ethnologue.com/language/naq/ (chiffres vérifiés via Wikipédia FR « Nama (langue) », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+      "Brenzinger, Matthias (2011) – \"The twelve modern Khoisan languages\". In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium* (Research in Khoisan Studies 29). Cologne: Rüdiger Köppe Verlag. [Khwe : Namibie ≈3 700 ; Naro : Namibie ≈1 000 locuteurs]",
+      "SIL Ethnologue (18e éd., 2015) – Naro [nhr] : Botswana ≈8 000 locuteurs (2014). https://www.ethnologue.com/language/nhr/ (chiffre vérifié via Wikipédia EN « Naro language », consulté en 2026)"
     ]
   }
 }

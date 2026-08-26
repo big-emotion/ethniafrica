@@ -11,7 +11,7 @@
       "originOfHistoricalTerm": " Le terme « Saharien » (anglais : \"Saharan\") a été proposé par Joseph H. Greenberg dans son ouvrage *The Languages of Africa* (1963, Chicago : University of Chicago Press). Greenberg a classé ce groupe comme branche du phylum Nilo-Saharien qu'il proposait. Avant Greenberg, des explorateurs comme Heinrich Barth (1853) avaient décrit les langues Kanuri et Teda-Daza autour du lac Tchad, mais sans classification formelle en tant que famille unifiée."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Saharien oriental", "Saharien occidental"],
       "geographicArea": "Sahara central et oriental, bassin du lac Tchad, Tibesti (Tchad/Libye), nord-est du Tchad, est du Soudan, nord-est du Nigéria, sud-est du Niger, extrême nord du Cameroun",
       "numberOfLanguages": 10,
       "totalSpeakers": 12000000
@@ -45,7 +45,13 @@
     },
     "distribution": {
       "totalSpeakers": 12000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NGA": 3202000,
+        "TCD": 797500,
+        "NER": 460000,
+        "SDN": 180000,
+        "CMR": 56500
+      }
     },
     "sources": [
       "Cyffer, Norbert (2020) – *Saharan*. In : Rainer Vossen & Gerrit J. Dimmendaal (eds.), *The Oxford Handbook of African Languages*, Oxford University Press, pp. 383-391. https://academic.oup.com/edited-volume/38608/chapter-abstract/334726085",
@@ -59,7 +65,12 @@
       "The Editors of Encyclopaedia Britannica (2025) – \"Saharan languages\". *Britannica*. https://www.britannica.com/topic/Saharan-languages",
       "Études génétiques :",
       "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations\". *Genome Biology*, 20:82. https://link.springer.com/article/10.1186/s13059-019-1679-2",
-      "Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques."
+      "Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques.",
+      "Glottolog 5.3 (2025) – \"Saharan\": arbre de classification confirmant 2 branches immédiates – Eastern Saharan, Western Saharan. https://glottolog.org/resource/languoid/id/saha1256",
+      "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 1er juin 2016) – \"Kanuri, Central [knc]\": 3 000 000 de locuteurs au Nigeria (Gunnemark & Kenrick 1985), 154 000 au Tchad (2013 J. Leclerc), 80 000 au Niger (1998), 56 500 au Cameroun (1982 SIL). https://www.ethnologue.com/language/knc",
+      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 9 mai et 14 août 2016) – \"Kanuri, Manga [kby]\": 280 000 locuteurs au Niger (1998), 200 000 au Nigeria (1993). \"Kanuri, Tumari [krt]\": 40 000 au Niger (1998). https://www.ethnologue.com/language/kby ; https://www.ethnologue.com/language/krt",
+      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 21 mai 2016) – \"Zaghawa [zag]\": 180 000 locuteurs au Soudan (Osman 2006), 128 000 au Tchad (2013 J. Leclerc). https://www.ethnologue.com/language/zag",
+      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 25 juin et 8 mai 2016) – \"Tedaga [tuq]\": 28 500 locuteurs au Tchad (recensement 1993), 10 000 au Niger (1998), 2 000 au Nigeria (Blench & Zeitlyn 1990). \"Dazaga [dzg]\": 487 000 au Tchad (2013 J. Leclerc), 50 000 au Niger (2007). https://www.ethnologue.com/language/tuq ; https://www.ethnologue.com/language/dzg"
     ]
   }
 }

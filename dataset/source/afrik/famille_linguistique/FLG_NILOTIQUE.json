@@ -11,7 +11,11 @@
       "originOfHistoricalTerm": " Le terme « Nilotic » dérive du latin *Niloticus*, issu du grec *Neilōtikós*, signifiant « relatif au Nil ». Usage linguistique : Karl Richard Lepsius (1880) a formalisé « Nilotic languages » comme branche dans sa *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas* (Berlin: Verlag von Wilhelm Hertz). Le terme « nilo-chamitique » a été introduit par Carl Meinhof (début XXᵉ siècle) dans le cadre de classifications raciales coloniales, affirmant que certaines langues nilotiques orientales et méridionales (Maasai, Turkana) seraient un mélange de traits nilotiques et « hamitiques/cushitiques ». Joseph Greenberg (1963) dans *The Languages of Africa* (Indiana University Press) a rejeté cette classification et a intégré les langues nilotiques dans le phylum Nilo-Saharien comme branche Eastern Sudanic."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Nilotique oriental",
+        "Nilotique méridional",
+        "Nilotique occidental"
+      ],
       "geographicArea": "Vallées du Nil supérieur (Bahr el-Ghazal, Nil Blanc), région du Sudd (marais du Soudan du Sud), Rift est-africain, bassin du lac Turkana, hauts plateaux du Kenya et de la Tanzanie",
       "numberOfLanguages": 30,
       "totalSpeakers": 30000000
@@ -65,7 +69,12 @@
     },
     "distribution": {
       "totalSpeakers": 30000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "KEN": 5875000,
+        "SSD": 2260020,
+        "UGA": 1170000,
+        "TZA": 753000
+      }
     },
     "sources": [
       "Lepsius, Karl Richard (1880) – *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas*. Berlin: Verlag von Wilhelm Hertz.",
@@ -85,7 +94,12 @@
       "Tanzania National Bureau of Statistics (2022) – *Population and Housing Census*. Dodoma: NBS.",
       "Glottolog (2025) – \"Nilotic languages classification\". *Glottolog.org*. https://glottolog.org/resource/languoid/id/nilo1247",
       "Dimmendaal, Gerrit J. (2011) – \"On stable and unstable features in Nilo-Saharan\". In *Diachrony and Typology of Tense-Aspect Systems* (éd. Vit Bubenik). John Benjamins.",
-      "Bender, M. Lionel (1996) – *The Nilo-Saharan Languages: A Comparative Essay*. Lincom Europa."
+      "Bender, M. Lionel (1996) – *The Nilo-Saharan Languages: A Comparative Essay*. Lincom Europa.",
+      "Glottolog 5.3 (2025) – \"Nilotic\": arbre de classification confirmant 3 branches immédiates – Eastern Nilotic, Southern Nilotic, Western Nilotic. https://glottolog.org/resource/languoid/id/nilo1247",
+      "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 21-29 juin 2016) – \"Dholuo [luo]\": 4 044 000 locuteurs au Kenya (recensement 2009), 140 000 en Tanzanie (2005). \"Maasai [mas]\": 842 000 locuteurs au Kenya (recensement 2009), 613 000 en Tanzanie (2013). \"Turkana [tuv]\": 989 000 locuteurs au Kenya (recensement 2009). https://www.ethnologue.com/language/luo ; https://www.ethnologue.com/language/mas ; https://www.ethnologue.com/language/tuv",
+      "SIL Ethnologue, 20e éd. (Simons, G.F. & Fennig, C.D., eds., 2017), page consultée via version archivée (Internet Archive, 12 octobre 2017) – \"Dinka [din]\" (macrolangue) : 1 365 900 locuteurs au Soudan du Sud. https://www.ethnologue.com/language/din",
+      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 11 août 2016) – \"Nuer [nus]\": 894 120 locuteurs au Soudan du Sud (total utilisateurs, dont 893 000 en L1). https://www.ethnologue.com/language/nus",
+      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 24 mars 2016) – \"Acholi [ach]\": 1 170 000 locuteurs en Ouganda (recensement 2002). https://www.ethnologue.com/language/ach"
     ]
   }
 }

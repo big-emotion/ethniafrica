@@ -11,7 +11,12 @@
       "originOfHistoricalTerm": " Le terme « bantou » a été créé par le philologue allemand Wilhelm Heinrich Immanuel Bleek (1827-1875) en 1862 dans son ouvrage A Comparative Grammar of South African Languages. Bleek a observé que de nombreuses langues africaines partageaient des éléments syntaxiques suggérant une origine commune. Il a choisi le terme « Bantu » car ce mot signifie « gens » ou « personnes » dans plusieurs de ces langues, dérivé de la racine proto-Bantu ba-ntu où ba- est le préfixe de classe nominale pour le pluriel et -ntu signifie « personne » ou « être humain ». Le terme a été popularisé par Carl Meinhof dans Grundzüge einer vergleichenden Grammatik der Bantusprachen (1906) et par Harry Hamilton Johnston dans A Comparative Study of the Bantu and Semi-Bantu Languages (1919)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Bantu A-B10-B20-B30",
+        "Central-Western Bantu",
+        "East Bantu",
+        "Mbam-Bubi"
+      ],
       "geographicArea": "Afrique centrale, orientale et australe, de la région des Grassfields (Cameroun-Nigeria) jusqu'au Cap de Bonne-Espérance (Afrique du Sud), et de la côte atlantique à la côte indienne.",
       "numberOfLanguages": 500,
       "totalSpeakers": 350000000
@@ -77,7 +82,9 @@
     },
     "distribution": {
       "totalSpeakers": 350000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ZAF": 15134712
+      }
     },
     "sources": [
       "Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon.",
@@ -91,7 +98,9 @@
       "Henn, B. M. et al. (2011) – \"Hunter-gatherer genomic diversity suggests a southern African origin for modern humans\", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162.",
       "ONU (2025) – World Population Prospects 2025. New York : United Nations.",
       "UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA.",
-      "SIL Ethnologue (2025) – \"Bantu languages\". https://www.ethnologue.com/subgroups/bantu"
+      "SIL Ethnologue (2025) – \"Bantu languages\". https://www.ethnologue.com/subgroups/bantu",
+      "Glottolog (2025) – \"Narrow Bantu\". https://glottolog.org/resource/languoid/id/narr1281",
+      "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiZulu home language). https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
     ]
   }
 }

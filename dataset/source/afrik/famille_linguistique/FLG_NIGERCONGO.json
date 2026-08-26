@@ -11,7 +11,15 @@
       "originOfHistoricalTerm": " Le terme « Niger-Congo » a été créé par **Joseph H. Greenberg** (1915-2001), linguiste américain, dans ses articles « Studies in African Linguistic Classification » publiés entre **1949 et 1954** dans le *Southwestern Journal of Anthropology*. Il a été formalisé dans son ouvrage majeur *The Languages of Africa* publié en **1963** (rééditions 1966, 1970) par Indiana University Press / Mouton & Co. Greenberg proposa de combiner les langues dites « Western Sudanic » (identifiées par Diedrich Westermann, 1875-1956, dans ses travaux de 1911-1935) avec les langues bantoues pour former une famille génétique qu'il nomma *Niger-Congo*, en référence aux bassins des fleuves Niger et Congo. Le terme « Congo-Kordofanien » était une tentative antérieure d'intégrer les langues Kordofaniennes comme branche coordonnée, plus tard remplacée par *Niger-Congo*."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Cangin",
+        "Gola",
+        "Limba",
+        "Mansoanka",
+        "Mel",
+        "North-Central Atlantic",
+        "Volta-Congo"
+      ],
       "geographicArea": "Afrique subsaharienne (Ouest, Centre, Est et Sud) : du Sénégal à l'Afrique du Sud, de la côte atlantique à l'Océan Indien.",
       "numberOfLanguages": 1500,
       "totalSpeakers": 600000000
@@ -58,7 +66,11 @@
     },
     "distribution": {
       "totalSpeakers": 600000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ZAF": 10110483,
+        "SEN": 8786892,
+        "CIV": 22555375
+      }
     },
     "sources": [
       "Greenberg, Joseph H. (1949) – *\"Studies in African Linguistic Classification: I. Introduction, Niger-Congo Family\"*. *Southwestern Journal of Anthropology*.",
@@ -82,7 +94,11 @@
       "Schadeberg, Thilo C. (2003) – *\"Historical Linguistics\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
       "Bastin, Yvonne, Coupez, André & Mann, Michael (1999) – *Continuity and Divergence in the Bantu Languages: Perspectives from a Lexicostatistic Study*. Tervuren: Musée royal de l'Afrique centrale.",
       "Hyman, Larry M. (2003) – *\"Segmental Phonology\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
-      "Maho, Jouni Filip (2003) – *\"A Classification of the Bantu Languages: An Update of Guthrie's Referential System\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge."
+      "Maho, Jouni Filip (2003) – *\"A Classification of the Bantu Languages: An Update of Guthrie's Referential System\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
+      "Glottolog (2025) – \"Atlantic-Congo\". https://glottolog.org/resource/languoid/id/atla1278",
+      "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiXhosa home language). https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+      "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante). https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
+      "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique total, hors naturalisés et non précisés, classification Bouquet). https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique"
     ]
   }
 }
