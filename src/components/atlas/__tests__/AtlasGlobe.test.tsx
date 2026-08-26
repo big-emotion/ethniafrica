@@ -231,10 +231,14 @@ describe("AtlasGlobe", () => {
       const panelTopEdgePercent = (1 - BOTTOM_SHEET_VIEW_FRACTION) * 100;
       const settledTopPercent = percentOf(markerFor("NGA").style.top);
 
+      // The property that matters, and the only one: the country the reader
+      // chose is inside the strip the sheet leaves free. It used to be pinned
+      // to the exact centre of that strip, which was a consequence of the bias
+      // equalling the covered fraction — an identity that had to go when the
+      // sheet grew to 54% (see panelBias.ts). Where in the free strip it lands
+      // is a matter of taste; that it lands there at all is not.
       expect(settledTopPercent).toBeLessThan(panelTopEdgePercent);
-      // Dead centre of the strip the sheet leaves free — an unbiased camera
-      // would sit at 50% and still clear the edge, so pin the real position.
-      expect(settledTopPercent).toBeCloseTo(panelTopEdgePercent / 2, 1);
+      expect(settledTopPercent).toBeGreaterThan(0);
     });
 
     // @req REQ-117
@@ -247,8 +251,9 @@ describe("AtlasGlobe", () => {
       const panelLeftEdgePercent = (1 - SIDE_PANEL_VIEW_FRACTION) * 100;
       const settledLeftPercent = percentOf(markerFor("NGA").style.left);
 
+      // As above: inside the free column, not at a pinned point in it.
       expect(settledLeftPercent).toBeLessThan(panelLeftEdgePercent);
-      expect(settledLeftPercent).toBeCloseTo(panelLeftEdgePercent / 2, 1);
+      expect(settledLeftPercent).toBeGreaterThan(0);
     });
 
     // @req REQ-117

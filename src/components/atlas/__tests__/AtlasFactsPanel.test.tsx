@@ -8,7 +8,7 @@ import {
 } from "@/components/atlas/AtlasFactsPanel";
 import {
   BOTTOM_SHEET_VIEW_FRACTION,
-  SIDE_PANEL_VIEW_FRACTION,
+  SIDE_PANEL_WIDTH_PX,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 
@@ -124,20 +124,26 @@ describe("AtlasFactsPanel", () => {
   });
 
   // @req REQ-117
-  it("covers, as a bottom sheet, exactly the share of the stage the camera bias assumes", () => {
+  it("never covers more of the stage, as a bottom sheet, than the camera bias allows for", () => {
     renderPanel({ anchor: "bottom" });
 
+    // A ceiling, not a fixed height: the sheet is as tall as its facts need.
+    // What must hold is that it cannot grow past the share panelBias.ts
+    // computed the free region against.
     expect(screen.getByRole("dialog")).toHaveStyle({
-      height: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%`,
+      maxHeight: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%`,
     });
   });
 
   // @req REQ-117
-  it("covers, as a side panel, exactly the share of the stage the camera bias assumes", () => {
+  it("takes a readable column width, as a side panel, rather than a share of the stage", () => {
     renderPanel({ anchor: "side" });
 
+    // A share of the stage would make the facts column narrow on a small
+    // desktop and needlessly wide on a large one; a column of prose has a
+    // width that reads well and it does not depend on the map behind it.
     expect(screen.getByRole("dialog")).toHaveStyle({
-      width: `${SIDE_PANEL_VIEW_FRACTION * 100}%`,
+      width: `${SIDE_PANEL_WIDTH_PX}px`,
     });
   });
 

@@ -9,6 +9,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
+import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
@@ -184,6 +185,23 @@ export default async function FamillesSlugPage({
     memberPeoples.length
   );
 
+  // Which member peoples each country actually carries, so the panel can name
+  // them rather than only counting them — a count a reader cannot check is a
+  // number they have to take on trust, which is the opposite of the posture.
+  const peopleNamesByCountry: Record<string, string[]> = {};
+  for (const person of memberPeoples) {
+    for (const countryId of new Set(person.currentCountries)) {
+      (peopleNamesByCountry[countryId] ??= []).push(person.nameMain);
+    }
+  }
+
+  const familyTargetFacts = buildFamilyTargetFacts({
+    familyId: parsed.slug,
+    familyNameFr: familyDetail.nameFr,
+    memberPeopleCount: memberPeoples.length,
+    peopleNamesByCountry,
+  });
+
   const recordView = (
     <LanguageFamilyDetailViewV2
       family={family}
@@ -215,6 +233,7 @@ export default async function FamillesSlugPage({
               overlay={familyOverlay}
               stageVariant="band"
               targetPicker="list"
+              targetFacts={familyTargetFacts}
               legend={<FamilyFootprintLegend />}
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />

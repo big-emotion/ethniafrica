@@ -6,7 +6,7 @@ import type { CSSProperties, ReactElement, ReactNode } from "react";
 
 import {
   BOTTOM_SHEET_VIEW_FRACTION,
-  SIDE_PANEL_VIEW_FRACTION,
+  SIDE_PANEL_WIDTH_PX,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { cn } from "@/lib/utils";
@@ -23,14 +23,19 @@ export interface AtlasFactsPanelProps {
 }
 
 /**
- * The panel must cover exactly the share of the stage `biasForPanel()` assumes,
- * so the size is read off panelBias.ts rather than retyped: should the CSS and
- * the constant drift apart, the camera parks the chosen subject underneath the
- * panel instead of beside it.
+ * The panel must not cover more of the stage than panelBias.ts assumes, so the
+ * size is read off that module rather than retyped: should the CSS and the
+ * constants drift apart, the camera parks the chosen subject underneath the
+ * panel instead of beside it. The bias is a separate, smaller number — see the
+ * note at the top of panelBias.ts for why the two stopped being equal.
  */
 const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
-  bottom: { height: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%` },
-  side: { width: `${SIDE_PANEL_VIEW_FRACTION * 100}%` },
+  // maxHeight, not height: the sheet is as tall as its facts need, up to the
+  // share the camera bias was computed against. A fixed height would pad a
+  // short panel with empty space below its last fact.
+  bottom: { maxHeight: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%` },
+  // A column of facts has a readable width; a share of the stage does not.
+  side: { width: SIDE_PANEL_WIDTH_PX, maxWidth: "100%" },
 };
 
 /** Anchored inside the stage, never to the viewport — the bias is stage-relative. */
@@ -40,15 +45,24 @@ const ANCHOR_POSITION: Record<PanelAnchor, string> = {
 };
 
 /**
- * DEC-022: the globe stage is the app's one Night surface, and the panel sits
- * on it, so it takes the night palette rather than the fiche's own accent.
+ * The panel is parchment, laid on a night stage.
+ *
+ * DEC-022 put the whole globe stage on the night surface, and this panel with
+ * it. That reading has narrowed twice since: the home globe was repainted on
+ * parchment (1669c944), and the night scope is now the dataviz itself rather
+ * than everything sitting on it. The panel is not dataviz — it is an extract of
+ * the fiche, lifted out and laid over the map. Painted night it reads as one
+ * more layer of the map; painted parchment it reads as what it is, a piece of
+ * the page's own reading placed on top. That distinction is the reason this is
+ * a panel and not a tooltip.
+ *
  * (The shadcn Sheet parts are styled for the light palette — hence the bare
  * Radix primitives here.)
  */
-const NIGHT_PANEL_SURFACE: CSSProperties = {
-  backgroundColor: "var(--afh-night-surface)",
-  borderColor: "var(--afh-night-line)",
-  color: "var(--afh-night-ink)",
+const PARCHMENT_PANEL_SURFACE: CSSProperties = {
+  backgroundColor: "var(--afh-bg)",
+  borderColor: "var(--afh-border)",
+  color: "var(--afh-text)",
 };
 
 /**
@@ -86,7 +100,7 @@ export function AtlasFactsPanel({
             "z-10 flex flex-col gap-3 overflow-y-auto p-4",
             ANCHOR_POSITION[anchor]
           )}
-          style={{ ...NIGHT_PANEL_SURFACE, ...ANCHOR_SIZE[anchor] }}
+          style={{ ...PARCHMENT_PANEL_SURFACE, ...ANCHOR_SIZE[anchor] }}
           // Without a Description, Radix would still point aria-describedby at
           // an id that never renders; clearing it keeps the panel valid.
           {...(description ? {} : { "aria-describedby": undefined })}
@@ -102,7 +116,7 @@ export function AtlasFactsPanel({
               {description ? (
                 <DialogPrimitive.Description
                   className="text-sm"
-                  style={{ color: "var(--afh-night-ink-2)" }}
+                  style={{ color: "var(--afh-text-soft)" }}
                 >
                   {description}
                 </DialogPrimitive.Description>
@@ -111,12 +125,12 @@ export function AtlasFactsPanel({
             <DialogPrimitive.Close
               aria-label="Fermer"
               className="rounded-full p-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-              style={{ color: "var(--afh-night-ink-2)" }}
+              style={{ color: "var(--afh-text-soft)" }}
             >
               <X aria-hidden="true" className="h-4 w-4" />
             </DialogPrimitive.Close>
           </div>
-          <div className="text-sm" style={{ color: "var(--afh-night-ink-2)" }}>
+          <div className="text-sm" style={{ color: "var(--afh-text-soft)" }}>
             {children}
           </div>
         </DialogPrimitive.Content>
