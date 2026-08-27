@@ -38,6 +38,12 @@ export function SiteFooter({ language }: SiteFooterProps) {
           >
             {footer.about}
           </Link>
+          <Link
+            href="/docs/api/v2"
+            className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {footer.api}
+          </Link>
         </div>
 
         <nav

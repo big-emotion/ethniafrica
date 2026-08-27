@@ -132,14 +132,16 @@ describe("fiche · prefers-reduced-motion: reduce — nothing keeps moving", () 
     // Without this contrast the stability assertions above would also hold
     // for a fiche that simply never animates, and would stop proving that
     // the reduced-motion branch is what silenced it.
-    // On a country fiche, because the count-up lives in ScalePanel and a
-    // people fiche no longer composes one — its parchment carries the figure.
+    // On a family fiche: the count-up lives in ScalePanel, and neither the
+    // people nor the country fiche composes one any more — both are a globe
+    // and a parchment now, and the parchment carries the figure itself. The
+    // family is the last entity whose sequence still opens a scale chapter.
     stubMotionPreference(false);
     stubPendingFetch();
     vi.useFakeTimers();
 
     const { container } = render(
-      <FicheSequence context={COUNTRY_CONTEXT} record={RECORD} />
+      <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
     );
     const firstPaint = container.innerHTML;
 

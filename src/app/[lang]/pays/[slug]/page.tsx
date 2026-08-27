@@ -7,8 +7,10 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
-import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
+import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountryPicker } from "@/components/country/CountryPicker";
+import { buildCountryTargetFacts } from "@/components/country/countryTargetFacts";
 import { flagFromISO3 } from "@/lib/countryDataTransformer";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
@@ -197,36 +199,41 @@ export default async function PaysSlugPage({
   // identity, territory, fragmentation and voices panels belong to stories
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
   return (
-    <PageLayout language="fr" sectionName="Pays">
-      <div className="pb-8">
-        <FicheSequence
-          context={{ entityType: "country", payload: countryDetail }}
-          globe={
-            <>
-              <div className="mx-auto flex w-full max-w-4xl justify-end px-4">
-                <CountryPicker
-                  countries={pickerCountries}
-                  currentCountryId={countryDetail.id}
-                />
-              </div>
-              <AtlasGlobe
-                overlay={buildCountryOutlineOverlay(countryDetail.id)}
-                missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
+    <PageLayout language="fr" sectionName="Pays" flushTop>
+      <FicheSequence
+        context={{ entityType: "country", payload: countryDetail }}
+        recordPlacement="body"
+        globe={
+          // The band is the measure inside itself: the picker's own container
+          // would have parked it off-centre against a globe that now reaches
+          // both edges of the viewport.
+          <FicheHeroBand>
+            {/* afh-on-night rebinds the ink and surface tokens for this
+                subtree, so the picker reads on the band the same way the
+                home's hero reads on its own night. Sharing that rule is what
+                keeps the two from drifting into different nights. */}
+            <div className="afh-on-night flex w-full justify-end px-4 pt-4">
+              <CountryPicker
+                countries={pickerCountries}
+                currentCountryId={countryDetail.id}
               />
-            </>
-          }
-          record={
-            <CountryDetailViewV2
-              countryId={parsed.slug}
-              language="fr"
-              initialData={countryDetail}
-              initialSourceFlag={sourceFlags.length > 0}
-              fromPeopleName={navigationContext.fromPeopleName}
-              fromPeopleId={navigationContext.fromPeopleId}
+            </div>
+            <AtlasGlobe
+              overlay={buildCountryOutlineOverlay(countryDetail.id)}
+              facts={buildCountryTargetFacts(countryDetail)}
+              missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
             />
-          }
-        />
-      </div>
+          </FicheHeroBand>
+        }
+        record={
+          <CountryRecordView
+            country={countryDetail}
+            hasSourceFlag={sourceFlags.length > 0}
+            fromPeopleName={navigationContext.fromPeopleName}
+            fromPeopleId={navigationContext.fromPeopleId}
+          />
+        }
+      />
     </PageLayout>
   );
 }

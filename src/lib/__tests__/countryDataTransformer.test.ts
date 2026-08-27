@@ -551,6 +551,44 @@ describe("transformPeoples", () => {
 });
 
 describe("transformKingdoms", () => {
+  // The mockup's timeline gives each entity a line of what it was, and the
+  // transformer used to drop `historicalRole` on the floor: the corpus stated
+  // it and no surface could reach it.
+  // @req REQ-001
+  it("carries the historical role the corpus states", () => {
+    const result = transformKingdoms([
+      {
+        name: "Empire du Mali",
+        period: "1235–1670",
+        historicalRole: "Contrôle des routes de l'or transsahariennes.",
+      },
+    ]);
+
+    expect(result.cards[0].historicalRole).toBe(
+      "Contrôle des routes de l'or transsahariennes."
+    );
+  });
+
+  // `tags` keeps its truncated, parenthesis-stripped form for the card layout;
+  // `centers` is the same field unflattened, for the timeline that names them.
+  // @req REQ-001
+  it("keeps the political centres whole, alongside the card's tags", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume Mossi",
+        politicalCenters: ["Ouagadougou", "Tenkodogo", "Fada", "Boussouma"],
+      },
+    ]);
+
+    expect(result.cards[0].centers).toEqual([
+      "Ouagadougou",
+      "Tenkodogo",
+      "Fada",
+      "Boussouma",
+    ]);
+    expect(result.cards[0].tags).toHaveLength(3);
+  });
+
   it("filters out colonies", () => {
     const result = transformKingdoms(bfaCountry.kingdoms);
     expect(result.cards.every((c) => !/colonie/i.test(c.name))).toBe(true);

@@ -7,6 +7,7 @@ import {
   getPeopleLinksRoute,
   getLocalizedRoute,
   getPageFromRoute,
+  resolveCountryDeepLink,
 } from "@/lib/routing";
 
 describe("entity routes (ContextTriad, ETNI-818)", () => {
@@ -121,5 +122,52 @@ describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   // @req REQ-091 FR90
   it("does not mistake a bare /fr/regards route for the colonization page type", () => {
     expect(getPageFromRoute("/fr/regards")).toBeNull();
+  });
+});
+
+describe("country deep link (the retired ?country= directory form)", () => {
+  // @req REQ-091
+  it("sends a country query to that country's fiche", () => {
+    expect(resolveCountryDeepLink("fr", { country: "NGA" })).toBe(
+      "/fr/pays/NGA"
+    );
+  });
+
+  // @req REQ-091
+  it("leaves a directory with no country query alone", () => {
+    expect(resolveCountryDeepLink("fr", {})).toBeNull();
+    expect(resolveCountryDeepLink("fr", { country: "" })).toBeNull();
+  });
+
+  // @req REQ-091
+  it("ignores a repeated country query rather than picking one of them", () => {
+    expect(
+      resolveCountryDeepLink("fr", { country: ["NGA", "KEN"] })
+    ).toBeNull();
+  });
+
+  // @req REQ-091
+  it("does not answer for another entity's query", () => {
+    expect(resolveCountryDeepLink("fr", { people: "PPL_YORUBA" })).toBeNull();
+  });
+
+  // Two leading slashes make a browser read the rest as a host, so an
+  // unencoded identifier would turn this redirect into an open one. The
+  // encoding is the guard, and this is what keeps it.
+  // @req REQ-091
+  it("encodes the identifier, so a crafted query cannot leave the site", () => {
+    expect(resolveCountryDeepLink("fr", { country: "//evil.com" })).toBe(
+      "/fr/pays/%2F%2Fevil.com"
+    );
+  });
+
+  // An unknown identifier is not this function's business: the fiche route
+  // answers it with a 404, which is honest. Validating the shape here would
+  // swallow a typo into the directory listing instead.
+  // @req REQ-091
+  it("forwards an identifier it does not recognise", () => {
+    expect(resolveCountryDeepLink("fr", { country: "XYZ" })).toBe(
+      "/fr/pays/XYZ"
+    );
   });
 });

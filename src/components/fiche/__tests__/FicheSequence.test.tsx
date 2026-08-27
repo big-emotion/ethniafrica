@@ -315,12 +315,15 @@ describe("FicheSequence — gating by construction (FR98)", () => {
   it("emits no anchor for a kind the composer includes but no panel supports", () => {
     stubPanelRuntime();
     const { container } = render(
-      <FicheSequence context={COUNTRY_CONTEXT} record={RECORD} />
+      <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
     );
 
     // The composer lists identity as mandatory for every entity, yet no
-    // country identity panel exists — the anchor must be absent, not empty.
-    expect(derivePanelSequence("country", NIGERIA)).toContain("identity");
+    // language-family identity panel exists — the anchor must be absent, not
+    // empty.
+    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
+      "identity"
+    );
     expect(container.querySelector("#fiche-identity")).toBeNull();
     expect(container.querySelector("#fiche-territory")).toBeNull();
   });
@@ -350,12 +353,12 @@ describe("FicheSequence — gating by construction (FR98)", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence
-        context={{ entityType: "country", payload: NIGERIA }}
+        context={{ entityType: "language-family", payload: NIGER_CONGO }}
         record={null}
       />
     );
 
-    // No relations, no record view: scale is the one chapter this country
+    // No branches, no record view: scale is the one chapter this family
     // payload can actually fill.
     expect(renderedAnchors(container)).toEqual(["fiche-scale"]);
     expect(screen.getByText("02 · Échelle")).toBeInTheDocument();
@@ -364,15 +367,15 @@ describe("FicheSequence — gating by construction (FR98)", () => {
   // @req REQ-091
   it("emits no scale anchor when the figure has no source to stand on", () => {
     stubPanelRuntime();
-    // Same country, minus its source line. ScalePanel would render an empty
+    // Same family, minus its source line. ScalePanel would render an empty
     // shell here; the registry asks it first (hasScaleContent), so the chapter
     // and its journey anchor disappear together. An anchor scrolling to
     // nothing is the failure this guards against.
     const { container } = render(
       <FicheSequence
         context={{
-          entityType: "country",
-          payload: { ...NIGERIA, sources: undefined },
+          entityType: "language-family",
+          payload: { ...NIGER_CONGO, sources: undefined },
         }}
         record={null}
       />
@@ -380,5 +383,26 @@ describe("FicheSequence — gating by construction (FR98)", () => {
 
     expect(renderedAnchors(container)).toEqual([]);
     expect(screen.queryByText("02 · Échelle")).not.toBeInTheDocument();
+  });
+
+  // The country fiche is the first on the body placement: its dossier is the
+  // page, so the sequence emits the record section and no measure wrapper
+  // around it.
+  // @req REQ-091
+  it("puts a body-placed record outside the reading measure, ungated", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={COUNTRY_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    expect(renderedAnchors(container)).toEqual(["fiche-record"]);
+    expect(container.querySelectorAll("details")).toHaveLength(0);
+    expect(
+      container.querySelector("#fiche-record")?.closest(".max-w-4xl")
+    ).toBeNull();
   });
 });

@@ -1,4 +1,9 @@
 import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
+import { HeroModuleStage } from "@/components/home/HeroModuleStage";
+import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
+import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import type { HeroPreview } from "@/lib/home/heroPreviewData";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
@@ -18,9 +23,25 @@ import { PRODUCT_NAME } from "@/lib/brand";
  * and the archive starts is the page's one large gesture, and a gradient
  * would blur exactly the transition it exists to state.
  */
+export interface HomeHeroProps {
+  /**
+   * The module drawn for this request, and what its preview needs
+   * (REQ-115). Either being absent — nothing heroable is live, or the
+   * corpus could not fill the module — keeps the globe the band has always
+   * shown, unlabelled, because a provenance chip over a fallback would
+   * name a module the reader is not looking at.
+   */
+  heroModule?: HubModule | null;
+  heroPreview?: HeroPreview | null;
+}
+
 // @req REQ-044
 // @req REQ-115
-export function HomeHero() {
+export function HomeHero({
+  heroModule = null,
+  heroPreview = null,
+}: HomeHeroProps = {}) {
+  const labelled = heroModule && heroPreview;
   return (
     <section
       // Landmark label dropped during the light-parchment swap (ETNI-820,
@@ -36,11 +57,27 @@ export function HomeHero() {
         <p>L&apos;histoire africaine, racontée depuis son propre regard.</p>
       </header>
 
-      {/* The globe says what it is from its own readout (HomeGlobe), which
-          also tracks the morph — a second static caption beside it said
-          less and covered it. */}
-      <div className="home-globe-holder">
-        <HomeGlobeStage />
+      {/* The module says what it is from its own readout — the globe's
+          tracks the morph (HomeGlobe) — so the band adds only where the
+          module can be found again, never a second caption describing it.
+          The accent wrapper is the whole colour decision: the chip and the
+          stage below read --accent off the drawn module's axis without
+          either of them learning which axis that was. */}
+      <div
+        className={
+          labelled
+            ? `home-globe-holder ${ACCENT_BY_ACCESS_MODE[heroModule.accessMode]}`
+            : "home-globe-holder"
+        }
+      >
+        {labelled ? (
+          <>
+            <HeroProvenanceChip language="fr" module={heroModule} />
+            <HeroModuleStage preview={heroPreview} />
+          </>
+        ) : (
+          <HomeGlobeStage />
+        )}
       </div>
 
       <div className="home-hero-seam" aria-hidden="true" />

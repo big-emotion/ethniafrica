@@ -74,15 +74,14 @@ export const PANEL_TABLE: readonly PanelDefinition[] = [
  */
 const ENTITY_INVENTORY: Record<FicheEntityType, readonly PanelKind[]> = {
   people: ["record"],
-  country: [
-    "identity",
-    "scale",
-    "territory",
-    "fragmentation",
-    "links",
-    "voices",
-    "record",
-  ],
+  // A country has only its dossier. The Atlas mockup gives the country fiche
+  // one globe and one parchment, and every chapter the sequence used to add
+  // above it either restated the parchment or resolved to nothing: `scale`
+  // repeated the peoples count the parchment already prints, `links` had no
+  // country relation source to read (getEgoNetwork is people-centred), and
+  // identity, territory, fragmentation and voices are people-shaped panels the
+  // registry declines for a country. Nothing moved, because nothing rendered.
+  country: ["record"],
   "language-family": [
     "identity",
     "scale",
@@ -119,15 +118,16 @@ type GatingPredicate<T> = (payload: T) => boolean;
 const PEOPLE_GATES: Partial<Record<PanelKind, GatingPredicate<PeopleDetail>>> =
   {};
 
+/**
+ * A country's inventory holds only the mandatory record, which no gate can
+ * remove — so there is nothing left for a predicate to decide. The gates that
+ * stood here keyed on fields unrelated to what the panels actually read
+ * (`territory` on `historicalNames`, `links` on `historicalFacts`), and let a
+ * country pass the composer only to resolve to null downstream.
+ */
 const COUNTRY_GATES: Partial<
   Record<PanelKind, GatingPredicate<CountryDetail>>
-> = {
-  territory: (payload) =>
-    isPresent(payload.historicalNames) || isPresent(payload.kingdoms),
-  fragmentation: (payload) => isPresent(payload.majorPeoples),
-  links: (payload) => isPresent(payload.historicalFacts),
-  voices: (payload) => isPresent(payload.culture),
-};
+> = {};
 
 const LANGUAGE_FAMILY_GATES: Partial<
   Record<PanelKind, GatingPredicate<LanguageFamilyDetail>>

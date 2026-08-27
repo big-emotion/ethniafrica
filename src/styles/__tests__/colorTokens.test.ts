@@ -214,6 +214,79 @@ describe("fiche surface compatibility aliases (REQ-115)", () => {
   );
 });
 
+// The two labels flanking the home globe's projection slider sit on a pill
+// (`.home-globe-morph`) whose own background is
+// `color-mix(in srgb, var(--afh-bg-warm) 88%, transparent)` — at that
+// strength the pill reads as --afh-bg-warm itself, so that is what the
+// label is measured against. --afh-text-muted clears neither surface
+// (2.86:1 parchment, 4.56:1 night, both under the 4.5:1 AA floor);
+// --afh-fg-muted is the pair token AccessAxes already uses for the same
+// class of label and clears both with margin.
+describe("home globe morph label contrast (ETNI-1344)", () => {
+  const homeGlobe = readFileSync(
+    resolve(process.cwd(), "src/components/home/HomeGlobe.tsx"),
+    "utf8"
+  );
+
+  const nightStart = colorCss.indexOf(".dark,");
+  const dayScope = colorCss.slice(0, nightStart);
+  const nightScope = colorCss.slice(nightStart);
+
+  function bindingIn(scope: string, name: string): string | null {
+    const match = scope.match(
+      new RegExp(`${name}:\\s*(#[0-9a-f]{6}|var\\(--[a-z0-9-]+\\))`, "i")
+    );
+    return match ? match[1] : null;
+  }
+
+  function resolveInScope(name: string, night: boolean): string {
+    let current = name;
+    for (let hop = 0; hop < 8; hop += 1) {
+      const value =
+        (night ? bindingIn(nightScope, current) : null) ??
+        bindingIn(dayScope, current);
+      if (!value) throw new Error(`Unbound token ${current}`);
+      if (value.startsWith("#")) return value;
+      current = value.slice(4, -1);
+    }
+    throw new Error(`Token ${name} never resolves to a hex`);
+  }
+
+  function labelColorToken(): string {
+    const block = homeGlobe.match(/\.home-globe-morph label\s*\{([^}]*)\}/);
+    if (!block) throw new Error("Missing .home-globe-morph label rule");
+    const color = block[1].match(/color:\s*var\((--[a-z0-9-]+)\)/i);
+    if (!color) throw new Error("Missing colour on .home-globe-morph label");
+    return color[1];
+  }
+
+  // @req REQ-112
+  // @req REQ-115
+  it.each([
+    ["parchment", false],
+    ["night", true],
+  ] as const)(
+    "keeps the projection slider labels AA-readable on the %s pill",
+    (_surfaceName, night) => {
+      const token = labelColorToken();
+      const ratio = contrastRatio(
+        resolveInScope(token, night),
+        resolveInScope("--afh-bg-warm", night)
+      );
+
+      expect(
+        ratio,
+        `${token} measures ${ratio.toFixed(2)}:1 against --afh-bg-warm — below the 4.5:1 AA floor`
+      ).toBeGreaterThanOrEqual(4.5);
+    }
+  );
+
+  // @req REQ-112
+  it("never repoints the slider labels back to the token that fails AA", () => {
+    expect(labelColorToken()).not.toBe("--afh-text-muted");
+  });
+});
+
 describe("night theme (REQ-115)", () => {
   const ground = () => tokenHex("--afh-night-ground");
   const surface = () => tokenHex("--afh-night-surface-2");

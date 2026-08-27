@@ -88,10 +88,8 @@ describe("fichePanels — panel composition engine (FR98)", () => {
     });
 
     // @req REQ-091
-    it("keeps only identity(1), scale(2) and record(8) for a minimal country payload", () => {
+    it("keeps only the record for a minimal country payload", () => {
       expect(derivePanelSequence("country", MINIMAL_COUNTRY)).toEqual([
-        "identity",
-        "scale",
         "record",
       ]);
     });
@@ -114,23 +112,27 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       expect(derivePanelSequence("people", FULL_PEOPLE)).toEqual(["record"]);
     });
 
+    // However full the payload, a country fiche is one globe and one
+    // parchment: the parchment reads every section a chapter used to claim.
     // @req REQ-091
-    it("derives the 7-panel country inventory (no tongue) from a fully-populated payload", () => {
-      expect(derivePanelSequence("country", FULL_COUNTRY)).toEqual([
+    it("keeps the country inventory at the record however populated the payload", () => {
+      expect(derivePanelSequence("country", FULL_COUNTRY)).toEqual(["record"]);
+    });
+
+    // @req REQ-091
+    it("includes no chapter kind for country beyond the record", () => {
+      const sequence = derivePanelSequence("country", FULL_COUNTRY);
+      for (const kind of [
         "identity",
         "scale",
+        "tongue",
         "territory",
         "fragmentation",
         "links",
         "voices",
-        "record",
-      ]);
-    });
-
-    // @req REQ-091
-    it("never includes tongue for country even when every other section is populated", () => {
-      const sequence = derivePanelSequence("country", FULL_COUNTRY);
-      expect(sequence).not.toContain("tongue");
+      ] as const) {
+        expect(sequence).not.toContain(kind);
+      }
     });
 
     // @req REQ-091
@@ -169,18 +171,16 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       }
     });
 
+    // The country gates keyed on fields unrelated to what their panels read —
+    // `links` on historicalFacts, when no country relation source exists at
+    // all. With the inventory down to the record there is nothing to gate.
     // @req REQ-091
-    it("adds links only once historicalFacts is present (country)", () => {
+    it("adds no chapter for a country however its sections fill up", () => {
       const withFacts: CountryDetail = {
         ...MINIMAL_COUNTRY,
         historicalFacts: { ancientPeriods: "Facts" },
       };
-      expect(derivePanelSequence("country", withFacts)).toEqual([
-        "identity",
-        "scale",
-        "links",
-        "record",
-      ]);
+      expect(derivePanelSequence("country", withFacts)).toEqual(["record"]);
     });
 
     // @req REQ-091

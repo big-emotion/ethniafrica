@@ -1,14 +1,18 @@
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  ACCENT_CYCLE,
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
   MODULE_GROUPS,
+  accentForModule,
   getModulesForAccessMode,
+  getNavModules,
   isModuleEnabled,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 
 const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
@@ -56,7 +60,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("gives comprendre the modules a reader reaches by question", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual(["noms", "frise", "doctrine"]);
+    expect(ids).toEqual(["noms", "frise", "regards-colonisation", "doctrine"]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -171,7 +175,11 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     const staticModules = MODULE_DEFINITIONS.filter(
       (m) => m.availability === "static"
     );
-    expect(staticModules.map((m) => m.id)).toEqual(["recherche", "doctrine"]);
+    expect(staticModules.map((m) => m.id)).toEqual([
+      "recherche",
+      "regards-colonisation",
+      "doctrine",
+    ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
     }
@@ -237,6 +245,79 @@ describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
     const recherche = MODULE_DEFINITIONS.find((m) => m.id === "recherche");
     expect(isModuleEnabled(peuples)).toBe(true);
     expect(isModuleEnabled(recherche)).toBe(true);
+  });
+});
+
+describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", () => {
+  // The header is generated from the registry, so a destination absent from
+  // it is a destination the reader can no longer reach from the header.
+  // @req REQ-114
+  it("files the colonial gazes under Comprendre", () => {
+    const gazes = getModulesForAccessMode("comprendre").find(
+      (def) => def.page === "colonization"
+    );
+
+    expect(gazes).toBeDefined();
+    expect(getModuleHref(gazes, "fr")).toBe(
+      "/fr/regards/colonisation-et-resistances"
+    );
+  });
+});
+
+describe("moduleRegistry — the list the header may show (REQ-114)", () => {
+  // @req REQ-114
+  it("lists a flagged module only while its flag is lit", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "false";
+    expect(getNavModules("jouer").map((def) => def.id)).not.toContain("quiz");
+
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
+  });
+
+  // Dropping it would hide that the module is coming; listing it as a link
+  // would promise a route that answers notFound().
+  // @req REQ-106
+  it("keeps an unbuilt module listed so it can carry its Bientôt state", () => {
+    const unbuilt = MODULE_DEFINITIONS.filter(
+      (def) => def.availability === "unavailable"
+    );
+
+    for (const def of unbuilt) {
+      expect(getNavModules(def.accessMode)).toContainEqual(def);
+    }
+  });
+
+  // @req REQ-114
+  it("keeps the registry order so the accent cycle is stable across renders", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+
+    expect(getNavModules("explorer").map((def) => def.id)).toEqual(
+      getModulesForAccessMode("explorer").map((def) => def.id)
+    );
+  });
+});
+
+describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
+  // The mockup walks the four categorical accents across the whole registry
+  // rather than restarting at each axis, which is what makes Explorer read
+  // ocre · teal · terre · perv in docs/design/mockups/parts/nav-core.js.
+  // @req REQ-114
+  it("walks the four categorical accents in registry order", () => {
+    const explorer = getModulesForAccessMode("explorer").slice(0, 4);
+
+    expect(explorer.map(accentForModule)).toEqual([
+      "afh-accent-ocre",
+      "afh-accent-teal",
+      "afh-accent-terre",
+      "afh-accent-perv",
+    ]);
+  });
+
+  // @req REQ-114
+  it("gives every registered module one of the four categorical accents", () => {
+    for (const def of MODULE_DEFINITIONS) {
+      expect(ACCENT_CYCLE).toContain(accentForModule(def));
+    }
   });
 });
 

@@ -40,6 +40,10 @@ export const translations = {
       partnerLogoAlt: "BIG EMOTION",
       copyright: "EthniAfrica. Tous droits réservés.",
       about: "À propos",
+      // Left the header when it became three intentions rather than ten
+      // destinations: the public API is a developer's entry, not a reading
+      // one, so it belongs beside « À propos » and not on an axis.
+      api: "API",
       legalNavigationLabel: "Informations légales",
       legalNotice: "Mentions légales",
       dataPolicy: "Politique de données",
@@ -407,23 +411,39 @@ export const translations = {
       derivedLabel: "Valeur dérivée",
       derivedFromPrefix: "Dérivée de : ",
     },
+    // `blurb` opens the hub page — it says what the axis holds, to a reader
+    // who already chose it. `menuBlurb` opens the header panel — it says
+    // when to choose the axis at all, to a reader still deciding. Two jobs,
+    // so two sentences; both copied from docs/design/mockups, which is the
+    // reference when code and mockup disagree (docs/design/README.md).
     hubs: {
       explorer: {
         title: "Explorer",
         blurb:
           "Il arrive avec un nom, il repart avec une fiche : l'axe des objets du corpus — peuples, pays, langues, familles.",
+        menuBlurb:
+          "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus.",
       },
       comprendre: {
         title: "Comprendre",
         blurb:
           "Il arrive avec une question, il repart avec une explication : l'axe des relations — ce nom, cette origine, cette source.",
+        menuBlurb:
+          "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
       },
       jouer: {
         title: "Jouer",
         blurb:
           "Il arrive sans rien, il repart avec un résultat : l'axe de la boucle de retour — comparer, répondre, se mesurer.",
+        menuBlurb:
+          "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements.",
       },
       unavailableLabel: "Bientôt",
+      menuLabel: "Trois entrées",
+      // Stands where a module card would print its route. Saying the route
+      // is missing is information about the corpus; printing a plausible
+      // path that 404s would not be (charter §4).
+      unresolvedRouteLabel: "route non résolue",
     },
   },
 };

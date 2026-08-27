@@ -67,7 +67,13 @@ export function AccessModeHub({
             className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4 no-underline"
             style={{
               borderColor: "var(--accent)",
-              backgroundColor: "var(--accent-tint)",
+              // --accent-tint is the accent over parchment and no night
+              // scope rebinds it, so on night this row was a #f1d9ae card
+              // under cream ink — 1.12:1, measured on /fr/explorer. A wash
+              // takes the colour of whatever is behind it and so reads on
+              // both surfaces.
+              backgroundColor:
+                "color-mix(in srgb, var(--accent) 16%, var(--afh-surface))",
               color: "var(--afh-text)",
             }}
           >
