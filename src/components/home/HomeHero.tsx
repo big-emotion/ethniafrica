@@ -3,6 +3,7 @@ import { HeroModuleStage } from "@/components/home/HeroModuleStage";
 import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import type { HeroPreview } from "@/lib/home/heroPreviewData";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
@@ -24,17 +25,23 @@ import { PRODUCT_NAME } from "@/lib/brand";
  */
 export interface HomeHeroProps {
   /**
-   * The module drawn for this request (REQ-115). `null` — nothing heroable
-   * is live — keeps the globe the band has always shown, unlabelled,
-   * because a provenance chip over a fallback would name a module the
-   * reader is not looking at.
+   * The module drawn for this request, and what its preview needs
+   * (REQ-115). Either being absent — nothing heroable is live, or the
+   * corpus could not fill the module — keeps the globe the band has always
+   * shown, unlabelled, because a provenance chip over a fallback would
+   * name a module the reader is not looking at.
    */
   heroModule?: HubModule | null;
+  heroPreview?: HeroPreview | null;
 }
 
 // @req REQ-044
 // @req REQ-115
-export function HomeHero({ heroModule = null }: HomeHeroProps = {}) {
+export function HomeHero({
+  heroModule = null,
+  heroPreview = null,
+}: HomeHeroProps = {}) {
+  const labelled = heroModule && heroPreview;
   return (
     <section
       // Landmark label dropped during the light-parchment swap (ETNI-820,
@@ -58,15 +65,15 @@ export function HomeHero({ heroModule = null }: HomeHeroProps = {}) {
           either of them learning which axis that was. */}
       <div
         className={
-          heroModule
+          labelled
             ? `home-globe-holder ${ACCENT_BY_ACCESS_MODE[heroModule.accessMode]}`
             : "home-globe-holder"
         }
       >
-        {heroModule ? (
+        {labelled ? (
           <>
             <HeroProvenanceChip language="fr" module={heroModule} />
-            <HeroModuleStage moduleId={heroModule.id} />
+            <HeroModuleStage preview={heroPreview} />
           </>
         ) : (
           <HomeGlobeStage />

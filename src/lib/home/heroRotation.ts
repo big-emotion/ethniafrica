@@ -41,7 +41,7 @@ export function pickHeroModule(
 
   const eligible = ACCESS_MODES.flatMap(
     (mode) => modulesByAxis[mode] ?? []
-  ).filter((module) => module.heroable === true && module.available);
+  ).filter((module) => module.heroable !== undefined && module.available);
 
   if (eligible.length === 0) return null;
 

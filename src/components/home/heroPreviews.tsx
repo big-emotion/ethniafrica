@@ -13,6 +13,10 @@ import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
  * during render would mint a new component identity on every pass and
  * remount the island under the reader.
  *
+ * Only "standalone" modules appear here. A module filed as "game" is
+ * rendered by HeroModuleStage through GamePlayHost, which is already the
+ * boundary /fr/jouer/[jeu] uses — so eleven games need no entry at all.
+ *
  * mercator is HomeGlobeStage verbatim rather than a re-wrap: it already
  * runs its own ssr:false import and its own WebGL capability probe, and its
  * fallback and its island already share .home-globe-stage's heights. That
@@ -21,7 +25,7 @@ import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
  * the swap shifts the page under the reader.
  *
  * Keys are module ids from MODULE_DEFINITIONS. heroPreviews.test.tsx fails
- * the build if this map and the registry's heroable set ever disagree.
+ * the build if this map and the registry's standalone set ever disagree.
  */
 // @req REQ-115
 export const HERO_PREVIEWS: Record<string, ComponentType> = {

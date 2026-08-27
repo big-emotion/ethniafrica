@@ -31,7 +31,7 @@ describe("pickHeroModule", () => {
     const drawn = pickHeroModule(
       byAxis([
         hubModule({ id: "recherche" }),
-        hubModule({ id: "mercator", heroable: true }),
+        hubModule({ id: "mercator", heroable: "standalone" }),
       ]),
       { random: first }
     );
@@ -43,8 +43,8 @@ describe("pickHeroModule", () => {
   it("never draws a module the corpus cannot fill", () => {
     const drawn = pickHeroModule(
       byAxis([
-        hubModule({ id: "liens", heroable: true, available: false }),
-        hubModule({ id: "mercator", heroable: true }),
+        hubModule({ id: "liens", heroable: "standalone", available: false }),
+        hubModule({ id: "mercator", heroable: "standalone" }),
       ]),
       { random: first }
     );
@@ -55,9 +55,17 @@ describe("pickHeroModule", () => {
   // @req REQ-114
   it("reaches every eligible module, across all three axes", () => {
     const modules = byAxis([
-      hubModule({ id: "familles", accessMode: "explorer", heroable: true }),
-      hubModule({ id: "frise", accessMode: "comprendre", heroable: true }),
-      hubModule({ id: "mercator", heroable: true }),
+      hubModule({
+        id: "familles",
+        accessMode: "explorer",
+        heroable: "standalone",
+      }),
+      hubModule({
+        id: "frise",
+        accessMode: "comprendre",
+        heroable: "standalone",
+      }),
+      hubModule({ id: "mercator", heroable: "standalone" }),
     ]);
 
     expect(pickHeroModule(modules, { random: first })?.id).toBe("familles");
@@ -68,8 +76,8 @@ describe("pickHeroModule", () => {
   it("honours a pin, whatever the draw would have returned", () => {
     const drawn = pickHeroModule(
       byAxis([
-        hubModule({ id: "mercator", heroable: true }),
-        hubModule({ id: "liens", heroable: true }),
+        hubModule({ id: "mercator", heroable: "standalone" }),
+        hubModule({ id: "liens", heroable: "standalone" }),
       ]),
       { pin: "liens", random: first }
     );
@@ -80,7 +88,7 @@ describe("pickHeroModule", () => {
   // @req REQ-114
   it("falls back to the draw when a pin names no eligible module", () => {
     const drawn = pickHeroModule(
-      byAxis([hubModule({ id: "mercator", heroable: true })]),
+      byAxis([hubModule({ id: "mercator", heroable: "standalone" })]),
       { pin: "does-not-exist", random: first }
     );
 

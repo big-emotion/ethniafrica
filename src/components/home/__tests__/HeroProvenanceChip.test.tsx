@@ -11,7 +11,7 @@ const hubModule = (overrides: Partial<HubModule> = {}): HubModule => ({
   gameSlug: "mercator",
   availability: "data",
   available: true,
-  heroable: true,
+  heroable: "standalone",
   ...overrides,
 });
 

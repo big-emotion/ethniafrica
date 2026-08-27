@@ -5,6 +5,7 @@ import { AccessAxes } from "@/components/home/AccessAxes";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { pickHeroModule } from "@/lib/home/heroRotation";
+import { loadHeroPreview } from "@/lib/home/heroPreviewData";
 import { getHubModules, type HubModule } from "@/lib/hubs/moduleAvailability";
 import { ACCESS_MODES, type AccessMode } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
@@ -70,10 +71,14 @@ export default async function Home({ searchParams }: HomeProps) {
   // the first rather than throwing — a hand-edited URL should not 500.
   const pin = Array.isArray(hero) ? hero[0] : hero;
   const heroModule = pickHeroModule(modulesByAxis, { pin });
+  // Only the drawn module is resolved, never the whole lot: the slot shows
+  // one module, so loading the other eighteen would be eighteen wasted
+  // round trips per request.
+  const heroPreview = heroModule ? await loadHeroPreview(heroModule) : null;
 
   return (
     <PageLayout language="fr" hideHeader flushTop>
-      <HomeHero heroModule={heroModule} />
+      <HomeHero heroModule={heroModule} heroPreview={heroPreview} />
       <section className="home-axes-section">
         <AccessAxes
           language="fr"

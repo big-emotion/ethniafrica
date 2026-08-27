@@ -192,9 +192,13 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     expect(metadata.openGraph?.url).toBe("/fr");
   });
 
+  // Pinned rather than left to the draw: the lot holds every game, and a
+  // game's preview needs rounds from the corpus these tests deliberately do
+  // not reach. mercator is the one standalone module, so it is also the one
+  // the band can show with no database behind it.
   // @req REQ-115
   it("says which axis and which module the band is currently showing", async () => {
-    render(await Home({ searchParams: Promise.resolve({}) }));
+    render(await Home({ searchParams: Promise.resolve({ hero: "mercator" }) }));
 
     const chip = screen.getByTestId("hero-provenance");
     expect(chip).toHaveTextContent("Jouer");
@@ -207,7 +211,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // @req REQ-115
   it("scopes the band to the drawn module's axis accent", async () => {
     const { container } = render(
-      await Home({ searchParams: Promise.resolve({}) })
+      await Home({ searchParams: Promise.resolve({ hero: "mercator" }) })
     );
 
     expect(container.querySelector(".home-globe-holder")).toHaveClass(

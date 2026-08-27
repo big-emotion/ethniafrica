@@ -74,16 +74,26 @@ export interface HubModuleDefinition {
   gameSlug?: string;
   featureFlag?: ModuleFeatureFlag;
   /**
-   * Whether this module can occupy the home's hero slot (REQ-115). It is a
-   * flag and not a component on purpose: this file is imported by server
-   * code — moduleAvailability's probe, and the home page itself — while a
-   * hero preview is a `dynamic(..., { ssr: false })` island, which Next
-   * only permits inside a Client Component. The components live in
-   * components/home/heroPreviews.tsx keyed by this same id, and a parity
-   * test fails the build if the two sets ever drift apart.
+   * How this module fills the home's hero slot, or absent if it cannot
+   * (REQ-115).
+   *
+   * - "standalone": the preview needs nothing from the corpus. Keyed by id
+   *   in components/home/heroPreviews.tsx.
+   * - "game": the preview is the play loop itself, so the slot builds its
+   *   rounds server-side exactly as /fr/jouer/[jeu] does. One code path
+   *   covers every game; no per-game entry is needed anywhere.
+   *
+   * It describes a path and never holds a component, because this file is
+   * imported by server code — moduleAvailability's probe, and the home page
+   * itself — while a preview is a `dynamic(..., { ssr: false })` island,
+   * which Next permits only inside a Client Component. heroPreviews.test.tsx
+   * fails the build if a declaration here has nothing to render.
    */
-  heroable?: true;
+  heroable?: HeroPreviewKind;
 }
+
+// @req REQ-115
+export type HeroPreviewKind = "standalone" | "game";
 
 // The flag decides whether the module exists at all, never the corpus: a
 // module switched off is not "coming soon", it is not there.
@@ -184,6 +194,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "appellations",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "plus-ou-moins",
@@ -193,6 +204,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "plus-ou-moins",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "mercator",
@@ -202,7 +214,11 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "mercator",
     availability: "data",
     dataSource: "afrik_countries",
-    heroable: true,
+    // The one game whose hero preview is not its play loop. The home globe
+    // *is* this game's lesson stated without a question — "chaque pastille
+    // retrouve sa surface réelle" — and it is the band the home has always
+    // opened on. The chip still sends a reader to the game itself.
+    heroable: "standalone",
   },
   {
     id: "doctrine",
@@ -219,6 +235,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "vraie-taille",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "repartition",
@@ -228,6 +245,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "repartition",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "pays-davant",
@@ -237,6 +255,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "pays-davant",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "royaumes",
@@ -246,6 +265,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "royaumes",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "migrations",
@@ -255,6 +275,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "migrations",
     availability: "data",
     dataSource: "migration_events",
+    heroable: "game",
   },
   {
     id: "liens",
@@ -264,6 +285,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "liens",
     availability: "data",
     dataSource: "afrik_people_relations",
+    heroable: "game",
   },
   {
     // Prefixed because the Explorer atlas already holds the id "familles":
@@ -277,6 +299,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "familles",
     availability: "data",
     dataSource: "afrik_language_families",
+    heroable: "game",
   },
   {
     id: "frontieres",
@@ -286,6 +309,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "frontieres",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
 ];
 
