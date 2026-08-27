@@ -486,14 +486,70 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
 
   // A pending axis is still worth opening: that is where the reader sees
   // what is coming, which is what the hub used to be for.
+  //
+  // The pending module is declared here rather than borrowed from the
+  // registry. This test used to point at `liens`, which only read as
+  // pending because the panel resolved hrefs from `page` alone and every
+  // game carries `page: null` — it was asserting the bug.
   // @req REQ-106
-  it("opens a pending axis too, onto its Bientôt modules", async () => {
-    renderAxes();
+  it("opens an axis onto the modules that really are still to come", async () => {
+    renderAxes({
+      modulesByAxis: {
+        ...modulesByAxis,
+        jouer: [
+          {
+            id: "annonce",
+            name: "Un module annoncé avant sa route",
+            accessMode: "jouer",
+            page: null,
+            availability: "unavailable",
+            available: false,
+          },
+        ],
+      },
+    });
 
     await userEvent.click(screen.getByTestId("access-axis-jouer"));
 
     expect(
-      screen.getByTestId("axis-module-unavailable-liens")
+      screen.getByTestId("axis-module-unavailable-annonce")
     ).toHaveTextContent("Bientôt");
+  });
+});
+
+describe("AccessAxes — Escape across the two levels Jouer now has (REQ-120)", () => {
+  // The panel intercepts Escape while a shelf is open and this listener
+  // takes it once there is nothing left to step back to. Neither half is
+  // worth much alone: the contract is that one wrong turn costs the reader
+  // a level, and only a second Escape costs them the panel.
+  // @req REQ-120
+  it("gives back the shelves first, and the panel only on a second press", async () => {
+    renderAxes();
+    const jouer = screen.getByTestId("access-axis-jouer");
+
+    await userEvent.click(jouer);
+    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-peuples"));
+    expect(
+      screen.getByTestId("axis-module-link-appellations")
+    ).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-shelf-jeux-peuples")).toBeInTheDocument();
+
+    await userEvent.keyboard("{Escape}");
+    expect(screen.queryByTestId("axis-panel-jouer")).not.toBeInTheDocument();
+    expect(jouer).toHaveFocus();
+  });
+
+  // Explorer carries no shelf, so nothing changed for it: one Escape.
+  // @req REQ-120
+  it("still closes an unfiled axis on the first press", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.keyboard("{Escape}");
+
+    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
   });
 });
