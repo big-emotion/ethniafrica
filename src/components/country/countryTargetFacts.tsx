@@ -144,6 +144,21 @@ export interface CountryAtlasFactsInput {
  * declared name — "Republique algerienne democratique et populaire (...)" —
  * and the two must not disagree inside one control.
  */
+/**
+ * Where the country is, in the panel's own subtitle.
+ *
+ * The mockup states the centroid; what shipped stated the doctrine instead
+ * ("frontiere publiee, tracee a l'apparition"), which explains why the line may
+ * close rather than which country closed it. The charter is where the doctrine
+ * belongs; a panel that has just flown the camera somewhere should say where.
+ */
+function placeOf(target: AtlasTarget): string {
+  const { lat, lon } = target.center;
+  const northSouth = `${Math.abs(lat).toFixed(1)}\u00b0 ${lat >= 0 ? "N" : "S"}`;
+  const eastWest = `${Math.abs(lon).toFixed(1)}\u00b0 ${lon >= 0 ? "E" : "O"}`;
+  return `${target.countryId} \u00b7 ${northSouth} \u00b7 ${eastWest}`;
+}
+
 // @req REQ-117
 export function buildCountryAtlasFacts({
   country,
@@ -161,6 +176,7 @@ export function buildCountryAtlasFacts({
           {
             ...ownFacts,
             title: target.nameFr,
+            description: placeOf(target),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
                 {ownFacts?.body}

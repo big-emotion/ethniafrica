@@ -41,7 +41,10 @@ const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
  */
 const ANCHOR_POSITION: Record<PanelAnchor, string> = {
   bottom: "absolute inset-x-0 bottom-0 rounded-t-afh-lg border-t",
-  side: "absolute right-[22px] top-[22px] bottom-[22px] rounded-afh-lg border",
+  // Capped, not stretched. Pinning both edges gave a card the height of the
+  // whole band with its content in the first third, which read as a panel that
+  // had failed to load rather than one that had finished.
+  side: "absolute right-[22px] top-[22px] max-h-[calc(100%-44px)] rounded-afh-lg border",
 };
 
 /**

@@ -9,7 +9,6 @@ import {
 } from "@/lib/routing";
 import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
-import { PaysPageContentV2 } from "@/components/pages/PaysPageContentV2";
 import { SearchPageContent } from "@/components/pages/SearchPageContent";
 import { Language } from "@/types/shared";
 
@@ -36,6 +35,7 @@ function LegacyRedirect({
   );
 }
 
+// @req REQ-091
 export function SectionPageClient() {
   const params = useParams();
   const lang = params?.lang as string;
@@ -71,8 +71,12 @@ export function SectionPageClient() {
     return <LegacyRedirect to="peoples" language={language} />;
   }
 
+  // `/fr/pays` is a static route of its own now, and it is the countries' one
+  // surface. This branch only ever catches the English spelling, and it sends
+  // it there rather than rendering a second country page at a second URL —
+  // which is the arrangement the hub was built to end.
   if (section === "countries" || section === "pays") {
-    return <PaysPageContentV2 />;
+    return <LegacyRedirect to="countries" language={language} />;
   }
 
   if (section === "families" || section === "familles") {

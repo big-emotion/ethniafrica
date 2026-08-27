@@ -137,3 +137,26 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
     ).toBeInTheDocument();
   });
 });
+
+/**
+ * The mockup's panel names where the country is. What shipped named the
+ * doctrine instead — "frontiere publiee, tracee a l'apparition" — which says
+ * why the line may close, not which country closed it. The charter already
+ * carries the doctrine; the panel carries the place.
+ */
+describe("what the panel's subtitle states", () => {
+  const targets = buildCountryPickerTargets(["NGA"]);
+
+  // @req REQ-117
+  it("locates the fiche's own country rather than restating the charter", () => {
+    const facts = buildCountryAtlasFacts({
+      country: countryWith([{ name: "Yoruba" }]),
+      targets,
+      peopleCounts: { NGA: 3 },
+    });
+
+    expect(facts.NGA?.description).toMatch(
+      /^NGA · \d+[.,]\d° [NS] · \d+[.,]\d° [EO]$/
+    );
+  });
+});
