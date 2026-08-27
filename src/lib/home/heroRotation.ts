@@ -1,5 +1,30 @@
-import { ACCESS_MODES, type AccessMode } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODES,
+  type AccessMode,
+  type HeroPreviewKind,
+} from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+
+/**
+ * The preview kinds the band is allowed to open on (REQ-115).
+ *
+ * The hero states a claim; it does not ask for a turn. A play loop in the
+ * band spends the reader's first gesture on a round of a game they never
+ * chose — and when its island fails to hydrate, the whole surface becomes a
+ * dead affordance: four answer buttons that answer nothing, which is what
+ * shipped. Ten of the thirteen heroable modules are games, so a uniform
+ * draw over `heroable` opened on one better than three times in four.
+ *
+ * What is left is the set that reads without being touched: a mark that
+ * states its claim by standing there. Games keep their route and their
+ * shelf under Jouer, which is the axis for a reader who wants a turn.
+ */
+// @req REQ-115
+export const HERO_SLOT_KINDS: HeroPreviewKind[] = [
+  "globe",
+  "family-crown",
+  "migration-paths",
+];
 
 export interface HeroDrawOptions {
   /**
@@ -7,7 +32,8 @@ export interface HeroDrawOptions {
    * deterministic, deep-linking a variant, and making design review
    * reproducible. A pin naming nothing eligible falls back to the draw
    * rather than blanking the band — a mistyped URL must not cost a reader
-   * the hero.
+   * the hero, and neither must a hand-edited one smuggle a game past
+   * HERO_SLOT_KINDS.
    */
   pin?: string;
   /** Injected for tests, as africaDots(step, random = Math.random) does. */
@@ -42,7 +68,12 @@ export function pickHeroModule(
 
   const eligible = ACCESS_MODES.flatMap(
     (mode) => modulesByAxis[mode] ?? []
-  ).filter((module) => module.heroable !== undefined && module.available);
+  ).filter(
+    (module) =>
+      module.heroable !== undefined &&
+      HERO_SLOT_KINDS.includes(module.heroable) &&
+      module.available
+  );
 
   if (eligible.length === 0) return null;
 
