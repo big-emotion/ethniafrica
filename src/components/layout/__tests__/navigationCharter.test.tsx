@@ -8,8 +8,8 @@ import {
   ACCESS_MODES,
   MODULE_DEFINITIONS,
   getNavModules,
-  resolveModuleHref,
 } from "@/lib/hubs/moduleRegistry";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { FICHE_BAND_BREAKPOINT_PX } from "@/components/fiche/FicheHeroBand";
 
 /**
@@ -69,7 +69,7 @@ describe("atlas charter §3 — the menu is generated, never hand-listed", () =>
   it("writes no module route into the component", () => {
     const text = source();
     const transcribed = MODULE_DEFINITIONS.map((def) =>
-      resolveModuleHref("fr", def)
+      getModuleHref(def, "fr")
     ).filter((href): href is string => href !== null && text.includes(href));
 
     expect(transcribed).toEqual([]);
@@ -82,7 +82,7 @@ describe("atlas charter §3 — the menu is generated, never hand-listed", () =>
     const text = source();
 
     expect(text).toContain("getNavModules");
-    expect(text).toContain("resolveModuleHref");
+    expect(text).toContain("getModuleHref");
     expect(text).toContain("ACCESS_MODES");
     expect(text).toContain("getTranslation");
   });
@@ -111,7 +111,7 @@ describe("atlas charter §3 — the menu never offers an unresolved route", () =
   it("resolves a route for every module it may list, or calls it unbuilt", () => {
     for (const mode of ACCESS_MODES) {
       for (const def of getNavModules(mode)) {
-        if (resolveModuleHref("fr", def) === null) {
+        if (getModuleHref(def, "fr") === null) {
           expect(def.availability).toBe("unavailable");
         }
       }

@@ -5,13 +5,14 @@ import {
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
+  MODULE_GROUPS,
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
   isModuleEnabled,
-  resolveModuleHref,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 
 const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
@@ -247,52 +248,6 @@ describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
   });
 });
 
-describe("moduleRegistry — route resolution shared by the nav and the hubs", () => {
-  // @req REQ-114
-  it("addresses a game by its slug under the Jouer hub", () => {
-    const game = MODULE_DEFINITIONS.find((def) => def.gameSlug === "mercator");
-
-    expect(resolveModuleHref("fr", game)).toBe("/fr/jouer/mercator");
-  });
-
-  // @req REQ-114
-  it("addresses a module carrying a page by its localized route", () => {
-    const peoples = MODULE_DEFINITIONS.find((def) => def.id === "peuples");
-
-    expect(resolveModuleHref("fr", peoples)).toBe("/fr/peuples");
-  });
-
-  // The slug wins over the page so a module that ever carried both cannot
-  // resolve to the entity atlas when the reader asked for the game.
-  // @req REQ-114
-  it("prefers the game slug over a page when a module carries both", () => {
-    const href = resolveModuleHref("fr", {
-      page: "countries",
-      gameSlug: "vraie-taille",
-    });
-
-    expect(href).toBe("/fr/jouer/vraie-taille");
-  });
-
-  // @req REQ-106
-  it("resolves no route for a module that has neither a page nor a slug", () => {
-    const href = resolveModuleHref("fr", { page: null });
-
-    expect(href).toBeNull();
-  });
-
-  // The menu never offers a route that does not resolve (charter §3), so an
-  // unresolvable module has to be one the registry already calls unbuilt.
-  // @req REQ-114
-  it("gives every registered module a resolvable route or an unavailable state", () => {
-    for (const def of MODULE_DEFINITIONS) {
-      if (resolveModuleHref("fr", def) === null) {
-        expect(def.availability).toBe("unavailable");
-      }
-    }
-  });
-});
-
 describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", () => {
   // The header is generated from the registry, so a destination absent from
   // it is a destination the reader can no longer reach from the header.
@@ -303,7 +258,7 @@ describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", 
     );
 
     expect(gazes).toBeDefined();
-    expect(resolveModuleHref("fr", gazes)).toBe(
+    expect(getModuleHref(gazes, "fr")).toBe(
       "/fr/regards/colonisation-et-resistances"
     );
   });
@@ -363,5 +318,34 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
     for (const def of MODULE_DEFINITIONS) {
       expect(ACCENT_CYCLE).toContain(accentForModule(def));
     }
+  });
+});
+
+describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => {
+  // @req REQ-120
+  it("gives every game a shelf, so none can fall off the surface", () => {
+    for (const def of getModulesForAccessMode("jouer")) {
+      expect(def.group).toBeTruthy();
+      expect(MODULE_GROUPS[def.group]).toBeTruthy();
+    }
+  });
+
+  // Grouping is a jouer concern: the other two axes hold few enough
+  // modules to read at once, and filing them would add a level for nothing.
+  // @req REQ-120
+  it("leaves explorer and comprendre unfiled", () => {
+    for (const mode of ["explorer", "comprendre"] as const) {
+      for (const def of getModulesForAccessMode(mode)) {
+        expect(def.group).toBeUndefined();
+      }
+    }
+  });
+
+  // The quiz questions the reader rather than the corpus, so it belongs on
+  // no entity's shelf — and it is the one jouer module addressed by page.
+  // @req REQ-120
+  it("keeps the quiz on a shelf of its own", () => {
+    const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
+    expect(quiz?.group).toBe("jeux-quiz");
   });
 });

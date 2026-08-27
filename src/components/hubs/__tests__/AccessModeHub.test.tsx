@@ -57,6 +57,7 @@ const jouerModules: HubModule[] = [
     page: "quiz",
     availability: "flagged",
     featureFlag: "quiz",
+    group: "jeux-quiz",
     available: true,
   },
   {
@@ -67,6 +68,7 @@ const jouerModules: HubModule[] = [
     gameSlug: "vraie-taille",
     availability: "data",
     dataSource: "afrik_countries",
+    group: "jeux-pays",
     available: true,
   },
   {
@@ -77,6 +79,7 @@ const jouerModules: HubModule[] = [
     gameSlug: "liens",
     availability: "data",
     dataSource: "afrik_people_relations",
+    group: "jeux-liens",
     available: false,
   },
 ];
@@ -298,5 +301,73 @@ describe("AccessModeHub — axis scene (REQ-114)", () => {
 
     expect(source).not.toContain("var(--accent-tint)");
     expect(source).toContain("color-mix(in srgb, var(--accent) 16%");
+  });
+});
+
+describe("hub shelves — the level between an axis and eleven games (REQ-120)", () => {
+  // @req REQ-120
+  it("files the jouer modules under a heading each, in registry order", () => {
+    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
+
+    const shelves = screen.getAllByTestId(/^hub-shelf-/);
+    expect(shelves.map((shelf) => shelf.dataset.testid)).toEqual([
+      "hub-shelf-jeux-pays",
+      "hub-shelf-jeux-liens",
+      "hub-shelf-jeux-quiz",
+    ]);
+    expect(
+      screen.getByRole("heading", { level: 2, name: "Les pays" })
+    ).toBeInTheDocument();
+  });
+
+  // The hub is the path without JavaScript and the one a crawler walks.
+  // Grouping nests the modules; it must never drop one.
+  // @req REQ-120
+  it("still lists every module, each on its own shelf", () => {
+    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
+
+    for (const game of jouerModules) {
+      const row = screen.getByTestId(`hub-module-${game.id}`);
+      expect(
+        within(screen.getByTestId(`hub-shelf-${game.group}`)).getByTestId(
+          `hub-module-${game.id}`
+        )
+      ).toBe(row);
+    }
+    expect(screen.getByTestId("hub-module-link-comparer")).toHaveAttribute(
+      "href",
+      "/fr/jouer/vraie-taille"
+    );
+    expect(
+      screen.getByTestId("hub-module-unavailable-liens")
+    ).toBeInTheDocument();
+  });
+
+  // Explorer holds four modules and Comprendre three: few enough to read
+  // at once, so neither is filed and both keep the flat list.
+  // @req REQ-120
+  it("leaves an unfiled axis on one flat list", () => {
+    render(
+      <AccessModeHub language="fr" mode="explorer" modules={explorerModules} />
+    );
+
+    expect(screen.queryAllByTestId(/^hub-shelf-/)).toHaveLength(0);
+    expect(
+      screen.getAllByTestId(/^hub-module-(?!link|unavailable)/)
+    ).toHaveLength(explorerModules.length);
+  });
+
+  // A shelf names itself for the reader; the section takes that heading as
+  // its accessible name so the structure is navigable, not just visible.
+  // @req REQ-120
+  it("names each shelf's region after its own heading", () => {
+    render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
+
+    const shelf = screen.getByTestId("hub-shelf-jeux-pays");
+    expect(shelf.tagName).toBe("SECTION");
+    expect(shelf).toHaveAttribute(
+      "aria-labelledby",
+      shelf.querySelector("h2")?.id
+    );
   });
 });

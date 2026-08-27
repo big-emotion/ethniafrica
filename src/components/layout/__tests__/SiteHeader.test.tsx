@@ -12,7 +12,8 @@ import { ThemeProvider } from "next-themes";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
-import { getNavModules, resolveModuleHref } from "@/lib/hubs/moduleRegistry";
+import { getNavModules } from "@/lib/hubs/moduleRegistry";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 
 let mockPathname = "/fr";
 
@@ -97,7 +98,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
     expect(panel()).toHaveTextContent(t.hubs.explorer.menuBlurb);
 
     for (const navModule of getNavModules("explorer")) {
-      const href = resolveModuleHref("fr", navModule);
+      const href = getModuleHref(navModule, "fr");
       expect(
         screen.getByRole("link", { name: navModule.name })
       ).toHaveAttribute("href", href);
@@ -232,7 +233,7 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
     fireEvent.click(trigger("Jouer"));
 
     const unbuilt = getNavModules("jouer").filter(
-      (navModule) => resolveModuleHref("fr", navModule) === null
+      (navModule) => getModuleHref(navModule, "fr") === null
     );
 
     for (const navModule of unbuilt) {

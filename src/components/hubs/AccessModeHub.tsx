@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getGroupedModules } from "@/lib/hubs/moduleGroups";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import {
   ACCENT_BY_ACCESS_MODE,
-  resolveModuleHref,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -33,6 +34,12 @@ export interface AccessModeHubProps {
  * Explorer from Comprendre. Letting each route pass its own scene while
  * the rows stay here keeps the unavailable contract and the accessibility
  * work in exactly one place.
+ *
+ * An axis whose modules carry a shelf renders one titled section per shelf
+ * — Jouer holds eleven games, which is a wall rather than a list. Nothing
+ * is nested away: the hub is the path without JavaScript and the one a
+ * crawler walks, so every module keeps its own row, under a heading.
+ * Explorer and Comprendre carry no shelf and stay flat.
  */
 // @req REQ-114 @req REQ-106
 export function AccessModeHub({
@@ -44,6 +51,58 @@ export function AccessModeHub({
   const t = getTranslation(language);
   const hubStrings = t.hubs[mode];
   const accentClass = ACCENT_BY_ACCESS_MODE[mode];
+  const shelves = getGroupedModules(modules);
+
+  // One row, wherever it is rendered: a shelf's list and the flat list must
+  // agree on the link and the unavailable contract, so neither can drift.
+  const renderModuleRow = (module: HubModule) => {
+    const href = getModuleHref(module, language);
+
+    return (
+      <li key={module.id} data-testid={`hub-module-${module.id}`}>
+        {module.available && href ? (
+          <Link
+            href={href}
+            data-testid={`hub-module-link-${module.id}`}
+            className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4 no-underline"
+            style={{
+              borderColor: "var(--accent)",
+              // --accent-tint is the accent over parchment and no night
+              // scope rebinds it, so on night this row was a #f1d9ae card
+              // under cream ink — 1.12:1, measured on /fr/explorer. A wash
+              // takes the colour of whatever is behind it and so reads on
+              // both surfaces.
+              backgroundColor:
+                "color-mix(in srgb, var(--accent) 16%, var(--afh-surface))",
+              color: "var(--afh-text)",
+            }}
+          >
+            {module.name}
+          </Link>
+        ) : (
+          <div
+            data-testid={`hub-module-unavailable-${module.id}`}
+            className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4"
+            style={{
+              borderColor: "var(--afh-text-soft)",
+              color: "var(--afh-text-soft)",
+            }}
+          >
+            <span>{module.name}</span>
+            <span
+              className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-medium"
+              style={{
+                backgroundColor: "var(--afh-surface)",
+                color: "var(--afh-text-soft)",
+              }}
+            >
+              {t.hubs.unavailableLabel}
+            </span>
+          </div>
+        )}
+      </li>
+    );
+  };
 
   return (
     <section
@@ -76,60 +135,33 @@ export function AccessModeHub({
             "min-[800px]:grid min-[800px]:grid-cols-[22rem_minmax(0,1fr)] min-[800px]:items-start min-[800px]:gap-8"
         )}
       >
-        <ul className="flex flex-col gap-3" role="list">
-          {modules.map((module) => {
-            // Resolved by the registry, not here: the header renders the
-            // same modules and the two must not be able to disagree about
-            // where one of them goes.
-            const href = resolveModuleHref(language, module);
-
-            return (
-              <li key={module.id} data-testid={`hub-module-${module.id}`}>
-                {module.available && href ? (
-                  <Link
-                    href={href}
-                    data-testid={`hub-module-link-${module.id}`}
-                    className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4 no-underline"
-                    style={{
-                      borderColor: "var(--accent)",
-                      // --accent-tint is the accent over parchment and no
-                      // night scope rebinds it, so on night this row was a
-                      // #f1d9ae card under cream ink — 1.12:1, measured on
-                      // /fr/explorer. A wash takes the colour of whatever is
-                      // behind it and so reads on both surfaces.
-                      backgroundColor:
-                        "color-mix(in srgb, var(--accent) 16%, var(--afh-surface))",
-                      color: "var(--afh-text)",
-                    }}
-                  >
-                    {module.name}
-                  </Link>
-                ) : (
-                  <div
-                    data-testid={`hub-module-unavailable-${module.id}`}
-                    className="flex min-h-[44px] w-full items-center gap-3 rounded-[14px] border p-4"
-                    style={{
-                      borderColor: "var(--afh-text-soft)",
-                      color: "var(--afh-text-soft)",
-                    }}
-                  >
-                    <span>{module.name}</span>
-                    <span
-                      className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-medium"
-                      style={{
-                        backgroundColor: "var(--afh-surface)",
-                        color: "var(--afh-text-soft)",
-                      }}
-                    >
-                      {t.hubs.unavailableLabel}
-                    </span>
-                  </div>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-
+        <div className="flex flex-col gap-3">
+          {shelves.length > 0 ? (
+            shelves.map((shelf) => (
+              <section
+                key={shelf.group.id}
+                data-testid={`hub-shelf-${shelf.group.id}`}
+                aria-labelledby={`hub-shelf-${shelf.group.id}-title`}
+                className="flex flex-col gap-3"
+              >
+                <h2
+                  id={`hub-shelf-${shelf.group.id}-title`}
+                  className="mt-2 text-sm font-semibold uppercase tracking-wide"
+                  style={{ color: "var(--afh-fg-muted)" }}
+                >
+                  {shelf.group.label}
+                </h2>
+                <ul className="flex flex-col gap-3" role="list">
+                  {shelf.modules.map(renderModuleRow)}
+                </ul>
+              </section>
+            ))
+          ) : (
+            <ul className="flex flex-col gap-3" role="list">
+              {modules.map(renderModuleRow)}
+            </ul>
+          )}
+        </div>
         {children ? (
           <div
             data-testid={`access-mode-hub-${mode}-scene`}

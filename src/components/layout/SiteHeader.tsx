@@ -40,10 +40,10 @@ import {
   ACCESS_MODES,
   accentForModule,
   getNavModules,
-  resolveModuleHref,
   type AccessMode,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import type { Language } from "@/types/shared";
 
 /**
@@ -158,7 +158,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
   }, []);
 
   const moduleEntry = (definition: HubModuleDefinition) => {
-    const href = resolveModuleHref(language, definition);
+    const href = getModuleHref(definition, language);
     const Glyph = MODULE_GLYPHS[definition.id] ?? Circle;
     const testId = `site-nav-module-${definition.id}`;
 
