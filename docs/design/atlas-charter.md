@@ -44,7 +44,7 @@ was rendered under.
 
 | Surface      | People | Country | Family   | Source of truth                        |
 | ------------ | ------ | ------- | -------- | -------------------------------------- |
-| Home modules | ocre   | teal    | terre    | `src/lib/accessModeHubs.ts`            |
+| Home modules | ocre   | teal    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
 | Directory    | terre  | ocre    | teal     | `DirectoryHero.DIRECTORY_ACCENT_CLASS` |
 | **Fiche**    | ocre   | teal    | **perv** | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
 
@@ -65,14 +65,30 @@ know what you are looking for, _Comprendre_ when you want to know where what
 you are reading comes from, _Jouer_ when you want the corpus to answer.
 
 The modules live behind the click, in a panel (desktop) or a drawer (mobile
-< 760 px). Both are driven by `src/lib/accessModeHubs.ts` — the menu is
+< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
 generated from it, never hand-listed.
 
-- A module whose `page` is `null` renders as **Bientôt** and is not focusable.
-  The menu never offers a route that does not resolve.
+- A module with **no resolvable route** renders as **Bientôt** and is not
+  focusable. The menu never offers a route that does not resolve.
+
+  This used to read "a module whose `page` is `null`", and that was the same
+  sentence for as long as `page` was the only way to address a module. REQ-120
+  gave Jouer eleven games addressed by `gameSlug`, each carrying `page: null`
+  on purpose so `PageType` stays a closed union — and the rule as written made
+  eleven playable games render as **Bientôt** on the home. Resolution is
+  `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
+  the charter asks about its result rather than about one of its inputs.
+
 - The panel shows each module's real route. A module absent from the menu is a
   module absent from the corpus; there is no third state.
-- Escape closes and returns focus to the trigger. Arrow keys move between axes.
+- **Shelves nest, they never hide.** An axis holding more modules than a scene
+  can place files them onto shelves (`ModuleGroupId`), and the panel opens on
+  the shelves rather than on every module at once. A shelf carries its count,
+  so nothing is asserted absent; the hub route still lists every module, each
+  on its own row under a heading. A shelf holding one module stands in for
+  that module — a click that offers no choice is not a level.
+- Escape steps back one level before it closes, then closes and returns focus
+  to the trigger. Arrow keys move between axes.
 
 Build both on the shadcn primitives already in the repo — `navigation-menu`
 for the panel, `drawer` for the mobile tray. No competing component library
