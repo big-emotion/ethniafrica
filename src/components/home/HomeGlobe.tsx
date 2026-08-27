@@ -501,7 +501,9 @@ export function HomeGlobe({
         .home-globe-morph label {
           font-family: var(--afh-font-mono);
           font-size: 11px;
-          color: var(--afh-text-muted);
+          /* --afh-fg-muted, not --afh-text-muted: the latter fails AA on
+             the pill on both surfaces (2.86:1 parchment, 4.56:1 night). */
+          color: var(--afh-fg-muted);
           white-space: nowrap;
         }
         .home-globe-morph input[type="range"] {
