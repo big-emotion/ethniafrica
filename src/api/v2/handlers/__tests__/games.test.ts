@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { GameCorpus } from "@/lib/games/corpus";
+import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
+import { mercatorMisleads } from "@/lib/games/rounds/mercatorRound";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 
 const { loadGameCorpus } = vi.hoisted(() => ({
@@ -38,6 +39,75 @@ function people(overrides: Partial<GameCorpus["peoples"][number]>) {
     ...overrides,
   };
 }
+
+function country(id: string, nameFr: string): GameCountryFixture {
+  return {
+    id,
+    nameFr,
+    etymology: null,
+    nameOriginActor: null,
+    historicalNames: null,
+    kingdoms: [],
+  };
+}
+
+/**
+ * Six real ISO codes, because mercatorMisleads reads the committed admin-0
+ * outlines: a made-up country has no geometry and could never mislead.
+ */
+const MERCATOR_COUNTRIES = [
+  country("DZA", "Algérie"),
+  country("TCD", "Tchad"),
+  country("SEN", "Sénégal"),
+  country("TUN", "Tunisie"),
+  country("KEN", "Kenya"),
+  country("BWA", "Botswana"),
+];
+
+const byName = (nameFr: string): GameCountryFixture =>
+  MERCATOR_COUNTRIES.find((entry) => entry.nameFr === nameFr);
+
+describe("mercator only asks where the flat map lies", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  // The whole point of this game is that Mercator inflates the north. A
+  // northern country really being the larger one is an honest comparison
+  // that teaches nothing, and `pairs()` used to serve those by walking the
+  // corpus two at a time. mercatorMisleads shipped exported and tested and
+  // was never called.
+  // @req REQ-120
+  it("builds every round from a pair the projection misrepresents", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: MERCATOR_COUNTRIES,
+    });
+
+    const envelope = await getGameRoundsHandler(getGameBySlug("mercator"), 0);
+
+    expect(envelope.data.rounds.length).toBeGreaterThan(0);
+    for (const round of envelope.data.rounds) {
+      const [a, b] = (round as { options: { labelFr: string }[] }).options;
+      expect(mercatorMisleads(byName(a.labelFr), byName(b.labelFr))).toBe(true);
+    }
+  });
+
+  // Padding a short session with honest pairs would quietly undo the filter
+  // above; the corpus-limited flag already exists to say so on screen.
+  // @req REQ-120
+  it("shortens the session rather than padding it with honest pairs", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: [country("SEN", "Sénégal"), country("TUN", "Tunisie")],
+    });
+
+    const envelope = await getGameRoundsHandler(getGameBySlug("mercator"), 0);
+
+    expect(envelope.data.rounds).toHaveLength(1);
+    expect(envelope.data.corpusLimited).toBe(true);
+  });
+});
 
 describe("getGameRoundsHandler", () => {
   beforeEach(() => {
