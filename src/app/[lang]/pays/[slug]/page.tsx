@@ -208,7 +208,11 @@ export default async function PaysSlugPage({
           // would have parked it off-centre against a globe that now reaches
           // both edges of the viewport.
           <FicheHeroBand>
-            <div className="flex w-full justify-end px-4 pt-4">
+            {/* afh-on-night rebinds the ink and surface tokens for this
+                subtree, so the picker reads on the band the same way the
+                home's hero reads on its own night. Sharing that rule is what
+                keeps the two from drifting into different nights. */}
+            <div className="afh-on-night flex w-full justify-end px-4 pt-4">
               <CountryPicker
                 countries={pickerCountries}
                 currentCountryId={countryDetail.id}

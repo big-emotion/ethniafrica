@@ -358,13 +358,17 @@
   border-bottom: 0;
 }
 
+/* --accent-ink, not --accent: the mockup sets the period in the fill colour,
+   which lands at 2.3:1 on the parchment at caption size. The ink variant is
+   the same hue scaled to clear AA, which is what accent-coloured text takes
+   anywhere on a tinted surface. axe caught this at all three widths. */
 .afh-tl-period {
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-caption);
   font-weight: 700;
   line-height: 1.5;
   padding-top: 2px;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .afh-tl-item h3 {

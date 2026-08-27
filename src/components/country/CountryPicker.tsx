@@ -71,11 +71,11 @@ export function CountryPicker({
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((wasOpen) => !wasOpen)}
-        className="flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+        className="flex items-center gap-2 rounded-full border border-afh-border bg-afh-surface px-3 py-1.5 text-sm text-afh-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
       >
         <span aria-hidden="true">{current?.flag}</span>
         <span>{current?.nameFr ?? currentCountryId}</span>
-        <span className="text-xs opacity-70">Changer de pays</span>
+        <span className="text-xs text-afh-text-soft">Changer de pays</span>
       </button>
 
       {open && (

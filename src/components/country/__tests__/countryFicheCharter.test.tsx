@@ -135,6 +135,9 @@ describe("country fiche charter", () => {
 
     expect(shortfall).toBeDefined();
     expect(shortfall).toHaveTextContent(/99/);
+    // "totalitédes" shipped once: the JSX transform drops the space opening a
+    // text node that follows an element.
+    expect(shortfall?.textContent).toContain("totalité des fiches");
     // The mockup blames a top-eight cut-off. This fiche lists every people it
     // has, so that sentence would be false here.
     expect(shortfall).not.toHaveTextContent(/huit premiers/i);

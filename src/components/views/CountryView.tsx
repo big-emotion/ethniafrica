@@ -163,9 +163,14 @@ export const CountryView = ({ language }: CountryViewProps) => {
   }
 
   /**
-   * The whole card is the link. A country fiche is a page, and reaching it is
-   * the directory's only job; the card used to be a div with an onClick, which
-   * no keyboard and no crawler could follow.
+   * The whole card is the link, laid over it rather than wrapped around it.
+   *
+   * The card used to be a div with an onClick, which no keyboard and no
+   * crawler could follow. Wrapping it in an anchor fixed that and broke
+   * something else: ConfidenceChip renders an anchor of its own inside every
+   * card, and an anchor inside an anchor is invalid HTML — React threw a
+   * hydration error across the whole directory. An overlay link keeps the full
+   * card clickable and leaves the chip's own markup alone.
    *
    * `prefetch` stays off deliberately: the list holds every African country at
    * once, and Next would otherwise fetch each one that scrolls into view.
@@ -173,14 +178,14 @@ export const CountryView = ({ language }: CountryViewProps) => {
   const renderCountryCard = (country: CountrySummary) => {
     const flag = getFlagEmoji(country.id);
     return (
-      <Link
-        key={country.id}
-        href={getCountryRoute(language, country.id)}
-        prefetch={false}
-        aria-label={country.nameCommonFr}
-        className="block"
-      >
+      <div key={country.id} className="relative">
         <Card className={cn("group rounded-afh-xl p-4", CHARTER_HOVER_LIFT)}>
+          <Link
+            href={getCountryRoute(language, country.id)}
+            prefetch={false}
+            aria-label={country.nameCommonFr}
+            className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
+          />
           <div className="space-y-2">
             <div className="flex items-start gap-2">
               {flag && (
@@ -226,7 +231,7 @@ export const CountryView = ({ language }: CountryViewProps) => {
             </div>
           </div>
         </Card>
-      </Link>
+      </div>
     );
   };
 
@@ -305,6 +310,7 @@ export const CountryView = ({ language }: CountryViewProps) => {
             disabled={currentPage === 1}
             variant="outline"
             size="icon"
+            aria-label="Page précédente"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -318,6 +324,7 @@ export const CountryView = ({ language }: CountryViewProps) => {
             disabled={currentPage === totalPages}
             variant="outline"
             size="icon"
+            aria-label="Page suivante"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>

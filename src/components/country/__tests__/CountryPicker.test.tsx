@@ -88,4 +88,20 @@ describe("CountryPicker", () => {
 
     expect(screen.queryByRole("listbox")).toBeNull();
   });
+
+  // The picker stands on the night band now. Inheriting the page's ink left
+  // it near-invisible there; naming the tokens lets whichever surface it sits
+  // on bind them, which is what .afh-on-night is for.
+  // @req REQ-116
+  it("takes its ink and its border from the surface it stands on", () => {
+    render(<CountryPicker countries={COUNTRIES} currentCountryId="NGA" />);
+
+    const trigger = screen.getByRole("button");
+
+    expect(trigger.className).toContain("text-afh-text");
+    expect(trigger.className).toContain("border-afh-border");
+    // Never a bare opacity for the caption: it has to clear AA on the night
+    // ground, and only the soft ink is measured to.
+    expect(trigger.className).not.toContain("opacity-");
+  });
 });

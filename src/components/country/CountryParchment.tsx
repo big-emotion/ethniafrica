@@ -103,9 +103,12 @@ export function CountryParchment({
           {declared < 99 && (
             <div className="afh-parchment-callout">
               <b>Pourquoi la somme n&apos;atteint pas 100&nbsp;%.</b> La règle
-              FR28 porte sur la <em>totalité</em> des fiches d&apos;un pays, qui
-              doivent sommer dans la bande [99, 101]&nbsp;% — le reste
-              n&apos;est pas encore réparti dans le corpus.
+              FR28 porte sur la <em>totalité</em>{" "}
+              {/* Explicit: the JSX transform drops the space that opens a text
+                  node following an element, and "totalitédes" shipped once. */}
+              des fiches d&apos;un pays, qui doivent sommer dans la bande [99,
+              101]&nbsp;% — le reste n&apos;est pas encore réparti dans le
+              corpus.
             </div>
           )}
         </Section>

@@ -69,8 +69,19 @@ describe("CountryView", () => {
     const cards = container.querySelectorAll(".rounded-afh-xl");
     expect(cards.length).toBe(countries.length);
     for (const card of cards) {
-      expect(card.closest('a[href^="/fr/pays/"]')).not.toBeNull();
+      expect(card.querySelector('a[href^="/fr/pays/"]')).not.toBeNull();
     }
+  });
+
+  // ConfidenceChip puts its own anchor inside every card. Wrapping the card in
+  // a link nested those, which is invalid HTML and threw a hydration error on
+  // the whole directory.
+  // @req REQ-091
+  it("nests no anchor inside another", async () => {
+    const { container } = renderCountryView();
+    await screen.findByText("Afrique du Sud");
+
+    expect(container.querySelectorAll("a a")).toHaveLength(0);
   });
 
   // @req REQ-001
