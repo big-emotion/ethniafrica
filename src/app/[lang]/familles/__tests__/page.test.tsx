@@ -326,6 +326,48 @@ describe("/[lang]/familles/[slug] page", () => {
       expect(queryByText(/Empreinte géographique non disponible/i)).toBeNull();
     });
 
+    /**
+     * The three controls the mockup draws around the globe — pick a country of
+     * the footprint, flatten the map, recentre. They live in AtlasGlobe and are
+     * gated on nothing but the overlay, so a null footprint took all three away
+     * at once. This is what a reader meant by "the buttons do nothing".
+     */
+    // @req REQ-116
+    it("offers the three globe controls once the footprint has countries to draw", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([
+        { id: "PPL_SOMALI", nameMain: "Somali", currentCountries: ["SOM"] },
+        { id: "PPL_TUAREG", nameMain: "Touaregs", currentCountries: ["NER"] },
+      ]);
+
+      const { getByRole } = await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(
+        getByRole("button", { name: "Toute l'empreinte" })
+      ).toBeInTheDocument();
+      expect(getByRole("button", { name: /carte plate/i })).toBeInTheDocument();
+      expect(getByRole("button", { name: "Recentrer" })).toBeInTheDocument();
+    });
+
+    // The negative half of the assertion above: without a footprint there is
+    // no globe to operate, which is the state the fiche shipped in. Without
+    // this case the one above would pass on a page that always drew buttons.
+    // @req REQ-116
+    it("offers no globe control at all when nothing resolves to a footprint", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([]);
+
+      const { queryByRole, getByText } =
+        await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(queryByRole("button", { name: "Recentrer" })).toBeNull();
+      expect(
+        getByText(/Empreinte géographique non disponible/i)
+      ).toBeInTheDocument();
+    });
+
     // The caption over the globe has to name the rule the page applied, or the
     // reader is told the atlas walked a classification it never walked.
     // @req REQ-116
