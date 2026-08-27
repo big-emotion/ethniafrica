@@ -67,7 +67,10 @@ export function HomeHero({
       <header className="home-hero-copy">
         <h1>
           Les peuples d&apos;Afrique, sous{" "}
-          <em>le nom qu&apos;ils se donnent</em>
+          {/* The article is bound to its noun: balanced wrapping otherwise
+              ends a line on « sous le », which reads as a broken sentence
+              at exactly the moment the headline states its thesis. */}
+          <em>le&nbsp;nom qu&apos;ils se donnent</em>
         </h1>
         <p>
           Leurs langues, leurs familles, leurs pays — et, derrière chaque nom,
