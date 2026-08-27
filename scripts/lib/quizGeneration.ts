@@ -189,6 +189,125 @@ function buildCandidate(
   }
 }
 
+/**
+ * Nearness of a distractor candidate to the question's subject. Lower is
+ * nearer, and `selectDistractors` takes the first three of whatever order it
+ * receives — so this ranking, not the selector, is what makes a wrong answer
+ * plausible.
+ *
+ * For the four pools whose values are carried by a people (family names,
+ * autonyms, languages, ISO codes) the ranks read as written. For country
+ * names they shift one rung inward: NEAREST is a country the subject itself
+ * lives in — a real place for that people, just not its main one, which is
+ * the hardest honest distractor the corpus can offer.
+ */
+const NEAREST = 0;
+const NEARBY = 1;
+const ELSEWHERE = 2;
+
+function optionKey(value: QuizOptionValue): string {
+  return typeof value === "string" ? value : value.autonym;
+}
+
+/** Sorts by rank, breaking ties on the incoming position so the result stays deterministic. */
+function rankSort<T>(pool: T[], rankOf: (value: T) => number): T[] {
+  return pool
+    .map((value, position) => ({ value, position, rank: rankOf(value) }))
+    .sort((a, b) => a.rank - b.rank || a.position - b.position)
+    .map((entry) => entry.value);
+}
+
+/**
+ * Reorders every distractor pool by nearness to `subject`.
+ *
+ * `selectDistractors` receives flattened values and cannot know a candidate's
+ * genealogy or geography, so the rule cannot live there — the same finding
+ * that moved the games' `pays-davant` fix to its caller. The bank's defect was
+ * that one corpus-wide pool, in corpus order, was handed to every fiche: every
+ * T1 question drew the same three distractors. Ordering per subject is a
+ * permutation — it never adds, drops or fabricates a value, so which questions
+ * generate at all is unchanged.
+ */
+export function orderPoolsBySubjectProximity(
+  subject: QuizPeopleFixture,
+  corpus: QuizPeopleFixture[],
+  pools: QuizCandidatePools
+): QuizCandidatePools {
+  const subjectCountryIds = new Set(
+    subject.distributionByCountry.map((share) => share.countryId)
+  );
+
+  const nearnessOf = (other: QuizPeopleFixture): number => {
+    if (other.languageFamilyId === subject.languageFamilyId) return NEAREST;
+    const sharesACountry = other.distributionByCountry.some((share) =>
+      subjectCountryIds.has(share.countryId)
+    );
+    return sharesACountry ? NEARBY : ELSEWHERE;
+  };
+
+  /** Maps each pool value to its nearest carrier in the corpus. */
+  const nearnessByValue = (
+    valueOf: (fiche: QuizPeopleFixture) => string | undefined
+  ): Map<string, number> => {
+    const nearness = new Map<string, number>();
+    for (const other of corpus) {
+      const key = valueOf(other);
+      if (!key) continue;
+      const candidate = nearnessOf(other);
+      const known = nearness.get(key);
+      if (known === undefined || candidate < known) {
+        nearness.set(key, candidate);
+      }
+    }
+    return nearness;
+  };
+
+  const byCarrier = <T extends QuizOptionValue>(
+    pool: T[],
+    valueOf: (fiche: QuizPeopleFixture) => string | undefined
+  ): T[] => {
+    const nearness = nearnessByValue(valueOf);
+    return rankSort(
+      pool,
+      (value) => nearness.get(optionKey(value)) ?? ELSEWHERE
+    );
+  };
+
+  // A country is nearest when the subject lives there, and merely nearby when
+  // it hosts a people of the subject's own family.
+  const countryNearness = new Map<string, number>();
+  for (const other of corpus) {
+    const hosting =
+      other.languageFamilyId === subject.languageFamilyId ? NEARBY : ELSEWHERE;
+    for (const share of other.distributionByCountry) {
+      const known = countryNearness.get(share.countryNameFr);
+      if (known === undefined || hosting < known) {
+        countryNearness.set(share.countryNameFr, hosting);
+      }
+    }
+  }
+  for (const share of subject.distributionByCountry) {
+    countryNearness.set(share.countryNameFr, NEAREST);
+  }
+
+  return {
+    familyNames: byCarrier(
+      pools.familyNames,
+      (fiche) => fiche.languageFamilyNameFr
+    ),
+    autonyms: byCarrier(pools.autonyms, (fiche) => fiche.selfAppellation),
+    countryNames: rankSort(
+      pools.countryNames,
+      (name) => countryNearness.get(name) ?? ELSEWHERE
+    ),
+    languages: byCarrier(
+      pools.languages,
+      (fiche) => fiche.mainLanguage.autonym
+    ),
+    isoCodes: byCarrier(pools.isoCodes, (fiche) => fiche.isoCode),
+  };
+}
+
 /** Evaluates a single (fiche, template, audience) triple against FR65 and the distractor pool. */
 export function evaluateCandidate(
   fiche: QuizPeopleFixture,
@@ -298,9 +417,17 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
       )
   );
 
+  const corpus = input.entries.map((entry) => entry.fiche);
   const toInsert: QuizQuestionRecord[] = [];
   let rejectedCount = 0;
   for (const entry of input.entries) {
+    // Ordered once per fiche, not per template: nearness is a property of the
+    // subject, and every audience asks about the same one.
+    const nearestFirst = orderPoolsBySubjectProximity(
+      entry.fiche,
+      corpus,
+      input.pools
+    );
     for (const audience of audiences) {
       for (const templateId of TEMPLATE_AVAILABILITY[audience]) {
         const key = `${entry.fiche.id}:${templateId}:${audience}`;
@@ -313,7 +440,7 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
           templateId,
           audience,
           assertion,
-          input.pools
+          nearestFirst
         );
         if (evaluation.outcome === "generated") {
           toInsert.push(evaluation.record);

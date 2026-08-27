@@ -8,12 +8,14 @@
 import { describe, expect, it } from "vitest";
 import type { QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
+import { TEMPLATE_AVAILABILITY } from "@/lib/quiz/segmentPolicy";
 import {
   auditActiveBank,
   clampDifficulty,
   computeSweepPlan,
   decideRevocation,
   evaluateCandidate,
+  orderPoolsBySubjectProximity,
   resolveCurrentAnswer,
   type ActiveQuestionRow,
   type AssertionBinding,
@@ -502,5 +504,186 @@ describe("auditActiveBank (QZ-1..QZ-5, --check mode)", () => {
       knownGenerationRunIds: new Set(["some-other-run"]),
     });
     expect(violations.some((v) => v.code === "QZ-5")).toBe(true);
+  });
+});
+
+const hausa: QuizPeopleFixture = {
+  id: "PPL_HAUSA",
+  subjectName: { autonym: "Hausawa", exonym: "Haoussa" },
+  languageFamilyId: "FLG_AFRO_ASIATIC",
+  languageFamilyNameFr: "Afro-asiatique",
+  selfAppellation: "Hausawa",
+  distributionByCountry: [
+    { countryId: "NGA", countryNameFr: "Nigeria", percentage: 70 },
+    { countryId: "NER", countryNameFr: "Niger", percentage: 30 },
+  ],
+  mainLanguage: { autonym: "Harshen Hausa", exonym: "Haoussa" },
+  isoCode: "hau",
+};
+
+const maasai: QuizPeopleFixture = {
+  id: "PPL_MAASAI",
+  subjectName: { autonym: "Maa", exonym: "Maasai" },
+  languageFamilyId: "FLG_NILO_SAHARAN",
+  languageFamilyNameFr: "Nilo-saharien",
+  selfAppellation: "Maa",
+  distributionByCountry: [
+    { countryId: "KEN", countryNameFr: "Kenya", percentage: 100 },
+  ],
+  mainLanguage: { autonym: "ɔl Maa", exonym: "Maasai" },
+  isoCode: "mas",
+};
+
+/**
+ * The bank's real defect was never in `selectDistractors`: it takes the first
+ * three of the pool it is handed and receives flattened values, so it cannot
+ * know a candidate's genealogy or geography. One corpus-wide pool, in corpus
+ * order, was handed to every fiche — so every T1 question in the bank drew the
+ * same three distractors. Ordering the pool per subject puts the rule where
+ * the information lives, exactly as `pays-davant` does for countries.
+ */
+describe("orderPoolsBySubjectProximity", () => {
+  // Yoruba is FLG_NIGER_CONGO, present in NGA/BEN/TGO.
+  //   zulu   — same family, no shared country  -> nearest
+  //   hausa  — other family, shares NGA        -> middle
+  //   maasai — other family, no shared country -> farthest
+  const corpus = [maasai, hausa, zulu, yoruba];
+
+  // @req REQ-080
+  it("ranks a same-family people ahead of one that merely shares a country", () => {
+    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
+      ...pools,
+      autonyms: ["Maa", "Hausawa", "AmaZulu"],
+    });
+    expect(ordered.autonyms).toEqual(["AmaZulu", "Hausawa", "Maa"]);
+  });
+
+  // @req REQ-080
+  it("ranks a country the subject itself lives in ahead of one hosting a same-family people", () => {
+    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
+      ...pools,
+      countryNames: ["Kenya", "Afrique du Sud", "Bénin"],
+    });
+    expect(ordered.countryNames).toEqual(["Bénin", "Afrique du Sud", "Kenya"]);
+  });
+
+  // @req REQ-080
+  it("ranks the code of a people sharing a country ahead of a stranger's", () => {
+    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
+      ...pools,
+      isoCodes: ["mas", "hau"],
+    });
+    expect(ordered.isoCodes).toEqual(["hau", "mas"]);
+  });
+
+  // @req REQ-080
+  it("keeps corpus order between two candidates of equal nearness", () => {
+    // Neither code belongs to anyone in the corpus, so nothing separates them.
+    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
+      ...pools,
+      isoCodes: ["wol", "swa"],
+    });
+    expect(ordered.isoCodes).toEqual(["wol", "swa"]);
+  });
+
+  // @req REQ-080
+  it("permutes every pool without adding or dropping a value", () => {
+    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, pools);
+    expect([...ordered.familyNames].sort()).toEqual(
+      [...pools.familyNames].sort()
+    );
+    expect([...ordered.autonyms].sort()).toEqual([...pools.autonyms].sort());
+    expect([...ordered.countryNames].sort()).toEqual(
+      [...pools.countryNames].sort()
+    );
+    expect(ordered.languages).toHaveLength(pools.languages.length);
+    expect([...ordered.isoCodes].sort()).toEqual([...pools.isoCodes].sort());
+  });
+
+  // @req REQ-080
+  it("is deterministic across repeated calls", () => {
+    const first = orderPoolsBySubjectProximity(yoruba, corpus, pools);
+    const second = orderPoolsBySubjectProximity(yoruba, corpus, pools);
+    expect(first).toEqual(second);
+  });
+});
+
+describe("computeSweepPlan distractor proximity", () => {
+  const cohabitingPools: QuizCandidatePools = {
+    ...pools,
+    // Neither subject's own autonym is in this pool, so corpus order alone
+    // hands both of them the very same first three — the defect itself.
+    // The two near candidates for the Yoruba (AmaZulu, same family; Hausawa,
+    // shares Nigeria) sit deliberately *after* the first three.
+    autonyms: ["Ashanti", "Wolof", "Hausawa", "AmaZulu"],
+  };
+
+  const entries: FicheEntry[] = [
+    { fiche: yoruba, assertionsByFieldPath: fullBindings() },
+    { fiche: zulu, assertionsByFieldPath: fullBindings() },
+    { fiche: hausa, assertionsByFieldPath: fullBindings() },
+    { fiche: maasai, assertionsByFieldPath: fullBindings() },
+  ];
+
+  function planForAdults() {
+    return computeSweepPlan({
+      entries,
+      pools: cohabitingPools,
+      activeQuestions: [],
+      audiences: ["adults"],
+    });
+  }
+
+  function distractorsOf(
+    plan: ReturnType<typeof computeSweepPlan>,
+    entityId: string
+  ): string[] {
+    const record = plan.toInsert.find(
+      (candidate) =>
+        candidate.templateId === "T2" && candidate.entityId === entityId
+    )!;
+    return record.optionsFr
+      .filter((_, index) => index !== record.correctOption)
+      .map((option) => (typeof option === "string" ? option : option.autonym));
+  }
+
+  // @req REQ-080
+  it("no longer hands two peoples of different families the same T2 distractors", () => {
+    const plan = planForAdults();
+    expect(distractorsOf(plan, "PPL_YORUBA")).not.toEqual(
+      distractorsOf(plan, "PPL_MAASAI")
+    );
+  });
+
+  // @req REQ-080
+  it("draws the Yoruba's T2 distractors nearest-first", () => {
+    // AmaZulu (Niger-Congo, as the Yoruba are) then Hausawa (shares Nigeria),
+    // then the first of the corpus-order remainder.
+    expect(distractorsOf(planForAdults(), "PPL_YORUBA")).toEqual([
+      "AmaZulu",
+      "Hausawa",
+      "Ashanti",
+    ]);
+  });
+
+  // @req REQ-080
+  it("leaves a subject with no near candidate on corpus order", () => {
+    // The Maasai share neither a family nor a country with anyone else here,
+    // so nothing outranks anything and the pool keeps the order it came in.
+    expect(distractorsOf(planForAdults(), "PPL_MAASAI")).toEqual([
+      "Ashanti",
+      "Wolof",
+      "Hausawa",
+    ]);
+  });
+
+  // @req REQ-080
+  it("generates exactly as many questions as the unordered pool did", () => {
+    // Ordering permutes a pool, it never shrinks one, so the generated /
+    // rejected split must stay what corpus order produced.
+    const plan = planForAdults();
+    expect(plan.generatedCount + plan.rejectedCount).toBe(
+      entries.length * TEMPLATE_AVAILABILITY.adults.length
+    );
   });
 });
