@@ -13,6 +13,9 @@ function binaryRound(subjectId: string, correctIndex: 0 | 1 = 0): BinaryRound {
     reveal: {
       textFr: `Origine de l'exonyme de ${subjectId}.`,
       fieldPath: "content.appellations.originOfExonyms",
+      sources: [],
+      confidence: null,
+      ficheHref: `/fr/peuples/${subjectId}`,
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex,
@@ -28,6 +31,9 @@ function globeTapRound(correctCountryId: string): GlobeTapRound {
     reveal: {
       textFr: "Le royaume couvrait ce territoire.",
       fieldPath: "kingdoms[0]",
+      sources: [],
+      confidence: null,
+      ficheHref: "/fr/pays/NGA",
     },
     choices: ["NGA", "ZAF"],
     correctCountryId,

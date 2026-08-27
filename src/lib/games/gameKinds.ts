@@ -1,6 +1,7 @@
 import type { CountryId } from "@/types/afrik";
 import type { AutonymExonymName, QuizOptionValue } from "@/types/quiz";
 import type { Ring } from "@/lib/atlas/overlays";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 /**
  * The two gestures the three games of the Jouer hub share (REQ-120).
@@ -22,9 +23,29 @@ export type GameKind = "binary" | "globeTap";
  * invented option — and `fieldPath` records where it was read so the claim
  * stays auditable.
  */
+/**
+ * Confidence recorded for the round's subject, or absent when none is. Never
+ * substituted with a default: a made-up percentage on a reveal would be a
+ * claim about how well sourced a people is, made by nobody.
+ */
+export interface GameRevealConfidence {
+  score: number;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
 export interface GameReveal {
   textFr: string;
   fieldPath: string;
+  /**
+   * The standing of what the claim rests on, in fiche order. A round sourced
+   * only at `unverified` is played *and* visibly marked, exactly as a fiche
+   * is — the tier policy labels, it does not withhold.
+   */
+  sources: FicheSourceEntry[];
+  confidence: GameRevealConfidence | null;
+  /** The subject's fiche. A wrong answer is an opening, so it leads somewhere. */
+  ficheHref: string;
 }
 
 /**
@@ -57,12 +78,32 @@ export interface GameStimulus {
   scaleFr?: string;
 }
 
+/**
+ * How hard a round is expected to be, ascending. A session is served in this
+ * order so the reader meets a subject they are likely to know before one they
+ * are not, and 1 is the easiest.
+ *
+ * The band is derived from magnitude — a people's population, a country's
+ * drawn area — and magnitude here is a **proxy for familiarity, nothing
+ * else**. It is not an assertion that a populous people matters more than a
+ * small one, and it must never be rendered as one. Replace it with an
+ * empirical p-value, the share of readers who answered a round correctly, as
+ * soon as the surface records one; the scale is a small closed set precisely
+ * so that swap is a one-function change.
+ */
+export type DifficultyBand = 1 | 2 | 3;
+
 interface GameRoundBase {
   gameId: string;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
   stimulus?: GameStimulus;
   promptFr: string;
+  /**
+   * Assigned by the handler, not by the generator: a band is a subject's rank
+   * within the pool it was drawn from, and a generator sees one subject.
+   */
+  difficultyBand?: DifficultyBand;
   reveal: GameReveal;
 }
 

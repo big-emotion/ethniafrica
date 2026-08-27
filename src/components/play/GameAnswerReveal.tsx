@@ -3,14 +3,18 @@
 import * as React from "react";
 import { CheckCircle2, XCircle } from "lucide-react";
 
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import type { GameRound } from "@/lib/games/gameKinds";
+import { sourceStandingLabelFr } from "@/types/sources";
 import { cn } from "@/lib/utils";
 
 const COPY_FR = {
   correctVerdict: "Bonne réponse",
   incorrectVerdict: "Ce n'est pas ça",
   provenanceLabel: "Champ de la fiche",
+  openFiche: "Lire la fiche",
+  confidenceAriaSuffix: "pour le sujet de cette manche",
   nextRound: "Tour suivant",
   seeScore: "Voir le score",
 } as const;
@@ -54,6 +58,10 @@ export const GameAnswerReveal = ({
   }, [round]);
 
   const VerdictIcon = isCorrect ? CheckCircle2 : XCircle;
+  // `strictNullChecks` is off, so a reveal built without a source list is a
+  // runtime crash the compiler will not catch — and a crash here blanks the
+  // whole game rather than one line. Same reason `ficheSourceLabel` exists.
+  const sources = round.reveal.sources ?? [];
 
   return (
     <div
@@ -86,12 +94,54 @@ export const GameAnswerReveal = ({
         </p>
       </div>
 
-      <p
+      <div
         data-testid="game-reveal-provenance"
-        className="border-t border-afh-border pt-3 text-afh-small text-afh-text-soft"
+        className="flex flex-col gap-2 border-t border-afh-border pt-3 text-afh-small text-afh-text-soft"
       >
-        {COPY_FR.provenanceLabel} : <code>{round.reveal.fieldPath}</code>
-      </p>
+        <p>
+          {COPY_FR.provenanceLabel} : <code>{round.reveal.fieldPath}</code>
+        </p>
+
+        {/*
+          Nothing is withheld for a weak source; the standing is stated. A
+          round resting only on « Non vérifiée » is played and marked, exactly
+          as a fiche is.
+        */}
+        {sources.length > 0 ? (
+          <ul className="flex flex-col gap-1">
+            {sources.map((source) => (
+              <li
+                key={`${source.label}-${source.standing}`}
+                className="flex flex-wrap items-center gap-2"
+              >
+                <span>{source.label}</span>
+                <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-xs font-medium">
+                  {sourceStandingLabelFr(source.standing)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {round.reveal.confidence ? (
+          <ConfidenceChip
+            variant="inline"
+            id={`game-reveal-${round.subjectId}`}
+            confidenceScore={round.reveal.confidence.score}
+            sourceCount={round.reveal.confidence.sourceCount}
+            lastHumanAuditAt={round.reveal.confidence.lastHumanAuditAt}
+            ariaSuffix={COPY_FR.confidenceAriaSuffix}
+          />
+        ) : null}
+
+        <a
+          data-testid="game-reveal-fiche-link"
+          href={round.reveal.ficheHref}
+          className="self-start font-medium underline underline-offset-2"
+        >
+          {COPY_FR.openFiche}
+        </a>
+      </div>
 
       <button
         type="button"

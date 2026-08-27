@@ -12,6 +12,7 @@ import {
   correctOptionIndex,
   selectDistractors,
 } from "@/lib/games/options";
+import { getCountryRoute } from "@/lib/routing";
 
 const GAME_ID = "pays-davant";
 
@@ -147,6 +148,9 @@ export function buildHistoricalNameRound(
     reveal: {
       textFr: revealFr,
       fieldPath: "afrik_countries.etymology",
+      sources: country.sources,
+      confidence: country.confidence,
+      ficheHref: getCountryRoute("fr", country.id),
     },
   };
 }

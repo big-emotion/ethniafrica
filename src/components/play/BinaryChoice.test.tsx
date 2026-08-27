@@ -13,6 +13,9 @@ const ROUND: BinaryRound = {
   reveal: {
     textFr: "Le terme Yoruba vient du haoussa.",
     fieldPath: "content.appellations.originOfExonyms",
+    sources: [],
+    confidence: null,
+    ficheHref: "/fr/peuples/PPL_TEST",
   },
   options: [
     { labelFr: "Yorùbá", name: { autonym: "Yorùbá", exonym: "Yoruba" } },

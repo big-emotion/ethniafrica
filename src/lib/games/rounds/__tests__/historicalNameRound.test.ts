@@ -16,6 +16,18 @@ function makeCountry(
       colonization: "Tchad, Afrique-Équatoriale française",
     },
     kingdoms: [],
+    sources: [
+      {
+        label: "Institut national de la statistique",
+        url: null,
+        standing: "official",
+      },
+    ],
+    confidence: {
+      score: 81,
+      sourceCount: 4,
+      lastHumanAuditAt: "2026-01-20T00:00:00.000Z",
+    },
     ...overrides,
   };
 }

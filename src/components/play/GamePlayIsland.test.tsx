@@ -38,6 +38,9 @@ function binaryRound(subjectId: string): BinaryRound {
     reveal: {
       textFr: `Origine de l'exonyme de ${subjectId}.`,
       fieldPath: "content.appellations.originOfExonyms",
+      sources: [],
+      confidence: null,
+      ficheHref: "/fr/peuples/PPL_TEST",
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex: 0,
@@ -49,7 +52,13 @@ const GLOBE_ROUND: GlobeTapRound = {
   gameId: "pays-davant",
   subjectId: "GHA",
   promptFr: "« Côte-de-l'Or » : quel pays porte aujourd'hui ce nom d'avant",
-  reveal: { textFr: "Nommée pour son or.", fieldPath: "etymology" },
+  reveal: {
+    textFr: "Nommée pour son or.",
+    fieldPath: "etymology",
+    sources: [],
+    confidence: null,
+    ficheHref: "/fr/pays/GHA",
+  },
   choices: ["GHA", "BEN"],
   correctCountryId: "GHA",
 };

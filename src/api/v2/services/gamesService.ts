@@ -11,9 +11,12 @@
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { getConfidenceMap } from "@/lib/supabase/queries/afrik/module-zero-batch";
+import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import type { CountryId } from "@/types/afrik";
 import type { GameDataSource } from "@/lib/games/gameRegistry";
 import type {
+  GameConfidence,
   GameCorpus,
   GameCountryFixture,
   GameCountryShare,
@@ -21,6 +24,7 @@ import type {
   GameHistoricalNames,
   GameKingdom,
   GamePeopleFixture,
+  GameScope,
 } from "@/lib/games/corpus";
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
@@ -175,12 +179,80 @@ async function getCurrentCountriesMap(
   return map;
 }
 
-async function loadPeoples(
-  supabase: SupabaseClient
-): Promise<GamePeopleFixture[]> {
+/**
+ * Recorded confidence for the round subjects, one batched read.
+ *
+ * A subject with no row gets no entry, and the reveal shows no figure rather
+ * than a zero: a made-up percentage would be a statement about how well
+ * sourced a people is, made by nobody. The source standings stay visible
+ * either way, which is the part the tier policy actually requires.
+ */
+async function loadConfidence(
+  entityIds: string[],
+  entityType: "people" | "country"
+): Promise<Map<string, GameConfidence>> {
+  const scores = await getConfidenceMap(entityIds, entityType);
+  const confidence = new Map<string, GameConfidence>();
+  for (const [entityId, score] of scores) {
+    if (score.sourceCount === null) continue;
+    confidence.set(entityId, {
+      score: score.score,
+      sourceCount: score.sourceCount,
+      lastHumanAuditAt: score.lastHumanAuditAt,
+    });
+  }
+  return confidence;
+}
+
+/**
+ * Ids of the peoples the corpus records in one country.
+ *
+ * Resolved here rather than by filtering the loaded page: `loadPeoples` reads
+ * the first `PEOPLE_POOL_SIZE` ids out of ~890, so narrowing afterwards would
+ * answer "which of these 150 are Ghanaian" instead of "which peoples are
+ * Ghanaian", and a country whose peoples all sort late would come back empty
+ * while the corpus holds plenty.
+ */
+async function peopleIdsInCountry(
+  supabase: SupabaseClient,
+  countryId: CountryId
+): Promise<string[]> {
   const { data, error } = await supabase
+    .from("afrik_people_countries")
+    .select("people_id")
+    .eq("country_id", countryId);
+
+  if (error) {
+    logger.error("Games: country scope lookup failed", error);
+    return [];
+  }
+  return (data ?? []).map((row) => row.people_id as string);
+}
+
+async function loadPeoples(
+  supabase: SupabaseClient,
+  scope?: GameScope
+): Promise<GamePeopleFixture[]> {
+  let scopedIds: string[] | null = null;
+  if (scope?.countryId) {
+    scopedIds = await peopleIdsInCountry(supabase, scope.countryId);
+    // A country the corpus records no people in yields no session. Falling
+    // through to the unscoped query would serve the whole continent under
+    // that country's name.
+    if (scopedIds.length === 0) return [];
+  }
+
+  let peoplesQuery = supabase
     .from("afrik_peoples")
-    .select("id, name_main, language_family_id, content")
+    .select("id, name_main, language_family_id, content");
+  if (scope?.familyId) {
+    peoplesQuery = peoplesQuery.eq("language_family_id", scope.familyId);
+  }
+  if (scopedIds) {
+    peoplesQuery = peoplesQuery.in("id", scopedIds);
+  }
+
+  const { data, error } = await peoplesQuery
     .order("id")
     .limit(PEOPLE_POOL_SIZE);
 
@@ -196,6 +268,10 @@ async function loadPeoples(
   const countriesByPeople = await getCurrentCountriesMap(
     supabase,
     rows.map((row) => row.id)
+  );
+  const confidenceByEntity = await loadConfidence(
+    rows.map((row) => row.id),
+    "people"
   );
 
   return rows.map((row) => {
@@ -223,6 +299,10 @@ async function loadPeoples(
       languageFamilyNameFr: row.language_family_id
         ? (familyNames.get(row.language_family_id) ?? null)
         : null,
+      sources: ficheSourceEntries(
+        row.content?.sources as Parameters<typeof ficheSourceEntries>[0]
+      ),
+      confidence: confidenceByEntity.get(row.id) ?? null,
     };
   });
 }
@@ -271,23 +351,39 @@ async function loadCountries(
     );
   }
 
-  return ((data ?? []) as CountryRow[]).map((row) => ({
+  const rows = (data ?? []) as CountryRow[];
+  const confidenceByEntity = await loadConfidence(
+    rows.map((row) => row.id),
+    "country"
+  );
+
+  return rows.map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
     etymology: row.etymology,
     nameOriginActor: row.name_origin_actor,
     historicalNames: mapHistoricalNames(row.content?.historicalNames),
     kingdoms: mapKingdoms(row.content?.kingdoms),
+    sources: ficheSourceEntries(
+      row.content?.sources as Parameters<typeof ficheSourceEntries>[0]
+    ),
+    confidence: confidenceByEntity.get(row.id) ?? null,
   }));
 }
 
 /**
  * Loads only the slice a game reads, plus the peoples pool and country
  * names the peoples games need for their verbatim options.
+ *
+ * `scope` narrows the peoples pool only. The family and country lists come
+ * back whole whatever the scope, because they are also the vocabulary the
+ * scope picker offers — shrinking them to the current scope would let a
+ * reader narrow once and never get back out.
  */
 // @req REQ-120
 export async function loadGameCorpus(
-  dataSource: GameDataSource
+  dataSource: GameDataSource,
+  scope?: GameScope
 ): Promise<GameCorpus> {
   const supabase = createServerClient();
   const empty: GameCorpus = {
@@ -305,7 +401,7 @@ export async function loadGameCorpus(
       // reader can read.
       return {
         ...empty,
-        peoples: await loadPeoples(supabase),
+        peoples: await loadPeoples(supabase, scope),
         families: await loadFamilies(supabase),
         countries: await loadCountries(supabase),
       };

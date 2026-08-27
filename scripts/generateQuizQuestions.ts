@@ -286,11 +286,19 @@ async function revokeQuestions(
   }
 }
 
-async function runGenerationSweep(supabase: SupabaseClient): Promise<void> {
+async function runGenerationSweep(
+  supabase: SupabaseClient,
+  rebuildAll: boolean
+): Promise<void> {
   const { entries, pools } = await buildFicheEntries(supabase);
   const activeQuestions = await fetchActiveQuestions(supabase);
 
-  const plan = computeSweepPlan({ entries, pools, activeQuestions });
+  const plan = computeSweepPlan({
+    entries,
+    pools,
+    activeQuestions,
+    rebuildAll,
+  });
 
   if (plan.toRevoke.length > 0) {
     await revokeQuestions(supabase, plan.toRevoke);
@@ -344,6 +352,11 @@ async function runCheckMode(supabase: SupabaseClient): Promise<void> {
 
 export async function main(): Promise<void> {
   const checkMode = process.argv.includes("--check");
+  // Revokes and rebuilds the healthy part of the bank. Needed after a change
+  // to how questions are built — the sweep alone is idempotent and would
+  // leave every existing question exactly as it is. Never the default: it
+  // rewrites the whole bank, so it is asked for, one environment at a time.
+  const rebuildAll = process.argv.includes("--rebuild");
 
   if (
     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
@@ -361,7 +374,7 @@ export async function main(): Promise<void> {
   if (checkMode) {
     await runCheckMode(supabase);
   } else {
-    await runGenerationSweep(supabase);
+    await runGenerationSweep(supabase, rebuildAll);
   }
 }
 

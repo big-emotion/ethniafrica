@@ -93,6 +93,16 @@ between _recalling_ a fact and _reasoning_ about one: a reader who knows that
 Bantu autonyms carry an `Aba-` class prefix can now answer, and has learned
 something transferable. Without the stimulus the same item is a coin flip.
 
+**The rule has one exception, and it is not a loophole.** A round must name its
+subject **unless the subject is what is being guessed**. « Le pays d'avant »
+asks which country carries a former name: naming that country above the
+question would be handing over the answer, so the round carries no stimulus and
+is right not to. « La taille qu'on vous a cachée » names both its countries in
+its own options and needs none either. Written as first drafted, this section
+asked all three games for a subject line and would have broken two of them —
+`GameStimulus` is therefore optional on `GameRoundBase`, deliberately, and a
+generator that omits it is obeying this rule rather than skipping it.
+
 **This requires a type change.** `GameRoundBase` must carry the subject as
 renderable data, not only as `subjectId`:
 
@@ -105,8 +115,14 @@ interface GameStimulus {
 }
 ```
 
-`promptFr` on a round then means _the stem of this round_, and the registry's
-`promptFr` is renamed to `standingPromptFr` — the page subtitle it already is.
+`promptFr` on a round then means _the stem of this round_.
+
+The rename of the registry's `promptFr` to `standingPromptFr` that this section
+first asked for **is withdrawn**. It renames a field on three games, touches
+every consumer, and changes nothing a reader sees — the round's stem and the
+registry's standing question were already distinct values, only similarly
+named. It is cosmetic, and cosmetic churn in a shared registry is how an
+unrelated game breaks.
 
 ---
 
@@ -270,7 +286,9 @@ desktop `xl` 800px).
 
 Ordered by dependency, not by size:
 
-1. `GameStimulus` on `GameRoundBase`; registry `promptFr` → `standingPromptFr`.
+1. `GameStimulus` on `GameRoundBase`, optional — see §2 for why a round whose
+   subject is the answer carries none. The `standingPromptFr` rename this step
+   also asked for is withdrawn.
 2. Every renderer prints the stimulus above the stem.
 3. Near-pool distractor selection in `options.ts`.
 4. Difficulty band on `GameRound`; session ordered by band.

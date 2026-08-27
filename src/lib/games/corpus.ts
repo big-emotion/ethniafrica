@@ -1,5 +1,6 @@
 import type { CountryId } from "@/types/afrik";
 import type { AutonymExonymName } from "@/types/quiz";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 import type { MigrationGeometry } from "@/types/migrations";
 import type { RelationType } from "@/types/relations";
 
@@ -42,6 +43,17 @@ export interface GamePeopleFixture {
   distributionByCountry: GameCountryShare[];
   languageFamilyId: string | null;
   languageFamilyNameFr: string | null;
+  /** `content.sources`, structured — what the reveal states the round rests on. */
+  sources: FicheSourceEntry[];
+  /** `confidence_scores` for this people, absent when none is recorded. */
+  confidence: GameConfidence | null;
+}
+
+/** The recorded standing of a fiche as a whole, carried through to the reveal. */
+export interface GameConfidence {
+  score: number;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
 }
 
 export interface GameCountryShare {
@@ -74,6 +86,10 @@ export interface GameCountryFixture {
   nameOriginActor: string | null;
   historicalNames: GameHistoricalNames | null;
   kingdoms: GameKingdom[];
+  /** `content.sources`, structured — what the reveal states the round rests on. */
+  sources: FicheSourceEntry[];
+  /** `confidence_scores` for this country, absent when none is recorded. */
+  confidence: GameConfidence | null;
 }
 
 export interface GameFamilyFixture {
@@ -104,6 +120,19 @@ export interface GameMigrationFixture {
   summary: string;
   geometry: MigrationGeometry | null;
   peoples: GameMigrationPeople[];
+}
+
+/**
+ * Which slice of the corpus a session is drawn from (charter §10 step 5).
+ *
+ * Both axes are optional and compose: given together they mean the peoples of
+ * that family present in that country. Only the peoples slice can be scoped —
+ * a session about the shapes of countries has no family, and « le pays
+ * d'avant » scoped to one country would be a quiz with one answer.
+ */
+export interface GameScope {
+  countryId?: CountryId;
+  familyId?: string;
 }
 
 /** Everything a round generator may be handed. A game reads only its own slice. */

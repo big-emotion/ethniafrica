@@ -15,16 +15,32 @@
  */
 
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
-import type { GameRound } from "@/lib/games/gameKinds";
+import type { DifficultyBand, GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { loadGameCorpus } from "@/api/v2/services/gamesService";
-import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
+import type {
+  GameCorpus,
+  GameCountryFixture,
+  GameScope,
+} from "@/lib/games/corpus";
 import { buildAppellationsRound } from "@/lib/games/rounds/appellationsRound";
 import { buildHistoricalNameRound } from "@/lib/games/rounds/historicalNameRound";
 import {
   buildMercatorRound,
   mercatorMisleads,
+  trueAreaKm2,
 } from "@/lib/games/rounds/mercatorRound";
+
+/** One narrowing a reader may pick, already resolved to a readable label. */
+export interface GameScopeOption {
+  id: string;
+  labelFr: string;
+}
+
+export interface GameScopeChoices {
+  countries: GameScopeOption[];
+  families: GameScopeOption[];
+}
 
 export interface GameRoundsData {
   rounds: GameRound[];
@@ -34,6 +50,25 @@ export interface GameRoundsData {
    * states outright rather than rendering as an empty screen.
    */
   corpusLimited: boolean;
+  /** The narrowing actually applied; null when the session spans the corpus. */
+  scope: GameScope | null;
+  /** What the reader may narrow to; null for a game that cannot be narrowed. */
+  scopeChoices: GameScopeChoices | null;
+}
+
+/**
+ * A blank query string is not a scope. `?pays=` arrives as an empty string
+ * from the URL and must read as "no filter", not as a country whose id is
+ * nothing — which would return an empty session under a filter nobody set.
+ */
+function definedScope(requested?: GameScope): GameScope | null {
+  const countryId = requested?.countryId?.trim();
+  const familyId = requested?.familyId?.trim();
+  if (!countryId && !familyId) return null;
+  return {
+    ...(countryId ? { countryId } : {}),
+    ...(familyId ? { familyId } : {}),
+  };
 }
 
 /**
@@ -83,18 +118,68 @@ function countryNameMap(
   return Object.fromEntries(countries.map((c) => [c.id, c.nameFr]));
 }
 
+/**
+ * Where the band boundaries fall, as quantiles of the pool ranked by
+ * magnitude. The opening rounds come from the top decile, the middle of the
+ * session from the upper half, and everything below the median is the tail.
+ */
+const TOP_DECILE = 0.1;
+const UPPER_HALF = 0.5;
+
+function bandAtRank(rank: number, poolSize: number): DifficultyBand {
+  const quantile = poolSize <= 1 ? 0 : rank / (poolSize - 1);
+  if (quantile <= TOP_DECILE) return 1;
+  if (quantile <= UPPER_HALF) return 2;
+  return 3;
+}
+
+/**
+ * Bands a pool by magnitude and hands it back easiest-first.
+ *
+ * The returned order is sorted on the *band*, not on the magnitude itself, so
+ * inside a band the pool keeps the rotation it arrived with — otherwise
+ * difficulty ordering would silently undo `rotate` and pin every session to
+ * the same opening subject.
+ */
+function bandedPool<T>(
+  pool: T[],
+  idOf: (subject: T) => string,
+  magnitudeOf: (subject: T) => number
+): { ordered: T[]; bandOf: Map<string, DifficultyBand> } {
+  const byMagnitude = [...pool].sort((a, b) => magnitudeOf(b) - magnitudeOf(a));
+  const bandOf = new Map<string, DifficultyBand>(
+    byMagnitude.map((subject, rank) => [
+      idOf(subject),
+      bandAtRank(rank, byMagnitude.length),
+    ])
+  );
+  const ordered = [...pool].sort(
+    (a, b) => bandOf.get(idOf(a)) - bandOf.get(idOf(b))
+  );
+  return { ordered, bandOf };
+}
+
+/**
+ * A people's population as a magnitude. A fiche that records none reads as 0
+ * and lands in the tail: an unknown figure must not be mistaken for a small
+ * one, and it must not reach the opening rounds by arriving first in the
+ * corpus either.
+ */
+function populationOf(people: GameCorpus["peoples"][number]): number {
+  return people.totalPopulation ?? 0;
+}
+
 function assembleRounds(
   game: GameDefinition,
   corpus: GameCorpus,
   seed: number
 ): GameRound[] {
   const limit = game.roundsPerSession;
-  const peoples = rotate(corpus.peoples, seed);
-  const countries = rotate(corpus.countries, seed);
   const rounds: GameRound[] = [];
 
-  const push = (round: GameRound | null) => {
-    if (round && rounds.length < limit) rounds.push(round);
+  const push = (round: GameRound | null, band: DifficultyBand) => {
+    if (round && rounds.length < limit)
+      rounds.push({ ...round, difficultyBand: band });
   };
 
   switch (game.id) {
@@ -103,37 +188,86 @@ function assembleRounds(
       // stimulus situates a people by country, and an ISO code situates
       // nobody.
       const names = countryNameMap(corpus.countries);
-      for (const people of peoples) push(buildAppellationsRound(people, names));
+      const { ordered, bandOf } = bandedPool(
+        rotate(corpus.peoples, seed),
+        (people) => people.id,
+        populationOf
+      );
+      for (const people of ordered)
+        push(buildAppellationsRound(people, names), bandOf.get(people.id));
       break;
     }
 
-    case "mercator":
+    case "mercator": {
       // A session that cannot be filled with misleading pairs is served
       // short: padding it with honest comparisons would quietly undo the
       // filter, and corpusLimited already states the shortfall on screen.
-      for (const [a, b] of misleadingPairs(countries))
-        push(buildMercatorRound(a, b));
+      const { ordered, bandOf } = bandedPool(
+        rotate(corpus.countries, seed),
+        (country) => country.id,
+        trueAreaKm2
+      );
+      for (const [a, b] of misleadingPairs(ordered)) {
+        // A pair is as hard as its least familiar member: a household name
+        // set against a country the reader has never met is that second
+        // country's round, whatever the first one is.
+        const band = Math.max(bandOf.get(a.id), bandOf.get(b.id));
+        push(buildMercatorRound(a, b), band as DifficultyBand);
+      }
       break;
+    }
 
-    case "pays-davant":
-      for (const country of countries)
-        push(buildHistoricalNameRound(country, countries));
+    case "pays-davant": {
+      const { ordered, bandOf } = bandedPool(
+        rotate(corpus.countries, seed),
+        (country) => country.id,
+        trueAreaKm2
+      );
+      for (const country of ordered)
+        push(
+          buildHistoricalNameRound(country, ordered),
+          bandOf.get(country.id)
+        );
       break;
+    }
   }
 
-  return rounds;
+  // Stable, so a band's own order survives. Mercator needs it: a pair takes
+  // the band of its harder half, which the pool order alone cannot express.
+  return [...rounds].sort((a, b) => a.difficultyBand - b.difficultyBand);
 }
 
 // @req REQ-120
 export async function getGameRoundsHandler(
   game: GameDefinition,
-  seed: number = 0
+  seed: number = 0,
+  requestedScope?: GameScope
 ): Promise<ApiEnvelope<GameRoundsData>> {
-  const corpus = await loadGameCorpus(game.dataSource);
+  // Only the peoples games have a family or a country to be narrowed to.
+  // « La taille qu'on vous a cachée » plays over shapes and « le pays d'avant »
+  // scoped to one country would be a question with one answer, so offering
+  // either the filter would name something the game cannot apply.
+  const scopable = game.dataSource === "peoples";
+  const scope = scopable ? definedScope(requestedScope) : null;
+
+  const corpus = await loadGameCorpus(game.dataSource, scope ?? undefined);
   const rounds = assembleRounds(game, corpus, seed);
 
   return createApiResponse({
     rounds,
     corpusLimited: rounds.length < game.roundsPerSession,
+    scope,
+    scopeChoices: scopable
+      ? {
+          countries: corpus.countries.map((entry) => ({
+            id: entry.id,
+            labelFr: entry.nameFr,
+          })),
+          families: corpus.families.map((entry) => ({
+            id: entry.id,
+            labelFr: entry.nameFr,
+          })),
+        }
+      : null,
   });
 }
