@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
+import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -98,4 +99,106 @@ export function buildCountryTargetFacts(
       ),
     },
   };
+}
+
+const LINK_STYLE: CSSProperties = {
+  fontSize: "var(--afh-text-small)",
+  fontWeight: 700,
+  color: "var(--accent)",
+};
+
+/**
+ * Where the panel sends the reader. The fiche's own country is already on the
+ * page, so it points at the parchment rather than reloading the route the
+ * reader is standing on.
+ */
+function ReadTheFiche({ href }: { href: string }) {
+  return (
+    <a href={href} style={LINK_STYLE}>
+      Lire la fiche complète →
+    </a>
+  );
+}
+
+export interface CountryAtlasFactsInput {
+  /** The fiche's own country, which gets the full panel. */
+  country: CountryDetail;
+  /** Everything the picker offers, named as the picker names it. */
+  targets: AtlasTarget[];
+  /** Documented peoples per country, from the corpus. */
+  peopleCounts: Record<string, number>;
+}
+
+/**
+ * The panel's answer for every country the fiche's globe can be aimed at
+ * (REQ-117).
+ *
+ * The fiche's own country keeps the full reading — the count, the first
+ * entries. Every other country gets what the corpus knows about it and no
+ * more: this globe is a way through the atlas, not a second fiche, and
+ * inventing a richer panel for a country whose fiche is one click away would
+ * be inventing content.
+ *
+ * Titles come from the targets rather than from the corpus, so the panel names
+ * a country exactly as the picker that offered it did. The corpus stores the
+ * declared name — "Republique algerienne democratique et populaire (...)" —
+ * and the two must not disagree inside one control.
+ */
+// @req REQ-117
+export function buildCountryAtlasFacts({
+  country,
+  targets,
+  peopleCounts,
+}: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
+  const own = buildCountryTargetFacts(country);
+
+  return Object.fromEntries(
+    targets.map((target) => {
+      if (target.countryId === country.id) {
+        const ownFacts = own[country.id];
+        return [
+          target.countryId,
+          {
+            ...ownFacts,
+            title: target.nameFr,
+            body: (
+              <div style={{ display: "grid", gap: 14 }}>
+                {ownFacts?.body}
+                <ReadTheFiche href="#fiche" />
+              </div>
+            ),
+          },
+        ];
+      }
+
+      const documented = peopleCounts[target.countryId] ?? 0;
+
+      return [
+        target.countryId,
+        {
+          title: target.nameFr,
+          description:
+            documented === 1
+              ? "1 peuple documenté"
+              : `${countFr.format(documented)} peuples documentés`,
+          body: (
+            <div style={{ display: "grid", gap: 14 }}>
+              {documented === 0 && (
+                <span
+                  style={{
+                    fontSize: "var(--afh-text-small)",
+                    lineHeight: 1.65,
+                    color: "var(--afh-text-soft)",
+                  }}
+                >
+                  Aucun peuple rattaché à ce pays dans le corpus.
+                </span>
+              )}
+              <ReadTheFiche href={`/fr/pays/${target.countryId}`} />
+            </div>
+          ),
+        },
+      ];
+    })
+  );
 }

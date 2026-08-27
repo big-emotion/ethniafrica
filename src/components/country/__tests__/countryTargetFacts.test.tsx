@@ -1,7 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { buildCountryTargetFacts } from "@/components/country/countryTargetFacts";
+import {
+  buildCountryAtlasFacts,
+  buildCountryTargetFacts,
+} from "@/components/country/countryTargetFacts";
+import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
 /**
@@ -73,5 +77,63 @@ describe("country target facts", () => {
 
     expect(typeof facts).toBe("object");
     expect(typeof facts.NGA).toBe("object");
+  });
+});
+
+/**
+ * The fiche's globe offers the whole corpus, so the panel has to answer for
+ * countries the fiche says nothing about. It answers from the corpus — how
+ * many peoples are documented there — and always offers the way in, because a
+ * panel that names a country and then strands the reader on someone else's
+ * fiche is worse than one that says nothing.
+ */
+describe("buildCountryAtlasFacts (REQ-117)", () => {
+  const targets = buildCountryPickerTargets(["NGA", "KEN", "SSD"]);
+
+  function facts(peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 }) {
+    return buildCountryAtlasFacts({
+      country: countryWith([{ name: "Zoulou" }]),
+      targets,
+      peopleCounts,
+    });
+  }
+
+  // @req REQ-117
+  it("keeps the fiche's own country pointed at the reading below, not at a reload", () => {
+    render(<>{facts().NGA?.body}</>);
+
+    expect(
+      screen.getByRole("link", { name: /Lire la fiche complète/ })
+    ).toHaveAttribute("href", "#fiche");
+  });
+
+  // @req REQ-117
+  it("sends another country to its own fiche", () => {
+    render(<>{facts().KEN?.body}</>);
+
+    expect(
+      screen.getByRole("link", { name: /Lire la fiche complète/ })
+    ).toHaveAttribute("href", "/fr/pays/KEN");
+  });
+
+  // @req REQ-117
+  it("names a country the way the picker that offered it does", () => {
+    expect(facts().KEN?.title).toBe("Kenya");
+    expect(facts().SSD?.title).toBe("Soudan du Sud");
+  });
+
+  // @req REQ-117
+  it("counts documented peoples rather than a population", () => {
+    expect(facts().KEN?.description).toBe("12 peuples documentés");
+  });
+
+  // A zero here means the corpus is silent, not that a country is empty.
+  // @req REQ-117
+  it("reads an absent count as corpus silence rather than as none", () => {
+    render(<>{facts({}).KEN?.body}</>);
+
+    expect(
+      screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
+    ).toBeInTheDocument();
   });
 });

@@ -29,7 +29,12 @@ import {
   placeTargetOnSphere,
   type StagePlacement,
 } from "@/lib/atlas/markerPlacement";
-import type { AtlasOverlay, LonLat, Ring } from "@/lib/atlas/overlays";
+import {
+  buildCountryOutlineOverlay,
+  type AtlasOverlay,
+  type LonLat,
+  type Ring,
+} from "@/lib/atlas/overlays";
 import {
   FOOTPRINT_DASH_ARRAY,
   FOOTPRINT_STROKE_WIDTH_SVG,
@@ -511,6 +516,16 @@ export interface AtlasGlobeProps {
    * into noise and the small ones stop being clickable.
    */
   targetPicker?: "markers" | "list";
+  /**
+   * What the reader may choose, when that is wider than what is drawn.
+   *
+   * A country fiche traces one country but offers the whole corpus: the mockup
+   * keeps the choice inside the page rather than sending the reader to another
+   * fiche, so the picker has to name countries this overlay says nothing
+   * about. Absent, the choosable set is the drawn one, which is what the
+   * people, family and continent overlays want.
+   */
+  pickerTargets?: AtlasTarget[];
   /** Replaces the default legend, for a fiche whose drawing needs a different sentence. */
   legend?: ReactNode;
 }
@@ -587,6 +602,7 @@ export function AtlasGlobe({
   areaNoun = "l'empreinte",
   className,
   targetPicker = "markers",
+  pickerTargets,
   legend,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
@@ -618,8 +634,29 @@ export function AtlasGlobe({
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.
+  // Wider than `targets` only where a caller says so. Both still retire a
+  // stale choice the same way: an id nothing offers resolves to nothing.
+  const choosableTargets = pickerTargets ?? targets;
   const chosen =
-    targets.find((target) => target.countryId === chosenCountryId) ?? null;
+    choosableTargets.find((target) => target.countryId === chosenCountryId) ??
+    null;
+
+  /**
+   * On a country fiche the closed line *is* the subject, so it follows the
+   * choice. Leaving it on the fiche's own country would fly the reader to
+   * Kenya while the map went on tracing South Africa, which reads as a bug
+   * rather than as a choice.
+   *
+   * Only this overlay moves: a people field and a family footprint describe
+   * their entity's whole extent, and choosing a country inside one of them
+   * narrows the reading rather than replacing the subject.
+   */
+  const drawnOverlay = useMemo(() => {
+    if (overlay?.kind !== "country-outline") return overlay;
+    if (!chosenCountryId || chosenCountryId === overlay.countryId)
+      return overlay;
+    return buildCountryOutlineOverlay(chosenCountryId) ?? overlay;
+  }, [overlay, chosenCountryId]);
 
   /**
    * The continent scene is already framed on its whole subject, so choosing a
@@ -673,7 +710,7 @@ export function AtlasGlobe({
   // waiting on a tap (REQ-120) — is notified whichever one the fiche mounted.
   const chooseTarget = (countryId: CountryId) => {
     setChosenCountryId(countryId);
-    const target = targets.find(
+    const target = choosableTargets.find(
       (candidate) => candidate.countryId === countryId
     );
     if (target) onTargetChosen?.(target);
@@ -721,7 +758,7 @@ export function AtlasGlobe({
     event.preventDefault();
   };
 
-  if (!overlay || overlay.kind === "people-field-missing") {
+  if (!drawnOverlay || drawnOverlay.kind === "people-field-missing") {
     return (
       <div className={cn(className)} style={NIGHT_STAGE_STYLE}>
         <AtlasGlobeMissing message={missingMessage} />
@@ -734,12 +771,13 @@ export function AtlasGlobe({
   // would trade the one signal the scene carries for a bare frame. Raising
   // the sphere under the continent is step B of the plan, and it is gated
   // on marker legibility, TTFB and Lighthouse budgets not yet measured.
-  const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
+  const stageIsSphere =
+    webglSupported && drawnOverlay.kind !== "continent-field";
 
   // A picker with one entry offers a choice that is not one, and the button
   // that returns from a choice has nothing to return to. 394 of the corpus's
   // 789 people fiches declare exactly one country; the markers stand in.
-  const offersList = targetPicker === "list" && targets.length > 1;
+  const offersList = targetPicker === "list" && choosableTargets.length > 1;
 
   const chosenFacts = chosen ? factsFor(chosen, facts, targetFacts) : null;
   const place = (target: AtlasTarget): StagePlacement =>
@@ -751,6 +789,11 @@ export function AtlasGlobe({
     <div
       ref={setStage}
       data-atlas-stage=""
+      data-atlas-drawn-country={
+        drawnOverlay.kind === "country-outline"
+          ? drawnOverlay.countryId
+          : undefined
+      }
       className={cn(className)}
       style={NIGHT_STAGE_STYLE}
     >
@@ -773,13 +816,13 @@ export function AtlasGlobe({
 
       {stageIsSphere ? (
         <LazyAtlasGlobeCanvas
-          overlay={overlay}
+          overlay={drawnOverlay}
           pose={pose}
           focusedCountryId={chosenCountryId}
         />
       ) : (
         <AtlasGlobeFallback
-          overlay={overlay}
+          overlay={drawnOverlay}
           reducedMotion={reducedMotion}
           pose={pose}
           cameraFocus={cameraFocus?.center ?? null}
@@ -815,7 +858,7 @@ export function AtlasGlobe({
       {offersList && (
         <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
           <AtlasTargetPicker
-            targets={targets}
+            targets={choosableTargets}
             memberCountByCountry={memberCountByCountry}
             chosenCountryId={chosenCountryId}
             onChoose={chooseTarget}
@@ -838,9 +881,9 @@ export function AtlasGlobe({
 
       <div
         data-atlas-toolbar=""
-        className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
+        className="absolute inset-x-0 bottom-0 hidden justify-center gap-2 p-3 min-[760px]:flex"
       >
-        {offersList && (
+        {offersList && drawnOverlay.kind !== "country-outline" && (
           <button
             type="button"
             aria-pressed={chosenCountryId === null}
