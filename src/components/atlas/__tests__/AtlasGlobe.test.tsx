@@ -15,7 +15,11 @@ import {
   PANEL_SIDE_BREAKPOINT_PX,
   SIDE_PANEL_VIEW_FRACTION,
 } from "@/lib/atlas/panelBias";
-import { continentTargetFacts, type AtlasTarget } from "@/lib/atlas/targets";
+import {
+  buildCountryPickerTargets,
+  continentTargetFacts,
+  type AtlasTarget,
+} from "@/lib/atlas/targets";
 
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
   AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
@@ -386,27 +390,64 @@ describe("AtlasGlobe", () => {
       ).not.toBeInTheDocument();
     });
 
+    /**
+     * 394 of the corpus's 789 people fiches declare exactly one country, and
+     * those fiches fell back to a bare pastille: a 22px unlabelled circle,
+     * and the only thing naming the country the globe was drawing. The list
+     * names it. One entry is a thin list, but a fiche asks for a list because
+     * its targets are its presence countries, and a people with one declared
+     * country still has one.
+     */
     // @req REQ-117
-    // 394 of the corpus's 789 people fiches declare exactly one country. A
-    // dropdown with one entry offers a choice that is not one, and the button
-    // that returns from a choice has nothing to return to, so the markers
-    // stand in and neither is rendered.
-    // @req REQ-117
-    it("keeps the pastilles on a fiche with one country to choose from", () => {
+    it("lists the one country of a single-presence fiche rather than leaving a bare pastille", () => {
       render(
         <AtlasGlobe
           overlay={peopleOverlay}
           targetPicker="list"
           missingMessage="n/a"
           wholeAreaLabel="Toute l'aire"
+          areaNoun="présence"
         />
       );
 
-      expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
       expect(
-        screen.queryByRole("button", { name: /Toute l'aire/ })
+        screen.getByRole("button", { name: "Choisir un pays de présence" })
+      ).toBeInTheDocument();
+      expect(
+        document.querySelector("[data-atlas-target]")
       ).not.toBeInTheDocument();
-      expect(document.querySelector("[data-atlas-target]")).toBeInTheDocument();
+    });
+
+    /**
+     * The button clears the choice, so it is the choice that earns it — not
+     * the shape of the picker. Gated on the picker instead, a fiche offering
+     * pastilles could be sent into a chosen country with no way back to the
+     * whole area but "Recentrer", which also undoes the reader's own turn.
+     */
+    // @req REQ-117
+    it("offers the way back to the whole area as soon as a country is chosen, pastilles or list", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          missingMessage="n/a"
+          wholeAreaLabel="Toute l'aire"
+        />
+      );
+
+      expect(
+        screen.queryByRole("button", { name: "Toute l'aire" })
+      ).not.toBeInTheDocument();
+
+      fireEvent.click(markerFor("NGA"));
+
+      const back = screen.getByRole("button", { name: "Toute l'aire" });
+      expect(back).toHaveAttribute("aria-pressed", "false");
+
+      fireEvent.click(back);
+
+      expect(
+        document.querySelector("[data-atlas-target-chosen]")
+      ).not.toBeInTheDocument();
     });
 
     // @req REQ-117
@@ -466,6 +507,46 @@ describe("AtlasGlobe", () => {
       expect(screen.getByRole("option", { name: /Bénin/ })).toHaveTextContent(
         "1 peuple"
       );
+    });
+
+    /**
+     * A people fiche has no member peoples, so reading a member count on one
+     * printed "0 peuple" beside every presence country it declared — a number
+     * the corpus never claimed, denying the presence the halo was drawing.
+     * The fiche's own figure is carried with the country's facts, because the
+     * overlay has none that is true: its `populationShare` is normalised over
+     * the largest drawn country, so it sizes halos rather than measuring a
+     * share. A country the fiche gives no figure for carries no line.
+     */
+    // @req REQ-117
+    it("carries the fiche's own figure for a presence country, never a member count it has none of", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+          areaNoun="présence"
+          facts={{
+            NGA: { title: "Yoruba au Nigeria", subtitle: "45 500 000" },
+            ZAF: { title: "Yoruba en Afrique du Sud" },
+          }}
+        />
+      );
+
+      fireEvent.click(
+        screen.getByRole("button", { name: "Choisir un pays de présence" })
+      );
+
+      for (const option of screen.getAllByRole("option")) {
+        expect(option).not.toHaveTextContent(/\bpeuples?\b/);
+      }
+      expect(screen.getByRole("option", { name: /Nigeria/ })).toHaveTextContent(
+        "45 500 000"
+      );
+      // Declared, but with no figure of its own: a name rather than a zero.
+      expect(
+        screen.getByRole("option", { name: /Afrique du Sud/ })
+      ).toHaveTextContent(/^\s*\S*\s*Afrique du Sud\s*$/);
     });
 
     // @req REQ-112
@@ -801,6 +882,24 @@ describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
     expect(surface).toHaveAttribute("tabindex", "0");
   });
 
+  /**
+   * The mockup lays the tools out at every width — centred, wrapping — and the
+   * project is mobile-first. They were hidden below 760px, which left a phone
+   * with no way to flatten the map, recentre it, or leave a chosen country.
+   */
+  // @req REQ-117
+  it("keeps the view controls on the stage at every width, the mockup's own rule", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const toolbar = container.querySelector<HTMLElement>(
+      "[data-atlas-toolbar]"
+    );
+    expect(toolbar).not.toBeNull();
+    expect(toolbar?.className).not.toMatch(/(^|\s)hidden(\s|$)/);
+  });
+
   // @req REQ-117
   it("names the projection toggle for what pressing it will do", () => {
     render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
@@ -865,11 +964,11 @@ describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
 });
 
 describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () => {
-  // The legend and the toolbar were both `hidden` below 760px, on the
-  // grounds that the bottom sheet owns that space. The sheet only exists
-  // once a target has been chosen, so before that a phone reader got a
-  // globe that moves, no statement of what dragging does and no way back
-  // to centre — which reads as "it spins and I cannot stop it".
+  // The legend and the toolbar were both `hidden` below 760px, so a phone
+  // reader got a globe that moves under the finger with no statement of what
+  // dragging does and no way back to centre — which reads as "it spins and I
+  // cannot stop it". recette fixed the toolbar half independently while this
+  // branch was open; these guard both halves against a relapse.
   // @req REQ-117
   it("shows the drag legend at phone width, before any panel is open", () => {
     const { container } = render(
@@ -890,5 +989,104 @@ describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () =
     const toolbar = container.querySelector("[data-atlas-toolbar]");
     expect(toolbar?.className).not.toContain("hidden");
     expect(screen.getByRole("button", { name: "Recentrer" })).toBeVisible();
+  });
+});
+
+/**
+ * A country fiche used to carry its own picker, outside the globe, which
+ * navigated to another fiche rather than re-aiming the camera. The mockup
+ * keeps the choice inside the page: the camera flies, the closed line moves
+ * with it, and the panel answers for whatever country was chosen — the fiche
+ * below stays the one the reader came for.
+ *
+ * That means the choosable set is wider than the drawn one, which is the whole
+ * reason `pickerTargets` exists: the overlay says what is traced, this says
+ * what may be chosen.
+ */
+describe("AtlasGlobe — choosing across the corpus on a country fiche", () => {
+  const corpusTargets = buildCountryPickerTargets(["ZAF", "KEN"]);
+
+  beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      configurable: true,
+      value: vi.fn().mockImplementation((query: string) => ({
+        matches: query.includes("prefers-reduced-motion"),
+        media: query,
+        onchange: null,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  function renderCountryFiche() {
+    return render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        pickerTargets={corpusTargets}
+        targetPicker="list"
+        areaNoun="l'atlas"
+        missingMessage="n/a"
+      />
+    );
+  }
+
+  const openPicker = () =>
+    fireEvent.click(screen.getByRole("button", { name: /pays de l'atlas/i }));
+
+  // @req REQ-117
+  it("offers countries the drawn overlay never mentions", () => {
+    renderCountryFiche();
+    openPicker();
+
+    expect(screen.getByRole("option", { name: /Kenya/ })).toBeInTheDocument();
+    expect(
+      screen.getByRole("option", { name: /Afrique du Sud/ })
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-116
+  it("moves the closed line onto the country the reader chose", () => {
+    const { container } = renderCountryFiche();
+    const stage = () => container.querySelector("[data-atlas-stage]");
+
+    expect(stage()).toHaveAttribute("data-atlas-drawn-country", "ZAF");
+
+    openPicker();
+    fireEvent.click(screen.getByRole("option", { name: /Kenya/ }));
+
+    expect(stage()).toHaveAttribute("data-atlas-drawn-country", "KEN");
+  });
+
+  // @req REQ-117
+  it("answers for the chosen country rather than for the fiche's own", () => {
+    renderCountryFiche();
+    openPicker();
+    fireEvent.click(screen.getByRole("option", { name: /Kenya/ }));
+
+    expect(screen.getByRole("dialog", { name: "Kenya" })).toBeVisible();
+  });
+
+  // Returning from a choice must put the fiche's own country back under the
+  // line, not leave the globe drawing the last country visited.
+  // @req REQ-116
+  it("puts the fiche's own country back when the reader recentres", () => {
+    const { container } = renderCountryFiche();
+
+    openPicker();
+    fireEvent.click(screen.getByRole("option", { name: /Kenya/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    expect(container.querySelector("[data-atlas-stage]")).toHaveAttribute(
+      "data-atlas-drawn-country",
+      "ZAF"
+    );
   });
 });

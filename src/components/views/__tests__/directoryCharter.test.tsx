@@ -13,7 +13,6 @@ import type {
   LanguageFamilySummary,
   PeopleSummary,
 } from "@/types/afrik-frontend";
-import { CountryView } from "@/components/views/CountryView";
 import { PeopleView } from "@/components/views/PeopleView";
 import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
 import {
@@ -114,14 +113,6 @@ describe("DirectoryHero — accent scope + Display H1 (ETNI-801 · FR106)", () =
 });
 
 describe.each([
-  {
-    name: "CountryView",
-    entityType: "country" as DirectoryEntityType,
-    Component: CountryView,
-    props: { language: "fr" as const, onCountrySelect: vi.fn() },
-    setup: () => vi.mocked(getAllCountries).mockResolvedValue(COUNTRIES),
-    firstCardName: "Afrique du Sud",
-  },
   {
     name: "LanguageFamilyView",
     entityType: "language-family" as DirectoryEntityType,

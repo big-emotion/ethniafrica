@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { IDLE_POSE, poseForTarget } from "../camera";
+import { FLAT_MORPH, IDLE_POSE, SPHERE_MORPH, poseForTarget } from "../camera";
+import { fitScale } from "../sphereLayer";
+import {
+  buildRotationMatrix,
+  lonLatToSphere,
+  rotateSpherePoint,
+} from "../projection";
+import { lonLatToFlat } from "../sphereMesh";
 import { NO_BIAS, biasForPanel } from "../panelBias";
 import {
   STAGE_ASPECT,
@@ -63,6 +70,86 @@ describe("placeTargetOnSphere (REQ-117 AC1)", () => {
 
     expect(placeTargetOnSphere(chosen, pose).facingReader).toBe(true);
     expect(placeTargetOnSphere(antipode, pose).facingReader).toBe(false);
+  });
+
+  /**
+   * The stage is wider than it is tall — 1512x520 on a laptop — and every
+   * assertion above it fixes the *chosen* target, whose rotated position is
+   * (0, 0, 1). Nought divided by any aspect and scaled by any factor is still
+   * nought, so those cases hold whatever arithmetic this function performs.
+   * An unchosen target is what actually exercises it, and is what a people
+   * fiche opens on: nothing is chosen, so its one marker is unchosen.
+   */
+  // @req REQ-117
+  it("puts an unchosen target where the shader draws that ground, on the stage's real aspect", () => {
+    const stageAspect = 1512 / 520;
+    // Ethiopia's centroid, the single presence country of PPL_AARI.
+    const ethiopia = target(39.6, 8.6);
+
+    const placement = placeTargetOnSphere(ethiopia, IDLE_POSE, stageAspect);
+
+    // Recomputed here the way the vertex shader does it, so the two cannot
+    // drift apart silently: scale, then divide x by the aspect, then dolly
+    // and offset.
+    const rotated = rotateSpherePoint(
+      buildRotationMatrix(IDLE_POSE.yaw, IDLE_POSE.pitch),
+      lonLatToSphere(ethiopia.center.lon, ethiopia.center.lat)
+    );
+    const scale = fitScale(SPHERE_MORPH, stageAspect);
+    const clipX =
+      ((rotated.x * scale) / stageAspect) * IDLE_POSE.zoom + IDLE_POSE.offsetX;
+    const clipY = rotated.y * scale * IDLE_POSE.zoom + IDLE_POSE.offsetY;
+
+    expect(placement.leftPercent).toBeCloseTo((clipX + 1) * 50, 6);
+    expect(placement.topPercent).toBeCloseTo((1 - clipY) * 50, 6);
+  });
+
+  /**
+   * The sphere occupies the middle |x| <= 1/aspect of a wide stage, because
+   * the shader divides x by the aspect. A marker outside that band is drawn
+   * in the void beside the globe, naming ground the reader cannot see under
+   * it — which is the state PPL_AARI shipped in.
+   */
+  // @req REQ-117
+  it("keeps an unchosen target inside the disc the sphere occupies on a wide stage", () => {
+    const stageAspect = 1512 / 520;
+    const halfDiscPercent = (1 / stageAspect) * 50;
+
+    for (const country of [
+      target(39.6, 8.6),
+      target(-15, 14),
+      target(30, -25),
+    ]) {
+      const { leftPercent } = placeTargetOnSphere(
+        country,
+        IDLE_POSE,
+        stageAspect
+      );
+      expect(Math.abs(leftPercent - 50)).toBeLessThanOrEqual(halfDiscPercent);
+    }
+  });
+
+  /**
+   * "Ce que la carte plate en fait" morphs the surface to the Mercator plane.
+   * The markers ride the same morph or they hang over the sphere the reader
+   * just left.
+   */
+  // @req REQ-117
+  it("follows the surface through the morph, so a flattened map keeps its markers", () => {
+    const stageAspect = 1512 / 520;
+    const ethiopia = target(39.6, 8.6);
+    const flatPose = { ...IDLE_POSE, morph: FLAT_MORPH };
+
+    const placement = placeTargetOnSphere(ethiopia, flatPose, stageAspect);
+
+    const flat = lonLatToFlat(ethiopia.center.lon, ethiopia.center.lat);
+    const scale = fitScale(FLAT_MORPH, stageAspect);
+    const clipX =
+      ((flat.x * scale) / stageAspect) * flatPose.zoom + flatPose.offsetX;
+    const clipY = flat.y * scale * flatPose.zoom + flatPose.offsetY;
+
+    expect(placement.leftPercent).toBeCloseTo((clipX + 1) * 50, 6);
+    expect(placement.topPercent).toBeCloseTo((1 - clipY) * 50, 6);
   });
 
   // @req REQ-117
@@ -130,8 +217,13 @@ describe("the non-WebGL fallback's geometry (REQ-117 AC5)", () => {
 });
 
 describe("STAGE_ASPECT", () => {
+  /**
+   * It is the basemap's ratio, and it is only a fall-back for the render
+   * before the stage has been measured. The stage itself is full-width over a
+   * fixed height, so its real ratio is a runtime fact and callers pass it in.
+   */
   // @req REQ-117
-  it("matches the fixed aspect ratio the globe stage is laid out at", () => {
+  it("falls back to the basemap's own ratio until the stage has been measured", () => {
     expect(STAGE_ASPECT).toBeCloseTo(800 / 758, 6);
   });
 });

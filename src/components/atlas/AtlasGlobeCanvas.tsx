@@ -659,6 +659,11 @@ export function AtlasGlobeCanvas({
         inset: 0,
         width: "100%",
         height: "100%",
+        // AtlasGlobe's interaction surface is laid over the stage and this is
+        // mounted over that, later in the DOM and positioned, so without this
+        // the canvas won every hit test and the globe could not be turned.
+        // It is aria-hidden paint: it has no business taking a pointer.
+        pointerEvents: "none",
       }}
     />
   );

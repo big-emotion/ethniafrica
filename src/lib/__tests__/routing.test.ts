@@ -8,6 +8,7 @@ import {
   getLocalizedRoute,
   getPageFromRoute,
   resolveCountryDeepLink,
+  resolvePeopleDeepLink,
 } from "@/lib/routing";
 
 describe("entity routes (ContextTriad, ETNI-818)", () => {
@@ -122,6 +123,43 @@ describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   // @req REQ-091 FR90
   it("does not mistake a bare /fr/regards route for the colonization page type", () => {
     expect(getPageFromRoute("/fr/regards")).toBeNull();
+  });
+});
+
+describe("people deep link (the retired ?people= directory form)", () => {
+  // @req REQ-097
+  it("sends a people query to that people's fiche", () => {
+    expect(resolvePeopleDeepLink("fr", { people: "PPL_YORUBA" })).toBe(
+      "/fr/peuples/PPL_YORUBA"
+    );
+  });
+
+  // @req REQ-097
+  it("leaves a directory with no people query alone", () => {
+    expect(resolvePeopleDeepLink("fr", {})).toBeNull();
+    expect(resolvePeopleDeepLink("fr", { people: "" })).toBeNull();
+  });
+
+  // @req REQ-097
+  it("ignores a repeated people query rather than picking one of them", () => {
+    expect(
+      resolvePeopleDeepLink("fr", { people: ["PPL_YORUBA", "PPL_ZULU"] })
+    ).toBeNull();
+  });
+
+  // @req REQ-097
+  it("does not answer for another entity's query", () => {
+    expect(resolvePeopleDeepLink("fr", { country: "NGA" })).toBeNull();
+  });
+
+  // Same guard as the country form: two leading slashes make a browser read
+  // the rest as a host, so an unencoded identifier would make this an open
+  // redirect.
+  // @req REQ-097
+  it("encodes the identifier, so a crafted query cannot leave the site", () => {
+    expect(resolvePeopleDeepLink("fr", { people: "//evil.com" })).toBe(
+      "/fr/peuples/%2F%2Fevil.com"
+    );
   });
 });
 
