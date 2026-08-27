@@ -113,25 +113,45 @@ export interface HubModuleDefinition {
   group?: ModuleGroupId;
   /**
    * How this module fills the home's hero slot, or absent if it cannot
-   * (REQ-115).
+   * (REQ-115). See HeroPreviewKind.
    *
-   * - "standalone": the preview needs nothing from the corpus. Keyed by id
-   *   in components/home/heroPreviews.tsx.
-   * - "game": the preview is the play loop itself, so the slot builds its
-   *   rounds server-side exactly as /fr/jouer/[jeu] does. One code path
-   *   covers every game; no per-game entry is needed anywhere.
-   *
-   * It describes a path and never holds a component, because this file is
+   * It names a shape and never holds a component, because this file is
    * imported by server code — moduleAvailability's probe, and the home page
    * itself — while a preview is a `dynamic(..., { ssr: false })` island,
-   * which Next permits only inside a Client Component. heroPreviews.test.tsx
-   * fails the build if a declaration here has nothing to render.
+   * which Next permits only inside a Client Component. Two switches read
+   * this: loadHeroPreview resolves the data, HeroModuleStage renders it.
    */
   heroable?: HeroPreviewKind;
 }
 
+/**
+ * The shapes a hero preview comes in (REQ-115).
+ *
+ * - "globe": the textured globe, self-contained, no corpus behind it.
+ * - "game": the play loop itself, rounds built server-side exactly as
+ *   /fr/jouer/[jeu] builds them. One branch covers all eleven games.
+ * - "migration-paths": the sourced events drawn on the Africa basemap.
+ * - "family-crown": the linguistic families laid out in a radial crown,
+ *   each weighted by the peoples it holds.
+ *
+ * With strictNullChecks off a switch missing a case returns undefined and
+ * compiles clean, so exhaustiveness over this union is a test's job, not
+ * the compiler's — see HeroModuleStage's own suite.
+ */
 // @req REQ-115
-export type HeroPreviewKind = "standalone" | "game";
+export type HeroPreviewKind =
+  | "globe"
+  | "game"
+  | "migration-paths"
+  | "family-crown";
+
+// @req REQ-115
+export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
+  "globe",
+  "game",
+  "migration-paths",
+  "family-crown",
+];
 
 // The flag decides whether the module exists at all, never the corpus: a
 // module switched off is not "coming soon", it is not there.
@@ -184,6 +204,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "families",
     availability: "data",
     dataSource: "afrik_language_families",
+    heroable: "family-crown",
   },
   {
     id: "recherche",
@@ -211,6 +232,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "migrations",
     availability: "data",
     dataSource: "migration_events",
+    heroable: "migration-paths",
   },
   // Jouer: the quiz keeps its own route; every other entry is a game the
   // hub reaches by slug. comparer and liens keep the ids they shipped with
@@ -260,7 +282,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // *is* this game's lesson stated without a question — "chaque pastille
     // retrouve sa surface réelle" — and it is the band the home has always
     // opened on. The chip still sends a reader to the game itself.
-    heroable: "standalone",
+    heroable: "globe",
   },
   {
     id: "doctrine",

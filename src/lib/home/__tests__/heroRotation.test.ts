@@ -31,7 +31,7 @@ describe("pickHeroModule", () => {
     const drawn = pickHeroModule(
       byAxis([
         hubModule({ id: "recherche" }),
-        hubModule({ id: "mercator", heroable: "standalone" }),
+        hubModule({ id: "mercator", heroable: "globe" }),
       ]),
       { random: first }
     );
@@ -43,8 +43,8 @@ describe("pickHeroModule", () => {
   it("never draws a module the corpus cannot fill", () => {
     const drawn = pickHeroModule(
       byAxis([
-        hubModule({ id: "liens", heroable: "standalone", available: false }),
-        hubModule({ id: "mercator", heroable: "standalone" }),
+        hubModule({ id: "liens", heroable: "globe", available: false }),
+        hubModule({ id: "mercator", heroable: "globe" }),
       ]),
       { random: first }
     );
@@ -58,14 +58,14 @@ describe("pickHeroModule", () => {
       hubModule({
         id: "familles",
         accessMode: "explorer",
-        heroable: "standalone",
+        heroable: "globe",
       }),
       hubModule({
         id: "frise",
         accessMode: "comprendre",
-        heroable: "standalone",
+        heroable: "globe",
       }),
-      hubModule({ id: "mercator", heroable: "standalone" }),
+      hubModule({ id: "mercator", heroable: "globe" }),
     ]);
 
     expect(pickHeroModule(modules, { random: first })?.id).toBe("familles");
@@ -76,8 +76,8 @@ describe("pickHeroModule", () => {
   it("honours a pin, whatever the draw would have returned", () => {
     const drawn = pickHeroModule(
       byAxis([
-        hubModule({ id: "mercator", heroable: "standalone" }),
-        hubModule({ id: "liens", heroable: "standalone" }),
+        hubModule({ id: "mercator", heroable: "globe" }),
+        hubModule({ id: "liens", heroable: "globe" }),
       ]),
       { pin: "liens", random: first }
     );
@@ -88,7 +88,7 @@ describe("pickHeroModule", () => {
   // @req REQ-114
   it("falls back to the draw when a pin names no eligible module", () => {
     const drawn = pickHeroModule(
-      byAxis([hubModule({ id: "mercator", heroable: "standalone" })]),
+      byAxis([hubModule({ id: "mercator", heroable: "globe" })]),
       { pin: "does-not-exist", random: first }
     );
 

@@ -1,63 +1,111 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
 import { GamePlayHost } from "@/components/play/GamePlayHost";
-import { HERO_PREVIEWS } from "@/components/home/heroPreviews";
 import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 import type { HeroPreview } from "@/lib/home/heroPreviewData";
+
+// Each preview is wrapped once, here, at module scope. Calling dynamic()
+// during render would mint a new component identity on every pass and
+// remount the island under the reader. Both are ssr:false because both
+// measure or animate on mount, which Next permits only inside a Client
+// Component — this file is that boundary.
+const LazyMigrationPaths = dynamic(
+  () =>
+    import("@/components/home/HeroMigrationPaths").then(
+      (mod) => mod.HeroMigrationPaths
+    ),
+  { ssr: false, loading: () => <HeroStagePlaceholder /> }
+);
+
+const LazyFamilyCrown = dynamic(
+  () =>
+    import("@/components/home/HeroFamilyCrown").then(
+      (mod) => mod.HeroFamilyCrown
+    ),
+  { ssr: false, loading: () => <HeroStagePlaceholder /> }
+);
 
 export interface HeroModuleStageProps {
   preview: HeroPreview;
 }
 
 /**
- * Renders whatever the drawn module turned out to need (REQ-115). The
- * client boundary lives here rather than in HomeHero so the hero itself
- * stays a server component: only the preview lookup has to be client-side,
- * because previews are `ssr:false` islands.
+ * Renders whatever the drawn module turned out to need (REQ-115).
  *
- * Every game shares one branch. GamePlayHost already is the boundary the
- * game page uses, so eleven games cost one line here and no entry in the
- * preview map — the registry's "game" kind is the whole declaration.
+ * The switch is the second half of HeroPreviewKind's contract — the first
+ * is loadHeroPreview, which resolves the data. With strictNullChecks off a
+ * missing case here would return undefined and compile clean, so
+ * exhaustiveness is asserted by this component's own suite rather than by
+ * the compiler.
  *
- * A standalone id with no preview falls back to the globe rather than
- * leaving the band empty. heroPreviews.test.tsx makes that unreachable, so
- * the branch is defence in depth, not behaviour to rely on.
+ * Every branch occupies the same reserved box, and each preview's loading
+ * placeholder matches the height of the thing that replaces it: the draw
+ * happens on the server and never changes within a page view, so the only
+ * layout shift available is the fallback-to-island swap.
  */
 // @req REQ-115
 export function HeroModuleStage({ preview }: HeroModuleStageProps) {
-  if (preview.kind === "game") {
-    return (
-      // GamePlayHost defers its island without a loading state of its own,
-      // so the box has to declare the height here — otherwise the band
-      // grows under the reader the moment the island lands. The floors
-      // match .home-globe-stage's, so the seam sits in the same place
-      // whichever module was drawn.
-      <div className="hero-game-stage">
-        <GamePlayHost game={preview.game} rounds={preview.rounds} />
-        <style>{`
-          .hero-game-stage {
-            box-sizing: border-box;
-            width: 100%;
-            max-width: 960px;
-            margin: 0 auto;
-            min-height: 460px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          }
-          @media (min-width: 720px) {
-            .hero-game-stage { min-height: 540px; }
-          }
-          @media (min-width: 1200px) {
-            .hero-game-stage { flex: 1 1 auto; min-height: 0; }
-          }
-        `}</style>
-      </div>
-    );
-  }
+  switch (preview.kind) {
+    case "globe":
+      return <HomeGlobeStage />;
 
-  const Preview = HERO_PREVIEWS[preview.moduleId] ?? HomeGlobeStage;
-  return <Preview />;
+    case "game":
+      return (
+        <div className="hero-stage-box">
+          <GamePlayHost game={preview.game} rounds={preview.rounds} />
+          <HeroStageStyles />
+        </div>
+      );
+
+    case "migration-paths":
+      return <LazyMigrationPaths paths={preview.paths} />;
+
+    case "family-crown":
+      return <LazyFamilyCrown families={preview.families} />;
+
+    default:
+      // A kind with no branch would otherwise render nothing at all. The
+      // globe is what the band showed before this slot existed.
+      return <HomeGlobeStage />;
+  }
+}
+
+/** Holds the box open while a preview island loads. */
+function HeroStagePlaceholder() {
+  return (
+    <div className="hero-stage-box" aria-hidden="true">
+      <HeroStageStyles />
+    </div>
+  );
+}
+
+/**
+ * The reserved stage, on .home-globe-stage's own floors so the seam lands
+ * in the same place whichever module was drawn.
+ */
+function HeroStageStyles() {
+  return (
+    <style>{`
+      .hero-stage-box {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        min-height: 460px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media (min-width: 720px) {
+        .hero-stage-box { min-height: 540px; }
+      }
+      @media (min-width: 1200px) {
+        .hero-stage-box { flex: 1 1 auto; min-height: 0; }
+      }
+    `}</style>
+  );
 }
 
 export default HeroModuleStage;
