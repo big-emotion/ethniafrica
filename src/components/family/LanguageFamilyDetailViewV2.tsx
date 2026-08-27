@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { LanguageFamily } from "@/types/afrik";
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
 import type { MemberPeopleLike } from "@/lib/familyFootprintRanking";
+import type { FamilyFootprintProvenance } from "@/lib/familyFootprintSource";
 import { FamilyParchment } from "@/components/family/FamilyParchment";
 import { FamilyHistorySection } from "@/components/family/FamilyHistorySection";
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
@@ -61,6 +62,8 @@ export interface LanguageFamilyDetailViewV2Props {
   footprintCountries?: readonly FamilyFootprintCountry[];
   memberPeoples?: readonly MemberPeopleLike[];
   memberPeopleCount?: number;
+  /** Which rule built the footprint, so the parchment describes the one the page applied. */
+  footprintProvenance?: FamilyFootprintProvenance;
 }
 
 // @req REQ-047
@@ -71,6 +74,7 @@ export function LanguageFamilyDetailViewV2({
   footprintCountries = [],
   memberPeoples = [],
   memberPeopleCount = 0,
+  footprintProvenance = "member-peoples",
 }: LanguageFamilyDetailViewV2Props) {
   const data = transformFamilyData(family);
 
@@ -81,6 +85,7 @@ export function LanguageFamilyDetailViewV2({
         footprintCountries={footprintCountries}
         memberPeoples={memberPeoples}
         memberPeopleCount={memberPeopleCount}
+        footprintProvenance={footprintProvenance}
       />
       <div className="afh-parchment-section">
         <FamilyDecolonialHeader data={data.decolonialHeader} />

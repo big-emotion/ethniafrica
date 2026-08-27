@@ -32,6 +32,40 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
     expect(facts.NGA?.description).toMatch(/sans tracé de limite/);
   });
 
+  /**
+   * "au" was hard-coded, so every feminine or vowel-initial country read as
+   * broken French on the fiche of every people present there — "Aari au
+   * Éthiopie" on PPL_AARI, whose one presence country it is. The corpus
+   * reaches all 54, so the title cannot assume one gender.
+   */
+  // @req REQ-117
+  it("agrees the preposition with the country it names", () => {
+    const titleFor = (country: string, population: number) =>
+      buildPeoplePresenceFacts({
+        peopleName: "Aari",
+        peopleId: "PPL_AARI",
+        demography: {
+          totalPopulation: population,
+          referenceYear: 2025,
+          distributionByCountry: [{ country, population }],
+        },
+      })[country]?.title;
+
+    // Vowel-initial, and feminine: both take "en".
+    expect(titleFor("ETH", 300000)).toBe("Aari en Éthiopie");
+    expect(titleFor("AGO", 100)).toBe("Aari en Angola");
+    // Masculine and consonant-initial keeps "au".
+    expect(titleFor("TGO", 100)).toBe("Aari au Togo");
+    // Masculine despite the final -e, so still "au".
+    expect(titleFor("ZWE", 100)).toBe("Aari au Zimbabwe");
+    // Feminine and consonant-initial: the one case no spelling rule reaches.
+    expect(titleFor("NAM", 100)).toBe("Aari en Namibie");
+    // Plural takes "aux".
+    expect(titleFor("COM", 100)).toBe("Aari aux Comores");
+    // A name that takes no article at all takes "à".
+    expect(titleFor("MDG", 100)).toBe("Aari à Madagascar");
+  });
+
   // @req REQ-117
   it("gives the declared population and the share of the whole people", () => {
     const facts = buildPeoplePresenceFacts({

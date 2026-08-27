@@ -25,7 +25,7 @@ const targets: AtlasTarget[] = [
   },
 ];
 
-const memberCounts = { NGA: 29, BEN: 6, TGO: 1 };
+const subtitles = { NGA: "29 peuples", BEN: "6 peuples", TGO: "1 peuple" };
 
 function renderPicker(
   props: Partial<React.ComponentProps<typeof AtlasTargetPicker>> = {}
@@ -34,7 +34,7 @@ function renderPicker(
   render(
     <AtlasTargetPicker
       targets={targets}
-      memberCountByCountry={memberCounts}
+      subtitleByCountry={subtitles}
       chosenCountryId={null}
       onChoose={onChoose}
       {...props}

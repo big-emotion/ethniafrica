@@ -218,6 +218,10 @@ export default async function PaysSlugPage({
               targetPicker="list"
               pickerTargets={pickerTargets}
               areaNoun="l'atlas"
+              // Clearing the choice puts the fiche's own country back under
+              // the line, so the button says that rather than "toute
+              // l'empreinte", which a country fiche does not have.
+              wholeAreaLabel={`Revenir à ${countryDetail.nameCommonFr || countryDetail.nameFr}`}
               facts={buildCountryAtlasFacts({
                 country: countryDetail,
                 targets: pickerTargets,
