@@ -75,6 +75,18 @@ describe("fiche parchment contrast", () => {
     ).toEqual([]);
   });
 
+  // Small accent-coloured text takes the ink variant, never the fill: the
+  // fills sit between 2.28:1 and 3.09:1 on their own tint. Only the head's h1
+  // may carry the raw accent, and only because large text clears at 3:1.
+  // @req REQ-116
+  it("sets no small text in the raw accent fill", () => {
+    const smallAccentText = parchmentCss
+      .split("\n")
+      .filter((line) => /color:\s*var\(--accent\)/.test(line));
+
+    expect(smallAccentText).toEqual([]);
+  });
+
   // @req REQ-116
   it("proves the ink it does use clears AA, and the one it avoids does not", () => {
     const soft = tokenHex("--afh-color-text-soft");

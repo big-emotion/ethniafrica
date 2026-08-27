@@ -315,12 +315,99 @@
   color: var(--afh-color-colonial);
 }
 
+/* ── Callout ──────────────────────────────────────────────────────────
+   An aside the section cannot say in its own prose: why a total falls
+   short, what a fiche refuses to leave unsaid. A rule in the surface's
+   accent, never a box, so it reads as part of the same document. */
+
+.afh-parchment-callout {
+  margin-top: 16px;
+  max-width: 72ch;
+  padding: 13px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--afh-radius-md) var(--afh-radius-md) 0;
+  background: var(--afh-surface);
+  font-size: var(--afh-text-small);
+  line-height: 1.65;
+  color: var(--afh-text-soft);
+}
+
+.afh-parchment-callout b {
+  color: var(--afh-text);
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────────
+   Historical political entities: a period, what the entity was, and the
+   centres it was governed from. Rows separated by a hairline rather than
+   boxed, like every other part of the parchment. */
+
+.afh-parchment-timeline {
+  display: grid;
+  gap: 0;
+}
+
+.afh-tl-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-tl-item:last-child {
+  border-bottom: 0;
+}
+
+/* --accent-ink, not --accent: the mockup sets the period in the fill colour,
+   which lands at 2.3:1 on the parchment at caption size. The ink variant is
+   the same hue scaled to clear AA, which is what accent-coloured text takes
+   anywhere on a tinted surface. axe caught this at all three widths. */
+.afh-tl-period {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  line-height: 1.5;
+  padding-top: 2px;
+  color: var(--accent-ink);
+}
+
+.afh-tl-item h3 {
+  margin: 0 0 4px;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  color: var(--afh-text);
+}
+
+.afh-tl-item p {
+  margin: 0;
+  font-size: var(--afh-text-small);
+  line-height: 1.65;
+  color: var(--afh-text-soft);
+}
+
+/* Soft, not the mockup's muted: this is nano-sized, and muted clears only
+   2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
+   fails the file outright if muted ever appears here. */
+.afh-tl-centers {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-nano);
+  color: var(--afh-text-soft);
+}
+
 /* ── Wide layout ──────────────────────────────────────────────────── */
 
 @container (min-width: 760px) {
   .afh-parchment-head,
   .afh-parchment-section {
     padding: 34px 40px;
+  }
+
+  .afh-tl-item {
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
   }
 
   .afh-parchment-head h1 {

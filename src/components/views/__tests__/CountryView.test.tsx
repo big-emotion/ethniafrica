@@ -37,7 +37,7 @@ function renderCountryView() {
 
   return render(
     <QueryClientProvider client={queryClient}>
-      <CountryView language="fr" onCountrySelect={vi.fn()} />
+      <CountryView language="fr" />
     </QueryClientProvider>
   );
 }
@@ -45,6 +45,43 @@ function renderCountryView() {
 describe("CountryView", () => {
   beforeEach(() => {
     vi.mocked(getAllCountries).mockResolvedValue(countries);
+  });
+
+  // The cards used to be a div with an onClick: reachable by mouse only, and
+  // invisible to anything following links. A country fiche is a page, so the
+  // way to it is a link.
+  // @req REQ-091
+  it("makes each card a link to that country's fiche", async () => {
+    renderCountryView();
+
+    const link = await screen.findByRole("link", { name: "Afrique du Sud" });
+    expect(link).toHaveAttribute("href", "/fr/pays/ZAF");
+  });
+
+  // The card's own wrapper, not just any anchor inside it: ConfidenceChip
+  // renders one of its own, so asking for `a[href]` anywhere in the subtree
+  // would pass on the pointer-only card this test exists to forbid.
+  // @req REQ-091
+  it("leaves no card reachable by pointer alone", async () => {
+    const { container } = renderCountryView();
+    await screen.findByText("Afrique du Sud");
+
+    const cards = container.querySelectorAll(".rounded-afh-xl");
+    expect(cards.length).toBe(countries.length);
+    for (const card of cards) {
+      expect(card.querySelector('a[href^="/fr/pays/"]')).not.toBeNull();
+    }
+  });
+
+  // ConfidenceChip puts its own anchor inside every card. Wrapping the card in
+  // a link nested those, which is invalid HTML and threw a hydration error on
+  // the whole directory.
+  // @req REQ-091
+  it("nests no anchor inside another", async () => {
+    const { container } = renderCountryView();
+    await screen.findByText("Afrique du Sud");
+
+    expect(container.querySelectorAll("a a")).toHaveLength(0);
   });
 
   // @req REQ-001

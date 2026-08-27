@@ -45,10 +45,26 @@ export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
   "language-family": "afh-accent-perv",
 };
 
+/**
+ * Where the entity's own dossier goes.
+ *
+ * `"gated"` is FR97: the dossier closes the sequence, behind RecordPanel's
+ * reading gate.
+ *
+ * `"body"` is what the Atlas mockup asks of a fiche whose dossier *is* the
+ * page — the parchment opens directly under the globe, unfolded, and the
+ * reading gate does not apply to it. The two are mutually exclusive by
+ * construction: in `"body"` the `record` kind is dropped from the sequence,
+ * so the dossier can never be rendered twice.
+ */
+export type FicheRecordPlacement = "gated" | "body";
+
 export interface FicheSequenceProps {
   context: FichePanelContext;
-  /** The legacy entity detail view — the sequence gates it behind The Record (FR97). */
+  /** The entity detail view — the sequence decides whether it is a gated chapter or the page's body. */
   record: ReactNode;
+  /** Defaults to the FR97 reading gate; see FicheRecordPlacement. */
+  recordPlacement?: FicheRecordPlacement;
   /** The REQ-116 atlas globe (AtlasGlobe) — rendered above ContextTriad, ahead of every panel, on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
   globe?: ReactNode;
   className?: string;
@@ -71,8 +87,14 @@ export function FicheSequence({
   context,
   record,
   globe,
+  recordPlacement = "gated",
   className,
 }: FicheSequenceProps) {
+  const recordIsBody = recordPlacement === "body";
+  const sequence = panelSequenceFor(context).filter(
+    (kind) => !(recordIsBody && kind === "record")
+  );
+
   return (
     <div
       className={cn(
@@ -84,20 +106,33 @@ export function FicheSequence({
       {globe}
       {/* The globe is the only full-bleed element: the shell went edge to edge,
           so the reading carries its own measure rather than inheriting one from
-          a container the globe would otherwise be boxed into too. */}
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-afh-3xl px-4">
-        <ContextTriad context={context} />
-        {panelSequenceFor(context).map((kind) => {
-          const panel = resolvePanel(kind, context, record);
-          if (!panel) return null;
+          a container the globe would otherwise be boxed into too.
 
-          return (
-            <section key={kind} id={sectionIdForPanel(kind)}>
-              {panel}
-            </section>
-          );
-        })}
-      </div>
+          A record placed as the body is the second — it is a parchment, not a
+          chapter, and it carries its own reading measure. Boxing it here would
+          apply a second, wider one on top of that. It keeps the `fiche-record`
+          anchor either way, because the globe's facts panel links to it. */}
+      {recordIsBody && record ? (
+        <section id={sectionIdForPanel("record")}>{record}</section>
+      ) : null}
+      {(!recordIsBody || sequence.length > 0) && (
+        <div className="mx-auto flex w-full max-w-4xl flex-col gap-afh-3xl px-4">
+          {/* The triad states the entity's place in the AFRIK hierarchy. A
+              parchment body opens on its own breadcrumbs and country chips, so
+              on that shape the triad would be the same statement twice. */}
+          {!recordIsBody && <ContextTriad context={context} />}
+          {sequence.map((kind) => {
+            const panel = resolvePanel(kind, context, record);
+            if (!panel) return null;
+
+            return (
+              <section key={kind} id={sectionIdForPanel(kind)}>
+                {panel}
+              </section>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

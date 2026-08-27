@@ -52,36 +52,40 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     onLanguageChange,
+    flushTop,
   }: {
     children: React.ReactNode;
     onLanguageChange?: unknown;
+    flushTop?: boolean;
   }) => {
     if (typeof onLanguageChange === "function") {
       throw new Error("Server pages must not pass callbacks to PageLayout");
     }
-    return <div data-testid="page-layout">{children}</div>;
+    return (
+      <div data-testid="page-layout" data-flush-top={String(Boolean(flushTop))}>
+        {children}
+      </div>
+    );
   },
 }));
 
-vi.mock("@/components/detail/CountryDetailViewV2", () => ({
-  CountryDetailViewV2: ({
-    countryId,
-    initialData,
-    initialSourceFlag,
+vi.mock("@/components/country/CountryRecordView", () => ({
+  CountryRecordView: ({
+    country,
+    hasSourceFlag,
     fromPeopleName,
     fromPeopleId,
   }: {
-    countryId: string;
-    initialData?: { nameFr: string };
-    initialSourceFlag?: boolean;
+    country: { id: string; nameFr: string };
+    hasSourceFlag?: boolean;
     fromPeopleName?: string;
     fromPeopleId?: string;
   }) => (
     <div
       data-testid="country-detail-live"
-      data-country-id={countryId}
-      data-country-name={initialData?.nameFr}
-      data-source-flag={initialSourceFlag}
+      data-country-id={country?.id}
+      data-country-name={country?.nameFr}
+      data-source-flag={hasSourceFlag}
       data-from-people-name={fromPeopleName}
       data-from-people-id={fromPeopleId}
     />
@@ -320,11 +324,15 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     ]);
   });
 
+  // One globe, one parchment — the shape the mockup asks of a fiche whose
+  // dossier is the page. The chapter sequence used to sit between the two,
+  // and for a country it only ever resolved to a scale panel restating what
+  // the parchment says twice over.
   // @req REQ-091
-  it("renders the live fiche as the panel sequence, record chapter last", async () => {
+  it("renders the live fiche as one parchment under the globe", async () => {
     const { container } = await renderPage("NGA");
 
-    expect(renderedAnchors(container)).toEqual(["fiche-scale", "fiche-record"]);
+    expect(renderedAnchors(container)).toEqual(["fiche-record"]);
     expect(
       container
         .querySelector("#fiche-record")
@@ -332,34 +340,68 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     ).toBe(true);
   });
 
+  // The dossier *is* this page. A reading gate over it asks the reader to
+  // open the thing they came for, and it is what made the fiche look nothing
+  // like its mockup: a globe, then a chevron.
   // @req REQ-091
-  it("gates the record behind a single reading gate", async () => {
+  it("opens the dossier as the page body, with no reading gate", async () => {
     const { container } = await renderPage("NGA");
 
-    // A route that wrapped the detail view itself would nest one <details>
-    // inside the other, burying the dossier behind two disclosures.
-    expect(container.querySelectorAll("details")).toHaveLength(1);
-    expect(screen.getByText("Lire le dossier complet")).toBeInTheDocument();
+    expect(container.querySelectorAll("details")).toHaveLength(0);
+    expect(screen.queryByText("Lire le dossier complet")).toBeNull();
+    expect(screen.getByTestId("country-detail-live")).toBeInTheDocument();
   });
 
-  // @req REQ-091
-  it("omits the anchors of the chapters no country panel exists for yet", async () => {
+  // The band is what makes the globe reach both edges of the viewport and
+  // closes it with the ochre seam. Without it the globe is boxed in the page
+  // container, which is the state this fiche shipped in.
+  // @req REQ-116
+  it("stands the globe on the full-width night band", async () => {
     const { container } = await renderPage("NGA");
 
-    // Identity, territory, fragmentation and voices are people-shaped panels
-    // (stories 15.3–15.8 own their country counterparts): the composer asks
-    // for them, the registry declines, and no empty anchor is left behind.
-    const composed = derivePanelSequence(
-      "country",
-      mapCountryDetail(NIGERIA_ROW)
+    const band = screen.getByTestId("fiche-hero-band");
+    expect(band).toBeInTheDocument();
+    expect(band.contains(container.querySelector("[data-atlas-surface]"))).toBe(
+      true
     );
+  });
+
+  // @req REQ-116
+  it("closes the band with the seam that opens the reading", async () => {
+    await renderPage("NGA");
+
+    expect(screen.getByTestId("fiche-hero-seam")).toBeInTheDocument();
+  });
+
+  // Without flushTop the band starts below a strip of page background, and the
+  // globe stops reading as the top of the page.
+  // @req REQ-116
+  it("lets the band start at the top of the page", async () => {
+    await renderPage("NGA");
+
+    expect(screen.getByTestId("page-layout")).toHaveAttribute(
+      "data-flush-top",
+      "true"
+    );
+  });
+
+  // The composer used to ask for chapters the registry then declined, which
+  // left the fiche's shape depending on two rules agreeing. It asks for one
+  // chapter now, so there is nothing left to decline.
+  // @req REQ-091
+  it("asks for the dossier and nothing else", async () => {
+    const { container } = await renderPage("NGA");
+
+    expect(
+      derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW))
+    ).toEqual(["record"]);
     for (const kind of [
       "identity",
+      "scale",
       "territory",
       "fragmentation",
       "voices",
     ] as const) {
-      expect(composed).toContain(kind);
       expect(container.querySelector(`#fiche-${kind}`)).toBeNull();
     }
   });

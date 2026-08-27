@@ -38,7 +38,7 @@ vi.mock("@/hooks/use-consent", () => ({
   }),
 }));
 
-import { CountryDetailViewV2 } from "../CountryDetailViewV2";
+import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { PeopleDetailView } from "../PeopleDetailView";
 
 describe("detail views with server-provided data", () => {
@@ -56,13 +56,7 @@ describe("detail views with server-provided data", () => {
       nameOfficial: "République du Sénégal",
     };
 
-    render(
-      <CountryDetailViewV2
-        countryId="SEN"
-        language="fr"
-        initialData={country}
-      />
-    );
+    render(<CountryRecordView country={country} />);
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Sénégal" })
@@ -103,13 +97,7 @@ describe("detail views with server-provided data", () => {
       culture: { dominantReligions: "Islam, christianisme" },
     };
 
-    render(
-      <CountryDetailViewV2
-        countryId="SEN"
-        language="fr"
-        initialData={country}
-      />
-    );
+    render(<CountryRecordView country={country} />);
 
     const flagTarget = screen.getByTestId("section-flag-target-culture");
     expect(within(flagTarget).getByRole("button")).toBeDisabled();
@@ -126,12 +114,7 @@ describe("detail views with server-provided data", () => {
     };
 
     render(
-      <CountryDetailViewV2
-        countryId="SEN"
-        language="fr"
-        initialData={country}
-        turnstileSiteKey="test-site-key"
-      />
+      <CountryRecordView country={country} turnstileSiteKey="test-site-key" />
     );
 
     const flagTarget = screen.getByTestId("section-flag-target-culture");

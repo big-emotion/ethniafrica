@@ -10,7 +10,11 @@ import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
-import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+} from "@/lib/routing";
 import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
@@ -74,10 +78,11 @@ export const PageLayout = ({
             `${getLocalizedRoute(language, "peoples")}?people=${result.id}`
           );
           break;
+        // Straight to the fiche. The other two still open their directory's
+        // detail pane; the same move is owed to them, and the country
+        // directory's redirect catches those links meanwhile.
         case "country":
-          router.push(
-            `${getLocalizedRoute(language, "countries")}?country=${result.id}`
-          );
+          router.push(getCountryRoute(language, result.id));
           break;
         default:
           console.warn("Unknown search result type:", result.type);
