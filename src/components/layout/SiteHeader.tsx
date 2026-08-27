@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -219,7 +220,14 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
     <header data-testid="site-header" className="sh-header">
       <nav className="sh-bar" aria-label="Navigation principale">
         <Link href={`/${language}`} className="sh-brand">
-          <span className="sh-brand-mark" aria-hidden="true" />
+          <Image
+            src="/africa.png"
+            alt=""
+            width={26}
+            height={26}
+            className="sh-brand-mark"
+            priority
+          />
           <span className="sh-brand-name">{PRODUCT_NAME}</span>
         </Link>
 
@@ -382,17 +390,15 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           text-decoration: none;
           color: inherit;
         }
+        /* The coloured continent, restored: the nav rewrite replaced it with
+           a radial-gradient disc, and a disc denotes nothing. The silhouette
+           is what lets the mark be read as the subject at 26 px. object-fit
+           keeps the square asset undistorted. */
         .sh-brand-mark {
           width: 26px;
           height: 26px;
-          border-radius: 50%;
           flex: none;
-          background: radial-gradient(
-            circle at 34% 30%,
-            var(--afh-cat-ocre),
-            var(--afh-cat-terre) 62%,
-            var(--afh-text)
-          );
+          object-fit: contain;
         }
         .sh-brand-name {
           font-family: var(--afh-font-display);

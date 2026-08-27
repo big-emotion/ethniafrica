@@ -85,6 +85,26 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
       "/fr"
     );
   });
+
+  // The brandmark is the coloured continent, not a gradient disc: the mark
+  // has to denote the subject, and a disc denotes nothing.
+  // @req REQ-111
+  it("draws the continent as its brandmark", () => {
+    const { container } = renderHeader();
+
+    const mark = container.querySelector(".sh-brand img");
+    expect(mark).toBeInTheDocument();
+    expect(mark?.getAttribute("src")).toContain("africa");
+  });
+
+  // The name sits beside the mark, so announcing the mark too would say the
+  // product twice.
+  // @req REQ-111
+  it("leaves the brandmark out of the accessible name", () => {
+    const { container } = renderHeader();
+
+    expect(container.querySelector(".sh-brand img")).toHaveAttribute("alt", "");
+  });
 });
 
 describe("SiteHeader — the panel behind the click (REQ-114)", () => {

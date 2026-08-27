@@ -95,6 +95,64 @@ describe("pickHeroModule", () => {
     expect(drawn?.id).toBe("mercator");
   });
 
+  // The band is a claim the reader reads, not a turn the reader takes.
+  // @req REQ-115
+  it("never draws a game, whichever axis it sits on", () => {
+    const drawn = pickHeroModule(
+      byAxis([
+        hubModule({ id: "appellations", heroable: "game" }),
+        hubModule({ id: "repartition", heroable: "game" }),
+        hubModule({ id: "mercator", heroable: "globe" }),
+      ]),
+      { random: first }
+    );
+
+    expect(drawn?.id).toBe("mercator");
+  });
+
+  // @req REQ-115
+  it("refuses a pin naming a game rather than opening a play loop", () => {
+    const drawn = pickHeroModule(
+      byAxis([
+        hubModule({ id: "mercator", heroable: "globe" }),
+        hubModule({ id: "appellations", heroable: "game" }),
+      ]),
+      { pin: "appellations", random: first }
+    );
+
+    expect(drawn?.id).toBe("mercator");
+  });
+
+  // @req REQ-115
+  it("returns null when every heroable module is a game", () => {
+    expect(
+      pickHeroModule(
+        byAxis([hubModule({ id: "appellations", heroable: "game" })]),
+        { random: first }
+      )
+    ).toBeNull();
+  });
+
+  // @req REQ-115
+  it("still draws the two contemplative previews beside the globe", () => {
+    const modules = byAxis([
+      hubModule({
+        id: "familles",
+        accessMode: "explorer",
+        heroable: "family-crown",
+      }),
+      hubModule({
+        id: "frise",
+        accessMode: "comprendre",
+        heroable: "migration-paths",
+      }),
+      hubModule({ id: "mercator", heroable: "globe" }),
+    ]);
+
+    expect(pickHeroModule(modules, { random: first })?.id).toBe("familles");
+    expect(pickHeroModule(modules, { random: last })?.id).toBe("mercator");
+  });
+
   // @req REQ-114
   it("returns null when nothing is eligible, so the caller can keep the globe", () => {
     expect(

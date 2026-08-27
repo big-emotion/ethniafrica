@@ -7,7 +7,21 @@ import type { HeroPreview } from "@/lib/home/heroPreviewData";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
- * The home's opening band (REQ-115). Nothing here is pinned to a surface
+ * The home's opening band (REQ-115).
+ *
+ * The copy states the thesis rather than the medium. « Le continent raconté
+ * comme une carte vivante » described how the page looked; a reader landing
+ * cold could not tell what the atlas holds or what makes it different from
+ * any other encyclopedia. What makes it different is the naming: a people
+ * appears under the name it gives itself, beside the name it was given from
+ * outside, with who gave it, from where, and when. That is the one sentence
+ * the band owes a first-time reader, so it is the H1.
+ *
+ * The headline says « les peuples », never « chaque peuple »: an autonym is
+ * required only from `confidence >= medium` upward, so a per-fiche guarantee
+ * would be a claim the corpus does not carry.
+ *
+ * Nothing here is pinned to a surface
  * any more: the whole band, the globe's panel included, follows the reader's
  * choice. DEC-022 — dataviz on the night surface — still governs a fiche's
  * atlas, where the globe is a panel inside a page of prose. The home's globe
@@ -52,9 +66,16 @@ export function HomeHero({
     >
       <header className="home-hero-copy">
         <h1>
-          Le continent raconté comme une <em>carte vivante</em>
+          Les peuples d&apos;Afrique, sous{" "}
+          {/* The article is bound to its noun: balanced wrapping otherwise
+              ends a line on « sous le », which reads as a broken sentence
+              at exactly the moment the headline states its thesis. */}
+          <em>le&nbsp;nom qu&apos;ils se donnent</em>
         </h1>
-        <p>L&apos;histoire africaine, racontée depuis son propre regard.</p>
+        <p>
+          Leurs langues, leurs familles, leurs pays — et, derrière chaque nom,
+          qui l&apos;a donné, depuis où et à quelle époque.
+        </p>
       </header>
 
       {/* The module says what it is from its own readout — the globe's

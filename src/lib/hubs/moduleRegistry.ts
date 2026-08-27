@@ -120,6 +120,11 @@ export interface HubModuleDefinition {
    * itself — while a preview is a `dynamic(..., { ssr: false })` island,
    * which Next permits only inside a Client Component. Two switches read
    * this: loadHeroPreview resolves the data, HeroModuleStage renders it.
+   *
+   * It declares the shape a module *can* render, not that the home band
+   * will open on it: which of those shapes the band accepts is
+   * `HERO_SLOT_KINDS` (heroRotation.ts), and games are deliberately not
+   * among them.
    */
   heroable?: HeroPreviewKind;
 }
