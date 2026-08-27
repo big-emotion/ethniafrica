@@ -55,6 +55,17 @@ function footprintOf(country: GameCountryFixture): CountryFootprint | null {
 }
 
 /**
+ * Ground a country really covers, islands included, read off the committed
+ * outlines — the corpus holds no area column. Exported because the session's
+ * difficulty band ranks countries by magnitude and this module is where area
+ * is defined; 0 for a country the asset cannot draw, which sorts it last.
+ */
+// @req REQ-120
+export function trueAreaKm2(country: GameCountryFixture): number {
+  return footprintOf(country)?.trueAreaKm2 ?? 0;
+}
+
+/**
  * Whether the projection actively misranks this pair: the country that truly
  * covers more ground is the one drawn smaller. These are the pairs the game
  * wants, so a caller can rank candidate pairs before building a round.

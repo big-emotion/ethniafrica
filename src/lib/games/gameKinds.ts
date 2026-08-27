@@ -57,12 +57,32 @@ export interface GameStimulus {
   scaleFr?: string;
 }
 
+/**
+ * How hard a round is expected to be, ascending. A session is served in this
+ * order so the reader meets a subject they are likely to know before one they
+ * are not, and 1 is the easiest.
+ *
+ * The band is derived from magnitude — a people's population, a country's
+ * drawn area — and magnitude here is a **proxy for familiarity, nothing
+ * else**. It is not an assertion that a populous people matters more than a
+ * small one, and it must never be rendered as one. Replace it with an
+ * empirical p-value, the share of readers who answered a round correctly, as
+ * soon as the surface records one; the scale is a small closed set precisely
+ * so that swap is a one-function change.
+ */
+export type DifficultyBand = 1 | 2 | 3;
+
 interface GameRoundBase {
   gameId: string;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
   stimulus?: GameStimulus;
   promptFr: string;
+  /**
+   * Assigned by the handler, not by the generator: a band is a subject's rank
+   * within the pool it was drawn from, and a generator sees one subject.
+   */
+  difficultyBand?: DifficultyBand;
   reveal: GameReveal;
 }
 

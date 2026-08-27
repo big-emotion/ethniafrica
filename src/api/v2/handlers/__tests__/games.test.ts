@@ -192,3 +192,122 @@ describe("getGameRoundsHandler", () => {
     expect(loadGameCorpus).toHaveBeenCalledWith("countries");
   });
 });
+
+/**
+ * A session opens on subjects a reader is likely to have met and works
+ * outwards. Magnitude — a people's population, a country's drawn area —
+ * stands in for that familiarity; see the band's own doc comment for why it
+ * is a proxy and not a ranking of peoples.
+ */
+describe("a session is ordered by ascending difficulty band", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  const POOL_SIZE = 20;
+
+  /** Population descends with the index, so a people's expected band is a function of its position. */
+  const GRADED_PEOPLES = Array.from({ length: POOL_SIZE }, (_, index) =>
+    people({
+      id: `PPL_${String(index).padStart(2, "0")}`,
+      totalPopulation: (POOL_SIZE - index) * 1_000_000,
+      selfAppellation: `Autonyme ${index}`,
+      exonyms: [`Exonyme ${index}`],
+    })
+  );
+
+  // @req REQ-120
+  it("never serves a harder round before an easier one", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      peoples: GRADED_PEOPLES,
+    });
+
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("appellations"),
+      0
+    );
+
+    const bands = envelope.data.rounds.map((round) => round.difficultyBand);
+    expect(bands).toHaveLength(8);
+    expect([...bands].sort((a, b) => a - b)).toEqual(bands);
+  });
+
+  // @req REQ-120
+  it("draws the opening rounds from the pool's top population decile", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      peoples: GRADED_PEOPLES,
+    });
+
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("appellations"),
+      0
+    );
+
+    expect(envelope.data.rounds[0].difficultyBand).toBe(1);
+    expect(envelope.data.rounds[1].difficultyBand).toBe(1);
+    // The two most populous of the twenty, and no one else.
+    expect(envelope.data.rounds.slice(0, 2).map((r) => r.subjectId)).toEqual([
+      "PPL_00",
+      "PPL_01",
+    ]);
+  });
+
+  // @req REQ-120
+  it("puts a people whose population the corpus omits in the hardest band", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      peoples: [
+        people({
+          id: "PPL_UNKNOWN",
+          totalPopulation: null,
+          selfAppellation: "Autonyme inconnu",
+          exonyms: ["Exonyme inconnu"],
+        }),
+        ...GRADED_PEOPLES,
+      ],
+    });
+
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("appellations"),
+      0
+    );
+
+    // An unrecorded figure must not read as a small one, and must never be
+    // promoted to the opening rounds by arriving first in the corpus.
+    expect(envelope.data.rounds[0].subjectId).not.toBe("PPL_UNKNOWN");
+  });
+
+  // @req REQ-120
+  it("bands a country round by the area its outline actually covers", async () => {
+    const formerlyNamed = (id: string, nameFr: string): GameCountryFixture => ({
+      ...country(id, nameFr),
+      etymology: `Le nom de ${nameFr} vient d'une racine ancienne.`,
+      historicalNames: { precolonial: `Ancien nom de ${nameFr}` },
+    });
+
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      // Deliberately listed smallest-first: corpus order must not survive.
+      countries: [
+        formerlyNamed("TUN", "Tunisie"),
+        formerlyNamed("SEN", "Sénégal"),
+        formerlyNamed("BWA", "Botswana"),
+        formerlyNamed("KEN", "Kenya"),
+        formerlyNamed("TCD", "Tchad"),
+        formerlyNamed("DZA", "Algérie"),
+      ],
+    });
+
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("pays-davant"),
+      0
+    );
+
+    const bands = envelope.data.rounds.map((round) => round.difficultyBand);
+    expect([...bands].sort((a, b) => a - b)).toEqual(bands);
+    // Algeria covers more ground than any of the other five.
+    expect(envelope.data.rounds[0].subjectId).toBe("DZA");
+  });
+});
