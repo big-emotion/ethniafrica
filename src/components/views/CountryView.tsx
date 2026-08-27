@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback } from "react";
+import Link from "next/link";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +19,7 @@ import { normalizeString } from "@/lib/normalize";
 import type { CountrySummary } from "@/types/afrik-frontend";
 import { getAllCountries } from "@/lib/afrikLoader";
 import { useListView } from "@/hooks/use-list-view";
+import { getCountryRoute } from "@/lib/routing";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
@@ -27,9 +28,6 @@ import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
 
 interface CountryViewProps {
   language: Language;
-  onCountrySelect: (country: CountrySummary) => void;
-  hideSearchAndAlphabet?: boolean;
-  selectedCountryId?: string | null;
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -100,12 +98,8 @@ function getFlagEmoji(iso3: string): string {
     .join("");
 }
 
-export const CountryView = ({
-  language,
-  onCountrySelect,
-  hideSearchAndAlphabet = false,
-  selectedCountryId = null,
-}: CountryViewProps) => {
+// @req REQ-091
+export const CountryView = ({ language }: CountryViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
 
@@ -168,168 +162,144 @@ export const CountryView = ({
     );
   }
 
+  /**
+   * The whole card is the link. A country fiche is a page, and reaching it is
+   * the directory's only job; the card used to be a div with an onClick, which
+   * no keyboard and no crawler could follow.
+   *
+   * `prefetch` stays off deliberately: the list holds every African country at
+   * once, and Next would otherwise fetch each one that scrolls into view.
+   */
   const renderCountryCard = (country: CountrySummary) => {
     const flag = getFlagEmoji(country.id);
     return (
-      <Card
+      <Link
         key={country.id}
-        className={cn(
-          "cursor-pointer group rounded-afh-xl p-4",
-          CHARTER_HOVER_LIFT,
-          hideSearchAndAlphabet && "mx-0",
-          selectedCountryId === country.id &&
-            "border-2 border-[color:var(--accent)]"
-        )}
-        onClick={() => onCountrySelect(country)}
+        href={getCountryRoute(language, country.id)}
+        prefetch={false}
+        aria-label={country.nameCommonFr}
+        className="block"
       >
-        <div className="space-y-2">
-          <div className="flex items-start gap-2">
-            {flag && (
-              <span className="text-2xl leading-none mt-0.5" aria-hidden="true">
-                {flag}
-              </span>
-            )}
-            <AutonymExonymHeading
-              variant="compact"
-              exonym={country.nameCommonFr}
-              code={country.id}
-              className="group-hover:[&_h2]:text-primary [&_h2]:transition-colors flex-1"
-            />
-          </div>
-
-          <div className="flex items-center gap-2 flex-wrap">
-            {country.classificationStatus && (
-              <ClassificationBadge status={country.classificationStatus} />
-            )}
-            <ConfidenceChip
-              confidenceScore={null}
-              sourceCount={null}
-              lastHumanAuditAt={null}
-              variant="inline"
-              ariaSuffix={country.nameCommonFr}
-            />
-          </div>
-
-          <div className="space-y-0.5 text-sm text-muted-foreground">
-            {country.population !== undefined && (
-              <div>Population : {formatNumber(country.population)}</div>
-            )}
-            {country.majorPeoplesCount !== undefined &&
-              country.majorPeoplesCount > 0 && (
-                <div className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {country.majorPeoplesCount} peuples majeurs
-                </div>
+        <Card className={cn("group rounded-afh-xl p-4", CHARTER_HOVER_LIFT)}>
+          <div className="space-y-2">
+            <div className="flex items-start gap-2">
+              {flag && (
+                <span
+                  className="text-2xl leading-none mt-0.5"
+                  aria-hidden="true"
+                >
+                  {flag}
+                </span>
               )}
+              <AutonymExonymHeading
+                variant="compact"
+                exonym={country.nameCommonFr}
+                code={country.id}
+                className="group-hover:[&_h2]:text-primary [&_h2]:transition-colors flex-1"
+              />
+            </div>
+
+            <div className="flex items-center gap-2 flex-wrap">
+              {country.classificationStatus && (
+                <ClassificationBadge status={country.classificationStatus} />
+              )}
+              <ConfidenceChip
+                confidenceScore={null}
+                sourceCount={null}
+                lastHumanAuditAt={null}
+                variant="inline"
+                ariaSuffix={country.nameCommonFr}
+              />
+            </div>
+
+            <div className="space-y-0.5 text-sm text-muted-foreground">
+              {country.population !== undefined && (
+                <div>Population : {formatNumber(country.population)}</div>
+              )}
+              {country.majorPeoplesCount !== undefined &&
+                country.majorPeoplesCount > 0 && (
+                  <div className="flex items-center gap-1">
+                    <Users className="h-3 w-3" />
+                    {country.majorPeoplesCount} peuples majeurs
+                  </div>
+                )}
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </Link>
     );
   };
 
   return (
-    <div
-      className={`space-y-4 ${
-        hideSearchAndAlphabet ? "h-full flex flex-col" : ""
-      }`}
-    >
-      {!hideSearchAndAlphabet && (
-        <>
-          <div className="px-4 pt-4">
-            <div className="flex flex-wrap gap-1 justify-center">
+    <div className="space-y-4">
+      <>
+        <div className="px-4 pt-4">
+          <div className="flex flex-wrap gap-1 justify-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn(
+                "h-11 w-11 rounded-full text-xs",
+                selectedLetter === null
+                  ? "bg-[color:var(--accent)] text-white"
+                  : "bg-[color:var(--accent-tint)] text-afh-text"
+              )}
+              onClick={() => setSelectedLetter(null)}
+            >
+              Tous
+            </Button>
+            {ALPHABET.map((letter) => (
               <Button
+                key={letter}
                 variant="ghost"
                 size="icon"
                 className={cn(
                   "h-11 w-11 rounded-full text-xs",
-                  selectedLetter === null
+                  selectedLetter === letter
                     ? "bg-[color:var(--accent)] text-white"
-                    : "bg-[color:var(--accent-tint)] text-afh-text"
+                    : "bg-[color:var(--accent-tint)] text-afh-text",
+                  !availableLetters.includes(letter) &&
+                    "opacity-30 cursor-not-allowed"
                 )}
-                onClick={() => setSelectedLetter(null)}
+                onClick={() =>
+                  availableLetters.includes(letter) && setSelectedLetter(letter)
+                }
+                disabled={!availableLetters.includes(letter)}
               >
-                Tous
+                {letter}
               </Button>
-              {ALPHABET.map((letter) => (
-                <Button
-                  key={letter}
-                  variant="ghost"
-                  size="icon"
-                  className={cn(
-                    "h-11 w-11 rounded-full text-xs",
-                    selectedLetter === letter
-                      ? "bg-[color:var(--accent)] text-white"
-                      : "bg-[color:var(--accent-tint)] text-afh-text",
-                    !availableLetters.includes(letter) &&
-                      "opacity-30 cursor-not-allowed"
-                  )}
-                  onClick={() =>
-                    availableLetters.includes(letter) &&
-                    setSelectedLetter(letter)
-                  }
-                  disabled={!availableLetters.includes(letter)}
-                >
-                  {letter}
-                </Button>
-              ))}
-            </div>
+            ))}
           </div>
-
-          <div className="relative px-4">
-            <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder={t.searchPlaceholder}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="rounded-full pl-9"
-            />
-          </div>
-        </>
-      )}
-
-      {isMobile ? (
-        <div
-          className={`space-y-2 ${
-            hideSearchAndAlphabet ? "px-0" : "px-4"
-          } pb-4`}
-        >
-          {paginatedCountries.length === 0 ? (
-            <div className="flex items-center justify-center h-64">
-              <p className="text-muted-foreground">Aucun pays trouvé</p>
-            </div>
-          ) : (
-            paginatedCountries.map(renderCountryCard)
-          )}
         </div>
-      ) : (
-        <ScrollArea
-          className={
-            hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
-          }
-        >
-          <div
-            className={`space-y-2 ${
-              hideSearchAndAlphabet ? "px-0" : "px-4"
-            } pb-4`}
-          >
-            {paginatedCountries.length === 0 ? (
-              <div className="flex items-center justify-center h-64">
-                <p className="text-muted-foreground">Aucun pays trouvé</p>
-              </div>
-            ) : (
-              paginatedCountries.map(renderCountryCard)
-            )}
+
+        <div className="relative px-4">
+          <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder={t.searchPlaceholder}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="rounded-full pl-9"
+          />
+        </div>
+      </>
+
+      {/* One list, at every width. The desktop branch used to nest the cards
+          in a fixed-height ScrollArea, which made sense beside a detail pane
+          taking the other 70% of the page. As the whole page it was a ~400px
+          scroll trap inside a scrolling document. */}
+      <div className="space-y-2 px-4 pb-4">
+        {paginatedCountries.length === 0 ? (
+          <div className="flex items-center justify-center h-64">
+            <p className="text-muted-foreground">Aucun pays trouvé</p>
           </div>
-        </ScrollArea>
-      )}
+        ) : (
+          paginatedCountries.map(renderCountryCard)
+        )}
+      </div>
 
       {!isMobile && totalPages > 1 && (
-        <div
-          className={`flex items-center justify-center gap-2 ${
-            hideSearchAndAlphabet ? "px-0" : "px-4"
-          } pb-4 flex-shrink-0`}
-        >
+        <div className="flex items-center justify-center gap-2 px-4 pb-4 flex-shrink-0">
           <Button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}

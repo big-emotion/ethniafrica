@@ -114,6 +114,36 @@ export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
 
 // ---------------------------------------------------------------------------
+// Retired directory deep links
+// ---------------------------------------------------------------------------
+
+/**
+ * The fiche a `/fr/pays?country=XXX` link was reaching for, or null when the
+ * query names no country.
+ *
+ * The country directory used to open a detail pane beside its list; the atlas
+ * fiche replaced it, and that query shape survives only in links already sent.
+ * Resolving it here rather than in the page keeps it a pure unit, and keeps the
+ * one rule that matters testable: the identifier is **encoded**. Left raw, a
+ * `?country=//host` turns the redirect into an open one, because a browser
+ * reads two leading slashes as the start of a host.
+ *
+ * The identifier is otherwise forwarded untouched. Validating its shape would
+ * turn a reader's typo into a silent fall-back to the list, where the fiche
+ * route answers it with an honest 404.
+ */
+// @req REQ-091
+export const resolveCountryDeepLink = (
+  language: Language,
+  searchParams: Record<string, string | string[] | undefined>
+): string | null => {
+  const country = searchParams.country;
+  // A repeated query has no single answer, so it gets none.
+  if (typeof country !== "string" || country.length === 0) return null;
+  return getCountryRoute(language, encodeURIComponent(country));
+};
+
+// ---------------------------------------------------------------------------
 // Nested entity sub-routes — segments below a single fiche (Epic 11, FR72)
 // ---------------------------------------------------------------------------
 

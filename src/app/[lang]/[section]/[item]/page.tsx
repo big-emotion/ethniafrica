@@ -1,6 +1,6 @@
 import { redirect, notFound } from "next/navigation";
 import { Language } from "@/types/shared";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
@@ -22,7 +22,8 @@ function resolveSection(lang: Language, section: string): SectionType | null {
   return match ?? null;
 }
 
-// This page handles legacy slug-based URLs and redirects to the new v2 query-param based routes
+// This page handles legacy slug-based URLs and redirects to the new v2 routes
+// @req REQ-091
 export default async function LegacyDetailRedirect({
   params,
 }: {
@@ -44,9 +45,11 @@ export default async function LegacyDetailRedirect({
   const decodedItem = decodeURIComponent(item);
 
   // Redirect to the appropriate v2 route with query params
+  //
+  // The country case goes straight to its fiche: sending it to the directory's
+  // retired `?country=` form would only be redirected again one hop later.
   if (sectionType === "country") {
-    const route = getLocalizedRoute(language, "countries");
-    redirect(`${route}?country=${encodeURIComponent(decodedItem)}`);
+    redirect(getCountryRoute(language, encodeURIComponent(decodedItem)));
   }
 
   if (sectionType === "region" || sectionType === "family") {
