@@ -1,24 +1,23 @@
-import { getLocalizedRoute } from "@/lib/routing";
-import type { HubModuleDefinition } from "@/lib/hubs/moduleRegistry";
+import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
 /**
- * Where a hub module lives. Extracted from AccessModeHub, which resolved it
- * inline, once the home's hero slot needed the same answer to label the
- * module it drew. Two copies of this rule is the drift isModuleEnabled's own
- * comment warns about: the hub and the home would disagree about a module's
- * address the first time a game changed its slug.
+ * Where a hub module's click lands.
  *
- * A game has no PageType of its own — it is addressed by slug under the
- * Jouer hub — so the slug wins over any page. `null` means the module is not
- * addressable, and a caller must render it as unavailable rather than link
- * to a route that does not resolve.
+ * Both surfaces that list modules — the hub page and the home axis panel —
+ * read this. They used to each resolve the href themselves, and that
+ * duplication is exactly what drifted: REQ-120 made the games addressable
+ * by slug, the hub learnt the new rule and the panel never did, so the home
+ * rendered eleven live games as "Bientôt" while the hub linked all eleven.
+ * One resolver is what stops the two from disagreeing again.
  */
 // @req REQ-114
-export function moduleHref(
-  language: Language,
-  module: Pick<HubModuleDefinition, "page" | "gameSlug">
+export function getModuleHref(
+  module: { page?: PageType | null; gameSlug?: string },
+  language: Language
 ): string | null {
+  // A game has no PageType of its own — keeping PageType a closed union is
+  // why it is addressed by slug — so the slug wins over any page.
   if (module.gameSlug) return `/${language}/jouer/${module.gameSlug}`;
   if (module.page) return getLocalizedRoute(language, module.page);
   return null;

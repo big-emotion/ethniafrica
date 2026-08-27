@@ -49,6 +49,42 @@ export type ModuleDataSource =
 // The build-time switches a module can hang from.
 export type ModuleFeatureFlag = "quiz";
 
+// REQ-120 gave Jouer eleven games, and eleven peers is past what a radial
+// layout can lay out and past what a reader takes in as a set. A shelf is
+// the intermediate level: the reader picks the corpus entity a game
+// questions, then the game.
+//
+// The filing criterion is the entity the question is *about*, not the table
+// the query reads. The two agree everywhere but one — "Range-le dans sa
+// famille" asks about a people and reads afrik_language_families — which is
+// why the shelf is declared rather than derived from `dataSource`. A
+// taxonomy the reader sees should not move because a query changed table.
+export type ModuleGroupId =
+  | "jeux-peuples"
+  | "jeux-pays"
+  | "jeux-migrations"
+  | "jeux-liens"
+  | "jeux-quiz";
+
+export interface ModuleGroup {
+  id: ModuleGroupId;
+  /** What the reader reads on the shelf. */
+  label: string;
+}
+
+// Declaration order is the order the shelves appear.
+// @req REQ-120
+export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
+  "jeux-peuples": { id: "jeux-peuples", label: "Les peuples" },
+  "jeux-pays": { id: "jeux-pays", label: "Les pays" },
+  "jeux-migrations": { id: "jeux-migrations", label: "Les migrations" },
+  "jeux-liens": { id: "jeux-liens", label: "Les liens" },
+  // The quiz questions the reader rather than the corpus, so it sits on no
+  // entity's shelf. It is alone there, which the panel reads as "render the
+  // module, not a shelf".
+  "jeux-quiz": { id: "jeux-quiz", label: "Le quiz" },
+};
+
 // - "data": live only once its backing table (dataSource) holds >= 1 row.
 // - "static": a page that exists whatever the corpus holds — search,
 //   doctrine and about render from code, so probing a table for them would
@@ -73,6 +109,8 @@ export interface HubModuleDefinition {
   /** A game under the Jouer hub, addressed as /fr/jouer/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
   gameSlug?: string;
   featureFlag?: ModuleFeatureFlag;
+  /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
+  group?: ModuleGroupId;
   /**
    * How this module fills the home's hero slot, or absent if it cannot
    * (REQ-115).
@@ -180,6 +218,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // so absorbing them beats leaving two dead entries beside the live ones.
   {
     id: "quiz",
+    group: "jeux-quiz",
     name: "Le quiz des parcours",
     accessMode: "jouer",
     page: "quiz",
@@ -188,6 +227,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "appellations",
+    group: "jeux-peuples",
     name: "Eux, ou les autres ?",
     accessMode: "jouer",
     page: null,
@@ -198,6 +238,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "plus-ou-moins",
+    group: "jeux-peuples",
     name: "Plus ou moins ?",
     accessMode: "jouer",
     page: null,
@@ -208,6 +249,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "mercator",
+    group: "jeux-pays",
     name: "La taille qu'on vous a cachée",
     accessMode: "jouer",
     page: null,
@@ -229,6 +271,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "comparer",
+    group: "jeux-pays",
     name: "Vraie taille",
     accessMode: "jouer",
     page: null,
@@ -239,6 +282,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "repartition",
+    group: "jeux-peuples",
     name: "Où vivent-ils ?",
     accessMode: "jouer",
     page: null,
@@ -249,6 +293,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "pays-davant",
+    group: "jeux-pays",
     name: "Le pays d'avant",
     accessMode: "jouer",
     page: null,
@@ -259,6 +304,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "royaumes",
+    group: "jeux-pays",
     name: "Royaumes perdus",
     accessMode: "jouer",
     page: null,
@@ -269,6 +315,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "migrations",
+    group: "jeux-migrations",
     name: "Le fil des migrations",
     accessMode: "jouer",
     page: null,
@@ -279,6 +326,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "liens",
+    group: "jeux-liens",
     name: "Les liens invisibles",
     accessMode: "jouer",
     page: null,
@@ -293,6 +341,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // selector aimed at the atlas match the game instead. The route the
     // reader sees is still /jouer/familles.
     id: "jeu-familles",
+    group: "jeux-peuples",
     name: "Range-le dans sa famille",
     accessMode: "jouer",
     page: null,
@@ -303,6 +352,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "frontieres",
+    group: "jeux-peuples",
     name: "La ligne qui coupe",
     accessMode: "jouer",
     page: null,

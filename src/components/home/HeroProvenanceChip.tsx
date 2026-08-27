@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { moduleHref } from "@/lib/hubs/moduleHref";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getTranslation } from "@/lib/translations";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
@@ -37,7 +37,7 @@ export function HeroProvenanceChip({
   module,
 }: HeroProvenanceChipProps) {
   const axisLabel = getTranslation(language).hubs[module.accessMode].title;
-  const href = moduleHref(language, module);
+  const href = getModuleHref(module, language);
   const label = `${axisLabel} — ${module.name}`;
 
   const content = (
