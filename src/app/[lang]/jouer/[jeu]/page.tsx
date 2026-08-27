@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { GamePlayHost } from "@/components/play/GamePlayHost";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
-import { GAME_DEFINITIONS, getGameBySlug } from "@/lib/games/gameRegistry";
+import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { OG_TITLE } from "@/lib/brand";
 
 interface GamePageProps {
@@ -14,12 +14,13 @@ interface GamePageProps {
 /**
  * One dynamic route for all eleven games (REQ-120). Eleven routes would be
  * eleven copies of this file; the registry already distinguishes them.
+ *
+ * No `generateStaticParams` here, deliberately: the root layout awaits
+ * `connection()` for the CSP nonce, so opting this route into static rendering
+ * makes Next throw DYNAMIC_SERVER_USAGE on every request. An unknown slug is
+ * already turned away by `getGameBySlug` below, which is all the enumeration
+ * bought. See src/app/__tests__/staticParamsBan.test.ts.
  */
-// @req REQ-120
-export function generateStaticParams() {
-  return GAME_DEFINITIONS.map((game) => ({ jeu: game.slug }));
-}
-
 // @req REQ-120
 export async function generateMetadata({
   params,
