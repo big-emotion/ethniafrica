@@ -71,18 +71,23 @@ function SectionCard({
         animationDelay: `${SECTION_DELAY_MS[delayIndex] ?? 0}ms`,
       }}
     >
-      <div
+      {/* A heading, not a styled div: it is the section's title, the mockup
+          writes it as one, and the blocks below open on h3. Without it the
+          parchment went from the fiche's h1 straight to those — the whole of
+          its Lighthouse accessibility gap. */}
+      <h2
         className="flex items-center gap-[6px] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
         style={{ color: "var(--country-text-soft)" }}
       >
         <span
+          aria-hidden="true"
           className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-[11px]"
           style={{ background: iconBg, color: iconColor }}
         >
           {icon}
         </span>
         {label}
-      </div>
+      </h2>
       {children}
     </section>
   );
