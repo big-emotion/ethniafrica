@@ -14,12 +14,14 @@ const {
   mockGetLanguageFamilyById,
   mockGetFamilyTreeSkeleton,
   mockGetPeoplesByLanguageFamily,
+  mockGetPeoplesByIds,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
 } = vi.hoisted(() => ({
   mockGetLanguageFamilyById: vi.fn(),
   mockGetFamilyTreeSkeleton: vi.fn(),
   mockGetPeoplesByLanguageFamily: vi.fn(),
+  mockGetPeoplesByIds: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
 }));
@@ -52,6 +54,7 @@ vi.mock("@/api/v2/services/languageFamilyTreeService", () => ({
 vi.mock("@/api/v2/services/peopleService", () => ({
   getPeoplesByLanguageFamily: (...args: unknown[]) =>
     mockGetPeoplesByLanguageFamily(...args),
+  getPeoplesByIds: (...args: unknown[]) => mockGetPeoplesByIds(...args),
 }));
 
 // The route must read through the v2 services, which own the revision rules;
@@ -167,6 +170,22 @@ const BANTU: LanguageFamily = {
   },
 };
 
+/** The one family of the twenty-four whose peoples all sit under a sub-family. */
+const AFROASIATIC: LanguageFamily = {
+  id: "FLG_AFROASIATIQUE",
+  nameFr: "Afro-asiatique",
+  nameEn: "Afroasiatic",
+  content: {
+    generalInfo: { branches: ["Berbère", "Couchitique"] },
+    associatedPeoples: [
+      { name: "Somali", peopleId: "PPL_SOMALI" },
+      { name: "Égyptiens anciens" },
+      { name: "Touaregs", peopleId: "PPL_TUAREG" },
+    ],
+    sources: [],
+  },
+};
+
 const BANTU_TREE: FamilyTreeSkeleton = {
   family: { id: "FLG_BANTU", nameFr: "Bantou", nameEn: "Bantu" },
   branches: [
@@ -232,6 +251,7 @@ describe("/[lang]/familles/[slug] page", () => {
     mockGetLanguageFamilyById.mockResolvedValue(BANTU);
     mockGetFamilyTreeSkeleton.mockResolvedValue(BANTU_TREE);
     mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+    mockGetPeoplesByIds.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -239,25 +259,32 @@ describe("/[lang]/familles/[slug] page", () => {
   });
 
   describe("live fiche", () => {
+    // One globe, one parchment: the fiche's reading opens directly under the
+    // band, and the remaining chapters follow it instead of preceding it.
     // @req REQ-091
-    it("renders the family as a panel sequence, the record chapter included", async () => {
+    it("opens the record under the globe, ahead of the remaining chapters", async () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
       expect(panelAnchors(container)).toEqual([
+        "fiche-record",
         "fiche-scale",
         "fiche-tongue",
-        "fiche-record",
       ]);
-      expect(getByTestId("family-record-view")).toBeInTheDocument();
+      expect(
+        container
+          .querySelector("#fiche-record")
+          ?.contains(getByTestId("family-record-view"))
+      ).toBe(true);
     });
 
+    // The dossier is what the reader came for. A chevron over it is what made
+    // this fiche look nothing like its mockup: a globe, then a closed gate.
     // @req REQ-091
-    it("gates the record behind exactly one reading gate", async () => {
-      const { container } = await renderFamillesPage("FLG_BANTU");
+    it("opens the dossier as the page body, with no reading gate", async () => {
+      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      // Two would mean the route re-wrapped a record the sequence already gates,
-      // burying the dossier under a <details> inside a <details>.
-      expect(container.querySelectorAll("details")).toHaveLength(1);
+      expect(container.querySelectorAll("details")).toHaveLength(0);
+      expect(getByTestId("family-record-view")).toBeInTheDocument();
     });
 
     // @req REQ-019
@@ -273,6 +300,100 @@ describe("/[lang]/familles/[slug] page", () => {
       );
       expect(queryByTestId("pinned-version-banner")).toBeNull();
       expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
+    });
+
+    /**
+     * Afro-asiatique is a macro-family: every people it covers carries a
+     * sub-family's id, so the by-family query returns nothing and the globe
+     * used to collapse to its missing-overlay placeholder on a fiche with
+     * plenty to draw.
+     */
+    // @req REQ-116
+    it("draws the footprint from the peoples the fiche names when none carries its id", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([
+        { id: "PPL_SOMALI", nameMain: "Somali", currentCountries: ["SOM"] },
+        { id: "PPL_TUAREG", nameMain: "Touaregs", currentCountries: ["NER"] },
+      ]);
+
+      const { queryByText } = await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(mockGetPeoplesByIds).toHaveBeenCalledWith([
+        "PPL_SOMALI",
+        "PPL_TUAREG",
+      ]);
+      expect(queryByText(/Empreinte géographique non disponible/i)).toBeNull();
+    });
+
+    /**
+     * The three controls the mockup draws around the globe — pick a country of
+     * the footprint, flatten the map, recentre. They live in AtlasGlobe and are
+     * gated on nothing but the overlay, so a null footprint took all three away
+     * at once. This is what a reader meant by "the buttons do nothing".
+     */
+    // @req REQ-116
+    it("offers the three globe controls once the footprint has countries to draw", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([
+        { id: "PPL_SOMALI", nameMain: "Somali", currentCountries: ["SOM"] },
+        { id: "PPL_TUAREG", nameMain: "Touaregs", currentCountries: ["NER"] },
+      ]);
+
+      const { getByRole } = await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(
+        getByRole("button", { name: "Toute l'empreinte" })
+      ).toBeInTheDocument();
+      expect(getByRole("button", { name: /carte plate/i })).toBeInTheDocument();
+      expect(getByRole("button", { name: "Recentrer" })).toBeInTheDocument();
+    });
+
+    // The negative half of the assertion above: without a footprint there is
+    // no globe to operate, which is the state the fiche shipped in. Without
+    // this case the one above would pass on a page that always drew buttons.
+    // @req REQ-116
+    it("offers no globe control at all when nothing resolves to a footprint", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([]);
+
+      const { queryByRole, getByText } =
+        await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(queryByRole("button", { name: "Recentrer" })).toBeNull();
+      expect(
+        getByText(/Empreinte géographique non disponible/i)
+      ).toBeInTheDocument();
+    });
+
+    // The caption over the globe has to name the rule the page applied, or the
+    // reader is told the atlas walked a classification it never walked.
+    // @req REQ-116
+    it("credits the fiche's own declaration in the globe caption", async () => {
+      mockGetLanguageFamilyById.mockResolvedValue(AFROASIATIC);
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
+      mockGetPeoplesByIds.mockResolvedValue([
+        { id: "PPL_SOMALI", nameMain: "Somali", currentCountries: ["SOM"] },
+      ]);
+
+      const { getByText } = await renderFamillesPage("FLG_AFROASIATIQUE");
+
+      expect(getByText(/que la fiche nomme/i)).toBeInTheDocument();
+    });
+
+    // A family with member peoples of its own must not be sent down the
+    // fallback: its own peoples are the stronger fact.
+    // @req REQ-116
+    it("never reads the declaration when the family has member peoples", async () => {
+      mockGetPeoplesByLanguageFamily.mockResolvedValue([
+        { id: "PPL_SHONA", nameMain: "Shona", currentCountries: ["ZWE"] },
+      ]);
+
+      await renderFamillesPage("FLG_BANTU");
+
+      expect(mockGetPeoplesByIds).not.toHaveBeenCalled();
     });
 
     // @req REQ-047
@@ -325,7 +446,7 @@ describe("/[lang]/familles/[slug] page", () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
       expect(container.querySelector("#fiche-tongue")).toBeNull();
-      expect(panelAnchors(container)).toEqual(["fiche-scale", "fiche-record"]);
+      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
       expect(getByTestId("family-record-view")).toBeInTheDocument();
     });
 

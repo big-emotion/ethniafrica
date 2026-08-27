@@ -15,6 +15,7 @@ export interface PeopleQueryFilters {
 /**
  * Bucket key for peoples whose language_family_id is null/empty.
  */
+// @req REQ-108
 export const UNCLASSIFIED_FAMILY_KEY = "__unclassified__";
 
 /**
@@ -63,6 +64,7 @@ function mapRowsToPeoples(
 /**
  * Get all AFRIK peoples with optional pagination
  */
+// @req REQ-019
 export async function getAllAfrikPeoples(
   page?: number,
   perPage?: number
@@ -88,6 +90,7 @@ export async function getAllAfrikPeoples(
   return mapRowsToPeoples(data || [], relationsMap);
 }
 
+// @req REQ-033
 export async function getPaginatedAfrikPeoples(
   page: number,
   perPage: number,
@@ -138,6 +141,7 @@ export async function getPaginatedAfrikPeoples(
 /**
  * Get a single AFRIK people by ID
  */
+// @req REQ-019
 export async function getAfrikPeopleById(id: string): Promise<People | null> {
   const supabase = createServerClient();
   const { data, error } = await supabase
@@ -164,6 +168,7 @@ export async function getAfrikPeopleById(id: string): Promise<People | null> {
 /**
  * Get AFRIK peoples by language family
  */
+// @req REQ-019
 export async function getAfrikPeoplesByLanguageFamily(
   familyId: string
 ): Promise<People[]> {
@@ -186,8 +191,44 @@ export async function getAfrikPeoplesByLanguageFamily(
 }
 
 /**
+ * Get the named AFRIK peoples, whatever family they belong to.
+ *
+ * The family fiche uses this to resolve the peoples a macro-family's fiche
+ * declares in `content.associatedPeoples` — they carry a sub-family's id, so
+ * `getAfrikPeoplesByLanguageFamily` never returns them (REQ-116, see
+ * src/lib/familyFootprintSource.ts).
+ */
+// @req REQ-116
+export async function getAfrikPeoplesByIds(
+  peopleIds: readonly string[]
+): Promise<People[]> {
+  // PostgREST rejects `in.()`, so an empty list has to short-circuit rather
+  // than reach the database as a query that cannot parse.
+  if (peopleIds.length === 0) return [];
+
+  const supabase = createServerClient();
+  const ids = [...peopleIds];
+  const { data, error } = await supabase
+    .from("afrik_peoples")
+    .select("*")
+    .in("id", ids)
+    .order("name_main");
+
+  if (error) {
+    logger.error("Error fetching AFRIK peoples by id", error);
+    throw error;
+  }
+
+  const foundIds = (data || []).map((row) => row.id);
+  const relationsMap = await getCountryRelationsMap(supabase, foundIds);
+
+  return mapRowsToPeoples(data || [], relationsMap);
+}
+
+/**
  * Get AFRIK peoples by country
  */
+// @req REQ-019
 export async function getAfrikPeoplesByCountry(
   countryId: string
 ): Promise<People[]> {
@@ -235,6 +276,7 @@ export async function getAfrikPeoplesByCountry(
  * are tallied under UNCLASSIFIED_FAMILY_KEY so callers can surface them
  * instead of silently dropping them.
  */
+// @req REQ-108
 export async function getPeopleCountsByLanguageFamily(): Promise<
   Map<string, number>
 > {
@@ -260,6 +302,7 @@ export async function getPeopleCountsByLanguageFamily(): Promise<
 /**
  * Search AFRIK peoples using Postgres FTS on search_vector (websearch, french).
  */
+// @req REQ-019
 export async function searchAfrikPeoples(query: string): Promise<People[]> {
   const supabase = createServerClient();
 
