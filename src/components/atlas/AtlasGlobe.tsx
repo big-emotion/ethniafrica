@@ -946,11 +946,11 @@ export function AtlasGlobe({
         </div>
       )}
 
-      {/* Below the panel breakpoint these step aside for the bottom sheet —
-          but only once there is a sheet. Hiding them unconditionally left a
-          phone reader with a globe that moves, no statement of what dragging
-          does and no way back to centre, which is what "it spins and I can't
-          stop it" was describing. */}
+      {/* Below the panel breakpoint the legend steps aside for the bottom
+          sheet — but only once there is a sheet. Hiding it unconditionally
+          left a phone reader with a globe that moves and no statement of what
+          dragging does, which is what "it spins and I can't stop it" was
+          describing. */}
       {legend ?? (
         <p
           data-atlas-legend=""
