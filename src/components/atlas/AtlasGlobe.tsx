@@ -824,12 +824,18 @@ export function AtlasGlobe({
         </div>
       )}
 
-      {/* Hidden below the panel breakpoint, as in the mockup: at that width
-          the bottom sheet already owns the space these would sit in. */}
+      {/* Below the panel breakpoint these step aside for the bottom sheet —
+          but only once there is a sheet. Hiding them unconditionally left a
+          phone reader with a globe that moves, no statement of what dragging
+          does and no way back to centre, which is what "it spins and I can't
+          stop it" was describing. */}
       {legend ?? (
         <p
           data-atlas-legend=""
-          className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
+          className={cn(
+            "pointer-events-none absolute inset-x-0 top-0 p-3 text-xs min-[760px]:block",
+            chosenFacts && "hidden"
+          )}
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           Afrique à sa surface réelle. Glissez pour tourner.
@@ -838,7 +844,10 @@ export function AtlasGlobe({
 
       <div
         data-atlas-toolbar=""
-        className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
+        className={cn(
+          "absolute inset-x-0 bottom-0 flex flex-wrap gap-2 p-3 min-[760px]:flex",
+          chosenFacts && "hidden min-[760px]:flex"
+        )}
       >
         {offersList && (
           <button

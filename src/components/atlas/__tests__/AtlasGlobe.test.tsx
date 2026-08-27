@@ -863,3 +863,32 @@ describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
     expect(fireEvent.keyDown(surface, { key: "Tab" })).toBe(true);
   });
 });
+
+describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () => {
+  // The legend and the toolbar were both `hidden` below 760px, on the
+  // grounds that the bottom sheet owns that space. The sheet only exists
+  // once a target has been chosen, so before that a phone reader got a
+  // globe that moves, no statement of what dragging does and no way back
+  // to centre — which reads as "it spins and I cannot stop it".
+  // @req REQ-117
+  it("shows the drag legend at phone width, before any panel is open", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const legend = container.querySelector("[data-atlas-legend]");
+    expect(legend).toHaveTextContent("Glissez pour tourner");
+    expect(legend?.className).not.toContain("hidden");
+  });
+
+  // @req REQ-117
+  it("keeps Recentrer reachable at phone width", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const toolbar = container.querySelector("[data-atlas-toolbar]");
+    expect(toolbar?.className).not.toContain("hidden");
+    expect(screen.getByRole("button", { name: "Recentrer" })).toBeVisible();
+  });
+});

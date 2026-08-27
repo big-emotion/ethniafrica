@@ -252,9 +252,15 @@ desktop `xl` 800px).
 4. **A globe states its controls.** What dragging does, and a visible
    _Recentrer_. Motion honours `prefers-reduced-motion`, which
    `AtlasGlobeCanvas` already does.
-5. **An unanswerable target is not rendered.** `facingReader === false` means
-   removed from the DOM, not faded — a control that cannot be used must not
-   look like one.
+5. ~~**An unanswerable target is not rendered.**~~ **Withdrawn.** This rule
+   said a `facingReader === false` marker should leave the DOM rather than
+   fade. `AtlasGlobe.tsx` already explains why that is wrong, and it is
+   right: removing the marker takes the country off the keyboard path, and
+   under `prefers-reduced-motion` — where the globe never drifts round on its
+   own — off the keyboard path means unreachable for good. A far-side marker
+   stays rendered and dimmed. What actually failed here was that the globe's
+   legend and toolbar were `hidden` below 760px, so a phone reader was given
+   no statement of what dragging does and no way back to centre.
 6. **One accent per surface**, per the atlas charter. Games do not introduce a
    palette of their own.
 
