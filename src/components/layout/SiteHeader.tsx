@@ -585,9 +585,15 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           opacity: 0.62;
           pointer-events: none;
         }
+        /* The wash, not --accent-tint. That token is the accent over
+           parchment and the night theme does not rebind it, so using it as
+           a fill here put a #f1d9ae card under night's cream ink — 1.05:1,
+           unreadable the moment the reader switched surface. A translucent
+           wash takes the colour of whatever is behind it, so it reads on
+           both. Same device as the open pill above. */
         .sh-entry[aria-current="page"] {
           border-color: var(--accent);
-          background: var(--accent-tint);
+          background: color-mix(in srgb, var(--accent) 16%, var(--afh-surface));
         }
         .sh-glyph {
           width: 28px;

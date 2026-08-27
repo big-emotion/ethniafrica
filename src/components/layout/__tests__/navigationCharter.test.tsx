@@ -88,6 +88,24 @@ describe("atlas charter §3 — the menu is generated, never hand-listed", () =>
   });
 });
 
+describe("atlas charter §2 — the bar reads on both surfaces", () => {
+  // --accent-tint is the accent over parchment, and no night scope rebinds
+  // it. Painting a state with it put the open module's card at #f1d9ae
+  // under night's cream ink — 1.05:1. Any state colour here has to be one
+  // that follows the surface, which is what the wash and the ink pair are.
+  // @req REQ-115
+  it("paints no state with the parchment-only accent tint", () => {
+    expect(source()).not.toContain("var(--accent-tint)");
+  });
+
+  // The full-strength accent is a fill, never an ink (color.css §-ink
+  // variants), so accent-coloured text takes --accent-ink on both surfaces.
+  // @req REQ-115
+  it("colours its accent text with the readable half of the pair", () => {
+    expect(source()).toContain("color: var(--accent-ink)");
+  });
+});
+
 describe("atlas charter §3 — the menu never offers an unresolved route", () => {
   // @req REQ-106
   it("resolves a route for every module it may list, or calls it unbuilt", () => {

@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
@@ -276,5 +279,24 @@ describe("AccessModeHub — axis scene (REQ-114)", () => {
     expect(
       screen.queryByTestId("access-mode-hub-comprendre-scene")
     ).not.toBeInTheDocument();
+  });
+
+  // --accent-tint is the accent over parchment, and no night scope rebinds
+  // it. Filling the row with it made every live module on the three hubs a
+  // #f1d9ae card under night's cream ink — measured at 1.12:1 on
+  // /fr/explorer. A wash takes the colour of what is behind it, so the row
+  // reads on whichever surface the reader chose.
+  // Asserted against the source rather than the render: happy-dom drops a
+  // color-mix() declaration it cannot parse, so the rendered element shows
+  // no background either way and only the source can answer.
+  // @req REQ-115
+  it("fills a live module with a wash that follows the reader's surface", () => {
+    const source = readFileSync(
+      join(process.cwd(), "src/components/hubs/AccessModeHub.tsx"),
+      "utf8"
+    );
+
+    expect(source).not.toContain("var(--accent-tint)");
+    expect(source).toContain("color-mix(in srgb, var(--accent) 16%");
   });
 });
