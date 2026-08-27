@@ -37,21 +37,26 @@ describe("detail route streaming", () => {
     expect(countryView).not.toContain("useSearchParams");
   });
 
+  // The people dossier was a client view that fetched a fiche the route had
+  // already awaited, and hid its heavier blocks behind tabs. It is a server
+  // component now — the atlas fiche's parchment — so, as with the country
+  // dossier, the guard is no longer "defer the chart past its tab" but "keep
+  // the dossier off the client altogether".
   // @req REQ-046
-  it("does not load the demographics chart before its tab is opened", () => {
-    const peopleView = readSource("src/components/detail/PeopleDetailView.tsx");
-
-    expect(peopleView).not.toContain(
-      'import { DemographicsChart } from "@/components/charts/DemographicsChart"'
+  it("keeps the people dossier off the client rendering path", () => {
+    const peopleView = readSource(
+      "src/components/people/PeopleDetailViewV2.tsx"
     );
-    expect(peopleView).toContain("lazy(() =>");
+
+    expect(peopleView).not.toContain('"use client"');
+    expect(peopleView).not.toContain("useSearchParams");
   });
 
   // @req REQ-046
   it("does not load the Supabase browser client for server-rendered flags", () => {
     for (const relativePath of [
       "src/components/country/CountryRecordView.tsx",
-      "src/components/detail/PeopleDetailView.tsx",
+      "src/components/people/PeopleDetailViewV2.tsx",
     ]) {
       const source = readSource(relativePath);
       expect(source).not.toContain(

@@ -1,8 +1,10 @@
 "use client";
 
 import { useDeferredValue, useEffect, useState } from "react";
+import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { Language } from "@/types/shared";
+import { getPeopleRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -22,20 +24,18 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 interface PeopleViewProps {
   language: Language;
-  onPeopleSelect: (people: PeopleSummary) => void;
   hideSearchAndAlphabet?: boolean;
-  selectedPeopleId?: string | null;
   languageFamilyId?: LanguageFamilyId;
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const PEOPLES_PER_PAGE = 10;
 
+/** The peoples directory's list. Every card is a link to that people's fiche. */
+// @req REQ-097
 export const PeopleView = ({
   language,
-  onPeopleSelect,
   hideSearchAndAlphabet = false,
-  selectedPeopleId = null,
   languageFamilyId,
 }: PeopleViewProps) => {
   const t = getTranslation(language);
@@ -85,67 +85,83 @@ export const PeopleView = ({
   const formatNumber = (num: number): string =>
     new Intl.NumberFormat("fr-FR").format(Math.round(num));
 
+  /**
+   * A card is a link to the people's fiche.
+   *
+   * It was a Card with an onClick and no role, no tabIndex and no key
+   * handling, so no keyboard reached it and nothing following links could
+   * discover a single people fiche — the directory rendered zero anchors. The
+   * anchor is stretched over the card rather than wrapped around it so the
+   * badges and chips inside keep their own semantics.
+   *
+   * prefetch stays off deliberately: the list holds a page of the corpus's
+   * 789 people fiches at a time.
+   */
   const renderPeopleCard = (people: PeopleSummary) => (
-    <Card
-      key={people.id}
-      className={cn(
-        "cursor-pointer group rounded-afh-xl p-4",
-        CHARTER_HOVER_LIFT,
-        hideSearchAndAlphabet && "mx-0",
-        selectedPeopleId === people.id &&
-          "border-2 border-[color:var(--accent)]"
-      )}
-      onClick={() => onPeopleSelect(people)}
-    >
-      <div className="space-y-2">
-        <AutonymExonymHeading
-          variant="compact"
-          exonym={people.nameMain}
-          autonym={people.selfAppellation}
-          className="group-hover:[&_h2]:text-primary [&_h2]:transition-colors"
+    <div key={people.id} className="relative">
+      <Card
+        className={cn(
+          "group rounded-afh-xl p-4",
+          CHARTER_HOVER_LIFT,
+          hideSearchAndAlphabet && "mx-0"
+        )}
+      >
+        <Link
+          href={getPeopleRoute(language, people.id)}
+          prefetch={false}
+          aria-label={people.nameMain}
+          className="absolute inset-0 rounded-[inherit] focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
         />
-
-        <div className="flex items-center gap-2 flex-wrap">
-          {people.classificationStatus && (
-            <ClassificationBadge status={people.classificationStatus} />
-          )}
-          <ConfidenceChip
-            confidenceScore={null}
-            sourceCount={null}
-            lastHumanAuditAt={null}
-            variant="inline"
-            ariaSuffix={people.nameMain}
+        <div className="space-y-2">
+          <AutonymExonymHeading
+            variant="compact"
+            exonym={people.nameMain}
+            autonym={people.selfAppellation}
+            className="group-hover:[&_h2]:text-primary [&_h2]:transition-colors"
           />
-        </div>
 
-        <div className="space-y-1 text-sm text-muted-foreground">
-          {people.languageFamilyName && (
-            <div className="text-xs">{people.languageFamilyName}</div>
-          )}
-          {people.totalPopulation !== undefined && (
-            <div>{formatNumber(people.totalPopulation)} population</div>
-          )}
-          {people.currentCountries && people.currentCountries.length > 0 && (
-            <div className="flex flex-wrap gap-1">
-              {people.currentCountries.slice(0, 4).map((iso) => (
-                <Badge
-                  key={iso}
-                  variant="secondary"
-                  className="text-xs px-1.5 py-0"
-                >
-                  {iso}
-                </Badge>
-              ))}
-              {people.currentCountries.length > 4 && (
-                <Badge variant="secondary" className="text-xs px-1.5 py-0">
-                  +{people.currentCountries.length - 4}
-                </Badge>
-              )}
-            </div>
-          )}
+          <div className="flex items-center gap-2 flex-wrap">
+            {people.classificationStatus && (
+              <ClassificationBadge status={people.classificationStatus} />
+            )}
+            <ConfidenceChip
+              confidenceScore={null}
+              sourceCount={null}
+              lastHumanAuditAt={null}
+              variant="inline"
+              ariaSuffix={people.nameMain}
+            />
+          </div>
+
+          <div className="space-y-1 text-sm text-muted-foreground">
+            {people.languageFamilyName && (
+              <div className="text-xs">{people.languageFamilyName}</div>
+            )}
+            {people.totalPopulation !== undefined && (
+              <div>{formatNumber(people.totalPopulation)} population</div>
+            )}
+            {people.currentCountries && people.currentCountries.length > 0 && (
+              <div className="flex flex-wrap gap-1">
+                {people.currentCountries.slice(0, 4).map((iso) => (
+                  <Badge
+                    key={iso}
+                    variant="secondary"
+                    className="text-xs px-1.5 py-0"
+                  >
+                    {iso}
+                  </Badge>
+                ))}
+                {people.currentCountries.length > 4 && (
+                  <Badge variant="secondary" className="text-xs px-1.5 py-0">
+                    +{people.currentCountries.length - 4}
+                  </Badge>
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 
   const renderListBody = () => {

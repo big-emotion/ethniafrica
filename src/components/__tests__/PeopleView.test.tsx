@@ -50,7 +50,6 @@ function createWrapper() {
 }
 
 describe("PeopleView", () => {
-  const mockOnPeopleSelect = vi.fn();
   const firstPage: PaginatedResponse<PeopleSummary> = {
     data: [
       {
@@ -80,7 +79,7 @@ describe("PeopleView", () => {
       () => new Promise(() => {})
     );
 
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+    render(<PeopleView language="fr" />, {
       wrapper: createWrapper(),
     });
 
@@ -92,9 +91,26 @@ describe("PeopleView", () => {
     expect(screen.queryByText("Yoruba")).not.toBeInTheDocument();
   });
 
+  /**
+   * The directory's one destination is the atlas fiche.
+   *
+   * Each card used to be a Card with an onClick and no role, no tabIndex and
+   * no key handling, which pushed `?people=` onto the directory's own URL to
+   * open a detail pane beside the list. No keyboard reached it and nothing
+   * following links could discover a single people fiche: the shipped page
+   * rendered zero anchors.
+   */
+  // @req REQ-097
+  it("opens each people at its own fiche, as a link a keyboard and a crawler can follow", async () => {
+    render(<PeopleView language="fr" />, { wrapper: createWrapper() });
+
+    const link = await screen.findByRole("link", { name: "Yoruba" });
+    expect(link).toHaveAttribute("href", "/fr/peuples/PPL_YORUBA");
+  });
+
   // @req REQ-001
   it("should request and render only the first page on mount", async () => {
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+    render(<PeopleView language="fr" />, {
       wrapper: createWrapper(),
     });
 
@@ -111,7 +127,7 @@ describe("PeopleView", () => {
 
   // @req REQ-002
   it("should send search and letter filters to the API", async () => {
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+    render(<PeopleView language="fr" />, {
       wrapper: createWrapper(),
     });
 
@@ -146,14 +162,9 @@ describe("PeopleView", () => {
 
   // @req REQ-001
   it("should send the language family filter to the API", async () => {
-    render(
-      <PeopleView
-        language="fr"
-        onPeopleSelect={mockOnPeopleSelect}
-        languageFamilyId="FLG_BANTU"
-      />,
-      { wrapper: createWrapper() }
-    );
+    render(<PeopleView language="fr" languageFamilyId="FLG_BANTU" />, {
+      wrapper: createWrapper(),
+    });
 
     await waitFor(() =>
       expect(afrikLoader.getPeoples).toHaveBeenCalledWith({
@@ -185,7 +196,7 @@ describe("PeopleView", () => {
       meta: { ...firstPage.meta, page: page ?? 1 },
     }));
 
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+    render(<PeopleView language="fr" />, {
       wrapper: createWrapper(),
     });
 
