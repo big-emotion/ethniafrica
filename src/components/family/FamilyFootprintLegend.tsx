@@ -1,6 +1,10 @@
 import type { CSSProperties } from "react";
 
 import { FICHE_BAND_BREAKPOINT_PX } from "@/components/fiche/FicheHeroBand";
+import {
+  FOOTPRINT_WORDING,
+  type FamilyFootprintProvenance,
+} from "@/lib/familyFootprintSource";
 
 /**
  * The sentence that justifies the dashed edge.
@@ -31,13 +35,20 @@ const LEGEND_STYLE: CSSProperties = {
 };
 
 // @req REQ-116
-export function FamilyFootprintLegend() {
+export function FamilyFootprintLegend({
+  provenance = "member-peoples",
+}: {
+  /** Which rule built the area. The caption names it, so it cannot claim a rule the page did not apply. */
+  provenance?: FamilyFootprintProvenance;
+}) {
+  const [firstLine, secondLine] = FOOTPRINT_WORDING[provenance].legend;
+
   return (
     <>
       <p className="afh-footprint-legend" style={LEGEND_STYLE}>
-        Empreinte reconstruite
+        {firstLine}
         <br />
-        depuis les peuples, pas déclarée.
+        {secondLine}
       </p>
       <style>{`
         @container (max-width: ${FICHE_BAND_BREAKPOINT_PX - 1}px) {

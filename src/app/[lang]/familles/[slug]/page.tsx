@@ -17,7 +17,14 @@ import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
-import { getPeoplesByLanguageFamily } from "@/api/v2/services/peopleService";
+import {
+  getPeoplesByIds,
+  getPeoplesByLanguageFamily,
+} from "@/api/v2/services/peopleService";
+import {
+  declaredAssociatedPeopleIds,
+  resolveFootprintProvenance,
+} from "@/lib/familyFootprintSource";
 import { getFamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
@@ -162,10 +169,24 @@ export default async function FamillesSlugPage({
     notFound();
   }
 
-  const [tree, memberPeoples] = await Promise.all([
+  const [tree, familyMemberPeoples] = await Promise.all([
     getFamilyTreeSkeleton(parsed.slug),
     getPeoplesByLanguageFamily(parsed.slug),
   ]);
+
+  // Afro-asiatique is a macro-family: its peoples all carry a sub-family's id
+  // (Berbère, Tchadique, Couchitique, Sémitique), so the query above returns
+  // nothing and the footprint would collapse to the missing-overlay
+  // placeholder. The fiche's own `associatedPeoples` is the fallback, and
+  // deliberately not the union of the sub-families — see
+  // src/lib/familyFootprintSource.ts for why the wider area is the wrong one.
+  const footprintProvenance = resolveFootprintProvenance(
+    familyMemberPeoples.length
+  );
+  const memberPeoples =
+    footprintProvenance === "member-peoples"
+      ? familyMemberPeoples
+      : await getPeoplesByIds(declaredAssociatedPeopleIds(family));
 
   // The tongue chapter reuses the tree the record chapter already renders — a
   // second fetch would cost a round trip to restate the same three queries.
@@ -177,9 +198,15 @@ export default async function FamillesSlugPage({
     peopleCount: branch.peopleCount,
   }));
 
-  // The globe's footprint is the union of currentCountries across every
-  // member people (REQ-116 AC4) — never family.distribution.distributionByCountry,
-  // which every FLG_*.json declares empty (atlas-charter §4).
+  // The globe's footprint is the union of currentCountries across the peoples
+  // resolved above (REQ-116 AC4) — never family.distribution.distributionByCountry.
+  //
+  // Not because that field is empty: every FLG_*.json in dataset/source
+  // declares one, and the recette database reads them all empty only because
+  // the loader drops the field. It is passed over because it is too thin to be
+  // a footprint — Afro-asiatique declares four countries where its peoples
+  // reach twenty-one — and the charter (§4) asks the atlas to reconstruct the
+  // area from the peoples rather than restate an under-declared one.
   const familyDetail = mapLanguageFamilyDetail(family);
   const familyOverlay = buildFamilyFootprintOverlay(
     memberPeoples.map((person) => person.currentCountries),
@@ -217,6 +244,7 @@ export default async function FamillesSlugPage({
       footprintCountries={familyOverlay?.countries ?? []}
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeoples.length}
+      footprintProvenance={footprintProvenance}
       classificationTree={
         tree ? (
           <FamilyClassificationTreeSection familyId={parsed.slug} tree={tree} />
@@ -234,13 +262,16 @@ export default async function FamillesSlugPage({
           payload: familyDetail,
           branches: tongueBranches,
         }}
+        recordPlacement="body"
         globe={
           <FicheHeroBand>
             <AtlasGlobe
               overlay={familyOverlay}
               targetPicker="list"
               facts={familyTargetFacts}
-              legend={<FamilyFootprintLegend />}
+              legend={
+                <FamilyFootprintLegend provenance={footprintProvenance} />
+              }
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />
           </FicheHeroBand>
