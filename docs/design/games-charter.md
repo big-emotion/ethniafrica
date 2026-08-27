@@ -275,3 +275,12 @@ Ordered by dependency, not by size:
 
 Steps 1–3 are the ones that make the current rounds honest. Steps 4–6 are what
 make them worth replaying. Step 7 is what makes the hub legible.
+
+**The implementation order above is wrong, and `docs/design/games-rollout-plan.md`
+supersedes it.** Step 7 belongs first: retiring eight games removes eight
+generators and one interaction kind from every step that follows. Reading the
+code also narrowed the work — of the three kept games, only `appellations`
+lacks a subject line and only `pays-davant` draws distractors from a pool — and
+turned up a defect this charter missed: `mercatorMisleads()` is never called by
+the handler, so the one game whose whole point is the projection's lie mostly
+serves rounds where nothing lies.
