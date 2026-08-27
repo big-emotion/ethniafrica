@@ -46,14 +46,14 @@ export function ThemeToggle() {
       onClick={() => setTheme(isNight ? "light" : "dark")}
       aria-label={isNight ? "Passer en mode parchemin" : "Passer en mode nuit"}
       title={isNight ? "Mode parchemin" : "Mode nuit"}
-      className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border transition-colors"
-      style={{
-        borderColor: "var(--afh-border)",
-        color: "var(--afh-text-soft)",
-        backgroundColor: "transparent",
-      }}
+      // The 44px box is the hit area; the 30px disc inside it is what the
+      // header actually draws, so this control matches the search button
+      // beside it instead of standing a third taller than the bar.
+      className="sh-icon inline-grid min-h-11 min-w-11 shrink-0 place-items-center border-0 bg-transparent"
     >
-      <Icon className="h-4 w-4" aria-hidden="true" />
+      <span className="sh-icon-circle">
+        <Icon className="h-4 w-4" aria-hidden="true" />
+      </span>
     </button>
   );
 }

@@ -234,6 +234,17 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "migration_events",
     heroable: "migration-paths",
   },
+  {
+    // Reached only from the header's flat link list before the three axes
+    // replaced it. It answers "where does what I am reading come from",
+    // which is Comprendre's filing rule, so it belongs on the axis rather
+    // than in a utility row beside it.
+    id: "regards-colonisation",
+    name: "Regards : colonisation et résistances",
+    accessMode: "comprendre",
+    page: "colonization",
+    availability: "static",
+  },
   // Jouer: the quiz keeps its own route; every other entry is a game the
   // hub reaches by slug. comparer and liens keep the ids they shipped with
   // as "Bientôt" placeholders — the surfaces they stood in for now exist,
@@ -390,3 +401,57 @@ export const getModulesForAccessMode = (
   mode: AccessMode
 ): HubModuleDefinition[] =>
   MODULE_DEFINITIONS.filter((def) => def.accessMode === mode);
+
+/**
+ * What the header may list for an access mode — the same rule
+ * `getHubModules` applies, minus its Supabase probe.
+ *
+ * The probe is deliberately not repeated here. The header renders inside
+ * PageLayout, a client component that some fifty page components mount;
+ * threading a server-resolved availability list through all of them would
+ * cost a wide refactor to close a gap that only opens when a backing table
+ * is empty. The header therefore trusts the static lock — a module behind a
+ * dark flag is dropped rather than announced, because its route answers
+ * notFound() — and the hub behind the click keeps the probe that can also
+ * see an empty corpus.
+ */
+// @req REQ-114 @req REQ-106
+export const getNavModules = (mode: AccessMode): HubModuleDefinition[] =>
+  getModulesForAccessMode(mode).filter(
+    (def) => def.availability !== "flagged" || isModuleEnabled(def)
+  );
+
+/**
+ * The four CVD-validated categorical accents, in the order the menu walks
+ * them. Terre is in: on a module card the accent tints one 28px tile, which
+ * is the fiche-scope conflict the axis list avoids, not a repeat of it.
+ */
+// @req REQ-114
+export const ACCENT_CYCLE = [
+  "afh-accent-ocre",
+  "afh-accent-teal",
+  "afh-accent-terre",
+  "afh-accent-perv",
+] as const;
+
+const ACCENT_INDEX_BY_MODULE_ID = new Map(
+  MODULE_DEFINITIONS.map((def, index) => [def.id, index])
+);
+
+/**
+ * A module's accent is its position in the registry, cycled through the
+ * four. The walk is continuous across the whole registry rather than
+ * restarting per axis — that is what the mockup does, and it is why
+ * Explorer reads ocre · teal · terre · perv
+ * (docs/design/mockups/parts/nav-core.js).
+ *
+ * Derived rather than declared: an accent field on twenty-one entries is
+ * twenty-one chances to file a duplicate beside its neighbour.
+ */
+// @req REQ-114
+export function accentForModule(
+  def: Pick<HubModuleDefinition, "id">
+): (typeof ACCENT_CYCLE)[number] {
+  const index = ACCENT_INDEX_BY_MODULE_ID.get(def.id) ?? 0;
+  return ACCENT_CYCLE[index % ACCENT_CYCLE.length];
+}
