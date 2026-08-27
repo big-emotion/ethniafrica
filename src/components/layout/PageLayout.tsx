@@ -10,7 +10,7 @@ import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
@@ -67,9 +67,7 @@ export const PageLayout = ({
     } else {
       switch (result.type) {
         case "languageFamily":
-          router.push(
-            `${getLocalizedRoute(language, "families")}?family=${result.id}`
-          );
+          router.push(getFamilyRoute(language, result.id));
           break;
         case "people":
           router.push(
