@@ -1,11 +1,15 @@
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  ACCENT_CYCLE,
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
+  accentForModule,
   getModulesForAccessMode,
+  getNavModules,
   isModuleEnabled,
+  resolveModuleHref,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 
@@ -55,7 +59,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("gives comprendre the modules a reader reaches by question", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual(["noms", "frise", "doctrine"]);
+    expect(ids).toEqual(["noms", "frise", "regards-colonisation", "doctrine"]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -170,7 +174,11 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     const staticModules = MODULE_DEFINITIONS.filter(
       (m) => m.availability === "static"
     );
-    expect(staticModules.map((m) => m.id)).toEqual(["recherche", "doctrine"]);
+    expect(staticModules.map((m) => m.id)).toEqual([
+      "recherche",
+      "regards-colonisation",
+      "doctrine",
+    ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
     }
@@ -236,5 +244,124 @@ describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
     const recherche = MODULE_DEFINITIONS.find((m) => m.id === "recherche");
     expect(isModuleEnabled(peuples)).toBe(true);
     expect(isModuleEnabled(recherche)).toBe(true);
+  });
+});
+
+describe("moduleRegistry — route resolution shared by the nav and the hubs", () => {
+  // @req REQ-114
+  it("addresses a game by its slug under the Jouer hub", () => {
+    const game = MODULE_DEFINITIONS.find((def) => def.gameSlug === "mercator");
+
+    expect(resolveModuleHref("fr", game)).toBe("/fr/jouer/mercator");
+  });
+
+  // @req REQ-114
+  it("addresses a module carrying a page by its localized route", () => {
+    const peoples = MODULE_DEFINITIONS.find((def) => def.id === "peuples");
+
+    expect(resolveModuleHref("fr", peoples)).toBe("/fr/peuples");
+  });
+
+  // The slug wins over the page so a module that ever carried both cannot
+  // resolve to the entity atlas when the reader asked for the game.
+  // @req REQ-114
+  it("prefers the game slug over a page when a module carries both", () => {
+    const href = resolveModuleHref("fr", {
+      page: "countries",
+      gameSlug: "vraie-taille",
+    });
+
+    expect(href).toBe("/fr/jouer/vraie-taille");
+  });
+
+  // @req REQ-106
+  it("resolves no route for a module that has neither a page nor a slug", () => {
+    const href = resolveModuleHref("fr", { page: null });
+
+    expect(href).toBeNull();
+  });
+
+  // The menu never offers a route that does not resolve (charter §3), so an
+  // unresolvable module has to be one the registry already calls unbuilt.
+  // @req REQ-114
+  it("gives every registered module a resolvable route or an unavailable state", () => {
+    for (const def of MODULE_DEFINITIONS) {
+      if (resolveModuleHref("fr", def) === null) {
+        expect(def.availability).toBe("unavailable");
+      }
+    }
+  });
+});
+
+describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", () => {
+  // The header is generated from the registry, so a destination absent from
+  // it is a destination the reader can no longer reach from the header.
+  // @req REQ-114
+  it("files the colonial gazes under Comprendre", () => {
+    const gazes = getModulesForAccessMode("comprendre").find(
+      (def) => def.page === "colonization"
+    );
+
+    expect(gazes).toBeDefined();
+    expect(resolveModuleHref("fr", gazes)).toBe(
+      "/fr/regards/colonisation-et-resistances"
+    );
+  });
+});
+
+describe("moduleRegistry — the list the header may show (REQ-114)", () => {
+  // @req REQ-114
+  it("lists a flagged module only while its flag is lit", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "false";
+    expect(getNavModules("jouer").map((def) => def.id)).not.toContain("quiz");
+
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
+  });
+
+  // Dropping it would hide that the module is coming; listing it as a link
+  // would promise a route that answers notFound().
+  // @req REQ-106
+  it("keeps an unbuilt module listed so it can carry its Bientôt state", () => {
+    const unbuilt = MODULE_DEFINITIONS.filter(
+      (def) => def.availability === "unavailable"
+    );
+
+    for (const def of unbuilt) {
+      expect(getNavModules(def.accessMode)).toContainEqual(def);
+    }
+  });
+
+  // @req REQ-114
+  it("keeps the registry order so the accent cycle is stable across renders", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+
+    expect(getNavModules("explorer").map((def) => def.id)).toEqual(
+      getModulesForAccessMode("explorer").map((def) => def.id)
+    );
+  });
+});
+
+describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
+  // The mockup walks the four categorical accents across the whole registry
+  // rather than restarting at each axis, which is what makes Explorer read
+  // ocre · teal · terre · perv in docs/design/mockups/parts/nav-core.js.
+  // @req REQ-114
+  it("walks the four categorical accents in registry order", () => {
+    const explorer = getModulesForAccessMode("explorer").slice(0, 4);
+
+    expect(explorer.map(accentForModule)).toEqual([
+      "afh-accent-ocre",
+      "afh-accent-teal",
+      "afh-accent-terre",
+      "afh-accent-perv",
+    ]);
+  });
+
+  // @req REQ-114
+  it("gives every registered module one of the four categorical accents", () => {
+    for (const def of MODULE_DEFINITIONS) {
+      expect(ACCENT_CYCLE).toContain(accentForModule(def));
+    }
   });
 });

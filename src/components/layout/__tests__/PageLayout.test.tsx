@@ -4,12 +4,11 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { PageLayout } from "@/components/layout/PageLayout";
 
-vi.mock("@/components/MobileNavBar", () => ({
-  MobileNavBar: () => <nav aria-label="Mobile navigation" />,
-}));
-
-vi.mock("@/components/layout/DesktopNavBar", () => ({
-  DesktopNavBar: () => <nav aria-label="Desktop navigation" />,
+// One bar for both widths since the three entry points replaced the two
+// hand-written ones. Stubbed here: what this file asserts is the title band
+// and main's padding, and the bar has its own suite.
+vi.mock("@/components/layout/SiteHeader", () => ({
+  SiteHeader: () => <nav aria-label="Navigation principale" />,
 }));
 
 vi.mock("@/components/search/SearchModalV2", () => ({

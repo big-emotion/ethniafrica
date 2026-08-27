@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import {
   ACCENT_BY_ACCESS_MODE,
+  resolveModuleHref,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -78,13 +78,10 @@ export function AccessModeHub({
       >
         <ul className="flex flex-col gap-3" role="list">
           {modules.map((module) => {
-            // A game has no PageType of its own — it is addressed by slug
-            // under the Jouer hub — so the slug wins over any page.
-            const href = module.gameSlug
-              ? `/${language}/jouer/${module.gameSlug}`
-              : module.page
-                ? getLocalizedRoute(language, module.page)
-                : null;
+            // Resolved by the registry, not here: the header renders the
+            // same modules and the two must not be able to disagree about
+            // where one of them goes.
+            const href = resolveModuleHref(language, module);
 
             return (
               <li key={module.id} data-testid={`hub-module-${module.id}`}>

@@ -1,0 +1,739 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  ArrowUpDown,
+  BookOpen,
+  ChevronDown,
+  Circle,
+  Crown,
+  Eye,
+  FolderTree,
+  Globe,
+  HelpCircle,
+  History,
+  Landmark,
+  Link2,
+  Maximize2,
+  MapPin,
+  Menu,
+  Network,
+  Route,
+  Scale,
+  Scissors,
+  Search,
+  Tag,
+  Tags,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { PRODUCT_NAME } from "@/lib/brand";
+import { cn } from "@/lib/utils";
+import { getTranslation } from "@/lib/translations";
+import {
+  ACCENT_BY_ACCESS_MODE,
+  ACCESS_MODES,
+  accentForModule,
+  getNavModules,
+  resolveModuleHref,
+  type AccessMode,
+  type HubModuleDefinition,
+} from "@/lib/hubs/moduleRegistry";
+import type { Language } from "@/types/shared";
+
+/**
+ * The header carries three intentions, not ten modules (atlas charter §3).
+ * Explorer when the reader knows what they are looking for, Comprendre when
+ * they want to know where what they are reading comes from, Jouer when they
+ * want the corpus to answer. The modules live behind the click — a panel on
+ * a wide viewport, a tray below 760px — and both are generated from
+ * `moduleRegistry.ts`, never hand-listed.
+ *
+ * This replaces the flat nine-link bar that was written twice, once per
+ * viewport, with its labels hardcoded in both copies.
+ *
+ * ── Three deliberate departures from docs/design/mockups ──────────────────
+ *
+ * 1. The tray is built on `ui/sheet`, not hand-rolled. The charter names
+ *    `drawer`, but vaul draws a bottom panel and the mockup draws a side
+ *    tray; `sheet` is the side one, and Radix brings the focus trap the
+ *    mockup's own drawer never had.
+ * 2. The panel closes on navigation. The mockup has no router, so it never
+ *    had to survive the click that navigates through it.
+ * 3. Each control is a 44px hit area wrapping the mockup's smaller painted
+ *    shape, rather than a 30px target. The pill and the circles keep their
+ *    drawn size; only the box you can hit grows.
+ */
+
+// The charter's own figure, and the width `FicheHeroBand` already switches
+// its band at, so the header and the band below it change shape together.
+const NAV_BREAKPOINT_PX = 760;
+
+/**
+ * One glyph per module. The mockup draws ten by hand; the registry holds
+ * twenty-one, and a set half hand-drawn and half library would read as two
+ * different stroke weights side by side. Sized 15px at stroke 1.9 — the
+ * mockup's own metrics.
+ */
+const MODULE_GLYPHS: Record<string, LucideIcon> = {
+  peuples: Users,
+  pays: Globe,
+  familles: Network,
+  recherche: Search,
+  noms: Tag,
+  frise: History,
+  "regards-colonisation": Eye,
+  doctrine: BookOpen,
+  quiz: HelpCircle,
+  appellations: Tags,
+  "plus-ou-moins": ArrowUpDown,
+  mercator: Maximize2,
+  comparer: Scale,
+  repartition: MapPin,
+  "pays-davant": Landmark,
+  royaumes: Crown,
+  migrations: Route,
+  liens: Link2,
+  "jeu-familles": FolderTree,
+  frontieres: Scissors,
+};
+
+const isCurrentRoute = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
+
+export interface SiteHeaderProps {
+  language: Language;
+  onSearchClick?: () => void;
+}
+
+// @req REQ-114 @req REQ-115 @req REQ-106
+export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
+  const pathname = usePathname();
+  const t = getTranslation(language);
+
+  const [openAxis, setOpenAxis] = useState<AccessMode | null>(null);
+  const [trayOpen, setTrayOpen] = useState(false);
+  const [openTrayAxis, setOpenTrayAxis] = useState<AccessMode | null>(null);
+  const triggerRefs = useRef<Partial<Record<AccessMode, HTMLButtonElement>>>(
+    {}
+  );
+
+  // A panel that outlived the click that navigated through it would hang
+  // over the page the reader just asked for. Adjusted during render rather
+  // than in an effect — React's own answer for state that has to reset when
+  // a prop changes, and it avoids a first paint of the stale panel.
+  const [renderedPathname, setRenderedPathname] = useState(pathname);
+  if (renderedPathname !== pathname) {
+    setRenderedPathname(pathname);
+    setOpenAxis(null);
+    setTrayOpen(false);
+  }
+
+  // Escape closes and hands the focus back to the trigger the reader
+  // opened, which is where their attention was (charter §3).
+  useEffect(() => {
+    if (!openAxis) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpenAxis(null);
+      triggerRefs.current[openAxis]?.focus();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [openAxis]);
+
+  const moveAlongAxes = useCallback((from: AccessMode, step: number) => {
+    const index = ACCESS_MODES.indexOf(from);
+    const next =
+      ACCESS_MODES[(index + step + ACCESS_MODES.length) % ACCESS_MODES.length];
+    triggerRefs.current[next]?.focus();
+    // The panel follows the focus so arrowing along the bar reads the axes,
+    // rather than making the reader re-open each one.
+    setOpenAxis((current) => (current === null ? null : next));
+  }, []);
+
+  const moduleEntry = (definition: HubModuleDefinition) => {
+    const href = resolveModuleHref(language, definition);
+    const Glyph = MODULE_GLYPHS[definition.id] ?? Circle;
+    const testId = `site-nav-module-${definition.id}`;
+
+    const body = (
+      <>
+        <span className="sh-glyph" aria-hidden="true">
+          <Glyph size={15} strokeWidth={1.9} />
+        </span>
+        <span className="sh-entry-text">
+          <span className="sh-entry-name">{definition.name}</span>
+          {/* The route is drawn for the eye, which cannot read an href.
+              A screen reader already announces the destination, so
+              repeating it here would only double the link's name. */}
+          <span className="sh-entry-route" aria-hidden="true">
+            {href ?? t.hubs.unresolvedRouteLabel}
+          </span>
+          {href === null ? (
+            <span className="sh-chip">
+              <span className="sh-chip-dot" aria-hidden="true" />
+              {t.hubs.unavailableLabel}
+            </span>
+          ) : null}
+        </span>
+      </>
+    );
+
+    // No anchor at all for an unbuilt module: the menu never offers a route
+    // that does not resolve, and an anchor without an href is a link the
+    // keyboard can still reach.
+    if (href === null) {
+      return (
+        <span
+          key={definition.id}
+          data-testid={testId}
+          aria-disabled="true"
+          tabIndex={-1}
+          className={cn("sh-entry", accentForModule(definition))}
+        >
+          {body}
+        </span>
+      );
+    }
+
+    return (
+      <Link
+        key={definition.id}
+        href={href}
+        data-testid={testId}
+        aria-current={isCurrentRoute(pathname, href) ? "page" : undefined}
+        className={cn("sh-entry", accentForModule(definition))}
+      >
+        {body}
+      </Link>
+    );
+  };
+
+  return (
+    <header data-testid="site-header" className="sh-header">
+      <nav className="sh-bar" aria-label="Navigation principale">
+        <Link href={`/${language}`} className="sh-brand">
+          <span className="sh-brand-mark" aria-hidden="true" />
+          <span className="sh-brand-name">{PRODUCT_NAME}</span>
+        </Link>
+
+        <div className="sh-axes" role="group" aria-label="Points d'entrée">
+          {ACCESS_MODES.map((axis) => (
+            <button
+              key={axis}
+              ref={(element) => {
+                if (element) triggerRefs.current[axis] = element;
+              }}
+              type="button"
+              id={`sh-axis-${axis}`}
+              aria-expanded={openAxis === axis}
+              aria-controls="site-megapanel"
+              onClick={() =>
+                setOpenAxis((current) => (current === axis ? null : axis))
+              }
+              onKeyDown={(event) => {
+                if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+                  return;
+                }
+                event.preventDefault();
+                moveAlongAxes(axis, event.key === "ArrowRight" ? 1 : -1);
+              }}
+              className={cn("sh-axis min-h-11", ACCENT_BY_ACCESS_MODE[axis])}
+            >
+              <span className="sh-axis-pill">
+                <span className="sh-seed" aria-hidden="true" />
+                {t.hubs[axis].title}
+                <ChevronDown
+                  className="sh-caret"
+                  size={11}
+                  aria-hidden="true"
+                />
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="sh-controls">
+          <button
+            type="button"
+            onClick={onSearchClick}
+            aria-label="Rechercher"
+            className="sh-icon min-h-11"
+          >
+            <span className="sh-icon-circle">
+              <Search size={14} strokeWidth={2.2} aria-hidden="true" />
+            </span>
+          </button>
+
+          {/* REQ-115 — the surface switch is reachable from every route. It
+              is the one control the mockup's bar does not draw. */}
+          <ThemeToggle />
+
+          <button
+            type="button"
+            onClick={() => setTrayOpen(true)}
+            data-testid="site-nav-burger"
+            aria-label="Ouvrir le menu"
+            aria-expanded={trayOpen}
+            className="sh-icon sh-burger min-h-11"
+          >
+            <span className="sh-icon-circle">
+              <Menu size={14} strokeWidth={2.2} aria-hidden="true" />
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      {openAxis ? (
+        <div
+          id="site-megapanel"
+          data-testid="site-megapanel"
+          aria-labelledby={`sh-axis-${openAxis}`}
+          className={cn("sh-panel", ACCENT_BY_ACCESS_MODE[openAxis])}
+        >
+          <div className="sh-panel-head">
+            {/* Not a heading: the trigger already names this region, and an
+                h4 here would open a level in every page's outline. */}
+            <span className="sh-panel-title">{t.hubs[openAxis].title}</span>
+            <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
+          </div>
+          <div className="sh-grid">
+            {getNavModules(openAxis).map(moduleEntry)}
+          </div>
+        </div>
+      ) : null}
+
+      <Sheet open={trayOpen} onOpenChange={setTrayOpen}>
+        <SheetContent side="right" className="sh-tray">
+          <SheetTitle className="sh-tray-title">{t.hubs.menuLabel}</SheetTitle>
+          {ACCESS_MODES.map((axis) => {
+            const modules = getNavModules(axis);
+            const expanded = openTrayAxis === axis;
+
+            return (
+              <div
+                key={axis}
+                className={cn("sh-fold", ACCENT_BY_ACCESS_MODE[axis])}
+              >
+                <button
+                  type="button"
+                  aria-expanded={expanded}
+                  aria-controls={`sh-fold-${axis}`}
+                  onClick={() => setOpenTrayAxis(expanded ? null : axis)}
+                  className="sh-fold-trigger min-h-11"
+                >
+                  <span className="sh-seed" aria-hidden="true" />
+                  {t.hubs[axis].title}
+                  <span className="sh-fold-count">{modules.length}</span>
+                  <ChevronDown
+                    className="sh-caret"
+                    size={13}
+                    aria-hidden="true"
+                  />
+                </button>
+                {expanded ? (
+                  <div id={`sh-fold-${axis}`} className="sh-fold-body">
+                    {modules.map(moduleEntry)}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+        </SheetContent>
+      </Sheet>
+
+      <style>{`
+        /* The bar takes the ink of the surface it sits on — the variant the
+           design-system board draws as .appbar[data-surface] . The night
+           theme rebinds these three tokens site-wide, so the bar turns with
+           the reader's choice instead of contradicting it. */
+        .sh-header {
+          --sh-ink: var(--afh-text);
+          --sh-ink-2: var(--afh-text-soft);
+          --sh-line: var(--afh-border);
+          background: var(--afh-bg);
+          color: var(--sh-ink);
+          border-bottom: 1px solid var(--sh-line);
+          position: relative;
+          z-index: 40;
+        }
+
+        .sh-bar {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 8px 22px;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+
+        .sh-brand {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          flex: none;
+          min-width: 0;
+          text-decoration: none;
+          color: inherit;
+        }
+        .sh-brand-mark {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          flex: none;
+          background: radial-gradient(
+            circle at 34% 30%,
+            var(--afh-cat-ocre),
+            var(--afh-cat-terre) 62%,
+            var(--afh-text)
+          );
+        }
+        .sh-brand-name {
+          font-family: var(--afh-font-display);
+          font-weight: 900;
+          font-size: 15px;
+          letter-spacing: -0.01em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .sh-axes {
+          display: flex;
+          gap: 4px;
+          margin-left: auto;
+        }
+
+        /* The button is the 44px target; the pill inside it is what the
+           mockup draws. Growing the pill itself to 44px would make the bar
+           a third taller than the band it opens onto. */
+        .sh-axis {
+          display: inline-flex;
+          align-items: center;
+          background: transparent;
+          border: 0;
+          padding: 0 2px;
+          cursor: pointer;
+          font-family: inherit;
+          color: var(--sh-ink-2);
+        }
+        .sh-axis-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-size: 13px;
+          padding: 6px 12px;
+          border: 1px solid transparent;
+          border-radius: var(--afh-radius-full);
+          transition:
+            color var(--afh-duration-base) var(--afh-ease-out),
+            border-color var(--afh-duration-base) var(--afh-ease-out),
+            background-color var(--afh-duration-base) var(--afh-ease-out);
+        }
+        .sh-seed {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--accent);
+          flex: none;
+        }
+        .sh-caret {
+          opacity: 0.7;
+          transition: transform var(--afh-duration-base) var(--afh-ease-out);
+        }
+        .sh-axis:hover {
+          color: var(--sh-ink);
+        }
+        .sh-axis:hover .sh-axis-pill {
+          border-color: var(--accent);
+        }
+        .sh-axis:focus-visible {
+          outline: none;
+        }
+        .sh-axis:focus-visible .sh-axis-pill {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .sh-axis[aria-expanded="true"] {
+          color: var(--sh-ink);
+        }
+        .sh-axis[aria-expanded="true"] .sh-axis-pill {
+          border-color: var(--accent);
+          background: color-mix(in srgb, var(--accent) 16%, transparent);
+        }
+        .sh-axis[aria-expanded="true"] .sh-caret {
+          transform: rotate(180deg);
+        }
+
+        .sh-controls {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          flex: none;
+        }
+        .sh-icon {
+          display: inline-grid;
+          place-items: center;
+          min-width: 44px;
+          background: transparent;
+          border: 0;
+          padding: 0;
+          cursor: pointer;
+          color: var(--sh-ink-2);
+        }
+        .sh-icon-circle {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid var(--sh-line);
+          display: inline-grid;
+          place-items: center;
+          transition: border-color var(--afh-duration-base) var(--afh-ease-out);
+        }
+        .sh-icon:hover {
+          color: var(--sh-ink);
+        }
+        .sh-icon:hover .sh-icon-circle {
+          border-color: var(--afh-cat-ocre);
+        }
+        .sh-icon:focus-visible {
+          outline: none;
+        }
+        .sh-icon:focus-visible .sh-icon-circle {
+          outline: 2px solid var(--afh-cat-ocre);
+          outline-offset: 2px;
+        }
+
+        /* ── The panel behind the click ─────────────────────────────── */
+        .sh-panel {
+          background: var(--afh-bg);
+          border-bottom: 1px solid var(--afh-cat-ocre);
+          padding: 20px 22px 22px;
+          animation: sh-panel-in var(--afh-duration-slow) var(--afh-ease-spring);
+        }
+        @keyframes sh-panel-in {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
+          }
+          to {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        .sh-panel-head {
+          display: flex;
+          align-items: baseline;
+          gap: 14px;
+          flex-wrap: wrap;
+          margin: 0 auto 14px;
+          max-width: 1240px;
+        }
+        .sh-panel-title {
+          font-family: var(--afh-font-display);
+          font-weight: 900;
+          font-size: 20px;
+          /* Text, so it takes the readable half of the accent pair, never
+             the fill — which fails AA on the parchment it sits on. */
+          color: var(--accent-ink);
+        }
+        .sh-panel-blurb {
+          margin: 0;
+          font-size: var(--afh-text-small);
+          color: var(--afh-fg-muted);
+          max-width: 52ch;
+          line-height: 1.6;
+        }
+        .sh-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+          gap: 9px;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+
+        .sh-entry {
+          display: flex;
+          align-items: flex-start;
+          gap: 11px;
+          background: var(--afh-surface);
+          border: 1px solid var(--afh-border);
+          border-radius: var(--afh-radius-md);
+          padding: 12px 13px;
+          min-height: 44px;
+          text-decoration: none;
+          color: var(--afh-text);
+          transition:
+            border-color var(--afh-duration-base) var(--afh-ease-out),
+            transform var(--afh-duration-base) var(--afh-ease-spring);
+        }
+        .sh-entry:hover {
+          border-color: var(--accent);
+          transform: translateX(3px);
+        }
+        .sh-entry:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .sh-entry[aria-disabled="true"] {
+          opacity: 0.62;
+          pointer-events: none;
+        }
+        .sh-entry[aria-current="page"] {
+          border-color: var(--accent);
+          background: var(--accent-tint);
+        }
+        .sh-glyph {
+          width: 28px;
+          height: 28px;
+          border-radius: var(--afh-radius-sm);
+          flex: none;
+          display: grid;
+          place-items: center;
+          color: var(--accent-ink);
+          background: color-mix(in srgb, var(--accent) 14%, transparent);
+        }
+        .sh-entry-text {
+          min-width: 0;
+        }
+        .sh-entry-name {
+          display: block;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 1.35;
+        }
+        .sh-entry-route {
+          display: block;
+          margin-top: 3px;
+          font-family: var(--afh-font-mono);
+          font-size: var(--afh-text-nano);
+          color: var(--afh-fg-muted);
+        }
+        .sh-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-top: 7px;
+          font-size: var(--afh-text-caption);
+          font-weight: 700;
+          padding: 3px 10px;
+          border-radius: var(--afh-radius-full);
+          border: 1px solid currentColor;
+          color: var(--afh-conf-low);
+        }
+        .sh-chip-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: currentColor;
+          flex: none;
+        }
+
+        /* ── The tray, below the breakpoint ─────────────────────────── */
+        .sh-tray {
+          width: min(330px, 86%);
+          padding: 0;
+          overflow-y: auto;
+          background: var(--afh-bg);
+          border-left: 1px solid var(--afh-cat-ocre);
+        }
+        .sh-tray-title {
+          font-family: var(--afh-font-display);
+          font-weight: 900;
+          font-size: 15px;
+          color: var(--afh-text);
+          padding: 15px 18px;
+          border-bottom: 1px solid var(--afh-border);
+        }
+        .sh-fold {
+          border-bottom: 1px solid var(--afh-border);
+        }
+        .sh-fold-trigger {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: transparent;
+          border: 0;
+          cursor: pointer;
+          padding: 15px 18px;
+          text-align: left;
+          color: var(--afh-text);
+          font-family: var(--afh-font-display);
+          font-weight: 900;
+          font-size: 18px;
+        }
+        .sh-fold-trigger:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: -2px;
+        }
+        .sh-fold-count {
+          margin-left: auto;
+          font-family: var(--afh-font-mono);
+          font-size: var(--afh-text-caption);
+          color: var(--afh-fg-muted);
+          font-weight: 400;
+        }
+        .sh-fold-trigger .sh-caret {
+          color: var(--afh-fg-muted);
+        }
+        .sh-fold-trigger[aria-expanded="true"] .sh-caret {
+          transform: rotate(180deg);
+        }
+        .sh-fold-body {
+          display: grid;
+          gap: 8px;
+          padding: 0 18px 15px;
+        }
+
+        /* Mobile first: the phone gets the burger and the tray, and the
+           three axes only appear once the bar is wide enough to hold them.
+           One component, one switch, so the two branches cannot disagree
+           about which viewport they are on. */
+        .sh-bar {
+          padding: 8px 16px;
+        }
+        .sh-axes,
+        .sh-panel {
+          display: none;
+        }
+        .sh-burger {
+          display: inline-grid;
+        }
+        @media (min-width: ${NAV_BREAKPOINT_PX + 1}px) {
+          .sh-bar {
+            padding: 8px 22px;
+          }
+          .sh-axes {
+            display: flex;
+          }
+          .sh-panel {
+            display: block;
+          }
+          /* Only the burger is withdrawn. The tray needs no rule of its
+             own: nothing but the burger opens it, and the burger is gone. */
+          .sh-burger {
+            display: none;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .sh-panel {
+            animation: none;
+          }
+          .sh-entry:hover {
+            transform: none;
+          }
+        }
+      `}</style>
+    </header>
+  );
+}
+
+export default SiteHeader;
