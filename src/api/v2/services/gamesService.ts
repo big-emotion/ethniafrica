@@ -11,9 +11,12 @@
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { getConfidenceMap } from "@/lib/supabase/queries/afrik/module-zero-batch";
+import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import type { CountryId } from "@/types/afrik";
 import type { GameDataSource } from "@/lib/games/gameRegistry";
 import type {
+  GameConfidence,
   GameCorpus,
   GameCountryFixture,
   GameCountryShare,
@@ -177,6 +180,31 @@ async function getCurrentCountriesMap(
 }
 
 /**
+ * Recorded confidence for the round subjects, one batched read.
+ *
+ * A subject with no row gets no entry, and the reveal shows no figure rather
+ * than a zero: a made-up percentage would be a statement about how well
+ * sourced a people is, made by nobody. The source standings stay visible
+ * either way, which is the part the tier policy actually requires.
+ */
+async function loadConfidence(
+  entityIds: string[],
+  entityType: "people" | "country"
+): Promise<Map<string, GameConfidence>> {
+  const scores = await getConfidenceMap(entityIds, entityType);
+  const confidence = new Map<string, GameConfidence>();
+  for (const [entityId, score] of scores) {
+    if (score.sourceCount === null) continue;
+    confidence.set(entityId, {
+      score: score.score,
+      sourceCount: score.sourceCount,
+      lastHumanAuditAt: score.lastHumanAuditAt,
+    });
+  }
+  return confidence;
+}
+
+/**
  * Ids of the peoples the corpus records in one country.
  *
  * Resolved here rather than by filtering the loaded page: `loadPeoples` reads
@@ -241,6 +269,10 @@ async function loadPeoples(
     supabase,
     rows.map((row) => row.id)
   );
+  const confidenceByEntity = await loadConfidence(
+    rows.map((row) => row.id),
+    "people"
+  );
 
   return rows.map((row) => {
     const appellations = section(row.content, "appellations");
@@ -267,6 +299,10 @@ async function loadPeoples(
       languageFamilyNameFr: row.language_family_id
         ? (familyNames.get(row.language_family_id) ?? null)
         : null,
+      sources: ficheSourceEntries(
+        row.content?.sources as Parameters<typeof ficheSourceEntries>[0]
+      ),
+      confidence: confidenceByEntity.get(row.id) ?? null,
     };
   });
 }
@@ -315,13 +351,23 @@ async function loadCountries(
     );
   }
 
-  return ((data ?? []) as CountryRow[]).map((row) => ({
+  const rows = (data ?? []) as CountryRow[];
+  const confidenceByEntity = await loadConfidence(
+    rows.map((row) => row.id),
+    "country"
+  );
+
+  return rows.map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
     etymology: row.etymology,
     nameOriginActor: row.name_origin_actor,
     historicalNames: mapHistoricalNames(row.content?.historicalNames),
     kingdoms: mapKingdoms(row.content?.kingdoms),
+    sources: ficheSourceEntries(
+      row.content?.sources as Parameters<typeof ficheSourceEntries>[0]
+    ),
+    confidence: confidenceByEntity.get(row.id) ?? null,
   }));
 }
 

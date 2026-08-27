@@ -1,5 +1,6 @@
 import type { CountryId } from "@/types/afrik";
 import type { AutonymExonymName } from "@/types/quiz";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 import type { MigrationGeometry } from "@/types/migrations";
 import type { RelationType } from "@/types/relations";
 
@@ -42,6 +43,17 @@ export interface GamePeopleFixture {
   distributionByCountry: GameCountryShare[];
   languageFamilyId: string | null;
   languageFamilyNameFr: string | null;
+  /** `content.sources`, structured — what the reveal states the round rests on. */
+  sources: FicheSourceEntry[];
+  /** `confidence_scores` for this people, absent when none is recorded. */
+  confidence: GameConfidence | null;
+}
+
+/** The recorded standing of a fiche as a whole, carried through to the reveal. */
+export interface GameConfidence {
+  score: number;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
 }
 
 export interface GameCountryShare {
@@ -74,6 +86,10 @@ export interface GameCountryFixture {
   nameOriginActor: string | null;
   historicalNames: GameHistoricalNames | null;
   kingdoms: GameKingdom[];
+  /** `content.sources`, structured — what the reveal states the round rests on. */
+  sources: FicheSourceEntry[];
+  /** `confidence_scores` for this country, absent when none is recorded. */
+  confidence: GameConfidence | null;
 }
 
 export interface GameFamilyFixture {

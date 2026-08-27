@@ -18,6 +18,8 @@ function countryFixture(
     nameOriginActor: null,
     historicalNames: null,
     kingdoms: [],
+    sources: [],
+    confidence: null,
     ...overrides,
   };
 }

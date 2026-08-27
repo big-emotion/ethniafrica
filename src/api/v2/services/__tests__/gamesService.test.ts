@@ -56,6 +56,16 @@ function joinQuery(result: FakeResult) {
   return query;
 }
 
+/** `confidence_scores` is read through the shared module-zero batch helper. */
+function confidenceQuery(result: FakeResult) {
+  const query = {
+    select: vi.fn(() => query),
+    eq: vi.fn(() => query),
+    in: vi.fn(() => Promise.resolve(result)),
+  };
+  return query;
+}
+
 const EMPTY = { data: [], error: null };
 
 function wireTables(overrides: Record<string, unknown> = {}) {
@@ -64,6 +74,7 @@ function wireTables(overrides: Record<string, unknown> = {}) {
     afrik_language_families: orderedQuery(EMPTY),
     afrik_countries: orderedQuery(EMPTY),
     afrik_people_countries: joinQuery(EMPTY),
+    confidence_scores: confidenceQuery(EMPTY),
     ...overrides,
   };
   fromMock.mockImplementation((table: string) => tables[table]);

@@ -20,6 +20,14 @@ function peopleFixture(
     distributionByCountry: [{ country: "CMR", population: 8_000_000 }],
     languageFamilyId: "FLG_NIGER_CONGO",
     languageFamilyNameFr: "Niger-Congo",
+    sources: [
+      { label: "Dictionnaire des peuples", url: null, standing: "referenced" },
+    ],
+    confidence: {
+      score: 68,
+      sourceCount: 2,
+      lastHumanAuditAt: "2026-01-15T00:00:00.000Z",
+    },
     ...overrides,
   };
 }

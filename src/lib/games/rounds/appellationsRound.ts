@@ -3,6 +3,7 @@ import { frenchNumber } from "@/lib/games/format";
 import type { BinaryRound, GameStimulus } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { correctOptionIndex, isSameOptionValue } from "@/lib/games/options";
+import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * « Eux, ou les autres ? » — the name a people gives itself against a name it
@@ -83,6 +84,9 @@ export function buildAppellationsRound(
     reveal: {
       textFr: people.originOfExonyms,
       fieldPath: "content.appellations.originOfExonyms",
+      sources: people.sources,
+      confidence: people.confidence,
+      ficheHref: getPeopleRoute("fr", people.id),
     },
   };
 }

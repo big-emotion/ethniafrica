@@ -1,6 +1,7 @@
 import type { CountryId } from "@/types/afrik";
 import type { AutonymExonymName, QuizOptionValue } from "@/types/quiz";
 import type { Ring } from "@/lib/atlas/overlays";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 /**
  * The two gestures the three games of the Jouer hub share (REQ-120).
@@ -22,9 +23,29 @@ export type GameKind = "binary" | "globeTap";
  * invented option — and `fieldPath` records where it was read so the claim
  * stays auditable.
  */
+/**
+ * Confidence recorded for the round's subject, or absent when none is. Never
+ * substituted with a default: a made-up percentage on a reveal would be a
+ * claim about how well sourced a people is, made by nobody.
+ */
+export interface GameRevealConfidence {
+  score: number;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
 export interface GameReveal {
   textFr: string;
   fieldPath: string;
+  /**
+   * The standing of what the claim rests on, in fiche order. A round sourced
+   * only at `unverified` is played *and* visibly marked, exactly as a fiche
+   * is — the tier policy labels, it does not withhold.
+   */
+  sources: FicheSourceEntry[];
+  confidence: GameRevealConfidence | null;
+  /** The subject's fiche. A wrong answer is an opening, so it leads somewhere. */
+  ficheHref: string;
 }
 
 /**

@@ -3,6 +3,7 @@ import type { BinaryRound, Ring } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import { mercatorInflation, ringArea } from "@/lib/games/sphericalArea";
+import { getCountryRoute } from "@/lib/routing";
 
 /**
  * « La taille qu'on vous a cachée » — which of two countries truly covers
@@ -121,6 +122,14 @@ export function buildMercatorRound(
     reveal: {
       textFr: `${areaSentence(a, footprintA)} ${areaSentence(b, footprintB)}`,
       fieldPath: "lib/atlas/assets/africaAdmin0",
+      // Both figures are measured off the committed outlines, not read from a
+      // fiche. Listing the countries' own sources would credit this claim to
+      // documents that never made it, and the fiche's confidence score says
+      // nothing about an area this round computed itself. The field path
+      // above is the whole provenance, and it is already exact.
+      sources: [],
+      confidence: null,
+      ficheHref: getCountryRoute("fr", a.id),
     },
   };
 }

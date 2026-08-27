@@ -19,6 +19,19 @@ const ROUND: BinaryRound = {
   reveal: {
     textFr: CORPUS_TEXT,
     fieldPath: "content.appellations.originOfExonyms",
+    sources: [
+      {
+        label: "Ethnologue",
+        url: "https://www.ethnologue.com/",
+        standing: "unverified",
+      },
+    ],
+    confidence: {
+      score: 72,
+      sourceCount: 3,
+      lastHumanAuditAt: "2026-02-01T00:00:00.000Z",
+    },
+    ficheHref: "/fr/peuples/PPL_YORUBA",
   },
   options: [{ labelFr: "Yorùbá" }, { labelFr: "Nagot" }],
   correctIndex: 0,
@@ -199,5 +212,90 @@ describe("GameAnswerReveal (Jouer hub engine, REQ-120)", () => {
     expect(screen.getByTestId("game-answer-reveal").className).toContain(
       GAME_REVEAL_MIN_HEIGHT_CLASS
     );
+  });
+
+  /**
+   * A round resting on a weak source is played and visibly marked, exactly as
+   * a fiche is. Nothing is withheld for its standing; the standing is stated.
+   */
+  // @req REQ-120
+  it("names the standing of every source the claim rests on", () => {
+    render(
+      <GameAnswerReveal
+        round={ROUND}
+        isCorrect
+        isLastRound={false}
+        onNext={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText("Ethnologue")).toBeInTheDocument();
+    expect(screen.getByText("Non vérifiée")).toBeInTheDocument();
+  });
+
+  // @req REQ-120
+  it("says a legacy source is awaiting review rather than calling it unverified", () => {
+    const legacySourced: BinaryRound = {
+      ...ROUND,
+      reveal: {
+        ...ROUND.reveal,
+        sources: [
+          { label: "Une source ancienne", url: null, standing: "needs_review" },
+        ],
+      },
+    };
+
+    render(
+      <GameAnswerReveal
+        round={legacySourced}
+        isCorrect
+        isLastRound={false}
+        onNext={vi.fn()}
+      />
+    );
+
+    // Folding an unlabelled source onto "Non vérifiée" would state a judgement
+    // nobody has made.
+    expect(screen.getByText("En attente d'examen")).toBeInTheDocument();
+    expect(screen.queryByText("Non vérifiée")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-120
+  it("leads to the subject's fiche, because a wrong answer is an opening", () => {
+    render(
+      <GameAnswerReveal
+        round={ROUND}
+        isCorrect={false}
+        isLastRound={false}
+        onNext={vi.fn()}
+      />
+    );
+
+    expect(screen.getByTestId("game-reveal-fiche-link")).toHaveAttribute(
+      "href",
+      "/fr/peuples/PPL_YORUBA"
+    );
+  });
+
+  // @req REQ-120
+  it("states no confidence figure when the corpus records none", () => {
+    const unscored: BinaryRound = {
+      ...ROUND,
+      reveal: { ...ROUND.reveal, confidence: null },
+    };
+
+    render(
+      <GameAnswerReveal
+        round={unscored}
+        isCorrect
+        isLastRound={false}
+        onNext={vi.fn()}
+      />
+    );
+
+    // An invented percentage would be worse than none: the source line still
+    // carries the standing, which is the claim that matters.
+    expect(screen.queryByText(/%/)).not.toBeInTheDocument();
+    expect(screen.getByText("Non vérifiée")).toBeInTheDocument();
   });
 });

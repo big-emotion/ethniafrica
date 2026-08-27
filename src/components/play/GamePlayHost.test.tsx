@@ -36,7 +36,13 @@ const ROUND: BinaryRound = {
   gameId: "plus-ou-moins",
   subjectId: "PPL_A",
   promptFr: "Lequel est le plus nombreux",
-  reveal: { textFr: "12 millions.", fieldPath: "content.demography" },
+  reveal: {
+    textFr: "12 millions.",
+    fieldPath: "content.demography",
+    sources: [],
+    confidence: null,
+    ficheHref: "/fr/peuples/PPL_A",
+  },
   options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
   correctIndex: 0,
 };

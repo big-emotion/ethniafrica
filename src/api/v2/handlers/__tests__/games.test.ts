@@ -36,6 +36,8 @@ function people(overrides: Partial<GameCorpus["peoples"][number]>) {
     distributionByCountry: [{ country: "KEN", population: 1_000_000 }],
     languageFamilyId: "FLG_BANTU",
     languageFamilyNameFr: "Bantou",
+    sources: [],
+    confidence: null,
     ...overrides,
   };
 }
@@ -48,6 +50,8 @@ function country(id: string, nameFr: string): GameCountryFixture {
     nameOriginActor: null,
     historicalNames: null,
     kingdoms: [],
+    sources: [],
+    confidence: null,
   };
 }
 
