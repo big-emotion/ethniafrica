@@ -28,15 +28,20 @@ function countryWith(peoples: { name: string }[] | undefined): CountryDetail {
 }
 
 describe("country target facts", () => {
+  // The label says whose count it is. Two surfaces counted this country
+  // differently - the fiche's declared list and the corpus join table - and an
+  // unqualified "au corpus" made them read as one number contradicting itself.
   // @req REQ-117
-  it("names the country and counts the peoples the corpus attaches to it", () => {
+  it("names the country and counts the peoples its own fiche declares", () => {
     const facts = buildCountryTargetFacts(
       countryWith([{ name: "Yoruba" }, { name: "Igbo" }, { name: "Haoussa" }])
     );
 
     expect(facts.NGA?.title).toBe("Nigéria");
     render(<>{facts.NGA?.body}</>);
-    expect(screen.getByText("Peuples au corpus")).toBeInTheDocument();
+    expect(
+      screen.getByText("Peuples déclarés par la fiche")
+    ).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
   });
 
@@ -158,5 +163,50 @@ describe("what the panel's subtitle states", () => {
     expect(facts.NGA?.description).toMatch(
       /^NGA · \d+[.,]\d° [NS] · \d+[.,]\d° [EO]$/
     );
+  });
+});
+
+/**
+ * Two things the mockup's panel head and body carry that the shipped one did
+ * not: the country's flag, and a chip saying where the panel's own numbers come
+ * from. The second matters more than it looks — the fiche's own country is
+ * answered from what the fiche declares, every other country from the corpus's
+ * join table, and those count different things. Left unlabelled they read as
+ * one number disagreeing with itself.
+ */
+describe("what the panel shows it is", () => {
+  const targets = buildCountryPickerTargets(["NGA", "KEN"]);
+
+  function facts() {
+    return buildCountryAtlasFacts({
+      country: countryWith([{ name: "Yoruba" }]),
+      targets,
+      peopleCounts: { NGA: 3, KEN: 12 },
+    });
+  }
+
+  // @req REQ-117
+  it("flies the country's flag beside its name", () => {
+    expect(facts().NGA?.icon).toBeTruthy();
+
+    render(<>{facts().NGA?.icon}</>);
+    expect(screen.getByText("🇳🇬")).toBeInTheDocument();
+  });
+
+  // @req REQ-117
+  it("says the fiche's own figures are the fiche's own", () => {
+    render(<>{facts().NGA?.body}</>);
+
+    expect(screen.getByText(/Peuples déclarés par la fiche/)).toBeVisible();
+    expect(screen.getByText(/Fiche rédigée/)).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("says another country's figures are derived, not declared", () => {
+    render(<>{facts().KEN?.body}</>);
+
+    expect(
+      screen.getByText(/Présence dérivée des fiches peuple/)
+    ).toBeVisible();
   });
 });

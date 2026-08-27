@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
+import { flagFromISO3 } from "@/lib/countryFlag";
 import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
@@ -49,6 +50,35 @@ const NUMBER_STYLE: CSSProperties = {
  */
 const NAMES_SHOWN = 6;
 
+const CHIP_STYLE: CSSProperties = {
+  justifySelf: "start",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  padding: "3px 9px",
+  borderRadius: "var(--afh-radius-full)",
+  border: "1px solid var(--afh-border)",
+  backgroundColor: "var(--afh-bg-warm)",
+  fontSize: "var(--afh-text-caption)",
+  color: "var(--afh-text-soft)",
+};
+
+/**
+ * Where the panel's own numbers come from.
+ *
+ * The fiche's own country is answered from what its fiche declares; every
+ * other country from the corpus's join table. Those count different things,
+ * and unlabelled they read as one number disagreeing with itself — which is
+ * exactly how a panel saying five peoples sat beside a listing saying nine.
+ */
+function ProvenanceChip({ declared }: { declared: boolean }) {
+  return (
+    <span style={CHIP_STYLE}>
+      {declared ? "Fiche rédigée" : "Présence dérivée des fiches peuple"}
+    </span>
+  );
+}
+
 const countFr = new Intl.NumberFormat("fr-FR");
 
 // @req REQ-117
@@ -67,7 +97,7 @@ export function buildCountryTargetFacts(
       body: (
         <div style={{ display: "grid", gap: 14 }}>
           <div>
-            <span style={LABEL_STYLE}>Peuples au corpus</span>
+            <span style={LABEL_STYLE}>Peuples déclarés par la fiche</span>
             <span style={NUMBER_STYLE}>{countFr.format(names.length)}</span>
           </div>
 
@@ -177,9 +207,11 @@ export function buildCountryAtlasFacts({
             ...ownFacts,
             title: target.nameFr,
             description: placeOf(target),
+            icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
                 {ownFacts?.body}
+                <ProvenanceChip declared />
                 <ReadTheFiche href="#fiche" />
               </div>
             ),
@@ -193,6 +225,7 @@ export function buildCountryAtlasFacts({
         target.countryId,
         {
           title: target.nameFr,
+          icon: flagFromISO3(target.countryId),
           description:
             documented === 1
               ? "1 peuple documenté"
@@ -210,6 +243,7 @@ export function buildCountryAtlasFacts({
                   Aucun peuple rattaché à ce pays dans le corpus.
                 </span>
               )}
+              <ProvenanceChip declared={false} />
               <ReadTheFiche href={`/fr/pays/${target.countryId}`} />
             </div>
           ),

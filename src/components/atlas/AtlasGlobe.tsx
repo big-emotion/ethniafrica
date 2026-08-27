@@ -392,6 +392,12 @@ export interface AtlasTargetFacts {
   title: string;
   description?: string;
   body?: ReactNode;
+  /**
+   * Shown beside the title, never instead of it. The mockup flies the
+   * country's flag here; it is decoration over a name the panel already
+   * states, so it carries no accessible text of its own.
+   */
+  icon?: ReactNode;
 }
 
 /**
@@ -920,6 +926,7 @@ export function AtlasGlobe({
           container={stage}
           title={chosenFacts.title}
           description={chosenFacts.description}
+          icon={chosenFacts.icon}
           onClose={() => setChosenCountryId(null)}
         >
           {chosenFacts.body}

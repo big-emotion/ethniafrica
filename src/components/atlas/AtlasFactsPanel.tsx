@@ -16,6 +16,8 @@ export interface AtlasFactsPanelProps {
   anchor: PanelAnchor;
   title: string;
   description?: string;
+  /** Decoration beside the title — the panel already names the subject in text. */
+  icon?: ReactNode;
   /** The globe stage the panel is anchored inside. Null before the stage ref resolves. */
   container: HTMLElement | null;
   onClose: () => void;
@@ -81,6 +83,7 @@ export function AtlasFactsPanel({
   anchor,
   title,
   description,
+  icon,
   container,
   onClose,
   children,
@@ -120,6 +123,14 @@ export function AtlasFactsPanel({
             />
           ) : null}
           <div className="flex items-start justify-between gap-3">
+            {icon ? (
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-2xl leading-none"
+              >
+                {icon}
+              </span>
+            ) : null}
             <div className="flex flex-col gap-1">
               <DialogPrimitive.Title className="text-base font-semibold leading-tight">
                 {title}
