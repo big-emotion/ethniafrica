@@ -38,28 +38,6 @@ than repaired.
 
 ---
 
-## Status
-
-**Phases 0–4 are shipped** — PR #439, branch `worktree-jeux-refonte-conception`.
-The three games are honest: the hub is cut to three, `appellations` names its
-people, `pays-davant` draws neighbours, `mercator` only asks where the
-projection lies, and the globe keeps its controls at phone width.
-
-**Phases 5–8 are open.** Nothing below is started. Three things the code
-corrected while phases 0–4 were built are folded into them:
-
-- **The scope cut killed two engine paths, not one.** None of the three kept
-  games is `quad`, so `QuadChoice` went with `areaCompare`, along with three
-  `loadGameCorpus` branches and their four unreachable Supabase reads.
-- **`GameStimulus` is optional, and stays optional.** A round names its subject
-  _unless the subject is what is being guessed_. Do not thread one through
-  `pays-davant`.
-- **Charter §9 rule 5 is withdrawn.** A far-side globe marker stays rendered
-  and dimmed: removing it takes the country off the keyboard path, and under
-  `prefers-reduced-motion` that means unreachable for good.
-
----
-
 ## Phase 0 — Cut the hub to three games
 
 Pure deletion. Nothing else gets easier until this lands.
@@ -128,12 +106,12 @@ every distractor shares a region or a colonial naming actor with the subject;
 and given a pool that cannot supply three, the builder returns `null` rather
 than reaching further.
 
-**Then.** Sort the pool before the call rather than changing `selectDistractors`
-— it receives flattened values and cannot know a candidate's geography, and it
-is shared with the quiz templates, whose questions are persisted and must not
-move until phase 8. The helper takes the first three it is given, so the pool's
-order _is_ the proximity rule. `GameCountryFixture` carries no region, so rank
-by the admin-0 centroid via `getAdmin0Rings` + `ringCentroid`.
+**Then.** Add a near-pool selector beside `selectDistractors` in `options.ts`
+rather than changing it — four retired generators still import it and will
+want it back unchanged when they return. For countries the near pool is
+geographic proximity; `GameCountryFixture` does not carry a region, so use
+the admin-0 centroid already available through `getAdmin0Rings` and take the
+nearest drawable neighbours.
 
 **Watch for.** Nearest-neighbour on centroids makes the answer guessable in
 the other direction if the correct country is always the odd one out
@@ -186,118 +164,39 @@ animation with no affordance, not autorotation, and a label fixes it.
 
 ## Phase 5 — Difficulty is ordered, not drawn
 
-Right now a session is whatever the corpus rotation happened to yield: round 1
-can be a people of forty thousand and round 8 a people of ten million.
+**Test first.** A session of eight rounds is ordered by ascending difficulty
+band, and rounds 1–2 come from the top population decile of the scoped pool.
 
-**Test first.** In a handler test: a session of eight rounds is ordered by
-ascending difficulty band, and rounds 1–2 come from the top population decile
-of the scoped pool. Add a second test that a pool too small to fill three bands
-still returns a session rather than nothing.
-
-**Then.** Add `difficultyBand: "facile" | "moyen" | "difficile"` to
-`GameRoundBase` — beside `stimulus`, and required, unlike it. Derive it from:
-
-| Game           | Signal                                                         |
-| -------------- | -------------------------------------------------------------- |
-| `appellations` | `GamePeopleFixture.totalPopulation`, decile of the scoped pool |
-| `pays-davant`  | country area from `getAdmin0Rings` + `ringArea`                |
-| `mercator`     | the inflation factor already computed in `footprintOf`         |
-
-Order the session in `assembleRounds`, after generation, before the
-`roundsPerSession` cut — the cut currently takes the first N, which would
-silently drop the hard band.
-
-**Watch for.** Population is a **proxy for familiarity**, not a claim about
-importance. Say so in the comment where the band is derived, or the next
-reader will take the atlas to be ranking peoples. It is meant to be replaced by
-an empirical p-value — the share of players answering correctly — as soon as
-there is one to use.
-
-**Done when.** Eight rounds open on peoples a French-speaking reader is likely
-to have heard of and end on ones they are not.
+**Then.** Add `difficultyBand` to `GameRound`, derived from
+`GamePeopleFixture.totalPopulation` (or country area for `mercator`). Order
+the session in the handler. Record in the code comment that population is a
+**proxy for familiarity** and is meant to be replaced by an empirical p-value
+once one exists — otherwise the next reader will take it for a claim about
+importance.
 
 ---
 
-## Phase 6 — Scoping by country and by language family
+## Phase 6 — Scoping, and the charter corrections
 
-The change that multiplies three games into hundreds of sessions without a
-single new mechanic — and the one to keep if the budget for this second half
-shrinks.
+**Test first.** `/fr/jouer/appellations?pays=GHA` draws only peoples present
+in Ghana; `?famille=FLG_...` only that family's; neither filter yields fewer
+rounds than it can honestly fill.
 
-**Test first.** `/fr/jouer/appellations?pays=GHA` draws only peoples whose
-`currentCountries` include GHA; `?famille=FLG_…` only that family's; an unknown
-value falls back to the whole corpus rather than to an empty session.
-
-**Then.** Three seams:
-
-1. `GameRoundsData` gains the scope it was built with, so the page can name it.
-2. `assembleRounds` filters `corpus.peoples` before generating.
-3. The page reads the query and reuses
-   `src/components/quiz/QuizSegmentPicker.tsx` — do not write a second picker.
-
-**Watch for.** The `PEOPLE_POOL_SIZE = 150` cap in `gamesService.ts` is applied
-by the _query_, ordered by id. Filtering after that means a country run draws
-from the first 150 peoples alphabetically, not from that country's peoples.
-The filter has to reach the query, or the cap has to move.
-
-**A free win.** Inside a country run every distractor is automatically
-plausible, which is the §3 near-pool rule obtained for nothing.
-
-**Also in this commit.** Apply the two charter corrections named at the top of
-this document to `games-charter.md` §2 and §10, so the contract and the code
+**Then.** Reuse `QuizSegmentPicker` rather than building a second picker. Apply
+the two charter corrections from the top of this document to
+`games-charter.md` §2 and §10 in the same commit, so the contract and the code
 stop disagreeing.
 
 ---
 
 ## Phase 7 — The reveal earns the session
 
-The answer screen is where the site keeps its promise. A round that says only
-« Correct » has taught nothing.
+**Test first.** The reveal renders the source tier through `ConfidenceChip`
+and links to the subject's fiche.
 
-**Test first.** `GameAnswerReveal.test.tsx`: the reveal renders the source tier
-through `ConfidenceChip`, and links to the subject's fiche. A round whose
-source the corpus does not record renders no chip rather than a default one.
-
-**Then.** `GameReveal` gains `sourceTier` and the subject's fiche href. The
-service must load it: the tier lives in `sources`, joined through the fiche,
-and this is **the one phase in 0–7 that adds a query**. Budget for it.
-
-**Watch for.** A claim resting only on an `unverified` source is played _and_
-visibly marked — that is the Source Tier doctrine, not a defect to hide. Do not
-filter those rounds out.
-
-**Done when.** A wrong answer opens onto the fiche of what was just missed.
-
----
-
-## Phase 8 — The quiz: code, then data
-
-Requested explicitly. Independent of 0–7 and free to slip.
-
-The quiz shares `selectDistractors` with the games and has the same defect. But
-**changing code alone improves nothing a player sees**: the templates T1–T5 in
-`src/lib/quiz/questionTemplates.ts` have no production consumer — they feed
-`scripts/generateQuizQuestions.ts`, which writes into the `quiz_questions`
-table (migration `036_quiz_engine.sql`), and that table is what
-`quizService.ts` reads.
-
-**Code half.** `scripts/lib/quizGeneration.ts` sorts each pool
-(`familyNamePool`, `autonymPool`, `countryNamePool`, `languagePool`,
-`isoCodePool`) by nearness to the subject before handing it to a template.
-Same principle as phase 2: `selectDistractors` stays untouched, the pool's
-order carries the rule. The five T1–T5 tests pin the current order and have to
-be reworked.
-
-**Data half — the real cost.** Re-run `scripts/generateQuizQuestions.ts`, then
-roll the new question set out **recette first, production second** — the two
-Supabase projects are distinct and both label themselves "production"
-(`docs/runbooks/afrik-data-sync.md`). Before touching production: count
-`quiz_questions` rows before and after on recette, and play one full
-`/fr/quiz` session.
-
-**Watch for.** Regenerating replaces questions a player may be mid-session on,
-and `quiz_attempts` rows reference question ids. Check what the schema does
-with a replaced id before running it against a live database.
+**Then.** Carry the source tier on `GameReveal` and render it. A round resting
+on an `unverified` source is played _and_ visibly marked, exactly as a fiche
+is.
 
 ---
 
@@ -309,14 +208,8 @@ more.
 
 **Phases 5–7 make them worth replaying.** Scoping (6) is what multiplies three
 games into hundreds of sessions, so it is the one to keep if the budget for
-this second half shrinks. Of the three, only phase 7 adds a Supabase query.
+this second half shrinks.
 
-**Phase 8 stands alone.** It is the only one with a data half, the only one
-that touches both Supabase projects, and it improves nothing a player sees
-until the questions are regenerated. It can slip without blocking anything.
-
-Nothing in phases 0–4 required a new Supabase query, a migration, or a corpus
-edit — everything they needed was already loaded by `GamePeopleFixture` and
-`GameCountryFixture`. That held.
-
-Suggested PRs: 0–4 (shipped, #439), 5–7, then 8.
+Nothing in phases 0–4 requires a new Supabase query, a migration, or a corpus
+edit. Everything they need is already loaded by `GamePeopleFixture` and
+`GameCountryFixture`.
