@@ -139,7 +139,11 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // gate is counted below, and a <details> buried inside a real detail view would
 // make that count say nothing about the route's own wiring.
 vi.mock("@/components/people/PeopleDetailViewV2", () => ({
-  PeopleDetailViewV2: () => <div data-testid="people-record-view" />,
+  // Carries text: a chapter's emptiness is asserted on its text content, and
+  // the real parchment is the wordiest thing on the page.
+  PeopleDetailViewV2: () => (
+    <div data-testid="people-record-view">Dossier AFRIK du peuple</div>
+  ),
 }));
 
 vi.mock("@/components/detail/CountryDetailViewV2", () => ({
@@ -274,6 +278,12 @@ interface FicheRouteUnderTest {
    * corpus source as plain text, so a fiche reduced to scale prints none.
    */
   printsDossierCitation: boolean;
+  /**
+   * Whether the dossier sits behind FR97's reading gate. False where the
+   * Atlas mockup makes the dossier the page's own body — there is nothing
+   * above it to read first, so a disclosure would only hide the fiche.
+   */
+  dossierIsGated: boolean;
 }
 
 const FICHE_ROUTES: FicheRouteUnderTest[] = [
@@ -305,7 +315,10 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     },
     composedSequence: () =>
       derivePanelSequence("people", mapPeopleDetail(YORUBA_ROW)),
-    printsDossierCitation: true,
+    // No chapter runs above the parchment to cite it, and the parchment is
+    // not a citation of itself.
+    printsDossierCitation: false,
+    dossierIsGated: false,
   },
   {
     segment: "pays",
@@ -330,6 +343,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     composedSequence: () =>
       derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW)),
     printsDossierCitation: false,
+    dossierIsGated: true,
   },
   {
     segment: "familles",
@@ -358,6 +372,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         mapLanguageFamilyDetail(NIGER_CONGO_ROW)
       ),
     printsDossierCitation: true,
+    dossierIsGated: true,
   },
 ];
 
@@ -593,15 +608,19 @@ describe("fiche vivante — accent scope", () => {
 describe("fiche vivante — the reading gate", () => {
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: gates the dossier behind exactly one reading gate",
+    "$segment: gates the dossier exactly as its shape asks, and no more",
     async (route) => {
-      const { container } = await renderLiveFiche(route);
+      const { container, getByTestId } = await renderLiveFiche(route);
 
       // Two means a route wrapped a record the sequence already gates, burying
-      // the dossier under a disclosure inside a disclosure.
+      // the dossier under a disclosure inside a disclosure. Zero is the Atlas
+      // shape: the dossier is the page, so nothing gates it.
       expect(container.querySelectorAll("details.reading-gate")).toHaveLength(
-        1
+        route.dossierIsGated ? 1 : 0
       );
+
+      // Gated or not, the dossier itself is always in the DOM.
+      expect(getByTestId(route.recordTestId)).toBeInTheDocument();
     }
   );
 });

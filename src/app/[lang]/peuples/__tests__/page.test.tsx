@@ -80,16 +80,21 @@ vi.mock("@/components/people/PeopleDetailViewV2", () => ({
   PeopleDetailViewV2: ({
     people,
     hasSourceFlag,
+    relations,
   }: {
     people: { id: string; nameMain: string };
     hasSourceFlag?: boolean;
+    relations?: readonly unknown[];
   }) => (
     <div
       data-testid="people-detail-live"
       data-people-id={people?.id}
       data-people-name={people?.nameMain}
       data-source-flag={hasSourceFlag}
-    />
+      data-relation-count={relations?.length ?? 0}
+    >
+      Dossier AFRIK
+    </div>
   ),
 }));
 
@@ -402,26 +407,26 @@ describe("/[lang]/peuples/[slug] page", () => {
     });
 
     // @req REQ-091
-    it("live URL: renders the composed chapters, with the detail view as the record", async () => {
+    it("live URL: opens on the parchment, unfolded and under the night band", async () => {
       const { container, getByTestId } = await renderPage("PPL_YORUBA");
 
-      expect(panelAnchors(container)).toEqual([
-        "fiche-identity",
-        "fiche-scale",
-        "fiche-territory",
-        "fiche-fragmentation",
-        "fiche-links",
-        "fiche-voices",
-        "fiche-record",
-      ]);
+      // One anchor, and it is the dossier: the mockup gives the people fiche a
+      // globe and a parchment, not a sequence of chapters above the parchment.
+      expect(panelAnchors(container)).toEqual(["fiche-record"]);
 
       const detail = getByTestId("people-detail-live");
       expect(detail.getAttribute("data-people-id")).toBe("PPL_YORUBA");
       expect(container.querySelector("#fiche-record")).toContainElement(detail);
+
+      // No reading gate stands between the reader and the parchment.
+      expect(container.querySelector("details")).toBeNull();
+
+      expect(getByTestId("fiche-hero-band")).toBeInTheDocument();
+      expect(getByTestId("fiche-hero-seam")).toBeInTheDocument();
     });
 
     // @req REQ-091
-    it("live URL: side-loads every panel corpus for the requested people", async () => {
+    it("live URL: side-loads every parchment corpus for the requested people", async () => {
       await renderPage("PPL_YORUBA");
 
       expect(mockGetPeopleNamesDossier).toHaveBeenCalledWith("PPL_YORUBA");
@@ -429,8 +434,29 @@ describe("/[lang]/peuples/[slug] page", () => {
       expect(mockGetEgoNetwork).toHaveBeenCalledWith("PPL_YORUBA");
     });
 
+    // The narratives count only ever gated the voices chapter's anchor.
+    // OralNarrativesSection fetches its own from the browser, so counting them
+    // server-side is now a query answering nobody.
+    // @req REQ-095
+    it("live URL: does not count the narratives the parchment fetches itself", async () => {
+      await renderPage("PPL_YORUBA");
+
+      expect(mockListPublicOralNarratives).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-097
+    it("live URL: hands the sourced ego network to the parchment", async () => {
+      const { getByTestId } = await renderPage("PPL_YORUBA");
+
+      // Removing the links chapter must not cost the fiche its relations:
+      // the parchment's neighbours section is where they surface now.
+      expect(getByTestId("people-detail-live").dataset.relationCount).toBe(
+        String(RELATIONS.length)
+      );
+    });
+
     // @req REQ-091
-    it("live URL: still renders when the names and fragmentation corpora are empty", async () => {
+    it("live URL: still renders the parchment when the corpora it feeds on are empty", async () => {
       mockGetPeopleNamesDossier.mockRejectedValue(
         new Error("PeopleNamesNotFoundError: PPL_YORUBA")
       );
@@ -440,40 +466,8 @@ describe("/[lang]/peuples/[slug] page", () => {
 
       const { container, getByTestId } = await renderPage("PPL_YORUBA");
 
-      expect(panelAnchors(container)).toEqual([
-        "fiche-scale",
-        "fiche-territory",
-        "fiche-links",
-        "fiche-voices",
-        "fiche-record",
-      ]);
+      expect(panelAnchors(container)).toEqual(["fiche-record"]);
       expect(getByTestId("people-detail-live")).toBeInTheDocument();
-    });
-
-    // @req REQ-095
-    it("live URL: drops the voices chapter for a people with no published narrative", async () => {
-      // The count is settled server-side precisely so the chapter can be
-      // dropped before its anchor is written — VoicesPanel's own fetch only
-      // reports emptiness after hydration, too late to unstamp an anchor.
-      mockListPublicOralNarratives.mockResolvedValue({ data: [], total: 0 });
-
-      const { container } = await renderPage("PPL_YORUBA");
-
-      expect(panelAnchors(container)).not.toContain("fiche-voices");
-      expect(panelAnchors(container)).toContain("fiche-record");
-    });
-
-    // @req REQ-091
-    it("live URL: an empty corpus drops its own chapter and no other", async () => {
-      mockGetPeopleNamesDossier.mockRejectedValue(
-        new Error("PeopleNamesNotFoundError: PPL_YORUBA")
-      );
-
-      const { container } = await renderPage("PPL_YORUBA");
-
-      expect(panelAnchors(container)).not.toContain("fiche-identity");
-      expect(panelAnchors(container)).toContain("fiche-fragmentation");
-      expect(panelAnchors(container)).toContain("fiche-links");
     });
 
     // @req REQ-091

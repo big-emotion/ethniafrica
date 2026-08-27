@@ -132,12 +132,14 @@ describe("fiche · prefers-reduced-motion: reduce — nothing keeps moving", () 
     // Without this contrast the stability assertions above would also hold
     // for a fiche that simply never animates, and would stop proving that
     // the reduced-motion branch is what silenced it.
+    // On a country fiche, because the count-up lives in ScalePanel and a
+    // people fiche no longer composes one — its parchment carries the figure.
     stubMotionPreference(false);
     stubPendingFetch();
     vi.useFakeTimers();
 
     const { container } = render(
-      <FicheSequence context={PEOPLE_CONTEXT} record={RECORD} />
+      <FicheSequence context={COUNTRY_CONTEXT} record={RECORD} />
     );
     const firstPaint = container.innerHTML;
 

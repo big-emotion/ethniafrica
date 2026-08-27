@@ -160,21 +160,30 @@ describe("FicheSequence — accent scope", () => {
 
 describe("FicheSequence — panel order and anchors", () => {
   // @req REQ-091
-  it("renders the people panels in composer order, each under its journey anchor", () => {
+  it("renders the family panels in composer order, each under its journey anchor", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
+    );
+
+    const rendered = renderedAnchors(container);
+    const tableOrder = derivePanelSequence("language-family", NIGER_CONGO).map(
+      (kind) => `fiche-${kind}`
+    );
+
+    expect(rendered.length).toBeGreaterThan(1);
+    expect(rendered).toEqual(tableOrder.filter((id) => rendered.includes(id)));
+    expect(rendered[rendered.length - 1]).toBe("fiche-record");
+  });
+
+  // @req REQ-091
+  it("reduces a people fiche to its dossier alone", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence context={PEOPLE_CONTEXT} record={RECORD} />
     );
 
-    expect(renderedAnchors(container)).toEqual([
-      "fiche-identity",
-      "fiche-scale",
-      "fiche-territory",
-      "fiche-fragmentation",
-      "fiche-links",
-      "fiche-voices",
-      "fiche-record",
-    ]);
+    expect(renderedAnchors(container)).toEqual(["fiche-record"]);
   });
 
   // @req REQ-091
@@ -206,6 +215,101 @@ describe("FicheSequence — panel order and anchors", () => {
   });
 });
 
+describe("FicheSequence — the dossier as the page's body", () => {
+  // @req REQ-091
+  it("opens the dossier unfolded, with no reading gate", () => {
+    stubPanelRuntime();
+    render(
+      <FicheSequence
+        context={PEOPLE_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    expect(screen.getByText("Dossier AFRIK complet")).toBeInTheDocument();
+    expect(
+      screen.queryByText("Lire le dossier complet")
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-091
+  it("renders the dossier once, never as body and chapter both", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={PEOPLE_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    expect(screen.getAllByText("Dossier AFRIK complet")).toHaveLength(1);
+    expect(container.querySelectorAll("#fiche-record")).toHaveLength(1);
+  });
+
+  // @req REQ-091
+  it("keeps the record anchor the globe's facts panel links to", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={PEOPLE_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    const record = container.querySelector("#fiche-record");
+    expect(record).not.toBeNull();
+    expect(record!.textContent).toContain("Dossier AFRIK complet");
+  });
+
+  // @req REQ-091
+  it("stands the dossier beside the globe, outside any measured column", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={PEOPLE_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+        globe={<div data-testid="globe-stage" />}
+      />
+    );
+
+    // A parchment carries its own reading measure; a column here would apply
+    // a second, wider one on top of it.
+    const root = container.firstElementChild;
+    const record = container.querySelector("#fiche-record");
+    expect(record?.parentElement).toBe(root);
+    expect(container.querySelector(".max-w-4xl")).toBeNull();
+  });
+
+  // @req REQ-091
+  it("drops the context triad a parchment already states for itself", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={PEOPLE_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    expect(container.querySelector("[data-context-triad]")).toBeNull();
+  });
+
+  // @req REQ-091
+  it("leaves the reading gate standing for a fiche that did not ask for a body", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence context={COUNTRY_CONTEXT} record={RECORD} />
+    );
+
+    expect(screen.getByText("Lire le dossier complet")).toBeInTheDocument();
+    expect(container.querySelector("[data-context-triad]")).not.toBeNull();
+  });
+});
+
 describe("FicheSequence — gating by construction (FR98)", () => {
   // @req REQ-091
   it("emits no anchor for a kind the composer includes but no panel supports", () => {
@@ -226,13 +330,17 @@ describe("FicheSequence — gating by construction (FR98)", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence
-        context={{ entityType: "people", payload: YORUBA }}
+        context={{ entityType: "language-family", payload: NIGER_CONGO }}
         record={RECORD}
       />
     );
 
-    expect(derivePanelSequence("people", YORUBA)).toContain("territory");
-    expect(container.querySelector("#fiche-territory")).toBeNull();
+    // The family payload names associated peoples, so the composer asks for
+    // the links chapter — but the relations it draws are absent from this
+    // context, so the chapter and its anchor go together.
+    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
+      "links"
+    );
     expect(container.querySelector("#fiche-links")).toBeNull();
     expect(container.querySelector("#fiche-identity")).toBeNull();
   });

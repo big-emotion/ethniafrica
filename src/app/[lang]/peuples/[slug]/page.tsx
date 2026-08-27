@@ -7,6 +7,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
@@ -15,7 +16,6 @@ import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
-import { listPublicOralNarratives } from "@/api/v2/services/oralNarratives";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
 import { transformPeopleCountries } from "@/lib/peopleDataTransformer";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
@@ -165,31 +165,27 @@ export default async function PeoplesSlugPage({
     );
   }
 
-  // Panel corpora are side-loaded alongside the fiche itself: they feed
-  // optional chapters, so a cold render must not pay for them one after the
-  // other even with revalidate = 3600 amortising the cost.
+  // The parchment's corpora are side-loaded alongside the fiche itself, so a
+  // cold render does not pay for them one after the other even with
+  // revalidate = 3600 amortising the cost.
   //
   // A people with no names dossier and a people confined to a single country
   // are ordinary states of the corpus, and both services signal them by
   // throwing. Each rejection is caught on its own promise so the degradation
   // stays local — an absent dossier must not also cost the fragmentation
-  // chapter — and so an optional chapter can never turn the fiche into a 500.
-  const [people, sourceFlags, namesDossier, fragmentation, egoNetwork, voices] =
+  // section — and so an optional section can never turn the fiche into a 500.
+  //
+  // The narratives are not counted here: OralNarrativesSection fetches them
+  // itself from the browser, and the count only ever existed to decide whether
+  // the voices chapter got an anchor before hydration. The parchment has no
+  // such chapter to gate.
+  const [people, sourceFlags, namesDossier, fragmentation, egoNetwork] =
     await Promise.all([
       getPeopleById(parsed.slug),
       getActiveSourceFlags("people", parsed.slug),
       getPeopleNamesDossier(parsed.slug).catch(() => null),
       getPeopleFragmentation(parsed.slug).catch(() => null),
       getEgoNetwork(parsed.slug),
-      // Only the count matters here — VoicesPanel refetches the narratives
-      // client-side to render them. Asking for one row is what lets the
-      // sequence decide the chapter's existence before the anchor is stamped.
-      listPublicOralNarratives({
-        entityType: "people",
-        entityId: parsed.slug,
-        page: 1,
-        perPage: 1,
-      }).catch(() => null),
     ]);
   if (!people) {
     notFound();
@@ -201,21 +197,25 @@ export default async function PeoplesSlugPage({
   );
 
   // Live version (revalidate = 3600 at segment level)
+  //
+  // No container: the night band runs to both edges of the viewport and the
+  // parchment carries its own reading measure, exactly as the mockup has it.
+  // `flushTop` drops the shell's top padding so the band starts under the nav
+  // rather than below a strip of page background.
   return (
-    <PageLayout language="fr" sectionName="Peuples">
-      <div className="container mx-auto max-w-4xl px-4 py-8">
-        <FicheSequence
-          context={{
-            entityType: "people",
-            payload: peopleDetail,
-            namesDossier,
-            distributions: transformPeopleCountries(peopleDetail.demography)
-              .distributions,
-            fragmentation,
-            relations: egoNetwork.sourced,
-            hasOralNarratives: (voices?.total ?? 0) > 0,
-          }}
-          globe={
+    <PageLayout language="fr" sectionName="Peuples" flushTop>
+      <FicheSequence
+        context={{
+          entityType: "people",
+          payload: peopleDetail,
+          namesDossier,
+          distributions: transformPeopleCountries(peopleDetail.demography)
+            .distributions,
+          fragmentation,
+          relations: egoNetwork.sourced,
+        }}
+        globe={
+          <FicheHeroBand>
             <AtlasGlobe
               overlay={peopleFieldOverlay}
               missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
@@ -235,21 +235,25 @@ export default async function PeoplesSlugPage({
               targetPicker="list"
               wholeAreaLabel="Toute l'aire"
             />
-          }
-          record={
-            // Server-rendered, from what this route already awaited. The view
-            // it replaces fetched the same fiche, fragmentation and names
-            // dossier again from the browser, which cost the page its server
-            // rendering — and with it the axe audit and the Lighthouse score.
-            <PeopleDetailViewV2
-              people={peopleDetail}
-              namesDossier={namesDossier}
-              fragmentation={fragmentation}
-              hasSourceFlag={sourceFlags.length > 0}
-            />
-          }
-        />
-      </div>
+          </FicheHeroBand>
+        }
+        // The mockup has no reading gate: the parchment is the fiche, not a
+        // chapter filed under it.
+        recordPlacement="body"
+        record={
+          // Server-rendered, from what this route already awaited. The view
+          // it replaces fetched the same fiche, fragmentation and names
+          // dossier again from the browser, which cost the page its server
+          // rendering — and with it the axe audit and the Lighthouse score.
+          <PeopleDetailViewV2
+            people={peopleDetail}
+            namesDossier={namesDossier}
+            fragmentation={fragmentation}
+            hasSourceFlag={sourceFlags.length > 0}
+            relations={egoNetwork.sourced}
+          />
+        }
+      />
     </PageLayout>
   );
 }

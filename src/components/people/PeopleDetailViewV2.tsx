@@ -1,5 +1,9 @@
 import type { PeopleDetail } from "@/types/afrik-frontend";
-import { transformPeopleData } from "@/lib/peopleDataTransformer";
+import {
+  transformPeopleData,
+  transformSourcedRelationsPreview,
+} from "@/lib/peopleDataTransformer";
+import type { SourcedRelation } from "@/types/relations";
 import {
   PeopleOriginBlock,
   PeopleLanguageSection,
@@ -28,6 +32,14 @@ export interface PeopleDetailViewV2Props {
   fragmentation?: PeopleFragmentation | null;
   /** An open flag on this fiche's sourcing, resolved by the route. */
   hasSourceFlag?: boolean;
+  /**
+   * The fiche's sourced ego network, awaited by the route.
+   *
+   * The parchment is the fiche's only relations surface now that the panel
+   * sequence no longer runs above it, so the neighbours section reads from
+   * here instead of standing empty.
+   */
+  relations?: readonly SourcedRelation[];
 }
 
 const SECTION_DELAY_MS = [0, 50, 100, 150, 200, 250, 300] as const;
@@ -91,10 +103,10 @@ function SectionCard({
  *   2. "Pourquoi la carte ne trace pas de frontière" — the grammar of the
  *      globe above, in the reader's terms, plus the legend for it.
  *
- * The relations preview the client version fetched is gone rather than
- * threaded through: the route already hands the same relations to
- * FicheSequence's links panel, which is the fiche's relations surface. Two
- * views of one list on one page is a duplication, not a feature.
+ * The relations preview is fed by the route, from the ego network it already
+ * awaited. It briefly stood empty here while FicheSequence's links panel was
+ * the fiche's relations surface; that panel no longer runs above the
+ * parchment, so this is the surface.
  */
 // @req REQ-091
 export function PeopleDetailViewV2({
@@ -102,9 +114,11 @@ export function PeopleDetailViewV2({
   namesDossier = null,
   fragmentation = null,
   hasSourceFlag = false,
+  relations = [],
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
   const distribution = people.demography?.distributionByCountry;
+  const relationsPreview = transformSourcedRelationsPreview(relations);
 
   const breadcrumbs = [
     { label: "Familles", href: "/fr/familles" },
@@ -240,7 +254,8 @@ export function PeopleDetailViewV2({
         {(data.relatedPeoples.ethnicities.length > 0 ||
           data.relatedPeoples.politicalSystem ||
           data.relatedPeoples.clanOrganization ||
-          data.relatedPeoples.ageClassSystems) && (
+          data.relatedPeoples.ageClassSystems ||
+          relationsPreview.length > 0) && (
           <SectionCard
             label="Peuples voisins & organisation"
             icon="◉"
@@ -251,7 +266,7 @@ export function PeopleDetailViewV2({
             <PeopleRelatedPeoplesSection
               data={data.relatedPeoples}
               peopleId={data.hero.peopleId}
-              relationsPreview={[]}
+              relationsPreview={relationsPreview}
             />
           </SectionCard>
         )}

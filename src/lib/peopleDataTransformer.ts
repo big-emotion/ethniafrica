@@ -28,6 +28,7 @@ import type {
 } from "@/api/v2/schemas/names";
 import type { NameRecordView } from "@/types/names";
 import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
+import type { SourcedRelation } from "@/types/relations";
 
 // ==========================================
 // OUTPUT TYPES
@@ -345,6 +346,28 @@ export function transformEgoNetworkPreview(
       neighborName: link.otherPeople.nameMain,
     })),
   ];
+}
+
+/**
+ * The same preview, from the ego network a *server* route already awaited.
+ *
+ * `transformEgoNetworkPreview` reads the REST envelope, which is what the
+ * browser gets; a fiche route holds `SourcedRelation`s instead and would
+ * otherwise have to re-serialize them into an envelope shape to reuse it.
+ * Only sourced relations are mapped here: a derived link is computed from the
+ * AFRIK hierarchy rather than stated by a source (FR73), and the fiche's
+ * relations surface shows what the corpus documents.
+ */
+// @req REQ-097
+export function transformSourcedRelationsPreview(
+  relations: readonly SourcedRelation[]
+): PeopleRelationPreviewItem[] {
+  return relations.map((relation) => ({
+    id: relation.id,
+    type: relation.relationType,
+    derived: false,
+    neighborName: relation.neighbor.nameMain,
+  }));
 }
 
 // @req REQ-003
