@@ -69,25 +69,23 @@ vi.mock("@/components/layout/PageLayout", () => ({
   },
 }));
 
-vi.mock("@/components/detail/CountryDetailViewV2", () => ({
-  CountryDetailViewV2: ({
-    countryId,
-    initialData,
-    initialSourceFlag,
+vi.mock("@/components/country/CountryRecordView", () => ({
+  CountryRecordView: ({
+    country,
+    hasSourceFlag,
     fromPeopleName,
     fromPeopleId,
   }: {
-    countryId: string;
-    initialData?: { nameFr: string };
-    initialSourceFlag?: boolean;
+    country: { id: string; nameFr: string };
+    hasSourceFlag?: boolean;
     fromPeopleName?: string;
     fromPeopleId?: string;
   }) => (
     <div
       data-testid="country-detail-live"
-      data-country-id={countryId}
-      data-country-name={initialData?.nameFr}
-      data-source-flag={initialSourceFlag}
+      data-country-id={country?.id}
+      data-country-name={country?.nameFr}
+      data-source-flag={hasSourceFlag}
       data-from-people-name={fromPeopleName}
       data-from-people-id={fromPeopleId}
     />

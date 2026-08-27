@@ -6,6 +6,13 @@ interface SourcesFooterProps {
   sources: FicheSourceEntry[];
   /** Story 0.20 (FR31): show a "source à vérifier" badge when truthy. */
   hasSourceFlag?: boolean;
+  /**
+   * `"card"` is the directory's rounded block; `"parchment"` drops the card so
+   * the list sits flat in a fiche section, which is one continuous document
+   * and boxes nothing. Same standing rule either way — one component, one
+   * reading of a source's authority, two skins.
+   */
+  variant?: "card" | "parchment";
 }
 
 /**
@@ -15,27 +22,47 @@ interface SourcesFooterProps {
  * alike.
  */
 // @req REQ-092
-export function SourcesFooter({ sources, hasSourceFlag }: SourcesFooterProps) {
+export function SourcesFooter({
+  sources,
+  hasSourceFlag,
+  variant = "card",
+}: SourcesFooterProps) {
   if (!sources || sources.length === 0) return null;
+
+  const isParchment = variant === "parchment";
 
   return (
     <div
-      className="rounded-[var(--country-radius-xl)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-[10px] xl:text-[11px] leading-[1.6]"
+      className={
+        isParchment
+          ? "text-[10px] xl:text-[11px] leading-[1.6]"
+          : "rounded-[var(--country-radius-xl)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-[10px] xl:text-[11px] leading-[1.6]"
+      }
       style={{
-        backgroundColor: "var(--country-bg-warm)",
+        backgroundColor: isParchment ? undefined : "var(--country-bg-warm)",
         color: "var(--country-text-soft)",
       }}
     >
-      <p
-        className="text-[10px] font-extrabold uppercase mb-[6px] flex items-center gap-2 flex-wrap"
-        style={{
-          letterSpacing: "0.12em",
-          color: "var(--country-earth)",
-        }}
-      >
-        <span>Sources &amp; Références</span>
-        {hasSourceFlag && <SourceVerifyBadge />}
-      </p>
+      {/* The parchment section already carries its own <h2>; a second heading
+          here would say "Sources" twice over. */}
+      {isParchment ? (
+        hasSourceFlag && (
+          <p className="mb-[6px]">
+            <SourceVerifyBadge />
+          </p>
+        )
+      ) : (
+        <p
+          className="text-[10px] font-extrabold uppercase mb-[6px] flex items-center gap-2 flex-wrap"
+          style={{
+            letterSpacing: "0.12em",
+            color: "var(--country-earth)",
+          }}
+        >
+          <span>Sources &amp; Références</span>
+          {hasSourceFlag && <SourceVerifyBadge />}
+        </p>
+      )}
       <ul className="flex flex-col gap-[6px]">
         {sources.map((source, index) => (
           <li

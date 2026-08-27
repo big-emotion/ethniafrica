@@ -23,12 +23,17 @@ describe("detail route streaming", () => {
     expect(peoplePage).not.toContain("<Suspense");
   });
 
+  // The country dossier used to be a client view that re-fetched a fiche the
+  // route had already awaited. It is a server component now, so the guard is
+  // no longer "keep the query parameters out of it" but "keep it off the
+  // client altogether".
   // @req REQ-046
-  it("keeps country query parameters out of the client rendering path", () => {
+  it("keeps the country dossier off the client rendering path", () => {
     const countryView = readSource(
-      "src/components/detail/CountryDetailViewV2.tsx"
+      "src/components/country/CountryRecordView.tsx"
     );
 
+    expect(countryView).not.toContain('"use client"');
     expect(countryView).not.toContain("useSearchParams");
   });
 
@@ -45,7 +50,7 @@ describe("detail route streaming", () => {
   // @req REQ-046
   it("does not load the Supabase browser client for server-rendered flags", () => {
     for (const relativePath of [
-      "src/components/detail/CountryDetailViewV2.tsx",
+      "src/components/country/CountryRecordView.tsx",
       "src/components/detail/PeopleDetailView.tsx",
     ]) {
       const source = readSource(relativePath);

@@ -105,6 +105,14 @@ export interface KingdomCard {
   name: string;
   period?: string;
   peoples?: string;
+  /** What the entity was, as the corpus states it. */
+  historicalRole?: string;
+  /**
+   * The political centres, whole. `tags` is the same field truncated to three
+   * and stripped of parentheses for the card layout; the timeline names them
+   * as they were declared.
+   */
+  centers?: string[];
   tags: string[];
 }
 
@@ -845,6 +853,8 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
       name: k.name.replace(/^\[|\]$/g, ""),
       period: k.period,
       peoples: k.dominantPeoples?.join(", "),
+      historicalRole: k.historicalRole,
+      centers: k.politicalCenters,
       tags,
     };
   });

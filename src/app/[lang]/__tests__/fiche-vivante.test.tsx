@@ -142,8 +142,8 @@ vi.mock("@/components/people/PeopleDetailViewV2", () => ({
   PeopleDetailViewV2: () => <div data-testid="people-record-view" />,
 }));
 
-vi.mock("@/components/detail/CountryDetailViewV2", () => ({
-  CountryDetailViewV2: () => <div data-testid="country-record-view" />,
+vi.mock("@/components/country/CountryRecordView", () => ({
+  CountryRecordView: () => <div data-testid="country-record-view" />,
 }));
 
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({

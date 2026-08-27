@@ -8,7 +8,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
-import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountryPicker } from "@/components/country/CountryPicker";
 import { buildCountryTargetFacts } from "@/components/country/countryTargetFacts";
 import { flagFromISO3 } from "@/lib/countryDataTransformer";
@@ -221,11 +221,9 @@ export default async function PaysSlugPage({
           </FicheHeroBand>
         }
         record={
-          <CountryDetailViewV2
-            countryId={parsed.slug}
-            language="fr"
-            initialData={countryDetail}
-            initialSourceFlag={sourceFlags.length > 0}
+          <CountryRecordView
+            country={countryDetail}
+            hasSourceFlag={sourceFlags.length > 0}
             fromPeopleName={navigationContext.fromPeopleName}
             fromPeopleId={navigationContext.fromPeopleId}
           />
