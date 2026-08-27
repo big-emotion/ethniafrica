@@ -66,64 +66,64 @@ export function CountryRecordView({
         data={data}
         country={country}
         hasSourceFlag={hasSourceFlag}
-      />
+      >
+        {data.timeline.items.length > 0 && (
+          <section className="afh-parchment-section">
+            <h2>Noms à travers l&apos;histoire</h2>
+            <p className="afh-parchment-note">content.historicalNames</p>
+            <HistoryTimeline data={data.timeline} />
+          </section>
+        )}
 
-      {data.timeline.items.length > 0 && (
+        {data.historicalFacts && (
+          <section className="afh-parchment-section">
+            <h2>Faits historiques majeurs</h2>
+            <p className="afh-parchment-note">content.historicalFacts</p>
+            <HistoricalFactsSection data={data.historicalFacts} />
+          </section>
+        )}
+
+        {data.languages.bubbles.length > 0 && (
+          <section className="afh-parchment-section">
+            <h2>Langues</h2>
+            <p className="afh-parchment-note">content.culture.mainLanguages</p>
+            <LanguagesSection data={data.languages} />
+          </section>
+        )}
+
         <section className="afh-parchment-section">
-          <h2>Noms à travers l&apos;histoire</h2>
-          <p className="afh-parchment-note">content.historicalNames</p>
-          <HistoryTimeline data={data.timeline} />
+          <h2>Culture et société</h2>
+          <p className="afh-parchment-note">content.culture</p>
+          <CultureGrid data={data.culture} />
+          <div data-testid="section-flag-target-culture" className="mt-3">
+            {turnstileSiteKey ? (
+              <FlagTarget
+                target={{
+                  type: "fiche_section",
+                  id: country.id,
+                  fieldPath: "culture",
+                }}
+                turnstileSiteKey={turnstileSiteKey}
+                triggerLabel="Signaler cette section"
+                className="w-auto text-xs"
+              />
+            ) : (
+              <button
+                type="button"
+                disabled
+                className="rounded-md border border-dashed px-2 py-1 text-xs"
+                style={{
+                  borderColor: "var(--afh-border)",
+                  color: "var(--afh-text-soft)",
+                }}
+                aria-label="Signaler cette section — bientôt disponible"
+              >
+                Signaler cette section (bientôt disponible)
+              </button>
+            )}
+          </div>
         </section>
-      )}
-
-      {data.historicalFacts && (
-        <section className="afh-parchment-section">
-          <h2>Faits historiques majeurs</h2>
-          <p className="afh-parchment-note">content.historicalFacts</p>
-          <HistoricalFactsSection data={data.historicalFacts} />
-        </section>
-      )}
-
-      {data.languages.bubbles.length > 0 && (
-        <section className="afh-parchment-section">
-          <h2>Langues</h2>
-          <p className="afh-parchment-note">content.culture.mainLanguages</p>
-          <LanguagesSection data={data.languages} />
-        </section>
-      )}
-
-      <section className="afh-parchment-section">
-        <h2>Culture et société</h2>
-        <p className="afh-parchment-note">content.culture</p>
-        <CultureGrid data={data.culture} />
-        <div data-testid="section-flag-target-culture" className="mt-3">
-          {turnstileSiteKey ? (
-            <FlagTarget
-              target={{
-                type: "fiche_section",
-                id: country.id,
-                fieldPath: "culture",
-              }}
-              turnstileSiteKey={turnstileSiteKey}
-              triggerLabel="Signaler cette section"
-              className="w-auto text-xs"
-            />
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="rounded-md border border-dashed px-2 py-1 text-xs"
-              style={{
-                borderColor: "var(--afh-border)",
-                color: "var(--afh-text-soft)",
-              }}
-              aria-label="Signaler cette section — bientôt disponible"
-            >
-              Signaler cette section (bientôt disponible)
-            </button>
-          )}
-        </div>
-      </section>
+      </CountryParchment>
     </div>
   );
 }

@@ -9,8 +9,10 @@
  * pans a flat basemap, and both return the same stage percentages so the rest
  * of the component never has to know which path it is on.
  */
-import type { CameraPose } from "@/lib/atlas/camera";
+import { SPHERE_MORPH, type CameraPose } from "@/lib/atlas/camera";
 import type { LonLat } from "@/lib/atlas/overlays";
+import { fitScale } from "@/lib/atlas/sphereLayer";
+import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 import {
   BASEMAP_VIEWBOX,
   buildRotationMatrix,
@@ -29,7 +31,14 @@ export interface StagePlacement {
   facingReader: boolean;
 }
 
-/** The stage is laid out at the basemap's own fixed aspect ratio, so this never varies at runtime. */
+/**
+ * The ratio to place markers at before the stage has been measured.
+ *
+ * The stage is full-width over a fixed height, so its real ratio is a runtime
+ * fact — 1512x520 on a laptop, far from this. Callers that can measure pass
+ * their own; this only has to be a sane shape for the render that happens
+ * before the first measurement, and the basemap's is the one already committed.
+ */
 // @req REQ-117
 export const STAGE_ASPECT = BASEMAP_VIEWBOX.width / BASEMAP_VIEWBOX.height;
 
@@ -59,11 +68,20 @@ export function placeTargetOnSphere(
     buildRotationMatrix(pose.yaw, pose.pitch),
     lonLatToSphere(target.center.lon, target.center.lat)
   );
+  // The same mix the vertex shader performs between the two states of the
+  // surface. Without it a marker stays over the sphere the reader has just
+  // flattened away, naming ground that is no longer under it.
+  const flat = lonLatToFlat(target.center.lon, target.center.lat);
+  const x = flat.x + (rotated.x - flat.x) * pose.morph;
+  const y = flat.y + (rotated.y - flat.y) * pose.morph;
+
+  const scale = fitScale(pose.morph, aspect);
 
   return clipToStage(
-    (rotated.x / aspect) * pose.zoom + pose.offsetX,
-    rotated.y * pose.zoom + pose.offsetY,
-    rotated.z >= 0
+    ((x * scale) / aspect) * pose.zoom + pose.offsetX,
+    y * scale * pose.zoom + pose.offsetY,
+    // A plane has no far side; only the sphere can turn a target away.
+    pose.morph < SPHERE_MORPH || rotated.z >= 0
   );
 }
 

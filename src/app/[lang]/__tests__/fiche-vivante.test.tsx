@@ -40,6 +40,7 @@ import type { LanguageFamily } from "@/types/afrik";
 const {
   getPeopleById,
   getPeoplesByLanguageFamily,
+  getPeoplesByIds,
   getCountryById,
   getLanguageFamilyById,
   getFamilyTreeSkeleton,
@@ -54,6 +55,7 @@ const {
 } = vi.hoisted(() => ({
   getPeopleById: vi.fn(),
   getPeoplesByLanguageFamily: vi.fn(),
+  getPeoplesByIds: vi.fn(),
   getCountryById: vi.fn(),
   getLanguageFamilyById: vi.fn(),
   getFamilyTreeSkeleton: vi.fn(),
@@ -81,6 +83,7 @@ vi.mock("@/api/v2/services/peopleService", () => ({
   getPeopleById: (...args: unknown[]) => getPeopleById(...args),
   getPeoplesByLanguageFamily: (...args: unknown[]) =>
     getPeoplesByLanguageFamily(...args),
+  getPeoplesByIds: (...args: unknown[]) => getPeoplesByIds(...args),
 }));
 
 vi.mock("@/api/v2/services/countryService", () => ({
@@ -156,7 +159,12 @@ vi.mock("@/components/country/CountryRecordView", () => ({
 }));
 
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
-  LanguageFamilyDetailViewV2: () => <div data-testid="family-record-view" />,
+  // Carries text for the same reason the country stub does: the family
+  // dossier is the page body now, so an empty stub would trip the "no anchor
+  // scrolls to an empty chapter" guard on the section it exists to protect.
+  LanguageFamilyDetailViewV2: () => (
+    <div data-testid="family-record-view">Dossier AFRIK de la famille</div>
+  ),
 }));
 
 vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
@@ -289,6 +297,13 @@ interface FicheRouteUnderTest {
    * to disclose what they came for is what the Atlas mockup removes.
    */
   gatesRecord: boolean;
+  /**
+   * Whether the route hands the dossier to FicheSequence as the page body
+   * (`recordPlacement="body"`). A body-placed record opens directly under the
+   * globe, ahead of every chapter, so it sits outside PANEL_TABLE's ordering
+   * by design rather than by accident.
+   */
+  recordIsPageBody: boolean;
 }
 
 const FICHE_ROUTES: FicheRouteUnderTest[] = [
@@ -324,6 +339,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     // not a citation of itself.
     printsDossierCitation: false,
     gatesRecord: false,
+    recordIsPageBody: false,
   },
   {
     segment: "pays",
@@ -349,6 +365,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
       derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW)),
     printsDossierCitation: false,
     gatesRecord: false,
+    recordIsPageBody: true,
   },
   {
     segment: "familles",
@@ -361,6 +378,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
       getLanguageFamilyById.mockResolvedValue(NIGER_CONGO_ROW);
       getFamilyTreeSkeleton.mockResolvedValue(NIGER_CONGO_TREE);
       getPeoplesByLanguageFamily.mockResolvedValue([]);
+      getPeoplesByIds.mockResolvedValue([]);
     },
     primeFrozenRevision: () => {
       getRevisionSnapshot.mockResolvedValue({
@@ -377,7 +395,8 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         mapLanguageFamilyDetail(NIGER_CONGO_ROW)
       ),
     printsDossierCitation: true,
-    gatesRecord: true,
+    gatesRecord: false,
+    recordIsPageBody: true,
   },
 ];
 
@@ -534,12 +553,25 @@ describe("fiche vivante — journey anchors", () => {
       const { container } = await renderLiveFiche(route);
 
       const rendered = journeyAnchors(container);
+      const recordAnchor = sectionIdForPanel("record");
+
+      // A body-placed dossier is not a chapter and takes no place in the
+      // table's order: it opens the page, under the globe and ahead of
+      // everything the composer sequenced. Asserted here rather than exempted
+      // silently, so the placement stays a stated fact about the route.
+      if (route.recordIsPageBody) {
+        expect(rendered[0]).toBe(recordAnchor);
+      }
+      const chapters = route.recordIsPageBody
+        ? rendered.filter((anchor) => anchor !== recordAnchor)
+        : rendered;
+
       const tableOrder = [...PANEL_TABLE]
         .sort((left, right) => left.order - right.order)
         .map((panel) => sectionIdForPanel(panel.kind));
 
-      expect(rendered).toEqual(
-        tableOrder.filter((anchor) => rendered.includes(anchor))
+      expect(chapters).toEqual(
+        tableOrder.filter((anchor) => chapters.includes(anchor))
       );
     }
   );

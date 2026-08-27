@@ -202,7 +202,7 @@ export default async function PeoplesSlugPage({
   // `flushTop` drops the shell's top padding so the band starts under the nav
   // rather than below a strip of page background.
   return (
-    <PageLayout language="fr" sectionName="Peuples" flushTop>
+    <PageLayout language="fr" sectionName="Peuples" hideHeader flushTop>
       <FicheSequence
         // Entity and payload only. The context's other corpora exist to feed
         // panels, and a people fiche composes none — the parchment below takes
@@ -224,12 +224,25 @@ export default async function PeoplesSlugPage({
                 peopleFieldOverlay
               )}
               // Markers sit on the sphere, so a country that has rotated
-              // behind it has no button to click. AtlasGlobe falls back to
-              // markers on a fiche with a single country, where a one-entry
-              // list would be furniture.
+              // behind it has no button to click. The list names every
+              // presence country instead, at any count.
               targetPicker="list"
               wholeAreaLabel="Toute l'aire"
               areaNoun="présence"
+              // The mockup's own caption. The default states what the globe
+              // is; a people fiche has to state what it is *not* — the one
+              // fiche of the three whose subject has no line to close.
+              legend={
+                <p
+                  data-atlas-legend=""
+                  className="pointer-events-none absolute inset-x-0 top-0 hidden max-w-[22ch] p-3 text-xs min-[760px]:block"
+                  style={{ color: "var(--afh-night-ink-3)" }}
+                >
+                  Aucune frontière ici.
+                  <br />
+                  Une présence, et sa densité.
+                </p>
+              }
             />
           </FicheHeroBand>
         }

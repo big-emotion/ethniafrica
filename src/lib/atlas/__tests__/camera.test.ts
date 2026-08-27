@@ -194,3 +194,38 @@ describe("the morph in the pose (REQ-112)", () => {
     expect(beyond.morph).toBeLessThanOrEqual(1);
   });
 });
+
+/**
+ * The bounds above are self-referential: they assert the dolly stays inside
+ * MIN_ZOOM..MAX_ZOOM, which holds for any value those constants take. That is
+ * how a 3.2x ceiling shipped and flew the country fiche so close that the
+ * sphere's limb left the stage on every side — the very thing the constants
+ * are named for preventing.
+ *
+ * These pin the absolute framing instead, against the curve the mockup states:
+ * distance = clamp(0.46 + span / 78, 0.62, 0.95) of the distance at which the
+ * globe fits the stage, so magnification is its reciprocal and can never reach
+ * 1.62x.
+ */
+describe("zoomForAngularSpan keeps the continent around the subject", () => {
+  // @req REQ-117
+  it("never magnifies past the mockup's tightest framing, however small the target", () => {
+    for (const span of [0, 0.01, 0.5, 2, 4]) {
+      expect(zoomForAngularSpan(span)).toBeLessThanOrEqual(1.62);
+    }
+  });
+
+  // @req REQ-117
+  it("frames a country-sized target between the two ends of the curve", () => {
+    // South Africa reads about 17 degrees across, which is what flew off the
+    // stage in recette: it must land inside the range, not on the ceiling.
+    const zaf = zoomForAngularSpan(17);
+    expect(zaf).toBeGreaterThan(MIN_ZOOM);
+    expect(zaf).toBeLessThan(MAX_ZOOM);
+  });
+
+  // @req REQ-117
+  it("still pulls back to nearly the whole globe for a continent-wide span", () => {
+    expect(zoomForAngularSpan(70)).toBeLessThanOrEqual(1.06);
+  });
+});

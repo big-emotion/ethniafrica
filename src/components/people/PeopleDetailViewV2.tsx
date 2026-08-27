@@ -1,3 +1,4 @@
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
   transformPeopleData,
@@ -40,6 +41,13 @@ export interface PeopleDetailViewV2Props {
    * here instead of standing empty.
    */
   relations?: readonly SourcedRelation[];
+  /**
+   * Turnstile's public site key, which the culture section's report control
+   * needs to be more than a shell. Absent — as it is until the key is
+   * configured — the section renders the disabled placeholder instead, the
+   * same way the country fiche does.
+   */
+  turnstileSiteKey?: string;
 }
 
 const SECTION_DELAY_MS = [0, 50, 100, 150, 200, 250, 300] as const;
@@ -120,6 +128,7 @@ export function PeopleDetailViewV2({
   fragmentation = null,
   hasSourceFlag = false,
   relations = [],
+  turnstileSiteKey,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
   const distribution = people.demography?.distributionByCountry;
@@ -253,6 +262,37 @@ export function PeopleDetailViewV2({
             delayIndex={5}
           >
             <PeopleCultureGrid data={data.culture} />
+            {/* The same report control the country fiche's culture section
+                carries. It used to live only on the legacy tabbed people
+                view; retiring that view without moving it here would have
+                taken the people half of the requirement with it. */}
+            <div data-testid="section-flag-target-culture" className="mt-3">
+              {turnstileSiteKey ? (
+                <FlagTarget
+                  target={{
+                    type: "fiche_section",
+                    id: people.id,
+                    fieldPath: "culture",
+                  }}
+                  turnstileSiteKey={turnstileSiteKey}
+                  triggerLabel="Signaler cette section"
+                  className="w-auto text-xs"
+                />
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className="rounded-md border border-dashed px-2 py-1 text-xs"
+                  style={{
+                    borderColor: "var(--afh-border)",
+                    color: "var(--afh-text-soft)",
+                  }}
+                  aria-label="Signaler cette section — bientôt disponible"
+                >
+                  Signaler cette section (bientôt disponible)
+                </button>
+              )}
+            </div>
           </SectionCard>
         )}
 

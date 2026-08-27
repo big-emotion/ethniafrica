@@ -10,6 +10,10 @@ import {
   rankMemberPeoplesByReach,
   type MemberPeopleLike,
 } from "@/lib/familyFootprintRanking";
+import {
+  FOOTPRINT_WORDING,
+  type FamilyFootprintProvenance,
+} from "@/lib/familyFootprintSource";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { isSourceTier, SOURCE_TIER_LABELS_FR } from "@/types/sources";
@@ -53,10 +57,13 @@ export interface FamilyParchmentProps {
   footprintCountries?: readonly FamilyFootprintCountry[];
   memberPeoples: readonly MemberPeopleLike[];
   memberPeopleCount: number;
+  /**
+   * Which rule produced the footprint the globe drew. Defaults to the charter
+   * rule; a macro-family fiche passes the fallback so the text describes the
+   * rule the page actually applied (REQ-116).
+   */
+  footprintProvenance?: FamilyFootprintProvenance;
 }
-
-/** Names what the footprint was computed from, in the app's one derived-field wording. */
-const FOOTPRINT_ORIGIN = "peuples rattachés à la famille";
 
 function Section({
   title,
@@ -179,8 +186,10 @@ export function FamilyParchment({
   footprintCountries,
   memberPeoples,
   memberPeopleCount,
+  footprintProvenance = "member-peoples",
 }: FamilyParchmentProps) {
   const { hero, decolonialHeader, generalInfo, distribution } = data;
+  const wording = FOOTPRINT_WORDING[footprintProvenance];
   // Two states, like the cards above. Normally the family declares no
   // distribution and this section shows the footprint reconstructed from its
   // peoples, marked as derived. Should a fiche declare one, that is a stronger
@@ -305,18 +314,35 @@ export function FamilyParchment({
 
       <Section
         title="L'empreinte, et d'où elle vient"
-        note="dérivée · union des currentCountries des peuples rattachés"
+        note={wording.sectionNote}
       >
         <p>
           L&apos;aire dessinée plus haut n&apos;est pas lue dans la fiche
-          famille : elle est <strong>calculée</strong>. Chaque fiche peuple
-          porte son <code>languageFamilyId</code> et ses{" "}
-          <code>currentCountries</code>&nbsp;; l&apos;union de ces pays sur les{" "}
-          <strong>{memberPeopleCount} peuples</strong> rattachés à {hero.id}{" "}
-          donne les <strong>{footprint.length} pays</strong> teintés,
-          l&apos;intensité suivant le nombre de peuples présents. Le bord reste
-          tireté partout : une famille linguistique n&apos;a pas de frontière,
-          et cet agrégat encore moins que le reste.
+          famille : elle est <strong>calculée</strong>.{" "}
+          {footprintProvenance === "declared-associated-peoples" ? (
+            <>
+              Aucun peuple ne porte directement l&apos;identifiant {hero.id}
+              &nbsp;: ils relèvent de ses <strong>sous-familles</strong>. Plutôt
+              que d&apos;additionner celles-ci — ce qui ferait affirmer à la
+              carte une unité que la fiche elle-même conteste — l&apos;aire suit
+              la seule liste que la fiche assume, son{" "}
+              <code>associatedPeoples</code>&nbsp;: l&apos;union des{" "}
+              <code>currentCountries</code> de ces{" "}
+              <strong>{memberPeopleCount} peuples</strong> donne les{" "}
+              <strong>{footprint.length} pays</strong> teintés. La carte ne dit
+              donc rien de plus que le texte.
+            </>
+          ) : (
+            <>
+              Chaque fiche peuple porte son <code>languageFamilyId</code> et ses{" "}
+              <code>currentCountries</code>&nbsp;; l&apos;union de ces pays sur
+              les <strong>{memberPeopleCount} peuples</strong> rattachés à{" "}
+              {hero.id} donne les <strong>{footprint.length} pays</strong>{" "}
+              teintés, l&apos;intensité suivant le nombre de peuples présents.
+            </>
+          )}{" "}
+          Le bord reste tireté partout : une famille linguistique n&apos;a pas
+          de frontière, et cet agrégat encore moins que le reste.
         </p>
 
         {/* The one thing about its geography the fiche does state, in words.
@@ -333,7 +359,7 @@ export function FamilyParchment({
         {showsDerived && (
           <FieldProvenanceMarker
             state="derived"
-            origin={FOOTPRINT_ORIGIN}
+            origin={wording.origin}
             className="mb-3"
           />
         )}

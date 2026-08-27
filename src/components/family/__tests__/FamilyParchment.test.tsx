@@ -163,6 +163,44 @@ describe("FamilyParchment — the footprint", () => {
 
     expect(screen.getByText(/calculée/i)).toBeInTheDocument();
   });
+
+  // @req REQ-116
+  it("credits the peoples carrying the family id when that is where it looked", () => {
+    renderParchment();
+
+    expect(
+      screen.getByText("languageFamilyId", { selector: "code" })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText("associatedPeoples", { selector: "code" })
+    ).not.toBeInTheDocument();
+  });
+
+  /**
+   * A macro-family (Afro-asiatique) has no people carrying its own id, so the
+   * area comes from the peoples the fiche names instead. Saying "peuples
+   * rattachés" there would describe a rule the page did not apply.
+   */
+  // @req REQ-116
+  it("names the fiche's own declaration when that is where it looked instead", () => {
+    render(
+      <FamilyParchment
+        data={undeclaredFamily()}
+        footprintCountries={overlay!.countries}
+        memberPeoples={memberPeoples}
+        memberPeopleCount={memberPeoples.length}
+        footprintProvenance="declared-associated-peoples"
+      />
+    );
+
+    expect(
+      screen.getByText("associatedPeoples", { selector: "code" })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/sous-familles/i)).toBeInTheDocument();
+    expect(
+      screen.queryByText("languageFamilyId", { selector: "code" })
+    ).not.toBeInTheDocument();
+  });
 });
 
 describe("FamilyParchment — the peoples", () => {

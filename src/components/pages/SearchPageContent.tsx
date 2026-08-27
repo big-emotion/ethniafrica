@@ -27,7 +27,12 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { useLanguage } from "@/hooks/use-language";
 import { getTranslation } from "@/lib/translations";
-import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 import { search, getAllLanguageFamilies } from "@/lib/afrikLoader";
 import type {
   SearchResult,
@@ -177,15 +182,14 @@ export const SearchPageContent = () => {
       case "languageFamily":
         router.push(getFamilyRoute(language, result.id));
         break;
+      // Every entity has exactly one rendering now — its fiche — so a search
+      // result goes straight there rather than through a directory's retired
+      // query form, which would only redirect one hop later.
       case "people":
-        router.push(
-          `${getLocalizedRoute(language, "peoples")}?people=${result.id}`
-        );
+        router.push(getPeopleRoute(language, result.id));
         break;
       case "country":
-        router.push(
-          `${getLocalizedRoute(language, "countries")}?country=${result.id}`
-        );
+        router.push(getCountryRoute(language, result.id));
         break;
     }
   };

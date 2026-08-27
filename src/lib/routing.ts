@@ -143,6 +143,29 @@ export const resolveCountryDeepLink = (
   return getCountryRoute(language, encodeURIComponent(country));
 };
 
+/**
+ * The fiche a `/fr/peuples?people=PPL_XXX` link was reaching for, or null when
+ * the query names no people.
+ *
+ * The peoples directory used to open a people in a pane beside its list — the
+ * fiche on the left, the list on the right, no globe — which made a second
+ * people surface, reached from the main navigation, while the atlas fiche sat
+ * one URL away. The same rules as the country form: the identifier is
+ * **encoded**, because `?people=//host` would otherwise make this an open
+ * redirect, and an unrecognised identifier is forwarded rather than validated,
+ * so the fiche route can answer it with an honest 404.
+ */
+// @req REQ-097
+export const resolvePeopleDeepLink = (
+  language: Language,
+  searchParams: Record<string, string | string[] | undefined>
+): string | null => {
+  const people = searchParams.people;
+  // A repeated query has no single answer, so it gets none.
+  if (typeof people !== "string" || people.length === 0) return null;
+  return getPeopleRoute(language, encodeURIComponent(people));
+};
+
 // ---------------------------------------------------------------------------
 // Nested entity sub-routes — segments below a single fiche (Epic 11, FR72)
 // ---------------------------------------------------------------------------

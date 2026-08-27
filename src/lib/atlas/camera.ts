@@ -41,14 +41,25 @@ export interface CameraPose {
 // @req REQ-117
 export const FLY_TO_DURATION_MS = 720;
 
-/** Bounds that keep the dolly useful without losing the continent around the subject. */
+/**
+ * The dolly is expressed as a fraction of the distance at which the globe just
+ * fits the stage, which is how the mockup states it: never nearer than 0.62 of
+ * that distance, never further than 0.95, and linear in the target's span
+ * between the two. Magnification is the reciprocal, so it tops out just under
+ * 1.62x — close enough to read a country, far enough that its neighbours are
+ * still on screen. A frontier without them says nothing.
+ */
+const FIT_DISTANCE_NEAREST = 0.62;
+const FIT_DISTANCE_FURTHEST = 0.95;
+const FIT_DISTANCE_AT_ZERO_SPAN = 0.46;
+const FIT_DISTANCE_PER_DEG = 1 / 78;
+
+/** The whole globe, undollied — what an unchosen fiche opens on. */
 // @req REQ-117
 export const MIN_ZOOM = 1;
+/** The tightest framing the curve above can reach. */
 // @req REQ-117
-export const MAX_ZOOM = 3.2;
-
-/** Share of the stage the subject should occupy once the camera settles. */
-const SUBJECT_VIEW_FRACTION = 0.45;
+export const MAX_ZOOM = 1 / FIT_DISTANCE_NEAREST;
 
 /** The unchosen globe: Africa facing the reader, undollied and uncentred by any panel. */
 // @req REQ-117
@@ -62,17 +73,27 @@ export const IDLE_POSE: CameraPose = {
 };
 
 /**
- * A target of angular span S subtends 2·sin(S/2) of the sphere's diameter when
- * it faces the reader, and the stage is 2 clip units across — so the zoom that
- * makes it fill the wanted share of the stage falls straight out of the ratio.
+ * A wide target is watched from further back than a narrow one, along the
+ * straight line the mockup draws between the two ends of the curve.
+ *
+ * Deriving the dolly from the share of the stage the subject should fill — the
+ * shape this had — is what let it reach 3.2x: a small country asks for so much
+ * magnification that the sphere's limb leaves the stage on every side, and the
+ * ceiling meant to stop that was set above the point where it happens.
  */
 // @req REQ-117
 export function zoomForAngularSpan(angularSpanDeg: number): number {
-  const subjectExtent = 2 * Math.sin((angularSpanDeg / 2) * DEG2RAD);
-  if (subjectExtent <= 0) return MAX_ZOOM;
-
-  const zoom = (SUBJECT_VIEW_FRACTION * 2) / subjectExtent;
-  return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
+  const span = Number.isFinite(angularSpanDeg)
+    ? Math.max(0, angularSpanDeg)
+    : 0;
+  const fitDistance = Math.min(
+    FIT_DISTANCE_FURTHEST,
+    Math.max(
+      FIT_DISTANCE_NEAREST,
+      FIT_DISTANCE_AT_ZERO_SPAN + span * FIT_DISTANCE_PER_DEG
+    )
+  );
+  return Math.max(MIN_ZOOM, 1 / fitDistance);
 }
 
 /**

@@ -1,5 +1,23 @@
-import { describe, it, expect, afterEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { describe, it, expect, afterEach, vi } from "vitest";
+import { render, screen, cleanup, within } from "@testing-library/react";
+
+// The culture section's report control reads the consent state, which a
+// provider owns. The fiche itself has no opinion on consent, so the provider
+// is stubbed rather than mounted around every case.
+vi.mock("@/hooks/use-consent", () => ({
+  useConsent: () => ({
+    consentState: {
+      hasConsented: true,
+      preferences: { essential: true, analytics: false, functional: true },
+      consentDate: null,
+    },
+    acceptAll: vi.fn(),
+    rejectAll: vi.fn(),
+    updatePreferences: vi.fn(),
+    showBanner: false,
+    setShowBanner: vi.fn(),
+  }),
+}));
 
 import { PeopleDetailViewV2 } from "../PeopleDetailViewV2";
 import type { PeopleDetail } from "@/types/afrik-frontend";
@@ -158,5 +176,51 @@ describe("PeopleDetailViewV2", () => {
     cleanup();
     render(<PeopleDetailViewV2 people={ewe} />);
     expect(screen.queryByText("Fragmentation coloniale")).toBeNull();
+  });
+
+  /**
+   * The culture section carries a report control, as the country fiche's does.
+   *
+   * It used to live only on the legacy tabbed people view, which the atlas
+   * fiche replaced and this change deletes. Without moving it here, retiring
+   * that view would have quietly taken the people half of the requirement
+   * with it — the tests would have gone green because the assertions went
+   * away with the surface they described.
+   */
+  // @req REQ-012
+  it("offers a disabled report shell on the culture section until a Turnstile key is configured", () => {
+    render(
+      <PeopleDetailViewV2
+        people={{
+          ...ewe,
+          culture: {
+            divinitiesAndSpirits: { supremeDeity: { name: "Mawu" } },
+          },
+        }}
+      />
+    );
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+  });
+
+  // @req REQ-012
+  it("wires the live report control on the culture section once a Turnstile key is configured", () => {
+    render(
+      <PeopleDetailViewV2
+        people={{
+          ...ewe,
+          culture: {
+            divinitiesAndSpirits: { supremeDeity: { name: "Mawu" } },
+          },
+        }}
+        turnstileSiteKey="test-site-key"
+      />
+    );
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
   });
 });

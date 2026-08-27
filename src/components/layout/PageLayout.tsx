@@ -14,6 +14,7 @@ import {
   getCountryRoute,
   getFamilyRoute,
   getLocalizedRoute,
+  getPeopleRoute,
 } from "@/lib/routing";
 import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -74,13 +75,8 @@ export const PageLayout = ({
           router.push(getFamilyRoute(language, result.id));
           break;
         case "people":
-          router.push(
-            `${getLocalizedRoute(language, "peoples")}?people=${result.id}`
-          );
+          router.push(getPeopleRoute(language, result.id));
           break;
-        // Straight to the fiche. The other two still open their directory's
-        // detail pane; the same move is owed to them, and the country
-        // directory's redirect catches those links meanwhile.
         case "country":
           router.push(getCountryRoute(language, result.id));
           break;

@@ -145,3 +145,26 @@ export function continentTargetFacts(target: AtlasTarget): {
       count === 1 ? "1 peuple documenté" : `${count} peuples documentés`,
   };
 }
+
+/**
+ * The choosable countries of a country fiche's picker (REQ-117).
+ *
+ * Fed the corpus's own list rather than the asset's keys: the corpus decides
+ * which countries have a fiche, and building the list from the geometry would
+ * offer Mayotte and Somaliland, which have none. Resolution runs the other way
+ * — each corpus id is looked up in the asset, through the same alias that lets
+ * SSD find the shape filed as SDS.
+ *
+ * The name comes from the asset because the corpus stores the declared name:
+ * `nameFr` on a country fiche is "Republique algerienne democratique et
+ * populaire (...)", which is what a reader gets when the picker reads it.
+ */
+// @req REQ-117
+export function buildCountryPickerTargets(
+  countryIds: readonly CountryId[]
+): AtlasTarget[] {
+  return countryIds
+    .map((countryId) => targetForCountry(countryId))
+    .filter((target): target is AtlasTarget => target !== null)
+    .sort((first, second) => first.nameFr.localeCompare(second.nameFr, "fr"));
+}
