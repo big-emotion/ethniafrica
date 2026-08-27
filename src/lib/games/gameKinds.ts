@@ -37,10 +37,31 @@ export interface GameOption {
   name?: AutonymExonymName;
 }
 
+/**
+ * Who the round is about, shown above the question (charter §2).
+ *
+ * Optional, and deliberately so: a round must name its subject *unless the
+ * subject is what is being guessed*. « Le pays d'avant » asks which country
+ * carries a former name, so naming it would be handing over the answer;
+ * « La taille qu'on vous a cachée » names both countries in its own options.
+ * Only « Eux, ou les autres ? » asks about an attribute of a subject the
+ * reader would otherwise never be told.
+ */
+export interface GameStimulus {
+  /** `languageFamilyNameFr` — null in the fiches that record no family. */
+  familyFr: string | null;
+  /** Resolved country names; an id the corpus cannot name is dropped, not shown as a code. */
+  countriesFr: string[];
+  subjectName: AutonymExonymName;
+  /** Order of magnitude in words, omitted when the corpus carries no figure. */
+  scaleFr?: string;
+}
+
 interface GameRoundBase {
   gameId: string;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
+  stimulus?: GameStimulus;
   promptFr: string;
   reveal: GameReveal;
 }

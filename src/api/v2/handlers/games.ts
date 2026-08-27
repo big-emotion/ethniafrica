@@ -15,16 +15,10 @@
  */
 
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
-import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
-import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { loadGameCorpus } from "@/api/v2/services/gamesService";
-import type {
-  GameCorpus,
-  GameCountryFixture,
-  GamePeopleFixture,
-} from "@/lib/games/corpus";
+import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
 import { buildAppellationsRound } from "@/lib/games/rounds/appellationsRound";
 import { buildHistoricalNameRound } from "@/lib/games/rounds/historicalNameRound";
 import { buildMercatorRound } from "@/lib/games/rounds/mercatorRound";
@@ -63,17 +57,6 @@ function countryNameMap(
   return Object.fromEntries(countries.map((c) => [c.id, c.nameFr]));
 }
 
-function peopleNameMap(
-  peoples: GamePeopleFixture[]
-): Map<string, GamePeopleFixture> {
-  return new Map(peoples.map((people) => [people.id, people]));
-}
-
-/** Countries the committed admin-0 asset can actually draw. */
-function drawableCountryIds(countries: GameCountryFixture[]): string[] {
-  return countries.filter((c) => getAdmin0Rings(c.id)).map((c) => c.id);
-}
-
 function assembleRounds(
   game: GameDefinition,
   corpus: GameCorpus,
@@ -89,9 +72,14 @@ function assembleRounds(
   };
 
   switch (game.id) {
-    case "appellations":
-      for (const people of peoples) push(buildAppellationsRound(people));
+    case "appellations": {
+      // Countries travel with the peoples slice for their names alone: the
+      // stimulus situates a people by country, and an ISO code situates
+      // nobody.
+      const names = countryNameMap(corpus.countries);
+      for (const people of peoples) push(buildAppellationsRound(people, names));
       break;
+    }
 
     case "mercator":
       for (const [a, b] of pairs(countries)) push(buildMercatorRound(a, b));

@@ -1,5 +1,6 @@
 "use client";
 
+import { RoundStimulus } from "@/components/play/RoundStimulus";
 import type { BinaryRound } from "@/lib/games/gameKinds";
 import { cn } from "@/lib/utils";
 
@@ -32,12 +33,28 @@ export const BinaryChoice = ({
       aria-labelledby={`binary-choice-prompt-${round.subjectId}`}
       className={cn("flex flex-col gap-4", className)}
     >
-      <h2
-        id={`binary-choice-prompt-${round.subjectId}`}
-        className="font-afh-display text-afh-h3 font-bold text-afh-text"
-      >
-        {round.promptFr}
-      </h2>
+      {round.stimulus ? <RoundStimulus stimulus={round.stimulus} /> : null}
+
+      {/*
+        The question drops to h3 under a stimulus, whose name is the h2: the
+        section is about that people, and the question is what it asks about
+        them. With no stimulus the question is the section's only heading.
+      */}
+      {round.stimulus ? (
+        <h3
+          id={`binary-choice-prompt-${round.subjectId}`}
+          className="font-afh-display text-afh-h3 font-bold text-afh-text"
+        >
+          {round.promptFr}
+        </h3>
+      ) : (
+        <h2
+          id={`binary-choice-prompt-${round.subjectId}`}
+          className="font-afh-display text-afh-h3 font-bold text-afh-text"
+        >
+          {round.promptFr}
+        </h2>
+      )}
       <div className="flex flex-col gap-3 md:flex-row">
         {round.options.map((option, index) => (
           <button
