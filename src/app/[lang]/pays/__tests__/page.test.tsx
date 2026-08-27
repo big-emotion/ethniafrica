@@ -52,14 +52,20 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     onLanguageChange,
+    flushTop,
   }: {
     children: React.ReactNode;
     onLanguageChange?: unknown;
+    flushTop?: boolean;
   }) => {
     if (typeof onLanguageChange === "function") {
       throw new Error("Server pages must not pass callbacks to PageLayout");
     }
-    return <div data-testid="page-layout">{children}</div>;
+    return (
+      <div data-testid="page-layout" data-flush-top={String(Boolean(flushTop))}>
+        {children}
+      </div>
+    );
   },
 }));
 
@@ -340,6 +346,39 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     // inside the other, burying the dossier behind two disclosures.
     expect(container.querySelectorAll("details")).toHaveLength(1);
     expect(screen.getByText("Lire le dossier complet")).toBeInTheDocument();
+  });
+
+  // The band is what makes the globe reach both edges of the viewport and
+  // closes it with the ochre seam. Without it the globe is boxed in the page
+  // container, which is the state this fiche shipped in.
+  // @req REQ-116
+  it("stands the globe on the full-width night band", async () => {
+    const { container } = await renderPage("NGA");
+
+    const band = screen.getByTestId("fiche-hero-band");
+    expect(band).toBeInTheDocument();
+    expect(band.contains(container.querySelector("[data-atlas-surface]"))).toBe(
+      true
+    );
+  });
+
+  // @req REQ-116
+  it("closes the band with the seam that opens the reading", async () => {
+    await renderPage("NGA");
+
+    expect(screen.getByTestId("fiche-hero-seam")).toBeInTheDocument();
+  });
+
+  // Without flushTop the band starts below a strip of page background, and the
+  // globe stops reading as the top of the page.
+  // @req REQ-116
+  it("lets the band start at the top of the page", async () => {
+    await renderPage("NGA");
+
+    expect(screen.getByTestId("page-layout")).toHaveAttribute(
+      "data-flush-top",
+      "true"
+    );
   });
 
   // @req REQ-091

@@ -22,8 +22,8 @@ function resolveSection(lang: Language, section: string): SectionType | null {
   return match ?? null;
 }
 
-// This page handles legacy slug-based URLs and redirects to the new v2 routes
-// @req REQ-091
+// This page handles legacy slug-based URLs and forwards them to the v2 routes.
+// @req REQ-019
 export default async function LegacyDetailRedirect({
   params,
 }: {
