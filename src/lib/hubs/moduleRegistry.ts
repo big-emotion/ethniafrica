@@ -111,7 +111,47 @@ export interface HubModuleDefinition {
   featureFlag?: ModuleFeatureFlag;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
   group?: ModuleGroupId;
+  /**
+   * How this module fills the home's hero slot, or absent if it cannot
+   * (REQ-115). See HeroPreviewKind.
+   *
+   * It names a shape and never holds a component, because this file is
+   * imported by server code — moduleAvailability's probe, and the home page
+   * itself — while a preview is a `dynamic(..., { ssr: false })` island,
+   * which Next permits only inside a Client Component. Two switches read
+   * this: loadHeroPreview resolves the data, HeroModuleStage renders it.
+   */
+  heroable?: HeroPreviewKind;
 }
+
+/**
+ * The shapes a hero preview comes in (REQ-115).
+ *
+ * - "globe": the textured globe, self-contained, no corpus behind it.
+ * - "game": the play loop itself, rounds built server-side exactly as
+ *   /fr/jouer/[jeu] builds them. One branch covers all eleven games.
+ * - "migration-paths": the sourced events drawn on the Africa basemap.
+ * - "family-crown": the linguistic families laid out in a radial crown,
+ *   each weighted by the peoples it holds.
+ *
+ * With strictNullChecks off a switch missing a case returns undefined and
+ * compiles clean, so exhaustiveness over this union is a test's job, not
+ * the compiler's — see HeroModuleStage's own suite.
+ */
+// @req REQ-115
+export type HeroPreviewKind =
+  | "globe"
+  | "game"
+  | "migration-paths"
+  | "family-crown";
+
+// @req REQ-115
+export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
+  "globe",
+  "game",
+  "migration-paths",
+  "family-crown",
+];
 
 // The flag decides whether the module exists at all, never the corpus: a
 // module switched off is not "coming soon", it is not there.
@@ -164,6 +204,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "families",
     availability: "data",
     dataSource: "afrik_language_families",
+    heroable: "family-crown",
   },
   {
     id: "recherche",
@@ -191,6 +232,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "migrations",
     availability: "data",
     dataSource: "migration_events",
+    heroable: "migration-paths",
   },
   // Jouer: the quiz keeps its own route; every other entry is a game the
   // hub reaches by slug. comparer and liens keep the ids they shipped with
@@ -214,6 +256,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "appellations",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "plus-ou-moins",
@@ -224,6 +267,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "plus-ou-moins",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "mercator",
@@ -234,6 +278,11 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "mercator",
     availability: "data",
     dataSource: "afrik_countries",
+    // The one game whose hero preview is not its play loop. The home globe
+    // *is* this game's lesson stated without a question — "chaque pastille
+    // retrouve sa surface réelle" — and it is the band the home has always
+    // opened on. The chip still sends a reader to the game itself.
+    heroable: "globe",
   },
   {
     id: "doctrine",
@@ -251,6 +300,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "vraie-taille",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "repartition",
@@ -261,6 +311,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "repartition",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
   {
     id: "pays-davant",
@@ -271,6 +322,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "pays-davant",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "royaumes",
@@ -281,6 +333,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "royaumes",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: "game",
   },
   {
     id: "migrations",
@@ -291,6 +344,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "migrations",
     availability: "data",
     dataSource: "migration_events",
+    heroable: "game",
   },
   {
     id: "liens",
@@ -301,6 +355,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "liens",
     availability: "data",
     dataSource: "afrik_people_relations",
+    heroable: "game",
   },
   {
     // Prefixed because the Explorer atlas already holds the id "familles":
@@ -315,6 +370,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "familles",
     availability: "data",
     dataSource: "afrik_language_families",
+    heroable: "game",
   },
   {
     id: "frontieres",
@@ -325,6 +381,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "frontieres",
     availability: "data",
     dataSource: "afrik_peoples",
+    heroable: "game",
   },
 ];
 

@@ -26,6 +26,7 @@ vi.mock("@/lib/supabase/queries/afrik/module-zero-batch", () => ({
 import {
   listMigrations,
   getMigrationById,
+  listMigrationPaths,
   UnknownPeopleFilterError,
   MigrationsDataAccessError,
 } from "../migrations";
@@ -410,5 +411,69 @@ describe("migrations service — getMigrationById", () => {
       ([table]) => table === "migration_event_peoples"
     );
     expect(junctionCalls).toHaveLength(1);
+  });
+});
+
+describe("migrations service — listMigrationPaths", () => {
+  beforeEach(() => {
+    fromMock.mockReset();
+  });
+
+  // The home's hero draws the six sourced events as paths on the basemap,
+  // which needs the geometry listMigrations deliberately drops. Same single
+  // query, a different projection of the same row — never getMigrationById,
+  // whose narrative/sources/confidence fan-out is the N+1 on /fr/migrations.
+  // @req REQ-115
+  it("returns the geometry listMigrations withholds", async () => {
+    const builder = buildChainable({ data: [eventRow], error: null, count: 1 });
+    fromMock.mockImplementation(() => builder);
+
+    const paths = await listMigrationPaths(6);
+
+    expect(paths).toEqual([
+      {
+        id: "MGR_BANTU_HOMELAND_DISPERSAL",
+        nameMain: "Dispersion bantoue",
+        geometry: { type: "LineString", coordinates: [[11.5, 6.5]] },
+        timeRange: { startYear: -3000, endYear: -1500, datingNote: "note" },
+      },
+    ]);
+  });
+
+  // @req REQ-115
+  it("costs exactly one query, on migration_events alone", async () => {
+    const builder = buildChainable({ data: [eventRow], error: null, count: 1 });
+    fromMock.mockImplementation(() => builder);
+
+    await listMigrationPaths(6);
+
+    expect(fromMock).toHaveBeenCalledTimes(1);
+    expect(fromMock).toHaveBeenCalledWith("migration_events");
+  });
+
+  // @req REQ-115
+  it("drops an event the corpus left without geometry", async () => {
+    const builder = buildChainable({
+      data: [{ ...eventRow, geometry_geojson: null }],
+      error: null,
+      count: 1,
+    });
+    fromMock.mockImplementation(() => builder);
+
+    expect(await listMigrationPaths(6)).toEqual([]);
+  });
+
+  // The hero is not worth a 500. A failed read degrades to an empty band,
+  // as the hub's availability probe does.
+  // @req REQ-115
+  it("returns nothing rather than throwing into the hero render", async () => {
+    const builder = buildChainable({
+      data: null,
+      error: { message: "boom" },
+      count: 0,
+    });
+    fromMock.mockImplementation(() => builder);
+
+    expect(await listMigrationPaths(6)).toEqual([]);
   });
 });

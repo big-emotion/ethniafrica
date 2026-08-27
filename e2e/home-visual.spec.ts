@@ -87,7 +87,12 @@ test.describe("Home visual parity", () => {
           }),
         ]
       );
-      await page.goto("/fr");
+      // Pinned: the hero draws one of eleven modules per request (REQ-115),
+      // so an unpinned /fr would diff against whichever module happened to
+      // be drawn when the reference was taken. mercator is the band this
+      // suite has always photographed — the globe — and the only module
+      // that renders without the corpus behind it.
+      await page.goto("/fr?hero=mercator");
 
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 

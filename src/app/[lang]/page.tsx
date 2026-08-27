@@ -4,9 +4,27 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
+import { pickHeroModule } from "@/lib/home/heroRotation";
+import { loadHeroPreview } from "@/lib/home/heroPreviewData";
 import { getHubModules, type HubModule } from "@/lib/hubs/moduleAvailability";
 import { ACCESS_MODES, type AccessMode } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+
+/**
+ * The hero draws a different module on every request (REQ-115), so the home
+ * must not be prerendered. Reading searchParams below already forces that,
+ * and so does the root layout awaiting connection() for the CSP nonce — but
+ * both are action at a distance. Stating it here means the day that nonce
+ * moves into middleware alone, the hero does not silently freeze on one
+ * module chosen at build time with nothing failing.
+ *
+ * This is the opposite failure to the one staticParamsBan.test.ts guards:
+ * there a route claimed to be static and answered 500 at request time;
+ * here a route that is dynamic only by inheritance would answer 200 with
+ * the same module forever.
+ */
+// @req REQ-115
+export const dynamic = "force-dynamic";
 
 // @req REQ-044 FR95
 export const metadata: Metadata = {
@@ -39,16 +57,33 @@ async function getModulesByAxis(): Promise<Record<AccessMode, HubModule[]>> {
   return Object.fromEntries(entries) as Record<AccessMode, HubModule[]>;
 }
 
+interface HomeProps {
+  searchParams: Promise<{ hero?: string | string[] }>;
+}
+
 // @req REQ-113
-export default async function Home() {
-  const [counts, modulesByAxis] = await Promise.all([
+// @req REQ-115
+export default async function Home({ searchParams }: HomeProps) {
+  const [{ hero }, counts, modulesByAxis] = await Promise.all([
+    searchParams,
     getCorpusCounts(),
     getModulesByAxis(),
   ]);
 
+  // ?hero=<moduleId> forces one module: it keeps the home's visual snapshot
+  // reproducible, deep-links a variant, and makes design review possible on
+  // a band that otherwise changes every reload. Repeated params collapse to
+  // the first rather than throwing — a hand-edited URL should not 500.
+  const pin = Array.isArray(hero) ? hero[0] : hero;
+  const heroModule = pickHeroModule(modulesByAxis, { pin });
+  // Only the drawn module is resolved, never the whole lot: the slot shows
+  // one module, so loading the other eighteen would be eighteen wasted
+  // round trips per request.
+  const heroPreview = heroModule ? await loadHeroPreview(heroModule) : null;
+
   return (
     <PageLayout language="fr" hideHeader flushTop>
-      <HomeHero />
+      <HomeHero heroModule={heroModule} heroPreview={heroPreview} />
       <section className="home-axes-section">
         <AccessAxes
           language="fr"

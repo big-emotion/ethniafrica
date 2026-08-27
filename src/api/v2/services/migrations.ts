@@ -15,6 +15,7 @@ import type {
   MigrationEventType,
   MigrationClassificationStatus,
   MigrationGeometry,
+  MigrationTimeRange,
   MigrationSummary,
   MigrationDetailRecord,
   MigrationPeopleRef,
@@ -22,6 +23,7 @@ import type {
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
 
+// @req REQ-099
 export class UnknownPeopleFilterError extends Error {
   constructor(public readonly peopleId: string) {
     super(`Unknown peopleId filter: ${peopleId}`);
@@ -34,6 +36,7 @@ export class UnknownPeopleFilterError extends Error {
  * recursion) — distinct from the legitimate "schema not deployed yet" empty
  * result, so the page can render a failure state instead of an empty one.
  */
+// @req REQ-099
 export class MigrationsDataAccessError extends Error {
   constructor(message: string) {
     super(message);
@@ -82,6 +85,69 @@ function mapRowToSummary(row: MigrationEventRow): MigrationSummary {
   };
 }
 
+/**
+ * A migration event reduced to what it takes to draw it on a map: the
+ * four fields MigrationPathLayer reads, and nothing else.
+ *
+ * It exists because MigrationSummary deliberately withholds the geometry —
+ * a contract the service's own tests assert — and widening that type would
+ * change the public /api/v2/migrations payload and trip the OpenAPI
+ * breaking-change gate. The row is the same row; only the projection
+ * differs, so the geometry costs no query and no extra bytes: the select
+ * was already `*`.
+ */
+// @req REQ-115
+export interface MigrationPath {
+  id: string;
+  nameMain: string;
+  geometry: MigrationGeometry;
+  timeRange: MigrationTimeRange;
+}
+
+/**
+ * The sourced migration events as drawable paths, oldest first.
+ *
+ * One query, on migration_events alone. Never getMigrationById: its
+ * narrative, sources and confidence fan-out is the N+1 that makes
+ * /fr/migrations too heavy to open a home page with.
+ *
+ * An event the corpus left without geometry is dropped rather than
+ * rendered as an empty stroke, and a failed read degrades to an empty
+ * list rather than throwing into whatever is rendering — the discipline
+ * the hub's availability probe already follows.
+ */
+// @req REQ-115
+export async function listMigrationPaths(
+  limit: number
+): Promise<MigrationPath[]> {
+  const supabase = createServerClient();
+
+  const { data, error } = await supabase
+    .from("migration_events")
+    .select("*")
+    .order("time_start_year")
+    .range(0, limit - 1);
+
+  if (error) {
+    logger.error("migrations.listMigrationPaths failed", error);
+    return [];
+  }
+
+  return ((data || []) as MigrationEventRow[])
+    .filter((row) => row.geometry_geojson)
+    .map((row) => ({
+      id: row.id,
+      nameMain: row.name,
+      geometry: row.geometry_geojson,
+      timeRange: {
+        startYear: row.time_start_year,
+        endYear: row.time_end_year,
+        datingNote: row.dating_note,
+      },
+    }));
+}
+
+// @req REQ-099
 export interface ListMigrationsFilters {
   from?: number;
   to?: number;
@@ -140,6 +206,7 @@ async function getMigrationIdsForPeople(
  * Throws UnknownPeopleFilterError if peopleId does not resolve to a known
  * people — the handler maps that to 422 SEMANTIC_ERROR.
  */
+// @req REQ-099
 export async function listMigrations(
   filters: ListMigrationsFilters
 ): Promise<{ data: MigrationSummary[]; total: number }> {
@@ -242,6 +309,7 @@ async function getMigrationPeoples(
  * geometry, peoples (one batched join query, AR17), sources, and confidence.
  * Returns null for an unknown id — the handler maps that to 404 NOT_FOUND.
  */
+// @req REQ-099
 export async function getMigrationById(id: string): Promise<{
   record: MigrationDetailRecord;
   confidence: number | null;
