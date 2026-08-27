@@ -202,7 +202,7 @@ export default async function PeoplesSlugPage({
   // `flushTop` drops the shell's top padding so the band starts under the nav
   // rather than below a strip of page background.
   return (
-    <PageLayout language="fr" sectionName="Peuples" flushTop>
+    <PageLayout language="fr" sectionName="Peuples" hideHeader flushTop>
       <FicheSequence
         // Entity and payload only. The context's other corpora exist to feed
         // panels, and a people fiche composes none — the parchment below takes

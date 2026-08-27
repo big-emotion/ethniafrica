@@ -48,6 +48,13 @@ function Section({
   );
 }
 
+/**
+ * The corpus states no per-country reference year — the shares in every fiche
+ * are read against the same one, so it belongs to the atlas rather than to the
+ * country. Printing it in the eyebrow is what dates the figures below.
+ */
+const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
+
 export interface CountryParchmentProps {
   data: CountryPageData;
   /**
@@ -57,6 +64,13 @@ export interface CountryParchmentProps {
    */
   country: CountryDetail;
   hasSourceFlag?: boolean;
+  /**
+   * Chapters the page adds beyond the four the mockup frames. They land here,
+   * between the royaumes and the sources, because the sources close the
+   * reading: rendered after this component instead, they put the bibliography
+   * in the middle of the fiche.
+   */
+  children?: ReactNode;
 }
 
 // @req REQ-115
@@ -64,6 +78,7 @@ export function CountryParchment({
   data,
   country,
   hasSourceFlag,
+  children,
 }: CountryParchmentProps) {
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
@@ -73,7 +88,10 @@ export function CountryParchment({
   return (
     <div className="afh-parchment" id="fiche">
       <header className="afh-parchment-head">
-        <p className="afh-parchment-eyebrow">{data.hero.iso} · fiche pays</p>
+        <p className="afh-parchment-eyebrow">
+          {data.hero.iso} · fiche pays
+          {hasPeoples && ` · réf. ${DEMOGRAPHIC_REFERENCE_YEAR}`}
+        </p>
         <h1>{data.hero.countryName}</h1>
         {data.hero.nameOfficial && (
           <p className="afh-parchment-lede">{data.hero.nameOfficial}</p>
@@ -122,6 +140,8 @@ export function CountryParchment({
           <KingdomsTimeline cards={data.kingdoms.cards} />
         </Section>
       )}
+
+      {children}
 
       {data.sources.length > 0 && (
         <Section

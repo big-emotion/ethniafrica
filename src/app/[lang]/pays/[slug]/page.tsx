@@ -199,7 +199,7 @@ export default async function PaysSlugPage({
   // identity, territory, fragmentation and voices panels belong to stories
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
   return (
-    <PageLayout language="fr" sectionName="Pays" flushTop>
+    <PageLayout language="fr" sectionName="Pays" hideHeader flushTop>
       <FicheSequence
         context={{ entityType: "country", payload: countryDetail }}
         recordPlacement="body"

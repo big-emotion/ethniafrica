@@ -180,3 +180,38 @@ describe("PageLayout — flushTop", () => {
     expect(main?.className).not.toMatch(/\bpt-\d/);
   });
 });
+
+/**
+ * A fiche brings its own title — the entity's name, on the parchment. Leaving
+ * the section band on gave the three globe fiches two `h1`s, the first of them
+ * a category ("Pays") rather than the subject, which is also what a screen
+ * reader announced first.
+ */
+describe("PageLayout — the section band a fiche must not raise", () => {
+  // @req REQ-043
+  it("raises the section band by default, so a directory still gets its title", () => {
+    render(
+      <PageLayout language="fr" sectionName="Pays">
+        <p>corps</p>
+      </PageLayout>
+    );
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Pays" })
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-043
+  it("leaves the page's own heading as the only one when hideHeader is set", () => {
+    render(
+      <PageLayout language="fr" sectionName="Pays" hideHeader flushTop>
+        <h1>Afrique du Sud</h1>
+      </PageLayout>
+    );
+
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Afrique du Sud" })
+    ).toBeInTheDocument();
+  });
+});
