@@ -13,8 +13,10 @@ import { test, expect } from "./support/fixtures";
  * PPL_BANTU stacks 21 halos and 21 options. A pass on the middle one says
  * nothing about the other two.
  *
- * Runs on mobile-430, the source-of-truth viewport, with no continue-on-error
- * in e2e.yml — so a violation fails the required check.
+ * Runs on mobile-430, the source-of-truth viewport. It fails its own job, but
+ * that job is not a required check — only gitleaks and build are — so a
+ * violation here is red and still mergeable. Read the finding, do not read the
+ * merge button.
  */
 const PEOPLE_SAMPLES = [
   { id: "PPL_YORUBA", regime: "five countries — the mockup's own sample" },
