@@ -9,11 +9,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
-import { CountryPicker } from "@/components/country/CountryPicker";
-import { buildCountryTargetFacts } from "@/components/country/countryTargetFacts";
-import { flagFromISO3 } from "@/lib/countryDataTransformer";
+import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
+import { buildCountryPickerTargets } from "@/lib/atlas/targets";
+import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import {
   getCountryById,
   getCountryIndex,
@@ -165,10 +165,14 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, allCountries] = await Promise.all([
+  const [country, sourceFlags, allCountries, peopleCounts] = await Promise.all([
     getCountryById(parsed.slug),
     getActiveSourceFlags("country", parsed.slug),
     getCountryIndex(),
+    // The globe can now be aimed at any country, so the panel has to answer
+    // for any country. A failed count costs the other countries' subtitle,
+    // never the fiche.
+    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
   ]);
   if (!country) {
     notFound();
@@ -177,16 +181,15 @@ export default async function PaysSlugPage({
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
 
-  // From the corpus, never from the admin-0 asset: the two sets do not
-  // coincide, so a geometry-fed list would offer dead ends and hide the six
-  // countries that have a fiche but no outline.
-  const pickerCountries = allCountries
-    .map((entry) => ({
-      id: entry.id,
-      nameFr: entry.nameFr,
-      flag: flagFromISO3(entry.id),
-    }))
-    .sort((first, second) => first.nameFr.localeCompare(second.nameFr, "fr"));
+  // Ids from the corpus, geometry and name from the asset. The corpus decides
+  // which countries have a fiche; the asset decides which can be drawn and
+  // supplies the name people use - `nameFr` on a country fiche is the declared
+  // one, which is how the picker came to spread one Algerian option over five
+  // lines. Every corpus country resolves, South Sudan included: the ISO/asset
+  // alias in overlays.ts is what makes SSD find the shape filed as SDS.
+  const pickerTargets = buildCountryPickerTargets(
+    allCountries.map((entry) => entry.id)
+  );
 
   // Live version (revalidate = 3600 at segment level).
   //
@@ -199,28 +202,31 @@ export default async function PaysSlugPage({
   // identity, territory, fragmentation and voices panels belong to stories
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
   return (
-    <PageLayout language="fr" sectionName="Pays" flushTop>
+    <PageLayout language="fr" sectionName="Pays" hideHeader flushTop>
       <FicheSequence
         context={{ entityType: "country", payload: countryDetail }}
         recordPlacement="body"
         globe={
-          // The band is the measure inside itself: the picker's own container
-          // would have parked it off-centre against a globe that now reaches
-          // both edges of the viewport.
+          // The picker lives inside the globe now, which is what lets choosing
+          // a country re-aim the camera instead of loading another fiche: the
+          // camera belongs to AtlasGlobe, and a control outside it could only
+          // ever navigate. It is also what centres it, against a globe that
+          // reaches both edges of the viewport.
           <FicheHeroBand>
-            {/* afh-on-night rebinds the ink and surface tokens for this
-                subtree, so the picker reads on the band the same way the
-                home's hero reads on its own night. Sharing that rule is what
-                keeps the two from drifting into different nights. */}
-            <div className="afh-on-night flex w-full justify-end px-4 pt-4">
-              <CountryPicker
-                countries={pickerCountries}
-                currentCountryId={countryDetail.id}
-              />
-            </div>
             <AtlasGlobe
               overlay={buildCountryOutlineOverlay(countryDetail.id)}
-              facts={buildCountryTargetFacts(countryDetail)}
+              targetPicker="list"
+              pickerTargets={pickerTargets}
+              areaNoun="l'atlas"
+              // Clearing the choice puts the fiche's own country back under
+              // the line, so the button says that rather than "toute
+              // l'empreinte", which a country fiche does not have.
+              wholeAreaLabel={`Revenir à ${countryDetail.nameCommonFr || countryDetail.nameFr}`}
+              facts={buildCountryAtlasFacts({
+                country: countryDetail,
+                targets: pickerTargets,
+                peopleCounts,
+              })}
               missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
             />
           </FicheHeroBand>

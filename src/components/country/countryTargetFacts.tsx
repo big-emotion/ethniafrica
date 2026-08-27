@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
+import { flagFromISO3 } from "@/lib/countryFlag";
+import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -48,6 +50,35 @@ const NUMBER_STYLE: CSSProperties = {
  */
 const NAMES_SHOWN = 6;
 
+const CHIP_STYLE: CSSProperties = {
+  justifySelf: "start",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  padding: "3px 9px",
+  borderRadius: "var(--afh-radius-full)",
+  border: "1px solid var(--afh-border)",
+  backgroundColor: "var(--afh-bg-warm)",
+  fontSize: "var(--afh-text-caption)",
+  color: "var(--afh-text-soft)",
+};
+
+/**
+ * Where the panel's own numbers come from.
+ *
+ * The fiche's own country is answered from what its fiche declares; every
+ * other country from the corpus's join table. Those count different things,
+ * and unlabelled they read as one number disagreeing with itself — which is
+ * exactly how a panel saying five peoples sat beside a listing saying nine.
+ */
+function ProvenanceChip({ declared }: { declared: boolean }) {
+  return (
+    <span style={CHIP_STYLE}>
+      {declared ? "Fiche rédigée" : "Présence dérivée des fiches peuple"}
+    </span>
+  );
+}
+
 const countFr = new Intl.NumberFormat("fr-FR");
 
 // @req REQ-117
@@ -66,7 +97,7 @@ export function buildCountryTargetFacts(
       body: (
         <div style={{ display: "grid", gap: 14 }}>
           <div>
-            <span style={LABEL_STYLE}>Peuples au corpus</span>
+            <span style={LABEL_STYLE}>Peuples déclarés par la fiche</span>
             <span style={NUMBER_STYLE}>{countFr.format(names.length)}</span>
           </div>
 
@@ -98,4 +129,126 @@ export function buildCountryTargetFacts(
       ),
     },
   };
+}
+
+const LINK_STYLE: CSSProperties = {
+  fontSize: "var(--afh-text-small)",
+  fontWeight: 700,
+  color: "var(--accent)",
+};
+
+/**
+ * Where the panel sends the reader. The fiche's own country is already on the
+ * page, so it points at the parchment rather than reloading the route the
+ * reader is standing on.
+ */
+function ReadTheFiche({ href }: { href: string }) {
+  return (
+    <a href={href} style={LINK_STYLE}>
+      Lire la fiche complète →
+    </a>
+  );
+}
+
+export interface CountryAtlasFactsInput {
+  /** The fiche's own country, which gets the full panel. */
+  country: CountryDetail;
+  /** Everything the picker offers, named as the picker names it. */
+  targets: AtlasTarget[];
+  /** Documented peoples per country, from the corpus. */
+  peopleCounts: Record<string, number>;
+}
+
+/**
+ * The panel's answer for every country the fiche's globe can be aimed at
+ * (REQ-117).
+ *
+ * The fiche's own country keeps the full reading — the count, the first
+ * entries. Every other country gets what the corpus knows about it and no
+ * more: this globe is a way through the atlas, not a second fiche, and
+ * inventing a richer panel for a country whose fiche is one click away would
+ * be inventing content.
+ *
+ * Titles come from the targets rather than from the corpus, so the panel names
+ * a country exactly as the picker that offered it did. The corpus stores the
+ * declared name — "Republique algerienne democratique et populaire (...)" —
+ * and the two must not disagree inside one control.
+ */
+/**
+ * Where the country is, in the panel's own subtitle.
+ *
+ * The mockup states the centroid; what shipped stated the doctrine instead
+ * ("frontiere publiee, tracee a l'apparition"), which explains why the line may
+ * close rather than which country closed it. The charter is where the doctrine
+ * belongs; a panel that has just flown the camera somewhere should say where.
+ */
+function placeOf(target: AtlasTarget): string {
+  const { lat, lon } = target.center;
+  const northSouth = `${Math.abs(lat).toFixed(1)}\u00b0 ${lat >= 0 ? "N" : "S"}`;
+  const eastWest = `${Math.abs(lon).toFixed(1)}\u00b0 ${lon >= 0 ? "E" : "O"}`;
+  return `${target.countryId} \u00b7 ${northSouth} \u00b7 ${eastWest}`;
+}
+
+// @req REQ-117
+export function buildCountryAtlasFacts({
+  country,
+  targets,
+  peopleCounts,
+}: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
+  const own = buildCountryTargetFacts(country);
+
+  return Object.fromEntries(
+    targets.map((target) => {
+      if (target.countryId === country.id) {
+        const ownFacts = own[country.id];
+        return [
+          target.countryId,
+          {
+            ...ownFacts,
+            title: target.nameFr,
+            description: placeOf(target),
+            icon: flagFromISO3(target.countryId),
+            body: (
+              <div style={{ display: "grid", gap: 14 }}>
+                {ownFacts?.body}
+                <ProvenanceChip declared />
+                <ReadTheFiche href="#fiche" />
+              </div>
+            ),
+          },
+        ];
+      }
+
+      const documented = peopleCounts[target.countryId] ?? 0;
+
+      return [
+        target.countryId,
+        {
+          title: target.nameFr,
+          icon: flagFromISO3(target.countryId),
+          description:
+            documented === 1
+              ? "1 peuple documenté"
+              : `${countFr.format(documented)} peuples documentés`,
+          body: (
+            <div style={{ display: "grid", gap: 14 }}>
+              {documented === 0 && (
+                <span
+                  style={{
+                    fontSize: "var(--afh-text-small)",
+                    lineHeight: 1.65,
+                    color: "var(--afh-text-soft)",
+                  }}
+                >
+                  Aucun peuple rattaché à ce pays dans le corpus.
+                </span>
+              )}
+              <ProvenanceChip declared={false} />
+              <ReadTheFiche href={`/fr/pays/${target.countryId}`} />
+            </div>
+          ),
+        },
+      ];
+    })
+  );
 }

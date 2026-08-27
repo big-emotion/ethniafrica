@@ -16,6 +16,8 @@ export interface AtlasFactsPanelProps {
   anchor: PanelAnchor;
   title: string;
   description?: string;
+  /** Decoration beside the title — the panel already names the subject in text. */
+  icon?: ReactNode;
   /** The globe stage the panel is anchored inside. Null before the stage ref resolves. */
   container: HTMLElement | null;
   onClose: () => void;
@@ -41,7 +43,10 @@ const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
  */
 const ANCHOR_POSITION: Record<PanelAnchor, string> = {
   bottom: "absolute inset-x-0 bottom-0 rounded-t-afh-lg border-t",
-  side: "absolute right-[22px] top-[22px] bottom-[22px] rounded-afh-lg border",
+  // Capped, not stretched. Pinning both edges gave a card the height of the
+  // whole band with its content in the first third, which read as a panel that
+  // had failed to load rather than one that had finished.
+  side: "absolute right-[22px] top-[22px] max-h-[calc(100%-44px)] rounded-afh-lg border",
 };
 
 /**
@@ -78,6 +83,7 @@ export function AtlasFactsPanel({
   anchor,
   title,
   description,
+  icon,
   container,
   onClose,
   children,
@@ -117,6 +123,14 @@ export function AtlasFactsPanel({
             />
           ) : null}
           <div className="flex items-start justify-between gap-3">
+            {icon ? (
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-2xl leading-none"
+              >
+                {icon}
+              </span>
+            ) : null}
             <div className="flex flex-col gap-1">
               <DialogPrimitive.Title className="text-base font-semibold leading-tight">
                 {title}

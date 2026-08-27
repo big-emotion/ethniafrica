@@ -9,6 +9,7 @@ import {
 } from "../overlays";
 import {
   buildAtlasTargets,
+  buildCountryPickerTargets,
   continentTargetFacts,
   ringsAngularSpanDeg,
 } from "../targets";
@@ -206,5 +207,52 @@ describe("buildAtlasTargets for the continent scene (REQ-117 AC1)", () => {
     const [target] = buildAtlasTargets(buildContinentOverlay({ NGA: 1 }));
 
     expect(continentTargetFacts(target).description).toBe("1 peuple documenté");
+  });
+});
+
+/**
+ * The country fiche's picker offers the whole corpus, not just the one country
+ * the fiche draws. It is fed the corpus's own list — the atlas must not decide
+ * which countries exist — and resolves each against the committed geometry.
+ */
+describe("buildCountryPickerTargets (REQ-117)", () => {
+  // The corpus stores the official name; the asset stores the one people use.
+  // The picker spread one Algerian option over five lines until it read the
+  // latter.
+  // @req REQ-117
+  it("names each country the way it is spoken, not the way it is declared", () => {
+    const targets = buildCountryPickerTargets(["DZA", "ZAF", "LBY"]);
+
+    expect(targets.map((target) => target.nameFr)).toEqual([
+      "Afrique du Sud",
+      "Algérie",
+      "Libye",
+    ]);
+  });
+
+  // @req REQ-117
+  it("orders them the way a French reader looks them up", () => {
+    const targets = buildCountryPickerTargets(["ZWE", "EGY", "BEN"]);
+
+    expect(targets.map((target) => target.nameFr)).toEqual([
+      "Bénin",
+      "Égypte",
+      "Zimbabwe",
+    ]);
+  });
+
+  // The asset keys South Sudan the Natural Earth way (SDS) and the corpus the
+  // ISO way (SSD). Without the alias the country silently leaves the picker.
+  // @req REQ-117
+  it("resolves a country whose asset key differs from its ISO code", () => {
+    const [target] = buildCountryPickerTargets(["SSD"]);
+
+    expect(target.countryId).toBe("SSD");
+    expect(target.angularSpanDeg).toBeGreaterThan(0);
+  });
+
+  // @req REQ-117
+  it("drops a country the asset cannot draw rather than offering a dead option", () => {
+    expect(buildCountryPickerTargets(["ZZZ"])).toEqual([]);
   });
 });

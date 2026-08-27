@@ -169,3 +169,54 @@ describe("country fiche charter", () => {
     expect(container.querySelector('a[href="#fiche-record"]')).toBeNull();
   });
 });
+
+/**
+ * Two things the fiche shipped without, both visible on the mockup's parchment.
+ *
+ * The sources closing the fiche is not a matter of taste: the record view adds
+ * three more chapters after the parchment, so "sources last" held inside
+ * CountryParchment while the page put Noms, Faits and Culture after them. The
+ * reader met the bibliography in the middle of the reading.
+ */
+describe("country fiche parchment — head and closing", () => {
+  // The reference year dates the shares in "Peuples du pays". A fiche with no
+  // demographics has nothing to date, so it says nothing.
+  // @req REQ-115
+  it("dates the fiche's figures in the eyebrow when it carries demographics", () => {
+    const { container } = renderParchment(countryFixture());
+
+    expect(container.querySelector(".afh-parchment-eyebrow")).toHaveTextContent(
+      "NGA · fiche pays · réf. 2025"
+    );
+  });
+
+  // @req REQ-115
+  it("dates nothing when the corpus gives the country no demographics", () => {
+    const { container } = renderParchment(
+      countryFixture({ demographics: undefined, majorPeoples: undefined })
+    );
+
+    const eyebrow = container.querySelector(".afh-parchment-eyebrow");
+    expect(eyebrow).toHaveTextContent("NGA · fiche pays");
+    expect(eyebrow?.textContent).not.toMatch(/réf\./);
+  });
+
+  // @req REQ-115
+  it("keeps the sources last when the page adds chapters of its own", () => {
+    const country = countryFixture();
+    const { container } = render(
+      <CountryParchment data={transformCountryData(country)} country={country}>
+        <section className="afh-parchment-section">
+          <h2>Culture et société</h2>
+        </section>
+      </CountryParchment>
+    );
+
+    const headings = Array.from(
+      container.querySelectorAll(".afh-parchment-section h2")
+    ).map((node) => node.textContent);
+
+    expect(headings.at(-1)).toBe("Sources");
+    expect(headings).toContain("Culture et société");
+  });
+});

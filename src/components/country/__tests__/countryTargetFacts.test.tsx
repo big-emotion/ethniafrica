@@ -1,7 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { buildCountryTargetFacts } from "@/components/country/countryTargetFacts";
+import {
+  buildCountryAtlasFacts,
+  buildCountryTargetFacts,
+} from "@/components/country/countryTargetFacts";
+import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
 /**
@@ -24,15 +28,20 @@ function countryWith(peoples: { name: string }[] | undefined): CountryDetail {
 }
 
 describe("country target facts", () => {
+  // The label says whose count it is. Two surfaces counted this country
+  // differently - the fiche's declared list and the corpus join table - and an
+  // unqualified "au corpus" made them read as one number contradicting itself.
   // @req REQ-117
-  it("names the country and counts the peoples the corpus attaches to it", () => {
+  it("names the country and counts the peoples its own fiche declares", () => {
     const facts = buildCountryTargetFacts(
       countryWith([{ name: "Yoruba" }, { name: "Igbo" }, { name: "Haoussa" }])
     );
 
     expect(facts.NGA?.title).toBe("Nigéria");
     render(<>{facts.NGA?.body}</>);
-    expect(screen.getByText("Peuples au corpus")).toBeInTheDocument();
+    expect(
+      screen.getByText("Peuples déclarés par la fiche")
+    ).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
   });
 
@@ -73,5 +82,131 @@ describe("country target facts", () => {
 
     expect(typeof facts).toBe("object");
     expect(typeof facts.NGA).toBe("object");
+  });
+});
+
+/**
+ * The fiche's globe offers the whole corpus, so the panel has to answer for
+ * countries the fiche says nothing about. It answers from the corpus — how
+ * many peoples are documented there — and always offers the way in, because a
+ * panel that names a country and then strands the reader on someone else's
+ * fiche is worse than one that says nothing.
+ */
+describe("buildCountryAtlasFacts (REQ-117)", () => {
+  const targets = buildCountryPickerTargets(["NGA", "KEN", "SSD"]);
+
+  function facts(peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 }) {
+    return buildCountryAtlasFacts({
+      country: countryWith([{ name: "Zoulou" }]),
+      targets,
+      peopleCounts,
+    });
+  }
+
+  // @req REQ-117
+  it("keeps the fiche's own country pointed at the reading below, not at a reload", () => {
+    render(<>{facts().NGA?.body}</>);
+
+    expect(
+      screen.getByRole("link", { name: /Lire la fiche complète/ })
+    ).toHaveAttribute("href", "#fiche");
+  });
+
+  // @req REQ-117
+  it("sends another country to its own fiche", () => {
+    render(<>{facts().KEN?.body}</>);
+
+    expect(
+      screen.getByRole("link", { name: /Lire la fiche complète/ })
+    ).toHaveAttribute("href", "/fr/pays/KEN");
+  });
+
+  // @req REQ-117
+  it("names a country the way the picker that offered it does", () => {
+    expect(facts().KEN?.title).toBe("Kenya");
+    expect(facts().SSD?.title).toBe("Soudan du Sud");
+  });
+
+  // @req REQ-117
+  it("counts documented peoples rather than a population", () => {
+    expect(facts().KEN?.description).toBe("12 peuples documentés");
+  });
+
+  // A zero here means the corpus is silent, not that a country is empty.
+  // @req REQ-117
+  it("reads an absent count as corpus silence rather than as none", () => {
+    render(<>{facts({}).KEN?.body}</>);
+
+    expect(
+      screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
+    ).toBeInTheDocument();
+  });
+});
+
+/**
+ * The mockup's panel names where the country is. What shipped named the
+ * doctrine instead — "frontiere publiee, tracee a l'apparition" — which says
+ * why the line may close, not which country closed it. The charter already
+ * carries the doctrine; the panel carries the place.
+ */
+describe("what the panel's subtitle states", () => {
+  const targets = buildCountryPickerTargets(["NGA"]);
+
+  // @req REQ-117
+  it("locates the fiche's own country rather than restating the charter", () => {
+    const facts = buildCountryAtlasFacts({
+      country: countryWith([{ name: "Yoruba" }]),
+      targets,
+      peopleCounts: { NGA: 3 },
+    });
+
+    expect(facts.NGA?.description).toMatch(
+      /^NGA · \d+[.,]\d° [NS] · \d+[.,]\d° [EO]$/
+    );
+  });
+});
+
+/**
+ * Two things the mockup's panel head and body carry that the shipped one did
+ * not: the country's flag, and a chip saying where the panel's own numbers come
+ * from. The second matters more than it looks — the fiche's own country is
+ * answered from what the fiche declares, every other country from the corpus's
+ * join table, and those count different things. Left unlabelled they read as
+ * one number disagreeing with itself.
+ */
+describe("what the panel shows it is", () => {
+  const targets = buildCountryPickerTargets(["NGA", "KEN"]);
+
+  function facts() {
+    return buildCountryAtlasFacts({
+      country: countryWith([{ name: "Yoruba" }]),
+      targets,
+      peopleCounts: { NGA: 3, KEN: 12 },
+    });
+  }
+
+  // @req REQ-117
+  it("flies the country's flag beside its name", () => {
+    expect(facts().NGA?.icon).toBeTruthy();
+
+    render(<>{facts().NGA?.icon}</>);
+    expect(screen.getByText("🇳🇬")).toBeInTheDocument();
+  });
+
+  // @req REQ-117
+  it("says the fiche's own figures are the fiche's own", () => {
+    render(<>{facts().NGA?.body}</>);
+
+    expect(screen.getByText(/Peuples déclarés par la fiche/)).toBeVisible();
+    expect(screen.getByText(/Fiche rédigée/)).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("says another country's figures are derived, not declared", () => {
+    render(<>{facts().KEN?.body}</>);
+
+    expect(
+      screen.getByText(/Présence dérivée des fiches peuple/)
+    ).toBeVisible();
   });
 });
