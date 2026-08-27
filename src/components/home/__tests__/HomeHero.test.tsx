@@ -22,33 +22,38 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
     const h1 = headings[0];
     expect(h1.textContent?.replace(/\s+/g, " ").trim()).toBe(
-      "Le continent raconté comme une carte vivante"
+      "Les peuples d'Afrique, sous le nom qu'ils se donnent"
     );
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // The accent has to survive both surfaces: the italic is set as text, so
-  // it takes the display accent that flips with the theme rather than the
-  // night gold, which would go near-invisible on parchment.
+  // The italic carries the thesis, so it has to survive both surfaces: set
+  // as text it takes the display accent that flips with the theme, rather
+  // than the night gold, which would go near-invisible on parchment.
   // @req REQ-044
-  it("sets « carte vivante » in italic on the surface's own display accent", () => {
+  it("sets the autonym clause in italic on the surface's own display accent", () => {
     const { container } = render(<HomeHero />);
     const em = screen.getByRole("heading", { level: 1 }).querySelector("em");
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(em).toHaveTextContent("carte vivante");
+    expect(em).toHaveTextContent("le nom qu'ils se donnent");
     expect(styles).toMatch(
       /\.home-hero-copy h1 em\s*{[^}]*var\(--afh-display-accent\)/
     );
   });
 
+  // The lede names what the atlas holds and what it does with a name — the
+  // two things a first-time reader cannot infer from the headline alone.
   // @req REQ-044
-  it("renders one lede stating whose regard the history is told from", () => {
+  it("renders one lede naming the corpus and what it asks of every name", () => {
     render(<HomeHero />);
     expect(
-      screen.getByText(/racontée depuis son propre regard/i)
+      screen.getByText(/leurs langues, leurs familles, leurs pays/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/qui l'a donné, depuis où et à quelle époque/i)
     ).toBeInTheDocument();
   });
 
