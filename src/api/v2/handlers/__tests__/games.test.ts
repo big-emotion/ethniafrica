@@ -189,7 +189,86 @@ describe("getGameRoundsHandler", () => {
 
     await getGameRoundsHandler(getGameBySlug("pays-davant"), 0);
 
-    expect(loadGameCorpus).toHaveBeenCalledWith("countries");
+    expect(loadGameCorpus).toHaveBeenCalledWith("countries", undefined);
+  });
+});
+
+/**
+ * Scoping (charter §10 step 5). Two axes over 54 countries and 24 families
+ * turn three games into hundreds of distinct sessions without one extra
+ * mechanic — and inside a country run, every distractor is plausible by
+ * construction.
+ */
+describe("a session can be narrowed to a country or a family", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+    loadGameCorpus.mockResolvedValue(emptyCorpus);
+  });
+
+  // @req REQ-120
+  it("carries a country scope down to the corpus query", async () => {
+    await getGameRoundsHandler(getGameBySlug("appellations"), 0, {
+      countryId: "GHA",
+    });
+
+    expect(loadGameCorpus).toHaveBeenCalledWith("peoples", {
+      countryId: "GHA",
+    });
+  });
+
+  // @req REQ-120
+  it("carries a family scope down to the corpus query", async () => {
+    await getGameRoundsHandler(getGameBySlug("appellations"), 0, {
+      familyId: "FLG_NIGER_CONGO",
+    });
+
+    expect(loadGameCorpus).toHaveBeenCalledWith("peoples", {
+      familyId: "FLG_NIGER_CONGO",
+    });
+  });
+
+  // @req REQ-120
+  it("reports no scope when none was asked for", async () => {
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("appellations"),
+      0
+    );
+
+    expect(envelope.data.scope).toBeNull();
+    expect(loadGameCorpus).toHaveBeenCalledWith("peoples", undefined);
+  });
+
+  // A country game has neither a family nor a single country to be narrowed
+  // to: offering the filter would name something the game cannot apply.
+  // @req REQ-120
+  it("refuses a scope on a game that plays over countries", async () => {
+    const envelope = await getGameRoundsHandler(getGameBySlug("mercator"), 0, {
+      familyId: "FLG_NIGER_CONGO",
+    });
+
+    expect(loadGameCorpus).toHaveBeenCalledWith("countries", undefined);
+    expect(envelope.data.scope).toBeNull();
+    expect(envelope.data.scopeChoices).toBeNull();
+  });
+
+  // @req REQ-120
+  it("offers the whole country and family vocabulary even inside a scope", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      families: [{ id: "FLG_A", nameFr: "Famille A" }],
+      countries: [country("GHA", "Ghana"), country("KEN", "Kenya")],
+    });
+
+    const envelope = await getGameRoundsHandler(
+      getGameBySlug("appellations"),
+      0,
+      { familyId: "FLG_A" }
+    );
+
+    expect(envelope.data.scopeChoices.families).toEqual([
+      { id: "FLG_A", labelFr: "Famille A" },
+    ]);
+    expect(envelope.data.scopeChoices.countries).toHaveLength(2);
   });
 });
 

@@ -106,6 +106,19 @@ export interface GameMigrationFixture {
   peoples: GameMigrationPeople[];
 }
 
+/**
+ * Which slice of the corpus a session is drawn from (charter §10 step 5).
+ *
+ * Both axes are optional and compose: given together they mean the peoples of
+ * that family present in that country. Only the peoples slice can be scoped —
+ * a session about the shapes of countries has no family, and « le pays
+ * d'avant » scoped to one country would be a quiz with one answer.
+ */
+export interface GameScope {
+  countryId?: CountryId;
+  familyId?: string;
+}
+
 /** Everything a round generator may be handed. A game reads only its own slice. */
 export interface GameCorpus {
   peoples: GamePeopleFixture[];

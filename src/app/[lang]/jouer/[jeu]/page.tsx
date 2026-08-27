@@ -3,12 +3,15 @@ import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
 import { GamePlayHost } from "@/components/play/GamePlayHost";
+import { GameScopePicker } from "@/components/play/GameScopePicker";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { OG_TITLE } from "@/lib/brand";
 
 interface GamePageProps {
   params: Promise<{ jeu: string }>;
+  /** `?pays=GHA` / `?famille=FLG_…` — the session's scope, absent for the whole corpus. */
+  searchParams: Promise<{ pays?: string; famille?: string }>;
 }
 
 /**
@@ -37,7 +40,10 @@ export async function generateMetadata({
 }
 
 // @req REQ-120
-export default async function GamePage({ params }: GamePageProps) {
+export default async function GamePage({
+  params,
+  searchParams,
+}: GamePageProps) {
   const { jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) notFound();
@@ -55,10 +61,28 @@ export default async function GamePage({ params }: GamePageProps) {
     (sum, char) => sum + char.charCodeAt(0),
     0
   );
-  const envelope = await getGameRoundsHandler(game, seed);
+
+  // The scope rides in the URL rather than in component state so a narrowed
+  // session is a page a reader can bookmark, share and come back to — and so
+  // the rounds keep being built once, on the server, from what the address
+  // says.
+  const { pays, famille } = await searchParams;
+  const envelope = await getGameRoundsHandler(game, seed, {
+    countryId: pays,
+    familyId: famille,
+  });
+  const { scope, scopeChoices } = envelope.data;
 
   return (
     <PageLayout language="fr" title={game.nameFr} subtitle={game.promptFr}>
+      {scopeChoices ? (
+        <GameScopePicker
+          choices={scopeChoices}
+          scope={scope}
+          action={`/fr/jouer/${game.slug}`}
+          className="mb-4"
+        />
+      ) : null}
       <GamePlayHost game={game} rounds={envelope.data.rounds} />
     </PageLayout>
   );

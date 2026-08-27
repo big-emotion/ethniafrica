@@ -18,7 +18,11 @@ import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type { DifficultyBand, GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { loadGameCorpus } from "@/api/v2/services/gamesService";
-import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
+import type {
+  GameCorpus,
+  GameCountryFixture,
+  GameScope,
+} from "@/lib/games/corpus";
 import { buildAppellationsRound } from "@/lib/games/rounds/appellationsRound";
 import { buildHistoricalNameRound } from "@/lib/games/rounds/historicalNameRound";
 import {
@@ -26,6 +30,17 @@ import {
   mercatorMisleads,
   trueAreaKm2,
 } from "@/lib/games/rounds/mercatorRound";
+
+/** One narrowing a reader may pick, already resolved to a readable label. */
+export interface GameScopeOption {
+  id: string;
+  labelFr: string;
+}
+
+export interface GameScopeChoices {
+  countries: GameScopeOption[];
+  families: GameScopeOption[];
+}
 
 export interface GameRoundsData {
   rounds: GameRound[];
@@ -35,6 +50,25 @@ export interface GameRoundsData {
    * states outright rather than rendering as an empty screen.
    */
   corpusLimited: boolean;
+  /** The narrowing actually applied; null when the session spans the corpus. */
+  scope: GameScope | null;
+  /** What the reader may narrow to; null for a game that cannot be narrowed. */
+  scopeChoices: GameScopeChoices | null;
+}
+
+/**
+ * A blank query string is not a scope. `?pays=` arrives as an empty string
+ * from the URL and must read as "no filter", not as a country whose id is
+ * nothing — which would return an empty session under a filter nobody set.
+ */
+function definedScope(requested?: GameScope): GameScope | null {
+  const countryId = requested?.countryId?.trim();
+  const familyId = requested?.familyId?.trim();
+  if (!countryId && !familyId) return null;
+  return {
+    ...(countryId ? { countryId } : {}),
+    ...(familyId ? { familyId } : {}),
+  };
 }
 
 /**
@@ -206,13 +240,34 @@ function assembleRounds(
 // @req REQ-120
 export async function getGameRoundsHandler(
   game: GameDefinition,
-  seed: number = 0
+  seed: number = 0,
+  requestedScope?: GameScope
 ): Promise<ApiEnvelope<GameRoundsData>> {
-  const corpus = await loadGameCorpus(game.dataSource);
+  // Only the peoples games have a family or a country to be narrowed to.
+  // « La taille qu'on vous a cachée » plays over shapes and « le pays d'avant »
+  // scoped to one country would be a question with one answer, so offering
+  // either the filter would name something the game cannot apply.
+  const scopable = game.dataSource === "peoples";
+  const scope = scopable ? definedScope(requestedScope) : null;
+
+  const corpus = await loadGameCorpus(game.dataSource, scope ?? undefined);
   const rounds = assembleRounds(game, corpus, seed);
 
   return createApiResponse({
     rounds,
     corpusLimited: rounds.length < game.roundsPerSession,
+    scope,
+    scopeChoices: scopable
+      ? {
+          countries: corpus.countries.map((entry) => ({
+            id: entry.id,
+            labelFr: entry.nameFr,
+          })),
+          families: corpus.families.map((entry) => ({
+            id: entry.id,
+            labelFr: entry.nameFr,
+          })),
+        }
+      : null,
   });
 }

@@ -21,6 +21,7 @@ import type {
   GameHistoricalNames,
   GameKingdom,
   GamePeopleFixture,
+  GameScope,
 } from "@/lib/games/corpus";
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
@@ -175,12 +176,55 @@ async function getCurrentCountriesMap(
   return map;
 }
 
-async function loadPeoples(
-  supabase: SupabaseClient
-): Promise<GamePeopleFixture[]> {
+/**
+ * Ids of the peoples the corpus records in one country.
+ *
+ * Resolved here rather than by filtering the loaded page: `loadPeoples` reads
+ * the first `PEOPLE_POOL_SIZE` ids out of ~890, so narrowing afterwards would
+ * answer "which of these 150 are Ghanaian" instead of "which peoples are
+ * Ghanaian", and a country whose peoples all sort late would come back empty
+ * while the corpus holds plenty.
+ */
+async function peopleIdsInCountry(
+  supabase: SupabaseClient,
+  countryId: CountryId
+): Promise<string[]> {
   const { data, error } = await supabase
+    .from("afrik_people_countries")
+    .select("people_id")
+    .eq("country_id", countryId);
+
+  if (error) {
+    logger.error("Games: country scope lookup failed", error);
+    return [];
+  }
+  return (data ?? []).map((row) => row.people_id as string);
+}
+
+async function loadPeoples(
+  supabase: SupabaseClient,
+  scope?: GameScope
+): Promise<GamePeopleFixture[]> {
+  let scopedIds: string[] | null = null;
+  if (scope?.countryId) {
+    scopedIds = await peopleIdsInCountry(supabase, scope.countryId);
+    // A country the corpus records no people in yields no session. Falling
+    // through to the unscoped query would serve the whole continent under
+    // that country's name.
+    if (scopedIds.length === 0) return [];
+  }
+
+  let peoplesQuery = supabase
     .from("afrik_peoples")
-    .select("id, name_main, language_family_id, content")
+    .select("id, name_main, language_family_id, content");
+  if (scope?.familyId) {
+    peoplesQuery = peoplesQuery.eq("language_family_id", scope.familyId);
+  }
+  if (scopedIds) {
+    peoplesQuery = peoplesQuery.in("id", scopedIds);
+  }
+
+  const { data, error } = await peoplesQuery
     .order("id")
     .limit(PEOPLE_POOL_SIZE);
 
@@ -284,10 +328,16 @@ async function loadCountries(
 /**
  * Loads only the slice a game reads, plus the peoples pool and country
  * names the peoples games need for their verbatim options.
+ *
+ * `scope` narrows the peoples pool only. The family and country lists come
+ * back whole whatever the scope, because they are also the vocabulary the
+ * scope picker offers — shrinking them to the current scope would let a
+ * reader narrow once and never get back out.
  */
 // @req REQ-120
 export async function loadGameCorpus(
-  dataSource: GameDataSource
+  dataSource: GameDataSource,
+  scope?: GameScope
 ): Promise<GameCorpus> {
   const supabase = createServerClient();
   const empty: GameCorpus = {
@@ -305,7 +355,7 @@ export async function loadGameCorpus(
       // reader can read.
       return {
         ...empty,
-        peoples: await loadPeoples(supabase),
+        peoples: await loadPeoples(supabase, scope),
         families: await loadFamilies(supabase),
         countries: await loadCountries(supabase),
       };
