@@ -9,7 +9,11 @@ import type { Page } from "@playwright/test";
 // desktop-800/moderator-1024), so every test below sets its viewport
 // explicitly rather than relying on project config, mirroring
 // e2e/home-visual.spec.ts.
-const HOME_URL = "/fr";
+// Pinned: the hero draws one of eleven modules per request (REQ-115), and
+// this suite is about the globe specifically. Without the pin ten runs in
+// eleven would open on a game and fail on a locator that is simply not on
+// the page.
+const HOME_URL = "/fr?hero=mercator";
 const BREAKPOINTS = [430, 720, 1200] as const;
 const ROTATE_SURFACE_NAME = /Globe interactif de l'Afrique/;
 
