@@ -202,6 +202,7 @@ export default async function PaysSlugPage({
     <PageLayout language="fr" sectionName="Pays" flushTop>
       <FicheSequence
         context={{ entityType: "country", payload: countryDetail }}
+        recordPlacement="body"
         globe={
           // The band is the measure inside itself: the picker's own container
           // would have parked it off-centre against a globe that now reaches

@@ -324,11 +324,15 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     ]);
   });
 
+  // One globe, one parchment — the shape the mockup asks of a fiche whose
+  // dossier is the page. The chapter sequence used to sit between the two,
+  // and for a country it only ever resolved to a scale panel restating what
+  // the parchment says twice over.
   // @req REQ-091
-  it("renders the live fiche as the panel sequence, record chapter last", async () => {
+  it("renders the live fiche as one parchment under the globe", async () => {
     const { container } = await renderPage("NGA");
 
-    expect(renderedAnchors(container)).toEqual(["fiche-scale", "fiche-record"]);
+    expect(renderedAnchors(container)).toEqual(["fiche-record"]);
     expect(
       container
         .querySelector("#fiche-record")
@@ -336,14 +340,16 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     ).toBe(true);
   });
 
+  // The dossier *is* this page. A reading gate over it asks the reader to
+  // open the thing they came for, and it is what made the fiche look nothing
+  // like its mockup: a globe, then a chevron.
   // @req REQ-091
-  it("gates the record behind a single reading gate", async () => {
+  it("opens the dossier as the page body, with no reading gate", async () => {
     const { container } = await renderPage("NGA");
 
-    // A route that wrapped the detail view itself would nest one <details>
-    // inside the other, burying the dossier behind two disclosures.
-    expect(container.querySelectorAll("details")).toHaveLength(1);
-    expect(screen.getByText("Lire le dossier complet")).toBeInTheDocument();
+    expect(container.querySelectorAll("details")).toHaveLength(0);
+    expect(screen.queryByText("Lire le dossier complet")).toBeNull();
+    expect(screen.getByTestId("country-detail-live")).toBeInTheDocument();
   });
 
   // The band is what makes the globe reach both edges of the viewport and
@@ -379,24 +385,23 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     );
   });
 
+  // The composer used to ask for chapters the registry then declined, which
+  // left the fiche's shape depending on two rules agreeing. It asks for one
+  // chapter now, so there is nothing left to decline.
   // @req REQ-091
-  it("omits the anchors of the chapters no country panel exists for yet", async () => {
+  it("asks for the dossier and nothing else", async () => {
     const { container } = await renderPage("NGA");
 
-    // Identity, territory, fragmentation and voices are people-shaped panels
-    // (stories 15.3–15.8 own their country counterparts): the composer asks
-    // for them, the registry declines, and no empty anchor is left behind.
-    const composed = derivePanelSequence(
-      "country",
-      mapCountryDetail(NIGERIA_ROW)
-    );
+    expect(
+      derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW))
+    ).toEqual(["record"]);
     for (const kind of [
       "identity",
+      "scale",
       "territory",
       "fragmentation",
       "voices",
     ] as const) {
-      expect(composed).toContain(kind);
       expect(container.querySelector(`#fiche-${kind}`)).toBeNull();
     }
   });

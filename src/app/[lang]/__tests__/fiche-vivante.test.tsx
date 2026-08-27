@@ -143,7 +143,12 @@ vi.mock("@/components/people/PeopleDetailViewV2", () => ({
 }));
 
 vi.mock("@/components/country/CountryRecordView", () => ({
-  CountryRecordView: () => <div data-testid="country-record-view" />,
+  // Carries text on purpose: the country dossier is the page body now, so an
+  // empty stub would trip the "no anchor scrolls to an empty chapter" guard on
+  // the very section that guard exists to protect.
+  CountryRecordView: () => (
+    <div data-testid="country-record-view">Dossier AFRIK du pays</div>
+  ),
 }));
 
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
@@ -274,6 +279,12 @@ interface FicheRouteUnderTest {
    * corpus source as plain text, so a fiche reduced to scale prints none.
    */
   printsDossierCitation: boolean;
+  /**
+   * Whether the dossier is a gated chapter (FR97) or the page's own body.
+   * A fiche whose parchment *is* the page opens it unfolded; asking the reader
+   * to disclose what they came for is what the Atlas mockup removes.
+   */
+  gatesRecord: boolean;
 }
 
 const FICHE_ROUTES: FicheRouteUnderTest[] = [
@@ -306,6 +317,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     composedSequence: () =>
       derivePanelSequence("people", mapPeopleDetail(YORUBA_ROW)),
     printsDossierCitation: true,
+    gatesRecord: true,
   },
   {
     segment: "pays",
@@ -330,6 +342,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     composedSequence: () =>
       derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW)),
     printsDossierCitation: false,
+    gatesRecord: false,
   },
   {
     segment: "familles",
@@ -358,6 +371,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         mapLanguageFamilyDetail(NIGER_CONGO_ROW)
       ),
     printsDossierCitation: true,
+    gatesRecord: true,
   },
 ];
 
@@ -598,9 +612,10 @@ describe("fiche vivante — the reading gate", () => {
       const { container } = await renderLiveFiche(route);
 
       // Two means a route wrapped a record the sequence already gates, burying
-      // the dossier under a disclosure inside a disclosure.
+      // the dossier under a disclosure inside a disclosure. Zero is the body
+      // placement, where the dossier is the page and there is nothing to open.
       expect(container.querySelectorAll("details.reading-gate")).toHaveLength(
-        1
+        route.gatesRecord ? 1 : 0
       );
     }
   );
