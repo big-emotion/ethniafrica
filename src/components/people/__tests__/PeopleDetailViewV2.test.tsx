@@ -48,6 +48,30 @@ const fragmentation: PeopleFragmentation = {
 describe("PeopleDetailViewV2", () => {
   afterEach(cleanup);
 
+  // Lighthouse scored the fiche 0.98 on accessibility for exactly one reason:
+  // the parchment went from h1 straight to the h3 inside the naming block,
+  // because a section's label was a <div>. It had been invisible while the
+  // reading gate was closed. The mockup writes those labels as headings, so
+  // the fix and the design agree.
+  // @req REQ-115
+  it("descends heading levels one at a time, skipping none", () => {
+    const { container } = render(
+      <PeopleDetailViewV2 people={ewe} fragmentation={fragmentation} />
+    );
+
+    const levels = Array.from(
+      container.querySelectorAll<HTMLElement>("h1, h2, h3, h4, h5, h6")
+    ).map((heading) => Number(heading.tagName[1]));
+
+    expect(levels.length).toBeGreaterThan(1);
+    for (let i = 1; i < levels.length; i++) {
+      expect(
+        levels[i] - levels[i - 1],
+        `heading level jumped from h${levels[i - 1]} to h${levels[i]}`
+      ).toBeLessThanOrEqual(1);
+    }
+  });
+
   // The view was a client component that fetched its own fiche, which cost the
   // page its server rendering — and with it the axe audit and the Lighthouse
   // score, on a fiche measured by both. The route already awaits all of this.

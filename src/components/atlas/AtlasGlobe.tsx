@@ -496,6 +496,13 @@ export interface AtlasGlobeProps {
    * entities are different things, not because the button is.
    */
   wholeAreaLabel?: string;
+  /**
+   * What the target picker calls the area, written to follow "de" —
+   * `l'empreinte` for a family, `présence` for a people. Same reason as
+   * `wholeAreaLabel`: the entities differ, so the mockups word the control
+   * differently.
+   */
+  areaNoun?: string;
   className?: string;
   /**
    * How a target is offered. "markers" pins a pastille on each one, which reads
@@ -577,6 +584,7 @@ export function AtlasGlobe({
   facts,
   fallbackNote,
   wholeAreaLabel = "Toute l'empreinte",
+  areaNoun = "l'empreinte",
   className,
   targetPicker = "markers",
   legend,
@@ -811,6 +819,7 @@ export function AtlasGlobe({
             memberCountByCountry={memberCountByCountry}
             chosenCountryId={chosenCountryId}
             onChoose={chooseTarget}
+            areaNoun={areaNoun}
           />
         </div>
       )}

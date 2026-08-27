@@ -1,5 +1,6 @@
 import type { FamilyDecolonialHeaderData } from "@/lib/familyDataTransformer";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
+import { bcp47LanguageTag } from "@/lib/languageTag";
 
 export interface FamilyDecolonialHeaderProps {
   data: FamilyDecolonialHeaderData;
@@ -43,7 +44,7 @@ export function FamilyDecolonialHeader({
           <p key={field}>
             <strong>{label} :</strong>{" "}
             {field === "selfAppellation" ? (
-              <span lang={selfAppellationLang}>{value}</span>
+              <span lang={bcp47LanguageTag(selfAppellationLang)}>{value}</span>
             ) : (
               value
             )}

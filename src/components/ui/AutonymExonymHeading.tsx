@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { bcp47LanguageTag } from "@/lib/languageTag";
 
 export type AutonymExonymHeadingVariant =
   | "hero"
@@ -89,6 +90,11 @@ export function AutonymExonymHeading({
 }: AutonymExonymHeadingProps) {
   const [expanded, setExpanded] = useState(false);
 
+  // The corpus writes ISO 639-3 and `lang` wants the shortest tag the language
+  // has. Emitting `yor` where BCP 47 asks for `yo` reads the autonym in the
+  // page's own voice — the one thing this component exists to prevent.
+  const autonymLang = bcp47LanguageTag(autonymIso639_3);
+
   /**
    * The fiche's opening statement: the name borne, and the names imposed, set
    * side by side — autonym on the accent, exonyms on the colonial red.
@@ -117,7 +123,7 @@ export function AutonymExonymHeading({
           </h3>
           <p
             data-autonym="true"
-            lang={autonymIso639_3}
+            lang={autonymLang}
             className="font-afh-display text-afh-h3 font-black leading-tight"
           >
             {autonym ?? nameMain}
@@ -229,7 +235,7 @@ export function AutonymExonymHeading({
       data-variant={variant}
     >
       <Heading>
-        <span lang={autonymIso639_3} className={autonymClasses}>
+        <span lang={autonymLang} className={autonymClasses}>
           {autonym}
         </span>
         {ipa && (

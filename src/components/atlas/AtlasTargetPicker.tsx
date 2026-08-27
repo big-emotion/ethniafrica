@@ -25,6 +25,15 @@ export interface AtlasTargetPickerProps {
   memberCountByCountry: Record<string, number>;
   chosenCountryId: CountryId | null;
   onChoose: (countryId: CountryId) => void;
+  /**
+   * What the fiche calls the area these countries belong to, written to follow
+   * "de": a family has `l'empreinte`, a people has `présence`. The mockups
+   * word the control differently because the entities are different things —
+   * the same reason the globe takes its own `wholeAreaLabel`. It carries its
+   * own elision, since "de l'empreinte" and "de présence" do not take the
+   * same particle.
+   */
+  areaNoun?: string;
 }
 
 const LIST_STYLE: CSSProperties = {
@@ -47,7 +56,9 @@ export function AtlasTargetPicker({
   memberCountByCountry,
   chosenCountryId,
   onChoose,
+  areaNoun = "l'empreinte",
 }: AtlasTargetPickerProps) {
+  const chooseLabel = `Choisir un pays de ${areaNoun}`;
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -90,7 +101,7 @@ export function AtlasTargetPicker({
         // value stops saying what it does, so a screen-reader user who lands
         // on it after choosing hears "Bénin, button" and nothing about what
         // pressing it would do.
-        aria-label="Choisir un pays de l'empreinte"
+        aria-label={chooseLabel}
         onClick={() => {
           shouldFocusFirst.current = !open;
           setOpen(!open);
@@ -109,7 +120,7 @@ export function AtlasTargetPicker({
           cursor: "pointer",
         }}
       >
-        {chosen ? chosen.nameFr : "Choisir un pays de l'empreinte"}
+        {chosen ? chosen.nameFr : chooseLabel}
         <span aria-hidden="true">▾</span>
       </button>
 
@@ -117,7 +128,7 @@ export function AtlasTargetPicker({
         <div
           ref={listRef}
           role="listbox"
-          aria-label="Pays de l'empreinte"
+          aria-label={`Pays de ${areaNoun}`}
           style={LIST_STYLE}
           onKeyDown={(event) => {
             if (event.key === "Escape") {

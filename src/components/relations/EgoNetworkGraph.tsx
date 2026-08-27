@@ -3,6 +3,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { bcp47LanguageTag } from "@/lib/languageTag";
 import { RELATION_TYPE_LABELS } from "@/components/relations/RelationTypeBadge";
 import type {
   RelationBadgeType,
@@ -261,7 +262,7 @@ export function EgoNetworkGraph({
               <text
                 textAnchor="middle"
                 dominantBaseline="middle"
-                lang={center.nameMainIso639_3}
+                lang={bcp47LanguageTag(center.nameMainIso639_3)}
                 className="fill-afh-text text-[10px] font-semibold"
               >
                 {center.nameMain}

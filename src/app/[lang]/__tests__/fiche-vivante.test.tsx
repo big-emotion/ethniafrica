@@ -139,7 +139,11 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // gate is counted below, and a <details> buried inside a real detail view would
 // make that count say nothing about the route's own wiring.
 vi.mock("@/components/people/PeopleDetailViewV2", () => ({
-  PeopleDetailViewV2: () => <div data-testid="people-record-view" />,
+  // Carries text: a chapter's emptiness is asserted on its text content, and
+  // the real parchment is the wordiest thing on the page.
+  PeopleDetailViewV2: () => (
+    <div data-testid="people-record-view">Dossier AFRIK du peuple</div>
+  ),
 }));
 
 vi.mock("@/components/country/CountryRecordView", () => ({
@@ -316,8 +320,10 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     },
     composedSequence: () =>
       derivePanelSequence("people", mapPeopleDetail(YORUBA_ROW)),
-    printsDossierCitation: true,
-    gatesRecord: true,
+    // No chapter runs above the parchment to cite it, and the parchment is
+    // not a citation of itself.
+    printsDossierCitation: false,
+    gatesRecord: false,
   },
   {
     segment: "pays",
@@ -607,9 +613,9 @@ describe("fiche vivante — accent scope", () => {
 describe("fiche vivante — the reading gate", () => {
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: gates the dossier behind exactly one reading gate",
+    "$segment: gates the dossier exactly as its shape asks, and no more",
     async (route) => {
-      const { container } = await renderLiveFiche(route);
+      const { container, getByTestId } = await renderLiveFiche(route);
 
       // Two means a route wrapped a record the sequence already gates, burying
       // the dossier under a disclosure inside a disclosure. Zero is the body
@@ -617,6 +623,9 @@ describe("fiche vivante — the reading gate", () => {
       expect(container.querySelectorAll("details.reading-gate")).toHaveLength(
         route.gatesRecord ? 1 : 0
       );
+
+      // Gated or not, the dossier itself is always in the DOM.
+      expect(getByTestId(route.recordTestId)).toBeInTheDocument();
     }
   );
 });

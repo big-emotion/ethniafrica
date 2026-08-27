@@ -63,10 +63,10 @@ export interface FicheSequenceProps {
   context: FichePanelContext;
   /** The entity detail view — the sequence decides whether it is a gated chapter or the page's body. */
   record: ReactNode;
+  /** The REQ-116 atlas globe (AtlasGlobe) — rendered above everything else, on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
+  globe?: ReactNode;
   /** Defaults to the FR97 reading gate; see FicheRecordPlacement. */
   recordPlacement?: FicheRecordPlacement;
-  /** The REQ-116 atlas globe (AtlasGlobe) — rendered above ContextTriad, ahead of every panel, on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
-  globe?: ReactNode;
   className?: string;
 }
 

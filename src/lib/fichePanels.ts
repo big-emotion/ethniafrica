@@ -55,18 +55,25 @@ export const PANEL_TABLE: readonly PanelDefinition[] = [
   { kind: "record", order: 8, mandatory: true },
 ];
 
-/** Which panel kinds apply at all for a given entity type. */
+/**
+ * Which panel kinds apply at all for a given entity type.
+ *
+ * A people has only its dossier. The Atlas mockup gives the people fiche one
+ * globe and one parchment, and every chapter the panel sequence used to add
+ * above that parchment either restates it or competes with it: identity and
+ * scale repeat the fiche head's autonym and population chips, territory draws
+ * a second, coarser map under the globe, and fragmentation and voices are the
+ * very components the parchment already renders — twice on screen, and twice
+ * fetched, in the voices case. `tongue` never had a people panel at all
+ * (panelRegistry returns null for anything but a language family).
+ *
+ * `links` was the one chapter with no parchment equivalent, so its data moved
+ * rather than being dropped: the route now feeds the sourced ego-network to
+ * PeopleRelatedPeoplesSection, which had been standing there with an empty
+ * `relationsPreview` waiting for it.
+ */
 const ENTITY_INVENTORY: Record<FicheEntityType, readonly PanelKind[]> = {
-  people: [
-    "identity",
-    "scale",
-    "territory",
-    "tongue",
-    "fragmentation",
-    "links",
-    "voices",
-    "record",
-  ],
+  people: ["record"],
   // A country has only its dossier. The Atlas mockup gives the country fiche
   // one globe and one parchment, and every chapter the sequence used to add
   // above it either restated the parchment or resolved to nothing: `scale`
@@ -101,14 +108,15 @@ export function isPresent(value: unknown): boolean {
 
 type GatingPredicate<T> = (payload: T) => boolean;
 
+/**
+ * A people's inventory holds only the mandatory record, which no gate can
+ * remove — so there is nothing left for a predicate to decide. The gates that
+ * stood here keyed on fields unrelated to what the panels actually read
+ * (`territory` on `origins`, `links` on `historicalRole`), and kept a people
+ * passing the composer only to resolve to null downstream.
+ */
 const PEOPLE_GATES: Partial<Record<PanelKind, GatingPredicate<PeopleDetail>>> =
-  {
-    territory: (payload) => isPresent(payload.origins),
-    tongue: (payload) => isPresent(payload.languages),
-    fragmentation: (payload) => isPresent(payload.ethnicities),
-    links: (payload) => isPresent(payload.historicalRole),
-    voices: (payload) => isPresent(payload.culture),
-  };
+  {};
 
 /**
  * A country's inventory holds only the mandatory record, which no gate can

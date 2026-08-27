@@ -83,12 +83,8 @@ describe("fichePanels — panel composition engine (FR98)", () => {
 
   describe("mandatory-panel invariant", () => {
     // @req REQ-091
-    it("keeps only identity(1), scale(2) and record(8) for a minimal people payload", () => {
-      expect(derivePanelSequence("people", MINIMAL_PEOPLE)).toEqual([
-        "identity",
-        "scale",
-        "record",
-      ]);
+    it("keeps a minimal people payload to its record alone", () => {
+      expect(derivePanelSequence("people", MINIMAL_PEOPLE)).toEqual(["record"]);
     });
 
     // @req REQ-091
@@ -107,18 +103,13 @@ describe("fichePanels — panel composition engine (FR98)", () => {
   });
 
   describe("per-entity inventories", () => {
+    // The people fiche is the globe and the parchment: every chapter the
+    // sequence used to add above that parchment either restated it or
+    // competed with it, so a people's inventory is now the record alone and a
+    // fully-populated payload adds nothing to it.
     // @req REQ-091
-    it("derives the full 8-panel people inventory from a fully-populated payload", () => {
-      expect(derivePanelSequence("people", FULL_PEOPLE)).toEqual([
-        "identity",
-        "scale",
-        "territory",
-        "tongue",
-        "fragmentation",
-        "links",
-        "voices",
-        "record",
-      ]);
+    it("derives the record alone for a people, however full the payload", () => {
+      expect(derivePanelSequence("people", FULL_PEOPLE)).toEqual(["record"]);
     });
 
     // However full the payload, a country fiche is one globe and one
@@ -162,59 +153,22 @@ describe("fichePanels — panel composition engine (FR98)", () => {
   });
 
   describe("progressive data-gating", () => {
+    // A people has no gated chapter left to open, so filling the very
+    // sections that used to gate one — origins, languages, ethnicities — must
+    // leave the sequence where it was. This is the guard against a chapter
+    // creeping back above the parchment through the gate table.
     // @req REQ-091
-    it("adds territory only once origins is present (people)", () => {
-      const withOrigins: PeopleDetail = {
-        ...MINIMAL_PEOPLE,
-        origins: { ancientOrigins: "Region X" },
-      };
-      expect(derivePanelSequence("people", withOrigins)).toEqual([
-        "identity",
-        "scale",
-        "territory",
-        "record",
-      ]);
-    });
+    it("gates no chapter in for a people, whichever section is filled", () => {
+      const filled: PeopleDetail[] = [
+        { ...MINIMAL_PEOPLE, origins: { ancientOrigins: "Region X" } },
+        { ...MINIMAL_PEOPLE, languages: { mainLanguage: "swa" } },
+        { ...MINIMAL_PEOPLE, ethnicities: ["Sous-groupe A"] },
+        { ...MINIMAL_PEOPLE, ethnicities: [] },
+      ];
 
-    // @req REQ-091
-    it("adds tongue only once languages is present (people)", () => {
-      const withLanguages: PeopleDetail = {
-        ...MINIMAL_PEOPLE,
-        languages: { mainLanguage: "swa" },
-      };
-      expect(derivePanelSequence("people", withLanguages)).toEqual([
-        "identity",
-        "scale",
-        "tongue",
-        "record",
-      ]);
-    });
-
-    // @req REQ-091
-    it("adds fragmentation only once ethnicities is non-empty (people)", () => {
-      const withEthnicities: PeopleDetail = {
-        ...MINIMAL_PEOPLE,
-        ethnicities: ["Sous-groupe A"],
-      };
-      expect(derivePanelSequence("people", withEthnicities)).toEqual([
-        "identity",
-        "scale",
-        "fragmentation",
-        "record",
-      ]);
-    });
-
-    // @req REQ-091
-    it("does not gate fragmentation in when ethnicities is an empty array (people)", () => {
-      const withEmptyEthnicities: PeopleDetail = {
-        ...MINIMAL_PEOPLE,
-        ethnicities: [],
-      };
-      expect(derivePanelSequence("people", withEmptyEthnicities)).toEqual([
-        "identity",
-        "scale",
-        "record",
-      ]);
+      for (const payload of filled) {
+        expect(derivePanelSequence("people", payload)).toEqual(["record"]);
+      }
     });
 
     // The country gates keyed on fields unrelated to what their panels read —

@@ -87,7 +87,7 @@ describe("IdentityPanel", () => {
     );
     const heading = screen.getByText("Yorùbá ènìyàn");
     expect(heading.closest("h1")).not.toBeNull();
-    expect(heading).toHaveAttribute("lang", "yor");
+    expect(heading).toHaveAttribute("lang", "yo");
   });
 
   // @req REQ-091
