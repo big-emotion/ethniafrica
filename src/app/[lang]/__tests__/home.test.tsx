@@ -55,7 +55,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // @req FR91 @req FR95
   // @req REQ-044
   it("renders the hero with a single verbatim H1 and zero H3", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
@@ -71,7 +71,9 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // globe answers the reader's choice by repainting its own sphere.
   // @req REQ-115
   it("leaves the whole hero, globe panel included, on the reader's chosen surface", async () => {
-    const { container } = render(await Home());
+    const { container } = render(
+      await Home({ searchParams: Promise.resolve({}) })
+    );
 
     expect(container.querySelector(".home-hero")).not.toHaveClass(
       "afh-on-night"
@@ -84,7 +86,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
   // @req REQ-113
   it("renders exactly three axes below the hero and no per-module card grid", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     expect(
       screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
@@ -97,7 +99,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
   // @req REQ-113
   it("sources each axis figure from getCorpusCounts, not a literal", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
       `${fixtureCounts.peoples} peuples · ${fixtureCounts.countries} pays`
@@ -112,7 +114,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // home any more.
   // @req REQ-114
   it("keeps each axis's hub route as its fallback href", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
       "href",
@@ -130,7 +132,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
   // @req REQ-114
   it("hands the axes their modules from the server, ready to deploy on click", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
@@ -142,7 +144,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
   // @req REQ-113
   it("closes on the sourcing claim and links to the page that backs it", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     const strip = screen.getByTestId("home-trust-strip");
     expect(strip).toHaveTextContent("Chaque source citée");
@@ -155,7 +157,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // @req FR95
   // @req REQ-044
   it("sources the brand line from src/lib/brand.ts, never a literal", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
     // The brand line was dropped from the hero (ETNI-852); brand.ts remains
     // the single source of truth for anything that does render it (e.g. OG
     // metadata), asserted below.
@@ -165,7 +167,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
   // @req FR95
   // @req REQ-044
   it("no longer renders the eyebrow, the PRODUCT_NAME line or the five demo pills", async () => {
-    render(await Home());
+    render(await Home({ searchParams: Promise.resolve({}) }));
 
     expect(
       screen.queryByText("EXPLORER · COMPRENDRE · JOUER")
@@ -188,5 +190,37 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     expect(metadata.openGraph?.title).toBe(OG_TITLE);
     expect(metadata.openGraph?.description).toBe(OG_DESCRIPTION);
     expect(metadata.openGraph?.url).toBe("/fr");
+  });
+
+  // @req REQ-115
+  it("says which axis and which module the band is currently showing", async () => {
+    render(await Home({ searchParams: Promise.resolve({}) }));
+
+    const chip = screen.getByTestId("hero-provenance");
+    expect(chip).toHaveTextContent("Jouer");
+    expect(chip).toHaveTextContent("La taille qu'on vous a cachée");
+    expect(chip.getAttribute("href")).toBe("/fr/jouer/mercator");
+  });
+
+  // The chip and the stage read --accent off the wrapper, so the wrapper is
+  // the only thing that has to know which axis was drawn.
+  // @req REQ-115
+  it("scopes the band to the drawn module's axis accent", async () => {
+    const { container } = render(
+      await Home({ searchParams: Promise.resolve({}) })
+    );
+
+    expect(container.querySelector(".home-globe-holder")).toHaveClass(
+      "afh-accent-perv"
+    );
+  });
+
+  // @req REQ-115
+  it("lets ?hero= pin one module, so the band is reproducible", async () => {
+    render(await Home({ searchParams: Promise.resolve({ hero: "mercator" }) }));
+
+    expect(screen.getByTestId("hero-provenance")).toHaveTextContent(
+      "La taille qu'on vous a cachée"
+    );
   });
 });

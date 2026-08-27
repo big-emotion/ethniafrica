@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { getLocalizedRoute } from "@/lib/routing";
+import { moduleHref } from "@/lib/hubs/moduleHref";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import {
@@ -78,13 +78,7 @@ export function AccessModeHub({
       >
         <ul className="flex flex-col gap-3" role="list">
           {modules.map((module) => {
-            // A game has no PageType of its own — it is addressed by slug
-            // under the Jouer hub — so the slug wins over any page.
-            const href = module.gameSlug
-              ? `/${language}/jouer/${module.gameSlug}`
-              : module.page
-                ? getLocalizedRoute(language, module.page)
-                : null;
+            const href = moduleHref(language, module);
 
             return (
               <li key={module.id} data-testid={`hub-module-${module.id}`}>

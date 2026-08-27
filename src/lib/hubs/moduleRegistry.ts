@@ -73,6 +73,16 @@ export interface HubModuleDefinition {
   /** A game under the Jouer hub, addressed as /fr/jouer/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
   gameSlug?: string;
   featureFlag?: ModuleFeatureFlag;
+  /**
+   * Whether this module can occupy the home's hero slot (REQ-115). It is a
+   * flag and not a component on purpose: this file is imported by server
+   * code — moduleAvailability's probe, and the home page itself — while a
+   * hero preview is a `dynamic(..., { ssr: false })` island, which Next
+   * only permits inside a Client Component. The components live in
+   * components/home/heroPreviews.tsx keyed by this same id, and a parity
+   * test fails the build if the two sets ever drift apart.
+   */
+  heroable?: true;
 }
 
 // The flag decides whether the module exists at all, never the corpus: a
@@ -192,6 +202,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "mercator",
     availability: "data",
     dataSource: "afrik_countries",
+    heroable: true,
   },
   {
     id: "doctrine",
