@@ -27,9 +27,9 @@ const liveModules = (mode: AccessMode): HubModule[] =>
   );
 
 describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
-  // Eleven peers under one axis is past what a radial layout can hold and
-  // past what a reader reads as a set. Grouping by the corpus entity a game
-  // questions gives four shelves, which both can carry.
+  // Grouping is by the corpus entity a game questions. With the hub cut to
+  // three games only two shelves remain, and the mechanism now carries far
+  // less than it was built for — see docs/design/games-charter.md §1.
   // @req REQ-120
   it("files every jouer module onto a shelf, in registry order", () => {
     const shelves = getGroupedModules(liveModules("jouer"));
@@ -37,21 +37,11 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
     expect(shelves.map((shelf) => shelf.group.id)).toEqual([
       "jeux-peuples",
       "jeux-pays",
-      "jeux-migrations",
-      "jeux-liens",
     ]);
     expect(shelves.flatMap((shelf) => shelf.modules.map((m) => m.id))).toEqual([
       "appellations",
-      "plus-ou-moins",
-      "repartition",
-      "jeu-familles",
-      "frontieres",
       "mercator",
-      "comparer",
       "pays-davant",
-      "royaumes",
-      "migrations",
-      "liens",
     ]);
   });
 
@@ -64,10 +54,8 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
       shelves.map((shelf) => [shelf.group.id, shelf.singleton])
     );
 
-    expect(bySize["jeux-peuples"]).toBe(false);
+    expect(bySize["jeux-peuples"]).toBe(true);
     expect(bySize["jeux-pays"]).toBe(false);
-    expect(bySize["jeux-migrations"]).toBe(true);
-    expect(bySize["jeux-liens"]).toBe(true);
   });
 
   // Explorer and Comprendre hold four and three: few enough to read at
@@ -82,12 +70,12 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // an empty table — must not leave an empty heading behind.
   // @req REQ-120
   it("drops a shelf left with nothing on it", () => {
-    const onlyLiens = asModules(
-      getModulesForAccessMode("jouer").filter((m) => m.id === "liens")
+    const onlyAppellations = asModules(
+      getModulesForAccessMode("jouer").filter((m) => m.id === "appellations")
     );
 
-    expect(getGroupedModules(onlyLiens).map((s) => s.group.id)).toEqual([
-      "jeux-liens",
+    expect(getGroupedModules(onlyAppellations).map((s) => s.group.id)).toEqual([
+      "jeux-peuples",
     ]);
   });
 

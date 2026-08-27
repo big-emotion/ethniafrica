@@ -64,22 +64,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   });
 
   // @req REQ-114 @req REQ-120
-  it("gives jouer the quiz and the eleven games, in playing order", () => {
+  it("gives jouer the quiz and the three games, in playing order", () => {
     const ids = getModulesForAccessMode("jouer").map((m) => m.id);
-    expect(ids).toEqual([
-      "quiz",
-      "appellations",
-      "plus-ou-moins",
-      "mercator",
-      "comparer",
-      "repartition",
-      "pays-davant",
-      "royaumes",
-      "migrations",
-      "liens",
-      "jeu-familles",
-      "frontieres",
-    ]);
+    expect(ids).toEqual(["quiz", "appellations", "mercator", "pays-davant"]);
   });
 
   // "Noms & appellations" answers *why does this people carry this name* —
@@ -139,22 +126,23 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  // The placeholder's id survives so nothing referencing it breaks, but the
-  // game it became is named and routed for what it does.
+  // A hub entry left behind by a retired game would link to a 404 and, worse,
+  // make loadHeroPreview log an unregistered slug on every home render.
   // @req REQ-120
-  it("keeps the comparer id while routing it to the vraie-taille game", () => {
-    const comparer = MODULE_DEFINITIONS.find((m) => m.id === "comparer");
-    expect(comparer?.name).toBe("Vraie taille");
-    expect(comparer?.gameSlug).toBe("vraie-taille");
-  });
-
-  // liens shipped without one because it had no surface of its own; the game
-  // it became reads the relations table like any other.
-  // @req REQ-120
-  it("backs the liens game with the relations it questions", () => {
-    const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
-    expect(liens?.dataSource).toBe("afrik_people_relations");
-    expect(liens?.gameSlug).toBe("liens");
+  it("keeps no hub entry for a retired game", () => {
+    const retired = new Set([
+      "plus-ou-moins",
+      "vraie-taille",
+      "repartition",
+      "royaumes",
+      "migrations",
+      "liens",
+      "familles",
+      "frontieres",
+    ]);
+    for (const def of MODULE_DEFINITIONS) {
+      expect(retired.has(def.gameSlug ?? "")).toBe(false);
+    }
   });
 
   // @req REQ-114

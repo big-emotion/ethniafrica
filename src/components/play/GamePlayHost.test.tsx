@@ -22,12 +22,12 @@ vi.mock("@/components/play/GamePlayIsland", () => ({
 }));
 
 const GAME: GameDefinition = {
-  id: "plus-ou-moins",
-  slug: "plus-ou-moins",
-  nameFr: "Plus ou moins",
+  id: "appellations",
+  slug: "appellations",
+  nameFr: "Eux, ou les autres",
   kind: "binary",
   dataSource: "peoples",
-  promptFr: "Lequel de ces deux peuples est le plus nombreux",
+  promptFr: "Lequel de ces deux noms le peuple se donne-t-il à lui-même",
   roundsPerSession: 8,
 };
 
@@ -48,7 +48,7 @@ describe("GamePlayHost (Jouer hub engine, REQ-120)", () => {
 
     expect(await screen.findByTestId("game-play-island-mock")).toHaveAttribute(
       "data-game",
-      "plus-ou-moins"
+      "appellations"
     );
   });
 

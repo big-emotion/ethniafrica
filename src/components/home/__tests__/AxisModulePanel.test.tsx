@@ -212,8 +212,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 });
 
 /**
- * Mirrors the registry's jouer shelves: two that hold several games and
- * two that hold one, which is the shape the taxonomy actually produces.
+ * Mirrors the registry's jouer shelves: one that holds several games and one
+ * that holds a single game, which is the shape the taxonomy produces now the
+ * hub carries three games rather than eleven.
  */
 const shelvedModules: HubModule[] = [
   {
@@ -222,17 +223,6 @@ const shelvedModules: HubModule[] = [
     accessMode: "jouer",
     page: null,
     gameSlug: "appellations",
-    availability: "data",
-    dataSource: "afrik_peoples",
-    group: "jeux-peuples",
-    available: true,
-  },
-  {
-    id: "frontieres",
-    name: "La ligne qui coupe",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "frontieres",
     availability: "data",
     dataSource: "afrik_peoples",
     group: "jeux-peuples",
@@ -250,25 +240,14 @@ const shelvedModules: HubModule[] = [
     available: true,
   },
   {
-    id: "comparer",
-    name: "Vraie taille",
+    id: "pays-davant",
+    name: "Le pays d'avant",
     accessMode: "jouer",
     page: null,
-    gameSlug: "vraie-taille",
+    gameSlug: "pays-davant",
     availability: "data",
     dataSource: "afrik_countries",
     group: "jeux-pays",
-    available: true,
-  },
-  {
-    id: "migrations",
-    name: "Le fil des migrations",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "migrations",
-    availability: "data",
-    dataSource: "migration_events",
-    group: "jeux-migrations",
     available: true,
   },
 ];
@@ -287,17 +266,17 @@ const renderShelved = (onClose = vi.fn()) => {
 };
 
 describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)", () => {
-  // Eleven nodes is past what the scene can lay out and past what a reader
-  // takes in. The shelves bring the first level back to a handful.
+  // Many nodes at once is past what the scene can lay out and past what a
+  // reader takes in. The shelves bring the first level back to a handful.
   // @req REQ-120
   it("opens on the shelves rather than on every game at once", () => {
     renderShelved();
 
     expect(
       screen.getAllByTestId(/^axis-shelf-(?!open)/).map((n) => n.dataset.testid)
-    ).toEqual(["axis-shelf-jeux-peuples", "axis-shelf-jeux-pays"]);
+    ).toEqual(["axis-shelf-jeux-pays"]);
     expect(
-      screen.queryByTestId("axis-module-appellations")
+      screen.queryByTestId("axis-module-mercator")
     ).not.toBeInTheDocument();
   });
 
@@ -307,12 +286,12 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
   it("promotes a lone game in place of the shelf that would hold it", () => {
     renderShelved();
 
-    expect(screen.getByTestId("axis-module-link-migrations")).toHaveAttribute(
+    expect(screen.getByTestId("axis-module-link-appellations")).toHaveAttribute(
       "href",
-      "/fr/jouer/migrations"
+      "/fr/jouer/appellations"
     );
     expect(
-      screen.queryByTestId("axis-shelf-jeux-migrations")
+      screen.queryByTestId("axis-shelf-jeux-peuples")
     ).not.toBeInTheDocument();
   });
 
@@ -320,7 +299,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
   it("says how many games a shelf holds before the reader opens it", () => {
     renderShelved();
 
-    expect(screen.getByTestId("axis-shelf-jeux-peuples")).toHaveTextContent(
+    expect(screen.getByTestId("axis-shelf-jeux-pays")).toHaveTextContent(
       "2 jeux"
     );
   });
@@ -329,18 +308,15 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
   it("deploys the games of the shelf that was opened, and only those", async () => {
     renderShelved();
 
-    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-peuples"));
+    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-pays"));
 
-    expect(screen.getByTestId("axis-module-link-appellations")).toHaveAttribute(
+    expect(screen.getByTestId("axis-module-link-mercator")).toHaveAttribute(
       "href",
-      "/fr/jouer/appellations"
+      "/fr/jouer/mercator"
     );
     expect(
-      screen.getByTestId("axis-module-link-frontieres")
+      screen.getByTestId("axis-module-link-pays-davant")
     ).toBeInTheDocument();
-    expect(
-      screen.queryByTestId("axis-module-mercator")
-    ).not.toBeInTheDocument();
   });
 
   // Escape used to close outright. With a level below the axis it has to
@@ -351,12 +327,12 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
   it("steps Escape back to the shelves rather than closing", async () => {
     const onClose = renderShelved();
 
-    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-peuples"));
+    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-pays"));
     await userEvent.keyboard("{Escape}");
 
-    expect(screen.getByTestId("axis-shelf-jeux-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-shelf-jeux-pays")).toBeInTheDocument();
     expect(
-      screen.queryByTestId("axis-module-link-appellations")
+      screen.queryByTestId("axis-module-link-mercator")
     ).not.toBeInTheDocument();
     expect(onClose).not.toHaveBeenCalled();
   });

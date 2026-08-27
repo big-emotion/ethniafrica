@@ -54,12 +54,12 @@ describe("getGameRoundsHandler", () => {
     expect(envelope.data.rounds).toEqual([]);
   });
 
-  // The two short-corpus games depend on this flag to say so on screen
-  // instead of rendering a blank end state.
+  // A game depends on this flag to say so on screen instead of rendering a
+  // blank end state when the corpus cannot fill a session.
   // @req REQ-120
   it("reports the corpus as limited when it yields fewer rounds than asked", async () => {
     loadGameCorpus.mockResolvedValue(emptyCorpus);
-    const game = getGameBySlug("liens");
+    const game = getGameBySlug("pays-davant");
 
     const envelope = await getGameRoundsHandler(game, 0);
 
@@ -117,7 +117,7 @@ describe("getGameRoundsHandler", () => {
   it("loads only the corpus slice the game declares", async () => {
     loadGameCorpus.mockResolvedValue(emptyCorpus);
 
-    await getGameRoundsHandler(getGameBySlug("royaumes"), 0);
+    await getGameRoundsHandler(getGameBySlug("pays-davant"), 0);
 
     expect(loadGameCorpus).toHaveBeenCalledWith("countries");
   });

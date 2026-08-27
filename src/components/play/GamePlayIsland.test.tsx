@@ -4,11 +4,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { GamePlayIsland } from "@/components/play/GamePlayIsland";
 import type {
-  AreaCompareRound,
   BinaryRound,
   GameRound,
   GlobeTapRound,
-  QuadRound,
 } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
@@ -46,63 +44,14 @@ function binaryRound(subjectId: string): BinaryRound {
   };
 }
 
-const QUAD_ROUND: QuadRound = {
-  kind: "quad",
-  gameId: "familles",
-  subjectId: "PPL_WOLOF",
-  promptFr: "À quelle famille linguistique ce peuple appartient-il",
-  reveal: { textFr: "Nigéro-congolaise.", fieldPath: "family_id" },
-  options: [
-    { labelFr: "Nigéro-congolaise" },
-    { labelFr: "Afro-asiatique" },
-    { labelFr: "Nilo-saharienne" },
-    { labelFr: "Khoïsan" },
-  ],
-  correctIndex: 0,
-};
-
-const AREA_ROUND: AreaCompareRound = {
-  kind: "areaCompare",
-  gameId: "vraie-taille",
-  subjectId: "NGA",
-  promptFr: "Deux formes, à la même échelle",
-  questionFr: "Laquelle est la plus grande",
-  reveal: { textFr: "923 768 km carrés.", fieldPath: "area_km2" },
-  shapes: [
-    {
-      labelFr: "Nigeria",
-      areaKm2: 923768,
-      rings: [
-        [
-          { lon: 0, lat: 0 },
-          { lon: 10, lat: 0 },
-          { lon: 10, lat: 10 },
-        ],
-      ],
-    },
-    {
-      labelFr: "Ghana",
-      areaKm2: 238535,
-      rings: [
-        [
-          { lon: 0, lat: 0 },
-          { lon: 5, lat: 0 },
-          { lon: 5, lat: 5 },
-        ],
-      ],
-    },
-  ],
-  correctIndex: 0,
-};
-
 const GLOBE_ROUND: GlobeTapRound = {
   kind: "globeTap",
-  gameId: "royaumes",
-  subjectId: "KGD_OYO",
-  promptFr: "Sur quel pays ce royaume s'étendait-il",
-  reveal: { textFr: "Le royaume d'Oyo.", fieldPath: "kingdoms[0]" },
-  choices: ["NGA", "BEN"],
-  correctCountryId: "NGA",
+  gameId: "pays-davant",
+  subjectId: "GHA",
+  promptFr: "« Côte-de-l'Or » : quel pays porte aujourd'hui ce nom d'avant",
+  reveal: { textFr: "Nommée pour son or.", fieldPath: "etymology" },
+  choices: ["GHA", "BEN"],
+  correctCountryId: "GHA",
 };
 
 function renderIsland(rounds: GameRound[]) {
@@ -175,25 +124,11 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
   });
 
   // @req REQ-120
-  it("routes a quad round to the four-option primitive", () => {
-    renderIsland([QUAD_ROUND]);
-
-    expect(screen.getByTestId("quad-choice")).toBeInTheDocument();
-  });
-
-  // @req REQ-120
-  it("routes an area round to the overlaid outlines", () => {
-    renderIsland([AREA_ROUND]);
-
-    expect(screen.getByTestId("area-compare-stage")).toBeInTheDocument();
-  });
-
-  // @req REQ-120
   it("routes a globe round to the lazily loaded globe primitive", async () => {
     renderIsland([GLOBE_ROUND]);
 
     expect(await screen.findByTestId("globe-tap-mock")).toHaveTextContent(
-      "Sur quel pays ce royaume s'étendait-il"
+      "« Côte-de-l'Or » : quel pays porte aujourd'hui ce nom d'avant"
     );
   });
 

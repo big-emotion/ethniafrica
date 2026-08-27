@@ -527,15 +527,16 @@ describe("AccessAxes — Escape across the two levels Jouer now has (REQ-120)", 
     renderAxes();
     const jouer = screen.getByTestId("access-axis-jouer");
 
+    // jeux-pays, not jeux-peuples: with the hub cut to three games the
+    // peoples shelf holds one module and is promoted in place of a shelf,
+    // so it no longer offers the level this test is about.
     await userEvent.click(jouer);
-    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-peuples"));
-    expect(
-      screen.getByTestId("axis-module-link-appellations")
-    ).toBeInTheDocument();
+    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-pays"));
+    expect(screen.getByTestId("axis-module-link-mercator")).toBeInTheDocument();
 
     await userEvent.keyboard("{Escape}");
     expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
-    expect(screen.getByTestId("axis-shelf-jeux-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-shelf-jeux-pays")).toBeInTheDocument();
 
     await userEvent.keyboard("{Escape}");
     expect(screen.queryByTestId("axis-panel-jouer")).not.toBeInTheDocument();

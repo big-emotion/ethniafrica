@@ -1,19 +1,17 @@
 /**
- * Games service — the only layer that talks to Supabase for the eleven games
+ * Games service — the only layer that talks to Supabase for the three games
  * of the Jouer hub (REQ-120). camelCase mapping happens here; the handler and
  * the page never see snake_case, matching migrations.ts.
  *
- * Each game declares which corpus slice it reads, so a round of « Royaumes
- * perdus » never pays for the peoples table. Every query is batched — the
- * corpus is small (789 peoples, 54 countries, 24 families, 12 relations,
- * 6 migrations) but an N+1 here would be one per round.
+ * Each game declares which corpus slice it reads, so a round of « Le pays
+ * d'avant » never pays for the peoples table. Every query is batched — the
+ * corpus is small (789 peoples, 54 countries, 24 families) but an N+1 here
+ * would be one per round.
  */
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import type { CountryId } from "@/types/afrik";
-import type { MigrationGeometry } from "@/types/migrations";
-import type { RelationType } from "@/types/relations";
 import type { GameDataSource } from "@/lib/games/gameRegistry";
 import type {
   GameCorpus,
@@ -22,16 +20,14 @@ import type {
   GameFamilyFixture,
   GameHistoricalNames,
   GameKingdom,
-  GameMigrationFixture,
   GamePeopleFixture,
-  GameRelationFixture,
 } from "@/lib/games/corpus";
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
 
 /**
- * Peoples pulled for a round pool. Wide enough to give the quad games their
- * three verbatim distractors many times over, small enough that the JSONB
+ * Peoples pulled for a round pool. Wide enough to give a round its verbatim
+ * options many times over, small enough that the JSONB
  * `content` payload stays a single modest response.
  */
 const PEOPLE_POOL_SIZE = 150;
@@ -73,22 +69,6 @@ interface CountryRow {
 interface FamilyRow {
   id: string;
   name_fr: string;
-}
-
-interface RelationRow {
-  id: string;
-  relation_type: RelationType;
-  people_id_a: string;
-  people_id_b: string;
-  description: string;
-  period_label: string | null;
-}
-
-interface MigrationRow {
-  id: string;
-  name: string;
-  summary: string;
-  geometry_geojson: MigrationGeometry | null;
 }
 
 function section(
@@ -301,95 +281,9 @@ async function loadCountries(
   }));
 }
 
-async function loadRelations(
-  supabase: SupabaseClient
-): Promise<GameRelationFixture[]> {
-  const { data, error } = await supabase
-    .from("afrik_people_relations")
-    .select(
-      "id, relation_type, people_id_a, people_id_b, description, period_label"
-    )
-    .order("id");
-
-  if (error) {
-    if (isSchemaUnavailable(error)) return [];
-    throw new GameCorpusUnavailableError(
-      `Relations unavailable for a game round: ${error.message}`
-    );
-  }
-
-  return ((data ?? []) as RelationRow[]).map((row) => ({
-    id: row.id,
-    relationType: row.relation_type,
-    peopleIdA: row.people_id_a,
-    peopleIdB: row.people_id_b,
-    description: row.description,
-    periodLabel: row.period_label,
-  }));
-}
-
-async function loadMigrations(
-  supabase: SupabaseClient
-): Promise<GameMigrationFixture[]> {
-  const { data, error } = await supabase
-    .from("migration_events")
-    .select("id, name, summary, geometry_geojson")
-    .order("id");
-
-  if (error) {
-    if (isSchemaUnavailable(error)) return [];
-    throw new GameCorpusUnavailableError(
-      `Migration events unavailable for a game round: ${error.message}`
-    );
-  }
-
-  const rows = (data ?? []) as MigrationRow[];
-  if (rows.length === 0) return [];
-
-  // One embedded select for every event's peoples, rather than one per event.
-  const { data: links, error: linksError } = await supabase
-    .from("migration_event_peoples")
-    .select("migration_id, people_id, role, afrik_peoples(id, name_main)")
-    .in(
-      "migration_id",
-      rows.map((row) => row.id)
-    );
-
-  if (linksError) {
-    logger.error("Games: migration peoples batch failed", linksError);
-  }
-
-  const peoplesByMigration = new Map<
-    string,
-    { id: string; nameMain: string; role: string | null }[]
-  >();
-  for (const link of (links ?? []) as unknown as {
-    migration_id: string;
-    people_id: string;
-    role: string | null;
-    afrik_peoples: { id: string; name_main: string } | null;
-  }[]) {
-    const existing = peoplesByMigration.get(link.migration_id) ?? [];
-    existing.push({
-      id: link.people_id,
-      nameMain: link.afrik_peoples?.name_main ?? link.people_id,
-      role: link.role,
-    });
-    peoplesByMigration.set(link.migration_id, existing);
-  }
-
-  return rows.map((row) => ({
-    id: row.id,
-    name: row.name,
-    summary: row.summary,
-    geometry: row.geometry_geojson,
-    peoples: peoplesByMigration.get(row.id) ?? [],
-  }));
-}
-
 /**
- * Loads only the slice a game reads, plus the peoples pool the relation game
- * needs for its verbatim distractors.
+ * Loads only the slice a game reads, plus the peoples pool and country
+ * names the peoples games need for their verbatim options.
  */
 // @req REQ-120
 export async function loadGameCorpus(
@@ -417,27 +311,6 @@ export async function loadGameCorpus(
       };
     case "countries":
       return { ...empty, countries: await loadCountries(supabase) };
-    case "families":
-      return {
-        ...empty,
-        families: await loadFamilies(supabase),
-        peoples: await loadPeoples(supabase),
-      };
-    case "relations":
-      // The relation game names both ends of a link, so it needs the peoples
-      // pool as well as the twelve stored relations.
-      return {
-        ...empty,
-        relations: await loadRelations(supabase),
-        peoples: await loadPeoples(supabase),
-      };
-    case "migrations":
-      return {
-        ...empty,
-        migrations: await loadMigrations(supabase),
-        peoples: await loadPeoples(supabase),
-        countries: await loadCountries(supabase),
-      };
     default:
       return empty;
   }

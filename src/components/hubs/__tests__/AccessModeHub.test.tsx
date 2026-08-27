@@ -61,25 +61,25 @@ const jouerModules: HubModule[] = [
     available: true,
   },
   {
-    id: "comparer",
-    name: "Vraie taille",
+    id: "mercator",
+    name: "La taille qu'on vous a cachée",
     accessMode: "jouer",
     page: null,
-    gameSlug: "vraie-taille",
+    gameSlug: "mercator",
     availability: "data",
     dataSource: "afrik_countries",
     group: "jeux-pays",
     available: true,
   },
   {
-    id: "liens",
-    name: "Les liens invisibles",
+    id: "appellations",
+    name: "Eux, ou les autres ?",
     accessMode: "jouer",
     page: null,
-    gameSlug: "liens",
+    gameSlug: "appellations",
     availability: "data",
-    dataSource: "afrik_people_relations",
-    group: "jeux-liens",
+    dataSource: "afrik_peoples",
+    group: "jeux-peuples",
     available: false,
   },
 ];
@@ -155,10 +155,10 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
   it("links a game to its slug under the jouer hub", () => {
     render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
 
-    const link = screen.getByTestId("hub-module-link-comparer");
+    const link = screen.getByTestId("hub-module-link-mercator");
     expect(link.tagName).toBe("A");
-    expect(link).toHaveAttribute("href", "/fr/jouer/vraie-taille");
-    expect(link).toHaveTextContent("Vraie taille");
+    expect(link).toHaveAttribute("href", "/fr/jouer/mercator");
+    expect(link).toHaveTextContent("La taille qu'on vous a cachée");
   });
 
   // The quiz keeps a real PageType, so it must still route through it.
@@ -177,10 +177,10 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
     render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
 
     expect(
-      screen.getByTestId("hub-module-unavailable-liens")
+      screen.getByTestId("hub-module-unavailable-appellations")
     ).toBeInTheDocument();
     expect(
-      screen.queryByTestId("hub-module-link-liens")
+      screen.queryByTestId("hub-module-link-appellations")
     ).not.toBeInTheDocument();
   });
 
@@ -311,8 +311,8 @@ describe("hub shelves — the level between an axis and eleven games (REQ-120)",
 
     const shelves = screen.getAllByTestId(/^hub-shelf-/);
     expect(shelves.map((shelf) => shelf.dataset.testid)).toEqual([
+      "hub-shelf-jeux-peuples",
       "hub-shelf-jeux-pays",
-      "hub-shelf-jeux-liens",
       "hub-shelf-jeux-quiz",
     ]);
     expect(
@@ -334,12 +334,12 @@ describe("hub shelves — the level between an axis and eleven games (REQ-120)",
         )
       ).toBe(row);
     }
-    expect(screen.getByTestId("hub-module-link-comparer")).toHaveAttribute(
+    expect(screen.getByTestId("hub-module-link-mercator")).toHaveAttribute(
       "href",
-      "/fr/jouer/vraie-taille"
+      "/fr/jouer/mercator"
     );
     expect(
-      screen.getByTestId("hub-module-unavailable-liens")
+      screen.getByTestId("hub-module-unavailable-appellations")
     ).toBeInTheDocument();
   });
 

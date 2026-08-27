@@ -26,16 +26,8 @@ import type {
   GamePeopleFixture,
 } from "@/lib/games/corpus";
 import { buildAppellationsRound } from "@/lib/games/rounds/appellationsRound";
-import { buildBorderCutRound } from "@/lib/games/rounds/borderCutRound";
-import { buildFamilyRound } from "@/lib/games/rounds/familyRound";
 import { buildHistoricalNameRound } from "@/lib/games/rounds/historicalNameRound";
-import { buildKingdomRound } from "@/lib/games/rounds/kingdomRound";
-import { buildMagnitudeRound } from "@/lib/games/rounds/magnitudeRound";
 import { buildMercatorRound } from "@/lib/games/rounds/mercatorRound";
-import { buildMigrationRound } from "@/lib/games/rounds/migrationRound";
-import { buildRelationRound } from "@/lib/games/rounds/relationRound";
-import { buildSpreadRound } from "@/lib/games/rounds/spreadRound";
-import { buildTrueSizeRound } from "@/lib/games/rounds/trueSizeRound";
 
 export interface GameRoundsData {
   rounds: GameRound[];
@@ -101,72 +93,14 @@ function assembleRounds(
       for (const people of peoples) push(buildAppellationsRound(people));
       break;
 
-    case "plus-ou-moins":
-      for (const [a, b] of pairs(peoples)) push(buildMagnitudeRound(a, b));
-      break;
-
     case "mercator":
       for (const [a, b] of pairs(countries)) push(buildMercatorRound(a, b));
       break;
-
-    case "vraie-taille": {
-      const comparisons = rotate(Object.entries(WORLD_COMPARE), seed);
-      countries.forEach((country, index) => {
-        const [id, shape] = comparisons[index % comparisons.length];
-        push(
-          buildTrueSizeRound(country, {
-            id,
-            nameFr: shape.nameFr,
-            rings: shape.rings.map((ring) =>
-              ring.map(([lon, lat]) => ({ lon, lat }))
-            ),
-          })
-        );
-      });
-      break;
-    }
-
-    case "repartition": {
-      const names = countryNameMap(corpus.countries);
-      for (const people of peoples) push(buildSpreadRound(people, names));
-      break;
-    }
 
     case "pays-davant":
       for (const country of countries)
         push(buildHistoricalNameRound(country, countries));
       break;
-
-    case "royaumes":
-      for (const country of countries)
-        push(buildKingdomRound(country, countries));
-      break;
-
-    case "migrations": {
-      const byId = peopleNameMap(corpus.peoples);
-      const pool = drawableCountryIds(corpus.countries);
-      for (const migration of rotate(corpus.migrations, seed))
-        push(buildMigrationRound(migration, byId, pool));
-      break;
-    }
-
-    case "liens": {
-      const byId = peopleNameMap(corpus.peoples);
-      for (const relation of rotate(corpus.relations, seed))
-        push(buildRelationRound(relation, byId, corpus.peoples));
-      break;
-    }
-
-    case "familles":
-      for (const people of peoples)
-        push(buildFamilyRound(people, corpus.families));
-      break;
-
-    case "frontieres": {
-      const names = countryNameMap(corpus.countries);
-      for (const people of peoples) push(buildBorderCutRound(people, names));
-      break;
-    }
   }
 
   return rounds;

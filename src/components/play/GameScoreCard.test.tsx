@@ -6,13 +6,13 @@ import { GameScoreCard } from "@/components/play/GameScoreCard";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 
 const GAME: GameDefinition = {
-  id: "liens",
-  slug: "liens",
-  nameFr: "Les liens invisibles",
-  kind: "quad",
-  dataSource: "relations",
-  promptFr: "Quel peuple ce lien relie-t-il à l'autre",
-  roundsPerSession: 6,
+  id: "pays-davant",
+  slug: "pays-davant",
+  nameFr: "Le pays d'avant",
+  kind: "globeTap",
+  dataSource: "countries",
+  promptFr: "Quel pays porte aujourd'hui ce nom d'avant",
+  roundsPerSession: 8,
 };
 
 describe("GameScoreCard (Jouer hub engine, REQ-120)", () => {
@@ -22,7 +22,7 @@ describe("GameScoreCard (Jouer hub engine, REQ-120)", () => {
       <GameScoreCard game={GAME} correct={4} total={6} onPlayAgain={vi.fn()} />
     );
 
-    expect(screen.getByText("Les liens invisibles")).toBeInTheDocument();
+    expect(screen.getByText("Le pays d'avant")).toBeInTheDocument();
     expect(screen.getByTestId("game-score-value")).toHaveTextContent("4 sur 6");
   });
 
