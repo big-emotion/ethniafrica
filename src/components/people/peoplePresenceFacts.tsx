@@ -50,6 +50,10 @@ export function buildPeoplePresenceFacts({
     facts[entry.country] = {
       title: `${peopleName} ${inCountry(entry.country, nameFr)}`,
       description: `${entry.country} · présence déclarée, sans tracé de limite`,
+      // The declared population, as the mockup's own list carries it. A
+      // country the fiche declares without a figure gets no line rather than
+      // a zero, which would read as an absence the corpus never stated.
+      subtitle: population > 0 ? populationFr.format(population) : undefined,
       body: (
         <div className="flex flex-col gap-afh-sm text-afh-small">
           <div>

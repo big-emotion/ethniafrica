@@ -387,6 +387,14 @@ export interface AtlasTargetFacts {
   title: string;
   description?: string;
   body?: ReactNode;
+  /**
+   * The one-line figure this country carries in the picker, before it is
+   * chosen — the fiche's own measure of it, since the overlay has none that
+   * is true. A people field's `populationShare` is normalised over the
+   * largest drawn country, so it sizes halos and is not a share of anything;
+   * the fiche reads the real figure from its demography instead.
+   */
+  subtitle?: string;
 }
 
 /**
@@ -532,12 +540,6 @@ function clampPitch(pitch: number): number {
   return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
 }
 
-/** A presence country's share of the people, as the picker prints it. */
-const SHARE_FR = new Intl.NumberFormat("fr-FR", {
-  style: "percent",
-  maximumFractionDigits: 1,
-});
-
 const GLOBE_SURFACE_LABEL =
   "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
 
@@ -650,15 +652,20 @@ export function AtlasGlobe({
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
   /**
-   * The line each option in the list carries, written from the overlay itself
-   * so the number and the targets describe the same map.
+   * The line each option in the list carries beside its country.
    *
-   * What a country weighs is not one quantity across the three encodings. A
-   * family footprint counts member peoples; a people field has no members at
-   * all, and reading the count anyway printed "0 peuple" under every presence
+   * What a country weighs is not one quantity across the three encodings, so
+   * there is no single place to read it from. A family footprint counts member
+   * peoples and the overlay carries that; reading the same count on a people
+   * fiche, which has no members, printed "0 peuple" under every presence
    * country the fiche declared — a number the corpus never claimed, denying
-   * the very presence the halo was drawing. A people's own measure is its
-   * share of the whole, which is what the halo's area already encodes.
+   * the very presence the halo was drawing.
+   *
+   * A people's figure does not come from the overlay either: `populationShare`
+   * there is normalised over the largest drawn country, so it is a weight for
+   * sizing halos and not a share of anything. The fiche reads the real figure
+   * from its demography and hands it over with the rest of the country's
+   * facts, which is the one place it is true.
    */
   const subtitleByCountry = useMemo(() => {
     if (overlay?.kind === "family-footprint") {
@@ -671,16 +678,12 @@ export function AtlasGlobe({
         ])
       );
     }
-    if (overlay?.kind === "people-field") {
-      return Object.fromEntries(
-        overlay.areas.map((area) => [
-          area.countryId,
-          SHARE_FR.format(area.populationShare),
-        ])
-      );
-    }
-    return {};
-  }, [overlay]);
+    return Object.fromEntries(
+      Object.entries(facts ?? {})
+        .filter(([, entry]) => Boolean(entry?.subtitle))
+        .map(([countryId, entry]) => [countryId, entry!.subtitle!])
+    );
+  }, [overlay, facts]);
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.

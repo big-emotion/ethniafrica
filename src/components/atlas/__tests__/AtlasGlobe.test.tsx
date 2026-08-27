@@ -509,17 +509,23 @@ describe("AtlasGlobe", () => {
      * A people fiche has no member peoples, so reading a member count on one
      * printed "0 peuple" beside every presence country it declared — a number
      * the corpus never claimed, denying the presence the halo was drawing.
-     * A people's measure is its share of the whole, which is what the halo's
-     * area already encodes.
+     * The fiche's own figure is carried with the country's facts, because the
+     * overlay has none that is true: its `populationShare` is normalised over
+     * the largest drawn country, so it sizes halos rather than measuring a
+     * share. A country the fiche gives no figure for carries no line.
      */
     // @req REQ-117
-    it("weighs a presence country by its share of the people, never by a member count it has none of", () => {
+    it("carries the fiche's own figure for a presence country, never a member count it has none of", () => {
       render(
         <AtlasGlobe
           overlay={familyPeopleOverlay}
           targetPicker="list"
           missingMessage="n/a"
           areaNoun="présence"
+          facts={{
+            NGA: { title: "Yoruba au Nigeria", subtitle: "45 500 000" },
+            ZAF: { title: "Yoruba en Afrique du Sud" },
+          }}
         />
       );
 
@@ -531,8 +537,12 @@ describe("AtlasGlobe", () => {
         expect(option).not.toHaveTextContent(/\bpeuples?\b/);
       }
       expect(screen.getByRole("option", { name: /Nigeria/ })).toHaveTextContent(
-        "%"
+        "45 500 000"
       );
+      // Declared, but with no figure of its own: a name rather than a zero.
+      expect(
+        screen.getByRole("option", { name: /Afrique du Sud/ })
+      ).toHaveTextContent(/^\s*\S*\s*Afrique du Sud\s*$/);
     });
 
     // @req REQ-112
