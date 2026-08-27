@@ -21,8 +21,17 @@ import type { CountryId } from "@/types/afrik";
 export interface AtlasTargetPickerProps {
   /** In the footprint's own order: densest first. */
   targets: AtlasTarget[];
-  /** How many member peoples each country carries, for the option's subtitle. */
-  memberCountByCountry: Record<string, number>;
+  /**
+   * The line each option carries beside its name, already written.
+   *
+   * This used to be a member count, which is a family footprint's notion of
+   * density. A people fiche has no members, so every option on one read
+   * "0 peuple" — a number the corpus never claimed, printed under the country
+   * it was denying. What a country weighs is the overlay's business, so the
+   * overlay's owner writes the line and this only places it. A country absent
+   * from the map carries no line at all.
+   */
+  subtitleByCountry: Record<string, string>;
   chosenCountryId: CountryId | null;
   onChoose: (countryId: CountryId) => void;
   /**
@@ -53,7 +62,7 @@ const LIST_STYLE: CSSProperties = {
 // @req REQ-117
 export function AtlasTargetPicker({
   targets,
-  memberCountByCountry,
+  subtitleByCountry,
   chosenCountryId,
   onChoose,
   areaNoun = "l'empreinte",
@@ -146,7 +155,7 @@ export function AtlasTargetPicker({
           }}
         >
           {targets.map((target) => {
-            const memberCount = memberCountByCountry[target.countryId] ?? 0;
+            const subtitle = subtitleByCountry[target.countryId];
             return (
               <button
                 key={target.countryId}
@@ -175,16 +184,18 @@ export function AtlasTargetPicker({
               >
                 <span aria-hidden="true">{flagFromISO3(target.countryId)}</span>
                 {target.nameFr}
-                <span
-                  style={{
-                    marginLeft: "auto",
-                    fontFamily: "var(--afh-font-mono)",
-                    fontSize: "var(--afh-text-nano)",
-                    color: "var(--afh-text-muted)",
-                  }}
-                >
-                  {memberCount} peuple{memberCount > 1 ? "s" : ""}
-                </span>
+                {subtitle && (
+                  <span
+                    style={{
+                      marginLeft: "auto",
+                      fontFamily: "var(--afh-font-mono)",
+                      fontSize: "var(--afh-text-nano)",
+                      color: "var(--afh-text-muted)",
+                    }}
+                  >
+                    {subtitle}
+                  </span>
+                )}
               </button>
             );
           })}

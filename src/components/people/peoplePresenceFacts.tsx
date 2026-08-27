@@ -1,5 +1,6 @@
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
 import { sectionIdForPanel } from "@/components/fiche/panelRegistry";
+import { inCountry } from "@/lib/atlas/countryPreposition";
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryId, GlobalDemographySection } from "@/types/afrik";
 
@@ -47,7 +48,7 @@ export function buildPeoplePresenceFacts({
     const share = total > 0 ? (population / total) * 100 : 0;
 
     facts[entry.country] = {
-      title: `${peopleName} au ${nameFr}`,
+      title: `${peopleName} ${inCountry(entry.country, nameFr)}`,
       description: `${entry.country} · présence déclarée, sans tracé de limite`,
       body: (
         <div className="flex flex-col gap-afh-sm text-afh-small">
