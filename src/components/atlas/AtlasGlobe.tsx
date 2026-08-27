@@ -946,12 +946,15 @@ export function AtlasGlobe({
         </div>
       )}
 
-      {/* Hidden below the panel breakpoint, as in the mockup: at that width
-          the bottom sheet already owns the space these would sit in. */}
+      {/* Below the panel breakpoint the legend steps aside for the bottom
+          sheet — but only once there is a sheet. Hiding it unconditionally
+          left a phone reader with a globe that moves and no statement of what
+          dragging does, which is what "it spins and I can't stop it" was
+          describing. */}
       {legend ?? (
         <p
           data-atlas-legend=""
-          className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
+          className="pointer-events-none absolute inset-x-0 top-0 p-3 text-xs"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           Afrique à sa surface réelle. Glissez pour tourner.

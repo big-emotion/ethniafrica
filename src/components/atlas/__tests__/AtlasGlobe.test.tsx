@@ -963,6 +963,35 @@ describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
   });
 });
 
+describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () => {
+  // The legend and the toolbar were both `hidden` below 760px, so a phone
+  // reader got a globe that moves under the finger with no statement of what
+  // dragging does and no way back to centre — which reads as "it spins and I
+  // cannot stop it". recette fixed the toolbar half independently while this
+  // branch was open; these guard both halves against a relapse.
+  // @req REQ-117
+  it("shows the drag legend at phone width, before any panel is open", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const legend = container.querySelector("[data-atlas-legend]");
+    expect(legend).toHaveTextContent("Glissez pour tourner");
+    expect(legend?.className).not.toContain("hidden");
+  });
+
+  // @req REQ-117
+  it("keeps Recentrer reachable at phone width", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const toolbar = container.querySelector("[data-atlas-toolbar]");
+    expect(toolbar?.className).not.toContain("hidden");
+    expect(screen.getByRole("button", { name: "Recentrer" })).toBeVisible();
+  });
+});
+
 /**
  * A country fiche used to carry its own picker, outside the globe, which
  * navigated to another fiche rather than re-aiming the camera. The mockup

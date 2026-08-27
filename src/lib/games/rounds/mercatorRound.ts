@@ -22,7 +22,7 @@ const GAME = getGameBySlug("mercator");
  */
 const MINIMUM_AREA_RATIO = 1.02;
 
-const frenchNumber = new Intl.NumberFormat("fr-FR");
+import { frenchNumber } from "@/lib/games/format";
 const frenchFactor = new Intl.NumberFormat("fr-FR", {
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,

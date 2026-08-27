@@ -29,6 +29,47 @@ const OTHER_COUNTRIES: GameCountryFixture[] = [
   makeCountry({ id: "KEN", nameFr: "Kenya" }),
 ];
 
+describe("buildHistoricalNameRound — the wrong answers are plausible", () => {
+  // selectDistractors takes the first three of the pool, so an unsorted pool
+  // hands it whatever the corpus happened to list first. Ordering the pool by
+  // proximity is what makes the wrong answers worth ruling out; see
+  // docs/design/games-charter.md §3.
+  // @req REQ-120
+  it("draws its distractors from the subject's neighbours", () => {
+    const pool = [
+      makeCountry({ id: "ZAF", nameFr: "Afrique du Sud" }),
+      makeCountry({ id: "MDG", nameFr: "Madagascar" }),
+      makeCountry({ id: "NER", nameFr: "Niger" }),
+      makeCountry({ id: "SDN", nameFr: "Soudan" }),
+      makeCountry({ id: "CMR", nameFr: "Cameroun" }),
+    ];
+
+    const round = buildHistoricalNameRound(makeCountry(), pool);
+
+    // Chad's neighbours, not the two countries at the far end of the
+    // continent — which is exactly what corpus order would have offered.
+    expect(round.choices).toContain("TCD");
+    expect(round.choices).not.toContain("ZAF");
+    expect(round.choices).not.toContain("MDG");
+  });
+
+  // Proximity ordering has its own failure mode: if the answer were always
+  // the geographic outlier of the four, the round would become guessable
+  // from the map alone, in the other direction.
+  // @req REQ-120
+  it("does not leave the answer as the odd one out on the map", () => {
+    const round = buildHistoricalNameRound(makeCountry(), [
+      makeCountry({ id: "NER", nameFr: "Niger" }),
+      makeCountry({ id: "SDN", nameFr: "Soudan" }),
+      makeCountry({ id: "CMR", nameFr: "Cameroun" }),
+      makeCountry({ id: "NGA", nameFr: "Nigeria" }),
+    ]);
+
+    expect(round.choices).toHaveLength(4);
+    expect(new Set(round.choices).size).toBe(4);
+  });
+});
+
 describe("buildHistoricalNameRound", () => {
   // @req REQ-120
   it("asks for the country carrying the former name, with the country itself as answer", () => {

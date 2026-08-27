@@ -21,6 +21,39 @@ const ROUND: BinaryRound = {
   correctIndex: 0,
 };
 
+const ROUND_WITH_STIMULUS: BinaryRound = {
+  ...ROUND,
+  stimulus: {
+    familyFr: "Niger-Congo",
+    countriesFr: ["Nigeria", "Bénin"],
+    subjectName: { autonym: "Yorùbá", exonym: "Yoruba" },
+    scaleFr: "environ 47 000 000 personnes",
+  },
+};
+
+describe("BinaryChoice — the round says who it is about (REQ-120)", () => {
+  // @req REQ-120
+  it("names the people, its family and its countries above the question", () => {
+    render(<BinaryChoice round={ROUND_WITH_STIMULUS} onAnswer={vi.fn()} />);
+
+    const stimulus = screen.getByTestId("round-stimulus");
+    expect(stimulus).toHaveTextContent("Yorùbá");
+    expect(stimulus).toHaveTextContent("Niger-Congo");
+    expect(stimulus).toHaveTextContent("Nigeria");
+    expect(stimulus).toHaveTextContent("Bénin");
+    expect(stimulus).toHaveTextContent("environ 47 000 000 personnes");
+  });
+
+  // pays-davant and mercator carry no stimulus on purpose — one would give
+  // the answer away, the other names both countries in its own options.
+  // @req REQ-120
+  it("renders nothing at all for a round that carries no stimulus", () => {
+    render(<BinaryChoice round={ROUND} onAnswer={vi.fn()} />);
+
+    expect(screen.queryByTestId("round-stimulus")).not.toBeInTheDocument();
+  });
+});
+
 describe("BinaryChoice (Jouer hub engine, REQ-120)", () => {
   // @req REQ-120
   it("renders the round question above the two choices", () => {

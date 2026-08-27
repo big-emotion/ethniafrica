@@ -3,31 +3,35 @@ import { GAME_DEFINITIONS, GAME_SLUGS, getGameBySlug } from "../gameRegistry";
 import { MODULE_DEFINITIONS } from "@/lib/hubs/moduleRegistry";
 
 describe("GAME_DEFINITIONS", () => {
+  // Three finished games beat eleven approximate ones; the eight retired are
+  // recoverable from git when they are rebuilt against the games charter.
   // @req REQ-120
-  it("holds the eleven games the Jouer hub lists beside the quiz", () => {
-    expect(GAME_DEFINITIONS).toHaveLength(11);
-  });
-
-  // @req REQ-120
-  it("gives every game a unique id and a unique slug", () => {
-    expect(new Set(GAME_DEFINITIONS.map((g) => g.id)).size).toBe(11);
-    expect(new Set(GAME_SLUGS).size).toBe(11);
-  });
-
-  // @req REQ-120
-  it("uses only the four interaction primitives", () => {
-    const kinds = new Set(GAME_DEFINITIONS.map((game) => game.kind));
-    expect([...kinds].sort()).toEqual([
-      "areaCompare",
-      "binary",
-      "globeTap",
-      "quad",
+  it("holds the three games the Jouer hub lists beside the quiz", () => {
+    expect(GAME_DEFINITIONS).toHaveLength(3);
+    expect(GAME_SLUGS.sort()).toEqual([
+      "appellations",
+      "mercator",
+      "pays-davant",
     ]);
   });
 
   // @req REQ-120
-  it("covers all four primitives, so no engine path ships unexercised", () => {
-    for (const kind of ["binary", "quad", "globeTap", "areaCompare"]) {
+  it("gives every game a unique id and a unique slug", () => {
+    expect(new Set(GAME_DEFINITIONS.map((g) => g.id)).size).toBe(3);
+    expect(new Set(GAME_SLUGS).size).toBe(3);
+  });
+
+  // @req REQ-120
+  it("uses only the two surviving interaction primitives", () => {
+    const kinds = new Set(GAME_DEFINITIONS.map((game) => game.kind));
+    expect([...kinds].sort()).toEqual(["binary", "globeTap"]);
+  });
+
+  // The point of this test is not the count but the absence of dead engine
+  // paths: a GameKind no game declares is a renderer shipping unexercised.
+  // @req REQ-120
+  it("covers every primitive it declares, so no engine path ships unexercised", () => {
+    for (const kind of ["binary", "globeTap"]) {
       expect(GAME_DEFINITIONS.some((game) => game.kind === kind)).toBe(true);
     }
   });
@@ -76,6 +80,23 @@ describe("getGameBySlug", () => {
   it("returns null for an unknown slug so the route can answer 404", () => {
     expect(getGameBySlug("pas-un-jeu")).toBeNull();
   });
+
+  // A retired game must 404 rather than linger as a half-working route.
+  // @req REQ-120
+  it("no longer resolves a retired slug", () => {
+    for (const slug of [
+      "plus-ou-moins",
+      "vraie-taille",
+      "repartition",
+      "royaumes",
+      "migrations",
+      "liens",
+      "familles",
+      "frontieres",
+    ]) {
+      expect(getGameBySlug(slug)).toBeNull();
+    }
+  });
 });
 
 describe("the hub and the game registry agree", () => {
@@ -100,11 +121,11 @@ describe("the hub and the game registry agree", () => {
   });
 
   // @req REQ-120
-  it("lists twelve Jouer entries once the quiz is counted", () => {
+  it("lists four Jouer entries once the quiz is counted", () => {
     const jouerModules = MODULE_DEFINITIONS.filter(
       (entry) => entry.accessMode === "jouer"
     );
-    expect(jouerModules).toHaveLength(12);
+    expect(jouerModules).toHaveLength(4);
     expect(jouerModules.some((entry) => entry.id === "quiz")).toBe(true);
   });
 

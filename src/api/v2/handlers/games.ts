@@ -4,7 +4,7 @@
  * There is deliberately no `/api/v2/games/*` route: the game page is a server
  * component that awaits this handler directly, the way `/quiz/page.tsx`
  * already awaits `getQuizSegmentsHandler`. That keeps the OpenAPI contract
- * untouched and saves eleven route/spec pairs. A public route can be added
+ * untouched and saves a route/spec pair per game. A public route can be added
  * later without breaking anything — the omission is a decision, not an
  * oversight.
  *
@@ -15,34 +15,23 @@
  */
 
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
-import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
-import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { loadGameCorpus } from "@/api/v2/services/gamesService";
-import type {
-  GameCorpus,
-  GameCountryFixture,
-  GamePeopleFixture,
-} from "@/lib/games/corpus";
+import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
 import { buildAppellationsRound } from "@/lib/games/rounds/appellationsRound";
-import { buildBorderCutRound } from "@/lib/games/rounds/borderCutRound";
-import { buildFamilyRound } from "@/lib/games/rounds/familyRound";
 import { buildHistoricalNameRound } from "@/lib/games/rounds/historicalNameRound";
-import { buildKingdomRound } from "@/lib/games/rounds/kingdomRound";
-import { buildMagnitudeRound } from "@/lib/games/rounds/magnitudeRound";
-import { buildMercatorRound } from "@/lib/games/rounds/mercatorRound";
-import { buildMigrationRound } from "@/lib/games/rounds/migrationRound";
-import { buildRelationRound } from "@/lib/games/rounds/relationRound";
-import { buildSpreadRound } from "@/lib/games/rounds/spreadRound";
-import { buildTrueSizeRound } from "@/lib/games/rounds/trueSizeRound";
+import {
+  buildMercatorRound,
+  mercatorMisleads,
+} from "@/lib/games/rounds/mercatorRound";
 
 export interface GameRoundsData {
   rounds: GameRound[];
   /**
    * True when the corpus yielded fewer rounds than the game asks for — the
-   * honest state for the twelve-relation and six-migration games, which the
-   * score card states outright rather than rendering as an empty screen.
+   * honest state for a game whose corpus runs short, which the score card
+   * states outright rather than rendering as an empty screen.
    */
   corpusLimited: boolean;
 }
@@ -57,11 +46,34 @@ function rotate<T>(items: T[], seed: number): T[] {
   return [...items.slice(offset), ...items.slice(0, offset)];
 }
 
-/** Pairs consecutive entries: [a,b], [c,d], … — each entity used once. */
-function pairs<T>(items: T[]): [T, T][] {
-  const out: [T, T][] = [];
-  for (let i = 0; i + 1 < items.length; i += 2)
-    out.push([items[i], items[i + 1]]);
+/**
+ * Pairs where Mercator lies about which country is bigger, each country used
+ * at most once.
+ *
+ * Consecutive pairing cannot express this. Two countries mislead only when
+ * they sit at different latitudes, and neighbours in the corpus are usually
+ * neighbours on the map — so walking the list two at a time served mostly
+ * honest comparisons, in the one game whose entire subject is the lie. Every
+ * candidate pair is considered, greedily, so a country left over by one
+ * pairing can still be spent on another.
+ */
+function misleadingPairs(
+  countries: GameCountryFixture[]
+): [GameCountryFixture, GameCountryFixture][] {
+  const out: [GameCountryFixture, GameCountryFixture][] = [];
+  const spent = new Set<string>();
+
+  for (let i = 0; i < countries.length; i++) {
+    if (spent.has(countries[i].id)) continue;
+    for (let j = i + 1; j < countries.length; j++) {
+      if (spent.has(countries[j].id)) continue;
+      if (!mercatorMisleads(countries[i], countries[j])) continue;
+      out.push([countries[i], countries[j]]);
+      spent.add(countries[i].id);
+      spent.add(countries[j].id);
+      break;
+    }
+  }
   return out;
 }
 
@@ -69,17 +81,6 @@ function countryNameMap(
   countries: GameCountryFixture[]
 ): Record<string, string> {
   return Object.fromEntries(countries.map((c) => [c.id, c.nameFr]));
-}
-
-function peopleNameMap(
-  peoples: GamePeopleFixture[]
-): Map<string, GamePeopleFixture> {
-  return new Map(peoples.map((people) => [people.id, people]));
-}
-
-/** Countries the committed admin-0 asset can actually draw. */
-function drawableCountryIds(countries: GameCountryFixture[]): string[] {
-  return countries.filter((c) => getAdmin0Rings(c.id)).map((c) => c.id);
 }
 
 function assembleRounds(
@@ -97,76 +98,27 @@ function assembleRounds(
   };
 
   switch (game.id) {
-    case "appellations":
-      for (const people of peoples) push(buildAppellationsRound(people));
+    case "appellations": {
+      // Countries travel with the peoples slice for their names alone: the
+      // stimulus situates a people by country, and an ISO code situates
+      // nobody.
+      const names = countryNameMap(corpus.countries);
+      for (const people of peoples) push(buildAppellationsRound(people, names));
       break;
-
-    case "plus-ou-moins":
-      for (const [a, b] of pairs(peoples)) push(buildMagnitudeRound(a, b));
-      break;
+    }
 
     case "mercator":
-      for (const [a, b] of pairs(countries)) push(buildMercatorRound(a, b));
+      // A session that cannot be filled with misleading pairs is served
+      // short: padding it with honest comparisons would quietly undo the
+      // filter, and corpusLimited already states the shortfall on screen.
+      for (const [a, b] of misleadingPairs(countries))
+        push(buildMercatorRound(a, b));
       break;
-
-    case "vraie-taille": {
-      const comparisons = rotate(Object.entries(WORLD_COMPARE), seed);
-      countries.forEach((country, index) => {
-        const [id, shape] = comparisons[index % comparisons.length];
-        push(
-          buildTrueSizeRound(country, {
-            id,
-            nameFr: shape.nameFr,
-            rings: shape.rings.map((ring) =>
-              ring.map(([lon, lat]) => ({ lon, lat }))
-            ),
-          })
-        );
-      });
-      break;
-    }
-
-    case "repartition": {
-      const names = countryNameMap(corpus.countries);
-      for (const people of peoples) push(buildSpreadRound(people, names));
-      break;
-    }
 
     case "pays-davant":
       for (const country of countries)
         push(buildHistoricalNameRound(country, countries));
       break;
-
-    case "royaumes":
-      for (const country of countries)
-        push(buildKingdomRound(country, countries));
-      break;
-
-    case "migrations": {
-      const byId = peopleNameMap(corpus.peoples);
-      const pool = drawableCountryIds(corpus.countries);
-      for (const migration of rotate(corpus.migrations, seed))
-        push(buildMigrationRound(migration, byId, pool));
-      break;
-    }
-
-    case "liens": {
-      const byId = peopleNameMap(corpus.peoples);
-      for (const relation of rotate(corpus.relations, seed))
-        push(buildRelationRound(relation, byId, corpus.peoples));
-      break;
-    }
-
-    case "familles":
-      for (const people of peoples)
-        push(buildFamilyRound(people, corpus.families));
-      break;
-
-    case "frontieres": {
-      const names = countryNameMap(corpus.countries);
-      for (const people of peoples) push(buildBorderCutRound(people, names));
-      break;
-    }
   }
 
   return rounds;

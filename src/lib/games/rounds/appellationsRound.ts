@@ -1,5 +1,6 @@
 import type { GamePeopleFixture } from "@/lib/games/corpus";
-import type { BinaryRound } from "@/lib/games/gameKinds";
+import { frenchNumber } from "@/lib/games/format";
+import type { BinaryRound, GameStimulus } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { correctOptionIndex, isSameOptionValue } from "@/lib/games/options";
 
@@ -17,9 +18,43 @@ const GAME = getGameBySlug("appellations");
 const hasText = (value: string | null): boolean =>
   typeof value === "string" && value.trim().length > 0;
 
+/**
+ * Composed rather than quoted, unlike everything else this generator emits.
+ * That is allowed because it states no claim the corpus does not already
+ * hold: it rounds a figure and says so with « environ ». The reveal, which
+ * *is* a claim, stays verbatim.
+ */
+function scaleSentence(totalPopulation: number | null): string | undefined {
+  if (typeof totalPopulation !== "number" || !Number.isFinite(totalPopulation))
+    return undefined;
+  return `environ ${frenchNumber.format(totalPopulation)} personnes`;
+}
+
+/**
+ * Situates the people before the question is asked (charter §2). Without it
+ * the round offers two names and never says whose they are, which leaves the
+ * reader nothing to reason from.
+ */
+function buildStimulus(
+  people: GamePeopleFixture,
+  countryNamesFr: Record<string, string>
+): GameStimulus {
+  return {
+    familyFr: people.languageFamilyNameFr,
+    // An id the corpus cannot name is dropped: "CMR" on screen is worse than
+    // one country fewer.
+    countriesFr: people.currentCountries.flatMap((id) =>
+      countryNamesFr[id] ? [countryNamesFr[id]] : []
+    ),
+    subjectName: people.name,
+    scaleFr: scaleSentence(people.totalPopulation),
+  };
+}
+
 // @req REQ-120
 export function buildAppellationsRound(
-  people: GamePeopleFixture
+  people: GamePeopleFixture,
+  countryNamesFr: Record<string, string>
 ): BinaryRound | null {
   const selfAppellation = people.selfAppellation;
   const exonym = people.exonyms[0];
@@ -41,6 +76,7 @@ export function buildAppellationsRound(
     kind: "binary",
     gameId: GAME.id,
     subjectId: people.id,
+    stimulus: buildStimulus(people, countryNamesFr),
     promptFr: GAME.promptFr,
     options,
     correctIndex,

@@ -1,5 +1,10 @@
 import type { CountryId } from "@/types/afrik";
-import { getAdmin0Rings } from "@/lib/atlas/overlays";
+import {
+  getAdmin0Rings,
+  ringCentroid,
+  type LonLat,
+  type Ring,
+} from "@/lib/atlas/overlays";
 import type { GameCountryFixture } from "@/lib/games/corpus";
 import type { GlobeTapRound } from "@/lib/games/gameKinds";
 import {
@@ -37,6 +42,46 @@ function normalise(text: string): string {
   return text.toLowerCase().replace(/\s+/g, " ").trim();
 }
 
+/** A country's position, taken from the largest ring of its committed outline. */
+function centroidOf(rings: Ring[]): LonLat {
+  return ringCentroid(
+    rings.reduce((widest, ring) =>
+      ring.length > widest.length ? ring : widest
+    )
+  );
+}
+
+/**
+ * Squared degrees, with longitude narrowed by latitude. Good enough to rank
+ * neighbours and cheaper than a great-circle distance — nothing here needs a
+ * distance in kilometres, only an order.
+ */
+function proximity(a: LonLat, b: LonLat): number {
+  const meanLatRad = (((a.lat + b.lat) / 2) * Math.PI) / 180;
+  const dLon = (a.lon - b.lon) * Math.cos(meanLatRad);
+  const dLat = a.lat - b.lat;
+  return dLon * dLon + dLat * dLat;
+}
+
+/**
+ * Orders the pool from the subject outwards, so `selectDistractors` — which
+ * takes the first three it is given — offers neighbours instead of whatever
+ * the corpus listed first.
+ *
+ * The sort lives here rather than inside `selectDistractors`: that helper
+ * receives flattened values and could not know a candidate's geography, and
+ * it is shared with the quiz templates, which must keep their current
+ * behaviour until their questions are regenerated.
+ */
+function nearestFirst(
+  subject: LonLat,
+  pool: { id: CountryId; center: LonLat }[]
+): CountryId[] {
+  return [...pool]
+    .sort((a, b) => proximity(subject, a.center) - proximity(subject, b.center))
+    .map((entry) => entry.id);
+}
+
 /**
  * The corpus often states the name origin twice, once as etymology and once as
  * the actor who gave the name, in near-identical wording. Printing both would
@@ -72,12 +117,18 @@ export function buildHistoricalNameRound(
 
   // A target the reader cannot see is not a choice: the answer and all three
   // distractors must exist in the committed 51-country admin-0 asset.
-  if (!getAdmin0Rings(country.id)) return null;
-  const drawablePool = otherCountries
-    .filter((candidate) => getAdmin0Rings(candidate.id))
-    .map((candidate) => candidate.id);
+  const subjectRings = getAdmin0Rings(country.id);
+  if (!subjectRings) return null;
 
-  const distractors = selectDistractors(country.id, drawablePool);
+  const drawablePool = otherCountries.flatMap((candidate) => {
+    const rings = getAdmin0Rings(candidate.id);
+    return rings ? [{ id: candidate.id, center: centroidOf(rings) }] : [];
+  });
+
+  const distractors = selectDistractors(
+    country.id,
+    nearestFirst(centroidOf(subjectRings), drawablePool)
+  );
   if (!distractors) return null;
 
   const choices: CountryId[] = assembleOptions(

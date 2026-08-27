@@ -3,13 +3,18 @@ import type { AutonymExonymName, QuizOptionValue } from "@/types/quiz";
 import type { Ring } from "@/lib/atlas/overlays";
 
 /**
- * The four gestures the eleven games of the Jouer hub share (REQ-120).
+ * The two gestures the three games of the Jouer hub share (REQ-120).
  *
- * Eleven bespoke games would be eleven applications. They are in fact four
- * interactions applied to eleven corpus sources, so the engine knows only
- * these four shapes and every game is a pure function producing one of them.
+ * Bespoke games would be one application each. They are in fact a couple of
+ * interactions applied to several corpus sources, so the engine knows only
+ * these shapes and every game is a pure function producing one of them.
+ *
+ * `quad` and `areaCompare` were removed with the eight retired games rather
+ * than left declared: a kind no game produces is a renderer shipping
+ * unexercised, which `gameRegistry.test.ts` asserts against. Both are in git
+ * for whoever rebuilds a four-option game against the charter.
  */
-export type GameKind = "binary" | "quad" | "globeTap" | "areaCompare";
+export type GameKind = "binary" | "globeTap";
 
 /**
  * What the reader is shown after answering. `textFr` is copied verbatim from
@@ -32,19 +37,31 @@ export interface GameOption {
   name?: AutonymExonymName;
 }
 
-/** An outline the reader compares by eye, with the area it truly covers. */
-export interface GameAreaShape {
-  labelFr: string;
-  rings: Ring[];
-  areaKm2: number;
-  /** Verbatim corpus figure, when the shape stands for a share of a people. */
-  captionFr?: string;
+/**
+ * Who the round is about, shown above the question (charter §2).
+ *
+ * Optional, and deliberately so: a round must name its subject *unless the
+ * subject is what is being guessed*. « Le pays d'avant » asks which country
+ * carries a former name, so naming it would be handing over the answer;
+ * « La taille qu'on vous a cachée » names both countries in its own options.
+ * Only « Eux, ou les autres ? » asks about an attribute of a subject the
+ * reader would otherwise never be told.
+ */
+export interface GameStimulus {
+  /** `languageFamilyNameFr` — null in the fiches that record no family. */
+  familyFr: string | null;
+  /** Resolved country names; an id the corpus cannot name is dropped, not shown as a code. */
+  countriesFr: string[];
+  subjectName: AutonymExonymName;
+  /** Order of magnitude in words, omitted when the corpus carries no figure. */
+  scaleFr?: string;
 }
 
 interface GameRoundBase {
   gameId: string;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
+  stimulus?: GameStimulus;
   promptFr: string;
   reveal: GameReveal;
 }
@@ -54,13 +71,6 @@ export interface BinaryRound extends GameRoundBase {
   kind: "binary";
   options: [GameOption, GameOption];
   correctIndex: 0 | 1;
-}
-
-/** Four options, every wrong one read verbatim from the corpus. */
-export interface QuadRound extends GameRoundBase {
-  kind: "quad";
-  options: [GameOption, GameOption, GameOption, GameOption];
-  correctIndex: number;
 }
 
 /**
@@ -74,31 +84,12 @@ export interface GlobeTapRound extends GameRoundBase {
   correctCountryId: CountryId;
 }
 
-/**
- * Two outlines laid over one another. The reader answers by eye, then the
- * true areas are shown — which is the only honest way to make the point,
- * since the reader's error is the lesson.
- */
-export interface AreaCompareRound extends GameRoundBase {
-  kind: "areaCompare";
-  shapes: [GameAreaShape, GameAreaShape];
-  correctIndex: 0 | 1;
-  /** What "correct" means here, e.g. « laquelle est la plus grande ? ». */
-  questionFr: string;
-}
-
-export type GameRound =
-  | BinaryRound
-  | QuadRound
-  | GlobeTapRound
-  | AreaCompareRound;
+export type GameRound = BinaryRound | GlobeTapRound;
 
 /** Narrows a round to the options-bearing kinds without a cast. */
 // @req REQ-120
-export function isOptionRound(
-  round: GameRound
-): round is BinaryRound | QuadRound {
-  return round.kind === "binary" || round.kind === "quad";
+export function isOptionRound(round: GameRound): round is BinaryRound {
+  return round.kind === "binary";
 }
 
 /**

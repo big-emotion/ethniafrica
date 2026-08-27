@@ -3,6 +3,7 @@ import type { GameCountryFixture } from "@/lib/games/corpus";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import { ringArea } from "@/lib/games/sphericalArea";
+import { frenchNumber } from "@/lib/games/format";
 import { buildMercatorRound, mercatorMisleads } from "../mercatorRound";
 
 function countryFixture(
@@ -36,8 +37,6 @@ function trueAreaKm2(countryId: string): number {
     0
   );
 }
-
-const frenchNumber = new Intl.NumberFormat("fr-FR");
 
 describe("buildMercatorRound", () => {
   // @req REQ-120

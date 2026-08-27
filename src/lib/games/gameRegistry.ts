@@ -1,34 +1,30 @@
 import type { GameKind } from "@/lib/games/gameKinds";
 
 /**
- * The eleven games under the Jouer hub (REQ-120).
+ * The three games under the Jouer hub (REQ-120).
  *
  * The hub's own module list lives in `src/lib/hubs/moduleRegistry.ts` and
  * addresses these by `gameSlug`; this registry is what the game route resolves
  * a slug against. Keeping them apart means `PageType` stays a closed union
- * instead of growing eleven variants.
+ * instead of growing a variant per game.
+ *
+ * Eleven games shipped first and eight were retired: see
+ * `docs/design/games-charter.md` §1 for which, and why. Shape-comparison went
+ * as a category — answering by eye teaches nothing about names — while the
+ * rest are deferred until they are rebuilt against the charter. Their
+ * generators are recoverable from git rather than kept unreachable here.
  */
 
-export type GameId =
-  | "appellations"
-  | "plus-ou-moins"
-  | "mercator"
-  | "vraie-taille"
-  | "repartition"
-  | "pays-davant"
-  | "royaumes"
-  | "migrations"
-  | "liens"
-  | "familles"
-  | "frontieres";
+export type GameId = "appellations" | "mercator" | "pays-davant";
 
-/** Which corpus slice a game reads — drives what the service must load. */
-export type GameDataSource =
-  | "peoples"
-  | "countries"
-  | "families"
-  | "relations"
-  | "migrations";
+/**
+ * Which corpus slice a game reads — drives what the service must load.
+ *
+ * `families`, `relations` and `migrations` went with the games that read
+ * them: a slice no game declares is a Supabase read the service can never
+ * reach.
+ */
+export type GameDataSource = "peoples" | "countries";
 
 export interface GameDefinition {
   id: GameId;
@@ -59,15 +55,6 @@ export const GAME_DEFINITIONS: GameDefinition[] = [
     roundsPerSession: 8,
   },
   {
-    id: "plus-ou-moins",
-    slug: "plus-ou-moins",
-    nameFr: "Plus ou moins ?",
-    kind: "binary",
-    dataSource: "peoples",
-    promptFr: "Lequel de ces deux peuples est le plus nombreux ?",
-    roundsPerSession: 8,
-  },
-  {
     id: "mercator",
     slug: "mercator",
     nameFr: "La taille qu'on vous a cachée",
@@ -77,76 +64,12 @@ export const GAME_DEFINITIONS: GameDefinition[] = [
     roundsPerSession: 8,
   },
   {
-    id: "vraie-taille",
-    slug: "vraie-taille",
-    nameFr: "Vraie taille",
-    kind: "areaCompare",
-    dataSource: "countries",
-    promptFr: "Deux formes, à la même échelle. Laquelle est la plus grande ?",
-    roundsPerSession: 6,
-  },
-  {
-    id: "repartition",
-    slug: "repartition",
-    nameFr: "Où vivent-ils ?",
-    kind: "areaCompare",
-    dataSource: "peoples",
-    promptFr:
-      "Dans lequel de ces deux pays ce peuple est-il le plus nombreux ?",
-    roundsPerSession: 8,
-  },
-  {
     id: "pays-davant",
     slug: "pays-davant",
     nameFr: "Le pays d'avant",
     kind: "globeTap",
     dataSource: "countries",
     promptFr: "Quel pays porte aujourd'hui ce nom d'avant ?",
-    roundsPerSession: 8,
-  },
-  {
-    id: "royaumes",
-    slug: "royaumes",
-    nameFr: "Royaumes perdus",
-    kind: "globeTap",
-    dataSource: "countries",
-    promptFr: "Sur quel pays d'aujourd'hui ce royaume s'étendait-il ?",
-    roundsPerSession: 8,
-  },
-  {
-    id: "migrations",
-    slug: "migrations",
-    nameFr: "Le fil des migrations",
-    kind: "globeTap",
-    dataSource: "migrations",
-    promptFr: "Où ce mouvement a-t-il mené ?",
-    roundsPerSession: 6,
-  },
-  {
-    id: "liens",
-    slug: "liens",
-    nameFr: "Les liens invisibles",
-    kind: "quad",
-    dataSource: "relations",
-    promptFr: "Quel peuple ce lien relie-t-il à l'autre ?",
-    roundsPerSession: 6,
-  },
-  {
-    id: "familles",
-    slug: "familles",
-    nameFr: "Range-le dans sa famille",
-    kind: "quad",
-    dataSource: "peoples",
-    promptFr: "À quelle famille linguistique ce peuple appartient-il ?",
-    roundsPerSession: 8,
-  },
-  {
-    id: "frontieres",
-    slug: "frontieres",
-    nameFr: "La ligne qui coupe",
-    kind: "quad",
-    dataSource: "peoples",
-    promptFr: "Entre combien de pays ce peuple est-il aujourd'hui réparti ?",
     roundsPerSession: 8,
   },
 ];

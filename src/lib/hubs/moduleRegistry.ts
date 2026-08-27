@@ -59,12 +59,7 @@ export type ModuleFeatureFlag = "quiz";
 // famille" asks about a people and reads afrik_language_families — which is
 // why the shelf is declared rather than derived from `dataSource`. A
 // taxonomy the reader sees should not move because a query changed table.
-export type ModuleGroupId =
-  | "jeux-peuples"
-  | "jeux-pays"
-  | "jeux-migrations"
-  | "jeux-liens"
-  | "jeux-quiz";
+export type ModuleGroupId = "jeux-peuples" | "jeux-pays" | "jeux-quiz";
 
 export interface ModuleGroup {
   id: ModuleGroupId;
@@ -77,8 +72,6 @@ export interface ModuleGroup {
 export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
   "jeux-peuples": { id: "jeux-peuples", label: "Les peuples" },
   "jeux-pays": { id: "jeux-pays", label: "Les pays" },
-  "jeux-migrations": { id: "jeux-migrations", label: "Les migrations" },
-  "jeux-liens": { id: "jeux-liens", label: "Les liens" },
   // The quiz questions the reader rather than the corpus, so it sits on no
   // entity's shelf. It is alone there, which the panel reads as "render the
   // module, not a shelf".
@@ -275,17 +268,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     heroable: "game",
   },
   {
-    id: "plus-ou-moins",
-    group: "jeux-peuples",
-    name: "Plus ou moins ?",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "plus-ou-moins",
-    availability: "data",
-    dataSource: "afrik_peoples",
-    heroable: "game",
-  },
-  {
     id: "mercator",
     group: "jeux-pays",
     name: "La taille qu'on vous a cachée",
@@ -308,28 +290,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
   },
   {
-    id: "comparer",
-    group: "jeux-pays",
-    name: "Vraie taille",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "vraie-taille",
-    availability: "data",
-    dataSource: "afrik_countries",
-    heroable: "game",
-  },
-  {
-    id: "repartition",
-    group: "jeux-peuples",
-    name: "Où vivent-ils ?",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "repartition",
-    availability: "data",
-    dataSource: "afrik_peoples",
-    heroable: "game",
-  },
-  {
     id: "pays-davant",
     group: "jeux-pays",
     name: "Le pays d'avant",
@@ -338,65 +298,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     gameSlug: "pays-davant",
     availability: "data",
     dataSource: "afrik_countries",
-    heroable: "game",
-  },
-  {
-    id: "royaumes",
-    group: "jeux-pays",
-    name: "Royaumes perdus",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "royaumes",
-    availability: "data",
-    dataSource: "afrik_countries",
-    heroable: "game",
-  },
-  {
-    id: "migrations",
-    group: "jeux-migrations",
-    name: "Le fil des migrations",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "migrations",
-    availability: "data",
-    dataSource: "migration_events",
-    heroable: "game",
-  },
-  {
-    id: "liens",
-    group: "jeux-liens",
-    name: "Les liens invisibles",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "liens",
-    availability: "data",
-    dataSource: "afrik_people_relations",
-    heroable: "game",
-  },
-  {
-    // Prefixed because the Explorer atlas already holds the id "familles":
-    // module ids key the hub's data-testid, so a collision would let a
-    // selector aimed at the atlas match the game instead. The route the
-    // reader sees is still /jouer/familles.
-    id: "jeu-familles",
-    group: "jeux-peuples",
-    name: "Range-le dans sa famille",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "familles",
-    availability: "data",
-    dataSource: "afrik_language_families",
-    heroable: "game",
-  },
-  {
-    id: "frontieres",
-    group: "jeux-peuples",
-    name: "La ligne qui coupe",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "frontieres",
-    availability: "data",
-    dataSource: "afrik_peoples",
     heroable: "game",
   },
 ];
