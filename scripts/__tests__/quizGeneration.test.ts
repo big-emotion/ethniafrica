@@ -321,6 +321,81 @@ describe("computeSweepPlan", () => {
     expect(second.revokedCount).toBe(0);
   });
 
+  /**
+   * That idempotence is exactly what stops a generator improvement from ever
+   * reaching a player: a question already in the bank is skipped whatever the
+   * templates now produce. Rebuilding is the deliberate way through, and it
+   * has to be asked for.
+   */
+  // @req REQ-080
+  it("rebuilds a healthy bank on request, so a generator change can reach it", () => {
+    const entries: FicheEntry[] = [
+      { fiche: yoruba, assertionsByFieldPath: fullBindings() },
+    ];
+    const first = computeSweepPlan({ entries, pools, activeQuestions: [] });
+    const activeQuestions: ActiveQuestionRow[] = first.toInsert.map((r, i) => ({
+      id: `q-${i}`,
+      templateId: r.templateId,
+      audience: r.audience,
+      entityId: r.entityId,
+      fieldPath: r.fieldPath,
+      correctOption: r.correctOption,
+      optionsFr: r.optionsFr,
+    }));
+
+    const rebuilt = computeSweepPlan({
+      entries,
+      pools,
+      activeQuestions,
+      rebuildAll: true,
+    });
+
+    expect(rebuilt.revokedCount).toBe(activeQuestions.length);
+    expect(rebuilt.generatedCount).toBe(first.generatedCount);
+    expect(
+      rebuilt.toRevoke.every((decision) => decision.reason === "regenerated")
+    ).toBe(true);
+  });
+
+  // @req REQ-080
+  it("keeps a failing question's own revocation reason when rebuilding", () => {
+    const entries: FicheEntry[] = [
+      {
+        fiche: yoruba,
+        assertionsByFieldPath: {
+          ...fullBindings(),
+          languageFamilyId: {
+            assertionId: "assertion-flagged",
+            sourceIds: ["source-flagged"],
+            eligibility: { ...eligibleInput, openFlagCount: 3 },
+          },
+        },
+      },
+    ];
+    const activeQuestions: ActiveQuestionRow[] = [
+      {
+        id: "q-flagged",
+        templateId: "T1",
+        audience: "adults",
+        entityId: "PPL_YORUBA",
+        fieldPath: "languageFamilyId",
+        correctOption: 0,
+        optionsFr: ["Niger-Congo", "Bantou", "Nilo-Saharien", "Khoisan"],
+      },
+    ];
+
+    const rebuilt = computeSweepPlan({
+      entries,
+      pools,
+      activeQuestions,
+      rebuildAll: true,
+    });
+
+    // A blanket "regenerated" here would erase the audit trail of *why* a
+    // question left the bank, which is the one thing revocation records.
+    expect(rebuilt.toRevoke[0].reason).toContain("gate_failed");
+  });
+
   // @req REQ-080
   it("revokes a stale active question and regenerates a fresh one when the revision still passes the gate", () => {
     const activeQuestions: ActiveQuestionRow[] = [

@@ -112,6 +112,16 @@ export interface SweepInput {
   pools: QuizCandidatePools;
   activeQuestions: ActiveQuestionRow[];
   audiences?: readonly QuizAudience[];
+  /**
+   * Revokes every healthy active question so the sweep rebuilds it.
+   *
+   * The sweep is idempotent by design: a question already in the bank is
+   * skipped whatever the templates now produce. That is right for a nightly
+   * run and wrong after a generator change — an improvement to how options
+   * are built would otherwise never reach a single question a player sees.
+   * Rebuilding is therefore possible but never implicit.
+   */
+  rebuildAll?: boolean;
 }
 
 export interface SweepPlan {
@@ -404,6 +414,14 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
     );
     if (decision) {
       toRevoke.push(decision);
+      revokedIds.add(question.id);
+      continue;
+    }
+    if (input.rebuildAll) {
+      // Only questions that would otherwise have survived get this reason. A
+      // blanket "regenerated" would erase why a question really left the
+      // bank, which is the one thing a revocation record is for.
+      toRevoke.push({ id: question.id, reason: "regenerated" });
       revokedIds.add(question.id);
     }
   }
