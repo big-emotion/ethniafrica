@@ -1,6 +1,6 @@
 import { redirect, notFound } from "next/navigation";
 import { Language } from "@/types/shared";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
 
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
@@ -22,7 +22,8 @@ function resolveSection(lang: Language, section: string): SectionType | null {
   return match ?? null;
 }
 
-// This page handles legacy slug-based URLs and redirects to the new v2 query-param based routes
+// This page handles legacy slug-based URLs and forwards them to the v2 routes.
+// @req REQ-019
 export default async function LegacyDetailRedirect({
   params,
 }: {
@@ -50,9 +51,9 @@ export default async function LegacyDetailRedirect({
   }
 
   if (sectionType === "region" || sectionType === "family") {
-    // Regions are now replaced by language families
-    const route = getLocalizedRoute(language, "families");
-    redirect(`${route}?family=${encodeURIComponent(decodedItem)}`);
+    // Regions are now replaced by language families, and a family has one
+    // rendering: the fiche. The `?family=` detail this used to target is gone.
+    redirect(getFamilyRoute(language, encodeURIComponent(decodedItem)));
   }
 
   if (sectionType === "ethnicity" || sectionType === "people") {

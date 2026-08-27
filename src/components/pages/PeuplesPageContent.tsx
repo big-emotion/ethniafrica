@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleView } from "@/components/views/PeopleView";
 import { DirectoryHero } from "@/components/views/DirectoryHero";
@@ -45,6 +45,7 @@ function DefaultMessage({ language }: { language: string }) {
   );
 }
 
+// @req REQ-091
 export function PeuplesPageContent() {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -87,8 +88,7 @@ export function PeuplesPageContent() {
   };
 
   const handleFamilyClick = (familyId: string) => {
-    const familiesRoute = getLocalizedRoute(language, "families");
-    router.push(`${familiesRoute}?family=${familyId}`);
+    router.push(getFamilyRoute(language, familyId));
   };
 
   const handleBack = () => {
