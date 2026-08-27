@@ -13,10 +13,15 @@ import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 /**
  * The hero draws a different module on every request (REQ-115), so the home
  * must not be prerendered. Reading searchParams below already forces that,
- * and so does the root layout's headers() call for the CSP nonce — but both
- * are action at a distance. Stating it here means the day the nonce moves
- * into middleware alone, the hero does not silently freeze on one module
- * chosen at build time with nothing failing.
+ * and so does the root layout awaiting connection() for the CSP nonce — but
+ * both are action at a distance. Stating it here means the day that nonce
+ * moves into middleware alone, the hero does not silently freeze on one
+ * module chosen at build time with nothing failing.
+ *
+ * This is the opposite failure to the one staticParamsBan.test.ts guards:
+ * there a route claimed to be static and answered 500 at request time;
+ * here a route that is dynamic only by inheritance would answer 200 with
+ * the same module forever.
  */
 // @req REQ-115
 export const dynamic = "force-dynamic";

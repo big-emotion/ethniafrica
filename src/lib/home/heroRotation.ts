@@ -22,7 +22,8 @@ export interface HeroDrawOptions {
  * and the page stays cacheable. Neither reason applies here. Variation *is*
  * the feature — the hero exists to show that the atlas holds more than one
  * module — and the home has no route cache to lose, since the root layout
- * already reads headers() for the CSP nonce and the page reads searchParams.
+ * already awaits connection() for the CSP nonce and the page reads
+ * searchParams.
  * Where determinism is genuinely needed, the pin restores it exactly.
  *
  * The draw runs in a server component, so it never re-runs during
