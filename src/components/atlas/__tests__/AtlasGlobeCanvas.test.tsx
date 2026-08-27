@@ -299,6 +299,26 @@ describe("AtlasGlobeCanvas", () => {
     expect(canvas).toHaveAttribute("aria-hidden", "true");
   });
 
+  /**
+   * Decorative all the way down, including for the pointer.
+   *
+   * AtlasGlobe lays its interaction surface over the stage and then mounts
+   * this canvas over that — later in the DOM, positioned, at the same stacking
+   * level, so the canvas won every hit test. The globe could not be turned by
+   * mouse or finger on any of the three fiches; elementFromPoint at the centre
+   * of a shipped stage answered CANVAS. Paint that is aria-hidden has no
+   * business taking a pointer either.
+   */
+  // @req REQ-116
+  it("lets the pointer through to the surface it is painted over", () => {
+    const { container } = render(
+      <AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />
+    );
+    expect(container.querySelector("canvas")).toHaveStyle({
+      pointerEvents: "none",
+    });
+  });
+
   // @req REQ-116
   it("never throws when no WebGL context can be created", () => {
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);

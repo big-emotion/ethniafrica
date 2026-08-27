@@ -387,6 +387,14 @@ export interface AtlasTargetFacts {
   title: string;
   description?: string;
   body?: ReactNode;
+  /**
+   * The one-line figure this country carries in the picker, before it is
+   * chosen — the fiche's own measure of it, since the overlay has none that
+   * is true. A people field's `populationShare` is normalised over the
+   * largest drawn country, so it sizes halos and is not a share of anything;
+   * the fiche reads the real figure from its demography instead.
+   */
+  subtitle?: string;
 }
 
 /**
@@ -548,6 +556,44 @@ const NIGHT_STAGE_STYLE: CSSProperties = {
  * project is mobile-first and the server cannot measure a viewport — the wider
  * side panel is an upgrade applied once the client knows its own width.
  */
+/**
+ * The stage's live width-to-height ratio, which is what the shader divides the
+ * horizontal axis by.
+ *
+ * The stage is full-width over a fixed height — 1512x520 on a laptop — so this
+ * is a runtime fact, and markerPlacement's committed fall-back (the basemap's
+ * own 800/758) is nowhere near it. Placing markers on the fall-back put them
+ * roughly three times too far from the centre: PPL_AARI's single pastille
+ * landed beside the sphere, over the void, naming ground the reader could not
+ * see under it.
+ *
+ * Null until the first measurement, which is what keeps the server render and
+ * the first client render agreeing on the fall-back.
+ */
+function useStageAspect(stage: HTMLElement | null): number | null {
+  const [aspect, setAspect] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!stage) return;
+
+    const measure = () => {
+      const { width, height } = stage.getBoundingClientRect();
+      if (width > 0 && height > 0) setAspect(width / height);
+    };
+    measure();
+
+    if (typeof ResizeObserver === "undefined") {
+      window.addEventListener("resize", measure);
+      return () => window.removeEventListener("resize", measure);
+    }
+    const observer = new ResizeObserver(measure);
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, [stage]);
+
+  return aspect;
+}
+
 function usePanelAnchor(): PanelAnchor {
   const [anchor, setAnchor] = useState<PanelAnchor>("bottom");
 
@@ -602,19 +648,42 @@ export function AtlasGlobe({
     setWebglSupported(canCreateWebglContext());
   }, []);
 
+  const stageAspect = useStageAspect(stage);
+
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
-  // Read off the overlay rather than passed in: the counts and the targets have
-  // to describe the same footprint, and deriving both from one source is what
-  // guarantees it.
-  const memberCountByCountry = useMemo(() => {
-    if (overlay?.kind !== "family-footprint") return {};
+  /**
+   * The line each option in the list carries beside its country.
+   *
+   * What a country weighs is not one quantity across the three encodings, so
+   * there is no single place to read it from. A family footprint counts member
+   * peoples and the overlay carries that; reading the same count on a people
+   * fiche, which has no members, printed "0 peuple" under every presence
+   * country the fiche declared — a number the corpus never claimed, denying
+   * the very presence the halo was drawing.
+   *
+   * A people's figure does not come from the overlay either: `populationShare`
+   * there is normalised over the largest drawn country, so it is a weight for
+   * sizing halos and not a share of anything. The fiche reads the real figure
+   * from its demography and hands it over with the rest of the country's
+   * facts, which is the one place it is true.
+   */
+  const subtitleByCountry = useMemo(() => {
+    if (overlay?.kind === "family-footprint") {
+      return Object.fromEntries(
+        overlay.countries.map((country) => [
+          country.countryId,
+          // "1 peuples" is the kind of detail that makes a page read as
+          // machine output.
+          `${country.memberCount} peuple${country.memberCount > 1 ? "s" : ""}`,
+        ])
+      );
+    }
     return Object.fromEntries(
-      overlay.countries.map((country) => [
-        country.countryId,
-        country.memberCount,
-      ])
+      Object.entries(facts ?? {})
+        .filter(([, entry]) => Boolean(entry?.subtitle))
+        .map(([countryId, entry]) => [countryId, entry!.subtitle!])
     );
-  }, [overlay]);
+  }, [overlay, facts]);
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.
@@ -736,15 +805,16 @@ export function AtlasGlobe({
   // on marker legibility, TTFB and Lighthouse budgets not yet measured.
   const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
 
-  // A picker with one entry offers a choice that is not one, and the button
-  // that returns from a choice has nothing to return to. 394 of the corpus's
-  // 789 people fiches declare exactly one country; the markers stand in.
-  const offersList = targetPicker === "list" && targets.length > 1;
+  // A fiche asks for a list because its targets are its presence countries,
+  // and it has them whether there are seventeen or one. 394 of the corpus's
+  // 789 people fiches declare exactly one country, and those used to fall back
+  // to a bare 22px pastille — the only thing naming the country under it.
+  const offersList = targetPicker === "list" && targets.length > 0;
 
   const chosenFacts = chosen ? factsFor(chosen, facts, targetFacts) : null;
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
-      ? placeTargetOnSphere(target, pose)
+      ? placeTargetOnSphere(target, pose, stageAspect ?? undefined)
       : placeTargetOnBasemap(target, pose, cameraFocus?.center ?? null);
 
   return (
@@ -816,7 +886,7 @@ export function AtlasGlobe({
         <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
           <AtlasTargetPicker
             targets={targets}
-            memberCountByCountry={memberCountByCountry}
+            subtitleByCountry={subtitleByCountry}
             chosenCountryId={chosenCountryId}
             onChoose={chooseTarget}
             areaNoun={areaNoun}
@@ -836,11 +906,19 @@ export function AtlasGlobe({
         </p>
       )}
 
+      {/* The mockup lays these out at every width — centred, wrapping. They
+          used to be hidden below 760px, which left a phone with no way to
+          flatten the map, recentre it, or leave a chosen country, on a
+          mobile-first project. */}
       <div
         data-atlas-toolbar=""
-        className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
+        className="absolute inset-x-0 bottom-0 flex flex-wrap justify-center gap-2 p-3"
       >
-        {offersList && (
+        {/* The button clears the choice, so the choice is what earns it —
+            not the shape of the picker. Gated on the picker, a fiche offering
+            pastilles had no way back to the whole area but "Recentrer", which
+            also undoes the reader's own turn. */}
+        {(offersList || chosenCountryId !== null) && (
           <button
             type="button"
             aria-pressed={chosenCountryId === null}

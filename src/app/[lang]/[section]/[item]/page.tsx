@@ -1,10 +1,6 @@
 import { redirect, notFound } from "next/navigation";
 import { Language } from "@/types/shared";
-import {
-  getCountryRoute,
-  getFamilyRoute,
-  getLocalizedRoute,
-} from "@/lib/routing";
+import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
@@ -63,9 +59,10 @@ export default async function LegacyDetailRedirect({
   }
 
   if (sectionType === "ethnicity" || sectionType === "people") {
-    // Ethnicities are now called peoples
-    const route = getLocalizedRoute(language, "peoples");
-    redirect(`${route}?people=${encodeURIComponent(decodedItem)}`);
+    // Ethnicities are now called peoples, and a people has one rendering: the
+    // fiche. Sending this to the directory's retired `?people=` form would
+    // only be redirected again one hop later.
+    redirect(getPeopleRoute(language, encodeURIComponent(decodedItem)));
   }
 
   notFound();
