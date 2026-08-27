@@ -34,7 +34,9 @@ describe("NameOriginCard", () => {
       <NameOriginCard record={baseRecord} confidenceChip={<span>chip</span>} />
     );
     const name = screen.getByText("Kongo");
-    expect(name).toHaveAttribute("lang", "kon");
+    // `kon` is what the corpus stores; `kg` is what BCP 47 asks the page to
+    // carry, and what assistive tech resolves.
+    expect(name).toHaveAttribute("lang", "kg");
   });
 
   // @req REQ-057

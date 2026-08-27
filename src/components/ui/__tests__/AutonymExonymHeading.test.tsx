@@ -19,7 +19,9 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
   it("renders autonym with correct lang attribute", () => {
     render(<AutonymExonymHeading autonym="Yorùbá" autonymIso639_3="yor" />);
     const autonymEl = screen.getByText("Yorùbá");
-    expect(autonymEl).toHaveAttribute("lang", "yor");
+    // The corpus writes ISO 639-3; `lang` carries the shortest tag BCP 47
+    // allows, which is what a screen reader switches voice on.
+    expect(autonymEl).toHaveAttribute("lang", "yo");
   });
 
   // 2. Renders exonym beside autonym

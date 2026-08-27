@@ -17,7 +17,6 @@ import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
-import { transformPeopleCountries } from "@/lib/peopleDataTransformer";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
@@ -205,15 +204,11 @@ export default async function PeoplesSlugPage({
   return (
     <PageLayout language="fr" sectionName="Peuples" flushTop>
       <FicheSequence
-        context={{
-          entityType: "people",
-          payload: peopleDetail,
-          namesDossier,
-          distributions: transformPeopleCountries(peopleDetail.demography)
-            .distributions,
-          fragmentation,
-          relations: egoNetwork.sourced,
-        }}
+        // Entity and payload only. The context's other corpora exist to feed
+        // panels, and a people fiche composes none — the parchment below takes
+        // each of them as its own prop instead. Handing them over twice would
+        // cost a transform per render for a reader nobody has.
+        context={{ entityType: "people", payload: peopleDetail }}
         globe={
           <FicheHeroBand>
             <AtlasGlobe
@@ -234,6 +229,7 @@ export default async function PeoplesSlugPage({
               // list would be furniture.
               targetPicker="list"
               wholeAreaLabel="Toute l'aire"
+              areaNoun="présence"
             />
           </FicheHeroBand>
         }

@@ -326,6 +326,7 @@ describe("PeoplesSection", () => {
 
   // ETNI-382: endonym primacy (UX-DR49 rule 1) — the endonym must lead the
   // exonym visually and carry a lang attribute for correct pronunciation.
+  // @req REQ-115
   it("gives the endonym typographic precedence over the exonym and a lang attribute", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
@@ -352,8 +353,9 @@ describe("PeoplesSection", () => {
     expect(endonymEl).toBeTruthy();
     expect(exonymEl).toBeTruthy();
 
-    // Lang attribute for correct screen-reader pronunciation
-    expect(endonymEl).toHaveAttribute("lang", "yor");
+    // Lang attribute for correct screen-reader pronunciation, in the shortest
+    // form BCP 47 allows — the corpus stores the ISO 639-3 `yor`.
+    expect(endonymEl).toHaveAttribute("lang", "yo");
 
     // Typographic precedence: bold and not smaller than the exonym, and not
     // italicised as a secondary annotation

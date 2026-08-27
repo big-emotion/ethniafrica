@@ -47,6 +47,21 @@ const trigger = () =>
   screen.getByRole("button", { name: /pays de l'empreinte/i });
 
 describe("AtlasTargetPicker", () => {
+  // A family has an empreinte and a people has an aire de présence. The
+  // globe's "Toute l'aire" button already says so; a picker still offering
+  // "un pays de l'empreinte" underneath would contradict it on the same map.
+  // @req REQ-117
+  it("names the area the fiche's own way", () => {
+    renderPicker({ areaNoun: "présence" });
+
+    expect(
+      screen.getByRole("button", { name: "Choisir un pays de présence" })
+    ).toHaveTextContent("Choisir un pays de présence");
+    expect(
+      screen.queryByRole("button", { name: /empreinte/i })
+    ).not.toBeInTheDocument();
+  });
+
   // @req REQ-117
   it("starts closed, and says so", () => {
     renderPicker();

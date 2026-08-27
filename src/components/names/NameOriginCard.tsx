@@ -2,7 +2,7 @@
  * NameOriginCard — Epic 8 Story 8.8 (ETNI-472).
  *
  * Renders one name record: the name in Fraunces (weight 700) tagged with
- * `lang={languageOfOrigin}` when known (UX-DR38), meaning + imposition
+ * `lang` from `languageOfOrigin` when known (UX-DR38), meaning + imposition
  * context in Nunito Sans body, and a required `confidenceChip` slot
  * (source-attached rule, UX-DR49 #2). Renders only the fields it is given —
  * never a placeholder, never an invented value.
@@ -16,6 +16,7 @@ import type { ReactNode } from "react";
 
 import { NameTypeBadge } from "@/components/names/NameTypeBadge";
 import type { NameRecordView } from "@/types/names";
+import { bcp47LanguageTag } from "@/lib/languageTag";
 
 export interface NameOriginCardProps {
   record: NameRecordView;
@@ -48,7 +49,7 @@ export function NameOriginCard({
     <article className="rounded-lg border border-afh-border bg-afh-surface p-afh-lg">
       <div className="flex flex-wrap items-center gap-afh-sm">
         <span
-          lang={languageOfOrigin ?? undefined}
+          lang={bcp47LanguageTag(languageOfOrigin)}
           className="font-afh-display text-afh-h3 font-bold text-afh-text"
         >
           {nameText}

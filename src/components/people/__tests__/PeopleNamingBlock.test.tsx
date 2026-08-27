@@ -63,6 +63,6 @@ describe("PeopleNamingBlock (REQ-115)", () => {
   it("tags the autonym with the language it is written in", () => {
     const { container } = render(<PeopleNamingBlock {...yoruba} />);
 
-    expect(container.querySelector('[lang="yor"]')).not.toBeNull();
+    expect(container.querySelector('[lang="yo"]')).not.toBeNull();
   });
 });
