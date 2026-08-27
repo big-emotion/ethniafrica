@@ -59,6 +59,53 @@ export const LAYOUT_BY_AXIS: Record<AccessMode, AxisLayout> = {
 const CAMERA_DISTANCE = 3.2;
 
 /**
+ * The scene sits back on its heels so a ring reads as a ring. It lives here
+ * rather than in the panel because the height a layout needs depends on it:
+ * the tilt is what flattens the vertical spread of the nodes.
+ */
+// @req REQ-114
+export const BASE_TILT_X = 0.42;
+
+/**
+ * The box one module card occupies. The panel's CSS reads these too, so the
+ * room the geometry reserves and the room a card actually takes cannot
+ * drift apart — which is how eleven cards ended up 36px apart while being
+ * 50 to 85px tall.
+ *
+ * The height is what a two-line label needs, applied to every card so the
+ * scene stops varying with how long a module happens to be named. The
+ * gutter absorbs the rest: perspective scales a card up to about 1.15x on
+ * the near side of the scene, so the room between two nodes has to clear
+ * more than the card's own CSS height.
+ */
+// @req REQ-114
+export const MODULE_CARD_WIDTH = 220;
+// @req REQ-114
+export const MODULE_CARD_HEIGHT = 72;
+// @req REQ-114
+export const MODULE_CARD_GUTTER = 22;
+
+/**
+ * The width the scene is sized against. The panel spans the axis grid,
+ * capped at 1140px, and the scene only runs from 860px up — below that the
+ * modules become a plain column and none of this applies.
+ */
+// @req REQ-114
+export const REFERENCE_PANEL_WIDTH = 1140;
+
+/**
+ * Vertical room each layout needs to clear the opened card sitting at the
+ * origin, before any question of how many modules it holds.
+ */
+const CENTRE_CLEARANCE: Record<AxisLayout, number> = {
+  ring: 600,
+  arc: 560,
+  pair: 420,
+  // Ordinary flow: the rows size the panel, not the other way round.
+  column: 0,
+};
+
+/**
  * How much of the panel half-box the unit circle spans. It has to clear
  * the opened card sitting at the origin, so the ring cannot hug the
  * centre — at 0.62 the top node landed on the card's own title.
@@ -225,4 +272,53 @@ export function nearestEdge(
   });
 
   return best;
+}
+
+/** Below this, two nodes sit at the same height and no height separates them. */
+const COINCIDENT_Y = 1e-9;
+
+/**
+ * How tall the panel has to be for a scene of `count` modules.
+ *
+ * `pair` was written for the two modules Jouer held when it shipped and
+ * kept a fixed 420px when REQ-120 handed it eleven: six rows over a fixed
+ * span put them 36px apart under cards up to 85px tall, so three of the
+ * eleven could not be clicked at their own centre. Deriving the height from
+ * the node set means a layout can be handed any count without the author of
+ * the next module having to remember this.
+ */
+// @req REQ-114
+export function panelHeightFor(layout: AxisLayout, count: number): number {
+  const clearance = CENTRE_CLEARANCE[layout];
+  if (layout === "column" || count < 2) return clearance;
+
+  const nodes = layoutNodes(layout, count);
+  const tilt: Tilt = { x: BASE_TILT_X, y: 0 };
+  // A unit box turns projectNode's output into the fraction of the panel's
+  // half-height each node sits at, perspective included — so the height
+  // solves straight out of the tightest gap.
+  const unitBox: PanelBox = { width: 2, height: 2 };
+
+  let tightest = Infinity;
+  for (let i = 0; i < nodes.length; i += 1) {
+    const a = projectNode(nodes[i], tilt, unitBox);
+    for (let j = i + 1; j < nodes.length; j += 1) {
+      const b = projectNode(nodes[j], tilt, unitBox);
+      // Two cards a full card-width apart in x never collide, whatever
+      // their y — only the ones sharing a column constrain the height.
+      const apart = Math.abs(a.x - b.x) * (REFERENCE_PANEL_WIDTH / 2);
+      if (apart > MODULE_CARD_WIDTH) continue;
+      // A pair the layout puts at the same height is side by side, not
+      // stacked. No panel height separates them — arc does this at every
+      // even count, where two nodes straddle the apex symmetrically — so
+      // letting it through here would solve for an infinite height.
+      const gap = Math.abs(a.y - b.y);
+      if (gap > COINCIDENT_Y) tightest = Math.min(tightest, gap);
+    }
+  }
+
+  if (!Number.isFinite(tightest)) return clearance;
+
+  const needed = (2 * (MODULE_CARD_HEIGHT + MODULE_CARD_GUTTER)) / tightest;
+  return Math.max(clearance, Math.ceil(needed));
 }

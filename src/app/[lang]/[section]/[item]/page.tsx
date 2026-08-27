@@ -1,6 +1,10 @@
 import { redirect, notFound } from "next/navigation";
 import { Language } from "@/types/shared";
-import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+} from "@/lib/routing";
 
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
@@ -53,9 +57,9 @@ export default async function LegacyDetailRedirect({
   }
 
   if (sectionType === "region" || sectionType === "family") {
-    // Regions are now replaced by language families
-    const route = getLocalizedRoute(language, "families");
-    redirect(`${route}?family=${encodeURIComponent(decodedItem)}`);
+    // Regions are now replaced by language families, and a family has one
+    // rendering: the fiche. The `?family=` detail this used to target is gone.
+    redirect(getFamilyRoute(language, encodeURIComponent(decodedItem)));
   }
 
   if (sectionType === "ethnicity" || sectionType === "people") {

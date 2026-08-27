@@ -27,7 +27,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { useLanguage } from "@/hooks/use-language";
 import { getTranslation } from "@/lib/translations";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
 import { search, getAllLanguageFamilies } from "@/lib/afrikLoader";
 import type {
   SearchResult,
@@ -38,6 +38,7 @@ import { Language } from "@/types/shared";
 
 const ITEMS_PER_PAGE = 20;
 
+// @req REQ-091
 export const SearchPageContent = () => {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -174,9 +175,7 @@ export const SearchPageContent = () => {
   const handleResultClick = (result: SearchResult) => {
     switch (result.type) {
       case "languageFamily":
-        router.push(
-          `${getLocalizedRoute(language, "families")}?family=${result.id}`
-        );
+        router.push(getFamilyRoute(language, result.id));
         break;
       case "people":
         router.push(
