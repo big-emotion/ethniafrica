@@ -1,15 +1,13 @@
-import Link from "next/link";
-
-export default function NotFound() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <Link href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </Link>
-      </div>
-    </div>
-  );
-}
+/**
+ * The root 404 boundary. It reuses the localized page rather than keeping a
+ * second design of its own: `notFound()` raised in `[lang]/layout.tsx` — the
+ * guard that rejects a first segment which is not the canonical locale —
+ * cannot be caught by `[lang]/not-found.tsx`, since that page renders inside
+ * the layout that raised it. Everything the guard rejects arrives here, so
+ * this boundary is now a reader-facing page, not a framework fallback.
+ *
+ * The localized page reads `lang` from the route params and falls back to
+ * "fr" when there is none, which is exactly the case here.
+ */
+// @req REQ-099
+export { default } from "@/app/[lang]/not-found";
