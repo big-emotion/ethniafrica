@@ -145,7 +145,7 @@ repository's credentials cannot reach that project.
 | `041_one_source_tier_vocabulary.sql`          | applied (`041`)                             | unknown          |
 | `042_migration_ledger_introspection.sql`      | applied (`042`)                             | unknown          |
 | `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below | unknown          |
-| `044_afrik_ranked_search.sql`                 | objects live; ledger row awaiting re-record | unknown          |
+| `044_afrik_ranked_search.sql`                 | applied (`044`)                             | unknown          |
 
 > **Correction, 2026-08-28.** This table listed `040`, `041` and `042` as not applied. A direct
 > read of the recette ledger shows all three present under their own numeric versions. The prose
@@ -225,11 +225,15 @@ through the MCP from hand-edited SQL — a different dollar-quote tag, and `COMM
 strings reworded to survive the paste — so after renumbering it read as **drifted** instead.
 Its ledger row was therefore deleted rather than patched: with no row, the next
 `supabase db push` applies the file itself and records the statements the file actually
-contains. **Re-run `migrate-recette.yml` to close this.** The functions are live and verified
-in the meantime; only the bookkeeping is outstanding.
+contains. That is what happened — the workflow re-ran and logged
+`Applying migration 044_afrik_ranked_search.sql`, and the ledger now reads `043` and `044`
+under their own numbers, neither drifted.
 
-Note that run will still fail on the three drifts below (`018`, `038`, `039`), which predate
-this and have made the workflow red since 2026-08-26.
+**Deleting the row is the repair. Patching the version is not**, unless the recorded
+statements already match the file.
+
+The workflow run is still red, on the three drifts below (`018`, `038`, `039`). Those predate
+this work and have made it red since 2026-08-26; they need their own ticket.
 
 ### 3. "Recorded as applied" does not mean the object still exists
 
