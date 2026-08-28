@@ -69,7 +69,10 @@ export interface FamilyParchmentProps {
 }
 
 /**
- * One figure, and where it comes from.
+ * One figure, and where it comes from — said as the fiche's own rubric, not as
+ * the key a developer would grep for. "generalInfo.totalSpeakers" under a card
+ * headed "Locuteurs" told a reader nothing they could act on; the rubric names
+ * the place in the fiche they would actually go and look.
  *
  * `provenance` is computed, never hard-coded. The mockup writes "vide" into
  * the branches and distribution cards because that is what the recette
@@ -82,13 +85,14 @@ export interface FamilyParchmentProps {
 function StatCard({
   id,
   label,
-  path,
+  rubric,
   value,
   emptyValue,
 }: {
   id: string;
   label: string;
-  path: string;
+  /** Where in the fiche the figure is read, in the reader's terms. */
+  rubric: string;
   value: unknown;
   emptyValue?: string;
 }) {
@@ -113,7 +117,7 @@ function StatCard({
     >
       <span className="afh-stat-card-n">{shown}</span>
       <span className="afh-stat-card-k">{label}</span>
-      <span className="afh-stat-card-src">{path}</span>
+      <span className="afh-stat-card-src">{rubric}</span>
       {/* The app has one wording for an absent field, and it lives in
           FieldProvenanceMarker. Writing a second one here would let the two
           drift and leave readers with two vocabularies for one idea. */}
@@ -248,19 +252,19 @@ export function FamilyParchment({
 
       <Section
         title="Ce que la fiche déclare, ce qu'elle ne déclare pas"
-        note="content.generalInfo · content.distribution"
+        note="Rubriques « informations générales » et « répartition » de la fiche"
       >
         <div className="afh-stat-cards">
           <StatCard
             id="langues"
             label="Langues"
-            path="generalInfo.numberOfLanguages"
+            rubric="Informations générales · nombre de langues"
             value={generalInfo.numberOfLanguages}
           />
           <StatCard
             id="locuteurs"
             label="Locuteurs"
-            path="generalInfo.totalSpeakers"
+            rubric="Informations générales · total de locuteurs"
             value={
               generalInfo.totalSpeakers !== null
                 ? `${Math.round(generalInfo.totalSpeakers / 1e6)} M`
@@ -270,13 +274,13 @@ export function FamilyParchment({
           <StatCard
             id="branches"
             label="Branches"
-            path="generalInfo.branches"
+            rubric="Informations générales · branches"
             value={generalInfo.branches}
           />
           <StatCard
             id="distribution"
             label="Distribution"
-            path="distribution.distributionByCountry"
+            rubric="Répartition · par pays"
             value={distribution.distributionByCountry}
           />
         </div>
@@ -285,15 +289,13 @@ export function FamilyParchment({
           <div className="afh-parchment-gap">
             <h3>Deux champs vides, et ce qu&apos;on en fait</h3>
             <p>
-              Cette fiche ne déclare ni ses branches ni sa répartition&nbsp;:{" "}
-              <code>generalInfo.branches</code> et{" "}
-              <code>distribution.distributionByCountry</code> sont vides. Une
-              carte fidèle à la seule fiche famille n&apos;aurait donc rien à
-              dessiner. Plutôt que de masquer la section ou d&apos;inventer une
-              aire, la fiche affiche le manque — puis reconstruit ce qui est
-              reconstructible, en le signalant comme tel. Un champ vide reste
-              une information sur l&apos;état du corpus&nbsp;; l&apos;effacer la
-              ferait disparaître.
+              Cette fiche ne déclare ni ses branches ni sa répartition par
+              pays&nbsp;: les deux rubriques sont vides. Une carte fidèle à la
+              seule fiche famille n&apos;aurait donc rien à dessiner. Plutôt que
+              de masquer la section ou d&apos;inventer une aire, la fiche
+              affiche le manque — puis reconstruit ce qui est reconstructible,
+              en le signalant comme tel. Un champ vide reste une information sur
+              l&apos;état du corpus&nbsp;; l&apos;effacer la ferait disparaître.
             </p>
           </div>
         )}
@@ -375,7 +377,7 @@ export function FamilyParchment({
       {decolonialHeader.originOfHistoricalTerm && (
         <Section
           title="D'où vient le nom de la famille"
-          note="content.decolonialHeader.originOfHistoricalTerm"
+          note="Rubrique « en-tête décoloniale » de la fiche, « origine du terme historique »"
         >
           <p>{decolonialHeader.originOfHistoricalTerm}</p>
         </Section>
@@ -420,7 +422,7 @@ export function FamilyParchment({
       {data.sources.length > 0 && (
         <Section
           title="Sources"
-          note="content.sources · politique de paliers"
+          note="Rubrique « sources » de la fiche · politique de paliers"
           testId="family-sources"
           /* Deep links across the app point at #sources, and the sources are
              the fiche's own footer landmark. Both predate this layout. */
