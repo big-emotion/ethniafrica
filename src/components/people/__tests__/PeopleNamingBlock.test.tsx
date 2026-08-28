@@ -65,4 +65,34 @@ describe("PeopleNamingBlock (REQ-115)", () => {
 
     expect(container.querySelector('[lang="yo"]')).not.toBeNull();
   });
+
+  // 786 of 789 fiches answer where the exonyms came from, and 789 of 789 say
+  // what the name is today. Neither reached the page before: the fields were
+  // declared by the strict model, filled by the corpus, and read only by the
+  // games engine.
+  // @req REQ-115
+  it("says where the exonyms came from, and what the name is today", () => {
+    render(
+      <PeopleNamingBlock
+        {...yoruba}
+        originOfExonyms="Terme employé par les voisins haoussa."
+        contemporaryUsage="Le nom est aujourd'hui revendiqué."
+      />
+    );
+
+    expect(screen.getByText(/D'où viennent ces noms/)).toBeInTheDocument();
+    expect(screen.getByText(/voisins haoussa/)).toBeInTheDocument();
+    expect(screen.getByText(/L'usage aujourd'hui/)).toBeInTheDocument();
+    expect(screen.getByText(/revendiqué/)).toBeInTheDocument();
+  });
+
+  // @req REQ-115
+  it("announces neither lead-in when the fiche fills neither field", () => {
+    render(<PeopleNamingBlock {...yoruba} />);
+
+    expect(
+      screen.queryByText(/D'où viennent ces noms/)
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/L'usage aujourd'hui/)).not.toBeInTheDocument();
+  });
 });
