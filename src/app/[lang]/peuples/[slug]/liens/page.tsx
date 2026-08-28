@@ -6,9 +6,9 @@ import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { RelationsListWithSourceSheet } from "@/components/relations/RelationsListWithSourceSheet";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getEgoNetwork } from "@/api/v2/services/relations";
-import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import { transformRelationsToListItems } from "@/lib/relationsDataTransformer";
-import { getPeopleRoute } from "@/lib/routing";
+import { getPeopleLinksRoute } from "@/lib/routing";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
 
 // @req REQ-097 FR72
 export const revalidate = 3600;
@@ -54,25 +54,17 @@ export default async function PeopleLinksPage({
     notFound();
   }
 
-  const family = await getLanguageFamilyById(people.languageFamilyId);
   const items = transformRelationsToListItems(
     egoNetwork.sourced,
     egoNetwork.derived
   );
 
-  const breadcrumbs = [
-    { label: "Familles", href: "/fr/familles" },
-    ...(family
-      ? [
-          {
-            label: family.nameFr,
-            href: `/fr/familles/${family.id}`,
-          },
-        ]
-      : []),
-    { label: people.nameMain, href: getPeopleRoute("fr", people.id) },
-    { label: "Liens" },
-  ];
+  // The family was fetched for one crumb and nothing else. The trail follows
+  // the path — Peuples › <people> › Liens — so the query goes with the crumb.
+  const breadcrumbs = deriveTrail(
+    getPeopleLinksRoute("fr", people.id),
+    people.nameMain
+  );
 
   return (
     <PageLayout language="fr" sectionName="Peuples">

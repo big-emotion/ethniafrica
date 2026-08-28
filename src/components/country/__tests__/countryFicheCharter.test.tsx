@@ -338,4 +338,36 @@ describe("country record view — the chapters the page adds", () => {
     expect(titles).toContain("Langues");
     expect(titles).toContain("Culture et société");
   });
+
+  /**
+   * Arriving from a people fiche used to rewrite the trail into "Peuples ›
+   * Yoruba › Nigéria", which reads as a hierarchy the corpus does not have —
+   * and gave the same page two different trails depending on the door. The
+   * arrival is real and still offered, as a way back.
+   */
+  // @req REQ-115
+  it("says where the reader came from without claiming a country sits under a people", () => {
+    render(
+      <CountryRecordView
+        country={countryFixture()}
+        fromPeopleId="PPL_YORUBA"
+        fromPeopleName="Yoruba"
+      />
+    );
+
+    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
+    expect(trail).toHaveTextContent("Pays");
+    expect(trail).not.toHaveTextContent("Yoruba");
+
+    const back = screen.getByTestId("country-back-to-people");
+    expect(back).toHaveAttribute("href", "/fr/peuples/PPL_YORUBA");
+    expect(back).toHaveTextContent("Yoruba");
+  });
+
+  // @req REQ-115
+  it("offers no way back when the reader arrived from the hub", () => {
+    render(<CountryRecordView country={countryFixture()} />);
+
+    expect(screen.queryByTestId("country-back-to-people")).toBeNull();
+  });
 });

@@ -84,18 +84,33 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
   });
 
   // @req REQ-097 FR72
-  it("renders the AFRIK-hierarchy breadcrumb down to the people and the current page", async () => {
+  it("renders the breadcrumb the path gives: peoples, the people, this page", async () => {
     await renderPage("PPL_YORUBA");
 
     const nav = screen.getByRole("navigation", { name: "Fil d'ariane" });
-    expect(nav).toHaveTextContent("Familles");
-    expect(nav).toHaveTextContent("Niger-Congo");
+    expect(nav).toHaveTextContent("Peuples");
     expect(nav).toHaveTextContent("Yoruba");
     expect(nav).toHaveTextContent("Liens");
     expect(screen.getByRole("link", { name: "Yoruba" })).toHaveAttribute(
       "href",
       "/fr/peuples/PPL_YORUBA"
     );
+  });
+
+  /**
+   * The family was fetched for a crumb that no longer exists. Asserting the
+   * query is gone is the only way this stays true: an unused `await` in a
+   * server component costs a round trip per request and nothing renders
+   * differently when it comes back.
+   */
+  // @req REQ-097 FR72
+  it("no longer queries the family, the trail having stopped naming it", async () => {
+    await renderPage("PPL_YORUBA");
+
+    expect(mockGetLanguageFamilyById).not.toHaveBeenCalled();
+    expect(
+      screen.getByRole("navigation", { name: "Fil d'ariane" })
+    ).not.toHaveTextContent("Niger-Congo");
   });
 
   // @req REQ-097 FR72

@@ -24,6 +24,8 @@ import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
+import { getPeopleRoute } from "@/lib/routing";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
@@ -103,18 +105,13 @@ export function PeopleDetailViewV2({
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
 
-  const breadcrumbs = [
-    { label: "Familles", href: "/fr/familles" },
-    ...(people.languageFamilyId
-      ? [
-          {
-            label: people.languageFamilyName ?? people.languageFamilyId,
-            href: `/fr/familles/${people.languageFamilyId}`,
-          },
-        ]
-      : []),
-    { label: data.hero.nameMain },
-  ];
+  // The family used to open this trail, which said a people lives under its
+  // family in the site's structure. It does not — it lives under Peuples —
+  // and the family is carried by ContextTriad, where it belongs.
+  const breadcrumbs = deriveTrail(
+    getPeopleRoute("fr", data.hero.peopleId),
+    data.hero.nameMain
+  );
 
   return (
     <div className="afh-parchment" id="fiche">
