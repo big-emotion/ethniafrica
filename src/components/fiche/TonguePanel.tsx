@@ -16,6 +16,7 @@ import type {
   FichePanelSourceLine,
 } from "@/types/fiche";
 import type { ClassificationStatus } from "@/types/afrik";
+import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * Depth bound for the branch slice this panel shows: family root (0) →
@@ -134,7 +135,7 @@ export function TonguePanel({
           id: person.id,
           label: person.nameMain,
           badge: person.classificationStatus,
-          href: `/fr/peuples/${person.id}`,
+          href: getPeopleRoute("fr", person.id),
         })),
         total: payload.meta?.pagination?.total,
       };

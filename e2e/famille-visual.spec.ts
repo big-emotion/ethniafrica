@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { getFamilyRoute } from "@/lib/routing";
 
 /**
  * Parity of the family fiche against the committed mockup
@@ -30,7 +31,7 @@ import { expect, test } from "@playwright/test";
  * raise maxDiffPixelRatio to silence them.
  */
 
-const FAMILY_URL = "/fr/familles/FLG_BENOUECONGO";
+const FAMILY_URL = getFamilyRoute("fr", "FLG_BENOUECONGO");
 
 const referenceWidths = [
   // Mobile first: this is the width the design is settled at, and the only one

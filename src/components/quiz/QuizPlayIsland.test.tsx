@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { QuizPlayIsland } from "@/components/quiz/QuizPlayIsland";
 import type { QuizSessionQuestionView } from "@/api/v2/schemas/quiz";
 import type { QuizScope } from "@/lib/quiz/quizScope";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const { mockUseQuizSession } = vi.hoisted(() => ({
   mockUseQuizSession: vi.fn(),
@@ -52,7 +53,11 @@ function baseSession(overrides: Record<string, unknown> = {}) {
 
 function renderIsland(scope: QuizScope = GHANA, label = "Ghana") {
   return render(
-    <QuizPlayIsland scope={scope} scopeLabelFr={label} exitHref="/fr/quiz" />
+    <QuizPlayIsland
+      scope={scope}
+      scopeLabelFr={label}
+      exitHref={getLocalizedRoute("fr", "quiz")}
+    />
   );
 }
 
@@ -98,7 +103,7 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
 
     expect(screen.getByTestId("quiz-session-exit")).toHaveAttribute(
       "href",
-      "/fr/quiz"
+      getLocalizedRoute("fr", "quiz")
     );
   });
 

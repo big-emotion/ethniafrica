@@ -26,6 +26,7 @@ import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const EVENT_DERIVED_FIELD_PATH = "content.events.eventType";
 
@@ -60,13 +61,18 @@ describe("colonization quiz-surface exclusion (Epic 13, Story 13.9, ETNI-533)", 
   // @req REQ-091 FR90
   it("links only to the quiz itself from the track picker", () => {
     const { container } = render(
-      <QuizScopePicker scopes={SCOPES} action="/fr/quiz" />
+      <QuizScopePicker
+        scopes={SCOPES}
+        action={getLocalizedRoute("fr", "quiz")}
+      />
     );
 
     const hrefs = Array.from(container.querySelectorAll("a")).map((anchor) =>
       anchor.getAttribute("href")
     );
-    expect(hrefs.every((href) => href?.startsWith("/fr/quiz"))).toBe(true);
+    expect(
+      hrefs.every((href) => href?.startsWith(getLocalizedRoute("fr", "quiz")))
+    ).toBe(true);
   });
 
   // @req REQ-091 FR90

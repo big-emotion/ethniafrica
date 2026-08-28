@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 
 import { FamillesPageContent } from "../FamillesPageContent";
+import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
 
 /**
  * The directory is a list, not a second reading surface.
@@ -19,7 +20,7 @@ let currentSearchParams = new URLSearchParams();
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push, replace }),
-  usePathname: () => "/fr/familles",
+  usePathname: () => getLocalizedRoute("fr", "families"),
   useSearchParams: () => currentSearchParams,
 }));
 
@@ -69,7 +70,7 @@ describe("FamillesPageContent", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Bantu" }));
 
-    expect(push).toHaveBeenCalledWith("/fr/familles/FLG_BANTU");
+    expect(push).toHaveBeenCalledWith(getFamilyRoute("fr", "FLG_BANTU"));
   });
 
   // @req REQ-091
@@ -90,7 +91,7 @@ describe("FamillesPageContent", () => {
 
     render(<FamillesPageContent />);
 
-    expect(replace).toHaveBeenCalledWith("/fr/familles/FLG_BANTU");
+    expect(replace).toHaveBeenCalledWith(getFamilyRoute("fr", "FLG_BANTU"));
   });
 
   // The directory read its own query and passed the identifier through
@@ -103,7 +104,9 @@ describe("FamillesPageContent", () => {
 
     render(<FamillesPageContent />);
 
-    expect(replace).toHaveBeenCalledWith("/fr/familles/%2F%2Fevil.com");
+    expect(replace).toHaveBeenCalledWith(
+      getFamilyRoute("fr", "%2F%2Fevil.com")
+    );
   });
 
   // @req REQ-091

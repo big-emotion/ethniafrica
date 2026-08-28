@@ -27,6 +27,7 @@ import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHead
 import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import type { LanguageFamily } from "@/types/afrik";
+import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 const classificationTree = {
   family: { id: "FLG_BANTU", nameFr: "Bantou" },
@@ -245,7 +246,10 @@ describe("LanguageFamilyDetailViewV2", () => {
     expect(screen.getByText("Bantu")).toHaveAttribute("lang", "sw");
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
-    ).toHaveAttribute("href", "/fr/doctrine/endonymes-vs-exonymes");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}/endonymes-vs-exonymes`
+    );
   });
 
   // @req REQ-047
@@ -267,11 +271,14 @@ describe("LanguageFamilyDetailViewV2", () => {
     );
     expect(screen.getByRole("link", { name: /contesté/i })).toHaveAttribute(
       "href",
-      "/fr/doctrine#contested"
+      `${getLocalizedRoute("fr", "doctrine")}#contested`
     );
     expect(
       screen.getAllByRole("link", { name: "Lire la doctrine" })[0]
-    ).toHaveAttribute("href", "/fr/doctrine/classifications-contestees");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`
+    );
   });
 
   // @req REQ-050
@@ -283,7 +290,7 @@ describe("LanguageFamilyDetailViewV2", () => {
     // ranking names it in French rather than by its ISO code.
     expect(screen.getByRole("link", { name: /Congo/ })).toHaveAttribute(
       "href",
-      "/fr/pays/COD"
+      getCountryRoute("fr", "COD")
     );
   });
 

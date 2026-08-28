@@ -5,6 +5,7 @@ import { describe, expect, it, vi } from "vitest";
 import { FicheLoadingScreen } from "@/components/fiche/FicheLoadingScreen";
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import { ConsentProvider } from "@/hooks/use-consent";
+import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * PageLayout is rendered for real rather than mocked, because the claim under
@@ -17,7 +18,7 @@ const renderInShell = (ui: ReactElement) =>
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn() }),
-  usePathname: () => "/fr/peuples/PPL_BAGANDA",
+  usePathname: () => getPeopleRoute("fr", "PPL_BAGANDA"),
   useSearchParams: () => new URLSearchParams(),
 }));
 

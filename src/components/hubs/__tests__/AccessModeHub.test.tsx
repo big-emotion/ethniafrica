@@ -156,7 +156,10 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
 
     const link = screen.getByTestId("hub-module-link-mercator");
     expect(link.tagName).toBe("A");
-    expect(link).toHaveAttribute("href", "/fr/jouer/mercator");
+    expect(link).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
+    );
     expect(link).toHaveTextContent("La taille qu'on vous a cachée");
   });
 
@@ -335,7 +338,7 @@ describe("hub shelves — the level between an axis and eleven games (REQ-120)",
     }
     expect(screen.getByTestId("hub-module-link-mercator")).toHaveAttribute(
       "href",
-      "/fr/jouer/mercator"
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
     );
     expect(
       screen.getByTestId("hub-module-unavailable-appellations")

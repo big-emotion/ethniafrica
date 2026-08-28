@@ -16,24 +16,42 @@ export type PageType =
   | "comprendreHub"
   | "jouerHub";
 
-// Mapping des slugs par langue
+// Mapping des slugs par langue.
+//
+// A module's slug opens on the hub that leads to it, so the URL states the
+// same hierarchy the menu does: `/fr/explorer/pays` rather than `/fr/pays`
+// beside a `/fr/explorer` that claims to lead there. The three hubs were
+// published as the three entry points and then led to pages that sat above
+// them, which left every module addressable without ever naming the axis it
+// belonged to — and so no way for a reader, or a crawler, to tell an axis
+// from a heading.
+//
+// The prefix is written out rather than composed from `moduleRegistry`,
+// which imports this file: deriving it would put a cycle in the module
+// every page and the middleware load. `routingCharter.test.ts` closes the
+// gap instead, asserting each module's slug opens on its own axis hub — so
+// a module filed under one verb in the registry and another here fails the
+// build rather than shipping two URLs and no canonical.
+//
+// `about` and `compare` carry no prefix on purpose: no axis lists them, so
+// nesting them would invent an ancestor the menu never offers.
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
-    countries: "pays",
-    families: "familles",
-    peoples: "peuples",
-    search: "recherche",
-    doctrine: "doctrine",
+    countries: "explorer/pays",
+    families: "explorer/familles",
+    peoples: "explorer/peuples",
+    search: "explorer/recherche",
+    doctrine: "comprendre/doctrine",
     about: "about",
-    names: "noms",
+    names: "comprendre/noms",
     compare: "comparer",
-    migrations: "migrations",
-    quiz: "quiz",
+    migrations: "comprendre/migrations",
+    quiz: "jouer/quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
-    colonization: "regards/colonisation-et-resistances",
+    colonization: "comprendre/regards/colonisation-et-resistances",
     // REQ-114: one hub route per access mode. The slug is the verb the
     // reader arrived with, which is what keeps it from colliding with the
-    // resource pages (peuples/pays/familles) it groups.
+    // resource pages (peuples/pays/familles) it now holds.
     explorerHub: "explorer",
     comprendreHub: "comprendre",
     jouerHub: "jouer",
@@ -61,8 +79,13 @@ export const getLocalizedRoute = (
 
 /**
  * Matches on the longest slug first so a multi-segment slug (e.g.
- * `regards/colonisation-et-resistances`) isn't shadowed by a shorter one
- * sharing its first segment.
+ * `comprendre/regards/colonisation-et-resistances`) isn't shadowed by a
+ * shorter one sharing its first segment.
+ *
+ * Now that the modules nest, every one of them shares its first segment with
+ * its hub, so that sort is what separates `/fr/explorer/pays` from
+ * `/fr/explorer`. It needed no change to do it — the ordering was already
+ * the rule, only rarely exercised.
  */
 // @req REQ-091
 export const getPageFromRoute = (pathname: string): PageType | null => {

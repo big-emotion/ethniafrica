@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { AccessModeHub } from "@/components/hubs/AccessModeHub";
 import { getGroupedModules } from "@/lib/hubs/moduleGroups";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import {
   ACCESS_MODES,
   getModulesForAccessMode,
@@ -53,7 +54,9 @@ describe("atlas charter §3 — the three entry points", () => {
     expect(games.length).toBeGreaterThan(0);
     for (const game of games) {
       expect(game.page).toBeNull();
-      expect(getModuleHref(game, "fr")).toBe(`/fr/jouer/${game.gameSlug}`);
+      expect(getModuleHref(game, "fr")).toBe(
+        `${getAxisHubRoute("fr", "jouer")}/${game.gameSlug}`
+      );
     }
   });
 

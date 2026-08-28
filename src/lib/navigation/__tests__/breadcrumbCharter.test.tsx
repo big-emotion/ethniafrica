@@ -104,7 +104,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("carries the identifier through verbatim, encoding included", () => {
     const trail = deriveTrail(getPeopleLinksRoute("fr", "PPL_%2F%2Fevil"), "X");
 
-    expect(trail[1].href).toBe("/fr/peuples/PPL_%2F%2Fevil");
+    expect(trail[1].href).toBe(getPeopleRoute("fr", "PPL_%2F%2Fevil"));
   });
 });
 
@@ -119,7 +119,7 @@ describe("the trail a fiche renders", () => {
 
     expect(
       screen.getByRole("link", { name: "Pays" }).getAttribute("href")
-    ).toBe("/fr/pays");
+    ).toBe(getLocalizedRoute("fr", "countries"));
     expect(screen.getByText("Bénin").getAttribute("aria-current")).toBe("page");
   });
 

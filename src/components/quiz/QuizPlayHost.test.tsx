@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import type { QuizScope } from "@/lib/quiz/quizScope";
+import { getLocalizedRoute } from "@/lib/routing";
 
 vi.mock("@/components/quiz/QuizPlayIsland", () => ({
   QuizPlayIsland: ({
@@ -27,7 +28,7 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
       <QuizPlayHost
         scope={{ kind: "country", entityId: "GHA" }}
         scopeLabelFr="Ghana"
-        exitHref="/fr/quiz"
+        exitHref={getLocalizedRoute("fr", "quiz")}
       />
     );
 
@@ -45,14 +46,14 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
       <QuizPlayHost
         scope={{ kind: "mixed" }}
         scopeLabelFr="Tout le continent"
-        exitHref="/fr/quiz"
+        exitHref={getLocalizedRoute("fr", "quiz")}
       />
     );
 
     await waitFor(() =>
       expect(screen.getByTestId("quiz-play-island")).toHaveAttribute(
         "data-exit",
-        "/fr/quiz"
+        getLocalizedRoute("fr", "quiz")
       )
     );
   });

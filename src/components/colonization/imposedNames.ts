@@ -14,6 +14,7 @@ import type {
   PeopleNameRecord,
   PeopleNamesDossier,
 } from "@/api/v2/schemas/names";
+import { getPeopleRoute } from "@/lib/routing";
 
 export interface ImposedNameViewModel {
   peopleId: string;
@@ -48,7 +49,7 @@ function endonymLanguageOf(dossier: PeopleNamesDossier): string | null {
 
 /** Builds a link to the people's Epic 8 Names Atlas record (same pattern as `NamesAtlasView`). */
 function atlasHrefFor(peopleId: string): string {
-  return `/fr/peuples/${peopleId}#noms`;
+  return `${getPeopleRoute("fr", peopleId)}#noms`;
 }
 
 // @req REQ-104

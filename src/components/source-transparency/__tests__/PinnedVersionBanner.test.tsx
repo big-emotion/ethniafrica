@@ -2,9 +2,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { PinnedVersionBanner } from "../PinnedVersionBanner";
+import { getPeopleRoute } from "@/lib/routing";
 
-const LIVE_URL = "/fr/peuples/yoruba";
-const OTHER_LIVE_URL = "/fr/peuples/bambara";
+const LIVE_URL = getPeopleRoute("fr", "yoruba");
+const OTHER_LIVE_URL = getPeopleRoute("fr", "bambara");
 const storageKey = (liveUrl: string) =>
   `pinned-version-banner:collapsed:${liveUrl}`;
 

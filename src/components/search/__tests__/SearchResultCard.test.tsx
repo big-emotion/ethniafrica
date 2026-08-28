@@ -5,6 +5,12 @@ import { describe, expect, it, vi } from "vitest";
 
 import { SearchResultCard } from "../SearchResultCard";
 import type { SearchResult } from "@/types/afrik-frontend";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 
 vi.mock("next/link", () => ({
   __esModule: true,
@@ -47,7 +53,7 @@ describe("SearchResultCard", () => {
 
     expect(screen.getByRole("link", { name: "Bété" })).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_BETE"
+      getPeopleRoute("fr", "PPL_BETE")
     );
   });
 
@@ -57,7 +63,7 @@ describe("SearchResultCard", () => {
 
     expect(screen.getByRole("link", { name: "Côte d'Ivoire" })).toHaveAttribute(
       "href",
-      "/fr/pays/CIV"
+      getCountryRoute("fr", "CIV")
     );
   });
 
@@ -67,7 +73,7 @@ describe("SearchResultCard", () => {
 
     expect(screen.getByRole("link", { name: "Krou" })).toHaveAttribute(
       "href",
-      "/fr/familles/FLG_KROU"
+      getFamilyRoute("fr", "FLG_KROU")
     );
   });
 
@@ -77,7 +83,10 @@ describe("SearchResultCard", () => {
 
     expect(
       screen.getByRole("link", { name: /famille linguistique Krou/i })
-    ).toHaveAttribute("href", "/fr/recherche?family=FLG_KROU");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "search")}?family=FLG_KROU`
+    );
   });
 
   // @req REQ-002
@@ -86,7 +95,10 @@ describe("SearchResultCard", () => {
 
     expect(
       screen.getByRole("link", { name: /Côte d’Ivoire|Côte d'Ivoire/ })
-    ).toHaveAttribute("href", "/fr/recherche?country=CIV");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "search")}?country=CIV`
+    );
   });
 
   // @req REQ-002

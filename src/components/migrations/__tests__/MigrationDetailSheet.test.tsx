@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { MigrationDetailSheet } from "../MigrationDetailSheet";
 import type { MigrationAtlasEntry } from "@/lib/migrationDataTransformer";
+import { getPeopleRoute } from "@/lib/routing";
 
 const EVENT: MigrationAtlasEntry = {
   id: "MGR_A",
@@ -73,7 +74,10 @@ describe("MigrationDetailSheet", () => {
     expect(screen.getByText(/88 %/)).toBeInTheDocument();
 
     const peopleLink = screen.getByRole("link", { name: /Peuples bantous/ });
-    expect(peopleLink).toHaveAttribute("href", "/fr/peuples/PPL_BANTU");
+    expect(peopleLink).toHaveAttribute(
+      "href",
+      getPeopleRoute("fr", "PPL_BANTU")
+    );
   });
 
   // @req REQ-101 UX-DR30

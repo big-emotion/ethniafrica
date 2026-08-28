@@ -7,6 +7,7 @@ import {
   GameAnswerReveal,
 } from "@/components/play/GameAnswerReveal";
 import type { BinaryRound } from "@/lib/games/gameKinds";
+import { getPeopleRoute } from "@/lib/routing";
 
 const CORPUS_TEXT =
   "Le terme « Yoruba » vient du haoussa yarabawa, employé pour désigner les habitants d'Oyo, puis étendu par les administrations coloniales.";
@@ -31,7 +32,7 @@ const ROUND: BinaryRound = {
       sourceCount: 3,
       lastHumanAuditAt: "2026-02-01T00:00:00.000Z",
     },
-    ficheHref: "/fr/peuples/PPL_YORUBA",
+    ficheHref: getPeopleRoute("fr", "PPL_YORUBA"),
   },
   options: [{ labelFr: "Yorùbá" }, { labelFr: "Nagot" }],
   correctIndex: 0,
@@ -273,7 +274,7 @@ describe("GameAnswerReveal (Jouer hub engine, REQ-120)", () => {
 
     expect(screen.getByTestId("game-reveal-fiche-link")).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_YORUBA"
+      getPeopleRoute("fr", "PPL_YORUBA")
     );
   });
 

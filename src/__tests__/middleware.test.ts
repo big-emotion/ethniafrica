@@ -259,12 +259,14 @@ describe("middleware", () => {
       );
     });
 
-    // The rename moved a hub, not the resource pages it groups. /fr/peuples
+    // The rename moved a hub, not the resource pages it groups. /fr/explorer/peuples
     // is a live route and must not be swept up by a prefix match on
     // "peuples".
     // @req REQ-114
     it("leaves the resource pages the hubs group untouched", async () => {
-      const request = new NextRequest("http://localhost:3000/fr/peuples");
+      const request = new NextRequest(
+        "http://localhost:3000/fr/explorer/peuples"
+      );
       const response = await middleware(request);
 
       expect(response.status).not.toBe(308);
@@ -288,27 +290,46 @@ describe("middleware", () => {
       expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
     });
 
-    it("redirects /en/peuples to /fr/peuples preserving subpath", async () => {
+    // @req REQ-091
+    it("redirects /en/peuples to /fr/explorer/peuples preserving subpath", async () => {
       const request = new NextRequest("http://localhost:3000/en/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/peuples"
+        "http://localhost:3000/fr/explorer/peuples"
       );
     });
 
-    it("redirects /es/pays/zaf to /fr/pays/zaf preserving deep subpath", async () => {
+    // @req REQ-091
+    it("redirects /es/pays/zaf to /fr/explorer/pays/zaf preserving deep subpath", async () => {
       const request = new NextRequest("http://localhost:3000/es/pays/zaf");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/pays/zaf"
+        "http://localhost:3000/fr/explorer/pays/zaf"
       );
     });
 
     it("preserves query string on language redirect", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/en/peuples?tri=population"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/explorer/peuples?tri=population"
+      );
+    });
+
+    // A query naming a fiche is spent by the redirect rather than forwarded:
+    // it produced the path. Forwarding it too would hand the directory an
+    // identifier it would act on, which is the second hop this composition
+    // exists to remove.
+    // @req REQ-091
+    it("spends a deep-link query rather than forwarding it", async () => {
       const request = new NextRequest(
         "http://localhost:3000/en/peuples?people=PPL_YORUBA"
       );
@@ -316,7 +337,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/peuples?people=PPL_YORUBA"
+        "http://localhost:3000/fr/explorer/peuples/PPL_YORUBA"
       );
     });
 
@@ -328,8 +349,11 @@ describe("middleware", () => {
       expect(response.headers.get("location")).toBeNull();
     });
 
-    it("does not redirect /fr/peuples", async () => {
-      const request = new NextRequest("http://localhost:3000/fr/peuples");
+    // @req REQ-091
+    it("does not redirect /fr/explorer/peuples", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/fr/explorer/peuples"
+      );
       const response = await middleware(request);
 
       expect(response.status).toBe(200);
@@ -439,8 +463,8 @@ describe("middleware", () => {
     it("allows inline style attributes only on public localized pages", async () => {
       for (const pathname of [
         "/fr",
-        "/fr/pays/SEN",
-        "/fr/familles/FLG_BANTU",
+        "/fr/explorer/pays/SEN",
+        "/fr/explorer/familles/FLG_BANTU",
       ]) {
         const response = await middleware(
           new NextRequest(`http://localhost:3000${pathname}`)

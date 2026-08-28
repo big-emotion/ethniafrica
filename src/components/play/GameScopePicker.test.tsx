@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 import { GameScopePicker } from "./GameScopePicker";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const choices = {
   countries: [
@@ -18,12 +19,15 @@ describe("GameScopePicker", () => {
       <GameScopePicker
         choices={choices}
         scope={null}
-        action="/fr/jouer/appellations"
+        action={`${getLocalizedRoute("fr", "jouerHub")}/appellations`}
       />
     );
 
     const form = screen.getByTestId("game-scope-picker");
-    expect(form).toHaveAttribute("action", "/fr/jouer/appellations");
+    expect(form).toHaveAttribute(
+      "action",
+      `${getLocalizedRoute("fr", "jouerHub")}/appellations`
+    );
     expect(form).toHaveAttribute("method", "get");
     expect(screen.getByLabelText("Pays")).toHaveAttribute("name", "pays");
     expect(screen.getByLabelText("Famille linguistique")).toHaveAttribute(
@@ -38,7 +42,7 @@ describe("GameScopePicker", () => {
       <GameScopePicker
         choices={choices}
         scope={{ countryId: "GHA" }}
-        action="/fr/jouer/appellations"
+        action={`${getLocalizedRoute("fr", "jouerHub")}/appellations`}
       />
     );
 
@@ -58,7 +62,7 @@ describe("GameScopePicker", () => {
       <GameScopePicker
         choices={choices}
         scope={{ countryId: "KEN", familyId: "FLG_NIGER_CONGO" }}
-        action="/fr/jouer/appellations"
+        action={`${getLocalizedRoute("fr", "jouerHub")}/appellations`}
       />
     );
 
@@ -74,7 +78,7 @@ describe("GameScopePicker", () => {
       <GameScopePicker
         choices={choices}
         scope={null}
-        action="/fr/jouer/appellations"
+        action={`${getLocalizedRoute("fr", "jouerHub")}/appellations`}
       />
     );
 

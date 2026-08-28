@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "./support/fixtures";
+import { getFamilyRoute } from "@/lib/routing";
 
 /**
  * Accessibility gate for the family fiche at the globe (REQ-116).
@@ -12,7 +13,7 @@ import { expect, test } from "./support/fixtures";
  * while it is closed passes nothing — it is the open state that introduces the
  * live region, the focus move and the dialog-adjacent semantics.
  */
-const FAMILY_URL = "/fr/familles/FLG_BENOUECONGO";
+const FAMILY_URL = getFamilyRoute("fr", "FLG_BENOUECONGO");
 
 const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"];
 

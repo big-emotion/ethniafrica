@@ -6,6 +6,7 @@ import { createServer, Server } from "http";
 import { createReadStream, existsSync } from "fs";
 import { stat } from "fs/promises";
 import { join, extname, resolve } from "path";
+import { LIVE_ROUTES } from "./a11yRoutes";
 
 const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;
@@ -30,62 +31,11 @@ const AXE_RUN_OPTIONS = {
   },
 } as unknown as RunOptions;
 
-// Live Next.js routes audited by axe-core in addition to Storybook. Set by
-// .github/workflows/a11y.yml once the app is built and served — unset locally
-// this step is skipped so the script still works without a running server.
-//
-// The three fiche routes are one representative assembled fiche per AFRIK
-// entity type (FR102). All three are needed because the panel-kind ×
-// entity-type matrix (panelRegistry.tsx) gives each type a different chapter
-// sequence, so a panel regression can miss two of them entirely. Canonical
-// AFRIK identifiers only — never display-name slugs (qualityGateRoutes.test.ts).
-//
-// The five routes above them are one representative route per charter
-// route-family rolled out in 16.4–16.9 (ETNI-807 · FR110). `/fr/admin/connexion`
-// stands in for the moderation surface: `/fr/admin` itself redirects
-// unauthenticated visitors on mount, so auditing it unauthenticated would
-// measure the redirect, not the admin/moderation charter chrome.
-//
-// The next two routes are the comparator journey (Epic 9, ETNI-485 · FR44):
-// `/fr/comparer` is the picker shell, `/fr/comparer/familles/FLG_BANTU/FLG_MANDE`
-// is one seeded comparison — both FLG ids already appear above as known-good
-// staging data, reused here so the route doesn't depend on unverified seed ids.
-//
-// The last route is the links page (Epic 11, Story 11.11 · AR20): the
-// EgoNetworkGraph mounts here lazily (next/dynamic ssr:false), and this gate
-// ensures the graph's keyboard/ARIA contract stays at zero serious/critical.
-//
-// `/fr/migrations` (Epic 12, Story 12.10 · ETNI-523 · FR84) audits the
-// server-rendered baseline: both the "Carte" and "Récit" tab panels are
-// `forceMount`-ed (page.tsx), so this single load covers the Récit
-// text-equivalent content plus the inactive Carte panel's static markup.
-// Interactive states (tab switch, sheet-open) need real DOM interaction and
-// are covered separately by e2e/migrations-atlas-a11y.spec.ts, which runs
-// under e2e.yml with no continue-on-error.
-//
-// `/fr/quiz` (Epic 10, Story 10.11 · ETNI-500 · FR71) audits the
-// server-rendered segment picker. The interactive session states (a played
-// question, the reveal, the score screen) need real DOM interaction and are
-// covered separately by e2e/quiz-journey-a11y.spec.ts, which runs under
-// e2e.yml with no continue-on-error.
+// Where the built app is served. Set by .github/workflows/a11y.yml once the
+// app is up — unset locally, the live-route step is skipped so the script
+// still works without a running server. Which routes it audits, and why each
+// one is on the list, is `a11yRoutes.ts`.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
-const LIVE_ROUTES = [
-  "/fr",
-  "/fr/noms",
-  "/fr/peuples",
-  "/fr/recherche",
-  "/fr/mentions-legales",
-  "/fr/admin/connexion",
-  "/fr/familles/FLG_BANTU",
-  "/fr/peuples/PPL_WOLOF",
-  "/fr/pays/SEN",
-  "/fr/comparer",
-  "/fr/comparer/familles/FLG_BANTU/FLG_MANDE",
-  "/fr/peuples/PPL_WOLOF/liens",
-  "/fr/migrations",
-  "/fr/quiz",
-  "/fr/regards/colonisation-et-resistances",
-];
 
 const MIME: Record<string, string> = {
   ".html": "text/html",

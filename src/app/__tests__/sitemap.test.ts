@@ -9,6 +9,13 @@ import sitemap from "../sitemap";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { UNLISTED_ROUTES } from "@/lib/siteTree";
 import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleLinksRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 
 const mockedEntityIds = getSitemapEntityIds as unknown as ReturnType<
   typeof vi.fn
@@ -47,10 +54,10 @@ describe("sitemap.xml", () => {
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
-    expect(all).toContain(`${base}/fr/familles/FLG_NIGER_CONGO`);
-    expect(all).toContain(`${base}/fr/peuples/PPL_WOLOF`);
-    expect(all).toContain(`${base}/fr/peuples/PPL_WOLOF/liens`);
-    expect(all).toContain(`${base}/fr/pays/CMR`);
+    expect(all).toContain(`${base}${getFamilyRoute("fr", "FLG_NIGER_CONGO")}`);
+    expect(all).toContain(`${base}${getPeopleRoute("fr", "PPL_WOLOF")}`);
+    expect(all).toContain(`${base}${getPeopleLinksRoute("fr", "PPL_WOLOF")}`);
+    expect(all).toContain(`${base}${getCountryRoute("fr", "CMR")}`);
   });
 
   // @req REQ-110
@@ -60,12 +67,12 @@ describe("sitemap.xml", () => {
 
     for (const path of [
       "/fr",
-      "/fr/explorer",
-      "/fr/comprendre",
-      "/fr/jouer",
-      "/fr/peuples",
-      "/fr/pays",
-      "/fr/familles",
+      getLocalizedRoute("fr", "explorerHub"),
+      getLocalizedRoute("fr", "comprendreHub"),
+      getLocalizedRoute("fr", "jouerHub"),
+      getLocalizedRoute("fr", "peoples"),
+      getLocalizedRoute("fr", "countries"),
+      getLocalizedRoute("fr", "families"),
       "/fr/plan-du-site",
     ]) {
       expect(all, path).toContain(`${base}${path}`);
@@ -82,7 +89,7 @@ describe("sitemap.xml", () => {
     for (const fragment of [
       "/fr/admin",
       "/fr/compte",
-      "/fr/quiz/score",
+      `${getLocalizedRoute("fr", "quiz")}/score`,
       "/fr/report-error",
       "/fr/confidentialite",
       "/fr/politique-confidentialite",

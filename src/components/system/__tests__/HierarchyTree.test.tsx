@@ -6,6 +6,7 @@ import {
   HierarchyTree,
   type HierarchyNode,
 } from "@/components/system/HierarchyTree";
+import { getPeopleRoute } from "@/lib/routing";
 
 function mockMatchMedia(reducedMotion: boolean) {
   Object.defineProperty(window, "matchMedia", {
@@ -38,7 +39,7 @@ const fixture: HierarchyNode = {
         {
           id: "PPL_KONGO",
           label: "Kongo",
-          href: "/fr/peuples/PPL_KONGO",
+          href: getPeopleRoute("fr", "PPL_KONGO"),
         },
       ],
     },
@@ -260,7 +261,7 @@ describe("HierarchyTree — APG keyboard navigation", () => {
 
     const leaf = screen.getByRole("treeitem", { name: /Kongo/ });
     expect(leaf.tagName).toBe("A");
-    expect(leaf).toHaveAttribute("href", "/fr/peuples/PPL_KONGO");
+    expect(leaf).toHaveAttribute("href", getPeopleRoute("fr", "PPL_KONGO"));
 
     leaf.focus();
     await user.keyboard("{Enter}");
@@ -287,7 +288,7 @@ describe("HierarchyTree — lazy loadChildren", () => {
       {
         id: "PPL_LINGALA",
         label: "Lingala (peuple)",
-        href: "/fr/peuples/PPL_LINGALA",
+        href: getPeopleRoute("fr", "PPL_LINGALA"),
       },
     ]);
     renderTree({ loadChildren, defaultExpandedIds: ["FLG_BANTU", "lin"] });
@@ -330,7 +331,7 @@ describe("HierarchyTree — lazy loadChildren", () => {
       {
         id: "PPL_LINGALA",
         label: "Lingala (peuple)",
-        href: "/fr/peuples/PPL_LINGALA",
+        href: getPeopleRoute("fr", "PPL_LINGALA"),
       },
     ]);
 
@@ -354,7 +355,7 @@ describe("HierarchyTree — lazy loadChildren", () => {
         {
           id: "PPL_LINGALA",
           label: "Lingala (peuple)",
-          href: "/fr/peuples/PPL_LINGALA",
+          href: getPeopleRoute("fr", "PPL_LINGALA"),
         },
       ]);
     const user = userEvent.setup();

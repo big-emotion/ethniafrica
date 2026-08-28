@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { MigrationEventCard } from "../MigrationEventCard";
 import type { MigrationNarrativeEntry } from "@/lib/migrationDataTransformer";
+import { getPeopleRoute } from "@/lib/routing";
 
 function makeEvent(
   overrides: Partial<MigrationNarrativeEntry> = {}
@@ -39,10 +40,10 @@ describe("MigrationEventCard", () => {
   });
 
   // @req REQ-101 FR81 FR82
-  it("links each people via AutonymExonymHeading to /fr/peuples/{slug}", () => {
+  it("links each people via AutonymExonymHeading to its fiche", () => {
     render(<MigrationEventCard event={makeEvent()} />);
     const link = screen.getByRole("link", { name: /Peuple Test/ });
-    expect(link).toHaveAttribute("href", "/fr/peuples/PPL_TEST");
+    expect(link).toHaveAttribute("href", getPeopleRoute("fr", "PPL_TEST"));
   });
 
   // @req REQ-101 FR81 FR82

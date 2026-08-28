@@ -16,6 +16,7 @@ import { CompareEntityHeader } from "../CompareEntityHeader";
 import { ComparisonView } from "../ComparisonView";
 import type { CompareCandidate } from "@/hooks/use-compare-selection";
 import type { ComparisonColumn, ComparisonPageData } from "@/types/compare";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // axe-core is already a project dependency (used by scripts/a11y-test.ts via
 // @axe-core/playwright); running it directly against the jsdom/happy-dom
@@ -381,7 +382,7 @@ describe("CompareEntityHeader", () => {
       name: /comment ce score est calculé/i,
     });
     expect(link).toBeInTheDocument();
-    expect(link.getAttribute("href")).toBe("/fr/doctrine");
+    expect(link.getAttribute("href")).toBe(getLocalizedRoute("fr", "doctrine"));
   });
 
   // @req REQ-097

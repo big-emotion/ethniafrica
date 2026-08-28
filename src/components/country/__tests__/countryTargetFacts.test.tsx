@@ -7,6 +7,7 @@ import {
 } from "@/components/country/countryTargetFacts";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import { getCountryRoute } from "@/lib/routing";
 
 /**
  * The country globe's panel.
@@ -118,7 +119,7 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
 
     expect(
       screen.getByRole("link", { name: /Lire la fiche complète/ })
-    ).toHaveAttribute("href", "/fr/pays/KEN");
+    ).toHaveAttribute("href", getCountryRoute("fr", "KEN"));
   });
 
   // @req REQ-117

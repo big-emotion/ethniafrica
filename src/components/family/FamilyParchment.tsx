@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
@@ -357,7 +357,10 @@ export function FamilyParchment({
               <span aria-hidden="true">{row.flag}</span>
               {/* Each country of the footprint is itself a fiche; the ranking
                   is the natural place to step across to it. */}
-              <a className="afh-rank-name" href={`/fr/pays/${row.countryId}`}>
+              <a
+                className="afh-rank-name"
+                href={getCountryRoute("fr", row.countryId)}
+              >
                 {row.nameFr}
               </a>
               <span className="afh-rank-n">{row.memberCount}</span>

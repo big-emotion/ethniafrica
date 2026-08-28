@@ -2,6 +2,13 @@ import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
+import { LIVE_ROUTES } from "../a11yRoutes";
 
 const require = createRequire(import.meta.url);
 const lighthouseConfig = require("../../.lighthouserc.js");
@@ -13,9 +20,9 @@ const lighthouseConfig = require("../../.lighthouserc.js");
  * surface goes unmeasured.
  */
 const REPRESENTATIVE_FICHE_ROUTES = {
-  "language-family": "/fr/familles/FLG_BANTU",
-  people: "/fr/peuples/PPL_WOLOF",
-  country: "/fr/pays/SEN",
+  "language-family": getFamilyRoute("fr", "FLG_BANTU"),
+  people: getPeopleRoute("fr", "PPL_WOLOF"),
+  country: getCountryRoute("fr", "SEN"),
 } as const;
 
 /**
@@ -30,24 +37,31 @@ const REPRESENTATIVE_FICHE_ROUTES = {
  */
 const REPRESENTATIVE_FAMILY_ROUTES = {
   homepage: "/fr",
-  directories: "/fr/peuples",
-  search: "/fr/recherche",
+  directories: getLocalizedRoute("fr", "peoples"),
+  search: getLocalizedRoute("fr", "search"),
   "editorial-legal": "/fr/mentions-legales",
   moderation: "/fr/admin/connexion",
 } as const;
 
-function readAxeScript(): string {
-  return readFileSync(resolve(process.cwd(), "scripts/a11y-test.ts"), "utf8");
-}
+/**
+ * The axe gate's route list, read as data rather than as text.
+ *
+ * This used to grep `a11y-test.ts` for quoted route strings, which worked
+ * only while the routes were spelled out there. They are composed from the
+ * slug table now, so the list lives in its own module and both the gate and
+ * this test read the same array — which also means this test can no longer
+ * pass by matching a string that happens to appear in a comment.
+ */
+const axeRoutes = LIVE_ROUTES;
 
 describe("browser quality-gate routes", () => {
   // @req REQ-019
   it("audits canonical AFRIK identifiers instead of display-name slugs", () => {
     expect(lighthouseConfig.ci.collect.url).toContain(
-      "http://localhost:3000/fr/pays/SEN"
+      `http://localhost:3000${getCountryRoute("fr", "SEN")}`
     );
     expect(lighthouseConfig.ci.collect.url).toContain(
-      "http://localhost:3000/fr/peuples/PPL_WOLOF"
+      `http://localhost:3000${getPeopleRoute("fr", "PPL_WOLOF")}`
     );
     expect(lighthouseConfig.ci.collect.puppeteerScript).toBe(
       "./scripts/lighthouse-setup.cjs"
@@ -56,15 +70,12 @@ describe("browser quality-gate routes", () => {
       "--no-sandbox"
     );
 
-    const axeScript = readAxeScript();
-    expect(axeScript).toContain('"/fr/peuples/PPL_WOLOF"');
-    expect(axeScript).not.toContain('"/fr/peuples/wolof"');
+    expect(axeRoutes).toContain(getPeopleRoute("fr", "PPL_WOLOF"));
+    expect(axeRoutes).not.toContain(getPeopleRoute("fr", "wolof"));
   });
 
   // @req REQ-091
   it("audits one representative fiche route per entity type in both browser gates", () => {
-    const axeScript = readAxeScript();
-
     for (const [entityType, route] of Object.entries(
       REPRESENTATIVE_FICHE_ROUTES
     )) {
@@ -72,8 +83,8 @@ describe("browser quality-gate routes", () => {
         lighthouseConfig.ci.collect.url,
         `Lighthouse must audit the ${entityType} fiche`
       ).toContain(`http://localhost:3000${route}`);
-      expect(axeScript, `axe must audit the ${entityType} fiche`).toContain(
-        `"${route}"`
+      expect(axeRoutes, `axe must audit the ${entityType} fiche`).toContain(
+        route
       );
     }
   });
@@ -118,8 +129,6 @@ describe("browser quality-gate routes", () => {
 
   // @req REQ-091
   it("audits one representative route per charter route-family in both browser gates", () => {
-    const axeScript = readAxeScript();
-
     for (const [family, route] of Object.entries(
       REPRESENTATIVE_FAMILY_ROUTES
     )) {
@@ -127,21 +136,21 @@ describe("browser quality-gate routes", () => {
         lighthouseConfig.ci.collect.url,
         `Lighthouse must audit the ${family} route-family`
       ).toContain(`http://localhost:3000${route}`);
-      expect(axeScript, `axe must audit the ${family} route-family`).toContain(
-        `"${route}"`
+      expect(axeRoutes, `axe must audit the ${family} route-family`).toContain(
+        route
       );
     }
   });
 
   // @req REQ-103 FR71 (Epic 10, Story 10.11 · ETNI-500)
-  it("audits the quiz journey (/fr/quiz) in both browser gates with a blocking mobile Performance gate", () => {
-    const axeScript = readAxeScript();
+  it("audits the quiz journey in both browser gates with a blocking mobile Performance gate", () => {
+    const quiz = getLocalizedRoute("fr", "quiz");
 
     expect(
       lighthouseConfig.ci.collect.url,
-      "Lighthouse must audit /fr/quiz"
-    ).toContain("http://localhost:3000/fr/quiz");
-    expect(axeScript, "axe must audit /fr/quiz").toContain('"/fr/quiz"');
+      `Lighthouse must audit ${quiz}`
+    ).toContain(`http://localhost:3000${quiz}`);
+    expect(axeRoutes, `axe must audit ${quiz}`).toContain(quiz);
 
     for (const [audit, assertion] of Object.entries(
       lighthouseConfig.ci.assert.assertMatrix[0].assertions

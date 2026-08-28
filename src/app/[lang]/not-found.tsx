@@ -3,6 +3,12 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
 import type { Language } from "@/types/shared";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 
 /**
  * The locale is fixed rather than read from the route. This page is also the
@@ -27,22 +33,22 @@ export default function NotFound() {
         <p data-testid="state-copy" className="text-afh-text-soft">
           Cette page n&apos;existe pas. Les fiches suivent le format{" "}
           <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            /{lang}/peuples/PPL_XXXXX
+            {getPeopleRoute(lang, "PPL_XXXXX")}
           </span>
           ,{" "}
           <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            /{lang}/familles/FLG_XXXXX
+            {getFamilyRoute(lang, "FLG_XXXXX")}
           </span>{" "}
           ou{" "}
           <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            /{lang}/pays/XXX
+            {getCountryRoute(lang, "XXX")}
           </span>
           .
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
           <Link
-            href={`/${lang}/recherche`}
+            href={getLocalizedRoute(lang, "search")}
             data-cta="primary"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >

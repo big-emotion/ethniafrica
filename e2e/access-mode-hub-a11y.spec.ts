@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // REQ-114 AC4 — axe-core zero serious/critical, on each of the three
 // access-mode hub routes, at the three reference widths (430, 720,
@@ -7,9 +8,9 @@ import { test, expect } from "./support/fixtures";
 // truth), tablet-720 and desktop-1200 (playwright.config.ts), matching the
 // pattern in e2e/family-tree-a11y.spec.ts.
 const HUB_ROUTES = [
-  { mode: "explorer", url: "/fr/explorer" },
-  { mode: "comprendre", url: "/fr/comprendre" },
-  { mode: "jouer", url: "/fr/jouer" },
+  { mode: "explorer", url: getLocalizedRoute("fr", "explorerHub") },
+  { mode: "comprendre", url: getLocalizedRoute("fr", "comprendreHub") },
+  { mode: "jouer", url: getLocalizedRoute("fr", "jouerHub") },
 ];
 
 // @req REQ-114

@@ -1,4 +1,5 @@
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // ETNI-523 (12.10) AC2 — keyboard-only journey on the Carte tab: Tab to the
 // scrubber, arrow-scrub the year, Tab to the event list, Enter opens the
@@ -7,7 +8,7 @@ import { test, expect } from "./support/fixtures";
 // opened the sheet. No mouse/pointer input is used anywhere in this test.
 // Every stop must have visible focus (focus-visible ring classes already on
 // the interactive elements) and there must be no keyboard trap.
-const MIGRATIONS_URL = "/fr/migrations";
+const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
 
 // @req REQ-101 FR84 UX-DR29 UX-DR30
 test.describe("@nfr-a11y migrations atlas — keyboard-only journey", () => {

@@ -148,7 +148,7 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
     expect(screen.getByTestId("axis-module-link-liens")).toHaveAttribute(
       "href",
-      "/fr/jouer/liens"
+      `${getLocalizedRoute("fr", "jouerHub")}/liens`
     );
     expect(
       screen.queryByTestId("axis-module-unavailable-liens")
@@ -288,7 +288,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-appellations")).toHaveAttribute(
       "href",
-      "/fr/jouer/appellations"
+      `${getLocalizedRoute("fr", "jouerHub")}/appellations`
     );
     expect(
       screen.queryByTestId("axis-shelf-jeux-peuples")
@@ -312,7 +312,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-mercator")).toHaveAttribute(
       "href",
-      "/fr/jouer/mercator"
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
     );
     expect(
       screen.getByTestId("axis-module-link-pays-davant")

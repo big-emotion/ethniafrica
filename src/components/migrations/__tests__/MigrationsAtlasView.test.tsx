@@ -5,12 +5,13 @@ import * as nextNavigation from "next/navigation";
 
 import { MigrationsAtlasView } from "../MigrationsAtlasView";
 import type { MigrationAtlasEntry } from "@/lib/migrationDataTransformer";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const push = vi.fn();
 
 vi.mock("next/navigation", () => ({
   useRouter: vi.fn(() => ({ push })),
-  usePathname: vi.fn(() => "/fr/migrations"),
+  usePathname: vi.fn(() => getLocalizedRoute("fr", "migrations")),
   useSearchParams: vi.fn(() => new URLSearchParams()),
 }));
 

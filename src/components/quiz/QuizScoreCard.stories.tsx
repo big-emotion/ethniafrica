@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { QuizScoreCard } from "./QuizScoreCard";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const meta: Meta<typeof QuizScoreCard> = {
   title: "Quiz/QuizScoreCard",
@@ -10,7 +11,7 @@ const meta: Meta<typeof QuizScoreCard> = {
     a11y: { disable: false },
   },
   args: {
-    playAgainHref: "/fr/quiz",
+    playAgainHref: getLocalizedRoute("fr", "quiz"),
     onShare: () => undefined,
   },
 };
@@ -19,8 +20,12 @@ export default meta;
 type Story = StoryObj<typeof QuizScoreCard>;
 
 const fiches = [
-  { id: "PPL_YORUBA", name: "Yoruba", href: "/fr/peuples/PPL_YORUBA" },
-  { id: "PPL_IGBO", name: "Igbo", href: "/fr/peuples/PPL_IGBO" },
+  {
+    id: "PPL_YORUBA",
+    name: "Yoruba",
+    href: getPeopleRoute("fr", "PPL_YORUBA"),
+  },
+  { id: "PPL_IGBO", name: "Igbo", href: getPeopleRoute("fr", "PPL_IGBO") },
 ];
 
 // @req REQ-103 FR70

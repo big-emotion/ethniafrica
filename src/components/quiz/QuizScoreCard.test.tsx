@@ -3,10 +3,15 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { QuizScoreCard } from "@/components/quiz/QuizScoreCard";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const fiches = [
-  { id: "PPL_YORUBA", name: "Yoruba", href: "/fr/peuples/PPL_YORUBA" },
-  { id: "PPL_IGBO", name: "Igbo", href: "/fr/peuples/PPL_IGBO" },
+  {
+    id: "PPL_YORUBA",
+    name: "Yoruba",
+    href: getPeopleRoute("fr", "PPL_YORUBA"),
+  },
+  { id: "PPL_IGBO", name: "Igbo", href: getPeopleRoute("fr", "PPL_IGBO") },
 ];
 
 describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR27/34)", () => {
@@ -18,7 +23,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
         correct={7}
         total={8}
         fiches={fiches}
-        playAgainHref="/fr/quiz"
+        playAgainHref={getLocalizedRoute("fr", "quiz")}
         onShare={vi.fn()}
       />
     );
@@ -29,15 +34,15 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
     expect(screen.getByText("Ghana")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Yoruba" })).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_YORUBA"
+      getPeopleRoute("fr", "PPL_YORUBA")
     );
     expect(screen.getByRole("link", { name: "Igbo" })).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_IGBO"
+      getPeopleRoute("fr", "PPL_IGBO")
     );
     expect(screen.getByRole("link", { name: "Rejouer" })).toHaveAttribute(
       "href",
-      "/fr/quiz"
+      getLocalizedRoute("fr", "quiz")
     );
     expect(
       screen.getByRole("button", { name: "Partager le score" })
@@ -48,10 +53,10 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("never renders confetti, emoji or exclamation marks", () => {
     const { container } = render(
       <QuizScoreCard
-        scopeLabelFr="Kh�san"
+        scopeLabelFr="Khoïsan"
         correct={2}
         total={5}
-        playAgainHref="/fr/quiz"
+        playAgainHref={getLocalizedRoute("fr", "quiz")}
         onShare={vi.fn()}
       />
     );
@@ -69,7 +74,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
         scopeLabelFr="Tout le continent"
         correct={4}
         total={6}
-        playAgainHref="/fr/quiz"
+        playAgainHref={getLocalizedRoute("fr", "quiz")}
         onShare={vi.fn()}
       />
     );
@@ -86,7 +91,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
         scopeLabelFr="Ghana"
         correct={7}
         total={8}
-        playAgainHref="/fr/quiz"
+        playAgainHref={getLocalizedRoute("fr", "quiz")}
         onShare={onShare}
       />
     );
@@ -102,7 +107,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
         scopeLabelFr="Ghana"
         correct={7}
         total={8}
-        playAgainHref="/fr/quiz"
+        playAgainHref={getLocalizedRoute("fr", "quiz")}
         onShare={vi.fn()}
         shareStatusMessage="copié"
       />

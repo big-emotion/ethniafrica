@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import React from "react";
 
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const { getHubModulesMock } = vi.hoisted(() => ({
   getHubModulesMock: vi.fn(),
@@ -207,7 +208,7 @@ describe("access-mode hub routes (REQ-114)", () => {
     expect(screen.getByTestId("hub-module-link-quiz")).toBeInTheDocument();
     expect(screen.getByTestId("hub-module-link-comparer")).toHaveAttribute(
       "href",
-      "/fr/jouer/vraie-taille"
+      `${getLocalizedRoute("fr", "jouerHub")}/vraie-taille`
     );
     expect(
       screen.getByTestId("hub-module-unavailable-liens")

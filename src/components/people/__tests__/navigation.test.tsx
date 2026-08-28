@@ -8,6 +8,7 @@ import type {
   PeopleLanguageData,
   PeopleRelatedData,
 } from "@/lib/peopleDataTransformer";
+import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 
 // ==========================================
 // PeopleCountriesSection — navigation links
@@ -27,15 +28,15 @@ describe("PeopleCountriesSection — navigation links", () => {
     render(<PeopleCountriesSection data={data} />);
     const ngaLink = screen.getByRole("link", { name: /NGA/i });
     expect(ngaLink).toBeTruthy();
-    expect(ngaLink.getAttribute("href")).toBe("/fr/pays/NGA");
+    expect(ngaLink.getAttribute("href")).toBe(getCountryRoute("fr", "NGA"));
   });
 
   it("renders links for all distribution countries", () => {
     render(<PeopleCountriesSection data={data} />);
     const links = screen.getAllByRole("link");
     const hrefs = links.map((l) => l.getAttribute("href"));
-    expect(hrefs).toContain("/fr/pays/NGA");
-    expect(hrefs).toContain("/fr/pays/BEN");
+    expect(hrefs).toContain(getCountryRoute("fr", "NGA"));
+    expect(hrefs).toContain(getCountryRoute("fr", "BEN"));
   });
 
   it("returns null when distributions is empty (no links rendered)", () => {
@@ -65,7 +66,9 @@ describe("PeopleLanguageSection — family fiche link", () => {
     render(<PeopleLanguageSection data={data} />);
     const link = screen.getByRole("link", { name: /Niger-Congo/i });
     expect(link).toBeTruthy();
-    expect(link.getAttribute("href")).toBe("/fr/familles/FLG_NIGER_CONGO");
+    expect(link.getAttribute("href")).toBe(
+      getFamilyRoute("fr", "FLG_NIGER_CONGO")
+    );
   });
 
   it("does not render a family link when languageFamilyId is absent", () => {

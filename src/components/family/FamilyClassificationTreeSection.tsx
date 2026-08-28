@@ -10,6 +10,7 @@ import type {
   HierarchyNode as TreeNode,
 } from "@/components/system/HierarchyTree";
 import type { ClassificationStatus } from "@/types/afrik";
+import { getPeopleRoute } from "@/lib/routing";
 
 export interface FamilyClassificationTreeSectionProps {
   familyId: string;
@@ -149,7 +150,7 @@ export function FamilyClassificationTreeSection({
             id: person.id,
             label: person.nameMain,
             badge: person.classificationStatus,
-            href: `/fr/peuples/${person.id}`,
+            href: getPeopleRoute("fr", person.id),
           })),
           total: payload.meta?.pagination?.total,
         };

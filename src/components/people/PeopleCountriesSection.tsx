@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { PeopleCountriesData } from "@/lib/peopleDataTransformer";
+import { getCountryRoute } from "@/lib/routing";
 
 interface PeopleCountriesSectionProps {
   data: PeopleCountriesData;
@@ -17,7 +18,7 @@ export function PeopleCountriesSection({
   if (data.distributions.length === 0) return null;
 
   function countryHref(countryId: string): string {
-    const base = `/fr/pays/${countryId}`;
+    const base = getCountryRoute("fr", countryId);
     if (!fromPeopleId) return base;
     const params = new URLSearchParams({ fromPeopleId });
     if (fromPeopleName) params.set("fromPeopleName", fromPeopleName);

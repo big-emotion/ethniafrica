@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // One bar for both widths since the three entry points replaced the two
 // hand-written ones. Stubbed here: what this file asserts is the title band
@@ -38,9 +39,10 @@ vi.mock("next/navigation", () => ({
   usePathname: () => mockPathname,
 }));
 
-vi.mock("@/lib/routing", () => ({
-  getLocalizedRoute: () => "/fr/recherche",
-}));
+// `@/lib/routing` is deliberately not mocked. It is a pure slug table with no
+// dependencies, so a stub could only ever restate what it already answers —
+// and a stub that restated it as a literal is what made this suite assert the
+// header pointed at an address the site had stopped serving.
 
 vi.mock("@/lib/translations", () => ({
   getTranslation: () => ({

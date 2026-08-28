@@ -1,5 +1,6 @@
 import { test, expect } from "./support/fixtures";
 import type { Locator, Page } from "@playwright/test";
+import { getFamilyRoute } from "@/lib/routing";
 
 // ETNI-1285 (REQ-117) — the contract anchor ARCH-015 names for the fiche
 // globe: choosing a target flies the camera to it AND opens the facts panel
@@ -10,7 +11,7 @@ import type { Locator, Page } from "@playwright/test";
 // family footprint is the union of its member peoples' current countries, so
 // this fiche carries many choosable targets — a country fiche would only ever
 // carry one, which would let the geometry pass by accident.
-const FICHE_GLOBE_URL = "/fr/familles/FLG_BANTU";
+const FICHE_GLOBE_URL = getFamilyRoute("fr", "FLG_BANTU");
 
 // The panel is a bottom sheet below 760 px and a side panel at 760 px and
 // above, so the three reference widths cover both anchorings. There is no

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { QuizScoreScreen } from "./QuizScoreScreen";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const meta: Meta<typeof QuizScoreScreen> = {
   title: "Quiz/QuizScoreScreen",
@@ -19,7 +20,7 @@ export const CountryTrack: Story = {
     scopeLabelFr: "Ghana",
     correctCount: 7,
     totalQuestions: 8,
-    exitHref: "/fr/quiz",
+    exitHref: getLocalizedRoute("fr", "quiz"),
   },
 };
 
@@ -31,6 +32,6 @@ export const WholeCorpusTrack: Story = {
     scopeLabelFr: "Tout le continent",
     correctCount: 4,
     totalQuestions: 8,
-    exitHref: "/fr/quiz",
+    exitHref: getLocalizedRoute("fr", "quiz"),
   },
 };

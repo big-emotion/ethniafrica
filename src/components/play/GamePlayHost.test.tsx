@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import { GamePlayHost } from "@/components/play/GamePlayHost";
 import type { BinaryRound, GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
+import { getPeopleRoute } from "@/lib/routing";
 
 vi.mock("@/components/play/GamePlayIsland", () => ({
   GamePlayIsland: ({
@@ -41,7 +42,7 @@ const ROUND: BinaryRound = {
     fieldPath: "content.demography",
     sources: [],
     confidence: null,
-    ficheHref: "/fr/peuples/PPL_A",
+    ficheHref: getPeopleRoute("fr", "PPL_A"),
   },
   options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
   correctIndex: 0,

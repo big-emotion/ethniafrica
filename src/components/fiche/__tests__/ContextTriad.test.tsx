@@ -5,6 +5,7 @@ import { ContextTriad } from "../ContextTriad";
 import { sectionIdForPanel } from "../panelRegistry";
 import type { FichePanelContext } from "../panelRegistry";
 import { NIGER_CONGO, NIGERIA, YORUBA } from "./ficheContextFixtures";
+import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 
 const RECORD_ANCHOR = `#${sectionIdForPanel("record")}`;
 
@@ -31,7 +32,10 @@ describe("ContextTriad — people variant (direct chips)", () => {
     expect(familyItems).toHaveLength(1);
     expect(familyItems[0].dataset.contextTriadVariant).toBe("chip");
     const link = familyItems[0].querySelector("a");
-    expect(link).toHaveAttribute("href", "/fr/familles/FLG_NIGER_CONGO");
+    expect(link).toHaveAttribute(
+      "href",
+      getFamilyRoute("fr", "FLG_NIGER_CONGO")
+    );
   });
 
   // @req REQ-091
@@ -60,11 +64,11 @@ describe("ContextTriad — people variant (direct chips)", () => {
     expect(countryItems).toHaveLength(2);
     expect(countryItems[0].querySelector("a")).toHaveAttribute(
       "href",
-      "/fr/pays/NGA"
+      getCountryRoute("fr", "NGA")
     );
     expect(countryItems[1].querySelector("a")).toHaveAttribute(
       "href",
-      "/fr/pays/BEN"
+      getCountryRoute("fr", "BEN")
     );
   });
 

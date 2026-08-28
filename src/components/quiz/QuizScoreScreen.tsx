@@ -7,6 +7,7 @@ import { translations } from "@/lib/translations";
 import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const t = translations.fr.quiz;
 
@@ -39,7 +40,7 @@ export const QuizScoreScreen = ({
   exitHref,
   className,
 }: QuizScoreScreenProps) => {
-  const shareHref = `/fr/quiz/score?${scoreCardSearchParams(
+  const shareHref = `${getLocalizedRoute("fr", "quiz")}/score?${scoreCardSearchParams(
     scope,
     correctCount,
     totalQuestions

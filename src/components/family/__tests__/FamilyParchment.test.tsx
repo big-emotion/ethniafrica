@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { FamilyParchment } from "@/components/family/FamilyParchment";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const overlay = buildFamilyFootprintOverlay(
   [["NGA", "BEN"], ["NGA", "TGO"], ["NGA"]],
@@ -234,7 +235,9 @@ describe("FamilyParchment — the peoples", () => {
       "link"
     )[0];
     expect(link).toHaveTextContent("Bantou");
-    expect(link.getAttribute("href")).toMatch(/^\/fr\/peuples\/PPL_/);
+    expect(
+      link.getAttribute("href")?.startsWith(getPeopleRoute("fr", "PPL_"))
+    ).toBe(true);
   });
 });
 
@@ -249,7 +252,7 @@ describe("FamilyParchment — the trail", () => {
     const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
     const up = within(trail).getByRole("link", { name: "Familles" });
 
-    expect(up).toHaveAttribute("href", "/fr/familles");
+    expect(up).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
     expect(trail).toHaveTextContent("Bénoué-Congo");
   });
 });
