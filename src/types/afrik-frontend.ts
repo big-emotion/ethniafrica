@@ -348,6 +348,10 @@ export interface SearchResult {
   classificationStatus?: ClassificationStatus | null;
   /** Score de confiance sur [0, 1] — l'échelle de la base, pas celle du chip. */
   confidence?: number;
+  /** Autonyme (selfAppellation) du peuple, quand le corpus le porte. */
+  autonym?: string;
+  /** Exonymes connus, dans l'ordre de la fiche. */
+  exonyms?: string[];
 }
 
 /**

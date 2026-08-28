@@ -55,6 +55,35 @@ function asRows(value: unknown): Record<string, unknown>[] {
   return Array.isArray(value) ? (value as Record<string, unknown>[]) : [];
 }
 
+/**
+ * The autonym and the exonyms a people carries, read off the payload the API
+ * already sends. Surfacing them is the whole point of the atlas: a name
+ * imposed from outside should never stand alone where the self-appellation
+ * exists.
+ */
+function appellationsOf(content: unknown): {
+  autonym?: string;
+  exonyms?: string[];
+} {
+  const appellations = (
+    content as {
+      appellations?: { selfAppellation?: unknown; exonyms?: unknown };
+    }
+  )?.appellations;
+
+  const autonym =
+    typeof appellations?.selfAppellation === "string"
+      ? appellations.selfAppellation
+      : undefined;
+  const exonyms = Array.isArray(appellations?.exonyms)
+    ? appellations.exonyms.filter(
+        (name): name is string => typeof name === "string"
+      )
+    : undefined;
+
+  return { autonym, exonyms };
+}
+
 function numberOrUndefined(value: unknown): number | undefined {
   return typeof value === "number" && Number.isFinite(value)
     ? value
@@ -89,6 +118,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         languageFamilyName: (row.languageFamilyName as string) || undefined,
         countryIds: row.currentCountries as SearchResult["countryIds"],
         population: totalPopulationOf(row.content),
+        ...appellationsOf(row.content),
         snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,

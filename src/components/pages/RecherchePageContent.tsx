@@ -17,6 +17,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
+import { SearchPivotCard } from "@/components/search/SearchPivotCard";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ import {
   relationSearchParams,
   type SearchRelation,
 } from "@/lib/search/relationSearch";
+import { selectPivot } from "@/lib/search/pivot";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type { ClassificationStatus } from "@/types/afrik";
 import type { SearchResult } from "@/types/afrik-frontend";
@@ -371,6 +373,13 @@ export function RecherchePageContent() {
   const confidenceLabel = minConfidence
     ? (CONFIDENCE_OPTIONS.find((o) => o.value === minConfidence)?.label ?? "")
     : "";
+  // A relation-scoped list ("the peoples of the Krou family") has no single
+  // answer, so it never gets a pivot.
+  const pivot = relation ? null : selectPivot(sortedResults, committedQuery);
+  const listResults = pivot
+    ? sortedResults.filter((r) => r !== pivot)
+    : sortedResults;
+
   const regionLabel = region ? (REGIONS[region]?.label ?? "") : "";
 
   // A country names itself from the ISO code. A family cannot, but every
@@ -638,10 +647,15 @@ export function RecherchePageContent() {
           </div>
         )}
 
+        {/* ── pivot: the one entity this search is about, if there is one ── */}
+        {!loading && pivot && (
+          <SearchPivotCard result={pivot} language={language} />
+        )}
+
         {/* ── results list ── */}
-        {!loading && sortedResults.length > 0 && (
+        {!loading && listResults.length > 0 && (
           <ul className="space-y-3" aria-label="Résultats de recherche">
-            {sortedResults.map((result, i) => (
+            {listResults.map((result, i) => (
               <li key={`${result.type}-${result.id}-${i}`}>
                 <SearchResultCard result={result} language={language} />
               </li>

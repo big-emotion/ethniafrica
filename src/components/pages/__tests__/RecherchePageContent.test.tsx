@@ -459,7 +459,7 @@ describe("RecherchePageContent", () => {
 
     await act(async () => {
       fireEvent.change(screen.getByRole("searchbox"), {
-        target: { value: "Zulu" },
+        target: { value: "peuples zoulous" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
       await new Promise((r) => setTimeout(r, 100));
@@ -514,7 +514,7 @@ describe("RecherchePageContent", () => {
           peoples: [
             { id: "PPL_LOW", nameMain: "Peuple", relevance: 0.2, content: {} },
           ],
-          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire", relevance: 0.9 }],
+          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire", relevance: 0.3 }],
           families: [],
           total: 2,
         },
@@ -581,6 +581,62 @@ describe("RecherchePageContent", () => {
         /peuples du pays côte d’ivoire|peuples du pays côte d'ivoire/i
       )
     ).toBeInTheDocument();
+  });
+
+  // @req REQ-002
+  it("leads with a pivot block when the query names one entity exactly", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Zulu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+    });
+    // Promoted, not duplicated.
+    expect(screen.queryAllByTestId("search-result-card")).toHaveLength(0);
+    expect(
+      within(screen.getByTestId("search-pivot")).getByRole("link", {
+        name: /ouvrir la fiche/i,
+      })
+    ).toHaveAttribute("href", "/fr/peuples/PPL_ZULU");
+  });
+
+  // @req REQ-002
+  it("renders no pivot for an ambiguous query", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "A", nameMain: "Bété", relevance: 0.8, content: {} },
+            { id: "B", nameMain: "Béti", relevance: 0.75, content: {} },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "bet" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId("search-result-card")).toHaveLength(2);
+    });
+    expect(screen.queryByTestId("search-pivot")).not.toBeInTheDocument();
   });
 
   // ── 8. no session history ──────────────────────────────────────────────────
