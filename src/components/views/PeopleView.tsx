@@ -133,9 +133,11 @@ export const PeopleView = ({
             />
           </div>
 
-          <div className="space-y-1 text-sm text-muted-foreground">
+          <div className="space-y-1 text-afh-small text-muted-foreground">
             {people.languageFamilyName && (
-              <div className="text-xs">{people.languageFamilyName}</div>
+              <div className="text-afh-caption">
+                {people.languageFamilyName}
+              </div>
             )}
             {people.totalPopulation !== undefined && (
               <div>{formatNumber(people.totalPopulation)} population</div>
@@ -146,13 +148,16 @@ export const PeopleView = ({
                   <Badge
                     key={iso}
                     variant="secondary"
-                    className="text-xs px-1.5 py-0"
+                    className="text-afh-caption px-1.5 py-0"
                   >
                     {iso}
                   </Badge>
                 ))}
                 {people.currentCountries.length > 4 && (
-                  <Badge variant="secondary" className="text-xs px-1.5 py-0">
+                  <Badge
+                    variant="secondary"
+                    className="text-afh-caption px-1.5 py-0"
+                  >
                     +{people.currentCountries.length - 4}
                   </Badge>
                 )}
@@ -183,7 +188,7 @@ export const PeopleView = ({
     if (error) {
       return (
         <div className="flex items-center justify-center h-64">
-          <p className="text-destructive text-sm font-medium">
+          <p className="text-destructive text-afh-small font-medium">
             Échec du chargement des peuples
           </p>
         </div>
@@ -215,7 +220,7 @@ export const PeopleView = ({
                 variant="ghost"
                 size="icon"
                 className={cn(
-                  "h-11 w-11 rounded-full text-xs",
+                  "h-11 w-11 rounded-full text-afh-caption",
                   selectedLetter === null
                     ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                     : "bg-[color:var(--accent-tint)] text-afh-text"
@@ -230,7 +235,7 @@ export const PeopleView = ({
                   variant="ghost"
                   size="icon"
                   className={cn(
-                    "h-11 w-11 rounded-full text-xs",
+                    "h-11 w-11 rounded-full text-afh-caption",
                     selectedLetter === letter
                       ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                       : "bg-[color:var(--accent-tint)] text-afh-text"
@@ -295,7 +300,7 @@ export const PeopleView = ({
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-afh-small text-muted-foreground">
             {currentPage} / {totalPages}
           </span>
           <Button

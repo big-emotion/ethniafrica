@@ -10,6 +10,7 @@ import type { ConsentPreferences } from "@/types/consent";
 
 const BANNER_TITLE_ID = "consent-banner-title";
 
+// @req REQ-046
 export function ConsentBanner() {
   const { showBanner, acceptAll, rejectAll, updatePreferences, consentState } =
     useConsent();
@@ -123,11 +124,11 @@ export function ConsentBanner() {
           <div className="flex flex-col gap-2">
             <h2
               id={BANNER_TITLE_ID}
-              className="text-lg font-semibold text-foreground"
+              className="text-afh-h3 font-semibold text-foreground"
             >
               Gestion des cookies
             </h2>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-afh-small text-muted-foreground">
               Nous utilisons des cookies pour améliorer votre expérience sur
               notre site. Les cookies essentiels sont nécessaires au
               fonctionnement du site. Les cookies analytiques et fonctionnels
@@ -135,7 +136,7 @@ export function ConsentBanner() {
             </p>
             <Link
               href="/fr/confidentialite"
-              className="text-sm text-primary underline-offset-4 hover:underline w-fit"
+              className="text-afh-small text-primary underline-offset-4 hover:underline w-fit"
             >
               Politique de confidentialité
             </Link>
@@ -149,11 +150,11 @@ export function ConsentBanner() {
                 <div className="flex flex-col gap-0.5">
                   <label
                     htmlFor="essential-switch"
-                    className="text-sm font-medium text-foreground"
+                    className="text-afh-small font-medium text-foreground"
                   >
                     Cookies essentiels
                   </label>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-afh-caption text-muted-foreground">
                     Requis - Nécessaires au fonctionnement du site
                   </span>
                 </div>
@@ -170,11 +171,11 @@ export function ConsentBanner() {
                 <div className="flex flex-col gap-0.5">
                   <label
                     htmlFor="analytics-switch"
-                    className="text-sm font-medium text-foreground"
+                    className="text-afh-small font-medium text-foreground"
                   >
                     Cookies analytiques
                   </label>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-afh-caption text-muted-foreground">
                     Plausible - Statistiques anonymes de visite
                   </span>
                 </div>
@@ -191,11 +192,11 @@ export function ConsentBanner() {
                 <div className="flex flex-col gap-0.5">
                   <label
                     htmlFor="functional-switch"
-                    className="text-sm font-medium text-foreground"
+                    className="text-afh-small font-medium text-foreground"
                   >
                     Cookies fonctionnels
                   </label>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-afh-caption text-muted-foreground">
                     Sentry - Rapport d&apos;erreurs pour améliorer le site
                   </span>
                 </div>

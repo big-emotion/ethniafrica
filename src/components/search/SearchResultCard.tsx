@@ -82,7 +82,7 @@ export function SearchResultCard({
         className
       )}
     >
-      <h3 className="font-afh-display text-base font-semibold text-afh-text">
+      <h3 className="font-afh-display text-afh-small font-semibold text-afh-text">
         {/* Stretched over the whole card. Anything below that must stay
             separately clickable sits on `relative z-10`, above this overlay. */}
         <Link
@@ -99,7 +99,7 @@ export function SearchResultCard({
       <div className="relative z-10 mt-1 flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5">
           <SearchEntityMark type={type} />
-          <Badge variant="secondary" className="text-xs">
+          <Badge variant="secondary" className="text-afh-caption">
             {getSearchEntityLabel(type)}
           </Badge>
         </span>
@@ -113,7 +113,7 @@ export function SearchResultCard({
             aria-label={`Peuples de la famille linguistique ${result.languageFamilyName}`}
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-afh-caption">
               {result.languageFamilyName}
             </Badge>
           </Link>
@@ -141,14 +141,14 @@ export function SearchResultCard({
                 aria-label={`Peuples du pays ${getFrenchCountryCommonName(iso3, iso3)}`}
                 className={cn("rounded-full", CHARTER_FOCUS_RING)}
               >
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-afh-caption">
                   {getFrenchCountryCommonName(iso3, iso3)}
                 </Badge>
               </Link>
             </li>
           ))}
           {hiddenCountryCount > 0 && (
-            <li className="text-xs text-afh-text-muted">
+            <li className="text-afh-caption text-afh-text-muted">
               +{hiddenCountryCount}
             </li>
           )}
@@ -156,7 +156,7 @@ export function SearchResultCard({
       )}
 
       {result.population !== undefined && (
-        <p className="mt-1 text-sm text-afh-text-soft">
+        <p className="mt-1 text-afh-small text-afh-text-soft">
           Population : {numberFr.format(Math.round(result.population))}
         </p>
       )}

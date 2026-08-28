@@ -128,7 +128,7 @@ export function RelationsList({
               aria-pressed={isActive}
               onClick={() => toggleType(type)}
               className={cn(
-                "rounded-full border px-3 py-1 text-xs font-medium motion-safe:transition-colors",
+                "rounded-full border px-3 py-1 text-afh-caption font-medium motion-safe:transition-colors",
                 isActive
                   ? "border-afh-gold bg-afh-gold-bg text-afh-text"
                   : "border-afh-border bg-afh-surface text-afh-text-soft"
@@ -141,7 +141,7 @@ export function RelationsList({
       </div>
 
       {activeTypes.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2 text-xs">
+        <div className="flex flex-wrap items-center gap-2 text-afh-caption">
           {activeTypes.map((type) => (
             <span
               key={type}
@@ -172,7 +172,7 @@ export function RelationsList({
       ) : (
         <>
           {hasDerivedOnly && (
-            <p className="text-sm text-afh-text-soft">
+            <p className="text-afh-small text-afh-text-soft">
               Seuls des liens de proximité linguistique, dérivés de la
               hiérarchie AFRIK, sont disponibles pour l&apos;instant.
             </p>
@@ -192,15 +192,17 @@ export function RelationsList({
                   />
                 </div>
                 {item.period?.label && (
-                  <p className="text-xs text-afh-text-soft">
+                  <p className="text-afh-caption text-afh-text-soft">
                     {item.period.label}
                   </p>
                 )}
                 {item.description && (
-                  <p className="text-sm text-afh-text">{item.description}</p>
+                  <p className="text-afh-small text-afh-text">
+                    {item.description}
+                  </p>
                 )}
                 {item.derived ? (
-                  <p className="text-xs italic text-afh-text-soft">
+                  <p className="text-afh-caption italic text-afh-text-soft">
                     dérivé de la hiérarchie AFRIK
                   </p>
                 ) : (

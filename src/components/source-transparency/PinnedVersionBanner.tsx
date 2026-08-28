@@ -100,7 +100,7 @@ export function PinnedVersionBanner({
       role="region"
       aria-label="indicateur de version figée"
       data-pinned-banner
-      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-sm text-afh-text ${
+      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-afh-small text-afh-text ${
         collapsed ? "ml-auto w-fit max-w-full px-2 py-1" : "px-3 py-2"
       }`}
     >

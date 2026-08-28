@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 
 /**
- * The field used to read `text-base md:text-sm` — 16 px on mobile purely so
+ * The field used to read `text-afh-small` — 16 px on mobile purely so
  * iOS Safari would not zoom the page on focus, then back down to 14 px. The
  * scale's `small` role is 16 px at every width, so the responsive pair is
  * gone: one token now carries both the iOS behaviour and the desktop size.

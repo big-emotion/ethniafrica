@@ -74,7 +74,7 @@ export function ComprendreQuestionSpine({
       <style>{`
         .comprendre-spine-lead {
           margin: 0 0 16px;
-          font-size: 14px;
+          font-size: var(--afh-text-small);
           color: var(--afh-fg-muted);
         }
 
@@ -135,7 +135,7 @@ export function ComprendreQuestionSpine({
 
         .comprendre-spine-question {
           font-family: var(--afh-font-display);
-          font-size: 18px;
+          font-size: var(--afh-text-h3);
           font-weight: 700;
           color: var(--afh-text);
           text-wrap: balance;
@@ -146,15 +146,12 @@ export function ComprendreQuestionSpine({
         }
 
         .comprendre-spine-answer {
-          font-size: 13px;
+          font-size: var(--afh-text-caption);
           /* --afh-fg-muted, not --afh-text-muted: the latter measures
              3.29:1 on parchment and 4.21:1 at night, both under AA. */
           color: var(--afh-fg-muted);
         }
 
-        @media (min-width: 800px) {
-          .comprendre-spine-question { font-size: 20px; }
-        }
       `}</style>
     </div>
   );

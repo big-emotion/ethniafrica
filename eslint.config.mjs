@@ -125,9 +125,6 @@ const eslintConfig = [
       // --- lot 5 · source-transparency/ (3) ----------------------------
       // --- lot 6 · people/, migrations/ (14) ---------------------------
       // --- lot 7 · relations/, hubs/ (11) ------------------------------
-      "src/components/relations/EgoNetworkGraph.tsx", // 4
-      "src/components/hubs/ComprendreQuestionSpine.tsx", // 4 css
-      "src/components/hubs/JouerFaceOff.tsx", // 3 css
       // --- lot 10 · home/ — DESIGN GATE (26) ---------------------------
       "src/components/home/AccessAxes.tsx", // 9 css
       "src/components/home/AxisModulePanel.tsx", // 6 css

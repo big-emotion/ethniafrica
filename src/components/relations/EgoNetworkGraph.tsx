@@ -263,7 +263,7 @@ export function EgoNetworkGraph({
                 textAnchor="middle"
                 dominantBaseline="middle"
                 lang={bcp47LanguageTag(center.nameMainIso639_3)}
-                className="fill-afh-text text-[10px] font-semibold"
+                className="fill-afh-text text-afh-eyebrow font-semibold"
               >
                 {center.nameMain}
               </text>
@@ -317,7 +317,7 @@ export function EgoNetworkGraph({
                 <text
                   textAnchor="middle"
                   dominantBaseline="middle"
-                  className="fill-afh-text text-[8px] font-medium"
+                  className="fill-afh-text text-afh-eyebrow font-medium"
                 >
                   {RELATION_TYPE_LABELS[item.type]}
                 </text>
@@ -352,7 +352,7 @@ export function EgoNetworkGraph({
                   textAnchor="middle"
                   dominantBaseline="middle"
                   lang={lang}
-                  className="fill-afh-text text-[8px] font-semibold"
+                  className="fill-afh-text text-afh-eyebrow font-semibold"
                 >
                   {item.neighbor.nameMain}
                 </text>
@@ -387,7 +387,7 @@ export function EgoNetworkGraph({
                   textAnchor="middle"
                   dominantBaseline="middle"
                   className={cn(
-                    "fill-afh-text-soft text-[9px]",
+                    "fill-afh-text-soft text-afh-eyebrow",
                     isActive && "fill-afh-gold"
                   )}
                 >
