@@ -11,7 +11,6 @@ import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
   getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -77,11 +76,7 @@ const AXES: AxisDefinition[] = [
     // behind it count the same entries: a module behind a dark flag is not
     // listed there and must not be counted here.
     figure: () =>
-      plural(
-        getModulesForAccessMode("jouer").filter(isModuleEnabled).length,
-        "jeu",
-        "jeux"
-      ),
+      plural(getModulesForAccessMode("jouer").length, "jeu", "jeux"),
   },
 ];
 
@@ -196,11 +191,9 @@ function AxisGlyph({
  * An axis is only as live as the modules behind it — and since the card now
  * deploys those very modules, it reads its promise off the same resolved
  * list it is about to show. That is stricter than asking the registry: the
- * server has already applied `isModuleEnabled` (so a `flagged` module with
- * its flag dark cannot pass for live) *and* probed the backing table, so an
- * axis whose only module is a route over an empty table stops promising
- * too. The card starts promising again by itself the day a module ships or
- * a flag lights, with nothing here to remember to undo.
+ * server has probed each backing table, so an axis whose only module is a
+ * route over an empty table stops promising. It starts promising again by
+ * itself the day that table fills, with nothing here to remember to undo.
  */
 function axisHasLiveModule(modules: HubModule[]): boolean {
   return modules.some((module) => module.available);

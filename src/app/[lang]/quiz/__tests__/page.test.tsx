@@ -19,10 +19,6 @@ vi.mock("@/api/v2/handlers/quiz", () => ({
   getQuizSegmentsHandler: () => mockGetQuizSegmentsHandler(),
 }));
 
-vi.mock("@/lib/featureFlags", () => ({
-  isQuizFeatureEnabled: () => mockIsQuizFeatureEnabled(),
-}));
-
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
@@ -59,19 +55,21 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     vi.clearAllMocks();
   });
 
+  // The page used to answer notFound() unless NEXT_PUBLIC_FEATURE_QUIZ was
+  // "true", so a built route returned 404 depending on where it was built.
   // @req REQ-103 AR39
-  it("calls notFound and does not fetch segments when the feature flag is off", async () => {
-    mockIsQuizFeatureEnabled.mockReturnValue(false);
+  it("renders whatever the environment says", async () => {
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    mockGetQuizSegmentsHandler.mockResolvedValue(makeSegmentsEnvelope());
 
-    await expect(QuizPage()).rejects.toThrow("NEXT_NOT_FOUND");
+    render(await QuizPage());
 
-    expect(notFound).toHaveBeenCalled();
-    expect(mockGetQuizSegmentsHandler).not.toHaveBeenCalled();
+    expect(screen.getByTestId("quiz-segment-picker")).toBeInTheDocument();
+    expect(notFound).not.toHaveBeenCalled();
   });
 
   // @req REQ-103 FR66
   it("server-renders QuizSegmentPicker fed by /v2/quiz/segments when the flag is on", async () => {
-    mockIsQuizFeatureEnabled.mockReturnValue(true);
     mockGetQuizSegmentsHandler.mockResolvedValue(makeSegmentsEnvelope());
 
     render(await QuizPage());

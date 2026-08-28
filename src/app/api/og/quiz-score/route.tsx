@@ -11,7 +11,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import { parseScoreCardParams } from "@/lib/quiz/scoreCardParams";
 import { translations } from "@/lib/translations";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
@@ -31,10 +30,6 @@ function readFontFile(fileName: string): Buffer {
 
 // @req REQ-103 FR70
 export async function GET(request: Request) {
-  if (!isQuizFeatureEnabled()) {
-    return new Response(null, { status: 404 });
-  }
-
   const params = parseScoreCardParams(new URL(request.url).searchParams);
 
   if (!params) {

@@ -3,7 +3,6 @@ import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import {
   getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
   type HubModuleDefinition,
   type ModuleDataSource,
@@ -65,15 +64,11 @@ export interface HubModule extends HubModuleDefinition {
 
 // @req REQ-106 @req REQ-114
 export async function isModuleAvailable(
-  def: Pick<HubModuleDefinition, "availability" | "dataSource" | "featureFlag">
+  def: Pick<HubModuleDefinition, "availability" | "dataSource">
 ): Promise<boolean> {
-  // The same lock the home card uses, so the axis and the hub behind it
-  // can never disagree about what exists. It settles "unavailable" and
-  // "flagged" outright, leaving only "data" to cost a round trip.
-  if (!isModuleEnabled(def)) return false;
-  // Only a data module's liveness depends on the corpus. Static and
-  // flagged ones were settled outright by the lock above, and asking a row
-  // count about them could only ever take a working route away.
+  // Only a data module's liveness depends on the corpus. A static page
+  // renders from code, and asking a row count about it could only ever take
+  // a working route away.
   if (def.availability !== "data") return true;
   if (!def.dataSource) return false;
   return probeDataSource(def.dataSource);
@@ -81,16 +76,11 @@ export async function isModuleAvailable(
 
 // @req REQ-114 @req REQ-106
 export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
-  // A module behind a dark flag is dropped rather than listed as "Bientôt":
-  // its route answers notFound(), so announcing it would promise a 404, and
-  // "coming soon" is a claim about unbuilt work, which this is not. An
-  // "unavailable" module keeps its Bientôt row — that one really is coming.
-  const definitions = getModulesForAccessMode(mode).filter(
-    (def) => def.availability !== "flagged" || isModuleEnabled(def)
-  );
-
+  // Every module the registry declares is listed. Nothing is dropped here:
+  // a module that could vanish from the hub is a module a reader cannot
+  // find, and the environment has no say in what exists.
   return Promise.all(
-    definitions.map(async (def) => ({
+    getModulesForAccessMode(mode).map(async (def) => ({
       ...def,
       available: await isModuleAvailable(def),
     }))

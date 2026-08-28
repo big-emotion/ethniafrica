@@ -1,4 +1,3 @@
-import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import type { PageType } from "@/lib/routing";
 
 // REQ-114: the three access modes are the three intents a reader arrives
@@ -46,9 +45,6 @@ export type ModuleDataSource =
   | "afrik_people_relations"
   | "quiz_questions";
 
-// The build-time switches a module can hang from.
-export type ModuleFeatureFlag = "quiz";
-
 // REQ-120 gave Jouer eleven games, and eleven peers is past what a radial
 // layout can lay out and past what a reader takes in as a set. A shelf is
 // the intermediate level: the reader picks the corpus entity a game
@@ -78,19 +74,20 @@ export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
   "jeux-quiz": { id: "jeux-quiz", label: "Le quiz" },
 };
 
-// - "data": live only once its backing table (dataSource) holds >= 1 row.
-// - "static": a page that exists whatever the corpus holds — search,
-//   doctrine and about render from code, so probing a table for them would
-//   only invent a way for a working route to disappear.
-// - "flagged": the route exists but answers notFound() while its feature
-//   flag is off. Filing it "static" would advertise a link that 404s;
-//   filing it "unavailable" would freeze it at "Bientôt" even with the
-//   flag lit.
-// - "unavailable": never live regardless of data, for a module whose
-//   surface isn't wired into any route yet. No module is in that state
-//   since REQ-120 gave the Jouer hub its games; the case is kept for the
-//   next module announced before its route exists.
-export type ModuleAvailability = "data" | "static" | "flagged" | "unavailable";
+// Every module the registry declares is listed and linked. What a module
+// waits on is its corpus, never a switch:
+//
+// - "data": live once its backing table (dataSource) holds >= 1 row.
+// - "static": a page that exists whatever the corpus holds — search and
+//   doctrine render from code, so probing a table for them would only
+//   invent a way for a working route to disappear.
+//
+// "flagged" and "unavailable" are gone. The first hid a built route behind
+// an environment variable, so the quiz existed and no reader could reach
+// it; the second reserved a way to announce a module before its route
+// existed, and nothing used it. A module that cannot be reached is not a
+// module — it is unmerged work.
+export type ModuleAvailability = "data" | "static";
 
 export interface HubModuleDefinition {
   id: string;
@@ -101,7 +98,6 @@ export interface HubModuleDefinition {
   dataSource?: ModuleDataSource;
   /** A game under the Jouer hub, addressed as /fr/jouer/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
   gameSlug?: string;
-  featureFlag?: ModuleFeatureFlag;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
   group?: ModuleGroupId;
   /**
@@ -150,32 +146,6 @@ export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
   "migration-paths",
   "family-crown",
 ];
-
-// The flag decides whether the module exists at all, never the corpus: a
-// module switched off is not "coming soon", it is not there.
-const FLAG_RESOLVERS: Record<ModuleFeatureFlag, () => boolean> = {
-  quiz: isQuizFeatureEnabled,
-};
-
-/**
- * Live without asking the database — what the home page can know on its
- * own. Both the hub's availability probe and the home card read this, and
- * that shared lock is what stops the two from drifting apart: without it a
- * flagged-off module would show as a live axis on the home page and as
- * nothing at all on the hub behind it.
- */
-// Narrowed to the two fields it reads so the hub's availability probe can
-// forward its own already-narrowed argument straight through.
-// @req REQ-106
-export function isModuleEnabled(
-  def: Pick<HubModuleDefinition, "availability" | "featureFlag">
-): boolean {
-  if (def.availability === "unavailable") return false;
-  if (def.availability === "flagged") {
-    return def.featureFlag ? FLAG_RESOLVERS[def.featureFlag]() : false;
-  }
-  return true;
-}
 
 // @req REQ-114
 export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
@@ -253,8 +223,11 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     name: "Le quiz des parcours",
     accessMode: "jouer",
     page: "quiz",
-    availability: "flagged",
-    featureFlag: "quiz",
+    // Read from its own bank, like every other data module reads its table.
+    // It used to hang from `NEXT_PUBLIC_FEATURE_QUIZ`, which meant a built
+    // route no reader could reach and a hub entry that quietly vanished.
+    availability: "data",
+    dataSource: "quiz_questions",
   },
   {
     id: "appellations",
@@ -309,23 +282,18 @@ export const getModulesForAccessMode = (
   MODULE_DEFINITIONS.filter((def) => def.accessMode === mode);
 
 /**
- * What the header may list for an access mode — the same rule
- * `getHubModules` applies, minus its Supabase probe.
+ * What the header lists for an access mode: every module of that mode.
  *
- * The probe is deliberately not repeated here. The header renders inside
- * PageLayout, a client component that some fifty page components mount;
- * threading a server-resolved availability list through all of them would
- * cost a wide refactor to close a gap that only opens when a backing table
- * is empty. The header therefore trusts the static lock — a module behind a
- * dark flag is dropped rather than announced, because its route answers
- * notFound() — and the hub behind the click keeps the probe that can also
- * see an empty corpus.
+ * There is nothing left to filter. The header renders inside PageLayout, a
+ * client component some fifty pages mount, so it cannot run the hub's
+ * Supabase probe — but the probe only ever answers "is this module's corpus
+ * empty", never "does this module exist". A reader following a header link
+ * to a module whose table is empty lands on that module's own empty state,
+ * which is a smaller failure than a link that was never shown.
  */
 // @req REQ-114 @req REQ-106
 export const getNavModules = (mode: AccessMode): HubModuleDefinition[] =>
-  getModulesForAccessMode(mode).filter(
-    (def) => def.availability !== "flagged" || isModuleEnabled(def)
-  );
+  getModulesForAccessMode(mode);
 
 /**
  * The four CVD-validated categorical accents, in the order the menu walks

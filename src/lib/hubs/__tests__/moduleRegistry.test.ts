@@ -9,7 +9,6 @@ import {
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
-  isModuleEnabled,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
@@ -84,24 +83,22 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(MODULE_DEFINITIONS.map((m) => m.id)).not.toContain("about");
   });
 
-  // The quiz is gated on its build flag rather than on a row count: with the
-  // flag dark its route answers notFound(), and a corpus probe cannot see
-  // that.
+  // The quiz used to hang from NEXT_PUBLIC_FEATURE_QUIZ, so a built route
+  // existed that no reader could reach. It reads its own bank now, like
+  // every other data module reads its table.
   // @req REQ-114
-  it("registers the quiz behind its feature flag under jouer", () => {
+  it("registers the quiz as a data module over its own bank", () => {
     const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
     expect(quiz?.accessMode).toBe("jouer");
-    expect(quiz?.availability).toBe("flagged");
-    expect(quiz?.featureFlag).toBe("quiz");
+    expect(quiz?.availability).toBe("data");
+    expect(quiz?.dataSource).toBe("quiz_questions");
     expect(quiz?.page).toBe("quiz");
   });
 
-  // comparer and liens shipped as "Bientôt" placeholders; the surfaces they
-  // stood in for now exist, so their ids are reused rather than duplicated.
   // @req REQ-120
-  it("leaves no jouer module stranded on the unavailable placeholder", () => {
+  it("gives every jouer module somewhere to go", () => {
     for (const def of getModulesForAccessMode("jouer")) {
-      expect(def.availability).not.toBe("unavailable");
+      expect(def.page ?? def.gameSlug).toBeTruthy();
     }
   });
 
@@ -183,59 +180,6 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   });
 });
 
-describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
-  const flaggedQuiz = (
-    featureFlag?: HubModuleDefinition["featureFlag"]
-  ): HubModuleDefinition => ({
-    id: "quiz",
-    name: "Le quiz des parcours",
-    accessMode: "jouer",
-    page: "quiz",
-    availability: "flagged",
-    featureFlag,
-  });
-
-  // @req REQ-106
-  it("holds a flagged module off while its flag is unset", () => {
-    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
-    expect(isModuleEnabled(flaggedQuiz("quiz"))).toBe(false);
-  });
-
-  // @req REQ-106
-  it("brings a flagged module in once its flag is on", () => {
-    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
-    expect(isModuleEnabled(flaggedQuiz("quiz"))).toBe(true);
-  });
-
-  // A flagged module naming no flag names no switch that could turn it on,
-  // so the safe reading is that it is off.
-  // @req REQ-106
-  it("holds a flagged module off when it names no flag", () => {
-    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
-    expect(isModuleEnabled(flaggedQuiz(undefined))).toBe(false);
-  });
-
-  // Stated against a definition built here: REQ-120 left no registry entry
-  // in the `unavailable` state, and the rule outlives the last module that
-  // was in it.
-  // @req REQ-106
-  it("never enables a module forced unavailable", () => {
-    expect(
-      isModuleEnabled({ availability: "unavailable", featureFlag: "quiz" })
-    ).toBe(false);
-  });
-
-  // Data and static modules are decided elsewhere — by the corpus and by
-  // the route respectively — so neither is held back here.
-  // @req REQ-106
-  it("lets data and static modules through without consulting the corpus", () => {
-    const peuples = MODULE_DEFINITIONS.find((m) => m.id === "peuples");
-    const recherche = MODULE_DEFINITIONS.find((m) => m.id === "recherche");
-    expect(isModuleEnabled(peuples)).toBe(true);
-    expect(isModuleEnabled(recherche)).toBe(true);
-  });
-});
-
 describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", () => {
   // The header is generated from the registry, so a destination absent from
   // it is a destination the reader can no longer reach from the header.
@@ -253,25 +197,21 @@ describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", 
 });
 
 describe("moduleRegistry — the list the header may show (REQ-114)", () => {
+  // The quiz was listed here only while an environment variable said so, so
+  // the header silently lost an entry depending on where the app was built.
   // @req REQ-114
-  it("lists a flagged module only while its flag is lit", () => {
+  it("lists the quiz whatever the environment says", () => {
     process.env.NEXT_PUBLIC_FEATURE_QUIZ = "false";
-    expect(getNavModules("jouer").map((def) => def.id)).not.toContain("quiz");
+    expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
 
-    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
     expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
   });
 
-  // Dropping it would hide that the module is coming; listing it as a link
-  // would promise a route that answers notFound().
   // @req REQ-106
-  it("keeps an unbuilt module listed so it can carry its Bientôt state", () => {
-    const unbuilt = MODULE_DEFINITIONS.filter(
-      (def) => def.availability === "unavailable"
-    );
-
-    for (const def of unbuilt) {
-      expect(getNavModules(def.accessMode)).toContainEqual(def);
+  it("hides no module from the header", () => {
+    for (const mode of ACCESS_MODES) {
+      expect(getNavModules(mode)).toEqual(getModulesForAccessMode(mode));
     }
   });
 

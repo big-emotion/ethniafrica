@@ -12,10 +12,6 @@ vi.mock("next/og", () => ({
   }),
 }));
 
-vi.mock("@/lib/featureFlags", () => ({
-  isQuizFeatureEnabled: () => mockIsQuizFeatureEnabled(),
-}));
-
 function request(query: Record<string, string>) {
   const url = new URL("https://ethniafrica.example/api/og/quiz-score");
   Object.entries(query).forEach(([key, value]) => {
@@ -29,17 +25,18 @@ const validQuery = { segment: "adults", correct: "6", total: "8", rung: "2" };
 describe("quiz-score Open Graph image route (Epic 10, Story 10.10, ETNI-499, ETNI-1141, FR70)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockIsQuizFeatureEnabled.mockReturnValue(true);
   });
 
+  // The share image used to 404 unless the build carried
+  // NEXT_PUBLIC_FEATURE_QUIZ, so a shared score lost its card.
   // @req REQ-103 FR70
-  it("404s when the quiz feature flag is off", async () => {
-    mockIsQuizFeatureEnabled.mockReturnValue(false);
+  it("renders the card whatever the environment says", async () => {
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
     const response = await GET(request(validQuery));
 
-    expect(response.status).toBe(404);
-    expect(ImageResponse).not.toHaveBeenCalled();
+    expect(response.status).not.toBe(404);
+    expect(ImageResponse).toHaveBeenCalled();
   });
 
   // @req REQ-103 FR70
