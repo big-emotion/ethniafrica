@@ -34,7 +34,7 @@ const darkJouer: HubModule[] = [
     name: "Un module éteint",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    availability: "data",
     available: false,
   },
   {
@@ -42,7 +42,7 @@ const darkJouer: HubModule[] = [
     name: "Un autre module éteint",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    availability: "data",
     available: false,
   },
 ];

@@ -12,10 +12,6 @@ vi.mock("next/navigation", () => ({
   }),
 }));
 
-vi.mock("@/lib/featureFlags", () => ({
-  isQuizFeatureEnabled: () => mockIsQuizFeatureEnabled(),
-}));
-
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
@@ -47,18 +43,17 @@ function searchParams(overrides: Record<string, string> = {}) {
 describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR70)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockIsQuizFeatureEnabled.mockReturnValue(true);
   });
 
+  // A shared score URL used to 404 unless the build carried
+  // NEXT_PUBLIC_FEATURE_QUIZ. Only forged params 404 now.
   // @req REQ-103 AR39
-  it("404s when the quiz feature flag is off", async () => {
-    mockIsQuizFeatureEnabled.mockReturnValue(false);
+  it("renders a shared score whatever the environment says", async () => {
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
-    await expect(
-      QuizScorePage({ searchParams: searchParams() })
-    ).rejects.toThrow("NEXT_NOT_FOUND");
+    render(await QuizScorePage({ searchParams: searchParams() }));
 
-    expect(notFound).toHaveBeenCalled();
+    expect(notFound).not.toHaveBeenCalled();
   });
 
   // @req REQ-103 FR70

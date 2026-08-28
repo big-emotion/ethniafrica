@@ -10,7 +10,6 @@ import { getLocalizedRoute } from "@/lib/routing";
 import {
   ACCESS_MODES,
   getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
@@ -32,15 +31,10 @@ const counts: CorpusCounts = {
  * state the corpus is actually in.
  */
 const resolveModules = (mode: AccessMode): HubModule[] =>
-  getModulesForAccessMode(mode)
-    .filter(
-      (definition) =>
-        definition.availability !== "flagged" || isModuleEnabled(definition)
-    )
-    .map((definition) => ({
-      ...definition,
-      available: isModuleEnabled(definition),
-    }));
+  getModulesForAccessMode(mode).map((definition) => ({
+    ...definition,
+    available: true,
+  }));
 
 const modulesByAxis = Object.fromEntries(
   ACCESS_MODES.map((mode) => [mode, resolveModules(mode)])
@@ -289,15 +283,14 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
         name: "Le quiz des parcours",
         accessMode: "jouer",
         page: "quiz",
-        availability: "flagged",
-        featureFlag: "quiz",
+        availability: "data",
       },
       {
         id: "liens",
         name: "Les liens invisibles",
         accessMode: "jouer",
         page: null,
-        availability: "unavailable",
+        availability: "data",
       },
     ];
 
@@ -306,16 +299,10 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
         counts,
         modulesByAxis: {
           ...modulesByAxis,
-          jouer: darkJouer
-            .filter(
-              (definition) =>
-                definition.availability !== "flagged" ||
-                isModuleEnabled(definition)
-            )
-            .map((definition) => ({
-              ...definition,
-              available: isModuleEnabled(definition),
-            })),
+          jouer: darkJouer.map((definition) => ({
+            ...definition,
+            available: false,
+          })),
         },
       });
 
@@ -502,7 +489,7 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
             name: "Un module annoncé avant sa route",
             accessMode: "jouer",
             page: null,
-            availability: "unavailable",
+            availability: "data",
             available: false,
           },
         ],

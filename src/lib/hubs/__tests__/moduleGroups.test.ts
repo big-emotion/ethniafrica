@@ -4,7 +4,6 @@ import { getGroupedModules } from "@/lib/hubs/moduleGroups";
 import {
   MODULE_GROUPS,
   getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
@@ -14,22 +13,17 @@ const asModules = (definitions: HubModuleDefinition[]): HubModule[] =>
   definitions.map((definition) => ({ ...definition, available: true }));
 
 /**
- * What the surfaces are actually handed: getHubModules drops a module
- * behind a dark flag before anything gets to file it, so the quiz shelf is
- * absent from a build with the quiz switched off.
+ * What the surfaces are actually handed. `getHubModules` drops nothing now:
+ * it used to remove a module behind a dark flag, which is how the quiz shelf
+ * went missing from a build that had simply not been given a variable.
  */
 const liveModules = (mode: AccessMode): HubModule[] =>
-  asModules(
-    getModulesForAccessMode(mode).filter(
-      (definition) =>
-        definition.availability !== "flagged" || isModuleEnabled(definition)
-    )
-  );
+  asModules(getModulesForAccessMode(mode));
 
 describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
-  // Grouping is by the corpus entity a game questions. With the hub cut to
-  // three games only two shelves remain, and the mechanism now carries far
-  // less than it was built for — see docs/design/games-charter.md §1.
+  // Grouping is by the corpus entity a game questions — see
+  // docs/design/games-charter.md §1. The quiz shelf is here because the quiz
+  // is; it used to vanish with an unset environment variable.
   // @req REQ-120
   it("files every jouer module onto a shelf, in registry order", () => {
     const shelves = getGroupedModules(liveModules("jouer"));
@@ -37,11 +31,13 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
     expect(shelves.map((shelf) => shelf.group.id)).toEqual([
       "jeux-peuples",
       "jeux-pays",
+      "jeux-quiz",
     ]);
     expect(shelves.flatMap((shelf) => shelf.modules.map((m) => m.id))).toEqual([
       "appellations",
       "mercator",
       "pays-davant",
+      "quiz",
     ]);
   });
 

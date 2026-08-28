@@ -90,8 +90,7 @@ const jouerModules: HubModule[] = [
     name: "Le quiz",
     accessMode: "jouer",
     page: "quiz",
-    availability: "flagged",
-    featureFlag: "quiz",
+    availability: "data",
     available: true,
   },
   {

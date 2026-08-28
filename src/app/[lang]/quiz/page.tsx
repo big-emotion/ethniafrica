@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import { getQuizSegmentsHandler } from "@/api/v2/handlers/quiz";
-import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import { translations } from "@/lib/translations";
 
 const t = translations.fr.quiz;
@@ -19,10 +17,9 @@ export const metadata: Metadata = {
 
 // @req REQ-103 FR66 FR43 AR39
 export default async function QuizPage() {
-  if (!isQuizFeatureEnabled()) {
-    notFound();
-  }
-
+  // No gate. A bank with nothing in it is not a missing page: the segment
+  // picker already disables a segment holding no question and says so, which
+  // is an honest empty state rather than a 404 on a route that exists.
   const envelope = await getQuizSegmentsHandler();
 
   return (

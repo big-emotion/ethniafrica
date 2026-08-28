@@ -7,7 +7,6 @@ import { getModuleHref } from "@/lib/hubs/moduleHref";
 import {
   ACCESS_MODES,
   getModulesForAccessMode,
-  isModuleEnabled,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -30,12 +29,10 @@ import type { HubModule } from "@/lib/hubs/moduleAvailability";
 
 /** What the surfaces are handed: a dark flag drops a module upstream. */
 const liveModules = (mode: AccessMode): HubModule[] =>
-  getModulesForAccessMode(mode)
-    .filter(
-      (definition) =>
-        definition.availability !== "flagged" || isModuleEnabled(definition)
-    )
-    .map((definition) => ({ ...definition, available: true }));
+  getModulesForAccessMode(mode).map((definition) => ({
+    ...definition,
+    available: true,
+  }));
 
 describe("atlas charter §3 — the three entry points", () => {
   // @req REQ-114

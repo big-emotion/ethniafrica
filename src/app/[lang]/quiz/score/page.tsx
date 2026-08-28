@@ -8,7 +8,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import {
   parseScoreCardParams,
   type ScoreCardParams,
@@ -68,10 +67,6 @@ export async function generateMetadata({
 
 // @req REQ-103 FR70 AR39
 export default async function QuizScorePage({ searchParams }: PageProps) {
-  if (!isQuizFeatureEnabled()) {
-    notFound();
-  }
-
   const params = parseScoreCardParams(await searchParams);
   if (!params) {
     notFound();

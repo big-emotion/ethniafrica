@@ -33,7 +33,7 @@ vi.mock("@/lib/hubs/moduleAvailability", async () => {
     getHubModules: vi.fn(async (mode: AccessMode) =>
       registry.getModulesForAccessMode(mode).map((definition) => ({
         ...definition,
-        available: definition.availability !== "unavailable",
+        available: true,
       }))
     ),
   };

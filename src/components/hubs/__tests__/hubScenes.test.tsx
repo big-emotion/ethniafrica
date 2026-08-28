@@ -20,8 +20,7 @@ const jouerModules: HubModule[] = [
     name: "Le quiz des parcours",
     accessMode: "jouer",
     page: "quiz",
-    availability: "flagged",
-    featureFlag: "quiz",
+    availability: "data",
     available: false,
   },
   {
@@ -29,7 +28,7 @@ const jouerModules: HubModule[] = [
     name: "Les liens invisibles",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    availability: "data",
     available: false,
   },
 ];

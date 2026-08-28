@@ -58,7 +58,7 @@ const jouerModules: HubModule[] = [
     name: "Un module annonce\u0301 avant sa route",
     accessMode: "jouer",
     page: null,
-    availability: "unavailable",
+    availability: "data",
     available: false,
   },
 ];
