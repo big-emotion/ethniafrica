@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { QuizPlayIsland } from "@/components/quiz/QuizPlayIsland";
@@ -61,6 +62,39 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
     render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
 
     expect(screen.getByText("Chargement de la session…")).toBeInTheDocument();
+  });
+
+  // @req REQ-103 FR67
+  it("says the rung has nothing to serve rather than rendering an empty screen", () => {
+    // The gate runs again at serve time, so a rung the picker counted as
+    // stocked can still compose to zero questions. Returning null for that
+    // left the player on a blank page with no way back.
+    mockUseQuizSession.mockReturnValue(
+      baseSession({ questions: [], currentQuestion: null, totalQuestions: 0 })
+    );
+
+    render(<QuizPlayIsland segment="children" onExit={vi.fn()} />);
+
+    expect(
+      screen.getByText(
+        "Aucune question disponible pour ce niveau — réessaie plus tard."
+      )
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-103 FR67
+  it("offers a way back to the picker from the empty state", async () => {
+    const onExit = vi.fn();
+    mockUseQuizSession.mockReturnValue(
+      baseSession({ questions: [], currentQuestion: null, totalQuestions: 0 })
+    );
+
+    render(<QuizPlayIsland segment="children" onExit={onExit} />);
+    await userEvent.click(
+      screen.getByRole("button", { name: "Choisir un autre parcours" })
+    );
+
+    expect(onExit).toHaveBeenCalledTimes(1);
   });
 
   // @req REQ-103 FR67

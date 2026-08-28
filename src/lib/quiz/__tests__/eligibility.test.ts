@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import {
   isQuizEligible,
   getQuizMinConfidence,
+  toQuizConfidenceScore,
   DEFAULT_QUIZ_MIN_CONFIDENCE,
   type QuizEligibilityInput,
 } from "@/lib/quiz/eligibility";
@@ -262,5 +263,32 @@ describe("getQuizMinConfidence", () => {
   it("parses a valid numeric env override", () => {
     process.env.QUIZ_MIN_CONFIDENCE = "70";
     expect(getQuizMinConfidence()).toBe(70);
+  });
+});
+
+describe("toQuizConfidenceScore", () => {
+  // @req REQ-103
+  it("scales a stored [0,1] decimal onto the 0-100 threshold scale", () => {
+    expect(toQuizConfidenceScore(0.68)).toBe(68);
+    expect(toQuizConfidenceScore(0.8)).toBe(80);
+    expect(toQuizConfidenceScore(0)).toBe(0);
+  });
+
+  // @req REQ-103
+  it("treats a missing score as 0 so the gate fails closed", () => {
+    expect(toQuizConfidenceScore(null)).toBe(0);
+    expect(toQuizConfidenceScore(undefined)).toBe(0);
+  });
+
+  // @req REQ-103
+  it("clears the default threshold for a corpus-typical score", () => {
+    expect(
+      isQuizEligible({
+        confidenceScore: toQuizConfidenceScore(0.68),
+        lastHumanAuditAt: null,
+        assertionSources: [{ tier: "official", resolvable: false }],
+        openFlagCount: 0,
+      })
+    ).toEqual({ eligible: true, reason: null });
   });
 });

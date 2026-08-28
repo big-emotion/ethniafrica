@@ -19,6 +19,7 @@
  */
 
 import type { AutonymExonymName, QuizPeopleFixture } from "@/types/quiz";
+import { toQuizConfidenceScore } from "@/lib/quiz/eligibility";
 import type {
   QuizAssertionSource,
   QuizEligibilityInput,
@@ -97,16 +98,15 @@ export function normalizeFieldPath(fieldPath: string): string | null {
 
 /**
  * Maps a `confidence_scores` row to the entity-scoped slice of
- * `QuizEligibilityInput` the FR65 gate needs, converting the stored [0,1]
- * decimal score to the 0-100 scale `isQuizEligible`/`getQuizMinConfidence`
- * operate on. A missing row (no confidence computed yet) yields a
- * confidenceScore of 0, which fails the gate rather than defaulting open.
+ * `QuizEligibilityInput` the FR65 gate needs. The scale conversion is
+ * `toQuizConfidenceScore`, shared with the serve-time re-check so the sweep
+ * and the server cannot disagree on what a score means.
  */
 export function mapConfidenceRowToBaseEligibility(
   row: ConfidenceScoreRow | undefined
 ): BaseEligibility {
   return {
-    confidenceScore: row?.score != null ? Math.round(row.score * 100) : 0,
+    confidenceScore: toQuizConfidenceScore(row?.score),
     lastHumanAuditAt: row?.last_human_audit_at ?? null,
     openFlagCount: row?.open_flag_count ?? 0,
   };
