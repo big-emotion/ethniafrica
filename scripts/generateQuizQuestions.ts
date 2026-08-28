@@ -54,6 +54,18 @@ import {
 
 const ENTITY_TYPE = "people";
 
+/** `quiz_questions` as the sweep and the audit read it back. */
+interface QuizQuestionRow {
+  id: string;
+  template_id: ActiveQuestionRow["templateId"];
+  audience: ActiveQuestionRow["audience"];
+  entity_id: string;
+  field_path: string;
+  correct_option: number;
+  options_fr: ActiveQuestionRow["optionsFr"];
+  generation_run_id?: string;
+}
+
 /**
  * Reads every row matching an id filter, splitting the filter so the URL stays
  * within limits and paging each split so no tail is dropped. Both limits are
@@ -200,14 +212,19 @@ async function buildFicheEntries(
 async function fetchActiveQuestions(
   supabase: SupabaseClient
 ): Promise<ActiveQuestionRow[]> {
-  const { data, error } = await supabase
-    .from("quiz_questions")
-    .select(
-      "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
-    )
-    .is("revoked_at", null);
-  if (error) throw error;
-  return (data || []).map((row) => ({
+  // Paged: the bank passed 1000 rows the day the rule change let it fill, and
+  // an unpaged read would have told the next sweep that 10 879 of its own
+  // questions did not exist — it would have generated them again.
+  const data = await fetchAllPages<QuizQuestionRow>((from, to) =>
+    supabase
+      .from("quiz_questions")
+      .select(
+        "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
+      )
+      .is("revoked_at", null)
+      .range(from, to)
+  );
+  return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
     audience: row.audience,
@@ -221,14 +238,18 @@ async function fetchActiveQuestions(
 async function fetchActiveQuestionsForAudit(
   supabase: SupabaseClient
 ): Promise<AuditableQuestion[]> {
-  const { data, error } = await supabase
-    .from("quiz_questions")
-    .select(
-      "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
-    )
-    .is("revoked_at", null);
-  if (error) throw error;
-  return (data || []).map((row) => ({
+  // Paged for the same reason: an audit that reads 1000 of 11 879 questions
+  // and reports "passed" is the failure it exists to prevent.
+  const data = await fetchAllPages<QuizQuestionRow>((from, to) =>
+    supabase
+      .from("quiz_questions")
+      .select(
+        "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
+      )
+      .is("revoked_at", null)
+      .range(from, to)
+  );
+  return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
     audience: row.audience,
@@ -243,11 +264,10 @@ async function fetchActiveQuestionsForAudit(
 async function fetchGenerationRunIds(
   supabase: SupabaseClient
 ): Promise<Set<string>> {
-  const { data, error } = await supabase
-    .from("quiz_generation_runs")
-    .select("id");
-  if (error) throw error;
-  return new Set((data || []).map((row) => row.id as string));
+  const data = await fetchAllPages<{ id: string }>((from, to) =>
+    supabase.from("quiz_generation_runs").select("id").range(from, to)
+  );
+  return new Set(data.map((row) => row.id));
 }
 
 async function insertGenerationRun(
