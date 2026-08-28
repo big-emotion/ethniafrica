@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
+import * as routing from "@/lib/routing";
 import {
+  PAGE_TYPES,
   getCountryRoute,
   getFamilyRoute,
   getPeopleRoute,
@@ -8,6 +10,7 @@ import {
   getLocalizedRoute,
   getPageFromRoute,
   resolveCountryDeepLink,
+  resolveFamilyDeepLink,
   resolvePeopleDeepLink,
 } from "@/lib/routing";
 
@@ -207,5 +210,114 @@ describe("country deep link (the retired ?country= directory form)", () => {
     expect(resolveCountryDeepLink("fr", { country: "XYZ" })).toBe(
       "/fr/pays/XYZ"
     );
+  });
+});
+
+describe("family deep link (the retired ?family= directory form)", () => {
+  // @req REQ-091
+  it("sends a family query to that family's fiche", () => {
+    expect(resolveFamilyDeepLink("fr", { family: "FLG_NIGER_CONGO" })).toBe(
+      "/fr/familles/FLG_NIGER_CONGO"
+    );
+  });
+
+  // @req REQ-091
+  it("leaves a directory with no family query alone", () => {
+    expect(resolveFamilyDeepLink("fr", {})).toBeNull();
+    expect(resolveFamilyDeepLink("fr", { family: "" })).toBeNull();
+  });
+
+  // @req REQ-091
+  it("ignores a repeated family query rather than picking one of them", () => {
+    expect(
+      resolveFamilyDeepLink("fr", { family: ["FLG_NILO_SAHARAN", "FLG_KHOE"] })
+    ).toBeNull();
+  });
+
+  // The families directory read its own query and forwarded the identifier
+  // raw, which is the open redirect the country and people forms had already
+  // closed. Sharing their resolver is what closes it here too.
+  // @req REQ-091
+  it("encodes the identifier, so a crafted query cannot leave the site", () => {
+    expect(resolveFamilyDeepLink("fr", { family: "//evil.com" })).toBe(
+      "/fr/familles/%2F%2Fevil.com"
+    );
+  });
+});
+
+describe("deep links read from a URLSearchParams", () => {
+  // A client component gets its query as URLSearchParams, a server component
+  // as a plain object. One resolver reads both shapes, so the encoding rule
+  // cannot be reimplemented — badly — on the client side of the same
+  // redirect, which is exactly how the families directory came to forward
+  // `?family=` raw.
+  // @req REQ-091
+  it("resolves each entity's fiche from a URLSearchParams", () => {
+    expect(
+      resolveCountryDeepLink("fr", new URLSearchParams("country=NGA"))
+    ).toBe("/fr/pays/NGA");
+    expect(
+      resolvePeopleDeepLink("fr", new URLSearchParams("people=PPL_YORUBA"))
+    ).toBe("/fr/peuples/PPL_YORUBA");
+    expect(
+      resolveFamilyDeepLink("fr", new URLSearchParams("family=FLG_KHOE"))
+    ).toBe("/fr/familles/FLG_KHOE");
+  });
+
+  // @req REQ-091
+  it("applies the same encoding rule to a URLSearchParams query", () => {
+    expect(
+      resolveFamilyDeepLink("fr", new URLSearchParams("family=//evil.com"))
+    ).toBe("/fr/familles/%2F%2Fevil.com");
+  });
+
+  // @req REQ-091
+  it("ignores an absent, empty or repeated URLSearchParams query", () => {
+    expect(resolveCountryDeepLink("fr", new URLSearchParams())).toBeNull();
+    expect(
+      resolveCountryDeepLink("fr", new URLSearchParams("country="))
+    ).toBeNull();
+    expect(
+      resolveCountryDeepLink(
+        "fr",
+        new URLSearchParams("country=NGA&country=KEN")
+      )
+    ).toBeNull();
+  });
+});
+
+describe("page-type round trip", () => {
+  // The contract the URL migration rests on: every page is addressed by one
+  // slug, and that slug names the page back. Nesting a slug under an axis
+  // segment preserves it only while the longest-match rule keeps picking the
+  // deepest one, and this is what will say so when it stops.
+  // @req REQ-091
+  it("resolves every page type back from the route it builds", () => {
+    for (const page of PAGE_TYPES) {
+      expect(getPageFromRoute(getLocalizedRoute("fr", page))).toBe(page);
+    }
+  });
+
+  // @req REQ-091
+  it("keeps a page's sub-routes on that page", () => {
+    for (const page of PAGE_TYPES) {
+      expect(
+        getPageFromRoute(`${getLocalizedRoute("fr", page)}/PPL_YORUBA`)
+      ).toBe(page);
+    }
+  });
+
+  // @req REQ-091
+  it("gives every page type a slug of its own", () => {
+    const routes = PAGE_TYPES.map((page) => getLocalizedRoute("fr", page));
+    expect(new Set(routes).size).toBe(PAGE_TYPES.length);
+  });
+
+  // A helper answering "which page is this" with the pathname's second
+  // segment is wrong the moment a page lives under an axis: it would answer
+  // "explorer" for every Explorer page. Nothing may bring it back.
+  // @req REQ-091
+  it("exposes no helper that reads a page from a bare path segment", () => {
+    expect(Object.keys(routing)).not.toContain("getSlugFromRoute");
   });
 });

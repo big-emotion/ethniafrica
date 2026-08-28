@@ -1,3 +1,4 @@
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -17,8 +18,10 @@ export function getModuleHref(
   language: Language
 ): string | null {
   // A game has no PageType of its own — keeping PageType a closed union is
-  // why it is addressed by slug — so the slug wins over any page.
-  if (module.gameSlug) return `/${language}/jouer/${module.gameSlug}`;
+  // why it is addressed by slug — so the slug wins over any page. The axis
+  // segment above it still comes from the slug table, not from this string.
+  if (module.gameSlug)
+    return `${getAxisHubRoute(language, "jouer")}/${module.gameSlug}`;
   if (module.page) return getLocalizedRoute(language, module.page);
   return null;
 }
