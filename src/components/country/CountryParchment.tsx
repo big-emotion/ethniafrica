@@ -6,6 +6,7 @@ import {
   declaredShare,
 } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -22,31 +23,6 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * as a heading over nothing. That absence is itself a reading of the corpus,
  * and a truer one than an empty block.
  */
-
-interface SectionProps {
-  title: string;
-  /** The corpus field the section reads, named in the mockup's own terms. */
-  note: string;
-  children: ReactNode;
-  as?: "section" | "footer";
-  id?: string;
-}
-
-function Section({
-  title,
-  note,
-  children,
-  as: Tag = "section",
-  id,
-}: SectionProps) {
-  return (
-    <Tag className="afh-parchment-section" id={id}>
-      <h2>{title}</h2>
-      <p className="afh-parchment-note">{note}</p>
-      {children}
-    </Tag>
-  );
-}
 
 /**
  * The corpus states no per-country reference year — the shares in every fiche
