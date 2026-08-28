@@ -18,7 +18,7 @@ export default function ForbiddenPageComponent() {
       <div className="max-w-md w-full space-y-6 text-center">
         <StateMedallion className="mx-auto" />
 
-        <h1 className="text-2xl font-display font-semibold text-afh-text">
+        <h1 className="text-afh-h2 font-display font-semibold text-afh-text">
           Accès non autorisé
         </h1>
 
@@ -34,7 +34,7 @@ export default function ForbiddenPageComponent() {
           <button
             type="button"
             onClick={handleSignOut}
-            className="text-sm text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
+            className="text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
             Se déconnecter
           </button>

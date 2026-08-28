@@ -13,6 +13,7 @@ const SwaggerUI = dynamic(
   { ssr: false }
 );
 
+// @req REQ-099
 export default function ApiDocsV2Page() {
   const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
 
@@ -28,7 +29,7 @@ export default function ApiDocsV2Page() {
     return (
       <div className="container mx-auto px-4 py-10">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl font-display font-bold mb-4">
+          <h1 className="text-afh-h1 font-display font-bold mb-4">
             API Documentation v2 - AFRIK
           </h1>
           <p className="text-muted-foreground">Loading API documentation...</p>
@@ -52,7 +53,7 @@ export default function ApiDocsV2Page() {
               <BookOpen className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-display font-bold">
+              <h1 className="text-afh-h1 font-display font-bold">
                 API Documentation v2 - AFRIK
               </h1>
               <p className="text-muted-foreground mt-1">
@@ -66,7 +67,7 @@ export default function ApiDocsV2Page() {
         {/* Version selector */}
         <Card className="p-4 bg-muted/50">
           <div className="flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-afh-small text-muted-foreground">
               Vous consultez la documentation de l&apos;API v2 (AFRIK)
             </p>
             <Link href="/docs/api/v1">
@@ -82,7 +83,7 @@ export default function ApiDocsV2Page() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Info className="h-5 w-5 text-primary" />
-              <h2 className="text-xl font-semibold">Accès rapide</h2>
+              <h2 className="text-afh-h2 font-semibold">Accès rapide</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               <Link href="/api/v2/search" target="_blank">
@@ -116,8 +117,10 @@ export default function ApiDocsV2Page() {
         {/* Introduction */}
         <Card className="p-6 bg-muted/50">
           <div className="space-y-3">
-            <h2 className="text-lg font-semibold">À propos de l&apos;API v2</h2>
-            <p className="text-sm text-muted-foreground">
+            <h2 className="text-afh-h3 font-semibold">
+              À propos de l&apos;API v2
+            </h2>
+            <p className="text-afh-small text-muted-foreground">
               L&apos;API v2 est basée sur la méthodologie AFRIK et utilise des
               identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3).
               Toutes les réponses suivent un format standardisé avec pagination.
@@ -125,19 +128,19 @@ export default function ApiDocsV2Page() {
               sans migration de schéma.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 REST API v2
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 AFRIK
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Pagination
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 OpenAPI 3.0
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 CORS activé
               </span>
             </div>
@@ -153,7 +156,7 @@ export default function ApiDocsV2Page() {
         </Card>
 
         {/* Footer Info */}
-        <div className="text-center text-sm text-muted-foreground space-y-2">
+        <div className="text-center text-afh-small text-muted-foreground space-y-2">
           <p>
             Base URL de l&apos;API :{" "}
             <code className="px-2 py-1 rounded bg-muted text-foreground">

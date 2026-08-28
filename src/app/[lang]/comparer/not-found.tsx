@@ -20,14 +20,14 @@ export default function ComparerNotFound() {
       <div className="max-w-xl w-full space-y-6 text-center">
         <StateMedallion className="mx-auto" />
 
-        <h1 className="text-3xl font-display font-semibold text-afh-text">
+        <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
           Comparaison introuvable
         </h1>
 
         <p data-testid="state-copy" className="text-afh-text-soft">
           Cette comparaison n&apos;existe pas. Les URLs de comparaison suivent
           le format{" "}
-          <span className="font-mono text-sm bg-afh-bg px-1 rounded">
+          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
             /{lang}/comparer/{"{type}"}/{"{id1}"}/{"{id2}"}
           </span>{" "}
           (2 à 3 identifiants du même type : peuples, pays ou familles
@@ -38,14 +38,14 @@ export default function ComparerNotFound() {
           <Link
             href={`/${lang}/comparer`}
             data-cta="primary"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >
             Commencer une comparaison
           </Link>
 
           <a
             href="mailto:contact@ethniafrica.org?subject=URL+cassée"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
             Signaler une URL cassée
           </a>
