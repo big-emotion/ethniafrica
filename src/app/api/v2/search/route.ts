@@ -4,25 +4,54 @@
  *   get:
  *     summary: Search — peoples, countries and language families
  *     description: >
- *       Full-text search across AFRIK peoples and countries using
- *       `websearch_to_tsquery('french', q)` on the indexed `search_vector`
- *       columns. Results are ranked by ts_rank_cd multiplied by a confidence
- *       boost (confidence_scores.score). Language families have no tsvector
- *       column and are name-matched instead. Each entity kind is returned in
- *       its own array — there is no flat `results` list. Rate-limited per AR11
- *       (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
+ *       Full-text search using `websearch_to_tsquery('french', q)` against the
+ *       weighted `search_vector` columns (migration 043), ranked in Postgres by
+ *       `afrik_search_peoples` / `afrik_search_countries` (migration 044): an
+ *       accent-insensitive exact name match first, then `ts_rank` over the
+ *       weights (A = name and autonym, B = exonyms, C/D = prose), multiplied
+ *       for peoples by a 0.5–1.0 confidence factor. Language families have no
+ *       tsvector column and are name-matched, then tiered exact > prefix >
+ *       substring.
+ *       Each result carries `relevance`, `exactMatch` and a `snippet` whose
+ *       matched terms are wrapped in `[[` and `]]` — deliberately not HTML,
+ *       because `ts_headline` does not escape the source document.
+ *       `relevance` is comparable within an array and not between arrays;
+ *       order across kinds on `exactMatch`.
+ *       Each entity kind is returned in its own array — there is no flat
+ *       `results` list. Rate-limited per AR11 (IP: 60 RPM, public key: 600
+ *       RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []
  *     parameters:
  *       - in: query
  *         name: q
- *         required: true
+ *         required: false
  *         schema:
  *           type: string
  *           minLength: 1
- *         description: Full-text search query (websearch syntax)
+ *         description: >
+ *           Full-text search query (websearch syntax). Required unless
+ *           familyId or countryId is given — a relation scope is a complete
+ *           search on its own.
  *         example: "Yoruba Nigeria"
+ *       - in: query
+ *         name: familyId
+ *         schema:
+ *           type: string
+ *           pattern: '^FLG_[A-Z0-9_]+$'
+ *         description: >
+ *           Scope peoples to one language family. With q it narrows the
+ *           ranking; alone it lists that family's peoples, and countries and
+ *           families then come back empty because nothing was asked of them.
+ *         example: "FLG_KROU"
+ *       - in: query
+ *         name: countryId
+ *         schema:
+ *           type: string
+ *           pattern: '^[A-Z]{3}$'
+ *         description: Scope peoples to one country (ISO 3166-1 alpha-3)
+ *         example: "CIV"
  *       - in: query
  *         name: limit
  *         schema:
