@@ -8,8 +8,8 @@ sees**. The questions are persisted rows in `quiz_questions` (migration
 only what produced them, once.
 
 Worse, the ordinary sweep will not replace them either. `computeSweepPlan`
-skips any `(entity, template, audience)` triple that already has an active
-question — deliberately, so the nightly run is idempotent. After a change to
+skips any `(entity, template)` pair that already has an active question —
+deliberately, so the nightly run is idempotent. After a change to
 how options are built, that idempotence is exactly what keeps the change out
 of the bank.
 
@@ -41,12 +41,17 @@ pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 
 ```sql
 select count(*) from quiz_questions where revoked_at is null;
-select audience, count(*) from quiz_questions
-  where revoked_at is null group by audience order by audience;
+select template_id, count(*) from quiz_questions
+  where revoked_at is null group by template_id order by template_id;
 ```
 
 Keep both numbers. They are the only way to notice that a rebuild came back
 with fewer questions than it replaced.
+
+The second query used to group by `audience`. It no longer tells you anything:
+every row carries the same value there since the audience axis was retired, and
+the column survives only because dropping it needs a migration. Group by
+`template_id` instead — that is what varies now.
 
 ### 2. Audit the bank before touching it
 
@@ -74,6 +79,26 @@ going near the other environment. The usual cause is a fiche that has since
 stopped passing the FR65 gate, which the counters and the revocation reasons
 will show.
 
+**The one rebuild where that rule does not hold** is the first one after the
+audience axis was retired. A question used to be stored once per audience, so
+the bank's 11 879 rows were 2 504 distinct questions counted four or five times
+over. That rebuild revokes ~11 879 and inserts ~2 504 — a fifth of what it
+replaced, and correct. Two things say so rather than a lost corpus: every
+revocation carries the reason `regenerated`, and the count of _distinct_
+`(entity_id, template_id)` pairs is unchanged or higher. Check that, not the
+row count:
+
+```sql
+select count(*) from (
+  select distinct entity_id, template_id from quiz_questions
+   where revoked_at is null
+) as distinct_questions;
+```
+
+The same rebuild should also _raise_ that number, because it is the first to
+carry the `population` fix: T3 existed for 20 peoples and now exists for every
+people whose fiche passes the gate.
+
 ### 4. Verify
 
 ```sql
@@ -82,10 +107,16 @@ select revoked_reason, count(*) from quiz_questions
   where revoked_at is not null group by revoked_reason;
 ```
 
-The active count should be at or near what step 1 recorded. Then play a full
-session at `/fr/quiz` and read four or five questions: the distractors should
-be peoples of the subject's own family or of a country it shares, not the
-same three names on every question.
+The active count should be at or near what step 1 recorded — with the one
+documented exception above. Then play a full session at `/fr/quiz` and read
+four or five questions. Three things to look at:
+
+- the distractors are peoples of the subject's own family _and_ of a country it
+  shares, not the same three names on every question;
+- a session opens on a people you have heard of and ends on one you have not —
+  that is the ladder, and it is computed from population inside the track;
+- a country track — `/fr/quiz?pays=GHA` — never answers « Ghana » to « dans
+  quel pays ce peuple est-il principalement présent ? ».
 
 ### 5. Only then, production
 
