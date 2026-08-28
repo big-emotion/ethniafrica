@@ -6,7 +6,7 @@
  */
 
 import {
-  ftsSearchPeoplesCountries,
+  ftsSearchEntities,
   searchAfrikAll,
 } from "@/lib/supabase/queries/afrik/search";
 import type {
@@ -16,12 +16,14 @@ import type {
   FtsSearchResponse,
 } from "@/types/afrik";
 
+// @req REQ-002
 export async function ftsSearch(
   params: FtsSearchParams
 ): Promise<FtsSearchResponse> {
-  return ftsSearchPeoplesCountries(params);
+  return ftsSearchEntities(params);
 }
 
+// @req REQ-002
 export async function search(
   filters: SearchFilters = {}
 ): Promise<SearchResult[]> {

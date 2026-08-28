@@ -2,13 +2,15 @@
  * @swagger
  * /api/v2/search:
  *   get:
- *     summary: FTS search — peoples + countries ranked by relevance × confidence
+ *     summary: Search — peoples, countries and language families
  *     description: >
  *       Full-text search across AFRIK peoples and countries using
  *       `websearch_to_tsquery('french', q)` on the indexed `search_vector`
  *       columns. Results are ranked by ts_rank_cd multiplied by a confidence
- *       boost (confidence_scores.score). Rate-limited per AR11 (IP: 60 RPM,
- *       public key: 600 RPM, partner key: 6 000 RPM).
+ *       boost (confidence_scores.score). Language families have no tsvector
+ *       column and are name-matched instead. Each entity kind is returned in
+ *       its own array — there is no flat `results` list. Rate-limited per AR11
+ *       (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []
@@ -190,6 +192,7 @@ function parseParams(
   return { params };
 }
 
+// @req REQ-002
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
 
@@ -239,6 +242,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+// @req REQ-002
 export function OPTIONS() {
   return corsOptionsResponse();
 }

@@ -521,7 +521,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "FTS search result data. Peoples and countries are returned in separate arrays, ranked by ts_rank_cd × confidence boost.",
+            "Search result data. Each entity kind is returned in its own array; peoples and countries are ranked by ts_rank_cd × confidence boost.",
           properties: {
             peoples: {
               type: "array",
@@ -534,13 +534,20 @@ const options: swaggerJsdoc.Options = {
               items: { $ref: "#/components/schemas/CountryV2" },
               description: "Matching countries ordered by FTS relevance",
             },
+            families: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageFamilyV2" },
+              description:
+                "Matching language families, name-matched rather than FTS-ranked (no tsvector column on the table)",
+            },
             total: {
               type: "integer",
-              description: "Combined count of peoples + countries returned",
+              description:
+                "Combined count of peoples + countries + families returned",
               example: 5,
             },
           },
-          required: ["peoples", "countries", "total"],
+          required: ["peoples", "countries", "families", "total"],
         },
         SearchResponse: {
           type: "object",

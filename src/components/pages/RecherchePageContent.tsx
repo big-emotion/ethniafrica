@@ -25,8 +25,12 @@ import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
+import {
+  buildSearchParams,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
 import type { ClassificationStatus } from "@/types/afrik";
-import type { SearchEntityType } from "@/types/afrik-frontend";
+import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
 
 // ── constants ─────────────────────────────────────────────────────────────────
 
@@ -104,29 +108,11 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
-interface SearchHit {
-  id: string;
-  type: string;
-  name: string;
-  snippet?: string;
-  population?: number;
-  languageFamilyName?: string;
-  countryIds?: string[];
-}
+// The page renders exactly what the shared envelope adapter emits; it used to
+// declare a parallel hit shape, which is how its reader drifted off-contract.
+type SearchHit = SearchResult;
 
 // ── helpers ───────────────────────────────────────────────────────────────────
-
-function mapApiResults(raw: Record<string, unknown>[]): SearchHit[] {
-  return raw.map((item) => ({
-    id: String(item.id),
-    type: String(item.type),
-    name: String(item.name),
-    snippet: item.snippet as string | undefined,
-    population: item.population as number | undefined,
-    languageFamilyName: item.languageFamilyName as string | undefined,
-    countryIds: item.countryIds as string[] | undefined,
-  }));
-}
 
 function getFilterParam(
   searchParams: { get(name: string): string | null },
@@ -138,6 +124,7 @@ function getFilterParam(
 
 // ── component ─────────────────────────────────────────────────────────────────
 
+// @req REQ-002
 export function RecherchePageContent() {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -193,16 +180,17 @@ export function RecherchePageContent() {
       setLoading(true);
       setHasSearched(true);
       try {
-        const params = new URLSearchParams({ q, limit: "20" });
-        if (cs) params.set("classificationStatus", cs);
-        if (mc) params.set("minConfidence", mc);
+        const params = buildSearchParams(q, {
+          limit: 20,
+          classificationStatus: cs,
+          minConfidence: mc,
+        });
         const res = await fetch(`/api/v2/search?${params}`);
         if (!res.ok) {
           setResults([]);
           return;
         }
-        const data = await res.json();
-        setResults(mapApiResults(data.data?.results ?? []));
+        setResults(mapSearchEnvelope(await res.json()));
       } catch {
         setResults([]);
       } finally {
@@ -239,11 +227,10 @@ export function RecherchePageContent() {
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/v2/search?q=${encodeURIComponent(inputValue)}&limit=6`
+          `/api/v2/search?${buildSearchParams(inputValue, { limit: 6 })}`
         );
         if (!res.ok) return;
-        const data = await res.json();
-        const hits = mapApiResults(data.data?.results ?? []);
+        const hits = mapSearchEnvelope(await res.json());
         setSuggestions(hits);
         setShowSuggestions(hits.length > 0);
       } catch {

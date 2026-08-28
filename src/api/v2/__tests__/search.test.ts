@@ -8,10 +8,10 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 // ── service-layer mock ──────────────────────────────────────────────────────
 vi.mock("@/lib/supabase/queries/afrik/search", () => ({
-  ftsSearchPeoplesCountries: vi.fn(),
+  ftsSearchEntities: vi.fn(),
 }));
 
-import { ftsSearchPeoplesCountries } from "@/lib/supabase/queries/afrik/search";
+import { ftsSearchEntities } from "@/lib/supabase/queries/afrik/search";
 import { ftsSearch } from "@/api/v2/services/searchService";
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
 
@@ -31,14 +31,14 @@ const mockCountry = {
   content: {},
 };
 
-const emptyResult = { peoples: [], countries: [], total: 0 };
+const emptyResult = { peoples: [], countries: [], families: [], total: 0 };
 
 // ── ftsSearch service ───────────────────────────────────────────────────────
 describe("ftsSearch (service)", () => {
   beforeEach(() => vi.clearAllMocks());
 
   it("happy path — returns peoples and countries for a valid query", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue({
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
       peoples: [mockPeople],
       countries: [mockCountry],
       total: 2,
@@ -49,13 +49,13 @@ describe("ftsSearch (service)", () => {
     expect(result.peoples).toHaveLength(1);
     expect(result.countries).toHaveLength(1);
     expect(result.total).toBe(2);
-    expect(ftsSearchPeoplesCountries).toHaveBeenCalledWith(
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
       expect.objectContaining({ q: "Yoruba" })
     );
   });
 
   it("empty query — still calls FTS with the provided string", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
@@ -67,7 +67,7 @@ describe("ftsSearch (service)", () => {
   });
 
   it("no matches — returns empty result", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
@@ -82,7 +82,7 @@ describe("ftsSearch (service)", () => {
   });
 
   it("filter combination — passes classificationStatus to query", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue({
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
       peoples: [mockPeople],
       countries: [],
       total: 1,
@@ -95,25 +95,25 @@ describe("ftsSearch (service)", () => {
       classificationStatus: "consensual",
     });
 
-    expect(ftsSearchPeoplesCountries).toHaveBeenCalledWith(
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
       expect.objectContaining({ classificationStatus: "consensual" })
     );
   });
 
   it("filter combination — passes minConfidence to query", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
     await ftsSearch({ q: "Bantu", limit: 10, offset: 0, minConfidence: 0.7 });
 
-    expect(ftsSearchPeoplesCountries).toHaveBeenCalledWith(
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
       expect.objectContaining({ minConfidence: 0.7 })
     );
   });
 
   it("filter combination — passes sinceVerifiedAfter to query", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
@@ -124,19 +124,19 @@ describe("ftsSearch (service)", () => {
       sinceVerifiedAfter: "2026-01-01",
     });
 
-    expect(ftsSearchPeoplesCountries).toHaveBeenCalledWith(
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
       expect.objectContaining({ sinceVerifiedAfter: "2026-01-01" })
     );
   });
 
   it("pagination — passes limit and offset to query", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
     await ftsSearch({ q: "Bantu", limit: 5, offset: 10 });
 
-    expect(ftsSearchPeoplesCountries).toHaveBeenCalledWith(
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
       expect.objectContaining({ limit: 5, offset: 10 })
     );
   });
@@ -147,7 +147,7 @@ describe("ftsSearchHandler (handler)", () => {
   beforeEach(() => vi.clearAllMocks());
 
   it("response envelope — has data.peoples, data.countries, data.total, meta.license, meta.attribution, errors", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue({
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
       peoples: [mockPeople],
       countries: [mockCountry],
       total: 2,
@@ -169,7 +169,7 @@ describe("ftsSearchHandler (handler)", () => {
   });
 
   it("empty query — returns valid envelope with empty results", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockResolvedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue(
       emptyResult
     );
 
@@ -182,7 +182,7 @@ describe("ftsSearchHandler (handler)", () => {
   });
 
   it("error propagation — throws on service failure", async () => {
-    (ftsSearchPeoplesCountries as ReturnType<typeof vi.fn>).mockRejectedValue(
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockRejectedValue(
       new Error("DB error")
     );
 

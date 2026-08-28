@@ -842,6 +842,7 @@ export interface FtsSearchParams {
 export interface FtsSearchResponse {
   peoples: People[];
   countries: Country[];
+  families: LanguageFamily[];
   total: number;
 }
 

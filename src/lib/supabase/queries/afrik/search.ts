@@ -1,7 +1,7 @@
 /**
  * Supabase queries for AFRIK search (multi-entity).
  *
- * ETNI-38: ftsSearchPeoplesCountries uses websearch_to_tsquery('french', q)
+ * ETNI-38: ftsSearchEntities uses websearch_to_tsquery('french', q)
  * via Supabase textSearch, with optional confidence-boost ordering and filters.
  *
  * The legacy searchAfrikAll is kept for backward compatibility with existing
@@ -26,12 +26,18 @@ import type {
   Country,
 } from "@/types/afrik";
 
+// @req REQ-002
 /**
- * FTS search across peoples and countries using websearch_to_tsquery('french').
+ * Search across the three atlas entities using websearch_to_tsquery('french').
  *
- * Both tables carry a GENERATED STORED tsvector `search_vector` column
- * (migration 019). Supabase textSearch({ type: "websearch", config: "french" })
- * compiles to `search_vector @@ websearch_to_tsquery('french', q)` in SQL.
+ * Peoples and countries carry a GENERATED STORED tsvector `search_vector`
+ * column (migration 025). Supabase textSearch({ type: "websearch", config:
+ * "french" }) compiles to `search_vector @@ websearch_to_tsquery('french', q)`.
+ *
+ * Language families have no tsvector column and are matched by the existing
+ * ilike query instead. At two dozen rows the ranking a tsvector would buy is
+ * worth less than the migration it would cost, and the search surface offers a
+ * Familles tab that must answer something.
  *
  * Optional filters:
  * - classificationStatus: filter peoples by epistemic status column
@@ -40,7 +46,7 @@ import type {
  * Results are ordered by confidence score (descending) as the confidence boost;
  * entities with no confidence record sort last.
  */
-export async function ftsSearchPeoplesCountries(
+export async function ftsSearchEntities(
   params: FtsSearchParams
 ): Promise<FtsSearchResponse> {
   const {
@@ -189,13 +195,16 @@ export async function ftsSearchPeoplesCountries(
     })
   );
 
-  const total = peoples.length + countries.length;
-  return { peoples, countries, total };
+  const families = await searchAfrikLanguageFamilies(q);
+
+  const total = peoples.length + countries.length + families.length;
+  return { peoples, countries, families, total };
 }
 
+// @req REQ-002
 /**
  * Legacy multi-entity search (kept for backward compatibility).
- * New callers should use ftsSearchPeoplesCountries.
+ * New callers should use ftsSearchEntities.
  */
 export async function searchAfrikAll(
   filters: SearchFilters = {}

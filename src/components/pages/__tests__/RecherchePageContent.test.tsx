@@ -101,29 +101,36 @@ const mockFetch = vi.fn();
 global.fetch = mockFetch as unknown as typeof fetch;
 
 // ── fixtures ─────────────────────────────────────────────────────────────────
-const emptyApiResponse = { data: { results: [], total: 0 } };
+// These mirror the envelope /api/v2/search actually emits: typed arrays of
+// domain rows. An earlier `{ results: [...] }` fixture was invented here, and
+// it kept the suite green while the page rendered nothing in production.
+const emptyApiResponse = {
+  data: { peoples: [], countries: [], families: [], total: 0 },
+};
 const suggestApiResponse = {
   data: {
-    results: [
-      { id: "PPL_SHONA", type: "people", name: "Shona" },
-      { id: "PPL_YORUBA", type: "people", name: "Yoruba" },
+    peoples: [
+      { id: "PPL_SHONA", nameMain: "Shona", content: {} },
+      { id: "PPL_YORUBA", nameMain: "Yoruba", content: {} },
     ],
+    countries: [],
+    families: [],
     total: 2,
   },
 };
 const searchApiResponse = {
   data: {
-    results: [
+    peoples: [
       {
         id: "PPL_ZULU",
-        type: "people",
-        name: "Zulu",
-        snippet: "Peuple bantou d'Afrique australe",
-        population: 12000000,
-        languageFamilyName: "Bantou",
-        countryIds: ["ZAF"],
+        nameMain: "Zulu",
+        languageFamilyId: "FLG_NIGER_CONGO",
+        currentCountries: ["ZAF"],
+        content: { demography: { totalPopulation: 12000000 } },
       },
     ],
+    countries: [],
+    families: [],
     total: 1,
   },
 };

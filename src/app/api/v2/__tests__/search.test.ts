@@ -26,6 +26,10 @@ vi.mock("@/lib/api/rate-limit", () => ({
 
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
 import { applyRateLimit } from "@/lib/api/rate-limit";
+import {
+  buildSearchParams,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
 
 const mockEnvelope = {
   data: {
@@ -249,5 +253,50 @@ describe("GET /api/v2/search (route)", () => {
     const res = await OPTIONS();
 
     expect(res.status).toBe(204);
+  });
+
+  // ── client/route contract ───────────────────────────────────────────────
+  // The site's own callers went unnoticed for two releases while every search
+  // 400ed, because each side was only ever tested against its own idea of the
+  // query string. This drives the route with the URL the client actually
+  // builds, so the two can no longer drift apart silently.
+  describe("accepts the URLs the site's own callers build", () => {
+    // @req REQ-002
+    it("answers 200 to a request built by the shared client adapter", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const params = buildSearchParams("bété", {
+        limit: 6,
+        classificationStatus: "contested",
+        minConfidence: "0.5",
+      });
+      const res = await GET(
+        new NextRequest(`http://localhost/api/v2/search?${params}`)
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "bété", limit: 6 })
+      );
+    });
+
+    // @req REQ-002
+    it("hands the adapter an envelope it can read back", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest(
+          `http://localhost/api/v2/search?${buildSearchParams("yoruba")}`
+        )
+      );
+
+      expect(mapSearchEnvelope(await res.json())).toEqual([
+        expect.objectContaining({ id: "PPL_YORUBA", name: "Yoruba" }),
+      ]);
+    });
   });
 });
