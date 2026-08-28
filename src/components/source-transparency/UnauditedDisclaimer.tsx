@@ -74,6 +74,7 @@ function resolveVariant(lastHumanAuditAt: string | null): Variant {
   return { kind: "none" };
 }
 
+// @req REQ-019
 export function UnauditedDisclaimer({
   lastHumanAuditAt,
   fiche,
@@ -114,7 +115,7 @@ export function UnauditedDisclaimer({
     <div
       role="region"
       aria-label={regionLabel}
-      className="flex items-start justify-between gap-3 rounded-md border px-4 py-3 text-sm"
+      className="flex items-start justify-between gap-3 rounded-md border px-4 py-3 text-afh-small"
       style={{
         background: "var(--afh-bg-warm, var(--country-bg, #F5EDE0))",
         borderColor: "var(--country-border, #E8DFD3)",
@@ -126,7 +127,7 @@ export function UnauditedDisclaimer({
         type="button"
         onClick={handleDismiss}
         aria-label="fermer l'avertissement"
-        className="shrink-0 rounded p-1 text-base leading-none hover:opacity-70 focus:outline-none focus-visible:ring-2"
+        className="shrink-0 rounded p-1 text-afh-small leading-none hover:opacity-70 focus:outline-none focus-visible:ring-2"
         style={{ color: "var(--country-text-soft, #7A6B5D)" }}
       >
         <span aria-hidden="true">×</span>

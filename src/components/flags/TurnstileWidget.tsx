@@ -39,7 +39,7 @@ export function TurnstileWidget({
   };
 
   const fallback = (
-    <p className="text-sm text-muted-foreground">
+    <p className="text-afh-small text-muted-foreground">
       <span>{FALLBACK_NOTICE}</span>{" "}
       <Link
         className="underline underline-offset-2"

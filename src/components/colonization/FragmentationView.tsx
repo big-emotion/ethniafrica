@@ -51,10 +51,10 @@ function FragmentationRow({
 
   return (
     <tr>
-      <td className="py-2 pr-4 text-sm text-[color:var(--afh-text,var(--country-text,#2C2018))]">
+      <td className="py-2 pr-4 text-afh-small text-[color:var(--afh-text,var(--country-text,#2C2018))]">
         {country.nameFr}
       </td>
-      <td className="py-2 pr-4 text-sm tabular-nums text-[color:var(--afh-text,var(--country-text,#2C2018))]">
+      <td className="py-2 pr-4 text-afh-small tabular-nums text-[color:var(--afh-text,var(--country-text,#2C2018))]">
         {formatShare(country.populationShare)}
       </td>
       <td className="py-2">
@@ -113,7 +113,7 @@ export function FragmentationView({
           exonym={headingExonym}
           variant="inline"
         />
-        <p className="text-xs text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
+        <p className="text-afh-caption text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
           {fragmentation.countryCount} pays
         </p>
       </div>
@@ -128,24 +128,27 @@ export function FragmentationView({
         variant="inline"
       />
       <table className="w-full border-collapse">
-        <caption className="text-left text-xs mb-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
+        <caption className="text-left text-afh-caption mb-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
           Répartition de {headingAutonym} par pays, avec niveau de confiance
         </caption>
         <thead>
           <tr>
             <th
               scope="col"
-              className="text-left text-xs font-semibold pb-2 pr-4"
+              className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
               Pays
             </th>
             <th
               scope="col"
-              className="text-left text-xs font-semibold pb-2 pr-4"
+              className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
               Part de la population
             </th>
-            <th scope="col" className="text-left text-xs font-semibold pb-2">
+            <th
+              scope="col"
+              className="text-left text-afh-caption font-semibold pb-2"
+            >
               Confiance
             </th>
           </tr>
@@ -165,7 +168,7 @@ export function FragmentationView({
           {colonialPairs.map((pair) => (
             <li
               key={`${pair.a}-${pair.b}`}
-              className="flex items-center gap-2 text-xs text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]"
+              className="flex items-center gap-2 text-afh-caption text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]"
             >
               <span
                 aria-hidden="true"

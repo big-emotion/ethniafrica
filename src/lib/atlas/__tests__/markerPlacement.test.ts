@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { FLAT_MORPH, IDLE_POSE, SPHERE_MORPH, poseForTarget } from "../camera";
 import { fitScale } from "../sphereLayer";
 import {
+  AFRICA_GEO_BOUNDS,
   buildRotationMatrix,
   lonLatToSphere,
   rotateSpherePoint,
@@ -213,6 +214,65 @@ describe("the non-WebGL fallback's geometry (REQ-117 AC5)", () => {
     expect(
       placeTargetOnBasemap(target(180, 0), IDLE_POSE, null).facingReader
     ).toBe(true);
+  });
+});
+
+describe("placeTargetOnBasemap — the band the map is letterboxed into", () => {
+  /**
+   * The stage is a fixed band: 1512x520 on a laptop, a ratio of 2.9 against
+   * the basemap's 1.06. The map is centred inside it and leaves night ground
+   * on either side, so a marker positioned as a percentage *of the stage* has
+   * to walk that same letterbox — otherwise it lands where the map is not.
+   */
+  const LAPTOP_STAGE_ASPECT = 1512 / 520;
+
+  // @req REQ-117
+  it("holds the middle of the map at the middle of the band, at every ratio", () => {
+    /** The lon/lat the committed asset draws at the middle of its viewBox. */
+    const middle = target(
+      (AFRICA_GEO_BOUNDS.lonMin + AFRICA_GEO_BOUNDS.lonMax) / 2,
+      (AFRICA_GEO_BOUNDS.latMin + AFRICA_GEO_BOUNDS.latMax) / 2
+    );
+
+    for (const aspect of [LAPTOP_STAGE_ASPECT, 1, 0.5, STAGE_ASPECT]) {
+      const placed = placeTargetOnBasemap(middle, IDLE_POSE, null, aspect);
+
+      expect(placed.leftPercent).toBeCloseTo(50, 6);
+      expect(placed.topPercent).toBeCloseTo(50, 6);
+    }
+  });
+
+  // @req REQ-117
+  it("pulls markers inward on a band wider than the map, and never past its edges", () => {
+    const west = target(-17, 14);
+
+    const onBand = placeTargetOnBasemap(
+      west,
+      IDLE_POSE,
+      null,
+      LAPTOP_STAGE_ASPECT
+    );
+    const onSquare = placeTargetOnBasemap(west, IDLE_POSE, null, STAGE_ASPECT);
+
+    // The map covers 1.06/2.9 = 36% of a laptop band's width, so a point left
+    // of centre sits much closer to the middle than it does on the map itself.
+    expect(onBand.leftPercent).toBeGreaterThan(onSquare.leftPercent);
+    expect(onBand.leftPercent).toBeGreaterThan(0);
+    expect(onBand.leftPercent).toBeLessThan(100);
+
+    // A wide band is height-limited, so the vertical mapping is untouched.
+    expect(onBand.topPercent).toBeCloseTo(onSquare.topPercent, 6);
+  });
+
+  // @req REQ-117
+  it("mirrors the slack onto the vertical axis when the band is taller than the map", () => {
+    const north = target(10, 30);
+
+    const onTallBand = placeTargetOnBasemap(north, IDLE_POSE, null, 0.5);
+    const onSquare = placeTargetOnBasemap(north, IDLE_POSE, null, STAGE_ASPECT);
+
+    expect(onTallBand.leftPercent).toBeCloseTo(onSquare.leftPercent, 6);
+    expect(onTallBand.topPercent).toBeGreaterThan(onSquare.topPercent);
   });
 });
 

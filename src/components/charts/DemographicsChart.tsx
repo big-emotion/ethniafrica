@@ -88,11 +88,11 @@ const PieTooltip = ({ active, payload }: TooltipProps) => {
     return (
       <div className="bg-background border rounded-lg shadow-lg p-3">
         <p className="font-semibold">{data.name}</p>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-afh-small text-muted-foreground">
           Population: {formatNumber(data.value)}
         </p>
         {data.percentage !== undefined && (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             {formatPercentage(data.percentage)}
           </p>
         )}
@@ -108,11 +108,11 @@ const BarTooltip = ({ active, payload, label }: TooltipProps) => {
     return (
       <div className="bg-background border rounded-lg shadow-lg p-3">
         <p className="font-semibold">{label}</p>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-afh-small text-muted-foreground">
           Population: {formatNumber(payload[0].value)}
         </p>
         {payload[0].payload.percentage !== undefined && (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             {formatPercentage(payload[0].payload.percentage)}
           </p>
         )}
@@ -153,7 +153,7 @@ const FamilyPieChart = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">
+        <CardTitle className="text-afh-h3">
           {title || "Distribution by Language Family"}
         </CardTitle>
       </CardHeader>
@@ -215,7 +215,7 @@ const CountryBarChart = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">
+        <CardTitle className="text-afh-h3">
           {title || "Population by Country"}
         </CardTitle>
       </CardHeader>
@@ -281,7 +281,7 @@ const PeopleDistributionChart = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-lg">
+        <CardTitle className="text-afh-h3">
           {title || "Distribution Across Countries"}
         </CardTitle>
       </CardHeader>
@@ -339,6 +339,7 @@ const PeopleDistributionChart = ({
   );
 };
 
+// @req REQ-091
 export const DemographicsChart = ({
   type,
   data,
@@ -349,7 +350,9 @@ export const DemographicsChart = ({
     return (
       <Card className={className}>
         <CardHeader>
-          <CardTitle className="text-lg">{title || "Demographics"}</CardTitle>
+          <CardTitle className="text-afh-h3">
+            {title || "Demographics"}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="h-[200px] flex items-center justify-center text-muted-foreground">

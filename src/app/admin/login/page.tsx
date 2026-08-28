@@ -77,10 +77,10 @@ function LoginForm() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
         <Card className="w-full max-w-md rounded-afh-xl p-8">
-          <h1 className="text-2xl font-bold mb-6 text-center">
+          <h1 className="text-afh-h2 font-bold mb-6 text-center">
             Check your email
           </h1>
-          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-sm text-center">
+          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-afh-small text-center">
             We&apos;ve sent a magic link to <strong>{email}</strong>. Click the
             link in the email to sign in.
           </div>
@@ -102,7 +102,7 @@ function LoginForm() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-md rounded-afh-xl p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+        <h1 className="text-afh-h2 font-bold mb-6 text-center">Admin Login</h1>
 
         {error && (
           <div className="mb-4">
@@ -162,7 +162,7 @@ function LoginForm() {
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
+          <div className="relative flex justify-center text-afh-eyebrow uppercase">
             <span className="bg-card px-2 text-muted-foreground">
               Or continue with email
             </span>
@@ -193,13 +193,16 @@ function LoginForm() {
   );
 }
 
+// @req REQ-052
 export default function AdminLoginPage() {
   return (
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
           <Card className="w-full max-w-md rounded-afh-xl p-8">
-            <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+            <h1 className="text-afh-h2 font-bold mb-6 text-center">
+              Admin Login
+            </h1>
             <p className="text-center text-muted-foreground">Loading...</p>
           </Card>
         </div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Code, Info } from "lucide-react";
 import Link from "next/link";
 
+// @req REQ-099
 export default function ApiDocsPage() {
   return (
     <div className="container mx-auto px-4 py-10">
@@ -16,7 +17,7 @@ export default function ApiDocsPage() {
               <BookOpen className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-display font-bold">
+              <h1 className="text-afh-h1 font-display font-bold">
                 API Documentation
               </h1>
               <p className="text-muted-foreground mt-1">
@@ -29,8 +30,8 @@ export default function ApiDocsPage() {
         {/* Introduction */}
         <Card className="p-6 bg-muted/50">
           <div className="space-y-3">
-            <h2 className="text-lg font-semibold">API AFRIK v2</h2>
-            <p className="text-sm text-muted-foreground">
+            <h2 className="text-afh-h3 font-semibold">API AFRIK v2</h2>
+            <p className="text-afh-small text-muted-foreground">
               L&apos;API Ethniafrique Atlas est basée sur la méthodologie AFRIK
               avec des identifiants stables (FLG_*, PPL_*, codes ISO) et un
               format de réponse standardisé avec pagination.
@@ -44,36 +45,36 @@ export default function ApiDocsPage() {
             <div className="flex items-start justify-between">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <h2 className="text-2xl font-semibold">API v2 - AFRIK</h2>
-                  <span className="px-2 py-1 text-xs rounded-md bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                  <h2 className="text-afh-h2 font-semibold">API v2 - AFRIK</h2>
+                  <span className="px-2 py-1 text-afh-caption rounded-md bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
                     Actuelle
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-afh-small text-muted-foreground">
                   API basée sur la méthodologie AFRIK avec identifiants stables
                   (FLG_*, PPL_*, codes ISO), pagination et contenu évolutif.
                   Accès aux pays, peuples, familles linguistiques et recherche
                   multi-entités.
                 </p>
               </div>
-              <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+              <span className="px-3 py-1 text-afh-caption rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
                 v2.0.0
               </span>
             </div>
             <div className="flex flex-wrap gap-2">
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Recherche
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Pays
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Peuples
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Familles linguistiques
               </span>
-              <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
                 Pagination
               </span>
             </div>
@@ -97,7 +98,7 @@ export default function ApiDocsPage() {
             <Info className="h-5 w-5 text-primary mt-0.5" />
             <div className="space-y-2">
               <h3 className="font-semibold">Endpoints disponibles</h3>
-              <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <ul className="text-afh-small text-muted-foreground space-y-1 list-disc list-inside">
                 <li>
                   <code>/api/v2/search</code> - Recherche multi-entités
                 </li>

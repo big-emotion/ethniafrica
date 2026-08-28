@@ -116,7 +116,7 @@ export const QuizAnswerReveal = ({
       <div className="flex items-center gap-2 border-t border-afh-border pt-3 text-afh-small text-afh-text-soft">
         <span>{question.source.title}</span>
         {question.source.year ? <span>· {question.source.year}</span> : null}
-        <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-xs font-medium">
+        <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-caption font-medium">
           {TIER_BADGE_LABELS[tier]}
         </span>
       </div>

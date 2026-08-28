@@ -28,7 +28,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-afh-sm px-3 py-1.5 text-sm font-medium transition-all data-[state=active]:bg-afh-surface data-[state=active]:text-afh-text data-[state=active]:shadow-afh-1 disabled:pointer-events-none disabled:opacity-50",
+      "inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-afh-sm px-3 py-1.5 text-afh-small font-medium transition-all data-[state=active]:bg-afh-surface data-[state=active]:text-afh-text data-[state=active]:shadow-afh-1 disabled:pointer-events-none disabled:opacity-50",
       CHARTER_FOCUS_RING,
       className
     )}

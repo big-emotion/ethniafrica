@@ -105,13 +105,13 @@ export function CountryRecordView({
                 }}
                 turnstileSiteKey={turnstileSiteKey}
                 triggerLabel="Signaler cette section"
-                className="w-auto text-xs"
+                className="w-auto text-afh-caption"
               />
             ) : (
               <button
                 type="button"
                 disabled
-                className="rounded-md border border-dashed px-2 py-1 text-xs"
+                className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
                 style={{
                   borderColor: "var(--afh-border)",
                   color: "var(--afh-text-soft)",

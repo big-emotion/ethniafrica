@@ -109,6 +109,7 @@ function geometryFirstPoint(
 }
 
 // @req FR78 @req FR79 @req UX-DR10
+// @req REQ-101
 export function MigrationPathLayer({
   events,
   year,
@@ -167,7 +168,7 @@ export function MigrationPathLayer({
                   data-testid={`migration-label-${event.id}`}
                   x={labelPoint.x}
                   y={labelPoint.y - 6}
-                  className="pointer-events-none fill-afh-atlas-path-selected text-[10px] font-semibold"
+                  className="pointer-events-none fill-afh-atlas-path-selected text-afh-eyebrow font-semibold"
                 >
                   {event.nameMain}
                 </text>

@@ -4,18 +4,28 @@ import { Meta } from "@storybook/blocks";
 
 # Typography — `--afh-text-*`
 
-Defined in `src/styles/tokens/type.css`. Two families layered on top of the
-`next/font/google` imports already wired in `src/app/layout.tsx`:
+Defined in `src/styles/tokens/type.css`. The employment rules — which role to
+reach for, and what each one forbids — live in
+[`docs/design/typography-charter.md`](https://github.com/big-emotion/ethniafrica/blob/recette/docs/design/typography-charter.md).
+This page is the specimen; the charter is the doctrine.
 
-| Family          | Variable                                 | Usage                           |
-| --------------- | ---------------------------------------- | ------------------------------- |
-| **Fraunces**    | `--font-fraunces` / `--afh-font-display` | Hero, H1–H3 — editorial display |
-| **Nunito Sans** | `--font-nunito-sans` / `--afh-font-body` | Body, captions, UI              |
+Two families layered on top of the `next/font/google` imports already wired in
+`src/app/layout.tsx`:
+
+| Family          | Variable                                 | Usage                               |
+| --------------- | ---------------------------------------- | ----------------------------------- |
+| **Fraunces**    | `--font-fraunces` / `--afh-font-display` | Hero, H1–H3 — editorial display     |
+| **Nunito Sans** | `--font-nunito-sans` / `--afh-font-body` | Lead, body, small, caption, eyebrow |
 
 ## 9-role scale
 
-Mobile-first, with two scale-up breakpoints (768 px tablet, 1200 px desktop).
-Sizes below are the **mobile** values.
+The six editorial roles are **fluid**: one `clamp()` anchored at 390 px and
+1200 px, no breakpoint step. The three utility roles are **fixed** — an
+interface label that grows with the window drifts away from the control it
+labels. Resize this frame to watch the top half move and the bottom half hold.
+
+The retired `micro` (10 px) and `nano` (9 px) roles are gone: nothing in the
+scale renders below 12 px any more.
 
 <div style={{ display: "grid", gap: "1.5rem", margin: "1.5rem 0" }}>
   <div>
@@ -23,11 +33,11 @@ Sizes below are the **mobile** values.
       style={{
         fontFamily: "var(--afh-font-display)",
         fontSize: "var(--afh-text-hero)",
-        fontWeight: 700,
-        lineHeight: 1.1,
+        fontWeight: 600,
+        lineHeight: "var(--afh-leading-hero)",
       }}
     >
-      Hero · 34 px
+      Hero · 34 → 52 px
     </div>
     <code>--afh-text-hero</code>
   </div>
@@ -36,11 +46,11 @@ Sizes below are the **mobile** values.
       style={{
         fontFamily: "var(--afh-font-display)",
         fontSize: "var(--afh-text-h1)",
-        fontWeight: 700,
-        lineHeight: 1.2,
+        fontWeight: 600,
+        lineHeight: "var(--afh-leading-h1)",
       }}
     >
-      H1 · 24 px
+      H1 · 27 → 40 px
     </div>
     <code>--afh-text-h1</code>
   </div>
@@ -49,11 +59,11 @@ Sizes below are the **mobile** values.
       style={{
         fontFamily: "var(--afh-font-display)",
         fontSize: "var(--afh-text-h2)",
-        fontWeight: 700,
-        lineHeight: 1.25,
+        fontWeight: 600,
+        lineHeight: "var(--afh-leading-h2)",
       }}
     >
-      H2 · 18 px
+      H2 · 22 → 30 px
     </div>
     <code>--afh-text-h2</code>
   </div>
@@ -63,10 +73,10 @@ Sizes below are the **mobile** values.
         fontFamily: "var(--afh-font-display)",
         fontSize: "var(--afh-text-h3)",
         fontWeight: 600,
-        lineHeight: 1.3,
+        lineHeight: "var(--afh-leading-h3)",
       }}
     >
-      H3 · 16 px
+      H3 · 19 → 23 px
     </div>
     <code>--afh-text-h3</code>
   </div>
@@ -74,12 +84,25 @@ Sizes below are the **mobile** values.
     <div
       style={{
         fontFamily: "var(--afh-font-body)",
-        fontSize: "var(--afh-text-body)",
-        lineHeight: 1.6,
+        fontSize: "var(--afh-text-lead)",
+        lineHeight: "var(--afh-leading-lead)",
       }}
     >
-      Body · 14 px — Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Lead · 19 → 22 px — the standfirst that opens a fiche. One paragraph,
+      never two.
+    </div>
+    <code>--afh-text-lead</code>
+  </div>
+  <div>
+    <div
+      style={{
+        fontFamily: "var(--afh-font-body)",
+        fontSize: "var(--afh-text-body)",
+        lineHeight: "var(--afh-leading-body)",
+      }}
+    >
+      Body · 17 → 19 px — Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </div>
     <code>--afh-text-body</code>
   </div>
@@ -88,10 +111,10 @@ Sizes below are the **mobile** values.
       style={{
         fontFamily: "var(--afh-font-body)",
         fontSize: "var(--afh-text-small)",
-        lineHeight: 1.5,
+        lineHeight: "var(--afh-leading-small)",
       }}
     >
-      Small · 12 px
+      Small · 16 px — every control label, every button, every form field.
     </div>
     <code>--afh-text-small</code>
   </div>
@@ -100,10 +123,10 @@ Sizes below are the **mobile** values.
       style={{
         fontFamily: "var(--afh-font-body)",
         fontSize: "var(--afh-text-caption)",
-        lineHeight: 1.45,
+        lineHeight: "var(--afh-leading-caption)",
       }}
     >
-      Caption · 11 px
+      Caption · 13 px — source lines, figure notes, timestamps.
     </div>
     <code>--afh-text-caption</code>
   </div>
@@ -111,31 +134,36 @@ Sizes below are the **mobile** values.
     <div
       style={{
         fontFamily: "var(--afh-font-body)",
-        fontSize: "var(--afh-text-micro)",
-        lineHeight: 1.4,
-        textTransform: "uppercase",
-        letterSpacing: "0.1em",
+        fontSize: "var(--afh-text-eyebrow)",
+        lineHeight: "var(--afh-leading-eyebrow)",
+        fontWeight: "var(--afh-eyebrow-weight)",
+        textTransform: "var(--afh-eyebrow-transform)",
+        letterSpacing: "var(--afh-eyebrow-tracking)",
       }}
     >
-      Micro · 10 px
+      Eyebrow · 12 px
     </div>
-    <code>--afh-text-micro</code>
-  </div>
-  <div>
-    <div
-      style={{
-        fontFamily: "var(--afh-font-body)",
-        fontSize: "var(--afh-text-nano)",
-        lineHeight: 1.4,
-        textTransform: "uppercase",
-        letterSpacing: "0.12em",
-      }}
-    >
-      Nano · 9 px
-    </div>
-    <code>--afh-text-nano</code>
+    <code>--afh-text-eyebrow</code>
   </div>
 </div>
+
+## Line-heights, paired by role
+
+Each role carries its own `--afh-leading-*`. Pairing them is not decoration:
+the hero at 1.05 and the body at 1.65 are what keep a 52 px title from
+looking airy and a 19 px paragraph from looking cramped.
+
+| Role      | Leading |
+| --------- | ------- |
+| `hero`    | 1.05    |
+| `h1`      | 1.1     |
+| `h2`      | 1.2     |
+| `h3`      | 1.3     |
+| `lead`    | 1.45    |
+| `body`    | 1.65    |
+| `small`   | 1.5     |
+| `caption` | 1.45    |
+| `eyebrow` | 1.4     |
 
 ## Density profiles (UX-DR48)
 

@@ -78,7 +78,7 @@ export default async function PeopleLinksPage({
     <PageLayout language="fr" sectionName="Peuples">
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <AfrikBreadcrumbs items={breadcrumbs} />
-        <h1 className="text-2xl font-semibold mt-4 mb-6 text-afh-text">
+        <h1 className="text-afh-h2 font-semibold mt-4 mb-6 text-afh-text">
           Liens de {people.nameMain}
         </h1>
         <RelationsListWithSourceSheet

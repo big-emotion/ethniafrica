@@ -20,21 +20,21 @@ export default function NotFound() {
       <div className="max-w-xl w-full space-y-6 text-center">
         <StateMedallion className="mx-auto" />
 
-        <h1 className="text-3xl font-display font-semibold text-afh-text">
+        <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
           Fiche introuvable
         </h1>
 
         <p data-testid="state-copy" className="text-afh-text-soft">
           Cette page n&apos;existe pas. Les fiches suivent le format{" "}
-          <span className="font-mono text-sm bg-afh-bg px-1 rounded">
+          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
             /{lang}/peuples/PPL_XXXXX
           </span>
           ,{" "}
-          <span className="font-mono text-sm bg-afh-bg px-1 rounded">
+          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
             /{lang}/familles/FLG_XXXXX
           </span>{" "}
           ou{" "}
-          <span className="font-mono text-sm bg-afh-bg px-1 rounded">
+          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
             /{lang}/pays/XXX
           </span>
           .
@@ -44,7 +44,7 @@ export default function NotFound() {
           <Link
             href={`/${lang}/recherche`}
             data-cta="primary"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-sm font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >
             Rechercher une fiche
           </Link>
@@ -52,7 +52,7 @@ export default function NotFound() {
           {/* TODO: replace mailto with contribution form once available (ETNI-247) */}
           <a
             href="mailto:contact@ethniafrica.org?subject=URL+cassée"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
             Signaler une URL cassée
           </a>

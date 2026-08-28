@@ -27,7 +27,7 @@ export default async function SignalementsPage() {
   return (
     <PageLayout language="fr" title={copy.title}>
       <div className="mx-auto w-full max-w-6xl space-y-6">
-        <p className="max-w-3xl font-afh text-sm leading-relaxed text-afh-text-soft md:text-base">
+        <p className="max-w-3xl font-afh text-afh-small leading-relaxed text-afh-text-soft">
           {copy.introduction}
         </p>
         <PublicFlagsQueue initialPage={initialPage} initialFilters={{}} />

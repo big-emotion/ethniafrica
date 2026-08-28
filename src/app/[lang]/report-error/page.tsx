@@ -8,6 +8,7 @@ import { Language } from "@/types/shared";
 import Script from "next/script";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
 
+// @req REQ-014
 export default function ReportErrorPage() {
   const params = useParams();
   const lang = params?.lang as string;
@@ -66,10 +67,12 @@ export default function ReportErrorPage() {
       hideHeader={true}
     >
       <div className="max-w-3xl mx-auto space-y-8">
-        <h1 className="text-3xl font-display font-bold">{t.title}</h1>
+        <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">{t.intro.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.intro.title}
+          </h2>
           <p>{t.intro.text1}</p>
           <p>{t.intro.text2}</p>
           <p>{t.intro.text3}</p>

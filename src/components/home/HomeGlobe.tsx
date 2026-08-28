@@ -457,7 +457,7 @@ export function HomeGlobe({
           border-radius: var(--afh-radius-sm);
           background: color-mix(in srgb, var(--afh-bg-warm) 88%, transparent);
           font-family: var(--afh-font-mono);
-          font-size: 11.5px;
+          font-size: var(--home-text-globe-readout);
           line-height: 1.5;
           color: var(--afh-text-soft);
           font-variant-numeric: tabular-nums;
@@ -500,7 +500,7 @@ export function HomeGlobe({
         }
         .home-globe-morph label {
           font-family: var(--afh-font-mono);
-          font-size: 11px;
+          font-size: var(--home-text-globe-morph-label);
           /* --afh-fg-muted, not --afh-text-muted: the latter fails AA on
              the pill on both surfaces (2.86:1 parchment, 4.56:1 night). */
           color: var(--afh-fg-muted);
@@ -525,7 +525,7 @@ export function HomeGlobe({
           background: color-mix(in srgb, var(--afh-bg-warm) 82%, transparent);
           color: var(--afh-text-soft);
           font-family: var(--afh-font-body);
-          font-size: 12.5px;
+          font-size: var(--home-text-globe-tool);
           cursor: pointer;
           backdrop-filter: blur(6px);
           transition: border-color var(--afh-duration-fast) var(--afh-ease-out),
@@ -549,7 +549,7 @@ export function HomeGlobe({
         /* At 430 the caption wraps and the three tools need two rows of
            their own, so both give the sphere back some of their gap. */
         @media (max-width: 700px) {
-          .home-globe-readout { font-size: 10.5px; padding: 6px 9px; margin-bottom: 12px; }
+          .home-globe-readout { padding: 6px 9px; margin-bottom: 12px; }
           .home-globe-morph input[type="range"] { width: 110px; }
           .home-globe-tools { gap: 8px; padding-top: 12px; }
           .home-globe-surface { min-height: 150px; }

@@ -73,8 +73,10 @@ function CountrySnapshotFicheView({
   return (
     <div data-testid="country-snapshot-view" className="space-y-4">
       <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameFr}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
+        <h1 className="text-afh-h2 font-semibold">{nameFr}</h1>
+        <p className="text-afh-small text-muted-foreground font-mono">
+          {entityId}
+        </p>
       </div>
 
       <PinnedVersionBanner
@@ -94,7 +96,7 @@ function CountrySnapshotFicheView({
         </div>
       )}
 
-      <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
+      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
         <p>
           Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
           jamais modifié.
