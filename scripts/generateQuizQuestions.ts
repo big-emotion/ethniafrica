@@ -46,8 +46,35 @@ import {
   type QuizQuestionRecord,
   type RevocationDecision,
 } from "./lib/quizGeneration";
+import {
+  chunkForUrl,
+  fetchAllPages,
+  type PageResult,
+} from "./lib/supabasePaging";
 
 const ENTITY_TYPE = "people";
+
+/**
+ * Reads every row matching an id filter, splitting the filter so the URL stays
+ * within limits and paging each split so no tail is dropped. Both limits are
+ * silent — see `scripts/lib/supabasePaging.ts` for what each one costs.
+ */
+async function fetchByIds<T>(
+  ids: string[],
+  page: (
+    idChunk: string[],
+    from: number,
+    to: number
+  ) => PromiseLike<PageResult<T>>
+): Promise<T[]> {
+  if (ids.length === 0) return [];
+  const pages = await Promise.all(
+    chunkForUrl(ids).map((idChunk) =>
+      fetchAllPages<T>((from, to) => page(idChunk, from, to))
+    )
+  );
+  return pages.flat();
+}
 
 interface BuiltCorpus {
   entries: FicheEntry[];
@@ -58,10 +85,12 @@ interface BuiltCorpus {
 async function buildFicheEntries(
   supabase: SupabaseClient
 ): Promise<BuiltCorpus> {
-  const { data: peopleRows, error: peopleErr } = await supabase
-    .from("afrik_peoples")
-    .select("id, name_main, language_family_id, content");
-  if (peopleErr) throw peopleErr;
+  const peopleRows = await fetchAllPages<PeopleRow>((from, to) =>
+    supabase
+      .from("afrik_peoples")
+      .select("id, name_main, language_family_id, content")
+      .range(from, to)
+  );
 
   const { data: familyRows, error: familyErr } = await supabase
     .from("afrik_language_families")
@@ -82,37 +111,40 @@ async function buildFicheEntries(
 
   const entityIds = (peopleRows || []).map((row) => row.id as string);
 
-  const { data: confidenceRows, error: confidenceErr } =
-    entityIds.length === 0
-      ? { data: [] as ConfidenceScoreRow[], error: null }
-      : await supabase
-          .from("confidence_scores")
-          .select("entity_id, score, last_human_audit_at, open_flag_count")
-          .eq("entity_type", ENTITY_TYPE)
-          .in("entity_id", entityIds);
-  if (confidenceErr) throw confidenceErr;
+  const confidenceRows = await fetchByIds<ConfidenceScoreRow>(
+    entityIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("confidence_scores")
+        .select("entity_id, score, last_human_audit_at, open_flag_count")
+        .eq("entity_type", ENTITY_TYPE)
+        .in("entity_id", idChunk)
+        .range(from, to)
+  );
 
-  const { data: assertionRows, error: assertionErr } =
-    entityIds.length === 0
-      ? { data: [] as AdapterAssertionRow[], error: null }
-      : await supabase
-          .from("assertions")
-          .select("id, entity_id, field_path, source_ids")
-          .eq("entity_type", ENTITY_TYPE)
-          .in("entity_id", entityIds);
-  if (assertionErr) throw assertionErr;
+  const assertionRows = await fetchByIds<AdapterAssertionRow>(
+    entityIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("assertions")
+        .select("id, entity_id, field_path, source_ids")
+        .eq("entity_type", ENTITY_TYPE)
+        .in("entity_id", idChunk)
+        .range(from, to)
+  );
 
   const sourceIds = [
-    ...new Set((assertionRows || []).flatMap((row) => row.source_ids ?? [])),
+    ...new Set(assertionRows.flatMap((row) => row.source_ids ?? [])),
   ];
-  const { data: sourceRows, error: sourceErr } =
-    sourceIds.length === 0
-      ? { data: [] as AdapterSourceRow[], error: null }
-      : await supabase
-          .from("sources")
-          .select("id, tier, verified_at")
-          .in("id", sourceIds);
-  if (sourceErr) throw sourceErr;
+  const sourceRows = await fetchByIds<AdapterSourceRow>(
+    sourceIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("sources")
+        .select("id, tier, verified_at")
+        .in("id", idChunk)
+        .range(from, to)
+  );
 
   const confidenceByEntityId = new Map(
     (confidenceRows || []).map((row) => [
