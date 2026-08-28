@@ -84,6 +84,14 @@ export function SiteFooter({ language }: SiteFooterProps) {
                 {footer.accessibility}
               </Link>
             </li>
+            <li>
+              <Link
+                href={`/${language}/plan-du-site`}
+                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {footer.sitemap}
+              </Link>
+            </li>
           </ul>
         </nav>
 
