@@ -326,13 +326,28 @@ export interface SearchResult {
   type: SearchEntityType;
   id: string;
   name: string;
+  /**
+   * Extrait expliquant la correspondance, termes appariés encadrés par
+   * `[[` et `]]` (voir `src/lib/search/highlight.ts`).
+   */
   snippet?: string;
+  /**
+   * Score de pertinence lexicale. Comparable **au sein** d'un type d'entité,
+   * pas entre types : un peuple est noté `ts_rank × confiance`, un pays
+   * `ts_rank` nu, une famille par palier. Trier entre types passe donc par
+   * `compareByRelevance`, qui départage d'abord sur `exactMatch`.
+   */
   relevance?: number;
+  /** Le nom de l'entité est exactement la requête, accents et casse ignorés. */
+  exactMatch?: boolean;
   // Données supplémentaires selon le type
   languageFamilyId?: LanguageFamilyId;
   languageFamilyName?: string;
   countryIds?: CountryId[];
   population?: number;
+  classificationStatus?: ClassificationStatus | null;
+  /** Score de confiance sur [0, 1] — l'échelle de la base, pas celle du chip. */
+  confidence?: number;
 }
 
 /**

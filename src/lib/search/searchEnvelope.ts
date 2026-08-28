@@ -40,6 +40,12 @@ function asRows(value: unknown): Record<string, unknown>[] {
   return Array.isArray(value) ? (value as Record<string, unknown>[]) : [];
 }
 
+function numberOrUndefined(value: unknown): number | undefined {
+  return typeof value === "number" && Number.isFinite(value)
+    ? value
+    : undefined;
+}
+
 function totalPopulationOf(content: unknown): number | undefined {
   const demography = (content as { demography?: { totalPopulation?: number } })
     ?.demography;
@@ -65,8 +71,15 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         name: String(row.nameMain ?? ""),
         languageFamilyId:
           row.languageFamilyId as SearchResult["languageFamilyId"],
+        languageFamilyName: (row.languageFamilyName as string) || undefined,
         countryIds: row.currentCountries as SearchResult["countryIds"],
         population: totalPopulationOf(row.content),
+        snippet: (row.snippet as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+        classificationStatus:
+          row.classificationStatus as SearchResult["classificationStatus"],
+        confidence: numberOrUndefined(row.confidence),
       })
     ),
     ...asRows(countries).map(
@@ -74,7 +87,12 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         type: "country",
         id: String(row.id),
         name: String(row.nameFr ?? ""),
-        snippet: (row.etymology as string) || undefined,
+        // The match excerpt says why this row surfaced; the etymology only
+        // says what the country is. Prefer the former when the API sends it.
+        snippet:
+          (row.snippet as string) || (row.etymology as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
       })
     ),
     ...asRows(families).map(
@@ -82,7 +100,25 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         type: "languageFamily",
         id: String(row.id),
         name: String(row.nameFr ?? ""),
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
       })
     ),
   ];
+}
+
+/**
+ * Orders results across entity kinds.
+ *
+ * `relevance` alone cannot do this: a people is scored `ts_rank × confidence`,
+ * a country by bare `ts_rank`, a family by a tier — three scales that only
+ * look like one number. `exactMatch` is the one signal that means the same
+ * thing everywhere, so it decides first and relevance only breaks ties within
+ * a kind's own range. Returning 0 for a genuine tie keeps the API's order,
+ * `Array.prototype.sort` being stable.
+ */
+// @req REQ-002
+export function compareByRelevance(a: SearchResult, b: SearchResult): number {
+  if (a.exactMatch !== b.exactMatch) return a.exactMatch ? -1 : 1;
+  return (b.relevance ?? 0) - (a.relevance ?? 0);
 }
