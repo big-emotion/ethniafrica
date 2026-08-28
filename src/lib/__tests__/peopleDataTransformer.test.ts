@@ -64,58 +64,21 @@ const yorubaPeople: PeopleDetail = {
     dialects: ["Oyo", "Lagos", "Ekiti", "Ondo"],
     vehicularRole: "Langue véhiculaire en Afrique de l'Ouest",
   },
+  // The four flat keys `public/modele-peuple.json` declares for
+  // `content.culture`, taken verbatim from PPL_YORUBA. The fixture this
+  // replaced described a nested A-F structure that the TXT parser flattened
+  // years ago and that no fiche in the corpus carries — so the suite was
+  // green against a shape the corpus never produces. See
+  // scripts/audit/gapAnalyzer.ts, which tracks restoring the nesting.
   culture: {
-    divinitiesAndSpirits: {
-      supremeDeity: {
-        name: "Olodumare",
-        attributes: "Créateur suprême",
-        veneration: "Indirect via Orisha",
-      },
-      intermediateDivinities: [
-        {
-          name: "Shango",
-          domain: "Tonnerre et foudre",
-          role: "Dieu du tonnerre",
-        },
-        { name: "Oya", domain: "Vent et changement" },
-      ],
-    },
-    ritesAndPractices: {
-      initiationRites: {
-        maleInitiation: "Initiation à l'Ogboni",
-        femaleInitiation: "Rites de puberté",
-      },
-      funeraryRites: {
-        wake: "Veillée funèbre Egungun",
-        burial: "Inhumation traditionnelle",
-      },
-    },
-    symbolsAndArts: {
-      symbols: [
-        { name: "Ile-Ife", meaning: "Cité berceau" },
-        { name: "Ase", meaning: "Pouvoir divin" },
-      ],
-      artsAndMusic: {
-        musicalInstruments: "Bàtá, gangan (tambour parlant)",
-        dances: "Bata dance",
-      },
-      gastronomy: {
-        emblematicDishes: "Egusi soup, jollof rice, pounded yam",
-      },
-    },
-    contemporarySpirituality: {
-      christianity: {
-        percentageOfPopulation: 40,
-        denominations: "Pentecôtisme, catholicisme",
-      },
-      islam: {
-        percentageOfPopulation: 50,
-        specificPractices: "Pratiques soufies",
-      },
-      religiousSyncretism: {
-        coexistenceOfPractices: "Coexistence Islam-Christianisme-Ifá",
-      },
-    },
+    majorRites:
+      "Le culte des orisha structure la vie rituelle. La divination Ifa est inscrite au patrimoine culturel immateriel de l'UNESCO (2005). Les masques Gelede celebrent la puissance des femmes agees (iyami).",
+    symbols:
+      "Les bronzes et sculptures de Ife et Benin representent le sommet de l'art classique yoruba. Les tissus aso-oke et adire sont les symboles textiles de l'identite.",
+    artsAndMusic:
+      "Le dundun (tambour parlant), le bata et le sekere sont les instruments classiques. Le juju music, l'afrobeat et le fuji sont des genres modernes d'origine yoruba.",
+    spiritualities:
+      "La religion traditionnelle yoruba (Aborisa) reconnait un Dieu supreme Olodumare et un pantheon de divinites secondaires, les orisha.",
   },
   historicalRole: {
     kingdomsOrChiefdoms:
@@ -338,61 +301,45 @@ describe("transformPeopleHistory", () => {
 
 describe("transformPeopleCulture", () => {
   // @req REQ-003
-  it("extracts supreme deity name", () => {
+  it("carries the major rites the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.supremeDeity).toBe("Olodumare");
+    expect(result.majorRites).toContain("orisha");
   });
 
-  it("extracts intermediate divinities as name list", () => {
+  // @req REQ-003
+  it("carries the symbols the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.intermediates).toContain("Shango");
-    expect(result.intermediates).toContain("Oya");
+    expect(result.symbols).toContain("aso-oke");
   });
 
-  it("extracts initiation rites", () => {
+  // @req REQ-003
+  it("carries the arts and music the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.initiation).toContain("Ogboni");
+    expect(result.artsAndMusic).toContain("dundun");
   });
 
-  it("extracts female initiation rites", () => {
+  // @req REQ-003
+  it("carries the spiritualities the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.femaleInitiation).toContain("puberté");
+    expect(result.spiritualities).toContain("Olodumare");
   });
 
-  it("extracts funerary rites", () => {
+  // Every one of the 789 people fiches fills all four keys, so a transform
+  // that drops any of them empties the chapter for the whole corpus — which
+  // is exactly what shipped while this suite asserted a nested shape.
+  // @req REQ-003
+  it("keeps all four declared fields, none dropped", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.funerary).toContain("Egungun");
+    expect(Object.values(result).filter(Boolean)).toHaveLength(4);
   });
 
-  it("extracts symbols as name list", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.symbols).toContain("Ile-Ife");
-    expect(result.symbols).toContain("Ase");
-  });
-
-  it("extracts music and gastronomy", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.music).toContain("Bàtá");
-    expect(result.gastronomy).toContain("Egusi");
-  });
-
-  it("extracts spirituality percentages", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.christianityPercentage).toBe(40);
-    expect(result.islamPercentage).toBe(50);
-  });
-
-  it("extracts syncretism description", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.syncretism).toContain("Ifá");
-  });
-
+  // @req REQ-003
   it("returns safe defaults when culture is undefined", () => {
     const result = transformPeopleCulture(undefined);
-    expect(result.supremeDeity).toBeUndefined();
-    expect(result.intermediates).toEqual([]);
-    expect(result.symbols).toEqual([]);
-    expect(result.christianityPercentage).toBeUndefined();
+    expect(result.majorRites).toBeUndefined();
+    expect(result.symbols).toBeUndefined();
+    expect(result.artsAndMusic).toBeUndefined();
+    expect(result.spiritualities).toBeUndefined();
   });
 });
 
@@ -688,7 +635,7 @@ describe("transformPeopleData", () => {
     expect(result.origin.migrationRoutes).toHaveLength(1);
     expect(result.language.mainLanguage).toBe("Yoruba");
     expect(result.history.kingdomsOrChiefdoms).toContain("Oyo");
-    expect(result.culture.supremeDeity).toBe("Olodumare");
+    expect(result.culture.spiritualities).toContain("Olodumare");
     expect(result.relatedPeoples.ethnicities).toHaveLength(5);
     expect(result.countries.totalPopulation).toBe(40000000);
     expect(result.sources).toBeTruthy();
@@ -731,7 +678,7 @@ describe("transformPeopleData", () => {
     expect(result.hero.nameMain).toBe("TestPeople");
     expect(result.origin.migrationRoutes).toEqual([]);
     expect(result.language.isoCodes).toEqual([]);
-    expect(result.culture.intermediates).toEqual([]);
+    expect(result.culture.majorRites).toBeUndefined();
     expect(result.relatedPeoples.ethnicities).toEqual([]);
     expect(result.countries.distributions).toEqual([]);
     expect(result.sources).toEqual([]);
