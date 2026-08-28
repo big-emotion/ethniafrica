@@ -624,7 +624,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: block;
           margin-top: 3px;
           font-family: var(--afh-font-mono);
-          font-size: var(--afh-text-nano);
+          font-size: var(--afh-text-caption);
           color: var(--afh-fg-muted);
         }
         .sh-chip {
