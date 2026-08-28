@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-import type {
-  PeopleRelatedData,
-  PeopleRelationPreviewItem,
+import {
+  hasRelatedContent,
+  type PeopleRelatedData,
+  type PeopleRelationPreviewItem,
 } from "@/lib/peopleDataTransformer";
 import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
 import { getPeopleLinksRoute } from "@/lib/routing";
@@ -20,12 +21,7 @@ export function PeopleRelatedPeoplesSection({
   peopleId,
   relationsPreview = [],
 }: PeopleRelatedPeoplesSectionProps) {
-  const hasContent =
-    data.ethnicities.length > 0 ||
-    data.politicalSystem ||
-    data.clanOrganization ||
-    data.ageClassSystems ||
-    relationsPreview.length > 0;
+  const hasContent = hasRelatedContent(data) || relationsPreview.length > 0;
 
   if (!hasContent) return null;
 
@@ -107,6 +103,23 @@ export function PeopleRelatedPeoplesSection({
         <div>
           <p className="people-section-label">Grades d&apos;âge</p>
           <p className="people-section-body">{data.ageClassSystems}</p>
+        </div>
+      )}
+
+      {/* Declared by 786 of 789 fiches and read by nothing until now: the two
+          fields were typed on OrganizationSection and the transform mapped
+          three of its five. */}
+      {data.roleOfLineages && (
+        <div>
+          <p className="people-section-label">Rôle des lignages</p>
+          <p className="people-section-body">{data.roleOfLineages}</p>
+        </div>
+      )}
+
+      {data.religiousAuthority && (
+        <div>
+          <p className="people-section-label">Autorité religieuse</p>
+          <p className="people-section-body">{data.religiousAuthority}</p>
         </div>
       )}
     </div>

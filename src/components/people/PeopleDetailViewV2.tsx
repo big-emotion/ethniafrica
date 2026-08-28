@@ -2,6 +2,8 @@ import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
   hasCultureContent,
+  hasOriginContent,
+  hasRelatedContent,
   transformPeopleData,
   transformSourcedRelationsPreview,
 } from "@/lib/peopleDataTransformer";
@@ -177,7 +179,9 @@ export function PeopleDetailViewV2({
             nameMain={data.hero.nameMain}
             selfAppellation={people.appellations?.selfAppellation}
             exonyms={people.appellations?.exonyms}
+            originOfExonyms={data.hero.originOfExonyms}
             whyProblematic={people.appellations?.whyProblematic}
+            contemporaryUsage={data.hero.contemporaryUsage}
             isoCode={people.languages?.isoCodes?.[0]}
           />
         </SectionCard>
@@ -196,11 +200,7 @@ export function PeopleDetailViewV2({
         )}
 
         {/* 3. Origins */}
-        {(data.origin.ancientOrigins ||
-          data.origin.formationPeriod ||
-          data.origin.migrationRoutes.length > 0 ||
-          data.origin.historicalSettlementZones.length > 0 ||
-          data.origin.externalInfluences) && (
+        {hasOriginContent(data.origin) && (
           <SectionCard
             label="Origines & formation"
             icon="◎"
@@ -291,10 +291,7 @@ export function PeopleDetailViewV2({
           </SectionCard>
         )}
 
-        {(data.relatedPeoples.ethnicities.length > 0 ||
-          data.relatedPeoples.politicalSystem ||
-          data.relatedPeoples.clanOrganization ||
-          data.relatedPeoples.ageClassSystems ||
+        {(hasRelatedContent(data.relatedPeoples) ||
           relationsPreview.length > 0) && (
           <SectionCard
             label="Peuples voisins & organisation"

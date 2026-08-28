@@ -91,4 +91,27 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
     );
     expect(container).toBeEmptyDOMElement();
   });
+
+  // Both are declared by the strict model and filled on 786 of 789 fiches; the
+  // transform mapped three of OrganizationSection's five fields, so neither
+  // ever reached the page.
+  // @req REQ-097
+  it("renders the role of lineages and the religious authority", () => {
+    render(
+      <PeopleRelatedPeoplesSection
+        data={{
+          ethnicities: [],
+          roleOfLineages: "Rôle central des lignages dans la vie sociale.",
+          religiousAuthority: "Alaafin d'Oyo, Ooni d'Ife.",
+        }}
+        peopleId="PPL_YORUBA"
+        relationsPreview={[]}
+      />
+    );
+
+    expect(screen.getByText("Rôle des lignages")).toBeInTheDocument();
+    expect(screen.getByText(/vie sociale/)).toBeInTheDocument();
+    expect(screen.getByText("Autorité religieuse")).toBeInTheDocument();
+    expect(screen.getByText(/Alaafin/)).toBeInTheDocument();
+  });
 });

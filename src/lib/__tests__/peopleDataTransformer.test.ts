@@ -7,6 +7,7 @@ import {
   transformPeopleLanguages,
   transformPeopleHistory,
   transformPeopleCulture,
+  hasOriginContent,
   transformPeopleRelatedPeoples,
   transformEgoNetworkPreview,
   transformPeopleCountries,
@@ -220,6 +221,20 @@ describe("transformPeopleHero", () => {
     expect(hero.exonyms).toEqual([]);
     expect(hero.currentCountries).toEqual([]);
   });
+
+  // The corpus fills both on all 789 fiches; only the games engine read them,
+  // so the fiche's own naming block showed neither.
+  // @req REQ-003
+  it("carries the origin of the exonyms", () => {
+    const hero = transformPeopleHero(yorubaPeople);
+    expect(hero.originOfExonyms).toContain("Hausa");
+  });
+
+  // @req REQ-003
+  it("carries the contemporary usage of the name", () => {
+    const hero = transformPeopleHero(yorubaPeople);
+    expect(hero.contemporaryUsage).toContain("self-accepted");
+  });
 });
 
 describe("transformPeopleOrigins", () => {
@@ -250,6 +265,31 @@ describe("transformPeopleOrigins", () => {
     expect(result.migrationRoutes).toEqual([]);
     expect(result.historicalSettlementZones).toEqual([]);
     expect(result.ancientOrigins).toBeUndefined();
+  });
+});
+
+describe("hasOriginContent", () => {
+  // The fiche's gate used to test five of the seven fields the block renders,
+  // so a fiche declaring only one of the other two lost it silently.
+  // @req REQ-003
+  it("is true for a fiche declaring only unifications or only major events", () => {
+    const base = { migrationRoutes: [], historicalSettlementZones: [] };
+    expect(
+      hasOriginContent({ ...base, unificationsOrDivisions: "Unification" })
+    ).toBe(true);
+    expect(
+      hasOriginContent({ ...base, majorHistoricalEvents: "Guerres" })
+    ).toBe(true);
+  });
+
+  // @req REQ-003
+  it("is false when the fiche declares no origin at all", () => {
+    expect(
+      hasOriginContent({
+        migrationRoutes: [],
+        historicalSettlementZones: [],
+      })
+    ).toBe(false);
   });
 });
 
@@ -377,6 +417,16 @@ describe("transformPeopleRelatedPeoples", () => {
     const result = transformPeopleRelatedPeoples(["Oyo"], undefined);
     expect(result.politicalSystem).toBeUndefined();
     expect(result.ethnicities).toEqual(["Oyo"]);
+  });
+
+  // @req REQ-003
+  it("carries the role of lineages and the religious authority", () => {
+    const result = transformPeopleRelatedPeoples(
+      yorubaPeople.ethnicities,
+      yorubaPeople.organization
+    );
+    expect(result.roleOfLineages).toContain("lignages");
+    expect(result.religiousAuthority).toContain("Alaafin");
   });
 });
 

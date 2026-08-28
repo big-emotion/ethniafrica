@@ -18,13 +18,17 @@ export function PeopleNamingBlock({
   nameMain,
   selfAppellation,
   exonyms,
+  originOfExonyms,
   whyProblematic,
+  contemporaryUsage,
   isoCode,
 }: {
   nameMain: string;
   selfAppellation?: string | null;
   exonyms?: string[] | null;
+  originOfExonyms?: string | null;
   whyProblematic?: string | null;
+  contemporaryUsage?: string | null;
   isoCode?: string;
 }) {
   return (
@@ -37,12 +41,32 @@ export function PeopleNamingBlock({
         exonyms={exonyms ?? []}
       />
 
+      {/* Who did the naming, and from where. 786 of 789 fiches answer it, and
+          until now none of them showed the answer: the field was read only by
+          the games engine. It comes before the objection because the objection
+          is to what it describes. */}
+      {originOfExonyms && (
+        <p className="text-afh-small">
+          <strong>D&apos;où viennent ces noms.</strong> {originOfExonyms}
+        </p>
+      )}
+
       {/* 316 of the corpus's 789 fiches carry no whyProblematic. Rendering the
           lead-in unconditionally would announce an explanation and then give
           none, on 40 % of the corpus. */}
       {whyProblematic && (
         <p className="text-afh-small">
           <strong>Pourquoi ces noms posent problème.</strong> {whyProblematic}
+        </p>
+      )}
+
+      {/* What the name is today — claimed, tolerated or refused. Declared by
+          all 789 fiches, and the closing beat of the section: the reader has
+          been told where the names came from and what is wrong with them, and
+          would otherwise be left without knowing which one to use. */}
+      {contemporaryUsage && (
+        <p className="text-afh-small">
+          <strong>L&apos;usage aujourd&apos;hui.</strong> {contemporaryUsage}
         </p>
       )}
     </div>
