@@ -18,6 +18,7 @@ import {
 } from "@/lib/supabase/queries/afrik/module-zero-batch";
 import {
   isQuizEligible,
+  toQuizConfidenceScore,
   type QuizAssertionSource,
 } from "@/lib/quiz/eligibility";
 import { toSourceTier } from "@/types/sources";
@@ -89,50 +90,62 @@ interface SourceGateRow {
 const QUIZ_QUESTION_COLUMNS =
   "id, template_id, audience, difficulty, entity_type, entity_id, field_path, prompt_fr, options_fr, correct_option, explanation_fr, assertion_id, source_ids";
 
-function rungsFor(
-  audience: QuizAudience,
-  counts: Map<string, number>
-): QuizSegmentRungSummary[] {
-  const range = DIFFICULTY_RUNGES[audience];
-  const rungs: QuizSegmentRungSummary[] = [];
-  for (let difficulty = range.min; difficulty <= range.max; difficulty += 1) {
-    rungs.push({
-      difficulty,
-      activeQuestionCount: counts.get(`${audience}:${difficulty}`) ?? 0,
-    });
+/** Every (audience, difficulty) pair the ladders offer — the rungs to count. */
+function everyRung(): Array<{ audience: QuizAudience; difficulty: number }> {
+  const rungs: Array<{ audience: QuizAudience; difficulty: number }> = [];
+  for (const audience of QUIZ_AUDIENCES) {
+    const range = DIFFICULTY_RUNGES[audience];
+    for (let difficulty = range.min; difficulty <= range.max; difficulty += 1) {
+      rungs.push({ audience, difficulty });
+    }
   }
   return rungs;
 }
 
 /**
- * Five segments with per-rung active question counts, in one aggregate
- * query (no N+1) — counts are grouped client-side per (audience, difficulty).
+ * Five segments with per-rung active question counts.
+ *
+ * Counted server-side, one `head` request per rung, rather than by reading the
+ * rows and tallying them here: PostgREST caps a select at 1000 rows and says
+ * nothing, so tallying returned 1000 for the bank's 11 879 questions — the
+ * first thousand rows all being `children`, the picker announced the other
+ * four segments as empty and refused to launch them. The request count is
+ * bounded by the ladders (14 rungs), not by how far the bank grows, and no row
+ * travels.
  */
 // @req REQ-103
 export async function getQuizSegments(): Promise<QuizSegmentSummary[]> {
   const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from("quiz_questions")
-    .select("audience, difficulty")
-    .is("revoked_at", null);
 
   const counts = new Map<string, number>();
-  if (error) {
-    logger.error("quizService.getQuizSegments failed", error);
-  } else {
-    for (const row of (data ?? []) as Array<{
-      audience: QuizAudience;
-      difficulty: number;
-    }>) {
-      const key = `${row.audience}:${row.difficulty}`;
-      counts.set(key, (counts.get(key) ?? 0) + 1);
-    }
-  }
+  await Promise.all(
+    everyRung().map(async ({ audience, difficulty }) => {
+      const { count, error } = await supabase
+        .from("quiz_questions")
+        .select("id", { count: "exact", head: true })
+        .eq("audience", audience)
+        .eq("difficulty", difficulty)
+        .is("revoked_at", null);
 
-  return QUIZ_AUDIENCES.map((audience) => ({
-    audience,
-    rungs: rungsFor(audience, counts),
-  }));
+      if (error) {
+        logger.error("quizService.getQuizSegments failed", error);
+        return;
+      }
+      counts.set(`${audience}:${difficulty}`, count ?? 0);
+    })
+  );
+
+  return QUIZ_AUDIENCES.map((audience) => {
+    const range = DIFFICULTY_RUNGES[audience];
+    const rungs: QuizSegmentRungSummary[] = [];
+    for (let difficulty = range.min; difficulty <= range.max; difficulty += 1) {
+      rungs.push({
+        difficulty,
+        activeQuestionCount: counts.get(`${audience}:${difficulty}`) ?? 0,
+      });
+    }
+    return { audience, rungs };
+  });
 }
 
 /**
@@ -241,7 +254,7 @@ export async function composeQuizSession(
       }));
 
     const gate = isQuizEligible({
-      confidenceScore: confidence?.score ?? 0,
+      confidenceScore: toQuizConfidenceScore(confidence?.score),
       lastHumanAuditAt: confidence?.lastHumanAuditAt ?? null,
       assertionSources,
       openFlagCount: flags?.openCount ?? 0,

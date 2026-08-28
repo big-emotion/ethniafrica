@@ -57,6 +57,23 @@ export type QuizEligibilityResult =
 // @req REQ-103
 export const DEFAULT_QUIZ_MIN_CONFIDENCE = 60;
 
+/**
+ * `confidence_scores.score` is stored as a `[0,1]` decimal; the threshold
+ * above is on a 0-100 scale. The conversion lives here, next to the bar it
+ * feeds, because two callers read that same column — the generation sweep and
+ * the serve-time re-check — and only one of them used to convert. The other
+ * compared a raw 0.68 against 60, so every question in the bank failed the
+ * gate and players got an empty session.
+ *
+ * A missing score yields 0, which fails the gate rather than defaulting open.
+ */
+// @req REQ-103
+export function toQuizConfidenceScore(
+  storedScore: number | null | undefined
+): number {
+  return storedScore != null ? Math.round(storedScore * 100) : 0;
+}
+
 /** Reads QUIZ_MIN_CONFIDENCE at call time so callers/tests can override it per-invocation. */
 // @req REQ-103
 export function getQuizMinConfidence(): number {

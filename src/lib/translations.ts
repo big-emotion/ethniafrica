@@ -390,6 +390,9 @@ export const translations = {
       nextQuestion: "Question suivante",
       seeScore: "Voir le score",
       loadingSession: "Chargement de la session…",
+      emptySession:
+        "Aucune question disponible pour ce niveau — réessaie plus tard.",
+      backToPicker: "Choisir un autre parcours",
       sessionError:
         "Impossible de charger cette session — réessaie dans un instant.",
       scoreHeading: "Score",

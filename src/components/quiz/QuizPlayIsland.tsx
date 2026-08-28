@@ -72,7 +72,25 @@ export const QuizPlayIsland = ({
     );
   }
 
-  if (!session.currentQuestion) return null;
+  // The FR65 gate runs again at serve time, so a rung the picker counted as
+  // stocked can still compose to zero questions. Say so and offer the way
+  // back — rendering nothing stranded the player on a blank page.
+  if (!session.currentQuestion) {
+    return (
+      <div className={cn("flex flex-col items-start gap-4", className)}>
+        <p role="status" className="text-afh-body text-afh-text-soft">
+          {t.emptySession}
+        </p>
+        <button
+          type="button"
+          onClick={onExit}
+          className="min-h-11 rounded-afh-lg border border-afh-border bg-afh-surface px-4 text-afh-body text-afh-text transition-colors hover:border-primary"
+        >
+          {t.backToPicker}
+        </button>
+      </div>
+    );
+  }
 
   const isLastQuestion = session.currentIndex + 1 >= session.totalQuestions;
 
