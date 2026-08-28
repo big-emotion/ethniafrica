@@ -66,7 +66,7 @@ const CHIP_STYLE: CSSProperties = {
   borderRadius: "var(--afh-radius-full)",
   border: "1px solid var(--afh-border)",
   background: "var(--afh-surface)",
-  fontSize: "var(--afh-text-nano)",
+  fontSize: "var(--afh-text-caption)",
   color: "var(--afh-text-soft)",
 };
 

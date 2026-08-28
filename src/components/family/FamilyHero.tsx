@@ -39,7 +39,7 @@ export function FamilyHero({ data }: FamilyHeroProps) {
     >
       <div className="flex flex-wrap items-center gap-3">
         <h1
-          className="text-4xl leading-none tracking-[-0.02em]"
+          className="text-afh-h1 leading-none tracking-[-0.02em]"
           style={{
             fontFamily: "var(--country-font-display)",
             fontWeight: 900,
@@ -52,7 +52,10 @@ export function FamilyHero({ data }: FamilyHeroProps) {
           doctrineSlug={doctrineSlug ?? undefined}
         />
       </div>
-      <p className="mt-2 text-sm" style={{ color: "var(--country-text-soft)" }}>
+      <p
+        className="mt-2 text-afh-small"
+        style={{ color: "var(--country-text-soft)" }}
+      >
         {data.id}
       </p>
       <div className="mt-3">

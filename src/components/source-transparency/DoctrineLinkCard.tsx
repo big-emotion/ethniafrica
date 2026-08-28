@@ -6,6 +6,7 @@ export type DoctrineSlug =
   | "heritage-colonial"
   | "topics-sensibles";
 
+// @req REQ-019
 export function isDoctrineSlug(value: string): value is DoctrineSlug {
   switch (value) {
     case "endonymes-vs-exonymes":
@@ -35,6 +36,7 @@ const DOCTRINE_COPY: Record<DoctrineSlug, string> = {
     "Ce sujet est sensible. Notre doctrine éditoriale encadre la rédaction. Voir la doctrine.",
 };
 
+// @req REQ-019
 export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
   const copy = DOCTRINE_COPY[slug];
   const href =
@@ -44,7 +46,7 @@ export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
 
   return (
     <aside
-      className="rounded-[var(--country-radius-xl,16px)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-[13px] md:text-[14px] leading-[1.6]"
+      className="rounded-[var(--country-radius-xl,16px)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-afh-small leading-[1.6]"
       style={{
         backgroundColor: "var(--afh-bg-warm, var(--country-bg))",
         color: "var(--country-text, #1a1a1a)",

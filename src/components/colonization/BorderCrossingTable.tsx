@@ -53,24 +53,27 @@ export function BorderCrossingTable({ crossings }: BorderCrossingTableProps) {
   return (
     <div className="BorderCrossingTable">
       <table className="w-full border-collapse">
-        <caption className={`text-left text-xs mb-2 ${textSoft}`}>
+        <caption className={`text-left text-afh-caption mb-2 ${textSoft}`}>
           Frontières coloniales, peuples traversés et sources
         </caption>
         <thead>
           <tr>
             <th
               scope="col"
-              className="text-left text-xs font-semibold pb-2 pr-4"
+              className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
               Frontière
             </th>
             <th
               scope="col"
-              className="text-left text-xs font-semibold pb-2 pr-4"
+              className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
               Peuples concernés
             </th>
-            <th scope="col" className="text-left text-xs font-semibold pb-2">
+            <th
+              scope="col"
+              className="text-left text-afh-caption font-semibold pb-2"
+            >
               Sources
             </th>
           </tr>
@@ -78,10 +81,10 @@ export function BorderCrossingTable({ crossings }: BorderCrossingTableProps) {
         <tbody>
           {crossings.map((crossing) => (
             <tr key={`${crossing.countryA.iso3}-${crossing.countryB.iso3}`}>
-              <td className={`py-2 pr-4 text-sm ${text}`}>
+              <td className={`py-2 pr-4 text-afh-small ${text}`}>
                 {crossing.countryA.nameFr} ↔ {crossing.countryB.nameFr}
               </td>
-              <td className={`py-2 pr-4 text-sm ${text}`}>
+              <td className={`py-2 pr-4 text-afh-small ${text}`}>
                 {crossing.peoples.length > 0 ? (
                   <ul className="space-y-1">
                     {crossing.peoples.map((people) => (
@@ -92,7 +95,7 @@ export function BorderCrossingTable({ crossings }: BorderCrossingTableProps) {
                   <span>—</span>
                 )}
               </td>
-              <td className={`py-2 text-sm ${text}`}>
+              <td className={`py-2 text-afh-small ${text}`}>
                 {crossing.sources.length > 0 ? (
                   <ul className="space-y-1">
                     {crossing.sources.map((source) =>

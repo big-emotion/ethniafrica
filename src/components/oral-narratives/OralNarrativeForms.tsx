@@ -145,7 +145,9 @@ function validateIntake(values: OralNarrativeIntakeValues): IntakeErrors {
 function FieldError({ children }: { children?: string }) {
   if (!children) return null;
 
-  return <p className="text-sm font-medium text-destructive">{children}</p>;
+  return (
+    <p className="text-afh-small font-medium text-destructive">{children}</p>
+  );
 }
 
 // @req REQ-095
@@ -215,7 +217,7 @@ export function OralNarrativeIntakeForm({
     <Card className="mx-auto w-full max-w-3xl">
       <CardHeader>
         <CardTitle>Proposer un récit oral</CardTitle>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-afh-small text-muted-foreground">
           Les récits restent restreints {"jusqu'à"} la revue éditoriale et à la
           clarification des droits.
         </p>
@@ -223,7 +225,9 @@ export function OralNarrativeIntakeForm({
       <CardContent>
         <form className="space-y-8" onSubmit={handleSubmit} noValidate>
           <fieldset className="space-y-4">
-            <legend className="text-base font-semibold">Attribution</legend>
+            <legend className="text-afh-small font-semibold">
+              Attribution
+            </legend>
             <RadioGroup
               value={displayMode}
               onValueChange={(value) =>
@@ -279,7 +283,7 @@ export function OralNarrativeIntakeForm({
           </fieldset>
 
           <fieldset className="space-y-4">
-            <legend className="text-base font-semibold">Contexte</legend>
+            <legend className="text-afh-small font-semibold">Contexte</legend>
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="narrative-date">Date du récit</Label>
@@ -294,7 +298,7 @@ export function OralNarrativeIntakeForm({
                 <Label htmlFor="place-precision">Précision du lieu</Label>
                 <select
                   id="place-precision"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-afh-small"
                   value={placePrecision}
                   onChange={(event) =>
                     selectOption(
@@ -325,7 +329,7 @@ export function OralNarrativeIntakeForm({
                 <Label htmlFor="narrative-kind">Type de récit</Label>
                 <select
                   id="narrative-kind"
-                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-afh-small"
                   value={narrativeKind}
                   onChange={(event) =>
                     selectOption(
@@ -346,7 +350,7 @@ export function OralNarrativeIntakeForm({
           </fieldset>
 
           <fieldset className="space-y-4">
-            <legend className="text-base font-semibold">Contenu</legend>
+            <legend className="text-afh-small font-semibold">Contenu</legend>
             <div className="space-y-2">
               <Label htmlFor="narrative-transcript">Transcription</Label>
               <Textarea
@@ -378,7 +382,7 @@ export function OralNarrativeIntakeForm({
           </fieldset>
 
           <fieldset className="space-y-4">
-            <legend className="text-base font-semibold">
+            <legend className="text-afh-small font-semibold">
               Variante et visibilité
             </legend>
             <div className="space-y-2">
@@ -478,7 +482,7 @@ export function OralNarrativeModerationForm({
             <Label htmlFor="review-status">État de la revue</Label>
             <select
               id="review-status"
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-afh-small"
               value={reviewStatus}
               onChange={(event) =>
                 selectOption(event.target.value, REVIEW_STATUSES, (option) =>
@@ -495,7 +499,7 @@ export function OralNarrativeModerationForm({
             <Label htmlFor="rights-status">État des droits</Label>
             <select
               id="rights-status"
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-afh-small"
               value={rightsStatus}
               onChange={(event) =>
                 selectOption(event.target.value, RIGHTS_STATUSES, (option) =>
@@ -509,7 +513,7 @@ export function OralNarrativeModerationForm({
             </select>
           </div>
           <fieldset className="space-y-2">
-            <legend className="text-sm font-medium">Publication</legend>
+            <legend className="text-afh-small font-medium">Publication</legend>
             <RadioGroup
               value={visibility}
               onValueChange={(value) =>
@@ -531,7 +535,9 @@ export function OralNarrativeModerationForm({
             </RadioGroup>
           </fieldset>
           {error ? (
-            <p className="text-sm font-medium text-destructive">{error}</p>
+            <p className="text-afh-small font-medium text-destructive">
+              {error}
+            </p>
           ) : null}
           <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
             {onCancel ? (

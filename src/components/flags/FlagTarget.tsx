@@ -148,13 +148,13 @@ export function FlagTarget({
           </DialogHeader>
 
           {gate.status === "checking" && (
-            <p role="status" className="text-sm text-afh-text-muted">
+            <p role="status" className="text-afh-small text-afh-text-muted">
               Vérification de votre compte…
             </p>
           )}
 
           {gate.status === "unauthenticated" && (
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-afh-small">
               <p>Vous devez être connecté pour signaler un problème.</p>
               <div className="flex flex-col gap-2 min-[480px]:flex-row">
                 <a
@@ -174,7 +174,7 @@ export function FlagTarget({
           )}
 
           {gate.status === "unconfirmed" && (
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-afh-small">
               <p>merci de confirmer votre âge pour contribuer</p>
               <a
                 className="underline underline-offset-2 text-afh-terracotta"

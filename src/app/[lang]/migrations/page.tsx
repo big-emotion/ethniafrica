@@ -34,7 +34,7 @@ import { translations } from "@/lib/translations";
 
 const t = translations.fr.migrations;
 
-// @req FR95
+// @req REQ-101 @req FR95
 export const metadata: Metadata = {
   title: t.pageTitle,
   description: t.pageSubtitle,
@@ -108,7 +108,7 @@ interface MigrationsPageProps {
   searchParams: Promise<{ peuple?: string }>;
 }
 
-// @req FR78 @req FR81 @req FR82 @req FR83
+// @req REQ-101 @req FR78 @req FR81 @req FR82 @req FR83
 export default async function MigrationsPage({
   searchParams,
 }: MigrationsPageProps) {
@@ -141,7 +141,7 @@ export default async function MigrationsPage({
 
   const filterChip = peopleId && (
     <div className="mb-4 flex flex-wrap items-center gap-2">
-      <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-sm">
+      <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-afh-small">
         {`${t.filterChip.label} : ${peopleName ?? peopleId}`}
         <Link
           href="/fr/migrations"

@@ -47,6 +47,7 @@ const STATUS_CONFIG: Record<
  * withdrawn. When moderator notes are present and the status is terminal
  * (rejected or duplicate), they are displayed verbatim in a <blockquote>.
  */
+// @req REQ-014
 export function FlagPublicStatus({
   status,
   moderatorNotes,
@@ -61,14 +62,14 @@ export function FlagPublicStatus({
         variant="outline"
         data-testid="flag-status-badge"
         data-status={status}
-        className="border-transparent font-medium text-sm px-3 py-1"
+        className="border-transparent font-medium text-afh-small px-3 py-1"
         style={config.style}
       >
         {config.label}
       </Badge>
       {showRationale && (
         <blockquote
-          className="border-l-4 border-muted pl-4 text-muted-foreground italic text-sm"
+          className="border-l-4 border-muted pl-4 text-muted-foreground italic text-afh-small"
           role="blockquote"
         >
           {moderatorNotes}

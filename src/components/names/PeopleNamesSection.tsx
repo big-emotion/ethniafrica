@@ -71,7 +71,7 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
     >
       <h2
         id="noms-title"
-        className="text-base font-bold text-[var(--country-text)] md:text-lg"
+        className="text-afh-small font-bold text-[var(--country-text)]"
       >
         Noms &amp; appellations
       </h2>

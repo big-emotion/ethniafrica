@@ -54,6 +54,26 @@ export interface PeopleDetailViewV2Props {
   turnstileSiteKey?: string;
 }
 
+/**
+ * The people fiche's parchment — the prose half of the page, under the globe.
+ *
+ * It is a **server component**, fed by the route. It used to be a client one
+ * that fetched its own fiche, fragmentation, names dossier and relations from
+ * the browser, which cost the page its server rendering — and with it the axe
+ * audit and the Lighthouse score, on a fiche that is measured on both. The
+ * route already awaits every one of those, so the fetching was duplicated as
+ * well as costly.
+ *
+ * Two sections open it, in the mockup's order, before any figure:
+ *   1. "Le nom porté, les noms subis" — the fiche's editorial position.
+ *   2. "Pourquoi la carte ne trace pas de frontière" — the grammar of the
+ *      globe above, in the reader's terms, plus the legend for it.
+ *
+ * The relations preview is fed by the route, from the ego network it already
+ * awaited. It briefly stood empty here while FicheSequence's links panel was
+ * the fiche's relations surface; that panel no longer runs above the
+ * parchment, so this is the surface.
+ */
 // @req REQ-091
 export function PeopleDetailViewV2({
   people,
@@ -164,13 +184,13 @@ export function PeopleDetailViewV2({
                 }}
                 turnstileSiteKey={turnstileSiteKey}
                 triggerLabel="Signaler cette section"
-                className="w-auto text-xs"
+                className="w-auto text-afh-caption"
               />
             ) : (
               <button
                 type="button"
                 disabled
-                className="rounded-md border border-dashed px-2 py-1 text-xs"
+                className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
                 style={{
                   borderColor: "var(--afh-border)",
                   color: "var(--afh-text-soft)",

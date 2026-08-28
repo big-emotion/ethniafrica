@@ -286,17 +286,17 @@ function SourceItem({
       className="space-y-1 rounded-md border border-[var(--afh-border,var(--country-border,#e5e7eb))] bg-[var(--afh-surface,var(--country-surface,#fff))] p-3"
     >
       <div className="flex items-start justify-between gap-2">
-        <p className="text-sm font-medium text-[var(--afh-fg,var(--country-fg,#111827))]">
+        <p className="text-afh-small font-medium text-[var(--afh-fg,var(--country-fg,#111827))]">
           {source.title}
         </p>
         <span
           data-testid={`source-tier-${source.id}`}
-          className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-xs font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
+          className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
         >
           {TIER_LABELS[source.tier]}
         </span>
       </div>
-      <p className="text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
+      <p className="text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
         {[source.author, source.year, source.page].filter(Boolean).join(" · ")}
       </p>
       {source.url ? (
@@ -306,7 +306,7 @@ function SourceItem({
             href={sanitizedUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block break-all text-xs underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
+            className="inline-block break-all text-afh-caption underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
           >
             {source.url}
           </a>
@@ -315,7 +315,7 @@ function SourceItem({
             data-testid={`source-url-${source.id}`}
             aria-disabled="true"
             className={cn(
-              "inline-block break-all text-xs underline underline-offset-2 text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]",
+              "inline-block break-all text-afh-caption underline underline-offset-2 text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]",
               isBroken && "line-through"
             )}
           >
@@ -326,7 +326,7 @@ function SourceItem({
       {isBroken && source.brokenAt ? (
         <span
           data-testid={`source-broken-badge-${source.id}`}
-          className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-[11px] font-medium text-[var(--afh-warn-fg,#92400e)]"
+          className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-warn-fg,#92400e)]"
         >
           lien non résolu — signalé le {formatBrokenDate(source.brokenAt)}
         </span>
@@ -341,13 +341,13 @@ function SourceItem({
             }}
             turnstileSiteKey={turnstileSiteKey}
             triggerLabel="Signaler cette source"
-            className="w-auto text-xs"
+            className="w-auto text-afh-caption"
           />
         ) : (
           <button
             type="button"
             disabled
-            className="rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-2 py-1 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
+            className="rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-2 py-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
             aria-label="Signaler cette source — bientôt disponible"
           >
             Signaler cette source (bientôt disponible)
@@ -370,7 +370,7 @@ function TierGroup({
   if (sources.length === 0) return null;
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
-      <h4 className="text-xs font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
+      <h4 className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
         {TIER_LABELS[tier]}
       </h4>
       <ul className="space-y-2">
@@ -478,12 +478,12 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         >
           <h3
             id={statementId}
-            className="font-serif text-base italic text-[var(--afh-fg,var(--country-fg,#111827))]"
+            className="font-serif text-afh-small italic text-[var(--afh-fg,var(--country-fg,#111827))]"
           >
             « {assertion.statement} »
           </h3>
           {assertion.position ? (
-            <p className="mt-1 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
+            <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
               Position : {assertion.position}
             </p>
           ) : null}
@@ -495,14 +495,14 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
           className="rounded-md bg-[var(--afh-muted,var(--country-muted,#f9fafb))] p-3"
         >
           <div className="flex items-baseline justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
+            <span className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
               Niveau de confiance
             </span>
-            <span className="text-lg font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
+            <span className="text-afh-h3 font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
               {Math.round(assertion.confidenceScore * 100)}%
             </span>
           </div>
-          <p className="mt-1 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
+          <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
             Calculé à partir de {assertion.sourceCount} source
             {assertion.sourceCount > 1 ? "s" : ""}
             {assertion.lastHumanAuditAt
@@ -517,7 +517,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
           <section
             data-testid="section-flags"
             role="status"
-            className="rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-sm text-[var(--afh-warn-fg,#92400e)]"
+            className="rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
           >
             {openFlagCount} signalement{openFlagCount > 1 ? "s" : ""} ouvert
             {openFlagCount > 1 ? "s" : ""} sur cette assertion.
@@ -526,7 +526,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 
         {/* 4. Sources */}
         <section data-testid="section-sources" className="space-y-4">
-          <h3 className="text-sm font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
+          <h3 className="text-afh-small font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
             Sources
           </h3>
           {positions && positions.length > 0 ? (
@@ -537,7 +537,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   data-testid={`position-group-${idx}`}
                   className="space-y-2 rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] p-3"
                 >
-                  <p className="text-xs font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
+                  <p className="text-afh-caption font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
                   <SourceList
@@ -559,7 +559,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               href={safeUrl(revisionUrl) as string}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
+              className="text-afh-caption underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
             >
               Voir l&apos;historique des révisions
             </a>
@@ -583,7 +583,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
             <button
               type="button"
               disabled
-              className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
+              className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
               aria-label="Signaler un problème — bientôt disponible"
             >
               Signaler un problème (bientôt disponible)
@@ -598,7 +598,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
             aria-hidden={!showCite}
             tabIndex={showCite ? 0 : -1}
             className={cn(
-              "text-xs underline underline-offset-2 transition-opacity",
+              "text-afh-caption underline underline-offset-2 transition-opacity",
               reducedMotion ? "duration-[1ms]" : "duration-300",
               showCite ? "opacity-100" : "pointer-events-none opacity-0"
             )}

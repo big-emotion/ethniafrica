@@ -59,6 +59,7 @@ function clampYear(
 }
 
 // @req FR78 @req FR79 @req UX-DR10
+// @req REQ-101
 export function MigrationsAtlasView({
   events,
   scrubberBounds,
@@ -141,7 +142,7 @@ export function MigrationsAtlasView({
                 data-testid={`migration-list-item-${event.id}`}
                 onClick={() => selectEvent(event.id)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-2 rounded-md border border-border px-3 py-2 text-left text-sm motion-safe:transition-colors",
+                  "flex w-full items-center justify-between gap-2 rounded-md border border-border px-3 py-2 text-left text-afh-small motion-safe:transition-colors",
                   pressed && "border-afh-atlas-path-selected font-semibold"
                 )}
               >

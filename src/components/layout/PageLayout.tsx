@@ -97,7 +97,7 @@ export const PageLayout = ({
                     height={48}
                     className="object-contain"
                   />
-                  <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground page-title-gradient">
+                  <h1 className="text-afh-h1 font-display font-bold text-foreground page-title-gradient">
                     {displayTitle}
                   </h1>
                 </div>

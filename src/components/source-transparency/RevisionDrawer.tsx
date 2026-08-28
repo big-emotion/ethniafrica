@@ -148,7 +148,7 @@ function RevisionRow({ item }: { item: RevisionItem }) {
     >
       <a
         href={item.pinned_url}
-        className="flex flex-wrap items-center gap-2 text-sm font-medium text-[var(--afh-accent,#1d4ed8)] underline underline-offset-2 hover:no-underline"
+        className="flex flex-wrap items-center gap-2 text-afh-small font-medium text-[var(--afh-accent,#1d4ed8)] underline underline-offset-2 hover:no-underline"
       >
         <span className="font-semibold">v{item.version}</span>
         <time
@@ -164,7 +164,7 @@ function RevisionRow({ item }: { item: RevisionItem }) {
         )}
       </a>
       {item.reason && (
-        <p className="text-xs text-[var(--afh-fg,#111827)]">
+        <p className="text-afh-caption text-[var(--afh-fg,#111827)]">
           {displayReason}
           {needsTrunc && (
             <>
@@ -272,7 +272,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
         {state.phase === "loading" && (
           <div
             data-testid="revision-loading"
-            className="py-8 text-center text-sm text-[var(--afh-fg-muted,#6b7280)]"
+            className="py-8 text-center text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
             aria-live="polite"
           >
             Chargement…
@@ -281,14 +281,14 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
 
         {state.phase === "error" && (
           <div
-            className="space-y-3 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-4 text-sm text-[var(--afh-warn-fg,#92400e)]"
+            className="space-y-3 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-4 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
             role="alert"
           >
             <p>Impossible de charger l&apos;historique.</p>
             <button
               type="button"
               onClick={() => load()}
-              className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-xs font-medium text-white"
+              className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-afh-caption font-medium text-white"
             >
               Réessayer
             </button>
@@ -298,7 +298,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
         {state.phase === "success" && state.revisions.length === 0 && (
           <p
             data-testid="revision-empty"
-            className="py-8 text-center text-sm text-[var(--afh-fg-muted,#6b7280)]"
+            className="py-8 text-center text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
           >
             Aucune révision publiée — fiche initiale
           </p>
@@ -323,7 +323,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
                     }
                   }}
                   className={cn(
-                    "rounded-md border border-[var(--afh-border,#e5e7eb)] px-4 py-2 text-sm",
+                    "rounded-md border border-[var(--afh-border,#e5e7eb)] px-4 py-2 text-afh-small",
                     state.loadingMore && "opacity-50 cursor-not-allowed"
                   )}
                 >

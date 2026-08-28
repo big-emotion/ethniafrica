@@ -352,7 +352,7 @@ export function AccessAxes({
           max-width: 1140px;
           margin: 0 auto 16px;
           font-family: var(--afh-font-mono);
-          font-size: 12.5px;
+          font-size: var(--home-text-axes-lead);
           line-height: 1.45;
           /* Same class of small content type as the axis figures, held to
              the same AA bar by src/styles/__tests__/colorTokens.test.ts. */
@@ -469,7 +469,7 @@ export function AccessAxes({
         .access-axis h2 {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: 26px;
+          font-size: var(--home-text-axis-name);
           margin: 0;
           letter-spacing: -0.015em;
           position: relative;
@@ -480,7 +480,7 @@ export function AccessAxes({
           /* Pulled up against the title: the two read as one statement,
              the figure below them as its evidence. */
           margin: -6px 0 0;
-          font-size: 13.5px;
+          font-size: var(--home-text-axis-stake);
           line-height: 1.4;
           /* Content at small type, so it takes the muted *pair* token that
              clears AA on both cards — never --afh-text-muted, which clears
@@ -493,7 +493,7 @@ export function AccessAxes({
         .access-axis-figure {
           margin: -10px 0 0;
           font-family: var(--afh-font-mono);
-          font-size: 12px;
+          font-size: var(--home-text-axis-figure);
           /* The count is content, not chrome, and it is the smallest type
              on the page. --afh-text-muted clears AA on neither card
              (3.29:1 parchment, 4.21:1 night); the muted *pair* token does,
@@ -522,7 +522,7 @@ export function AccessAxes({
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          font-size: 14px;
+          font-size: var(--home-text-axis-cta);
           font-weight: 700;
           /* Text, so it takes --accent-ink, not the --accent fill: the fill
              measures 3.10-4.39:1 on the card and drops further once the hover
@@ -625,16 +625,14 @@ export function AccessAxes({
             padding: 16px 18px;
           }
           .access-axis-glyph { grid-area: glyph; width: 42px; height: 42px; }
-          .access-axis h2 { grid-area: name; font-size: 21px; }
+          .access-axis h2 { grid-area: name; }
           .access-axis-stake {
             grid-area: stake;
             margin: 0;
-            font-size: 12.5px;
           }
           .access-axis-figure {
             grid-area: figure;
             margin: 0;
-            font-size: 11.5px;
           }
           /* Pending, not disabled: the hub behind it is where the reader
            sees what is coming, so it stays reachable and keyboard-
@@ -650,7 +648,7 @@ export function AccessAxes({
         }
 
         .access-axis-cta { grid-area: arrow; margin: 0; font-size: 0; }
-          .access-axis-arrow { font-size: 19px; }
+          .access-axis-arrow { font-size: var(--home-text-axis-arrow); }
           .access-axis:hover { transform: none; }
         }
       `}</style>

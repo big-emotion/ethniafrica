@@ -25,6 +25,7 @@ export interface ColonizationModulePageProps {
  * equivalent) render the same event set.
  */
 // @req FR90
+// @req REQ-101
 export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
@@ -39,7 +40,7 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
         >
           <h2
             id="colonization-fragmentation-heading"
-            className="text-xl font-semibold mb-4 text-afh-text"
+            className="text-afh-h2 font-semibold mb-4 text-afh-text"
           >
             {t.fragmentation.title}
           </h2>
@@ -63,7 +64,7 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
         >
           <h2
             id="colonization-timeline-heading"
-            className="text-xl font-semibold mb-4 text-afh-text"
+            className="text-afh-h2 font-semibold mb-4 text-afh-text"
           >
             {t.timeline.title}
           </h2>
@@ -82,7 +83,7 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
         >
           <h2
             id="colonization-sources-heading"
-            className="text-xl font-semibold mb-4 text-afh-text"
+            className="text-afh-h2 font-semibold mb-4 text-afh-text"
           >
             {t.sources.title}
           </h2>
@@ -91,7 +92,7 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
               <li key={`${source.peopleId}-${source.countryIso3}`}>
                 <a
                   href={`#fragmentation-${source.peopleId}-${source.countryIso3}`}
-                  className="text-sm underline text-[color:var(--afh-terracotta)]"
+                  className="text-afh-small underline text-[color:var(--afh-terracotta)]"
                 >
                   {t.sources.linkLabel}
                 </a>

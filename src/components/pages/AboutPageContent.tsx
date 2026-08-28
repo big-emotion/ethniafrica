@@ -622,7 +622,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
   return (
     <ReadingColumn className="mx-auto space-y-8">
-      <h1 className="text-3xl font-display font-bold">{t.title}</h1>
+      <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
 
       {/* Section About */}
       <section className="space-y-4">
@@ -642,7 +642,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
         {/* International Sources */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-afh-h2 font-semibold">
             {t.sources.international.title}
           </h3>
 
@@ -665,7 +665,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           {/* CIA */}
           <div className="ml-4 space-y-2">
             <p className="font-semibold">{t.sources.international.cia.title}</p>
-            <p className="text-sm text-muted-foreground italic">
+            <p className="text-afh-small text-muted-foreground italic">
               {t.sources.international.cia.description}
             </p>
             <ul className="list-disc space-y-1">
@@ -714,11 +714,13 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
         {/* Regional Sources */}
         <div className="space-y-6">
-          <h3 className="text-xl font-semibold">{t.sources.regional.title}</h3>
+          <h3 className="text-afh-h2 font-semibold">
+            {t.sources.regional.title}
+          </h3>
 
           {/* North Africa */}
           <div className="ml-4 space-y-3">
-            <p className="text-lg font-semibold">
+            <p className="text-afh-h3 font-semibold">
               {t.sources.regional.northAfrica.title}
             </p>
             {renderCountrySources(t.sources.regional.northAfrica.countries)}
@@ -726,7 +728,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
           {/* West Africa */}
           <div className="ml-4 space-y-3">
-            <p className="text-lg font-semibold">
+            <p className="text-afh-h3 font-semibold">
               {t.sources.regional.westAfrica.title}
             </p>
             {renderCountrySources(t.sources.regional.westAfrica.countries)}
@@ -734,7 +736,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
           {/* Central Africa */}
           <div className="ml-4 space-y-3">
-            <p className="text-lg font-semibold">
+            <p className="text-afh-h3 font-semibold">
               {t.sources.regional.centralAfrica.title}
             </p>
             {renderCountrySources(t.sources.regional.centralAfrica.countries)}
@@ -742,7 +744,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
           {/* East Africa */}
           <div className="ml-4 space-y-3">
-            <p className="text-lg font-semibold">
+            <p className="text-afh-h3 font-semibold">
               {t.sources.regional.eastAfrica.title}
             </p>
             {renderCountrySources(t.sources.regional.eastAfrica.countries)}
@@ -750,7 +752,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
           {/* Southern Africa */}
           <div className="ml-4 space-y-3">
-            <p className="text-lg font-semibold">
+            <p className="text-afh-h3 font-semibold">
               {t.sources.regional.southernAfrica.title}
             </p>
             {renderCountrySources(t.sources.regional.southernAfrica.countries)}
@@ -759,7 +761,9 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
         {/* Academic Sources */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold">{t.sources.academic.title}</h3>
+          <h3 className="text-afh-h2 font-semibold">
+            {t.sources.academic.title}
+          </h3>
 
           <div className="ml-4 space-y-3">
             {renderSourceLink(
@@ -796,7 +800,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
 
         {/* Complementary Sources */}
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-afh-h2 font-semibold">
             {t.sources.complementary.title}
           </h3>
 

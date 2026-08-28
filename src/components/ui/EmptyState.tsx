@@ -23,12 +23,12 @@ export function EmptyState({
     <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm text-afh-text-soft text-center rounded-md">
       <StateMedallion />
 
-      <p data-testid="state-copy" className="text-base max-w-sm">
+      <p data-testid="state-copy" className="text-afh-small max-w-sm">
         {message}
       </p>
 
       {variant === "search" && (
-        <div className="flex flex-col gap-2 text-sm text-afh-text-soft">
+        <div className="flex flex-col gap-2 text-afh-small text-afh-text-soft">
           <p>
             Vérifiez l&apos;orthographe ou parcourez par famille linguistique.
           </p>

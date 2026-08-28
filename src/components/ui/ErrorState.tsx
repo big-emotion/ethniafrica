@@ -27,7 +27,7 @@ export function ErrorState({ errorRef, onRetry }: ErrorStateProps) {
     <div className="flex flex-col items-center justify-center min-h-[40vh] gap-6 px-4 py-10 bg-afh-bg-warm">
       <StateMedallion />
 
-      <h2 className="text-2xl font-display font-semibold text-afh-text">
+      <h2 className="text-afh-h2 font-display font-semibold text-afh-text">
         Une erreur est survenue
       </h2>
 
@@ -40,7 +40,7 @@ export function ErrorState({ errorRef, onRetry }: ErrorStateProps) {
       </p>
 
       <div className="flex items-center gap-2">
-        <code className="font-mono text-sm bg-afh-bg px-3 py-1.5 rounded border border-afh-border text-afh-text-soft">
+        <code className="font-mono text-afh-small bg-afh-bg px-3 py-1.5 rounded border border-afh-border text-afh-text-soft">
           {errorRef}
         </code>
         <Button

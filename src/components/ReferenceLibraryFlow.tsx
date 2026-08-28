@@ -234,10 +234,10 @@ export function ReferenceLibraryFlow({
       aria-labelledby="reference-library-title"
     >
       <div className="space-y-1">
-        <h3 id="reference-library-title" className="text-lg font-semibold">
+        <h3 id="reference-library-title" className="text-afh-h3 font-semibold">
           Ajouter une référence
         </h3>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-afh-small text-muted-foreground">
           Recherchez une référence déjà vérifiée ou enregistrez un ouvrage que
           vous consultez hors ligne.
         </p>
@@ -287,10 +287,12 @@ export function ReferenceLibraryFlow({
           </div>
 
           {search.isLoading && (
-            <p className="text-sm text-muted-foreground">Recherche en cours…</p>
+            <p className="text-afh-small text-muted-foreground">
+              Recherche en cours…
+            </p>
           )}
           {search.isError && (
-            <p className="text-sm text-destructive">
+            <p className="text-afh-small text-destructive">
               La recherche n’a pas pu être effectuée.
             </p>
           )}
@@ -307,7 +309,7 @@ export function ReferenceLibraryFlow({
             >
               <span>
                 <span className="block font-medium">{source.title}</span>
-                <span className="block text-xs opacity-80">
+                <span className="block text-afh-caption opacity-80">
                   {source.author} · {source.year}
                 </span>
               </span>
@@ -417,7 +419,7 @@ export function ReferenceLibraryFlow({
 
       {selectedSource && (
         <div className="space-y-4 border-t pt-4 min-[720px]:space-y-5 min-[720px]:pt-6">
-          <p className="text-sm font-medium">
+          <p className="text-afh-small font-medium">
             Référence sélectionnée : {selectedSource.title}
           </p>
 
@@ -476,7 +478,7 @@ export function ReferenceLibraryFlow({
                 onChange={(event) => setAsset(event.target.files?.[0] ?? null)}
               />
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-afh-small text-muted-foreground">
               Le scan ou le texte OCR reste privé et ne sera pas publié sans
               vérification des droits.
             </p>
@@ -493,7 +495,7 @@ export function ReferenceLibraryFlow({
       )}
 
       {message && (
-        <p className="text-sm" role="status">
+        <p className="text-afh-small" role="status">
           {message}
         </p>
       )}

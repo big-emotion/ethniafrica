@@ -63,7 +63,7 @@ export function SearchPivotCard({
         "border-l-4 border-l-[var(--accent)] bg-[var(--accent-tint)]"
       )}
     >
-      <p className="text-xs font-bold uppercase tracking-[0.11em] text-afh-text-muted">
+      <p className="text-afh-eyebrow font-bold uppercase tracking-[0.11em] text-afh-text-muted">
         Résultat principal
       </p>
 
@@ -80,7 +80,7 @@ export function SearchPivotCard({
           <Link
             href={ficheHrefFor(result, language)}
             className={cn(
-              "mt-1 inline-block text-sm underline underline-offset-2",
+              "mt-1 inline-block text-afh-small underline underline-offset-2",
               CHARTER_FOCUS_RING
             )}
           >
@@ -91,19 +91,23 @@ export function SearchPivotCard({
         <dl className="flex shrink-0 flex-col gap-1 md:text-right">
           {result.population !== undefined && (
             <>
-              <dt className="text-xs text-afh-text-muted">Population</dt>
-              <dd className="text-base font-semibold text-afh-text">
+              <dt className="text-afh-caption text-afh-text-muted">
+                Population
+              </dt>
+              <dd className="text-afh-small font-semibold text-afh-text">
                 {numberFr.format(Math.round(result.population))}
               </dd>
             </>
           )}
           {result.confidence !== undefined && (
             <>
-              <dt className="text-xs text-afh-text-muted">Confiance</dt>
+              <dt className="text-afh-caption text-afh-text-muted">
+                Confiance
+              </dt>
               {/* The database stores this on [0,1]; every chip in the product
                   reads 0-100. Converting here, once, is what keeps the two
                   scales from being confused downstream. */}
-              <dd className="text-base font-semibold text-afh-text">
+              <dd className="text-afh-small font-semibold text-afh-text">
                 {Math.round(result.confidence * 100)} %
               </dd>
             </>
@@ -128,7 +132,7 @@ export function SearchPivotCard({
             aria-label={`Famille linguistique ${result.languageFamilyName}`}
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-afh-caption">
               {result.languageFamilyName}
             </Badge>
           </Link>
@@ -139,7 +143,7 @@ export function SearchPivotCard({
             href={getCountryRoute(language, iso3)}
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-afh-caption">
               {getFrenchCountryCommonName(iso3, iso3)}
             </Badge>
           </Link>

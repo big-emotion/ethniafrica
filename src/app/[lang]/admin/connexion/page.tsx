@@ -73,13 +73,13 @@ function ModerationLoginForm() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
         <Card className="w-full max-w-md rounded-afh-xl p-8">
-          <h1 className="text-2xl font-bold mb-2 text-center">
+          <h1 className="text-afh-h2 font-bold mb-2 text-center">
             Espace modération
           </h1>
-          <p className="text-sm text-center text-muted-foreground mb-6">
+          <p className="text-afh-small text-center text-muted-foreground mb-6">
             Africa History
           </p>
-          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-sm text-center">
+          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-afh-small text-center">
             Un lien de connexion a été envoyé à <strong>{email}</strong>.
             Cliquez sur le lien dans l&apos;e-mail pour accéder à l&apos;espace
             modération.
@@ -102,10 +102,10 @@ function ModerationLoginForm() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-md rounded-afh-xl p-8">
-        <h1 className="text-2xl font-bold mb-2 text-center">
+        <h1 className="text-afh-h2 font-bold mb-2 text-center">
           Espace modération
         </h1>
-        <p className="text-sm text-center text-muted-foreground mb-6">
+        <p className="text-afh-small text-center text-muted-foreground mb-6">
           Africa History
         </p>
 
@@ -167,7 +167,7 @@ function ModerationLoginForm() {
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
+          <div className="relative flex justify-center text-afh-eyebrow uppercase">
             <span className="bg-card px-2 text-muted-foreground">
               Ou continuer par e-mail
             </span>
@@ -198,16 +198,17 @@ function ModerationLoginForm() {
   );
 }
 
+// @req REQ-052
 export default function AdminConnexionPage() {
   return (
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
           <Card className="w-full max-w-md rounded-afh-xl p-8">
-            <h1 className="text-2xl font-bold mb-2 text-center">
+            <h1 className="text-afh-h2 font-bold mb-2 text-center">
               Espace modération
             </h1>
-            <p className="text-sm text-center text-muted-foreground">
+            <p className="text-afh-small text-center text-muted-foreground">
               Chargement…
             </p>
           </Card>
