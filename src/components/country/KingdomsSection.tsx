@@ -4,6 +4,7 @@ interface KingdomsSectionProps {
   data: KingdomsData;
 }
 
+// @req REQ-092
 export function KingdomsSection({ data }: KingdomsSectionProps) {
   if (data.cards.length === 0) return null;
 
@@ -21,7 +22,7 @@ export function KingdomsSection({ data }: KingdomsSectionProps) {
     <div>
       {/* Section title */}
       <div
-        className="text-[18px] md:text-[20px] font-bold mb-3 md:mb-4"
+        className="text-afh-h3 font-bold mb-3 md:mb-4"
         style={{
           fontFamily: "var(--country-font-display)",
           color: "var(--country-text)",
@@ -72,7 +73,7 @@ function KingdomCardItem({
       {/* Period */}
       {card.period && (
         <div
-          className="text-[10px] font-bold uppercase tracking-[0.08em] mb-1"
+          className="text-afh-eyebrow font-bold uppercase tracking-[0.08em] mb-1"
           style={{ color: "var(--country-gold)" }}
         >
           {card.period}
@@ -81,7 +82,7 @@ function KingdomCardItem({
 
       {/* Name */}
       <div
-        className="text-[17px] xl:text-[19px] font-bold mb-1"
+        className="text-afh-h3 font-bold mb-1"
         style={{
           fontFamily: "var(--country-font-display)",
           color: "var(--country-text)",
@@ -93,7 +94,7 @@ function KingdomCardItem({
       {/* Peoples */}
       {card.peoples && (
         <div
-          className="text-[11px] xl:text-[12px] mb-2"
+          className="text-afh-caption mb-2"
           style={{ color: "var(--country-text-soft)" }}
         >
           {card.peoples}
@@ -106,7 +107,7 @@ function KingdomCardItem({
           {card.tags.map((tag, i) => (
             <span
               key={i}
-              className="text-[10px] xl:text-[11px] py-[2px] px-[7px] rounded-sm font-semibold"
+              className="text-afh-eyebrow py-[2px] px-[7px] rounded-sm font-semibold"
               style={{
                 background: "rgba(184,134,11,0.12)",
                 color: "var(--country-gold)",

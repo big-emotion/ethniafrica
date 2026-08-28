@@ -35,8 +35,8 @@ export function SourcesFooter({
     <div
       className={
         isParchment
-          ? "text-[10px] xl:text-[11px] leading-[1.6]"
-          : "rounded-[var(--country-radius-xl)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-[10px] xl:text-[11px] leading-[1.6]"
+          ? "text-afh-caption leading-[1.6]"
+          : "rounded-[var(--country-radius-xl)] xl:rounded-[20px] px-[18px] py-[16px] md:px-[24px] md:py-[20px] xl:px-[28px] xl:py-[22px] text-afh-caption leading-[1.6]"
       }
       style={{
         backgroundColor: isParchment ? undefined : "var(--country-bg-warm)",
@@ -53,7 +53,7 @@ export function SourcesFooter({
         )
       ) : (
         <p
-          className="text-[10px] font-extrabold uppercase mb-[6px] flex items-center gap-2 flex-wrap"
+          className="text-afh-eyebrow font-extrabold uppercase mb-[6px] flex items-center gap-2 flex-wrap"
           style={{
             letterSpacing: "0.12em",
             color: "var(--country-earth)",
@@ -71,7 +71,7 @@ export function SourcesFooter({
           >
             <span
               data-source-standing={source.standing}
-              className="shrink-0 rounded-full px-2 py-0.5 text-[9px] font-medium"
+              className="shrink-0 rounded-full px-2 py-0.5 text-afh-eyebrow font-medium"
               style={
                 source.standing === "needs_review"
                   ? {

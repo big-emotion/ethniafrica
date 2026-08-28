@@ -6,6 +6,7 @@ interface CountryHeroProps {
   backLabel?: string;
 }
 
+// @req REQ-092
 export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
   return (
     <section
@@ -37,12 +38,12 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
           {onBack ? (
             <button
               onClick={onBack}
-              className="flex items-center gap-1 text-white/60 text-[13px] hover:text-white/80 transition-colors bg-transparent border-0 cursor-pointer"
+              className="flex items-center gap-1 text-white/60 text-afh-caption hover:text-white/80 transition-colors bg-transparent border-0 cursor-pointer"
             >
               ← {backLabel}
             </button>
           ) : (
-            <span className="text-white/60 text-[13px]">← Afrique</span>
+            <span className="text-white/60 text-afh-caption">← Afrique</span>
           )}
           <div className="flex gap-[6px]">
             <span className="hero-badge">{data.iso}</span>
@@ -52,7 +53,7 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
 
         {/* Flag + Name */}
         <div className="flex items-center gap-[14px] md:gap-5 mb-2">
-          <span className="text-[48px] md:text-[56px] xl:text-[64px] leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
+          <span className="text-afh-hero leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
             {data.flag}
           </span>
           <div>
@@ -66,7 +67,7 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
             >
               {data.countryName}
             </h1>
-            <div className="text-xs font-normal opacity-50 mt-0.5">
+            <div className="text-afh-caption font-normal opacity-50 mt-0.5">
               {data.nameOfficial && data.nameOfficial !== data.countryName
                 ? data.nameOfficial
                 : "Nom officiel"}
@@ -81,7 +82,7 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
               className="mb-1.5 leading-[1.3]"
               style={{
                 fontFamily: "var(--country-font-display)",
-                fontSize: "24px",
+                fontSize: "var(--afh-text-h2)",
                 fontWeight: 700,
               }}
             >
@@ -98,12 +99,12 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
               &nbsp;&raquo;
             </div>
             {data.meaningLangs && (
-              <div className="text-[11px] opacity-60 font-medium">
+              <div className="text-afh-caption opacity-60 font-medium">
                 {data.meaningLangs}
               </div>
             )}
             {data.isUncertain && (
-              <div className="inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-[var(--country-radius-2xl)] text-[10px] font-semibold bg-white/10 border border-white/[0.15]">
+              <div className="inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-[var(--country-radius-2xl)] text-afh-eyebrow font-semibold bg-white/10 border border-white/[0.15]">
                 ⚠ Étymologie débattue
               </div>
             )}
@@ -115,17 +116,16 @@ export function CountryHero({ data, onBack, backLabel }: CountryHeroProps) {
         .hero-badge {
           padding: 4px 10px;
           border-radius: var(--country-radius-2xl);
-          font-size: 11px;
+          font-size: var(--afh-text-caption);
           font-weight: 700;
           background: rgba(255,255,255,0.12);
           border: 1px solid rgba(255,255,255,0.15);
           backdrop-filter: blur(8px);
         }
-        @media (min-width: 768px) {
-          .hero-badge { font-size: 12px; }
-        }
+        /* Only the gutter steps now: the badge went 11 → 12 → 12 px by hand,
+           which the fixed caption role covers at 13 px flat. */
         @media (min-width: 1200px) {
-          .hero-badge { font-size: 12px; padding: 5px 12px; }
+          .hero-badge { padding: 5px 12px; }
         }
       `}</style>
     </section>

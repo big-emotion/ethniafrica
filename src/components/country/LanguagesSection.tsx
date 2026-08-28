@@ -7,6 +7,7 @@ interface LanguagesSectionProps {
   data: LanguagesData;
 }
 
+// @req REQ-092
 export function LanguagesSection({ data }: LanguagesSectionProps) {
   if (data.bubbles.length === 0) return null;
 
@@ -55,7 +56,7 @@ function LanguageBubbleItem({ bubble }: { bubble: LanguageBubble }) {
 
       {bubble.code && (
         <span
-          className="text-[9px] xl:text-[10px] font-bold py-[1px] px-[5px] rounded-sm font-mono"
+          className="text-afh-eyebrow font-bold py-[1px] px-[5px] rounded-sm font-mono"
           style={{
             background: "var(--country-bg-warm)",
             color: "var(--country-text-soft)",
@@ -72,17 +73,17 @@ function bubbleSizeClass(size: LanguageBubble["size"]): string {
   switch (size) {
     case "big":
       return [
-        "text-[15px] md:text-base xl:text-[17px]",
+        "text-afh-body",
         "px-[18px] py-[10px] md:px-[20px] md:py-[12px] xl:px-[22px] xl:py-[12px]",
       ].join(" ");
     case "regular":
       return [
-        "text-[13px] md:text-sm xl:text-sm",
+        "text-afh-small",
         "px-[14px] py-[8px] md:px-[16px] md:py-[10px] xl:px-[18px] xl:py-[10px]",
       ].join(" ");
     case "small":
       return [
-        "text-xs md:text-[13px] xl:text-[13px]",
+        "text-afh-caption",
         "px-[12px] py-[6px] md:px-[14px] md:py-[8px]",
       ].join(" ");
   }
@@ -99,7 +100,7 @@ function OverflowPill({ count }: { count: number }) {
         "inline-flex items-center gap-1",
         "px-[16px] py-[8px] md:px-[18px] md:py-[10px] xl:px-[20px] xl:py-[10px]",
         "rounded-full",
-        "text-[13px] md:text-sm xl:text-sm font-bold",
+        "text-afh-small font-bold",
       ].join(" ")}
       style={{
         background: "var(--country-earth-bg)",

@@ -34,6 +34,11 @@
  *
  * ── Known blind spots ────────────────────────────────────────────────────
  *
+ *   · A bare length in a style object — `style={{ fontSize: "24px" }}` — is a
+ *     `Literal` the rule sees but cannot judge: `"24px"` is indistinguishable
+ *     from the width, gap and padding strings that surround it, and flagging
+ *     the shape would report hundreds of them. This one is caught by review,
+ *     not by the linter.
  *   · `cn(`text-[${n}px]`)` is composed at runtime. The template chunks the
  *     rule sees are `text-[` and `px]`, neither of which is a size. Dynamic
  *     construction is undetectable by any static rule and is not worked

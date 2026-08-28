@@ -76,13 +76,9 @@ const eslintConfig = [
   // its own implementation necessarily paints the name fields directly.
   // ===========================================================================
   {
-    files: [
-      "src/components/people/**/*.{ts,tsx,js,jsx}",
-      "src/components/country/**/*.{ts,tsx,js,jsx}",
-    ],
+    files: ["src/components/people/**/*.{ts,tsx,js,jsx}"],
     ignores: [
       "src/components/ui/AutonymExonymHeading.tsx",
-      "src/components/country/AutonymExonymHeading.tsx",
       "**/*.stories.*",
       "**/*.test.*",
       "**/__tests__/**",
@@ -122,16 +118,6 @@ const eslintConfig = [
       "**/*.mdx",
 
       // --- lot 4 · country/ (78) ---------------------------------------
-      "src/components/country/PeoplesSection.tsx", // 25
-      "src/components/country/CountryHero.tsx", // 7 tw + 3 css
-      "src/components/country/KingdomsSection.tsx", // 9
-      "src/components/country/LanguagesSection.tsx", // 8
-      "src/components/country/SourcesFooter.tsx", // 6
-      "src/components/country/AutonymExonymHeading.tsx", // 5
-      "src/components/country/HistoricalFactsSection.tsx", // 5
-      "src/components/country/CultureGrid.tsx", // 4
-      "src/components/country/HistoryTimeline.tsx", // 3
-      "src/components/country/OriginBanner.tsx", // 3
       // --- lot 5 · source-transparency/ (3) ----------------------------
       "src/components/source-transparency/DoctrineLinkCard.tsx", // 2
       "src/components/source-transparency/SourceChainSheet.tsx", // 1
