@@ -222,6 +222,36 @@ describe("FamilyParchment — the peoples", () => {
     expect(rows[0]).toHaveTextContent("Bantou");
     expect(rows[0]).toHaveTextContent("3 pays");
   });
+
+  // The corpus carries each member's PPL_ id and the list used to throw it
+  // away, so the one move a reader of this section wants was the one it did
+  // not offer.
+  // @req REQ-116
+  it("opens each member people's fiche", () => {
+    renderParchment();
+
+    const link = within(screen.getByTestId("member-peoples")).getAllByRole(
+      "link"
+    )[0];
+    expect(link).toHaveTextContent("Bantou");
+    expect(link.getAttribute("href")).toMatch(/^\/fr\/peuples\/PPL_/);
+  });
+});
+
+describe("FamilyParchment — the trail", () => {
+  // A family fiche carried no breadcrumb at all, while the people fiches
+  // below it open theirs on "Familles" — the parent announced none of the
+  // hierarchy its children did.
+  // @req REQ-115
+  it("puts the family under the families directory", () => {
+    renderParchment();
+
+    const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
+    const up = within(trail).getByRole("link", { name: "Familles" });
+
+    expect(up).toHaveAttribute("href", "/fr/familles");
+    expect(trail).toHaveTextContent("Bénoué-Congo");
+  });
 });
 
 describe("FamilyParchment — the sources", () => {
