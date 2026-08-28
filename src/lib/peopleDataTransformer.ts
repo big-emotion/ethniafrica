@@ -46,6 +46,10 @@ export interface PeopleHeroData {
   whyProblematic?: string;
   historicalRegion?: string;
   ethnoLinguisticGroup?: string;
+  /** Who coined the exonyms, and from where — the fiche's own answer. */
+  originOfExonyms?: string;
+  /** Whether the name is claimed, tolerated or refused today. */
+  contemporaryUsage?: string;
 }
 
 export interface PeopleOriginData {
@@ -91,6 +95,8 @@ export interface PeopleRelatedData {
   politicalSystem?: string;
   clanOrganization?: string;
   ageClassSystems?: string;
+  roleOfLineages?: string;
+  religiousAuthority?: string;
 }
 
 /** One row of the fiche's "Liens" preview (Epic 11, FR72/FR75) — the full corpus lives at `/fr/peuples/{id}/liens`. */
@@ -216,6 +222,8 @@ export function transformPeopleHero(raw: PeopleDetail): PeopleHeroData {
     whyProblematic: raw.appellations?.whyProblematic,
     historicalRegion: raw.appellations?.historicalRegion,
     ethnoLinguisticGroup: raw.appellations?.ethnoLinguisticGroup,
+    originOfExonyms: raw.appellations?.originOfExonyms,
+    contemporaryUsage: raw.appellations?.contemporaryUsage,
   };
 }
 
@@ -286,6 +294,33 @@ export function hasCultureContent(culture: PeopleCultureData): boolean {
   return Object.values(culture).some(Boolean);
 }
 
+/**
+ * Whether the origins chapter has anything to show.
+ *
+ * Same reason as {@link hasCultureContent}: the fiche's gate tested five of
+ * the seven fields `PeopleOriginBlock` renders, so a fiche declaring only
+ * `unificationsOrDivisions` or `majorHistoricalEvents` had them dropped.
+ */
+// @req REQ-003
+export function hasOriginContent(origin: PeopleOriginData): boolean {
+  return Object.values(origin).some((value) =>
+    Array.isArray(value) ? value.length > 0 : Boolean(value)
+  );
+}
+
+/**
+ * Whether the neighbours-and-organisation chapter has anything of its own.
+ *
+ * The relations preview is deliberately excluded: it comes from another
+ * service, and the fiche gate ORs it in separately.
+ */
+// @req REQ-097
+export function hasRelatedContent(related: PeopleRelatedData): boolean {
+  return Object.values(related).some((value) =>
+    Array.isArray(value) ? value.length > 0 : Boolean(value)
+  );
+}
+
 // @req REQ-097
 export function transformPeopleRelatedPeoples(
   ethnicities?: string[],
@@ -296,6 +331,8 @@ export function transformPeopleRelatedPeoples(
     politicalSystem: organization?.traditionalPoliticalSystem,
     clanOrganization: organization?.clanOrganization,
     ageClassSystems: organization?.ageClassSystems,
+    roleOfLineages: organization?.roleOfLineages,
+    religiousAuthority: organization?.religiousAuthority,
   };
 }
 
