@@ -1,10 +1,12 @@
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 
 /**
- * The committed, zero-WebGL Africa figure (REQ-112 AC2): rendered whenever
- * no WebGL context can be created, and unconditionally before that
- * capability check has run — see HomeGlobeStage.tsx — so the hero is never
- * empty and the server response never carries the WebGL runtime.
+ * The committed, zero-WebGL Africa figure (REQ-112 AC2): rendered once the
+ * capability check has come back negative, or once the globe has reported
+ * it cannot run — see HomeGlobeStage.tsx. Not before: while the answer is
+ * still unknown this figure would be shown to visitors whose globe is
+ * about to appear, and a flat map that vanishes a second later reads as a
+ * glitch rather than as a fallback.
  *
  * Centred, not right-aligned (REQ-115): the globe stage is the hero's
  * subject now, so its fallback reads as a body rather than a decorative
