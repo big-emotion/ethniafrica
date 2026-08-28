@@ -1,10 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-const getQuizSegmentsMock = vi.fn();
+const getQuizScopeCatalogueMock = vi.fn();
+const getQuizScopeLabelMock = vi.fn();
 const composeQuizSessionMock = vi.fn();
 
 vi.mock("@/api/v2/services/quizService", () => ({
-  getQuizSegments: (...args: unknown[]) => getQuizSegmentsMock(...args),
+  getQuizScopeCatalogue: (...args: unknown[]) =>
+    getQuizScopeCatalogueMock(...args),
+  getQuizScopeLabel: (...args: unknown[]) => getQuizScopeLabelMock(...args),
   composeQuizSession: (...args: unknown[]) => composeQuizSessionMock(...args),
 }));
 
@@ -30,46 +33,62 @@ function buildInQuery(result: { data: unknown; error: unknown }) {
   return query;
 }
 
-import { getQuizSegmentsHandler, composeQuizSessionHandler } from "../quiz";
+import { getQuizScopesHandler, composeQuizSessionHandler } from "../quiz";
 
 beforeEach(() => {
-  getQuizSegmentsMock.mockReset();
+  getQuizScopeCatalogueMock.mockReset();
+  getQuizScopeLabelMock.mockReset().mockResolvedValue("Ghana");
   composeQuizSessionMock.mockReset();
   fromMock.mockReset();
 });
 
-describe("getQuizSegmentsHandler", () => {
+describe("getQuizScopesHandler", () => {
   // @req REQ-103
-  it("maps service segments to the API view with French labels", async () => {
-    getQuizSegmentsMock.mockResolvedValue([
-      {
-        audience: "children",
-        rungs: [{ difficulty: 1, activeQuestionCount: 42 }],
-      },
-      { audience: "adults", rungs: [] },
-    ]);
+  it("marks a track playable only when it can fill a session of eight", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [{ id: "GHA", labelFr: "Ghana", activeQuestionCount: 120 }],
+      families: [
+        { id: "FLG_KHOISAN", labelFr: "Khoïsan", activeQuestionCount: 4 },
+      ],
+      totalActiveQuestionCount: 2504,
+    });
 
-    const envelope = await getQuizSegmentsHandler();
+    const envelope = await getQuizScopesHandler();
 
     expect(envelope.meta.license).toBe("CC-BY-SA-4.0");
     expect(envelope.errors).toEqual([]);
-    expect(envelope.data.segments).toEqual([
-      {
-        id: "children",
-        labelFr: "enfants",
-        rungs: [{ difficulty: 1, activeQuestionCount: 42 }],
-      },
-      { id: "adults", labelFr: "adultes", rungs: [] },
-    ]);
+    expect(envelope.data.countries[0].playable).toBe(true);
+    // Khoïsan holds four questions: listed, counted honestly, not launchable.
+    expect(envelope.data.families[0]).toEqual({
+      id: "FLG_KHOISAN",
+      labelFr: "Khoïsan",
+      activeQuestionCount: 4,
+      playable: false,
+    });
+  });
+
+  // @req REQ-103
+  it("offers the two whole-corpus tracks with the bank's own total", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [],
+      families: [],
+      totalActiveQuestionCount: 2504,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    expect(envelope.data.mixed.activeQuestionCount).toBe(2504);
+    expect(envelope.data.random.playable).toBe(true);
   });
 });
 
 describe("composeQuizSessionHandler", () => {
   // @req REQ-103
-  it("returns SEMANTIC_ERROR when the difficulty is outside the segment's rung range", async () => {
+  it("returns SEMANTIC_ERROR when the scope names a country the corpus does not hold", async () => {
+    getQuizScopeLabelMock.mockResolvedValue(null);
+
     const result = await composeQuizSessionHandler({
-      segment: "children",
-      difficulty: 5,
+      pays: "ZZZ",
       count: 8,
     });
 
@@ -81,13 +100,28 @@ describe("composeQuizSessionHandler", () => {
   });
 
   // @req REQ-103
+  it("names the whole-corpus tracks without asking the corpus for a label", async () => {
+    composeQuizSessionMock.mockResolvedValue([]);
+
+    const result = await composeQuizSessionHandler({ count: 8 });
+
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.envelope.data.scope).toEqual({
+      kind: "mixed",
+      entityId: null,
+      labelFr: "Tout le continent",
+    });
+    expect(getQuizScopeLabelMock).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-103
   it("enriches questions with source refs and entity links", async () => {
     composeQuizSessionMock.mockResolvedValue([
       {
         id: "q-1",
         templateId: "T1",
-        audience: "adults",
-        difficulty: 3,
+        difficulty: 1,
         entityType: "people",
         entityId: "PPL_A",
         fieldPath: "languageFamilyId",
@@ -135,16 +169,18 @@ describe("composeQuizSessionHandler", () => {
     );
 
     const result = await composeQuizSessionHandler({
-      segment: "adults",
-      difficulty: 3,
+      pays: "GHA",
       count: 8,
     });
 
     expect(result.ok).toBe(true);
     if (!result.ok) return;
 
-    expect(result.envelope.data.segment).toBe("adults");
-    expect(result.envelope.data.difficulty).toBe(3);
+    expect(result.envelope.data.scope).toEqual({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
     expect(result.envelope.data.questions).toHaveLength(1);
 
     const question = result.envelope.data.questions[0];
@@ -171,8 +207,7 @@ describe("composeQuizSessionHandler", () => {
     composeQuizSessionMock.mockResolvedValue([]);
 
     const result = await composeQuizSessionHandler({
-      segment: "adults",
-      difficulty: 3,
+      pays: "GHA",
       count: 8,
     });
 
@@ -188,8 +223,7 @@ describe("composeQuizSessionHandler", () => {
       {
         id: "q-1",
         templateId: "T1",
-        audience: "adults",
-        difficulty: 3,
+        difficulty: 1,
         entityType: "people",
         entityId: "PPL_MISSING",
         fieldPath: "languageFamilyId",
@@ -205,8 +239,7 @@ describe("composeQuizSessionHandler", () => {
     fromMock.mockImplementation(() => buildInQuery({ data: [], error: null }));
 
     const result = await composeQuizSessionHandler({
-      segment: "adults",
-      difficulty: 3,
+      pays: "GHA",
       count: 8,
     });
 

@@ -5,38 +5,47 @@
  * @swagger
  * /api/v2/quiz/session:
  *   get:
- *     summary: Compose a random quiz session for a segment and difficulty rung
+ *     summary: Compose a quiz session for one entity scope
  *     description: >
- *       Draws `count` (5–10, default 8) active questions for
- *       `(segment, difficulty)`, re-validated at serve time against current
- *       confidence, human-audit and source-tier state (FR65 gate) — a
- *       question that has decayed since the last generation sweep never
- *       reaches a player. The answer key ships in the payload
- *       (`correctOption`, `explanationFr`, `source`): reveal is
- *       client-side, there is nothing to cheat for (no leaderboard, no
- *       persistence, no stakes). Fewer eligible questions than requested
- *       returns 200 with the shorter array; zero returns 200 with an empty
- *       array (calm empty state).
+ *       Draws `count` (5–10, default 8) active questions from the scope named
+ *       by `pays`, `famille` or `mode`, ordered by the games charter's
+ *       difficulty ladder — the subject's population decile inside that scope,
+ *       two easy rounds, four middling, two hard. `mode=aleatoire` is the one
+ *       track that skips the ladder. Every question is re-validated at serve
+ *       time against current confidence, human-audit and source-tier state
+ *       (FR65 gate), so a question that has decayed since the last generation
+ *       sweep never reaches a player. The answer key ships in the payload
+ *       (`correctOption`, `explanationFr`, `source`): reveal is client-side,
+ *       there is nothing to cheat for (no leaderboard, no persistence, no
+ *       stakes). Fewer eligible questions than requested returns 200 with the
+ *       shorter array; zero returns 200 with an empty array (calm empty
+ *       state).
  *     tags: ["API v2 - Quiz"]
  *     security: []
  *     parameters:
  *       - in: query
- *         name: segment
- *         required: true
+ *         name: pays
+ *         required: false
  *         schema:
  *           type: string
- *           enum: [children, teens, adults, university, professionals]
- *         description: Audience segment
- *         example: adults
+ *         description: ISO 3166-1 alpha-3 country code — the peoples of that country
+ *         example: GHA
  *       - in: query
- *         name: difficulty
- *         required: true
+ *         name: famille
+ *         required: false
  *         schema:
- *           type: integer
- *           minimum: 1
- *           maximum: 5
- *         description: Difficulty rung requested within the segment
- *         example: 3
+ *           type: string
+ *         description: "`FLG_*` language family id — the peoples of that family"
+ *         example: FLG_NIGERO_CONGOLAISE
+ *       - in: query
+ *         name: mode
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [mixte, aleatoire]
+ *         description: >
+ *           Whole-corpus track when no entity is named. `mixte` (the default)
+ *           applies the difficulty ladder; `aleatoire` does not.
  *       - in: query
  *         name: count
  *         required: false
@@ -59,13 +68,13 @@
  *             schema:
  *               type: string
  *       400:
- *         description: Malformed segment, difficulty or count
+ *         description: Malformed pays, famille, mode or count
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       422:
- *         description: Difficulty is a valid 1-5 rung but not offered by this segment
+ *         description: Well-formed scope naming a country or family that does not exist
  *         content:
  *           application/json:
  *             schema:
@@ -113,8 +122,9 @@ export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const parsed = quizSessionQuerySchema.safeParse({
-      segment: searchParams.get("segment") ?? undefined,
-      difficulty: searchParams.get("difficulty") ?? undefined,
+      pays: searchParams.get("pays") ?? undefined,
+      famille: searchParams.get("famille") ?? undefined,
+      mode: searchParams.get("mode") ?? undefined,
       count: searchParams.get("count") ?? undefined,
     });
 

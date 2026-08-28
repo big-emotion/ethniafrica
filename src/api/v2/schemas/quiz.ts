@@ -1,38 +1,73 @@
 /**
- * Zod schemas for `/v2/quiz/segments` and `/v2/quiz/session` (Epic 10,
+ * Zod schemas for `/v2/quiz/scopes` and `/v2/quiz/session` (Epic 10,
  * Story 10.7, ETNI-496, FR66, AR8/AR9, NFR38).
  *
- * `count` bounds (5–10, default 8) and `difficulty` bounds (1–5, the
- * `quiz_questions.difficulty` DB constraint) are shape-level checks handled
- * here with 400 VALIDATION_ERROR. Whether a given `difficulty` rung is
- * actually offered by a `segment` is a business rule (`DIFFICULTY_RUNGES`,
- * ETNI-493) that needs both fields together — that check lives in the
- * handler and maps to 422 SEMANTIC_ERROR, not here.
+ * `count` bounds (5–10, default 8) and the *shape* of a scope's identifier are
+ * checked here with 400 VALIDATION_ERROR. Whether the named country or family
+ * actually holds enough questions to launch is a business rule that needs the
+ * bank as well as the query — that check lives in the handler and maps to 422
+ * SEMANTIC_ERROR, exactly where the retired segment/rung check used to sit.
+ *
+ * This endpoint pair used to be keyed by audience segment. Renaming
+ * `/segments` to `/scopes` rather than redefining it in place is deliberate:
+ * the same path returning a different kind of thing is the harder break to
+ * notice.
  */
 
 import { z } from "zod";
-import { QUIZ_AUDIENCES, type QuizAudience } from "@/lib/quiz/segmentPolicy";
+import type { QuizScopeKind } from "@/lib/quiz/quizScope";
 
-const QUIZ_AUDIENCE_TUPLE = QUIZ_AUDIENCES as [QuizAudience, ...QuizAudience[]];
+/** ISO 3166-1 alpha-3, as `afrik_countries.id` stores it. */
+const COUNTRY_ID_PATTERN = /^[A-Za-z]{3}$/;
+/** `FLG_*`, as `afrik_language_families.id` stores it. */
+const FAMILY_ID_PATTERN = /^FLG_[A-Za-z0-9_]{1,40}$/;
 
-export const quizAudienceSchema = z.enum(QUIZ_AUDIENCE_TUPLE);
+// @req REQ-103
+export const quizScopeKindSchema = z.enum([
+  "country",
+  "family",
+  "mixed",
+  "random",
+]);
 
-export type QuizAudienceParam = z.infer<typeof quizAudienceSchema>;
-
+// @req REQ-103
 export const MIN_QUIZ_SESSION_COUNT = 5;
+// @req REQ-103
 export const MAX_QUIZ_SESSION_COUNT = 10;
+// @req REQ-103
 export const DEFAULT_QUIZ_SESSION_COUNT = 8;
 
 const COUNT_RANGE_MESSAGE = `count must be between ${MIN_QUIZ_SESSION_COUNT} and ${MAX_QUIZ_SESSION_COUNT}`;
 
+/**
+ * An absent parameter and one submitted empty mean the same thing: no filter.
+ * `?pays=` arrives as an empty string from a `GET` form whose select is on
+ * « Tous les pays », and reading that as a country whose id is nothing would
+ * compose an empty session under a filter nobody set.
+ */
+const blankAsUndefined = z
+  .string()
+  .optional()
+  .transform((value) => {
+    const trimmed = value?.trim();
+    return trimmed ? trimmed : undefined;
+  });
+
 // @req REQ-103
 export const quizSessionQuerySchema = z.object({
-  segment: quizAudienceSchema,
-  difficulty: z.coerce
-    .number({ message: "difficulty must be a number between 1 and 5" })
-    .int()
-    .min(1, { message: "difficulty must be between 1 and 5" })
-    .max(5, { message: "difficulty must be between 1 and 5" }),
+  pays: blankAsUndefined.refine(
+    (value) => value === undefined || COUNTRY_ID_PATTERN.test(value),
+    { message: "pays must be an ISO 3166-1 alpha-3 country code" }
+  ),
+  famille: blankAsUndefined.refine(
+    (value) => value === undefined || FAMILY_ID_PATTERN.test(value),
+    { message: "famille must be a FLG_* language family id" }
+  ),
+  mode: blankAsUndefined.refine(
+    (value) =>
+      value === undefined || value === "mixte" || value === "aleatoire",
+    { message: "mode must be mixte or aleatoire" }
+  ),
   count: z.coerce
     .number({ message: COUNT_RANGE_MESSAGE })
     .int()
@@ -43,27 +78,37 @@ export const quizSessionQuerySchema = z.object({
 
 export type QuizSessionQuery = z.infer<typeof quizSessionQuerySchema>;
 
-export const quizSegmentRungSchema = z.object({
-  difficulty: z.number().int(),
-  activeQuestionCount: z.number().int().min(0),
-});
-
-export type QuizSegmentRung = z.infer<typeof quizSegmentRungSchema>;
-
-export const quizSegmentSchema = z.object({
-  id: quizAudienceSchema,
+// @req REQ-103
+export const quizScopeOptionSchema = z.object({
+  id: z.string(),
   labelFr: z.string(),
-  rungs: z.array(quizSegmentRungSchema),
+  activeQuestionCount: z.number().int().min(0),
+  /** False when the track exists in the corpus but cannot fill a session. */
+  playable: z.boolean(),
 });
 
-export type QuizSegmentView = z.infer<typeof quizSegmentSchema>;
+export type QuizScopeOptionView = z.infer<typeof quizScopeOptionSchema>;
 
-export const quizSegmentsDataSchema = z.object({
-  segments: z.array(quizSegmentSchema),
+// @req REQ-103
+export const quizScopesDataSchema = z.object({
+  countries: z.array(quizScopeOptionSchema),
+  families: z.array(quizScopeOptionSchema),
+  mixed: quizScopeOptionSchema,
+  random: quizScopeOptionSchema,
 });
 
-export type QuizSegmentsData = z.infer<typeof quizSegmentsDataSchema>;
+export type QuizScopesData = z.infer<typeof quizScopesDataSchema>;
 
+// @req REQ-103
+export const quizScopeViewSchema = z.object({
+  kind: quizScopeKindSchema,
+  entityId: z.string().nullable(),
+  labelFr: z.string(),
+});
+
+export type QuizScopeView = z.infer<typeof quizScopeViewSchema>;
+
+// @req REQ-103
 export const quizSourceRefSchema = z.object({
   title: z.string(),
   year: z.number().int().nullable(),
@@ -73,6 +118,7 @@ export const quizSourceRefSchema = z.object({
 
 export type QuizSourceRefView = z.infer<typeof quizSourceRefSchema>;
 
+// @req REQ-103
 export const quizEntityLinkSchema = z.object({
   type: z.literal("people"),
   id: z.string(),
@@ -83,6 +129,7 @@ export const quizEntityLinkSchema = z.object({
 
 export type QuizEntityLinkView = z.infer<typeof quizEntityLinkSchema>;
 
+// @req REQ-103
 export const quizOptionValueSchema = z.union([
   z.string(),
   z.object({ autonym: z.string(), exonym: z.string().optional() }),
@@ -90,6 +137,7 @@ export const quizOptionValueSchema = z.union([
 
 export type QuizOptionValue = z.infer<typeof quizOptionValueSchema>;
 
+// @req REQ-103
 export const quizSessionQuestionSchema = z.object({
   id: z.string(),
   templateId: z.enum(["T1", "T2", "T3", "T4", "T5"]),
@@ -104,10 +152,12 @@ export const quizSessionQuestionSchema = z.object({
 
 export type QuizSessionQuestionView = z.infer<typeof quizSessionQuestionSchema>;
 
+// @req REQ-103
 export const quizSessionDataSchema = z.object({
-  segment: quizAudienceSchema,
-  difficulty: z.number().int(),
+  scope: quizScopeViewSchema,
   questions: z.array(quizSessionQuestionSchema),
 });
 
 export type QuizSessionData = z.infer<typeof quizSessionDataSchema>;
+
+export type { QuizScopeKind };

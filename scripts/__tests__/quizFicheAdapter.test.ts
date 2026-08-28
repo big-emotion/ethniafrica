@@ -115,7 +115,7 @@ describe("mapPeopleRowToFiche", () => {
         isoCodes: ["yor"],
       },
       demography: {
-        distributionByCountry: [{ country: "NGA", percentage: 90 }],
+        distributionByCountry: [{ country: "NGA", population: 40_000_000 }],
       },
     },
   };
@@ -134,10 +134,11 @@ describe("mapPeopleRowToFiche", () => {
       languageFamilyNameFr: "Bantoue",
       selfAppellation: "Ọmọ Yorùbá",
       distributionByCountry: [
-        { countryId: "NGA", countryNameFr: "Nigéria", percentage: 90 },
+        { countryId: "NGA", countryNameFr: "Nigéria", population: 40_000_000 },
       ],
       mainLanguage: { autonym: "Yoruba" },
       isoCode: "yor",
+      totalPopulation: null,
     });
   });
 
@@ -161,7 +162,7 @@ describe("mapPeopleRowToFiche", () => {
   it("falls back to the raw country id when the country name is unknown", () => {
     const fiche = mapPeopleRowToFiche(completeRow, familyNameById, new Map());
     expect(fiche?.distributionByCountry).toEqual([
-      { countryId: "NGA", countryNameFr: "NGA", percentage: 90 },
+      { countryId: "NGA", countryNameFr: "NGA", population: 40_000_000 },
     ]);
   });
 
@@ -232,15 +233,15 @@ describe("mapPeopleRowToFiche", () => {
         demography: {
           distributionByCountry: [
             { country: "NGA" },
-            { percentage: 10 },
-            { country: "BEN", percentage: 5 },
+            { population: 10 },
+            { country: "BEN", population: 5_000 },
           ],
         },
       },
     };
     const fiche = mapPeopleRowToFiche(row, familyNameById, countryNameById);
     expect(fiche?.distributionByCountry).toEqual([
-      { countryId: "BEN", countryNameFr: "BEN", percentage: 5 },
+      { countryId: "BEN", countryNameFr: "BEN", population: 5_000 },
     ]);
   });
 });

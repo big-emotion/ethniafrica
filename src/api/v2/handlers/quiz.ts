@@ -1,50 +1,86 @@
 /**
- * Quiz handlers — assemble the Module #0 envelope for `/v2/quiz/segments`
- * and `/v2/quiz/session`, and hold the business logic the route layer must
- * not: French segment labels, the segment/rung semantic check (422
- * SEMANTIC_ERROR), and the source/entity-link enrichment of raw
+ * Quiz handlers — assemble the Module #0 envelope for `/v2/quiz/scopes` and
+ * `/v2/quiz/session`, and hold the business logic the route layer must not:
+ * the French label of a scope, whether a scope holds enough questions to be
+ * launched (422 SEMANTIC_ERROR), and the source/entity-link enrichment of raw
  * `quizService.composeQuizSession` rows (Epic 10, Story 10.7, ETNI-496).
  */
 
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import {
-  getQuizSegments,
+  getQuizScopeCatalogue,
+  getQuizScopeLabel,
   composeQuizSession,
+  type QuizScopeOption,
   type QuizSessionQuestion,
 } from "@/api/v2/services/quizService";
-import { DIFFICULTY_RUNGES, type QuizAudience } from "@/lib/quiz/segmentPolicy";
+import {
+  parseQuizScope,
+  QUIZ_SESSION_SIZE,
+  type QuizScope,
+} from "@/lib/quiz/quizScope";
 import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type {
   QuizSessionQuery,
-  QuizSegmentsData,
+  QuizScopesData,
+  QuizScopeOptionView,
+  QuizScopeView,
   QuizSessionData,
   QuizSessionQuestionView,
   QuizSourceRefView,
   QuizEntityLinkView,
 } from "@/api/v2/schemas/quiz";
 
-const AUDIENCE_LABELS_FR: Record<QuizAudience, string> = {
-  children: "enfants",
-  teens: "ados",
-  adults: "adultes",
-  university: "étudiants",
-  professionals: "professionnels",
-};
+/** The whole-corpus tracks, which have no entity and so no name in the corpus. */
+const CORPUS_SCOPE_LABELS_FR = {
+  mixed: "Tout le continent",
+  random: "Au hasard",
+} as const;
+
+/**
+ * A track is launchable when it can fill a session outright.
+ *
+ * Not "holds at least one question": a track offering three is a track that
+ * repeats the same subject three times over eight rounds, and the picker
+ * saying « 3 questions » next to a button that starts a session of eight is
+ * the picker lying quietly. Khoïsan — one people, four questions — is the case
+ * this threshold exists for. It is listed, counted honestly and not launchable.
+ */
+// @req REQ-103
+export function isPlayableScope(activeQuestionCount: number): boolean {
+  return activeQuestionCount >= QUIZ_SESSION_SIZE;
+}
+
+function toScopeOptionView(option: QuizScopeOption): QuizScopeOptionView {
+  return {
+    id: option.id,
+    labelFr: option.labelFr,
+    activeQuestionCount: option.activeQuestionCount,
+    playable: isPlayableScope(option.activeQuestionCount),
+  };
+}
 
 // @req REQ-103
-export async function getQuizSegmentsHandler(): Promise<
-  ApiEnvelope<QuizSegmentsData>
+export async function getQuizScopesHandler(): Promise<
+  ApiEnvelope<QuizScopesData>
 > {
-  const segments = await getQuizSegments();
+  const catalogue = await getQuizScopeCatalogue();
+  const corpusOption = (
+    id: keyof typeof CORPUS_SCOPE_LABELS_FR
+  ): QuizScopeOptionView => ({
+    id,
+    labelFr: CORPUS_SCOPE_LABELS_FR[id],
+    activeQuestionCount: catalogue.totalActiveQuestionCount,
+    playable: isPlayableScope(catalogue.totalActiveQuestionCount),
+  });
 
   return createApiResponse({
-    segments: segments.map((segment) => ({
-      id: segment.audience,
-      labelFr: AUDIENCE_LABELS_FR[segment.audience],
-      rungs: segment.rungs,
-    })),
+    countries: catalogue.countries.map(toScopeOptionView),
+    families: catalogue.families.map(toScopeOptionView),
+    mixed: corpusOption("mixed"),
+    random: corpusOption("random"),
   });
 }
 
@@ -172,43 +208,61 @@ function buildQuestionView(
   };
 }
 
+/**
+ * Names a scope for the reader: the entity's own name, or the corpus track's.
+ * Null means the query named a country or family the corpus does not hold —
+ * well-formed but meaningless, which is a 422 and not a 400.
+ */
+// @req REQ-103
+export async function describeScope(
+  scope: QuizScope
+): Promise<QuizScopeView | null> {
+  if (scope.kind === "mixed" || scope.kind === "random") {
+    return {
+      kind: scope.kind,
+      entityId: null,
+      labelFr: CORPUS_SCOPE_LABELS_FR[scope.kind],
+    };
+  }
+
+  const labelFr = await getQuizScopeLabel(scope);
+  if (!labelFr) return null;
+
+  return { kind: scope.kind, entityId: scope.entityId ?? null, labelFr };
+}
+
 export type ComposeQuizSessionHandlerResult =
   | { ok: true; envelope: ApiEnvelope<QuizSessionData> }
   | { ok: false; code: "SEMANTIC_ERROR"; message: string };
 
 /**
- * `difficulty`'s 1-5 shape is validated by the Zod schema (route layer);
- * whether that rung is actually offered by `segment` is a business rule
- * (`DIFFICULTY_RUNGES`, ETNI-493) that needs both fields together, so it is
- * checked here and mapped to 422 SEMANTIC_ERROR, never 400.
+ * The shape of `pays`/`famille` is validated by the Zod schema (route layer);
+ * whether the entity it names exists and holds a session's worth of questions
+ * needs the bank as well as the query, so it is checked here and mapped to 422
+ * SEMANTIC_ERROR, never 400 — the same split the retired segment/rung check
+ * followed.
  */
 // @req REQ-103
 export async function composeQuizSessionHandler(
   query: QuizSessionQuery
 ): Promise<ComposeQuizSessionHandlerResult> {
-  const range = DIFFICULTY_RUNGES[query.segment];
-  if (query.difficulty < range.min || query.difficulty > range.max) {
+  const scope = parseQuizScope(query);
+  const described = await describeScope(scope);
+
+  if (!described) {
     return {
       ok: false,
       code: "SEMANTIC_ERROR",
-      message: `Difficulty ${query.difficulty} is outside the "${query.segment}" segment's range [${range.min}, ${range.max}]`,
+      message: `No ${scope.kind} known as "${scope.entityId}"`,
     };
   }
 
-  const questions = await composeQuizSession({
-    segment: query.segment,
-    difficulty: query.difficulty,
-    count: query.count,
-  });
+  const questions = await composeQuizSession({ scope, count: query.count });
 
   if (questions.length === 0) {
     return {
       ok: true,
-      envelope: createApiResponse({
-        segment: query.segment,
-        difficulty: query.difficulty,
-        questions: [],
-      }),
+      envelope: createApiResponse({ scope: described, questions: [] }),
     };
   }
 
@@ -228,8 +282,7 @@ export async function composeQuizSessionHandler(
   return {
     ok: true,
     envelope: createApiResponse({
-      segment: query.segment,
-      difficulty: query.difficulty,
+      scope: described,
       questions: questions.map((question) =>
         buildQuestionView(question, sourceMap, entityLinkMap)
       ),

@@ -1,5 +1,6 @@
 import type {
   AutonymExonymName,
+  QuizCountryShare,
   QuizPeopleFixture,
   QuizQuestionCandidate,
 } from "@/types/quiz";
@@ -20,6 +21,20 @@ function displayName(name: AutonymExonymName): string {
 // helpers moved to @/lib/games/options (REQ-120).
 // @req REQ-103
 export { isSameOptionValue };
+
+/**
+ * The country holding the largest share of this people, by head count.
+ *
+ * Shared with the sweep's staleness check so the answer T3 states and the
+ * answer QZ-2 compares against are read the same way — they disagreed once,
+ * and a disagreement here revokes a healthy question on every sweep.
+ */
+// @req REQ-103
+export function mainCountryOf(fiche: QuizPeopleFixture): QuizCountryShare {
+  return fiche.distributionByCountry.reduce((largest, current) =>
+    current.population > largest.population ? current : largest
+  );
+}
 
 // @req REQ-080
 export function buildT1LanguageFamilyTemplate(
@@ -87,9 +102,7 @@ export function buildT3MainCountryTemplate(
 ): QuizQuestionCandidate | null {
   if (fiche.distributionByCountry.length === 0) return null;
 
-  const mainCountry = fiche.distributionByCountry.reduce((largest, current) =>
-    current.percentage > largest.percentage ? current : largest
-  );
+  const mainCountry = mainCountryOf(fiche);
   const distractors = selectDistractors(
     mainCountry.countryNameFr,
     countryNamePool

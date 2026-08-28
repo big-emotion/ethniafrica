@@ -2548,51 +2548,40 @@ const options: swaggerJsdoc.Options = {
         // -----------------------------------------------------------------
         // Epic 10 — Smart Quiz (FR65/FR66, Story 10.7, ETNI-496)
         // -----------------------------------------------------------------
-        QuizSegmentRung: {
+        QuizScopeOption: {
           type: "object",
+          description:
+            "One track a session can be drawn from. `playable` is false when the track cannot fill a session of eight — it is still listed, and still counted, rather than hidden.",
           properties: {
-            difficulty: { type: "integer", minimum: 1, maximum: 5 },
+            id: { type: "string", example: "GHA" },
+            labelFr: { type: "string", example: "Ghana" },
             activeQuestionCount: { type: "integer", minimum: 0 },
+            playable: { type: "boolean" },
           },
-          required: ["difficulty", "activeQuestionCount"],
+          required: ["id", "labelFr", "activeQuestionCount", "playable"],
         },
-        QuizSegment: {
+        QuizScopesData: {
           type: "object",
+          description: "GET /v2/quiz/scopes result data.",
           properties: {
-            id: {
-              type: "string",
-              enum: [
-                "children",
-                "teens",
-                "adults",
-                "university",
-                "professionals",
-              ],
-            },
-            labelFr: { type: "string", example: "adultes" },
-            rungs: {
+            countries: {
               type: "array",
-              items: { $ref: "#/components/schemas/QuizSegmentRung" },
+              items: { $ref: "#/components/schemas/QuizScopeOption" },
             },
-          },
-          required: ["id", "labelFr", "rungs"],
-        },
-        QuizSegmentsData: {
-          type: "object",
-          description: "GET /v2/quiz/segments result data.",
-          properties: {
-            segments: {
+            families: {
               type: "array",
-              items: { $ref: "#/components/schemas/QuizSegment" },
+              items: { $ref: "#/components/schemas/QuizScopeOption" },
             },
+            mixed: { $ref: "#/components/schemas/QuizScopeOption" },
+            random: { $ref: "#/components/schemas/QuizScopeOption" },
           },
-          required: ["segments"],
+          required: ["countries", "families", "mixed", "random"],
         },
-        QuizSegmentsResponse: {
+        QuizScopesResponse: {
           type: "object",
-          description: "Module #0 envelope for /v2/quiz/segments (ETNI-496)",
+          description: "Module #0 envelope for /v2/quiz/scopes (ETNI-496)",
           properties: {
-            data: { $ref: "#/components/schemas/QuizSegmentsData" },
+            data: { $ref: "#/components/schemas/QuizScopesData" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
@@ -2600,6 +2589,19 @@ const options: swaggerJsdoc.Options = {
             },
           },
           required: ["data", "meta", "errors"],
+        },
+        QuizScope: {
+          type: "object",
+          description: "The track the returned session was drawn from.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: ["country", "family", "mixed", "random"],
+            },
+            entityId: { type: ["string", "null"], example: "GHA" },
+            labelFr: { type: "string", example: "Ghana" },
+          },
+          required: ["kind", "entityId", "labelFr"],
         },
         QuizSourceRef: {
           type: "object",
@@ -2681,25 +2683,16 @@ const options: swaggerJsdoc.Options = {
         },
         QuizSessionData: {
           type: "object",
-          description: "GET /v2/quiz/session result data.",
+          description:
+            "GET /v2/quiz/session result data. Questions arrive in the order they are meant to be played: ascending difficulty band, except under `mode=aleatoire`.",
           properties: {
-            segment: {
-              type: "string",
-              enum: [
-                "children",
-                "teens",
-                "adults",
-                "university",
-                "professionals",
-              ],
-            },
-            difficulty: { type: "integer", minimum: 1, maximum: 5 },
+            scope: { $ref: "#/components/schemas/QuizScope" },
             questions: {
               type: "array",
               items: { $ref: "#/components/schemas/QuizSessionQuestion" },
             },
           },
-          required: ["segment", "difficulty", "questions"],
+          required: ["scope", "questions"],
         },
         QuizSessionResponse: {
           type: "object",
