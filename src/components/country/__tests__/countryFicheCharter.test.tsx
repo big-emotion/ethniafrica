@@ -5,6 +5,7 @@ import { CountryParchment } from "@/components/country/CountryParchment";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * The country fiche's reading, against its mockup.
@@ -360,7 +361,7 @@ describe("country record view — the chapters the page adds", () => {
     expect(trail).not.toHaveTextContent("Yoruba");
 
     const back = screen.getByTestId("country-back-to-people");
-    expect(back).toHaveAttribute("href", "/fr/peuples/PPL_YORUBA");
+    expect(back).toHaveAttribute("href", getPeopleRoute("fr", "PPL_YORUBA"));
     expect(back).toHaveTextContent("Yoruba");
   });
 

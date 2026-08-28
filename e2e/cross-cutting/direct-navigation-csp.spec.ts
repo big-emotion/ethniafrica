@@ -1,4 +1,5 @@
 import { expect, test, type Page, type Response } from "@playwright/test";
+import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 type RuntimeFailures = {
   scriptCsp: string[];
@@ -152,9 +153,12 @@ async function expectDirectNavigation(
 // @req REQ-043
 test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   const hubs = [
-    { path: "/fr/pays", heading: "Pays" },
-    { path: "/fr/peuples", heading: "Peuples" },
-    { path: "/fr/familles", heading: "Familles linguistiques" },
+    { path: getLocalizedRoute("fr", "countries"), heading: "Pays" },
+    { path: getLocalizedRoute("fr", "peoples"), heading: "Peuples" },
+    {
+      path: getLocalizedRoute("fr", "families"),
+      heading: "Familles linguistiques",
+    },
   ];
 
   for (const hub of hubs) {
@@ -174,12 +178,16 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   test("hydrates a query-string country detail after direct navigation", async ({
     page,
   }) => {
-    await expectDirectNavigation(page, "/fr/pays?country=COM", async () => {
-      await expect(
-        page.getByRole("heading", { level: 1, name: /Comores/i })
-      ).toBeVisible();
-      expect(new URL(page.url()).searchParams.get("country")).toBe("COM");
-    });
+    await expectDirectNavigation(
+      page,
+      `${getLocalizedRoute("fr", "countries")}?country=COM`,
+      async () => {
+        await expect(
+          page.getByRole("heading", { level: 1, name: /Comores/i })
+        ).toBeVisible();
+        expect(new URL(page.url()).searchParams.get("country")).toBe("COM");
+      }
+    );
   });
 
   // @req REQ-002
@@ -187,7 +195,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
     const searchbox = page.getByRole("searchbox");
     await expectDirectNavigation(
       page,
-      "/fr/recherche?q=Yoruba",
+      `${getLocalizedRoute("fr", "search")}?q=Yoruba`,
       async () => {
         await expect(searchbox).toHaveValue("Yoruba");
       },
@@ -253,12 +261,16 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   test("hydrates the names feature after direct navigation", async ({
     page,
   }) => {
-    await expectDirectNavigation(page, "/fr/noms", async () => {
-      await expect(
-        page.getByRole("heading", { level: 1, name: "Noms & appellations" })
-      ).toBeVisible();
-      await expect(page.getByRole("searchbox")).toBeVisible();
-    });
+    await expectDirectNavigation(
+      page,
+      getLocalizedRoute("fr", "names"),
+      async () => {
+        await expect(
+          page.getByRole("heading", { level: 1, name: "Noms & appellations" })
+        ).toBeVisible();
+        await expect(page.getByRole("searchbox")).toBeVisible();
+      }
+    );
   });
 
   // @req REQ-014
@@ -277,11 +289,15 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   test("hydrates a canonical country detail after direct navigation", async ({
     page,
   }) => {
-    await expectDirectNavigation(page, "/fr/pays/COM", async () => {
-      await expect(
-        page.getByRole("heading", { level: 1, name: /Comores/i })
-      ).toBeVisible();
-    });
+    await expectDirectNavigation(
+      page,
+      getCountryRoute("fr", "COM"),
+      async () => {
+        await expect(
+          page.getByRole("heading", { level: 1, name: /Comores/i })
+        ).toBeVisible();
+      }
+    );
   });
 
   // @req REQ-042

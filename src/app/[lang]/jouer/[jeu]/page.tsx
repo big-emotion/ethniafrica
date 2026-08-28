@@ -6,6 +6,7 @@ import { GamePlayHost } from "@/components/play/GamePlayHost";
 import { GameScopePicker } from "@/components/play/GameScopePicker";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { OG_TITLE } from "@/lib/brand";
 
 interface GamePageProps {
@@ -35,7 +36,7 @@ export async function generateMetadata({
   return {
     title: `${game.nameFr} — ${OG_TITLE}`,
     description: game.promptFr,
-    alternates: { canonical: `/fr/jouer/${game.slug}` },
+    alternates: { canonical: `${getAxisHubRoute("fr", "jouer")}/${game.slug}` },
   };
 }
 
@@ -79,7 +80,7 @@ export default async function GamePage({
         <GameScopePicker
           choices={scopeChoices}
           scope={scope}
-          action={`/fr/jouer/${game.slug}`}
+          action={`${getAxisHubRoute("fr", "jouer")}/${game.slug}`}
           className="mb-4"
         />
       ) : null}

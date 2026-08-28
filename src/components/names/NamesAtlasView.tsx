@@ -24,6 +24,7 @@ import { X } from "lucide-react";
 import { NameTypeBadge } from "@/components/names/NameTypeBadge";
 import { translations } from "@/lib/translations";
 import type { NameRecordType } from "@/types/names";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 export interface NameAtlasEntry {
   id: string;
@@ -112,7 +113,9 @@ function syncUrl(
   if (query) params.set("q", query);
   if (nameType) params.set("nameType", nameType);
   if (imposedOnly) params.set("imposedOnly", "true");
-  const url = params.toString() ? `/fr/noms?${params}` : "/fr/noms";
+  const url = params.toString()
+    ? `${getLocalizedRoute("fr", "names")}?${params}`
+    : getLocalizedRoute("fr", "names");
   window.history.replaceState(window.history.state, "", url);
 }
 
@@ -300,7 +303,7 @@ export function NamesAtlasView({
               {TYPE_CHIPS.map((chip) => (
                 <li key={chip.value}>
                   <Link
-                    href={`/fr/noms?nameType=${chip.value}`}
+                    href={`${getLocalizedRoute("fr", "names")}?nameType=${chip.value}`}
                     className="underline underline-offset-2"
                   >
                     {chip.label}
@@ -309,7 +312,7 @@ export function NamesAtlasView({
               ))}
               <li>
                 <Link
-                  href="/fr/noms?imposedOnly=true"
+                  href={`${getLocalizedRoute("fr", "names")}?imposedOnly=true`}
                   className="underline underline-offset-2"
                 >
                   {t.filters.imposed}
@@ -341,7 +344,7 @@ export function NamesAtlasView({
                 {group.entries.map((entry) => (
                   <li key={entry.id}>
                     <Link
-                      href={`/fr/peuples/${entry.peopleId}#noms`}
+                      href={`${getPeopleRoute("fr", entry.peopleId)}#noms`}
                       className="flex items-center gap-2 text-afh-small hover:underline"
                     >
                       <span>{entry.nameText}</span>

@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { CountryHubGlobe } from "@/components/hubs/CountryHubGlobe";
+import { getCountryRoute } from "@/lib/routing";
 
 const push = vi.fn();
 
@@ -80,7 +81,7 @@ describe("CountryHubGlobe", () => {
     openPicker();
     fireEvent.click(screen.getByRole("option", { name: /Kenya/ }));
 
-    expect(push).toHaveBeenCalledWith("/fr/pays/KEN");
+    expect(push).toHaveBeenCalledWith(getCountryRoute("fr", "KEN"));
   });
 
   // Fifty-four pastilles is the noise the list exists to avoid.

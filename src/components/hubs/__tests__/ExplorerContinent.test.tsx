@@ -2,6 +2,7 @@ import { render, screen, act } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ExplorerContinent } from "@/components/hubs/ExplorerContinent";
+import { getCountryRoute } from "@/lib/routing";
 
 // The stand-in exercises the targetFacts seam the way AtlasGlobe does —
 // calling it for a chosen target — so the panel's contents are asserted
@@ -122,7 +123,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
 
     expect(screen.getByTestId("explorer-continent-fiche-link")).toHaveAttribute(
       "href",
-      "/fr/pays/TZA"
+      getCountryRoute("fr", "TZA")
     );
   });
 

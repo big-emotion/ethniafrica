@@ -1,23 +1,23 @@
 /**
- * Pre-swap SEO baseline for the three fiche routes (peuples / pays / familles).
+ * SEO baseline for the three fiche routes (peuples / pays / familles).
  *
- * ETNI-928/929/930 rebuild what these routes render. None of that work is meant
- * to move the crawler-facing surface, but swapping a render tree is exactly the
- * kind of change that silently drops a JSON-LD block or shifts which module
- * owns the page <head>. Freezing the surface here forces the swap to prove it
- * left SEO alone.
+ * The earlier version of this file froze the *absence* of route-level
+ * metadata, and said in as many words that a story adding canonicals had to
+ * rewrite it in the same commit. Lot 3's PR3 is that story: nesting the
+ * modules under their hub gives every fiche a second address for as long as
+ * the 308s stand, and a redirect window without canonicals is exactly the
+ * window in which the duplicate gets indexed instead of the original.
  *
- * That surface is thinner than one might assume, and these assertions encode
- * the fact rather than an aspiration: the three fiche routes export no
- * `metadata` and no `generateMetadata`, emit no JSON-LD, and inherit their
- * entire <head> from the static `metadata` in src/app/layout.tsx — which
- * declares no canonical at all. Other routes do own metadata
- * (src/app/[lang]/page.tsx, src/app/[lang]/signalements/[slug]/page.tsx), so
- * the absence is a property of the fiche routes, not of the app.
+ * So the assertions have flipped for `generateMetadata` and stayed put for
+ * everything else. Each route now declares a canonical and nothing more: no
+ * per-entity title, no JSON-LD, the rest of the <head> still inherited from
+ * the static `metadata` in src/app/layout.tsx. Titles and structured data
+ * remain legitimate later work, and remain the kind of change that must
+ * rewrite this baseline deliberately rather than discover it went red.
  *
- * A later story giving the fiche routes per-entity titles, canonicals or
- * structured data is legitimate and expected — it must rewrite this baseline
- * deliberately, in the same commit that adds them.
+ * What the canonical says is `ficheCanonical`'s business, and its own suite's
+ * — including the part that is easy to get wrong twice, that a pinned `@v3`
+ * points at the live fiche rather than at itself.
  */
 
 import { readFileSync } from "node:fs";
@@ -40,35 +40,62 @@ vi.mock("next/font/google", () => {
 });
 
 import { metadata as rootLayoutMetadata } from "@/app/layout";
-import * as peuplesFicheRoute from "../peuples/[slug]/page";
-import * as paysFicheRoute from "../pays/[slug]/page";
-import * as famillesFicheRoute from "../familles/[slug]/page";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
+import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import * as peuplesFicheRoute from "../explorer/peuples/[slug]/page";
+import * as paysFicheRoute from "../explorer/pays/[slug]/page";
+import * as famillesFicheRoute from "../explorer/familles/[slug]/page";
 
 const FICHE_ROUTES = [
   {
     segment: "peuples",
     routeModule: peuplesFicheRoute,
-    sourcePath: "src/app/[lang]/peuples/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/explorer/peuples/[slug]/page.tsx",
+    canonical: getPeopleRoute("fr", "PPL_YORUBA"),
+    slug: "PPL_YORUBA",
   },
   {
     segment: "pays",
     routeModule: paysFicheRoute,
-    sourcePath: "src/app/[lang]/pays/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/explorer/pays/[slug]/page.tsx",
+    canonical: getCountryRoute("fr", "BEN"),
+    slug: "BEN",
   },
   {
     segment: "familles",
     routeModule: famillesFicheRoute,
-    sourcePath: "src/app/[lang]/familles/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/explorer/familles/[slug]/page.tsx",
+    canonical: getFamilyRoute("fr", "FLG_BANTU"),
+    slug: "FLG_BANTU",
   },
 ] as const;
 
-describe("fiche routes — SEO baseline frozen before the ETNI-817 panel swap", () => {
-  for (const { segment, routeModule, sourcePath } of FICHE_ROUTES) {
+describe("fiche routes — the crawler-facing surface", () => {
+  for (const {
+    segment,
+    routeModule,
+    sourcePath,
+    canonical,
+    slug,
+  } of FICHE_ROUTES) {
     describe(`/[lang]/${segment}/[slug]`, () => {
+      // @req REQ-091
+      it("declares its canonical, and declares it absolute", async () => {
+        const metadata = await routeModule.generateMetadata({
+          params: Promise.resolve({ lang: "fr", slug }),
+        });
+
+        expect(metadata.alternates?.canonical).toBe(
+          `https://${CANONICAL_DOMAIN}${canonical}`
+        );
+      });
+
+      // The rest of the <head> is still the root layout's. A per-entity
+      // title is later work; asserting its absence is what makes adding one
+      // a decision rather than a side effect.
       // @req REQ-019
-      it("owns no route-level metadata and leaves the whole <head> to the root layout", () => {
+      it("adds no static metadata beside the canonical", () => {
         expect(Object.keys(routeModule)).not.toContain("metadata");
-        expect(Object.keys(routeModule)).not.toContain("generateMetadata");
       });
 
       // @req REQ-019

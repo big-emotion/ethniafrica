@@ -313,7 +313,10 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       );
       // Still a link: without JavaScript the hub is where the reader sees
       // what is coming.
-      expect(jouer).toHaveAttribute("href", "/fr/jouer");
+      expect(jouer).toHaveAttribute(
+        "href",
+        getLocalizedRoute("fr", "jouerHub")
+      );
     } finally {
       if (quizFlag === undefined) {
         delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;

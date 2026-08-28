@@ -22,6 +22,7 @@ import {
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 
 const SOURCE_ROOT = join(process.cwd(), "src");
 
@@ -57,7 +58,7 @@ describe("module visibility charter", () => {
   it("gives every declared module a link", () => {
     for (const definition of MODULE_DEFINITIONS) {
       const href = definition.gameSlug
-        ? `/fr/jouer/${definition.gameSlug}`
+        ? `${getAxisHubRoute("fr", "jouer")}/${definition.gameSlug}`
         : getModuleHref(definition, "fr");
 
       expect(href, `${definition.id} resolves to no route`).toBeTruthy();
@@ -130,7 +131,7 @@ describe("module visibility charter", () => {
 
     for (const definition of drafts) {
       const href = definition.gameSlug
-        ? `/fr/jouer/${definition.gameSlug}`
+        ? `${getAxisHubRoute("fr", "jouer")}/${definition.gameSlug}`
         : getModuleHref(definition, "fr");
       expect(href, `${definition.id} is draft and unroutable`).toBeTruthy();
       expect(getNavModules(definition.accessMode)).toContainEqual(definition);

@@ -4,6 +4,7 @@ import {
   HierarchyTree,
   type HierarchyNode,
 } from "@/components/system/HierarchyTree";
+import { getPeopleRoute } from "@/lib/routing";
 
 const viewports = {
   mobile430: {
@@ -34,7 +35,7 @@ const fixtureRoot: HierarchyNode = {
         {
           id: "PPL_KONGO",
           label: "Kongo",
-          href: "/fr/peuples/PPL_KONGO",
+          href: getPeopleRoute("fr", "PPL_KONGO"),
         },
       ],
     },
@@ -53,13 +54,13 @@ const fixtureRoot: HierarchyNode = {
         {
           id: "PPL_UNLINKED_A",
           label: "Peuple non rattaché A",
-          href: "/fr/peuples/PPL_UNLINKED_A",
+          href: getPeopleRoute("fr", "PPL_UNLINKED_A"),
           badge: "colonial-legacy",
         },
         {
           id: "PPL_UNLINKED_B",
           label: "Peuple non rattaché B",
-          href: "/fr/peuples/PPL_UNLINKED_B",
+          href: getPeopleRoute("fr", "PPL_UNLINKED_B"),
         },
       ],
     },

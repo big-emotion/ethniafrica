@@ -1,4 +1,5 @@
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // ETNI-523 (12.10) AC5 — under deuteranopia/protanopia/tritanopia
 // simulation, active vs. dimmed vs. selected migration paths on the map
@@ -9,7 +10,7 @@ import { test, expect } from "./support/fixtures";
 // Brettel-derived color-blindness filter matrices as a CSS filter over the
 // map and re-asserts that same non-color signal survives the simulation,
 // plus attaches a screenshot per type for the reviewer to eyeball.
-const MIGRATIONS_URL = "/fr/migrations";
+const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
 
 const COLORBLIND_FILTERS: Record<string, string> = {
   protanopia:

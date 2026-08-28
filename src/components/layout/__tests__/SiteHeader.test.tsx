@@ -14,6 +14,7 @@ import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
 import { getNavModules } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getLocalizedRoute } from "@/lib/routing";
 
 let mockPathname = "/fr";
 
@@ -133,8 +134,8 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
 
     fireEvent.click(trigger("Explorer"));
 
-    expect(panel()).toHaveTextContent("/fr/peuples");
-    expect(panel()).toHaveTextContent("/fr/pays");
+    expect(panel()).toHaveTextContent(getLocalizedRoute("fr", "peoples"));
+    expect(panel()).toHaveTextContent(getLocalizedRoute("fr", "countries"));
   });
 
   // @req REQ-114
@@ -167,7 +168,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
     const { rerender } = renderHeader();
 
     fireEvent.click(trigger("Explorer"));
-    mockPathname = "/fr/peuples";
+    mockPathname = getLocalizedRoute("fr", "peoples");
     rerender(
       <ThemeProvider attribute="class">
         <SiteHeader language="fr" />
@@ -179,7 +180,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
 
   // @req REQ-114
   it("marks the module the reader is already reading", () => {
-    mockPathname = "/fr/peuples";
+    mockPathname = getLocalizedRoute("fr", "peoples");
     renderHeader();
 
     fireEvent.click(trigger("Explorer"));
@@ -293,7 +294,7 @@ describe("SiteHeader — the controls that stay in the bar", () => {
   // bar would collide with a fixed header (R3/FR105).
   // @req REQ-114
   it("stays static rather than fixed or sticky on every route", () => {
-    for (const pathname of ["/fr", "/fr/pays"]) {
+    for (const pathname of ["/fr", getLocalizedRoute("fr", "countries")]) {
       mockPathname = pathname;
       renderHeader();
 
@@ -339,6 +340,6 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
 
     expect(
       within(tray).getByRole("link", { name: "Les peuples d'Afrique" })
-    ).toHaveAttribute("href", "/fr/peuples");
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "peoples"));
   });
 });

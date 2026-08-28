@@ -175,9 +175,9 @@ vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
 // Subjects under test — imported after the boundaries are in place
 // ---------------------------------------------------------------------------
 
-import PeuplesSlugPage from "../peuples/[slug]/page";
-import PaysSlugPage from "../pays/[slug]/page";
-import FamillesSlugPage from "../familles/[slug]/page";
+import PeuplesSlugPage from "../explorer/peuples/[slug]/page";
+import PaysSlugPage from "../explorer/pays/[slug]/page";
+import FamillesSlugPage from "../explorer/familles/[slug]/page";
 
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import { sectionIdForPanel } from "@/components/fiche/panelRegistry";

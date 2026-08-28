@@ -1,4 +1,5 @@
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // ETNI-523 (12.10) AC3 — 200% text zoom at the three reference viewports
 // (430/720/800 px, playwright.config.ts) must not introduce horizontal
@@ -11,7 +12,7 @@ import { test, expect } from "./support/fixtures";
 // layout for rem/em-based type: scaling the root font-size 200%, which is
 // the standard technique for testing reflow at zoom (WCAG 1.4.10 companion
 // check for 1.4.4).
-const MIGRATIONS_URL = "/fr/migrations";
+const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
 const TEXT_ZOOM_STYLE = "html { font-size: 200% !important; }";
 
 // @req REQ-101 FR84 UX-DR39

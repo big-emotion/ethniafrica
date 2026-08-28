@@ -4,7 +4,7 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
-        // /fr/noms and /fr/migrations (further down this list) both returned
+        // /fr/comprendre/noms and /fr/comprendre/migrations (further down this list) both returned
         // HTTP 500 in CI and were excluded, because lhci's `collect` step
         // aborts the whole run on the first URL that fails to load — which
         // left every route after them unmeasured, not just themselves.
@@ -18,34 +18,34 @@ module.exports = {
         //
         // If either still fails, the honest response is to fix the route, not
         // to re-exclude it: an unmeasured route is a budget nobody enforces.
-        "http://localhost:3000/fr/noms",
+        "http://localhost:3000/fr/comprendre/noms",
         // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
         // journey joins the reference routes so its mobile Performance ≥ 85
         // budget is enforced continuously via the base ".*" assertMatrix
         // entry below, not just checked once at ship time.
-        "http://localhost:3000/fr/quiz",
+        "http://localhost:3000/fr/jouer/quiz",
         // One representative route per charter route-family rolled out in
         // 16.4–16.9 (ETNI-807 · FR110), in addition to the fiche routes
         // below. Dropping one leaves that family's mobile budget unmeasured.
-        "http://localhost:3000/fr/peuples",
-        "http://localhost:3000/fr/recherche",
+        "http://localhost:3000/fr/explorer/peuples",
+        "http://localhost:3000/fr/explorer/recherche",
         "http://localhost:3000/fr/mentions-legales",
         "http://localhost:3000/fr/admin/connexion",
         // The next three are one representative assembled fiche per AFRIK
         // entity type (FR102) — country, people, language family. Each entity
         // type resolves a different chapter sequence (panelRegistry.tsx), so
         // dropping one leaves that sequence's mobile budget unmeasured.
-        "http://localhost:3000/fr/pays/SEN",
-        "http://localhost:3000/fr/peuples/PPL_WOLOF",
+        "http://localhost:3000/fr/explorer/pays/SEN",
+        "http://localhost:3000/fr/explorer/peuples/PPL_WOLOF",
         // ETNI-463 (7.11) AC1 — also the large-family sample (FLG_BANTU:
         // 6 languages, 174 associated peoples, the largest currently-seeded).
-        "http://localhost:3000/fr/familles/FLG_BANTU",
+        "http://localhost:3000/fr/explorer/familles/FLG_BANTU",
         // Epic 11, Story 11.11 (FR75, NFR1) — the links page with the lazy
         // (ssr:false) ego-network graph must not regress mobile performance.
-        "http://localhost:3000/fr/peuples/PPL_WOLOF/liens",
+        "http://localhost:3000/fr/explorer/peuples/PPL_WOLOF/liens",
         // ETNI-488 (9.11) AC1 — comparator picker + one seeded comparison
         // route (illustrative staging IDs, same FLG_ATLANTIQUE family as the
-        // /fr/peuples/PPL_WOLOF fiche above). Tighter CWV budgets for both
+        // /fr/explorer/peuples/PPL_WOLOF fiche above). Tighter CWV budgets for both
         // are scoped in assert.assertMatrix below.
         "http://localhost:3000/fr/comparer",
         "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE",
@@ -53,11 +53,11 @@ module.exports = {
         // timeline (EventTimelineMarkers + EventChronologyTable) must not
         // regress the base mobile Performance ≥ 85 / Accessibility = 100
         // budgets enforced by the catch-all assertMatrix entry below.
-        "http://localhost:3000/fr/regards/colonisation-et-resistances",
+        "http://localhost:3000/fr/comprendre/regards/colonisation-et-resistances",
         // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas, back in
-        // the list for the same reason as /fr/noms above. Its tighter CLS/INP
+        // the list for the same reason as /fr/comprendre/noms above. Its tighter CLS/INP
         // budgets are in assert.assertMatrix below and are no longer inert.
-        "http://localhost:3000/fr/migrations",
+        "http://localhost:3000/fr/comprendre/migrations",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
@@ -129,7 +129,8 @@ module.exports = {
         // CLS ≤ 0.1 and INP ≤ 200ms (max-potential-fid as the lab proxy),
         // on top of the base Performance ≥ 85 gate above.
         {
-          matchingUrlPattern: "^http://localhost:3000/fr/migrations(/.*)?$",
+          matchingUrlPattern:
+            "^http://localhost:3000/fr/comprendre/migrations(/.*)?$",
           assertions: {
             "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
             "max-potential-fid": ["error", { maxNumericValue: 200 }],

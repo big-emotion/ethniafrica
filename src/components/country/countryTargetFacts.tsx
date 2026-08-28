@@ -5,6 +5,7 @@ import { flagFromISO3 } from "@/lib/countryFlag";
 import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import { getCountryRoute } from "@/lib/routing";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -244,7 +245,7 @@ export function buildCountryAtlasFacts({
                 </span>
               )}
               <ProvenanceChip declared={false} />
-              <ReadTheFiche href={`/fr/pays/${target.countryId}`} />
+              <ReadTheFiche href={getCountryRoute("fr", target.countryId)} />
             </div>
           ),
         },

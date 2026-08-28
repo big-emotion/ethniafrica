@@ -27,6 +27,7 @@ import {
   continentTargetFacts,
   type AtlasTarget,
 } from "@/lib/atlas/targets";
+import { getCountryRoute } from "@/lib/routing";
 
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
   AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
@@ -110,7 +111,11 @@ function continentOverlayFrom(
 function continentFactsWithFicheLink(target: AtlasTarget) {
   return {
     ...continentTargetFacts(target),
-    body: <a href={`/fr/pays/${target.countryId}`}>Voir la fiche du pays</a>,
+    body: (
+      <a href={getCountryRoute("fr", target.countryId)}>
+        Voir la fiche du pays
+      </a>
+    ),
   };
 }
 
@@ -831,7 +836,7 @@ describe("AtlasGlobe", () => {
       expect(screen.getByRole("dialog", { name: "Tanzanie" })).toBeVisible();
       expect(
         screen.getByRole("link", { name: "Voir la fiche du pays" })
-      ).toHaveAttribute("href", "/fr/pays/TZA");
+      ).toHaveAttribute("href", getCountryRoute("fr", "TZA"));
     });
 
     /**

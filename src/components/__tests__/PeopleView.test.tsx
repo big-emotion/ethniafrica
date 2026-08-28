@@ -9,6 +9,7 @@ import { PeopleView } from "../views/PeopleView";
 import * as afrikLoader from "@/lib/afrikLoader";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { PaginatedResponse, PeopleSummary } from "@/types/afrik-frontend";
+import { getPeopleRoute } from "@/lib/routing";
 
 vi.mock("@/lib/afrikLoader", () => ({
   getPeoples: vi.fn(),
@@ -105,7 +106,7 @@ describe("PeopleView", () => {
     render(<PeopleView language="fr" />, { wrapper: createWrapper() });
 
     const link = await screen.findByRole("link", { name: "Yoruba" });
-    expect(link).toHaveAttribute("href", "/fr/peuples/PPL_YORUBA");
+    expect(link).toHaveAttribute("href", getPeopleRoute("fr", "PPL_YORUBA"));
   });
 
   // @req REQ-001

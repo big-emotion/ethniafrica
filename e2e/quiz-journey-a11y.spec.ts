@@ -1,6 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import type { Page, Locator } from "@playwright/test";
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // ETNI-500 (10.11) AC1 — axe-core zero serious/critical across the quiz
 // session states that the static /fr/quiz audit cannot reach (picker is
@@ -9,7 +10,7 @@ import { test, expect } from "./support/fixtures";
 // Runs on the mobile-430 project (source-of-truth viewport per
 // playwright.config.ts) with no continue-on-error in e2e.yml, so a
 // violation here fails the required CI check.
-const QUIZ_URL = "/fr/quiz";
+const QUIZ_URL = getLocalizedRoute("fr", "quiz");
 const QUESTIONS_PER_SESSION = 8;
 
 async function expectNoSeriousOrCriticalViolations(page: Page) {

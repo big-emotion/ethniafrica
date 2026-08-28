@@ -6,6 +6,7 @@ import {
   type CitationFormatterInput,
 } from "@/components/system/citation-formatters";
 import { describe, expect, it } from "vitest";
+import { getPeopleRoute } from "@/lib/routing";
 
 const citation: CitationFormatterInput = {
   title: "Yorùbá (Èdè Yorùbá / Yoruba)",
@@ -40,8 +41,8 @@ describe("citation formatters", () => {
       "https://ethniafrica.example/fr/familles-linguistiques/atlantique?print=1#langues"
     );
 
-    expect(createPrintableUrl("/fr/peuples/seereer@v34")).toBe(
-      "/fr/peuples/seereer@v34?print=1"
+    expect(createPrintableUrl(getPeopleRoute("fr", "seereer@v34"))).toBe(
+      `${getPeopleRoute("fr", "seereer@v34")}?print=1`
     );
   });
 

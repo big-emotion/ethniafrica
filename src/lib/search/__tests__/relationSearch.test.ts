@@ -5,19 +5,20 @@ import {
   readRelation,
   relationSearchParams,
 } from "../relationSearch";
+import { getLocalizedRoute } from "@/lib/routing";
 
 describe("buildRelationSearchHref", () => {
   // @req REQ-002
   it("points a family chip at a family-scoped search", () => {
     expect(
       buildRelationSearchHref("fr", { kind: "family", id: "FLG_KROU" })
-    ).toBe("/fr/recherche?family=FLG_KROU");
+    ).toBe(`${getLocalizedRoute("fr", "search")}?family=FLG_KROU`);
   });
 
   // @req REQ-002
   it("points a country chip at a country-scoped search", () => {
     expect(buildRelationSearchHref("fr", { kind: "country", id: "CIV" })).toBe(
-      "/fr/recherche?country=CIV"
+      `${getLocalizedRoute("fr", "search")}?country=CIV`
     );
   });
 
@@ -25,7 +26,9 @@ describe("buildRelationSearchHref", () => {
   it("keeps the free-text query when one is already active", () => {
     expect(
       buildRelationSearchHref("fr", { kind: "family", id: "FLG_KROU" }, "Bété")
-    ).toBe("/fr/recherche?q=B%C3%A9t%C3%A9&family=FLG_KROU");
+    ).toBe(
+      `${getLocalizedRoute("fr", "search")}?q=B%C3%A9t%C3%A9&family=FLG_KROU`
+    );
   });
 });
 

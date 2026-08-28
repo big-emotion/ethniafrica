@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { QuizScoreScreen } from "@/components/quiz/QuizScoreScreen";
 import type { QuizScope } from "@/lib/quiz/quizScope";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const GHANA: QuizScope = { kind: "country", entityId: "GHA" };
 
@@ -13,7 +14,7 @@ function renderScreen(scope: QuizScope = GHANA, correct = 7) {
       scopeLabelFr="Ghana"
       correctCount={correct}
       totalQuestions={8}
-      exitHref="/fr/quiz"
+      exitHref={getLocalizedRoute("fr", "quiz")}
     />
   );
 }
@@ -45,7 +46,7 @@ describe("QuizScoreScreen (Epic 10, Story 10.9, ETNI-1136)", () => {
     const link = screen.getByRole("link", { name: "Voir la carte de score" });
     expect(link).toHaveAttribute(
       "href",
-      "/fr/quiz/score?pays=GHA&correct=7&total=8"
+      `${getLocalizedRoute("fr", "quiz")}/score?pays=GHA&correct=7&total=8`
     );
   });
 
@@ -64,7 +65,7 @@ describe("QuizScoreScreen (Epic 10, Story 10.9, ETNI-1136)", () => {
 
     expect(screen.getByTestId("quiz-session-exit")).toHaveAttribute(
       "href",
-      "/fr/quiz"
+      getLocalizedRoute("fr", "quiz")
     );
   });
 });

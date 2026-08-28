@@ -1,4 +1,5 @@
 import type { HierarchyNode } from "@/components/system/hierarchy-types";
+import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
 /**
  * Shared fixture for the classification tree (7.9) and HierarchyTextIndex
@@ -14,7 +15,7 @@ export const hierarchyFixture: HierarchyNode[] = [
     name: "Swahili",
     endonym: { label: "Kiswahili", lang: "sw" },
     peopleCount: 2,
-    href: "/fr/familles/FLG_BANTU#lng-swa",
+    href: `${getFamilyRoute("fr", "FLG_BANTU")}#lng-swa`,
     classificationStatus: null,
     children: [
       {
@@ -23,7 +24,7 @@ export const hierarchyFixture: HierarchyNode[] = [
         name: "Waswahili",
         endonym: { label: "Waswahili", lang: "sw" },
         peopleCount: 1,
-        href: "/fr/peuples/PPL_SWAHILI",
+        href: getPeopleRoute("fr", "PPL_SWAHILI"),
       },
       {
         id: "PPL_COMORIAN",
@@ -31,7 +32,7 @@ export const hierarchyFixture: HierarchyNode[] = [
         name: "Comorien",
         endonym: { label: "Wangazidja", lang: "zdj" },
         peopleCount: 1,
-        href: "/fr/peuples/PPL_COMORIAN",
+        href: getPeopleRoute("fr", "PPL_COMORIAN"),
       },
     ],
   },
@@ -41,7 +42,7 @@ export const hierarchyFixture: HierarchyNode[] = [
     name: "Lingala",
     endonym: { label: "Lingála", lang: "ln" },
     peopleCount: 1,
-    href: "/fr/familles/FLG_BANTU#lng-lin",
+    href: `${getFamilyRoute("fr", "FLG_BANTU")}#lng-lin`,
     classificationStatus: "contested",
     children: [
       {
@@ -50,7 +51,7 @@ export const hierarchyFixture: HierarchyNode[] = [
         name: "Bangala",
         endonym: { label: "Bangála", lang: "ln" },
         peopleCount: 1,
-        href: "/fr/peuples/PPL_BANGALA",
+        href: getPeopleRoute("fr", "PPL_BANGALA"),
       },
     ],
   },
@@ -66,7 +67,7 @@ export const hierarchyFixture: HierarchyNode[] = [
         name: "Peuple orphelin A",
         endonym: { label: "Endonyme A", lang: "und" },
         peopleCount: 1,
-        href: "/fr/peuples/PPL_ORPHAN_A",
+        href: getPeopleRoute("fr", "PPL_ORPHAN_A"),
       },
       {
         id: "PPL_ORPHAN_B",
@@ -74,7 +75,7 @@ export const hierarchyFixture: HierarchyNode[] = [
         name: "Peuple orphelin B",
         endonym: { label: "Endonyme B", lang: "und" },
         peopleCount: 1,
-        href: "/fr/peuples/PPL_ORPHAN_B",
+        href: getPeopleRoute("fr", "PPL_ORPHAN_B"),
       },
     ],
   },

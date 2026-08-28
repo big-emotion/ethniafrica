@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getLocalizedRoute } from "@/lib/routing";
 
 export type DoctrineSlug =
   | "endonymes-vs-exonymes"
@@ -41,8 +42,8 @@ export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
   const copy = DOCTRINE_COPY[slug];
   const href =
     version !== undefined
-      ? `/fr/doctrine/${slug}@v${version}`
-      : `/fr/doctrine/${slug}`;
+      ? `${getLocalizedRoute("fr", "doctrine")}/${slug}@v${version}`
+      : `${getLocalizedRoute("fr", "doctrine")}/${slug}`;
 
   return (
     <aside

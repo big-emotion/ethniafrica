@@ -15,6 +15,7 @@ import userEvent from "@testing-library/user-event";
 import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { SearchResult } from "@/types/afrik-frontend";
+import { getPeopleRoute } from "@/lib/routing";
 
 // Mock afrikLoader
 vi.mock("@/lib/afrikLoader", () => ({
@@ -231,7 +232,7 @@ describe("SearchModalV2", () => {
       // keyboard user could reach.
       expect(
         within(resultsList).getByRole("link", { name: "Shona" })
-      ).toHaveAttribute("href", "/fr/peuples/PPL_SHONA");
+      ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_SHONA"));
     });
 
     // @req REQ-002

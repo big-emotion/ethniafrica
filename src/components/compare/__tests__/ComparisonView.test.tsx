@@ -5,6 +5,7 @@ import { ComparisonView } from "@/components/compare/ComparisonView";
 import { CompareSectionRow } from "@/components/compare/CompareSectionRow";
 import { CompareValueCell } from "@/components/compare/CompareValueCell";
 import type { ComparisonPageData } from "@/types/compare";
+import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 
 // @req REQ-097 REQ-098
 const peopleComparison: ComparisonPageData = {
@@ -95,10 +96,10 @@ describe("ComparisonView", () => {
 
     expect(
       screen.getAllByRole("link", { name: "FLG_NIGER_CONGO" })[0]
-    ).toHaveAttribute("href", "/fr/familles/FLG_NIGER_CONGO");
+    ).toHaveAttribute("href", getFamilyRoute("fr", "FLG_NIGER_CONGO"));
     expect(screen.getAllByRole("link", { name: "NGA" })[0]).toHaveAttribute(
       "href",
-      "/fr/pays/NGA"
+      getCountryRoute("fr", "NGA")
     );
   });
 
@@ -213,7 +214,7 @@ describe("CompareValueCell", () => {
 
     expect(
       screen.getByRole("link", { name: "FLG_NIGER_CONGO" })
-    ).toHaveAttribute("href", "/fr/familles/FLG_NIGER_CONGO");
+    ).toHaveAttribute("href", getFamilyRoute("fr", "FLG_NIGER_CONGO"));
   });
 
   // @req REQ-098

@@ -3,6 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { TonguePanel, type TonguePanelProps } from "../TonguePanel";
+import { getPeopleRoute } from "@/lib/routing";
 
 const SOURCE_LINE = { label: "SIL Ethnologue, 2025" };
 
@@ -113,7 +114,7 @@ describe("TonguePanel — branch slice depth bound", () => {
     await user.keyboard("{ArrowRight}");
 
     const kongo = await screen.findByRole("treeitem", { name: /Kongo/ });
-    expect(kongo).toHaveAttribute("href", "/fr/peuples/PPL_KONGO");
+    expect(kongo).toHaveAttribute("href", getPeopleRoute("fr", "PPL_KONGO"));
     expect(kongo).not.toHaveAttribute("aria-expanded");
 
     fetchMock.mockClear();

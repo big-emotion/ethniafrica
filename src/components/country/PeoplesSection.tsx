@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
+import { getPeopleRoute } from "@/lib/routing";
 
 interface PeoplesSectionProps {
   data: PeoplesData;
@@ -155,11 +156,13 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
               endonym={row.endonym}
               exonym={row.name}
               lang={row.endonymLang}
-              href={row.peopleId ? `/fr/peuples/${row.peopleId}` : undefined}
+              href={
+                row.peopleId ? getPeopleRoute("fr", row.peopleId) : undefined
+              }
             />
           ) : row.peopleId && !row.groupedNames ? (
             <Link
-              href={`/fr/peuples/${row.peopleId}`}
+              href={getPeopleRoute("fr", row.peopleId)}
               className="text-afh-small font-bold leading-snug hover:underline"
               style={{ fontFamily: "var(--country-font-body)" }}
             >

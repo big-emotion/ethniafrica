@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
+import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * The people fiche had no a11y gate at all, while the family fiche has had a
@@ -30,7 +31,7 @@ test.describe("@nfr-a11y people fiche — axe-core", () => {
     test(`has zero serious/critical violations on ${sample.id} (${sample.regime})`, async ({
       page,
     }) => {
-      await page.goto(`/fr/peuples/${sample.id}`);
+      await page.goto(getPeopleRoute("fr", sample.id));
       await page.waitForLoadState("networkidle");
 
       const results = await new AxeBuilder({ page })
@@ -60,7 +61,7 @@ test.describe("@nfr-a11y people fiche — axe-core", () => {
   test("reaches every country of presence from the keyboard alone", async ({
     page,
   }) => {
-    await page.goto("/fr/peuples/PPL_YORUBA");
+    await page.goto(getPeopleRoute("fr", "PPL_YORUBA"));
     await page.waitForLoadState("networkidle");
 
     // Found by its accessible name, the way the readers this test is about

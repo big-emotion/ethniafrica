@@ -5,6 +5,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { TrustStrip } from "@/components/home/TrustStrip";
+import { getLocalizedRoute } from "@/lib/routing";
 
 describe("TrustStrip — the home's one claim about itself (REQ-113)", () => {
   // @req REQ-113
@@ -13,7 +14,7 @@ describe("TrustStrip — the home's one claim about itself (REQ-113)", () => {
 
     expect(screen.getByRole("link", { name: /doctrine/i })).toHaveAttribute(
       "href",
-      "/fr/doctrine"
+      getLocalizedRoute("fr", "doctrine")
     );
   });
 

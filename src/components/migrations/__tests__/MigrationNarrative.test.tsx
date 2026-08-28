@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { MigrationNarrative } from "../MigrationNarrative";
 import type { MigrationNarrativeEntry } from "@/lib/migrationDataTransformer";
+import { getPeopleRoute } from "@/lib/routing";
 
 function makeEvent(
   overrides: Partial<MigrationNarrativeEntry> = {}
@@ -32,7 +33,7 @@ describe("MigrationNarrative", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Peuple Test/ })).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_TEST"
+      getPeopleRoute("fr", "PPL_TEST")
     );
   });
 

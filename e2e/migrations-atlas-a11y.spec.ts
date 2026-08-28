@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // ETNI-523 (12.10) AC1 — axe-core zero serious/critical on /fr/migrations
 // across its three distinct states: the default Récit tab, the Carte tab
@@ -9,7 +10,7 @@ import { test, expect } from "./support/fixtures";
 // violation here fails the required CI check — the static Storybook/live
 // audit in a11y.yml only covers the server-rendered Récit-default markup
 // (scripts/a11y-test.ts), not these interactive states.
-const MIGRATIONS_URL = "/fr/migrations";
+const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
 
 async function expectNoSeriousOrCriticalViolations(
   page: import("@playwright/test").Page

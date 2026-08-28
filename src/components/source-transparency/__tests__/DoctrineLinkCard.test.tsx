@@ -3,6 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { DoctrineLinkCard, isDoctrineSlug } from "../DoctrineLinkCard";
+import { getLocalizedRoute } from "@/lib/routing";
 
 describe("DoctrineLinkCard", () => {
   describe("French explanatory copy per slug", () => {
@@ -36,12 +37,13 @@ describe("DoctrineLinkCard", () => {
   });
 
   describe("Live (no version) link target", () => {
-    it("renders /fr/doctrine/<slug> link when version is undefined", () => {
+    // @req REQ-025
+    it("links the live doctrine page when version is undefined", () => {
       render(<DoctrineLinkCard slug="endonymes-vs-exonymes" />);
       const link = screen.getByRole("link");
       expect(link).toHaveAttribute(
         "href",
-        "/fr/doctrine/endonymes-vs-exonymes"
+        `${getLocalizedRoute("fr", "doctrine")}/endonymes-vs-exonymes`
       );
     });
 
@@ -56,14 +58,14 @@ describe("DoctrineLinkCard", () => {
 
   describe("Pinned (with version) link target", () => {
     // @req REQ-025
-    it("renders /fr/doctrine/<slug>@v42 link when version=42", () => {
+    it("links the pinned doctrine revision when version=42", () => {
       render(
         <DoctrineLinkCard slug="classifications-contestees" version={42} />
       );
       const link = screen.getByRole("link");
       expect(link).toHaveAttribute(
         "href",
-        "/fr/doctrine/classifications-contestees@v42"
+        `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees@v42`
       );
     });
 

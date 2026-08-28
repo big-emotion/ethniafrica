@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { BinaryChoice } from "@/components/play/BinaryChoice";
 import type { BinaryRound } from "@/lib/games/gameKinds";
+import { getPeopleRoute } from "@/lib/routing";
 
 const ROUND: BinaryRound = {
   kind: "binary",
@@ -15,7 +16,7 @@ const ROUND: BinaryRound = {
     fieldPath: "content.appellations.originOfExonyms",
     sources: [],
     confidence: null,
-    ficheHref: "/fr/peuples/PPL_TEST",
+    ficheHref: getPeopleRoute("fr", "PPL_TEST"),
   },
   options: [
     { labelFr: "Yorùbá", name: { autonym: "Yorùbá", exonym: "Yoruba" } },

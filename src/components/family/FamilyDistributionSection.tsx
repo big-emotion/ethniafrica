@@ -5,6 +5,7 @@ import {
   classifyFieldProvenance,
   isStructurallyExpectedField,
 } from "@/lib/fieldProvenance";
+import { getCountryRoute } from "@/lib/routing";
 
 export interface FamilyDistributionSectionProps {
   data: FamilyDistributionData;
@@ -45,7 +46,7 @@ export function FamilyDistributionSection({
         <ul>
           {entries.map(([countryId, speakerCount]) => (
             <li key={countryId}>
-              <Link href={`/fr/pays/${countryId}`}>{countryId}</Link>
+              <Link href={getCountryRoute("fr", countryId)}>{countryId}</Link>
               {": "}
               {formatNumber(speakerCount)} locuteurs
             </li>
@@ -64,7 +65,7 @@ export function FamilyDistributionSection({
           <ul>
             {footprintEntries.map(([countryId, peopleCount]) => (
               <li key={countryId}>
-                <Link href={`/fr/pays/${countryId}`}>{countryId}</Link>
+                <Link href={getCountryRoute("fr", countryId)}>{countryId}</Link>
                 {": "}
                 {formatNumber(peopleCount)} peuples
               </li>

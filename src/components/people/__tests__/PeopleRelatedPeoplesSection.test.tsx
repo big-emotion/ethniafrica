@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import type { PeopleRelatedData } from "@/lib/peopleDataTransformer";
+import { getPeopleLinksRoute } from "@/lib/routing";
 
 const EMPTY_DATA: PeopleRelatedData = {
   ethnicities: [],
@@ -50,7 +51,10 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
     expect(screen.queryByText("Bamiléké")).not.toBeInTheDocument();
 
     const link = screen.getByRole("link", { name: /voir tous les liens/i });
-    expect(link).toHaveAttribute("href", "/fr/peuples/PPL_YORUBA/liens");
+    expect(link).toHaveAttribute(
+      "href",
+      getPeopleLinksRoute("fr", "PPL_YORUBA")
+    );
   });
 
   // @req REQ-097 FR75
