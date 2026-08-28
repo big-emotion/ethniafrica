@@ -18,6 +18,7 @@ import {
 import { ContributionForm } from "@/components/ContributionForm";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
 
+// @req REQ-045
 export default function ContributePage() {
   const params = useParams();
   const lang = params?.lang as string;
@@ -100,11 +101,13 @@ export default function ContributePage() {
       hideHeader={true}
     >
       <div className="max-w-3xl mx-auto space-y-8">
-        <h1 className="text-3xl font-display font-bold">{t.title}</h1>
+        <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
 
         {/* Section Intro */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">{t.intro.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.intro.title}
+          </h2>
           <p>{t.intro.text1}</p>
           <p>{t.intro.text2}</p>
         </section>
@@ -116,7 +119,7 @@ export default function ContributePage() {
 
         {/* Section API Documentation */}
         <section className="space-y-4">
-          <h3 className="text-xl font-semibold flex items-center gap-2">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
             <FileText className="h-5 w-5" />
             {t.apiDocs.title}
           </h3>
@@ -133,7 +136,7 @@ export default function ContributePage() {
 
         {/* Section Download */}
         <section className="space-y-4">
-          <h3 className="text-xl font-semibold flex items-center gap-2">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
             <Download className="h-5 w-5" />
             {t.download.title}
           </h3>
@@ -160,7 +163,7 @@ export default function ContributePage() {
 
         {/* Section GitHub */}
         <section className="space-y-4">
-          <h3 className="text-xl font-semibold flex items-center gap-2">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
             <Code className="h-5 w-5" />
             {t.github.title}
           </h3>
@@ -181,7 +184,7 @@ export default function ContributePage() {
 
         {/* Section Contact / Typeform */}
         <section className="space-y-4">
-          <h3 className="text-xl font-semibold flex items-center gap-2">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
             <MessageSquare className="h-5 w-5" />
             {t.contact.title}
           </h3>

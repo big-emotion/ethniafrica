@@ -44,6 +44,7 @@ async function fetchAllRevisions(peopleId: string): Promise<RevisionItem[]> {
 /*  Component                                                                  */
 /* -------------------------------------------------------------------------- */
 
+// @req REQ-019
 export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
   const [state, setState] = React.useState<SectionState>({ phase: "loading" });
   const fetchRef = React.useRef(0);
@@ -73,7 +74,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
     >
       <h2
         id="historique-heading"
-        className="text-sm font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,#6b7280)]"
+        className="text-afh-small font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,#6b7280)]"
       >
         Historique
       </h2>
@@ -81,7 +82,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
       {state.phase === "loading" && (
         <p
           data-testid="historique-loading"
-          className="text-sm text-[var(--afh-fg-muted,#6b7280)]"
+          className="text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
           aria-live="polite"
         >
           Chargement…
@@ -90,14 +91,14 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
 
       {state.phase === "error" && (
         <div
-          className="space-y-2 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-sm text-[var(--afh-warn-fg,#92400e)]"
+          className="space-y-2 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
           role="alert"
         >
           <p>Impossible de charger l&apos;historique.</p>
           <button
             type="button"
             onClick={load}
-            className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-xs font-medium text-white"
+            className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-afh-caption font-medium text-white"
           >
             Réessayer
           </button>
@@ -105,7 +106,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
       )}
 
       {state.phase === "success" && state.revisions.length === 0 && (
-        <p className="text-sm text-[var(--afh-fg-muted,#6b7280)]">
+        <p className="text-afh-small text-[var(--afh-fg-muted,#6b7280)]">
           Aucune révision publiée — fiche initiale
         </p>
       )}
@@ -116,7 +117,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
             <li
               key={rev.version}
               data-testid={`historique-row-${rev.version}`}
-              className="flex flex-wrap items-baseline gap-2 text-sm border-l-2 border-[var(--afh-border,#e5e7eb)] pl-3"
+              className="flex flex-wrap items-baseline gap-2 text-afh-small border-l-2 border-[var(--afh-border,#e5e7eb)] pl-3"
             >
               <a
                 href={rev.pinned_url}
@@ -136,7 +137,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
                 </span>
               )}
               {rev.reason && (
-                <span className="text-[var(--afh-fg,#111827)] w-full text-xs">
+                <span className="text-[var(--afh-fg,#111827)] w-full text-afh-caption">
                   {rev.reason}
                 </span>
               )}

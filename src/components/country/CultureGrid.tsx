@@ -28,6 +28,7 @@ const SLOT_STYLES: Record<Slot, { bg: string; labelColor: string }> = {
   },
 };
 
+// @req REQ-092
 export function CultureGrid({ data }: CultureGridProps) {
   if (data.items.length === 0) return null;
 
@@ -52,17 +53,17 @@ function CultureGridCell({ item }: { item: CultureGridItem }) {
       className="p-3 md:p-4 xl:p-[18px] rounded-[var(--country-radius-base)] xl:rounded-[14px] text-center"
       style={{ background: bg }}
     >
-      <div className="text-2xl xl:text-[28px] mb-1">{item.icon}</div>
+      <div className="text-afh-h2 mb-1">{item.icon}</div>
 
       <div
-        className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.08em] mb-1"
+        className="text-afh-eyebrow font-bold uppercase tracking-[0.08em] mb-1"
         style={{ color: labelColor }}
       >
         {item.label}
       </div>
 
       <div
-        className="text-xs md:text-[13px] xl:text-sm leading-[1.4]"
+        className="text-afh-caption leading-[1.4]"
         style={{ color: "var(--country-text-soft)" }}
       >
         {item.keywords.join(", ")}

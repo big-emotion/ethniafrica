@@ -163,7 +163,7 @@ export function ContributionForm({
 
   return (
     <Card className="rounded-afh-xl p-4 sm:p-6">
-      <h2 className="mb-4 text-xl font-bold sm:text-2xl">{t.title}</h2>
+      <h2 className="mb-4 text-afh-h2 font-bold">{t.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="type">{t.type}</Label>
@@ -239,7 +239,7 @@ export function ContributionForm({
               placeholder={t.payloadPlaceholder}
               required
               rows={10}
-              className="font-mono text-sm"
+              className="font-mono text-afh-small"
             />
           </div>
         ) : (
@@ -298,12 +298,14 @@ export function ContributionForm({
         {error && <FormFieldError>{error}</FormFieldError>}
 
         {hasUnverifiedSource && (
-          <div className="text-sm text-amber-700" role="status">
+          <div className="text-afh-small text-amber-700" role="status">
             {t.sourceUnverified}
           </div>
         )}
 
-        {success && <div className="text-green-500 text-sm">{t.success}</div>}
+        {success && (
+          <div className="text-green-500 text-afh-small">{t.success}</div>
+        )}
 
         <Button
           type="submit"

@@ -61,17 +61,18 @@ const peopleVariantConfig = {
       fontSize: "var(--country-text-hero)",
       fontWeight: 900,
     },
-    autonymClasses: "text-white/70 text-[14px] md:text-[15px] mt-1 font-medium",
+    autonymClasses: "text-white/70 text-afh-small mt-1 font-medium",
     exonymClasses:
-      "px-[8px] py-[2px] rounded-full text-[11px] font-medium bg-white/10 border border-white/15 text-white/80",
+      "px-[8px] py-[2px] rounded-full text-afh-caption font-medium bg-white/10 border border-white/15 text-white/80",
   },
   "people-section": {
     wrapperClasses: "mb-1",
     nameClasses: "leading-tight tracking-tight",
     nameStyle: { fontFamily: "var(--country-font-display)", fontWeight: 700 },
-    autonymClasses: "text-[color:var(--country-text-soft)] text-[13px] mt-0.5",
+    autonymClasses:
+      "text-[color:var(--country-text-soft)] text-afh-caption mt-0.5",
     exonymClasses:
-      "px-[6px] py-[1px] rounded-full text-[10px] font-medium bg-[color:var(--country-card)] border border-[color:var(--country-border)] text-[color:var(--country-text-soft)]",
+      "px-[6px] py-[1px] rounded-full text-afh-caption font-medium bg-[color:var(--country-card)] border border-[color:var(--country-border)] text-[color:var(--country-text-soft)]",
   },
 };
 
@@ -205,14 +206,16 @@ export function AutonymExonymHeading({
       <div className={cn("space-y-0.5", className)}>
         <div className="flex items-center gap-2 flex-wrap">
           {code && (
-            <span className="text-xs font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded shrink-0">
+            <span className="text-afh-caption font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded shrink-0">
               {code}
             </span>
           )}
-          <h2 className="font-semibold text-base">{exonym}</h2>
+          <h2 className="font-semibold text-afh-small">{exonym}</h2>
         </div>
         {showAutonym && (
-          <p className="text-sm text-muted-foreground italic">{autonym}</p>
+          <p className="text-afh-small text-muted-foreground italic">
+            {autonym}
+          </p>
         )}
       </div>
     );

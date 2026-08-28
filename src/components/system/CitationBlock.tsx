@@ -142,7 +142,7 @@ export function CitationBlock({
 
       <div className="space-y-afh-4xl p-afh-3xl md:p-afh-5xl">
         <header className="border-b border-afh-border pb-afh-2xl">
-          <p className="text-afh-micro font-bold uppercase tracking-wider text-afh-terracotta">
+          <p className="text-afh-eyebrow font-bold uppercase tracking-wider text-afh-terracotta">
             Référence
           </p>
           <h2
@@ -231,7 +231,7 @@ export function CitationBlock({
             value={citation}
             className="min-h-36 w-full resize-y rounded-afh-md border border-afh-border bg-afh-bg px-afh-2xl py-afh-xl font-mono text-afh-small leading-relaxed text-afh-text outline-none focus-visible:ring-2 focus-visible:ring-afh-terracotta focus-visible:ring-offset-2"
           />
-          <span className="pointer-events-none absolute bottom-afh-base right-afh-base text-afh-nano font-bold uppercase tracking-wider text-afh-text-soft">
+          <span className="pointer-events-none absolute bottom-afh-base right-afh-base text-afh-eyebrow font-bold uppercase tracking-wider text-afh-text-soft">
             {FORMAT_LABELS[format]}
           </span>
         </div>

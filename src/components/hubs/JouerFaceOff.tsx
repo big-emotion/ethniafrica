@@ -84,7 +84,7 @@ export function JouerFaceOff({ modules }: JouerFaceOffProps) {
         }
 
         .jouer-faceoff-role {
-          font-size: 12px;
+          font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
           text-transform: uppercase;
           /* Not --afh-text-muted: it fails AA on both themes at this size. */
@@ -93,7 +93,7 @@ export function JouerFaceOff({ modules }: JouerFaceOffProps) {
 
         .jouer-faceoff-value {
           font-family: var(--afh-font-display);
-          font-size: 24px;
+          font-size: var(--afh-text-h2);
           font-weight: 900;
           color: var(--afh-text);
         }
@@ -107,7 +107,7 @@ export function JouerFaceOff({ modules }: JouerFaceOffProps) {
 
         .jouer-faceoff-count {
           margin: 0;
-          font-size: 13px;
+          font-size: var(--afh-text-caption);
           color: var(--afh-fg-muted);
         }
 

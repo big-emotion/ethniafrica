@@ -28,7 +28,7 @@ const LEGEND_STYLE: CSSProperties = {
   margin: 0,
   maxWidth: 220,
   fontFamily: "var(--afh-font-mono)",
-  fontSize: "var(--afh-text-nano)",
+  fontSize: "var(--afh-text-caption)",
   lineHeight: 1.6,
   color: "var(--afh-night-ink-2)",
   pointerEvents: "none",

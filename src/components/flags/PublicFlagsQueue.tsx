@@ -250,7 +250,7 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
 
             {reason && (
               <p
-                className="max-w-3xl font-afh text-sm leading-relaxed text-afh-text-soft"
+                className="max-w-3xl font-afh text-afh-small leading-relaxed text-afh-text-soft"
                 data-testid="flag-reason"
               >
                 {truncateReason(reason)}
@@ -428,14 +428,14 @@ export function PublicFlagsQueue({
       {isPending ? (
         <p
           role="status"
-          className="px-4 py-10 text-center font-afh text-sm text-afh-text-soft md:px-6"
+          className="px-4 py-10 text-center font-afh text-afh-small text-afh-text-soft md:px-6"
         >
           {copy.loading}
         </p>
       ) : error && items.length === 0 ? (
         <p
           role="alert"
-          className="px-4 py-10 text-center font-afh text-sm text-afh-text-soft md:px-6"
+          className="px-4 py-10 text-center font-afh text-afh-small text-afh-text-soft md:px-6"
         >
           {copy.loadError}
         </p>

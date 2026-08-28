@@ -126,18 +126,18 @@ export function AtlasFactsPanel({
             {icon ? (
               <span
                 aria-hidden="true"
-                className="shrink-0 text-2xl leading-none"
+                className="shrink-0 text-afh-h2 leading-none"
               >
                 {icon}
               </span>
             ) : null}
             <div className="flex flex-col gap-1">
-              <DialogPrimitive.Title className="text-base font-semibold leading-tight">
+              <DialogPrimitive.Title className="text-afh-small font-semibold leading-tight">
                 {title}
               </DialogPrimitive.Title>
               {description ? (
                 <DialogPrimitive.Description
-                  className="text-sm"
+                  className="text-afh-small"
                   style={{ color: "var(--afh-text-soft)" }}
                 >
                   {description}
@@ -152,7 +152,10 @@ export function AtlasFactsPanel({
               <X aria-hidden="true" className="h-4 w-4" />
             </DialogPrimitive.Close>
           </div>
-          <div className="text-sm" style={{ color: "var(--afh-text-soft)" }}>
+          <div
+            className="text-afh-small"
+            style={{ color: "var(--afh-text-soft)" }}
+          >
             {children}
           </div>
         </DialogPrimitive.Content>

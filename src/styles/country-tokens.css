@@ -63,16 +63,22 @@
   --country-font-display: var(--afh-font-display);
   --country-font-body: var(--afh-font-body);
 
-  /* Échelle typo (mobile-first) */
-  --country-text-hero: 34px;
-  --country-text-h1: 24px;
-  --country-text-h2: 18px;
-  --country-text-h3: 16px;
-  --country-text-body: 14px;
-  --country-text-small: 12px;
-  --country-text-caption: 11px;
-  --country-text-micro: 10px;
-  --country-text-nano: 9px;
+  /* Échelle typo — aliases, not a second scale.
+     These held their own px ladder with its own breakpoints, which is how the
+     country fiche ended up a size behind the rest of the site. They now
+     forward to --afh-text-*, so the fluid roles reach this surface too. Kept
+     rather than deleted because three call sites still read them
+     (ui/AutonymExonymHeading.tsx, country/CountryHero.tsx); the last step is
+     to retire the names, and that is a separate, mechanical change.
+     --country-text-micro and --country-text-nano are gone with the roles they
+     mirrored: nothing below 12 px survives the charter. */
+  --country-text-hero: var(--afh-text-hero);
+  --country-text-h1: var(--afh-text-h1);
+  --country-text-h2: var(--afh-text-h2);
+  --country-text-h3: var(--afh-text-h3);
+  --country-text-body: var(--afh-text-body);
+  --country-text-small: var(--afh-text-small);
+  --country-text-caption: var(--afh-text-caption);
 
   /* Poids */
   --country-weight-regular: 400;
@@ -137,12 +143,12 @@
 }
 .etym-word {
   font-family: var(--country-font-display);
-  font-size: 28px;
+  font-size: var(--afh-text-h1);
   font-weight: 900;
   margin-bottom: 2px;
 }
 .etym-lang {
-  font-size: 10px;
+  font-size: var(--afh-text-eyebrow);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -150,7 +156,7 @@
   opacity: 0.6;
 }
 .etym-def {
-  font-size: 14px;
+  font-size: var(--afh-text-small);
   font-weight: 600;
 }
 .etym-single {
@@ -167,7 +173,7 @@
   text-align: center;
 }
 .etym-note {
-  font-size: 12px;
+  font-size: var(--afh-text-caption);
   color: var(--country-text-soft);
   margin-top: 8px;
   line-height: 1.4;
@@ -175,7 +181,7 @@
 }
 .etym-hypothesis {
   margin-top: 10px;
-  font-size: 11px;
+  font-size: var(--afh-text-caption);
   color: var(--country-text-soft);
   line-height: 1.5;
   font-style: italic;
@@ -184,7 +190,7 @@
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 9px;
+  font-size: var(--afh-text-eyebrow);
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--country-radius-sm, 6px);
@@ -194,27 +200,23 @@
   margin-bottom: 4px;
 }
 
+/* Only the gutter steps here now: --afh-text-h1 and --afh-text-small carry
+   what the two font-size ladders used to say by hand, and a clamp cannot be
+   stepped by a media query without contradicting itself.
+
+   The desktop breakpoint was 1280 px while the rest of the system steps at
+   1200. That 80 px gap is now closed — a deliberate move, not a side effect:
+   between 1200 and 1280 the etymology block used to hold its tablet padding
+   while everything around it had already switched. */
 @media (min-width: 768px) {
   .etym-half {
     padding: 20px;
   }
-  .etym-word {
-    font-size: 32px;
-  }
-  .etym-def {
-    font-size: 15px;
-  }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .etym-half {
     padding: 24px;
-  }
-  .etym-word {
-    font-size: 36px;
-  }
-  .etym-def {
-    font-size: 16px;
   }
 }
 

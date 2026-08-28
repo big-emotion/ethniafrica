@@ -108,7 +108,7 @@ function AtlasGlobeMissing({ message }: { message: string }) {
     >
       <AfricaBasemap style={{ ...FALLBACK_BASEMAP_STYLE, opacity: 0.25 }} />
       <p
-        className="absolute px-6 text-center text-sm"
+        className="absolute px-6 text-center text-afh-small"
         style={{ color: "var(--afh-night-ink-2)" }}
       >
         {message}
@@ -953,7 +953,7 @@ export function AtlasGlobe({
       {!stageIsSphere && fallbackNote && (
         <p
           data-atlas-fallback-note=""
-          className="pointer-events-none absolute inset-x-0 bottom-12 px-3 text-xs"
+          className="pointer-events-none absolute inset-x-0 bottom-12 px-3 text-afh-caption"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           {fallbackNote}
@@ -992,7 +992,7 @@ export function AtlasGlobe({
       {legend ?? (
         <p
           data-atlas-legend=""
-          className="pointer-events-none absolute inset-x-0 top-0 p-3 text-xs"
+          className="pointer-events-none absolute inset-x-0 top-0 p-3 text-afh-caption"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           Afrique à sa surface réelle. Glissez pour tourner.
@@ -1016,7 +1016,7 @@ export function AtlasGlobe({
             type="button"
             aria-pressed={chosenCountryId === null}
             onClick={() => setChosenCountryId(null)}
-            className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+            className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
             style={{ color: "var(--afh-night-ink-2)" }}
           >
             {wholeAreaLabel}
@@ -1026,7 +1026,7 @@ export function AtlasGlobe({
           type="button"
           aria-pressed={flat}
           onClick={() => setFlat((current) => !current)}
-          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
@@ -1034,7 +1034,7 @@ export function AtlasGlobe({
         <button
           type="button"
           onClick={recentre}
-          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           Recentrer

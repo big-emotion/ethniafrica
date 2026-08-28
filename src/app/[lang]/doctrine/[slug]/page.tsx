@@ -72,8 +72,8 @@ export default async function DoctrineSlugPage({
       <ReadingColumn className="container mx-auto space-y-6 px-4 py-8">
         <article>
           <header className="space-y-3 border-b pb-4">
-            <h1 className="text-3xl font-bold">{entry.title}</h1>
-            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+            <h1 className="text-afh-h1 font-bold">{entry.title}</h1>
+            <div className="flex flex-wrap items-center gap-3 text-afh-small text-muted-foreground">
               <span data-testid="version-label">{versionLabel}</span>
               <span aria-hidden="true">·</span>
               <a

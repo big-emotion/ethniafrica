@@ -90,7 +90,7 @@ export function AccessModeHub({
           >
             <span>{module.name}</span>
             <span
-              className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-xs font-medium"
+              className="inline-flex w-fit items-center rounded-full px-2.5 py-1 text-afh-caption font-medium"
               style={{
                 backgroundColor: "var(--afh-surface)",
                 color: "var(--afh-text-soft)",
@@ -112,14 +112,14 @@ export function AccessModeHub({
     >
       <h1
         id={`access-mode-hub-${mode}-title`}
-        className="text-2xl font-semibold"
+        className="text-afh-h2 font-semibold"
         style={{ color: "var(--afh-text)" }}
       >
         {hubStrings.title}
       </h1>
       <p
         data-testid={`access-mode-hub-${mode}-blurb`}
-        className="mt-2 max-w-[58ch] text-base"
+        className="mt-2 max-w-[58ch] text-afh-small"
         style={{ color: "var(--afh-text-soft)" }}
       >
         {hubStrings.blurb}
@@ -146,7 +146,7 @@ export function AccessModeHub({
               >
                 <h2
                   id={`hub-shelf-${shelf.group.id}-title`}
-                  className="mt-2 text-sm font-semibold uppercase tracking-wide"
+                  className="mt-2 text-afh-small font-semibold uppercase tracking-wide"
                   style={{ color: "var(--afh-fg-muted)" }}
                 >
                   {shelf.group.label}

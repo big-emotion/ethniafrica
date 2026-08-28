@@ -39,7 +39,7 @@ export default function ComparerPickerPage() {
   return (
     <PageLayout language="fr" sectionName="Comparer" hideHeader>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-display font-semibold text-afh-text">
+        <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
           Comparer
         </h1>
         {/* The two-entry minimum is otherwise discoverable only by finding

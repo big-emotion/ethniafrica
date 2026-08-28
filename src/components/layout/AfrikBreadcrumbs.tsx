@@ -16,7 +16,7 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
   return (
     <nav aria-label="Fil d'ariane" className="px-3 md:px-4 xl:px-5 mt-2 mb-1">
       <ol
-        className="flex flex-wrap items-center gap-1 text-[11px] md:text-[12px]"
+        className="flex flex-wrap items-center gap-1 text-afh-caption"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
       >
         {items.map((item, index) => (

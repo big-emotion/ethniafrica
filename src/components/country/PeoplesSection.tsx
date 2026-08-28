@@ -16,7 +16,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
       <div className="flex justify-between items-end mb-4 md:mb-4">
         <div>
           <div
-            className="text-[24px] md:text-[28px] xl:text-[32px] font-black leading-none"
+            className="text-afh-h2 font-black leading-none"
             style={{
               fontFamily: "var(--country-font-display)",
               color: "var(--country-terracotta)",
@@ -25,14 +25,14 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
             {data.totalPopulationFormatted}
           </div>
           <div
-            className="text-[11px] mt-0.5"
+            className="text-afh-caption mt-0.5"
             style={{ color: "var(--country-text-soft)" }}
           >
             habitants · 2025
           </div>
         </div>
         <div
-          className="text-[18px] md:text-[18px] xl:text-[20px] font-bold"
+          className="text-afh-h3 font-bold"
           style={{
             fontFamily: "var(--country-font-display)",
             color: "var(--country-text)",
@@ -117,7 +117,7 @@ function CoverageNote({ rows }: { rows: PeopleRow[] }) {
   return (
     <p
       data-demo-coverage-note=""
-      className="mt-[6px] text-[10px] xl:text-[11px]"
+      className="mt-[6px] text-afh-eyebrow"
       style={{ color: "var(--country-text-soft)" }}
     >
       Les peuples documentés ici représentent {declared}&nbsp;% de la population
@@ -160,14 +160,14 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
           ) : row.peopleId && !row.groupedNames ? (
             <Link
               href={`/fr/peuples/${row.peopleId}`}
-              className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug hover:underline"
+              className="text-afh-small font-bold leading-snug hover:underline"
               style={{ fontFamily: "var(--country-font-body)" }}
             >
               {row.name}
             </Link>
           ) : (
             <span
-              className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"
+              className="text-afh-small font-bold leading-snug"
               style={{ fontFamily: "var(--country-font-body)" }}
             >
               {row.groupedNames ? row.groupedNames.join(" · ") : row.name}
@@ -178,7 +178,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
         {/* Meta row */}
         {!row.isOther ? (
           <div
-            className="text-[10px] xl:text-[11px] mt-0.5"
+            className="text-afh-eyebrow mt-0.5"
             style={{ color: "var(--country-text-soft)" }}
           >
             {row.groupedNames ? (
@@ -191,7 +191,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
           </div>
         ) : (
           <div
-            className="text-[10px] xl:text-[11px] mt-0.5"
+            className="text-afh-eyebrow mt-0.5"
             style={{ color: "var(--country-text-soft)" }}
           >
             Diversité ethnolinguistique
@@ -203,7 +203,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
         {row.pejorativeTerm && (
           <div className="mt-1">
             <span
-              className="warn-colonial inline-flex text-[9px] xl:text-[10px] font-bold px-[6px] py-[1px] rounded-[var(--country-radius-sm)] line-through"
+              className="warn-colonial inline-flex text-afh-eyebrow font-bold px-[6px] py-[1px] rounded-[var(--country-radius-sm)] line-through"
               style={{
                 color: "var(--country-colonial)",
                 background: "var(--country-colonial-bg)",
@@ -218,7 +218,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
       {/* Stats block */}
       <div className="text-right min-w-[50px] shrink-0">
         <div
-          className="text-[18px] md:text-[20px] xl:text-[22px] font-black leading-none"
+          className="text-afh-h3 font-black leading-none"
           style={{
             fontFamily: "var(--country-font-display)",
             color: "var(--country-text)",
@@ -227,7 +227,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
           {row.percentage}%
         </div>
         <div
-          className="text-[10px] mt-0.5"
+          className="text-afh-eyebrow mt-0.5"
           style={{ color: "var(--country-text-soft)" }}
         >
           {row.populationFormatted}
