@@ -1,17 +1,28 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import {
   BASE_TILT_X,
   LAYOUT_BY_AXIS,
+  MAX_PANEL_WIDTH,
   MODULE_CARD_GUTTER,
   MODULE_CARD_HEIGHT,
+  MODULE_CARD_LINES,
+  MODULE_CARD_LINE_HEIGHT,
+  MODULE_CARD_PADDING_Y,
   MODULE_CARD_WIDTH,
-  REFERENCE_PANEL_WIDTH,
+  MODULE_LABEL_FONT_SIZE,
+  OPENED_CARD_HEIGHT,
+  OPENED_CARD_WIDTH,
+  SCENE_MIN_WIDTH,
   panelHeightFor,
   entranceProgress,
   layoutNodes,
   nearestEdge,
   projectNode,
+  sceneNodes,
   type GraphNode,
 } from "@/lib/home/axisGraphGeometry";
 
@@ -188,35 +199,121 @@ describe("entranceProgress — how each axis lets its modules arrive", () => {
 });
 
 /**
- * Walks every pair of cards a scene would render and splits them the way
- * `panelHeightFor` does: those a taller panel separates, and those the
- * layout puts side by side at the same height, which no height separates.
+ * Every panel width the plan's own measurements name, as the panel actually
+ * gets them: the axis grid is the viewport less the page gutters, capped at
+ * MAX_PANEL_WIDTH. 720px is the 768px viewport the scene now switches on at,
+ * 812px the 860px where « Regards » used to sit 31px inside « Premiers
+ * repères ».
  */
-const cardPairs = (
+const PANEL_WIDTHS = [720, 812, 912, 976, MAX_PANEL_WIDTH];
+
+const SCENE_TILT = { x: BASE_TILT_X, y: 0 };
+
+/**
+ * The pairs of cards that would actually overlap on screen: two boxes of
+ * MODULE_CARD_WIDTH by MODULE_CARD_HEIGHT, placed where the render loop
+ * places them, at the height the panel is given for that width.
+ */
+const overlappingPairs = (
   layout: Parameters<typeof layoutNodes>[0],
   count: number,
-  height: number
+  panelWidth: number
 ) => {
-  const nodes = layoutNodes(layout, count);
-  const panel = { width: REFERENCE_PANEL_WIDTH, height };
-  let tightestStacked = Infinity;
-  let sideBySide = 0;
+  const height = panelHeightFor(layout, count, panelWidth);
+  const panel = { width: panelWidth, height };
+  const projected = sceneNodes(layout, count, panelWidth).map((node) =>
+    projectNode(node, SCENE_TILT, panel)
+  );
+  const overlaps: Array<[number, number]> = [];
 
-  for (let i = 0; i < nodes.length; i += 1) {
-    const a = projectNode(nodes[i], { x: BASE_TILT_X, y: 0 }, panel);
-    for (let j = i + 1; j < nodes.length; j += 1) {
-      const b = projectNode(nodes[j], { x: BASE_TILT_X, y: 0 }, panel);
-      // Two cards a full card-width apart in x never collide, whatever
-      // their y.
-      if (Math.abs(a.x - b.x) > MODULE_CARD_WIDTH) continue;
-      const gap = Math.abs(a.y - b.y);
-      if (gap < 1e-6) sideBySide += 1;
-      else tightestStacked = Math.min(tightestStacked, gap);
+  for (let i = 0; i < projected.length; i += 1) {
+    for (let j = i + 1; j < projected.length; j += 1) {
+      const apart = Math.abs(projected[i].x - projected[j].x);
+      const stacked = Math.abs(projected[i].y - projected[j].y);
+      if (apart < MODULE_CARD_WIDTH && stacked < MODULE_CARD_HEIGHT) {
+        overlaps.push([i, j]);
+      }
     }
   }
 
-  return { tightestStacked, sideBySide };
+  return overlaps;
 };
+
+describe("sceneNodes — the shape a panel of a given width can actually hold", () => {
+  // Above the width its shape needs, nothing moves: the arc is the arc, and
+  // a desktop reader sees exactly what the layout was drawn as.
+  // @req REQ-114
+  it("leaves the layout untouched on a panel wide enough to hold it", () => {
+    for (const layout of ["ring", "arc"] as const) {
+      expect(sceneNodes(layout, 4, MAX_PANEL_WIDTH)).toEqual(
+        layoutNodes(layout, 4)
+      );
+    }
+  });
+
+  /**
+   * `pair` is the exception, and not because of its width: it sets its two
+   * columns at the very edge of the unit box and leans them toward the
+   * reader, so perspective carries the outer half of each card past the
+   * panel at every width there is. Pulling them in is the same rule as
+   * everything else here — a card that hangs off the panel has not been
+   * placed, it has been lost.
+   */
+  // @req REQ-114
+  it("pulls a card back in rather than let it hang off the panel", () => {
+    const placed = sceneNodes("pair", 3, MAX_PANEL_WIDTH);
+    const ideal = layoutNodes("pair", 3);
+
+    expect(Math.abs(placed[2].x)).toBeLessThan(Math.abs(ideal[2].x));
+    for (const node of placed) {
+      const shown = projectNode(node, SCENE_TILT, {
+        width: MAX_PANEL_WIDTH,
+        height: panelHeightFor("pair", 3, MAX_PANEL_WIDTH),
+      });
+      expect(
+        Math.abs(shown.x) + (MODULE_CARD_WIDTH * shown.scale) / 2
+      ).toBeLessThanOrEqual(MAX_PANEL_WIDTH / 2 + 0.5);
+    }
+  });
+
+  /**
+   * The defect this exists for. Comprendre's four modules put « Premiers
+   * repères de migrations » and « Regards : colonisation et résistances »
+   * either side of the arc's apex at the SAME height — 189px apart for
+   * 220px cards on an 812px panel. No panel height separates two cards at
+   * the same height, so the collision is settled on the axis it happens on.
+   */
+  // @req REQ-114
+  it("spreads the arc's apex pair once the panel is too narrow to sit them side by side", () => {
+    const ideal = layoutNodes("arc", 4);
+    const narrow = sceneNodes("arc", 4, 812);
+
+    expect(narrow[1].x).toBeLessThan(ideal[1].x);
+    expect(narrow[2].x).toBeGreaterThan(ideal[2].x);
+    expect(narrow[1].x).toBeCloseTo(-narrow[2].x, 5);
+  });
+
+  /**
+   * Only x moves. The height a layout gives a node is what makes the run
+   * read as a trajectory, and a node that changed height to dodge its
+   * neighbour would be telling a different story than the layout drew.
+   */
+  // @req REQ-114
+  it("keeps every node at the height its layout gave it, and inside the panel", () => {
+    for (const width of PANEL_WIDTHS) {
+      for (const layout of ["ring", "arc", "pair"] as const) {
+        for (let count = 2; count <= 6; count += 1) {
+          const ideal = layoutNodes(layout, count);
+          sceneNodes(layout, count, width).forEach((node, index) => {
+            expect(node.y).toBeCloseTo(ideal[index].y, 5);
+            expect(node.z).toBeCloseTo(ideal[index].z, 5);
+            expect(Math.abs(node.x)).toBeLessThanOrEqual(1);
+          });
+        }
+      }
+    }
+  });
+});
 
 describe("panelHeightFor — the room a scene needs for the count it was handed", () => {
   // The regression this exists to prevent: `pair` was sized for the two
@@ -225,73 +322,79 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
   // three of the eleven could not be clicked at their own centre.
   // @req REQ-114
   it("grows the panel once the modules stack tighter than a card", () => {
-    expect(panelHeightFor("pair", 11)).toBeGreaterThan(
-      panelHeightFor("pair", 2)
+    const width = MAX_PANEL_WIDTH;
+    expect(panelHeightFor("pair", 11, width)).toBeGreaterThan(
+      panelHeightFor("pair", 2, width)
     );
     // A facing pair fits the floor with room to spare; every row added
     // past that has to be paid for.
-    expect(panelHeightFor("pair", 2)).toBe(panelHeightFor("pair", 4));
-    expect(panelHeightFor("pair", 7)).toBeGreaterThan(
-      panelHeightFor("pair", 4)
+    expect(panelHeightFor("pair", 2, width)).toBe(
+      panelHeightFor("pair", 4, width)
     );
-    expect(panelHeightFor("pair", 11)).toBeGreaterThan(
-      panelHeightFor("pair", 7)
+    expect(panelHeightFor("pair", 7, width)).toBeGreaterThan(
+      panelHeightFor("pair", 4, width)
+    );
+    expect(panelHeightFor("pair", 11, width)).toBeGreaterThan(
+      panelHeightFor("pair", 7, width)
     );
   });
 
+  /**
+   * The second defect: the guard measured every horizontal gap against a
+   * hardcoded 1140px panel. Between 768 and 1140 it was comparing cards
+   * against a window the panel does not have, so a scene that overlapped
+   * on screen measured clear.
+   */
   // @req REQ-114
-  it("leaves every stacked card its full box, at every count a scene can hold", () => {
-    for (const layout of ["ring", "arc", "pair"] as const) {
-      for (let count = 2; count <= 12; count += 1) {
-        const { tightestStacked } = cardPairs(
-          layout,
-          count,
-          panelHeightFor(layout, count)
-        );
-        if (!Number.isFinite(tightestStacked)) continue;
-        expect(tightestStacked).toBeGreaterThanOrEqual(
-          MODULE_CARD_HEIGHT + MODULE_CARD_GUTTER
-        );
+  it("measures the gaps against the panel it was given, not against the widest one", () => {
+    expect(panelHeightFor("arc", 4, 720)).toBeGreaterThanOrEqual(
+      panelHeightFor("arc", 4, MAX_PANEL_WIDTH)
+    );
+    expect(panelHeightFor("ring", 6, 720)).toBeGreaterThanOrEqual(
+      panelHeightFor("ring", 6, MAX_PANEL_WIDTH)
+    );
+  });
+
+  /**
+   * The contract the whole file exists for, stated in the only terms a
+   * reader can check: two cards of the panel's own size, at the position
+   * the render loop puts them, never share pixels. It runs at every width
+   * the panel can be given, not only the widest.
+   */
+  // @req REQ-114
+  it("never lets two module cards share the same pixels, at any width a panel can have", () => {
+    for (const width of PANEL_WIDTHS) {
+      for (const layout of ["ring", "arc", "pair"] as const) {
+        for (let count = 2; count <= 6; count += 1) {
+          expect(overlappingPairs(layout, count, width)).toEqual([]);
+        }
       }
     }
   });
 
   /**
-   * A limit of the arc itself, not of the height. `arcNodes` lifts each
-   * node by sin(pi * progress), which is symmetric about the apex, so
-   * beyond five nodes the innermost mirrored pair comes within a card
-   * width of itself at the same height. No panel height separates two
-   * cards side by side, and solving for one would ask for an infinite
-   * panel — which is why `panelHeightFor` skips these pairs rather than
-   * dividing by their zero gap.
-   *
-   * Comprendre holds three, so nothing hits this today. Whoever gives it a
-   * sixth module has to break the apex symmetry, not reach for height.
+   * A card is placed by its centre and hangs half its own box off it, so a
+   * scene can be perfectly free of collisions and still lose a card over
+   * the panel's edge — onto the lead line and the close button that sit
+   * there, or into the page gutter beside it.
    */
   // @req REQ-114
-  it("keeps the arc clear up to five, and stops pretending past that", () => {
-    for (const count of [2, 3, 4, 5]) {
-      expect(
-        cardPairs("arc", count, panelHeightFor("arc", count)).sideBySide
-      ).toBe(0);
-    }
-    expect(
-      cardPairs("arc", 6, panelHeightFor("arc", 6)).sideBySide
-    ).toBeGreaterThan(0);
-    // And it does not solve for an infinite panel trying: the pairs it
-    // cannot separate are left out of the arithmetic, not divided by.
-    expect(Number.isFinite(panelHeightFor("arc", 6))).toBe(true);
-  });
-
-  // Neither of the two layouts that carry a real axis today has that
-  // problem, at any count they could be handed.
-  // @req REQ-114
-  it("keeps the ring and the pair free of side-by-side collisions", () => {
-    for (const layout of ["ring", "pair"] as const) {
-      for (let count = 2; count <= 12; count += 1) {
-        expect(
-          cardPairs(layout, count, panelHeightFor(layout, count)).sideBySide
-        ).toBe(0);
+  it("keeps every card inside the panel it is drawn in", () => {
+    for (const width of PANEL_WIDTHS) {
+      for (const layout of ["ring", "arc", "pair"] as const) {
+        for (let count = 2; count <= 6; count += 1) {
+          const height = panelHeightFor(layout, count, width);
+          const panel = { width, height };
+          for (const node of sceneNodes(layout, count, width)) {
+            const placed = projectNode(node, SCENE_TILT, panel);
+            const sideways =
+              Math.abs(placed.x) + (MODULE_CARD_WIDTH * placed.scale) / 2;
+            const vertical =
+              Math.abs(placed.y) + (MODULE_CARD_HEIGHT * placed.scale) / 2;
+            expect(sideways).toBeLessThanOrEqual(width / 2 + 0.5);
+            expect(vertical).toBeLessThanOrEqual(height / 2);
+          }
+        }
       }
     }
   });
@@ -301,15 +404,105 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
   // cards would have collided.
   // @req REQ-114
   it("never drops below the room the opened card needs at the centre", () => {
-    expect(panelHeightFor("pair", 2)).toBe(420);
-    expect(panelHeightFor("ring", 4)).toBe(600);
-    expect(panelHeightFor("arc", 3)).toBe(560);
+    expect(panelHeightFor("pair", 2, MAX_PANEL_WIDTH)).toBeGreaterThanOrEqual(
+      420
+    );
+    expect(panelHeightFor("ring", 4, MAX_PANEL_WIDTH)).toBeGreaterThanOrEqual(
+      600
+    );
+    expect(panelHeightFor("arc", 3, MAX_PANEL_WIDTH)).toBeGreaterThanOrEqual(
+      560
+    );
+  });
+
+  /**
+   * The opened axis card is at the panel's origin and is an obstacle like
+   * any other: the arc laid its two middle modules 31px across the card's
+   * own title at every width above 860px, and the hand-set floor that was
+   * meant to keep them off it had not been re-measured since the card grew
+   * a stake line.
+   */
+  // @req REQ-113
+  it("leaves the opened axis card its own box, whatever the scene around it", () => {
+    for (const width of PANEL_WIDTHS) {
+      for (const layout of ["ring", "arc", "pair"] as const) {
+        for (let count = 2; count <= 6; count += 1) {
+          const height = panelHeightFor(layout, count, width);
+          const panel = { width, height };
+          for (const node of sceneNodes(layout, count, width)) {
+            const placed = projectNode(node, SCENE_TILT, panel);
+            const apart =
+              Math.abs(placed.x) -
+              (OPENED_CARD_WIDTH + MODULE_CARD_WIDTH * placed.scale) / 2;
+            const stacked =
+              Math.abs(placed.y) -
+              (OPENED_CARD_HEIGHT + MODULE_CARD_HEIGHT * placed.scale) / 2;
+            expect(Math.max(apart, stacked)).toBeGreaterThanOrEqual(0);
+          }
+        }
+      }
+    }
   });
 
   // The column layout is ordinary flow: the rows size the panel, not the
   // other way round.
   // @req REQ-114
   it("asks for no height at all when the scene is a plain column", () => {
-    expect(panelHeightFor("column", 11)).toBe(0);
+    expect(panelHeightFor("column", 11, MAX_PANEL_WIDTH)).toBe(0);
+  });
+
+  // A panel that has not been measured yet is not a panel 0px wide. It is
+  // read as the widest it can become, which is the shape the layout was
+  // drawn for; the first measurement then corrects it.
+  // @req REQ-114
+  it("reads an unmeasured panel as the widest one, not as a panel with no width", () => {
+    expect(panelHeightFor("arc", 4, 0)).toBe(
+      panelHeightFor("arc", 4, MAX_PANEL_WIDTH)
+    );
+    expect(sceneNodes("arc", 4, 0)).toEqual(
+      sceneNodes("arc", 4, MAX_PANEL_WIDTH)
+    );
+  });
+});
+
+describe("the module card's own box", () => {
+  /**
+   * « Regards : colonisation et résistances » wraps to three lines at
+   * 15px/600 inside a 220px card. The box reserved two, so the card grew
+   * past the room the scene had kept for it and into its neighbour.
+   */
+  // @req REQ-114
+  it("reserves the room a three-line label actually takes", () => {
+    expect(MODULE_CARD_LINES).toBe(3);
+    expect(MODULE_CARD_HEIGHT).toBeGreaterThanOrEqual(
+      MODULE_CARD_LINES * MODULE_LABEL_FONT_SIZE * MODULE_CARD_LINE_HEIGHT +
+        2 * MODULE_CARD_PADDING_Y
+    );
+  });
+
+  /**
+   * The height is computed from a type size this file only mirrors — the
+   * card itself renders the token. If the two drift, the reserved box
+   * silently stops matching the card, which is the failure the module was
+   * written to prevent.
+   */
+  // @req REQ-114
+  it("mirrors the type size the card is actually rendered at", () => {
+    const tokens = readFileSync(
+      path.join(process.cwd(), "src/styles/home-tokens.css"),
+      "utf8"
+    );
+    const declared = /--home-text-module-face:\s*([\d.]+)px/.exec(tokens);
+
+    expect(declared).not.toBeNull();
+    expect(Number(declared?.[1])).toBe(MODULE_LABEL_FONT_SIZE);
+  });
+
+  // The panel and the axis cards it stands among fold at the same width, or
+  // a card laid out as a row would host a scene positioning its modules
+  // around a centre that card no longer has.
+  // @req REQ-114
+  it("switches the scene on at the project's mobile bound", () => {
+    expect(SCENE_MIN_WIDTH).toBe(768);
   });
 });

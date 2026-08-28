@@ -67,31 +67,84 @@ const CAMERA_DISTANCE = 3.2;
 export const BASE_TILT_X = 0.42;
 
 /**
+ * The type the card's label is set in. The card renders the token — this is
+ * only its mirror, so the box reserved below can be worked out from it. The
+ * two are held together by a test reading the token file, because a drift
+ * between them is exactly the failure this module exists to prevent.
+ *
+ * @see src/styles/home-tokens.css — `--home-text-module-face`
+ */
+// @req REQ-114
+export const MODULE_LABEL_FONT_SIZE = 15;
+
+/**
  * The box one module card occupies. The panel's CSS reads these too, so the
  * room the geometry reserves and the room a card actually takes cannot
  * drift apart — which is how eleven cards ended up 36px apart while being
  * 50 to 85px tall.
  *
- * The height is what a two-line label needs, applied to every card so the
- * scene stops varying with how long a module happens to be named. The
- * gutter absorbs the rest: perspective scales a card up to about 1.15x on
- * the near side of the scene, so the room between two nodes has to clear
- * more than the card's own CSS height.
+ * The height is what a **three**-line label needs. Two was the count the
+ * box reserved and not the count the labels take: « Regards : colonisation
+ * et résistances » wraps to three at 15px/600 in a 220px card, so the card
+ * grew past its own slot and into its neighbour's. The gutter absorbs the
+ * rest: perspective scales a card up to about 1.15x on the near side of the
+ * scene, so the room between two nodes has to clear more than the card's
+ * own CSS height.
  */
 // @req REQ-114
 export const MODULE_CARD_WIDTH = 220;
 // @req REQ-114
-export const MODULE_CARD_HEIGHT = 72;
+export const MODULE_CARD_LINES = 3;
+// @req REQ-114
+export const MODULE_CARD_LINE_HEIGHT = 1.35;
+// @req REQ-114
+export const MODULE_CARD_PADDING_Y = 14;
+const MODULE_CARD_BORDER = 1;
+// @req REQ-114
+export const MODULE_CARD_HEIGHT = Math.ceil(
+  MODULE_CARD_LINES * MODULE_LABEL_FONT_SIZE * MODULE_CARD_LINE_HEIGHT +
+    2 * (MODULE_CARD_PADDING_Y + MODULE_CARD_BORDER)
+);
 // @req REQ-114
 export const MODULE_CARD_GUTTER = 22;
 
 /**
- * The width the scene is sized against. The panel spans the axis grid,
- * capped at 1140px, and the scene only runs from 860px up — below that the
- * modules become a plain column and none of this applies.
+ * The opened axis card, which the whole scene is deployed around. It sits at
+ * the panel's origin, so it is an obstacle like any other card and the
+ * geometry has to know its box — the arc used to lay « Premiers repères de
+ * migrations » 31px across its title at every width, because the room kept
+ * for it was one hand-set number per layout and nobody re-measured the card
+ * after it grew a stake line.
+ *
+ * `AccessAxes` sizes the card from these two, so the box reserved here is
+ * the box the reader sees rather than an estimate of it.
+ */
+// @req REQ-113
+export const OPENED_CARD_WIDTH = 264;
+// @req REQ-113
+export const OPENED_CARD_HEIGHT = 240;
+
+/**
+ * The widest the panel ever gets: it spans the axis grid, which is capped
+ * here — the grid's own `max-width` is interpolated from this constant, so
+ * the cap has one home rather than two that can disagree.
+ *
+ * It is a ceiling, not the width to measure against. Sizing a scene against
+ * it was the second half of the Comprendre collision: between 768 and
+ * 1140px the guard compared cards against a window the panel does not have.
  */
 // @req REQ-114
-export const REFERENCE_PANEL_WIDTH = 1140;
+export const MAX_PANEL_WIDTH = 1140;
+
+/**
+ * Below this the panel stops being a scene and becomes a list, and the axis
+ * cards it stands among fold into rows at the same width. It is the
+ * project's mobile bound rather than a number of this page's own: the two
+ * have to fold together, or a card laid out as a row would host a scene
+ * positioning its modules around a centre that card no longer has.
+ */
+// @req REQ-114
+export const SCENE_MIN_WIDTH = 768;
 
 /**
  * Vertical room each layout needs to clear the opened card sitting at the
@@ -130,8 +183,12 @@ function arcNodes(count: number): GraphNode[] {
       // The ends sit under the centre line and the apex rises well above
       // it, so the run reads as a trajectory and not a row. The apex has
       // to clear the opened card at the origin, which is what sets how
-      // far the two coefficients are apart.
-      y: 0.25 - 1.05 * lift,
+      // far the two coefficients are apart: at 1.05 the card the arc runs
+      // over was 210px tall, and the 240px card it grew into left the two
+      // middle modules lying across its title. `panelHeightFor` would now
+      // buy that room back in panel height, which is worse — the arc is
+      // cheaper raised than the panel is stretched.
+      y: 0.25 - 1.5 * lift,
       z: -0.25 + 0.5 * lift,
     };
   });
@@ -155,6 +212,11 @@ function columnNodes(count: number): GraphNode[] {
   }));
 }
 
+/**
+ * The shape a layout is drawn as, on a panel wide enough to hold it. What
+ * the panel actually renders is `sceneNodes`, which answers for the widths
+ * that are not.
+ */
 // @req REQ-114
 export function layoutNodes(layout: AxisLayout, count: number): GraphNode[] {
   if (count <= 0) return [];
@@ -274,11 +336,133 @@ export function nearestEdge(
   return best;
 }
 
+/** The scene at rest — the pointer's parallax is a swing around this. */
+const SCENE_TILT: Tilt = { x: BASE_TILT_X, y: 0 };
+
+/**
+ * A 2x2 box turns projectNode's output into the fraction of the panel's
+ * half-width and half-height a node sits at, perspective included. Multiply
+ * by the real half-width or half-height and it is pixels again.
+ */
+const UNIT_BOX: PanelBox = { width: 2, height: 2 };
+
 /** Below this, two nodes sit at the same height and no height separates them. */
 const COINCIDENT_Y = 1e-9;
 
 /**
- * How tall the panel has to be for a scene of `count` modules.
+ * A panel that has not been measured yet is not a panel with no width. It
+ * is read as the widest it can become, which is the shape the layout was
+ * drawn for; the first measurement then corrects it.
+ */
+const panelWidthOr = (panelWidth: number) =>
+  panelWidth > 0 ? panelWidth : MAX_PANEL_WIDTH;
+
+/**
+ * The pairs the panel's height can do nothing for: two nodes within a card
+ * of each other horizontally and at the very same height. Every other tight
+ * pair is the height's business, and taking those away from `panelHeightFor`
+ * would undo REQ-120's fix — Jouer's eleven rows are close because the panel
+ * is short, and the answer to that is a taller panel.
+ */
+function tiedPairs(
+  nodes: GraphNode[],
+  halfWidth: number
+): Array<[number, number]> {
+  const tied: Array<[number, number]> = [];
+
+  for (let i = 1; i < nodes.length; i += 1) {
+    const later = projectNode(nodes[i], SCENE_TILT, UNIT_BOX);
+    for (let j = 0; j < i; j += 1) {
+      const earlier = projectNode(nodes[j], SCENE_TILT, UNIT_BOX);
+      const apart = Math.abs(later.x - earlier.x) * halfWidth;
+      if (apart >= MODULE_CARD_WIDTH + MODULE_CARD_GUTTER) continue;
+      if (Math.abs(later.y - earlier.y) > COINCIDENT_Y) continue;
+      tied.push([i, j]);
+    }
+  }
+
+  return tied;
+}
+
+/**
+ * The nodes a panel of this width actually renders.
+ *
+ * `layoutNodes` draws the ideal shape, which assumes every node has a column
+ * of its own. On a narrower panel two of them share one: the arc puts
+ * « Premiers repères de migrations » and « Regards : colonisation et
+ * résistances » either side of its apex at the **same height** — 189px apart
+ * for 220px cards on an 812px panel, so the two overlap by 31px.
+ *
+ * No panel height separates two cards at the same height, which is why the
+ * height guard alone could never answer for them: it skipped exactly the
+ * pairs that were colliding. The collision is on the horizontal axis, so it
+ * is settled there — the two are pushed apart along x until a card fits
+ * between their centres, which is a move the height never has to pay for.
+ * A node's depth does not depend on its x, so the room a step buys is the
+ * room it asked for, and one step is enough.
+ *
+ * The same width answers a second question the ideal shape does not ask:
+ * a node at the end of its run carries a card half its own width past it,
+ * and on a narrow panel that hangs over the edge. Both moves are clamped to
+ * the room a card actually has, so nothing is fixed by pushing something
+ * else outside.
+ *
+ * Above the width the shape needs — around 1024px for Comprendre's four —
+ * nothing moves and the arc is the arc.
+ */
+// @req REQ-114
+export function sceneNodes(
+  layout: AxisLayout,
+  count: number,
+  panelWidth: number
+): GraphNode[] {
+  const nodes = layoutNodes(layout, count);
+  if (nodes.length < 2) return nodes;
+
+  const halfWidth = panelWidthOr(panelWidth) / 2;
+  const insidePanel = (node: GraphNode): GraphNode => {
+    const scale = projectNode(node, SCENE_TILT, UNIT_BOX).scale;
+    const room = halfWidth - (MODULE_CARD_WIDTH * scale) / 2;
+    const limit = Math.max(0, room / (halfWidth * FILL * scale));
+    return { ...node, x: Math.max(-limit, Math.min(limit, node.x)) };
+  };
+
+  const placed = nodes.map(insidePanel);
+  const tied = tiedPairs(nodes, halfWidth);
+
+  for (const [i, j] of tied) {
+    const later = projectNode(placed[i], SCENE_TILT, UNIT_BOX);
+    const earlier = projectNode(placed[j], SCENE_TILT, UNIT_BOX);
+    const owed =
+      MODULE_CARD_WIDTH +
+      MODULE_CARD_GUTTER -
+      Math.abs(later.x - earlier.x) * halfWidth;
+    if (owed <= 0) continue;
+
+    // Each takes half the step, so the run stays centred on the panel and
+    // the layout keeps its symmetry. The step is asked for in pixels and
+    // applied in unit space, so it is divided back through everything
+    // projectNode multiplies x by.
+    const step = (side: ProjectedNode) =>
+      owed / 2 / (halfWidth * FILL * side.scale);
+    const outward = later.x >= earlier.x ? 1 : -1;
+
+    placed[i] = insidePanel({
+      ...placed[i],
+      x: placed[i].x + outward * step(later),
+    });
+    placed[j] = insidePanel({
+      ...placed[j],
+      x: placed[j].x - outward * step(earlier),
+    });
+  }
+
+  return placed;
+}
+
+/**
+ * How tall the panel has to be for a scene of `count` modules on a panel
+ * `panelWidth` wide.
  *
  * `pair` was written for the two modules Jouer held when it shipped and
  * kept a fixed 420px when REQ-120 handed it eleven: six rows over a fixed
@@ -286,39 +470,75 @@ const COINCIDENT_Y = 1e-9;
  * eleven could not be clicked at their own centre. Deriving the height from
  * the node set means a layout can be handed any count without the author of
  * the next module having to remember this.
+ *
+ * The width is a parameter and not a constant for the same reason: the two
+ * cards a panel puts in one column depend on how wide that panel is, and
+ * measuring them against a 1140px panel the reader does not have is how the
+ * Comprendre collision measured clear.
+ *
+ * Three things are owed, and the tallest wins: the room the opened card
+ * needs at the centre, the room the tightest stacked pair needs between
+ * them, and the room the outermost card needs to sit inside the panel at
+ * all. The third only binds once a node has been pushed out past the band
+ * its layout drew, which is the price of stacking a pair the width could
+ * not sit side by side.
  */
 // @req REQ-114
-export function panelHeightFor(layout: AxisLayout, count: number): number {
+export function panelHeightFor(
+  layout: AxisLayout,
+  count: number,
+  panelWidth: number
+): number {
   const clearance = CENTRE_CLEARANCE[layout];
   if (layout === "column" || count < 2) return clearance;
 
-  const nodes = layoutNodes(layout, count);
-  const tilt: Tilt = { x: BASE_TILT_X, y: 0 };
-  // A unit box turns projectNode's output into the fraction of the panel's
-  // half-height each node sits at, perspective included — so the height
-  // solves straight out of the tightest gap.
-  const unitBox: PanelBox = { width: 2, height: 2 };
+  const halfWidth = panelWidthOr(panelWidth) / 2;
+  const nodes = sceneNodes(layout, count, panelWidth);
 
   let tightest = Infinity;
+  let held = clearance;
   for (let i = 0; i < nodes.length; i += 1) {
-    const a = projectNode(nodes[i], tilt, unitBox);
+    const a = projectNode(nodes[i], SCENE_TILT, UNIT_BOX);
+    // A node sits at a fraction of the panel's half-height, so the panel has
+    // to be tall enough that the card hanging off it still ends inside the
+    // panel. Perspective is in the fraction and in the card, which the
+    // render loop scales by the same factor.
+    if (Math.abs(a.y) < 1) {
+      held = Math.max(
+        held,
+        (MODULE_CARD_HEIGHT * a.scale) / (1 - Math.abs(a.y))
+      );
+    }
+    // And the opened card is at the origin, so a node passing over it has
+    // to be far enough up or down the panel to clear it.
+    const overCard =
+      Math.abs(a.x) * halfWidth <
+      (OPENED_CARD_WIDTH + MODULE_CARD_WIDTH * a.scale) / 2;
+    if (overCard && Math.abs(a.y) > COINCIDENT_Y) {
+      held = Math.max(
+        held,
+        (OPENED_CARD_HEIGHT +
+          MODULE_CARD_HEIGHT * a.scale +
+          2 * MODULE_CARD_GUTTER) /
+          Math.abs(a.y)
+      );
+    }
     for (let j = i + 1; j < nodes.length; j += 1) {
-      const b = projectNode(nodes[j], tilt, unitBox);
+      const b = projectNode(nodes[j], SCENE_TILT, UNIT_BOX);
       // Two cards a full card-width apart in x never collide, whatever
       // their y — only the ones sharing a column constrain the height.
-      const apart = Math.abs(a.x - b.x) * (REFERENCE_PANEL_WIDTH / 2);
+      const apart = Math.abs(a.x - b.x) * halfWidth;
       if (apart > MODULE_CARD_WIDTH) continue;
-      // A pair the layout puts at the same height is side by side, not
-      // stacked. No panel height separates them — arc does this at every
-      // even count, where two nodes straddle the apex symmetrically — so
-      // letting it through here would solve for an infinite height.
+      // A tie this close together has already been pushed apart by
+      // `sceneNodes`, so one surviving to here is one its passes could not
+      // settle. Solving for it would ask for an infinite panel.
       const gap = Math.abs(a.y - b.y);
       if (gap > COINCIDENT_Y) tightest = Math.min(tightest, gap);
     }
   }
 
-  if (!Number.isFinite(tightest)) return clearance;
+  if (!Number.isFinite(tightest)) return Math.ceil(held);
 
-  const needed = (2 * (MODULE_CARD_HEIGHT + MODULE_CARD_GUTTER)) / tightest;
-  return Math.max(clearance, Math.ceil(needed));
+  const stacked = (2 * (MODULE_CARD_HEIGHT + MODULE_CARD_GUTTER)) / tightest;
+  return Math.ceil(Math.max(clearance, held, stacked));
 }
