@@ -26,6 +26,17 @@ export const HERO_SLOT_KINDS: HeroPreviewKind[] = [
   "migration-paths",
 ];
 
+/**
+ * The module the home's band opens on when the URL names none.
+ *
+ * The globe is the one preview that states its claim by standing there — it
+ * needs no round, no scrub and no legend to be read. `pickHeroModule` still
+ * falls back to the draw if this id is ever ineligible, so a registry edit
+ * cannot blank the band.
+ */
+// @req REQ-115
+export const DEFAULT_HERO_MODULE_ID = "mercator";
+
 export interface HeroDrawOptions {
   /**
    * Forces one module by id. Three uses: keeping e2e/home-visual.spec.ts

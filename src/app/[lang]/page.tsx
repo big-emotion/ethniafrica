@@ -4,7 +4,10 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
-import { pickHeroModule } from "@/lib/home/heroRotation";
+import {
+  DEFAULT_HERO_MODULE_ID,
+  pickHeroModule,
+} from "@/lib/home/heroRotation";
 import { loadHeroPreview } from "@/lib/home/heroPreviewData";
 import { getHubModules, type HubModule } from "@/lib/hubs/moduleAvailability";
 import { ACCESS_MODES, type AccessMode } from "@/lib/hubs/moduleRegistry";
@@ -70,11 +73,19 @@ export default async function Home({ searchParams }: HomeProps) {
     getModulesByAxis(),
   ]);
 
-  // ?hero=<moduleId> forces one module: it keeps the home's visual snapshot
-  // reproducible, deep-links a variant, and makes design review possible on
-  // a band that otherwise changes every reload. Repeated params collapse to
-  // the first rather than throwing — a hand-edited URL should not 500.
-  const pin = Array.isArray(hero) ? hero[0] : hero;
+  // The band opens on the globe, every time.
+  //
+  // It used to draw uniformly from the three heroable modules, on the reading
+  // that variation shows the atlas holds more than one. It does not read that
+  // way: a reader who arrives twice sees two different sites, and one who
+  // arrives once has no way to know the band is a sample at all. Until the
+  // band says what it is, showing the same thing is the honest default.
+  //
+  // ?hero=<moduleId> still forces another module — the visual snapshot, the
+  // deep link and design review all need it. Repeated params collapse to the
+  // first rather than throwing: a hand-edited URL should not 500.
+  const requestedPin = Array.isArray(hero) ? hero[0] : hero;
+  const pin = requestedPin ?? DEFAULT_HERO_MODULE_ID;
   const heroModule = pickHeroModule(modulesByAxis, { pin });
   // Only the drawn module is resolved, never the whole lot: the slot shows
   // one module, so loading the other eighteen would be eighteen wasted

@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { pickHeroModule } from "@/lib/home/heroRotation";
+import {
+  DEFAULT_HERO_MODULE_ID,
+  pickHeroModule,
+} from "@/lib/home/heroRotation";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { AccessMode } from "@/lib/hubs/moduleRegistry";
 
@@ -160,5 +163,49 @@ describe("pickHeroModule", () => {
         random: first,
       })
     ).toBeNull();
+  });
+
+  /**
+   * The home pins this id, so the band is the same on every arrival. A draw
+   * would give a reader who came twice two different sites, and one who came
+   * once no way to tell the band was a sample at all.
+   */
+  // @req REQ-115
+  it("names a module the band can actually open on", () => {
+    const modules = byAxis([
+      hubModule({
+        id: "familles",
+        accessMode: "explorer",
+        heroable: "family-crown",
+      }),
+      hubModule({ id: DEFAULT_HERO_MODULE_ID, heroable: "globe" }),
+    ]);
+
+    // Whatever the draw would have said, the pin wins — both ends of it.
+    expect(
+      pickHeroModule(modules, { pin: DEFAULT_HERO_MODULE_ID, random: first })
+        ?.id
+    ).toBe(DEFAULT_HERO_MODULE_ID);
+    expect(
+      pickHeroModule(modules, { pin: DEFAULT_HERO_MODULE_ID, random: last })?.id
+    ).toBe(DEFAULT_HERO_MODULE_ID);
+  });
+
+  // @req REQ-115
+  it("still falls back to the draw if the pinned module ever stops being eligible", () => {
+    const withoutTheDefault = byAxis([
+      hubModule({
+        id: "familles",
+        accessMode: "explorer",
+        heroable: "family-crown",
+      }),
+    ]);
+
+    expect(
+      pickHeroModule(withoutTheDefault, {
+        pin: DEFAULT_HERO_MODULE_ID,
+        random: first,
+      })?.id
+    ).toBe("familles");
   });
 });

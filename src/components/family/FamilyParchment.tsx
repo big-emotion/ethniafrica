@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import {
@@ -259,6 +261,16 @@ export function FamilyParchment({
         </div>
       </header>
 
+      {/* A family fiche had no trail at all, while the people fiches below it
+          open theirs on "Familles" — the parent carried none of the hierarchy
+          its children announced. */}
+      <AfrikBreadcrumbs
+        items={[
+          { label: "Familles", href: getLocalizedRoute("fr", "families") },
+          { label: hero.nameFr },
+        ]}
+      />
+
       <Section
         title="Ce que la fiche déclare, ce qu'elle ne déclare pas"
         note="content.generalInfo · content.distribution"
@@ -401,7 +413,18 @@ export function FamilyParchment({
         <ul className="afh-members" data-testid="member-peoples">
           {ranked.map((people) => (
             <li key={people.id} className="afh-member">
-              <b>{people.nameMain}</b>
+              {/* The corpus carries each member's PPL_ id and the list threw it
+                  away, so the one move a reader of this section wants — open
+                  the people it just named — was the one it did not offer. A
+                  fiche whose associatedPeoples entry declares no id keeps the
+                  plain name rather than linking nowhere. */}
+              {people.id ? (
+                <a href={getPeopleRoute("fr", people.id)}>
+                  <b>{people.nameMain}</b>
+                </a>
+              ) : (
+                <b>{people.nameMain}</b>
+              )}
               {people.countryIds.length > 0 && (
                 <span className="afh-member-spread">
                   {people.countryIds.length} pays ·{" "}
