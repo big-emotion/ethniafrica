@@ -16,6 +16,7 @@ import type {
   PeopleFragmentation,
 } from "@/api/v2/schemas/peopleFragmentation";
 
+// @req REQ-091
 export class PeopleFragmentationNotFoundError extends Error {
   constructor(peopleId: string) {
     super(`People not found: ${peopleId}`);
@@ -23,6 +24,7 @@ export class PeopleFragmentationNotFoundError extends Error {
   }
 }
 
+// @req REQ-091
 export class InsufficientCountriesError extends Error {
   constructor(public readonly countryCount: number) {
     super(
@@ -58,46 +60,81 @@ function computePopulationShare(
 }
 
 /**
- * assertions.value is JSONB holding the asserted distributionByCountry entry
- * (e.g. `{ country, population, percentage }`); matching is done on
- * `value.country` rather than array index so lookups stay correct regardless
- * of ordering. Bulk-migrated fiches predate the contribution/revision
- * workflow and may have no matching assertion yet — that is expected, not
- * an error.
+ * How many people ids one `.in()` filter carries. PostgREST spends the
+ * filter in the query string, so the real ceiling is URL length rather than
+ * a row count: ~14 characters per PPL id means a few hundred ids is already
+ * a multi-kilobyte URL, and the request fails as a whole rather than
+ * returning short.
  */
-async function getAssertionIdsByCountry(
-  supabase: ReturnType<typeof createServerClient>,
-  peopleId: string,
-  countryIds: string[]
-): Promise<Map<string, string>> {
-  const map = new Map<string, string>();
-  if (countryIds.length === 0) return map;
+const ASSERTION_PEOPLE_CHUNK = 100;
 
-  const { data, error } = await supabase
-    .from("assertions")
-    .select("id, value")
-    .eq("entity_type", "people")
-    .eq("entity_id", peopleId)
-    .like("field_path", "content.demography.distributionByCountry%");
-
-  if (error) {
-    logger.error("peopleFragmentation.getAssertionIdsByCountry failed", error, {
-      peopleId,
-    });
-    return map;
+function chunk<T>(values: T[], size: number): T[][] {
+  const chunks: T[][] = [];
+  for (let start = 0; start < values.length; start += size) {
+    chunks.push(values.slice(start, start + size));
   }
+  return chunks;
+}
 
-  for (const row of (data ?? []) as Array<{
-    id: string;
-    value: unknown;
-  }>) {
-    const value = row.value as { country?: string } | null;
-    const country = value?.country;
-    if (country && countryIds.includes(country) && !map.has(country)) {
-      map.set(country, row.id);
+/**
+ * The assertion backing each country of a people's distribution, keyed
+ * people → country → assertion id.
+ *
+ * The country is read from `statement`, which for
+ * `content.demography.distributionByCountry` holds the ISO 3166-1 alpha-3
+ * code and nothing else (789 rows on recette, all of them three letters).
+ * This used to read a JSONB `value` column and match `value.country`, which
+ * migration `015_module_zero_fabric_align.sql` dropped: PostgREST answered
+ * `42703 column assertions.value does not exist`, the error was logged, an
+ * empty map came back, and every `assertionId` in the payload was `null` —
+ * a broken join that looked exactly like an unsourced corpus.
+ *
+ * Bulk-migrated fiches predate the contribution/revision workflow and may
+ * carry no assertion at all; that absence is expected, and stays `null`.
+ *
+ * Keyed by people as well as country because the index reads a batch: one
+ * query covers every people on the page, where a per-people query was one
+ * round trip per row.
+ */
+async function getAssertionIdsByPeople(
+  supabase: ReturnType<typeof createServerClient>,
+  peopleIds: string[]
+): Promise<Map<string, Map<string, string>>> {
+  const byPeople = new Map<string, Map<string, string>>();
+  if (peopleIds.length === 0) return byPeople;
+
+  for (const batch of chunk(peopleIds, ASSERTION_PEOPLE_CHUNK)) {
+    const { data, error } = await supabase
+      .from("assertions")
+      .select("id, entity_id, statement")
+      .eq("entity_type", "people")
+      .in("entity_id", batch)
+      .like("field_path", "content.demography.distributionByCountry%");
+
+    if (error) {
+      logger.error(
+        "peopleFragmentation.getAssertionIdsByPeople failed",
+        error,
+        { peopleCount: batch.length }
+      );
+      continue;
+    }
+
+    for (const row of (data ?? []) as Array<{
+      id: string;
+      entity_id: string;
+      statement: string | null;
+    }>) {
+      const country = row.statement?.trim();
+      if (!country) continue;
+      const forPeople =
+        byPeople.get(row.entity_id) ?? new Map<string, string>();
+      if (!forPeople.has(country)) forPeople.set(country, row.id);
+      byPeople.set(row.entity_id, forPeople);
     }
   }
-  return map;
+
+  return byPeople;
 }
 
 async function getCountryNames(
@@ -122,6 +159,56 @@ async function getCountryNames(
   return map;
 }
 
+/** The countries a distribution names, deduplicated, in fiche order. */
+function distinctCountryIds(distribution: DistributionEntry[]): string[] {
+  return Array.from(
+    new Set(
+      distribution
+        .map((entry) => entry.country)
+        .filter((country): country is string => Boolean(country))
+    )
+  );
+}
+
+interface PeopleAppellations {
+  selfAppellation?: string;
+  exonyms?: string[];
+}
+
+/**
+ * The single place a PeopleFragmentation takes its shape. Both readers build
+ * it from the same three lookups — the fiche's own distribution, country
+ * names, assertion ids — and only differ in how many peoples they resolved
+ * those lookups for at once.
+ */
+function buildFragmentation(
+  peopleId: string,
+  appellations: PeopleAppellations,
+  distribution: DistributionEntry[],
+  countryIds: string[],
+  nameByCountry: Map<string, string>,
+  assertionIdByCountry: Map<string, string>
+): PeopleFragmentation {
+  const countries: FragmentationCountry[] = countryIds.map((iso3) => {
+    const entry = distribution.find((e) => e.country === iso3) ?? {};
+    return {
+      iso3,
+      nameFr: nameByCountry.get(iso3) ?? iso3,
+      populationShare: computePopulationShare(entry, distribution),
+      assertionId: assertionIdByCountry.get(iso3) ?? null,
+    };
+  });
+
+  return {
+    peopleId,
+    autonym: appellations.selfAppellation ?? null,
+    exonym: appellations.exonyms?.[0] ?? null,
+    countryCount: countryIds.length,
+    countries,
+    borderPairs: buildBorderPairs(countryIds),
+  };
+}
+
 function buildBorderPairs(countryIds: string[]): BorderPair[] {
   const pairs: BorderPair[] = [];
   for (let i = 0; i < countryIds.length; i++) {
@@ -133,6 +220,7 @@ function buildBorderPairs(countryIds: string[]): BorderPair[] {
   return pairs;
 }
 
+// @req REQ-091
 export async function getPeopleFragmentation(
   peopleId: string
 ): Promise<PeopleFragmentation> {
@@ -164,87 +252,158 @@ export async function getPeopleFragmentation(
   };
   const distribution = demography.distributionByCountry ?? [];
 
-  const countryIds = Array.from(
-    new Set(
-      distribution
-        .map((entry) => entry.country)
-        .filter((country): country is string => Boolean(country))
-    )
-  );
+  const countryIds = distinctCountryIds(distribution);
 
   if (countryIds.length < 2) {
     throw new InsufficientCountriesError(countryIds.length);
   }
 
-  const [nameByCountry, assertionIdByCountry] = await Promise.all([
+  const [nameByCountry, assertionIdsByPeople] = await Promise.all([
     getCountryNames(supabase, countryIds),
-    getAssertionIdsByCountry(supabase, peopleId, countryIds),
+    getAssertionIdsByPeople(supabase, [peopleId]),
   ]);
 
-  const countries: FragmentationCountry[] = countryIds.map((iso3) => {
-    const entry = distribution.find((e) => e.country === iso3) ?? {};
-    return {
-      iso3,
-      nameFr: nameByCountry.get(iso3) ?? iso3,
-      populationShare: computePopulationShare(entry, distribution),
-      assertionId: assertionIdByCountry.get(iso3) ?? null,
-    };
-  });
-
-  return {
+  return buildFragmentation(
     peopleId,
-    autonym: appellations.selfAppellation ?? null,
-    exonym: appellations.exonyms?.[0] ?? null,
-    countryCount: countryIds.length,
-    countries,
-    borderPairs: buildBorderPairs(countryIds),
-  };
+    appellations,
+    distribution,
+    countryIds,
+    nameByCountry,
+    assertionIdsByPeople.get(peopleId) ?? new Map()
+  );
 }
 
+/** How many fragmented peoples the index section returns. */
 const DEFAULT_FRAGMENTATION_INDEX_LIMIT = 50;
 
 /**
- * Bulk read backing the `/fr/regards/colonisation-et-resistances`
- * fragmentation-index section (Epic 13, Story 13.9, FR90). Sweeps a bounded
- * batch of candidate peoples and reuses `getPeopleFragmentation` per id,
- * silently dropping anyone below the 2-country threshold — that is an
- * expected outcome (most peoples aren't fragmented), not an error.
+ * Rows per sweep page. Under PostgREST's 1000-row ceiling on purpose: an
+ * unranged select is capped server-side without saying so, and a short page
+ * is how this walk knows it has reached the end.
+ *
+ * Exported so the suite can serve a full page and prove the walk asks for a
+ * second one — a test that pages at its own chosen size proves nothing about
+ * the size the service actually uses.
  */
+// @req REQ-091
+export const CANDIDATE_PAGE_SIZE = 500;
+
+/**
+ * 803 peoples today. Hitting this bound means the server is ignoring
+ * `.range()`, and a walk against such a server never terminates.
+ */
+const CANDIDATE_MAX_PAGES = 20;
+
+/**
+ * Only the two subtrees fragmentation reads, never the whole fiche: `content`
+ * is a full editorial record, and 803 of them is megabytes fetched to answer
+ * a question about country counts.
+ */
+const CANDIDATE_SELECT =
+  "id, appellations:content->appellations, distribution:content->demography->distributionByCountry";
+
+interface FragmentationCandidate {
+  id: string;
+  appellations: PeopleAppellations | null;
+  distribution: DistributionEntry[] | null;
+}
+
+/** Every people in the corpus, or null when the sweep could not complete. */
+async function sweepCandidates(
+  supabase: ReturnType<typeof createServerClient>
+): Promise<FragmentationCandidate[] | null> {
+  const candidates: FragmentationCandidate[] = [];
+
+  for (let page = 0; page < CANDIDATE_MAX_PAGES; page++) {
+    const start = page * CANDIDATE_PAGE_SIZE;
+    const { data, error } = await supabase
+      .from("afrik_peoples")
+      .select(CANDIDATE_SELECT)
+      .order("id", { ascending: true })
+      .range(start, start + CANDIDATE_PAGE_SIZE - 1);
+
+    if (error || !data) {
+      logger.error("peopleFragmentation.sweepCandidates failed", error, {
+        page,
+      });
+      return null;
+    }
+
+    const rows = data as unknown as FragmentationCandidate[];
+    candidates.push(...rows);
+    if (rows.length < CANDIDATE_PAGE_SIZE) return candidates;
+  }
+
+  logger.error(
+    `peopleFragmentation.sweepCandidates exceeded ${CANDIDATE_MAX_PAGES} pages — the index is truncated`
+  );
+  return candidates;
+}
+
+/**
+ * Bulk read backing the `/fr/regards/colonisation-et-resistances`
+ * fragmentation-index section (Epic 13, Story 13.9, FR90).
+ *
+ * It used to take an unordered `limit 50` off `afrik_peoples` and call
+ * `getPeopleFragmentation` on each, which cost three round trips per
+ * candidate — ~150 uncached queries per render — and, because roughly half
+ * the corpus spans a single country, returned whichever ~19 of the 395
+ * fragmented peoples happened to sit in the 50 rows Postgres handed back.
+ * The section was a different arbitrary sample on every deploy.
+ *
+ * So the sweep reads the whole corpus once, ranks it, and resolves country
+ * names and assertion ids for the page in one query each: three round trips
+ * in total, and a page that is the same on two machines.
+ *
+ * `limit` now counts *fragmentations returned* rather than rows scanned,
+ * which is what the caller was asking for all along.
+ */
+// @req REQ-091
 export async function listPeopleFragmentations(
   limit: number = DEFAULT_FRAGMENTATION_INDEX_LIMIT
 ): Promise<PeopleFragmentation[]> {
   const supabase = createServerClient();
 
-  const { data: candidates, error } = await supabase
-    .from("afrik_peoples")
-    .select("id")
-    .limit(limit);
+  const candidates = await sweepCandidates(supabase);
+  if (!candidates) return [];
 
-  if (error || !candidates) {
-    logger.error("peopleFragmentation.listPeopleFragmentations failed", error, {
-      limit,
-    });
-    return [];
-  }
+  // Most fragmented first: the section is an index *of* fragmentation, so
+  // that is the order it is about. Ties break on id so two renders of the
+  // same corpus agree.
+  const fragmented = candidates
+    .map((candidate) => ({
+      candidate,
+      countryIds: distinctCountryIds(candidate.distribution ?? []),
+    }))
+    .filter(({ countryIds }) => countryIds.length >= 2)
+    .sort(
+      (a, b) =>
+        b.countryIds.length - a.countryIds.length ||
+        a.candidate.id.localeCompare(b.candidate.id)
+    )
+    .slice(0, limit);
 
-  const results = await Promise.all(
-    (candidates as Array<{ id: string }>).map(async (candidate) => {
-      try {
-        return await getPeopleFragmentation(candidate.id);
-      } catch (err) {
-        if (
-          err instanceof PeopleFragmentationNotFoundError ||
-          err instanceof InsufficientCountriesError
-        ) {
-          return null;
-        }
-        throw err;
-      }
-    })
-  );
+  if (fragmented.length === 0) return [];
 
-  return results.filter(
-    (fragmentation): fragmentation is PeopleFragmentation =>
-      fragmentation !== null
+  const [nameByCountry, assertionIdsByPeople] = await Promise.all([
+    getCountryNames(
+      supabase,
+      Array.from(new Set(fragmented.flatMap(({ countryIds }) => countryIds)))
+    ),
+    getAssertionIdsByPeople(
+      supabase,
+      fragmented.map(({ candidate }) => candidate.id)
+    ),
+  ]);
+
+  return fragmented.map(({ candidate, countryIds }) =>
+    buildFragmentation(
+      candidate.id,
+      candidate.appellations ?? {},
+      candidate.distribution ?? [],
+      countryIds,
+      nameByCountry,
+      assertionIdsByPeople.get(candidate.id) ?? new Map()
+    )
   );
 }
