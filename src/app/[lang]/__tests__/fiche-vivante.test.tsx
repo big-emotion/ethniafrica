@@ -458,20 +458,6 @@ function journeyAnchors(root: Element): string[] {
   return ficheSections(root).map((section) => section.id);
 }
 
-/**
- * The one dangling citation the fiche layer inherits rather than creates.
- * ConfidenceChip's incomplete-confidence fallback hardcodes `#sources`
- * (src/components/source-transparency/ConfidenceChip.tsx), as does
- * ProseWithChip — but the only `id="sources"` in the tree belongs to the
- * *family* sources footer, so on a people fiche the link resolves to nothing.
- * Lifting those chips out of the legacy view and into the identity and
- * fragmentation chapters made a latent dead link visible.
- *
- * Exempted so the assertion still fails on any *new* dangling anchor. This
- * records a defect to fix, not a property to keep.
- */
-const LEGACY_SOURCES_ANCHOR = "#sources";
-
 /** The rights-cleared narratives the voices chapter is built from. */
 const PUBLISHED_NARRATIVES = [
   {
@@ -588,7 +574,6 @@ describe("fiche vivante — the dossier citation contract", () => {
         container.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
       )
         .map((citation) => citation.getAttribute("href") ?? "")
-        .filter((href) => href !== LEGACY_SOURCES_ANCHOR)
         .filter((href) => container.querySelector(href) === null);
       expect(dangling).toEqual([]);
 
