@@ -19,6 +19,7 @@ import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { orderedByWeight, peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import {
   FLAT_MORPH,
+  IDLE_POSE,
   SPHERE_MORPH,
   poseForTarget,
   type CameraPose,
@@ -43,12 +44,17 @@ import {
   footprintStrokeOpacity,
 } from "@/lib/atlas/footprintStyle";
 import {
+  NO_BIAS,
   biasForPanel,
   resolvePanelAnchor,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { BASEMAP_VIEWBOX, projectLonLat } from "@/lib/atlas/projection";
-import { buildAtlasTargets, type AtlasTarget } from "@/lib/atlas/targets";
+import {
+  buildAtlasTargets,
+  enclosingFrame,
+  type AtlasTarget,
+} from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
@@ -588,11 +594,6 @@ export interface AtlasGlobeProps {
 const DRAG_RADIANS_PER_PIXEL = 0.006;
 const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
 const KEY_STEP_RADIANS = 0.12;
-const PITCH_LIMIT_RADIANS = 1.1;
-
-function clampPitch(pitch: number): number {
-  return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
-}
 
 const GLOBE_SURFACE_LABEL =
   "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
@@ -781,37 +782,50 @@ export function AtlasGlobe({
       cameraFocus ? poseForTarget(cameraFocus, biasForPanel(anchor)) : null,
     [cameraFocus, anchor]
   );
-  const flown = useGlobeCamera(
+
+  /**
+   * Where this globe sits with nothing chosen, and where « Recentrer » puts it
+   * back: the frame holding the whole entity — the family's footprint, the
+   * people's field, the country's own outline. Built from `targets` rather
+   * than the drawn overlay, so leaving a chosen country on a country fiche
+   * returns to the fiche's own subject and not to the last one visited.
+   *
+   * No panel bias: at rest nothing is open, so the globe keeps the whole
+   * stage. The bias only applies to the pose a choice flies to, which is the
+   * pose that has a panel beside it.
+   *
+   * The continent scene keeps IDLE_POSE. It is a geographic frame rather than
+   * an entity, and it is already framed on its whole subject — enclosing its
+   * fifty-one countries would move a hub that is right as it stands.
+   */
+  const restPose = useMemo(() => {
+    if (!cameraFollowsChoice) return IDLE_POSE;
+    const frame = enclosingFrame(targets);
+    return frame ? poseForTarget(frame, NO_BIAS) : IDLE_POSE;
+  }, [cameraFollowsChoice, targets]);
+
+  const camera = useGlobeCamera(
     destination,
+    restPose,
     reducedMotion || !cameraFollowsChoice
   );
 
-  // What the reader has done to the camera on top of wherever it flew.
-  // Kept as a delta rather than an absolute pose so a later fly-to still
-  // lands on its target: choosing a country is not undone by having
-  // dragged the globe first.
-  const [turn, setTurn] = useState({ yaw: 0, pitch: 0 });
   const [flat, setFlat] = useState(false);
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
 
   const pose: CameraPose = {
-    ...flown,
-    yaw: flown.yaw + turn.yaw,
-    pitch: clampPitch(flown.pitch + turn.pitch),
+    ...camera.pose,
     morph: flat ? FLAT_MORPH : SPHERE_MORPH,
   };
 
-  const turnBy = (dYaw: number, dPitch: number) =>
-    setTurn((current) => ({
-      yaw: current.yaw + dYaw,
-      pitch: clampPitch(current.pitch + dPitch),
-    }));
-
   const recentre = () => {
-    setTurn({ yaw: 0, pitch: 0 });
     setFlat(false);
     setChosenCountryId(null);
+    // Clearing the choice is not enough on its own: a reader who only turned
+    // the globe has changed no state the camera watches, so the camera is
+    // told directly to come back.
+    camera.recentre();
   };
 
   // Both pickers land here so a caller watching for choices — a game round
@@ -837,7 +851,10 @@ export function AtlasGlobe({
     lastPointer.current = { x: event.clientX, y: event.clientY };
     // Under a finger the surface has to keep up with the finger, so a drag
     // moves the globe itself rather than a target it eases toward.
-    turnBy(dx * DRAG_RADIANS_PER_PIXEL, dy * DRAG_PITCH_RADIANS_PER_PIXEL);
+    camera.turnBy(
+      dx * DRAG_RADIANS_PER_PIXEL,
+      dy * DRAG_PITCH_RADIANS_PER_PIXEL
+    );
   };
 
   const stopDragging = () => {
@@ -847,18 +864,18 @@ export function AtlasGlobe({
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     switch (event.key) {
       case "ArrowLeft":
-        turnBy(-KEY_STEP_RADIANS, 0);
+        camera.turnBy(-KEY_STEP_RADIANS, 0);
         break;
       case "ArrowRight":
-        turnBy(KEY_STEP_RADIANS, 0);
+        camera.turnBy(KEY_STEP_RADIANS, 0);
         break;
       // Same convention as the drag: up sends the surface up, which is a
       // decrease in pitch.
       case "ArrowUp":
-        turnBy(0, -KEY_STEP_RADIANS);
+        camera.turnBy(0, -KEY_STEP_RADIANS);
         break;
       case "ArrowDown":
-        turnBy(0, KEY_STEP_RADIANS);
+        camera.turnBy(0, KEY_STEP_RADIANS);
         break;
       default:
         return;
