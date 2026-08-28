@@ -122,6 +122,8 @@ export interface CountryDistributionRow {
   population?: number;
   populationFormatted?: string;
   percentage?: number;
+  /** Where inside the country, in the fiche's own words. */
+  note?: string;
 }
 
 export interface PeopleCountriesData {
@@ -392,6 +394,7 @@ export function transformPeopleCountries(
     populationFormatted:
       d.population != null ? formatPeoplePopulation(d.population) : undefined,
     percentage: d.percentage,
+    note: d.note,
   }));
 
   return {

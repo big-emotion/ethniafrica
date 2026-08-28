@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
@@ -63,32 +64,6 @@ export interface FamilyParchmentProps {
    * rule the page actually applied (REQ-116).
    */
   footprintProvenance?: FamilyFootprintProvenance;
-}
-
-function Section({
-  title,
-  note,
-  children,
-  testId,
-  as: Tag = "section",
-  id,
-}: {
-  title: string;
-  note: string;
-  children: ReactNode;
-  testId?: string;
-  as?: "section" | "footer";
-  id?: string;
-}) {
-  return (
-    <Tag className="afh-parchment-section" data-testid={testId} id={id}>
-      <h2>{title}</h2>
-      {/* The field path the section is built from: a reader who wants to check
-          the claim needs to know where in the corpus to look. */}
-      <p className="afh-parchment-note">{note}</p>
-      {children}
-    </Tag>
-  );
 }
 
 /**
