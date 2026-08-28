@@ -311,3 +311,57 @@ describe("FamilyParchment — the sources", () => {
     expect(screen.getByText(/Vraie source/)).toBeInTheDocument();
   });
 });
+
+/**
+ * Who the provenance lines are written for.
+ *
+ * The family fiche was the first surface to say where each figure comes from,
+ * and it said it in the corpus's own key names — "generalInfo.totalSpeakers"
+ * under a card headed "Locuteurs". The claim was right and the audience was
+ * wrong. The gap paragraph goes the same way: it already names the two empty
+ * rubrics in French, and repeating them as JSON keys adds nothing a reader
+ * can act on.
+ *
+ * The derivation prose is the one place a key still belongs. It walks a reader
+ * through how the footprint was computed, and the charter itself states that
+ * rule with the field names in it (§1) — naming them is what makes the
+ * reconstruction checkable rather than a claim to trust.
+ */
+describe("FamilyParchment — provenance addressed to the reader", () => {
+  const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+
+  // @req REQ-119
+  it("prints no field path on a stat card", () => {
+    renderParchment();
+
+    const sources = Array.from(
+      document.querySelectorAll(".afh-stat-card-src")
+    ).map((node) => node.textContent ?? "");
+
+    expect(sources).toHaveLength(4);
+    for (const source of sources) expect(source).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("prints no field path in a section's provenance note", () => {
+    renderParchment();
+
+    const notes = Array.from(
+      document.querySelectorAll(".afh-parchment-note")
+    ).map((node) => node.textContent ?? "");
+
+    expect(notes.length).toBeGreaterThan(0);
+    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("names the two empty rubrics without naming their JSON keys", () => {
+    renderParchment();
+
+    const gap = document.querySelector(".afh-parchment-gap");
+    expect(gap).not.toBeNull();
+    expect(gap?.textContent).toMatch(/branches/i);
+    expect(gap?.textContent).toMatch(/répartition/i);
+    expect(gap?.querySelector("code")).toBeNull();
+  });
+});

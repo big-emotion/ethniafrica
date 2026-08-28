@@ -25,6 +25,7 @@ import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { FicheSection } from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
@@ -73,6 +74,21 @@ export interface PeopleDetailViewV2Props {
  * awaited. It briefly stood empty here while FicheSequence's links panel was
  * the fiche's relations surface; that panel no longer runs above the
  * parchment, so this is the surface.
+ *
+ * **Charter §4, and where it stops.** Every chapter answering a rubric of
+ * `modele-peuple.json` — origines, langues, rôle historique, culture,
+ * organisation, démographie, sources — is printed whether or not the corpus
+ * fills it, and an unfilled one carries `FieldProvenanceMarker`: the corpus
+ * being silent about a people's origins is a fact about the corpus, and
+ * dropping the chapter is what deletes that fact.
+ *
+ * Two things on this page deliberately stay conditional, because their absence
+ * is not a silence. The globe's grammar section explains a map that a fiche
+ * with no distribution does not draw, and colonial fragmentation only exists
+ * where a people straddles a border. Neither is a rubric anyone failed to
+ * fill, and marking them would invent a gap. The same line holds one level
+ * down: an optional field inside a block — an exonym, a `whyProblematic` —
+ * stays absent, because the model never asked every fiche for one.
  */
 // @req REQ-091
 export function PeopleDetailViewV2({
@@ -132,106 +148,117 @@ export function PeopleDetailViewV2({
         </FicheSection>
       )}
 
-      {hasOriginContent(data.origin) && (
-        <FicheSection title="Origines & formation" note="Rubrique « origines »">
+      <FicheSection title="Origines & formation" note="Rubrique « origines »">
+        {hasOriginContent(data.origin) ? (
           <PeopleOriginBlock data={data.origin} />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
 
-      {(data.language.mainLanguage ||
+      <FicheSection title="Langue" note="Rubrique « langues »">
+        {data.language.mainLanguage ||
         data.language.isoCodes.length > 0 ||
         data.language.dialects.length > 0 ||
-        data.language.vehicularRole) && (
-        <FicheSection title="Langue" note="Rubrique « langues »">
+        data.language.vehicularRole ? (
           <PeopleLanguageSection data={data.language} />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
 
-      {(data.history.kingdomsOrChiefdoms ||
+      <FicheSection title="Rôle historique" note="Rubrique « rôle historique »">
+        {data.history.kingdomsOrChiefdoms ||
         data.history.relationsWithNeighbors ||
         data.history.conflictsOrAlliances ||
-        data.history.diaspora) && (
-        <FicheSection
-          title="Rôle historique"
-          note="Rubrique « rôle historique »"
-        >
+        data.history.diaspora ? (
           <PeopleHistoryTimeline data={data.history} />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
 
       <OralNarrativesSection peopleId={data.hero.peopleId} />
 
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
       <PeopleNamesSection data={data.names} />
 
-      {hasCultureContent(data.culture) && (
-        <FicheSection
-          title="Culture & spiritualité"
-          note="Rubrique « culture »"
-        >
+      <FicheSection title="Culture & spiritualité" note="Rubrique « culture »">
+        {hasCultureContent(data.culture) ? (
           <PeopleCultureGrid data={data.culture} />
-          {/* The same report control the country fiche's culture section
-              carries. It used to live only on the legacy tabbed people
-              view; retiring that view without moving it here would have
-              taken the people half of the requirement with it. */}
-          <div data-testid="section-flag-target-culture" className="mt-3">
-            {turnstileSiteKey ? (
-              <FlagTarget
-                target={{
-                  type: "fiche_section",
-                  id: people.id,
-                  fieldPath: "culture",
-                }}
-                turnstileSiteKey={turnstileSiteKey}
-                triggerLabel="Signaler cette section"
-                className="w-auto text-afh-caption"
-              />
-            ) : (
-              <button
-                type="button"
-                disabled
-                className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
-                style={{
-                  borderColor: "var(--afh-border)",
-                  color: "var(--afh-text-soft)",
-                }}
-                aria-label="Signaler cette section — bientôt disponible"
-              >
-                Signaler cette section (bientôt disponible)
-              </button>
-            )}
-          </div>
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+        {/* The same report control the country fiche's culture section
+            carries. It used to live only on the legacy tabbed people view;
+            retiring that view without moving it here would have taken the
+            people half of the requirement with it. It stays whether or not
+            the rubric is filled — an empty culture section is exactly the one
+            a reader has something to say about. */}
+        <div data-testid="section-flag-target-culture" className="mt-3">
+          {turnstileSiteKey ? (
+            <FlagTarget
+              target={{
+                type: "fiche_section",
+                id: people.id,
+                fieldPath: "culture",
+              }}
+              turnstileSiteKey={turnstileSiteKey}
+              triggerLabel="Signaler cette section"
+              className="w-auto text-afh-caption"
+            />
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
+              style={{
+                borderColor: "var(--afh-border)",
+                color: "var(--afh-text-soft)",
+              }}
+              aria-label="Signaler cette section — bientôt disponible"
+            >
+              Signaler cette section (bientôt disponible)
+            </button>
+          )}
+        </div>
+      </FicheSection>
 
-      {(hasRelatedContent(data.relatedPeoples) ||
-        relationsPreview.length > 0) && (
-        <FicheSection
-          title="Peuples voisins & organisation"
-          note="Rubriques « groupes associés » et « organisation »"
-        >
+      <FicheSection
+        title="Peuples voisins & organisation"
+        note="Rubriques « groupes associés » et « organisation »"
+      >
+        {hasRelatedContent(data.relatedPeoples) ||
+        relationsPreview.length > 0 ? (
           <PeopleRelatedPeoplesSection
             data={data.relatedPeoples}
             peopleId={data.hero.peopleId}
             relationsPreview={relationsPreview}
           />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
 
-      {data.countries.distributions.length > 0 && (
-        <FicheSection
-          title="Répartition géographique"
-          note="Rubrique « démographie » · année de référence 2025"
-        >
+      <FicheSection
+        title="Répartition géographique"
+        note="Rubrique « démographie » · année de référence 2025"
+      >
+        {data.countries.distributions.length > 0 ? (
           <PeopleCountriesSection
             data={data.countries}
             fromPeopleId={data.hero.peopleId}
             fromPeopleName={data.hero.nameMain}
           />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
 
-      {/* Fragmentation coloniale (FR85) — absent below 2 countries */}
+      {/* Fragmentation coloniale (FR85) — absent below 2 countries.
+          Not a rubric of the fiche model but a reading that only exists where
+          a people straddles a border, so its absence is inapplicability, not
+          a gap in the corpus, and it carries no missing marker. */}
       {fragmentation && (
         <FicheSection
           title="Fragmentation coloniale"
@@ -247,20 +274,22 @@ export function PeopleDetailViewV2({
       {/* Deep links across the app point at #sources; until now the only such
           anchor in the tree belonged to the family fiche, so every citation
           chip on a people fiche resolved to nothing. */}
-      {data.sources.length > 0 && (
-        <FicheSection
-          title="Sources"
-          note="Rubrique « sources » · politique de paliers"
-          as="footer"
-          id="sources"
-        >
+      <FicheSection
+        title="Sources"
+        note="Rubrique « sources » de la fiche · politique de paliers"
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
           />
-        </FicheSection>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
     </div>
   );
 }
