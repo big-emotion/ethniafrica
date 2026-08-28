@@ -624,30 +624,61 @@ describe("afrikLoader", () => {
   });
 
   describe("search", () => {
-    it("should return filtered results by type", async () => {
-      const mockResponse = {
-        data: [
+    const searchEnvelope = {
+      data: {
+        peoples: [
           {
-            type: "people",
             id: "PPL_SHONA",
-            name: "Shona",
-            snippet: "The Shona people...",
-            relevance: 0.95,
-            language_family_id: "FLG_BANTU",
+            nameMain: "Shona",
+            languageFamilyId: "FLG_BANTU",
+            currentCountries: ["ZWE"],
+            content: {},
           },
         ],
-      };
+        countries: [{ id: "ZWE", nameFr: "Zimbabwe", content: {} }],
+        families: [{ id: "FLG_BANTU", nameFr: "Bantou", content: {} }],
+        total: 3,
+      },
+    };
 
+    // @req REQ-108
+    it("asks the route for q, the only query parameter it accepts", async () => {
       mockFetch.mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve(mockResponse),
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      await search("shona");
+
+      expect(mockFetch).toHaveBeenCalledWith("/api/v2/search?q=shona");
+    });
+
+    // @req REQ-108
+    it("returns every entity the envelope carries", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      const result = await search("shona");
+
+      expect(result.map((r) => r.type)).toEqual([
+        "people",
+        "country",
+        "languageFamily",
+      ]);
+      expect(result[0].name).toBe("Shona");
+    });
+
+    // @req REQ-108
+    it("should return filtered results by type", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
       });
 
       const result = await search("shona", { type: "people" });
 
-      expect(mockFetch).toHaveBeenCalledWith(
-        "/api/v2/search?query=shona&type=people"
-      );
       expect(result).toHaveLength(1);
       expect(result[0].type).toBe("people");
       expect(result[0].id).toBe("PPL_SHONA");

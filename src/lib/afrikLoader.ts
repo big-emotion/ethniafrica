@@ -22,6 +22,10 @@ import type {
 } from "@/types/afrik-frontend";
 
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
+import {
+  buildSearchParams,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import { mapCountryDetail, mapPeopleDetail } from "@/lib/afrikDetailMapper";
@@ -78,6 +82,7 @@ async function handleFetchError(
 // LANGUAGE FAMILIES
 // ==========================================
 
+// @req REQ-108
 /**
  * Récupère la liste des familles linguistiques (paginée)
  */
@@ -127,6 +132,7 @@ export async function getLanguageFamilies(
   }
 }
 
+// @req REQ-108
 /**
  * Récupère le nombre de peuples non rattachés à une famille publiée
  * (REQ-108) — à afficher plutôt qu'omettre silencieusement.
@@ -154,6 +160,7 @@ export async function getUnclassifiedPeoplesCount(): Promise<number> {
   }
 }
 
+// @req REQ-108
 /**
  * Récupère les détails d'une famille linguistique
  */
@@ -214,6 +221,7 @@ export async function getLanguageFamily(
 // PEOPLES
 // ==========================================
 
+// @req REQ-108
 /**
  * Récupère la liste des peuples (paginée, avec filtres optionnels)
  */
@@ -294,6 +302,7 @@ export async function getPeoples(
   }
 }
 
+// @req REQ-108
 /**
  * Récupère les détails d'un peuple (avec les 8 sections AFRIK)
  */
@@ -330,6 +339,7 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
 // COUNTRIES
 // ==========================================
 
+// @req REQ-108
 /**
  * Récupère la liste des pays (paginée)
  */
@@ -379,6 +389,7 @@ export async function getCountries(
   }
 }
 
+// @req REQ-108
 /**
  * Récupère les détails d'un pays
  */
@@ -415,6 +426,7 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
 // SEARCH
 // ==========================================
 
+// @req REQ-108
 /**
  * Recherche multi-entités avec filtres
  */
@@ -423,21 +435,9 @@ export async function search(
   filters: Omit<SearchFilters, "query"> = {}
 ): Promise<SearchResult[]> {
   try {
-    // Build query params
-    const params = new URLSearchParams();
-
-    if (query) {
-      params.set("query", query);
-    }
-    if (filters.type) {
-      params.set("type", filters.type);
-    }
-    if (filters.languageFamilyId) {
-      params.set("languageFamilyId", filters.languageFamilyId);
-    }
-    if (filters.countryId) {
-      params.set("countryId", filters.countryId);
-    }
+    // The route matches on `q` alone and ignores entity/relation filters, so
+    // the narrowing the search modal's tabs ask for happens on the results.
+    const params = buildSearchParams(query);
 
     const response = await fetch(`${API_BASE}/search?${params}`);
 
@@ -447,24 +447,23 @@ export async function search(
       return [];
     }
 
-    const result = await response.json();
+    let results = mapSearchEnvelope(await response.json());
 
-    // Transform API response to frontend types
-    const data: SearchResult[] = (result.data || []).map(
-      (item: Record<string, unknown>) => ({
-        type: item.type,
-        id: item.id,
-        name: item.name,
-        snippet: item.snippet,
-        relevance: item.relevance,
-        languageFamilyId: item.languageFamilyId || item.language_family_id,
-        languageFamilyName: item.languageFamilyName,
-        countryIds: item.countryIds || item.country_ids,
-        population: item.population,
-      })
-    );
+    if (filters.type) {
+      results = results.filter((result) => result.type === filters.type);
+    }
+    if (filters.languageFamilyId) {
+      results = results.filter(
+        (result) => result.languageFamilyId === filters.languageFamilyId
+      );
+    }
+    if (filters.countryId) {
+      results = results.filter((result) =>
+        result.countryIds?.includes(filters.countryId)
+      );
+    }
 
-    return data;
+    return results;
   } catch (error) {
     logger.error("[search] Exception", error);
     return [];
@@ -475,6 +474,7 @@ export async function search(
 // STATISTICS
 // ==========================================
 
+// @req REQ-108
 /**
  * Récupère les statistiques globales pour la page d'accueil
  * Agrège les totaux depuis les différents endpoints
@@ -576,6 +576,7 @@ function transformMeta(
 // UTILITY EXPORTS
 // ==========================================
 
+// @req REQ-108
 /**
  * Vide le cache v2
  */
@@ -598,6 +599,7 @@ export function clearV2Cache(): void {
   }
 }
 
+// @req REQ-108
 /**
  * Récupère tous les peuples (sans pagination) - utile pour la recherche
  * Attention: peut être lent si beaucoup de données
@@ -620,6 +622,7 @@ export async function getAllPeoples(): Promise<PeopleSummary[]> {
   return allPeoples;
 }
 
+// @req REQ-108
 /**
  * Récupère tous les pays (sans pagination) - utile pour les filtres
  */
@@ -643,6 +646,7 @@ export async function getAllCountries(): Promise<CountrySummary[]> {
   );
 }
 
+// @req REQ-108
 /**
  * Récupère toutes les familles linguistiques (sans pagination)
  */

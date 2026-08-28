@@ -17,9 +17,11 @@ import type { ApiEnvelope } from "../utils/response";
 export interface FtsSearchData {
   peoples: object[];
   countries: object[];
+  families: object[];
   total: number;
 }
 
+// @req REQ-002
 export async function ftsSearchHandler(
   params: FtsSearchParams
 ): Promise<ApiEnvelope<FtsSearchData>> {
@@ -27,10 +29,12 @@ export async function ftsSearchHandler(
   return createApiResponse<FtsSearchData>({
     peoples: result.peoples as object[],
     countries: result.countries as object[],
+    families: (result.families ?? []) as object[],
     total: result.total,
   });
 }
 
+// @req REQ-002
 export async function searchHandler(
   filters: SearchFilters = {}
 ): Promise<SearchResult[]> {
