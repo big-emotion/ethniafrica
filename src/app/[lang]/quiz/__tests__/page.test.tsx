@@ -2,12 +2,10 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockGetQuizSegmentsHandler, mockIsQuizFeatureEnabled } = vi.hoisted(
-  () => ({
-    mockGetQuizSegmentsHandler: vi.fn(),
-    mockIsQuizFeatureEnabled: vi.fn(),
-  })
-);
+const { mockGetQuizScopesHandler, mockDescribeScope } = vi.hoisted(() => ({
+  mockGetQuizScopesHandler: vi.fn(),
+  mockDescribeScope: vi.fn(),
+}));
 
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
@@ -16,7 +14,8 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/api/v2/handlers/quiz", () => ({
-  getQuizSegmentsHandler: () => mockGetQuizSegmentsHandler(),
+  getQuizScopesHandler: () => mockGetQuizScopesHandler(),
+  describeScope: (...args: unknown[]) => mockDescribeScope(...args),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -25,25 +24,52 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-vi.mock("@/components/quiz/QuizSegmentPicker", () => ({
-  QuizSegmentPicker: ({ segments }: { segments: { id: string }[] }) => (
-    <div data-testid="quiz-segment-picker" data-count={segments.length} />
+vi.mock("@/components/quiz/QuizScopePicker", () => ({
+  QuizScopePicker: ({
+    scopes,
+  }: {
+    scopes: { countries: unknown[]; families: unknown[] };
+  }) => (
+    <div
+      data-testid="quiz-scope-picker"
+      data-countries={scopes.countries.length}
+    />
+  ),
+}));
+
+vi.mock("@/components/quiz/QuizPlayHost", () => ({
+  QuizPlayHost: ({ scopeLabelFr }: { scopeLabelFr: string }) => (
+    <div data-testid="quiz-play-host" data-label={scopeLabelFr} />
   ),
 }));
 
 import { notFound } from "next/navigation";
 import QuizPage from "../page";
 
-function makeSegmentsEnvelope() {
+function scopesEnvelope() {
   return {
     data: {
-      segments: [
-        { id: "children", labelFr: "enfants", rungs: [] },
-        { id: "teens", labelFr: "ados", rungs: [] },
-        { id: "adults", labelFr: "adultes", rungs: [] },
-        { id: "university", labelFr: "étudiants", rungs: [] },
-        { id: "professionals", labelFr: "professionnels", rungs: [] },
+      countries: [
+        {
+          id: "GHA",
+          labelFr: "Ghana",
+          activeQuestionCount: 90,
+          playable: true,
+        },
       ],
+      families: [],
+      mixed: {
+        id: "mixed",
+        labelFr: "Tout le continent",
+        activeQuestionCount: 2504,
+        playable: true,
+      },
+      random: {
+        id: "random",
+        labelFr: "Au hasard",
+        activeQuestionCount: 2504,
+        playable: true,
+      },
     },
     meta: { license: "CC-BY-SA-4.0", attribution: "Africa History" },
     errors: [],
@@ -60,23 +86,53 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   // @req REQ-103 AR39
   it("renders whatever the environment says", async () => {
     delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
-    mockGetQuizSegmentsHandler.mockResolvedValue(makeSegmentsEnvelope());
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
 
-    render(await QuizPage());
+    render(await QuizPage({ searchParams: Promise.resolve({}) }));
 
-    expect(screen.getByTestId("quiz-segment-picker")).toBeInTheDocument();
+    expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
   });
 
   // @req REQ-103 FR66
-  it("server-renders QuizSegmentPicker fed by /v2/quiz/segments when the flag is on", async () => {
-    mockGetQuizSegmentsHandler.mockResolvedValue(makeSegmentsEnvelope());
+  it("shows the track picker when the URL names no track", async () => {
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
 
-    render(await QuizPage());
+    render(await QuizPage({ searchParams: Promise.resolve({}) }));
 
-    expect(screen.getByTestId("quiz-segment-picker")).toHaveAttribute(
-      "data-count",
-      "5"
+    expect(screen.getByTestId("quiz-scope-picker")).toHaveAttribute(
+      "data-countries",
+      "1"
     );
+    expect(screen.queryByTestId("quiz-play-host")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-103 FR66 FR67
+  it("opens the session when the URL names a track", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
+
+    render(await QuizPage({ searchParams: Promise.resolve({ pays: "GHA" }) }));
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-label",
+      "Ghana"
+    );
+  });
+
+  // @req REQ-103 FR66
+  it("falls back to the picker when the URL names a country the corpus lacks", async () => {
+    // A 404 would be wrong: the route exists, and the reader's next move is to
+    // pick something that does exist.
+    mockDescribeScope.mockResolvedValue(null);
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
+
+    render(await QuizPage({ searchParams: Promise.resolve({ pays: "ZZZ" }) }));
+
+    expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
+    expect(notFound).not.toHaveBeenCalled();
   });
 });

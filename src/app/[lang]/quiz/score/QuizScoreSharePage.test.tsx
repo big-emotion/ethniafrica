@@ -5,10 +5,10 @@ import { describe, expect, it, vi } from "vitest";
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
 
 const props = {
-  segment: "adults" as const,
+  scope: { kind: "country" as const, entityId: "GHA" },
+  scopeLabelFr: "Ghana",
   correct: 6,
   total: 8,
-  rung: 2,
 };
 
 // @testing-library/user-event installs its own navigator.clipboard stub as
@@ -29,14 +29,17 @@ function stubNavigator(overrides: {
 
 describe("QuizScoreSharePage (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR70)", () => {
   // @req REQ-103 FR70
-  it("renders the full score content as text with a single CTA to /fr/quiz", () => {
+  it("renders the score as text and sends « rejouer » back to the same track", () => {
+    // A reader arriving on a shared card is being invited to try that country;
+    // dropping them on an unfiltered quiz would lose the invitation.
     render(<QuizScoreSharePage {...props} />);
 
     expect(screen.getByText("6")).toBeInTheDocument();
     expect(screen.getByText("8")).toBeInTheDocument();
+    expect(screen.getByText("Ghana")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Rejouer" })).toHaveAttribute(
       "href",
-      "/fr/quiz"
+      "/fr/quiz?pays=GHA"
     );
   });
 
@@ -52,10 +55,9 @@ describe("QuizScoreSharePage (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR70)",
     expect(share).toHaveBeenCalledTimes(1);
     const sharedUrl = share.mock.calls[0][0].url as string;
     expect(sharedUrl).toContain("/fr/quiz/score?");
-    expect(sharedUrl).toContain("segment=adults");
+    expect(sharedUrl).toContain("pays=GHA");
     expect(sharedUrl).toContain("correct=6");
     expect(sharedUrl).toContain("total=8");
-    expect(sharedUrl).toContain("rung=2");
   });
 
   // @req REQ-103 FR70

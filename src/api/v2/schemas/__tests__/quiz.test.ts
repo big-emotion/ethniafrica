@@ -3,18 +3,18 @@ import { quizSessionQuerySchema, DEFAULT_QUIZ_SESSION_COUNT } from "../quiz";
 
 describe("quizSessionQuerySchema", () => {
   // @req REQ-103
-  it("accepts a valid segment, difficulty and count", () => {
+  it("accepts a country track and a count", () => {
     const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "3",
+      pays: "GHA",
       count: "6",
     });
 
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data).toEqual({
-        segment: "adults",
-        difficulty: 3,
+        pays: "GHA",
+        famille: undefined,
+        mode: undefined,
         count: 6,
       });
     }
@@ -22,10 +22,7 @@ describe("quizSessionQuerySchema", () => {
 
   // @req REQ-103
   it("defaults count to 8 when omitted", () => {
-    const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "3",
-    });
+    const result = quizSessionQuerySchema.safeParse({ pays: "GHA" });
 
     expect(result.success).toBe(true);
     if (result.success) {
@@ -34,23 +31,54 @@ describe("quizSessionQuerySchema", () => {
   });
 
   // @req REQ-103
-  it("rejects an unknown segment", () => {
-    const result = quizSessionQuerySchema.safeParse({
-      segment: "babies",
-      difficulty: "1",
-    });
+  it("accepts no track at all — the whole-corpus session", () => {
+    const result = quizSessionQuerySchema.safeParse({});
+
+    expect(result.success).toBe(true);
+  });
+
+  // @req REQ-103
+  it("reads a blank parameter as no filter, not as an empty id", () => {
+    // A GET form on « Tous les pays » submits `?pays=`.
+    const result = quizSessionQuerySchema.safeParse({ pays: "" });
+
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.pays).toBeUndefined();
+    }
+  });
+
+  // @req REQ-103
+  it("rejects a country code that is not alpha-3", () => {
+    const result = quizSessionQuerySchema.safeParse({ pays: "GHANA" });
 
     expect(result.success).toBe(false);
     if (!result.success) {
-      expect(result.error.issues[0].path).toEqual(["segment"]);
+      expect(result.error.issues[0].path).toEqual(["pays"]);
     }
+  });
+
+  // @req REQ-103
+  it("rejects a family id outside the FLG_ namespace", () => {
+    const result = quizSessionQuerySchema.safeParse({ famille: "bantu" });
+
+    expect(result.success).toBe(false);
+    if (!result.success) {
+      expect(result.error.issues[0].path).toEqual(["famille"]);
+    }
+  });
+
+  // @req REQ-103
+  it("rejects an unknown mode", () => {
+    const result = quizSessionQuerySchema.safeParse({ mode: "difficile" });
+
+    expect(result.success).toBe(false);
   });
 
   // @req REQ-103
   it("rejects count above the maximum", () => {
     const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "3",
+      pays: "GHA",
       count: "50",
     });
 
@@ -63,41 +91,8 @@ describe("quizSessionQuerySchema", () => {
   // @req REQ-103
   it("rejects count below the minimum", () => {
     const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "3",
+      pays: "GHA",
       count: "1",
-    });
-
-    expect(result.success).toBe(false);
-  });
-
-  // @req REQ-103
-  it("rejects a difficulty outside the global 1-5 range", () => {
-    const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "7",
-    });
-
-    expect(result.success).toBe(false);
-    if (!result.success) {
-      expect(result.error.issues[0].path).toEqual(["difficulty"]);
-    }
-  });
-
-  // @req REQ-103
-  it("rejects a non-numeric difficulty", () => {
-    const result = quizSessionQuerySchema.safeParse({
-      segment: "adults",
-      difficulty: "abc",
-    });
-
-    expect(result.success).toBe(false);
-  });
-
-  // @req REQ-103
-  it("rejects a missing segment", () => {
-    const result = quizSessionQuerySchema.safeParse({
-      difficulty: "3",
     });
 
     expect(result.success).toBe(false);

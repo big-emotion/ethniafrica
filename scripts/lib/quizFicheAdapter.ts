@@ -39,9 +39,11 @@ export interface PeopleContent {
     isoCodes?: string[];
   };
   demography?: {
+    totalPopulation?: number;
     distributionByCountry?: Array<{
       country?: string;
-      percentage?: number;
+      /** A head count. `percentage` exists on 32 of 1611 entries and is not read. */
+      population?: number;
     }>;
   };
 }
@@ -140,18 +142,22 @@ export function mapPeopleRowToFiche(
     return null;
   }
 
+  // Read `population`, not `percentage`. The corpus writes a head count in all
+  // 1611 distribution entries and a share in 32; filtering on the share left
+  // T3 — "in which country does this people live" — existing for 20 peoples
+  // out of 621, which is the single template a country track leans on.
   const distributionByCountry = (
     content.demography?.distributionByCountry ?? []
   )
     .filter(
-      (entry): entry is { country: string; percentage: number } =>
+      (entry): entry is { country: string; population: number } =>
         typeof entry.country === "string" &&
-        typeof entry.percentage === "number"
+        typeof entry.population === "number"
     )
     .map((entry) => ({
       countryId: entry.country,
       countryNameFr: countryNameById.get(entry.country) ?? entry.country,
-      percentage: entry.percentage,
+      population: entry.population,
     }));
 
   const subjectName: AutonymExonymName = {
@@ -169,6 +175,10 @@ export function mapPeopleRowToFiche(
     distributionByCountry,
     mainLanguage,
     isoCode,
+    totalPopulation:
+      typeof content.demography?.totalPopulation === "number"
+        ? content.demography.totalPopulation
+        : null,
   };
 }
 

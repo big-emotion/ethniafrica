@@ -2,8 +2,12 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockIsQuizFeatureEnabled } = vi.hoisted(() => ({
-  mockIsQuizFeatureEnabled: vi.fn(),
+const { mockDescribeScope } = vi.hoisted(() => ({
+  mockDescribeScope: vi.fn(),
+}));
+
+vi.mock("@/api/v2/handlers/quiz", () => ({
+  describeScope: (...args: unknown[]) => mockDescribeScope(...args),
 }));
 
 vi.mock("next/navigation", () => ({
@@ -32,10 +36,9 @@ import QuizScorePage, { generateMetadata } from "../page";
 
 function searchParams(overrides: Record<string, string> = {}) {
   return Promise.resolve({
-    segment: "adults",
+    pays: "GHA",
     correct: "6",
     total: "8",
-    rung: "2",
     ...overrides,
   });
 }
@@ -43,6 +46,11 @@ function searchParams(overrides: Record<string, string> = {}) {
 describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR70)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
   });
 
   // A shared score URL used to 404 unless the build carried
@@ -71,10 +79,10 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
 
     const el = screen.getByTestId("quiz-score-share-page");
     expect(JSON.parse(el.getAttribute("data-props") ?? "{}")).toEqual({
-      segment: "adults",
+      scope: { kind: "country", entityId: "GHA" },
+      scopeLabelFr: "Ghana",
       correct: 6,
       total: 8,
-      rung: 2,
     });
   });
 
@@ -84,9 +92,20 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
 
     expect(metadata.openGraph?.images).toEqual([
       expect.objectContaining({
-        url: "/api/og/quiz-score?segment=adults&correct=6&total=8&rung=2",
+        url: "/api/og/quiz-score?pays=GHA&correct=6&total=8",
       }),
     ]);
+  });
+
+  // @req REQ-103 FR70
+  it("404s when the track names a country the corpus does not hold", async () => {
+    // The label is read from the corpus, never from the URL, so an id naming
+    // nothing gets the same 404 an absurd score does.
+    mockDescribeScope.mockResolvedValue(null);
+
+    await expect(
+      QuizScorePage({ searchParams: searchParams({ pays: "ZZZ" }) })
+    ).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
   // @req REQ-103 FR70

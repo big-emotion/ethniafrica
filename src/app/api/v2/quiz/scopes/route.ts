@@ -1,26 +1,32 @@
 /**
- * API v2 - Quiz segments (Epic 10, Story 10.7, ETNI-496, FR66)
- * GET /api/v2/quiz/segments
+ * API v2 - Quiz scopes (Epic 10, Story 10.7, ETNI-496, FR66)
+ * GET /api/v2/quiz/scopes
+ *
+ * Replaces `/api/v2/quiz/segments`, which listed audience segments. A path
+ * that returned a different kind of thing under the same name would have been
+ * the harder break to notice.
  *
  * @swagger
- * /api/v2/quiz/segments:
+ * /api/v2/quiz/scopes:
  *   get:
- *     summary: List the five quiz audience segments with per-rung question counts
+ *     summary: List the entity tracks a quiz session can be drawn from
  *     description: >
- *       Five audience segments (children, teens, adults, university,
- *       professionals) with French labels and, per available difficulty
- *       rung, the count of currently active questions — so the UI can
- *       disable empty rungs honestly. Counts change only on generation
- *       sweeps (Story 10.5).
+ *       Every country and every language family, each with the number of
+ *       currently active questions its peoples hold, plus the two
+ *       whole-corpus tracks (`mixed`, ordered by the difficulty ladder, and
+ *       `random`, which is not). `playable` is false when a track cannot fill
+ *       a session of eight — it is still listed and still counted, so the UI
+ *       can be honest about what the corpus holds rather than hiding it.
+ *       Counts change only on generation sweeps (Story 10.5).
  *     tags: ["API v2 - Quiz"]
  *     security: []
  *     responses:
  *       200:
- *         description: Segments envelope
+ *         description: Scopes envelope
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/QuizSegmentsResponse'
+ *               $ref: '#/components/schemas/QuizScopesResponse'
  *         headers:
  *           Cache-Control:
  *             description: "s-maxage=3600"
@@ -49,7 +55,7 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { getQuizSegmentsHandler } from "@/api/v2/handlers/quiz";
+import { getQuizScopesHandler } from "@/api/v2/handlers/quiz";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { applyRateLimit } from "@/lib/api/rate-limit";
@@ -66,21 +72,21 @@ export async function GET(request: NextRequest) {
   if (rateLimitResponse) return rateLimitResponse;
 
   try {
-    logger.info("GET /api/v2/quiz/segments");
+    logger.info("GET /api/v2/quiz/scopes");
 
-    const envelope = await getQuizSegmentsHandler();
+    const envelope = await getQuizScopesHandler();
     const response = jsonWithCors(envelope, {
       headers: { "Cache-Control": CACHE_CONTROL },
     });
 
-    logger.info("GET /api/v2/quiz/segments completed", {
+    logger.info("GET /api/v2/quiz/scopes completed", {
       duration: Date.now() - startTime,
       status: 200,
     });
 
     return response;
   } catch (error) {
-    logger.error("Error in GET /api/v2/quiz/segments", error, {
+    logger.error("Error in GET /api/v2/quiz/scopes", error, {
       duration: Date.now() - startTime,
     });
     return jsonWithCors(

@@ -11,7 +11,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { parseScoreCardParams } from "@/lib/quiz/scoreCardParams";
+import {
+  parseScoreCardParams,
+  scoreCardScope,
+} from "@/lib/quiz/scoreCardParams";
+import { describeScope } from "@/api/v2/handlers/quiz";
 import { translations } from "@/lib/translations";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 
@@ -36,6 +40,14 @@ export async function GET(request: Request) {
     return new Response(null, { status: 404 });
   }
 
+  // The track's name comes from the corpus, never from the query string. A
+  // caption a stranger can write is a caption on an image carrying the site's
+  // own type — so an id naming nothing gets the same 404 an absurd score does.
+  const scope = await describeScope(scoreCardScope(params));
+  if (!scope) {
+    return new Response(null, { status: 404 });
+  }
+
   return new ImageResponse(
     <div
       style={{
@@ -57,7 +69,7 @@ export async function GET(request: Request) {
           opacity: 0.75,
         }}
       >
-        {t.segments[params.segment]}
+        {scope.labelFr}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         <div

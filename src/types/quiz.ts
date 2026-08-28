@@ -37,7 +37,13 @@ export interface QuizQuestionCandidate {
 export interface QuizCountryShare {
   countryId: string;
   countryNameFr: string;
-  percentage: number;
+  /**
+   * `content.demography.distributionByCountry[].population` — a head count,
+   * not a share. The corpus writes `population` in all 1611 entries and
+   * `percentage` in 32; reading the latter is what capped T3 at 20 peoples.
+   * `src/lib/games/corpus.ts` records the same trap for the games.
+   */
+  population: number;
 }
 
 /**
@@ -53,4 +59,10 @@ export interface QuizPeopleFixture {
   distributionByCountry: QuizCountryShare[];
   mainLanguage: AutonymExonymName;
   isoCode: string;
+  /**
+   * `content.demography.totalPopulation`, set on all 789 fiches. The games
+   * charter's difficulty ladder (§4) reads notoriety off it: a people of ten
+   * million is more likely to be recognised than one of forty thousand.
+   */
+  totalPopulation: number | null;
 }

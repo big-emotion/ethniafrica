@@ -1,17 +1,24 @@
 /**
  * /[lang]/quiz/score — stateless, shareable score page (Epic 10, Story
  * 10.10, ETNI-499, ETNI-1140, FR70). The URL alone reconstructs the card:
- * ?segment=&correct=&total=&rung=, validated through the same shared Zod
+ * ?pays=|famille=|mode=&correct=&total=, validated through the same shared Zod
  * schema (scoreCardParams.ts) as the OG endpoint so forged params 404 in
  * both places — no personal data ever transits through this URL.
+ *
+ * The track's name is read from the corpus by its id, and a card whose id
+ * names nothing 404s. That is what keeps a share URL from writing its own
+ * caption on a page that carries the site's typography.
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import {
   parseScoreCardParams,
+  scoreCardScope,
+  scoreCardSearchParams,
   type ScoreCardParams,
 } from "@/lib/quiz/scoreCardParams";
+import { describeScope } from "@/api/v2/handlers/quiz";
 import { translations } from "@/lib/translations";
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
 
@@ -24,12 +31,11 @@ interface PageProps {
 }
 
 function buildOgImageUrl(params: ScoreCardParams): string {
-  const search = new URLSearchParams({
-    segment: params.segment,
-    correct: String(params.correct),
-    total: String(params.total),
-    rung: String(params.rung),
-  });
+  const search = scoreCardSearchParams(
+    scoreCardScope(params),
+    params.correct,
+    params.total
+  );
   return `/api/og/quiz-score?${search.toString()}`;
 }
 
@@ -42,8 +48,13 @@ export async function generateMetadata({
     return {};
   }
 
+  const scope = await describeScope(scoreCardScope(params));
+  if (!scope) {
+    return {};
+  }
+
   const title = t.scoreHeading;
-  const description = `${params.correct} ${t.scoreCardExactAnswersSeparator} ${params.total} — ${t.segments[params.segment]}`;
+  const description = `${params.correct} ${t.scoreCardExactAnswersSeparator} ${params.total} — ${scope.labelFr}`;
   const imageUrl = buildOgImageUrl(params);
 
   return {
@@ -72,13 +83,19 @@ export default async function QuizScorePage({ searchParams }: PageProps) {
     notFound();
   }
 
+  const scope = scoreCardScope(params);
+  const described = await describeScope(scope);
+  if (!described) {
+    notFound();
+  }
+
   return (
     <PageLayout language="fr" title={t.scoreHeading}>
       <QuizScoreSharePage
-        segment={params.segment}
+        scope={scope}
+        scopeLabelFr={described.labelFr}
         correct={params.correct}
         total={params.total}
-        rung={params.rung}
       />
     </PageLayout>
   );

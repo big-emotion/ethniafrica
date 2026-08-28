@@ -1,10 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { QuizPlayIsland } from "@/components/quiz/QuizPlayIsland";
-import { persistRungIfEarned } from "@/lib/quiz/rung-storage";
 import type { QuizSessionQuestionView } from "@/api/v2/schemas/quiz";
+import type { QuizScope } from "@/lib/quiz/quizScope";
 
 const { mockUseQuizSession } = vi.hoisted(() => ({
   mockUseQuizSession: vi.fn(),
@@ -13,6 +12,8 @@ const { mockUseQuizSession } = vi.hoisted(() => ({
 vi.mock("@/hooks/use-quiz-session", () => ({
   useQuizSession: (options: unknown) => mockUseQuizSession(options),
 }));
+
+const GHANA: QuizScope = { kind: "country", entityId: "GHA" };
 
 const QUESTION: QuizSessionQuestionView = {
   templateId: "T2",
@@ -49,9 +50,14 @@ function baseSession(overrides: Record<string, unknown> = {}) {
   };
 }
 
+function renderIsland(scope: QuizScope = GHANA, label = "Ghana") {
+  return render(
+    <QuizPlayIsland scope={scope} scopeLabelFr={label} exitHref="/fr/quiz" />
+  );
+}
+
 describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
   beforeEach(() => {
-    window.localStorage.clear();
     mockUseQuizSession.mockReset();
   });
 
@@ -59,49 +65,68 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
   it("shows a loading message while the session is in flight", () => {
     mockUseQuizSession.mockReturnValue(baseSession({ status: "loading" }));
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(screen.getByText("Chargement de la session…")).toBeInTheDocument();
   });
 
   // @req REQ-103 FR67
-  it("says the rung has nothing to serve rather than rendering an empty screen", () => {
-    // The gate runs again at serve time, so a rung the picker counted as
+  it("says the track has nothing to serve rather than rendering an empty screen", () => {
+    // The gate runs again at serve time, so a track the picker counted as
     // stocked can still compose to zero questions. Returning null for that
     // left the player on a blank page with no way back.
     mockUseQuizSession.mockReturnValue(
       baseSession({ questions: [], currentQuestion: null, totalQuestions: 0 })
     );
 
-    render(<QuizPlayIsland segment="children" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(
       screen.getByText(
-        "Aucune question disponible pour ce niveau — réessaie plus tard."
+        "Aucune question disponible pour ce parcours — réessaie plus tard."
       )
     ).toBeInTheDocument();
   });
 
   // @req REQ-103 FR67
-  it("offers a way back to the picker from the empty state", async () => {
-    const onExit = vi.fn();
+  it("offers a way out of a running session, not only of an empty one", () => {
+    // There was none: a player who picked the wrong country was held for eight
+    // questions with no breadcrumb, no abandon and no link back.
+    mockUseQuizSession.mockReturnValue(baseSession());
+
+    renderIsland();
+
+    expect(screen.getByTestId("quiz-session-exit")).toHaveAttribute(
+      "href",
+      "/fr/quiz"
+    );
+  });
+
+  // @req REQ-103 FR67
+  it("names the track being played", () => {
+    mockUseQuizSession.mockReturnValue(baseSession());
+
+    renderIsland();
+
+    expect(screen.getByText("Ghana")).toBeInTheDocument();
+  });
+
+  // @req REQ-103 FR67
+  it("offers a way back from the empty state", () => {
     mockUseQuizSession.mockReturnValue(
       baseSession({ questions: [], currentQuestion: null, totalQuestions: 0 })
     );
 
-    render(<QuizPlayIsland segment="children" onExit={onExit} />);
-    await userEvent.click(
-      screen.getByRole("button", { name: "Choisir un autre parcours" })
-    );
+    renderIsland();
 
-    expect(onExit).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId("quiz-session-exit")).toBeInTheDocument();
   });
 
   // @req REQ-103 FR67
   it("shows an error message when the session fails to load", () => {
     mockUseQuizSession.mockReturnValue(baseSession({ status: "error" }));
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(
       screen.getByText(
@@ -114,7 +139,7 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
   it("renders the progress dots and question card in the answering phase", () => {
     mockUseQuizSession.mockReturnValue(baseSession());
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(screen.getByTestId("quiz-progress-dots")).toBeInTheDocument();
     expect(
@@ -122,7 +147,7 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
     ).toBeInTheDocument();
   });
 
-  // @req REQ-103 FR68 FR71
+  // @req REQ-103 FR71
   it("renders the answer reveal panel in the revealed phase", () => {
     mockUseQuizSession.mockReturnValue(
       baseSession({
@@ -132,42 +157,28 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
       })
     );
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(screen.getByTestId("quiz-answer-reveal")).toBeInTheDocument();
   });
 
-  // @req REQ-103 FR68
+  // @req REQ-103 FR70
   it("renders the score screen in the finished phase", () => {
     mockUseQuizSession.mockReturnValue(
       baseSession({ status: "finished", correctCount: 1, totalQuestions: 1 })
     );
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
     expect(screen.getByTestId("quiz-score-screen")).toBeInTheDocument();
   });
 
-  // @req REQ-103 FR68
-  it("passes the segment's previously stored rung as the session difficulty", () => {
-    persistRungIfEarned("adults", 2, 1);
+  // @req REQ-103 FR67
+  it("asks the session hook for the track the page named", () => {
     mockUseQuizSession.mockReturnValue(baseSession());
 
-    render(<QuizPlayIsland segment="adults" onExit={vi.fn()} />);
+    renderIsland();
 
-    expect(mockUseQuizSession).toHaveBeenCalledWith(
-      expect.objectContaining({ segment: "adults", difficulty: 3 })
-    );
-  });
-
-  // @req REQ-103 FR68
-  it("falls back to the segment's minimum rung when nothing is stored", () => {
-    mockUseQuizSession.mockReturnValue(baseSession());
-
-    render(<QuizPlayIsland segment="children" onExit={vi.fn()} />);
-
-    expect(mockUseQuizSession).toHaveBeenCalledWith(
-      expect.objectContaining({ segment: "children", difficulty: 1 })
-    );
+    expect(mockUseQuizSession).toHaveBeenCalledWith({ scope: GHANA });
   });
 });

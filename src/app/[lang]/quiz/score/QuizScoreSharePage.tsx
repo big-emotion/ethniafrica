@@ -5,24 +5,20 @@ import * as React from "react";
 import { QuizScoreCard } from "@/components/quiz/QuizScoreCard";
 import { getLocalizedRoute } from "@/lib/routing";
 import { translations } from "@/lib/translations";
-import type { QuizAudience } from "@/lib/quiz/segmentPolicy";
+import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
+import { quizScopeSearchParams, type QuizScope } from "@/lib/quiz/quizScope";
 
 const t = translations.fr.quiz;
 
 export interface QuizScoreSharePageProps {
-  segment: QuizAudience;
+  scope: QuizScope;
+  scopeLabelFr: string;
   correct: number;
   total: number;
-  rung: number;
 }
 
 function buildShareUrl(props: QuizScoreSharePageProps): string {
-  const search = new URLSearchParams({
-    segment: props.segment,
-    correct: String(props.correct),
-    total: String(props.total),
-    rung: String(props.rung),
-  });
+  const search = scoreCardSearchParams(props.scope, props.correct, props.total);
   const origin =
     typeof window !== "undefined" && window.location
       ? window.location.origin
@@ -62,14 +58,19 @@ export const QuizScoreSharePage = (props: QuizScoreSharePageProps) => {
     }
   }
 
+  // « Rejouer » returns to the same track, not to the picker: a reader arriving
+  // on a shared card is being invited to try that country or family, and
+  // dropping them on an unfiltered quiz would lose the invitation.
+  const quizPath = getLocalizedRoute("fr", "quiz");
+  const replaySearch = quizScopeSearchParams(props.scope).toString();
+
   return (
     <QuizScoreCard
-      segment={props.segment}
+      scopeLabelFr={props.scopeLabelFr}
       correct={props.correct}
       total={props.total}
-      rung={props.rung}
       fiches={[]}
-      playAgainHref={getLocalizedRoute("fr", "quiz")}
+      playAgainHref={replaySearch ? `${quizPath}?${replaySearch}` : quizPath}
       onShare={handleShare}
       shareStatusMessage={shareStatusMessage}
     />

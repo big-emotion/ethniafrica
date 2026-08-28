@@ -1,12 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { parseScoreCardParams } from "@/lib/quiz/scoreCardParams";
+import {
+  parseScoreCardParams,
+  scoreCardScope,
+  scoreCardSearchParams,
+} from "@/lib/quiz/scoreCardParams";
 
 function params(overrides: Record<string, string> = {}) {
   return {
-    segment: "adults",
+    pays: "GHA",
     total: "8",
     correct: "5",
-    rung: "2",
     ...overrides,
   };
 }
@@ -28,41 +31,61 @@ describe("parseScoreCardParams (Epic 10, Story 10.10, ETNI-499, ETNI-1138, FR70)
   );
 
   // @req REQ-103 FR70
-  it("rejects an unknown segment", () => {
-    expect(parseScoreCardParams(params({ segment: "unknown" }))).toBeNull();
-  });
-
-  // @req REQ-103 FR70
-  it("rejects a rung outside the segment's difficulty range", () => {
-    // children's range is [1, 2]
-    expect(
-      parseScoreCardParams(params({ segment: "children", rung: "5" }))
-    ).toBeNull();
+  it("rejects a malformed country code", () => {
+    expect(parseScoreCardParams(params({ pays: "GHANA" }))).toBeNull();
   });
 
   // @req REQ-103 FR70
   it("rejects missing fields", () => {
-    expect(parseScoreCardParams({ segment: "adults" })).toBeNull();
+    expect(parseScoreCardParams({ pays: "GHA" })).toBeNull();
   });
 
   // @req REQ-103 FR70
-  it("returns the typed object for valid params", () => {
-    expect(parseScoreCardParams(params())).toEqual({
-      segment: "adults",
+  it("accepts a card with no track at all — the whole-corpus session", () => {
+    expect(parseScoreCardParams({ total: "8", correct: "5" })).toEqual({
+      pays: undefined,
+      famille: undefined,
+      mode: undefined,
       total: 8,
       correct: 5,
-      rung: 2,
     });
   });
 
   // @req REQ-103 FR70
   it("coerces a URLSearchParams instance the same way", () => {
     const search = new URLSearchParams(params());
-    expect(parseScoreCardParams(search)).toEqual({
-      segment: "adults",
-      total: 8,
-      correct: 5,
-      rung: 2,
+    expect(parseScoreCardParams(search)?.correct).toBe(5);
+  });
+});
+
+describe("scoreCardScope", () => {
+  // @req REQ-103 FR70
+  it("reads the same track the session endpoint would", () => {
+    const parsed = parseScoreCardParams(params());
+    expect(parsed && scoreCardScope(parsed)).toEqual({
+      kind: "country",
+      entityId: "GHA",
     });
+  });
+});
+
+describe("scoreCardSearchParams", () => {
+  // @req REQ-103 FR70
+  it("carries the track by id, never by name", () => {
+    // A caption a stranger can write is a caption on an image carrying the
+    // site's own type, so the label is resolved from the corpus instead.
+    const search = scoreCardSearchParams(
+      { kind: "family", entityId: "FLG_NIGER_CONGO" },
+      6,
+      8
+    );
+    expect(search.toString()).toBe("famille=FLG_NIGER_CONGO&correct=6&total=8");
+  });
+
+  // @req REQ-103 FR70
+  it("writes no track for the default whole-corpus session", () => {
+    expect(scoreCardSearchParams({ kind: "mixed" }, 6, 8).toString()).toBe(
+      "correct=6&total=8"
+    );
   });
 });
