@@ -1,14 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import type { Language } from "@/types/shared";
+
+/**
+ * The locale is fixed rather than read from the route. This page is also the
+ * root 404 boundary, and it is reached precisely when the first segment is
+ * *not* a locale — `/quiz` used to make `useParams()` hand back
+ * `lang = "quiz"`, so the page taught the reader a URL pattern that does not
+ * exist and offered a search link to `/quiz/recherche`.
+ */
+const lang: Language = "fr";
 
 // @req REQ-099
 export default function NotFound() {
-  const params = useParams();
-  const lang = (params?.lang as string) || "fr";
-
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center bg-afh-bg-warm px-4 py-12">
       <div className="max-w-xl w-full space-y-6 text-center">

@@ -2,10 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import NotFound from "@/app/[lang]/not-found";
 
-vi.mock("next/navigation", () => ({
-  useParams: () => ({ lang: "fr" }),
-}));
-
 vi.mock("next/link", () => ({
   __esModule: true,
   default: ({

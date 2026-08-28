@@ -1,0 +1,59 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("next/link", () => ({
+  __esModule: true,
+  default: ({
+    href,
+    children,
+    ...rest
+  }: {
+    href: string;
+    children: React.ReactNode;
+  }) => (
+    <a href={href} {...rest}>
+      {children}
+    </a>
+  ),
+}));
+
+import NotFound from "@/app/not-found";
+
+/**
+ * The root boundary is not a leftover: `notFound()` raised in
+ * `[lang]/layout.tsx` cannot be caught by `[lang]/not-found.tsx`, which
+ * renders inside that very layout. Every rejected segment lands here, and it
+ * lands under a URL whose first segment is not a locale — so nothing on this
+ * page may be derived from the route.
+ */
+describe("NotFound (root boundary)", () => {
+  // @req REQ-099
+  it("renders the same French Fiche introuvable page as the localized 404", () => {
+    render(<NotFound />);
+    expect(
+      screen.getByRole("heading", { name: /fiche introuvable/i })
+    ).toBeTruthy();
+  });
+
+  // @req REQ-099
+  it("teaches the fr fiche-URL pattern, never the rejected segment", () => {
+    const { container } = render(<NotFound />);
+    expect(container.textContent).toContain("/fr/peuples/PPL_XXXXX");
+  });
+
+  // @req REQ-099
+  it("sends the reader to the fr search page", () => {
+    render(<NotFound />);
+    expect(
+      screen
+        .getByRole("link", { name: /rechercher une fiche/i })
+        .getAttribute("href")
+    ).toBe("/fr/recherche");
+  });
+
+  // @req REQ-099
+  it("renders no Oops text anywhere", () => {
+    const { container } = render(<NotFound />);
+    expect(container.textContent).not.toMatch(/oops/i);
+  });
+});
