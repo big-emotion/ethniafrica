@@ -83,7 +83,7 @@ export function HeroMigrationPaths({ paths }: HeroMigrationPathsProps) {
           margin: 0;
           text-align: center;
           font-family: var(--afh-font-mono);
-          font-size: 11.5px;
+          font-size: var(--home-text-paths-readout);
           font-variant-numeric: tabular-nums;
           color: var(--accent-ink);
         }

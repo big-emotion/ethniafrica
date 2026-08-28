@@ -150,14 +150,23 @@ typography:
 
 ## 7. The ratchet
 
-`afh/no-raw-font-size` is `error` across all of `src/` from day one. The list
-of exempt files in `eslint.config.mjs` is a **debt register**: one line per file
-that still carries a raw size, with its count.
+`afh/no-raw-font-size` is `error` across all of `src/`. It shipped alongside a
+**debt register** in `eslint.config.mjs`: one line per file that still carried a
+raw size, with its count — 31 files, 146 sizes. Each migration lot deleted its
+lines and never added one. Deleting a line without fixing the file turned CI
+red, so the register could not rot; adding a raw size to a file not on the list
+failed immediately, so a directory awaiting its turn could not quietly
+accumulate new debt.
 
-Each migration lot deletes its lines and never adds one. Deleting a line
-without fixing the file turns CI red, so the register cannot rot; adding a raw
-size to a file not on the list fails immediately, so an uncovered directory
-cannot quietly accumulate new debt while it waits its turn.
+**The register is now empty, and the ratchet is closed.** What remains in
+`ignores` is the bench: `*.stories.*`, `*.test.*`, `__tests__/`, `*.mdx`.
 
-An empty register — only the bench exemptions (`*.stories.*`, `*.test.*`,
-`__tests__/`, `*.mdx`) — means the ratchet is closed.
+Do not reopen it. A surface that needs a size the scale does not have takes
+route 3 of §6 — a named, surface-scoped token with a ticket against it. The
+worked example is `src/styles/home-tokens.css`: the home carried 25 hand-set
+sizes, 20 of them half-steps (15.5, 14.5, 13.5, 12.5, 11.5, 10.5 px) that land
+on no step of the scale. Rounding 12.5 to 12 or to 13 on the most visited page
+in the product is a design decision no test here can settle, so the values were
+named at their current pixel, byte for byte, and the reconciliation is a
+separate ticket. The dette is now one table of twenty rows for a designer to
+rule on, instead of a diff across eight components.

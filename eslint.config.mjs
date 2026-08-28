@@ -96,45 +96,24 @@ const eslintConfig = [
   // ===========================================================================
   // Typography charter §7: afh/no-raw-font-size — one scale, and only one
   // ---------------------------------------------------------------------------
-  // `error` across all of src/ from day one. The list below is the DEBT
-  // REGISTER: one line per file that still carries a raw font size, with its
-  // count. Each migration lot DELETES its lines and never adds one.
+  // `error` across all of src/. The ratchet is CLOSED: the debt register that
+  // shipped alongside this rule listed 31 files carrying 146 raw sizes, and it
+  // is now empty. What remains below is the bench, exempt for good — stories,
+  // tests and MDX are a rendering surface, not a product one, and touching the
+  // 15 dirty stories costs 66 @req backfills for zero visible pixel.
   //
-  // Two properties make the register self-maintaining. Deleting a line without
-  // fixing the file turns CI red, so it cannot rot into a stale allow-list.
-  // And a file not on the list fails the moment it grows a raw size, so a
-  // directory awaiting its lot cannot quietly accumulate new debt — which a
-  // ratchet scoped by directory would have permitted for six lots running.
-  //
-  // Register empty = ratchet closed. What remains then is the bench: stories
-  // are exempt for good — a rendering bench, not a product surface, and
-  // touching the 15 dirty ones costs 66 @req backfills for zero visible pixel.
+  // Do not reopen the register. A file that needs a size the scale does not
+  // have takes the third route in typography-charter.md §6: a named,
+  // surface-scoped token that aliases the scale (`--country-text-*`,
+  // `--home-text-*`), with a ticket against it. That keeps the exception
+  // countable and in one file instead of scattered through styled-jsx.
   //
   // .css files are NOT covered: ESLint never parses them. country-tokens.css
   // and people-tokens.css are guarded by src/styles/__tests__/colorTokens.test.ts.
   // ===========================================================================
   {
     files: ["src/**/*.{ts,tsx,js,jsx}"],
-    ignores: [
-      "**/*.stories.*",
-      "**/*.test.*",
-      "**/__tests__/**",
-      "**/*.mdx",
-
-      // --- lot 4 · country/ (78) ---------------------------------------
-      // --- lot 5 · source-transparency/ (3) ----------------------------
-      // --- lot 6 · people/, migrations/ (14) ---------------------------
-      // --- lot 7 · relations/, hubs/ (11) ------------------------------
-      // --- lot 10 · home/ — DESIGN GATE (26) ---------------------------
-      "src/components/home/AccessAxes.tsx", // 9 css
-      "src/components/home/AxisModulePanel.tsx", // 6 css
-      "src/components/home/HomeGlobe.tsx", // 4 css
-      "src/components/home/HomeHero.tsx", // 3 css
-      "src/components/home/HeroFamilyCrown.tsx", // 1 css
-      "src/components/home/HeroMigrationPaths.tsx", // 1 css
-      "src/components/home/HeroProvenanceChip.tsx", // 1
-      "src/components/home/TrustStrip.tsx", // 1 css
-    ],
+    ignores: ["**/*.stories.*", "**/*.test.*", "**/__tests__/**", "**/*.mdx"],
     plugins: { afh: afhPlugin },
     rules: {
       "afh/no-raw-font-size": "error",

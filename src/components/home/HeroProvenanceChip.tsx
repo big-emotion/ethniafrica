@@ -64,7 +64,7 @@ export function HeroProvenanceChip({
 
   const className =
     "mx-auto inline-flex max-w-full items-center gap-2 px-2 py-[10px] " +
-    "font-[family-name:var(--afh-font-mono)] text-[11.5px] tracking-[0.02em] " +
+    "font-[family-name:var(--afh-font-mono)] text-[length:var(--home-text-provenance-chip)] tracking-[0.02em] " +
     "no-underline";
 
   if (!href) {

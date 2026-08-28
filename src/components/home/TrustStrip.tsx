@@ -35,7 +35,7 @@ export function TrustStrip({ language }: TrustStripProps) {
         .home-trust p {
           margin: 0 auto;
           max-width: 62ch;
-          font-size: 13px;
+          font-size: var(--home-text-trust-copy);
           color: var(--afh-text-soft);
           line-height: 1.6;
         }
