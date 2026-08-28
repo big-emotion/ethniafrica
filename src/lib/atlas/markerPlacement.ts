@@ -113,11 +113,45 @@ export function basemapTransform(
   return `translate(${translateX} ${translateY}) scale(${scale})`;
 }
 
+/**
+ * Where the letterboxed basemap actually sits inside the stage.
+ *
+ * The stage is a fixed band and the basemap keeps its own ratio, so the drawn
+ * map is centred inside the band with slack on one axis — exactly what an SVG
+ * with `preserveAspectRatio="xMidYMid meet"` does. Markers are positioned as
+ * percentages *of the stage*, while the projection produces percentages *of
+ * the viewBox*; without this step the two are only equal when the band happens
+ * to have the basemap's ratio, which at 1512x520 it does not.
+ *
+ * Returns the fraction of the stage the map covers on each axis, and the
+ * fraction of slack before it starts.
+ */
+function basemapLetterbox(aspect: number): {
+  spanX: number;
+  spanY: number;
+  originX: number;
+  originY: number;
+} {
+  const mapAspect = BASEMAP_VIEWBOX.width / BASEMAP_VIEWBOX.height;
+  const stageIsWider = aspect > mapAspect;
+
+  const spanX = stageIsWider ? mapAspect / aspect : 1;
+  const spanY = stageIsWider ? 1 : aspect / mapAspect;
+
+  return {
+    spanX,
+    spanY,
+    originX: (1 - spanX) / 2,
+    originY: (1 - spanY) / 2,
+  };
+}
+
 // @req REQ-117
 export function placeTargetOnBasemap(
   target: AtlasTarget,
   pose: CameraPose,
-  focus: LonLat | null
+  focus: LonLat | null,
+  aspect: number = STAGE_ASPECT
 ): StagePlacement {
   const { translateX, translateY, scale } = basemapPanZoom(pose, focus);
   const projected = projectLonLat(
@@ -126,11 +160,15 @@ export function placeTargetOnBasemap(
     BASEMAP_VIEWBOX
   );
 
+  const inViewBoxX = (projected.x * scale + translateX) / BASEMAP_VIEWBOX.width;
+  const inViewBoxY =
+    (projected.y * scale + translateY) / BASEMAP_VIEWBOX.height;
+
+  const { spanX, spanY, originX, originY } = basemapLetterbox(aspect);
+
   return {
-    leftPercent:
-      ((projected.x * scale + translateX) / BASEMAP_VIEWBOX.width) * 100,
-    topPercent:
-      ((projected.y * scale + translateY) / BASEMAP_VIEWBOX.height) * 100,
+    leftPercent: (originX + inViewBoxX * spanX) * 100,
+    topPercent: (originY + inViewBoxY * spanY) * 100,
     facingReader: true,
   };
 }

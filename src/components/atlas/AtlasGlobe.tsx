@@ -74,6 +74,27 @@ function canCreateWebglContext(): boolean {
 }
 
 /**
+ * The basemap fits the band it stands in.
+ *
+ * AfricaBasemap defaults to `h-auto w-full` plus its own aspect ratio, so its
+ * height follows the stage's *width*. The stage is a fixed band — 520px on a
+ * laptop — with `overflow: hidden`, so at 1512px wide the map wanted 1433px of
+ * height and the reader saw its top third: the Mediterranean and the Sahara,
+ * and none of the continent below them.
+ *
+ * Fixing the band instead of the figure was the wrong way round — space.css
+ * records why the band is fixed, and an aspect-ratio stage grew taller the
+ * wider the viewport got. So the figure is constrained: with both dimensions
+ * set, the SVG's own `preserveAspectRatio` centres the whole map inside the
+ * band and leaves the night ground on either side. placeTargetOnBasemap walks
+ * the same letterbox, so the markers stay over the shapes they name.
+ */
+const FALLBACK_BASEMAP_STYLE: CSSProperties = {
+  width: "100%",
+  height: "100%",
+};
+
+/**
  * REQ-119: a fiche whose overlay resolves to nothing declared (a people
  * missing distributionByCountry, or a country/family absent from the
  * committed admin-0 asset) renders this explicit placeholder — never a
@@ -85,7 +106,7 @@ function AtlasGlobeMissing({ message }: { message: string }) {
       className="relative flex h-full w-full items-center justify-center"
       role="status"
     >
-      <AfricaBasemap style={{ opacity: 0.25 }} />
+      <AfricaBasemap style={{ ...FALLBACK_BASEMAP_STYLE, opacity: 0.25 }} />
       <p
         className="absolute px-6 text-center text-afh-small"
         style={{ color: "var(--afh-night-ink-2)" }}
@@ -260,7 +281,10 @@ function AtlasGlobeFallback({
 
   if (overlay.kind === "people-field") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         <PeopleFieldDefs />
         <PeopleFieldCircles
           blobs={overlay.areas.map((area) => ({
@@ -283,7 +307,10 @@ function AtlasGlobeFallback({
    */
   if (overlay.kind === "continent-field") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         <PeopleFieldDefs />
         {overlay.frame.flatMap((country) =>
           country.rings.map((ring, index) => (
@@ -315,7 +342,10 @@ function AtlasGlobeFallback({
   // says "the family is here" and never "this is where it is concentrated".
   if (overlay.kind === "family-footprint") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         {overlay.countries.map((country) => {
           const isFocused = chosenCountryId === country.countryId;
           const dimmed = chosenCountryId !== null && !isFocused;
@@ -358,7 +388,10 @@ function AtlasGlobeFallback({
   const isTracedCountry = overlay.kind === "country-outline";
 
   return (
-    <AfricaBasemap figureTransform={figureTransform}>
+    <AfricaBasemap
+      figureTransform={figureTransform}
+      style={FALLBACK_BASEMAP_STYLE}
+    >
       {overlay.rings.map((ring, index) =>
         isTracedCountry ? (
           <TraceInPolygon
@@ -862,7 +895,12 @@ export function AtlasGlobe({
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
       ? placeTargetOnSphere(target, pose, stageAspect ?? undefined)
-      : placeTargetOnBasemap(target, pose, cameraFocus?.center ?? null);
+      : placeTargetOnBasemap(
+          target,
+          pose,
+          cameraFocus?.center ?? null,
+          stageAspect ?? undefined
+        );
 
   return (
     <div
