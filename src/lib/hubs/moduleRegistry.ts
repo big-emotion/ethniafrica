@@ -87,7 +87,34 @@ export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
 // it; the second reserved a way to announce a module before its route
 // existed, and nothing used it. A module that cannot be reached is not a
 // module — it is unmerged work.
+//
+// Whether the module is worth reaching is a different question, and it is
+// `EditorialReadiness` below that answers it.
 export type ModuleAvailability = "data" | "static";
+
+/**
+ * Whether the corpus behind a module is worth a reader's trip
+ * (atlas-charter.md §3). Orthogonal to `availability`, which only ever asks
+ * whether the module *has* anything: a table can be full of rows nobody
+ * should be invited to read, and `static` has no table to consult at all.
+ *
+ * - "ready": the module is offered.
+ * - "draft": the module is listed, routed and reachable by URL, and the hub
+ *   renders it as the inert **Bientôt** row — the same row an empty module
+ *   gets, because the reader is being told the same thing.
+ *
+ * Declared rather than measured, and deliberately not an environment
+ * variable: the answer is a property of the corpus, so it is identical on
+ * every machine, and filling a module means flipping one word here rather
+ * than setting a variable somewhere a reader cannot see.
+ */
+export type EditorialReadiness = "ready" | "draft";
+
+// @req REQ-114
+export const EDITORIAL_READINESS_STATES: EditorialReadiness[] = [
+  "ready",
+  "draft",
+];
 
 export interface HubModuleDefinition {
   id: string;
@@ -95,6 +122,14 @@ export interface HubModuleDefinition {
   accessMode: AccessMode;
   page: PageType | null;
   availability: ModuleAvailability;
+  /**
+   * Optional here only so the HubModule fixtures scattered across the home
+   * and hub suites keep compiling. Every registry entry must declare one —
+   * moduleVisibilityCharter.test.ts fails on an entry that omits it, because
+   * a module that inherits maturity by omission is exactly the module that
+   * ships half-written.
+   */
+  editorialReadiness?: EditorialReadiness;
   dataSource?: ModuleDataSource;
   /** A game under the Jouer hub, addressed as /fr/jouer/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
   gameSlug?: string;
@@ -155,6 +190,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "explorer",
     page: "peoples",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_peoples",
   },
   {
@@ -163,6 +199,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "explorer",
     page: "countries",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_countries",
   },
   {
@@ -171,6 +208,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "explorer",
     page: "families",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_language_families",
     heroable: "family-crown",
   },
@@ -180,6 +218,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "explorer",
     page: "search",
     availability: "static",
+    editorialReadiness: "ready",
   },
   // Comprendre runs from the most concrete question to the method that
   // answers it: why this name, where they came from, who says so.
@@ -189,6 +228,9 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "comprendre",
     page: "names",
     availability: "data",
+    // Ready as editorial work: what holds it back is an empty name_records,
+    // which `availability` already says. Nothing to declare here.
+    editorialReadiness: "ready",
     dataSource: "name_records",
   },
   {
@@ -199,6 +241,10 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "comprendre",
     page: "migrations",
     availability: "data",
+    // Six sourced events. The table is not empty, so no row count was ever
+    // going to hold this back — and six pins do not answer "d'où
+    // viennent-ils". Readiness is the only field that can say so.
+    editorialReadiness: "draft",
     dataSource: "migration_events",
     heroable: "migration-paths",
   },
@@ -212,6 +258,10 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "comprendre",
     page: "colonization",
     availability: "static",
+    // Static, so it has no table whose emptiness could have spoken for it:
+    // before this field the page was structurally incapable of being marked
+    // in preparation, whatever state its sections were in.
+    editorialReadiness: "draft",
   },
   // Jouer: the quiz keeps its own route; every other entry is a game the
   // hub reaches by slug. comparer and liens keep the ids they shipped with
@@ -227,6 +277,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // It used to hang from `NEXT_PUBLIC_FEATURE_QUIZ`, which meant a built
     // route no reader could reach and a hub entry that quietly vanished.
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "quiz_questions",
   },
   {
@@ -237,6 +288,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: null,
     gameSlug: "appellations",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_peoples",
     heroable: "game",
   },
@@ -248,6 +300,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: null,
     gameSlug: "mercator",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_countries",
     // The one game whose hero preview is not its play loop. The home globe
     // *is* this game's lesson stated without a question — "chaque pastille
@@ -261,6 +314,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "comprendre",
     page: "doctrine",
     availability: "static",
+    editorialReadiness: "ready",
   },
   {
     id: "pays-davant",
@@ -270,6 +324,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: null,
     gameSlug: "pays-davant",
     availability: "data",
+    editorialReadiness: "ready",
     dataSource: "afrik_countries",
     heroable: "game",
   },
