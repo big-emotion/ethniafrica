@@ -235,6 +235,33 @@ describe("Language Family Service", () => {
       expect(family?.content.associatedPeoples).toEqual(expectedReferences);
     });
 
+    /**
+     * A macro-family's peoples all carry a sub-family's id, so the canonical
+     * query returns nothing. Replacing the declaration with that emptiness
+     * destroyed the references the fiche does make and put nothing in their
+     * place — and the footprint fallback reads exactly this field, so it could
+     * never fire. An empty derivation is not a correction.
+     */
+    // @req REQ-033
+    it("keeps the fiche's declared peoples when no stored row carries the family's id", async () => {
+      const declared = [
+        { name: "Amazigh", peopleId: "PPL_AMAZIGH_MACRO" },
+        { name: "Haoussa", peopleId: "PPL_HAUSA" },
+      ];
+
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue({
+        id: "FLG_AFROASIATIQUE",
+        nameFr: "Afro-asiatique",
+        content: { associatedPeoples: declared },
+      });
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue([]);
+
+      const family = await getLanguageFamilyById("FLG_AFROASIATIQUE");
+
+      expect(family?.associatedPeoples).toEqual(declared);
+      expect(family?.content.associatedPeoples).toEqual(declared);
+    });
+
     // @req REQ-033
     it("should return null without querying peoples for a missing family", async () => {
       vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(null);

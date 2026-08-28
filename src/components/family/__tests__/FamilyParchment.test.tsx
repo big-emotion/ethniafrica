@@ -15,7 +15,14 @@ const memberPeoples = [
   { id: "PPL_B", nameMain: "Bantou", currentCountries: ["NGA", "BEN", "TGO"] },
 ];
 
-/** A fiche declaring neither branches nor a distribution — the state of every family in the recette database. */
+/**
+ * A fiche declaring neither branches nor a distribution.
+ *
+ * This used to describe every family in the recette database, because the
+ * loader had not been run since those fields were written to the corpus. It no
+ * longer describes any of them — all 24 declare both — so it models the case
+ * rather than reporting the state.
+ */
 function undeclaredFamily(): FamilyPageData {
   return {
     hero: {
@@ -91,13 +98,14 @@ describe("FamilyParchment — what the fiche declares", () => {
 
   // @req REQ-119
   it("reads the real count for a field the fiche does declare", () => {
-    // This is the test the whole card exists for. The mockup hard-codes
-    // "vide", which is true of the recette database and false of the corpus in
-    // this repository, where all 24 family fiches already declare branches. A
-    // page that hard-coded it would start lying to the reader about the state
-    // of the corpus on the day the loader finally reaches the database — in a
-    // project whose entire posture is source transparency, the worst possible
-    // regression, and one no gate would catch.
+    // This is the test the whole card exists for, and the day it was written
+    // for has arrived. The mockup hard-codes "vide"; that was true of the
+    // recette database and false of the corpus, where all 24 fiches already
+    // declared branches. The loader has since been run, so the database now
+    // declares them too — and a page that had hard-coded "vide" would be
+    // lying to the reader today. In a project whose entire posture is source
+    // transparency, the worst possible regression, and one no gate would
+    // have caught.
     const declared = undeclaredFamily();
     declared.generalInfo.branches = ["Bantoid", "Defoid", "Igboid"];
 
