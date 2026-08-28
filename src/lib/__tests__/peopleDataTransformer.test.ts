@@ -93,7 +93,12 @@ const yorubaPeople: PeopleDetail = {
   demography: {
     totalPopulation: 40000000,
     distributionByCountry: [
-      { country: "NGA", population: 35000000, percentage: 87.5 },
+      {
+        country: "NGA",
+        population: 35000000,
+        percentage: 87.5,
+        note: "Sud-ouest : Lagos, Ibadan, Oyo, Osun, Ogun, Ondo, Ekiti.",
+      },
       { country: "BEN", population: 3000000, percentage: 7.5 },
       { country: "TGO", population: 500000, percentage: 1.25 },
     ],
@@ -473,6 +478,15 @@ describe("transformEgoNetworkPreview", () => {
 });
 
 describe("transformPeopleCountries", () => {
+  // 1063 of these were written across 486 fiches before the strict model
+  // declared the field, so the transform dropped every one of them.
+  // @req REQ-003
+  it("carries the per-country note the fiche writes", () => {
+    const result = transformPeopleCountries(yorubaPeople.demography);
+    const nigeria = result.distributions.find((d) => d.country === "NGA");
+    expect(nigeria?.note).toContain("Ibadan");
+  });
+
   // @req REQ-003
   it("extracts total population and formats it", () => {
     const result = transformPeopleCountries(yorubaPeople.demography);

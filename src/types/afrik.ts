@@ -488,6 +488,14 @@ export interface CountryDistribution {
   country: CountryId;
   population?: number;
   percentage?: number;
+  /**
+   * Where inside the country, in the fiche's own words — regions, cities.
+   *
+   * 1063 of these were written across 486 fiches before the strict model
+   * declared the field, so they were dropped at the transform. A share says
+   * how many; this says where.
+   */
+  note?: string;
 }
 
 export interface LanguageReference {
