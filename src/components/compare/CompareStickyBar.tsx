@@ -38,7 +38,7 @@ export function CompareStickyBar({
         className
       )}
     >
-      <span className="text-sm font-medium text-afh-text">
+      <span className="text-afh-small font-medium text-afh-text">
         {count}/{max} sélectionnés
       </span>
       <Button type="button" onClick={onCompare} disabled={!canCompare}>

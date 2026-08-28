@@ -426,7 +426,7 @@ export function RecherchePageContent() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-              className="pl-10 h-12 text-base"
+              className="pl-10 h-12 text-afh-small"
               autoComplete="off"
             />
             {/* auto-suggest dropdown */}
@@ -441,7 +441,7 @@ export function RecherchePageContent() {
                     key={s.id}
                     role="option"
                     aria-selected={false}
-                    className="px-4 py-2 hover:bg-afh-bg-warm cursor-pointer text-sm"
+                    className="px-4 py-2 hover:bg-afh-bg-warm cursor-pointer text-afh-small"
                     onMouseDown={() => handleSuggestionClick(s)}
                   >
                     {s.name}
@@ -537,7 +537,7 @@ export function RecherchePageContent() {
           {relation && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {relationLabel}
               <button
@@ -553,7 +553,7 @@ export function RecherchePageContent() {
           {classificationStatus && classStatusLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {classStatusLabel}
               <button
@@ -569,7 +569,7 @@ export function RecherchePageContent() {
           {minConfidence && confidenceLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {confidenceLabel}
               <button
@@ -585,7 +585,7 @@ export function RecherchePageContent() {
           {region && regionLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {regionLabel}
               <button
@@ -602,7 +602,7 @@ export function RecherchePageContent() {
             <button
               type="button"
               onClick={clearAllFilters}
-              className="text-sm text-afh-text-muted hover:text-afh-text underline underline-offset-2 ml-auto"
+              className="text-afh-small text-afh-text-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
               Tout effacer
             </button>
@@ -611,7 +611,7 @@ export function RecherchePageContent() {
 
         {/* ── sort + results count ── */}
         <div className="flex items-center justify-between gap-4">
-          <p className="text-sm text-afh-text-soft" aria-live="polite">
+          <p className="text-afh-small text-afh-text-soft" aria-live="polite">
             {hasSearched && !loading && sortedResults.length > 0
               ? `${sortedResults.length} résultat${sortedResults.length > 1 ? "s" : ""}`
               : null}
@@ -666,13 +666,13 @@ export function RecherchePageContent() {
         {/* ── empty state (post-search, no results) ── */}
         {!loading && hasSearched && sortedResults.length === 0 && (
           <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-afh-lg text-center">
-            <p className="text-base text-afh-text-soft max-w-sm">
+            <p className="text-afh-small text-afh-text-soft max-w-sm">
               Aucun résultat pour « {committedQuery} ».
             </p>
-            <p className="text-sm text-afh-text-soft">
+            <p className="text-afh-small text-afh-text-soft">
               Vérifiez l&apos;orthographe ou essayez un autre terme.
             </p>
-            <div className="flex flex-col gap-2 text-sm">
+            <div className="flex flex-col gap-2 text-afh-small">
               <Link
                 href={getLocalizedRoute(language, "families")}
                 className="underline underline-offset-2 hover:text-afh-text transition-colors"

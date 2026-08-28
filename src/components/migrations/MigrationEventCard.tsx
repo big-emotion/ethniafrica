@@ -30,6 +30,7 @@ function formatPeriod(timeRange: MigrationNarrativeEntry["timeRange"]): string {
 }
 
 // @req FR81 @req FR82
+// @req REQ-101
 export function MigrationEventCard({
   event,
   confidence = null,
@@ -49,14 +50,14 @@ export function MigrationEventCard({
         <ClassificationBadge status={event.classificationStatus} />
       </div>
 
-      <p className="text-sm text-muted-foreground">
+      <p className="text-afh-small text-muted-foreground">
         {formatPeriod(event.timeRange)}
       </p>
 
       {event.migrationGroup && (
         <p
           data-testid="migration-phase-indicator"
-          className="text-xs uppercase tracking-wide text-muted-foreground"
+          className="text-afh-eyebrow uppercase tracking-wide text-muted-foreground"
         >
           {`Phase de la migration : ${event.migrationGroup}`}
         </p>

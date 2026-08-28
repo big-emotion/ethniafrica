@@ -34,6 +34,7 @@ const content = {
   },
 };
 
+// @req REQ-052
 export default function ConnexionPage() {
   const params = useParams();
   const lang = (params?.lang as string) || "fr";
@@ -90,14 +91,14 @@ export default function ConnexionPage() {
     <PageLayout language={language} onLanguageChange={setLanguage} hideHeader>
       <div className="max-w-md mx-auto space-y-8 py-12 px-4">
         <div className="space-y-2">
-          <h1 className="text-2xl font-display font-bold">{t.title}</h1>
-          <p className="text-muted-foreground text-sm">{t.subtitle}</p>
+          <h1 className="text-afh-h2 font-display font-bold">{t.title}</h1>
+          <p className="text-muted-foreground text-afh-small">{t.subtitle}</p>
         </div>
 
         {status === "sent" ? (
           <p
             role="status"
-            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800"
+            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-afh-small text-green-800"
           >
             {t.magicLinkSent}
           </p>
@@ -119,7 +120,7 @@ export default function ConnexionPage() {
                 <button
                   type="button"
                   onClick={handleMagicLinkPrefill}
-                  className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+                  className="text-afh-caption text-muted-foreground underline underline-offset-2 hover:text-foreground"
                 >
                   {t.forgotPasswordText} → {t.magicLinkButton.toLowerCase()}
                 </button>
@@ -139,7 +140,7 @@ export default function ConnexionPage() {
 
               <div className="relative flex items-center gap-3">
                 <div className="flex-1 border-t" aria-hidden="true" />
-                <span className="text-xs text-muted-foreground">
+                <span className="text-afh-caption text-muted-foreground">
                   {t.orSeparator}
                 </span>
                 <div className="flex-1 border-t" aria-hidden="true" />
@@ -170,7 +171,7 @@ export default function ConnexionPage() {
           </Card>
         )}
 
-        <p className="text-sm text-center text-muted-foreground">
+        <p className="text-afh-small text-center text-muted-foreground">
           {t.registerLink}{" "}
           <Link
             href={`/${lang}/compte/inscription`}

@@ -134,7 +134,7 @@ export function ContributionFormFields({
   };
 
   if (loading && Object.keys(formData).length === 0) {
-    return <div className="text-sm text-gray-500">{t.loading}</div>;
+    return <div className="text-afh-small text-gray-500">{t.loading}</div>;
   }
 
   const renderUpdateSelector = () => {

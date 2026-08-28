@@ -51,6 +51,6 @@ describe("RelationTypeBadge", () => {
     );
     expect(
       container.querySelector('[data-relation-type="commercial"]')
-    ).toHaveClass("text-sm");
+    ).toHaveClass("text-afh-small");
   });
 });

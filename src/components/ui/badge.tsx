@@ -9,7 +9,7 @@ import {
 
 const badgeVariants = cva(
   cn(
-    "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold motion-safe:transition-colors",
+    "inline-flex items-center rounded-full border px-2.5 py-0.5 text-afh-caption font-semibold motion-safe:transition-colors",
     CHARTER_FOCUS_RING,
     CHARTER_HOVER_LIFT
   ),

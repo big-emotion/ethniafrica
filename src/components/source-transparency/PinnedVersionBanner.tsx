@@ -100,7 +100,7 @@ export function PinnedVersionBanner({
       role="region"
       aria-label="indicateur de version figée"
       data-pinned-banner
-      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-sm text-afh-text ${
+      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-afh-small text-afh-text ${
         collapsed ? "ml-auto w-fit max-w-full px-2 py-1" : "px-3 py-2"
       }`}
     >
@@ -150,7 +150,7 @@ export function PinnedVersionBanner({
               ? "développer l’indicateur de version figée"
               : "réduire l’indicateur de version figée"
           }
-          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-afh-sm text-xl leading-none text-afh-text-soft hover:bg-afh-surface hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
+          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-afh-sm text-afh-h2 leading-none text-afh-text-soft hover:bg-afh-surface hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
         >
           <span aria-hidden="true">{collapsed ? "+" : "−"}</span>
         </button>

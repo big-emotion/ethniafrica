@@ -66,11 +66,9 @@ export default async function ProfilePage() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-8 md:py-10 xl:py-12">
       <header className="mb-6 space-y-2 md:mb-8">
-        <p className="text-sm font-medium text-primary">Votre compte</p>
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Mon profil
-        </h1>
-        <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
+        <p className="text-afh-small font-medium text-primary">Votre compte</p>
+        <h1 className="text-afh-h1 font-bold tracking-tight">Mon profil</h1>
+        <p className="max-w-2xl text-afh-small text-muted-foreground">
           Gérez les informations associées à vos contributions.
         </p>
       </header>

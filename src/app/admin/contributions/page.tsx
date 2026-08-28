@@ -154,7 +154,7 @@ export default function AdminContributionsPage() {
   return (
     <div className="mx-auto max-w-6xl p-8 font-afh text-afh-text">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="font-afh-display text-3xl font-black text-afh-text">
+        <h1 className="font-afh-display text-afh-h1 font-black text-afh-text">
           Contributions Pending Review
         </h1>
         <Button onClick={handleLogout} variant="outline">
@@ -165,7 +165,7 @@ export default function AdminContributionsPage() {
       {actionError && (
         <p
           role="alert"
-          className="mb-4 font-afh text-sm text-afh-classification-disputed"
+          className="mb-4 font-afh text-afh-small text-afh-classification-disputed"
         >
           {actionError}
         </p>
@@ -185,17 +185,17 @@ export default function AdminContributionsPage() {
                   <h3 className="font-semibold text-afh-text">
                     Type: {contribution.type}
                   </h3>
-                  <p className="text-sm text-afh-text-soft">
+                  <p className="text-afh-small text-afh-text-soft">
                     Submitted:{" "}
                     {new Date(contribution.created_at).toLocaleString()}
                   </p>
                   {contribution.contributor_name && (
-                    <p className="text-sm text-afh-text">
+                    <p className="text-afh-small text-afh-text">
                       Contributor: {contribution.contributor_name}
                     </p>
                   )}
                   {contribution.notes && (
-                    <p className="mt-2 text-sm text-afh-text">
+                    <p className="mt-2 text-afh-small text-afh-text">
                       {contribution.notes}
                     </p>
                   )}
@@ -219,10 +219,10 @@ export default function AdminContributionsPage() {
                 </div>
               </div>
               <details className="mt-2">
-                <summary className="cursor-pointer text-sm text-afh-text-soft">
+                <summary className="cursor-pointer text-afh-small text-afh-text-soft">
                   View payload
                 </summary>
-                <pre className="mt-2 overflow-auto rounded-afh-base bg-afh-bg-warm p-2 text-xs text-afh-text">
+                <pre className="mt-2 overflow-auto rounded-afh-base bg-afh-bg-warm p-2 text-afh-caption text-afh-text">
                   {JSON.stringify(contribution.proposed_payload, null, 2)}
                 </pre>
               </details>

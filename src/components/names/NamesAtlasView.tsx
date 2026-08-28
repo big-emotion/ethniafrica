@@ -213,11 +213,11 @@ export function NamesAtlasView({
           onChange={(event) => setInputValue(event.target.value)}
           placeholder={t.searchPlaceholder}
           aria-label={t.searchLabel}
-          className="h-11 flex-1 rounded-md border px-3 text-sm"
+          className="h-11 flex-1 rounded-md border px-3 text-afh-small"
         />
         <button
           type="submit"
-          className="h-11 shrink-0 rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground"
+          className="h-11 shrink-0 rounded-md bg-primary px-5 text-afh-small font-semibold text-primary-foreground"
         >
           {t.searchSubmit}
         </button>
@@ -234,7 +234,7 @@ export function NamesAtlasView({
             type="button"
             aria-pressed={nameType === chip.value}
             onClick={() => toggleNameType(chip.value)}
-            className="rounded-full border px-3 py-1 text-sm data-[active=true]:font-semibold"
+            className="rounded-full border px-3 py-1 text-afh-small data-[active=true]:font-semibold"
             data-active={nameType === chip.value || undefined}
           >
             {chip.label}
@@ -244,7 +244,7 @@ export function NamesAtlasView({
           type="button"
           aria-pressed={imposedOnly}
           onClick={toggleImposedOnly}
-          className="rounded-full border px-3 py-1 text-sm data-[active=true]:font-semibold"
+          className="rounded-full border px-3 py-1 text-afh-small data-[active=true]:font-semibold"
           data-active={imposedOnly || undefined}
         >
           {t.filters.imposed}
@@ -257,7 +257,7 @@ export function NamesAtlasView({
           aria-label={t.activeFiltersLabel}
         >
           {nameType && (
-            <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-sm">
+            <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-afh-small">
               {nameTypeLabel}
               <button
                 type="button"
@@ -269,7 +269,7 @@ export function NamesAtlasView({
             </span>
           )}
           {imposedOnly && (
-            <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-sm">
+            <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-afh-small">
               {t.filters.imposed}
               <button
                 type="button"
@@ -283,18 +283,20 @@ export function NamesAtlasView({
         </div>
       )}
 
-      <p aria-live="polite" className="text-sm text-muted-foreground">
+      <p aria-live="polite" className="text-afh-small text-muted-foreground">
         {`${total} ${total > 1 ? t.resultCountPlural : t.resultCountSingular}`}
       </p>
 
       {groups.length === 0 ? (
         <div className="flex flex-col items-center gap-4 rounded-md bg-muted px-6 py-10 text-center">
-          <p className="max-w-sm text-sm">{t.emptyState.spellingGuidance}</p>
+          <p className="max-w-sm text-afh-small">
+            {t.emptyState.spellingGuidance}
+          </p>
           <div className="space-y-2">
-            <p className="text-sm font-semibold">
+            <p className="text-afh-small font-semibold">
               {t.emptyState.browseByTypeLabel}
             </p>
-            <ul className="flex flex-wrap justify-center gap-3 text-sm">
+            <ul className="flex flex-wrap justify-center gap-3 text-afh-small">
               {TYPE_CHIPS.map((chip) => (
                 <li key={chip.value}>
                   <Link
@@ -317,7 +319,7 @@ export function NamesAtlasView({
           </div>
           <Link
             href={`/fr/contribute?q=${encodeURIComponent(query)}`}
-            className="text-sm underline underline-offset-2"
+            className="text-afh-small underline underline-offset-2"
           >
             {t.emptyState.reportMissing}
           </Link>
@@ -331,7 +333,7 @@ export function NamesAtlasView({
             >
               <h2
                 id={`names-atlas-group-${group.letter}`}
-                className="text-base font-bold"
+                className="text-afh-small font-bold"
               >
                 {group.letter}
               </h2>
@@ -340,7 +342,7 @@ export function NamesAtlasView({
                   <li key={entry.id}>
                     <Link
                       href={`/fr/peuples/${entry.peopleId}#noms`}
-                      className="flex items-center gap-2 text-sm hover:underline"
+                      className="flex items-center gap-2 text-afh-small hover:underline"
                     >
                       <span>{entry.nameText}</span>
                       <NameTypeBadge

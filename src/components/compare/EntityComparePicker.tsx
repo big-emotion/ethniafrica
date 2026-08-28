@@ -203,7 +203,7 @@ export function EntityComparePicker({
       </div>
 
       <fieldset>
-        <legend className="mb-2 text-sm font-medium text-afh-text">
+        <legend className="mb-2 text-afh-small font-medium text-afh-text">
           Type d&apos;entité à comparer
         </legend>
         <RadioGroup
@@ -217,7 +217,7 @@ export function EntityComparePicker({
           {TYPE_ORDER.map((candidateType) => (
             <label
               key={candidateType}
-              className="flex items-center gap-2 text-sm text-afh-text"
+              className="flex items-center gap-2 text-afh-small text-afh-text"
             >
               <RadioGroupItem
                 value={candidateType}
@@ -258,7 +258,7 @@ export function EntityComparePicker({
         />
 
         {selection.maxReached && (
-          <p className="mt-1 text-xs text-afh-text-soft">3 maximum</p>
+          <p className="mt-1 text-afh-caption text-afh-text-soft">3 maximum</p>
         )}
 
         {showListbox && (
@@ -275,7 +275,7 @@ export function EntityComparePicker({
                 role="option"
                 aria-selected={index === activeIndex}
                 className={cn(
-                  "cursor-pointer px-3 py-2 text-sm text-afh-text",
+                  "cursor-pointer px-3 py-2 text-afh-small text-afh-text",
                   index === activeIndex && "bg-afh-bg-warm"
                 )}
                 onMouseDown={(event) => event.preventDefault()}

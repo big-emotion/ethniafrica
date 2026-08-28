@@ -12,7 +12,7 @@ import { translations } from "@/lib/translations";
 
 const t = translations.fr.names;
 
-// @req FR95
+// @req REQ-054 @req FR95
 export const metadata: Metadata = {
   title: t.pageTitle,
   description: t.pageSubtitle,
@@ -42,7 +42,7 @@ function toAtlasEntries(names: NameRecord[]): NameAtlasEntry[] {
     }));
 }
 
-// @req FR53 @req FR55
+// @req REQ-054 @req FR53 @req FR55
 export default async function NomsPage({ searchParams }: NomsPageProps) {
   const sp = await searchParams;
   const q = sp.q?.trim() || undefined;
@@ -69,12 +69,12 @@ export default async function NomsPage({ searchParams }: NomsPageProps) {
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
       <div className="space-y-6 min-[720px]:space-y-8">
-        <p className="max-w-2xl text-sm text-muted-foreground">
+        <p className="max-w-2xl text-afh-small text-muted-foreground">
           {t.pageSubtitle}
         </p>
         <p
           role="note"
-          className="max-w-2xl rounded-md border bg-muted/50 px-4 py-3 text-sm"
+          className="max-w-2xl rounded-md border bg-muted/50 px-4 py-3 text-afh-small"
         >
           {t.genealogyNote}
         </p>

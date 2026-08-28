@@ -45,13 +45,13 @@ export function FamilyHistorySection({
             }}
             turnstileSiteKey={turnstileSiteKey}
             triggerLabel="Signaler cette section"
-            className="w-auto text-xs"
+            className="w-auto text-afh-caption"
           />
         ) : (
           <button
             type="button"
             disabled
-            className="rounded-md border border-dashed px-2 py-1 text-xs text-muted-foreground"
+            className="rounded-md border border-dashed px-2 py-1 text-afh-caption text-muted-foreground"
             aria-label="Signaler cette section — bientôt disponible"
           >
             Signaler cette section (bientôt disponible)

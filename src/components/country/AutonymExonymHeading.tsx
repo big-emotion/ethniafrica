@@ -38,13 +38,13 @@ export function AutonymExonymHeading({
     <>
       <span
         lang={endonymLang}
-        className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"
+        className="text-afh-small font-bold leading-snug"
         style={{ fontFamily: "var(--country-font-body)" }}
       >
         {endonym}
       </span>
       <span
-        className="text-[11px] xl:text-[12px]"
+        className="text-afh-caption"
         style={{ color: "var(--country-text-soft)" }}
       >
         {exonym}

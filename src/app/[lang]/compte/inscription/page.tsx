@@ -41,6 +41,7 @@ const content = {
   },
 };
 
+// @req REQ-052
 export default function InscriptionPage() {
   const params = useParams();
   const lang = (params?.lang as string) || "fr";
@@ -112,14 +113,14 @@ export default function InscriptionPage() {
     <PageLayout language={language} onLanguageChange={setLanguage} hideHeader>
       <div className="max-w-md mx-auto space-y-8 py-12 px-4">
         <div className="space-y-2">
-          <h1 className="text-2xl font-display font-bold">{t.title}</h1>
-          <p className="text-muted-foreground text-sm">{t.subtitle}</p>
+          <h1 className="text-afh-h2 font-display font-bold">{t.title}</h1>
+          <p className="text-muted-foreground text-afh-small">{t.subtitle}</p>
         </div>
 
         {status === "sent" ? (
           <p
             role="status"
-            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800"
+            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-afh-small text-green-800"
           >
             {t.magicLinkSent}
           </p>
@@ -154,7 +155,7 @@ export default function InscriptionPage() {
                 />
                 <Label
                   htmlFor="consent"
-                  className="text-sm leading-snug cursor-pointer"
+                  className="text-afh-small leading-snug cursor-pointer"
                 >
                   {t.consentLabel}
                 </Label>
@@ -172,7 +173,7 @@ export default function InscriptionPage() {
                 />
                 <Label
                   htmlFor="age-confirmed"
-                  className="text-sm leading-snug cursor-pointer"
+                  className="text-afh-small leading-snug cursor-pointer"
                 >
                   {t.ageConfirmLabel} —{" "}
                   <Link
@@ -200,7 +201,7 @@ export default function InscriptionPage() {
 
               <div className="relative flex items-center gap-3">
                 <div className="flex-1 border-t" aria-hidden="true" />
-                <span className="text-xs text-muted-foreground">
+                <span className="text-afh-caption text-muted-foreground">
                   {t.orSeparator}
                 </span>
                 <div className="flex-1 border-t" aria-hidden="true" />
@@ -231,7 +232,7 @@ export default function InscriptionPage() {
           </Card>
         )}
 
-        <p className="text-sm text-center text-muted-foreground">
+        <p className="text-afh-small text-center text-muted-foreground">
           {t.loginLink}{" "}
           <Link
             href={`/${lang}/compte/connexion`}

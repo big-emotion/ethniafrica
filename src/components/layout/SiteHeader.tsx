@@ -403,7 +403,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-brand-name {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: 15px;
+          font-size: var(--afh-text-small);
           letter-spacing: -0.01em;
           white-space: nowrap;
           overflow: hidden;
@@ -433,7 +433,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          font-size: 13px;
+          font-size: var(--afh-text-small);
           padding: 6px 12px;
           border: 1px solid transparent;
           border-radius: var(--afh-radius-full);
@@ -544,7 +544,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-panel-title {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: 20px;
+          font-size: var(--afh-text-h3);
           /* Text, so it takes the readable half of the accent pair, never
              the fill — which fails AA on the parchment it sits on. */
           color: var(--accent-ink);
@@ -616,7 +616,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         }
         .sh-entry-name {
           display: block;
-          font-size: 13px;
+          font-size: var(--afh-text-small);
           font-weight: 700;
           line-height: 1.35;
         }
@@ -624,7 +624,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: block;
           margin-top: 3px;
           font-family: var(--afh-font-mono);
-          font-size: var(--afh-text-nano);
+          font-size: var(--afh-text-caption);
           color: var(--afh-fg-muted);
         }
         .sh-chip {
@@ -658,7 +658,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-tray-title {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: 15px;
+          font-size: var(--afh-text-small);
           color: var(--afh-text);
           padding: 15px 18px;
           border-bottom: 1px solid var(--afh-border);
@@ -679,7 +679,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           color: var(--afh-text);
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: 18px;
+          font-size: var(--afh-text-h3);
         }
         .sh-fold-trigger:focus-visible {
           outline: 2px solid var(--accent);

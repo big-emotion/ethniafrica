@@ -2,11 +2,17 @@
    ETHNIAFRICA — People Fiche Design Tokens & Utility Classes
    Variante "Carte vivante" — People adaptation
    ETNI-35
+
+   The three classes below carried their own 768px type step —
+   10/11, 13/14, 11/12 px — which is a second scale in a file
+   ESLint never parses. They now read --afh-text-*, and the
+   steps are gone: the roles they point at are either fluid
+   already or fixed by design.
    ============================================================ */
 
 /* Section typography utilities (reuse --country-* / --afh-* tokens) */
 .people-section-label {
-  font-size: 10px;
+  font-size: var(--afh-text-eyebrow);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -14,41 +20,23 @@
   margin-bottom: 4px;
 }
 
-@media (min-width: 768px) {
-  .people-section-label {
-    font-size: 11px;
-  }
-}
-
 .people-section-body {
-  font-size: 13px;
+  font-size: var(--afh-text-body);
   /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
-  line-height: 1.6;
-  max-width: 72ch;
+  line-height: var(--afh-leading-body);
+  max-width: var(--afh-measure-prose);
   color: var(--country-text);
-}
-
-@media (min-width: 768px) {
-  .people-section-body {
-    font-size: 14px;
-  }
 }
 
 .people-tag {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: var(--afh-text-caption);
   font-weight: 600;
   background-color: var(--country-card);
   border: 1px solid var(--country-border);
   color: var(--country-text);
-}
-
-@media (min-width: 768px) {
-  .people-tag {
-    font-size: 12px;
-  }
 }
 
 /* Section fade-in animation (same keyframes as country) */

@@ -25,6 +25,7 @@ const tonalityStyles = {
   },
 };
 
+// @req REQ-092
 export function OriginBanner({ data }: OriginBannerProps) {
   const styles = tonalityStyles[data.tonality];
 
@@ -37,7 +38,7 @@ export function OriginBanner({ data }: OriginBannerProps) {
       }}
     >
       <div
-        className="w-[42px] h-[42px] min-w-[42px] xl:w-12 xl:h-12 xl:min-w-12 rounded-full text-white flex items-center justify-center text-lg xl:text-[22px] font-extrabold"
+        className="w-[42px] h-[42px] min-w-[42px] xl:w-12 xl:h-12 xl:min-w-12 rounded-full text-white flex items-center justify-center text-afh-h3 font-extrabold"
         style={{
           background: styles.avatarBg,
           fontFamily: "var(--country-font-display)",
@@ -47,7 +48,7 @@ export function OriginBanner({ data }: OriginBannerProps) {
       </div>
       <div>
         <div
-          className="text-base xl:text-[17px] font-bold"
+          className="text-afh-h3 font-bold"
           style={{
             fontFamily: "var(--country-font-display)",
             color: styles.nameColor,
@@ -57,7 +58,7 @@ export function OriginBanner({ data }: OriginBannerProps) {
         </div>
         {data.date && (
           <div
-            className="text-xs font-semibold mb-1"
+            className="text-afh-eyebrow font-semibold mb-1"
             style={{ color: "var(--country-text-soft)" }}
           >
             {data.date}
@@ -65,7 +66,7 @@ export function OriginBanner({ data }: OriginBannerProps) {
         )}
         {data.description && (
           <div
-            className="text-xs leading-[1.45]"
+            className="text-afh-caption leading-[1.45]"
             style={{ color: "var(--country-text-soft)" }}
           >
             {data.description}
@@ -73,7 +74,7 @@ export function OriginBanner({ data }: OriginBannerProps) {
         )}
         {data.oldName && (
           <span
-            className="inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 text-[11px] xl:text-xs font-bold rounded-[var(--country-radius-md)] line-through"
+            className="inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 text-afh-caption font-bold rounded-[var(--country-radius-md)] line-through"
             style={{
               background: "var(--country-colonial-bg)",
               color: "var(--country-colonial)",

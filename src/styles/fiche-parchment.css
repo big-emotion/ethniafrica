@@ -30,7 +30,7 @@
 .afh-parchment-eyebrow {
   margin: 0 0 10px;
   font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   letter-spacing: 0.1em;
   color: var(--afh-text-soft);
 }
@@ -71,7 +71,7 @@
   border-radius: var(--afh-radius-full);
   border: 1px solid var(--afh-border);
   background: var(--afh-surface);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
   white-space: nowrap;
 }
@@ -106,7 +106,7 @@
 .afh-parchment-note {
   margin: 6px 0 16px;
   font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
 }
 
@@ -165,7 +165,7 @@
   display: block;
   margin-top: 7px;
   font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
   line-height: 1.6;
 }
@@ -275,7 +275,7 @@
 .afh-member-spread {
   margin-left: auto;
   font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
   white-space: nowrap;
 }
@@ -393,7 +393,7 @@
   display: block;
   margin-top: 6px;
   font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-nano);
+  font-size: var(--afh-text-caption);
   color: var(--afh-text-soft);
 }
 

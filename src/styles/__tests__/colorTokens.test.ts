@@ -214,6 +214,79 @@ describe("fiche surface compatibility aliases (REQ-115)", () => {
   );
 });
 
+// ESLint never parses .css, so afh/no-raw-font-size cannot reach these two
+// files. They are where the country and people fiches keep their own type
+// ladder, which is how those surfaces ended up a size behind the rest of the
+// site — the very drift the ratchet exists to stop. This is the only guard
+// they get, so it says both halves out loud: no literal sizes, and no
+// breakpoint the system does not have.
+describe("surface token files carry no second type scale", () => {
+  const SURFACE_TOKEN_FILES = [
+    "src/styles/country-tokens.css",
+    "src/styles/people-tokens.css",
+  ];
+
+  /** The two widths the whole system steps at. Anything else is a third. */
+  const SYSTEM_BREAKPOINTS = [768, 1200];
+
+  // @req REQ-091
+  it.each(SURFACE_TOKEN_FILES)(
+    "declares no literal font-size in %s",
+    (file) => {
+      const css = readFileSync(resolve(process.cwd(), file), "utf8");
+      const literals = [...css.matchAll(/font-size:\s*([^;]+);/g)]
+        .map(([, value]) => value.trim())
+        .filter((value) => /\d*\.?\d+(px|rem|em|pt)\b/.test(value));
+
+      expect(literals).toEqual([]);
+    }
+  );
+
+  // country-tokens.css stepped at 1280 while everything else stepped at 1200.
+  // In that 80px band the etymology block held its tablet gutters while the
+  // page around it had already widened.
+  // @req REQ-091
+  it.each(SURFACE_TOKEN_FILES)("steps only at 768 and 1200 in %s", (file) => {
+    const css = readFileSync(resolve(process.cwd(), file), "utf8");
+    const widths = [
+      ...css.matchAll(/@media\s*\(\s*min-width:\s*(\d+)px\s*\)/g),
+    ].map(([, px]) => Number(px));
+
+    expect([...new Set(widths)].sort((a, b) => a - b)).toEqual(
+      SYSTEM_BREAKPOINTS.filter((bp) => widths.includes(bp))
+    );
+  });
+
+  // @req REQ-091
+  it.each(SURFACE_TOKEN_FILES)(
+    "aliases every type token in %s onto the afh scale",
+    (file) => {
+      const css = readFileSync(resolve(process.cwd(), file), "utf8");
+      const declarations = [
+        ...css.matchAll(
+          /(--[a-z]+-text-(?:hero|h1|h2|h3|body|small|caption)):\s*([^;]+);/g
+        ),
+      ];
+
+      for (const [, name, value] of declarations) {
+        expect(value.trim(), name).toMatch(/^var\(--afh-text-[a-z0-9]+\)$/);
+      }
+    }
+  );
+
+  // The two roles the charter retired. Left aliased, a surface could keep
+  // painting 9px text through a name that no longer means anything. Prose
+  // about them is fine — the assertion is on declarations, not on mentions.
+  // @req REQ-091
+  it.each(SURFACE_TOKEN_FILES)(
+    "declares no micro or nano token in %s",
+    (file) => {
+      const css = readFileSync(resolve(process.cwd(), file), "utf8");
+      expect(css).not.toMatch(/--[a-z]+-text-(?:micro|nano)\s*:/);
+    }
+  );
+});
+
 // The two labels flanking the home globe's projection slider sit on a pill
 // (`.home-globe-morph`) whose own background is
 // `color-mix(in srgb, var(--afh-bg-warm) 88%, transparent)` — at that

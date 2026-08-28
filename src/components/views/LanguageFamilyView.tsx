@@ -32,6 +32,7 @@ interface LanguageFamilyViewProps {
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+// @req REQ-091
 export const LanguageFamilyView = ({
   language,
   onFamilySelect,
@@ -89,7 +90,7 @@ export const LanguageFamilyView = ({
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
         <Loader2 className="h-10 w-10 animate-spin text-primary" />
-        <p className="text-muted-foreground text-sm font-medium">
+        <p className="text-muted-foreground text-afh-small font-medium">
           Chargement des familles linguistiques...
         </p>
       </div>
@@ -99,7 +100,7 @@ export const LanguageFamilyView = ({
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-        <p className="text-destructive text-sm font-medium">
+        <p className="text-destructive text-afh-small font-medium">
           Échec du chargement des familles linguistiques
         </p>
       </div>
@@ -139,7 +140,7 @@ export const LanguageFamilyView = ({
           />
         </div>
 
-        <div className="space-y-0.5 text-sm text-muted-foreground">
+        <div className="space-y-0.5 text-afh-small text-muted-foreground">
           {family.peopleCount !== undefined && (
             <div>{family.peopleCount} peuples</div>
           )}
@@ -166,7 +167,7 @@ export const LanguageFamilyView = ({
                 variant="ghost"
                 size="icon"
                 className={cn(
-                  "h-11 w-11 rounded-full text-xs",
+                  "h-11 w-11 rounded-full text-afh-caption",
                   selectedLetter === null
                     ? "bg-[color:var(--accent)] text-white"
                     : "bg-[color:var(--accent-tint)] text-afh-text"
@@ -181,7 +182,7 @@ export const LanguageFamilyView = ({
                   variant="ghost"
                   size="icon"
                   className={cn(
-                    "h-11 w-11 rounded-full text-xs",
+                    "h-11 w-11 rounded-full text-afh-caption",
                     selectedLetter === letter
                       ? "bg-[color:var(--accent)] text-white"
                       : "bg-[color:var(--accent-tint)] text-afh-text",
@@ -267,7 +268,7 @@ export const LanguageFamilyView = ({
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-afh-small text-muted-foreground">
             {currentPage} / {totalPages}
           </span>
           <Button
@@ -284,7 +285,7 @@ export const LanguageFamilyView = ({
       )}
 
       {!hideSearchAndAlphabet && unclassifiedPeoplesCount > 0 && (
-        <p className="px-4 pb-4 text-xs text-muted-foreground">
+        <p className="px-4 pb-4 text-afh-caption text-muted-foreground">
           {formatNumber(unclassifiedPeoplesCount)} peuples non classés dans une
           famille linguistique publiée
         </p>

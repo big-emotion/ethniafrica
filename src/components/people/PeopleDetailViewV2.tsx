@@ -87,12 +87,12 @@ function SectionCard({
           parchment went from the fiche's h1 straight to those — the whole of
           its Lighthouse accessibility gap. */}
       <h2
-        className="flex items-center gap-[6px] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
+        className="flex items-center gap-[6px] text-afh-eyebrow font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
         style={{ color: "var(--country-text-soft)" }}
       >
         <span
           aria-hidden="true"
-          className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-[11px]"
+          className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-afh-caption"
           style={{ background: iconBg, color: iconColor }}
         >
           {icon}
@@ -271,13 +271,13 @@ export function PeopleDetailViewV2({
                   }}
                   turnstileSiteKey={turnstileSiteKey}
                   triggerLabel="Signaler cette section"
-                  className="w-auto text-xs"
+                  className="w-auto text-afh-caption"
                 />
               ) : (
                 <button
                   type="button"
                   disabled
-                  className="rounded-md border border-dashed px-2 py-1 text-xs"
+                  className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
                   style={{
                     borderColor: "var(--afh-border)",
                     color: "var(--afh-text-soft)",

@@ -39,7 +39,7 @@ export function PeopleRelatedPeoplesSection({
                   size="inline"
                 />
                 <span
-                  className="text-[13px] font-medium"
+                  className="text-afh-small font-medium"
                   style={{ color: "var(--country-text)" }}
                 >
                   {relation.neighborName}
@@ -49,7 +49,7 @@ export function PeopleRelatedPeoplesSection({
           </div>
           <Link
             href={getPeopleLinksRoute("fr", peopleId)}
-            className="inline-flex items-center min-h-[44px] mt-[4px] text-[13px] font-semibold text-afh-accent"
+            className="inline-flex items-center min-h-[44px] mt-[4px] text-afh-small font-semibold text-afh-accent"
           >
             voir tous les liens →
           </Link>
@@ -71,7 +71,7 @@ export function PeopleRelatedPeoplesSection({
                 }}
               >
                 <span
-                  className="text-[13px] font-semibold leading-tight"
+                  className="text-afh-small font-semibold leading-tight"
                   style={{
                     fontFamily: "var(--country-font-body)",
                     color: "var(--country-text)",

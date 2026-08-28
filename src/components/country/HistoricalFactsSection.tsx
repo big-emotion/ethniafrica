@@ -4,6 +4,7 @@ interface HistoricalFactsSectionProps {
   data: HistoricalFactsData;
 }
 
+// @req REQ-092
 export function HistoricalFactsSection({ data }: HistoricalFactsSectionProps) {
   if (data.periods.length === 0) return null;
 
@@ -20,7 +21,7 @@ export function HistoricalFactsSection({ data }: HistoricalFactsSectionProps) {
         >
           {/* Period label */}
           <div
-            className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.08em] mb-1"
+            className="text-afh-eyebrow font-bold uppercase tracking-[0.08em] mb-1"
             style={{ color: "var(--country-earth)" }}
           >
             {period.label}
@@ -28,7 +29,7 @@ export function HistoricalFactsSection({ data }: HistoricalFactsSectionProps) {
 
           {/* Period content */}
           <div
-            className="text-[13px] md:text-[14px] xl:text-[15px] leading-relaxed"
+            className="text-afh-small leading-relaxed"
             style={{ color: "var(--country-text)" }}
           >
             {period.content}
