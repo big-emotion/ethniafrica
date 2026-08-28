@@ -70,8 +70,10 @@ function SnapshotFicheView({
     <div data-testid="people-snapshot-view" className="space-y-4">
       {/* Snapshot content */}
       <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameMain}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
+        <h1 className="text-afh-h2 font-semibold">{nameMain}</h1>
+        <p className="text-afh-small text-muted-foreground font-mono">
+          {entityId}
+        </p>
       </div>
 
       <PinnedVersionBanner
@@ -94,7 +96,7 @@ function SnapshotFicheView({
 
       {/* "Version introuvable" copy is rendered by notFound() — this component
           is only reached when the version exists */}
-      <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
+      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
         <p>
           Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
           jamais modifié.
@@ -235,7 +237,7 @@ export default async function PeoplesSlugPage({
               legend={
                 <p
                   data-atlas-legend=""
-                  className="pointer-events-none absolute inset-x-0 top-0 hidden max-w-[22ch] p-3 text-xs min-[760px]:block"
+                  className="pointer-events-none absolute inset-x-0 top-0 hidden max-w-[22ch] p-3 text-afh-caption min-[760px]:block"
                   style={{ color: "var(--afh-night-ink-3)" }}
                 >
                   Aucune frontière ici.

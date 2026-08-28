@@ -46,7 +46,7 @@ export default function DoctrinePageContent() {
   return (
     <ReadingColumn className="mx-auto space-y-8 px-4 py-8">
       <header className="space-y-2">
-        <h1 className="text-3xl font-bold">Doctrine éditoriale</h1>
+        <h1 className="text-afh-h1 font-bold">Doctrine éditoriale</h1>
         <p className="text-muted-foreground">
           Cette page définit le statut épistémique attribué à chaque
           classification de peuple et de famille linguistique. Le badge affiché
@@ -66,7 +66,7 @@ export default function DoctrinePageContent() {
               stepLabel={`${String(index + 1).padStart(2, "0")} · Statut éditorial`}
               heading={labels.label}
             />
-            <p className="text-sm italic text-muted-foreground">
+            <p className="text-afh-small italic text-muted-foreground">
               {labels.tooltip}
             </p>
             <p className="leading-relaxed">{section.description}</p>

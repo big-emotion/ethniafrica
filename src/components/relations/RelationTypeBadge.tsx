@@ -60,7 +60,9 @@ export function RelationTypeBadge({
     <span
       className={cn(
         "inline-flex items-center gap-1 rounded-full border bg-afh-surface font-medium",
-        size === "card" ? "px-3 py-1 text-sm" : "px-2 py-0.5 text-xs",
+        size === "card"
+          ? "px-3 py-1 text-afh-small"
+          : "px-2 py-0.5 text-afh-caption",
         RELATION_TYPE_COLOR_CLASSES[type],
         derived && "border-dashed",
         className

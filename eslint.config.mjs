@@ -93,6 +93,33 @@ const eslintConfig = [
     },
   },
 
+  // ===========================================================================
+  // Typography charter §7: afh/no-raw-font-size — one scale, and only one
+  // ---------------------------------------------------------------------------
+  // `error` across all of src/. The ratchet is CLOSED: the debt register that
+  // shipped alongside this rule listed 31 files carrying 146 raw sizes, and it
+  // is now empty. What remains below is the bench, exempt for good — stories,
+  // tests and MDX are a rendering surface, not a product one, and touching the
+  // 15 dirty stories costs 66 @req backfills for zero visible pixel.
+  //
+  // Do not reopen the register. A file that needs a size the scale does not
+  // have takes the third route in typography-charter.md §6: a named,
+  // surface-scoped token that aliases the scale (`--country-text-*`,
+  // `--home-text-*`), with a ticket against it. That keeps the exception
+  // countable and in one file instead of scattered through styled-jsx.
+  //
+  // .css files are NOT covered: ESLint never parses them. country-tokens.css
+  // and people-tokens.css are guarded by src/styles/__tests__/colorTokens.test.ts.
+  // ===========================================================================
+  {
+    files: ["src/**/*.{ts,tsx,js,jsx}"],
+    ignores: ["**/*.stories.*", "**/*.test.*", "**/__tests__/**", "**/*.mdx"],
+    plugins: { afh: afhPlugin },
+    rules: {
+      "afh/no-raw-font-size": "error",
+    },
+  },
+
   // =============================================================================
   // NFR33, AR28: Enforce structured logging via @/lib/api/logger
   // =============================================================================

@@ -19,6 +19,7 @@ export interface MigrationNarrativeProps {
 }
 
 // @req FR78 @req FR81 @req FR82
+// @req REQ-101
 export function MigrationNarrative({
   events,
   className,
@@ -58,10 +59,10 @@ export function MigrationNarrative({
 
             {showDebate && (
               <div className="mt-4 rounded-md bg-muted p-4">
-                <h4 className="font-afh-display font-semibold text-sm">
+                <h4 className="font-afh-display font-semibold text-afh-small">
                   {t.debateLabel}
                 </h4>
-                <p className="mt-1 text-sm text-foreground max-w-[75ch]">
+                <p className="mt-1 text-afh-small text-foreground max-w-[75ch]">
                   {event.debate}
                 </p>
               </div>

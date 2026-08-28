@@ -17,11 +17,12 @@ const VARIANT_CLASSES: Record<
   NonNullable<FormFieldErrorProps["variant"]>,
   string
 > = {
-  inline: "text-sm font-medium text-afh-error",
+  inline: "text-afh-small font-medium text-afh-error",
   banner:
-    "rounded-afh-base border border-afh-error bg-afh-error/10 px-3 py-2 text-sm text-afh-error",
+    "rounded-afh-base border border-afh-error bg-afh-error/10 px-3 py-2 text-afh-small text-afh-error",
 };
 
+// @req REQ-045
 export function FormFieldError({
   children,
   id,

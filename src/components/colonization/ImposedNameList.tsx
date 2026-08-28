@@ -64,7 +64,7 @@ export function ImposedNameList({ items, className }: ImposedNameListProps) {
             />
             <a
               href={item.atlasHref}
-              className="text-sm text-afh-text-soft underline underline-offset-2 hover:text-afh-text"
+              className="text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text"
             >
               voir dans l&apos;Atlas des noms
             </a>

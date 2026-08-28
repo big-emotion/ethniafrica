@@ -72,8 +72,7 @@ describe("PageLayout title", () => {
 
     expect(heading).toHaveClass(
       "text-foreground",
-      "text-3xl",
-      "md:text-4xl",
+      "text-afh-h1",
       "font-display",
       "font-bold",
       "page-title-gradient"

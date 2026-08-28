@@ -527,7 +527,7 @@ export function AxisModulePanel({
           border-radius: var(--afh-radius-md);
           background: var(--afh-surface);
           color: var(--afh-text);
-          font-size: 15px;
+          font-size: var(--home-text-module-face);
           font-weight: 600;
           text-align: center;
           text-decoration: none;
@@ -554,7 +554,7 @@ export function AxisModulePanel({
           justify-content: center;
         }
         .axis-shelf-chevron {
-          font-size: 20px;
+          font-size: var(--home-text-shelf-chevron);
           line-height: 1;
           color: var(--accent-ink);
           transition: transform var(--afh-duration-base) var(--afh-ease-out);
@@ -575,7 +575,7 @@ export function AxisModulePanel({
           align-items: center;
           gap: 10px;
           margin: 0;
-          font-size: 13px;
+          font-size: var(--home-text-panel-trail);
         }
         .axis-panel[data-layout="column"] .axis-panel-trail {
           position: static;
@@ -590,7 +590,7 @@ export function AxisModulePanel({
           border-radius: 999px;
           background: transparent;
           color: var(--afh-text);
-          font-size: 13px;
+          font-size: var(--home-text-panel-back);
           font-weight: 600;
           cursor: pointer;
         }
@@ -615,7 +615,7 @@ export function AxisModulePanel({
           border-radius: 999px;
           border: 1px solid var(--afh-border);
           padding: 2px 9px;
-          font-size: 11px;
+          font-size: var(--home-text-module-chip);
           font-weight: 600;
         }
 
@@ -629,7 +629,7 @@ export function AxisModulePanel({
           border-radius: 999px;
           background: transparent;
           color: var(--afh-text);
-          font-size: 13px;
+          font-size: var(--home-text-panel-close);
           font-weight: 600;
           cursor: pointer;
         }

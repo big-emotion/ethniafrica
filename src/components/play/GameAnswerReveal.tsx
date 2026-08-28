@@ -115,7 +115,7 @@ export const GameAnswerReveal = ({
                 className="flex flex-wrap items-center gap-2"
               >
                 <span>{source.label}</span>
-                <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-xs font-medium">
+                <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-caption font-medium">
                   {sourceStandingLabelFr(source.standing)}
                 </span>
               </li>

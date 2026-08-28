@@ -125,7 +125,7 @@ export function HomeHero({
         .home-hero-copy h1 {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: clamp(30px, 5.6vw, 56px);
+          font-size: var(--home-text-hero-title);
           line-height: 1.04;
           margin: 0 0 16px;
           text-wrap: balance;
@@ -138,7 +138,7 @@ export function HomeHero({
         .home-hero-copy p {
           margin: 0 auto;
           max-width: 56ch;
-          font-size: 15.5px;
+          font-size: var(--home-text-hero-copy);
           line-height: 1.6;
           color: var(--afh-text-soft);
         }
@@ -167,7 +167,6 @@ export function HomeHero({
             padding: 34px 20px 0;
             text-align: left;
           }
-          .home-hero-copy p { font-size: 14.5px; }
         }
 
         /* The nav sits above the band, not inside it, so a plain 100dvh

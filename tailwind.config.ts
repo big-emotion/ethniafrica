@@ -31,11 +31,11 @@ export default {
         "afh-h1": "var(--afh-text-h1)",
         "afh-h2": "var(--afh-text-h2)",
         "afh-h3": "var(--afh-text-h3)",
+        "afh-lead": "var(--afh-text-lead)",
         "afh-body": "var(--afh-text-body)",
         "afh-small": "var(--afh-text-small)",
         "afh-caption": "var(--afh-text-caption)",
-        "afh-micro": "var(--afh-text-micro)",
-        "afh-nano": "var(--afh-text-nano)",
+        "afh-eyebrow": "var(--afh-text-eyebrow)",
       },
       spacing: {
         "afh-xs": "var(--afh-space-xs)",

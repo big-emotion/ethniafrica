@@ -27,27 +27,43 @@ function peopleLabel(event: ColonizationTimelineEntry): string {
 }
 
 // @req FR87
+// @req REQ-101
 export function EventChronologyTable({ events }: EventChronologyTableProps) {
   return (
     <table className="w-full border-collapse">
-      <caption className="text-left text-xs mb-2 text-muted-foreground">
+      <caption className="text-left text-afh-caption mb-2 text-muted-foreground">
         {t.table.caption}
       </caption>
       <thead>
         <tr>
-          <th scope="col" className="text-left text-xs font-semibold pb-2 pr-4">
+          <th
+            scope="col"
+            className="text-left text-afh-caption font-semibold pb-2 pr-4"
+          >
             {t.table.date}
           </th>
-          <th scope="col" className="text-left text-xs font-semibold pb-2 pr-4">
+          <th
+            scope="col"
+            className="text-left text-afh-caption font-semibold pb-2 pr-4"
+          >
             {t.table.type}
           </th>
-          <th scope="col" className="text-left text-xs font-semibold pb-2 pr-4">
+          <th
+            scope="col"
+            className="text-left text-afh-caption font-semibold pb-2 pr-4"
+          >
             {t.table.people}
           </th>
-          <th scope="col" className="text-left text-xs font-semibold pb-2 pr-4">
+          <th
+            scope="col"
+            className="text-left text-afh-caption font-semibold pb-2 pr-4"
+          >
             {t.table.place}
           </th>
-          <th scope="col" className="text-left text-xs font-semibold pb-2">
+          <th
+            scope="col"
+            className="text-left text-afh-caption font-semibold pb-2"
+          >
             {t.table.source}
           </th>
         </tr>
@@ -55,17 +71,17 @@ export function EventChronologyTable({ events }: EventChronologyTableProps) {
       <tbody>
         {events.map((event) => (
           <tr key={event.id}>
-            <td className="py-2 pr-4 text-sm">
+            <td className="py-2 pr-4 text-afh-small">
               {formatYearFr(event.timeRange.startYear)}
             </td>
-            <td className="py-2 pr-4 text-sm">
+            <td className="py-2 pr-4 text-afh-small">
               {t.eventTypeLabels[event.eventType]}
             </td>
-            <td className="py-2 pr-4 text-sm">{peopleLabel(event)}</td>
-            <td className="py-2 pr-4 text-sm">
+            <td className="py-2 pr-4 text-afh-small">{peopleLabel(event)}</td>
+            <td className="py-2 pr-4 text-afh-small">
               {event.place ?? t.table.placeUndocumented}
             </td>
-            <td className="py-2 text-sm">
+            <td className="py-2 text-afh-small">
               {event.primarySource ? (
                 <a
                   href={event.primarySource.url}

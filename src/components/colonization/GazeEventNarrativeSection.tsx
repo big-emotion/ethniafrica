@@ -35,6 +35,7 @@ export interface GazeEventNarrativeSectionProps {
 }
 
 // @req FR87 @req FR89 @req FR90
+// @req REQ-101
 export function GazeEventNarrativeSection({
   eventType,
   events,
@@ -101,10 +102,10 @@ export function GazeEventNarrativeSection({
 
             {showDebate && (
               <div className="mt-4 rounded-md bg-muted p-4">
-                <h3 className="font-afh-display font-semibold text-sm">
+                <h3 className="font-afh-display font-semibold text-afh-small">
                   {DEBATE_LABEL}
                 </h3>
-                <p className="mt-1 text-sm text-foreground max-w-[75ch]">
+                <p className="mt-1 text-afh-small text-foreground max-w-[75ch]">
                   {event.debate}
                 </p>
               </div>

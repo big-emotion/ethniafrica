@@ -49,6 +49,13 @@ export const translations = {
       dataPolicy: "Politique de données",
       cookieSettings: "Gestion des cookies",
       accessibility: "Accessibilité",
+      sitemap: "Plan du site",
+    },
+    sitemapPage: {
+      eyebrow: "Se repérer",
+      title: "Plan du site",
+      introduction:
+        "Les rubriques du site et les chemins qui y mènent. Les 890 fiches ne sont pas listées ici — elles le sont dans le sitemap.xml, que les moteurs lisent à votre place. Cette page suit l'ordre du corpus, famille linguistique puis langue, peuple et pays, plutôt que l'ordre du menu.",
     },
     legalPages: {
       legalNotice: {

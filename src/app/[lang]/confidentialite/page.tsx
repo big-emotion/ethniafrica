@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
 import { Language } from "@/types/shared";
 
+// @req REQ-088
 export default function PrivacyPolicyPage() {
   const params = useParams();
   const lang = params?.lang as string;
@@ -226,15 +227,15 @@ export default function PrivacyPolicyPage() {
     >
       <div className="max-w-4xl mx-auto space-y-8">
         <div>
-          <h1 className="text-3xl font-display font-bold">{t.title}</h1>
+          <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
           <p className="text-muted-foreground mt-2">{t.lastUpdated}</p>
         </div>
 
-        <p className="text-lg">{t.intro}</p>
+        <p className="text-afh-h3">{t.intro}</p>
 
         {/* 1. Responsable du traitement */}
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.responsable.title}
           </h2>
           <p>{t.responsable.text}</p>
@@ -250,14 +251,14 @@ export default function PrivacyPolicyPage() {
 
         {/* 2. Données collectées */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.dataCollected.title}
           </h2>
           <p>{t.dataCollected.intro}</p>
 
           <div className="space-y-4 ml-4">
             <div>
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-afh-h3 font-semibold">
                 {t.dataCollected.essential.title}
               </h3>
               <ul className="list-disc ml-6 mt-2 space-y-1">
@@ -268,7 +269,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-afh-h3 font-semibold">
                 {t.dataCollected.analytics.title}
               </h3>
               <ul className="list-disc ml-6 mt-2 space-y-1">
@@ -279,7 +280,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-afh-h3 font-semibold">
                 {t.dataCollected.errorReporting.title}
               </h3>
               <ul className="list-disc ml-6 mt-2 space-y-1">
@@ -293,7 +294,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 3. Sous-traitants */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.processors.title}
           </h2>
           <p>{t.processors.intro}</p>
@@ -301,12 +302,12 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-4">
             {t.processors.items.map((processor, idx) => (
               <div key={idx} className="border rounded-lg p-4 bg-muted/30">
-                <h3 className="font-semibold text-lg">{processor.name}</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="font-semibold text-afh-h3">{processor.name}</h3>
+                <p className="text-afh-small text-muted-foreground">
                   {processor.purpose}
                 </p>
                 <p className="mt-2">{processor.description}</p>
-                <p className="text-sm mt-2">
+                <p className="text-afh-small mt-2">
                   <span className="font-medium">Localisation :</span>{" "}
                   {processor.location}
                 </p>
@@ -314,7 +315,7 @@ export default function PrivacyPolicyPage() {
             ))}
           </div>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             {t.processors.residencyNote}{" "}
             <a
               href={t.processors.residencyLinkUrl}
@@ -330,7 +331,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 4. Durée de conservation */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.retention.title}
           </h2>
 
@@ -362,7 +363,7 @@ export default function PrivacyPolicyPage() {
 
         {/* 5. Base légale */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.lawfulBasis.title}
           </h2>
           <p>{t.lawfulBasis.intro}</p>
@@ -397,7 +398,9 @@ export default function PrivacyPolicyPage() {
 
         {/* 6. Vos droits */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-display font-bold">{t.rights.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.rights.title}
+          </h2>
           <p>{t.rights.intro}</p>
 
           <div className="space-y-3">
@@ -427,13 +430,15 @@ export default function PrivacyPolicyPage() {
 
         {/* 7. Gestion du consentement */}
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">{t.consent.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.consent.title}
+          </h2>
           <p>{t.consent.text}</p>
         </section>
 
         {/* 8. Sécurité */}
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             {t.security.title}
           </h2>
           <p>{t.security.text}</p>
@@ -441,13 +446,17 @@ export default function PrivacyPolicyPage() {
 
         {/* 9. Modifications */}
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">{t.changes.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.changes.title}
+          </h2>
           <p>{t.changes.text}</p>
         </section>
 
         {/* 10. Contact */}
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">{t.contact.title}</h2>
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.contact.title}
+          </h2>
           <p>{t.contact.text}</p>
           <p>
             <a

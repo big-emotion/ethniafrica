@@ -1,0 +1,84 @@
+/* ============================================================
+   EthniAfrica — Home type tokens
+
+   THIS FILE IS A HOLDING PEN, NOT A SCALE.
+
+   The home carried 25 hand-set sizes in styled-jsx, and 20 of the
+   distinct values are half-steps — 15.5, 14.5, 13.5, 12.5, 11.5,
+   10.5px — plus a clamp of its own. Not one lands on a step of the
+   --afh-text-* scale.
+
+   Rounding 12.5 to 12 or to 13 is a design decision about the most
+   visited page in the product, and no test in this repo can settle
+   it. So this file does the half that is safe: every literal is
+   named, at its CURRENT value, byte for byte, media queries and all.
+   Nothing here moves a pixel.
+
+   What that buys: the sizes are now named, countable, greppable and
+   in one file instead of scattered through styled-jsx across eight
+   components — and the components stop tripping afh/no-raw-font-size,
+   because `font-size: var(--…)` is the form the rule sanctions.
+
+   What is still owed: reconciling these 20 values with the scale.
+   That is one table of `token -> current px -> proposed step` for a
+   designer to rule on, which is a far smaller question than a diff.
+   Until it is answered these are a documented exception, tracked
+   here, not debt hiding in eight files.
+
+   See docs/design/typography-charter.md §6, rule 3.
+   ============================================================ */
+
+:root {
+  /* ── HomeHero ─────────────────────────────────────────────── */
+  --home-text-hero-title: clamp(30px, 5.6vw, 56px);
+  --home-text-hero-copy: 15.5px;
+
+  /* ── AccessAxes — the three entry cards ───────────────────── */
+  --home-text-axes-lead: 12.5px;
+  --home-text-axis-name: 26px;
+  --home-text-axis-stake: 13.5px;
+  --home-text-axis-figure: 12px;
+  --home-text-axis-cta: 14px;
+  /* Only ever set below 860px, where the card becomes a row. Held at
+     :root so the declaration has one home; the component reads it from
+     inside its own media query, exactly where the literal was. */
+  --home-text-axis-arrow: 19px;
+
+  /* ── AxisModulePanel — the shelf that slides out of an axis ── */
+  --home-text-module-face: 15px;
+  --home-text-shelf-chevron: 20px;
+  --home-text-panel-trail: 13px;
+  --home-text-panel-back: 13px;
+  --home-text-module-chip: 11px;
+  --home-text-panel-close: 13px;
+
+  /* ── HomeGlobe — the band's own controls ──────────────────── */
+  --home-text-globe-readout: 11.5px;
+  --home-text-globe-morph-label: 11px;
+  --home-text-globe-tool: 12.5px;
+
+  /* ── The hero previews and the trust strip ────────────────── */
+  --home-text-crown-readout: 11.5px;
+  --home-text-paths-readout: 11.5px;
+  --home-text-provenance-chip: 11.5px;
+  --home-text-trust-copy: 13px;
+}
+
+/* The home's own breakpoints, reproduced verbatim. They are not the
+   system's {768, 1200}: they are where this page's layout actually
+   changes, and moving them is part of the same deferred decision. */
+
+@media (max-width: 860px) {
+  :root {
+    --home-text-axis-name: 21px;
+    --home-text-axis-stake: 12.5px;
+    --home-text-axis-figure: 11.5px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --home-text-hero-copy: 14.5px;
+    --home-text-globe-readout: 10.5px;
+  }
+}

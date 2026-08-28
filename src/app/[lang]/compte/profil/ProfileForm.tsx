@@ -88,9 +88,7 @@ export function ProfileForm({
     <div className="grid gap-6 min-[1200px]:grid-cols-[minmax(0,2fr)_minmax(20rem,1fr)]">
       <Card className="rounded-afh-xl">
         <CardHeader className="p-5 md:p-6">
-          <CardTitle className="text-xl md:text-2xl">
-            Informations du profil
-          </CardTitle>
+          <CardTitle className="text-afh-h2">Informations du profil</CardTitle>
           <CardDescription>
             Choisissez le nom visible avec vos contributions.
           </CardDescription>
@@ -112,7 +110,7 @@ export function ProfileForm({
             <div className="flex items-start justify-between gap-4 rounded-md border p-4">
               <div className="space-y-1">
                 <Label htmlFor="public-profile">Profil public</Label>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-afh-small text-muted-foreground">
                   Afficher votre nom d’affichage avec vos signalements.
                 </p>
               </div>
@@ -131,7 +129,7 @@ export function ProfileForm({
 
             {updateState.message ? (
               updateState.success ? (
-                <p role="status" className="text-sm text-green-700">
+                <p role="status" className="text-afh-small text-green-700">
                   {updateState.message}
                 </p>
               ) : (
@@ -155,9 +153,9 @@ export function ProfileForm({
       <div className="space-y-6">
         <Card className="rounded-afh-xl">
           <CardHeader className="p-5 md:p-6">
-            <CardTitle className="text-xl">Détails du compte</CardTitle>
+            <CardTitle className="text-afh-h2">Détails du compte</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 p-5 pt-0 text-sm md:p-6 md:pt-0">
+          <CardContent className="space-y-4 p-5 pt-0 text-afh-small md:p-6 md:pt-0">
             <div>
               <p className="font-medium">Adresse e-mail</p>
               <p className="break-all text-muted-foreground">{maskedEmail}</p>
@@ -177,7 +175,7 @@ export function ProfileForm({
 
         <Card className="rounded-afh-xl border-destructive/50">
           <CardHeader className="p-5 md:p-6">
-            <CardTitle className="text-xl text-destructive">
+            <CardTitle className="text-afh-h2 text-destructive">
               Supprimer le compte
             </CardTitle>
             <CardDescription>
@@ -222,7 +220,10 @@ export function ProfileForm({
 
                   {erasureState.message ? (
                     erasureState.success ? (
-                      <p role="status" className="mb-4 text-sm text-green-700">
+                      <p
+                        role="status"
+                        className="mb-4 text-afh-small text-green-700"
+                      >
                         {erasureState.message}
                       </p>
                     ) : (
