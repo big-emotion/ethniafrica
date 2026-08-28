@@ -27,25 +27,20 @@ import {
   BASE_TILT_X,
   LAYOUT_BY_AXIS,
   MODULE_CARD_HEIGHT,
+  MODULE_CARD_LINE_HEIGHT,
+  MODULE_CARD_PADDING_Y,
   MODULE_CARD_WIDTH,
+  SCENE_MIN_WIDTH,
   entranceProgress,
-  layoutNodes,
   nearestEdge,
   panelHeightFor,
   projectNode,
+  sceneNodes,
   type PanelBox,
   type ProjectedNode,
   type Tilt,
 } from "@/lib/home/axisGraphGeometry";
 import type { Language } from "@/types/shared";
-
-/**
- * Below this the panel stops being a scene and becomes a list: the modules
- * stack as full-width rows, with no canvas and no transforms. It is the
- * same 860px the three axis cards already fold at, and it keeps a second
- * WebGL context off every phone rather than only the smallest ones.
- */
-const GRAPH_MIN_WIDTH = 860;
 
 /** How far the pointer can swing the scene, in radians. */
 const PARALLAX_X = 0.16;
@@ -58,11 +53,17 @@ const TILT_SETTLED = 0.0006;
 /** Pointer slack, in pixels, for lighting up an edge. */
 const EDGE_TOLERANCE = 12;
 
+/**
+ * Below SCENE_MIN_WIDTH the panel stops being a scene and becomes a list:
+ * the modules stack as full-width rows, with no canvas and no transforms.
+ * It is the width the three axis cards fold at too, and it keeps a second
+ * WebGL context off every phone rather than only the smallest ones.
+ */
 function useGraphEnabled(reducedMotion: boolean): boolean {
   const [wideEnough, setWideEnough] = useState(false);
 
   useEffect(() => {
-    const mql = window.matchMedia(`(min-width: ${GRAPH_MIN_WIDTH}px)`);
+    const mql = window.matchMedia(`(min-width: ${SCENE_MIN_WIDTH}px)`);
     const onChange = () => setWideEnough(mql.matches);
 
     onChange();
@@ -169,15 +170,24 @@ export function AxisModulePanel({
   const frameRef = useRef<number | null>(null);
   const requestFrameRef = useRef<(() => void) | null>(null);
 
+  /**
+   * The panel's own width, not the window's. Where two module cards land in
+   * the same column depends on it, so the geometry has to be told — sizing
+   * a scene against the widest panel the grid allows is how Comprendre's
+   * two middle cards measured clear while overlapping by 31px. Zero until
+   * the first measurement, which the geometry reads as the widest panel.
+   */
+  const [panelWidth, setPanelWidth] = useState(0);
+
   const nodes = useMemo(
     // openShelf is in the deps so two levels of equal size still hand the
     // render loop a fresh array, which is what replays their arrival.
 
-    () => layoutNodes(layout, panelNodes.length),
-    [layout, panelNodes.length, openShelf]
+    () => sceneNodes(layout, panelNodes.length, panelWidth),
+    [layout, panelNodes.length, openShelf, panelWidth]
   );
 
-  const sceneHeight = panelHeightFor(layout, panelNodes.length);
+  const sceneHeight = panelHeightFor(layout, panelNodes.length, panelWidth);
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -222,6 +232,10 @@ export function AxisModulePanel({
         width: panel.clientWidth,
         height: panel.clientHeight,
       };
+      // The render loop reads the box off the ref every frame; the layout
+      // needs it in React, because a narrower panel is a different scene
+      // and not only a smaller one.
+      setPanelWidth(panel.clientWidth);
     };
 
     const drawFrame = () => {
@@ -512,17 +526,27 @@ export function AxisModulePanel({
           width: ${MODULE_CARD_WIDTH}px;
           will-change: transform, opacity;
         }
+        /* The scene reserves exactly this much room per node, so a card in
+           it must not quietly claim more. The numbers the reservation is
+           computed from — line height, number of lines, vertical padding —
+           come from the same module, so the box and the card cannot
+           describe different cards; « Regards : colonisation et
+           résistances » takes all three lines, and two was what the card
+           used to be given. A column reserves nothing: those rows are
+           ordinary flow, and a phone should not spend 91px on a label that
+           fits on one line. */
+        .axis-panel:not([data-layout="column"]) .axis-module-face {
+          min-height: ${MODULE_CARD_HEIGHT}px;
+        }
 
         .axis-module-face {
           display: flex;
-          /* The geometry reserves exactly this much room per card, so a
-             label wrapping to two lines must not quietly claim more. */
-          min-height: ${MODULE_CARD_HEIGHT}px;
+          line-height: ${MODULE_CARD_LINE_HEIGHT};
           align-items: center;
           justify-content: center;
           gap: 10px;
           width: 100%;
-          padding: 14px 18px;
+          padding: ${MODULE_CARD_PADDING_Y}px 18px;
           border: 1px solid var(--accent);
           border-radius: var(--afh-radius-md);
           background: var(--afh-surface);
