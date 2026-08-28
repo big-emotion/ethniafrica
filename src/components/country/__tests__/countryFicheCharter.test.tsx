@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { CountryParchment } from "@/components/country/CountryParchment";
+import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -11,7 +12,8 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * The fiche merged before the shared parchment existed and kept the card
  * layout it shipped with in May. What the mockup asks for is one continuous
  * document: a head that names the country, then étymologie, peuples, royaumes
- * and sources, each section absent when the corpus does not fill it.
+ * and sources — every one of them present, and the ones the corpus leaves
+ * empty marked as empty rather than dropped (charter §4).
  *
  * The regimes below are the ones the corpus really has — kingdoms or none, a
  * declared share that reaches 100 % or falls short, a name whose author is
@@ -104,10 +106,13 @@ describe("country fiche charter", () => {
     expect(screen.getByText(/Flora Shaw/)).toBeInTheDocument();
   });
 
-  // A heading over nothing states that the corpus is silent less honestly
-  // than the section's own absence does.
-  // @req REQ-115
-  it("drops a section the corpus does not fill", () => {
+  // Charter §4: an empty field is information about the state of the corpus,
+  // and dropping the chapter deletes that information. The fiche used to argue
+  // the opposite — that a heading over nothing states the silence less
+  // honestly than the absence does — which reads the silence as a defect
+  // rather than as a fact worth publishing.
+  // @req REQ-119
+  it("keeps a chapter the corpus does not fill, and says so", () => {
     const { container } = renderParchment(
       countryFixture({
         kingdoms: [],
@@ -120,9 +125,30 @@ describe("country fiche charter", () => {
       container.querySelectorAll(".afh-parchment-section h2")
     ).map((node) => node.textContent);
 
-    expect(headings).not.toContain("Royaumes et formations politiques");
-    expect(headings).not.toContain("Étymologie du nom");
+    expect(headings).toContain("Royaumes et formations politiques");
+    expect(headings).toContain("Étymologie du nom");
     expect(headings).toContain("Peuples du pays");
+  });
+
+  // @req REQ-119
+  it("marks the unfilled chapter, and only that one", () => {
+    renderParchment(
+      countryFixture({
+        kingdoms: [],
+        etymology: undefined,
+        nameOriginActor: undefined,
+      })
+    );
+
+    const gaps = screen.getAllByText("Donnée manquante");
+    expect(gaps).toHaveLength(2);
+
+    // The chapter the corpus does fill carries no marker: a marker beside a
+    // declared value would report a gap that is not there.
+    const peoples = document.querySelector(
+      '[data-fiche-section="Peuples du pays"]'
+    );
+    expect(peoples?.textContent).not.toContain("Donnée manquante");
   });
 
   // @req REQ-092
@@ -218,5 +244,98 @@ describe("country fiche parchment — head and closing", () => {
 
     expect(headings.at(-1)).toBe("Sources");
     expect(headings).toContain("Culture et société");
+  });
+});
+
+/**
+ * Where a chapter's claim comes from, said to the reader.
+ *
+ * The notes started life as the JSON path a developer would grep for —
+ * "content.etymology · nameOriginActor" over the étymologie chapter. The
+ * charter's intent is right and the audience was wrong: a reader checking a
+ * claim looks for the fiche's rubric, not for a key in a file they will never
+ * open.
+ */
+describe("country fiche — provenance notes address the reader", () => {
+  // A dotted lowerCamelCase path: "content.culture", "generalInfo.branches".
+  // French prose never produces one, so its presence is the tell.
+  const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+
+  // @req REQ-119
+  it("prints no field path in the parchment's notes", () => {
+    const { container } = renderParchment(countryFixture());
+
+    const notes = Array.from(
+      container.querySelectorAll(".afh-parchment-note")
+    ).map((node) => node.textContent ?? "");
+
+    expect(notes.length).toBeGreaterThan(0);
+    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("names the rubric each chapter reads", () => {
+    const { container } = renderParchment(countryFixture());
+
+    const noteFor = (title: string) =>
+      container.querySelector(
+        `[data-fiche-section="${title}"] .afh-parchment-note`
+      )?.textContent ?? "";
+
+    expect(noteFor("Étymologie du nom")).toMatch(/étymologie/i);
+    expect(noteFor("Peuples du pays")).toMatch(/démographie/i);
+    expect(noteFor("Royaumes et formations politiques")).toMatch(/royaumes/i);
+    expect(noteFor("Sources")).toMatch(/sources/i);
+  });
+});
+
+/**
+ * The four chapters the record view adds after the parchment's own.
+ *
+ * They were hand-rolled `<section class="afh-parchment-section">` blocks with
+ * their own `<h2>` and note, so they carried no `data-fiche-section` and no
+ * charter contract could see them — which is how one of them kept a note
+ * naming a path for years.
+ */
+describe("country record view — the chapters the page adds", () => {
+  const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+
+  function renderRecord(country: CountryDetail) {
+    return render(<CountryRecordView country={country} />);
+  }
+
+  // @req REQ-119
+  it("prints no field path in the added chapters' notes", () => {
+    const { container } = renderRecord(
+      countryFixture({
+        historicalNames: { contemporary: "Nigéria depuis 1960." },
+        historicalFacts: { colonization: "Protectorat britannique." },
+        culture: {
+          mainLanguages: [{ name: "haoussa" }],
+          dominantReligions: "Islam, christianisme.",
+        },
+      } as Partial<CountryDetail>)
+    );
+
+    const notes = Array.from(
+      container.querySelectorAll(".afh-parchment-note")
+    ).map((node) => node.textContent ?? "");
+
+    expect(notes.length).toBeGreaterThan(4);
+    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("keeps the added chapters when the corpus leaves them empty", () => {
+    const { container } = renderRecord(countryFixture());
+
+    const titles = Array.from(
+      container.querySelectorAll("[data-fiche-section]")
+    ).map((node) => node.getAttribute("data-fiche-section"));
+
+    expect(titles).toContain("Noms à travers l'histoire");
+    expect(titles).toContain("Faits historiques majeurs");
+    expect(titles).toContain("Langues");
+    expect(titles).toContain("Culture et société");
   });
 });
