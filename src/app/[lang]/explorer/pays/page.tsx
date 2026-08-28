@@ -1,14 +1,14 @@
 import { permanentRedirect } from "next/navigation";
 
-import { PageLayout } from "@/components/layout/PageLayout";
-import { CountryHubGlobe } from "@/components/hubs/CountryHubGlobe";
+import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
+import type { FacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
 import { getCountryIndex } from "@/api/v2/services/countryService";
-import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
-import { resolveCountryDeepLink } from "@/lib/routing";
+import { getCountryRoute, resolveCountryDeepLink } from "@/lib/routing";
+import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
 
 /**
- * `/fr/pays` — the way into the countries.
+ * The countries facet of the unified Explorer hub.
  *
  * This file exists to take the route out of the `[section]` catch-all. That
  * fall-through was the whole reason the directory could open a country in a
@@ -16,15 +16,12 @@ import type { Language } from "@/types/shared";
  * dossier folded behind a disclosure, reached from the main navigation while
  * the atlas fiche sat one URL away.
  *
- * A static segment beats a dynamic one, so putting a page here settles it, and
- * it settles it without editing `[section]`, which still serves the peoples and
- * families directories.
- *
- * What the route renders is a globe now, not an alphabet. The three fiches all
- * open on one; the hub that led to them opened on a grid of cards, which made
- * the countries the one part of the atlas a reader reached without ever seeing
- * where anything was. Choosing a country here goes to its fiche — a hub exists
- * to be left.
+ * The globe is no longer this page's. `FacetHubShell` mounts one for all three
+ * facets, so that switching to peoples or families repaints the reading and
+ * leaves the map standing; this page publishes what the map should say about a
+ * country when one is chosen. On this facet that is the country itself, which
+ * is why the entry is a single row: the panel's job is to open the fiche, and a
+ * hub exists to be left.
  *
  * The redirect below is a net for links already sent — nothing in the app emits
  * the query form any more. It runs on the server, before any render, so it also
@@ -54,20 +51,24 @@ export default async function PaysHubPage({
     permanentRedirect(fiche);
   }
 
-  // The picker is rendered from the corpus and the counts only shade the map,
-  // so a failed count costs the radial field, never the way in.
-  const [countries, peopleCounts] = await Promise.all([
-    getCountryIndex(),
-    getContinentPeopleCounts().catch(() => undefined),
-  ]);
+  const countries = await getCountryIndex();
+
+  const countryIndex: FacetCountryIndex = Object.fromEntries(
+    countries.map((country) => [
+      country.id as CountryId,
+      [
+        {
+          id: country.id,
+          label: country.nameFr,
+          href: getCountryRoute("fr", country.id),
+        },
+      ],
+    ])
+  );
 
   return (
-    <PageLayout language="fr" sectionName="Pays" hideHeader flushTop>
-      <CountryHubGlobe
-        countryIds={countries.map((country) => country.id)}
-        peopleCountsByCountry={peopleCounts}
-        missingMessage="Le corpus ne renseigne encore aucun peuple par pays."
-      />
+    <>
+      <PublishFacetCountryIndex index={countryIndex} />
 
       <div className="afh-parchment">
         <header className="afh-parchment-head">
@@ -81,6 +82,6 @@ export default async function PaysHubPage({
           </p>
         </header>
       </div>
-    </PageLayout>
+    </>
   );
 }

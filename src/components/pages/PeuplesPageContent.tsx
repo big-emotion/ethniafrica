@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "@/hooks/use-language";
-import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleView } from "@/components/views/PeopleView";
 import { DirectoryHero } from "@/components/views/DirectoryHero";
 
@@ -18,21 +17,18 @@ import { DirectoryHero } from "@/components/views/DirectoryHero";
  * With the pane gone the two breakpoint branches rendered the same thing, so
  * the JS-measured fork went too: one tree, and any denser desktop layout is a
  * matter of CSS.
+ *
+ * The page frame is the Explorer layout's now. `FacetHubShell` owns the
+ * `PageLayout`, the section name and the globe the three facets share, so a
+ * frame here would be the second one on the page.
  */
 // @req REQ-091
 export function PeuplesPageContent() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
 
   return (
-    <PageLayout
-      language={language}
-      onLanguageChange={setLanguage}
-      sectionName="Peuples"
-      hideHeader
-    >
-      <DirectoryHero entityType="people" title="Peuples">
-        <PeopleView language={language} hideSearchAndAlphabet={false} />
-      </DirectoryHero>
-    </PageLayout>
+    <DirectoryHero entityType="people" title="Peuples">
+      <PeopleView language={language} hideSearchAndAlphabet={false} />
+    </DirectoryHero>
   );
 }

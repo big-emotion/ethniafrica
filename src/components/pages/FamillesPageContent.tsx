@@ -8,7 +8,6 @@ import {
   getLocalizedRoute,
   resolveFamilyDeepLink,
 } from "@/lib/routing";
-import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
 import { DirectoryHero } from "@/components/views/DirectoryHero";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
@@ -22,10 +21,13 @@ const SECTION_NAME = "Familles linguistiques";
  * rendered a tabbed detail in place, a second family rendering competing with
  * the charter fiche at `/fr/familles/<id>`. Nothing gated the two apart, so
  * every route into a family from here missed the globe entirely.
+ *
+ * The page frame is the Explorer layout's now: `FacetHubShell` owns the
+ * `PageLayout`, the section name and the shared globe.
  */
 // @req REQ-091
 export function FamillesPageContent() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -56,18 +58,11 @@ export function FamillesPageContent() {
   };
 
   return (
-    <PageLayout
-      language={language}
-      onLanguageChange={setLanguage}
-      sectionName={SECTION_NAME}
-      hideHeader
-    >
-      <DirectoryHero entityType="language-family" title={SECTION_NAME}>
-        <LanguageFamilyView
-          language={language}
-          onFamilySelect={openFamilyFiche}
-        />
-      </DirectoryHero>
-    </PageLayout>
+    <DirectoryHero entityType="language-family" title={SECTION_NAME}>
+      <LanguageFamilyView
+        language={language}
+        onFamilySelect={openFamilyFiche}
+      />
+    </DirectoryHero>
   );
 }
