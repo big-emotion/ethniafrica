@@ -47,13 +47,12 @@ export interface HistoryChips {
   diaspora?: ParagraphChipData;
 }
 
+/** Keyed by the four `content.culture` fields the strict model declares. */
 export interface CultureChips {
-  initiation?: ParagraphChipData;
-  femaleInitiation?: ParagraphChipData;
-  funerary?: ParagraphChipData;
-  music?: ParagraphChipData;
-  gastronomy?: ParagraphChipData;
-  syncretism?: ParagraphChipData;
+  majorRites?: ParagraphChipData;
+  symbols?: ParagraphChipData;
+  artsAndMusic?: ParagraphChipData;
+  spiritualities?: ParagraphChipData;
 }
 
 export interface LanguageChips {
@@ -102,6 +101,7 @@ interface ProseWithChipProps {
  *   ConfidenceChip itself renders "voir les sources" when any data field is null.
  *   The Suspense fallback also shows "voir les sources" while the lazy chunk loads.
  */
+// @req REQ-003
 export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 

@@ -381,9 +381,7 @@ describe("afrikLoader", () => {
               isoCodes: ["sna"],
             },
             culture: {
-              divinitiesAndSpirits: {
-                supremeDeity: { name: "Mwari" },
-              },
+              spiritualities: "Culte de Mwari, dieu créateur",
             },
             historicalRole: {
               kingdomsOrChiefdoms: "Great Zimbabwe, Mutapa Empire",
@@ -418,9 +416,7 @@ describe("afrikLoader", () => {
         "Kingdom structure"
       );
       expect(result?.languages?.mainLanguage).toBe("Shona");
-      expect(result?.culture?.divinitiesAndSpirits?.supremeDeity?.name).toBe(
-        "Mwari"
-      );
+      expect(result?.culture?.spiritualities).toContain("Mwari");
       expect(result?.historicalRole?.kingdomsOrChiefdoms).toContain(
         "Great Zimbabwe"
       );

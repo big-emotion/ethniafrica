@@ -24,9 +24,7 @@ const fullPeople: ComparePeopleEntity = {
   origins: { ancientOrigins: "Origine illustrative" },
   organization: { traditionalPoliticalSystem: "Système illustratif" },
   languages: { mainLanguage: "Langue illustrative (xxx)" },
-  culture: {
-    symbolsAndArts: { artsAndMusic: { songs: "Chants illustratifs" } },
-  },
+  culture: { artsAndMusic: "Chants illustratifs" },
   historicalRole: { diaspora: "Diaspora illustrative" },
   demography: { totalPopulation: 1000, referenceYear: 2025 },
 };

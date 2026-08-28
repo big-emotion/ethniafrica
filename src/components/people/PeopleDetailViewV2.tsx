@@ -1,6 +1,7 @@
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
+  hasCultureContent,
   transformPeopleData,
   transformSourcedRelationsPreview,
 } from "@/lib/peopleDataTransformer";
@@ -247,13 +248,7 @@ export function PeopleDetailViewV2({
         {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
         <PeopleNamesSection data={data.names} />
 
-        {(data.culture.supremeDeity ||
-          data.culture.intermediates.length > 0 ||
-          data.culture.symbols.length > 0 ||
-          data.culture.music ||
-          data.culture.gastronomy ||
-          data.culture.christianityPercentage != null ||
-          data.culture.islamPercentage != null) && (
+        {hasCultureContent(data.culture) && (
           <SectionCard
             label="Culture & spiritualité"
             icon="◈"
