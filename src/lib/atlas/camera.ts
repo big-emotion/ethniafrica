@@ -9,7 +9,7 @@
  */
 import { AFRICA_CENTER_LON } from "@/lib/atlas/projection";
 import type { CameraBias } from "@/lib/atlas/panelBias";
-import type { AtlasTarget } from "@/lib/atlas/targets";
+import type { TargetFrame } from "@/lib/atlas/targets";
 
 const DEG2RAD = Math.PI / 180;
 const TWO_PI = 2 * Math.PI;
@@ -103,7 +103,7 @@ export function zoomForAngularSpan(angularSpanDeg: number): number {
  */
 // @req REQ-117
 export function poseForTarget(
-  target: AtlasTarget,
+  target: TargetFrame,
   bias: CameraBias,
   morph: number = SPHERE_MORPH
 ): CameraPose {
@@ -118,6 +118,22 @@ export function poseForTarget(
     // fiche opens.
     morph,
   };
+}
+
+/**
+ * How far the reader may tip a pole towards themselves. Past this the horizon
+ * leaves the stage and the sphere reads as a disc.
+ *
+ * It lives here rather than with the drag handler that used to own it because
+ * the reader's turn is now applied inside the camera: a bound the camera does
+ * not enforce is a bound the next caller forgets.
+ */
+// @req REQ-117
+export const PITCH_LIMIT_RADIANS = 1.1;
+
+// @req REQ-117
+export function clampPitch(pitch: number): number {
+  return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
 }
 
 /** The signed turn from one yaw to another, never longer than half a globe. */
@@ -170,4 +186,24 @@ export function interpolatePose(
       Math.max(FLAT_MORPH, lerp(from.morph, to.morph, t))
     ),
   };
+}
+
+/**
+ * Whether two poses frame the same thing, within the precision a renderer can
+ * show. Compared rather than identity-tested because a fly-to's own frames are
+ * interpolated, and yaws are compared the short way round: `advanceYaw` keeps a
+ * turned yaw inside one revolution, so the same framing can be stated as 0 or
+ * as 2π.
+ */
+// @req REQ-117
+export function posesMatch(first: CameraPose, second: CameraPose): boolean {
+  const tolerance = 1e-6;
+  return (
+    Math.abs(shortestYawDelta(first.yaw, second.yaw)) < tolerance &&
+    Math.abs(first.pitch - second.pitch) < tolerance &&
+    Math.abs(first.zoom - second.zoom) < tolerance &&
+    Math.abs(first.offsetX - second.offsetX) < tolerance &&
+    Math.abs(first.offsetY - second.offsetY) < tolerance &&
+    Math.abs(first.morph - second.morph) < tolerance
+  );
 }
