@@ -506,6 +506,83 @@ describe("RecherchePageContent", () => {
     });
   });
 
+  // @req REQ-002
+  it("orders results by relevance across entity kinds, not peoples first", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "PPL_LOW", nameMain: "Peuple", relevance: 0.2, content: {} },
+          ],
+          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire", relevance: 0.9 }],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "ivoire" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    // The envelope groups peoples first; "Pertinence" must reorder across
+    // kinds rather than fall through to a no-op comparator.
+    await waitFor(() => {
+      expect(
+        screen
+          .getAllByTestId("search-result-card")
+          .map((card) => card.getAttribute("data-result-type"))
+      ).toEqual(["country", "people"]);
+    });
+  });
+
+  // @req REQ-002
+  it("runs a family-scoped search when the URL carries one and no query", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("family=FLG_KROU") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("familyId=FLG_KROU")
+    );
+  });
+
+  // @req REQ-002
+  it("shows the active relation as a dismissible chip", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("country=CIV") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    const chipRow = screen.getByTestId("filter-chip-row");
+    expect(
+      within(chipRow).getByText(
+        /peuples du pays côte d’ivoire|peuples du pays côte d'ivoire/i
+      )
+    ).toBeInTheDocument();
+  });
+
   // ── 8. no session history ──────────────────────────────────────────────────
 
   it("input uses autocomplete=off to prevent browser search history", () => {

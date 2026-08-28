@@ -23,8 +23,15 @@ import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
 import {
   buildSearchParams,
+  compareByRelevance,
   mapSearchEnvelope,
 } from "@/lib/search/searchEnvelope";
+import {
+  readRelation,
+  relationSearchParams,
+  type SearchRelation,
+} from "@/lib/search/relationSearch";
+import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type { ClassificationStatus } from "@/types/afrik";
 import type { SearchResult } from "@/types/afrik-frontend";
 
@@ -138,6 +145,9 @@ export function RecherchePageContent() {
     getFilterParam(searchParams, "minConfidence")
   );
   const [region, setRegion] = useState(getFilterParam(searchParams, "region"));
+  const [relation, setRelation] = useState<SearchRelation | null>(() =>
+    readRelation(searchParams)
+  );
   const [sort, setSort] = useState<SortKey>(
     (searchParams.get("sort") as SortKey) ?? "relevance"
   );
@@ -151,13 +161,21 @@ export function RecherchePageContent() {
   // ── URL sync ────────────────────────────────────────────────────────────────
 
   const syncURL = useCallback(
-    (q: string, cs: string, mc: string, r: string, s: SortKey) => {
+    (
+      q: string,
+      cs: string,
+      mc: string,
+      r: string,
+      s: SortKey,
+      rel: SearchRelation | null
+    ) => {
       const params = new URLSearchParams();
       if (q) params.set("q", q);
       if (cs) params.set("classificationStatus", cs);
       if (mc) params.set("minConfidence", mc);
       if (r) params.set("region", r);
       if (s !== "relevance") params.set("sort", s);
+      if (rel) params.set(rel.kind, rel.id);
       const route = getLocalizedRoute(language, "search");
       const url = params.toString() ? `${route}?${params}` : route;
       router.replace(url, { scroll: false });
@@ -168,8 +186,10 @@ export function RecherchePageContent() {
   // ── main search ─────────────────────────────────────────────────────────────
 
   const performSearch = useCallback(
-    async (q: string, cs: string, mc: string) => {
-      if (!q.trim()) {
+    async (q: string, cs: string, mc: string, rel: SearchRelation | null) => {
+      // A relation on its own is a complete search: "the peoples of the Krou
+      // family" asks something whole without any free text.
+      if (!q.trim() && !rel) {
         setResults([]);
         return;
       }
@@ -180,6 +200,7 @@ export function RecherchePageContent() {
           limit: 20,
           classificationStatus: cs,
           minConfidence: mc,
+          ...relationSearchParams(rel),
         });
         const res = await fetch(`/api/v2/search?${params}`);
         if (!res.ok) {
@@ -198,19 +219,36 @@ export function RecherchePageContent() {
 
   // On mount: if URL has a query, search immediately.
   useEffect(() => {
-    if (committedQuery) {
-      performSearch(committedQuery, classificationStatus, minConfidence);
+    if (committedQuery || relation) {
+      performSearch(
+        committedQuery,
+        classificationStatus,
+        minConfidence,
+        relation
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Re-search when filters change (only if a query has already been committed).
   useEffect(() => {
-    if (!committedQuery) return;
-    performSearch(committedQuery, classificationStatus, minConfidence);
-    syncURL(committedQuery, classificationStatus, minConfidence, region, sort);
+    if (!committedQuery && !relation) return;
+    performSearch(
+      committedQuery,
+      classificationStatus,
+      minConfidence,
+      relation
+    );
+    syncURL(
+      committedQuery,
+      classificationStatus,
+      minConfidence,
+      region,
+      sort,
+      relation
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classificationStatus, minConfidence, region, sort]);
+  }, [classificationStatus, minConfidence, region, sort, relation]);
 
   // ── auto-suggest (debounced, fires on input change) ─────────────────────────
 
@@ -257,16 +295,23 @@ export function RecherchePageContent() {
     const q = inputValue.trim();
     setCommittedQuery(q);
     setShowSuggestions(false);
-    syncURL(q, classificationStatus, minConfidence, region, sort);
-    performSearch(q, classificationStatus, minConfidence);
+    syncURL(q, classificationStatus, minConfidence, region, sort, relation);
+    performSearch(q, classificationStatus, minConfidence, relation);
   };
 
   const handleSuggestionClick = (s: SearchHit) => {
     setInputValue(s.name);
     setCommittedQuery(s.name);
     setShowSuggestions(false);
-    syncURL(s.name, classificationStatus, minConfidence, region, sort);
-    performSearch(s.name, classificationStatus, minConfidence);
+    syncURL(
+      s.name,
+      classificationStatus,
+      minConfidence,
+      region,
+      sort,
+      relation
+    );
+    performSearch(s.name, classificationStatus, minConfidence, relation);
   };
 
   const clearAllFilters = () => {
@@ -274,12 +319,18 @@ export function RecherchePageContent() {
     setMinConfidence("");
     setRegion("");
     setSort("relevance");
-    syncURL(committedQuery, "", "", "", "relevance");
+    setRelation(null);
+    syncURL(committedQuery, "", "", "", "relevance", null);
   };
 
   // ── derived state ───────────────────────────────────────────────────────────
 
-  const hasActiveFilters = !!(classificationStatus || minConfidence || region);
+  const hasActiveFilters = !!(
+    classificationStatus ||
+    minConfidence ||
+    region ||
+    relation
+  );
 
   // A region narrows *peoples* by where they live. Only peoples carry
   // countryIds, so testing every result against it silently dropped every
@@ -302,6 +353,13 @@ export function RecherchePageContent() {
         return (b.population ?? 0) - (a.population ?? 0);
       case "pop-asc":
         return (a.population ?? 0) - (b.population ?? 0);
+      // "Pertinence" was offered in the sort menu but had no case here, so it
+      // fell through to a no-op comparator. Cross-kind ordering also needs
+      // compareByRelevance rather than a raw relevance subtraction: the
+      // envelope groups peoples, then countries, then families, and their
+      // scores are not on one scale.
+      case "relevance":
+        return compareByRelevance(a, b);
       default:
         return 0;
     }
@@ -314,6 +372,19 @@ export function RecherchePageContent() {
     ? (CONFIDENCE_OPTIONS.find((o) => o.value === minConfidence)?.label ?? "")
     : "";
   const regionLabel = region ? (REGIONS[region]?.label ?? "") : "";
+
+  // A country names itself from the ISO code. A family cannot, but every
+  // people returned under a family scope already carries its name, so the
+  // chip reads it from the results rather than paying for a second request.
+  // Until the first response lands it shows the identifier, never a guess.
+  const relationLabel = !relation
+    ? ""
+    : relation.kind === "country"
+      ? `Peuples du pays ${getFrenchCountryCommonName(relation.id, relation.id)}`
+      : `Peuples de la famille ${
+          results.find((r) => r.languageFamilyId === relation.id)
+            ?.languageFamilyName ?? relation.id
+        }`;
 
   // ── render ──────────────────────────────────────────────────────────────────
 
@@ -454,6 +525,22 @@ export function RecherchePageContent() {
           className="flex flex-wrap items-center gap-2 min-h-[2rem]"
           aria-label="Filtres actifs"
         >
+          {relation && (
+            <Badge
+              variant="secondary"
+              className="flex items-center gap-1 px-3 py-1 text-sm"
+            >
+              {relationLabel}
+              <button
+                type="button"
+                aria-label={`Supprimer le filtre ${relationLabel}`}
+                onClick={() => setRelation(null)}
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+              >
+                <X className="h-3 w-3" aria-hidden="true" />
+              </button>
+            </Badge>
+          )}
           {classificationStatus && classStatusLabel && (
             <Badge
               variant="secondary"

@@ -18,20 +18,35 @@ export interface SearchQueryOptions {
   limit?: number;
   classificationStatus?: string;
   minConfidence?: string;
+  /** Scope to the peoples of one language family (`FLG_*`). */
+  familyId?: string;
+  /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
+  countryId?: string;
 }
 
 // @req REQ-002
 export function buildSearchParams(
   query: string,
-  { limit, classificationStatus, minConfidence }: SearchQueryOptions = {}
+  {
+    limit,
+    classificationStatus,
+    minConfidence,
+    familyId,
+    countryId,
+  }: SearchQueryOptions = {}
 ): URLSearchParams {
-  const params = new URLSearchParams({ q: query });
+  const params = new URLSearchParams();
 
+  // A relation scope is a search on its own, so an empty q is omitted rather
+  // than sent blank — the route rejects `q=` but accepts no `q` at all.
+  if (query) params.set("q", query);
   if (limit !== undefined) params.set("limit", String(limit));
   if (classificationStatus) {
     params.set("classificationStatus", classificationStatus);
   }
   if (minConfidence) params.set("minConfidence", minConfidence);
+  if (familyId) params.set("familyId", familyId);
+  if (countryId) params.set("countryId", countryId);
 
   return params;
 }
