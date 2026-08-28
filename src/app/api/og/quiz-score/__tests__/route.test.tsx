@@ -2,8 +2,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ImageResponse } from "next/og";
 import { GET } from "../route";
 
-const { mockIsQuizFeatureEnabled } = vi.hoisted(() => ({
-  mockIsQuizFeatureEnabled: vi.fn(),
+const { mockDescribeScope } = vi.hoisted(() => ({
+  mockDescribeScope: vi.fn(),
+}));
+
+vi.mock("@/api/v2/handlers/quiz", () => ({
+  describeScope: (...args: unknown[]) => mockDescribeScope(...args),
 }));
 
 vi.mock("next/og", () => ({
@@ -20,11 +24,16 @@ function request(query: Record<string, string>) {
   return new Request(url);
 }
 
-const validQuery = { segment: "adults", correct: "6", total: "8", rung: "2" };
+const validQuery = { pays: "GHA", correct: "6", total: "8" };
 
 describe("quiz-score Open Graph image route (Epic 10, Story 10.10, ETNI-499, ETNI-1141, FR70)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
   });
 
   // The share image used to 404 unless the build carried
@@ -46,9 +55,22 @@ describe("quiz-score Open Graph image route (Epic 10, Story 10.10, ETNI-499, ETN
       { ...validQuery, correct: "47", total: "8" },
     ],
     ["total outside [5,10]", { ...validQuery, total: "11" }],
-    ["unknown segment", { ...validQuery, segment: "unknown" }],
+    ["a country code that is not alpha-3", { ...validQuery, pays: "GHANA" }],
   ])("404s on %s — absurd cards cannot render", async (_label, query) => {
     const response = await GET(request(query));
+
+    expect(response.status).toBe(404);
+    expect(ImageResponse).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-103 FR70
+  it("404s when the track names a country the corpus does not hold", async () => {
+    // The caption is read from the corpus, never from the query string: a
+    // label a stranger can set is a caption on an image carrying the site's
+    // own type.
+    mockDescribeScope.mockResolvedValue(null);
+
+    const response = await GET(request({ ...validQuery, pays: "ZZZ" }));
 
     expect(response.status).toBe(404);
     expect(ImageResponse).not.toHaveBeenCalled();

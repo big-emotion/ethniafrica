@@ -102,10 +102,30 @@ export async function getLanguageFamilyById(
   }
 
   const peoples = await getAfrikPeoplesByLanguageFamily(id);
-  const associatedPeoples = peoples.map((people) => ({
+  const derived = peoples.map((people) => ({
     name: people.nameMain,
     peopleId: people.id,
   }));
+
+  /**
+   * Derived beats declared — but only when there is something derived.
+   *
+   * REQ-033 replaces the fiche's `content.associatedPeoples` with the peoples
+   * that actually carry this family's id, because the JSONB list goes stale
+   * and the stored rows do not. That holds for every family with members.
+   *
+   * It does not hold for a macro-family. Afro-asiatique's peoples all carry a
+   * sub-family's id (Berbère, Tchadique, Couchitique, Sémitique), so the query
+   * returns nothing — and overwriting the declaration with an empty array
+   * destroyed the eight references the fiche does declare while putting
+   * nothing in their place. The footprint fallback added for exactly that case
+   * reads this field, so it could never fire: the fiche showed "empreinte
+   * géographique non disponible" over a family that names its members.
+   *
+   * An empty derivation is not a correction. It is the absence of one.
+   */
+  const associatedPeoples =
+    derived.length > 0 ? derived : (family.content?.associatedPeoples ?? []);
 
   return {
     ...family,

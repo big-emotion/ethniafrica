@@ -3,14 +3,15 @@
  * Smart Quiz generation sweep + bank integrity check (Epic 10, Story 10.5,
  * ETNI-494, FR65/FR69/AR20).
  *
- * Default mode: generates questions for gate-passing (FR65), policy-passing
- * (FR68/FR69) candidates via templates T1-T5, revokes any active question
- * that now fails the gate or the QZ-2 staleness check, and writes exactly
- * one `quiz_generation_runs` audit row per sweep.
+ * Default mode: generates one question per (fiche, template) pair that passes
+ * the FR65 gate, revokes any active question that now fails the gate or the
+ * QZ-2 staleness check, and writes exactly one `quiz_generation_runs` audit
+ * row per sweep.
  *
- * `--check` mode: read-only. Audits the active bank against QZ-1..QZ-5 and
- * exits non-zero on any violation — wired into the nightly
- * `data-integrity.yml` workflow.
+ * `--check` mode: read-only. Audits the active bank against QZ-1..QZ-3 and
+ * QZ-5 and exits non-zero on any violation — wired into the nightly
+ * `data-integrity.yml` workflow. QZ-4 went out with the audience axis; see
+ * `scripts/lib/quizGeneration.ts`.
  *
  * All decision logic lives in `scripts/lib/quizGeneration.ts` (pure, unit
  * tested with real fixtures); this file is the thin Supabase I/O shell.
@@ -54,11 +55,23 @@ import {
 
 const ENTITY_TYPE = "people";
 
+/**
+ * What goes in `quiz_questions.audience`, which is `not null` and typed by the
+ * `quiz_audience` enum (migration 036).
+ *
+ * The audience axis is retired — a session is scoped by entity now — but the
+ * column outlives it: dropping it takes a migration, and 040-042 are still
+ * pending, so a new one would land behind them and the sweep would be blocked
+ * on a queue it does not belong to. Every row therefore carries the same value
+ * and nothing reads it back. Removing the column is owed, once the pending
+ * migrations land.
+ */
+const RETIRED_AUDIENCE_COLUMN_VALUE = "adults";
+
 /** `quiz_questions` as the sweep and the audit read it back. */
 interface QuizQuestionRow {
   id: string;
   template_id: ActiveQuestionRow["templateId"];
-  audience: ActiveQuestionRow["audience"];
   entity_id: string;
   field_path: string;
   correct_option: number;
@@ -219,7 +232,7 @@ async function fetchActiveQuestions(
     supabase
       .from("quiz_questions")
       .select(
-        "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
+        "id, template_id, entity_id, field_path, correct_option, options_fr"
       )
       .is("revoked_at", null)
       .range(from, to)
@@ -227,7 +240,6 @@ async function fetchActiveQuestions(
   return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
-    audience: row.audience,
     entityId: row.entity_id,
     fieldPath: row.field_path,
     correctOption: row.correct_option,
@@ -244,7 +256,7 @@ async function fetchActiveQuestionsForAudit(
     supabase
       .from("quiz_questions")
       .select(
-        "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
+        "id, template_id, entity_id, field_path, correct_option, options_fr, generation_run_id"
       )
       .is("revoked_at", null)
       .range(from, to)
@@ -252,7 +264,6 @@ async function fetchActiveQuestionsForAudit(
   return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
-    audience: row.audience,
     entityId: row.entity_id,
     fieldPath: row.field_path,
     correctOption: row.correct_option,
@@ -300,7 +311,7 @@ async function insertQuestions(
   if (records.length === 0) return;
   const rows = records.map((record) => ({
     template_id: record.templateId,
-    audience: record.audience,
+    audience: RETIRED_AUDIENCE_COLUMN_VALUE,
     difficulty: record.difficulty,
     entity_type: record.entityType,
     entity_id: record.entityId,
@@ -328,13 +339,22 @@ async function revokeQuestions(
     ids.push(decision.id);
     idsByReason.set(decision.reason, ids);
   }
+  // Chunked, because an `.in(...)` filter travels in the URL and a revocation
+  // list is as long as the bank. A `--rebuild` of 11 879 questions sent ~440 KB
+  // of UUIDs in one request and came back `414 Request-URI Too Large` from the
+  // edge, before writing anything — the same limit `chunkForUrl` was written
+  // for, in the one place that was not using it. The read paths were chunked;
+  // this write path was not, so the fault only appeared on a rebuild large
+  // enough to need it.
   const revokedAt = new Date().toISOString();
   for (const [reason, ids] of idsByReason) {
-    const { error } = await supabase
-      .from("quiz_questions")
-      .update({ revoked_at: revokedAt, revoked_reason: reason })
-      .in("id", ids);
-    if (error) throw error;
+    for (const idChunk of chunkForUrl(ids)) {
+      const { error } = await supabase
+        .from("quiz_questions")
+        .update({ revoked_at: revokedAt, revoked_reason: reason })
+        .in("id", idChunk);
+      if (error) throw error;
+    }
   }
 }
 

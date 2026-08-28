@@ -22,15 +22,12 @@ import {
   type QuizEligibilityRejectionReason,
 } from "@/lib/quiz/eligibility";
 import {
-  DIFFICULTY_RUNGES,
-  isAllowedForSegment,
-  QUIZ_AUDIENCES,
-  TEMPLATE_AVAILABILITY,
+  QUIZ_TEMPLATE_IDS,
   TEMPLATE_FIELD_PATHS,
-  type QuizAudience,
 } from "@/lib/quiz/segmentPolicy";
 import {
   isSameOptionValue,
+  mainCountryOf,
   questionTemplateBuilders,
 } from "@/lib/quiz/questionTemplates";
 
@@ -57,7 +54,13 @@ export interface FicheEntry {
 
 export interface QuizQuestionRecord {
   templateId: QuizTemplateId;
-  audience: QuizAudience;
+  /**
+   * The template's own baseline, unclamped. It used to be squeezed into the
+   * rung range of whichever audience the row belonged to; with the audience
+   * axis gone there is nothing to clamp against, and a session's ladder is
+   * built at serve time from the subject's population decile inside the scope
+   * (games charter §4, `src/lib/quiz/quizScope.ts`).
+   */
   difficulty: number;
   entityType: "people";
   entityId: string;
@@ -91,7 +94,6 @@ export type CandidateEvaluation =
 export interface ActiveQuestionRow {
   id: string;
   templateId: QuizTemplateId;
-  audience: QuizAudience;
   entityId: string;
   fieldPath: string;
   correctOption: number;
@@ -111,7 +113,6 @@ export interface SweepInput {
   entries: FicheEntry[];
   pools: QuizCandidatePools;
   activeQuestions: ActiveQuestionRow[];
-  audiences?: readonly QuizAudience[];
   /**
    * Revokes every healthy active question so the sweep rebuilds it.
    *
@@ -158,26 +159,13 @@ export function resolveCurrentAnswer(
       return fiche.selfAppellation;
     case "T3": {
       if (fiche.distributionByCountry.length === 0) return null;
-      const mainCountry = fiche.distributionByCountry.reduce(
-        (largest, current) =>
-          current.percentage > largest.percentage ? current : largest
-      );
-      return mainCountry.countryNameFr;
+      return mainCountryOf(fiche).countryNameFr;
     }
     case "T4":
       return fiche.mainLanguage;
     case "T5":
       return fiche.isoCode;
   }
-}
-
-/** Per-audience rung clamp for a template's baseline difficulty (FR68). */
-export function clampDifficulty(
-  baseline: number,
-  audience: QuizAudience
-): number {
-  const range = DIFFICULTY_RUNGES[audience];
-  return Math.min(Math.max(baseline, range.min), range.max);
 }
 
 function buildCandidate(
@@ -205,15 +193,29 @@ function buildCandidate(
  * receives — so this ranking, not the selector, is what makes a wrong answer
  * plausible.
  *
- * For the four pools whose values are carried by a people (family names,
- * autonyms, languages, ISO codes) the ranks read as written. For country
- * names they shift one rung inward: NEAREST is a country the subject itself
- * lives in — a real place for that people, just not its main one, which is
- * the hardest honest distractor the corpus can offer.
+ * **Why the top rank is the intersection and not the family.** A question's
+ * four options are frozen into `options_fr` at generation, and the same row is
+ * then served inside every scope a player can pick: the whole corpus, one
+ * language family, one country. Ranking on family alone satisfied the
+ * pan-African pool and left a « peuples du Ghana » session answering with
+ * peoples from Congo — near on the axis nobody was playing. A distractor that
+ * shares *both* the subject's family and one of its countries is plausible in
+ * all three scopes at once, which is the only thing one frozen option set can
+ * be. So the intersection ranks first, then each axis alone, then the rest.
+ *
+ * For country names the ranks shift one rung inward, since a country is not a
+ * people: nearest is a country the subject itself lives in — a real place for
+ * that people, just not its main one, which is the hardest honest distractor
+ * the corpus can offer.
  */
-const NEAREST = 0;
-const NEARBY = 1;
-const ELSEWHERE = 2;
+const SAME_FAMILY_AND_COUNTRY = 0;
+const SAME_FAMILY = 1;
+const SHARES_A_COUNTRY = 2;
+const ELSEWHERE = 3;
+
+/** Country-pool ranks: the subject's own countries, then its family's, then the rest. */
+const SUBJECT_OWN_COUNTRY = 0;
+const HOSTS_THE_FAMILY = 1;
 
 function optionKey(value: QuizOptionValue): string {
   return typeof value === "string" ? value : value.autonym;
@@ -248,11 +250,13 @@ export function orderPoolsBySubjectProximity(
   );
 
   const nearnessOf = (other: QuizPeopleFixture): number => {
-    if (other.languageFamilyId === subject.languageFamilyId) return NEAREST;
+    const sameFamily = other.languageFamilyId === subject.languageFamilyId;
     const sharesACountry = other.distributionByCountry.some((share) =>
       subjectCountryIds.has(share.countryId)
     );
-    return sharesACountry ? NEARBY : ELSEWHERE;
+    if (sameFamily && sharesACountry) return SAME_FAMILY_AND_COUNTRY;
+    if (sameFamily) return SAME_FAMILY;
+    return sharesACountry ? SHARES_A_COUNTRY : ELSEWHERE;
   };
 
   /** Maps each pool value to its nearest carrier in the corpus. */
@@ -288,7 +292,9 @@ export function orderPoolsBySubjectProximity(
   const countryNearness = new Map<string, number>();
   for (const other of corpus) {
     const hosting =
-      other.languageFamilyId === subject.languageFamilyId ? NEARBY : ELSEWHERE;
+      other.languageFamilyId === subject.languageFamilyId
+        ? HOSTS_THE_FAMILY
+        : ELSEWHERE;
     for (const share of other.distributionByCountry) {
       const known = countryNearness.get(share.countryNameFr);
       if (known === undefined || hosting < known) {
@@ -297,7 +303,7 @@ export function orderPoolsBySubjectProximity(
     }
   }
   for (const share of subject.distributionByCountry) {
-    countryNearness.set(share.countryNameFr, NEAREST);
+    countryNearness.set(share.countryNameFr, SUBJECT_OWN_COUNTRY);
   }
 
   return {
@@ -318,11 +324,10 @@ export function orderPoolsBySubjectProximity(
   };
 }
 
-/** Evaluates a single (fiche, template, audience) triple against FR65 and the distractor pool. */
+/** Evaluates a single (fiche, template) pair against FR65 and the distractor pool. */
 export function evaluateCandidate(
   fiche: QuizPeopleFixture,
   templateId: QuizTemplateId,
-  audience: QuizAudience,
   assertion: AssertionBinding | undefined,
   pools: QuizCandidatePools
 ): CandidateEvaluation {
@@ -350,8 +355,7 @@ export function evaluateCandidate(
     outcome: "generated",
     record: {
       templateId: candidate.templateId,
-      audience,
-      difficulty: clampDifficulty(candidate.baselineDifficulty, audience),
+      difficulty: candidate.baselineDifficulty,
       entityType: candidate.entityType,
       entityId: candidate.entityId,
       fieldPath: candidate.fieldPath,
@@ -400,7 +404,6 @@ export function decideRevocation(
  * an unchanged corpus and bank yields an empty plan.
  */
 export function computeSweepPlan(input: SweepInput): SweepPlan {
-  const audiences = input.audiences ?? QUIZ_AUDIENCES;
   const entryById = new Map(
     input.entries.map((entry) => [entry.fiche.id, entry])
   );
@@ -426,13 +429,14 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
     }
   }
 
+  // A question is now identified by its subject and its template, and by
+  // nothing else. It used to carry the audience too, which is how 2 504
+  // distinct questions came to occupy 11 879 rows — the same question, asked of
+  // the same fiche, stored once per audience.
   const activeKeys = new Set(
     input.activeQuestions
       .filter((question) => !revokedIds.has(question.id))
-      .map(
-        (question) =>
-          `${question.entityId}:${question.templateId}:${question.audience}`
-      )
+      .map((question) => `${question.entityId}:${question.templateId}`)
   );
 
   const corpus = input.entries.map((entry) => entry.fiche);
@@ -440,31 +444,28 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
   let rejectedCount = 0;
   for (const entry of input.entries) {
     // Ordered once per fiche, not per template: nearness is a property of the
-    // subject, and every audience asks about the same one.
+    // subject, and all five templates ask about the same one.
     const nearestFirst = orderPoolsBySubjectProximity(
       entry.fiche,
       corpus,
       input.pools
     );
-    for (const audience of audiences) {
-      for (const templateId of TEMPLATE_AVAILABILITY[audience]) {
-        const key = `${entry.fiche.id}:${templateId}:${audience}`;
-        if (activeKeys.has(key)) continue;
+    for (const templateId of QUIZ_TEMPLATE_IDS) {
+      const key = `${entry.fiche.id}:${templateId}`;
+      if (activeKeys.has(key)) continue;
 
-        const fieldPath = TEMPLATE_FIELD_PATHS[templateId];
-        const assertion = entry.assertionsByFieldPath[fieldPath];
-        const evaluation = evaluateCandidate(
-          entry.fiche,
-          templateId,
-          audience,
-          assertion,
-          nearestFirst
-        );
-        if (evaluation.outcome === "generated") {
-          toInsert.push(evaluation.record);
-        } else {
-          rejectedCount += 1;
-        }
+      const fieldPath = TEMPLATE_FIELD_PATHS[templateId];
+      const assertion = entry.assertionsByFieldPath[fieldPath];
+      const evaluation = evaluateCandidate(
+        entry.fiche,
+        templateId,
+        assertion,
+        nearestFirst
+      );
+      if (evaluation.outcome === "generated") {
+        toInsert.push(evaluation.record);
+      } else {
+        rejectedCount += 1;
       }
     }
   }
@@ -547,17 +548,11 @@ export function auditActiveBank(input: AuditInput): QzViolation[] {
       });
     }
 
-    // QZ-4: children segment respects the field-path allowlist.
-    if (
-      question.audience === "children" &&
-      !isAllowedForSegment(question.fieldPath, "children")
-    ) {
-      violations.push({
-        code: "QZ-4",
-        questionId: question.id,
-        detail: `field_path "${question.fieldPath}" is outside the children allowlist`,
-      });
-    }
+    // QZ-4 checked that a children-segment question stayed inside the field-path
+    // allowlist. Both the segment and the allowlist are retired with the
+    // audience axis, so the check has nothing left to read. The remaining codes
+    // keep their numbers: renumbering them would silently change the meaning of
+    // every QZ code already written down in a past audit log.
 
     // QZ-5: generation_run_id resolves to a real quiz_generation_runs row.
     if (!input.knownGenerationRunIds.has(question.generationRunId)) {

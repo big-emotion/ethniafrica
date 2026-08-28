@@ -40,6 +40,16 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
   },
 };
 
+/**
+ * Every page type, read off the slug table rather than written out.
+ *
+ * `SLUGS` is a `Record<Language, Record<PageType, string>>`, which the
+ * compiler refuses to leave incomplete, so a list derived from it cannot fall
+ * behind the union the way a hand-kept array would.
+ */
+// @req REQ-091
+export const PAGE_TYPES = Object.keys(SLUGS.fr) as PageType[];
+
 // @req REQ-091
 export const getLocalizedRoute = (
   language: Language,
@@ -90,13 +100,6 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   return null;
 };
 
-// @req REQ-091
-export const getSlugFromRoute = (pathname: string): string | null => {
-  const parts = pathname.split("/").filter(Boolean);
-  if (parts.length < 2) return null;
-  return parts[1];
-};
-
 // ---------------------------------------------------------------------------
 // Entity routes — localized href to a single fiche (ContextTriad, ETNI-818)
 // ---------------------------------------------------------------------------
@@ -118,30 +121,67 @@ export const getPeopleRoute = (language: Language, id: string): string =>
 // ---------------------------------------------------------------------------
 
 /**
+ * A query string in either shape the app reads one from: the plain object a
+ * server component receives as `searchParams`, and the `URLSearchParams` a
+ * client component gets from `useSearchParams`.
+ *
+ * One type rather than a second resolver per entity, because the rule below
+ * has to have exactly one implementation. The families directory is the
+ * proof it does not survive being written twice: it read its own query
+ * client-side and forwarded the identifier raw for as long as it existed.
+ */
+// @req REQ-091
+export type DeepLinkQuery =
+  | Record<string, string | string[] | undefined>
+  | URLSearchParams;
+
+/**
+ * The single value the query holds under `key`, or null when it holds none or
+ * several — a repeated query has no single answer, so it gets none.
+ */
+const singleQueryValue = (query: DeepLinkQuery, key: string): string | null => {
+  if (query instanceof URLSearchParams) {
+    const values = query.getAll(key);
+    return values.length === 1 && values[0].length > 0 ? values[0] : null;
+  }
+  const value = query[key];
+  return typeof value === "string" && value.length > 0 ? value : null;
+};
+
+/**
+ * The one place a directory query becomes a fiche href, and so the one place
+ * the identifier is **encoded**. Left raw, a `?country=//host` turns the
+ * redirect into an open one, because a browser reads two leading slashes as
+ * the start of a host.
+ *
+ * The identifier is otherwise forwarded untouched. Validating its shape would
+ * turn a reader's typo into a silent fall-back to a list, where the fiche
+ * route answers it with an honest 404.
+ */
+const resolveDeepLink = (
+  query: DeepLinkQuery,
+  key: string,
+  toFicheRoute: (identifier: string) => string
+): string | null => {
+  const identifier = singleQueryValue(query, key);
+  return identifier === null
+    ? null
+    : toFicheRoute(encodeURIComponent(identifier));
+};
+
+/**
  * The fiche a `/fr/pays?country=XXX` link was reaching for, or null when the
  * query names no country.
  *
  * The country directory used to open a detail pane beside its list; the atlas
  * fiche replaced it, and that query shape survives only in links already sent.
- * Resolving it here rather than in the page keeps it a pure unit, and keeps the
- * one rule that matters testable: the identifier is **encoded**. Left raw, a
- * `?country=//host` turns the redirect into an open one, because a browser
- * reads two leading slashes as the start of a host.
- *
- * The identifier is otherwise forwarded untouched. Validating its shape would
- * turn a reader's typo into a silent fall-back to the list, where the fiche
- * route answers it with an honest 404.
  */
 // @req REQ-091
 export const resolveCountryDeepLink = (
   language: Language,
-  searchParams: Record<string, string | string[] | undefined>
-): string | null => {
-  const country = searchParams.country;
-  // A repeated query has no single answer, so it gets none.
-  if (typeof country !== "string" || country.length === 0) return null;
-  return getCountryRoute(language, encodeURIComponent(country));
-};
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "country", (id) => getCountryRoute(language, id));
 
 /**
  * The fiche a `/fr/peuples?people=PPL_XXX` link was reaching for, or null when
@@ -150,21 +190,30 @@ export const resolveCountryDeepLink = (
  * The peoples directory used to open a people in a pane beside its list — the
  * fiche on the left, the list on the right, no globe — which made a second
  * people surface, reached from the main navigation, while the atlas fiche sat
- * one URL away. The same rules as the country form: the identifier is
- * **encoded**, because `?people=//host` would otherwise make this an open
- * redirect, and an unrecognised identifier is forwarded rather than validated,
- * so the fiche route can answer it with an honest 404.
+ * one URL away.
  */
 // @req REQ-097
 export const resolvePeopleDeepLink = (
   language: Language,
-  searchParams: Record<string, string | string[] | undefined>
-): string | null => {
-  const people = searchParams.people;
-  // A repeated query has no single answer, so it gets none.
-  if (typeof people !== "string" || people.length === 0) return null;
-  return getPeopleRoute(language, encodeURIComponent(people));
-};
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "people", (id) => getPeopleRoute(language, id));
+
+/**
+ * The fiche a `/fr/familles?family=FLG_XXX` link was reaching for, or null
+ * when the query names no family.
+ *
+ * The families directory kept picking a family in place — a tabbed detail
+ * competing with the charter fiche one URL away — and it forwarded the
+ * bookmarked identifier itself, unencoded. Routing it through the shared
+ * resolver is what closes that open redirect.
+ */
+// @req REQ-091
+export const resolveFamilyDeepLink = (
+  language: Language,
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "family", (id) => getFamilyRoute(language, id));
 
 // ---------------------------------------------------------------------------
 // Nested entity sub-routes — segments below a single fiche (Epic 11, FR72)

@@ -7,6 +7,7 @@ import {
 } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -19,9 +20,15 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * other. Nothing here is authored: the mockup's italic "un nom de 1914" is a
  * date no field states, so it is not written.
  *
- * A section is absent when the corpus does not fill it, rather than standing
- * as a heading over nothing. That absence is itself a reading of the corpus,
- * and a truer one than an empty block.
+ * Every chapter the fiche model defines is printed, whether or not the corpus
+ * fills it, and an unfilled one carries `FieldProvenanceMarker`. This fiche
+ * used to drop those chapters, arguing that an absence read the silence more
+ * honestly than an empty block. Charter §4 rules the other way, and it is the
+ * stronger argument: an empty field is information about the state of the
+ * corpus, and dropping the chapter is what deletes it. The reader of a fiche
+ * with no royaumes could not tell "nobody has written this yet" from "this
+ * country had none" — the atlas's own contribution surface depends on their
+ * being able to.
  */
 
 /**
@@ -74,65 +81,78 @@ export function CountryParchment({
         )}
       </header>
 
-      {(etymology || nameOriginActor) && (
-        <Section
-          title="Étymologie du nom"
-          note="content.etymology · nameOriginActor"
-        >
-          {etymology && <p>{etymology}</p>}
-          {nameOriginActor && (
-            <div className="afh-parchment-callout">
-              <b>Ce que la fiche refuse de taire.</b> {nameOriginActor}
-            </div>
-          )}
-        </Section>
-      )}
+      <Section
+        title="Étymologie du nom"
+        note="Rubriques « étymologie » et « origine du nom » de la fiche"
+      >
+        {etymology || nameOriginActor ? (
+          <>
+            {etymology && <p>{etymology}</p>}
+            {nameOriginActor && (
+              <div className="afh-parchment-callout">
+                <b>Ce que la fiche refuse de taire.</b> {nameOriginActor}
+              </div>
+            )}
+          </>
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </Section>
 
-      {hasPeoples && (
-        <Section
-          title="Peuples du pays"
-          note="content.demographics.peoples · content.majorPeoples"
-        >
-          <PeoplesSection data={data.peoples} />
-          {declared < 99 && (
-            <div className="afh-parchment-callout">
-              <b>Pourquoi la somme n&apos;atteint pas 100&nbsp;%.</b> La règle
-              FR28 porte sur la <em>totalité</em>{" "}
-              {/* Explicit: the JSX transform drops the space that opens a text
-                  node following an element, and "totalitédes" shipped once. */}
-              des fiches d&apos;un pays, qui doivent sommer dans la bande [99,
-              101]&nbsp;% — le reste n&apos;est pas encore réparti dans le
-              corpus.
-            </div>
-          )}
-        </Section>
-      )}
+      <Section
+        title="Peuples du pays"
+        note="Rubriques « démographie » et « peuples principaux » de la fiche"
+      >
+        {!hasPeoples ? (
+          <FieldProvenanceMarker state="missing" />
+        ) : (
+          <>
+            <PeoplesSection data={data.peoples} />
+            {declared < 99 && (
+              <div className="afh-parchment-callout">
+                <b>Pourquoi la somme n&apos;atteint pas 100&nbsp;%.</b> La règle
+                FR28 porte sur la <em>totalité</em>{" "}
+                {/* Explicit: the JSX transform drops the space that opens a
+                    text node following an element, and "totalitédes" shipped
+                    once. */}
+                des fiches d&apos;un pays, qui doivent sommer dans la bande [99,
+                101]&nbsp;% — le reste n&apos;est pas encore réparti dans le
+                corpus.
+              </div>
+            )}
+          </>
+        )}
+      </Section>
 
-      {data.kingdoms.cards.length > 0 && (
-        <Section
-          title="Royaumes et formations politiques"
-          note="content.kingdoms"
-        >
+      <Section
+        title="Royaumes et formations politiques"
+        note="Rubrique « royaumes » de la fiche"
+      >
+        {data.kingdoms.cards.length > 0 ? (
           <KingdomsTimeline cards={data.kingdoms.cards} />
-        </Section>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </Section>
 
       {children}
 
-      {data.sources.length > 0 && (
-        <Section
-          title="Sources"
-          note="content.sources · politique de paliers"
-          as="footer"
-          id="sources"
-        >
+      <Section
+        title="Sources"
+        note="Rubrique « sources » de la fiche · politique de paliers"
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
           />
-        </Section>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </Section>
     </div>
   );
 }

@@ -51,7 +51,10 @@ function mockFetchOnce(questions: QuizSessionQuestionView[]) {
     ok: true,
     json: () =>
       Promise.resolve({
-        data: { segment: "adults", difficulty: 2, questions },
+        data: {
+          scope: { kind: "country", entityId: "GHA", labelFr: "Ghana" },
+          questions,
+        },
         meta: {},
         errors: [],
       }),
@@ -74,7 +77,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = fetchMock;
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
 
@@ -96,7 +99,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
 
@@ -112,7 +115,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
     await waitFor(() => expect(result.current.status).toBe("answering"));
@@ -129,7 +132,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
     await waitFor(() => expect(result.current.status).toBe("answering"));
@@ -146,7 +149,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
     await waitFor(() => expect(result.current.status).toBe("answering"));
@@ -161,7 +164,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
     await waitFor(() => expect(result.current.status).toBe("answering"));
@@ -181,7 +184,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = mockFetchOnce(TWO_QUESTIONS);
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
     await waitFor(() => expect(result.current.status).toBe("answering"));
@@ -204,7 +207,7 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 500 });
 
     const { result } = renderHook(
-      () => useQuizSession({ segment: "adults", difficulty: 2, count: 8 }),
+      () => useQuizSession({ scope: { kind: "country", entityId: "GHA" } }),
       { wrapper: createWrapper() }
     );
 

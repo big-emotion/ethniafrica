@@ -3,7 +3,11 @@
 import { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
-import { getFamilyRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getFamilyRoute,
+  getLocalizedRoute,
+  resolveFamilyDeepLink,
+} from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
 import { DirectoryHero } from "@/components/views/DirectoryHero";
@@ -36,10 +40,14 @@ export function FamillesPageContent() {
   // `?family=<id>` addressed the retired detail-beside-the-list view. Bookmarks
   // and inbound links still carrying it are forwarded to the fiche rather than
   // silently dropped onto an undifferentiated directory.
+  //
+  // Through the shared resolver, not by reading the query here: forwarding the
+  // identifier raw made `?family=//host` an open redirect, which is the one
+  // thing the country and people forms had already learnt not to do.
   useEffect(() => {
-    const bookmarkedFamily = searchParams.get("family");
-    if (bookmarkedFamily) {
-      router.replace(getFamilyRoute(language, bookmarkedFamily));
+    const fiche = resolveFamilyDeepLink(language, searchParams);
+    if (fiche) {
+      router.replace(fiche);
     }
   }, [language, router, searchParams]);
 

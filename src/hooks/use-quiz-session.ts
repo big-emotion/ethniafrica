@@ -3,11 +3,15 @@
 import { useReducer } from "react";
 import { useQuery } from "@tanstack/react-query";
 import type { QuizSessionQuestionView } from "@/api/v2/schemas/quiz";
-import type { QuizAudience } from "@/lib/quiz/segmentPolicy";
+import {
+  quizScopeKey,
+  quizScopeSearchParams,
+  QUIZ_SESSION_SIZE,
+  type QuizScope,
+} from "@/lib/quiz/quizScope";
 
 export interface UseQuizSessionOptions {
-  segment: QuizAudience;
-  difficulty: number;
+  scope: QuizScope;
   count?: number;
 }
 
@@ -84,11 +88,8 @@ function playReducer(state: PlayState, action: PlayAction): PlayState {
 async function fetchQuizSession(
   options: UseQuizSessionOptions
 ): Promise<QuizSessionQuestionView[]> {
-  const params = new URLSearchParams({
-    segment: options.segment,
-    difficulty: String(options.difficulty),
-    count: String(options.count ?? 8),
-  });
+  const params = quizScopeSearchParams(options.scope);
+  params.set("count", String(options.count ?? QUIZ_SESSION_SIZE));
 
   const res = await fetch(`/api/v2/quiz/session?${params.toString()}`);
   if (!res.ok) {
@@ -104,7 +105,12 @@ async function fetchQuizSession(
  * answering → revealed → finished play loop over the returned questions.
  * `refetchOnWindowFocus`/`refetchOnReconnect`/`retry` are disabled so the
  * cached session is never silently re-fetched mid-play.
+ *
+ * The questions arrive in the order the server laid them out — the games
+ * charter's ascending difficulty ladder — and are played in that order. Nothing
+ * here reshuffles them.
  */
+// @req REQ-103
 export function useQuizSession(
   options: UseQuizSessionOptions
 ): UseQuizSessionResult {
@@ -114,12 +120,7 @@ export function useQuizSession(
     isError,
     error,
   } = useQuery({
-    queryKey: [
-      "quiz-session",
-      options.segment,
-      options.difficulty,
-      options.count,
-    ],
+    queryKey: ["quiz-session", quizScopeKey(options.scope), options.count],
     queryFn: () => fetchQuizSession(options),
     staleTime: Infinity,
     retry: false,

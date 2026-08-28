@@ -11,26 +11,26 @@ const meta: Meta<typeof QuizScoreScreen> = {
 export default meta;
 type Story = StoryObj<typeof QuizScoreScreen>;
 
-// @req REQ-103 FR68
-export const RungAdvanced: Story = {
-  name: "≥ 75 % correct (rung advances)",
+// @req REQ-103 FR70
+export const CountryTrack: Story = {
+  name: "Country track",
   args: {
-    segment: "adults",
-    difficulty: 2,
+    scope: { kind: "country", entityId: "GHA" },
+    scopeLabelFr: "Ghana",
     correctCount: 7,
     totalQuestions: 8,
-    onPlayAgain: () => {},
+    exitHref: "/fr/quiz",
   },
 };
 
-// @req REQ-103 FR68
-export const RungNotAdvanced: Story = {
-  name: "< 75 % correct (rung unchanged)",
+// @req REQ-103 FR70
+export const WholeCorpusTrack: Story = {
+  name: "Whole-corpus track",
   args: {
-    segment: "adults",
-    difficulty: 2,
+    scope: { kind: "mixed" },
+    scopeLabelFr: "Tout le continent",
     correctCount: 4,
     totalQuestions: 8,
-    onPlayAgain: () => {},
+    exitHref: "/fr/quiz",
   },
 };

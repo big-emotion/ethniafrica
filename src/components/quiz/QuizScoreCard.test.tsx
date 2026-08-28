@@ -11,13 +11,12 @@ const fiches = [
 
 describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR27/34)", () => {
   // @req REQ-103 FR70
-  it("shows the exact-count sentence, segment, rung, fiche links, rejouer and partager actions", () => {
+  it("shows the exact-count sentence, track, fiche links, rejouer and partager actions", () => {
     render(
       <QuizScoreCard
-        segment="adults"
+        scopeLabelFr="Ghana"
         correct={7}
         total={8}
-        rung={3}
         fiches={fiches}
         playAgainHref="/fr/quiz"
         onShare={vi.fn()}
@@ -27,8 +26,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
     expect(screen.getByText("7")).toBeInTheDocument();
     expect(screen.getByText("réponses exactes sur")).toBeInTheDocument();
     expect(screen.getByText("8")).toBeInTheDocument();
-    expect(screen.getByText("adultes")).toBeInTheDocument();
-    expect(screen.getByText(/Niveau 3 pour ce parcours/)).toBeInTheDocument();
+    expect(screen.getByText("Ghana")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Yoruba" })).toHaveAttribute(
       "href",
       "/fr/peuples/PPL_YORUBA"
@@ -50,10 +48,9 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("never renders confetti, emoji or exclamation marks", () => {
     const { container } = render(
       <QuizScoreCard
-        segment="children"
+        scopeLabelFr="Kh�san"
         correct={2}
         total={5}
-        rung={1}
         playAgainHref="/fr/quiz"
         onShare={vi.fn()}
       />
@@ -69,10 +66,9 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("renders no fiche links when none are given", () => {
     render(
       <QuizScoreCard
-        segment="teens"
+        scopeLabelFr="Tout le continent"
         correct={4}
         total={6}
-        rung={1}
         playAgainHref="/fr/quiz"
         onShare={vi.fn()}
       />
@@ -87,10 +83,9 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
     const user = userEvent.setup();
     render(
       <QuizScoreCard
-        segment="adults"
+        scopeLabelFr="Ghana"
         correct={7}
         total={8}
-        rung={3}
         playAgainHref="/fr/quiz"
         onShare={onShare}
       />
@@ -104,10 +99,9 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("surfaces a polite share status message via an aria-live region", () => {
     render(
       <QuizScoreCard
-        segment="adults"
+        scopeLabelFr="Ghana"
         correct={7}
         total={8}
-        rung={3}
         playAgainHref="/fr/quiz"
         onShare={vi.fn()}
         shareStatusMessage="copié"

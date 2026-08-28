@@ -24,7 +24,9 @@ export default async function ComprendreHubPage() {
   return (
     <PageLayout language="fr">
       <AccessModeHub language="fr" mode="comprendre" modules={modules}>
-        <ComprendreQuestionSpine language="fr" />
+        {/* Same resolved modules the rows read: the spine used to link its
+            three stops unconditionally and contradict them (charter §3). */}
+        <ComprendreQuestionSpine language="fr" modules={modules} />
       </AccessModeHub>
     </PageLayout>
   );
