@@ -6,19 +6,27 @@ import { useCallback, useEffect, useState } from "react";
 import { HomeGlobeFallback } from "@/components/home/HomeGlobeFallback";
 import { canCreateWebglContext } from "@/lib/home/webglSupport";
 
+// No `loading` component on purpose: the chunk takes about a second to
+// arrive, and painting the flat basemap for that second showed every
+// visitor a map of Africa that then vanished — read as a glitch, not as a
+// fallback. Nothing renders until the globe itself is ready.
 const LazyHomeGlobe = dynamic(
   () => import("@/components/home/HomeGlobe").then((mod) => mod.HomeGlobe),
-  { ssr: false, loading: () => <HomeGlobeFallback /> }
+  { ssr: false }
 );
 
 /**
  * Capability gate (ARCH-014): the WebGL globe is a client island that only
- * mounts once a real WebGL context has been probed client-side. Until that
- * check resolves — and whenever it fails — the committed AfricaBasemap
- * fallback renders instead, so the hero is never empty (REQ-112 AC2) and
- * the server response never carries the WebGL runtime (REQ-112 AC4): the
- * initial state below is the SSR-safe fallback, and useEffect only ever
- * runs client-side.
+ * mounts once a real WebGL context has been probed client-side, so the
+ * server response never carries the WebGL runtime (REQ-112 AC4).
+ *
+ * The probe is tri-state — unknown until the effect runs — because
+ * "not probed yet" and "no WebGL here" call for opposite renders. The
+ * committed AfricaBasemap answers REQ-112 AC2 for a visitor whose browser
+ * genuinely cannot run the globe; showing it while the probe and the chunk
+ * are still in flight showed *every* visitor a flat map for a second
+ * before it was replaced by the sphere. The stage holds its box open
+ * instead, so nothing moves when the globe lands.
  *
  * The gate result renders inside .home-globe-stage (REQ-115): an in-flow,
  * centred box with a declared min-height per breakpoint, replacing the
@@ -30,7 +38,7 @@ const LazyHomeGlobe = dynamic(
 // @req REQ-112
 // @req REQ-115
 export function HomeGlobeStage() {
-  const [webglSupported, setWebglSupported] = useState(false);
+  const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
   // The probe above only proves a context can be created. Compiling and
   // linking the globe's shaders on it can still fail — the common case on
   // low-end hardware — and by then the fallback has already been swapped
@@ -47,13 +55,13 @@ export function HomeGlobeStage() {
     setGlobeUnavailable(true);
   }, []);
 
+  const globeCanRun = webglSupported === true && !globeUnavailable;
+  const noGlobePossible = webglSupported === false || globeUnavailable;
+
   return (
     <div className="home-globe-stage">
-      {webglSupported && !globeUnavailable ? (
-        <LazyHomeGlobe onUnavailable={handleGlobeUnavailable} />
-      ) : (
-        <HomeGlobeFallback />
-      )}
+      {globeCanRun && <LazyHomeGlobe onUnavailable={handleGlobeUnavailable} />}
+      {noGlobePossible && <HomeGlobeFallback />}
       <style>{`
         /* The reference demo's stage heights were 380 / 460: the globe
            reads as a body rather than a marble at those, and the flat map
