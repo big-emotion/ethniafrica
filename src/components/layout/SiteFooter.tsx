@@ -28,7 +28,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
         {/* « À propos » sits by the copyright rather than in the legal nav:
             it is editorial, so filing it under "Informations légales" would
             make that landmark's accessible name inaccurate. */}
-        <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm">
+        <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-1 text-afh-caption">
           <p>
             © {year} {footer.copyright}
           </p>
@@ -50,7 +50,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
           aria-label={footer.legalNavigationLabel}
           className="order-3 w-full xl:order-none xl:w-auto"
         >
-          <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm xl:flex-nowrap">
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-afh-caption xl:flex-nowrap">
             <li>
               <Link
                 href={`/${language}/mentions-legales`}
@@ -99,7 +99,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
           href="https://big-emotion.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex shrink-0 items-center gap-2 text-xs transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm"
+          className="flex shrink-0 items-center gap-2 text-afh-caption transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <span>{footer.attribution}</span>
           <Image

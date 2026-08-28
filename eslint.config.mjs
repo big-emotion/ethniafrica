@@ -132,9 +132,6 @@ const eslintConfig = [
       "src/components/country/CultureGrid.tsx", // 4
       "src/components/country/HistoryTimeline.tsx", // 3
       "src/components/country/OriginBanner.tsx", // 3
-      // --- lot 3 · layout/ (8) -----------------------------------------
-      "src/components/layout/SiteHeader.tsx", // 6 css
-      "src/components/layout/AfrikBreadcrumbs.tsx", // 2
       // --- lot 5 · source-transparency/ (3) ----------------------------
       "src/components/source-transparency/DoctrineLinkCard.tsx", // 2
       "src/components/source-transparency/SourceChainSheet.tsx", // 1

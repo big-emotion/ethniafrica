@@ -25,17 +25,17 @@ export function LegalDocument({ document }: LegalDocumentProps) {
   return (
     <article className="mx-auto max-w-5xl pb-16 pt-4 md:pb-24 md:pt-8">
       <header className="border-b border-afh-border pb-10 md:pb-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-afh-terracotta">
+        <p className="text-afh-eyebrow font-semibold uppercase tracking-[0.22em] text-afh-terracotta">
           {document.eyebrow}
         </p>
-        <h1 className="mt-4 max-w-[18ch] text-4xl font-display font-bold leading-tight text-afh-text md:text-6xl">
+        <h1 className="mt-4 max-w-[18ch] text-afh-hero font-display font-semibold leading-[1.05] text-afh-text">
           {document.title}
         </h1>
-        <p className="mt-5 text-sm text-afh-text-muted">
+        <p className="mt-5 text-afh-caption text-afh-text-muted">
           {document.lastUpdated}
         </p>
         <ReadingColumn className="mt-8">
-          <p className="text-lg leading-relaxed text-afh-text-soft md:text-xl">
+          <p className="text-afh-lead leading-[1.45] text-afh-text-soft">
             {document.introduction}
           </p>
         </ReadingColumn>
@@ -48,7 +48,7 @@ export function LegalDocument({ document }: LegalDocumentProps) {
               stepLabel={`${String(index + 1).padStart(2, "0")} · Section`}
               heading={section.title}
             />
-            <ReadingColumn className="mt-5 space-y-4 text-base leading-relaxed text-afh-text-soft">
+            <ReadingColumn className="mt-5 space-y-4 text-afh-body leading-[1.65] text-afh-text-soft">
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
