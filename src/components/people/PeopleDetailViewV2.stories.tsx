@@ -88,17 +88,14 @@ const history: PeopleHistoryData = {
 };
 
 const culture: PeopleCultureData = {
-  supremeDeity: "Olódùmarè",
-  intermediates: ["Obàtálá", "Ṣàngó", "Ọ̀ṣun", "Ògún", "Yemọja"],
-  initiation: "Culte Ògún (initiation masculine par le travail du fer)",
-  funerary: "Cérémonie Ẹẹgúngún (masques ancestraux)",
-  symbols: ["Àdìrẹ cloth", "Ìlẹkẹ̀ beads", "Ẹẹgúngún mask"],
-  music: "Dundun (talking drum), bata, sekere",
-  gastronomy: "Egusi soup, amala, jollof rice",
-  christianityPercentage: 45,
-  islamPercentage: 50,
-  syncretism:
-    "Pratique simultanée de l'Islam/Christianisme et de cultes traditionnels (Ifá).",
+  majorRites:
+    "Le culte des orisha structure la vie rituelle : chaque divinité dispose de fêtes annuelles et de pratiques initiatiques. La divination Ifá est inscrite au patrimoine culturel immatériel de l'UNESCO (2005).",
+  symbols:
+    "Les bronzes et sculptures d'Ifè représentent le sommet de l'art classique yoruba. Les tissus aso-oke (brocart tissé) et adire (batik à l'indigo) sont les symboles textiles de l'identité.",
+  artsAndMusic:
+    "Le dundun (tambour parlant), le bata (tambour sacré d'orisha) et le sekere sont les instruments classiques. Le juju, l'afrobeat et le fuji sont des genres modernes d'origine yoruba.",
+  spiritualities:
+    "La religion traditionnelle (Aborisa) reconnaît un Dieu suprême, Olódùmarè, et un panthéon d'orisha. Christianisme et islam coexistent avec ces cultes, souvent chez les mêmes familles.",
 };
 
 const relatedPeoples: PeopleRelatedData = {

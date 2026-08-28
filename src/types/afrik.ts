@@ -445,251 +445,29 @@ export interface LanguagesSection {
 }
 
 /**
- * Detailed culture section (for people)
- * Includes all subsections from modele-peuple.txt
+ * `content.culture`, exactly as `public/modele-peuple.json` declares it: four
+ * prose fields, no nesting.
+ *
+ * This interface used to describe a six-part nested structure — divinities,
+ * cosmology, person and nature, rites, symbols, contemporary spiritualities —
+ * together with nineteen sub-interfaces. No fiche ever carried it. The TXT
+ * parser flattened those subsections into the four keys below before the
+ * corpus was written to JSON, so all 789 peuples files fill exactly these and
+ * nothing else. Every nested read therefore returned undefined for the whole
+ * corpus, which is why the culture chapter rendered on no people fiche at all.
+ *
+ * Restoring the nesting is a corpus and strict-model change, not a rendering
+ * one; `scripts/audit/gapAnalyzer.ts` already tracks it as a source-parser gap.
  */
 export interface DetailedCultureSection {
-  // A. Divinities and spirits
-  divinitiesAndSpirits?: {
-    supremeDeity?: DeityInfo;
-    intermediateDivinities?: DeityInfo[];
-    natureSpirits?: NatureSpiritsInfo;
-    culturalFigures?: CulturalFiguresInfo;
-    ancestors?: AncestorsInfo;
-  };
-
-  // B. Cosmology
-  cosmology?: {
-    worldStructure?: WorldStructureInfo;
-    spiritualConcepts?: SpiritualConceptsInfo;
-    lifeDeathRebirthCycle?: LifeCycleInfo;
-    sacredTimeAndSpace?: SacredTimeSpaceInfo;
-  };
-
-  // C. Conception of person and nature
-  personAndNature?: {
-    bodyAndSpirit?: BodySpiritInfo;
-    spiritualLifeCycle?: SpiritualLifeCycleInfo;
-    conceptionOfPerson?: PersonConceptionInfo;
-    sacredNature?: SacredNatureInfo;
-    totemicAnimals?: TotemicAnimal[];
-    sacredPlants?: SacredPlant[];
-    cosmicHarmony?: CosmicHarmonyInfo;
-  };
-
-  // D. Rites and spiritual practices
-  ritesAndPractices?: {
-    initiationRites?: InitiationRitesInfo;
-    funeraryRites?: FuneraryRitesInfo;
-    agriculturalRites?: AgriculturalRitesInfo;
-    purificationRites?: PurificationRitesInfo;
-    divination?: DivinationInfo;
-    sacrificesAndOfferings?: SacrificesInfo;
-    otherMajorRites?: string[];
-  };
-
-  // E. Symbols, arts, material culture
-  symbolsAndArts?: {
-    symbols?: Symbol[];
-    artsAndMusic?: ArtsAndMusicInfo;
-    gastronomy?: GastronomyInfo;
-  };
-
-  // F. Contemporary spiritualities
-  contemporarySpirituality?: {
-    christianity?: ChristianityInfo;
-    islam?: IslamInfo;
-    traditionalReligions?: TraditionalReligionsInfo;
-    religiousSyncretism?: SyncretismInfo;
-    culturalResistance?: CulturalResistanceInfo;
-  };
-}
-
-// Sub-types for detailed culture section
-export interface DeityInfo {
-  endonym?: string;
-  exonym?: string;
-  attributes?: string;
-  veneration?: string;
-  name?: string;
-  role?: string;
-  domain?: string;
-}
-
-export interface NatureSpiritsInfo {
-  forestSpirits?: string;
-  waterSpirits?: string;
-  earthSpirits?: string;
-  otherSpirits?: string;
-}
-
-export interface CulturalFiguresInfo {
-  tricksters?: string;
-  culturalHeroes?: string;
-  mythologicalFigures?: string;
-}
-
-export interface AncestorsInfo {
-  roleOfAncestors?: string;
-  cultPractices?: string;
-  sacredStatuesAndObjects?: string;
-}
-
-export interface WorldStructureInfo {
-  upperWorld?: string;
-  intermediateWorld?: string;
-  terrestrialWorld?: string;
-  underworld?: string;
-}
-
-export interface SpiritualConceptsInfo {
-  soulOrVitalForce?: string;
-  spiritOrPersonality?: string;
-  physicalBody?: string;
-  paternalSpiritualHeritage?: string;
-  maternalHeritage?: string;
-}
-
-export interface LifeCycleInfo {
-  conceptionOfDeath?: string;
-  ancestorWorld?: string;
-  reincarnation?: string;
-}
-
-export interface SacredTimeSpaceInfo {
-  sacredDays?: string;
-  sacredPlaces?: string;
-  ritualSeasons?: string;
-}
-
-export interface BodySpiritInfo {
-  physicalBody?: string;
-  spiritualEssence?: string;
-  spiritualDouble?: string;
-}
-
-export interface SpiritualLifeCycleInfo {
-  preExistence?: string;
-  birthAndIncarnation?: string;
-  terrestrialLife?: string;
-  deathAndPassage?: string;
-  ancestrality?: string;
-  reincarnation?: string;
-}
-
-export interface PersonConceptionInfo {
-  personDefinition?: string;
-  moralValues?: string;
-  familyHonor?: string;
-}
-
-export interface SacredNatureInfo {
-  forestConception?: string;
-  sacredGroves?: string;
-  sacredTrees?: string;
-}
-
-export interface TotemicAnimal {
-  name: string;
-  symbolism?: string;
-}
-
-export interface SacredPlant {
-  name: string;
-  ritualUse?: string;
-}
-
-export interface CosmicHarmonyInfo {
-  humanNatureSpiritBalance?: string;
-  respectForTaboos?: string;
-  purificationRituals?: string;
-}
-
-export interface InitiationRitesInfo {
-  maleInitiation?: string;
-  femaleInitiation?: string;
-  secretSocietyInitiation?: string;
-  maskInitiation?: string;
-}
-
-export interface FuneraryRitesInfo {
-  wake?: string;
-  burial?: string;
-  postFuneraryCeremonies?: string;
-  funeraryMasks?: string;
-}
-
-export interface AgriculturalRitesInfo {
-  landBlessing?: string;
-  harvestFestivals?: string;
-  offeringsToEarthSpirits?: string;
-}
-
-export interface PurificationRitesInfo {
-  ritualBaths?: string;
-  fumigation?: string;
-  exorcism?: string;
-}
-
-export interface DivinationInfo {
-  divinationMethods?: string;
-  consultationOfDiviners?: string;
-  interpretationOfSigns?: string;
-}
-
-export interface SacrificesInfo {
-  animalSacrifices?: string;
-  foodOfferings?: string;
-  libations?: string;
-}
-
-export interface Symbol {
-  name: string;
-  meaning?: string;
-}
-
-export interface ArtsAndMusicInfo {
-  sculpture?: string;
-  masks?: string;
-  weaving?: string;
-  musicalInstruments?: string;
-  dances?: string;
-  songs?: string;
-  renownedArtists?: string;
-}
-
-export interface GastronomyInfo {
-  emblematicDishes?: string;
-  culinaryKnowHow?: string;
-  gastronomicHeritage?: string;
-  ritualFoods?: string;
-}
-
-export interface ChristianityInfo {
-  percentageOfPopulation?: number;
-  denominations?: string;
-  christianTraditionalSyncretism?: string;
-}
-
-export interface IslamInfo {
-  percentageOfPopulation?: number;
-  specificPractices?: string;
-  islamicTraditionalSyncretism?: string;
-}
-
-export interface TraditionalReligionsInfo {
-  persistenceOfPractices?: string;
-  guardiansOfTraditions?: string;
-}
-
-export interface SyncretismInfo {
-  coexistenceOfPractices?: string;
-  contemporaryAdaptations?: string;
-}
-
-export interface CulturalResistanceInfo {
-  transmissionToYoungerGenerations?: string;
-  culturalRevitalization?: string;
+  /** Rites of passage, initiation, funerary and divinatory practice. */
+  majorRites?: string;
+  /** Masks, regalia, textiles, emblems — and what they carry. */
+  symbols?: string;
+  /** Instruments, genres, crafts, oral literature. */
+  artsAndMusic?: string;
+  /** Traditional religion, and the religions living alongside it. */
+  spiritualities?: string;
 }
 
 export interface HistoricalRoleSection {

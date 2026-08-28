@@ -28,7 +28,7 @@ export const YORUBA: PeopleDetail = {
   origins: { ancientOrigins: "Ilé-Ifẹ̀" },
   languages: { mainLanguage: "yoruba", isoCodes: ["yor"] },
   historicalRole: { kingdomsOrChiefdoms: "Ọ̀yọ́" },
-  culture: { divinitiesAndSpirits: { supremeDeity: { name: "Olódùmarè" } } },
+  culture: { spiritualities: "Olódùmarè, dieu créateur suprême" },
   demography: {
     totalPopulation: 42_000_000,
     referenceYear: 2025,

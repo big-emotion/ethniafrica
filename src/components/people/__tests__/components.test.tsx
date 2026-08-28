@@ -203,76 +203,43 @@ describe("PeopleHistoryTimeline", () => {
 // ==========================================
 
 describe("PeopleCultureGrid", () => {
-  it("returns null when all fields empty", () => {
-    const empty: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-    };
-    const { container } = render(<PeopleCultureGrid data={empty} />);
+  // @req REQ-003
+  it("returns null when the fiche declares no culture", () => {
+    const { container } = render(<PeopleCultureGrid data={{}} />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders supremeDeity when present", () => {
+  // The four fields every fiche in the corpus fills. Rendering fewer than
+  // four is the defect this suite exists to catch.
+  // @req REQ-003
+  it("renders each of the four declared fields under its own label", () => {
     const data: PeopleCultureData = {
-      supremeDeity: "Olódùmarè",
-      intermediates: [],
-      symbols: [],
+      majorRites: "Le culte des orisha structure la vie rituelle.",
+      symbols: "Les tissus aso-oke et adire.",
+      artsAndMusic: "Le dundun, tambour parlant.",
+      spiritualities: "Aborisa reconnait Olodumare.",
     };
     render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Olódùmarè")).toBeTruthy();
+
+    expect(screen.getByText("Rites majeurs")).toBeTruthy();
+    expect(screen.getByText("Symboles")).toBeTruthy();
+    expect(screen.getByText("Arts & musique")).toBeTruthy();
+    expect(screen.getByText("Spiritualités")).toBeTruthy();
+
+    expect(screen.getByText(/culte des orisha/)).toBeTruthy();
+    expect(screen.getByText(/aso-oke/)).toBeTruthy();
+    expect(screen.getByText(/dundun/)).toBeTruthy();
+    expect(screen.getByText(/Olodumare/)).toBeTruthy();
   });
 
-  it("renders intermediates list when non-empty", () => {
-    const data: PeopleCultureData = {
-      intermediates: ["Obàtálá", "Ṣàngó", "Ọ̀ṣun"],
-      symbols: [],
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Obàtálá")).toBeTruthy();
-    expect(screen.getByText("Ṣàngó")).toBeTruthy();
-    expect(screen.getByText("Ọ̀ṣun")).toBeTruthy();
-  });
+  // @req REQ-003
+  it("omits the fields the fiche leaves empty, and keeps the rest", () => {
+    render(<PeopleCultureGrid data={{ symbols: "Le masque gre." }} />);
 
-  it("renders symbols list when non-empty", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: ["Àdìrẹ cloth", "Ìlẹkẹ̀ beads"],
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Àdìrẹ cloth")).toBeTruthy();
-    expect(screen.getByText("Ìlẹkẹ̀ beads")).toBeTruthy();
-  });
-
-  it("renders christianityPercentage and islamPercentage when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      christianityPercentage: 45,
-      islamPercentage: 50,
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText(/45/)).toBeTruthy();
-    expect(screen.getByText(/50/)).toBeTruthy();
-  });
-
-  it("renders music when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      music: "Dundun, bata",
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Dundun, bata")).toBeTruthy();
-  });
-
-  it("renders gastronomy when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      gastronomy: "Egusi soup, jollof rice",
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Egusi soup, jollof rice")).toBeTruthy();
+    expect(screen.getByText("Symboles")).toBeTruthy();
+    expect(screen.queryByText("Rites majeurs")).toBeNull();
+    expect(screen.queryByText("Arts & musique")).toBeNull();
+    expect(screen.queryByText("Spiritualités")).toBeNull();
   });
 });
 
@@ -506,11 +473,12 @@ describe("PeopleHistoryTimeline — chip integration", () => {
 });
 
 describe("PeopleCultureGrid — chip integration", () => {
-  it("renders chip for music when chip provided", async () => {
+  // @req REQ-003
+  it("renders the source chip on arts and music when one is provided", async () => {
     render(
       <PeopleCultureGrid
-        data={{ intermediates: [], symbols: [], music: "Dundun, bata." }}
-        chips={{ music: sampleChip }}
+        data={{ artsAndMusic: "Dundun, bata." }}
+        chips={{ artsAndMusic: sampleChip }}
       />
     );
     expect(screen.getByText("Dundun, bata.")).toBeTruthy();
@@ -521,18 +489,15 @@ describe("PeopleCultureGrid — chip integration", () => {
     });
   });
 
-  it("renders chip for initiation when chip provided", async () => {
+  // @req REQ-003
+  it("renders the source chip on major rites when one is provided", async () => {
     render(
       <PeopleCultureGrid
-        data={{
-          intermediates: [],
-          symbols: [],
-          initiation: "Rites masculins.",
-        }}
-        chips={{ initiation: sampleChip }}
+        data={{ majorRites: "Rites de passage." }}
+        chips={{ majorRites: sampleChip }}
       />
     );
-    expect(screen.getByText("Rites masculins.")).toBeTruthy();
+    expect(screen.getByText("Rites de passage.")).toBeTruthy();
     await waitFor(() => {
       expect(
         screen.queryByRole("button") ?? screen.queryByText("voir les sources")

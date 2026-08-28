@@ -33,7 +33,7 @@ const FULL_PEOPLE: PeopleDetail = {
   origins: { ancientOrigins: "Region X" },
   organization: { traditionalPoliticalSystem: "Clanique" },
   languages: { mainLanguage: "swa" },
-  culture: { ritesAndPractices: { otherMajorRites: ["Rite A"] } },
+  culture: { majorRites: "Rite A" },
   historicalRole: { kingdomsOrChiefdoms: "Role" },
   demography: { totalPopulation: 1000 },
   sources: [{ title: "https://example.org", url: null, tier: "unverified" }],
