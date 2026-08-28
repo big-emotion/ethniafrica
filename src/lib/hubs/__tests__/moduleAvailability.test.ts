@@ -83,7 +83,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     const comprendre = await getHubModules("comprendre");
 
     expect(explorer.find((m) => m.id === "pays")?.available).toBe(true);
-    expect(comprendre.find((m) => m.id === "frise")?.available).toBe(true);
+    expect(comprendre.find((m) => m.id === "noms")?.available).toBe(true);
   });
 
   // @req REQ-106 @req REQ-114
@@ -230,5 +230,62 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
 
     expect(available).toBe(true);
     expect(createServerClientMock).not.toHaveBeenCalled();
+  });
+
+  // A full table says the module has rows, never that the rows are worth
+  // reading. The frise is the case that forced the distinction: six sourced
+  // events pass any row count and still answer nothing (atlas-charter §3).
+  // @req REQ-106 @req REQ-114
+  it("keeps a module in preparation unavailable however full its table is", async () => {
+    createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
+
+    const modules = await getHubModules("comprendre");
+    const frise = modules.find((m) => m.id === "frise");
+
+    expect(frise).toBeDefined();
+    expect(frise?.available).toBe(false);
+  });
+
+  // Readiness is declared, so answering it costs nothing — and asking the
+  // database about a module we have already decided is unready would be a
+  // round trip whose answer is discarded.
+  // @req REQ-106 @req REQ-114
+  it("settles a module in preparation without touching the database", async () => {
+    const available = await isModuleAvailable({
+      availability: "data",
+      dataSource: "migration_events",
+      editorialReadiness: "draft",
+    });
+
+    expect(available).toBe(false);
+    expect(createServerClientMock).not.toHaveBeenCalled();
+  });
+
+  // The state `static` was the trap: with no table to consult, a static
+  // module had no way of being anything but live, which is why the
+  // colonisation page could not be marked in preparation at all.
+  // @req REQ-106 @req REQ-114
+  it("takes a static module off the invitation when it is declared unready", async () => {
+    createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
+
+    const modules = await getHubModules("comprendre");
+
+    expect(
+      modules.find((m) => m.id === "regards-colonisation")?.available
+    ).toBe(false);
+    // Its neighbour on the same axis is static too, and stays live: nothing
+    // about being static decides this either way.
+    expect(modules.find((m) => m.id === "doctrine")?.available).toBe(true);
+  });
+
+  // Listed, always. Withholding the click is the whole of what draft does.
+  // @req REQ-106 @req REQ-114
+  it("still lists a module in preparation", async () => {
+    createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
+
+    const modules = await getHubModules("comprendre");
+
+    expect(modules.map((m) => m.id)).toContain("frise");
+    expect(modules.map((m) => m.id)).toContain("regards-colonisation");
   });
 });

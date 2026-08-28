@@ -8,6 +8,12 @@ import {
   type ModuleDataSource,
 } from "@/lib/hubs/moduleRegistry";
 
+/** What `isModuleAvailable` needs of a definition to answer. */
+type AvailabilityInputs = Pick<
+  HubModuleDefinition,
+  "availability" | "dataSource" | "editorialReadiness"
+>;
+
 /**
  * REQ-106/REQ-114: a "data" module counts as live only once its backing
  * table returns at least one row. A failed or empty query both resolve to
@@ -64,8 +70,16 @@ export interface HubModule extends HubModuleDefinition {
 
 // @req REQ-106 @req REQ-114
 export async function isModuleAvailable(
-  def: Pick<HubModuleDefinition, "availability" | "dataSource">
+  def: AvailabilityInputs
 ): Promise<boolean> {
+  // Editorial readiness is settled first, and without a query: it is
+  // declared in the registry, so no table can overturn it, and a module we
+  // have already decided is unready would only spend a round trip on an
+  // answer nobody reads. This is the "not yet worth the trip" half of the
+  // charter's §3 distinction; the probe below is the "has nothing at all"
+  // half. Both surface as the same inert Bientôt row, deliberately.
+  if (def.editorialReadiness === "draft") return false;
+
   // Only a data module's liveness depends on the corpus. A static page
   // renders from code, and asking a row count about it could only ever take
   // a working route away.
@@ -76,9 +90,11 @@ export async function isModuleAvailable(
 
 // @req REQ-114 @req REQ-106
 export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
-  // Every module the registry declares is listed. Nothing is dropped here:
-  // a module that could vanish from the hub is a module a reader cannot
-  // find, and the environment has no say in what exists.
+  // Every module the registry declares is listed, a module in preparation
+  // included. Nothing is dropped here: a module that could vanish from the
+  // hub is a module a reader cannot find, and neither the environment nor
+  // an editorial judgement has any say in what exists — only in what is
+  // offered.
   return Promise.all(
     getModulesForAccessMode(mode).map(async (def) => ({
       ...def,
