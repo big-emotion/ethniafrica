@@ -1,8 +1,10 @@
 /**
  * Supabase queries for AFRIK search (multi-entity).
  *
- * ETNI-38: ftsSearchEntities uses websearch_to_tsquery('french', q)
- * via Supabase textSearch, with optional confidence-boost ordering and filters.
+ * ftsSearchEntities delegates ranking to the afrik_search_peoples /
+ * afrik_search_countries functions (migration 044), which rank over the
+ * weighted tsvectors of migration 043. This module maps their rows; it does
+ * not order them.
  *
  * The legacy searchAfrikAll is kept for backward compatibility with existing
  * callers (admin pages, legacy API routes that have not yet been migrated).
@@ -17,35 +19,40 @@ import {
 import { searchAfrikLanguageFamilies } from "./languageFamilies";
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { normalizeString } from "@/lib/normalize";
 import type {
   SearchFilters,
   SearchResult,
   FtsSearchParams,
   FtsSearchResponse,
-  People,
-  Country,
+  LanguageFamily,
+  RankedCountry,
+  RankedLanguageFamily,
+  RankedPeople,
 } from "@/types/afrik";
 
-// @req REQ-002
 /**
- * Search across the three atlas entities using websearch_to_tsquery('french').
+ * Ranked search across the three atlas entities.
  *
- * Peoples and countries carry a GENERATED STORED tsvector `search_vector`
- * column (migration 025). Supabase textSearch({ type: "websearch", config:
- * "french" }) compiles to `search_vector @@ websearch_to_tsquery('french', q)`.
+ * Ordering happens in Postgres, in the same statement as the LIMIT, because
+ * that is the only place it can be correct. This function used to page in SQL
+ * and then sort the page in JavaScript by confidence score, which meant the
+ * order was per-page, the reported total was the page size, and no lexical
+ * relevance was computed at all — the route swagger described a ts_rank_cd
+ * ranking that nothing executed. Migrations 043/044 moved both the weighting
+ * and the ranking into the database; this layer now only shapes the rows.
  *
- * Language families have no tsvector column and are matched by the existing
- * ilike query instead. At two dozen rows the ranking a tsvector would buy is
- * worth less than the migration it would cost, and the search surface offers a
- * Familles tab that must answer something.
+ * Language families keep the ilike query: they have no tsvector, and at two
+ * dozen rows a match tier computed here is smaller than the migration an
+ * index would cost. Their `relevance` is a tier, so it is comparable between
+ * families and not with the other two kinds — `exactMatch` is what callers
+ * sort on across kinds.
  *
- * Optional filters:
- * - classificationStatus: filter peoples by epistemic status column
- * - minConfidence / sinceVerifiedAfter: filter via confidence_scores join
- *
- * Results are ordered by confidence score (descending) as the confidence boost;
- * entities with no confidence record sort last.
+ * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
+ * not a search: peoples are listed for that scope, and countries and families
+ * are not queried, because nothing was asked of them.
  */
+// @req REQ-002
 export async function ftsSearchEntities(
   params: FtsSearchParams
 ): Promise<FtsSearchResponse> {
@@ -56,149 +63,144 @@ export async function ftsSearchEntities(
     classificationStatus,
     minConfidence,
     sinceVerifiedAfter,
+    familyId,
+    countryId,
   } = params;
 
   const supabase = createServerClient();
+  const text = q?.trim() ?? "";
 
-  // ── confidence pre-filter ─────────────────────────────────────────────────
-  // If minConfidence or sinceVerifiedAfter is requested, resolve the qualifying
-  // entity IDs upfront from confidence_scores to avoid a costly post-filter.
-  let qualifyingPeopleIds: Set<string> | null = null;
+  const [peopleResult, countryResult, familyRows] = await Promise.all([
+    supabase.rpc("afrik_search_peoples", {
+      p_q: text || null,
+      p_limit: limit,
+      p_offset: offset,
+      p_classification_status: classificationStatus ?? null,
+      p_min_confidence: minConfidence ?? null,
+      p_since_verified_after: sinceVerifiedAfter ?? null,
+      p_family_id: familyId ?? null,
+      p_country_id: countryId ?? null,
+    }),
+    text
+      ? supabase.rpc("afrik_search_countries", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text ? searchAfrikLanguageFamilies(text) : Promise.resolve([]),
+  ]);
 
-  if (minConfidence !== undefined || sinceVerifiedAfter !== undefined) {
-    let csQuery = supabase
-      .from("confidence_scores")
-      .select("entity_type, entity_id")
-      .eq("entity_type", "people");
-
-    if (minConfidence !== undefined) {
-      csQuery = csQuery.gte("score", minConfidence);
-    }
-    if (sinceVerifiedAfter !== undefined) {
-      csQuery = csQuery.gte("last_human_audit_at", sinceVerifiedAfter);
-    }
-
-    const { data: csRows, error: csError } = await csQuery;
-    if (csError) {
-      logger.error("Error querying confidence_scores for FTS filter", csError);
-      throw csError;
-    }
-    qualifyingPeopleIds = new Set(
-      (csRows || []).map((r: Record<string, string>) => r.entity_id)
-    );
+  if (peopleResult.error) {
+    logger.error("Error in ranked peoples search", peopleResult.error);
+    throw peopleResult.error;
+  }
+  if (countryResult.error) {
+    logger.error("Error in ranked countries search", countryResult.error);
+    throw countryResult.error;
   }
 
-  // ── peoples FTS query ─────────────────────────────────────────────────────
-  let peopleQuery = supabase
-    .from("afrik_peoples")
-    .select("*")
-    .textSearch("search_vector", q, { type: "websearch", config: "french" });
+  const peoplePayload = asRankedPayload(peopleResult.data);
+  const countryPayload = asRankedPayload(countryResult.data);
 
-  if (classificationStatus) {
-    peopleQuery = peopleQuery.eq("classification_status", classificationStatus);
-  }
-  if (qualifyingPeopleIds !== null) {
-    peopleQuery = peopleQuery.in("id", [...qualifyingPeopleIds]);
-  }
+  const peoples = peoplePayload.rows.map(toRankedPeople);
+  const countries = countryPayload.rows.map(toRankedCountry);
+  const families = rankLanguageFamilies(familyRows, text);
 
-  peopleQuery = peopleQuery
-    .range(offset, offset + limit - 1)
-    .order("name_main");
+  return {
+    peoples,
+    countries,
+    families,
+    peoplesTotal: peoplePayload.total,
+    countriesTotal: countryPayload.total,
+    familiesTotal: families.length,
+    total: peoplePayload.total + countryPayload.total + families.length,
+  };
+}
 
-  const { data: peopleRows, error: peopleError } = await peopleQuery;
-  if (peopleError) {
-    logger.error("Error in FTS peoples search", peopleError);
-    throw peopleError;
-  }
+interface RankedPayload {
+  total: number;
+  rows: Record<string, unknown>[];
+}
 
-  // ── countries FTS query ───────────────────────────────────────────────────
-  // Country-level confidence filtering is not supported in this release
-  // (confidence_scores only covers entity_type='people' per migration 014).
-  const { data: countryRows, error: countryError } = await supabase
-    .from("afrik_countries")
-    .select("*")
-    .textSearch("search_vector", q, { type: "websearch", config: "french" })
-    .range(offset, offset + limit - 1)
-    .order("name_fr");
+const EMPTY_RANKED_PAYLOAD: RankedPayload = { total: 0, rows: [] };
 
-  if (countryError) {
-    logger.error("Error in FTS countries search", countryError);
-    throw countryError;
-  }
+function asRankedPayload(data: unknown): RankedPayload {
+  const payload = data as Partial<RankedPayload> | null;
+  return {
+    total: typeof payload?.total === "number" ? payload.total : 0,
+    rows: Array.isArray(payload?.rows) ? payload.rows : [],
+  };
+}
 
-  // ── fetch country relations for peoples ───────────────────────────────────
-  const peopleIds = (peopleRows || []).map((r: Record<string, string>) => r.id);
-  const relationsMap = new Map<string, string[]>();
-  if (peopleIds.length > 0) {
-    const { data: relations } = await supabase
-      .from("afrik_people_countries")
-      .select("people_id, country_id")
-      .in("people_id", peopleIds);
+function toDate(value: unknown): Date | undefined {
+  return value ? new Date(value as string) : undefined;
+}
 
-    for (const rel of relations || []) {
-      const existing = relationsMap.get(rel.people_id) || [];
-      existing.push(rel.country_id);
-      relationsMap.set(rel.people_id, existing);
-    }
-  }
+function toRankedPeople(row: Record<string, unknown>): RankedPeople {
+  return {
+    id: row.id as string,
+    nameMain: row.nameMain as string,
+    languageFamilyId: row.languageFamilyId as string,
+    languageFamilyName: (row.languageFamilyName as string) ?? null,
+    currentCountries: (row.currentCountries as string[]) ?? [],
+    classificationStatus:
+      (row.classificationStatus as RankedPeople["classificationStatus"]) ??
+      null,
+    content: (row.content as Record<string, unknown>) || {},
+    confidence: typeof row.confidence === "number" ? row.confidence : null,
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
+    createdAt: toDate(row.createdAt),
+    updatedAt: toDate(row.updatedAt),
+  };
+}
 
-  // ── fetch confidence scores for ordering ─────────────────────────────────
-  const confidenceMap = new Map<string, number>();
-  if (peopleIds.length > 0) {
-    const { data: scores } = await supabase
-      .from("confidence_scores")
-      .select("entity_id, score")
-      .eq("entity_type", "people")
-      .in("entity_id", peopleIds);
+function toRankedCountry(row: Record<string, unknown>): RankedCountry {
+  return {
+    id: row.id as string,
+    nameFr: row.nameFr as string,
+    etymology: (row.etymology as string) || undefined,
+    nameOriginActor: (row.nameOriginActor as string) || undefined,
+    content: (row.content as Record<string, unknown>) || {},
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
+    createdAt: toDate(row.createdAt),
+    updatedAt: toDate(row.updatedAt),
+  };
+}
 
-    for (const row of scores || []) {
-      if (row.score !== null) confidenceMap.set(row.entity_id, row.score);
-    }
-  }
+/** Exact name, then prefix, then anywhere. Accents and case are folded away. */
+const FAMILY_TIER_EXACT = 1;
+const FAMILY_TIER_PREFIX = 0.6;
+const FAMILY_TIER_SUBSTRING = 0.3;
 
-  // ── map rows to domain objects ────────────────────────────────────────────
-  const peoples: People[] = (peopleRows || [])
-    .map((row: Record<string, unknown>) => ({
-      id: row.id as string,
-      nameMain: row.name_main as string,
-      languageFamilyId: row.language_family_id as string,
-      currentCountries: relationsMap.get(row.id as string) || [],
-      classificationStatus:
-        (row.classification_status as People["classificationStatus"]) ?? null,
-      content: (row.content as Record<string, unknown>) || {},
-      createdAt: row.created_at
-        ? new Date(row.created_at as string)
-        : undefined,
-      updatedAt: row.updated_at
-        ? new Date(row.updated_at as string)
-        : undefined,
-    }))
-    // Sort by confidence score descending (confidence boost); unknowns go last
-    .sort(
-      (a: People, b: People) =>
-        (confidenceMap.get(b.id) ?? -1) - (confidenceMap.get(a.id) ?? -1)
-    );
+function rankLanguageFamilies(
+  families: LanguageFamily[],
+  query: string
+): RankedLanguageFamily[] {
+  const wanted = normalizeString(query);
+  if (!wanted) return [];
 
-  const countries: Country[] = (countryRows || []).map(
-    (row: Record<string, unknown>) => ({
-      id: row.id as string,
-      nameFr: row.name_fr as string,
-      etymology: (row.etymology as string) || undefined,
-      nameOriginActor: (row.name_origin_actor as string) || undefined,
-      content: (row.content as Record<string, unknown>) || {},
-      createdAt: row.created_at
-        ? new Date(row.created_at as string)
-        : undefined,
-      updatedAt: row.updated_at
-        ? new Date(row.updated_at as string)
-        : undefined,
+  return families
+    .map((family) => {
+      const name = normalizeString(family.nameFr);
+      const exactMatch = name === wanted;
+      const relevance = exactMatch
+        ? FAMILY_TIER_EXACT
+        : name.startsWith(wanted)
+          ? FAMILY_TIER_PREFIX
+          : FAMILY_TIER_SUBSTRING;
+      return { ...family, relevance, exactMatch };
     })
-  );
-
-  const families = await searchAfrikLanguageFamilies(q);
-
-  const total = peoples.length + countries.length + families.length;
-  return { peoples, countries, families, total };
+    .sort(
+      (a, b) =>
+        Number(b.exactMatch) - Number(a.exactMatch) ||
+        b.relevance - a.relevance ||
+        a.nameFr.localeCompare(b.nameFr, "fr")
+    );
 }
 
 // @req REQ-002

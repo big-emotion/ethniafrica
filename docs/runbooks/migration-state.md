@@ -1,6 +1,6 @@
 # Runbook — Supabase migration state
 
-**Last verified:** 2026-08-26 (live read via the Supabase MCP `list_migrations`)
+**Last verified:** 2026-08-28 (live read of `supabase_migrations.schema_migrations`)
 **Applies to:** every file under `supabase/migrations/`
 
 There are two Supabase projects, and both look like "production" for a structural reason: **a
@@ -141,9 +141,16 @@ repository's credentials cannot reach that project.
 | `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`  | unknown          |
 | `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`  | unknown          |
 | `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`  | unknown          |
-| `040_assertion_references_rls.sql`            | **not applied**                            | unknown          |
-| `041_one_source_tier_vocabulary.sql`          | **not applied**                            | unknown          |
-| `042_migration_ledger_introspection.sql`      | **not applied**                            | unknown          |
+| `040_assertion_references_rls.sql`            | applied (`040`)                            | unknown          |
+| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                            | unknown          |
+| `042_migration_ledger_introspection.sql`      | applied (`042`)                            | unknown          |
+| `043_afrik_search_vector_weights.sql`         | applied — ledger version `20260828165455`  | unknown          |
+| `044_afrik_ranked_search.sql`                 | applied — ledger version `20260828165554`  | unknown          |
+
+> **Correction, 2026-08-28.** This table listed `040`, `041` and `042` as not applied. A direct
+> read of the recette ledger shows all three present under their own numeric versions. The prose
+> below was written before they were applied and was never revised — when the two disagree, the
+> ledger is the fact and this document is the claim.
 
 `040` enables row-level security on `assertion_references`, which `031` created with no RLS, no
 policy and no grants — leaving it writable by anyone holding the anon key that ships in the

@@ -3,9 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
@@ -14,35 +12,25 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
-import { cn } from "@/lib/utils";
 import { Language } from "@/types/shared";
-import { getTranslation } from "@/lib/translations";
 import { search } from "@/lib/afrikLoader";
-import {
-  getSearchEntityLabel,
-  SearchEntityMark,
-} from "@/components/search/searchEntityAccent";
+import { SearchResultCard } from "@/components/search/SearchResultCard";
 import type { SearchResult, SearchEntityType } from "@/types/afrik-frontend";
 
+// Selecting a result no longer travels back up to the host: each card is a
+// link and navigates on its own, so the modal only needs to close itself.
 interface SearchModalV2Props {
   open: boolean;
   onClose: () => void;
   language: Language;
-  onResultSelect: (result: {
-    type: SearchEntityType;
-    id: string;
-    name: string;
-  }) => void;
 }
 
+// @req REQ-091
 export const SearchModalV2 = ({
   open,
   onClose,
   language,
-  onResultSelect,
 }: SearchModalV2Props) => {
-  const t = getTranslation(language);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<SearchEntityType | "all">("all");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -80,20 +68,6 @@ export const SearchModalV2 = ({
     const debounce = setTimeout(searchData, 300);
     return () => clearTimeout(debounce);
   }, [searchQuery, activeTab]);
-
-  const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
-  };
-
-  const handleResultClick = (result: SearchResult) => {
-    onResultSelect({
-      type: result.type,
-      id: result.id,
-      name: result.name,
-    });
-    onClose();
-    setSearchQuery("");
-  };
 
   const getTabLabels = () => {
     return {
@@ -207,38 +181,12 @@ export const SearchModalV2 = ({
           ) : (
             <div className="space-y-2" data-testid="search-results-list">
               {results.map((result, index) => (
-                <Card
+                <SearchResultCard
                   key={`${result.type}-${result.id}-${index}`}
-                  className={cn("p-4 cursor-pointer", CHARTER_HOVER_LIFT)}
-                  onClick={() => handleResultClick(result)}
-                >
-                  <h3 className="font-semibold text-base mb-1">
-                    {result.name}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="flex items-center gap-1.5">
-                      <SearchEntityMark type={result.type} />
-                      <Badge variant="secondary" className="text-xs">
-                        {getSearchEntityLabel(result.type)}
-                      </Badge>
-                    </span>
-                    {result.languageFamilyName && (
-                      <Badge variant="outline" className="text-xs">
-                        {result.languageFamilyName}
-                      </Badge>
-                    )}
-                  </div>
-                  {result.snippet && (
-                    <p className="text-sm text-afh-text-soft line-clamp-2">
-                      {result.snippet}
-                    </p>
-                  )}
-                  {result.population !== undefined && (
-                    <p className="text-sm text-afh-text-soft mt-1">
-                      {t.population}: {formatNumber(result.population)}
-                    </p>
-                  )}
-                </Card>
+                  result={result}
+                  language={language}
+                  onNavigate={onClose}
+                />
               ))}
             </div>
           )}

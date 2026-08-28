@@ -2,8 +2,10 @@ import { describe, it, expect } from "vitest";
 
 import {
   buildSearchParams,
+  compareByRelevance,
   mapSearchEnvelope,
 } from "@/lib/search/searchEnvelope";
+import type { SearchResult } from "@/types/afrik-frontend";
 
 describe("buildSearchParams", () => {
   // @req REQ-002
@@ -98,5 +100,116 @@ describe("mapSearchEnvelope", () => {
     expect(mapSearchEnvelope({ data: [{ id: "PPL_BETE" }] })).toEqual([]);
     expect(mapSearchEnvelope({})).toEqual([]);
     expect(mapSearchEnvelope(null)).toEqual([]);
+  });
+
+  // @req REQ-002
+  it("carries the language-family name the API now resolves", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_BETE",
+            nameMain: "Bété",
+            languageFamilyId: "FLG_KROU",
+            languageFamilyName: "Krou",
+          },
+        ],
+      },
+    });
+
+    expect(people.languageFamilyName).toBe("Krou");
+  });
+
+  // @req REQ-002
+  it("carries relevance, exact-match, classification and confidence", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_BETE",
+            nameMain: "Bété",
+            relevance: 0.81,
+            exactMatch: true,
+            classificationStatus: "contested",
+            confidence: 0.71,
+          },
+        ],
+      },
+    });
+
+    expect(people.relevance).toBe(0.81);
+    expect(people.exactMatch).toBe(true);
+    expect(people.classificationStatus).toBe("contested");
+    expect(people.confidence).toBe(0.71);
+  });
+
+  // @req REQ-002
+  it("prefers the match excerpt over the raw etymology for a country", () => {
+    const [country] = mapSearchEnvelope({
+      data: {
+        countries: [
+          {
+            id: "CIV",
+            nameFr: "Côte d'Ivoire",
+            etymology: "Côte des dents",
+            snippet: "boucle du [[cacao]]",
+          },
+        ],
+      },
+    });
+
+    expect(country.snippet).toBe("boucle du [[cacao]]");
+  });
+});
+
+describe("compareByRelevance", () => {
+  const hit = (over: Partial<SearchResult>): SearchResult => ({
+    type: "people",
+    id: "X",
+    name: "X",
+    ...over,
+  });
+
+  // @req REQ-002
+  it("ranks a country above a people when the country is more relevant", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        peoples: [{ id: "PPL_BETE", nameMain: "Bété", relevance: 0.2 }],
+        countries: [{ id: "CIV", nameFr: "Côte d'Ivoire", relevance: 0.9 }],
+      },
+    });
+
+    // The mapper groups by kind, so the raw order is people-then-country.
+    expect(results.map((r) => r.id)).toEqual(["PPL_BETE", "CIV"]);
+    expect([...results].sort(compareByRelevance).map((r) => r.id)).toEqual([
+      "CIV",
+      "PPL_BETE",
+    ]);
+  });
+
+  // @req REQ-002
+  it("puts an exact match ahead of a more relevant inexact one", () => {
+    const results = [
+      hit({ id: "LOOSE", relevance: 0.9 }),
+      hit({ id: "EXACT", relevance: 0.1, exactMatch: true }),
+    ];
+
+    expect([...results].sort(compareByRelevance).map((r) => r.id)).toEqual([
+      "EXACT",
+      "LOOSE",
+    ]);
+  });
+
+  // @req REQ-002
+  it("keeps the API's order when two results tie", () => {
+    const results = [
+      hit({ id: "FIRST", relevance: 0.5 }),
+      hit({ id: "SECOND", relevance: 0.5 }),
+    ];
+
+    expect([...results].sort(compareByRelevance).map((r) => r.id)).toEqual([
+      "FIRST",
+      "SECOND",
+    ]);
   });
 });
