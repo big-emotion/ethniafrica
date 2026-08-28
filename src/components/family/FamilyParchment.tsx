@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
+import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
@@ -244,10 +245,7 @@ export function FamilyParchment({
           open theirs on "Familles" — the parent carried none of the hierarchy
           its children announced. */}
       <AfrikBreadcrumbs
-        items={[
-          { label: "Familles", href: getLocalizedRoute("fr", "families") },
-          { label: hero.nameFr },
-        ]}
+        items={deriveTrail(getFamilyRoute("fr", hero.id), hero.nameFr)}
       />
 
       <Section

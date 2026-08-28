@@ -1,5 +1,32 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import type { PageType } from "@/lib/routing";
+
+/**
+ * How a trail names each page of the site.
+ *
+ * Typed against `PageType` rather than left open, because the trail's rule is
+ * that it never prints a segment it cannot name: a page type with no label
+ * here would be a page whose trail silently truncates to nothing. The
+ * compiler refusing an incomplete record is what turns that into a build
+ * error instead of a missing crumb.
+ */
+const TRAIL_PAGE_LABELS: Record<PageType, string> = {
+  countries: "Pays",
+  families: "Familles",
+  peoples: "Peuples",
+  search: "Recherche",
+  doctrine: "Doctrine",
+  about: "À propos",
+  names: "Noms",
+  compare: "Comparer",
+  migrations: "Migrations",
+  quiz: "Quiz",
+  colonization: "Colonisation & résistances",
+  explorerHub: "Explorer",
+  comprendreHub: "Comprendre",
+  jouerHub: "Jouer",
+};
 
 // @req REQ-014
 export const translations = {
@@ -336,7 +363,6 @@ export const translations = {
       pageTitle: "Colonisation & résistances",
       pageSubtitle:
         "Fragmentations, frontières héritées, noms imposés, déplacements et résistances documentés peuple par peuple.",
-      breadcrumbLabel: "Colonisation & résistances",
       fragmentation: {
         title: "Peuples fragmentés par les frontières coloniales",
       },
@@ -458,6 +484,23 @@ export const translations = {
       // is missing is information about the corpus; printing a plausible
       // path that 404s would not be (charter §4).
       unresolvedRouteLabel: "route non résolue",
+    },
+    trail: {
+      pages: TRAIL_PAGE_LABELS,
+      /**
+       * Segments that sit below a fiche. A segment absent from this map is
+       * one the trail has no words for, and the trail stops rather than
+       * print the raw path.
+       */
+      segments: {
+        liens: "Liens",
+      } as Record<string, string>,
+      /**
+       * Prefixes the fiche a reader arrived from. Provenance, not ancestry:
+       * a country reached from a people fiche is not a child of that people,
+       * so it is offered as a way back and never as a crumb.
+       */
+      backTo: "Retour à",
     },
   },
 };

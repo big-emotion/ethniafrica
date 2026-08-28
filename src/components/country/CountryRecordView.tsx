@@ -1,4 +1,6 @@
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { backLinkLabel, deriveTrail } from "@/lib/navigation/deriveTrail";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
 import {
@@ -37,7 +39,11 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 export interface CountryRecordViewProps {
   country: CountryDetail;
   hasSourceFlag?: boolean;
-  /** Set when the reader arrived from a people fiche, so the trail says so. */
+  /**
+   * Set when the reader arrived from a people fiche. Provenance, not
+   * ancestry: it buys a way back, never a crumb — the same country reached
+   * from the hub is the same page and gets the same trail.
+   */
   fromPeopleName?: string;
   fromPeopleId?: string;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
@@ -54,22 +60,26 @@ export function CountryRecordView({
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
-  const breadcrumbs = [
-    ...(fromPeopleId
-      ? [
-          { label: "Peuples", href: "/fr/peuples" },
-          {
-            label: fromPeopleName ?? fromPeopleId,
-            href: `/fr/peuples/${fromPeopleId}`,
-          },
-        ]
-      : [{ label: "Pays", href: "/fr/pays" }]),
-    { label: country.nameFr },
-  ];
+  const breadcrumbs = deriveTrail(
+    getCountryRoute("fr", country.id),
+    country.nameFr
+  );
 
   return (
     <div data-testid="country-record-view">
       <AfrikBreadcrumbs items={breadcrumbs} />
+
+      {fromPeopleId && (
+        <p className="px-3 md:px-4 xl:px-5 text-afh-caption">
+          <a
+            href={getPeopleRoute("fr", fromPeopleId)}
+            data-testid="country-back-to-people"
+            className="hover:underline"
+          >
+            ‹ {backLinkLabel(fromPeopleName ?? fromPeopleId)}
+          </a>
+        </p>
+      )}
 
       <CountryParchment
         data={data}
