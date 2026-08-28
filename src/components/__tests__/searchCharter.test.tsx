@@ -21,8 +21,13 @@ const RAW_HEX_OR_RGB = /#[0-9a-fA-F]{3,8}\b|rgba?\(|hsl\(/;
 const LEGACY_RADIUS_CLASS =
   /\brounded(?:-[tlrb][lr]?)?-(?:sm|md|lg|xl|2xl|3xl|none|\[[^\]]+\])(?!\w)/;
 
+// Extracting the result card out of the two surfaces below would have moved
+// its markup out of this guard's sight, so the extracted pieces are named
+// here in the same change that creates them.
 const IN_SCOPE_FILES = [
   "components/search/SearchModalV2.tsx",
+  "components/search/SearchResultCard.tsx",
+  "components/search/SearchSnippet.tsx",
   "components/pages/RecherchePageContent.tsx",
 ];
 

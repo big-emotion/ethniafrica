@@ -58,6 +58,9 @@ export const CHARTER_CONTRACT_EXTRA_FILES = [
   "src/components/fiche/__tests__/FichePanel.test.tsx",
   // Cross-family route matrix contract (ETNI-979/980/981 · FR110).
   "scripts/__tests__/qualityGateRoutes.test.ts",
+  // Shared search result card: entity accent scope and the link contract that
+  // replaced three drifting copies of the same markup.
+  "src/components/search/__tests__/SearchResultCard.test.tsx",
 ] as const;
 
 /**

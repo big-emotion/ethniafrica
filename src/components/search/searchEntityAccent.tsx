@@ -7,28 +7,38 @@ import type { SearchEntityType } from "@/types/afrik-frontend";
 // people/country/language-family accent assignment as the fiche sequence
 // (src/components/fiche/FicheSequence.tsx) so a peuple/pays/famille reads
 // the same accent everywhere in the product.
+// `accentScopeClassName` is the wrapper class from src/styles/tokens/color.css
+// that rebinds --accent / --accent-tint for a subtree. A card that carries it
+// can then read var(--accent) and never name a --afh-cat-* token itself, which
+// is what keeps the accent assignment in this one table.
+// @req REQ-091
 export const SEARCH_ENTITY_ACCENT: Record<
   SearchEntityType,
-  { label: string; markClassName: string }
+  { label: string; markClassName: string; accentScopeClassName: string }
 > = {
   people: {
     label: "Peuple",
     markClassName: "bg-[var(--afh-cat-ocre)]",
+    accentScopeClassName: "afh-accent-ocre",
   },
   country: {
     label: "Pays",
     markClassName: "bg-[var(--afh-cat-teal)]",
+    accentScopeClassName: "afh-accent-teal",
   },
   languageFamily: {
     label: "Famille linguistique",
     markClassName: "bg-[var(--afh-cat-perv)]",
+    accentScopeClassName: "afh-accent-perv",
   },
   language: {
     label: "Langue",
     markClassName: "bg-[var(--afh-cat-terre)]",
+    accentScopeClassName: "afh-accent-terre",
   },
 };
 
+// @req REQ-091
 export function getSearchEntityLabel(type: SearchEntityType): string {
   return SEARCH_ENTITY_ACCENT[type]?.label ?? type;
 }
@@ -40,6 +50,7 @@ interface SearchEntityMarkProps {
 
 // Decorative color mark — the accompanying text label (Badge) carries the
 // meaning, so this is aria-hidden.
+// @req REQ-091
 export function SearchEntityMark({ type, className }: SearchEntityMarkProps) {
   const accent = SEARCH_ENTITY_ACCENT[type];
   return (
