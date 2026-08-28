@@ -15,6 +15,7 @@ vi.mock("@/lib/api/logger", () => ({
 }));
 
 import {
+  CANDIDATE_PAGE_SIZE,
   getPeopleFragmentation,
   listPeopleFragmentations,
   PeopleFragmentationNotFoundError,
@@ -49,6 +50,7 @@ function buildAssertionsQuery(
   const query: FakeQuery = {} as FakeQuery;
   query.select = vi.fn(() => query);
   query.eq = vi.fn(() => query);
+  query.in = vi.fn(() => query);
   query.like = vi.fn(() => Promise.resolve({ data: rows, error }));
   return query;
 }
@@ -73,7 +75,11 @@ function mockTables({
     { id: "TGO", name_fr: "Togo" },
   ],
   assertions = [
-    { id: "aaaaaaaa-1111-1111-1111-111111111111", value: { country: "GHA" } },
+    {
+      id: "aaaaaaaa-1111-1111-1111-111111111111",
+      entity_id: "PPL_EWE",
+      statement: "GHA",
+    },
   ],
 }: {
   people?: Record<string, unknown> | null;
@@ -175,6 +181,34 @@ describe("peopleFragmentation service", () => {
     expect(calledTables.filter((t) => t === "assertions")).toHaveLength(1);
   });
 
+  /**
+   * Migration 015 dropped `assertions.value` in favour of `statement`, and
+   * this service was never moved over: PostgREST answered 42703, the error
+   * was swallowed, and every assertionId came back null. Reading the column
+   * that exists is what makes the sourcing link resolve at all.
+   */
+  // @req REQ-091
+  it("reads the country from the assertion statement, not a dropped value column", async () => {
+    mockTables({
+      assertions: [
+        {
+          id: "bbbbbbbb-2222-2222-2222-222222222222",
+          entity_id: "PPL_EWE",
+          statement: "TGO",
+        },
+      ],
+    });
+
+    const result = await getPeopleFragmentation("PPL_EWE");
+
+    expect(result.countries.find((c) => c.iso3 === "TGO")?.assertionId).toBe(
+      "bbbbbbbb-2222-2222-2222-222222222222"
+    );
+    expect(result.countries.find((c) => c.iso3 === "GHA")?.assertionId).toBe(
+      null
+    );
+  });
+
   // @req REQ-091
   it("throws PeopleFragmentationNotFoundError for an unknown id", async () => {
     mockTables({ people: null });
@@ -255,79 +289,77 @@ describe("peopleFragmentation handler", () => {
 /**
  * Test-first: bulk read backing the /fr/regards/colonisation-et-resistances
  * fragmentation-index section (Epic 13, Story 13.9, ETNI-533).
+ *
+ * The sweep it replaces took an unordered `limit 50` off a table of 803 and
+ * then spent three queries per candidate. Both halves of that are asserted
+ * here: which peoples come back, and how many round trips it took.
  */
 describe("listPeopleFragmentations", () => {
+  /** A candidate row as the sweep's narrowed select returns it. */
+  function candidate(id: string, countries: string[]) {
+    return {
+      id,
+      appellations: { selfAppellation: `${id} autonym`, exonyms: [id] },
+      distribution: countries.map((country, position) => ({
+        country,
+        percentage:
+          position === 0 ? 60 : 40 / Math.max(1, countries.length - 1),
+      })),
+    };
+  }
+
   /**
-   * The `afrik_peoples` table backs two different call chains from the same
-   * mock: the candidate-id sweep (`.select().limit()`) and each per-people
-   * lookup inside `getPeopleFragmentation` (`.select().eq().maybeSingle()`).
-   * One object with both terminal methods, sharing a single `query`
-   * reference, supports either chain regardless of call order.
+   * Serves the given rows through successive `.order().range()` calls, one
+   * page at a time, exactly as PostgREST would — so a suite that never pages
+   * cannot pass a walk that forgot to.
    */
-  function buildAfrikPeoplesQuery(
-    listRows: Array<{ id: string }> | null,
-    listError: { message: string } | null,
-    rowsById: Record<string, Record<string, unknown> | null>
+  function buildSweepQuery(
+    rows: Array<Record<string, unknown>>,
+    error: { message: string } | null = null
   ): FakeQuery {
     const query: FakeQuery = {} as FakeQuery;
-    let currentId: string | undefined;
     query.select = vi.fn(() => query);
-    query.limit = vi.fn(() =>
-      Promise.resolve({ data: listRows, error: listError })
-    );
-    query.eq = vi.fn((_col: unknown, value: unknown) => {
-      currentId = value as string;
-      return query;
-    });
-    query.maybeSingle = vi.fn(() =>
+    query.order = vi.fn(() => query);
+    // Honours the range the service asks for, so a page is only ever short
+    // because the rows ran out — which is the signal the walk terminates on.
+    query.range = vi.fn((start: unknown, end: unknown) =>
       Promise.resolve({
-        data: currentId ? (rowsById[currentId] ?? null) : null,
-        error: null,
+        data: error ? null : rows.slice(start as number, (end as number) + 1),
+        error,
       })
     );
     return query;
   }
 
-  const soloRow = {
-    id: "PPL_SOLO",
-    content: {
-      appellations: {},
-      demography: {
-        distributionByCountry: [{ country: "GHA", population: 1000 }],
-      },
-    },
-  };
-
   function mockListTables({
-    candidateIds = ["PPL_EWE", "PPL_SOLO", "PPL_GHOST"],
+    rows = [
+      candidate("PPL_EWE", ["GHA", "TGO"]),
+      candidate("PPL_SOLO", ["GHA"]),
+      candidate("PPL_WIDE", ["GHA", "TGO", "BEN"]),
+    ],
     error = null,
+    countries = [
+      { id: "GHA", name_fr: "Ghana" },
+      { id: "TGO", name_fr: "Togo" },
+      { id: "BEN", name_fr: "Bénin" },
+    ],
+    assertions = [],
   }: {
-    candidateIds?: string[];
+    rows?: Array<Record<string, unknown>>;
     error?: { message: string } | null;
+    countries?: Array<Record<string, unknown>>;
+    assertions?: Array<Record<string, unknown>>;
   } = {}) {
-    const rowsById: Record<string, Record<string, unknown> | null> = {
-      PPL_EWE: peopleRow,
-      PPL_SOLO: soloRow,
-      PPL_GHOST: null,
-    };
-    const peoplesQuery = buildAfrikPeoplesQuery(
-      candidateIds.map((id) => ({ id })),
-      error,
-      rowsById
-    );
+    const sweep = buildSweepQuery(rows, error);
 
     fromMock.mockImplementation((table: string) => {
-      if (table === "afrik_peoples") return peoplesQuery;
-      if (table === "afrik_countries")
-        return buildCountriesQuery([
-          { id: "GHA", name_fr: "Ghana" },
-          { id: "TGO", name_fr: "Togo" },
-        ]);
-      if (table === "assertions") return buildAssertionsQuery([]);
+      if (table === "afrik_peoples") return sweep;
+      if (table === "afrik_countries") return buildCountriesQuery(countries);
+      if (table === "assertions") return buildAssertionsQuery(assertions);
       throw new Error(`Unexpected table: ${table}`);
     });
 
-    return peoplesQuery;
+    return sweep;
   }
 
   beforeEach(() => {
@@ -340,32 +372,153 @@ describe("listPeopleFragmentations", () => {
 
     const result = await listPeopleFragmentations();
 
-    expect(result).toHaveLength(1);
-    expect(result[0].peopleId).toBe("PPL_EWE");
+    expect(result.map((f) => f.peopleId)).toEqual(["PPL_WIDE", "PPL_EWE"]);
+  });
+
+  /**
+   * The defect: an unordered `limit 50` over 803 peoples, roughly half of
+   * which span one country, returned whichever ~19 fragmented peoples the
+   * planner happened to hand back. A fragmented people sitting past the
+   * limit-th row was simply never seen.
+   */
+  // @req REQ-091 FR90
+  it("finds a fragmented people that sits past the requested count", async () => {
+    mockListTables({
+      rows: [
+        candidate("PPL_A", ["GHA"]),
+        candidate("PPL_B", ["GHA"]),
+        candidate("PPL_C", ["GHA", "TGO"]),
+      ],
+    });
+
+    const result = await listPeopleFragmentations(1);
+
+    expect(result.map((f) => f.peopleId)).toEqual(["PPL_C"]);
+  });
+
+  // An index *of* fragmentation is ordered by fragmentation; ties break on
+  // id so two renders of one corpus agree.
+  // @req REQ-091 FR90
+  it("ranks the most fragmented first and breaks ties on id", async () => {
+    mockListTables({
+      rows: [
+        candidate("PPL_ZED", ["GHA", "TGO"]),
+        candidate("PPL_ABLE", ["GHA", "TGO"]),
+        candidate("PPL_WIDE", ["GHA", "TGO", "BEN"]),
+      ],
+    });
+
+    const result = await listPeopleFragmentations();
+
+    expect(result.map((f) => f.peopleId)).toEqual([
+      "PPL_WIDE",
+      "PPL_ABLE",
+      "PPL_ZED",
+    ]);
   });
 
   // @req REQ-091 FR90
-  it("skips candidates below the country threshold and unknown ids without throwing", async () => {
+  it("caps the number of fragmentations it returns", async () => {
     mockListTables();
 
-    await expect(listPeopleFragmentations()).resolves.not.toThrow();
+    const result = await listPeopleFragmentations(1);
+
+    expect(result).toHaveLength(1);
+  });
+
+  /**
+   * The performance defect, stated as a count: the old sweep spent three
+   * queries per candidate (people row, countries, assertions). Nothing about
+   * the number of candidates may move the number of round trips.
+   */
+  // @req REQ-091 FR90
+  it("costs the same number of queries whatever the corpus size", async () => {
+    mockListTables({
+      rows: Array.from({ length: 40 }, (_unused, index) =>
+        candidate(`PPL_${String(index).padStart(3, "0")}`, ["GHA", "TGO"])
+      ),
+    });
+
+    await listPeopleFragmentations();
+
+    const calledTables = fromMock.mock.calls.map((call) => call[0]);
+    expect(calledTables.filter((t) => t === "afrik_peoples")).toHaveLength(1);
+    expect(calledTables.filter((t) => t === "afrik_countries")).toHaveLength(1);
+    expect(calledTables.filter((t) => t === "assertions")).toHaveLength(1);
+  });
+
+  /**
+   * An unranged select is truncated server-side at 1000 rows without saying
+   * so, which would silently drop the tail of a growing corpus.
+   */
+  // @req REQ-091 FR90
+  it("pages the sweep rather than trusting one unranged select", async () => {
+    // One full page plus one row: a corpus that ends exactly on a page
+    // boundary would let a single-shot read pass by luck.
+    const rows = Array.from({ length: CANDIDATE_PAGE_SIZE + 1 }, (_u, index) =>
+      candidate(`PPL_${String(index).padStart(4, "0")}`, ["GHA", "TGO"])
+    );
+    const sweep = mockListTables({ rows });
+
+    const result = await listPeopleFragmentations(CANDIDATE_PAGE_SIZE + 1);
+
+    expect(sweep.order).toHaveBeenCalledWith("id", { ascending: true });
+    expect(sweep.range.mock.calls.length).toBe(2);
+    // The row past the first page is in the result, not silently dropped.
+    expect(result).toHaveLength(CANDIDATE_PAGE_SIZE + 1);
+    expect(result.map((f) => f.peopleId)).toContain(
+      `PPL_${String(CANDIDATE_PAGE_SIZE).padStart(4, "0")}`
+    );
   });
 
   // @req REQ-091 FR90
-  it("passes the limit through to the candidate-id query", async () => {
-    const peoplesQuery = mockListTables({ candidateIds: ["PPL_EWE"] });
+  it("resolves country names and assertion ids for every people in one pass", async () => {
+    mockListTables({
+      rows: [
+        candidate("PPL_EWE", ["GHA", "TGO"]),
+        candidate("PPL_OTHER", ["GHA", "BEN"]),
+      ],
+      assertions: [
+        {
+          id: "aaaaaaaa-1111-1111-1111-111111111111",
+          entity_id: "PPL_OTHER",
+          statement: "BEN",
+        },
+      ],
+    });
 
-    await listPeopleFragmentations(10);
+    const result = await listPeopleFragmentations();
+    const other = result.find((f) => f.peopleId === "PPL_OTHER");
+    const ewe = result.find((f) => f.peopleId === "PPL_EWE");
 
-    expect(peoplesQuery.limit).toHaveBeenCalledWith(10);
+    expect(other?.countries.map((c) => c.nameFr)).toEqual(["Ghana", "Bénin"]);
+    expect(other?.countries.find((c) => c.iso3 === "BEN")?.assertionId).toBe(
+      "aaaaaaaa-1111-1111-1111-111111111111"
+    );
+    // One people's assertion never leaks onto another's country.
+    expect(ewe?.countries.every((c) => c.assertionId === null)).toBe(true);
   });
 
   // @req REQ-091 FR90
-  it("returns an empty array when the candidate-id query errors", async () => {
+  it("returns an empty array when the sweep errors", async () => {
     mockListTables({ error: { message: "boom" } });
 
     const result = await listPeopleFragmentations();
 
     expect(result).toEqual([]);
+  });
+
+  // Nothing fragmented means nothing to look up: no country or assertion
+  // query is worth issuing for an empty page.
+  // @req REQ-091 FR90
+  it("issues no follow-up query when no people is fragmented", async () => {
+    mockListTables({ rows: [candidate("PPL_SOLO", ["GHA"])] });
+
+    const result = await listPeopleFragmentations();
+
+    expect(result).toEqual([]);
+    const calledTables = fromMock.mock.calls.map((call) => call[0]);
+    expect(calledTables).not.toContain("afrik_countries");
+    expect(calledTables).not.toContain("assertions");
   });
 });
