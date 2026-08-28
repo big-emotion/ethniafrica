@@ -1,4 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
@@ -43,13 +44,11 @@ describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
   });
 
   // @req REQ-112
-  it("never renders empty, even while the capability check is settling", () => {
-    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-      {} as unknown as RenderingContext
-    );
+  it("serves a stage that holds its box open but paints no flat map, so the first frame cannot flash one", () => {
+    const serverHtml = renderToStaticMarkup(<HomeGlobeStage />);
 
-    const { container } = render(<HomeGlobeStage />);
-    expect(container.firstElementChild).not.toBeNull();
+    expect(serverHtml).toContain("home-globe-stage");
+    expect(serverHtml).not.toContain("africa-landmass");
   });
 
   // @req REQ-115
@@ -76,13 +75,20 @@ describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
   });
 
   // @req REQ-115
-  it("renders the SSR-safe fallback first, inside the stage container (ARCH-014/REQ-112 unchanged)", () => {
-    const { container } = render(<HomeGlobeStage />);
-    const stage = container.querySelector(".home-globe-stage");
+  it("never paints the flat map on a browser that supports WebGL, at any point of the mount", async () => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
 
-    expect(stage).not.toBeNull();
-    expect(stage?.firstElementChild).not.toBeNull();
-    expect(stage?.querySelector("path#africa-landmass")).toBeInTheDocument();
+    const { container } = render(<HomeGlobeStage />);
+
+    expect(container.querySelector(".home-globe-stage")).not.toBeNull();
+    expect(document.querySelector("path#africa-landmass")).toBeNull();
+
+    await waitFor(() =>
+      expect(screen.getByTestId("home-globe-mock")).toBeInTheDocument()
+    );
+    expect(document.querySelector("path#africa-landmass")).toBeNull();
   });
 });
 
