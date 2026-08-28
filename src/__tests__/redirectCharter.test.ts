@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -110,6 +112,55 @@ describe("no target re-enters either table", () => {
       const route = getLocalizedRoute("fr", page);
       expect(path(route), route).toBeNull();
     }
+  });
+});
+
+describe("every target is a route the app actually serves", () => {
+  /**
+   * The half of "no dead redirect" that no amount of reading the table can
+   * establish: whether anything answers at the other end.
+   *
+   * This is not hypothetical. The families directory lived in the
+   * `[lang]/[section]` catch-all rather than in a page of its own, so deleting
+   * that route removed it — while the table above went on pointing at
+   * `/fr/explorer/familles`. Every suite stayed green, because a redirect test
+   * proves where a request is sent, never that the destination exists.
+   */
+  /**
+   * `regards` is a container, not a page: it holds one article and has never
+   * answered anything itself, before the move or after. It is in the table so
+   * that `/fr/regards/colonisation-et-resistances` keeps resolving — the tail
+   * is the whole point of the entry, and the bare root 404s either way.
+   */
+  const CONTAINER_ONLY = new Set(["comprendre/regards"]);
+
+  // @req REQ-091
+  it("has a page file behind every relocation target", () => {
+    for (const destination of new Set(Object.values(RELOCATED_SEGMENTS))) {
+      if (CONTAINER_ONLY.has(destination)) continue;
+
+      const route = resolve(
+        __dirname,
+        "../app/[lang]",
+        destination,
+        "page.tsx"
+      );
+      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+    }
+  });
+
+  // @req REQ-091
+  it("still lands the article below the one container segment", () => {
+    expect(
+      existsSync(
+        resolve(
+          __dirname,
+          "../app/[lang]",
+          `${getLocalizedRoute("fr", "colonization").replace("/fr/", "")}`,
+          "page.tsx"
+        )
+      )
+    ).toBe(true);
   });
 });
 
