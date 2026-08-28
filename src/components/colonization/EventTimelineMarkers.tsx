@@ -58,6 +58,7 @@ function markerPosition(
 }
 
 // @req FR87
+// @req REQ-101
 export function EventTimelineMarkers({
   events,
   bounds,
@@ -87,9 +88,11 @@ export function EventTimelineMarkers({
   return (
     <div className={className}>
       <fieldset className="flex flex-wrap gap-3">
-        <legend className="text-sm font-semibold">{t.filterLegend}</legend>
+        <legend className="text-afh-small font-semibold">
+          {t.filterLegend}
+        </legend>
         {COLONIAL_EVENT_TYPES.map((type) => (
-          <label key={type} className="flex items-center gap-1 text-sm">
+          <label key={type} className="flex items-center gap-1 text-afh-small">
             <input
               type="checkbox"
               checked={activeTypes.has(type)}
@@ -143,20 +146,20 @@ export function EventTimelineMarkers({
           >
             {openEvent.nameMain}
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             {formatYearFr(openEvent.timeRange.startYear)}
             {openEvent.timeRange.endYear !== openEvent.timeRange.startYear &&
               ` – ${formatYearFr(openEvent.timeRange.endYear)}`}
           </p>
           {openEvent.peoples.length > 0 && (
-            <p className="text-sm">{peopleLabel(openEvent)}</p>
+            <p className="text-afh-small">{peopleLabel(openEvent)}</p>
           )}
           {openEvent.primarySource && (
             <a
               href={openEvent.primarySource.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm underline"
+              className="text-afh-small underline"
             >
               {openEvent.primarySource.title}
             </a>
@@ -164,7 +167,7 @@ export function EventTimelineMarkers({
           <button
             type="button"
             onClick={() => setOpenEventId(null)}
-            className="mt-2 text-sm underline"
+            className="mt-2 text-afh-small underline"
           >
             {t.closeEventCard}
           </button>

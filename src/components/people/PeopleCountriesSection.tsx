@@ -8,6 +8,7 @@ interface PeopleCountriesSectionProps {
   fromPeopleName?: string;
 }
 
+// @req REQ-115
 export function PeopleCountriesSection({
   data,
   fromPeopleId,
@@ -28,7 +29,7 @@ export function PeopleCountriesSection({
       {/* Summary row */}
       <div className="flex items-baseline gap-[6px] mb-[14px]">
         <span
-          className="text-[28px] md:text-[32px] font-black leading-none tracking-tight"
+          className="text-afh-h1 font-black leading-none tracking-tight"
           style={{
             fontFamily: "var(--country-font-display)",
             color: "var(--country-text)",
@@ -36,7 +37,7 @@ export function PeopleCountriesSection({
         >
           {data.totalPopulationFormatted}
         </span>
-        <span className="text-[12px] text-[color:var(--country-text-soft)]">
+        <span className="text-afh-caption text-[color:var(--country-text-soft)]">
           habitants
           {data.referenceYear && <> · {data.referenceYear}</>}
         </span>
@@ -48,7 +49,7 @@ export function PeopleCountriesSection({
           <div key={i} className="flex items-center gap-[10px]">
             <Link
               href={countryHref(row.country)}
-              className="text-[12px] font-bold font-mono w-[40px] shrink-0 hover:underline"
+              className="text-afh-caption font-bold font-mono w-[40px] shrink-0 hover:underline"
               style={{ color: "var(--country-terracotta)" }}
             >
               {row.country}
@@ -70,14 +71,14 @@ export function PeopleCountriesSection({
 
             <div className="flex items-center gap-[6px] shrink-0">
               <span
-                className="text-[12px] font-semibold"
+                className="text-afh-caption font-semibold"
                 style={{ color: "var(--country-text)" }}
               >
                 {row.percentage != null ? `${row.percentage}%` : "—"}
               </span>
               {row.populationFormatted && (
                 <span
-                  className="text-[11px]"
+                  className="text-afh-caption"
                   style={{ color: "var(--country-text-soft)" }}
                 >
                   {row.populationFormatted}
@@ -90,7 +91,7 @@ export function PeopleCountriesSection({
 
       {data.source && (
         <p
-          className="text-[10px] mt-[10px]"
+          className="text-afh-eyebrow mt-[10px]"
           style={{ color: "var(--country-text-soft)" }}
         >
           Source : {data.source}

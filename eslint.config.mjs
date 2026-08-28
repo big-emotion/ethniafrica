@@ -76,9 +76,13 @@ const eslintConfig = [
   // its own implementation necessarily paints the name fields directly.
   // ===========================================================================
   {
-    files: ["src/components/people/**/*.{ts,tsx,js,jsx}"],
+    files: [
+      "src/components/people/**/*.{ts,tsx,js,jsx}",
+      "src/components/country/**/*.{ts,tsx,js,jsx}",
+    ],
     ignores: [
       "src/components/ui/AutonymExonymHeading.tsx",
+      "src/components/country/AutonymExonymHeading.tsx",
       "**/*.stories.*",
       "**/*.test.*",
       "**/__tests__/**",
@@ -119,13 +123,7 @@ const eslintConfig = [
 
       // --- lot 4 · country/ (78) ---------------------------------------
       // --- lot 5 · source-transparency/ (3) ----------------------------
-      "src/components/source-transparency/DoctrineLinkCard.tsx", // 2
-      "src/components/source-transparency/SourceChainSheet.tsx", // 1
       // --- lot 6 · people/, migrations/ (14) ---------------------------
-      "src/components/people/PeopleCountriesSection.tsx", // 7
-      "src/components/people/PeopleDetailViewV2.tsx", // 3
-      "src/components/people/PeopleRelatedPeoplesSection.tsx", // 3
-      "src/components/migrations/MigrationPathLayer.tsx", // 1
       // --- lot 7 · relations/, hubs/ (11) ------------------------------
       "src/components/relations/EgoNetworkGraph.tsx", // 4
       "src/components/hubs/ComprendreQuestionSpine.tsx", // 4 css

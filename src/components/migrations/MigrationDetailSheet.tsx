@@ -167,7 +167,7 @@ export function MigrationDetailSheet({
         </SheetDescription>
 
         <div className="flex items-start justify-between gap-2 flex-wrap">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             {formatPeriod(event.timeRange)}
           </p>
           <ClassificationBadge status={event.classificationStatus} />
@@ -205,7 +205,7 @@ export function MigrationDetailSheet({
                   type="button"
                   data-testid={`migration-source-chip-${source.id}`}
                   onClick={() => setSourceSheetOpen(true)}
-                  className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="rounded-full border border-border px-3 py-1 text-afh-caption font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   {source.title}
                 </button>

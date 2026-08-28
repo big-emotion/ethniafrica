@@ -59,11 +59,11 @@ export function OralNarrativesSection({
       <div>
         <h2
           id="oral-narratives-title"
-          className="text-base font-bold text-[var(--country-text)] md:text-lg"
+          className="text-afh-small font-bold text-[var(--country-text)]"
         >
           Voix &amp; récits
         </h2>
-        <p className="mt-1 text-sm text-[var(--country-text-soft)]">
+        <p className="mt-1 text-afh-small text-[var(--country-text-soft)]">
           Des récits attribués, présentés sans les confondre avec des faits
           historiques établis.
         </p>
@@ -74,18 +74,18 @@ export function OralNarrativesSection({
             key={narrative.id}
             className="rounded-[var(--country-radius-md)] border border-[var(--country-border)] p-3 md:p-4"
           >
-            <p className="text-sm font-semibold text-[var(--country-text)]">
+            <p className="text-afh-small font-semibold text-[var(--country-text)]">
               {narrative.narratorDisplayName
                 ? `Récit attribué à ${narrative.narratorDisplayName}.`
                 : "Récit attribué à une personne ayant choisi de rester anonyme."}
             </p>
-            <p className="mt-1 text-xs text-[var(--country-text-soft)]">
+            <p className="mt-1 text-afh-caption text-[var(--country-text-soft)]">
               {narrative.community} · {narrative.languageCode} ·{" "}
               {narrative.narrativeKind}
               {narrative.variantOf ? " · Variante liée" : ""}
             </p>
             {narrative.summary && (
-              <p className="mt-3 text-sm leading-6 text-[var(--country-text)]">
+              <p className="mt-3 text-afh-small leading-6 text-[var(--country-text)]">
                 {narrative.summary}
               </p>
             )}
