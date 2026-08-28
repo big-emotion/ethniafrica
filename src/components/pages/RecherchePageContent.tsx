@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -17,10 +16,7 @@ import {
 } from "@/components/ui/select";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
-import {
-  getSearchEntityLabel,
-  SearchEntityMark,
-} from "@/components/search/searchEntityAccent";
+import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
@@ -30,7 +26,7 @@ import {
   mapSearchEnvelope,
 } from "@/lib/search/searchEnvelope";
 import type { ClassificationStatus } from "@/types/afrik";
-import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
+import type { SearchResult } from "@/types/afrik-frontend";
 
 // ── constants ─────────────────────────────────────────────────────────────────
 
@@ -285,9 +281,14 @@ export function RecherchePageContent() {
 
   const hasActiveFilters = !!(classificationStatus || minConfidence || region);
 
+  // A region narrows *peoples* by where they live. Only peoples carry
+  // countryIds, so testing every result against it silently dropped every
+  // country and language-family hit the moment a region was picked.
   const filteredResults = region
-    ? results.filter((r) =>
-        r.countryIds?.some((id) => REGIONS[region]?.countries.includes(id))
+    ? results.filter(
+        (r) =>
+          r.type !== "people" ||
+          r.countryIds?.some((id) => REGIONS[region]?.countries.includes(id))
       )
     : results;
 
@@ -313,9 +314,6 @@ export function RecherchePageContent() {
     ? (CONFIDENCE_OPTIONS.find((o) => o.value === minConfidence)?.label ?? "")
     : "";
   const regionLabel = region ? (REGIONS[region]?.label ?? "") : "";
-
-  const formatNumber = (n: number) =>
-    new Intl.NumberFormat("fr-FR").format(Math.round(n));
 
   // ── render ──────────────────────────────────────────────────────────────────
 
@@ -558,36 +556,7 @@ export function RecherchePageContent() {
           <ul className="space-y-3" aria-label="Résultats de recherche">
             {sortedResults.map((result, i) => (
               <li key={`${result.type}-${result.id}-${i}`}>
-                <Card className="p-4 hover:shadow-afh-2 motion-safe:transition-shadow motion-safe:duration-[170ms]">
-                  <h3 className="font-semibold text-base mb-1">
-                    {result.name}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="flex items-center gap-1.5">
-                      <SearchEntityMark
-                        type={result.type as SearchEntityType}
-                      />
-                      <Badge variant="secondary" className="text-xs">
-                        {getSearchEntityLabel(result.type as SearchEntityType)}
-                      </Badge>
-                    </span>
-                    {result.languageFamilyName && (
-                      <Badge variant="outline" className="text-xs">
-                        {result.languageFamilyName}
-                      </Badge>
-                    )}
-                  </div>
-                  {result.snippet && (
-                    <p className="text-sm text-afh-text-soft line-clamp-2">
-                      {result.snippet}
-                    </p>
-                  )}
-                  {result.population !== undefined && (
-                    <p className="text-sm text-afh-text-soft mt-1">
-                      Population : {formatNumber(result.population)}
-                    </p>
-                  )}
-                </Card>
+                <SearchResultCard result={result} language={language} />
               </li>
             ))}
           </ul>

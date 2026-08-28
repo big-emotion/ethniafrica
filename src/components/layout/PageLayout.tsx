@@ -7,15 +7,9 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsModal";
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
-import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
-import {
-  getCountryRoute,
-  getFamilyRoute,
-  getLocalizedRoute,
-  getPeopleRoute,
-} from "@/lib/routing";
+import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
@@ -37,11 +31,6 @@ interface PageLayoutProps {
    * against the nav instead of behind a strip of page background.
    */
   flushTop?: boolean;
-  onSearchResult?: (result: {
-    type: SearchEntityType;
-    id: string;
-    name: string;
-  }) => void;
 }
 
 // @req REQ-043
@@ -52,7 +41,6 @@ export const PageLayout = ({
   sectionName,
   hideHeader = false,
   flushTop = false,
-  onSearchResult,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
@@ -61,31 +49,6 @@ export const PageLayout = ({
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
   const displayTitle = sectionName || title || t.title;
-
-  const handleSearchResult = (result: {
-    type: SearchEntityType;
-    id: string;
-    name: string;
-  }) => {
-    if (onSearchResult) {
-      onSearchResult(result);
-    } else {
-      switch (result.type) {
-        case "languageFamily":
-          router.push(getFamilyRoute(language, result.id));
-          break;
-        case "people":
-          router.push(getPeopleRoute(language, result.id));
-          break;
-        case "country":
-          router.push(getCountryRoute(language, result.id));
-          break;
-        default:
-          console.warn("Unknown search result type:", result.type);
-      }
-    }
-    setIsSearchOpen(false);
-  };
 
   useKeyboardShortcuts({
     navigate: (path) => router.push(path),
@@ -112,7 +75,6 @@ export const PageLayout = ({
         open={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
         language={language}
-        onResultSelect={handleSearchResult}
       />
 
       {/* Keyboard shortcuts cheatsheet */}

@@ -452,6 +452,60 @@ describe("RecherchePageContent", () => {
     });
   });
 
+  // @req REQ-002
+  it("makes every result card a link to its fiche", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Zulu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: "Zulu" })).toHaveAttribute(
+        "href",
+        "/fr/peuples/PPL_ZULU"
+      );
+    });
+  });
+
+  // @req REQ-002
+  it("keeps country and family hits when a region filter is active", async () => {
+    // Only peoples carry countryIds, so testing every result against the
+    // region erased country and family hits the moment one was picked.
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("q=Krou&region=west") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [],
+          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire" }],
+          families: [{ id: "FLG_KROU", nameFr: "Krou" }],
+          total: 2,
+        },
+      })
+    );
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole("link", { name: "Côte d'Ivoire" })
+      ).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Krou" })).toBeInTheDocument();
+    });
+  });
+
   // ── 8. no session history ──────────────────────────────────────────────────
 
   it("input uses autocomplete=off to prevent browser search history", () => {
