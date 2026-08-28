@@ -84,33 +84,20 @@ function ControlledSearchModal() {
       <button type="button" onClick={() => setOpen(true)}>
         Ouvrir la recherche
       </button>
-      <SearchModalV2
-        open={open}
-        onClose={() => setOpen(false)}
-        language="fr"
-        onResultSelect={() => {}}
-      />
+      <SearchModalV2 open={open} onClose={() => setOpen(false)} language="fr" />
     </>
   );
 }
 
 describe("SearchModalV2", () => {
   const mockOnClose = vi.fn();
-  const mockOnResultSelect = vi.fn();
 
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
   it("should render search dialog when open", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     expect(screen.getByText("Recherche")).toBeInTheDocument();
     expect(
@@ -119,14 +106,7 @@ describe("SearchModalV2", () => {
   });
 
   it("should display tab filters", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     expect(screen.getByText("Tout")).toBeInTheDocument();
     expect(screen.getByText("Familles")).toBeInTheDocument();
@@ -135,14 +115,7 @@ describe("SearchModalV2", () => {
   });
 
   it("should show instruction text when search query is empty", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     expect(
       screen.getByText("Commencez à taper pour rechercher...")
@@ -150,14 +123,7 @@ describe("SearchModalV2", () => {
   });
 
   it("should update search input value when typing", async () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     const searchInput = screen.getByPlaceholderText(/Rechercher une famille/i);
     await act(async () => {
@@ -168,14 +134,7 @@ describe("SearchModalV2", () => {
   });
 
   it("should have working tab structure", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     // Verify the tab list structure exists
     const tabList = screen.getByRole("tablist");
@@ -187,14 +146,7 @@ describe("SearchModalV2", () => {
   });
 
   it("should not render when closed", () => {
-    render(
-      <SearchModalV2
-        open={false}
-        onClose={mockOnClose}
-        language="fr"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
+    render(<SearchModalV2 open={false} onClose={mockOnClose} language="fr" />);
 
     expect(screen.queryByText("Recherche")).not.toBeInTheDocument();
   });
@@ -204,14 +156,7 @@ describe("SearchModalV2", () => {
   describe("type-filter pills", () => {
     // @req REQ-091
     it("each type filter is a rounded-full pill", () => {
-      render(
-        <SearchModalV2
-          open={true}
-          onClose={mockOnClose}
-          language="fr"
-          onResultSelect={mockOnResultSelect}
-        />
-      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
       for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
         expect(screen.getByRole("tab", { name }).className).toMatch(
           /rounded-full/
@@ -221,14 +166,7 @@ describe("SearchModalV2", () => {
 
     // @req REQ-091
     it("each type filter exposes a >=44px hit area (charter §5)", () => {
-      render(
-        <SearchModalV2
-          open={true}
-          onClose={mockOnClose}
-          language="fr"
-          onResultSelect={mockOnResultSelect}
-        />
-      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
       for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
         expect(screen.getByRole("tab", { name }).className).toMatch(/min-h-11/);
       }
@@ -241,14 +179,7 @@ describe("SearchModalV2", () => {
     // @req REQ-091
     it("pairs a color mark with a text label for every result type (never color alone)", async () => {
       vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
-      render(
-        <SearchModalV2
-          open={true}
-          onClose={mockOnClose}
-          language="fr"
-          onResultSelect={mockOnResultSelect}
-        />
-      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
         /Rechercher une famille/i
@@ -277,6 +208,53 @@ describe("SearchModalV2", () => {
         within(resultsList).getByText("Famille linguistique")
       ).toBeInTheDocument();
     });
+
+    // @req REQ-002
+    it("reaches each result's fiche through a keyboard-accessible link", async () => {
+      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText("Shona")).toBeInTheDocument();
+      });
+
+      const resultsList = screen.getByTestId("search-results-list");
+      // Previously the card navigated from an onClick on a div, which no
+      // keyboard user could reach.
+      expect(
+        within(resultsList).getByRole("link", { name: "Shona" })
+      ).toHaveAttribute("href", "/fr/peuples/PPL_SHONA");
+    });
+
+    // @req REQ-002
+    it("closes itself when a result link is activated", async () => {
+      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText("Shona")).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByRole("link", { name: "Shona" }));
+
+      expect(mockOnClose).toHaveBeenCalled();
+    });
   });
 
   // ── R3 — no-result guidance ──────────────────────────────────────────────
@@ -285,14 +263,7 @@ describe("SearchModalV2", () => {
     // @req REQ-091
     it("shows a guidance sentence and one CTA when a real search yields zero results", async () => {
       vi.mocked(afrikLoader.search).mockResolvedValue([]);
-      render(
-        <SearchModalV2
-          open={true}
-          onClose={mockOnClose}
-          language="fr"
-          onResultSelect={mockOnResultSelect}
-        />
-      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
         /Rechercher une famille/i

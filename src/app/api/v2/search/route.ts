@@ -4,25 +4,54 @@
  *   get:
  *     summary: Search — peoples, countries and language families
  *     description: >
- *       Full-text search across AFRIK peoples and countries using
- *       `websearch_to_tsquery('french', q)` on the indexed `search_vector`
- *       columns. Results are ranked by ts_rank_cd multiplied by a confidence
- *       boost (confidence_scores.score). Language families have no tsvector
- *       column and are name-matched instead. Each entity kind is returned in
- *       its own array — there is no flat `results` list. Rate-limited per AR11
- *       (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
+ *       Full-text search using `websearch_to_tsquery('french', q)` against the
+ *       weighted `search_vector` columns (migration 043), ranked in Postgres by
+ *       `afrik_search_peoples` / `afrik_search_countries` (migration 044): an
+ *       accent-insensitive exact name match first, then `ts_rank` over the
+ *       weights (A = name and autonym, B = exonyms, C/D = prose), multiplied
+ *       for peoples by a 0.5–1.0 confidence factor. Language families have no
+ *       tsvector column and are name-matched, then tiered exact > prefix >
+ *       substring.
+ *       Each result carries `relevance`, `exactMatch` and a `snippet` whose
+ *       matched terms are wrapped in `[[` and `]]` — deliberately not HTML,
+ *       because `ts_headline` does not escape the source document.
+ *       `relevance` is comparable within an array and not between arrays;
+ *       order across kinds on `exactMatch`.
+ *       Each entity kind is returned in its own array — there is no flat
+ *       `results` list. Rate-limited per AR11 (IP: 60 RPM, public key: 600
+ *       RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []
  *     parameters:
  *       - in: query
  *         name: q
- *         required: true
+ *         required: false
  *         schema:
  *           type: string
  *           minLength: 1
- *         description: Full-text search query (websearch syntax)
+ *         description: >
+ *           Full-text search query (websearch syntax). Required unless
+ *           familyId or countryId is given — a relation scope is a complete
+ *           search on its own.
  *         example: "Yoruba Nigeria"
+ *       - in: query
+ *         name: familyId
+ *         schema:
+ *           type: string
+ *           pattern: '^FLG_[A-Z0-9_]+$'
+ *         description: >
+ *           Scope peoples to one language family. With q it narrows the
+ *           ranking; alone it lists that family's peoples, and countries and
+ *           families then come back empty because nothing was asked of them.
+ *         example: "FLG_KROU"
+ *       - in: query
+ *         name: countryId
+ *         schema:
+ *           type: string
+ *           pattern: '^[A-Z]{3}$'
+ *         description: Scope peoples to one country (ISO 3166-1 alpha-3)
+ *         example: "CIV"
  *       - in: query
  *         name: limit
  *         schema:
@@ -113,13 +142,38 @@ const MAX_LIMIT = 50;
 const DEFAULT_LIMIT = 20;
 const DEFAULT_OFFSET = 0;
 
+const FAMILY_ID = /^FLG_[A-Z0-9_]+$/;
+const COUNTRY_ID = /^[A-Z]{3}$/;
+
 function parseParams(
   searchParams: URLSearchParams
 ): { params: FtsSearchParams } | { error: string; field: string } {
-  // q — required, non-empty
+  // familyId / countryId — optional relation scopes ("the peoples of X").
+  const familyId = searchParams.get("familyId");
+  if (familyId !== null && !FAMILY_ID.test(familyId)) {
+    return {
+      error: "familyId must be a language-family identifier (FLG_*)",
+      field: "familyId",
+    };
+  }
+
+  const countryId = searchParams.get("countryId");
+  if (countryId !== null && !COUNTRY_ID.test(countryId)) {
+    return {
+      error: "countryId must be an ISO 3166-1 alpha-3 code",
+      field: "countryId",
+    };
+  }
+
+  // q — required only when no relation scope is given. A relation on its own
+  // is a valid search: "the peoples of the Krou family" asks something
+  // complete without any free text.
   const q = searchParams.get("q") ?? "";
-  if (!q.trim()) {
-    return { error: "q is required and must be non-empty", field: "q" };
+  if (!q.trim() && familyId === null && countryId === null) {
+    return {
+      error: "q is required unless familyId or countryId is provided",
+      field: "q",
+    };
   }
 
   // limit — optional integer, clamped to [1, MAX_LIMIT]
@@ -187,6 +241,8 @@ function parseParams(
     }),
     ...(minConfidence !== undefined && { minConfidence }),
     ...(sinceVerifiedAfter !== undefined && { sinceVerifiedAfter }),
+    ...(familyId !== null && { familyId }),
+    ...(countryId !== null && { countryId }),
   };
 
   return { params };

@@ -609,18 +609,55 @@ export interface SearchResult {
 
 // ETNI-38 — /v2/search FTS params (websearch_to_tsquery, confidence boost)
 export interface FtsSearchParams {
-  q: string;
+  /** Optional only when a relation scope is given: a relation is a search. */
+  q?: string;
   limit: number;
   offset: number;
   classificationStatus?: ClassificationStatus;
   minConfidence?: number;
   sinceVerifiedAfter?: string;
+  /** Scope to the peoples of one language family (`FLG_*`). */
+  familyId?: string;
+  /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
+  countryId?: string;
+}
+
+/**
+ * A search hit carries its own ranking evidence.
+ *
+ * `relevance` is comparable **within** an entity kind and not across kinds —
+ * a people is scored `ts_rank × confidence`, a country by bare `ts_rank`, a
+ * family by a match tier. `exactMatch` is the one signal that means the same
+ * thing everywhere, which is why it sorts first.
+ */
+export interface RankedPeople extends People {
+  languageFamilyName: string | null;
+  confidence: number | null;
+  relevance: number;
+  exactMatch: boolean;
+  /** Match excerpt; matched terms are wrapped in `[[` and `]]`. */
+  snippet: string | null;
+}
+
+export interface RankedCountry extends Country {
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+}
+
+export interface RankedLanguageFamily extends LanguageFamily {
+  relevance: number;
+  exactMatch: boolean;
 }
 
 export interface FtsSearchResponse {
-  peoples: People[];
-  countries: Country[];
-  families: LanguageFamily[];
+  peoples: RankedPeople[];
+  countries: RankedCountry[];
+  families: RankedLanguageFamily[];
+  /** Corpus-wide match counts, not the size of the returned page. */
+  peoplesTotal: number;
+  countriesTotal: number;
+  familiesTotal: number;
   total: number;
 }
 
