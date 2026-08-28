@@ -46,8 +46,47 @@ import {
   type QuizQuestionRecord,
   type RevocationDecision,
 } from "./lib/quizGeneration";
+import {
+  chunkForUrl,
+  fetchAllPages,
+  type PageResult,
+} from "./lib/supabasePaging";
 
 const ENTITY_TYPE = "people";
+
+/** `quiz_questions` as the sweep and the audit read it back. */
+interface QuizQuestionRow {
+  id: string;
+  template_id: ActiveQuestionRow["templateId"];
+  audience: ActiveQuestionRow["audience"];
+  entity_id: string;
+  field_path: string;
+  correct_option: number;
+  options_fr: ActiveQuestionRow["optionsFr"];
+  generation_run_id?: string;
+}
+
+/**
+ * Reads every row matching an id filter, splitting the filter so the URL stays
+ * within limits and paging each split so no tail is dropped. Both limits are
+ * silent — see `scripts/lib/supabasePaging.ts` for what each one costs.
+ */
+async function fetchByIds<T>(
+  ids: string[],
+  page: (
+    idChunk: string[],
+    from: number,
+    to: number
+  ) => PromiseLike<PageResult<T>>
+): Promise<T[]> {
+  if (ids.length === 0) return [];
+  const pages = await Promise.all(
+    chunkForUrl(ids).map((idChunk) =>
+      fetchAllPages<T>((from, to) => page(idChunk, from, to))
+    )
+  );
+  return pages.flat();
+}
 
 interface BuiltCorpus {
   entries: FicheEntry[];
@@ -58,10 +97,12 @@ interface BuiltCorpus {
 async function buildFicheEntries(
   supabase: SupabaseClient
 ): Promise<BuiltCorpus> {
-  const { data: peopleRows, error: peopleErr } = await supabase
-    .from("afrik_peoples")
-    .select("id, name_main, language_family_id, content");
-  if (peopleErr) throw peopleErr;
+  const peopleRows = await fetchAllPages<PeopleRow>((from, to) =>
+    supabase
+      .from("afrik_peoples")
+      .select("id, name_main, language_family_id, content")
+      .range(from, to)
+  );
 
   const { data: familyRows, error: familyErr } = await supabase
     .from("afrik_language_families")
@@ -82,37 +123,40 @@ async function buildFicheEntries(
 
   const entityIds = (peopleRows || []).map((row) => row.id as string);
 
-  const { data: confidenceRows, error: confidenceErr } =
-    entityIds.length === 0
-      ? { data: [] as ConfidenceScoreRow[], error: null }
-      : await supabase
-          .from("confidence_scores")
-          .select("entity_id, score, last_human_audit_at, open_flag_count")
-          .eq("entity_type", ENTITY_TYPE)
-          .in("entity_id", entityIds);
-  if (confidenceErr) throw confidenceErr;
+  const confidenceRows = await fetchByIds<ConfidenceScoreRow>(
+    entityIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("confidence_scores")
+        .select("entity_id, score, last_human_audit_at, open_flag_count")
+        .eq("entity_type", ENTITY_TYPE)
+        .in("entity_id", idChunk)
+        .range(from, to)
+  );
 
-  const { data: assertionRows, error: assertionErr } =
-    entityIds.length === 0
-      ? { data: [] as AdapterAssertionRow[], error: null }
-      : await supabase
-          .from("assertions")
-          .select("id, entity_id, field_path, source_ids")
-          .eq("entity_type", ENTITY_TYPE)
-          .in("entity_id", entityIds);
-  if (assertionErr) throw assertionErr;
+  const assertionRows = await fetchByIds<AdapterAssertionRow>(
+    entityIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("assertions")
+        .select("id, entity_id, field_path, source_ids")
+        .eq("entity_type", ENTITY_TYPE)
+        .in("entity_id", idChunk)
+        .range(from, to)
+  );
 
   const sourceIds = [
-    ...new Set((assertionRows || []).flatMap((row) => row.source_ids ?? [])),
+    ...new Set(assertionRows.flatMap((row) => row.source_ids ?? [])),
   ];
-  const { data: sourceRows, error: sourceErr } =
-    sourceIds.length === 0
-      ? { data: [] as AdapterSourceRow[], error: null }
-      : await supabase
-          .from("sources")
-          .select("id, tier, verified_at")
-          .in("id", sourceIds);
-  if (sourceErr) throw sourceErr;
+  const sourceRows = await fetchByIds<AdapterSourceRow>(
+    sourceIds,
+    (idChunk, from, to) =>
+      supabase
+        .from("sources")
+        .select("id, tier, verified_at")
+        .in("id", idChunk)
+        .range(from, to)
+  );
 
   const confidenceByEntityId = new Map(
     (confidenceRows || []).map((row) => [
@@ -168,14 +212,19 @@ async function buildFicheEntries(
 async function fetchActiveQuestions(
   supabase: SupabaseClient
 ): Promise<ActiveQuestionRow[]> {
-  const { data, error } = await supabase
-    .from("quiz_questions")
-    .select(
-      "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
-    )
-    .is("revoked_at", null);
-  if (error) throw error;
-  return (data || []).map((row) => ({
+  // Paged: the bank passed 1000 rows the day the rule change let it fill, and
+  // an unpaged read would have told the next sweep that 10 879 of its own
+  // questions did not exist — it would have generated them again.
+  const data = await fetchAllPages<QuizQuestionRow>((from, to) =>
+    supabase
+      .from("quiz_questions")
+      .select(
+        "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
+      )
+      .is("revoked_at", null)
+      .range(from, to)
+  );
+  return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
     audience: row.audience,
@@ -189,14 +238,18 @@ async function fetchActiveQuestions(
 async function fetchActiveQuestionsForAudit(
   supabase: SupabaseClient
 ): Promise<AuditableQuestion[]> {
-  const { data, error } = await supabase
-    .from("quiz_questions")
-    .select(
-      "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
-    )
-    .is("revoked_at", null);
-  if (error) throw error;
-  return (data || []).map((row) => ({
+  // Paged for the same reason: an audit that reads 1000 of 11 879 questions
+  // and reports "passed" is the failure it exists to prevent.
+  const data = await fetchAllPages<QuizQuestionRow>((from, to) =>
+    supabase
+      .from("quiz_questions")
+      .select(
+        "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
+      )
+      .is("revoked_at", null)
+      .range(from, to)
+  );
+  return data.map((row) => ({
     id: row.id,
     templateId: row.template_id,
     audience: row.audience,
@@ -211,11 +264,10 @@ async function fetchActiveQuestionsForAudit(
 async function fetchGenerationRunIds(
   supabase: SupabaseClient
 ): Promise<Set<string>> {
-  const { data, error } = await supabase
-    .from("quiz_generation_runs")
-    .select("id");
-  if (error) throw error;
-  return new Set((data || []).map((row) => row.id as string));
+  const data = await fetchAllPages<{ id: string }>((from, to) =>
+    supabase.from("quiz_generation_runs").select("id").range(from, to)
+  );
+  return new Set(data.map((row) => row.id));
 }
 
 async function insertGenerationRun(

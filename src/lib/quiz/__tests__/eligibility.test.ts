@@ -64,8 +64,8 @@ describe("isQuizEligible", () => {
 
   describe("confidence score condition", () => {
     // @req REQ-103
-    it("rejects a score below the default threshold (80)", () => {
-      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 79 })).toEqual(
+    it("rejects a score below the default threshold (60)", () => {
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 59 })).toEqual(
         {
           eligible: false,
           reason: "confidence_below_threshold",
@@ -75,9 +75,28 @@ describe("isQuizEligible", () => {
 
     // @req REQ-103
     it("is eligible exactly at the threshold boundary (score === threshold)", () => {
-      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 80 })).toEqual(
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 60 })).toEqual(
         { eligible: true, reason: null }
       );
+    });
+
+    /**
+     * 80 was unreachable, not strict. `recompute_confidence` reserves 0.20 of
+     * the score for an audit's recency factor, so an unaudited fiche caps at
+     * 0.80 — demanding 80 demanded a perfect source base *and* an audit. 60 is
+     * three quarters of the reachable range, the same relative bar 80 was
+     * meant to be.
+     */
+    // @req REQ-103
+    it("sets a bar an unaudited fiche can actually clear", () => {
+      expect(DEFAULT_QUIZ_MIN_CONFIDENCE).toBeLessThan(80);
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          confidenceScore: 68, // the corpus median once its provenance was written
+          lastHumanAuditAt: null,
+        })
+      ).toEqual({ eligible: true, reason: null });
     });
 
     // @req REQ-103
@@ -101,20 +120,27 @@ describe("isQuizEligible", () => {
     });
   });
 
-  describe("human audit condition", () => {
+  describe("human verification is recorded, not required", () => {
+    /**
+     * Both of these gated on a human act nothing in the corpus performs: no
+     * source carries `verified_at` and no fiche carries `last_human_audit_at`,
+     * so the pair rejected all 17 802 candidates. The authority test is now
+     * the source's tier, which a curator did assign, fiche by fiche.
+     */
     // @req REQ-103
-    it("rejects a null lastHumanAuditAt", () => {
+    it("accepts a fiche no human has audited", () => {
       expect(
         isQuizEligible({ ...eligibleInput, lastHumanAuditAt: null })
-      ).toEqual({ eligible: false, reason: "no_human_audit" });
+      ).toEqual({ eligible: true, reason: null });
     });
 
     // @req REQ-103
-    it("accepts any non-null ISO date string", () => {
+    it("accepts an official source no human has separately verified", () => {
       expect(
         isQuizEligible({
           ...eligibleInput,
-          lastHumanAuditAt: "2020-06-15T12:00:00.000Z",
+          lastHumanAuditAt: null,
+          assertionSources: [{ tier: "official", resolvable: false }],
         })
       ).toEqual({ eligible: true, reason: null });
     });
@@ -129,11 +155,16 @@ describe("isQuizEligible", () => {
     });
 
     // @req REQ-103
-    it("rejects sources that are Tier 1/2 typed but not resolvable", () => {
+    it("still rejects a fiche whose only sources are unverified", () => {
+      // The tier bar is what the rule kept: an `unverified` source may back a
+      // published fiche, but not an answer the quiz asserts as correct.
       expect(
         isQuizEligible({
           ...eligibleInput,
-          assertionSources: [{ tier: "official", resolvable: false }],
+          assertionSources: [
+            { tier: "unverified", resolvable: true },
+            { tier: "unverified", resolvable: false },
+          ],
         })
       ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
@@ -181,7 +212,7 @@ describe("isQuizEligible", () => {
     });
 
     // @req REQ-103
-    it("prioritizes no_human_audit over source and flag failures", () => {
+    it("no longer stops at a missing audit before reaching the real failures", () => {
       expect(
         isQuizEligible({
           confidenceScore: 90,
@@ -189,7 +220,7 @@ describe("isQuizEligible", () => {
           assertionSources: [],
           openFlagCount: 3,
         })
-      ).toEqual({ eligible: false, reason: "no_human_audit" });
+      ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
 
     // @req REQ-103
@@ -222,9 +253,9 @@ describe("getQuizMinConfidence", () => {
   });
 
   // @req REQ-103
-  it("defaults to 80 when unset", () => {
-    expect(getQuizMinConfidence()).toBe(80);
-    expect(DEFAULT_QUIZ_MIN_CONFIDENCE).toBe(80);
+  it("defaults to 60 when unset", () => {
+    expect(getQuizMinConfidence()).toBe(60);
+    expect(DEFAULT_QUIZ_MIN_CONFIDENCE).toBe(60);
   });
 
   // @req REQ-103
