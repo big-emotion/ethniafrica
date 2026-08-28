@@ -30,6 +30,7 @@ import type {
   PeopleSummary,
 } from "@/api/v2/schemas/names";
 
+// @req REQ-057
 export class PeopleNamesNotFoundError extends Error {
   constructor(peopleId: string) {
     super(`People not found: ${peopleId}`);
@@ -37,6 +38,7 @@ export class PeopleNamesNotFoundError extends Error {
   }
 }
 
+// @req REQ-057
 export class NamesSchemaUnavailableError extends Error {
   constructor(message: string) {
     super(message);
@@ -141,6 +143,7 @@ async function getSourcesByAssertionId(
   return map;
 }
 
+// @req REQ-057
 export async function getPeopleNamesDossier(
   peopleId: string
 ): Promise<PeopleNamesDossier> {
@@ -270,6 +273,7 @@ function mapRowToNameRecord(
 }
 
 // @req FR53 @req FR55 @req FR58
+// @req REQ-057
 export async function listNames(
   query: ListNamesQuery
 ): Promise<ListNamesResult> {
@@ -341,7 +345,12 @@ export async function listNames(
 
   let names = rows.map((row) => mapRowToNameRecord(row, peopleMap));
 
-  // ── confidence boost (ts_rank_cd × confidence, search.ts convention) ──────
+  // ── confidence-only ordering ──────────────────────────────────────────────
+  // This sorts by confidence alone, in JavaScript, over the current page. It
+  // is NOT the ts_rank_cd × confidence ranking the comment here used to claim
+  // — that never existed anywhere. /api/v2/search now ranks in Postgres
+  // (migrations 043/044); this endpoint has not been moved yet, and saying so
+  // is what keeps the next reader from citing it as precedent.
   if (query.q && peopleIds.length > 0) {
     const { data: scoreRows } = await supabase
       .from("confidence_scores")

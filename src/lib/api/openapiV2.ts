@@ -5,7 +5,7 @@ const options: swaggerJsdoc.Options = {
     openapi: "3.1.0",
     info: {
       title: "Ethniafrique Atlas API v2 - AFRIK",
-      version: "2.1.0",
+      version: "2.2.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
         "## Response envelope shapes\n\n" +
@@ -521,18 +521,19 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array; peoples and countries are ranked by ts_rank_cd × confidence boost.",
+            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier. Order across kinds on `exactMatch`, which means the same thing everywhere.",
           properties: {
             peoples: {
               type: "array",
               items: { $ref: "#/components/schemas/PeopleV2" },
               description:
-                "Matching peoples ordered by confidence-boosted relevance",
+                "Matching peoples, ranked. Each carries relevance, exactMatch, confidence, languageFamilyName and a snippet whose matched terms are wrapped in [[ ]].",
             },
             countries: {
               type: "array",
               items: { $ref: "#/components/schemas/CountryV2" },
-              description: "Matching countries ordered by FTS relevance",
+              description:
+                "Matching countries, ranked by ts_rank with name_fr outranking etymology. Empty when the request carries only a relation scope.",
             },
             families: {
               type: "array",
@@ -540,14 +541,38 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Matching language families, name-matched rather than FTS-ranked (no tsvector column on the table)",
             },
+            peoplesTotal: {
+              type: "integer",
+              description:
+                "Peoples matching corpus-wide, not the number returned on this page",
+              example: 16,
+            },
+            countriesTotal: {
+              type: "integer",
+              description: "Countries matching corpus-wide",
+              example: 0,
+            },
+            familiesTotal: {
+              type: "integer",
+              description: "Language families matching corpus-wide",
+              example: 1,
+            },
             total: {
               type: "integer",
               description:
-                "Combined count of peoples + countries + families returned",
-              example: 5,
+                "Sum of the three corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+              example: 17,
             },
           },
-          required: ["peoples", "countries", "families", "total"],
+          required: [
+            "peoples",
+            "countries",
+            "families",
+            "peoplesTotal",
+            "countriesTotal",
+            "familiesTotal",
+            "total",
+          ],
         },
         SearchResponse: {
           type: "object",

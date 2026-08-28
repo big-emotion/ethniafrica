@@ -9,7 +9,6 @@ import {
 } from "@/lib/routing";
 import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
-import { SearchPageContent } from "@/components/pages/SearchPageContent";
 import { Language } from "@/types/shared";
 
 function LegacyRedirect({
@@ -85,10 +84,6 @@ export function SectionPageClient() {
 
   if (section === "peoples" || section === "peuples") {
     return <PeuplesPageContent />;
-  }
-
-  if (section === "search" || section === "recherche") {
-    return <SearchPageContent />;
   }
 
   return (
