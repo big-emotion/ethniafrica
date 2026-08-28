@@ -34,6 +34,21 @@ pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 - **A missing environment is not an error.** With `NEXT_PUBLIC_SUPABASE_URL`
   or `SUPABASE_SERVICE_ROLE_KEY` unset the script logs `DRY RUN` and exits 0.
   A green exit is therefore not evidence that anything ran. Read the log line.
+- **`npx tsx` cannot run this script.** It imports `src/lib/supabase/admin.ts`,
+  which imports `server-only`, which resolves only under the `react-server`
+  condition; and `@supabase/realtime-js` needs a native `WebSocket`, which
+  arrives in Node 22. The command that works is:
+
+  ```bash
+  node --conditions=react-server \
+       --env-file=.env.local \
+       --import ./node_modules/tsx/dist/loader.mjs \
+       scripts/generateQuizQuestions.ts --check
+  ```
+
+  On Node 20 it fails with `Cannot find module 'server-only'` or
+  `Node.js 20 detected without native WebSocket support`. Check `node --version`
+  before blaming the credentials.
 
 ## Procedure, per environment
 
@@ -79,14 +94,19 @@ going near the other environment. The usual cause is a fiche that has since
 stopped passing the FR65 gate, which the counters and the revocation reasons
 will show.
 
-**The one rebuild where that rule does not hold** is the first one after the
-audience axis was retired. A question used to be stored once per audience, so
-the bank's 11 879 rows were 2 504 distinct questions counted four or five times
-over. That rebuild revokes ~11 879 and inserts ~2 504 — a fifth of what it
-replaced, and correct. Two things say so rather than a lost corpus: every
-revocation carries the reason `regenerated`, and the count of _distinct_
-`(entity_id, template_id)` pairs is unchanged or higher. Check that, not the
-row count:
+**The one rebuild where that rule did not hold** was the first one after the
+audience axis was retired, run on recette on 28 August 2026. A question used to
+be stored once per audience, so the bank's 11 879 rows were 2 504 distinct
+questions counted four or five times over. That rebuild reported **3 105
+generated against 11 879 revoked** — a quarter of what it replaced, and correct.
+It is recorded here because the rule above would have called it a disaster.
+
+What said otherwise, and is the check to run on any rebuild that shrinks the row
+count: **11 799 of the revocations carried the reason `regenerated`** and the
+remaining 80 kept their own (`stale_answer` — every T3 question, because that
+same release changed how the main country is read); and the count of _distinct_
+`(entity_id, template_id)` pairs **rose from 2 504 to 3 105**. Check that, not
+the row count:
 
 ```sql
 select count(*) from (
@@ -95,9 +115,10 @@ select count(*) from (
 ) as distinct_questions;
 ```
 
-The same rebuild should also _raise_ that number, because it is the first to
-carry the `population` fix: T3 existed for 20 peoples and now exists for every
-people whose fiche passes the gate.
+The rise is the `population` fix landing: **T3 went from 20 subjects to 621**,
+one per eligible people, because the adapter had been reading `percentage`
+where the corpus writes `population`. All five templates now cover all 621
+eligible subjects — 621 x 5 = 3 105.
 
 ### 4. Verify
 

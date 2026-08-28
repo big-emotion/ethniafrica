@@ -339,13 +339,22 @@ async function revokeQuestions(
     ids.push(decision.id);
     idsByReason.set(decision.reason, ids);
   }
+  // Chunked, because an `.in(...)` filter travels in the URL and a revocation
+  // list is as long as the bank. A `--rebuild` of 11 879 questions sent ~440 KB
+  // of UUIDs in one request and came back `414 Request-URI Too Large` from the
+  // edge, before writing anything — the same limit `chunkForUrl` was written
+  // for, in the one place that was not using it. The read paths were chunked;
+  // this write path was not, so the fault only appeared on a rebuild large
+  // enough to need it.
   const revokedAt = new Date().toISOString();
   for (const [reason, ids] of idsByReason) {
-    const { error } = await supabase
-      .from("quiz_questions")
-      .update({ revoked_at: revokedAt, revoked_reason: reason })
-      .in("id", ids);
-    if (error) throw error;
+    for (const idChunk of chunkForUrl(ids)) {
+      const { error } = await supabase
+        .from("quiz_questions")
+        .update({ revoked_at: revokedAt, revoked_reason: reason })
+        .in("id", idChunk);
+      if (error) throw error;
+    }
   }
 }
 
