@@ -167,3 +167,99 @@ describe("people fiche parity with the mockup", () => {
     expect(screen.queryByText(/Pourquoi ces noms posent problème/)).toBeNull();
   });
 });
+
+/**
+ * Charter §4 on the people fiche.
+ *
+ * The two granularities are deliberately not the same rule. A **chapter** of
+ * the fiche model — origines, langue, rôle historique, culture… — is one every
+ * fiche is structurally expected to fill, so its emptiness is a fact about the
+ * corpus and the fiche states it. A **field inside a block**, like the exonyms
+ * above, is optional by design, and marking it would report a gap the model
+ * never opened.
+ */
+describe("people fiche — what the corpus does not fill", () => {
+  afterEach(cleanup);
+
+  /** A fiche carrying its appellations and nothing else the model asks for. */
+  function bareFiche(): PeopleDetail {
+    const people = peopleWith([{ country: "NGA", population: 1000 }]);
+    return {
+      ...people,
+      origins: undefined,
+      languages: undefined,
+      culture: undefined,
+      historicalRole: undefined,
+      organization: undefined,
+    } as PeopleDetail;
+  }
+
+  // @req REQ-119
+  it("keeps every chapter of the model, filled or not", () => {
+    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+
+    const chapters = [
+      ...container.querySelectorAll("[data-fiche-section]"),
+    ].map((node) => node.getAttribute("data-fiche-section"));
+
+    expect(chapters).toContain("Origines & formation");
+    expect(chapters).toContain("Langue");
+    expect(chapters).toContain("Rôle historique");
+    expect(chapters).toContain("Culture & spiritualité");
+  });
+
+  // @req REQ-119
+  it("marks each unfilled chapter as a gap in the corpus", () => {
+    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+
+    const textOf = (title: string) =>
+      container.querySelector(`[data-fiche-section="${title}"]`)?.textContent ??
+      "";
+
+    expect(textOf("Origines & formation")).toContain("Donnée manquante");
+    expect(textOf("Langue")).toContain("Donnée manquante");
+    expect(textOf("Rôle historique")).toContain("Donnée manquante");
+  });
+
+  // A marker beside a value the fiche does declare would report a gap that is
+  // not there — the failure charter §4 was rewritten after.
+  // @req REQ-119
+  it("marks nothing on a chapter the fiche does fill", () => {
+    const { container } = render(
+      <PeopleDetailViewV2
+        people={peopleWith([{ country: "NGA", population: 1000 }])}
+      />
+    );
+
+    expect(
+      container.querySelector('[data-fiche-section="Langue"]')?.textContent
+    ).not.toContain("Donnée manquante");
+  });
+
+  // Fragmentation is not a rubric of the model: it exists only where a people
+  // straddles two countries. Absent below that, it is inapplicable, not
+  // missing, and marking it would invent a gap.
+  // @req REQ-119
+  it("prints no chapter for what the model never asked for", () => {
+    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+
+    const chapters = [
+      ...container.querySelectorAll("[data-fiche-section]"),
+    ].map((node) => node.getAttribute("data-fiche-section"));
+
+    expect(chapters).not.toContain("Fragmentation coloniale");
+  });
+
+  // @req REQ-119
+  it("prints no field path in its provenance notes", () => {
+    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+
+    const notes = Array.from(
+      container.querySelectorAll(".afh-parchment-note")
+    ).map((node) => node.textContent ?? "");
+
+    expect(notes.length).toBeGreaterThan(0);
+    for (const note of notes)
+      expect(note).not.toMatch(/[a-z][A-Za-z0-9]*\.[a-zA-Z]/);
+  });
+});
