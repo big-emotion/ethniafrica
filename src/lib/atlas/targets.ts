@@ -22,19 +22,31 @@ const DEG2RAD = Math.PI / 180;
 /** A country too small to measure still deserves a bounded dolly, not a division by zero. */
 const MIN_ANGULAR_SPAN_DEG = 0.5;
 
-export interface AtlasTarget {
-  countryId: CountryId;
-  /** The committed admin-0 asset's own French name — the app is French-only, and this saves inventing a second name table. */
-  nameFr: string;
-  /** Where the camera must point for this target to face the reader. */
+/** cos(latitude) at 88°, the floor that keeps a near-polar frame finite. */
+const MIN_LON_SCALE = 0.035;
+
+/**
+ * What the camera reads of a target: where to look, and how wide the thing is.
+ * Split out from `AtlasTarget` because the frame that encloses a whole entity
+ * is not a country and must not pretend to be one — it has a centre and a span
+ * and no id to name.
+ */
+export interface TargetFrame {
+  /** Where the camera must point for this frame to face the reader. */
   center: LonLat;
   /**
-   * How wide the target reads on the sphere, in degrees. Longitude extent is
+   * How wide the frame reads on the sphere, in degrees. Longitude extent is
    * scaled by cos(latitude) because a degree of longitude covers less ground
    * the further it sits from the equator — without that, a country near a
    * pole would be dollied out as if it were continent-wide.
    */
   angularSpanDeg: number;
+}
+
+export interface AtlasTarget extends TargetFrame {
+  countryId: CountryId;
+  /** The committed admin-0 asset's own French name — the app is French-only, and this saves inventing a second name table. */
+  nameFr: string;
   /** Set only by the continent scene, where a target names a country's documented peoples. */
   documentedPeopleCount?: number;
 }
@@ -167,4 +179,62 @@ export function buildCountryPickerTargets(
     .map((countryId) => targetForCountry(countryId))
     .filter((target): target is AtlasTarget => target !== null)
     .sort((first, second) => first.nameFr.localeCompare(second.nameFr, "fr"));
+}
+
+/**
+ * The frame that holds a whole entity: a family's footprint, a people's field,
+ * a country's own outline. « Recentrer » aims here, so a reader who has turned
+ * the globe or opened one country of seventeen gets the subject back rather
+ * than the planet.
+ *
+ * Each target is taken as a box `angularSpanDeg` across, centred on the centre
+ * the overlay already chose. Re-measuring the rings would be more exact and
+ * would be wrong: the markers are placed from those centres, so a frame built
+ * from anything else would sit off the pastilles it is meant to gather.
+ *
+ * Longitude is un-scaled by cos(lat) on the way in and re-scaled on the way
+ * out, which is the convention `ringsAngularSpanDeg` sets — mixing the two
+ * would make a Sahelian family read as twice its width.
+ *
+ * The antimeridian is not handled, and does not need to be: the corpus spans
+ * 26°W to 64°E. A target set straddling ±180° would need the seam.
+ */
+// @req REQ-112
+export function enclosingFrame(
+  targets: readonly AtlasTarget[]
+): TargetFrame | null {
+  if (targets.length === 0) return null;
+
+  let lonMin = Infinity;
+  let lonMax = -Infinity;
+  let latMin = Infinity;
+  let latMax = -Infinity;
+
+  for (const target of targets) {
+    const halfLat = target.angularSpanDeg / 2;
+    // A target sitting on a pole would divide the half-width by zero. Nothing
+    // in the corpus does, and the floor costs one comparison.
+    const lonScale = Math.max(
+      Math.cos(target.center.lat * DEG2RAD),
+      MIN_LON_SCALE
+    );
+    const halfLon = halfLat / lonScale;
+
+    latMin = Math.min(latMin, target.center.lat - halfLat);
+    latMax = Math.max(latMax, target.center.lat + halfLat);
+    lonMin = Math.min(lonMin, target.center.lon - halfLon);
+    lonMax = Math.max(lonMax, target.center.lon + halfLon);
+  }
+
+  const centerLat = (latMin + latMax) / 2;
+  const centerLon = (lonMin + lonMax) / 2;
+
+  return {
+    center: { lon: centerLon, lat: centerLat },
+    angularSpanDeg: Math.max(
+      (lonMax - lonMin) * Math.cos(centerLat * DEG2RAD),
+      latMax - latMin,
+      MIN_ANGULAR_SPAN_DEG
+    ),
+  };
 }
