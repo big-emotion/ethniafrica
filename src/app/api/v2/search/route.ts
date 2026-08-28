@@ -113,13 +113,38 @@ const MAX_LIMIT = 50;
 const DEFAULT_LIMIT = 20;
 const DEFAULT_OFFSET = 0;
 
+const FAMILY_ID = /^FLG_[A-Z0-9_]+$/;
+const COUNTRY_ID = /^[A-Z]{3}$/;
+
 function parseParams(
   searchParams: URLSearchParams
 ): { params: FtsSearchParams } | { error: string; field: string } {
-  // q — required, non-empty
+  // familyId / countryId — optional relation scopes ("the peoples of X").
+  const familyId = searchParams.get("familyId");
+  if (familyId !== null && !FAMILY_ID.test(familyId)) {
+    return {
+      error: "familyId must be a language-family identifier (FLG_*)",
+      field: "familyId",
+    };
+  }
+
+  const countryId = searchParams.get("countryId");
+  if (countryId !== null && !COUNTRY_ID.test(countryId)) {
+    return {
+      error: "countryId must be an ISO 3166-1 alpha-3 code",
+      field: "countryId",
+    };
+  }
+
+  // q — required only when no relation scope is given. A relation on its own
+  // is a valid search: "the peoples of the Krou family" asks something
+  // complete without any free text.
   const q = searchParams.get("q") ?? "";
-  if (!q.trim()) {
-    return { error: "q is required and must be non-empty", field: "q" };
+  if (!q.trim() && familyId === null && countryId === null) {
+    return {
+      error: "q is required unless familyId or countryId is provided",
+      field: "q",
+    };
   }
 
   // limit — optional integer, clamped to [1, MAX_LIMIT]
@@ -187,6 +212,8 @@ function parseParams(
     }),
     ...(minConfidence !== undefined && { minConfidence }),
     ...(sinceVerifiedAfter !== undefined && { sinceVerifiedAfter }),
+    ...(familyId !== null && { familyId }),
+    ...(countryId !== null && { countryId }),
   };
 
   return { params };

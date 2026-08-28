@@ -299,4 +299,86 @@ describe("GET /api/v2/search (route)", () => {
       ]);
     });
   });
+
+  describe("relation-scoped search", () => {
+    // @req REQ-002
+    it("accepts a language family as a search in its own right", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?familyId=FLG_KROU")
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ familyId: "FLG_KROU" })
+      );
+    });
+
+    // @req REQ-002
+    it("accepts a country as a search in its own right", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?countryId=CIV")
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ countryId: "CIV" })
+      );
+    });
+
+    // @req REQ-002
+    it("narrows a free-text query to a relation when both are given", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      await GET(
+        new NextRequest(
+          "http://localhost/api/v2/search?q=b%C3%A9t%C3%A9&familyId=FLG_KROU"
+        )
+      );
+
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "bété", familyId: "FLG_KROU" })
+      );
+    });
+
+    // @req REQ-002
+    it("rejects a family identifier that is not one", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?familyId=krou")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("familyId");
+    });
+
+    // @req REQ-002
+    it("rejects a country code that is not alpha-3", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?countryId=CI")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("countryId");
+    });
+
+    // @req REQ-002
+    it("still requires a query when no relation scopes it", async () => {
+      const res = await GET(new NextRequest("http://localhost/api/v2/search"));
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("q");
+    });
+  });
 });
