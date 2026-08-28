@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AxisModulePanel } from "@/components/home/AxisModulePanel";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
-import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
@@ -35,7 +35,6 @@ import {
 interface AxisDefinition {
   id: AccessMode;
   name: string;
-  page: PageType;
   cta: string;
   // The registry's filing criterion, restated per axis: what the reader
   // hands in, what the axis hands back. It is why a module sits here and
@@ -53,7 +52,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "explorer",
     name: "Explorer",
-    page: "explorerHub",
     cta: "Parcourir",
     stake: "Il arrive avec un nom. Il repart avec une fiche.",
     figure: (counts) =>
@@ -62,7 +60,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "comprendre",
     name: "Comprendre",
-    page: "comprendreHub",
     cta: "Remonter",
     stake: "Il arrive avec une question. Il repart avec une explication.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
@@ -70,7 +67,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "jouer",
     name: "Jouer",
-    page: "jouerHub",
     cta: "Se tester",
     stake: "Il arrive sans rien. Il repart avec un résultat.",
     // Counted off the registry, not written down: the axis promised
@@ -276,7 +272,7 @@ export function AccessAxes({
               // without JavaScript and for a crawler. With JavaScript the
               // click never spends a page load on the axis slug — it opens
               // the modules here, and the next click is the module itself.
-              href={getLocalizedRoute(language, axis.page)}
+              href={getAxisHubRoute(language, axis.id)}
               ref={(element) => {
                 if (element) cardRefs.current[axis.id] = element;
               }}

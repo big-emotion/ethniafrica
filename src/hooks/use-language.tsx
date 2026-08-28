@@ -7,11 +7,11 @@ import {
   getLanguageFromRoute,
   getLocalizedRoute,
   getPageFromRoute,
-  getSlugFromRoute,
 } from "@/lib/routing";
 
 const LANGUAGE_STORAGE_KEY = "ethniafrique-language";
 
+// @req REQ-091
 export const useLanguage = () => {
   const pathname = usePathname();
   const router = useRouter();

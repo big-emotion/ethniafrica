@@ -93,6 +93,19 @@ describe("FamillesPageContent", () => {
     expect(replace).toHaveBeenCalledWith("/fr/familles/FLG_BANTU");
   });
 
+  // The directory read its own query and passed the identifier through
+  // untouched, which made `?family=//host` an open redirect — a browser reads
+  // two leading slashes as the start of a host. It shares the resolver the
+  // country and people forms use now, and this is what keeps it there.
+  // @req REQ-091
+  it("encodes a bookmarked identifier, so a crafted query cannot leave the site", () => {
+    currentSearchParams = new URLSearchParams("family=//evil.com");
+
+    render(<FamillesPageContent />);
+
+    expect(replace).toHaveBeenCalledWith("/fr/familles/%2F%2Fevil.com");
+  });
+
   // @req REQ-091
   it("shows the list alone, with no prompt to pick a family into an empty panel", () => {
     render(<FamillesPageContent />);
