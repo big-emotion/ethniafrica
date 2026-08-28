@@ -4,9 +4,12 @@ import {
   IDLE_POSE,
   MAX_ZOOM,
   MIN_ZOOM,
+  PITCH_LIMIT_RADIANS,
   advanceYaw,
+  clampPitch,
   interpolatePose,
   poseForTarget,
+  posesMatch,
   shortestYawDelta,
   zoomForAngularSpan,
 } from "../camera";
@@ -227,5 +230,54 @@ describe("zoomForAngularSpan keeps the continent around the subject", () => {
   // @req REQ-117
   it("still pulls back to nearly the whole globe for a continent-wide span", () => {
     expect(zoomForAngularSpan(70)).toBeLessThanOrEqual(1.06);
+  });
+});
+
+/**
+ * The camera answers "am I already framing this?" for itself, because the hook
+ * that flies it asks on every render: a camera that cannot tell "already
+ * there" from "must fly" restarts its easing forever and the globe crawls.
+ */
+describe("posesMatch decides whether there is anything to fly", () => {
+  // @req REQ-117
+  it("matches a pose against a copy of itself", () => {
+    expect(posesMatch(IDLE_POSE, { ...IDLE_POSE })).toBe(true);
+  });
+
+  // @req REQ-117
+  it("matches two yaws a full turn apart, which advanceYaw makes of one framing", () => {
+    const turnedRightRound = advanceYaw(IDLE_POSE.yaw, 2 * Math.PI);
+    expect(posesMatch(IDLE_POSE, { ...IDLE_POSE, yaw: turnedRightRound })).toBe(
+      true
+    );
+  });
+
+  // @req REQ-117
+  it("separates poses differing in any one of the six values", () => {
+    for (const difference of [
+      { yaw: IDLE_POSE.yaw + 0.2 },
+      { pitch: 0.2 },
+      { zoom: 1.4 },
+      { offsetX: -0.34 },
+      { offsetY: 0.54 },
+      { morph: 0 },
+    ]) {
+      expect(posesMatch(IDLE_POSE, { ...IDLE_POSE, ...difference })).toBe(
+        false
+      );
+    }
+  });
+});
+
+describe("clampPitch keeps a pole off the horizon", () => {
+  // @req REQ-117
+  it("holds a turn at the limit however far the reader keeps pulling", () => {
+    expect(clampPitch(99)).toBe(PITCH_LIMIT_RADIANS);
+    expect(clampPitch(-99)).toBe(-PITCH_LIMIT_RADIANS);
+  });
+
+  // @req REQ-117
+  it("leaves a turn inside the limit exactly where it was", () => {
+    expect(clampPitch(0.4)).toBe(0.4);
   });
 });
