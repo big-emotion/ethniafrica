@@ -193,9 +193,7 @@ describe("PeopleDetailViewV2", () => {
       <PeopleDetailViewV2
         people={{
           ...ewe,
-          culture: {
-            divinitiesAndSpirits: { supremeDeity: { name: "Mawu" } },
-          },
+          culture: { spiritualities: "Culte de Mawu" },
         }}
       />
     );
@@ -210,9 +208,7 @@ describe("PeopleDetailViewV2", () => {
       <PeopleDetailViewV2
         people={{
           ...ewe,
-          culture: {
-            divinitiesAndSpirits: { supremeDeity: { name: "Mawu" } },
-          },
+          culture: { spiritualities: "Culte de Mawu" },
         }}
         turnstileSiteKey="test-site-key"
       />

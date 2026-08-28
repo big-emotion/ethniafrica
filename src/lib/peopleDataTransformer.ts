@@ -74,18 +74,16 @@ export interface PeopleHistoryData {
   diaspora?: string;
 }
 
+/**
+ * The four prose fields `content.culture` declares. Field names are kept
+ * identical to the corpus keys so a reader of the fiche and a reader of this
+ * type are looking at the same thing.
+ */
 export interface PeopleCultureData {
-  supremeDeity?: string;
-  intermediates: string[];
-  initiation?: string;
-  femaleInitiation?: string;
-  funerary?: string;
-  symbols: string[];
-  music?: string;
-  gastronomy?: string;
-  christianityPercentage?: number;
-  islamPercentage?: number;
-  syncretism?: string;
+  majorRites?: string;
+  symbols?: string;
+  artsAndMusic?: string;
+  spiritualities?: string;
 }
 
 export interface PeopleRelatedData {
@@ -268,51 +266,24 @@ export function transformPeopleHistory(
 export function transformPeopleCulture(
   culture?: DetailedCultureSection
 ): PeopleCultureData {
-  if (!culture) {
-    return {
-      supremeDeity: undefined,
-      intermediates: [],
-      initiation: undefined,
-      femaleInitiation: undefined,
-      funerary: undefined,
-      symbols: [],
-      music: undefined,
-      gastronomy: undefined,
-      christianityPercentage: undefined,
-      islamPercentage: undefined,
-      syncretism: undefined,
-    };
-  }
-
-  const deity = culture.divinitiesAndSpirits?.supremeDeity;
-  const supremeDeity = deity?.name ?? deity?.endonym;
-
-  const intermediates = (
-    culture.divinitiesAndSpirits?.intermediateDivinities ?? []
-  )
-    .map((d) => d.name ?? d.endonym ?? "")
-    .filter(Boolean);
-
-  const symbols = (culture.symbolsAndArts?.symbols ?? []).map((s) => s.name);
-
   return {
-    supremeDeity,
-    intermediates,
-    initiation: culture.ritesAndPractices?.initiationRites?.maleInitiation,
-    femaleInitiation:
-      culture.ritesAndPractices?.initiationRites?.femaleInitiation,
-    funerary: culture.ritesAndPractices?.funeraryRites?.wake,
-    symbols,
-    music: culture.symbolsAndArts?.artsAndMusic?.musicalInstruments,
-    gastronomy: culture.symbolsAndArts?.gastronomy?.emblematicDishes,
-    christianityPercentage:
-      culture.contemporarySpirituality?.christianity?.percentageOfPopulation,
-    islamPercentage:
-      culture.contemporarySpirituality?.islam?.percentageOfPopulation,
-    syncretism:
-      culture.contemporarySpirituality?.religiousSyncretism
-        ?.coexistenceOfPractices,
+    majorRites: culture?.majorRites,
+    symbols: culture?.symbols,
+    artsAndMusic: culture?.artsAndMusic,
+    spiritualities: culture?.spiritualities,
   };
+}
+
+/**
+ * Whether the culture chapter has anything to show.
+ *
+ * One predicate, two callers — the fiche's section gate and the grid itself.
+ * They used to carry a condition each, and the outer one tested fewer fields
+ * than the inner, so a fiche could satisfy the grid and still never reach it.
+ */
+// @req REQ-003
+export function hasCultureContent(culture: PeopleCultureData): boolean {
+  return Object.values(culture).some(Boolean);
 }
 
 // @req REQ-097
