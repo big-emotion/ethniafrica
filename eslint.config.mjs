@@ -93,6 +93,79 @@ const eslintConfig = [
     },
   },
 
+  // ===========================================================================
+  // Typography charter §7: afh/no-raw-font-size — one scale, and only one
+  // ---------------------------------------------------------------------------
+  // `error` across all of src/ from day one. The list below is the DEBT
+  // REGISTER: one line per file that still carries a raw font size, with its
+  // count. Each migration lot DELETES its lines and never adds one.
+  //
+  // Two properties make the register self-maintaining. Deleting a line without
+  // fixing the file turns CI red, so it cannot rot into a stale allow-list.
+  // And a file not on the list fails the moment it grows a raw size, so a
+  // directory awaiting its lot cannot quietly accumulate new debt — which a
+  // ratchet scoped by directory would have permitted for six lots running.
+  //
+  // Register empty = ratchet closed. What remains then is the bench: stories
+  // are exempt for good — a rendering bench, not a product surface, and
+  // touching the 15 dirty ones costs 66 @req backfills for zero visible pixel.
+  //
+  // .css files are NOT covered: ESLint never parses them. country-tokens.css
+  // and people-tokens.css are guarded by src/styles/__tests__/colorTokens.test.ts.
+  // ===========================================================================
+  {
+    files: ["src/**/*.{ts,tsx,js,jsx}"],
+    ignores: [
+      "**/*.stories.*",
+      "**/*.test.*",
+      "**/__tests__/**",
+      "**/*.mdx",
+
+      // --- lot 4 · country/ (78) ---------------------------------------
+      "src/components/country/PeoplesSection.tsx", // 25
+      "src/components/country/CountryHero.tsx", // 7 tw + 3 css
+      "src/components/country/KingdomsSection.tsx", // 9
+      "src/components/country/LanguagesSection.tsx", // 8
+      "src/components/country/SourcesFooter.tsx", // 6
+      "src/components/country/AutonymExonymHeading.tsx", // 5
+      "src/components/country/HistoricalFactsSection.tsx", // 5
+      "src/components/country/CultureGrid.tsx", // 4
+      "src/components/country/HistoryTimeline.tsx", // 3
+      "src/components/country/OriginBanner.tsx", // 3
+      // --- lot 2 · ui/ (6) ---------------------------------------------
+      "src/components/ui/AutonymExonymHeading.tsx", // 5
+      "src/components/ui/calendar.tsx", // 1
+      // --- lot 3 · layout/ (8) -----------------------------------------
+      "src/components/layout/SiteHeader.tsx", // 6 css
+      "src/components/layout/AfrikBreadcrumbs.tsx", // 2
+      // --- lot 5 · source-transparency/ (3) ----------------------------
+      "src/components/source-transparency/DoctrineLinkCard.tsx", // 2
+      "src/components/source-transparency/SourceChainSheet.tsx", // 1
+      // --- lot 6 · people/, migrations/ (14) ---------------------------
+      "src/components/people/PeopleCountriesSection.tsx", // 7
+      "src/components/people/PeopleDetailViewV2.tsx", // 3
+      "src/components/people/PeopleRelatedPeoplesSection.tsx", // 3
+      "src/components/migrations/MigrationPathLayer.tsx", // 1
+      // --- lot 7 · relations/, hubs/ (11) ------------------------------
+      "src/components/relations/EgoNetworkGraph.tsx", // 4
+      "src/components/hubs/ComprendreQuestionSpine.tsx", // 4 css
+      "src/components/hubs/JouerFaceOff.tsx", // 3 css
+      // --- lot 10 · home/ — DESIGN GATE (26) ---------------------------
+      "src/components/home/AccessAxes.tsx", // 9 css
+      "src/components/home/AxisModulePanel.tsx", // 6 css
+      "src/components/home/HomeGlobe.tsx", // 4 css
+      "src/components/home/HomeHero.tsx", // 3 css
+      "src/components/home/HeroFamilyCrown.tsx", // 1 css
+      "src/components/home/HeroMigrationPaths.tsx", // 1 css
+      "src/components/home/HeroProvenanceChip.tsx", // 1
+      "src/components/home/TrustStrip.tsx", // 1 css
+    ],
+    plugins: { afh: afhPlugin },
+    rules: {
+      "afh/no-raw-font-size": "error",
+    },
+  },
+
   // =============================================================================
   // NFR33, AR28: Enforce structured logging via @/lib/api/logger
   // =============================================================================
