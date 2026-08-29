@@ -149,22 +149,22 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 
   /**
-   * The route is shown, not just linked: the reader sees where the click lands
-   * before spending it (charter §3).
+   * The menu names destinations; it does not print their addresses. A URL is
+   * the router's business, and the browser already shows where a link lands
+   * when the reader hovers it. Printed under every entry, it put the project's
+   * own path scheme on the page — technique rendered as editorial content.
    *
-   * Only for a destination, though. Printing an address under each facet is
-   * what made the three of them read as three pages — the hub prints one
-   * address, and the facets are named states of it.
+   * The link still carries the address in `href`, which is the one place a
+   * reader, a crawler and a screen reader all agree to look for it.
    */
   // @req REQ-114
-  it("prints an address for a destination and none for a facet", () => {
+  it("names destinations without printing their addresses", () => {
     renderHeader();
 
     fireEvent.click(trigger("Explorer"));
 
-    expect(panel()).toHaveTextContent(getAxisHubRoute("fr", "explorer"));
-    expect(panel()).toHaveTextContent(getLocalizedRoute("fr", "search"));
-
+    expect(panel()).not.toHaveTextContent(getAxisHubRoute("fr", "explorer"));
+    expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "search"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "peoples"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "countries"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "families"));

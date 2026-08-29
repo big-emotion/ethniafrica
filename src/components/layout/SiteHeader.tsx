@@ -185,12 +185,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         </span>
         <span className="sh-entry-text">
           <span className="sh-entry-name">{definition.name}</span>
-          {/* The route is drawn for the eye, which cannot read an href.
-              A screen reader already announces the destination, so
-              repeating it here would only double the link's name. */}
-          <span className="sh-entry-route" aria-hidden="true">
-            {href ?? t.hubs.unresolvedRouteLabel}
-          </span>
           {offered ? null : (
             <span className="sh-chip">
               <span className="sh-chip-dot" aria-hidden="true" />
@@ -286,9 +280,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           </span>
           <span className="sh-entry-text">
             <span className="sh-entry-name">{t.hubs[axis].hubEntryName}</span>
-            <span className="sh-entry-route" aria-hidden="true">
-              {href}
-            </span>
           </span>
         </Link>
 
@@ -788,13 +779,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           font-size: var(--afh-text-small);
           font-weight: 700;
           line-height: 1.35;
-        }
-        .sh-entry-route {
-          display: block;
-          margin-top: 3px;
-          font-family: var(--afh-font-mono);
-          font-size: var(--afh-text-caption);
-          color: var(--afh-fg-muted);
         }
         .sh-chip {
           display: inline-flex;
