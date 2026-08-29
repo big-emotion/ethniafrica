@@ -186,15 +186,11 @@ export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
 
 // @req REQ-114
 export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
-  {
-    id: "peuples",
-    name: "Les peuples d'Afrique",
-    accessMode: "explorer",
-    page: "peoples",
-    availability: "data",
-    editorialReadiness: "ready",
-    dataSource: "afrik_peoples",
-  },
+  // Pays opens Explorer. Of the four entry points it is the one a reader
+  // already holds a name for before the atlas has taught them anything, and
+  // the fiche it opens lists the peoples underneath it — so it is an entry
+  // into the peoples too. Peuples first asked a reader to name a people in
+  // order to find one.
   {
     id: "pays",
     name: "Les pays d'Afrique",
@@ -203,6 +199,15 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_countries",
+  },
+  {
+    id: "peuples",
+    name: "Les peuples d'Afrique",
+    accessMode: "explorer",
+    page: "peoples",
+    availability: "data",
+    editorialReadiness: "ready",
+    dataSource: "afrik_peoples",
   },
   {
     id: "familles",
@@ -224,6 +229,20 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   // Comprendre runs from the most concrete question to the method that
   // answers it: why this name, where they came from, who says so.
+  // The anecdotes are the only Comprendre module whose corpus is the repo
+  // rather than the database: the bank is a TypeScript constant, so there is
+  // no table for the availability probe to count and "static" is the honest
+  // answer. Readiness is "ready" because the surface is complete on the day
+  // it ships — every fact it holds is written and cited, which is not
+  // something the modules around it can say yet.
+  {
+    id: "anecdotes",
+    name: "Anecdotes",
+    accessMode: "comprendre",
+    page: "anecdotes",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
   {
     id: "noms",
     name: "Noms & appellations",

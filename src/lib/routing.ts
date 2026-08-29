@@ -7,6 +7,7 @@ export type PageType =
   | "search"
   | "doctrine"
   | "about"
+  | "anecdotes"
   | "names"
   | "compare"
   | "migrations"
@@ -43,6 +44,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     search: "explorer/recherche",
     doctrine: "comprendre/doctrine",
     about: "about",
+    anecdotes: "comprendre/anecdotes",
     names: "comprendre/noms",
     compare: "comparer",
     migrations: "comprendre/migrations",
