@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Libye\" a été officialisé lors de l'indépendance (1951). Le nom vient de l'Antiquité grecque.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Libya (grec)",
+        "Tripolitaine et Cyrénaïque (régences ottomanes)",
+        "Colonie italienne de Libye (1911-1951)"
+      ],
       "antiquity": "Libya (grec), Libye (latin). Le territoire était peuplé de Berbères (Libyens), Grecs (Cyrénaïque), Phéniciens (Tripolitaine).",
       "middleAges": "Ifriqiya (nom arabe pour la région), Barqa (Cyrénaïque), Tarabulus (Tripoli). Domination arabe puis ottomane.",
       "precolonial": "Régences de Tripoli et de Benghazi (1551-1911), États ottomans semi-autonomes. Le territoire était divisé en Tripolitaine et Cyrénaïque.",

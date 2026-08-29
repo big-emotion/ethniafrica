@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Namibie\" vient du désert du Namib, nommé par les Nama. Le nom a été adopté lors de l'indépendance en 1990 pour remplacer \"Afrique du Sud-Ouest\" (nom colonial sud-africain). Le nom \"Namibie\" a été proposé par les nationalistes namibiens.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Deutsch-Südwestafrika (1884-1915)",
+        "Afrique du Sud-Ouest (1915-1990)"
+      ],
       "antiquity": "Le territoire actuel de la Namibie était peuplé de peuples khoïsan (San, Nama) et de peuples bantous (Herero, Ovambo). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Présence continue des peuples khoïsan et bantous. Migrations bantoues vers la région. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Développement des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Les Européens utilisaient le terme \"Afrique du Sud-Ouest\" pour désigner la région.",

@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Burkina Faso\" a été choisi par le président Thomas Sankara en 1984 lors de la révolution burkinabè. Il remplace \"Haute-Volta\" (nom colonial français dérivé du fleuve Volta). Le nom reflète l'identité pan-africaine et la diversité linguistique du pays (mooré et dioula).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Haute-Volta (1919-1960)",
+        "République de Haute-Volta (1960-1984)"
+      ],
       "antiquity": "Le territoire actuel du Burkina Faso était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes mossi, chefferies gur, etc.).",
       "middleAges": "Développement de royaumes mossi (XIe-XIXe siècles) : Wogodogo (Ouagadougou), Yatenga, Tenkodogo, Fada N'Gourma. Développement de chefferies gur (Bobo, Gourounsi, Dagara, etc.). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies Bobo, Lobi, Dagara, Gourounsi, Senoufo. Peuples Peuls et Touaregs en transhumance dans le nord. Les Européens utilisaient le terme \"Haute-Volta\" pour désigner la région (dérivé du fleuve Volta).",

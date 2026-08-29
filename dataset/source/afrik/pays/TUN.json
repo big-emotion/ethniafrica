@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Tunisie\" vient de \"Tunis\", fondée par les Berbères puis développée par les Arabes. Le nom a été officialisé lors de la colonisation française.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Ifriqiya (berbère puis arabe)",
+        "Africa (romain, origine du nom du continent)",
+        "Régence de Tunis (1574-1881)"
+      ],
       "antiquity": "Ifriqiya (nom berbère), Africa (nom romain, origine du nom du continent), Carthage (ancienne capitale punique). Le territoire était peuplé de Berbères et de Phéniciens.",
       "middleAges": "Ifriqiya (nom arabe), Tunis (capitale). Dynasties arabes et berbères (Aghlabides, Fatimides, Zirides, Hafsides).",
       "precolonial": "Régence de Tunis (1574-1881), État ottoman semi-autonome dirigé par des beys. Le territoire était appelé \"Ifriqiya\" ou \"Tunis\".",

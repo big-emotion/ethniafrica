@@ -7,6 +7,10 @@
   "nameOriginActor": "Les Français ont adopté le nom \"Mauritanie\" lors de la création du protectorat (1904) puis de la colonie (1920). Le nom fait référence aux \"Maures\" (Beidhane), populations arabophones nomades de la région. Le terme \"Mauretania\" était utilisé par les Romains pour désigner une région différente (actuel Maroc et Algérie occidentale), sans continuité réelle avec la Mauritanie moderne.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Mauretania (romain)",
+        "Colonie de Mauritanie (1920-1960)"
+      ],
       "antiquity": "Le territoire actuel de la Mauritanie était peuplé de Berbères Sanhaja (Lemtouna, Massufa, Godala) et de populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de nom unifié pour l'ensemble du territoire.",
       "middleAges": "VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara). Termes locaux : \"Bilad Chinguetti\" (pays de Chinguetti), \"trilhad\" (pays des nomades). Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères.",
       "precolonial": "Tribus Maures (Beidhane), populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine). Les Européens utilisaient \"Pays des Maures\" (Mauretania dérivé de l'Antiquité, mais sans continuité réelle).",

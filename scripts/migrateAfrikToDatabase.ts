@@ -270,6 +270,9 @@ async function upsertCountries(
         {
           id: country.id,
           name_fr: country.nameFr,
+          // Unmapped fields do not error here, they simply never arrive —
+          // which is how the chapeau could have stayed in git forever.
+          summary: country.summary ?? null,
           etymology: country.etymology ?? null,
           name_origin_actor: country.nameOriginActor ?? null,
           content: country.content,

@@ -39,6 +39,15 @@ vi.mock("@/lib/hubs/moduleAvailability", async () => {
   };
 });
 
+// The synthesis rail reads the corpus over Supabase. Unmocked, the client
+// spends the whole test timeout retrying a connection that is not there —
+// loadSynthesisRail swallows the failure by design, but only after the
+// retries, which is far too late for a render test. The rail's own content
+// is covered in src/lib/home/__tests__ and src/components/home/__tests__.
+vi.mock("@/lib/home/synthesisRailData", () => ({
+  loadSynthesisRail: vi.fn(async () => []),
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="page-layout">{children}</div>
