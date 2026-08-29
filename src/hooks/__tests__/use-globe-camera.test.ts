@@ -7,6 +7,7 @@ import {
   MIN_ZOOM,
   PITCH_LIMIT_RADIANS,
   READER_MAX_ZOOM,
+  panLimitForZoom,
   type CameraPose,
 } from "@/lib/atlas/camera";
 
@@ -70,6 +71,8 @@ const ENTITY_FRAME: CameraPose = {
   zoom: 1.28,
   offsetX: 0,
   offsetY: 0,
+  panX: 0,
+  panY: 0,
   morph: 1,
 };
 
@@ -80,6 +83,8 @@ const CHOSEN_COUNTRY: CameraPose = {
   zoom: 1.55,
   offsetX: 0,
   offsetY: 0.54,
+  panX: 0,
+  panY: 0,
   morph: 1,
 };
 
@@ -287,6 +292,133 @@ describe("useGlobeCamera — the reader's own dolly (REQ-117)", () => {
     runUntilStill();
 
     expect(result.current.pose.zoom).toBeCloseTo(ENTITY_FRAME.zoom);
+  });
+});
+
+describe("useGlobeCamera — the reader's own pan (REQ-117)", () => {
+  // @req REQ-117
+  it("moves the map without turning or magnifying it", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(3);
+    });
+    act(() => {
+      result.current.panBy(0.4, -0.2);
+    });
+
+    expect(result.current.pose.panX).toBeCloseTo(0.4);
+    expect(result.current.pose.panY).toBeCloseTo(-0.2);
+    expect(result.current.pose.yaw).toBeCloseTo(ENTITY_FRAME.yaw);
+    expect(result.current.pose.pitch).toBeCloseTo(ENTITY_FRAME.pitch);
+    expect(queuedFrames.size).toBe(0);
+  });
+
+  // @req REQ-117
+  it("leaves the panel's bias alone, which is the reason the pan is its own field", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(3);
+    });
+    act(() => {
+      result.current.panBy(0.5, 0.5);
+    });
+
+    expect(result.current.pose.offsetX).toBe(ENTITY_FRAME.offsetX);
+    expect(result.current.pose.offsetY).toBe(ENTITY_FRAME.offsetY);
+  });
+
+  // @req REQ-117
+  it("refuses to move a map that has no slack, so an unzoomed globe cannot be lost", () => {
+    const { result } = renderHook(() =>
+      useGlobeCamera(null, { ...ENTITY_FRAME, zoom: 1 }, false)
+    );
+
+    act(() => {
+      result.current.panBy(0.9, 0.9);
+    });
+
+    expect(result.current.pose.panX).toBe(0);
+    expect(result.current.pose.panY).toBe(0);
+  });
+
+  // @req REQ-117
+  it("holds at the edge of what the dolly revealed", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(READER_MAX_ZOOM);
+    });
+    const limit = panLimitForZoom(result.current.pose.zoom);
+
+    act(() => {
+      result.current.panBy(99, -99);
+    });
+
+    expect(result.current.pose.panX).toBeCloseTo(limit);
+    expect(result.current.pose.panY).toBeCloseTo(-limit);
+  });
+
+  /**
+   * Pulling back shrinks the slack that made the pan legal. Left alone, a
+   * reader who panned to the edge at 6x and then zoomed out landed on a map
+   * stuck off-centre, with nothing telling them why.
+   */
+  // @req REQ-117
+  it("brings a pan back inside the slack when the reader zooms out", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(READER_MAX_ZOOM);
+    });
+    act(() => {
+      result.current.panBy(99, 99);
+    });
+    expect(result.current.pose.panX).toBeGreaterThan(0);
+
+    act(() => {
+      result.current.zoomBy(1 / READER_MAX_ZOOM ** 2);
+    });
+
+    expect(result.current.pose.zoom).toBe(MIN_ZOOM);
+    expect(result.current.pose.panX).toBe(0);
+    expect(result.current.pose.panY).toBe(0);
+  });
+
+  // @req REQ-117
+  it("gives the entity's own framing back when the reader recentres", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(3);
+    });
+    act(() => {
+      result.current.panBy(0.6, 0.6);
+    });
+    act(() => {
+      result.current.recentre();
+    });
+    runUntilStill();
+
+    expect(result.current.pose.panX).toBeCloseTo(0);
+    expect(result.current.pose.panY).toBeCloseTo(0);
+  });
+
+  // @req REQ-117
+  it("takes the map out of a flight rather than being added into it", () => {
+    const { result, rerender } = renderCamera();
+
+    rerender({ destination: CHOSEN_COUNTRY, reducedMotion: false });
+    runOneFrame(0);
+    runOneFrame(FLY_TO_DURATION_MS / 4);
+    expect(queuedFrames.size).toBe(1);
+
+    act(() => {
+      result.current.panBy(0.1, 0);
+    });
+
+    expect(queuedFrames.size).toBe(0);
   });
 });
 

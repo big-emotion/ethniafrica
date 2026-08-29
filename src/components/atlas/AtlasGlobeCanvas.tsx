@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 import { CHARTER_OCRE_HEX } from "@/components/home/DottedContinent";
-import type { CameraPose } from "@/lib/atlas/camera";
+import { cameraOffset, type CameraPose } from "@/lib/atlas/camera";
 import {
   buildPointField,
   buildRingFan,
@@ -299,8 +299,8 @@ export function AtlasGlobeCanvas({
         morph: camera.morph,
         aspect,
         zoom: camera.zoom,
-        offsetX: camera.offsetX,
-        offsetY: camera.offsetY,
+        offsetX: cameraOffset(camera).x,
+        offsetY: cameraOffset(camera).y,
       });
     };
 
@@ -388,7 +388,7 @@ export function AtlasGlobeCanvas({
         );
         gl.uniform1f(uAspect, aspect);
         gl.uniform1f(uZoom, camera.zoom);
-        gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
+        gl.uniform2f(uOffset, cameraOffset(camera).x, cameraOffset(camera).y);
         gl.uniform1f(
           uBasePointSize,
           PEOPLE_BASE_POINT_SIZE_CSS_PX * devicePixelRatio
@@ -521,7 +521,7 @@ export function AtlasGlobeCanvas({
         );
         gl.uniform1f(uAspect, aspect);
         gl.uniform1f(uZoom, camera.zoom);
-        gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
+        gl.uniform2f(uOffset, cameraOffset(camera).x, cameraOffset(camera).y);
         gl.uniform1f(uMorph, camera.morph);
         // The margin the sphere layer is mounted at, so the boundary and the
         // ground land on the same surface at the same size.

@@ -7,8 +7,11 @@ import {
   PITCH_LIMIT_RADIANS,
   READER_MAX_ZOOM,
   advanceYaw,
+  cameraOffset,
+  clampPan,
   clampPitch,
   clampZoom,
+  panLimitForZoom,
   interpolatePose,
   poseForTarget,
   posesMatch,
@@ -302,5 +305,85 @@ describe("clampZoom bounds the reader's own dolly", () => {
   // @req REQ-117
   it("falls back to the whole hemisphere rather than passing NaN to a shader", () => {
     expect(clampZoom(Number.NaN)).toBe(MIN_ZOOM);
+  });
+});
+
+describe("the reader's pan is bounded by the slack the dolly made", () => {
+  // @req REQ-117
+  it("refuses to move an undollied map, which has nothing off-stage to reveal", () => {
+    expect(panLimitForZoom(MIN_ZOOM)).toBe(0);
+    expect(clampPan(0.9, MIN_ZOOM)).toBe(0);
+  });
+
+  // @req REQ-117
+  it("opens up exactly the slack the magnification created", () => {
+    // At 3x the surface spans six clip units against a stage of two, so one
+    // whole stage-width hangs off each side.
+    expect(panLimitForZoom(3)).toBe(2);
+    expect(clampPan(1.5, 3)).toBe(1.5);
+    expect(clampPan(99, 3)).toBe(2);
+    expect(clampPan(-99, 3)).toBe(-2);
+  });
+
+  // @req REQ-117
+  it("treats a non-finite pan as no pan rather than passing NaN to a shader", () => {
+    expect(clampPan(Number.NaN, 3)).toBe(0);
+    expect(panLimitForZoom(Number.NaN)).toBe(0);
+  });
+});
+
+describe("cameraOffset sums the panel's bias and the reader's pan", () => {
+  // @req REQ-117
+  it("adds the two rather than letting either win", () => {
+    // The whole reason the pan is its own field: a sheet opening recomputes
+    // the bias, and folding the reader's drag into it would erase the drag.
+    const posed = {
+      ...IDLE_POSE,
+      offsetX: 0.2,
+      offsetY: -0.3,
+      panX: 0.5,
+      panY: 0.1,
+    };
+
+    expect(cameraOffset(posed)).toEqual({
+      x: 0.2 + 0.5,
+      y: -0.3 + 0.1,
+    });
+  });
+
+  // @req REQ-117
+  it("is the bias alone when the reader has not moved the map", () => {
+    const biased = { ...IDLE_POSE, offsetX: 0, offsetY: 0.54 };
+
+    expect(cameraOffset(biased)).toEqual({ x: 0, y: 0.54 });
+  });
+});
+
+describe("a pose carries the pan through a flight", () => {
+  // @req REQ-117
+  it("interpolates the pan, so a fly-to does not jump the map sideways", () => {
+    const from = { ...IDLE_POSE, panX: 1, panY: -1 };
+    const to = { ...IDLE_POSE, panX: 0, panY: 0 };
+
+    const halfway = interpolatePose(from, to, 0.5);
+
+    expect(halfway.panX).toBeCloseTo(0.5);
+    expect(halfway.panY).toBeCloseTo(-0.5);
+  });
+
+  // @req REQ-117
+  it("tells two framings apart by their pan alone", () => {
+    // Without this the camera would think it had already arrived and refuse
+    // to fly a globe the reader had dragged.
+    expect(posesMatch(IDLE_POSE, { ...IDLE_POSE, panX: 0.4 })).toBe(false);
+    expect(posesMatch(IDLE_POSE, { ...IDLE_POSE, panY: 0.4 })).toBe(false);
+  });
+
+  // @req REQ-117
+  it("lands a chosen target with no pan, so a choice reframes rather than adds", () => {
+    const pose = poseForTarget(target(20, -10), { offsetX: 0, offsetY: 0 });
+
+    expect(pose.panX).toBe(0);
+    expect(pose.panY).toBe(0);
   });
 });
