@@ -70,16 +70,9 @@ export function CountryParchment({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <header className="afh-parchment-head">
-        <p className="afh-parchment-eyebrow">
-          {data.hero.iso} · fiche pays
-          {hasPeoples && ` · réf. ${DEMOGRAPHIC_REFERENCE_YEAR}`}
-        </p>
-        <h1>{data.hero.countryName}</h1>
-        {data.hero.nameOfficial && (
-          <p className="afh-parchment-lede">{data.hero.nameOfficial}</p>
-        )}
-      </header>
+      {/* The head stands above the globe now (CountryFicheTitle), so a
+          reader is told which country they opened before the band fills the
+          screen. The parchment opens on its first chapter. */}
 
       <Section
         title="Étymologie du nom"
