@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
-import { GamePlayHost } from "@/components/play/GamePlayHost";
-import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
+import { MercatorSurface } from "@/components/mercator/MercatorSurface";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
+import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { OG_TITLE } from "@/lib/brand";
 
@@ -59,6 +59,13 @@ export default async function GamePage({ params }: GamePageProps) {
 
   const envelope = await getGameRoundsHandler(game, seed);
 
+  // Measured server-side and handed down, the way the rounds are: summing
+  // fifty-eight outlines is a few hundred thousand trigonometric calls, and
+  // there is no reason to spend them in the reader's browser. The whole bank
+  // travels — the session states one fact every other reveal, and the score
+  // card lays out all of them.
+  const facts = pickScaleFacts(buildScaleFacts().length, seed);
+
   return (
     <PageLayout
       language="fr"
@@ -73,13 +80,17 @@ export default async function GamePage({ params }: GamePageProps) {
           indicatrices keep the same real area throughout. Reading about the
           distortion and watching it undo itself are not the same lesson.
 
-          It stands above the rounds rather than beside them. The stage is the
-          page's argument and the rounds are the questions it earns; a globe
-          set next to a live question would let the reader answer by eye, which
-          is the shape-guessing the charter retired as a category (§1). */}
-      <HomeGlobeStage />
-
-      <GamePlayHost game={game} rounds={envelope.data.rounds} />
+          It no longer merely stands above the rounds. `MercatorSurface` binds
+          the two, so the map is held flat while a question stands and closes
+          into a sphere on the reveal — see that component for why this obeys
+          charter §1 rather than breaking it, and how the fold rule of §9.1 is
+          met without shrinking the globe. */}
+      <MercatorSurface
+        game={game}
+        rounds={envelope.data.rounds}
+        facts={facts}
+        corpusLimited={envelope.data.corpusLimited}
+      />
     </PageLayout>
   );
 }

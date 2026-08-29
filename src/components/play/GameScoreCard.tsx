@@ -1,6 +1,8 @@
 "use client";
 
+import { ScaleFactCard } from "@/components/play/ScaleFactCard";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
+import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { cn } from "@/lib/utils";
 
 const COPY_FR = {
@@ -8,6 +10,9 @@ const COPY_FR = {
   scoreSeparator: "sur",
   scoreCaption: "réponses exactes",
   playAgain: "Rejouer",
+  factsHeading: "Tout ce que la carte cachait",
+  corpusLimited:
+    "Cette partie a été plus courte que prévu : les tracés ne fournissent pas encore assez de comparaisons trompeuses pour huit manches.",
   emptyCorpus:
     "Le corpus ne contient pas encore assez de fiches pour composer un tour de ce jeu.",
   emptyCorpusHint:
@@ -18,6 +23,21 @@ export interface GameScoreCardProps {
   game: GameDefinition;
   correct: number;
   total: number;
+  /**
+   * The whole measured bank, laid out once the session is over.
+   *
+   * This is the reading surface the page owes, and it is here rather than on
+   * a route of its own: the reader who wants the facts is already at the end
+   * of a session about them, and a separate page would be a second
+   * destination competing for the same visit.
+   */
+  facts?: ScaleFact[];
+  /**
+   * True when the corpus yielded fewer rounds than the game asked for. The
+   * handler has always computed this; the page used to drop it on the floor,
+   * so a short session looked like a complete one.
+   */
+  corpusLimited?: boolean;
   onPlayAgain: () => void;
   className?: string;
 }
@@ -37,6 +57,8 @@ export const GameScoreCard = ({
   game,
   correct,
   total,
+  facts = [],
+  corpusLimited = false,
   onPlayAgain,
   className,
 }: GameScoreCardProps) => {
@@ -66,6 +88,14 @@ export const GameScoreCard = ({
             {COPY_FR.scoreCaption}
           </p>
           <p className="text-afh-body text-afh-text-soft">{game.nameFr}</p>
+          {corpusLimited ? (
+            <p
+              data-testid="game-score-corpus-limited"
+              className="text-afh-small text-afh-text-soft"
+            >
+              {COPY_FR.corpusLimited}
+            </p>
+          ) : null}
           <button
             type="button"
             onClick={onPlayAgain}
@@ -86,6 +116,27 @@ export const GameScoreCard = ({
           </p>
         </div>
       )}
+
+      {/*
+        The score is the pretext and the facts are the lesson - charter 7
+        makes that point about a round reveal, and the end of a session is
+        where it matters most. A card stopping at "5 sur 8" would send the
+        reader away with a number about themselves instead of one about the
+        continent.
+      */}
+      {facts.length > 0 ? (
+        <section
+          data-testid="game-score-facts"
+          className="flex w-full flex-col gap-3 border-t border-afh-border pt-4 text-left"
+        >
+          <h3 className="font-afh-display text-afh-h3 font-bold text-afh-text">
+            {COPY_FR.factsHeading}
+          </h3>
+          {facts.map((fact) => (
+            <ScaleFactCard key={fact.id} fact={fact} />
+          ))}
+        </section>
+      ) : null}
     </div>
   );
 };

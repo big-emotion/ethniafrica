@@ -35,9 +35,24 @@ const LazyHomeGlobe = dynamic(
  * same way they filled the old overlay, so no change was needed there
  * beyond HomeGlobeFallback's alignment (see its own doc comment).
  */
+export interface HomeGlobeStageProps {
+  /**
+   * Forwarded to the globe: 0 is the flat Mercator map, 1 the sphere, and a
+   * value at all takes the slider out of the reader's hands. The Mercator
+   * game holds the map flat while its question stands. Null on the home.
+   */
+  morphOverride?: number | null;
+  /** Why the slider is locked, shown beside it rather than left unexplained. */
+  overrideNoteFr?: string;
+}
+
 // @req REQ-112
 // @req REQ-115
-export function HomeGlobeStage() {
+// @req REQ-120
+export function HomeGlobeStage({
+  morphOverride = null,
+  overrideNoteFr,
+}: HomeGlobeStageProps = {}) {
   const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
   // The probe above only proves a context can be created. Compiling and
   // linking the globe's shaders on it can still fail — the common case on
@@ -60,7 +75,13 @@ export function HomeGlobeStage() {
 
   return (
     <div className="home-globe-stage">
-      {globeCanRun && <LazyHomeGlobe onUnavailable={handleGlobeUnavailable} />}
+      {globeCanRun && (
+        <LazyHomeGlobe
+          onUnavailable={handleGlobeUnavailable}
+          morphOverride={morphOverride}
+          overrideNoteFr={overrideNoteFr}
+        />
+      )}
       {noGlobePossible && <HomeGlobeFallback />}
       <style>{`
         /* The reference demo's stage heights were 380 / 460: the globe
