@@ -216,6 +216,36 @@ describe("the non-WebGL fallback's geometry (REQ-117 AC5)", () => {
       placeTargetOnBasemap(target(180, 0), IDLE_POSE, null).facingReader
     ).toBe(true);
   });
+
+  /**
+   * The continent scene never flies, so its focus is null forever — and the
+   * unfocused branch used to be a flat identity, which discarded the dolly
+   * along with the pan. The reader could press the zoom control all they
+   * liked: the map, and every marker on it, stayed exactly where it was.
+   */
+  // @req REQ-117
+  it("magnifies an unchosen map about its own centre rather than ignoring the dolly", () => {
+    const dollied = { ...IDLE_POSE, zoom: 2 };
+
+    expect(basemapTransform(dollied, null)).not.toBe(
+      basemapTransform(IDLE_POSE, null)
+    );
+    expect(basemapTransform(dollied, null)).toContain("scale(2)");
+  });
+
+  // @req REQ-117
+  it("carries the unchosen markers with the map they stand on", () => {
+    const eastern = target(30, 0);
+    const dollied = { ...IDLE_POSE, zoom: 2 };
+
+    const atRest = placeTargetOnBasemap(eastern, IDLE_POSE, null);
+    const magnified = placeTargetOnBasemap(eastern, dollied, null);
+
+    // East of the map's centre, so magnifying about that centre sends it
+    // further right — the same way the shapes under it move.
+    expect(atRest.leftPercent).toBeGreaterThan(50);
+    expect(magnified.leftPercent).toBeGreaterThan(atRest.leftPercent);
+  });
 });
 
 describe("placeTargetOnBasemap — the band the map is letterboxed into", () => {
