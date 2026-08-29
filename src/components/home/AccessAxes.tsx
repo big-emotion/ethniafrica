@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { AxisModulePanel } from "@/components/home/AxisModulePanel";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
@@ -36,14 +37,20 @@ interface AxisDefinition {
   id: AccessMode;
   name: string;
   cta: string;
-  // The registry's filing criterion, restated per axis: what the reader
-  // hands in, what the axis hands back. It is why a module sits here and
-  // not on the next card, so the reader gets to apply the same rule.
+  /**
+   * What the reader finds behind the card, in one line.
+   *
+   * It used to state the registry's filing criterion as a rhetorical figure
+   * — « Il arrive avec un nom. Il repart avec une fiche. » — which describes
+   * the reader rather than the destination. A card has exactly one line to
+   * say where the click lands, and spending it on the figure left a reader
+   * who did not already know the difference between the three axes to guess.
+   * The line now names the contents, in the same register as the header
+   * panel's `menuBlurb`, which had always done it this way.
+   */
   stake: string;
   figure: (counts: CorpusCounts) => string;
 }
-
-const LEAD = "Avec quoi le lecteur arrive, avec quoi il repart.";
 
 const plural = (count: number, singular: string, many = `${singular}s`) =>
   `${count} ${count > 1 ? many : singular}`;
@@ -53,7 +60,8 @@ const AXES: AxisDefinition[] = [
     id: "explorer",
     name: "Explorer",
     cta: "Parcourir",
-    stake: "Il arrive avec un nom. Il repart avec une fiche.",
+    stake:
+      "Les fiches du corpus : peuples, pays, langues et familles linguistiques.",
     figure: (counts) =>
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
@@ -61,14 +69,16 @@ const AXES: AxisDefinition[] = [
     id: "comprendre",
     name: "Comprendre",
     cta: "Remonter",
-    stake: "Il arrive avec une question. Il repart avec une explication.",
+    stake:
+      "D'où viennent les noms, par où sont passés les peuples, et sur quelles sources.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
   },
   {
     id: "jouer",
     name: "Jouer",
     cta: "Se tester",
-    stake: "Il arrive sans rien. Il repart avec un résultat.",
+    stake:
+      "Des jeux et des quiz tirés du corpus, dont chaque réponse est sourcée.",
     // Counted off the registry, not written down: the axis promised
     // « 2 peuples face à face » back when Jouer held one comparison module,
     // and that sentence survived REQ-120 turning the hub into twelve games
@@ -247,12 +257,21 @@ export function AccessAxes({
 
   return (
     <>
-      {/* Outside the <nav>, which is itself the grid: a child of it would
-          be laid out as a fourth cell. And a paragraph, not a heading —
-          it orients the reader, it is not a level in the outline. */}
-      <p data-testid="access-axes-lead" className="access-axes-lead">
-        {LEAD}
-      </p>
+      {/* Outside the <nav>, which is itself the grid: a child of it would be
+          laid out as a fourth cell.
+
+          It is a heading now, where it used to be a paragraph. The old line
+          — « Avec quoi le lecteur arrive, avec quoi il repart. » — named the
+          rule by which modules are filed behind the three axes, which is a
+          statement about the shelving, not about the choice being asked of
+          the reader. The section is the page's entry point; it says so, and
+          the outline gains the rung it was missing. */}
+      <SectionHeading
+        eyebrow="Par où commencer"
+        title="Trois entrées, selon ce que vous cherchez."
+        testId="home-axes-heading"
+        className="access-axes-heading"
+      />
 
       <nav
         aria-label="Les trois axes"
@@ -305,7 +324,9 @@ export function AccessAxes({
               >
                 <AxisGlyph axis={axis.id} animated={animated} />
               </span>
-              <h2 id={`access-axis-title-${axis.id}`}>{axis.name}</h2>
+              {/* h3: the card is an item of the section whose heading sits
+                  above the grid, not a sibling of it. */}
+              <h3 id={`access-axis-title-${axis.id}`}>{axis.name}</h3>
               <p
                 data-testid={`access-axis-stake-${axis.id}`}
                 className="access-axis-stake"
@@ -350,15 +371,12 @@ export function AccessAxes({
       </nav>
 
       <style>{`
-        .access-axes-lead {
+        /* Only the width and the alignment: the dress is the shared unit's
+           (src/styles/section-heading.css), so this section cannot drift
+           away from the four others. */
+        .access-axes-heading {
           max-width: ${MAX_PANEL_WIDTH}px;
-          margin: 0 auto 16px;
-          font-family: var(--afh-font-mono);
-          font-size: var(--home-text-axes-lead);
-          line-height: 1.45;
-          /* Same class of small content type as the axis figures, held to
-             the same AA bar by src/styles/__tests__/colorTokens.test.ts. */
-          color: var(--afh-fg-muted);
+          margin-inline: auto;
         }
 
         .access-axes {
@@ -474,10 +492,15 @@ export function AccessAxes({
           height: 100%;
         }
 
-        .access-axis h2 {
+        /* --afh-text-h2, not the fixed 26px it used to carry: the section
+           heading above is --afh-text-h1, and a fixed card title overtook
+           it below ~700px — the group heading ended up smaller than the
+           three cards it heads, on mobile, which is the width most readers
+           arrive at. A fluid step keeps the two in order at every size. */
+        .access-axis h3 {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: var(--home-text-axis-name);
+          font-size: var(--afh-text-h2);
           margin: 0;
           letter-spacing: -0.015em;
           position: relative;
@@ -643,7 +666,7 @@ export function AccessAxes({
             padding: 16px 18px;
           }
           .access-axis-glyph { grid-area: glyph; width: 42px; height: 42px; }
-          .access-axis h2 { grid-area: name; }
+          .access-axis h3 { grid-area: name; }
           .access-axis-stake {
             grid-area: stake;
             margin: 0;

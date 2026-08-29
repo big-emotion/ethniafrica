@@ -458,11 +458,19 @@ export const translations = {
     // when to choose the axis at all, to a reader still deciding. Two jobs,
     // so two sentences; both copied from docs/design/mockups, which is the
     // reference when code and mockup disagree (docs/design/README.md).
+    //
+    // Each blurb used to open on the reader's own trajectory — « Il arrive
+    // avec un nom, il repart avec une fiche » — before naming the contents.
+    // It read as a figure of speech where a hub page owes a description,
+    // and it was the first sentence of three pages and their three meta
+    // descriptions. The clause is gone; what the axis actually holds, which
+    // was already the back half of every one of these, is now the whole of
+    // it. The home's cards (AccessAxes) carry the same change.
     hubs: {
       explorer: {
         title: "Explorer",
         blurb:
-          "Il arrive avec un nom, il repart avec une fiche : l'axe des objets du corpus — peuples, pays, langues, familles.",
+          "L'axe des objets du corpus : peuples, pays, langues et familles linguistiques, chacun sous sa propre fiche.",
         menuBlurb:
           "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus.",
         hubEntryName: "Le hub d'exploration",
@@ -470,7 +478,7 @@ export const translations = {
       comprendre: {
         title: "Comprendre",
         blurb:
-          "Il arrive avec une question, il repart avec une explication : l'axe des relations — ce nom, cette origine, cette source.",
+          "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
           "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
         hubEntryName: "Le hub de lecture",
@@ -478,7 +486,7 @@ export const translations = {
       jouer: {
         title: "Jouer",
         blurb:
-          "Il arrive sans rien, il repart avec un résultat : l'axe de la boucle de retour — comparer, répondre, se mesurer.",
+          "L'axe de la mise à l'épreuve : des jeux et des quiz tirés du corpus, dont chaque réponse renvoie à sa fiche.",
         menuBlurb:
           "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements.",
         hubEntryName: "Le hub des jeux",

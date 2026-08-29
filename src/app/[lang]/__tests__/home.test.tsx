@@ -61,9 +61,14 @@ vi.mock("@/components/home/HomeGlobeStage", () => ({
 import Home, { metadata } from "../page";
 
 describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-115)", () => {
+  // The page used to run flat: one h1 and eleven h2 siblings, because three
+  // sections had no heading of their own and the items inside the other two
+  // sat at the same level as the sections. It now has three rungs — the
+  // outline in homeOrientation.test.tsx asserts the shape; this keeps the
+  // headline itself verbatim.
   // @req FR91 @req FR95
   // @req REQ-044
-  it("renders the hero with a single verbatim H1 and zero H3", async () => {
+  it("renders the hero with a single verbatim H1", async () => {
     render(await Home({ searchParams: Promise.resolve({}) }));
 
     const headings = screen.getAllByRole("heading", { level: 1 });
@@ -71,7 +76,6 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     expect(headings[0]).toHaveTextContent(
       "Les peuples d'Afrique, sous le nom qu'ils se donnent"
     );
-    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
   // Nothing on this route is pinned to night any more, the globe's panel
@@ -225,7 +229,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
       await Home({ searchParams: Promise.resolve({ hero: "mercator" }) })
     );
 
-    expect(container.querySelector(".home-globe-holder")).toHaveClass(
+    expect(container.querySelector(".home-featured")).toHaveClass(
       "afh-accent-perv"
     );
   });

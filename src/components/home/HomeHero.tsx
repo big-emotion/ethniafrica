@@ -1,9 +1,3 @@
-import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
-import { HeroModuleStage } from "@/components/home/HeroModuleStage";
-import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
-import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
-import type { HubModule } from "@/lib/hubs/moduleAvailability";
-import type { HeroPreview } from "@/lib/home/heroPreviewData";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
@@ -21,41 +15,24 @@ import { PRODUCT_NAME } from "@/lib/brand";
  * required only from `confidence >= medium` upward, so a per-fiche guarantee
  * would be a claim the corpus does not carry.
  *
- * Nothing here is pinned to a surface
- * any more: the whole band, the globe's panel included, follows the reader's
- * choice. DEC-022 — dataviz on the night surface — still governs a fiche's
- * atlas, where the globe is a panel inside a page of prose. The home's globe
- * is not a panel but the page's subject, and a dark disc held over a
- * parchment page read as a hole punched through it rather than as a sky.
+ * Three registers, in descending order of voice: the headline states the
+ * thesis, the lede glosses it, the standfirst says plainly what the site is
+ * and what rule it holds itself to. The band used to stop after the lede and
+ * hand the reader a globe, which meant the one question a first-time visitor
+ * actually has — what is this site? — went unanswered above the fold.
  *
- * A dark sky is what makes a lit body read as round, so the globe does not
- * simply lose it — HomeGlobe repaints the sphere itself in the parchment
- * palette (--afh-globe-parchment-*), where the ocean is a shade deeper than
- * the page and the disc states its own edge.
+ * The module that used to fill the rest of the band now stands lower on the
+ * page as its own section (FeaturedModule), with a heading of its own. The
+ * band is copy, and it sizes to its copy: the viewport-height floor it used
+ * to carry existed to hold the globe and left with it.
  *
  * The band ends on a seam rather than a fade: the edge where the hero stops
  * and the archive starts is the page's one large gesture, and a gradient
  * would blur exactly the transition it exists to state.
  */
-export interface HomeHeroProps {
-  /**
-   * The module drawn for this request, and what its preview needs
-   * (REQ-115). Either being absent — nothing heroable is live, or the
-   * corpus could not fill the module — keeps the globe the band has always
-   * shown, unlabelled, because a provenance chip over a fallback would
-   * name a module the reader is not looking at.
-   */
-  heroModule?: HubModule | null;
-  heroPreview?: HeroPreview | null;
-}
-
 // @req REQ-044
 // @req REQ-115
-export function HomeHero({
-  heroModule = null,
-  heroPreview = null,
-}: HomeHeroProps = {}) {
-  const labelled = heroModule && heroPreview;
+export function HomeHero() {
   return (
     <section
       // Landmark label dropped during the light-parchment swap (ETNI-820,
@@ -72,34 +49,27 @@ export function HomeHero({
               at exactly the moment the headline states its thesis. */}
           <em>le&nbsp;nom qu&apos;ils se donnent</em>
         </h1>
-        <p>
+        <p className="home-hero-lede">
           Leurs langues, leurs familles, leurs pays — et, derrière chaque nom,
           qui l&apos;a donné, depuis où et à quelle époque.
         </p>
-      </header>
+        {/* The lede glosses the headline; the standfirst says what the site
+            is, to a reader who has landed on it for the first time and has
+            no idea yet whether this is an encyclopedia, a map or a game.
+            Two sentences: what the atlas publishes, and the rule it holds
+            itself to.
 
-      {/* The module says what it is from its own readout — the globe's
-          tracks the morph (HomeGlobe) — so the band adds only where the
-          module can be found again, never a second caption describing it.
-          The accent wrapper is the whole colour decision: the chip and the
-          stage below read --accent off the drawn module's axis without
-          either of them learning which axis that was. */}
-      <div
-        className={
-          labelled
-            ? `home-globe-holder ${ACCENT_BY_ACCESS_MODE[heroModule.accessMode]}`
-            : "home-globe-holder"
-        }
-      >
-        {labelled ? (
-          <>
-            <HeroProvenanceChip language="fr" module={heroModule} />
-            <HeroModuleStage preview={heroPreview} />
-          </>
-        ) : (
-          <HomeGlobeStage />
-        )}
-      </div>
+            No figures in it. « 803 peuples » would be a literal the corpus
+            outgrows silently — the axis cards already print counts that read
+            themselves (getCorpusCounts), and that is where a number belongs. */}
+        <p className="home-hero-standfirst" data-testid="home-hero-standfirst">
+          L&apos;Atlas des Peuples d&apos;Afrique publie en accès libre les
+          peuples du continent, leurs langues, leurs familles linguistiques et
+          leurs pays, chacun sous le nom qu&apos;il se donne. Chaque affirmation
+          y porte sa source et son niveau de confiance, et ce qui reste débattu
+          est signalé comme tel.
+        </p>
+      </header>
 
       <div className="home-hero-seam" aria-hidden="true" />
 
@@ -117,7 +87,7 @@ export function HomeHero({
         }
 
         .home-hero-copy {
-          padding: 46px 24px 0;
+          padding: 46px 24px 40px;
           max-width: 780px;
           margin: 0 auto;
           text-align: center;
@@ -135,7 +105,10 @@ export function HomeHero({
           font-style: italic;
           color: var(--afh-display-accent);
         }
-        .home-hero-copy p {
+        /* Class, not \`.home-hero-copy p\`: a descendant selector outranks a
+           single class, so the element rule would have overridden the
+           standfirst's own size and ink below however it was written. */
+        .home-hero-lede {
           margin: 0 auto;
           max-width: 56ch;
           font-size: var(--home-text-hero-copy);
@@ -143,17 +116,23 @@ export function HomeHero({
           color: var(--afh-text-soft);
         }
 
-        /* The panel carries no surface of its own: it runs edge to edge on
-           the band's own ground, so the globe sits on the page rather than
-           in a card cut out of it. */
-        .home-globe-holder {
-          position: relative;
-          background: var(--afh-bg);
-          padding-top: 16px;
-          margin-top: 16px;
-          flex: 1 1 auto;
-          display: flex;
-          flex-direction: column;
+        /* The standfirst is the page's first prose, so it takes the reading
+           size and the full ink — the lede above it stays the smaller, softer
+           gloss on the headline. Set the other way round, two paragraphs of
+           near-identical grey would read as one four-line block and the
+           reader would skip both.
+
+           A hairline rather than a rule: it marks where the claim stops and
+           the description starts, without cutting the band in two. */
+        .home-hero-standfirst {
+          margin: 0 auto;
+          margin-top: 22px;
+          padding-top: 22px;
+          max-width: 62ch;
+          font-size: var(--afh-text-body);
+          line-height: var(--afh-leading-body);
+          color: var(--afh-text);
+          border-top: 1px solid var(--afh-border);
         }
 
         .home-hero-seam {
@@ -164,20 +143,19 @@ export function HomeHero({
 
         @media (max-width: 700px) {
           .home-hero-copy {
-            padding: 34px 20px 0;
+            padding: 34px 20px 30px;
             text-align: left;
+          }
+          .home-hero-standfirst {
+            margin-inline: 0;
           }
         }
 
-        /* The nav sits above the band, not inside it, so a plain 100dvh
-           pushed the globe's own controls past the fold by exactly the
-           height of the bar. */
-        @media (min-width: 1200px) {
-          .home-hero {
-            min-height: calc(100vh - 56px);
-            min-height: calc(100dvh - 56px);
-          }
-        }
+        /* No viewport-height floor any more. It existed to keep the globe
+           and its controls inside the first screen; with the module gone to
+           its own section, the same rule would stretch three paragraphs over
+           a full screen and push the three entry points below the fold —
+           which is the opposite of why they were moved up here. */
       `}</style>
     </section>
   );

@@ -34,8 +34,11 @@
   --home-text-hero-copy: 15.5px;
 
   /* ── AccessAxes — the three entry cards ───────────────────── */
-  --home-text-axes-lead: 12.5px;
-  --home-text-axis-name: 26px;
+  /* Two entries left the pen rather than being reconciled: the lead's
+     12.5px went with the paragraph it dressed, now a SectionHeading on
+     the canonical scale, and the card name's fixed 26px became
+     --afh-text-h2 so it stays under the section heading above it at
+     every width. Both were half-steps this file exists to retire. */
   --home-text-axis-stake: 13.5px;
   --home-text-axis-figure: 12px;
   --home-text-axis-cta: 14px;
@@ -70,7 +73,9 @@
 
 @media (max-width: 860px) {
   :root {
-    --home-text-axis-name: 21px;
+    /* --home-text-axis-name's 26px/21px pair left with the token: the card
+       title is --afh-text-h2 now, which is fluid, so the step this query
+       used to make by hand is in the clamp. */
     --home-text-axis-stake: 12.5px;
     --home-text-axis-figure: 11.5px;
   }

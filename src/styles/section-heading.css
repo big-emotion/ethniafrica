@@ -1,0 +1,72 @@
+/* ============================================================
+   Africa History — The section heading unit
+
+   One dress for every section title on the home, so that five
+   sections read as five chapters of one page rather than five
+   components that happened to land on the same scroll.
+
+   Two roles, stacked:
+
+     eyebrow — what kind of section this is. Mono, uppercase and
+               widely tracked, in the section's own accent ink. It
+               files the section; it is not a rung of the outline,
+               so SectionHeading marks it up as a paragraph.
+
+     title   — what this section says. Fraunces at --afh-text-h1,
+               one step above the --afh-text-h2 that both the
+               purpose slices and the axis cards use for their own
+               titles. That step is the whole point: a group
+               heading set at its children's size reads as a
+               fourth sibling, not as their heading.
+
+   Why --afh-text-h1 for an <h2>: the scale's roles are sizes, not
+   tag names (type.css). The page's h1 takes --afh-text-hero, so
+   --afh-text-h1 is the step below it and the section headings sit
+   exactly one rung under the headline, in both the outline and
+   the type.
+
+   Colour is never named here. The eyebrow reads --accent-ink,
+   which an .afh-accent-* wrapper on the section resolves — the
+   scoping doctrine in color.css, where no component learns which
+   accent it was rendered under. Unwrapped, :root's ocre applies.
+   ============================================================ */
+
+.afh-section-heading {
+  margin: 0 0 20px;
+}
+
+.afh-section-heading-eyebrow {
+  margin: 0 0 6px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-eyebrow);
+  font-weight: var(--afh-eyebrow-weight);
+  line-height: var(--afh-leading-eyebrow);
+  letter-spacing: var(--afh-eyebrow-tracking);
+  text-transform: var(--afh-eyebrow-transform);
+  color: var(--accent-ink);
+}
+
+.afh-section-heading-title {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-size: var(--afh-text-h1);
+  font-weight: 600;
+  line-height: var(--afh-leading-h1);
+  letter-spacing: -0.014em;
+  color: var(--afh-text);
+  /* The titles run two lines at most; balanced wrapping keeps the
+     second line from becoming a single orphaned word. */
+  text-wrap: balance;
+  max-width: 24ch;
+}
+
+/* Centred sections (Saviez-vous que, the module of the month) pass
+   this modifier rather than re-declaring the unit. */
+.afh-section-heading.is-centred {
+  text-align: center;
+}
+
+.afh-section-heading.is-centred .afh-section-heading-title {
+  margin-inline: auto;
+  max-width: 28ch;
+}

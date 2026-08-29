@@ -4,6 +4,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
+import { FeaturedModule } from "@/components/home/FeaturedModule";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { SynthesisRail } from "@/components/home/SynthesisRail";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
@@ -105,13 +106,15 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <PageLayout language="fr" hideHeader flushTop>
-      <HomeHero heroModule={heroModule} heroPreview={heroPreview} />
-      {/* Argument, then proof, then sample — and only then the three doors.
-          A reader who has not yet been told what the atlas is for has no
-          basis for choosing between Explorer, Comprendre and Jouer. */}
-      <PurposeBlocks language="fr" />
-      <DidYouKnow language="fr" fact={didYouKnowFact} />
-      <SynthesisRail language="fr" syntheses={syntheses} />
+      <HomeHero />
+      {/* The doors first, then argument, proof and sample.
+          They used to come last, on the reading that a reader who has not
+          been told what the atlas is for cannot choose between Explorer,
+          Comprendre and Jouer. The hero's standfirst now does that telling
+          in two sentences, above the fold — so the reader who already knows
+          where they are going is no longer made to scroll past four sections
+          to find the way in, and the one who does not still meets the
+          argument immediately below. */}
       <section className="home-axes-section">
         <AccessAxes
           language="fr"
@@ -119,6 +122,13 @@ export default async function Home({ searchParams }: HomeProps) {
           modulesByAxis={modulesByAxis}
         />
       </section>
+      <PurposeBlocks language="fr" />
+      <DidYouKnow language="fr" fact={didYouKnowFact} />
+      <SynthesisRail language="fr" syntheses={syntheses} />
+      {/* Where the axes used to stand. The module is the page's invitation
+          to do something rather than read something, which lands better
+          after the atlas has shown what it holds than before. */}
+      <FeaturedModule heroModule={heroModule} heroPreview={heroPreview} />
       <TrustStrip language="fr" />
       <style>{`
         .home-axes-section {
