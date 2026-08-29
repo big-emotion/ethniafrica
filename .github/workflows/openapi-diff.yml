@@ -1,8 +1,12 @@
 name: OpenAPI — Breaking-change diff
 
 on:
+  # Both integration targets, not just main. Gating only `main` meant a
+  # breaking API change merged into `recette` went undiffed until the release
+  # PR, by which point it sat several merges deep and the diff named the wrong
+  # change as the culprit.
   pull_request:
-    branches: [main]
+    branches: [main, recette]
 
 permissions:
   contents: read
@@ -36,13 +40,28 @@ jobs:
           set -euo pipefail
           BASE_REF="${{ github.base_ref }}"
           git fetch --no-tags --depth=1 origin "$BASE_REF"
-          # openapiV2.ts is self-contained (only imports swagger-jsdoc).
-          # Swap it for the base version, regenerate, then restore.
-          cp src/lib/api/openapiV2.ts /tmp/openapiV2.current.ts
-          if git show "origin/${BASE_REF}:src/lib/api/openapiV2.ts" > /tmp/openapiV2.base.ts 2>/dev/null; then
-            cp /tmp/openapiV2.base.ts src/lib/api/openapiV2.ts
+
+          # The spec has two halves, and a baseline needs both of them at the
+          # base ref. `openapiV2.ts` carries the static `paths` object;
+          # swagger-jsdoc scans `./src/app/api/v2/**/*.ts` for the `@swagger`
+          # blocks describing the other ~31 routes. Swapping only the first file
+          # left the baseline reading the *PR's* route tree, so deleting a route
+          # or editing its JSDoc changed both specs identically and diffed to
+          # nothing: the gate could only ever see the static half.
+          if git show "origin/${BASE_REF}:src/lib/api/openapiV2.ts" > /dev/null 2>&1; then
+            git checkout "origin/${BASE_REF}" -- src/lib/api/openapiV2.ts src/app/api/v2
             npx tsx scripts/generate-openapi-spec.ts /tmp/baseline.json
-            cp /tmp/openapiV2.current.ts src/lib/api/openapiV2.ts
+
+            # The tree has to go back before the diff step, which imports
+            # swaggerSpecV2 from the live tree to build the *current* spec —
+            # leaving base's routes in place would compare base against base.
+            # `reset --hard` rather than `checkout HEAD --`: the pathspec
+            # checkout above stages base's files, including any this PR deleted,
+            # and only a hard reset drops those from index and worktree alike.
+            # Safe because this job's checkout carries no other local changes;
+            # do not copy this line into a working tree that does.
+            git reset --hard HEAD --quiet
+            git clean -fdq src/app/api/v2
           else
             echo "::notice::No baseline openapiV2.ts on origin/${BASE_REF} — skipping diff."
             echo '{}' > /tmp/baseline.json
