@@ -34,6 +34,11 @@ export const YORUBA: PeopleDetail = {
     referenceYear: 2025,
     source: "UNFPA, World Population Prospects 2025",
   },
+  // All 789 people fiches carry sources, and the head's confidence chip links
+  // to the footer they render. A fixture without them models a fiche the
+  // corpus does not contain, and makes that citation dangle for a reason no
+  // reader will ever meet.
+  sources: [{ title: "SIL Ethnologue, Yoruba", url: null, tier: "unverified" }],
 };
 
 // @req REQ-091
