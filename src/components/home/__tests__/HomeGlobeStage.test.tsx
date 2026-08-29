@@ -133,3 +133,24 @@ describe("HomeGlobeStage — recovers when the globe gives up (REQ-112)", () => 
     );
   });
 });
+
+// The stage is absolute-positioned from the inside (.home-globe-layout is
+// inset:0), so it is the stage's own box that has to hold a height. The
+// desktop collapse to min-height:0 was written for the hero, where the
+// pinned 100dvh band hands the stage its height through flex — outside that
+// band it left the box at zero and the globe painted over whatever followed
+// it on the page, which is what happened on /fr/jouer/mercator.
+describe("HomeGlobeStage — keeps a floor outside the hero band (REQ-115)", () => {
+  // @req REQ-115
+  it("qualifies the desktop min-height:0 with the hero holder rather than applying it to every stage", () => {
+    const styleSheet = renderToStaticMarkup(<HomeGlobeStage />);
+    const desktopBlock = styleSheet.match(
+      /@media \(min-width: 1200px\) {([\s\S]*?)\n {8}}/
+    );
+
+    expect(desktopBlock).not.toBeNull();
+    expect(desktopBlock?.[1]).toContain("min-height: 0");
+    expect(desktopBlock?.[1]).toContain(".home-globe-holder .home-globe-stage");
+    expect(desktopBlock?.[1]).not.toMatch(/(?<!holder )\.home-globe-stage {/);
+  });
+});
