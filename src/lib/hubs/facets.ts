@@ -31,6 +31,20 @@ export interface FacetDefinition {
   /** What `PageLayout` names the section in the header. */
   sectionName: string;
   /**
+   * The head `FacetHubShell` prints above the globe: the provenance line and
+   * the page's only h1.
+   *
+   * It lives here rather than in each facet page because a page is the shell's
+   * `children` and cannot render above the band it sits under — and the band
+   * is some 520px of full-bleed night, so a head left in the parchment is
+   * below the fold on every screen. A reader landing on a facet had the trail
+   * and nothing else to say which of the three they were on. `FicheSequence`
+   * settled the identical question for the fiches by lifting their head out of
+   * the parchment; this is that rule, applied to the hub the fiches hang off.
+   */
+  eyebrow: string;
+  title: string;
+  /**
    * The sentence that separates the facet from the filters.
    *
    * They collide in the reader's language, not by accident: "pays" names a
@@ -52,6 +66,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "people",
     label: "Peuples",
     sectionName: "Peuples",
+    eyebrow: "atlas · les peuples d'Afrique",
+    title: "Les peuples d'Afrique",
     filterHint:
       "La liste est faite de peuples. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les peuples que ce pays documente, pas le pays lui-même.",
   },
@@ -61,6 +77,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "language-family",
     label: "Familles",
     sectionName: "Familles linguistiques",
+    eyebrow: "atlas · les familles linguistiques",
+    title: "Familles linguistiques",
     filterHint:
       "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
   },
@@ -70,6 +88,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "country",
     label: "Pays",
     sectionName: "Pays",
+    eyebrow: "atlas · les pays d'Afrique",
+    title: "Les pays d'Afrique",
     filterHint:
       "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
   },

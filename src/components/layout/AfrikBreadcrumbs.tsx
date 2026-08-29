@@ -20,8 +20,13 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
 
   return (
     <nav aria-label="Fil d'ariane" className="px-3 md:px-4 xl:px-5 mt-2 mb-1">
+      {/* The interface step, not the caption one. On the three facets the
+          trail is the only thing naming the reader's position above a
+          full-bleed globe, and 13px is the size reserved for an annotation
+          under a figure — it read as a caption of the page rather than as the
+          way back out of it. */}
       <ol
-        className="flex flex-wrap items-center gap-1 text-afh-caption"
+        className="flex flex-wrap items-center gap-1.5 text-afh-small"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
       >
         {items.map((item, index) => (
