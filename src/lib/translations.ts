@@ -487,6 +487,8 @@ export const translations = {
     },
     trail: {
       pages: TRAIL_PAGE_LABELS,
+      /** The root every trail opens on. Not a PageType: `/fr` addresses no module. */
+      home: "Accueil",
       /**
        * Segments that sit below a fiche. A segment absent from this map is
        * one the trail has no words for, and the trail stops rather than
