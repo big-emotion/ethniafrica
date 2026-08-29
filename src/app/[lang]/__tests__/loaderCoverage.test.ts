@@ -35,34 +35,50 @@ const GRANDFATHERED_SOFT_404_SEGMENTS = [
   "explorer/peuples/[slug]",
 ];
 
+/**
+ * The three wait screens, and the slot each one fills.
+ *
+ * They are three rather than one because a fallback is rendered *where its
+ * boundary sits*, and the site has three such places: a whole page, a fiche
+ * opening on the night band, and the reading panel inside `FacetHubShell`,
+ * which keeps its own header and globe mounted above the slot. A screen used
+ * in the wrong one duplicates chrome the reader is still looking at — which
+ * is what the facets did before `FacetPanelLoading` existed.
+ */
+const WAIT_SCREENS = {
+  PageLoadingScreen: "src/components/system/PageLoadingScreen.tsx",
+  FicheLoadingScreen: "src/components/fiche/FicheLoadingScreen.tsx",
+  FacetPanelLoading: "src/components/hubs/facets/FacetPanelLoading.tsx",
+} as const;
+
+/**
+ * Matched on the import rather than anywhere in the file: a loading file that
+ * merely *names* a screen in a comment explaining why it does not use it read
+ * as covered, and one of them passed this gate that way.
+ */
+const IMPORTS_A_WAIT_SCREEN = new RegExp(
+  `^import[^;]*\\b(${Object.keys(WAIT_SCREENS).join("|")})\\b`,
+  "m"
+);
+
 describe("every wait on the site is the same wait (REQ-104)", () => {
   // @req REQ-104
-  it("serves every route's wait through one of the two loading screens", () => {
+  it("serves every route's wait through one of the three loading screens", () => {
     const files = loadingFiles();
     expect(files.length).toBeGreaterThan(0);
 
-    const bespoke = files.filter((file) => {
-      const source = read(file);
-      return (
-        !source.includes("PageLoadingScreen") &&
-        !source.includes("FicheLoadingScreen")
-      );
-    });
+    const bespoke = files.filter(
+      (file) => !IMPORTS_A_WAIT_SCREEN.test(read(file))
+    );
 
     expect(bespoke.map(segmentOf)).toEqual([]);
   });
 
   // @req REQ-113
   it("spends every one of those waits on a Saviez-vous fact", () => {
-    const page = read(
-      join(process.cwd(), "src/components/system/PageLoadingScreen.tsx")
-    );
-    const fiche = read(
-      join(process.cwd(), "src/components/fiche/FicheLoadingScreen.tsx")
-    );
-
-    expect(page).toContain("DidYouKnowLoader");
-    expect(fiche).toContain("DidYouKnowLoader");
+    for (const path of Object.values(WAIT_SCREENS)) {
+      expect(read(join(process.cwd(), path))).toContain("DidYouKnowLoader");
+    }
   });
 
   // @req REQ-104
