@@ -2,7 +2,6 @@
 
 import { ReactNode, useState } from "react";
 import { Language } from "@/types/shared";
-import { getTranslation } from "@/lib/translations";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteTrail } from "@/components/layout/SiteTrail";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
@@ -11,7 +10,6 @@ import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
-import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
 interface PageLayoutProps {
@@ -56,11 +54,19 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
-  const t = getTranslation(language);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
-  const displayTitle = sectionName || title || t.title;
+  /**
+   * A route that names itself gets a band; one that does not gets none.
+   *
+   * The third branch used to be the product name, so the three hubs — the
+   * only routes passing neither `title` nor `sectionName` nor `hideHeader` —
+   * opened on a second, larger copy of the masthead. Falling back to nothing
+   * makes an unnamed page merely bandless rather than misnamed, and any route
+   * that wants a band says what it is.
+   */
+  const displayTitle = sectionName || title;
 
   useKeyboardShortcuts({
     navigate: (path) => router.push(path),
@@ -95,38 +101,31 @@ export const PageLayout = ({
         onClose={() => setIsShortcutsOpen(false)}
       />
 
-      {/* The trail belongs to the chrome, not to the page: it sits here, above
-          both the optional title band and main, so it survives `hideHeader`.
-          The fiches pass `hideHeader` precisely because their own title stands
-          over the globe, and they are the routes that had a trail already —
-          losing it there would be trading one gap for another. */}
-      <div className="container mx-auto">
-        <SiteTrail entityLabel={trailLabel} />
-      </div>
-
       {/* Header */}
-      {!hideHeader && (
+      {!hideHeader && displayTitle && (
         <header className="border-b bg-card shadow-soft">
           <div className="container mx-auto px-4 py-6">
-            <div className="flex items-center justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/africa.png"
-                    alt="Africa"
-                    width={48}
-                    height={48}
-                    className="object-contain"
-                  />
-                  <h1 className="text-afh-h1 font-display font-bold text-foreground page-title-gradient">
-                    {displayTitle}
-                  </h1>
-                </div>
-              </div>
-            </div>
+            {/* The band held the product logo beside the title, a second copy
+                of the mark the bar renders directly above it. Dropping it
+                leaves the band with one job — naming the page — and stops a
+                screen reader announcing "Africa" ahead of every h1. */}
+            <h1 className="text-afh-h1 font-display font-bold text-foreground page-title-gradient">
+              {displayTitle}
+            </h1>
           </div>
         </header>
       )}
+
+      {/* The trail belongs to the chrome, not to the page: it survives
+          `hideHeader`, which the fiches pass because their own title stands
+          over the globe and which would otherwise cost them the way back.
+
+          It sits *below* the band because a trail is read as what qualifies a
+          title, not as what introduces a logo — above it, the page opened on
+          "Accueil › Comprendre" before ever saying what it was. */}
+      <div className="container mx-auto">
+        <SiteTrail entityLabel={trailLabel} />
+      </div>
 
       {/* Main Content */}
       <main

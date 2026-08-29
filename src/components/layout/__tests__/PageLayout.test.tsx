@@ -57,6 +57,11 @@ vi.mock("@/lib/translations", async (importOriginal) => ({
   }),
 }));
 
+// The band renders no image any more, so this stub has nothing left to stand
+// in for — it is kept as the tripwire for the assertion below: anything put
+// back into the band through `next/image` reappears as a `role="img"`, and
+// "carries no brand mark beside the title" goes red instead of silently
+// passing over a component the test environment could not render.
 vi.mock("next/image", () => ({
   default: ({ alt, className }: { alt: string; className?: string }) => (
     <span role="img" aria-label={alt} className={className} />
@@ -265,5 +270,60 @@ describe("PageLayout — the section band a fiche must not raise", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: "Afrique du Sud" })
     ).toBeInTheDocument();
+  });
+});
+
+/**
+ * What the band is for, and what it stopped being.
+ *
+ * It carried the product logo and, whenever a route passed no title of its
+ * own, the product name — both already on screen in the bar immediately
+ * above. On the three hubs that made the tallest element of the page a second
+ * copy of the masthead, under which the trail had already come and gone. The
+ * band now states the page or is not raised at all, and the trail reads as
+ * what follows a title rather than what precedes a logo.
+ */
+describe("PageLayout — the band names the page, not the product", () => {
+  // @req REQ-043
+  it("carries no brand mark beside the title", () => {
+    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    render(
+      <PageLayout language="fr" title="Comprendre les peuples d'Afrique">
+        <p>corps</p>
+      </PageLayout>
+    );
+
+    const band = screen.getByRole("heading", { level: 1 }).closest("header");
+    expect(band?.querySelector("[role='img'], img")).toBeNull();
+  });
+
+  // @req REQ-043
+  it("raises no band at all rather than falling back to the product name", () => {
+    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    render(
+      <PageLayout language="fr">
+        <p data-testid="content">corps</p>
+      </PageLayout>
+    );
+
+    expect(screen.queryByRole("heading", { level: 1 })).toBeNull();
+    expect(screen.queryByText("EthniAfrica")).toBeNull();
+  });
+
+  // @req REQ-115
+  it("puts the trail under the title band rather than over it", () => {
+    mockPathname = getLocalizedRoute("fr", "countries");
+    render(
+      <PageLayout language="fr" sectionName="Pays">
+        <p data-testid="content">corps</p>
+      </PageLayout>
+    );
+
+    const band = screen.getByRole("heading", { level: 1 }).closest("header");
+    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
+
+    expect(
+      band!.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
   });
 });

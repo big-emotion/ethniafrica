@@ -469,6 +469,11 @@ export const translations = {
     hubs: {
       explorer: {
         title: "Explorer",
+        // What the shell's title band prints. `title` names the axis inside
+        // the site's own vocabulary — a trail crumb, a menu entry — where the
+        // surrounding chrome supplies the subject. The band has no such
+        // context, so it names the axis *and* what the axis leads into.
+        pageTitle: "Explorer les peuples d'Afrique",
         blurb:
           "L'axe des objets du corpus : peuples, pays, langues et familles linguistiques, chacun sous sa propre fiche.",
         menuBlurb:
@@ -477,6 +482,7 @@ export const translations = {
       },
       comprendre: {
         title: "Comprendre",
+        pageTitle: "Comprendre les peuples d'Afrique",
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
@@ -485,6 +491,7 @@ export const translations = {
       },
       jouer: {
         title: "Jouer",
+        pageTitle: "Jouer avec les peuples d'Afrique",
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés du corpus, dont chaque réponse renvoie à sa fiche.",
         menuBlurb:

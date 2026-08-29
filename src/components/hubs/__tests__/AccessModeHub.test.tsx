@@ -84,15 +84,20 @@ const jouerModules: HubModule[] = [
 ];
 
 describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
+  // The page's `h1` is the shell's title band, which states the axis and what
+  // it leads into — « Explorer les peuples d'Afrique ». Repeating « Explorer »
+  // here gave every hub two `h1`s, the second a bare restatement of the first.
+  // The region still names itself, so assistive tech keeps the landmark.
   // @req REQ-114
-  it("renders the hub title for the access mode", () => {
+  it("names its region after the access mode without raising a second h1", () => {
     render(
       <AccessModeHub language="fr" mode="explorer" modules={explorerModules} />
     );
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: "Explorer" })
-    ).toBeInTheDocument();
+    expect(screen.getByTestId("access-mode-hub-explorer")).toHaveAccessibleName(
+      "Explorer"
+    );
+    expect(screen.queryByRole("heading", { level: 1 })).toBeNull();
   });
 
   // The blurb is what tells a reader why they would pick this axis over
