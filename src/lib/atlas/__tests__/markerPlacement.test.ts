@@ -13,6 +13,7 @@ import { NO_BIAS, biasForPanel } from "../panelBias";
 import {
   STAGE_ASPECT,
   basemapTransform,
+  nearestFacingTarget,
   placeTargetOnBasemap,
   placeTargetOnSphere,
 } from "../markerPlacement";
@@ -285,5 +286,76 @@ describe("STAGE_ASPECT", () => {
   // @req REQ-117
   it("falls back to the basemap's own ratio until the stage has been measured", () => {
     expect(STAGE_ASPECT).toBeCloseTo(800 / 758, 6);
+  });
+});
+
+/**
+ * The continent scene draws a radial field for twelve countries and offers all
+ * fifty-four. Fifty-four pastilles at 430px overlap into noise and the small
+ * ones stop being hittable, which is the density rule the charter states — so
+ * the stage itself carries the other forty-two: a tap picks the country whose
+ * centre it lands nearest.
+ */
+describe("nearestFacingTarget (REQ-117)", () => {
+  const placed = (
+    countryId: string,
+    leftPercent: number,
+    topPercent: number,
+    facingReader = true
+  ) => ({ countryId, placement: { leftPercent, topPercent, facingReader } });
+
+  // @req REQ-117
+  it("picks the country whose centre the tap lands nearest", () => {
+    const chosen = nearestFacingTarget(
+      [placed("GHA", 30, 50), placed("KEN", 70, 50)],
+      34,
+      50,
+      1
+    );
+
+    expect(chosen).toBe("GHA");
+  });
+
+  // A country with no radial field of its own is reachable by exactly the same
+  // tap as one that has one — that is the whole point of hit-testing the stage
+  // rather than the pastilles.
+  // @req REQ-117
+  it("reaches a country that carries no marker", () => {
+    const chosen = nearestFacingTarget([placed("LSO", 55, 80)], 56, 81, 1);
+
+    expect(chosen).toBe("LSO");
+  });
+
+  // The far side of a turned globe is behind the sphere. Letting it win a tap
+  // would select a country the reader cannot see.
+  // @req REQ-117
+  it("ignores a country facing away from the reader", () => {
+    const chosen = nearestFacingTarget(
+      [placed("BRA", 40, 50, false), placed("KEN", 48, 50)],
+      41,
+      50,
+      1
+    );
+
+    expect(chosen).toBe("KEN");
+  });
+
+  // @req REQ-117
+  it("declines a tap that lands near nothing rather than selecting the least far", () => {
+    expect(nearestFacingTarget([placed("GHA", 10, 10)], 90, 90, 1)).toBeNull();
+  });
+
+  // The stage is far wider than it is tall, so a percentage point down covers
+  // less ground than one across. On a stage four times wider than tall, the
+  // country four points above a tap is nearer than the one three points beside
+  // it — read as raw percentages the ranking inverts, and the tap resolves to
+  // the country the reader did not aim at.
+  // @req REQ-117
+  it("measures distance on the stage's real proportions", () => {
+    const candidates = [placed("NORTH", 50, 46), placed("EAST", 53, 50)];
+
+    expect(nearestFacingTarget(candidates, 50, 50, 4)).toBe("NORTH");
+    // Square stage: the same two countries, and now the raw percentages hold.
+    expect(nearestFacingTarget(candidates, 50, 50, 1)).toBe("EAST");
   });
 });

@@ -26,6 +26,7 @@ import {
 } from "@/lib/atlas/camera";
 import {
   basemapTransform,
+  nearestFacingTarget,
   placeTargetOnBasemap,
   placeTargetOnSphere,
   type StagePlacement,
@@ -611,6 +612,13 @@ const DRAG_RADIANS_PER_PIXEL = 0.006;
 const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
 const KEY_STEP_RADIANS = 0.12;
 
+/**
+ * How far a pointer may wander and still count as a tap rather than a drag.
+ * A finger never holds perfectly still, so zero would make the globe
+ * unselectable by touch — which is the mobile-first case, not the edge one.
+ */
+const TAP_TRAVEL_TOLERANCE_PX = 6;
+
 const GLOBE_SURFACE_LABEL =
   "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
 
@@ -845,6 +853,13 @@ export function AtlasGlobe({
   const [flat, setFlat] = useState(false);
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
+  /**
+   * Pixels the pointer covered since it went down. A tap that selects a
+   * country and a drag that turns the globe start identically, and the only
+   * thing that separates them is whether the pointer went anywhere — read at
+   * pointer-up, because that is when both are over.
+   */
+  const travelled = useRef(0);
 
   const pose: CameraPose = {
     ...camera.pose,
@@ -872,6 +887,7 @@ export function AtlasGlobe({
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     dragging.current = true;
+    travelled.current = 0;
     lastPointer.current = { x: event.clientX, y: event.clientY };
     event.currentTarget.setPointerCapture?.(event.pointerId);
   };
@@ -881,6 +897,7 @@ export function AtlasGlobe({
     const dx = event.clientX - lastPointer.current.x;
     const dy = event.clientY - lastPointer.current.y;
     lastPointer.current = { x: event.clientX, y: event.clientY };
+    travelled.current += Math.hypot(dx, dy);
     // Under a finger the surface has to keep up with the finger, so a drag
     // moves the globe itself rather than a target it eases toward.
     camera.turnBy(
@@ -923,13 +940,12 @@ export function AtlasGlobe({
     );
   }
 
-  // The continent scene stays on the SVG stage even where WebGL is
-  // available: the canvas does not draw its radial field, so climbing to it
-  // would trade the one signal the scene carries for a bare frame. Raising
-  // the sphere under the continent is step B of the plan, and it is gated
-  // on marker legibility, TTFB and Lighthouse budgets not yet measured.
-  const stageIsSphere =
-    webglSupported && drawnOverlay.kind !== "continent-field";
+  // The continent scene used to be held off the sphere because the canvas
+  // drew only its frame, so climbing to it traded the one signal the scene
+  // carries for a bare outline. AtlasGlobeCanvas now draws the continent's
+  // radial field alongside that frame, so the hub and the facets get the same
+  // globe as the three fiches rather than a flat map that claims to turn.
+  const stageIsSphere = webglSupported;
 
   // A fiche asks for a list because its targets are its presence countries,
   // and it has them whether there are seventeen or one. 394 of the corpus's
@@ -950,6 +966,39 @@ export function AtlasGlobe({
           cameraFocus?.center ?? null,
           stageAspect ?? undefined
         );
+
+  /**
+   * The continent scene marks its twelve best-documented countries and offers
+   * all fifty-four, so on that scene alone the stage itself is a target: a tap
+   * picks the country it lands nearest. The fiche globes are left alone —
+   * there every choosable country already carries its own marker, and a stray
+   * tap on one would select a country the reader did not point at.
+   */
+  const stageSelectsCountry = drawnOverlay.kind === "continent-field";
+
+  const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const wasDrag = travelled.current > TAP_TRAVEL_TOLERANCE_PX;
+    stopDragging();
+    if (!stageSelectsCountry || wasDrag) return;
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+
+    const countryId = nearestFacingTarget(
+      choosableTargets.map((target) => ({
+        countryId: target.countryId,
+        placement: place(target),
+      })),
+      ((event.clientX - rect.left) / rect.width) * 100,
+      ((event.clientY - rect.top) / rect.height) * 100,
+      rect.width / rect.height
+    );
+
+    // A tap that lands near nothing dismisses, rather than opening whichever
+    // country happened to be least far — the stage is mostly ocean.
+    if (countryId) chooseTarget(countryId as CountryId);
+    else setChosenCountryId(null);
+  };
 
   return (
     <div
@@ -973,7 +1022,7 @@ export function AtlasGlobe({
         tabIndex={0}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        onPointerUp={stopDragging}
+        onPointerUp={handlePointerUp}
         onPointerCancel={stopDragging}
         onPointerLeave={stopDragging}
         onKeyDown={handleKeyDown}

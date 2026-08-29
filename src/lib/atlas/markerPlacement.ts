@@ -172,3 +172,56 @@ export function placeTargetOnBasemap(
     facingReader: true,
   };
 }
+
+/**
+ * How far from a country's projected centre a tap still reads as aiming at it,
+ * as a share of stage width.
+ *
+ * Africa holds fifty-four countries across roughly a hundred degrees, so their
+ * centres sit a few percent apart at continent zoom and this is generous
+ * enough that no country is unreachable. It is a radius rather than a plain
+ * nearest-wins because the stage is mostly ocean: a tap in the Atlantic should
+ * dismiss, not silently open Mauritania.
+ */
+// @req REQ-117
+export const TARGET_HIT_RADIUS_PERCENT = 14;
+
+/**
+ * Which country a tap on the stage aimed at (REQ-117).
+ *
+ * The continent scene draws a radial field for its twelve best-documented
+ * countries but offers all fifty-four, because the charter's density rule is
+ * about what the stage *draws* — fifty-four pastilles at 430px overlap into
+ * noise — not about what it lets a reader reach. Hit-testing the stage keeps
+ * both: twelve marks, fifty-four answers.
+ *
+ * Distance is measured in shares of stage width, so `topPercent` is divided by
+ * the aspect ratio to bring a percentage point down onto the same footing as
+ * one across. Without that, on a stage three times wider than tall, a tap
+ * resolves to the country above it rather than the one beside it.
+ */
+// @req REQ-117
+export function nearestFacingTarget(
+  candidates: readonly { countryId: string; placement: StagePlacement }[],
+  leftPercent: number,
+  topPercent: number,
+  aspect: number
+): string | null {
+  let nearestId: string | null = null;
+  let nearestDistance = TARGET_HIT_RADIUS_PERCENT;
+
+  for (const { countryId, placement } of candidates) {
+    if (!placement.facingReader) continue;
+
+    const distance = Math.hypot(
+      placement.leftPercent - leftPercent,
+      (placement.topPercent - topPercent) / aspect
+    );
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearestId = countryId;
+    }
+  }
+
+  return nearestId;
+}
