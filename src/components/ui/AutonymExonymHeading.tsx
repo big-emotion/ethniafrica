@@ -6,6 +6,7 @@ import { bcp47LanguageTag } from "@/lib/languageTag";
 
 export type AutonymExonymHeadingVariant =
   | "hero"
+  | "parchment"
   | "inline"
   | "card"
   | "people-hero"
@@ -43,6 +44,21 @@ const headingVariantConfig = {
     tag: "h1" as const,
     autonymClasses: "font-afh-display font-black text-afh-hero",
     exonymClasses: "font-afh font-medium text-afh-h2",
+  },
+  /**
+   * The title of a fiche standing in `.afh-parchment-head`, which already
+   * dresses the h1 and sets its predicate in the surface's accent ink. The
+   * variant names no size and no face of its own on purpose: the country and
+   * family fiches get their title from that unit directly, and a people fiche
+   * has to pass through this component — the `afh/no-bare-people-name` rule
+   * reaches no name that does not. Declaring the type here would be the same
+   * title in two places, free to drift apart.
+   */
+  parchment: {
+    tag: "h1" as const,
+    autonymClasses: "",
+    exonymClasses: "font-afh font-medium text-afh-h2",
+    predicateEmphasis: true,
   },
   inline: {
     tag: "h2" as const,
@@ -228,7 +244,10 @@ export function AutonymExonymHeading({
     tag: Heading,
     autonymClasses,
     exonymClasses,
-  } = headingVariantConfig[variant];
+    predicateEmphasis = false,
+  } = headingVariantConfig[variant] as (typeof headingVariantConfig)["hero"] & {
+    predicateEmphasis?: boolean;
+  };
 
   const hasAlternateNames =
     Array.isArray(alternateNames) && alternateNames.length > 0;
@@ -266,8 +285,17 @@ export function AutonymExonymHeading({
         )}
         {/* A predicate is not a name. "!Kung" and "un peuple sans bord" are a
             subject and what the fiche says about it, so they are joined the
-            way the family fiche joins them — by a comma, not by whitespace. */}
-        {predicate && <span className={exonymClasses}>, {predicate}</span>}
+            way the family fiche joins them — by a comma, not by whitespace.
+            The parchment head sets it in italic accent ink through the `em`,
+            which is also what the family and country fiches write by hand. */}
+        {predicate &&
+          (predicateEmphasis ? (
+            <>
+              , <em>{predicate}</em>
+            </>
+          ) : (
+            <span className={exonymClasses}>, {predicate}</span>
+          ))}
       </Heading>
       {hasAlternateNames && (
         <div data-alternate-names>

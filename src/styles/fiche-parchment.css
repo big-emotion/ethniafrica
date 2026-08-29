@@ -35,6 +35,18 @@
   color: var(--afh-text-soft);
 }
 
+/* A people fiche's eyebrow holds two kinds of thing at once: the corpus keys
+   that name the record — PPL_KUNG, FLG_KXA — and the ethnolinguistic group
+   that names the people in the world. Set in one dress the line reads as a
+   single long machine key, which is what made the head look unedited. The
+   keys keep the mono and the tracking; the group takes the body face at
+   normal tracking, so the eye lands on the words rather than on the ids. */
+.afh-parchment-eyebrow-group {
+  font-family: var(--afh-font-body);
+  letter-spacing: 0;
+  color: var(--afh-text);
+}
+
 .afh-parchment-head h1 {
   margin: 0;
   font-family: var(--afh-font-display);
@@ -42,6 +54,11 @@
   font-size: var(--afh-text-h1);
   line-height: 1.1;
   letter-spacing: -0.015em;
+  /* Every fiche title is a name followed by what the fiche says the subject
+     is, so it runs two lines at the widths that matter. `pretty`, not
+     `balance`: balancing "!Kung, un peuple sans bord" into two even lines
+     ends the first one on the article. */
+  text-wrap: pretty;
 }
 
 /* The editorial half of the title, set apart from the name it qualifies. */
@@ -53,7 +70,12 @@
 .afh-parchment-lede {
   margin: 12px 0 0;
   font-size: var(--afh-text-body);
+  line-height: var(--afh-leading-body);
   color: var(--afh-text-soft);
+  /* The head stands in a band four columns wide, not in the parchment's own
+     measure. A people fiche's lede is a full sentence of geography and would
+     run past 100 characters a line there. */
+  max-width: 58ch;
 }
 
 .afh-chips {
