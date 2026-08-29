@@ -269,10 +269,10 @@ describe("the families facet", () => {
   it("keeps the chosen country in the page links, so paging does not widen the selection", async () => {
     render(await renderRoute({ pays: "NGA" }));
 
-    expect(screen.getByRole("link", { name: /suivante/i })).toHaveAttribute(
-      "href",
-      `${FAMILIES_ROUTE}?pays=NGA&page=2`
-    );
+    // The pager is repeated head and foot; both steps address the same page.
+    expect(
+      screen.getAllByRole("link", { name: /suivante/i })[0]
+    ).toHaveAttribute("href", `${FAMILIES_ROUTE}?pays=NGA&page=2`);
   });
 
   // A list row opens the fiche. Only the map opens the globe's panel.

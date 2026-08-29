@@ -50,6 +50,7 @@ const { mockGetPage, mockGetIndex, mockGetChoices } = vi.hoisted(() => ({
 }));
 
 vi.mock("@/api/v2/services/peoplesFacet", () => ({
+  PEOPLES_FACET_PAGE_SIZES: [20, 50, 100],
   getPeoplesFacetPage: (...args: unknown[]) => mockGetPage(...args),
   getPeoplesFacetCountryIndex: (...args: unknown[]) => mockGetIndex(...args),
   getPeoplesFacetChoices: () => mockGetChoices(),
@@ -95,9 +96,16 @@ function publishedIndex() {
   return JSON.parse(raw ?? "{}");
 }
 
+/**
+ * The filters a service was called with, found by shape rather than by
+ * position: the page reader takes a page number and a page size around them,
+ * and the index reader takes them alone, so any index this picked would be
+ * right for one caller and wrong for the other.
+ */
 function filtersPassed(mock: typeof mockGetPage, call = 0) {
-  const args = mock.mock.calls[call];
-  return args[args.length - 1];
+  return mock.mock.calls[call].find(
+    (argument) => typeof argument === "object" && argument !== null
+  );
 }
 
 beforeEach(() => {
@@ -259,8 +267,11 @@ describe("the peoples facet — paging a filtered set", () => {
 
     render(await renderRoute({ famille: "FLG_NIGER_CONGO" }));
 
-    const next = screen.getByRole("link", { name: /suivante/i });
-    const href = next.getAttribute("href") ?? "";
+    // Head and foot both carry the step, and both must carry the same address.
+    const next = screen.getAllByRole("link", { name: /suivante/i });
+    expect(next).toHaveLength(2);
+    expect(next[0].getAttribute("href")).toBe(next[1].getAttribute("href"));
+    const href = next[0].getAttribute("href") ?? "";
     expect(href.startsWith(`${PEUPLES}?`)).toBe(true);
 
     const query = new URLSearchParams(href.split("?")[1]);
@@ -279,10 +290,12 @@ describe("the peoples facet — paging a filtered set", () => {
 
     render(await renderRoute({ page: "3" }));
 
-    expect(screen.queryByRole("link", { name: /suivante/i })).toBeNull();
-    expect(
-      screen.getByRole("link", { name: /précédente/i })
-    ).toBeInTheDocument();
+    expect(screen.queryAllByRole("link", { name: /suivante/i })).toHaveLength(
+      0
+    );
+    expect(screen.getAllByRole("link", { name: /précédente/i })).toHaveLength(
+      2
+    );
   });
 
   // @req REQ-108
