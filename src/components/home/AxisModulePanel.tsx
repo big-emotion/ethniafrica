@@ -37,6 +37,8 @@ import {
   nearestEdge,
   panelHeightFor,
   projectNode,
+  ringFitsPanel,
+  sceneBox,
   sceneNodes,
   type PanelBox,
   type ProjectedNode,
@@ -82,17 +84,7 @@ function useGraphEnabled(reducedMotion: boolean): boolean {
  */
 type PanelNode =
   | { kind: "module"; id: string; module: HubModule }
-  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf }
-  /**
-   * The axis's own hub, and the facets it holds.
-   *
-   * Not a module: no entry in the registry addresses `/fr/explorer`, and the
-   * three facets that used to sit here as siblings are states of that one page
-   * rather than three destinations beside it. Drawing them as three satellites
-   * of equal weight is the diagram saying the site still has three
-   * directories.
-   */
-  | { kind: "hub"; id: string; facets: HubModule[] };
+  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf };
 
 export interface AxisModulePanelProps {
   language: Language;
@@ -127,7 +119,6 @@ export function AxisModulePanel({
   const t = getTranslation(language);
   const reducedMotion = usePrefersReducedMotion();
   const graphEnabled = useGraphEnabled(reducedMotion);
-  const layout = graphEnabled ? LAYOUT_BY_AXIS[mode] : "column";
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [openShelf, setOpenShelf] = useState<ModuleGroupId | null>(null);
@@ -163,26 +154,19 @@ export function AxisModulePanel({
           : { kind: "shelf" as const, id: shelf.group.id, shelf }
       );
     }
-    // An axis with no shelves leads with its own hub, then the destinations
-    // that are not facets of it. Before this the diagram drew peoples, pays
-    // and familles as three satellites of equal weight, which is the shape the
-    // site had when they were three directories — and the hub they are now
-    // facets of appeared nowhere at all.
-    const facets = modules.filter(
-      (entry) => entry.page && getFacetByPage(entry.page)
-    );
-
-    return [
-      { kind: "hub" as const, id: mode, facets },
-      ...modules
-        .filter((entry) => !facets.includes(entry))
-        .map((entry) => ({
-          kind: "module" as const,
-          id: entry.id,
-          module: entry,
-        })),
-    ];
-  }, [mode, modules, open, shelves]);
+    // An axis with no shelves puts every destination it holds on the scene,
+    // one node each. The facets of Explorer's hub used to be folded into a
+    // node of their own alongside it, which cost the diagram its whole
+    // claim: a scene of peers around one centre had one node touching that
+    // centre and the rest a card's width away. They are the destinations a
+    // reader came for, so they are drawn as destinations; the hub itself is
+    // the axis card at the origin, and the header still names it.
+    return modules.map((entry) => ({
+      kind: "module" as const,
+      id: entry.id,
+      module: entry,
+    }));
+  }, [modules, open, shelves]);
 
   const panelRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<Array<HTMLLIElement | null>>([]);
@@ -204,6 +188,22 @@ export function AxisModulePanel({
    * the first measurement, which the geometry reads as the widest panel.
    */
   const [panelWidth, setPanelWidth] = useState(0);
+
+  /**
+   * The shape the panel can actually draw at this size, which is not always
+   * the one the axis is filed under. A ring is a circle or it is nothing —
+   * it says its modules are peers of one centre, and the only way a reader
+   * reads that is that they all stand the same distance from it. So a panel
+   * too narrow to hold the circle falls to the column it already falls to on
+   * a phone, rather than to an ellipse whose nearest module prints over the
+   * card it came out of.
+   */
+  const layout = !graphEnabled
+    ? "column"
+    : LAYOUT_BY_AXIS[mode] === "ring" &&
+        !ringFitsPanel(panelNodes.length, panelWidth)
+      ? "column"
+      : LAYOUT_BY_AXIS[mode];
 
   const nodes = useMemo(
     // openShelf is in the deps so two levels of equal size still hand the
@@ -279,8 +279,13 @@ export function AxisModulePanel({
         entranceProgress(layout, index, elapsed)
       );
 
+      // Not the panel's box: the ring is drawn in a square of its own, so
+      // that its modules come out equidistant instead of stretched to
+      // whatever proportion the panel happens to have.
+      const scene = sceneBox(layout, nodes.length, box);
+
       const projected = nodes.map((node, index) => {
-        const settled = projectNode(node, tilt, box);
+        const settled = projectNode(node, tilt, scene);
         const arrived = entrance[index];
         // Every module leaves from under the opened card and travels out
         // to its node, so the panel opens from its own centre.
@@ -381,54 +386,6 @@ export function AxisModulePanel({
    * A module's own face. It is the leaf of both levels — a game reached
    * through its shelf, and a lone game promoted in place of one.
    */
-  /**
-   * The hub node: one link to the axis's own page, and its facets beneath.
-   *
-   * The facets are links too — a reader who already knows they want peoples
-   * should not have to land on the hub and pick again — but they are drawn as
-   * what they are, states of the page named above them.
-   */
-  const renderHubFace = (
-    facets: HubModule[],
-    handlers: {
-      onMouseEnter: () => void;
-      onFocus: () => void;
-      onBlur: () => void;
-    }
-  ) => (
-    <div className="axis-module-face axis-hub-face">
-      <Link
-        href={getAxisHubRoute(language, mode)}
-        data-testid={`axis-hub-link-${mode}`}
-        className="axis-hub-main min-h-11"
-        {...handlers}
-      >
-        {t.hubs[mode].hubEntryName}
-      </Link>
-
-      {facets.length > 0 ? (
-        <span className="axis-hub-facets">
-          {facets.map((entry) => {
-            const href = getModuleHref(entry, language);
-            const facet = entry.page ? getFacetByPage(entry.page) : null;
-            if (!href || !facet) return null;
-
-            return (
-              <Link
-                key={entry.id}
-                href={href}
-                data-testid={`axis-facet-link-${entry.id}`}
-                className="axis-hub-facet"
-              >
-                {facet.label}
-              </Link>
-            );
-          })}
-        </span>
-      ) : null}
-    </div>
-  );
-
   const renderModuleFace = (
     entry: HubModule,
     handlers: {
@@ -509,9 +466,7 @@ export function AxisModulePanel({
               data-testid={
                 node.kind === "shelf"
                   ? `axis-shelf-${node.id}`
-                  : node.kind === "hub"
-                    ? `axis-hub-${node.id}`
-                    : `axis-module-${node.id}`
+                  : `axis-module-${node.id}`
               }
               data-active={activeIndex === index ? "true" : undefined}
               className="axis-module"
@@ -537,8 +492,6 @@ export function AxisModulePanel({
                     &rsaquo;
                   </span>
                 </button>
-              ) : node.kind === "hub" ? (
-                renderHubFace(node.facets, shared)
               ) : (
                 renderModuleFace(node.module, shared)
               )}
@@ -617,45 +570,6 @@ export function AxisModulePanel({
           min-height: ${MODULE_CARD_HEIGHT}px;
         }
 
-        /* The hub node holds a link and a row of facets, so it stacks where a
-           module card is a single centred label. It keeps the card's frame —
-           it is one node on the same scene — and only changes what is inside
-           it. */
-        .axis-hub-face {
-          flex-direction: column;
-          justify-content: center;
-          gap: 8px;
-        }
-        .axis-hub-main {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          color: inherit;
-          text-decoration: none;
-        }
-        .axis-hub-facets {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 6px;
-        }
-        .axis-hub-facet {
-          display: inline-flex;
-          align-items: center;
-          min-height: 32px;
-          padding: 2px 10px;
-          border: 1px solid var(--afh-border);
-          border-radius: 999px;
-          background: var(--afh-bg);
-          color: var(--afh-text);
-          font-size: var(--afh-caption);
-          font-weight: 500;
-          text-decoration: none;
-        }
-        .axis-hub-facet:hover {
-          border-color: var(--accent);
-          color: var(--accent-ink);
-        }
 
         .axis-module-face {
           display: flex;
