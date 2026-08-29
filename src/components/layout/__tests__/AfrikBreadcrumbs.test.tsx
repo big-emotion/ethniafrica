@@ -53,4 +53,21 @@ describe("AfrikBreadcrumbs", () => {
     const { container } = render(<AfrikBreadcrumbs items={[]} />);
     expect(container.firstChild).toBeNull();
   });
+
+  /**
+   * The gutter is the mount's, not the trail's.
+   *
+   * Carrying its own horizontal padding meant the trail could only ever align
+   * with a mount that had none: everywhere it sat inside a padded container —
+   * the shell, the profile page — the two stacked and the crumbs started right
+   * of the title they belong to. A trail that adds nothing lands wherever its
+   * mount lands.
+   */
+  // @req REQ-091
+  it("adds no horizontal gutter of its own", () => {
+    render(<AfrikBreadcrumbs items={items} />);
+
+    const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
+    expect(trail.className).not.toMatch(/(^|\s|:)(px|pl|pr)-/);
+  });
 });

@@ -310,6 +310,40 @@ describe("PageLayout — the band names the page, not the product", () => {
     expect(screen.queryByText("EthniAfrica")).toBeNull();
   });
 
+  /**
+   * The trail carried its own gutter, sized for a mount with none of its own.
+   * Inside the shell that gutter stacked on the container's, so the crumbs
+   * started 28px right of the title and of every paragraph below it. Floating
+   * alone above the band the offset read as breathing room; directly under the
+   * title it reads as a mistake. The gutter now comes from the mount, so the
+   * three columns the reader sees — title, trail, body — are one column.
+   */
+  // @req REQ-115
+  it("hangs the trail on the same gutter as the title and the page body", () => {
+    mockPathname = getLocalizedRoute("fr", "countries");
+    render(
+      <PageLayout language="fr" sectionName="Pays">
+        <p data-testid="content">corps</p>
+      </PageLayout>
+    );
+
+    const gutterOf = (element: Element | null) =>
+      (element?.className ?? "")
+        .split(/\s+/)
+        .filter((token) => /^(container|mx-auto|px-)/.test(token))
+        .sort()
+        .join(" ");
+
+    const trailGutter = screen.getByRole("navigation", {
+      name: "Fil d'ariane",
+    }).parentElement;
+    const bandGutter = screen.getByRole("heading", { level: 1 }).parentElement;
+    const body = screen.getByTestId("content").closest("main");
+
+    expect(gutterOf(trailGutter)).toBe(gutterOf(bandGutter));
+    expect(gutterOf(trailGutter)).toBe(gutterOf(body));
+  });
+
   // @req REQ-115
   it("puts the trail under the title band rather than over it", () => {
     mockPathname = getLocalizedRoute("fr", "countries");

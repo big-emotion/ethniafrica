@@ -123,7 +123,7 @@ export const PageLayout = ({
           It sits *below* the band because a trail is read as what qualifies a
           title, not as what introduces a logo — above it, the page opened on
           "Accueil › Comprendre" before ever saying what it was. */}
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <SiteTrail entityLabel={trailLabel} />
       </div>
 

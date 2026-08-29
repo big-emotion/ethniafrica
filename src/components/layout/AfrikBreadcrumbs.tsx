@@ -14,7 +14,10 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
   if (!items.length) return null;
 
   return (
-    <nav aria-label="Fil d'ariane" className="px-3 md:px-4 xl:px-5 mt-2 mb-1">
+    // Vertical rhythm only: the horizontal gutter belongs to whatever mounts
+    // the trail, so it lines up with that surface's title and body instead of
+    // stacking a second indent on top of the container's.
+    <nav aria-label="Fil d'ariane" className="mt-2 mb-1">
       <ol
         className="flex flex-wrap items-center gap-1 text-afh-caption"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
