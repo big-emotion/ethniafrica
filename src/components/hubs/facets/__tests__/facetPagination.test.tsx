@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
+import { getFacetRoute } from "@/lib/hubs/facets";
 
 /**
  * What the pager owes a reader, as opposed to what it computes.
@@ -14,7 +15,7 @@ import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
  */
 
 function href(page: number, size: number): string {
-  return `/fr/explorer/peuples?p=${page}&t=${size}`;
+  return `${getFacetRoute("fr", "peoples")}?p=${page}&t=${size}`;
 }
 
 function renderPager(overrides: Record<string, unknown> = {}) {

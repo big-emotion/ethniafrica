@@ -186,7 +186,7 @@ export function AnecdoteCard({ language, fact }: AnecdoteCardProps) {
           color: var(--afh-text);
         }
         .anecdote-tier-label {
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
         .anecdote-tier-label::after {
           content: " —";
@@ -216,18 +216,18 @@ export function AnecdoteCard({ language, fact }: AnecdoteCardProps) {
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.05em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
         .anecdote-source-note {
           flex-basis: 100%;
           font-size: var(--afh-text-caption);
           line-height: 1.5;
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
         .anecdote-source-missing {
           margin: 0;
           font-size: var(--afh-text-caption);
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
         @media (min-width: 720px) {
           .anecdote-card { padding: 36px 0 12px; }
