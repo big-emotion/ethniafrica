@@ -50,6 +50,14 @@ describe("getQuizScopesHandler", () => {
       families: [
         { id: "FLG_KHOISAN", labelFr: "Khoïsan", activeQuestionCount: 4 },
       ],
+      themes: [
+        {
+          id: "noms",
+          labelFr: "Noms et appellations",
+          activeQuestionCount: 40,
+        },
+        { id: "croyances", labelFr: "Croyances", activeQuestionCount: 3 },
+      ],
       totalActiveQuestionCount: 2504,
     });
 
@@ -72,6 +80,7 @@ describe("getQuizScopesHandler", () => {
     getQuizScopeCatalogueMock.mockResolvedValue({
       countries: [],
       families: [],
+      themes: [],
       totalActiveQuestionCount: 2504,
     });
 
@@ -79,6 +88,45 @@ describe("getQuizScopesHandler", () => {
 
     expect(envelope.data.mixed.activeQuestionCount).toBe(2504);
     expect(envelope.data.random.playable).toBe(true);
+  });
+
+  /**
+   * A theme too thin to fill a session is listed with its honest count and
+   * refused, the same way Khoïsan is on the track axis — hiding it would make
+   * the picker look like the corpus covers less than it does.
+   */
+  // @req REQ-121
+  it("offers the content themes, refusing the ones that cannot fill a session", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [],
+      families: [],
+      themes: [
+        {
+          id: "noms",
+          labelFr: "Noms et appellations",
+          activeQuestionCount: 40,
+        },
+        { id: "croyances", labelFr: "Croyances", activeQuestionCount: 3 },
+      ],
+      totalActiveQuestionCount: 43,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    expect(envelope.data.themes).toEqual([
+      {
+        id: "noms",
+        labelFr: "Noms et appellations",
+        activeQuestionCount: 40,
+        playable: true,
+      },
+      {
+        id: "croyances",
+        labelFr: "Croyances",
+        activeQuestionCount: 3,
+        playable: false,
+      },
+    ]);
   });
 });
 

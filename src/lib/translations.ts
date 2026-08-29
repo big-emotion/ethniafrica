@@ -407,9 +407,11 @@ export const translations = {
       scopeFamilyLabel: "Famille linguistique",
       scopeAnyCountry: "Tous les pays",
       scopeAnyFamily: "Toutes les familles",
+      scopeThemeLabel: "Thème",
+      scopeAnyTheme: "Tous les thèmes",
       scopeSubmit: "Lancer ce parcours",
       scopeHint:
-        "Un parcours sur un seul pays ou une seule famille pose des questions plus serrées : les mauvaises réponses y sont toutes plausibles.",
+        "Les trois se combinent. Un parcours sur un seul pays ou une seule famille pose des questions plus serrées : les mauvaises réponses y sont toutes plausibles. Sans thème, une partie n'en répète jamais un plus de deux fois.",
       scopeTooThin: "pas encore assez de questions pour une partie",
       scopeMixedHint:
         "Huit questions tirées de tout le corpus, des peuples les plus connus aux moins documentés.",

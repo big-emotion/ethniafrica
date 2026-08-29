@@ -20,6 +20,8 @@ import {
   QUIZ_SESSION_SIZE,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
+import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
+import type { QuizEntityType } from "@/types/quiz";
 import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type {
@@ -79,6 +81,12 @@ export async function getQuizScopesHandler(): Promise<
   return createApiResponse({
     countries: catalogue.countries.map(toScopeOptionView),
     families: catalogue.families.map(toScopeOptionView),
+    themes: catalogue.themes.map((theme) => ({
+      id: theme.id,
+      labelFr: theme.labelFr,
+      activeQuestionCount: theme.activeQuestionCount,
+      playable: isPlayableScope(theme.activeQuestionCount),
+    })),
     mixed: corpusOption("mixed"),
     random: corpusOption("random"),
   });
@@ -155,37 +163,74 @@ interface PeopleAppellationsRow {
   } | null;
 }
 
-function entityLinkFor(id: string): QuizEntityLinkView {
-  return { type: "people", id, slug: id, autonym: null, exonym: null };
+function entityLinkFor(
+  id: string,
+  type: QuizEntityType = "people"
+): QuizEntityLinkView {
+  return { type, id, slug: id, autonym: null, exonym: null };
 }
 
+/**
+ * Names the subjects of a session, whichever kind of fiche they are.
+ *
+ * Two reads rather than one: a people's name lives in
+ * `content.appellations.selfAppellation` and a country's in its own `name_fr`
+ * column, and a country has no autonym/exonym pair at all — that opposition is
+ * what a people fiche is about.
+ */
 async function getEntityLinksMap(
   supabase: ReturnType<typeof createServerClient>,
-  entityIds: string[]
+  peopleIds: string[],
+  countryIds: string[]
 ): Promise<Map<string, QuizEntityLinkView>> {
   const map = new Map<string, QuizEntityLinkView>();
-  if (entityIds.length === 0) return map;
 
-  const { data, error } = await supabase
-    .from("afrik_peoples")
-    .select("id, content")
-    .in("id", entityIds);
+  if (peopleIds.length > 0) {
+    const { data, error } = await supabase
+      .from("afrik_peoples")
+      .select("id, content")
+      .in("id", peopleIds);
 
-  if (error) {
-    logger.error("quiz handler getEntityLinksMap failed", error);
-    return map;
+    if (error) {
+      logger.error("quiz handler getEntityLinksMap failed", error);
+    } else {
+      for (const row of (data ?? []) as PeopleAppellationsRow[]) {
+        const appellations = row.content?.appellations ?? {};
+        map.set(row.id, {
+          type: "people",
+          id: row.id,
+          slug: row.id,
+          autonym: appellations.selfAppellation ?? null,
+          exonym: appellations.exonyms?.[0] ?? null,
+        });
+      }
+    }
   }
 
-  for (const row of (data ?? []) as PeopleAppellationsRow[]) {
-    const appellations = row.content?.appellations ?? {};
-    map.set(row.id, {
-      type: "people",
-      id: row.id,
-      slug: row.id,
-      autonym: appellations.selfAppellation ?? null,
-      exonym: appellations.exonyms?.[0] ?? null,
-    });
+  if (countryIds.length > 0) {
+    const { data, error } = await supabase
+      .from("afrik_countries")
+      .select("id, name_fr")
+      .in("id", countryIds);
+
+    if (error) {
+      logger.error("quiz handler getEntityLinksMap failed", error);
+    } else {
+      for (const row of (data ?? []) as Array<{
+        id: string;
+        name_fr: string;
+      }>) {
+        map.set(row.id, {
+          type: "country",
+          id: row.id,
+          slug: row.id,
+          autonym: row.name_fr,
+          exonym: null,
+        });
+      }
+    }
   }
+
   return map;
 }
 
@@ -205,7 +250,8 @@ function buildQuestionView(
     source: pickBestSource(question.sourceIds, sourceMap),
     assertionId: question.assertionId,
     entity:
-      entityLinkMap.get(question.entityId) ?? entityLinkFor(question.entityId),
+      entityLinkMap.get(question.entityId) ??
+      entityLinkFor(question.entityId, question.entityType),
   };
 }
 
@@ -258,7 +304,11 @@ export async function composeQuizSessionHandler(
     };
   }
 
-  const questions = await composeQuizSession({ scope, count: query.count });
+  const questions = await composeQuizSession({
+    scope,
+    count: query.count,
+    theme: query.theme as QuizThemeId | undefined,
+  });
 
   if (questions.length === 0) {
     return {
@@ -271,13 +321,22 @@ export async function composeQuizSessionHandler(
   const sourceIds = Array.from(
     new Set(questions.flatMap((question) => question.sourceIds))
   );
-  const entityIds = Array.from(
-    new Set(questions.map((question) => question.entityId))
-  );
+  const subjectIdsByType = (entityType: QuizEntityType) =>
+    Array.from(
+      new Set(
+        questions
+          .filter((question) => question.entityType === entityType)
+          .map((question) => question.entityId)
+      )
+    );
 
   const [sourceMap, entityLinkMap] = await Promise.all([
     getSourceRefsMap(supabase, sourceIds),
-    getEntityLinksMap(supabase, entityIds),
+    getEntityLinksMap(
+      supabase,
+      subjectIdsByType("people"),
+      subjectIdsByType("country")
+    ),
   ]);
 
   return {

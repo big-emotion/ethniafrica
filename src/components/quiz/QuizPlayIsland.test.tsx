@@ -184,6 +184,9 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
 
     renderIsland();
 
-    expect(mockUseQuizSession).toHaveBeenCalledWith({ scope: GHANA });
+    expect(mockUseQuizSession).toHaveBeenCalledWith({
+      scope: GHANA,
+      theme: null,
+    });
   });
 });

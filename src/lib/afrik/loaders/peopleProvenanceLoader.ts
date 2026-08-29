@@ -23,9 +23,6 @@
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
 
-import { logger } from "@/lib/api/logger";
-import { createAdminClient } from "@/lib/supabase/admin";
-import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import {
   namedExonym,
   selectVerbatimFragment,
@@ -35,24 +32,20 @@ import {
   TEMPLATE_FIELD_PATHS,
   type QuizTemplateId,
 } from "@/lib/quiz/segmentPolicy";
-import { isSourceTier } from "@/types/sources";
+import {
+  emptyProvenanceReport,
+  writeFicheProvenance,
+  type AdminClient,
+  type AssertionTarget,
+  type ProvenanceReport,
+} from "@/lib/afrik/loaders/provenanceWriter";
 
 const PEOPLES_ROOT = join(process.cwd(), "dataset/source/afrik/peuples");
 
-export type AdminClient = ReturnType<typeof createAdminClient>;
+export type { AdminClient };
 
-export interface PeopleProvenanceReport {
-  total: number;
-  assertionsWritten: number;
-  skippedWithoutSources: number;
-  errors: string[];
-}
-
-/** One claim a fiche makes, bound to the field path the surfaces read it from. */
-export interface PeopleAssertionTarget {
-  fieldPath: string;
-  statement: string;
-}
+export type PeopleProvenanceReport = ProvenanceReport;
+export type PeopleAssertionTarget = AssertionTarget;
 
 interface CountryShare {
   country?: string;
@@ -207,189 +200,30 @@ export function peopleAssertionTargets(
   return targets;
 }
 
-function errorMessage(error: unknown): string {
-  if (error && typeof error === "object" && "message" in error) {
-    return String((error as { message?: unknown }).message);
-  }
-  return "unknown error";
-}
-
 /**
- * `sources.tier` accepts the three tiers or NULL. `needs_review` is not a tier
- * and must not be stored as one: folding it onto `unverified` would state a
- * judgement nobody has made, so it goes in with no tier at all.
+ * Writes one people's provenance through the shared Module 0 writer.
+ *
+ * Everything below the claims — sources, revision, assertions, the confidence
+ * reseed and the idempotence rules that make a re-run safe — lives in
+ * `provenanceWriter` and is shared with countries. What stays here is the only
+ * part that is about peoples: which claims a people fiche makes.
  */
-async function upsertFicheSource(
-  supabase: AdminClient,
-  source: {
-    label: string;
-    url: string | null;
-    standing: string;
-    notes?: string;
-  }
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("sources")
-    .upsert(
-      {
-        title: source.label,
-        url: source.url,
-        tier: isSourceTier(source.standing) ? source.standing : null,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
-      { onConflict: "title" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-/**
- * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK, so every
- * assertion has to point at a published snapshot. The unique key
- * (entity_type, entity_id, version) keeps this idempotent across re-runs.
- */
-async function findOrCreateFicheRevision(
-  supabase: AdminClient,
-  people: PeopleFiche
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("fiche_revisions")
-    .upsert(
-      {
-        entity_type: "people",
-        entity_id: people.id,
-        version: 1,
-        content_snapshot: people,
-      },
-      { onConflict: "entity_type,entity_id,version" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-/**
- * `assertions` carries no unique constraint on (entity_type, entity_id,
- * field_path), so re-runs are made idempotent here by reading before writing —
- * the same compromise the relation loader makes.
- */
-async function findOrCreateAssertion(
-  supabase: AdminClient,
-  peopleId: string,
-  target: PeopleAssertionTarget,
-  sourceIds: string[],
-  ficheRevisionId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("assertions")
-    .select("id")
-    .eq("entity_type", "people")
-    .eq("entity_id", peopleId)
-    .eq("field_path", target.fieldPath)
-    .maybeSingle();
-
-  if (selectError) return { error: errorMessage(selectError) };
-
-  if (existing) {
-    const { error: updateError } = await supabase
-      .from("assertions")
-      .update({ statement: target.statement, source_ids: sourceIds })
-      .eq("id", existing.id);
-    if (updateError) return { error: errorMessage(updateError) };
-    return { id: existing.id as string };
-  }
-
-  const { data: inserted, error: insertError } = await supabase
-    .from("assertions")
-    .insert({
-      entity_type: "people",
-      entity_id: peopleId,
-      field_path: target.fieldPath,
-      statement: target.statement,
-      source_ids: sourceIds,
-      fiche_revision_id: ficheRevisionId,
-    })
-    .select("id")
-    .single();
-
-  if (insertError || !inserted) return { error: errorMessage(insertError) };
-  return { id: inserted.id as string };
-}
-
 async function writePeopleProvenance(
   supabase: AdminClient,
   people: PeopleFiche,
   report: PeopleProvenanceReport
 ): Promise<void> {
-  report.total += 1;
-
-  const ficheSources = ficheSourceEntries(
-    people.content?.sources as Parameters<typeof ficheSourceEntries>[0]
-  );
-  if (ficheSources.length === 0) {
-    // A fiche citing nothing gets no assertion. An assertion with an empty
-    // source list would raise this people's confidence on the strength of
-    // having claimed something, which is the opposite of what the score means.
-    report.skippedWithoutSources += 1;
-    return;
-  }
-
-  const sourceIds: string[] = [];
-  for (const source of ficheSources) {
-    const result = await upsertFicheSource(supabase, source);
-    if ("error" in result) {
-      report.errors.push(
-        `${people.id}: source "${source.label}" — ${result.error}`
-      );
-      return;
-    }
-    sourceIds.push(result.id);
-  }
-
-  const revision = await findOrCreateFicheRevision(supabase, people);
-  if ("error" in revision) {
-    report.errors.push(`${people.id}: fiche revision — ${revision.error}`);
-    return;
-  }
-
-  for (const target of peopleAssertionTargets(people)) {
-    const assertion = await findOrCreateAssertion(
-      supabase,
-      people.id,
-      target,
-      sourceIds,
-      revision.id
-    );
-    if ("error" in assertion) {
-      report.errors.push(
-        `${people.id}: assertion ${target.fieldPath} — ${assertion.error}`
-      );
-      continue;
-    }
-    report.assertionsWritten += 1;
-  }
-
-  // No per-INSERT trigger exists; the loader seeds confidence_scores itself,
-  // exactly as the relation loader does. A failure is logged rather than
-  // rolled back, so a human can re-run the recompute job.
-  const { error: confidenceError } = await supabase.rpc(
-    "recompute_confidence",
+  await writeFicheProvenance(
+    supabase,
     {
-      p_entity_type: "people",
-      p_entity_id: people.id,
-    }
+      entityType: "people",
+      entityId: people.id,
+      snapshot: people,
+      rawSources: people.content?.sources,
+      targets: peopleAssertionTargets(people),
+    },
+    report
   );
-  if (confidenceError) {
-    logger.warn(`recompute_confidence failed for ${people.id}`, {
-      reason: errorMessage(confidenceError),
-    });
-  }
 }
 
 /** Every `dataset/source/afrik/peuples/<FLG_*>/PPL_*.json` fiche, in corpus order. */
@@ -424,12 +258,7 @@ export async function loadPeopleProvenance(
   supabase: AdminClient,
   peoples: PeopleFiche[] = loadAllPeopleFiles()
 ): Promise<PeopleProvenanceReport> {
-  const report: PeopleProvenanceReport = {
-    total: 0,
-    assertionsWritten: 0,
-    skippedWithoutSources: 0,
-    errors: [],
-  };
+  const report = emptyProvenanceReport();
 
   for (const people of peoples) {
     await writePeopleProvenance(supabase, people, report);

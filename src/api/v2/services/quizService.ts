@@ -33,7 +33,13 @@ import {
   sessionBandPlan,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
-import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
+import {
+  QUIZ_THEME_IDS,
+  QUIZ_THEME_LABELS_FR,
+  TEMPLATE_FIELD_PATHS,
+  themeOfFieldPath,
+  type QuizThemeId,
+} from "@/lib/quiz/segmentPolicy";
 import type {
   QuizEntityType,
   QuizOptionValue,
@@ -63,9 +69,16 @@ export interface QuizScopeOption {
   activeQuestionCount: number;
 }
 
+export interface QuizThemeOption {
+  id: QuizThemeId;
+  labelFr: string;
+  activeQuestionCount: number;
+}
+
 export interface QuizScopeCatalogue {
   countries: QuizScopeOption[];
   families: QuizScopeOption[];
+  themes: QuizThemeOption[];
   /** Every active question, whatever its subject — what `mixed` and `random` draw from. */
   totalActiveQuestionCount: number;
 }
@@ -73,6 +86,12 @@ export interface QuizScopeCatalogue {
 export interface ComposeQuizSessionParams {
   scope: QuizScope;
   count: number;
+  /**
+   * Narrows the draw to one domain of content. Orthogonal to `scope`, not a
+   * fifth `QuizScopeKind`: the two compose, and « les croyances des peuples du
+   * Ghana » is the request the facet exists for.
+   */
+  theme?: QuizThemeId | null;
 }
 
 export interface QuizSessionQuestion {
@@ -185,12 +204,14 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
 
   const [questionRows, peopleRows, membershipRows, countryRows, familyRows] =
     await Promise.all([
-      readAllPages<{ entity_id: string }>("scopeCatalogue.questions", (f, t) =>
-        supabase
-          .from("quiz_questions")
-          .select("entity_id")
-          .is("revoked_at", null)
-          .range(f, t)
+      readAllPages<{ entity_id: string; field_path: string }>(
+        "scopeCatalogue.questions",
+        (f, t) =>
+          supabase
+            .from("quiz_questions")
+            .select("entity_id, field_path")
+            .is("revoked_at", null)
+            .range(f, t)
       ),
       readAllPages<{ id: string; language_family_id: string | null }>(
         "scopeCatalogue.peoples",
@@ -224,11 +245,14 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     ]);
 
   const questionsBySubject = new Map<string, number>();
+  const totalByTheme = new Map<QuizThemeId, number>();
   for (const row of questionRows) {
     questionsBySubject.set(
       row.entity_id,
       (questionsBySubject.get(row.entity_id) ?? 0) + 1
     );
+    const theme = themeOfFieldPath(row.field_path);
+    if (theme) totalByTheme.set(theme, (totalByTheme.get(theme) ?? 0) + 1);
   }
 
   const byCountry = new Map<string, number>();
@@ -236,6 +260,15 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     const held = questionsBySubject.get(row.people_id) ?? 0;
     if (held === 0) continue;
     byCountry.set(row.country_id, (byCountry.get(row.country_id) ?? 0) + held);
+  }
+  // A country's own questions belong to its own track. Counted here rather
+  // than through the membership join, which only knows peoples — without this
+  // the picker would offer a track and under-count it by everything the
+  // country fiche itself answers.
+  for (const row of countryRows) {
+    const held = questionsBySubject.get(row.id) ?? 0;
+    if (held === 0) continue;
+    byCountry.set(row.id, (byCountry.get(row.id) ?? 0) + held);
   }
 
   const byFamily = new Map<string, number>();
@@ -249,24 +282,34 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     );
   }
 
+  const optionFor = (
+    id: string,
+    labelFr: string,
+    count: number | undefined
+  ): QuizScopeOption => ({
+    id,
+    labelFr,
+    activeQuestionCount: count ?? 0,
+  });
+
   const byLabel = (a: QuizScopeOption, b: QuizScopeOption) =>
     a.labelFr.localeCompare(b.labelFr, "fr");
 
   return {
     countries: countryRows
-      .map((row) => ({
-        id: row.id,
-        labelFr: row.name_fr,
-        activeQuestionCount: byCountry.get(row.id) ?? 0,
-      }))
+      .map((row) => optionFor(row.id, row.name_fr, byCountry.get(row.id)))
       .sort(byLabel),
     families: familyRows
-      .map((row) => ({
-        id: row.id,
-        labelFr: row.name_fr,
-        activeQuestionCount: byFamily.get(row.id) ?? 0,
-      }))
+      .map((row) => optionFor(row.id, row.name_fr, byFamily.get(row.id)))
       .sort(byLabel),
+    // Fixed order, not sorted by count: the picker reads as a table of
+    // contents, and a list that reshuffles itself as the bank grows is one a
+    // returning reader has to re-read.
+    themes: QUIZ_THEME_IDS.map((id) => ({
+      id,
+      labelFr: QUIZ_THEME_LABELS_FR[id],
+      activeQuestionCount: totalByTheme.get(id) ?? 0,
+    })),
     totalActiveQuestionCount: questionRows.length,
   };
 }
@@ -304,7 +347,15 @@ export async function getQuizScopeLabel(
   return (data?.name_fr as string | undefined) ?? null;
 }
 
-/** The peoples a scope covers, or null for the scopes that cover the corpus. */
+/**
+ * The subjects a scope covers, or null for the scopes that cover the corpus.
+ *
+ * A country track covers its peoples **and the country itself** — « les
+ * peuples du Ghana » is also where a question about Ghana belongs, and it is
+ * the only track that can hold one. A family track covers peoples only: a
+ * language family has no country, so a country question inside one would be a
+ * subject the track never claimed to be about.
+ */
 async function resolveScopedSubjects(
   supabase: ReturnType<typeof createServerClient>,
   scope: QuizScope
@@ -319,7 +370,7 @@ async function resolveScopedSubjects(
           .eq("country_id", scope.entityId)
           .range(f, t)
     );
-    return rows.map((row) => row.people_id);
+    return [...rows.map((row) => row.people_id), scope.entityId];
   }
 
   if (scope.kind === "family" && scope.entityId) {
@@ -424,7 +475,36 @@ function optionLabel(option: QuizOptionValue): string {
 }
 
 /**
+ * Narrows the pool to one domain of content, in memory.
+ *
+ * Not a `.in()` on the template ids that carry the theme: the whole scoped
+ * pool is read on every session anyway, and pushing the filter into PostgREST
+ * would add a list of ids to a URL already budgeted in characters
+ * (`FILTER_BUDGET`) for the subject ids that actually need to be there.
+ *
+ * Read off `field_path` rather than `template_id` because that is the column
+ * the light candidate row already carries.
+ */
+// @req REQ-121
+function withinTheme(
+  candidates: CandidateRow[],
+  theme: QuizThemeId | null | undefined
+): CandidateRow[] {
+  if (!theme) return candidates;
+  return candidates.filter(
+    (candidate) => themeOfFieldPath(candidate.field_path) === theme
+  );
+}
+
+/**
  * Drops the T3 rounds a country track would answer for the player.
+ *
+ * Written for T3 and now the rule for every template, because the country
+ * fiche became a subject: an inversion round about Ghana answers « Ghana »,
+ * and a session titled « Ghana » hands that over before the reader reads the
+ * stimulus. Comparing the answer's own label rather than the template id is
+ * what makes one rule cover both — and what stops the next template from
+ * needing a third.
  *
  * « Dans quel pays le peuple X est-il principalement présent ? », asked inside
  * « les peuples du Ghana », answers Ghana for 48 % of the corpus's country
@@ -442,7 +522,6 @@ function withoutSelfAnsweringCountryRounds(
 ): CandidateRow[] {
   if (scope.kind !== "country" || !countryNameFr) return candidates;
   return candidates.filter((candidate) => {
-    if (candidate.field_path !== TEMPLATE_FIELD_PATHS.T3) return true;
     const answer = candidate.options_fr?.[candidate.correct_option];
     return answer === undefined || optionLabel(answer) !== countryNameFr;
   });
@@ -500,7 +579,7 @@ export async function composeQuizSession(
   params: ComposeQuizSessionParams
 ): Promise<QuizSessionQuestion[]> {
   const supabase = createServerClient();
-  const { scope, count } = params;
+  const { scope, count, theme } = params;
 
   const subjectIds = await resolveScopedSubjects(supabase, scope);
   if (subjectIds !== null && subjectIds.length === 0) return [];
@@ -511,7 +590,11 @@ export async function composeQuizSession(
   ]);
 
   const playable = shuffle(
-    withoutSelfAnsweringCountryRounds(candidates, scope, countryNameFr)
+    withoutSelfAnsweringCountryRounds(
+      withinTheme(candidates, theme),
+      scope,
+      countryNameFr
+    )
   );
   if (playable.length === 0) return [];
 
@@ -519,6 +602,9 @@ export async function composeQuizSession(
   if (scope.kind === "random") {
     ordered = playable.slice(0, count);
   } else {
+    // Countries have no row in `afrik_peoples`, so they come back with no
+    // population and band as hard — which is the honest place for them: a
+    // question about a country's etymology is not a warm-up.
     const demography = await fetchDemography(supabase, subjectIds);
     const bands = bandSubjectsByPopulation(
       [...new Set(playable.map((candidate) => candidate.entity_id))].map(
@@ -532,6 +618,7 @@ export async function composeQuizSession(
       playable.map((candidate) => ({
         ...candidate,
         entityId: candidate.entity_id,
+        theme: themeOfFieldPath(candidate.field_path),
       })),
       bands,
       sessionBandPlan(count)
@@ -565,11 +652,30 @@ export async function composeQuizSession(
     new Set(rows.flatMap((row) => row.source_ids ?? []))
   );
 
-  const [confidenceMap, flagsMap, sourceGateMap] = await Promise.all([
-    getConfidenceMap(entityIds, rows[0]?.entity_type ?? "people"),
+  // One lookup per entity type present, not one for the whole session.
+  // `confidence_scores` is keyed on (entity_type, entity_id), so reading the
+  // type off the first row silently looked every country up as a people, found
+  // nothing, and failed the gate closed on all of them — the moment a session
+  // could hold both, that stopped being a harmless simplification.
+  const idsByType = new Map<QuizEntityType, string[]>();
+  for (const row of rows) {
+    const held = idsByType.get(row.entity_type) ?? [];
+    if (!held.includes(row.entity_id)) held.push(row.entity_id);
+    idsByType.set(row.entity_type, held);
+  }
+
+  const [confidenceMaps, flagsMap, sourceGateMap] = await Promise.all([
+    Promise.all(
+      [...idsByType].map(([entityType, ids]) =>
+        getConfidenceMap(ids, entityType)
+      )
+    ),
     getFlagsSummaryMap(entityIds),
     getSourceGateInfoMap(supabase, sourceIds),
   ]);
+  const confidenceMap = new Map(
+    confidenceMaps.flatMap((map) => [...map.entries()])
+  );
 
   const survivors: QuizSessionQuestion[] = [];
   for (const row of rows) {

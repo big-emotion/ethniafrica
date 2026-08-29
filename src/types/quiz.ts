@@ -23,10 +23,19 @@ export type QuizTemplateId =
   | "T9"
   | "T10"
   | "T11"
-  | "T12";
+  | "T12"
+  | "T13"
+  | "T14"
+  | "T15"
+  | "T16"
+  | "T17"
+  | "T18";
 
-/** Only "people" fiches feed templates today — languages live inside a people's content.languages section. */
-export type QuizEntityType = "people";
+/**
+ * Peoples and countries. Languages are not a third kind — they live inside a
+ * people's `content.languages` section and are asked about there.
+ */
+export type QuizEntityType = "people" | "country";
 
 /**
  * Autonym-first name structure required by AutonymExonymHeading. Never collapse
@@ -110,15 +119,48 @@ export interface QuizPeopleFixture {
 /**
  * The prose the inversion templates read, keyed by the template that reads it.
  *
- * A record rather than six named fields: `buildInversionTemplate` is one
- * factory parameterised by template id, and six flat fields would make it
- * carry a lookup table back to them.
+ * A record rather than named fields: `buildInversionTemplate` is one factory
+ * parameterised by template id, and flat fields would make it carry a lookup
+ * table back to them. Partial and shared between the two kinds of fiche — a
+ * people never fills a country's rubric and the reverse.
  */
-export interface QuizProseRubrics {
-  T6: string | null;
-  T7: string | null;
-  T8: string | null;
-  T9: string | null;
-  T10: string | null;
-  T11: string[] | null;
+export type QuizProseRubrics = Partial<
+  Record<QuizTemplateId, string | string[] | null>
+>;
+
+/**
+ * What an inversion round needs of its subject, whatever kind of fiche it is.
+ *
+ * Both `QuizPeopleFixture` and `QuizCountryFixture` satisfy it, which is what
+ * lets one factory serve peoples and countries: the round quotes a rubric and
+ * asks which subject it belongs to, and only the pool of wrong answers differs.
+ */
+export interface QuizInversionSubject {
+  id: string;
+  subjectName: AutonymExonymName;
+  selfAppellation: string;
+  exonyms: string[];
+  rubrics: QuizProseRubrics;
+}
+
+/** Either kind of fiche a template can be asked about. */
+export type QuizSubjectFixture = QuizPeopleFixture | QuizCountryFixture;
+
+/**
+ * A country fiche, reduced to what the templates read.
+ *
+ * `subjectName` carries the French name in the autonym slot and nothing in the
+ * exonym one. A country has no autonym/exonym pair — that opposition belongs to
+ * peoples — but the option renderer is shared, so the name goes where the
+ * renderer looks rather than the type being widened for one case.
+ */
+export interface QuizCountryFixture {
+  id: string;
+  subjectName: AutonymExonymName;
+  /** `nameOfficial`, held here so the leak rule knows both names of a country. */
+  selfAppellation: string;
+  exonyms: string[];
+  rubrics: QuizProseRubrics;
+  /** `content.kingdoms[].name` — the atomic answers T16 draws on. */
+  kingdomNames: string[];
 }
