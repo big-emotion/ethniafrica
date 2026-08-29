@@ -425,6 +425,34 @@ describe("middleware", () => {
       expect(csp).toContain("frame-ancestors 'self'");
     });
 
+    // Neither directive falls back to default-src, so leaving them out leaves
+    // them unrestricted: an injected <base> can re-point every relative URL on
+    // the page, and an injected form can post to any origin.
+    // @req REQ-052
+    it("restricts base-uri and form-action, which do not inherit default-src", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+
+      expect(csp).toContain("base-uri 'self'");
+      expect(csp).toContain("form-action 'self'");
+    });
+
+    // The style relaxation is scoped to public localized pages; these two are
+    // not, so the branch that loosens style-src must still carry them.
+    // @req REQ-052
+    it("restricts base-uri and form-action on public localized pages too", async () => {
+      const request = new NextRequest("http://localhost:3000/fr");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+
+      expect(csp).toContain("style-src 'self' 'unsafe-inline'");
+      expect(csp).toContain("base-uri 'self'");
+      expect(csp).toContain("form-action 'self'");
+    });
+
     it("does not include 'unsafe-inline' in script-src or style-src", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
       const response = await middleware(request);

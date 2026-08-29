@@ -56,6 +56,13 @@ function applySecurityHeaders(
     ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),
     "img-src 'self' data:",
     "frame-ancestors 'self'",
+    // Neither of these falls back to default-src, so omitting them leaves them
+    // wide open rather than inheriting 'self'. base-uri stops an injected
+    // <base> from re-pointing every relative URL on the page; form-action stops
+    // an injected form from posting elsewhere. Both are unscoped: the style
+    // relaxation above is only for public pages, these two are for all of them.
+    "base-uri 'self'",
+    "form-action 'self'",
     "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
