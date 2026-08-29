@@ -56,4 +56,27 @@ describe("PageLoadingScreen", () => {
 
     expect(container.querySelector("svg.afh-atl-figure")).not.toBeNull();
   });
+
+  /**
+   * `--accent` carries two incompatible meanings in this codebase: shadcn's
+   * bare HSL triplet in index.css, a hex on the .afh-accent-* wrappers in
+   * color.css. Outside a wrapper the triplet wins, `fill: var(--accent)`
+   * resolves to nothing, and the continent renders black — a defect no
+   * assertion about markup can see, which is why this one is about scope.
+   */
+  // @req REQ-104
+  it("inks the coastline inside an accent scope, never on the bare page", () => {
+    const { container } = render(<PageLoadingScreen label="Chargement" />);
+
+    expect(
+      container.querySelector("[class*='afh-accent-'] svg.afh-atl-figure")
+    ).not.toBeNull();
+  });
+
+  // @req REQ-113
+  it("spends the wait on a fact rather than on a bare indicator", () => {
+    render(<PageLoadingScreen label="Chargement" />);
+
+    expect(screen.getByText("Saviez-vous que")).toBeInTheDocument();
+  });
 });
