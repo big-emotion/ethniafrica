@@ -2,6 +2,7 @@ import { render, screen, cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
+import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 
 /**
@@ -123,9 +124,12 @@ describe("people fiche parity with the mockup", () => {
       ]);
     });
 
+    // The count lives in the fiche's head, which now stands above the globe
+    // rather than inside the parchment — so it is PeopleFicheTitle that must
+    // state it, and this asserts the page still does.
     // @req REQ-115
     it(`counts the presence countries the globe draws on ${regime.label}`, () => {
-      render(<PeopleDetailViewV2 people={regime.people} />);
+      render(<PeopleFicheTitle people={regime.people} />);
 
       expect(
         screen.getByText(`${regime.presenceCount} pays de présence`)
