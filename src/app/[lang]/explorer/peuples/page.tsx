@@ -14,6 +14,8 @@ import type {
   FacetCountryNarrowing,
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
+import type { FacetActiveFilter } from "@/components/hubs/facets/FacetFilterBar";
+import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
@@ -61,8 +63,6 @@ const PARAM = {
   page: "page",
   size: PAGE_SIZE_PARAM,
 } as const;
-
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const countFormat = new Intl.NumberFormat("fr-FR");
 
@@ -161,6 +161,25 @@ export default async function PeuplesHubPage({
     choices.families.map((family) => [family.id, family.label])
   );
 
+  /**
+   * What the fold owes back while it is shut. Pays is not here: it is on the
+   * line, and a chip repeating a visible control would tell the reader nothing
+   * they cannot already see.
+   */
+  const activeFilters: FacetActiveFilter[] = [];
+  if (filters.familyId) {
+    activeFilters.push({
+      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      removeHref: facetHref({ ...filters, familyId: null }, null, pageSize),
+    });
+  }
+  if (filters.letter) {
+    activeFilters.push({
+      label: `Lettre : ${filters.letter}`,
+      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+    });
+  }
+
   /** The pager's own address composer: same filters, only the page moves. */
   const pagerHref = (page: number, size: number) =>
     facetHref(filters, page, size);
@@ -203,30 +222,26 @@ export default async function PeuplesHubPage({
           <p className="afh-facet-reading-lede">{lede}</p>
         </header>
 
+        {/* Pays stays on the line and famille folds, which is the order the
+            axis above already runs in: a reader narrowing 803 peoples reaches
+            for the country they know before the linguistic family they are
+            here to learn. The globe applies the same `?pays=` this select
+            submits, and the select still earns the line — aiming at a shape
+            needs WebGL and a script, and this needs neither. */}
         <FacetFilterBar
           action={getFacetRoute("fr", "peoples")}
           className="mt-4"
-          // The letter and the page size are set outside this form; without
-          // them the reader loses both the moment they narrow by family. The
-          // page number is deliberately absent — a new selection starts at one.
-          hidden={{
-            [PARAM.letter]: filters.letter ?? undefined,
-            [PARAM.size]:
-              pageSize === PEOPLES_FACET_PAGE_SIZES[0]
-                ? undefined
-                : String(pageSize),
+          primaryField={{
+            name: PARAM.country,
+            label: "Pays",
+            anyLabel: "Tous les pays",
+            options: choices.countries.map((country) => ({
+              value: country.id,
+              label: country.label,
+            })),
+            value: filters.countryId,
           }}
-          fields={[
-            {
-              name: PARAM.country,
-              label: "Pays",
-              anyLabel: "Tous les pays",
-              options: choices.countries.map((country) => ({
-                value: country.id,
-                label: country.label,
-              })),
-              value: filters.countryId,
-            },
+          advancedFields={[
             {
               name: PARAM.family,
               label: "Famille linguistique",
@@ -238,54 +253,29 @@ export default async function PeuplesHubPage({
               value: filters.familyId,
             },
           ]}
-        />
-
-        {/* Anchors, not buttons: a letter is a reading of the corpus, so it has
-            an address — and the rail then works before hydration and can be
-            followed by a crawler. */}
-        <nav aria-label="Première lettre" className="mt-4">
-          <ul className="flex flex-wrap gap-1">
-            <li>
-              <Link
-                href={facetHref({ ...filters, letter: null }, null, pageSize)}
-                aria-current={filters.letter ? undefined : "page"}
-                className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
-                style={
-                  filters.letter
-                    ? { backgroundColor: "var(--accent-tint)" }
-                    : {
-                        backgroundColor: "var(--accent)",
-                        color: "var(--accent-foreground)",
-                      }
+          advancedSlot={{
+            content: (
+              <FacetLetterRail
+                current={filters.letter}
+                hrefFor={(letter) =>
+                  facetHref({ ...filters, letter }, null, pageSize)
                 }
-              >
-                Tous
-              </Link>
-            </li>
-            {ALPHABET.map((letter) => {
-              const current = filters.letter === letter;
-              return (
-                <li key={letter}>
-                  <Link
-                    href={facetHref({ ...filters, letter }, null, pageSize)}
-                    aria-current={current ? "page" : undefined}
-                    className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
-                    style={
-                      current
-                        ? {
-                            backgroundColor: "var(--accent)",
-                            color: "var(--accent-foreground)",
-                          }
-                        : { backgroundColor: "var(--accent-tint)" }
-                    }
-                  >
-                    {letter}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+              />
+            ),
+            activeCount: filters.letter ? 1 : 0,
+          }}
+          // The letter and the page size are set outside this form; without
+          // them the reader loses both the moment they narrow by family. The
+          // page number is deliberately absent — a new selection starts at one.
+          preservedParams={{
+            [PARAM.letter]: filters.letter,
+            [PARAM.size]:
+              pageSize === PEOPLES_FACET_PAGE_SIZES[0]
+                ? undefined
+                : String(pageSize),
+          }}
+          activeFilters={activeFilters}
+        />
 
         {reading.peoples.length === 0 ? (
           <p data-testid="peoples-facet-empty" className="mt-6">

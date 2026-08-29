@@ -208,21 +208,19 @@ export default async function FamillesHubPage({
           className="mt-6"
           // A GET form submits its own controls only, so the size chosen above
           // would be dropped by narrowing to a country without this.
-          hidden={{
+          preservedParams={{
             [SIZE_PARAM]:
               pageSize === FAMILIES_PAGE_SIZES[0]
                 ? undefined
                 : String(pageSize),
           }}
-          fields={[
-            {
-              name: COUNTRY_PARAM,
-              label: "Pays",
-              anyLabel: "Tous les pays",
-              options: countryOptions,
-              value: chosenCountry,
-            },
-          ]}
+          primaryField={{
+            name: COUNTRY_PARAM,
+            label: "Pays",
+            anyLabel: "Tous les pays",
+            options: countryOptions,
+            value: chosenCountry,
+          }}
         />
 
         {families.length === 0 ? (
