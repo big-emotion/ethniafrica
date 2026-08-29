@@ -68,6 +68,7 @@ export default async function DoctrineSlugPage({
       title={entry.title}
       sectionName="Doctrine éditoriale"
       hideHeader
+      trailLabel={entry.title}
     >
       <ReadingColumn className="container mx-auto space-y-6 px-4 py-8">
         <article>

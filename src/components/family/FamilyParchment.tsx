@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";

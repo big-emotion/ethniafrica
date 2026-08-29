@@ -4,9 +4,6 @@ import {
   transformPeopleHero,
 } from "@/lib/peopleDataTransformer";
 import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
-import { getPeopleRoute } from "@/lib/routing";
 
 /**
  * The band a people fiche opens on, above the globe.
@@ -28,17 +25,10 @@ export function PeopleFicheTitle({ people }: { people: PeopleDetail }) {
   const hero = transformPeopleHero(people);
   const countries = transformPeopleCountries(people.demography);
 
+  // The trail is the shell's now (`PageLayout` → `SiteTrail`); the route
+  // passes the name it should print through `trailLabel`.
   return (
-    <>
-      <AfrikBreadcrumbs
-        items={deriveTrail(getPeopleRoute("fr", people.id), people.nameMain)}
-      />
-      <PeopleFicheHead
-        hero={hero}
-        countries={countries}
-        showConfidence={false}
-      />
-    </>
+    <PeopleFicheHead hero={hero} countries={countries} showConfidence={false} />
   );
 }
 

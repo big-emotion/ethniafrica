@@ -60,7 +60,12 @@ export default async function GamePage({ params }: GamePageProps) {
   const envelope = await getGameRoundsHandler(game, seed);
 
   return (
-    <PageLayout language="fr" title={game.nameFr} subtitle={game.promptFr}>
+    <PageLayout
+      language="fr"
+      title={game.nameFr}
+      subtitle={game.promptFr}
+      trailLabel={game.nameFr}
+    >
       {/* The same globe the home opens on, deliberately — not a second
           rendering of the same idea. The page is named after a projection, so
           it owes the reader the projection itself: the flat Mercator map, and
