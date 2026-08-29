@@ -10,6 +10,7 @@ import Script from "next/script";
 import * as Sentry from "@sentry/nextjs";
 import { ConsentProvider, useConsent } from "@/hooks/use-consent";
 import { ConsentBanner } from "@/components/consent";
+import { RouteTransitionLoader } from "@/components/system/RouteTransitionLoader";
 
 /**
  * Enforces consent preferences on third-party integrations:
@@ -92,6 +93,10 @@ export function Providers({
             <Toaster />
             <Sonner />
             {children}
+            {/* Mounted once for the whole site: it is the only wait state
+                that reaches the routes a loading.tsx would soft-404, and the
+                home, which can have no boundary of its own at all. */}
+            <RouteTransitionLoader />
             <ConsentBanner />
           </ConsentProvider>
         </TooltipProvider>

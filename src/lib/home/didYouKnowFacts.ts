@@ -147,3 +147,27 @@ export function pickDidYouKnowFact(
   const index = Math.min(facts.length - 1, Math.floor(random() * facts.length));
   return facts[index];
 }
+
+/**
+ * The draw the loading interstitial uses, which differs from the band's in one
+ * respect: it knows what it showed last time.
+ *
+ * The band is seen once per visit to the home, so a uniform draw is fine there.
+ * The loader is seen on every navigation, and a uniform draw over a bank this
+ * small hands the reader the same fact twice in a row often enough to read as
+ * broken — one navigation in six, and the reader concludes the loader is a
+ * fixed image rather than a rotation. Excluding the previous fact costs one
+ * parameter and removes the only failure a reader can actually notice.
+ *
+ * A single-fact bank repeats regardless: at that point showing it again beats
+ * showing an empty wait.
+ */
+// @req REQ-104
+export function pickNextDidYouKnowFact(
+  previousId: string | null,
+  random: () => number = Math.random,
+  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
+): DidYouKnowFact | null {
+  const eligible = facts.filter((entry) => entry.id !== previousId);
+  return pickDidYouKnowFact(random, eligible.length > 0 ? eligible : facts);
+}
