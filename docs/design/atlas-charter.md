@@ -44,9 +44,16 @@ was rendered under.
 
 | Surface      | People | Country | Family   | Source of truth                        |
 | ------------ | ------ | ------- | -------- | -------------------------------------- |
-| Home modules | ocre   | teal    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
+| Home modules | teal   | ocre    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
 | Facet        | terre  | ocre    | teal     | `lib/hubs/directoryAccent.ts`          |
 | **Fiche**    | ocre   | teal    | **perv** | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
+
+The Home-modules row is **positional, not an entity mapping**: `accentForModule`
+walks `ACCENT_CYCLE` by declaration index, so a module's hue is where it sits in
+`MODULE_DEFINITIONS`. Explorer leading with Pays is what puts ocre on Country
+there — and incidentally what makes the first two rows agree on Country. Reorder
+the registry and this row moves with it; it is a record of the walk, not a
+promise to an entity.
 
 A fiche family is **pervenche, never terre**. Inside a fiche, `IdentityPanel`
 reserves terre for the imposed-exonym marker; painting the page terre would make
