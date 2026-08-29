@@ -124,16 +124,16 @@ describe("root layout metadata — the only <head> the fiche routes get", () => 
       // environment; only its shape is frozen here, and the guarantee that
       // actually matters is asserted below.
       metadataBase: expect.any(URL),
-      title: "Atlas des Peuples d'Afrique | Dictionnaire des Ethnies d'Afrique",
+      title: "EthniAfrica | Dictionnaire des Ethnies d'Afrique",
       description:
         "Encyclopédie des peuples, langues et familles linguistiques dans les 55 pays africains. Explorez la diversité culturelle et linguistique du continent.",
-      authors: [{ name: "Atlas des Peuples d'Afrique" }],
+      authors: [{ name: "EthniAfrica" }],
       icons: {
         icon: "/favicon.ico",
         apple: "/favicon.ico",
       },
       openGraph: {
-        title: "Atlas des Peuples d'Afrique",
+        title: "EthniAfrica",
         description:
           "Encyclopédie des peuples, langues et familles linguistiques d'Afrique",
         type: "website",
