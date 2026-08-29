@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
-import { GamePlayHost } from "@/components/play/GamePlayHost";
-import { MercatorProjectionStage } from "@/components/play/MercatorProjectionStage";
+import { MercatorSurface } from "@/components/mercator/MercatorSurface";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
+import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
@@ -60,6 +60,13 @@ export default async function GamePage({ params }: GamePageProps) {
 
   const envelope = await getGameRoundsHandler(game, seed);
 
+  // Measured server-side and handed down, the way the rounds are: summing
+  // fifty-eight outlines is a few hundred thousand trigonometric calls, and
+  // there is no reason to spend them in the reader's browser. The whole bank
+  // travels — the session states one fact every other reveal, and the score
+  // card lays out all of them.
+  const facts = pickScaleFacts(buildScaleFacts().length, seed);
+
   return (
     <PageLayout
       language="fr"
@@ -82,10 +89,11 @@ export default async function GamePage({ params }: GamePageProps) {
           hidden half of it. Flat at both ends isolates the one variable the
           game is about, which is also what makes the indicatrices legible.
 
-          It stands above the rounds rather than beside them. The stage is the
-          page's argument and the rounds are the questions it earns; a map set
-          next to a live question would let the reader answer by eye, which is
-          the shape-guessing the charter retired as a category (§1). */}
+          It no longer merely stands above the rounds. `MercatorSurface` binds
+          the two, so the map is held flat while a question stands and closes
+          into a sphere on the reveal — see that component for why this obeys
+          charter §1 rather than breaking it, and how the fold rule of §9.1 is
+          met without shrinking the globe. */}
       {/* The axis accent, bound here because nothing else on this route binds
           it. `AccessModeHub` carries it on the hub itself, but a game page is
           not a hub, so `--accent` fell through to the bare shadcn HSL triplet
@@ -95,9 +103,12 @@ export default async function GamePage({ params }: GamePageProps) {
           GameScoreCard all read it, so the whole surface has been painting
           black-or-nothing rather than pervenche (atlas-charter §2). */}
       <div className={ACCENT_BY_ACCESS_MODE.jouer}>
-        <MercatorProjectionStage />
-
-        <GamePlayHost game={game} rounds={envelope.data.rounds} />
+        <MercatorSurface
+          game={game}
+          rounds={envelope.data.rounds}
+          facts={facts}
+          corpusLimited={envelope.data.corpusLimited}
+        />
       </div>
     </PageLayout>
   );

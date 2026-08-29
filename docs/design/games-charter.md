@@ -61,24 +61,23 @@ is recorded rather than left to be rediscovered: the `globeTap` primitive
 slice, and the scope picker — `mercator` plays over the whole continent's
 outlines and has nothing to narrow to.
 
-**What `mercator` owed, and now carries.** The page is named after a
-projection, so it shows the projection: the flat Mercator map, the slider that
-undoes the distortion, and Tissot's indicatrices holding their real area
-throughout (`MercatorProjectionStage`). It stands **above** the rounds, never
-beside a live one — a manipulable map next to « lequel est le plus grand ? »
-would let the reader answer by eye, which is precisely the shape-guessing
-retired below.
+**What `mercator` now owes.** The page is named after a projection, so it
+shows the projection: the home's globe stage, the flat Mercator map and the
+slider that closes it back into a sphere while Tissot's indicatrices hold
+their real area.
 
-**One correction to how this was first written.** The slider's far end is an
-equal-area _map_, not a sphere. Closing the map back into a globe changes two
-things at once — the projection and the dimensionality — so a reader could not
-tell whether the north shrank because the stretch was removed or because
-curvature had hidden half of it. Flat at both ends isolates the single
-variable the game is about, and it is what makes the indicatrices legible: the
-twenty-five circles cover equal ground on the sphere, so every difference
-between them on screen was put there by the projection. The page previously
-mounted the home's globe as a stand-in, which argued about a projection while
-showing none of it.
+~~It stands **above** the rounds, never beside a live one — a manipulable
+globe next to « lequel est le plus grand ? » would let the reader answer by
+eye, which is precisely the shape-guessing retired below.~~ **Amended,
+2026-08-29 — see §11.** The rule was right about the danger and wrong about
+the remedy. Standing the globe above the rounds cost the page its game: the
+stage floor is 560 px on a phone and 720 px on a desktop, so the rounds began
+below the fold and, at 1200 px and up, nothing of the game was visible at
+all — a straight breach of §9.1, which says the stage gives way and the
+options never do. The globe is now **bound to the round** and held at the
+flat map while a question stands. A globe beside a live round only hands over
+the answer when it tells the truth; the flat map is the lie the round is asked
+against, so reading it gives the wrong answer.
 
 ### Retired
 
@@ -342,3 +341,95 @@ served rounds where nothing lies. **Fixed** — `handlers/games.ts` now skips an
 pair the projection does not actually mislead about, and the hub's scene reads
 the same `MINIMUM_AREA_RATIO` so it cannot advertise a gap the game refuses to
 ask about.
+
+---
+
+## 11. The scale amendment (2026-08-29)
+
+What `mercator` was asked to be, and why one interaction could not carry it.
+
+### What the code actually served
+
+Measured, not inferred, against the committed admin-0 outlines:
+
+| Measurement                                                 | Value                               |
+| ----------------------------------------------------------- | ----------------------------------- |
+| Mercator inflation across the 58 African outlines           | **1.00 to 1.46** (highest: Tunisia) |
+| African pairs where the projection inverts the true ranking | 25                                  |
+| …of those, surviving `MINIMUM_AREA_RATIO` (1.02)            | 16                                  |
+| …of those, reachable by the handler's greedy pairing        | **7**, against 8 asked for          |
+| Distinct sessions a reader could ever be served             | **1** — the seed is the slug        |
+
+Two filters were fighting. `mercatorMisleads` selects pairs whose _drawn_ order
+flips, which only happens between countries of near-identical true area; the
+minimum ratio then rejects near-identical areas. What survived were seven
+comparisons differing by 2 % to 25 % — « Tchad ou Afrique du Sud ? » at 2,4 %
+is the coin flip this charter's own kill test forbids.
+
+**The lie is not inside Africa.** A continent astride the equator is drawn
+near true scale; what Mercator inflates is everything above it. Greenland is
+drawn at **14,3 times** itself, Western Europe at 2,0, the contiguous United
+States at 1,7. Those shapes were already committed, in `worldCompare` — an
+asset built for the retired « Vraie taille » and read by no game since.
+
+### The estimate round, and why binary could not do it
+
+A two-way choice records right or wrong, and the misperception here is neither.
+No reader believes Greenland outranks Africa; they believe the gap is small.
+That is a **magnitude** error, and only a round that asks for a number can
+register how far off it is. Hence `estimate`: one track, one committed value,
+and a reveal that states the distance between the two.
+
+`GameDefinition.kind` becomes `kinds`. The registry test exists to catch a
+renderer shipping unexercised, and a game serving two primitives could not say
+so through a single value.
+
+### Assembly: two rules that both hold
+
+§4 wants ascending difficulty; a session of eight identical gestures is worse
+than a mixed one. Sorting globally would block the kinds, interleaving globally
+would scramble the bands. **The bands are the outer order and the alternation
+happens inside each one.**
+
+Difficulty for an estimate round is the size of the _ratio_, not of the shape:
+landing inside a fifth of « fourteen times » is harder than inside a fifth of
+« three times », and ranking by area would have made Western Europe the hardest
+round for a French reader, which it plainly is not.
+
+### The scale facts
+
+A bank of measured statements — areas and great-circle distances — stated on
+every other reveal and laid out whole on the score card. **Every figure is
+computed from the committed assets, never typed.** The brief that prompted this
+work offered « Kinshasa–Goma égale Paris–Moscou »; measured, it is 1 580 against
+2 490 km. A bank of typed sentences would have shipped that.
+
+They are **not** added to `DID_YOU_KNOW_FACTS`, whose own rule is that every
+fact in it is onomastic — about a name, who gave it, what it hid — precisely so
+the band cannot drift into trivia. A comparison of surfaces is trivia _there_
+and the thesis _here_, so it lives with the game that argues it.
+
+They are also not offered as a mode. A chooser between « questions » and
+« faits » would hand the facts to whoever picked that tab and to nobody else,
+and would spend the vertical space the page is shortest of.
+
+### What this amendment concedes
+
+`mercator` was already the charter's one exception: a surface argument with no
+onomastic content, admitted because it carries a real claim. **This widens that
+exception** — from area to distance, and from choosing to estimating. Nothing
+here teaches a name. The exception is stated rather than smuggled, and it stays
+confined to this one page: no other game may reach for it without answering the
+question that retired eight of them — what does this teach that the quiz does
+not already ask?
+
+### What was rejected
+
+- **A distance quiz.** « Kinshasa–Goma ou Paris–Varsovie, laquelle est la plus
+  longue ? » fails the kill test. A French reader knows Paris–Varsovie and can
+  only guess Kinshasa–Goma: that is recall, not reasoning. The area round can
+  be reasoned about — « Mercator inflates the north, so the northern one is
+  smaller than it looks ». Distances stay facts, never questions.
+- **Shrinking the globe to obey §9.1.** It would have satisfied the rule by
+  degrading the one thing the page is named after. Putting the round first in
+  the document obeys it without touching the globe.
