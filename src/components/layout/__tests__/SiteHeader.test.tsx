@@ -10,9 +10,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ThemeProvider } from "next-themes";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
 import { getNavModules } from "@/lib/hubs/moduleRegistry";
+import type { ModuleAvailabilityMap } from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getFacetByPage } from "@/lib/hubs/facets";
@@ -34,10 +36,18 @@ const BURGER = "site-nav-burger";
 
 const t = getTranslation("fr");
 
-const renderHeader = (props: { onSearchClick?: () => void } = {}) =>
+// Most cases render with no resolved availability, which is the state
+// Storybook and any tree without the server layout are in: the header falls
+// back to the declared half. The cases that care pass a map.
+const renderHeader = (
+  props: { onSearchClick?: () => void } = {},
+  availability: ModuleAvailabilityMap | null = null
+) =>
   render(
     <ThemeProvider attribute="class">
-      <SiteHeader language="fr" {...props} />
+      <ModuleAvailabilityProvider value={availability}>
+        <SiteHeader language="fr" {...props} />
+      </ModuleAvailabilityProvider>
     </ThemeProvider>
   );
 
@@ -287,6 +297,78 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
       expect(entry).toHaveAttribute("tabindex", "-1");
       expect(entry.tagName).not.toBe("A");
     }
+  });
+});
+
+/**
+ * "A page states one availability, not one per surface" (charter §3). The
+ * header used to answer a narrower question than the home and the hub — it
+ * asked only whether a route resolved — so `/fr/comprendre` marked _Premiers
+ * repères de migrations_ **Bientôt** while the menu above it offered the same
+ * module as a link. Three surfaces, three answers, one module.
+ */
+describe("SiteHeader — reachable and mature are two questions (atlas charter §3)", () => {
+  const entryFor = (id: string) => screen.getByTestId(`site-nav-module-${id}`);
+
+  const expectInert = (entry: HTMLElement) => {
+    expect(entry).toHaveTextContent(t.hubs.unavailableLabel);
+    expect(entry).toHaveAttribute("aria-disabled", "true");
+    expect(entry).toHaveAttribute("tabindex", "-1");
+    expect(entry.tagName).not.toBe("A");
+  };
+
+  // @req REQ-106
+  it("withholds the invitation from every module declared in preparation", () => {
+    renderHeader();
+
+    const drafts = getNavModules("comprendre").filter(
+      (navModule) => navModule.editorialReadiness === "draft"
+    );
+    expect(drafts.length).toBeGreaterThan(0);
+
+    fireEvent.click(trigger("Comprendre"));
+    for (const navModule of drafts) {
+      expectInert(entryFor(navModule.id));
+    }
+  });
+
+  /**
+   * The half the header could not reach on its own: `noms` is declared ready
+   * and waits on `name_records`, so only the resolved map knows. Without it
+   * the menu linked an atlas of names holding none.
+   */
+  // @req REQ-106
+  it("withholds it from a ready module whose corpus came back empty", () => {
+    renderHeader({}, { noms: false });
+
+    fireEvent.click(trigger("Comprendre"));
+    expectInert(entryFor("noms"));
+  });
+
+  // @req REQ-106
+  it("offers that same module once its corpus fills", () => {
+    renderHeader({}, { noms: true });
+
+    fireEvent.click(trigger("Comprendre"));
+    const entry = entryFor("noms");
+    expect(entry.tagName).toBe("A");
+    expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+    expect(entry).not.toHaveTextContent(t.hubs.unavailableLabel);
+  });
+
+  // The tray is the only navigation below 760px, so an invitation the panel
+  // withholds and the tray extends is the same disagreement on a phone.
+  // @req REQ-106
+  it("withholds it in the tray as well as in the panel", () => {
+    renderHeader({}, { noms: false });
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
+
+    expect(
+      within(tray).queryByRole("link", { name: /Noms & appellations/ })
+    ).not.toBeInTheDocument();
   });
 });
 
