@@ -100,4 +100,20 @@ describe("fiche parchment contrast", () => {
       expect(contrast(muted, background)).toBeLessThan(AA_SMALL_TEXT);
     }
   });
+
+  // The colonial tone used to appear only on its own pale tint, inside the
+  // blocks that marked an absence or an imposed name. Dropping those blocks
+  // for the parchment's rule device puts the same ink straight onto the page
+  // grounds — a move that has broken contrast on this surface before, when
+  // the mockup's greys were reproduced without measuring them.
+  // @req REQ-116
+  it("keeps the colonial ink legible on the grounds, not just on its own tint", () => {
+    const colonial = tokenHex("--afh-color-colonial");
+
+    for (const ground of GROUNDS) {
+      expect(contrast(colonial, tokenHex(ground))).toBeGreaterThanOrEqual(
+        AA_SMALL_TEXT
+      );
+    }
+  });
 });

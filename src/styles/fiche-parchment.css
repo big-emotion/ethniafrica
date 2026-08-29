@@ -132,11 +132,33 @@
   color: var(--afh-text-soft);
 }
 
+/* The measure, not the container, decides where a line ends. A section spans
+   the full parchment because its figures and tables need the width; its
+   running prose does not, and uncapped it ran past 120 characters a line on a
+   desktop fiche while the callout beside it stopped at 72ch. Two measures in
+   one document is what made the reading look unedited. */
 .afh-parchment-section p {
   margin: 0 0 12px;
+  max-width: 72ch;
   font-size: var(--afh-text-body);
   line-height: 1.7;
   color: var(--afh-text-soft);
+}
+
+/* The confidence chip opens the people fiche above its first section. It is
+   not a section itself, so it states the gutter rather than inheriting one —
+   and it must state the same gutter, or the fiche's first line sits left of
+   every heading under it. */
+.afh-parchment-confidence {
+  padding: 20px 20px 0;
+}
+
+/* ConfidenceChip pads itself by 4px so its focus ring is not clipped where it
+   sits flush against something. That padding is the component's business, but
+   it must not read as an indent here: a gutter is measured to the text, which
+   is what a reader lines the column up against. */
+.afh-parchment-confidence > * {
+  margin-inline-start: -4px;
 }
 
 .afh-parchment-section code {
@@ -358,6 +380,95 @@
   color: var(--afh-text);
 }
 
+/* ── The name borne, the names imposed ────────────────────────────────
+   The opening rubric of a people fiche, and the one place the surface
+   states two things it refuses to rank. Both are fields of the same
+   rubric, so they take the callout's device — a rule in ink, never a
+   box — and differ only in which ink: the accent for the name a people
+   uses for itself, the colonial tone for the names put on it.
+
+   They used to be two filled cards in a stretching grid, which tied the
+   autonym's height to however many exonyms the fiche happened to record.
+   A one-line autonym beside a nine-name list stood on 300px of empty
+   fill. `align-items: start` is the whole of that fix: the fields state
+   different amounts and are entitled to different heights. */
+
+.afh-naming {
+  display: grid;
+  align-items: start;
+  gap: 18px;
+  margin: 2px 0 18px;
+}
+
+.afh-naming-field {
+  padding: 1px 0 1px 14px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Charter §2 keeps the accent out of components, but the colonial tone is not
+   an accent — it is the atlas's one marker for an imposed name, and it means
+   the same thing on every surface. */
+.afh-naming-field[data-role="imposed"] {
+  border-left-color: var(--afh-color-colonial);
+}
+
+.afh-naming-label {
+  margin: 0 0 6px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.afh-naming-field[data-role="imposed"] .afh-naming-label {
+  color: var(--afh-color-colonial);
+}
+
+/* Two classes, so it outranks `.afh-parchment-section p` — the autonym is the
+   loudest thing in the section, not running prose in the soft ink. */
+.afh-naming .afh-naming-value {
+  margin: 0;
+  max-width: none;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.3;
+  color: var(--afh-text);
+  text-wrap: pretty;
+}
+
+/* The names run on one after another rather than stacking one per row. The
+   corpus swings from one exonym to nine, and a row apiece made !Kung's nine
+   into a column twice the height of everything beside it — the autonym then
+   stood on a void the width of half the page. Flowing them keeps the two
+   fields within a line or two of each other whatever the fiche records, which
+   is what lets them be read face to face at all.
+
+   A bullet list is also the wrong claim: these are not steps or ranked items,
+   they are the set of names imposed on one people. */
+.afh-naming-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text);
+}
+
+/* Many exonyms are a name followed by a parenthesis naming who imposed it, so
+   an item can be a clause rather than a word. The separator has to survive
+   that without reading as punctuation inside it. */
+.afh-naming-list li:not(:last-child)::after {
+  content: "·";
+  margin: 0 8px;
+  color: var(--afh-text-soft);
+}
+
 /* ── Timeline ─────────────────────────────────────────────────────────
    Historical political entities: a period, what the entity was, and the
    centres it was governed from. Rows separated by a hairline rather than
@@ -430,6 +541,18 @@
   .afh-tl-item {
     grid-template-columns: 96px 1fr;
     gap: 16px;
+  }
+
+  .afh-parchment-confidence {
+    padding: 26px 40px 0;
+  }
+
+  /* Side by side only once there is room for two measures. Below this the
+     fields stack, which is also the order they are read in: the name borne
+     first, then the names imposed on it. */
+  .afh-naming {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
   }
 
   .afh-parchment-head h1 {
