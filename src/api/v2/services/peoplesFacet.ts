@@ -98,11 +98,11 @@ export async function getPeoplesFacetPage(
   const requested = Number.isFinite(page) && page >= 1 ? Math.floor(page) : 1;
   const query = toQueryFilters(filters);
 
-  let { data, total } = await getPaginatedAfrikPeoples(
-    requested,
-    perPage,
-    query
-  );
+  const firstRead = await getPaginatedAfrikPeoples(requested, perPage, query);
+  // The count belongs to the selection, not to the page: clamping an
+  // out-of-range page number below re-reads `data` but must not move `total`.
+  const total = firstRead.total;
+  let data = firstRead.data;
   const totalPages = Math.max(1, Math.ceil(total / perPage));
 
   let resolved = requested;
