@@ -5,7 +5,12 @@ import { FamilyParchment } from "@/components/family/FamilyParchment";
 import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
-import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
 
 const overlay = buildFamilyFootprintOverlay(
   [["NGA", "BEN"], ["NGA", "TGO"], ["NGA"]],
@@ -256,15 +261,36 @@ describe("FamilyParchment — the trail", () => {
   // hierarchy its children did.
   // @req REQ-115
   it("puts the family under the families directory", () => {
-    // The trail stands above the globe now, with the head — so it is the band
-    // that must carry it, not the parchment.
+    // The trail is the shell's now — mounted once in `PageLayout` for every
+    // route — so what a family fiche owes it is the family's name, and what is
+    // asserted here is the path that name lands in.
+    // The fixture above is cast to `never` to satisfy the band's prop, so its
+    // fields are spelled out here rather than read back off it.
+    const trail = deriveTrail(
+      getFamilyRoute("fr", "FLG_BENOUECONGO"),
+      "Bénoué-Congo"
+    );
+
+    expect(trail).toContainEqual({
+      label: "Familles",
+      href: getLocalizedRoute("fr", "families"),
+    });
+    expect(trail.at(-1)?.label).toBe("Bénoué-Congo");
+  });
+
+  /**
+   * The band mounted its own trail until the shell took it over. Asserting the
+   * absence is what keeps a second one from coming back: two trails on a fiche
+   * is the failure this move was made to end, and it renders as a duplicate
+   * rather than an error.
+   */
+  // @req REQ-115
+  it("mounts no trail of its own, the shell owning the only one", () => {
     render(<FamilyFicheTitle family={BENOUECONGO_FAMILY} />);
 
-    const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
-    const up = within(trail).getByRole("link", { name: "Familles" });
-
-    expect(up).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
-    expect(trail).toHaveTextContent("Bénoué-Congo");
+    expect(
+      screen.queryByRole("navigation", { name: /fil d'ariane/i })
+    ).toBeNull();
   });
 });
 

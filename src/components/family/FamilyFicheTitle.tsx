@@ -1,8 +1,5 @@
 import type { LanguageFamily } from "@/types/afrik";
 import { transformFamilyData } from "@/lib/familyDataTransformer";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
-import { getFamilyRoute } from "@/lib/routing";
 
 /** What a family fiche says a family is — see FamilyParchment. */
 const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
@@ -21,12 +18,9 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
   const selfAppellation = decolonialHeader.selfAppellation;
   const nameEn = hero.nameEn ?? decolonialHeader.nameEn;
 
+  // The trail is the shell's now (`PageLayout` → `SiteTrail`).
   return (
     <>
-      <AfrikBreadcrumbs
-        items={deriveTrail(getFamilyRoute("fr", hero.id), hero.nameFr)}
-      />
-
       <header className="afh-parchment-head">
         <p className="afh-parchment-eyebrow">
           {hero.id} · famille linguistique

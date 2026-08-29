@@ -279,6 +279,7 @@ export default async function FamillesSlugPage({
       sectionName="Familles linguistiques"
       hideHeader
       flushTop
+      trailLabel={family.nameFr}
     >
       <FicheSequence
         context={{

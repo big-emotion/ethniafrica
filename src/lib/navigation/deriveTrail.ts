@@ -51,11 +51,10 @@ export function deriveTrail(
   entityLabel?: string
 ): TrailCrumb[] {
   const language = getLanguageFromRoute(pathname);
-  const page = getPageFromRoute(pathname);
-  if (!language || !page) return [];
+  if (!language) return [];
 
   const t = translations[language].trail;
-  const hubRoute = getLocalizedRoute(language, page);
+  const page = getPageFromRoute(pathname);
 
   /**
    * The trail opens on the home and, where there is one, on the axis that
@@ -72,30 +71,62 @@ export function deriveTrail(
    */
   const crumbs: TrailCrumb[] = [{ label: t.home, href: `/${language}` }];
 
-  const axis = getAxisForPage(page);
-  if (axis && AXIS_HUB_PAGE[axis] !== page) {
-    crumbs.push({
-      label: t.pages[AXIS_HUB_PAGE[axis]],
-      href: getAxisHubRoute(language, axis),
-    });
+  /**
+   * Where the derivation switches from the slug table to walking segments.
+   *
+   * A page the table addresses gets its axis and its own crumb from the
+   * table, and the walk starts below its hub. A page the table does not
+   * address — the legal notices, the account screens — has no hub and no
+   * axis, so the walk starts at the language root and names every segment
+   * itself. Both then run the same loop, which is the point: the trail's
+   * rules about what it may print should not depend on which branch a route
+   * happened to arrive through.
+   */
+  let base = `/${language}`;
+
+  if (page) {
+    const axis = getAxisForPage(page);
+    if (axis && AXIS_HUB_PAGE[axis] !== page) {
+      crumbs.push({
+        label: t.pages[AXIS_HUB_PAGE[axis]],
+        href: getAxisHubRoute(language, axis),
+      });
+    }
+
+    base = getLocalizedRoute(language, page);
+    crumbs.push({ label: t.pages[page], href: base });
   }
 
-  crumbs.push({ label: t.pages[page], href: hubRoute });
-
-  const tail = pathname.slice(hubRoute.length).split("/").filter(Boolean);
+  const tail = pathname.slice(base.length).split("/").filter(Boolean);
   let complete = true;
 
+  /**
+   * `entityLabel` names the first segment the table cannot name, and only
+   * that one.
+   *
+   * It used to name the segment directly below a hub, by position. Position
+   * stopped being a reliable test once the trail covered routes with no hub
+   * to be below: on `/fr/signalements/RPT_12` the identifier is the second
+   * segment, and on `/fr/comparer/peuples/PPL_A,PPL_B` it is the third. What
+   * the caller actually knows how to name is the one thing this module never
+   * could — the identifier — so that is what the argument is spent on,
+   * wherever in the path it falls.
+   */
+  let unusedEntityLabel = entityLabel;
+
   for (const [index, segment] of tail.entries()) {
-    // The segment directly below a hub is an entity identifier; everything
-    // deeper is a named sub-route of that fiche.
-    const label = index === 0 ? entityLabel : t.segments[segment];
+    let label = t.segments[segment];
+    if (!label && unusedEntityLabel) {
+      label = unusedEntityLabel;
+      unusedEntityLabel = undefined;
+    }
     if (!label) {
       complete = false;
       break;
     }
     crumbs.push({
       label,
-      href: `${hubRoute}/${tail.slice(0, index + 1).join("/")}`,
+      href: `${base}/${tail.slice(0, index + 1).join("/")}`,
     });
   }
 

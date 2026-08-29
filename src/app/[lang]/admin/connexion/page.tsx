@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { FormFieldError } from "@/components/forms/FormFieldError";
+import { SiteTrail } from "@/components/layout/SiteTrail";
 
 function ModerationLoginForm() {
   const searchParams = useSearchParams();
@@ -200,22 +201,28 @@ function ModerationLoginForm() {
 
 // @req REQ-052
 export default function AdminConnexionPage() {
+  // This screen mounts no `PageLayout` — it is a full-viewport centred card —
+  // so it mounts the trail itself. Without it the moderation login is a page
+  // with no way back to the site, which is how it shipped.
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <Card className="w-full max-w-md rounded-afh-xl p-8">
-            <h1 className="text-afh-h2 font-bold mb-2 text-center">
-              Espace modération
-            </h1>
-            <p className="text-afh-small text-center text-muted-foreground">
-              Chargement…
-            </p>
-          </Card>
-        </div>
-      }
-    >
-      <ModerationLoginForm />
-    </Suspense>
+    <>
+      <SiteTrail />
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+            <Card className="w-full max-w-md rounded-afh-xl p-8">
+              <h1 className="text-afh-h2 font-bold mb-2 text-center">
+                Espace modération
+              </h1>
+              <p className="text-afh-small text-center text-muted-foreground">
+                Chargement…
+              </p>
+            </Card>
+          </div>
+        }
+      >
+        <ModerationLoginForm />
+      </Suspense>
+    </>
   );
 }
