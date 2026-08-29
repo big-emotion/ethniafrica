@@ -6,7 +6,8 @@ import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
-import { getPeopleRoute } from "@/lib/routing";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
 
 /**
  * The country fiche's reading, against its mockup.
@@ -366,9 +367,18 @@ describe("country record view — the chapters the page adds", () => {
       fromPeopleName: "Yoruba",
     });
 
-    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
-    expect(trail).toHaveTextContent("Pays");
-    expect(trail).not.toHaveTextContent("Yoruba");
+    // The trail is the shell's now, so the claim is checked where it is made:
+    // the derivation puts the country under Pays and never under the people
+    // the reader happened to arrive from.
+    const trail = deriveTrail(
+      getCountryRoute("fr", countryFixture().id),
+      countryFixture().nameFr
+    );
+    expect(trail.map((crumb) => crumb.label)).toContain("Pays");
+    expect(JSON.stringify(trail)).not.toContain("Yoruba");
+    expect(
+      screen.queryByRole("navigation", { name: "Fil d'ariane" })
+    ).toBeNull();
 
     const back = screen.getByTestId("country-back-to-people");
     expect(back).toHaveAttribute("href", getPeopleRoute("fr", "PPL_YORUBA"));

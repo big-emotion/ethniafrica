@@ -1,5 +1,3 @@
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { backLinkLabel, deriveTrail } from "@/lib/navigation/deriveTrail";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
