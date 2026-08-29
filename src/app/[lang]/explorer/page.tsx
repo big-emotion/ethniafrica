@@ -6,14 +6,17 @@ import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryIndex } from "@/api/v2/services/countryService";
 import { getTranslation } from "@/lib/translations";
-import { OG_TITLE } from "@/lib/brand";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const strings = getTranslation("fr").hubs.explorer;
 
 // @req REQ-114
 export const metadata: Metadata = {
-  title: `${strings.title} — ${OG_TITLE}`,
+  // Same rule as the title band: the axis, and what the axis leads into. A tab
+  // has no trail and no menu around it to supply the subject, so `title` alone
+  // left the entry point unqualified in the one place it stands by itself.
+  title: `${strings.pageTitle} — ${PRODUCT_NAME}`,
   description: strings.blurb,
   alternates: {
     canonical: getLocalizedRoute("fr", "explorerHub"),
