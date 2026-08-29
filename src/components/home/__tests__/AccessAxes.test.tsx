@@ -71,48 +71,52 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "access-axis-comprendre",
       "access-axis-jouer",
     ]);
+    // h3: the cards are items of the section its own heading opens, not
+    // siblings of it.
     expect(
-      screen.getByRole("heading", { level: 2, name: "Explorer" })
+      screen.getByRole("heading", { level: 3, name: "Explorer" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 2, name: "Comprendre" })
+      screen.getByRole("heading", { level: 3, name: "Comprendre" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 2, name: "Jouer" })
+      screen.getByRole("heading", { level: 3, name: "Jouer" })
     ).toBeInTheDocument();
   });
 
-  // The filing criterion behind the three axes, said out loud. It orients
-  // the reader; it is not a level in the outline, and the home pins its h3
-  // count at zero — so it must render as a paragraph, never a heading.
+  // The section used to open on a paragraph naming the rule by which
+  // modules are filed behind the three axes — a statement about the
+  // shelving, not about the choice being asked of the reader. It is a
+  // heading now, and the section is a rung of the outline like the four
+  // others on the page.
   // @req REQ-113
-  it("states the filing criterion above the cards without adding a heading", () => {
+  it("opens the section on a heading that orients rather than files", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axes-lead")).toHaveTextContent(
-      "Avec quoi le lecteur arrive, avec quoi il repart."
+    const heading = screen.getByTestId("home-axes-heading");
+    expect(heading.tagName).toBe("H2");
+    expect(heading).toHaveTextContent(
+      "Trois entrées, selon ce que vous cherchez."
     );
-    expect(
-      screen.queryByRole("heading", { name: /Avec quoi le lecteur/ })
-    ).toBeNull();
+    expect(screen.queryByTestId("access-axes-lead")).toBeNull();
+    expect(screen.queryByText(/Avec quoi le lecteur/)).toBeNull();
   });
 
-  // Each card restates the criterion in its own terms: what the reader hands
-  // the axis, what the axis hands back.
+  // One line per card, and it has to be about the destination. The formula
+  // it replaced described the reader's trajectory, which told someone who
+  // did not already know the three axes apart nothing about where the click
+  // would land.
   // @req REQ-113
   it.each([
-    ["explorer", "Il arrive avec un nom. Il repart avec une fiche."],
-    [
-      "comprendre",
-      "Il arrive avec une question. Il repart avec une explication.",
-    ],
-    ["jouer", "Il arrive sans rien. Il repart avec un résultat."],
-  ])("spells out what %s takes in and gives back", (id, stake) => {
+    ["explorer", /peuples, pays, langues et familles/i],
+    ["comprendre", /d'où viennent les noms/i],
+    ["jouer", /jeux et des quiz tirés du corpus/i],
+  ])("says what %s holds, not what the reader does", (id, contents) => {
     renderAxes();
 
-    expect(screen.getByTestId(`access-axis-stake-${id}`)).toHaveTextContent(
-      stake
-    );
+    const stake = screen.getByTestId(`access-axis-stake-${id}`);
+    expect(stake).toHaveTextContent(contents);
+    expect(stake.textContent).not.toMatch(/il arrive|il repart/i);
   });
 
   // The href survives as the no-JS and crawler path, but a reader with

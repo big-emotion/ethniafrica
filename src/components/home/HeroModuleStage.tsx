@@ -101,8 +101,14 @@ function HeroStageStyles() {
       @media (min-width: 720px) {
         .hero-stage-box { min-height: 540px; }
       }
+      /* The stage used to zero its floor here and grow into the hero band's
+         \`min-height: calc(100dvh - 56px)\` instead. That worked only while it
+         was inside a band a viewport tall; the module now stands in its own
+         section in the page flow, and \`min-height: 0\` left it 0px tall with
+         every test still green — the same coupling that collapsed the globe
+         on /jouer/mercator. The floor is its own at every width now. */
       @media (min-width: 1200px) {
-        .hero-stage-box { flex: 1 1 auto; min-height: 0; }
+        .hero-stage-box { min-height: 600px; }
       }
     `}</style>
   );

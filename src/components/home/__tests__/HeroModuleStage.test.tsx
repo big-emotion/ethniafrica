@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 
 vi.mock("@/components/home/HomeGlobeStage", () => ({
   HomeGlobeStage: () => <div data-testid="stage-globe" />,
@@ -88,5 +89,35 @@ describe("HeroModuleStage", () => {
       <HeroModuleStage preview={{ kind: "not-a-kind" } as never} />
     );
     expect(getByTestId("stage-globe")).toBeTruthy();
+  });
+
+  // The stage used to zero its own floor above 1200px and grow into the
+  // hero band's `min-height: calc(100dvh - 56px)` instead. That coupling
+  // was invisible until the band stopped being a viewport tall: the stage
+  // then had nothing to grow into and rendered 1120px wide by 0 tall — a
+  // module section containing an invisible globe, with every test green.
+  //
+  // Same failure that took /jouer/mercator down once already. The floor is
+  // the stage's own now, at every width.
+  // @req REQ-115
+  it("keeps a height floor of its own at every width, borrowing none", () => {
+    // renderToStaticMarkup, not render: the stage's islands are
+    // dynamic(..., { ssr: false }), and only the first frame carries the
+    // <style> the rules live in.
+    // The game branch, because it is the one that renders .hero-stage-box —
+    // `globe` delegates to HomeGlobeStage, whose own floor is asserted in
+    // HomeGlobeStage.test.tsx.
+    const styleSheet = renderToStaticMarkup(
+      <HeroModuleStage preview={SAMPLE.game} />
+    );
+
+    const boxRules = [
+      ...styleSheet.matchAll(/\.hero-stage-box\s*{([^}]*)}/g),
+    ].map(([, body]) => body);
+
+    expect(boxRules.length).toBeGreaterThan(0);
+    for (const body of boxRules) {
+      expect(body).not.toMatch(/min-height:\s*0/);
+    }
   });
 });

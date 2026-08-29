@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { CountrySynthesisCard } from "@/components/home/CountrySynthesisCard";
+import { SectionHeading } from "@/components/home/SectionHeading";
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
 import { getLocalizedRoute } from "@/lib/routing";
 import Link from "next/link";
@@ -66,8 +67,11 @@ export function SynthesisRail({ language, syntheses }: SynthesisRailProps) {
     >
       <div className="home-syn-head">
         <div>
-          <p className="home-syn-eyebrow">Ce que contient une fiche</p>
-          <h2>Quatre pays, pris dans l&apos;atlas</h2>
+          <SectionHeading
+            eyebrow="Ce que contient une fiche"
+            title="Quatre pays, pris dans l'atlas"
+            className="home-syn-heading"
+          />
         </div>
         <div className="home-syn-arrows">
           <button
@@ -123,24 +127,12 @@ export function SynthesisRail({ language, syntheses }: SynthesisRailProps) {
           max-width: 1200px;
           margin: 0 auto;
         }
-        .home-syn-eyebrow {
-          margin: 0 0 6px;
-          font-family: var(--font-mono, ui-monospace, monospace);
-          font-size: var(--afh-text-eyebrow);
-          font-weight: 500;
-          letter-spacing: 0.11em;
-          text-transform: uppercase;
-          color: var(--accent-ink);
-        }
-        .home-syn-head h2 {
-          margin: 0;
-          font-family: var(--font-fraunces), Georgia, serif;
-          font-size: var(--afh-text-h2);
-          font-weight: 600;
-          line-height: 1.15;
-          letter-spacing: -0.014em;
-          color: var(--afh-text);
-          text-wrap: balance;
+        /* The eyebrow and the title come from the shared unit
+           (src/styles/section-heading.css) — this section was one of the two
+           hand-set spellings the unit was extracted from. The arrows sit
+           beside it, so it carries no bottom margin of its own. */
+        .home-syn-heading {
+          margin-bottom: 0;
         }
         .home-syn-arrows {
           display: flex;

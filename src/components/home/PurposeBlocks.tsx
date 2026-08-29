@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { SectionHeading } from "@/components/home/SectionHeading";
+
 import {
   getCountryRoute,
   getLocalizedRoute,
@@ -140,6 +142,22 @@ const BLOCKS: PurposeBlock[] = [
 export function PurposeBlocks({ language }: PurposeBlocksProps) {
   return (
     <section className="home-purpose" data-testid="home-purpose-blocks">
+      {/* The three slices are one argument told three times — a country, a
+          people, a language family — and until this heading they were three
+          unrelated stories a reader had to connect on their own. The title
+          names the thread: every one of them is about who did the naming.
+
+          It uses the corpus's own two words rather than glossing them. The
+          third slice defines them in place (« Un exonyme est le nom donné de
+          l'extérieur ; un autonyme, celui qu'un peuple se donne »), and a
+          reader meets them on every fiche, so softening them here would
+          teach a vocabulary the rest of the site does not use. */}
+      <SectionHeading
+        eyebrow="L'origine des noms"
+        title="Autonyme, exonyme : qui a nommé, et quand."
+        testId="home-purpose-heading"
+        className="home-purpose-heading"
+      />
       {BLOCKS.map((block, index) => (
         <div
           key={block.id}
@@ -165,7 +183,10 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
               <span aria-hidden="true" className="home-purpose-dot" />
               {block.kicker}
             </p>
-            <h2>{block.title}</h2>
+            {/* h3, not h2: the slices are items of the section the heading
+                above opens, so they sit one rung under it. Their size is
+                unchanged — the section title takes the step above them. */}
+            <h3>{block.title}</h3>
             <p className="home-purpose-claim">{block.claim}</p>
             <p>{block.followUp}</p>
             <Link className="home-purpose-cta" href={block.cta.href(language)}>
@@ -257,7 +278,12 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
           background: var(--accent);
           flex: none;
         }
-        .home-purpose-body h2 {
+        .home-purpose-heading {
+          max-width: 1100px;
+          margin: 0 auto 4px;
+          width: 100%;
+        }
+        .home-purpose-body h3 {
           margin: 12px 0;
           font-family: var(--font-fraunces), Georgia, serif;
           font-size: var(--afh-text-h2);
