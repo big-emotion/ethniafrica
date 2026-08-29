@@ -457,3 +457,77 @@ describe("night theme (REQ-115)", () => {
     expect(darkBlock![1]).toMatch(/(^|\n)\s*color:\s*var\(--afh-text\);/);
   });
 });
+
+/**
+ * The people fiche reads its accent links off a dedicated ink token rather than
+ * the raw terracotta fill.
+ *
+ * The two differ because the fiche's reading ground is --afh-color-bg-warm
+ * (#f5ede0), not the page parchment. Raw terracotta (#b64e27) reaches only
+ * 4.39:1 there — axe-core reported it SERIOUS on nine People/FicheSections
+ * stories at 430/720/1200px while every static gate stayed green.
+ *
+ * The sweep in textColorContrastSweep.test.ts cannot catch this by itself, for
+ * two independent reasons: it scores a token by its *best* light ground, so
+ * terracotta passes on white and never reports the warm ground it actually sits
+ * on; and its regex reads only --afh-* tokens, never the --country-* aliases
+ * that every fiche surface speaks. Hence this explicit pairing.
+ */
+describe("people fiche accent text on the warm parchment", () => {
+  const countryCss = readFileSync(
+    resolve(process.cwd(), "src/styles/country-tokens.css"),
+    "utf8"
+  );
+
+  /** What a --country-* alias points at, so the ink resolves through color.css. */
+  function countryAliasTarget(name: string): string {
+    const match = countryCss.match(
+      new RegExp(`${name}:\\s*var\\((--[a-z0-9-]+)\\)`, "i")
+    );
+    if (!match) throw new Error(`Missing country token ${name}`);
+    return match[1];
+  }
+
+  /** The three day grounds a fiche reader ever sees body text on. */
+  const DAY_GROUNDS = [
+    "--afh-color-bg",
+    "--afh-color-bg-warm",
+    "--afh-color-card",
+  ] as const;
+
+  // @req REQ-090
+  it("keeps the accent ink AA-readable on every day ground, warm included", () => {
+    const ink = resolvedHex(countryAliasTarget("--country-terracotta-ink"));
+
+    const shortfalls = DAY_GROUNDS.map((ground) => ({
+      ground,
+      ratio: contrastRatio(ink, tokenHex(ground)),
+    })).filter((measured) => measured.ratio < 4.5);
+
+    expect(
+      shortfalls.map((s) => `${s.ground}: ${s.ratio.toFixed(2)}:1`)
+    ).toEqual([]);
+  });
+
+  // The fill token stays what it is — a 4.39:1 terracotta is correct for a
+  // progress bar, which is non-text content at 3:1, and wrong for a link.
+  // @req REQ-090
+  it("keeps the raw terracotta out of text colour on the people fiche", () => {
+    const peopleComponents = [
+      "src/components/people/PeopleLanguageSection.tsx",
+      "src/components/people/PeopleCountriesSection.tsx",
+    ];
+
+    const textUses = peopleComponents.flatMap((file) =>
+      readFileSync(resolve(process.cwd(), file), "utf8")
+        .split("\n")
+        .map((line, index) => ({ file, line: index + 1, text: line }))
+        .filter(({ text }) =>
+          /(?<![a-z-])color:\s*"var\(--country-terracotta\)"/.test(text)
+        )
+        .map(({ file: f, line }) => `${f}:${line}`)
+    );
+
+    expect(textUses).toEqual([]);
+  });
+});
