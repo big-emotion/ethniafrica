@@ -1,5 +1,12 @@
 # Games rollout plan — from eleven approximate games to three finished ones
 
+> **Partly superseded, 2026-08-29.** The hub was cut again, from three games to
+> two surfaces: the quiz and `mercator` (games charter §1). Every phase below
+> that names `appellations` or `pays-davant` describes work on a retired game
+> and is now history rather than a plan — kept because it records the defects
+> those games carried, which is what a rebuild would have to answer for. The
+> phases about `mercator` and about the engine still stand.
+
 The implementation plan for `docs/design/games-charter.md`. Read the charter
 first: it says what the surface owes, this says in what order the debt is paid.
 

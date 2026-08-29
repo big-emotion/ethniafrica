@@ -78,9 +78,9 @@ describe("loadHeroPreview", () => {
 
     const preview = await loadHeroPreview(
       hubModule({
-        id: "appellations",
+        id: "mercator",
         heroable: "game",
-        gameSlug: "appellations",
+        gameSlug: "mercator",
       })
     );
 
@@ -92,14 +92,14 @@ describe("loadHeroPreview", () => {
   // @req REQ-115
   it("seeds a game from its slug, so it opens on the same round every time", async () => {
     getGameRoundsHandlerMock.mockResolvedValue({ data: { rounds: [round] } });
-    const appellations = hubModule({
-      id: "appellations",
+    const mercator = hubModule({
+      id: "mercator",
       heroable: "game",
-      gameSlug: "appellations",
+      gameSlug: "mercator",
     });
 
-    await loadHeroPreview(appellations);
-    await loadHeroPreview(appellations);
+    await loadHeroPreview(mercator);
+    await loadHeroPreview(mercator);
 
     const [, firstSeed] = getGameRoundsHandlerMock.mock.calls[0];
     const [, secondSeed] = getGameRoundsHandlerMock.mock.calls[1];

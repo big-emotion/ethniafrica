@@ -139,31 +139,31 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   // A wrong table name here would read as "still coming soon" rather than as
   // a broken probe.
   // @req REQ-120
-  it("probes the peoples table for the appellations game", async () => {
+  it("probes the countries table for the mercator game", async () => {
     const supabase = buildSupabaseMock(ALL_LIVE_RESULTS);
     createServerClientMock.mockReturnValue(supabase);
 
     const modules = await getHubModules("jouer");
 
-    expect(supabase.from).toHaveBeenCalledWith("afrik_peoples");
-    expect(modules.find((m) => m.id === "appellations")?.available).toBe(true);
+    expect(supabase.from).toHaveBeenCalledWith("afrik_countries");
+    expect(modules.find((m) => m.id === "mercator")?.available).toBe(true);
   });
 
-  // Each game stands on its own table, so one empty source darkens one game
-  // and leaves the others alone.
+  // Each surface stands on its own table, so one empty source darkens one
+  // entry and leaves the other alone.
   // @req REQ-120
   it("takes a game off the hub when its own table is empty", async () => {
     createServerClientMock.mockReturnValue(
       buildSupabaseMock({
         ...ALL_LIVE_RESULTS,
-        afrik_peoples: { count: 0, error: null },
+        afrik_countries: { count: 0, error: null },
       })
     );
 
     const modules = await getHubModules("jouer");
 
-    expect(modules.find((m) => m.id === "appellations")?.available).toBe(false);
-    expect(modules.find((m) => m.id === "mercator")?.available).toBe(true);
+    expect(modules.find((m) => m.id === "mercator")?.available).toBe(false);
+    expect(modules.find((m) => m.id === "quiz")?.available).toBe(true);
   });
 
   // @req REQ-106 @req REQ-114

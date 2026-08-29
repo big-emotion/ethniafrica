@@ -2,42 +2,24 @@ import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { useGameSession } from "@/hooks/use-game-session";
-import type { BinaryRound, GlobeTapRound } from "@/lib/games/gameKinds";
-import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
+import type { BinaryRound } from "@/lib/games/gameKinds";
+import { getCountryRoute } from "@/lib/routing";
 
 function binaryRound(subjectId: string, correctIndex: 0 | 1 = 0): BinaryRound {
   return {
     kind: "binary",
-    gameId: "appellations",
+    gameId: "mercator",
     subjectId,
-    promptFr: `Comment ${subjectId} se nomme-t-il`,
+    promptFr: `Lequel couvre la plus grande surface, ${subjectId}`,
     reveal: {
-      textFr: `Origine de l'exonyme de ${subjectId}.`,
-      fieldPath: "content.appellations.originOfExonyms",
+      textFr: `Surface réelle de ${subjectId}.`,
+      fieldPath: "lib/atlas/assets/africaAdmin0",
       sources: [],
       confidence: null,
-      ficheHref: getPeopleRoute("fr", subjectId),
+      ficheHref: getCountryRoute("fr", subjectId),
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex,
-  };
-}
-
-function globeTapRound(correctCountryId: string): GlobeTapRound {
-  return {
-    kind: "globeTap",
-    gameId: "royaumes",
-    subjectId: "KGD_TEST",
-    promptFr: "Sur quel pays ce royaume s'étendait-il",
-    reveal: {
-      textFr: "Le royaume couvrait ce territoire.",
-      fieldPath: "kingdoms[0]",
-      sources: [],
-      confidence: null,
-      ficheHref: getCountryRoute("fr", "NGA"),
-    },
-    choices: ["NGA", "ZAF"],
-    correctCountryId,
   };
 }
 
@@ -89,16 +71,6 @@ describe("useGameSession (Jouer hub engine, REQ-120)", () => {
 
     expect(result.current.verdict).toBe(false);
     expect(result.current.correctCount).toBe(0);
-  });
-
-  // @req REQ-120
-  it("judges a globe round by country id rather than option index", () => {
-    const { result } = renderHook(() => useGameSession([globeTapRound("ZAF")]));
-
-    act(() => result.current.answer("ZAF"));
-
-    expect(result.current.selectedAnswer).toBe("ZAF");
-    expect(result.current.verdict).toBe(true);
   });
 
   // @req REQ-120
