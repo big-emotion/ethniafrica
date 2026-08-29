@@ -8,7 +8,10 @@ import {
   type PeoplesFacetFilters,
 } from "@/api/v2/services/peoplesFacet";
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import type { FacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
+import type {
+  FacetCountryIndex,
+  FacetCountryNarrowing,
+} from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
@@ -115,15 +118,25 @@ export default async function PeuplesHubPage({
   ]);
 
   const countryIndex: FacetCountryIndex = {};
+  /**
+   * Built from the index's own keys, so the map can never offer a narrowing
+   * that lands on an empty list: a country is addressable here exactly when
+   * the current selection documents a peuple in it. The rest of the filters
+   * ride along — narrowing by country from the map keeps the family and the
+   * letter the reader had already set.
+   */
+  const narrowing: FacetCountryNarrowing = {};
   for (const row of index) {
     for (const countryId of row.countryIds) {
-      const rows = countryIndex[countryId as CountryId] ?? [];
+      const key = countryId as CountryId;
+      const rows = countryIndex[key] ?? [];
       rows.push({
         id: row.id,
         label: row.nameMain,
         href: getPeopleRoute("fr", row.id),
       });
-      countryIndex[countryId as CountryId] = rows;
+      countryIndex[key] = rows;
+      narrowing[key] ??= facetHref({ ...filters, countryId }, null);
     }
   }
 
@@ -138,7 +151,11 @@ export default async function PeuplesHubPage({
 
   return (
     <>
-      <PublishFacetCountryIndex index={countryIndex} />
+      <PublishFacetCountryIndex
+        index={countryIndex}
+        narrowing={narrowing}
+        focused={filters.countryId as CountryId | null}
+      />
 
       <div className="afh-parchment">
         <header className="afh-parchment-head">
