@@ -7,7 +7,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FacetCountryIndexProvider } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
-import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { getFacet, getFacetFromRoute } from "@/lib/hubs/facets";
 
 export interface FacetHubShellProps {

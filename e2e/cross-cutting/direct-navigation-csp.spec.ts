@@ -1,5 +1,6 @@
 import { expect, test, type Page, type Response } from "@playwright/test";
 import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
+import { FACETS } from "@/lib/hubs/facets";
 
 type RuntimeFailures = {
   scriptCsp: string[];
@@ -152,30 +153,39 @@ async function expectDirectNavigation(
 
 // @req REQ-043
 test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
-  const hubs = [
-    { path: getLocalizedRoute("fr", "countries"), heading: "Pays" },
-    { path: getLocalizedRoute("fr", "peoples"), heading: "Peuples" },
-    {
-      path: getLocalizedRoute("fr", "families"),
-      heading: "Familles linguistiques",
-    },
-  ];
+  // The three facets of the Explorer hub. Their headings are matched loosely
+  // on the facet's own noun rather than pinned to a full title: the point here
+  // is that the route hydrated under a nonce CSP, and an exact string turns
+  // every piece of editorial rewording into a red CSP test. "Pays" and
+  // "Peuples" were pinned exactly, and both broke the day the facets started
+  // naming themselves "Les pays d'Afrique".
+  const facets = FACETS.map((facet) => ({
+    path: getLocalizedRoute("fr", facet.page),
+    heading: new RegExp(facet.label, "i"),
+  }));
 
-  for (const hub of hubs) {
+  for (const facet of facets) {
     // @req REQ-001
-    test(`hydrates the ${hub.path} hub after direct navigation`, async ({
+    test(`hydrates the ${facet.path} facet after direct navigation`, async ({
       page,
     }) => {
-      await expectDirectNavigation(page, hub.path, async () => {
+      await expectDirectNavigation(page, facet.path, async () => {
         await expect(
-          page.getByRole("heading", { level: 1, name: hub.heading })
+          page.getByRole("heading", { level: 1, name: facet.heading })
         ).toBeVisible();
       });
     });
   }
 
+  /**
+   * `?country=` addressed a detail pane the countries facet no longer has, so
+   * the route answers it with a 308 to the fiche. What this asserts now is
+   * that the redirect lands and the fiche hydrates — the query is consumed on
+   * the server, which is the point of answering it there rather than painting
+   * a directory first.
+   */
   // @req REQ-001
-  test("hydrates a query-string country detail after direct navigation", async ({
+  test("forwards a query-string country deep link to that country's fiche", async ({
     page,
   }) => {
     await expectDirectNavigation(
@@ -185,7 +195,8 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
         await expect(
           page.getByRole("heading", { level: 1, name: /Comores/i })
         ).toBeVisible();
-        expect(new URL(page.url()).searchParams.get("country")).toBe("COM");
+        expect(new URL(page.url()).pathname).toBe(getCountryRoute("fr", "COM"));
+        expect(new URL(page.url()).searchParams.get("country")).toBeNull();
       }
     );
   });
