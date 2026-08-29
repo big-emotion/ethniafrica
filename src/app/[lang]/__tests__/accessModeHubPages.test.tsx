@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import React from "react";
 
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 
@@ -271,6 +272,40 @@ describe("access-mode hub routes (REQ-114)", () => {
     render(await JouerHubPage());
     expect(screen.getByTestId("page-layout-title")).toHaveTextContent(
       hubs.jouer.pageTitle
+    );
+  });
+
+  /**
+   * The band and the tab say the same thing.
+   *
+   * `title` is the axis inside the site's own vocabulary — a trail crumb, a
+   * menu entry — where the surrounding chrome supplies the subject. A browser
+   * tab carries no such chrome, so it was the one place still opening on a
+   * bare "Explorer" after the band had stopped: an entry point with nothing
+   * qualifying it. It now names the axis and what the axis leads into, then
+   * the brand.
+   *
+   * The suffix is PRODUCT_NAME rather than OG_TITLE: OG_TITLE is the *site's*
+   * own title, which already carries its own qualifier, and appending it here
+   * would stack two qualified titles in one tab.
+   */
+  // @req REQ-114
+  it("names the tab with the axis's page title and the brand, on each of the three hubs", async () => {
+    const { hubs } = getTranslation("fr");
+
+    const explorer = await import("../explorer/page");
+    expect(explorer.metadata.title).toBe(
+      `${hubs.explorer.pageTitle} — ${PRODUCT_NAME}`
+    );
+
+    const comprendre = await import("../comprendre/page");
+    expect(comprendre.metadata.title).toBe(
+      `${hubs.comprendre.pageTitle} — ${PRODUCT_NAME}`
+    );
+
+    const jouer = await import("../jouer/page");
+    expect(jouer.metadata.title).toBe(
+      `${hubs.jouer.pageTitle} — ${PRODUCT_NAME}`
     );
   });
 });

@@ -14,7 +14,7 @@
  * | NEXT_PUBLIC_PRODUCT_NAME          | PRODUCT_NAME       | "EthniAfrica"                                                           |
  * | NEXT_PUBLIC_CANONICAL_DOMAIN      | CANONICAL_DOMAIN   | "ethniafrica.com"                                                     |
  * | NEXT_PUBLIC_ATTRIBUTION_STRING    | ATTRIBUTION_STRING | "Fait avec émotion pour l'Afrique"                                    |
- * | NEXT_PUBLIC_OG_TITLE              | OG_TITLE           | "EthniAfrica"                                                           |
+ * | NEXT_PUBLIC_OG_TITLE              | OG_TITLE           | "EthniAfrica — Atlas des Peuples d'Afrique"                            |
  * | NEXT_PUBLIC_OG_DESCRIPTION        | OG_DESCRIPTION     | "Encyclopédie des peuples, langues et familles linguistiques d'Afrique" |
  * | NEXT_PUBLIC_SITE_LOCALE           | SITE_LOCALE        | "fr"                                                                  |
  *
@@ -44,9 +44,18 @@ export const ATTRIBUTION_STRING =
   process.env.NEXT_PUBLIC_ATTRIBUTION_STRING ||
   "Fait avec émotion pour l'Afrique";
 
-/** Open Graph title for social media previews */
+/**
+ * The site's own title: the home tab and the social card.
+ *
+ * The only place the brand is qualified. There it stands alone, with no
+ * masthead beside it to say what EthniAfrica is — whereas an inner page
+ * suffixes {@link PRODUCT_NAME} to a title that already carries its own
+ * qualifier, and would otherwise stack two of them in one tab.
+ */
 // @req REQ-019
-export const OG_TITLE = process.env.NEXT_PUBLIC_OG_TITLE || "EthniAfrica";
+export const OG_TITLE =
+  process.env.NEXT_PUBLIC_OG_TITLE ||
+  "EthniAfrica — Atlas des Peuples d'Afrique";
 
 /** Open Graph description for social media previews */
 // @req REQ-019

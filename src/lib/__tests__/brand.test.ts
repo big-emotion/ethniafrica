@@ -31,10 +31,15 @@ describe("brand", () => {
       expect(ATTRIBUTION_STRING).toBe("Fait avec émotion pour l'Afrique");
     });
 
+    // The site's own title, and the only place the brand is qualified: it
+    // stands alone in a tab and on a social card, with no masthead beside it
+    // to say what EthniAfrica is. PRODUCT_NAME stays the bare brand, because
+    // every inner page suffixes it to a title that already has its own
+    // qualifier.
     // @req REQ-019
     it("should export OG_TITLE with default value", async () => {
       const { OG_TITLE } = await import("../brand");
-      expect(OG_TITLE).toBe("EthniAfrica");
+      expect(OG_TITLE).toBe("EthniAfrica — Atlas des Peuples d'Afrique");
     });
 
     // @req REQ-019
