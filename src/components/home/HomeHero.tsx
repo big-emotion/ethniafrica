@@ -63,10 +63,20 @@ export function HomeHero() {
             outgrows silently — the axis cards already print counts that read
             themselves (getCorpusCounts), and that is where a number belongs. */}
         <p className="home-hero-standfirst" data-testid="home-hero-standfirst">
-          {PRODUCT_NAME} publie en accès libre les peuples du continent, leurs
-          langues, leurs familles linguistiques et leurs pays, chacun sous le
-          nom qu&apos;il se donne. Chaque affirmation y porte sa source et son
-          niveau de confiance, et ce qui reste débattu est signalé comme tel.
+          {/* One string, not the product name followed by JSX text. Next's
+              SWC transform drops the space between an expression and the
+              text that follows it on the same line, so the band shipped
+              « EthniAfricapublie » — in the first line of prose the site
+              offers. Neither vitest's transform nor Prettier reproduces
+              that reading: the runner keeps the space, so every test here
+              stayed green, and Prettier deletes an explicit space
+              expression it believes JSX already implies. Inside a template
+              literal no whitespace rule applies at all. */}
+          {`${PRODUCT_NAME} publie en accès libre les peuples du continent, ` +
+            `leurs langues, leurs familles linguistiques et leurs pays, ` +
+            `chacun sous le nom qu'il se donne. Chaque affirmation y porte ` +
+            `sa source et son niveau de confiance, et ce qui reste débattu ` +
+            `est signalé comme tel.`}
         </p>
       </header>
 
@@ -140,13 +150,13 @@ export function HomeHero() {
           border-bottom: 1px solid var(--afh-cat-ocre);
         }
 
+        /* Only the inset changes here. The band used to swap to the left on
+           a phone; the whole site now centres its text below the tablet
+           floor (styles/mobile-text.css), and a band that opted out was the
+           one surface disagreeing with every page under it. */
         @media (max-width: 700px) {
           .home-hero-copy {
             padding: 34px 20px 30px;
-            text-align: left;
-          }
-          .home-hero-standfirst {
-            margin-inline: 0;
           }
         }
 

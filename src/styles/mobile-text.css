@@ -1,0 +1,48 @@
+/* ============================================================
+   Africa History — Text alignment on a phone
+
+   Below the tablet floor the atlas centres its text. The measure
+   on a 375px screen is around 40 characters; at that width a
+   centred column reads as a composed page, where the same copy
+   ragged against the left edge reads as a column that ran out of
+   room. The site is read on a phone first, so the phone gets the
+   composition rather than the fallback.
+
+   One declaration, on `body`, inherited by everything under it.
+   Stated per surface instead, the rule would have to be restated
+   in every component that ships its own `<style>` — and the ones
+   that were missed would be the ones a reader notices.
+
+   Two families of element keep their own alignment, because
+   centring them breaks a function rather than a look:
+
+     form fields — the caret sits where the text is, so a centred
+                   empty field puts the caret in the middle and
+                   walks it outward as the reader types.
+
+     data tables — a column header carries the alignment of the
+                   values under it. Centring the cells while the
+                   headers keep the `text-left` they are written
+                   with would leave every table's head sitting
+                   off its own column.
+
+   The floor is 768px — Tailwind's `md`, so a component can opt a
+   run of copy back out with `md:text-left` and land on exactly
+   the same edge this file uses.
+   ============================================================ */
+
+@media (max-width: 767px) {
+  body {
+    text-align: center;
+  }
+
+  input,
+  textarea,
+  select {
+    text-align: left;
+  }
+
+  table {
+    text-align: left;
+  }
+}

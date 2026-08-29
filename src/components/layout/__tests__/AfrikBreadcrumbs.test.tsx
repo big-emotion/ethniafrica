@@ -70,4 +70,22 @@ describe("AfrikBreadcrumbs", () => {
     const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
     expect(trail.className).not.toMatch(/(^|\s|:)(px|pl|pr)-/);
   });
+
+  /**
+   * The trail is a flex row, so it is the one run of text on the page that
+   * the site's phone-width centring cannot reach: `text-align` says nothing
+   * about where a flex row places its items. Left alone it hung against the
+   * left edge above a centred title, on every route.
+   */
+  // @req REQ-091
+  it("centres its crumbs on a phone and starts them at the edge above it", () => {
+    render(<AfrikBreadcrumbs items={items} />);
+
+    const crumbs = screen
+      .getByRole("navigation", { name: /fil d'ariane/i })
+      .querySelector("ol");
+
+    expect(crumbs).toHaveClass("justify-center");
+    expect(crumbs).toHaveClass("md:justify-start");
+  });
 });

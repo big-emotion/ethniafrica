@@ -583,11 +583,19 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           transform: rotate(180deg);
         }
 
+        /* The gap that puts the mark and the controls at opposite edges is
+           opened here, not on .sh-axes: below the breakpoint the axes are
+           display:none, and a withdrawn element contributes no margin — so
+           the burger used to sit against the mark with the right half of
+           the bar empty. Above the breakpoint the axes take the gap back
+           (see the wide query), because two auto margins in one row would
+           split the space and float the axes into the middle. */
         .sh-controls {
           display: flex;
           align-items: center;
           gap: 2px;
           flex: none;
+          margin-left: auto;
         }
         .sh-icon {
           display: inline-grid;
@@ -875,10 +883,25 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-fold-trigger[aria-expanded="true"] .sh-caret {
           transform: rotate(180deg);
         }
+        /* minmax(0, 1fr), not the implicit 1fr: a grid item's automatic
+           minimum is its content, and the hub's nowrap facet row is wider
+           than the tray. The column grew to fit it and carried every card's
+           right edge off the screen with it. */
         .sh-fold-body {
           display: grid;
+          grid-template-columns: minmax(0, 1fr);
           gap: 8px;
           padding: 0 18px 15px;
+        }
+        /* In the wide panel the facets stay on one line and scroll, because
+           a 205px card wraps « Ses facettes » into what reads as a stack of
+           destinations. The tray has neither that card nor a pointer to drag
+           the row with, so here it wraps and every facet is simply legible.
+           A sideways scrollbar inside a drawer that itself scrolls
+           vertically is a control a thumb cannot find. */
+        .sh-fold-body .sh-facets {
+          flex-wrap: wrap;
+          overflow-x: visible;
         }
 
         /* Mobile first: the phone gets the burger and the tray, and the
@@ -901,6 +924,9 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           }
           .sh-axes {
             display: flex;
+          }
+          .sh-controls {
+            margin-left: 0;
           }
           .sh-panel {
             display: block;

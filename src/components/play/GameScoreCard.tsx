@@ -127,7 +127,7 @@ export const GameScoreCard = ({
       {facts.length > 0 ? (
         <section
           data-testid="game-score-facts"
-          className="flex w-full flex-col gap-3 border-t border-afh-border pt-4 text-left"
+          className="flex w-full flex-col gap-3 border-t border-afh-border pt-4 text-center md:text-left"
         >
           <h3 className="font-afh-display text-afh-h3 font-bold text-afh-text">
             {COPY_FR.factsHeading}

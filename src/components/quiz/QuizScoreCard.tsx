@@ -61,7 +61,7 @@ export const QuizScoreCard = ({
       </p>
       <p className="text-afh-body text-afh-text-soft">{scopeLabelFr}</p>
       {fiches.length > 0 ? (
-        <ul className="flex w-full flex-col gap-2 text-left">
+        <ul className="flex w-full flex-col gap-2 text-center md:text-left">
           {fiches.map((fiche) => (
             <li key={fiche.id}>
               <Link
