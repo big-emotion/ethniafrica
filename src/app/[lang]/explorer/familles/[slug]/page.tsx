@@ -12,6 +12,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
+import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
@@ -286,6 +287,7 @@ export default async function FamillesSlugPage({
           branches: tongueBranches,
         }}
         recordPlacement="body"
+        title={<FamilyFicheTitle family={family} />}
         globe={
           <FicheHeroBand>
             <AtlasGlobe
