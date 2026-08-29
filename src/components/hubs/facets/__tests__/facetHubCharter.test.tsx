@@ -75,6 +75,23 @@ describe("facet hub charter — the seam the three facets share", () => {
     }
   });
 
+  /**
+   * The facet and the filters collide in the reader's language — "pays" names
+   * one of each — so every facet has to say which is which in its own terms.
+   * A shared sentence could not: "filtrer par pays" means a different thing on
+   * each facet, which is the confusion rather than the cure.
+   */
+  // @req REQ-114
+  it("has every facet distinguish itself from its filters, in its own words", () => {
+    const hints = FACETS.map((facet) => facet.filterHint);
+
+    expect(new Set(hints).size).toBe(FACETS.length);
+    for (const hint of hints) {
+      expect(hint.length).toBeGreaterThan(40);
+      expect(hint).toMatch(/filtr/i);
+    }
+  });
+
   // @req REQ-114
   it("reads an unset native select as no filter rather than as a value", () => {
     expect(definedFilter("")).toBeNull();

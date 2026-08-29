@@ -463,6 +463,7 @@ export const translations = {
           "Il arrive avec un nom, il repart avec une fiche : l'axe des objets du corpus — peuples, pays, langues, familles.",
         menuBlurb:
           "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus.",
+        hubEntryName: "Le hub d'exploration",
       },
       comprendre: {
         title: "Comprendre",
@@ -470,6 +471,7 @@ export const translations = {
           "Il arrive avec une question, il repart avec une explication : l'axe des relations — ce nom, cette origine, cette source.",
         menuBlurb:
           "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
+        hubEntryName: "Le hub de lecture",
       },
       jouer: {
         title: "Jouer",
@@ -477,9 +479,15 @@ export const translations = {
           "Il arrive sans rien, il repart avec un résultat : l'axe de la boucle de retour — comparer, répondre, se mesurer.",
         menuBlurb:
           "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements.",
+        hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
       menuLabel: "Trois entrées",
+      // Names the row of facet links under the hub entry. The facets are
+      // states of one page, so the menu says so rather than listing them
+      // beside the hub as if they were three more destinations — which is
+      // exactly how the three directories read before they were merged.
+      facetsLabel: "Ses facettes",
       // Stands where a module card would print its route. Saying the route
       // is missing is information about the corpus; printing a plausible
       // path that 404s would not be (charter §4).

@@ -2,13 +2,15 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { useFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
 import { buildContinentOverlay } from "@/lib/atlas/overlays";
-import { continentTargetFacts } from "@/lib/atlas/targets";
-import { BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
+import {
+  buildCountryPickerTargets,
+  continentTargetFacts,
+} from "@/lib/atlas/targets";
 import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 
@@ -29,12 +31,26 @@ const AtlasGlobe = dynamic(
 export interface FacetGlobeIslandProps {
   /** ISO 3166-1 alpha-3 → documented peoples, the field the continent is shaded by. */
   peopleCountsByCountry: Record<string, number> | undefined;
+  /**
+   * Every country the corpus gives a fiche.
+   *
+   * The drawn field and the choosable set are not the same thing.
+   * `buildContinentOverlay` keeps at most twelve areas and drops any whose
+   * marker would overlap one already kept — a density rule, because fifty-four
+   * pastilles at 430px overlap into noise and the small ones stop being
+   * hittable. Without this list the *choosable* set collapses to that thinned
+   * *drawn* set, and forty-odd countries become unreachable from the map
+   * rather than merely unmarked. `pickerTargets` is the prop that separates
+   * the two.
+   */
+  countryIds: readonly string[];
   missingMessage: string;
 }
 
 // @req REQ-116
 export function FacetGlobeIsland({
   peopleCountsByCountry,
+  countryIds,
   missingMessage,
 }: FacetGlobeIslandProps) {
   const stage = useRef<HTMLDivElement>(null);
@@ -69,15 +85,21 @@ export function FacetGlobeIsland({
 
   const overlay = buildContinentOverlay(peopleCountsByCountry);
 
+  const pickerTargets = useMemo(
+    () => buildCountryPickerTargets(countryIds as CountryId[]),
+    [countryIds]
+  );
+
   /**
    * What the panel says about the country the reader aimed at.
    *
    * A map click always yields a country, so the panel answers the only
    * question the map can pose: what does the facet you are reading, narrowed
    * by the filters you set, have *here*. On the countries facet that is the
-   * country itself; on peoples and families it is the handful of rows that
-   * touch it. A country the current selection does not reach says so, rather
-   * than opening empty.
+   * country itself; on peoples and families it is the rows that touch it. A
+   * country the current selection does not reach says so, rather than opening
+   * empty — which is the difference between "nothing here" and "still
+   * loading".
    */
   const facetFacts = useCallback(
     (
@@ -127,9 +149,17 @@ export function FacetGlobeIsland({
         width: "100vw",
         marginLeft: "calc(50% - 50vw)",
         marginRight: "calc(50% - 50vw)",
+        // A fixed band, never an aspect ratio. The stage is full-bleed, so an
+        // aspect-ratio box takes its height from the *viewport* width: at
+        // 1512px it asked for 1433px of height and the hub opened on a wall of
+        // night with the map somewhere below the fold. space.css records the
+        // same lesson for the fiche band, and this is the token it records it
+        // in — so the shell and the globe inside it agree by construction
+        // rather than by two numbers that match today.
+        height: "var(--afh-globe-stage-height)",
         backgroundColor: "var(--afh-night-ground)",
         containerType: "inline-size",
-        aspectRatio: `${BASEMAP_VIEWBOX.width} / ${BASEMAP_VIEWBOX.height}`,
+        overflow: "hidden",
       }}
     >
       {visible ? (
@@ -137,6 +167,12 @@ export function FacetGlobeIsland({
           overlay={overlay}
           missingMessage={missingMessage}
           targetFacts={facetFacts}
+          // Fifty-four countries as pastilles overlap into noise, which is why
+          // the field is thinned; the list is how the other forty stay
+          // reachable.
+          targetPicker="list"
+          pickerTargets={pickerTargets}
+          areaNoun="l'atlas"
         />
       ) : (
         // Server-rendered and painted first, so the hub reads cartographic
