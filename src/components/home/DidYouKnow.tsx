@@ -14,7 +14,12 @@ import {
   DID_YOU_KNOW_ENTITY_LABEL,
   DID_YOU_KNOW_TIER_LABEL,
 } from "@/lib/home/didYouKnowPresentation";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
 export interface DidYouKnowProps {
@@ -218,6 +223,15 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
             <p className="home-dyk-count">{`${current + 1} / ${total}`}</p>
           </>
         ) : null}
+
+        {/* The deck is a hook, and a hook has no URL. This is the only exit
+            from it that a reader can bookmark, share or be sent by a search
+            engine. */}
+        <p className="home-dyk-all">
+          <Link href={getLocalizedRoute(language, "anecdotes")}>
+            {`Lire les ${total} anecdotes`}
+          </Link>
+        </p>
       </div>
 
       <style>{`
@@ -396,6 +410,20 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
         }
         @media (prefers-reduced-motion: reduce) {
           .home-dyk-pip::before { transition: none; }
+        }
+        .home-dyk-all {
+          margin: 18px 0 0;
+          text-align: center;
+          font-size: var(--afh-text-caption);
+        }
+        .home-dyk-all a {
+          color: var(--afh-text-soft);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+        .home-dyk-all a:hover,
+        .home-dyk-all a:focus-visible {
+          color: var(--afh-text);
         }
         .home-dyk-count {
           margin: 8px 0 0;

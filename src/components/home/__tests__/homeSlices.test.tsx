@@ -7,7 +7,11 @@ import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
-import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 
 const SYNTHESIS: CountrySynthesis = {
   id: "BFA",
@@ -126,6 +130,17 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
 
   // A one-card deck has nothing to page through. Arrows and dots that do
   // nothing tell the reader there is more behind them, and there is not.
+  // The deck is a hook, and a hook has no URL. Without this the band is
+  // the only place the anecdotes exist and none of them can be shared.
+  // @req REQ-113
+  it("offers the reader a page holding all of them", () => {
+    render(<DidYouKnow language="fr" facts={DECK} />);
+
+    expect(
+      screen.getByRole("link", { name: "Lire les 2 anecdotes" })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "anecdotes"));
+  });
+
   // @req REQ-113
   it("shows no controls when the bank holds a single fact", () => {
     render(<DidYouKnow language="fr" facts={[FACT]} />);
