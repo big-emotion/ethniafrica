@@ -1,7 +1,7 @@
 # EthniAfrica — Production Readiness Audit
 
 **Date:** 2026-08-29
-**Branch audited:** `recette` @ `faed1a60`; §9 and §11 updated after PR #523 merged at `d695cf8c` the same day
+**Branch audited:** `recette` @ `faed1a60`. Updated twice the same day as the report was acted on: PR #523 (`d695cf8c`) and PR #525 (`34f6f11c`).
 **Method:** read-only. Every repo gate executed locally; CI evidence read from GitHub Actions; branch protection and repository secrets read from the GitHub API. No external service was written to, no migration run, no live production probe.
 
 ---
@@ -64,13 +64,23 @@ The two real weaknesses are the unpaginated `internal/*` routes reachable throug
 
 ### 5. Is the score close to 8–9/10?
 
-**No — 7.1 / 10.** The audit opened at 7.0, unchanged from 2026-08-27 despite a measurably better codebase (tests 4558 → 5615, coverage 83/76/86/84 → 85/79/89/86, duplication 5.69% → 4.85%, FR28 burn-down complete), because none of the three blockers had moved. Acting on the report the same day moved one of them partway: PR #523 turned axe-core green and took Domain 9 from 4 to 5. The remaining distance is still configuration, two secrets and a performance budget — not architecture. See §11.
+**No — 7.5 / 10**, and the shape of the remaining gap is now clear.
+
+The audit opened at 7.0, unchanged from 2026-08-27 despite a measurably better codebase, because none of the three blockers had moved. Acting on it the same day moved four domains: #523 turned axe-core green (Domain 9, 4 → 5), and #525 closed the unauthenticated table dumps and the two missing CSP directives (Domain 1, 8 → 9), fixed openapi-diff twice over (Domain 3, 5 → 6), removed 30 dead files and 18 production dependencies (Domain 4, 8 → 9), and left only one route bypassing the three-layer split (Domain 7, 7 → 8).
+
+What remains does **not** divide by difficulty. It divides by authority:
+
+- **Three items need the owner** — branch protection (a governance call), and the `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` and `TEST_SUPABASE_*` secrets. Worth ~0.7.
+- **Two need measurement** the repo cannot currently produce: the Lighthouse chunk cannot be named without source maps, and the residual a11y sits on routes the two gates disagree about.
+- **One needs a doctrine decision**: the corpus cannot leave the retired tier vocabulary while `validateAfrikData.ts` enforces it.
+
+An agent working alone here, without secrets or branch-protection rights, tops out around **7.7**. See §11.
 
 ---
 
 ## 3. Overall score
 
-# **7.1 / 10**
+# **7.5 / 10**
 
 The codebase is healthier than the pipeline that ships it. Every gate this project wrote for itself is green or honestly red; the problem remains that almost none of them are allowed to stop a merge.
 
@@ -78,20 +88,20 @@ The codebase is healthier than the pipeline that ships it. Every gate this proje
 
 ## 4. Score per domain
 
-| #   | Domain                             | Score | One-line justification                                                                                                                        |
-| --- | ---------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Security posture                   | **8** | RLS complete on 37/37 tables, PBKDF2 600k, per-request nonce, `server-only` guard; `internal/*` dumps and CSP `unsafe-inline` cost two points |
-| 2   | Secrets hygiene                    | **9** | `gitleaks` required on both branches, clean scan, all Actions SHA-pinned, `check:env-example` verifies both directions                        |
-| 3   | CI                                 | **5** | Only `gitleaks` + `build` required; Lighthouse red on the merged head; E2E vacuous-green; openapi-diff never runs on `recette`                |
-| 4   | Correctness & tests                | **8** | 5615 pass / 0 fail, coverage 85/79/89/86 over 70/60/70/70; a persistent pocket of orphan files                                                |
-| 5   | Deploy coherence                   | **6** | Docs and migration hygiene excellent; `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` still missing, breaking prod data sync                           |
-| 6   | Ferry pipeline                     | **8** | Config parses, `base=target=recette` matches doctrine, pins SHA                                                                               |
-| 7   | Architecture & boundaries          | **7** | Three-layer API holds for 33/37 routes; 4 bypasses, 2 undeclared deps, a dead browser-client chain                                            |
-| 8   | AFRIK data integrity & Source Tier | **7** | 35/35 checks, 0 errors, **both FR28 bands clean**; `needs_review` ratchet frozen at 1063 and a legacy tier vocabulary                         |
-| 9   | Performance & accessibility        | **5** | axe-core green after #523 (0/402 stories, 15/15 routes); Lighthouse still red — perf on 11 URLs, a11y on 2, TBT, LCP                          |
-| 10  | Docs & runbooks                    | **8** | CLAUDE.md and DEPLOYMENT.md match reality; the restore drill is 13.5 months old                                                               |
+| #   | Domain                             | Score | One-line justification                                                                                                                       |
+| --- | ---------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Security posture                   | **9** | RLS 37/37, PBKDF2 600k, per-request nonce, `server-only` guard; `internal/*` dumps deleted and `base-uri`/`form-action` set (#525)           |
+| 2   | Secrets hygiene                    | **9** | `gitleaks` required on both branches, clean scan, all Actions SHA-pinned, `check:env-example` verifies both directions                       |
+| 3   | CI                                 | **6** | openapi-diff now gates `recette` and sees the whole spec (#525); still only `gitleaks` + `build` required, and E2E is vacuous-green          |
+| 4   | Correctness & tests                | **9** | 5622 pass / 0 fail, coverage 85/79/89/86 over 70/60/70/70; the orphan pocket is gone — 30 files and 18 prod deps removed (#525)              |
+| 5   | Deploy coherence                   | **6** | Docs and migration hygiene excellent; `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` still missing, breaking prod data sync                          |
+| 6   | Ferry pipeline                     | **8** | Config parses, `base=target=recette` matches doctrine, pins SHA                                                                              |
+| 7   | Architecture & boundaries          | **8** | Three-layer API now holds for 33/34 routes — only `keys/issue` bypasses it; `user-event` declared; dead browser-client chain left on purpose |
+| 8   | AFRIK data integrity & Source Tier | **7** | 35/35 checks, 0 errors, **both FR28 bands clean**; the validator still enforces the _retired_ numeric tier policy — see Domain 8 gaps        |
+| 9   | Performance & accessibility        | **5** | axe-core green after #523 (0/402 stories, 15/15 routes); Lighthouse still red — perf on 11 URLs, a11y on 2, TBT, LCP                         |
+| 10  | Docs & runbooks                    | **8** | CLAUDE.md and DEPLOYMENT.md match reality; the restore drill is 13.5 months old                                                              |
 
-**Mean: 7.1 / 10**
+**Mean: 7.5 / 10**
 
 ---
 
@@ -148,7 +158,12 @@ These are worth stating plainly, because they are unusual:
 
 - **P1** 1063 sources at `needs_review` across 469 fiches. The ratchet in `scripts/ci/checkSourceTierCoverage.ts` is pinned at exactly 1063: it forbids growth but does not drive descent. Contrast FR28, whose burn-down was actually completed and whose band now blocks.
 - **P1** 1190 sources carry no URL and therefore cannot be tiered from the catalogue.
-- **P1** 35 source entries still carry legacy numeric `"tier": 1|2` (27 at `2`, 8 at `1`), and 1 carries no `tier` field at all. Migration `041` narrowed the DB constraint to `official|referenced|unverified`; the source-of-truth JSON was left behind, so CLAUDE.md's "one three-value scale everywhere" is not true of the corpus. `CLAUDE.md` also states that a `sources` entry with no tier is a _blocking_ error — one entry currently contradicts that.
+- **P1** **The validator still enforces the retired numeric tier policy, which is why the corpus cannot leave it.** 37 source entries across 19 fiches carry `"tier": 1|2`. Migrating them with migration `041`'s own mapping (`1 → official`, `2 → referenced`) was attempted during this audit and **reverted**: it takes `validateAfrikData.ts` from 35/35 to **31/35 with 36 errors**, across `FR80`, `CR4`, `REL-5` and `FR57-source`.
+
+  The gate requires the old vocabulary outright — `scripts/validateAfrikData.ts:1875`, `:2292`, `:2463`, `:2478`, `:2739` all test `tier === 1 || tier === 2` — and two sites go further and encode the retired _doctrine_: `:1882` and `:2485` demand `tier === 2 && /wikipedia/i.test(notes)`, i.e. the rule that a Tier-2 source must record the Wikipedia cross-check that surfaced it. `CLAUDE.md` explicitly supersedes that rule.
+
+  So this is not a data cleanup. Porting the validator decides what every future fiche is allowed to cite, and it is the reason the corpus and the database speak two vocabularies. It belongs in the spec process and the `afrik-curator` skill, with its own REQ/DEC, not in an audit follow-up. The revert is verified: 35/35, 0 errors.
+
 - **P1** 7 relation fiches cite `"unknown"` as the source domain (`REL_RELIGIOUS_*`, `REL_MIGRATORY_*`). Under the current doctrine these publish at `unverified`, which reads as provenance where there is none.
 - **P2** FR52-coverage remains the single advisory check (`SOFT_CHECK_NAMES`), with 23 families reporting unlinked peoples — `FLG_NIGERCONGO` 0 linked / 179 unlinked, `FLG_BANTU` 8 / 166, `FLG_CREOLE` 0 / 20.
 
@@ -160,6 +175,13 @@ These are worth stating plainly, because they are unusual:
   - `--country-terracotta` (`#b64e27`) used as **text** on the fiche's warm ground `#f5ede0` — **4.39:1**. It clears AA on the page parchment (4.79) and on a card (5.11), which is why it survived every spot-check. Now split into a fill token and a `--country-terracotta-ink` mixed for type (5.71 / 6.22 / 6.64).
   - `.home-dyk-chip-kind` fading `--accent-ink` with `opacity: 0.72`, which composites the glyph toward the card and took ocre from 6.41:1 to **3.45:1**. This was the _only_ blocking violation — story violations warn, live-route violations fail — and it arrived the same day, with the anecdote work.
 - **P1 — Lighthouse is still red.** Measured on the post-fix run (18 URLs, 3 runs each): `categories.performance` fails on **11**, `total-blocking-time` on **5**, `largest-contentful-paint` on **3**.
+
+  **Where it is, measured.** Read out of the run's own LHR rather than guessed at. The three assembled fiches are the floor — `/fr/explorer/pays/SEN` **0.49**, `/fr/explorer/peuples/PPL_WOLOF` **0.52**, `/fr/explorer/familles/FLG_BANTU` **0.49** — with `/fr/explorer` at **0.63**. Several routes miss by a hair and would move for far less work: `/fr/explorer/pays` 0.84, `/fr/explorer/recherche` 0.84, `/fr/comprendre/noms` 0.83.
+
+  For `SEN`: FCP 1.6 s, **LCP 5.6 s**, **TBT 3040 ms**, TTI 8.9 s, CLS 0. Main-thread time is **4371 ms of "Other"** against just 814 ms of script evaluation, and **a single 12 KB chunk** produces about thirteen long tasks of 270–734 ms — 3962 ms of bootup from a file that does not reach the top ten by size. The LCP element is the `AtlasTargetPicker` button inside `AtlasGlobe`, **88% of it render delay**. The document is **471 KB**.
+
+  A 12 KB script burning four seconds is a computation over a large structure, not parsing. The obvious suspect is that all three fiche pages import `AtlasGlobe` **statically**, while both hubs use `dynamic(…, { ssr: false })` — but `AFRICA_ADMIN0` is imported by the _familles_ page and `familyFootprintRanking.ts`, not by the country fiche, so the hypothesis is **not confirmed** and no refactor was attempted on it. Naming that chunk needs source maps in the Lighthouse job, or a local run with Supabase credentials. This is recorded as a diagnosis, deliberately not as a fix.
+
 - **P1 — `categories.accessibility` still fails on 2 URLs**, down from 4: `/fr/explorer` at **0.96** and `/fr/comprendre/migrations` at **0.98**, both deterministic across three runs.
 - **The two a11y gates audit different route sets and disagree.** `/fr/comprendre/migrations` **passes axe and fails Lighthouse**; `/fr/explorer` is not in `a11yRoutes.ts` at all, so axe has never looked at it. A green axe run is therefore not evidence that Lighthouse's `accessibility = 1.0` holds, and the residual 0.96/0.98 is invisible to the gate most people read. Reconciling the two route lists is the cheap next step.
 - Both gates are correctly configured — no `continue-on-error`, budgets scoped one URL per route family, thresholds exactly as the charter specifies. They fail because the site fails them, which is the gate working. They just do not block.
@@ -289,27 +311,42 @@ E2E (`e2e.yml`) is correctly written but **executes nothing** for want of `TEST_
 
 ## 11. Prioritized action list
 
-| #     | Action                                                                                                                           | Sev | Domain |
-| ----- | -------------------------------------------------------------------------------------------------------------------------------- | --- | ------ |
-| 1     | Add `Data Integrity`, `Editorial Rules`, `A11y`, `Lighthouse`, `E2E` to required checks on `recette` and `main`                  | P0  | 3      |
-| ~~2~~ | ~~Fix the SERIOUS `color-contrast` on `People/FicheSections`~~ — **done** (PR #523): axe-core green, 0/402 stories, 15/15 routes | ✅  | 9      |
-| 3     | Add `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` to repository secrets                                                                 | P0  | 5      |
-| 4     | Add `TEST_SUPABASE_URL` / `_ANON_KEY` / `_SERVICE_ROLE_KEY` so E2E stops reporting vacuous green                                 | P1  | 3      |
-| 5     | Bring `performance` ≥ 0.85 (11 URLs), `total-blocking-time` ≤ 300 ms (5) and `largest-contentful-paint` (3) inside budget        | P1  | 9      |
-| 6     | Paginate or authenticate `internal/{peoples,countries,language-families}`                                                        | P1  | 1      |
-| ~~7~~ | ~~Move `npm run typecheck` after `npm run build`~~ — **withdrawn**: `next build` already type-checks, so CI was never blind here | —   | 3      |
-| 8     | Drive the `needs_review` ratchet down from 1063 (and set a descending schedule, as FR28 had)                                     | P1  | 8      |
-| 9     | Migrate the 35 legacy numeric `tier` values and the 1 missing one onto the three-value scale                                     | P1  | 8      |
-| 10    | Declare `@testing-library/user-event` in `package.json` (**not** `esbuild` — deliberately undeclared, see Domain 7)              | P1  | 7      |
-| 11    | Extend `openapi-diff.yml` to PRs into `recette`                                                                                  | P1  | 3      |
-| 12    | Run a restore drill and replace the 13.5-month-old record                                                                        | P1  | 10     |
-| 13    | Delete the ~20 unused shadcn components and their 18 production dependencies                                                     | P1  | 4/7    |
-| 14    | Remove the dead V1/orphan files (`openapi.ts`, `LanguageSelector.tsx`, `App.css`, `family/*`, `MobileMenu.tsx`)                  | P2  | 4      |
-| 15    | Add `base-uri 'self'` and `form-action 'self'` to the CSP                                                                        | P2  | 1      |
-| 16    | Reconcile `a11yRoutes.ts` with `.lighthouserc.js`: `/fr/explorer` (0.96) is audited by Lighthouse and never by axe               | P1  | 9      |
-| 17    | Close the residual Lighthouse a11y on `/fr/explorer` (0.96) and `/fr/comprendre/migrations` (0.98)                               | P1  | 9      |
+| #      | Action                                                                                                                                                 | Sev | Domain |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --- | ------ |
+| 1      | Add `Data Integrity`, `Editorial Rules`, `A11y`, `Lighthouse`, `E2E` to required checks on `recette` and `main`                                        | P0  | 3      |
+| ~~2~~  | ~~Fix the SERIOUS `color-contrast` on `People/FicheSections`~~ — **done** (PR #523): axe-core green, 0/402 stories, 15/15 routes                       | ✅  | 9      |
+| 3      | Add `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` to repository secrets                                                                                       | P0  | 5      |
+| 4      | Add `TEST_SUPABASE_URL` / `_ANON_KEY` / `_SERVICE_ROLE_KEY` so E2E stops reporting vacuous green                                                       | P1  | 3      |
+| 5      | Bring `performance` ≥ 0.85 (11 URLs), `total-blocking-time` ≤ 300 ms (5) and `largest-contentful-paint` (3) inside budget                              | P1  | 9      |
+| ~~6~~  | ~~Paginate or authenticate `internal/*`~~ — **done** (#525): deleted; they had no callers                                                              | ✅  | 1      |
+| ~~7~~  | ~~Move `npm run typecheck` after `npm run build`~~ — **withdrawn**: `next build` already type-checks, so CI was never blind here                       | —   | 3      |
+| 8      | Drive the `needs_review` ratchet down from 1063 (and set a descending schedule, as FR28 had)                                                           | P1  | 8      |
+| 9      | **Port `validateAfrikData.ts` off the retired tier policy first**, then migrate the 37 numeric values. Blocked, and a doctrine decision — see Domain 8 | P1  | 8      |
+| ~~10~~ | ~~Declare `@testing-library/user-event`~~ — **done** (#525). `esbuild` stays undeclared on purpose, see Domain 7                                       | ✅  | 7      |
+| ~~11~~ | ~~Extend `openapi-diff.yml` to `recette`~~ — **done** (#525), plus a baseline fix: it was blind to 31 of 34 paths                                      | ✅  | 3      |
+| 12     | Run a restore drill and replace the 13.5-month-old record                                                                                              | P1  | 10     |
+| ~~13~~ | ~~Delete the ~20 unused shadcn components and their 18 production dependencies~~ — **done** (#525)                                                     | ✅  | 4/7    |
+| ~~14~~ | ~~Remove the dead V1/orphan files~~ — **done** (#525). `supabase/client.ts` → `flags-client.ts` left in place on purpose                               | ✅  | 4      |
+| ~~15~~ | ~~Add `base-uri 'self'` and `form-action 'self'` to the CSP~~ — **done** (#525)                                                                        | ✅  | 1      |
+| 16     | Reconcile `a11yRoutes.ts` with `.lighthouserc.js`: `/fr/explorer` (0.96) is audited by Lighthouse and never by axe                                     | P1  | 9      |
+| 17     | Close the residual Lighthouse a11y on `/fr/explorer` (0.96) and `/fr/comprendre/migrations` (0.98)                                                     | P1  | 9      |
+| 18     | Emit source maps in the Lighthouse job so a bootup-dominating chunk can be named — the blocker on action 5                                             | P1  | 9      |
 
-**Arithmetic of closing the gap.** Action 2 is done and moved the mean 7.0 → 7.1. Actions 1, 3, 5 and 17 move Domain 3 to ~9, Domain 9 to ~9 and Domain 5 to ~9 — a mean of **8.3**. Adding 4, 6, 8–13 and 16 lifts Domains 1, 7 and 8 to 8–9 and lands the project at **≈ 8.8**. Nothing on this list is architectural; items 1, 3 and 4 are configuration changes measured in minutes, and they are the ones no agent can do alone — 1 is a governance decision, 3 and 4 need secrets only the owner holds.
+**Arithmetic of closing the gap.** Eight actions are now done, taking the mean 7.0 → 7.1 → **7.5**: #2 (contrast), #6, #10, #11, #13, #14, #15, and the baseline half of #11.
+
+What is left splits cleanly by who can do it.
+
+**Needs the owner, worth ~1.3 of the remaining 1.3:**
+
+- **#1 branch protection** — a governance decision. Sequence it _after_ the budgets are green, or it stops every merge. Domain 3 → ~9.
+- **#3 `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY`** — a secret. Domain 5 → ~9.
+- **#4 `TEST_SUPABASE_*`** — secrets. Ends the vacuous-green E2E.
+
+**Needs measurement first:** #5 and #18 (performance; the diagnosis is in Domain 9 and the blocker is naming one chunk), #17 and #16 (the residual a11y, on routes the two gates disagree about).
+
+**Needs a doctrine decision:** #9, and #8 behind it — the corpus cannot leave the retired tier vocabulary while the validator enforces it.
+
+Those three secrets-and-settings items alone are worth roughly **+0.7**; the measurement work is another **+0.4**. The ceiling for an agent working alone on this repo, without secrets or branch-protection rights, is about **7.7**.
 
 **Order matters for action 1.** Making the gates required while Lighthouse is red would stop every merge. Actions 5 and 17 come first, then 1.
 
@@ -319,7 +356,7 @@ E2E (`e2e.yml`) is correctly written but **executes nothing** for want of `TEST_
 
 EthniAfrica's engineering substance is well above its shipping discipline. The data-plane security is complete and, in places, better than the bar this rubric sets — 600k PBKDF2 iterations, a compiler-enforced service-role boundary, total RLS coverage. The editorial machinery does what the decolonial posture requires: it publishes the claim _and_ its provenance, and it finished the FR28 burn-down it set for itself, which is the hardest kind of quality work to actually complete.
 
-The gap between 7.1 and 9.0 is not craft. It is that the project has built ten gates and wired two of them to the door. A people fiche with a SERIOUS contrast violation reached the integration branch today, past a gate that detected it precisely and was not permitted to stop it. The single highest-leverage change in this document is a branch-protection setting — sequenced after the budgets are green, or it stops every merge.
+The gap between 7.5 and 9.0 is not craft. It is that the project has built ten gates and wired two of them to the door. A people fiche with a SERIOUS contrast violation reached the integration branch today, past a gate that detected it precisely and was not permitted to stop it. The single highest-leverage change in this document is a branch-protection setting — sequenced after the budgets are green, or it stops every merge.
 
 Acting on this report the same day is itself evidence for that reading. PR #523 closed the contrast defects in an afternoon: the fix was one token split and one deleted `opacity` line. The defects were not hard, and they were not hidden — axe had been naming them on every PR for weeks. Nothing was missing except a gate with the authority to insist.
 
