@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
+import { getModuleAvailabilityMap } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
 
 // Mirrors the middleware's own CANONICAL_LOCALE. The type keeps the two in
@@ -18,8 +20,12 @@ const CANONICAL_LOCALE: Language = "fr";
  * Guarding here rather than in each page covers the whole subtree, including
  * the `[section]/[item]` routes whose rendering is client-side and never
  * inspects the segment.
+ *
+ * It is also the one server component every page under `/fr` renders beneath,
+ * which is why the module availability the header needs is resolved here —
+ * see `ModuleAvailabilityProvider`.
  */
-// @req REQ-052
+// @req REQ-052 @req REQ-106
 export default async function LangLayout({
   params,
   children,
@@ -31,5 +37,10 @@ export default async function LangLayout({
   if (lang !== CANONICAL_LOCALE) {
     notFound();
   }
-  return children;
+
+  return (
+    <ModuleAvailabilityProvider value={await getModuleAvailabilityMap()}>
+      {children}
+    </ModuleAvailabilityProvider>
+  );
 }

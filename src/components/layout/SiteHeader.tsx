@@ -46,6 +46,8 @@ import {
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { isModuleOffered } from "@/lib/hubs/moduleOffer";
+import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getFacetByPage } from "@/lib/hubs/facets";
 import type { Language } from "@/types/shared";
@@ -119,6 +121,9 @@ export interface SiteHeaderProps {
 export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
   const pathname = usePathname();
   const t = getTranslation(language);
+  // Resolved once per request by the `[lang]` layout; `null` on any surface
+  // rendered without it, which `isModuleOffered` reads as "declared half only".
+  const moduleAvailability = useModuleAvailability();
 
   const [openAxis, setOpenAxis] = useState<AccessMode | null>(null);
   const [trayOpen, setTrayOpen] = useState(false);
@@ -166,6 +171,13 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
     const Glyph = MODULE_GLYPHS[definition.id] ?? Circle;
     const testId = `site-nav-module-${definition.id}`;
 
+    // Two questions, and the menu used to ask only the first (charter §3):
+    // the route has to exist, *and* what sits behind it has to be worth the
+    // trip. Asking only "does this resolve" is what had the header linking
+    // modules the home and the hub were both marking Bientôt.
+    const offered =
+      href !== null && isModuleOffered(definition, moduleAvailability);
+
     const body = (
       <>
         <span className="sh-glyph" aria-hidden="true">
@@ -179,20 +191,22 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           <span className="sh-entry-route" aria-hidden="true">
             {href ?? t.hubs.unresolvedRouteLabel}
           </span>
-          {href === null ? (
+          {offered ? null : (
             <span className="sh-chip">
               <span className="sh-chip-dot" aria-hidden="true" />
               {t.hubs.unavailableLabel}
             </span>
-          ) : null}
+          )}
         </span>
       </>
     );
 
-    // No anchor at all for an unbuilt module: the menu never offers a route
-    // that does not resolve, and an anchor without an href is a link the
-    // keyboard can still reach.
-    if (href === null) {
+    // No anchor at all, and no focus stop: the reader is told there is
+    // nothing worth reading here yet, and the charter owes no account of
+    // which of the two questions produced that. An unbuilt route and a module
+    // in preparation get the same row deliberately — an anchor without an
+    // href would still be a link the keyboard could reach.
+    if (!offered) {
       return (
         <span
           key={definition.id}
