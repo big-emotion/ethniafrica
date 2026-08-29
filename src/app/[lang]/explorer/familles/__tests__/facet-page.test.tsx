@@ -152,15 +152,17 @@ describe("the families facet", () => {
     );
   });
 
-  // The shell above renders no heading, so this is the page's only h1.
+  /**
+   * The name is the shell's, printed above the globe where it is read before
+   * the band fills the screen — see `facetHubHeadCharter.test.tsx`. The page
+   * owes the count, which changes with the filters it sits above, and owes no
+   * second h1.
+   */
   // @req REQ-114
-  it("names itself exactly once, and counts the corpus rather than the page", async () => {
+  it("leaves its name to the shell, and counts the corpus rather than the page", async () => {
     render(await renderRoute({}));
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: /familles linguistiques/i })
-    ).toBeInTheDocument();
-    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(screen.queryAllByRole("heading", { level: 1 })).toHaveLength(0);
     expect(screen.getByText(/16 familles/)).toBeInTheDocument();
   });
 
