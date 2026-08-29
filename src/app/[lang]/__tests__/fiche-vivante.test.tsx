@@ -175,9 +175,9 @@ vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
 // Subjects under test — imported after the boundaries are in place
 // ---------------------------------------------------------------------------
 
-import PeuplesSlugPage from "../peuples/[slug]/page";
-import PaysSlugPage from "../pays/[slug]/page";
-import FamillesSlugPage from "../familles/[slug]/page";
+import PeuplesSlugPage from "../explorer/peuples/[slug]/page";
+import PaysSlugPage from "../explorer/pays/[slug]/page";
+import FamillesSlugPage from "../explorer/familles/[slug]/page";
 
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import { sectionIdForPanel } from "@/components/fiche/panelRegistry";
@@ -209,6 +209,11 @@ const YORUBA_ROW = {
     languages: YORUBA.languages,
     historicalRole: YORUBA.historicalRole,
     culture: YORUBA.culture,
+    // Every one of the 789 people fiches carries sources, and the head's
+    // confidence chip links to the footer they render. A fixture without them
+    // models a fiche the corpus does not contain, and makes that link dangle
+    // for a reason no reader will ever meet.
+    sources: YORUBA.sources,
     demography: {
       ...YORUBA.demography,
       // The territory chapter reads the per-country split off stored
@@ -458,20 +463,6 @@ function journeyAnchors(root: Element): string[] {
   return ficheSections(root).map((section) => section.id);
 }
 
-/**
- * The one dangling citation the fiche layer inherits rather than creates.
- * ConfidenceChip's incomplete-confidence fallback hardcodes `#sources`
- * (src/components/source-transparency/ConfidenceChip.tsx), as does
- * ProseWithChip — but the only `id="sources"` in the tree belongs to the
- * *family* sources footer, so on a people fiche the link resolves to nothing.
- * Lifting those chips out of the legacy view and into the identity and
- * fragmentation chapters made a latent dead link visible.
- *
- * Exempted so the assertion still fails on any *new* dangling anchor. This
- * records a defect to fix, not a property to keep.
- */
-const LEGACY_SOURCES_ANCHOR = "#sources";
-
 /** The rights-cleared narratives the voices chapter is built from. */
 const PUBLISHED_NARRATIVES = [
   {
@@ -588,7 +579,6 @@ describe("fiche vivante — the dossier citation contract", () => {
         container.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
       )
         .map((citation) => citation.getAttribute("href") ?? "")
-        .filter((href) => href !== LEGACY_SOURCES_ANCHOR)
         .filter((href) => container.querySelector(href) === null);
       expect(dangling).toEqual([]);
 

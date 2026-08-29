@@ -6,21 +6,33 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
   countAfrikLanguageFamilies,
+  getAfrikLanguageFamilyRoster,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { countUnclassifiedPeoples } from "@/lib/supabase/queries/afrik/languageFamilyFacet";
 import {
   getAfrikPeoplesByLanguageFamily,
   getPeopleCountsByLanguageFamily,
-  UNCLASSIFIED_FAMILY_KEY,
 } from "@/lib/supabase/queries/afrik/peoples";
 import type { LanguageFamily } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
 export interface LanguageFamiliesResult extends PaginatedResult<LanguageFamily> {
   /**
-   * Peoples whose language_family_id is null or references a family absent
-   * from the returnable list — surfaced instead of silently omitted (REQ-108).
+   * Peoples no published family reaches — a null language_family_id, or one
+   * pointing at a family the corpus does not publish. Surfaced instead of
+   * silently omitted (REQ-108), and measured against the whole roster: it
+   * describes the corpus, so paging through a reading of it cannot move it.
    */
   unclassifiedPeoplesCount: number;
+}
+
+export interface LanguageFamilyListOptions {
+  /**
+   * Restrict the list to these families. The Explorer families facet resolves
+   * its country filter to a set of ids and hands it over, so the narrowing
+   * happens in the database rather than over rows already fetched.
+   */
+  ids?: readonly string[];
 }
 
 /**
@@ -33,29 +45,33 @@ export interface LanguageFamiliesResult extends PaginatedResult<LanguageFamily> 
  *
  * Each returned family carries a peopleCount computed from stored afrik_peoples
  * rows — not the fiche-declared content.associatedPeoples length — and peoples
- * whose language_family_id is null or references a family absent from the
- * returnable list are surfaced via unclassifiedPeoplesCount instead of being
- * silently omitted (REQ-108).
+ * no published family reaches are surfaced via unclassifiedPeoplesCount
+ * instead of being silently omitted (REQ-108).
+ *
+ * That count is asked of the whole family roster, never of the page being
+ * returned. Subtracting against the page made it a property of where the
+ * reader had got to: turning to page 2 changed how many peoples the corpus was
+ * said to leave unclassified, and asking for a single-family page — which the
+ * directory's own loader did — reported almost the entire corpus as
+ * unclassified.
  */
 // @req REQ-108
 // @req REQ-110
 export async function getLanguageFamilies(
   page: number = 1,
-  perPage: number = 20
+  perPage: number = 20,
+  options: LanguageFamilyListOptions = {}
 ): Promise<LanguageFamiliesResult> {
-  const [families, total, peopleCounts] = await Promise.all([
-    getAllAfrikLanguageFamilies(page, perPage),
-    countAfrikLanguageFamilies(),
+  const [families, total, peopleCounts, roster] = await Promise.all([
+    getAllAfrikLanguageFamilies(page, perPage, options.ids),
+    countAfrikLanguageFamilies(options.ids),
     getPeopleCountsByLanguageFamily(),
+    getAfrikLanguageFamilyRoster(),
   ]);
 
-  const familyIds = new Set(families.map((family) => family.id));
-  let unclassifiedPeoplesCount = 0;
-  for (const [familyId, count] of peopleCounts) {
-    if (familyId === UNCLASSIFIED_FAMILY_KEY || !familyIds.has(familyId)) {
-      unclassifiedPeoplesCount += count;
-    }
-  }
+  const unclassifiedPeoplesCount = await countUnclassifiedPeoples(
+    roster.map((family) => family.id)
+  );
 
   for (const family of families) {
     family.peopleCount = peopleCounts.get(family.id) ?? 0;
@@ -102,10 +118,30 @@ export async function getLanguageFamilyById(
   }
 
   const peoples = await getAfrikPeoplesByLanguageFamily(id);
-  const associatedPeoples = peoples.map((people) => ({
+  const derived = peoples.map((people) => ({
     name: people.nameMain,
     peopleId: people.id,
   }));
+
+  /**
+   * Derived beats declared — but only when there is something derived.
+   *
+   * REQ-033 replaces the fiche's `content.associatedPeoples` with the peoples
+   * that actually carry this family's id, because the JSONB list goes stale
+   * and the stored rows do not. That holds for every family with members.
+   *
+   * It does not hold for a macro-family. Afro-asiatique's peoples all carry a
+   * sub-family's id (Berbère, Tchadique, Couchitique, Sémitique), so the query
+   * returns nothing — and overwriting the declaration with an empty array
+   * destroyed the eight references the fiche does declare while putting
+   * nothing in their place. The footprint fallback added for exactly that case
+   * reads this field, so it could never fire: the fiche showed "empreinte
+   * géographique non disponible" over a family that names its members.
+   *
+   * An empty derivation is not a correction. It is the absence of one.
+   */
+  const associatedPeoples =
+    derived.length > 0 ? derived : (family.content?.associatedPeoples ?? []);
 
   return {
     ...family,

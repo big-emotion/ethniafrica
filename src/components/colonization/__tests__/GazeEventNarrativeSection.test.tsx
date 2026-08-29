@@ -4,6 +4,7 @@ import axe from "axe-core";
 
 import { GazeEventNarrativeSection } from "../GazeEventNarrativeSection";
 import type { MigrationNarrativeEntry } from "@/lib/migrationDataTransformer";
+import { getPeopleRoute } from "@/lib/routing";
 
 // axe-core is already a project dependency (used by scripts/a11y-test.ts via
 // @axe-core/playwright); running it directly against the happy-dom render
@@ -67,7 +68,7 @@ describe("GazeEventNarrativeSection", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Peuple Test/ })).toHaveAttribute(
       "href",
-      "/fr/peuples/PPL_TEST"
+      getPeopleRoute("fr", "PPL_TEST")
     );
   });
 

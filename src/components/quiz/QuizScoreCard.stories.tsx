@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { QuizScoreCard } from "./QuizScoreCard";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const meta: Meta<typeof QuizScoreCard> = {
   title: "Quiz/QuizScoreCard",
@@ -10,7 +11,7 @@ const meta: Meta<typeof QuizScoreCard> = {
     a11y: { disable: false },
   },
   args: {
-    playAgainHref: "/fr/quiz",
+    playAgainHref: getLocalizedRoute("fr", "quiz"),
     onShare: () => undefined,
   },
 };
@@ -19,30 +20,32 @@ export default meta;
 type Story = StoryObj<typeof QuizScoreCard>;
 
 const fiches = [
-  { id: "PPL_YORUBA", name: "Yoruba", href: "/fr/peuples/PPL_YORUBA" },
-  { id: "PPL_IGBO", name: "Igbo", href: "/fr/peuples/PPL_IGBO" },
+  {
+    id: "PPL_YORUBA",
+    name: "Yoruba",
+    href: getPeopleRoute("fr", "PPL_YORUBA"),
+  },
+  { id: "PPL_IGBO", name: "Igbo", href: getPeopleRoute("fr", "PPL_IGBO") },
 ];
 
 // @req REQ-103 FR70
-export const LowScoreLockedRung: Story = {
-  name: "Low score · rung not unlocked",
+export const LowScore: Story = {
+  name: "Low score · country track",
   args: {
-    segment: "adults",
+    scopeLabelFr: "Ghana",
     correct: 3,
     total: 8,
-    rung: 2,
     fiches,
   },
 };
 
 // @req REQ-103 FR70
-export const HighScoreUnlockedRung: Story = {
-  name: "High score · next rung unlocked",
+export const HighScore: Story = {
+  name: "High score · family track",
   args: {
-    segment: "professionals",
+    scopeLabelFr: "Nigéro-congolaise",
     correct: 9,
     total: 10,
-    rung: 5,
     fiches,
   },
 };
@@ -51,10 +54,9 @@ export const HighScoreUnlockedRung: Story = {
 export const NoFichesEncountered: Story = {
   name: "No fiches encountered (stateless share page)",
   args: {
-    segment: "children",
+    scopeLabelFr: "Khoïsan",
     correct: 2,
     total: 5,
-    rung: 1,
     fiches: [],
   },
 };
@@ -63,10 +65,9 @@ export const NoFichesEncountered: Story = {
 export const ShareStatusCopied: Story = {
   name: "Share status — link copied",
   args: {
-    segment: "teens",
+    scopeLabelFr: "Tout le continent",
     correct: 6,
     total: 8,
-    rung: 2,
     fiches,
     shareStatusMessage: "copié",
   },

@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import * as nextNavigation from "next/navigation";
 import { RecherchePageContent } from "../RecherchePageContent";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 // ── shadcn Select (Radix portal crashes in happy-dom) ────────────────────────
 vi.mock("@/components/ui/select", () => ({
@@ -389,7 +390,8 @@ describe("RecherchePageContent", () => {
     });
   });
 
-  it("empty state has a 'Parcourir par famille' link to /fr/familles", async () => {
+  // @req REQ-002
+  it("empty state has a 'Parcourir par famille' link to the families directory", async () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
@@ -405,7 +407,9 @@ describe("RecherchePageContent", () => {
     await waitFor(() => {
       const link = screen.getByRole("link", { name: /parcourir par famille/i });
       expect(link).toBeInTheDocument();
-      expect(link.getAttribute("href")).toBe("/fr/familles");
+      expect(link.getAttribute("href")).toBe(
+        getLocalizedRoute("fr", "families")
+      );
     });
   });
 
@@ -468,7 +472,7 @@ describe("RecherchePageContent", () => {
     await waitFor(() => {
       expect(screen.getByRole("link", { name: "Zulu" })).toHaveAttribute(
         "href",
-        "/fr/peuples/PPL_ZULU"
+        getPeopleRoute("fr", "PPL_ZULU")
       );
     });
   });
@@ -605,7 +609,7 @@ describe("RecherchePageContent", () => {
       within(screen.getByTestId("search-pivot")).getByRole("link", {
         name: /ouvrir la fiche/i,
       })
-    ).toHaveAttribute("href", "/fr/peuples/PPL_ZULU");
+    ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_ZULU"));
   });
 
   // @req REQ-002

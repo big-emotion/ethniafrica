@@ -19,6 +19,7 @@ import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { orderedByWeight, peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import {
   FLAT_MORPH,
+  IDLE_POSE,
   SPHERE_MORPH,
   poseForTarget,
   type CameraPose,
@@ -43,12 +44,17 @@ import {
   footprintStrokeOpacity,
 } from "@/lib/atlas/footprintStyle";
 import {
+  NO_BIAS,
   biasForPanel,
   resolvePanelAnchor,
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { BASEMAP_VIEWBOX, projectLonLat } from "@/lib/atlas/projection";
-import { buildAtlasTargets, type AtlasTarget } from "@/lib/atlas/targets";
+import {
+  buildAtlasTargets,
+  enclosingFrame,
+  type AtlasTarget,
+} from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
@@ -74,6 +80,27 @@ function canCreateWebglContext(): boolean {
 }
 
 /**
+ * The basemap fits the band it stands in.
+ *
+ * AfricaBasemap defaults to `h-auto w-full` plus its own aspect ratio, so its
+ * height follows the stage's *width*. The stage is a fixed band — 520px on a
+ * laptop — with `overflow: hidden`, so at 1512px wide the map wanted 1433px of
+ * height and the reader saw its top third: the Mediterranean and the Sahara,
+ * and none of the continent below them.
+ *
+ * Fixing the band instead of the figure was the wrong way round — space.css
+ * records why the band is fixed, and an aspect-ratio stage grew taller the
+ * wider the viewport got. So the figure is constrained: with both dimensions
+ * set, the SVG's own `preserveAspectRatio` centres the whole map inside the
+ * band and leaves the night ground on either side. placeTargetOnBasemap walks
+ * the same letterbox, so the markers stay over the shapes they name.
+ */
+const FALLBACK_BASEMAP_STYLE: CSSProperties = {
+  width: "100%",
+  height: "100%",
+};
+
+/**
  * REQ-119: a fiche whose overlay resolves to nothing declared (a people
  * missing distributionByCountry, or a country/family absent from the
  * committed admin-0 asset) renders this explicit placeholder — never a
@@ -85,7 +112,7 @@ function AtlasGlobeMissing({ message }: { message: string }) {
       className="relative flex h-full w-full items-center justify-center"
       role="status"
     >
-      <AfricaBasemap style={{ opacity: 0.25 }} />
+      <AfricaBasemap style={{ ...FALLBACK_BASEMAP_STYLE, opacity: 0.25 }} />
       <p
         className="absolute px-6 text-center text-afh-small"
         style={{ color: "var(--afh-night-ink-2)" }}
@@ -260,7 +287,10 @@ function AtlasGlobeFallback({
 
   if (overlay.kind === "people-field") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         <PeopleFieldDefs />
         <PeopleFieldCircles
           blobs={overlay.areas.map((area) => ({
@@ -283,7 +313,10 @@ function AtlasGlobeFallback({
    */
   if (overlay.kind === "continent-field") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         <PeopleFieldDefs />
         {overlay.frame.flatMap((country) =>
           country.rings.map((ring, index) => (
@@ -315,7 +348,10 @@ function AtlasGlobeFallback({
   // says "the family is here" and never "this is where it is concentrated".
   if (overlay.kind === "family-footprint") {
     return (
-      <AfricaBasemap figureTransform={figureTransform}>
+      <AfricaBasemap
+        figureTransform={figureTransform}
+        style={FALLBACK_BASEMAP_STYLE}
+      >
         {overlay.countries.map((country) => {
           const isFocused = chosenCountryId === country.countryId;
           const dimmed = chosenCountryId !== null && !isFocused;
@@ -358,7 +394,10 @@ function AtlasGlobeFallback({
   const isTracedCountry = overlay.kind === "country-outline";
 
   return (
-    <AfricaBasemap figureTransform={figureTransform}>
+    <AfricaBasemap
+      figureTransform={figureTransform}
+      style={FALLBACK_BASEMAP_STYLE}
+    >
       {overlay.rings.map((ring, index) =>
         isTracedCountry ? (
           <TraceInPolygon
@@ -524,6 +563,22 @@ export interface AtlasGlobeProps {
   areaNoun?: string;
   className?: string;
   /**
+   * The country the reading *around* the globe is already narrowed to.
+   *
+   * A hub filtered to `?pays=BEN` is showing Benin in its list, and a map that
+   * went on showing the whole continent beside it would be a second,
+   * contradictory answer to the same question. So the globe opens on that
+   * country: it is highlighted, and the panel states what the current selection
+   * has there.
+   *
+   * It seeds the choice rather than owning it — the reader may then aim
+   * anywhere else on the map, and only a *change* of reading re-seeds. Omitted
+   * entirely (not `null`) by a caller whose surroundings say nothing about a
+   * country, which is every fiche: `null` would mean "the reading names no
+   * country", and passing it would clear a choice the reader had just made.
+   */
+  readingCountryId?: CountryId | null;
+  /**
    * How a target is offered. "markers" pins a pastille on each one, which reads
    * well for the one or few targets a country or people fiche has. "list" is
    * for a family footprint of seventeen countries, where the pastilles overlap
@@ -555,11 +610,6 @@ export interface AtlasGlobeProps {
 const DRAG_RADIANS_PER_PIXEL = 0.006;
 const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
 const KEY_STEP_RADIANS = 0.12;
-const PITCH_LIMIT_RADIANS = 1.1;
-
-function clampPitch(pitch: number): number {
-  return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
-}
 
 const GLOBE_SURFACE_LABEL =
   "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
@@ -653,6 +703,7 @@ export function AtlasGlobe({
   wholeAreaLabel = "Toute l'empreinte",
   areaNoun = "l'empreinte",
   className,
+  readingCountryId,
   targetPicker = "markers",
   pickerTargets,
   legend,
@@ -660,8 +711,23 @@ export function AtlasGlobe({
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
   const [chosenCountryId, setChosenCountryId] = useState<CountryId | null>(
-    null
+    readingCountryId ?? null
   );
+
+  // Re-seeding on a *change* of reading, adjusted during render rather than in
+  // an effect: an effect would paint the old choice first and correct it in a
+  // second commit, which on arrival at `?pays=BEN` is one frame of the whole
+  // continent before Benin lights up.
+  //
+  // Only a change re-seeds, which is what leaves the reader's own aim alone —
+  // a hub republishes its reading on every pagination step, and re-seeding on
+  // each of those would snap the map off whichever country they just chose.
+  // `undefined` opts out entirely; see `readingCountryId`.
+  const [seededReading, setSeededReading] = useState(readingCountryId);
+  if (readingCountryId !== undefined && readingCountryId !== seededReading) {
+    setSeededReading(readingCountryId);
+    setChosenCountryId(readingCountryId);
+  }
   const reducedMotion = usePrefersReducedMotion();
   const anchor = usePanelAnchor();
 
@@ -748,37 +814,50 @@ export function AtlasGlobe({
       cameraFocus ? poseForTarget(cameraFocus, biasForPanel(anchor)) : null,
     [cameraFocus, anchor]
   );
-  const flown = useGlobeCamera(
+
+  /**
+   * Where this globe sits with nothing chosen, and where « Recentrer » puts it
+   * back: the frame holding the whole entity — the family's footprint, the
+   * people's field, the country's own outline. Built from `targets` rather
+   * than the drawn overlay, so leaving a chosen country on a country fiche
+   * returns to the fiche's own subject and not to the last one visited.
+   *
+   * No panel bias: at rest nothing is open, so the globe keeps the whole
+   * stage. The bias only applies to the pose a choice flies to, which is the
+   * pose that has a panel beside it.
+   *
+   * The continent scene keeps IDLE_POSE. It is a geographic frame rather than
+   * an entity, and it is already framed on its whole subject — enclosing its
+   * fifty-one countries would move a hub that is right as it stands.
+   */
+  const restPose = useMemo(() => {
+    if (!cameraFollowsChoice) return IDLE_POSE;
+    const frame = enclosingFrame(targets);
+    return frame ? poseForTarget(frame, NO_BIAS) : IDLE_POSE;
+  }, [cameraFollowsChoice, targets]);
+
+  const camera = useGlobeCamera(
     destination,
+    restPose,
     reducedMotion || !cameraFollowsChoice
   );
 
-  // What the reader has done to the camera on top of wherever it flew.
-  // Kept as a delta rather than an absolute pose so a later fly-to still
-  // lands on its target: choosing a country is not undone by having
-  // dragged the globe first.
-  const [turn, setTurn] = useState({ yaw: 0, pitch: 0 });
   const [flat, setFlat] = useState(false);
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
 
   const pose: CameraPose = {
-    ...flown,
-    yaw: flown.yaw + turn.yaw,
-    pitch: clampPitch(flown.pitch + turn.pitch),
+    ...camera.pose,
     morph: flat ? FLAT_MORPH : SPHERE_MORPH,
   };
 
-  const turnBy = (dYaw: number, dPitch: number) =>
-    setTurn((current) => ({
-      yaw: current.yaw + dYaw,
-      pitch: clampPitch(current.pitch + dPitch),
-    }));
-
   const recentre = () => {
-    setTurn({ yaw: 0, pitch: 0 });
     setFlat(false);
     setChosenCountryId(null);
+    // Clearing the choice is not enough on its own: a reader who only turned
+    // the globe has changed no state the camera watches, so the camera is
+    // told directly to come back.
+    camera.recentre();
   };
 
   // Both pickers land here so a caller watching for choices — a game round
@@ -804,7 +883,10 @@ export function AtlasGlobe({
     lastPointer.current = { x: event.clientX, y: event.clientY };
     // Under a finger the surface has to keep up with the finger, so a drag
     // moves the globe itself rather than a target it eases toward.
-    turnBy(dx * DRAG_RADIANS_PER_PIXEL, dy * DRAG_PITCH_RADIANS_PER_PIXEL);
+    camera.turnBy(
+      dx * DRAG_RADIANS_PER_PIXEL,
+      dy * DRAG_PITCH_RADIANS_PER_PIXEL
+    );
   };
 
   const stopDragging = () => {
@@ -814,18 +896,18 @@ export function AtlasGlobe({
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     switch (event.key) {
       case "ArrowLeft":
-        turnBy(-KEY_STEP_RADIANS, 0);
+        camera.turnBy(-KEY_STEP_RADIANS, 0);
         break;
       case "ArrowRight":
-        turnBy(KEY_STEP_RADIANS, 0);
+        camera.turnBy(KEY_STEP_RADIANS, 0);
         break;
       // Same convention as the drag: up sends the surface up, which is a
       // decrease in pitch.
       case "ArrowUp":
-        turnBy(0, -KEY_STEP_RADIANS);
+        camera.turnBy(0, -KEY_STEP_RADIANS);
         break;
       case "ArrowDown":
-        turnBy(0, KEY_STEP_RADIANS);
+        camera.turnBy(0, KEY_STEP_RADIANS);
         break;
       default:
         return;
@@ -862,7 +944,12 @@ export function AtlasGlobe({
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
       ? placeTargetOnSphere(target, pose, stageAspect ?? undefined)
-      : placeTargetOnBasemap(target, pose, cameraFocus?.center ?? null);
+      : placeTargetOnBasemap(
+          target,
+          pose,
+          cameraFocus?.center ?? null,
+          stageAspect ?? undefined
+        );
 
   return (
     <div

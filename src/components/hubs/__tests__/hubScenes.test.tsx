@@ -4,7 +4,46 @@ import { describe, expect, it } from "vitest";
 import { ComprendreQuestionSpine } from "@/components/hubs/ComprendreQuestionSpine";
 import { JouerFaceOff } from "@/components/hubs/JouerFaceOff";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+
+/**
+ * The spine reads the same resolved availability the hub rows read, so its
+ * fixtures are HubModule, not a hand-kept list of routes (atlas-charter §3).
+ */
+function comprendreModules(
+  overrides: Partial<Record<string, boolean>> = {}
+): HubModule[] {
+  return [
+    {
+      id: "noms",
+      name: "Noms & appellations",
+      accessMode: "comprendre",
+      page: "names",
+      availability: "data",
+      editorialReadiness: "ready",
+      available: overrides.noms ?? true,
+    },
+    {
+      id: "frise",
+      name: "Premiers repères de migrations",
+      accessMode: "comprendre",
+      page: "migrations",
+      availability: "data",
+      editorialReadiness: "ready",
+      available: overrides.frise ?? true,
+    },
+    {
+      id: "doctrine",
+      name: "La doctrine éditoriale",
+      accessMode: "comprendre",
+      page: "doctrine",
+      availability: "static",
+      editorialReadiness: "ready",
+      available: overrides.doctrine ?? true,
+    },
+  ];
+}
 
 const jouerModules: HubModule[] = [
   {
@@ -39,7 +78,9 @@ describe("ComprendreQuestionSpine — the question axis scene (REQ-114)", () => 
   // indistinguishable in the first place.
   // @req REQ-114
   it("puts the reader's question first, not the module that answers it", () => {
-    render(<ComprendreQuestionSpine language="fr" />);
+    render(
+      <ComprendreQuestionSpine language="fr" modules={comprendreModules()} />
+    );
 
     expect(
       screen.getByText("Pourquoi ce peuple porte-t-il ce nom ?")
@@ -54,15 +95,18 @@ describe("ComprendreQuestionSpine — the question axis scene (REQ-114)", () => 
 
   // @req REQ-114
   it("routes each question to the module that answers it", () => {
-    render(<ComprendreQuestionSpine language="fr" />);
+    render(
+      <ComprendreQuestionSpine language="fr" modules={comprendreModules()} />
+    );
 
-    expect(screen.getByTestId("comprendre-spine-stop-names")).toHaveAttribute(
+    expect(screen.getByTestId("comprendre-spine-stop-noms")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "names")
     );
-    expect(
-      screen.getByTestId("comprendre-spine-stop-migrations")
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "migrations"));
+    expect(screen.getByTestId("comprendre-spine-stop-frise")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "migrations")
+    );
     expect(
       screen.getByTestId("comprendre-spine-stop-doctrine")
     ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
@@ -72,10 +116,65 @@ describe("ComprendreQuestionSpine — the question axis scene (REQ-114)", () => 
   // method governing every answer — an ordered list, not a bag of links.
   // @req REQ-114
   it("presents the stops as an ordered sequence", () => {
-    render(<ComprendreQuestionSpine language="fr" />);
+    render(
+      <ComprendreQuestionSpine language="fr" modules={comprendreModules()} />
+    );
 
     const stops = screen.getAllByRole("listitem");
     expect(stops).toHaveLength(3);
+  });
+
+  /**
+   * The defect this closes: /fr/comprendre linked "Noms & appellations" from
+   * the spine while the row directly above it marked that same module
+   * **Bientôt**. One page, two contrary claims about one module.
+   */
+  // @req REQ-114 @req REQ-106
+  it("stops offering a question the corpus cannot answer yet", () => {
+    render(
+      <ComprendreQuestionSpine
+        language="fr"
+        modules={comprendreModules({ noms: false })}
+      />
+    );
+
+    expect(
+      screen.queryByTestId("comprendre-spine-stop-noms")
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByTestId("comprendre-spine-pending-noms")
+    ).toBeInTheDocument();
+    // The question survives: it is still what the axis is about, and the
+    // reader is told where the answer will be rather than losing the stop.
+    expect(
+      screen.getByText("Pourquoi ce peuple porte-t-il ce nom ?")
+    ).toBeInTheDocument();
+  });
+
+  // The scene and the rows beside it say the same word for the same state.
+  // @req REQ-114 @req REQ-106
+  it("marks a pending stop with the same label the hub rows use", () => {
+    render(
+      <ComprendreQuestionSpine
+        language="fr"
+        modules={comprendreModules({ frise: false })}
+      />
+    );
+
+    expect(
+      screen.getByTestId("comprendre-spine-pending-frise")
+    ).toHaveTextContent(getTranslation("fr").hubs.unavailableLabel);
+  });
+
+  // A stop the registry does not describe is a stop nobody can vouch for.
+  // Rendering it as a link would resurrect the hand-kept route list the
+  // charter forbids.
+  // @req REQ-114 @req REQ-106
+  it("offers no link for a module the hub did not hand it", () => {
+    render(<ComprendreQuestionSpine language="fr" modules={[]} />);
+
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
+    expect(screen.getAllByRole("listitem")).toHaveLength(3);
   });
 });
 

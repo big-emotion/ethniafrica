@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AxisModulePanel } from "@/components/home/AxisModulePanel";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
-import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
@@ -16,6 +16,12 @@ import {
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
+import {
+  MAX_PANEL_WIDTH,
+  OPENED_CARD_HEIGHT,
+  OPENED_CARD_WIDTH,
+  SCENE_MIN_WIDTH,
+} from "@/lib/home/axisGraphGeometry";
 
 /**
  * The three entry points (REQ-113): not a menu to read, three targets to
@@ -29,7 +35,6 @@ import type { CorpusCounts } from "@/lib/home/corpusCounts";
 interface AxisDefinition {
   id: AccessMode;
   name: string;
-  page: PageType;
   cta: string;
   // The registry's filing criterion, restated per axis: what the reader
   // hands in, what the axis hands back. It is why a module sits here and
@@ -47,7 +52,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "explorer",
     name: "Explorer",
-    page: "explorerHub",
     cta: "Parcourir",
     stake: "Il arrive avec un nom. Il repart avec une fiche.",
     figure: (counts) =>
@@ -56,7 +60,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "comprendre",
     name: "Comprendre",
-    page: "comprendreHub",
     cta: "Remonter",
     stake: "Il arrive avec une question. Il repart avec une explication.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
@@ -64,7 +67,6 @@ const AXES: AxisDefinition[] = [
   {
     id: "jouer",
     name: "Jouer",
-    page: "jouerHub",
     cta: "Se tester",
     stake: "Il arrive sans rien. Il repart avec un résultat.",
     // Counted off the registry, not written down: the axis promised
@@ -270,7 +272,7 @@ export function AccessAxes({
               // without JavaScript and for a crawler. With JavaScript the
               // click never spends a page load on the axis slug — it opens
               // the modules here, and the next click is the module itself.
-              href={getLocalizedRoute(language, axis.page)}
+              href={getAxisHubRoute(language, axis.id)}
               ref={(element) => {
                 if (element) cardRefs.current[axis.id] = element;
               }}
@@ -349,7 +351,7 @@ export function AccessAxes({
 
       <style>{`
         .access-axes-lead {
-          max-width: 1140px;
+          max-width: ${MAX_PANEL_WIDTH}px;
           margin: 0 auto 16px;
           font-family: var(--afh-font-mono);
           font-size: var(--home-text-axes-lead);
@@ -363,7 +365,7 @@ export function AccessAxes({
           display: grid;
           grid-template-columns: repeat(${ACCESS_MODES.length}, 1fr);
           gap: 18px;
-          max-width: 1140px;
+          max-width: ${MAX_PANEL_WIDTH}px;
           margin: 0 auto;
         }
 
@@ -383,7 +385,13 @@ export function AccessAxes({
           position: absolute;
           left: 50%;
           top: 50%;
-          width: 264px;
+          /* The scene deploys around this card and has to keep off it, so
+             the box it holds is the box the geometry reserves. Read from
+             there rather than set here: the reservation was a hand-tuned
+             number that stopped matching the card the day it grew a stake
+             line, and the two middle modules ended up across its title. */
+          width: ${OPENED_CARD_WIDTH}px;
+          min-height: ${OPENED_CARD_HEIGHT}px;
           transform: translate(-50%, -50%);
           /* Sits mid-stack on purpose: the module nodes carry a z-index
              derived from their depth, so the ones behind the ring pass
@@ -477,9 +485,12 @@ export function AccessAxes({
         }
 
         .access-axis-stake {
-          /* Pulled up against the title: the two read as one statement,
-             the figure below them as its evidence. */
-          margin: -6px 0 0;
+          /* On the card's own rhythm, like every other pair in it. Pulling
+             the stake up by 6px and the figure by 10px left the three text
+             lines 8px then 4px apart where every other neighbouring pair
+             on the card sits 14px apart, so the block read as one crowded
+             paragraph rather than a statement and its evidence. */
+          margin: 0;
           font-size: var(--home-text-axis-stake);
           line-height: 1.4;
           /* Content at small type, so it takes the muted *pair* token that
@@ -491,7 +502,7 @@ export function AccessAxes({
         }
 
         .access-axis-figure {
-          margin: -10px 0 0;
+          margin: 0;
           font-family: var(--afh-font-mono);
           font-size: var(--home-text-axis-figure);
           /* The count is content, not chrome, and it is the smallest type
@@ -581,8 +592,15 @@ export function AccessAxes({
 
         /* On a phone the stacked card wasted most of its height on air. The
            same three targets become rows: glyph, label, arrow — one thumb's
-           reach each, and the whole set visible without scrolling twice. */
-        @media (max-width: 860px) {
+           reach each, and the whole set visible without scrolling twice.
+
+           It folds at the width the module panel drops its scene at, which
+           is the project's mobile bound — the two have to be the same
+           number, or a card laid out as a row would host a scene placing
+           its modules around a centre that card no longer has. The 0.02px
+           keeps this fold and the panel's own min-width query from both
+           answering true at exactly SCENE_MIN_WIDTH. */
+        @media (max-width: ${SCENE_MIN_WIDTH - 0.02}px) {
           .access-axes {
             grid-template-columns: 1fr;
             gap: 12px;
@@ -597,6 +615,10 @@ export function AccessAxes({
           .access-axes:not([data-open="none"]) .access-axis[data-state="open"] {
             position: static;
             width: auto;
+            /* The box the scene keeps clear of is a scene concern. Down
+               here the modules are rows under the card, so holding it open
+               to 240px only buys the phone a screenful of air. */
+            min-height: 0;
             transform: none;
             animation: none;
             display: flex;
@@ -604,10 +626,6 @@ export function AccessAxes({
             align-items: flex-start;
             gap: 10px;
             padding: 18px;
-          }
-          .access-axis[data-state="open"] .access-axis-stake,
-          .access-axis[data-state="open"] .access-axis-figure {
-            margin: -4px 0 0;
           }
           .access-axis {
             display: grid;

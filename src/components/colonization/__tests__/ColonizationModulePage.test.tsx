@@ -7,6 +7,7 @@ import type {
   ColonizationTimelineEntry,
 } from "@/lib/colonizationDataTransformer";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
+import { getLocalizedRoute } from "@/lib/routing";
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
@@ -88,7 +89,10 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
     render(<ColonizationModulePage data={emptyData} />);
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
-    ).toHaveAttribute("href", "/fr/doctrine/heritage-colonial");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}/heritage-colonial`
+    );
   });
 
   // @req REQ-091 FR90

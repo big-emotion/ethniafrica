@@ -1,19 +1,29 @@
+/**
+ * Serve-time behaviour of the quiz service.
+ *
+ * The fake Supabase client below answers by *table*, not by replaying a chain
+ * of builder calls. The previous version of this file mocked `select().eq().is()`
+ * in sequence, which meant every reordering of the query broke a test that was
+ * meant to be about the FR65 gate — and which said nothing about whether the
+ * right rows were being asked for. Answering by table lets a test state the
+ * corpus it wants and read back the session that corpus produces.
+ */
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { getQuizSegments, composeQuizSession } from "../quizService";
+import {
+  composeQuizSession,
+  getQuizScopeCatalogue,
+  getQuizScopeLabel,
+} from "../quizService";
 
-const fromMock = vi.fn();
+const tableRows = new Map<string, unknown[]>();
+const tableErrors = new Map<string, unknown>();
 
 vi.mock("@/lib/supabase/server", () => ({
-  createServerClient: () => ({ from: fromMock }),
+  createServerClient: () => ({ from: fakeFrom }),
 }));
 
 vi.mock("@/lib/api/logger", () => ({
-  logger: {
-    error: vi.fn(),
-    info: vi.fn(),
-    warn: vi.fn(),
-    debug: vi.fn(),
-  },
+  logger: { error: vi.fn(), info: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
 const getConfidenceMapMock = vi.fn();
@@ -24,409 +34,318 @@ vi.mock("@/lib/supabase/queries/afrik/module-zero-batch", () => ({
   getFlagsSummaryMap: (...args: unknown[]) => getFlagsSummaryMapMock(...args),
 }));
 
-interface FakeResult {
-  data: unknown;
-  error: unknown;
-}
-
-interface FakeCountResult {
-  count: number | null;
-  error: unknown;
+interface RowFilter {
+  column: string;
+  values: string[];
 }
 
 /**
- * `getQuizSegments` asks for one count per rung, so the fake resolves from a
- * `audience:difficulty` lookup rather than a single canned result.
+ * A thenable query builder that remembers its `.eq()` / `.in()` filters and
+ * applies them to the table's canned rows when awaited.
  */
-function buildRungCountQuery(
-  countsByRung: Record<string, number>,
-  error: unknown = null
-) {
-  const asked: string[] = [];
-  let audience = "";
-  let difficulty = 0;
+function fakeFrom(table: string) {
+  const filters: RowFilter[] = [];
+  let single = false;
+
+  const resolve = () => {
+    const error = tableErrors.get(table) ?? null;
+    if (error) return { data: null, error };
+
+    let rows = [...(tableRows.get(table) ?? [])];
+    for (const filter of filters) {
+      rows = rows.filter((row) =>
+        filter.values.includes(
+          String((row as Record<string, unknown>)[filter.column])
+        )
+      );
+    }
+    return single
+      ? { data: rows[0] ?? null, error: null }
+      : { data: rows, error: null };
+  };
+
   const query = {
-    select: vi.fn(() => query),
-    eq: vi.fn((column: string, value: string | number) => {
-      if (column === "audience") audience = value as string;
-      if (column === "difficulty") difficulty = value as number;
+    select: () => query,
+    is: () => query,
+    range: () => query,
+    eq: (column: string, value: unknown) => {
+      filters.push({ column, values: [String(value)] });
       return query;
-    }),
-    is: vi.fn(() => {
-      const rung = `${audience}:${difficulty}`;
-      asked.push(rung);
-      return Promise.resolve({
-        count: error ? null : (countsByRung[rung] ?? 0),
-        error,
-      } as FakeCountResult);
-    }),
-    asked,
+    },
+    in: (column: string, values: unknown[]) => {
+      filters.push({ column, values: values.map(String) });
+      return query;
+    },
+    maybeSingle: () => {
+      single = true;
+      return query;
+    },
+    then: (
+      onfulfilled: (value: { data: unknown; error: unknown }) => unknown
+    ) => Promise.resolve(resolve()).then(onfulfilled),
   };
   return query;
 }
 
-function buildSessionQuery(result: FakeResult) {
-  const query = {
-    select: vi.fn(() => query),
-    eq: vi.fn(() => query),
-    is: vi.fn(() => Promise.resolve(result)),
-  };
-  return query;
-}
-
-function buildSourcesQuery(result: FakeResult) {
-  const query = {
-    select: vi.fn(() => query),
-    in: vi.fn(() => Promise.resolve(result)),
-  };
-  return query;
-}
-
-function questionRow(overrides: Record<string, unknown> = {}) {
+function questionRow(
+  id: string,
+  entityId: string,
+  overrides: Record<string, unknown> = {}
+) {
   return {
-    id: "q-1",
+    id,
     template_id: "T1",
-    audience: "adults",
-    difficulty: 3,
+    difficulty: 1,
     entity_type: "people",
-    entity_id: "PPL_A",
+    entity_id: entityId,
     field_path: "languageFamilyId",
-    prompt_fr: "Quelle famille linguistique ?",
-    options_fr: ["Bantu", "Nilotic", "Chadic", "Cushitic"],
+    prompt_fr: `Question ${id}`,
+    options_fr: ["A", "B", "C", "D"],
     correct_option: 0,
-    explanation_fr: "Explication",
-    assertion_id: "assertion-1",
+    explanation_fr: "Parce que.",
+    assertion_id: `assertion-${id}`,
     source_ids: ["source-1"],
     ...overrides,
   };
 }
 
+function peopleRow(id: string, familyId: string, population: number) {
+  return {
+    id,
+    language_family_id: familyId,
+    demography: { totalPopulation: population },
+  };
+}
+
+const ELIGIBLE_CONFIDENCE = new Map([
+  ["PPL_A", { score: 0.75, lastHumanAuditAt: null }],
+  ["PPL_B", { score: 0.75, lastHumanAuditAt: null }],
+  ["PPL_C", { score: 0.75, lastHumanAuditAt: null }],
+]);
+
 beforeEach(() => {
-  fromMock.mockReset();
-  getConfidenceMapMock.mockReset();
-  getFlagsSummaryMapMock.mockReset();
-  getConfidenceMapMock.mockResolvedValue(new Map());
-  getFlagsSummaryMapMock.mockResolvedValue(new Map());
+  tableRows.clear();
+  tableErrors.clear();
+  getConfidenceMapMock.mockReset().mockResolvedValue(ELIGIBLE_CONFIDENCE);
+  getFlagsSummaryMapMock.mockReset().mockResolvedValue(new Map());
+
+  tableRows.set("sources", [
+    { id: "source-1", tier: "official", verified_at: "2026-01-01" },
+  ]);
+  tableRows.set("afrik_countries", [{ id: "GHA", name_fr: "Ghana" }]);
+  tableRows.set("afrik_language_families", [
+    { id: "FLG_NIGER_CONGO", name_fr: "Nigéro-congolaise" },
+  ]);
+  tableRows.set("afrik_peoples", [
+    peopleRow("PPL_A", "FLG_NIGER_CONGO", 9_000_000),
+    peopleRow("PPL_B", "FLG_NIGER_CONGO", 400_000),
+    peopleRow("PPL_C", "FLG_NIGER_CONGO", 80_000),
+  ]);
+  tableRows.set("afrik_people_countries", [
+    { people_id: "PPL_A", country_id: "GHA" },
+    { people_id: "PPL_B", country_id: "GHA" },
+  ]);
 });
 
-describe("getQuizSegments", () => {
+describe("getQuizScopeCatalogue", () => {
   // @req REQ-103
-  it("counts each rung server-side, so a bank larger than one PostgREST page is reported in full", async () => {
-    // 11 879 questions live in the bank; a row-reading select caps at 1000 and
-    // says nothing, which reported four of the five segments as empty.
-    const query = buildRungCountQuery({
-      "children:1": 621,
-      "children:2": 1242,
-      "adults:2": 1883,
-      "adults:4": 621,
-    });
-    fromMock.mockReturnValue(query);
-
-    const segments = await getQuizSegments();
-
-    expect(fromMock).toHaveBeenCalledWith("quiz_questions");
-    expect(query.select).toHaveBeenCalledWith(
-      "id",
-      expect.objectContaining({ count: "exact", head: true })
-    );
-    expect(query.is).toHaveBeenCalledWith("revoked_at", null);
-
-    expect(segments.map((segment) => segment.audience)).toEqual([
-      "children",
-      "teens",
-      "adults",
-      "university",
-      "professionals",
+  it("counts a country's questions through the join, not the question rows alone", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "PPL_A"),
+      questionRow("q2", "PPL_A"),
+      questionRow("q3", "PPL_B"),
+      questionRow("q4", "PPL_C"),
     ]);
 
-    const children = segments.find(
-      (segment) => segment.audience === "children"
-    );
-    expect(children?.rungs).toEqual([
-      { difficulty: 1, activeQuestionCount: 621 },
-      { difficulty: 2, activeQuestionCount: 1242 },
-    ]);
+    const catalogue = await getQuizScopeCatalogue();
 
-    const adults = segments.find((segment) => segment.audience === "adults");
-    expect(adults?.rungs).toEqual([
-      { difficulty: 2, activeQuestionCount: 1883 },
-      { difficulty: 3, activeQuestionCount: 0 },
-      { difficulty: 4, activeQuestionCount: 621 },
+    // PPL_C holds a question but lives in no country: it counts for the family
+    // and for the corpus, and for no country track.
+    expect(catalogue.countries).toEqual([
+      { id: "GHA", labelFr: "Ghana", activeQuestionCount: 3 },
     ]);
+    expect(catalogue.families[0].activeQuestionCount).toBe(4);
+    expect(catalogue.totalActiveQuestionCount).toBe(4);
   });
 
   // @req REQ-103
-  it("asks for exactly the rungs each segment's ladder offers", async () => {
-    const query = buildRungCountQuery({});
-    fromMock.mockReturnValue(query);
+  it("lists a country holding nothing rather than hiding it", async () => {
+    tableRows.set("quiz_questions", []);
 
-    await getQuizSegments();
+    const catalogue = await getQuizScopeCatalogue();
 
-    expect(query.asked).toEqual([
-      "children:1",
-      "children:2",
-      "teens:1",
-      "teens:2",
-      "teens:3",
-      "adults:2",
-      "adults:3",
-      "adults:4",
-      "university:3",
-      "university:4",
-      "university:5",
-      "professionals:3",
-      "professionals:4",
-      "professionals:5",
-    ]);
+    expect(catalogue.countries).toHaveLength(1);
+    expect(catalogue.countries[0].activeQuestionCount).toBe(0);
+  });
+});
+
+describe("getQuizScopeLabel", () => {
+  // @req REQ-103
+  it("reads a country's name from the corpus", async () => {
+    await expect(
+      getQuizScopeLabel({ kind: "country", entityId: "GHA" })
+    ).resolves.toBe("Ghana");
   });
 
   // @req REQ-103
-  it("returns all segments with zero counts on a query error, without throwing", async () => {
-    const query = buildRungCountQuery({}, { message: "boom" });
-    fromMock.mockReturnValue(query);
-
-    const segments = await getQuizSegments();
-
-    expect(segments).toHaveLength(5);
-    for (const segment of segments) {
-      for (const rung of segment.rungs) {
-        expect(rung.activeQuestionCount).toBe(0);
-      }
-    }
+  it("returns null for an id the corpus does not hold", async () => {
+    await expect(
+      getQuizScopeLabel({ kind: "country", entityId: "ZZZ" })
+    ).resolves.toBeNull();
   });
 });
 
 describe("composeQuizSession", () => {
   // @req REQ-103
-  it("re-validates the draw against current confidence, flags and sources, dropping failures", async () => {
-    const rows = [
-      questionRow({
-        id: "q-eligible",
-        entity_id: "PPL_OK",
-        source_ids: ["s-ok"],
-      }),
-      questionRow({
-        id: "q-low-confidence",
-        entity_id: "PPL_LOW",
-        source_ids: ["s-ok"],
-      }),
-      questionRow({
-        id: "q-open-flag",
-        entity_id: "PPL_FLAGGED",
-        source_ids: ["s-ok"],
-      }),
-    ];
-    const sessionQuery = buildSessionQuery({ data: rows, error: null });
-    const sourcesQuery = buildSourcesQuery({
-      data: [
-        { id: "s-ok", tier: "official", verified_at: "2026-01-01T00:00:00Z" },
-      ],
-      error: null,
-    });
-    fromMock.mockImplementation((table: string) =>
-      table === "sources" ? sourcesQuery : sessionQuery
-    );
+  it("draws only from the peoples of the scoped country", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-a", "PPL_A"),
+      questionRow("q-b", "PPL_B"),
+      questionRow("q-c", "PPL_C"),
+    ]);
 
-    getConfidenceMapMock.mockResolvedValue(
-      new Map([
-        [
-          "PPL_OK",
-          {
-            entityId: "PPL_OK",
-            score: 0.9,
-            lastHumanAuditAt: "2026-01-01T00:00:00Z",
-            openFlagCount: 0,
-          },
-        ],
-        [
-          "PPL_LOW",
-          {
-            entityId: "PPL_LOW",
-            score: 0.1,
-            lastHumanAuditAt: "2026-01-01T00:00:00Z",
-            openFlagCount: 0,
-          },
-        ],
-        [
-          "PPL_FLAGGED",
-          {
-            entityId: "PPL_FLAGGED",
-            score: 0.9,
-            lastHumanAuditAt: "2026-01-01T00:00:00Z",
-            openFlagCount: 0,
-          },
-        ],
-      ])
-    );
-    getFlagsSummaryMapMock.mockResolvedValue(
-      new Map([["PPL_FLAGGED", { openCount: 1, totalCount: 1 }]])
-    );
-
-    const questions = await composeQuizSession({
-      segment: "adults",
-      difficulty: 3,
-      count: 3,
-    });
-
-    expect(sessionQuery.eq).toHaveBeenCalledWith("audience", "adults");
-    expect(sessionQuery.eq).toHaveBeenCalledWith("difficulty", 3);
-    expect(sessionQuery.is).toHaveBeenCalledWith("revoked_at", null);
-    expect(getConfidenceMapMock).toHaveBeenCalledWith(
-      expect.arrayContaining(["PPL_OK", "PPL_LOW", "PPL_FLAGGED"]),
-      "people"
-    );
-    expect(getFlagsSummaryMapMock).toHaveBeenCalledWith(
-      expect.arrayContaining(["PPL_OK", "PPL_LOW", "PPL_FLAGGED"])
-    );
-
-    expect(questions).toHaveLength(1);
-    expect(questions[0].id).toBe("q-eligible");
-  });
-
-  // @req REQ-103
-  it("keeps a question whose entity carries a corpus-typical decimal score", async () => {
-    // `confidence_scores.score` is a [0,1] decimal (corpus median 0.68) while
-    // the gate's threshold is 60 on a 0-100 scale. Comparing the two raw
-    // rejected every question in the bank and served an empty session.
-    const rows = [
-      questionRow({
-        id: "q-typical",
-        entity_id: "PPL_OK",
-        source_ids: ["s-ok"],
-      }),
-    ];
-    fromMock.mockImplementation((table: string) =>
-      table === "sources"
-        ? buildSourcesQuery({
-            data: [{ id: "s-ok", tier: "referenced", verified_at: null }],
-            error: null,
-          })
-        : buildSessionQuery({ data: rows, error: null })
-    );
-    getConfidenceMapMock.mockResolvedValue(
-      new Map([
-        [
-          "PPL_OK",
-          {
-            entityId: "PPL_OK",
-            score: 0.68,
-            lastHumanAuditAt: null,
-            openFlagCount: 0,
-          },
-        ],
-      ])
-    );
-    getFlagsSummaryMapMock.mockResolvedValue(new Map());
-
-    const questions = await composeQuizSession({
-      segment: "children",
-      difficulty: 1,
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
 
-    expect(questions.map((question) => question.id)).toEqual(["q-typical"]);
+    expect(session.map((q) => q.entityId).sort()).toEqual(["PPL_A", "PPL_B"]);
   });
 
   // @req REQ-103
-  it("returns the shorter array without error when the whole draw fails the gate", async () => {
-    const rows = [questionRow({ id: "q-1", entity_id: "PPL_A" })];
-    fromMock.mockImplementation((table: string) =>
-      table === "sources"
-        ? buildSourcesQuery({ data: [], error: null })
-        : buildSessionQuery({ data: rows, error: null })
-    );
-    getConfidenceMapMock.mockResolvedValue(new Map());
-    getFlagsSummaryMapMock.mockResolvedValue(new Map());
+  it("opens on the most populous subject of the scope and ends on the least", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-c", "PPL_C"),
+      questionRow("q-a", "PPL_A"),
+      questionRow("q-b", "PPL_B"),
+    ]);
 
-    const questions = await composeQuizSession({
-      segment: "adults",
-      difficulty: 3,
-      count: 5,
+    const session = await composeQuizSession({
+      scope: { kind: "family", entityId: "FLG_NIGER_CONGO" },
+      count: 3,
     });
 
-    expect(questions).toEqual([]);
+    expect(session[0].entityId).toBe("PPL_A");
+    expect(session[session.length - 1].entityId).toBe("PPL_C");
   });
 
   // @req REQ-103
-  it("draws at most `count` questions from a larger eligible pool", async () => {
-    const rows = Array.from({ length: 5 }, (_, i) =>
-      questionRow({ id: `q-${i}`, entity_id: `PPL_${i}`, source_ids: ["s-ok"] })
-    );
-    fromMock.mockImplementation((table: string) =>
-      table === "sources"
-        ? buildSourcesQuery({
-            data: [
-              {
-                id: "s-ok",
-                tier: "official",
-                verified_at: "2026-01-01T00:00:00Z",
-              },
-            ],
-            error: null,
-          })
-        : buildSessionQuery({ data: rows, error: null })
-    );
+  it("drops a T3 round whose answer is the country the session is named after", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-giveaway", "PPL_A", {
+        template_id: "T3",
+        field_path: "content.demography.distributionByCountry",
+        options_fr: ["Ghana", "Togo", "Bénin", "Nigeria"],
+        correct_option: 0,
+      }),
+      questionRow("q-elsewhere", "PPL_B", {
+        template_id: "T3",
+        field_path: "content.demography.distributionByCountry",
+        options_fr: ["Ghana", "Togo", "Bénin", "Nigeria"],
+        correct_option: 1,
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(session.map((q) => q.id)).toEqual(["q-elsewhere"]);
+  });
+
+  // @req REQ-103
+  it("keeps that same T3 round when the session is not named after its answer", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-giveaway", "PPL_A", {
+        template_id: "T3",
+        field_path: "content.demography.distributionByCountry",
+        options_fr: ["Ghana", "Togo", "Bénin", "Nigeria"],
+        correct_option: 0,
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 8,
+    });
+
+    expect(session.map((q) => q.id)).toEqual(["q-giveaway"]);
+  });
+
+  // @req REQ-103
+  it("re-validates the draw against current confidence, dropping failures", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-a", "PPL_A"),
+      questionRow("q-b", "PPL_B"),
+    ]);
     getConfidenceMapMock.mockResolvedValue(
-      new Map(
-        rows.map((row) => [
-          row.entity_id,
-          {
-            entityId: row.entity_id,
-            score: 0.9,
-            lastHumanAuditAt: "2026-01-01T00:00:00Z",
-            openFlagCount: 0,
-          },
-        ])
-      )
+      new Map([
+        ["PPL_A", { score: 0.75, lastHumanAuditAt: null }],
+        ["PPL_B", { score: 0.1, lastHumanAuditAt: null }],
+      ])
     );
-    getFlagsSummaryMapMock.mockResolvedValue(new Map());
 
-    const questions = await composeQuizSession({
-      segment: "adults",
-      difficulty: 3,
-      count: 2,
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 8,
     });
 
-    expect(questions).toHaveLength(2);
-    const ids = new Set(rows.map((row) => row.id));
-    for (const question of questions) {
-      expect(ids.has(question.id)).toBe(true);
-    }
+    expect(session.map((q) => q.entityId)).toEqual(["PPL_A"]);
   });
 
   // @req REQ-103
-  it("returns an empty array without querying batched lookups when no active questions match", async () => {
-    fromMock.mockImplementation((table: string) =>
-      table === "sources"
-        ? buildSourcesQuery({ data: [], error: null })
-        : buildSessionQuery({ data: [], error: null })
+  it("drops a question whose entity has an open flag", async () => {
+    tableRows.set("quiz_questions", [questionRow("q-a", "PPL_A")]);
+    getFlagsSummaryMapMock.mockResolvedValue(
+      new Map([["PPL_A", { openCount: 1 }]])
     );
 
-    const questions = await composeQuizSession({
-      segment: "children",
-      difficulty: 1,
-      count: 5,
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 8,
     });
 
-    expect(questions).toEqual([]);
+    expect(session).toEqual([]);
+  });
+
+  // @req REQ-103
+  it("draws at most `count` questions from a larger pool", async () => {
+    tableRows.set(
+      "quiz_questions",
+      ["q1", "q2", "q3", "q4", "q5"].map((id) => questionRow(id, "PPL_A"))
+    );
+
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 3,
+    });
+
+    expect(session).toHaveLength(3);
+  });
+
+  // @req REQ-103
+  it("returns an empty array without consulting the batched lookups when the scope is empty", async () => {
+    tableRows.set("quiz_questions", []);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "ZZZ" },
+      count: 8,
+    });
+
+    expect(session).toEqual([]);
     expect(getConfidenceMapMock).not.toHaveBeenCalled();
-    expect(getFlagsSummaryMapMock).not.toHaveBeenCalled();
   });
 
   // @req REQ-103
   it("returns an empty array without throwing on a query error", async () => {
-    fromMock.mockImplementation((table: string) =>
-      table === "sources"
-        ? buildSourcesQuery({ data: [], error: null })
-        : buildSessionQuery({ data: null, error: { message: "boom" } })
-    );
+    tableErrors.set("quiz_questions", { message: "boom" });
 
-    const questions = await composeQuizSession({
-      segment: "adults",
-      difficulty: 3,
-      count: 5,
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 8,
     });
 
-    expect(questions).toEqual([]);
+    expect(session).toEqual([]);
   });
 });

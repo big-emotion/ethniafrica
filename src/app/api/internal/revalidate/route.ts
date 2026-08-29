@@ -1,19 +1,35 @@
 import { NextRequest } from "next/server";
 import { revalidateTag, revalidatePath } from "next/cache";
 import { logger } from "@/lib/api/logger";
+import { getLocalizedRoute } from "@/lib/routing";
 import { revalidatePayloadSchema } from "./schema";
 
-// Live cache config keyed by entity_type
-const LIVE_CACHE_CONFIG: Record<string, { tag: string; path: string }> = {
-  people: { tag: "afrik-peoples", path: "/fr/peuples" },
-  language_family: { tag: "afrik-language-families", path: "/fr/familles" },
-  language: { tag: "afrik-language-families", path: "/fr/familles" },
-  country: { tag: "afrik-countries", path: "/fr/pays" },
+// Live cache config keyed by entity_type.
+//
+// The path is composed, never spelled out. A revalidation of a path that no
+// longer exists is the quietest failure in the codebase: `revalidatePath`
+// returns nothing for a path it does not recognise, this route answers 200,
+// the webhook is satisfied, and the fiche serves an hour-old body. Lot 3
+// moved all three of these, and a literal would have kept revalidating the
+// address they used to have.
+const LIVE_CACHE_CONFIG: Record<
+  string,
+  { tag: string; page: Parameters<typeof getLocalizedRoute>[1] }
+> = {
+  people: { tag: "afrik-peoples", page: "peoples" },
+  language_family: { tag: "afrik-language-families", page: "families" },
+  language: { tag: "afrik-language-families", page: "families" },
+  country: { tag: "afrik-countries", page: "countries" },
 };
+
+// The site is French-only (`Language = "fr"`), so the one locale whose cache
+// there is to invalidate.
+const LANGUAGE = "fr";
 
 // Stable-reference endpoint tags (AR18: s-maxage=86400) — always invalidated
 const STABLE_REF_TAGS = ["afrik-language-families", "afrik-countries"] as const;
 
+// @req REQ-091
 export async function POST(request: NextRequest) {
   const expectedSecret = process.env.SUPABASE_WEBHOOK_SECRET;
   const authHeader = request.headers.get("authorization");
@@ -50,8 +66,9 @@ export async function POST(request: NextRequest) {
   if (liveConfig) {
     revalidateTag(liveConfig.tag, "max");
     invalidatedTags.push(liveConfig.tag);
-    revalidatePath(liveConfig.path);
-    invalidatedPaths.push(liveConfig.path);
+    const path = getLocalizedRoute(LANGUAGE, liveConfig.page);
+    revalidatePath(path);
+    invalidatedPaths.push(path);
   }
 
   // Always invalidate stable-reference endpoint tags (AR18)
@@ -76,6 +93,7 @@ export async function POST(request: NextRequest) {
   });
 }
 
+// @req REQ-091
 export function OPTIONS() {
   return new Response(null, {
     status: 204,

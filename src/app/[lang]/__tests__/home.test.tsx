@@ -136,7 +136,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );
@@ -203,7 +203,9 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     const chip = screen.getByTestId("hero-provenance");
     expect(chip).toHaveTextContent("Jouer");
     expect(chip).toHaveTextContent("La taille qu'on vous a cachée");
-    expect(chip.getAttribute("href")).toBe("/fr/jouer/mercator");
+    expect(chip.getAttribute("href")).toBe(
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
+    );
   });
 
   // The chip and the stage read --accent off the wrapper, so the wrapper is

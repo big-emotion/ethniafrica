@@ -313,7 +313,10 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       );
       // Still a link: without JavaScript the hub is where the reader sees
       // what is coming.
-      expect(jouer).toHaveAttribute("href", "/fr/jouer");
+      expect(jouer).toHaveAttribute(
+        "href",
+        getLocalizedRoute("fr", "jouerHub")
+      );
     } finally {
       if (quizFlag === undefined) {
         delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
@@ -394,12 +397,12 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   });
 
   // @req REQ-114
-  it("sends a module click to the module's own page, never to the axis slug", async () => {
+  it("sends a facet click to that facet of the hub, never to the axis slug", async () => {
     renderAxes();
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );

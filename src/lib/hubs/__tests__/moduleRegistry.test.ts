@@ -12,6 +12,7 @@ import {
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
@@ -191,7 +192,7 @@ describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", 
 
     expect(gazes).toBeDefined();
     expect(getModuleHref(gazes, "fr")).toBe(
-      "/fr/regards/colonisation-et-resistances"
+      getLocalizedRoute("fr", "colonization")
     );
   });
 });

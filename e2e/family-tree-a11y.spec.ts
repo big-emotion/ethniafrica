@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
+import { getFamilyRoute } from "@/lib/routing";
 
 // ETNI-463 (7.11) AC2 — axe-core zero serious/critical, blocking, on the
 // large-family sample route. FLG_BANTU is the largest family with real
@@ -10,7 +11,7 @@ import { test, expect } from "./support/fixtures";
 // continue-on-error in e2e.yml, so a violation here fails the required CI
 // check — unlike the Storybook-only axe pass in a11y.yml, which currently
 // tolerates "serious" impact.
-const LARGE_FAMILY_SAMPLE_URL = "/fr/familles/FLG_BANTU";
+const LARGE_FAMILY_SAMPLE_URL = getFamilyRoute("fr", "FLG_BANTU");
 
 // @req REQ-047
 test.describe("@nfr-a11y family classification tree — axe-core", () => {

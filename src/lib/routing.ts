@@ -16,29 +16,57 @@ export type PageType =
   | "comprendreHub"
   | "jouerHub";
 
-// Mapping des slugs par langue
+// Mapping des slugs par langue.
+//
+// A module's slug opens on the hub that leads to it, so the URL states the
+// same hierarchy the menu does: `/fr/explorer/pays` rather than `/fr/pays`
+// beside a `/fr/explorer` that claims to lead there. The three hubs were
+// published as the three entry points and then led to pages that sat above
+// them, which left every module addressable without ever naming the axis it
+// belonged to — and so no way for a reader, or a crawler, to tell an axis
+// from a heading.
+//
+// The prefix is written out rather than composed from `moduleRegistry`,
+// which imports this file: deriving it would put a cycle in the module
+// every page and the middleware load. `routingCharter.test.ts` closes the
+// gap instead, asserting each module's slug opens on its own axis hub — so
+// a module filed under one verb in the registry and another here fails the
+// build rather than shipping two URLs and no canonical.
+//
+// `about` and `compare` carry no prefix on purpose: no axis lists them, so
+// nesting them would invent an ancestor the menu never offers.
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
-    countries: "pays",
-    families: "familles",
-    peoples: "peuples",
-    search: "recherche",
-    doctrine: "doctrine",
+    countries: "explorer/pays",
+    families: "explorer/familles",
+    peoples: "explorer/peuples",
+    search: "explorer/recherche",
+    doctrine: "comprendre/doctrine",
     about: "about",
-    names: "noms",
+    names: "comprendre/noms",
     compare: "comparer",
-    migrations: "migrations",
-    quiz: "quiz",
+    migrations: "comprendre/migrations",
+    quiz: "jouer/quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
-    colonization: "regards/colonisation-et-resistances",
+    colonization: "comprendre/regards/colonisation-et-resistances",
     // REQ-114: one hub route per access mode. The slug is the verb the
     // reader arrived with, which is what keeps it from colliding with the
-    // resource pages (peuples/pays/familles) it groups.
+    // resource pages (peuples/pays/familles) it now holds.
     explorerHub: "explorer",
     comprendreHub: "comprendre",
     jouerHub: "jouer",
   },
 };
+
+/**
+ * Every page type, read off the slug table rather than written out.
+ *
+ * `SLUGS` is a `Record<Language, Record<PageType, string>>`, which the
+ * compiler refuses to leave incomplete, so a list derived from it cannot fall
+ * behind the union the way a hand-kept array would.
+ */
+// @req REQ-091
+export const PAGE_TYPES = Object.keys(SLUGS.fr) as PageType[];
 
 // @req REQ-091
 export const getLocalizedRoute = (
@@ -51,8 +79,13 @@ export const getLocalizedRoute = (
 
 /**
  * Matches on the longest slug first so a multi-segment slug (e.g.
- * `regards/colonisation-et-resistances`) isn't shadowed by a shorter one
- * sharing its first segment.
+ * `comprendre/regards/colonisation-et-resistances`) isn't shadowed by a
+ * shorter one sharing its first segment.
+ *
+ * Now that the modules nest, every one of them shares its first segment with
+ * its hub, so that sort is what separates `/fr/explorer/pays` from
+ * `/fr/explorer`. It needed no change to do it — the ordering was already
+ * the rule, only rarely exercised.
  */
 // @req REQ-091
 export const getPageFromRoute = (pathname: string): PageType | null => {
@@ -90,13 +123,6 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   return null;
 };
 
-// @req REQ-091
-export const getSlugFromRoute = (pathname: string): string | null => {
-  const parts = pathname.split("/").filter(Boolean);
-  if (parts.length < 2) return null;
-  return parts[1];
-};
-
 // ---------------------------------------------------------------------------
 // Entity routes — localized href to a single fiche (ContextTriad, ETNI-818)
 // ---------------------------------------------------------------------------
@@ -118,30 +144,67 @@ export const getPeopleRoute = (language: Language, id: string): string =>
 // ---------------------------------------------------------------------------
 
 /**
+ * A query string in either shape the app reads one from: the plain object a
+ * server component receives as `searchParams`, and the `URLSearchParams` a
+ * client component gets from `useSearchParams`.
+ *
+ * One type rather than a second resolver per entity, because the rule below
+ * has to have exactly one implementation. The families directory is the
+ * proof it does not survive being written twice: it read its own query
+ * client-side and forwarded the identifier raw for as long as it existed.
+ */
+// @req REQ-091
+export type DeepLinkQuery =
+  | Record<string, string | string[] | undefined>
+  | URLSearchParams;
+
+/**
+ * The single value the query holds under `key`, or null when it holds none or
+ * several — a repeated query has no single answer, so it gets none.
+ */
+const singleQueryValue = (query: DeepLinkQuery, key: string): string | null => {
+  if (query instanceof URLSearchParams) {
+    const values = query.getAll(key);
+    return values.length === 1 && values[0].length > 0 ? values[0] : null;
+  }
+  const value = query[key];
+  return typeof value === "string" && value.length > 0 ? value : null;
+};
+
+/**
+ * The one place a directory query becomes a fiche href, and so the one place
+ * the identifier is **encoded**. Left raw, a `?country=//host` turns the
+ * redirect into an open one, because a browser reads two leading slashes as
+ * the start of a host.
+ *
+ * The identifier is otherwise forwarded untouched. Validating its shape would
+ * turn a reader's typo into a silent fall-back to a list, where the fiche
+ * route answers it with an honest 404.
+ */
+const resolveDeepLink = (
+  query: DeepLinkQuery,
+  key: string,
+  toFicheRoute: (identifier: string) => string
+): string | null => {
+  const identifier = singleQueryValue(query, key);
+  return identifier === null
+    ? null
+    : toFicheRoute(encodeURIComponent(identifier));
+};
+
+/**
  * The fiche a `/fr/pays?country=XXX` link was reaching for, or null when the
  * query names no country.
  *
  * The country directory used to open a detail pane beside its list; the atlas
  * fiche replaced it, and that query shape survives only in links already sent.
- * Resolving it here rather than in the page keeps it a pure unit, and keeps the
- * one rule that matters testable: the identifier is **encoded**. Left raw, a
- * `?country=//host` turns the redirect into an open one, because a browser
- * reads two leading slashes as the start of a host.
- *
- * The identifier is otherwise forwarded untouched. Validating its shape would
- * turn a reader's typo into a silent fall-back to the list, where the fiche
- * route answers it with an honest 404.
  */
 // @req REQ-091
 export const resolveCountryDeepLink = (
   language: Language,
-  searchParams: Record<string, string | string[] | undefined>
-): string | null => {
-  const country = searchParams.country;
-  // A repeated query has no single answer, so it gets none.
-  if (typeof country !== "string" || country.length === 0) return null;
-  return getCountryRoute(language, encodeURIComponent(country));
-};
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "country", (id) => getCountryRoute(language, id));
 
 /**
  * The fiche a `/fr/peuples?people=PPL_XXX` link was reaching for, or null when
@@ -150,21 +213,30 @@ export const resolveCountryDeepLink = (
  * The peoples directory used to open a people in a pane beside its list — the
  * fiche on the left, the list on the right, no globe — which made a second
  * people surface, reached from the main navigation, while the atlas fiche sat
- * one URL away. The same rules as the country form: the identifier is
- * **encoded**, because `?people=//host` would otherwise make this an open
- * redirect, and an unrecognised identifier is forwarded rather than validated,
- * so the fiche route can answer it with an honest 404.
+ * one URL away.
  */
 // @req REQ-097
 export const resolvePeopleDeepLink = (
   language: Language,
-  searchParams: Record<string, string | string[] | undefined>
-): string | null => {
-  const people = searchParams.people;
-  // A repeated query has no single answer, so it gets none.
-  if (typeof people !== "string" || people.length === 0) return null;
-  return getPeopleRoute(language, encodeURIComponent(people));
-};
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "people", (id) => getPeopleRoute(language, id));
+
+/**
+ * The fiche a `/fr/familles?family=FLG_XXX` link was reaching for, or null
+ * when the query names no family.
+ *
+ * The families directory kept picking a family in place — a tabbed detail
+ * competing with the charter fiche one URL away — and it forwarded the
+ * bookmarked identifier itself, unencoded. Routing it through the shared
+ * resolver is what closes that open redirect.
+ */
+// @req REQ-091
+export const resolveFamilyDeepLink = (
+  language: Language,
+  query: DeepLinkQuery
+): string | null =>
+  resolveDeepLink(query, "family", (id) => getFamilyRoute(language, id));
 
 // ---------------------------------------------------------------------------
 // Nested entity sub-routes — segments below a single fiche (Epic 11, FR72)

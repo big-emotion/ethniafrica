@@ -1,4 +1,6 @@
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { backLinkLabel, deriveTrail } from "@/lib/navigation/deriveTrail";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
 import {
@@ -7,6 +9,8 @@ import {
   LanguagesSection,
   CultureGrid,
 } from "@/components/country";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
@@ -23,12 +27,23 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * removed: it models the fiche's opening argument, not its whole contents, and
  * "the mockup does not draw it" is no reason to drop shipped, sourced content —
  * least of all the culture section's FlagTarget, which a requirement asks for.
+ *
+ * Those four were hand-rolled `<section class="afh-parchment-section">` blocks
+ * with their own heading and note. They now go through `FicheSection` like
+ * every other chapter of every other fiche, which is what puts them under
+ * `data-fiche-section` — and therefore in reach of a contract test. One of them
+ * carried a provenance note naming a JSON path for as long as it did precisely
+ * because nothing could see it.
  */
 
 export interface CountryRecordViewProps {
   country: CountryDetail;
   hasSourceFlag?: boolean;
-  /** Set when the reader arrived from a people fiche, so the trail says so. */
+  /**
+   * Set when the reader arrived from a people fiche. Provenance, not
+   * ancestry: it buys a way back, never a crumb — the same country reached
+   * from the hub is the same page and gets the same trail.
+   */
   fromPeopleName?: string;
   fromPeopleId?: string;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
@@ -45,55 +60,50 @@ export function CountryRecordView({
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
-  const breadcrumbs = [
-    ...(fromPeopleId
-      ? [
-          { label: "Peuples", href: "/fr/peuples" },
-          {
-            label: fromPeopleName ?? fromPeopleId,
-            href: `/fr/peuples/${fromPeopleId}`,
-          },
-        ]
-      : [{ label: "Pays", href: "/fr/pays" }]),
-    { label: country.nameFr },
-  ];
-
   return (
     <div data-testid="country-record-view">
-      <AfrikBreadcrumbs items={breadcrumbs} />
-
       <CountryParchment
         data={data}
         country={country}
         hasSourceFlag={hasSourceFlag}
       >
-        {data.timeline.items.length > 0 && (
-          <section className="afh-parchment-section">
-            <h2>Noms à travers l&apos;histoire</h2>
-            <p className="afh-parchment-note">content.historicalNames</p>
+        <Section
+          title="Noms à travers l'histoire"
+          note="Rubrique « noms historiques » de la fiche"
+        >
+          {data.timeline.items.length > 0 ? (
             <HistoryTimeline data={data.timeline} />
-          </section>
-        )}
+          ) : (
+            <FieldProvenanceMarker state="missing" />
+          )}
+        </Section>
 
-        {data.historicalFacts && (
-          <section className="afh-parchment-section">
-            <h2>Faits historiques majeurs</h2>
-            <p className="afh-parchment-note">content.historicalFacts</p>
+        <Section
+          title="Faits historiques majeurs"
+          note="Rubrique « faits historiques » de la fiche"
+        >
+          {data.historicalFacts ? (
             <HistoricalFactsSection data={data.historicalFacts} />
-          </section>
-        )}
+          ) : (
+            <FieldProvenanceMarker state="missing" />
+          )}
+        </Section>
 
-        {data.languages.bubbles.length > 0 && (
-          <section className="afh-parchment-section">
-            <h2>Langues</h2>
-            <p className="afh-parchment-note">content.culture.mainLanguages</p>
+        <Section
+          title="Langues"
+          note="Rubrique « culture » de la fiche, « langues principales »"
+        >
+          {data.languages.bubbles.length > 0 ? (
             <LanguagesSection data={data.languages} />
-          </section>
-        )}
+          ) : (
+            <FieldProvenanceMarker state="missing" />
+          )}
+        </Section>
 
-        <section className="afh-parchment-section">
-          <h2>Culture et société</h2>
-          <p className="afh-parchment-note">content.culture</p>
+        <Section
+          title="Culture et société"
+          note="Rubrique « culture » de la fiche"
+        >
           <CultureGrid data={data.culture} />
           <div data-testid="section-flag-target-culture" className="mt-3">
             {turnstileSiteKey ? (
@@ -122,7 +132,7 @@ export function CountryRecordView({
               </button>
             )}
           </div>
-        </section>
+        </Section>
       </CountryParchment>
     </div>
   );

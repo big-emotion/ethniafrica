@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { translations } from "@/lib/translations";
-import type { QuizAudience } from "@/lib/quiz/segmentPolicy";
 
 const t = translations.fr.quiz;
 
@@ -16,10 +15,10 @@ export interface QuizScoreCardFicheLink {
 }
 
 export interface QuizScoreCardProps {
-  segment: QuizAudience;
+  /** The track's own name, resolved from the corpus — never read from the URL. */
+  scopeLabelFr: string;
   correct: number;
   total: number;
-  rung: number;
   fiches?: QuizScoreCardFicheLink[];
   playAgainHref: string;
   onShare: () => void;
@@ -35,10 +34,9 @@ export interface QuizScoreCardProps {
  */
 // @req REQ-103 FR70 UX-DR27 UX-DR34
 export const QuizScoreCard = ({
-  segment,
+  scopeLabelFr,
   correct,
   total,
-  rung,
   fiches = [],
   playAgainHref,
   onShare,
@@ -61,10 +59,7 @@ export const QuizScoreCard = ({
         {t.scoreCardExactAnswersSeparator}{" "}
         <span className="font-black text-afh-h3">{total}</span>
       </p>
-      <p className="text-afh-body text-afh-text-soft">{t.segments[segment]}</p>
-      <p className="text-afh-body text-afh-text-soft">
-        {t.scoreCardRungLabel} {rung} {t.scoreCardRungSuffix}
-      </p>
+      <p className="text-afh-body text-afh-text-soft">{scopeLabelFr}</p>
       {fiches.length > 0 ? (
         <ul className="flex w-full flex-col gap-2 text-left">
           {fiches.map((fiche) => (

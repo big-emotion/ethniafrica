@@ -21,7 +21,7 @@
  *   the dependency one-way. The slug is exposed via `data-doctrine-slug`
  *   so consumers and tests can verify pairing.
  *
- * The badge link always points to `/fr/doctrine#<status>`. The optional
+ * The badge link always points to `${getLocalizedRoute("fr", "doctrine")}#<status>`. The optional
  * `doctrineSlug` is a marker for adjacent UI, not a router target.
  */
 
@@ -33,6 +33,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
 import type { ClassificationStatus } from "@/types/afrik";
+import { getLocalizedRoute } from "@/lib/routing";
 
 interface ClassificationBadgeProps {
   status: ClassificationStatus | null | undefined;
@@ -86,6 +87,7 @@ const STATUS_CONFIG: Record<
   },
 };
 
+// @req REQ-023
 export function ClassificationBadge({
   status,
   className,
@@ -103,7 +105,7 @@ export function ClassificationBadge({
 
   return (
     <Link
-      href={`/fr/doctrine#${status}`}
+      href={`${getLocalizedRoute("fr", "doctrine")}#${status}`}
       title={labels.tooltip}
       aria-label={`${labels.label} — ${labels.tooltip}`}
       data-doctrine-slug={doctrineSlug}

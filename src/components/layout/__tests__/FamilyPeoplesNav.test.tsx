@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { FamilyPeoplesSection } from "../../family/FamilyPeoplesSection";
 import type { PeopleReference } from "@/types/afrik";
+import { getPeopleRoute } from "@/lib/routing";
 
 describe("FamilyPeoplesSection — navigation links to people fiches", () => {
   const peoples: PeopleReference[] = [
@@ -14,7 +15,7 @@ describe("FamilyPeoplesSection — navigation links to people fiches", () => {
     render(<FamilyPeoplesSection peoples={peoples} lang="fr" />);
     const link = screen.getByRole("link", { name: /Yoruba/i });
     expect(link).toBeTruthy();
-    expect(link.getAttribute("href")).toBe("/fr/peuples/PPL_YORUBA");
+    expect(link.getAttribute("href")).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
   });
 
   it("renders all peoples including those without ID", () => {
@@ -28,7 +29,7 @@ describe("FamilyPeoplesSection — navigation links to people fiches", () => {
     render(<FamilyPeoplesSection peoples={peoples} lang="fr" />);
     const links = screen.getAllByRole("link");
     const hrefs = links.map((l) => l.getAttribute("href"));
-    expect(hrefs).not.toContain("/fr/peuples/undefined");
+    expect(hrefs).not.toContain(getPeopleRoute("fr", "undefined"));
     expect(hrefs).toHaveLength(2);
   });
 

@@ -1,5 +1,32 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import type { PageType } from "@/lib/routing";
+
+/**
+ * How a trail names each page of the site.
+ *
+ * Typed against `PageType` rather than left open, because the trail's rule is
+ * that it never prints a segment it cannot name: a page type with no label
+ * here would be a page whose trail silently truncates to nothing. The
+ * compiler refusing an incomplete record is what turns that into a build
+ * error instead of a missing crumb.
+ */
+const TRAIL_PAGE_LABELS: Record<PageType, string> = {
+  countries: "Pays",
+  families: "Familles",
+  peoples: "Peuples",
+  search: "Recherche",
+  doctrine: "Doctrine",
+  about: "À propos",
+  names: "Noms",
+  compare: "Comparer",
+  migrations: "Migrations",
+  quiz: "Quiz",
+  colonization: "Colonisation & résistances",
+  explorerHub: "Explorer",
+  comprendreHub: "Comprendre",
+  jouerHub: "Jouer",
+};
 
 // @req REQ-014
 export const translations = {
@@ -336,7 +363,6 @@ export const translations = {
       pageTitle: "Colonisation & résistances",
       pageSubtitle:
         "Fragmentations, frontières héritées, noms imposés, déplacements et résistances documentés peuple par peuple.",
-      breadcrumbLabel: "Colonisation & résistances",
       fragmentation: {
         title: "Peuples fragmentés par les frontières coloniales",
       },
@@ -374,15 +400,23 @@ export const translations = {
       navLabel: "Quiz",
       pageTitle: "Choisis ton parcours",
       pageSubtitle:
-        "Un quiz adapté à ton profil, avec un nombre de questions honnête pour chaque parcours.",
+        "Un parcours par pays, un par famille linguistique, ou tout le continent — huit questions à chaque fois.",
       pickerLabel: "Choisir un parcours de quiz",
-      segments: {
-        children: "enfants",
-        teens: "ados",
-        adults: "adultes",
-        university: "étudiants",
-        professionals: "professionnels",
-      },
+      scopePickerLegend: "Composer la partie",
+      scopeCountryLabel: "Pays",
+      scopeFamilyLabel: "Famille linguistique",
+      scopeAnyCountry: "Tous les pays",
+      scopeAnyFamily: "Toutes les familles",
+      scopeSubmit: "Lancer ce parcours",
+      scopeHint:
+        "Un parcours sur un seul pays ou une seule famille pose des questions plus serrées : les mauvaises réponses y sont toutes plausibles.",
+      scopeTooThin: "pas encore assez de questions pour une partie",
+      scopeMixedHint:
+        "Huit questions tirées de tout le corpus, des peuples les plus connus aux moins documentés.",
+      scopeRandomHint: "Huit questions au hasard, sans ordre de difficulté.",
+      playingScopePrefix: "Parcours :",
+      leaveSession: "Quitter le quiz",
+      seeScoreCard: "Voir la carte de score",
       questionCountSingular: "1 question disponible",
       questionCountPlural: "questions disponibles",
       comingSoon:
@@ -398,18 +432,14 @@ export const translations = {
       seeScore: "Voir le score",
       loadingSession: "Chargement de la session…",
       emptySession:
-        "Aucune question disponible pour ce niveau — réessaie plus tard.",
+        "Aucune question disponible pour ce parcours — réessaie plus tard.",
       backToPicker: "Choisir un autre parcours",
       sessionError:
         "Impossible de charger cette session — réessaie dans un instant.",
       scoreHeading: "Score",
       scoreFractionSeparator: "bonnes réponses sur",
-      rungAdvanced: "Niveau suivant débloqué pour ce parcours.",
-      rungNotAdvanced: "Encore un effort pour débloquer le niveau suivant.",
       playAgain: "Rejouer",
       scoreCardExactAnswersSeparator: "réponses exactes sur",
-      scoreCardRungLabel: "Niveau",
-      scoreCardRungSuffix: "pour ce parcours",
       fichesEncounteredLabel: "Fiches rencontrées",
       shareScoreLabel: "Partager le score",
       copiedFeedback: "copié",
@@ -433,6 +463,7 @@ export const translations = {
           "Il arrive avec un nom, il repart avec une fiche : l'axe des objets du corpus — peuples, pays, langues, familles.",
         menuBlurb:
           "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus.",
+        hubEntryName: "Le hub d'exploration",
       },
       comprendre: {
         title: "Comprendre",
@@ -440,6 +471,7 @@ export const translations = {
           "Il arrive avec une question, il repart avec une explication : l'axe des relations — ce nom, cette origine, cette source.",
         menuBlurb:
           "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
+        hubEntryName: "Le hub de lecture",
       },
       jouer: {
         title: "Jouer",
@@ -447,13 +479,38 @@ export const translations = {
           "Il arrive sans rien, il repart avec un résultat : l'axe de la boucle de retour — comparer, répondre, se mesurer.",
         menuBlurb:
           "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements.",
+        hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
       menuLabel: "Trois entrées",
+      // Names the row of facet links under the hub entry. The facets are
+      // states of one page, so the menu says so rather than listing them
+      // beside the hub as if they were three more destinations — which is
+      // exactly how the three directories read before they were merged.
+      facetsLabel: "Ses facettes",
       // Stands where a module card would print its route. Saying the route
       // is missing is information about the corpus; printing a plausible
       // path that 404s would not be (charter §4).
       unresolvedRouteLabel: "route non résolue",
+    },
+    trail: {
+      pages: TRAIL_PAGE_LABELS,
+      /** The root every trail opens on. Not a PageType: `/fr` addresses no module. */
+      home: "Accueil",
+      /**
+       * Segments that sit below a fiche. A segment absent from this map is
+       * one the trail has no words for, and the trail stops rather than
+       * print the raw path.
+       */
+      segments: {
+        liens: "Liens",
+      } as Record<string, string>,
+      /**
+       * Prefixes the fiche a reader arrived from. Provenance, not ancestry:
+       * a country reached from a people fiche is not a child of that people,
+       * so it is offered as a way back and never as a crumb.
+       */
+      backTo: "Retour à",
     },
   },
 };

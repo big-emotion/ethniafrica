@@ -86,36 +86,61 @@ afterEach(() => {
 
 describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)", () => {
   // @req REQ-114
-  it("deploys exactly the modules it was handed, in the order they were given", () => {
+  it("leads with the axis hub, then the destinations it was handed", () => {
     renderPanel();
 
-    const entries = screen.getAllByTestId(/^axis-module-(?!link|unavailable)/);
+    const entries = screen.getAllByTestId(
+      /^axis-(hub|module)-(?!link|unavailable|facet)/
+    );
     expect(entries.map((entry) => entry.dataset.testid)).toEqual([
-      "axis-module-peuples",
+      "axis-hub-explorer",
       "axis-module-doctrine",
       "axis-module-noms",
     ]);
   });
 
-  // The whole point of opening in place: the reader's next click lands on
-  // the module itself, never on the axis slug it used to pass through.
+  /**
+   * `peuples` is not among the nodes above, and that is the change: it is a
+   * facet of the hub, so it is drawn inside the hub's node rather than beside
+   * it. Three satellites of equal weight is the shape the home had when the
+   * site had three directories.
+   */
   // @req REQ-114
-  it("sends a live module straight to its own page, never to the axis hub", () => {
+  it("draws a facet inside the hub rather than beside it", () => {
     renderPanel();
 
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+    expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
+    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );
+  });
+
+  // The whole point of opening in place: the reader's next click lands on
+  // the module itself, never on the axis slug it used to pass through.
+  // @req REQ-114
+  it("sends a live module straight to its own page, and the hub to the hub", () => {
+    renderPanel();
+
     expect(screen.getByTestId("axis-module-link-doctrine")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "doctrine")
     );
-    for (const link of screen.getAllByRole("link")) {
-      expect(link.getAttribute("href")).not.toBe(
-        getLocalizedRoute("fr", "explorerHub")
+
+    // The axis hub used to be the page a reader was made to pass through, and
+    // the panel exists so they no longer have to. It is now offered once, as
+    // itself — which is different from being the destination of everything.
+    expect(screen.getByTestId("axis-hub-link-explorer")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "explorerHub")
+    );
+    const toHub = screen
+      .getAllByRole("link")
+      .filter(
+        (link) =>
+          link.getAttribute("href") === getLocalizedRoute("fr", "explorerHub")
       );
-    }
+    expect(toHub).toHaveLength(1);
   });
 
   // @req REQ-106
@@ -148,7 +173,7 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
     expect(screen.getByTestId("axis-module-link-liens")).toHaveAttribute(
       "href",
-      "/fr/jouer/liens"
+      `${getLocalizedRoute("fr", "jouerHub")}/liens`
     );
     expect(
       screen.queryByTestId("axis-module-unavailable-liens")
@@ -205,9 +230,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
     expect(screen.queryByTestId("axis-graph-canvas")).not.toBeInTheDocument();
     expect(
-      screen.getAllByTestId(/^axis-module-(?!link|unavailable)/)
+      screen.getAllByTestId(/^axis-(hub|module)-(?!link|unavailable|facet)/)
     ).toHaveLength(3);
-    expect(screen.getByTestId("axis-module-link-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-facet-link-peuples")).toBeInTheDocument();
   });
 });
 
@@ -288,7 +313,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-appellations")).toHaveAttribute(
       "href",
-      "/fr/jouer/appellations"
+      `${getLocalizedRoute("fr", "jouerHub")}/appellations`
     );
     expect(
       screen.queryByTestId("axis-shelf-jeux-peuples")
@@ -312,7 +337,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-mercator")).toHaveAttribute(
       "href",
-      "/fr/jouer/mercator"
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
     );
     expect(
       screen.getByTestId("axis-module-link-pays-davant")
@@ -367,6 +392,6 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
     renderPanel();
 
     expect(screen.queryAllByTestId(/^axis-shelf-/)).toHaveLength(0);
-    expect(screen.getByTestId("axis-module-link-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-facet-link-peuples")).toBeInTheDocument();
   });
 });

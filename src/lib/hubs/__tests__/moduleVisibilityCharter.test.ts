@@ -16,11 +16,13 @@ import { describe, expect, it } from "vitest";
 
 import {
   ACCESS_MODES,
+  EDITORIAL_READINESS_STATES,
   MODULE_DEFINITIONS,
   getModulesForAccessMode,
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 
 const SOURCE_ROOT = join(process.cwd(), "src");
 
@@ -56,7 +58,7 @@ describe("module visibility charter", () => {
   it("gives every declared module a link", () => {
     for (const definition of MODULE_DEFINITIONS) {
       const href = definition.gameSlug
-        ? `/fr/jouer/${definition.gameSlug}`
+        ? `${getAxisHubRoute("fr", "jouer")}/${definition.gameSlug}`
         : getModuleHref(definition, "fr");
 
       expect(href, `${definition.id} resolves to no route`).toBeTruthy();
@@ -86,5 +88,70 @@ describe("module visibility charter", () => {
         ).toBeTruthy();
       }
     }
+  });
+
+  /**
+   * Editorial readiness is the third reason, and the charter (§3) admits it
+   * on one condition: it must be a fact about the corpus, not about the
+   * machine reading it. `availability` is measured, `editorialReadiness` is
+   * declared — and a declaration only holds if every entry makes one. Left
+   * optional, a module added without the field ships as mature by omission,
+   * which is the exact bug the field exists to prevent.
+   */
+  // @req REQ-114
+  it("makes every module declare its editorial readiness rather than inherit one", () => {
+    for (const definition of MODULE_DEFINITIONS) {
+      expect(
+        Object.prototype.hasOwnProperty.call(definition, "editorialReadiness"),
+        `${definition.id} declares no editorialReadiness`
+      ).toBe(true);
+      expect(EDITORIAL_READINESS_STATES).toContain(
+        definition.editorialReadiness
+      );
+    }
+  });
+
+  /**
+   * The distinction the charter insists on: a draft module is not hidden and
+   * not unbuilt. It is reachable — by URL, by the header, by a crawler — and
+   * simply not yet worth being invited into. That is what separates this
+   * field from `NEXT_PUBLIC_FEATURE_QUIZ`, which made a finished route answer
+   * `notFound()` on one machine and serve on another.
+   */
+  // @req REQ-114
+  it("leaves a module in preparation reachable, listed and routed", () => {
+    const drafts = MODULE_DEFINITIONS.filter(
+      (definition) => definition.editorialReadiness === "draft"
+    );
+
+    expect(
+      drafts.length,
+      "no module exercises the draft state"
+    ).toBeGreaterThan(0);
+
+    for (const definition of drafts) {
+      const href = definition.gameSlug
+        ? `${getAxisHubRoute("fr", "jouer")}/${definition.gameSlug}`
+        : getModuleHref(definition, "fr");
+      expect(href, `${definition.id} is draft and unroutable`).toBeTruthy();
+      expect(getNavModules(definition.accessMode)).toContainEqual(definition);
+    }
+  });
+
+  /**
+   * Readiness and availability answer different questions, so nothing may
+   * make one stand in for the other: a `static` module has no table to
+   * consult, and marking it draft is the only way to say it is not ready.
+   * Tying readiness to `availability === "data"` would have left
+   * `regards-colonisation` permanently mature.
+   */
+  // @req REQ-114
+  it("lets a static module be declared unready", () => {
+    const colonisation = MODULE_DEFINITIONS.find(
+      (definition) => definition.id === "regards-colonisation"
+    );
+
+    expect(colonisation?.availability).toBe("static");
+    expect(colonisation?.editorialReadiness).toBe("draft");
   });
 });

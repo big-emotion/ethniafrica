@@ -18,6 +18,7 @@ vi.mock("next/link", () => ({
 }));
 
 import NotFound from "@/app/not-found";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 /**
  * The root boundary is not a leftover: `notFound()` raised in
@@ -38,7 +39,7 @@ describe("NotFound (root boundary)", () => {
   // @req REQ-099
   it("teaches the fr fiche-URL pattern, never the rejected segment", () => {
     const { container } = render(<NotFound />);
-    expect(container.textContent).toContain("/fr/peuples/PPL_XXXXX");
+    expect(container.textContent).toContain(getPeopleRoute("fr", "PPL_XXXXX"));
   });
 
   // @req REQ-099
@@ -48,7 +49,7 @@ describe("NotFound (root boundary)", () => {
       screen
         .getByRole("link", { name: /rechercher une fiche/i })
         .getAttribute("href")
-    ).toBe("/fr/recherche");
+    ).toBe(getLocalizedRoute("fr", "search"));
   });
 
   // @req REQ-099

@@ -1,11 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { AfrikBreadcrumbs } from "../AfrikBreadcrumbs";
+import { getLocalizedRoute } from "@/lib/routing";
 
 describe("AfrikBreadcrumbs", () => {
   const items = [
-    { label: "Familles", href: "/fr/familles" },
-    { label: "FLG_BANTU", href: "/fr/familles?family=FLG_BANTU" },
+    { label: "Familles", href: getLocalizedRoute("fr", "families") },
+    {
+      label: "FLG_BANTU",
+      href: `${getLocalizedRoute("fr", "families")}?family=FLG_BANTU`,
+    },
     { label: "Kikongo", href: undefined },
     { label: "Bakongo", href: undefined },
   ];
@@ -21,7 +25,9 @@ describe("AfrikBreadcrumbs", () => {
   it("renders links for items with href", () => {
     render(<AfrikBreadcrumbs items={items} />);
     const famillesLink = screen.getByRole("link", { name: "Familles" });
-    expect(famillesLink.getAttribute("href")).toBe("/fr/familles");
+    expect(famillesLink.getAttribute("href")).toBe(
+      getLocalizedRoute("fr", "families")
+    );
   });
 
   it("renders plain text for items without href", () => {

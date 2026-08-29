@@ -27,6 +27,7 @@ import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHead
 import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import type { LanguageFamily } from "@/types/afrik";
+import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 const classificationTree = {
   family: { id: "FLG_BANTU", nameFr: "Bantou" },
@@ -83,9 +84,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("renders every non-empty transformed section through SSR", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: /Bantou/ })
-    ).toBeTruthy();
+    // The h1 moved to the title band above the globe (FamilyFicheTitle).
     expect(
       screen.getByText("Désignation linguistique contemporaine.")
     ).toBeTruthy();
@@ -108,12 +107,10 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
-    // The fiche title now carries its editorial second half — see
-    // FAMILY_TITLE_PREDICATE in FamilyParchment.tsx for why that phrase is a
-    // constant in the code and not a corpus field.
-    expect(
-      screen.getByRole("heading", { level: 1, name: /Sans contenu/ })
-    ).toBeTruthy();
+    // The h1 and its editorial second half moved to the title band above the
+    // globe (FamilyFicheTitle); FAMILY_TITLE_PREDICATE lives there now.
+    // What this test is about is what the view omits when the corpus is
+    // silent, which is asserted below.
     expect(
       screen.queryByRole("heading", { name: "Appellations et décolonisation" })
     ).toBeNull();
@@ -245,7 +242,10 @@ describe("LanguageFamilyDetailViewV2", () => {
     expect(screen.getByText("Bantu")).toHaveAttribute("lang", "sw");
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
-    ).toHaveAttribute("href", "/fr/doctrine/endonymes-vs-exonymes");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}/endonymes-vs-exonymes`
+    );
   });
 
   // @req REQ-047
@@ -267,11 +267,14 @@ describe("LanguageFamilyDetailViewV2", () => {
     );
     expect(screen.getByRole("link", { name: /contesté/i })).toHaveAttribute(
       "href",
-      "/fr/doctrine#contested"
+      `${getLocalizedRoute("fr", "doctrine")}#contested`
     );
     expect(
       screen.getAllByRole("link", { name: "Lire la doctrine" })[0]
-    ).toHaveAttribute("href", "/fr/doctrine/classifications-contestees");
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`
+    );
   });
 
   // @req REQ-050
@@ -283,7 +286,7 @@ describe("LanguageFamilyDetailViewV2", () => {
     // ranking names it in French rather than by its ISO code.
     expect(screen.getByRole("link", { name: /Congo/ })).toHaveAttribute(
       "href",
-      "/fr/pays/COD"
+      getCountryRoute("fr", "COD")
     );
   });
 

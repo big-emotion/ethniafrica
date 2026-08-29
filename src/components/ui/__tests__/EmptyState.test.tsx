@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // Mock next/link
 vi.mock("next/link", () => ({
@@ -61,7 +62,7 @@ describe("EmptyState", () => {
       <EmptyState
         message="Le chargement a échoué."
         variant="failure"
-        retryHref="/fr/migrations"
+        retryHref={getLocalizedRoute("fr", "migrations")}
         retryLabel="Réessayer"
       />
     );
@@ -70,7 +71,9 @@ describe("EmptyState", () => {
     );
     const retry = screen.getByTestId("retry");
     expect(retry).toBeTruthy();
-    expect(retry.getAttribute("href")).toBe("/fr/migrations");
+    expect(retry.getAttribute("href")).toBe(
+      getLocalizedRoute("fr", "migrations")
+    );
   });
 
   // @req REQ-107

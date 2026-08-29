@@ -9,6 +9,7 @@ import {
   hierarchyFixture,
   hierarchyFixtureWithoutUnlinkedGroup,
 } from "@/components/system/__fixtures__/hierarchy.fixture";
+import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
 const componentSourcePath = path.resolve(
   process.cwd(),
@@ -26,11 +27,14 @@ describe("HierarchyTextIndex", () => {
     const swahiliLink = screen.getByRole("link", { name: "Swahili" });
     expect(swahiliLink).toHaveAttribute(
       "href",
-      "/fr/familles/FLG_BANTU#lng-swa"
+      `${getFamilyRoute("fr", "FLG_BANTU")}#lng-swa`
     );
 
     const peopleLink = screen.getByRole("link", { name: "Comorien" });
-    expect(peopleLink).toHaveAttribute("href", "/fr/peuples/PPL_COMORIAN");
+    expect(peopleLink).toHaveAttribute(
+      "href",
+      getPeopleRoute("fr", "PPL_COMORIAN")
+    );
 
     const swahiliItem = swahiliLink.closest("li") as HTMLElement;
     const nestedList = within(swahiliItem).getByRole("list");
@@ -88,7 +92,10 @@ describe("HierarchyTextIndex", () => {
     ).toBeInTheDocument();
 
     const orphanLink = screen.getByRole("link", { name: "Peuple orphelin A" });
-    expect(orphanLink).toHaveAttribute("href", "/fr/peuples/PPL_ORPHAN_A");
+    expect(orphanLink).toHaveAttribute(
+      "href",
+      getPeopleRoute("fr", "PPL_ORPHAN_A")
+    );
     const orphanItem = orphanLink.closest("li") as HTMLElement;
     expect(within(orphanItem).getByText("1 peuple")).toBeInTheDocument();
     expect(screen.getByText("Endonyme A")).toHaveAttribute("lang", "und");

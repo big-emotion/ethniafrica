@@ -20,6 +20,12 @@ export interface AutonymExonymHeadingProps {
   autonymIso639_3?: string;
   /** Secondary name shown beside the autonym (hero/inline/card) or below it when different (compact). */
   exonym?: string;
+  /**
+   * What the fiche says the subject *is*, joined to the name by a comma —
+   * "Krou, une aire à reconstruire". Distinct from `exonym`, which is another
+   * name for the same subject and is joined by a space.
+   */
+  predicate?: string;
   /** Alternate names, shown with a "+N autres" expand/collapse toggle (hero/inline/card variants). */
   alternateNames?: string[];
   /** IPA pronunciation shown next to the autonym (hero/inline/card variants). */
@@ -81,6 +87,7 @@ export function AutonymExonymHeading({
   autonym,
   autonymIso639_3,
   exonym,
+  predicate,
   alternateNames,
   ipa,
   nameMain,
@@ -251,7 +258,20 @@ export function AutonymExonymHeading({
             </span>
           </>
         )}
-        {exonym && <span className={exonymClasses}>{exonym}</span>}
+        {/* Two names need a space between them. Without it the heading's own
+            textContent reads "YorùbáYoruba" — the styling separates them for
+            an eye, and for nothing else: a screen reader announces one word,
+            and so does every assertion made on text. */}
+        {exonym && (
+          <>
+            {" "}
+            <span className={exonymClasses}>{exonym}</span>
+          </>
+        )}
+        {/* A predicate is not a name. "!Kung" and "un peuple sans bord" are a
+            subject and what the fiche says about it, so they are joined the
+            way the family fiche joins them — by a comma, not by whitespace. */}
+        {predicate && <span className={exonymClasses}>, {predicate}</span>}
       </Heading>
       {hasAlternateNames && (
         <div data-alternate-names>

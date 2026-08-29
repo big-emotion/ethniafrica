@@ -10,6 +10,7 @@ import type {
 } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 
 // The globe primitive is the one heavy dependency of the engine; the island
 // only has to prove it routes to it, never that WebGL came up.
@@ -40,7 +41,7 @@ function binaryRound(subjectId: string): BinaryRound {
       fieldPath: "content.appellations.originOfExonyms",
       sources: [],
       confidence: null,
-      ficheHref: "/fr/peuples/PPL_TEST",
+      ficheHref: getPeopleRoute("fr", "PPL_TEST"),
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex: 0,
@@ -57,7 +58,7 @@ const GLOBE_ROUND: GlobeTapRound = {
     fieldPath: "etymology",
     sources: [],
     confidence: null,
-    ficheHref: "/fr/pays/GHA",
+    ficheHref: getCountryRoute("fr", "GHA"),
   },
   choices: ["GHA", "BEN"],
   correctCountryId: "GHA",

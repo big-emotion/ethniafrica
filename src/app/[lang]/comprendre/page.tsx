@@ -5,6 +5,7 @@ import { ComprendreQuestionSpine } from "@/components/hubs/ComprendreQuestionSpi
 import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getTranslation } from "@/lib/translations";
 import { OG_TITLE } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const strings = getTranslation("fr").hubs.comprendre;
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title: `${strings.title} — ${OG_TITLE}`,
   description: strings.blurb,
   alternates: {
-    canonical: "/fr/comprendre",
+    canonical: getLocalizedRoute("fr", "comprendreHub"),
   },
 };
 
@@ -24,7 +25,9 @@ export default async function ComprendreHubPage() {
   return (
     <PageLayout language="fr">
       <AccessModeHub language="fr" mode="comprendre" modules={modules}>
-        <ComprendreQuestionSpine language="fr" />
+        {/* Same resolved modules the rows read: the spine used to link its
+            three stops unconditionally and contradict them (charter §3). */}
+        <ComprendreQuestionSpine language="fr" modules={modules} />
       </AccessModeHub>
     </PageLayout>
   );

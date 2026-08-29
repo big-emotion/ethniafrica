@@ -1,4 +1,5 @@
 import { test, expect } from "./support/fixtures";
+import { getCountryRoute } from "@/lib/routing";
 
 // Epic 19 LOT 8 — the reading journey the country fiche now supports:
 // arrive on a fiche, operate the globe, and move to another country.
@@ -7,7 +8,7 @@ import { test, expect } from "./support/fixtures";
 // admin-0 outline, so its fiche renders the "contour non disponible"
 // placeholder and never mounts a globe. A journey test anchored there would
 // pass without any of this having shipped.
-const COUNTRY_FICHE_URL = "/fr/pays/NGA";
+const COUNTRY_FICHE_URL = getCountryRoute("fr", "NGA");
 
 /** Above the panel breakpoint, where the toolbar and legend are shown. */
 const DESKTOP = { width: 1200, height: 900 };
@@ -91,7 +92,7 @@ test.describe("@phase-1 country fiche — moving to another country", () => {
     page,
   }) => {
     await page.setViewportSize(DESKTOP);
-    await page.goto("/fr/pays/COM");
+    await page.goto(getCountryRoute("fr", "COM"));
 
     await expect(page.getByText(/Contour non disponible/)).toBeVisible();
   });

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { PeopleCountriesData } from "@/lib/peopleDataTransformer";
+import { getCountryRoute } from "@/lib/routing";
 
 interface PeopleCountriesSectionProps {
   data: PeopleCountriesData;
@@ -17,7 +18,7 @@ export function PeopleCountriesSection({
   if (data.distributions.length === 0) return null;
 
   function countryHref(countryId: string): string {
-    const base = `/fr/pays/${countryId}`;
+    const base = getCountryRoute("fr", countryId);
     if (!fromPeopleId) return base;
     const params = new URLSearchParams({ fromPeopleId });
     if (fromPeopleName) params.set("fromPeopleName", fromPeopleName);
@@ -46,45 +47,59 @@ export function PeopleCountriesSection({
       {/* Distribution rows */}
       <div className="space-y-[8px]">
         {data.distributions.map((row, i) => (
-          <div key={i} className="flex items-center gap-[10px]">
-            <Link
-              href={countryHref(row.country)}
-              className="text-afh-caption font-bold font-mono w-[40px] shrink-0 hover:underline"
-              style={{ color: "var(--country-terracotta)" }}
-            >
-              {row.country}
-            </Link>
-
-            {/* Progress bar */}
-            <div
-              className="flex-1 h-[6px] rounded-full overflow-hidden"
-              style={{ background: "var(--country-border)" }}
-            >
-              <div
-                className="h-full rounded-full"
-                style={{
-                  width: `${row.percentage ?? 0}%`,
-                  background: "var(--country-terracotta)",
-                }}
-              />
-            </div>
-
-            <div className="flex items-center gap-[6px] shrink-0">
-              <span
-                className="text-afh-caption font-semibold"
-                style={{ color: "var(--country-text)" }}
+          <div key={i} className="flex flex-col gap-[3px]">
+            <div className="flex items-center gap-[10px]">
+              <Link
+                href={countryHref(row.country)}
+                className="text-afh-caption font-bold font-mono w-[40px] shrink-0 hover:underline"
+                style={{ color: "var(--country-terracotta)" }}
               >
-                {row.percentage != null ? `${row.percentage}%` : "—"}
-              </span>
-              {row.populationFormatted && (
+                {row.country}
+              </Link>
+
+              {/* Progress bar */}
+              <div
+                className="flex-1 h-[6px] rounded-full overflow-hidden"
+                style={{ background: "var(--country-border)" }}
+              >
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${row.percentage ?? 0}%`,
+                    background: "var(--country-terracotta)",
+                  }}
+                />
+              </div>
+
+              <div className="flex items-center gap-[6px] shrink-0">
                 <span
-                  className="text-afh-caption"
-                  style={{ color: "var(--country-text-soft)" }}
+                  className="text-afh-caption font-semibold"
+                  style={{ color: "var(--country-text)" }}
                 >
-                  {row.populationFormatted}
+                  {row.percentage != null ? `${row.percentage}%` : "—"}
                 </span>
-              )}
+                {row.populationFormatted && (
+                  <span
+                    className="text-afh-caption"
+                    style={{ color: "var(--country-text-soft)" }}
+                  >
+                    {row.populationFormatted}
+                  </span>
+                )}
+              </div>
             </div>
+
+            {/* Where inside the country. A share says how many; this says
+                where — and 1063 of them across 486 fiches were written before
+                the strict model declared the field. */}
+            {row.note && (
+              <p
+                className="text-afh-caption pl-[50px] leading-snug"
+                style={{ color: "var(--country-text-soft)" }}
+              >
+                {row.note}
+              </p>
+            )}
           </div>
         ))}
       </div>

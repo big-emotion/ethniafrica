@@ -5,6 +5,7 @@ import { JouerFaceOff } from "@/components/hubs/JouerFaceOff";
 import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getTranslation } from "@/lib/translations";
 import { OG_TITLE } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const strings = getTranslation("fr").hubs.jouer;
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title: `${strings.title} — ${OG_TITLE}`,
   description: strings.blurb,
   alternates: {
-    canonical: "/fr/jouer",
+    canonical: getLocalizedRoute("fr", "jouerHub"),
   },
 };
 

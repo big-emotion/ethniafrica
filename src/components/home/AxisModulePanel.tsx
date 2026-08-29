@@ -21,31 +21,28 @@ import {
   type ModuleGroupId,
 } from "@/lib/hubs/moduleRegistry";
 import { getGroupedModules, type ModuleShelf } from "@/lib/hubs/moduleGroups";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getFacetByPage } from "@/lib/hubs/facets";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { AxisGraphLayer } from "@/lib/home/axisGraphLayer";
 import {
   BASE_TILT_X,
   LAYOUT_BY_AXIS,
   MODULE_CARD_HEIGHT,
+  MODULE_CARD_LINE_HEIGHT,
+  MODULE_CARD_PADDING_Y,
   MODULE_CARD_WIDTH,
+  SCENE_MIN_WIDTH,
   entranceProgress,
-  layoutNodes,
   nearestEdge,
   panelHeightFor,
   projectNode,
+  sceneNodes,
   type PanelBox,
   type ProjectedNode,
   type Tilt,
 } from "@/lib/home/axisGraphGeometry";
 import type { Language } from "@/types/shared";
-
-/**
- * Below this the panel stops being a scene and becomes a list: the modules
- * stack as full-width rows, with no canvas and no transforms. It is the
- * same 860px the three axis cards already fold at, and it keeps a second
- * WebGL context off every phone rather than only the smallest ones.
- */
-const GRAPH_MIN_WIDTH = 860;
 
 /** How far the pointer can swing the scene, in radians. */
 const PARALLAX_X = 0.16;
@@ -58,11 +55,17 @@ const TILT_SETTLED = 0.0006;
 /** Pointer slack, in pixels, for lighting up an edge. */
 const EDGE_TOLERANCE = 12;
 
+/**
+ * Below SCENE_MIN_WIDTH the panel stops being a scene and becomes a list:
+ * the modules stack as full-width rows, with no canvas and no transforms.
+ * It is the width the three axis cards fold at too, and it keeps a second
+ * WebGL context off every phone rather than only the smallest ones.
+ */
 function useGraphEnabled(reducedMotion: boolean): boolean {
   const [wideEnough, setWideEnough] = useState(false);
 
   useEffect(() => {
-    const mql = window.matchMedia(`(min-width: ${GRAPH_MIN_WIDTH}px)`);
+    const mql = window.matchMedia(`(min-width: ${SCENE_MIN_WIDTH}px)`);
     const onChange = () => setWideEnough(mql.matches);
 
     onChange();
@@ -79,7 +82,17 @@ function useGraphEnabled(reducedMotion: boolean): boolean {
  */
 type PanelNode =
   | { kind: "module"; id: string; module: HubModule }
-  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf };
+  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf }
+  /**
+   * The axis's own hub, and the facets it holds.
+   *
+   * Not a module: no entry in the registry addresses `/fr/explorer`, and the
+   * three facets that used to sit here as siblings are states of that one page
+   * rather than three destinations beside it. Drawing them as three satellites
+   * of equal weight is the diagram saying the site still has three
+   * directories.
+   */
+  | { kind: "hub"; id: string; facets: HubModule[] };
 
 export interface AxisModulePanelProps {
   language: Language;
@@ -150,12 +163,26 @@ export function AxisModulePanel({
           : { kind: "shelf" as const, id: shelf.group.id, shelf }
       );
     }
-    return modules.map((entry) => ({
-      kind: "module",
-      id: entry.id,
-      module: entry,
-    }));
-  }, [modules, open, shelves]);
+    // An axis with no shelves leads with its own hub, then the destinations
+    // that are not facets of it. Before this the diagram drew peoples, pays
+    // and familles as three satellites of equal weight, which is the shape the
+    // site had when they were three directories — and the hub they are now
+    // facets of appeared nowhere at all.
+    const facets = modules.filter(
+      (entry) => entry.page && getFacetByPage(entry.page)
+    );
+
+    return [
+      { kind: "hub" as const, id: mode, facets },
+      ...modules
+        .filter((entry) => !facets.includes(entry))
+        .map((entry) => ({
+          kind: "module" as const,
+          id: entry.id,
+          module: entry,
+        })),
+    ];
+  }, [mode, modules, open, shelves]);
 
   const panelRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<Array<HTMLLIElement | null>>([]);
@@ -169,15 +196,24 @@ export function AxisModulePanel({
   const frameRef = useRef<number | null>(null);
   const requestFrameRef = useRef<(() => void) | null>(null);
 
+  /**
+   * The panel's own width, not the window's. Where two module cards land in
+   * the same column depends on it, so the geometry has to be told — sizing
+   * a scene against the widest panel the grid allows is how Comprendre's
+   * two middle cards measured clear while overlapping by 31px. Zero until
+   * the first measurement, which the geometry reads as the widest panel.
+   */
+  const [panelWidth, setPanelWidth] = useState(0);
+
   const nodes = useMemo(
     // openShelf is in the deps so two levels of equal size still hand the
     // render loop a fresh array, which is what replays their arrival.
 
-    () => layoutNodes(layout, panelNodes.length),
-    [layout, panelNodes.length, openShelf]
+    () => sceneNodes(layout, panelNodes.length, panelWidth),
+    [layout, panelNodes.length, openShelf, panelWidth]
   );
 
-  const sceneHeight = panelHeightFor(layout, panelNodes.length);
+  const sceneHeight = panelHeightFor(layout, panelNodes.length, panelWidth);
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -222,6 +258,10 @@ export function AxisModulePanel({
         width: panel.clientWidth,
         height: panel.clientHeight,
       };
+      // The render loop reads the box off the ref every frame; the layout
+      // needs it in React, because a narrower panel is a different scene
+      // and not only a smaller one.
+      setPanelWidth(panel.clientWidth);
     };
 
     const drawFrame = () => {
@@ -341,6 +381,54 @@ export function AxisModulePanel({
    * A module's own face. It is the leaf of both levels — a game reached
    * through its shelf, and a lone game promoted in place of one.
    */
+  /**
+   * The hub node: one link to the axis's own page, and its facets beneath.
+   *
+   * The facets are links too — a reader who already knows they want peoples
+   * should not have to land on the hub and pick again — but they are drawn as
+   * what they are, states of the page named above them.
+   */
+  const renderHubFace = (
+    facets: HubModule[],
+    handlers: {
+      onMouseEnter: () => void;
+      onFocus: () => void;
+      onBlur: () => void;
+    }
+  ) => (
+    <div className="axis-module-face axis-hub-face">
+      <Link
+        href={getAxisHubRoute(language, mode)}
+        data-testid={`axis-hub-link-${mode}`}
+        className="axis-hub-main min-h-11"
+        {...handlers}
+      >
+        {t.hubs[mode].hubEntryName}
+      </Link>
+
+      {facets.length > 0 ? (
+        <span className="axis-hub-facets">
+          {facets.map((entry) => {
+            const href = getModuleHref(entry, language);
+            const facet = entry.page ? getFacetByPage(entry.page) : null;
+            if (!href || !facet) return null;
+
+            return (
+              <Link
+                key={entry.id}
+                href={href}
+                data-testid={`axis-facet-link-${entry.id}`}
+                className="axis-hub-facet"
+              >
+                {facet.label}
+              </Link>
+            );
+          })}
+        </span>
+      ) : null}
+    </div>
+  );
+
   const renderModuleFace = (
     entry: HubModule,
     handlers: {
@@ -421,7 +509,9 @@ export function AxisModulePanel({
               data-testid={
                 node.kind === "shelf"
                   ? `axis-shelf-${node.id}`
-                  : `axis-module-${node.id}`
+                  : node.kind === "hub"
+                    ? `axis-hub-${node.id}`
+                    : `axis-module-${node.id}`
               }
               data-active={activeIndex === index ? "true" : undefined}
               className="axis-module"
@@ -447,6 +537,8 @@ export function AxisModulePanel({
                     &rsaquo;
                   </span>
                 </button>
+              ) : node.kind === "hub" ? (
+                renderHubFace(node.facets, shared)
               ) : (
                 renderModuleFace(node.module, shared)
               )}
@@ -512,17 +604,67 @@ export function AxisModulePanel({
           width: ${MODULE_CARD_WIDTH}px;
           will-change: transform, opacity;
         }
+        /* The scene reserves exactly this much room per node, so a card in
+           it must not quietly claim more. The numbers the reservation is
+           computed from — line height, number of lines, vertical padding —
+           come from the same module, so the box and the card cannot
+           describe different cards; « Regards : colonisation et
+           résistances » takes all three lines, and two was what the card
+           used to be given. A column reserves nothing: those rows are
+           ordinary flow, and a phone should not spend 91px on a label that
+           fits on one line. */
+        .axis-panel:not([data-layout="column"]) .axis-module-face {
+          min-height: ${MODULE_CARD_HEIGHT}px;
+        }
+
+        /* The hub node holds a link and a row of facets, so it stacks where a
+           module card is a single centred label. It keeps the card's frame —
+           it is one node on the same scene — and only changes what is inside
+           it. */
+        .axis-hub-face {
+          flex-direction: column;
+          justify-content: center;
+          gap: 8px;
+        }
+        .axis-hub-main {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: inherit;
+          text-decoration: none;
+        }
+        .axis-hub-facets {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 6px;
+        }
+        .axis-hub-facet {
+          display: inline-flex;
+          align-items: center;
+          min-height: 32px;
+          padding: 2px 10px;
+          border: 1px solid var(--afh-border);
+          border-radius: 999px;
+          background: var(--afh-bg);
+          color: var(--afh-text);
+          font-size: var(--afh-caption);
+          font-weight: 500;
+          text-decoration: none;
+        }
+        .axis-hub-facet:hover {
+          border-color: var(--accent);
+          color: var(--accent-ink);
+        }
 
         .axis-module-face {
           display: flex;
-          /* The geometry reserves exactly this much room per card, so a
-             label wrapping to two lines must not quietly claim more. */
-          min-height: ${MODULE_CARD_HEIGHT}px;
+          line-height: ${MODULE_CARD_LINE_HEIGHT};
           align-items: center;
           justify-content: center;
           gap: 10px;
           width: 100%;
-          padding: 14px 18px;
+          padding: ${MODULE_CARD_PADDING_Y}px 18px;
           border: 1px solid var(--accent);
           border-radius: var(--afh-radius-md);
           background: var(--afh-surface);

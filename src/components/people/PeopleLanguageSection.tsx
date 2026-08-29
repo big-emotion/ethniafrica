@@ -2,12 +2,14 @@ import Link from "next/link";
 import type { PeopleLanguageData } from "@/lib/peopleDataTransformer";
 import { ProseWithChip } from "./ProseWithChip";
 import type { LanguageChips } from "./ProseWithChip";
+import { getFamilyRoute } from "@/lib/routing";
 
 interface PeopleLanguageSectionProps {
   data: PeopleLanguageData;
   chips?: LanguageChips;
 }
 
+// @req REQ-091
 export function PeopleLanguageSection({
   data,
   chips,
@@ -27,7 +29,7 @@ export function PeopleLanguageSection({
         <div>
           <p className="people-section-label">Famille linguistique</p>
           <Link
-            href={`/fr/familles/${data.languageFamilyId}`}
+            href={getFamilyRoute("fr", data.languageFamilyId)}
             className="people-section-body font-semibold hover:underline"
             style={{ color: "var(--country-terracotta)" }}
           >

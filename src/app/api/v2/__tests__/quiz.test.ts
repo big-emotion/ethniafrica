@@ -1,20 +1,20 @@
 /**
- * Route-level tests for GET /api/v2/quiz/segments and
+ * Route-level tests for GET /api/v2/quiz/scopes and
  * GET /api/v2/quiz/session (Epic 10, Story 10.7, ETNI-496).
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
 import {
-  GET as segmentsGET,
-  OPTIONS as segmentsOPTIONS,
-} from "../quiz/segments/route";
+  GET as scopesGET,
+  OPTIONS as scopesOPTIONS,
+} from "../quiz/scopes/route";
 import {
   GET as sessionGET,
   OPTIONS as sessionOPTIONS,
 } from "../quiz/session/route";
 
 vi.mock("@/api/v2/handlers/quiz", () => ({
-  getQuizSegmentsHandler: vi.fn(),
+  getQuizScopesHandler: vi.fn(),
   composeQuizSessionHandler: vi.fn(),
 }));
 
@@ -32,54 +32,68 @@ vi.mock("@/lib/api/rate-limit", () => ({
 }));
 
 import {
-  getQuizSegmentsHandler,
+  getQuizScopesHandler,
   composeQuizSessionHandler,
 } from "@/api/v2/handlers/quiz";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 
-const segmentsEnvelope = {
+const scopesEnvelope = {
   data: {
-    segments: [
+    countries: [
       {
-        id: "children",
-        labelFr: "enfants",
-        rungs: [{ difficulty: 1, activeQuestionCount: 42 }],
+        id: "GHA",
+        labelFr: "Ghana",
+        activeQuestionCount: 120,
+        playable: true,
       },
     ],
+    families: [],
+    mixed: {
+      id: "mixed",
+      labelFr: "Tout le continent",
+      activeQuestionCount: 2504,
+      playable: true,
+    },
+    random: {
+      id: "random",
+      labelFr: "Au hasard",
+      activeQuestionCount: 2504,
+      playable: true,
+    },
   },
   meta: { license: "CC-BY-SA-4.0", attribution: "Africa History" },
   errors: [],
 };
 
-describe("GET /api/v2/quiz/segments (route)", () => {
+describe("GET /api/v2/quiz/scopes (route)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     (applyRateLimit as ReturnType<typeof vi.fn>).mockResolvedValue(null);
   });
 
-  const segmentsRequest = () =>
-    new NextRequest("http://localhost/api/v2/quiz/segments");
+  const scopesRequest = () =>
+    new NextRequest("http://localhost/api/v2/quiz/scopes");
 
   // @req REQ-103
-  it("happy path — 200 with the segments envelope", async () => {
-    (getQuizSegmentsHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
-      segmentsEnvelope
+  it("happy path — 200 with the scopes envelope", async () => {
+    (getQuizScopesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      scopesEnvelope
     );
 
-    const res = await segmentsGET(segmentsRequest());
+    const res = await scopesGET(scopesRequest());
     const body = await res.json();
 
     expect(res.status).toBe(200);
-    expect(body).toEqual(segmentsEnvelope);
+    expect(body).toEqual(scopesEnvelope);
   });
 
   // @req REQ-103
   it("sets Cache-Control: s-maxage=3600", async () => {
-    (getQuizSegmentsHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
-      segmentsEnvelope
+    (getQuizScopesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      scopesEnvelope
     );
 
-    const res = await segmentsGET(segmentsRequest());
+    const res = await scopesGET(scopesRequest());
 
     expect(res.headers.get("Cache-Control")).toBe("s-maxage=3600");
   });
@@ -92,19 +106,19 @@ describe("GET /api/v2/quiz/segments (route)", () => {
     );
     (applyRateLimit as ReturnType<typeof vi.fn>).mockResolvedValue(rateLimited);
 
-    const res = await segmentsGET(segmentsRequest());
+    const res = await scopesGET(scopesRequest());
 
     expect(res.status).toBe(429);
-    expect(getQuizSegmentsHandler).not.toHaveBeenCalled();
+    expect(getQuizScopesHandler).not.toHaveBeenCalled();
   });
 
   // @req REQ-103
   it("500 on handler error", async () => {
-    (getQuizSegmentsHandler as ReturnType<typeof vi.fn>).mockRejectedValue(
+    (getQuizScopesHandler as ReturnType<typeof vi.fn>).mockRejectedValue(
       new Error("DB error")
     );
 
-    const res = await segmentsGET(segmentsRequest());
+    const res = await scopesGET(scopesRequest());
     const body = await res.json();
 
     expect(res.status).toBe(500);
@@ -113,15 +127,14 @@ describe("GET /api/v2/quiz/segments (route)", () => {
 
   // @req REQ-103
   it("OPTIONS — 204", async () => {
-    const res = segmentsOPTIONS();
+    const res = scopesOPTIONS();
     expect(res.status).toBe(204);
   });
 });
 
 const sessionEnvelope = {
   data: {
-    segment: "adults",
-    difficulty: 3,
+    scope: { kind: "country", entityId: "GHA", labelFr: "Ghana" },
     questions: [
       {
         id: "q-1",
@@ -160,7 +173,7 @@ describe("GET /api/v2/quiz/session (route)", () => {
     });
 
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=adults&difficulty=3&count=8"
+      "http://localhost/api/v2/quiz/session?pays=GHA&count=8"
     );
     const res = await sessionGET(req);
     const body = await res.json();
@@ -168,8 +181,9 @@ describe("GET /api/v2/quiz/session (route)", () => {
     expect(res.status).toBe(200);
     expect(body).toEqual(sessionEnvelope);
     expect(composeQuizSessionHandler).toHaveBeenCalledWith({
-      segment: "adults",
-      difficulty: 3,
+      pays: "GHA",
+      famille: undefined,
+      mode: undefined,
       count: 8,
     });
   });
@@ -182,7 +196,7 @@ describe("GET /api/v2/quiz/session (route)", () => {
     });
 
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=adults&difficulty=3"
+      "http://localhost/api/v2/quiz/session?pays=GHA"
     );
     const res = await sessionGET(req);
 
@@ -190,23 +204,23 @@ describe("GET /api/v2/quiz/session (route)", () => {
   });
 
   // @req REQ-103
-  it("invalid segment — 400 VALIDATION_ERROR", async () => {
+  it("malformed country code — 400 VALIDATION_ERROR", async () => {
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=babies&difficulty=1"
+      "http://localhost/api/v2/quiz/session?pays=GHANA"
     );
     const res = await sessionGET(req);
     const body = await res.json();
 
     expect(res.status).toBe(400);
     expect(body.errors[0].code).toBe("VALIDATION_ERROR");
-    expect(body.errors[0].field).toBe("segment");
+    expect(body.errors[0].field).toBe("pays");
     expect(composeQuizSessionHandler).not.toHaveBeenCalled();
   });
 
   // @req REQ-103
   it("count above range — 400 VALIDATION_ERROR", async () => {
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=adults&difficulty=3&count=50"
+      "http://localhost/api/v2/quiz/session?pays=GHA&count=50"
     );
     const res = await sessionGET(req);
     const body = await res.json();
@@ -217,25 +231,28 @@ describe("GET /api/v2/quiz/session (route)", () => {
   });
 
   // @req REQ-103
-  it("missing segment — 400 VALIDATION_ERROR", async () => {
-    const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?difficulty=3"
-    );
+  it("no scope at all — 200, the whole-corpus track", async () => {
+    (composeQuizSessionHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ok: true,
+      envelope: sessionEnvelope,
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/quiz/session");
     const res = await sessionGET(req);
 
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(200);
   });
 
   // @req REQ-103
-  it("rung outside the segment's range — 422 SEMANTIC_ERROR", async () => {
+  it("well-formed scope naming nothing — 422 SEMANTIC_ERROR", async () => {
     (composeQuizSessionHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
       ok: false,
       code: "SEMANTIC_ERROR",
-      message: "Difficulty 5 is outside the children segment's range",
+      message: 'No country known as "ZZZ"',
     });
 
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=children&difficulty=5"
+      "http://localhost/api/v2/quiz/session?pays=ZZZ"
     );
     const res = await sessionGET(req);
     const body = await res.json();
@@ -253,7 +270,7 @@ describe("GET /api/v2/quiz/session (route)", () => {
     (applyRateLimit as ReturnType<typeof vi.fn>).mockResolvedValue(rateLimited);
 
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=adults&difficulty=3"
+      "http://localhost/api/v2/quiz/session?pays=GHA"
     );
     const res = await sessionGET(req);
 
@@ -268,7 +285,7 @@ describe("GET /api/v2/quiz/session (route)", () => {
     );
 
     const req = new NextRequest(
-      "http://localhost/api/v2/quiz/session?segment=adults&difficulty=3"
+      "http://localhost/api/v2/quiz/session?pays=GHA"
     );
     const res = await sessionGET(req);
     const body = await res.json();

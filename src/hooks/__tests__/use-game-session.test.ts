@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { useGameSession } from "@/hooks/use-game-session";
 import type { BinaryRound, GlobeTapRound } from "@/lib/games/gameKinds";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 
 function binaryRound(subjectId: string, correctIndex: 0 | 1 = 0): BinaryRound {
   return {
@@ -15,7 +16,7 @@ function binaryRound(subjectId: string, correctIndex: 0 | 1 = 0): BinaryRound {
       fieldPath: "content.appellations.originOfExonyms",
       sources: [],
       confidence: null,
-      ficheHref: `/fr/peuples/${subjectId}`,
+      ficheHref: getPeopleRoute("fr", subjectId),
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex,
@@ -33,7 +34,7 @@ function globeTapRound(correctCountryId: string): GlobeTapRound {
       fieldPath: "kingdoms[0]",
       sources: [],
       confidence: null,
-      ficheHref: "/fr/pays/NGA",
+      ficheHref: getCountryRoute("fr", "NGA"),
     },
     choices: ["NGA", "ZAF"],
     correctCountryId,

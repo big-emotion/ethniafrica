@@ -1,49 +1,50 @@
 "use client";
 
-import * as React from "react";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { translations } from "@/lib/translations";
-import { persistRungIfEarned } from "@/lib/quiz/rung-storage";
-import type { QuizAudience } from "@/lib/quiz/segmentPolicy";
+import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
+import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
+import type { QuizScope } from "@/lib/quiz/quizScope";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const t = translations.fr.quiz;
 
 interface QuizScoreScreenProps {
-  segment: QuizAudience;
-  difficulty: number;
+  scope: QuizScope;
+  scopeLabelFr: string;
   correctCount: number;
   totalQuestions: number;
-  onPlayAgain: () => void;
+  /** The picker, for choosing a different track. */
+  exitHref: string;
   className?: string;
 }
 
 /**
- * Finished-state screen (FR68): surfaces the final score and — client-side
- * only, no server write — advances the segment's rung in localStorage when
- * the session finished at >= 75% correct (rung-storage.ts owns the
- * threshold/keying/capping logic).
+ * Finished-state screen.
+ *
+ * It no longer advances anything. The rung it used to persist in localStorage
+ * was one step of a per-audience ladder (FR68), and with audiences retired the
+ * ladder moved inside the session — eight rounds climbing the population
+ * deciles of the track just played. There is nothing left to carry between
+ * sessions, so nothing is written, and the screen offers the two things a
+ * finished session actually leads to: the same track again, or a different one.
  */
-// @req REQ-103 FR68
+// @req REQ-103 FR70
 export const QuizScoreScreen = ({
-  segment,
-  difficulty,
+  scope,
+  scopeLabelFr,
   correctCount,
   totalQuestions,
-  onPlayAgain,
+  exitHref,
   className,
 }: QuizScoreScreenProps) => {
-  const [advancedRung, setAdvancedRung] = React.useState<number | null>(null);
-
-  React.useEffect(() => {
-    setAdvancedRung(
-      persistRungIfEarned(
-        segment,
-        difficulty,
-        totalQuestions > 0 ? correctCount / totalQuestions : 0
-      )
-    );
-  }, [segment, difficulty, correctCount, totalQuestions]);
+  const shareHref = `${getLocalizedRoute("fr", "quiz")}/score?${scoreCardSearchParams(
+    scope,
+    correctCount,
+    totalQuestions
+  ).toString()}`;
 
   return (
     <div
@@ -61,16 +62,20 @@ export const QuizScoreScreen = ({
         {t.scoreFractionSeparator}{" "}
         <span className="font-black text-afh-h3">{totalQuestions}</span>
       </p>
-      <p className="text-afh-body text-afh-text-soft">
-        {advancedRung !== null ? t.rungAdvanced : t.rungNotAdvanced}
-      </p>
-      <button
-        type="button"
-        onClick={onPlayAgain}
-        className="min-h-11 w-full rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white"
-      >
-        {t.playAgain}
-      </button>
+      <p className="text-afh-body text-afh-text-soft">{scopeLabelFr}</p>
+      <div className="flex w-full flex-col gap-2">
+        <Link
+          href={shareHref}
+          className="inline-flex min-h-11 w-full items-center justify-center rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white"
+        >
+          {t.seeScoreCard}
+        </Link>
+        <QuizSessionExit
+          href={exitHref}
+          label={t.backToPicker}
+          className="w-full justify-center"
+        />
+      </div>
     </div>
   );
 };

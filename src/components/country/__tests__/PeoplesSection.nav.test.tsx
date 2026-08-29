@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PeoplesSection } from "../PeoplesSection";
 import type { PeoplesData } from "@/lib/countryDataTransformer";
+import { getPeopleRoute } from "@/lib/routing";
 
 describe("PeoplesSection — navigation links to people fiches", () => {
   const baseData: PeoplesData = {
@@ -33,7 +34,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
     render(<PeoplesSection data={baseData} />);
     const link = screen.getByRole("link", { name: /Yoruba/i });
     expect(link).toBeTruthy();
-    expect(link.getAttribute("href")).toBe("/fr/peuples/PPL_YORUBA");
+    expect(link.getAttribute("href")).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
   });
 
   // ETNI-42 × ETNI-382: navigation and endonym primacy land on the same row.
@@ -42,7 +43,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
     render(<PeoplesSection data={baseData} />);
     const link = screen.getByRole("link", { name: /Ọmọ Oòduà/i });
 
-    expect(link.getAttribute("href")).toBe("/fr/peuples/PPL_YORUBA");
+    expect(link.getAttribute("href")).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
 
     const endonymEl = screen.getByText("Ọmọ Oòduà");
     const exonymEl = screen.getByText("Yoruba");
@@ -57,8 +58,8 @@ describe("PeoplesSection — navigation links to people fiches", () => {
     render(<PeoplesSection data={baseData} />);
     const links = screen.getAllByRole("link");
     const hrefs = links.map((l) => l.getAttribute("href"));
-    expect(hrefs).toContain("/fr/peuples/PPL_YORUBA");
-    expect(hrefs).toContain("/fr/peuples/PPL_IGBO");
+    expect(hrefs).toContain(getPeopleRoute("fr", "PPL_YORUBA"));
+    expect(hrefs).toContain(getPeopleRoute("fr", "PPL_IGBO"));
   });
 
   it("does not render a link for rows without peopleId", () => {

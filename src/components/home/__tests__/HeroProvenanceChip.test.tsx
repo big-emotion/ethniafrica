@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const hubModule = (overrides: Partial<HubModule> = {}): HubModule => ({
   id: "mercator",
@@ -41,7 +42,7 @@ describe("HeroProvenanceChip", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
     expect(screen.getByRole("link").getAttribute("href")).toBe(
-      "/fr/jouer/mercator"
+      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
     );
   });
 

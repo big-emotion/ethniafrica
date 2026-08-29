@@ -1,6 +1,7 @@
 import { test, expect } from "./support/fixtures";
+import { getLocalizedRoute } from "@/lib/routing";
 
-const EXPLORER_URL = "/fr/explorer";
+const EXPLORER_URL = getLocalizedRoute("fr", "explorerHub");
 
 // The four module links are server-rendered and unconditional, so the map
 // is scenery over a working page — never the only way in. Neutralising

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { type ComponentProps, useEffect, useState } from "react";
 import { PinnedVersionBanner } from "./PinnedVersionBanner";
+import { getPeopleRoute } from "@/lib/routing";
 
 const viewports = {
   mobile430: {
@@ -42,7 +43,7 @@ type Story = StoryObj<typeof PinnedVersionBanner>;
 const defaultArgs = {
   pinnedAt: "2025-09-21T18:30:00.000Z",
   versionTag: "v34",
-  liveUrl: "/fr/peuples/yoruba",
+  liveUrl: getPeopleRoute("fr", "yoruba"),
 };
 
 function PreCollapsedStory(props: ComponentProps<typeof PinnedVersionBanner>) {
@@ -99,7 +100,7 @@ export const PreDismissedMobile430: Story = {
   name: "Pre-dismissed · 430 px",
   args: {
     ...defaultArgs,
-    liveUrl: "/fr/peuples/yoruba?story=collapsed-mobile",
+    liveUrl: `${getPeopleRoute("fr", "yoruba")}?story=collapsed-mobile`,
   },
   render: (args) => <PreCollapsedStory {...args} />,
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -110,7 +111,7 @@ export const PreDismissedTablet720: Story = {
   name: "Pre-dismissed · 720 px",
   args: {
     ...defaultArgs,
-    liveUrl: "/fr/peuples/yoruba?story=collapsed-tablet",
+    liveUrl: `${getPeopleRoute("fr", "yoruba")}?story=collapsed-tablet`,
   },
   render: (args) => <PreCollapsedStory {...args} />,
   parameters: { viewport: { defaultViewport: "tablet720" } },
@@ -121,7 +122,7 @@ export const PreDismissedDesktop1200: Story = {
   name: "Pre-dismissed · 1200 px",
   args: {
     ...defaultArgs,
-    liveUrl: "/fr/peuples/yoruba?story=collapsed-desktop",
+    liveUrl: `${getPeopleRoute("fr", "yoruba")}?story=collapsed-desktop`,
   },
   render: (args) => <PreCollapsedStory {...args} />,
   parameters: { viewport: { defaultViewport: "desktop1200" } },

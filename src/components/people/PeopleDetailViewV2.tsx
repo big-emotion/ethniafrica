@@ -20,10 +20,11 @@ import {
 // historical reasons only — it takes FicheSourceEntry[] and knows nothing
 // about countries.
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { FicheSection } from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
@@ -53,57 +54,6 @@ export interface PeopleDetailViewV2Props {
   turnstileSiteKey?: string;
 }
 
-const SECTION_DELAY_MS = [0, 50, 100, 150, 200, 250, 300] as const;
-
-function SectionCard({
-  children,
-  label,
-  icon,
-  iconBg,
-  iconColor,
-  delayIndex,
-}: {
-  children: React.ReactNode;
-  label: string;
-  icon: string;
-  iconBg: string;
-  iconColor: string;
-  delayIndex: number;
-}) {
-  return (
-    <section
-      // The label, without the decorative glyph the heading prefixes it with.
-      // The parity contract reads the fiche's section order off this.
-      data-fiche-section={label}
-      className="people-fade-in rounded-[var(--country-radius-xl)] md:rounded-[20px] xl:rounded-[22px] p-[18px] md:p-6 xl:p-7 relative overflow-hidden"
-      style={{
-        background: "var(--country-card)",
-        border: "1px solid var(--country-border)",
-        animationDelay: `${SECTION_DELAY_MS[delayIndex] ?? 0}ms`,
-      }}
-    >
-      {/* A heading, not a styled div: it is the section's title, the mockup
-          writes it as one, and the blocks below open on h3. Without it the
-          parchment went from the fiche's h1 straight to those — the whole of
-          its Lighthouse accessibility gap. */}
-      <h2
-        className="flex items-center gap-[6px] text-afh-eyebrow font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
-        style={{ color: "var(--country-text-soft)" }}
-      >
-        <span
-          aria-hidden="true"
-          className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-afh-caption"
-          style={{ background: iconBg, color: iconColor }}
-        >
-          {icon}
-        </span>
-        {label}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
 /**
  * The people fiche's parchment — the prose half of the page, under the globe.
  *
@@ -123,6 +73,21 @@ function SectionCard({
  * awaited. It briefly stood empty here while FicheSequence's links panel was
  * the fiche's relations surface; that panel no longer runs above the
  * parchment, so this is the surface.
+ *
+ * **Charter §4, and where it stops.** Every chapter answering a rubric of
+ * `modele-peuple.json` — origines, langues, rôle historique, culture,
+ * organisation, démographie, sources — is printed whether or not the corpus
+ * fills it, and an unfilled one carries `FieldProvenanceMarker`: the corpus
+ * being silent about a people's origins is a fact about the corpus, and
+ * dropping the chapter is what deletes that fact.
+ *
+ * Two things on this page deliberately stay conditional, because their absence
+ * is not a silence. The globe's grammar section explains a map that a fiche
+ * with no distribution does not draw, and colonial fragmentation only exists
+ * where a people straddles a border. Neither is a rubric anyone failed to
+ * fill, and marking them would invent a gap. The same line holds one level
+ * down: an optional field inside a block — an exonym, a `whyProblematic` —
+ * stays absent, because the model never asked every fiche for one.
  */
 // @req REQ-091
 export function PeopleDetailViewV2({
@@ -137,218 +102,194 @@ export function PeopleDetailViewV2({
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
 
-  const breadcrumbs = [
-    { label: "Familles", href: "/fr/familles" },
-    ...(people.languageFamilyId
-      ? [
-          {
-            label: people.languageFamilyName ?? people.languageFamilyId,
-            href: `/fr/familles/${people.languageFamilyId}`,
-          },
-        ]
-      : []),
-    { label: data.hero.nameMain },
-  ];
-
   return (
-    <div
-      className="w-full pb-3 md:pb-4 xl:pb-5"
-      style={{
-        fontFamily: "var(--country-font-body)",
-        color: "var(--country-text)",
-      }}
-    >
-      <PeopleFicheHead hero={data.hero} countries={data.countries} />
+    <div className="afh-parchment" id="fiche">
+      {/* The head and the trail moved above the globe (PeopleFicheTitle), so
+          a reader arriving on the fiche is told which fiche it is before the
+          band fills their screen.
 
-      <AfrikBreadcrumbs items={breadcrumbs} />
-
-      {/* Content area — max-width 800px reading surface */}
-      <div
-        className="px-3 md:px-4 xl:px-5 space-y-[10px] md:space-y-[14px] xl:space-y-4 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
-        style={{ maxWidth: "800px" }}
-      >
-        {/* 1. The name borne, the names imposed — first, before any figure. */}
-        <SectionCard
-          label="Le nom porté, les noms subis"
-          icon="✎"
-          iconBg="var(--country-earth-bg)"
-          iconColor="var(--country-earth)"
-          delayIndex={0}
-        >
-          <PeopleNamingBlock
-            nameMain={data.hero.nameMain}
-            selfAppellation={people.appellations?.selfAppellation}
-            exonyms={people.appellations?.exonyms}
-            originOfExonyms={data.hero.originOfExonyms}
-            whyProblematic={people.appellations?.whyProblematic}
-            contemporaryUsage={data.hero.contemporaryUsage}
-            isoCode={people.languages?.isoCodes?.[0]}
-          />
-        </SectionCard>
-
-        {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
-        {distribution && distribution.length > 0 && (
-          <SectionCard
-            label="Pourquoi la carte ne trace pas de frontière"
-            icon="◌"
-            iconBg="var(--country-terracotta-bg)"
-            iconColor="var(--country-terracotta)"
-            delayIndex={1}
-          >
-            <PeopleFieldExplainer distribution={distribution} />
-          </SectionCard>
-        )}
-
-        {/* 3. Origins */}
-        {hasOriginContent(data.origin) && (
-          <SectionCard
-            label="Origines & formation"
-            icon="◎"
-            iconBg="var(--country-earth-bg)"
-            iconColor="var(--country-earth)"
-            delayIndex={2}
-          >
-            <PeopleOriginBlock data={data.origin} />
-          </SectionCard>
-        )}
-
-        {/* 4. Language */}
-        {(data.language.mainLanguage ||
-          data.language.isoCodes.length > 0 ||
-          data.language.dialects.length > 0 ||
-          data.language.vehicularRole) && (
-          <SectionCard
-            label="Langue"
-            icon="🗣"
-            iconBg="var(--country-green-bg)"
-            iconColor="var(--country-green)"
-            delayIndex={3}
-          >
-            <PeopleLanguageSection data={data.language} />
-          </SectionCard>
-        )}
-
-        {(data.history.kingdomsOrChiefdoms ||
-          data.history.relationsWithNeighbors ||
-          data.history.conflictsOrAlliances ||
-          data.history.diaspora) && (
-          <SectionCard
-            label="Rôle historique"
-            icon="↳"
-            iconBg="var(--country-gold-bg)"
-            iconColor="var(--country-gold)"
-            delayIndex={4}
-          >
-            <PeopleHistoryTimeline data={data.history} />
-          </SectionCard>
-        )}
-
-        <OralNarrativesSection peopleId={data.hero.peopleId} />
-
-        {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
-        <PeopleNamesSection data={data.names} />
-
-        {hasCultureContent(data.culture) && (
-          <SectionCard
-            label="Culture & spiritualité"
-            icon="◈"
-            iconBg="var(--country-terracotta-bg)"
-            iconColor="var(--country-terracotta)"
-            delayIndex={5}
-          >
-            <PeopleCultureGrid data={data.culture} />
-            {/* The same report control the country fiche's culture section
-                carries. It used to live only on the legacy tabbed people
-                view; retiring that view without moving it here would have
-                taken the people half of the requirement with it. */}
-            <div data-testid="section-flag-target-culture" className="mt-3">
-              {turnstileSiteKey ? (
-                <FlagTarget
-                  target={{
-                    type: "fiche_section",
-                    id: people.id,
-                    fieldPath: "culture",
-                  }}
-                  turnstileSiteKey={turnstileSiteKey}
-                  triggerLabel="Signaler cette section"
-                  className="w-auto text-afh-caption"
-                />
-              ) : (
-                <button
-                  type="button"
-                  disabled
-                  className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
-                  style={{
-                    borderColor: "var(--afh-border)",
-                    color: "var(--afh-text-soft)",
-                  }}
-                  aria-label="Signaler cette section — bientôt disponible"
-                >
-                  Signaler cette section (bientôt disponible)
-                </button>
-              )}
-            </div>
-          </SectionCard>
-        )}
-
-        {(hasRelatedContent(data.relatedPeoples) ||
-          relationsPreview.length > 0) && (
-          <SectionCard
-            label="Peuples voisins & organisation"
-            icon="◉"
-            iconBg="var(--country-earth-bg)"
-            iconColor="var(--country-earth)"
-            delayIndex={6}
-          >
-            <PeopleRelatedPeoplesSection
-              data={data.relatedPeoples}
-              peopleId={data.hero.peopleId}
-              relationsPreview={relationsPreview}
-            />
-          </SectionCard>
-        )}
-
-        {data.countries.distributions.length > 0 && (
-          <SectionCard
-            label="Répartition géographique"
-            icon="◉"
-            iconBg="var(--country-terracotta-bg)"
-            iconColor="var(--country-terracotta)"
-            delayIndex={6}
-          >
-            <PeopleCountriesSection
-              data={data.countries}
-              fromPeopleId={data.hero.peopleId}
-              fromPeopleName={data.hero.nameMain}
-            />
-          </SectionCard>
-        )}
-
-        {/* Fragmentation coloniale (FR85) — absent below 2 countries */}
-        {fragmentation && (
-          <SectionCard
-            label="Fragmentation coloniale"
-            icon="⌗"
-            iconBg="var(--country-gold-bg)"
-            iconColor="var(--country-gold)"
-            delayIndex={6}
-          >
-            <FragmentationView
-              fragmentation={fragmentation}
-              variant="fiche-section"
-            />
-          </SectionCard>
-        )}
+          The confidence chip did not go with them: it cites this document's
+          sources and links to their footer, so it belongs inside the document
+          that owns that anchor rather than in the band above it. */}
+      <div className="px-3 md:px-4 xl:px-5 pt-afh-base">
+        <ConfidenceChip
+          confidenceScore={null}
+          sourceCount={data.sources.length || null}
+          lastHumanAuditAt={null}
+          variant="hero"
+          id={data.hero.peopleId}
+          ariaSuffix={`pour la fiche ${data.hero.nameMain}`}
+        />
       </div>
 
-      {data.sources.length > 0 && (
-        <div
-          className="px-3 md:px-4 xl:px-5 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
-          style={{ maxWidth: "800px" }}
+      {/* 1. The name borne, the names imposed — first, before any figure. */}
+      <FicheSection
+        title="Le nom porté, les noms subis"
+        note="Rubrique « appellations » de la fiche"
+      >
+        <PeopleNamingBlock
+          nameMain={data.hero.nameMain}
+          selfAppellation={people.appellations?.selfAppellation}
+          exonyms={people.appellations?.exonyms}
+          originOfExonyms={data.hero.originOfExonyms}
+          whyProblematic={people.appellations?.whyProblematic}
+          contemporaryUsage={data.hero.contemporaryUsage}
+          isoCode={people.languages?.isoCodes?.[0]}
+        />
+      </FicheSection>
+
+      {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
+      {distribution && distribution.length > 0 && (
+        <FicheSection
+          title="Pourquoi la carte ne trace pas de frontière"
+          note="Dérivé de la répartition par pays"
         >
-          <SourcesFooter sources={data.sources} hasSourceFlag={hasSourceFlag} />
-        </div>
+          <PeopleFieldExplainer distribution={distribution} />
+        </FicheSection>
       )}
+
+      <FicheSection title="Origines & formation" note="Rubrique « origines »">
+        {hasOriginContent(data.origin) ? (
+          <PeopleOriginBlock data={data.origin} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection title="Langue" note="Rubrique « langues »">
+        {data.language.mainLanguage ||
+        data.language.isoCodes.length > 0 ||
+        data.language.dialects.length > 0 ||
+        data.language.vehicularRole ? (
+          <PeopleLanguageSection data={data.language} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection title="Rôle historique" note="Rubrique « rôle historique »">
+        {data.history.kingdomsOrChiefdoms ||
+        data.history.relationsWithNeighbors ||
+        data.history.conflictsOrAlliances ||
+        data.history.diaspora ? (
+          <PeopleHistoryTimeline data={data.history} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <OralNarrativesSection peopleId={data.hero.peopleId} />
+
+      {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
+      <PeopleNamesSection data={data.names} />
+
+      <FicheSection title="Culture & spiritualité" note="Rubrique « culture »">
+        {hasCultureContent(data.culture) ? (
+          <PeopleCultureGrid data={data.culture} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+        {/* The same report control the country fiche's culture section
+            carries. It used to live only on the legacy tabbed people view;
+            retiring that view without moving it here would have taken the
+            people half of the requirement with it. It stays whether or not
+            the rubric is filled — an empty culture section is exactly the one
+            a reader has something to say about. */}
+        <div data-testid="section-flag-target-culture" className="mt-3">
+          {turnstileSiteKey ? (
+            <FlagTarget
+              target={{
+                type: "fiche_section",
+                id: people.id,
+                fieldPath: "culture",
+              }}
+              turnstileSiteKey={turnstileSiteKey}
+              triggerLabel="Signaler cette section"
+              className="w-auto text-afh-caption"
+            />
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
+              style={{
+                borderColor: "var(--afh-border)",
+                color: "var(--afh-text-soft)",
+              }}
+              aria-label="Signaler cette section — bientôt disponible"
+            >
+              Signaler cette section (bientôt disponible)
+            </button>
+          )}
+        </div>
+      </FicheSection>
+
+      <FicheSection
+        title="Peuples voisins & organisation"
+        note="Rubriques « groupes associés » et « organisation »"
+      >
+        {hasRelatedContent(data.relatedPeoples) ||
+        relationsPreview.length > 0 ? (
+          <PeopleRelatedPeoplesSection
+            data={data.relatedPeoples}
+            peopleId={data.hero.peopleId}
+            relationsPreview={relationsPreview}
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection
+        title="Répartition géographique"
+        note="Rubrique « démographie » · année de référence 2025"
+      >
+        {data.countries.distributions.length > 0 ? (
+          <PeopleCountriesSection
+            data={data.countries}
+            fromPeopleId={data.hero.peopleId}
+            fromPeopleName={data.hero.nameMain}
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      {/* Fragmentation coloniale (FR85) — absent below 2 countries.
+          Not a rubric of the fiche model but a reading that only exists where
+          a people straddles a border, so its absence is inapplicability, not
+          a gap in the corpus, and it carries no missing marker. */}
+      {fragmentation && (
+        <FicheSection
+          title="Fragmentation coloniale"
+          note="Dérivé de la présence du peuple dans plusieurs pays"
+        >
+          <FragmentationView
+            fragmentation={fragmentation}
+            variant="fiche-section"
+          />
+        </FicheSection>
+      )}
+
+      {/* Deep links across the app point at #sources; until now the only such
+          anchor in the tree belonged to the family fiche, so every citation
+          chip on a people fiche resolved to nothing. */}
+      <FicheSection
+        title="Sources"
+        note="Rubrique « sources » de la fiche · politique de paliers"
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
+          <SourcesFooter
+            sources={data.sources}
+            hasSourceFlag={hasSourceFlag}
+            variant="parchment"
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
     </div>
   );
 }

@@ -17,6 +17,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { classificationLabels } from "@/lib/translations";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // Mock next/link so the component can be rendered without a Next runtime.
 // happy-dom + React Testing Library is enough; we just need a real <a>.
@@ -67,12 +68,16 @@ describe("ClassificationBadge", () => {
     expect(container).toBeEmptyDOMElement();
   });
 
+  // @req REQ-023
   it.each(VISIBLE_STATUSES.map((s) => [s]))(
-    "links to /fr/doctrine#%s",
+    "links to the doctrine entry for %s",
     (status) => {
       render(<ClassificationBadge status={status} />);
       const link = screen.getByRole("link");
-      expect(link).toHaveAttribute("href", `/fr/doctrine#${status}`);
+      expect(link).toHaveAttribute(
+        "href",
+        `${getLocalizedRoute("fr", "doctrine")}#${status}`
+      );
     }
   );
 
@@ -135,7 +140,10 @@ describe("ClassificationBadge", () => {
       />
     );
     const link = screen.getByRole("link");
-    expect(link).toHaveAttribute("href", "/fr/doctrine#contested");
+    expect(link).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("fr", "doctrine")}#contested`
+    );
     expect(link).toHaveAttribute("data-doctrine-slug", "classification-status");
   });
 

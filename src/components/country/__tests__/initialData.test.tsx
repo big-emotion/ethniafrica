@@ -13,17 +13,12 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * requirements now lives in `components/people/__tests__/`.
  */
 
-const { mockGetCountry, mockHasActiveSourceFlag } = vi.hoisted(() => ({
-  mockGetCountry: vi.fn(),
+const { mockHasActiveSourceFlag } = vi.hoisted(() => ({
   mockHasActiveSourceFlag: vi.fn(),
 }));
 
 vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(),
-}));
-
-vi.mock("@/lib/afrikLoader", () => ({
-  getCountry: (...args: unknown[]) => mockGetCountry(...args),
 }));
 
 vi.mock("@/lib/flags-client", () => ({
@@ -64,10 +59,16 @@ describe("the country dossier with server-provided data", () => {
   it("renders a country immediately without a duplicate client fetch", () => {
     render(<CountryRecordView country={senegal} />);
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: "Sénégal" })
-    ).toBeInTheDocument();
-    expect(mockGetCountry).not.toHaveBeenCalled();
+    // The h1 moved to the title band above the globe (CountryFicheTitle), so
+    // what proves the record rendered from the server's data is the record
+    // itself.
+    expect(screen.getByTestId("country-record-view")).toBeInTheDocument();
+
+    // The "no duplicate fetch" half of this used to be a `getCountry` spy on
+    // afrikLoader. The view stopped importing that module, so the spy could
+    // never be called and the assertion passed on a technicality — the shape
+    // of a green gate that checks nothing. What the view owes is that it
+    // renders from the server's data, which is what is asserted above.
   });
 
   // @req REQ-012 (AC5)

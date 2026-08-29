@@ -1,8 +1,12 @@
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
@@ -65,34 +69,11 @@ export interface FamilyParchmentProps {
   footprintProvenance?: FamilyFootprintProvenance;
 }
 
-function Section({
-  title,
-  note,
-  children,
-  testId,
-  as: Tag = "section",
-  id,
-}: {
-  title: string;
-  note: string;
-  children: ReactNode;
-  testId?: string;
-  as?: "section" | "footer";
-  id?: string;
-}) {
-  return (
-    <Tag className="afh-parchment-section" data-testid={testId} id={id}>
-      <h2>{title}</h2>
-      {/* The field path the section is built from: a reader who wants to check
-          the claim needs to know where in the corpus to look. */}
-      <p className="afh-parchment-note">{note}</p>
-      {children}
-    </Tag>
-  );
-}
-
 /**
- * One figure, and where it comes from.
+ * One figure, and where it comes from — said as the fiche's own rubric, not as
+ * the key a developer would grep for. "generalInfo.totalSpeakers" under a card
+ * headed "Locuteurs" told a reader nothing they could act on; the rubric names
+ * the place in the fiche they would actually go and look.
  *
  * `provenance` is computed, never hard-coded. The mockup writes "vide" into
  * the branches and distribution cards because that is what the recette
@@ -105,13 +86,14 @@ function Section({
 function StatCard({
   id,
   label,
-  path,
+  rubric,
   value,
   emptyValue,
 }: {
   id: string;
   label: string;
-  path: string;
+  /** Where in the fiche the figure is read, in the reader's terms. */
+  rubric: string;
   value: unknown;
   emptyValue?: string;
 }) {
@@ -136,7 +118,7 @@ function StatCard({
     >
       <span className="afh-stat-card-n">{shown}</span>
       <span className="afh-stat-card-k">{label}</span>
-      <span className="afh-stat-card-src">{path}</span>
+      <span className="afh-stat-card-src">{rubric}</span>
       {/* The app has one wording for an absent field, and it lives in
           FieldProvenanceMarker. Writing a second one here would let the two
           drift and leave readers with two vocabularies for one idea. */}
@@ -228,20 +210,10 @@ export function FamilyParchment({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <header className="afh-parchment-head">
-        <p className="afh-parchment-eyebrow">
-          {hero.id} · famille linguistique
-        </p>
-        <h1>
-          {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
-        </h1>
-        <p className="afh-parchment-lede">
-          {/* Naming both when they are the same word would present one fact as
-              two, and quietly overstate how much the fiche knows. */}
-          {selfAppellation && nameEn && selfAppellation === nameEn
-            ? `Auto-appellation et nom anglais : ${selfAppellation}. Le français seul francise.`
-            : `Auto-appellation : ${selfAppellation ?? "non renseignée"}. Nom anglais : ${nameEn ?? "non renseigné"}.`}
-        </p>
+      {/* The head and the trail stand above the globe now
+          (FamilyFicheTitle). The chips stayed: they are figures about this
+          document, and the chapters below immediately qualify them. */}
+      <div className="afh-parchment-head">
         <div className="afh-chips">
           {generalInfo.numberOfLanguages !== null && (
             <span className="afh-chip" data-tone="stable">
@@ -257,23 +229,23 @@ export function FamilyParchment({
             </span>
           )}
         </div>
-      </header>
+      </div>
 
       <Section
         title="Ce que la fiche déclare, ce qu'elle ne déclare pas"
-        note="content.generalInfo · content.distribution"
+        note="Rubriques « informations générales » et « répartition » de la fiche"
       >
         <div className="afh-stat-cards">
           <StatCard
             id="langues"
             label="Langues"
-            path="generalInfo.numberOfLanguages"
+            rubric="Informations générales · nombre de langues"
             value={generalInfo.numberOfLanguages}
           />
           <StatCard
             id="locuteurs"
             label="Locuteurs"
-            path="generalInfo.totalSpeakers"
+            rubric="Informations générales · total de locuteurs"
             value={
               generalInfo.totalSpeakers !== null
                 ? `${Math.round(generalInfo.totalSpeakers / 1e6)} M`
@@ -283,13 +255,13 @@ export function FamilyParchment({
           <StatCard
             id="branches"
             label="Branches"
-            path="generalInfo.branches"
+            rubric="Informations générales · branches"
             value={generalInfo.branches}
           />
           <StatCard
             id="distribution"
             label="Distribution"
-            path="distribution.distributionByCountry"
+            rubric="Répartition · par pays"
             value={distribution.distributionByCountry}
           />
         </div>
@@ -298,15 +270,13 @@ export function FamilyParchment({
           <div className="afh-parchment-gap">
             <h3>Deux champs vides, et ce qu&apos;on en fait</h3>
             <p>
-              Cette fiche ne déclare ni ses branches ni sa répartition&nbsp;:{" "}
-              <code>generalInfo.branches</code> et{" "}
-              <code>distribution.distributionByCountry</code> sont vides. Une
-              carte fidèle à la seule fiche famille n&apos;aurait donc rien à
-              dessiner. Plutôt que de masquer la section ou d&apos;inventer une
-              aire, la fiche affiche le manque — puis reconstruit ce qui est
-              reconstructible, en le signalant comme tel. Un champ vide reste
-              une information sur l&apos;état du corpus&nbsp;; l&apos;effacer la
-              ferait disparaître.
+              Cette fiche ne déclare ni ses branches ni sa répartition par
+              pays&nbsp;: les deux rubriques sont vides. Une carte fidèle à la
+              seule fiche famille n&apos;aurait donc rien à dessiner. Plutôt que
+              de masquer la section ou d&apos;inventer une aire, la fiche
+              affiche le manque — puis reconstruit ce qui est reconstructible,
+              en le signalant comme tel. Un champ vide reste une information sur
+              l&apos;état du corpus&nbsp;; l&apos;effacer la ferait disparaître.
             </p>
           </div>
         )}
@@ -370,7 +340,10 @@ export function FamilyParchment({
               <span aria-hidden="true">{row.flag}</span>
               {/* Each country of the footprint is itself a fiche; the ranking
                   is the natural place to step across to it. */}
-              <a className="afh-rank-name" href={`/fr/pays/${row.countryId}`}>
+              <a
+                className="afh-rank-name"
+                href={getCountryRoute("fr", row.countryId)}
+              >
                 {row.nameFr}
               </a>
               <span className="afh-rank-n">{row.memberCount}</span>
@@ -388,7 +361,7 @@ export function FamilyParchment({
       {decolonialHeader.originOfHistoricalTerm && (
         <Section
           title="D'où vient le nom de la famille"
-          note="content.decolonialHeader.originOfHistoricalTerm"
+          note="Rubrique « en-tête décoloniale » de la fiche, « origine du terme historique »"
         >
           <p>{decolonialHeader.originOfHistoricalTerm}</p>
         </Section>
@@ -401,7 +374,18 @@ export function FamilyParchment({
         <ul className="afh-members" data-testid="member-peoples">
           {ranked.map((people) => (
             <li key={people.id} className="afh-member">
-              <b>{people.nameMain}</b>
+              {/* The corpus carries each member's PPL_ id and the list threw it
+                  away, so the one move a reader of this section wants — open
+                  the people it just named — was the one it did not offer. A
+                  fiche whose associatedPeoples entry declares no id keeps the
+                  plain name rather than linking nowhere. */}
+              {people.id ? (
+                <a href={getPeopleRoute("fr", people.id)}>
+                  <b>{people.nameMain}</b>
+                </a>
+              ) : (
+                <b>{people.nameMain}</b>
+              )}
               {people.countryIds.length > 0 && (
                 <span className="afh-member-spread">
                   {people.countryIds.length} pays ·{" "}
@@ -422,7 +406,7 @@ export function FamilyParchment({
       {data.sources.length > 0 && (
         <Section
           title="Sources"
-          note="content.sources · politique de paliers"
+          note="Rubrique « sources » de la fiche · politique de paliers"
           testId="family-sources"
           /* Deep links across the app point at #sources, and the sources are
              the fiche's own footer landmark. Both predate this layout. */

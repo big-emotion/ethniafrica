@@ -19,6 +19,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { NamesAtlasView } from "@/components/names/NamesAtlasView";
 import type { NameAtlasEntry } from "@/components/names/NamesAtlasView";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const populatedNames: NameAtlasEntry[] = [
   {
@@ -98,7 +99,10 @@ describe("NamesAtlasView", () => {
     renderView();
 
     const link = screen.getByRole("link", { name: /Bakongo/ });
-    expect(link).toHaveAttribute("href", "/fr/peuples/PPL_BAKONGO#noms");
+    expect(link).toHaveAttribute(
+      "href",
+      `${getPeopleRoute("fr", "PPL_BAKONGO")}#noms`
+    );
   });
 
   // (b) search input uses the submit-button pattern
@@ -171,7 +175,7 @@ describe("NamesAtlasView", () => {
     expect(screen.getByText("Parcourir par type de nom :")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "endonyme" })).toHaveAttribute(
       "href",
-      "/fr/noms?nameType=endonym"
+      `${getLocalizedRoute("fr", "names")}?nameType=endonym`
     );
 
     const reportLink = screen.getByRole("link", {

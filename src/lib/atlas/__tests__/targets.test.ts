@@ -11,8 +11,23 @@ import {
   buildAtlasTargets,
   buildCountryPickerTargets,
   continentTargetFacts,
+  enclosingFrame,
   ringsAngularSpanDeg,
+  type AtlasTarget,
 } from "../targets";
+
+function targetAt(
+  lon: number,
+  lat: number,
+  angularSpanDeg: number
+): AtlasTarget {
+  return {
+    countryId: "NGA",
+    nameFr: "Nigeria",
+    center: { lon, lat },
+    angularSpanDeg,
+  };
+}
 
 describe("ringsAngularSpanDeg", () => {
   // @req REQ-117
@@ -254,5 +269,76 @@ describe("buildCountryPickerTargets (REQ-117)", () => {
   // @req REQ-117
   it("drops a country the asset cannot draw rather than offering a dead option", () => {
     expect(buildCountryPickerTargets(["ZZZ"])).toEqual([]);
+  });
+});
+
+/**
+ * What « Recentrer » aims at. Before this existed the button could only send
+ * the reader back to the whole planet, because a family's seventeen countries
+ * had no single frame to return to.
+ */
+describe("enclosingFrame gathers a whole entity into one framing", () => {
+  // @req REQ-112
+  it("has nothing to frame when the entity draws nothing", () => {
+    expect(enclosingFrame([])).toBeNull();
+  });
+
+  // @req REQ-112
+  it("keeps a lone country's own framing rather than inventing a wider one", () => {
+    const frame = enclosingFrame([targetAt(8, 9, 12)]);
+
+    expect(frame?.center).toEqual({ lon: 8, lat: 9 });
+    expect(frame?.angularSpanDeg).toBeCloseTo(12, 6);
+  });
+
+  // @req REQ-112
+  it("centres between two countries instead of on either of them", () => {
+    const frame = enclosingFrame([targetAt(0, 0, 4), targetAt(20, 0, 4)]);
+
+    expect(frame?.center.lon).toBeCloseTo(10, 6);
+    expect(frame?.center.lat).toBeCloseTo(0, 6);
+  });
+
+  // @req REQ-112
+  it("spans far enough to hold every country it was given, edges included", () => {
+    // Two 4-degree countries 20 degrees apart span 24 degrees end to end, not
+    // 20: a frame measured centre-to-centre clips both outer coastlines.
+    const frame = enclosingFrame([targetAt(0, 0, 4), targetAt(20, 0, 4)]);
+
+    expect(frame?.angularSpanDeg).toBeCloseTo(24, 6);
+  });
+
+  // @req REQ-112
+  it("takes the taller of the two extents when an entity runs north-south", () => {
+    const frame = enclosingFrame([targetAt(0, -15, 4), targetAt(2, 15, 4)]);
+
+    expect(frame?.angularSpanDeg).toBeCloseTo(34, 6);
+  });
+
+  // @req REQ-112
+  it("reads a high-latitude spread as narrower than the same degrees at the equator", () => {
+    // A degree of longitude covers less ground away from the equator, which is
+    // the convention ringsAngularSpanDeg already sets. Mixing the two would
+    // dolly a Maghrebi family out as if it were continent-wide.
+    const atEquator = enclosingFrame([targetAt(0, 0, 2), targetAt(20, 0, 2)]);
+    const upNorth = enclosingFrame([targetAt(0, 35, 2), targetAt(20, 35, 2)]);
+
+    expect(upNorth!.angularSpanDeg).toBeLessThan(atEquator!.angularSpanDeg);
+  });
+
+  // @req REQ-112
+  it("frames the union of a family footprint, not just its first country", () => {
+    const overlay = buildFamilyFootprintOverlay([["NGA"], ["ZAF"]], 2);
+    const targets = buildAtlasTargets(overlay);
+    const [nigeria, southAfrica] = targets;
+    const frame = enclosingFrame(targets);
+
+    // Nigeria sits north of the equator and South Africa deep south, so a
+    // frame holding both is centred between them and far wider than either.
+    expect(frame!.angularSpanDeg).toBeGreaterThan(
+      Math.max(...targets.map((target) => target.angularSpanDeg))
+    );
+    expect(frame!.center.lat).toBeLessThan(nigeria.center.lat);
+    expect(frame!.center.lat).toBeGreaterThan(southAfrica.center.lat);
   });
 });

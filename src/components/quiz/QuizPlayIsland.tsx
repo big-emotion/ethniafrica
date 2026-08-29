@@ -7,35 +7,34 @@ import { QuizQuestionCard } from "@/components/quiz/QuizQuestionCard";
 import { QuizAnswerReveal } from "@/components/quiz/QuizAnswerReveal";
 import { QuizProgressDots } from "@/components/quiz/QuizProgressDots";
 import { QuizScoreScreen } from "@/components/quiz/QuizScoreScreen";
-import { getStoredRung } from "@/lib/quiz/rung-storage";
-import { DIFFICULTY_RUNGES, type QuizAudience } from "@/lib/quiz/segmentPolicy";
+import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
+import type { QuizScope } from "@/lib/quiz/quizScope";
 import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 
 const t = translations.fr.quiz;
 
 interface QuizPlayIslandProps {
-  segment: QuizAudience;
-  onExit: () => void;
+  scope: QuizScope;
+  scopeLabelFr: string;
+  /** Where leaving the session lands — the picker, with no track selected. */
+  exitHref: string;
   className?: string;
 }
 
 /**
- * Orchestrates one segment's play loop: fetches a session at the rung
- * pre-selected from localStorage (FR68), then routes answering / revealed /
- * finished to their dedicated panels. Meant to be mounted lazily via
- * `next/dynamic` once a segment is chosen (ETNI-1137).
+ * Orchestrates one track's play loop: fetches the session for `scope`, then
+ * routes answering / revealed / finished to their dedicated panels. Mounted
+ * lazily via `next/dynamic` once a track is chosen (ETNI-1137).
  */
-// @req REQ-103 FR67 FR68 FR71
+// @req REQ-103 FR67 FR71
 export const QuizPlayIsland = ({
-  segment,
-  onExit,
+  scope,
+  scopeLabelFr,
+  exitHref,
   className,
 }: QuizPlayIslandProps) => {
-  const [difficulty] = React.useState(
-    () => getStoredRung(segment) ?? DIFFICULTY_RUNGES[segment].min
-  );
-  const session = useQuizSession({ segment, difficulty });
+  const session = useQuizSession({ scope });
 
   if (session.status === "loading") {
     return (
@@ -50,29 +49,29 @@ export const QuizPlayIsland = ({
 
   if (session.status === "error") {
     return (
-      <p
-        role="alert"
-        className={cn("text-afh-body text-afh-terracotta", className)}
-      >
-        {t.sessionError}
-      </p>
+      <div className={cn("flex flex-col items-start gap-4", className)}>
+        <p role="alert" className="text-afh-body text-afh-terracotta">
+          {t.sessionError}
+        </p>
+        <QuizSessionExit href={exitHref} label={t.backToPicker} />
+      </div>
     );
   }
 
   if (session.status === "finished") {
     return (
       <QuizScoreScreen
-        segment={segment}
-        difficulty={difficulty}
+        scope={scope}
+        scopeLabelFr={scopeLabelFr}
         correctCount={session.correctCount}
         totalQuestions={session.totalQuestions}
-        onPlayAgain={onExit}
+        exitHref={exitHref}
         className={className}
       />
     );
   }
 
-  // The FR65 gate runs again at serve time, so a rung the picker counted as
+  // The FR65 gate runs again at serve time, so a track the picker counted as
   // stocked can still compose to zero questions. Say so and offer the way
   // back — rendering nothing stranded the player on a blank page.
   if (!session.currentQuestion) {
@@ -81,13 +80,7 @@ export const QuizPlayIsland = ({
         <p role="status" className="text-afh-body text-afh-text-soft">
           {t.emptySession}
         </p>
-        <button
-          type="button"
-          onClick={onExit}
-          className="min-h-11 rounded-afh-lg border border-afh-border bg-afh-surface px-4 text-afh-body text-afh-text transition-colors hover:border-primary"
-        >
-          {t.backToPicker}
-        </button>
+        <QuizSessionExit href={exitHref} label={t.backToPicker} />
       </div>
     );
   }
@@ -96,6 +89,12 @@ export const QuizPlayIsland = ({
 
   return (
     <div className={cn("flex flex-col gap-4", className)}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-afh-small text-afh-text-soft">
+          {t.playingScopePrefix} <strong>{scopeLabelFr}</strong>
+        </p>
+        <QuizSessionExit href={exitHref} label={t.leaveSession} />
+      </div>
       <QuizProgressDots
         current={session.currentIndex + 1}
         total={session.totalQuestions}

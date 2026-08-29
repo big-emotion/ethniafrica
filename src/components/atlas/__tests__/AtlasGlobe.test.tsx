@@ -1,9 +1,16 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import {
   buildContinentOverlay,
+  type AtlasOverlay,
   type ContinentFieldOverlay,
   type CountryOutlineOverlay,
   type FamilyFootprintOverlay,
@@ -20,6 +27,7 @@ import {
   continentTargetFacts,
   type AtlasTarget,
 } from "@/lib/atlas/targets";
+import { getCountryRoute } from "@/lib/routing";
 
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
   AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
@@ -103,7 +111,11 @@ function continentOverlayFrom(
 function continentFactsWithFicheLink(target: AtlasTarget) {
   return {
     ...continentTargetFacts(target),
-    body: <a href={`/fr/pays/${target.countryId}`}>Voir la fiche du pays</a>,
+    body: (
+      <a href={getCountryRoute("fr", target.countryId)}>
+        Voir la fiche du pays
+      </a>
+    ),
   };
 }
 
@@ -824,7 +836,7 @@ describe("AtlasGlobe", () => {
       expect(screen.getByRole("dialog", { name: "Tanzanie" })).toBeVisible();
       expect(
         screen.getByRole("link", { name: "Voir la fiche du pays" })
-      ).toHaveAttribute("href", "/fr/pays/TZA");
+      ).toHaveAttribute("href", getCountryRoute("fr", "TZA"));
     });
 
     /**
@@ -989,6 +1001,68 @@ describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () =
     const toolbar = container.querySelector("[data-atlas-toolbar]");
     expect(toolbar?.className).not.toContain("hidden");
     expect(screen.getByRole("button", { name: "Recentrer" })).toBeVisible();
+  });
+});
+
+/**
+ * The fiche globe used to turn at 0.1 rad/s until the reader chose something,
+ * writing React state at 60 fps for a motion nobody asked for. Drift had been
+ * switched off for the continent hub and nowhere else, so every people,
+ * country and family fiche spun on open.
+ */
+describe("AtlasGlobe — a fiche globe holds still (REQ-117)", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  /**
+   * Drift is a loop that feeds itself: each frame asks for the next one. So
+   * the property is not "no frame is ever requested" — the country outline
+   * strokes itself in over one — but that flushing what is queued queues
+   * nothing more.
+   */
+  function queuedFramesAfterFlush(overlay: AtlasOverlay): number {
+    const frames: FrameRequestCallback[] = [];
+    vi.spyOn(window, "requestAnimationFrame").mockImplementation((callback) => {
+      frames.push(callback);
+      return frames.length;
+    });
+
+    render(<AtlasGlobe overlay={overlay} missingMessage="absent" />);
+
+    const queued = frames.splice(0);
+    act(() => {
+      queued.forEach((callback, index) => callback(1000 + index * 16));
+    });
+    return frames.length;
+  }
+
+  // @req REQ-117
+  it("stops asking for frames on a country fiche, instead of turning for ever", () => {
+    expect(queuedFramesAfterFlush(countryOverlay)).toBe(0);
+  });
+
+  // @req REQ-117
+  it("stops asking for frames on a people field too, not only where a country is traced", () => {
+    expect(queuedFramesAfterFlush(peopleOverlay)).toBe(0);
+  });
+
+  // @req REQ-112
+  it("brings the stage back to its resting framing when the reader recentres", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />
+    );
+
+    const figure = () =>
+      container.querySelector("svg > g")?.getAttribute("transform");
+    const atRest = figure();
+
+    fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
+    expect(figure()).not.toBe(atRest);
+
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    expect(figure()).toBe(atRest);
   });
 });
 

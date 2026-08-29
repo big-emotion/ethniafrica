@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getTranslation } from "@/lib/translations";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
 
 /**
@@ -12,12 +14,22 @@ import type { Language } from "@/types/shared";
  * The spine borrows HistoryTimeline's vertical-stop idiom but not its
  * tokens: that component runs on the `--country-*` namespace and carries a
  * raw rgba() literal, neither of which belongs outside a fiche.
+ *
+ * It reads the same `HubModule[]` the rows above it read (atlas-charter §3).
+ * It used to hold its own `PageType` per stop and link all three
+ * unconditionally, so /fr/comprendre served a spine inviting the reader to
+ * *Noms & appellations* directly above the row marking that module
+ * **Bientôt** — one page making two contrary claims about one module.
  */
 interface SpineStop {
   question: string;
-  /** Where the corpus answers it — named, so the stop is not a bare tease. */
+  /** The registry id of the module that answers it (moduleRegistry.ts). */
+  moduleId: string;
+  /**
+   * What the stop names when the hub hands over no module under that id —
+   * the question keeps its answer's name rather than trailing off.
+   */
   answeredBy: string;
-  page: PageType;
 }
 
 // Ordered like the registry behind it: from the most concrete question to
@@ -25,29 +37,37 @@ interface SpineStop {
 const STOPS: SpineStop[] = [
   {
     question: "Pourquoi ce peuple porte-t-il ce nom ?",
+    moduleId: "noms",
     answeredBy: "Noms & appellations",
-    page: "names",
   },
   {
     question: "D'où viennent-ils, et quand ?",
+    moduleId: "frise",
     answeredBy: "Premiers repères de migrations",
-    page: "migrations",
   },
   {
     question: "Qui dit ça, et sur quelle source ?",
+    moduleId: "doctrine",
     answeredBy: "La doctrine éditoriale",
-    page: "doctrine",
   },
 ];
 
 export interface ComprendreQuestionSpineProps {
   language: Language;
+  /** The axis's modules, availability already resolved by getHubModules. */
+  modules: HubModule[];
 }
 
-// @req REQ-114
+// @req REQ-114 @req REQ-106
 export function ComprendreQuestionSpine({
   language,
+  modules,
 }: ComprendreQuestionSpineProps) {
+  const t = getTranslation(language);
+  const moduleById = new Map(
+    modules.map((hubModule) => [hubModule.id, hubModule])
+  );
+
   return (
     <div data-testid="comprendre-question-spine" className="comprendre-spine">
       <p className="comprendre-spine-lead">
@@ -57,18 +77,48 @@ export function ComprendreQuestionSpine({
       {/* role="list" because list-style: none strips list semantics in
           Safari/VoiceOver, and the sequence is the point here. */}
       <ol className="comprendre-spine-list" role="list">
-        {STOPS.map((stop) => (
-          <li key={stop.page} className="comprendre-spine-stop">
-            <Link
-              href={getLocalizedRoute(language, stop.page)}
-              data-testid={`comprendre-spine-stop-${stop.page}`}
-              className="comprendre-spine-link"
-            >
-              <span className="comprendre-spine-question">{stop.question}</span>
-              <span className="comprendre-spine-answer">{stop.answeredBy}</span>
-            </Link>
-          </li>
-        ))}
+        {STOPS.map((stop) => {
+          const answeringModule = moduleById.get(stop.moduleId);
+          const href = answeringModule
+            ? getModuleHref(answeringModule, language)
+            : null;
+          const answerLabel = answeringModule?.name ?? stop.answeredBy;
+
+          // Same condition as AccessModeHub's row, so the two surfaces of
+          // this page cannot drift apart again.
+          if (!answeringModule?.available || !href) {
+            return (
+              <li key={stop.moduleId} className="comprendre-spine-stop">
+                <div
+                  data-testid={`comprendre-spine-pending-${stop.moduleId}`}
+                  className="comprendre-spine-link comprendre-spine-link-pending"
+                >
+                  <span className="comprendre-spine-question">
+                    {stop.question}
+                  </span>
+                  <span className="comprendre-spine-answer">
+                    {`${answerLabel} — ${t.hubs.unavailableLabel}`}
+                  </span>
+                </div>
+              </li>
+            );
+          }
+
+          return (
+            <li key={stop.moduleId} className="comprendre-spine-stop">
+              <Link
+                href={href}
+                data-testid={`comprendre-spine-stop-${stop.moduleId}`}
+                className="comprendre-spine-link"
+              >
+                <span className="comprendre-spine-question">
+                  {stop.question}
+                </span>
+                <span className="comprendre-spine-answer">{answerLabel}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ol>
 
       <style>{`
@@ -118,6 +168,9 @@ export function ComprendreQuestionSpine({
           background: var(--afh-surface);
           border: 2px solid var(--accent);
         }
+        .comprendre-spine-stop:has(.comprendre-spine-link-pending)::before {
+          border-color: var(--afh-text-soft);
+        }
 
         .comprendre-spine-link {
           display: flex;
@@ -133,6 +186,13 @@ export function ComprendreQuestionSpine({
           outline-offset: 3px;
         }
 
+        /* Inert, and legibly so: the pending stop keeps its place in the
+           sequence but drops to the soft ink the hub's Bientôt row uses,
+           so "not yet" reads without being spelled out twice. */
+        .comprendre-spine-link-pending .comprendre-spine-question {
+          color: var(--afh-text-soft);
+        }
+
         .comprendre-spine-question {
           font-family: var(--afh-font-display);
           font-size: var(--afh-text-h3);
@@ -140,7 +200,10 @@ export function ComprendreQuestionSpine({
           color: var(--afh-text);
           text-wrap: balance;
         }
-        .comprendre-spine-link:hover .comprendre-spine-question {
+        /* :not(pending) — the inert stop shares the link's layout class and
+           would otherwise offer a hover affordance for a click it refuses. */
+        .comprendre-spine-link:not(.comprendre-spine-link-pending):hover
+          .comprendre-spine-question {
           text-decoration: underline;
           text-underline-offset: 4px;
         }

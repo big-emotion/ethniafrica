@@ -6,6 +6,7 @@ import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getTranslation } from "@/lib/translations";
 import { OG_TITLE } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const strings = getTranslation("fr").hubs.explorer;
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: `${strings.title} — ${OG_TITLE}`,
   description: strings.blurb,
   alternates: {
-    canonical: "/fr/explorer",
+    canonical: getLocalizedRoute("fr", "explorerHub"),
   },
 };
 

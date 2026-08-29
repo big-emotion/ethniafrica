@@ -1,40 +1,53 @@
 /**
- * FR90 (Epic 13, Story 13.9, ETNI-533) — asserts that no children-facing
- * quiz surface can ever link to, or be generated from, colonization/event
- * content.
+ * FR90 (Epic 13, Story 13.9, ETNI-533) — asserts that no quiz surface can link
+ * to, or be generated from, colonization/event content.
  *
- * Two independent guarantees:
- * 1. Nav-rule: `QuizSegmentPicker` — the children segment's own entry
- *    point — renders zero `<a>` elements, so it is structurally incapable
- *    of linking to `/fr/regards/colonisation-et-resistances`.
- * 2. QZ-4-style CI assertion: the children field-path allowlist
- *    (`CHILDREN_FIELD_PATH_ALLOWLIST`) and the quiz template field paths
- *    (`TEMPLATE_FIELD_PATHS`) never reference event-derived content (the
- *    `MIGRATION_EVENT_TYPES` enum that backs colonization events per
- *    Story 13.1), and `isAllowedForSegment` denies such a path for the
- *    `children` audience.
+ * **What changed, and why this file matters more now.** The guarantee used to
+ * rest on two things: a children segment whose picker rendered no links, and a
+ * children field-path allowlist that denied event-derived paths. Both went out
+ * with the audience axis — a session is scoped by country or family now, and
+ * nothing filters by audience at all.
+ *
+ * Measured against the five templates that exist, the allowlist was excluding
+ * exactly one thing from children: T5, the ISO 639-3 code of a language. Not a
+ * sensitive topic. The property it was meant to protect — that no template
+ * reads colonisation or event content — was always a property of
+ * `TEMPLATE_FIELD_PATHS`, and that is what is asserted here directly.
+ *
+ * This is a narrower guarantee than the doctrine asks for. A future template
+ * touching sensitive content needs an editorial gate written for it, with
+ * advisory sign-off; it cannot inherit one from a segment that no longer
+ * exists.
  */
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 
-import { QuizSegmentPicker } from "@/components/quiz/QuizSegmentPicker";
-import type { QuizSegmentView } from "@/api/v2/schemas/quiz";
-import {
-  CHILDREN_FIELD_PATH_ALLOWLIST,
-  TEMPLATE_FIELD_PATHS,
-  isAllowedForSegment,
-} from "@/lib/quiz/segmentPolicy";
+import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
+import type { QuizScopesData } from "@/api/v2/schemas/quiz";
+import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
-
-const CHILDREN_SEGMENT: QuizSegmentView[] = [
-  {
-    id: "children",
-    labelFr: "enfants",
-    rungs: [{ difficulty: 1, activeQuestionCount: 4 }],
-  },
-];
+import { getLocalizedRoute } from "@/lib/routing";
 
 const EVENT_DERIVED_FIELD_PATH = "content.events.eventType";
+
+const SCOPES: QuizScopesData = {
+  countries: [
+    { id: "GHA", labelFr: "Ghana", activeQuestionCount: 90, playable: true },
+  ],
+  families: [],
+  mixed: {
+    id: "mixed",
+    labelFr: "Tout le continent",
+    activeQuestionCount: 2504,
+    playable: true,
+  },
+  random: {
+    id: "random",
+    labelFr: "Au hasard",
+    activeQuestionCount: 2504,
+    playable: true,
+  },
+};
 
 function isEventDerivedPath(fieldPath: string): boolean {
   return (
@@ -44,38 +57,35 @@ function isEventDerivedPath(fieldPath: string): boolean {
 }
 
 // @req REQ-091 FR90
-describe("colonization children-surface exclusion (Epic 13, Story 13.9, ETNI-533)", () => {
+describe("colonization quiz-surface exclusion (Epic 13, Story 13.9, ETNI-533)", () => {
   // @req REQ-091 FR90
-  it("renders the children quiz segment picker with no links at all", () => {
+  it("links only to the quiz itself from the track picker", () => {
     const { container } = render(
-      <QuizSegmentPicker segments={CHILDREN_SEGMENT} />
+      <QuizScopePicker
+        scopes={SCOPES}
+        action={getLocalizedRoute("fr", "quiz")}
+      />
     );
-    expect(container.querySelectorAll("a").length).toBe(0);
+
+    const hrefs = Array.from(container.querySelectorAll("a")).map((anchor) =>
+      anchor.getAttribute("href")
+    );
+    expect(
+      hrefs.every((href) => href?.startsWith(getLocalizedRoute("fr", "quiz")))
+    ).toBe(true);
   });
 
   // @req REQ-091 FR90
-  it("keeps the children field-path allowlist free of event-derived paths", () => {
-    for (const fieldPath of CHILDREN_FIELD_PATH_ALLOWLIST) {
-      expect(isEventDerivedPath(fieldPath)).toBe(false);
-    }
-  });
-
-  // @req REQ-091 FR90
-  it("keeps every quiz template field path free of event-derived content (QZ-4)", () => {
+  it("keeps every quiz template field path free of event-derived content", () => {
     for (const fieldPath of Object.values(TEMPLATE_FIELD_PATHS)) {
       expect(isEventDerivedPath(fieldPath)).toBe(false);
     }
   });
 
   // @req REQ-091 FR90
-  it("denies the children segment access to a representative event-derived field path", () => {
-    expect(isAllowedForSegment(EVENT_DERIVED_FIELD_PATH, "children")).toBe(
-      false
-    );
-  });
-
-  // @req REQ-091 FR90
-  it("still allows non-children segments access to event-derived field paths", () => {
-    expect(isAllowedForSegment(EVENT_DERIVED_FIELD_PATH, "adults")).toBe(true);
+  it("recognises a representative event-derived field path, so the check above can fail", () => {
+    // Without this, a check that every template path is clean would also pass
+    // if `isEventDerivedPath` stopped recognising anything at all.
+    expect(isEventDerivedPath(EVENT_DERIVED_FIELD_PATH)).toBe(true);
   });
 });

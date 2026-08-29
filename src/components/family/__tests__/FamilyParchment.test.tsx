@@ -2,20 +2,37 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FamilyParchment } from "@/components/family/FamilyParchment";
+import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const overlay = buildFamilyFootprintOverlay(
   [["NGA", "BEN"], ["NGA", "TGO"], ["NGA"]],
   3
 );
 
+/** The stored row the band transforms — the parchment takes a view model. */
+const BENOUECONGO_FAMILY = {
+  id: "FLG_BENOUECONGO",
+  nameFr: "Bénoué-Congo",
+  nameEn: "Benue–Congo",
+  content: {},
+} as never;
+
 const memberPeoples = [
   { id: "PPL_A", nameMain: "Anaga", currentCountries: ["NGA"] },
   { id: "PPL_B", nameMain: "Bantou", currentCountries: ["NGA", "BEN", "TGO"] },
 ];
 
-/** A fiche declaring neither branches nor a distribution — the state of every family in the recette database. */
+/**
+ * A fiche declaring neither branches nor a distribution.
+ *
+ * This used to describe every family in the recette database, because the
+ * loader had not been run since those fields were written to the corpus. It no
+ * longer describes any of them — all 24 declare both — so it models the case
+ * rather than reporting the state.
+ */
 function undeclaredFamily(): FamilyPageData {
   return {
     hero: {
@@ -91,13 +108,14 @@ describe("FamilyParchment — what the fiche declares", () => {
 
   // @req REQ-119
   it("reads the real count for a field the fiche does declare", () => {
-    // This is the test the whole card exists for. The mockup hard-codes
-    // "vide", which is true of the recette database and false of the corpus in
-    // this repository, where all 24 family fiches already declare branches. A
-    // page that hard-coded it would start lying to the reader about the state
-    // of the corpus on the day the loader finally reaches the database — in a
-    // project whose entire posture is source transparency, the worst possible
-    // regression, and one no gate would catch.
+    // This is the test the whole card exists for, and the day it was written
+    // for has arrived. The mockup hard-codes "vide"; that was true of the
+    // recette database and false of the corpus, where all 24 fiches already
+    // declared branches. The loader has since been run, so the database now
+    // declares them too — and a page that had hard-coded "vide" would be
+    // lying to the reader today. In a project whose entire posture is source
+    // transparency, the worst possible regression, and one no gate would
+    // have caught.
     const declared = undeclaredFamily();
     declared.generalInfo.branches = ["Bantoid", "Defoid", "Igboid"];
 
@@ -214,6 +232,40 @@ describe("FamilyParchment — the peoples", () => {
     expect(rows[0]).toHaveTextContent("Bantou");
     expect(rows[0]).toHaveTextContent("3 pays");
   });
+
+  // The corpus carries each member's PPL_ id and the list used to throw it
+  // away, so the one move a reader of this section wants was the one it did
+  // not offer.
+  // @req REQ-116
+  it("opens each member people's fiche", () => {
+    renderParchment();
+
+    const link = within(screen.getByTestId("member-peoples")).getAllByRole(
+      "link"
+    )[0];
+    expect(link).toHaveTextContent("Bantou");
+    expect(
+      link.getAttribute("href")?.startsWith(getPeopleRoute("fr", "PPL_"))
+    ).toBe(true);
+  });
+});
+
+describe("FamilyParchment — the trail", () => {
+  // A family fiche carried no breadcrumb at all, while the people fiches
+  // below it open theirs on "Familles" — the parent announced none of the
+  // hierarchy its children did.
+  // @req REQ-115
+  it("puts the family under the families directory", () => {
+    // The trail stands above the globe now, with the head — so it is the band
+    // that must carry it, not the parchment.
+    render(<FamilyFicheTitle family={BENOUECONGO_FAMILY} />);
+
+    const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
+    const up = within(trail).getByRole("link", { name: "Familles" });
+
+    expect(up).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
+    expect(trail).toHaveTextContent("Bénoué-Congo");
+  });
 });
 
 describe("FamilyParchment — the sources", () => {
@@ -271,5 +323,59 @@ describe("FamilyParchment — the sources", () => {
 
     expect(document.querySelector("img")).not.toBeInTheDocument();
     expect(screen.getByText(/Vraie source/)).toBeInTheDocument();
+  });
+});
+
+/**
+ * Who the provenance lines are written for.
+ *
+ * The family fiche was the first surface to say where each figure comes from,
+ * and it said it in the corpus's own key names — "generalInfo.totalSpeakers"
+ * under a card headed "Locuteurs". The claim was right and the audience was
+ * wrong. The gap paragraph goes the same way: it already names the two empty
+ * rubrics in French, and repeating them as JSON keys adds nothing a reader
+ * can act on.
+ *
+ * The derivation prose is the one place a key still belongs. It walks a reader
+ * through how the footprint was computed, and the charter itself states that
+ * rule with the field names in it (§1) — naming them is what makes the
+ * reconstruction checkable rather than a claim to trust.
+ */
+describe("FamilyParchment — provenance addressed to the reader", () => {
+  const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+
+  // @req REQ-119
+  it("prints no field path on a stat card", () => {
+    renderParchment();
+
+    const sources = Array.from(
+      document.querySelectorAll(".afh-stat-card-src")
+    ).map((node) => node.textContent ?? "");
+
+    expect(sources).toHaveLength(4);
+    for (const source of sources) expect(source).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("prints no field path in a section's provenance note", () => {
+    renderParchment();
+
+    const notes = Array.from(
+      document.querySelectorAll(".afh-parchment-note")
+    ).map((node) => node.textContent ?? "");
+
+    expect(notes.length).toBeGreaterThan(0);
+    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+  });
+
+  // @req REQ-119
+  it("names the two empty rubrics without naming their JSON keys", () => {
+    renderParchment();
+
+    const gap = document.querySelector(".afh-parchment-gap");
+    expect(gap).not.toBeNull();
+    expect(gap?.textContent).toMatch(/branches/i);
+    expect(gap?.textContent).toMatch(/répartition/i);
+    expect(gap?.querySelector("code")).toBeNull();
   });
 });

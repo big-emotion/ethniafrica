@@ -14,6 +14,9 @@ import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
 import { getNavModules } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getFacetByPage } from "@/lib/hubs/facets";
+import { getLocalizedRoute } from "@/lib/routing";
 
 let mockPathname = "/fr";
 
@@ -109,7 +112,7 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
 
 describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   // @req REQ-114
-  it("deploys an axis's modules with their real routes", () => {
+  it("leads with the axis's own hub, and reaches every entry it holds", () => {
     renderHeader();
 
     fireEvent.click(trigger("Explorer"));
@@ -117,24 +120,44 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
     expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "true");
     expect(panel()).toHaveTextContent(t.hubs.explorer.menuBlurb);
 
+    // The axis label is a disclosure button, so before this the page the axis
+    // is named after was reachable from no navigation surface at all.
+    expect(
+      screen.getByRole("link", { name: t.hubs.explorer.hubEntryName })
+    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
+
     for (const navModule of getNavModules("explorer")) {
       const href = getModuleHref(navModule, "fr");
+      const facet = navModule.page ? getFacetByPage(navModule.page) : null;
+
+      // A facet is offered under its short name, because it names a state of
+      // the hub rather than a destination competing with it.
       expect(
-        screen.getByRole("link", { name: navModule.name })
+        screen.getByRole("link", { name: facet ? facet.label : navModule.name })
       ).toHaveAttribute("href", href);
     }
   });
 
-  // The route is shown, not just linked: the reader sees where the click
-  // lands before spending it (charter §3).
+  /**
+   * The route is shown, not just linked: the reader sees where the click lands
+   * before spending it (charter §3).
+   *
+   * Only for a destination, though. Printing an address under each facet is
+   * what made the three of them read as three pages — the hub prints one
+   * address, and the facets are named states of it.
+   */
   // @req REQ-114
-  it("shows each module's route as text on its card", () => {
+  it("prints an address for a destination and none for a facet", () => {
     renderHeader();
 
     fireEvent.click(trigger("Explorer"));
 
-    expect(panel()).toHaveTextContent("/fr/peuples");
-    expect(panel()).toHaveTextContent("/fr/pays");
+    expect(panel()).toHaveTextContent(getAxisHubRoute("fr", "explorer"));
+    expect(panel()).toHaveTextContent(getLocalizedRoute("fr", "search"));
+
+    expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "peoples"));
+    expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "countries"));
+    expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "families"));
   });
 
   // @req REQ-114
@@ -167,7 +190,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
     const { rerender } = renderHeader();
 
     fireEvent.click(trigger("Explorer"));
-    mockPathname = "/fr/peuples";
+    mockPathname = getLocalizedRoute("fr", "peoples");
     rerender(
       <ThemeProvider attribute="class">
         <SiteHeader language="fr" />
@@ -178,18 +201,19 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 
   // @req REQ-114
-  it("marks the module the reader is already reading", () => {
-    mockPathname = "/fr/peuples";
+  it("marks the facet the reader is already reading", () => {
+    mockPathname = getLocalizedRoute("fr", "peoples");
     renderHeader();
 
     fireEvent.click(trigger("Explorer"));
 
-    expect(
-      screen.getByRole("link", { name: "Les peuples d'Afrique" })
-    ).toHaveAttribute("aria-current", "page");
-    expect(
-      screen.getByRole("link", { name: "Les pays d'Afrique" })
-    ).not.toHaveAttribute("aria-current");
+    expect(screen.getByRole("link", { name: "Peuples" })).toHaveAttribute(
+      "aria-current",
+      "page"
+    );
+    expect(screen.getByRole("link", { name: "Pays" })).not.toHaveAttribute(
+      "aria-current"
+    );
   });
 });
 
@@ -293,7 +317,7 @@ describe("SiteHeader — the controls that stay in the bar", () => {
   // bar would collide with a fixed header (R3/FR105).
   // @req REQ-114
   it("stays static rather than fixed or sticky on every route", () => {
-    for (const pathname of ["/fr", "/fr/pays"]) {
+    for (const pathname of ["/fr", getLocalizedRoute("fr", "countries")]) {
       mockPathname = pathname;
       renderHeader();
 
@@ -330,15 +354,22 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
   });
 
   // @req REQ-114
-  it("deploys an axis's modules inside the tray", () => {
+  it("deploys the hub and its facets inside the tray", () => {
     renderHeader();
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
     fireEvent.click(within(tray).getByRole("button", { name: /Explorer/ }));
 
+    // The tray is the only navigation below 760px, so a hub reachable in the
+    // panel and not here would be unreachable on a phone.
     expect(
-      within(tray).getByRole("link", { name: "Les peuples d'Afrique" })
-    ).toHaveAttribute("href", "/fr/peuples");
+      within(tray).getByRole("link", { name: t.hubs.explorer.hubEntryName })
+    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
+
+    expect(within(tray).getByRole("link", { name: "Peuples" })).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "peoples")
+    );
   });
 });

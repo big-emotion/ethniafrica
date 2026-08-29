@@ -29,9 +29,19 @@ export interface GameScopePickerProps {
  * client-side filtering would have bought.
  *
  * `QuizSegmentPicker` was the obvious thing to reuse and turned out not to be:
- * its segments are *audiences* — children, teens, adults — not places or
- * families. It shares neither its data nor its semantics with this, so reusing
- * it would have meant one component answering two unrelated questions.
+ * its segments were *audiences* — children, teens, adults — not places or
+ * families. **That is no longer true.** The quiz dropped the audience axis and
+ * is now scoped by country or family exactly as this is, through
+ * `QuizScopePicker`, which is this component's shape submitted to a different
+ * route: a `GET` form of two selects, defaults meaning "no filter", and a
+ * chosen scope that lives in the URL.
+ *
+ * They stay two files rather than one parameterised picker. The pair share a
+ * shape, not a contract: this one narrows a corpus the page has already loaded
+ * and cannot say how many rounds a choice yields, while the quiz's reads
+ * per-track counts off the question bank and disables a track that cannot fill
+ * a session. Folding them together would mean one component carrying both, and
+ * the note above is what that costs when the assumption underneath moves.
  */
 // @req REQ-120
 export const GameScopePicker = ({

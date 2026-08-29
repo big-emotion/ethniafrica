@@ -16,12 +16,13 @@ const fiche: QuizPeopleFixture = {
   languageFamilyNameFr: "Niger-Congo",
   selfAppellation: "Yorùbá",
   distributionByCountry: [
-    { countryId: "NGA", countryNameFr: "Nigeria", percentage: 82 },
-    { countryId: "BEN", countryNameFr: "Bénin", percentage: 12 },
-    { countryId: "TGO", countryNameFr: "Togo", percentage: 6 },
+    { countryId: "NGA", countryNameFr: "Nigeria", population: 41_000_000 },
+    { countryId: "BEN", countryNameFr: "Bénin", population: 6_000_000 },
+    { countryId: "TGO", countryNameFr: "Togo", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
   isoCode: "yor",
+  totalPopulation: 50_000_000,
 };
 
 describe("buildT1LanguageFamilyTemplate", () => {

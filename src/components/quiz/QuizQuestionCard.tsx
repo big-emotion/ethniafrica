@@ -60,10 +60,22 @@ export const QuizQuestionCard = ({
         <legend className="mb-3 font-afh-display text-afh-h3 font-bold text-afh-text">
           {question.promptFr}
         </legend>
+        {/*
+          Two columns from 430px up, one below.
+
+          The four options rendered in a single column at every width, under a
+          stem and a progress row, is what pushed the last of them below the
+          fold on a phone — and the games charter is explicit that when a round
+          does not fit, the stage shrinks and the options are never what gets
+          pushed off. Two columns halve the block's height for four short
+          answers. `min-h-11` stays on each cell, so a target is still 44px tall
+          (WCAG 2.5.8) whatever the column count, and `items-center` keeps a
+          two-line answer's radio aligned with its first line.
+        */}
         <RadioGroup
           value={selectedOption !== null ? String(selectedOption) : undefined}
           onValueChange={(value) => onSelectOption(Number(value))}
-          className="gap-3"
+          className="grid grid-cols-1 gap-3 min-[430px]:grid-cols-2"
         >
           {question.optionsFr.map((option, index) => (
             <label

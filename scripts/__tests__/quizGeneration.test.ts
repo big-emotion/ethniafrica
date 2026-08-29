@@ -8,10 +8,9 @@
 import { describe, expect, it } from "vitest";
 import type { QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
-import { TEMPLATE_AVAILABILITY } from "@/lib/quiz/segmentPolicy";
+import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
 import {
   auditActiveBank,
-  clampDifficulty,
   computeSweepPlan,
   decideRevocation,
   evaluateCandidate,
@@ -31,12 +30,13 @@ const yoruba: QuizPeopleFixture = {
   languageFamilyNameFr: "Niger-Congo",
   selfAppellation: "Yorùbá",
   distributionByCountry: [
-    { countryId: "NGA", countryNameFr: "Nigeria", percentage: 82 },
-    { countryId: "BEN", countryNameFr: "Bénin", percentage: 12 },
-    { countryId: "TGO", countryNameFr: "Togo", percentage: 6 },
+    { countryId: "NGA", countryNameFr: "Nigeria", population: 41_000_000 },
+    { countryId: "BEN", countryNameFr: "Bénin", population: 6_000_000 },
+    { countryId: "TGO", countryNameFr: "Togo", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
   isoCode: "yor",
+  totalPopulation: 50_000_000,
 };
 
 const zulu: QuizPeopleFixture = {
@@ -46,10 +46,15 @@ const zulu: QuizPeopleFixture = {
   languageFamilyNameFr: "Niger-Congo",
   selfAppellation: "AmaZulu",
   distributionByCountry: [
-    { countryId: "ZAF", countryNameFr: "Afrique du Sud", percentage: 95 },
+    {
+      countryId: "ZAF",
+      countryNameFr: "Afrique du Sud",
+      population: 12_000_000,
+    },
   ],
   mainLanguage: { autonym: "isiZulu", exonym: "Zoulou" },
   isoCode: "zul",
+  totalPopulation: 12_000_000,
 };
 
 const pools: QuizCandidatePools = {
@@ -116,29 +121,18 @@ describe("resolveCurrentAnswer", () => {
   });
 });
 
-describe("clampDifficulty", () => {
-  // @req REQ-097 FR68
-  it("clamps a baseline difficulty into the audience's rung range", () => {
-    expect(clampDifficulty(1, "university")).toBe(3); // min 3
-    expect(clampDifficulty(4, "children")).toBe(2); // max 2
-    expect(clampDifficulty(2, "adults")).toBe(2); // within range unchanged
-  });
-});
-
 describe("evaluateCandidate", () => {
   // @req REQ-080 REQ-103
   it("generates a record for a gate-passing, assertion-bound candidate", () => {
     const result = evaluateCandidate(
       yoruba,
       "T1",
-      "adults",
       binding("languageFamilyId"),
       pools
     );
     if (result.outcome !== "generated") throw new Error("expected generated");
     expect(result.record.templateId).toBe("T1");
-    expect(result.record.audience).toBe("adults");
-    expect(result.record.difficulty).toBe(2); // baseline 1 clamped into [2,4]
+    expect(result.record.difficulty).toBe(1); // the template's own baseline, unclamped
     expect(result.record.assertionId).toBe("assertion-languageFamilyId");
     expect(result.record.confidenceAtGeneration).toBe(90);
   });
@@ -147,7 +141,7 @@ describe("evaluateCandidate", () => {
   it("rejects with a gate_failed reason when the assertion fails FR65", () => {
     const failing = binding("languageFamilyId");
     failing.eligibility = { ...eligibleInput, confidenceScore: 10 };
-    const result = evaluateCandidate(yoruba, "T1", "adults", failing, pools);
+    const result = evaluateCandidate(yoruba, "T1", failing, pools);
     expect(result).toEqual({
       templateId: "T1",
       outcome: "rejected",
@@ -157,7 +151,7 @@ describe("evaluateCandidate", () => {
 
   // @req REQ-080
   it("rejects with no_assertion when no assertion is bound", () => {
-    const result = evaluateCandidate(yoruba, "T1", "adults", undefined, pools);
+    const result = evaluateCandidate(yoruba, "T1", undefined, pools);
     expect(result).toEqual({
       templateId: "T1",
       outcome: "rejected",
@@ -170,7 +164,6 @@ describe("evaluateCandidate", () => {
     const result = evaluateCandidate(
       yoruba,
       "T1",
-      "adults",
       binding("languageFamilyId"),
       { ...pools, familyNames: ["Bantou"] }
     );
@@ -186,7 +179,6 @@ describe("decideRevocation", () => {
   const activeT1: ActiveQuestionRow = {
     id: "q-1",
     templateId: "T1",
-    audience: "adults",
     entityId: "PPL_YORUBA",
     fieldPath: "languageFamilyId",
     correctOption: 0,
@@ -278,26 +270,16 @@ describe("computeSweepPlan", () => {
   });
 
   // @req REQ-080 REQ-097
-  it("generates candidates only for gate-passing, policy-available template/audience pairs", () => {
+  it("generates each template once per fiche, not once per audience", () => {
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
     ];
     const plan = computeSweepPlan({ entries, pools, activeQuestions: [] });
 
-    expect(plan.generatedCount).toBeGreaterThan(0);
     expect(plan.toInsert.every((r) => r.entityId === "PPL_YORUBA")).toBe(true);
-    // T3 (demography) is outside the children allowlist -> never generated for children.
-    expect(
-      plan.toInsert.some(
-        (r) => r.audience === "children" && r.templateId === "T3"
-      )
-    ).toBe(false);
-    // T1 (languageFamilyId) is allowlisted for children.
-    expect(
-      plan.toInsert.some(
-        (r) => r.audience === "children" && r.templateId === "T1"
-      )
-    ).toBe(true);
+    // The duplication this replaces is what made 2 504 questions into 11 879 rows.
+    const templateIds = plan.toInsert.map((r) => r.templateId);
+    expect(new Set(templateIds).size).toBe(templateIds.length);
   });
 
   // @req REQ-103
@@ -309,7 +291,6 @@ describe("computeSweepPlan", () => {
     const activeQuestions: ActiveQuestionRow[] = first.toInsert.map((r, i) => ({
       id: `q-${i}`,
       templateId: r.templateId,
-      audience: r.audience,
       entityId: r.entityId,
       fieldPath: r.fieldPath,
       correctOption: r.correctOption,
@@ -336,7 +317,6 @@ describe("computeSweepPlan", () => {
     const activeQuestions: ActiveQuestionRow[] = first.toInsert.map((r, i) => ({
       id: `q-${i}`,
       templateId: r.templateId,
-      audience: r.audience,
       entityId: r.entityId,
       fieldPath: r.fieldPath,
       correctOption: r.correctOption,
@@ -376,7 +356,6 @@ describe("computeSweepPlan", () => {
       {
         id: "q-flagged",
         templateId: "T1",
-        audience: "adults",
         entityId: "PPL_YORUBA",
         fieldPath: "languageFamilyId",
         correctOption: 0,
@@ -402,7 +381,6 @@ describe("computeSweepPlan", () => {
       {
         id: "q-stale",
         templateId: "T1",
-        audience: "adults",
         entityId: "PPL_YORUBA",
         fieldPath: "languageFamilyId",
         correctOption: 0,
@@ -422,10 +400,7 @@ describe("computeSweepPlan", () => {
     expect(plan.toRevoke).toEqual([{ id: "q-stale", reason: "stale_answer" }]);
     expect(
       plan.toInsert.some(
-        (r) =>
-          r.templateId === "T1" &&
-          r.audience === "adults" &&
-          r.entityId === "PPL_YORUBA"
+        (r) => r.templateId === "T1" && r.entityId === "PPL_YORUBA"
       )
     ).toBe(true);
   });
@@ -444,7 +419,6 @@ describe("computeSweepPlan", () => {
       entries,
       pools,
       activeQuestions: [],
-      audiences: ["adults"],
     });
     expect(plan.toInsert.some((r) => r.templateId === "T1")).toBe(false);
     expect(plan.rejectedCount).toBeGreaterThan(0);
@@ -462,14 +436,13 @@ describe("computeSweepPlan", () => {
   });
 });
 
-describe("auditActiveBank (QZ-1..QZ-5, --check mode)", () => {
+describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
   const runId = "run-1";
 
   function baseQuestion(): AuditableQuestion {
     return {
       id: "q-1",
       templateId: "T1",
-      audience: "adults",
       entityId: "PPL_YORUBA",
       fieldPath: "languageFamilyId",
       correctOption: 0,
@@ -546,27 +519,6 @@ describe("auditActiveBank (QZ-1..QZ-5, --check mode)", () => {
     expect(violations.some((v) => v.code === "QZ-3")).toBe(true);
   });
 
-  // QZ-4
-  // @req REQ-097 FR69
-  it("flags QZ-4 when a children question targets a field path outside the allowlist", () => {
-    const demographyQuestion: AuditableQuestion = {
-      ...baseQuestion(),
-      templateId: "T3",
-      audience: "children",
-      fieldPath: "content.demography.distributionByCountry",
-      optionsFr: ["Nigeria", "Kenya", "Ghana", "Sénégal"],
-    };
-    const entries: FicheEntry[] = [
-      { fiche: yoruba, assertionsByFieldPath: fullBindings() },
-    ];
-    const violations = auditActiveBank({
-      activeQuestions: [demographyQuestion],
-      entries,
-      knownGenerationRunIds: new Set([runId]),
-    });
-    expect(violations.some((v) => v.code === "QZ-4")).toBe(true);
-  });
-
   // QZ-5
   // @req REQ-080
   it("flags QZ-5 when generation_run_id does not resolve to a known run", () => {
@@ -589,11 +541,12 @@ const hausa: QuizPeopleFixture = {
   languageFamilyNameFr: "Afro-asiatique",
   selfAppellation: "Hausawa",
   distributionByCountry: [
-    { countryId: "NGA", countryNameFr: "Nigeria", percentage: 70 },
-    { countryId: "NER", countryNameFr: "Niger", percentage: 30 },
+    { countryId: "NGA", countryNameFr: "Nigeria", population: 7_000_000 },
+    { countryId: "NER", countryNameFr: "Niger", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Harshen Hausa", exonym: "Haoussa" },
   isoCode: "hau",
+  totalPopulation: 10_000_000,
 };
 
 const maasai: QuizPeopleFixture = {
@@ -603,10 +556,11 @@ const maasai: QuizPeopleFixture = {
   languageFamilyNameFr: "Nilo-saharien",
   selfAppellation: "Maa",
   distributionByCountry: [
-    { countryId: "KEN", countryNameFr: "Kenya", percentage: 100 },
+    { countryId: "KEN", countryNameFr: "Kenya", population: 5_000_000 },
   ],
   mainLanguage: { autonym: "ɔl Maa", exonym: "Maasai" },
   isoCode: "mas",
+  totalPopulation: 900_000,
 };
 
 /**
@@ -705,7 +659,6 @@ describe("computeSweepPlan distractor proximity", () => {
       entries,
       pools: cohabitingPools,
       activeQuestions: [],
-      audiences: ["adults"],
     });
   }
 
@@ -758,7 +711,7 @@ describe("computeSweepPlan distractor proximity", () => {
     // rejected split must stay what corpus order produced.
     const plan = planForAdults();
     expect(plan.generatedCount + plan.rejectedCount).toBe(
-      entries.length * TEMPLATE_AVAILABILITY.adults.length
+      entries.length * QUIZ_TEMPLATE_IDS.length
     );
   });
 });
