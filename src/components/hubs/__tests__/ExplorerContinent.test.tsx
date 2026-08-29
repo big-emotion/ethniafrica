@@ -64,6 +64,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
@@ -80,6 +81,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
@@ -98,6 +100,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
@@ -114,6 +117,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
@@ -134,6 +138,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
@@ -153,6 +158,7 @@ describe("ExplorerContinent — the map scene (REQ-116)", () => {
     render(
       <ExplorerContinent
         peopleCountsByCountry={COUNTS}
+        countryIds={["TZA", "NGA", "LSO"]}
         missingMessage="rien à afficher"
       />
     );
