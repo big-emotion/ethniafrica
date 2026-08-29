@@ -47,6 +47,20 @@ export interface DidYouKnowProps {
  * The band's own dress is deliberately bare: no card, no frame, no surface
  * between the reader and the sentence.
  *
+ * It also has to fit a viewport whole, which the deck had stopped doing: at
+ * twenty-four facts stacked in one grid cell it stood 893px tall against an
+ * 800px screen and pushed its own controls under the fold. Dropping the deck
+ * removed the controls and most of the height; what is kept from that fix is
+ * the vertical rhythm — tighter padding than the sections around it, and the
+ * title one rung down. That override of the section-heading unit is the only
+ * one on the home and the only section with grounds for it: everywhere else
+ * the title is a fixed label three words long, here it is the fact itself and
+ * runs to ninety characters, which at --afh-text-h1 takes four lines.
+ *
+ * The picture and the four controls on `/comprendre/anecdotes` stay on that
+ * page. The band is met, not sought: a reader who did not ask for an anecdote
+ * is not the reader to ask for a reaction to one.
+ *
  * The chips remain the point. Without them the band is a cul-de-sac — a good
  * story with nowhere to go — and the reader who is finally curious has to go
  * find the search box themselves. The link below them is the band's other
@@ -116,24 +130,41 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
       </div>
 
       <style>{`
+        /* The band has one size constraint the other sections do not: a
+           reader must be able to see the whole fact and the link out of it
+           without scrolling. Every measure below is set against that budget
+           rather than against the page's usual rhythm, which is why this
+           section is tighter than its neighbours. */
         .home-dyk {
           background: var(--afh-bg-warm);
           border-top: 1px solid var(--afh-border);
           border-bottom: 1px solid var(--afh-border);
-          padding: 46px 22px 36px;
+          padding: 24px 20px 20px;
           width: 100vw;
           margin-left: calc(50% - 50vw);
           margin-right: calc(50% - 50vw);
         }
         .home-dyk-inner {
-          max-width: 62ch;
+          /* Wider than the reading measure the other sections take: four
+             lines of centred display type is where the band overflowed, and
+             a few more characters per line removes one of them. */
+          max-width: 68ch;
           margin: 0 auto;
           text-align: center;
         }
         /* The eyebrow and the title are the shared unit's now
            (src/styles/section-heading.css). Only the spacing is local. */
         .home-dyk-heading {
-          margin-bottom: 16px;
+          margin-bottom: 8px;
+        }
+        /* The one place the section-heading unit is overridden, and the only
+           section that has grounds to: everywhere else the title is a fixed
+           label three words long, here it is the fact itself and runs to
+           ninety characters. Held at --afh-text-h1 the longest fact takes four
+           lines; one rung down it takes three, and the band fits a viewport. */
+        .home-dyk-heading .afh-section-heading-title {
+          font-size: var(--afh-text-h2);
+          max-width: 32ch;
         }
 
         .home-dyk-fact {
@@ -148,9 +179,9 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
         }
 
         .home-dyk p {
-          margin: 0 0 14px;
+          margin: 0 0 10px;
           font-size: var(--afh-text-body);
-          line-height: 1.65;
+          line-height: 1.55;
           color: var(--afh-text-soft);
         }
         .home-dyk .home-dyk-lede {
@@ -158,9 +189,17 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           color: var(--afh-text);
         }
 
+        /* The last paragraph's bottom margin sits between the prose and the
+           chips, which already declare their own top margin — two gaps for
+           one seam. Selected by what follows it rather than by
+           :last-of-type, which would land on the tier: the tier is a <p>
+           too, and is the real last one. */
+        .home-dyk-fact > p:has(+ .home-dyk-chips) {
+          margin-bottom: 0;
+        }
         .home-dyk-chips {
           list-style: none;
-          margin: 24px 0 0;
+          margin: 12px 0 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
@@ -202,9 +241,7 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           opacity: 0.72;
         }
         .home-dyk-tier {
-          margin: 22px 0 0;
-          padding-top: 16px;
-          border-top: 1px solid var(--afh-border);
+          margin: 10px 0 0;
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
@@ -216,7 +253,7 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
         }
 
         .home-dyk-all {
-          margin: 22px 0 0;
+          margin: 18px 0 0;
           text-align: center;
           font-size: var(--afh-text-caption);
         }
@@ -230,8 +267,17 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           color: var(--afh-text);
         }
 
+        /* Under 430px the same fact costs three or four more lines. These buy
+           them back without touching the type sizes, which are already at the
+           bottom of their clamps here. */
+        @media (max-width: 430px) {
+          .home-dyk { padding: 20px 16px 18px; }
+          .home-dyk p { line-height: 1.5; }
+          .home-dyk-chip { padding: 5px 12px 5px 9px; }
+        }
+
         @media (min-width: 720px) {
-          .home-dyk { padding: 64px 40px 48px; }
+          .home-dyk { padding: 36px 40px 30px; }
         }
       `}</style>
     </section>

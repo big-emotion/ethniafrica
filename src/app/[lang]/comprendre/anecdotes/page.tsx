@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-import { AnecdoteCard, AnecdotesPagination } from "@/components/anecdotes";
+import { AnecdoteReader } from "@/components/anecdotes";
 import { PageLayout } from "@/components/layout/PageLayout";
 import {
   DID_YOU_KNOW_FACTS,
-  paginateDidYouKnowFacts,
+  findDidYouKnowFact,
+  shuffleDidYouKnowDeck,
 } from "@/lib/home/didYouKnowFacts";
 import { getLocalizedRoute } from "@/lib/routing";
 
@@ -22,21 +23,23 @@ export const metadata: Metadata = {
 };
 
 interface AnecdotesPageProps {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ a?: string }>;
 }
 
 /**
- * The whole « Saviez-vous que » bank, as a feed.
+ * The « Saviez-vous que » bank, read one card at a time.
  *
- * The home's band shows one fact at a time and lets a reader turn through
- * the deck; that is a hook, and a hook has no URL. This page is what the
- * hook points at: every fact, in the authored order, each addressable by
- * its own anchor and each printing the sources behind it.
+ * The home's band shows one fact and lets a reader turn through the deck;
+ * that is a hook, and a hook has no URL. This page is what the hook points
+ * at — and, since it stopped being a paginated feed, it reads the way the
+ * band does rather than the way an archive does: a picture, a fact, and four
+ * things to do with it.
  *
- * It sits under Comprendre rather than beside it. Explorer serves a reader
- * who knows what they are looking for and Jouer one who wants to be tested;
- * the anecdote serves the reader who did not know there was anything to
- * know, which is what the third axis is for.
+ * The draw runs here rather than in the reader. The app renders dynamically,
+ * so a shuffle at request time gives every visit a different opening card
+ * with no second render and no hydration mismatch — the same reasoning the
+ * band's own draw rests on. `?a=<id>` overrides the opening card, which is
+ * what makes a shared link land on the anecdote it promised.
  *
  * The facts are a module in the repo, not rows in a table, so nothing here
  * awaits a query — the page renders from a constant and cannot show the
@@ -46,8 +49,11 @@ interface AnecdotesPageProps {
 export default async function AnecdotesPage({
   searchParams,
 }: AnecdotesPageProps) {
-  const requested = Number.parseInt((await searchParams).page ?? "1", 10);
-  const { facts, pageNumber, pageCount } = paginateDidYouKnowFacts(requested);
+  const requested = (await searchParams).a ?? null;
+  // A link naming a retired fact opens on a fresh draw rather than a 404:
+  // the address still points at a page that has something to say.
+  const named = findDidYouKnowFact(requested);
+  const deck = shuffleDidYouKnowDeck();
 
   return (
     <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
@@ -58,33 +64,32 @@ export default async function AnecdotesPage({
         <p className="anecdotes-lede">{PAGE_SUBTITLE}</p>
 
         <p className="anecdotes-count">
-          {`${DID_YOU_KNOW_FACTS.length} anecdotes — page ${pageNumber} sur ${pageCount}`}
+          {`${DID_YOU_KNOW_FACTS.length} anecdotes — une à la fois, tirée au hasard`}
         </p>
 
-        {facts.map((fact) => (
-          <AnecdoteCard key={fact.id} language="fr" fact={fact} />
-        ))}
-
-        <AnecdotesPagination
-          basePath={BASE_PATH}
-          pageNumber={pageNumber}
-          pageCount={pageCount}
+        <AnecdoteReader
+          language="fr"
+          deck={deck}
+          initialFactId={named?.id ?? null}
         />
       </div>
 
       <style>{`
         .anecdotes-page {
           max-width: 68ch;
+          margin: 0 auto;
         }
         .anecdotes-lede {
-          margin: 0 0 22px;
+          margin: 0 auto 14px;
           max-width: 58ch;
+          text-align: center;
           font-size: var(--afh-text-lead);
           line-height: 1.55;
           color: var(--afh-text-soft);
         }
         .anecdotes-count {
-          margin: 0 0 4px;
+          margin: 0 0 26px;
+          text-align: center;
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
