@@ -1103,7 +1103,11 @@ export function AtlasGlobe({
           mobile-first project. */}
       <div
         data-atlas-toolbar=""
-        className="absolute inset-x-0 bottom-0 flex flex-wrap justify-center gap-2 p-3"
+        // Transparent to the pointer, because it is a full-width strip pinned
+        // across the bottom of the stage: solid, it swallowed every tap in
+        // that band, and the stage is now how a reader selects a country. The
+        // buttons take the pointer back for themselves.
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-wrap justify-center gap-2 p-3"
       >
         {/* The button clears the choice, so the choice is what earns it —
             not the shape of the picker. Gated on the picker, a fiche offering
@@ -1114,7 +1118,7 @@ export function AtlasGlobe({
             type="button"
             aria-pressed={chosenCountryId === null}
             onClick={() => setChosenCountryId(null)}
-            className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+            className="pointer-events-auto rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
             style={{ color: "var(--afh-night-ink-2)" }}
           >
             {wholeAreaLabel}
@@ -1124,7 +1128,7 @@ export function AtlasGlobe({
           type="button"
           aria-pressed={flat}
           onClick={() => setFlat((current) => !current)}
-          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          className="pointer-events-auto rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
@@ -1132,7 +1136,7 @@ export function AtlasGlobe({
         <button
           type="button"
           onClick={recentre}
-          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          className="pointer-events-auto rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
           Recentrer
