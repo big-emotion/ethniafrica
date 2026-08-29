@@ -91,7 +91,7 @@ function undeclaredFamily(): FamilyPageData {
 }
 
 function renderParchment(data: FamilyPageData = undeclaredFamily()) {
-  render(
+  return render(
     <FamilyParchment
       data={data}
       footprintCountries={overlay!.countries}
@@ -187,16 +187,24 @@ describe("FamilyParchment — the footprint", () => {
     expect(screen.getByText(/calculée/i)).toBeInTheDocument();
   });
 
+  /**
+   * The rule is stated in French, not in field names. Which rule produced the
+   * area still has to be legible — that is REQ-116 — but "les peuples
+   * rattachés à cette famille" says it to the reader who came for peoples,
+   * and `languageFamilyId` said it only to someone holding the schema.
+   */
   // @req REQ-116
-  it("credits the peoples carrying the family id when that is where it looked", () => {
-    renderParchment();
+  it("credits the peoples attached to the family, in French, when that is where it looked", () => {
+    const { container } = renderParchment();
 
-    expect(
-      screen.getByText("languageFamilyId", { selector: "code" })
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByText("associatedPeoples", { selector: "code" })
-    ).not.toBeInTheDocument();
+    // Each rule has one sentence only it can produce. Matching on "peuples
+    // rattachés" alone would also catch the members section's own heading,
+    // which both branches render.
+    expect(container.textContent).toContain("rattachés à cette famille");
+    expect(container.textContent).not.toContain(
+      "la seule liste que la fiche assume"
+    );
+    expect(container.querySelector("code")).toBeNull();
   });
 
   /**
@@ -206,7 +214,7 @@ describe("FamilyParchment — the footprint", () => {
    */
   // @req REQ-116
   it("names the fiche's own declaration when that is where it looked instead", () => {
-    render(
+    const { container } = render(
       <FamilyParchment
         data={undeclaredFamily()}
         footprintCountries={overlay!.countries}
@@ -216,13 +224,13 @@ describe("FamilyParchment — the footprint", () => {
       />
     );
 
-    expect(
-      screen.getByText("associatedPeoples", { selector: "code" })
-    ).toBeInTheDocument();
+    expect(container.textContent).toContain(
+      "la seule liste que la fiche assume"
+    );
+    expect(container.textContent).toContain("peuples que la fiche nomme");
     expect(screen.getByText(/sous-familles/i)).toBeInTheDocument();
-    expect(
-      screen.queryByText("languageFamilyId", { selector: "code" })
-    ).not.toBeInTheDocument();
+    expect(container.textContent).not.toContain("rattachés à cette famille");
+    expect(container.querySelector("code")).toBeNull();
   });
 });
 

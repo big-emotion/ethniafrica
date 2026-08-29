@@ -42,6 +42,7 @@ export function FamilyHistorySection({
               type: "fiche_section",
               id: familyId,
               fieldPath: "history",
+              fieldLabel: "Histoire et origines",
             }}
             turnstileSiteKey={turnstileSiteKey}
             triggerLabel="Signaler cette section"

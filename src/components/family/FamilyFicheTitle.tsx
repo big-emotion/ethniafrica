@@ -22,9 +22,10 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
   return (
     <>
       <header className="afh-parchment-head">
-        <p className="afh-parchment-eyebrow">
-          {hero.id} · famille linguistique
-        </p>
+        {/* The eyebrow says what kind of thing the reader has opened. It used
+            to lead with the corpus identifier — FLG_ATLANTIQUE — which names
+            the row in the database, not the family in the world. */}
+        <p className="afh-parchment-eyebrow">Famille linguistique</p>
         <h1>
           {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
         </h1>

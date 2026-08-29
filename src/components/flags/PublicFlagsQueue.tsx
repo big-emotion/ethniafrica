@@ -235,17 +235,11 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
               <h2 className="break-words font-afh-display text-afh-h3 font-bold leading-tight text-afh-text group-hover:text-afh-terracotta">
                 {targetName}
               </h2>
-              {item.target.entityId &&
-                item.target.entityId !== item.target.label && (
-                  <p className="break-all font-mono text-afh-caption text-afh-text-soft">
-                    {item.target.entityId}
-                  </p>
-                )}
-              {item.target.fieldPath && (
-                <p className="break-all font-mono text-afh-caption text-afh-text-soft">
-                  {item.target.fieldPath}
-                </p>
-              )}
+              {/* The row once printed `entityId` and `fieldPath` under the
+                  title — PPL_BETI, then identity.history. Both are already
+                  said above in words, by the type and entity labels and by
+                  the target's own name, so the two mono lines added nothing
+                  a reader could use and put the schema on a public page. */}
             </div>
 
             {reason && (

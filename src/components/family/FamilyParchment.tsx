@@ -289,24 +289,26 @@ export function FamilyParchment({
           famille : elle est <strong>calculée</strong>.{" "}
           {footprintProvenance === "declared-associated-peoples" ? (
             <>
-              Aucun peuple ne porte directement l&apos;identifiant {hero.id}
-              &nbsp;: ils relèvent de ses <strong>sous-familles</strong>. Plutôt
-              que d&apos;additionner celles-ci — ce qui ferait affirmer à la
-              carte une unité que la fiche elle-même conteste — l&apos;aire suit
-              la seule liste que la fiche assume, son{" "}
-              <code>associatedPeoples</code>&nbsp;: l&apos;union des{" "}
-              <code>currentCountries</code> de ces{" "}
-              <strong>{memberPeopleCount} peuples</strong> donne les{" "}
+              Aucun peuple n&apos;est rattaché directement à cette
+              famille&nbsp;: ils relèvent de ses <strong>sous-familles</strong>.
+              Plutôt que d&apos;additionner celles-ci — ce qui ferait affirmer à
+              la carte une unité que la fiche elle-même conteste — l&apos;aire
+              suit la seule liste que la fiche assume, les{" "}
+              <strong>peuples que la fiche nomme</strong>
+              &nbsp;: l&apos;union des pays où ces{" "}
+              <strong>{memberPeopleCount} peuples</strong> se trouvent
+              aujourd&apos;hui donne les{" "}
               <strong>{footprint.length} pays</strong> teintés. La carte ne dit
               donc rien de plus que le texte.
             </>
           ) : (
             <>
-              Chaque fiche peuple porte son <code>languageFamilyId</code> et ses{" "}
-              <code>currentCountries</code>&nbsp;; l&apos;union de ces pays sur
-              les <strong>{memberPeopleCount} peuples</strong> rattachés à{" "}
-              {hero.id} donne les <strong>{footprint.length} pays</strong>{" "}
-              teintés, l&apos;intensité suivant le nombre de peuples présents.
+              Chaque fiche peuple déclare sa famille linguistique et les pays où
+              ce peuple se trouve aujourd&apos;hui&nbsp;; l&apos;union de ces
+              pays sur les <strong>{memberPeopleCount} peuples</strong>{" "}
+              rattachés à cette famille donne les{" "}
+              <strong>{footprint.length} pays</strong> teintés, l&apos;intensité
+              suivant le nombre de peuples présents.
             </>
           )}{" "}
           Le bord reste tireté partout : une famille linguistique n&apos;a pas

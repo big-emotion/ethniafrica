@@ -490,10 +490,6 @@ export const translations = {
       // beside the hub as if they were three more destinations — which is
       // exactly how the three directories read before they were merged.
       facetsLabel: "Ses facettes",
-      // Stands where a module card would print its route. Saying the route
-      // is missing is information about the corpus; printing a plausible
-      // path that 404s would not be (charter §4).
-      unresolvedRouteLabel: "route non résolue",
     },
     trail: {
       pages: TRAIL_PAGE_LABELS,
