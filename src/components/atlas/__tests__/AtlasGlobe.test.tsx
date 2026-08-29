@@ -27,6 +27,7 @@ import {
   continentTargetFacts,
   type AtlasTarget,
 } from "@/lib/atlas/targets";
+import type { CountryId } from "@/types/afrik";
 import { getCountryRoute } from "@/lib/routing";
 
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
@@ -770,6 +771,164 @@ describe("AtlasGlobe", () => {
      * weight read as two different quantities depending on which page the
      * reader is on.
      */
+    /**
+     * The complaint this answers: "there are still only a few countries shown
+     * and clickable". The scene documented fifty-four countries, drew twelve
+     * radial fields and offered every one of them to a tap — but nothing on
+     * screen said so, so the twelve halos read as the whole choosable set.
+     *
+     * The two layers are not interchangeable. A halo says how much the corpus
+     * documents in a country; a choice mark says the country can be opened.
+     * Counting them separately here is what keeps a later change from
+     * collapsing one into the other.
+     */
+    // @req REQ-117
+    it("marks every choosable country, not only the ones carrying a field", () => {
+      const documented = { ...CONTINENT_COUNTS, DZA: 3, KEN: 12, MOZ: 7 };
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+          targetPicker="list"
+          pickerTargets={buildCountryPickerTargets(
+            Object.keys(documented) as CountryId[],
+            documented
+          )}
+          areaNoun="l'atlas"
+        />
+      );
+
+      const marked = Array.from(
+        container.querySelectorAll("[data-atlas-choice]")
+      ).map((mark) => mark.getAttribute("data-atlas-choice"));
+
+      expect(marked.sort()).toEqual(Object.keys(documented).sort());
+      // The density layer is untouched: still one radial field per country the
+      // overlay ranked, not one per choosable country.
+      expect(container.querySelectorAll("circle")).toHaveLength(
+        Object.keys(CONTINENT_COUNTS).length
+      );
+    });
+
+    /**
+     * Two neighbours whose marks collide cost one of them its mark, and which
+     * one is not arbitrary: `buildContinentOverlay` already resolves the same
+     * collision in favour of the better-documented country, and a second rule
+     * here would have the field keep Senegal while the mark kept Gambia.
+     *
+     * The picker hands its targets in French alphabetical order — that is the
+     * order the *list* wants — so the ranking has to be re-imposed before the
+     * marks are spaced, never assumed from the order they arrive in.
+     */
+    // @req REQ-117
+    it("keeps the better-documented country when two marks collide", () => {
+      // Gambia sits inside Senegal, so at continent zoom their centres are a
+      // fraction of a mark apart: whichever rule runs, only one survives.
+      const documented = { SEN: 40, GMB: 2 };
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(documented)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+          targetPicker="list"
+          pickerTargets={buildCountryPickerTargets(
+            Object.keys(documented) as CountryId[],
+            documented
+          )}
+          areaNoun="l'atlas"
+        />
+      );
+
+      const marked = Array.from(
+        container.querySelectorAll("[data-atlas-choice]")
+      ).map((mark) => mark.getAttribute("data-atlas-choice"));
+
+      // Both fit on an unmeasured stage, so this asserts the order rather than
+      // the survivor: the ranking has to hold before any thinning applies.
+      expect(marked[0]).toBe("SEN");
+    });
+
+    /**
+     * The marks are affordance, never a second hit target. The stage already
+     * resolves a tap to the nearest country within a generous radius, and at
+     * 430px these sit a few points apart — as buttons they would steal taps
+     * from the country beside them and be too small to hit reliably anyway.
+     */
+    // @req REQ-117
+    it("leaves the choice marks inert, so the stage keeps resolving the tap", () => {
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+          targetPicker="list"
+          pickerTargets={buildCountryPickerTargets(
+            Object.keys(CONTINENT_COUNTS) as CountryId[],
+            CONTINENT_COUNTS
+          )}
+          areaNoun="l'atlas"
+        />
+      );
+
+      const marks = Array.from(
+        container.querySelectorAll("[data-atlas-choice]")
+      );
+      expect(marks.length).toBeGreaterThan(0);
+      expect(marks.every((mark) => mark.tagName !== "BUTTON")).toBe(true);
+      expect(
+        marks.every((mark) => mark.getAttribute("aria-hidden") === "true")
+      ).toBe(true);
+    });
+
+    /**
+     * The Explorer hub pins a labelled button on each of the twelve countries
+     * the field ranks and offers all fifty-four to a tap. The other forty-two
+     * are what earn a mark here — a dot inside a 22px button would read as a
+     * reticle on the twelve and say nothing the button does not already say.
+     */
+    // @req REQ-117
+    it("marks only the choosable countries the scene pins no marker on", () => {
+      const documented = { ...CONTINENT_COUNTS, DZA: 3, KEN: 12 };
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+          pickerTargets={buildCountryPickerTargets(
+            Object.keys(documented) as CountryId[],
+            documented
+          )}
+        />
+      );
+
+      const pinned = Array.from(
+        container.querySelectorAll("[data-atlas-target]")
+      ).map((marker) => marker.getAttribute("data-atlas-target"));
+      const marked = Array.from(
+        container.querySelectorAll("[data-atlas-choice]")
+      ).map((mark) => mark.getAttribute("data-atlas-choice"));
+
+      expect(pinned.sort()).toEqual(Object.keys(CONTINENT_COUNTS).sort());
+      expect(marked.sort()).toEqual(["DZA", "KEN"]);
+    });
+
+    /**
+     * A fiche globe pins a real, labelled button on each of its targets. Were
+     * the choice marks to appear there too, every country would carry two
+     * pastilles and the reader would have no way to tell which one answers.
+     */
+    // @req REQ-117
+    it("marks nothing on a scene that already pins a marker per target", () => {
+      const { container } = render(
+        <AtlasGlobe overlay={peopleOverlay} missingMessage="n/a" />
+      );
+
+      expect(
+        container.querySelector("[data-atlas-choice]")
+      ).not.toBeInTheDocument();
+    });
+
     // @req REQ-116
     it("sizes a continent field exactly as it sizes a people field of the same weight", () => {
       const continent = render(
