@@ -167,7 +167,7 @@ describe("PageLayout — header/main offset (ETNI-820: nav is never fixed, on or
 describe("PageLayout — the trail the shell owns", () => {
   // @req REQ-115
   it("renders the trail above main, and keeps it when the title band is hidden", () => {
-    mockPathname = "/fr/explorer/pays";
+    mockPathname = getLocalizedRoute("fr", "countries");
     render(
       <PageLayout language="fr" hideHeader>
         <p data-testid="content">Page content</p>
