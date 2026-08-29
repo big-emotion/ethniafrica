@@ -60,10 +60,10 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
   {
     id: "bantou",
     headline:
-      "« Bantou » n'est pas un peuple. C'est un mot forgé depuis l'Europe.",
+      "« Bantou » n'est pas un peuple : c'est une catégorie forgée par un philologue en 1862.",
     body: [
-      "Le linguiste allemand Wilhelm Bleek a construit le terme à partir d'une racine commune à des centaines de langues : ba-, le pluriel humain, et -ntu, la personne. Ba-ntu : « les gens ».",
-      "Il n'avait alors rencontré aucun locuteur — il travaillait depuis l'Europe sur des grammaires collectées par des missionnaires. L'anthropologie coloniale a ensuite détourné le mot en « races » et « cultures » bantoues, ce que Bleek n'avait jamais désigné : une famille de langues, pas une identité.",
+      "Wilhelm Bleek construit le terme dans A Comparative Grammar of South African Languages, à partir d'une racine commune à des centaines de langues : ba-, le préfixe de pluriel humain, et -ntu, la personne. Ba-ntu : « les gens ».",
+      "Ce que Bleek nomme est une parenté entre langues, pas une identité. L'anthropologie coloniale, puis l'apartheid avec le Bantu Education Act de 1953, en ont fait une catégorie de « races » et de « cultures » bantoues — un usage que sa classification ne portait pas.",
     ],
     entities: [
       { kind: "family", id: "FLG_BANTU", label: "Langues bantoues" },
@@ -75,10 +75,11 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
   },
   {
     id: "cote-ivoire",
-    headline: "La Côte d'Ivoire porte le nom de ce qu'on y achetait.",
+    headline:
+      "La Côte d'Ivoire porte le nom de la marchandise qu'on y chargeait.",
     body: [
       "Les navigateurs portugais désignaient ce littoral par sa marchandise : Costa do Marfim, la côte de l'ivoire. À l'est, vers Assinie, on parlait déjà de la Côte de l'Or — l'actuel Ghana.",
-      "En 1839, l'officier français Bouët-Willaumez francise l'appellation et la fixe officiellement. Il n'invente pas le nom : il institutionnalise un terme déjà employé depuis des siècles dans les langues européennes. Les frontières suivaient alors les logiques commerciales, pas les peuples.",
+      "En 1839, l'officier français Bouët-Willaumez francise l'appellation et la fixe officiellement. Il n'invente pas le nom : il institutionnalise un terme employé depuis des siècles dans les langues européennes. Ces noms de côtes découpaient un commerce, pas les peuples qui y vivaient.",
     ],
     entities: [
       { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
@@ -91,7 +92,7 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
     headline:
       "« Berbère » vient du grec barbaros : celui dont on ne comprend pas la langue.",
     body: [
-      "Les Romains reprennent le terme, les Arabes médiévaux aussi, et la colonisation française l'institutionnalise. Il est aujourd'hui considéré comme un exonyme imposé, parfois péjoratif.",
+      "Passé au latin barbarus, le terme sert aux Romains à désigner les populations non latines d'Afrique du Nord ; les auteurs arabes médiévaux le reprennent, l'administration coloniale française en fait une catégorie. Une partie de la communauté le reçoit aujourd'hui comme péjoratif, par association avec « barbare ».",
       "Le nom que ces peuples se donnent est Amazigh — Imazighen au pluriel — et il signifie « homme libre ». Kabyles, Chaouis, Rifains, Chleuhs, Mozabites et Touaregs sont tous Imazighen : des branches d'un même arbre, chacune avec sa région et son histoire.",
     ],
     entities: [
@@ -116,11 +117,16 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
   },
   {
     id: "personne-relationnelle",
+    // Trimmed to the items that can be checked word by word. « amăghar » was
+    // listed as the amazigh word for "person" — it names an elder or a chief —
+    // and one of the proverbs could not be traced to any attested form. The
+    // unverified tier labels a claim's authority; it does not license a
+    // mistranslation.
     headline:
-      "Dans une vingtaine de langues africaines, on ne peut pas dire « personne » sans dire « les autres ».",
+      "Dans plusieurs langues africaines, une même formule définit la personne par les autres.",
     body: [
-      "Muntu chez les Kongo et les Luba, umuntu en zoulou, motho en tswana, mogo en bambara, onipa en akan, qof en somali, amăghar en amazigh : le mot existe partout, et partout il est pris dans la même construction.",
-      "« Umuntu ngumuntu ngabantu » — une personne est une personne par les autres. « Mogobe mogola », « Onipa nyɛ onipa nko ara », « Qof waa qof dad awgiis » : la même structure conceptuelle revient d'un bout à l'autre du continent. L'individu n'y est jamais pensé comme un être isolé.",
+      "Muntu chez les Kongo et les Luba, umuntu en zoulou, motho en tswana, mɔgɔ en bambara, onipa en akan, qof en somali : le mot « personne » se répond d'une langue à l'autre, et se retrouve pris dans la même construction.",
+      "« Umuntu ngumuntu ngabantu » en zoulou — une personne est une personne par les autres ; « Onipa nyɛ onipa nkoara » en akan ; « Qof waa qof dad awgiis » en somali. Ces formules définissent la personne par ses relations plutôt que par elle-même.",
     ],
     entities: [
       { kind: "family", id: "FLG_BANTU", label: "Langues bantoues" },

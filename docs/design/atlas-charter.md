@@ -86,15 +86,25 @@ generated from it, never hand-listed.
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 
-- The panel shows each **destination**'s real route. A module absent from the
-  menu is a module absent from the corpus.
+- The menu **names destinations; it never prints their addresses**. A module
+  absent from the menu is a module absent from the corpus.
+
+  This used to read "the panel shows each destination's real route", and the
+  panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` in
+  monospace under its label. That is the router's path scheme rendered as
+  editorial content — the atlas publishing its own plumbing to a reader who
+  came for peoples and languages. The address lives in the link's `href`,
+  where the browser's status bar, the crawler and the screen reader all agree
+  to look for it; a URL long enough to wrap over two lines was never the thing
+  that told a reader where a click lands.
 
 - **A facet is not a destination.** Peoples, countries and families are three
   states of one page — the Explorer hub — not three pages beside it. The menu
   says so: the axis leads with its own hub, and the facets are offered beneath
-  it under their short names, with no address of their own. Printing an address
-  under each is what made the three read as three pages, which is what they
-  were until the directories merged.
+  it under their short names. They were once told apart by printing an address
+  under the hub and none under the facets; now that no entry carries one, the
+  distinction rests where it belonged all along — the hub leads the group, the
+  facets sit inside it.
 
   Which entries are facets is read off `src/lib/hubs/facets.ts` through
   `getFacetByPage`, never restated in the menu. `moduleRegistry` still declares

@@ -13,7 +13,9 @@ import { FlagForm } from "../FlagForm";
 const target = {
   type: "people",
   id: "PPL_YORUBA",
+  name: "Yoruba",
   fieldPath: "demographics.population",
+  fieldLabel: "Population",
   snapshotQuote: "La population est estimée à dix millions.",
 };
 
@@ -81,8 +83,13 @@ describe("FlagForm contract and validation", () => {
   it("shows the target context and exactly six native flag kinds", () => {
     renderForm();
 
-    expect(screen.getByText("Peuple · PPL_YORUBA")).toBeInTheDocument();
-    expect(screen.getByText("demographics.population")).toBeInTheDocument();
+    // The reporter is told what they are reporting by name, not by corpus
+    // identifier. `PPL_YORUBA` and `demographics.population` still travel in
+    // the payload below — they belong in the record, not on the page.
+    expect(screen.getByText("Peuple · Yoruba")).toBeInTheDocument();
+    expect(screen.getByText("Population")).toBeInTheDocument();
+    expect(screen.queryByText("PPL_YORUBA")).toBeNull();
+    expect(screen.queryByText("demographics.population")).toBeNull();
     expect(screen.getByRole("blockquote")).toHaveTextContent(
       "La population est estimée à dix millions."
     );
