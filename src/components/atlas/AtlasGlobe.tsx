@@ -563,6 +563,22 @@ export interface AtlasGlobeProps {
   areaNoun?: string;
   className?: string;
   /**
+   * The country the reading *around* the globe is already narrowed to.
+   *
+   * A hub filtered to `?pays=BEN` is showing Benin in its list, and a map that
+   * went on showing the whole continent beside it would be a second,
+   * contradictory answer to the same question. So the globe opens on that
+   * country: it is highlighted, and the panel states what the current selection
+   * has there.
+   *
+   * It seeds the choice rather than owning it — the reader may then aim
+   * anywhere else on the map, and only a *change* of reading re-seeds. Omitted
+   * entirely (not `null`) by a caller whose surroundings say nothing about a
+   * country, which is every fiche: `null` would mean "the reading names no
+   * country", and passing it would clear a choice the reader had just made.
+   */
+  readingCountryId?: CountryId | null;
+  /**
    * How a target is offered. "markers" pins a pastille on each one, which reads
    * well for the one or few targets a country or people fiche has. "list" is
    * for a family footprint of seventeen countries, where the pastilles overlap
@@ -687,6 +703,7 @@ export function AtlasGlobe({
   wholeAreaLabel = "Toute l'empreinte",
   areaNoun = "l'empreinte",
   className,
+  readingCountryId,
   targetPicker = "markers",
   pickerTargets,
   legend,
@@ -694,8 +711,23 @@ export function AtlasGlobe({
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
   const [chosenCountryId, setChosenCountryId] = useState<CountryId | null>(
-    null
+    readingCountryId ?? null
   );
+
+  // Re-seeding on a *change* of reading, adjusted during render rather than in
+  // an effect: an effect would paint the old choice first and correct it in a
+  // second commit, which on arrival at `?pays=BEN` is one frame of the whole
+  // continent before Benin lights up.
+  //
+  // Only a change re-seeds, which is what leaves the reader's own aim alone —
+  // a hub republishes its reading on every pagination step, and re-seeding on
+  // each of those would snap the map off whichever country they just chose.
+  // `undefined` opts out entirely; see `readingCountryId`.
+  const [seededReading, setSeededReading] = useState(readingCountryId);
+  if (readingCountryId !== undefined && readingCountryId !== seededReading) {
+    setSeededReading(readingCountryId);
+    setChosenCountryId(readingCountryId);
+  }
   const reducedMotion = usePrefersReducedMotion();
   const anchor = usePanelAnchor();
 
