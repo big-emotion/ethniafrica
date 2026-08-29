@@ -21,6 +21,41 @@ audit trail.
 Run this when the generator's output changes — new or reordered distractor
 pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 
+## The order that matters, and why it is not the obvious one
+
+**A rebuild alone regenerates nothing new.** `evaluateCandidate` refuses any
+question whose field path has no `assertions` row behind it (FR66), so a
+template added without its provenance produces `no_assertion` for every fiche
+and the rebuild comes back with the bank it started from. Provenance first, then
+the rebuild — never the reverse.
+
+Per environment, in this order:
+
+1. **Migrations.** `supabase db push`. `045_quiz_stimulus.sql` adds the column
+   the inversion templates write; `046_quiz_bank_indexes.sql` is the exception
+   below.
+2. **`npx tsx scripts/loadPeopleProvenance.ts`** — writes the people assertions.
+   Idempotent: a re-run adds only paths that were missing.
+3. **`npx tsx scripts/loadCountryProvenance.ts`** — writes the country ones.
+   Countries had **no assertion and no confidence score at all** before this
+   existed, so on a first run the whole 54 is new.
+4. **Check that countries can actually pass the gate**, before blaming the
+   templates for generating nothing:
+
+   ```sql
+   select count(*) filter (where score * 100 >= 60) as passes, count(*) as total
+     from confidence_scores where entity_type = 'country';
+   ```
+
+   A low count is an editorial problem, not a software one: FR65 needs a source
+   at tier `official` or `referenced`, and no loader may invent one.
+
+5. **`npx tsx scripts/generateQuizQuestions.ts --rebuild`.**
+6. **`046_quiz_bank_indexes.sql` last**, after the rebuild has succeeded. It
+   builds a unique index over `(entity_id, template_id)` where `revoked_at is
+null`; a duplicate already in the bank makes it fail to build, and the
+   failure would be read as a broken migration rather than as what it found.
+
 ## Before you start
 
 - The script talks to **one** database, the one its environment points at.
@@ -58,6 +93,8 @@ pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 select count(*) from quiz_questions where revoked_at is null;
 select template_id, count(*) from quiz_questions
   where revoked_at is null group by template_id order by template_id;
+select entity_type, count(*) from quiz_questions
+  where revoked_at is null group by entity_type;
 ```
 
 Keep both numbers. They are the only way to notice that a rebuild came back

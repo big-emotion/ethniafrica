@@ -31,9 +31,11 @@ import {
   buildAssertionBindings,
   dedupeAutonyms,
   mapConfidenceRowToBaseEligibility,
+  mapCountryRowToFiche,
   mapPeopleRowToFiche,
   type AssertionRow as AdapterAssertionRow,
   type ConfidenceScoreRow,
+  type CountryRow,
   type PeopleRow,
   type SourceRow as AdapterSourceRow,
 } from "./lib/quizFicheAdapter";
@@ -42,6 +44,7 @@ import {
   computeSweepPlan,
   type ActiveQuestionRow,
   type AuditableQuestion,
+  type CountryFicheEntry,
   type FicheEntry,
   type QuizCandidatePools,
   type QuizQuestionRecord,
@@ -53,7 +56,8 @@ import {
   type PageResult,
 } from "./lib/supabasePaging";
 
-const ENTITY_TYPE = "people";
+const PEOPLE_ENTITY_TYPE = "people";
+const COUNTRY_ENTITY_TYPE = "country";
 
 /**
  * What goes in `quiz_questions.audience`, which is `not null` and typed by the
@@ -104,46 +108,30 @@ async function fetchByIds<T>(
 
 interface BuiltCorpus {
   entries: FicheEntry[];
+  countryEntries: CountryFicheEntry[];
   pools: QuizCandidatePools;
 }
 
-/** Loads every people fiche + its FR65-eligible assertion bindings, and the candidate pools templates draw distractors from. */
-async function buildFicheEntries(
-  supabase: SupabaseClient
-): Promise<BuiltCorpus> {
-  const peopleRows = await fetchAllPages<PeopleRow>((from, to) =>
-    supabase
-      .from("afrik_peoples")
-      .select("id, name_main, language_family_id, content")
-      .range(from, to)
-  );
-
-  const { data: familyRows, error: familyErr } = await supabase
-    .from("afrik_language_families")
-    .select("id, name_fr");
-  if (familyErr) throw familyErr;
-
-  const { data: countryRows, error: countryErr } = await supabase
-    .from("afrik_countries")
-    .select("id, name_fr");
-  if (countryErr) throw countryErr;
-
-  const familyNameById = new Map(
-    (familyRows || []).map((row) => [row.id as string, row.name_fr as string])
-  );
-  const countryNameById = new Map(
-    (countryRows || []).map((row) => [row.id as string, row.name_fr as string])
-  );
-
-  const entityIds = (peopleRows || []).map((row) => row.id as string);
-
+/**
+ * The provenance rows one corpus needs: a confidence score per entity, the
+ * assertions behind its claims, and the sources those rest on.
+ *
+ * Shared by peoples and countries because the FR65 gate is the same for both —
+ * only `entity_type` differs, and a second copy of this would be a second place
+ * for the gate's inputs to drift.
+ */
+async function fetchProvenance(
+  supabase: SupabaseClient,
+  entityType: string,
+  entityIds: string[]
+) {
   const confidenceRows = await fetchByIds<ConfidenceScoreRow>(
     entityIds,
     (idChunk, from, to) =>
       supabase
         .from("confidence_scores")
         .select("entity_id, score, last_human_audit_at, open_flag_count")
-        .eq("entity_type", ENTITY_TYPE)
+        .eq("entity_type", entityType)
         .in("entity_id", idChunk)
         .range(from, to)
   );
@@ -154,7 +142,7 @@ async function buildFicheEntries(
       supabase
         .from("assertions")
         .select("id, entity_id, field_path, source_ids")
-        .eq("entity_type", ENTITY_TYPE)
+        .eq("entity_type", entityType)
         .in("entity_id", idChunk)
         .range(from, to)
   );
@@ -188,21 +176,88 @@ async function buildFicheEntries(
     assertionsByEntityId.set(row.entity_id, list);
   }
 
+  return { confidenceByEntityId, sourceById, assertionsByEntityId };
+}
+
+/** Loads every people fiche + its FR65-eligible assertion bindings, and the candidate pools templates draw distractors from. */
+async function buildFicheEntries(
+  supabase: SupabaseClient
+): Promise<BuiltCorpus> {
+  const peopleRows = await fetchAllPages<PeopleRow>((from, to) =>
+    supabase
+      .from("afrik_peoples")
+      .select("id, name_main, language_family_id, content")
+      .range(from, to)
+  );
+
+  const { data: familyRows, error: familyErr } = await supabase
+    .from("afrik_language_families")
+    .select("id, name_fr");
+  if (familyErr) throw familyErr;
+
+  const { data: countryRows, error: countryErr } = await supabase
+    .from("afrik_countries")
+    .select("id, name_fr");
+  if (countryErr) throw countryErr;
+
+  const familyNameById = new Map(
+    (familyRows || []).map((row) => [row.id as string, row.name_fr as string])
+  );
+  const countryNameById = new Map(
+    (countryRows || []).map((row) => [row.id as string, row.name_fr as string])
+  );
+
+  const peopleProvenance = await fetchProvenance(
+    supabase,
+    PEOPLE_ENTITY_TYPE,
+    (peopleRows || []).map((row) => row.id as string)
+  );
+
   const entries: FicheEntry[] = [];
   for (const row of (peopleRows || []) as PeopleRow[]) {
     const fiche = mapPeopleRowToFiche(row, familyNameById, countryNameById);
     if (!fiche) continue;
 
-    const baseEligibility = mapConfidenceRowToBaseEligibility(
-      confidenceByEntityId.get(row.id)
-    );
-    const assertionsByFieldPath = buildAssertionBindings(
-      assertionsByEntityId.get(row.id) ?? [],
-      sourceById,
-      baseEligibility
-    );
-    entries.push({ fiche, assertionsByFieldPath });
+    entries.push({
+      fiche,
+      assertionsByFieldPath: buildAssertionBindings(
+        peopleProvenance.assertionsByEntityId.get(row.id) ?? [],
+        peopleProvenance.sourceById,
+        mapConfidenceRowToBaseEligibility(
+          peopleProvenance.confidenceByEntityId.get(row.id)
+        )
+      ),
+    });
   }
+
+  // The country corpus is read a second time, with its own columns. The first
+  // read above takes `id, name_fr` only, to resolve a people's countries by
+  // name; the templates need the fiche body as well.
+  const countryFicheRows = await fetchAllPages<CountryRow>((from, to) =>
+    supabase
+      .from("afrik_countries")
+      .select("id, name_fr, etymology, name_origin_actor, content")
+      .range(from, to)
+  );
+
+  const countryProvenance = await fetchProvenance(
+    supabase,
+    COUNTRY_ENTITY_TYPE,
+    (countryFicheRows || []).map((row) => row.id as string)
+  );
+
+  const countryEntries: CountryFicheEntry[] = (
+    (countryFicheRows || []) as CountryRow[]
+  ).map((row) => ({
+    fiche: mapCountryRowToFiche(row),
+    assertionsByFieldPath: buildAssertionBindings(
+      countryProvenance.assertionsByEntityId.get(row.id) ?? [],
+      countryProvenance.sourceById,
+      mapConfidenceRowToBaseEligibility(
+        countryProvenance.confidenceByEntityId.get(row.id)
+      )
+    ),
+  }));
 
   const pools: QuizCandidatePools = {
     familyNames: [...new Set(entries.map((e) => e.fiche.languageFamilyNameFr))],
@@ -219,9 +274,15 @@ async function buildFicheEntries(
     ),
     isoCodes: [...new Set(entries.map((e) => e.fiche.isoCode))],
     peopleNames: dedupeAutonyms(entries.map((e) => e.fiche.subjectName)),
+    countryOwnNames: dedupeAutonyms(
+      countryEntries.map((e) => e.fiche.subjectName)
+    ),
+    kingdomNames: [
+      ...new Set(countryEntries.flatMap((e) => e.fiche.kingdomNames)),
+    ],
   };
 
-  return { entries, pools };
+  return { entries, countryEntries, pools };
 }
 
 async function fetchActiveQuestions(

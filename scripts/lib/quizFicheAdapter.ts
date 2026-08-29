@@ -18,7 +18,11 @@
  *    shape `quiz_questions.assertion_id` expects.
  */
 
-import type { AutonymExonymName, QuizPeopleFixture } from "@/types/quiz";
+import type {
+  AutonymExonymName,
+  QuizCountryFixture,
+  QuizPeopleFixture,
+} from "@/types/quiz";
 import { toQuizConfidenceScore } from "@/lib/quiz/eligibility";
 import type {
   QuizAssertionSource,
@@ -61,6 +65,23 @@ export interface PeopleContent {
       population?: number;
     }>;
   };
+}
+
+/** `afrik_countries.content`, reduced to the sections the country templates read. */
+export interface CountryContent {
+  historicalNames?: { colonization?: string | null };
+  historicalFacts?: { precolonial?: string | null };
+  culture?: { dominantReligions?: string | null };
+  kingdoms?: Array<{ name?: string }>;
+}
+
+export interface CountryRow {
+  id: string;
+  name_fr: string;
+  name_official?: string | null;
+  etymology: string | null;
+  name_origin_actor: string | null;
+  content: CountryContent | null;
 }
 
 export interface PeopleRow {
@@ -206,6 +227,37 @@ export function mapPeopleRowToFiche(
       T10: content.organization?.traditionalPoliticalSystem ?? null,
       T11: content.origins?.migrationRoutes ?? null,
     },
+  };
+}
+
+/**
+ * Maps a country row to the fixture its templates read.
+ *
+ * No all-or-nothing guard, unlike the people mapper. A country fiche is a
+ * single editorial document that always exists — the 54 are the corpus's
+ * skeleton — so a missing rubric costs it one round rather than removing it
+ * from the bank. `nameOfficial` has no column of its own (migration 006 writes
+ * five columns and drops it), so the leak rule sees only the usual name unless
+ * the row happens to carry one.
+ */
+// @req REQ-121
+export function mapCountryRowToFiche(row: CountryRow): QuizCountryFixture {
+  const content = row.content ?? {};
+  return {
+    id: row.id,
+    subjectName: { autonym: row.name_fr },
+    selfAppellation: row.name_official ?? row.name_fr,
+    exonyms: [],
+    rubrics: {
+      T13: row.etymology,
+      T14: row.name_origin_actor,
+      T15: content.historicalNames?.colonization ?? null,
+      T17: content.historicalFacts?.precolonial ?? null,
+      T18: content.culture?.dominantReligions ?? null,
+    },
+    kingdomNames: (content.kingdoms ?? [])
+      .map((kingdom) => kingdom?.name)
+      .filter((name): name is string => Boolean(name?.trim())),
   };
 }
 

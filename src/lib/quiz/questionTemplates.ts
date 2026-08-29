@@ -1,8 +1,9 @@
 import type {
   AutonymExonymName,
+  QuizCountryFixture,
   QuizCountryShare,
+  QuizInversionSubject,
   QuizPeopleFixture,
-  QuizProseRubrics,
   QuizQuestionCandidate,
   QuizTemplateId,
 } from "@/types/quiz";
@@ -17,7 +18,10 @@ import {
   selectVerbatimFragment,
   subjectNameTokens,
 } from "@/lib/quiz/proseFragment";
-import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
+import {
+  TEMPLATE_ENTITY_TYPES,
+  TEMPLATE_FIELD_PATHS,
+} from "@/lib/quiz/segmentPolicy";
 
 function displayName(name: AutonymExonymName): string {
   return name.exonym && name.exonym !== name.autonym
@@ -207,26 +211,27 @@ export function buildT5IsoCodeTemplate(
  */
 function buildInversionTemplate(
   templateId: QuizTemplateId,
-  rubricLabelFr: string,
+  explain: (subjectName: string) => string,
   stemFr: string,
   baselineDifficulty: number
 ) {
   return (
-    fiche: QuizPeopleFixture,
-    peopleNamePool: AutonymExonymName[]
+    fiche: QuizInversionSubject,
+    subjectNamePool: AutonymExonymName[]
   ): QuizQuestionCandidate | null => {
-    const rubric = fiche.rubrics[templateId as keyof QuizProseRubrics];
-    const stimulus = selectVerbatimFragment(rubric, subjectNameTokens(fiche));
+    const stimulus = selectVerbatimFragment(
+      fiche.rubrics[templateId],
+      subjectNameTokens(fiche)
+    );
     if (!stimulus) return null;
 
-    const distractors = selectDistractors(fiche.subjectName, peopleNamePool);
+    const distractors = selectDistractors(fiche.subjectName, subjectNamePool);
     if (!distractors) return null;
 
     const correctOption = correctOptionIndex(fiche.id, templateId);
-    const name = displayName(fiche.subjectName);
     return {
       templateId,
-      entityType: "people",
+      entityType: TEMPLATE_ENTITY_TYPES[templateId],
       entityId: fiche.id,
       fieldPath: TEMPLATE_FIELD_PATHS[templateId],
       promptFr: stemFr,
@@ -234,7 +239,7 @@ function buildInversionTemplate(
       subjectName: fiche.subjectName,
       optionsFr: assembleOptions(fiche.subjectName, distractors, correctOption),
       correctOption,
-      explanationFr: `Ce passage décrit ${rubricLabelFr} du peuple ${name}.`,
+      explanationFr: explain(displayName(fiche.subjectName)),
       baselineDifficulty,
     };
   };
@@ -243,7 +248,7 @@ function buildInversionTemplate(
 // @req REQ-121
 export const buildT6RitesTemplate = buildInversionTemplate(
   "T6",
-  "les rites",
+  (name) => `Ce passage décrit les rites du peuple ${name}.`,
   "Quel peuple pratique ces rites ?",
   3
 );
@@ -251,7 +256,7 @@ export const buildT6RitesTemplate = buildInversionTemplate(
 // @req REQ-121
 export const buildT7SpiritualitiesTemplate = buildInversionTemplate(
   "T7",
-  "les croyances",
+  (name) => `Ce passage décrit les croyances du peuple ${name}.`,
   "Quel peuple a ces croyances ?",
   3
 );
@@ -259,7 +264,7 @@ export const buildT7SpiritualitiesTemplate = buildInversionTemplate(
 // @req REQ-121
 export const buildT8SymbolsTemplate = buildInversionTemplate(
   "T8",
-  "les symboles",
+  (name) => `Ce passage décrit les symboles du peuple ${name}.`,
   "Quel peuple se reconnaît dans ces symboles ?",
   3
 );
@@ -267,7 +272,7 @@ export const buildT8SymbolsTemplate = buildInversionTemplate(
 // @req REQ-121
 export const buildT9KingdomsTemplate = buildInversionTemplate(
   "T9",
-  "l'histoire politique",
+  (name) => `Ce passage décrit l'histoire politique du peuple ${name}.`,
   "Quel peuple a connu cette histoire ?",
   4
 );
@@ -275,7 +280,8 @@ export const buildT9KingdomsTemplate = buildInversionTemplate(
 // @req REQ-121
 export const buildT10OrganizationTemplate = buildInversionTemplate(
   "T10",
-  "l'organisation traditionnelle",
+  (name) =>
+    `Ce passage décrit l'organisation traditionnelle du peuple ${name}.`,
   "Quel peuple s'organise ainsi ?",
   4
 );
@@ -283,7 +289,7 @@ export const buildT10OrganizationTemplate = buildInversionTemplate(
 // @req REQ-121
 export const buildT11MigrationTemplate = buildInversionTemplate(
   "T11",
-  "les déplacements",
+  (name) => `Ce passage décrit les déplacements du peuple ${name}.`,
   "Quel peuple a suivi ce chemin ?",
   4
 );
@@ -324,6 +330,86 @@ export function buildT12ContestedExonymTemplate(
   };
 }
 
+// @req REQ-121
+export const buildT13EtymologyTemplate = buildInversionTemplate(
+  "T13",
+  (name) => `Cette étymologie est celle du nom « ${name} ».`,
+  "De quel pays ce nom raconte-t-il l'origine ?",
+  4
+);
+
+// @req REQ-121
+export const buildT14NameOriginActorTemplate = buildInversionTemplate(
+  "T14",
+  (name) => `Ce sont eux qui ont nommé ce qu'on appelle aujourd'hui ${name}.`,
+  "Quel pays doit son nom à ceux-ci ?",
+  4
+);
+
+// @req REQ-121
+export const buildT15ColonialNameTemplate = buildInversionTemplate(
+  "T15",
+  (name) => `Ce nom fut porté par le territoire devenu ${name}.`,
+  "Quel pays portait ce nom sous la colonisation ?",
+  4
+);
+
+// @req REQ-121
+export const buildT17PrecolonialTemplate = buildInversionTemplate(
+  "T17",
+  (name) => `Cette histoire est celle du territoire devenu ${name}.`,
+  "Sur quel territoire cette histoire s'est-elle déroulée ?",
+  5
+);
+
+// @req REQ-121
+export const buildT18ReligionsTemplate = buildInversionTemplate(
+  "T18",
+  (name) => `Ce paysage religieux est celui de ${name} aujourd'hui.`,
+  "De quel pays ce paysage religieux est-il celui ?",
+  4
+);
+
+/**
+ * Which country a kingdom stood on — the one country template whose answer is
+ * an atom rather than the subject.
+ *
+ * `content.kingdoms[].name` is clean, unlike the sibling arrays of the same
+ * section: `dominantPeoples` and `majorPeoples[].exonyms` are the residue of a
+ * naive comma split, and would put « Akan (Ashanti » on screen as an option.
+ */
+// @req REQ-121
+export function buildT16KingdomTemplate(
+  fiche: QuizCountryFixture,
+  kingdomNamePool: string[]
+): QuizQuestionCandidate | null {
+  const kingdom = fiche.kingdomNames[0];
+  if (!kingdom) return null;
+
+  // A kingdom this same country also held is not a wrong answer.
+  const distractors = selectDistractors(
+    kingdom,
+    kingdomNamePool.filter((name) => !fiche.kingdomNames.includes(name))
+  );
+  if (!distractors) return null;
+
+  const correctOption = correctOptionIndex(fiche.id, "T16");
+  const name = displayName(fiche.subjectName);
+  return {
+    templateId: "T16",
+    entityType: "country",
+    entityId: fiche.id,
+    fieldPath: TEMPLATE_FIELD_PATHS.T16,
+    promptFr: `Quel royaume ou sultanat s'est développé sur le territoire de ${name} ?`,
+    stimulusFr: null,
+    subjectName: fiche.subjectName,
+    optionsFr: assembleOptions(kingdom, distractors, correctOption),
+    correctOption,
+    explanationFr: `${kingdom} s'est développé sur le territoire de ${name}.`,
+    baselineDifficulty: 4,
+  };
+}
+
 // @req REQ-080
 export const questionTemplateBuilders = {
   T1: buildT1LanguageFamilyTemplate,
@@ -338,4 +424,10 @@ export const questionTemplateBuilders = {
   T10: buildT10OrganizationTemplate,
   T11: buildT11MigrationTemplate,
   T12: buildT12ContestedExonymTemplate,
+  T13: buildT13EtymologyTemplate,
+  T14: buildT14NameOriginActorTemplate,
+  T15: buildT15ColonialNameTemplate,
+  T16: buildT16KingdomTemplate,
+  T17: buildT17PrecolonialTemplate,
+  T18: buildT18ReligionsTemplate,
 } as const;

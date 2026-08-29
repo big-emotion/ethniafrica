@@ -7,10 +7,16 @@ import {
   buildT5IsoCodeTemplate,
   buildT6RitesTemplate,
   buildT12ContestedExonymTemplate,
+  buildT13EtymologyTemplate,
+  buildT16KingdomTemplate,
   questionTemplateBuilders,
 } from "../questionTemplates";
 import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
-import type { AutonymExonymName, QuizPeopleFixture } from "@/types/quiz";
+import type {
+  AutonymExonymName,
+  QuizCountryFixture,
+  QuizPeopleFixture,
+} from "@/types/quiz";
 
 const fiche: QuizPeopleFixture = {
   id: "PPL_YORUBA",
@@ -364,6 +370,111 @@ describe("buildT12ContestedExonymTemplate", () => {
   it("reveals the corpus's own explanation rather than a paraphrase", () => {
     const round = buildT12ContestedExonymTemplate(tsonga());
     expect(round?.explanationFr).toBe(tsonga().whyProblematic);
+  });
+});
+
+const COUNTRY_POOL: AutonymExonymName[] = [
+  { autonym: "Comores" },
+  { autonym: "Ghana" },
+  { autonym: "Kenya" },
+  { autonym: "Sénégal" },
+];
+
+function countryFiche(
+  overrides: Partial<QuizCountryFixture> = {}
+): QuizCountryFixture {
+  return {
+    id: "COM",
+    subjectName: { autonym: "Comores" },
+    selfAppellation: "Union des Comores",
+    exonyms: [],
+    rubrics: {
+      T13:
+        "Le nom « Comores » vient de l'arabe « Juzur al-Qamar ». " +
+        "Les navigateurs qui accostaient l'archipel au IXe siècle voyaient dans ses sommets la forme de croissants.",
+    },
+    kingdomNames: ["Sultanats des Comores", "Royaume de Ndzuwani"],
+    ...overrides,
+  };
+}
+
+describe("the country templates", () => {
+  /**
+   * The same inversion as the people rounds, on the entity the quiz had never
+   * asked about: 54 fiches whose etymology, colonial name and religious
+   * landscape no template read.
+   */
+  // @req REQ-121
+  it("quotes a country rubric without naming the country", () => {
+    const round = buildT13EtymologyTemplate(countryFiche(), COUNTRY_POOL);
+
+    expect(round?.entityType).toBe("country");
+    expect(round?.stimulusFr).not.toContain("Comores");
+    expect(round?.stimulusFr).toContain("navigateurs qui accostaient");
+    expect(round?.optionsFr[round.correctOption]).toEqual({
+      autonym: "Comores",
+    });
+  });
+
+  // @req REQ-121
+  it("generates nothing when the etymology names the country throughout", () => {
+    expect(
+      buildT13EtymologyTemplate(
+        countryFiche({
+          rubrics: {
+            T13: "Le nom des Comores vient d'une racine arabe ancienne, portee par les marchands de l'ocean Indien.",
+          },
+        }),
+        COUNTRY_POOL
+      )
+    ).toBeNull();
+  });
+
+  /**
+   * T16 is the one country round whose answer is an atom rather than the
+   * subject, so it names its country in the stem like T1-T5 do.
+   */
+  // @req REQ-121
+  it("asks which country a kingdom stood on, naming the country in the stem", () => {
+    const round = buildT16KingdomTemplate(countryFiche(), [
+      "Sultanats des Comores",
+      "Empire du Ghana",
+      "Royaume Ashanti",
+      "Empire du Mali",
+    ]);
+
+    expect(round?.promptFr).toContain("Comores");
+    expect(round?.stimulusFr).toBeNull();
+    expect(round?.optionsFr[round.correctOption]).toBe("Sultanats des Comores");
+  });
+
+  /**
+   * A kingdom the same country also held is not a wrong answer — the corpus
+   * lists several per country, and offering two of them would make the round
+   * unanswerable rather than hard.
+   */
+  // @req REQ-121
+  it("never offers another kingdom of the same country as a distractor", () => {
+    const round = buildT16KingdomTemplate(countryFiche(), [
+      "Sultanats des Comores",
+      "Royaume de Ndzuwani",
+      "Empire du Ghana",
+      "Royaume Ashanti",
+      "Empire du Mali",
+    ]);
+
+    expect(round?.optionsFr).not.toContain("Royaume de Ndzuwani");
+  });
+
+  // @req REQ-121
+  it("generates nothing for a country whose fiche names no kingdom", () => {
+    expect(
+      buildT16KingdomTemplate(countryFiche({ kingdomNames: [] }), [
+        "Empire du Ghana",
+        "Royaume Ashanti",
+        "Empire du Mali",
+      ])
+    ).toBeNull();
   });
 });
 

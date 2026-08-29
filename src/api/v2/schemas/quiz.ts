@@ -142,7 +142,7 @@ export type QuizSourceRefView = z.infer<typeof quizSourceRefSchema>;
 
 // @req REQ-103
 export const quizEntityLinkSchema = z.object({
-  type: z.literal("people"),
+  type: z.enum(["people", "country"]),
   id: z.string(),
   slug: z.string(),
   autonym: z.string().nullable(),
@@ -175,6 +175,12 @@ export const quizSessionQuestionSchema = z.object({
     "T10",
     "T11",
     "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
   ]),
   promptFr: z.string(),
   /**

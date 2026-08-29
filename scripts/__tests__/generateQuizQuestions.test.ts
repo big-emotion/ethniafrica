@@ -13,6 +13,11 @@ const stimulusMigration = readFileSync(
   "utf8"
 );
 
+const indexMigration = readFileSync(
+  resolve(process.cwd(), "supabase/migrations/046_quiz_bank_indexes.sql"),
+  "utf8"
+);
+
 describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile target)", () => {
   // @req REQ-080
   it("declares the quiz_audience enum idempotently with the five MVP segments", () => {
@@ -152,5 +157,41 @@ describe("045_quiz_stimulus.sql schema contract", () => {
     expect(stimulusMigration).not.toContain("drop column");
     expect(stimulusMigration).not.toContain("create table");
     expect(stimulusMigration).not.toContain("create policy");
+  });
+});
+
+describe("046_quiz_bank_indexes.sql schema contract", () => {
+  /**
+   * The identity rule — one active question per (entity, template) — lived in
+   * memory only, inside `computeSweepPlan`. Two concurrent sweeps would have
+   * inserted the same question twice with nothing to stop them.
+   */
+  // @req REQ-121
+  it("gives the bank's identity rule a constraint rather than a convention", () => {
+    expect(indexMigration).toContain(
+      "create unique index if not exists uq_quiz_questions_active_identity"
+    );
+    expect(indexMigration).toContain(
+      "on quiz_questions (entity_id, template_id)"
+    );
+    expect(indexMigration).toContain("where revoked_at is null");
+  });
+
+  /**
+   * `(audience, difficulty)` leads on a column that has held one value since
+   * the audience axis was retired, so it discriminates nothing.
+   */
+  // @req REQ-121
+  it("drops the index keyed on the retired audience axis", () => {
+    expect(indexMigration).toContain(
+      "drop index if exists idx_quiz_questions_serving"
+    );
+  });
+
+  // @req REQ-121
+  it("indexes the bank by subject, now that a subject can be a country", () => {
+    expect(indexMigration).toContain(
+      "on quiz_questions (entity_type, entity_id, template_id)"
+    );
   });
 });
