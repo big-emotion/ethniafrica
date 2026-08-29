@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
-import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import {
   FACETS,
   definedFilter,
