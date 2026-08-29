@@ -289,7 +289,7 @@ export function FlagForm({
           {target.name ? ` · ${target.name}` : ""}
         </p>
         {target.fieldLabel && (
-          <p className="mt-afh-xs text-afh-caption text-afh-text-muted">
+          <p className="mt-afh-xs text-afh-caption text-afh-fg-muted">
             {target.fieldLabel}
           </p>
         )}
@@ -463,7 +463,7 @@ export function FlagForm({
             value={proposedRewrite}
           />
           <p
-            className="text-right text-afh-caption text-afh-text-muted"
+            className="text-right text-afh-caption text-afh-fg-muted"
             id={proposedRewriteCounterId}
           >
             {proposedRewrite.length.toLocaleString("fr-FR")} / 5 000
@@ -496,7 +496,7 @@ export function FlagForm({
             value={reason}
           />
           <p
-            className="text-right text-afh-caption text-afh-text-muted"
+            className="text-right text-afh-caption text-afh-fg-muted"
             id={reasonCounterId}
           >
             {reason.length.toLocaleString("fr-FR")} / 2 000

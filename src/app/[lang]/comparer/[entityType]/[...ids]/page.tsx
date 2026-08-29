@@ -132,7 +132,11 @@ export default async function ComparisonPage({
   // `/fr/comparer/peuples/PPL_A,PPL_B` the trail could not otherwise read.
   return (
     <>
-      <SiteTrail entityLabel={title} />
+      {/* The trail brings no gutter of its own, so this mount supplies one —
+          without it the crumbs sit flush against the viewport edge. */}
+      <div className="px-4">
+        <SiteTrail entityLabel={title} />
+      </div>
       <h1>{title}</h1>
       <ComparisonView data={data} />
     </>

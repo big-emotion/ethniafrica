@@ -425,3 +425,41 @@ describe("HierarchyTree — ClassificationBadge", () => {
     expect(within(kikongoItem).queryByRole("link")).not.toBeInTheDocument();
   });
 });
+
+describe("HierarchyTree — node affordance", () => {
+  // @req REQ-044
+  it("marks an expandable branch with a chevron that carries its open state", async () => {
+    const user = userEvent.setup();
+    renderTree({ defaultExpandedIds: ["FLG_BANTU"] });
+
+    const kikongo = screen.getByRole("treeitem", { name: /Kikongo/ });
+    const chevron = within(kikongo).getByTestId("hierarchy-node-chevron");
+
+    expect(chevron).toHaveAttribute("data-expanded", "false");
+
+    await user.click(kikongo);
+
+    expect(chevron).toHaveAttribute("data-expanded", "true");
+  });
+
+  // @req REQ-044
+  it("hides the chevron from assistive tech, which already reads aria-expanded", () => {
+    renderTree({ defaultExpandedIds: ["FLG_BANTU"] });
+
+    const kikongo = screen.getByRole("treeitem", { name: /Kikongo/ });
+
+    expect(
+      within(kikongo).getByTestId("hierarchy-node-chevron")
+    ).toHaveAttribute("aria-hidden", "true");
+    expect(kikongo).toHaveAttribute("aria-expanded", "false");
+  });
+
+  // @req REQ-044
+  it("gives a leaf no chevron, so the affordance only ever promises what opens", () => {
+    renderTree({ defaultExpandedIds: ["FLG_BANTU", "kon"] });
+
+    const leaf = screen.getByRole("treeitem", { name: /Kongo/ });
+
+    expect(within(leaf).queryByTestId("hierarchy-node-chevron")).toBeNull();
+  });
+});

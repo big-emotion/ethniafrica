@@ -135,6 +135,7 @@ describe("the atlas charter is in the repository", () => {
       "## 4. Saying what the corpus does not have",
       "## 5. The information panel",
       "## 6. Motion",
+      "## 7. Reading a fiche",
     ]) {
       expect(charter).toContain(section);
     }

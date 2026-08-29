@@ -78,15 +78,16 @@ export function LanguageFamilyDetailViewV2({
 }: LanguageFamilyDetailViewV2Props) {
   const data = transformFamilyData(family);
 
+  // Inside the parchment, not after it: these four chapters used to follow the
+  // sources footer, which made the fiche read as ending one chapter early.
   return (
-    <>
-      <FamilyParchment
-        data={data}
-        footprintCountries={footprintCountries}
-        memberPeoples={memberPeoples}
-        memberPeopleCount={memberPeopleCount}
-        footprintProvenance={footprintProvenance}
-      />
+    <FamilyParchment
+      data={data}
+      footprintCountries={footprintCountries}
+      memberPeoples={memberPeoples}
+      memberPeopleCount={memberPeopleCount}
+      footprintProvenance={footprintProvenance}
+    >
       <div className="afh-parchment-section">
         <FamilyDecolonialHeader data={data.decolonialHeader} />
       </div>
@@ -103,6 +104,6 @@ export function LanguageFamilyDetailViewV2({
       {classificationTree ? (
         <div className="afh-parchment-section">{classificationTree}</div>
       ) : null}
-    </>
+    </FamilyParchment>
   );
 }

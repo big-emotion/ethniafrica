@@ -810,7 +810,11 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           padding: 3px 10px;
           border-radius: var(--afh-radius-full);
           border: 1px solid currentColor;
-          color: var(--afh-conf-low);
+          /* « Bientôt » is state, not decoration: it is the only thing
+             telling a reader why a nav entry will not take them anywhere.
+             The fill token read 3.22:1 here — and the border takes
+             currentColor, so the ink carries both. */
+          color: var(--afh-conf-low-ink);
         }
         .sh-chip-dot {
           width: 6px;

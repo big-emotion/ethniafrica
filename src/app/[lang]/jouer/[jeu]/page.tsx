@@ -7,6 +7,7 @@ import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
 
 interface GamePageProps {
@@ -73,24 +74,42 @@ export default async function GamePage({ params }: GamePageProps) {
       subtitle={game.promptFr}
       trailLabel={game.nameFr}
     >
-      {/* The same globe the home opens on, deliberately — not a second
-          rendering of the same idea. The page is named after a projection, so
-          it owes the reader the projection itself: the flat Mercator map, and
-          the slider that closes it back into a globe while Tissot's
-          indicatrices keep the same real area throughout. Reading about the
-          distortion and watching it undo itself are not the same lesson.
+      {/* The page is named after a projection, so it shows the projection:
+          the flat Mercator map, the slider that undoes the distortion, and
+          Tissot's indicatrices keeping the same real area throughout. This
+          replaces the home's globe, which stood in for it and argued about a
+          projection while showing none of it — reading about the distortion
+          and watching it undo itself are not the same lesson.
+
+          The slider's far end is an equal-area *map*, not a sphere, which
+          departs from how this was first written down. Deliberately: putting
+          a globe at that end changes two things at once — the projection and
+          the dimensionality — so a reader could not tell whether the north
+          shrank because the stretch was removed or because curvature had
+          hidden half of it. Flat at both ends isolates the one variable the
+          game is about, which is also what makes the indicatrices legible.
 
           It no longer merely stands above the rounds. `MercatorSurface` binds
           the two, so the map is held flat while a question stands and closes
           into a sphere on the reveal — see that component for why this obeys
           charter §1 rather than breaking it, and how the fold rule of §9.1 is
           met without shrinking the globe. */}
-      <MercatorSurface
-        game={game}
-        rounds={envelope.data.rounds}
-        facts={facts}
-        corpusLimited={envelope.data.corpusLimited}
-      />
+      {/* The axis accent, bound here because nothing else on this route binds
+          it. `AccessModeHub` carries it on the hub itself, but a game page is
+          not a hub, so `--accent` fell through to the bare shadcn HSL triplet
+          that shares the name — an invalid colour in `fill:` and
+          `border-color:`.
+          BinaryChoice's selected option, GameAnswerReveal's banner and
+          GameScoreCard all read it, so the whole surface has been painting
+          black-or-nothing rather than pervenche (atlas-charter §2). */}
+      <div className={ACCENT_BY_ACCESS_MODE.jouer}>
+        <MercatorSurface
+          game={game}
+          rounds={envelope.data.rounds}
+          facts={facts}
+          corpusLimited={envelope.data.corpusLimited}
+        />
+      </div>
     </PageLayout>
   );
 }

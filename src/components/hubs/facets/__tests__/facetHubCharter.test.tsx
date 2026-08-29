@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
 import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
@@ -215,3 +216,54 @@ vi.mock("next/link", () => ({
     </a>
   ),
 }));
+
+/**
+ * A `GET` form submits the controls it contains and nothing else, so anything
+ * the reader has already chosen outside the bar — the page size, the letter —
+ * is dropped the moment they narrow. Hidden fields are how a form carries
+ * state it does not itself edit.
+ */
+describe("facet filter bar — the state it carries but does not edit", () => {
+  // @req REQ-114
+  it("carries a hidden field through a submit", () => {
+    render(
+      <FacetFilterBar
+        action="/fr/explorer/peuples"
+        hidden={{ taille: "100" }}
+        fields={[
+          {
+            name: "famille",
+            label: "Famille linguistique",
+            anyLabel: "Toutes les familles",
+            options: [{ value: "FLG_NC", label: "Niger-Congo" }],
+            value: null,
+          },
+        ]}
+      />
+    );
+    const carried = document.querySelector('input[name="taille"]');
+    expect(carried).toHaveAttribute("type", "hidden");
+    expect(carried).toHaveAttribute("value", "100");
+  });
+
+  /** Nothing to carry must mean no field, not an empty one the form submits. */
+  // @req REQ-114
+  it("emits no field for a value the reader has not set", () => {
+    render(
+      <FacetFilterBar
+        action="/fr/explorer/peuples"
+        hidden={{ taille: undefined }}
+        fields={[
+          {
+            name: "famille",
+            label: "Famille linguistique",
+            anyLabel: "Toutes les familles",
+            options: [],
+            value: null,
+          },
+        ]}
+      />
+    );
+    expect(document.querySelector('input[name="taille"]')).toBeNull();
+  });
+});

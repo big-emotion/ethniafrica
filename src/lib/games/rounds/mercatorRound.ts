@@ -29,8 +29,13 @@ export const MERCATOR_PROVENANCE_PATH = "lib/atlas/assets/africaAdmin0";
 /**
  * Below this the two countries are indistinguishable at the corpus's own
  * precision, and asking would be a coin toss dressed as a question.
+ *
+ * Exported because the Jouer hub's scene advertises this game and must not
+ * assert a gap the game itself would refuse to ask about. One threshold, so
+ * the shop window and the shop cannot disagree.
  */
-const MINIMUM_AREA_RATIO = 1.02;
+// @req REQ-120
+export const MINIMUM_AREA_RATIO = 1.02;
 
 import { frenchNumber } from "@/lib/games/format";
 const frenchFactor = new Intl.NumberFormat("fr-FR", {

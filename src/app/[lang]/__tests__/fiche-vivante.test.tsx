@@ -257,6 +257,8 @@ const NIGER_CONGO_TREE: FamilyTreeSkeleton = {
     name,
     peopleCount,
   })),
+  branchProvenance: "language-corpus",
+  declaredBranches: [],
   unlinkedPeopleCount: 0,
 };
 

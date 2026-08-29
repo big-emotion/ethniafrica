@@ -130,22 +130,19 @@ export function AutonymExonymHeading({
   if (variant === "people-naming") {
     const imposedNames = exonyms ?? [];
 
+    // The dress is fiche-parchment.css's, not this component's: the fiche is
+    // one continuous document, and the two fields are set apart by a rule in
+    // ink rather than by a card. Their inks — accent for the name borne,
+    // colonial for the names imposed — are the doctrine, and the stylesheet
+    // keys them off `data-role` so the pairing survives a restyle.
     return (
-      <div className={cn("grid gap-afh-sm md:grid-cols-2", className)}>
-        <div
-          className="rounded-afh-md border p-afh-sm"
-          style={{
-            backgroundColor: "var(--accent-tint)",
-            borderColor: "var(--accent)",
-          }}
-        >
-          <h3 className="mb-afh-xs text-afh-caption font-bold uppercase tracking-[0.11em]">
-            Auto-appellation
-          </h3>
+      <div className={cn("afh-naming", className)}>
+        <div className="afh-naming-field" data-role="borne">
+          <h3 className="afh-naming-label">Auto-appellation</h3>
           <p
             data-autonym="true"
             lang={autonymLang}
-            className="font-afh-display text-afh-h3 font-black leading-tight"
+            className="afh-naming-value"
           >
             {autonym ?? nameMain}
           </p>
@@ -155,24 +152,11 @@ export function AutonymExonymHeading({
             as "no colonial name exists for this people" — a claim, where the
             corpus only has an absence. */}
         {imposedNames.length > 0 && (
-          <div
-            className="rounded-afh-md border p-afh-sm"
-            style={{
-              backgroundColor: "var(--afh-color-colonial-bg)",
-              borderColor: "var(--afh-color-colonial)",
-            }}
-          >
-            <h3
-              className="mb-afh-xs text-afh-caption font-bold uppercase tracking-[0.11em]"
-              style={{ color: "var(--afh-color-colonial)" }}
-            >
-              Exonymes
-            </h3>
-            <ul data-exonyms="true" className="flex flex-col gap-1 pl-4">
+          <div className="afh-naming-field" data-role="imposed">
+            <h3 className="afh-naming-label">Exonymes</h3>
+            <ul data-exonyms="true" className="afh-naming-list">
               {imposedNames.map((imposed) => (
-                <li key={imposed} className="list-disc text-afh-small">
-                  {imposed}
-                </li>
+                <li key={imposed}>{imposed}</li>
               ))}
             </ul>
           </div>

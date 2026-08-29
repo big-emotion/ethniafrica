@@ -48,11 +48,24 @@ export interface PeoplesFacetPage {
 /**
  * Twenty is what the directory this facet replaces showed, and the figure the
  * corpus was sized against: ~790 peoples is forty pages, which a reader can
- * walk. It is not a tuning knob — changing it changes every address already
- * sent, since the page number is in the URL.
+ * walk. It stays the default for the reason it was fixed in the first place —
+ * the page number is in the URL, so an address already sent has to keep
+ * addressing the same rows. A reader who wants a denser reading asks for one
+ * in the query string; nobody's existing link changes meaning.
  */
 // @req REQ-108
 export const PEOPLES_FACET_PER_PAGE = 20;
+
+/**
+ * The page sizes the facet offers, default first.
+ *
+ * An allowlist because the size is a range on a database query: an arbitrary
+ * number from the address bar would let an anonymous request ask for the whole
+ * corpus in one page. A hundred rows is the ceiling a reader can plausibly
+ * scan, and well under the thousand-row cap a Supabase select silently applies.
+ */
+// @req REQ-108
+export const PEOPLES_FACET_PAGE_SIZES = [20, 50, 100] as const;
 
 /** The facet's filters in the shape the query layer names them. */
 function toQueryFilters(filters: PeoplesFacetFilters): PeopleQueryFilters {
@@ -69,27 +82,36 @@ function toQueryFilters(filters: PeoplesFacetFilters): PeopleQueryFilters {
  * The total comes back from the same narrowed query, so the pager describes
  * the filtered set. A page count derived from the corpus while the rows are
  * filtered is how a reader is offered a page nine that cannot exist.
+ *
+ * A page past the end is answered with the last one rather than with nothing.
+ * Addresses outlive the selection they were taken from — narrowing by a family
+ * turns forty-one pages into three, and every link to page nine already sent
+ * would otherwise read as an empty corpus.
  */
 // @req REQ-108
 export async function getPeoplesFacetPage(
   page: number,
-  filters: PeoplesFacetFilters
+  filters: PeoplesFacetFilters,
+  perPage: number = PEOPLES_FACET_PER_PAGE
 ): Promise<PeoplesFacetPage> {
   // The page number is typed into an address bar as readily as it is clicked.
   const requested = Number.isFinite(page) && page >= 1 ? Math.floor(page) : 1;
+  const query = toQueryFilters(filters);
 
-  const { data, total } = await getPaginatedAfrikPeoples(
-    requested,
-    PEOPLES_FACET_PER_PAGE,
-    toQueryFilters(filters)
-  );
+  const firstRead = await getPaginatedAfrikPeoples(requested, perPage, query);
+  // The count belongs to the selection, not to the page: clamping an
+  // out-of-range page number below re-reads `data` but must not move `total`.
+  const total = firstRead.total;
+  let data = firstRead.data;
+  const totalPages = Math.max(1, Math.ceil(total / perPage));
 
-  return {
-    peoples: data,
-    page: requested,
-    total,
-    totalPages: Math.ceil(total / PEOPLES_FACET_PER_PAGE),
-  };
+  let resolved = requested;
+  if (requested > totalPages) {
+    resolved = totalPages;
+    ({ data } = await getPaginatedAfrikPeoples(resolved, perPage, query));
+  }
+
+  return { peoples: data, page: resolved, total, totalPages };
 }
 
 /**

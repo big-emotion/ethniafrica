@@ -32,8 +32,11 @@
   --afh-section-gap: 24px;
   --afh-container-max: 430px;
 
-  /* HierarchyTree (ETNI-461) — guide-line color reuses --afh-border */
-  --afh-tree-indent: 20px;
+  /* HierarchyTree (ETNI-461) — guide-line color reuses --afh-border.
+     The indent is the tree's one cost in width: at 430px, three levels at
+     20px eat 60px of line length and start breaking people names. It opens
+     back up at 768px, where the width is there to spend. */
+  --afh-tree-indent: 14px;
   --afh-tree-guide: var(--afh-border);
   --afh-tree-node-min-h: 44px; /* touch target, UX-DR37 */
 }
@@ -44,6 +47,7 @@
     --afh-card-padding: 24px;
     --afh-section-gap: 32px;
     --afh-container-max: 720px;
+    --afh-tree-indent: 20px;
   }
 }
 

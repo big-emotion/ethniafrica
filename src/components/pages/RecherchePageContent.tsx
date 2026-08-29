@@ -602,7 +602,7 @@ export function RecherchePageContent() {
             <button
               type="button"
               onClick={clearAllFilters}
-              className="text-afh-small text-afh-text-muted hover:text-afh-text underline underline-offset-2 ml-auto"
+              className="text-afh-small text-afh-fg-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
               Tout effacer
             </button>

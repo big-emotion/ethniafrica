@@ -74,7 +74,11 @@ export default {
         "afh-border": "var(--afh-border)",
         "afh-text": "var(--afh-text)",
         "afh-text-soft": "var(--afh-text-soft)",
+        // `afh-text-muted` is 3.08:1 on the page ground: it dresses marks and
+        // inactive controls, never running text. `afh-fg-muted` is the quiet
+        // ink that clears AA — reach for it whenever the element holds words.
         "afh-text-muted": "var(--afh-text-muted)",
+        "afh-fg-muted": "var(--afh-fg-muted)",
         "afh-earth": "var(--afh-earth)",
         "afh-terracotta": "var(--afh-terracotta)",
         "afh-gold": "var(--afh-gold)",

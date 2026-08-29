@@ -335,9 +335,12 @@ supersedes it.** Step 7 belongs first: retiring eight games removes eight
 generators and one interaction kind from every step that follows. Reading the
 code also narrowed the work — of the three kept games, only `appellations`
 lacks a subject line and only `pays-davant` draws distractors from a pool — and
-turned up a defect this charter missed: `mercatorMisleads()` is never called by
+turned up a defect this charter missed: `mercatorMisleads()` was never called by
 the handler, so the one game whose whole point is the projection's lie mostly
-serves rounds where nothing lies.
+served rounds where nothing lies. **Fixed** — `handlers/games.ts` now skips any
+pair the projection does not actually mislead about, and the hub's scene reads
+the same `MINIMUM_AREA_RATIO` so it cannot advertise a gap the game refuses to
+ask about.
 
 ---
 
