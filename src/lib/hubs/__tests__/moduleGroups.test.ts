@@ -29,20 +29,19 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
     const shelves = getGroupedModules(liveModules("jouer"));
 
     expect(shelves.map((shelf) => shelf.group.id)).toEqual([
-      "jeux-peuples",
       "jeux-pays",
       "jeux-quiz",
     ]);
     expect(shelves.flatMap((shelf) => shelf.modules.map((m) => m.id))).toEqual([
-      "appellations",
       "mercator",
-      "pays-davant",
       "quiz",
     ]);
   });
 
   // A shelf holding one module is not a shelf: opening it would cost a
   // click and offer no choice. The panel renders it as its module instead.
+  // Since the second cut both Jouer shelves hold one, which is why the hub
+  // reads as a flat row of cards.
   // @req REQ-120
   it("marks a shelf that holds a single module as one to skip past", () => {
     const shelves = getGroupedModules(liveModules("jouer"));
@@ -50,8 +49,8 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
       shelves.map((shelf) => [shelf.group.id, shelf.singleton])
     );
 
-    expect(bySize["jeux-peuples"]).toBe(true);
-    expect(bySize["jeux-pays"]).toBe(false);
+    expect(bySize["jeux-pays"]).toBe(true);
+    expect(bySize["jeux-quiz"]).toBe(true);
   });
 
   // Explorer and Comprendre hold four and three: few enough to read at
@@ -66,12 +65,12 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // an empty table — must not leave an empty heading behind.
   // @req REQ-120
   it("drops a shelf left with nothing on it", () => {
-    const onlyAppellations = asModules(
-      getModulesForAccessMode("jouer").filter((m) => m.id === "appellations")
+    const onlyTheQuiz = asModules(
+      getModulesForAccessMode("jouer").filter((m) => m.id === "quiz")
     );
 
-    expect(getGroupedModules(onlyAppellations).map((s) => s.group.id)).toEqual([
-      "jeux-peuples",
+    expect(getGroupedModules(onlyTheQuiz).map((s) => s.group.id)).toEqual([
+      "jeux-quiz",
     ]);
   });
 

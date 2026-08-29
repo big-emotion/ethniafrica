@@ -59,6 +59,14 @@ export const QuizScopePicker = ({
         data-testid="quiz-scope-picker"
         className="flex flex-col gap-3 rounded-afh-lg border border-afh-border bg-afh-surface p-4"
       >
+        {/* Left on « Tous les pays » / « Toutes les familles » the form
+            submits `?pays=&famille=`, which names no track — and the page
+            opens a session only when the URL names one, so the reader was
+            walked back to this picker. This marker is what makes an
+            unfiltered submission a track of its own: the whole corpus,
+            climbing the ladder. `mixte` is the API's own word for it. */}
+        <input type="hidden" name="mode" value="mixte" />
+
         <fieldset className="flex flex-col gap-3 border-0 p-0">
           <legend className="font-afh-display text-afh-h3 font-bold text-afh-text">
             {t.scopePickerLegend}
@@ -131,19 +139,12 @@ export const QuizScopePicker = ({
         </fieldset>
       </form>
 
-      <div className="grid grid-cols-1 gap-3 min-[720px]:grid-cols-2">
-        <Link
-          href={action}
-          data-testid="quiz-scope-mixed"
-          className="min-h-11 rounded-afh-lg border border-afh-border bg-afh-surface p-4 text-left shadow-afh-1 transition-colors hover:border-primary hover:shadow-afh-2"
-        >
-          <span className="block font-afh-display text-afh-h3 font-black text-afh-text">
-            {scopes.mixed.labelFr}
-          </span>
-          <span className="mt-1 block text-afh-small text-afh-text-soft">
-            {t.scopeMixedHint}
-          </span>
-        </Link>
+      {/* One card, not two. « Tout le continent » stood here and promised
+          the same thing this one does — eight questions off the whole corpus
+          — while linking to the bare path, which names no track and so came
+          straight back here. The laddered whole-corpus run it meant to offer
+          is what the form above now submits when nothing is filtered. */}
+      <div className="grid grid-cols-1 gap-3">
         <Link
           href={`${action}?mode=aleatoire`}
           data-testid="quiz-scope-random"

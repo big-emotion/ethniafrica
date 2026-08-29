@@ -6,12 +6,12 @@ import { GameScoreCard } from "@/components/play/GameScoreCard";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 
 const GAME: GameDefinition = {
-  id: "pays-davant",
-  slug: "pays-davant",
-  nameFr: "Le pays d'avant",
-  kind: "globeTap",
+  id: "mercator",
+  slug: "mercator",
+  nameFr: "La taille qu'on vous a cachée",
+  kind: "binary",
   dataSource: "countries",
-  promptFr: "Quel pays porte aujourd'hui ce nom d'avant",
+  promptFr: "Lequel de ces deux pays couvre la plus grande surface",
   roundsPerSession: 8,
 };
 
@@ -22,7 +22,9 @@ describe("GameScoreCard (Jouer hub engine, REQ-120)", () => {
       <GameScoreCard game={GAME} correct={4} total={6} onPlayAgain={vi.fn()} />
     );
 
-    expect(screen.getByText("Le pays d'avant")).toBeInTheDocument();
+    expect(
+      screen.getByText("La taille qu'on vous a cachée")
+    ).toBeInTheDocument();
     expect(screen.getByTestId("game-score-value")).toHaveTextContent("4 sur 6");
   });
 

@@ -45,11 +45,28 @@ eight are retired** until the loop below is proven.
 
 ### Kept
 
-| Game                                               | Why it survives                                                                                                                                                                                                   |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **« Eux, ou les autres ? »** (`appellations`)      | The site's thesis in one round: the name a people gives itself against the name it was given, with the documented origin of the exonym as the reveal. This is the game the atlas exists to make.                  |
-| **« Le pays d'avant »** (`pays-davant`)            | Toponymy and its colonial actors. `nameOriginActor` is set on all 54 country fiches and `etymology` on most — the corpus can say _who_ named a country and _why_, which is the decolonial argument made playable. |
-| **« La taille qu'on vous a cachée »** (`mercator`) | One idea, cleanly: Mercator inflates the north and shrinks Africa. Cheap to finish and it carries a real claim.                                                                                                   |
+| Surface                                            | Why it survives                                                                                                                                                   |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **« Le quiz des parcours »** (`quiz`)              | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
+| **« La taille qu'on vous a cachée »** (`mercator`) | One idea, cleanly: Mercator inflates the north and shrinks Africa. Cheap to finish, it carries a real claim, and the home already owns the figure that proves it. |
+
+**The second cut, 2026-08-29.** Three became two. « Eux, ou les autres ? »
+(`appellations`) and « Le pays d'avant » (`pays-davant`) are retired: their
+subject — the name a people gives itself, and who named a country — is
+already the quiz's subject, drawn from a far larger bank, so the hub was
+offering the same lesson three times with three engines. What went with them
+is recorded rather than left to be rediscovered: the `globeTap` primitive
+(`pays-davant` was its only producer), `GameStimulus` and `RoundStimulus`
+(`appellations` was the only round that named a subject), the `peoples` corpus
+slice, and the scope picker — `mercator` plays over the whole continent's
+outlines and has nothing to narrow to.
+
+**What `mercator` now owes.** The page is named after a projection, so it
+shows the projection: the home's globe stage, the flat Mercator map and the
+slider that closes it back into a sphere while Tissot's indicatrices hold
+their real area. It stands **above** the rounds, never beside a live one — a
+manipulable globe next to « lequel est le plus grand ? » would let the reader
+answer by eye, which is precisely the shape-guessing retired below.
 
 ### Retired
 
@@ -59,10 +76,12 @@ carry no onomastic content. `mercator` keeps the surface argument without the
 shape-guessing, which is the whole reason it is the exception.
 
 `plus-ou-moins`, `royaumes`, `migrations`, `liens`, `familles`, `frontieres`
-are deferred. Each may return, but only rebuilt against this charter — and
-`familles` is the strongest candidate to return first, because a language
-family has a naturally plausible distractor pool (the other families) and
-already supplies the context every other game needs.
+are deferred, and `appellations` and `pays-davant` join them. Each may return,
+but only rebuilt against this charter — and only with an answer to the
+question that retired the last two: **what does this teach that the quiz does
+not already ask?** `familles` remains the strongest candidate, because a
+language family has a naturally plausible distractor pool (the other families)
+and already supplies the context every other game needs.
 
 ---
 
