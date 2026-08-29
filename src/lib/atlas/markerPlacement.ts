@@ -9,7 +9,11 @@
  * pans a flat basemap, and both return the same stage percentages so the rest
  * of the component never has to know which path it is on.
  */
-import { SPHERE_MORPH, type CameraPose } from "@/lib/atlas/camera";
+import {
+  SPHERE_MORPH,
+  cameraOffset,
+  type CameraPose,
+} from "@/lib/atlas/camera";
 import type { LonLat } from "@/lib/atlas/overlays";
 import { fitScale } from "@/lib/atlas/sphereLayer";
 import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
@@ -76,10 +80,11 @@ export function placeTargetOnSphere(
   const y = flat.y + (rotated.y - flat.y) * pose.morph;
 
   const scale = fitScale(pose.morph, aspect);
+  const offset = cameraOffset(pose);
 
   return clipToStage(
-    ((x * scale) / aspect) * pose.zoom + pose.offsetX,
-    y * scale * pose.zoom + pose.offsetY,
+    ((x * scale) / aspect) * pose.zoom + offset.x,
+    y * scale * pose.zoom + offset.y,
     // A plane has no far side; only the sphere can turn a target away.
     pose.morph < SPHERE_MORPH || rotated.z >= 0
   );
@@ -104,9 +109,11 @@ function basemapPanZoom(pose: CameraPose, focus: LonLat | null) {
     ? projectLonLat(focus.lon, focus.lat, BASEMAP_VIEWBOX)
     : { x: width / 2, y: height / 2 };
 
+  const offset = cameraOffset(pose);
+
   return {
-    translateX: ((pose.offsetX + 1) / 2) * width - anchor.x * pose.zoom,
-    translateY: ((1 - pose.offsetY) / 2) * height - anchor.y * pose.zoom,
+    translateX: ((offset.x + 1) / 2) * width - anchor.x * pose.zoom,
+    translateY: ((1 - offset.y) / 2) * height - anchor.y * pose.zoom,
     scale: pose.zoom,
   };
 }
