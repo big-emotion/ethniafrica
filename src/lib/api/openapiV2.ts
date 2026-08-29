@@ -1963,9 +1963,28 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/FamilyTreeBranch" },
             },
+            branchProvenance: {
+              type: "string",
+              enum: ["language-corpus", "people-fiches"],
+              description:
+                "Which source produced `branches`: the language corpus, or a reconstruction from the ISO codes the people fiches declare. `afrik_languages` is empty in every deployed database, so `people-fiches` is the normal case.",
+            },
+            declaredBranches: {
+              type: "array",
+              description:
+                "Branch names the family fiche states in `generalInfo.branches`. No field ties a people to one of them, so they are a declared register rather than parents in the tree.",
+              items: { type: "string" },
+              example: ["Atlantique central", "Peul-Sérère"],
+            },
             unlinkedPeopleCount: { type: "integer", minimum: 0, example: 1 },
           },
-          required: ["family", "branches", "unlinkedPeopleCount"],
+          required: [
+            "family",
+            "branches",
+            "branchProvenance",
+            "declaredBranches",
+            "unlinkedPeopleCount",
+          ],
         },
         LanguageFamilyTreeResponse: {
           type: "object",

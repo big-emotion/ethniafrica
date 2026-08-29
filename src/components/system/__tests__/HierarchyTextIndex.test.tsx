@@ -118,3 +118,22 @@ describe("HierarchyTextIndex", () => {
     expect(source).not.toMatch(/\bon[A-Z]\w*=/);
   });
 });
+
+describe("HierarchyTextIndex — nodes without a deep link", () => {
+  // @req REQ-047
+  it("renders a node with no href as text rather than as a dead anchor", () => {
+    render(
+      <HierarchyTextIndex
+        nodes={[
+          { id: "ful", type: "language", name: "Fulfulde", peopleCount: 3 },
+        ]}
+      />
+    );
+
+    // The family fiche builds its branches from ISO codes, which have no
+    // fiche of their own; an <a> with no href announces itself as a link and
+    // then goes nowhere.
+    expect(screen.queryByRole("link", { name: /Fulfulde/ })).toBeNull();
+    expect(screen.getByText("Fulfulde")).toBeInTheDocument();
+  });
+});
