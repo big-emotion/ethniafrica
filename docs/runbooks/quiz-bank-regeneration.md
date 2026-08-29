@@ -31,8 +31,8 @@ the rebuild — never the reverse.
 
 Per environment, in this order:
 
-1. **Migrations.** `supabase db push`. `045_quiz_stimulus.sql` adds the column
-   the inversion templates write; `046_quiz_bank_indexes.sql` is the exception
+1. **Migrations.** `supabase db push`. `046_quiz_stimulus.sql` adds the column
+   the inversion templates write; `047_quiz_bank_indexes.sql` is the exception
    below.
 2. **`npx tsx scripts/loadPeopleProvenance.ts`** — writes the people assertions.
    Idempotent: a re-run adds only paths that were missing.
@@ -51,7 +51,7 @@ Per environment, in this order:
    at tier `official` or `referenced`, and no loader may invent one.
 
 5. **`npx tsx scripts/generateQuizQuestions.ts --rebuild`.**
-6. **`046_quiz_bank_indexes.sql` last**, after the rebuild has succeeded. It
+6. **`047_quiz_bank_indexes.sql` last**, after the rebuild has succeeded. It
    builds a unique index over `(entity_id, template_id)` where `revoked_at is
 null`; a duplicate already in the bank makes it fail to build, and the
    failure would be read as a broken migration rather than as what it found.

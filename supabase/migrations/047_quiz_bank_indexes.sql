@@ -1,4 +1,4 @@
--- 046_quiz_bank_indexes.sql
+-- 047_quiz_bank_indexes.sql
 -- Epic 10 — the bank grows a second entity type and six more templates
 -- (REQ-121), so the indexes 036 shipped no longer match how it is read.
 --

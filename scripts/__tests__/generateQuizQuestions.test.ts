@@ -9,12 +9,12 @@ const migration = readFileSync(
 );
 
 const stimulusMigration = readFileSync(
-  resolve(process.cwd(), "supabase/migrations/045_quiz_stimulus.sql"),
+  resolve(process.cwd(), "supabase/migrations/046_quiz_stimulus.sql"),
   "utf8"
 );
 
 const indexMigration = readFileSync(
-  resolve(process.cwd(), "supabase/migrations/046_quiz_bank_indexes.sql"),
+  resolve(process.cwd(), "supabase/migrations/047_quiz_bank_indexes.sql"),
   "utf8"
 );
 
@@ -126,7 +126,7 @@ describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile tar
   });
 });
 
-describe("045_quiz_stimulus.sql schema contract", () => {
+describe("046_quiz_stimulus.sql schema contract", () => {
   /**
    * The inversion templates persist a fragment per question, so the column has
    * to exist before a sweep writes one. Asserted here for the same reason as
@@ -160,7 +160,7 @@ describe("045_quiz_stimulus.sql schema contract", () => {
   });
 });
 
-describe("046_quiz_bank_indexes.sql schema contract", () => {
+describe("047_quiz_bank_indexes.sql schema contract", () => {
   /**
    * The identity rule — one active question per (entity, template) — lived in
    * memory only, inside `computeSweepPlan`. Two concurrent sweeps would have

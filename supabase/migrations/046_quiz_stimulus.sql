@@ -1,4 +1,4 @@
--- 045_quiz_stimulus.sql
+-- 046_quiz_stimulus.sql
 -- Epic 10 — the inversion templates (T6-T11, REQ-121).
 --
 -- A round whose answer is the subject has to show the reader something first:
