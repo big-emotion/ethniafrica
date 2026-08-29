@@ -229,6 +229,20 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   // Comprendre runs from the most concrete question to the method that
   // answers it: why this name, where they came from, who says so.
+  // The anecdotes are the only Comprendre module whose corpus is the repo
+  // rather than the database: the bank is a TypeScript constant, so there is
+  // no table for the availability probe to count and "static" is the honest
+  // answer. Readiness is "ready" because the surface is complete on the day
+  // it ships — every fact it holds is written and cited, which is not
+  // something the modules around it can say yet.
+  {
+    id: "anecdotes",
+    name: "Anecdotes",
+    accessMode: "comprendre",
+    page: "anecdotes",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
   {
     id: "noms",
     name: "Noms & appellations",
