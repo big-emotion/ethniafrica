@@ -9,6 +9,14 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAllAfrikLanguageFamilies: vi.fn(),
   getAfrikLanguageFamilyById: vi.fn(),
   countAfrikLanguageFamilies: vi.fn(),
+  getAfrikLanguageFamilyRoster: vi.fn(),
+}));
+
+// The unclassified count is a corpus-scale aggregate the database answers, not
+// a subtraction over the page being returned — so it is stubbed here rather
+// than derived from the fixture the pagination contract pages through.
+vi.mock("@/lib/supabase/queries/afrik/languageFamilyFacet", () => ({
+  countUnclassifiedPeoples: vi.fn(async () => 0),
 }));
 
 // The service also computes per-family people counts (REQ-108) from the peoples
@@ -32,6 +40,7 @@ vi.mock("@/lib/api/cors", () => ({
 import {
   getAllAfrikLanguageFamilies,
   countAfrikLanguageFamilies,
+  getAfrikLanguageFamilyRoster,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 
 const ALL_FAMILIES = Array.from({ length: 24 }, (_, i) => ({
@@ -54,6 +63,9 @@ describe("API v2 - Language Families pagination contract (REQ-110)", () => {
     );
     vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(
       ALL_FAMILIES.length
+    );
+    vi.mocked(getAfrikLanguageFamilyRoster).mockResolvedValue(
+      ALL_FAMILIES.map((family) => ({ id: family.id, nameFr: family.nameFr }))
     );
   });
 
