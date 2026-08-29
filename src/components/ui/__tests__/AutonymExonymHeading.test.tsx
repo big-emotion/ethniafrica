@@ -201,26 +201,10 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
   });
 });
 
-describe("AutonymExonymHeading — compact variant (exonym/autonym/code)", () => {
+describe("AutonymExonymHeading — compact variant (exonym/autonym)", () => {
   it("renders the exonym (main name)", () => {
     render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
     expect(screen.getByText("Bantou")).toBeInTheDocument();
-  });
-
-  it("renders the code when provided", () => {
-    render(
-      <AutonymExonymHeading
-        variant="compact"
-        exonym="Bantou"
-        code="FLG_BANTU"
-      />
-    );
-    expect(screen.getByText("FLG_BANTU")).toBeInTheDocument();
-  });
-
-  it("does not render a code element when code is not provided", () => {
-    render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
-    expect(screen.queryByText(/FLG_/)).not.toBeInTheDocument();
   });
 
   it("renders the autonym when provided and different from exonym", () => {

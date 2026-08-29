@@ -79,7 +79,6 @@ export function MigrationEventCard({
                 <AutonymExonymHeading
                   variant="compact"
                   exonym={people.nameMain}
-                  code={people.id}
                 />
               </Link>
             </li>
