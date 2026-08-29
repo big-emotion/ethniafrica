@@ -20,12 +20,9 @@ import {
 // historical reasons only — it takes FicheSourceEntry[] and knows nothing
 // about countries.
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
-import { getPeopleRoute } from "@/lib/routing";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
@@ -105,19 +102,25 @@ export function PeopleDetailViewV2({
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
 
-  // The family used to open this trail, which said a people lives under its
-  // family in the site's structure. It does not — it lives under Peuples —
-  // and the family is carried by ContextTriad, where it belongs.
-  const breadcrumbs = deriveTrail(
-    getPeopleRoute("fr", data.hero.peopleId),
-    data.hero.nameMain
-  );
-
   return (
     <div className="afh-parchment" id="fiche">
-      <PeopleFicheHead hero={data.hero} countries={data.countries} />
+      {/* The head and the trail moved above the globe (PeopleFicheTitle), so
+          a reader arriving on the fiche is told which fiche it is before the
+          band fills their screen.
 
-      <AfrikBreadcrumbs items={breadcrumbs} />
+          The confidence chip did not go with them: it cites this document's
+          sources and links to their footer, so it belongs inside the document
+          that owns that anchor rather than in the band above it. */}
+      <div className="px-3 md:px-4 xl:px-5 pt-afh-base">
+        <ConfidenceChip
+          confidenceScore={null}
+          sourceCount={data.sources.length || null}
+          lastHumanAuditAt={null}
+          variant="hero"
+          id={data.hero.peopleId}
+          ariaSuffix={`pour la fiche ${data.hero.nameMain}`}
+        />
+      </div>
 
       {/* 1. The name borne, the names imposed — first, before any figure. */}
       <FicheSection

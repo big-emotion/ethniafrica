@@ -312,4 +312,38 @@ describe("AutonymExonymHeading — people-hero/people-section variants", () => {
     );
     expect(container.querySelector("[data-exonyms]")).toBeNull();
   });
+
+  /**
+   * The two names used to be adjacent spans with nothing between them, so the
+   * heading's own text read "YorùbáYoruba". Styling separated them for an eye
+   * and for nothing else — a screen reader announced one word.
+   */
+  // @req REQ-115
+  it("puts a space between the autonym and a second name", () => {
+    render(
+      <AutonymExonymHeading variant="hero" autonym="Yorùbá" exonym="Yoruba" />
+    );
+
+    expect(screen.getByRole("heading").textContent).toBe("Yorùbá Yoruba");
+  });
+
+  /**
+   * A predicate is not a name. Every people fiche shipped an h1 reading
+   * "!Kungun peuple sans bord" because the predicate went through the exonym
+   * prop, which joins with a space and, before this, with nothing at all.
+   */
+  // @req REQ-115
+  it("joins a predicate to the name with a comma, the way a fiche title reads", () => {
+    render(
+      <AutonymExonymHeading
+        variant="hero"
+        autonym="!Kung"
+        predicate="un peuple sans bord"
+      />
+    );
+
+    expect(screen.getByRole("heading").textContent).toBe(
+      "!Kung, un peuple sans bord"
+    );
+  });
 });
