@@ -125,9 +125,14 @@ describe("GameAnswerReveal (Jouer hub engine, REQ-120)", () => {
     );
   });
 
+  /**
+   * The claim stays auditable, but the player is told where it was read in
+   * words. `content.appellations.originOfExonyms` is a schema path; a reader
+   * who has just learned what an exonym is cannot do anything with it.
+   */
   // @req REQ-120
-  it("keeps the claim auditable by naming the field it was read from", () => {
-    render(
+  it("names where the claim was read in French, never as a field path", () => {
+    const { container } = render(
       <GameAnswerReveal
         round={ROUND}
         isCorrect
@@ -136,9 +141,12 @@ describe("GameAnswerReveal (Jouer hub engine, REQ-120)", () => {
       />
     );
 
-    expect(screen.getByTestId("game-reveal-provenance")).toHaveTextContent(
-      "content.appellations.originOfExonyms"
+    const provenance = screen.getByTestId("game-reveal-provenance");
+    expect(provenance).toHaveTextContent(
+      "D'après l'origine des exonymes, telle que la fiche la donne."
     );
+    expect(provenance).not.toHaveTextContent("content.appellations");
+    expect(container.querySelector("code")).toBeNull();
   });
 
   // @req REQ-120

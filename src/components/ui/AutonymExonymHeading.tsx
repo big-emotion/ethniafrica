@@ -34,8 +34,6 @@ export interface AutonymExonymHeadingProps {
   nameMain?: string;
   /** Multiple exonyms rendered as pill chips below `nameMain` (people-hero/people-section variants). */
   exonyms?: string[];
-  /** Optional identifier code badge, e.g. FLG_BANTU, PPL_YORUBA, ISO-3166 code (compact variant). */
-  code?: string | null;
   className?: string;
   variant?: AutonymExonymHeadingVariant;
 }
@@ -92,7 +90,6 @@ export function AutonymExonymHeading({
   ipa,
   nameMain,
   exonyms,
-  code,
   className,
   variant = "hero",
 }: AutonymExonymHeadingProps) {
@@ -211,12 +208,11 @@ export function AutonymExonymHeading({
 
     return (
       <div className={cn("space-y-0.5", className)}>
+        {/* This used to lead with a mono badge holding the corpus identifier —
+            PPL_YORUBA beside the name it identifies. A reader who can see the
+            name has no use for the key, and the three callers that passed one
+            were listing peoples, where the name is the whole point. */}
         <div className="flex items-center gap-2 flex-wrap">
-          {code && (
-            <span className="text-afh-caption font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded shrink-0">
-              {code}
-            </span>
-          )}
           <h2 className="font-semibold text-afh-small">{exonym}</h2>
         </div>
         {showAutonym && (
