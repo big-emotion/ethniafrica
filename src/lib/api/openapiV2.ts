@@ -2652,7 +2652,7 @@ const options: swaggerJsdoc.Options = {
           description:
             "The AFRIK entity the question's field value is drawn from.",
           properties: {
-            type: { type: "string", enum: ["people"] },
+            type: { type: "string", enum: ["people", "country"] },
             id: { type: "string", example: "PPL_SHONA" },
             slug: { type: "string", example: "PPL_SHONA" },
             autonym: { type: ["string", "null"] },

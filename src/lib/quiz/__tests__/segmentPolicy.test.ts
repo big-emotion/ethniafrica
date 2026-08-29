@@ -38,6 +38,12 @@ describe("segmentPolicy", () => {
       T10: "content.organization.traditionalPoliticalSystem",
       T11: "content.origins.migrationRoutes",
       T12: "content.appellations.whyProblematic",
+      T13: "etymology",
+      T14: "nameOriginActor",
+      T15: "content.historicalNames.colonization",
+      T16: "content.kingdoms",
+      T17: "content.historicalFacts.precolonial",
+      T18: "content.culture.dominantReligions",
     });
   });
 
@@ -55,11 +61,18 @@ describe("segmentPolicy", () => {
       "T9",
       "T10",
       "T11",
+      "T13",
+      "T14",
+      "T15",
+      "T17",
+      "T18",
     ]);
     expect(isInversionTemplate("T1")).toBe(false);
     // T12 names its subject in the stem, so it is not an inversion however
-    // much its subject matter resembles T2's.
+    // much its subject matter resembles T2's. Nor is T16: its answer is a
+    // kingdom's name, an atom like the five original templates ask for.
     expect(isInversionTemplate("T12")).toBe(false);
+    expect(isInversionTemplate("T16")).toBe(false);
   });
 
   // @req REQ-121

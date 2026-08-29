@@ -8,7 +8,7 @@
 import { describe, expect, it } from "vitest";
 import type { QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
-import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
+import { QUIZ_TEMPLATE_IDS, templatesFor } from "@/lib/quiz/segmentPolicy";
 import {
   auditActiveBank,
   computeSweepPlan,
@@ -79,6 +79,13 @@ const pools: QuizCandidatePools = {
     { autonym: "Maasai" },
     { autonym: "amaZulu" },
   ],
+  countryOwnNames: [
+    { autonym: "Ghana" },
+    { autonym: "Nigeria" },
+    { autonym: "Kenya" },
+    { autonym: "Sénégal" },
+  ],
+  kingdomNames: ["Empire du Ghana", "Royaume Ashanti", "Empire du Mali"],
 };
 
 const eligibleInput: QuizEligibilityInput = {
@@ -735,9 +742,14 @@ describe("computeSweepPlan distractor proximity", () => {
   it("generates exactly as many questions as the unordered pool did", () => {
     // Ordering permutes a pool, it never shrinks one, so the generated /
     // rejected split must stay what corpus order produced.
+    //
+    // Counted against the *people* templates, not all of them: a people is
+    // never asked a country's question, so trying every template on every fiche
+    // would inflate the rejected count with rubrics that were never meant to be
+    // there.
     const plan = planForAdults();
     expect(plan.generatedCount + plan.rejectedCount).toBe(
-      entries.length * QUIZ_TEMPLATE_IDS.length
+      entries.length * templatesFor("people").length
     );
   });
 });

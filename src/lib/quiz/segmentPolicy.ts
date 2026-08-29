@@ -27,7 +27,7 @@
  * sign-off — it cannot be inherited from here.
  */
 
-import type { QuizTemplateId } from "@/types/quiz";
+import type { QuizEntityType, QuizTemplateId } from "@/types/quiz";
 
 // Re-exported so the many callers that read the union from here keep working;
 // `@/types/quiz` owns it, so the two can no longer drift apart.
@@ -47,6 +47,12 @@ export const QUIZ_TEMPLATE_IDS: readonly QuizTemplateId[] = [
   "T10",
   "T11",
   "T12",
+  "T13",
+  "T14",
+  "T15",
+  "T16",
+  "T17",
+  "T18",
 ];
 
 /**
@@ -74,7 +80,52 @@ export const TEMPLATE_FIELD_PATHS: Record<QuizTemplateId, string> = {
   T10: "content.organization.traditionalPoliticalSystem",
   T11: "content.origins.migrationRoutes",
   T12: "content.appellations.whyProblematic",
+  T13: "etymology",
+  T14: "nameOriginActor",
+  T15: "content.historicalNames.colonization",
+  T16: "content.kingdoms",
+  T17: "content.historicalFacts.precolonial",
+  T18: "content.culture.dominantReligions",
 };
+
+/**
+ * Which kind of fiche each template asks about.
+ *
+ * The sweep iterates peoples and countries separately and has to know which
+ * templates belong to which; without this it would try every template on every
+ * fiche and reject two thirds of them on a missing rubric, which is a rejection
+ * that means nothing.
+ */
+// @req REQ-121
+export const TEMPLATE_ENTITY_TYPES: Record<QuizTemplateId, QuizEntityType> = {
+  T1: "people",
+  T2: "people",
+  T3: "people",
+  T4: "people",
+  T5: "people",
+  T6: "people",
+  T7: "people",
+  T8: "people",
+  T9: "people",
+  T10: "people",
+  T11: "people",
+  T12: "people",
+  T13: "country",
+  T14: "country",
+  T15: "country",
+  T16: "country",
+  T17: "country",
+  T18: "country",
+};
+
+// @req REQ-121
+export function templatesFor(
+  entityType: QuizEntityType
+): readonly QuizTemplateId[] {
+  return QUIZ_TEMPLATE_IDS.filter(
+    (templateId) => TEMPLATE_ENTITY_TYPES[templateId] === entityType
+  );
+}
 
 /**
  * The templates whose answer is the subject itself.
@@ -93,6 +144,11 @@ export const INVERSION_TEMPLATE_IDS: readonly QuizTemplateId[] = [
   "T9",
   "T10",
   "T11",
+  "T13",
+  "T14",
+  "T15",
+  "T17",
+  "T18",
 ];
 
 // @req REQ-097
@@ -137,6 +193,12 @@ export const TEMPLATE_THEMES: Record<QuizTemplateId, QuizThemeId> = {
   T10: "organisation",
   T11: "migrations",
   T12: "noms",
+  T13: "noms",
+  T14: "noms",
+  T15: "noms",
+  T16: "royaumes-et-histoire",
+  T17: "royaumes-et-histoire",
+  T18: "croyances",
 };
 
 /** Picker order — the familiar themes first, the ones the atlas exists to show last. */

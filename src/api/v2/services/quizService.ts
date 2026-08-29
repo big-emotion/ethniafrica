@@ -261,6 +261,15 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     if (held === 0) continue;
     byCountry.set(row.country_id, (byCountry.get(row.country_id) ?? 0) + held);
   }
+  // A country's own questions belong to its own track. Counted here rather
+  // than through the membership join, which only knows peoples — without this
+  // the picker would offer a track and under-count it by everything the
+  // country fiche itself answers.
+  for (const row of countryRows) {
+    const held = questionsBySubject.get(row.id) ?? 0;
+    if (held === 0) continue;
+    byCountry.set(row.id, (byCountry.get(row.id) ?? 0) + held);
+  }
 
   const byFamily = new Map<string, number>();
   for (const row of peopleRows) {
@@ -338,7 +347,15 @@ export async function getQuizScopeLabel(
   return (data?.name_fr as string | undefined) ?? null;
 }
 
-/** The peoples a scope covers, or null for the scopes that cover the corpus. */
+/**
+ * The subjects a scope covers, or null for the scopes that cover the corpus.
+ *
+ * A country track covers its peoples **and the country itself** — « les
+ * peuples du Ghana » is also where a question about Ghana belongs, and it is
+ * the only track that can hold one. A family track covers peoples only: a
+ * language family has no country, so a country question inside one would be a
+ * subject the track never claimed to be about.
+ */
 async function resolveScopedSubjects(
   supabase: ReturnType<typeof createServerClient>,
   scope: QuizScope
@@ -353,7 +370,7 @@ async function resolveScopedSubjects(
           .eq("country_id", scope.entityId)
           .range(f, t)
     );
-    return rows.map((row) => row.people_id);
+    return [...rows.map((row) => row.people_id), scope.entityId];
   }
 
   if (scope.kind === "family" && scope.entityId) {
@@ -482,6 +499,13 @@ function withinTheme(
 /**
  * Drops the T3 rounds a country track would answer for the player.
  *
+ * Written for T3 and now the rule for every template, because the country
+ * fiche became a subject: an inversion round about Ghana answers « Ghana »,
+ * and a session titled « Ghana » hands that over before the reader reads the
+ * stimulus. Comparing the answer's own label rather than the template id is
+ * what makes one rule cover both — and what stops the next template from
+ * needing a third.
+ *
  * « Dans quel pays le peuple X est-il principalement présent ? », asked inside
  * « les peuples du Ghana », answers Ghana for 48 % of the corpus's country
  * memberships — measured, not estimated. A round winnable from the title of
@@ -498,7 +522,6 @@ function withoutSelfAnsweringCountryRounds(
 ): CandidateRow[] {
   if (scope.kind !== "country" || !countryNameFr) return candidates;
   return candidates.filter((candidate) => {
-    if (candidate.field_path !== TEMPLATE_FIELD_PATHS.T3) return true;
     const answer = candidate.options_fr?.[candidate.correct_option];
     return answer === undefined || optionLabel(answer) !== countryNameFr;
   });
@@ -579,6 +602,9 @@ export async function composeQuizSession(
   if (scope.kind === "random") {
     ordered = playable.slice(0, count);
   } else {
+    // Countries have no row in `afrik_peoples`, so they come back with no
+    // population and band as hard — which is the honest place for them: a
+    // question about a country's etymology is not a warm-up.
     const demography = await fetchDemography(supabase, subjectIds);
     const bands = bandSubjectsByPopulation(
       [...new Set(playable.map((candidate) => candidate.entity_id))].map(
@@ -626,11 +652,30 @@ export async function composeQuizSession(
     new Set(rows.flatMap((row) => row.source_ids ?? []))
   );
 
-  const [confidenceMap, flagsMap, sourceGateMap] = await Promise.all([
-    getConfidenceMap(entityIds, rows[0]?.entity_type ?? "people"),
+  // One lookup per entity type present, not one for the whole session.
+  // `confidence_scores` is keyed on (entity_type, entity_id), so reading the
+  // type off the first row silently looked every country up as a people, found
+  // nothing, and failed the gate closed on all of them — the moment a session
+  // could hold both, that stopped being a harmless simplification.
+  const idsByType = new Map<QuizEntityType, string[]>();
+  for (const row of rows) {
+    const held = idsByType.get(row.entity_type) ?? [];
+    if (!held.includes(row.entity_id)) held.push(row.entity_id);
+    idsByType.set(row.entity_type, held);
+  }
+
+  const [confidenceMaps, flagsMap, sourceGateMap] = await Promise.all([
+    Promise.all(
+      [...idsByType].map(([entityType, ids]) =>
+        getConfidenceMap(ids, entityType)
+      )
+    ),
     getFlagsSummaryMap(entityIds),
     getSourceGateInfoMap(supabase, sourceIds),
   ]);
+  const confidenceMap = new Map(
+    confidenceMaps.flatMap((map) => [...map.entries()])
+  );
 
   const survivors: QuizSessionQuestion[] = [];
   for (const row of rows) {
