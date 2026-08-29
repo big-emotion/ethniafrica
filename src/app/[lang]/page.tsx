@@ -7,7 +7,7 @@ import { PurposeBlocks } from "@/components/home/PurposeBlocks";
 import { FeaturedModule } from "@/components/home/FeaturedModule";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { SynthesisRail } from "@/components/home/SynthesisRail";
-import { orderDidYouKnowDeck } from "@/lib/home/didYouKnowFacts";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import {
@@ -83,7 +83,7 @@ export default async function Home({ searchParams }: HomeProps) {
   // Drawn per request, like the hero's module and for the same reason: the
   // draw runs in a server component, so it never re-runs during hydration
   // and cannot desynchronise the client tree.
-  const didYouKnowDeck = orderDidYouKnowDeck();
+  const didYouKnowFact = pickDidYouKnowFact();
 
   // The band opens on the globe, every time.
   //
@@ -123,7 +123,7 @@ export default async function Home({ searchParams }: HomeProps) {
         />
       </section>
       <PurposeBlocks language="fr" />
-      <DidYouKnow language="fr" facts={didYouKnowDeck} />
+      <DidYouKnow language="fr" fact={didYouKnowFact} />
       <SynthesisRail language="fr" syntheses={syntheses} />
       {/* Where the axes used to stand. The module is the page's invitation
           to do something rather than read something, which lands better

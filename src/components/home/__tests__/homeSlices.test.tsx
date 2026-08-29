@@ -1,5 +1,4 @@
 import { render, screen, within } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import { CountrySynthesisCard } from "@/components/home/CountrySynthesisCard";
@@ -37,16 +36,6 @@ const FACT: DidYouKnowFact = {
   ],
   tier: "referenced",
 };
-
-const SECOND_FACT: DidYouKnowFact = {
-  id: "bantou",
-  headline: "« Bantou » n'est pas un peuple : c'est une catégorie de 1862.",
-  body: ["Wilhelm Bleek construit le terme à partir de ba- et -ntu."],
-  entities: [{ kind: "family", id: "FLG_BANTU", label: "Langues bantoues" }],
-  tier: "unverified",
-};
-
-const DECK: DidYouKnowFact[] = [FACT, SECOND_FACT];
 
 describe("CountrySynthesisCard — showing what a fiche holds (REQ-113)", () => {
   // @req REQ-113
@@ -99,7 +88,7 @@ describe("CountrySynthesisCard — showing what a fiche holds (REQ-113)", () => 
 describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // @req REQ-113
   it("routes each chip to its own kind of fiche", () => {
-    render(<DidYouKnow language="fr" facts={[FACT]} />);
+    render(<DidYouKnow language="fr" fact={FACT} />);
 
     expect(screen.getByRole("link", { name: /Liberia/ })).toHaveAttribute(
       "href",
@@ -114,7 +103,7 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // asserts just as much and owes the same.
   // @req REQ-113
   it("states the tier of the source behind the fact", () => {
-    render(<DidYouKnow language="fr" facts={[FACT]} />);
+    render(<DidYouKnow language="fr" fact={FACT} />);
 
     expect(screen.getByText("Source référencée")).toBeInTheDocument();
   });
@@ -122,120 +111,32 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // Rendering the heading over an empty bank would claim an anecdote the
   // atlas does not have.
   // @req REQ-113
-  it("renders nothing at all when the bank is empty", () => {
-    const { container } = render(<DidYouKnow language="fr" facts={[]} />);
+  it("renders nothing at all when the bank has none to give", () => {
+    const { container } = render(<DidYouKnow language="fr" fact={null} />);
 
     expect(container).toBeEmptyDOMElement();
   });
 
-  // A one-card deck has nothing to page through. Arrows and dots that do
-  // nothing tell the reader there is more behind them, and there is not.
-  // The deck is a hook, and a hook has no URL. Without this the band is
-  // the only place the anecdotes exist and none of them can be shared.
+  // The band is a hook, and a hook has no URL. Without this the anecdote is
+  // the only place the bank exists and none of it can be shared.
   // @req REQ-113
-  it("offers the reader a page holding all of them", () => {
-    render(<DidYouKnow language="fr" facts={DECK} />);
+  it("offers the reader the page holding the others", () => {
+    render(<DidYouKnow language="fr" fact={FACT} />);
 
     expect(
-      screen.getByRole("link", { name: "Lire les 2 anecdotes" })
+      screen.getByRole("link", { name: "Lire d'autres anecdotes" })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "anecdotes"));
   });
 
+  // The draw is the variation. A pager laid over it made the band assert a
+  // fixed inventory — « 2 / 24 » — where the reader is handed a single card.
   // @req REQ-113
-  it("shows no controls when the bank holds a single fact", () => {
-    render(<DidYouKnow language="fr" facts={[FACT]} />);
+  it("carries no pager over the drawn fact", () => {
+    render(<DidYouKnow language="fr" fact={FACT} />);
 
     expect(screen.queryByRole("button", { name: "Fait suivant" })).toBeNull();
-    expect(screen.queryByText("1 / 1")).toBeNull();
-  });
-});
-
-describe("DidYouKnow as a deck — paging the whole bank (REQ-113)", () => {
-  // Only the fact on top is reachable. Chips of the cards behind it would
-  // otherwise be five extra tab stops and five links a screen reader reads
-  // out as if they belonged to the fact being shown.
-  // @req REQ-113
-  it("exposes the leading fact and keeps the rest out of reach", () => {
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    expect(screen.getByRole("link", { name: /Liberia/ })).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /Langues bantoues/ })).toBeNull();
-  });
-
-  // @req REQ-113
-  it("turns to the next fact when the reader asks for it", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    await user.click(screen.getByRole("button", { name: "Fait suivant" }));
-
-    expect(
-      screen.getByRole("link", { name: /Langues bantoues/ })
-    ).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /Liberia/ })).toBeNull();
-  });
-
-  // Wrapping rather than disabling: a six-card deck read to the end should
-  // not dead-end on an arrow that has stopped responding.
-  // @req REQ-113
-  it("wraps to the last fact when the reader goes back from the first", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    await user.click(screen.getByRole("button", { name: "Fait précédent" }));
-
-    expect(
-      screen.getByRole("link", { name: /Langues bantoues/ })
-    ).toBeInTheDocument();
-  });
-
-  // @req REQ-113
-  it("says how far into the deck the reader has come", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    expect(screen.getByText("1 / 2")).toBeInTheDocument();
-
-    await user.click(screen.getByRole("button", { name: "Fait suivant" }));
-
-    expect(screen.getByText("2 / 2")).toBeInTheDocument();
-  });
-
-  // @req REQ-113
-  it("lets the reader jump straight to a fact", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    await user.click(screen.getByRole("button", { name: "Aller au fait 2" }));
-
-    expect(
-      screen.getByRole("link", { name: /Langues bantoues/ })
-    ).toBeInTheDocument();
-  });
-
-  // The tier belongs to the fact, not to the section. A deck that kept the
-  // first card's tier under the second would attribute an authority the
-  // second fact does not claim.
-  // @req REQ-113
-  it("carries the tier of the fact on top, not of the deck", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    await user.click(screen.getByRole("button", { name: "Fait suivant" }));
-
-    expect(screen.getByText("Source non vérifiée")).toBeInTheDocument();
-  });
-
-  // The arrows move the deck; nothing tells a screen reader the page
-  // changed under them unless the deck says so itself.
-  // @req REQ-113
-  it("announces the fact it has turned to", async () => {
-    const user = userEvent.setup();
-    render(<DidYouKnow language="fr" facts={DECK} />);
-
-    await user.click(screen.getByRole("button", { name: "Fait suivant" }));
-
-    expect(screen.getByText(/Fait 2 sur 2 :/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Fait précédent" })).toBeNull();
+    expect(screen.queryByText(/^\d+ \/ \d+$/)).toBeNull();
   });
 });
 
