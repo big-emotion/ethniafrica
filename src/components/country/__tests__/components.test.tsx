@@ -215,20 +215,20 @@ describe("HistoryTimeline", () => {
     expect(colonialItem).toBeTruthy();
   });
 
-  it("renders item notes when provided", () => {
+  // An era the fiche writes as prose carries no name to strike through or
+  // crown, so it is rendered as the paragraph it is, in full.
+  // @req REQ-092
+  it("renders an untitled era as its full prose", () => {
+    const prose =
+      "Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies gourmantché et peuples lobi.";
     const data: TimelineData = {
-      items: [
-        {
-          type: "kingdom",
-          era: "XIIe siècle",
-          name: "Empire Mossi",
-          note: "Fondé par Ouédraogo",
-        },
-      ],
+      items: [{ type: "kingdom", era: "Époque précoloniale", prose }],
       gradientStops: { goldEnd: 100, colonialEnd: 100 },
     };
+
     render(<HistoryTimeline data={data} />);
-    expect(screen.getByText("Fondé par Ouédraogo")).toBeTruthy();
+
+    expect(screen.getByText(prose)).toBeTruthy();
   });
 });
 
