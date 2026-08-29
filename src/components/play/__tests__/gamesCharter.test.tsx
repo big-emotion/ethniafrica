@@ -100,14 +100,20 @@ describe("Jouer games charter contract (REQ-120)", () => {
     expect(inlined).toEqual([]);
   });
 
+  /**
+   * `GlobeTap` was the one play component allowed to reach a globe, and it
+   * went with « Le pays d'avant ». The Mercator page does show a globe, but
+   * it is the home's stage mounted by the route above the play loop — not a
+   * second engine built inside one of these components.
+   */
   // @req REQ-120
-  it("mounts no second globe engine: only GlobeTap reaches the atlas globe", () => {
+  it("mounts no globe engine of its own: the play components stay flat", () => {
     const globeConsumers = playComponentFiles().filter((file) =>
       /AtlasGlobe|AtlasGlobeCanvas|WebGLRenderingContext|getContext\(\s*["'`]webgl/.test(
         readPlaySource(file)
       )
     );
-    expect(globeConsumers).toEqual(["GlobeTap.tsx"]);
+    expect(globeConsumers).toEqual([]);
   });
 
   // @req REQ-120

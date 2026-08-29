@@ -1,7 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
 import { BinaryChoice } from "@/components/play/BinaryChoice";
 import { GameAnswerReveal } from "@/components/play/GameAnswerReveal";
 import { GameScoreCard } from "@/components/play/GameScoreCard";
@@ -12,13 +10,6 @@ import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
 
-// The globe primitive pulls in the WebGL scene: it is loaded only for the
-// game that actually asks the reader to tap a country.
-const LazyGlobeTap = dynamic(
-  () => import("@/components/play/GlobeTap").then((mod) => mod.GlobeTap),
-  { ssr: false }
-);
-
 export interface GamePlayIslandProps {
   game: GameDefinition;
   rounds: GameRound[];
@@ -26,7 +17,7 @@ export interface GamePlayIslandProps {
 }
 
 /**
- * The play loop shared by the three games (REQ-120).
+ * The play loop of the Jouer hub's game (REQ-120).
  *
  * The rounds arrive as props: the Jouer hub has no public API route, the page
  * resolves every round server-side, so this island never fetches. Progress is
@@ -41,21 +32,6 @@ export const GamePlayIsland = ({
 }: GamePlayIslandProps) => {
   const session = useGameSession(rounds);
   const { currentRound } = session;
-
-  function renderPrimitive(round: GameRound) {
-    switch (round.kind) {
-      case "binary":
-        return <BinaryChoice round={round} onAnswer={session.answer} />;
-      case "globeTap":
-        return (
-          <LazyGlobeTap
-            promptFr={round.promptFr}
-            choices={round.choices}
-            onChoose={session.answer}
-          />
-        );
-    }
-  }
 
   return (
     <div
@@ -80,7 +56,7 @@ export const GamePlayIsland = ({
             total={session.totalRounds}
           />
           {session.status === "answering" ? (
-            renderPrimitive(currentRound)
+            <BinaryChoice round={currentRound} onAnswer={session.answer} />
           ) : (
             <GameAnswerReveal
               round={currentRound}

@@ -263,6 +263,12 @@ export function quizScopeSearchParams(scope: QuizScope): URLSearchParams {
     params.set("famille", scope.entityId);
   } else if (scope.kind === "random") {
     params.set("mode", "aleatoire");
+  } else {
+    // The whole-corpus run has to name itself too. An empty query names no
+    // track at all, and the page opens a session only for a URL that names
+    // one — so a replay link built from a `mixed` scope walked the reader
+    // back to the picker instead of dealing a new session.
+    params.set("mode", "mixte");
   }
   return params;
 }
