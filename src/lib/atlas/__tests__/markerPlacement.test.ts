@@ -16,6 +16,7 @@ import {
   nearestFacingTarget,
   placeTargetOnBasemap,
   placeTargetOnSphere,
+  spaceOutMarks,
 } from "../markerPlacement";
 import type { AtlasTarget } from "../targets";
 
@@ -387,5 +388,69 @@ describe("nearestFacingTarget (REQ-117)", () => {
     expect(nearestFacingTarget(candidates, 50, 50, 4)).toBe("NORTH");
     // Square stage: the same two countries, and now the raw percentages hold.
     expect(nearestFacingTarget(candidates, 50, 50, 1)).toBe("EAST");
+  });
+});
+
+describe("spaceOutMarks (REQ-117 AC4)", () => {
+  const mark = (
+    countryId: string,
+    leftPercent: number,
+    topPercent: number,
+    facingReader = true
+  ) => ({ countryId, placement: { leftPercent, topPercent, facingReader } });
+
+  const idsOf = (marks: { countryId: string }[]) =>
+    marks.map((kept) => kept.countryId);
+
+  // Every documented country is choosable, so every one of them earns a mark
+  // the moment the stage has room for it. Nothing here caps the count.
+  // @req REQ-117
+  it("keeps every mark the stage has room for", () => {
+    const marks = [
+      mark("NGA", 20, 50),
+      mark("KEN", 60, 50),
+      mark("ZAF", 50, 85),
+    ];
+
+    expect(idsOf(spaceOutMarks(marks, 2, 1))).toEqual(["NGA", "KEN", "ZAF"]);
+  });
+
+  // Two marks closer than their own diameter read as one smudge, and the
+  // smaller country loses its name to its neighbour's.
+  // @req REQ-117
+  it("drops a mark that would land on one already kept", () => {
+    const marks = [mark("GHA", 30, 50), mark("TGO", 30.5, 50)];
+
+    expect(idsOf(spaceOutMarks(marks, 2, 1))).toEqual(["GHA"]);
+  });
+
+  // The caller hands the marks in the order it wants collisions resolved, so a
+  // collision costs the later country, never the earlier one.
+  // @req REQ-117
+  it("resolves a collision in favour of the mark handed in first", () => {
+    const marks = [mark("TGO", 30.5, 50), mark("GHA", 30, 50)];
+
+    expect(idsOf(spaceOutMarks(marks, 2, 1))).toEqual(["TGO"]);
+  });
+
+  // A mark behind the sphere names ground the reader cannot see. It is dropped
+  // rather than dimmed: unlike a target marker it is inert, so nothing reaches
+  // it by keyboard and dimming would only add noise over the far limb.
+  // @req REQ-117
+  it("drops a mark on the far side of the sphere", () => {
+    const marks = [mark("BRA", 20, 50, false), mark("KEN", 60, 50)];
+
+    expect(idsOf(spaceOutMarks(marks, 2, 1))).toEqual(["KEN"]);
+  });
+
+  // Same footing as the hit-test: on a stage four times wider than tall, four
+  // points down cover the ground one point across does. Read as raw
+  // percentages, a vertical pair reads as a collision it is not.
+  // @req REQ-117
+  it("measures separation on the stage's real proportions", () => {
+    const stacked = [mark("NORTH", 50, 48), mark("SOUTH", 50, 52)];
+
+    expect(idsOf(spaceOutMarks(stacked, 2, 4))).toEqual(["NORTH"]);
+    expect(idsOf(spaceOutMarks(stacked, 2, 1))).toEqual(["NORTH", "SOUTH"]);
   });
 });

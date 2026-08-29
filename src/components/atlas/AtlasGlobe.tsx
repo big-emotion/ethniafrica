@@ -32,6 +32,8 @@ import {
   nearestFacingTarget,
   placeTargetOnBasemap,
   placeTargetOnSphere,
+  spaceOutMarks,
+  STAGE_ASPECT,
   type StagePlacement,
 } from "@/lib/atlas/markerPlacement";
 import {
@@ -548,6 +550,69 @@ function AtlasTargetMarker({
   );
 }
 
+/**
+ * How wide a choice mark draws, and therefore how far apart two of them have
+ * to sit. Small on purpose: it says "this country opens", never how much the
+ * corpus holds there — that claim belongs to the radial field, and a mark
+ * large enough to be mistaken for one would make the scene assert a count it
+ * has not measured.
+ */
+const CHOICE_MARK_DIAMETER_PX = 7;
+
+/** The dark ring that separates the dot from the tan of a landmass under it. */
+const CHOICE_MARK_RING_PX = 1.5;
+
+/**
+ * How far apart two marks have to sit: the whole drawn width, ring included.
+ * Measured on the dot alone, two neighbours were spaced so their rings still
+ * overlapped, which is the smudge the separation exists to prevent.
+ */
+const CHOICE_MARK_SEPARATION_PX =
+  CHOICE_MARK_DIAMETER_PX + 2 * CHOICE_MARK_RING_PX;
+
+/**
+ * A country the reader may open, on a scene that pins no marker of its own.
+ *
+ * Inert by construction — a span, `aria-hidden`, transparent to the pointer.
+ * The stage resolves a tap to the nearest country within a generous radius, so
+ * a mark that took clicks for itself would steal them from the country beside
+ * it while being far too small to hit reliably. The keyboard path is the
+ * picker list, which names all fifty-four; this only has to be seen.
+ */
+function AtlasChoiceMark({
+  countryId,
+  placement,
+  chosen,
+}: {
+  countryId: CountryId;
+  placement: StagePlacement;
+  chosen: boolean;
+}) {
+  return (
+    <span
+      data-atlas-choice={countryId}
+      data-atlas-choice-chosen={chosen ? "true" : undefined}
+      aria-hidden="true"
+      className="pointer-events-none absolute rounded-full"
+      style={{
+        left: `${placement.leftPercent}%`,
+        top: `${placement.topPercent}%`,
+        width: CHOICE_MARK_DIAMETER_PX,
+        height: CHOICE_MARK_DIAMETER_PX,
+        marginLeft: -CHOICE_MARK_DIAMETER_PX / 2,
+        marginTop: -CHOICE_MARK_DIAMETER_PX / 2,
+        backgroundColor: chosen ? "var(--accent)" : "var(--afh-night-ink-2)",
+        // Reads over the tan of a landmass and over the dark of the ocean
+        // alike, which a flat dot at one opacity does not.
+        boxShadow: chosen
+          ? "0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent)"
+          : `0 0 0 ${CHOICE_MARK_RING_PX}px var(--afh-night-ground)`,
+        opacity: chosen ? 1 : 0.75,
+      }}
+    />
+  );
+}
+
 export interface AtlasGlobeProps {
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
@@ -682,14 +747,19 @@ const NIGHT_STAGE_STYLE: CSSProperties = {
   overflow: "hidden",
 };
 
+interface StageSize {
+  widthPx: number;
+  /** What the shader divides the horizontal axis by. */
+  aspect: number;
+}
+
 /**
  * Which anchoring the panel takes. It starts as the bottom sheet because the
  * project is mobile-first and the server cannot measure a viewport — the wider
  * side panel is an upgrade applied once the client knows its own width.
  */
 /**
- * The stage's live width-to-height ratio, which is what the shader divides the
- * horizontal axis by.
+ * The stage's live width and width-to-height ratio.
  *
  * The stage is full-width over a fixed height — 1512x520 on a laptop — so this
  * is a runtime fact, and markerPlacement's committed fall-back (the basemap's
@@ -698,18 +768,23 @@ const NIGHT_STAGE_STYLE: CSSProperties = {
  * landed beside the sphere, over the void, naming ground the reader could not
  * see under it.
  *
+ * The width comes back alongside because separation between choice marks is a
+ * distance in CSS pixels while a placement is a percentage, and one measure of
+ * the stage is what keeps the two conversions from drifting apart.
+ *
  * Null until the first measurement, which is what keeps the server render and
  * the first client render agreeing on the fall-back.
  */
-function useStageAspect(stage: HTMLElement | null): number | null {
-  const [aspect, setAspect] = useState<number | null>(null);
+function useStageSize(stage: HTMLElement | null): StageSize | null {
+  const [size, setSize] = useState<StageSize | null>(null);
 
   useEffect(() => {
     if (!stage) return;
 
     const measure = () => {
       const { width, height } = stage.getBoundingClientRect();
-      if (width > 0 && height > 0) setAspect(width / height);
+      if (width > 0 && height > 0)
+        setSize({ widthPx: width, aspect: width / height });
     };
     measure();
 
@@ -722,7 +797,7 @@ function useStageAspect(stage: HTMLElement | null): number | null {
     return () => observer.disconnect();
   }, [stage]);
 
-  return aspect;
+  return size;
 }
 
 function usePanelAnchor(): PanelAnchor {
@@ -796,7 +871,8 @@ export function AtlasGlobe({
     setWebglSupported(canCreateWebglContext());
   }, []);
 
-  const stageAspect = useStageAspect(stage);
+  const measuredStage = useStageSize(stage);
+  const stageAspect = measuredStage?.aspect ?? null;
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
   /**
@@ -1084,13 +1160,68 @@ export function AtlasGlobe({
         );
 
   /**
-   * The continent scene marks its twelve best-documented countries and offers
-   * all fifty-four, so on that scene alone the stage itself is a target: a tap
-   * picks the country it lands nearest. The fiche globes are left alone —
-   * there every choosable country already carries its own marker, and a stray
-   * tap on one would select a country the reader did not point at.
+   * The continent scene draws a radial field for its best-documented countries
+   * and offers all fifty-four, so on that scene alone the stage itself is a
+   * target: a tap picks the country it lands nearest. The fiche globes are left
+   * alone — there every choosable country already carries its own marker, and a
+   * stray tap on one would select a country the reader did not point at.
    */
   const stageSelectsCountry = drawnOverlay.kind === "continent-field";
+
+  const pinsAMarkerPerTarget = targetPicker === "markers" || !offersList;
+
+  /**
+   * The choosable countries the scene does not already pin a marker on.
+   *
+   * The complaint this answers: the continent drew twelve radial fields and
+   * offered fifty-four countries to a tap, and nothing on screen said so — so
+   * the twelve read as the whole choosable set. The two layers say different
+   * things and both are needed: a field says how much the corpus documents
+   * there, a mark says the country opens.
+   *
+   * Subtracting the pinned targets is what keeps the Explorer hub honest. It
+   * pins a labelled 22px button on the twelve it ranks, and a 7px dot in the
+   * middle of one would read as a reticle while saying nothing the button does
+   * not. The facet globes pin nothing, so there all fifty-four are marked.
+   *
+   * Placed and thinned in the same pass, after the camera has moved, so the
+   * marks answer to the stage the reader is actually looking at — zooming into
+   * West Africa separates the ones that were crowded and earns back the ones a
+   * wider view had to drop.
+   *
+   * Ranked by corpus size first, because that is the order collisions are
+   * resolved in and the picker hands its targets in French alphabetical order.
+   * Left as they arrive, Gambia — which sits inside Senegal — kept the mark
+   * and Senegal lost it, while `buildContinentOverlay` resolved the very same
+   * collision the other way for the field.
+   */
+  const choiceMarks = !stageSelectsCountry
+    ? []
+    : spaceOutMarks(
+        choosableTargets
+          .filter(
+            (target) =>
+              !pinsAMarkerPerTarget ||
+              !targets.some((pinned) => pinned.countryId === target.countryId)
+          )
+          .slice()
+          .sort(
+            (first, second) =>
+              (second.documentedPeopleCount ?? 0) -
+              (first.documentedPeopleCount ?? 0)
+          )
+          .map((target) => ({
+            countryId: target.countryId,
+            placement: place(target),
+          })),
+        // Unmeasured, nothing is thinned: a guessed stage width would drop
+        // countries on arithmetic rather than on crowding, and the first
+        // measurement is one frame away.
+        measuredStage
+          ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100
+          : 0,
+        stageAspect ?? STAGE_ASPECT
+      );
 
   const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
     const wasDrag = travelled.current > TAP_TRAVEL_TOLERANCE_PX;
@@ -1174,7 +1305,7 @@ export function AtlasGlobe({
         </p>
       )}
 
-      {(targetPicker === "markers" || !offersList) &&
+      {pinsAMarkerPerTarget &&
         targets.map((target) => (
           <AtlasTargetMarker
             key={target.countryId}
@@ -1185,6 +1316,15 @@ export function AtlasGlobe({
             onChoose={() => chooseTarget(target.countryId)}
           />
         ))}
+
+      {choiceMarks.map((mark) => (
+        <AtlasChoiceMark
+          key={mark.countryId}
+          countryId={mark.countryId}
+          placement={mark.placement}
+          chosen={mark.countryId === chosenCountryId}
+        />
+      ))}
 
       {offersList && (
         <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">

@@ -67,6 +67,12 @@
   --afh-night-teal: #33a390;
   --afh-night-terre: #c4573f;
   --afh-night-perv: #7a8ce8;
+  /* The colonial tone lightened for a dark ground. #9b3030 is a day ink and
+     sits at 2.2–2.6:1 on the night grounds; this clears 6.1:1 on the darkest
+     of them. Not --afh-night-terre, which the charter reserves as
+     IdentityPanel's imposed-exonym accent and which only reaches 3.7:1 here
+     anyway. */
+  --afh-night-colonial: #d98a7a;
 
   /* Charter categorical accents (V2, ETNI-798 · FR104) — the CVD-validated
      set promoted to first-class tokens. Base hexes match the dormant
@@ -121,6 +127,19 @@
   --afh-text-soft: var(--afh-color-text-soft);
   --afh-text-muted: var(--afh-color-text-muted);
 
+  /* The readable colonial tone, for anything inked against the theme's own
+     ground — the imposed-exonym marker, the unverified-source chip. It stands
+     to the raw tone exactly as the accent ink stands to the accent fill: the
+     fill keeps its place on blocks that carry their own pale tint, and this
+     one follows the surface into night. A rule that paints
+     --afh-color-colonial-bg under itself keeps the raw tone, because that
+     tint is parchment and travels with it.
+
+     Written without a colon after any token name: charterTokens.test.ts reads
+     this file line by line, and prose shaped like a declaration is picked up
+     as one. */
+  --afh-colonial-ink: var(--afh-color-colonial);
+
   /* Muted surface + foreground pair — used by source-transparency badges
      (SourceChainSheet tier pills, etc.) and other low-emphasis chips. The
      pair must satisfy WCAG AA (≥ 4.5:1) for normal text. */
@@ -142,6 +161,16 @@
   --afh-conf-mid-bg: var(--afh-color-gold-bg);
   --afh-conf-low: var(--afh-color-clay);
   --afh-conf-low-bg: var(--afh-color-earth-bg);
+  /* Clay is a fill, not an ink: #b87d5b reads 3.22:1 on the page ground, so
+     the header's « Bientôt » chip — which is state a reader has to be able to
+     read, not decoration — failed AA wherever it was set in it. The darker
+     sibling of the same family clears at 5.42:1. Same mirror that --accent-ink
+     holds against the accent fill — marks take the fill, type takes the ink.
+
+     Written without a `--token` + colon anywhere above: charterTokens.test.ts
+     reads the accent declarations with a regex over this file, and a comment
+     shaped like a declaration is captured as one. */
+  --afh-conf-low-ink: var(--afh-color-earth);
 
   /* Classification state — fiche-level editorial status */
   --afh-classification-stable: var(--afh-color-green);
@@ -310,6 +339,8 @@
   --afh-text: var(--afh-night-ink);
   --afh-text-soft: var(--afh-night-ink-2);
   --afh-text-muted: var(--afh-night-ink-3);
+
+  --afh-colonial-ink: var(--afh-night-colonial);
 
   /* fg-muted must clear AA on --afh-muted; ink-3 sits at 4.2:1 on the
      raised surface, so the muted pair takes ink-2 the way the parchment

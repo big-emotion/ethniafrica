@@ -111,7 +111,7 @@ export function PeopleDetailViewV2({
           The confidence chip did not go with them: it cites this document's
           sources and links to their footer, so it belongs inside the document
           that owns that anchor rather than in the band above it. */}
-      <div className="px-3 md:px-4 xl:px-5 pt-afh-base">
+      <div className="afh-parchment-confidence">
         <ConfidenceChip
           confidenceScore={null}
           sourceCount={data.sources.length || null}

@@ -255,7 +255,11 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           line-height: 1.5;
-          color: var(--afh-text-muted);
+          /* --afh-fg-muted, not --afh-text-muted: the latter reads 3.08:1 on
+             this ground. The credit is the quietest type on the home and the
+             one line that is not optional — the tifinagh photograph is CC
+             BY-SA, whose attribution has to stay legible. */
+          color: var(--afh-fg-muted);
           width: 100%;
           box-sizing: border-box;
         }

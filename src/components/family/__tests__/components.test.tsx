@@ -344,7 +344,7 @@ describe("FamilyClassificationTreeSection", () => {
       screen.getByRole("list", { name: "Classification", hidden: true })
     ).toBeInTheDocument();
     expect(screen.getByText("Kikongo")).toBeInTheDocument();
-    expect(screen.getByText("Voir en liste")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Liste" })).toBeInTheDocument();
   });
 
   // @req REQ-047

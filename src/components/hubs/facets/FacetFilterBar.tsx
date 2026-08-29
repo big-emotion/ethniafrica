@@ -20,6 +20,14 @@ export interface FacetFilterBarProps {
   /** Where the form submits — the facet's own path, composed through the route helpers. */
   action: string;
   fields: readonly FacetFilterField[];
+  /**
+   * State the reader has set elsewhere on the page and the bar must not drop.
+   * A `GET` form submits its own controls and nothing else, so without these
+   * the page size chosen above is lost the moment a filter is applied. An
+   * `undefined` entry emits no field at all — an empty one would submit a
+   * parameter the reader never set.
+   */
+  hidden?: Readonly<Record<string, string | undefined>>;
   submitLabel?: string;
   className?: string;
 }
@@ -45,6 +53,7 @@ export interface FacetFilterBarProps {
 export function FacetFilterBar({
   action,
   fields,
+  hidden,
   submitLabel = "Filtrer",
   className,
 }: FacetFilterBarProps) {
@@ -61,6 +70,12 @@ export function FacetFilterBar({
         className
       )}
     >
+      {Object.entries(hidden ?? {}).map(([name, value]) =>
+        value === undefined ? null : (
+          <input key={name} type="hidden" name={name} value={value} />
+        )
+      )}
+
       {fields.map((field) => {
         const id = `facet-filter-${field.name}`;
         return (

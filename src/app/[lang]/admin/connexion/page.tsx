@@ -206,7 +206,11 @@ export default function AdminConnexionPage() {
   // with no way back to the site, which is how it shipped.
   return (
     <>
-      <SiteTrail />
+      {/* The trail brings no gutter of its own, so this mount supplies one —
+          without it the crumbs sit flush against the viewport edge. */}
+      <div className="px-4">
+        <SiteTrail />
+      </div>
       <Suspense
         fallback={
           <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">

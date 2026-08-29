@@ -32,6 +32,11 @@ describe("night color tokens", () => {
       "--afh-night-teal": "#33A390",
       "--afh-night-terre": "#C4573F",
       "--afh-night-perv": "#7A8CE8",
+      // Not dormant, unlike the four categorical values above: the parchment's
+      // colonial tone is a day ink at 2.2–2.6:1 on these grounds, so anything
+      // marking an imposed name against the theme's own ground reads this
+      // through --afh-colonial-ink. Measured in ficheParchmentContrast.
+      "--afh-night-colonial": "#D98A7A",
     });
   });
 });

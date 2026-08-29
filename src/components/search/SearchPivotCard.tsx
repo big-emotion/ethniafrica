@@ -63,7 +63,7 @@ export function SearchPivotCard({
         "border-l-4 border-l-[var(--accent)] bg-[var(--accent-tint)]"
       )}
     >
-      <p className="text-afh-eyebrow font-bold uppercase tracking-[0.11em] text-afh-text-muted">
+      <p className="text-afh-eyebrow font-bold uppercase tracking-[0.11em] text-afh-fg-muted">
         Résultat principal
       </p>
 
@@ -91,9 +91,7 @@ export function SearchPivotCard({
         <dl className="flex shrink-0 flex-col gap-1 md:text-right">
           {result.population !== undefined && (
             <>
-              <dt className="text-afh-caption text-afh-text-muted">
-                Population
-              </dt>
+              <dt className="text-afh-caption text-afh-fg-muted">Population</dt>
               <dd className="text-afh-small font-semibold text-afh-text">
                 {numberFr.format(Math.round(result.population))}
               </dd>
@@ -101,9 +99,7 @@ export function SearchPivotCard({
           )}
           {result.confidence !== undefined && (
             <>
-              <dt className="text-afh-caption text-afh-text-muted">
-                Confiance
-              </dt>
+              <dt className="text-afh-caption text-afh-fg-muted">Confiance</dt>
               {/* The database stores this on [0,1]; every chip in the product
                   reads 0-100. Converting here, once, is what keeps the two
                   scales from being confused downstream. */}

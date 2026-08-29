@@ -72,7 +72,7 @@ export default function SitemapPage() {
                         {link.label}
                       </Link>
                       {link.note && (
-                        <p className="mt-1 text-afh-small leading-[1.5] text-afh-text-muted">
+                        <p className="mt-1 text-afh-small leading-[1.5] text-afh-fg-muted">
                           {link.note}
                         </p>
                       )}
