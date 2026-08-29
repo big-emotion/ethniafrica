@@ -86,6 +86,32 @@ describe("PeopleNamingBlock (REQ-115)", () => {
     expect(screen.getByText(/revendiqué/)).toBeInTheDocument();
   });
 
+  // The parchment is one continuous document — "no cards, no shadows", as
+  // fiche-parchment.css puts it, and as the country fiche renders it. This
+  // block used to paint two filled boxes with inline backgroundColor, which
+  // is both a card and a colour a stylesheet never sees.
+  // @req REQ-115
+  it("states the two names without boxing either of them", () => {
+    const { container } = render(<PeopleNamingBlock {...yoruba} />);
+
+    const painted = Array.from(
+      container.querySelectorAll<HTMLElement>("[style]")
+    ).filter((node) => node.style.backgroundColor !== "");
+
+    expect(painted).toEqual([]);
+  });
+
+  // The name borne and the names imposed are two fields of the same rubric,
+  // so they share the block's layout rather than each inventing one. The
+  // roles are what the stylesheet keys the accent and colonial inks off.
+  // @req REQ-115
+  it("marks which field is borne and which is imposed", () => {
+    const { container } = render(<PeopleNamingBlock {...yoruba} />);
+
+    expect(container.querySelector('[data-role="borne"]')).not.toBeNull();
+    expect(container.querySelector('[data-role="imposed"]')).not.toBeNull();
+  });
+
   // @req REQ-115
   it("announces neither lead-in when the fiche fills neither field", () => {
     render(<PeopleNamingBlock {...yoruba} />);
