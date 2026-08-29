@@ -190,7 +190,7 @@ export function AtlasTargetPicker({
                       marginLeft: "auto",
                       fontFamily: "var(--afh-font-mono)",
                       fontSize: "var(--afh-text-caption)",
-                      color: "var(--afh-text-muted)",
+                      color: "var(--afh-fg-muted)",
                     }}
                   >
                     {subtitle}

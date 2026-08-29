@@ -151,7 +151,9 @@ export function CountrySynthesisCard({
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          /* The label naming each fact — « ANCIENS NOMS », « PEUPLES » — is
+             what tells the reader which list they are looking at. */
+          color: var(--afh-fg-muted);
         }
         .home-syn-fact dd {
           margin: 2px 0 0;

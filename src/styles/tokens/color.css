@@ -142,6 +142,16 @@
   --afh-conf-mid-bg: var(--afh-color-gold-bg);
   --afh-conf-low: var(--afh-color-clay);
   --afh-conf-low-bg: var(--afh-color-earth-bg);
+  /* Clay is a fill, not an ink: #b87d5b reads 3.22:1 on the page ground, so
+     the header's « Bientôt » chip — which is state a reader has to be able to
+     read, not decoration — failed AA wherever it was set in it. The darker
+     sibling of the same family clears at 5.42:1. Same mirror that --accent-ink
+     holds against the accent fill — marks take the fill, type takes the ink.
+
+     Written without a `--token` + colon anywhere above: charterTokens.test.ts
+     reads the accent declarations with a regex over this file, and a comment
+     shaped like a declaration is captured as one. */
+  --afh-conf-low-ink: var(--afh-color-earth);
 
   /* Classification state — fiche-level editorial status */
   --afh-classification-stable: var(--afh-color-green);
