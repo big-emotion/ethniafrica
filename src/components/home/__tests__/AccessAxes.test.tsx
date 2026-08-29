@@ -400,13 +400,16 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
     expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
   });
 
+  // A facet of the Explorer hub is a destination on the scene like any
+  // other, and the click that opened the axis is the last one spent on the
+  // axis slug.
   // @req REQ-114
   it("sends a facet click to that facet of the hub, never to the axis slug", async () => {
     renderAxes();
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
-    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
+    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );
