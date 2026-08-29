@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 
 import { useQuizSession } from "@/hooks/use-quiz-session";
 import { QuizQuestionCard } from "@/components/quiz/QuizQuestionCard";
@@ -13,6 +14,22 @@ import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 
 const t = translations.fr.quiz;
+
+/**
+ * Lazily, and the split is load-bearing rather than incidental: the loader
+ * carries `AFRICA_LANDMASS_PATH`, and importing it directly put the island
+ * 0.6 KB over the 15 KB gzipped budget `scripts/quiz-bundle-size.ts` holds it
+ * to. Nothing is lost by splitting it — the figure stays invisible for its
+ * first 300 ms whatever happens (`LOADER_REVEAL_DELAY_MS`), which is far
+ * longer than its own chunk takes to arrive alongside the session request.
+ */
+const LazyAfricaTraceLoader = dynamic(
+  () =>
+    import("@/components/system/AfricaTraceLoader").then(
+      (mod) => mod.AfricaTraceLoader
+    ),
+  { ssr: false }
+);
 
 interface QuizPlayIslandProps {
   scope: QuizScope;
@@ -37,13 +54,21 @@ export const QuizPlayIsland = ({
   const session = useQuizSession({ scope });
 
   if (session.status === "loading") {
+    // The session is fetched client-side, so this wait is the island's own —
+    // no route boundary can cover it, and a bare sentence on an empty page
+    // was the whole screen for as long as it lasted. `AfricaTraceLoader`
+    // carries the sentence for a screen reader and gives a sighted reader the
+    // same coastline every other wait on the site draws. It paints nothing
+    // for the first 300 ms, so a fast session still opens straight onto its
+    // first question.
     return (
-      <p
-        role="status"
-        className={cn("text-afh-body text-afh-text-soft", className)}
+      <div
+        data-testid="quiz-loading-band"
+        className={className}
+        style={{ minHeight: "min(52vh, 420px)" }}
       >
-        {t.loadingSession}
-      </p>
+        <LazyAfricaTraceLoader label={t.loadingSession} />
+      </div>
     );
   }
 
