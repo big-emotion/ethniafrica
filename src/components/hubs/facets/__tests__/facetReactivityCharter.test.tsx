@@ -126,6 +126,7 @@ function renderIsland({
       />
       <FacetGlobeIsland
         peopleCountsByCountry={{ BEN: 12, GHA: 40 }}
+        countryIds={["BEN", "GHA"]}
         missingMessage="rien à dessiner"
       />
     </FacetCountryIndexProvider>
@@ -355,7 +356,7 @@ describe("the accent — one hue per facet, and the map inside it", () => {
   // @req REQ-116
   it("mounts the shared map inside the facet's accent scope", () => {
     render(
-      <FacetHubShell peopleCountsByCountry={{ BEN: 12 }}>
+      <FacetHubShell peopleCountsByCountry={{ BEN: 12 }} countryIds={["BEN"]}>
         <p>la liste</p>
       </FacetHubShell>
     );
@@ -371,7 +372,7 @@ describe("the accent — one hue per facet, and the map inside it", () => {
   // @req REQ-116
   it("reads the facet from the route it was mounted on", () => {
     render(
-      <FacetHubShell peopleCountsByCountry={undefined}>
+      <FacetHubShell peopleCountsByCountry={undefined} countryIds={[]}>
         <p>la liste</p>
       </FacetHubShell>
     );

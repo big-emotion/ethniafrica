@@ -21,6 +21,8 @@ import {
   type ModuleGroupId,
 } from "@/lib/hubs/moduleRegistry";
 import { getGroupedModules, type ModuleShelf } from "@/lib/hubs/moduleGroups";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getFacetByPage } from "@/lib/hubs/facets";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { AxisGraphLayer } from "@/lib/home/axisGraphLayer";
 import {
@@ -80,7 +82,17 @@ function useGraphEnabled(reducedMotion: boolean): boolean {
  */
 type PanelNode =
   | { kind: "module"; id: string; module: HubModule }
-  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf };
+  | { kind: "shelf"; id: ModuleGroupId; shelf: ModuleShelf }
+  /**
+   * The axis's own hub, and the facets it holds.
+   *
+   * Not a module: no entry in the registry addresses `/fr/explorer`, and the
+   * three facets that used to sit here as siblings are states of that one page
+   * rather than three destinations beside it. Drawing them as three satellites
+   * of equal weight is the diagram saying the site still has three
+   * directories.
+   */
+  | { kind: "hub"; id: string; facets: HubModule[] };
 
 export interface AxisModulePanelProps {
   language: Language;
@@ -151,12 +163,26 @@ export function AxisModulePanel({
           : { kind: "shelf" as const, id: shelf.group.id, shelf }
       );
     }
-    return modules.map((entry) => ({
-      kind: "module",
-      id: entry.id,
-      module: entry,
-    }));
-  }, [modules, open, shelves]);
+    // An axis with no shelves leads with its own hub, then the destinations
+    // that are not facets of it. Before this the diagram drew peoples, pays
+    // and familles as three satellites of equal weight, which is the shape the
+    // site had when they were three directories — and the hub they are now
+    // facets of appeared nowhere at all.
+    const facets = modules.filter(
+      (entry) => entry.page && getFacetByPage(entry.page)
+    );
+
+    return [
+      { kind: "hub" as const, id: mode, facets },
+      ...modules
+        .filter((entry) => !facets.includes(entry))
+        .map((entry) => ({
+          kind: "module" as const,
+          id: entry.id,
+          module: entry,
+        })),
+    ];
+  }, [mode, modules, open, shelves]);
 
   const panelRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<Array<HTMLLIElement | null>>([]);
@@ -355,6 +381,54 @@ export function AxisModulePanel({
    * A module's own face. It is the leaf of both levels — a game reached
    * through its shelf, and a lone game promoted in place of one.
    */
+  /**
+   * The hub node: one link to the axis's own page, and its facets beneath.
+   *
+   * The facets are links too — a reader who already knows they want peoples
+   * should not have to land on the hub and pick again — but they are drawn as
+   * what they are, states of the page named above them.
+   */
+  const renderHubFace = (
+    facets: HubModule[],
+    handlers: {
+      onMouseEnter: () => void;
+      onFocus: () => void;
+      onBlur: () => void;
+    }
+  ) => (
+    <div className="axis-module-face axis-hub-face">
+      <Link
+        href={getAxisHubRoute(language, mode)}
+        data-testid={`axis-hub-link-${mode}`}
+        className="axis-hub-main min-h-11"
+        {...handlers}
+      >
+        {t.hubs[mode].hubEntryName}
+      </Link>
+
+      {facets.length > 0 ? (
+        <span className="axis-hub-facets">
+          {facets.map((entry) => {
+            const href = getModuleHref(entry, language);
+            const facet = entry.page ? getFacetByPage(entry.page) : null;
+            if (!href || !facet) return null;
+
+            return (
+              <Link
+                key={entry.id}
+                href={href}
+                data-testid={`axis-facet-link-${entry.id}`}
+                className="axis-hub-facet"
+              >
+                {facet.label}
+              </Link>
+            );
+          })}
+        </span>
+      ) : null}
+    </div>
+  );
+
   const renderModuleFace = (
     entry: HubModule,
     handlers: {
@@ -435,7 +509,9 @@ export function AxisModulePanel({
               data-testid={
                 node.kind === "shelf"
                   ? `axis-shelf-${node.id}`
-                  : `axis-module-${node.id}`
+                  : node.kind === "hub"
+                    ? `axis-hub-${node.id}`
+                    : `axis-module-${node.id}`
               }
               data-active={activeIndex === index ? "true" : undefined}
               className="axis-module"
@@ -461,6 +537,8 @@ export function AxisModulePanel({
                     &rsaquo;
                   </span>
                 </button>
+              ) : node.kind === "hub" ? (
+                renderHubFace(node.facets, shared)
               ) : (
                 renderModuleFace(node.module, shared)
               )}
@@ -537,6 +615,46 @@ export function AxisModulePanel({
            fits on one line. */
         .axis-panel:not([data-layout="column"]) .axis-module-face {
           min-height: ${MODULE_CARD_HEIGHT}px;
+        }
+
+        /* The hub node holds a link and a row of facets, so it stacks where a
+           module card is a single centred label. It keeps the card's frame —
+           it is one node on the same scene — and only changes what is inside
+           it. */
+        .axis-hub-face {
+          flex-direction: column;
+          justify-content: center;
+          gap: 8px;
+        }
+        .axis-hub-main {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: inherit;
+          text-decoration: none;
+        }
+        .axis-hub-facets {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 6px;
+        }
+        .axis-hub-facet {
+          display: inline-flex;
+          align-items: center;
+          min-height: 32px;
+          padding: 2px 10px;
+          border: 1px solid var(--afh-border);
+          border-radius: 999px;
+          background: var(--afh-bg);
+          color: var(--afh-text);
+          font-size: var(--afh-caption);
+          font-weight: 500;
+          text-decoration: none;
+        }
+        .axis-hub-facet:hover {
+          border-color: var(--accent);
+          color: var(--accent-ink);
         }
 
         .axis-module-face {
