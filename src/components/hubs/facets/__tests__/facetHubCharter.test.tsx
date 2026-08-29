@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
 import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
 import {
@@ -109,6 +110,32 @@ describe("facet hub charter — the seam the three facets share", () => {
   // @req REQ-114
   it("treats no sentinel string as meaning 'everything'", () => {
     expect(definedFilter("__all__")).toBe("__all__");
+  });
+});
+
+describe("facet band — a fixed band, never an aspect ratio", () => {
+  /**
+   * The band is full-bleed, so an `aspect-ratio` box takes its height from the
+   * *viewport* width: at 1512px it asked for 1433px and the reader met a wall
+   * of night with the map below the fold. Measured on the deployed recette
+   * before the fix — 1433px against a 520px token.
+   *
+   * space.css already carries that lesson for the fiche band, so the assertion
+   * is that this band reads the same token rather than a number of its own.
+   */
+  // @req REQ-116
+  it("takes its height from the shared stage token, and declares no aspect ratio", () => {
+    render(
+      <FacetGlobeIsland
+        peopleCountsByCountry={undefined}
+        countryIds={[]}
+        missingMessage="rien"
+      />
+    );
+
+    const band = screen.getByTestId("facet-globe-island");
+    expect(band.style.height).toBe("var(--afh-globe-stage-height)");
+    expect(band.style.aspectRatio).toBe("");
   });
 });
 
