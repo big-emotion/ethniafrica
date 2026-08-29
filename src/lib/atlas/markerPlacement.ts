@@ -87,19 +87,26 @@ export function placeTargetOnSphere(
 
 /**
  * The flat map has no rotation to apply, so the pose reaches it as a pan and a
- * scale: `focus` is brought to the place the bias asks for, at the dolly's
- * scale. A null focus — nothing chosen yet — is the identity, which is the
- * plain REQ-116 basemap.
+ * scale: the anchor is brought to the place the bias asks for, at the dolly's
+ * scale.
+ *
+ * With nothing chosen there is no target to bring anywhere, so the map's own
+ * centre is the anchor and the pose still reaches it. That case used to return
+ * a flat identity, which silently discarded the dolly with the pan: the
+ * continent scene never flies, so its focus is null forever, and the reader
+ * pressing zoom moved a number no renderer read. An undollied, unbiased pose
+ * still comes out as the identity here — the plain REQ-116 basemap — because
+ * the centre cancels itself at scale 1.
  */
 function basemapPanZoom(pose: CameraPose, focus: LonLat | null) {
-  if (!focus) return { translateX: 0, translateY: 0, scale: 1 };
-
   const { width, height } = BASEMAP_VIEWBOX;
-  const projected = projectLonLat(focus.lon, focus.lat, BASEMAP_VIEWBOX);
+  const anchor = focus
+    ? projectLonLat(focus.lon, focus.lat, BASEMAP_VIEWBOX)
+    : { x: width / 2, y: height / 2 };
 
   return {
-    translateX: ((pose.offsetX + 1) / 2) * width - projected.x * pose.zoom,
-    translateY: ((1 - pose.offsetY) / 2) * height - projected.y * pose.zoom,
+    translateX: ((pose.offsetX + 1) / 2) * width - anchor.x * pose.zoom,
+    translateY: ((1 - pose.offsetY) / 2) * height - anchor.y * pose.zoom,
     scale: pose.zoom,
   };
 }

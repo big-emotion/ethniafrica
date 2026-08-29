@@ -5,8 +5,10 @@ import {
   MAX_ZOOM,
   MIN_ZOOM,
   PITCH_LIMIT_RADIANS,
+  READER_MAX_ZOOM,
   advanceYaw,
   clampPitch,
+  clampZoom,
   interpolatePose,
   poseForTarget,
   posesMatch,
@@ -279,5 +281,26 @@ describe("clampPitch keeps a pole off the horizon", () => {
   // @req REQ-117
   it("leaves a turn inside the limit exactly where it was", () => {
     expect(clampPitch(0.4)).toBe(0.4);
+  });
+});
+
+describe("clampZoom bounds the reader's own dolly", () => {
+  // @req REQ-117
+  it("lets the reader go closer than any automatic framing does", () => {
+    // The whole point of the control: 1.62x frames a country with its
+    // neighbours, and that is not close enough to aim at the Gambia.
+    expect(READER_MAX_ZOOM).toBeGreaterThan(MAX_ZOOM);
+    expect(clampZoom(4)).toBe(4);
+  });
+
+  // @req REQ-117
+  it("stops at the ceiling and at the whole hemisphere", () => {
+    expect(clampZoom(99)).toBe(READER_MAX_ZOOM);
+    expect(clampZoom(0.2)).toBe(MIN_ZOOM);
+  });
+
+  // @req REQ-117
+  it("falls back to the whole hemisphere rather than passing NaN to a shader", () => {
+    expect(clampZoom(Number.NaN)).toBe(MIN_ZOOM);
   });
 });

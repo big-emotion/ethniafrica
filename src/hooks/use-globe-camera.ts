@@ -6,6 +6,7 @@ import {
   FLY_TO_DURATION_MS,
   advanceYaw,
   clampPitch,
+  clampZoom,
   easeInOutCubic,
   interpolatePose,
   posesMatch,
@@ -29,7 +30,14 @@ export interface GlobeCamera {
    * was fighting.
    */
   turnBy: (deltaYaw: number, deltaPitch: number) => void;
-  /** Back to `restPose`, whatever the reader has turned or chosen since. */
+  /**
+   * The reader's own dolly, as a factor on the live zoom. Multiplicative rather
+   * than additive so that repeated presses keep the same apparent step near the
+   * ceiling as they do from rest, and so that a press composes with a framing
+   * the reader did not choose — the country a fly-to just landed on.
+   */
+  zoomBy: (factor: number) => void;
+  /** Back to `restPose`, whatever the reader has turned, zoomed or chosen since. */
   recentre: () => void;
 }
 
@@ -179,6 +187,17 @@ export function useGlobeCamera(
     [cancelFlight, settle]
   );
 
+  const zoomBy = useCallback(
+    (factor: number) => {
+      // Same precedence as a turn: the hand beats a flight in progress, or a
+      // press during a fly-to would be undone by the frame that follows it.
+      cancelFlight();
+      const current = poseRef.current;
+      settle({ ...current, zoom: clampZoom(current.zoom * factor) });
+    },
+    [cancelFlight, settle]
+  );
+
   const recentre = useCallback(() => {
     if (reducedMotion) {
       cancelFlight();
@@ -188,5 +207,5 @@ export function useGlobeCamera(
     flyTo(restPose);
   }, [cancelFlight, flyTo, reducedMotion, restPose, settle]);
 
-  return { pose, turnBy, recentre };
+  return { pose, turnBy, zoomBy, recentre };
 }
