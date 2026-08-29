@@ -58,14 +58,12 @@ export interface FacetGlobeIslandProps {
   /**
    * Every country the corpus gives a fiche.
    *
-   * The drawn field and the choosable set are not the same thing.
-   * `buildContinentOverlay` keeps at most twelve areas and drops any whose
-   * marker would overlap one already kept — a density rule, because fifty-four
-   * pastilles at 430px overlap into noise and the small ones stop being
-   * hittable. Without this list the *choosable* set collapses to that thinned
-   * *drawn* set, and forty-odd countries become unreachable from the map
-   * rather than merely unmarked. `pickerTargets` is the prop that separates
-   * the two.
+   * The radial field and the choosable set are not the same thing.
+   * `buildContinentOverlay` keeps at most twelve areas, because a field is a
+   * claim about how much the corpus documents somewhere and past a dozen the
+   * stage reads as a ranking. Choosing is a separate question, and this list
+   * is its answer: `pickerTargets` is what makes all fifty-four reachable, and
+   * AtlasGlobe marks each of them so the reader can see that they are.
    */
   countryIds: readonly string[];
   missingMessage: string;
@@ -271,9 +269,9 @@ export function FacetGlobeIsland({
             missingMessage={missingMessage}
             targetFacts={facetFacts}
             readingCountryId={reading.focused}
-            // Fifty-four countries as pastilles overlap into noise, which is
-            // why the drawn field is thinned to twelve; the list is how the
-            // other forty-two stay choosable rather than merely unmarked.
+            // Fifty-four labelled 22px pastilles overlap into noise at 430px,
+            // so the list is what names them; AtlasGlobe still marks each one
+            // on the stage, small and inert, so the map shows what it offers.
             targetPicker="list"
             pickerTargets={pickerTargets}
             areaNoun="l'atlas"

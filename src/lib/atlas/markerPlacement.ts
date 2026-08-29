@@ -205,9 +205,9 @@ export const TARGET_HIT_RADIUS_PERCENT = 14;
  *
  * The continent scene draws a radial field for its twelve best-documented
  * countries but offers all fifty-four, because the charter's density rule is
- * about what the stage *draws* — fifty-four pastilles at 430px overlap into
- * noise — not about what it lets a reader reach. Hit-testing the stage keeps
- * both: twelve marks, fifty-four answers.
+ * about what the field *claims* — a count per country — not about what the
+ * stage lets a reader reach. Hit-testing the stage is what carries the other
+ * forty-two; `spaceOutMarks` below is what shows the reader they are there.
  *
  * Distance is measured in shares of stage width, so `topPercent` is divided by
  * the aspect ratio to bring a percentage point down onto the same footing as
@@ -238,4 +238,52 @@ export function nearestFacingTarget(
   }
 
   return nearestId;
+}
+
+/**
+ * Which of the choosable countries can carry a mark without landing on one
+ * already kept (REQ-117).
+ *
+ * The continent scene's radial fields say how much the corpus documents in a
+ * country; they were never a statement about which countries a reader may
+ * open, and reading them as one left forty-two countries choosable with
+ * nothing on screen admitting it. A mark per choosable country says it — and
+ * has to be thinned rather than capped, because a cap drops countries the
+ * stage had room for while a separation rule drops only the ones that would
+ * have overlapped.
+ *
+ * Thinning here rather than in the overlay builder is what makes it answer to
+ * the stage: the builder is a pure function of the corpus and decides once, at
+ * 430px, for every width and every dolly. Marks are placed after the camera
+ * has moved, so a reader zooming into West Africa separates the marks that
+ * were crowded and earns the ones that had been dropped.
+ *
+ * Order is priority: the caller hands the marks in the order it wants
+ * collisions resolved, and a collision costs the later country.
+ *
+ * `minSeparationPercent` and the vertical divide by `aspect` are both shares
+ * of stage *width*, the same footing `nearestFacingTarget` measures on.
+ */
+// @req REQ-117
+export function spaceOutMarks<T extends { placement: StagePlacement }>(
+  marks: readonly T[],
+  minSeparationPercent: number,
+  aspect: number
+): T[] {
+  const kept: T[] = [];
+
+  for (const mark of marks) {
+    if (!mark.placement.facingReader) continue;
+
+    const collides = kept.some(
+      (near) =>
+        Math.hypot(
+          near.placement.leftPercent - mark.placement.leftPercent,
+          (near.placement.topPercent - mark.placement.topPercent) / aspect
+        ) < minSeparationPercent
+    );
+    if (!collides) kept.push(mark);
+  }
+
+  return kept;
 }
