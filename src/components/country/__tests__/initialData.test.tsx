@@ -59,9 +59,10 @@ describe("the country dossier with server-provided data", () => {
   it("renders a country immediately without a duplicate client fetch", () => {
     render(<CountryRecordView country={senegal} />);
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: "Sénégal" })
-    ).toBeInTheDocument();
+    // The h1 moved to the title band above the globe (CountryFicheTitle), so
+    // what proves the record rendered from the server's data is the record
+    // itself.
+    expect(screen.getByTestId("country-record-view")).toBeInTheDocument();
 
     // The "no duplicate fetch" half of this used to be a `getCountry` spy on
     // afrikLoader. The view stopped importing that module, so the spy could

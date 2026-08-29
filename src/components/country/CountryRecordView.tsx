@@ -60,27 +60,8 @@ export function CountryRecordView({
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
-  const breadcrumbs = deriveTrail(
-    getCountryRoute("fr", country.id),
-    country.nameFr
-  );
-
   return (
     <div data-testid="country-record-view">
-      <AfrikBreadcrumbs items={breadcrumbs} />
-
-      {fromPeopleId && (
-        <p className="px-3 md:px-4 xl:px-5 text-afh-caption">
-          <a
-            href={getPeopleRoute("fr", fromPeopleId)}
-            data-testid="country-back-to-people"
-            className="hover:underline"
-          >
-            ‹ {backLinkLabel(fromPeopleName ?? fromPeopleId)}
-          </a>
-        </p>
-      )}
-
       <CountryParchment
         data={data}
         country={country}

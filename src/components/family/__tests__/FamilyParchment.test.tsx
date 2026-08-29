@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FamilyParchment } from "@/components/family/FamilyParchment";
+import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
@@ -10,6 +11,14 @@ const overlay = buildFamilyFootprintOverlay(
   [["NGA", "BEN"], ["NGA", "TGO"], ["NGA"]],
   3
 );
+
+/** The stored row the band transforms — the parchment takes a view model. */
+const BENOUECONGO_FAMILY = {
+  id: "FLG_BENOUECONGO",
+  nameFr: "Bénoué-Congo",
+  nameEn: "Benue–Congo",
+  content: {},
+} as never;
 
 const memberPeoples = [
   { id: "PPL_A", nameMain: "Anaga", currentCountries: ["NGA"] },
@@ -247,7 +256,9 @@ describe("FamilyParchment — the trail", () => {
   // hierarchy its children did.
   // @req REQ-115
   it("puts the family under the families directory", () => {
-    renderParchment();
+    // The trail stands above the globe now, with the head — so it is the band
+    // that must carry it, not the parchment.
+    render(<FamilyFicheTitle family={BENOUECONGO_FAMILY} />);
 
     const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
     const up = within(trail).getByRole("link", { name: "Familles" });

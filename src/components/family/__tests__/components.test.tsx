@@ -84,9 +84,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("renders every non-empty transformed section through SSR", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: /Bantou/ })
-    ).toBeTruthy();
+    // The h1 moved to the title band above the globe (FamilyFicheTitle).
     expect(
       screen.getByText("Désignation linguistique contemporaine.")
     ).toBeTruthy();
@@ -109,12 +107,10 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
-    // The fiche title now carries its editorial second half — see
-    // FAMILY_TITLE_PREDICATE in FamilyParchment.tsx for why that phrase is a
-    // constant in the code and not a corpus field.
-    expect(
-      screen.getByRole("heading", { level: 1, name: /Sans contenu/ })
-    ).toBeTruthy();
+    // The h1 and its editorial second half moved to the title band above the
+    // globe (FamilyFicheTitle); FAMILY_TITLE_PREDICATE lives there now.
+    // What this test is about is what the view omits when the corpus is
+    // silent, which is asserted below.
     expect(
       screen.queryByRole("heading", { name: "Appellations et décolonisation" })
     ).toBeNull();

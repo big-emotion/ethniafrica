@@ -12,6 +12,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
+import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
 import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
@@ -225,6 +226,13 @@ export default async function PaysSlugPage({
     <PageLayout language="fr" sectionName="Pays" hideHeader flushTop>
       <FicheSequence
         context={{ entityType: "country", payload: countryDetail }}
+        title={
+          <CountryFicheTitle
+            country={countryDetail}
+            fromPeopleId={navigationContext.fromPeopleId}
+            fromPeopleName={navigationContext.fromPeopleName}
+          />
+        }
         recordPlacement="body"
         globe={
           // The picker lives inside the globe now, which is what lets choosing
