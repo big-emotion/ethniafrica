@@ -228,17 +228,15 @@ describe("facet filter bar — the state it carries but does not edit", () => {
   it("carries a hidden field through a submit", () => {
     render(
       <FacetFilterBar
-        action="/fr/explorer/peuples"
-        hidden={{ taille: "100" }}
-        fields={[
-          {
-            name: "famille",
-            label: "Famille linguistique",
-            anyLabel: "Toutes les familles",
-            options: [{ value: "FLG_NC", label: "Niger-Congo" }],
-            value: null,
-          },
-        ]}
+        action={getFacetRoute("fr", "peoples")}
+        preservedParams={{ taille: "100" }}
+        primaryField={{
+          name: "famille",
+          label: "Famille linguistique",
+          anyLabel: "Toutes les familles",
+          options: [{ value: "FLG_NC", label: "Niger-Congo" }],
+          value: null,
+        }}
       />
     );
     const carried = document.querySelector('input[name="taille"]');
@@ -251,17 +249,15 @@ describe("facet filter bar — the state it carries but does not edit", () => {
   it("emits no field for a value the reader has not set", () => {
     render(
       <FacetFilterBar
-        action="/fr/explorer/peuples"
-        hidden={{ taille: undefined }}
-        fields={[
-          {
-            name: "famille",
-            label: "Famille linguistique",
-            anyLabel: "Toutes les familles",
-            options: [],
-            value: null,
-          },
-        ]}
+        action={getFacetRoute("fr", "peoples")}
+        preservedParams={{ taille: undefined }}
+        primaryField={{
+          name: "famille",
+          label: "Famille linguistique",
+          anyLabel: "Toutes les familles",
+          options: [],
+          value: null,
+        }}
       />
     );
     expect(document.querySelector('input[name="taille"]')).toBeNull();
