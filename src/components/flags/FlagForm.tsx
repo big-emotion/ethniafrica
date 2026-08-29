@@ -18,7 +18,20 @@ export type FlagKind =
 export interface FlagFormTarget {
   type: string;
   id: string;
+  /**
+   * What the reporter calls this thing — the people's or country's name. The
+   * dialog used to identify the target by `id` alone, so a reader was asked to
+   * confirm they were reporting "PPL_YORUBA". The id still travels in the
+   * payload, where the moderator needs it.
+   */
+  name?: string;
   fieldPath?: string;
+  /**
+   * The rubric's own heading, worded by whoever mounted the trigger — they are
+   * the ones who know what the section is called. Without it the dialog names
+   * no field rather than printing `fieldPath`, which is a schema path.
+   */
+  fieldLabel?: string;
   snapshotQuote?: string;
 }
 
@@ -65,11 +78,17 @@ const FLAG_KINDS: ReadonlyArray<{ value: FlagKind; label: string }> = [
   { value: "other", label: "Autre" },
 ];
 
+// Every target type the triggers mount, so the fallback below never has to
+// print the raw enum value — `fiche_section` on a dialog is the database's
+// vocabulary, not the reader's.
 const TARGET_LABELS: Record<string, string> = {
   people: "Peuple",
   country: "Pays",
   language: "Langue",
   language_family: "Famille linguistique",
+  fiche_section: "Section de fiche",
+  assertion: "Affirmation",
+  source: "Source",
 };
 
 const SOURCE_REQUIRED_KINDS: ReadonlyArray<FlagKind> = [
@@ -266,11 +285,12 @@ export function FlagForm({
           Élément signalé
         </h2>
         <p className="mt-afh-md text-afh-small text-afh-text-soft">
-          {TARGET_LABELS[target.type] ?? target.type} · {target.id}
+          {TARGET_LABELS[target.type] ?? target.type}
+          {target.name ? ` · ${target.name}` : ""}
         </p>
-        {target.fieldPath && (
-          <p className="mt-afh-xs font-mono text-afh-caption text-afh-text-muted">
-            {target.fieldPath}
+        {target.fieldLabel && (
+          <p className="mt-afh-xs text-afh-caption text-afh-text-muted">
+            {target.fieldLabel}
           </p>
         )}
         {target.snapshotQuote && (
