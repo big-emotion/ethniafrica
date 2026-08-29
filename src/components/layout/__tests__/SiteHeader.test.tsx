@@ -225,6 +225,30 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
       "aria-current"
     );
   });
+
+  // @req REQ-114
+  it("keeps the facets on a single scrolling row", () => {
+    const { container } = renderHeader();
+
+    fireEvent.click(trigger("Explorer"));
+
+    // happy-dom lays nothing out, so the row's shape is asserted on the
+    // declaration itself. The facets are states of one hub: stacked, they
+    // read as three destinations competing with the hub they belong to.
+    const sheet = container.querySelector("style")?.textContent ?? "";
+    const facetRow = sheet.slice(sheet.indexOf(".sh-facets {"));
+
+    expect(facetRow).toMatch(/flex-wrap:\s*nowrap/);
+    expect(facetRow).toMatch(/overflow-x:\s*auto/);
+    // The wider hub card is what keeps that scrollbar unused at the widths
+    // the panel is actually painted on.
+    expect(sheet).toMatch(
+      /\.sh-grid \.sh-hub\[data-has-facets\] \{[^}]*grid-column:\s*span 2/
+    );
+    expect(screen.getByTestId("site-nav-hub-explorer")).toHaveAttribute(
+      "data-has-facets"
+    );
+  });
 });
 
 describe("SiteHeader — keyboard contract (atlas charter §3)", () => {

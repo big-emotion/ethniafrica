@@ -188,11 +188,11 @@ export default async function FamillesHubPage({
       />
 
       <div className="afh-parchment">
+        {/* The eyebrow and the name belong to the shell, which prints them
+            above the globe — see `FacetDefinition.title`. What stays here is
+            the count, because it answers the filters directly below it and
+            changes with them. */}
         <header className="afh-parchment-head">
-          <p className="afh-parchment-eyebrow">
-            atlas · les familles linguistiques
-          </p>
-          <h1>Familles linguistiques</h1>
           <p className="afh-parchment-lede">
             {formatCount(selection.length)} familles{" "}
             {chosenCountryName
