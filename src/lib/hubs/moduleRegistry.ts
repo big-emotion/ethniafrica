@@ -230,9 +230,14 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "comprendre",
     page: "names",
     availability: "data",
-    // Ready as editorial work: what holds it back is an empty name_records,
-    // which `availability` already says. Nothing to declare here.
-    editorialReadiness: "ready",
+    // This read "ready", on the reasoning that an empty `name_records`
+    // already said everything there was to say. It does not: the corpus holds
+    // one fiche — `dataset/source/afrik/noms/PPL_YORUBA.json`, alone — for 803
+    // peoples, and the loader is wired. The row count would therefore stop
+    // speaking the moment that single fiche lands, and offer an atlas of names
+    // that names one people. Readiness is what withholds the invitation while
+    // the route stays built.
+    editorialReadiness: "draft",
     dataSource: "name_records",
   },
   {

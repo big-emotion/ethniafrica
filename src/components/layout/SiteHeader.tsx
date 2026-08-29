@@ -267,6 +267,9 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
       <div
         key={`hub-${axis}`}
         data-testid={`site-nav-hub-${axis}`}
+        // Only a hub carrying facets earns the wider card; an axis without
+        // them would spend the second column on emptiness.
+        data-has-facets={facets.length > 0 ? "true" : undefined}
         className={cn("sh-entry sh-hub", ACCENT_BY_ACCESS_MODE[axis])}
       >
         <Link
@@ -703,6 +706,14 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-hub:hover {
           transform: none;
         }
+        /* Two columns of the panel grid, so the facet row fits on one line.
+           A 205px card wrapped "Ses facettes" onto three lines, which reads
+           as a stack of destinations rather than states of the hub above
+           them. Scoped to the panel grid: the tray fold is a one-column
+           grid, where a span would open an implicit second column. */
+        .sh-grid .sh-hub[data-has-facets] {
+          grid-column: span 2;
+        }
         .sh-hub-main {
           display: flex;
           align-items: flex-start;
@@ -715,21 +726,30 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           outline: 2px solid var(--accent);
           outline-offset: 2px;
         }
+        /* One line, always: the facets scroll sideways rather than wrap.
+           The side padding keeps the pills' focus ring off the clipping
+           edge that the overflow introduces. */
         .sh-facets {
           display: flex;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           align-items: center;
           gap: 6px;
-          padding-top: 8px;
+          padding: 8px 2px 2px;
           border-top: 1px solid var(--afh-border);
+          overflow-x: auto;
+          scrollbar-width: thin;
+          overscroll-behavior-x: contain;
         }
         .sh-facets-label {
+          flex: none;
           font-size: var(--afh-caption);
           color: var(--afh-fg-muted);
         }
         .sh-facet {
           display: inline-flex;
+          flex: none;
           align-items: center;
+          white-space: nowrap;
           min-height: 32px;
           padding: 4px 10px;
           border: 1px solid var(--afh-border);

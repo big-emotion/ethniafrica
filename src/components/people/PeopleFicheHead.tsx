@@ -10,6 +10,12 @@ const populationFr = new Intl.NumberFormat("fr-FR");
 /**
  * The head of the people fiche: overline, title, lede, and two chips.
  *
+ * It wears `.afh-parchment-head`, the unit the country and family fiches
+ * already open on. This one used to assemble its own dress out of utility
+ * classes, and being the odd fiche of three showed: raw corpus keys shouted
+ * in mono capitals, a predicate set in the same ink and weight as the name it
+ * qualifies, and a lede running the band's full four columns.
+ *
  * The overline is the fiche's own identifiers — its PPL id, its family, its
  * ethnolinguistic group — because a reader who arrives from a search should be
  * able to see, before anything else, exactly which record they are looking at.
@@ -44,35 +50,34 @@ export function PeopleFicheHead({
   showConfidence?: boolean;
 }) {
   const group = hero.ethnoLinguisticGroup ?? hero.languageFamilyName;
-  const eyebrow = [hero.peopleId, hero.languageFamilyId, group].filter(Boolean);
+  const corpusKeys = [hero.peopleId, hero.languageFamilyId]
+    .filter(Boolean)
+    .join(" · ");
   const presenceCount = countries.distributions.length;
 
   return (
-    <header className="px-3 md:px-4 xl:px-5 pt-afh-base flex flex-col gap-afh-xs">
-      <p
-        data-testid="fiche-head-eyebrow"
-        className="font-[family-name:var(--afh-font-mono)] text-afh-caption uppercase tracking-[0.1em] text-afh-text-soft"
-      >
-        {eyebrow.join(" · ")}
+    <header className="afh-parchment-head">
+      <p data-testid="fiche-head-eyebrow" className="afh-parchment-eyebrow">
+        {corpusKeys}
+        {corpusKeys && group ? " · " : null}
+        {group && <span className="afh-parchment-eyebrow-group">{group}</span>}
       </p>
 
       <AutonymExonymHeading
-        variant="hero"
+        variant="parchment"
         autonym={hero.nameMain}
         predicate="un peuple sans bord"
       />
 
       {hero.historicalRegion && (
-        <p className="text-afh-body text-afh-text-soft">
-          {hero.historicalRegion}
-        </p>
+        <p className="afh-parchment-lede">{hero.historicalRegion}</p>
       )}
 
-      <div className="flex flex-wrap gap-afh-xs">
+      <div className="afh-chips">
         {/* A population of zero is a fiche that declared none, not a people of
             nobody — so the chip goes rather than stating a figure. */}
         {countries.totalPopulation > 0 && (
-          <span className="rounded-afh-full border border-afh-border px-afh-sm py-afh-xs text-afh-small">
+          <span className="afh-chip">
             <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
               {populationFr.format(countries.totalPopulation)}
             </span>{" "}
@@ -82,23 +87,23 @@ export function PeopleFicheHead({
               : ""}
           </span>
         )}
-        <span className="rounded-afh-full border border-afh-border px-afh-sm py-afh-xs text-afh-small">
-          {presenceCount} pays de présence
-        </span>
+        <span className="afh-chip">{presenceCount} pays de présence</span>
       </div>
 
       {/* A fiche resting entirely on unverified sources is published and
           visibly marked as such — that is the intended outcome of the tier
           policy, not a defect, so the chip belongs in the head. */}
       {showConfidence && (
-        <ConfidenceChip
-          confidenceScore={confidenceScore}
-          sourceCount={sourceCount}
-          lastHumanAuditAt={lastHumanAuditAt}
-          variant="hero"
-          id={hero.peopleId}
-          ariaSuffix={`pour la fiche ${hero.nameMain}`}
-        />
+        <div className="mt-afh-sm">
+          <ConfidenceChip
+            confidenceScore={confidenceScore}
+            sourceCount={sourceCount}
+            lastHumanAuditAt={lastHumanAuditAt}
+            variant="hero"
+            id={hero.peopleId}
+            ariaSuffix={`pour la fiche ${hero.nameMain}`}
+          />
+        </div>
       )}
     </header>
   );

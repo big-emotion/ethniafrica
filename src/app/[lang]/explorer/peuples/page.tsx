@@ -158,11 +158,11 @@ export default async function PeuplesHubPage({
       />
 
       <div className="afh-parchment">
+        {/* The eyebrow and the name belong to the shell, which prints them
+            above the globe — see `FacetDefinition.title`. What stays here is
+            the count, because it answers the filters directly below it and
+            changes with them. */}
         <header className="afh-parchment-head">
-          <p className="afh-parchment-eyebrow">
-            atlas · les peuples d&apos;Afrique
-          </p>
-          <h1>Les peuples d&apos;Afrique</h1>
           {/* One string rather than text around expressions: JSX drops the
               whitespace between an expression and the text that follows it on
               the next line, which reads as "803 peuplesdans cette sélection". */}

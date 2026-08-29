@@ -225,6 +225,30 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
       "aria-current"
     );
   });
+
+  // @req REQ-114
+  it("keeps the facets on a single scrolling row", () => {
+    const { container } = renderHeader();
+
+    fireEvent.click(trigger("Explorer"));
+
+    // happy-dom lays nothing out, so the row's shape is asserted on the
+    // declaration itself. The facets are states of one hub: stacked, they
+    // read as three destinations competing with the hub they belong to.
+    const sheet = container.querySelector("style")?.textContent ?? "";
+    const facetRow = sheet.slice(sheet.indexOf(".sh-facets {"));
+
+    expect(facetRow).toMatch(/flex-wrap:\s*nowrap/);
+    expect(facetRow).toMatch(/overflow-x:\s*auto/);
+    // The wider hub card is what keeps that scrollbar unused at the widths
+    // the panel is actually painted on.
+    expect(sheet).toMatch(
+      /\.sh-grid \.sh-hub\[data-has-facets\] \{[^}]*grid-column:\s*span 2/
+    );
+    expect(screen.getByTestId("site-nav-hub-explorer")).toHaveAttribute(
+      "data-has-facets"
+    );
+  });
 });
 
 describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
@@ -333,26 +357,28 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   });
 
   /**
-   * The half the header could not reach on its own: `noms` is declared ready
-   * and waits on `name_records`, so only the resolved map knows. Without it
-   * the menu linked an atlas of names holding none.
+   * The half the header could not reach on its own — only the resolved map
+   * knows whether a table answered. Exercised on `quiz`, the one module that
+   * is both declared ready and backed by a table: every Comprendre module
+   * that reads one is now `draft`, and a draft module would short-circuit
+   * before the map was ever consulted, proving nothing about it.
    */
   // @req REQ-106
   it("withholds it from a ready module whose corpus came back empty", () => {
-    renderHeader({}, { noms: false });
+    renderHeader({}, { quiz: false });
 
-    fireEvent.click(trigger("Comprendre"));
-    expectInert(entryFor("noms"));
+    fireEvent.click(trigger("Jouer"));
+    expectInert(entryFor("quiz"));
   });
 
   // @req REQ-106
   it("offers that same module once its corpus fills", () => {
-    renderHeader({}, { noms: true });
+    renderHeader({}, { quiz: true });
 
-    fireEvent.click(trigger("Comprendre"));
-    const entry = entryFor("noms");
+    fireEvent.click(trigger("Jouer"));
+    const entry = entryFor("quiz");
     expect(entry.tagName).toBe("A");
-    expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+    expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "quiz"));
     expect(entry).not.toHaveTextContent(t.hubs.unavailableLabel);
   });
 

@@ -645,14 +645,34 @@ const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
 const KEY_STEP_RADIANS = 0.12;
 
 /**
+ * The width of the stage in clip units: the surface is drawn across -1..1, so
+ * a drag of the full stage is a pan of two. Dividing a pixel delta by the
+ * measured stage and multiplying by this is what makes the map travel exactly
+ * as far as the finger, at any stage size.
+ */
+const CLIP_SPAN = 2;
+
+/** One arrow press on a flat map, matched to the turn's own step. */
+const KEY_STEP_CLIP = 0.12;
+
+/**
  * How far a pointer may wander and still count as a tap rather than a drag.
  * A finger never holds perfectly still, so zero would make the globe
  * unselectable by touch — which is the mobile-first case, not the edge one.
  */
 const TAP_TRAVEL_TOLERANCE_PX = 6;
 
-const GLOBE_SURFACE_LABEL =
-  "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
+/**
+ * The canvas is aria-hidden, so this sentence is the whole of what a screen
+ * reader is told the surface does — which is why it has to name the gesture the
+ * surface actually has. A flat map cannot be turned, and announcing a turn there
+ * sent a reader dragging for a rotation that was never going to happen.
+ */
+function globeSurfaceLabel(turns: boolean): string {
+  return turns
+    ? "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner."
+    : "Carte de l'atlas. Glissez ou utilisez les flèches pour déplacer.";
+}
 
 const NIGHT_STAGE_STYLE: CSSProperties = {
   position: "relative",
@@ -892,6 +912,20 @@ export function AtlasGlobe({
    * pointer-up, because that is when both are over.
    */
   const travelled = useRef(0);
+  /** The stage as it was when the drag began — see handlePointerDown. */
+  const stageSize = useRef({ width: 0, height: 0 });
+
+  /**
+   * Whether a drag has a sphere to turn.
+   *
+   * Two surfaces answer no: the SVG basemap, which has no rotation to apply at
+   * all, and the WebGL surface at FLAT_MORPH, whose shader has mixed its own
+   * rotation away. On both, a turn moved a number nothing read — the continent
+   * scene told the reader « Glissez pour tourner » and nothing happened — so
+   * the drag pans the map instead, which is also the only way to reach a
+   * country the dolly has pushed off-stage.
+   */
+  const surfaceTurns = webglSupported && !flat;
 
   /**
    * Whether either direction has anywhere left to go. Compared with a
@@ -932,6 +966,11 @@ export function AtlasGlobe({
     dragging.current = true;
     travelled.current = 0;
     lastPointer.current = { x: event.clientX, y: event.clientY };
+    // Measured once per drag rather than per move: a pan converts pixels into
+    // clip units, and reading layout on every frame of a drag is the classic
+    // way to make one stutter.
+    const rect = event.currentTarget.getBoundingClientRect();
+    stageSize.current = { width: rect.width, height: rect.height };
     event.currentTarget.setPointerCapture?.(event.pointerId);
   };
 
@@ -942,10 +981,20 @@ export function AtlasGlobe({
     lastPointer.current = { x: event.clientX, y: event.clientY };
     travelled.current += Math.hypot(dx, dy);
     // Under a finger the surface has to keep up with the finger, so a drag
-    // moves the globe itself rather than a target it eases toward.
-    camera.turnBy(
-      dx * DRAG_RADIANS_PER_PIXEL,
-      dy * DRAG_PITCH_RADIANS_PER_PIXEL
+    // moves the map itself rather than a target it eases toward.
+    if (surfaceTurns) {
+      camera.turnBy(
+        dx * DRAG_RADIANS_PER_PIXEL,
+        dy * DRAG_PITCH_RADIANS_PER_PIXEL
+      );
+      return;
+    }
+    const { width, height } = stageSize.current;
+    // Clip y points up while a pointer's y points down, so the vertical drag
+    // is negated: dragging down has to bring the ground above into view.
+    camera.panBy(
+      (dx * CLIP_SPAN) / Math.max(width, 1),
+      (-dy * CLIP_SPAN) / Math.max(height, 1)
     );
   };
 
@@ -953,21 +1002,34 @@ export function AtlasGlobe({
     dragging.current = false;
   };
 
+  /** One arrow press, routed to whichever motion the current surface has. */
+  const steer = (towardsX: number, towardsY: number) => {
+    if (surfaceTurns) {
+      // Up sends the surface up, which is a decrease in pitch — the same
+      // convention the drag follows.
+      camera.turnBy(towardsX * KEY_STEP_RADIANS, -towardsY * KEY_STEP_RADIANS);
+      return;
+    }
+    // Same reading as the turn: the arrow moves the surface, not the frame.
+    // ArrowRight turns the globe rightwards, so on the flat map it has to send
+    // the map rightwards too, or the two surfaces answer the same key
+    // differently.
+    camera.panBy(towardsX * KEY_STEP_CLIP, towardsY * KEY_STEP_CLIP);
+  };
+
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     switch (event.key) {
       case "ArrowLeft":
-        camera.turnBy(-KEY_STEP_RADIANS, 0);
+        steer(-1, 0);
         break;
       case "ArrowRight":
-        camera.turnBy(KEY_STEP_RADIANS, 0);
+        steer(1, 0);
         break;
-      // Same convention as the drag: up sends the surface up, which is a
-      // decrease in pitch.
       case "ArrowUp":
-        camera.turnBy(0, -KEY_STEP_RADIANS);
+        steer(0, 1);
         break;
       case "ArrowDown":
-        camera.turnBy(0, KEY_STEP_RADIANS);
+        steer(0, -1);
         break;
       // "=" is what an unshifted "+" reports on most layouts, and the numeric
       // keypad reports "Add"/"Subtract" on none of them — both spellings are
@@ -1072,7 +1134,7 @@ export function AtlasGlobe({
       <div
         data-atlas-surface=""
         role="application"
-        aria-label={GLOBE_SURFACE_LABEL}
+        aria-label={globeSurfaceLabel(surfaceTurns)}
         tabIndex={0}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -1147,7 +1209,8 @@ export function AtlasGlobe({
           className="pointer-events-none absolute inset-x-0 top-0 p-3 text-afh-caption"
           style={{ color: "var(--afh-night-ink-2)" }}
         >
-          Afrique à sa surface réelle. Glissez pour tourner.
+          Afrique à sa surface réelle.{" "}
+          {surfaceTurns ? "Glissez pour tourner." : "Glissez pour déplacer."}
         </p>
       )}
 

@@ -122,11 +122,11 @@ export default async function PaysHubPage({
       <PublishFacetCountryIndex index={countryIndex} />
 
       <div className="afh-parchment">
+        {/* The eyebrow and the name belong to the shell, which prints them
+            above the globe — see `FacetDefinition.title`. What stays here is
+            the count, because it answers the filters directly below it and
+            changes with them. */}
         <header className="afh-parchment-head">
-          <p className="afh-parchment-eyebrow">
-            atlas · les pays d&apos;Afrique
-          </p>
-          <h1>Les pays d&apos;Afrique</h1>
           <p className="afh-parchment-lede">
             {selection.totalCountries} pays au corpus
             {filtered && ` · ${selection.rows.length} dans cette sélection`}.
