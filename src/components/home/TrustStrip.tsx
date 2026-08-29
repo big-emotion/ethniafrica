@@ -55,8 +55,10 @@ export function TrustStrip({ language }: TrustStripProps) {
           text-decoration: underline;
           text-underline-offset: 2px;
         }
+        /* Padding only — the phone's alignment is the site's, not the
+           strip's (styles/mobile-text.css). */
         @media (max-width: 700px) {
-          .home-trust { text-align: left; padding: 20px; }
+          .home-trust { padding: 20px; }
         }
       `}</style>
     </aside>

@@ -187,7 +187,7 @@ export const QuizScopePicker = ({
         <Link
           href={`${action}?mode=aleatoire`}
           data-testid="quiz-scope-random"
-          className="min-h-11 rounded-afh-lg border border-afh-border bg-afh-surface p-4 text-left shadow-afh-1 transition-colors hover:border-primary hover:shadow-afh-2"
+          className="min-h-11 rounded-afh-lg border border-afh-border bg-afh-surface p-4 text-center shadow-afh-1 md:text-left transition-colors hover:border-primary hover:shadow-afh-2"
         >
           <span className="block font-afh-display text-afh-h3 font-black text-afh-text">
             {scopes.random.labelFr}

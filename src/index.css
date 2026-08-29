@@ -18,6 +18,10 @@
 @import "./styles/pager.css";
 @import "./styles/fiche-chapter-bar.css";
 @import "./styles/classification-tree.css";
+/* Last, and unlayered on purpose: the rule is inherited from `body`, so it
+   must sit after every sheet above it and outside the `base` layer that
+   Tailwind's preflight occupies. */
+@import "./styles/mobile-text.css";
 
 @tailwind base;
 @tailwind components;

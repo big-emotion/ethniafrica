@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
@@ -109,6 +112,22 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(standfirst).toHaveTextContent(
       /sa source et son niveau de confiance/i
     );
+  });
+
+  // Asserted on the source, because no render here can see the defect: the
+  // runner's JSX transform keeps the space that Next's drops, so the page
+  // said « EthniAfricapublie » while every assertion above stayed green.
+  // What is guarded is therefore the shape that removes the question — the
+  // sentence is one string, and the name is interpolated into it.
+  // @req REQ-044
+  it("carries the product name inside the sentence, not beside it", () => {
+    const source = readFileSync(
+      join(process.cwd(), "src/components/home/HomeHero.tsx"),
+      "utf8"
+    );
+
+    expect(source).toMatch(/\$\{PRODUCT_NAME\} publie/);
+    expect(source).not.toMatch(/(?<!\$)\{PRODUCT_NAME\} publie/);
   });
 
   // Three registers in descending order of voice. Set at the lede's size

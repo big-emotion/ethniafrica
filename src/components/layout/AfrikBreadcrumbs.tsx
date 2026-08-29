@@ -29,7 +29,11 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
           under a figure — it read as a caption of the page rather than as the
           way back out of it. */}
       <ol
-        className="flex flex-wrap items-center gap-1.5 text-afh-small"
+        // justify-*, not text-align: the site centres its text on a phone
+        // by inheritance from `body` (styles/mobile-text.css), and a flex
+        // row ignores that entirely. Without this the trail was the one
+        // thing still hanging off the left edge on every route.
+        className="flex flex-wrap items-center justify-center gap-1.5 text-afh-small md:justify-start"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
       >
         {items.map((item, index) => (

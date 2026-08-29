@@ -301,7 +301,7 @@ export function ReferenceLibraryFlow({
               key={source.id}
               type="button"
               variant={selectedSource?.id === source.id ? "default" : "outline"}
-              className="h-auto w-full justify-start whitespace-normal px-3 py-3 text-left"
+              className="h-auto w-full justify-start whitespace-normal px-3 py-3 text-center md:text-left"
               onClick={() => {
                 setSelectedSource(source);
                 setMessage("Référence sélectionnée.");

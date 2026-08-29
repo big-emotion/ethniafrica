@@ -28,6 +28,62 @@ const CHARTER_PATH = join(process.cwd(), "docs/design/atlas-charter.md");
 const source = () => readFileSync(SOURCE_PATH, "utf8");
 const charter = () => readFileSync(CHARTER_PATH, "utf8");
 
+/**
+ * The header carries its dress in an inline `<style>`, so the only way to
+ * assert a layout rule short of a real browser is to read the rule back out
+ * of the component.
+ *
+ * Rules are matched at the start of their own line rather than after the
+ * previous rule's `}`: most of this stylesheet's selectors are introduced
+ * by a comment, and an anchor on `}` skips every one of them — silently,
+ * returning an empty list that reads as "no such rule".
+ */
+function ruleBodies(css: string, selector: string): string[] {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`^\\s*${escaped}\\s*\\{([^{}]*)\\}`, "gm");
+
+  return [...css.matchAll(pattern)].map((match) => match[1]);
+}
+
+/**
+ * The body of the first `@media` whose condition contains `condition`.
+ * A substring, not the whole condition, because the breakpoint reaches the
+ * stylesheet as a template expression — matching on the pixel figure finds
+ * nothing in the source text.
+ *
+ * That same expression is why the block's opening brace is found by hand:
+ * `${NAV_BREAKPOINT_PX + 1}px` opens a brace of its own inside the
+ * condition, and taking the first `{` after `@media` returns the
+ * interpolation instead of the rule set.
+ *
+ * Brace-counting rather than `[^}]*`: a media query holds nested rules, and
+ * a lazy match stops at the first inner closing brace.
+ */
+function mediaBlock(css: string, condition: string): string {
+  const opener = new RegExp(`@media[^{]*${condition}`).exec(css);
+  if (!opener) return "";
+
+  let cursor = opener.index + opener[0].length;
+  while (
+    cursor < css.length &&
+    !(css[cursor] === "{" && css[cursor - 1] !== "$")
+  ) {
+    cursor += 1;
+  }
+
+  cursor += 1;
+  const start = cursor;
+  let depth = 1;
+
+  while (cursor < css.length && depth > 0) {
+    if (css[cursor] === "{") depth += 1;
+    else if (css[cursor] === "}") depth -= 1;
+    cursor += 1;
+  }
+
+  return css.slice(start, cursor - 1);
+}
+
 describe("atlas charter §3 — three intentions, not ten modules", () => {
   // @req REQ-114
   it("gives the header exactly the three access modes", () => {
@@ -129,5 +185,65 @@ describe("atlas charter §3 — one breakpoint for the header and the band", () 
     expect(source()).toContain(
       `NAV_BREAKPOINT_PX = ${FICHE_BAND_BREAKPOINT_PX}`
     );
+  });
+});
+
+/**
+ * Below the breakpoint the bar holds two things — the mark and the controls
+ * — and the charter's §3 reading of the header is that they sit at opposite
+ * ends of it. The free space between them is what tells a reader the bar is
+ * the full width of the phone rather than a group of icons that happens to
+ * start at the left margin.
+ */
+describe("atlas charter §3 — the phone bar reaches both edges", () => {
+  // The gap used to be opened by `.sh-axes { margin-left: auto }`. A
+  // `display: none` element contributes no margin, so once the axes were
+  // withdrawn the controls slid up against the mark and the right half of
+  // the bar was empty.
+  // @req REQ-114
+  it("pushes the controls to the far edge once the axes are withdrawn", () => {
+    const [phoneRule] = ruleBodies(source(), ".sh-controls");
+
+    expect(phoneRule).toMatch(/margin-left:\s*auto/);
+  });
+
+  // Two auto margins in one flex row split the free space between them,
+  // which would pull the axes away from the controls and into the middle of
+  // the bar. Above the breakpoint the axes own the gap again.
+  // @req REQ-114
+  it("hands the gap back to the axes above the breakpoint", () => {
+    const wide = mediaBlock(source(), "min-width");
+
+    expect(ruleBodies(wide, ".sh-controls")[0]).toMatch(/margin-left:\s*0/);
+    expect(ruleBodies(source(), ".sh-axes")[0]).toMatch(/margin-left:\s*auto/);
+  });
+});
+
+/**
+ * The tray is the only way into the menu on a phone, so anything it cuts
+ * off is a destination the phone reader cannot reach.
+ */
+describe("atlas charter §3 — the tray shows what it holds", () => {
+  // A grid item's implicit minimum is its content, so the hub's one-line
+  // facet row widened the fold's column past the tray and pushed the cards'
+  // right edge off the screen. `minmax(0, …)` is what lets the column be
+  // narrower than the row it contains.
+  // @req REQ-114
+  it("keeps its entries inside the tray however wide their contents are", () => {
+    const [foldBody] = ruleBodies(source(), ".sh-fold-body");
+
+    expect(foldBody).toMatch(/grid-template-columns:\s*minmax\(\s*0/);
+  });
+
+  // In the wide panel the facets scroll sideways on one line, because a
+  // 205px card wraps them into a stack that reads as destinations. The tray
+  // has no such card and no pointer to drag with, so there the row wraps
+  // and every facet is simply on screen.
+  // @req REQ-114
+  it("wraps the hub's facets rather than hiding them behind a scroll", () => {
+    const [trayFacets] = ruleBodies(source(), ".sh-fold-body .sh-facets");
+
+    expect(trayFacets).toMatch(/flex-wrap:\s*wrap/);
+    expect(trayFacets).toMatch(/overflow-x:\s*visible/);
   });
 });
