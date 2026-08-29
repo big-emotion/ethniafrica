@@ -27,7 +27,16 @@ module.exports = {
         // One representative route per charter route-family rolled out in
         // 16.4–16.9 (ETNI-807 · FR110), in addition to the fiche routes
         // below. Dropping one leaves that family's mobile budget unmeasured.
+        // The Explorer hub and its three facets. They were one route-family
+        // when they were three directories, and one sample stood for all of
+        // them; they are not one any more. The three facets share a layout
+        // that mounts a WebGL globe and holds it across a switch, and the hub
+        // carries a scene of its own — so a budget measured on `peuples`
+        // alone says nothing about what the other two cost.
+        "http://localhost:3000/fr/explorer",
         "http://localhost:3000/fr/explorer/peuples",
+        "http://localhost:3000/fr/explorer/familles",
+        "http://localhost:3000/fr/explorer/pays",
         "http://localhost:3000/fr/explorer/recherche",
         "http://localhost:3000/fr/mentions-legales",
         "http://localhost:3000/fr/admin/connexion",

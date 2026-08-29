@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
-import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import {
   FACETS,
   definedFilter,
@@ -75,6 +76,23 @@ describe("facet hub charter — the seam the three facets share", () => {
     }
   });
 
+  /**
+   * The facet and the filters collide in the reader's language — "pays" names
+   * one of each — so every facet has to say which is which in its own terms.
+   * A shared sentence could not: "filtrer par pays" means a different thing on
+   * each facet, which is the confusion rather than the cure.
+   */
+  // @req REQ-114
+  it("has every facet distinguish itself from its filters, in its own words", () => {
+    const hints = FACETS.map((facet) => facet.filterHint);
+
+    expect(new Set(hints).size).toBe(FACETS.length);
+    for (const hint of hints) {
+      expect(hint.length).toBeGreaterThan(40);
+      expect(hint).toMatch(/filtr/i);
+    }
+  });
+
   // @req REQ-114
   it("reads an unset native select as no filter rather than as a value", () => {
     expect(definedFilter("")).toBeNull();
@@ -92,6 +110,32 @@ describe("facet hub charter — the seam the three facets share", () => {
   // @req REQ-114
   it("treats no sentinel string as meaning 'everything'", () => {
     expect(definedFilter("__all__")).toBe("__all__");
+  });
+});
+
+describe("facet band — a fixed band, never an aspect ratio", () => {
+  /**
+   * The band is full-bleed, so an `aspect-ratio` box takes its height from the
+   * *viewport* width: at 1512px it asked for 1433px and the reader met a wall
+   * of night with the map below the fold. Measured on the deployed recette
+   * before the fix — 1433px against a 520px token.
+   *
+   * space.css already carries that lesson for the fiche band, so the assertion
+   * is that this band reads the same token rather than a number of its own.
+   */
+  // @req REQ-116
+  it("takes its height from the shared stage token, and declares no aspect ratio", () => {
+    render(
+      <FacetGlobeIsland
+        peopleCountsByCountry={undefined}
+        countryIds={[]}
+        missingMessage="rien"
+      />
+    );
+
+    const band = screen.getByTestId("facet-globe-island");
+    expect(band.style.height).toBe("var(--afh-globe-stage-height)");
+    expect(band.style.aspectRatio).toBe("");
   });
 });
 

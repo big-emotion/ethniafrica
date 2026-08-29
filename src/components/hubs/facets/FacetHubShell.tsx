@@ -7,11 +7,13 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FacetCountryIndexProvider } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
-import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { getFacet, getFacetFromRoute } from "@/lib/hubs/facets";
 
 export interface FacetHubShellProps {
   peopleCountsByCountry: Record<string, number> | undefined;
+  /** Every country the corpus documents — the map's choosable set, not its drawn one. */
+  countryIds: readonly string[];
   children: ReactNode;
 }
 
@@ -34,6 +36,7 @@ export interface FacetHubShellProps {
 // @req REQ-114
 export function FacetHubShell({
   peopleCountsByCountry,
+  countryIds,
   children,
 }: FacetHubShellProps) {
   const pathname = usePathname();
@@ -58,9 +61,22 @@ export function FacetHubShell({
         <FacetCountryIndexProvider>
           <FacetGlobeIsland
             peopleCountsByCountry={peopleCountsByCountry}
+            countryIds={countryIds}
             missingMessage="Le corpus ne renseigne encore aucun peuple par pays."
           />
-          <FacetSwitcher active={facet.key} className="my-6" />
+          <div className="mt-6 mb-4 flex flex-col gap-2">
+            <FacetSwitcher active={facet.key} />
+            {/* Says what the switch above and the filters below each do,
+                because they collide in the reader's own language: "pays" is a
+                facet and also a filter, and nothing distinguished choosing a
+                subject from narrowing one. */}
+            <p
+              data-testid="facet-filter-hint"
+              className="max-w-[62ch] text-afh-small text-afh-text-soft"
+            >
+              {facet.filterHint}
+            </p>
+          </div>
           {children}
         </FacetCountryIndexProvider>
       </div>
