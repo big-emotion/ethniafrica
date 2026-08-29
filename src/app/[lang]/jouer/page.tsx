@@ -23,7 +23,7 @@ export default async function JouerHubPage() {
   const modules = await getHubModules("jouer");
 
   return (
-    <PageLayout language="fr">
+    <PageLayout language="fr" title={strings.pageTitle}>
       <AccessModeHub language="fr" mode="jouer" modules={modules}>
         <JouerFaceOff modules={modules} />
       </AccessModeHub>

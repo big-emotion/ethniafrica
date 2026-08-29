@@ -104,19 +104,17 @@ export function AccessModeHub({
     );
   };
 
+  // The page's h1 is the shell's title band, which states the axis and what it
+  // leads into — « Explorer les peuples d'Afrique ». This section used to raise
+  // a second one saying « Explorer », so every hub shipped two h1s and its
+  // outline read as two pages. The region keeps its name for assistive tech;
+  // it just no longer prints it as a heading.
   return (
     <section
       data-testid={`access-mode-hub-${mode}`}
       className={accentClass}
-      aria-labelledby={`access-mode-hub-${mode}-title`}
+      aria-label={hubStrings.title}
     >
-      <h1
-        id={`access-mode-hub-${mode}-title`}
-        className="text-afh-h2 font-semibold"
-        style={{ color: "var(--afh-text)" }}
-      >
-        {hubStrings.title}
-      </h1>
       <p
         data-testid={`access-mode-hub-${mode}-blurb`}
         className="mt-2 max-w-[58ch] text-afh-small"

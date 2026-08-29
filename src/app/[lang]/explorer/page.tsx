@@ -36,7 +36,7 @@ export default async function ExplorerHubPage() {
   ]);
 
   return (
-    <PageLayout language="fr">
+    <PageLayout language="fr" title={strings.pageTitle}>
       <AccessModeHub language="fr" mode="explorer" modules={modules}>
         <ExplorerContinent
           peopleCountsByCountry={counts}
