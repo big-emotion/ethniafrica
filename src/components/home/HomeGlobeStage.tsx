@@ -90,24 +90,24 @@ export function HomeGlobeStage() {
             min-height: 680px;
           }
         }
-        /* From 1200 up the hero is pinned to the viewport height, so the
-           floors above would push the tools past the fold — which is the
-           one thing that height was calculated to prevent. There the stage
-           takes whatever the band has left instead, and .home-globe-surface
-           carries the only floor the sphere still needs.
+        /* This used to drop the floor entirely above 1200px and take
+           whatever the hero band had left, through a flex chain rooted in
+           that band's pinned 100dvh — the point being to keep the globe's
+           tools inside the fold on a screen the band filled by itself.
 
-           Qualified by the holder because dropping the floor is only safe
-           where something else supplies the height: .home-globe-holder is
-           the flex child of the pinned band, and it is the flex chain that
-           makes min-height:0 mean "take the rest" rather than "be zero".
-           On the Mercator page the stage sits in ordinary flow, so an
-           unqualified rule collapsed it to nothing and .home-globe-layout —
-           inset:0 on that empty box — painted the globe over the rounds and
-           the footer below it. */
+           The band is gone: the module stands in its own section in the
+           page flow now (FeaturedModule), and nothing above the stage
+           supplies a height for it to take. A min-height of 0 there means
+           "be zero", and .home-globe-layout — inset:0 on an empty box —
+           paints the globe over whatever follows. That is the failure the
+           Mercator page hit, and the scope that used to keep it off the
+           home no longer describes anything.
+
+           So: an ordinary floor, one step over the 680px below it, which
+           the section is free to be taller than. */
         @media (min-width: 1200px) {
-          .home-globe-holder .home-globe-stage {
-            flex: 1 1 auto;
-            min-height: 0;
+          .home-globe-stage {
+            min-height: 720px;
           }
         }
       `}</style>

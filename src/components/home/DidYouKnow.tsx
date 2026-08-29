@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { SectionHeading } from "@/components/home/SectionHeading";
+
 import type {
   DidYouKnowEntity,
   DidYouKnowFact,
@@ -60,8 +62,12 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
   return (
     <section className="home-dyk" data-testid="home-did-you-know">
       <div className="home-dyk-inner">
-        <p className="home-dyk-eyebrow">Saviez-vous que</p>
-        <h2>{fact.headline}</h2>
+        <SectionHeading
+          centred
+          eyebrow="Saviez-vous que"
+          title={fact.headline}
+          className="home-dyk-heading"
+        />
         {fact.body.map((paragraph, index) => (
           <p
             key={paragraph.slice(0, 32)}
@@ -106,24 +112,14 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           margin: 0 auto;
           text-align: center;
         }
-        .home-dyk-eyebrow {
-          margin: 0;
-          font-family: var(--font-mono, ui-monospace, monospace);
-          font-size: var(--afh-text-eyebrow);
-          font-weight: 500;
-          letter-spacing: 0.11em;
-          text-transform: uppercase;
-          color: var(--afh-color-gold);
-        }
-        .home-dyk h2 {
-          margin: 16px 0;
-          font-family: var(--font-fraunces), Georgia, serif;
-          font-weight: 600;
-          font-size: var(--afh-text-h2);
-          line-height: 1.18;
-          letter-spacing: -0.014em;
-          text-wrap: balance;
-          color: var(--afh-text);
+        /* The eyebrow and the title are the shared unit's now
+           (src/styles/section-heading.css). This section used to spell both
+           out by hand at --afh-text-h2, which put its title at the size of
+           the items in the sections around it — and, once the three missing
+           headings landed, smaller than three of its five peers. Only the
+           spacing is local. */
+        .home-dyk-heading {
+          margin-bottom: 16px;
         }
         .home-dyk p {
           margin: 0 0 14px;
