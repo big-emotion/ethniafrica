@@ -1,0 +1,61 @@
+/**
+ * The facet hub's reading — the list under the globe band.
+ *
+ * It used to borrow `.afh-parchment`, the fiche surface, and that is what made
+ * the three hubs read as an embedded document rather than as the page: the
+ * parchment paints a flat `--afh-bg` while the page under it is a gradient
+ * running from #faf8f5 down to #f3ece2, so the slab stayed pale as the ground
+ * around it darkened. By the footer it was a lighter rectangle with two beige
+ * gutters and a hard bottom edge — an iframe, in effect. A fiche can carry
+ * that surface because the parchment *is* the fiche; a listing is the page.
+ *
+ * So the reading paints no ground of its own. The page's gradient runs
+ * uninterrupted from the band to the footer, and the only surfaces left are
+ * the cards and the filter form — the things a reader can actually act on.
+ *
+ * It carries no horizontal padding either. Every block of the hub — the title,
+ * the switcher, the hint, the filters, the cards, the pager — now hangs off
+ * `main`'s single gutter, so the surface has one left edge instead of the
+ * three it had.
+ */
+
+.afh-facet-reading {
+  container-type: inline-size;
+  color: var(--afh-text);
+}
+
+/* The count, and nothing else: the eyebrow and the name are printed by the
+   shell above the globe, where they are still above the fold. */
+.afh-facet-reading-head {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-facet-reading-lede {
+  margin: 0;
+  font-size: var(--afh-text-body);
+  line-height: var(--afh-leading-body);
+  color: var(--afh-text-soft);
+  /* The lede stands across the full reading, not in a card's measure. */
+  max-width: 58ch;
+}
+
+/* A section of the reading — the countries facet groups its list into some.
+   Bands, not boxes: the seam between two is a hairline, and neither is
+   inset, so the ground stays the page's own. */
+.afh-facet-reading-section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-facet-reading-section:last-child {
+  border-bottom: none;
+}
+
+.afh-facet-reading-section h2 {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h2);
+  letter-spacing: -0.01em;
+}

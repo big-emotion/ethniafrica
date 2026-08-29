@@ -10,6 +10,7 @@ import type {
   FacetCountryNarrowing,
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
+import { Pager } from "@/components/ui/Pager";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
@@ -152,9 +153,6 @@ export default async function FamillesHubPage({
   const cardClass =
     "flex min-h-11 flex-col gap-1 rounded-afh-lg border border-afh-border bg-afh-surface p-4 hover:border-[color:var(--accent)]";
 
-  const pageStepClass =
-    "inline-flex min-h-11 items-center rounded-afh-lg border border-afh-border px-4 py-2 text-afh-body";
-
   return (
     <>
       <PublishFacetCountryIndex
@@ -163,13 +161,13 @@ export default async function FamillesHubPage({
         focused={chosenCountry as CountryId | null}
       />
 
-      <div className="afh-parchment">
+      <div className="afh-facet-reading">
         {/* The eyebrow and the name belong to the shell, which prints them
             above the globe — see `FacetDefinition.title`. What stays here is
             the count, because it answers the filters directly below it and
             changes with them. */}
-        <header className="afh-parchment-head">
-          <p className="afh-parchment-lede">
+        <header className="afh-facet-reading-head">
+          <p className="afh-facet-reading-lede">
             {formatCount(selection.length)} familles{" "}
             {chosenCountryName
               ? `documentées en ${chosenCountryName}`
@@ -220,30 +218,12 @@ export default async function FamillesHubPage({
           </ul>
         )}
 
-        {pageCount > 1 && (
-          <nav
-            aria-label="Pages de familles"
-            className="mt-6 flex flex-col items-center gap-3 md:flex-row md:justify-between"
-          >
-            {page > 1 ? (
-              <Link href={pageHref(page - 1)} className={pageStepClass}>
-                Page précédente
-              </Link>
-            ) : (
-              <span />
-            )}
-            <p className="text-afh-small text-afh-text-soft">
-              Page {page} sur {pageCount}
-            </p>
-            {page < pageCount ? (
-              <Link href={pageHref(page + 1)} className={pageStepClass}>
-                Page suivante
-              </Link>
-            ) : (
-              <span />
-            )}
-          </nav>
-        )}
+        <Pager
+          label="Pages de familles"
+          pageNumber={page}
+          pageCount={pageCount}
+          hrefForPage={pageHref}
+        />
 
         {unclassifiedPeoplesCount > 0 && (
           <p className="mt-6 text-afh-caption text-afh-text-soft">

@@ -14,6 +14,8 @@
 @import "./styles/home-tokens.css";
 @import "./styles/section-heading.css";
 @import "./styles/fiche-parchment.css";
+@import "./styles/facet-hub.css";
+@import "./styles/pager.css";
 
 @tailwind base;
 @tailwind components;

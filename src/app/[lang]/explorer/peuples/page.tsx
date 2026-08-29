@@ -14,6 +14,7 @@ import type {
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
+import { Pager } from "@/components/ui/Pager";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
@@ -157,16 +158,16 @@ export default async function PeuplesHubPage({
         focused={filters.countryId as CountryId | null}
       />
 
-      <div className="afh-parchment">
+      <div className="afh-facet-reading">
         {/* The eyebrow and the name belong to the shell, which prints them
             above the globe — see `FacetDefinition.title`. What stays here is
             the count, because it answers the filters directly below it and
             changes with them. */}
-        <header className="afh-parchment-head">
+        <header className="afh-facet-reading-head">
           {/* One string rather than text around expressions: JSX drops the
               whitespace between an expression and the text that follows it on
               the next line, which reads as "803 peuplesdans cette sélection". */}
-          <p className="afh-parchment-lede">{lede}</p>
+          <p className="afh-facet-reading-lede">{lede}</p>
         </header>
 
         <FacetFilterBar
@@ -294,23 +295,12 @@ export default async function PeuplesHubPage({
           </ul>
         )}
 
-        {reading.totalPages > 1 && (
-          <nav aria-label="Pagination" className="mt-6 flex items-center gap-3">
-            {reading.page > 1 && (
-              <Link href={facetHref(filters, reading.page - 1)}>
-                Page précédente
-              </Link>
-            )}
-            <span>
-              Page {reading.page} sur {reading.totalPages}
-            </span>
-            {reading.page < reading.totalPages && (
-              <Link href={facetHref(filters, reading.page + 1)}>
-                Page suivante
-              </Link>
-            )}
-          </nav>
-        )}
+        <Pager
+          label="Pages de peuples"
+          pageNumber={reading.page}
+          pageCount={reading.totalPages}
+          hrefForPage={(page) => facetHref(filters, page)}
+        />
       </div>
     </>
   );
