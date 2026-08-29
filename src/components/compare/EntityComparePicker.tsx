@@ -300,7 +300,6 @@ export function EntityComparePicker({
                     variant="compact"
                     autonym={candidate.autonym}
                     exonym={candidate.exonym}
-                    code={candidate.id}
                   />
                   <Button
                     type="button"

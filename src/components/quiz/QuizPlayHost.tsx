@@ -16,6 +16,8 @@ const LazyQuizPlayIsland = dynamic(
 
 interface QuizPlayHostProps {
   scope: QuizScope;
+  /** The content theme narrowing the track, or null for all of them. */
+  theme: string | null;
   scopeLabelFr: string;
   exitHref: string;
 }
@@ -33,11 +35,13 @@ interface QuizPlayHostProps {
 // @req REQ-103 FR66 FR67
 export const QuizPlayHost = ({
   scope,
+  theme,
   scopeLabelFr,
   exitHref,
 }: QuizPlayHostProps) => (
   <LazyQuizPlayIsland
     scope={scope}
+    theme={theme}
     scopeLabelFr={scopeLabelFr}
     exitHref={exitHref}
   />

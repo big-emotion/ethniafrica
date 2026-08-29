@@ -86,31 +86,33 @@ afterEach(() => {
 
 describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)", () => {
   // @req REQ-114
-  it("leads with the axis hub, then the destinations it was handed", () => {
+  it("puts every destination it was handed on the scene, one node each", () => {
     renderPanel();
 
-    const entries = screen.getAllByTestId(
-      /^axis-(hub|module)-(?!link|unavailable|facet)/
-    );
+    const entries = screen.getAllByTestId(/^axis-module-(?!link|unavailable)/);
     expect(entries.map((entry) => entry.dataset.testid)).toEqual([
-      "axis-hub-explorer",
+      "axis-module-peuples",
       "axis-module-doctrine",
       "axis-module-noms",
     ]);
   });
 
   /**
-   * `peuples` is not among the nodes above, and that is the change: it is a
-   * facet of the hub, so it is drawn inside the hub's node rather than beside
-   * it. Three satellites of equal weight is the shape the home had when the
-   * site had three directories.
+   * `peuples` is a facet of the Explorer hub, and it used to be drawn inside
+   * a node of the hub's own rather than beside the others. That node cost the
+   * scene the thing it exists to state: its cards are peers around one
+   * centre, and one of them stood against that centre while the rest kept a
+   * card's width from it. The hub is the axis card the panel opened out of,
+   * and the header still names it — so the scene is free to draw the four
+   * places a reader can actually go.
    */
   // @req REQ-114
-  it("draws a facet inside the hub rather than beside it", () => {
+  it("draws a facet as a destination of its own, not folded into a hub node", () => {
     renderPanel();
 
-    expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
-    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
+    expect(screen.queryByTestId(/^axis-hub-/)).not.toBeInTheDocument();
+    expect(screen.queryByTestId(/^axis-facet-link-/)).not.toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );
@@ -119,7 +121,7 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
   // The whole point of opening in place: the reader's next click lands on
   // the module itself, never on the axis slug it used to pass through.
   // @req REQ-114
-  it("sends a live module straight to its own page, and the hub to the hub", () => {
+  it("sends a live module straight to its own page", () => {
     renderPanel();
 
     expect(screen.getByTestId("axis-module-link-doctrine")).toHaveAttribute(
@@ -127,20 +129,15 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
       getLocalizedRoute("fr", "doctrine")
     );
 
-    // The axis hub used to be the page a reader was made to pass through, and
-    // the panel exists so they no longer have to. It is now offered once, as
-    // itself — which is different from being the destination of everything.
-    expect(screen.getByTestId("axis-hub-link-explorer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "explorerHub")
-    );
+    // Nothing on the scene spends a click on the axis slug. The axis card
+    // itself carries that href, for a reader with no JavaScript.
     const toHub = screen
       .getAllByRole("link")
       .filter(
         (link) =>
           link.getAttribute("href") === getLocalizedRoute("fr", "explorerHub")
       );
-    expect(toHub).toHaveLength(1);
+    expect(toHub).toHaveLength(0);
   });
 
   // @req REQ-106
@@ -230,9 +227,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
     expect(screen.queryByTestId("axis-graph-canvas")).not.toBeInTheDocument();
     expect(
-      screen.getAllByTestId(/^axis-(hub|module)-(?!link|unavailable|facet)/)
+      screen.getAllByTestId(/^axis-module-(?!link|unavailable)/)
     ).toHaveLength(3);
-    expect(screen.getByTestId("axis-facet-link-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-link-peuples")).toBeInTheDocument();
   });
 });
 
@@ -392,6 +389,6 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
     renderPanel();
 
     expect(screen.queryAllByTestId(/^axis-shelf-/)).toHaveLength(0);
-    expect(screen.getByTestId("axis-facet-link-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-link-peuples")).toBeInTheDocument();
   });
 });

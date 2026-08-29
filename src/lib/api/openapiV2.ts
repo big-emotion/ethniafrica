@@ -2560,6 +2560,31 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["id", "labelFr", "activeQuestionCount", "playable"],
         },
+        QuizThemeOption: {
+          type: "object",
+          description:
+            "One domain of content a session can be narrowed to, counted across the whole corpus.",
+          properties: {
+            id: {
+              type: "string",
+              enum: [
+                "noms",
+                "langues",
+                "parente-linguistique",
+                "territoire",
+                "rites-et-culture",
+                "croyances",
+                "royaumes-et-histoire",
+                "organisation",
+                "migrations",
+              ],
+            },
+            labelFr: { type: "string", example: "Croyances" },
+            activeQuestionCount: { type: "integer", minimum: 0 },
+            playable: { type: "boolean" },
+          },
+          required: ["id", "labelFr", "activeQuestionCount", "playable"],
+        },
         QuizScopesData: {
           type: "object",
           description: "GET /v2/quiz/scopes result data.",
@@ -2571,6 +2596,10 @@ const options: swaggerJsdoc.Options = {
             families: {
               type: "array",
               items: { $ref: "#/components/schemas/QuizScopeOption" },
+            },
+            themes: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizThemeOption" },
             },
             mixed: { $ref: "#/components/schemas/QuizScopeOption" },
             random: { $ref: "#/components/schemas/QuizScopeOption" },
@@ -2623,7 +2652,7 @@ const options: swaggerJsdoc.Options = {
           description:
             "The AFRIK entity the question's field value is drawn from.",
           properties: {
-            type: { type: "string", enum: ["people"] },
+            type: { type: "string", enum: ["people", "country"] },
             id: { type: "string", example: "PPL_SHONA" },
             slug: { type: "string", example: "PPL_SHONA" },
             autonym: { type: ["string", "null"] },
@@ -2654,9 +2683,29 @@ const options: swaggerJsdoc.Options = {
             id: { type: "string", format: "uuid" },
             templateId: {
               type: "string",
-              enum: ["T1", "T2", "T3", "T4", "T5"],
+              description:
+                "T1-T5 ask about an atomic fiche field; T6-T11 quote a prose rubric and ask which people it belongs to; T12 asks which of a people's exonyms is contested.",
+              enum: [
+                "T1",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7",
+                "T8",
+                "T9",
+                "T10",
+                "T11",
+                "T12",
+              ],
             },
             promptFr: { type: "string" },
+            stimulusFr: {
+              type: ["string", "null"],
+              description:
+                "Verbatim fiche prose shown above the stem, on the templates whose answer is the subject. Null elsewhere.",
+            },
             optionsFr: {
               type: "array",
               minItems: 4,
@@ -2673,6 +2722,7 @@ const options: swaggerJsdoc.Options = {
             "id",
             "templateId",
             "promptFr",
+            "stimulusFr",
             "optionsFr",
             "correctOption",
             "explanationFr",

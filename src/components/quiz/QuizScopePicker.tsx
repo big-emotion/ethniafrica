@@ -124,6 +124,45 @@ export const QuizScopePicker = ({
             </select>
           </div>
 
+          {/*
+            The third axis, and the one the other two could not stand in for.
+            A theme is not a fifth kind of track: it composes with the two
+            above, so « les croyances des peuples d'Afrique du Sud » is one
+            submission rather than a track the picker would have had to
+            enumerate.
+
+            A pair the corpus cannot fill — a small country under a narrow
+            theme — is not greyed here, because a `method="get"` form with no
+            JavaScript cannot re-evaluate the pair as the reader changes a
+            select. It is caught on arrival by the session's empty state, which
+            already exists for the same reason.
+          */}
+          <div className="flex flex-col gap-1">
+            <label
+              htmlFor="quiz-scope-theme"
+              className="text-afh-small font-medium text-afh-text-soft"
+            >
+              {t.scopeThemeLabel}
+            </label>
+            <select
+              id="quiz-scope-theme"
+              name="theme"
+              defaultValue=""
+              className={fieldClass}
+            >
+              <option value="">{t.scopeAnyTheme}</option>
+              {scopes.themes?.map((option) => (
+                <option
+                  key={option.id}
+                  value={option.id}
+                  disabled={!option.playable}
+                >
+                  {optionLabel(option)}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <p className="text-afh-small text-afh-text-soft">{t.scopeHint}</p>
 
           <button

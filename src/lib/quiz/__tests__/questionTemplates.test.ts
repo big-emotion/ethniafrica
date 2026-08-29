@@ -5,9 +5,18 @@ import {
   buildT3MainCountryTemplate,
   buildT4MainLanguageTemplate,
   buildT5IsoCodeTemplate,
+  buildT6RitesTemplate,
+  buildT12ContestedExonymTemplate,
+  buildT13EtymologyTemplate,
+  buildT16KingdomTemplate,
   questionTemplateBuilders,
 } from "../questionTemplates";
-import type { QuizPeopleFixture } from "@/types/quiz";
+import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
+import type {
+  AutonymExonymName,
+  QuizCountryFixture,
+  QuizPeopleFixture,
+} from "@/types/quiz";
 
 const fiche: QuizPeopleFixture = {
   id: "PPL_YORUBA",
@@ -23,6 +32,9 @@ const fiche: QuizPeopleFixture = {
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
   isoCode: "yor",
   totalPopulation: 50_000_000,
+  exonyms: [],
+  rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
+  whyProblematic: null,
 };
 
 describe("buildT1LanguageFamilyTemplate", () => {
@@ -209,17 +221,277 @@ describe("buildT5IsoCodeTemplate", () => {
   });
 });
 
-describe("questionTemplateBuilders barrel", () => {
-  // @req REQ-080
-  it("exposes all five template builders keyed by template id", () => {
-    expect(Object.keys(questionTemplateBuilders).sort()).toEqual([
-      "T1",
-      "T2",
-      "T3",
-      "T4",
-      "T5",
+const PEOPLE_POOL: AutonymExonymName[] = [
+  { autonym: "amaZulu", exonym: "Zoulou" },
+  { autonym: "Basotho" },
+  { autonym: "Vatsonga", exonym: "Tsonga" },
+  { autonym: "VhaVenda", exonym: "Venda" },
+];
+
+function inversionFiche(
+  overrides: Partial<QuizPeopleFixture> = {}
+): QuizPeopleFixture {
+  return {
+    ...fiche,
+    id: "PPL_VENDA",
+    subjectName: { autonym: "VhaVenda", exonym: "Venda" },
+    selfAppellation: "VhaVenda (pl.), MuVenda (sg.)",
+    exonyms: ["Venda (terme europeen standardise)", "Bawenda"],
+    rubrics: {
+      ...fiche.rubrics,
+      T6:
+        "Domba (danse du python) : ceremonie d'initiation des jeunes femmes au lac Fundudzi, consideree comme la danse la plus sacree du Venda. " +
+        "Les futures mariees dansent en file indienne en imitant les mouvements du python, symbolisant le passage a l'age adulte.",
+    },
+    ...overrides,
+  };
+}
+
+describe("buildT6RitesTemplate", () => {
+  /**
+   * The inversion: the fragment is what the reader is shown and the people is
+   * what they are asked for. Its whole value rests on the fragment not saying
+   * « Venda », which the first sentence of this rubric does.
+   */
+  // @req REQ-121
+  it("quotes only the part of the rubric that does not name the answer", () => {
+    const round = buildT6RitesTemplate(inversionFiche(), PEOPLE_POOL);
+
+    expect(round?.stimulusFr).toBe(
+      "Les futures mariees dansent en file indienne en imitant les mouvements du python, symbolisant le passage a l'age adulte."
+    );
+    expect(round?.stimulusFr).not.toContain("Venda");
+  });
+
+  // @req REQ-121
+  it("answers with the subject itself, among peoples of its near pool", () => {
+    const round = buildT6RitesTemplate(inversionFiche(), PEOPLE_POOL);
+
+    expect(round?.optionsFr).toHaveLength(4);
+    expect(round?.optionsFr[round.correctOption]).toEqual({
+      autonym: "VhaVenda",
+      exonym: "Venda",
+    });
+    // The subject is never also a distractor.
+    expect(
+      round?.optionsFr.filter(
+        (o) => (o as AutonymExonymName).autonym === "VhaVenda"
+      )
+    ).toHaveLength(1);
+  });
+
+  // @req REQ-121
+  it("asks its own question rather than one standing prompt reused by every round", () => {
+    const rites = buildT6RitesTemplate(inversionFiche(), PEOPLE_POOL);
+    const t1 = buildT1LanguageFamilyTemplate(fiche, [
+      "Bantou",
+      "Nilo-Saharien",
+      "Khoisan",
+      "Afro-Asiatique",
     ]);
+
+    expect(rites?.promptFr).toBe("Quel peuple pratique ces rites ?");
+    expect(rites?.promptFr).not.toBe(t1?.promptFr);
+  });
+
+  // @req REQ-121
+  it("generates nothing when every sentence of the rubric names its subject", () => {
+    const round = buildT6RitesTemplate(
+      inversionFiche({
+        rubrics: {
+          ...fiche.rubrics,
+          T6: "Les VhaVenda dansent la Domba au bord du lac sacre chaque annee depuis des siecles.",
+        },
+      }),
+      PEOPLE_POOL
+    );
+
+    expect(round).toBeNull();
+  });
+
+  // @req REQ-121
+  it("generates nothing when the near pool cannot supply three peoples", () => {
+    expect(
+      buildT6RitesTemplate(inversionFiche(), [{ autonym: "Basotho" }])
+    ).toBeNull();
+  });
+});
+
+describe("buildT12ContestedExonymTemplate", () => {
+  const tsonga = (): QuizPeopleFixture => ({
+    ...fiche,
+    id: "PPL_TSONGA",
+    subjectName: { autonym: "Vatsonga", exonym: "Tsonga" },
+    exonyms: ["Shangaan", "Thonga", "Gwamba", "Machangane"],
+    whyProblematic:
+      "Le terme Shangaan est souvent utilise de facon abusive pour l'ensemble des Tsonga, ce qui est historiquement inexact.",
+  });
+
+  // @req REQ-121
+  it("makes the contested name the answer and the people's other names the distractors", () => {
+    const round = buildT12ContestedExonymTemplate(tsonga());
+
+    expect(round?.optionsFr[round.correctOption]).toBe("Shangaan");
+    expect([...(round?.optionsFr ?? [])].sort()).toEqual([
+      "Gwamba",
+      "Machangane",
+      "Shangaan",
+      "Thonga",
+    ]);
+  });
+
+  /**
+   * The stem asserts these are names given to *this* people. Topping the
+   * options up from a neighbour's exonyms would nearly double the yield and
+   * would make that sentence false, so a fiche with too few names of its own
+   * simply gets no round.
+   */
+  // @req REQ-121
+  it("refuses to borrow a distractor from another people", () => {
+    expect(
+      buildT12ContestedExonymTemplate({
+        ...tsonga(),
+        exonyms: ["Shangaan", "Thonga"],
+      })
+    ).toBeNull();
+  });
+
+  // @req REQ-121
+  it("generates nothing when the passage names none of the exonyms", () => {
+    expect(
+      buildT12ContestedExonymTemplate({
+        ...tsonga(),
+        whyProblematic: "Ce nom prete a confusion avec un peuple voisin.",
+      })
+    ).toBeNull();
+  });
+
+  // @req REQ-121
+  it("reveals the corpus's own explanation rather than a paraphrase", () => {
+    const round = buildT12ContestedExonymTemplate(tsonga());
+    expect(round?.explanationFr).toBe(tsonga().whyProblematic);
+  });
+});
+
+const COUNTRY_POOL: AutonymExonymName[] = [
+  { autonym: "Comores" },
+  { autonym: "Ghana" },
+  { autonym: "Kenya" },
+  { autonym: "Sénégal" },
+];
+
+function countryFiche(
+  overrides: Partial<QuizCountryFixture> = {}
+): QuizCountryFixture {
+  return {
+    id: "COM",
+    subjectName: { autonym: "Comores" },
+    selfAppellation: "Union des Comores",
+    exonyms: [],
+    rubrics: {
+      T13:
+        "Le nom « Comores » vient de l'arabe « Juzur al-Qamar ». " +
+        "Les navigateurs qui accostaient l'archipel au IXe siècle voyaient dans ses sommets la forme de croissants.",
+    },
+    kingdomNames: ["Sultanats des Comores", "Royaume de Ndzuwani"],
+    ...overrides,
+  };
+}
+
+describe("the country templates", () => {
+  /**
+   * The same inversion as the people rounds, on the entity the quiz had never
+   * asked about: 54 fiches whose etymology, colonial name and religious
+   * landscape no template read.
+   */
+  // @req REQ-121
+  it("quotes a country rubric without naming the country", () => {
+    const round = buildT13EtymologyTemplate(countryFiche(), COUNTRY_POOL);
+
+    expect(round?.entityType).toBe("country");
+    expect(round?.stimulusFr).not.toContain("Comores");
+    expect(round?.stimulusFr).toContain("navigateurs qui accostaient");
+    expect(round?.optionsFr[round.correctOption]).toEqual({
+      autonym: "Comores",
+    });
+  });
+
+  // @req REQ-121
+  it("generates nothing when the etymology names the country throughout", () => {
+    expect(
+      buildT13EtymologyTemplate(
+        countryFiche({
+          rubrics: {
+            T13: "Le nom des Comores vient d'une racine arabe ancienne, portee par les marchands de l'ocean Indien.",
+          },
+        }),
+        COUNTRY_POOL
+      )
+    ).toBeNull();
+  });
+
+  /**
+   * T16 is the one country round whose answer is an atom rather than the
+   * subject, so it names its country in the stem like T1-T5 do.
+   */
+  // @req REQ-121
+  it("asks which country a kingdom stood on, naming the country in the stem", () => {
+    const round = buildT16KingdomTemplate(countryFiche(), [
+      "Sultanats des Comores",
+      "Empire du Ghana",
+      "Royaume Ashanti",
+      "Empire du Mali",
+    ]);
+
+    expect(round?.promptFr).toContain("Comores");
+    expect(round?.stimulusFr).toBeNull();
+    expect(round?.optionsFr[round.correctOption]).toBe("Sultanats des Comores");
+  });
+
+  /**
+   * A kingdom the same country also held is not a wrong answer — the corpus
+   * lists several per country, and offering two of them would make the round
+   * unanswerable rather than hard.
+   */
+  // @req REQ-121
+  it("never offers another kingdom of the same country as a distractor", () => {
+    const round = buildT16KingdomTemplate(countryFiche(), [
+      "Sultanats des Comores",
+      "Royaume de Ndzuwani",
+      "Empire du Ghana",
+      "Royaume Ashanti",
+      "Empire du Mali",
+    ]);
+
+    expect(round?.optionsFr).not.toContain("Royaume de Ndzuwani");
+  });
+
+  // @req REQ-121
+  it("generates nothing for a country whose fiche names no kingdom", () => {
+    expect(
+      buildT16KingdomTemplate(countryFiche({ kingdomNames: [] }), [
+        "Empire du Ghana",
+        "Royaume Ashanti",
+        "Empire du Mali",
+      ])
+    ).toBeNull();
+  });
+});
+
+describe("questionTemplateBuilders barrel", () => {
+  /**
+   * The barrel is what `buildCandidate` dispatches through, and its switch is
+   * not the tripwire it looks like: with `strictNullChecks` off a missing case
+   * returns `undefined` and compiles. Holding the barrel against the registry
+   * is what actually catches a template declared but never built.
+   */
+  // @req REQ-080 REQ-121
+  it("builds every template the policy declares, and no others", () => {
+    expect(Object.keys(questionTemplateBuilders).sort()).toEqual(
+      [...QUIZ_TEMPLATE_IDS].sort()
+    );
     expect(questionTemplateBuilders.T1).toBe(buildT1LanguageFamilyTemplate);
     expect(questionTemplateBuilders.T5).toBe(buildT5IsoCodeTemplate);
+    expect(questionTemplateBuilders.T12).toBe(buildT12ContestedExonymTemplate);
   });
 });

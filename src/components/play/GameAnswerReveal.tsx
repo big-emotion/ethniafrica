@@ -6,13 +6,14 @@ import { CheckCircle2, XCircle } from "lucide-react";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import type { GameRound } from "@/lib/games/gameKinds";
+import { revealProvenanceFr } from "@/lib/games/revealProvenance";
 import { sourceStandingLabelFr } from "@/types/sources";
 import { cn } from "@/lib/utils";
 
 const COPY_FR = {
   correctVerdict: "Bonne réponse",
   incorrectVerdict: "Ce n'est pas ça",
-  provenanceLabel: "Champ de la fiche",
+  provenanceLabel: "D'après",
   openFiche: "Lire la fiche",
   confidenceAriaSuffix: "pour le sujet de cette manche",
   nextRound: "Tour suivant",
@@ -39,8 +40,9 @@ export interface GameAnswerRevealProps {
  *
  * `reveal.textFr` is printed exactly as the corpus holds it: FR65/FR66 forbid
  * a paraphrase as firmly as an invented option, so there is no summarising and
- * no clamping here. `reveal.fieldPath` rides along as the provenance line —
- * the reader can go and check the same field on the fiche.
+ * no clamping here. `reveal.fieldPath` still records where the claim was read,
+ * but the player is told so in French — see `revealProvenance` for why the
+ * path itself no longer reaches the page.
  */
 // @req REQ-120
 export const GameAnswerReveal = ({
@@ -62,6 +64,7 @@ export const GameAnswerReveal = ({
   // runtime crash the compiler will not catch — and a crash here blanks the
   // whole game rather than one line. Same reason `ficheSourceLabel` exists.
   const sources = round.reveal.sources ?? [];
+  const provenanceFr = revealProvenanceFr(round.reveal.fieldPath ?? "");
 
   return (
     <div
@@ -98,9 +101,11 @@ export const GameAnswerReveal = ({
         data-testid="game-reveal-provenance"
         className="flex flex-col gap-2 border-t border-afh-border pt-3 text-afh-small text-afh-text-soft"
       >
-        <p>
-          {COPY_FR.provenanceLabel} : <code>{round.reveal.fieldPath}</code>
-        </p>
+        {provenanceFr ? (
+          <p>
+            {COPY_FR.provenanceLabel} {provenanceFr}.
+          </p>
+        ) : null}
 
         {/*
           Nothing is withheld for a weak source; the standing is stated. A

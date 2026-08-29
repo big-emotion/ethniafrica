@@ -8,6 +8,16 @@ const migration = readFileSync(
   "utf8"
 );
 
+const stimulusMigration = readFileSync(
+  resolve(process.cwd(), "supabase/migrations/046_quiz_stimulus.sql"),
+  "utf8"
+);
+
+const indexMigration = readFileSync(
+  resolve(process.cwd(), "supabase/migrations/047_quiz_bank_indexes.sql"),
+  "utf8"
+);
+
 describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile target)", () => {
   // @req REQ-080
   it("declares the quiz_audience enum idempotently with the five MVP segments", () => {
@@ -113,5 +123,75 @@ describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile tar
     expect(migration).not.toContain("create table if not exists assertions");
     expect(migration).not.toContain("create type entity_type");
     expect(migration.toLowerCase()).not.toContain("entity_type as enum");
+  });
+});
+
+describe("046_quiz_stimulus.sql schema contract", () => {
+  /**
+   * The inversion templates persist a fragment per question, so the column has
+   * to exist before a sweep writes one. Asserted here for the same reason as
+   * 036 above: `insertQuestions` names the column literally, and a rename that
+   * only touched the SQL would fail at runtime on the first insert.
+   */
+  // @req REQ-121
+  it("adds a nullable stimulus_fr to quiz_questions", () => {
+    expect(stimulusMigration).toContain("alter table quiz_questions");
+    expect(stimulusMigration).toContain(
+      "add column if not exists stimulus_fr text"
+    );
+  });
+
+  /**
+   * Nullable, and no default. T1-T5 and T12 name their subject in the stem and
+   * set nothing up; a `not null default ''` would make every one of them carry
+   * an empty stimulus the card would have to test for anyway.
+   */
+  // @req REQ-121
+  it("leaves the column nullable so the templates without a stimulus carry none", () => {
+    expect(stimulusMigration).not.toContain("not null");
+    expect(stimulusMigration).not.toContain("default ''");
+  });
+
+  // @req REQ-121
+  it("changes nothing else about the bank", () => {
+    expect(stimulusMigration).not.toContain("drop column");
+    expect(stimulusMigration).not.toContain("create table");
+    expect(stimulusMigration).not.toContain("create policy");
+  });
+});
+
+describe("047_quiz_bank_indexes.sql schema contract", () => {
+  /**
+   * The identity rule — one active question per (entity, template) — lived in
+   * memory only, inside `computeSweepPlan`. Two concurrent sweeps would have
+   * inserted the same question twice with nothing to stop them.
+   */
+  // @req REQ-121
+  it("gives the bank's identity rule a constraint rather than a convention", () => {
+    expect(indexMigration).toContain(
+      "create unique index if not exists uq_quiz_questions_active_identity"
+    );
+    expect(indexMigration).toContain(
+      "on quiz_questions (entity_id, template_id)"
+    );
+    expect(indexMigration).toContain("where revoked_at is null");
+  });
+
+  /**
+   * `(audience, difficulty)` leads on a column that has held one value since
+   * the audience axis was retired, so it discriminates nothing.
+   */
+  // @req REQ-121
+  it("drops the index keyed on the retired audience axis", () => {
+    expect(indexMigration).toContain(
+      "drop index if exists idx_quiz_questions_serving"
+    );
+  });
+
+  // @req REQ-121
+  it("indexes the bank by subject, now that a subject can be a country", () => {
+    expect(indexMigration).toContain(
+      "on quiz_questions (entity_type, entity_id, template_id)"
+    );
   });
 });

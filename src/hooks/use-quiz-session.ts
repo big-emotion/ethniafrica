@@ -12,6 +12,11 @@ import {
 
 export interface UseQuizSessionOptions {
   scope: QuizScope;
+  /**
+   * A content theme narrowing the track. Part of the query key, so switching
+   * theme fetches a new session rather than replaying the cached one.
+   */
+  theme?: string | null;
   count?: number;
 }
 
@@ -89,6 +94,7 @@ async function fetchQuizSession(
   options: UseQuizSessionOptions
 ): Promise<QuizSessionQuestionView[]> {
   const params = quizScopeSearchParams(options.scope);
+  if (options.theme) params.set("theme", options.theme);
   params.set("count", String(options.count ?? QUIZ_SESSION_SIZE));
 
   const res = await fetch(`/api/v2/quiz/session?${params.toString()}`);
@@ -120,7 +126,12 @@ export function useQuizSession(
     isError,
     error,
   } = useQuery({
-    queryKey: ["quiz-session", quizScopeKey(options.scope), options.count],
+    queryKey: [
+      "quiz-session",
+      quizScopeKey(options.scope),
+      options.theme ?? null,
+      options.count,
+    ],
     queryFn: () => fetchQuizSession(options),
     staleTime: Infinity,
     retry: false,

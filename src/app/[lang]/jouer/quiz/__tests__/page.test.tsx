@@ -38,8 +38,18 @@ vi.mock("@/components/quiz/QuizScopePicker", () => ({
 }));
 
 vi.mock("@/components/quiz/QuizPlayHost", () => ({
-  QuizPlayHost: ({ scopeLabelFr }: { scopeLabelFr: string }) => (
-    <div data-testid="quiz-play-host" data-label={scopeLabelFr} />
+  QuizPlayHost: ({
+    scopeLabelFr,
+    theme,
+  }: {
+    scopeLabelFr: string;
+    theme: string | null;
+  }) => (
+    <div
+      data-testid="quiz-play-host"
+      data-label={scopeLabelFr}
+      data-theme={theme ?? ""}
+    />
   ),
 }));
 
@@ -58,6 +68,14 @@ function scopesEnvelope() {
         },
       ],
       families: [],
+      themes: [
+        {
+          id: "croyances",
+          labelFr: "Croyances",
+          activeQuestionCount: 400,
+          playable: true,
+        },
+      ],
       mixed: {
         id: "mixed",
         labelFr: "Tout le continent",
@@ -120,6 +138,48 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
       "data-label",
       "Ghana"
+    );
+  });
+
+  /**
+   * A theme on its own is a track: « les croyances », over the whole corpus.
+   * Left out of the fork it parsed to `mixed`, which the page refuses to launch
+   * on its own — so the reader's choice was silently dropped and they landed
+   * back on the picker.
+   */
+  // @req REQ-121
+  it("opens the session when the URL names only a theme", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "mixed",
+      entityId: null,
+      labelFr: "Tout le continent",
+    });
+
+    render(
+      await QuizPage({ searchParams: Promise.resolve({ theme: "croyances" }) })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toBeInTheDocument();
+    expect(screen.queryByTestId("quiz-scope-picker")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-121
+  it("carries the theme into the session alongside the track", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "ZAF",
+      labelFr: "Afrique du Sud",
+    });
+
+    render(
+      await QuizPage({
+        searchParams: Promise.resolve({ pays: "ZAF", theme: "croyances" }),
+      })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-theme",
+      "croyances"
     );
   });
 

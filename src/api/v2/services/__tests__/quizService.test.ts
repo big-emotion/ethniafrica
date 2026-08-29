@@ -121,6 +121,11 @@ const ELIGIBLE_CONFIDENCE = new Map([
   ["PPL_A", { score: 0.75, lastHumanAuditAt: null }],
   ["PPL_B", { score: 0.75, lastHumanAuditAt: null }],
   ["PPL_C", { score: 0.75, lastHumanAuditAt: null }],
+  // A country carries its own score, under `entity_type = 'country'`. Without
+  // one the FR65 gate fails closed and every country round is dropped — which
+  // is what happens on any environment where `loadCountryProvenance` has not
+  // run yet.
+  ["GHA", { score: 0.75, lastHumanAuditAt: null }],
 ]);
 
 beforeEach(() => {
@@ -176,6 +181,52 @@ describe("getQuizScopeCatalogue", () => {
 
     expect(catalogue.countries).toHaveLength(1);
     expect(catalogue.countries[0].activeQuestionCount).toBe(0);
+  });
+
+  /**
+   * The theme is derived from the field path, not stored, so the catalogue can
+   * count it without the bank ever being rewritten — that is what makes the
+   * facet shippable without a `--rebuild`.
+   */
+  // @req REQ-121
+  it("counts the bank by content theme as well as by track", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "PPL_A"),
+      questionRow("q2", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q3", "PPL_B", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+    ]);
+
+    const catalogue = await getQuizScopeCatalogue();
+    const byId = new Map(catalogue.themes.map((t) => [t.id, t]));
+
+    expect(byId.get("croyances")?.activeQuestionCount).toBe(2);
+    expect(byId.get("parente-linguistique")?.activeQuestionCount).toBe(1);
+    expect(byId.get("migrations")?.activeQuestionCount).toBe(0);
+  });
+
+  // @req REQ-121
+  it("names every theme in a fixed order, so the picker does not reshuffle as the bank grows", async () => {
+    tableRows.set("quiz_questions", []);
+
+    const catalogue = await getQuizScopeCatalogue();
+
+    expect(catalogue.themes.map((theme) => theme.id)).toEqual([
+      "noms",
+      "langues",
+      "parente-linguistique",
+      "territoire",
+      "rites-et-culture",
+      "croyances",
+      "royaumes-et-histoire",
+      "organisation",
+      "migrations",
+    ]);
   });
 });
 
@@ -335,6 +386,129 @@ describe("composeQuizSession", () => {
 
     expect(session).toEqual([]);
     expect(getConfidenceMapMock).not.toHaveBeenCalled();
+  });
+
+  /**
+   * The facet the picker was missing. It composes with the track rather than
+   * replacing it: a country and a theme narrow the same pool, in that order.
+   */
+  // @req REQ-121
+  it("narrows the draw to one content theme, keeping the track", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-family", "PPL_A"),
+      questionRow("q-belief", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q-rites", "PPL_B", {
+        template_id: "T6",
+        field_path: "content.culture.majorRites",
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+      theme: "croyances",
+    });
+
+    expect(session.map((question) => question.id)).toEqual(["q-belief"]);
+  });
+
+  // @req REQ-121
+  it("serves the whole track when no theme is asked for", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-family", "PPL_A"),
+      questionRow("q-belief", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(session).toHaveLength(2);
+  });
+
+  /**
+   * A country track covers its peoples **and the country itself**. It is the
+   * only track a question about Ghana can belong to — a family has no country
+   * — so leaving the country out would have made six templates unreachable
+   * from every scope but the whole corpus.
+   */
+  // @req REQ-121
+  it("draws the scoped country's own questions, not only its peoples'", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-people", "PPL_A"),
+      questionRow("q-country", "GHA", {
+        template_id: "T16",
+        entity_type: "country",
+        field_path: "content.kingdoms",
+        options_fr: ["Empire du Ghana", "B", "C", "D"],
+        correct_option: 0,
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(session.map((question) => question.id).sort()).toEqual([
+      "q-country",
+      "q-people",
+    ]);
+  });
+
+  /**
+   * The self-answering rule, which used to look only at T3. A country
+   * inversion answers with the country's own name, so inside a session titled
+   * « Ghana » it hands the answer over before the reader has read the
+   * stimulus. Comparing the answer's label rather than the template id is what
+   * makes one rule cover both.
+   */
+  // @req REQ-121
+  it("drops a country round whose answer is the country the session is named after", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-self", "GHA", {
+        template_id: "T13",
+        entity_type: "country",
+        field_path: "etymology",
+        options_fr: ["Ghana", "Kenya", "Mali", "Togo"],
+        correct_option: 0,
+      }),
+      questionRow("q-people", "PPL_A"),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(session.map((question) => question.id)).toEqual(["q-people"]);
+  });
+
+  // @req REQ-121
+  it("keeps that same country round when the session is not named after it", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-self", "GHA", {
+        template_id: "T13",
+        entity_type: "country",
+        field_path: "etymology",
+        options_fr: ["Ghana", "Kenya", "Mali", "Togo"],
+        correct_option: 0,
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "mixed" },
+      count: 8,
+    });
+
+    expect(session.map((question) => question.id)).toEqual(["q-self"]);
   });
 
   // @req REQ-103

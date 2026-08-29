@@ -189,7 +189,6 @@ export function MigrationDetailSheet({
                   <AutonymExonymHeading
                     variant="compact"
                     exonym={people.nameMain}
-                    code={people.id}
                   />
                 </Link>
               </li>

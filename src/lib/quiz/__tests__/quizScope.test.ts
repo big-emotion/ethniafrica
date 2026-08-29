@@ -9,6 +9,7 @@ import {
   sessionBandPlan,
   SESSION_BAND_PLAN,
 } from "@/lib/quiz/quizScope";
+import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
 
 describe("parseQuizScope", () => {
   // @req REQ-103
@@ -256,5 +257,104 @@ describe("composeLadder", () => {
     );
 
     expect(new Set(session.map((entry) => entry.id)).size).toBe(session.length);
+  });
+});
+
+describe("composeLadder — theme spread", () => {
+  const flatBands = new Map(
+    Array.from({ length: 40 }, (_, i) => [`PPL_${i}`, "moyen" as const])
+  );
+
+  /**
+   * One question per subject, `themes` laid out in blocks rather than
+   * interleaved.
+   *
+   * The pool arrives shuffled in production, so a test whose themes alternate
+   * proves nothing: the existing subject-freshness rule alone would spread them
+   * evenly and the assertion would pass with no quota implemented. Blocks are
+   * the shape that fails without one.
+   */
+  function themedPool(themes: QuizThemeId[]) {
+    const perTheme = Math.ceil(40 / themes.length);
+    return Array.from({ length: 40 }, (_, i) => ({
+      id: `q-${i}`,
+      entityId: `PPL_${i}`,
+      theme: themes[Math.floor(i / perTheme)] ?? themes[themes.length - 1],
+    }));
+  }
+
+  /**
+   * The complaint this whole change answers: eight rounds that all felt like
+   * the same question. Drawing uniformly from twelve templates leaves a theme
+   * appearing three or four times by chance, and the reader reads that as
+   * repetition whatever the subjects were.
+   */
+  // @req REQ-121
+  it("serves no more than two rounds of one theme", () => {
+    const session = composeLadder(
+      themedPool(["noms", "croyances", "migrations", "langues"]),
+      flatBands
+    );
+
+    const perTheme = new Map<string, number>();
+    for (const entry of session) {
+      perTheme.set(entry.theme, (perTheme.get(entry.theme) ?? 0) + 1);
+    }
+
+    expect(session).toHaveLength(8);
+    expect(Math.max(...perTheme.values())).toBeLessThanOrEqual(2);
+    expect(perTheme.size).toBeGreaterThanOrEqual(4);
+  });
+
+  /**
+   * The quota is a preference, not a wall. A track holding one theme has to
+   * pay eight rounds of it — returning three would be a worse answer than an
+   * honest repetition, which is the rule the band and subject fallbacks
+   * already follow.
+   */
+  // @req REQ-121
+  it("fills the session anyway when the track holds only one theme", () => {
+    const session = composeLadder(themedPool(["noms"]), flatBands);
+
+    expect(session).toHaveLength(8);
+    expect(new Set(session.map((entry) => entry.theme))).toEqual(
+      new Set(["noms"])
+    );
+  });
+
+  // @req REQ-121
+  it("keeps the band ladder above the theme quota", () => {
+    // A theme already at quota must not promote a candidate out of its band:
+    // the ascending difficulty is what makes a session a track rather than a
+    // pile.
+    const bandsByRung = new Map([
+      ["PPL_EASY", "facile" as const],
+      ["PPL_HARD_A", "difficile" as const],
+      ["PPL_HARD_B", "difficile" as const],
+    ]);
+    const session = composeLadder(
+      [
+        { id: "q-hard-a", entityId: "PPL_HARD_A", theme: "noms" as const },
+        { id: "q-hard-b", entityId: "PPL_HARD_B", theme: "noms" as const },
+        { id: "q-easy", entityId: "PPL_EASY", theme: "croyances" as const },
+      ],
+      bandsByRung,
+      ["facile", "difficile"]
+    );
+
+    expect(session.map((entry) => entry.id)).toEqual(["q-easy", "q-hard-a"]);
+  });
+
+  // @req REQ-121
+  it("still works on candidates carrying no theme at all", () => {
+    const session = composeLadder(
+      Array.from({ length: 40 }, (_, i) => ({
+        id: `q-${i}`,
+        entityId: `PPL_${i}`,
+      })),
+      flatBands
+    );
+
+    expect(session).toHaveLength(8);
   });
 });

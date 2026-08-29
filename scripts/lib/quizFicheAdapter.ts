@@ -18,7 +18,11 @@
  *    shape `quiz_questions.assertion_id` expects.
  */
 
-import type { AutonymExonymName, QuizPeopleFixture } from "@/types/quiz";
+import type {
+  AutonymExonymName,
+  QuizCountryFixture,
+  QuizPeopleFixture,
+} from "@/types/quiz";
 import { toQuizConfidenceScore } from "@/lib/quiz/eligibility";
 import type {
   QuizAssertionSource,
@@ -33,6 +37,21 @@ export interface PeopleContent {
     mainName?: string;
     selfAppellation?: string;
     exonyms?: string[];
+    whyProblematic?: string | null;
+  };
+  culture?: {
+    majorRites?: string | null;
+    spiritualities?: string | null;
+    symbols?: string | null;
+  };
+  historicalRole?: {
+    kingdomsOrChiefdoms?: string | null;
+  };
+  organization?: {
+    traditionalPoliticalSystem?: string | null;
+  };
+  origins?: {
+    migrationRoutes?: string[] | null;
   };
   languages?: {
     mainLanguage?: string;
@@ -46,6 +65,23 @@ export interface PeopleContent {
       population?: number;
     }>;
   };
+}
+
+/** `afrik_countries.content`, reduced to the sections the country templates read. */
+export interface CountryContent {
+  historicalNames?: { colonization?: string | null };
+  historicalFacts?: { precolonial?: string | null };
+  culture?: { dominantReligions?: string | null };
+  kingdoms?: Array<{ name?: string }>;
+}
+
+export interface CountryRow {
+  id: string;
+  name_fr: string;
+  name_official?: string | null;
+  etymology: string | null;
+  name_origin_actor: string | null;
+  content: CountryContent | null;
 }
 
 export interface PeopleRow {
@@ -78,19 +114,18 @@ export interface SourceRow {
 }
 
 /**
- * Normalizes an `assertions.field_path` value to the exact template field
- * path it backs, or null if it doesn't back any T1-T5 template. Demography
- * rows are per-country (`content.demography.distributionByCountry` prefix),
- * every other template field is an exact match.
+ * Normalizes an `assertions.field_path` value to the exact template field path
+ * it backs, or null if it backs no template.
+ *
+ * Demography rows are written one per country, so T3 matches on its prefix;
+ * every other template field is an exact match. Driven off the registry rather
+ * than a hand-written list of ids — the list version silently stopped
+ * recognising a path the day a template was added without editing it here, and
+ * the symptom was `no_assertion` on a path that existed.
  */
 export function normalizeFieldPath(fieldPath: string): string | null {
-  if (
-    fieldPath === TEMPLATE_FIELD_PATHS.T1 ||
-    fieldPath === TEMPLATE_FIELD_PATHS.T2 ||
-    fieldPath === TEMPLATE_FIELD_PATHS.T4 ||
-    fieldPath === TEMPLATE_FIELD_PATHS.T5
-  ) {
-    return fieldPath;
+  for (const path of Object.values(TEMPLATE_FIELD_PATHS)) {
+    if (path !== TEMPLATE_FIELD_PATHS.T3 && fieldPath === path) return path;
   }
   if (fieldPath.startsWith(TEMPLATE_FIELD_PATHS.T3)) {
     return TEMPLATE_FIELD_PATHS.T3;
@@ -179,6 +214,50 @@ export function mapPeopleRowToFiche(
       typeof content.demography?.totalPopulation === "number"
         ? content.demography.totalPopulation
         : null,
+    // Deliberately outside the all-or-nothing guard above. A fiche missing its
+    // rites loses one round of twelve; requiring them would take it out of the
+    // eleven it already answers.
+    exonyms: content.appellations?.exonyms ?? [],
+    whyProblematic: content.appellations?.whyProblematic ?? null,
+    rubrics: {
+      T6: content.culture?.majorRites ?? null,
+      T7: content.culture?.spiritualities ?? null,
+      T8: content.culture?.symbols ?? null,
+      T9: content.historicalRole?.kingdomsOrChiefdoms ?? null,
+      T10: content.organization?.traditionalPoliticalSystem ?? null,
+      T11: content.origins?.migrationRoutes ?? null,
+    },
+  };
+}
+
+/**
+ * Maps a country row to the fixture its templates read.
+ *
+ * No all-or-nothing guard, unlike the people mapper. A country fiche is a
+ * single editorial document that always exists — the 54 are the corpus's
+ * skeleton — so a missing rubric costs it one round rather than removing it
+ * from the bank. `nameOfficial` has no column of its own (migration 006 writes
+ * five columns and drops it), so the leak rule sees only the usual name unless
+ * the row happens to carry one.
+ */
+// @req REQ-121
+export function mapCountryRowToFiche(row: CountryRow): QuizCountryFixture {
+  const content = row.content ?? {};
+  return {
+    id: row.id,
+    subjectName: { autonym: row.name_fr },
+    selfAppellation: row.name_official ?? row.name_fr,
+    exonyms: [],
+    rubrics: {
+      T13: row.etymology,
+      T14: row.name_origin_actor,
+      T15: content.historicalNames?.colonization ?? null,
+      T17: content.historicalFacts?.precolonial ?? null,
+      T18: content.culture?.dominantReligions ?? null,
+    },
+    kingdomNames: (content.kingdoms ?? [])
+      .map((kingdom) => kingdom?.name)
+      .filter((name): name is string => Boolean(name?.trim())),
   };
 }
 
