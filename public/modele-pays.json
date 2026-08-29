@@ -12,6 +12,9 @@
   "nameOriginActor": "<Personne / peuple / administration à l'origine du nom>",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "<Ancien nom, daté quand la date est connue — ex: 'Haute-Volta (1919-1960)'. Liste tirée de la prose des périodes ci-dessous, jamais de connaissances extérieures. 1 à 4 entrées, les plus parlantes.>"
+      ],
       "antiquity": null,
       "middleAges": null,
       "precolonial": null,
