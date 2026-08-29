@@ -50,10 +50,16 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
 
   // A reader arrives at Explorer with a name and leaves with a fiche, so
   // every module here is a nominal entry point into the corpus.
+  //
+  // Pays leads. A reader arriving with a name most often arrives with a
+  // country's — it is the one entity of the four they already hold before
+  // the atlas teaches them anything, and the fiche it opens lists the
+  // peoples underneath it. Peuples first asked them to name a people to
+  // find a people.
   // @req REQ-114
-  it("gives explorer the modules a reader reaches by name", () => {
+  it("gives explorer the modules a reader reaches by name, country first", () => {
     const ids = getModulesForAccessMode("explorer").map((m) => m.id);
-    expect(ids).toEqual(["peuples", "pays", "familles", "recherche"]);
+    expect(ids).toEqual(["pays", "peuples", "familles", "recherche"]);
   });
 
   // Ordered from the most concrete question to the method that answers it.
