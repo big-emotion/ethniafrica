@@ -43,18 +43,29 @@ export interface ContrastPair {
   inflatedId: string;
   understatedId: CountryId;
   /**
-   * Short forms for the drawing, where the asset's own name would wrap to
-   * three lines at 430px. The full name is what the sentences use, so the
-   * abbreviation never becomes the only name the page gives a country.
+   * Short forms for the legend, where the asset's own name would wrap to
+   * three lines at 430px.
    */
   inflatedLabelFr: string;
   understatedLabelFr: string;
+  /**
+   * The same names carrying their French article, for the sentences.
+   *
+   * Stored rather than derived: "le Groenland" and "la RD Congo" take
+   * different articles, and no rule recovers which from the asset's name.
+   * Lowercase, because the scene's CSS raises the first letter where a
+   * sentence starts — a stored capital would be wrong mid-sentence.
+   */
+  inflatedArticledFr: string;
+  understatedArticledFr: string;
 }
 
 export interface ContrastShape {
   nameFr: string;
-  /** The short form the drawing labels this shape with. */
+  /** The short form the legend labels this shape with. */
   labelFr: string;
+  /** The same name with its article, lowercase, for use in a sentence. */
+  articledFr: string;
   trueAreaKm2: number;
   /** Area as Mercator draws it — the reader's mistaken impression, measured. */
   drawnAreaKm2: number;
@@ -83,6 +94,8 @@ export const MERCATOR_CONTRAST_PAIR: ContrastPair = {
   understatedId: "COD",
   inflatedLabelFr: "Groenland",
   understatedLabelFr: "RD Congo",
+  inflatedArticledFr: "le Groenland",
+  understatedArticledFr: "la RD Congo",
 };
 
 /** The mainland: the ring carrying the most points, islands set aside. */
@@ -95,7 +108,8 @@ function largestRing(rings: Ring[]): Ring {
 function measure(
   rings: Ring[],
   nameFr: string,
-  labelFr: string
+  labelFr: string,
+  articledFr: string
 ): ContrastShape {
   const mainland = largestRing(rings);
   const trueAreaKm2 = rings.reduce((total, ring) => total + ringArea(ring), 0);
@@ -111,6 +125,7 @@ function measure(
   return {
     nameFr,
     labelFr,
+    articledFr,
     trueAreaKm2,
     drawnAreaKm2: trueAreaKm2 * inflation,
     inflation,
@@ -138,11 +153,17 @@ export function buildProjectionContrast(
   if (!inflatedRings?.length || !inflatedName) return null;
   if (!understatedRings?.length || !understatedName) return null;
 
-  const inflated = measure(inflatedRings, inflatedName, pair.inflatedLabelFr);
+  const inflated = measure(
+    inflatedRings,
+    inflatedName,
+    pair.inflatedLabelFr,
+    pair.inflatedArticledFr
+  );
   const understated = measure(
     understatedRings,
     understatedName,
-    pair.understatedLabelFr
+    pair.understatedLabelFr,
+    pair.understatedArticledFr
   );
 
   // The map has to get the order backwards, and the real gap has to clear

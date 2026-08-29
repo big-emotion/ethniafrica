@@ -17,6 +17,8 @@ function pairOf(ids: {
     understatedId: ids.understatedId as CountryId,
     inflatedLabelFr: ids.inflatedId,
     understatedLabelFr: ids.understatedId,
+    inflatedArticledFr: ids.inflatedId,
+    understatedArticledFr: ids.understatedId,
   };
 }
 

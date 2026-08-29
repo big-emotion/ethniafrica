@@ -28,6 +28,14 @@ const percentFormat = new Intl.NumberFormat("fr-FR", {
   maximumFractionDigits: 1,
 });
 
+/**
+ * Raises the first letter and nothing else. Names are stored with a lowercase
+ * article so they stay correct mid-sentence; `text-transform: capitalize`
+ * would also rewrite "RD Congo" as "Rd Congo".
+ */
+const sentenceCase = (text: string): string =>
+  text.charAt(0).toUpperCase() + text.slice(1);
+
 export interface JouerProjectionContrastProps {
   modules: HubModule[];
   /**
@@ -55,11 +63,13 @@ export function JouerProjectionContrast({
             <span className="jouer-contrast-role">
               Ce que la carte vous montre
             </span>
+            {/* "vaste" rather than "grand": it does not inflect for gender,
+                so the sentence stays correct whichever pair is measured. */}
             <span className="jouer-contrast-value">
-              {contrast.inflated.nameFr}, plus grand
+              {`${sentenceCase(contrast.inflated.articledFr)} plus vaste`}
             </span>
             <span className="jouer-contrast-note">
-              que {contrast.understated.nameFr}
+              {`que ${contrast.understated.articledFr}`}
             </span>
           </div>
 
@@ -67,7 +77,11 @@ export function JouerProjectionContrast({
             <svg
               viewBox={silhouettes.viewBox}
               role="img"
-              aria-label={`Silhouettes de ${contrast.inflated.nameFr} et de ${contrast.understated.nameFr} dessinées à la même échelle : ${contrast.understated.nameFr} couvre la plus grande surface.`}
+              /* Phrased to avoid a French contraction ("du" vs "de la"), which
+                 no rule recovers from a country's name, and so that the
+                 articled form never lands at the start of a sentence where it
+                 would need a capital the stored value does not carry. */
+              aria-label={`Deux silhouettes à la même échelle : ${contrast.inflated.nameFr} et ${contrast.understated.nameFr}. C'est ${contrast.understated.articledFr} qui couvre la plus grande surface.`}
             >
               <path
                 className="jouer-contrast-shape jouer-contrast-shape--inflated"
@@ -102,7 +116,13 @@ export function JouerProjectionContrast({
 
           <div className="jouer-contrast-panel">
             <span className="jouer-contrast-role">Ce que mesure la sphère</span>
-            <span className="jouer-contrast-value">Il est plus petit</span>
+            {/* The exact mirror of the panel above, subjects swapped — the
+                reversal said twice in one shape. A pronoun here ("il est plus
+                petit") would point back past the drawing to an antecedent
+                three lines away on a phone. */}
+            <span className="jouer-contrast-value">
+              {`${sentenceCase(contrast.understated.articledFr)} plus vaste`}
+            </span>
             <span className="jouer-contrast-note">
               {/* Narrow no-break space before the sign, as French sets it. */}
               {`de ${percentFormat.format(contrast.trueAdvantagePercent)} %`}
@@ -110,10 +130,13 @@ export function JouerProjectionContrast({
           </div>
 
           <p className="jouer-contrast-lie">
-            Mercator le dessine{" "}
+            {/* Named, not "le": from 800px this line sits under the right-hand
+                panel, so a pronoun would appear to point at the country named
+                there — which is the other one. */}
+            {`Mercator dessine ${contrast.inflated.articledFr} `}
             {/* One string, not `{expr} fois`: JSX strips the whitespace
                 either side of a newline, so the split form renders
-                "11,8fois". */}
+                "14,3fois". */}
             <strong>
               {`${percentFormat.format(contrast.inflated.inflation)} fois`}
             </strong>{" "}
@@ -170,7 +193,6 @@ export function JouerProjectionContrast({
           font-weight: 900;
           color: var(--afh-text);
         }
-
         .jouer-contrast-note {
           font-size: var(--afh-text-caption);
           color: var(--afh-fg-muted);

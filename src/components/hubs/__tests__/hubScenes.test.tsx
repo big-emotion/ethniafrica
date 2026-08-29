@@ -190,9 +190,12 @@ describe("JouerProjectionContrast — the counter-fact scene (REQ-114)", () => {
     expect(screen.getByText("Ce que la carte vous montre")).toBeInTheDocument();
     expect(screen.getByText("Ce que mesure la sphère")).toBeInTheDocument();
 
+    // Both panels name their subject: the reversal is only legible if the
+    // reader can see which country swapped places with which.
     const scene = screen.getByTestId("jouer-projection-contrast");
-    expect(scene).toHaveTextContent("Groenland");
-    expect(scene).toHaveTextContent("République démocratique du Congo");
+    expect(scene).toHaveTextContent("Le Groenland plus vaste");
+    expect(scene).toHaveTextContent("que la RD Congo");
+    expect(scene).toHaveTextContent("La RD Congo plus vaste");
   });
 
   // Every figure is measured off the committed outlines at render time. A

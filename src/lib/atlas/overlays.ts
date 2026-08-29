@@ -136,6 +136,22 @@ export function getWorldCompareNameFr(shapeId: string): string | undefined {
   return WORLD_COMPARE[shapeId]?.nameFr;
 }
 
+/**
+ * Every African ring in the asset, as one flat list.
+ *
+ * For silhouettes rather than for choosing: the committed world path holds
+ * every landmass Natural Earth does *not* assign to Africa, so a map that
+ * wants a whole planet draws that path and this together. Keys are ignored
+ * on purpose — a silhouette has no need of the ISO aliasing that matters
+ * when a fiche asks for one country.
+ */
+// @req REQ-116
+export function getAfricaAdmin0Rings(): Ring[] {
+  return Object.values(AFRICA_ADMIN0).flatMap((country) =>
+    toRings(country.rings)
+  );
+}
+
 // ─── Country: closed outline, stroked as it draws, 22% fill ────────────────
 
 // @req REQ-116
