@@ -60,7 +60,13 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("gives comprendre the modules a reader reaches by question", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual(["noms", "frise", "regards-colonisation", "doctrine"]);
+    expect(ids).toEqual([
+      "anecdotes",
+      "noms",
+      "frise",
+      "regards-colonisation",
+      "doctrine",
+    ]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -163,6 +169,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     );
     expect(staticModules.map((m) => m.id)).toEqual([
       "recherche",
+      "anecdotes",
       "regards-colonisation",
       "doctrine",
     ]);
