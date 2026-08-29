@@ -117,7 +117,8 @@
     "REQ-117",
     "REQ-118",
     "REQ-119",
-    "REQ-120"
+    "REQ-120",
+    "REQ-121"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -234,6 +235,7 @@
     "REQ-116": "Confluence REQ-116",
     "REQ-118": "Confluence REQ-118",
     "REQ-119": "Confluence REQ-119",
-    "REQ-120": "Confluence REQ-120"
+    "REQ-120": "Confluence REQ-120",
+    "REQ-121": "Confluence FR65 (extension) — inversion templates T6-T11 and contested-exonym T12"
   }
 }

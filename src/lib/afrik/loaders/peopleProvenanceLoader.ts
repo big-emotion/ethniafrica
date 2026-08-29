@@ -23,27 +23,29 @@
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
 
-import { logger } from "@/lib/api/logger";
-import { createAdminClient } from "@/lib/supabase/admin";
-import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
-import { isSourceTier } from "@/types/sources";
+import {
+  namedExonym,
+  selectVerbatimFragment,
+  subjectNameTokens,
+} from "@/lib/quiz/proseFragment";
+import {
+  TEMPLATE_FIELD_PATHS,
+  type QuizTemplateId,
+} from "@/lib/quiz/segmentPolicy";
+import {
+  emptyProvenanceReport,
+  writeFicheProvenance,
+  type AdminClient,
+  type AssertionTarget,
+  type ProvenanceReport,
+} from "@/lib/afrik/loaders/provenanceWriter";
 
 const PEOPLES_ROOT = join(process.cwd(), "dataset/source/afrik/peuples");
 
-export type AdminClient = ReturnType<typeof createAdminClient>;
+export type { AdminClient };
 
-export interface PeopleProvenanceReport {
-  total: number;
-  assertionsWritten: number;
-  skippedWithoutSources: number;
-  errors: string[];
-}
-
-/** One claim a fiche makes, bound to the field path the surfaces read it from. */
-export interface PeopleAssertionTarget {
-  fieldPath: string;
-  statement: string;
-}
+export type PeopleProvenanceReport = ProvenanceReport;
+export type PeopleAssertionTarget = AssertionTarget;
 
 interface CountryShare {
   country?: string;
@@ -54,10 +56,24 @@ interface CountryShare {
 
 export interface PeopleFiche {
   id: string;
+  nameMain?: string;
   content?: {
-    appellations?: { selfAppellation?: string };
+    appellations?: {
+      mainName?: string;
+      selfAppellation?: string;
+      exonyms?: string[];
+      whyProblematic?: string | null;
+    };
+    culture?: {
+      majorRites?: string | null;
+      spiritualities?: string | null;
+      symbols?: string | null;
+    };
     demography?: { distributionByCountry?: CountryShare[] };
+    historicalRole?: { kingdomsOrChiefdoms?: string | null };
     languages?: { mainLanguage?: string; isoCodes?: string[] };
+    organization?: { traditionalPoliticalSystem?: string | null };
+    origins?: { migrationRoutes?: string[] | null };
     sources?: unknown;
     [key: string]: unknown;
   };
@@ -88,12 +104,43 @@ function principalCountry(shares: CountryShare[] | undefined): string | null {
 }
 
 /**
- * The claims a fiche actually makes, among the five field paths the quiz and
- * the games read.
+ * The prose rubrics the inversion templates draw a stimulus from, paired with
+ * the template that reads each one.
+ *
+ * The statement written here is the *selected fragment*, not the whole rubric:
+ * an assertion records the claim a question will actually make, and the
+ * question only ever shows the sentences that do not name their own subject.
+ */
+const INVERSION_RUBRICS: ReadonlyArray<{
+  templateId: QuizTemplateId;
+  read: (
+    content: NonNullable<PeopleFiche["content"]>
+  ) => string | string[] | null | undefined;
+}> = [
+  { templateId: "T6", read: (c) => c.culture?.majorRites },
+  { templateId: "T7", read: (c) => c.culture?.spiritualities },
+  { templateId: "T8", read: (c) => c.culture?.symbols },
+  { templateId: "T9", read: (c) => c.historicalRole?.kingdomsOrChiefdoms },
+  {
+    templateId: "T10",
+    read: (c) => c.organization?.traditionalPoliticalSystem,
+  },
+  { templateId: "T11", read: (c) => c.origins?.migrationRoutes },
+];
+
+/**
+ * The claims a fiche actually makes, among the field paths the quiz and the
+ * games read.
  *
  * A field the fiche leaves empty yields no assertion. Writing one anyway would
  * record a claim nobody made and hand `recompute_confidence` a source count
  * the fiche has not earned.
+ *
+ * The paths come from `TEMPLATE_FIELD_PATHS` rather than being spelled again
+ * here. They were duplicated as literals until the inversion templates
+ * arrived, and a path written on this side that no template reads on the other
+ * produces an assertion nothing ever uses — an invisible failure, since the
+ * sweep would simply report `no_assertion` for a path that exists.
  */
 // @req REQ-092
 export function peopleAssertionTargets(
@@ -104,226 +151,79 @@ export function peopleAssertionTargets(
 
   const family = nonEmpty(people.languageFamilyId);
   if (family)
-    targets.push({ fieldPath: "languageFamilyId", statement: family });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T1, statement: family });
 
   const autonym = nonEmpty(content.appellations?.selfAppellation);
   if (autonym) {
-    targets.push({
-      fieldPath: "content.appellations.selfAppellation",
-      statement: autonym,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T2, statement: autonym });
   }
 
   const country = principalCountry(content.demography?.distributionByCountry);
   if (country) {
-    targets.push({
-      fieldPath: "content.demography.distributionByCountry",
-      statement: country,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T3, statement: country });
   }
 
   const language = nonEmpty(content.languages?.mainLanguage);
   if (language) {
-    targets.push({
-      fieldPath: "content.languages.mainLanguage",
-      statement: language,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T4, statement: language });
   }
 
   const isoCode = nonEmpty(content.languages?.isoCodes?.[0]);
   if (isoCode) {
-    targets.push({
-      fieldPath: "content.languages.isoCodes",
-      statement: isoCode,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T5, statement: isoCode });
+  }
+
+  const exonyms = content.appellations?.exonyms ?? [];
+  const tokens = subjectNameTokens({
+    subjectName: {
+      autonym: content.appellations?.mainName ?? people.nameMain ?? "",
+    },
+    selfAppellation: content.appellations?.selfAppellation ?? "",
+    exonyms,
+  });
+
+  for (const rubric of INVERSION_RUBRICS) {
+    const fragment = selectVerbatimFragment(rubric.read(content), tokens);
+    if (fragment) {
+      targets.push({
+        fieldPath: TEMPLATE_FIELD_PATHS[rubric.templateId],
+        statement: fragment,
+      });
+    }
+  }
+
+  const contested = namedExonym(content.appellations?.whyProblematic, exonyms);
+  if (contested) {
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T12, statement: contested });
   }
 
   return targets;
 }
 
-function errorMessage(error: unknown): string {
-  if (error && typeof error === "object" && "message" in error) {
-    return String((error as { message?: unknown }).message);
-  }
-  return "unknown error";
-}
-
 /**
- * `sources.tier` accepts the three tiers or NULL. `needs_review` is not a tier
- * and must not be stored as one: folding it onto `unverified` would state a
- * judgement nobody has made, so it goes in with no tier at all.
+ * Writes one people's provenance through the shared Module 0 writer.
+ *
+ * Everything below the claims — sources, revision, assertions, the confidence
+ * reseed and the idempotence rules that make a re-run safe — lives in
+ * `provenanceWriter` and is shared with countries. What stays here is the only
+ * part that is about peoples: which claims a people fiche makes.
  */
-async function upsertFicheSource(
-  supabase: AdminClient,
-  source: {
-    label: string;
-    url: string | null;
-    standing: string;
-    notes?: string;
-  }
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("sources")
-    .upsert(
-      {
-        title: source.label,
-        url: source.url,
-        tier: isSourceTier(source.standing) ? source.standing : null,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
-      { onConflict: "title" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-/**
- * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK, so every
- * assertion has to point at a published snapshot. The unique key
- * (entity_type, entity_id, version) keeps this idempotent across re-runs.
- */
-async function findOrCreateFicheRevision(
-  supabase: AdminClient,
-  people: PeopleFiche
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("fiche_revisions")
-    .upsert(
-      {
-        entity_type: "people",
-        entity_id: people.id,
-        version: 1,
-        content_snapshot: people,
-      },
-      { onConflict: "entity_type,entity_id,version" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-/**
- * `assertions` carries no unique constraint on (entity_type, entity_id,
- * field_path), so re-runs are made idempotent here by reading before writing —
- * the same compromise the relation loader makes.
- */
-async function findOrCreateAssertion(
-  supabase: AdminClient,
-  peopleId: string,
-  target: PeopleAssertionTarget,
-  sourceIds: string[],
-  ficheRevisionId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("assertions")
-    .select("id")
-    .eq("entity_type", "people")
-    .eq("entity_id", peopleId)
-    .eq("field_path", target.fieldPath)
-    .maybeSingle();
-
-  if (selectError) return { error: errorMessage(selectError) };
-
-  if (existing) {
-    const { error: updateError } = await supabase
-      .from("assertions")
-      .update({ statement: target.statement, source_ids: sourceIds })
-      .eq("id", existing.id);
-    if (updateError) return { error: errorMessage(updateError) };
-    return { id: existing.id as string };
-  }
-
-  const { data: inserted, error: insertError } = await supabase
-    .from("assertions")
-    .insert({
-      entity_type: "people",
-      entity_id: peopleId,
-      field_path: target.fieldPath,
-      statement: target.statement,
-      source_ids: sourceIds,
-      fiche_revision_id: ficheRevisionId,
-    })
-    .select("id")
-    .single();
-
-  if (insertError || !inserted) return { error: errorMessage(insertError) };
-  return { id: inserted.id as string };
-}
-
 async function writePeopleProvenance(
   supabase: AdminClient,
   people: PeopleFiche,
   report: PeopleProvenanceReport
 ): Promise<void> {
-  report.total += 1;
-
-  const ficheSources = ficheSourceEntries(
-    people.content?.sources as Parameters<typeof ficheSourceEntries>[0]
-  );
-  if (ficheSources.length === 0) {
-    // A fiche citing nothing gets no assertion. An assertion with an empty
-    // source list would raise this people's confidence on the strength of
-    // having claimed something, which is the opposite of what the score means.
-    report.skippedWithoutSources += 1;
-    return;
-  }
-
-  const sourceIds: string[] = [];
-  for (const source of ficheSources) {
-    const result = await upsertFicheSource(supabase, source);
-    if ("error" in result) {
-      report.errors.push(
-        `${people.id}: source "${source.label}" — ${result.error}`
-      );
-      return;
-    }
-    sourceIds.push(result.id);
-  }
-
-  const revision = await findOrCreateFicheRevision(supabase, people);
-  if ("error" in revision) {
-    report.errors.push(`${people.id}: fiche revision — ${revision.error}`);
-    return;
-  }
-
-  for (const target of peopleAssertionTargets(people)) {
-    const assertion = await findOrCreateAssertion(
-      supabase,
-      people.id,
-      target,
-      sourceIds,
-      revision.id
-    );
-    if ("error" in assertion) {
-      report.errors.push(
-        `${people.id}: assertion ${target.fieldPath} — ${assertion.error}`
-      );
-      continue;
-    }
-    report.assertionsWritten += 1;
-  }
-
-  // No per-INSERT trigger exists; the loader seeds confidence_scores itself,
-  // exactly as the relation loader does. A failure is logged rather than
-  // rolled back, so a human can re-run the recompute job.
-  const { error: confidenceError } = await supabase.rpc(
-    "recompute_confidence",
+  await writeFicheProvenance(
+    supabase,
     {
-      p_entity_type: "people",
-      p_entity_id: people.id,
-    }
+      entityType: "people",
+      entityId: people.id,
+      snapshot: people,
+      rawSources: people.content?.sources,
+      targets: peopleAssertionTargets(people),
+    },
+    report
   );
-  if (confidenceError) {
-    logger.warn(`recompute_confidence failed for ${people.id}`, {
-      reason: errorMessage(confidenceError),
-    });
-  }
 }
 
 /** Every `dataset/source/afrik/peuples/<FLG_*>/PPL_*.json` fiche, in corpus order. */
@@ -358,12 +258,7 @@ export async function loadPeopleProvenance(
   supabase: AdminClient,
   peoples: PeopleFiche[] = loadAllPeopleFiles()
 ): Promise<PeopleProvenanceReport> {
-  const report: PeopleProvenanceReport = {
-    total: 0,
-    assertionsWritten: 0,
-    skippedWithoutSources: 0,
-    errors: [],
-  };
+  const report = emptyProvenanceReport();
 
   for (const people of peoples) {
     await writePeopleProvenance(supabase, people, report);

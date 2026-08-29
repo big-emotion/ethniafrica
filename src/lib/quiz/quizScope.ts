@@ -25,6 +25,8 @@
  * `country` and `family` narrow to one entity; `mixed` and `random` span the
  * corpus and differ only in whether the ladder is applied.
  */
+import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
+
 export type QuizScopeKind = "country" | "family" | "mixed" | "random";
 
 export interface QuizScope {
@@ -132,23 +134,44 @@ export function bandSubjectsByPopulation(
 export interface QuizLadderCandidate {
   id: string;
   entityId: string;
+  /** Absent on a caller that does not classify its candidates; the quota then does nothing. */
+  theme?: QuizThemeId | null;
 }
 
 /**
- * Fills the eight slots of `SESSION_BAND_PLAN` from `candidates`, preferring a
- * subject the session has not used yet.
+ * How many rounds of one theme a session may hold before the spread rule
+ * starts preferring another.
  *
- * Three fallbacks, in order, because a narrow scope cannot always pay: the
- * wanted band with an unused subject, then the wanted band whatever the
- * subject, then anything left. A session of eight over Djibouti's three peoples
- * repeats subjects — that is what the corpus holds, and returning five
- * questions instead would be a worse answer than an honest repetition.
+ * Two, not one. One would make an eight-round session demand eight themes and
+ * fail that on every country track; two spreads a full session over at least
+ * four, which is the difference a reader actually notices. It is a preference
+ * and not a wall — see the fallbacks in `composeLadder`.
+ */
+// @req REQ-121
+export const MAX_ROUNDS_PER_THEME = 2;
+
+/**
+ * Fills the eight slots of `SESSION_BAND_PLAN` from `candidates`, preferring a
+ * subject the session has not used yet and a theme it has not filled up.
+ *
+ * Four fallbacks, in order, because a narrow scope cannot always pay: the
+ * wanted band with an unused subject and an unfilled theme, then the wanted
+ * band with an unfilled theme, then the wanted band with an unused subject,
+ * then the wanted band whatever it holds, then anything left. A session of
+ * eight over Djibouti's three peoples repeats subjects — that is what the
+ * corpus holds, and returning five questions instead would be a worse answer
+ * than an honest repetition. The same applies to a track holding one theme.
+ *
+ * **The band outranks the theme, always.** Promoting a candidate out of its
+ * band to satisfy the quota would cost the ascending difficulty that makes a
+ * session a track rather than a pile — and the reader notices a session that
+ * opens on an obscurity long before they notice two rounds sharing a theme.
  *
  * Deterministic given the input order, so the caller decides how random a
  * session is by how it shuffles beforehand. That is the whole difference
  * between the `mixed` and `random` scopes.
  */
-// @req REQ-103
+// @req REQ-103 REQ-121
 export function composeLadder<T extends QuizLadderCandidate>(
   candidates: T[],
   bandOf: ReadonlyMap<string, QuizDifficultyBand>,
@@ -156,11 +179,23 @@ export function composeLadder<T extends QuizLadderCandidate>(
 ): T[] {
   const remaining = [...candidates];
   const usedSubjects = new Set<string>();
+  const roundsPerTheme = new Map<QuizThemeId, number>();
   const session: T[] = [];
+
+  const themeHasRoom = (candidate: T): boolean => {
+    if (!candidate.theme) return true;
+    return (roundsPerTheme.get(candidate.theme) ?? 0) < MAX_ROUNDS_PER_THEME;
+  };
 
   const take = (index: number): T => {
     const [picked] = remaining.splice(index, 1);
     usedSubjects.add(picked.entityId);
+    if (picked.theme) {
+      roundsPerTheme.set(
+        picked.theme,
+        (roundsPerTheme.get(picked.theme) ?? 0) + 1
+      );
+    }
     session.push(picked);
     return picked;
   };
@@ -168,20 +203,26 @@ export function composeLadder<T extends QuizLadderCandidate>(
   for (const band of plan) {
     if (remaining.length === 0) break;
 
-    const fresh = remaining.findIndex(
-      (candidate) =>
-        bandOf.get(candidate.entityId) === band &&
-        !usedSubjects.has(candidate.entityId)
-    );
-    if (fresh !== -1) {
-      take(fresh);
-      continue;
-    }
+    const inBand = (candidate: T) => bandOf.get(candidate.entityId) === band;
+    const fresh = (candidate: T) => !usedSubjects.has(candidate.entityId);
+    const preferences: Array<(candidate: T) => boolean> = [
+      (c) => inBand(c) && fresh(c) && themeHasRoom(c),
+      (c) => inBand(c) && themeHasRoom(c),
+      (c) => inBand(c) && fresh(c),
+      inBand,
+      // Out of band now: the wanted rung is empty, which is the common case on
+      // a track whose subjects all land in one decile. Freshness and the theme
+      // quota still apply here — taking whatever sits first is what let a
+      // single theme fill both ends of a session while the middle was spread.
+      (c) => fresh(c) && themeHasRoom(c),
+      themeHasRoom,
+    ];
 
-    const sameBand = remaining.findIndex(
-      (candidate) => bandOf.get(candidate.entityId) === band
-    );
-    take(sameBand !== -1 ? sameBand : 0);
+    const found = preferences
+      .map((matches) => remaining.findIndex(matches))
+      .find((index) => index !== -1);
+
+    take(found ?? 0);
   }
 
   return session;

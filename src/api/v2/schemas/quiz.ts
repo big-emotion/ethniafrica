@@ -15,6 +15,8 @@
  */
 
 import { z } from "zod";
+
+import { isQuizThemeId } from "@/lib/quiz/segmentPolicy";
 import type { QuizScopeKind } from "@/lib/quiz/quizScope";
 
 /** ISO 3166-1 alpha-3, as `afrik_countries.id` stores it. */
@@ -68,6 +70,15 @@ export const quizSessionQuerySchema = z.object({
       value === undefined || value === "mixte" || value === "aleatoire",
     { message: "mode must be mixte or aleatoire" }
   ),
+  /**
+   * A domain of content, composed with the track rather than replacing it —
+   * `?pays=ZAF&theme=croyances` is the whole point of the facet, so this is not
+   * a fifth `QuizScopeKind`.
+   */
+  theme: blankAsUndefined.refine(
+    (value) => value === undefined || isQuizThemeId(value),
+    { message: "theme must be one of the quiz content themes" }
+  ),
   count: z.coerce
     .number({ message: COUNT_RANGE_MESSAGE })
     .int()
@@ -87,12 +98,23 @@ export const quizScopeOptionSchema = z.object({
   playable: z.boolean(),
 });
 
+// @req REQ-103
+export const quizThemeOptionSchema = z.object({
+  id: z.string(),
+  labelFr: z.string(),
+  activeQuestionCount: z.number().int().min(0),
+  playable: z.boolean(),
+});
+
+export type QuizThemeOptionView = z.infer<typeof quizThemeOptionSchema>;
+
 export type QuizScopeOptionView = z.infer<typeof quizScopeOptionSchema>;
 
 // @req REQ-103
 export const quizScopesDataSchema = z.object({
   countries: z.array(quizScopeOptionSchema),
   families: z.array(quizScopeOptionSchema),
+  themes: z.array(quizThemeOptionSchema),
   mixed: quizScopeOptionSchema,
   random: quizScopeOptionSchema,
 });
@@ -120,7 +142,7 @@ export type QuizSourceRefView = z.infer<typeof quizSourceRefSchema>;
 
 // @req REQ-103
 export const quizEntityLinkSchema = z.object({
-  type: z.literal("people"),
+  type: z.enum(["people", "country"]),
   id: z.string(),
   slug: z.string(),
   autonym: z.string().nullable(),
@@ -140,8 +162,33 @@ export type QuizOptionValue = z.infer<typeof quizOptionValueSchema>;
 // @req REQ-103
 export const quizSessionQuestionSchema = z.object({
   id: z.string(),
-  templateId: z.enum(["T1", "T2", "T3", "T4", "T5"]),
+  templateId: z.enum([
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+  ]),
   promptFr: z.string(),
+  /**
+   * Verbatim corpus text the round is set up with, on the templates whose
+   * answer is the subject. Null everywhere else, so the card renders nothing
+   * rather than an empty block.
+   */
+  stimulusFr: z.string().nullable(),
   optionsFr: z.array(quizOptionValueSchema),
   correctOption: z.number().int().min(0).max(3),
   explanationFr: z.string(),

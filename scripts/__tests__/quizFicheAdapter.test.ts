@@ -91,8 +91,13 @@ describe("normalizeFieldPath", () => {
   });
 
   // @req REQ-103
-  it("returns null for a field path outside T1-T5", () => {
-    expect(normalizeFieldPath("content.culture.symbols")).toBeNull();
+  it("returns null for a field path no template reads", () => {
+    // A real corpus field with no template behind it. `content.culture.symbols`
+    // used to stand here and became T8 — an example is only safe while it stays
+    // unread.
+    expect(
+      normalizeFieldPath("content.organization.ageClassSystems")
+    ).toBeNull();
   });
 });
 
@@ -139,7 +144,54 @@ describe("mapPeopleRowToFiche", () => {
       mainLanguage: { autonym: "Yoruba" },
       isoCode: "yor",
       totalPopulation: null,
+      exonyms: ["Yoruba people"],
+      whyProblematic: null,
+      rubrics: {
+        T6: null,
+        T7: null,
+        T8: null,
+        T9: null,
+        T10: null,
+        T11: null,
+      },
     });
+  });
+
+  /**
+   * The prose rubrics sit outside the all-or-nothing guard above on purpose. A
+   * fiche with no rites answers eleven templates instead of twelve; requiring
+   * them would drop it from the eleven it already answers.
+   */
+  // @req REQ-121
+  it("maps a fiche with no prose rubrics rather than rejecting it", () => {
+    const fiche = mapPeopleRowToFiche(
+      completeRow,
+      familyNameById,
+      countryNameById
+    );
+
+    expect(fiche).not.toBeNull();
+    expect(fiche?.rubrics.T6).toBeNull();
+    expect(fiche?.selfAppellation).toBe("Ọmọ Yorùbá");
+  });
+
+  // @req REQ-121
+  it("carries the prose rubrics an inversion round quotes", () => {
+    const fiche = mapPeopleRowToFiche(
+      {
+        ...completeRow,
+        content: {
+          ...completeRow.content,
+          culture: { majorRites: "Ceremonie annuelle des recoltes." },
+          origins: { migrationRoutes: ["Descente vers le golfe de Guinee"] },
+        },
+      },
+      familyNameById,
+      countryNameById
+    );
+
+    expect(fiche?.rubrics.T6).toBe("Ceremonie annuelle des recoltes.");
+    expect(fiche?.rubrics.T11).toEqual(["Descente vers le golfe de Guinee"]);
   });
 
   // @req REQ-103
@@ -374,12 +426,12 @@ describe("buildAssertionBindings", () => {
   });
 
   // @req REQ-103
-  it("skips assertions whose field path backs no T1-T5 template", () => {
+  it("skips assertions whose field path backs no template", () => {
     const assertions: AssertionRow[] = [
       {
         id: "AST_UNRELATED",
         entity_id: "PPL_YORUBA",
-        field_path: "content.culture.symbols",
+        field_path: "content.organization.ageClassSystems",
         source_ids: [],
       },
     ];

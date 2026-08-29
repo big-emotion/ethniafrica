@@ -34,6 +34,9 @@ function OptionText({ option }: { option: QuizOptionValue }) {
   );
 }
 
+/** One card is on screen at a time, so a constant id is enough to bind them. */
+const STIMULUS_ID = "quiz-stimulus";
+
 /**
  * Answering-state radiogroup (fieldset/legend, roving tabindex via the
  * existing Radix-backed `RadioGroup`) plus the « valider » submit — Enter
@@ -56,7 +59,28 @@ export const QuizQuestionCard = ({
         if (selectedOption !== null) onValidate();
       }}
     >
-      <fieldset>
+      {/*
+        The stimulus, on the rounds whose answer is the subject.
+
+        Outside the <legend>, which stays the question: a legend names its
+        group, and a 400-character paragraph set in bold display type is not a
+        name. Tied to the fieldset by `aria-describedby` instead, so a screen
+        reader hears the passage as context for the group rather than as a
+        stray paragraph before it. Rendered as a <blockquote> because it is
+        corpus text quoted verbatim, never paraphrased (games charter §7).
+      */}
+      {question.stimulusFr ? (
+        <blockquote
+          id={STIMULUS_ID}
+          data-testid="quiz-stimulus"
+          className="border-l-2 border-afh-border pl-4 text-afh-body italic text-afh-text-soft"
+        >
+          {question.stimulusFr}
+        </blockquote>
+      ) : null}
+      <fieldset
+        aria-describedby={question.stimulusFr ? STIMULUS_ID : undefined}
+      >
         <legend className="mb-3 font-afh-display text-afh-h3 font-bold text-afh-text">
           {question.promptFr}
         </legend>

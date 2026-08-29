@@ -12,8 +12,17 @@ const t = translations.fr.quiz;
 const QUIZ_PATH = getLocalizedRoute("fr", "quiz");
 
 interface QuizPageProps {
-  /** `?pays=GHA` · `?famille=FLG_…` · `?mode=aleatoire` — the track being played. */
-  searchParams: Promise<{ pays?: string; famille?: string; mode?: string }>;
+  /**
+   * `?pays=GHA` · `?famille=FLG_…` · `?mode=aleatoire` — the track being
+   * played — and `?theme=croyances`, which narrows any of them by domain of
+   * content rather than replacing them.
+   */
+  searchParams: Promise<{
+    pays?: string;
+    famille?: string;
+    mode?: string;
+    theme?: string;
+  }>;
 }
 
 // @req REQ-103 FR66
@@ -41,7 +50,12 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
   // Only an explicit track opens a session. Landing on the bare page means the
   // reader has not chosen yet, so `mixed` — the default a scope parses to —
   // must not launch on its own; it is a card in the picker like any other.
-  const chose = Boolean(query.pays || query.famille || query.mode);
+  // A theme on its own is a choice too: « les croyances », over the whole
+  // corpus, is a track. Leaving it out here dropped a themed URL back onto the
+  // picker with the reader's choice silently discarded.
+  const chose = Boolean(
+    query.pays || query.famille || query.mode || query.theme
+  );
   const scope = chose ? await describeScope(asked) : null;
 
   if (scope) {
@@ -49,6 +63,7 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
       <PageLayout language="fr" title={t.pageTitle} subtitle={scope.labelFr}>
         <QuizPlayHost
           scope={asked}
+          theme={query.theme ?? null}
           scopeLabelFr={scope.labelFr}
           exitHref={QUIZ_PATH}
         />

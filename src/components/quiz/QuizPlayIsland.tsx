@@ -33,6 +33,8 @@ const LazyAfricaTraceLoader = dynamic(
 
 interface QuizPlayIslandProps {
   scope: QuizScope;
+  /** The content theme narrowing the track, or null for all of them. */
+  theme?: string | null;
   scopeLabelFr: string;
   /** Where leaving the session lands — the picker, with no track selected. */
   exitHref: string;
@@ -47,11 +49,12 @@ interface QuizPlayIslandProps {
 // @req REQ-103 FR67 FR71
 export const QuizPlayIsland = ({
   scope,
+  theme = null,
   scopeLabelFr,
   exitHref,
   className,
 }: QuizPlayIslandProps) => {
-  const session = useQuizSession({ scope });
+  const session = useQuizSession({ scope, theme });
 
   if (session.status === "loading") {
     // The session is fetched client-side, so this wait is the island's own —

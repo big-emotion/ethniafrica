@@ -11,19 +11,29 @@
 
 import type {
   AutonymExonymName,
+  QuizCountryFixture,
+  QuizEntityType,
   QuizOptionValue,
   QuizPeopleFixture,
   QuizQuestionCandidate,
+  QuizSubjectFixture,
   QuizTemplateId,
 } from "@/types/quiz";
+import {
+  namedExonym,
+  selectVerbatimFragment,
+  subjectNameTokens,
+} from "@/lib/quiz/proseFragment";
 import {
   isQuizEligible,
   type QuizEligibilityInput,
   type QuizEligibilityRejectionReason,
 } from "@/lib/quiz/eligibility";
 import {
+  isInversionTemplate,
   QUIZ_TEMPLATE_IDS,
   TEMPLATE_FIELD_PATHS,
+  templatesFor,
 } from "@/lib/quiz/segmentPolicy";
 import {
   isSameOptionValue,
@@ -31,12 +41,27 @@ import {
   questionTemplateBuilders,
 } from "@/lib/quiz/questionTemplates";
 
+/** A country fiche plus the assertions backing what its templates would claim. */
+export interface CountryFicheEntry {
+  fiche: QuizCountryFixture;
+  assertionsByFieldPath: Record<string, AssertionBinding>;
+}
+
 export interface QuizCandidatePools {
   familyNames: string[];
   autonyms: string[];
   countryNames: string[];
   languages: AutonymExonymName[];
   isoCodes: string[];
+  /**
+   * Every people's own name — the option space of the inversion templates,
+   * whose answer is the subject rather than one of its field values.
+   */
+  peopleNames: AutonymExonymName[];
+  /** The option space of the country inversions — every country's own name. */
+  countryOwnNames: AutonymExonymName[];
+  /** `content.kingdoms[].name` across the corpus, the atomic answers T16 draws on. */
+  kingdomNames: string[];
 }
 
 /** Binds a template's target field path to the assertion backing it and the FR65 gate input for that assertion. */
@@ -62,10 +87,12 @@ export interface QuizQuestionRecord {
    * (games charter §4, `src/lib/quiz/quizScope.ts`).
    */
   difficulty: number;
-  entityType: "people";
+  entityType: QuizEntityType;
   entityId: string;
   fieldPath: string;
   promptFr: string;
+  /** The verbatim rubric fragment an inversion round sets its question up with. */
+  stimulusFr: string | null;
   optionsFr: QuizOptionValue[];
   correctOption: number;
   explanationFr: string;
@@ -98,6 +125,8 @@ export interface ActiveQuestionRow {
   fieldPath: string;
   correctOption: number;
   optionsFr: QuizOptionValue[];
+  /** Null on every template that shows no stimulus; the quoted fragment otherwise. */
+  stimulusFr: string | null;
 }
 
 export interface AuditableQuestion extends ActiveQuestionRow {
@@ -111,6 +140,12 @@ export interface RevocationDecision {
 
 export interface SweepInput {
   entries: FicheEntry[];
+  /**
+   * The country corpus. Optional so a caller that only has peoples — every
+   * test written before countries had templates — keeps compiling and keeps
+   * meaning the same thing.
+   */
+  countryEntries?: CountryFicheEntry[];
   pools: QuizCandidatePools;
   activeQuestions: ActiveQuestionRow[];
   /**
@@ -150,40 +185,125 @@ export interface AuditInput {
 /** The "current fiche value" for a template's answer field — used by the QZ-2 staleness check. */
 export function resolveCurrentAnswer(
   templateId: QuizTemplateId,
-  fiche: QuizPeopleFixture
+  fiche: QuizSubjectFixture
 ): QuizOptionValue | null {
+  // `TEMPLATE_ENTITY_TYPES` already says which kind of fiche each template is
+  // asked about, and the sweep only ever pairs the two correctly. TypeScript
+  // cannot see that invariant through a template id, so each arm names the kind
+  // its own template guarantees rather than the union widening every field.
+  const people = fiche as QuizPeopleFixture;
+  const country = fiche as QuizCountryFixture;
+
   switch (templateId) {
     case "T1":
-      return fiche.languageFamilyNameFr;
+      return people.languageFamilyNameFr;
     case "T2":
-      return fiche.selfAppellation;
+      return people.selfAppellation;
     case "T3": {
-      if (fiche.distributionByCountry.length === 0) return null;
-      return mainCountryOf(fiche).countryNameFr;
+      if (people.distributionByCountry.length === 0) return null;
+      return mainCountryOf(people).countryNameFr;
     }
     case "T4":
-      return fiche.mainLanguage;
+      return people.mainLanguage;
     case "T5":
-      return fiche.isoCode;
+      return people.isoCode;
+    // The inversion templates answer with the subject itself, so the stored
+    // answer is the fiche's own name and cannot go stale the way a field value
+    // can. What *can* go stale is the stimulus, and `decideRevocation` checks
+    // that separately — QZ-2 alone would call a question healthy while it
+    // quotes a paragraph the fiche no longer contains.
+    case "T6":
+    case "T7":
+    case "T8":
+    case "T9":
+    case "T10":
+    case "T11":
+      return fiche.subjectName;
+    case "T12":
+      return namedExonym(people.whyProblematic, people.exonyms);
+    // Country inversions, same reasoning as the people ones: the answer is the
+    // subject, so it is the fiche's own name.
+    case "T13":
+    case "T14":
+    case "T15":
+    case "T17":
+    case "T18":
+      return fiche.subjectName;
+    case "T16":
+      return country.kingdomNames[0] ?? null;
   }
+}
+
+/**
+ * The stimulus an inversion template would show for this fiche today, or null
+ * for the templates that show none.
+ *
+ * Read by the staleness check: a rewritten rubric leaves the answer untouched
+ * — the people is still the people — so the only way to notice the question
+ * now quotes text the corpus has dropped is to recompute the fragment.
+ */
+// @req REQ-121
+export function resolveCurrentStimulus(
+  templateId: QuizTemplateId,
+  fiche: QuizSubjectFixture
+): string | null {
+  if (!isInversionTemplate(templateId)) return null;
+  return selectVerbatimFragment(
+    fiche.rubrics[templateId],
+    subjectNameTokens(fiche)
+  );
 }
 
 function buildCandidate(
   templateId: QuizTemplateId,
-  fiche: QuizPeopleFixture,
+  fiche: QuizSubjectFixture,
   pools: QuizCandidatePools
 ): QuizQuestionCandidate | null {
+  // Same invariant as `resolveCurrentAnswer`: the template id decides which
+  // kind of fiche this is, and the sweep only ever pairs the two correctly.
+  const people = fiche as QuizPeopleFixture;
+  const country = fiche as QuizCountryFixture;
+
   switch (templateId) {
     case "T1":
-      return questionTemplateBuilders.T1(fiche, pools.familyNames);
+      return questionTemplateBuilders.T1(people, pools.familyNames);
     case "T2":
-      return questionTemplateBuilders.T2(fiche, pools.autonyms);
+      return questionTemplateBuilders.T2(people, pools.autonyms);
     case "T3":
-      return questionTemplateBuilders.T3(fiche, pools.countryNames);
+      return questionTemplateBuilders.T3(people, pools.countryNames);
     case "T4":
-      return questionTemplateBuilders.T4(fiche, pools.languages);
+      return questionTemplateBuilders.T4(people, pools.languages);
     case "T5":
-      return questionTemplateBuilders.T5(fiche, pools.isoCodes);
+      return questionTemplateBuilders.T5(people, pools.isoCodes);
+    case "T6":
+      return questionTemplateBuilders.T6(people, pools.peopleNames);
+    case "T7":
+      return questionTemplateBuilders.T7(people, pools.peopleNames);
+    case "T8":
+      return questionTemplateBuilders.T8(people, pools.peopleNames);
+    case "T9":
+      return questionTemplateBuilders.T9(people, pools.peopleNames);
+    case "T10":
+      return questionTemplateBuilders.T10(people, pools.peopleNames);
+    case "T11":
+      return questionTemplateBuilders.T11(people, pools.peopleNames);
+    // Its options are the subject's own exonyms, so it needs no corpus pool.
+    case "T12":
+      return questionTemplateBuilders.T12(people);
+    // Below: the country templates. Same invariant as `resolveCurrentAnswer` —
+    // the template id is the discriminator the type system cannot read.
+    case "T13":
+      return questionTemplateBuilders.T13(fiche, pools.countryOwnNames);
+    case "T14":
+      return questionTemplateBuilders.T14(fiche, pools.countryOwnNames);
+    case "T15":
+      return questionTemplateBuilders.T15(fiche, pools.countryOwnNames);
+    case "T16":
+      return questionTemplateBuilders.T16(country, pools.kingdomNames);
+    case "T17":
+      return questionTemplateBuilders.T17(fiche, pools.countryOwnNames);
+    case "T18":
+      return questionTemplateBuilders.T18(fiche, pools.countryOwnNames);
   }
 }
 
@@ -321,12 +441,24 @@ export function orderPoolsBySubjectProximity(
       (fiche) => fiche.mainLanguage.autonym
     ),
     isoCodes: byCarrier(pools.isoCodes, (fiche) => fiche.isoCode),
+    // A people's own name carries its nearness directly: the value *is* the
+    // carrier, so the same ranking that makes a family plausible makes a
+    // neighbouring people plausible.
+    peopleNames: byCarrier(
+      pools.peopleNames,
+      (fiche) => fiche.subjectName.autonym
+    ),
+    // Passed through unchanged: nearness here is shared family and shared
+    // territory, and no country has either of another country. Ordering these
+    // would need a different rule wearing the same name.
+    countryOwnNames: pools.countryOwnNames,
+    kingdomNames: pools.kingdomNames,
   };
 }
 
 /** Evaluates a single (fiche, template) pair against FR65 and the distractor pool. */
 export function evaluateCandidate(
-  fiche: QuizPeopleFixture,
+  fiche: QuizSubjectFixture,
   templateId: QuizTemplateId,
   assertion: AssertionBinding | undefined,
   pools: QuizCandidatePools
@@ -360,6 +492,7 @@ export function evaluateCandidate(
       entityId: candidate.entityId,
       fieldPath: candidate.fieldPath,
       promptFr: candidate.promptFr,
+      stimulusFr: candidate.stimulusFr,
       optionsFr: candidate.optionsFr,
       correctOption: candidate.correctOption,
       explanationFr: candidate.explanationFr,
@@ -373,7 +506,7 @@ export function evaluateCandidate(
 /** Decides whether an active question must be revoked: gate failure (incl. missing entity) or QZ-2 staleness. */
 export function decideRevocation(
   question: ActiveQuestionRow,
-  entry: FicheEntry | undefined
+  entry: FicheEntry | CountryFicheEntry | undefined
 ): RevocationDecision | null {
   if (!entry) {
     return { id: question.id, reason: "gate_failed:entity_missing" };
@@ -394,6 +527,21 @@ export function decideRevocation(
   if (!isSameOptionValue(storedAnswer, currentAnswer)) {
     return { id: question.id, reason: "stale_answer" };
   }
+  // An inversion round answers with its own subject, so the answer check above
+  // can never fail for one — it compares a people to itself. Editing the rubric
+  // it quotes would otherwise leave it serving text the corpus has dropped,
+  // which is the failure a reveal is least able to survive: the fragment is
+  // shown to the reader as what the corpus says.
+  const currentStimulus = resolveCurrentStimulus(
+    question.templateId,
+    entry.fiche
+  );
+  if (isInversionTemplate(question.templateId) && currentStimulus === null) {
+    return { id: question.id, reason: "stimulus_unavailable" };
+  }
+  if (currentStimulus !== null && currentStimulus !== question.stimulusFr) {
+    return { id: question.id, reason: "stale_stimulus" };
+  }
   return null;
 }
 
@@ -404,9 +552,20 @@ export function decideRevocation(
  * an unchanged corpus and bank yields an empty plan.
  */
 export function computeSweepPlan(input: SweepInput): SweepPlan {
-  const entryById = new Map(
-    input.entries.map((entry) => [entry.fiche.id, entry])
-  );
+  const countryEntries = input.countryEntries ?? [];
+  // One map over both corpora. A people id is `PPL_*` and a country id is an
+  // ISO 3166-1 alpha-3, so they cannot collide, and revocation needs to find a
+  // question's subject without first knowing which kind it is.
+  const entryById = new Map<string, FicheEntry | CountryFicheEntry>([
+    ...input.entries.map(
+      (entry) =>
+        [entry.fiche.id, entry] as [string, FicheEntry | CountryFicheEntry]
+    ),
+    ...countryEntries.map(
+      (entry) =>
+        [entry.fiche.id, entry] as [string, FicheEntry | CountryFicheEntry]
+    ),
+  ]);
 
   const toRevoke: RevocationDecision[] = [];
   const revokedIds = new Set<string>();
@@ -442,33 +601,58 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
   const corpus = input.entries.map((entry) => entry.fiche);
   const toInsert: QuizQuestionRecord[] = [];
   let rejectedCount = 0;
-  for (const entry of input.entries) {
-    // Ordered once per fiche, not per template: nearness is a property of the
-    // subject, and all five templates ask about the same one.
-    const nearestFirst = orderPoolsBySubjectProximity(
-      entry.fiche,
-      corpus,
-      input.pools
-    );
-    for (const templateId of QUIZ_TEMPLATE_IDS) {
-      const key = `${entry.fiche.id}:${templateId}`;
-      if (activeKeys.has(key)) continue;
 
-      const fieldPath = TEMPLATE_FIELD_PATHS[templateId];
-      const assertion = entry.assertionsByFieldPath[fieldPath];
-      const evaluation = evaluateCandidate(
-        entry.fiche,
-        templateId,
-        assertion,
-        nearestFirst
-      );
-      if (evaluation.outcome === "generated") {
-        toInsert.push(evaluation.record);
-      } else {
-        rejectedCount += 1;
+  /**
+   * Runs one corpus against the templates that belong to it.
+   *
+   * Split by entity type rather than trying every template on every fiche: a
+   * people has no `etymology` and a country has no autonym, so the shared loop
+   * would reject two thirds of its candidates on a rubric that was never meant
+   * to be there — a rejection count that means nothing and hides the ones that
+   * do.
+   */
+  const sweep = (
+    entries: Array<FicheEntry | CountryFicheEntry>,
+    templateIds: readonly QuizTemplateId[],
+    orderPools: (fiche: QuizSubjectFixture) => QuizCandidatePools
+  ) => {
+    for (const entry of entries) {
+      const nearestFirst = orderPools(entry.fiche);
+      for (const templateId of templateIds) {
+        const key = `${entry.fiche.id}:${templateId}`;
+        if (activeKeys.has(key)) continue;
+
+        const fieldPath = TEMPLATE_FIELD_PATHS[templateId];
+        const assertion = entry.assertionsByFieldPath[fieldPath];
+        const evaluation = evaluateCandidate(
+          entry.fiche,
+          templateId,
+          assertion,
+          nearestFirst
+        );
+        if (evaluation.outcome === "generated") {
+          toInsert.push(evaluation.record);
+        } else {
+          rejectedCount += 1;
+        }
       }
     }
-  }
+  };
+
+  // Ordered once per fiche, not per template: nearness is a property of the
+  // subject, and every template of a corpus asks about the same one.
+  sweep(input.entries, templatesFor("people"), (fiche) =>
+    orderPoolsBySubjectProximity(
+      fiche as QuizPeopleFixture,
+      corpus,
+      input.pools
+    )
+  );
+  // No proximity ordering for countries. Nearness is defined here by shared
+  // language family and shared territory, neither of which a country has of
+  // another country — inventing a geographic one would be a second, unrelated
+  // rule wearing the same name.
+  sweep(countryEntries, templatesFor("country"), () => input.pools);
 
   return {
     toInsert,
