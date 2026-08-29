@@ -238,7 +238,11 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           font-weight: 500;
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          opacity: 0.72;
+          /* No opacity here. Fading the glyph composites it toward the card
+             and takes the accent ink with it — ocre went 6.41:1 → 3.45:1 at
+             0.72. The smaller size, lighter weight, caps and tracking are
+             what separate the kind from the name; the colour stays legible,
+             like the tier line below. */
         }
         .home-dyk-tier {
           margin: 10px 0 0;
