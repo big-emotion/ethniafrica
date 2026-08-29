@@ -8,6 +8,11 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAllAfrikLanguageFamilies: vi.fn(),
   getAfrikLanguageFamilyById: vi.fn(),
   countAfrikLanguageFamilies: vi.fn(),
+  getAfrikLanguageFamilyRoster: vi.fn(),
+}));
+
+vi.mock("@/lib/supabase/queries/afrik/languageFamilyFacet", () => ({
+  countUnclassifiedPeoples: vi.fn(),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
@@ -20,7 +25,9 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
   countAfrikLanguageFamilies,
+  getAfrikLanguageFamilyRoster,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { countUnclassifiedPeoples } from "@/lib/supabase/queries/afrik/languageFamilyFacet";
 import {
   getAfrikPeoplesByLanguageFamily,
   getPeopleCountsByLanguageFamily,
@@ -35,6 +42,8 @@ describe("Language Family Service", () => {
   describe("getLanguageFamilies", () => {
     beforeEach(() => {
       vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(new Map());
+      vi.mocked(getAfrikLanguageFamilyRoster).mockResolvedValue([]);
+      vi.mocked(countUnclassifiedPeoples).mockResolvedValue(0);
     });
 
     it("should return paginated language families", async () => {
@@ -53,7 +62,7 @@ describe("Language Family Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
-      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(1, 5);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(1, 5, undefined);
     });
 
     it("should handle pagination correctly", async () => {
@@ -73,8 +82,18 @@ describe("Language Family Service", () => {
 
       expect(page1.data.length).toBe(2);
       expect(page2.data.length).toBe(2);
-      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(1, 1, 2);
-      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(2, 2, 2);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(
+        1,
+        1,
+        2,
+        undefined
+      );
+      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(
+        2,
+        2,
+        2,
+        undefined
+      );
     });
 
     // @req REQ-110
@@ -92,7 +111,11 @@ describe("Language Family Service", () => {
       // Requested page/perPage must reach the query layer so it can apply
       // .range() — an unranged fetch is silently capped by PostgREST's
       // server-side max-rows setting, which is the REQ-110 root cause.
-      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(11, 2);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(
+        11,
+        2,
+        undefined
+      );
       expect(result.data).toEqual(pageOfFamilies);
       // total must come from a real count query, never from the length of
       // the (now page-sized) array returned by the query layer.
@@ -136,18 +159,75 @@ describe("Language Family Service", () => {
     it("should surface peoples with a null or unmatched family as unclassified rather than omitting them", async () => {
       const mockFamilies = [{ id: "FLG_X", nameFr: "Family X", content: {} }];
       vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
-      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(
-        new Map([
-          ["FLG_X", 739],
-          [UNCLASSIFIED_FAMILY_KEY, 60],
-          // References a family id that isn't published/returnable.
-          ["FLG_UNPUBLISHED", 4],
-        ])
-      );
+      vi.mocked(getAfrikLanguageFamilyRoster).mockResolvedValue([
+        { id: "FLG_X", nameFr: "Family X" },
+      ]);
+      vi.mocked(countUnclassifiedPeoples).mockResolvedValue(64);
 
       const result = await getLanguageFamilies(1, 20);
 
+      expect(countUnclassifiedPeoples).toHaveBeenCalledWith(["FLG_X"]);
       expect(result.unclassifiedPeoplesCount).toBe(64);
+    });
+
+    /**
+     * The figure used to be a subtraction against the families on the page in
+     * front of the reader, so turning to page 2 changed how many peoples the
+     * corpus was said to leave unclassified. It is a measure of the corpus;
+     * paging through a reading of it cannot move it.
+     */
+    // @req REQ-108
+    it("should measure unclassified peoples against the whole roster, not the page on screen", async () => {
+      vi.mocked(getAfrikLanguageFamilyRoster).mockResolvedValue([
+        { id: "FLG_A", nameFr: "A" },
+        { id: "FLG_B", nameFr: "B" },
+      ]);
+      vi.mocked(countUnclassifiedPeoples).mockResolvedValue(60);
+
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue([
+        { id: "FLG_A", nameFr: "A", content: {} },
+      ]);
+      const firstPage = await getLanguageFamilies(1, 1);
+
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue([
+        { id: "FLG_B", nameFr: "B", content: {} },
+      ]);
+      const secondPage = await getLanguageFamilies(2, 1);
+
+      expect(secondPage.unclassifiedPeoplesCount).toBe(
+        firstPage.unclassifiedPeoplesCount
+      );
+      expect(countUnclassifiedPeoples).toHaveBeenNthCalledWith(1, [
+        "FLG_A",
+        "FLG_B",
+      ]);
+      expect(countUnclassifiedPeoples).toHaveBeenNthCalledWith(2, [
+        "FLG_A",
+        "FLG_B",
+      ]);
+    });
+
+    /**
+     * The Explorer families facet narrows by country. The narrowed set of ids
+     * has to reach the query layer, or the "filtered" page would be the page
+     * of everything with the filter reapplied to it — the same mistake the
+     * unclassified count above was making one field over.
+     */
+    // @req REQ-110
+    it("should push a narrowed selection down to the query layer, list and count alike", async () => {
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue([]);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(2);
+
+      await getLanguageFamilies(1, 12, { ids: ["FLG_A", "FLG_B"] });
+
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(1, 12, [
+        "FLG_A",
+        "FLG_B",
+      ]);
+      expect(countAfrikLanguageFamilies).toHaveBeenCalledWith([
+        "FLG_A",
+        "FLG_B",
+      ]);
     });
 
     // @req REQ-108
@@ -172,6 +252,10 @@ describe("Language Family Service", () => {
       vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(
         peopleCounts
       );
+      vi.mocked(getAfrikLanguageFamilyRoster).mockResolvedValue(
+        mockFamilies.map((family) => ({ id: family.id, nameFr: family.nameFr }))
+      );
+      vi.mocked(countUnclassifiedPeoples).mockResolvedValue(64);
 
       const result = await getLanguageFamilies(1, 20);
 
