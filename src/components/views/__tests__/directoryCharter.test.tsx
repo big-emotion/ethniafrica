@@ -3,17 +3,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import {
-  getAllCountries,
-  getAllLanguageFamilies,
-  getPeoples,
-} from "@/lib/afrikLoader";
+import { getAllCountries, getAllLanguageFamilies } from "@/lib/afrikLoader";
 import type {
   CountrySummary,
   LanguageFamilySummary,
-  PeopleSummary,
 } from "@/types/afrik-frontend";
-import { PeopleView } from "@/components/views/PeopleView";
 import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
 import {
   DirectoryHero,
@@ -44,21 +38,6 @@ const COUNTRIES: CountrySummary[] = [
 const FAMILIES: LanguageFamilySummary[] = [
   { id: "FLG_BANTU", nameFr: "Bantoues" },
   { id: "FLG_NILO", nameFr: "Nilo-sahariennes" },
-];
-
-const PEOPLES: PeopleSummary[] = [
-  {
-    id: "PPL_YORUBA",
-    nameMain: "Yoruba",
-    languageFamilyId: "FLG_BENUE_CONGO" as PeopleSummary["languageFamilyId"],
-    currentCountries: ["NGA"] as PeopleSummary["currentCountries"],
-  },
-  {
-    id: "PPL_ZULU",
-    nameMain: "Zulu",
-    languageFamilyId: "FLG_BENUE_CONGO" as PeopleSummary["languageFamilyId"],
-    currentCountries: ["ZAF"] as PeopleSummary["currentCountries"],
-  },
 ];
 
 function renderWithQuery(ui: ReactElement) {
@@ -121,18 +100,12 @@ describe.each([
     setup: () => vi.mocked(getAllLanguageFamilies).mockResolvedValue(FAMILIES),
     firstCardName: "Bantoues",
   },
-  {
-    name: "PeopleView",
-    entityType: "people" as DirectoryEntityType,
-    Component: PeopleView,
-    props: { language: "fr" as const, onPeopleSelect: vi.fn() },
-    setup: () =>
-      vi.mocked(getPeoples).mockResolvedValue({
-        data: PEOPLES,
-        meta: { total: 2, page: 1, perPage: 10, totalPages: 1 },
-      }),
-    firstCardName: "Yoruba",
-  },
+  // The peoples directory is no longer one of these. `PeopleView` fetched a
+  // page in the browser and narrowed it afterwards; the peoples facet of the
+  // Explorer hub is a server component that filters at the database, and its
+  // pills are anchors rather than buttons — so the shape these cases assert is
+  // not the shape that surface has. Its own contract is in
+  // src/app/[lang]/explorer/peuples/__tests__/facet-page.test.tsx.
 ])(
   "$name — pills, cards and heading order under the directory accent (ETNI-801 · FR106)",
   ({ entityType, Component, props, setup, firstCardName }) => {
@@ -144,10 +117,7 @@ describe.each([
     async function renderDirectory() {
       return renderWithQuery(
         <DirectoryHero entityType={entityType} title="Titre">
-          {
-            // @ts-expect-error — props shape is narrowed per view under test
-            <Component {...props} />
-          }
+          <Component {...props} />
         </DirectoryHero>
       );
     }
