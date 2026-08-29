@@ -3,10 +3,15 @@ import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import {
   getModulesForAccessMode,
+  MODULE_DEFINITIONS,
   type AccessMode,
   type HubModuleDefinition,
   type ModuleDataSource,
 } from "@/lib/hubs/moduleRegistry";
+import {
+  isModuleDeclaredReady,
+  type ModuleAvailabilityMap,
+} from "@/lib/hubs/moduleOffer";
 
 /** What `isModuleAvailable` needs of a definition to answer. */
 type AvailabilityInputs = Pick<
@@ -78,7 +83,10 @@ export async function isModuleAvailable(
   // answer nobody reads. This is the "not yet worth the trip" half of the
   // charter's §3 distinction; the probe below is the "has nothing at all"
   // half. Both surface as the same inert Bientôt row, deliberately.
-  if (def.editorialReadiness === "draft") return false;
+  //
+  // Shared with the client resolver (`isModuleOffered`) rather than restated,
+  // so the header cannot answer this half differently from the hub.
+  if (!isModuleDeclaredReady(def)) return false;
 
   // Only a data module's liveness depends on the corpus. A static page
   // renders from code, and asking a row count about it could only ever take
@@ -102,3 +110,35 @@ export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
     }))
   );
 }
+
+/**
+ * Every module's availability, resolved once, for the surfaces that cannot
+ * await it themselves.
+ *
+ * The header is the whole reason this exists. It is a client component, and so
+ * is the `PageLayout` above it, so the resolved `HubModule[]` the hub and the
+ * home read had no way to reach it — and it answered a narrower question
+ * instead, offering modules those two surfaces were marking **Bientôt**.
+ * Resolving the registry whole and handing the map down from the `[lang]`
+ * layout keeps that threading to one place rather than to `PageLayout`'s
+ * fifteen-odd callers.
+ *
+ * Cached whole rather than leaning on the per-table probe underneath it. The
+ * difference matters because of where this is called: the `[lang]` layout
+ * runs on every page under `/fr` and the shell waits on it, so the cost that
+ * counts is per render, not per table. One cache entry is one lookup; the
+ * seven the probes would each do are seven.
+ */
+// @req REQ-106 @req REQ-114
+export const getModuleAvailabilityMap = unstable_cache(
+  async (): Promise<ModuleAvailabilityMap> => {
+    const resolved = await Promise.all(
+      MODULE_DEFINITIONS.map(
+        async (def) => [def.id, await isModuleAvailable(def)] as const
+      )
+    );
+    return Object.fromEntries(resolved);
+  },
+  ["hub-module-availability-map"],
+  { revalidate: 60 }
+);

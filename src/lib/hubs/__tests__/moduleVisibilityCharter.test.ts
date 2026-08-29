@@ -22,6 +22,7 @@ import {
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { isModuleOffered } from "@/lib/hubs/moduleOffer";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 
 const SOURCE_ROOT = join(process.cwd(), "src");
@@ -145,6 +146,28 @@ describe("module visibility charter", () => {
    * Tying readiness to `availability === "data"` would have left
    * `regards-colonisation` permanently mature.
    */
+  /**
+   * The other side of the same coin: reachable, and not invited. The charter
+   * asks for the inert row on *every* surface that lists modules, and the one
+   * that broke the rule is the header — it resolved clickability from
+   * `getModuleHref` alone, which answers "does this route exist", never "is it
+   * worth the trip". A probe map full of rows must not be able to talk a draft
+   * module back into the menu.
+   */
+  // @req REQ-114
+  it("withholds the invitation from a draft module on any surface", () => {
+    const offeredEverything = Object.fromEntries(
+      MODULE_DEFINITIONS.map((definition) => [definition.id, true])
+    );
+
+    for (const definition of MODULE_DEFINITIONS) {
+      expect(
+        isModuleOffered(definition, offeredEverything),
+        `${definition.id} is offered against its declared readiness`
+      ).toBe(definition.editorialReadiness !== "draft");
+    }
+  });
+
   // @req REQ-114
   it("lets a static module be declared unready", () => {
     const colonisation = MODULE_DEFINITIONS.find(
