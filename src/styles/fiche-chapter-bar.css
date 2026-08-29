@@ -1,0 +1,229 @@
+/**
+ * The reading rail — atlas charter §7.
+ *
+ * A bar that follows the reader down the parchment, naming the chapter they
+ * are in and opening the fiche's summary.
+ *
+ * It takes the parchment's own measure rather than the viewport's: pinned at
+ * the top of the screen it reads as the document's header, because the ground
+ * on either side of it is the ground the document is printed on.
+ *
+ * Its own file rather than a section of fiche-parchment.css, because the rail
+ * is not part of the parchment: it sits above it, outside `.afh-parchment`,
+ * and it owns the scroll offset every chapter has to clear.
+ *
+ * Mobile first: the base rules are the 430px layout. Nothing here names an
+ * accent — the scope class on FicheSequence's root decides which one
+ * (charter §2).
+ */
+
+:root {
+  /* The rail's height, published so a chapter can clear it when scrolled to.
+     One value, because an anchor landing *under* the rail is the failure this
+     token exists to prevent. */
+  --afh-chapter-bar-height: 48px;
+}
+
+/* A chapter scrolled to has to arrive below the rail, not under it. */
+[data-fiche-section] {
+  scroll-margin-top: calc(var(--afh-chapter-bar-height) + var(--afh-space-md));
+}
+
+/* The rail moves focus to the chapter it opens, so a keyboard reader lands
+   somewhere they can read from. That focus must be seen when it was asked for
+   with a key and stay quiet when it followed a click — and in the fiche's own
+   accent, not the browser's blue. */
+[data-fiche-section]:focus {
+  outline: none;
+}
+
+[data-fiche-section]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.afh-chapter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  /* Welds the rail onto the parchment it heads: the sequence sets a large gap
+     between its children, and a rail floating in that gap would read as an
+     unrelated widget rather than as the document's own header. */
+  margin-bottom: calc(-1 * var(--afh-space-3xl));
+  background: var(--afh-bg);
+  border-top: 1px solid var(--afh-border);
+  border-bottom: 1px solid var(--afh-border);
+}
+
+/* The bar proper. Its own box so the read rule below stays under the bar and
+   does not drop to the foot of the summary when that opens. */
+.afh-chapter-bar-head {
+  position: relative;
+}
+
+.afh-chapter-bar-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--afh-space-lg);
+  width: 100%;
+  min-height: var(--afh-chapter-bar-height);
+  padding: 0 var(--afh-space-lg);
+  border: 0;
+  background: none;
+  color: var(--afh-text);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--afh-transition-color);
+}
+
+.afh-chapter-bar-toggle:hover {
+  background: var(--afh-bg-warm);
+}
+
+.afh-chapter-bar-count {
+  flex: none;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  letter-spacing: 0.08em;
+  /* Tabular figures: the readout must not shift as the count changes under a
+     reader who is scrolling, or the whole bar appears to twitch. */
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-ink, var(--accent));
+}
+
+.afh-chapter-bar-current {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-small);
+}
+
+.afh-chapter-bar-cue {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--afh-space-xs);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* At 430px the chapter title is what the reader needs; the word naming the
+   control is what gives way. The button keeps its full name for a screen
+   reader either way (aria-label). */
+.afh-chapter-bar-cue-label {
+  display: none;
+}
+
+.afh-chapter-bar-caret {
+  width: 16px;
+  height: 16px;
+  transition: var(--afh-transition-transform);
+}
+
+.afh-chapter-bar[data-open] .afh-chapter-bar-caret {
+  transform: rotate(180deg);
+}
+
+/* How much of the fiche is behind the reader. It sits over the rail's own
+   hairline rather than beside it: a second rule under the first would read as
+   a border, not as progress. */
+.afh-chapter-bar-read {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: var(--afh-chapter-read, 0%);
+  background: var(--accent);
+  transition: width var(--afh-duration-slow) var(--afh-ease-out);
+}
+
+/* The summary hangs off the bar rather than sitting in the flow under it.
+   In the flow, closing it removed its height from the document *after* the
+   chosen chapter's scroll had been computed, and the chapter landed that far
+   above the viewport — under the rail. It also spared the reader a page that
+   jumps every time they open the summary. */
+.afh-chapter-bar-summary {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: var(--afh-space-md) 0;
+  list-style: none;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--afh-bg-warm);
+  border-bottom: 1px solid var(--afh-border);
+  box-shadow: var(--afh-elev-3);
+}
+
+.afh-chapter-bar-summary[hidden] {
+  display: none;
+}
+
+.afh-chapter-bar-summary a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--afh-space-md) var(--afh-space-lg);
+  border-left: 2px solid transparent;
+  color: var(--afh-text-soft);
+  font-size: var(--afh-text-small);
+  text-decoration: none;
+  transition: var(--afh-transition-color);
+}
+
+.afh-chapter-bar-summary a:hover {
+  background: var(--afh-surface);
+  color: var(--afh-text);
+}
+
+.afh-chapter-bar-summary a[aria-current="true"] {
+  border-left-color: var(--accent);
+  color: var(--accent-ink, var(--accent));
+  font-weight: 700;
+}
+
+/* From the width the band and the nav change shape at (760px), the rail has
+   room for the word naming its control and for the parchment's gutters. */
+@media (min-width: 760px) {
+  :root {
+    --afh-chapter-bar-height: 56px;
+  }
+
+  .afh-chapter-bar-toggle {
+    padding: 0 var(--afh-space-4xl);
+  }
+
+  .afh-chapter-bar-cue-label {
+    display: inline;
+  }
+
+  /* A dozen chapters in one full-width column is a list with a field of empty
+     paper beside it. Multi-column, not grid: `columns` keeps the chapters
+     reading top-to-bottom down each column, where a grid would deal them
+     across rows and break the fiche's order. */
+  .afh-chapter-bar-summary {
+    columns: 2;
+    column-gap: 0;
+    padding-block: var(--afh-space-lg);
+  }
+
+  .afh-chapter-bar-summary li {
+    break-inside: avoid;
+  }
+
+  .afh-chapter-bar-summary a {
+    padding-inline: var(--afh-space-4xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .afh-chapter-bar-summary {
+    columns: 3;
+  }
+}

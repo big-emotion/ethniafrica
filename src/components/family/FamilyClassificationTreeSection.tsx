@@ -13,6 +13,11 @@ import type { FamilyBranchProvenance } from "@/api/v2/services/languageFamilyTre
 import type { ClassificationStatus } from "@/types/afrik";
 import { getPeopleRoute } from "@/lib/routing";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Classification";
+
 export interface FamilyClassificationTreeSectionProps {
   familyId: string;
   tree: {
@@ -202,8 +207,10 @@ export function FamilyClassificationTreeSection({
     <section
       ref={sectionRef}
       aria-labelledby="family-classification-tree-heading"
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
     >
-      <h2 id="family-classification-tree-heading">Classification</h2>
+      <h2 id="family-classification-tree-heading">{CHAPTER_TITLE}</h2>
       <div className="afh-classification-toolbar">
         <div className="afh-view-switch" role="group" aria-label="Affichage">
           <button

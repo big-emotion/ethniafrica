@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
+import { FicheSection } from "../FicheSection";
 import { ACCENT_CLASS_BY_ENTITY, FicheSequence } from "../FicheSequence";
 import type { FichePanelContext } from "../panelRegistry";
 import { derivePanelSequence } from "@/lib/fichePanels";
@@ -404,5 +405,55 @@ describe("FicheSequence — gating by construction (FR98)", () => {
     expect(
       container.querySelector("#fiche-record")?.closest(".max-w-4xl")
     ).toBeNull();
+  });
+  // The rail scopes its chapter scan to this marker. Without it the rail
+  // falls back to the whole document and would list a chapter rendered in a
+  // modal or a preview — one it could not scroll to.
+  // @req REQ-091
+  it("marks its root as the fiche the reading rail reads", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={COUNTRY_CONTEXT}
+        record={RECORD}
+        recordPlacement="body"
+      />
+    );
+
+    expect(
+      container.querySelector("[data-fiche-sequence]")
+    ).toBeInTheDocument();
+  });
+
+  // One mount point for the three fiches: a route that forgot the rail would
+  // ship a fiche a reader cannot navigate, and no route names it.
+  // @req REQ-091
+  it("mounts the reading rail between the globe and the parchment", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={COUNTRY_CONTEXT}
+        record={
+          <>
+            <FicheSection title="Étymologie du nom">nom</FicheSection>
+            <FicheSection title="Peuples du pays">peuples</FicheSection>
+          </>
+        }
+        recordPlacement="body"
+        globe={<div data-testid="globe" />}
+      />
+    );
+
+    const children = Array.from(
+      container.querySelector("[data-fiche-sequence]")?.children ?? []
+    );
+    const positionOf = (match: (child: Element) => boolean) =>
+      children.findIndex(match);
+
+    expect(positionOf((child) => child.matches("[data-testid='globe']"))).toBe(
+      0
+    );
+    expect(positionOf((child) => child.matches(".afh-chapter-bar"))).toBe(1);
+    expect(positionOf((child) => child.id === "fiche-record")).toBe(2);
   });
 });

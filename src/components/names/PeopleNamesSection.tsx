@@ -62,6 +62,7 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
   return (
     <section
       id="noms"
+      data-fiche-section="Noms & appellations"
       aria-labelledby="noms-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
