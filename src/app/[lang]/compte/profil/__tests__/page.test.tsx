@@ -19,6 +19,8 @@ vi.mock("next/navigation", () => ({
     push: navigationMocks.push,
     refresh: vi.fn(),
   }),
+  // The profile mounts its own trail, which reads the address.
+  usePathname: () => "/fr/compte/profil",
 }));
 
 vi.mock("@/lib/supabase/auth-server", () => ({
