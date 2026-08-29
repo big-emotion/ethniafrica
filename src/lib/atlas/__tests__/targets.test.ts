@@ -270,6 +270,32 @@ describe("buildCountryPickerTargets (REQ-117)", () => {
   it("drops a country the asset cannot draw rather than offering a dead option", () => {
     expect(buildCountryPickerTargets(["ZZZ"])).toEqual([]);
   });
+
+  // The continent scene draws a radial field for the twelve best-documented
+  // countries and offers all fifty-four. Without the counts reaching the
+  // offered set, the forty-two beyond the field open a panel reading
+  // "0 peuples documentés" — the corpus saying it holds nothing where it
+  // holds thirty-five.
+  // @req REQ-117
+  it("carries each offered country's own documented count", () => {
+    const [ghana, kenya] = buildCountryPickerTargets(["GHA", "KEN"], {
+      GHA: 86,
+      KEN: 35,
+    });
+
+    expect(ghana.documentedPeopleCount).toBe(86);
+    expect(kenya.documentedPeopleCount).toBe(35);
+  });
+
+  // A country the corpus documents nothing in is still offered — the map is
+  // how a reader asks the question, and "rien ici" is an answer.
+  // @req REQ-117
+  it("offers an undocumented country at a count of zero", () => {
+    const [target] = buildCountryPickerTargets(["LSO"], { GHA: 86 });
+
+    expect(target.countryId).toBe("LSO");
+    expect(target.documentedPeopleCount).toBe(0);
+  });
 });
 
 /**
