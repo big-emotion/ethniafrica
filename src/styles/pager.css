@@ -68,8 +68,11 @@
   color: var(--afh-text);
 }
 
-/* The reader's own position, and the one thing here that carries a fill. */
-.afh-pager-page[aria-current="page"] {
+/* The reader's own position, and the one thing here that carries a fill.
+   `aria-current="true"` as well as `"page"`: the facets' page-size control
+   is the same pill marking a current choice that is not a page. */
+.afh-pager-page[aria-current="page"],
+.afh-pager-page[aria-current="true"] {
   background: var(--afh-text);
   color: var(--afh-bg);
   font-weight: 600;

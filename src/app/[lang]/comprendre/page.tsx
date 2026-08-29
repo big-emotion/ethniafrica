@@ -4,14 +4,15 @@ import { AccessModeHub } from "@/components/hubs/AccessModeHub";
 import { ComprendreQuestionSpine } from "@/components/hubs/ComprendreQuestionSpine";
 import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getTranslation } from "@/lib/translations";
-import { OG_TITLE } from "@/lib/brand";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const strings = getTranslation("fr").hubs.comprendre;
 
 // @req REQ-114
 export const metadata: Metadata = {
-  title: `${strings.title} — ${OG_TITLE}`,
+  // The band's rule, applied to the tab — see the explorer hub.
+  title: `${strings.pageTitle} — ${PRODUCT_NAME}`,
   description: strings.blurb,
   alternates: {
     canonical: getLocalizedRoute("fr", "comprendreHub"),

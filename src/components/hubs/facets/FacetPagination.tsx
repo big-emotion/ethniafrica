@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 import { buildPageWindow } from "@/lib/hubs/pagination";
@@ -69,13 +69,17 @@ export function FacetPagination({
   if (lastPage <= 1) return null;
 
   const format = new Intl.NumberFormat("fr-FR");
-  const controlClass =
-    "inline-flex min-h-11 min-w-11 items-center justify-center rounded-afh-lg px-3 text-afh-small focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]";
-  const restingStyle = { backgroundColor: "var(--accent-tint)" };
-  const currentStyle = {
-    backgroundColor: "var(--accent)",
-    color: "var(--accent-foreground)",
-  };
+  /**
+   * The site pager's own dress — `.afh-pager-page` in `styles/pager.css`, the
+   * same class the anecdotes feed renders. Two idioms for one control is what
+   * this replaces, and the shared one is the theme-correct half: the accent
+   * pair it used before painted `--accent-tint` under text that inherits
+   * `--afh-text`, and the tint is the day wash whatever the theme, so a night
+   * reader got #f1e7d8 on #f0d2c8 — 1.16:1 where AA asks 4.5:1, the page
+   * numbers effectively invisible. `.afh-pager-page` marks position with the
+   * page's own ink instead, which inverts with the surface.
+   */
+  const controlClass = "afh-pager-page";
 
   // Position, not quantity. The header owns the count.
   const extent =
@@ -91,9 +95,8 @@ export function FacetPagination({
             href={buildHref(current - 1, pageSize)}
             rel="prev"
             className={controlClass}
-            style={restingStyle}
           >
-            <ChevronLeft aria-hidden className="h-4 w-4" />
+            <ChevronLeft aria-hidden className="afh-pager-chevron" />
             <span className="sr-only">Page précédente</span>
           </Link>
         </li>
@@ -104,9 +107,9 @@ export function FacetPagination({
           <li
             key={`gap-${index}`}
             aria-hidden
-            className="inline-flex min-h-11 min-w-11 list-none items-center justify-center text-afh-text-soft"
+            className="afh-pager-gap list-none"
           >
-            <MoreHorizontal className="h-4 w-4" />
+            …
           </li>
         ) : (
           <li key={slot} className="list-none">
@@ -115,7 +118,6 @@ export function FacetPagination({
               aria-current={slot === current ? "page" : undefined}
               aria-label={`Page ${slot}`}
               className={controlClass}
-              style={slot === current ? currentStyle : restingStyle}
             >
               {format.format(slot)}
             </Link>
@@ -129,10 +131,9 @@ export function FacetPagination({
             href={buildHref(current + 1, pageSize)}
             rel="next"
             className={controlClass}
-            style={restingStyle}
           >
             <span className="sr-only">Page suivante</span>
-            <ChevronRight aria-hidden className="h-4 w-4" />
+            <ChevronRight aria-hidden className="afh-pager-chevron" />
           </Link>
         </li>
       )}
@@ -187,7 +188,6 @@ export function FacetPagination({
                 aria-current={size === pageSize ? true : undefined}
                 aria-label={`${size} par page`}
                 className={controlClass}
-                style={size === pageSize ? currentStyle : restingStyle}
               >
                 {size}
               </Link>

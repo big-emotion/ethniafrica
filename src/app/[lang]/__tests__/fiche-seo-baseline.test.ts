@@ -133,7 +133,9 @@ describe("root layout metadata — the only <head> the fiche routes get", () => 
         apple: "/favicon.ico",
       },
       openGraph: {
-        title: "EthniAfrica",
+        // The site's own title, qualified: a social card carries no masthead
+        // beside it to say what EthniAfrica is.
+        title: "EthniAfrica — Atlas des Peuples d'Afrique",
         description:
           "Encyclopédie des peuples, langues et familles linguistiques d'Afrique",
         type: "website",
