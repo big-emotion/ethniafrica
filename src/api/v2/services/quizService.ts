@@ -83,6 +83,8 @@ export interface QuizSessionQuestion {
   entityId: string;
   fieldPath: string;
   promptFr: string;
+  /** Verbatim fiche prose the round is set up with; null when it shows none. */
+  stimulusFr: string | null;
   optionsFr: QuizOptionValue[];
   correctOption: number;
   explanationFr: string;
@@ -98,6 +100,7 @@ interface QuizQuestionRow {
   entity_id: string;
   field_path: string;
   prompt_fr: string;
+  stimulus_fr: string | null;
   options_fr: QuizOptionValue[];
   correct_option: number;
   explanation_fr: string;
@@ -129,7 +132,7 @@ interface DemographyRow {
 }
 
 const QUIZ_QUESTION_COLUMNS =
-  "id, template_id, difficulty, entity_type, entity_id, field_path, prompt_fr, options_fr, correct_option, explanation_fr, assertion_id, source_ids";
+  "id, template_id, difficulty, entity_type, entity_id, field_path, prompt_fr, stimulus_fr, options_fr, correct_option, explanation_fr, assertion_id, source_ids";
 
 /** Splits ids so the resulting `.in(...)` filter fits the URL, whatever their length. */
 function chunkForUrl(ids: string[]): string[][] {
@@ -454,6 +457,7 @@ function mapRow(row: QuizQuestionRow): QuizSessionQuestion {
     entityId: row.entity_id,
     fieldPath: row.field_path,
     promptFr: row.prompt_fr,
+    stimulusFr: row.stimulus_fr ?? null,
     optionsFr: row.options_fr,
     correctOption: row.correct_option,
     explanationFr: row.explanation_fr,

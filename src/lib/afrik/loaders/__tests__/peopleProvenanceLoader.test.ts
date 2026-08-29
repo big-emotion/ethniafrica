@@ -165,6 +165,87 @@ describe("peopleAssertionTargets", () => {
     expect(paths).not.toContain("content.languages.isoCodes");
   });
 
+  /**
+   * The inversion templates cannot generate without a row here: FR66 refuses a
+   * question whose field path has no assertion behind it, and until this loader
+   * wrote them the whole prose half of the corpus produced `no_assertion`.
+   */
+  // @req REQ-121
+  it("asserts a prose rubric at the path the inversion template reads", () => {
+    const withRites = fiche({
+      content: {
+        ...fiche().content,
+        appellations: {
+          mainName: "Yoruba",
+          selfAppellation: "Yorùbá",
+          exonyms: ["Yoruba people"],
+        },
+        culture: {
+          majorRites:
+            "Les ceremonies des recoltes rassemblent les lignages autour du roi chaque annee, en septembre.",
+        },
+      },
+    });
+
+    const target = peopleAssertionTargets(withRites).find(
+      (t) => t.fieldPath === "content.culture.majorRites"
+    );
+    expect(target?.statement).toBe(
+      "Les ceremonies des recoltes rassemblent les lignages autour du roi chaque annee, en septembre."
+    );
+  });
+
+  /**
+   * The statement is the fragment a question will actually quote, not the whole
+   * rubric — an assertion records the claim that gets made, and the sentence
+   * naming the subject never reaches a reader.
+   */
+  // @req REQ-121
+  it("asserts only the part of the rubric a round may show", () => {
+    const withLeak = fiche({
+      content: {
+        ...fiche().content,
+        appellations: {
+          mainName: "Yoruba",
+          selfAppellation: "Yorùbá",
+          exonyms: [],
+        },
+        culture: {
+          majorRites:
+            "Le peuple Yoruba celebre la fete des ignames chaque annee au mois de septembre. Les lignages se rassemblent alors autour du roi pour trois jours de tambours.",
+        },
+      },
+    });
+
+    const target = peopleAssertionTargets(withLeak).find(
+      (t) => t.fieldPath === "content.culture.majorRites"
+    );
+    expect(target?.statement).not.toContain("Yoruba");
+    expect(target?.statement).toContain("Les lignages se rassemblent");
+  });
+
+  // @req REQ-121
+  it("asserts the contested exonym, and nothing when the passage is ambiguous", () => {
+    const contested = (whyProblematic: string) =>
+      peopleAssertionTargets(
+        fiche({
+          content: {
+            ...fiche().content,
+            appellations: {
+              selfAppellation: "Yorùbá",
+              exonyms: ["Nago", "Anago", "Lucumi", "Aku"],
+              whyProblematic,
+            },
+          },
+        })
+      ).find((t) => t.fieldPath === "content.appellations.whyProblematic");
+
+    expect(contested("Le terme Nago est juge reducteur.")?.statement).toBe(
+      "Nago"
+    );
+    expect(contested("Ni Nago ni Lucumi ne conviennent.")).toBeUndefined();
+  });
+
   // @req REQ-092
   it("names the country the people is principally present in", () => {
     const target = peopleAssertionTargets(fiche()).find(

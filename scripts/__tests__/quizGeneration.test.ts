@@ -37,6 +37,9 @@ const yoruba: QuizPeopleFixture = {
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
   isoCode: "yor",
   totalPopulation: 50_000_000,
+  exonyms: [],
+  rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
+  whyProblematic: null,
 };
 
 const zulu: QuizPeopleFixture = {
@@ -55,6 +58,9 @@ const zulu: QuizPeopleFixture = {
   mainLanguage: { autonym: "isiZulu", exonym: "Zoulou" },
   isoCode: "zul",
   totalPopulation: 12_000_000,
+  exonyms: [],
+  rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
+  whyProblematic: null,
 };
 
 const pools: QuizCandidatePools = {
@@ -67,6 +73,12 @@ const pools: QuizCandidatePools = {
     { autonym: "Wolof" },
   ],
   isoCodes: ["swa", "hau", "wol"],
+  peopleNames: [
+    { autonym: "Ashanti" },
+    { autonym: "Wolof" },
+    { autonym: "Maasai" },
+    { autonym: "amaZulu" },
+  ],
 };
 
 const eligibleInput: QuizEligibilityInput = {
@@ -183,6 +195,7 @@ describe("decideRevocation", () => {
     fieldPath: "languageFamilyId",
     correctOption: 0,
     optionsFr: ["Niger-Congo", "Bantou", "Nilo-Saharien", "Khoisan"],
+    stimulusFr: null,
   };
 
   // @req REQ-080
@@ -243,6 +256,7 @@ describe("decideRevocation", () => {
       templateId: "T3",
       fieldPath: "content.demography.distributionByCountry",
       optionsFr: ["Nigeria", "Kenya", "Ghana", "Sénégal"],
+      stimulusFr: null,
     };
     const revised: QuizPeopleFixture = { ...yoruba, distributionByCountry: [] };
     const entry: FicheEntry = {
@@ -295,6 +309,7 @@ describe("computeSweepPlan", () => {
       fieldPath: r.fieldPath,
       correctOption: r.correctOption,
       optionsFr: r.optionsFr,
+      stimulusFr: null,
     }));
 
     const second = computeSweepPlan({ entries, pools, activeQuestions });
@@ -321,6 +336,7 @@ describe("computeSweepPlan", () => {
       fieldPath: r.fieldPath,
       correctOption: r.correctOption,
       optionsFr: r.optionsFr,
+      stimulusFr: null,
     }));
 
     const rebuilt = computeSweepPlan({
@@ -360,6 +376,7 @@ describe("computeSweepPlan", () => {
         fieldPath: "languageFamilyId",
         correctOption: 0,
         optionsFr: ["Niger-Congo", "Bantou", "Nilo-Saharien", "Khoisan"],
+        stimulusFr: null,
       },
     ];
 
@@ -384,6 +401,7 @@ describe("computeSweepPlan", () => {
         entityId: "PPL_YORUBA",
         fieldPath: "languageFamilyId",
         correctOption: 0,
+        stimulusFr: null,
         optionsFr: [
           "Igbo-ancienne-famille",
           "Bantou",
@@ -447,6 +465,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
       fieldPath: "languageFamilyId",
       correctOption: 0,
       optionsFr: ["Niger-Congo", "Bantou", "Nilo-Saharien", "Khoisan"],
+      stimulusFr: null,
       generationRunId: runId,
     };
   }
@@ -507,6 +526,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const dupQuestion: AuditableQuestion = {
       ...baseQuestion(),
       optionsFr: ["Niger-Congo", "Niger-Congo", "Nilo-Saharien", "Khoisan"],
+      stimulusFr: null,
     };
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
@@ -547,6 +567,9 @@ const hausa: QuizPeopleFixture = {
   mainLanguage: { autonym: "Harshen Hausa", exonym: "Haoussa" },
   isoCode: "hau",
   totalPopulation: 10_000_000,
+  exonyms: [],
+  rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
+  whyProblematic: null,
 };
 
 const maasai: QuizPeopleFixture = {
@@ -561,6 +584,9 @@ const maasai: QuizPeopleFixture = {
   mainLanguage: { autonym: "ɔl Maa", exonym: "Maasai" },
   isoCode: "mas",
   totalPopulation: 900_000,
+  exonyms: [],
+  rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
+  whyProblematic: null,
 };
 
 /**

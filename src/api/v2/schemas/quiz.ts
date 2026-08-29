@@ -140,8 +140,27 @@ export type QuizOptionValue = z.infer<typeof quizOptionValueSchema>;
 // @req REQ-103
 export const quizSessionQuestionSchema = z.object({
   id: z.string(),
-  templateId: z.enum(["T1", "T2", "T3", "T4", "T5"]),
+  templateId: z.enum([
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "T9",
+    "T10",
+    "T11",
+    "T12",
+  ]),
   promptFr: z.string(),
+  /**
+   * Verbatim corpus text the round is set up with, on the templates whose
+   * answer is the subject. Null everywhere else, so the card renders nothing
+   * rather than an empty block.
+   */
+  stimulusFr: z.string().nullable(),
   optionsFr: z.array(quizOptionValueSchema),
   correctOption: z.number().int().min(0).max(3),
   explanationFr: z.string(),

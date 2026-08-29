@@ -76,6 +76,7 @@ interface QuizQuestionRow {
   field_path: string;
   correct_option: number;
   options_fr: ActiveQuestionRow["optionsFr"];
+  stimulus_fr: string | null;
   generation_run_id?: string;
 }
 
@@ -217,6 +218,7 @@ async function buildFicheEntries(
       entries.map((e) => e.fiche.mainLanguage as AutonymExonymName)
     ),
     isoCodes: [...new Set(entries.map((e) => e.fiche.isoCode))],
+    peopleNames: dedupeAutonyms(entries.map((e) => e.fiche.subjectName)),
   };
 
   return { entries, pools };
@@ -232,7 +234,7 @@ async function fetchActiveQuestions(
     supabase
       .from("quiz_questions")
       .select(
-        "id, template_id, entity_id, field_path, correct_option, options_fr"
+        "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr"
       )
       .is("revoked_at", null)
       .range(from, to)
@@ -244,6 +246,7 @@ async function fetchActiveQuestions(
     fieldPath: row.field_path,
     correctOption: row.correct_option,
     optionsFr: row.options_fr,
+    stimulusFr: row.stimulus_fr ?? null,
   }));
 }
 
@@ -256,7 +259,7 @@ async function fetchActiveQuestionsForAudit(
     supabase
       .from("quiz_questions")
       .select(
-        "id, template_id, entity_id, field_path, correct_option, options_fr, generation_run_id"
+        "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr, generation_run_id"
       )
       .is("revoked_at", null)
       .range(from, to)
@@ -268,6 +271,7 @@ async function fetchActiveQuestionsForAudit(
     fieldPath: row.field_path,
     correctOption: row.correct_option,
     optionsFr: row.options_fr,
+    stimulusFr: row.stimulus_fr ?? null,
     generationRunId: row.generation_run_id,
   }));
 }
@@ -317,6 +321,7 @@ async function insertQuestions(
     entity_id: record.entityId,
     field_path: record.fieldPath,
     prompt_fr: record.promptFr,
+    stimulus_fr: record.stimulusFr,
     options_fr: record.optionsFr,
     correct_option: record.correctOption,
     explanation_fr: record.explanationFr,

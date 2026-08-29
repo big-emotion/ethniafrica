@@ -198,6 +198,7 @@ function buildQuestionView(
     id: question.id,
     templateId: question.templateId,
     promptFr: question.promptFr,
+    stimulusFr: question.stimulusFr,
     optionsFr: question.optionsFr,
     correctOption: question.correctOption,
     explanationFr: question.explanationFr,

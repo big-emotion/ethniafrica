@@ -2654,9 +2654,29 @@ const options: swaggerJsdoc.Options = {
             id: { type: "string", format: "uuid" },
             templateId: {
               type: "string",
-              enum: ["T1", "T2", "T3", "T4", "T5"],
+              description:
+                "T1-T5 ask about an atomic fiche field; T6-T11 quote a prose rubric and ask which people it belongs to; T12 asks which of a people's exonyms is contested.",
+              enum: [
+                "T1",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7",
+                "T8",
+                "T9",
+                "T10",
+                "T11",
+                "T12",
+              ],
             },
             promptFr: { type: "string" },
+            stimulusFr: {
+              type: ["string", "null"],
+              description:
+                "Verbatim fiche prose shown above the stem, on the templates whose answer is the subject. Null elsewhere.",
+            },
             optionsFr: {
               type: "array",
               minItems: 4,
@@ -2673,6 +2693,7 @@ const options: swaggerJsdoc.Options = {
             "id",
             "templateId",
             "promptFr",
+            "stimulusFr",
             "optionsFr",
             "correctOption",
             "explanationFr",

@@ -13,15 +13,22 @@ import type {
   AutonymExonymName,
   QuizOptionValue,
   QuizPeopleFixture,
+  QuizProseRubrics,
   QuizQuestionCandidate,
   QuizTemplateId,
 } from "@/types/quiz";
+import {
+  namedExonym,
+  selectVerbatimFragment,
+  subjectNameTokens,
+} from "@/lib/quiz/proseFragment";
 import {
   isQuizEligible,
   type QuizEligibilityInput,
   type QuizEligibilityRejectionReason,
 } from "@/lib/quiz/eligibility";
 import {
+  isInversionTemplate,
   QUIZ_TEMPLATE_IDS,
   TEMPLATE_FIELD_PATHS,
 } from "@/lib/quiz/segmentPolicy";
@@ -37,6 +44,11 @@ export interface QuizCandidatePools {
   countryNames: string[];
   languages: AutonymExonymName[];
   isoCodes: string[];
+  /**
+   * Every people's own name — the option space of the inversion templates,
+   * whose answer is the subject rather than one of its field values.
+   */
+  peopleNames: AutonymExonymName[];
 }
 
 /** Binds a template's target field path to the assertion backing it and the FR65 gate input for that assertion. */
@@ -66,6 +78,8 @@ export interface QuizQuestionRecord {
   entityId: string;
   fieldPath: string;
   promptFr: string;
+  /** The verbatim rubric fragment an inversion round sets its question up with. */
+  stimulusFr: string | null;
   optionsFr: QuizOptionValue[];
   correctOption: number;
   explanationFr: string;
@@ -98,6 +112,8 @@ export interface ActiveQuestionRow {
   fieldPath: string;
   correctOption: number;
   optionsFr: QuizOptionValue[];
+  /** Null on every template that shows no stimulus; the quoted fragment otherwise. */
+  stimulusFr: string | null;
 }
 
 export interface AuditableQuestion extends ActiveQuestionRow {
@@ -165,7 +181,41 @@ export function resolveCurrentAnswer(
       return fiche.mainLanguage;
     case "T5":
       return fiche.isoCode;
+    // The inversion templates answer with the subject itself, so the stored
+    // answer is the fiche's own name and cannot go stale the way a field value
+    // can. What *can* go stale is the stimulus, and `decideRevocation` checks
+    // that separately — QZ-2 alone would call a question healthy while it
+    // quotes a paragraph the fiche no longer contains.
+    case "T6":
+    case "T7":
+    case "T8":
+    case "T9":
+    case "T10":
+    case "T11":
+      return fiche.subjectName;
+    case "T12":
+      return namedExonym(fiche.whyProblematic, fiche.exonyms);
   }
+}
+
+/**
+ * The stimulus an inversion template would show for this fiche today, or null
+ * for the templates that show none.
+ *
+ * Read by the staleness check: a rewritten rubric leaves the answer untouched
+ * — the people is still the people — so the only way to notice the question
+ * now quotes text the corpus has dropped is to recompute the fragment.
+ */
+// @req REQ-121
+export function resolveCurrentStimulus(
+  templateId: QuizTemplateId,
+  fiche: QuizPeopleFixture
+): string | null {
+  if (!isInversionTemplate(templateId)) return null;
+  return selectVerbatimFragment(
+    fiche.rubrics[templateId as keyof QuizProseRubrics],
+    subjectNameTokens(fiche)
+  );
 }
 
 function buildCandidate(
@@ -184,6 +234,21 @@ function buildCandidate(
       return questionTemplateBuilders.T4(fiche, pools.languages);
     case "T5":
       return questionTemplateBuilders.T5(fiche, pools.isoCodes);
+    case "T6":
+      return questionTemplateBuilders.T6(fiche, pools.peopleNames);
+    case "T7":
+      return questionTemplateBuilders.T7(fiche, pools.peopleNames);
+    case "T8":
+      return questionTemplateBuilders.T8(fiche, pools.peopleNames);
+    case "T9":
+      return questionTemplateBuilders.T9(fiche, pools.peopleNames);
+    case "T10":
+      return questionTemplateBuilders.T10(fiche, pools.peopleNames);
+    case "T11":
+      return questionTemplateBuilders.T11(fiche, pools.peopleNames);
+    // Its options are the subject's own exonyms, so it needs no corpus pool.
+    case "T12":
+      return questionTemplateBuilders.T12(fiche);
   }
 }
 
@@ -321,6 +386,13 @@ export function orderPoolsBySubjectProximity(
       (fiche) => fiche.mainLanguage.autonym
     ),
     isoCodes: byCarrier(pools.isoCodes, (fiche) => fiche.isoCode),
+    // A people's own name carries its nearness directly: the value *is* the
+    // carrier, so the same ranking that makes a family plausible makes a
+    // neighbouring people plausible.
+    peopleNames: byCarrier(
+      pools.peopleNames,
+      (fiche) => fiche.subjectName.autonym
+    ),
   };
 }
 
@@ -360,6 +432,7 @@ export function evaluateCandidate(
       entityId: candidate.entityId,
       fieldPath: candidate.fieldPath,
       promptFr: candidate.promptFr,
+      stimulusFr: candidate.stimulusFr,
       optionsFr: candidate.optionsFr,
       correctOption: candidate.correctOption,
       explanationFr: candidate.explanationFr,
@@ -393,6 +466,21 @@ export function decideRevocation(
   const storedAnswer = question.optionsFr[question.correctOption];
   if (!isSameOptionValue(storedAnswer, currentAnswer)) {
     return { id: question.id, reason: "stale_answer" };
+  }
+  // An inversion round answers with its own subject, so the answer check above
+  // can never fail for one — it compares a people to itself. Editing the rubric
+  // it quotes would otherwise leave it serving text the corpus has dropped,
+  // which is the failure a reveal is least able to survive: the fragment is
+  // shown to the reader as what the corpus says.
+  const currentStimulus = resolveCurrentStimulus(
+    question.templateId,
+    entry.fiche
+  );
+  if (isInversionTemplate(question.templateId) && currentStimulus === null) {
+    return { id: question.id, reason: "stimulus_unavailable" };
+  }
+  if (currentStimulus !== null && currentStimulus !== question.stimulusFr) {
+    return { id: question.id, reason: "stale_stimulus" };
   }
   return null;
 }

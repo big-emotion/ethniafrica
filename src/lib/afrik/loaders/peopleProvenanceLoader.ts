@@ -26,6 +26,15 @@ import { join } from "path";
 import { logger } from "@/lib/api/logger";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
+import {
+  namedExonym,
+  selectVerbatimFragment,
+  subjectNameTokens,
+} from "@/lib/quiz/proseFragment";
+import {
+  TEMPLATE_FIELD_PATHS,
+  type QuizTemplateId,
+} from "@/lib/quiz/segmentPolicy";
 import { isSourceTier } from "@/types/sources";
 
 const PEOPLES_ROOT = join(process.cwd(), "dataset/source/afrik/peuples");
@@ -54,10 +63,24 @@ interface CountryShare {
 
 export interface PeopleFiche {
   id: string;
+  nameMain?: string;
   content?: {
-    appellations?: { selfAppellation?: string };
+    appellations?: {
+      mainName?: string;
+      selfAppellation?: string;
+      exonyms?: string[];
+      whyProblematic?: string | null;
+    };
+    culture?: {
+      majorRites?: string | null;
+      spiritualities?: string | null;
+      symbols?: string | null;
+    };
     demography?: { distributionByCountry?: CountryShare[] };
+    historicalRole?: { kingdomsOrChiefdoms?: string | null };
     languages?: { mainLanguage?: string; isoCodes?: string[] };
+    organization?: { traditionalPoliticalSystem?: string | null };
+    origins?: { migrationRoutes?: string[] | null };
     sources?: unknown;
     [key: string]: unknown;
   };
@@ -88,12 +111,43 @@ function principalCountry(shares: CountryShare[] | undefined): string | null {
 }
 
 /**
- * The claims a fiche actually makes, among the five field paths the quiz and
- * the games read.
+ * The prose rubrics the inversion templates draw a stimulus from, paired with
+ * the template that reads each one.
+ *
+ * The statement written here is the *selected fragment*, not the whole rubric:
+ * an assertion records the claim a question will actually make, and the
+ * question only ever shows the sentences that do not name their own subject.
+ */
+const INVERSION_RUBRICS: ReadonlyArray<{
+  templateId: QuizTemplateId;
+  read: (
+    content: NonNullable<PeopleFiche["content"]>
+  ) => string | string[] | null | undefined;
+}> = [
+  { templateId: "T6", read: (c) => c.culture?.majorRites },
+  { templateId: "T7", read: (c) => c.culture?.spiritualities },
+  { templateId: "T8", read: (c) => c.culture?.symbols },
+  { templateId: "T9", read: (c) => c.historicalRole?.kingdomsOrChiefdoms },
+  {
+    templateId: "T10",
+    read: (c) => c.organization?.traditionalPoliticalSystem,
+  },
+  { templateId: "T11", read: (c) => c.origins?.migrationRoutes },
+];
+
+/**
+ * The claims a fiche actually makes, among the field paths the quiz and the
+ * games read.
  *
  * A field the fiche leaves empty yields no assertion. Writing one anyway would
  * record a claim nobody made and hand `recompute_confidence` a source count
  * the fiche has not earned.
+ *
+ * The paths come from `TEMPLATE_FIELD_PATHS` rather than being spelled again
+ * here. They were duplicated as literals until the inversion templates
+ * arrived, and a path written on this side that no template reads on the other
+ * produces an assertion nothing ever uses — an invisible failure, since the
+ * sweep would simply report `no_assertion` for a path that exists.
  */
 // @req REQ-092
 export function peopleAssertionTargets(
@@ -104,38 +158,50 @@ export function peopleAssertionTargets(
 
   const family = nonEmpty(people.languageFamilyId);
   if (family)
-    targets.push({ fieldPath: "languageFamilyId", statement: family });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T1, statement: family });
 
   const autonym = nonEmpty(content.appellations?.selfAppellation);
   if (autonym) {
-    targets.push({
-      fieldPath: "content.appellations.selfAppellation",
-      statement: autonym,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T2, statement: autonym });
   }
 
   const country = principalCountry(content.demography?.distributionByCountry);
   if (country) {
-    targets.push({
-      fieldPath: "content.demography.distributionByCountry",
-      statement: country,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T3, statement: country });
   }
 
   const language = nonEmpty(content.languages?.mainLanguage);
   if (language) {
-    targets.push({
-      fieldPath: "content.languages.mainLanguage",
-      statement: language,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T4, statement: language });
   }
 
   const isoCode = nonEmpty(content.languages?.isoCodes?.[0]);
   if (isoCode) {
-    targets.push({
-      fieldPath: "content.languages.isoCodes",
-      statement: isoCode,
-    });
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T5, statement: isoCode });
+  }
+
+  const exonyms = content.appellations?.exonyms ?? [];
+  const tokens = subjectNameTokens({
+    subjectName: {
+      autonym: content.appellations?.mainName ?? people.nameMain ?? "",
+    },
+    selfAppellation: content.appellations?.selfAppellation ?? "",
+    exonyms,
+  });
+
+  for (const rubric of INVERSION_RUBRICS) {
+    const fragment = selectVerbatimFragment(rubric.read(content), tokens);
+    if (fragment) {
+      targets.push({
+        fieldPath: TEMPLATE_FIELD_PATHS[rubric.templateId],
+        statement: fragment,
+      });
+    }
+  }
+
+  const contested = namedExonym(content.appellations?.whyProblematic, exonyms);
+  if (contested) {
+    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T12, statement: contested });
   }
 
   return targets;

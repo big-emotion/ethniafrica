@@ -30,6 +30,20 @@ const NAME_OPTIONS_QUESTION: QuizSessionQuestionView = {
   ],
 };
 
+const INVERSION_QUESTION: QuizSessionQuestionView = {
+  ...QUESTION,
+  templateId: "T6",
+  promptFr: "Quel peuple pratique ces rites ?",
+  stimulusFr:
+    "Les futures mariees dansent en file indienne en imitant les mouvements du python.",
+  optionsFr: [
+    { autonym: "VhaVenda", exonym: "Venda" },
+    { autonym: "amaZulu" },
+    { autonym: "Basotho" },
+    { autonym: "Vatsonga" },
+  ],
+};
+
 describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   // @req REQ-103 FR67
   it("renders a fieldset/legend radiogroup with the question as legend", () => {
@@ -153,5 +167,63 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
 
     const radios = screen.getAllByRole("radio");
     expect(radios[1]).toHaveAttribute("aria-checked", "true");
+  });
+
+  /**
+   * The inversion rounds are unanswerable without the passage, so it has to be
+   * on screen and it has to reach a screen reader as context for the group —
+   * not as a loose paragraph that happens to sit above it.
+   */
+  // @req REQ-121
+  it("shows the stimulus and binds it to the question group", () => {
+    render(
+      <QuizQuestionCard
+        question={INVERSION_QUESTION}
+        selectedOption={null}
+        onSelectOption={vi.fn()}
+        onValidate={vi.fn()}
+      />
+    );
+
+    const stimulus = screen.getByTestId("quiz-stimulus");
+    expect(stimulus).toHaveTextContent(/file indienne/);
+
+    const fieldset = screen.getByRole("radiogroup").closest("fieldset");
+    expect(fieldset).toHaveAttribute("aria-describedby", stimulus.id);
+  });
+
+  // @req REQ-121
+  it("keeps the stem in the legend rather than folding the passage into it", () => {
+    render(
+      <QuizQuestionCard
+        question={INVERSION_QUESTION}
+        selectedOption={null}
+        onSelectOption={vi.fn()}
+        onValidate={vi.fn()}
+      />
+    );
+
+    const legend = screen
+      .getByRole("radiogroup")
+      .closest("fieldset")
+      ?.querySelector("legend");
+    expect(legend?.textContent).toBe("Quel peuple pratique ces rites ?");
+  });
+
+  // @req REQ-121
+  it("renders no quote block on a round that sets nothing up", () => {
+    render(
+      <QuizQuestionCard
+        question={QUESTION}
+        selectedOption={null}
+        onSelectOption={vi.fn()}
+        onValidate={vi.fn()}
+      />
+    );
+
+    expect(screen.queryByTestId("quiz-stimulus")).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("radiogroup").closest("fieldset")
+    ).not.toHaveAttribute("aria-describedby");
   });
 });
