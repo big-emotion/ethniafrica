@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom a été popularisé par les navigateurs européens (portugais, français) à partir du XVIe siècle. L'origine exacte est incertaine, mais pourrait provenir d'une confusion avec Mogadiscio.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "São Lourenço (portugais)",
+        "Colonie de Madagascar (1896-1960)",
+        "République malgache (1960-1975)"
+      ],
       "antiquity": "L'île était connue des navigateurs arabes et swahilis, mais n'avait pas de nom unique. Les Grecs anciens mentionnent des îles dans cette région.",
       "middleAges": "Les navigateurs arabes et swahilis connaissaient l'île mais sans nom spécifique. Marco Polo mentionne \"Madageiscar\" au XIIIe siècle (référence probable à Mogadiscio).",
       "precolonial": "Les Portugais appellent l'île \"São Lourenço\" (Saint-Laurent) au XVIe siècle. Les Européens utilisent progressivement \"Madagascar\" à partir du XVIIe siècle. Les peuples autochtones utilisent des noms régionaux (Imerina, Menabe, etc.).",

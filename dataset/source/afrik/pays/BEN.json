@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Bénin\" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace \"Dahomey\", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom \"Bénin\" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie du Dahomey (1894-1960)",
+        "République du Dahomey (1960-1975)",
+        "République populaire du Bénin (1975-1990)"
+      ],
       "antiquity": "Le territoire actuel du Bénin était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (Dahomey, Nikki, Kétou, etc.).",
       "middleAges": "Développement de royaumes et chefferies : royaume du Dahomey (Fon, XVIIe-XIXe siècles), royaume de Nikki (Bariba), royaume de Kétou (Yoruba/Nago), royaumes Adja-Ewe. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume du Dahomey (puissant État militarisé, célèbre pour ses Amazones), royaume de Nikki (Bariba), royaume de Kétou (Yoruba), chefferies Adja-Ewe, peuples Somba/Otamari de l'Atacora. Les Français utilisaient le terme \"Dahomey\" pour désigner la région.",

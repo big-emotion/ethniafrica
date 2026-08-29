@@ -3,6 +3,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { TrustStrip } from "@/components/home/TrustStrip";
+import { PurposeBlocks } from "@/components/home/PurposeBlocks";
+import { DidYouKnow } from "@/components/home/DidYouKnow";
+import { SynthesisRail } from "@/components/home/SynthesisRail";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import {
   DEFAULT_HERO_MODULE_ID,
@@ -67,11 +72,17 @@ interface HomeProps {
 // @req REQ-113
 // @req REQ-115
 export default async function Home({ searchParams }: HomeProps) {
-  const [{ hero }, counts, modulesByAxis] = await Promise.all([
+  const [{ hero }, counts, modulesByAxis, syntheses] = await Promise.all([
     searchParams,
     getCorpusCounts(),
     getModulesByAxis(),
+    loadSynthesisRail(),
   ]);
+
+  // Drawn per request, like the hero's module and for the same reason: the
+  // draw runs in a server component, so it never re-runs during hydration
+  // and cannot desynchronise the client tree.
+  const didYouKnowFact = pickDidYouKnowFact();
 
   // The band opens on the globe, every time.
   //
@@ -95,6 +106,12 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <PageLayout language="fr" hideHeader flushTop>
       <HomeHero heroModule={heroModule} heroPreview={heroPreview} />
+      {/* Argument, then proof, then sample — and only then the three doors.
+          A reader who has not yet been told what the atlas is for has no
+          basis for choosing between Explorer, Comprendre and Jouer. */}
+      <PurposeBlocks language="fr" />
+      <DidYouKnow language="fr" fact={didYouKnowFact} />
+      <SynthesisRail language="fr" syntheses={syntheses} />
       <section className="home-axes-section">
         <AccessAxes
           language="fr"

@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom a été donné par les Portugais au XVe siècle, probablement dérivé de l'expression wolof \"Sunugal\" (notre pirogue). Le fleuve Sénégal a été nommé en premier, puis le territoire.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Senega (portugais, XVe siècle)",
+        "Sénégal (AOF, 1895-1960)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes wolof, sérère, peul, mandinka, jola sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont influencé la région.",
       "middleAges": "XIIIe-XVIe siècles : Empire du Jolof (Wolof) avec royaumes vassaux (Cayor, Baol, Waalo, Sine, Saloum). Fouta Toro (théocratie peule).",
       "precolonial": "Royaumes wolof (Jolof, Cayor, Baol, Waalo), royaumes sérères (Sine, Saloum), théocratie peule du Fouta Toro, royaumes jola de Casamance. Commerce transsaharien et commerce côtier.",
