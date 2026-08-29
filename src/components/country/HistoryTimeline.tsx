@@ -41,27 +41,29 @@ export function HistoryTimeline({ data }: HistoryTimelineProps) {
           >
             {item.era}
           </div>
-          <div
-            className="text-afh-h3 font-bold leading-[1.25] mb-0.5"
-            style={{
-              fontFamily: "var(--country-font-display)",
-              ...(item.type === "colonial"
-                ? {
-                    textDecoration: "line-through",
-                    textDecorationColor: "var(--country-colonial)",
-                  }
-                : {}),
-            }}
-          >
-            {item.name}
-            {item.type === "sovereign" && " ✦"}
-          </div>
-          {item.note && (
+          {item.name && (
             <div
-              className="text-afh-caption leading-[1.4]"
-              style={{ color: "var(--country-text-soft)" }}
+              className="text-afh-h3 font-bold leading-[1.25] mb-0.5"
+              style={{
+                fontFamily: "var(--country-font-display)",
+                ...(item.type === "colonial"
+                  ? {
+                      textDecoration: "line-through",
+                      textDecorationColor: "var(--country-colonial)",
+                    }
+                  : {}),
+              }}
             >
-              {item.note}
+              {item.name}
+              {item.type === "sovereign" && " ✦"}
+            </div>
+          )}
+          {item.prose && (
+            <div
+              className="text-afh-small leading-relaxed"
+              style={{ color: "var(--country-text)" }}
+            >
+              {item.prose}
             </div>
           )}
         </div>

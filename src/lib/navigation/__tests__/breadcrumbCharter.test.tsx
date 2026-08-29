@@ -291,3 +291,34 @@ describe("the trail a fiche renders", () => {
     expect(familyChip?.textContent?.length).toBeGreaterThan(0);
   });
 });
+
+describe("the trail the home does not render", () => {
+  /**
+   * The home is the one route whose derived trail holds a single crumb, and
+   * that crumb is the home itself, marked as where the reader stands. It names
+   * no ancestor and offers no way back, so it prints a lone "Accueil" over the
+   * page whose whole job is to be the accueil — chrome that asserts nothing.
+   */
+  // @req REQ-115
+  it("renders nothing when no crumb leads anywhere but here", () => {
+    expect(deriveTrail("/fr")).toEqual([{ label: "Accueil" }]);
+
+    const { container } = render(
+      <AfrikBreadcrumbs items={deriveTrail("/fr")} />
+    );
+
+    expect(container.firstChild).toBeNull();
+  });
+
+  /**
+   * The rule is "no way back", not "one crumb". A path the segment table runs
+   * out of words for keeps its home crumb *with* its href, because the reader
+   * is somewhere further down and that link is the only way out.
+   */
+  // @req REQ-115
+  it("still renders a lone crumb that is a way out", () => {
+    render(<AfrikBreadcrumbs items={[{ label: "Accueil", href: "/fr" }]} />);
+
+    expect(screen.getByRole("link", { name: "Accueil" })).toBeDefined();
+  });
+});
