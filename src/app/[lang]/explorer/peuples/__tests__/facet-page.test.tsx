@@ -221,6 +221,42 @@ describe("the peoples facet — where the filtering happens", () => {
     expect(filtersPassed(mockGetIndex)).toEqual(filtersPassed(mockGetPage));
   });
 
+  /**
+   * The defect: the letter rail sat outside the form, so a reader reading the
+   * peoples of "K" who then chose a family was returned the whole alphabet
+   * with nothing saying the letter had been dropped.
+   */
+  // @req REQ-114
+  it("keeps the letter the reader is on when a family is applied", async () => {
+    const { container } = render(await renderRoute({ lettre: "K" }));
+
+    const form = screen.getByTestId("facet-filter-bar");
+    const carried = new FormData(form as HTMLFormElement);
+    expect(carried.get("lettre")).toBe("K");
+    expect(container.querySelector('input[name="page"]')).toBeNull();
+  });
+
+  /**
+   * A narrowing the fold has swallowed still has to be visible, or the reader
+   * is shown a short list and no account of why it is short.
+   */
+  // @req REQ-114
+  it("names the folded narrowings on the line, each removable by address", async () => {
+    render(await renderRoute({ pays: "GHA", lettre: "K" }));
+
+    expect(
+      screen.getByRole("link", { name: /retirer le filtre pays/i })
+    ).toBeInTheDocument();
+    const dropLetter = screen.getByRole("link", {
+      name: /retirer le filtre lettre/i,
+    });
+    const query = new URLSearchParams(
+      (dropLetter.getAttribute("href") ?? "").split("?")[1]
+    );
+    expect(query.get("lettre")).toBeNull();
+    expect(query.get("pays")).toBe("GHA");
+  });
+
   // @req REQ-106
   it("submits its filters to the facet's own address, as a GET a crawler can follow", async () => {
     render(await renderRoute());

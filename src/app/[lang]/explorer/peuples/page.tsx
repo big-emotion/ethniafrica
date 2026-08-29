@@ -13,6 +13,8 @@ import type {
   FacetCountryNarrowing,
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
+import type { FacetActiveFilter } from "@/components/hubs/facets/FacetFilterBar";
+import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
@@ -57,8 +59,6 @@ const PARAM = {
   letter: "lettre",
   page: "page",
 } as const;
-
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 const countFormat = new Intl.NumberFormat("fr-FR");
 
@@ -144,6 +144,28 @@ export default async function PeuplesHubPage({
     choices.families.map((family) => [family.id, family.label])
   );
 
+  /**
+   * What the fold owes back while it is shut. Famille is not here: it is on
+   * the line, and a chip repeating a visible control would tell the reader
+   * nothing they cannot already see.
+   */
+  const activeFilters: FacetActiveFilter[] = [];
+  if (filters.countryId) {
+    const countryLabel =
+      choices.countries.find((country) => country.id === filters.countryId)
+        ?.label ?? filters.countryId;
+    activeFilters.push({
+      label: `Pays : ${countryLabel}`,
+      removeHref: facetHref({ ...filters, countryId: null }, null),
+    });
+  }
+  if (filters.letter) {
+    activeFilters.push({
+      label: `Lettre : ${filters.letter}`,
+      removeHref: facetHref({ ...filters, letter: null }, null),
+    });
+  }
+
   const lede =
     `${countFormat.format(reading.total)} ` +
     `${reading.total === 1 ? "peuple" : "peuples"} dans cette sélection. ` +
@@ -169,20 +191,26 @@ export default async function PeuplesHubPage({
           <p className="afh-parchment-lede">{lede}</p>
         </header>
 
+        {/* Famille is the axis that stays on the line: it is the one the globe
+            above cannot express. Country is folded because the map is already
+            a country control — `narrowing` below hands every drawn country the
+            same `?pays=` this select submits — and it is folded rather than
+            dropped because the map needs WebGL and a script, and this select
+            needs neither. */}
         <FacetFilterBar
           action={getFacetRoute("fr", "peoples")}
           className="mt-4"
-          fields={[
-            {
-              name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
-              options: choices.families.map((family) => ({
-                value: family.id,
-                label: family.label,
-              })),
-              value: filters.familyId,
-            },
+          primaryField={{
+            name: PARAM.family,
+            label: "Famille linguistique",
+            anyLabel: "Toutes les familles",
+            options: choices.families.map((family) => ({
+              value: family.id,
+              label: family.label,
+            })),
+            value: filters.familyId,
+          }}
+          advancedFields={[
             {
               name: PARAM.country,
               label: "Pays",
@@ -194,54 +222,18 @@ export default async function PeuplesHubPage({
               value: filters.countryId,
             },
           ]}
+          advancedSlot={{
+            content: (
+              <FacetLetterRail
+                current={filters.letter}
+                hrefFor={(letter) => facetHref({ ...filters, letter }, null)}
+              />
+            ),
+            activeCount: filters.letter ? 1 : 0,
+          }}
+          preservedParams={{ [PARAM.letter]: filters.letter }}
+          activeFilters={activeFilters}
         />
-
-        {/* Anchors, not buttons: a letter is a reading of the corpus, so it has
-            an address — and the rail then works before hydration and can be
-            followed by a crawler. */}
-        <nav aria-label="Première lettre" className="mt-4">
-          <ul className="flex flex-wrap gap-1">
-            <li>
-              <Link
-                href={facetHref({ ...filters, letter: null }, null)}
-                aria-current={filters.letter ? undefined : "page"}
-                className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
-                style={
-                  filters.letter
-                    ? { backgroundColor: "var(--accent-tint)" }
-                    : {
-                        backgroundColor: "var(--accent)",
-                        color: "var(--accent-foreground)",
-                      }
-                }
-              >
-                Tous
-              </Link>
-            </li>
-            {ALPHABET.map((letter) => {
-              const current = filters.letter === letter;
-              return (
-                <li key={letter}>
-                  <Link
-                    href={facetHref({ ...filters, letter }, null)}
-                    aria-current={current ? "page" : undefined}
-                    className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
-                    style={
-                      current
-                        ? {
-                            backgroundColor: "var(--accent)",
-                            color: "var(--accent-foreground)",
-                          }
-                        : { backgroundColor: "var(--accent-tint)" }
-                    }
-                  >
-                    {letter}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
 
         {reading.peoples.length === 0 ? (
           <p data-testid="peoples-facet-empty" className="mt-6">

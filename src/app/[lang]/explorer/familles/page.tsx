@@ -182,15 +182,13 @@ export default async function FamillesHubPage({
         <FacetFilterBar
           action={facetRoute}
           className="mt-6"
-          fields={[
-            {
-              name: COUNTRY_PARAM,
-              label: "Pays",
-              anyLabel: "Tous les pays",
-              options: countryOptions,
-              value: chosenCountry,
-            },
-          ]}
+          primaryField={{
+            name: COUNTRY_PARAM,
+            label: "Pays",
+            anyLabel: "Tous les pays",
+            options: countryOptions,
+            value: chosenCountry,
+          }}
         />
 
         {families.length === 0 ? (

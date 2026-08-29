@@ -94,10 +94,18 @@ export default async function PaysHubPage({
     permanentRedirect(fiche);
   }
 
+  const chosenFamily = definedFilter(query[FAMILY_PARAM]);
+  const chosenSort = parseCountryFacetSort(definedFilter(query[SORT_PARAM]));
+
   const selection = await getCountryFacetSelection({
-    languageFamilyId: definedFilter(query[FAMILY_PARAM]),
-    sort: parseCountryFacetSort(definedFilter(query[SORT_PARAM])),
+    languageFamilyId: chosenFamily,
+    sort: chosenSort,
   });
+
+  /** The facet under the current family, with the order back to its default. */
+  const withoutSort = chosenFamily
+    ? `${getFacetRoute("fr", "countries")}?${new URLSearchParams({ [FAMILY_PARAM]: chosenFamily })}`
+    : getFacetRoute("fr", "countries");
 
   // The index the shared map reads is built from the *filtered* rows, never
   // from the corpus behind them: publishing everything would make a click on
@@ -138,14 +146,14 @@ export default async function PaysHubPage({
           <FacetFilterBar
             action={getFacetRoute("fr", "countries")}
             submitLabel="Appliquer"
-            fields={[
-              {
-                name: FAMILY_PARAM,
-                label: "Famille linguistique",
-                anyLabel: "Toutes les familles",
-                options: selection.familyOptions,
-                value: definedFilter(query[FAMILY_PARAM]),
-              },
+            primaryField={{
+              name: FAMILY_PARAM,
+              label: "Famille linguistique",
+              anyLabel: "Toutes les familles",
+              options: selection.familyOptions,
+              value: chosenFamily,
+            }}
+            advancedFields={[
               {
                 // The empty option *is* the alphabetical order rather than an
                 // absent one: a list always has some order, so "no sort" would
@@ -159,13 +167,19 @@ export default async function PaysHubPage({
                     label: "Peuples documentés (décroissant)",
                   },
                 ],
-                value:
-                  parseCountryFacetSort(definedFilter(query[SORT_PARAM])) ===
-                  "peuples"
-                    ? "peuples"
-                    : null,
+                value: chosenSort === "peuples" ? "peuples" : null,
               },
             ]}
+            activeFilters={
+              chosenSort === "peuples"
+                ? [
+                    {
+                      label: "Tri : peuples documentés",
+                      removeHref: withoutSort,
+                    },
+                  ]
+                : []
+            }
           />
 
           {selection.rows.length === 0 ? (
