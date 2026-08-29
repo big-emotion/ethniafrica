@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import React from "react";
 
 import type { AccessMode } from "@/lib/hubs/moduleRegistry";
@@ -132,12 +132,18 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
       expect(screen.queryByRole("heading", { level: 2, name })).toBeNull();
     }
 
-    expect(
-      screen.getByRole("heading", {
-        level: 3,
-        name: /Vous connaissez le nom/,
-      })
-    ).toBeInTheDocument();
+    // Counted, not quoted. Pinning one slice's wording made this test fail
+    // the moment recette reworded them (#487) — a copy edit is not a
+    // regression in the outline, and a test that cannot tell the two apart
+    // is noise. What has to hold is that the section's heading is the only
+    // h2 among them and all three slices sit under it.
+    const purpose = screen.getByTestId("home-purpose-blocks");
+    expect(within(purpose).getAllByRole("heading", { level: 3 })).toHaveLength(
+      3
+    );
+    expect(within(purpose).getAllByRole("heading", { level: 2 })).toEqual([
+      screen.getByTestId("home-purpose-heading"),
+    ]);
   });
 
   // The formula described the reader ("il arrive…", "il repart…") instead
