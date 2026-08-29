@@ -1,8 +1,15 @@
+import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
 import type { FacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import { getCountryIndex } from "@/api/v2/services/countryService";
+import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
+import {
+  getCountryFacetSelection,
+  parseCountryFacetSort,
+} from "@/api/v2/services/countryFacet";
+import type { CountryFacetRow } from "@/api/v2/services/countryFacet";
+import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { getCountryRoute, resolveCountryDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
@@ -23,6 +30,13 @@ import type { Language } from "@/types/shared";
  * is why the entry is a single row: the panel's job is to open the fiche, and a
  * hub exists to be left.
  *
+ * What the page owes beyond that index is the half the map cannot be. Aiming at
+ * a shape is no way into a country for a reader on a keyboard, on a page whose
+ * script has not run, or on a device with no WebGL — so the list below is the
+ * facet's guaranteed access path and the globe is the second one. A country the
+ * admin-0 asset cannot draw is still listed, which is the whole point of that
+ * ordering.
+ *
  * The redirect below is a net for links already sent — nothing in the app emits
  * the query form any more. It runs on the server, before any render, so it also
  * catches readers arriving from outside and crawlers, which a client-side guard
@@ -34,6 +48,35 @@ interface PageParams {
 }
 
 type PageSearchParams = Record<string, string | string[] | undefined>;
+
+/** The query parameters the facet's filters travel under, in the reader's own language. */
+const FAMILY_PARAM = "famille";
+const SORT_PARAM = "tri";
+
+/**
+ * One country, as a row that opens its fiche.
+ *
+ * A plain anchor and nothing else. Charter rule: the map opens the panel and
+ * the list does not — a row that opened a pane would put the hub's own detail
+ * surface back between the reader and the fiche, which is the failure this
+ * route was split out to end.
+ */
+function CountryRow({ row }: { row: CountryFacetRow }) {
+  return (
+    <li>
+      <Link
+        href={getCountryRoute("fr", row.id)}
+        className="flex min-h-11 items-baseline justify-between gap-3 rounded-afh-lg border border-afh-border bg-afh-surface px-4 py-3 text-afh-body text-afh-text"
+      >
+        <span>{row.label}</span>
+        <span className="font-afh-mono text-afh-caption text-afh-text-soft">
+          {row.documentedPeopleCount}
+          <span className="sr-only"> peuples documentés</span>
+        </span>
+      </Link>
+    </li>
+  );
+}
 
 // @req REQ-091
 export default async function PaysHubPage({
@@ -51,20 +94,28 @@ export default async function PaysHubPage({
     permanentRedirect(fiche);
   }
 
-  const countries = await getCountryIndex();
+  const selection = await getCountryFacetSelection({
+    languageFamilyId: definedFilter(query[FAMILY_PARAM]),
+    sort: parseCountryFacetSort(definedFilter(query[SORT_PARAM])),
+  });
 
+  // The index the shared map reads is built from the *filtered* rows, never
+  // from the corpus behind them: publishing everything would make a click on
+  // the globe answer with a country the list on the same page has excluded.
   const countryIndex: FacetCountryIndex = Object.fromEntries(
-    countries.map((country) => [
-      country.id as CountryId,
+    selection.rows.map((row) => [
+      row.id as CountryId,
       [
         {
-          id: country.id,
-          label: country.nameFr,
-          href: getCountryRoute("fr", country.id),
+          id: row.id,
+          label: row.label,
+          href: getCountryRoute("fr", row.id),
         },
       ],
     ])
   );
+
+  const filtered = selection.rows.length !== selection.totalCountries;
 
   return (
     <>
@@ -77,10 +128,65 @@ export default async function PaysHubPage({
           </p>
           <h1>Les pays d&apos;Afrique</h1>
           <p className="afh-parchment-lede">
-            {countries.length} pays au corpus. Choisissez-en un sur le globe
-            pour ouvrir sa fiche.
+            {selection.totalCountries} pays au corpus
+            {filtered && ` · ${selection.rows.length} dans cette sélection`}.
+            Choisissez-en un sur le globe ou dans la liste pour ouvrir sa fiche.
           </p>
         </header>
+
+        <section className="afh-parchment-section">
+          <FacetFilterBar
+            action={getFacetRoute("fr", "countries")}
+            fields={[
+              {
+                name: FAMILY_PARAM,
+                label: "Famille linguistique",
+                anyLabel: "Toutes les familles",
+                options: selection.familyOptions,
+                value: definedFilter(query[FAMILY_PARAM]),
+              },
+              {
+                // The empty option *is* the alphabetical order rather than an
+                // absent one: a list always has some order, so "no sort" would
+                // name a state the page cannot be in.
+                name: SORT_PARAM,
+                label: "Tri",
+                anyLabel: "Nom (A → Z)",
+                options: [
+                  {
+                    value: "peuples",
+                    label: "Peuples documentés (décroissant)",
+                  },
+                ],
+                value:
+                  parseCountryFacetSort(definedFilter(query[SORT_PARAM])) ===
+                  "peuples"
+                    ? "peuples"
+                    : null,
+              },
+            ]}
+          />
+
+          {selection.rows.length === 0 ? (
+            <p data-testid="country-facet-empty" className="mt-4">
+              Aucun pays du corpus ne porte cette famille linguistique.
+            </p>
+          ) : (
+            // No pagination, and that is a decision rather than an omission:
+            // the corpus holds 54 countries, and the facet's point is that the
+            // continent can be read at once. It is also what makes the ordering
+            // above honest — the page never holds a slice of a larger set, so
+            // sorting the selection is sorting all of it.
+            <ul
+              data-testid="country-facet-list"
+              className="mt-4 grid list-none grid-cols-1 gap-2 p-0 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {selection.rows.map((row) => (
+                <CountryRow key={row.id} row={row} />
+              ))}
+            </ul>
+          )}
+        </section>
       </div>
     </>
   );
