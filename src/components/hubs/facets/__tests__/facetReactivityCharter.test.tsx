@@ -187,6 +187,34 @@ describe("map → list — the map is a second channel of selection", () => {
   });
 
   /**
+   * Ghana opens with eighty-six peoples. A control that takes them all into
+   * the list is no use printed under eighty-six names, so it precedes them.
+   */
+  // @req REQ-117
+  it("offers the narrowing before the rows it answers for", async () => {
+    await mountIslandGlobe({ narrowing: NARROW_TO_BENIN });
+
+    const narrow = screen.getByTestId("facet-panel-narrow");
+    const rows = screen.getByTestId("facet-panel-rows");
+    expect(
+      narrow.compareDocumentPosition(rows) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  /**
+   * The link says "ce pays" because French wants an article before most
+   * country names and the corpus stores no gender to pick one from. On screen
+   * the panel's own title resolves it; heard out of context it would not, so
+   * the name travels with the link.
+   */
+  // @req REQ-117
+  it("carries the country name to a reader who hears the link alone", async () => {
+    await mountIslandGlobe({ narrowing: NARROW_TO_BENIN });
+
+    expect(screen.getByTestId("facet-panel-narrow")).toHaveTextContent("Bénin");
+  });
+
+  /**
    * The countries facet takes no country filter — a country there is something
    * to open, not something to narrow to. Publishing no narrowing has to be a
    * facet saying "not offered", never a facet forgetting.
@@ -208,9 +236,7 @@ describe("map → list — the map is a second channel of selection", () => {
     await mountIslandGlobe({ narrowing: NARROW_TO_BENIN, focused: "BEN" });
 
     expect(screen.queryByTestId("facet-panel-narrow")).toBeNull();
-    expect(screen.getByTestId("facet-panel-narrowed")).toHaveTextContent(
-      "Bénin"
-    );
+    expect(screen.getByTestId("facet-panel-narrowed")).toBeInTheDocument();
   });
 
   /**

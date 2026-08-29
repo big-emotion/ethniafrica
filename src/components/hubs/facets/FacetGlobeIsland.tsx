@@ -37,8 +37,15 @@ const AtlasGlobe = dynamic(
  * the map is offered.
  *
  * Both variants are whole literals because Tailwind's scanner reads source text
- * and never evaluates it: `min-[${WIDTH}px]:hidden` compiles to no rule at all,
- * and the failure is a class that silently does nothing.
+ * and never evaluates it. A class assembled from a template literal — the width
+ * held in a constant and interpolated into the variant — compiles to no rule at
+ * all, and the failure is silent: the class reaches the DOM and matches nothing.
+ *
+ * The scanner reads comments with the same eyes, which is why the sentence
+ * above describes that mistake instead of showing it. Written out, the example
+ * was itself extracted as a candidate and took both real classes down with it:
+ * the map would not fold, and the only reason half of it appeared to work was
+ * that the contract test happened to contain the same string.
  */
 const FOLD_CONTROL_CLASS = "min-[760px]:hidden";
 const FOLDED_STAGE_CLASS = "max-[759px]:data-[globe-folded=true]:hidden";
@@ -137,16 +144,12 @@ export function FacetGlobeIsland({
         ...base,
         body: (
           <>
-            <ul data-testid="facet-panel-rows">
-              {rows.map((row) => (
-                <li key={row.id}>
-                  <Link href={row.href}>{row.label}</Link>
-                </li>
-              ))}
-            </ul>
+            {/* Above the rows, because it is the answer to their number:
+                Ghana opens with eighty-six peoples, and a control to take
+                them all into the list is no use under eighty-six names. */}
             {alreadyNarrowed ? (
               <p data-testid="facet-panel-narrowed">
-                La liste ne montre déjà que {base.title}.
+                La liste est déjà réduite à ce pays.
               </p>
             ) : (
               narrowHref && (
@@ -155,10 +158,25 @@ export function FacetGlobeIsland({
                   data-testid="facet-panel-narrow"
                   style={{ color: "var(--accent-ink)" }}
                 >
-                  Ne garder que {base.title} dans la liste
+                  {/* "ce pays" rather than the name: French wants an article
+                      before most of them — le Ghana, la Namibie, l'Angola,
+                      les Comores, and none at all for Madagascar — and the
+                      corpus stores no gender to pick one from. The panel is
+                      titled with the country, so the deixis resolves on
+                      screen; the colon carries the name to a reader hearing
+                      this link out of its context, and needs no article. */}
+                  Réduire la liste à ce pays
+                  <span className="sr-only"> : {base.title}</span>
                 </Link>
               )
             )}
+            <ul data-testid="facet-panel-rows">
+              {rows.map((row) => (
+                <li key={row.id}>
+                  <Link href={row.href}>{row.label}</Link>
+                </li>
+              ))}
+            </ul>
           </>
         ),
       };
