@@ -18,6 +18,15 @@ import { getCountryRoute } from "@/lib/routing";
 const GAME = getGameBySlug("mercator");
 
 /**
+ * The provenance this game records. Not a fiche field: both areas are measured
+ * off the committed admin-0 outlines, so the asset itself is what the claim
+ * rests on. Exported so `revealProvenance` and its test key off one string
+ * rather than two copies that can drift.
+ */
+// @req REQ-120
+export const MERCATOR_PROVENANCE_PATH = "lib/atlas/assets/africaAdmin0";
+
+/**
  * Below this the two countries are indistinguishable at the corpus's own
  * precision, and asking would be a coin toss dressed as a question.
  */
@@ -121,7 +130,7 @@ export function buildMercatorRound(
     correctIndex,
     reveal: {
       textFr: `${areaSentence(a, footprintA)} ${areaSentence(b, footprintB)}`,
-      fieldPath: "lib/atlas/assets/africaAdmin0",
+      fieldPath: MERCATOR_PROVENANCE_PATH,
       // Both figures are measured off the committed outlines, not read from a
       // fiche. Listing the countries' own sources would credit this claim to
       // documents that never made it, and the fiche's confidence score says

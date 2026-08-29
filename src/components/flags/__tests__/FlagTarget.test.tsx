@@ -223,13 +223,20 @@ describe("FlagTarget", () => {
   });
 
   describe("target.type branches", () => {
+    /**
+     * Each type reaches the dialog under its French label. It used to reach it
+     * as `fiche_section · PPL_YORUBA` — the enum value and the corpus id, both
+     * printed at a reporter being asked to confirm what they are flagging.
+     * The id still travels in the payload, which is where the moderator reads
+     * it; the assertions on that are further down this file.
+     */
     // @req REQ-012
     it.each([
-      ["assertion", assertionTarget, "assertion · assertion-1"],
-      ["fiche_section", sectionTarget, "fiche_section · PPL_YORUBA"],
-      ["source", sourceTarget, "source · SRC_42"],
+      ["assertion", assertionTarget, "Affirmation"],
+      ["fiche_section", sectionTarget, "Section de fiche"],
+      ["source", sourceTarget, "Source"],
     ])(
-      "passes target of type %s through to FlagForm unchanged",
+      "names target of type %s in French, without its identifier",
       async (_label, target, expectedText) => {
         mockSupabaseClient({
           session: { user: { id: "user-1" }, access_token: "token-1" },
@@ -240,6 +247,7 @@ describe("FlagTarget", () => {
         fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
 
         expect(await screen.findByText(expectedText)).toBeInTheDocument();
+        expect(screen.queryByText(new RegExp(target.id))).toBeNull();
       }
     );
   });

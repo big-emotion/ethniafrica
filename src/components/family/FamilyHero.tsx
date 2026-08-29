@@ -52,12 +52,6 @@ export function FamilyHero({ data }: FamilyHeroProps) {
           doctrineSlug={doctrineSlug ?? undefined}
         />
       </div>
-      <p
-        className="mt-2 text-afh-small"
-        style={{ color: "var(--country-text-soft)" }}
-      >
-        {data.id}
-      </p>
       <div className="mt-3">
         <ConfidenceChip
           confidenceScore={null}
