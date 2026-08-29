@@ -18,6 +18,7 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   search: "Recherche",
   doctrine: "Doctrine",
   about: "À propos",
+  anecdotes: "Anecdotes",
   names: "Noms",
   compare: "Comparer",
   migrations: "Migrations",

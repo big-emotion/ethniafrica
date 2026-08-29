@@ -9,9 +9,9 @@ import {
   type CountrySynthesis,
 } from "@/lib/home/countrySynthesis";
 
-/** Four cards is what the rail shows before the fifth needs a scroll. */
+/** Three cards is what the band's width holds whole, with no scroll. */
 // @req REQ-113
-export const RAIL_SIZE = 4;
+export const RAIL_SIZE = 3;
 
 /**
  * Draw `count` distinct ids without shuffling the whole list.
@@ -40,7 +40,7 @@ export function drawIds(
 }
 
 /**
- * The four syntheses the home's rail shows on this request.
+ * The three syntheses the home's rail shows on this request.
  *
  * Returns an empty list rather than throwing when the corpus cannot be
  * read: the rail is one band of a page that has plenty else to say, and a
