@@ -357,26 +357,28 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   });
 
   /**
-   * The half the header could not reach on its own: `noms` is declared ready
-   * and waits on `name_records`, so only the resolved map knows. Without it
-   * the menu linked an atlas of names holding none.
+   * The half the header could not reach on its own — only the resolved map
+   * knows whether a table answered. Exercised on `quiz`, the one module that
+   * is both declared ready and backed by a table: every Comprendre module
+   * that reads one is now `draft`, and a draft module would short-circuit
+   * before the map was ever consulted, proving nothing about it.
    */
   // @req REQ-106
   it("withholds it from a ready module whose corpus came back empty", () => {
-    renderHeader({}, { noms: false });
+    renderHeader({}, { quiz: false });
 
-    fireEvent.click(trigger("Comprendre"));
-    expectInert(entryFor("noms"));
+    fireEvent.click(trigger("Jouer"));
+    expectInert(entryFor("quiz"));
   });
 
   // @req REQ-106
   it("offers that same module once its corpus fills", () => {
-    renderHeader({}, { noms: true });
+    renderHeader({}, { quiz: true });
 
-    fireEvent.click(trigger("Comprendre"));
-    const entry = entryFor("noms");
+    fireEvent.click(trigger("Jouer"));
+    const entry = entryFor("quiz");
     expect(entry.tagName).toBe("A");
-    expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+    expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "quiz"));
     expect(entry).not.toHaveTextContent(t.hubs.unavailableLabel);
   });
 
