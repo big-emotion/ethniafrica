@@ -99,3 +99,95 @@ export const INVERSION_TEMPLATE_IDS: readonly QuizTemplateId[] = [
 export function isInversionTemplate(templateId: QuizTemplateId): boolean {
   return INVERSION_TEMPLATE_IDS.includes(templateId);
 }
+
+/**
+ * What a question is *about* — the axis a reader picks a track along, and the
+ * one the bank was blind to.
+ *
+ * A theme is a property of the template, so it is derived rather than stored:
+ * no column, no backfill, and no rebuild to introduce the facet. The bank does
+ * not have to be rewritten for a reader to be able to filter it.
+ *
+ * Twelve templates over nine themes rather than one theme each: `majorRites`
+ * and `symbols` are both what a people does and shows, and splitting them
+ * would give the picker two entries a reader could not tell apart.
+ */
+export type QuizThemeId =
+  | "parente-linguistique"
+  | "noms"
+  | "langues"
+  | "territoire"
+  | "rites-et-culture"
+  | "croyances"
+  | "royaumes-et-histoire"
+  | "organisation"
+  | "migrations";
+
+// @req REQ-121
+export const TEMPLATE_THEMES: Record<QuizTemplateId, QuizThemeId> = {
+  T1: "parente-linguistique",
+  T2: "noms",
+  T3: "territoire",
+  T4: "langues",
+  T5: "langues",
+  T6: "rites-et-culture",
+  T7: "croyances",
+  T8: "rites-et-culture",
+  T9: "royaumes-et-histoire",
+  T10: "organisation",
+  T11: "migrations",
+  T12: "noms",
+};
+
+/** Picker order — the familiar themes first, the ones the atlas exists to show last. */
+// @req REQ-121
+export const QUIZ_THEME_IDS: readonly QuizThemeId[] = [
+  "noms",
+  "langues",
+  "parente-linguistique",
+  "territoire",
+  "rites-et-culture",
+  "croyances",
+  "royaumes-et-histoire",
+  "organisation",
+  "migrations",
+];
+
+// @req REQ-121
+export const QUIZ_THEME_LABELS_FR: Record<QuizThemeId, string> = {
+  "parente-linguistique": "Parenté linguistique",
+  noms: "Noms et appellations",
+  langues: "Langues",
+  territoire: "Territoire",
+  "rites-et-culture": "Rites et culture",
+  croyances: "Croyances",
+  "royaumes-et-histoire": "Royaumes et histoire",
+  organisation: "Organisation sociale",
+  migrations: "Migrations",
+};
+
+/**
+ * The theme a stored question belongs to, read from the field path rather than
+ * the template id.
+ *
+ * The serving side carries `field_path` on the light candidate row it bands and
+ * orders (`quizService`'s `CandidateRow`), and adding `template_id` beside it
+ * would widen every read for a value the path already determines.
+ */
+// @req REQ-121
+export function themeOfFieldPath(fieldPath: string): QuizThemeId | null {
+  for (const templateId of QUIZ_TEMPLATE_IDS) {
+    const path = TEMPLATE_FIELD_PATHS[templateId];
+    const matches =
+      path === TEMPLATE_FIELD_PATHS.T3
+        ? fieldPath.startsWith(path)
+        : fieldPath === path;
+    if (matches) return TEMPLATE_THEMES[templateId];
+  }
+  return null;
+}
+
+// @req REQ-121
+export function isQuizThemeId(value: string): value is QuizThemeId {
+  return (QUIZ_THEME_IDS as readonly string[]).includes(value);
+}

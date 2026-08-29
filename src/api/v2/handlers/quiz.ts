@@ -20,6 +20,7 @@ import {
   QUIZ_SESSION_SIZE,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
+import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
 import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type {
@@ -79,6 +80,12 @@ export async function getQuizScopesHandler(): Promise<
   return createApiResponse({
     countries: catalogue.countries.map(toScopeOptionView),
     families: catalogue.families.map(toScopeOptionView),
+    themes: catalogue.themes.map((theme) => ({
+      id: theme.id,
+      labelFr: theme.labelFr,
+      activeQuestionCount: theme.activeQuestionCount,
+      playable: isPlayableScope(theme.activeQuestionCount),
+    })),
     mixed: corpusOption("mixed"),
     random: corpusOption("random"),
   });
@@ -258,7 +265,11 @@ export async function composeQuizSessionHandler(
     };
   }
 
-  const questions = await composeQuizSession({ scope, count: query.count });
+  const questions = await composeQuizSession({
+    scope,
+    count: query.count,
+    theme: query.theme as QuizThemeId | undefined,
+  });
 
   if (questions.length === 0) {
     return {

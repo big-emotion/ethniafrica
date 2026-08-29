@@ -177,6 +177,52 @@ describe("getQuizScopeCatalogue", () => {
     expect(catalogue.countries).toHaveLength(1);
     expect(catalogue.countries[0].activeQuestionCount).toBe(0);
   });
+
+  /**
+   * The theme is derived from the field path, not stored, so the catalogue can
+   * count it without the bank ever being rewritten — that is what makes the
+   * facet shippable without a `--rebuild`.
+   */
+  // @req REQ-121
+  it("counts the bank by content theme as well as by track", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "PPL_A"),
+      questionRow("q2", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q3", "PPL_B", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+    ]);
+
+    const catalogue = await getQuizScopeCatalogue();
+    const byId = new Map(catalogue.themes.map((t) => [t.id, t]));
+
+    expect(byId.get("croyances")?.activeQuestionCount).toBe(2);
+    expect(byId.get("parente-linguistique")?.activeQuestionCount).toBe(1);
+    expect(byId.get("migrations")?.activeQuestionCount).toBe(0);
+  });
+
+  // @req REQ-121
+  it("names every theme in a fixed order, so the picker does not reshuffle as the bank grows", async () => {
+    tableRows.set("quiz_questions", []);
+
+    const catalogue = await getQuizScopeCatalogue();
+
+    expect(catalogue.themes.map((theme) => theme.id)).toEqual([
+      "noms",
+      "langues",
+      "parente-linguistique",
+      "territoire",
+      "rites-et-culture",
+      "croyances",
+      "royaumes-et-histoire",
+      "organisation",
+      "migrations",
+    ]);
+  });
 });
 
 describe("getQuizScopeLabel", () => {
@@ -335,6 +381,51 @@ describe("composeQuizSession", () => {
 
     expect(session).toEqual([]);
     expect(getConfidenceMapMock).not.toHaveBeenCalled();
+  });
+
+  /**
+   * The facet the picker was missing. It composes with the track rather than
+   * replacing it: a country and a theme narrow the same pool, in that order.
+   */
+  // @req REQ-121
+  it("narrows the draw to one content theme, keeping the track", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-family", "PPL_A"),
+      questionRow("q-belief", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q-rites", "PPL_B", {
+        template_id: "T6",
+        field_path: "content.culture.majorRites",
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+      theme: "croyances",
+    });
+
+    expect(session.map((question) => question.id)).toEqual(["q-belief"]);
+  });
+
+  // @req REQ-121
+  it("serves the whole track when no theme is asked for", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-family", "PPL_A"),
+      questionRow("q-belief", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+    ]);
+
+    const session = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(session).toHaveLength(2);
   });
 
   // @req REQ-103

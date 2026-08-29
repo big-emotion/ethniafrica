@@ -2560,6 +2560,31 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["id", "labelFr", "activeQuestionCount", "playable"],
         },
+        QuizThemeOption: {
+          type: "object",
+          description:
+            "One domain of content a session can be narrowed to, counted across the whole corpus.",
+          properties: {
+            id: {
+              type: "string",
+              enum: [
+                "noms",
+                "langues",
+                "parente-linguistique",
+                "territoire",
+                "rites-et-culture",
+                "croyances",
+                "royaumes-et-histoire",
+                "organisation",
+                "migrations",
+              ],
+            },
+            labelFr: { type: "string", example: "Croyances" },
+            activeQuestionCount: { type: "integer", minimum: 0 },
+            playable: { type: "boolean" },
+          },
+          required: ["id", "labelFr", "activeQuestionCount", "playable"],
+        },
         QuizScopesData: {
           type: "object",
           description: "GET /v2/quiz/scopes result data.",
@@ -2571,6 +2596,10 @@ const options: swaggerJsdoc.Options = {
             families: {
               type: "array",
               items: { $ref: "#/components/schemas/QuizScopeOption" },
+            },
+            themes: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizThemeOption" },
             },
             mixed: { $ref: "#/components/schemas/QuizScopeOption" },
             random: { $ref: "#/components/schemas/QuizScopeOption" },

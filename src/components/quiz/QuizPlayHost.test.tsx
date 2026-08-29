@@ -27,6 +27,7 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
     render(
       <QuizPlayHost
         scope={{ kind: "country", entityId: "GHA" }}
+        theme={null}
         scopeLabelFr="Ghana"
         exitHref={getLocalizedRoute("fr", "quiz")}
       />
@@ -45,6 +46,7 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
     render(
       <QuizPlayHost
         scope={{ kind: "mixed" }}
+        theme={null}
         scopeLabelFr="Tout le continent"
         exitHref={getLocalizedRoute("fr", "quiz")}
       />

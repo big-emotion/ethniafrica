@@ -47,6 +47,17 @@
  *           Whole-corpus track when no entity is named. `mixte` (the default)
  *           applies the difficulty ladder; `aleatoire` does not.
  *       - in: query
+ *         name: theme
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [noms, langues, parente-linguistique, territoire, rites-et-culture, croyances, royaumes-et-histoire, organisation, migrations]
+ *         description: >
+ *           A domain of content. Composes with `pays` / `famille` rather than
+ *           replacing them, so `?pays=ZAF&theme=croyances` is « les croyances
+ *           des peuples d'Afrique du Sud ». Omitted, a session spreads over at
+ *           most two rounds per theme.
+ *       - in: query
  *         name: count
  *         required: false
  *         schema:
@@ -125,6 +136,7 @@ export async function GET(request: NextRequest) {
       pays: searchParams.get("pays") ?? undefined,
       famille: searchParams.get("famille") ?? undefined,
       mode: searchParams.get("mode") ?? undefined,
+      theme: searchParams.get("theme") ?? undefined,
       count: searchParams.get("count") ?? undefined,
     });
 
