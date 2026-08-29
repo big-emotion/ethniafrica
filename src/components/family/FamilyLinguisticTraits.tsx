@@ -1,5 +1,10 @@
 import type { FamilyLinguisticTraitsData } from "@/lib/familyDataTransformer";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Caractéristiques linguistiques";
+
 export interface FamilyLinguisticTraitsProps {
   data: FamilyLinguisticTraitsData;
 }
@@ -16,10 +21,12 @@ export function FamilyLinguisticTraits({ data }: FamilyLinguisticTraitsProps) {
   if (!traitFields.some(([, field]) => Boolean(data[field]))) return null;
 
   return (
-    <section aria-labelledby="family-linguistic-traits-heading">
-      <h2 id="family-linguistic-traits-heading">
-        Caractéristiques linguistiques
-      </h2>
+    <section
+      aria-labelledby="family-linguistic-traits-heading"
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
+    >
+      <h2 id="family-linguistic-traits-heading">{CHAPTER_TITLE}</h2>
       {traitFields.map(([label, field]) =>
         data[field] ? (
           <p key={field}>

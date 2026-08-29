@@ -2,6 +2,11 @@ import type { FamilyDecolonialHeaderData } from "@/lib/familyDataTransformer";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
 import { bcp47LanguageTag } from "@/lib/languageTag";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Appellations et décolonisation";
+
 export interface FamilyDecolonialHeaderProps {
   data: FamilyDecolonialHeaderData;
   selfAppellationLang?: string;
@@ -29,8 +34,12 @@ export function FamilyDecolonialHeader({
   if (!hasContent) return null;
 
   return (
-    <section aria-labelledby="family-decolonial-heading">
-      <h2 id="family-decolonial-heading">Appellations et décolonisation</h2>
+    <section
+      aria-labelledby="family-decolonial-heading"
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
+    >
+      <h2 id="family-decolonial-heading">{CHAPTER_TITLE}</h2>
       {data.nameFr && <p>{data.nameFr}</p>}
       {data.nameEn && <p>{data.nameEn}</p>}
       {data.historicalAppellations.length > 0 && (

@@ -17,6 +17,7 @@
 import type { ReactNode } from "react";
 
 import { ContextTriad } from "@/components/fiche/ContextTriad";
+import { FicheChapterBar } from "@/components/fiche/FicheChapterBar";
 import {
   resolvePanel,
   sectionIdForPanel,
@@ -111,6 +112,7 @@ export function FicheSequence({
 
   return (
     <div
+      data-fiche-sequence=""
       className={cn(
         ACCENT_CLASS_BY_ENTITY[context.entityType],
         "flex flex-col gap-afh-3xl",
@@ -128,6 +130,10 @@ export function FicheSequence({
         </div>
       ) : null}
       {globe}
+      {/* The rail opens the reading, not the map: pinned here it starts
+          following the reader exactly where the chapters start, and the globe
+          keeps the screen to itself while it is the subject. */}
+      <FicheChapterBar />
       {/* The globe is the only full-bleed element: the shell went edge to edge,
           so the reading carries its own measure rather than inheriting one from
           a container the globe would otherwise be boxed into too.

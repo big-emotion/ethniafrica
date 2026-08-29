@@ -1,6 +1,11 @@
 import type { FamilyHistoryData } from "@/lib/familyDataTransformer";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Histoire et origines";
+
 export interface FamilyHistorySectionProps {
   data: FamilyHistoryData;
   familyId: string;
@@ -26,8 +31,12 @@ export function FamilyHistorySection({
   if (!historyFields.some(([, field]) => Boolean(data[field]))) return null;
 
   return (
-    <section aria-labelledby="family-history-heading">
-      <h2 id="family-history-heading">Histoire et origines</h2>
+    <section
+      aria-labelledby="family-history-heading"
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
+    >
+      <h2 id="family-history-heading">{CHAPTER_TITLE}</h2>
       {historyFields.map(([label, field]) =>
         data[field] ? (
           <p key={field}>

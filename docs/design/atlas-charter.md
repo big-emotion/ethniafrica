@@ -218,3 +218,39 @@ Under `prefers-reduced-motion: reduce`, every duration collapses and transforms
 are neutralised — only opacity survives. On the atlas this means the camera
 **jumps** to its destination instead of flying there, and the overlay paints at
 full strength in one step. Nothing is ever made unreachable by reduced motion.
+
+---
+
+## 7. Reading a fiche
+
+Past the globe, a fiche is one uninterrupted parchment — a dozen chapters on a
+people, more on a family. Two questions follow a reader down it, and neither
+had an answer: _where in this document am I_, and _how do I get back to the
+chapter I just passed_. The reading rail answers both.
+
+**A fiche declares its own chapters.** The rail is not given a list. Each
+chapter announces itself with `data-fiche-section`, carrying its title, and the
+rail reads the rendered document. This is the only rule that survives contact
+with the corpus: `Fragmentation coloniale` exists only where a people straddles
+a border, `Voix & récits` only once its fetch answers. A hand-written list per
+entity type would restate every one of those gates and drift the first time one
+changed. A chapter the corpus does not produce is not in the DOM, and therefore
+not in the rail — no second gate to keep in sync.
+
+**Every chapter is addressable.** `FicheSection` derives an anchor from the
+chapter's title, so a reader can send someone the paragraph they are reading.
+Anchors the app already publishes — `#sources`, which citation chips across the
+app point at — are passed explicitly and never re-derived. A chapter with no
+anchor is dropped from the rail rather than offered as a link that goes nowhere.
+
+**The rail states position, it does not narrate scrolling.** It names the
+chapter being read, counts it against the total (`02 / 11`), and draws how much
+of the fiche is behind the reader. Between two chapters it holds the last one
+it saw: the reader is still in the fiche, and a blank readout would say
+otherwise. Choosing a chapter moves focus to it, not merely the viewport — a
+keyboard reader must arrive somewhere they can read from.
+
+**It heads the parchment, it does not float over the map.** The rail is pinned
+from where the chapters start, so the globe keeps the screen to itself while it
+is the subject. It takes the parchment's measure, not the viewport's, and the
+ground on either side of it is the ground the document is printed on.

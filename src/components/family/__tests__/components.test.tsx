@@ -80,6 +80,24 @@ const completeFamily: LanguageFamily = {
 };
 
 describe("LanguageFamilyDetailViewV2", () => {
+  // The reading rail lists chapters in document order, so the sources footer
+  // closing the fiche is no longer only a visual convention — a rail that ends
+  // on "Classification" tells a reader the fiche ends there. The family fiche
+  // appended four chapters *after* its own footer; the country fiche has
+  // always slotted its extra chapters before it (CountryParchment children).
+  // @req REQ-047
+  it("closes on its sources footer, with no chapter after it", () => {
+    const { container } = render(
+      <LanguageFamilyDetailViewV2 family={completeFamily} />
+    );
+
+    const chapters = Array.from(
+      container.querySelectorAll("[data-fiche-section]")
+    ).map((chapter) => chapter.getAttribute("data-fiche-section"));
+
+    expect(chapters[chapters.length - 1]).toBe("Sources");
+  });
+
   // @req REQ-047
   it("renders every non-empty transformed section through SSR", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
