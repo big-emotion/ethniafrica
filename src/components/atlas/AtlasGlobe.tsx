@@ -1217,7 +1217,9 @@ export function AtlasGlobe({
         // Unmeasured, nothing is thinned: a guessed stage width would drop
         // countries on arithmetic rather than on crowding, and the first
         // measurement is one frame away.
-        measuredStage ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100 : 0,
+        measuredStage
+          ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100
+          : 0,
         stageAspect ?? STAGE_ASPECT
       );
 
