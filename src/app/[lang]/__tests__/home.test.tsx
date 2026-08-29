@@ -156,7 +156,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     render(await Home({ searchParams: Promise.resolve({}) }));
 
     const strip = screen.getByTestId("home-trust-strip");
-    expect(strip).toHaveTextContent("Chaque source citée");
+    expect(strip).toHaveTextContent("Chaque source est citée");
     expect(strip.querySelector("a")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "doctrine")

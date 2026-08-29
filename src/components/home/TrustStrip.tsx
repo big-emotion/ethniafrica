@@ -12,13 +12,19 @@ export interface TrustStripProps {
  * (REQ-113): the corpus is sourced and its disagreements are marked. The
  * link is the receipt — a page that says its sources are cited and does
  * not say where to check is asking to be taken on trust.
+ *
+ * It names the tier rather than stopping at « chaque source citée ». Citing
+ * a source and weighing it are two different promises, and the second is
+ * the one the atlas actually keeps: nothing is excluded for being weak,
+ * everything carries an explicit tier (official / referenced / unverified).
  */
 // @req REQ-113
 export function TrustStrip({ language }: TrustStripProps) {
   return (
     <aside className="home-trust" data-testid="home-trust-strip">
       <p>
-        Chaque source citée. Chaque débat signalé.{" "}
+        Chaque source est citée avec son niveau de fiabilité, et les désaccords
+        sont signalés.{" "}
         <Link href={getLocalizedRoute(language, "doctrine")}>La doctrine</Link>.
       </p>
 
