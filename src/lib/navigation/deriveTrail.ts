@@ -3,6 +3,11 @@ import {
   getLocalizedRoute,
   getPageFromRoute,
 } from "@/lib/routing";
+import {
+  AXIS_HUB_PAGE,
+  getAxisForPage,
+  getAxisHubRoute,
+} from "@/lib/hubs/axisRoutes";
 import { translations } from "@/lib/translations";
 
 /**
@@ -51,7 +56,31 @@ export function deriveTrail(
 
   const t = translations[language].trail;
   const hubRoute = getLocalizedRoute(language, page);
-  const crumbs: TrailCrumb[] = [{ label: t.pages[page], href: hubRoute }];
+
+  /**
+   * The trail opens on the home and, where there is one, on the axis that
+   * leads to the page — `Accueil › Explorer › Peuples › Bété`, the hierarchy
+   * the URLs have encoded since the routes nested under their hub.
+   *
+   * A page no axis leads to gets `Accueil › <page>`: two crumbs, honest about
+   * being an escape hatch rather than a hierarchy, because inventing a parent
+   * for the legal pages would be inventing a claim about the site's shape.
+   *
+   * The axis crumb is skipped on the axis hub itself. `Accueil › Explorer ›
+   * Explorer` would name the same place twice, and the charter already rules
+   * on that shape: a level offering no choice is not a level.
+   */
+  const crumbs: TrailCrumb[] = [{ label: t.home, href: `/${language}` }];
+
+  const axis = getAxisForPage(page);
+  if (axis && AXIS_HUB_PAGE[axis] !== page) {
+    crumbs.push({
+      label: t.pages[AXIS_HUB_PAGE[axis]],
+      href: getAxisHubRoute(language, axis),
+    });
+  }
+
+  crumbs.push({ label: t.pages[page], href: hubRoute });
 
   const tail = pathname.slice(hubRoute.length).split("/").filter(Boolean);
   let complete = true;

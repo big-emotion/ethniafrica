@@ -28,12 +28,20 @@ export function PeopleFicheHead({
   confidenceScore = null,
   sourceCount = null,
   lastHumanAuditAt = null,
+  showConfidence = true,
 }: {
   hero: PeopleHeroData;
   countries: PeopleCountriesData;
   confidenceScore?: number | null;
   sourceCount?: number | null;
   lastHumanAuditAt?: string | null;
+  /**
+   * The chip cites the fiche's sources and links to their footer. When the
+   * head stands above the globe, as the page's title band, it is outside the
+   * document that owns that anchor — so the chip stays with the parchment and
+   * the band carries the title alone.
+   */
+  showConfidence?: boolean;
 }) {
   const group = hero.ethnoLinguisticGroup ?? hero.languageFamilyName;
   const eyebrow = [hero.peopleId, hero.languageFamilyId, group].filter(Boolean);
@@ -51,7 +59,7 @@ export function PeopleFicheHead({
       <AutonymExonymHeading
         variant="hero"
         autonym={hero.nameMain}
-        exonym="un peuple sans bord"
+        predicate="un peuple sans bord"
       />
 
       {hero.historicalRegion && (
@@ -82,14 +90,16 @@ export function PeopleFicheHead({
       {/* A fiche resting entirely on unverified sources is published and
           visibly marked as such — that is the intended outcome of the tier
           policy, not a defect, so the chip belongs in the head. */}
-      <ConfidenceChip
-        confidenceScore={confidenceScore}
-        sourceCount={sourceCount}
-        lastHumanAuditAt={lastHumanAuditAt}
-        variant="hero"
-        id={hero.peopleId}
-        ariaSuffix={`pour la fiche ${hero.nameMain}`}
-      />
+      {showConfidence && (
+        <ConfidenceChip
+          confidenceScore={confidenceScore}
+          sourceCount={sourceCount}
+          lastHumanAuditAt={lastHumanAuditAt}
+          variant="hero"
+          id={hero.peopleId}
+          ariaSuffix={`pour la fiche ${hero.nameMain}`}
+        />
+      )}
     </header>
   );
 }

@@ -23,6 +23,7 @@ import {
   Network,
   Route,
   Scale,
+  Compass,
   Scissors,
   Search,
   Tag,
@@ -45,6 +46,8 @@ import {
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getFacetByPage } from "@/lib/hubs/facets";
 import type { Language } from "@/types/shared";
 
 /**
@@ -216,6 +219,95 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
     );
   };
 
+  /**
+   * An axis's modules, split into the facets of its hub and the destinations
+   * that stand on their own.
+   *
+   * Peoples, families and countries stopped being three destinations when they
+   * became three facets of one page. A menu that still lists them beside each
+   * other, each printing its own address, describes the site as it was — and
+   * teaches a reader to expect three pages where they will find one. Only
+   * Explorer has facets today; the other two axes split into an empty half and
+   * everything else, which is the same code doing nothing.
+   */
+  const splitAxis = (axis: AccessMode) => {
+    const modules = getNavModules(axis);
+    const facets = modules.filter(
+      (definition) => definition.page && getFacetByPage(definition.page)
+    );
+    return {
+      facets,
+      destinations: modules.filter(
+        (definition) => !facets.includes(definition)
+      ),
+    };
+  };
+
+  /**
+   * The axis's own hub, as the entry the menu leads with.
+   *
+   * It had no entry at all: the axis label is a disclosure button, so
+   * `/fr/explorer` — the page the whole axis is named after — was reachable
+   * from no navigation surface on any viewport. Leading with it also puts the
+   * facets where they belong, under the one page they are states of.
+   */
+  const axisHubEntry = (axis: AccessMode) => {
+    const href = getAxisHubRoute(language, axis);
+    const { facets } = splitAxis(axis);
+
+    return (
+      <div
+        key={`hub-${axis}`}
+        data-testid={`site-nav-hub-${axis}`}
+        className={cn("sh-entry sh-hub", ACCENT_BY_ACCESS_MODE[axis])}
+      >
+        <Link
+          href={href}
+          data-testid={`site-nav-hub-link-${axis}`}
+          aria-current={isCurrentRoute(pathname, href) ? "page" : undefined}
+          className="sh-hub-main"
+        >
+          <span className="sh-glyph" aria-hidden="true">
+            <Compass size={15} strokeWidth={1.9} />
+          </span>
+          <span className="sh-entry-text">
+            <span className="sh-entry-name">{t.hubs[axis].hubEntryName}</span>
+            <span className="sh-entry-route" aria-hidden="true">
+              {href}
+            </span>
+          </span>
+        </Link>
+
+        {facets.length > 0 ? (
+          <span className="sh-facets" data-testid={`site-nav-facets-${axis}`}>
+            <span className="sh-facets-label">{t.hubs.facetsLabel}</span>
+            {facets.map((definition) => {
+              const facetHref = getModuleHref(definition, language);
+              const facet = definition.page
+                ? getFacetByPage(definition.page)
+                : null;
+              if (!facetHref || !facet) return null;
+
+              return (
+                <Link
+                  key={definition.id}
+                  href={facetHref}
+                  data-testid={`site-nav-facet-${definition.id}`}
+                  aria-current={
+                    isCurrentRoute(pathname, facetHref) ? "page" : undefined
+                  }
+                  className="sh-facet"
+                >
+                  {facet.label}
+                </Link>
+              );
+            })}
+          </span>
+        ) : null}
+      </div>
+    );
+  };
+
   return (
     <header data-testid="site-header" className="sh-header">
       <nav className="sh-bar" aria-label="Navigation principale">
@@ -312,7 +404,8 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
             <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
           </div>
           <div className="sh-grid">
-            {getNavModules(openAxis).map(moduleEntry)}
+            {axisHubEntry(openAxis)}
+            {splitAxis(openAxis).destinations.map(moduleEntry)}
           </div>
         </div>
       ) : null}
@@ -321,8 +414,12 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         <SheetContent side="right" className="sh-tray">
           <SheetTitle className="sh-tray-title">{t.hubs.menuLabel}</SheetTitle>
           {ACCESS_MODES.map((axis) => {
-            const modules = getNavModules(axis);
+            const { destinations } = splitAxis(axis);
             const expanded = openTrayAxis === axis;
+            // The hub is one of the entries the fold opens, so it counts as
+            // one. Counting the modules alone promised four and delivered two
+            // cards and a row of facets.
+            const entryCount = destinations.length + 1;
 
             return (
               <div
@@ -338,7 +435,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
                 >
                   <span className="sh-seed" aria-hidden="true" />
                   {t.hubs[axis].title}
-                  <span className="sh-fold-count">{modules.length}</span>
+                  <span className="sh-fold-count">{entryCount}</span>
                   <ChevronDown
                     className="sh-caret"
                     size={13}
@@ -347,7 +444,8 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
                 </button>
                 {expanded ? (
                   <div id={`sh-fold-${axis}`} className="sh-fold-body">
-                    {modules.map(moduleEntry)}
+                    {axisHubEntry(axis)}
+                    {destinations.map(moduleEntry)}
                   </div>
                 ) : null}
               </div>
@@ -584,6 +682,63 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           transform: translateX(3px);
         }
         .sh-entry:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        /* The hub leads the panel, so it is a column: its own link, then the
+           facets underneath. It does not slide on hover like a destination
+           card — the facets sit inside it, and a card that moves under a
+           pointer aimed at one of them is a card that loses the click. */
+        .sh-hub {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 9px;
+          border-color: var(--accent);
+        }
+        .sh-hub:hover {
+          transform: none;
+        }
+        .sh-hub-main {
+          display: flex;
+          align-items: flex-start;
+          gap: 11px;
+          text-decoration: none;
+          color: inherit;
+          border-radius: var(--afh-radius-sm);
+        }
+        .sh-hub-main:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .sh-facets {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 6px;
+          padding-top: 8px;
+          border-top: 1px solid var(--afh-border);
+        }
+        .sh-facets-label {
+          font-size: var(--afh-caption);
+          color: var(--afh-fg-muted);
+        }
+        .sh-facet {
+          display: inline-flex;
+          align-items: center;
+          min-height: 32px;
+          padding: 4px 10px;
+          border: 1px solid var(--afh-border);
+          border-radius: 999px;
+          font-size: var(--afh-caption);
+          text-decoration: none;
+          color: var(--afh-text);
+        }
+        .sh-facet:hover,
+        .sh-facet[aria-current="page"] {
+          border-color: var(--accent);
+          color: var(--accent-ink);
+        }
+        .sh-facet:focus-visible {
           outline: 2px solid var(--accent);
           outline-offset: 2px;
         }

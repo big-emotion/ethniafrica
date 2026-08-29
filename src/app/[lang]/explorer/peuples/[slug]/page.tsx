@@ -12,6 +12,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
+import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
@@ -227,6 +228,7 @@ export default async function PeoplesSlugPage({
         // each of them as its own prop instead. Handing them over twice would
         // cost a transform per render for a reader nobody has.
         context={{ entityType: "people", payload: peopleDetail }}
+        title={<PeopleFicheTitle people={peopleDetail} />}
         globe={
           <FicheHeroBand>
             <AtlasGlobe

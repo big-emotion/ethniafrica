@@ -145,7 +145,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );

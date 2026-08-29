@@ -20,7 +20,11 @@ const KNOWN_CHARTER_CONTRACT_FILES = [
   "src/components/home/__tests__/DottedContinent.test.tsx",
   "src/components/__tests__/SearchModalV2.test.tsx",
   "src/components/__tests__/moderationCharter.test.tsx",
-  "src/components/views/__tests__/directoryCharter.test.tsx",
+  // Was src/components/views/__tests__/directoryCharter.test.tsx, beside a
+  // DirectoryHero that lost its last caller when the three directories became
+  // three facets. The accent scale it guards outlived the component, so the
+  // contract moved to sit beside the scale rather than the frame.
+  "src/lib/hubs/__tests__/directoryAccentCharter.test.ts",
   "src/components/forms/__tests__/formsCharter.test.tsx",
   "src/components/__tests__/searchCharter.test.tsx",
   "src/components/fiche/__tests__/FichePanel.test.tsx",

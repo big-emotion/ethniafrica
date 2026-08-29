@@ -397,12 +397,12 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   });
 
   // @req REQ-114
-  it("sends a module click to the module's own page, never to the axis slug", async () => {
+  it("sends a facet click to that facet of the hub, never to the axis slug", async () => {
     renderAxes();
 
     await userEvent.click(screen.getByTestId("access-axis-explorer"));
 
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+    expect(screen.getByTestId("axis-facet-link-peuples")).toHaveAttribute(
       "href",
       getLocalizedRoute("fr", "peoples")
     );
