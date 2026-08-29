@@ -7,13 +7,14 @@ import {
   type BinaryRound,
   type EstimateRound,
 } from "@/lib/games/gameKinds";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 
 const REVEAL = {
   textFr: "peu importe",
   fieldPath: "lib/atlas/assets/africaAdmin0",
   sources: [],
   confidence: null,
-  ficheHref: "/fr/explorer",
+  ficheHref: getAxisHubRoute("fr", "explorer"),
 };
 
 const binary: BinaryRound = {

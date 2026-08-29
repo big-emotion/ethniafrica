@@ -136,19 +136,25 @@ describe("getGameRoundsHandler", () => {
     expect(envelope.data.corpusLimited).toBe(true);
   });
 
+  /**
+   * The handler used to cut the pool to one session here, which meant the
+   * page's constant seed served every visitor the same rounds for good. The
+   * pool travels whole and `takeSession` cuts it on the client, so a replay
+   * can advance to the next window.
+   */
   // @req REQ-120
-  it("never returns more rounds than the game asks for", async () => {
+  it("returns the whole pool, not one session's worth", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
-      countries: MERCATOR_COUNTRIES,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
     });
 
     const game = mercator();
     const envelope = await getGameRoundsHandler(game, 0);
 
-    expect(envelope.data.rounds.length).toBeLessThanOrEqual(
-      game.roundsPerSession
-    );
+    expect(envelope.data.rounds.length).toBeGreaterThan(game.roundsPerSession);
   });
 
   // @req REQ-120
@@ -280,7 +286,9 @@ describe("a session mixes the two gestures", () => {
     const game = mercator();
     const envelope = await getGameRoundsHandler(game, 0);
 
-    expect(envelope.data.rounds).toHaveLength(game.roundsPerSession);
+    expect(envelope.data.rounds.length).toBeGreaterThanOrEqual(
+      game.roundsPerSession
+    );
     expect(envelope.data.corpusLimited).toBe(false);
   });
 });

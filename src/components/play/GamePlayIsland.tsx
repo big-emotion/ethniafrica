@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { BinaryChoice } from "@/components/play/BinaryChoice";
 import { EstimateSlider } from "@/components/play/EstimateSlider";
@@ -15,6 +15,7 @@ import {
 import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
+import { takeSession } from "@/lib/games/session";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
 
@@ -59,8 +60,27 @@ export const GamePlayIsland = ({
   onPhaseChange,
   className,
 }: GamePlayIslandProps) => {
-  const session = useGameSession(rounds);
+  // Which session of the pool is being played. The pool arrives longer than
+  // one session and the page's seed is a constant, so without this every
+  // reader would replay the rounds they just finished.
+  const [sessionIndex, setSessionIndex] = useState(0);
+
+  const sessionRounds = useMemo(
+    () => takeSession(rounds, game.roundsPerSession, sessionIndex),
+    [rounds, game.roundsPerSession, sessionIndex]
+  );
+
+  const session = useGameSession(sessionRounds);
   const { currentRound, status } = session;
+
+  const playAgain = useCallback(() => {
+    setSessionIndex((index) => index + 1);
+    session.restart();
+    // `session.restart` is a fresh closure each render and depending on it
+    // would rebuild this callback every time, which the score card would see
+    // as a changed prop on every render of a static screen.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     onPhaseChange?.(status);
@@ -87,7 +107,7 @@ export const GamePlayIsland = ({
           total={session.totalRounds}
           facts={facts}
           corpusLimited={corpusLimited}
-          onPlayAgain={session.restart}
+          onPlayAgain={playAgain}
         />
       ) : (
         <>

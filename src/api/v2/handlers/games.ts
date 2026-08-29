@@ -27,11 +27,17 @@ import {
 import { buildScaleEstimateRounds } from "@/lib/games/rounds/scaleEstimateRound";
 
 export interface GameRoundsData {
+  /**
+   * Every round the corpus and the outlines can honestly produce, ordered.
+   * Longer than one session on purpose: the island cuts a session out of it
+   * and advances the cut on each replay, which is what keeps the page's
+   * constant seed from serving one fixed session for good.
+   */
   rounds: GameRound[];
   /**
-   * True when the corpus yielded fewer rounds than the game asks for — the
-   * honest state for a game whose corpus runs short, which the score card
-   * states outright rather than rendering as an empty screen.
+   * True when the pool yielded fewer rounds than one session — the honest
+   * state for a game whose corpus runs short, which the score card states
+   * outright rather than rendering as an empty screen.
    */
   corpusLimited: boolean;
 }
@@ -183,6 +189,14 @@ function interleave(left: GameRound[], right: GameRound[]): GameRound[] {
   return merged;
 }
 
+/**
+ * The whole ordered pool, not one session's worth.
+ *
+ * The handler used to cut it to `roundsPerSession` here, which meant the
+ * page's constant seed served every visitor the same rounds for good. The
+ * pool travels whole instead and the island cuts a session out of it, so a
+ * replay can advance to the next window — see `lib/games/session`.
+ */
 function assembleRounds(
   game: GameDefinition,
   corpus: GameCorpus,
@@ -200,14 +214,12 @@ function assembleRounds(
   // one: the reader still meets an easy round before a hard one, and still
   // never taps the same control eight times running.
   const bands: DifficultyBand[] = [1, 2, 3];
-  const ordered = bands.flatMap((band) =>
+  return bands.flatMap((band) =>
     interleave(
       binary.filter((round) => round.difficultyBand === band),
       estimate.filter((round) => round.difficultyBand === band)
     )
   );
-
-  return ordered.slice(0, game.roundsPerSession);
 }
 
 /**

@@ -6,6 +6,7 @@ import { MercatorSurface } from "@/components/mercator/MercatorSurface";
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { buildScaleFacts } from "@/lib/games/scaleFacts";
+import { getCountryRoute } from "@/lib/routing";
 
 // The stage mounts WebGL, which happy-dom has none of. Standing in for it
 // with a element that prints the props under test keeps this a test about
@@ -48,7 +49,7 @@ const round = (subjectId: string): GameRound => ({
     fieldPath: "lib/atlas/assets/africaAdmin0",
     sources: [],
     confidence: null,
-    ficheHref: "/fr/explorer/pays/DZA",
+    ficheHref: getCountryRoute("fr", "DZA"),
   },
 });
 
@@ -109,10 +110,9 @@ describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
   /**
    * Charter §9.1: the stem and every option clear the fold at 430 px, and it
    * is the stage that gives way, never the options. The stage floor is 560 px
-   * on a phone, so the round is placed *before* the globe in the document
-   * while a question stands — which is also the order a screen reader and the
-   * tab sequence want. The painted order follows from CSS on the same
-   * attribute.
+   * on a phone, so the round sits *before* the globe in the document — which
+   * is also the order the tab sequence and a screen reader want. Only the
+   * reveal repaints them the other way round, from CSS keyed on the phase.
    */
   // @req REQ-120
   it("puts the round before the globe in the document, not below it", () => {
