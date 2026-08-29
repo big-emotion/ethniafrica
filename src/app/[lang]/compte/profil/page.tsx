@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { ProfileForm } from "./ProfileForm";
+import { SiteTrail } from "@/components/layout/SiteTrail";
 
 type ContributorProfile = {
   display_name: string | null;
@@ -65,6 +66,9 @@ export default async function ProfilePage() {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-8 md:py-10 xl:py-12">
+      {/* No `PageLayout` here — the profile is its own page shell — so the
+          trail is mounted directly. */}
+      <SiteTrail />
       <header className="mb-6 space-y-2 md:mb-8">
         <p className="text-afh-small font-medium text-primary">Votre compte</p>
         <h1 className="text-afh-h1 font-bold tracking-tight">Mon profil</h1>

@@ -96,11 +96,19 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
   });
 
   // @req REQ-091 FR90
-  it("renders breadcrumbs", () => {
+  /**
+   * The module used to mount its own trail. It no longer does: the trail is
+   * the shell's, and a module mounting a second one on top of it renders two.
+   * The trail this page actually shows is asserted in `siteTrailCoverage`,
+   * which checks the route reaches a mount rather than trusting each module to
+   * remember one.
+   */
+  // @req REQ-115
+  it("leaves the trail to the shell rather than mounting a second one", () => {
     render(<ColonizationModulePage data={emptyData} />);
     expect(
-      screen.getByRole("navigation", { name: "Fil d'ariane" })
-    ).toBeInTheDocument();
+      screen.queryByRole("navigation", { name: "Fil d'ariane" })
+    ).toBeNull();
   });
 
   // @req REQ-091 FR90

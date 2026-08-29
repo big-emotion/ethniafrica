@@ -9,6 +9,9 @@ vi.mock("next/navigation", () => ({
   useParams: vi.fn(() => ({ lang: "fr" })),
   useSearchParams: vi.fn(() => new URLSearchParams()),
   useRouter: vi.fn(() => ({ push: vi.fn(), refresh: vi.fn() })),
+  // The moderation login mounts its own trail: it is a full-viewport centred
+  // card with no `PageLayout` above it.
+  usePathname: vi.fn(() => "/fr/admin/connexion"),
 }));
 vi.mock("@/hooks/use-language", () => ({
   useLanguage: vi.fn(() => ({ language: "fr", setLanguage: vi.fn() })),

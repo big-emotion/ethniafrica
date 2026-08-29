@@ -1,12 +1,9 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { EventTimelineMarkers } from "@/components/colonization/EventTimelineMarkers";
 import { EventChronologyTable } from "@/components/colonization/EventChronologyTable";
 import { translations } from "@/lib/translations";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
-import { getLocalizedRoute } from "@/lib/routing";
 import type { ColonizationModuleData } from "@/lib/colonizationDataTransformer";
 
 const t = translations.fr.colonization;
@@ -31,10 +28,6 @@ export interface ColonizationModulePageProps {
 export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
-      <AfrikBreadcrumbs
-        items={deriveTrail(getLocalizedRoute("fr", "colonization"))}
-      />
-
       <DoctrineLinkCard slug={data.doctrine.slug} />
 
       {data.fragmentation && data.fragmentation.length > 0 && (
