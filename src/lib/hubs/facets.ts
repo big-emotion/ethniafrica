@@ -60,6 +60,21 @@ export interface FacetDefinition {
 
 // @req REQ-114
 export const FACETS: readonly FacetDefinition[] = [
+  // Declaration order is the order the switcher walks, and it matches the
+  // Explorer hub's module list above it: pays, peuples, familles. The two are
+  // one running order seen twice, so they are ordered together or the reader
+  // meets the same three entities in two different sequences.
+  {
+    key: "countries",
+    page: "countries",
+    entityType: "country",
+    label: "Pays",
+    sectionName: "Pays",
+    eyebrow: "atlas · les pays d'Afrique",
+    title: "Les pays d'Afrique",
+    filterHint:
+      "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
+  },
   {
     key: "peoples",
     page: "peoples",
@@ -81,17 +96,6 @@ export const FACETS: readonly FacetDefinition[] = [
     title: "Familles linguistiques",
     filterHint:
       "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
-  },
-  {
-    key: "countries",
-    page: "countries",
-    entityType: "country",
-    label: "Pays",
-    sectionName: "Pays",
-    eyebrow: "atlas · les pays d'Afrique",
-    title: "Les pays d'Afrique",
-    filterHint:
-      "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
   },
 ] as const;
 
