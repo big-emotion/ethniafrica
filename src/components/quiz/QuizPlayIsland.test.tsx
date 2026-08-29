@@ -66,13 +66,20 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
     mockUseQuizSession.mockReset();
   });
 
+  /**
+   * The figure itself arrives in its own chunk — it carries the continent
+   * path, which the island's gzip budget cannot afford — so what this holds
+   * is the band and its reserved height. Without the band the wait was a
+   * single line of grey text on an otherwise empty page.
+   */
   // @req REQ-103 FR67
-  it("shows a loading message while the session is in flight", () => {
+  it("holds a band open while the session is in flight", () => {
     mockUseQuizSession.mockReturnValue(baseSession({ status: "loading" }));
 
     renderIsland();
 
-    expect(screen.getByText("Chargement de la session…")).toBeInTheDocument();
+    expect(screen.getByTestId("quiz-loading-band")).toBeInTheDocument();
+    expect(screen.queryByTestId("quiz-question-card")).not.toBeInTheDocument();
   });
 
   // @req REQ-103 FR67

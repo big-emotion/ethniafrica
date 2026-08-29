@@ -23,8 +23,14 @@ const SETTLED = 0.0005;
 
 const HOME_YAW = -(AFRICA_CENTER_LON * Math.PI) / 180;
 const HOME_PITCH = 0;
-/** The body occupies 1/1.14 of the frame, as the reference demo does. */
-const HERO_FIT_MARGIN = 1 / 1.14;
+/**
+ * How much of the frame the body occupies. The reference demo used 1/1.14;
+ * the margin it bought was more than the lit limb needs, and it was costing
+ * diameter on every surface the globe appears on. Pulled in to 1/1.05 — the
+ * limb still clears the canvas edge as the sphere turns, and the flat map
+ * still fits its full Mercator height at the stage's declared heights.
+ */
+const HERO_FIT_MARGIN = 1 / 1.05;
 
 const clampPitch = (value: number): number =>
   Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, value));
@@ -469,7 +475,7 @@ export function HomeGlobe({
           flex: 1 1 auto;
           /* Without a floor the sphere is squeezed to nothing when the
              stage is short and the caption wraps. */
-          min-height: 180px;
+          min-height: 260px;
           border: none;
           background: none;
           padding: 0;
@@ -552,7 +558,7 @@ export function HomeGlobe({
           .home-globe-readout { padding: 6px 9px; margin-bottom: 12px; }
           .home-globe-morph input[type="range"] { width: 110px; }
           .home-globe-tools { gap: 8px; padding-top: 12px; }
-          .home-globe-surface { min-height: 150px; }
+          .home-globe-surface { min-height: 230px; }
         }
       `}</style>
     </div>

@@ -55,7 +55,10 @@ export type ModuleDataSource =
 // famille" asks about a people and reads afrik_language_families — which is
 // why the shelf is declared rather than derived from `dataSource`. A
 // taxonomy the reader sees should not move because a query changed table.
-export type ModuleGroupId = "jeux-peuples" | "jeux-pays" | "jeux-quiz";
+// `jeux-peuples` went with « Eux, ou les autres ? », the only game that ever
+// stood on it (charter §1). An empty shelf is a heading with nothing under
+// it, so the shelf is removed rather than left declared.
+export type ModuleGroupId = "jeux-pays" | "jeux-quiz";
 
 export interface ModuleGroup {
   id: ModuleGroupId;
@@ -66,7 +69,6 @@ export interface ModuleGroup {
 // Declaration order is the order the shelves appear.
 // @req REQ-120
 export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
-  "jeux-peuples": { id: "jeux-peuples", label: "Les peuples" },
   "jeux-pays": { id: "jeux-pays", label: "Les pays" },
   // The quiz questions the reader rather than the corpus, so it sits on no
   // entity's shelf. It is alone there, which the panel reads as "render the
@@ -281,18 +283,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "quiz_questions",
   },
   {
-    id: "appellations",
-    group: "jeux-peuples",
-    name: "Eux, ou les autres ?",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "appellations",
-    availability: "data",
-    editorialReadiness: "ready",
-    dataSource: "afrik_peoples",
-    heroable: "game",
-  },
-  {
     id: "mercator",
     group: "jeux-pays",
     name: "La taille qu'on vous a cachée",
@@ -315,18 +305,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "doctrine",
     availability: "static",
     editorialReadiness: "ready",
-  },
-  {
-    id: "pays-davant",
-    group: "jeux-pays",
-    name: "Le pays d'avant",
-    accessMode: "jouer",
-    page: null,
-    gameSlug: "pays-davant",
-    availability: "data",
-    editorialReadiness: "ready",
-    dataSource: "afrik_countries",
-    heroable: "game",
   },
 ];
 

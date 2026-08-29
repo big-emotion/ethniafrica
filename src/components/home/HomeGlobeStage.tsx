@@ -65,22 +65,29 @@ export function HomeGlobeStage() {
       <style>{`
         /* The reference demo's stage heights were 380 / 460: the globe
            reads as a body rather than a marble at those, and the flat map
-           still fits its full Mercator height. Both are raised by the
-           height of the chrome, because the caption and the tools now take
-           rows of their own instead of being laid over the sphere — at the
-           old heights the body itself would have absorbed the difference
-           and come out a marble after all. */
+           still fits its full Mercator height. Both were raised once by the
+           height of the chrome, because the caption and the tools take rows
+           of their own instead of being laid over the sphere — at the demo's
+           heights the body itself would have absorbed the difference and
+           come out a marble after all.
+
+           Raised again here, with the max-width, because the globe is the
+           subject of two pages now: the home's opening band and the Mercator
+           game, where it is the argument the rounds are asked against. On
+           both it has to read as a body one can turn, not as an illustration
+           of one. The stage keeps a max-width so the sphere stops growing
+           before it outruns the copy beside it. */
         .home-globe-stage {
           position: relative;
           box-sizing: border-box;
           width: 100%;
-          max-width: 960px;
+          max-width: 1120px;
           margin: 0 auto;
-          min-height: 460px;
+          min-height: 560px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {
-            min-height: 540px;
+            min-height: 680px;
           }
         }
         /* From 1200 up the hero is pinned to the viewport height, so the

@@ -71,14 +71,14 @@ const jouerModules: HubModule[] = [
     available: true,
   },
   {
-    id: "appellations",
-    name: "Eux, ou les autres ?",
+    id: "annonce",
+    name: "Un jeu que le corpus ne peut pas encore servir",
     accessMode: "jouer",
     page: null,
-    gameSlug: "appellations",
+    gameSlug: "annonce",
     availability: "data",
     dataSource: "afrik_peoples",
-    group: "jeux-peuples",
+    group: "jeux-pays",
     available: false,
   },
 ];
@@ -179,10 +179,10 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
     render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
 
     expect(
-      screen.getByTestId("hub-module-unavailable-appellations")
+      screen.getByTestId("hub-module-unavailable-annonce")
     ).toBeInTheDocument();
     expect(
-      screen.queryByTestId("hub-module-link-appellations")
+      screen.queryByTestId("hub-module-link-annonce")
     ).not.toBeInTheDocument();
   });
 
@@ -306,14 +306,13 @@ describe("AccessModeHub — axis scene (REQ-114)", () => {
   });
 });
 
-describe("hub shelves — the level between an axis and eleven games (REQ-120)", () => {
+describe("hub shelves — the level between an axis and its games (REQ-120)", () => {
   // @req REQ-120
   it("files the jouer modules under a heading each, in registry order", () => {
     render(<AccessModeHub language="fr" mode="jouer" modules={jouerModules} />);
 
     const shelves = screen.getAllByTestId(/^hub-shelf-/);
     expect(shelves.map((shelf) => shelf.dataset.testid)).toEqual([
-      "hub-shelf-jeux-peuples",
       "hub-shelf-jeux-pays",
       "hub-shelf-jeux-quiz",
     ]);
@@ -341,7 +340,7 @@ describe("hub shelves — the level between an axis and eleven games (REQ-120)",
       `${getLocalizedRoute("fr", "jouerHub")}/mercator`
     );
     expect(
-      screen.getByTestId("hub-module-unavailable-appellations")
+      screen.getByTestId("hub-module-unavailable-annonce")
     ).toBeInTheDocument();
   });
 
