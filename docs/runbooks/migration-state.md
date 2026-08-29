@@ -100,52 +100,52 @@ Read from the recette-backing project's (`shmrjtnfbqzceovroqjj`)
 measurement.** The production column is not "presumed unapplied" — it is unread, because this
 repository's credentials cannot reach that project.
 
-| File                                          | Recette (`shmrjtnfbqzceovroqjj`)           | Production (`?`) |
-| --------------------------------------------- | ------------------------------------------ | ---------------- |
-| `001_initial_schema.sql`                      | applied (`001`)                            | unknown          |
-| `002_add_enriched_fields.sql`                 | applied (`002`)                            | unknown          |
-| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below | unknown          |
-| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                            | unknown          |
-| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                            | unknown          |
-| `006_afrik_schema.sql`                        | applied (`006`)                            | unknown          |
-| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                            | unknown          |
-| `008_user_roles.sql`                          | applied (`008`)                            | unknown          |
-| `009_module_zero_fabric.sql`                  | applied (`009`)                            | unknown          |
-| `010_classification_status_enum.sql`          | applied (`010`)                            | unknown          |
-| `011_assertions_triggers.sql`                 | applied (`011`)                            | unknown          |
-| `012_api_keys.sql`                            | applied (`012`)                            | unknown          |
-| `013_api_keys_tier.sql`                       | applied (`013`)                            | unknown          |
-| `014_flags_severity_auto.sql`                 | applied (`014`)                            | unknown          |
-| `015_module_zero_fabric_align.sql`            | applied (`015`)                            | unknown          |
-| `016_module_zero_triggers.sql`                | applied (`016`)                            | unknown          |
-| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                            | unknown          |
-| `018_editorial_doctrine_seed.sql`             | applied (`018`)                            | unknown          |
-| `019_afrik_rls.sql`                           | applied (`019`)                            | unknown          |
-| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                            | unknown          |
-| `021_revisions_ddl.sql`                       | applied (`021`)                            | unknown          |
-| `022_flags_full_ddl.sql`                      | applied (`022`)                            | unknown          |
-| `023_moderator_schema.sql`                    | applied (`023`)                            | unknown          |
-| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                            | unknown          |
-| `025_search_vectors.sql`                      | applied (`025`)                            | unknown          |
-| `026_contributor_profiles.sql`                | applied (`026`)                            | unknown          |
-| `027_contributor_erasure.sql`                 | applied (`027`)                            | unknown          |
-| `028_language_tree_support.sql`               | applied (`028`)                            | unknown          |
-| `029_names_atlas.sql`                         | applied (`029`)                            | unknown          |
-| `030_people_relations.sql`                    | applied (`030`)                            | unknown          |
-| `031_normalized_sources.sql`                  | applied (`031`)                            | unknown          |
-| `032_oral_narratives.sql`                     | applied (`032`)                            | unknown          |
-| `033_rights_consent_access_controls.sql`      | applied (`033`)                            | unknown          |
-| `034_source_working_assets.sql`               | applied (`034`)                            | unknown          |
-| `035_migration_events.sql`                    | applied (`035`)                            | unknown          |
-| `036_quiz_engine.sql`                         | applied (`036`)                            | unknown          |
-| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`  | unknown          |
-| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`  | unknown          |
-| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`  | unknown          |
-| `040_assertion_references_rls.sql`            | applied (`040`)                            | unknown          |
-| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                            | unknown          |
-| `042_migration_ledger_introspection.sql`      | applied (`042`)                            | unknown          |
-| `043_afrik_search_vector_weights.sql`         | applied — ledger version `20260828165455`  | unknown          |
-| `044_afrik_ranked_search.sql`                 | applied — ledger version `20260828165554`  | unknown          |
+| File                                          | Recette (`shmrjtnfbqzceovroqjj`)            | Production (`?`) |
+| --------------------------------------------- | ------------------------------------------- | ---------------- |
+| `001_initial_schema.sql`                      | applied (`001`)                             | unknown          |
+| `002_add_enriched_fields.sql`                 | applied (`002`)                             | unknown          |
+| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below  | unknown          |
+| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                             | unknown          |
+| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                             | unknown          |
+| `006_afrik_schema.sql`                        | applied (`006`)                             | unknown          |
+| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                             | unknown          |
+| `008_user_roles.sql`                          | applied (`008`)                             | unknown          |
+| `009_module_zero_fabric.sql`                  | applied (`009`)                             | unknown          |
+| `010_classification_status_enum.sql`          | applied (`010`)                             | unknown          |
+| `011_assertions_triggers.sql`                 | applied (`011`)                             | unknown          |
+| `012_api_keys.sql`                            | applied (`012`)                             | unknown          |
+| `013_api_keys_tier.sql`                       | applied (`013`)                             | unknown          |
+| `014_flags_severity_auto.sql`                 | applied (`014`)                             | unknown          |
+| `015_module_zero_fabric_align.sql`            | applied (`015`)                             | unknown          |
+| `016_module_zero_triggers.sql`                | applied (`016`)                             | unknown          |
+| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                             | unknown          |
+| `018_editorial_doctrine_seed.sql`             | applied (`018`)                             | unknown          |
+| `019_afrik_rls.sql`                           | applied (`019`)                             | unknown          |
+| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                             | unknown          |
+| `021_revisions_ddl.sql`                       | applied (`021`)                             | unknown          |
+| `022_flags_full_ddl.sql`                      | applied (`022`)                             | unknown          |
+| `023_moderator_schema.sql`                    | applied (`023`)                             | unknown          |
+| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                             | unknown          |
+| `025_search_vectors.sql`                      | applied (`025`)                             | unknown          |
+| `026_contributor_profiles.sql`                | applied (`026`)                             | unknown          |
+| `027_contributor_erasure.sql`                 | applied (`027`)                             | unknown          |
+| `028_language_tree_support.sql`               | applied (`028`)                             | unknown          |
+| `029_names_atlas.sql`                         | applied (`029`)                             | unknown          |
+| `030_people_relations.sql`                    | applied (`030`)                             | unknown          |
+| `031_normalized_sources.sql`                  | applied (`031`)                             | unknown          |
+| `032_oral_narratives.sql`                     | applied (`032`)                             | unknown          |
+| `033_rights_consent_access_controls.sql`      | applied (`033`)                             | unknown          |
+| `034_source_working_assets.sql`               | applied (`034`)                             | unknown          |
+| `035_migration_events.sql`                    | applied (`035`)                             | unknown          |
+| `036_quiz_engine.sql`                         | applied (`036`)                             | unknown          |
+| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`   | unknown          |
+| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`   | unknown          |
+| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`   | unknown          |
+| `040_assertion_references_rls.sql`            | applied (`040`)                             | unknown          |
+| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                             | unknown          |
+| `042_migration_ledger_introspection.sql`      | applied (`042`)                             | unknown          |
+| `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below | unknown          |
+| `044_afrik_ranked_search.sql`                 | applied (`044`)                             | unknown          |
 
 > **Correction, 2026-08-28.** This table listed `040`, `041` and `042` as not applied. A direct
 > read of the recette ledger shows all three present under their own numeric versions. The prose
@@ -190,19 +190,50 @@ both projects, not by a merged PR.
 
 ### 2. The ledger version can disagree with the filename
 
-`037`, `038` and `039` were applied through the Supabase MCP `apply_migration`, which stamps a
-timestamp version (`20260825211643`, `20260825211702`, `20260825211737`) instead of the file's
-numeric prefix. The migrations are genuinely applied, but a tool that compares the ledger's
-_version strings_ against the filenames — `supabase migration list`, or a naive script — will
-report all three as pending.
+The Supabase MCP `apply_migration` stamps a **timestamp** version (`20260828165455`) instead of
+the file's numeric prefix. The migration is genuinely applied, but the ledger row no longer
+names any file in `supabase/migrations/`.
 
-**Match on the migration name, not the version**, when reconciling. The names recorded
-(`colonization_event_types`, `user_roles_rls_recursion_fix`, `restore_sources_title_unique`)
-line up exactly with the files.
+**This breaks the recette workflow — it does not merely confuse a report.** On 2026-08-28,
+`043` and `044` were applied through the MCP and the merge to `recette` then failed:
 
-If a future `supabase db push` re-runs them because of this mismatch, that is survivable only
-because all three are written idempotently. Do not rely on that for new migrations — write
-them idempotently anyway.
+```
+Remote migration versions not found in local migrations directory.
+supabase migration repair --status reverted 20260828165455 20260828165554
+```
+
+`migrate-recette.yml` runs `supabase db push --include-all`, which reconciles on the **version
+string**. A ledger version with no matching file makes it refuse to run at all and exit 1 —
+so every later migration is blocked too, until the ledger is repaired. An earlier note here
+guessed that push would simply re-run the migrations and called that survivable because they
+are idempotent. That guess was wrong: nothing gets re-run, because nothing runs.
+
+**Therefore: apply migrations with the CLI, not the MCP.** If the MCP has already been used,
+repair the ledger before the next merge — either `supabase migration repair`, or directly:
+
+```sql
+UPDATE supabase_migrations.schema_migrations
+   SET version = '043' WHERE name = 'afrik_search_vector_weights';
+```
+
+The `name` column is what stays trustworthy across this, which is why
+`scripts/lib/migrationLedger.ts` reconciles on the name. `037`, `038` and `039` hit the same
+trap and were repaired the same way; they now read `037`/`038`/`039`.
+
+Renumbering is enough only when the recorded statements match the file. `044` was applied
+through the MCP from hand-edited SQL — a different dollar-quote tag, and `COMMENT ON FUNCTION`
+strings reworded to survive the paste — so after renumbering it read as **drifted** instead.
+Its ledger row was therefore deleted rather than patched: with no row, the next
+`supabase db push` applies the file itself and records the statements the file actually
+contains. That is what happened — the workflow re-ran and logged
+`Applying migration 044_afrik_ranked_search.sql`, and the ledger now reads `043` and `044`
+under their own numbers, neither drifted.
+
+**Deleting the row is the repair. Patching the version is not**, unless the recorded
+statements already match the file.
+
+The workflow run is still red, on the three drifts below (`018`, `038`, `039`). Those predate
+this work and have made it red since 2026-08-26; they need their own ticket.
 
 ### 3. "Recorded as applied" does not mean the object still exists
 
