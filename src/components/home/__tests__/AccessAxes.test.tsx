@@ -507,26 +507,28 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   });
 });
 
-describe("AccessAxes — Escape across the two levels Jouer now has (REQ-120)", () => {
-  // The panel intercepts Escape while a shelf is open and this listener
-  // takes it once there is nothing left to step back to. Neither half is
-  // worth much alone: the contract is that one wrong turn costs the reader
-  // a level, and only a second Escape costs them the panel.
+describe("AccessAxes — Escape on the one level Jouer now has (REQ-120)", () => {
+  /**
+   * Jouer used to carry a shelf level, and Escape gave it back before it gave
+   * back the panel. The second cut (charter §1) left two modules on two
+   * shelves of one, and a shelf holding one module is promoted in place of
+   * the shelf — so there is no level to step back to any more, and Jouer
+   * closes on the first press like every other axis.
+   *
+   * The two-level behaviour itself is not gone, only unreachable from this
+   * registry; AxisModulePanel's own suite still holds it against a multi-
+   * module shelf, so a rebuilt game restores it without new code.
+   */
   // @req REQ-120
-  it("gives back the shelves first, and the panel only on a second press", async () => {
+  it("offers no shelf to step back to, and closes on the first press", async () => {
     renderAxes();
     const jouer = screen.getByTestId("access-axis-jouer");
 
-    // jeux-pays, not jeux-peuples: with the hub cut to three games the
-    // peoples shelf holds one module and is promoted in place of a shelf,
-    // so it no longer offers the level this test is about.
     await userEvent.click(jouer);
-    await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-pays"));
     expect(screen.getByTestId("axis-module-link-mercator")).toBeInTheDocument();
-
-    await userEvent.keyboard("{Escape}");
-    expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
-    expect(screen.getByTestId("axis-shelf-jeux-pays")).toBeInTheDocument();
+    expect(
+      screen.queryByTestId("axis-shelf-open-jeux-pays")
+    ).not.toBeInTheDocument();
 
     await userEvent.keyboard("{Escape}");
     expect(screen.queryByTestId("axis-panel-jouer")).not.toBeInTheDocument();

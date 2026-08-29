@@ -4,18 +4,19 @@ import type { Ring } from "@/lib/atlas/overlays";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 /**
- * The two gestures the three games of the Jouer hub share (REQ-120).
+ * The one gesture the Jouer hub's game is built on (REQ-120).
  *
- * Bespoke games would be one application each. They are in fact a couple of
- * interactions applied to several corpus sources, so the engine knows only
- * these shapes and every game is a pure function producing one of them.
+ * A bespoke game would be an application of its own. This one is an
+ * interaction applied to a corpus slice, so the engine knows only this shape
+ * and the game is a pure function producing it.
  *
- * `quad` and `areaCompare` were removed with the eight retired games rather
- * than left declared: a kind no game produces is a renderer shipping
- * unexercised, which `gameRegistry.test.ts` asserts against. Both are in git
- * for whoever rebuilds a four-option game against the charter.
+ * `quad` and `areaCompare` went with the eight games retired by the charter's
+ * scope cut, and `globeTap` went with « Le pays d'avant » in the cut that
+ * followed: a kind no game produces is a renderer shipping unexercised, which
+ * `gameRegistry.test.ts` asserts against. All three are in git for whoever
+ * rebuilds one of those games against the charter.
  */
-export type GameKind = "binary" | "globeTap";
+export type GameKind = "binary";
 
 /**
  * What the reader is shown after answering. `textFr` is copied verbatim from
@@ -59,26 +60,6 @@ export interface GameOption {
 }
 
 /**
- * Who the round is about, shown above the question (charter §2).
- *
- * Optional, and deliberately so: a round must name its subject *unless the
- * subject is what is being guessed*. « Le pays d'avant » asks which country
- * carries a former name, so naming it would be handing over the answer;
- * « La taille qu'on vous a cachée » names both countries in its own options.
- * Only « Eux, ou les autres ? » asks about an attribute of a subject the
- * reader would otherwise never be told.
- */
-export interface GameStimulus {
-  /** `languageFamilyNameFr` — null in the fiches that record no family. */
-  familyFr: string | null;
-  /** Resolved country names; an id the corpus cannot name is dropped, not shown as a code. */
-  countriesFr: string[];
-  subjectName: AutonymExonymName;
-  /** Order of magnitude in words, omitted when the corpus carries no figure. */
-  scaleFr?: string;
-}
-
-/**
  * How hard a round is expected to be, ascending. A session is served in this
  * order so the reader meets a subject they are likely to know before one they
  * are not, and 1 is the easiest.
@@ -97,7 +78,6 @@ interface GameRoundBase {
   gameId: string;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
-  stimulus?: GameStimulus;
   promptFr: string;
   /**
    * Assigned by the handler, not by the generator: a band is a subject's rank
@@ -114,18 +94,7 @@ export interface BinaryRound extends GameRoundBase {
   correctIndex: 0 | 1;
 }
 
-/**
- * Tap a country on the globe. `choices` are the countries made tappable;
- * they are always countries the committed admin-0 asset can draw, because a
- * target the reader cannot see is not a choice.
- */
-export interface GlobeTapRound extends GameRoundBase {
-  kind: "globeTap";
-  choices: CountryId[];
-  correctCountryId: CountryId;
-}
-
-export type GameRound = BinaryRound | GlobeTapRound;
+export type GameRound = BinaryRound;
 
 /** Narrows a round to the options-bearing kinds without a cast. */
 // @req REQ-120
@@ -135,14 +104,13 @@ export function isOptionRound(round: GameRound): round is BinaryRound {
 
 /**
  * Whether an answer is right, expressed once so no primitive re-derives it.
- * For globeTap the answer is a country id; for the others, an option index.
+ * The answer is the index of the option the reader pressed.
  */
 // @req REQ-120
 export function isCorrectAnswer(
   round: GameRound,
   answer: number | CountryId
 ): boolean {
-  if (round.kind === "globeTap") return answer === round.correctCountryId;
   return answer === round.correctIndex;
 }
 

@@ -57,9 +57,19 @@ describe("quizScopeSearchParams", () => {
     expect(parseQuizScope(Object.fromEntries(params.entries()))).toEqual(scope);
   });
 
+  /**
+   * It used to write nothing, on the reasoning that the bare page was the way
+   * out. But the way out is `exitHref`, a path the page hands down; what this
+   * feeds is the replay link and the session request, and there an empty query
+   * names no track — so replaying the whole-corpus run landed on the picker.
+   */
   // @req REQ-103
-  it("writes nothing for the default track, so the bare page is the way out", () => {
-    expect(quizScopeSearchParams({ kind: "mixed" }).toString()).toBe("");
+  it("names the whole-corpus track, so replaying it opens a session", () => {
+    const params = quizScopeSearchParams({ kind: "mixed" });
+    expect(params.toString()).toBe("mode=mixte");
+    expect(parseQuizScope(Object.fromEntries(params.entries()))).toEqual({
+      kind: "mixed",
+    });
   });
 });
 

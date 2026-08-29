@@ -225,7 +225,7 @@ const shelvedModules: HubModule[] = [
     gameSlug: "appellations",
     availability: "data",
     dataSource: "afrik_peoples",
-    group: "jeux-peuples",
+    group: "jeux-quiz",
     available: true,
   },
   {
@@ -291,7 +291,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
       `${getLocalizedRoute("fr", "jouerHub")}/appellations`
     );
     expect(
-      screen.queryByTestId("axis-shelf-jeux-peuples")
+      screen.queryByTestId("axis-shelf-jeux-quiz")
     ).not.toBeInTheDocument();
   });
 

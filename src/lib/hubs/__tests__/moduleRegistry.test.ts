@@ -64,9 +64,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   });
 
   // @req REQ-114 @req REQ-120
-  it("gives jouer the quiz and the three games, in playing order", () => {
+  it("gives jouer the quiz and the one surviving game, in playing order", () => {
     const ids = getModulesForAccessMode("jouer").map((m) => m.id);
-    expect(ids).toEqual(["quiz", "appellations", "mercator", "pays-davant"]);
+    expect(ids).toEqual(["quiz", "mercator"]);
   });
 
   // "Noms & appellations" answers *why does this people carry this name* —

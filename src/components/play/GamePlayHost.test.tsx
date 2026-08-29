@@ -23,12 +23,12 @@ vi.mock("@/components/play/GamePlayIsland", () => ({
 }));
 
 const GAME: GameDefinition = {
-  id: "appellations",
-  slug: "appellations",
-  nameFr: "Eux, ou les autres",
+  id: "mercator",
+  slug: "mercator",
+  nameFr: "La taille qu'on vous a cachée",
   kind: "binary",
-  dataSource: "peoples",
-  promptFr: "Lequel de ces deux noms le peuple se donne-t-il à lui-même",
+  dataSource: "countries",
+  promptFr: "Lequel de ces deux pays couvre la plus grande surface",
   roundsPerSession: 8,
 };
 
@@ -55,7 +55,7 @@ describe("GamePlayHost (Jouer hub engine, REQ-120)", () => {
 
     expect(await screen.findByTestId("game-play-island-mock")).toHaveAttribute(
       "data-game",
-      "appellations"
+      "mercator"
     );
   });
 

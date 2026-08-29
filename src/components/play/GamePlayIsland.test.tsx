@@ -3,66 +3,38 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { GamePlayIsland } from "@/components/play/GamePlayIsland";
-import type {
-  BinaryRound,
-  GameRound,
-  GlobeTapRound,
-} from "@/lib/games/gameKinds";
+import type { BinaryRound, GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
-import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
-
-// The globe primitive is the one heavy dependency of the engine; the island
-// only has to prove it routes to it, never that WebGL came up.
-vi.mock("@/components/play/GlobeTap", () => ({
-  GlobeTap: ({ promptFr }: { promptFr: string }) => (
-    <div data-testid="globe-tap-mock">{promptFr}</div>
-  ),
-}));
+import { getCountryRoute } from "@/lib/routing";
 
 const GAME: GameDefinition = {
-  id: "appellations",
-  slug: "appellations",
-  nameFr: "Eux, ou les autres",
+  id: "mercator",
+  slug: "mercator",
+  nameFr: "La taille qu'on vous a cachée",
   kind: "binary",
-  dataSource: "peoples",
-  promptFr: "Lequel de ces deux noms le peuple se donne-t-il",
+  dataSource: "countries",
+  promptFr: "Lequel de ces deux pays couvre la plus grande surface",
   roundsPerSession: 8,
 };
 
 function binaryRound(subjectId: string): BinaryRound {
   return {
     kind: "binary",
-    gameId: "appellations",
+    gameId: "mercator",
     subjectId,
-    promptFr: `Comment ${subjectId} se nomme-t-il`,
+    promptFr: `Lequel couvre la plus grande surface, ${subjectId}`,
     reveal: {
-      textFr: `Origine de l'exonyme de ${subjectId}.`,
-      fieldPath: "content.appellations.originOfExonyms",
+      textFr: `Surface réelle de ${subjectId}.`,
+      fieldPath: "lib/atlas/assets/africaAdmin0",
       sources: [],
       confidence: null,
-      ficheHref: getPeopleRoute("fr", "PPL_TEST"),
+      ficheHref: getCountryRoute("fr", "DZA"),
     },
     options: [{ labelFr: "Alpha" }, { labelFr: "Beta" }],
     correctIndex: 0,
   };
 }
-
-const GLOBE_ROUND: GlobeTapRound = {
-  kind: "globeTap",
-  gameId: "pays-davant",
-  subjectId: "GHA",
-  promptFr: "« Côte-de-l'Or » : quel pays porte aujourd'hui ce nom d'avant",
-  reveal: {
-    textFr: "Nommée pour son or.",
-    fieldPath: "etymology",
-    sources: [],
-    confidence: null,
-    ficheHref: getCountryRoute("fr", "GHA"),
-  },
-  choices: ["GHA", "BEN"],
-  correctCountryId: "GHA",
-};
 
 function renderIsland(rounds: GameRound[]) {
   return render(<GamePlayIsland game={GAME} rounds={rounds} />);
@@ -105,7 +77,7 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
 
     expect(screen.getByTestId("game-answer-reveal")).toBeInTheDocument();
     expect(screen.getByTestId("game-reveal-text")).toHaveTextContent(
-      "Origine de l'exonyme de PPL_A."
+      "Surface réelle de PPL_A."
     );
   });
 
@@ -118,7 +90,9 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
     await user.click(screen.getByRole("button", { name: "Tour suivant" }));
 
     expect(screen.getByText("question 2 sur 2")).toBeInTheDocument();
-    expect(screen.getByText("Comment PPL_B se nomme-t-il")).toBeInTheDocument();
+    expect(
+      screen.getByText("Lequel couvre la plus grande surface, PPL_B")
+    ).toBeInTheDocument();
   });
 
   // @req REQ-120
@@ -134,13 +108,6 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
   });
 
   // @req REQ-120
-  it("routes a globe round to the lazily loaded globe primitive", async () => {
-    renderIsland([GLOBE_ROUND]);
-
-    expect(await screen.findByTestId("globe-tap-mock")).toHaveTextContent(
-      "« Côte-de-l'Or » : quel pays porte aujourd'hui ce nom d'avant"
-    );
-  });
 
   // @req REQ-120
   it("states the corpus shortfall instead of rendering an empty screen", () => {
