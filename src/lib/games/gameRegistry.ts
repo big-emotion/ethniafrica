@@ -31,7 +31,15 @@ export interface GameDefinition {
   /** Slug in /fr/jouer/<slug>; equal to the id for every game today. */
   slug: string;
   nameFr: string;
-  kind: GameKind;
+  /**
+   * Every interaction primitive this game can serve, so no renderer ships
+   * unexercised — `gameRegistry.test.ts` reads this to assert it. A list
+   * rather than one value since « La taille qu'on vous a cachée » asks its
+   * question two ways: a choice between two countries, and an estimate of how
+   * many times a shape fits in Africa. See `scaleEstimateRound` for why one
+   * of them could not carry the lesson alone.
+   */
+  kinds: GameKind[];
   dataSource: GameDataSource;
   /** The standing question, shown above every round. */
   promptFr: string;
@@ -45,7 +53,7 @@ export const GAME_DEFINITIONS: GameDefinition[] = [
     id: "mercator",
     slug: "mercator",
     nameFr: "La taille qu'on vous a cachée",
-    kind: "binary",
+    kinds: ["binary", "estimate"],
     dataSource: "countries",
     promptFr: "Lequel de ces deux pays couvre la plus grande surface ?",
     roundsPerSession: 8,

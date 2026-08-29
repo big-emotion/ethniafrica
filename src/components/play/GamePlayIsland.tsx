@@ -1,11 +1,12 @@
 "use client";
 
 import { BinaryChoice } from "@/components/play/BinaryChoice";
+import { EstimateSlider } from "@/components/play/EstimateSlider";
 import { GameAnswerReveal } from "@/components/play/GameAnswerReveal";
 import { GameScoreCard } from "@/components/play/GameScoreCard";
 import { QuizProgressDots } from "@/components/quiz/QuizProgressDots";
 import { useGameSession } from "@/hooks/use-game-session";
-import type { GameRound } from "@/lib/games/gameKinds";
+import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
@@ -56,12 +57,24 @@ export const GamePlayIsland = ({
             total={session.totalRounds}
           />
           {session.status === "answering" ? (
-            <BinaryChoice round={currentRound} onAnswer={session.answer} />
+            isEstimateRound(currentRound) ? (
+              // Keyed by the subject so the track resets between rounds:
+              // the slider holds the reader's value in state, and a reused
+              // instance would open the next round already answered.
+              <EstimateSlider
+                key={currentRound.subjectId}
+                round={currentRound}
+                onAnswer={session.answer}
+              />
+            ) : (
+              <BinaryChoice round={currentRound} onAnswer={session.answer} />
+            )
           ) : (
             <GameAnswerReveal
               round={currentRound}
               isCorrect={session.verdict ?? false}
               isLastRound={session.currentIndex + 1 >= session.totalRounds}
+              answer={session.selectedAnswer}
               onNext={session.next}
             />
           )}

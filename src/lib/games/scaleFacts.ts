@@ -1,13 +1,19 @@
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
-import type { Ring } from "@/lib/atlas/overlays";
-import { frenchNumber } from "@/lib/games/format";
-import { LANDMARKS, LANDMARK_PROVENANCE_PATH } from "@/lib/games/landmarks";
 import {
-  greatCircleKm,
-  mercatorInflation,
-  ringArea,
-} from "@/lib/games/sphericalArea";
+  distanceFr,
+  frenchNumber,
+  inflationFr,
+  millionsKm2Fr,
+  ratioFr,
+} from "@/lib/games/format";
+import { LANDMARKS, LANDMARK_PROVENANCE_PATH } from "@/lib/games/landmarks";
+import { greatCircleKm } from "@/lib/games/sphericalArea";
+import {
+  africaAreaKm2,
+  shapeAreaKm2,
+  shapeInflation,
+} from "@/lib/games/shapeMeasure";
 import { MERCATOR_PROVENANCE_PATH } from "@/lib/games/rounds/mercatorRound";
 
 /**
@@ -45,78 +51,16 @@ export const SCALE_FACT_PROVENANCE_PATHS = [
   LANDMARK_PROVENANCE_PATH,
 ] as const;
 
-const toRings = (rawRings: readonly (readonly [number, number])[][]): Ring[] =>
-  rawRings.map((ring) => ring.map(([lon, lat]) => ({ lon, lat })));
-
-const areaOf = (rawRings: readonly (readonly [number, number])[][]): number =>
-  toRings(rawRings).reduce((total, ring) => total + ringArea(ring), 0);
-
-/**
- * Inflation is read on the mainland alone, as `mercatorRound` reads it: a
- * distant island would drag the centroid to a latitude the shape is not
- * mostly at, and the factor is a statement about where a shape sits.
- */
-const inflationOf = (
-  rawRings: readonly (readonly [number, number])[][]
-): number =>
-  mercatorInflation(
-    toRings(rawRings).reduce((largest, ring) =>
-      ring.length > largest.length ? ring : largest
-    )
-  );
-
-const worldArea = (id: string): number => areaOf(WORLD_COMPARE[id].rings);
+const worldArea = (id: string): number => shapeAreaKm2(WORLD_COMPARE[id].rings);
 const worldInflation = (id: string): number =>
-  inflationOf(WORLD_COMPARE[id].rings);
-const africanArea = (id: string): number => areaOf(AFRICA_ADMIN0[id].rings);
+  shapeInflation(WORLD_COMPARE[id].rings);
+const africanArea = (id: string): number =>
+  shapeAreaKm2(AFRICA_ADMIN0[id].rings);
 const africanInflation = (id: string): number =>
-  inflationOf(AFRICA_ADMIN0[id].rings);
-
-const africaArea = (): number =>
-  Object.values(AFRICA_ADMIN0).reduce(
-    (total, country) => total + areaOf(country.rings),
-    0
-  );
+  shapeInflation(AFRICA_ADMIN0[id].rings);
 
 const distanceKm = (fromId: string, toId: string): number =>
   greatCircleKm(LANDMARKS[fromId], LANDMARKS[toId]);
-
-const oneDecimal = new Intl.NumberFormat("fr-FR", {
-  minimumFractionDigits: 1,
-  maximumFractionDigits: 1,
-});
-
-/**
- * A ratio the reader is meant to remember, not to reuse. Past ten the decimal
- * is noise — « quatorze fois » is the fact, « 14,0 fois » is a measurement —
- * and below ten it is the difference between 3,2 and 3,8.
- */
-function ratioFr(ratio: number): string {
-  return ratio >= 10
-    ? frenchNumber.format(Math.round(ratio))
-    : oneDecimal.format(ratio);
-}
-
-/**
- * An inflation factor keeps its decimal at every magnitude, unlike `ratioFr`.
- * It is a measurement of what the projection did, and the Greenland fact
- * turns on the difference between the two: Africa is fourteen times Greenland
- * and Greenland is drawn at 14,3 times itself. Rounded alike, the sentence
- * that sets them against each other reads as a tautology.
- */
-function inflationFr(factor: number): string {
-  return oneDecimal.format(factor);
-}
-
-/** « 30,1 millions de km² ». */
-function millionsKm2Fr(areaKm2: number): string {
-  return `${oneDecimal.format(areaKm2 / 1_000_000)} millions de km²`;
-}
-
-/** Stated to the nearest ten kilometres — see `landmarks` on why not finer. */
-function distanceFr(km: number): string {
-  return `${frenchNumber.format(Math.round(km / 10) * 10)} km`;
-}
 
 /**
  * The bank, measured once per process.
@@ -132,7 +76,7 @@ let bank: ScaleFact[] | null = null;
 export function buildScaleFacts(): ScaleFact[] {
   if (bank) return bank;
 
-  const africa = africaArea();
+  const africa = africaAreaKm2();
   const greenland = worldArea("GRL");
   const congo = africanArea("COD");
   const westernEurope = worldArea("EUW");

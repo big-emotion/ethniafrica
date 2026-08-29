@@ -18,17 +18,19 @@ describe("GAME_DEFINITIONS", () => {
   });
 
   // @req REQ-120
-  it("uses only the surviving interaction primitive", () => {
-    const kinds = new Set(GAME_DEFINITIONS.map((game) => game.kind));
-    expect([...kinds]).toEqual(["binary"]);
+  it("uses only the surviving interaction primitives", () => {
+    const kinds = new Set(GAME_DEFINITIONS.flatMap((game) => game.kinds));
+    expect([...kinds].sort()).toEqual(["binary", "estimate"]);
   });
 
   // The point of this test is not the count but the absence of dead engine
   // paths: a GameKind no game declares is a renderer shipping unexercised.
   // @req REQ-120
   it("covers every primitive it declares, so no engine path ships unexercised", () => {
-    for (const kind of ["binary"]) {
-      expect(GAME_DEFINITIONS.some((game) => game.kind === kind)).toBe(true);
+    for (const kind of ["binary", "estimate"] as const) {
+      expect(GAME_DEFINITIONS.some((game) => game.kinds.includes(kind))).toBe(
+        true
+      );
     }
   });
 

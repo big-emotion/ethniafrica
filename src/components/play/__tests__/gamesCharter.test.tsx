@@ -130,6 +130,7 @@ describe("Jouer games charter contract (REQ-120)", () => {
     // score card are read, then dismissed by one button the same rule covers.
     const primitives = [
       "BinaryChoice.tsx",
+      "EstimateSlider.tsx",
       "QuadChoice.tsx",
       "AreaCompare.tsx",
       "GlobeTap.tsx",

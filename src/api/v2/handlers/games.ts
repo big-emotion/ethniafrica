@@ -24,6 +24,7 @@ import {
   mercatorMisleads,
   trueAreaKm2,
 } from "@/lib/games/rounds/mercatorRound";
+import { buildScaleEstimateRounds } from "@/lib/games/rounds/scaleEstimateRound";
 
 export interface GameRoundsData {
   rounds: GameRound[];
@@ -117,38 +118,96 @@ function bandedPool<T>(
   return { ordered, bandOf };
 }
 
-function assembleRounds(
-  game: GameDefinition,
-  corpus: GameCorpus,
-  seed: number
-): GameRound[] {
-  const limit = game.roundsPerSession;
-  const rounds: GameRound[] = [];
-
-  const push = (round: GameRound | null, band: DifficultyBand) => {
-    if (round && rounds.length < limit)
-      rounds.push({ ...round, difficultyBand: band });
-  };
-
-  // A session that cannot be filled with misleading pairs is served short:
-  // padding it with honest comparisons would quietly undo the filter, and
-  // corpusLimited already states the shortfall on screen.
+/**
+ * The comparisons of a country against a country.
+ *
+ * A session that cannot be filled with misleading pairs is served short:
+ * padding it with honest comparisons would quietly undo the filter, and
+ * `corpusLimited` already states the shortfall on screen.
+ */
+function binaryRounds(corpus: GameCorpus, seed: number): GameRound[] {
   const { ordered, bandOf } = bandedPool(
     rotate(corpus.countries, seed),
     (country) => country.id,
     trueAreaKm2
   );
+
+  const rounds: GameRound[] = [];
   for (const [a, b] of misleadingPairs(ordered)) {
+    const round = buildMercatorRound(a, b);
+    if (!round) continue;
+
     // A pair is as hard as its least familiar member: a household name set
     // against a country the reader has never met is that second country's
     // round, whatever the first one is.
-    const band = Math.max(bandOf.get(a.id), bandOf.get(b.id));
-    push(buildMercatorRound(a, b), band as DifficultyBand);
+    const band = Math.max(bandOf.get(a.id), bandOf.get(b.id)) as DifficultyBand;
+    rounds.push({ ...round, difficultyBand: band });
   }
+  return rounds;
+}
 
-  // Stable, so a band's own order survives. Mercator needs it: a pair takes
-  // the band of its harder half, which the pool order alone cannot express.
-  return [...rounds].sort((a, b) => a.difficultyBand - b.difficultyBand);
+/**
+ * The estimates of Africa against a familiar shape elsewhere.
+ *
+ * These read no corpus at all — every figure comes from the committed
+ * outlines — so the page has something to play even when Supabase hands back
+ * nothing. That is deliberate rather than incidental: the claim this game
+ * makes is about geometry, and it should not go dark because a database did.
+ *
+ * Difficulty is the size of the ratio, not the size of the shape. Landing
+ * inside a fifth of « fourteen times » is a harder judgement than landing
+ * inside a fifth of « three times », and area would have made Western Europe
+ * the hardest round for a French reader, which it plainly is not.
+ */
+function estimateRounds(): GameRound[] {
+  const built = buildScaleEstimateRounds();
+  const { bandOf } = bandedPool(
+    built,
+    (round) => round.subjectId,
+    (round) => 1 / round.correctValue
+  );
+
+  return built.map((round) => ({
+    ...round,
+    difficultyBand: bandOf.get(round.subjectId),
+  }));
+}
+
+/** Takes from each list in turn, so neither gesture runs in a block. */
+function interleave(left: GameRound[], right: GameRound[]): GameRound[] {
+  const merged: GameRound[] = [];
+  for (let i = 0; i < Math.max(left.length, right.length); i++) {
+    if (i < left.length) merged.push(left[i]);
+    if (i < right.length) merged.push(right[i]);
+  }
+  return merged;
+}
+
+function assembleRounds(
+  game: GameDefinition,
+  corpus: GameCorpus,
+  seed: number
+): GameRound[] {
+  const binary = binaryRounds(corpus, seed);
+  const estimate = estimateRounds();
+
+  // Two rules meet here and neither may be dropped. Charter §4 wants the
+  // session ordered by ascending difficulty; a session of eight identical
+  // gestures is a worse session than a mixed one. Sorting globally would
+  // block the two kinds; interleaving globally would scramble the bands.
+  //
+  // So the bands are the outer order and the alternation happens inside each
+  // one: the reader still meets an easy round before a hard one, and still
+  // never taps the same control eight times running.
+  const bands: DifficultyBand[] = [1, 2, 3];
+  const ordered = bands.flatMap((band) =>
+    interleave(
+      binary.filter((round) => round.difficultyBand === band),
+      estimate.filter((round) => round.difficultyBand === band)
+    )
+  );
+
+  return ordered.slice(0, game.roundsPerSession);
 }
 
 /**
