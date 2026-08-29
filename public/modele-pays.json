@@ -7,6 +7,7 @@
   "id": "XXX",
   "nameFr": "<Nom officiel en français>",
   "nameOfficial": "<Nom officiel complet>",
+  "summary": "<Chapeau de 2 à 3 phrases, condensé de la fiche — ce qu'un lecteur doit retenir s'il ne lit rien d'autre. N'introduit aucune affirmation absente du reste de la fiche : c'est un résumé, pas une section, et il ne porte donc pas de sources propres. Ouvre sur l'histoire du nom quand elle est parlante.>",
   "etymology": "<Étymologie du nom du pays — origine, sens, histoire du terme>",
   "nameOriginActor": "<Personne / peuple / administration à l'origine du nom>",
   "content": {
