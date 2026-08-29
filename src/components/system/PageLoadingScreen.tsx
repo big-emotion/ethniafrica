@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { AfricaTraceLoader } from "@/components/system/AfricaTraceLoader";
+import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 
 export interface PageLoadingScreenProps {
   /**
@@ -19,10 +20,13 @@ export interface PageLoadingScreenProps {
  * `FicheLoadingScreen` answers the same need for the three fiche routes, and
  * it is not reusable here: it opens on `FicheHeroBand`, a full-bleed night
  * band sized to the atlas globe, which is the fiche's own shape and nobody
- * else's. What the two share is the part that matters — `AfricaTraceLoader`,
- * the committed coastline inked south to north, so every wait on the site
- * belongs to one cartographic grammar rather than to a component kit's
- * spinner.
+ * else's. What the two share is the part that matters — `DidYouKnowLoader`,
+ * one onomastic fact unveiled at reading pace, so every wait on the site is
+ * spent on the same thing rather than on a component kit's spinner.
+ *
+ * The fact is drawn here rather than passed in, because a loading file has no
+ * request context of its own to draw from and every caller would otherwise
+ * repeat the same three lines.
  *
  * The shell is `PageLayout`, with the same props the arriving page passes.
  * React reconciles the two trees when the page resolves, so the header, the
@@ -43,14 +47,14 @@ export function PageLoadingScreen({
 }: PageLoadingScreenProps) {
   return (
     <PageLayout language="fr" sectionName={sectionName}>
-      {/* A floor rather than a fixed height: the arriving pages differ too
-          much in length to guess one, and this is enough for the figure to
-          read as a figure without the footer riding up the screen. */}
-      <div
-        data-testid="page-loading-band"
-        style={{ minHeight: "min(52vh, 420px)" }}
-      >
-        <AfricaTraceLoader label={label} />
+      {/* The accent scope is not decoration here. `--accent` is declared twice
+          under two incompatible meanings — shadcn's bare HSL triplet in
+          index.css, a hex on the .afh-accent-* wrappers in color.css — and
+          outside a wrapper the triplet wins, so `fill: var(--accent)` resolves
+          to nothing and the continent renders black. Ocre is the atlas's own
+          ink, the same the eyebrow above it uses. */}
+      <div data-testid="page-loading-band" className="afh-accent-ocre">
+        <DidYouKnowLoader fact={pickDidYouKnowFact()} label={label} />
       </div>
     </PageLayout>
   );

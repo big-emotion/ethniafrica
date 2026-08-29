@@ -4,6 +4,11 @@ import type {
   DidYouKnowEntity,
   DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
+import {
+  DID_YOU_KNOW_ENTITY_ACCENT,
+  DID_YOU_KNOW_ENTITY_LABEL,
+  DID_YOU_KNOW_TIER_LABEL,
+} from "@/lib/home/didYouKnowPresentation";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -24,31 +29,11 @@ export interface DidYouKnowProps {
  * go find the search box themselves.
  */
 
-const ENTITY_LABEL: Record<DidYouKnowEntity["kind"], string> = {
-  people: "Peuple",
-  country: "Pays",
-  family: "Famille linguistique",
-};
-
-// The home's accent mapping, per atlas-charter §2: people ocre, country
-// teal, family terre. Three destinations must not look like one list.
-const ENTITY_ACCENT: Record<DidYouKnowEntity["kind"], string> = {
-  people: "afh-accent-ocre",
-  country: "afh-accent-teal",
-  family: "afh-accent-terre",
-};
-
 function entityHref(language: Language, entity: DidYouKnowEntity): string {
   if (entity.kind === "country") return getCountryRoute(language, entity.id);
   if (entity.kind === "family") return getFamilyRoute(language, entity.id);
   return getPeopleRoute(language, entity.id);
 }
-
-const TIER_LABEL = {
-  official: "Source officielle",
-  referenced: "Source référencée",
-  unverified: "Source non vérifiée",
-} as const;
 
 // @req REQ-113
 export function DidYouKnow({ language, fact }: DidYouKnowProps) {
@@ -75,12 +60,12 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           {fact.entities.map((entity) => (
             <li key={`${entity.kind}-${entity.id}`}>
               <Link
-                className={`home-dyk-chip ${ENTITY_ACCENT[entity.kind]}`}
+                className={`home-dyk-chip ${DID_YOU_KNOW_ENTITY_ACCENT[entity.kind]}`}
                 href={entityHref(language, entity)}
               >
                 <span aria-hidden="true" className="home-dyk-dot" />
                 <span className="home-dyk-chip-kind">
-                  {ENTITY_LABEL[entity.kind]}
+                  {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
                 </span>
                 {entity.label}
               </Link>
@@ -88,7 +73,7 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           ))}
         </ul>
 
-        <p className="home-dyk-tier">{TIER_LABEL[fact.tier]}</p>
+        <p className="home-dyk-tier">{DID_YOU_KNOW_TIER_LABEL[fact.tier]}</p>
       </div>
 
       <style>{`

@@ -3,6 +3,8 @@ import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import type { FicheEntityType } from "@/lib/fichePanels";
 import { AfricaTraceLoader } from "@/components/system/AfricaTraceLoader";
+import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 
 /**
  * What a reader is told the wait is for. A screen reader gets this sentence
@@ -70,10 +72,24 @@ export function FicheLoadingScreen({
             className={ACCENT_CLASS_BY_ENTITY[entityType]}
             style={{ height: "100%" }}
           >
-            <AfricaTraceLoader label={WAIT_LABEL[entityType]} />
+            {/* Decorative here: the live region below owns the announcement,
+                and two status regions for one navigation make a screen
+                reader arbitrate between them. */}
+            <AfricaTraceLoader decorative label={WAIT_LABEL[entityType]} />
           </div>
         </div>
       </FicheHeroBand>
+
+      {/* The fact waits on the parchment, never on the night band: the band
+          is sized to the globe and holds the fiche's own shape, and a column
+          of body copy dropped into it would be the one thing on the site
+          asserting that a globe and a paragraph occupy the same slot. */}
+      <div className={ACCENT_CLASS_BY_ENTITY[entityType]}>
+        <DidYouKnowLoader
+          fact={pickDidYouKnowFact()}
+          label={WAIT_LABEL[entityType]}
+        />
+      </div>
     </PageLayout>
   );
 }
