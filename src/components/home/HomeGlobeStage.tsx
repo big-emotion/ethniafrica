@@ -92,11 +92,20 @@ export function HomeGlobeStage() {
         }
         /* From 1200 up the hero is pinned to the viewport height, so the
            floors above would push the tools past the fold — which is the
-           one thing that height was calculated to prevent. Here the stage
+           one thing that height was calculated to prevent. There the stage
            takes whatever the band has left instead, and .home-globe-surface
-           carries the only floor the sphere still needs. */
+           carries the only floor the sphere still needs.
+
+           Qualified by the holder because dropping the floor is only safe
+           where something else supplies the height: .home-globe-holder is
+           the flex child of the pinned band, and it is the flex chain that
+           makes min-height:0 mean "take the rest" rather than "be zero".
+           On the Mercator page the stage sits in ordinary flow, so an
+           unqualified rule collapsed it to nothing and .home-globe-layout —
+           inset:0 on that empty box — painted the globe over the rounds and
+           the footer below it. */
         @media (min-width: 1200px) {
-          .home-globe-stage {
+          .home-globe-holder .home-globe-stage {
             flex: 1 1 auto;
             min-height: 0;
           }
