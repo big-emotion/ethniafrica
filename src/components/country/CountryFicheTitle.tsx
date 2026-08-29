@@ -1,8 +1,7 @@
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { transformCountryData } from "@/lib/countryDataTransformer";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { backLinkLabel, deriveTrail } from "@/lib/navigation/deriveTrail";
-import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
+import { backLinkLabel } from "@/lib/navigation/deriveTrail";
+import { getPeopleRoute } from "@/lib/routing";
 
 /** The reference year every fiche's shares are read against — see CountryParchment. */
 const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
@@ -29,12 +28,11 @@ export function CountryFicheTitle({
   const { hero } = transformCountryData(country);
   const hasPeoples = (country.demographics?.peoples?.length ?? 0) > 0;
 
+  // The trail is the shell's now (`PageLayout` → `SiteTrail`). The back link
+  // below is not a crumb and never was: it states where the reader came from,
+  // which the address does not record, so it stays here.
   return (
     <>
-      <AfrikBreadcrumbs
-        items={deriveTrail(getCountryRoute("fr", country.id), country.nameFr)}
-      />
-
       {fromPeopleId && (
         <p className="px-3 md:px-4 xl:px-5 text-afh-caption">
           <a

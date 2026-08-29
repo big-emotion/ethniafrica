@@ -496,12 +496,42 @@ export const translations = {
       /** The root every trail opens on. Not a PageType: `/fr` addresses no module. */
       home: "Accueil",
       /**
-       * Segments that sit below a fiche. A segment absent from this map is
-       * one the trail has no words for, and the trail stops rather than
-       * print the raw path.
+       * How the trail names a path segment the slug table does not address.
+       *
+       * Two kinds of segment end up here. The first sits below a fiche
+       * (`liens`, `score`). The second is a page that `PageType` deliberately
+       * ignores: the legal notices, the account and admin screens, the error
+       * report. Those address no module of the corpus, so giving them a
+       * `PageType` would widen a union that means "an addressable resource"
+       * into one that means "a URL that exists" — and `PAGE_TYPES` is read by
+       * the routing charter and the sitemap, which would both start asserting
+       * that the cookie policy is part of the atlas.
+       *
+       * A segment absent from this map is one the trail has no words for, and
+       * the trail stops rather than print the raw path.
        */
       segments: {
         liens: "Liens",
+        score: "Score",
+        accessibilite: "Accessibilité",
+        admin: "Administration",
+        connexion: "Connexion",
+        compte: "Compte",
+        inscription: "Inscription",
+        profil: "Profil",
+        confidentialite: "Confidentialité",
+        contribute: "Contribuer",
+        "mentions-legales": "Mentions légales",
+        "plan-du-site": "Plan du site",
+        "politique-confidentialite": "Politique de confidentialité",
+        "politique-de-donnees": "Politique de données",
+        "report-error": "Signaler une erreur",
+        signalements: "Signalements",
+        // The comparison's own segment: `/fr/comparer/peuples/PPL_A,PPL_B`
+        // names what is being compared before it names the pair.
+        peuples: "Peuples",
+        pays: "Pays",
+        familles: "Familles",
       } as Record<string, string>,
       /**
        * Prefixes the fiche a reader arrived from. Provenance, not ancestry:

@@ -86,6 +86,7 @@ export default async function SignalementsSlugPage({
       language="fr"
       title={`Signalement ${slug}`}
       sectionName="Signalements"
+      trailLabel={`Signalement ${slug}`}
     >
       <article
         className="container mx-auto max-w-3xl px-4 py-8 space-y-8"
