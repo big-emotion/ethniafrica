@@ -5,7 +5,10 @@ import { getCountryIndex } from "@/api/v2/services/countryService";
 import { getLanguageFamilyPresence } from "@/api/v2/services/languageFamilyAtlas";
 import { getLanguageFamilies } from "@/api/v2/services/languageFamilyService";
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import type { FacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
+import type {
+  FacetCountryIndex,
+  FacetCountryNarrowing,
+} from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
@@ -101,7 +104,15 @@ export default async function FamillesHubPage({
       chosenCountry ? { ids: selection.map((family) => family.id) } : {}
     );
 
+  const facetRoute = getFacetRoute("fr", "families");
+
   const countryIndex: FacetCountryIndex = {};
+  /**
+   * Keyed on the index's own countries, so a narrowing offered from the map
+   * always lands on a page with families on it. Narrowing resets the page: page
+   * 4 of the whole corpus is past the end of "the families spoken in Benin".
+   */
+  const narrowing: FacetCountryNarrowing = {};
   for (const family of selection) {
     const row = {
       id: family.id,
@@ -111,6 +122,9 @@ export default async function FamillesHubPage({
     for (const countryId of family.countryIds) {
       const key = countryId as CountryId;
       countryIndex[key] = [...(countryIndex[key] ?? []), row];
+      narrowing[key] ??= `${facetRoute}?${new URLSearchParams({
+        [COUNTRY_PARAM]: countryId,
+      }).toString()}`;
     }
   }
 
@@ -123,7 +137,6 @@ export default async function FamillesHubPage({
     .map((country) => ({ value: country.id, label: country.nameFr }))
     .sort((left, right) => left.label.localeCompare(right.label, "fr"));
 
-  const facetRoute = getFacetRoute("fr", "families");
   const pageHref = (target: number): string => {
     const address = new URLSearchParams();
     if (chosenCountry) address.set(COUNTRY_PARAM, chosenCountry);
@@ -144,7 +157,11 @@ export default async function FamillesHubPage({
 
   return (
     <>
-      <PublishFacetCountryIndex index={countryIndex} />
+      <PublishFacetCountryIndex
+        index={countryIndex}
+        narrowing={narrowing}
+        focused={chosenCountry as CountryId | null}
+      />
 
       <div className="afh-parchment">
         <header className="afh-parchment-head">

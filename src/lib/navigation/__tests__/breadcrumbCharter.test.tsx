@@ -31,9 +31,37 @@ import { YORUBA } from "@/components/fiche/__tests__/ficheContextFixtures";
 
 describe("deriveTrail — the trail comes from the route", () => {
   // @req REQ-091
-  it("names a hub page and leaves it unlinked, the reader being on it", () => {
+  it("opens on the home and the axis that leads to the page", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
       { label: "Pays" },
+    ]);
+  });
+
+  /**
+   * `Accueil › Explorer › Explorer` would name the same place twice, and the
+   * charter already rules on that shape: a level offering no choice is not a
+   * level.
+   */
+  // @req REQ-091
+  it("does not repeat the axis on the axis hub itself", () => {
+    expect(deriveTrail(getLocalizedRoute("fr", "explorerHub"))).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Explorer" },
+    ]);
+  });
+
+  /**
+   * A page no axis leads to still gets a way home. Two crumbs, honest about
+   * being an escape hatch rather than a hierarchy — inventing a parent for the
+   * legal pages would be inventing a claim about the site's shape.
+   */
+  // @req REQ-091
+  it("gives a page outside the three axes the home and itself, nothing more", () => {
+    expect(deriveTrail(getLocalizedRoute("fr", "compare"))).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Comparer" },
     ]);
   });
 
@@ -41,20 +69,30 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("gives every page type a crumb, so no route trails off unnamed", () => {
     for (const page of PAGE_TYPES) {
       const trail = deriveTrail(getLocalizedRoute("fr", page));
-      expect(trail).toHaveLength(1);
-      expect(trail[0].label.length).toBeGreaterThan(0);
-      expect(trail[0].href).toBeUndefined();
+
+      // Home, optionally the axis, then the page itself.
+      expect(trail.length).toBeGreaterThanOrEqual(2);
+      expect(trail[0]).toEqual({ label: "Accueil", href: "/fr" });
+      for (const crumb of trail) {
+        expect(crumb.label.length).toBeGreaterThan(0);
+      }
+      // The reader stands on the last one.
+      expect(trail[trail.length - 1].href).toBeUndefined();
     }
   });
 
   // @req REQ-091
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
+        { label: "Accueil", href: "/fr" },
+        { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -66,6 +104,8 @@ describe("deriveTrail — the trail comes from the route", () => {
     expect(
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -77,6 +117,8 @@ describe("deriveTrail — the trail comes from the route", () => {
     const trail = deriveTrail(getCountryRoute("fr", "BEN"));
 
     expect(trail).toEqual([
+      { label: "Accueil", href: "/fr" },
+      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -89,7 +131,12 @@ describe("deriveTrail — the trail comes from the route", () => {
       "Yoruba"
     );
 
-    expect(trail.map((crumb) => crumb.label)).toEqual(["Peuples", "Yoruba"]);
+    expect(trail.map((crumb) => crumb.label)).toEqual([
+      "Accueil",
+      "Explorer",
+      "Peuples",
+      "Yoruba",
+    ]);
     expect(JSON.stringify(trail)).not.toContain("tresor-cache");
   });
 
@@ -104,7 +151,9 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("carries the identifier through verbatim, encoding included", () => {
     const trail = deriveTrail(getPeopleLinksRoute("fr", "PPL_%2F%2Fevil"), "X");
 
-    expect(trail[1].href).toBe(getPeopleRoute("fr", "PPL_%2F%2Fevil"));
+    const fiche = trail.find((crumb) => crumb.label === "X");
+    expect(trail.at(-2)?.href).toBe(getPeopleRoute("fr", "PPL_%2F%2Fevil"));
+    expect(fiche).toBeDefined();
   });
 });
 
@@ -135,7 +184,7 @@ describe("the trail a fiche renders", () => {
       deriveTrail(getPeopleRoute("fr", "PPL_YORUBA"), "Yoruba").map(
         (crumb) => crumb.label
       )
-    ).toEqual(["Peuples", "Yoruba"]);
+    ).toEqual(["Accueil", "Explorer", "Peuples", "Yoruba"]);
 
     const { container } = render(
       <ContextTriad context={{ entityType: "people", payload: YORUBA }} />

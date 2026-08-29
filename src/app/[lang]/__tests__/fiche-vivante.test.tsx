@@ -209,6 +209,11 @@ const YORUBA_ROW = {
     languages: YORUBA.languages,
     historicalRole: YORUBA.historicalRole,
     culture: YORUBA.culture,
+    // Every one of the 789 people fiches carries sources, and the head's
+    // confidence chip links to the footer they render. A fixture without them
+    // models a fiche the corpus does not contain, and makes that link dangle
+    // for a reason no reader will ever meet.
+    sources: YORUBA.sources,
     demography: {
       ...YORUBA.demography,
       // The territory chapter reads the per-country split off stored
