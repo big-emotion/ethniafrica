@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 par le gouvernement sud-soudanais, suite au référendum d'autodétermination et à la sécession du Soudan.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Soudan anglo-égyptien (1899-1956)",
+        "Sud du Soudan (1956-2011)"
+      ],
       "antiquity": "Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
       "middleAges": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
       "precolonial": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de \"Soudan du Sud\" par les Européens, mais les populations locales avaient leurs propres appellations.",

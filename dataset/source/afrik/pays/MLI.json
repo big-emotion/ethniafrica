@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom vient de l'empire du Mali historique, fondé par Soundiata Keïta au XIIIe siècle. Le nom a été choisi lors de l'indépendance en 1960 pour honorer cet héritage historique.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Soudan français (1892-1958)",
+        "Fédération du Mali (1959-1960)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes proto-mandé, soninké, peuls, bozo sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont dominé la région.",
       "middleAges": "IIIe-XIIIe siècles : Empire du Ghana (Wagadu), dominé par les Soninké. XIIIe-XVIe siècles : Empire du Mali (fondé par Soundiata Keïta), capitale Niani. XVe-XVIe siècles : Empire Songhai (Gao, Tombouctou, Djenné).",
       "precolonial": "Empires du Ghana, du Mali et Songhai. Royaumes touaregs (Kel Adagh, Ifoghas, Tagelmoust). Royaumes bambara. Commerce transsaharien majeur.",

@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Éthiopie\" a été utilisé par les Grecs anciens et adopté par les royaumes éthiopiens. Le nom amharique \"Ityop'iya\" est dérivé du grec. Le pays s'est appelé \"Abyssinie\" par les Européens jusqu'au XXe siècle.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Pount (égyptien ancien)",
+        "Abyssinie (usage européen jusqu'au XXe siècle)",
+        "République socialiste d'Éthiopie (1974-1991)"
+      ],
       "antiquity": "Le territoire était connu sous le nom de \"Pount\" par les Égyptiens anciens. Les Grecs anciens utilisaient \"Éthiopie\" pour désigner les terres au sud de l'Égypte. Royaume d'Axoum (Ier-VIIe siècles).",
       "middleAges": "Empire d'Éthiopie (XIIIe-XXe siècles) avec dynasties salomonides. Le nom \"Éthiopie\" était utilisé par les royaumes éthiopiens. Les Européens utilisaient \"Abyssinie\" (dérivé de \"Habesha\").",
       "precolonial": "Empire d'Éthiopie avec empereur (Negus Negast). Le nom \"Éthiopie\" était utilisé officiellement. \"Abyssinie\" était le nom utilisé par les Européens.",

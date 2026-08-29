@@ -40,6 +40,7 @@ interface CountryDetailRecord {
   name_fr?: string;
   nameOfficial?: string;
   name_official?: string;
+  summary?: string;
   etymology?: string;
   nameOriginActor?: string;
   name_origin_actor?: string;
@@ -96,6 +97,7 @@ export function mapCountryDetail(apiData: CountryDetailRecord): CountryDetail {
     nameFr,
     nameCommonFr: getFrenchCountryCommonName(apiData.id, nameOfficial),
     nameOfficial,
+    summary: apiData.summary,
     etymology: apiData.etymology,
     nameOriginActor: apiData.nameOriginActor || apiData.name_origin_actor,
     createdAt: serializeDate(apiData.createdAt || apiData.created_at),

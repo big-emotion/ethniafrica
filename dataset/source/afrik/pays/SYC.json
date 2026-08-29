@@ -7,6 +7,10 @@
   "nameOriginActor": "Les Français ont nommé les îles \"Seychelles\" en l'honneur de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV (1756). Le nom a été conservé par les Britanniques puis officialisé lors de l'indépendance (1976).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie française des Seychelles (1756-1814)",
+        "Colonie britannique des Seychelles (1814-1976)"
+      ],
       "antiquity": "Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.",
       "middleAges": "Les îles restent inhabitée. Pas de présence humaine permanente.",
       "precolonial": "Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes \"Îles de la Ligne\" ou \"Îles de la Soif\". Pas de structures politiques ou sociales.",

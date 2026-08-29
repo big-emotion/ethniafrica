@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Congo-Brazzaville\" a été utilisé pour distinguer ce pays de la République démocratique du Congo (Congo-Kinshasa) après l'indépendance des deux pays en 1960.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Congo français (1880-1960)",
+        "Congo-Brazzaville (usage courant)"
+      ],
       "antiquity": "Le territoire actuel de la République du Congo était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement des royaumes et chefferies bantoues (Royaume Kongo, chefferies Teke) sans nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies indépendants : Royaume Kongo (partie ouest), royaume Tio (Teke), chefferies Mbochi, et autres peuples bantous. Les Portugais utilisaient le terme \"Congo\" pour désigner la région du royaume Kongo.",

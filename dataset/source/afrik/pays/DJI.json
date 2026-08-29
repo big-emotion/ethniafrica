@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Djibouti\" a été donné par les Français lors de la fondation de la ville de Djibouti en 1888. Le nom a été officialisé pour le pays à l'indépendance en 1977, remplaçant \"Territoire français des Afars et des Issas\". Le nom reflète l'identité de la capitale et du pays.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Côte française des Somalis (1896-1967)",
+        "Territoire français des Afars et des Issas (1967-1977)"
+      ],
       "antiquity": "Le territoire actuel de Djibouti était peuplé de peuples Afar et Somali sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires (Adal, Dankali, etc.).",
       "middleAges": "Développement de sultanats et chefferies : sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de sultanats et chefferies autonomes : sultanat d'Adal (Afar, aussi appelé Dankali), chefferies Somali (Issa, Gadabursi, Isaaq). Les Européens utilisaient les termes \"Côte française des Somalis\" ou \"Pays des Afars et des Issas\" pour désigner la région.",

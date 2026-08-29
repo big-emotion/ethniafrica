@@ -270,6 +270,8 @@ export interface CountryDetail {
   nameFr: string;
   nameCommonFr: string;
   nameOfficial?: string;
+  /** The chapeau — see Country.summary. Absent on fiches not yet written. */
+  summary?: string;
   etymology?: string;
   nameOriginActor?: string;
   createdAt?: string;

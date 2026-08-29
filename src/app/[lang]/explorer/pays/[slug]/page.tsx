@@ -13,6 +13,8 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
+import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
+import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
@@ -250,12 +252,21 @@ export default async function PaysSlugPage({
           </FicheHeroBand>
         }
         record={
-          <CountryRecordView
-            country={countryDetail}
-            hasSourceFlag={sourceFlags.length > 0}
-            fromPeopleName={navigationContext.fromPeopleName}
-            fromPeopleId={navigationContext.fromPeopleId}
-          />
+          <>
+            {/* The chapô goes in through `record` rather than through a new
+                FicheSequence slot: it is part of what the record says, and
+                the sequence already knows where the record belongs. */}
+            <CountrySynthesisBrief
+              language="fr"
+              synthesis={deriveCountrySynthesisFromDetail(countryDetail)}
+            />
+            <CountryRecordView
+              country={countryDetail}
+              hasSourceFlag={sourceFlags.length > 0}
+              fromPeopleName={navigationContext.fromPeopleName}
+              fromPeopleId={navigationContext.fromPeopleId}
+            />
+          </>
         }
       />
     </PageLayout>

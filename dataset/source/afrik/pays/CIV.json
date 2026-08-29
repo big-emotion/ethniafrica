@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Côte d'Ivoire\" a été donné par les navigateurs européens (portugais, puis français) à partir du XVe siècle en référence au commerce de l'ivoire pratiqué le long de la côte. Les Français ont officialisé ce nom lors de la création de la colonie de Côte d'Ivoire en 1893. Le nom n'est pas traduit dans les langues étrangères (contrairement à d'autres pays) pour préserver l'identité nationale.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Costa do Marfim (portugais, XVe siècle)",
+        "Colonie de Côte d'Ivoire (1893-1960)"
+      ],
       "antiquity": "Le territoire actuel de la Côte d'Ivoire était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes Akan, chefferies Krou, etc.).",
       "middleAges": "Développement de royaumes Akan (Baoulé, Agni, Abron) migrés depuis le Ghana, peuples Krou forestiers (Bété, Wé, Dida), populations Mandé du Nord (héritage de l'empire du Mali), peuples voltaiques (Sénoufo, Lobi, Koulango). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), Mandé du Sud (Dan, Gouro, Wan), peuples voltaiques (Sénoufo, Lobi, Koulango). Les Européens utilisaient le terme \"Côte d'Ivoire\" ou \"Costa do Marfim\" pour désigner la région côtière riche en commerce d'ivoire.",
