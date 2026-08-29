@@ -148,7 +148,10 @@ export function FacetFilterBar({
                   : undefined
               }
             >
-              Filtres
+              {/* The space is explicit: JSX drops the whitespace between text
+                  and an expression on the next line, and the summary would be
+                  announced as "Filtres2". */}
+              Filtres{" "}
               {foldedCount > 0 && (
                 <span
                   className="inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-afh-caption"
