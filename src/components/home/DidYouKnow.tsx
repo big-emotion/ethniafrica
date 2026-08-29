@@ -434,7 +434,7 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
 
         @media (min-width: 720px) {

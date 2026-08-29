@@ -89,7 +89,7 @@ export default async function AnecdotesPage({
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          color: var(--afh-fg-muted);
         }
       `}</style>
     </PageLayout>
