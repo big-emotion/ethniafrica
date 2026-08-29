@@ -68,8 +68,10 @@ export type TimelineItemType = "kingdom" | "colonial" | "sovereign";
 export interface TimelineItem {
   type: TimelineItemType;
   era: string;
-  name: string;
-  note?: string;
+  /** The historical name, when the era is written as a "date : Nom" list. */
+  name?: string;
+  /** The era's own words, when it holds no name to extract. */
+  prose?: string;
 }
 
 export interface TimelineData {
@@ -619,10 +621,11 @@ export function transformTimeline(
     ).forEach((i) => items.push(i));
   }
 
-  // Remove duplicates (keep unique by name)
+  // Remove duplicates (keep unique by name, or by the prose that stands in
+  // for one — two untitled eras are two entries, not one)
   const seen = new Set<string>();
   const uniqueItems = items.filter((item) => {
-    const key = item.name.toLowerCase();
+    const key = (item.name ?? item.prose ?? item.era).toLowerCase();
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -661,33 +664,20 @@ function parseEraItems(
     });
   }
 
-  // If no date-name patterns found, use the whole text as one item
+  // The era holds no dated list, so it is prose about the period rather than
+  // a name to display. Serving it whole is the point: clipping it into a
+  // title left every fiche showing the same cut sentence twice over.
   if (items.length === 0) {
-    // Try to extract a date range
     const dateMatch = text.match(/(\d{4}(?:[–-]\d{4})?)/);
-    const era = dateMatch ? dateMatch[1] : eraLabel;
-
-    // Extract main entity name
-    const entityNames = text.match(
-      /(?:royaumes?\s+)?([\wÀ-ÿ]+(?:\s+[\wÀ-ÿ]+)*)/i
-    );
-    const name = entityNames ? truncateNote(text, 80) : text.substring(0, 80);
 
     items.push({
       type: defaultType,
-      era,
-      name: name,
-      note:
-        text.length > 80 ? text.substring(0, 120).trim() + "..." : undefined,
+      era: dateMatch ? dateMatch[1] : eraLabel,
+      prose: text,
     });
   }
 
   return items;
-}
-
-function truncateNote(text: string, maxLen: number): string {
-  if (text.length <= maxLen) return text;
-  return text.substring(0, maxLen).trim() + "...";
 }
 
 // @req REQ-001
