@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { ComprendreQuestionSpine } from "@/components/hubs/ComprendreQuestionSpine";
-import { JouerFaceOff } from "@/components/hubs/JouerFaceOff";
+import { JouerProjectionContrast } from "@/components/hubs/JouerProjectionContrast";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -178,33 +178,57 @@ describe("ComprendreQuestionSpine — the question axis scene (REQ-114)", () => 
   });
 });
 
-describe("JouerFaceOff — the face-off scene (REQ-114)", () => {
-  // The bargain the axis makes: nothing in, a result out. It is the only
-  // thing separating Jouer from the two axes that ask the reader to bring
-  // something with them.
+describe("JouerProjectionContrast — the counter-fact scene (REQ-114)", () => {
+  // The axis puts the reader to the test, so the scene shows them something
+  // they already believe and takes it away. The scene it replaced advertised
+  // "un résultat" — the score, which the games charter §7 calls the pretext
+  // rather than the product.
   // @req REQ-114
-  it("states what the reader brings and what they leave with", () => {
-    render(<JouerFaceOff modules={jouerModules} />);
+  it("states the belief and the measurement that overturns it", () => {
+    render(<JouerProjectionContrast modules={jouerModules} />);
 
-    expect(screen.getByText("Vous apportez")).toBeInTheDocument();
-    expect(screen.getByText("rien")).toBeInTheDocument();
-    expect(screen.getByText("Vous repartez avec")).toBeInTheDocument();
-    expect(screen.getByText("un résultat")).toBeInTheDocument();
+    expect(screen.getByText("Ce que la carte vous montre")).toBeInTheDocument();
+    expect(screen.getByText("Ce que mesure la sphère")).toBeInTheDocument();
+
+    // Both panels name their subject: the reversal is only legible if the
+    // reader can see which country swapped places with which.
+    const scene = screen.getByTestId("jouer-projection-contrast");
+    expect(scene).toHaveTextContent("Le Groenland plus vaste");
+    expect(scene).toHaveTextContent("que la RD Congo");
+    expect(scene).toHaveTextContent("La RD Congo plus vaste");
+  });
+
+  // Every figure is measured off the committed outlines at render time. A
+  // hard-coded percentage is exactly how a page ends up asserting something
+  // its own data stopped supporting.
+  // @req REQ-114 @req REQ-120
+  it("prints the measured gap and inflation rather than typed numbers", () => {
+    render(<JouerProjectionContrast modules={jouerModules} />);
+    const scene = screen.getByTestId("jouer-projection-contrast");
+
+    // Measured off the committed outlines: the DR Congo is 8,7% larger and
+    // Greenland is drawn 14,3 times too big. Asserting the literals means a
+    // regenerated asset fails here loudly, which is right — the scene's
+    // claim would have changed.
+    expect(scene.textContent).toMatch(/8,7\s?%/);
+    expect(scene.textContent).toMatch(/14,3\sfois/);
   });
 
   // @req REQ-114 @req REQ-106
-  it("counts only the ways to play that are actually live", () => {
-    render(<JouerFaceOff modules={jouerModules} />);
+  it("counts only the ways to check that are actually live", () => {
+    render(<JouerProjectionContrast modules={jouerModules} />);
 
-    expect(screen.getByTestId("jouer-face-off-count")).toHaveTextContent(
-      "1 façon de jouer"
+    expect(screen.getByTestId("jouer-contrast-count")).toHaveTextContent(
+      "1 façon de le vérifier"
     );
   });
 
+  // The old copy said "2 façons de jouer pour l'instant", which apologised
+  // for the scope in the one line carrying information.
   // @req REQ-114 @req REQ-106
   it("says so plainly when nothing is live rather than promising a result", () => {
     render(
-      <JouerFaceOff
+      <JouerProjectionContrast
         modules={jouerModules.map((module) => ({
           ...module,
           available: false,
@@ -212,20 +236,31 @@ describe("JouerFaceOff — the face-off scene (REQ-114)", () => {
       />
     );
 
-    expect(screen.getByTestId("jouer-face-off-count")).toHaveTextContent(
-      "Aucune façon de jouer"
+    expect(screen.getByTestId("jouer-contrast-count")).toHaveTextContent(
+      "Aucune façon de le vérifier"
     );
   });
 
-  // The converging discs are the axis glyph replayed at page scale; they
-  // carry no information a screen reader needs.
+  // The drawing is the proof, not decoration, so it is announced rather than
+  // hidden — and what it announces is the equal-scale fact a sighted reader
+  // gets from the caption.
   // @req REQ-114
-  it("hides the decorative seam from assistive technology", () => {
-    const { container } = render(<JouerFaceOff modules={jouerModules} />);
+  it("gives the silhouettes an accessible name stating the shared scale", () => {
+    render(<JouerProjectionContrast modules={jouerModules} />);
 
-    expect(container.querySelector(".jouer-faceoff-seam")).toHaveAttribute(
-      "aria-hidden",
-      "true"
-    );
+    const figure = screen.getByRole("img", { name: /même échelle/i });
+    expect(figure).toBeInTheDocument();
+  });
+
+  // A scene that cannot measure its claim prints no claim. The count line
+  // survives because it is the one thing that never depended on the asset.
+  // @req REQ-114
+  it("drops the claim rather than inventing one when the pair is unusable", () => {
+    render(<JouerProjectionContrast modules={jouerModules} contrast={null} />);
+
+    expect(
+      screen.queryByText("Ce que la carte vous montre")
+    ).not.toBeInTheDocument();
+    expect(screen.getByTestId("jouer-contrast-count")).toBeInTheDocument();
   });
 });

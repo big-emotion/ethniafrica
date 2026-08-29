@@ -11,6 +11,7 @@
  */
 import type { CountryDistribution, CountryId } from "@/types/afrik";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
 import {
   BASEMAP_VIEWBOX,
   projectLonLat,
@@ -109,6 +110,46 @@ export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
 // @req REQ-116
 export function getAdmin0NameFr(countryId: CountryId): string | undefined {
   return admin0Entry(countryId)?.nameFr;
+}
+
+/**
+ * The six non-African silhouettes, reachable again.
+ *
+ * `WORLD_COMPARE` was generated for « Vraie taille » and orphaned when that
+ * game was retired as a category — committed, versioned and read by nothing.
+ * The Jouer hub's scene needs exactly one of them to state what Mercator does
+ * to Greenland, so the asset is either consumed here or it should be deleted;
+ * a generated asset with no consumer is a maintenance cost that pays nothing.
+ *
+ * Keys are the asset's own, not ISO: `EUW` is an aggregate of Western Europe
+ * and has no country code, which is why this takes a plain string where
+ * `getAdmin0Rings` takes a `CountryId`.
+ */
+// @req REQ-116
+export function getWorldCompareRings(shapeId: string): Ring[] | undefined {
+  const shape = WORLD_COMPARE[shapeId];
+  return shape ? toRings(shape.rings) : undefined;
+}
+
+// @req REQ-116
+export function getWorldCompareNameFr(shapeId: string): string | undefined {
+  return WORLD_COMPARE[shapeId]?.nameFr;
+}
+
+/**
+ * Every African ring in the asset, as one flat list.
+ *
+ * For silhouettes rather than for choosing: the committed world path holds
+ * every landmass Natural Earth does *not* assign to Africa, so a map that
+ * wants a whole planet draws that path and this together. Keys are ignored
+ * on purpose — a silhouette has no need of the ISO aliasing that matters
+ * when a fiche asks for one country.
+ */
+// @req REQ-116
+export function getAfricaAdmin0Rings(): Ring[] {
+  return Object.values(AFRICA_ADMIN0).flatMap((country) =>
+    toRings(country.rings)
+  );
 }
 
 // ─── Country: closed outline, stroked as it draws, 22% fill ────────────────

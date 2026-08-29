@@ -61,12 +61,24 @@ is recorded rather than left to be rediscovered: the `globeTap` primitive
 slice, and the scope picker — `mercator` plays over the whole continent's
 outlines and has nothing to narrow to.
 
-**What `mercator` now owes.** The page is named after a projection, so it
-shows the projection: the home's globe stage, the flat Mercator map and the
-slider that closes it back into a sphere while Tissot's indicatrices hold
-their real area. It stands **above** the rounds, never beside a live one — a
-manipulable globe next to « lequel est le plus grand ? » would let the reader
-answer by eye, which is precisely the shape-guessing retired below.
+**What `mercator` owed, and now carries.** The page is named after a
+projection, so it shows the projection: the flat Mercator map, the slider that
+undoes the distortion, and Tissot's indicatrices holding their real area
+throughout (`MercatorProjectionStage`). It stands **above** the rounds, never
+beside a live one — a manipulable map next to « lequel est le plus grand ? »
+would let the reader answer by eye, which is precisely the shape-guessing
+retired below.
+
+**One correction to how this was first written.** The slider's far end is an
+equal-area _map_, not a sphere. Closing the map back into a globe changes two
+things at once — the projection and the dimensionality — so a reader could not
+tell whether the north shrank because the stretch was removed or because
+curvature had hidden half of it. Flat at both ends isolates the single
+variable the game is about, and it is what makes the indicatrices legible: the
+twenty-five circles cover equal ground on the sphere, so every difference
+between them on screen was put there by the projection. The page previously
+mounted the home's globe as a stand-in, which argued about a projection while
+showing none of it.
 
 ### Retired
 
@@ -324,6 +336,9 @@ supersedes it.** Step 7 belongs first: retiring eight games removes eight
 generators and one interaction kind from every step that follows. Reading the
 code also narrowed the work — of the three kept games, only `appellations`
 lacks a subject line and only `pays-davant` draws distractors from a pool — and
-turned up a defect this charter missed: `mercatorMisleads()` is never called by
+turned up a defect this charter missed: `mercatorMisleads()` was never called by
 the handler, so the one game whose whole point is the projection's lie mostly
-serves rounds where nothing lies.
+served rounds where nothing lies. **Fixed** — `handlers/games.ts` now skips any
+pair the projection does not actually mislead about, and the hub's scene reads
+the same `MINIMUM_AREA_RATIO` so it cannot advertise a gap the game refuses to
+ask about.
