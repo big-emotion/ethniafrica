@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
 import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
@@ -140,6 +141,25 @@ describe("facet band — a fixed band, never an aspect ratio", () => {
 });
 
 describe("facet switcher — three anchors, not a widget", () => {
+  /**
+   * Pays reads first, on the switcher as on the Explorer hub above it.
+   *
+   * The switcher and the hub's module list are two renderings of one running
+   * order, and a reader crossing from one to the other reads them as the same
+   * set. They drifted apart once already — the hub listed four modules in one
+   * order while the switcher walked three facets in another — so the order is
+   * asserted where the reader meets it rather than only in the table.
+   */
+  // @req REQ-114
+  it("reads pays first, then peuples, then familles", () => {
+    render(<FacetSwitcher active="peoples" />);
+
+    const labels = screen
+      .getAllByRole("link")
+      .map((link) => link.textContent?.trim());
+    expect(labels).toEqual(["Pays", "Peuples", "Familles"]);
+  });
+
   // @req REQ-114
   it("offers all three facets as links, whichever one is being read", () => {
     render(<FacetSwitcher active="peoples" />);
@@ -196,3 +216,54 @@ vi.mock("next/link", () => ({
     </a>
   ),
 }));
+
+/**
+ * A `GET` form submits the controls it contains and nothing else, so anything
+ * the reader has already chosen outside the bar — the page size, the letter —
+ * is dropped the moment they narrow. Hidden fields are how a form carries
+ * state it does not itself edit.
+ */
+describe("facet filter bar — the state it carries but does not edit", () => {
+  // @req REQ-114
+  it("carries a hidden field through a submit", () => {
+    render(
+      <FacetFilterBar
+        action="/fr/explorer/peuples"
+        hidden={{ taille: "100" }}
+        fields={[
+          {
+            name: "famille",
+            label: "Famille linguistique",
+            anyLabel: "Toutes les familles",
+            options: [{ value: "FLG_NC", label: "Niger-Congo" }],
+            value: null,
+          },
+        ]}
+      />
+    );
+    const carried = document.querySelector('input[name="taille"]');
+    expect(carried).toHaveAttribute("type", "hidden");
+    expect(carried).toHaveAttribute("value", "100");
+  });
+
+  /** Nothing to carry must mean no field, not an empty one the form submits. */
+  // @req REQ-114
+  it("emits no field for a value the reader has not set", () => {
+    render(
+      <FacetFilterBar
+        action="/fr/explorer/peuples"
+        hidden={{ taille: undefined }}
+        fields={[
+          {
+            name: "famille",
+            label: "Famille linguistique",
+            anyLabel: "Toutes les familles",
+            options: [],
+            value: null,
+          },
+        ]}
+      />
+    );
+    expect(document.querySelector('input[name="taille"]')).toBeNull();
+  });
+});

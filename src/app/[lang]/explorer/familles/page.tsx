@@ -10,8 +10,9 @@ import type {
   FacetCountryNarrowing,
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
-import { Pager } from "@/components/ui/Pager";
+import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
+import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
@@ -42,8 +43,16 @@ import type { Language } from "@/types/shared";
 /** Twelve of twenty-four families: two pages, and one screen of cards on a phone. */
 const FAMILIES_PER_PAGE = 12;
 
+/**
+ * The default first, then the whole roster. With twenty-four families there is
+ * no third useful size — a hundred per page would name a corpus that does not
+ * exist.
+ */
+const FAMILIES_PAGE_SIZES = [FAMILIES_PER_PAGE, 24] as const;
+
 const COUNTRY_PARAM = "pays";
 const PAGE_PARAM = "page";
+const SIZE_PARAM = PAGE_SIZE_PARAM;
 
 interface PageParams {
   lang: string;
@@ -92,16 +101,17 @@ export default async function FamillesHubPage({
    * selection exactly. Clamping *before* the list query is what stops a stale
    * `?page=` fetching a range past the end and reading as an empty corpus.
    */
-  const pageCount = Math.max(
-    1,
-    Math.ceil(selection.length / FAMILIES_PER_PAGE)
+  const pageSize = resolvePageSize(
+    definedFilter(query[SIZE_PARAM]),
+    FAMILIES_PAGE_SIZES
   );
+  const pageCount = Math.max(1, Math.ceil(selection.length / pageSize));
   const page = Math.min(requestedPage(query[PAGE_PARAM]), pageCount);
 
   const { data: families, unclassifiedPeoplesCount } =
     await getLanguageFamilies(
       page,
-      FAMILIES_PER_PAGE,
+      pageSize,
       chosenCountry ? { ids: selection.map((family) => family.id) } : {}
     );
 
@@ -138,13 +148,29 @@ export default async function FamillesHubPage({
     .map((country) => ({ value: country.id, label: country.nameFr }))
     .sort((left, right) => left.label.localeCompare(right.label, "fr"));
 
-  const pageHref = (target: number): string => {
+  const pageHref = (target: number, size: number): string => {
     const address = new URLSearchParams();
     if (chosenCountry) address.set(COUNTRY_PARAM, chosenCountry);
     if (target > 1) address.set(PAGE_PARAM, String(target));
+    // The default stays out of the address, so the plainest reading keeps the
+    // plainest URL and links already sent are unchanged.
+    if (size !== FAMILIES_PAGE_SIZES[0]) address.set(SIZE_PARAM, String(size));
     const search = address.toString();
     return search ? `${facetRoute}?${search}` : facetRoute;
   };
+
+  const pagination = (position: "top" | "bottom") => (
+    <FacetPagination
+      position={position}
+      page={page}
+      pageCount={pageCount}
+      total={selection.length}
+      pageSize={pageSize}
+      pageSizes={FAMILIES_PAGE_SIZES}
+      buildHref={pageHref}
+      unitLabel="familles"
+    />
+  );
 
   const chosenCountryName = countryOptions.find(
     (option) => option.value === chosenCountry
@@ -180,6 +206,14 @@ export default async function FamillesHubPage({
         <FacetFilterBar
           action={facetRoute}
           className="mt-6"
+          // A GET form submits its own controls only, so the size chosen above
+          // would be dropped by narrowing to a country without this.
+          hidden={{
+            [SIZE_PARAM]:
+              pageSize === FAMILIES_PAGE_SIZES[0]
+                ? undefined
+                : String(pageSize),
+          }}
           fields={[
             {
               name: COUNTRY_PARAM,
@@ -218,12 +252,7 @@ export default async function FamillesHubPage({
           </ul>
         )}
 
-        <Pager
-          label="Pages de familles"
-          pageNumber={page}
-          pageCount={pageCount}
-          hrefForPage={pageHref}
-        />
+        {pagination("bottom")}
 
         {unclassifiedPeoplesCount > 0 && (
           <p className="mt-6 text-afh-caption text-afh-text-soft">

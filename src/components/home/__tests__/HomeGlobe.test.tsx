@@ -496,4 +496,64 @@ describe("HomeGlobe — the morph control says what it is showing (REQ-112)", ()
     const readout = screen.getByTestId("home-globe-readout");
     expect(readout).toHaveAttribute("aria-live", "polite");
   });
+
+  /**
+   * The Mercator game drives the morph while its question stands, so the
+   * reader cannot slide to the sphere and read the true areas off it — which
+   * would be the shape-guessing the games charter retired as a category.
+   */
+  // @req REQ-120
+  it("hands the slider to the caller when a round drives the morph", () => {
+    render(
+      <HomeGlobe
+        morphOverride={0}
+        overrideNoteFr="Le globe se rouvre avec la réponse."
+      />
+    );
+
+    const range = screen.getByTestId("home-globe-morph-range");
+    expect(range).toBeDisabled();
+    expect(range).toHaveAttribute("aria-valuetext", "Carte plate");
+    expect(screen.getByTestId("home-globe-lock-note")).toHaveTextContent(
+      /se rouvre avec la réponse/
+    );
+  });
+
+  // A control that refuses to move and gives no reason reads as a bug.
+  // @req REQ-120
+  it("leaves the slider alone, and unexplained, when nothing drives it", () => {
+    render(<HomeGlobe />);
+
+    expect(screen.getByTestId("home-globe-morph-range")).not.toBeDisabled();
+    expect(
+      screen.queryByTestId("home-globe-lock-note")
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-120
+  it("reads the driven surface back rather than the one it last held", () => {
+    const { rerender } = render(<HomeGlobe morphOverride={0} />);
+    expect(screen.getByTestId("home-globe-readout")).toHaveTextContent(
+      /Carte plate/
+    );
+
+    rerender(<HomeGlobe morphOverride={1} />);
+    expect(screen.getByTestId("home-globe-readout")).toHaveTextContent(/Globe/);
+  });
+
+  /**
+   * Recentring is about the angle. Reopening the sphere from it would undo
+   * the lock the round depends on, from a button that says nothing about
+   * projections.
+   */
+  // @req REQ-120
+  it("recentres the angle without reopening a sphere a round is holding shut", () => {
+    render(<HomeGlobe morphOverride={0} />);
+
+    fireEvent.click(screen.getByTestId("home-globe-recentre"));
+
+    expect(screen.getByTestId("home-globe-readout")).toHaveTextContent(
+      /Carte plate/
+    );
+  });
 });

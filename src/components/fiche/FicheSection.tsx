@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
 export interface FicheSectionProps {
   title: string;
   /**
@@ -12,6 +14,14 @@ export interface FicheSectionProps {
   note?: string;
   children: ReactNode;
   as?: "section" | "footer";
+  /**
+   * The chapter's anchor. Defaults to one derived from the title.
+   *
+   * Pass one only where the app already publishes a different anchor for the
+   * chapter — `#sources` is the case: citation chips across the app link to
+   * it, and deriving a new anchor here would leave every one of them
+   * pointing at nothing.
+   */
   id?: string;
   testId?: string;
 }
@@ -37,14 +47,18 @@ export function FicheSection({
   id,
   testId,
 }: FicheSectionProps) {
+  const anchor = id ?? chapterAnchorId(title);
+  const headingId = `${anchor}-titre`;
+
   return (
     <Tag
       className="afh-parchment-section"
       data-fiche-section={title}
       data-testid={testId}
-      id={id}
+      id={anchor}
+      aria-labelledby={headingId}
     >
-      <h2>{title}</h2>
+      <h2 id={headingId}>{title}</h2>
       {note ? <p className="afh-parchment-note">{note}</p> : null}
       {children}
     </Tag>

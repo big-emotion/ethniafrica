@@ -65,6 +65,13 @@ export interface FamilyParchmentProps {
    * rule the page actually applied (REQ-116).
    */
   footprintProvenance?: FamilyFootprintProvenance;
+  /**
+   * Chapters the route composes outside this file, slotted before the sources
+   * footer. The footer closes the fiche — the reading rail lists chapters in
+   * document order, and a chapter after the footer tells a reader the document
+   * ended one chapter too early. Same slot, same reason, as CountryParchment.
+   */
+  children?: ReactNode;
 }
 
 /**
@@ -167,6 +174,7 @@ export function FamilyParchment({
   memberPeoples,
   memberPeopleCount,
   footprintProvenance = "member-peoples",
+  children,
 }: FamilyParchmentProps) {
   const { hero, decolonialHeader, generalInfo, distribution } = data;
   const wording = FOOTPRINT_WORDING[footprintProvenance];
@@ -402,6 +410,8 @@ export function FamilyParchment({
           </p>
         )}
       </Section>
+
+      {children}
 
       {data.sources.length > 0 && (
         <Section

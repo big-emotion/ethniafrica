@@ -60,6 +60,17 @@ const GROUNDS = [
   "--afh-color-card",
 ] as const;
 
+/**
+ * The same three, after `.dark` rebinds them. A reader's theme choice is
+ * site-wide, so every parchment ground has a night counterpart and any ink
+ * that does not follow the swap is measured against the wrong background.
+ */
+const NIGHT_GROUNDS = [
+  "--afh-night-ground",
+  "--afh-night-surface",
+  "--afh-night-surface-2",
+] as const;
+
 describe("fiche parchment contrast", () => {
   // @req REQ-116
   it("sets no small text in the muted ink, which fails AA on every parchment ground", () => {
@@ -100,4 +111,71 @@ describe("fiche parchment contrast", () => {
       expect(contrast(muted, background)).toBeLessThan(AA_SMALL_TEXT);
     }
   });
+
+  // The colonial tone used to appear only on its own pale tint, inside the
+  // blocks that marked an absence or an imposed name. Dropping those blocks
+  // for the parchment's rule device puts the same ink straight onto the page
+  // grounds — a move that has broken contrast on this surface before, when
+  // the mockup's greys were reproduced without measuring them.
+  // @req REQ-116
+  it("keeps the colonial ink legible on the grounds, not just on its own tint", () => {
+    const colonial = tokenHex("--afh-color-colonial");
+
+    for (const ground of GROUNDS) {
+      expect(contrast(colonial, tokenHex(ground))).toBeGreaterThanOrEqual(
+        AA_SMALL_TEXT
+      );
+    }
+  });
+
+  // The parchment palette is the day palette: --afh-color-colonial is #9b3030,
+  // which sits at 2.2–2.6:1 on the night grounds. It survived unnoticed for as
+  // long as every colonial-inked element painted its own pale tint underneath
+  // itself and carried it into night. Nothing that reads the theme's ground
+  // may use the raw tone, exactly as small accent text takes --accent-ink.
+  // @req REQ-116
+  it("gives the colonial tone a night ink that clears AA on the dark grounds", () => {
+    const nightColonial = tokenHex("--afh-night-colonial");
+
+    for (const ground of NIGHT_GROUNDS) {
+      expect(contrast(nightColonial, tokenHex(ground))).toBeGreaterThanOrEqual(
+        AA_SMALL_TEXT
+      );
+    }
+  });
+
+  /**
+   * The guard that makes the token above load-bearing rather than decorative.
+   *
+   * Only these two rules put the colonial tone against the theme's own
+   * ground. The other three that use it — the missing-field chip, the missing
+   * stat card and the gap block — paint `--afh-color-colonial-bg` underneath
+   * themselves, and that pale tint is part of the parchment ramp, so it
+   * follows the tone into night and the pair stays legible. Listing the two
+   * rather than pattern-matching every line is what keeps that distinction
+   * legible: the exemption is a fact about the rule, not about the line.
+   */
+  const INKED_ON_THEME_GROUND = [
+    // The imposed field's rule and its label — a 3px rule is a graphical
+    // object and owes 3:1, which the raw tone misses on night just as the
+    // text does.
+    '.afh-naming-field[data-role="imposed"]',
+    '.afh-naming-field[data-role="imposed"] .afh-naming-label',
+    '.afh-chip[data-tier="unverified"]',
+  ];
+
+  // @req REQ-116
+  it.each(INKED_ON_THEME_GROUND)(
+    "inks %s in the night-aware colonial ink, not the raw tone",
+    (selector) => {
+      const escaped = selector.replace(/[.[\]="^$*+?()|{}\\]/g, "\\$&");
+      const body = parchmentCss.match(
+        new RegExp(`${escaped}\\s*\\{([^}]*)\\}`)
+      )?.[1];
+
+      expect(body).toBeDefined();
+      expect(body).toMatch(/color:\s*var\(--afh-colonial-ink\)/);
+      expect(body).not.toMatch(/color:\s*var\(--afh-color-colonial\)/);
+    }
+  );
 });

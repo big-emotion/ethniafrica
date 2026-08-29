@@ -148,7 +148,7 @@ export function FlagTarget({
           </DialogHeader>
 
           {gate.status === "checking" && (
-            <p role="status" className="text-afh-small text-afh-text-muted">
+            <p role="status" className="text-afh-small text-afh-fg-muted">
               Vérification de votre compte…
             </p>
           )}

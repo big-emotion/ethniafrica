@@ -31,7 +31,7 @@ export function LegalDocument({ document }: LegalDocumentProps) {
         <h1 className="mt-4 max-w-[18ch] text-afh-hero font-display font-semibold leading-[1.05] text-afh-text">
           {document.title}
         </h1>
-        <p className="mt-5 text-afh-caption text-afh-text-muted">
+        <p className="mt-5 text-afh-caption text-afh-fg-muted">
           {document.lastUpdated}
         </p>
         <ReadingColumn className="mt-8">

@@ -16,6 +16,8 @@
 @import "./styles/fiche-parchment.css";
 @import "./styles/facet-hub.css";
 @import "./styles/pager.css";
+@import "./styles/fiche-chapter-bar.css";
+@import "./styles/classification-tree.css";
 
 @tailwind base;
 @tailwind components;

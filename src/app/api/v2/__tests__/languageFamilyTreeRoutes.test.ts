@@ -44,6 +44,8 @@ const validEnvelope = {
       content: {},
     },
     branches: [{ iso639_3: "swa", name: "Swahili", peopleCount: 3 }],
+    branchProvenance: "language-corpus" as const,
+    declaredBranches: [],
     unlinkedPeopleCount: 1,
   },
   meta: {

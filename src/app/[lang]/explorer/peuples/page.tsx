@@ -2,6 +2,7 @@ import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
 import {
+  PEOPLES_FACET_PAGE_SIZES,
   getPeoplesFacetChoices,
   getPeoplesFacetCountryIndex,
   getPeoplesFacetPage,
@@ -13,10 +14,11 @@ import type {
   FacetCountryNarrowing,
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
+import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
-import { Pager } from "@/components/ui/Pager";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
+import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
 import type { CountryId, People } from "@/types/afrik";
 import type { Language } from "@/types/shared";
@@ -57,6 +59,7 @@ const PARAM = {
   country: "pays",
   letter: "lettre",
   page: "page",
+  size: PAGE_SIZE_PARAM,
 } as const;
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -69,12 +72,21 @@ const countFormat = new Intl.NumberFormat("fr-FR");
  * The path comes from the slug table and only the query is composed here, so
  * the next time the module moves this call site moves with it.
  */
-function facetHref(filters: PeoplesFacetFilters, page: number | null): string {
+function facetHref(
+  filters: PeoplesFacetFilters,
+  page: number | null,
+  pageSize: number
+): string {
   const query = new URLSearchParams();
   if (filters.familyId) query.set(PARAM.family, filters.familyId);
   if (filters.countryId) query.set(PARAM.country, filters.countryId);
   if (filters.letter) query.set(PARAM.letter, filters.letter);
   if (page && page > 1) query.set(PARAM.page, String(page));
+  // The default is left out so the plainest reading keeps the plainest address,
+  // and so the links already in circulation stay byte-for-byte what they were.
+  if (pageSize !== PEOPLES_FACET_PAGE_SIZES[0]) {
+    query.set(PARAM.size, String(pageSize));
+  }
 
   const search = query.toString();
   const path = getFacetRoute("fr", "peoples");
@@ -111,10 +123,14 @@ export default async function PeuplesHubPage({
     definedFilter(query[PARAM.page]) ?? "1",
     10
   );
+  const pageSize = resolvePageSize(
+    definedFilter(query[PARAM.size]),
+    PEOPLES_FACET_PAGE_SIZES
+  );
 
   const [choices, reading, index] = await Promise.all([
     getPeoplesFacetChoices(),
-    getPeoplesFacetPage(requestedPage, filters),
+    getPeoplesFacetPage(requestedPage, filters, pageSize),
     getPeoplesFacetCountryIndex(filters),
   ]);
 
@@ -137,12 +153,29 @@ export default async function PeuplesHubPage({
         href: getPeopleRoute("fr", row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null);
+      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
     }
   }
 
   const familyLabels = new Map(
     choices.families.map((family) => [family.id, family.label])
+  );
+
+  /** The pager's own address composer: same filters, only the page moves. */
+  const pagerHref = (page: number, size: number) =>
+    facetHref(filters, page, size);
+
+  const pagination = (position: "top" | "bottom") => (
+    <FacetPagination
+      position={position}
+      page={reading.page}
+      pageCount={reading.totalPages}
+      total={reading.total}
+      pageSize={pageSize}
+      pageSizes={PEOPLES_FACET_PAGE_SIZES}
+      buildHref={pagerHref}
+      unitLabel="peuples"
+    />
   );
 
   const lede =
@@ -173,17 +206,17 @@ export default async function PeuplesHubPage({
         <FacetFilterBar
           action={getFacetRoute("fr", "peoples")}
           className="mt-4"
+          // The letter and the page size are set outside this form; without
+          // them the reader loses both the moment they narrow by family. The
+          // page number is deliberately absent — a new selection starts at one.
+          hidden={{
+            [PARAM.letter]: filters.letter ?? undefined,
+            [PARAM.size]:
+              pageSize === PEOPLES_FACET_PAGE_SIZES[0]
+                ? undefined
+                : String(pageSize),
+          }}
           fields={[
-            {
-              name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
-              options: choices.families.map((family) => ({
-                value: family.id,
-                label: family.label,
-              })),
-              value: filters.familyId,
-            },
             {
               name: PARAM.country,
               label: "Pays",
@@ -193,6 +226,16 @@ export default async function PeuplesHubPage({
                 label: country.label,
               })),
               value: filters.countryId,
+            },
+            {
+              name: PARAM.family,
+              label: "Famille linguistique",
+              anyLabel: "Toutes les familles",
+              options: choices.families.map((family) => ({
+                value: family.id,
+                label: family.label,
+              })),
+              value: filters.familyId,
             },
           ]}
         />
@@ -204,7 +247,7 @@ export default async function PeuplesHubPage({
           <ul className="flex flex-wrap gap-1">
             <li>
               <Link
-                href={facetHref({ ...filters, letter: null }, null)}
+                href={facetHref({ ...filters, letter: null }, null, pageSize)}
                 aria-current={filters.letter ? undefined : "page"}
                 className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
                 style={
@@ -224,7 +267,7 @@ export default async function PeuplesHubPage({
               return (
                 <li key={letter}>
                   <Link
-                    href={facetHref({ ...filters, letter }, null)}
+                    href={facetHref({ ...filters, letter }, null, pageSize)}
                     aria-current={current ? "page" : undefined}
                     className="inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption"
                     style={
@@ -250,7 +293,8 @@ export default async function PeuplesHubPage({
             <Link
               href={facetHref(
                 { familyId: null, countryId: null, letter: null },
-                null
+                null,
+                pageSize
               )}
             >
               Revenir à tous les peuples
@@ -295,12 +339,7 @@ export default async function PeuplesHubPage({
           </ul>
         )}
 
-        <Pager
-          label="Pages de peuples"
-          pageNumber={reading.page}
-          pageCount={reading.totalPages}
-          hrefForPage={(page) => facetHref(filters, page)}
-        />
+        {pagination("bottom")}
       </div>
     </>
   );

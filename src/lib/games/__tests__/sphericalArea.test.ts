@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import type { Ring } from "@/lib/atlas/overlays";
-import { mercatorInflation, ringArea } from "../sphericalArea";
+import { greatCircleKm, mercatorInflation, ringArea } from "../sphericalArea";
 
 /** Largest ring of a country's admin-0 outline — the mainland, not its islands. */
 function mainlandRing(countryId: string): Ring {
@@ -113,5 +113,57 @@ describe("mercatorInflation", () => {
         1
       );
     }
+  });
+});
+
+/**
+ * Reference distances in km, computed on the WGS-84 authalic sphere the
+ * module uses. They are round-trip checks on the formula, not survey data:
+ * a great circle between two points is exact arithmetic, unlike the areas
+ * above which rest on simplified outlines.
+ */
+describe("greatCircleKm", () => {
+  const PARIS = { lon: 2.3522, lat: 48.8566 };
+  const MOSCOW = { lon: 37.6173, lat: 55.7558 };
+  const KINSHASA = { lon: 15.2663, lat: -4.4419 };
+  const GOMA = { lon: 29.2336, lat: -1.6794 };
+
+  // @req REQ-120
+  it("returns zero between a point and itself", () => {
+    expect(greatCircleKm(PARIS, PARIS)).toBe(0);
+  });
+
+  // @req REQ-120
+  it("is symmetric", () => {
+    expect(greatCircleKm(PARIS, MOSCOW)).toBeCloseTo(
+      greatCircleKm(MOSCOW, PARIS),
+      6
+    );
+  });
+
+  // A quarter of a great circle: half of pi times the radius, over two.
+  // @req REQ-120
+  it("spans a quarter of the sphere from the equator to a pole", () => {
+    const quarter = (Math.PI / 2) * 6371.0088;
+    expect(greatCircleKm({ lon: 0, lat: 0 }, { lon: 0, lat: 90 })).toBeCloseTo(
+      quarter,
+      0
+    );
+  });
+
+  // The published air distance is 2 486 km, and this is the pair the brief
+  // that prompted this module got wrong — Kinshasa–Goma was said to equal
+  // it and is in fact two thirds of it.
+  // @req REQ-120
+  it("matches the published Paris–Moscow distance", () => {
+    expect(greatCircleKm(PARIS, MOSCOW)).toBeGreaterThan(2450);
+    expect(greatCircleKm(PARIS, MOSCOW)).toBeLessThan(2520);
+  });
+
+  // @req REQ-120
+  it("puts Kinshasa–Goma well short of Paris–Moscow", () => {
+    expect(greatCircleKm(KINSHASA, GOMA)).toBeLessThan(
+      greatCircleKm(PARIS, MOSCOW) * 0.7
+    );
   });
 });

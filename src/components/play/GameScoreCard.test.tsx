@@ -9,7 +9,7 @@ const GAME: GameDefinition = {
   id: "mercator",
   slug: "mercator",
   nameFr: "La taille qu'on vous a cachée",
-  kind: "binary",
+  kinds: ["binary"],
   dataSource: "countries",
   promptFr: "Lequel de ces deux pays couvre la plus grande surface",
   roundsPerSession: 8,

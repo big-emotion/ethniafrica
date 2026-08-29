@@ -96,7 +96,7 @@ const DrawerDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
     ref={ref}
-    className={cn("text-afh-small text-afh-text-muted", className)}
+    className={cn("text-afh-small text-afh-fg-muted", className)}
     {...props}
   />
 ));

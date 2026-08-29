@@ -5,7 +5,8 @@ import { CheckCircle2, XCircle } from "lucide-react";
 
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import type { GameRound } from "@/lib/games/gameKinds";
+import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
+import { frenchNumber } from "@/lib/games/format";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
 import { sourceStandingLabelFr } from "@/types/sources";
 import { cn } from "@/lib/utils";
@@ -15,7 +16,12 @@ const COPY_FR = {
   incorrectVerdict: "Ce n'est pas ça",
   provenanceLabel: "D'après",
   openFiche: "Lire la fiche",
+  // An estimate round is measured against a shape with no fiche in the atlas,
+  // so it leads to the atlas itself. Charter §7 asks the reveal to lead
+  // somewhere; it does not ask it to promise a page that does not exist.
+  openAtlas: "Ouvrir l'atlas",
   confidenceAriaSuffix: "pour le sujet de cette manche",
+  yourEstimate: "Votre estimation :",
   nextRound: "Tour suivant",
   seeScore: "Voir le score",
 } as const;
@@ -31,6 +37,12 @@ export interface GameAnswerRevealProps {
   round: GameRound;
   isCorrect: boolean;
   isLastRound: boolean;
+  /**
+   * What the reader committed to. Only an estimate round renders it: on a
+   * two-way choice the answer is already on screen as the button they
+   * pressed, whereas a slider's value is gone the moment the round turns.
+   */
+  answer?: number | string | null;
   onNext: () => void;
   className?: string;
 }
@@ -49,6 +61,7 @@ export const GameAnswerReveal = ({
   round,
   isCorrect,
   isLastRound,
+  answer,
   onNext,
   className,
 }: GameAnswerRevealProps) => {
@@ -89,6 +102,21 @@ export const GameAnswerReveal = ({
           <VerdictIcon aria-hidden="true" className="h-6 w-6" />
           {isCorrect ? COPY_FR.correctVerdict : COPY_FR.incorrectVerdict}
         </h2>
+        {/*
+          The estimate round's whole subject is the distance between what the
+          reader thought and what is, so the reveal states both. Printing only
+          « ce n'est pas ça » would withhold the one number the round was
+          asked for.
+        */}
+        {isEstimateRound(round) && typeof answer === "number" ? (
+          <p
+            data-testid="game-reveal-estimate"
+            className="mt-3 text-afh-body text-afh-text-soft"
+          >
+            {COPY_FR.yourEstimate} {frenchNumber.format(answer)} {round.unitFr}.
+          </p>
+        ) : null}
+
         <p
           data-testid="game-reveal-text"
           className="mt-3 text-afh-body text-afh-text"
@@ -144,7 +172,7 @@ export const GameAnswerReveal = ({
           href={round.reveal.ficheHref}
           className="self-start font-medium underline underline-offset-2"
         >
-          {COPY_FR.openFiche}
+          {isEstimateRound(round) ? COPY_FR.openAtlas : COPY_FR.openFiche}
         </a>
       </div>
 

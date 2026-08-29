@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Voix & récits";
+
 interface PublicOralNarrative {
   id: string;
   narratorDisplayName: string | null;
@@ -49,6 +54,8 @@ export function OralNarrativesSection({
 
   return (
     <section
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
       aria-labelledby="oral-narratives-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
@@ -61,7 +68,7 @@ export function OralNarrativesSection({
           id="oral-narratives-title"
           className="text-afh-small font-bold text-[var(--country-text)]"
         >
-          Voix &amp; récits
+          {CHAPTER_TITLE}
         </h2>
         <p className="mt-1 text-afh-small text-[var(--country-text-soft)]">
           Des récits attribués, présentés sans les confondre avec des faits
