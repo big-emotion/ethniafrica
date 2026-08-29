@@ -177,4 +177,31 @@ describe("module visibility charter", () => {
     expect(colonisation?.availability).toBe("static");
     expect(colonisation?.editorialReadiness).toBe("draft");
   });
+
+  /**
+   * An empty table is not a readiness declaration, and leaning on one is a
+   * bet that nobody fills it halfway.
+   *
+   * `noms` was `ready` on the reasoning that `availability` already spoke for
+   * it: `name_records` is empty, so the module reads Bientôt anyway. But the
+   * corpus behind it holds exactly one fiche — `dataset/source/afrik/noms/`
+   * has `PPL_YORUBA.json` and nothing else — for 803 peoples. The loader is
+   * wired (`migrateAfrikToDatabase.ts` calls `loadNameRecords`), so the day
+   * that single fiche lands the probe flips the module live with one name out
+   * of 803, and an atlas of names is offered that names one people.
+   *
+   * Readiness is the field that can say "not worth the trip" while the route
+   * stays built and reachable. That is the whole reason it is declared rather
+   * than measured.
+   */
+  // @req REQ-114
+  it("does not let an empty table stand in for a readiness declaration", () => {
+    const noms = MODULE_DEFINITIONS.find(
+      (definition) => definition.id === "noms"
+    );
+
+    expect(noms?.availability).toBe("data");
+    expect(noms?.dataSource).toBe("name_records");
+    expect(noms?.editorialReadiness).toBe("draft");
+  });
 });

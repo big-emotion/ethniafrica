@@ -79,11 +79,14 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("marks a data module available when its backing table holds at least one row", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
+    // Drawn from Explorer and Jouer rather than Comprendre: every Comprendre
+    // module that reads a table is now declared `draft`, so none of them can
+    // stand in for "the row count is what decides".
     const explorer = await getHubModules("explorer");
-    const comprendre = await getHubModules("comprendre");
+    const jouer = await getHubModules("jouer");
 
     expect(explorer.find((m) => m.id === "pays")?.available).toBe(true);
-    expect(comprendre.find((m) => m.id === "noms")?.available).toBe(true);
+    expect(jouer.find((m) => m.id === "quiz")?.available).toBe(true);
   });
 
   // @req REQ-106 @req REQ-114
