@@ -6,7 +6,6 @@ import { describe, expect, it } from "vitest";
 import {
   DID_YOU_KNOW_FACTS,
   findDidYouKnowFact,
-  orderDidYouKnowDeck,
   pickDidYouKnowFact,
   pickNextDidYouKnowFact,
   shuffleDidYouKnowDeck,
@@ -241,37 +240,5 @@ describe("findDidYouKnowFact — the fact a shared link names", () => {
     expect(findDidYouKnowFact("gone", bank)).toBeNull();
     expect(findDidYouKnowFact(null, bank)).toBeNull();
     expect(findDidYouKnowFact(undefined, bank)).toBeNull();
-  });
-});
-
-describe("orderDidYouKnowDeck — the order the band pages through", () => {
-  // @req REQ-113
-  it("opens the deck on the fact it drew", () => {
-    const bank = [fact("a"), fact("b"), fact("c")];
-
-    expect(orderDidYouKnowDeck(() => 0.5, bank).map((f) => f.id)).toEqual([
-      "b",
-      "c",
-      "a",
-    ]);
-  });
-
-  // The deck replaced a per-request draw. Dropping a fact to make room for
-  // the rotation would silently shrink the bank the reader can reach.
-  // @req REQ-113
-  it("keeps every fact of the bank, whatever it drew", () => {
-    const bank = [fact("a"), fact("b"), fact("c")];
-
-    for (const roll of [0, 0.34, 0.67, 0.99]) {
-      expect(orderDidYouKnowDeck(() => roll, bank)).toHaveLength(3);
-      expect(
-        new Set(orderDidYouKnowDeck(() => roll, bank).map((f) => f.id))
-      ).toEqual(new Set(["a", "b", "c"]));
-    }
-  });
-
-  // @req REQ-113
-  it("returns nothing rather than inventing a deck from an empty bank", () => {
-    expect(orderDidYouKnowDeck(() => 0, [])).toEqual([]);
   });
 });

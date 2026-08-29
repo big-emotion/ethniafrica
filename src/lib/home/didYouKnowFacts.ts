@@ -653,26 +653,6 @@ export function findDidYouKnowFact(
 }
 
 /**
- * The bank, rotated so a freshly drawn fact leads the deck.
- *
- * The band used to render one fact and drop the other five, which made the
- * per-request draw the only variation a returning reader could get. A deck
- * hands over the whole bank instead — and would then open every visit on the
- * same card. Rotating rather than shuffling keeps both properties: the first
- * card still changes from visit to visit, and the bank keeps an authored
- * order rather than a new random one on every request.
- */
-// @req REQ-113
-export function orderDidYouKnowDeck(
-  random: () => number = Math.random,
-  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
-): DidYouKnowFact[] {
-  if (facts.length === 0) return [];
-  const start = Math.min(facts.length - 1, Math.floor(random() * facts.length));
-  return [...facts.slice(start), ...facts.slice(0, start)];
-}
-
-/**
  * The draw the loading interstitial uses, which differs from the band's in one
  * respect: it knows what it showed last time.
  *
