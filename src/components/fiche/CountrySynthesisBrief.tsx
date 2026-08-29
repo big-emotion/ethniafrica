@@ -138,7 +138,9 @@ export function CountrySynthesisBrief({
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          /* Same class of label as the home's synthesis cards, held to the
+             same bar: it names the list under it. */
+          color: var(--afh-fg-muted);
         }
         .fiche-brief-facts dd {
           margin: 5px 0 0;

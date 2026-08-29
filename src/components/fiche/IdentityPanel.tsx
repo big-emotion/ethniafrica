@@ -64,7 +64,12 @@ export function IdentityPanel({
           <span
             data-imposed-name="true"
             style={{
-              color: "var(--afh-cat-terre)",
+              // The ink, not the fill. Terre on its own tint is 3.09:1 — the
+              // imposed colonial name is struck through, which already makes
+              // it hard to read, and setting it in the fill colour made the
+              // one name the atlas is most careful about the faintest thing
+              // on the panel.
+              color: "var(--afh-cat-terre-ink)",
               backgroundColor: "var(--afh-cat-terre-tint)",
               textDecoration: "line-through",
             }}

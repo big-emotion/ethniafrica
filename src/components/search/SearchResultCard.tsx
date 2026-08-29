@@ -148,7 +148,7 @@ export function SearchResultCard({
             </li>
           ))}
           {hiddenCountryCount > 0 && (
-            <li className="text-afh-caption text-afh-text-muted">
+            <li className="text-afh-caption text-afh-fg-muted">
               +{hiddenCountryCount}
             </li>
           )}
