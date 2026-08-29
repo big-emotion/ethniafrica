@@ -174,16 +174,6 @@ export default async function PeuplesHubPage({
           className="mt-4"
           fields={[
             {
-              name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
-              options: choices.families.map((family) => ({
-                value: family.id,
-                label: family.label,
-              })),
-              value: filters.familyId,
-            },
-            {
               name: PARAM.country,
               label: "Pays",
               anyLabel: "Tous les pays",
@@ -192,6 +182,16 @@ export default async function PeuplesHubPage({
                 label: country.label,
               })),
               value: filters.countryId,
+            },
+            {
+              name: PARAM.family,
+              label: "Famille linguistique",
+              anyLabel: "Toutes les familles",
+              options: choices.families.map((family) => ({
+                value: family.id,
+                label: family.label,
+              })),
+              value: filters.familyId,
             },
           ]}
         />
