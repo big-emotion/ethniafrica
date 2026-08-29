@@ -27,8 +27,22 @@ export interface CameraPose {
   pitch: number;
   /** Clip-space scale: 1 is the whole visible hemisphere. */
   zoom: number;
+  /**
+   * The panel's bias: where the open sheet asks the subject to sit so the
+   * panel does not cover it. Set by the layout, never by the reader.
+   */
   offsetX: number;
   offsetY: number;
+  /**
+   * The reader's own pan, in the same clip units as the bias and added to it.
+   *
+   * Separate from the bias rather than folded into it because the two answer
+   * to different owners: opening a sheet recomputes the bias, and a reader who
+   * had dragged the map would have that drag silently overwritten. They sum at
+   * exactly one place, `cameraOffset`.
+   */
+  panX: number;
+  panY: number;
   /**
    * 0 = flat Mercator, 1 = sphere. It rides the camera rather than the
    * paint layer because it is a framing choice like zoom: the reader asks
@@ -92,6 +106,45 @@ export function clampZoom(zoom: number): number {
   return Math.min(READER_MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
 }
 
+/**
+ * How far the reader may pan at a given dolly: exactly the slack the dolly
+ * created, and no more.
+ *
+ * The stage spans two clip units. A surface magnified by `zoom` spans `2·zoom`,
+ * so `zoom - 1` of it hangs off each side — that is the whole of what panning
+ * can reveal. Deriving the bound from the zoom rather than picking a constant
+ * means an undollied map cannot be panned at all: there is nothing off-stage to
+ * go and find, and a map that slides away from a reader who has not zoomed is
+ * just a map they have lost.
+ */
+// @req REQ-117
+export function panLimitForZoom(zoom: number): number {
+  if (!Number.isFinite(zoom)) return 0;
+  return Math.max(0, zoom - 1);
+}
+
+/** Holds one axis of the reader's pan inside the slack the dolly created. */
+// @req REQ-117
+export function clampPan(value: number, zoom: number): number {
+  if (!Number.isFinite(value)) return 0;
+  const limit = panLimitForZoom(zoom);
+  return Math.min(limit, Math.max(-limit, value));
+}
+
+/**
+ * The one place the layout's bias and the reader's pan become a single
+ * translation. Every renderer goes through it, so neither can be applied
+ * without the other — the failure that would put a marker and the shape it
+ * names on different parts of the stage.
+ */
+// @req REQ-117
+export function cameraOffset(pose: CameraPose): { x: number; y: number } {
+  return {
+    x: pose.offsetX + pose.panX,
+    y: pose.offsetY + pose.panY,
+  };
+}
+
 /** The unchosen globe: Africa facing the reader, undollied and uncentred by any panel. */
 // @req REQ-117
 export const IDLE_POSE: CameraPose = {
@@ -100,6 +153,8 @@ export const IDLE_POSE: CameraPose = {
   zoom: MIN_ZOOM,
   offsetX: 0,
   offsetY: 0,
+  panX: 0,
+  panY: 0,
   morph: SPHERE_MORPH,
 };
 
@@ -144,6 +199,11 @@ export function poseForTarget(
     zoom: zoomForAngularSpan(target.angularSpanDeg),
     offsetX: bias.offsetX,
     offsetY: bias.offsetY,
+    // A flight reframes, so it lands on the subject rather than on the subject
+    // plus wherever the reader had dragged to. Same precedence as the zoom: a
+    // choice beats the hand, and the hand beats a flight in progress.
+    panX: 0,
+    panY: 0,
     // Carried, not reset: choosing a country does not change which surface the
     // reader is on. A caller that omits it gets the sphere, which is where a
     // fiche opens.
@@ -210,6 +270,8 @@ export function interpolatePose(
     zoom: lerp(from.zoom, to.zoom, t),
     offsetX: lerp(from.offsetX, to.offsetX, t),
     offsetY: lerp(from.offsetY, to.offsetY, t),
+    panX: lerp(from.panX, to.panX, t),
+    panY: lerp(from.panY, to.panY, t),
     // Clamped: the surface is only defined between its two states, and an
     // overshooting easing would ask the shader to extrapolate past the plane.
     morph: Math.min(
@@ -235,6 +297,8 @@ export function posesMatch(first: CameraPose, second: CameraPose): boolean {
     Math.abs(first.zoom - second.zoom) < tolerance &&
     Math.abs(first.offsetX - second.offsetX) < tolerance &&
     Math.abs(first.offsetY - second.offsetY) < tolerance &&
+    Math.abs(first.panX - second.panX) < tolerance &&
+    Math.abs(first.panY - second.panY) < tolerance &&
     Math.abs(first.morph - second.morph) < tolerance
   );
 }

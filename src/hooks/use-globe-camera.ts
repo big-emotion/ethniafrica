@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   FLY_TO_DURATION_MS,
   advanceYaw,
+  clampPan,
   clampPitch,
   clampZoom,
   easeInOutCubic,
@@ -37,6 +38,12 @@ export interface GlobeCamera {
    * the reader did not choose — the country a fly-to just landed on.
    */
   zoomBy: (factor: number) => void;
+  /**
+   * The reader's own pan, in clip units. It is what reaches a country the dolly
+   * pushed off-stage, and it is the only way to reach one on the flat map:
+   * there, a turn has nothing to rotate.
+   */
+  panBy: (deltaX: number, deltaY: number) => void;
   /** Back to `restPose`, whatever the reader has turned, zoomed or chosen since. */
   recentre: () => void;
 }
@@ -193,7 +200,33 @@ export function useGlobeCamera(
       // press during a fly-to would be undone by the frame that follows it.
       cancelFlight();
       const current = poseRef.current;
-      settle({ ...current, zoom: clampZoom(current.zoom * factor) });
+      const zoom = clampZoom(current.zoom * factor);
+      settle({
+        ...current,
+        zoom,
+        // Pulling back shrinks the slack that made the pan legal, so the pan
+        // has to come back with it. Left alone, a reader who panned at 6x and
+        // then zoomed all the way out would land on a map stuck off-centre,
+        // with the controls insisting there was nowhere further to go.
+        panX: clampPan(current.panX, zoom),
+        panY: clampPan(current.panY, zoom),
+      });
+    },
+    [cancelFlight, settle]
+  );
+
+  const panBy = useCallback(
+    (deltaX: number, deltaY: number) => {
+      // Same precedence as a turn or a dolly: under a finger the surface has to
+      // keep up with the finger, so the hand ends a flight rather than being
+      // added on top of one.
+      cancelFlight();
+      const current = poseRef.current;
+      settle({
+        ...current,
+        panX: clampPan(current.panX + deltaX, current.zoom),
+        panY: clampPan(current.panY + deltaY, current.zoom),
+      });
     },
     [cancelFlight, settle]
   );
@@ -207,5 +240,5 @@ export function useGlobeCamera(
     flyTo(restPose);
   }, [cancelFlight, flyTo, reducedMotion, restPose, settle]);
 
-  return { pose, turnBy, zoomBy, recentre };
+  return { pose, turnBy, zoomBy, panBy, recentre };
 }
