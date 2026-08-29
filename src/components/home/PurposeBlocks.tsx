@@ -16,7 +16,12 @@ export interface PurposeBlocksProps {
  * Why this atlas exists, argued by example rather than by claim.
  *
  * Three cases, rising in strangeness: a country named after a commodity, a
- * people named by an insult, and a people that never existed. Between them
+ * people carrying an exonym received as pejorative, and a language family
+ * long read as a people. Each block states what the corpus states and no
+ * more — "an insult", "a people that never existed" and "Bleek had not yet
+ * met a speaker" were the home's own flourishes, sharper than the fiches
+ * they send the reader to and, in Bleek's case, false: he wrote the 1862
+ * grammar from Cape Town. Between them
  * they teach the atlas's three levels — country, people, language family —
  * without naming them as levels, and each block carries the accent of the
  * entity it is about (atlas-charter §2, home mapping: people ocre, country
@@ -46,17 +51,18 @@ const BLOCKS: PurposeBlock[] = [
     id: "country",
     accentClass: "afh-accent-teal",
     kicker: "Un pays",
-    title: "Vous connaissez le nom. Pas ce qu'il raconte.",
+    title: "Le nom d'un pays a une date et un auteur.",
     claim: (
       <>
-        « Côte d&apos;Ivoire » n&apos;est pas un nom ivoirien. C&apos;est{" "}
-        <em>Costa do Marfim</em>, ce que des navigateurs portugais ont écrit sur
-        leurs cartes au XV<sup>e</sup> siècle, pour désigner ce qu&apos;on y
-        achetait. Un officier français l&apos;a francisé en 1839.
+        « Côte d&apos;Ivoire » n&apos;est pas un nom ivoirien. Les navigateurs
+        portugais du XV<sup>e</sup> siècle désignent ce littoral par sa
+        marchandise : <em>Costa do Marfim</em>, la côte de l&apos;ivoire. En
+        1839, l&apos;officier français Bouët-Willaumez en fixe la forme
+        française.
       </>
     ),
     followUp:
-      "Chaque pays porte un nom que quelqu'un a choisi, à un moment, pour une raison. L'atlas dit qui, quand et pourquoi.",
+      "Aucun nom de pays n'est spontané : quelqu'un l'a choisi, à une date, pour un motif. L'atlas restitue les trois quand les sources les établissent.",
     cta: {
       label: "Lire la fiche Côte d'Ivoire",
       href: (language) => getCountryRoute(language, "CIV"),
@@ -71,17 +77,20 @@ const BLOCKS: PurposeBlock[] = [
     id: "people",
     accentClass: "afh-accent-ocre",
     kicker: "Un peuple",
-    title: "Certains noms sont des insultes qu'on n'entend plus.",
+    title:
+      "Certains noms sont des termes péjoratifs qu'on n'entend plus comme tels.",
     claim: (
       <>
-        « Berbère » vient du grec <em>barbaros</em> : celui dont on ne comprend
-        pas la langue. Les Romains l&apos;ont repris, les Arabes médiévaux
-        aussi, la colonisation française l&apos;a institutionnalisé. Ces peuples
-        se nomment <strong>Amazigh</strong> — homme libre.
+        « Berbère » remonte au grec <em>barbaros</em>, celui dont on ne comprend
+        pas la langue, puis au latin <em>barbarus</em>, que les Romains
+        appliquent aux populations non latines d&apos;Afrique du Nord. Les
+        auteurs arabes médiévaux le reprennent, l&apos;administration coloniale
+        française en fait une catégorie. Ces peuples se nomment{" "}
+        <strong>Amazigh</strong> — Imazighen au pluriel : « hommes libres ».
       </>
     ),
     followUp:
-      "Un exonyme est le nom donné de l'extérieur ; un autonyme, celui qu'un peuple se donne. L'atlas montre toujours les deux, et signale lequel est contesté.",
+      "Un exonyme est le nom donné de l'extérieur ; un autonyme, celui qu'un peuple se donne. L'atlas donne les deux quand il les connaît, et signale ceux qui sont contestés.",
     cta: {
       label: "Lire la fiche Amazigh",
       href: (language) => getPeopleRoute(language, "PPL_AMAZIGH_MACRO"),
@@ -96,24 +105,31 @@ const BLOCKS: PurposeBlock[] = [
     id: "family",
     accentClass: "afh-accent-terre",
     kicker: "Une famille de langues",
-    title: "Et parfois, le peuple n'a jamais existé.",
+    title: "Et parfois, ce qu'on appelle un peuple est une famille de langues.",
+    // « ba-ntu : ba- » holds its space before the colon only because that
+    // text node stays on one source line. The JSX transform strips the
+    // leading space of a text node that wraps across lines, so reflowing
+    // this claim silently produces « ba-ntu: ba- ». Keep the colon and its
+    // neighbours together, or write the space as {" "}.
     claim: (
       <>
-        « Bantou » n&apos;est pas un peuple. C&apos;est un mot forgé en Europe
-        par le linguiste Wilhelm Bleek, à partir de <em>ba-ntu</em>, « les gens
-        », pour nommer une famille de plus de 500 langues. Il n&apos;avait alors
-        rencontré aucun locuteur.
+        « Bantou » ne désigne pas un peuple. Le philologue allemand Wilhelm
+        Bleek forge le terme en 1862, dans{" "}
+        <em>A Comparative Grammar of South African Languages</em>, à partir de{" "}
+        <em>ba-ntu</em> : <em>ba-</em>, préfixe de pluriel humain, <em>-ntu</em>
+        , la personne. Il nomme une parenté entre plus de 500 langues, pas une
+        identité.
       </>
     ),
     followUp:
-      "Famille linguistique, peuple, pays : trois choses différentes, que l'époque coloniale a confondues. L'atlas les tient séparées.",
+      "Une famille de langues, un peuple, un pays : trois objets distincts, que l'administration coloniale a confondus. L'atlas les tient séparés, et dit lequel il décrit.",
     cta: {
       label: "Explorer les familles linguistiques",
       href: (language) => getLocalizedRoute(language, "families"),
     },
     image: {
       src: "/images/home/wilhelm-bleek.jpg",
-      alt: "Portrait photographique de Wilhelm Bleek, le linguiste allemand qui a forgé le terme « bantou ».",
+      alt: "Portrait photographique de Wilhelm Bleek, le philologue allemand qui a forgé le terme « bantou » en 1862.",
       credit: "Wilhelm Bleek (1827–1875) — Wikimedia Commons, domaine public",
       portrait: true,
     },
