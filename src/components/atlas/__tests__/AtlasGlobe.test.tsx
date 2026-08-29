@@ -1272,7 +1272,10 @@ describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () =
     );
 
     const legend = container.querySelector("[data-atlas-legend]");
-    expect(legend).toHaveTextContent("Glissez pour tourner");
+    // Without a WebGL context the stage is the flat basemap, which has no
+    // rotation to apply — so the legend names the gesture that surface has.
+    // It used to promise a turn there and deliver nothing.
+    expect(legend).toHaveTextContent("Glissez pour déplacer");
     expect(legend?.className).not.toContain("hidden");
   });
 
@@ -1446,5 +1449,129 @@ describe("AtlasGlobe — choosing across the corpus on a country fiche", () => {
       "data-atlas-drawn-country",
       "ZAF"
     );
+  });
+});
+
+/**
+ * A dolly deep enough to find São Tomé pushes most of the continent off-stage,
+ * and until the pan existed the only way back was « Recentrer » — which also
+ * undoes the zoom the reader just asked for. On the flat basemap it was worse
+ * than a missing feature: the legend said « Glissez pour tourner » and the
+ * gesture moved nothing at all, because that surface has no rotation to apply.
+ */
+describe("AtlasGlobe — reaching what the dolly pushed off-stage (REQ-117)", () => {
+  function continentStage() {
+    return render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+  }
+
+  function dragSurface(container: HTMLElement, dx: number, dy: number) {
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    // The stage has no layout in happy-dom, so the pan's pixels-to-clip
+    // conversion needs a width to divide by.
+    surface.getBoundingClientRect = () =>
+      ({ width: 800, height: 400, top: 0, left: 0 }) as DOMRect;
+    fireEvent.pointerDown(surface, { clientX: 400, clientY: 200 });
+    fireEvent.pointerMove(surface, { clientX: 400 + dx, clientY: 200 + dy });
+    fireEvent.pointerUp(surface, { clientX: 400 + dx, clientY: 200 + dy });
+  }
+
+  // @req REQ-117
+  it("moves the map under the finger once the reader has zoomed in", () => {
+    const { container } = continentStage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    const before = markerFor("TZA").style.left;
+
+    dragSurface(container, -160, 0);
+
+    expect(markerFor("TZA").style.left).not.toBe(before);
+  });
+
+  // @req REQ-117
+  it("carries every marker with the map, not just the one being watched", () => {
+    const { container } = continentStage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    const before = {
+      tza: percentOf(markerFor("TZA").style.left),
+      gha: percentOf(markerFor("GHA").style.left),
+    };
+
+    dragSurface(container, -160, 0);
+
+    const shifted = {
+      tza: percentOf(markerFor("TZA").style.left) - before.tza,
+      gha: percentOf(markerFor("GHA").style.left) - before.gha,
+    };
+    // One transform moves the basemap and its markers, so two countries move
+    // by the same amount. Two drifting transforms would not.
+    expect(shifted.tza).toBeCloseTo(shifted.gha, 6);
+    expect(shifted.tza).toBeLessThan(0);
+  });
+
+  // @req REQ-117
+  it("holds an unzoomed map still, so a reader who has not zoomed cannot lose it", () => {
+    const { container } = continentStage();
+
+    const before = markerFor("TZA").style.left;
+    dragSurface(container, -160, 40);
+
+    expect(markerFor("TZA").style.left).toBe(before);
+  });
+
+  // @req REQ-117
+  it("comes back to the subject when the reader recentres", () => {
+    const { container } = continentStage();
+
+    const atRest = markerFor("TZA").style.left;
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    dragSurface(container, -160, 0);
+    expect(markerFor("TZA").style.left).not.toBe(atRest);
+
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    // Recentring drops the dolly and the pan together, so the marker is back
+    // where an untouched stage put it.
+    expect(markerFor("TZA").style.left).toBe(atRest);
+  });
+
+  // @req REQ-117
+  it("tells a screen reader the gesture the surface actually has", () => {
+    // The canvas is aria-hidden, so this label is the whole of what a screen
+    // reader learns. On the flat basemap it announced a turn that could not
+    // happen.
+    const { container } = continentStage();
+
+    const surface = container.querySelector("[data-atlas-surface]");
+    expect(surface).toHaveAttribute(
+      "aria-label",
+      expect.stringContaining("déplacer") as unknown as string
+    );
+  });
+
+  // @req REQ-117
+  it("pans from the keyboard on a surface that cannot turn", () => {
+    const { container } = continentStage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    fireEvent.click(screen.getByRole("button", { name: "Zoomer" }));
+    const before = markerFor("TZA").style.left;
+
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    expect(fireEvent.keyDown(surface, { key: "ArrowRight" })).toBe(false);
+
+    expect(markerFor("TZA").style.left).not.toBe(before);
   });
 });
