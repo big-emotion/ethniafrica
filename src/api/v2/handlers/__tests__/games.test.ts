@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
 import { mercatorMisleads } from "@/lib/games/rounds/mercatorRound";
+import { isEstimateRound, isOptionRound } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 
 const { loadGameCorpus } = vi.hoisted(() => ({
@@ -72,18 +74,20 @@ describe("mercator only asks where the flat map lies", () => {
     });
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
+    const pairRounds = envelope.data.rounds.filter(isOptionRound);
 
-    expect(envelope.data.rounds.length).toBeGreaterThan(0);
-    for (const round of envelope.data.rounds) {
-      const [a, b] = (round as { options: { labelFr: string }[] }).options;
+    expect(pairRounds.length).toBeGreaterThan(0);
+    for (const round of pairRounds) {
+      const [a, b] = round.options;
       expect(mercatorMisleads(byName(a.labelFr), byName(b.labelFr))).toBe(true);
     }
   });
 
   // Padding a short session with honest pairs would quietly undo the filter
-  // above; the corpus-limited flag already exists to say so on screen.
+  // above. The session is topped up with estimate rounds instead, which are
+  // measured off the committed outlines and misrepresent nothing.
   // @req REQ-120
-  it("shortens the session rather than padding it with honest pairs", async () => {
+  it("shortens the pair rounds rather than padding them with honest pairs", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: [country("SEN", "Sénégal"), country("TUN", "Tunisie")],
@@ -91,8 +95,7 @@ describe("mercator only asks where the flat map lies", () => {
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
 
-    expect(envelope.data.rounds).toHaveLength(1);
-    expect(envelope.data.corpusLimited).toBe(true);
+    expect(envelope.data.rounds.filter(isOptionRound)).toHaveLength(1);
   });
 });
 
@@ -101,39 +104,57 @@ describe("getGameRoundsHandler", () => {
     loadGameCorpus.mockReset();
   });
 
+  /**
+   * The estimate rounds read the committed outlines rather than the corpus,
+   * so an empty database costs the session its country pairs and nothing
+   * else. The page used to go blank here; the claim it makes is about
+   * geometry and should not depend on Supabase answering.
+   */
   // @req REQ-120
-  it("returns an empty round list rather than throwing when the corpus is empty", async () => {
+  it("still serves the asset-backed rounds when the corpus is empty", async () => {
     loadGameCorpus.mockResolvedValue(emptyCorpus);
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
 
-    expect(envelope.data.rounds).toEqual([]);
+    expect(envelope.data.rounds.filter(isOptionRound)).toEqual([]);
+    expect(envelope.data.rounds.filter(isEstimateRound).length).toBeGreaterThan(
+      0
+    );
   });
 
-  // The game depends on this flag to say so on screen instead of rendering a
-  // blank end state when the corpus cannot fill a session.
+  // The game depends on this flag to say so on screen instead of quietly
+  // serving a short session.
   // @req REQ-120
   it("reports the corpus as limited when it yields fewer rounds than asked", async () => {
     loadGameCorpus.mockResolvedValue(emptyCorpus);
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
 
+    expect(envelope.data.rounds.length).toBeLessThan(
+      mercator().roundsPerSession
+    );
     expect(envelope.data.corpusLimited).toBe(true);
   });
 
+  /**
+   * The handler used to cut the pool to one session here, which meant the
+   * page's constant seed served every visitor the same rounds for good. The
+   * pool travels whole and `takeSession` cuts it on the client, so a replay
+   * can advance to the next window.
+   */
   // @req REQ-120
-  it("never returns more rounds than the game asks for", async () => {
+  it("returns the whole pool, not one session's worth", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
-      countries: MERCATOR_COUNTRIES,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
     });
 
     const game = mercator();
     const envelope = await getGameRoundsHandler(game, 0);
 
-    expect(envelope.data.rounds.length).toBeLessThanOrEqual(
-      game.roundsPerSession
-    );
+    expect(envelope.data.rounds.length).toBeGreaterThan(game.roundsPerSession);
   });
 
   // @req REQ-120
@@ -214,5 +235,60 @@ describe("a session is ordered by ascending difficulty band", () => {
       expect(round.difficultyBand).toBeGreaterThanOrEqual(1);
       expect(round.difficultyBand).toBeLessThanOrEqual(3);
     }
+  });
+});
+
+/**
+ * Eight taps on the same control is a worse session than a mixed one, and the
+ * two round kinds ask different things of the reader: one is a judgement
+ * between two names, the other a judgement about a magnitude. The assembly
+ * has to satisfy both this and the ascending bands above, which is why the
+ * alternation happens inside a band rather than across the whole session.
+ */
+describe("a session mixes the two gestures", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  // @req REQ-120
+  it("serves both a pair round and an estimate round", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: MERCATOR_COUNTRIES,
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+
+    expect(envelope.data.rounds.filter(isOptionRound).length).toBeGreaterThan(
+      0
+    );
+    expect(envelope.data.rounds.filter(isEstimateRound).length).toBeGreaterThan(
+      0
+    );
+  });
+
+  /**
+   * Against the real continent rather than the six-country fixture: the
+   * shortfall this fixes is a property of the whole corpus. Measured before
+   * the estimate rounds existed, the page served seven of its eight rounds
+   * and always the same seven, because only sixteen African pairs mislead at
+   * all and the greedy pairing reaches twelve of them.
+   */
+  // @req REQ-120
+  it("fills the session now that the outlines top it up", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const game = mercator();
+    const envelope = await getGameRoundsHandler(game, 0);
+
+    expect(envelope.data.rounds.length).toBeGreaterThanOrEqual(
+      game.roundsPerSession
+    );
+    expect(envelope.data.corpusLimited).toBe(false);
   });
 });

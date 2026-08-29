@@ -62,6 +62,14 @@ export interface NavigationIntentInput {
  * filters — a facet hub narrowing its list, the search page taking a term —
  * and covering the screen while a list re-sorts underneath hides the very
  * thing the reader is watching for.
+ *
+ * `data-opens-in-place` is the one case a click cannot be read from the URLs
+ * alone. The home's three entry cards are anchors to their hub — the path a
+ * crawler and a reader without JavaScript take — but a click deploys the
+ * modules around the card instead (REQ-114), and `defaultPrevented` cannot
+ * separate that from an ordinary internal navigation, because Next's own
+ * `Link` cancels the native navigation on every one of those too. So the
+ * link that keeps the reader where they are declares it.
  */
 // @req REQ-104
 export function isPageReplacingNavigation({
@@ -73,6 +81,7 @@ export function isPageReplacingNavigation({
 }: NavigationIntentInput): boolean {
   if (!anchor || defaultPrevented || button !== 0 || hasModifier) return false;
   if (anchor.hasAttribute("download")) return false;
+  if (anchor.getAttribute("data-opens-in-place") === "true") return false;
 
   const target = anchor.getAttribute("target");
   if (target && target !== "_self") return false;

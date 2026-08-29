@@ -37,9 +37,10 @@ export interface ExplorerContinentProps {
   peopleCountsByCountry: Record<string, number> | undefined;
   /**
    * Every country the corpus documents — what the reader may *choose*, which
-   * is wider than what the field draws. `buildContinentOverlay` marks twelve;
-   * without this list the other forty-two are unreachable from the scene
-   * rather than merely unmarked, which is the gap the facets already close.
+   * is wider than what the field draws. `buildContinentOverlay` ranks twelve
+   * and the scene pins a labelled marker on each; this list is what makes the
+   * other forty-two reachable, and AtlasGlobe gives each of them a small inert
+   * mark so the scene shows the whole of what it offers.
    */
   countryIds: readonly string[];
   missingMessage: string;

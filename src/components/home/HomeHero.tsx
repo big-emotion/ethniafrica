@@ -63,11 +63,10 @@ export function HomeHero() {
             outgrows silently — the axis cards already print counts that read
             themselves (getCorpusCounts), and that is where a number belongs. */}
         <p className="home-hero-standfirst" data-testid="home-hero-standfirst">
-          L&apos;Atlas des Peuples d&apos;Afrique publie en accès libre les
-          peuples du continent, leurs langues, leurs familles linguistiques et
-          leurs pays, chacun sous le nom qu&apos;il se donne. Chaque affirmation
-          y porte sa source et son niveau de confiance, et ce qui reste débattu
-          est signalé comme tel.
+          {PRODUCT_NAME} publie en accès libre les peuples du continent, leurs
+          langues, leurs familles linguistiques et leurs pays, chacun sous le
+          nom qu&apos;il se donne. Chaque affirmation y porte sa source et son
+          niveau de confiance, et ce qui reste débattu est signalé comme tel.
         </p>
       </header>
 

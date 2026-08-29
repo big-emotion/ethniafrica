@@ -4,11 +4,17 @@ import type { Ring } from "@/lib/atlas/overlays";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 /**
- * The one gesture the Jouer hub's game is built on (REQ-120).
+ * The two gestures the Jouer hub's game is built on (REQ-120).
  *
- * A bespoke game would be an application of its own. This one is an
- * interaction applied to a corpus slice, so the engine knows only this shape
- * and the game is a pure function producing it.
+ * A bespoke game would be an application of its own. These are interactions
+ * applied to a corpus slice, so the engine knows only these shapes and each
+ * round is a pure function producing one.
+ *
+ * `estimate` exists because `binary` cannot carry the lesson on its own. A
+ * two-way choice can only ever record right or wrong; the misperception this
+ * game is about is not a ranking error but a *magnitude* error — the reader
+ * does not think Greenland outranks Africa, they think the gap is small. Only
+ * a round that asks for a number can register how far off that is.
  *
  * `quad` and `areaCompare` went with the eight games retired by the charter's
  * scope cut, and `globeTap` went with « Le pays d'avant » in the cut that
@@ -16,7 +22,7 @@ import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
  * `gameRegistry.test.ts` asserts against. All three are in git for whoever
  * rebuilds one of those games against the charter.
  */
-export type GameKind = "binary";
+export type GameKind = "binary" | "estimate";
 
 /**
  * What the reader is shown after answering. `textFr` is copied verbatim from
@@ -94,7 +100,33 @@ export interface BinaryRound extends GameRoundBase {
   correctIndex: 0 | 1;
 }
 
-export type GameRound = BinaryRound;
+/**
+ * One slider, and a number the reader commits to.
+ *
+ * Unlike `binary` this round has no options to place, so nothing here needs
+ * `correctOptionIndex`: the answer is a measurement, and where it falls on
+ * the track is the reader's problem rather than the generator's.
+ */
+export interface EstimateRound extends GameRoundBase {
+  kind: "estimate";
+  /** What the reader is estimating, named — the slider is meaningless without it. */
+  subjectFr: string;
+  /** The unit the track is read in, e.g. « fois ». */
+  unitFr: string;
+  min: number;
+  max: number;
+  step: number;
+  /** The measured answer, in `unitFr`. */
+  correctValue: number;
+  /**
+   * How far off still counts, as a share of `correctValue`. Relative and not
+   * absolute: being three out on a ratio of fourteen is a good estimate, and
+   * being three out on a ratio of three is not the same answer at all.
+   */
+  toleranceRatio: number;
+}
+
+export type GameRound = BinaryRound | EstimateRound;
 
 /** Narrows a round to the options-bearing kinds without a cast. */
 // @req REQ-120
@@ -102,16 +134,35 @@ export function isOptionRound(round: GameRound): round is BinaryRound {
   return round.kind === "binary";
 }
 
+/** Narrows a round to the slider kind without a cast. */
+// @req REQ-120
+export function isEstimateRound(round: GameRound): round is EstimateRound {
+  return round.kind === "estimate";
+}
+
 /**
  * Whether an answer is right, expressed once so no primitive re-derives it.
- * The answer is the index of the option the reader pressed.
+ *
+ * `strictNullChecks` is off in this repo, so a `switch` that forgets a member
+ * of `GameKind` returns `undefined` without the compiler saying a word — and
+ * `undefined` is falsy, which would silently mark every round of the missing
+ * kind wrong. The `if` chain below ends in an explicit `false` for exactly
+ * that reason, and `gameKinds.test.ts` covers each kind by name.
  */
 // @req REQ-120
 export function isCorrectAnswer(
   round: GameRound,
   answer: number | CountryId
 ): boolean {
-  return answer === round.correctIndex;
+  if (round.kind === "binary") return answer === round.correctIndex;
+
+  if (round.kind === "estimate") {
+    if (typeof answer !== "number") return false;
+    const margin = round.correctValue * round.toleranceRatio;
+    return Math.abs(answer - round.correctValue) <= margin;
+  }
+
+  return false;
 }
 
 /** Re-exported so a round generator imports one module, not three. */

@@ -23,7 +23,7 @@ export default async function ComprendreHubPage() {
   const modules = await getHubModules("comprendre");
 
   return (
-    <PageLayout language="fr">
+    <PageLayout language="fr" title={strings.pageTitle}>
       <AccessModeHub language="fr" mode="comprendre" modules={modules}>
         {/* Same resolved modules the rows read: the spine used to link its
             three stops unconditionally and contradict them (charter §3). */}

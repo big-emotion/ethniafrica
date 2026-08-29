@@ -54,3 +54,41 @@ describe("hub blurbs", () => {
     expect(new Set(blurbs).size).toBe(axes.length);
   });
 });
+
+/**
+ * The band above a hub names the page, not the product.
+ *
+ * It used to fall back to the product name, so `/fr/comprendre` opened on
+ * « Atlas des Peuples d'Afrique » — already spelled out in the bar directly
+ * above it — and told a reader nothing about where they stood. The title the
+ * band now carries states the axis *and* what the axis leads into, which is
+ * the hierarchy the URL encodes.
+ */
+describe("hub page titles", () => {
+  const { hubs, title } = getTranslation("fr");
+  const axes = ["explorer", "comprendre", "jouer"] as const;
+
+  // @req REQ-114
+  it("opens on the axis the reader took", () => {
+    for (const axis of axes) {
+      expect(hubs[axis].pageTitle).toMatch(
+        new RegExp(`^${hubs[axis].title}\\b`)
+      );
+    }
+  });
+
+  // @req REQ-114
+  it("names the corpus the axis leads into rather than the product", () => {
+    for (const axis of axes) {
+      expect(hubs[axis].pageTitle).toMatch(/peuples d'Afrique$/);
+      expect(hubs[axis].pageTitle).not.toBe(title);
+    }
+  });
+
+  // @req REQ-114
+  it("gives each axis its own band title", () => {
+    const pageTitles = axes.map((axis) => hubs[axis].pageTitle);
+
+    expect(new Set(pageTitles).size).toBe(axes.length);
+  });
+});

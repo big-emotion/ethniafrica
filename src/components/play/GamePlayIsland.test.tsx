@@ -12,7 +12,7 @@ const GAME: GameDefinition = {
   id: "mercator",
   slug: "mercator",
   nameFr: "La taille qu'on vous a cachée",
-  kind: "binary",
+  kinds: ["binary"],
   dataSource: "countries",
   promptFr: "Lequel de ces deux pays couvre la plus grande surface",
   roundsPerSession: 8,
@@ -124,5 +124,43 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
     expect(screen.getByTestId("game-play-island").className).toContain(
       ACCENT_BY_ACCESS_MODE.jouer
     );
+  });
+});
+
+/**
+ * The page's seed is derived from the game's slug, which is a constant — a
+ * deliberate choice keeping the route cacheable and the server tree in step
+ * with the client one. The cost was that « rejouer » handed back the rounds
+ * just played. The pool now arrives longer than a session and the island
+ * advances its window instead.
+ */
+describe("GamePlayIsland — a replay is a different session (REQ-120)", () => {
+  const pool = [
+    binaryRound("DZA"),
+    binaryRound("TCD"),
+    binaryRound("SEN"),
+    binaryRound("TUN"),
+  ];
+  const shortGame: GameDefinition = { ...GAME, roundsPerSession: 2 };
+
+  // @req REQ-120
+  it("cuts the first session from the head of the pool", () => {
+    render(<GamePlayIsland game={shortGame} rounds={pool} />);
+
+    expect(screen.getByTestId("binary-choice")).toHaveTextContent("DZA");
+  });
+
+  // @req REQ-120
+  it("opens the next replay on rounds the reader has not just played", async () => {
+    const user = userEvent.setup();
+    render(<GamePlayIsland game={shortGame} rounds={pool} />);
+
+    await user.click(screen.getByRole("button", { name: "Alpha" }));
+    await user.click(screen.getByRole("button", { name: /Tour suivant/ }));
+    await user.click(screen.getByRole("button", { name: "Alpha" }));
+    await user.click(screen.getByRole("button", { name: /Voir le score/ }));
+    await user.click(screen.getByRole("button", { name: /Rejouer/ }));
+
+    expect(screen.getByTestId("binary-choice")).toHaveTextContent("SEN");
   });
 });

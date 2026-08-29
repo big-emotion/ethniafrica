@@ -9,8 +9,14 @@ import type {
   HierarchyChildrenPage,
   HierarchyNode as TreeNode,
 } from "@/components/system/HierarchyTree";
+import type { FamilyBranchProvenance } from "@/api/v2/services/languageFamilyTreeService";
 import type { ClassificationStatus } from "@/types/afrik";
 import { getPeopleRoute } from "@/lib/routing";
+
+import { chapterAnchorId } from "@/lib/ficheChapters";
+
+/** The chapter this section is, in the fiche's reading rail. */
+const CHAPTER_TITLE = "Classification";
 
 export interface FamilyClassificationTreeSectionProps {
   familyId: string;
@@ -21,9 +27,19 @@ export interface FamilyClassificationTreeSectionProps {
       classificationStatus?: ClassificationStatus | null;
     };
     branches: { iso639_3: string; name: string; peopleCount: number }[];
+    /** Whether `branches` came from the language corpus or were rebuilt from the people fiches. */
+    branchProvenance?: FamilyBranchProvenance;
+    /** Branch names the fiche states itself; nothing ties a people to one, so they stay out of the tree. */
+    declaredBranches?: string[];
     unlinkedPeopleCount: number;
   };
 }
+
+const PROVENANCE_NOTE: Record<FamilyBranchProvenance, string> = {
+  "language-corpus": "Branches déclarées par le corpus des langues.",
+  "people-fiches":
+    "Branches reconstituées d'après les fiches peuple : le corpus des langues ne les renseigne pas.",
+};
 
 interface BranchResponse {
   data: {
@@ -82,9 +98,11 @@ function toTreeRoot(
   }));
 
   if (tree.unlinkedPeopleCount > 0) {
+    // The count belongs to `childCount`, which every node renders; spelling it
+    // into the label too printed it twice on the one node that had it.
     branches.push({
       id: "unlinked",
-      label: `peuples sans langue référencée (${tree.unlinkedPeopleCount})`,
+      label: "peuples sans langue référencée",
       childCount: tree.unlinkedPeopleCount,
     });
   }
@@ -95,12 +113,23 @@ function toTreeRoot(
 function toTextIndexNodes(
   tree: FamilyClassificationTreeSectionProps["tree"]
 ): TextIndexNode[] {
-  return tree.branches.map((branch) => ({
+  const nodes: TextIndexNode[] = tree.branches.map((branch) => ({
     id: branch.iso639_3,
     type: "language",
     name: branch.name,
     peopleCount: branch.peopleCount,
   }));
+
+  if (tree.unlinkedPeopleCount > 0) {
+    nodes.push({
+      id: "unlinked",
+      type: "unlinked-group",
+      name: "peuples sans langue référencée",
+      peopleCount: tree.unlinkedPeopleCount,
+    });
+  }
+
+  return nodes;
 }
 
 // @req REQ-047
@@ -178,16 +207,41 @@ export function FamilyClassificationTreeSection({
     <section
       ref={sectionRef}
       aria-labelledby="family-classification-tree-heading"
+      id={chapterAnchorId(CHAPTER_TITLE)}
+      data-fiche-section={CHAPTER_TITLE}
     >
-      <h2 id="family-classification-tree-heading">Classification</h2>
-      <div className="mb-3 flex gap-2">
-        <button type="button" onClick={() => changeView("list")}>
-          Voir en liste
-        </button>
-        <button type="button" onClick={() => changeView("tree")}>
-          Voir en arbre
-        </button>
+      <h2 id="family-classification-tree-heading">{CHAPTER_TITLE}</h2>
+      <div className="afh-classification-toolbar">
+        <div className="afh-view-switch" role="group" aria-label="Affichage">
+          <button
+            type="button"
+            aria-pressed={view === "tree"}
+            onClick={() => changeView("tree")}
+          >
+            Arbre
+          </button>
+          <button
+            type="button"
+            aria-pressed={view === "list"}
+            onClick={() => changeView("list")}
+          >
+            Liste
+          </button>
+        </div>
+        <p className="afh-classification-provenance">
+          {PROVENANCE_NOTE[tree.branchProvenance ?? "people-fiches"]}
+        </p>
       </div>
+      {tree.declaredBranches?.length ? (
+        <ul
+          className="afh-declared-branches"
+          aria-label="Branches nommées par la fiche"
+        >
+          {tree.declaredBranches.map((branch) => (
+            <li key={branch}>{branch}</li>
+          ))}
+        </ul>
+      ) : null}
       <div
         id="family-classification-list"
         tabIndex={-1}

@@ -349,7 +349,10 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          /* The tier is the band's provenance — the whole point of the
+             Source Tier policy is that a reader can see what a claim rests
+             on, so it is content and takes an ink that clears AA. */
+          color: var(--afh-fg-muted);
         }
 
         .home-dyk-controls {

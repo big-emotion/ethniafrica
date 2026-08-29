@@ -4,6 +4,7 @@ import React from "react";
 
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 const { getHubModulesMock } = vi.hoisted(() => ({
   getHubModulesMock: vi.fn(),
@@ -35,9 +36,22 @@ vi.mock("@/api/v2/services/countryService", () => ({
   getCountryIndex: getCountryIndexMock,
 }));
 
+// The band's title is stubbed through rather than dropped: it is the page's
+// only `h1` since the hub stopped raising one of its own, so a route that
+// forgot to pass it would leave the page headless with every other assertion
+// here still green.
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
+  PageLayout: ({
+    children,
+    title,
+  }: {
+    children: React.ReactNode;
+    title?: string;
+  }) => (
+    <div data-testid="page-layout">
+      <span data-testid="page-layout-title">{title}</span>
+      {children}
+    </div>
   ),
 }));
 
@@ -227,5 +241,36 @@ describe("access-mode hub routes (REQ-114)", () => {
     expect(
       screen.getByTestId("hub-module-unavailable-liens")
     ).toBeInTheDocument();
+  });
+
+  // Left to the shell's fallback, all three opened on the product name — the
+  // masthead repeated one line lower. Each route now hands the band the title
+  // of the axis it serves.
+  // @req REQ-114
+  it("hands the title band the axis's own page title on each of the three hubs", async () => {
+    const { hubs } = getTranslation("fr");
+
+    getHubModulesMock.mockResolvedValueOnce(explorerModules);
+    const { default: ExplorerHubPage } = await import("../explorer/page");
+    const { unmount: unmountExplorer } = render(await ExplorerHubPage());
+    expect(screen.getByTestId("page-layout-title")).toHaveTextContent(
+      hubs.explorer.pageTitle
+    );
+    unmountExplorer();
+
+    getHubModulesMock.mockResolvedValueOnce(comprendreModules);
+    const { default: ComprendreHubPage } = await import("../comprendre/page");
+    const { unmount: unmountComprendre } = render(await ComprendreHubPage());
+    expect(screen.getByTestId("page-layout-title")).toHaveTextContent(
+      hubs.comprendre.pageTitle
+    );
+    unmountComprendre();
+
+    getHubModulesMock.mockResolvedValueOnce(jouerModules);
+    const { default: JouerHubPage } = await import("../jouer/page");
+    render(await JouerHubPage());
+    expect(screen.getByTestId("page-layout-title")).toHaveTextContent(
+      hubs.jouer.pageTitle
+    );
   });
 });

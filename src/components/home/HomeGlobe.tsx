@@ -81,6 +81,8 @@ function readoutFor(morph: number): string {
 // @req REQ-115
 export function HomeGlobe({
   onUnavailable,
+  morphOverride = null,
+  overrideNoteFr,
 }: {
   /**
    * Called once when the globe cannot run after all — no context, or a
@@ -89,6 +91,22 @@ export function HomeGlobe({
    * committed basemap out and the hero is left blank.
    */
   onUnavailable?: () => void;
+  /**
+   * Drives the flat-map-to-globe morph from outside, 0 to 1, and takes the
+   * slider out of the reader's hands while it does.
+   *
+   * The Mercator game asks its question against the flat map — the lie the
+   * round is about — and opens the sphere on the reveal. Left draggable, the
+   * control would hand over the answer: a reader who slides to the globe sees
+   * the true areas and no longer has to judge anything, which is the
+   * shape-guessing the games charter retired as a category.
+   *
+   * Null on the home, where nobody is being asked anything and the reader
+   * drives.
+   */
+  morphOverride?: number | null;
+  /** Why the slider is not theirs right now. Rendered beside it, not hidden. */
+  overrideNoteFr?: string;
 } = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
@@ -350,10 +368,33 @@ export function HomeGlobe({
     requestFrame.current?.();
   };
 
+  const morphLocked = morphOverride !== null && morphOverride !== undefined;
+
+  // While a round drives the morph, the slider's position and the caption are
+  // *derived* from the prop rather than mirrored into state. Mirroring would
+  // be a second source of truth for one value, and the effect that kept the
+  // two in step would be the cascading-render kind the lint rule forbids.
+  const shownMorph = morphLocked ? morphOverride : morphPercent / MORPH_MAX;
+  const shownPercent = Math.round(shownMorph * MORPH_MAX);
+  const shownReadout = morphLocked ? readoutFor(morphOverride) : readout;
+
+  // What remains is genuinely an external system to update: the WebGL layer
+  // eases toward a target held in a ref. Declared after the mount effect so
+  // `requestFrame` is wired by the time this first runs. It eases exactly as
+  // a drag would, which is the point — the reader watches the flat map close
+  // into a sphere rather than finding it already closed.
+  useEffect(() => {
+    if (!morphLocked) return;
+    morphTarget.current = morphOverride;
+    requestFrame.current?.();
+  }, [morphLocked, morphOverride]);
+
   const recentre = () => {
     yawTarget.current = HOME_YAW;
     pitchTarget.current = HOME_PITCH;
-    applyMorph(MORPH_MAX);
+    // Recentring must not reopen a sphere the round is holding shut, so it
+    // returns the angle and leaves the projection where the caller put it.
+    if (!morphLocked) applyMorph(MORPH_MAX);
   };
 
   const toggleTissot = () => {
@@ -372,7 +413,7 @@ export function HomeGlobe({
         data-testid="home-globe-readout"
         aria-live="polite"
       >
-        {readout}
+        {shownReadout}
       </p>
 
       <button
@@ -407,14 +448,29 @@ export function HomeGlobe({
             type="range"
             min={0}
             max={MORPH_MAX}
-            value={morphPercent}
+            value={shownPercent}
+            disabled={morphLocked}
             data-testid="home-globe-morph-range"
             aria-label="Morphing de la carte plate vers le globe"
-            aria-valuetext={surfaceNameFor(morphPercent / MORPH_MAX)}
+            aria-valuetext={surfaceNameFor(shownMorph)}
             onChange={(event) => applyMorph(Number(event.target.value))}
           />
           <label htmlFor="home-globe-morph-range">Globe</label>
         </div>
+
+        {/*
+          Said out loud rather than left as a dead control. A slider that
+          refuses to move and gives no reason reads as a bug; one that says
+          the sphere opens with the answer reads as part of the round.
+        */}
+        {morphLocked && overrideNoteFr ? (
+          <p
+            className="home-globe-lock-note"
+            data-testid="home-globe-lock-note"
+          >
+            {overrideNoteFr}
+          </p>
+        ) : null}
         <button
           type="button"
           onClick={recentre}
@@ -521,6 +577,21 @@ export function HomeGlobe({
         .home-globe-morph input[type="range"]:focus-visible {
           outline: 2px solid var(--afh-cat-ocre);
           outline-offset: 3px;
+        }
+        .home-globe-morph input[type="range"]:disabled {
+          cursor: not-allowed;
+          opacity: 0.55;
+        }
+
+        .home-globe-lock-note {
+          margin: 0;
+          padding: 6px 12px;
+          border-radius: var(--afh-radius-full);
+          border: 1px dashed var(--afh-border);
+          font-family: var(--afh-font-mono);
+          font-size: var(--home-text-globe-tool);
+          color: var(--afh-fg-muted);
+          text-align: center;
         }
 
         .home-globe-tool {

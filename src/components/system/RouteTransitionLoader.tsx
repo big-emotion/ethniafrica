@@ -103,9 +103,11 @@ export function RouteTransitionLoader() {
       });
     };
 
-    // Capture phase: a component that calls preventDefault in its own handler
-    // would otherwise decide for us, and by then the click has been read as
-    // a navigation by the router anyway.
+    // Capture phase: by the time a click bubbles back up, Next's `Link` has
+    // cancelled the native navigation on every internal move, so a bubble
+    // listener reading `defaultPrevented` would never raise the overlay at
+    // all. A link that cancels the click and stays put says so with
+    // `data-opens-in-place` instead.
     document.addEventListener("click", onDocumentClick, true);
     return () => document.removeEventListener("click", onDocumentClick, true);
   }, []);

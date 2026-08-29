@@ -242,7 +242,9 @@ export function DidYouKnowLoader({
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          color: var(--afh-text-muted);
+          /* The tier again, this time on the waiting screen. A reader who
+             only ever sees the fact here still has to see what backs it. */
+          color: var(--afh-fg-muted);
         }
 
         /* The unveiling. "both" holds each line at zero opacity through its
