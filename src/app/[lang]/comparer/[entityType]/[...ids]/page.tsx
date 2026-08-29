@@ -11,9 +11,11 @@ import { notFound } from "next/navigation";
 import { assembleComparison } from "@/api/v2/handlers/compare";
 import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { ComparisonView } from "@/components/compare/ComparisonView";
+import { SiteTrail } from "@/components/layout/SiteTrail";
 import type { CompareEntityPayload } from "@/types/compare";
 import type { CompareEntityTypeParam } from "@/api/v2/schemas/compare";
 
+// @req REQ-091
 export const revalidate = 3600;
 
 interface PageParams {
@@ -125,8 +127,12 @@ export default async function ComparisonPage({
 
   const title = `Comparaison : ${data.columns.map((column) => column.label).join(" · ")}`;
 
+  // This route mounts no `PageLayout`, so it mounts the trail itself. The
+  // label names the pair being compared, which is the one segment of
+  // `/fr/comparer/peuples/PPL_A,PPL_B` the trail could not otherwise read.
   return (
     <>
+      <SiteTrail entityLabel={title} />
       <h1>{title}</h1>
       <ComparisonView data={data} />
     </>

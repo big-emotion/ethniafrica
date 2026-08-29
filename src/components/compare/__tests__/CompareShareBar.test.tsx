@@ -13,6 +13,8 @@ vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),
+  // The comparison mounts its own trail: it has no `PageLayout` to inherit one.
+  usePathname: () => "/fr/comparer/peuples/PPL_YORUBA,PPL_BETE",
 }));
 
 const mockAssembleComparison = vi.fn();

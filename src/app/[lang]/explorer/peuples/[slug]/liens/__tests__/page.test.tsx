@@ -32,10 +32,24 @@ vi.mock("@/api/v2/services/languageFamilyService", () => ({
     mockGetLanguageFamilyById(...args),
 }));
 
+// The shell is stubbed but its props are recorded: the trail moved into
+// `PageLayout`, so what this page is now answerable for is the label it hands
+// the shell, not the crumbs it once assembled itself.
+const pageLayoutProps = vi.hoisted(() => ({
+  current: {} as Record<string, unknown>,
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
-  ),
+  PageLayout: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode;
+    [key: string]: unknown;
+  }) => {
+    pageLayoutProps.current = props;
+    return <div data-testid="page-layout">{children}</div>;
+  },
 }));
 
 // ---------------------------------------------------------------------------
@@ -84,18 +98,17 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     expect(notFound).toHaveBeenCalled();
   });
 
+  /**
+   * The page used to assemble its own crumbs. The trail is the shell's now, so
+   * the one thing this route still knows that the shell cannot is how to name
+   * `PPL_YORUBA` — and that is what it must hand over. The crumbs themselves
+   * are asserted where they are derived, in `breadcrumbCharter`.
+   */
   // @req REQ-097 FR72
-  it("renders the breadcrumb the path gives: peoples, the people, this page", async () => {
+  it("hands the shell the people's name, the one crumb it alone can name", async () => {
     await renderPage("PPL_YORUBA");
 
-    const nav = screen.getByRole("navigation", { name: "Fil d'ariane" });
-    expect(nav).toHaveTextContent("Peuples");
-    expect(nav).toHaveTextContent("Yoruba");
-    expect(nav).toHaveTextContent("Liens");
-    expect(screen.getByRole("link", { name: "Yoruba" })).toHaveAttribute(
-      "href",
-      getPeopleRoute("fr", "PPL_YORUBA")
-    );
+    expect(pageLayoutProps.current.trailLabel).toBe("Yoruba");
   });
 
   /**
@@ -109,9 +122,7 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     await renderPage("PPL_YORUBA");
 
     expect(mockGetLanguageFamilyById).not.toHaveBeenCalled();
-    expect(
-      screen.getByRole("navigation", { name: "Fil d'ariane" })
-    ).not.toHaveTextContent("Niger-Congo");
+    expect(pageLayoutProps.current.trailLabel).not.toBe("Niger-Congo");
   });
 
   // @req REQ-097 FR72

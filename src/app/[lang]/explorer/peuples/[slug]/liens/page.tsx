@@ -2,13 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { RelationsListWithSourceSheet } from "@/components/relations/RelationsListWithSourceSheet";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { transformRelationsToListItems } from "@/lib/relationsDataTransformer";
-import { getPeopleLinksRoute } from "@/lib/routing";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
 
 // @req REQ-097 FR72
 export const revalidate = 3600;
@@ -59,17 +56,13 @@ export default async function PeopleLinksPage({
     egoNetwork.derived
   );
 
-  // The family was fetched for one crumb and nothing else. The trail follows
-  // the path — Peuples › <people> › Liens — so the query goes with the crumb.
-  const breadcrumbs = deriveTrail(
-    getPeopleLinksRoute("fr", people.id),
-    people.nameMain
-  );
-
   return (
-    <PageLayout language="fr" sectionName="Peuples">
+    <PageLayout
+      language="fr"
+      sectionName="Peuples"
+      trailLabel={people.nameMain}
+    >
       <div className="container mx-auto max-w-4xl px-4 py-8">
-        <AfrikBreadcrumbs items={breadcrumbs} />
         <h1 className="text-afh-h2 font-semibold mt-4 mb-6 text-afh-text">
           Liens de {people.nameMain}
         </h1>
