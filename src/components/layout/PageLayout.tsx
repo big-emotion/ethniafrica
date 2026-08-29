@@ -4,6 +4,7 @@ import { ReactNode, useState } from "react";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteTrail } from "@/components/layout/SiteTrail";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsModal";
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
@@ -28,9 +29,19 @@ interface PageLayoutProps {
   /**
    * Drop main's top padding so a full-bleed first child (one that escapes the
    * container with 100vw + negative margins, like HomeHero) starts flush
-   * against the nav instead of behind a strip of page background.
+   * against the chrome instead of behind a strip of page background.
+   *
+   * "The chrome" now includes the trail, which sits between the nav and main.
+   * A full-bleed child still starts flush against what is above it; what is
+   * above it is one line taller.
    */
   flushTop?: boolean;
+  /**
+   * How the trail should name the identifier in the address, on a route whose
+   * path holds one. A fiche knows its own name and nothing else does — see
+   * `SiteTrail`.
+   */
+  trailLabel?: string;
 }
 
 // @req REQ-043
@@ -41,6 +52,7 @@ export const PageLayout = ({
   sectionName,
   hideHeader = false,
   flushTop = false,
+  trailLabel,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
@@ -82,6 +94,15 @@ export const PageLayout = ({
         open={isShortcutsOpen}
         onClose={() => setIsShortcutsOpen(false)}
       />
+
+      {/* The trail belongs to the chrome, not to the page: it sits here, above
+          both the optional title band and main, so it survives `hideHeader`.
+          The fiches pass `hideHeader` precisely because their own title stands
+          over the globe, and they are the routes that had a trail already —
+          losing it there would be trading one gap for another. */}
+      <div className="container mx-auto">
+        <SiteTrail entityLabel={trailLabel} />
+      </div>
 
       {/* Header */}
       {!hideHeader && (

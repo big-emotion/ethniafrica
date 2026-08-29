@@ -44,7 +44,13 @@ vi.mock("next/navigation", () => ({
 // and a stub that restated it as a literal is what made this suite assert the
 // header pointed at an address the site had stopped serving.
 
-vi.mock("@/lib/translations", () => ({
+// Only `getTranslation` is stubbed, and the rest of the module is kept: the
+// shell now renders the trail, which reads its labels from the real
+// `translations`. A stub that dropped them left `deriveTrail` naming nothing
+// and took the whole suite down with it — the same argument as the note above
+// about not stubbing `@/lib/routing`.
+vi.mock("@/lib/translations", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/translations")>()),
   getTranslation: () => ({
     title: "EthniAfrica",
     madeWithEmotion: "Créé avec émotion",
@@ -152,6 +158,51 @@ describe("PageLayout — header/main offset (ETNI-820: nav is never fixed, on or
 // margins) cancels only the horizontal gutter, so main's vertical padding
 // still pushed the hero's tinted band away from the nav border, leaving a
 // visible strip of page background between the two.
+/**
+ * The trail is the shell's, and this is where that is actually observed. The
+ * coverage test proves every route *reaches* a mount by reading imports; only
+ * a render proves the mount puts a trail on the page, above the content, on a
+ * fiche route that passes `hideHeader` as much as on a directory that does not.
+ */
+describe("PageLayout — the trail the shell owns", () => {
+  // @req REQ-115
+  it("renders the trail above main, and keeps it when the title band is hidden", () => {
+    mockPathname = getLocalizedRoute("fr", "countries");
+    render(
+      <PageLayout language="fr" hideHeader>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
+    expect(trail).toHaveTextContent("Pays");
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(
+      trail.compareDocumentPosition(main as Node) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  /**
+   * A fiche identifier is the one crumb the shell cannot name on its own, so
+   * the route hands it over rather than mounting a second trail beside it.
+   */
+  // @req REQ-115
+  it("prints the label the route passes for the identifier in the address", () => {
+    mockPathname = `${getLocalizedRoute("fr", "countries")}/BEN`;
+    render(
+      <PageLayout language="fr" hideHeader flushTop trailLabel="Bénin">
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
+    expect(trail).toHaveTextContent("Bénin");
+    expect(trail).not.toHaveTextContent("BEN,");
+  });
+});
+
 describe("PageLayout — flushTop", () => {
   // @req REQ-044
   it("keeps main's top padding by default", () => {
