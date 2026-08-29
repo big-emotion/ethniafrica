@@ -69,7 +69,7 @@ function CountryRow({ row }: { row: CountryFacetRow }) {
         className="flex min-h-11 items-baseline justify-between gap-3 rounded-afh-lg border border-afh-border bg-afh-surface px-4 py-3 text-afh-body text-afh-text"
       >
         <span>{row.label}</span>
-        <span className="font-afh-mono text-afh-caption text-afh-text-soft">
+        <span className="text-afh-caption text-afh-text-soft font-mono tabular-nums">
           {row.documentedPeopleCount}
           <span className="sr-only"> peuples documentés</span>
         </span>
@@ -137,6 +137,7 @@ export default async function PaysHubPage({
         <section className="afh-parchment-section">
           <FacetFilterBar
             action={getFacetRoute("fr", "countries")}
+            submitLabel="Appliquer"
             fields={[
               {
                 name: FAMILY_PARAM,
