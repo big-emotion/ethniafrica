@@ -29,25 +29,31 @@
  */
 
 /** The main product name displayed throughout the application */
+// @req REQ-019
 export const PRODUCT_NAME =
   process.env.NEXT_PUBLIC_PRODUCT_NAME || "EthniAfrica";
 
 /** The canonical domain for the application (without protocol) */
+// @req REQ-019
 export const CANONICAL_DOMAIN =
   process.env.NEXT_PUBLIC_CANONICAL_DOMAIN || "ethniafrica.com";
 
 /** Attribution string shown in footers and credits */
+// @req REQ-019
 export const ATTRIBUTION_STRING =
   process.env.NEXT_PUBLIC_ATTRIBUTION_STRING ||
   "Fait avec émotion pour l'Afrique";
 
 /** Open Graph title for social media previews */
+// @req REQ-019
 export const OG_TITLE = process.env.NEXT_PUBLIC_OG_TITLE || "EthniAfrica";
 
 /** Open Graph description for social media previews */
+// @req REQ-019
 export const OG_DESCRIPTION =
   process.env.NEXT_PUBLIC_OG_DESCRIPTION ||
   "Encyclopédie des peuples, langues et familles linguistiques d'Afrique";
 
 /** Default site locale for i18n */
+// @req REQ-019
 export const SITE_LOCALE = process.env.NEXT_PUBLIC_SITE_LOCALE || "fr";
