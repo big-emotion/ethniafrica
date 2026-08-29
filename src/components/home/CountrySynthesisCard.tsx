@@ -14,7 +14,7 @@ export interface CountrySynthesisCardProps {
  *
  * The card exists to show what a fiche holds rather than promise it, so it
  * prints real values or nothing at all: a line whose corpus field is empty
- * is dropped, never rendered as "—". Four cards each carrying a dash would
+ * is dropped, never rendered as "—". Three cards each carrying a dash would
  * advertise an empty atlas.
  *
  * "Anciens noms" leads the fact list on purpose. It is the line that makes a
@@ -88,9 +88,6 @@ export function CountrySynthesisCard({
 
       <style>{`
         .home-syn-card {
-          flex: none;
-          width: 272px;
-          scroll-snap-align: start;
           display: flex;
           flex-direction: column;
           gap: 12px;
@@ -131,8 +128,8 @@ export function CountrySynthesisCard({
           font-size: var(--afh-text-caption);
           line-height: 1.55;
           color: var(--afh-text-soft);
-          /* Chapeaux run 270-398 characters; five lines keeps four cards the
-             same height without cutting one mid-clause. */
+          /* Chapeaux run 270-398 characters; five lines keeps the three cards
+             the same height without cutting one mid-clause. */
           display: -webkit-box;
           -webkit-line-clamp: 5;
           -webkit-box-orient: vertical;
