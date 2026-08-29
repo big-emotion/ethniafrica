@@ -482,6 +482,56 @@ describe("transformTimeline", () => {
     const result = transformTimeline(undefined);
     expect(result.items).toHaveLength(0);
   });
+
+  // Most fiches write an era as prose, not as a "date : Nom" list. The prose
+  // is not a name, so it is served whole as the item's prose instead of being
+  // cut into a title — which is what put the same clipped sentence twice on
+  // every country fiche.
+  // @req REQ-092
+  it("keeps a prose era whole instead of clipping it into a title", () => {
+    const prose =
+      "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), peuples voltaiques (Sénoufo, Lobi, Koulango).";
+
+    const result = transformTimeline({ precolonial: prose });
+
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].prose).toBe(prose);
+    expect(result.items[0].name).toBeUndefined();
+  });
+
+  // @req REQ-092
+  it("names an era written as a dated list, and gives it no prose", () => {
+    const result = transformTimeline({
+      colonization: "1893-1960 : Colonie de Côte d'Ivoire.",
+    });
+
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].name).toBe("Colonie de Côte d'Ivoire");
+    expect(result.items[0].era).toBe("1893-1960");
+    expect(result.items[0].prose).toBeUndefined();
+  });
+
+  // @req REQ-092
+  it("clips nothing on any era of a real fiche", () => {
+    const result = transformTimeline(bfaCountry.historicalNames);
+
+    for (const item of result.items) {
+      expect(item.name ?? "").not.toMatch(/\.\.\.$/);
+      expect(item.prose ?? "").not.toMatch(/\.\.\.$/);
+    }
+  });
+
+  // Two prose eras used to collapse into one when both were untitled, because
+  // the de-duplication key read a name that no longer exists.
+  // @req REQ-092
+  it("keeps two distinct prose eras apart", () => {
+    const result = transformTimeline({
+      middleAges: "Développement des royaumes Akan.",
+      precolonial: "Mosaïque de royaumes et chefferies autonomes.",
+    });
+
+    expect(result.items).toHaveLength(2);
+  });
 });
 
 describe("transformPeoples", () => {
