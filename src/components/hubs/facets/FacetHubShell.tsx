@@ -63,9 +63,13 @@ export function FacetHubShell({
             past the fold on every screen and the trail was the only thing
             naming the page. It carries the h1 for all three facets, which is
             why none of the facet pages carries one of its own. */}
+        {/* No gutter of its own. Every block of the hub hangs off `main`'s
+            single padding, so the title, the switcher, the hint, the filters,
+            the cards and the pager all share one left edge — three different
+            ones is most of what made the reading read as a pasted-in panel. */}
         <header
           data-testid="facet-hub-head"
-          className="px-3 md:px-4 xl:px-5 pt-afh-base pb-afh-base flex flex-col gap-afh-xs"
+          className="pt-afh-base pb-afh-base flex flex-col gap-afh-xs"
         >
           <p className="font-[family-name:var(--afh-font-mono)] text-afh-caption uppercase tracking-[0.1em] text-afh-text-soft">
             {facet.eyebrow}

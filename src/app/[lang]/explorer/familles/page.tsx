@@ -187,13 +187,13 @@ export default async function FamillesHubPage({
         focused={chosenCountry as CountryId | null}
       />
 
-      <div className="afh-parchment">
+      <div className="afh-facet-reading">
         {/* The eyebrow and the name belong to the shell, which prints them
             above the globe — see `FacetDefinition.title`. What stays here is
             the count, because it answers the filters directly below it and
             changes with them. */}
-        <header className="afh-parchment-head">
-          <p className="afh-parchment-lede">
+        <header className="afh-facet-reading-head">
+          <p className="afh-facet-reading-lede">
             {formatCount(selection.length)} familles{" "}
             {chosenCountryName
               ? `documentées en ${chosenCountryName}`
@@ -224,8 +224,6 @@ export default async function FamillesHubPage({
             },
           ]}
         />
-
-        {families.length > 0 && pagination("top")}
 
         {families.length === 0 ? (
           <p className="mt-6 text-afh-body text-afh-text-soft">

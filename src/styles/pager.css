@@ -1,0 +1,118 @@
+/**
+ * The site's pager.
+ *
+ * Pills, no boxes: the control is a row of tappable targets over the page's
+ * own ground, so it reads as a footer to the reading rather than as a widget
+ * bolted under it. The only painted thing is the page being read.
+ *
+ * Every colour is a semantic token, so the control follows the night swap
+ * without knowing about it. Deliberately not `--accent`: outside an accent
+ * scope that property still holds the shadcn HSL triplet, and a pager that
+ * paints nothing on `/comprendre/anecdotes` is worse than one with no hue.
+ *
+ * Mobile first: 44px targets at every width, and the rail wraps rather than
+ * scrolls, because a horizontally scrolling pager hides its own end.
+ */
+
+.afh-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--afh-border);
+}
+
+.afh-pager-list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-pager-page,
+.afh-pager-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--afh-text-soft);
+  font-size: var(--afh-text-caption);
+  text-decoration: none;
+  transition: var(--afh-transition-colors);
+}
+
+/* Page numbers change width as the sequence passes 9 and 99; lining figures
+   keep the rail from shifting under the cursor between pages. */
+.afh-pager-page {
+  font-variant-numeric: tabular-nums;
+}
+
+.afh-pager-page:hover,
+.afh-pager-step:hover {
+  background: var(--afh-bg-warm);
+  color: var(--afh-text);
+}
+
+.afh-pager-page:focus-visible,
+.afh-pager-step:focus-visible {
+  outline: none;
+  box-shadow: var(--afh-ring-focus);
+  color: var(--afh-text);
+}
+
+/* The reader's own position, and the one thing here that carries a fill. */
+.afh-pager-page[aria-current="page"] {
+  background: var(--afh-text);
+  color: var(--afh-bg);
+  font-weight: 600;
+}
+
+.afh-pager-gap {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 24px;
+  height: 44px;
+  padding-bottom: 12px;
+  color: var(--afh-text-soft);
+  font-size: var(--afh-text-caption);
+  line-height: 1;
+}
+
+.afh-pager-step {
+  gap: 4px;
+}
+
+.afh-pager-chevron {
+  width: 16px;
+  height: 16px;
+}
+
+/* The steps are a convenience over the numbered rail, not the way through it.
+   Below the tablet breakpoint their labels are what pushes the rail onto a
+   second line — and a "Suivant" stranded on its own line under "Précédent"
+   is the worst of both, so on a phone they keep the chevron and lose the
+   word. The accessible name stays on the link either way. */
+@media (max-width: 479px) {
+  .afh-pager-step-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .afh-pager-step {
+    min-width: 44px;
+    padding: 0;
+  }
+}
