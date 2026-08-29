@@ -28,6 +28,16 @@ export interface AfricaTraceLoaderProps {
    */
   label: string;
   className?: string;
+  /**
+   * Render the figure as ornament rather than as the wait itself.
+   *
+   * `DidYouKnowLoader` already owns the live region that announces the wait,
+   * and nesting a second one inside it makes a screen reader arbitrate
+   * between two status messages for one navigation. Decorative drops the role
+   * and the label so the continent stays what it is there — the only thing
+   * still moving once the fact has finished unveiling.
+   */
+  decorative?: boolean;
 }
 
 /**
@@ -46,9 +56,14 @@ export interface AfricaTraceLoaderProps {
 export function AfricaTraceLoader({
   label,
   className,
+  decorative = false,
 }: AfricaTraceLoaderProps) {
   return (
-    <div className={cn("afh-atl", className)} role="status">
+    <div
+      className={cn("afh-atl", className)}
+      role={decorative ? undefined : "status"}
+      aria-hidden={decorative ? "true" : undefined}
+    >
       <svg
         className="afh-atl-figure"
         aria-hidden="true"
@@ -57,7 +72,7 @@ export function AfricaTraceLoader({
         <path className="afh-atl-coast" d={AFRICA_LANDMASS_PATH} />
         <path className="afh-atl-ink" d={AFRICA_LANDMASS_PATH} />
       </svg>
-      <span className="sr-only">{label}</span>
+      {!decorative && <span className="sr-only">{label}</span>}
       <style>{`
         .afh-atl {
           display: flex;
