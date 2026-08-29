@@ -975,6 +975,131 @@ describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
   });
 });
 
+/**
+ * Aiming at São Tomé, the Comoros or the Gambia on a globe framed for a
+ * continent is a coin flip: their marker is a few pixels wide and their
+ * neighbours' markers overlap it. The reader needs to be able to come closer,
+ * and the automatic framing tops out at 1.62x — too far for that.
+ *
+ * Zoom is asserted through the two controls rather than through a pose: the
+ * bounds are what the reader can observe, and they move only if a press
+ * actually reached the camera.
+ */
+describe("AtlasGlobe — coming closer to a small country (REQ-117)", () => {
+  function zoomControls() {
+    return {
+      in: screen.getByRole("button", { name: "Zoomer" }),
+      out: screen.getByRole("button", { name: "Dézoomer" }),
+    };
+  }
+
+  // @req REQ-117
+  it("offers both directions on the stage, beside the other view controls", () => {
+    const { container } = render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    const toolbar = container.querySelector("[data-atlas-toolbar]");
+    const { in: zoomIn, out: zoomOut } = zoomControls();
+    expect(toolbar?.contains(zoomIn)).toBe(true);
+    expect(toolbar?.contains(zoomOut)).toBe(true);
+  });
+
+  // @req REQ-117
+  it("cannot pull further out than the whole hemisphere, and says so", () => {
+    render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    // The continent scene rests undollied, so out is already at its floor.
+    expect(zoomControls().out).toBeDisabled();
+    expect(zoomControls().in).toBeEnabled();
+  });
+
+  // @req REQ-117
+  it("comes closer when the reader presses in, and can go back", () => {
+    render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    fireEvent.click(zoomControls().in);
+    expect(zoomControls().out).toBeEnabled();
+
+    fireEvent.click(zoomControls().out);
+    expect(zoomControls().out).toBeDisabled();
+  });
+
+  // @req REQ-117
+  it("stops at the reader's ceiling however long they keep pressing", () => {
+    render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    for (let press = 0; press < 20; press += 1) {
+      const zoomIn = zoomControls().in;
+      if ((zoomIn as HTMLButtonElement).disabled) break;
+      fireEvent.click(zoomIn);
+    }
+
+    expect(zoomControls().in).toBeDisabled();
+    expect(zoomControls().out).toBeEnabled();
+  });
+
+  // @req REQ-117
+  it("gives the resting framing back when the reader recentres", () => {
+    render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    fireEvent.click(zoomControls().in);
+    fireEvent.click(zoomControls().in);
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    expect(zoomControls().out).toBeDisabled();
+  });
+
+  // @req REQ-117
+  it("zooms from the keyboard too, without scrolling the page", () => {
+    const { container } = render(
+      <AtlasGlobe
+        overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+        missingMessage="n/a"
+        targetFacts={continentTargetFacts}
+      />
+    );
+
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    // fireEvent returns false once the handler has called preventDefault.
+    expect(fireEvent.keyDown(surface, { key: "+" })).toBe(false);
+    expect(zoomControls().out).toBeEnabled();
+
+    expect(fireEvent.keyDown(surface, { key: "-" })).toBe(false);
+    expect(zoomControls().out).toBeDisabled();
+  });
+});
+
 describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () => {
   // The legend and the toolbar were both `hidden` below 760px, so a phone
   // reader got a globe that moves under the finger with no statement of what

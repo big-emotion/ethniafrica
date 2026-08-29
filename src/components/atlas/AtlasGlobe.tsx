@@ -20,7 +20,10 @@ import { orderedByWeight, peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import {
   FLAT_MORPH,
   IDLE_POSE,
+  MIN_ZOOM,
+  READER_MAX_ZOOM,
   SPHERE_MORPH,
+  ZOOM_STEP,
   poseForTarget,
   type CameraPose,
 } from "@/lib/atlas/camera";
@@ -67,6 +70,30 @@ const LazyAtlasGlobeCanvas = dynamic(
     ),
   { ssr: false }
 );
+
+const TOOLBAR_BUTTON_CLASS =
+  "rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current";
+
+/**
+ * The zoom pair says its business with a glyph, so it is centred in a pill the
+ * width of the shortest lettered one rather than being padded to fit a word.
+ */
+const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} flex min-w-9 items-center justify-center disabled:cursor-not-allowed disabled:opacity-40`;
+
+/**
+ * The controls carry the stage's own ground rather than sitting on whatever
+ * happens to be behind them. Night ink over the parchment basemap is barely
+ * visible — « Recentrer » already disappeared whenever the map reached the
+ * bottom of the stage — and a zoom control makes that the normal case rather
+ * than the edge one: coming closer is precisely what fills the stage with
+ * parchment. Mixed rather than opaque, at the strength HomeGlobe's own pill
+ * uses, so the control reads as a control without punching a hole in the map.
+ */
+const TOOLBAR_BUTTON_STYLE: CSSProperties = {
+  color: "var(--afh-night-ink-2)",
+  backgroundColor:
+    "color-mix(in srgb, var(--afh-night-ground) 88%, transparent)",
+};
 
 function canCreateWebglContext(): boolean {
   try {
@@ -846,6 +873,17 @@ export function AtlasGlobe({
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
 
+  /**
+   * Whether either direction has anywhere left to go. Compared with a
+   * tolerance because the zoom a press lands on is a float: at the ceiling
+   * `clampZoom` returns the bound exactly, but a press away from it can leave
+   * the pose a rounding error short, and a control that stays live at its own
+   * limit is a control that lies about the limit.
+   */
+  const zoomBoundTolerance = 1e-6;
+  const atMinZoom = camera.pose.zoom <= MIN_ZOOM + zoomBoundTolerance;
+  const atMaxZoom = camera.pose.zoom >= READER_MAX_ZOOM - zoomBoundTolerance;
+
   const pose: CameraPose = {
     ...camera.pose,
     morph: flat ? FLAT_MORPH : SPHERE_MORPH,
@@ -908,6 +946,17 @@ export function AtlasGlobe({
         break;
       case "ArrowDown":
         camera.turnBy(0, KEY_STEP_RADIANS);
+        break;
+      // "=" is what an unshifted "+" reports on most layouts, and the numeric
+      // keypad reports "Add"/"Subtract" on none of them — both spellings are
+      // taken so the key the reader pressed is the key that answers.
+      case "+":
+      case "=":
+        camera.zoomBy(ZOOM_STEP);
+        break;
+      case "-":
+      case "_":
+        camera.zoomBy(1 / ZOOM_STEP);
         break;
       default:
         return;
@@ -1065,8 +1114,8 @@ export function AtlasGlobe({
             type="button"
             aria-pressed={chosenCountryId === null}
             onClick={() => setChosenCountryId(null)}
-            className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-            style={{ color: "var(--afh-night-ink-2)" }}
+            className={TOOLBAR_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
           >
             {wholeAreaLabel}
           </button>
@@ -1075,16 +1124,45 @@ export function AtlasGlobe({
           type="button"
           aria-pressed={flat}
           onClick={() => setFlat((current) => !current)}
-          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-          style={{ color: "var(--afh-night-ink-2)" }}
+          className={TOOLBAR_BUTTON_CLASS}
+          style={TOOLBAR_BUTTON_STYLE}
         >
           {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
         </button>
+        {/* Held together in their own row so the two directions never wrap
+            apart on a phone: a lone « + » with its « − » on the line below
+            reads as two unrelated controls. The glyphs are hidden from the
+            accessibility tree — a screen reader is told what the press does,
+            not which sign is printed on it. */}
+        <div className="flex gap-1">
+          <button
+            type="button"
+            aria-label="Dézoomer"
+            title="Dézoomer"
+            disabled={atMinZoom}
+            onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
+            className={ZOOM_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            <span aria-hidden="true">−</span>
+          </button>
+          <button
+            type="button"
+            aria-label="Zoomer"
+            title="Zoomer"
+            disabled={atMaxZoom}
+            onClick={() => camera.zoomBy(ZOOM_STEP)}
+            className={ZOOM_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            <span aria-hidden="true">+</span>
+          </button>
+        </div>
         <button
           type="button"
           onClick={recentre}
-          className="rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-          style={{ color: "var(--afh-night-ink-2)" }}
+          className={TOOLBAR_BUTTON_CLASS}
+          style={TOOLBAR_BUTTON_STYLE}
         >
           Recentrer
         </button>

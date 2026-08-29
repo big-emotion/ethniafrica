@@ -4,7 +4,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
 import {
   FLY_TO_DURATION_MS,
+  MIN_ZOOM,
   PITCH_LIMIT_RADIANS,
+  READER_MAX_ZOOM,
   type CameraPose,
 } from "@/lib/atlas/camera";
 
@@ -208,6 +210,83 @@ describe("useGlobeCamera — the reader's own turn (REQ-117)", () => {
     runUntilStill();
 
     expect(result.current.pose).toEqual(CHOSEN_COUNTRY);
+  });
+});
+
+describe("useGlobeCamera — the reader's own dolly (REQ-117)", () => {
+  // @req REQ-117
+  it("magnifies without turning, so a zoom does not move what is under the finger", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(2);
+    });
+
+    expect(result.current.pose.zoom).toBeCloseTo(ENTITY_FRAME.zoom * 2);
+    expect(result.current.pose.yaw).toBeCloseTo(ENTITY_FRAME.yaw);
+    expect(result.current.pose.pitch).toBeCloseTo(ENTITY_FRAME.pitch);
+    expect(queuedFrames.size).toBe(0);
+  });
+
+  // @req REQ-117
+  it("compounds presses instead of restarting from the frame's own zoom", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(1.5);
+    });
+    act(() => {
+      result.current.zoomBy(1.5);
+    });
+
+    expect(result.current.pose.zoom).toBeCloseTo(ENTITY_FRAME.zoom * 2.25);
+  });
+
+  // @req REQ-117
+  it("holds at the reader's ceiling and at the whole hemisphere", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(1000);
+    });
+    expect(result.current.pose.zoom).toBe(READER_MAX_ZOOM);
+
+    act(() => {
+      result.current.zoomBy(0.0001);
+    });
+    expect(result.current.pose.zoom).toBe(MIN_ZOOM);
+  });
+
+  // @req REQ-117
+  it("takes the globe out of a flight rather than being multiplied into it", () => {
+    const { result, rerender } = renderCamera();
+
+    rerender({ destination: CHOSEN_COUNTRY, reducedMotion: false });
+    runOneFrame(0);
+    runOneFrame(FLY_TO_DURATION_MS / 4);
+    expect(queuedFrames.size).toBe(1);
+
+    act(() => {
+      result.current.zoomBy(1.35);
+    });
+
+    expect(queuedFrames.size).toBe(0);
+    expect(result.current.pose.zoom).not.toBeCloseTo(CHOSEN_COUNTRY.zoom);
+  });
+
+  // @req REQ-117
+  it("gives the entity's own framing back when the reader recentres", () => {
+    const { result } = renderCamera();
+
+    act(() => {
+      result.current.zoomBy(3);
+    });
+    act(() => {
+      result.current.recentre();
+    });
+    runUntilStill();
+
+    expect(result.current.pose.zoom).toBeCloseTo(ENTITY_FRAME.zoom);
   });
 });
 
