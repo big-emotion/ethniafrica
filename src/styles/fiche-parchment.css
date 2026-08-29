@@ -354,9 +354,12 @@
   color: var(--afh-text);
 }
 
+/* Unlike the missing-field chip below it, this one keeps the surface's own
+   background — so its tone has to follow the theme rather than ride on a
+   tint it paints itself. It read at 2.2:1 on night before the ink existed. */
 .afh-chip[data-tier="unverified"] {
-  border-color: var(--afh-color-colonial);
-  color: var(--afh-color-colonial);
+  border-color: var(--afh-colonial-ink);
+  color: var(--afh-colonial-ink);
 }
 
 /* ── Callout ──────────────────────────────────────────────────────────
@@ -409,7 +412,7 @@
    an accent — it is the atlas's one marker for an imposed name, and it means
    the same thing on every surface. */
 .afh-naming-field[data-role="imposed"] {
-  border-left-color: var(--afh-color-colonial);
+  border-left-color: var(--afh-colonial-ink);
 }
 
 .afh-naming-label {
@@ -423,7 +426,7 @@
 }
 
 .afh-naming-field[data-role="imposed"] .afh-naming-label {
-  color: var(--afh-color-colonial);
+  color: var(--afh-colonial-ink);
 }
 
 /* Two classes, so it outranks `.afh-parchment-section p` — the autonym is the

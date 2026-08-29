@@ -52,13 +52,15 @@ describe("parchment layout — one continuous document", () => {
     expect(field).not.toMatch(/background/);
   });
 
-  // The imposed names keep the colonial ink they had as a filled block: the
+  // The imposed names keep the colonial tone they had as a filled block: the
   // distinction between the name borne and the names imposed is the doctrine
-  // of the section, and it survives the box being dropped.
+  // of the section, and it survives the box being dropped. Through the ink
+  // alias, because the block no longer paints a pale tint that would have
+  // carried the day tone into night with it.
   // @req REQ-115
   it("keeps the imposed names on the colonial ink", () => {
     expect(ruleBody('.afh-naming-field[data-role="imposed"]')).toMatch(
-      /var\(--afh-color-colonial\)/
+      /var\(--afh-colonial-ink\)/
     );
   });
 
