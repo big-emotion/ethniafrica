@@ -328,10 +328,10 @@ describe("the peoples facet — paging a filtered set", () => {
 
     render(await renderRoute({ famille: "FLG_NIGER_CONGO" }));
 
-    // One pager to the reading, at its foot — the head copy left with the
-    // pager rework, so a single step carries the address.
+    // Head and foot both carry the step, and both must carry the same address.
     const next = screen.getAllByRole("link", { name: /suivante/i });
-    expect(next).toHaveLength(1);
+    expect(next).toHaveLength(2);
+    expect(next[0].getAttribute("href")).toBe(next[1].getAttribute("href"));
     const href = next[0].getAttribute("href") ?? "";
     expect(href.startsWith(`${PEUPLES}?`)).toBe(true);
 
@@ -355,7 +355,7 @@ describe("the peoples facet — paging a filtered set", () => {
       0
     );
     expect(screen.getAllByRole("link", { name: /précédente/i })).toHaveLength(
-      1
+      2
     );
   });
 

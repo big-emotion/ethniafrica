@@ -291,42 +291,45 @@ export default async function PeuplesHubPage({
             </Link>
           </p>
         ) : (
-          <ul
-            aria-label="Peuples"
-            className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
-          >
-            {reading.peoples.map((people) => (
-              <li key={people.id} className="list-none">
-                {/* The whole row is one anchor. A card with an onClick reached
+          <>
+            {pagination("top")}
+            <ul
+              aria-label="Peuples"
+              className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
+            >
+              {reading.peoples.map((people) => (
+                <li key={people.id} className="list-none">
+                  {/* The whole row is one anchor. A card with an onClick reached
                     no keyboard and left the directory with zero followable
                     links to a fiche. */}
-                <Link
-                  href={getPeopleRoute("fr", people.id)}
-                  prefetch={false}
-                  className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
-                >
-                  <AutonymExonymHeading
-                    variant="compact"
-                    exonym={people.nameMain}
-                    autonym={selfAppellationOf(people)}
-                  />
-                  <div className="mt-2 flex flex-wrap items-center gap-2 text-afh-small text-afh-text-soft">
-                    {people.classificationStatus && (
-                      <ClassificationBadge
-                        status={people.classificationStatus}
-                      />
-                    )}
-                    {familyLabels.get(people.languageFamilyId) && (
-                      <span>{familyLabels.get(people.languageFamilyId)}</span>
-                    )}
-                    {people.currentCountries?.length > 0 && (
-                      <span>{people.currentCountries.join(" · ")}</span>
-                    )}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <Link
+                    href={getPeopleRoute("fr", people.id)}
+                    prefetch={false}
+                    className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
+                  >
+                    <AutonymExonymHeading
+                      variant="compact"
+                      exonym={people.nameMain}
+                      autonym={selfAppellationOf(people)}
+                    />
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-afh-small text-afh-text-soft">
+                      {people.classificationStatus && (
+                        <ClassificationBadge
+                          status={people.classificationStatus}
+                        />
+                      )}
+                      {familyLabels.get(people.languageFamilyId) && (
+                        <span>{familyLabels.get(people.languageFamilyId)}</span>
+                      )}
+                      {people.currentCountries?.length > 0 && (
+                        <span>{people.currentCountries.join(" · ")}</span>
+                      )}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
 
         {pagination("bottom")}

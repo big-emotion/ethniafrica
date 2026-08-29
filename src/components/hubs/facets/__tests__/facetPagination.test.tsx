@@ -14,8 +14,10 @@ import { getFacetRoute } from "@/lib/hubs/facets";
  * page number that no longer exists.
  */
 
+const PEUPLES = getFacetRoute("fr", "peoples");
+
 function href(page: number, size: number): string {
-  return `${getFacetRoute("fr", "peoples")}?p=${page}&t=${size}`;
+  return `${PEUPLES}?p=${page}&t=${size}`;
 }
 
 function renderPager(overrides: Record<string, unknown> = {}) {
@@ -173,15 +175,22 @@ describe("facet pagination", () => {
     }
   });
 
-  /** Every control is a 44px target, the minimum the rest of the atlas holds to. */
+  /**
+   * Every control is a 44px target, the minimum the rest of the atlas holds
+   * to. The size is asserted in two halves because it lives in two places:
+   * every control wears the site pager's class here, and `pager.css` is what
+   * that class measures — the other half is `pagerDress.test.ts` under
+   * `src/styles/__tests__`. Asserting the Tailwind literals instead pinned
+   * the implementation, and went red the day the dress moved into CSS
+   * without a single target changing size.
+   */
   // @req REQ-108
   it("sizes every control as a touch target", () => {
     const { container } = renderPager({ page: 20 });
     const controls = container.querySelectorAll("nav a");
     expect(controls.length).toBeGreaterThan(0);
     for (const control of controls) {
-      expect(control.className).toContain("min-h-11");
-      expect(control.className).toContain("min-w-11");
+      expect(control.className).toContain("afh-pager-page");
     }
   });
 });
