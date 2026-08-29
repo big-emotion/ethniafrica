@@ -242,11 +242,16 @@ describe("the peoples facet — where the filtering happens", () => {
    */
   // @req REQ-114
   it("names the folded narrowings on the line, each removable by address", async () => {
-    render(await renderRoute({ pays: "GHA", lettre: "K" }));
+    render(await renderRoute({ famille: "FLG_NIGER_CONGO", lettre: "K" }));
 
     expect(
-      screen.getByRole("link", { name: /retirer le filtre pays/i })
+      screen.getByRole("link", { name: /retirer le filtre famille/i })
     ).toBeInTheDocument();
+    // Pays gets no chip: it is the control on the line, in plain sight.
+    expect(
+      screen.queryByRole("link", { name: /retirer le filtre pays/i })
+    ).toBeNull();
+
     const dropLetter = screen.getByRole("link", {
       name: /retirer le filtre lettre/i,
     });
@@ -254,7 +259,7 @@ describe("the peoples facet — where the filtering happens", () => {
       (dropLetter.getAttribute("href") ?? "").split("?")[1]
     );
     expect(query.get("lettre")).toBeNull();
-    expect(query.get("pays")).toBe("GHA");
+    expect(query.get("famille")).toBe("FLG_NIGER_CONGO");
   });
 
   // @req REQ-106
@@ -267,6 +272,24 @@ describe("the peoples facet — where the filtering happens", () => {
     expect(
       within(form).getByRole("combobox", { name: /famille/i })
     ).toBeInTheDocument();
+  });
+
+  /**
+   * Pays is the first control, as it is the first facet and the first module
+   * on the Explorer hub. A reader narrowing 803 peoples reaches for the
+   * country they know before the linguistic family they are here to learn,
+   * so the order of the two selects follows the order of the axis above them
+   * rather than the order the query happens to take its arguments in.
+   */
+  // @req REQ-106
+  it("offers the country filter before the linguistic family", async () => {
+    render(await renderRoute());
+
+    const form = screen.getByTestId("facet-filter-bar");
+    const labels = within(form)
+      .getAllByRole("combobox")
+      .map((select) => select.getAttribute("name"));
+    expect(labels).toEqual(["pays", "famille"]);
   });
 });
 

@@ -145,18 +145,15 @@ export default async function PeuplesHubPage({
   );
 
   /**
-   * What the fold owes back while it is shut. Famille is not here: it is on
-   * the line, and a chip repeating a visible control would tell the reader
-   * nothing they cannot already see.
+   * What the fold owes back while it is shut. Pays is not here: it is on the
+   * line, and a chip repeating a visible control would tell the reader nothing
+   * they cannot already see.
    */
   const activeFilters: FacetActiveFilter[] = [];
-  if (filters.countryId) {
-    const countryLabel =
-      choices.countries.find((country) => country.id === filters.countryId)
-        ?.label ?? filters.countryId;
+  if (filters.familyId) {
     activeFilters.push({
-      label: `Pays : ${countryLabel}`,
-      removeHref: facetHref({ ...filters, countryId: null }, null),
+      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      removeHref: facetHref({ ...filters, familyId: null }, null),
     });
   }
   if (filters.letter) {
@@ -191,35 +188,35 @@ export default async function PeuplesHubPage({
           <p className="afh-parchment-lede">{lede}</p>
         </header>
 
-        {/* Famille is the axis that stays on the line: it is the one the globe
-            above cannot express. Country is folded because the map is already
-            a country control — `narrowing` below hands every drawn country the
-            same `?pays=` this select submits — and it is folded rather than
-            dropped because the map needs WebGL and a script, and this select
-            needs neither. */}
+        {/* Pays stays on the line and famille folds, which is the order the
+            axis above already runs in: a reader narrowing 803 peoples reaches
+            for the country they know before the linguistic family they are
+            here to learn. The globe applies the same `?pays=` this select
+            submits, and the select still earns the line — aiming at a shape
+            needs WebGL and a script, and this needs neither. */}
         <FacetFilterBar
           action={getFacetRoute("fr", "peoples")}
           className="mt-4"
           primaryField={{
-            name: PARAM.family,
-            label: "Famille linguistique",
-            anyLabel: "Toutes les familles",
-            options: choices.families.map((family) => ({
-              value: family.id,
-              label: family.label,
+            name: PARAM.country,
+            label: "Pays",
+            anyLabel: "Tous les pays",
+            options: choices.countries.map((country) => ({
+              value: country.id,
+              label: country.label,
             })),
-            value: filters.familyId,
+            value: filters.countryId,
           }}
           advancedFields={[
             {
-              name: PARAM.country,
-              label: "Pays",
-              anyLabel: "Tous les pays",
-              options: choices.countries.map((country) => ({
-                value: country.id,
-                label: country.label,
+              name: PARAM.family,
+              label: "Famille linguistique",
+              anyLabel: "Toutes les familles",
+              options: choices.families.map((family) => ({
+                value: family.id,
+                label: family.label,
               })),
-              value: filters.countryId,
+              value: filters.familyId,
             },
           ]}
           advancedSlot={{
