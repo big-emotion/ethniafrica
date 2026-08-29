@@ -871,8 +871,8 @@ export function AtlasGlobe({
     setWebglSupported(canCreateWebglContext());
   }, []);
 
-  const stageSize = useStageSize(stage);
-  const stageAspect = stageSize?.aspect ?? null;
+  const measuredStage = useStageSize(stage);
+  const stageAspect = measuredStage?.aspect ?? null;
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
   /**
@@ -1217,7 +1217,7 @@ export function AtlasGlobe({
         // Unmeasured, nothing is thinned: a guessed stage width would drop
         // countries on arithmetic rather than on crowding, and the first
         // measurement is one frame away.
-        stageSize ? (CHOICE_MARK_SEPARATION_PX / stageSize.widthPx) * 100 : 0,
+        measuredStage ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100 : 0,
         stageAspect ?? STAGE_ASPECT
       );
 
