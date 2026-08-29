@@ -7,6 +7,10 @@
   "nameOriginActor": "Le nom \"Cabo Verde\" a été donné par les navigateurs portugais et génois qui ont découvert les îles en 1456-1462. Le nom fait référence au Cap Vert continental (Sénégal), près duquel les îles sont situées. Le nom officiel international a été normalisé en \"Cabo Verde\" en 2013 par les autorités cap-verdiennes.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie portugaise du Cap-Vert (1462-1975)",
+        "Cap-Vert (jusqu'en 2013)"
+      ],
       "antiquity": "Les îles du Cap-Vert étaient inhabitées avant l'arrivée des Européens. Aucune population autochtone connue. Pas de nom pour les îles.",
       "middleAges": "Les îles étaient inconnues des Européens jusqu'au XVe siècle. Pas de nom pour les îles.",
       "precolonial": "Les îles étaient inhabitées. Découverte par les navigateurs portugais et génois en 1456-1462. Nom donné : \"Ilhas de Cabo Verde\" (Îles du Cap Vert), en référence au Cap Vert continental (Sénégal).",

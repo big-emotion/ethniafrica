@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Égypte\" a été donné par les Grecs. Le nom arabe \"Miṣr\" est utilisé depuis la conquête arabe (VIIe siècle).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Kemet (égyptien ancien, « la terre noire »)",
+        "Aigyptos (grec)",
+        "Miṣr (arabe, toujours en usage)"
+      ],
       "antiquity": "Kemet (terre noire, ancien nom égyptien), Aigyptos (grec), Aegyptus (latin). Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.).",
       "middleAges": "Miṣr (arabe), Égypte (français). Domination arabe (VIIe siècle), puis turque (XVIe siècle).",
       "precolonial": "Miṣr (nom arabe), Égypte ottomane (1517-1882), État semi-autonome sous les Mamelouks puis les Ottomans.",

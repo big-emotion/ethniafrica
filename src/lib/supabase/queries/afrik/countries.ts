@@ -9,6 +9,7 @@ import type { Country } from "@/types/afrik";
 /**
  * Get all AFRIK countries with optional pagination
  */
+// @req REQ-019
 export async function getAllAfrikCountries(
   page?: number,
   perPage?: number
@@ -31,6 +32,7 @@ export async function getAllAfrikCountries(
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    summary: row.summary || undefined,
     etymology: row.etymology || undefined,
     nameOriginActor: row.name_origin_actor || undefined,
     content: row.content || {},
@@ -42,6 +44,7 @@ export async function getAllAfrikCountries(
 /**
  * Get a single AFRIK country by ISO code
  */
+// @req REQ-019
 export async function getAfrikCountryById(
   iso: string
 ): Promise<Country | null> {
@@ -66,6 +69,7 @@ export async function getAfrikCountryById(
   return {
     id: data.id,
     nameFr: data.name_fr,
+    summary: data.summary || undefined,
     etymology: data.etymology || undefined,
     nameOriginActor: data.name_origin_actor || undefined,
     content: data.content || {},
@@ -77,6 +81,7 @@ export async function getAfrikCountryById(
 /**
  * Search AFRIK countries using Postgres FTS on search_vector (websearch, french).
  */
+// @req REQ-019
 export async function searchAfrikCountries(query: string): Promise<Country[]> {
   const supabase = createServerClient();
 
@@ -94,6 +99,68 @@ export async function searchAfrikCountries(query: string): Promise<Country[]> {
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    summary: row.summary || undefined,
+    etymology: row.etymology || undefined,
+    nameOriginActor: row.name_origin_actor || undefined,
+    content: row.content || {},
+    createdAt: row.created_at ? new Date(row.created_at) : undefined,
+    updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
+  }));
+}
+
+/**
+ * The ids of every country in the corpus, and nothing else.
+ *
+ * The home's synthesis rail needs four countries out of fifty-four, drawn
+ * at random. Reading them through getAllAfrikCountries would pull fifty-four
+ * JSONB content blobs across the wire to render four cards — the ids cost a
+ * single narrow column instead, and the four rows that win are fetched by
+ * getAfrikCountriesByIds.
+ */
+// @req REQ-019
+export async function getAfrikCountryIds(): Promise<string[]> {
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from("afrik_countries")
+    .select("id")
+    .order("id");
+
+  if (error) {
+    logger.error("Error fetching AFRIK country ids", error);
+    throw error;
+  }
+
+  return (data || []).map((row) => row.id);
+}
+
+/**
+ * Fetch a handful of countries by id, in one round trip.
+ *
+ * Callers pass a short list — the rail passes four. A `.in()` filter is
+ * measured in URL characters rather than in identifiers, so this is not a
+ * general-purpose bulk read; keep the list small.
+ */
+// @req REQ-019
+export async function getAfrikCountriesByIds(
+  ids: string[]
+): Promise<Country[]> {
+  if (ids.length === 0) return [];
+
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from("afrik_countries")
+    .select("*")
+    .in("id", ids);
+
+  if (error) {
+    logger.error("Error fetching AFRIK countries by id", error);
+    throw error;
+  }
+
+  return (data || []).map((row) => ({
+    id: row.id,
+    nameFr: row.name_fr,
+    summary: row.summary || undefined,
     etymology: row.etymology || undefined,
     nameOriginActor: row.name_origin_actor || undefined,
     content: row.content || {},

@@ -7,6 +7,11 @@
   "nameOriginActor": "Les Ottomans ont nommé la région \"Al-Djazair\" au XVIe siècle. Le nom français \"Algérie\" a été officialisé par l'administration coloniale française en 1839.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Numidie (Antiquité)",
+        "Régence d'Alger (1516-1830)",
+        "Algérie française (1830-1962)"
+      ],
       "antiquity": "Le territoire correspondait à la Numidie (royaumes numides), à la Maurétanie césarienne (région côtière), et à des territoires contrôlés par Carthage puis par Rome. Les peuples autochtones étaient les Numides (Berbères).",
       "middleAges": "Région du Maghreb central, contrôlée par diverses dynasties berbères et arabes (Rustamides, Fatimides, Zirides, Hammadides, Almohades, Zianides). Nom arabe \"Al-Djazair\" apparaît au Moyen Âge.",
       "precolonial": "Régence d'Alger (1516-1830), État ottoman semi-autonome dirigé par des deys. Le territoire était appelé \"Al-Djazair\" par les Ottomans et les populations locales.",

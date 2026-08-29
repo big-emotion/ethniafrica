@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom vient du royaume précolonial du Burundi (Royaume du Burundi), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Afrique orientale allemande (1885-1916)",
+        "Ruanda-Urundi (1916-1962)",
+        "Royaume du Burundi (1962-1966)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.",
       "middleAges": "Développement du royaume du Burundi à partir du XVIe siècle. Le royaume s'appelait \"Burundi\" ou \"Uburundi\".",
       "precolonial": "Royaume du Burundi (XVIe - XIXe siècles) avec une monarchie centralisée. Le nom \"Burundi\" était utilisé pour désigner le royaume et son territoire.",

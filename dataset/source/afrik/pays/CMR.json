@@ -7,6 +7,11 @@
   "nameOriginActor": "Le nom \"Cameroun\" provient des navigateurs portugais qui ont exploré la côte camerounaise au XVe siècle. Le terme \"Rio dos Camarões\" (Rivière des crevettes) a été donné au fleuve Wouri et a ensuite été généralisé pour désigner l'ensemble du territoire. Les colonisateurs allemands, français et britanniques ont adapté ce nom.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Kamerun (allemand, 1884-1916)",
+        "Cameroun français et Cameroons britanniques (1916-1960)",
+        "République unie du Cameroun (1972-1984)"
+      ],
       "antiquity": "Le territoire actuel du Cameroun était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaume Bamoun, chefferies Bamiléké, etc.).",
       "middleAges": "Développement de royaumes et chefferies : royaume Bamoun, chefferies Bamiléké, royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa (côtiers), peuples forestiers, pygmées Baka. Les Portugais utilisaient le terme \"Rio dos Camarões\" pour désigner la région du fleuve Wouri.",

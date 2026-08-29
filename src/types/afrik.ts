@@ -71,6 +71,12 @@ export interface Country {
   id: CountryId; // ISO 3166-1 alpha-3 (IMMUTABLE)
   nameFr: string;
   nameOfficial?: string;
+  /**
+   * The chapeau: what a reader takes away if they read nothing else.
+   * It restates the fiche and never adds to it, which is why it carries no
+   * sources of its own — a summary that introduced a claim would need them.
+   */
+  summary?: string;
   etymology?: string;
   nameOriginActor?: string; // Person/people/administration who named it
 
@@ -322,6 +328,16 @@ export interface PeopleContent {
 // ==========================================
 
 export interface HistoricalNamesSection {
+  /**
+   * The names themselves, as a list.
+   *
+   * The five period fields below are prose — they narrate how a territory
+   * was designated, which is not the same thing as naming it. A surface
+   * that wants to print "Haute-Volta (1919-1960)" as a chip cannot get it
+   * out of a paragraph, so the list is held separately. Every entry is
+   * lifted from that same prose and adds nothing to it.
+   */
+  formerNames?: string[];
   antiquity?: string;
   middleAges?: string;
   precolonial?: string;
