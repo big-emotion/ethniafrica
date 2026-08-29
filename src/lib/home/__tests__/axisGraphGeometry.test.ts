@@ -7,7 +7,6 @@ import {
   BASE_TILT_X,
   LAYOUT_BY_AXIS,
   MAX_PANEL_WIDTH,
-  MODULE_CARD_GUTTER,
   MODULE_CARD_HEIGHT,
   MODULE_CARD_LINES,
   MODULE_CARD_LINE_HEIGHT,
@@ -22,6 +21,9 @@ import {
   layoutNodes,
   nearestEdge,
   projectNode,
+  ringFitsPanel,
+  ringRadius,
+  sceneBox,
   sceneNodes,
   type GraphNode,
 } from "@/lib/home/axisGraphGeometry";
@@ -210,6 +212,37 @@ const PANEL_WIDTHS = [720, 812, 912, 976, MAX_PANEL_WIDTH];
 const SCENE_TILT = { x: BASE_TILT_X, y: 0 };
 
 /**
+ * Whether the panel draws this scene at this size at all. A ring the width
+ * cannot hold folds to the column instead, so asserting a scene's spacing on
+ * one would be asserting it on a scene no reader is ever shown.
+ */
+const drawnAsScene = (
+  layout: Parameters<typeof layoutNodes>[0],
+  count: number,
+  panelWidth: number
+) => layout !== "ring" || ringFitsPanel(count, panelWidth);
+
+/**
+ * Where the render loop actually puts each card: the nodes the width can
+ * hold, projected in the box that layout is drawn in — which is the panel
+ * for the arc and the pair, and a square for the ring.
+ */
+const placeScene = (
+  layout: Parameters<typeof layoutNodes>[0],
+  count: number,
+  panelWidth: number
+) => {
+  const panel = {
+    width: panelWidth,
+    height: panelHeightFor(layout, count, panelWidth),
+  };
+  const scene = sceneBox(layout, count, panel);
+  return sceneNodes(layout, count, panelWidth).map((node) =>
+    projectNode(node, SCENE_TILT, scene)
+  );
+};
+
+/**
  * The pairs of cards that would actually overlap on screen: two boxes of
  * MODULE_CARD_WIDTH by MODULE_CARD_HEIGHT, placed where the render loop
  * places them, at the height the panel is given for that width.
@@ -219,11 +252,7 @@ const overlappingPairs = (
   count: number,
   panelWidth: number
 ) => {
-  const height = panelHeightFor(layout, count, panelWidth);
-  const panel = { width: panelWidth, height };
-  const projected = sceneNodes(layout, count, panelWidth).map((node) =>
-    projectNode(node, SCENE_TILT, panel)
-  );
+  const projected = placeScene(layout, count, panelWidth);
   const overlaps: Array<[number, number]> = [];
 
   for (let i = 0; i < projected.length; i += 1) {
@@ -350,9 +379,76 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
     expect(panelHeightFor("arc", 4, 720)).toBeGreaterThanOrEqual(
       panelHeightFor("arc", 4, MAX_PANEL_WIDTH)
     );
-    expect(panelHeightFor("ring", 6, 720)).toBeGreaterThanOrEqual(
+    // The ring reads the width the other way round, and says so: it stays a
+    // circle whatever the panel, so a narrower panel holds a smaller one and
+    // needs less height for it — where the arc, pushed apart sideways, pays
+    // for the same narrowness in height.
+    expect(panelHeightFor("ring", 6, 720)).toBeLessThanOrEqual(
       panelHeightFor("ring", 6, MAX_PANEL_WIDTH)
     );
+    expect(ringRadius(6, 720)).toBeLessThanOrEqual(
+      ringRadius(6, MAX_PANEL_WIDTH)
+    );
+  });
+
+  /**
+   * What the reader complained about, in the terms it is true in: a unit
+   * circle projected with x against the panel's half-width and y against its
+   * half-height is not a circle on screen. At 1140x600 the side nodes sat
+   * 410px out and the top node 197px — close enough to the 240px-tall opened
+   * card that it printed over it — so the three peers of an axis were drawn
+   * as one near neighbour and two distant ones.
+   *
+   * Asserted before the tilt, because the tilt is the part of the ellipse
+   * that is meant: it is how the scene reads as depth rather than as a flat
+   * dial.
+   */
+  // @req REQ-114
+  it("keeps the ring a circle on screen, so no module sits nearer the centre than its peers", () => {
+    for (const width of PANEL_WIDTHS) {
+      for (let count = 2; count <= 6; count += 1) {
+        const panel = {
+          width,
+          height: panelHeightFor("ring", count, width),
+        };
+        const scene = sceneBox("ring", count, panel);
+        const spans = sceneNodes("ring", count, width).map((node) => {
+          const placed = projectNode(node, noTilt, scene);
+          return Math.hypot(placed.x, placed.y);
+        });
+
+        for (const span of spans) expect(span).toBeCloseTo(spans[0], 5);
+        expect(spans[0]).toBeCloseTo(ringRadius(count, width), 5);
+      }
+    }
+  });
+
+  /**
+   * The one size the circle cannot be drawn at, named so the guard above
+   * cannot quietly grow to cover a case it was never meant to excuse. Three
+   * modules on a 720px panel is it: their cards carry 117px either side of
+   * nodes the width cannot push past 242px out, and the opened card claims
+   * the first 132. Explorer's four fit, at every width the scene runs at.
+   */
+  // @req REQ-114
+  it("says so when a panel is too narrow to hold the ring at all", () => {
+    expect(ringFitsPanel(3, 720)).toBe(false);
+    expect(ringFitsPanel(3, MAX_PANEL_WIDTH)).toBe(true);
+
+    for (const width of PANEL_WIDTHS) {
+      expect(ringFitsPanel(4, width)).toBe(true);
+    }
+  });
+
+  // Only the ring is drawn in a box of its own. The arc runs the panel's
+  // width by design, and squaring its box would halve the trajectory it
+  // exists to write.
+  // @req REQ-114
+  it("draws every other layout in the panel's own box", () => {
+    const panel = { width: MAX_PANEL_WIDTH, height: 560 };
+    for (const layout of ["arc", "pair", "column"] as const) {
+      expect(sceneBox(layout, 4, panel)).toEqual(panel);
+    }
   });
 
   /**
@@ -366,6 +462,7 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
     for (const width of PANEL_WIDTHS) {
       for (const layout of ["ring", "arc", "pair"] as const) {
         for (let count = 2; count <= 6; count += 1) {
+          if (!drawnAsScene(layout, count, width)) continue;
           expect(overlappingPairs(layout, count, width)).toEqual([]);
         }
       }
@@ -383,16 +480,15 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
     for (const width of PANEL_WIDTHS) {
       for (const layout of ["ring", "arc", "pair"] as const) {
         for (let count = 2; count <= 6; count += 1) {
+          if (!drawnAsScene(layout, count, width)) continue;
           const height = panelHeightFor(layout, count, width);
-          const panel = { width, height };
-          for (const node of sceneNodes(layout, count, width)) {
-            const placed = projectNode(node, SCENE_TILT, panel);
+          for (const placed of placeScene(layout, count, width)) {
             const sideways =
               Math.abs(placed.x) + (MODULE_CARD_WIDTH * placed.scale) / 2;
             const vertical =
               Math.abs(placed.y) + (MODULE_CARD_HEIGHT * placed.scale) / 2;
             expect(sideways).toBeLessThanOrEqual(width / 2 + 0.5);
-            expect(vertical).toBeLessThanOrEqual(height / 2);
+            expect(vertical).toBeLessThanOrEqual(height / 2 + 0.5);
           }
         }
       }
@@ -427,10 +523,8 @@ describe("panelHeightFor — the room a scene needs for the count it was handed"
     for (const width of PANEL_WIDTHS) {
       for (const layout of ["ring", "arc", "pair"] as const) {
         for (let count = 2; count <= 6; count += 1) {
-          const height = panelHeightFor(layout, count, width);
-          const panel = { width, height };
-          for (const node of sceneNodes(layout, count, width)) {
-            const placed = projectNode(node, SCENE_TILT, panel);
+          if (!drawnAsScene(layout, count, width)) continue;
+          for (const placed of placeScene(layout, count, width)) {
             const apart =
               Math.abs(placed.x) -
               (OPENED_CARD_WIDTH + MODULE_CARD_WIDTH * placed.scale) / 2;
