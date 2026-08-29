@@ -1,12 +1,14 @@
-import type { Ring } from "@/lib/atlas/overlays";
+import type { LonLat, Ring } from "@/lib/atlas/overlays";
 import { ringCentroid } from "@/lib/atlas/overlays";
 
 /**
- * True surface area of a lon/lat ring, and how much Mercator exaggerates it
- * (REQ-120). Two games rest on this: « La taille qu'on vous a cachée » asks
- * which of two countries is really larger, and « Vraie taille » lays an
- * African outline over a non-African one. Both are arguments about the
- * projection, so neither may measure area *in* the projection.
+ * What the sphere measures (REQ-120): the true area of a lon/lat ring, how
+ * much Mercator exaggerates it, and the distance between two points.
+ *
+ * All three belong together because they share one premise — the surface is
+ * a sphere, and the projection is the subject rather than the medium. A
+ * planar shoelace on lon/lat, or a flat Pythagoras between two coordinates,
+ * would carry the very distortion these measurements exist to expose.
  */
 
 const EARTH_RADIUS_KM = 6371.0088;
@@ -51,4 +53,31 @@ export function mercatorInflation(ring: Ring): number {
   const latitude = Math.max(-85, Math.min(85, ringCentroid(ring).lat));
   const cosine = Math.cos(toRadians(latitude));
   return 1 / (cosine * cosine);
+}
+
+/**
+ * Distance along the sphere between two lon/lat points, in kilometres.
+ *
+ * Haversine rather than the spherical law of cosines: the two agree to the
+ * metre at continental range, and haversine keeps its precision for the short
+ * hops the scale facts also use — Accra to Abidjan is 424 km, where the
+ * cosine form starts losing digits to floating point.
+ *
+ * The claim this pays for is the one the areas cannot make. Mercator barely
+ * lies *inside* Africa — the inflation factors run from 1.00 to 1.46 — so a
+ * reader can accept that Africa is large and still not feel it. A distance
+ * they already own, set against one they do not, is what makes it land.
+ */
+// @req REQ-120
+export function greatCircleKm(from: LonLat, to: LonLat): number {
+  const deltaLat = toRadians(to.lat - from.lat);
+  const deltaLon = toRadians(to.lon - from.lon);
+
+  const haversine =
+    Math.sin(deltaLat / 2) ** 2 +
+    Math.cos(toRadians(from.lat)) *
+      Math.cos(toRadians(to.lat)) *
+      Math.sin(deltaLon / 2) ** 2;
+
+  return 2 * EARTH_RADIUS_KM * Math.asin(Math.min(1, Math.sqrt(haversine)));
 }
