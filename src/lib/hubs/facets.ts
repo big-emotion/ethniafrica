@@ -1,5 +1,5 @@
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
-import type { DirectoryEntityType } from "@/components/views/DirectoryHero";
+import type { DirectoryEntityType } from "@/lib/hubs/directoryAccent";
 import type { Language } from "@/types/shared";
 
 /**
@@ -30,6 +30,18 @@ export interface FacetDefinition {
   label: string;
   /** What `PageLayout` names the section in the header. */
   sectionName: string;
+  /**
+   * The sentence that separates the facet from the filters.
+   *
+   * They collide in the reader's language, not by accident: "pays" names a
+   * facet *and* a filter, so a reader on the peoples facet is offered a
+   * country control and has every reason to read it as a way to switch. The
+   * two do different things — the facet decides what the list is made of, the
+   * filter decides how much of it is shown — and nothing on the page said so.
+   * Each facet says it in its own terms, because "filtrer par pays" means
+   * something different on each one.
+   */
+  filterHint: string;
 }
 
 // @req REQ-114
@@ -40,6 +52,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "people",
     label: "Peuples",
     sectionName: "Peuples",
+    filterHint:
+      "La liste est faite de peuples. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les peuples que ce pays documente, pas le pays lui-même.",
   },
   {
     key: "families",
@@ -47,6 +61,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "language-family",
     label: "Familles",
     sectionName: "Familles linguistiques",
+    filterHint:
+      "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
   },
   {
     key: "countries",
@@ -54,6 +70,8 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "country",
     label: "Pays",
     sectionName: "Pays",
+    filterHint:
+      "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
   },
 ] as const;
 
@@ -92,6 +110,26 @@ export const getFacetFromRoute = (pathname: string): FacetKey | null => {
   }
   return null;
 };
+
+/**
+ * The facet a page type is, or null.
+ *
+ * The navigation asks this, and it must not answer it from a list of its own.
+ * Peoples, families and countries were three sibling modules before they became
+ * three facets of one hub; a menu that still offers them as three destinations
+ * is describing the site as it was. `FACETS` is where that changed, so it is
+ * where the menu reads it — a fourth facet, or one promoted back to a module,
+ * moves the menu with it.
+ *
+ * It answers with the facet rather than a boolean because the caller needs the
+ * short label too: "Peuples", not "Les peuples d'Afrique". A module names a
+ * destination and has to say which one among all of them; a facet names a state
+ * of the page above it, and the full title there reads as a fourth destination
+ * again.
+ */
+// @req REQ-114
+export const getFacetByPage = (page: PageType): FacetDefinition | null =>
+  FACETS.find((facet) => facet.page === page) ?? null;
 
 /**
  * A filter value the reader actually chose, or null.
