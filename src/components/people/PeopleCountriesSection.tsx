@@ -52,7 +52,7 @@ export function PeopleCountriesSection({
               <Link
                 href={countryHref(row.country)}
                 className="text-afh-caption font-bold font-mono w-[40px] shrink-0 hover:underline"
-                style={{ color: "var(--country-terracotta)" }}
+                style={{ color: "var(--country-terracotta-ink)" }}
               >
                 {row.country}
               </Link>

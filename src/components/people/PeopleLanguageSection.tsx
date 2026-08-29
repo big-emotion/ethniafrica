@@ -31,7 +31,7 @@ export function PeopleLanguageSection({
           <Link
             href={getFamilyRoute("fr", data.languageFamilyId)}
             className="people-section-body font-semibold hover:underline"
-            style={{ color: "var(--country-terracotta)" }}
+            style={{ color: "var(--country-terracotta-ink)" }}
           >
             {data.languageFamilyName ?? data.languageFamilyId}
           </Link>

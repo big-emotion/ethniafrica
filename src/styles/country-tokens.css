@@ -35,6 +35,11 @@
   --country-green-bg: var(--afh-color-green-bg);
   --country-terracotta: var(--afh-color-terracotta);
   --country-terracotta-bg: var(--afh-color-terracotta-bg);
+  /* Text ink beside the fill, because the two have different floors. The fill
+     is non-text content at 3:1; a link set in it is text at 4.5:1, and the
+     fiche's reading ground is --afh-bg-warm rather than the page parchment,
+     where raw terracotta measures 4.39:1. The -ink ramp is mixed for type. */
+  --country-terracotta-ink: var(--afh-cat-terre-ink);
   --country-earth: var(--afh-color-earth);
   --country-earth-bg: var(--afh-color-earth-bg);
   --country-colonial: var(--afh-color-colonial);
