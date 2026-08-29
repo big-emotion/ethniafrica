@@ -390,6 +390,22 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   });
 
   // @req REQ-114
+  it("tells the route interstitial its destination opens here", () => {
+    // The overlay reads clicks off the document and cannot tell a card that
+    // cancels its own navigation from Next's Link, which also cancels the
+    // native one. Without the marker it covered the home for fifteen seconds
+    // while the panel deployed behind it.
+    renderAxes();
+
+    for (const axis of ACCESS_MODES) {
+      expect(screen.getByTestId(`access-axis-${axis}`)).toHaveAttribute(
+        "data-opens-in-place",
+        "true"
+      );
+    }
+  });
+
+  // @req REQ-114
   it("deploys the modules of the axis that was opened, and no others", async () => {
     renderAxes();
 

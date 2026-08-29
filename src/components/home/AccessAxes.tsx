@@ -296,6 +296,11 @@ export function AccessAxes({
                 if (element) cardRefs.current[axis.id] = element;
               }}
               data-testid={`access-axis-${axis.id}`}
+              // The click never leaves the home, and the route interstitial
+              // has no other way to know: it reads clicks off the document,
+              // where a card cancelling its own navigation and Next's Link
+              // cancelling the native one look identical.
+              data-opens-in-place="true"
               data-available={available ? "true" : "false"}
               data-state={open ? "open" : undefined}
               aria-expanded={open}

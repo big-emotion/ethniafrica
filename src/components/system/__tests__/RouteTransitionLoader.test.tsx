@@ -102,6 +102,18 @@ describe("isPageReplacingNavigation — which clicks are about to replace the pa
   });
 
   // @req REQ-104
+  it("ignores a click on a link whose destination opens on this page", () => {
+    // The home's three entry cards are anchors to their hub for a crawler,
+    // but a click deploys the modules around the card instead (REQ-114).
+    // The overlay cannot tell that from the click alone — Next's own Link
+    // calls preventDefault on every internal navigation too — so the card
+    // says so itself.
+    expect(intent(anchorTo(COUNTRIES, { "data-opens-in-place": "true" }))).toBe(
+      false
+    );
+  });
+
+  // @req REQ-104
   it("ignores a click something else has already handled", () => {
     const anchor = anchorTo(COUNTRIES);
 
@@ -175,6 +187,19 @@ describe("RouteTransitionLoader (REQ-104 — the wait a server boundary never se
     render(<RouteTransitionLoader />);
 
     clickWith(anchorTo("#sources"));
+
+    expect(
+      screen.queryByTestId("route-transition-loader")
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-104
+  it("stays down for a link that opens its destination on this page", () => {
+    // Raising here strands the reader: the pathname never changes, so the
+    // overlay only lifts on its own escape hatch, fifteen seconds later.
+    render(<RouteTransitionLoader />);
+
+    clickWith(anchorTo(COUNTRIES, { "data-opens-in-place": "true" }));
 
     expect(
       screen.queryByTestId("route-transition-loader")
