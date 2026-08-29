@@ -603,52 +603,53 @@ export function pickDidYouKnowFact(
 }
 
 /**
- * How many anecdotes a page of the feed holds.
+ * The bank in a drawn order, every fact once before any fact twice.
  *
- * Each one is a headline, two paragraphs, its chips and its sources — a
- * screenful on mobile. Eight is about as far as a reader scrolls before the
- * page stops being a list and becomes a wall.
+ * The anecdotes page reads one card at a time, so the draw has to be a
+ * shuffled deck rather than a roll of the dice: drawing independently each
+ * time a reader presses « Suivant » hands them the same anecdote twice
+ * within a handful of turns, and a reader who sees a repeat concludes the
+ * bank is smaller than it is. Exhausting a permutation guarantees the
+ * twenty-fourth press shows the twenty-fourth fact.
+ *
+ * `avoidLeading` covers the seam between two permutations — without it, the
+ * last card of one deck can be the first card of the next, which is the one
+ * repeat a reader is certain to notice.
  */
 // @req REQ-113
-export const ANECDOTES_PER_PAGE = 8;
+export function shuffleDidYouKnowDeck(
+  random: () => number = Math.random,
+  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS,
+  avoidLeading: string | null = null
+): DidYouKnowFact[] {
+  const deck = [...facts];
 
-export interface DidYouKnowPage {
-  facts: DidYouKnowFact[];
-  /** Clamped into range, so it is always a page that exists. */
-  pageNumber: number;
-  pageCount: number;
+  for (let index = deck.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(random() * (index + 1));
+    [deck[index], deck[target]] = [deck[target], deck[index]];
+  }
+
+  if (deck.length > 1 && avoidLeading !== null && deck[0].id === avoidLeading) {
+    [deck[0], deck[1]] = [deck[1], deck[0]];
+  }
+
+  return deck;
 }
 
 /**
- * One page of the feed, in the bank's authored order.
+ * The fact a shared URL names, or null when it names one the bank dropped.
  *
- * Deliberately not rotated the way the home's deck is. The band varies its
- * first card because a returning reader meets it unasked; this page is asked
- * for, is linked to, and is meant to be cited — an order that changed per
- * request would move a fact between pages under a reader who is scrolling,
- * and hand two people different content behind the same URL.
- *
- * A page number out of range is clamped rather than refused: `?page=0` and
- * `?page=99` are the shapes a hand-typed URL and a stale link take, and a
- * 404 there tells the reader the anecdotes are gone when they are not.
+ * A link a reader posted last month has to survive the anecdote being
+ * renamed or retired; the page falls back to a fresh draw rather than to a
+ * 404, because the address still points at a page that has something to say.
  */
 // @req REQ-113
-export function paginateDidYouKnowFacts(
-  requestedPage: number,
-  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS,
-  perPage: number = ANECDOTES_PER_PAGE
-): DidYouKnowPage {
-  const pageCount = Math.max(1, Math.ceil(facts.length / perPage));
-  const safePage = Number.isFinite(requestedPage)
-    ? Math.min(pageCount, Math.max(1, Math.trunc(requestedPage)))
-    : 1;
-  const start = (safePage - 1) * perPage;
-
-  return {
-    facts: facts.slice(start, start + perPage),
-    pageNumber: safePage,
-    pageCount,
-  };
+export function findDidYouKnowFact(
+  factId: string | null | undefined,
+  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
+): DidYouKnowFact | null {
+  if (!factId) return null;
+  return facts.find((fact) => fact.id === factId) ?? null;
 }
 
 /**

@@ -1,12 +1,11 @@
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import userEvent from "@testing-library/user-event";
+import { beforeEach, describe, expect, it } from "vitest";
 
 import { AnecdoteCard } from "@/components/anecdotes/AnecdoteCard";
-import { AnecdotesPagination } from "@/components/anecdotes/AnecdotesPagination";
+import { AnecdoteReader } from "@/components/anecdotes/AnecdoteReader";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
-import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
-
-const BASE_PATH = getLocalizedRoute("fr", "anecdotes");
+import { getCountryRoute } from "@/lib/routing";
 
 const SOURCED: DidYouKnowFact = {
   id: "cameroun",
@@ -31,6 +30,16 @@ const UNSOURCED: DidYouKnowFact = {
   entities: [{ kind: "country", id: "LBR", label: "Liberia" }],
   tier: "referenced",
 };
+
+const TOMBOUCTOU: DidYouKnowFact = {
+  id: "tombouctou",
+  headline: "Personne ne sait ce que veut dire Tombouctou.",
+  body: ["Quatre étymologies au moins se disputent la ville."],
+  entities: [{ kind: "country", id: "MLI", label: "Mali" }],
+  tier: "unverified",
+};
+
+const DECK = [SOURCED, UNSOURCED, TOMBOUCTOU];
 
 describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
   // @req REQ-113
@@ -65,75 +74,169 @@ describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
     ).toHaveAttribute("href", getCountryRoute("fr", "CMR"));
   });
 
-  // The feed is meant to be linked into, not just scrolled.
+  // The page is meant to be linked into, not just scrolled.
   // @req REQ-113
   it("anchors the fact under its own id", () => {
     const { container } = render(<AnecdoteCard language="fr" fact={SOURCED} />);
 
     expect(container.querySelector("#cameroun")).not.toBeNull();
   });
+
+  // A picture asserts « this is what that was ». CC BY and CC BY-SA are only
+  // satisfied when the reader can see who it is by.
+  // @req REQ-113
+  it("prints the credit of the picture it shows", () => {
+    render(<AnecdoteCard language="fr" fact={SOURCED} />);
+
+    expect(screen.getByText(/Kondah/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("img", { name: /Pirogues alignées/ })
+    ).toBeInTheDocument();
+  });
 });
 
-describe("AnecdotesPagination — pages a reader can share (REQ-113)", () => {
+describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
   // @req REQ-113
-  it("gives page one the bare path so the module has one canonical URL", () => {
+  it("shows a single anecdote and keeps the rest of the deck out of sight", () => {
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    expect(screen.getByText(SOURCED.headline)).toBeInTheDocument();
+    expect(screen.queryByText(UNSOURCED.headline)).toBeNull();
+    expect(screen.queryByText(TOMBOUCTOU.headline)).toBeNull();
+  });
+
+  // The whole point of walking a shuffled deck rather than drawing each time.
+  // @req REQ-113
+  it("reaches every anecdote of the deck before showing one twice", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    const seen: string[] = [];
+    for (let turn = 0; turn < DECK.length; turn += 1) {
+      seen.push(screen.getByRole("heading", { level: 2 }).textContent ?? "");
+      await user.click(screen.getByRole("button", { name: "Suivant" }));
+    }
+
+    expect(new Set(seen).size).toBe(DECK.length);
+  });
+
+  // @req REQ-113
+  it("opens on the anecdote a shared link names", () => {
     render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={2} pageCount={3} />
+      <AnecdoteReader language="fr" deck={DECK} initialFactId="tombouctou" />
     );
 
-    expect(screen.getByRole("link", { name: "Page 1 sur 3" })).toHaveAttribute(
-      "href",
-      BASE_PATH
+    expect(screen.getByText(TOMBOUCTOU.headline)).toBeInTheDocument();
+  });
+
+  // @req REQ-113
+  it("falls back to the top of the deck when the link names a retired fact", () => {
+    render(
+      <AnecdoteReader language="fr" deck={DECK} initialFactId="disparu" />
     );
-    expect(screen.getByRole("link", { name: "Page 2 sur 3" })).toHaveAttribute(
-      "href",
-      `${BASE_PATH}?page=2`
+
+    expect(screen.getByText(SOURCED.headline)).toBeInTheDocument();
+  });
+
+  // The mark is the reader's own and never leaves their browser, so the only
+  // thing that can prove it was kept is the browser.
+  // @req REQ-113
+  it("keeps the reader's mark on the anecdote they found interesting", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    const mark = screen.getByRole("button", {
+      name: "Cette anecdote est intéressante",
+    });
+    expect(mark).toHaveAttribute("aria-pressed", "false");
+
+    await user.click(mark);
+
+    expect(
+      screen.getByRole("button", { name: "Anecdote retenue" })
+    ).toHaveAttribute("aria-pressed", "true");
+    expect(window.localStorage.getItem("afh.anecdotes.marked")).toContain(
+      "cameroun"
     );
   });
 
   // @req REQ-113
-  it("marks the page being read", () => {
-    render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={2} pageCount={3} />
-    );
+  it("lets the reader take the mark back off", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
 
-    expect(screen.getByRole("link", { name: "Page 2 sur 3" })).toHaveAttribute(
-      "aria-current",
-      "page"
+    await user.click(
+      screen.getByRole("button", { name: "Cette anecdote est intéressante" })
     );
+    await user.click(screen.getByRole("button", { name: "Anecdote retenue" }));
+
+    expect(
+      screen.getByRole("button", { name: "Cette anecdote est intéressante" })
+    ).toHaveAttribute("aria-pressed", "false");
+  });
+
+  // An objection that stays on the reader's machine is not an objection.
+  // @req REQ-113
+  it("sends a contestation to the signalement form, naming the anecdote", () => {
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    expect(
+      screen.getByRole("link", { name: "Je conteste cette anecdote" })
+    ).toHaveAttribute("href", "/fr/report-error?anecdote=cameroun");
+  });
+
+  // happy-dom has no share sheet, which is the desktop case the fallback
+  // exists for.
+  // @req REQ-113
+  it("offers network links when the browser has no share sheet", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    await user.click(screen.getByRole("button", { name: "Partager" }));
+
+    for (const network of ["X", "Facebook", "WhatsApp", "LinkedIn"]) {
+      expect(screen.getByRole("link", { name: network })).toHaveAttribute(
+        "href",
+        expect.stringContaining("a%3Dcameroun")
+      );
+    }
+    expect(
+      screen.getByRole("button", { name: "Copier le lien" })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-113
-  it("drops the step that would leave the range", () => {
-    const first = render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={1} pageCount={3} />
-    );
-    expect(screen.queryByRole("link", { name: "Page précédente" })).toBeNull();
-    first.unmount();
+  it("closes the share row when the reader turns to another anecdote", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
 
-    render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={3} pageCount={3} />
-    );
-    expect(screen.queryByRole("link", { name: "Page suivante" })).toBeNull();
-  });
+    await user.click(screen.getByRole("button", { name: "Partager" }));
+    await user.click(screen.getByRole("button", { name: "Suivant" }));
 
-  // Three dead controls telling the reader there is more, when there is not.
-  // @req REQ-113
-  it("renders no pager at all for a single page", () => {
-    const { container } = render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={1} pageCount={1} />
-    );
-
-    expect(container).toBeEmptyDOMElement();
+    expect(screen.queryByRole("link", { name: "Facebook" })).toBeNull();
   });
 
   // @req REQ-113
-  it("lists one link per page", () => {
-    render(
-      <AnecdotesPagination basePath={BASE_PATH} pageNumber={1} pageCount={3} />
-    );
+  it("announces the anecdote it has turned to", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
 
-    const nav = screen.getByRole("navigation", { name: "Pages d'anecdotes" });
-    expect(within(nav).getAllByRole("listitem")).toHaveLength(3);
+    await user.click(screen.getByRole("button", { name: "Suivant" }));
+
+    expect(
+      screen.getByText(`Anecdote 2 sur 3 : ${UNSOURCED.headline}`)
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-113
+  it("says the bank is empty rather than framing an empty card", () => {
+    render(<AnecdoteReader language="fr" deck={[]} />);
+
+    expect(screen.getByText(/Aucune anecdote/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Suivant" })).toBeNull();
   });
 });

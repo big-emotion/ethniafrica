@@ -50,6 +50,23 @@ export interface DidYouKnowProps {
  * surface between the reader and the sentence. The controls are the only
  * thing the deck adds to what the reader already saw.
  *
+ * It has one budget the other sections of the home do not: **the whole fact
+ * and the controls that turn it must fit one viewport.** A deck whose arrows
+ * sit below the fold is not a deck — the reader meets a paragraph, never
+ * learns there are twenty-three more, and the bank goes back to being
+ * invisible. The bank grew from six facts to twenty-four and the band went
+ * with it, to 893px against a 800px screen, so the measures here are set
+ * against that budget rather than against the page's usual rhythm: tighter
+ * padding, one rung down on the title, the lede at body size, and the
+ * counter moved between the arrows. Measured after: 707px at 1280×720,
+ * 800px at 390×844. A 667px-tall viewport (iPhone SE) still overflows; the
+ * longest fact cannot be made to fit there without shrinking the type below
+ * what the scale allows.
+ *
+ * The picture and the four controls on `/comprendre/anecdotes` stay on that
+ * page. The band is met, not sought: a reader who did not ask for an
+ * anecdote is not the reader to ask for a reaction to one.
+ *
  * The chips remain the point. Without them the deck is a cul-de-sac — good
  * stories with nowhere to go — and the reader who is finally curious has to
  * go find the search box themselves.
@@ -210,6 +227,12 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
                 </ul>
               ) : null}
 
+              {/* The counter sits between the arrows rather than on a line of
+                  its own: the band has to fit a viewport whole, controls
+                  included, and a second centred line of mono type costs
+                  twenty-six pixels to say what one already says. */}
+              <p className="home-dyk-count">{`${current + 1} / ${total}`}</p>
+
               <button
                 type="button"
                 className="home-dyk-arrow"
@@ -219,8 +242,6 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
                 <span className="sr-only">Fait suivant</span>
               </button>
             </div>
-
-            <p className="home-dyk-count">{`${current + 1} / ${total}`}</p>
           </>
         ) : null}
 
@@ -235,24 +256,43 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
       </div>
 
       <style>{`
+        /* The band has one size constraint the other sections do not: a
+           reader must be able to see the whole fact *and* the controls that
+           turn it without scrolling, otherwise the deck reads as a static
+           paragraph and nobody presses anything. Every measure below is set
+           against that budget rather than against the page's usual rhythm,
+           which is why this section is tighter than its neighbours. */
         .home-dyk {
           background: var(--afh-bg-warm);
           border-top: 1px solid var(--afh-border);
           border-bottom: 1px solid var(--afh-border);
-          padding: 46px 22px 36px;
+          padding: 18px 20px 16px;
           width: 100vw;
           margin-left: calc(50% - 50vw);
           margin-right: calc(50% - 50vw);
         }
         .home-dyk-inner {
-          max-width: 62ch;
+          /* Wider than the reading measure the other sections take: four
+             lines of centred display type is where the band overflowed, and
+             a few more characters per line removes one of them. */
+          max-width: 68ch;
           margin: 0 auto;
           text-align: center;
         }
         /* The eyebrow and the title are the shared unit's now
            (src/styles/section-heading.css). Only the spacing is local. */
         .home-dyk-heading {
-          margin-bottom: 16px;
+          margin-bottom: 8px;
+        }
+        /* The one place the section-heading unit is overridden, and the only
+           section that has grounds to: everywhere else the title is a fixed
+           label three words long, here it is the fact itself and runs to
+           ninety characters. Held at --afh-text-h1 the longest fact took four
+           lines and pushed the controls off the screen, which cost the reader
+           the deck. One rung down it takes three and the band fits. */
+        .home-dyk-heading .afh-section-heading-title {
+          font-size: var(--afh-text-h2);
+          max-width: 32ch;
         }
 
         /* Every fact in one cell: the deck is as tall as its longest fact
@@ -288,19 +328,32 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
         }
 
         .home-dyk p {
-          margin: 0 0 14px;
+          margin: 0 0 10px;
           font-size: var(--afh-text-body);
-          line-height: 1.65;
+          line-height: 1.55;
           color: var(--afh-text-soft);
         }
+        /* The lede keeps its ink but not its size. Set a step above the body
+           it cost the band six lines' worth of leading on the longest fact,
+           and the contrast between --afh-text and --afh-text-soft already
+           does the work of telling the reader which paragraph carries the
+           claim. The anecdotes page, which has a screen to itself, keeps the
+           larger lede. */
         .home-dyk .home-dyk-lede {
-          font-size: var(--afh-text-lead);
           color: var(--afh-text);
         }
 
+        /* The last paragraph's bottom margin sits between the prose and the
+           chips, which already declare their own top margin — two gaps for
+           one seam, and ten of the pixels the band did not have. Selected by
+           what follows it rather than by :last-of-type, which would land on
+           the tier: the tier is a <p> too, and is the real last one. */
+        .home-dyk-slide > p:has(+ .home-dyk-chips) {
+          margin-bottom: 0;
+        }
         .home-dyk-chips {
           list-style: none;
-          margin: 24px 0 0;
+          margin: 12px 0 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
@@ -342,9 +395,7 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           opacity: 0.72;
         }
         .home-dyk-tier {
-          margin: 22px 0 0;
-          padding-top: 16px;
-          border-top: 1px solid var(--afh-border);
+          margin: 10px 0 0;
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
@@ -360,7 +411,7 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          margin-top: 18px;
+          margin-top: 12px;
         }
         /* 44px of tappable area on every control, whatever it looks like. */
         .home-dyk-arrow {
@@ -415,7 +466,7 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           .home-dyk-pip::before { transition: none; }
         }
         .home-dyk-all {
-          margin: 18px 0 0;
+          margin: 10px 0 0;
           text-align: center;
           font-size: var(--afh-text-caption);
         }
@@ -429,17 +480,28 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           color: var(--afh-text);
         }
         .home-dyk-count {
-          margin: 8px 0 0;
-          text-align: center;
+          margin: 0;
+          min-width: 5ch;
           font-family: var(--font-mono, ui-monospace, monospace);
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.06em;
           color: var(--afh-fg-muted);
         }
 
+        /* Under 430px the same fact costs three or four more lines, and the
+           band went back over the fold on a 390px phone. The measures below
+           buy those lines back without touching the type sizes, which are
+           already at the bottom of their clamps here. */
+        @media (max-width: 430px) {
+          .home-dyk { padding: 12px 16px 12px; }
+          .home-dyk p { line-height: 1.5; }
+          .home-dyk-chip { padding: 5px 12px 5px 9px; }
+          .home-dyk-controls { margin-top: 10px; }
+        }
+
         @media (min-width: 720px) {
-          .home-dyk { padding: 64px 40px 48px; }
-          .home-dyk-controls { gap: 14px; margin-top: 26px; }
+          .home-dyk { padding: 18px 40px 14px; }
+          .home-dyk-controls { gap: 14px; margin-top: 12px; }
         }
       `}</style>
     </section>

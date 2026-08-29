@@ -5,10 +5,11 @@ import { describe, expect, it } from "vitest";
 
 import {
   DID_YOU_KNOW_FACTS,
+  findDidYouKnowFact,
   orderDidYouKnowDeck,
-  paginateDidYouKnowFacts,
   pickDidYouKnowFact,
   pickNextDidYouKnowFact,
+  shuffleDidYouKnowDeck,
   type DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
 
@@ -177,48 +178,69 @@ describe("pickDidYouKnowFact — the home band's draw", () => {
   });
 });
 
-describe("paginateDidYouKnowFacts — the anecdotes feed", () => {
-  const bank = Array.from({ length: 9 }, (_, index) => fact(`f${index}`));
+describe("shuffleDidYouKnowDeck — the order the anecdotes page reads in", () => {
+  const bank = [fact("a"), fact("b"), fact("c"), fact("d")];
 
+  // The whole reason the page shuffles a deck instead of rolling a die: a
+  // reader pressing « Suivant » must reach the last fact of the bank before
+  // meeting the first one again.
   // @req REQ-113
-  it("cuts the bank into pages of the size asked for", () => {
-    const page = paginateDidYouKnowFacts(1, bank, 4);
+  it("serves every fact once before serving any of them twice", () => {
+    const drawn = shuffleDidYouKnowDeck(() => 0.42, bank);
 
-    expect(page.facts.map((f) => f.id)).toEqual(["f0", "f1", "f2", "f3"]);
-    expect(page.pageCount).toBe(3);
+    expect(drawn).toHaveLength(bank.length);
+    expect(drawn.map((f) => f.id).sort()).toEqual(["a", "b", "c", "d"]);
   });
 
   // @req REQ-113
-  it("leaves the last page short rather than padding it", () => {
-    const page = paginateDidYouKnowFacts(3, bank, 4);
-
-    expect(page.facts.map((f) => f.id)).toEqual(["f8"]);
+  it("draws the order the random it was given dictates", () => {
+    expect(
+      shuffleDidYouKnowDeck(() => 0, [fact("a"), fact("b"), fact("c")]).map(
+        (f) => f.id
+      )
+    ).toEqual(["b", "c", "a"]);
   });
 
-  // The feed keeps the authored order so a fact does not move between pages
-  // between two requests — a URL a reader shares has to hold still.
+  // The seam between two permutations is the one repeat a reader is certain
+  // to notice, because it lands on consecutive presses.
   // @req REQ-113
-  it("hands the same page back for the same page number", () => {
-    expect(paginateDidYouKnowFacts(2, bank, 4).facts).toEqual(
-      paginateDidYouKnowFacts(2, bank, 4).facts
-    );
-  });
+  it("never opens on the fact the reader has just been shown", () => {
+    const reshuffled = shuffleDidYouKnowDeck(() => 0, bank, "c");
 
-  // A hand-typed or stale page number is the common case, not an attack; a
-  // 404 there would tell the reader the anecdotes are gone.
-  // @req REQ-113
-  it("clamps a page number outside the range instead of refusing it", () => {
-    expect(paginateDidYouKnowFacts(0, bank, 4).pageNumber).toBe(1);
-    expect(paginateDidYouKnowFacts(99, bank, 4).pageNumber).toBe(3);
-    expect(paginateDidYouKnowFacts(Number.NaN, bank, 4).pageNumber).toBe(1);
+    expect(reshuffled[0].id).not.toBe("c");
+    expect(reshuffled.map((f) => f.id).sort()).toEqual(["a", "b", "c", "d"]);
   });
 
   // @req REQ-113
-  it("reports one empty page rather than none when the bank is empty", () => {
-    const page = paginateDidYouKnowFacts(1, [], 4);
+  it("hands back the only fact it has rather than nothing to avoid a repeat", () => {
+    const single = [fact("a")];
 
-    expect(page.facts).toEqual([]);
-    expect(page.pageCount).toBe(1);
+    expect(
+      shuffleDidYouKnowDeck(() => 0, single, "a").map((f) => f.id)
+    ).toEqual(["a"]);
+  });
+
+  // @req REQ-113
+  it("shuffles an empty bank into an empty deck", () => {
+    expect(shuffleDidYouKnowDeck(() => 0, [])).toEqual([]);
+  });
+});
+
+describe("findDidYouKnowFact — the fact a shared link names", () => {
+  const bank = [fact("a"), fact("b")];
+
+  // @req REQ-113
+  it("resolves the id a link carries", () => {
+    expect(findDidYouKnowFact("b", bank)?.id).toBe("b");
+  });
+
+  // A link posted before a fact was retired must land on the page, not on a
+  // 404 — the address still points at something worth reading.
+  // @req REQ-113
+  it("returns nothing for an id the bank no longer holds", () => {
+    expect(findDidYouKnowFact("gone", bank)).toBeNull();
+    expect(findDidYouKnowFact(null, bank)).toBeNull();
+    expect(findDidYouKnowFact(undefined, bank)).toBeNull();
   });
 });
 
