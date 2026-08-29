@@ -16,7 +16,7 @@ import {
   footprintRevealEase,
   footprintStrokeOpacity,
 } from "@/lib/atlas/footprintStyle";
-import type { AtlasOverlay } from "@/lib/atlas/overlays";
+import type { AtlasOverlay, PeopleFieldArea } from "@/lib/atlas/overlays";
 import type { CountryId } from "@/types/afrik";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
 import {
@@ -306,16 +306,28 @@ export function AtlasGlobeCanvas({
 
     let draw: () => void = () => {};
 
-    if (overlay.kind === "people-field") {
+    /**
+     * The radial field, as a layer rather than a branch.
+     *
+     * A people fiche is made of nothing else, so there it is the whole
+     * overlay. The continent scene draws it *over* its frame — the frame
+     * locates, the field is the only thing carrying a count — which is why
+     * this had to stop being the other half of an if/else. Returns null when
+     * the program will not compile, so a caller can fall back rather than
+     * paint nothing.
+     */
+    const createFieldLayer = (
+      areas: PeopleFieldArea[]
+    ): ((camera: CameraPose) => void) | null => {
       const program = createProgram(
         gl,
         FIELD_VERTEX_SHADER,
         FIELD_FRAGMENT_SHADER
       );
-      if (!program) return;
+      if (!program) return null;
       gl.useProgram(program);
 
-      const field = buildPointField(overlay.areas);
+      const field = buildPointField(areas);
       const positionBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, field.positions, gl.STATIC_DRAW);
@@ -346,13 +358,10 @@ export function AtlasGlobeCanvas({
       const uMorph = gl.getUniformLocation(program, "uMorph");
       const uScale = gl.getUniformLocation(program, "uScale");
 
-      draw = () => {
-        const camera = poseRef.current;
-        // paintBase clears, so the overlay must not clear again after it.
-        paintBase(camera);
-        // The sphere layer left its own program and buffers bound, so the
-        // field's have to be restated every frame rather than once at
-        // setup.
+      return (camera: CameraPose) => {
+        // The sphere layer — and, on the continent, the frame drawn after it —
+        // left their own program and buffers bound, so the field's have to be
+        // restated every frame rather than once at setup.
         gl.useProgram(program);
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
         gl.enableVertexAttribArray(aSpherePos);
@@ -386,6 +395,36 @@ export function AtlasGlobeCanvas({
         );
         gl.uniform3f(uColorRgb, r, g, b);
         gl.drawArrays(gl.POINTS, 0, field.vertexCount);
+      };
+    };
+
+    /**
+     * The areas the field layer draws, on whichever overlay carries one.
+     *
+     * The continent's weight is a share of the best-documented country, not a
+     * population share — a different quantity reaching the same encoding,
+     * which is exactly what `populationShare` normalising to 1 lets it do.
+     */
+    const fieldAreas: PeopleFieldArea[] | null =
+      overlay.kind === "people-field"
+        ? overlay.areas
+        : overlay.kind === "continent-field"
+          ? overlay.areas.map((area) => ({
+              countryId: area.countryId,
+              center: area.center,
+              populationShare: area.documentedPeopleShare,
+            }))
+          : null;
+
+    if (overlay.kind === "people-field") {
+      const drawField = fieldAreas && createFieldLayer(fieldAreas);
+      if (!drawField) return;
+
+      draw = () => {
+        const camera = poseRef.current;
+        // paintBase clears, so the overlay must not clear again after it.
+        paintBase(camera);
+        drawField(camera);
       };
     } else {
       const program = createProgram(
@@ -454,6 +493,12 @@ export function AtlasGlobeCanvas({
             fan: fillsRings ? buildRingFan(ring) : null,
             loop: buildRingLineLoop(ring),
           }));
+
+      // Built here, drawn last: on the continent the frame is reference and
+      // the field is the claim, so the counts sit over the outlines rather
+      // than under them. Null on every other boundary overlay, which carries
+      // no field at all.
+      const drawField = fieldAreas ? createFieldLayer(fieldAreas) : null;
 
       const fanBuffer = gl.createBuffer();
       const fanFlatBuffer = gl.createBuffer();
@@ -539,6 +584,8 @@ export function AtlasGlobeCanvas({
           gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
           gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
         });
+
+        drawField?.(camera);
       };
     }
 

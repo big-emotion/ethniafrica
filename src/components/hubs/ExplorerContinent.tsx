@@ -2,14 +2,18 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
 import { buildContinentOverlay } from "@/lib/atlas/overlays";
-import { continentTargetFacts } from "@/lib/atlas/targets";
+import {
+  buildCountryPickerTargets,
+  continentTargetFacts,
+} from "@/lib/atlas/targets";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { AtlasTarget } from "@/lib/atlas/targets";
+import type { CountryId } from "@/types/afrik";
 
 /**
  * Explorer's scene (REQ-114/REQ-116/REQ-117): the continent, with a radial
@@ -31,12 +35,20 @@ export interface ExplorerContinentProps {
    * the server ships counts rather than geometry.
    */
   peopleCountsByCountry: Record<string, number> | undefined;
+  /**
+   * Every country the corpus documents — what the reader may *choose*, which
+   * is wider than what the field draws. `buildContinentOverlay` marks twelve;
+   * without this list the other forty-two are unreachable from the scene
+   * rather than merely unmarked, which is the gap the facets already close.
+   */
+  countryIds: readonly string[];
   missingMessage: string;
 }
 
 // @req REQ-116
 export function ExplorerContinent({
   peopleCountsByCountry,
+  countryIds,
   missingMessage,
 }: ExplorerContinentProps) {
   const stage = useRef<HTMLDivElement>(null);
@@ -72,6 +84,17 @@ export function ExplorerContinent({
 
   const overlay = buildContinentOverlay(peopleCountsByCountry);
 
+  // Carries the counts as well as the ids, so a country beyond the twelve the
+  // field draws opens on its own figure rather than on "0 peuples documentés".
+  const pickerTargets = useMemo(
+    () =>
+      buildCountryPickerTargets(
+        countryIds as CountryId[],
+        peopleCountsByCountry
+      ),
+    [countryIds, peopleCountsByCountry]
+  );
+
   // The marker opens the panel; the panel is where the fiche link lives, so
   // a mis-hit at 430px costs a dismissal rather than a navigation and a
   // back-trip (REQ-117). Only the caller knows a country has a fiche, which
@@ -104,6 +127,7 @@ export function ExplorerContinent({
       {visible ? (
         <AtlasGlobe
           overlay={overlay}
+          pickerTargets={pickerTargets}
           missingMessage={missingMessage}
           targetFacts={factsWithFiche}
         />

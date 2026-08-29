@@ -21,6 +21,20 @@ vi.mock("@/api/v2/services/continentPeopleCounts", () => ({
   getContinentPeopleCounts: getContinentPeopleCountsMock,
 }));
 
+// The scene's choosable set: every country the corpus documents, which is
+// wider than the twelve the radial field draws.
+const { getCountryIndexMock } = vi.hoisted(() => ({
+  getCountryIndexMock: vi.fn(async () => [
+    { id: "NGA" },
+    { id: "TZA" },
+    { id: "LSO" },
+  ]),
+}));
+
+vi.mock("@/api/v2/services/countryService", () => ({
+  getCountryIndex: getCountryIndexMock,
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="page-layout">{children}</div>

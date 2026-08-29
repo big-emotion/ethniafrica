@@ -170,13 +170,29 @@ export function continentTargetFacts(target: AtlasTarget): {
  * The name comes from the asset because the corpus stores the declared name:
  * `nameFr` on a country fiche is "Republique algerienne democratique et
  * populaire (...)", which is what a reader gets when the picker reads it.
+ *
+ * `peopleCountsByCountry` is the continent scene's own field, and it is
+ * needed here because the offered set is wider than the drawn one: only the
+ * twelve best-documented countries carry an area, while all fifty-four are
+ * choosable. Reading the count off the areas would leave the other forty-two
+ * announcing "0 peuples documentés" — the corpus denying what it holds.
+ * Absent, every target simply carries no count, which is what a fiche picker
+ * wants.
  */
 // @req REQ-117
 export function buildCountryPickerTargets(
-  countryIds: readonly CountryId[]
+  countryIds: readonly CountryId[],
+  peopleCountsByCountry?: Record<CountryId, number>
 ): AtlasTarget[] {
   return countryIds
-    .map((countryId) => targetForCountry(countryId))
+    .map((countryId) => {
+      const target = targetForCountry(countryId);
+      if (!target || !peopleCountsByCountry) return target;
+      return {
+        ...target,
+        documentedPeopleCount: peopleCountsByCountry[countryId] ?? 0,
+      };
+    })
     .filter((target): target is AtlasTarget => target !== null)
     .sort((first, second) => first.nameFr.localeCompare(second.nameFr, "fr"));
 }

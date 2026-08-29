@@ -115,9 +115,16 @@ export function FacetGlobeIsland({
 
   const overlay = buildContinentOverlay(peopleCountsByCountry);
 
+  // Fed the counts as well as the ids: the drawn field covers twelve countries
+  // and the offered set all fifty-four, so a target taking its count from the
+  // overlay would have the other forty-two announce "0 peuples documentés".
   const pickerTargets = useMemo(
-    () => buildCountryPickerTargets(countryIds as CountryId[]),
-    [countryIds]
+    () =>
+      buildCountryPickerTargets(
+        countryIds as CountryId[],
+        peopleCountsByCountry
+      ),
+    [countryIds, peopleCountsByCountry]
   );
 
   /**
