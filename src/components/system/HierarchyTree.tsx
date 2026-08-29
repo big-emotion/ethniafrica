@@ -351,13 +351,32 @@ export function HierarchyTree({
 
     const labelContent = (
       <>
-        <span lang={node.labelLang} className="truncate">
+        {expandable ? (
+          <span
+            aria-hidden="true"
+            data-testid="hierarchy-node-chevron"
+            data-expanded={expanded ? "true" : "false"}
+            className="afh-tree-chevron"
+          >
+            <svg viewBox="0 0 16 16" width="9" height="9" focusable="false">
+              <path
+                d="M5 2.5 10.5 8 5 13.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        ) : (
+          <span aria-hidden="true" className="afh-tree-chevron-spacer" />
+        )}
+        <span lang={node.labelLang} className="afh-tree-label">
           {node.label}
         </span>
         {typeof node.childCount === "number" ? (
-          <span className="text-afh-caption text-afh-text-soft">
-            ({node.childCount})
-          </span>
+          <span className="afh-tree-count">{node.childCount}</span>
         ) : null}
         {node.badge ? <ClassificationBadge status={node.badge} /> : null}
       </>
@@ -379,7 +398,10 @@ export function HierarchyTree({
             role="group"
             data-testid={`hierarchy-tree-group-${node.id}`}
             data-motion={reducedMotion ? "instant" : "fade"}
+            data-open="true"
+            className="afh-tree-group"
             style={{
+              ["--afh-tree-level" as string]: level,
               minHeight: loading ? "var(--afh-tree-node-min-h)" : undefined,
               transition: reducedMotion
                 ? "none"

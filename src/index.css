@@ -14,6 +14,7 @@
 @import "./styles/home-tokens.css";
 @import "./styles/section-heading.css";
 @import "./styles/fiche-parchment.css";
+@import "./styles/classification-tree.css";
 
 @tailwind base;
 @tailwind components;

@@ -193,6 +193,8 @@ const BANTU_TREE: FamilyTreeSkeleton = {
     { iso639_3: "sna", name: "Shona", peopleCount: 3 },
     { iso639_3: "swh", name: "Swahili", peopleCount: 7 },
   ],
+  branchProvenance: "language-corpus",
+  declaredBranches: [],
   unlinkedPeopleCount: 1,
 };
 
