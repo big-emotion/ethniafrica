@@ -61,6 +61,37 @@ export const MIN_ZOOM = 1;
 // @req REQ-117
 export const MAX_ZOOM = 1 / FIT_DISTANCE_NEAREST;
 
+/**
+ * How far in the reader may go by hand, which is further than any automatic
+ * framing goes. The 1.62x ceiling above answers "frame this country with its
+ * neighbours"; a reader dragging towards the Gambia, the Comoros or São Tomé is
+ * asking the opposite question — make this thing big enough to aim at — and a
+ * ceiling set for the first question makes the second unanswerable. At 6x the
+ * near face spans roughly 30°, which is a country and its border rather than a
+ * continent.
+ *
+ * The limb does leave the stage up there. That is what zooming in is; it is
+ * only a defect when nobody asked for it.
+ */
+// @req REQ-117
+export const READER_MAX_ZOOM = 6;
+
+/**
+ * One press of the zoom controls, as a factor rather than an increment: the
+ * apparent step of a multiplicative zoom is constant, so the last press near
+ * the ceiling moves the surface as much as the first press from rest. Seven
+ * presses cover the whole range.
+ */
+// @req REQ-117
+export const ZOOM_STEP = 1.35;
+
+/** Keeps a hand-driven zoom between the whole hemisphere and the reader's ceiling. */
+// @req REQ-117
+export function clampZoom(zoom: number): number {
+  if (!Number.isFinite(zoom)) return MIN_ZOOM;
+  return Math.min(READER_MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
+}
+
 /** The unchosen globe: Africa facing the reader, undollied and uncentred by any panel. */
 // @req REQ-117
 export const IDLE_POSE: CameraPose = {
