@@ -357,6 +357,146 @@ const COINCIDENT_Y = 1e-9;
 const panelWidthOr = (panelWidth: number) =>
   panelWidth > 0 ? panelWidth : MAX_PANEL_WIDTH;
 
+/** Ring radii are searched on this step, in pixels — finer than a reader sees. */
+const RING_RADIUS_STEP = 2;
+
+/** Smaller than this and the ring is inside the opened card whatever the count. */
+const RING_MIN_RADIUS = 120;
+
+/** No ring is drawn wider than the widest panel's own half-width. */
+const RING_MAX_RADIUS = MAX_PANEL_WIDTH / 2;
+
+/** Where a ring of `radius` puts each of its `count` cards, at rest. */
+function ringPlacements(radius: number, count: number): ProjectedNode[] {
+  const side = (2 * radius) / FILL;
+  const box: PanelBox = { width: side, height: side };
+  return layoutNodes("ring", count).map((node) =>
+    projectNode(node, SCENE_TILT, box)
+  );
+}
+
+/** Room between two boxes of the panel's card size, centred on these points. */
+function cardGap(a: ProjectedNode, b: ProjectedNode): number {
+  const apart =
+    Math.abs(a.x - b.x) - (MODULE_CARD_WIDTH * (a.scale + b.scale)) / 2;
+  const stacked =
+    Math.abs(a.y - b.y) - (MODULE_CARD_HEIGHT * (a.scale + b.scale)) / 2;
+  // Two boxes miss each other as soon as they miss on one axis.
+  return Math.max(apart, stacked);
+}
+
+/**
+ * Whether a ring of this radius leaves everything on the panel its own box —
+ * the opened card at the origin, and each of its own cards — with `room` to
+ * spare. A gutter is what the layout wants; zero is what it must have.
+ */
+function ringClears(radius: number, count: number, room: number): boolean {
+  const placed = ringPlacements(radius, count);
+
+  for (let i = 0; i < placed.length; i += 1) {
+    // The opened card sits at the origin and is not a module card, so it is
+    // measured through its own box rather than cardGap's.
+    const beside =
+      Math.abs(placed[i].x) -
+      (OPENED_CARD_WIDTH + MODULE_CARD_WIDTH * placed[i].scale) / 2;
+    const over =
+      Math.abs(placed[i].y) -
+      (OPENED_CARD_HEIGHT + MODULE_CARD_HEIGHT * placed[i].scale) / 2;
+    if (Math.max(beside, over) < room) return false;
+
+    for (let j = i + 1; j < placed.length; j += 1) {
+      if (cardGap(placed[i], placed[j]) < room) return false;
+    }
+  }
+
+  return true;
+}
+
+/** Whether every card of a ring this size is still fully on the panel. */
+function ringInsidePanel(
+  radius: number,
+  count: number,
+  panelWidth: number
+): boolean {
+  const halfWidth = panelWidthOr(panelWidth) / 2;
+  return ringPlacements(radius, count).every(
+    (placed) =>
+      Math.abs(placed.x) + (MODULE_CARD_WIDTH * placed.scale) / 2 <= halfWidth
+  );
+}
+
+/**
+ * The radius, in pixels, of the circle the ring's modules sit on.
+ *
+ * The ring exists to say that its modules are peers of one centre, and a
+ * reader reads that off one thing: they are all the same distance from it.
+ * That is a length in pixels, so the ring is sized in pixels — where the arc
+ * and the pair are shapes stretched across whatever panel they are given,
+ * and are meant to be.
+ *
+ * It is the *smallest* circle that clears the opened card and keeps the
+ * modules off each other, because every pixel of radius is paid for twice in
+ * panel height. When even that does not fit the panel's width the largest
+ * one that does is drawn instead: a tight ring is still a ring, a card
+ * hanging over the edge is a card the reader has lost.
+ */
+// @req REQ-114
+export function ringRadius(count: number, panelWidth: number): number {
+  let widest = RING_MIN_RADIUS;
+
+  for (
+    let radius = RING_MIN_RADIUS;
+    radius <= RING_MAX_RADIUS;
+    radius += RING_RADIUS_STEP
+  ) {
+    if (!ringInsidePanel(radius, count, panelWidth)) break;
+    widest = radius;
+    if (ringClears(radius, count, MODULE_CARD_GUTTER)) return radius;
+  }
+
+  return widest;
+}
+
+/**
+ * Whether a ring of this count can be drawn on a panel this wide at all.
+ *
+ * A circle has one radius, so it cannot be tightened on the side the panel
+ * runs out of room and left wide on the side the opened card needs. Three
+ * modules on a 720px panel is the case that does not resolve: their cards
+ * carry 117px either side of nodes the panel cannot push past 242px out, and
+ * the opened card claims the first 132 of those. The panel folds to its
+ * column there rather than print two cards across the card they came out of.
+ */
+// @req REQ-114
+export function ringFitsPanel(count: number, panelWidth: number): boolean {
+  return ringClears(ringRadius(count, panelWidth), count, 0);
+}
+
+/**
+ * The box a layout is projected in.
+ *
+ * For the arc, the pair and the column it is the panel itself — those shapes
+ * are drawn across the panel and read correctly at any proportion. The ring
+ * is the one that does not: `projectNode` scales x by the half-width and y by
+ * the half-height, so a unit circle in a 1140x600 panel reaches 410px out to
+ * the sides and 197px to the top, which is an ellipse and not a ring. The
+ * top module then sat inside the opened card's own 240px box while its peers
+ * stood twice as far away.
+ *
+ * So the ring is handed a square, and `ringRadius` is what that square is
+ * worth.
+ */
+// @req REQ-114
+export function sceneBox(
+  layout: AxisLayout,
+  count: number,
+  panel: PanelBox
+): PanelBox {
+  if (layout !== "ring") return panel;
+  const side = (2 * ringRadius(count, panel.width)) / FILL;
+  return { width: side, height: side };
+}
+
 /**
  * The pairs the panel's height can do nothing for: two nodes within a card
  * of each other horizontally and at the very same height. Every other tight
@@ -418,6 +558,12 @@ export function sceneNodes(
 ): GraphNode[] {
   const nodes = layoutNodes(layout, count);
   if (nodes.length < 2) return nodes;
+
+  // The ring answers for its own fit in `ringRadius`, by shrinking as a
+  // circle. Pushing one of its nodes sideways here is the move the arc and
+  // the pair need and the one thing the ring cannot survive: it is a circle
+  // or it is no longer saying its modules are peers.
+  if (layout === "ring") return nodes;
 
   const halfWidth = panelWidthOr(panelWidth) / 2;
   const insidePanel = (node: GraphNode): GraphNode => {
@@ -491,6 +637,21 @@ export function panelHeightFor(
 ): number {
   const clearance = CENTRE_CLEARANCE[layout];
   if (layout === "column" || count < 2) return clearance;
+
+  // The ring is drawn in a square of its own, so its height is not a share
+  // of the panel's — it is the room the circle and the cards hanging off it
+  // actually take, whatever the panel around them.
+  if (layout === "ring") {
+    const reach = ringPlacements(ringRadius(count, panelWidth), count).reduce(
+      (held, placed) =>
+        Math.max(
+          held,
+          Math.abs(placed.y) + (MODULE_CARD_HEIGHT * placed.scale) / 2
+        ),
+      0
+    );
+    return Math.ceil(Math.max(clearance, 2 * reach));
+  }
 
   const halfWidth = panelWidthOr(panelWidth) / 2;
   const nodes = sceneNodes(layout, count, panelWidth);
