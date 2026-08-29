@@ -11,7 +11,12 @@ interface AfrikBreadcrumbsProps {
 
 // @req REQ-115
 export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
-  if (!items.length) return null;
+  // A trail that leads nowhere but here is not a trail. The home derives a
+  // single crumb — itself, marked `aria-current` — so the shell used to print
+  // a lone "Accueil" above the accueil. The test is the href rather than the
+  // crumb count: a trail truncated on a segment it cannot name keeps every
+  // href, and that lone way back is worth rendering.
+  if (!items.some((item) => item.href)) return null;
 
   return (
     <nav aria-label="Fil d'ariane" className="px-3 md:px-4 xl:px-5 mt-2 mb-1">
