@@ -6,8 +6,8 @@
    qui n'existe pas.
    ══════════════════════════════════════════════════════════════════ */
 const MODULES = [
-  { id: "peuples",   title: "Les peuples d'Afrique",          axis: "explorer",   accent: "ocre",  icon: "users",   href: "/fr/explorer/peuples" },
-  { id: "pays",      title: "Les pays d'Afrique",             axis: "explorer",   accent: "teal",  icon: "globe",   href: "/fr/explorer/pays" },
+  { id: "pays",      title: "Les pays d'Afrique",             axis: "explorer",   accent: "ocre",  icon: "globe",   href: "/fr/explorer/pays" },
+  { id: "peuples",   title: "Les peuples d'Afrique",          axis: "explorer",   accent: "teal",  icon: "users",   href: "/fr/explorer/peuples" },
   { id: "familles",  title: "L'arbre des familles",           axis: "explorer",   accent: "terre", icon: "network", href: "/fr/explorer/familles" },
   { id: "recherche", title: "Recherche libre",                axis: "explorer",   accent: "perv",  icon: "search",  href: "/fr/explorer/recherche" },
   { id: "noms",      title: "Noms & appellations",            axis: "explorer",   accent: "ocre",  icon: "tag",     href: "/fr/comprendre/noms" },
