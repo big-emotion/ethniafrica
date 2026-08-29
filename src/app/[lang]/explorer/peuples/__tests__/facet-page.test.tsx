@@ -232,6 +232,24 @@ describe("the peoples facet — where the filtering happens", () => {
       within(form).getByRole("combobox", { name: /famille/i })
     ).toBeInTheDocument();
   });
+
+  /**
+   * Pays is the first control, as it is the first facet and the first module
+   * on the Explorer hub. A reader narrowing 803 peoples reaches for the
+   * country they know before the linguistic family they are here to learn,
+   * so the order of the two selects follows the order of the axis above them
+   * rather than the order the query happens to take its arguments in.
+   */
+  // @req REQ-106
+  it("offers the country filter before the linguistic family", async () => {
+    render(await renderRoute());
+
+    const form = screen.getByTestId("facet-filter-bar");
+    const labels = within(form)
+      .getAllByRole("combobox")
+      .map((select) => select.getAttribute("name"));
+    expect(labels).toEqual(["pays", "famille"]);
+  });
 });
 
 describe("the peoples facet — paging a filtered set", () => {
