@@ -11,10 +11,10 @@
  *
  * | Environment Variable              | Export             | Default Value                                                         |
  * |-----------------------------------|--------------------|-----------------------------------------------------------------------|
- * | NEXT_PUBLIC_PRODUCT_NAME          | PRODUCT_NAME       | "Atlas des Peuples d'Afrique"                                         |
+ * | NEXT_PUBLIC_PRODUCT_NAME          | PRODUCT_NAME       | "EthniAfrica"                                                           |
  * | NEXT_PUBLIC_CANONICAL_DOMAIN      | CANONICAL_DOMAIN   | "ethniafrica.com"                                                     |
  * | NEXT_PUBLIC_ATTRIBUTION_STRING    | ATTRIBUTION_STRING | "Fait avec émotion pour l'Afrique"                                    |
- * | NEXT_PUBLIC_OG_TITLE              | OG_TITLE           | "Atlas des Peuples d'Afrique"                                         |
+ * | NEXT_PUBLIC_OG_TITLE              | OG_TITLE           | "EthniAfrica"                                                           |
  * | NEXT_PUBLIC_OG_DESCRIPTION        | OG_DESCRIPTION     | "Encyclopédie des peuples, langues et familles linguistiques d'Afrique" |
  * | NEXT_PUBLIC_SITE_LOCALE           | SITE_LOCALE        | "fr"                                                                  |
  *
@@ -30,7 +30,7 @@
 
 /** The main product name displayed throughout the application */
 export const PRODUCT_NAME =
-  process.env.NEXT_PUBLIC_PRODUCT_NAME || "Atlas des Peuples d'Afrique";
+  process.env.NEXT_PUBLIC_PRODUCT_NAME || "EthniAfrica";
 
 /** The canonical domain for the application (without protocol) */
 export const CANONICAL_DOMAIN =
@@ -42,8 +42,7 @@ export const ATTRIBUTION_STRING =
   "Fait avec émotion pour l'Afrique";
 
 /** Open Graph title for social media previews */
-export const OG_TITLE =
-  process.env.NEXT_PUBLIC_OG_TITLE || "Atlas des Peuples d'Afrique";
+export const OG_TITLE = process.env.NEXT_PUBLIC_OG_TITLE || "EthniAfrica";
 
 /** Open Graph description for social media previews */
 export const OG_DESCRIPTION =

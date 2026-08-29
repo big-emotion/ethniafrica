@@ -15,7 +15,7 @@ describe("brand", () => {
   describe("default values", () => {
     it("should export PRODUCT_NAME with default value", async () => {
       const { PRODUCT_NAME } = await import("../brand");
-      expect(PRODUCT_NAME).toBe("Atlas des Peuples d'Afrique");
+      expect(PRODUCT_NAME).toBe("EthniAfrica");
     });
 
     it("should export CANONICAL_DOMAIN with default value", async () => {
@@ -30,7 +30,7 @@ describe("brand", () => {
 
     it("should export OG_TITLE with default value", async () => {
       const { OG_TITLE } = await import("../brand");
-      expect(OG_TITLE).toBe("Atlas des Peuples d'Afrique");
+      expect(OG_TITLE).toBe("EthniAfrica");
     });
 
     it("should export OG_DESCRIPTION with default value", async () => {
