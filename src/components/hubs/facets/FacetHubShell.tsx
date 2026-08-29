@@ -58,6 +58,23 @@ export function FacetHubShell({
         data-testid="facet-hub"
         data-facet={facet.key}
       >
+        {/* The head comes before the band, not inside the parchment under it:
+            the globe is some 520px of full-bleed night, so a title below it is
+            past the fold on every screen and the trail was the only thing
+            naming the page. It carries the h1 for all three facets, which is
+            why none of the facet pages carries one of its own. */}
+        <header
+          data-testid="facet-hub-head"
+          className="px-3 md:px-4 xl:px-5 pt-afh-base pb-afh-base flex flex-col gap-afh-xs"
+        >
+          <p className="font-[family-name:var(--afh-font-mono)] text-afh-caption uppercase tracking-[0.1em] text-afh-text-soft">
+            {facet.eyebrow}
+          </p>
+          <h1 className="font-display font-black text-afh-h1 leading-[1.1] tracking-[-0.015em]">
+            {facet.title}
+          </h1>
+        </header>
+
         <FacetCountryIndexProvider>
           <FacetGlobeIsland
             peopleCountsByCountry={peopleCountsByCountry}
