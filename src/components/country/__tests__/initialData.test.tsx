@@ -64,9 +64,10 @@ describe("the country dossier with server-provided data", () => {
   it("renders a country immediately without a duplicate client fetch", () => {
     render(<CountryRecordView country={senegal} />);
 
-    expect(
-      screen.getByRole("heading", { level: 1, name: "Sénégal" })
-    ).toBeInTheDocument();
+    // The h1 moved to the title band above the globe, so what proves the
+    // record rendered from server data is the record itself — the claim this
+    // test makes has always been about the absent fetch, not the heading.
+    expect(screen.getByTestId("country-record-view")).toBeInTheDocument();
     expect(mockGetCountry).not.toHaveBeenCalled();
   });
 
