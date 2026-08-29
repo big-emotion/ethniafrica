@@ -228,26 +228,29 @@ export default async function FamillesHubPage({
             Aucune famille linguistique ne répond à cette sélection.
           </p>
         ) : (
-          <ul
-            data-testid="family-facet-list"
-            className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3"
-          >
-            {families.map((family) => (
-              <li key={family.id}>
-                <Link
-                  href={getFamilyRoute("fr", family.id)}
-                  className={cardClass}
-                >
-                  <span className="font-afh-display text-afh-h3 font-bold text-afh-text">
-                    {family.nameFr}
-                  </span>
-                  <span className="text-afh-small text-afh-text-soft">
-                    {formatCount(family.peopleCount ?? 0)} peuples au corpus
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <>
+            {pagination("top")}
+            <ul
+              data-testid="family-facet-list"
+              className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {families.map((family) => (
+                <li key={family.id}>
+                  <Link
+                    href={getFamilyRoute("fr", family.id)}
+                    className={cardClass}
+                  >
+                    <span className="font-afh-display text-afh-h3 font-bold text-afh-text">
+                      {family.nameFr}
+                    </span>
+                    <span className="text-afh-small text-afh-text-soft">
+                      {formatCount(family.peopleCount ?? 0)} peuples au corpus
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
 
         {pagination("bottom")}
