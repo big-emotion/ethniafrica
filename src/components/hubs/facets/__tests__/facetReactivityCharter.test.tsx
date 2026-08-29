@@ -9,7 +9,7 @@ import {
 } from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetHubShell } from "@/components/hubs/facets/FacetHubShell";
-import { DIRECTORY_ACCENT_CLASS } from "@/components/views/DirectoryHero";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { getFacet, getFacetRoute } from "@/lib/hubs/facets";
 import { getPeopleRoute } from "@/lib/routing";
 

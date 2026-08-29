@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { CountryParchment } from "@/components/country/CountryParchment";
+import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
@@ -60,10 +61,22 @@ function renderParchment(country: CountryDetail) {
   );
 }
 
+/**
+ * The head and the trail stand above the globe now, so the assertions about
+ * them address the band rather than the parchment. What each states is
+ * unchanged — only which component owns it.
+ */
+function renderTitle(
+  country: CountryDetail,
+  provenance: { fromPeopleId?: string; fromPeopleName?: string } = {}
+) {
+  return render(<CountryFicheTitle country={country} {...provenance} />);
+}
+
 describe("country fiche charter", () => {
   // @req REQ-115
   it("opens on the country's own name, with the official name beneath it", () => {
-    const { container } = renderParchment(countryFixture());
+    const { container } = renderTitle(countryFixture());
 
     const head = container.querySelector(".afh-parchment-head");
     expect(head).not.toBeNull();
@@ -210,7 +223,7 @@ describe("country fiche parchment — head and closing", () => {
   // demographics has nothing to date, so it says nothing.
   // @req REQ-115
   it("dates the fiche's figures in the eyebrow when it carries demographics", () => {
-    const { container } = renderParchment(countryFixture());
+    const { container } = renderTitle(countryFixture());
 
     expect(container.querySelector(".afh-parchment-eyebrow")).toHaveTextContent(
       "NGA · fiche pays · réf. 2025"
@@ -219,7 +232,7 @@ describe("country fiche parchment — head and closing", () => {
 
   // @req REQ-115
   it("dates nothing when the corpus gives the country no demographics", () => {
-    const { container } = renderParchment(
+    const { container } = renderTitle(
       countryFixture({ demographics: undefined, majorPeoples: undefined })
     );
 
@@ -348,13 +361,10 @@ describe("country record view — the chapters the page adds", () => {
    */
   // @req REQ-115
   it("says where the reader came from without claiming a country sits under a people", () => {
-    render(
-      <CountryRecordView
-        country={countryFixture()}
-        fromPeopleId="PPL_YORUBA"
-        fromPeopleName="Yoruba"
-      />
-    );
+    renderTitle(countryFixture(), {
+      fromPeopleId: "PPL_YORUBA",
+      fromPeopleName: "Yoruba",
+    });
 
     const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
     expect(trail).toHaveTextContent("Pays");

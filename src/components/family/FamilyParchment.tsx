@@ -210,20 +210,10 @@ export function FamilyParchment({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <header className="afh-parchment-head">
-        <p className="afh-parchment-eyebrow">
-          {hero.id} · famille linguistique
-        </p>
-        <h1>
-          {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
-        </h1>
-        <p className="afh-parchment-lede">
-          {/* Naming both when they are the same word would present one fact as
-              two, and quietly overstate how much the fiche knows. */}
-          {selfAppellation && nameEn && selfAppellation === nameEn
-            ? `Auto-appellation et nom anglais : ${selfAppellation}. Le français seul francise.`
-            : `Auto-appellation : ${selfAppellation ?? "non renseignée"}. Nom anglais : ${nameEn ?? "non renseigné"}.`}
-        </p>
+      {/* The head and the trail stand above the globe now
+          (FamilyFicheTitle). The chips stayed: they are figures about this
+          document, and the chapters below immediately qualify them. */}
+      <div className="afh-parchment-head">
         <div className="afh-chips">
           {generalInfo.numberOfLanguages !== null && (
             <span className="afh-chip" data-tone="stable">
@@ -239,14 +229,7 @@ export function FamilyParchment({
             </span>
           )}
         </div>
-      </header>
-
-      {/* A family fiche had no trail at all, while the people fiches below it
-          open theirs on "Familles" — the parent carried none of the hierarchy
-          its children announced. */}
-      <AfrikBreadcrumbs
-        items={deriveTrail(getFamilyRoute("fr", hero.id), hero.nameFr)}
-      />
+      </div>
 
       <Section
         title="Ce que la fiche déclare, ce qu'elle ne déclare pas"

@@ -45,13 +45,20 @@ was rendered under.
 | Surface      | People | Country | Family   | Source of truth                        |
 | ------------ | ------ | ------- | -------- | -------------------------------------- |
 | Home modules | ocre   | teal    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
-| Directory    | terre  | ocre    | teal     | `DirectoryHero.DIRECTORY_ACCENT_CLASS` |
+| Facet        | terre  | ocre    | teal     | `lib/hubs/directoryAccent.ts`          |
 | **Fiche**    | ocre   | teal    | **perv** | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
 
 A fiche family is **pervenche, never terre**. Inside a fiche, `IdentityPanel`
 reserves terre for the imposed-exonym marker; painting the page terre would make
-that marker read as the page accent and it would stop being a marker. A
-directory has no such marker, so it is free to take terre back.
+that marker read as the page accent and it would stop being a marker. A listing
+has no such marker, so it is free to take terre back.
+
+The middle row was called _Directory_ while peoples, countries and families were
+three directory pages. They are now three **facets** of one hub, and the scale
+is read by `FacetHubShell`, which scopes it to the facet's whole subtree. The
+constant keeps the word `DIRECTORY_` on purpose: renaming it would suggest the
+listing scale and the fiche scale had merged, and the row above is the whole
+reason they must not.
 
 Only terre needs a dark `--accent-foreground` — its mid tone fails AA under
 white.
@@ -79,8 +86,25 @@ generated from it, never hand-listed.
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 
-- The panel shows each module's real route. A module absent from the menu is a
-  module absent from the corpus.
+- The panel shows each **destination**'s real route. A module absent from the
+  menu is a module absent from the corpus.
+
+- **A facet is not a destination.** Peoples, countries and families are three
+  states of one page — the Explorer hub — not three pages beside it. The menu
+  says so: the axis leads with its own hub, and the facets are offered beneath
+  it under their short names, with no address of their own. Printing an address
+  under each is what made the three read as three pages, which is what they
+  were until the directories merged.
+
+  Which entries are facets is read off `src/lib/hubs/facets.ts` through
+  `getFacetByPage`, never restated in the menu. `moduleRegistry` still declares
+  the four Explorer modules separately, and deliberately: the axis hub renders
+  them as four unconditional server-side links, which is the way in when there
+  is no WebGL and no JavaScript.
+
+- **The axis label opens the panel; it does not navigate.** So the hub needs an
+  entry of its own inside the panel — without one, `/fr/explorer` is reachable
+  from no navigation surface on any viewport, which is what it was.
 
 - **Reachable and mature are two separate questions.** A module is _listed_
   because it exists. It is _clickable_ because what sits behind the click is

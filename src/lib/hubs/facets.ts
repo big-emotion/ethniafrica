@@ -1,5 +1,5 @@
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
-import type { DirectoryEntityType } from "@/components/views/DirectoryHero";
+import type { DirectoryEntityType } from "@/lib/hubs/directoryAccent";
 import type { Language } from "@/types/shared";
 
 /**
