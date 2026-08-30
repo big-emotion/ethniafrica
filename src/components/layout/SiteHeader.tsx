@@ -3,7 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 import {
   ArrowUpDown,
   BookOpen,
@@ -34,6 +40,7 @@ import {
 
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { useHeaderReveal } from "@/hooks/use-header-reveal";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { getTranslation } from "@/lib/translations";
@@ -115,10 +122,20 @@ const isCurrentRoute = (pathname: string, href: string) =>
 export interface SiteHeaderProps {
   language: Language;
   onSearchClick?: () => void;
+  /**
+   * Handed down by the shell so the back-to-top control can return the focus
+   * here — see `BackToTopProps.returnFocusTo` for why it is a ref and not an
+   * id on the element.
+   */
+  mastheadRef?: RefObject<HTMLElement | null>;
 }
 
 // @req REQ-114 @req REQ-115 @req REQ-106
-export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
+export function SiteHeader({
+  language,
+  onSearchClick,
+  mastheadRef,
+}: SiteHeaderProps) {
   const pathname = usePathname();
   const t = getTranslation(language);
   // Resolved once per request by the `[lang]` layout; `null` on any surface
@@ -131,6 +148,22 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
   const triggerRefs = useRef<Partial<Record<AccessMode, HTMLButtonElement>>>(
     {}
   );
+
+  // The bar, not the header: the panel below opens inside the same element,
+  // and the height the rest of the chrome lines itself up against is the
+  // height of the row that stays.
+  const barRef = useRef<HTMLElement>(null);
+  const retracted = useHeaderReveal(barRef);
+
+  // A panel left open would ride off the top of the screen with the bar and
+  // come back several hundred pixels later, over a page the reader has since
+  // scrolled somewhere else. Adjusted during render, like the pathname reset
+  // below and for the same reason.
+  const [renderedRetraction, setRenderedRetraction] = useState(retracted);
+  if (renderedRetraction !== retracted) {
+    setRenderedRetraction(retracted);
+    if (retracted) setOpenAxis(null);
+  }
 
   // A panel that outlived the click that navigated through it would hang
   // over the page the reader just asked for. Adjusted during render rather
@@ -317,8 +350,17 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
   };
 
   return (
-    <header data-testid="site-header" className="sh-header">
-      <nav className="sh-bar" aria-label="Navigation principale">
+    <header
+      // Where the back-to-top control sends the reader — and, because a
+      // scroll moves the page but not the focus, where it sends the focus
+      // too. Not reachable by Tab: it is a destination, not a stop on the way
+      // through the bar.
+      ref={mastheadRef}
+      tabIndex={-1}
+      data-testid="site-header"
+      className="sh-header"
+    >
+      <nav ref={barRef} className="sh-bar" aria-label="Navigation principale">
         {/* One link, two lines: the name, and what the site is. The mark is
             decorative because the wordmark beside it already says the name —
             an alt here makes a screen reader announce it twice. */}
@@ -484,8 +526,32 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           background: var(--afh-bg);
           color: var(--sh-ink);
           border-bottom: 1px solid var(--sh-line);
-          position: relative;
           z-index: 40;
+
+          /* Pinned, and retracting while the reader goes down the document —
+             see styles/site-chrome.css for the contract this half implements.
+
+             Sticky rather than fixed: the bar keeps its slot in the flow at
+             the top of the page, so nothing below it has to be padded by a
+             height this file would then have to guarantee. */
+          position: sticky;
+          top: 0;
+          transition: var(--afh-transition-transform);
+        }
+
+        /* Its whole height, not the bar's: an open panel is part of what has
+           to leave, and a translation of the bar alone would leave the menu
+           hanging at the top of the screen. */
+        :root[data-header-retracted="true"] .sh-header {
+          transform: translateY(-100%);
+        }
+
+        /* The bar is a destination for the back-to-top control, not a control
+           itself: a ring around the whole masthead would be noise on arrival.
+           What the reader needs is the focus *in* the bar, which is where the
+           next Tab now takes them. */
+        .sh-header:focus {
+          outline: none;
         }
 
         /* The bar takes the shell box rather than its own: its left edge is

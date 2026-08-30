@@ -1,0 +1,119 @@
+/**
+ * The chrome that follows the reader: the masthead's retraction and the
+ * control that undoes a long scroll.
+ *
+ * Two rules, one contract. The masthead is pinned and retracts while the
+ * reader moves down the document, so anything else pinned to the top of the
+ * screen — today only the fiche's chapter rail — has to know two things: how
+ * tall the masthead is, and how far it has travelled. Both are published
+ * here as custom properties rather than duplicated per surface, because the
+ * failure this file exists to prevent is a rail and a masthead occupying the
+ * same band of screen and one of them being unreadable.
+ *
+ * `--afh-header-height` is overwritten from the measured bar at runtime (see
+ * `use-header-reveal.ts`); the value below is what a route without a masthead
+ * gets, and what the first paint uses before the measurement lands.
+ *
+ * Mobile first: the base rules are the 430px layout.
+ */
+
+:root {
+  --afh-header-height: 56px;
+
+  /* How far a rail pinned under the masthead must travel to stay against it.
+     Zero while the masthead is out, its full height once it has retracted —
+     at which point the rail lands exactly at the top of the screen. */
+  --afh-header-shift: 0px;
+}
+
+:root[data-header-retracted="true"] {
+  --afh-header-shift: calc(-1 * var(--afh-header-height));
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Back to top
+   ───────────────────────────────────────────────────────────── */
+
+/**
+ * A fiche runs to several thousand pixels and the masthead now returns on the
+ * way up, but returning to the *top* still meant scrolling the whole way. The
+ * control is offered only once a screenful is behind the reader: above that,
+ * the top of the page is one flick away and a floating button is clutter.
+ *
+ * It is hidden with `visibility`, not opacity alone: an invisible button that
+ * still takes a click and still answers to the Tab key is worse than no
+ * button, and `visibility` is one of the few properties that both removes it
+ * from the accessibility tree and can be transitioned.
+ */
+.afh-back-to-top {
+  position: fixed;
+  right: var(--afh-space-2xl);
+  bottom: calc(var(--afh-space-2xl) + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 44px: the touch target is the button, not an icon inside a larger box. */
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid var(--afh-border);
+  border-radius: 9999px;
+  background: var(--afh-surface);
+  color: var(--afh-text);
+  box-shadow: var(--afh-elev-3);
+  cursor: pointer;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(var(--afh-space-md));
+  transition:
+    opacity var(--afh-duration-base) var(--afh-ease-out),
+    transform var(--afh-duration-base) var(--afh-ease-out),
+    visibility 0s linear var(--afh-duration-base);
+}
+
+.afh-back-to-top[data-offered] {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--afh-duration-base) var(--afh-ease-out),
+    transform var(--afh-duration-base) var(--afh-ease-out),
+    visibility 0s;
+}
+
+.afh-back-to-top:hover {
+  background: var(--afh-bg-warm);
+}
+
+.afh-back-to-top:focus-visible {
+  outline: 2px solid var(--afh-text);
+  outline-offset: 2px;
+}
+
+.afh-back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* From the width the masthead changes shape at, the control takes the wider
+   inset the rest of the page's gutters use. */
+@media (min-width: 760px) {
+  .afh-back-to-top {
+    right: var(--afh-space-6xl);
+    bottom: calc(var(--afh-space-6xl) + env(safe-area-inset-bottom, 0px));
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* A reader who has asked for less motion still gets the control; what they do
+   not get is a button that slides in, nor a page that races past them on the
+   way up (the scroll behaviour is chosen in the component). */
+@media (prefers-reduced-motion: reduce) {
+  .afh-back-to-top {
+    transform: none;
+  }
+}
