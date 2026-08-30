@@ -44,6 +44,17 @@ interface PageLayoutProps {
   sectionName?: string;
   hideHeader?: boolean;
   /**
+   * Drop the trail as well as the band, for a shell that carries no page
+   * identity at all.
+   *
+   * The wait screens are the only callers, and the trail is the one piece of
+   * chrome a wait cannot honestly show: it would name the destination as
+   * though the reader were already there. Everything that makes the
+   * navigation survivable — the masthead, its search, the footer — stays
+   * mounted, so REQ-098 is untouched.
+   */
+  hideTrail?: boolean;
+  /**
    * Drop main's top padding so a full-bleed first child (one that escapes the
    * container with 100vw + negative margins, like HomeHero) starts flush
    * against the chrome instead of behind a strip of page background.
@@ -70,6 +81,7 @@ export const PageLayout = ({
   heroHead,
   sectionName,
   hideHeader = false,
+  hideTrail = false,
   flushTop = false,
   trailLabel,
 }: PageLayoutProps) => {
@@ -141,7 +153,8 @@ export const PageLayout = ({
           `hideHeader`, which the legal pages and the home still pass, and
           which would otherwise cost them the way back. So it is rendered
           either inside the plate or, on a bandless route, in the shell box on
-          its own — never neither.
+          its own — never neither, unless the caller is a wait and says so
+          with `hideTrail`.
 
           It sits *under* the title rather than over it because a trail is read
           as what qualifies a title, not as what introduces one; and it sits
@@ -154,7 +167,7 @@ export const PageLayout = ({
           head={heroHead}
           trail={<SiteTrail entityLabel={trailLabel} />}
         />
-      ) : (
+      ) : hideTrail ? null : (
         <div className="afh-shell">
           <SiteTrail entityLabel={trailLabel} />
         </div>

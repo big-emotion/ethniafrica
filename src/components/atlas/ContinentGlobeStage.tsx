@@ -98,6 +98,14 @@ export function ContinentGlobeStage({
           probedWebglSupport={webglSupported}
           pinnedProjection={pinnedProjection}
           pinnedProjectionNote={pinnedProjectionNote}
+          /* Tissot's indicatrices, as the engine deleted in ETNI-1360 drew
+             them: on by default on the two surfaces that stand here. Both
+             argue that a flat map lies about surface, and the discs are what
+             lets a reader measure it — each covers the same real area, so the
+             swelling is the projection's doing and nothing else. Without them
+             the reader gets « Ce que la carte plate en fait » and a map that
+             changes shape with nothing to compare. */
+          showTissot
           missingMessage="Le corpus ne renseigne encore aucun peuple par pays."
           fallbackNote="Carte de l'Afrique, à plat : ce navigateur ne peut pas afficher le globe."
           wholeAreaLabel="Tout le continent"

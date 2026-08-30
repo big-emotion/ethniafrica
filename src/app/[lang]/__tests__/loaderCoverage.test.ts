@@ -101,6 +101,40 @@ describe("every wait on the site is the same wait (REQ-104)", () => {
   });
 
   /**
+   * One wait, one shape (brand charter §8.4).
+   *
+   * The three screens drifted apart until a single click produced two
+   * different waits depending on whether the segment happened to own a
+   * `loading.tsx`: the client overlay painted the fact alone, while the two
+   * server screens painted a title plate, a trail and — on a fiche — a night
+   * stage the height of the globe, which together took the whole fold and
+   * left the fact unread.
+   *
+   * `sectionName` is what named the plate, so its absence is what the gate
+   * reads: a wait screen that accepts one is a wait screen that can paint a
+   * page the reader has not arrived at.
+   *
+   * The band is matched on its *import* rather than anywhere in the file, the
+   * lesson the coverage assertion above already learned: `FicheLoadingScreen`
+   * names `FicheHeroBand` in the comment recording why it no longer raises
+   * one, and a gate reading the whole source calls that a violation.
+   */
+  // @req REQ-113
+  it("gives every wait the same shape: the fact, and no page identity", () => {
+    const screens = [
+      ...Object.values(WAIT_SCREENS),
+      ...Object.values(CLIENT_ISLAND_WAIT_SCREENS),
+    ];
+
+    for (const path of screens) {
+      const source = read(join(process.cwd(), path));
+
+      expect(source).not.toMatch(/\bsectionName\b/);
+      expect(source).not.toMatch(/^import[^;]*\bFicheHeroBand\b/m);
+    }
+  });
+
+  /**
    * The quiz was rendering the continent outside any `.afh-accent-*` wrapper,
    * where `var(--accent)` resolves to shadcn's bare HSL triplet: `fill` cannot
    * read it and the figure paints black. An island wait carries no surrounding

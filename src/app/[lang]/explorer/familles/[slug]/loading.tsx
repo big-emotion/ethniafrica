@@ -7,7 +7,5 @@ import { FicheLoadingScreen } from "@/components/fiche/FicheLoadingScreen";
  */
 // @req REQ-104
 export default function FamilyFicheLoading() {
-  return (
-    <FicheLoadingScreen entityType="language-family" sectionName="Familles" />
-  );
+  return <FicheLoadingScreen entityType="language-family" />;
 }
