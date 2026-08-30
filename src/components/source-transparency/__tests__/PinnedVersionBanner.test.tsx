@@ -34,7 +34,7 @@ describe("PinnedVersionBanner", () => {
     });
     expect(region).toHaveAttribute("data-pinned-banner");
     expect(region).toHaveTextContent(
-      "Version figée du 21 septembre 2025 (@v34) · voir la version vivante →"
+      "Version figée du 21 septembre 2025 (@v34) · voir la version vivante"
     );
     expect(
       screen.getByRole("link", { name: "voir la version vivante" })
@@ -69,7 +69,7 @@ describe("PinnedVersionBanner", () => {
 
       const region = screen.getByRole("region");
       expect(region).toHaveTextContent(
-        "Version figée (@v34) · voir la version vivante →"
+        "Version figée (@v34) · voir la version vivante"
       );
       expect(region).not.toHaveTextContent("Invalid Date");
     }

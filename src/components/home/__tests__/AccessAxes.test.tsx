@@ -368,6 +368,30 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       expect(rule).not.toContain(".access-axis-figure");
     }
   });
+
+  /**
+   * Below 860px the card becomes a row, and the CTA used to be zeroed out
+   * there — the reader was handed a bare arrow and no promise, on the one
+   * element of the card whose entire job is to say what the click does.
+   *
+   * The actions charter (§2) forbids it: an action link never drops its
+   * label to save room. happy-dom applies no media query, so the rule is
+   * read from the source the same way the pending-contrast test above
+   * reads its own.
+   */
+  // @req REQ-114
+  it("keeps the verb legible where the card becomes a row", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "src/components/home/AccessAxes.tsx"),
+      "utf8"
+    );
+    const ctaRules = source.match(/\.access-axis-cta[^{]*\{[^}]*\}/g) ?? [];
+
+    expect(ctaRules.length).toBeGreaterThan(0);
+    for (const rule of ctaRules) {
+      expect(rule).not.toMatch(/font-size:\s*0/);
+    }
+  });
 });
 
 // Clicking an entry point used to cost a page load to reach a list of the

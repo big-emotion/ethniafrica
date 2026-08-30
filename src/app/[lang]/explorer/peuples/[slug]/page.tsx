@@ -11,6 +11,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
@@ -224,13 +225,16 @@ export default async function PeoplesSlugPage({
     <PageLayout
       language="fr"
       sectionName="Peuples"
-      hideHeader
       flushTop
       trailLabel={peopleDetail.nameMain}
+      heroHead={
+        <FicheHeroHead entityType="people">
+          <PeopleFicheTitle people={peopleDetail} />
+        </FicheHeroHead>
+      }
     >
       <FicheSequence
         entityType="people"
-        title={<PeopleFicheTitle people={peopleDetail} />}
         globe={
           <FicheHeroBand>
             <AtlasGlobe

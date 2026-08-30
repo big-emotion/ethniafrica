@@ -8,12 +8,11 @@ import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsModal";
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { PageHero } from "@/components/layout/PageHero";
-import { heroVariantForPath } from "@/lib/layout/heroVariant";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -30,6 +29,18 @@ interface PageLayoutProps {
    * hero landed — eleven call sites were passing one into a void.
    */
   subtitle?: string;
+  /**
+   * A head the page composed itself, filling the hero plate in place of
+   * `title` and `subtitle`.
+   *
+   * The three fiches and the three facets each name their subject in a way two
+   * strings cannot hold — an autonym beside its exonym and the `lang`
+   * attribute that makes the pair readable, a corpus identifier and a
+   * reference year, a provenance line. They used to pass `hideHeader` and
+   * raise that head in a box of their own, which cost them the plate and sent
+   * the trail back to a second container on a second vertical.
+   */
+  heroHead?: ReactNode;
   sectionName?: string;
   hideHeader?: boolean;
   /**
@@ -56,6 +67,7 @@ export const PageLayout = ({
   language,
   title,
   subtitle,
+  heroHead,
   sectionName,
   hideHeader = false,
   flushTop = false,
@@ -63,7 +75,6 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
-  const pathname = usePathname();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   // Held by the shell rather than looked up in the document, because a
@@ -82,13 +93,13 @@ export const PageLayout = ({
   const displayTitle = sectionName || title;
 
   /**
-   * Which band, and whether there is one at all. The height is a property of
-   * the route (`heroVariant.ts`); whether the route names itself is a property
-   * of the page. A route that names nothing gets no band rather than a band
-   * with nothing in it.
+   * Whether there is a band at all. One height for every route — the band
+   * used to have a second, screen-tall one for the home and the three hubs,
+   * and it put a hub's title under a full screen of empty parchment. A route
+   * that names nothing still gets no band, rather than a band with nothing in
+   * it.
    */
-  const heroVariant = heroVariantForPath(pathname);
-  const showHero = !hideHeader && Boolean(displayTitle);
+  const showHero = !hideHeader && Boolean(heroHead || displayTitle);
 
   useKeyboardShortcuts({
     navigate: (path) => router.push(path),
@@ -127,10 +138,10 @@ export const PageLayout = ({
       {/* The hero, and the trail it now carries.
 
           The trail belongs to the chrome, not to the page: it survives
-          `hideHeader`, which the fiches pass because their own title stands
-          over the globe and which would otherwise cost them the way back. So
-          it is rendered either inside the plate or, on a bandless route, in
-          the shell box on its own — never neither.
+          `hideHeader`, which the legal pages and the home still pass, and
+          which would otherwise cost them the way back. So it is rendered
+          either inside the plate or, on a bandless route, in the shell box on
+          its own — never neither.
 
           It sits *under* the title rather than over it because a trail is read
           as what qualifies a title, not as what introduces one; and it sits
@@ -138,9 +149,9 @@ export const PageLayout = ({
           the trail and the title on two different verticals. */}
       {showHero ? (
         <PageHero
-          variant={heroVariant}
           title={displayTitle}
           subtitle={subtitle}
+          head={heroHead}
           trail={<SiteTrail entityLabel={trailLabel} />}
         />
       ) : (

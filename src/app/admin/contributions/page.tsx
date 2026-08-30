@@ -178,7 +178,7 @@ export default function AdminContributionsPage() {
           {contributions.map((contribution) => (
             <article
               key={contribution.id}
-              className="space-y-2 rounded-afh-base border border-afh-border bg-afh-surface p-4"
+              className="space-y-2 rounded-afh-lg border border-afh-border bg-afh-surface p-4"
             >
               <div className="flex items-start justify-between">
                 <div>
@@ -222,7 +222,7 @@ export default function AdminContributionsPage() {
                 <summary className="cursor-pointer text-afh-small text-afh-text-soft">
                   View payload
                 </summary>
-                <pre className="mt-2 overflow-auto rounded-afh-base bg-afh-bg-warm p-2 text-afh-caption text-afh-text">
+                <pre className="mt-2 overflow-auto rounded-afh-lg bg-afh-bg-warm p-2 text-afh-caption text-afh-text">
                   {JSON.stringify(contribution.proposed_payload, null, 2)}
                 </pre>
               </details>

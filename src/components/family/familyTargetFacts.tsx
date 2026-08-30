@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
+import { ActionLink } from "@/components/ui/ActionLink";
 
 /**
  * What the globe's panel says when a reader picks one country of a family's
@@ -145,13 +146,12 @@ export function buildFamilyTargetFacts({
             Dérivé — non déclaré par la fiche famille
           </span>
 
-          <a
+          <ActionLink
             href="#fiche"
-            style={{ color: "var(--accent-ink, var(--accent))" }}
             aria-label={`Lire la fiche complète de ${familyNameFr}`}
           >
-            Lire la fiche complète →
-          </a>
+            Lire la fiche complète
+          </ActionLink>
         </div>
       ),
     };

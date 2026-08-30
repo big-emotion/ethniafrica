@@ -34,6 +34,12 @@ export interface FicheLoadingScreenProps {
  * that rendered bare content would blank the navigation bar for the length of
  * the wait and bring it back — the page would appear to reload.
  *
+ * That includes the hero band, which is why this raises one too. It names the
+ * section rather than the fiche — the wait is precisely the state in which the
+ * subject's own name is not yet known — and the band's floor means the plate
+ * that says "Pays" and the plate that says "Bénin" occupy the same height, so
+ * the arrival swaps the text without moving the globe below it.
+ *
  * The band is `FicheHeroBand`, the very component the fiche opens on, so the
  * night ground, the full-bleed width and the ochre seam cannot drift from the
  * page they precede. Only the globe's height is restated, from the token
@@ -51,7 +57,7 @@ export function FicheLoadingScreen({
   sectionName,
 }: FicheLoadingScreenProps) {
   return (
-    <PageLayout language="fr" sectionName={sectionName} hideHeader flushTop>
+    <PageLayout language="fr" sectionName={sectionName} flushTop>
       <FicheHeroBand>
         <div
           data-testid="fiche-loading-band"

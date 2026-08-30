@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export interface FacetFilterOption {
   value: string;
@@ -182,16 +183,9 @@ export function FacetFilterBar({
           </details>
         )}
 
-        <button
-          type="submit"
-          className="min-h-11 shrink-0 rounded-afh-lg px-4 py-2 font-medium"
-          style={{
-            backgroundColor: "var(--accent)",
-            color: "var(--accent-foreground)",
-          }}
-        >
+        <Button type="submit" variant="accent" className="shrink-0">
           {submitLabel}
-        </button>
+        </Button>
       </div>
 
       {activeFilters.length > 0 && (

@@ -357,7 +357,7 @@ export function AnecdoteReader({
           min-height: 48px;
           padding: 0 34px;
           border: 1px solid var(--afh-terracotta);
-          border-radius: 100px;
+          border-radius: var(--afh-radius-full);
           background: var(--afh-terracotta);
           color: #fff;
           font-size: var(--afh-text-body);
@@ -382,7 +382,7 @@ export function AnecdoteReader({
           min-height: 44px;
           padding: 0 16px;
           border: 1px solid var(--afh-border);
-          border-radius: 100px;
+          border-radius: var(--afh-radius-full);
           background: var(--afh-color-card);
           color: var(--afh-text-soft);
           font-size: var(--afh-text-caption);
@@ -415,7 +415,7 @@ export function AnecdoteReader({
           min-height: 40px;
           padding: 0 14px;
           border: 1px solid var(--afh-border);
-          border-radius: 100px;
+          border-radius: var(--afh-radius-full);
           background: transparent;
           color: var(--afh-text-soft);
           font-size: var(--afh-text-caption);

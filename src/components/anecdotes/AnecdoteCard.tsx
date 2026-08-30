@@ -234,7 +234,7 @@ export function AnecdoteCard({
           gap: 7px;
           padding: 6px 13px 6px 10px;
           border: 1px solid var(--accent);
-          border-radius: 100px;
+          border-radius: var(--afh-radius-full);
           background: var(--afh-color-card);
           color: var(--accent-ink);
           font-size: var(--afh-text-caption);

@@ -8,6 +8,7 @@ import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
 import { getLocalizedRoute } from "@/lib/routing";
+import { Button } from "@/components/ui/button";
 
 const t = translations.fr.quiz;
 
@@ -64,12 +65,9 @@ export const QuizScoreScreen = ({
       </p>
       <p className="text-afh-body text-afh-text-soft">{scopeLabelFr}</p>
       <div className="flex w-full flex-col gap-2">
-        <Link
-          href={shareHref}
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white"
-        >
-          {t.seeScoreCard}
-        </Link>
+        <Button asChild className="w-full">
+          <Link href={shareHref}>{t.seeScoreCard}</Link>
+        </Button>
         <QuizSessionExit
           href={exitHref}
           label={t.backToPicker}

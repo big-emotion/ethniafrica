@@ -22,18 +22,14 @@ type Story = StoryObj<typeof meta>;
  * The globe and the parchment are proofed where they live — a story here that
  * mounted a real AtlasGlobe would be proofing WebGL, and one that mounted a
  * real parchment would duplicate the three fiche stories. What this story is
- * for is the shell's own decisions: the accent scope, the measured head band
- * against the two full-bleed slots, and the order head → globe → rail →
- * dossier at each of the three fiche breakpoints.
+ * for is the shell's own decisions: the accent scope, the two full-bleed slots
+ * carrying no measure between them, and the order globe → rail → dossier at
+ * each of the three fiche breakpoints. The head is not here because it is not
+ * the sequence's any more — it fills the shell's hero plate, above this.
  */
 const peopleFiche: Story = {
   args: {
     entityType: "people",
-    title: (
-      <h1 className="font-afh-display text-afh-h1 font-black text-afh-text">
-        Yoruba
-      </h1>
-    ),
     globe: (
       <div className="grid h-[320px] w-full place-items-center bg-afh-bg-warm text-afh-text-soft">
         Bande atlas

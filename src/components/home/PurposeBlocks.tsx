@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { SectionHeading } from "@/components/home/SectionHeading";
+import { ActionLink } from "@/components/ui/ActionLink";
 
 import {
   getCountryRoute,
@@ -197,10 +197,9 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
             <h3>{block.title}</h3>
             <p className="home-purpose-claim">{block.claim}</p>
             <p>{block.followUp}</p>
-            <Link className="home-purpose-cta" href={block.cta.href(language)}>
+            <ActionLink href={block.cta.href(language)}>
               {block.cta.label}
-              <span aria-hidden="true"> →</span>
-            </Link>
+            </ActionLink>
           </div>
         </div>
       ))}
@@ -313,19 +312,6 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
         }
         .home-purpose-body .home-purpose-claim {
           color: var(--afh-text);
-        }
-        .home-purpose-cta {
-          display: inline-block;
-          font-size: var(--afh-text-small);
-          font-weight: 700;
-          color: var(--accent-ink);
-          text-decoration: none;
-          border-bottom: 1.5px solid currentColor;
-          padding-bottom: 1px;
-        }
-        .home-purpose-cta:hover,
-        .home-purpose-cta:focus-visible {
-          border-bottom-color: var(--accent);
         }
         @media (min-width: 720px) {
           .home-purpose {
