@@ -24,7 +24,6 @@ vi.mock("@/hooks/use-consent", () => ({
   }),
 }));
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
-import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import type { LanguageFamily } from "@/types/afrik";
 import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
@@ -106,8 +105,8 @@ describe("LanguageFamilyDetailViewV2", () => {
     expect(
       screen.getByText("Désignation linguistique contemporaine.")
     ).toBeTruthy();
-    // The branch names are presented by TonguePanel, above The Record, which
-    // is where the route feeds them; The Record states how many there are.
+    // The branch names are the classification tree's, which the route feeds
+    // into the parchment; the stat card states how many there are.
     expect(screen.getByTestId("stat-card-branches")).toHaveTextContent("1");
     expect(screen.getByText("Shona")).toBeTruthy();
     expect(screen.getByText("Langues agglutinantes")).toBeTruthy();
@@ -249,9 +248,6 @@ describe("LanguageFamilyDetailViewV2", () => {
           whyProblematic: null,
           selfAppellation: "Bantu",
           contemporaryUsage: null,
-          geographicArea: null,
-          numberOfLanguages: null,
-          totalSpeakers: null,
         }}
         selfAppellationLang="sw"
       />
@@ -265,36 +261,6 @@ describe("LanguageFamilyDetailViewV2", () => {
       `${getLocalizedRoute("fr", "doctrine")}/endonymes-vs-exonymes`
     );
   });
-
-  // @req REQ-047
-  it("surfaces confidence and contested-classification affordances in the hero", () => {
-    render(
-      <FamilyHero
-        data={{
-          id: "FLG_BANTU",
-          nameFr: "Famille bantoue",
-          nameEn: null,
-          classificationStatus: "contested",
-        }}
-      />
-    );
-
-    expect(screen.getByText("voir les sources")).toHaveAttribute(
-      "href",
-      "#sources"
-    );
-    expect(screen.getByRole("link", { name: /contesté/i })).toHaveAttribute(
-      "href",
-      `${getLocalizedRoute("fr", "doctrine")}#contested`
-    );
-    expect(
-      screen.getAllByRole("link", { name: "Lire la doctrine" })[0]
-    ).toHaveAttribute(
-      "href",
-      `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`
-    );
-  });
-
   // @req REQ-050
   it("anchors source affordances and deep-links each country distribution", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);

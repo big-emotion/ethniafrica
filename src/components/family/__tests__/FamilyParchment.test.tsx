@@ -56,9 +56,6 @@ function undeclaredFamily(): FamilyPageData {
       whyProblematic: null,
       selfAppellation: "Benue–Congo",
       contemporaryUsage: null,
-      geographicArea: null,
-      numberOfLanguages: 900,
-      totalSpeakers: 500_000_000,
     },
     generalInfo: {
       branches: [],
@@ -165,6 +162,26 @@ describe("FamilyParchment — what the fiche declares", () => {
 
     expect(screen.getByTestId("stat-card-langues")).toHaveTextContent("900");
     expect(screen.getByTestId("stat-card-locuteurs")).toHaveTextContent("500");
+  });
+
+  // The head opened on a "900 langues" chip and the stat card printed 900 a
+  // few lines below it — the same field, twice, on one screen. The card is the
+  // one that carries the rubric naming where the figure is read and the
+  // provenance marker when it is missing; the chip carried neither.
+  // @req REQ-116
+  it("states the languages count once, on the card that names its rubric", () => {
+    const { container } = renderParchment();
+
+    const stated = Array.from(container.querySelectorAll("*")).filter(
+      (element) =>
+        element.children.length === 0 &&
+        /\b900\b/.test(element.textContent ?? "")
+    );
+
+    expect(stated).toHaveLength(1);
+    expect(
+      stated[0].closest("[data-testid='stat-card-langues']")
+    ).not.toBeNull();
   });
 });
 

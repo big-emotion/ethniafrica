@@ -1,7 +1,18 @@
 import type { LanguageFamily } from "@/types/afrik";
 import { transformFamilyData } from "@/lib/familyDataTransformer";
 
-/** What a family fiche says a family is — see FamilyParchment. */
+/**
+ * The second half of the fiche's title — what a family fiche says a family is.
+ *
+ * Not a corpus field. It is true of all 24 family fiches for the same
+ * structural reason — none declares its own distribution — so storing it would
+ * mean writing the same sentence into 24 files and keeping them in step. It
+ * lives here, as one editorial constant, with its reason attached.
+ *
+ * The day a family fiche does declare a distribution, this stops being true of
+ * that fiche and has to become conditional on the same provenance check the
+ * parchment's stat cards already run.
+ */
 const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
 
 /**

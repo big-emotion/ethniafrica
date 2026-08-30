@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
@@ -32,20 +32,6 @@ import { isSourceTier, SOURCE_TIER_LABELS_FR } from "@/types/sources";
  * reconstruction. An empty field is a fact about the state of the corpus;
  * erasing it would delete that fact.
  */
-
-/**
- * The second half of the fiche's title.
- *
- * Not a corpus field. It is true of all 24 family fiches for the same
- * structural reason — none declares its own distribution — so storing it would
- * mean writing the same sentence into 24 files and keeping them in step. It
- * lives here, as one editorial constant, with its reason attached.
- *
- * The day a family fiche does declare a distribution, this stops being true of
- * that fiche and has to become conditional on the same provenance check the
- * cards below already run.
- */
-const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
 
 const numberFr = new Intl.NumberFormat("fr-FR");
 
@@ -207,9 +193,6 @@ export function FamilyParchment({
         }))
   );
 
-  const selfAppellation = decolonialHeader.selfAppellation;
-  const nameEn = hero.nameEn ?? decolonialHeader.nameEn;
-
   const distributionProvenance = classifyFieldProvenance(
     distribution.distributionByCountry
   ).state;
@@ -221,11 +204,11 @@ export function FamilyParchment({
           document, and the chapters below immediately qualify them. */}
       <div className="afh-parchment-head">
         <div className="afh-chips">
-          {generalInfo.numberOfLanguages !== null && (
-            <span className="afh-chip" data-tone="stable">
-              {numberFr.format(generalInfo.numberOfLanguages)} langues
-            </span>
-          )}
+          {/* The languages count is not here: the stat card below states it,
+              under the rubric naming where in the fiche it is read and with
+              the provenance marker when it is absent. A chip stating the same
+              figure a few lines above, carrying neither, said it twice and
+              said it worse. */}
           <span className="afh-chip" data-tone="derived">
             {memberPeopleCount} peuples · {footprint.length} pays dérivés
           </span>
