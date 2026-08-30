@@ -4,11 +4,8 @@
  * sight, so the geometry math is unit-testable without a real context.
  */
 import { lonLatToSphere, type SpherePoint } from "@/lib/atlas/projection";
-import {
-  ringCentroid,
-  type PeopleFieldArea,
-  type Ring,
-} from "@/lib/atlas/overlays";
+import { type PeopleFieldArea, type Ring } from "@/lib/atlas/overlays";
+import { triangulateRing } from "@/lib/atlas/ringTriangulation";
 import { orderedPeopleFieldAreas } from "@/lib/atlas/peopleField";
 import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 import type { CountryId } from "@/types/afrik";
@@ -78,8 +75,8 @@ export function buildRingLineLoop(ring: Ring): LineLoopGeometry {
   };
 }
 
-export interface FanGeometry {
-  /** 3 floats per vertex: centroid, then every ring point, then the first ring point again (closes the fan). */
+export interface FillGeometry {
+  /** 3 floats per vertex, 3 vertices per triangle — for GL_TRIANGLES. */
   positions: Float32Array;
   /** The same vertices on the Mercator plane, for the morph. Same length as positions. */
   flatPositions: Float32Array;
@@ -87,15 +84,19 @@ export interface FanGeometry {
 }
 
 /**
- * Centroid-fan triangulation for a GL_TRIANGLE_FAN fill — a stylised
- * approximation, not a survey-grade tessellation, the same tradeoff the
- * committed basemap silhouette already makes (projection.ts).
+ * A ring as the triangles that fill it.
+ *
+ * This was a GL_TRIANGLE_FAN off the ring centroid, which only tiles a ring
+ * that is star-shaped from that centroid — and no African outline is. On ZAF
+ * the fan stacked up to three triangles on the same ground; at the overlay's
+ * partial fill opacity each stack blended again and drew the bright hairlines
+ * that radiated from the middle of the selected country. Ear clipping
+ * (ringTriangulation.ts) covers the ring once and only once.
  */
 // @req REQ-116
-export function buildRingFan(ring: Ring): FanGeometry {
-  const center = ringCentroid(ring);
-  const fanPoints = [center, ...ring, ring[0]];
-  const spherePoints = fanPoints.map((p) => lonLatToSphere(p.lon, p.lat));
+export function buildRingFill(ring: Ring): FillGeometry {
+  const vertices = triangulateRing(ring);
+  const spherePoints = vertices.map((p) => lonLatToSphere(p.lon, p.lat));
 
   const positions = new Float32Array(spherePoints.length * 3);
   const flatPositions = new Float32Array(spherePoints.length * 3);
@@ -104,7 +105,7 @@ export function buildRingFan(ring: Ring): FanGeometry {
     positions[i * 3 + 1] = point.y;
     positions[i * 3 + 2] = point.z;
 
-    const flat = lonLatToFlat(fanPoints[i].lon, fanPoints[i].lat);
+    const flat = lonLatToFlat(vertices[i].lon, vertices[i].lat);
     flatPositions[i * 3] = flat.x;
     flatPositions[i * 3 + 1] = flat.y;
     flatPositions[i * 3 + 2] = flat.z;

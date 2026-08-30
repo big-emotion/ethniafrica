@@ -4,9 +4,10 @@ import type { Ring } from "@/lib/atlas/overlays";
 
 import {
   buildPointField,
-  buildRingFan,
+  buildRingFill,
   buildRingLineLoop,
 } from "../globeGeometry";
+import { lonLatToSphere } from "@/lib/atlas/projection";
 import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 
 const square: Ring = [
@@ -40,12 +41,32 @@ describe("buildRingLineLoop", () => {
   });
 });
 
-describe("buildRingFan", () => {
+describe("buildRingFill", () => {
   // @req REQ-116
-  it("emits the centroid, every ring vertex, and repeats the first vertex to close the fan", () => {
-    const geometry = buildRingFan(square);
-    expect(geometry.vertexCount).toBe(square.length + 2);
-    expect(geometry.positions).toHaveLength((square.length + 2) * 3);
+  it("emits whole triangles, and one fewer than the ring has edges", () => {
+    const geometry = buildRingFill(square);
+    const triangles = square.length - 2;
+    expect(geometry.vertexCount).toBe(triangles * 3);
+    expect(geometry.positions).toHaveLength(triangles * 3 * 3);
+  });
+
+  // Every vertex a fill draws is a vertex of the ring it fills — the retired
+  // centroid fan was the only thing here that invented a point the outline had
+  // no counterpart for.
+  // @req REQ-116
+  it("draws only points the ring itself declares", () => {
+    const { positions } = buildRingFill(square);
+    const ringPoints = square.map((p) => lonLatToSphere(p.lon, p.lat));
+
+    for (let i = 0; i < positions.length; i += 3) {
+      const onRing = ringPoints.some(
+        (point) =>
+          Math.abs(point.x - positions[i]) < 1e-6 &&
+          Math.abs(point.y - positions[i + 1]) < 1e-6 &&
+          Math.abs(point.z - positions[i + 2]) < 1e-6
+      );
+      expect(onRing).toBe(true);
+    }
   });
 });
 
@@ -102,8 +123,8 @@ describe("flat positions on ring geometry (REQ-112)", () => {
     const loop = buildRingLineLoop(square);
     expect(loop.flatPositions.length).toBe(loop.positions.length);
 
-    const fan = buildRingFan(square);
-    expect(fan.flatPositions.length).toBe(fan.positions.length);
+    const fill = buildRingFill(square);
+    expect(fill.flatPositions.length).toBe(fill.positions.length);
   });
 
   // @req REQ-112
