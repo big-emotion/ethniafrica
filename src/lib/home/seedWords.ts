@@ -37,10 +37,13 @@ export const SEED_WORDS_PER_POOL = 10;
  * is a query a reader would type. 694 of 789 peoples, 49 of 54 countries and
  * 17 of 24 families remain eligible.
  *
- * The countries are the sharp edge: `name_fr` carries the common form for
- * most ("Cameroun") and the official one for a few ("République-Unie de
- * Tanzanie"), with no short-name field to prefer. Tanzania and the DRC are
- * therefore never seed words until the corpus grows one.
+ * The countries are the sharp edge, and what it exposes is a corpus defect
+ * rather than a limit of this rule. `name_fr` is the name of ordinary use and
+ * `name_official` the protocol name (migration 049), which most fiches
+ * respect — ZAF reads "Afrique du Sud", CIV "Côte d'Ivoire". Two do not: TZA
+ * carries "République-Unie de Tanzanie" and COD "République démocratique du
+ * Congo" in `name_fr`, so those two countries cannot be seed words until
+ * their fiches say "Tanzanie" and "RD Congo" where the schema asks them to.
  */
 // @req REQ-002
 export const SEED_WORD_MAX_LENGTH = 14;
