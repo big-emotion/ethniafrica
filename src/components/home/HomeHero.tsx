@@ -50,7 +50,7 @@ export function HomeHero() {
       {/* Copy left, visual right — the shell box, so the headline starts on
           the same left edge as the logo above it. */}
       <div className="afh-shell home-hero-inner">
-        <header className="home-hero-copy">
+        <header className="home-hero-copy afh-phone-centred">
           {/* The thin no-break space is the French rule before a question
               mark, and it is load-bearing here rather than typographic
               politeness: the headline wraps to two lines on a phone, and a
