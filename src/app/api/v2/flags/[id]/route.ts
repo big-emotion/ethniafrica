@@ -98,6 +98,7 @@
 import { NextRequest } from "next/server";
 import {
   handleFlagDetail,
+  handleFlagTransition,
   type FlagHandlerResult,
 } from "@/api/v2/handlers/flags";
 import { createApiError } from "@/api/v2/utils/response";
@@ -105,6 +106,17 @@ import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
 const NO_STORE_HEADERS = { "Cache-Control": "no-store" };
+
+function getAccessToken(request: NextRequest): string | null {
+  const authorization = request.headers.get("authorization");
+  return authorization?.match(/^Bearer\s+(\S+)$/i)?.[1] ?? null;
+}
+
+function getClientIp(request: NextRequest): string | undefined {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined
+  );
+}
 
 function responseFromHandler<T>(result: FlagHandlerResult<T>) {
   return jsonWithCors(result.body, {
@@ -127,6 +139,80 @@ export async function GET(
     return responseFromHandler(result);
   } catch (error) {
     logger.error("Error in GET /api/v2/flags/[id]", error);
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500, headers: NO_STORE_HEADERS }
+    );
+  }
+}
+
+/**
+ * @swagger
+ * /api/v2/flags/{public_slug_or_id}:
+ *   patch:
+ *     summary: Move a report through the moderation state machine
+ *     description: >-
+ *       Drives one report through the transitions Postgres allows: open →
+ *       under_review, and under_review → accepted | rejected | duplicate.
+ *       Terminal states have no exit. Requires a bearer token whose account
+ *       holds a moderator role; every applied transition writes an audit_log
+ *       entry. See docs/design/moderation-charter.md §4.
+ *     tags: [API v2 - Flags]
+ *     security:
+ *       - SupabaseJwtAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: public_slug_or_id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Flag UUID or public slug.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [status]
+ *             properties:
+ *               status:
+ *                 type: string
+ *                 enum: [open, under_review, accepted, rejected, withdrawn, duplicate]
+ *               moderator_notes:
+ *                 type: string
+ *                 maxLength: 5000
+ *     responses:
+ *       200:
+ *         description: The updated report.
+ *       400:
+ *         description: The requested status is not part of the vocabulary.
+ *       403:
+ *         description: The caller holds no moderator role.
+ *       404:
+ *         description: No report carries this identifier.
+ *       409:
+ *         description: The state machine refuses this move from the current state.
+ *       500:
+ *         description: Internal error.
+ */
+// @req REQ-042
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const body = await request.json().catch(() => ({}));
+    const result = await handleFlagTransition(id, body, {
+      accessToken: getAccessToken(request),
+      clientIp: getClientIp(request),
+    });
+    return responseFromHandler(result);
+  } catch (error) {
+    logger.error("Error in PATCH /api/v2/flags/[id]", error);
     return jsonWithCors(
       createApiError({
         code: "INTERNAL_ERROR",

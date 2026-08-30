@@ -25,6 +25,26 @@ allowed to claim.
 simplification, not "just for the hover state", not in the non-WebGL fallback.
 If a future feature needs a people-shaped polygon, it needs a source first.
 
+**A mark is not an encoding.** The three rows above are what the _data_ claims.
+A mark pinned on the stage claims something else entirely — "this country
+opens" — and that is the whole of what it may say. It never states how much the
+corpus holds there: that is the radial field's job, and the field is sized from
+the data while a mark is not.
+
+So **every mark on one scene has one shape**. The continent stage used to pin a
+bordered 22 px button on the twelve countries the field ranks and a 7 px dot on
+the other forty-two, which made the twelve read as a different _kind_ of thing
+rather than as the same offer, better documented. The corpus declares no such
+hierarchy — all fifty-four open the same fiche the same way — and a reader has
+no way to learn that the two shapes meant "ranked" rather than "different".
+
+And a scene that marks countries **says so in its legend**. A mark is inert and
+silent; without the sentence, a reader who does not already know the dots are
+countries reads the whole scene as decoration. Said only where marks exist: a
+country fiche traces one outline and marks nothing, and promising a point there
+sends the reader hunting for a target the scene never drew. Contract:
+`src/components/atlas/__tests__/atlasMarksCharter.test.tsx`.
+
 **Where the surfaces come from.** Country and family outlines are Natural Earth
 admin-0 110 m — public, versioned, checkable. A people's field is _computed_
 from `content.demography.distributionByCountry`; nobody draws the blob by hand,

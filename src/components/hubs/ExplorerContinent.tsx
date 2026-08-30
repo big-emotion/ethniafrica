@@ -38,9 +38,9 @@ export interface ExplorerContinentProps {
   /**
    * Every country the corpus documents — what the reader may *choose*, which
    * is wider than what the field draws. `buildContinentOverlay` ranks twelve
-   * and the scene pins a labelled marker on each; this list is what makes the
-   * other forty-two reachable, and AtlasGlobe gives each of them a small inert
-   * mark so the scene shows the whole of what it offers.
+   * for the field; this list is what makes the other forty-two reachable, and
+   * AtlasGlobe gives all of them the same small inert mark so the scene shows
+   * the whole of what it offers without ranking it a second time.
    */
   countryIds: readonly string[];
   missingMessage: string;
@@ -96,10 +96,11 @@ export function ExplorerContinent({
     [countryIds, peopleCountsByCountry]
   );
 
-  // The marker opens the panel; the panel is where the fiche link lives, so
-  // a mis-hit at 430px costs a dismissal rather than a navigation and a
-  // back-trip (REQ-117). Only the caller knows a country has a fiche, which
-  // is why AtlasGlobe leaves this to targetFacts rather than linking itself.
+  // Choosing a country opens the panel; the panel is where the fiche link
+  // lives, so a mis-hit at 430px costs a dismissal rather than a navigation
+  // and a back-trip (REQ-117). Only the caller knows a country has a fiche,
+  // which is why AtlasGlobe leaves this to targetFacts rather than linking
+  // itself.
   const factsWithFiche = useCallback(
     (target: AtlasTarget) => ({
       ...continentTargetFacts(target),
@@ -131,6 +132,16 @@ export function ExplorerContinent({
           pickerTargets={pickerTargets}
           missingMessage={missingMessage}
           targetFacts={factsWithFiche}
+          // One shape of mark for all fifty-four. Pinning a bordered 22px
+          // button on the twelve the field ranks made them read as a
+          // different kind of thing from the other forty-two, a hierarchy
+          // the corpus never declares — every country opens the same fiche
+          // the same way, and how much is documented there is already the
+          // field's claim. The list is what the twelve buttons used to be
+          // for the keyboard, and it names all of them rather than twelve.
+          targetPicker="list"
+          areaNoun="l'atlas"
+          wholeAreaLabel="Toute l'Afrique"
         />
       ) : (
         // Rendered on the server and on the first paint, so the hub reads

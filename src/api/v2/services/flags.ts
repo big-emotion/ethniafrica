@@ -142,7 +142,8 @@ export async function getAgeConfirmedAt(
 
 // @req REQ-012
 export async function createFlag(
-  contributorId: string,
+  /** Null for an anonymous report — see moderation-charter.md §2. */
+  contributorId: string | null,
   input: FlagCreateInput
 ): Promise<CreatedFlag> {
   const supabase = createAdminClient();
@@ -159,7 +160,7 @@ export async function createFlag(
       proposed_rewrite: input.proposed_rewrite ?? null,
       contributor_id: contributorId,
       status: "open",
-      turnstile_token_verified: true,
+      human_verified: true,
     })
     .select("id, public_slug, status, created_at")
     .single();
@@ -296,3 +297,120 @@ function mapFlagRow(row: FlagRow): PublicFlag {
     resolved_at: row.resolved_at,
   };
 }
+
+export type ModeratorRole = "editor" | "senior_editor" | "admin";
+
+const MODERATOR_ROLES: ReadonlyArray<ModeratorRole> = [
+  "editor",
+  "senior_editor",
+  "admin",
+];
+
+/**
+ * The moderator behind a bearer token, or null.
+ *
+ * `getModeratorSession` in src/lib/supabase/moderator.ts answers the same
+ * question for a Server Component and `redirect()`s when the answer is no —
+ * which an API route must not do. This is its non-redirecting twin, and it
+ * reads the same column, so the two cannot drift on who counts as a moderator.
+ *
+ * Role membership lives in `contributor_profiles.moderator_role`. `user_roles`
+ * has a moderator value too and opens no door; the moderation charter §4 takes
+ * no position on unifying them, and this function deliberately reads only the
+ * one the middleware already enforces.
+ */
+// @req REQ-042
+export async function getModeratorByAccessToken(
+  accessToken: string
+): Promise<{ id: string; role: ModeratorRole } | null> {
+  const supabase = createAdminClient();
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser(accessToken);
+
+  if (error || !user) {
+    if (error) logger.error("Failed to authenticate moderator", error);
+    return null;
+  }
+
+  const { data, error: profileError } = await supabase
+    .from("contributor_profiles")
+    .select("moderator_role")
+    .or(`id.eq.${user.id},user_id.eq.${user.id}`)
+    .maybeSingle();
+
+  if (profileError) {
+    logger.error("Failed to read moderator role", profileError);
+    return null;
+  }
+
+  const role = data?.moderator_role as ModeratorRole | "none" | undefined;
+  if (!role || !MODERATOR_ROLES.includes(role as ModeratorRole)) return null;
+
+  return { id: user.id, role: role as ModeratorRole };
+}
+
+/**
+ * Drive one flag through the state machine.
+ *
+ * The transition itself is validated by Postgres — `flags_enforce_state_machine`
+ * raises on anything the charter's diagram does not allow — so this does not
+ * re-implement the rules. It reports the refusal rather than pre-empting it,
+ * which keeps one definition of the machine instead of two that can disagree.
+ *
+ * Writes go through the service-role client because RLS gives a contributor no
+ * path to a status change, by design: the authorization check is the handler's,
+ * and it is the only one.
+ */
+// @req REQ-042
+export async function transitionFlag(
+  identifier: string,
+  next: { status: FlagStatus; moderatorId: string; moderatorNotes?: string }
+): Promise<
+  | { ok: true; flag: PublicFlag; previousStatus: FlagStatus }
+  | { ok: false; reason: "not_found" | "illegal_transition" }
+> {
+  const supabase = createAdminClient();
+
+  const current = await getFlagByIdOrSlug(identifier);
+  if (!current) return { ok: false, reason: "not_found" };
+
+  const { data, error } = await supabase
+    .from("flags")
+    .update({
+      status: next.status,
+      moderator_id: next.moderatorId,
+      ...(next.moderatorNotes === undefined
+        ? {}
+        : { moderator_notes: next.moderatorNotes }),
+      ...(TERMINAL_STATUSES.includes(next.status)
+        ? { resolved_at: new Date().toISOString() }
+        : {}),
+    })
+    .eq("id", current.id)
+    .select(PUBLIC_FLAG_COLUMNS)
+    .single();
+
+  if (error) {
+    // 23514 is the check_violation the state-machine trigger raises.
+    if (error.code === "23514") {
+      return { ok: false, reason: "illegal_transition" };
+    }
+    logger.error("Failed to transition flag", error, { id: current.id });
+    throw error;
+  }
+
+  return {
+    ok: true,
+    flag: mapFlagRow(data),
+    previousStatus: current.status,
+  };
+}
+
+const TERMINAL_STATUSES: ReadonlyArray<FlagStatus> = [
+  "accepted",
+  "rejected",
+  "withdrawn",
+  "duplicate",
+];

@@ -74,7 +74,6 @@ export type SourceChainSheetProps = {
    * Component. Required together with `assertion.id` to enable the live
    * FlagTarget wiring — otherwise the disabled placeholder is kept.
    */
-  turnstileSiteKey?: string;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -269,13 +268,7 @@ export function formatBrokenDate(iso: string): string {
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function SourceItem({
-  source,
-  turnstileSiteKey,
-}: {
-  source: Source;
-  turnstileSiteKey?: string;
-}) {
+function SourceItem({ source }: { source: Source }) {
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -332,41 +325,21 @@ function SourceItem({
         </span>
       ) : null}
       <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
-        {turnstileSiteKey ? (
-          <FlagTarget
-            target={{
-              type: "source",
-              id: source.id,
-              snapshotQuote: source.citation,
-            }}
-            turnstileSiteKey={turnstileSiteKey}
-            triggerLabel="Signaler cette source"
-            className="w-auto text-afh-caption"
-          />
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-2 py-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-            aria-label="Signaler cette source — bientôt disponible"
-          >
-            Signaler cette source (bientôt disponible)
-          </button>
-        )}
+        <FlagTarget
+          target={{
+            type: "source",
+            id: source.id,
+            snapshotQuote: source.citation,
+          }}
+          triggerLabel="Signaler cette source"
+          className="w-auto text-afh-caption"
+        />
       </div>
     </li>
   );
 }
 
-function TierGroup({
-  tier,
-  sources,
-  turnstileSiteKey,
-}: {
-  tier: SourceTier;
-  sources: Source[];
-  turnstileSiteKey?: string;
-}) {
+function TierGroup({ tier, sources }: { tier: SourceTier; sources: Source[] }) {
   if (sources.length === 0) return null;
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
@@ -375,34 +348,19 @@ function TierGroup({
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
-          <SourceItem
-            key={s.id}
-            source={s}
-            turnstileSiteKey={turnstileSiteKey}
-          />
+          <SourceItem key={s.id} source={s} />
         ))}
       </ul>
     </div>
   );
 }
 
-function SourceList({
-  sources,
-  turnstileSiteKey,
-}: {
-  sources: Source[];
-  turnstileSiteKey?: string;
-}) {
+function SourceList({ sources }: { sources: Source[] }) {
   const grouped = groupByTier(sources);
   return (
     <div className="space-y-4">
       {TIER_ORDER.map((tier) => (
-        <TierGroup
-          key={tier}
-          tier={tier}
-          sources={grouped[tier]}
-          turnstileSiteKey={turnstileSiteKey}
-        />
+        <TierGroup key={tier} tier={tier} sources={grouped[tier]} />
       ))}
     </div>
   );
@@ -421,7 +379,6 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
   openFlagCount = 0,
   revisionUrl,
   anchorId,
-  turnstileSiteKey,
 }) => {
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
@@ -540,15 +497,12 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   <p className="text-afh-caption font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
-                  <SourceList
-                    sources={pg.sources}
-                    turnstileSiteKey={turnstileSiteKey}
-                  />
+                  <SourceList sources={pg.sources} />
                 </div>
               ))}
             </div>
           ) : (
-            <SourceList sources={sources} turnstileSiteKey={turnstileSiteKey} />
+            <SourceList sources={sources} />
           )}
         </section>
 
@@ -568,7 +522,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 
         {/* 6. FlagTarget */}
         <section data-testid="section-flag-target" className="pt-2">
-          {assertion.id && turnstileSiteKey ? (
+          {/* The `assertion.id` guard stays: with no assertion there is no
+              target to report. Only the Turnstile half of the condition goes. */}
+          {assertion.id ? (
             <FlagTarget
               target={{
                 type: "assertion",
@@ -576,19 +532,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                 fieldPath: assertion.fieldPath,
                 snapshotQuote: assertion.statement,
               }}
-              turnstileSiteKey={turnstileSiteKey}
               triggerLabel="Signaler un problème"
             />
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-              aria-label="Signaler un problème — bientôt disponible"
-            >
-              Signaler un problème (bientôt disponible)
-            </button>
-          )}
+          ) : null}
         </section>
 
         {/* 7. Cite affordance (appears after 4 s dwell) */}

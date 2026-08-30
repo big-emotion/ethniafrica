@@ -107,11 +107,17 @@
  *                 - code: INTERNAL_ERROR
  *                   message: Internal server error
  *   post:
- *     summary: Submit a flag on an AFRIK entity
- *     description: Authenticated contributors can submit a flag for editorial review after age and anti-bot verification. Responses are mutable and use Cache-Control no-store.
+ *     summary: Submit a report on an AFRIK entity
+ *     description: >-
+ *       Anyone may submit a report for editorial review, subject to anti-bot
+ *       verification. A bearer token is optional and decides attribution only:
+ *       a report from a session whose account has confirmed its age is credited
+ *       to that contributor, and every other report is recorded anonymously
+ *       rather than refused. Responses are mutable and use Cache-Control no-store.
  *     tags: [API v2 - Flags]
  *     security:
  *       - SupabaseJwtAuth: []
+ *       - {}
  *     requestBody:
  *       required: true
  *       content:
@@ -127,7 +133,13 @@
  *             counter_source_url: https://example.org/census/2024
  *             counter_source_citation: National Statistics Office, 2024 census, table 12.
  *             proposed_rewrite: Update the population figure using the 2024 census.
- *             turnstile_token: 0.ABC123.turnstile-response
+ *             antibot:
+ *               salt: 9f2c1ab4d7e60358
+ *               nonce: "418209"
+ *               difficultyBits: 20
+ *               expiresAt: 1788080000000
+ *               signature: 3b1f…
+ *             elapsedMs: 18400
  *     responses:
  *       201:
  *         description: Flag created successfully.
@@ -165,22 +177,8 @@
  *                 - code: VALIDATION_ERROR
  *                   message: String must contain at least 10 character(s)
  *                   field: reason_text
- *       401:
- *         description: Missing or invalid Supabase access token.
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/ApiErrorEnvelope'
- *             example:
- *               data: null
- *               meta:
- *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
- *               errors:
- *                 - code: UNAUTHENTICATED
- *                   message: Authentication required
  *       403:
- *         description: Age confirmation is missing or anti-bot verification failed.
+ *         description: Anti-bot verification failed.
  *         content:
  *           application/json:
  *             schema:
@@ -197,7 +195,7 @@
  *                     - code: AGE_CONFIRMATION_REQUIRED
  *                       message: Age confirmation required (FR45). Complete your profile at /fr/compte/profil.
  *               unauthorized:
- *                 summary: Cloudflare Turnstile rejected the request
+ *                 summary: The anti-bot proof was missing, invalid or already spent
  *                 value:
  *                   data: null
  *                   meta:

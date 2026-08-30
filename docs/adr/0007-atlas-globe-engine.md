@@ -1,6 +1,6 @@
 # ADR-0007: One textured-sphere globe for the whole atlas
 
-- **Status**: Accepted, amended 2026-08-26 — see "What actually shipped"
+- **Status**: Accepted, amended 2026-08-26 and 2026-08-30 — see "What actually shipped"
 - **Date**: 2026-08-25
 - **Reference**: `docs/design/atlas-charter.md`, `docs/design/mockups/`
 
@@ -125,3 +125,34 @@ in-repo — is exactly what those four files are.
 This section records the divergence rather than rewriting the decision: the
 choice above was made on 2026-08-25 with the information of that day, and a
 reader tracing why the atlas looks like the mockups needs both halves.
+
+### One globe, from 2026-08-30 (ETNI-1360)
+
+The clause "there is exactly one globe in the codebase" was a decision, not a
+description, for five days short of a year. `HomeGlobe.tsx` went on drawing the
+same continent on its own 639 lines of WebGL 1 beside `AtlasGlobeCanvas.tsx`'s
+719, each with its own GLSL, its own fallback and its own tests.
+
+It is now true. `HomeGlobe`, `HomeGlobeFallback` and `HomeGlobeStage` are
+deleted; the home's module and the Mercator game stand on
+`ContinentGlobeStage`, which mounts `AtlasGlobe` with the continent overlay.
+`src/components/__tests__/oneGlobeRenderer.test.ts` holds the clause to its
+word, and is written so that `AxisGraphScene.tsx` — a second WebGL consumer on
+the home, deliberately out of scope — does not trip it.
+
+Three things had to be carried across rather than assumed:
+
+- **The projection can be pinned from outside.** The Mercator game holds the
+  map flat while a question stands and closes it into a sphere on the reveal;
+  that is the demonstration the page exists for. `AtlasGlobe`'s morph was
+  internal state with no way in, so `pinnedProjection` was added.
+- **The canvas says when it gives up.** Every bail-out in `AtlasGlobeCanvas`
+  was a bare `return` leaving a transparent canvas, and `createProgram` never
+  asked whether the program had linked — so the failure REQ-112 AC2 is written
+  for could not be detected, let alone recovered from. Both are fixed.
+- **The first frame paints nothing.** A stage that has already probed hands the
+  answer down as `probedWebglSupport`, so no reader is shown a flat map that
+  then vanishes. A fiche, which has not probed, keeps its server-rendered
+  figure exactly as before.
+
+`three` is still not a dependency, and DEC-021's premise stays retired.
