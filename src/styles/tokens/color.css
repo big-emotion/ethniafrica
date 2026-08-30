@@ -293,9 +293,22 @@
 
      --accent-foreground pairs with --accent for text placed directly on
      the full-strength accent fill (e.g. a selected filter pill). It must
-     satisfy WCAG AA (≥ 4.5:1) against --accent; white clears that bar for
-     ocre/teal/perv, but terre's mid-tone requires a dark override (see
-     .afh-accent-terre below).
+     satisfy WCAG AA (≥ 4.5:1) against --accent. It is the dark ink, not
+     white: measured, white lands at 3.14:1 on ocre, 3.10:1 on teal and
+     3.11:1 on perv — every accent fill in the product, not the edge case
+     terre was once thought to be. The dark ink clears all three (5.91,
+     5.98, 5.95); terre alone still needs its own darker override, because
+     even this ink only reaches 4.22:1 on it (see .afh-accent-terre below).
+
+     The night block below already said this, for the same reason: an accent
+     fill is a light patch whichever theme it sits in, and the --afh-cat-*
+     hexes are identical in day and night, so the ink on them must be too.
+
+     It stayed invisible because --accent used to hold a hex here and a bare
+     shadcn HSL triplet in index.css, so bg-[color:var(--accent)] resolved to
+     rgba(0, 0, 0, 0) outside an accent scope: the fill never painted, and
+     axe-core measured white text on parchment instead. Asserted now in
+     src/styles/__tests__/colorTokens.test.ts.
 
      --accent-ink is the mirror image: text placed on --accent-tint rather
      than on the full-strength fill. --accent itself is never legible there,
@@ -303,7 +316,7 @@
   --accent: var(--afh-cat-ocre);
   --accent-tint: var(--afh-cat-ocre-tint);
   --accent-ink: var(--afh-cat-ocre-ink);
-  --accent-foreground: #fff;
+  --accent-foreground: #1a1208;
 
   /* Display type carries its accent as text, not as a fill, so it needs the
      ocre that stays readable on the surface it is set on — the dark ink on
