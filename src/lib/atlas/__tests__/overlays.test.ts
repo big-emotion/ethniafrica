@@ -421,16 +421,22 @@ describe("buildContinentOverlay (REQ-116 AC1, continent scene)", () => {
     }
   });
 
+  /**
+   * This used to assert a normalised share, which the renderers turned into a
+   * radial field. The scene draws no field now, so the area carries the raw
+   * count and nothing derived from its neighbours: a figure the panel can
+   * name is honest in a way a relative brightness never was.
+   */
   // @req REQ-116
-  it("normalises the field weight to 1 on the densest country and scales the others against it", () => {
+  it("carries each country's own documented count, normalised against nothing", () => {
     const overlay = fieldOf({ NGA: 40, KEN: 10, MAR: 20 });
-    const shareOf = (countryId: string) =>
+    const countOf = (countryId: string) =>
       overlay.areas.find((area) => area.countryId === countryId)
-        ?.documentedPeopleShare;
+        ?.documentedPeopleCount;
 
-    expect(shareOf("NGA")).toBe(1);
-    expect(shareOf("MAR")).toBeCloseTo(0.5, 5);
-    expect(shareOf("KEN")).toBeCloseTo(0.25, 5);
+    expect(countOf("NGA")).toBe(40);
+    expect(countOf("MAR")).toBe(20);
+    expect(countOf("KEN")).toBe(10);
   });
 
   // @req REQ-116
@@ -509,9 +515,9 @@ describe("buildContinentOverlay (REQ-116 AC1, continent scene)", () => {
     const overlay = fieldOf({ NGA: 40, XXX: 999 });
 
     expect(overlay.areas.map((area) => area.countryId)).toEqual(["NGA"]);
-    // The surviving area is normalised against a real count, never against
-    // the dropped country's.
-    expect(overlay.areas[0].documentedPeopleShare).toBe(1);
+    // The survivor keeps its own count. The dropped country's 999 reaches
+    // nothing — not the figure, and no longer a scale it could have skewed.
+    expect(overlay.areas[0].documentedPeopleCount).toBe(40);
   });
 
   // @req REQ-119
