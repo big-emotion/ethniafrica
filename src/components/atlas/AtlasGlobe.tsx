@@ -747,6 +747,15 @@ export interface AtlasGlobeProps {
    * difference. See STAGE_ROLE_TOKENS.
    */
   surface?: GlobeSurface;
+  /**
+   * Whether the sphere carries Tissot's indicatrices.
+   *
+   * Off by default, because a fiche shows a people or a country and makes no
+   * claim about area. The continent stage asks for them: the home's opening
+   * module and /jouer/mercator both exist to show that a flat map lies about
+   * surface, and the discs are what makes that measurable rather than asserted.
+   */
+  showTissot?: boolean;
 }
 
 /** The drag distance the point cloud used, kept so the gesture did not change under readers when its engine did. */
@@ -952,6 +961,7 @@ export function AtlasGlobe({
   pinnedProjection,
   pinnedProjectionNote,
   surface = "night",
+  showTissot = false,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(
     probedWebglSupport ?? false
@@ -1109,6 +1119,14 @@ export function AtlasGlobe({
     restPose,
     reducedMotion || !cameraFollowsChoice
   );
+
+  /**
+   * The discs are an argument, and a reader is allowed to put it down and
+   * look at the continent underneath. `showTissot` says whether this stage
+   * draws them at all, and so whether the switch is offered; this says
+   * whether they are lit right now.
+   */
+  const [discsLit, setDiscsLit] = useState(showTissot);
 
   const [readerFlattened, setReaderFlattened] = useState(false);
   // A pin wins outright rather than seeding the reader's state: seeding would
@@ -1431,6 +1449,7 @@ export function AtlasGlobe({
           focusedCountryId={chosenCountryId}
           onUnavailable={handleCanvasUnavailable}
           surface={surface}
+          showTissot={discsLit}
         />
       ) : (
         <AtlasGlobeFallback
@@ -1561,6 +1580,20 @@ export function AtlasGlobe({
               {pinnedProjectionNote}
             </p>
           )
+        )}
+        {/* Offered only where the discs are drawn: on a fiche it would be a
+            switch over nothing. The label is the reader's word for them, and
+            the one the retired engine printed on the same control. */}
+        {showTissot && (
+          <button
+            type="button"
+            aria-pressed={discsLit}
+            onClick={() => setDiscsLit((lit) => !lit)}
+            className={TOOLBAR_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            Pastilles
+          </button>
         )}
         {/* Held together in their own row so the two directions never wrap
             apart on a phone: a lone « + » with its « − » on the line below

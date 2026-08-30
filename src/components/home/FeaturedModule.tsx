@@ -1,11 +1,7 @@
-import Link from "next/link";
-
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { HeroModuleStage } from "@/components/home/HeroModuleStage";
 import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
 import { SectionHeading } from "@/components/home/SectionHeading";
-import { Button } from "@/components/ui/button";
-import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { HeroPreview } from "@/lib/home/heroPreviewData";
@@ -47,6 +43,12 @@ export interface FeaturedModuleProps {
  * per request and pinned to one default (heroRotation.ts). It holds today
  * because the pin does not move; the day a real monthly cadence lands, it
  * should read itself from that cadence rather than from this string.
+ *
+ * One door, and it is the chip. The section also carried a filled button
+ * under the stage naming the same module and holding the same href — a slab
+ * of accent closing the section, read as its conclusion rather than as a way
+ * in. The chip sits where the reader actually meets the module, so it is the
+ * one that stays.
  */
 // @req REQ-113
 // @req REQ-115
@@ -57,21 +59,6 @@ export function FeaturedModule({
 }: FeaturedModuleProps = {}) {
   const labelled = heroModule && heroPreview;
   const isGame = heroModule?.accessMode === "jouer";
-
-  /**
-   * Form C of the actions charter: the section promises « à essayer
-   * maintenant », which is a promise to *start* something, so it owes a
-   * button and not a link. Before this, the only clickable thing here was
-   * the provenance chip above — a breadcrumb standing in for a door.
-   *
-   * The label carries the module's own name rather than a bare « Jouer ».
-   * The chip ellipses that name to keep the globe above the fold; a button
-   * that did the same would name no game at all.
-   */
-  const startHref = heroModule ? getModuleHref(heroModule, "fr") : null;
-  const startLabel = heroModule
-    ? `${isGame ? "Jouer" : "Ouvrir"} « ${heroModule.name} »`
-    : null;
 
   return (
     <section
@@ -113,21 +100,6 @@ export function FeaturedModule({
         )}
       </div>
 
-      {startHref ? (
-        <p className="home-featured-start">
-          <Button
-            asChild
-            // h-auto, or a label that wraps on a narrow screen is clipped by
-            // the primitive's fixed height; min-h-11 keeps the target.
-            className="h-auto min-h-11 w-full whitespace-normal py-3 text-center sm:w-auto"
-          >
-            <Link href={startHref} data-testid="home-featured-start">
-              {startLabel}
-            </Link>
-          </Button>
-        </p>
-      ) : null}
-
       <style>{`
         .home-featured {
           position: relative;
@@ -154,16 +126,6 @@ export function FeaturedModule({
           margin-top: 8px;
           display: flex;
           flex-direction: column;
-        }
-
-        /* The door sits after the thing it opens: heading, then the chip
-           naming the module, then the module itself, then the button. Last
-           is where a reader looks for the action once they have seen what
-           they are being offered. */
-        .home-featured-start {
-          margin: var(--afh-space-2xl) 0 0;
-          display: flex;
-          justify-content: center;
         }
 
         @media (max-width: 700px) {
