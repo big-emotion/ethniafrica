@@ -62,14 +62,18 @@
      retracts, so it lands at the top of the screen when the masthead has gone
      and returns to sit against it when the masthead comes back.
 
-     A transform rather than a moving `top`: both surfaces animate the same
-     property over the same token, so they arrive together, and neither
-     re-lays out the parchment on the way. Its z-index stays below the
-     masthead's 40, so during the travel the masthead is what covers the rail
-     and not the reverse. */
-  top: var(--afh-header-height);
-  transform: translateY(var(--afh-header-shift));
-  transition: var(--afh-transition-transform);
+     The travel is folded into the pinned offset rather than carried by a
+     transform. A transform applies whether or not the rail is pinned, so
+     while the masthead was retracted it lifted the rail a masthead's height
+     above its place in the flow — over the foot of the globe band, whose
+     controls sit against that edge. `top` is inert until the rail is
+     actually pinned, which is the only state the travel describes. It moves
+     nothing else either: a sticky offset does not re-lay out the parchment.
+
+     Its z-index stays below the masthead's 40, so during the travel the
+     masthead is what covers the rail and not the reverse. */
+  top: calc(var(--afh-header-height) + var(--afh-header-shift));
+  transition: top var(--afh-duration-base) var(--afh-ease-out);
   z-index: 30;
   /* Welds the rail onto the parchment it heads: the sequence sets a large gap
      between its children, and a rail floating in that gap would read as an
