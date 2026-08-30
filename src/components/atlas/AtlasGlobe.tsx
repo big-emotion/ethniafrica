@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import {
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -94,8 +95,8 @@ const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} flex min-w-9 items-center jus
  * visible — « Recentrer » already disappeared whenever the map reached the
  * bottom of the stage — and a zoom control makes that the normal case rather
  * than the edge one: coming closer is precisely what fills the stage with
- * parchment. Mixed rather than opaque, at the strength HomeGlobe's own pill
- * uses, so the control reads as a control without punching a hole in the map.
+ * parchment. Mixed rather than opaque, so the control reads as a control
+ * without punching a hole in the map.
  */
 const TOOLBAR_BUTTON_STYLE: CSSProperties = {
   color: "var(--afh-night-ink-2)",
@@ -695,6 +696,45 @@ export interface AtlasGlobeProps {
   pickerTargets?: AtlasTarget[];
   /** Replaces the default legend, for a fiche whose drawing needs a different sentence. */
   legend?: ReactNode;
+  /**
+   * The projection, when it belongs to the caller rather than to the reader.
+   *
+   * A fiche leaves it alone: flattening the map is something the reader does
+   * when they want to, and the toolbar toggle is how. The Mercator game is the
+   * other case — the map is held flat *because a question is standing*, and
+   * closing it into a sphere is the answer being given (REQ-120). Pinned, the
+   * reader's toggle is withdrawn rather than left inert, and `recentre` no
+   * longer returns the globe, because the round owns the projection.
+   *
+   * Named rather than a raw 0/1, for the reason camera.ts gives FLAT_MORPH and
+   * SPHERE_MORPH their names.
+   */
+  /**
+   * The result of a WebGL probe the caller has already run.
+   *
+   * The globe's own probe is an effect, so without this its first commit
+   * necessarily assumes no WebGL and paints the committed basemap. On a fiche
+   * that is the right assumption: the figure is server-rendered content and a
+   * reader without JavaScript keeps it. A stage that mounts the globe only
+   * once its own probe has answered is in the opposite position — it already
+   * knows, and letting the globe assume otherwise paints a flat map that is
+   * pulled a moment later, which reads as a glitch rather than as a fallback.
+   *
+   * Safe to seed only because such a caller mounts the globe client-side,
+   * after an effect of its own: there is no server render of this subtree for
+   * a seeded value to disagree with.
+   */
+  probedWebglSupport?: boolean;
+  pinnedProjection?: "flat" | "sphere";
+  /**
+   * Why the projection will not move, shown where the toggle would have been.
+   *
+   * Optional because the pin *withdraws* the toggle rather than disabling it:
+   * with no dead control on screen there is nothing for a sentence to account
+   * for. Pass it whenever the reader is being asked to wait for something —
+   * a round still standing — and leave it out once that thing has happened.
+   */
+  pinnedProjectionNote?: string;
 }
 
 /**
@@ -704,7 +744,7 @@ export interface AtlasGlobeProps {
  * per-entity accent (people ocre / country teal / family perv), which keeps
  * governing everything FicheSequence renders around it.
  */
-/** Matched to HomeGlobe, so the same drag travels the same distance on both. */
+/** The drag distance the point cloud used, kept so the gesture did not change under readers when its engine did. */
 const DRAG_RADIANS_PER_PIXEL = 0.006;
 const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
 const KEY_STEP_RADIANS = 0.12;
@@ -858,8 +898,22 @@ export function AtlasGlobe({
   targetPicker = "markers",
   pickerTargets,
   legend,
+  probedWebglSupport,
+  pinnedProjection,
+  pinnedProjectionNote,
 }: AtlasGlobeProps) {
-  const [webglSupported, setWebglSupported] = useState(false);
+  const [webglSupported, setWebglSupported] = useState(
+    probedWebglSupport ?? false
+  );
+  // The probe above only proves a context can be created. Compiling and
+  // linking the shaders on it can still fail — the common case on low-end
+  // hardware — and by then the committed basemap has already been swapped out,
+  // leaving a transparent canvas where the map should be. This latches that
+  // late failure so the figure comes back (REQ-112 AC2).
+  const [canvasGaveUp, setCanvasGaveUp] = useState(false);
+  const handleCanvasUnavailable = useCallback(() => {
+    setCanvasGaveUp(true);
+  }, []);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
   const [chosenCountryId, setChosenCountryId] = useState<CountryId | null>(
     readingCountryId ?? null
@@ -1005,7 +1059,14 @@ export function AtlasGlobe({
     reducedMotion || !cameraFollowsChoice
   );
 
-  const [flat, setFlat] = useState(false);
+  const [readerFlattened, setReaderFlattened] = useState(false);
+  // A pin wins outright rather than seeding the reader's state: seeding would
+  // let the next `recentre` hand the round's projection back to a control the
+  // round does not own.
+  const flat =
+    pinnedProjection === undefined
+      ? readerFlattened
+      : pinnedProjection === "flat";
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
   /**
@@ -1047,7 +1108,7 @@ export function AtlasGlobe({
   };
 
   const recentre = () => {
-    setFlat(false);
+    setReaderFlattened(false);
     setChosenCountryId(null);
     // Clearing the choice is not enough on its own: a reader who only turned
     // the globe has changed no state the camera watches, so the camera is
@@ -1164,7 +1225,7 @@ export function AtlasGlobe({
   // carries for a bare outline. AtlasGlobeCanvas now draws the continent's
   // radial field alongside that frame, so the hub and the facets get the same
   // globe as the three fiches rather than a flat map that claims to turn.
-  const stageIsSphere = webglSupported;
+  const stageIsSphere = webglSupported && !canvasGaveUp;
 
   // A fiche asks for a list because its targets are its presence countries,
   // and it has them whether there are seventeen or one. 394 of the corpus's
@@ -1317,6 +1378,7 @@ export function AtlasGlobe({
           overlay={drawnOverlay}
           pose={pose}
           focusedCountryId={chosenCountryId}
+          onUnavailable={handleCanvasUnavailable}
         />
       ) : (
         <AtlasGlobeFallback
@@ -1427,15 +1489,27 @@ export function AtlasGlobe({
             {wholeAreaLabel}
           </button>
         )}
-        <button
-          type="button"
-          aria-pressed={flat}
-          onClick={() => setFlat((current) => !current)}
-          className={TOOLBAR_BUTTON_CLASS}
-          style={TOOLBAR_BUTTON_STYLE}
-        >
-          {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
-        </button>
+        {pinnedProjection === undefined ? (
+          <button
+            type="button"
+            aria-pressed={flat}
+            onClick={() => setReaderFlattened((current) => !current)}
+            className={TOOLBAR_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
+          </button>
+        ) : (
+          pinnedProjectionNote && (
+            <p
+              data-atlas-projection-note=""
+              className="rounded-full border px-3 py-1 text-afh-caption"
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              {pinnedProjectionNote}
+            </p>
+          )
+        )}
         {/* Held together in their own row so the two directions never wrap
             apart on a phone: a lone « + » with its « − » on the line below
             reads as two unrelated controls. The glyphs are hidden from the

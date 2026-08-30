@@ -20,7 +20,7 @@ export interface AxisGraphCanvasProps {
 
 /**
  * Capability gate for the axis panel's link graph (ARCH-014), the same
- * shape HomeGlobeStage uses: the WebGL runtime is never in the server
+ * shape ContinentGlobeStage uses: the WebGL runtime is never in the server
  * response, and it only loads once a real context has been probed
  * client-side.
  *

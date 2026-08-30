@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
+import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { GamePlayHost } from "@/components/play/GamePlayHost";
-import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 import type { HeroPreview } from "@/lib/home/heroPreviewData";
 
 // Each preview is wrapped once, here, at module scope. Calling dynamic()
@@ -29,6 +29,8 @@ const LazyFamilyCrown = dynamic(
 
 export interface HeroModuleStageProps {
   preview: HeroPreview;
+  /** Documented peoples per country, for the branches that draw the continent. */
+  peopleCountsByCountry?: Record<string, number>;
 }
 
 /**
@@ -46,10 +48,15 @@ export interface HeroModuleStageProps {
  * layout shift available is the fallback-to-island swap.
  */
 // @req REQ-115
-export function HeroModuleStage({ preview }: HeroModuleStageProps) {
+export function HeroModuleStage({
+  preview,
+  peopleCountsByCountry,
+}: HeroModuleStageProps) {
   switch (preview.kind) {
     case "globe":
-      return <HomeGlobeStage />;
+      return (
+        <ContinentGlobeStage peopleCountsByCountry={peopleCountsByCountry} />
+      );
 
     case "game":
       return (
@@ -68,7 +75,9 @@ export function HeroModuleStage({ preview }: HeroModuleStageProps) {
     default:
       // A kind with no branch would otherwise render nothing at all. The
       // globe is what the band showed before this slot existed.
-      return <HomeGlobeStage />;
+      return (
+        <ContinentGlobeStage peopleCountsByCountry={peopleCountsByCountry} />
+      );
   }
 }
 

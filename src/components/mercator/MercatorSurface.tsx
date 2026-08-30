@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 
-import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
+import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { GamePlayIsland } from "@/components/play/GamePlayIsland";
 import type { GameSessionStatus } from "@/hooks/use-game-session";
 import type { GameRound } from "@/lib/games/gameKinds";
@@ -18,6 +18,11 @@ export interface MercatorSurfaceProps {
   rounds: GameRound[];
   facts: ScaleFact[];
   corpusLimited: boolean;
+  /**
+   * Documented peoples per country, for the continent the stage draws.
+   * Resolved by the page; absent, the globe names what is missing.
+   */
+  peopleCountsByCountry?: Record<string, number>;
 }
 
 /**
@@ -55,6 +60,7 @@ export const MercatorSurface = ({
   rounds,
   facts,
   corpusLimited,
+  peopleCountsByCountry,
 }: MercatorSurfaceProps) => {
   const [phase, setPhase] = useState<GameSessionStatus>("answering");
 
@@ -87,9 +93,14 @@ export const MercatorSurface = ({
       </div>
 
       <div className="mercator-stage">
-        <HomeGlobeStage
-          morphOverride={questionStands ? 0 : 1}
-          overrideNoteFr={questionStands ? COPY_FR.flatLock : undefined}
+        <ContinentGlobeStage
+          peopleCountsByCountry={peopleCountsByCountry}
+          pinnedProjection={questionStands ? "flat" : "sphere"}
+          // Nothing to explain once the sphere is back: the pin withdraws the
+          // toggle rather than disabling it, so there is no dead control on
+          // screen for a sentence to account for — and repeating the promise
+          // the reveal has just kept would read as a stuck caption.
+          pinnedProjectionNote={questionStands ? COPY_FR.flatLock : undefined}
         />
       </div>
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
+import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { HeroModuleStage } from "@/components/home/HeroModuleStage";
 import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
 import { SectionHeading } from "@/components/home/SectionHeading";
@@ -19,6 +19,12 @@ export interface FeaturedModuleProps {
    */
   heroModule?: HubModule | null;
   heroPreview?: HeroPreview | null;
+  /**
+   * Documented peoples per country, for whichever branch ends up drawing the
+   * continent. Resolved on the server because it is a Supabase round trip;
+   * absent, the globe names what is missing rather than drawing nothing.
+   */
+  peopleCountsByCountry?: Record<string, number>;
 }
 
 /**
@@ -47,6 +53,7 @@ export interface FeaturedModuleProps {
 export function FeaturedModule({
   heroModule = null,
   heroPreview = null,
+  peopleCountsByCountry,
 }: FeaturedModuleProps = {}) {
   const labelled = heroModule && heroPreview;
   const isGame = heroModule?.accessMode === "jouer";
@@ -87,7 +94,7 @@ export function FeaturedModule({
       />
 
       {/* The module says what it is from its own readout — the globe's
-          tracks the morph (HomeGlobe) — so the section adds only where the
+          tracks the morph — so the section adds only where the
           module can be found again, never a second caption describing it.
           The accent wrapper above is the whole colour decision: the chip
           and the stage read --accent off the drawn module's axis without
@@ -96,10 +103,13 @@ export function FeaturedModule({
         {labelled ? (
           <>
             <HeroProvenanceChip language="fr" module={heroModule} />
-            <HeroModuleStage preview={heroPreview} />
+            <HeroModuleStage
+              preview={heroPreview}
+              peopleCountsByCountry={peopleCountsByCountry}
+            />
           </>
         ) : (
-          <HomeGlobeStage />
+          <ContinentGlobeStage peopleCountsByCountry={peopleCountsByCountry} />
         )}
       </div>
 
