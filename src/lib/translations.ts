@@ -78,6 +78,20 @@ export const translations = {
       cookieSettings: "Gestion des cookies",
       accessibility: "Accessibilité",
       sitemap: "Plan du site",
+      // The directory above the legal line. Its labels are the short forms —
+      // « Pays », not « Les pays d'Afrique » — because a footer column is
+      // read as a list of rubrics, not as a list of editorial titles.
+      directory: {
+        explorerHeading: "Explorer",
+        countries: "Pays",
+        peoples: "Peuples",
+        families: "Familles",
+        participateHeading: "Participer",
+        contribute: "Contribuer",
+        reportError: "Signaler une erreur",
+        followHeading: "Nous suivre",
+        followPending: "compte à venir",
+      },
     },
     sitemapPage: {
       eyebrow: "Se repérer",
