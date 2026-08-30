@@ -47,14 +47,26 @@ describe("the hero band — the fiches and the facets open on it too (REQ-115)",
   }
 
   /**
-   * The wait and the page it resolves into are one shell — React reconciles
-   * the two trees, so a loading screen that raised no band would show the
-   * chrome collapsing and re-expanding around the fiche as it lands.
+   * The wait is the exception, and it is the counterpart of the rule above
+   * rather than a hole in it (brand charter §8.4).
+   *
+   * The clause here used to be the opposite one — the wait raised the band so
+   * the chrome would not collapse and re-expand around the arriving fiche.
+   * Nothing in the wait survives into that fiche to be kept still: the plate
+   * that said "Pays" is replaced by the plate that says "Afrique du Sud", and
+   * the body is swapped whole. What the band did buy was a viewport-tall
+   * night stage that pushed the fact below the fold, on the routes that wait
+   * longest, so the wait state shipped nothing readable at all.
+   *
+   * The band is matched on its *import*: the screen names it in the comment
+   * recording why it no longer raises one, and a gate reading the whole
+   * source would call that comment the violation.
    */
   // @req REQ-104
-  it("raises the same band while a fiche is still loading", () => {
+  it("raises no band while a fiche is still loading, so the fact keeps the fold", () => {
     const source = read("src/components/fiche/FicheLoadingScreen.tsx");
 
-    expect(source).not.toMatch(/\bhideHeader\b/);
+    expect(source).toMatch(/\bhideHeader\b/);
+    expect(source).not.toMatch(/^import[^;]*\bFicheHeroBand\b/m);
   });
 });

@@ -8,10 +8,5 @@ import { PageLoadingScreen } from "@/components/system/PageLoadingScreen";
  */
 // @req REQ-104
 export default function MigrationsLoading() {
-  return (
-    <PageLoadingScreen
-      label="Chargement de la frise des migrations"
-      sectionName="Comprendre"
-    />
-  );
+  return <PageLoadingScreen label="Chargement de la frise des migrations" />;
 }

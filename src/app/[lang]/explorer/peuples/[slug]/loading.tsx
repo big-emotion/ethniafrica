@@ -6,5 +6,5 @@ import { FicheLoadingScreen } from "@/components/fiche/FicheLoadingScreen";
  */
 // @req REQ-104
 export default function PeopleFicheLoading() {
-  return <FicheLoadingScreen entityType="people" sectionName="Peuples" />;
+  return <FicheLoadingScreen entityType="people" />;
 }

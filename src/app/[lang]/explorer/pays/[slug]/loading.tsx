@@ -8,5 +8,5 @@ import { FicheLoadingScreen } from "@/components/fiche/FicheLoadingScreen";
  */
 // @req REQ-104
 export default function CountryFicheLoading() {
-  return <FicheLoadingScreen entityType="country" sectionName="Pays" />;
+  return <FicheLoadingScreen entityType="country" />;
 }
