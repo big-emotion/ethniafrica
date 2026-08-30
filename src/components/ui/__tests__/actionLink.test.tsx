@@ -2,6 +2,11 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 import { ActionLink } from "@/components/ui/ActionLink";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+} from "@/lib/routing";
 
 /**
  * Form A of the actions charter (docs/design/actions-charter.md §2).
@@ -15,16 +20,22 @@ describe("ActionLink — actions charter form A", () => {
   // @req REQ-091
   it("names its destination and points at it", () => {
     render(
-      <ActionLink href="/fr/explorer/pays/ago">Lire la fiche Angola</ActionLink>
+      <ActionLink href={getCountryRoute("fr", "AGO")}>
+        Lire la fiche Angola
+      </ActionLink>
     );
 
     const link = screen.getByRole("link", { name: "Lire la fiche Angola" });
-    expect(link).toHaveAttribute("href", "/fr/explorer/pays/ago");
+    expect(link).toHaveAttribute("href", getCountryRoute("fr", "AGO"));
   });
 
   // @req REQ-091
   it("keeps the arrow out of the accessible name", () => {
-    render(<ActionLink href="/fr/explorer/pays">Voir les 54 pays</ActionLink>);
+    render(
+      <ActionLink href={getLocalizedRoute("fr", "countries")}>
+        Voir les 54 pays
+      </ActionLink>
+    );
 
     // The arrow is drawn, but a screen reader must not read "arrow" after
     // every link on the page.
@@ -34,7 +45,11 @@ describe("ActionLink — actions charter form A", () => {
 
   // @req REQ-091
   it("draws an arrow on every action link", () => {
-    render(<ActionLink href="/fr/comprendre">Remonter</ActionLink>);
+    render(
+      <ActionLink href={getLocalizedRoute("fr", "comprendreHub")}>
+        Remonter
+      </ActionLink>
+    );
 
     expect(screen.getByTestId("action-link-arrow")).toHaveAttribute(
       "aria-hidden",
@@ -54,7 +69,11 @@ describe("ActionLink — actions charter form A", () => {
 
   // @req REQ-091
   it("carries the charter's label size and target height", () => {
-    render(<ActionLink href="/fr/jouer">Se tester</ActionLink>);
+    render(
+      <ActionLink href={getLocalizedRoute("fr", "jouerHub")}>
+        Se tester
+      </ActionLink>
+    );
 
     const link = screen.getByRole("link", { name: "Se tester" });
     expect(link.className).toContain("text-afh-small");
@@ -63,7 +82,11 @@ describe("ActionLink — actions charter form A", () => {
 
   // @req REQ-091
   it("is bare at rest and underlines only on hover and focus", () => {
-    render(<ActionLink href="/fr/jouer">Se tester</ActionLink>);
+    render(
+      <ActionLink href={getLocalizedRoute("fr", "jouerHub")}>
+        Se tester
+      </ActionLink>
+    );
 
     const link = screen.getByRole("link", { name: "Se tester" });
     // `underline` unprefixed would be the rest state; only the prefixed
@@ -77,7 +100,7 @@ describe("ActionLink — actions charter form A", () => {
   it("lets the caller label it for assistive tech without changing the text", () => {
     render(
       <ActionLink
-        href="/fr/explorer/familles/flg_nc"
+        href={getFamilyRoute("fr", "FLG_NC")}
         aria-label="Lire la fiche de la famille nigéro-congolaise"
       >
         Lire la fiche complète

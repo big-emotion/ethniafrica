@@ -2,6 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FeaturedModule } from "@/components/home/FeaturedModule";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 
 const gameModule = {
@@ -141,7 +142,10 @@ describe("FeaturedModule — the module the home puts forward (REQ-113/REQ-115)"
     render(<FeaturedModule heroModule={gameModule} heroPreview={preview} />);
 
     const start = screen.getByTestId("home-featured-start");
-    expect(start).toHaveAttribute("href", "/fr/jouer/mercator");
+    expect(start).toHaveAttribute(
+      "href",
+      `${getAxisHubRoute("fr", "jouer")}/mercator`
+    );
     expect(start).toHaveTextContent("La taille qu'on vous a cachée");
   });
 
