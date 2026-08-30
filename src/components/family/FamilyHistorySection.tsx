@@ -1,4 +1,5 @@
 import type { FamilyHistoryData } from "@/lib/familyDataTransformer";
+import { FicheFieldList } from "@/components/fiche/FicheProse";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
@@ -37,13 +38,11 @@ export function FamilyHistorySection({
       data-fiche-section={CHAPTER_TITLE}
     >
       <h2 id="family-history-heading">{CHAPTER_TITLE}</h2>
-      {historyFields.map(([label, field]) =>
-        data[field] ? (
-          <p key={field}>
-            <strong>{label} :</strong> {data[field]}
-          </p>
-        ) : null
-      )}
+      <FicheFieldList
+        fields={historyFields.flatMap(([label, field]) =>
+          data[field] ? [{ label, prose: data[field] }] : []
+        )}
+      />
       <div data-testid="section-flag-target-history">
         {turnstileSiteKey ? (
           <FlagTarget
