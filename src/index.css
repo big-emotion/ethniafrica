@@ -100,8 +100,12 @@ All colors MUST be HSL.
     --ochre: 32 75% 55%;
     --sand: 35 40% 85%;
 
-    /* Gradients */
-    --gradient-warm: linear-gradient(135deg, hsl(18 70% 52%), hsl(42 88% 58%));
+    /* Gradients. The warm one is the brand mark's, and its stops are tokens
+       now — --afh-brand-flame and --afh-brand-gold in tokens/color.css — so
+       the most visible colour in the product lives in the same system as
+       every other colour. Same values, byte for byte; this name is kept
+       because callers already read it. Brand charter §5.3. */
+    --gradient-warm: var(--afh-gradient-brand);
     --gradient-earth: linear-gradient(180deg, hsl(35 35% 97%), hsl(35 40% 92%));
 
     /* Shadows */
