@@ -3,6 +3,7 @@
   "nameMain": "Zarma",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["NER", "NGA", "BEN", "BFA", "GHA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Zarma",

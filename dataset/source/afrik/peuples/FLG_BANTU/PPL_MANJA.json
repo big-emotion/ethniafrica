@@ -3,6 +3,7 @@
   "nameMain": "Manja",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "CMR", "TCD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Manja",

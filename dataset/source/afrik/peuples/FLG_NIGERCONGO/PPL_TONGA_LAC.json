@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Lac)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tonga du Lac (Lakeshore Tonga)",

@@ -3,6 +3,7 @@
   "nameMain": "Yaka",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COD", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yaka",

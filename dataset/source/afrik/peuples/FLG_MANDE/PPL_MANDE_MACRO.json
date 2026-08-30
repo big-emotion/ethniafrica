@@ -3,6 +3,7 @@
   "nameMain": "Peuples Mandé (macro-groupe)",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "GIN", "SEN", "CIV", "BFA", "GMB", "SLE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Peuples Mandé (macro-groupe)",

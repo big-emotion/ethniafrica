@@ -3,6 +3,7 @@
   "nameMain": "Tekke",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COG", "COD", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Teke",

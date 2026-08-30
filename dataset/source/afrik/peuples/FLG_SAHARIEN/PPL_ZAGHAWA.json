@@ -3,6 +3,7 @@
   "nameMain": "Zaghawa",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "SDN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Zaghawa",

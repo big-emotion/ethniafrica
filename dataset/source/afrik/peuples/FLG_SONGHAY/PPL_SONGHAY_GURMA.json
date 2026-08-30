@@ -3,6 +3,7 @@
   "nameMain": "Songhay Gurma",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["BFA", "MLI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Songhay Gurma",

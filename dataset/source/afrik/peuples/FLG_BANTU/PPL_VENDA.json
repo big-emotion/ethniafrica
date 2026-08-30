@@ -3,6 +3,7 @@
   "nameMain": "Venda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZAF", "ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Venda",

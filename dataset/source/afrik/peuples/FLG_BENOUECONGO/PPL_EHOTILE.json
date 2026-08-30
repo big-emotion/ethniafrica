@@ -3,6 +3,7 @@
   "nameMain": "Ehotilé",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ehotilé",

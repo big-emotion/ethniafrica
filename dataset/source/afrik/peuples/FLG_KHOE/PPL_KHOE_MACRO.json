@@ -3,6 +3,7 @@
   "nameMain": "Peuples Khoe (macro-groupe)",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["NAM", "BWA", "ZAF", "ZWE", "AGO"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Khoe (macro-groupe)",

@@ -3,6 +3,7 @@
   "nameMain": "Gbaya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "CMR", "COG", "COD", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gbaya",

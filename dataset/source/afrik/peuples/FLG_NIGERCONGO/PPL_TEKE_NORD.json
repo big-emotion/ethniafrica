@@ -3,6 +3,7 @@
   "nameMain": "Teke (Nord)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG", "GAB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Teke du Nord",

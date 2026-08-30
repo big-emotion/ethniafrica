@@ -3,6 +3,7 @@
   "nameMain": "Bakiga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["UGA", "RWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bakiga",

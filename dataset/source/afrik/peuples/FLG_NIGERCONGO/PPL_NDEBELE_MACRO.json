@@ -3,6 +3,7 @@
   "nameMain": "Ndebele (Macro)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE", "ZAF", "MOZ", "BWA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele (Macro)",

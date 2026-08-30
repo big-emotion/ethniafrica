@@ -3,6 +3,7 @@
   "nameMain": "Musgu",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "TCD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Musgu",

@@ -3,6 +3,7 @@
   "nameMain": "Peuples Sahariens (macro-groupe)",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NER", "NGA", "SDN", "LBY", "CMR"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Sahariens (macro-groupe)",

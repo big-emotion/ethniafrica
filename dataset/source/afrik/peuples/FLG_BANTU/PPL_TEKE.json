@@ -3,6 +3,7 @@
   "nameMain": "Teke",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COG", "COD", "GAB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Teke",

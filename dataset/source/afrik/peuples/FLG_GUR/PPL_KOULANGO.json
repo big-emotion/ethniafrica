@@ -3,6 +3,7 @@
   "nameMain": "Koulango",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["CIV", "GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Koulango",

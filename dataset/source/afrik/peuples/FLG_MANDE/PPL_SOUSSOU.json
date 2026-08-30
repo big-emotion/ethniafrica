@@ -3,6 +3,7 @@
   "nameMain": "Soussou",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["GIN", "SLE", "GNB", "SEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Soussou",

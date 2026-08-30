@@ -3,6 +3,7 @@
   "nameMain": "Hutu du Burundi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BDI", "RWA", "TZA", "UGA", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Hutu du Burundi",

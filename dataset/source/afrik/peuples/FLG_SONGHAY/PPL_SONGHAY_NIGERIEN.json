@@ -3,6 +3,7 @@
   "nameMain": "Songhay Nigerien",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["NER"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Songhay Nigerien",

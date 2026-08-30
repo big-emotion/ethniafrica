@@ -3,6 +3,7 @@
   "nameMain": "Ronga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Ronga",

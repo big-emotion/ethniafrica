@@ -3,6 +3,7 @@
   "nameMain": "Oron",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Oron",

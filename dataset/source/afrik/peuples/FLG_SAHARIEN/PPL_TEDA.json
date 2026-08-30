@@ -3,6 +3,7 @@
   "nameMain": "Teda",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "LBY", "NER"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Teda",

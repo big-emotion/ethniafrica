@@ -3,6 +3,7 @@
   "nameMain": "Beri",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "SDN", "LBY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Beri",
