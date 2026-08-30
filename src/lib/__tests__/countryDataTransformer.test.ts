@@ -590,6 +590,51 @@ describe("transformPeoples", () => {
     expect(autres).toBeUndefined();
   });
 
+  // 25 of the 53 country fiches state a share for every people and a
+  // population for none — the section printed "0", asserting the corpus had
+  // declared South Africa empty. An absent figure is not a zero.
+  // @req REQ-001
+  it("states no population where the fiche declares none", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Africains noirs", percentageInCountry: 81.4 },
+        { name: "Blancs", percentageInCountry: 7.3 },
+      ],
+    });
+
+    expect(result.totalPopulationFormatted).toBeUndefined();
+    expect(result.rows.every((r) => r.populationFormatted === undefined)).toBe(
+      true
+    );
+  });
+
+  // The sum over the peoples that do declare one is a floor, not the
+  // country's population, so the section may not label it plain "habitants".
+  // @req REQ-001
+  it("flags the total as partial when a people declares no population", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Kikuyu", percentageInCountry: 17.1 },
+        { name: "Luhya", percentageInCountry: 14.3, population: 7700000 },
+      ],
+    });
+
+    expect(result.totalPopulationFormatted).toBe("7.7M");
+    expect(result.everyPeopleDeclaresPopulation).toBe(false);
+  });
+
+  // @req REQ-001
+  it("counts the total as complete when every people declares one", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Mossi", percentageInCountry: 52, population: 11000000 },
+        { name: "Peul", percentageInCountry: 8, population: 1700000 },
+      ],
+    });
+
+    expect(result.everyPeopleDeclaresPopulation).toBe(true);
+  });
+
   it("maps mainLanguageCode to endonymLang for the lang attribute", () => {
     const result = transformPeoples(
       bfaCountry.demographics,
