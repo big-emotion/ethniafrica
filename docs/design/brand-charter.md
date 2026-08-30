@@ -420,18 +420,28 @@ mappemonde of 1154, Ogilby's _Guinea_ of 1670. They are sourced, dated,
 credited and in the public domain, and they carry the atlas's argument about
 naming better than any stock photograph would.
 
-They are also **the whole of the iconography on the home page**, and that has a
-cost the project of all projects should not pay: the imagery on the landing
-page of an atlas of African peoples is two European maps of Africa and a
-portrait of the German philologist who coined "Bantou". Every face is European,
-every gaze is from outside.
+An earlier draft called them **the whole of the iconography on the home page**,
+and said every gaze there was from outside. **Both halves were wrong**, and
+`public/images/home/CREDITS.md` — a file that audit never opened — says so:
 
-The alternative is not hypothetical, and it already ships.
-`/fr/comprendre/anecdotes` opens on a contemporary colour photograph of a
-village in the Maloti mountains, credited "SkyPixels, Wikimedia Commons,
-CC BY-SA 4.0" — sourced, credited, licensed under the same terms the corpus
-itself carries, and about a place rather than about a European's view of one.
-That page is the reference; the home is the outlier.
+| picture                                    | register                                                 |
+| ------------------------------------------ | -------------------------------------------------------- |
+| al-Idrisi, _Tabula Rogeriana_, 1154        | Arab cartography, drawn from **inside** Africa, south-up |
+| Ogilby, _Guinea_, 1670                     | the colonial document, deliberately                      |
+| **Tifinagh carved in rock, Algeria, 2006** | **a contemporary colour photograph**                     |
+| Wilhelm Bleek's portrait                   | 19th-century European                                    |
+
+Four pictures, not three, and the third is already the second register.
+Al-Idrisi was born in Ceuta; his map is the opposite of an outside view, which
+is exactly why the hero carries it. `/fr/comprendre/anecdotes` does the same
+thing with a photograph of a village in the Maloti mountains — it is a second
+example, not the only one.
+
+What the check did find is narrower and sharper: **the tifinagh photograph is
+CC BY-SA 2.0, and its caption named the licence without publishing it.**
+§4(a) of that licence asks for "a copy of, or the Uniform Resource Identifier
+for, this License". Naming a licence is not publishing it, and on this surface
+that distinction is the whole product.
 
 **The rule.** The colonial archive is _a_ register of imagery, never the only
 one, and where it appears it is captioned as what it is — a document of how
@@ -441,6 +451,19 @@ people's own visual record where one is available and clearable, under the same
 discipline the text already obeys: sourced, dated, credited, tiered. Where no
 such record exists yet, the honest fallback is the corpus's own cartography,
 which the atlas generates, owns and can cite.
+
+**And a licence is published, not named.** Where a picture's licence requires
+attribution, the rendered caption carries the author, the licence's **URI**,
+and a link to the file itself — not the licence's initials. A notice a reader
+cannot reach is not a notice, and this is the one line on a page that is not
+editorial discretion. `public/images/home/CREDITS.md` keeps the same record for
+a maintainer, with the date it was last checked against the source.
+
+**The residual gap, stated rather than papered over.** No surface of the atlas
+shows the people it documents — only the naming of them, and the cartography.
+The fallback above licenses that, and it is still a gap. Closing it means an
+image field per fiche and eight hundred cleared images: a corpus feature, with
+its own decision about sourcing and rights.
 
 ---
 
