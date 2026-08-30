@@ -325,7 +325,6 @@
       "peoples": [
         {
           "name": "Akan",
-          "population": 11340000,
           "percentageInCountry": 42,
           "peopleId": "PPL_AKAN",
           "region": "Centre, Est et Sud de la Côte d'Ivoire",
@@ -333,7 +332,6 @@
         },
         {
           "name": "Voltaïques / Gur",
-          "population": 4590000,
           "percentageInCountry": 17,
           "peopleId": "PPL_SENUFO",
           "region": "Nord de la Côte d'Ivoire",
@@ -341,7 +339,6 @@
         },
         {
           "name": "Mandé du Nord",
-          "population": 4320000,
           "percentageInCountry": 16,
           "peopleId": "PPL_MALINKE",
           "region": "Nord de la Côte d'Ivoire",

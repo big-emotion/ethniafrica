@@ -203,7 +203,6 @@
       "peoples": [
         {
           "name": "Arabes de Libye",
-          "population": 6300000,
           "percentageInCountry": 90,
           "percentageInAfrica": 3.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

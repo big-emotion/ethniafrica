@@ -185,7 +185,6 @@
       "peoples": [
         {
           "name": "Somali",
-          "population": 650000,
           "percentageInCountry": 60,
           "peopleId": "PPL_SOMALI",
           "region": "Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq",
@@ -193,7 +192,6 @@
         },
         {
           "name": "Afar",
-          "population": 380000,
           "percentageInCountry": 35,
           "peopleId": "PPL_AFAR",
           "region": "Nord et Centre de Djibouti",

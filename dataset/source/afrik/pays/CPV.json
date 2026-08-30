@@ -142,7 +142,6 @@
       "peoples": [
         {
           "name": "Créoles cap-verdiens",
-          "population": 575000,
           "percentageInCountry": 99,
           "peopleId": "PPL_CREOLE_CABOVERDIEN",
           "region": "Toutes les îles du Cap-Vert",

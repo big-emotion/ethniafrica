@@ -239,7 +239,6 @@
       "peoples": [
         {
           "name": "Arabes d'Égypte",
-          "population": 94500000,
           "percentageInCountry": 90,
           "percentageInAfrica": 52.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

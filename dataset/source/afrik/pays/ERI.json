@@ -287,7 +287,6 @@
       "peoples": [
         {
           "name": "Tigrinya",
-          "population": 3900000,
           "percentageInCountry": 55,
           "peopleId": "PPL_TIGRAY",
           "region": "Hauts plateaux (Asmara, Mendefera)",
@@ -295,7 +294,6 @@
         },
         {
           "name": "Tigré",
-          "population": 2100000,
           "percentageInCountry": 30,
           "peopleId": "PPL_TIGRE",
           "region": "Nord-ouest, Sahel (régions côtières et basses terres)",
@@ -303,7 +301,6 @@
         },
         {
           "name": "Afar",
-          "population": 350000,
           "percentageInCountry": 5,
           "peopleId": "PPL_AFAR",
           "region": "Littoral et sud-est",
@@ -311,7 +308,6 @@
         },
         {
           "name": "Saho",
-          "population": 280000,
           "percentageInCountry": 4,
           "peopleId": "PPL_SAHO",
           "region": "Centre-sud et côtes",

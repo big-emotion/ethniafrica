@@ -204,7 +204,6 @@
       "peoples": [
         {
           "name": "Sara",
-          "population": 3000000,
           "percentageInCountry": 18,
           "peopleId": "PPL_SARA",
           "region": "Sud du Tchad",
@@ -212,7 +211,6 @@
         },
         {
           "name": "Arabes tchadiens",
-          "population": 2500000,
           "percentageInCountry": 15,
           "peopleId": "PPL_ARABES_AFRIQUE",
           "region": "Centre et est du Tchad, zones désertiques",
@@ -236,7 +234,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 10450000,
           "percentageInCountry": 60.7,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions du Tchad"
