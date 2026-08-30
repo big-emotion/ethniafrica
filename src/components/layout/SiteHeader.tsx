@@ -478,12 +478,17 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           z-index: 40;
         }
 
+        /* The bar takes the shell box rather than its own: its left edge is
+           the one the page title and the copyright line are measured against,
+           so a width private to the header is a misalignment by construction.
+           Only the vertical padding is the bar's to choose. */
         .sh-bar {
           display: flex;
           align-items: center;
           gap: 16px;
-          padding: 8px 22px;
-          max-width: 1240px;
+          padding-block: 8px;
+          padding-inline: var(--afh-page-padding);
+          max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
 
@@ -634,7 +639,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-panel {
           background: var(--afh-bg);
           border-bottom: 1px solid var(--afh-cat-ocre);
-          padding: 20px 22px 22px;
+          padding: 20px var(--afh-page-padding) 22px;
           animation: sh-panel-in var(--afh-duration-slow) var(--afh-ease-spring);
         }
         @keyframes sh-panel-in {
@@ -653,7 +658,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           gap: 14px;
           flex-wrap: wrap;
           margin: 0 auto 14px;
-          max-width: 1240px;
+          max-width: var(--afh-shell-max);
         }
         .sh-panel-title {
           font-family: var(--afh-font-display);
@@ -674,7 +679,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
           gap: 9px;
-          max-width: 1240px;
+          max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
 
@@ -908,9 +913,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
            three axes only appear once the bar is wide enough to hold them.
            One component, one switch, so the two branches cannot disagree
            about which viewport they are on. */
-        .sh-bar {
-          padding: 8px 16px;
-        }
         .sh-axes,
         .sh-panel {
           display: none;
@@ -919,9 +921,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: inline-grid;
         }
         @media (min-width: ${NAV_BREAKPOINT_PX + 1}px) {
-          .sh-bar {
-            padding: 8px 22px;
-          }
           .sh-axes {
             display: flex;
           }

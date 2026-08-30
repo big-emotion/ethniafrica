@@ -104,7 +104,7 @@ export const PageLayout = ({
       {/* Header */}
       {!hideHeader && displayTitle && (
         <header className="border-b bg-card shadow-soft">
-          <div className="container mx-auto px-4 py-6">
+          <div className="afh-shell py-6">
             {/* The band held the product logo beside the title, a second copy
                 of the mark the bar renders directly above it. Dropping it
                 leaves the band with one job — naming the page — and stops a
@@ -123,13 +123,13 @@ export const PageLayout = ({
           It sits *below* the band because a trail is read as what qualifies a
           title, not as what introduces a logo — above it, the page opened on
           "Accueil › Comprendre" before ever saying what it was. */}
-      <div className="container mx-auto px-4">
+      <div className="afh-shell">
         <SiteTrail entityLabel={trailLabel} />
       </div>
 
       {/* Main Content */}
       <main
-        className={`container mx-auto px-4 ${
+        className={`afh-shell ${
           flushTop ? (isMobile ? "pb-4" : "pb-8") : isMobile ? "py-4" : "py-8"
         }`}
       >

@@ -9,6 +9,8 @@
 @import "./styles/tokens/radius.css";
 @import "./styles/country-tokens.css";
 @import "./styles/people-tokens.css";
+/* The one box the bar, the hero, the body and the footer share. */
+@import "./styles/shell.css";
 /* A holding pen for the home's 20 half-step sizes, not a scale of its own —
    see the file's own header and typography-charter.md §6 rule 3. */
 @import "./styles/home-tokens.css";
