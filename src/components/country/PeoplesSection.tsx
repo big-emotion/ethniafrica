@@ -234,7 +234,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
         {row.pejorativeTerm && (
           <div className="mt-1">
             <span
-              className="warn-colonial inline-flex text-afh-eyebrow font-bold px-[6px] py-[1px] rounded-[var(--country-radius-sm)] line-through"
+              className="warn-colonial inline-flex text-afh-eyebrow font-bold px-[6px] py-[1px] rounded-[var(--country-radius-sm)]"
               style={{
                 color: "var(--country-colonial)",
                 background: "var(--country-colonial-bg)",
