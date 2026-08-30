@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AnecdoteCard } from "@/components/anecdotes/AnecdoteCard";
 import { AnecdoteReader } from "@/components/anecdotes/AnecdoteReader";
@@ -189,10 +189,8 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
     ).toHaveAttribute("href", "/fr/report-error?anecdote=cameroun");
   });
 
-  // happy-dom has no share sheet, which is the desktop case the fallback
-  // exists for.
   // @req REQ-113
-  it("offers network links when the browser has no share sheet", async () => {
+  it("carries the anecdote's own address into every network link", async () => {
     const user = userEvent.setup();
     render(<AnecdoteReader language="fr" deck={DECK} />);
 
@@ -238,5 +236,82 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
 
     expect(screen.getByText(/Aucune anecdote/)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Suivant" })).toBeNull();
+  });
+});
+
+describe("The anecdote's two-column band (REQ-113)", () => {
+  // The text on one side, the document it talks about on the other. Stacked,
+  // the card ran past the fold and buried the controls the reader is meant to
+  // reach; side by side it fits on one screen.
+  // @req REQ-113
+  it("puts the picture on the side the page drew for it", () => {
+    const { container, rerender } = render(
+      <AnecdoteCard language="fr" fact={SOURCED} imageSide="end" />
+    );
+
+    const split = () => container.querySelector(".anecdote-split");
+    expect(split()).toHaveClass("anecdote-split--image-end");
+
+    rerender(<AnecdoteCard language="fr" fact={SOURCED} imageSide="start" />);
+    expect(split()).toHaveClass("anecdote-split--image-start");
+  });
+
+  // The draw is the server's, like the deck's, so the first paint is already
+  // the right one. Turning alternates from there rather than re-drawing,
+  // which would let three cards in a row land on the same side.
+  // @req REQ-113
+  it("alternates the picture's side as the reader turns", async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <AnecdoteReader language="fr" deck={DECK} openingImageSide="start" />
+    );
+
+    const sideNow = () =>
+      container
+        .querySelector(".anecdote-split")
+        ?.className.includes("anecdote-split--image-start")
+        ? "start"
+        : "end";
+
+    expect(sideNow()).toBe("start");
+    await user.click(screen.getByRole("button", { name: "Suivant" }));
+    expect(sideNow()).toBe("end");
+    await user.click(screen.getByRole("button", { name: "Suivant" }));
+    expect(sideNow()).toBe("start");
+  });
+});
+
+describe("Sharing an anecdote (REQ-113)", () => {
+  // The native sheet came first and the reader had to dismiss it before the
+  // networks appeared — two gestures for one intent, and the second one read
+  // as a bug. One press, the choices.
+  // @req REQ-113
+  it("shows the networks on the first press, never the browser's own sheet", async () => {
+    const user = userEvent.setup();
+    const nativeShare = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(window.navigator, "share", {
+      configurable: true,
+      value: nativeShare,
+      writable: true,
+    });
+
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+    await user.click(screen.getByRole("button", { name: "Partager" }));
+
+    expect(nativeShare).not.toHaveBeenCalled();
+    expect(screen.getByRole("link", { name: "WhatsApp" })).toBeInTheDocument();
+
+    delete (window.navigator as { share?: unknown }).share;
+  });
+
+  // @req REQ-113
+  it("closes the networks when the reader presses Partager again", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    await user.click(screen.getByRole("button", { name: "Partager" }));
+    await user.click(screen.getByRole("button", { name: "Partager" }));
+
+    expect(screen.queryByRole("link", { name: "WhatsApp" })).toBeNull();
   });
 });

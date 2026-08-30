@@ -27,6 +27,24 @@ export const DID_YOU_KNOW_ENTITY_ACCENT: Record<DidYouKnowEntityKind, string> =
     family: "afh-accent-terre",
   };
 
+/** Which half of the anecdote band the picture takes, once it has halves. */
+export type AnecdoteImageSide = "start" | "end";
+
+/**
+ * Toss for the side the opening anecdote's picture takes.
+ *
+ * It lives here rather than in the page because the toss has to happen on the
+ * server — a client draw would flip the band a frame after paint — and React
+ * refuses an impure call during render. Passing the source of randomness in
+ * is what makes the toss testable at all.
+ */
+// @req REQ-113
+export function drawAnecdoteImageSide(
+  random: () => number = Math.random
+): AnecdoteImageSide {
+  return random() < 0.5 ? "start" : "end";
+}
+
 // @req REQ-113
 export const DID_YOU_KNOW_TIER_LABEL = {
   official: "Source officielle",

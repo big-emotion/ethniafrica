@@ -7,6 +7,7 @@ import {
   findDidYouKnowFact,
   shuffleDidYouKnowDeck,
 } from "@/lib/home/didYouKnowFacts";
+import { drawAnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const PAGE_TITLE = "Anecdotes";
@@ -54,15 +55,13 @@ export default async function AnecdotesPage({
   // the address still points at a page that has something to say.
   const named = findDidYouKnowFact(requested);
   const deck = shuffleDidYouKnowDeck();
+  // Drawn here for the same reason the deck is: a coin tossed in the client
+  // would flip the band a frame after paint. The reader alternates from it.
+  const openingImageSide = drawAnecdoteImageSide();
 
   return (
     <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
       <div className="anecdotes-page">
-        {/* PageLayout accepts `subtitle` and renders nothing with it — the
-            prop is vestigial, like `onLanguageChange`. The lede is printed
-            here so the page actually says what it holds. */}
-        <p className="anecdotes-lede">{PAGE_SUBTITLE}</p>
-
         <p className="anecdotes-count">
           {`${DID_YOU_KNOW_FACTS.length} anecdotes — une à la fois, tirée au hasard`}
         </p>
@@ -71,6 +70,7 @@ export default async function AnecdotesPage({
           language="fr"
           deck={deck}
           initialFactId={named?.id ?? null}
+          openingImageSide={openingImageSide}
         />
       </div>
 
@@ -79,13 +79,14 @@ export default async function AnecdotesPage({
           max-width: 68ch;
           margin: 0 auto;
         }
-        .anecdotes-lede {
-          margin: 0 auto 14px;
-          max-width: 58ch;
-          text-align: center;
-          font-size: var(--afh-text-lead);
-          line-height: 1.55;
-          color: var(--afh-text-soft);
+        /* The box has to open with the card: a measure meant for one column
+           of prose would hold the two-column band at half the width it asks
+           for, and the reader would get the shorter card without the wider
+           picture that pays for it. */
+        @media (min-width: 768px) {
+          .anecdotes-page {
+            max-width: 1040px;
+          }
         }
         .anecdotes-count {
           margin: 0 0 26px;

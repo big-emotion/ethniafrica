@@ -10,6 +10,7 @@ import {
   DID_YOU_KNOW_ENTITY_ACCENT,
   DID_YOU_KNOW_ENTITY_LABEL,
   DID_YOU_KNOW_TIER_LABEL,
+  type AnecdoteImageSide,
 } from "@/lib/home/didYouKnowPresentation";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
@@ -17,6 +18,8 @@ import type { Language } from "@/types/shared";
 export interface AnecdoteCardProps {
   language: Language;
   fact: DidYouKnowFact;
+  /** Drawn by the page, alternated by the reader. See the band note below. */
+  imageSide?: AnecdoteImageSide;
 }
 
 /**
@@ -26,7 +29,17 @@ export interface AnecdoteCardProps {
  * reason: a reader working down eight of them needs a starting edge on
  * every line. Reading one at a time is the opposite situation — there is no
  * column to descend, the card is the page, and centring it is what tells the
- * reader that nothing else is being withheld below.
+ * reader that nothing else is being withheld below. That still holds on a
+ * phone, where the card *is* one column; from the tablet up the picture and
+ * the text sit side by side and the prose takes its starting edge back,
+ * because centred copy in a half-width column is a ragged block on both
+ * sides and reads as a caption rather than as an argument.
+ *
+ * The band exists to shorten the card, not to decorate it: stacked, the
+ * picture alone pushed the four controls under the fold, and a reader who
+ * has to scroll to react mostly does not react. Which half the picture takes
+ * alternates as the deck is walked, from a side the page draws per visit, so
+ * twenty-four cards do not read as twenty-four copies of one template.
  *
  * Every anecdote carries a picture, and the picture is a document the
  * anecdote is *about* rather than decoration: the map that repeats itself,
@@ -50,56 +63,64 @@ function entityHref(language: Language, entity: DidYouKnowEntity): string {
 }
 
 // @req REQ-113
-export function AnecdoteCard({ language, fact }: AnecdoteCardProps) {
+export function AnecdoteCard({
+  language,
+  fact,
+  imageSide = "end",
+}: AnecdoteCardProps) {
   const illustration = illustrationFor(fact.id);
 
   return (
     <article className="anecdote-card" id={fact.id}>
-      {illustration ? (
-        <figure className="anecdote-figure">
-          <div className="anecdote-frame">
-            <Image
-              src={illustration.src}
-              alt={illustration.alt}
-              fill
-              priority
-              sizes="(min-width: 720px) 640px, 100vw"
-              className="anecdote-image"
-            />
-          </div>
-          <figcaption className="anecdote-credit">
-            {illustration.credit}
-          </figcaption>
-        </figure>
-      ) : null}
+      <div className={`anecdote-split anecdote-split--image-${imageSide}`}>
+        {illustration ? (
+          <figure className="anecdote-figure">
+            <div className="anecdote-frame">
+              <Image
+                src={illustration.src}
+                alt={illustration.alt}
+                fill
+                priority
+                sizes="(min-width: 768px) 460px, 100vw"
+                className="anecdote-image"
+              />
+            </div>
+            <figcaption className="anecdote-credit">
+              {illustration.credit}
+            </figcaption>
+          </figure>
+        ) : null}
 
-      <h2 className="anecdote-headline">{fact.headline}</h2>
+        <div className="anecdote-text">
+          <h2 className="anecdote-headline">{fact.headline}</h2>
 
-      {fact.body.map((paragraph, index) => (
-        <p
-          key={paragraph.slice(0, 32)}
-          className={index === 0 ? "anecdote-lede" : undefined}
-        >
-          {paragraph}
-        </p>
-      ))}
-
-      <ul className="anecdote-chips">
-        {fact.entities.map((entity) => (
-          <li key={`${entity.kind}-${entity.id}`}>
-            <Link
-              className={`anecdote-chip ${DID_YOU_KNOW_ENTITY_ACCENT[entity.kind]}`}
-              href={entityHref(language, entity)}
+          {fact.body.map((paragraph, index) => (
+            <p
+              key={paragraph.slice(0, 32)}
+              className={index === 0 ? "anecdote-lede" : undefined}
             >
-              <span aria-hidden="true" className="anecdote-dot" />
-              <span className="anecdote-chip-kind">
-                {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
-              </span>
-              {entity.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+              {paragraph}
+            </p>
+          ))}
+
+          <ul className="anecdote-chips">
+            {fact.entities.map((entity) => (
+              <li key={`${entity.kind}-${entity.id}`}>
+                <Link
+                  className={`anecdote-chip ${DID_YOU_KNOW_ENTITY_ACCENT[entity.kind]}`}
+                  href={entityHref(language, entity)}
+                >
+                  <span aria-hidden="true" className="anecdote-dot" />
+                  <span className="anecdote-chip-kind">
+                    {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                  </span>
+                  {entity.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       <footer className="anecdote-provenance">
         {/* Two tiers sit in this footer and they mean different things: the
@@ -145,6 +166,12 @@ export function AnecdoteCard({ language, fact }: AnecdoteCardProps) {
       <style>{`
         .anecdote-card {
           text-align: center;
+        }
+        /* One column on a phone, and the picture stays first: it is what the
+           reader recognises before they have read a word. */
+        .anecdote-split {
+          display: flex;
+          flex-direction: column;
         }
         .anecdote-figure {
           margin: 0 0 26px;
@@ -295,8 +322,58 @@ export function AnecdoteCard({ language, fact }: AnecdoteCardProps) {
           font-size: var(--afh-text-caption);
           color: var(--afh-fg-muted);
         }
-        @media (min-width: 720px) {
-          .anecdote-frame { aspect-ratio: 16 / 9; }
+        /* 768px, not the card's old 720px: below it the body centres every
+           run of text site-wide (src/styles/mobile-text.css), and a column
+           of centred prose beside a picture is the one shape this band is
+           meant to avoid. */
+        @media (min-width: 768px) {
+          .anecdote-split {
+            flex-direction: row;
+            align-items: center;
+            gap: 34px;
+            text-align: left;
+          }
+          /* Not two equal halves: the text is what sets the card's height, so
+             the wider column goes to it and the whole card gets shorter —
+             which is the point of the band. min-width:0 is what stops a long
+             unbroken word in the headline from widening its own column. */
+          .anecdote-split > * {
+            min-width: 0;
+          }
+          .anecdote-figure {
+            flex: 0 1 44%;
+          }
+          .anecdote-text {
+            flex: 1 1 56%;
+          }
+          /* Order rather than row-reverse: the source order stays picture-
+             then-text, which is what a screen reader and a phone both get. */
+          .anecdote-split--image-end .anecdote-figure {
+            order: 2;
+          }
+          /* Nearer to square than the full-width frame was: at half the width
+             a 16/9 crop is a letterbox strip against a tall column of type. */
+          .anecdote-frame {
+            aspect-ratio: 4 / 3;
+          }
+          .anecdote-figure {
+            margin-bottom: 0;
+          }
+          .anecdote-credit {
+            margin-inline: 0;
+          }
+          .anecdote-headline {
+            margin-inline: 0;
+            max-width: none;
+            font-size: var(--afh-text-h2);
+          }
+          .anecdote-text p {
+            margin-inline: 0;
+            max-width: none;
+          }
+          .anecdote-chips {
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </article>
