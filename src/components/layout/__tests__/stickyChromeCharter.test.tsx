@@ -97,10 +97,22 @@ describe("the masthead and the chapter rail share the top of the screen", () => 
   it("pins the chapter rail under the masthead and moves it with it", () => {
     const body = ruleBody(read(RAIL_SHEET), ".afh-chapter-bar");
 
-    expect(declaration(body, "top")).toBe(`var(${HEADER_HEIGHT_PROPERTY})`);
-    expect(declaration(body, "transform")).toBe(
-      "translateY(var(--afh-header-shift))"
+    expect(declaration(body, "top")).toBe(
+      `calc(var(${HEADER_HEIGHT_PROPERTY}) + var(--afh-header-shift))`
     );
+  });
+
+  // @req REQ-091
+  it("carries the rail's travel in its pinned offset, never in a transform", () => {
+    // A transform applies whether or not the rail is pinned. Carrying the
+    // masthead's travel there lifted the rail a masthead's height above its
+    // place in the flow for as long as the masthead was retracted — which, on
+    // a fiche, is squarely over the foot of the globe band and its controls.
+    // A sticky `top` bites only once the rail is actually pinned, which is
+    // the only moment the travel was ever meant to describe.
+    const body = ruleBody(read(RAIL_SHEET), ".afh-chapter-bar");
+
+    expect(body).not.toMatch(/^\s*transform\s*:/m);
   });
 
   // @req REQ-091
