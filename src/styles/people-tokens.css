@@ -20,10 +20,14 @@
   margin-bottom: 4px;
 }
 
-/* No measure. The parchment decides where a line ends, exactly as it does for
-   `.afh-parchment-section p` — this class is the same prose, one stylesheet
-   over. Capped at 65ch it broke off at three-fifths of a desktop chapter while
-   the stat cards and tables beside it ran to both edges. */
+/* The measure came out with the sub-headings. The people fiche is on the same
+   parchment as the family and the country — its chapters are FicheSections —
+   and `.afh-parchment-section p` deliberately sets no max-width, because the
+   parchment decides where a line ends. Capped at 65ch this was the one
+   paragraph on the page still breaking off mid-width while the stat cards,
+   tags and rankings beside it ran to both edges. The structure the corpus now
+   carries is what makes the full width readable: a chapter cut every three or
+   four sentences is no longer the slab the cap was defending against. */
 .people-section-body {
   font-size: var(--afh-text-body);
   /* Reading-surface density: UX-DR2 line-height ≥ 1.6 */

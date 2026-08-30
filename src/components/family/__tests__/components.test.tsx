@@ -226,7 +226,14 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
-    expect(screen.getByText("Bantu")).toHaveAttribute("lang", "sw");
+    // The tag sits on the definition, which wraps the whole value, rather than
+    // on a span inside it: it qualifies every block the field holds, and `lang`
+    // inherits. What matters is that the endonym is announced in its own
+    // language, not which element carries the attribute.
+    expect(screen.getByText("Bantu").closest("[lang]")).toHaveAttribute(
+      "lang",
+      "sw"
+    );
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
     ).toHaveAttribute(
