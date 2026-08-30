@@ -147,14 +147,22 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
           unrelated stories a reader had to connect on their own. The title
           names the thread: every one of them is about who did the naming.
 
-          It uses the corpus's own two words rather than glossing them. The
-          third slice defines them in place (« Un exonyme est le nom donné de
-          l'extérieur ; un autonyme, celui qu'un peuple se donne »), and a
-          reader meets them on every fiche, so softening them here would
-          teach a vocabulary the rest of the site does not use. */}
+          It led on « Autonyme, exonyme » until ETNI-857, on the reading that
+          the corpus's own two words are met on every fiche anyway. But the
+          section that defines them defines them in its *third* block, and a
+          heading is read before the gloss and cannot be skipped — so the one
+          section written for a reader who knows nothing opened on the
+          vocabulary it exists to teach. The games charter §8 states the rule
+          for quiz stems (no term the fiche itself does not gloss); it holds
+          harder here. The terms stay where they are earned: block three's
+          follow-up still defines both, in place.
+
+          The replacement names the three blocks in their own order, so the
+          heading doubles as the section's table of contents, and it echoes
+          the interrogative the hero now opens on. */}
       <SectionHeading
         eyebrow="L'origine des noms"
-        title="Autonyme, exonyme : qui a nommé, et quand."
+        title="Un pays, un peuple, une langue : qui les a nommés ?"
         testId="home-purpose-heading"
         className="home-purpose-heading"
       />

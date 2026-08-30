@@ -73,9 +73,7 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
 
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
-    expect(headings[0]).toHaveTextContent(
-      "Les peuples d'Afrique, sous le nom qu'ils se donnent"
-    );
+    expect(headings[0]).toHaveTextContent("Qui sont les peuples d'Afrique ?");
   });
 
   // Nothing on this route is pinned to night any more, the globe's panel

@@ -107,14 +107,20 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <PageLayout language="fr" hideHeader flushTop>
       <HomeHero />
-      {/* The doors first, then argument, proof and sample.
-          They used to come last, on the reading that a reader who has not
-          been told what the atlas is for cannot choose between Explorer,
-          Comprendre and Jouer. The hero's standfirst now does that telling
-          in two sentences, above the fold — so the reader who already knows
-          where they are going is no longer made to scroll past four sections
-          to find the way in, and the one who does not still meets the
-          argument immediately below. */}
+      {/* Argument first, then the doors, then proof and sample.
+          The doors came first while the hero carried a standfirst that told
+          the reader what the atlas was for above the fold. The hero is now a
+          question and one sentence (ETNI-857), so that telling moved back
+          down here — and PurposeBlocks is where it happens, on three cases
+          rather than in a claim.
+
+          The order also settles a vocabulary problem the axes could not
+          solve on their own: the Explorer card offers « familles
+          linguistiques », which nothing on the page glossed before the
+          reader met it. Standing the argument first means a language family
+          has been defined by example — « Bantou » names a kinship between
+          500 languages, not a people — by the time the card uses the term. */}
+      <PurposeBlocks language="fr" />
       <section className="home-axes-section">
         <AccessAxes
           language="fr"
@@ -122,7 +128,6 @@ export default async function Home({ searchParams }: HomeProps) {
           modulesByAxis={modulesByAxis}
         />
       </section>
-      <PurposeBlocks language="fr" />
       <DidYouKnow language="fr" fact={didYouKnowFact} />
       <SynthesisRail language="fr" syntheses={syntheses} />
       {/* Where the axes used to stand. The module is the page's invitation
