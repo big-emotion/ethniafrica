@@ -14,6 +14,7 @@ import {
   shuffleDidYouKnowDeck,
   type DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
+import type { AnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { accentForModule } from "@/lib/hubs/moduleRegistry";
 import type { Language } from "@/types/shared";
 
@@ -23,6 +24,8 @@ export interface AnecdoteReaderProps {
   deck: DidYouKnowFact[];
   /** The fact a shared link names, when it names one still in the bank. */
   initialFactId?: string | null;
+  /** Which side the first card's picture takes; the rest alternate from it. */
+  openingImageSide?: AnecdoteImageSide;
 }
 
 /**
@@ -114,6 +117,7 @@ export function AnecdoteReader({
   language,
   deck,
   initialFactId = null,
+  openingImageSide = "end",
 }: AnecdoteReaderProps) {
   const [order, setOrder] = useState<DidYouKnowFact[]>(deck);
   const [position, setPosition] = useState(() => {
@@ -163,19 +167,13 @@ export function AnecdoteReader({
     return `${window.location.origin}${window.location.pathname}?a=${fact.id}`;
   }, [fact]);
 
-  const share = useCallback(async () => {
+  // The button used to hand the intent to `navigator.share` first and only
+  // open this row once that sheet was dismissed — so on every phone the
+  // press produced a system sheet, and the row appeared *after* the reader
+  // had said no to it, reading as a second, unasked-for prompt. One press,
+  // the choices, always the same five.
+  const share = useCallback(() => {
     if (!fact) return;
-    const url = `${window.location.origin}${window.location.pathname}?a=${fact.id}`;
-
-    if (typeof navigator !== "undefined" && navigator.share) {
-      try {
-        await navigator.share({ title: "Anecdote", text: fact.headline, url });
-        return;
-      } catch {
-        // A dismissed share sheet rejects exactly like a failed one. Falling
-        // through to the links costs the reader a tap and never a dead end.
-      }
-    }
     setShareOpenFor((open) => (open === fact.id ? null : fact.id));
   }, [fact]);
 
@@ -213,6 +211,16 @@ export function AnecdoteReader({
   // var(--accent-ink) below resolve to nothing at all.
   const accent = accentForModule({ id: "anecdotes" });
 
+  // Alternating from a side the page drew, rather than drawing per card:
+  // a fresh draw at each turn would land on the same side twice or three
+  // times running, which looks like a layout that failed to change.
+  const imageSide: AnecdoteImageSide =
+    position % 2 === 0
+      ? openingImageSide
+      : openingImageSide === "start"
+        ? "end"
+        : "start";
+
   return (
     <div className={`anecdote-reader ${accent}`}>
       {/* Turning a card swaps the content under a button that has not moved:
@@ -222,7 +230,7 @@ export function AnecdoteReader({
         {`Anecdote ${position + 1} sur ${order.length} : ${fact.headline}`}
       </p>
 
-      <AnecdoteCard language={language} fact={fact} />
+      <AnecdoteCard language={language} fact={fact} imageSide={imageSide} />
 
       <div className="anecdote-controls">
         <button type="button" className="anecdote-next" onClick={goNext}>
@@ -321,6 +329,13 @@ export function AnecdoteReader({
         .anecdote-reader {
           max-width: 62ch;
           margin: 0 auto;
+        }
+        /* The measure that suits one column is half a column once the card
+           splits in two, so the box widens with the band — and only with it. */
+        @media (min-width: 768px) {
+          .anecdote-reader {
+            max-width: 1040px;
+          }
         }
         .anecdote-empty {
           color: var(--afh-text-soft);
