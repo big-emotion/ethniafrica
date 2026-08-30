@@ -8,6 +8,7 @@ import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEARCH_EMPTY_LINK_LABEL } from "@/components/ui/EmptyState";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
+import { HomeHeroSeeds } from "./HomeHeroSeeds";
 import { search as searchCorpus } from "@/lib/afrikLoader";
 import {
   getCountryRoute,
@@ -35,9 +36,13 @@ import type { Language } from "@/types/shared";
  * families }`, never one flat list). The taxonomy is taught in the result,
  * where it costs the reader nothing, instead of demanded as a precondition.
  *
- * The three seed chips carry the same teaching without the motion: they show
- * all three entity kinds at once, where a rotating placeholder shows one at a
- * time and disappears at the exact moment the reader focuses the field.
+ * The three seed chips carry the same teaching in the corpus' own words: they
+ * show all three entity kinds at once, and each one reels through four
+ * examples of its kind (HomeHeroSeeds). That motion is deliberately on the
+ * chips and not on the placeholder — a placeholder is a control's name, it
+ * would be renamed under a screen reader six times a minute, and it vanishes
+ * at the exact moment the reader focuses the field. A chip is neither a name
+ * nor transient, and it stops as soon as the reader arrives.
  */
 
 const MIN_QUERY_LENGTH = 2;
@@ -56,10 +61,6 @@ export const PENDING_DELAY_MS = 150;
 const PENDING_MIN_MS = 400;
 /** Enough to prove the kind exists without turning the band into a listing. */
 const MAX_PER_GROUP = 3;
-
-/** One per entity kind, so the row states the corpus' three shapes at a glance. */
-// @req REQ-002
-export const SEED_QUERIES = ["Yoruba", "Cameroun", "Bantou"];
 
 // Plural of the singular labels in SEARCH_ENTITY_ACCENT — a group heads a set.
 // The accent still comes from that one table, so a kind's colour is assigned
@@ -101,6 +102,10 @@ export function HomeHeroSearch({
   const [activeIndex, setActiveIndex] = useState(-1);
   const [pending, setPending] = useState(false);
   const [showPending, setShowPending] = useState(false);
+  // The seed reels stop at the first sign of the reader. Hovering or tabbing
+  // into the row is one such sign and the row hears it itself; reaching for
+  // the field is the other, and only this component is in a position to know.
+  const [fieldTouched, setFieldTouched] = useState(false);
   const inputId = useId();
   const listboxId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -287,6 +292,7 @@ export function HomeHeroSearch({
               setQuery(event.target.value);
               setDismissed(false);
             }}
+            onFocus={() => setFieldTouched(true)}
             onKeyDown={handleKeyDown}
           />
 
@@ -314,15 +320,7 @@ export function HomeHeroSearch({
         </Button>
       </form>
 
-      <ul className="home-hero-search-seeds" aria-label="Exemples de recherche">
-        {SEED_QUERIES.map((seed) => (
-          <li key={seed}>
-            <button type="button" onClick={() => runSeed(seed)}>
-              {seed}
-            </button>
-          </li>
-        ))}
-      </ul>
+      <HomeHeroSeeds onPick={runSeed} engaged={fieldTouched || query !== ""} />
 
       {/* The spinner is the sighted half of the same message; this is the
           other half, and it reports the same two moments — the wait starting,

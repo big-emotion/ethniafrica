@@ -10,10 +10,10 @@ import {
 
 import {
   HomeHeroSearch,
-  SEED_QUERIES,
   DEBOUNCE_MS,
   PENDING_DELAY_MS,
 } from "../HomeHeroSearch";
+import { SEED_POOLS } from "../HomeHeroSeeds";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -240,18 +240,19 @@ describe("HomeHeroSearch", () => {
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
-  // The three seeds teach the three entity kinds at once. A rotating
-  // placeholder shows one at a time and vanishes at the moment of focus.
+  // The three seeds teach the three entity kinds at once, each reeling through
+  // its own pool (HomeHeroSeeds owns that; here only the handover matters).
   // @req REQ-002
   it("runs an example query from a seed chip", async () => {
     const fetchResults = vi.fn(async () => ALL_KINDS);
     renderSearch(fetchResults);
 
-    fireEvent.click(screen.getByRole("button", { name: SEED_QUERIES[0] }));
+    const first = SEED_POOLS[0].words[0];
+    fireEvent.click(screen.getByRole("button", { name: first }));
 
     await screen.findByRole("listbox");
-    expect(field()).toHaveValue(SEED_QUERIES[0]);
-    expect(fetchResults).toHaveBeenCalledWith(SEED_QUERIES[0]);
+    expect(field()).toHaveValue(first);
+    expect(fetchResults).toHaveBeenCalledWith(first);
   });
 
   // The native WebKit cross is suppressed by the field's own stylesheet, so a
@@ -347,6 +348,30 @@ describe("HomeHeroSearch", () => {
         await vi.advanceTimersByTimeAsync(ms);
       });
     }
+
+    // The row hears its own hover and focus, but reaching for the field is a
+    // sign of the reader that only this component can see — and a word that
+    // moves while someone is aiming at it is a target that moves. Caught in a
+    // browser, not here: the unit test below is the one that was missing.
+    // @req REQ-002
+    it("stops the seed reels when the field takes focus", async () => {
+      renderSearch();
+
+      const reel = () =>
+        document.querySelector("[data-reel-current]")?.textContent;
+
+      // Witness first: left alone, this reel does turn. Without it the
+      // assertion below would hold just as well on a reel that never moved.
+      const opening = reel();
+      await tick(SEED_POOLS[0].startDelayMs + 50);
+      const turned = reel();
+      expect(turned).not.toBe(opening);
+
+      fireEvent.focus(field());
+      await tick(SEED_POOLS[0].dwellMs * 3);
+
+      expect(reel()).toBe(turned);
+    });
 
     // @req REQ-002
     it("marks the field busy for as long as the request is in flight", async () => {
