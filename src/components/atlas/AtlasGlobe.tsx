@@ -1326,33 +1326,49 @@ export function AtlasGlobe({
         />
       ))}
 
-      {offersList && (
-        <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
-          <AtlasTargetPicker
-            targets={choosableTargets}
-            subtitleByCountry={subtitleByCountry}
-            chosenCountryId={chosenCountryId}
-            onChoose={chooseTarget}
-            areaNoun={areaNoun}
-          />
-        </div>
-      )}
+      {/* The picker and the legend both want the top edge, and both used to
+          take it absolutely — the picker centred at top-3, the legend at
+          top-0 under it. At 430px the picker wraps to two lines and covered
+          the legend outright, so a phone reader was told nothing about what
+          dragging does, on both the people and the country fiche.
 
-      {/* Below the panel breakpoint the legend steps aside for the bottom
-          sheet — but only once there is a sheet. Hiding it unconditionally
-          left a phone reader with a globe that moves and no statement of what
-          dragging does, which is what "it spins and I can't stop it" was
-          describing. */}
-      {legend ?? (
-        <p
-          data-atlas-legend=""
-          className="pointer-events-none absolute inset-x-0 top-0 p-3 text-afh-caption"
-          style={{ color: "var(--afh-night-ink-2)" }}
-        >
-          Afrique à sa surface réelle.{" "}
-          {surfaceTurns ? "Glissez pour tourner." : "Glissez pour déplacer."}
-        </p>
-      )}
+          No fixed offset fixes that, because the picker's height depends on
+          the label it draws. They share one flow container instead, and the
+          legend sits under whatever height the picker turns out to have.
+
+          `pointer-events-none` on the stack with `auto` on the picker: the
+          band must not eat pointer events meant for the globe behind it, and
+          the two halves have to stay together or the picker stops taking a
+          tap. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[7] flex flex-col items-center gap-2 p-3">
+        {offersList && (
+          <div className="pointer-events-auto">
+            <AtlasTargetPicker
+              targets={choosableTargets}
+              subtitleByCountry={subtitleByCountry}
+              chosenCountryId={chosenCountryId}
+              onChoose={chooseTarget}
+              areaNoun={areaNoun}
+            />
+          </div>
+        )}
+
+        {/* Below the panel breakpoint the legend steps aside for the bottom
+            sheet — but only once there is a sheet. Hiding it unconditionally
+            left a phone reader with a globe that moves and no statement of
+            what dragging does, which is what "it spins and I can't stop it"
+            was describing. */}
+        {legend ?? (
+          <p
+            data-atlas-legend=""
+            className="w-full text-afh-caption"
+            style={{ color: "var(--afh-night-ink-2)" }}
+          >
+            Afrique à sa surface réelle.{" "}
+            {surfaceTurns ? "Glissez pour tourner." : "Glissez pour déplacer."}
+          </p>
+        )}
+      </div>
 
       {/* The mockup lays these out at every width — centred, wrapping. They
           used to be hidden below 760px, which left a phone with no way to

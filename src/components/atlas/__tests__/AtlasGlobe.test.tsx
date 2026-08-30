@@ -1279,6 +1279,37 @@ describe("AtlasGlobe — the globe says what it does on a phone (REQ-117)", () =
     expect(legend?.className).not.toContain("hidden");
   });
 
+  /**
+   * The picker and the legend both want the top edge. They used to take it
+   * absolutely — the picker centred at `top-3`, the legend at `top-0` under
+   * it — and at 430px the picker wraps to two lines and covered the legend
+   * outright, on both the people and the country fiche. A phone reader was
+   * told nothing about what dragging does, which is the exact complaint the
+   * legend exists to answer.
+   *
+   * No fixed offset fixes that, because the picker's height depends on the
+   * label it draws. So they share one flow container, and the assertion is
+   * that the legend is no longer positioned against the stage itself.
+   */
+  // @req REQ-117
+  it("stacks the legend under the picker instead of behind it", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const legend = container.querySelector("[data-atlas-legend]");
+    expect(legend).not.toBeNull();
+
+    // Positioned by its parent's flow, not by its own absolute offset.
+    expect(legend?.className).not.toContain("absolute");
+    expect(legend?.className).not.toContain("top-0");
+
+    const stack = legend?.parentElement;
+    expect(stack?.className).toContain("flex-col");
+    // The band may not eat pointer events meant for the globe behind it.
+    expect(stack?.className).toContain("pointer-events-none");
+  });
+
   // @req REQ-117
   it("keeps Recentrer reachable at phone width", () => {
     const { container } = render(
