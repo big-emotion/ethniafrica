@@ -14,7 +14,11 @@ import {
   PENDING_DELAY_MS,
   SEARCH_LABEL,
 } from "../HomeHeroSearch";
-import { SEED_POOLS } from "../HomeHeroSeeds";
+import { seedPools } from "../HomeHeroSeeds";
+import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";
+
+/** The pools the row renders when no words are injected. */
+const SEED_POOLS = seedPools(FALLBACK_SEED_WORDS);
 import {
   getCountryRoute,
   getFamilyRoute,

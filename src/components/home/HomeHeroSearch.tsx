@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { SEARCH_EMPTY_LINK_LABEL } from "@/components/ui/EmptyState";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { HomeHeroSeeds } from "./HomeHeroSeeds";
+import type { SeedWordsByKind } from "@/lib/home/seedWords";
 import { search as searchCorpus } from "@/lib/afrikLoader";
 import {
   getCountryRoute,
@@ -36,9 +37,11 @@ import type { Language } from "@/types/shared";
  * families }`, never one flat list). The taxonomy is taught in the result,
  * where it costs the reader nothing, instead of demanded as a precondition.
  *
- * The three seed chips carry the same teaching in the corpus' own words: they
- * show all three entity kinds at once, and each one reels through four
- * examples of its kind (HomeHeroSeeds). That motion is deliberately on the
+ * The three seed chips carry the same teaching in the corpus' own words —
+ * literally, since the words are drawn from the fiches on every request
+ * (seedWords.ts): they show all three entity kinds at once, and each one
+ * reels through ten examples of its kind (HomeHeroSeeds), a different ten on
+ * every visit. That motion is deliberately on the
  * chips and not on the placeholder — a placeholder is a control's name, it
  * would be renamed under a screen reader six times a minute, and it vanishes
  * at the exact moment the reader focuses the field. A chip is neither a name
@@ -108,12 +111,15 @@ export interface HomeHeroSearchProps {
   language?: Language;
   /** Injected by tests; defaults to the corpus search every other surface uses. */
   fetchResults?: (query: string) => Promise<SearchResult[]>;
+  /** Drawn from the corpus by the server on every request; see seedWords.ts. */
+  seedWords?: SeedWordsByKind;
 }
 
 // @req REQ-002
 export function HomeHeroSearch({
   language = "fr",
   fetchResults = fetchFromCorpus,
+  seedWords,
 }: HomeHeroSearchProps = {}) {
   const router = useRouter();
   const [query, setQuery] = useState("");
@@ -338,7 +344,11 @@ export function HomeHeroSearch({
         </Button>
       </form>
 
-      <HomeHeroSeeds onPick={runSeed} engaged={fieldTouched || query !== ""} />
+      <HomeHeroSeeds
+        onPick={runSeed}
+        engaged={fieldTouched || query !== ""}
+        words={seedWords}
+      />
 
       {/* The spinner is the sighted half of the same message; this is the
           other half, and it reports the same two moments — the wait starting,
