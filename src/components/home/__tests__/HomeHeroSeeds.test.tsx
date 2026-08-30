@@ -1,12 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, act, fireEvent } from "@testing-library/react";
 
-import {
-  HomeHeroSeeds,
-  SEED_POOLS,
-  REEL_MS,
-  MAX_CYCLES,
-} from "../HomeHeroSeeds";
+import { HomeHeroSeeds, SEED_POOLS, REEL_MS } from "../HomeHeroSeeds";
 
 function setReducedMotion(reduced: boolean) {
   window.matchMedia = vi.fn().mockImplementation((query: string) => ({
@@ -94,15 +89,48 @@ describe("HomeHeroSeeds — the three example queries", () => {
   });
 
   // WCAG 2.2.2: motion that starts on its own and outlasts five seconds needs
-  // a way to stop. Engagement is that way, and it stops for good — once the
-  // reader is aiming at a chip, a word that moves is a target that moves.
+  // a way to stop, and resting the pointer on the row is that way — a word
+  // being aimed at must not move. It is a pause and not an end, because the
+  // row is the only place the home states the breadth of the corpus, and a
+  // pointer crossing it on the way to the field would otherwise spend it.
   // @req REQ-002
-  it("stops for good once the reader engages", () => {
+  it("holds still while the pointer rests on the row", () => {
     render(<HomeHeroSeeds onPick={vi.fn()} />);
 
     const before = shownWord(0);
     fireEvent.pointerEnter(screen.getByRole("list"));
     advance(SEED_POOLS[0].dwellMs * 4 + REEL_MS);
+
+    expect(shownWord(0)).toBe(before);
+  });
+
+  // @req REQ-002
+  it("takes up again once the pointer leaves the row", () => {
+    render(<HomeHeroSeeds onPick={vi.fn()} />);
+
+    const row = screen.getByRole("list");
+    fireEvent.pointerEnter(row);
+    advance(SEED_POOLS[0].dwellMs * 3);
+    const held = shownWord(0);
+
+    fireEvent.pointerLeave(row);
+    advance(SEED_POOLS[0].startDelayMs + SEED_POOLS[0].dwellMs + REEL_MS + 1);
+
+    expect(shownWord(0)).not.toBe(held);
+  });
+
+  // The field is the one arrival that ends the teaching: a reader composing a
+  // query is owed a still row beside what they are typing, and the chip they
+  // may be about to click must not change word underneath the click.
+  // @req REQ-002
+  it("stops for good once the reader reaches the field", () => {
+    const { rerender } = render(<HomeHeroSeeds onPick={vi.fn()} />);
+
+    advancePastFirstRoll(0);
+    const before = shownWord(0);
+
+    rerender(<HomeHeroSeeds onPick={vi.fn()} engaged />);
+    advance(SEED_POOLS[0].dwellMs * 5 + REEL_MS);
 
     expect(shownWord(0)).toBe(before);
   });
@@ -117,17 +145,21 @@ describe("HomeHeroSeeds — the three example queries", () => {
     expect(shownWord(0)).toBe(SEED_POOLS[0].words[0]);
   });
 
-  // A perpetual ticker is noise by the time the reader has read it twice.
+  // The reel used to stop for good after six turns, on the theory that a
+  // perpetual ticker is noise once read twice. It measured the wrong thing:
+  // the cap counts turns since the page loaded, not turns this reader saw, so
+  // a home left open — or read from the second band down — showed a dead row.
+  // The reader who has read enough now says so by hovering, or by typing.
   // @req REQ-002
-  it("settles after a bounded number of cycles", () => {
+  it("is still turning long after the old six-turn cap", () => {
     render(<HomeHeroSeeds onPick={vi.fn()} />);
 
     const pool = SEED_POOLS[0];
-    advance(pool.startDelayMs + (pool.dwellMs + REEL_MS) * (MAX_CYCLES + 4));
-    const settled = shownWord(0);
+    advance(pool.startDelayMs + (pool.dwellMs + REEL_MS) * 12);
+    const late = shownWord(0);
 
-    advance((pool.dwellMs + REEL_MS) * 3);
-    expect(shownWord(0)).toBe(settled);
+    advance(pool.dwellMs + REEL_MS + 1);
+    expect(shownWord(0)).not.toBe(late);
   });
 
   // @req REQ-002
