@@ -180,12 +180,41 @@ export function HomeHero() {
         }
 
         /* ─── The visual ────────────────────────────────────────────────
-           Withdrawn below the shell's breakpoint rather than shrunk: at
-           phone width the question and its answer already fill the band,
-           and a picture under them would push the answer off the first
-           screen. */
+           It used to be withdrawn below the shell's breakpoint, on the
+           reading that "at phone width the question and its answer already
+           fill the band". Measured, they do not: the band's floor is 760px
+           and the copy is 135px of it, so hiding the picture left 82% of the
+           product's first screen as empty parchment — on an atlas of African
+           peoples showing no Africa larger than its 40px logo.
+
+           The floor is not the defect and is not touched: it is contract-
+           tested, and the home is meant to open as immersively as the three
+           axis hubs. What the band needed was its content back.
+
+           The picture was always meant to be here: its sizes attribute has
+           carried the max-width 767px / 100vw case since it shipped, and
+           priority puts it in the preload list at every width — so a phone
+           was already paying for an image the stylesheet refused to draw.
+
+           No backticks in this comment: the block is a template literal, and
+           one would close it. */
         .home-hero-figure {
-          display: none;
+          display: block;
+          margin: 0;
+          min-width: 0;
+        }
+        .home-hero-figure img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: var(--afh-radius-lg);
+          border: 1px solid var(--afh-border);
+        }
+        .home-hero-figure figcaption {
+          margin-top: 10px;
+          font-size: var(--afh-text-caption);
+          line-height: var(--afh-leading-caption);
+          color: var(--afh-text-soft);
         }
 
         @media (min-width: 768px) {
@@ -210,24 +239,12 @@ export function HomeHero() {
             margin-inline: 0;
           }
 
+          /* Only what the second column changes. The picture's own dress —
+             radius, border, caption — is set once in the base rules now that
+             it is drawn at every width, rather than declared twice and left
+             to drift. */
           .home-hero-figure {
-            display: block;
             flex: 0 1 34rem;
-            min-width: 0;
-            margin: 0;
-          }
-          .home-hero-figure img {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: var(--afh-radius-lg);
-            border: 1px solid var(--afh-border);
-          }
-          .home-hero-figure figcaption {
-            margin-top: 10px;
-            font-size: var(--afh-text-caption);
-            line-height: var(--afh-leading-caption);
-            color: var(--afh-text-soft);
           }
 
           /* The viewport-height floor is back, but not on the band it was
