@@ -262,11 +262,7 @@ export default async function FamillesSlugPage({
       trailLabel={family.nameFr}
     >
       <FicheSequence
-        context={{
-          entityType: "language-family",
-          payload: familyDetail,
-        }}
-        recordPlacement="body"
+        entityType="language-family"
         title={<FamilyFicheTitle family={family} />}
         globe={
           <FicheHeroBand>

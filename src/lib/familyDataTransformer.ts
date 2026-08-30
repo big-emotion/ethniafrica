@@ -21,9 +21,6 @@ export interface FamilyDecolonialHeaderData {
   whyProblematic: string | null;
   selfAppellation: string | null;
   contemporaryUsage: string | null;
-  geographicArea: string | null;
-  numberOfLanguages: number | null;
-  totalSpeakers: number | null;
 }
 
 export interface FamilyGeneralInfoData {
@@ -98,9 +95,6 @@ export function transformDecolonialHeader(
     whyProblematic: header.whyProblematic ?? null,
     selfAppellation: header.selfAppellation ?? null,
     contemporaryUsage: header.contemporaryUsage ?? null,
-    geographicArea: header.geographicArea ?? null,
-    numberOfLanguages: header.numberOfLanguages ?? null,
-    totalSpeakers: header.totalSpeakers ?? null,
   };
 }
 

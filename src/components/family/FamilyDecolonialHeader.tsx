@@ -12,9 +12,28 @@ export interface FamilyDecolonialHeaderProps {
   selfAppellationLang?: string;
 }
 
+/**
+ * Every field this section prints, with the label that says which it is.
+ *
+ * Three of them — nameFr, nameEn and the historical appellations — used to be
+ * printed above the list as bare paragraphs, one after another, so the section
+ * opened on three unlabelled names and the reader had to guess which was the
+ * French one, which the English one and which the colonial-era ones. Naming
+ * things is what this section is *for*.
+ *
+ * Two fields the data carries are deliberately not here:
+ *
+ * - `nameEn`, which the title band above the globe already states and labels.
+ *   The band reads `hero.nameEn ?? decolonialHeader.nameEn`, so whenever this
+ *   copy rendered at all it was the same string a second time.
+ * - `originOfHistoricalTerm`, which the parchment gives a titled section of
+ *   its own, "D'où vient le nom de la famille". That section is the one a
+ *   reader can navigate to from the rail; a labelled line here said it again
+ *   two chapters later.
+ */
 const labelledFields = [
+  ["Nom français", "nameFr"],
   ["Lien avec la famille", "linkWithFamily"],
-  ["Origine du terme historique", "originOfHistoricalTerm"],
   ["Pourquoi ce terme est problématique", "whyProblematic"],
   ["Auto-appellation", "selfAppellation"],
   ["Usage contemporain", "contemporaryUsage"],
@@ -25,9 +44,9 @@ export function FamilyDecolonialHeader({
   data,
   selfAppellationLang,
 }: FamilyDecolonialHeaderProps) {
+  // Gated on what the section renders, never on what the data holds: counting
+  // a field it does not print would open a heading over nothing.
   const hasContent =
-    data.nameFr ||
-    data.nameEn ||
     data.historicalAppellations.length > 0 ||
     labelledFields.some(([, field]) => Boolean(data[field]));
 
@@ -40,10 +59,11 @@ export function FamilyDecolonialHeader({
       data-fiche-section={CHAPTER_TITLE}
     >
       <h2 id="family-decolonial-heading">{CHAPTER_TITLE}</h2>
-      {data.nameFr && <p>{data.nameFr}</p>}
-      {data.nameEn && <p>{data.nameEn}</p>}
       {data.historicalAppellations.length > 0 && (
-        <p>{data.historicalAppellations.join(" · ")}</p>
+        <p>
+          <strong>Appellations historiques :</strong>{" "}
+          {data.historicalAppellations.join(" · ")}
+        </p>
       )}
       {labelledFields.map(([label, field]) => {
         const value = data[field];
