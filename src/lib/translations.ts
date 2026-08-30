@@ -137,6 +137,7 @@ export const translations = {
         source: "Source",
         fiche_section: "Section de fiche",
         classification: "Classification",
+        general: "Signalement général",
       },
       entities: {
         people: "Peuple",

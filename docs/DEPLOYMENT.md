@@ -118,11 +118,45 @@ Required for a reader to report an error:
   vendor that had just been removed, so nobody knew there was a new secret to set. Rotating it
   is harmless — challenges in flight are invalidated and readers are handed new ones.
 
+  **Generating one.** Any long random string; 48 random bytes is ample.
+
+  ```bash
+  openssl rand -base64 48 | tr -d '\n' > antibot-secret.txt   # umask 077 first
+  ```
+
+  **Setting it.** The same value on all three Vercel environments, and in your own
+  `.env.local`. It is read only on the server, so it never needs a `NEXT_PUBLIC_` twin.
+
+  ```bash
+  for target in production preview development; do
+    tr -d '\n' < antibot-secret.txt | vercel env add ANTIBOT_HMAC_SECRET "$target"
+  done
+  vercel env ls | grep ANTIBOT          # expect three rows
+  ```
+
+  Then **redeploy** — a Vercel environment variable does not reach a build that already ran.
+
+  **Checking parity without printing the secret.** The value must be identical across
+  environments, or a challenge minted by one and verified by another is refused. Compare
+  fingerprints rather than values:
+
+  ```bash
+  shasum -a 256 antibot-secret.txt | cut -c1-16
+  ```
+
+  **Rotation is harmless and needs no window.** Challenges in flight are invalidated and
+  their readers are handed new ones; nothing durable is signed with it. Rotate on the usual
+  schedule, or immediately if the value is ever printed into a log, a terminal transcript or
+  a pull request.
+
   Verify it after every deploy, on each environment:
 
   ```bash
   curl -s https://<host>/api/v2/antibot/challenge | head -c 200   # expect salt + signature, not UNAVAILABLE
   ```
+
+  A 200 with a `salt` proves the secret is set. It does **not** prove the two environments
+  agree — only a report that actually sends does that.
 
 Optional subsystems, each inert when unset: `UPSTASH_REDIS_REST_URL` /
 `UPSTASH_REDIS_REST_TOKEN` (rate limiting), `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`,

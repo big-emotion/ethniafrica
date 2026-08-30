@@ -67,6 +67,7 @@ const TARGET_OPTIONS: FilterOption<PublicFlagTargetType>[] = [
   { value: "source", label: copy.targets.source },
   { value: "fiche_section", label: copy.targets.fiche_section },
   { value: "classification", label: copy.targets.classification },
+  { value: "general", label: copy.targets.general },
 ];
 
 const KIND_LABELS = Object.fromEntries(

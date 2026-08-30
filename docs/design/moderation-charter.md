@@ -114,6 +114,33 @@ A floating button detached from the reading would have been reachable and
 context-free — it would have moved the "which part?" question from the page back
 onto the reader, which is §1 again.
 
+### One general entry point, and why it is not a contradiction
+
+The footer offers "Signaler une erreur" on every screen of the site, and
+`/fr/report-error` answers it with a form filed against a **`general`** target.
+
+That is an exception to everything above, taken deliberately. The rule's
+reasoning holds — an aimed report is a better report, and the rail now makes one
+available on every fiche. But the rule was being used to justify a page that
+gave the reader _nothing_: a Typeform embed the site's own CSP blocked, under
+four paragraphs promising "le formulaire ci-dessous". A reader reporting a
+broken page, a wrong translation, or something they saw and did not bookmark has
+no fiche to aim from, and **an entry point that leads nowhere is worse than one
+that lands imprecisely.**
+
+Two conditions keep the exception honest:
+
+- **`general` is its own column in the public register**, never folded into
+  `assertion`. A general report contests nothing in particular, and filing it as
+  an assertion would make every moderator filtering for assertions open reports
+  that dispute no statement.
+- **The page names the aimed path** and says it is the better one, so the
+  general form is the fallback it is and not the front door.
+
+The page is also where the form _is_, not what a button on it opens: a reader
+who has already chosen "Signaler une erreur" has stated their intent, and a
+second control before the field is exactly the toll §2 exists to remove.
+
 ### Which word gives way at 430 px
 
 The rail holds three things and cannot show them all on a narrow screen. The

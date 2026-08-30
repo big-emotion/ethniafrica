@@ -3,6 +3,9 @@
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 
+import { FlagForm } from "@/components/flags/FlagForm";
+import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
+import { submitFlag } from "@/components/flags/submitFlag";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { useLanguage } from "@/hooks/use-language";
@@ -11,23 +14,43 @@ import { getLocalizedRoute } from "@/lib/routing";
 import { Language } from "@/types/shared";
 
 /**
- * Where a reader who chose "Signaler une erreur" is told to go.
+ * The general report form — the footer's "Signaler une erreur".
  *
  * This page used to host a Typeform embed and four paragraphs pointing at "le
  * formulaire ci-dessous". The site's CSP allows scripts from `'self'` and a
  * per-request nonce, so the embed's script was never executed: no iframe, no
- * form, no console the reader would ever see — a promise over blank paper.
- * The atlas had meanwhile built its own report path, which the page never
- * learned about.
+ * form, no console message the reader would ever see — a promise over blank
+ * paper. The atlas had meanwhile built its own report path, which this page
+ * never learned about.
  *
- * It does not simply grow a form of its own, and that is a charter decision
- * rather than a shortcut. The moderation charter opens §2 on "a reader on a
- * fiche", and §3 refuses a control detached from the reading because it moves
- * the "which part?" question from the page back onto the reader. A general
- * form here would also file its flags under a target the public register has
- * no column for. So the page hands the reader the two things it can honestly
- * give: where the control is, and what became of the reports already made.
+ * It now carries that path's own form, filed against a `general` target.
+ *
+ * That is a **deliberate exception** to the moderation charter §3, which
+ * prefers a control anchored to what is being read and warns that a
+ * context-free one hands the "which part?" question back to the reader. The
+ * warning is right, and the aimed control now exists on every fiche's reading
+ * rail. But the footer offers this page on every screen of the site, including
+ * to a reader who cannot name the fiche concerned — someone reporting a broken
+ * page, a wrong translation, or something they saw and did not bookmark. An
+ * entry point that leads nowhere is worse than one that lands imprecisely, and
+ * `general` is a real column in the public register rather than an
+ * `assertion` the report does not actually contest.
+ *
+ * The form is on the page rather than behind a button: a reader who has
+ * already chosen "Signaler une erreur" has stated their intent, and a second
+ * control before the field is the toll §2 exists to remove.
  */
+
+/**
+ * A report that names no entity still needs an address, because `target_id` is
+ * required end to end. `site` is that address, and it is honest: what is being
+ * reported is the atlas, not a row in it.
+ */
+const GENERAL_TARGET = {
+  type: "general",
+  id: "site",
+} as const;
+
 // @req REQ-014
 export default function ReportErrorPage() {
   const params = useParams();
@@ -63,34 +86,29 @@ export default function ReportErrorPage() {
             peuvent être incomplètes, approximatives ou contenir des erreurs.
           </p>
           <p>
-            Chaque retour nous permet d&apos;améliorer la qualité et la
-            fiabilité de l&apos;atlas, au bénéfice de toute la communauté.
-          </p>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="text-afh-h2 font-display font-bold">
-            Où signaler une erreur
-          </h2>
-          <p>
-            Un signalement se fait depuis la page où se trouve l&apos;erreur,
-            jamais depuis un formulaire général : c&apos;est ce qui nous permet
-            de savoir quelle affirmation vous contestez, sans avoir à vous le
-            demander.
+            Décrivez ci-dessous ce qui ne va pas. Aucun compte n&apos;est
+            nécessaire, et la correction proposée comme la source sont
+            facultatives : nous préférons un signalement incomplet à un
+            signalement que vous renoncez à écrire.
           </p>
           <p>
-            Ouvrez la fiche concernée — un peuple, un pays, une famille
-            linguistique — et utilisez le bouton <strong>Signaler</strong> de la
-            barre de lecture, qui vous suit tout au long de la fiche et vise le
-            chapitre que vous êtes en train de lire. Aucun compte n&apos;est
-            nécessaire : ouvrir, écrire, envoyer.
-          </p>
-          <p>
+            Si l&apos;erreur se trouve sur une fiche précise, le bouton{" "}
+            <strong>Signaler</strong> de la barre de lecture de cette fiche vise
+            directement le chapitre concerné — c&apos;est plus rapide pour vous
+            et plus précis pour la modération.{" "}
             <ActionLink href={getLocalizedRoute(language, "explorerHub")}>
               Ouvrir l&apos;atlas
             </ActionLink>
           </p>
         </section>
+
+        <FlagForm
+          target={GENERAL_TARGET}
+          onSubmit={submitFlag}
+          renderVerification={({ onSolved, onFailed }) => (
+            <ProofOfWorkGate onSolved={onSolved} onFailed={onFailed} />
+          )}
+        />
 
         <section className="space-y-4">
           <h2 className="text-afh-h2 font-display font-bold">

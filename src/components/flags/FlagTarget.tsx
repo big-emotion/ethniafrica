@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
-import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { cn } from "@/lib/utils";
 import {
   FlagForm,
@@ -20,6 +19,7 @@ import {
   type FlagSubmissionPayload,
 } from "@/components/flags/FlagForm";
 import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
+import { submitFlag } from "@/components/flags/submitFlag";
 
 declare global {
   interface Window {
@@ -28,24 +28,6 @@ declare global {
       options?: { props?: Record<string, string> }
     ) => void;
   }
-}
-
-/**
- * The session, when there is one, for attribution only.
- *
- * This used to be a gate: no session, or an account whose age was not
- * confirmed, and the dialog offered links instead of a form. Reporting now
- * costs no account (moderation charter §2), so the token is passed when it
- * exists and omitted when it does not — the API decides what to credit, and
- * accepts either way.
- */
-async function currentAccessToken(): Promise<string | null> {
-  const supabase = createBrowserSupabaseClient();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  return session?.access_token ?? null;
 }
 
 export interface FlagTargetProps {
@@ -84,23 +66,7 @@ export function FlagTarget({
   }
 
   async function handleSubmit(payload: FlagSubmissionPayload) {
-    const accessToken = await currentAccessToken();
-
-    const response = await fetch("/api/v2/flags", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-      },
-      body: JSON.stringify(payload),
-    });
-    const json = await response.json();
-
-    if (!response.ok) {
-      throw new Error(json?.errors?.[0]?.message ?? "flag submission failed");
-    }
-
-    const publicSlug = json.data.public_slug as string;
+    const { public_slug: publicSlug } = await submitFlag(payload);
 
     if (consent?.consentState.preferences.analytics) {
       window.plausible?.("flag_submitted", {
