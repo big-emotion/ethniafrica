@@ -246,6 +246,18 @@ export interface AtlasGlobeCanvasProps {
    * maintained code nothing could render.
    */
   surface?: GlobeSurface;
+  /**
+   * Whether the sphere carries Tissot's indicatrices — the discs every reader
+   * of the Mercator lesson counts on: each covers the same real area, so the
+   * swelling on the flat map is the projection's doing and nothing else.
+   *
+   * Off by default because a fiche makes no claim about area; the continent
+   * stage, which is where the argument is made, asks for them. This used to be
+   * a `false` written into the createSphereLayer call below, which is how the
+   * discs disappeared from the home's module and from /jouer/mercator when
+   * ETNI-1360 retired the engine that drew them.
+   */
+  showTissot?: boolean;
 }
 
 /**
@@ -273,6 +285,7 @@ export function AtlasGlobeCanvas({
   focusedCountryId = null,
   onUnavailable,
   surface = "night",
+  showTissot = false,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
@@ -288,6 +301,9 @@ export function AtlasGlobeCanvas({
   // What the live texture was actually painted for, which is not the same as
   // the prop the moment the mount effect re-runs for an overlay change.
   const appliedSurfaceRef = useRef(surface);
+  const tissotRef = useRef(showTissot);
+  tissotRef.current = showTissot;
+  const appliedTissotRef = useRef(showTissot);
   const focusRef = useRef<CountryId | null>(focusedCountryId);
   const replayRevealRef = useRef<(() => void) | null>(null);
 
@@ -356,7 +372,7 @@ export function AtlasGlobeCanvas({
       resolveGlobePalette(surfaceRef.current),
       document.createElement("canvas"),
       undefined,
-      false,
+      tissotRef.current,
       lightingFor(surfaceRef.current),
       // A fiche paints the national boundaries: a chosen country has to be
       // read against its neighbours, not float on a blank continent.
@@ -373,6 +389,7 @@ export function AtlasGlobeCanvas({
     // nothing to carry across — including when an overlay change rebuilds it
     // in the same commit as a theme flip.
     appliedSurfaceRef.current = surfaceRef.current;
+    appliedTissotRef.current = tissotRef.current;
 
     // The terrain rides the same camera as the overlay drawn over it. A
     // boundary that dollies toward the reader while the ground stays put
@@ -773,6 +790,18 @@ export function AtlasGlobeCanvas({
     );
     drawRef.current?.();
   }, [surface]);
+
+  /**
+   * Turning the discs on and off repaints the texture, the same way a theme
+   * flip does, and for the same reason: rebuilding the layer would recompile
+   * both shader programs and hand the reader back to the Atlantic.
+   */
+  useEffect(() => {
+    if (appliedTissotRef.current === showTissot) return;
+    appliedTissotRef.current = showTissot;
+    sphereRef.current?.setTissot(showTissot);
+    drawRef.current?.();
+  }, [showTissot]);
 
   useEffect(() => {
     poseRef.current = pose;
