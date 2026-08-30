@@ -2,8 +2,8 @@ import { describe, it, expect } from "vitest";
 import { buildAtomFeed } from "../atomSerializer";
 import type { FeedRevisionItem } from "@/api/v2/services/feedRevisions";
 
-const BASE_URL = "https://africahistory.org";
-const FEED_URL = "https://africahistory.org/api/v2/feed/revisions";
+const BASE_URL = "https://ethniafrica.com";
+const FEED_URL = "https://ethniafrica.com/api/v2/feed/revisions";
 const UPDATED = "2026-05-21T12:00:00.000Z";
 
 const ITEMS: FeedRevisionItem[] = [
@@ -28,6 +28,7 @@ const ITEMS: FeedRevisionItem[] = [
 ];
 
 describe("buildAtomFeed", () => {
+  // @req REQ-084
   it("produces valid XML with the Atom namespace declaration", () => {
     const xml = buildAtomFeed(ITEMS, {
       baseUrl: BASE_URL,

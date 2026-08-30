@@ -224,7 +224,7 @@ export default function ApiVersioningPage() {
 X-API-Stable: true
 Deprecation: true
 Sunset: Mon, 01 Mar 2027 00:00:00 GMT
-Link: <https://africahistory.org/docs/api/versioning>; rel="sunset"`}
+Link: <https://ethniafrica.com/docs/api/versioning>; rel="sunset"`}
                 </pre>
               </div>
               <p className="text-afh-small text-muted-foreground">

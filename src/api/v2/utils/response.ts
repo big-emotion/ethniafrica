@@ -3,14 +3,26 @@
  */
 
 import type { ApiResponse, PaginationMeta } from "@/types/afrik";
+import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
 
 /**
  * Module #0 envelope license & attribution defaults.
  * All v2 responses surface a Creative-Commons attribution per architecture
  * decision D3 (license CC-BY-SA-4.0).
  */
+// @req REQ-019
 export const API_LICENSE = "CC-BY-SA-4.0";
-export const API_ATTRIBUTION = "Africa History — africahistory.org";
+
+/**
+ * Composed rather than written out, because this string is the one a reuser
+ * carries away in a citation. It spent a release naming a retired product and
+ * a domain that serves nothing, so every fiche cited in that window points at
+ * a site nobody can reach. The brand charter §1 makes `src/lib/brand.ts` the
+ * only place a name is stated, and this is the furthest-travelling consumer of
+ * that rule.
+ */
+// @req REQ-019
+export const API_ATTRIBUTION = `${PRODUCT_NAME} — ${CANONICAL_DOMAIN}`;
 
 /**
  * Envelope meta block for Module #0 endpoints.
@@ -51,6 +63,7 @@ interface CreateApiResponseOptions {
  * Always carries `license` and `attribution` (AR8). Optionally embeds
  * pagination, confidence score, and pinned-version URL.
  */
+// @req REQ-084
 export function createApiResponse<T>(
   data: T,
   options: CreateApiResponseOptions = {}
@@ -80,6 +93,7 @@ export function createApiResponse<T>(
  * taxonomy entries. `meta` still carries license + attribution so consumers
  * can rely on the envelope shape regardless of status code.
  */
+// @req REQ-084
 export function createApiError(
   errors: ApiError | ApiError[]
 ): ApiEnvelope<null> {
@@ -98,6 +112,7 @@ export function createApiError(
  * Create a paginated API response (legacy v2 envelope, kept for backward
  * compatibility with peoples/countries/language-families endpoints).
  */
+// @req REQ-084
 export function createPaginatedResponse<T>(
   data: T[],
   total: number,
@@ -122,6 +137,7 @@ export function createPaginatedResponse<T>(
 /**
  * Create a single item API response (legacy v2 envelope).
  */
+// @req REQ-084
 export function createResponse<T>(data: T): ApiResponse<T> {
   return {
     data,

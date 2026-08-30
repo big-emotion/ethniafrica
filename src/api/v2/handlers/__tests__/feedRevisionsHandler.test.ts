@@ -35,7 +35,7 @@ describe("listFeedRevisionsHandler", () => {
       data: ITEMS,
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         pagination: { limit: 20, next_cursor: null },
       },
       errors: [],

@@ -1,4 +1,4 @@
-/* Africa History (--afh-*) token foundation — ETNI-21.
+/* EthniAfrica (--afh-*) token foundation — ETNI-21.
    Imported BEFORE country-tokens.css so `--country-*` aliases
    can layer on top during the one-release deprecation window. */
 @import "./styles/tokens/color.css";

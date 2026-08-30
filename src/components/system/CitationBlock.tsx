@@ -10,6 +10,7 @@ import {
   formatPlainTextCitation,
   type CitationFormatterInput,
 } from "@/components/system/citation-formatters";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -66,7 +67,7 @@ export function CitationBlock({
   title,
   liveUrl,
   pinned,
-  productName = "Africa History",
+  productName = PRODUCT_NAME,
   accessedAt,
   defaultFormat = "text",
   defaultVariant = "live",

@@ -141,13 +141,17 @@ describe("SiteFooter", () => {
     expect(setShowBanner).toHaveBeenCalledWith(true);
   });
 
+  // The line names the corpus licence rather than reserving rights: the API
+  // meta and every citation this site emits declare CC BY-SA 4.0, so the old
+  // "tous droits réservés" contradicted the citation block above it. Brand
+  // charter §2.
   // @req REQ-087
-  it("uses current EthniAfrica copyright copy without a data-source claim", () => {
+  it("states the corpus licence in the copyright line, without a data-source claim", () => {
     render(<SiteFooter language="fr" />);
 
     expect(
       screen.getByText(
-        `© ${new Date().getFullYear()} EthniAfrica. Tous droits réservés.`
+        `© ${new Date().getFullYear()} EthniAfrica — corpus sous licence CC BY-SA 4.0.`
       )
     ).toBeInTheDocument();
     expect(screen.queryByText(/Data sources/i)).not.toBeInTheDocument();

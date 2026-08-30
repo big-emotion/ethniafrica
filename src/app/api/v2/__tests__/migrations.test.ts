@@ -63,7 +63,7 @@ const listEnvelope: ApiEnvelope<MigrationSummary[]> = {
   data: [summary],
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
     pagination: { total: 1, page: 1, perPage: 20, totalPages: 1 },
   },
   errors: [],
@@ -73,7 +73,7 @@ const detailEnvelope: ApiEnvelope<MigrationDetailRecord> = {
   data: detail,
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
     confidence: 73,
   },
   errors: [],

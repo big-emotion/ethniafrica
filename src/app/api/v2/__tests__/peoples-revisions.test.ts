@@ -50,7 +50,7 @@ const REVISION_LIST_ENVELOPE: RevisionListEnvelope = {
   data: [REVISION_ITEM],
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
     pagination: { limit: 20, next_cursor: null },
   },
   errors: [],
@@ -60,7 +60,7 @@ const SNAPSHOT_ENVELOPE = {
   data: { id: "PPL_YORUBA", name: "Yoruba", confidence: 0.92 },
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
     confidence: 0.92,
     pinned_url: "/api/v2/peoples/PPL_YORUBA/versions/3",
   },

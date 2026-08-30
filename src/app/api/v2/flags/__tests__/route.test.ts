@@ -34,7 +34,7 @@ const successEnvelope = {
   },
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
   },
   errors: [],
 };
@@ -43,7 +43,7 @@ const errorEnvelope = (code: string) => ({
   data: null,
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
   },
   errors: [{ code, message: code }],
 });

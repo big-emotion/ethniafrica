@@ -354,7 +354,7 @@ describe("flag handlers", () => {
           data: createdFlag,
           meta: {
             license: "CC-BY-SA-4.0",
-            attribution: "Africa History — africahistory.org",
+            attribution: "EthniAfrica — ethniafrica.com",
           },
           errors: [],
         },
@@ -394,7 +394,7 @@ describe("flag handlers", () => {
           data: [publicFlag],
           meta: {
             license: "CC-BY-SA-4.0",
-            attribution: "Africa History — africahistory.org",
+            attribution: "EthniAfrica — ethniafrica.com",
             pagination: { limit: 25, next_cursor: "next-cursor" },
           },
           errors: [],
@@ -515,7 +515,7 @@ describe("flag handlers", () => {
           data: publicFlag,
           meta: {
             license: "CC-BY-SA-4.0",
-            attribution: "Africa History — africahistory.org",
+            attribution: "EthniAfrica — ethniafrica.com",
           },
           errors: [],
         },
