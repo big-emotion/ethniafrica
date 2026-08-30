@@ -125,13 +125,14 @@ export function CountrySynthesisCard({
         }
         .home-syn-summary {
           margin: 0;
-          font-size: var(--afh-text-caption);
+          font-size: var(--afh-text-small);
           line-height: 1.55;
           color: var(--afh-text-soft);
-          /* Chapeaux run 270-398 characters; five lines keeps the three cards
-             the same height without cutting one mid-clause. */
+          /* Chapeaux run 270-398 characters. Six lines at the small rung hold
+             about what five held at caption, so the three cards keep the
+             same height and the longest chapo loses no more than before. */
           display: -webkit-box;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 6;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
@@ -145,7 +146,7 @@ export function CountrySynthesisCard({
         }
         .home-syn-fact dt {
           font-family: var(--font-mono, ui-monospace, monospace);
-          font-size: var(--afh-text-eyebrow);
+          font-size: var(--afh-text-caption);
           letter-spacing: 0.07em;
           text-transform: uppercase;
           /* The label naming each fact — « ANCIENS NOMS », « PEUPLES » — is
@@ -154,7 +155,7 @@ export function CountrySynthesisCard({
         }
         .home-syn-fact dd {
           margin: 2px 0 0;
-          font-size: var(--afh-text-caption);
+          font-size: var(--afh-text-small);
           line-height: 1.5;
           color: var(--afh-text);
         }
