@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { Language } from "@/types/shared";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteTrail } from "@/components/layout/SiteTrail";
@@ -11,6 +11,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { BackToTop } from "@/components/layout/BackToTop";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -56,6 +57,9 @@ export const PageLayout = ({
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
+  // Held by the shell rather than looked up in the document, because a
+  // streaming route leaves inert copies of its own chrome in the body.
+  const mastheadRef = useRef<HTMLElement>(null);
 
   /**
    * A route that names itself gets a band; one that does not gets none.
@@ -86,6 +90,7 @@ export const PageLayout = ({
       <SiteHeader
         language={language}
         onSearchClick={() => setIsSearchOpen(true)}
+        mastheadRef={mastheadRef}
       />
 
       {/* Search modal */}
@@ -137,6 +142,11 @@ export const PageLayout = ({
       </main>
 
       <SiteFooter language={language} />
+
+      {/* Last in the document, because it is the only thing on the page that
+          answers "take me out of it" — and a reader who has tabbed to the
+          footer is exactly who needs it. */}
+      <BackToTop returnFocusTo={mastheadRef} />
     </div>
   );
 };

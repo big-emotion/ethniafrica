@@ -24,9 +24,21 @@
   --afh-chapter-bar-height: 48px;
 }
 
-/* A chapter scrolled to has to arrive below the rail, not under it. */
+/* A chapter scrolled to has to arrive below the rail, not under it — and now
+   below the masthead too, which the reader can bring back at any moment.
+
+   Both heights are reserved, in every state. Reserving only what is on screen
+   when the jump is computed is wrong at the one moment it matters: a jump up
+   the document is itself an upward scroll, so the masthead is on its way back
+   in while the chapter is still travelling, and the chapter lands under it.
+   The cost of the safe reading is a masthead's worth of paper above a chapter
+   reached while the masthead is out. That is a gap; the alternative is a
+   heading the reader cannot see. */
 [data-fiche-section] {
-  scroll-margin-top: calc(var(--afh-chapter-bar-height) + var(--afh-space-md));
+  scroll-margin-top: calc(
+    var(--afh-header-height) + var(--afh-chapter-bar-height) +
+      var(--afh-space-md)
+  );
 }
 
 /* The rail moves focus to the chapter it opens, so a keyboard reader lands
@@ -44,7 +56,20 @@
 
 .afh-chapter-bar {
   position: sticky;
-  top: 0;
+  /* Under the masthead, not behind it. The two are the only pinned things on
+     a fiche and they now share the top of the screen: the rail is pinned one
+     masthead down, then travels back up by exactly the distance the masthead
+     retracts, so it lands at the top of the screen when the masthead has gone
+     and returns to sit against it when the masthead comes back.
+
+     A transform rather than a moving `top`: both surfaces animate the same
+     property over the same token, so they arrive together, and neither
+     re-lays out the parchment on the way. Its z-index stays below the
+     masthead's 40, so during the travel the masthead is what covers the rail
+     and not the reverse. */
+  top: var(--afh-header-height);
+  transform: translateY(var(--afh-header-shift));
+  transition: var(--afh-transition-transform);
   z-index: 30;
   /* Welds the rail onto the parchment it heads: the sequence sets a large gap
      between its children, and a rail floating in that gap would read as an
