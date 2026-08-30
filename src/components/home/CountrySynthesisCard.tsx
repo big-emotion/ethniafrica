@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ActionLink } from "@/components/ui/ActionLink";
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
@@ -78,13 +79,12 @@ export function CountrySynthesisCard({
         ) : null}
       </dl>
 
-      <Link
+      <ActionLink
         className="home-syn-cta"
         href={getCountryRoute(language, synthesis.id)}
       >
         Lire la fiche {synthesis.nameFr}
-        <span aria-hidden="true"> →</span>
-      </Link>
+      </ActionLink>
 
       <style>{`
         .home-syn-card {
@@ -168,18 +168,12 @@ export function CountrySynthesisCard({
         .home-syn-fact dd a:focus-visible {
           text-decoration-color: var(--accent);
         }
+        /* Pushed to the foot of the card so three cards of unequal prose
+           still line their exits up. Everything else the link wears is the
+           ActionLink's (actions charter form A). */
         .home-syn-cta {
           margin-top: auto;
           padding-top: 12px;
-          font-size: var(--afh-text-caption);
-          font-weight: 700;
-          color: var(--accent-ink);
-          text-decoration: none;
-        }
-        .home-syn-cta:hover,
-        .home-syn-cta:focus-visible {
-          text-decoration: underline;
-          text-underline-offset: 3px;
         }
       `}</style>
     </article>

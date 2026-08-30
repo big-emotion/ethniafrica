@@ -1,8 +1,8 @@
 import { CountrySynthesisCard } from "@/components/home/CountrySynthesisCard";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
+import { ActionLink } from "@/components/ui/ActionLink";
 import { getLocalizedRoute } from "@/lib/routing";
-import Link from "next/link";
 import type { Language } from "@/types/shared";
 
 export interface SynthesisRailProps {
@@ -45,10 +45,9 @@ export function SynthesisRail({ language, syntheses }: SynthesisRailProps) {
       </div>
 
       <p className="home-syn-all">
-        <Link href={getLocalizedRoute(language, "countries")}>
+        <ActionLink href={getLocalizedRoute(language, "countries")}>
           Voir les 54 pays
-          <span aria-hidden="true"> →</span>
-        </Link>
+        </ActionLink>
       </p>
 
       <style>{`
@@ -79,22 +78,12 @@ export function SynthesisRail({ language, syntheses }: SynthesisRailProps) {
           max-width: 1200px;
           margin: 0 auto;
         }
+        /* The rail's exit is an ActionLink (actions charter form A): it
+           brings its own dress, so this rule only places it. */
         .home-syn-all {
-          margin: 0;
+          margin: 0 auto;
           padding: 0 22px;
           max-width: 1200px;
-          margin: 0 auto;
-          font-size: var(--afh-text-caption);
-          font-weight: 700;
-        }
-        .home-syn-all a {
-          color: var(--accent-ink);
-          text-decoration: none;
-        }
-        .home-syn-all a:hover,
-        .home-syn-all a:focus-visible {
-          text-decoration: underline;
-          text-underline-offset: 3px;
         }
         @media (min-width: 720px) {
           .home-syn { padding: 60px 0 52px; }

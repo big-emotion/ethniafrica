@@ -761,7 +761,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           min-height: 32px;
           padding: 4px 10px;
           border: 1px solid var(--afh-border);
-          border-radius: 999px;
+          border-radius: var(--afh-radius-full);
           font-size: var(--afh-caption);
           text-decoration: none;
           color: var(--afh-text);

@@ -560,9 +560,14 @@ export function AccessAxes({
           margin-top: auto;
           display: inline-flex;
           align-items: center;
-          gap: 7px;
-          font-size: var(--home-text-axis-cta);
-          font-weight: 700;
+          gap: 8px;
+          min-height: 44px;
+          /* The actions charter files control labels under the small role.
+             The card is itself the link, so this span cannot be an
+             ActionLink — it wears form A's dress without being a second
+             link. */
+          font-size: var(--afh-text-small);
+          font-weight: 600;
           /* Text, so it takes --accent-ink, not the --accent fill: the fill
              measures 3.10-4.39:1 on the card and drops further once the hover
              wash tints the floor behind it. The glyph above keeps --accent —
@@ -657,14 +662,15 @@ export function AccessAxes({
           }
           .access-axis {
             display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
+            grid-template-columns: auto minmax(0, 1fr);
             /* A named row per line, or the element is simply not placed.
                The stake sits between the name and the figure: it is what
                orients the reader, the count only backs it up. */
             grid-template-areas:
-              "glyph name arrow"
-              "glyph stake arrow"
-              "glyph figure arrow";
+              "glyph name"
+              "glyph stake"
+              "glyph figure"
+              "cta   cta";
             align-items: center;
             column-gap: 16px;
             row-gap: 2px;
@@ -693,8 +699,14 @@ export function AccessAxes({
           opacity: 0.62;
         }
 
-        .access-axis-cta { grid-area: arrow; margin: 0; font-size: 0; }
-          .access-axis-arrow { font-size: var(--home-text-axis-arrow); }
+          /* The verb keeps its words here. It used to be zeroed out below
+             this breakpoint, which left the reader a bare
+             arrow and no promise — on a mobile-first product, on the
+             one element of the card whose whole job is to say what the
+             click does. It takes a row of its own rather than a third
+             column: at 320px a column wide enough for « Parcourir → »
+             leaves the stake too little to be read. */
+          .access-axis-cta { grid-area: cta; margin: 0; }
           .access-axis:hover { transform: none; }
         }
       `}</style>

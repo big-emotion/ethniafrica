@@ -34,18 +34,16 @@
   --home-text-hero-copy: 15.5px;
 
   /* ── AccessAxes — the three entry cards ───────────────────── */
-  /* Two entries left the pen rather than being reconciled: the lead's
+  /* Four entries left the pen rather than being reconciled. The lead's
      12.5px went with the paragraph it dressed, now a SectionHeading on
      the canonical scale, and the card name's fixed 26px became
      --afh-text-h2 so it stays under the section heading above it at
-     every width. Both were half-steps this file exists to retire. */
+     every width. The CTA's 14px and the mobile arrow's 19px went with
+     the actions charter, which files every control label under `small`
+     — and the arrow no longer has to carry the label's job alone,
+     because the label is no longer hidden below 860px. */
   --home-text-axis-stake: 13.5px;
   --home-text-axis-figure: 12px;
-  --home-text-axis-cta: 14px;
-  /* Only ever set below 860px, where the card becomes a row. Held at
-     :root so the declaration has one home; the component reads it from
-     inside its own media query, exactly where the literal was. */
-  --home-text-axis-arrow: 19px;
 
   /* ── AxisModulePanel — the shelf that slides out of an axis ── */
   --home-text-module-face: 15px;
