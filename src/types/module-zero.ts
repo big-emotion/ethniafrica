@@ -82,7 +82,7 @@ export interface FlagRow {
   moderator_notes: string | null;
   resolved_at: string | null;
   public_slug: string;
-  turnstile_token_verified: boolean;
+  human_verified: boolean;
   updated_at: string | null;
   /** FK to assertions(id). NULL = entity-level flag. */
   assertion_id: string | null;

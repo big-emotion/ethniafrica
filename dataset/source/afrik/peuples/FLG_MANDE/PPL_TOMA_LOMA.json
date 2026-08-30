@@ -3,6 +3,7 @@
   "nameMain": "Toma / Loma",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["GIN", "LBR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Toma / Loma",

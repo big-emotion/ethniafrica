@@ -3,6 +3,7 @@
   "nameMain": "Peuples Créoles (macro-groupe)",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["GIN", "CPV", "SLE", "STP", "MUS", "SYC", "REU"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Peuples Créoles (macro-groupe)",

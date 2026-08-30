@@ -3,6 +3,7 @@
   "nameMain": "Kru",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kru",

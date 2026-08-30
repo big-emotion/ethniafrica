@@ -40,7 +40,14 @@ function validInput() {
     counter_source_url: "https://example.org/source",
     counter_source_citation: "Example source",
     proposed_rewrite: "Use the latest published estimate.",
-    turnstile_token: "turnstile-token",
+    antibot: {
+      salt: "test-salt",
+      nonce: "42",
+      difficultyBits: 8,
+      expiresAt: 4102444800000,
+      signature: "test-signature",
+    },
+    elapsedMs: 12_000,
   };
 }
 
@@ -48,7 +55,7 @@ function makeDependencies() {
   return {
     getAuthenticatedContributor: vi.fn().mockResolvedValue(contributor),
     getAgeConfirmedAt: vi.fn().mockResolvedValue("2026-01-01T00:00:00.000Z"),
-    verifyTurnstileToken: vi.fn().mockResolvedValue("verified" as const),
+    verifyAntibotProof: vi.fn().mockResolvedValue("verified" as const),
     checkFlagRateLimit: vi.fn().mockResolvedValue({ allowed: true } as const),
     createFlag: vi.fn().mockResolvedValue(createdFlag),
     listFlags: vi.fn().mockResolvedValue({
@@ -69,49 +76,48 @@ describe("flag handlers", () => {
   });
 
   describe("handleFlagCreate", () => {
+    /**
+     * An account used to be a precondition of reporting. It bought
+     * attribution, follow-up and a weak anti-abuse signal — none of them
+     * needed for a first report, all of them charged before the reader had
+     * written a word. The proof of work is the control (charter §2).
+     */
     // @req REQ-012
-    it("rejects a missing access token before validation", async () => {
+    it("accepts a report with no access token, recorded anonymously", async () => {
       const dependencies = makeDependencies();
 
       const result = await handleFlagCreate(
-        {},
+        validInput(),
         { accessToken: null },
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 401,
-        body: {
-          data: null,
-          errors: [{ code: "UNAUTHENTICATED" }],
-        },
-      });
+      expect(result.status).toBe(201);
       expect(dependencies.getAuthenticatedContributor).not.toHaveBeenCalled();
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.objectContaining({ target_id: "PPL_YORUBA" })
+      );
     });
 
     // @req REQ-012
-    it("rejects an invalid access token before validation", async () => {
+    it("records a report anonymously when the access token no longer resolves", async () => {
       const dependencies = makeDependencies();
       dependencies.getAuthenticatedContributor.mockResolvedValue(null);
 
       const result = await handleFlagCreate(
-        {},
+        validInput(),
         { accessToken: "invalid-token" },
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 401,
-        body: {
-          data: null,
-          errors: [{ code: "UNAUTHENTICATED" }],
-        },
-      });
-      expect(dependencies.getAuthenticatedContributor).toHaveBeenCalledWith(
-        "invalid-token"
+      // An expired session is the reader's problem to fix later, not a
+      // reason to discard what they just wrote.
+      expect(result.status).toBe(201);
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.anything()
       );
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
     // @req REQ-012
@@ -146,7 +152,7 @@ describe("flag handlers", () => {
           }),
           expect.objectContaining({
             code: "VALIDATION_ERROR",
-            field: "turnstile_token",
+            field: "antibot",
           }),
         ])
       );
@@ -168,7 +174,7 @@ describe("flag handlers", () => {
         { counter_source_citation: "x".repeat(2001) },
       ],
       ["proposed_rewrite", { proposed_rewrite: "x".repeat(5001) }],
-      ["turnstile_token", { turnstile_token: " " }],
+      ["antibot", { antibot: undefined }],
     ])("validates %s", async (field, patch) => {
       const dependencies = makeDependencies();
 
@@ -190,8 +196,20 @@ describe("flag handlers", () => {
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
-    // @req REQ-012
-    it("preserves the FR45 age confirmation gate", async () => {
+    /**
+     * Age confirmation is a consequence of account creation, not of
+     * reporting: GDPR Article 8 governs consent for processing a minor's
+     * personal data, and an anonymous report collects no identifier and
+     * publishes nothing under a name. So an unconfirmed account is recorded
+     * anonymously rather than refused (charter §2).
+     *
+     * This also removes the user-visible harm of a live defect: age_confirmed_at
+     * is only ever written by the registration callback, so an account created
+     * through the sign-in page could never confirm it, and used to be barred
+     * from reporting for good.
+     */
+    // @req REQ-045
+    it("records a report anonymously when the account has not confirmed its age", async () => {
       const dependencies = makeDependencies();
       dependencies.getAgeConfirmedAt.mockResolvedValue(null);
 
@@ -201,21 +219,39 @@ describe("flag handlers", () => {
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 403,
-        body: {
-          data: null,
-          errors: [{ code: "AGE_CONFIRMATION_REQUIRED" }],
-        },
-      });
-      expect(dependencies.verifyTurnstileToken).not.toHaveBeenCalled();
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
+      expect(result.status).toBe(201);
+      expect(dependencies.verifyAntibotProof).toHaveBeenCalled();
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.anything()
+      );
+    });
+
+    /**
+     * Attribution is the one thing the account buys, and it is the one thing
+     * the age confirmation licenses: a name published under CC-BY-SA.
+     */
+    // @req REQ-045
+    it("attributes the report when the account has confirmed its age", async () => {
+      const dependencies = makeDependencies();
+
+      const result = await handleFlagCreate(
+        validInput(),
+        { accessToken: "valid-token" },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        contributor.id,
+        expect.anything()
+      );
     });
 
     // @req REQ-012
-    it("rejects a failed Turnstile verification without inserting", async () => {
+    it("rejects a failed anti-bot verification without inserting", async () => {
       const dependencies = makeDependencies();
-      dependencies.verifyTurnstileToken.mockResolvedValue("rejected");
+      dependencies.verifyAntibotProof.mockResolvedValue("rejected");
 
       const result = await handleFlagCreate(
         validInput(),
@@ -230,18 +266,17 @@ describe("flag handlers", () => {
           errors: [{ code: "UNAUTHORIZED" }],
         },
       });
-      expect(dependencies.verifyTurnstileToken).toHaveBeenCalledWith(
-        "turnstile-token",
-        "203.0.113.10"
+      expect(dependencies.verifyAntibotProof).toHaveBeenCalledWith(
+        expect.objectContaining({ salt: "test-salt", nonce: "42" })
       );
       expect(dependencies.checkFlagRateLimit).not.toHaveBeenCalled();
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
     // @req REQ-012
-    it("returns unavailable when Turnstile cannot verify without inserting", async () => {
+    it("returns unavailable when the anti-bot control cannot verify, without inserting", async () => {
       const dependencies = makeDependencies();
-      dependencies.verifyTurnstileToken.mockResolvedValue("unavailable");
+      dependencies.verifyAntibotProof.mockResolvedValue("unavailable");
 
       const result = await handleFlagCreate(
         validInput(),

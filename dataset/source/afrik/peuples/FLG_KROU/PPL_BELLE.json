@@ -3,6 +3,7 @@
   "nameMain": "Belle",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Belle",

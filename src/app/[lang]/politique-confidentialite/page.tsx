@@ -96,6 +96,23 @@ export default function PrivacyPolicyMineurPage() {
 
           <div className="space-y-3">
             <h3 className="text-afh-h3 font-semibold">
+              Vérification anti-robot
+            </h3>
+            <p>
+              Signaler une erreur ne demande ni compte ni adresse e-mail. Pour
+              que le registre public des signalements ne soit pas rempli par des
+              robots, votre navigateur résout un petit calcul avant l&apos;envoi
+              — vous n&apos;avez rien à faire, et rien à cocher.
+            </p>
+            <p>
+              Ce calcul est vérifié <strong>par nos propres serveurs</strong>.
+              Aucune donnée, pas même votre adresse IP, n&apos;est transmise à
+              un service tiers pour cette vérification.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-afh-h3 font-semibold">
               Durées de conservation
             </h3>
             <ul className="list-disc ml-6 space-y-1">

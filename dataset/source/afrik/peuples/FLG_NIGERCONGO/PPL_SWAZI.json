@@ -3,6 +3,7 @@
   "nameMain": "Swazi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SWZ", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Swazi",

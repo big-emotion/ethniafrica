@@ -105,10 +105,11 @@ describe("OpenAPI v2 flags contract", () => {
     expect(flagDetail).toBeDefined();
     expect(flagDetail.get).toBeDefined();
 
+    // No 401: submitting a report no longer requires a session, so there is
+    // no unauthenticated case left to document (moderation charter §2).
     expect(Object.keys(flagCollection.post.responses).sort()).toEqual([
       "201",
       "400",
-      "401",
       "403",
       "429",
       "500",
@@ -137,7 +138,7 @@ describe("OpenAPI v2 flags contract", () => {
       "target_id",
       "flag_kind",
       "reason_text",
-      "turnstile_token",
+      "antibot",
     ]);
     expect(Object.keys(schemas.FlagCreateInput.properties).sort()).toEqual(
       [
@@ -149,14 +150,15 @@ describe("OpenAPI v2 flags contract", () => {
         "target_field_path",
         "target_id",
         "target_type",
-        "turnstile_token",
+        "antibot",
+        "elapsedMs",
       ].sort()
     );
     expect(schemas.FlagCreateInput.example).toMatchObject({
       target_type: "people",
       target_id: "PPL_YORUBA",
       flag_kind: "inaccurate",
-      turnstile_token: expect.any(String),
+      antibot: expect.objectContaining({ salt: expect.any(String) }),
     });
   });
 
@@ -244,7 +246,9 @@ describe("OpenAPI v2 flags contract", () => {
       scheme: "bearer",
       bearerFormat: "JWT",
     });
-    expect(flagCollection.post.security).toEqual([{ SupabaseJwtAuth: [] }]);
+    // Two schemes: a bearer token, or none at all. The token decides who the
+    // report is credited to, never whether it is accepted.
+    expect(flagCollection.post.security).toEqual([{ SupabaseJwtAuth: [] }, {}]);
     expect(flagCollection.get.security).toEqual([]);
     expect(flagDetail.get.security).toEqual([]);
   });

@@ -3,6 +3,7 @@
   "nameMain": "Bulu",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR", "GNQ", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bulu",

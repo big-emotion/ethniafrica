@@ -3,6 +3,7 @@
   "nameMain": "Daasanach",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "KEN", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Daasanach",

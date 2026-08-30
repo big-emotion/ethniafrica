@@ -50,7 +50,7 @@ import type { Language } from "@/types/shared";
 const PARALLAX_X = 0.16;
 const PARALLAX_Y = 0.3;
 
-/** Per-frame approach to the target tilt, as HomeGlobe eases its rotation. */
+/** Per-frame approach to the target tilt, as the globe eases its rotation. */
 const TILT_EASE = 0.09;
 const TILT_SETTLED = 0.0006;
 

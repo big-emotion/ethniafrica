@@ -3,6 +3,7 @@
   "nameMain": "Songhai",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Songhai",

@@ -3,6 +3,7 @@
   "nameMain": "Shona",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZWE", "MOZ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Shona",

@@ -3,6 +3,7 @@
   "nameMain": "Sino-Mauriciens",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["MUS"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sino-Mauriciens",

@@ -39,13 +39,30 @@ export const HEADER_RETRACTED_ATTRIBUTE = "data-header-retracted";
  * opens *inside* the header, and measuring the whole element would shove
  * every pinned rail on the page down by the height of an open menu.
  *
+ * `held` suspends the retraction without unsubscribing from the scroll. The
+ * caller raises it while a menu is open, because the scroll position is not
+ * a reliable proxy for the reader's intent: it also moves when a font or an
+ * image lands, when a lazy section settles, when a smooth scroll runs out its
+ * easing, or when the browser restores a position. Every one of those used to
+ * cross the threshold and take an open menu down with it — the reader's click
+ * answered by nothing. The run is still measured while held, so releasing the
+ * hold leaves the bar wherever the reader's own travel has put it rather than
+ * snapping it away.
+ *
  * @req REQ-114
  */
 export function useHeaderReveal(
-  barRef: RefObject<HTMLElement | null>
+  barRef: RefObject<HTMLElement | null>,
+  held = false
 ): boolean {
   const [retracted, setRetracted] = useState(false);
   const stateRef = useRef(INITIAL_REVEAL_STATE);
+  // Read inside the scroll listener, which subscribes once: a dependency
+  // would tear the listener down and rebuild it on every open and close.
+  const heldRef = useRef(held);
+  useEffect(() => {
+    heldRef.current = held;
+  }, [held]);
 
   useEffect(() => {
     const bar = barRef.current;
@@ -78,7 +95,7 @@ export function useHeaderReveal(
       const next = nextRevealState(stateRef.current, previousY, y);
       previousY = y;
       stateRef.current = next;
-      setRetracted(next.retracted);
+      setRetracted(heldRef.current ? false : next.retracted);
     };
 
     const onScroll = () => {

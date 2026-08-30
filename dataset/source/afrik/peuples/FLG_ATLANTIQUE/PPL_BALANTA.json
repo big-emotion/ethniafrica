@@ -3,6 +3,7 @@
   "nameMain": "Balanta",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB", "SEN", "GMB", "GIN", "CPV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Balanta",

@@ -3,6 +3,7 @@
   "nameMain": "Krou (macro-groupe)",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Krou",

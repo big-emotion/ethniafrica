@@ -3,6 +3,7 @@
   "nameMain": "Senga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "MWI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Senga",

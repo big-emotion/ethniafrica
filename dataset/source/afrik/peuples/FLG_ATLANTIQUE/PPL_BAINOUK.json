@@ -3,6 +3,7 @@
   "nameMain": "Bainouk",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GMB", "GNB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bainouk",

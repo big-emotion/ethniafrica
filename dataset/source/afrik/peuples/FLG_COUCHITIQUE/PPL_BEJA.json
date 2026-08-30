@@ -3,6 +3,7 @@
   "nameMain": "Beja",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["SDN", "ERI", "EGY"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Beja",

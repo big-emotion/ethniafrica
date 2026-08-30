@@ -3,6 +3,7 @@
   "nameMain": "Yerima",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yerima",

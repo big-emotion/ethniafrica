@@ -3,6 +3,7 @@
   "nameMain": "Rundi (Barundi)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["BDI", "COD", "TZA", "RWA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Rundi (Barundi)",

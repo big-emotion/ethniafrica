@@ -3,6 +3,7 @@
   "nameMain": "Kalanga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BWA", "ZWE", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kalanga",

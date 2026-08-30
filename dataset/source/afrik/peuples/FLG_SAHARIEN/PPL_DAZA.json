@@ -3,6 +3,7 @@
   "nameMain": "Daza",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NER", "LBY", "SDN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Daza",

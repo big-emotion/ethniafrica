@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Nord (Zimbabwe)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Nord (Zimbabwe)",

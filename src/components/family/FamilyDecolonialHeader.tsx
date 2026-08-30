@@ -1,4 +1,5 @@
 import type { FamilyDecolonialHeaderData } from "@/lib/familyDataTransformer";
+import { FicheFieldList } from "@/components/fiche/FicheProse";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
 import { bcp47LanguageTag } from "@/lib/languageTag";
 
@@ -59,27 +60,35 @@ export function FamilyDecolonialHeader({
       data-fiche-section={CHAPTER_TITLE}
     >
       <h2 id="family-decolonial-heading">{CHAPTER_TITLE}</h2>
-      {data.historicalAppellations.length > 0 && (
-        <p>
-          <strong>Appellations historiques :</strong>{" "}
-          {data.historicalAppellations.join(" · ")}
-        </p>
-      )}
-      {labelledFields.map(([label, field]) => {
-        const value = data[field];
-        if (!value) return null;
-
-        return (
-          <p key={field}>
-            <strong>{label} :</strong>{" "}
-            {field === "selfAppellation" ? (
-              <span lang={bcp47LanguageTag(selfAppellationLang)}>{value}</span>
-            ) : (
-              value
-            )}
-          </p>
-        );
-      })}
+      <FicheFieldList
+        fields={[
+          ...(data.historicalAppellations.length > 0
+            ? [
+                {
+                  label: "Appellations historiques",
+                  prose: data.historicalAppellations.join(" · "),
+                },
+              ]
+            : []),
+          // The tag qualifies the whole value, so it sits on the definition
+          // rather than on a span inside it — which also keeps the paragraph a
+          // single text node for the fields that carry no markup.
+          ...labelledFields.flatMap(([label, field]) =>
+            data[field]
+              ? [
+                  {
+                    label,
+                    prose: data[field],
+                    lang:
+                      field === "selfAppellation"
+                        ? bcp47LanguageTag(selfAppellationLang)
+                        : undefined,
+                  },
+                ]
+              : []
+          ),
+        ]}
+      />
       {data.selfAppellation && (
         <div className="mt-3">
           <DoctrineLinkCard slug="endonymes-vs-exonymes" />

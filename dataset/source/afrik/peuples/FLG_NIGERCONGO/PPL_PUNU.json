@@ -3,6 +3,7 @@
   "nameMain": "Punu",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GAB", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Punu",

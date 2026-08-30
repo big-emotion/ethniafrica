@@ -3,6 +3,7 @@
   "nameMain": "Sotho-Tswana",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["LSO", "BWA", "ZAF", "ZWE", "NAM"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Sotho-Tswana",

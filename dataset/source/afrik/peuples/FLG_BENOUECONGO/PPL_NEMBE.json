@@ -3,6 +3,7 @@
   "nameMain": "Nembe",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nembe",

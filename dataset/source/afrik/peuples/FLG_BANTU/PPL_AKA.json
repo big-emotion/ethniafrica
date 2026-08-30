@@ -3,6 +3,7 @@
   "nameMain": "Aka",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Aka",

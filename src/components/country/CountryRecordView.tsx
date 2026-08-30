@@ -45,7 +45,6 @@ export interface CountryRecordViewProps {
   fromPeopleName?: string;
   fromPeopleId?: string;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
-  turnstileSiteKey?: string;
 }
 
 // @req REQ-115
@@ -54,7 +53,6 @@ export function CountryRecordView({
   hasSourceFlag,
   fromPeopleName,
   fromPeopleId,
-  turnstileSiteKey,
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
@@ -92,31 +90,15 @@ export function CountryRecordView({
         <Section title="Culture et société">
           <CultureGrid data={data.culture} />
           <div data-testid="section-flag-target-culture" className="mt-3">
-            {turnstileSiteKey ? (
-              <FlagTarget
-                target={{
-                  type: "fiche_section",
-                  id: country.id,
-                  fieldPath: "culture",
-                }}
-                turnstileSiteKey={turnstileSiteKey}
-                triggerLabel="Signaler cette section"
-                className="w-auto text-afh-caption"
-              />
-            ) : (
-              <button
-                type="button"
-                disabled
-                className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
-                style={{
-                  borderColor: "var(--afh-border)",
-                  color: "var(--afh-text-soft)",
-                }}
-                aria-label="Signaler cette section — bientôt disponible"
-              >
-                Signaler cette section (bientôt disponible)
-              </button>
-            )}
+            <FlagTarget
+              target={{
+                type: "fiche_section",
+                id: country.id,
+                fieldPath: "culture",
+              }}
+              triggerLabel="Signaler cette section"
+              className="w-auto text-afh-caption"
+            />
           </div>
         </Section>
       </CountryParchment>

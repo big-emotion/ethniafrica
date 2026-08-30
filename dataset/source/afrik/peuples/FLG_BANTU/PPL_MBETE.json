@@ -3,6 +3,7 @@
   "nameMain": "Mbete",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GAB", "COG", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mbete",
