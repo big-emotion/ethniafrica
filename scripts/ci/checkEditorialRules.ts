@@ -55,6 +55,7 @@ export interface Fiche {
   autonym?: string | null;
   confidence?: string | null;
   classification_status?: string | null;
+  classificationStatus?: string | null;
   content?: {
     appellations?: { selfAppellation?: string | null };
     decolonialHeader?: { selfAppellation?: string | null };
@@ -108,8 +109,20 @@ export function extractConfidence(fiche: Fiche): string | null {
   return typeof c === "string" && c.length > 0 ? c.toLowerCase() : null;
 }
 
+/**
+ * Both spellings are read, and neither may be tidied away.
+ *
+ * PPL and FLG fiches declare `classificationStatus` at the top level: that is
+ * what `migrateAfrikToDatabase.ts` loads into the column (`:204` for families,
+ * `:244` for peoples), and what `validateAfrikData.ts` already validates on
+ * migration, relation and nom fiches. Reading only `classification_status`
+ * meant Rule 2 matched no fiche in the corpus and reported green for it — a
+ * gate that checked nothing, which is worse than a red one.
+ *
+ * The snake_case form stays because migration fiches use it.
+ */
 export function extractClassificationStatus(fiche: Fiche): string | null {
-  const s = fiche.classification_status;
+  const s = fiche.classification_status ?? fiche.classificationStatus;
   return typeof s === "string" && s.length > 0 ? s.toLowerCase() : null;
 }
 

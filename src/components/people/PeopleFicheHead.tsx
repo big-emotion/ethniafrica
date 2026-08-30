@@ -1,5 +1,6 @@
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 import type {
   PeopleCountriesData,
   PeopleHeroData,
@@ -88,6 +89,13 @@ export function PeopleFicheHead({
           </span>
         )}
         <span className="afh-chip">{presenceCount} pays de présence</span>
+
+        {/* 473 fiches argue in `whyProblematic` that their name was imposed;
+            this is where that argument becomes something a reader can act on.
+            No guard here on purpose — the badge renders nothing for a missing
+            status and nothing for `consensual`, and duplicating that contract
+            in the caller is how the two states drift apart. */}
+        <ClassificationBadge status={hero.classificationStatus} />
       </div>
 
       {/* A fiche resting entirely on unverified sources is published and
