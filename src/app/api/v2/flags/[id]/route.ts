@@ -48,7 +48,7 @@
  *                 resolved_at: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors: []
  *       400:
  *         description: Invalid empty identifier.
@@ -60,7 +60,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: VALIDATION_ERROR
  *                   message: String must contain at least 1 character(s)
@@ -75,7 +75,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: NOT_FOUND
  *                   message: Flag not found
@@ -89,7 +89,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: INTERNAL_ERROR
  *                   message: Internal server error

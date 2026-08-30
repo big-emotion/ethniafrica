@@ -8,7 +8,7 @@ const LIVE_URL = "https://example.org/fr/fiche/reference";
 const PINNED_URL = "https://example.org/fr/fiche/reference@v7";
 const ACCESSED_AT = new Date("2026-07-14T12:00:00.000Z");
 const PLAIN_LIVE_CITATION =
-  "Fiche de référence (Nom autonome / Nom usuel). Africa History. https://example.org/fr/fiche/reference. Consulté le 14 juillet 2026. CC-BY-SA 4.0.";
+  "Fiche de référence (Nom autonome / Nom usuel). EthniAfrica. https://example.org/fr/fiche/reference. Consulté le 14 juillet 2026. CC-BY-SA 4.0.";
 
 function renderCitationBlock(
   overrides: Partial<React.ComponentProps<typeof CitationBlock>> = {}

@@ -27,31 +27,32 @@ instant) rather than reinstalling.
 
 ### 1. The consent banner covers the lower half of every capture
 
-`ethni-consent` is a plain cookie. **Set it, do not click it** — clicking
-depends on the banner having mounted, which on a cold dev route it often has
-not, and a failed click is silent:
+`ethni-consent` is a **localStorage key**, not a cookie —
+`CONSENT_STORAGE_KEY` in `src/lib/consent.ts`. This page said "a plain cookie"
+until 2026-08-30, and `addCookies` is silent about landing nowhere: the capture
+succeeds, the banner is in the shot, and the finding you were chasing is under
+it.
+
+**Seed it, do not click it** — clicking depends on the banner having mounted,
+which on a cold dev route it often has not, and a failed click is just as
+silent:
 
 ```js
-const storageState = {
-  cookies: [
-    {
-      name: "ethni-consent",
-      value: JSON.stringify({
-        hasConsented: true,
-        preferences: { essential: true, analytics: true, functional: true },
-        consentDate: new Date().toISOString(),
-      }),
-      domain: "localhost",
-      path: "/",
-      expires: Math.floor(Date.now() / 1000) + 86400,
-      httpOnly: false,
-      secure: false,
-      sameSite: "Lax",
-    },
-  ],
-  origins: [],
-};
+await context.addInitScript(() => {
+  window.localStorage.setItem(
+    "ethni-consent",
+    JSON.stringify({
+      hasConsented: true,
+      preferences: { essential: true, analytics: true, functional: true },
+      consentDate: new Date().toISOString(),
+    })
+  );
+});
 ```
+
+`addInitScript`, not `page.evaluate` after `goto`: the banner decides on first
+paint, so a value written after navigation arrives too late for the very shot
+you are taking.
 
 ### 2. A globe needs 20 seconds, not 7
 

@@ -13,6 +13,17 @@ function tokenHex(name: string): string {
   return match[1];
 }
 
+/** `#000` and `#000000` are the same colour; the luminance maths needs the long form. */
+function expandHex(hex: string): string {
+  return hex.length === 4
+    ? `#${hex
+        .slice(1)
+        .split("")
+        .map((channel) => channel + channel)
+        .join("")}`
+    : hex;
+}
+
 function relativeLuminance(hex: string): number {
   const channels = hex
     .slice(1)
@@ -538,5 +549,63 @@ describe("the brand spectrum carries both themes", () => {
     expect(Math.max(...spectrumStops(dayScope).map(lightness))).toBeLessThan(
       Math.min(...spectrumStops(nightScopeOf(colorCss)).map(lightness))
     );
+  });
+
+  /**
+   * The ink on a full-strength accent fill, measured rather than asserted.
+   *
+   * `--accent-foreground` is documented as the pair for `--accent` on a filled
+   * surface and required to clear AA against it. It did not: the day default
+   * was white, which lands at 3.10–3.14:1 on ocre, teal and perv. Only terre
+   * ever got the dark override the other three needed just as much.
+   *
+   * It went unseen because `--accent` used to hold two kinds of value at once
+   * — the atlas hex here and a bare shadcn HSL triplet in index.css — so
+   * `bg-[color:var(--accent)]` resolved to `rgba(0, 0, 0, 0)` on an unscoped
+   * subtree and axe-core measured white text on parchment. Giving the shadcn
+   * layer its own name made the fill paint for the first time, and the fill
+   * brought this with it.
+   *
+   * The night block already carried the right answer for the same reason
+   * ("an accent fill is a light patch on a dark page"): the accent hexes are
+   * identical in day and night, so the ink on them has to be too.
+   */
+  // @req REQ-090
+  it("keeps the on-accent ink AA-readable on every accent fill", () => {
+    const ACCENT_SCOPES = ["ocre", "teal", "terre", "perv"] as const;
+
+    // The day slice, explicitly. `resolvedHex` matches six-digit hex only, so
+    // on a three-digit day default it silently walked past it and returned the
+    // night value — the assertion then measured a colour no day reader sees
+    // and passed while the live route was failing axe-core.
+    const day = colorCss.slice(0, colorCss.indexOf(".dark,"));
+    const dayDefault = expandHex(
+      day.match(/--accent-foreground:\s*(#[0-9a-f]{3,6})/i)![1]
+    );
+
+    // Read per scope, because an accent that cannot reach AA against the
+    // shared ink overrides it — terre does, at 4.22:1 on the default.
+    //
+    // Searched in the whole sheet, not in `day`: the `.afh-accent-*` scope
+    // classes are declared *after* the night block, so slicing at `.dark,`
+    // hides every override and reports terre against the wrong ink.
+    const inkFor = (scope: string): string => {
+      const block = colorCss.match(
+        new RegExp(`\\.afh-accent-${scope}\\s*\\{([^}]*)\\}`)
+      );
+      const override = block?.[1].match(
+        /--accent-foreground:\s*(#[0-9a-f]{3,6})/i
+      );
+      return override ? expandHex(override[1]) : dayDefault;
+    };
+
+    const shortfalls = ACCENT_SCOPES.map((scope) => ({
+      scope,
+      ratio: contrastRatio(inkFor(scope), resolvedHex(`--afh-cat-${scope}`)),
+    })).filter((measured) => measured.ratio < 4.5);
+
+    expect(
+      shortfalls.map((s) => `${s.scope}: ${s.ratio.toFixed(2)}:1`)
+    ).toEqual([]);
   });
 });

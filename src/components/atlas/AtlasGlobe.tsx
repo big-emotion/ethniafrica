@@ -28,6 +28,7 @@ import {
   poseForTarget,
   type CameraPose,
 } from "@/lib/atlas/camera";
+import type { GlobeSurface } from "@/lib/atlas/globePalette";
 import {
   basemapTransform,
   nearestFacingTarget,
@@ -99,9 +100,9 @@ const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} flex min-w-9 items-center jus
  * without punching a hole in the map.
  */
 const TOOLBAR_BUTTON_STYLE: CSSProperties = {
-  color: "var(--afh-night-ink-2)",
+  color: "var(--afh-globe-stage-ink)",
   backgroundColor:
-    "color-mix(in srgb, var(--afh-night-ground) 88%, transparent)",
+    "color-mix(in srgb, var(--afh-globe-stage-ground) 88%, transparent)",
 };
 
 function canCreateWebglContext(): boolean {
@@ -128,7 +129,7 @@ function canCreateWebglContext(): boolean {
  * records why the band is fixed, and an aspect-ratio stage grew taller the
  * wider the viewport got. So the figure is constrained: with both dimensions
  * set, the SVG's own `preserveAspectRatio` centres the whole map inside the
- * band and leaves the night ground on either side. placeTargetOnBasemap walks
+ * band and leaves the stage's own ground on either side. placeTargetOnBasemap walks
  * the same letterbox, so the markers stay over the shapes they name.
  */
 const FALLBACK_BASEMAP_STYLE: CSSProperties = {
@@ -151,7 +152,7 @@ function AtlasGlobeMissing({ message }: { message: string }) {
       <AfricaBasemap style={{ ...FALLBACK_BASEMAP_STYLE, opacity: 0.25 }} />
       <p
         className="absolute px-6 text-center text-afh-small"
-        style={{ color: "var(--afh-night-ink-2)" }}
+        style={{ color: "var(--afh-globe-stage-ink)" }}
       >
         {message}
       </p>
@@ -341,11 +342,17 @@ function AtlasGlobeFallback({
   }
 
   /**
-   * The continent scene: a geographic frame that locates, and radial fields
-   * that measure. `fill="none"` on every ring is the invariant — a filled
-   * country would encode the peoples counted inside it as a closed-border
-   * area, which is exactly what atlas-charter §1 forbids for a people. The
-   * areas carry no rings at all, so nothing here can outline one.
+   * The continent scene: a geographic frame that locates, and nothing that
+   * measures. `fill="none"` on every ring is the invariant — a filled country
+   * would encode the peoples counted inside it as a closed-border area, which
+   * is exactly what atlas-charter §1 forbids for a people. The areas carry no
+   * rings at all, so nothing here can outline one.
+   *
+   * The frame used to sit under twelve radial fields ranking the countries by
+   * documented fiches. The glow was legible and the quantity was not: nothing
+   * on the hub named it, so the brightest zones read as population, or as
+   * where the peoples live. The field is the people fiche's encoding, where a
+   * legend discharges it; here the areas survive only as targets.
    */
   if (overlay.kind === "continent-field") {
     return (
@@ -353,27 +360,18 @@ function AtlasGlobeFallback({
         figureTransform={figureTransform}
         style={FALLBACK_BASEMAP_STYLE}
       >
-        <PeopleFieldDefs />
         {overlay.frame.flatMap((country) =>
           country.rings.map((ring, index) => (
             <polygon
               key={`${country.countryId}-${index}`}
               points={ringToSvgPoints(ring)}
               fill="none"
-              stroke="var(--afh-night-line)"
+              stroke="var(--afh-globe-stage-line)"
               strokeWidth={1}
               vectorEffect="non-scaling-stroke"
             />
           ))
         )}
-        <PeopleFieldCircles
-          blobs={overlay.areas.map((area) => ({
-            countryId: area.countryId,
-            center: area.center,
-            weight: area.documentedPeopleShare,
-          }))}
-          chosenCountryId={chosenCountryId}
-        />
       </AfricaBasemap>
     );
   }
@@ -541,7 +539,9 @@ function AtlasTargetMarker({
         height: MARKER_DIAMETER_PX,
         marginLeft: -MARKER_DIAMETER_PX / 2,
         marginTop: -MARKER_DIAMETER_PX / 2,
-        backgroundColor: chosen ? "var(--accent)" : "var(--afh-night-surface)",
+        backgroundColor: chosen
+          ? "var(--accent)"
+          : "var(--afh-globe-stage-panel)",
         borderColor: "var(--accent)",
         opacity: placement.facingReader ? 1 : 0.35,
       }}
@@ -602,12 +602,14 @@ function AtlasChoiceMark({
         height: CHOICE_MARK_DIAMETER_PX,
         marginLeft: -CHOICE_MARK_DIAMETER_PX / 2,
         marginTop: -CHOICE_MARK_DIAMETER_PX / 2,
-        backgroundColor: chosen ? "var(--accent)" : "var(--afh-night-ink-2)",
+        backgroundColor: chosen
+          ? "var(--accent)"
+          : "var(--afh-globe-stage-ink)",
         // Reads over the tan of a landmass and over the dark of the ocean
         // alike, which a flat dot at one opacity does not.
         boxShadow: chosen
           ? "0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent)"
-          : `0 0 0 ${CHOICE_MARK_RING_PX}px var(--afh-night-ground)`,
+          : `0 0 0 ${CHOICE_MARK_RING_PX}px var(--afh-globe-stage-ground)`,
         opacity: chosen ? 1 : 0.75,
       }}
     />
@@ -735,15 +737,18 @@ export interface AtlasGlobeProps {
    * a round still standing — and leave it out once that thing has happened.
    */
   pinnedProjectionNote?: string;
+  /**
+   * The ground the stage stands on, and the palette the sphere is painted in.
+   *
+   * Defaults to night because the fiche is the mount DEC-022 licenses, and a
+   * fiche passes nothing. Every caller that is *not* a fiche has to say so —
+   * the home's opening module and /jouer/mercator went dark precisely because
+   * there was no way to say it (ETNI-1360), and no test could see the
+   * difference. See STAGE_ROLE_TOKENS.
+   */
+  surface?: GlobeSurface;
 }
 
-/**
- * DEC-022: the globe stage is the one Night surface in the app — every other
- * surface stays on the warm/light palette, but this stage always paints
- * --afh-night-ground behind the globe regardless of the fiche's own
- * per-entity accent (people ocre / country teal / family perv), which keeps
- * governing everything FicheSequence renders around it.
- */
 /** The drag distance the point cloud used, kept so the gesture did not change under readers when its engine did. */
 const DRAG_RADIANS_PER_PIXEL = 0.006;
 const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
@@ -795,13 +800,58 @@ function globeLegendSentence(turns: boolean, marksCountries: boolean): string {
   return `Afrique à sa surface réelle. ${gesture}${offer}`;
 }
 
-const NIGHT_STAGE_STYLE: CSSProperties = {
-  position: "relative",
-  width: "100%",
-  height: "var(--afh-globe-stage-height)",
-  backgroundColor: "var(--afh-night-ground)",
-  overflow: "hidden",
+/**
+ * The stage's four surface roles, published as custom properties.
+ *
+ * DEC-022 licenses the night ground for one surface: the globe band on a
+ * fiche, where the globe is a panel inside the page and a lit body reads as a
+ * body against a dark sky. It paints that ground regardless of the fiche's own
+ * per-entity accent (people ocre / country teal / family perv), which keeps
+ * governing everything FicheSequence renders around it.
+ *
+ * brand-charter §5.1 stops there: night is a stage light, not a theme, and
+ * every other block stays on the reader's ground. Pinning it here is what put
+ * the home's opening module and /jouer/mercator on a dark band the charter
+ * does not license — a hole punched through a parchment page.
+ *
+ * Published as variables rather than threaded as a palette prop because the
+ * caption, the toolbar, the fallback's outline and the choice marks are spread
+ * across three components and two module constants: a prop would have been
+ * nine chances to miss one, and the one missed is invisible until someone
+ * looks at the rendered page. Set once on the stage, they reach every
+ * descendant, and a role nothing reads costs nothing.
+ */
+const STAGE_ROLE_TOKENS: Record<GlobeSurface, Record<string, string>> = {
+  night: {
+    "--afh-globe-stage-ground": "var(--afh-night-ground)",
+    "--afh-globe-stage-ink": "var(--afh-night-ink-2)",
+    "--afh-globe-stage-line": "var(--afh-night-line)",
+    "--afh-globe-stage-panel": "var(--afh-night-surface)",
+  },
+  /**
+   * The day half reads the ordinary semantic aliases rather than a second set
+   * of hexes, so it follows `.dark` and `.afh-on-night` for free — which is
+   * how a reader who switches the site to night still gets a globe that went
+   * with them, instead of a parchment disc on a night page.
+   */
+  parchment: {
+    "--afh-globe-stage-ground": "var(--afh-bg-warm)",
+    "--afh-globe-stage-ink": "var(--afh-text-soft)",
+    "--afh-globe-stage-line": "var(--afh-border)",
+    "--afh-globe-stage-panel": "var(--afh-surface)",
+  },
 };
+
+function stageStyle(surface: GlobeSurface): CSSProperties {
+  return {
+    position: "relative",
+    width: "100%",
+    height: "var(--afh-globe-stage-height)",
+    backgroundColor: "var(--afh-globe-stage-ground)",
+    overflow: "hidden",
+    ...STAGE_ROLE_TOKENS[surface],
+  } as CSSProperties;
+}
 
 interface StageSize {
   widthPx: number;
@@ -901,6 +951,7 @@ export function AtlasGlobe({
   probedWebglSupport,
   pinnedProjection,
   pinnedProjectionNote,
+  surface = "night",
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(
     probedWebglSupport ?? false
@@ -1214,7 +1265,7 @@ export function AtlasGlobe({
 
   if (!drawnOverlay || drawnOverlay.kind === "people-field-missing") {
     return (
-      <div className={cn(className)} style={NIGHT_STAGE_STYLE}>
+      <div className={cn(className)} style={stageStyle(surface)}>
         <AtlasGlobeMissing message={missingMessage} />
       </div>
     );
@@ -1354,7 +1405,7 @@ export function AtlasGlobe({
           : undefined
       }
       className={cn(className)}
-      style={NIGHT_STAGE_STYLE}
+      style={stageStyle(surface)}
     >
       {/* The canvas below stays aria-hidden — it is paint. This element is
           what the reader actually operates, which is why the name, the role
@@ -1379,6 +1430,7 @@ export function AtlasGlobe({
           pose={pose}
           focusedCountryId={chosenCountryId}
           onUnavailable={handleCanvasUnavailable}
+          surface={surface}
         />
       ) : (
         <AtlasGlobeFallback
@@ -1397,7 +1449,7 @@ export function AtlasGlobe({
         <p
           data-atlas-fallback-note=""
           className="pointer-events-none absolute inset-x-0 bottom-12 px-3 text-afh-caption"
-          style={{ color: "var(--afh-night-ink-2)" }}
+          style={{ color: "var(--afh-globe-stage-ink)" }}
         >
           {fallbackNote}
         </p>
@@ -1453,7 +1505,7 @@ export function AtlasGlobe({
           <p
             data-atlas-legend=""
             className="w-full text-afh-caption"
-            style={{ color: "var(--afh-night-ink-2)" }}
+            style={{ color: "var(--afh-globe-stage-ink)" }}
           >
             {globeLegendSentence(surfaceTurns, marksCountries)}
           </p>

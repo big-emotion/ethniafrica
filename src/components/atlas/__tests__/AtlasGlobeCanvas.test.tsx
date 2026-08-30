@@ -64,7 +64,6 @@ const continentOverlay: ContinentFieldOverlay = {
       countryId: "NGA",
       center: { lon: 8, lat: 9 },
       documentedPeopleCount: 40,
-      documentedPeopleShare: 1,
     },
   ],
 };
@@ -386,15 +385,22 @@ describe("AtlasGlobeCanvas", () => {
    * The continent frame locates, it never measures: its fillOpacity is 0, and
    * skipping the fill pass outright is what makes a per-country area
    * physically impossible to paint rather than merely invisible.
+   *
+   * GL_POINTS is the field, and it is asserted absent for the same reason the
+   * fill is. The field is the people fiche's encoding; borrowed here it put a
+   * glow on twelve countries against a quantity the hub never named. The two
+   * renderers have drifted apart before — focus dimming shipped in the SVG
+   * path and not in this one — so the rule is asserted in both.
    */
   // @req REQ-116
-  it("strokes the continent frame without ever issuing a filled area", () => {
+  it("strokes the continent frame without ever issuing a filled area or a field", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={continentOverlay} pose={IDLE_POSE} />);
 
     const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
     expect(modes).toContain(fakeGl.LINE_LOOP);
     expect(modes).not.toContain(fakeGl.TRIANGLES);
+    expect(modes).not.toContain(fakeGl.POINTS);
   });
 
   // @req REQ-116
@@ -688,6 +694,77 @@ describe("AtlasGlobeCanvas", () => {
     const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
     expect(modes).toContain(fakeGl.POINTS);
     expect(modes).not.toContain(fakeGl.LINE_LOOP);
+  });
+
+  /**
+   * The obvious wiring for the surface prop is to list it in the mount
+   * effect's dependencies, and it is the wrong one: that tears the layer down
+   * and rebuilds it, which recompiles both programs, re-uploads the mesh and
+   * drops the angle the reader had turned the globe to. They asked for a
+   * different colour and would be handed back to the Atlantic.
+   *
+   * Counted on createProgram rather than on a repaint alone, because a test
+   * that only checked "the texture was written again" passes either way — a
+   * rebuild repaints too.
+   */
+  // @req REQ-112
+  it("repaints the surface on a theme flip instead of rebuilding the globe", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        surface="parchment"
+      />
+    );
+
+    const programsAfterMount = fakeGl.createProgram.mock.calls.length;
+    const texturesAfterMount = fakeGl.texImage2D.mock.calls.length;
+    expect(programsAfterMount).toBeGreaterThan(0);
+
+    act(() => {
+      rerender(
+        <AtlasGlobeCanvas
+          overlay={countryOverlay}
+          pose={IDLE_POSE}
+          surface="night"
+        />
+      );
+    });
+
+    expect(fakeGl.createProgram.mock.calls.length).toBe(programsAfterMount);
+    expect(fakeGl.texImage2D.mock.calls.length).toBeGreaterThan(
+      texturesAfterMount
+    );
+  });
+
+  /**
+   * The witness for the guard that makes the above cheap: a mount already
+   * builds the layer for its own surface, so repainting a 2048×1024 texture to
+   * arrive at the picture just drawn is pure waste.
+   */
+  // @req REQ-112
+  it("does not repaint the texture when the surface has not moved", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        surface="parchment"
+      />
+    );
+
+    const texturesAfterMount = fakeGl.texImage2D.mock.calls.length;
+
+    act(() => {
+      rerender(
+        <AtlasGlobeCanvas
+          overlay={countryOverlay}
+          pose={{ ...IDLE_POSE }}
+          surface="parchment"
+        />
+      );
+    });
+
+    expect(fakeGl.texImage2D.mock.calls.length).toBe(texturesAfterMount);
   });
 });
 

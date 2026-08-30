@@ -1,5 +1,5 @@
 /* ============================================================
-   Africa History — The section heading unit
+   EthniAfrica — The section heading unit
 
    One dress for every section title on the home, so that five
    sections read as five chapters of one page rather than five
@@ -37,6 +37,11 @@
 
 .afh-section-heading-eyebrow {
   margin: 0 0 6px;
+  /* The eyebrow is a paragraph element but a label, not prose, so it follows
+     the heading unit it files rather than the phone's ragged-right rule for
+     running text (mobile-text.css). Without this an `.is-centred` unit would
+     put its title in the middle and its own kicker at the left edge. */
+  text-align: inherit;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-eyebrow);
   font-weight: var(--afh-eyebrow-weight);
@@ -50,7 +55,11 @@
   margin: 0;
   font-family: var(--afh-font-display);
   font-size: var(--afh-text-h1);
-  font-weight: 600;
+  /* 700, not 600. Fraunces is loaded at 300/500/700/900 (app/layout.tsx), so
+     a 600 request has always resolved to 700 — this states what renders
+     rather than changing it. Brand charter §6: two display weights, both
+     loaded, 700 for a heading role and 900 for a page's own h1. */
+  font-weight: 700;
   line-height: var(--afh-leading-h1);
   letter-spacing: -0.014em;
   color: var(--afh-text);

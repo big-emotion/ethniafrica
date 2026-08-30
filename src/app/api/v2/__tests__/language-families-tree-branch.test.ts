@@ -24,7 +24,7 @@ const validEnvelope = {
   ],
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
     pagination: { total: 2, page: 1, perPage: 20 },
   },
   errors: [],

@@ -44,7 +44,7 @@ describe("sources handler", () => {
         data: [source],
         meta: {
           license: "CC-BY-SA-4.0",
-          attribution: "Africa History — africahistory.org",
+          attribution: "EthniAfrica — ethniafrica.com",
           pagination: { total: 1, page: 1, perPage: 20, totalPages: 1 },
         },
         errors: [],
@@ -82,7 +82,7 @@ describe("sources handler", () => {
         data: source,
         meta: {
           license: "CC-BY-SA-4.0",
-          attribution: "Africa History — africahistory.org",
+          attribution: "EthniAfrica — ethniafrica.com",
         },
         errors: [],
       });

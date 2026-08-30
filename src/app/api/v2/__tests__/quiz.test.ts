@@ -61,7 +61,7 @@ const scopesEnvelope = {
       playable: true,
     },
   },
-  meta: { license: "CC-BY-SA-4.0", attribution: "Africa History" },
+  meta: { license: "CC-BY-SA-4.0", attribution: "EthniAfrica" },
   errors: [],
 };
 
@@ -155,7 +155,7 @@ const sessionEnvelope = {
       },
     ],
   },
-  meta: { license: "CC-BY-SA-4.0", attribution: "Africa History" },
+  meta: { license: "CC-BY-SA-4.0", attribution: "EthniAfrica" },
   errors: [],
 };
 

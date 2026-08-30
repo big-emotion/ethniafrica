@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { FormFieldError } from "@/components/forms/FormFieldError";
 import { SiteTrail } from "@/components/layout/SiteTrail";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 function ModerationLoginForm() {
   const searchParams = useSearchParams();
@@ -78,7 +79,7 @@ function ModerationLoginForm() {
             Espace modération
           </h1>
           <p className="text-afh-small text-center text-muted-foreground mb-6">
-            Africa History
+            {PRODUCT_NAME}
           </p>
           <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-afh-small text-center">
             Un lien de connexion a été envoyé à <strong>{email}</strong>.
@@ -107,7 +108,7 @@ function ModerationLoginForm() {
           Espace modération
         </h1>
         <p className="text-afh-small text-center text-muted-foreground mb-6">
-          Africa History
+          {PRODUCT_NAME}
         </p>
 
         {error && (

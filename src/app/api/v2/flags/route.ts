@@ -72,7 +72,7 @@
  *                   resolved_at: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *                 pagination:
  *                   limit: 20
  *                   next_cursor: MjAyNi0wNy0yNFQxMDoxNTozMC4wMDBafDljODFjYTBk
@@ -87,7 +87,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: VALIDATION_ERROR
  *                   message: Invalid cursor
@@ -102,7 +102,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: INTERNAL_ERROR
  *                   message: Internal server error
@@ -160,7 +160,7 @@
  *                 created_at: "2026-07-24T10:15:30.000Z"
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors: []
  *       400:
  *         description: Invalid request body.
@@ -172,7 +172,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: VALIDATION_ERROR
  *                   message: String must contain at least 10 character(s)
@@ -190,7 +190,7 @@
  *                   data: null
  *                   meta:
  *                     license: CC-BY-SA-4.0
- *                     attribution: Africa History — africahistory.org
+ *                     attribution: EthniAfrica — ethniafrica.com
  *                   errors:
  *                     - code: AGE_CONFIRMATION_REQUIRED
  *                       message: Age confirmation required (FR45). Complete your profile at /fr/compte/profil.
@@ -200,7 +200,7 @@
  *                   data: null
  *                   meta:
  *                     license: CC-BY-SA-4.0
- *                     attribution: Africa History — africahistory.org
+ *                     attribution: EthniAfrica — ethniafrica.com
  *                   errors:
  *                     - code: UNAUTHORIZED
  *                       message: vérification anti-bot échouée
@@ -231,7 +231,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: RATE_LIMITED
  *                   message: Flag submission rate limit exceeded. Retry after 3600 seconds.
@@ -245,7 +245,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: UNAVAILABLE
  *                   message: vérification anti-bot temporairement indisponible, veuillez réessayer plus tard
@@ -259,7 +259,7 @@
  *               data: null
  *               meta:
  *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
+ *                 attribution: EthniAfrica — ethniafrica.com
  *               errors:
  *                 - code: INTERNAL_ERROR
  *                   message: Internal server error

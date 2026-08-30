@@ -4,7 +4,7 @@ import React from "react";
 
 import { ChapterHeading } from "../ChapterHeading";
 import { LegalDocument } from "@/components/layout/LegalDocument";
-import { getTranslation } from "@/lib/translations";
+import { legalPages } from "@/lib/legal-pages";
 import AboutPageContent from "../AboutPageContent";
 import DoctrinePageContent from "../DoctrinePageContent";
 
@@ -113,8 +113,6 @@ describe("ChapterHeading (chapter anatomy primitive)", () => {
 // ---------------------------------------------------------------------------
 
 describe("LegalDocument (legal template family)", () => {
-  const { legalPages } = getTranslation("fr");
-
   // @req REQ-091
   it("has a valid H1 → H2 heading outline with no skips", () => {
     const { container } = render(

@@ -362,13 +362,20 @@ export function buildFamilyFootprintOverlay(
 /**
  * The frame locates, it never measures. Tinting a country would encode the
  * peoples counted inside it as a closed-border area — exactly what the
- * charter §1 forbids for a people. The count is carried by the radial fields
- * and by them alone, so this opacity is 0 and stays 0.
+ * charter §1 forbids for a people. This opacity is 0 and stays 0.
+ *
+ * It stayed 0 while radial fields carried the count instead; now that the
+ * continent scene draws no field either, it is the only thing standing between
+ * a per-country quantity and a shape the reader would read as a border.
  */
 // @req REQ-116
 export const CONTINENT_FRAME_FILL_OPACITY = 0;
 
-/** Past a dozen fields the stage stops reading as a map and starts reading as a ranking. */
+/**
+ * Past a dozen marks the stage stops reading as a map and starts reading as a
+ * ranking. The cap was written for the radial fields; the marks it now bounds
+ * are the home hero's and the Mercator game's, which pin one per area.
+ */
 // @req REQ-116
 export const CONTINENT_MAX_AREAS = 12;
 
@@ -398,17 +405,20 @@ export interface ContinentFrameCountry {
 }
 
 /**
- * A country's documented peoples, drawn as a radial field. Deliberately has
- * no `rings` key — same structural guarantee as `PeopleFieldArea`: what the
- * type cannot carry, a renderer cannot stroke.
+ * A country the continent scene offers, and how much the corpus holds there.
+ * Deliberately has no `rings` key — same structural guarantee as
+ * `PeopleFieldArea`: what the type cannot carry, a renderer cannot stroke.
+ *
+ * It used to carry a normalised share as well, which the renderers turned into
+ * a radial field. Nothing sized against the corpus is drawn on this scene any
+ * more (charter §1), so the count reaches the reader as a sentence in the
+ * panel, where it can say what it counts.
  */
 export interface ContinentFieldArea {
   countryId: CountryId;
   center: LonLat;
   /** How many peoples fiches name this country. A corpus size, never a population. */
   documentedPeopleCount: number;
-  /** 0..1, normalised to 1 on the best-documented country of the continent. */
-  documentedPeopleShare: number;
 }
 
 export interface ContinentFieldOverlay {
@@ -463,7 +473,6 @@ export function buildContinentOverlay(
     return { kind: "people-field-missing", undrawn: [] };
   }
 
-  const maxCount = counted[0].documentedPeopleCount;
   const areas: ContinentFieldArea[] = [];
 
   for (const entry of counted) {
@@ -480,7 +489,6 @@ export function buildContinentOverlay(
       countryId: entry.countryId,
       center,
       documentedPeopleCount: entry.documentedPeopleCount,
-      documentedPeopleShare: entry.documentedPeopleCount / maxCount,
     });
   }
 
