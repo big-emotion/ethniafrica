@@ -122,3 +122,36 @@ describe("the trail — chrome at interface size, not caption size", () => {
     expect(list.className).not.toContain("text-afh-caption");
   });
 });
+
+describe("the filter hint — a caption on the controls, at the controls' width", () => {
+  /**
+   * The hint sat in a hand-set 62ch box while the switcher above it and the
+   * filter bar below it both filled the container, so a paragraph describing
+   * two full-width controls stopped at two-fifths of them and read as a column
+   * someone had forgotten to finish.
+   *
+   * The typography charter caps *prose* at 65ch and exempts what fills its
+   * container — tables, card grids, the atlas panel. This is a caption on a
+   * control row, not running prose: it belongs with the controls it describes,
+   * and the measure that keeps a paragraph legible is not the rule that
+   * governs a label sitting between two widgets.
+   */
+  // @req REQ-114
+  it("gives the hint no measure of its own", () => {
+    renderShell();
+
+    expect(screen.getByTestId("facet-filter-hint").className).not.toMatch(
+      /max-w-/
+    );
+  });
+
+  // @req REQ-114
+  it("keeps the hint in the same column as the switcher it explains", () => {
+    renderShell();
+
+    const hint = screen.getByTestId("facet-filter-hint");
+    const switcher = screen.getByTestId("facet-switcher");
+
+    expect(hint.parentElement).toBe(switcher.parentElement);
+  });
+});
