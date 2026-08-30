@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Code, Info } from "lucide-react";
+import { BookOpen, Code, GitBranch, Info } from "lucide-react";
 import Link from "next/link";
 
 // @req REQ-099
@@ -87,6 +87,27 @@ export default function ApiDocsPage() {
                   <Code className="h-4 w-4 mr-2" />
                   JSON
                 </Button>
+              </Link>
+            </div>
+          </div>
+        </Card>
+
+        {/* Versioning policy */}
+        <Card className="p-6">
+          <div className="flex items-start gap-3">
+            <GitBranch className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+            <div className="space-y-2">
+              <h3 className="font-semibold">Versionnement et dépréciation</h3>
+              <p className="text-afh-small text-muted-foreground">
+                Ce qu&apos;une version majeure engage, les ajouts qui arrivent
+                sans préavis, et le délai minimum de six mois avant le retrait
+                d&apos;un endpoint.
+              </p>
+              <Link
+                href="/docs/api/versioning"
+                className="inline-block text-afh-small text-primary underline underline-offset-2"
+              >
+                Politique de versionnement
               </Link>
             </div>
           </div>

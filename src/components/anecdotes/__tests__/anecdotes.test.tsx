@@ -93,6 +93,19 @@ describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
       screen.getByRole("img", { name: /Pirogues alignées/ })
     ).toBeInTheDocument();
   });
+
+  // The bank runs from a 0.60 portrait engraving to a 2.30 panorama while the
+  // frame holds one ratio per breakpoint. Filling that frame cropped the
+  // subject off the edges of the very document the anecdote is about.
+  // @req REQ-113
+  it("fits the whole document inside the frame instead of cropping it", () => {
+    const { container } = render(<AnecdoteCard language="fr" fact={SOURCED} />);
+
+    const stylesheet = container.querySelector("style")?.textContent ?? "";
+
+    expect(stylesheet).toContain("object-fit: contain");
+    expect(stylesheet).not.toContain("object-fit: cover");
+  });
 });
 
 describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
