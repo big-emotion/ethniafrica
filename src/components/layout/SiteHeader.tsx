@@ -752,7 +752,30 @@ export function SiteHeader({
         }
 
         /* ── The panel behind the click ─────────────────────────────── */
+        /* Hung off the bar, not inserted into it. The masthead is pinned, so
+           once the reader is into the document its box sits above the top of
+           the screen — and a panel opening *inside* that box grew it by its
+           own height, 224px of layout appearing above the viewport. Scroll
+           anchoring pushes the document down by exactly that much to keep the
+           reader's place, and the scroll event that comes with the adjustment
+           is, to the retraction, indistinguishable from the reader moving
+           down the page: the bar retracted and took the panel with it in the
+           frame the click opened it. The menu therefore answered above
+           RETRACT_BELOW_PX, where the bar may not retract, and nowhere else.
+
+           Out of flow the header's box never changes height, so anchoring has
+           nothing to correct — and a menu that overlays the page rather than
+           displacing it is what the charter's navigation-menu primitive does
+           anyway (atlas charter §3).
+
+           top: 100% rather than a height of its own: what the panel hangs
+           from is the bar's bottom edge, whatever the type scale has made
+           of it. */
         .sh-panel {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
           background: var(--afh-bg);
           border-bottom: 1px solid var(--afh-cat-ocre);
           padding: 20px var(--afh-page-padding) 22px;
