@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
 import type { Language } from "@/types/shared";
-import {
-  getCountryRoute,
-  getFamilyRoute,
-  getLocalizedRoute,
-  getPeopleRoute,
-} from "@/lib/routing";
+import { getLocalizedRoute } from "@/lib/routing";
 
 /**
  * The locale is fixed rather than read from the route. This page is also the
@@ -30,20 +25,14 @@ export default function NotFound() {
           Fiche introuvable
         </h1>
 
+        {/* The page used to spell out the three route patterns, corpus key
+            prefixes included — PPL_XXXXX, FLG_XXXXX, XXX. A reader who
+            mistyped an address cannot repair it from a template, and one who
+            followed a dead link never typed anything. The search below is the
+            answer to both. */}
         <p data-testid="state-copy" className="text-afh-text-soft">
-          Cette page n&apos;existe pas. Les fiches suivent le format{" "}
-          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            {getPeopleRoute(lang, "PPL_XXXXX")}
-          </span>
-          ,{" "}
-          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            {getFamilyRoute(lang, "FLG_XXXXX")}
-          </span>{" "}
-          ou{" "}
-          <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            {getCountryRoute(lang, "XXX")}
-          </span>
-          .
+          Cette adresse ne mène à rien. La fiche a peut-être changé de nom, ou
+          n&apos;est pas encore publiée.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
