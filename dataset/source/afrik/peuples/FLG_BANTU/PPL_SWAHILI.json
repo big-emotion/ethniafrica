@@ -3,6 +3,7 @@
   "nameMain": "Swahili",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN", "TZA", "MOZ", "COM", "COD", "UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Swahili",

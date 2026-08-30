@@ -3,6 +3,7 @@
   "nameMain": "Baga",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Baga",

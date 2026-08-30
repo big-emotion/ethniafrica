@@ -3,6 +3,7 @@
   "nameMain": "Mandara",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mandara",

@@ -3,6 +3,7 @@
   "nameMain": "Lunda-Kazembe",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lunda-Kazembe",

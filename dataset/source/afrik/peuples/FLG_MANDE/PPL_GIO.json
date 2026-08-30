@@ -3,6 +3,7 @@
   "nameMain": "Gio",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["LBR", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gio",

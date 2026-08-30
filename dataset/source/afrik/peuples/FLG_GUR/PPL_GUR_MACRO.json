@@ -3,6 +3,7 @@
   "nameMain": "Peuples Gur",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "GHA", "TGO", "BEN", "CIV", "MLI", "NER"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Gur",

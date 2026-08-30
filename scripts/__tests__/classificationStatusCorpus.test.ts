@@ -198,3 +198,62 @@ describe("classificationStatus corpus contract (ETNI-1359)", () => {
     });
   }
 });
+
+/**
+ * The ledger is the auditable half of the pass: each fiche's assigned status
+ * with the sentence of its own prose that justified it. A ledger that drifts
+ * from the corpus is worse than none — it would read as a review that
+ * happened while the fiches said something else — so the two are held equal
+ * here rather than by anyone's diligence.
+ */
+describe("classification ledger agrees with the corpus (ETNI-1359)", () => {
+  interface LedgerEntry {
+    id: string;
+    status: string;
+    rationale: string;
+  }
+
+  const ledger: LedgerEntry[] = JSON.parse(
+    fs.readFileSync(
+      path.join(REPO_ROOT, "docs/editorial/classification-status-ledger.json"),
+      "utf8"
+    )
+  );
+  const byId = new Map(
+    rows(familyFiles.concat(peopleFiles)).map((r) => [r.id, r])
+  );
+
+  // @req REQ-023
+  it("records every fiche the corpus classifies, and only those", () => {
+    const classifiedInCorpus = [...byId.values()]
+      .filter((row) => row.status)
+      .map((row) => row.id)
+      .sort();
+    const inLedger = ledger.map((entry) => entry.id).sort();
+
+    expect(inLedger).toEqual(classifiedInCorpus);
+  });
+
+  // @req REQ-023
+  it("assigns each fiche the status the corpus carries", () => {
+    const disagreements = ledger
+      .filter((entry) => byId.get(entry.id)?.status !== entry.status)
+      .map(
+        (entry) =>
+          `${entry.id}: ledger=${entry.status} corpus=${String(byId.get(entry.id)?.status)}`
+      );
+
+    expect(disagreements).toEqual([]);
+  });
+
+  // A decision with no stated reason is not auditable, which is the only
+  // thing the ledger exists to be.
+  // @req REQ-023
+  it("gives every decision a rationale", () => {
+    const unreasoned = ledger
+      .filter((entry) => (entry.rationale ?? "").trim().length < 20)
+      .map((entry) => entry.id);
+
+    expect(unreasoned).toEqual([]);
+  });
+});

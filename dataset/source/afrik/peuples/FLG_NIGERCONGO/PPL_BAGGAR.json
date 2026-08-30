@@ -3,6 +3,7 @@
   "nameMain": "Baggara",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SDN", "TCD", "NGA", "CMR", "CAF", "NER", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Baggara",

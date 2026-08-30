@@ -3,6 +3,7 @@
   "nameMain": "Anuak",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["SSD", "ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Anuak",

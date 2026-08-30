@@ -3,6 +3,7 @@
   "nameMain": "Lomwe",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ", "MWI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Lomwe",

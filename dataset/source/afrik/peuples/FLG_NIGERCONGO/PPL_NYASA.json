@@ -3,6 +3,7 @@
   "nameMain": "Nyasa",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI", "MOZ", "TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nyasa",

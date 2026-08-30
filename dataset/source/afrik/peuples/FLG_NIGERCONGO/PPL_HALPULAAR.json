@@ -3,6 +3,7 @@
   "nameMain": "Halpulaar",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SEN", "MRT", "MLI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Halpulaar",

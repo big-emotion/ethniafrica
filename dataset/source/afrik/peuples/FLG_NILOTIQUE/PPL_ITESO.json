@@ -3,6 +3,7 @@
   "nameMain": "Iteso",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["UGA", "KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Iteso",

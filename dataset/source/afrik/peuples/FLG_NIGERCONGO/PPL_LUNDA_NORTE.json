@@ -3,6 +3,7 @@
   "nameMain": "Lunda (Norte)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lunda de Lunda Norte",

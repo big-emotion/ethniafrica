@@ -3,6 +3,7 @@
   "nameMain": "Ngoni",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI", "TZA", "ZMB", "MOZ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ngoni",

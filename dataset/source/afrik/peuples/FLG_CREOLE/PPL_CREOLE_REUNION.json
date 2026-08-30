@@ -3,6 +3,7 @@
   "nameMain": "Créoles Réunionnais",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["REU"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Créoles Réunionnais",

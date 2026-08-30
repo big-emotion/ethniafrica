@@ -3,6 +3,7 @@
   "nameMain": "Bambara",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bambara",

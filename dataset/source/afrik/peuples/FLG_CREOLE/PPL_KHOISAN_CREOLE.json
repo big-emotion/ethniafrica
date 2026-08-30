@@ -3,6 +3,7 @@
   "nameMain": "Khoisan Creole",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["NAM", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Khoisan Creole",

@@ -3,6 +3,7 @@
   "nameMain": "Soninke",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "SEN", "MRT", "GMB", "GNB", "GIN", "BFA", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Soninke",

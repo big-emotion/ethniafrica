@@ -3,6 +3,7 @@
   "nameMain": "Bwaba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "MLI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bwaba",

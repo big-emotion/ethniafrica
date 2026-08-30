@@ -3,6 +3,7 @@
   "nameMain": "Yalunka",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GIN", "SLE", "MLI", "SEN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Yalunka",

@@ -3,6 +3,7 @@
   "nameMain": "Manyika",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE", "MOZ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Manyika",

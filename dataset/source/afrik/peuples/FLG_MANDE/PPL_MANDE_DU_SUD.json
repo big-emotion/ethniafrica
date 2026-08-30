@@ -3,6 +3,7 @@
   "nameMain": "Mande du Sud",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Mande du Sud",
