@@ -29,6 +29,23 @@
   /* Layout-level aliases (mobile-first containers) */
   --afh-page-padding: 12px;
   --afh-card-padding: 18px;
+  /* UNCONSUMED, and it does not describe what ships. Recorded rather than
+     quietly wired, because wiring it would move the page instead of naming it.
+
+     The bands of the home do not sit in a gap: they abut, and the cadence
+     between two of them is the previous one's bottom padding plus the next
+     one's top. Measured on the rendered page:
+
+       430px   44 · 70 · 68 · 68 · 74 · 60
+       1440px  64 · 96 · 108 · 108 · 100 · 78
+
+     So the real rhythm is near-regular in the middle and hand-kept at both
+     ends, at roughly 68 and 104 — not the 24/32/48 below. Reconciling the two
+     is a design decision about the most visited page in the product, and the
+     values a designer needs to take it are the two rows above.
+
+     Brand charter §7. Until then, treat this token as a target, not as a
+     description: nothing reads it. */
   --afh-section-gap: 24px;
   --afh-container-max: 430px;
 
