@@ -340,6 +340,12 @@ body { margin: 0; background: var(--bench); font-family: var(--afh-font-body); -
 .note b { color: var(--afh-text); }
 .sec .note { margin-top: 16px; }
 
+/* An aside whose subject is uncomfortable enough to set apart, but which
+   has no caption to give it: the rule and the glyph say "read this twice"
+   without the fiche narrating its own editorial posture. */
+.note-marked { display: flex; gap: 10px; }
+.note-mark { flex: none; width: 17px; height: 17px; margin-top: 4px; color: var(--accent-ink, var(--accent)); }
+
 .sources { display: grid; gap: 8px; }
 .source-row { display: flex; align-items: flex-start; gap: 10px; font-size: var(--afh-text-small); color: var(--afh-text-soft); line-height: 1.6; }
 .source-row .state-chip { flex: none; margin-top: 1px; }
