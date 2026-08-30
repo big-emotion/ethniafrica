@@ -61,6 +61,25 @@ beforeEach(() => {
 
 afterEach(cleanup);
 
+describe("SiteHeader — the way back to the top", () => {
+  // @req REQ-114
+  it("is a focus destination without being a stop on the way through the bar", () => {
+    // The back-to-top control scrolls the page and sends the focus here; a
+    // masthead that took Tab as well would put a nameless stop in front of
+    // the brand link on every page.
+    renderHeader();
+
+    expect(screen.getByTestId("site-header")).toHaveAttribute("tabindex", "-1");
+  });
+
+  // @req REQ-114
+  it("carries no id, so a streamed route cannot render two of the same one", () => {
+    renderHeader();
+
+    expect(screen.getByTestId("site-header")).not.toHaveAttribute("id");
+  });
+});
+
 describe("SiteHeader — three intentions, not ten modules (atlas charter §3)", () => {
   // @req REQ-114
   it("offers exactly the three access modes as entry points", () => {
