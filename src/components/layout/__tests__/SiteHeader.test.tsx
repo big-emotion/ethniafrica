@@ -55,6 +55,24 @@ const trigger = (label: string) => screen.getByRole("button", { name: label });
 
 const panel = () => screen.getByTestId("site-megapanel");
 
+// The masthead carries its own stylesheet, so the positioning contracts below
+// are read off that text rather than off computed styles: happy-dom resolves
+// no cascade from an inline <style>, and it lays nothing out either.
+const headerStyleSheet = () =>
+  screen.getByTestId("site-header").querySelector("style")?.textContent ?? "";
+
+// Every block written for the selector, not the first one: these rules are
+// declared once and then adjusted per viewport, and a contract that read only
+// the opening rule would pass on a stylesheet that undid it below.
+const declarationsFor = (selector: string) =>
+  [
+    ...headerStyleSheet().matchAll(
+      new RegExp(`(?:^|[,{}\\s])${selector}\\s*(?:,[^{]*)?\\{([^}]*)\\}`, "g")
+    ),
+  ]
+    .map((block) => block[1])
+    .join("\n");
+
 beforeEach(() => {
   mockPathname = "/fr";
 });
@@ -443,17 +461,23 @@ describe("SiteHeader — the controls that stay in the bar", () => {
     expect(screen.getByTestId(/^theme-toggle/)).toBeInTheDocument();
   });
 
-  // Carried over from the bar this replaces: a route-local sticky secondary
-  // bar would collide with a fixed header (R3/FR105).
+  // Pinned since the masthead was given back, and pinned two ways at once:
+  // sticky keeps the bar's slot in the flow, so nothing below it has to be
+  // padded by a height this file would then have to guarantee, and it makes
+  // the masthead a positioned ancestor — which is the box the axis panel
+  // hangs from. Fixed would cost both.
+  //
+  // This asserted the absence of the Tailwind `fixed` and `sticky` classes,
+  // which the masthead never carried: the positioning is declared in its own
+  // stylesheet. The bar turned sticky underneath a test that went on passing.
   // @req REQ-114
-  it("stays static rather than fixed or sticky on every route", () => {
+  it("pins the masthead with sticky rather than lifting it out of the flow", () => {
     for (const pathname of ["/fr", getLocalizedRoute("fr", "countries")]) {
       mockPathname = pathname;
       renderHeader();
 
-      const header = screen.getByTestId("site-header");
-      expect(header.className).not.toMatch(/(^|\s)fixed(\s|$)/);
-      expect(header.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+      expect(declarationsFor("\\.sh-header")).toMatch(/position:\s*sticky/);
+      expect(declarationsFor("\\.sh-header")).not.toMatch(/position:\s*fixed/);
       cleanup();
     }
   });
@@ -501,5 +525,31 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
       "href",
       getLocalizedRoute("fr", "peoples")
     );
+  });
+});
+
+describe("SiteHeader — the panel opens over the page, not through it", () => {
+  /**
+   * The masthead is pinned, so once the reader is into the document its box
+   * sits above the top of the screen. A panel opening *inside* that box grows
+   * it by its own height — 224px of layout inserted above the viewport — and
+   * scroll anchoring pushes the document down by exactly that much to keep
+   * the reader's place. The adjustment dispatches a scroll event,
+   * `nextRevealState` reads the 224px step as the reader moving down the
+   * document, and the bar retracts — which closes the panel in the same frame
+   * the click opened it. Measured on recette: 2400 -> 2624 on open, and no
+   * menu below the bar. Above RETRACT_BELOW_PX the bar may not retract, which
+   * is why the menu worked at the top of the page and nowhere else.
+   *
+   * Out of flow, the header's box never changes height, so anchoring has
+   * nothing to correct. It is also what the charter's `navigation-menu`
+   * primitive does (atlas charter §3): a menu overlays the page.
+   */
+  // @req REQ-114
+  it("takes the panel out of the masthead's flow, so opening it cannot move the page", () => {
+    renderHeader();
+    fireEvent.click(trigger("Explorer"));
+
+    expect(declarationsFor("\\.sh-panel")).toMatch(/position:\s*absolute/);
   });
 });

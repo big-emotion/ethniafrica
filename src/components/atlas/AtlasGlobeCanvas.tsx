@@ -6,7 +6,7 @@ import { CHARTER_OCRE_HEX } from "@/components/home/DottedContinent";
 import { cameraOffset, type CameraPose } from "@/lib/atlas/camera";
 import {
   buildPointField,
-  buildRingFan,
+  buildRingFill,
   buildRingLineLoop,
 } from "@/lib/atlas/globeGeometry";
 import {
@@ -221,7 +221,7 @@ export interface AtlasGlobeCanvasProps {
 /**
  * The WebGL half of AtlasGlobe (ADR-0007). Draws exactly the overlay
  * descriptor it is given: a country/family ring as a filled, stroked
- * GL_LINE_LOOP + GL_TRIANGLE_FAN pair, or a people field as GL_POINTS —
+ * GL_LINE_LOOP + GL_TRIANGLES pair, or a people field as GL_POINTS —
  * never the other geometry, so a people overlay is structurally incapable
  * of producing a closed line here.
  *
@@ -501,7 +501,7 @@ export function AtlasGlobeCanvas({
       // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
       // draw a transparent area, it draws no area at all — skipping the pass
       // is what makes a per-country fill impossible rather than merely
-      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
+      // invisible (atlas-charter §1). No fill drawn, so no fill triangulated either.
       const fillsRings = isFamily || staticFillOpacity > 0;
 
       // The continent frame is 51 reference outlines and carries no count of
@@ -523,7 +523,7 @@ export function AtlasGlobeCanvas({
               countryId: country.countryId,
               weight: country.weight,
               dashRepeats: footprintDashRepeats(ring),
-              fan: buildRingFan(ring),
+              fill: buildRingFill(ring),
               loop: buildRingLineLoop(ring),
             }))
           )
@@ -532,7 +532,7 @@ export function AtlasGlobeCanvas({
               overlay.kind === "country-outline" ? overlay.countryId : null,
             weight: 1,
             dashRepeats: 0,
-            fan: fillsRings ? buildRingFan(ring) : null,
+            fill: fillsRings ? buildRingFill(ring) : null,
             loop: buildRingLineLoop(ring),
           }));
 
@@ -542,8 +542,8 @@ export function AtlasGlobeCanvas({
       // no field at all.
       const drawField = fieldAreas ? createFieldLayer(fieldAreas) : null;
 
-      const fanBuffer = gl.createBuffer();
-      const fanFlatBuffer = gl.createBuffer();
+      const fillBuffer = gl.createBuffer();
+      const fillFlatBuffer = gl.createBuffer();
       const loopPositionBuffer = gl.createBuffer();
       const loopFlatBuffer = gl.createBuffer();
       const loopArcBuffer = gl.createBuffer();
@@ -577,7 +577,7 @@ export function AtlasGlobeCanvas({
         // and any future consumer read the same curve.
         const revealed = footprintRevealEase(progressRef.current);
 
-        shapes.forEach(({ countryId, weight, dashRepeats, fan, loop }) => {
+        shapes.forEach(({ countryId, weight, dashRepeats, fill, loop }) => {
           const isFocused = focusedCountryId === countryId;
           const dimmed = focusedCountryId !== null && !isFocused;
 
@@ -587,13 +587,13 @@ export function AtlasGlobeCanvas({
           const strokeOpacity = isFamily ? footprintStrokeOpacity(dimmed) : 1;
           const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
 
-          if (fan) {
-            gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
-            gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
+          if (fill) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, fillBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fill.positions, gl.STATIC_DRAW);
             gl.enableVertexAttribArray(aSpherePos);
             gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-            gl.bindBuffer(gl.ARRAY_BUFFER, fanFlatBuffer);
-            gl.bufferData(gl.ARRAY_BUFFER, fan.flatPositions, gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, fillFlatBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fill.flatPositions, gl.STATIC_DRAW);
             gl.enableVertexAttribArray(aFlat);
             gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
             gl.disableVertexAttribArray(aArcFraction);
@@ -602,7 +602,7 @@ export function AtlasGlobeCanvas({
             gl.uniform1f(uProgress, 1);
             gl.uniform1f(uDashRepeats, 0);
             gl.uniform4f(uColor, r, g, b, fillOpacity);
-            gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+            gl.drawArrays(gl.TRIANGLES, 0, fill.vertexCount);
           }
 
           gl.bindBuffer(gl.ARRAY_BUFFER, loopPositionBuffer);
