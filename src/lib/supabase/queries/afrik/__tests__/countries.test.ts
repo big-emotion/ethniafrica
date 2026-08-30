@@ -79,6 +79,30 @@ describe("AFRIK Countries Queries", () => {
       expect(result?.id).toBe("ZWE");
     });
 
+    // The corpus has held a distinct `nameOfficial` on all 54 fiches from the
+    // start — FR33 fails the build when it merely repeats `nameFr` — but the
+    // column did not exist and the row mapper dropped it, so `mapCountryDetail`
+    // fell back to `nameFr` and every fiche printed its name twice.
+    // @req REQ-019
+    it("surfaces the official name distinct from the usual one", async () => {
+      mockSupabase.single.mockResolvedValue({
+        data: {
+          id: "ZAF",
+          name_fr: "Afrique du Sud",
+          name_official:
+            "République d'Afrique du Sud (Republic of South Africa)",
+          content: {},
+        },
+        error: null,
+      });
+
+      const result = await getAfrikCountryById("ZAF");
+
+      expect(result?.nameOfficial).toBe(
+        "République d'Afrique du Sud (Republic of South Africa)"
+      );
+    });
+
     it("should return null if not found", async () => {
       mockSupabase.single.mockResolvedValue({
         data: null,

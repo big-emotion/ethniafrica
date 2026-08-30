@@ -27,6 +27,13 @@ export function CountryFicheTitle({
 }) {
   const { hero } = transformCountryData(country);
   const hasPeoples = (country.demographics?.peoples?.length ?? 0) > 0;
+  // The head names the country twice on purpose — the name of ordinary use,
+  // then the protocol name under it — but only while they are two different
+  // facts. Repeating one word as if it were two overstates what the fiche
+  // knows, the same reason the family lede declines to name the autonym and
+  // the English name separately when they are the same word.
+  const statesTwoNames =
+    Boolean(hero.nameOfficial) && hero.nameOfficial !== hero.countryName;
 
   // The trail is the shell's now (`PageLayout` → `SiteTrail`). The back link
   // below is not a crumb and never was: it states where the reader came from,
@@ -51,7 +58,7 @@ export function CountryFicheTitle({
           {hasPeoples && ` · réf. ${DEMOGRAPHIC_REFERENCE_YEAR}`}
         </p>
         <h1>{hero.countryName}</h1>
-        {hero.nameOfficial && (
+        {statesTwoNames && (
           <p className="afh-parchment-lede">{hero.nameOfficial}</p>
         )}
       </header>
