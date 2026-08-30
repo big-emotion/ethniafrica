@@ -69,15 +69,6 @@ interface FormErrors {
   reason?: string;
 }
 
-const FLAG_KINDS: ReadonlyArray<{ value: FlagKind; label: string }> = [
-  { value: "inaccurate", label: "Contenu inexact" },
-  { value: "missing-source", label: "Source manquante" },
-  { value: "broken-url", label: "Lien cassé" },
-  { value: "offensive", label: "Contenu offensant" },
-  { value: "correction-proposal", label: "Proposition de correction" },
-  { value: "other", label: "Autre" },
-];
-
 // Every target type the triggers mount, so the fallback below never has to
 // print the raw enum value — `fiche_section` on a dialog is the database's
 // vocabulary, not the reader's.
@@ -91,12 +82,6 @@ const TARGET_LABELS: Record<string, string> = {
   source: "Source",
 };
 
-const SOURCE_REQUIRED_KINDS: ReadonlyArray<FlagKind> = [
-  "inaccurate",
-  "missing-source",
-  "correction-proposal",
-];
-
 function isValidHttpUrl(value: string) {
   try {
     const url = new URL(value);
@@ -106,14 +91,36 @@ function isValidHttpUrl(value: string) {
   }
 }
 
-function validateForm({
-  kind,
+/**
+ * What kind of report this is, read off what the reader supplied.
+ *
+ * It used to be their first decision: six categories, required, before a word
+ * could be written — and the choice then imposed further mandatory fields, so
+ * picking "source manquante" obliged the reader to supply the source they had
+ * just said was missing. The reader states the problem; the atlas files it,
+ * and a moderator confirms or overrides at triage (moderation charter §1).
+ */
+// @req REQ-012
+export function deriveFlagKind({
   counterSourceUrl,
   counterSourceCitation,
   proposedRewrite,
+}: {
+  counterSourceUrl: string;
+  counterSourceCitation: string;
+  proposedRewrite: string;
+}): FlagKind {
+  if (proposedRewrite.trim()) return "correction-proposal";
+  if (counterSourceUrl.trim() || counterSourceCitation.trim())
+    return "missing-source";
+  return "other";
+}
+
+function validateForm({
+  counterSourceUrl,
+  counterSourceCitation,
   reason,
 }: {
-  kind: FlagKind | "";
   counterSourceUrl: string;
   counterSourceCitation: string;
   proposedRewrite: string;
@@ -121,19 +128,8 @@ function validateForm({
 }): FormErrors {
   const errors: FormErrors = {};
 
-  if (!kind) {
-    errors.kind = "Choisissez un type de signalement.";
-    return errors;
-  }
-
-  if (
-    SOURCE_REQUIRED_KINDS.includes(kind) &&
-    !counterSourceUrl.trim() &&
-    !counterSourceCitation.trim()
-  ) {
-    errors.sources = "Une source ou une citation est requise.";
-  }
-
+  // Only what the reader actually opened can be wrong. A collapsed panel they
+  // never touched cannot hold an error.
   if (counterSourceUrl.trim() && !isValidHttpUrl(counterSourceUrl.trim())) {
     errors.counterSourceUrl = "Saisissez une adresse HTTP ou HTTPS valide.";
   }
@@ -143,12 +139,12 @@ function validateForm({
       "La citation ne peut pas dépasser 2 000 caractères.";
   }
 
-  if (kind === "correction-proposal" && !proposedRewrite.trim()) {
-    errors.proposedRewrite = "La proposition de correction est requise.";
-  }
-
-  if (reason.trim().length < 50 || reason.length > 2000) {
-    errors.reason = "La raison doit contenir entre 50 et 2 000 caractères.";
+  // Ten, not fifty. The API has always accepted ten (`reason_text` min(10)),
+  // and the form asked for five times that without saying why — enough to
+  // turn "l'orthographe de Bété est fausse" into a validation error.
+  if (reason.trim().length < 10 || reason.length > 2000) {
+    errors.reason =
+      "La description doit contenir entre 10 et 2 000 caractères.";
   }
 
   return errors;
@@ -162,7 +158,6 @@ export function FlagForm({
   renderTurnstile,
 }: FlagFormProps) {
   const idPrefix = useId();
-  const [kind, setKind] = useState<FlagKind | "">("");
   const [counterSourceUrl, setCounterSourceUrl] = useState("");
   const [counterSourceCitation, setCounterSourceCitation] = useState("");
   const [proposedRewrite, setProposedRewrite] = useState("");
@@ -175,7 +170,6 @@ export function FlagForm({
   const [publicSlug, setPublicSlug] = useState("");
   const [turnstileAttempt, setTurnstileAttempt] = useState(0);
 
-  const kindErrorId = `${idPrefix}-kind-error`;
   const sourceRequirementId = `${idPrefix}-sources-requirement`;
   const sourcesErrorId = `${idPrefix}-sources-error`;
   const counterSourceUrlErrorId = `${idPrefix}-counter-source-url-error`;
@@ -190,14 +184,10 @@ export function FlagForm({
   const reasonErrorId = `${idPrefix}-reason-error`;
   const turnstileHeadingId = `${idPrefix}-turnstile-heading`;
   const turnstileErrorId = `${idPrefix}-turnstile-error`;
-  const sourceIsRequired = Boolean(
-    kind && SOURCE_REQUIRED_KINDS.includes(kind)
-  );
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validateForm({
-      kind,
       counterSourceUrl,
       counterSourceCitation,
       proposedRewrite,
@@ -209,9 +199,15 @@ export function FlagForm({
       setTurnstileError(turnstileError || "Validez le contrôle anti-robot.");
     }
 
-    if (!kind || Object.keys(nextErrors).length > 0 || !turnstileToken) {
+    if (Object.keys(nextErrors).length > 0 || !turnstileToken) {
       return;
     }
+
+    const derivedKind = deriveFlagKind({
+      counterSourceUrl,
+      counterSourceCitation,
+      proposedRewrite,
+    });
 
     setIsSubmitting(true);
     setSubmissionError("");
@@ -221,7 +217,7 @@ export function FlagForm({
         target_type: target.type,
         target_id: target.id,
         ...(target.fieldPath ? { target_field_path: target.fieldPath } : {}),
-        flag_kind: kind,
+        flag_kind: derivedKind,
         reason_text: reason.trim(),
         ...(counterSourceUrl.trim()
           ? { counter_source_url: counterSourceUrl.trim() }
@@ -229,7 +225,7 @@ export function FlagForm({
         ...(counterSourceCitation.trim()
           ? { counter_source_citation: counterSourceCitation.trim() }
           : {}),
-        ...(kind === "correction-proposal" && proposedRewrite.trim()
+        ...(proposedRewrite.trim()
           ? { proposed_rewrite: proposedRewrite.trim() }
           : {}),
         turnstile_token: turnstileToken,
@@ -300,218 +296,189 @@ export function FlagForm({
         )}
       </section>
 
-      <fieldset
-        aria-describedby={errors.kind ? kindErrorId : undefined}
-        className="space-y-afh-lg"
-      >
-        <legend className="text-afh-body font-semibold">
-          Type de signalement
-        </legend>
-        <div className="grid gap-afh-md md:grid-cols-2">
-          {FLAG_KINDS.map((option) => {
-            const optionId = `${idPrefix}-kind-${option.value}`;
-            return (
-              <label
-                className="flex min-h-11 cursor-pointer items-center gap-afh-lg rounded-afh-md border border-afh-border px-afh-lg py-afh-md text-afh-body focus-within:ring-2 focus-within:ring-afh-terracotta"
-                htmlFor={optionId}
-                key={option.value}
-              >
-                <input
-                  checked={kind === option.value}
-                  className="size-4 accent-[var(--afh-terracotta)]"
-                  id={optionId}
-                  name="flag_kind"
-                  onChange={() => {
-                    setKind(option.value);
-                    setErrors({});
-                  }}
-                  required
-                  type="radio"
-                  value={option.value}
-                />
-                {option.label}
-              </label>
-            );
-          })}
-        </div>
-        {errors.kind && (
+      <div className="space-y-afh-md">
+        <Label htmlFor={reasonId}>Qu&apos;est-ce qui ne va pas&nbsp;?</Label>
+        <Textarea
+          aria-describedby={`${reasonCounterId}${
+            errors.reason ? ` ${reasonErrorId}` : ""
+          }`}
+          aria-invalid={Boolean(errors.reason)}
+          id={reasonId}
+          maxLength={2000}
+          minLength={50}
+          onChange={(event) => setReason(event.target.value)}
+          required
+          value={reason}
+        />
+        <p
+          className="text-right text-afh-caption text-afh-fg-muted"
+          id={reasonCounterId}
+        >
+          {reason.length.toLocaleString("fr-FR")} / 2 000
+        </p>
+        {errors.reason && (
           <p
             className="text-afh-small text-afh-flag-open"
-            id={kindErrorId}
+            id={reasonErrorId}
             role="alert"
           >
-            {errors.kind}
+            {errors.reason}
           </p>
         )}
-      </fieldset>
+      </div>
 
-      {kind && (
-        <fieldset
-          aria-describedby={[
-            sourceRequirementId,
-            errors.sources ? sourcesErrorId : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-          className="space-y-afh-lg"
-        >
-          <legend className="text-afh-body font-semibold">
-            Sources à l’appui
-          </legend>
-          <p
-            className="text-afh-small text-afh-text-soft"
-            id={sourceRequirementId}
-          >
-            {sourceIsRequired
-              ? "Ajoutez au moins un lien ou une citation."
-              : "Ajoutez un lien ou une citation si vous en disposez."}
-          </p>
+      {/* Everything below is optional and collapsed. The reader who has only
+          a remark writes one line and leaves; the reader who has the answer,
+          or a source, opens a panel. The kind of report is derived from which
+          of them they filled — the atlas classifies, the reader does not
+          (moderation charter §1). */}
+      <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
+        <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
+          Vous connaissez la bonne réponse&nbsp;?{" "}
+          <span aria-hidden="true">▸</span>
+        </summary>
+        <div className="pt-afh-md">
           <div className="space-y-afh-md">
-            <Label htmlFor={counterSourceUrlId}>Lien de la contre-source</Label>
-            <Input
-              aria-describedby={[
-                sourceRequirementId,
-                errors.sources ? sourcesErrorId : "",
-                errors.counterSourceUrl ? counterSourceUrlErrorId : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              aria-invalid={Boolean(errors.counterSourceUrl)}
-              id={counterSourceUrlId}
-              onChange={(event) => {
-                setCounterSourceUrl(event.target.value);
-                setErrors((current) => ({
-                  ...current,
-                  sources: undefined,
-                  counterSourceUrl: undefined,
-                }));
-              }}
-              type="url"
-              value={counterSourceUrl}
-            />
-            {errors.counterSourceUrl && (
-              <p
-                className="text-afh-small text-afh-flag-open"
-                id={counterSourceUrlErrorId}
-                role="alert"
-              >
-                {errors.counterSourceUrl}
-              </p>
-            )}
-          </div>
-          <div className="space-y-afh-md">
-            <Label htmlFor={counterSourceCitationId}>
-              Citation de la contre-source
-            </Label>
+            <Label htmlFor={proposedRewriteId}>Proposition de correction</Label>
             <Textarea
-              aria-describedby={[
-                sourceRequirementId,
-                errors.sources ? sourcesErrorId : "",
-                errors.counterSourceCitation
-                  ? counterSourceCitationErrorId
-                  : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              aria-invalid={Boolean(errors.counterSourceCitation)}
-              id={counterSourceCitationId}
-              maxLength={2000}
-              onChange={(event) => {
-                setCounterSourceCitation(event.target.value);
-                setErrors((current) => ({
-                  ...current,
-                  sources: undefined,
-                  counterSourceCitation: undefined,
-                }));
-              }}
-              value={counterSourceCitation}
+              aria-describedby={`${proposedRewriteCounterId}${
+                errors.proposedRewrite ? ` ${proposedRewriteErrorId}` : ""
+              }`}
+              aria-invalid={Boolean(errors.proposedRewrite)}
+              id={proposedRewriteId}
+              maxLength={5000}
+              onChange={(event) => setProposedRewrite(event.target.value)}
+              required
+              value={proposedRewrite}
             />
-            {errors.counterSourceCitation && (
+            <p
+              className="text-right text-afh-caption text-afh-fg-muted"
+              id={proposedRewriteCounterId}
+            >
+              {proposedRewrite.length.toLocaleString("fr-FR")} / 5 000
+            </p>
+            {errors.proposedRewrite && (
               <p
                 className="text-afh-small text-afh-flag-open"
-                id={counterSourceCitationErrorId}
+                id={proposedRewriteErrorId}
                 role="alert"
               >
-                {errors.counterSourceCitation}
+                {errors.proposedRewrite}
               </p>
             )}
           </div>
-          {errors.sources && (
-            <p
-              className="text-afh-small text-afh-flag-open"
-              id={sourcesErrorId}
-              role="alert"
-            >
-              {errors.sources}
-            </p>
-          )}
-        </fieldset>
-      )}
-
-      {kind === "correction-proposal" && (
-        <div className="space-y-afh-md">
-          <Label htmlFor={proposedRewriteId}>Proposition de correction</Label>
-          <Textarea
-            aria-describedby={`${proposedRewriteCounterId}${
-              errors.proposedRewrite ? ` ${proposedRewriteErrorId}` : ""
-            }`}
-            aria-invalid={Boolean(errors.proposedRewrite)}
-            id={proposedRewriteId}
-            maxLength={5000}
-            onChange={(event) => setProposedRewrite(event.target.value)}
-            required
-            value={proposedRewrite}
-          />
-          <p
-            className="text-right text-afh-caption text-afh-fg-muted"
-            id={proposedRewriteCounterId}
-          >
-            {proposedRewrite.length.toLocaleString("fr-FR")} / 5 000
-          </p>
-          {errors.proposedRewrite && (
-            <p
-              className="text-afh-small text-afh-flag-open"
-              id={proposedRewriteErrorId}
-              role="alert"
-            >
-              {errors.proposedRewrite}
-            </p>
-          )}
         </div>
-      )}
+      </details>
 
-      {kind && (
-        <div className="space-y-afh-md">
-          <Label htmlFor={reasonId}>Raison du signalement</Label>
-          <Textarea
-            aria-describedby={`${reasonCounterId}${
-              errors.reason ? ` ${reasonErrorId}` : ""
-            }`}
-            aria-invalid={Boolean(errors.reason)}
-            id={reasonId}
-            maxLength={2000}
-            minLength={50}
-            onChange={(event) => setReason(event.target.value)}
-            required
-            value={reason}
-          />
-          <p
-            className="text-right text-afh-caption text-afh-fg-muted"
-            id={reasonCounterId}
+      <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
+        <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
+          Vous avez une source&nbsp;? <span aria-hidden="true">▸</span>
+        </summary>
+        <div className="pt-afh-md">
+          <fieldset
+            aria-describedby={[
+              sourceRequirementId,
+              errors.sources ? sourcesErrorId : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            className="space-y-afh-lg"
           >
-            {reason.length.toLocaleString("fr-FR")} / 2 000
-          </p>
-          {errors.reason && (
+            <legend className="text-afh-body font-semibold">
+              Sources à l’appui
+            </legend>
             <p
-              className="text-afh-small text-afh-flag-open"
-              id={reasonErrorId}
-              role="alert"
+              className="text-afh-small text-afh-text-soft"
+              id={sourceRequirementId}
             >
-              {errors.reason}
+              {false
+                ? "Ajoutez au moins un lien ou une citation."
+                : "Ajoutez un lien ou une citation si vous en disposez."}
             </p>
-          )}
+            <div className="space-y-afh-md">
+              <Label htmlFor={counterSourceUrlId}>
+                Lien de la contre-source
+              </Label>
+              <Input
+                aria-describedby={[
+                  sourceRequirementId,
+                  errors.sources ? sourcesErrorId : "",
+                  errors.counterSourceUrl ? counterSourceUrlErrorId : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+                aria-invalid={Boolean(errors.counterSourceUrl)}
+                id={counterSourceUrlId}
+                onChange={(event) => {
+                  setCounterSourceUrl(event.target.value);
+                  setErrors((current) => ({
+                    ...current,
+                    sources: undefined,
+                    counterSourceUrl: undefined,
+                  }));
+                }}
+                type="url"
+                value={counterSourceUrl}
+              />
+              {errors.counterSourceUrl && (
+                <p
+                  className="text-afh-small text-afh-flag-open"
+                  id={counterSourceUrlErrorId}
+                  role="alert"
+                >
+                  {errors.counterSourceUrl}
+                </p>
+              )}
+            </div>
+            <div className="space-y-afh-md">
+              <Label htmlFor={counterSourceCitationId}>
+                Citation de la contre-source
+              </Label>
+              <Textarea
+                aria-describedby={[
+                  sourceRequirementId,
+                  errors.sources ? sourcesErrorId : "",
+                  errors.counterSourceCitation
+                    ? counterSourceCitationErrorId
+                    : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+                aria-invalid={Boolean(errors.counterSourceCitation)}
+                id={counterSourceCitationId}
+                maxLength={2000}
+                onChange={(event) => {
+                  setCounterSourceCitation(event.target.value);
+                  setErrors((current) => ({
+                    ...current,
+                    sources: undefined,
+                    counterSourceCitation: undefined,
+                  }));
+                }}
+                value={counterSourceCitation}
+              />
+              {errors.counterSourceCitation && (
+                <p
+                  className="text-afh-small text-afh-flag-open"
+                  id={counterSourceCitationErrorId}
+                  role="alert"
+                >
+                  {errors.counterSourceCitation}
+                </p>
+              )}
+            </div>
+            {errors.sources && (
+              <p
+                className="text-afh-small text-afh-flag-open"
+                id={sourcesErrorId}
+                role="alert"
+              >
+                {errors.sources}
+              </p>
+            )}
+          </fieldset>
         </div>
-      )}
+      </details>
 
       <div className="flex flex-col-reverse gap-afh-lg md:flex-row md:justify-end">
         <Button

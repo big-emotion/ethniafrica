@@ -41,8 +41,30 @@ function renderForm(
   return { ...view, onSubmit, onCancel };
 }
 
-function chooseKind(value: string) {
-  fireEvent.click(screen.getByRole("radio", { name: new RegExp(value, "i") }));
+const REASON_LABEL = /qu'est-ce qui ne va pas/i;
+
+/**
+ * Fill the one required field, optionally open a disclosure and fill it, then
+ * send. `fields` is keyed by visible label so each test reads as the gesture
+ * a reporter actually performs.
+ */
+async function submitReport(
+  fields: Record<string, string>,
+  reason = validReason()
+) {
+  const view = renderWithTurnstile();
+
+  fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+    target: { value: reason },
+  });
+  for (const [label, value] of Object.entries(fields)) {
+    fireEvent.change(screen.getByLabelText(label), { target: { value } });
+  }
+  view.verify("resolved-turnstile-token");
+  fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+  await waitFor(() => expect(view.onSubmit).toHaveBeenCalled());
+  return view;
 }
 
 function validReason() {
@@ -80,12 +102,9 @@ describe("FlagForm contract and validation", () => {
   });
 
   // @req REQ-012
-  it("shows the target context and exactly six native flag kinds", () => {
+  it("names what is being reported, without its corpus identifier", () => {
     renderForm();
 
-    // The reporter is told what they are reporting by name, not by corpus
-    // identifier. `PPL_YORUBA` and `demographics.population` still travel in
-    // the payload below — they belong in the record, not on the page.
     expect(screen.getByText("Peuple · Yoruba")).toBeInTheDocument();
     expect(screen.getByText("Population")).toBeInTheDocument();
     expect(screen.queryByText("PPL_YORUBA")).toBeNull();
@@ -93,21 +112,54 @@ describe("FlagForm contract and validation", () => {
     expect(screen.getByRole("blockquote")).toHaveTextContent(
       "La population est estimée à dix millions."
     );
+  });
 
-    const radios = screen.getAllByRole("radio");
-    expect(radios).toHaveLength(6);
-    expect(radios.map((radio) => radio.getAttribute("value"))).toEqual([
-      "inaccurate",
-      "missing-source",
-      "broken-url",
-      "offensive",
-      "correction-proposal",
-      "other",
-    ]);
-    radios.forEach((radio) => {
-      expect(radio.tagName).toBe("INPUT");
-      expect(radio).toHaveAttribute("type", "radio");
+  /**
+   * The reader used to face six categories before writing anything, and the
+   * one they picked then imposed further mandatory fields — choosing "Source
+   * manquante" required supplying a source. The atlas files the report; the
+   * reader states the problem (moderation charter §1).
+   */
+  // @req REQ-012
+  it("asks one question, and offers no category to choose from", () => {
+    renderForm();
+
+    expect(screen.getByLabelText(REASON_LABEL)).toBeRequired();
+    expect(screen.queryAllByRole("radio")).toHaveLength(0);
+    expect(screen.queryByText(/type de signalement/i)).toBeNull();
+  });
+
+  // @req REQ-012
+  it("sends a bare report, with both disclosures untouched", async () => {
+    const { onSubmit } = await submitReport({});
+
+    expect(onSubmit).toHaveBeenCalledOnce();
+    const payload = vi.mocked(onSubmit).mock.calls[0][0];
+    expect(payload.flag_kind).toBe("other");
+    expect(payload.proposed_rewrite).toBeUndefined();
+    expect(payload.counter_source_url).toBeUndefined();
+  });
+
+  // @req REQ-013
+  it("files a report carrying a correction as a correction proposal", async () => {
+    const { onSubmit } = await submitReport({
+      "Proposition de correction": "Le nom s'écrit Bété, avec un accent.",
     });
+
+    expect(vi.mocked(onSubmit).mock.calls[0][0].flag_kind).toBe(
+      "correction-proposal"
+    );
+  });
+
+  // @req REQ-012
+  it("files a report carrying only a source as a missing source", async () => {
+    const { onSubmit } = await submitReport({
+      "Lien de la contre-source": "https://example.org/source",
+    });
+
+    expect(vi.mocked(onSubmit).mock.calls[0][0].flag_kind).toBe(
+      "missing-source"
+    );
   });
 
   // @req REQ-012
@@ -120,58 +172,9 @@ describe("FlagForm contract and validation", () => {
   });
 
   // @req REQ-012
-  it.each(["Contenu inexact", "Source manquante"])(
-    "requires at least one source for %s",
-    (accessibleName) => {
-      renderForm();
-      chooseKind(accessibleName);
-
-      fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
-
-      expect(
-        screen.getByText("Une source ou une citation est requise.")
-      ).toBeInTheDocument();
-    }
-  );
-
-  // @req REQ-013
-  it("requires a rewrite and at least one source for a correction proposal", () => {
-    renderForm();
-    chooseKind("Proposition de correction");
-
-    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
-
-    expect(
-      screen.getByText("La proposition de correction est requise.")
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText("Une source ou une citation est requise.")
-    ).toBeInTheDocument();
-  });
-
-  // @req REQ-044
-  it("marks the flag kind as required and associates the source requirement", () => {
-    renderForm();
-
-    screen.getAllByRole("radio").forEach((radio) => {
-      expect(radio).toBeRequired();
-    });
-
-    chooseKind("Contenu inexact");
-    const requirement = screen.getByText(
-      "Ajoutez au moins un lien ou une citation."
-    );
-    expect(screen.getByLabelText("Lien de la contre-source")).toHaveAttribute(
-      "aria-describedby",
-      expect.stringContaining(requirement.id)
-    );
-  });
-
-  // @req REQ-012
   it("rejects a non-HTTP counter-source URL", () => {
     const { onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Contenu inexact");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     fireEvent.change(screen.getByLabelText("Lien de la contre-source"), {
@@ -190,8 +193,7 @@ describe("FlagForm contract and validation", () => {
   // @req REQ-012
   it("rejects a counter-source citation over 2,000 characters", () => {
     const { onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Source manquante");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     fireEvent.change(screen.getByLabelText("Citation de la contre-source"), {
@@ -207,59 +209,34 @@ describe("FlagForm contract and validation", () => {
     expect(onSubmit).not.toHaveBeenCalled();
   });
 
+  /**
+   * Ten characters, not fifty. The API has always accepted ten, and the form
+   * demanded five times that without saying why — long enough to reject
+   * "l'orthographe de Bété est fausse".
+   */
   // @req REQ-012
-  it.each([
-    ["Contenu inexact", "url"],
-    ["Source manquante", "citation"],
-    ["Lien cassé", "none"],
-    ["Contenu offensant", "none"],
-    ["Autre", "none"],
-  ])(
-    "accepts the valid source combination for %s",
-    async (accessibleName, sourceKind) => {
-      const { onSubmit, verify } = renderWithTurnstile();
-      chooseKind(accessibleName);
-      fireEvent.change(screen.getByLabelText("Raison du signalement"), {
-        target: { value: validReason() },
-      });
-      if (sourceKind === "url") {
-        fireEvent.change(screen.getByLabelText("Lien de la contre-source"), {
-          target: { value: "https://example.org/source" },
-        });
-      }
-      if (sourceKind === "citation") {
-        fireEvent.change(
-          screen.getByLabelText("Citation de la contre-source"),
-          { target: { value: "Référence bibliographique vérifiable." } }
-        );
-      }
-      verify("resolved-turnstile-token");
+  it("accepts a description of ten characters", async () => {
+    const { onSubmit } = await submitReport({}, "Bété mal écrit");
 
-      fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
-
-      await waitFor(() => expect(onSubmit).toHaveBeenCalledOnce());
-    }
-  );
+    expect(onSubmit).toHaveBeenCalledOnce();
+  });
 
   // @req REQ-012
-  it.each([
-    "Contenu inexact",
-    "Source manquante",
-    "Lien cassé",
-    "Contenu offensant",
-    "Proposition de correction",
-    "Autre",
-  ])("requires a 50 to 2,000 character reason for %s", (accessibleName) => {
-    renderForm();
-    chooseKind(accessibleName);
+  it("refuses a description shorter than that", () => {
+    const { onSubmit, verify } = renderWithTurnstile();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: "court" },
+    });
+    verify("resolved-turnstile-token");
 
-    const reason = screen.getByLabelText("Raison du signalement");
-    fireEvent.change(reason, { target: { value: "Trop court" } });
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
     expect(
-      screen.getByText("La raison doit contenir entre 50 et 2 000 caractères.")
+      screen.getByText(
+        "La description doit contenir entre 10 et 2 000 caractères."
+      )
     ).toBeInTheDocument();
+    expect(onSubmit).not.toHaveBeenCalled();
   });
 });
 
@@ -267,8 +244,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   // @req REQ-012
   it("submits the API-facing payload with the resolved Turnstile token", async () => {
     const { onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Proposition de correction");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: `  ${validReason()}  ` },
     });
     fireEvent.change(
@@ -300,17 +276,14 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   });
 
   // @req REQ-013
-  it("omits a hidden rewrite after switching away from correction proposal", async () => {
+  it("sends nothing from a disclosure the reader emptied again", async () => {
     const { onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Proposition de correction");
-    fireEvent.change(
-      screen.getByLabelText("Proposition de correction", {
-        selector: "textarea",
-      }),
-      { target: { value: "Une formulation qui ne doit pas être envoyée." } }
-    );
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    const rewrite = screen.getByLabelText("Proposition de correction", {
+      selector: "textarea",
+    });
+    fireEvent.change(rewrite, { target: { value: "Une reformulation." } });
+    fireEvent.change(rewrite, { target: { value: "   " } });
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     verify("resolved-turnstile-token");
@@ -319,17 +292,16 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
 
     await waitFor(() => expect(onSubmit).toHaveBeenCalledOnce());
     expect(onSubmit).toHaveBeenCalledWith(
-      expect.not.objectContaining({
-        proposed_rewrite: expect.anything(),
-      })
+      expect.not.objectContaining({ proposed_rewrite: expect.anything() })
     );
+    // Whitespace is not evidence, so the kind stays underived.
+    expect(vi.mocked(onSubmit).mock.calls[0][0].flag_kind).toBe("other");
   });
 
   // @req REQ-012
   it("transitions to the French success state with the public permalink", async () => {
     const { verify } = renderWithTurnstile();
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     verify("resolved-turnstile-token");
@@ -350,8 +322,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   // @req REQ-012
   it("rejects submission when the Turnstile token is missing", () => {
     const { onSubmit } = renderWithTurnstile();
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
 
@@ -366,8 +337,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   // @req REQ-012
   it("clears the token and rejects submission when Turnstile reports a failure", () => {
     const { fail, onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     verify("token-that-must-be-cleared");
@@ -384,8 +354,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   // @req REQ-012
   it("clears the token and rejects submission when Turnstile expires", () => {
     const { expire, onSubmit, verify } = renderWithTurnstile();
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     verify("expired-token");
@@ -405,8 +374,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
       .fn()
       .mockRejectedValue(new Error("Network unavailable"));
     const { verify } = renderWithTurnstile({ onSubmit });
-    chooseKind("Autre");
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     verify("resolved-turnstile-token");
@@ -431,12 +399,11 @@ describe("FlagForm accessibility and responsive behavior", () => {
   // @req REQ-013
   it("updates the visible reason and rewrite character counters", () => {
     renderForm();
-    chooseKind("Proposition de correction");
 
     expect(screen.getByText("0 / 2 000")).toBeInTheDocument();
     expect(screen.getByText("0 / 5 000")).toBeInTheDocument();
 
-    fireEvent.change(screen.getByLabelText("Raison du signalement"), {
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: "Trente-sept caractères exactement ici." },
     });
     fireEvent.change(
@@ -451,38 +418,26 @@ describe("FlagForm accessibility and responsive behavior", () => {
   });
 
   // @req REQ-044
-  it("links validation errors to their fields with aria-describedby", () => {
+  it("links the description error to its field with aria-describedby", () => {
     renderForm();
-    chooseKind("Proposition de correction");
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
+    // Only one error can be raised on an untouched form now: the correction
+    // and the source are optional, so an empty disclosure is not a fault.
     const reasonError = screen.getByText(
-      "La raison doit contenir entre 50 et 2 000 caractères."
+      "La description doit contenir entre 10 et 2 000 caractères."
     );
-    const rewriteError = screen.getByText(
-      "La proposition de correction est requise."
-    );
-    const sourceError = screen.getByText(
-      "Une source ou une citation est requise."
-    );
-
-    expect(screen.getByLabelText("Raison du signalement")).toHaveAttribute(
+    expect(screen.getByLabelText(REASON_LABEL)).toHaveAttribute(
       "aria-describedby",
       expect.stringContaining(reasonError.id)
     );
     expect(
-      screen.getByLabelText("Proposition de correction", {
-        selector: "textarea",
-      })
-    ).toHaveAttribute(
-      "aria-describedby",
-      expect.stringContaining(rewriteError.id)
-    );
-    expect(screen.getByLabelText("Lien de la contre-source")).toHaveAttribute(
-      "aria-describedby",
-      expect.stringContaining(sourceError.id)
-    );
+      screen.queryByText("La proposition de correction est requise.")
+    ).toBeNull();
+    expect(
+      screen.queryByText("Une source ou une citation est requise.")
+    ).toBeNull();
   });
 
   // @req REQ-044
@@ -508,7 +463,6 @@ describe("FlagForm accessibility and responsive behavior", () => {
         <div aria-label="Contrôle anti-robot" role="group" />
       ),
     });
-    chooseKind("Proposition de correction");
 
     const results = await axe.run(container);
 

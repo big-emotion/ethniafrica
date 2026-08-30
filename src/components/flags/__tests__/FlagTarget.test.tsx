@@ -193,11 +193,8 @@ describe("FlagTarget", () => {
 
       await openAndReachForm();
 
-      await user.click(
-        screen.getByRole("radio", { name: /contenu offensant/i })
-      );
       await user.type(
-        screen.getByLabelText("Raison du signalement"),
+        screen.getByLabelText(/qu.est-ce qui ne va pas/i),
         "Cette explication contient assez de détails pour être examinée."
       );
       await user.click(
