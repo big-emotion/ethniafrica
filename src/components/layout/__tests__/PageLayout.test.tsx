@@ -83,13 +83,13 @@ describe("PageLayout title", () => {
       name: "Peuples d'Afrique",
     });
 
-    expect(heading).toHaveClass(
-      "text-foreground",
-      "text-afh-h1",
-      "font-display",
-      "font-bold",
-      "page-title-gradient"
-    );
+    // The size and the family moved into `hero.css` with the band itself, so
+    // the title no longer names them as utilities. What has to survive that
+    // move is the reason this test exists: the gradient is applied inside an
+    // `@supports`, and the element must carry no hard-coded transparency of
+    // its own — otherwise a browser without `background-clip: text` renders an
+    // invisible title rather than a plain one.
+    expect(heading).toHaveClass("afh-hero-title", "page-title-gradient");
     expect(heading).not.toHaveClass("text-transparent", "bg-clip-text");
     expect(heading).not.toHaveAttribute("style");
   });
@@ -126,8 +126,8 @@ describe("PageLayout — header/main offset (ETNI-820: nav is never fixed, on or
       </PageLayout>
     );
 
-    const header = screen.getByRole("heading", { level: 1 }).closest("header");
-    expect(header?.className).not.toMatch(/pt-14|pt-\[57px\]/);
+    const hero = screen.getByTestId("page-hero");
+    expect(hero.className).not.toMatch(/pt-14|pt-\[57px\]/);
   });
 
   // @req REQ-043
@@ -293,8 +293,8 @@ describe("PageLayout — the band names the page, not the product", () => {
       </PageLayout>
     );
 
-    const band = screen.getByRole("heading", { level: 1 }).closest("header");
-    expect(band?.querySelector("[role='img'], img")).toBeNull();
+    const plate = screen.getByTestId("page-hero-plate");
+    expect(plate.querySelector("[role='img'], img")).toBeNull();
   });
 
   // @req REQ-043
@@ -311,12 +311,14 @@ describe("PageLayout — the band names the page, not the product", () => {
   });
 
   /**
-   * The trail carried its own gutter, sized for a mount with none of its own.
-   * Inside the shell that gutter stacked on the container's, so the crumbs
-   * started 28px right of the title and of every paragraph below it. Floating
-   * alone above the band the offset read as breathing room; directly under the
-   * title it reads as a mistake. The gutter now comes from the mount, so the
-   * three columns the reader sees — title, trail, body — are one column.
+   * The trail used to hang in a container of its own between the band and
+   * main, which is how it ended up on a different vertical from the title it
+   * qualifies. Sharing the plate settles the alignment structurally: there is
+   * no second box left to disagree with the first.
+   *
+   * What still has to be asserted is the pair the plate cannot settle — the
+   * band's box and the body's box are two different elements, and they line up
+   * only for as long as they name the same shell.
    */
   // @req REQ-115
   it("hangs the trail on the same gutter as the title and the page body", () => {
@@ -327,25 +329,18 @@ describe("PageLayout — the band names the page, not the product", () => {
       </PageLayout>
     );
 
-    const gutterOf = (element: Element | null) =>
-      (element?.className ?? "")
-        .split(/\s+/)
-        .filter((token) => /^(container|mx-auto|px-)/.test(token))
-        .sort()
-        .join(" ");
-
-    const trailGutter = screen.getByRole("navigation", {
-      name: "Fil d'ariane",
-    }).parentElement;
-    const bandGutter = screen.getByRole("heading", { level: 1 }).parentElement;
+    const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
+    const plate = screen.getByTestId("page-hero-plate");
     const body = screen.getByTestId("content").closest("main");
 
-    expect(gutterOf(trailGutter)).toBe(gutterOf(bandGutter));
-    expect(gutterOf(trailGutter)).toBe(gutterOf(body));
+    expect(plate).toContainElement(trail);
+    expect(plate).toContainElement(screen.getByRole("heading", { level: 1 }));
+    expect(plate.closest(".afh-shell")).not.toBeNull();
+    expect(body).toHaveClass("afh-shell");
   });
 
   // @req REQ-115
-  it("puts the trail under the title band rather than over it", () => {
+  it("puts the trail under the title rather than over it", () => {
     mockPathname = getLocalizedRoute("fr", "countries");
     render(
       <PageLayout language="fr" sectionName="Pays">
@@ -353,11 +348,11 @@ describe("PageLayout — the band names the page, not the product", () => {
       </PageLayout>
     );
 
-    const band = screen.getByRole("heading", { level: 1 }).closest("header");
+    const heading = screen.getByRole("heading", { level: 1 });
     const trail = screen.getByRole("navigation", { name: "Fil d'ariane" });
 
     expect(
-      band!.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING
+      heading.compareDocumentPosition(trail) & Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
   });
 });

@@ -32,6 +32,20 @@
   --afh-section-gap: 24px;
   --afh-container-max: 430px;
 
+  /* The shell box, distinct from `--afh-container-max` above.
+     `--afh-container-max` is a *reading* measure that tracks the breakpoints
+     themselves (430 / 720 / 800) — it is what a country fiche's prose column
+     is allowed to grow to. `--afh-shell-max` is the *page* box: the width the
+     bar, the hero, the body and the footer all stop at so their left edges
+     agree. Binding the shell to the reading measure would put the whole site
+     in an 800 px column.
+
+     One value, no breakpoint steps: below it the box is never reached and the
+     gutter alone does the work. 1240 px is the width the bar already carried,
+     and the nearest round number to the 1200 px of the reference the shell was
+     calibrated against. */
+  --afh-shell-max: 1240px;
+
   /* HierarchyTree (ETNI-461) — guide-line color reuses --afh-border.
      The indent is the tree's one cost in width: at 430px, three levels at
      20px eat 60px of line length and start breaking people names. It opens

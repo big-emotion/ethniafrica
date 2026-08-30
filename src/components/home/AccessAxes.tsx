@@ -61,7 +61,10 @@ const AXES: AxisDefinition[] = [
     name: "Explorer",
     cta: "Parcourir",
     stake:
-      "Les fiches du corpus : peuples, pays, langues et familles linguistiques.",
+      // « Le corpus » is the team's word for the collection, not the
+      // reader's: it names the thing from the inside, and a first-time
+      // visitor has no way to guess it means "the fiches on this site".
+      "Les fiches du site : peuples, pays, langues et familles linguistiques.",
     figure: (counts) =>
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
@@ -78,7 +81,7 @@ const AXES: AxisDefinition[] = [
     name: "Jouer",
     cta: "Se tester",
     stake:
-      "Des jeux et des quiz tirés du corpus, dont chaque réponse est sourcée.",
+      "Des jeux et des quiz tirés des fiches, dont chaque réponse est sourcée.",
     // Counted off the registry, not written down: the axis promised
     // « 2 peuples face à face » back when Jouer held one comparison module,
     // and that sentence survived REQ-120 turning the hub into twelve games

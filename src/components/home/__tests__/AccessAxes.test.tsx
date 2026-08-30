@@ -110,7 +110,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   it.each([
     ["explorer", /peuples, pays, langues et familles/i],
     ["comprendre", /d'où viennent les noms/i],
-    ["jouer", /jeux et des quiz tirés du corpus/i],
+    ["jouer", /jeux et des quiz tirés des fiches/i],
   ])("says what %s holds, not what the reader does", (id, contents) => {
     renderAxes();
 

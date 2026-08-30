@@ -8,9 +8,11 @@ import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsModal";
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { PageHero } from "@/components/layout/PageHero";
+import { heroVariantForPath } from "@/lib/layout/heroVariant";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -21,6 +23,11 @@ interface PageLayoutProps {
    */
   onLanguageChange?: (lang: Language) => void;
   title?: string;
+  /**
+   * The line that qualifies the title, inside the hero plate and above the
+   * trail. Accepted since the shell was written and rendered nowhere until the
+   * hero landed — eleven call sites were passing one into a void.
+   */
   subtitle?: string;
   sectionName?: string;
   hideHeader?: boolean;
@@ -47,6 +54,7 @@ export const PageLayout = ({
   children,
   language,
   title,
+  subtitle,
   sectionName,
   hideHeader = false,
   flushTop = false,
@@ -54,6 +62,7 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
+  const pathname = usePathname();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
@@ -67,6 +76,15 @@ export const PageLayout = ({
    * that wants a band says what it is.
    */
   const displayTitle = sectionName || title;
+
+  /**
+   * Which band, and whether there is one at all. The height is a property of
+   * the route (`heroVariant.ts`); whether the route names itself is a property
+   * of the page. A route that names nothing gets no band rather than a band
+   * with nothing in it.
+   */
+  const heroVariant = heroVariantForPath(pathname);
+  const showHero = !hideHeader && Boolean(displayTitle);
 
   useKeyboardShortcuts({
     navigate: (path) => router.push(path),
@@ -101,35 +119,34 @@ export const PageLayout = ({
         onClose={() => setIsShortcutsOpen(false)}
       />
 
-      {/* Header */}
-      {!hideHeader && displayTitle && (
-        <header className="border-b bg-card shadow-soft">
-          <div className="container mx-auto px-4 py-6">
-            {/* The band held the product logo beside the title, a second copy
-                of the mark the bar renders directly above it. Dropping it
-                leaves the band with one job — naming the page — and stops a
-                screen reader announcing "Africa" ahead of every h1. */}
-            <h1 className="text-afh-h1 font-display font-bold text-foreground page-title-gradient">
-              {displayTitle}
-            </h1>
-          </div>
-        </header>
-      )}
+      {/* The hero, and the trail it now carries.
 
-      {/* The trail belongs to the chrome, not to the page: it survives
+          The trail belongs to the chrome, not to the page: it survives
           `hideHeader`, which the fiches pass because their own title stands
-          over the globe and which would otherwise cost them the way back.
+          over the globe and which would otherwise cost them the way back. So
+          it is rendered either inside the plate or, on a bandless route, in
+          the shell box on its own — never neither.
 
-          It sits *below* the band because a trail is read as what qualifies a
-          title, not as what introduces a logo — above it, the page opened on
-          "Accueil › Comprendre" before ever saying what it was. */}
-      <div className="container mx-auto px-4">
-        <SiteTrail entityLabel={trailLabel} />
-      </div>
+          It sits *under* the title rather than over it because a trail is read
+          as what qualifies a title, not as what introduces one; and it sits
+          *inside* the plate rather than under the band because two boxes put
+          the trail and the title on two different verticals. */}
+      {showHero ? (
+        <PageHero
+          variant={heroVariant}
+          title={displayTitle}
+          subtitle={subtitle}
+          trail={<SiteTrail entityLabel={trailLabel} />}
+        />
+      ) : (
+        <div className="afh-shell">
+          <SiteTrail entityLabel={trailLabel} />
+        </div>
+      )}
 
       {/* Main Content */}
       <main
-        className={`container mx-auto px-4 ${
+        className={`afh-shell ${
           flushTop ? (isMobile ? "pb-4" : "pb-8") : isMobile ? "py-4" : "py-8"
         }`}
       >

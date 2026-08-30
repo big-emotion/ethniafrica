@@ -33,6 +33,24 @@
 export const PRODUCT_NAME =
   process.env.NEXT_PUBLIC_PRODUCT_NAME || "EthniAfrica";
 
+/**
+ * What the product is, in one line, beside the name in the masthead.
+ *
+ * The same qualifier {@link OG_TITLE} carries after the em dash, kept as its
+ * own constant because the masthead sets the two halves differently — the name
+ * in the display face, the qualifier in the warm gradient — and splitting
+ * `OG_TITLE` on a dash at render time would break the day the title is
+ * rewritten without one.
+ *
+ * The one constant here with no `NEXT_PUBLIC_*` override, and deliberately so
+ * for now: `checkEnvExample.ts` gates the code and `.env.example` against each
+ * other in both directions, so a new variable is only half a change until the
+ * example file declares it too. Give it an override the day the example file
+ * is edited in the same commit — not before, or the gate goes red for everyone.
+ */
+// @req REQ-019
+export const PRODUCT_TAGLINE = "Atlas des Peuples d'Afrique";
+
 /** The canonical domain for the application (without protocol) */
 // @req REQ-019
 export const CANONICAL_DOMAIN =

@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
@@ -9,7 +9,7 @@ import { PRODUCT_NAME } from "@/lib/brand";
 
 describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // @req REQ-044
-  it("renders no eyebrow and no PRODUCT_NAME line", () => {
+  it("renders no eyebrow and no standalone brand line", () => {
     render(<HomeHero />);
     expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
     expect(
@@ -25,39 +25,58 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
     const h1 = headings[0];
     expect(h1.textContent?.replace(/\s+/g, " ").trim()).toBe(
-      "Les peuples d'Afrique, sous le nom qu'ils se donnent"
+      "Qui sont les peuples d'Afrique ?"
     );
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // The italic carries the thesis, so it has to survive both surfaces: set
-  // as text it takes the display accent that flips with the theme, rather
-  // than the night gold, which would go near-invisible on parchment.
+  // The headline is the question the reader arrives with, so it stays a
+  // question: a full stop here would turn the one line a first-time visitor
+  // recognises as their own into an assertion about them.
+  //
+  // No italic clause any more. The accent used to fall on « le nom qu'ils se
+  // donnent » because the headline was a nine-word thesis with a part worth
+  // stressing; a five-word question has no subordinate to lift, and
+  // italicising a fragment of it would stress nothing.
   // @req REQ-044
-  it("sets the autonym clause in italic on the surface's own display accent", () => {
+  it("keeps the headline interrogative and carries no italic clause", () => {
+    render(<HomeHero />);
+    const h1 = screen.getByRole("heading", { level: 1 });
+
+    expect(h1.textContent?.trim().endsWith("?")).toBe(true);
+    expect(h1.querySelector("em")).toBeNull();
+  });
+
+  // One sentence, not three registers. The band used to ask the reader to
+  // hold seven items before the first scroll — four in the lede's list,
+  // three in the standfirst's — and a reader retains one.
+  // @req REQ-044
+  it("answers the headline in exactly one sentence", () => {
+    render(<HomeHero />);
+
+    const answer = screen.getByTestId("home-hero-answer");
+    const sentences = answer
+      .textContent!.split(/(?<=\.)\s+/)
+      .filter((part) => part.trim().length > 0);
+
+    expect(sentences).toHaveLength(1);
+    expect(answer).toHaveTextContent(/y répond peuple par peuple/i);
+    expect(answer).toHaveTextContent(/la source de chaque réponse/i);
+  });
+
+  // The band holds one paragraph. A second one is how the lede and the
+  // standfirst grew back the last time.
+  // @req REQ-044
+  it("holds one paragraph and no separating rule", () => {
     const { container } = render(<HomeHero />);
-    const em = screen.getByRole("heading", { level: 1 }).querySelector("em");
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(em).toHaveTextContent("le nom qu'ils se donnent");
-    expect(styles).toMatch(
-      /\.home-hero-copy h1 em\s*{[^}]*var\(--afh-display-accent\)/
-    );
-  });
-
-  // The lede names what the atlas holds and what it does with a name — the
-  // two things a first-time reader cannot infer from the headline alone.
-  // @req REQ-044
-  it("renders one lede naming the corpus and what it asks of every name", () => {
-    render(<HomeHero />);
-    expect(
-      screen.getByText(/leurs langues, leurs familles, leurs pays/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/qui l'a donné, depuis où et à quelle époque/i)
-    ).toBeInTheDocument();
+    expect(container.querySelectorAll(".home-hero-copy p")).toHaveLength(1);
+    expect(container.querySelector(".home-hero-lede")).toBeNull();
+    expect(container.querySelector(".home-hero-standfirst")).toBeNull();
+    expect(styles).not.toMatch(/\.home-hero-answer\s*\{[^}]*border-top/);
   });
 
   // The sourcing claim moved to the page's closing strip (TrustStrip), so
@@ -91,27 +110,10 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
       .join("\n");
 
     expect(container.querySelector("section")).not.toHaveClass("afh-on-night");
-    expect(styles).toMatch(/\.home-hero\s*{[^}]*background:\s*var\(--afh-bg\)/);
-    expect(styles).not.toMatch(/var\(--afh-night-ground\)/);
-  });
-
-  // The one question a first-time visitor actually arrives with — what is
-  // this site? — went unanswered above the fold while the band stopped
-  // after the lede and handed them a globe.
-  // @req REQ-044
-  it("says what the atlas is, in two sentences, under the lede", () => {
-    render(<HomeHero />);
-
-    const standfirst = screen.getByTestId("home-hero-standfirst");
-    const sentences = standfirst
-      .textContent!.split(/(?<=\.)\s+/)
-      .filter((part) => part.trim().length > 0);
-
-    expect(sentences).toHaveLength(2);
-    expect(standfirst).toHaveTextContent(/publie en accès libre/i);
-    expect(standfirst).toHaveTextContent(
-      /sa source et son niveau de confiance/i
+    expect(styles).toMatch(
+      /\.home-hero\s*\{[^}]*background:\s*var\(--afh-bg\)/
     );
+    expect(styles).not.toMatch(/var\(--afh-night-ground\)/);
   });
 
   // Asserted on the source, because no render here can see the defect: the
@@ -126,31 +128,28 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
       "utf8"
     );
 
-    expect(source).toMatch(/\$\{PRODUCT_NAME\} publie/);
-    expect(source).not.toMatch(/(?<!\$)\{PRODUCT_NAME\} publie/);
+    expect(source).toMatch(/\$\{PRODUCT_NAME\} y répond/);
+    expect(source).not.toMatch(/(?<!\$)\{PRODUCT_NAME\} y répond/);
   });
 
-  // Three registers in descending order of voice. Set at the lede's size
-  // and ink, the standfirst would merge with it into one four-line grey
-  // block and the reader would skip both.
+  // The answer is the band's only prose, so it takes the reading size and
+  // the full ink. Set at the retired lede's softer grey it would read as a
+  // caption under the headline rather than as its answer.
   // @req REQ-044
-  it("sets the standfirst in the reading size and full ink, apart from the lede", () => {
+  it("sets the answer in the reading size and full ink", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    const rule = styles.match(/\.home-hero-standfirst\s*{[^}]*}/)?.[0];
+    const rule = styles.match(/\.home-hero-answer\s*\{[^}]*\}/)?.[0];
     expect(rule).toMatch(/font-size:\s*var\(--afh-text-body\)/);
     expect(rule).toMatch(/color:\s*var\(--afh-text\)/);
 
-    // The lede keeps the softer ink, so the two never collapse into one
-    // block. A `.home-hero-copy p` element rule would have outranked the
-    // standfirst's own class and flattened both.
-    expect(styles).toMatch(
-      /\.home-hero-lede\s*{[^}]*color:\s*var\(--afh-text-soft\)/
-    );
-    expect(styles).not.toMatch(/\.home-hero-copy p\s*{/);
+    // A class, not `.home-hero-copy p`: a descendant selector outranks a
+    // single class, so an element rule would override whatever the answer
+    // sets for itself.
+    expect(styles).not.toMatch(/\.home-hero-copy p\s*\{/);
   });
 
   // The band ends on a stated edge, not a fade: it is where the sky stops
@@ -164,7 +163,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
     expect(container.querySelector(".home-hero-seam")).toBeInTheDocument();
     expect(styles).toMatch(
-      /\.home-hero-seam\s*{[^}]*border-bottom:[^;]*var\(--afh-cat-ocre\)/
+      /\.home-hero-seam\s*\{[^}]*border-bottom:[^;]*var\(--afh-cat-ocre\)/
     );
   });
 
@@ -176,29 +175,76 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
   });
 
-  // The viewport-height floor existed to keep the globe and its controls
-  // inside the first screen. With the module gone to its own section, the
-  // same rule would stretch three paragraphs over a full screen and push
-  // the three entry points below the fold — the opposite of why they were
-  // moved up here.
+  /**
+   * REVERSED, deliberately. This test used to forbid a viewport-height band,
+   * and the reason it gave was sound at the time: two lines of copy stretched
+   * over a full screen is air, and it pushed the argument below the fold.
+   *
+   * What changed is the band, not the argument. It is now two columns — the
+   * question and its answer beside the picture that answers it — so the height
+   * is filled by content rather than by whitespace, and the home takes the
+   * same immersive band as the three axis hubs (`heroVariant.ts`) rather than
+   * being the one entry point that opens short.
+   *
+   * `svh`, never `vh` or `dvh`: on a phone `100vh` is the window measured with
+   * the URL bar retracted, so a `100vh` band is always taller than the screen
+   * it is on. The `min(…, 760px)` floor keeps a short, wide window from
+   * stranding the copy in an empty field.
+   */
   // @req REQ-115
-  it("sizes to its copy instead of claiming a full viewport at desktop", () => {
+  it("claims the viewport the way the other entry points do", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
     expect(container.querySelector("section.home-hero")).not.toBeNull();
+    expect(styles).toMatch(/min-height:\s*min\(100svh,\s*760px\)/);
+    expect(styles).toMatch(/min-height:\s*100svh/);
     expect(styles).not.toMatch(/min-height:\s*calc\(100dvh/);
     expect(styles).not.toMatch(/min-height:\s*calc\(100vh/);
   });
 
+  /**
+   * The visual is the argument, not decoration. The repo's rule for home
+   * imagery (public/images/home/CREDITS.md) is that each picture is a document
+   * the block it sits in is *about* — a generic photograph of the continent
+   * would substitute for none of them.
+   *
+   * Al-Idrisi drew this in 1154 for Roger II of Sicily, oriented south-up, and
+   * he was born in Ceuta. A map of the world made from inside Africa, by
+   * someone naming it from where he stood, is the headline restated in one
+   * image: who named, from where, and when.
+   */
+  // @req REQ-115
+  it("carries its visual with the credit its licence is published under", () => {
+    render(<HomeHero />);
+
+    const figure = screen.getByTestId("home-hero-figure");
+
+    expect(within(figure).getByRole("img")).toHaveAttribute(
+      "alt",
+      expect.stringMatching(/.+/)
+    );
+    expect(figure).toHaveTextContent(/al-Idrisi/i);
+    expect(figure).toHaveTextContent(/domaine public/i);
+  });
+
+  /**
+   * Document order, not direct childhood: the band gained a row wrapper when
+   * it gained its second column, and what the reader — or a screen reader
+   * walking the band — must meet first is the argument, not the picture of it.
+   * CSS may put the visual wherever the width allows; the source may not.
+   */
   // @req REQ-115
   it("keeps the copy first in the band", () => {
     const { container } = render(<HomeHero />);
     const copy = container.querySelector(".home-hero-copy");
+    const figure = screen.getByTestId("home-hero-figure");
 
     expect(copy).not.toBeNull();
-    expect(container.querySelector("section")?.firstElementChild).toBe(copy);
+    expect(
+      copy!.compareDocumentPosition(figure) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
   });
 });
