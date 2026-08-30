@@ -566,3 +566,43 @@ describe("home did-you-know chip softens with ink, not opacity", () => {
     expect(ruleBody(".home-dyk-chip-kind")).not.toMatch(/opacity:\s*0?\.\d+/);
   });
 });
+
+/**
+ * The footer's qualifier — « Atlas des Peuples d'Afrique » — is set in the
+ * spectrum the mark itself is drawn in: the red, orange, ochre, green and blue
+ * sampled off `public/africa.png`. A brand gradient is the one place a
+ * multi-hue ramp is the subject rather than an accident.
+ *
+ * It is a token with a night rebinding for the reason `--accent-tint` already
+ * cost us once: stops chosen against parchment stay put under `.dark`, where
+ * the ground is #1d1710 and every one of them flips from dark-on-light to
+ * dark-on-dark. Each stop clears AA on its own ground, so the ramp is
+ * readable at both ends rather than only the one it was drawn for.
+ */
+describe("the brand spectrum carries both themes", () => {
+  function spectrumStops(scope: string): string[] {
+    const declaration = scope.match(/--afh-gradient-spectrum:\s*([^;]+);/);
+    if (!declaration) throw new Error("Missing --afh-gradient-spectrum");
+    return declaration[1].match(/hsl\([^)]*\)/g) ?? [];
+  }
+
+  const dayScope = colorCss.slice(0, colorCss.indexOf(".dark,"));
+
+  // @req REQ-090
+  it("declares the spectrum on parchment and rebinds it for night", () => {
+    expect(spectrumStops(dayScope).length).toBeGreaterThanOrEqual(4);
+    expect(spectrumStops(nightScopeOf(colorCss)).length).toBeGreaterThanOrEqual(
+      4
+    );
+  });
+
+  // @req REQ-090
+  it("keeps every parchment stop darker than every night stop", () => {
+    const lightness = (stop: string): number =>
+      Number.parseFloat(stop.match(/([\d.]+)%\s*\)/)![1]);
+
+    expect(Math.max(...spectrumStops(dayScope).map(lightness))).toBeLessThan(
+      Math.min(...spectrumStops(nightScopeOf(colorCss)).map(lightness))
+    );
+  });
+});
