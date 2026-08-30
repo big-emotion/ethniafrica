@@ -3,6 +3,7 @@
   "nameMain": "Tabwa",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "ZMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tabwa",

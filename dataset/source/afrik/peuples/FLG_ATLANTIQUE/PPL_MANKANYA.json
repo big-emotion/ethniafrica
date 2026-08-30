@@ -3,6 +3,7 @@
   "nameMain": "Mankanya",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB", "SEN", "GMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mankanya",

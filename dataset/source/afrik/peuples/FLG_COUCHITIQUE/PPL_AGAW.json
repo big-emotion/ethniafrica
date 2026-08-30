@@ -3,6 +3,7 @@
   "nameMain": "Agaw",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "ERI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Agaw",

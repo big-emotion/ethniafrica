@@ -3,6 +3,7 @@
   "nameMain": "Azande du Sud",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["SSD", "COD", "CAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Azande",

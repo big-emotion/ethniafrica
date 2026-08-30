@@ -3,6 +3,7 @@
   "nameMain": "Mano",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["LBR", "GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mano",

@@ -3,6 +3,7 @@
   "nameMain": "Sara",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["TCD", "CAF", "SDN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Sara",

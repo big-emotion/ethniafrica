@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Zambie)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tonga (Zambie)",

@@ -8,7 +8,7 @@ import {
   LinkedinGlyph,
 } from "@/components/layout/SocialGlyphs";
 import { useConsent } from "@/hooks/use-consent";
-import { PRODUCT_NAME } from "@/lib/brand";
+import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
@@ -89,89 +89,99 @@ export function SiteFooter({ language }: SiteFooterProps) {
         {/* Étage 1 — the directory. A reader who reached the bottom of a
             fiche was previously offered the mentions légales and nothing
             else; the rubrics the atlas is made of belong here too. */}
+        {/* The four blocks are siblings, not a mark plus a bundle of three:
+            `justify-between` spreads whatever it is given, so wrapping the
+            rubrics dropped the entire gap between the mark and the first
+            rubric and left the directory hugging the right edge. Flat, they
+            space themselves across the shell. */}
         <div
           data-testid="footer-directory"
-          className="flex flex-col items-center gap-afh-lg md:flex-row md:items-start md:justify-between md:gap-afh-xl md:text-left"
+          className="flex flex-col items-center gap-afh-xl text-center md:flex-row md:items-start md:justify-between md:gap-afh-lg md:text-left"
         >
-          {/* The mark and the name, not a link: the masthead already carries
-              the way home, and a second one at the bottom of the page is a
-              destination the reader has to rule out rather than use. */}
+          {/* The mark, the name and what the site is — none of them a link:
+              the masthead already carries the way home, and a second one at
+              the bottom of the page is a destination the reader has to rule
+              out rather than use. */}
           <div
             data-testid="footer-brand"
-            className="flex items-center gap-afh-sm"
+            className="flex flex-col items-center gap-afh-xs md:items-start"
           >
             <Image
               src="/africa.png"
               alt=""
-              width={44}
-              height={44}
-              className="h-11 w-11"
+              width={80}
+              height={80}
+              className="h-20 w-20"
             />
-            <span className="font-afh-display text-afh-h3 text-afh-text">
+            <span className="font-afh-display text-afh-h1 text-afh-text">
               {PRODUCT_NAME}
+            </span>
+            {/* The qualifier the masthead sets in the warm gradient, here in
+                the mark's full spectrum: the footer is the one place with the
+                room to run all five hues at a size that reads. */}
+            <span
+              data-testid="footer-tagline"
+              className="afh-brand-spectrum font-afh-display text-afh-lead font-bold"
+            >
+              {PRODUCT_TAGLINE}
             </span>
           </div>
 
-          <div className="flex flex-col items-center gap-afh-lg sm:flex-row sm:items-start sm:gap-afh-2xl">
-            {rubrics.map((rubric) => (
-              <nav
-                key={rubric.id}
-                aria-labelledby={`footer-rubric-${rubric.id}`}
+          {rubrics.map((rubric) => (
+            <nav key={rubric.id} aria-labelledby={`footer-rubric-${rubric.id}`}>
+              <p
+                id={`footer-rubric-${rubric.id}`}
+                className="font-afh-display text-afh-h1 text-afh-text"
               >
-                <p
-                  id={`footer-rubric-${rubric.id}`}
-                  className="font-afh-display text-afh-lead text-afh-text"
-                >
-                  {rubric.heading}
-                </p>
-                <ul className="mt-afh-sm flex flex-col gap-afh-xs">
-                  {rubric.links.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href} className={FOOTER_LINK_CLASS}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            ))}
-
-            <div>
-              <p className="font-afh-display text-afh-lead text-afh-text">
-                {directory.followHeading}
+                {rubric.heading}
               </p>
-              {/* Each mark keeps a 44px hit area, which insets the glyph by
-                  12px inside it. Pulled back by the same 12px so the first
-                  glyph sits on the heading's edge rather than a tap target's. */}
-              <ul
-                data-testid="footer-follow"
-                className="mt-afh-sm flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
-              >
-                {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
-                  <li key={name}>
-                    {href ? (
-                      <a
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={name}
-                        className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                      >
-                        <Glyph className="h-5 w-5" />
-                      </a>
-                    ) : (
-                      <span
-                        role="img"
-                        aria-label={`${name} — ${directory.followPending}`}
-                        className="inline-flex h-11 w-11 items-center justify-center text-afh-fg-muted"
-                      >
-                        <Glyph className="h-5 w-5" />
-                      </span>
-                    )}
+              <ul className="mt-afh-sm flex flex-col gap-afh-xs text-afh-lead">
+                {rubric.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={FOOTER_LINK_CLASS}>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
+          ))}
+
+          <div>
+            <p className="font-afh-display text-afh-h1 text-afh-text">
+              {directory.followHeading}
+            </p>
+            {/* Each mark keeps a 44px hit area, which insets the glyph by
+                  12px inside it. Pulled back by the same 12px so the first
+                  glyph sits on the heading's edge rather than a tap target's. */}
+            <ul
+              data-testid="footer-follow"
+              className="mt-afh-sm flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+            >
+              {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
+                <li key={name}>
+                  {href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={name}
+                      className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <Glyph className="h-5 w-5" />
+                    </a>
+                  ) : (
+                    <span
+                      role="img"
+                      aria-label={`${name} — ${directory.followPending}`}
+                      className="inline-flex h-11 w-11 items-center justify-center text-afh-fg-muted"
+                    >
+                      <Glyph className="h-5 w-5" />
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

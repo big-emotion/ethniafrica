@@ -181,6 +181,15 @@ function createProgram(
   gl.attachShader(program, vertexShader);
   gl.attachShader(program, fragmentShader);
   gl.linkProgram(program);
+  // Linking is asked about, not assumed. A driver that refuses to link still
+  // hands back a program object, and drawing with it paints nothing at all —
+  // which is the low-end-hardware failure REQ-112 AC2 exists for. Returning it
+  // unchecked made every `if (!program)` below unreachable in exactly the case
+  // they were written for.
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    gl.deleteProgram(program);
+    return null;
+  }
   return program;
 }
 
@@ -197,6 +206,16 @@ export interface AtlasGlobeCanvasProps {
    * around the new subject.
    */
   focusedCountryId?: CountryId | null;
+  /**
+   * Called when the globe cannot be built after all (REQ-112 AC2).
+   *
+   * Every bail-out below is a bare `return` that leaves a transparent canvas:
+   * no context, or a shader the driver refuses to compile or link — the common
+   * failure on low-end hardware, and one that arrives *after* a caller has
+   * already swapped its own fallback out. Without this the map is simply
+   * missing, with nothing thrown and nothing logged.
+   */
+  onUnavailable?: () => void;
 }
 
 /**
@@ -222,6 +241,7 @@ export function AtlasGlobeCanvas({
   pose,
   accentHex,
   focusedCountryId = null,
+  onUnavailable,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
@@ -235,14 +255,30 @@ export function AtlasGlobeCanvas({
     reducedMotionRef.current = reducedMotion;
   }, [reducedMotion]);
 
+  // Held in a ref rather than listed as a dependency: a caller that passes an
+  // inline arrow would otherwise tear down and rebuild the whole GL context on
+  // every render of its own.
+  const giveUpRef = useRef(onUnavailable);
+  useEffect(() => {
+    giveUpRef.current = onUnavailable;
+  }, [onUnavailable]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const parent = canvas?.parentElement;
     if (!canvas || !parent) return;
 
+    // Every path out of this effect that leaves nothing painted goes through
+    // here, so a caller learns the canvas is transparent rather than reading
+    // an empty stage as a slow one.
+    const giveUp = () => giveUpRef.current?.();
+
     const gl = (canvas.getContext("webgl") ||
       canvas.getContext("experimental-webgl")) as WebGLRenderingContext | null;
-    if (!gl) return;
+    if (!gl) {
+      giveUp();
+      return;
+    }
 
     const [r, g, b] = hexToRgbFloats(accentHex ?? resolveAccentHex(canvas));
     // The focused country's outline lifts towards the accent's light tint so it
@@ -418,7 +454,10 @@ export function AtlasGlobeCanvas({
 
     if (overlay.kind === "people-field") {
       const drawField = fieldAreas && createFieldLayer(fieldAreas);
-      if (!drawField) return;
+      if (!drawField) {
+        giveUp();
+        return;
+      }
 
       draw = () => {
         const camera = poseRef.current;
@@ -432,7 +471,10 @@ export function AtlasGlobeCanvas({
         BOUNDARY_VERTEX_SHADER,
         BOUNDARY_FRAGMENT_SHADER
       );
-      if (!program) return;
+      if (!program) {
+        giveUp();
+        return;
+      }
       gl.useProgram(program);
 
       const aSpherePos = gl.getAttribLocation(program, "aSpherePos");

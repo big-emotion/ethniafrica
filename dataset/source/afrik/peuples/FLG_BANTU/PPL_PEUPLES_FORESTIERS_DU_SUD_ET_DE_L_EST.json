@@ -3,6 +3,7 @@
   "nameMain": "Peuples forestiers du Sud et de l'Est",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR", "COG", "GAB", "CAF"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples forestiers du Sud et de l'Est",

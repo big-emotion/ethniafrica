@@ -3,6 +3,7 @@
   "nameMain": "Khwe",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA", "NAM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Khwe",

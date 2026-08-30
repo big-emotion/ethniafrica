@@ -3,6 +3,7 @@
   "nameMain": "Lobi",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "CIV", "GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lobi",

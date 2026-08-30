@@ -3,6 +3,7 @@
   "nameMain": "Mbochi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mbochi",

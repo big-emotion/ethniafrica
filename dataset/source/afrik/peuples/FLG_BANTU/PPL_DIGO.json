@@ -3,6 +3,7 @@
   "nameMain": "Digo",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA", "KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Digo",

@@ -3,6 +3,7 @@
   "nameMain": "Swahili (Oman)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["OMN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Swahili d'Oman (Zanzibari Omanis)",

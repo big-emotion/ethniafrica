@@ -32,7 +32,7 @@ function toRings(rawRings: readonly (readonly [number, number])[][]): Ring[] {
 /**
  * Area-weighted centroid of a ring (shoelace formula), treating lon/lat as
  * planar — a stylised placement, not a survey-grade one, the same tradeoff
- * projection.ts's HomeGlobe geometry already makes.
+ * projection.ts's own sphere geometry already makes.
  */
 // @req REQ-116
 export function ringCentroid(ring: Ring): LonLat {

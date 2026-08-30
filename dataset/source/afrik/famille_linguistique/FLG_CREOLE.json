@@ -2,6 +2,7 @@
   "id": "FLG_CREOLE",
   "nameFr": "Créole (familles créoles d'Afrique)",
   "nameEn": "Creole (African Creoles)",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Termes coloniaux péjoratifs appliqués aux créoles africains : - Les langues créoles africaines ont longtemps été dévalorisées par les autorités coloniales, exclues de l'éducation formelle et considérées comme des \"baragouins\" ou \"jargons\", niant leur statut de langues à part entière avec leurs propres structures grammaticales. - L'usage du terme \"créole\" lui-même, issu d'un contexte colonial (criollo/crioulo désignant initialement les personnes nées dans les colonies), peut être perçu comme portant l'héritage de classifications raciales coloniales.",

@@ -3,6 +3,7 @@
   "nameMain": "Mafa",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mafa",

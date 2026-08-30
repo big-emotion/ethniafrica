@@ -3,6 +3,7 @@
   "nameMain": "Sotho",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["LSO", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sotho",

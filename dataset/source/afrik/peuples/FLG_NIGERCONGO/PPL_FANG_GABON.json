@@ -3,6 +3,7 @@
   "nameMain": "Fang (Gabon)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GAB", "GNQ", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fang (Gabon)",

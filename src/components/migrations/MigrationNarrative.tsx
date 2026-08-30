@@ -43,7 +43,7 @@ export function MigrationNarrative({
             <MigrationEventCard event={event} confidence={eventConfidence} />
 
             {event.paragraphs.map((paragraph, index) => (
-              <p key={index} className="mt-3 text-foreground max-w-[75ch]">
+              <p key={index} className="mt-3 text-foreground">
                 {paragraph.text}{" "}
                 <ConfidenceChip
                   id={`${event.id}-paragraph-${index}`}
@@ -62,7 +62,7 @@ export function MigrationNarrative({
                 <h4 className="font-afh-display font-semibold text-afh-small">
                   {t.debateLabel}
                 </h4>
-                <p className="mt-1 text-afh-small text-foreground max-w-[75ch]">
+                <p className="mt-1 text-afh-small text-foreground">
                   {event.debate}
                 </p>
               </div>

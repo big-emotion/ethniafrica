@@ -3,6 +3,7 @@
   "nameMain": "Kgalagadi",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA", "NAM", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kgalagadi",

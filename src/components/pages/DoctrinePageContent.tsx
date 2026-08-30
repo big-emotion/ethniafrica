@@ -1,13 +1,13 @@
 import { classificationLabels } from "@/lib/translations";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
-import { ReadingColumn } from "@/components/pages/ReadingColumn";
 
 /**
  * /[lang]/doctrine content — editorial family (charter §4/§7, FR107).
  *
  * Each section keeps its `id="<status>"` anchor: ClassificationBadge links
- * to it (story ETNI-178 / 0.21, AR21, AR44). Keeps the reading column
- * (≤ 72ch) and gains chapter anatomy on every classification section.
+ * to it (story ETNI-178 / 0.21, AR21, AR44). Gains chapter anatomy on every
+ * classification section. No reading measure: the prose fills the page box it
+ * shares with its title.
  *
  * Anchors:
  *   - #consensual
@@ -44,7 +44,7 @@ const SECTIONS: Array<{
 // @req REQ-091
 export default function DoctrinePageContent() {
   return (
-    <ReadingColumn className="mx-auto space-y-8 px-4 py-8">
+    <div className="mx-auto space-y-8 px-4 py-8">
       <header className="space-y-2">
         <h1 className="text-afh-h1 font-bold">Doctrine éditoriale</h1>
         <p className="text-muted-foreground">
@@ -73,6 +73,6 @@ export default function DoctrinePageContent() {
           </section>
         );
       })}
-    </ReadingColumn>
+    </div>
   );
 }

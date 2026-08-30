@@ -3,6 +3,7 @@
   "nameMain": "Créoles Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Créoles Seychellois",

@@ -3,6 +3,7 @@
   "nameMain": "Chokwe",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO", "COD", "ZMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Chokwe",

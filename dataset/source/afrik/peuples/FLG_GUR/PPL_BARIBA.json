@@ -3,6 +3,7 @@
   "nameMain": "Bariba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BEN", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bariba",

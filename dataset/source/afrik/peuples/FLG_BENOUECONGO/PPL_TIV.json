@@ -3,6 +3,7 @@
   "nameMain": "Tiv",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tiv",

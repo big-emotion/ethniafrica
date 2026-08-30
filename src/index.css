@@ -234,6 +234,27 @@ All colors MUST be HSL.
     }
   }
 
+  /* The brand qualifier, set in the mark's own spectrum.
+
+     The colour outside the @supports block is not a fallback nobody sees: it
+     is what a browser without background-clip: text renders, and it is also
+     what the glyphs fall back to if the gradient fails to paint. Setting it to
+     the first stop rather than to `transparent` is the difference between a
+     line that loses its gradient and a line that disappears. */
+  .afh-brand-spectrum {
+    color: hsl(16 80% 39%);
+  }
+
+  @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+    .afh-brand-spectrum {
+      background: var(--afh-gradient-spectrum);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   .gradient-earth {
     background: var(--gradient-earth);
   }

@@ -3,6 +3,7 @@
   "nameMain": "Kunda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE", "MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kunda",

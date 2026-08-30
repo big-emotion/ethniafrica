@@ -3,6 +3,7 @@
   "nameMain": "Anago",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["BEN", "TGO", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Anago",

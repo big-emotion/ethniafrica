@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { ReadingColumn } from "@/components/pages/ReadingColumn";
 import { getSiteTree } from "@/lib/siteTree";
 import { getTranslation } from "@/lib/translations";
 
@@ -44,11 +43,11 @@ export default function SitemapPage() {
           <h1 className="mt-4 max-w-[18ch] text-afh-hero font-display font-semibold leading-[1.05] text-afh-text">
             {copy.title}
           </h1>
-          <ReadingColumn className="mt-8">
+          <div className="mt-8">
             <p className="text-afh-lead leading-[1.45] text-afh-text-soft">
               {copy.introduction}
             </p>
-          </ReadingColumn>
+          </div>
         </header>
 
         <div className="divide-y divide-afh-border">
@@ -58,7 +57,7 @@ export default function SitemapPage() {
                 stepLabel={`${String(index + 1).padStart(2, "0")} · Rubrique`}
                 heading={section.title}
               />
-              <ReadingColumn className="mt-5">
+              <div className="mt-5">
                 <p className="text-afh-body leading-[1.65] text-afh-text-soft">
                   {section.blurb}
                 </p>
@@ -79,7 +78,7 @@ export default function SitemapPage() {
                     </li>
                   ))}
                 </ul>
-              </ReadingColumn>
+              </div>
             </section>
           ))}
         </div>

@@ -3,6 +3,7 @@
   "nameMain": "Sesotho (National)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["LSO", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sesotho (National)",

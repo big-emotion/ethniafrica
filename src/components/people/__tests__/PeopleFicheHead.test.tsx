@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
+import { getLocalizedRoute } from "@/lib/routing";
 import type {
   PeopleCountriesData,
   PeopleHeroData,
@@ -103,5 +104,65 @@ describe("PeopleFicheHead (REQ-115)", () => {
 
     expect(screen.queryByText(/personnes/)).not.toBeInTheDocument();
     expect(screen.getByText(/2 pays de présence/)).toBeInTheDocument();
+  });
+
+  /**
+   * ETNI-1359. 473 people fiches argue in prose that their name is an
+   * imposition; until now none of them could say so as data, because the head
+   * never read the enum `transformPeopleHero` had already put on its hands.
+   */
+  describe("editorial classification", () => {
+    // @req REQ-115
+    it("states a colonial-legacy classification and links it to the doctrine", () => {
+      render(
+        <PeopleFicheHead
+          hero={{ ...hero, classificationStatus: "colonial-legacy" }}
+          countries={countries}
+        />
+      );
+
+      // The anchor is what carries the meaning, not the path: the doctrine
+      // page has since moved under `comprendre/`, so the route is asked for
+      // rather than spelled out.
+      const badge = screen.getByRole("link", { name: /héritage colonial/i });
+      expect(badge).toHaveAttribute(
+        "href",
+        `${getLocalizedRoute("fr", "doctrine")}#colonial-legacy`
+      );
+    });
+
+    // @req REQ-115
+    it("states a contested classification", () => {
+      const { container } = render(
+        <PeopleFicheHead
+          hero={{ ...hero, classificationStatus: "contested" }}
+          countries={countries}
+        />
+      );
+
+      expect(
+        container.querySelector('[data-classification-status="contested"]')
+      ).toBeInTheDocument();
+    });
+
+    // A fiche nobody has reviewed and a fiche reviewed as consensual both show
+    // nothing at all — no placeholder standing in for the badge, and no node
+    // that would reserve space and shift the chips.
+    for (const status of [null, "consensual"] as const) {
+      // @req REQ-115
+      it(`shows no badge and no placeholder when the status is ${status ?? "null"}`, () => {
+        const { container } = render(
+          <PeopleFicheHead
+            hero={{ ...hero, classificationStatus: status }}
+            countries={countries}
+          />
+        );
+
+        expect(
+          container.querySelector("[data-classification-status]")
+        ).toBeNull();
+        expect(container.querySelectorAll(".afh-chip")).toHaveLength(2);
+      });
+    }
   });
 });
