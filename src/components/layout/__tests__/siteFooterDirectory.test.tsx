@@ -224,6 +224,26 @@ describe("the directory takes the full measure (REQ-046)", () => {
     expect(explorer.querySelector("ul")).not.toHaveClass("text-afh-lead");
     expect(screen.getByTestId("footer-content")).toHaveClass("text-afh-small");
   });
+
+  /**
+   * A rubric is a list a reader scans, so its links need to be separable at a
+   * glance. At the 4px gap they shipped with, three underlined labels fused
+   * into one grey block and the rubric read as a paragraph. The heading takes
+   * more space above its list than the list leaves between its own items, so
+   * the heading binds to what it names rather than to the block above it.
+   */
+  // @req REQ-046
+  it("spaces the links apart, and its heading further apart still", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+    const links = explorer.querySelector("ul");
+
+    expect(links).toHaveClass("gap-afh-lg", "mt-afh-5xl");
+    expect(links).not.toHaveClass("gap-afh-xs");
+  });
 });
 
 /**
@@ -285,5 +305,27 @@ describe("the footer mark names what the atlas is (REQ-046)", () => {
     );
 
     expect(mark).toHaveClass("h-20", "w-20");
+  });
+
+  /**
+   * The lockup is the masthead's geometry at twice the size: the mark to the
+   * left of the name, the qualifier under the name. Stacked in one column —
+   * mark, then name, then qualifier — the three parts sat at three different
+   * heights and read as three things rather than one mark, and the block was
+   * narrow enough that the rubrics beside it started at a quarter of the
+   * measure instead of a third.
+   */
+  // @req REQ-046
+  it("sets the mark beside the wordmark, and the qualifier under it", () => {
+    render(<SiteFooter language="fr" />);
+
+    const brand = screen.getByTestId("footer-brand");
+    const [mark, text] = Array.from(brand.children);
+
+    expect(mark).toBe(within(brand).getByRole("presentation"));
+    expect(brand).not.toHaveClass("flex-col");
+    expect(text).toHaveClass("flex-col");
+    expect(text.children[0]).toHaveTextContent(PRODUCT_NAME);
+    expect(text.children[1]).toBe(screen.getByTestId("footer-tagline"));
   });
 });
