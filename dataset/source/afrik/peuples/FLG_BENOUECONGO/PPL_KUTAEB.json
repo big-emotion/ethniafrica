@@ -3,6 +3,7 @@
   "nameMain": "Kuteb",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kuteb",

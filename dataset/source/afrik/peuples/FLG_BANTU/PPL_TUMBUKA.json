@@ -3,6 +3,7 @@
   "nameMain": "Tumbuka",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["MWI", "ZMB", "TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tumbuka",

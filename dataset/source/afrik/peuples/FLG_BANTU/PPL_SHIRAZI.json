@@ -3,6 +3,7 @@
   "nameMain": "Shirazi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA", "KEN", "COM", "MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Shirazi",

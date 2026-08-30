@@ -3,6 +3,7 @@
   "nameMain": "Haratine",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["MRT", "MAR", "DZA", "MLI", "SEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Haratine",

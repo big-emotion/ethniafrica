@@ -3,6 +3,7 @@
   "nameMain": "Afar",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "DJI", "ERI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Afar",

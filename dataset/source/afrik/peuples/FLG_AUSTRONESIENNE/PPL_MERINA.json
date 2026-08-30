@@ -3,6 +3,7 @@
   "nameMain": "Merina",
   "languageFamilyId": "FLG_AUSTRONESIENNE",
   "currentCountries": ["MDG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Merina",

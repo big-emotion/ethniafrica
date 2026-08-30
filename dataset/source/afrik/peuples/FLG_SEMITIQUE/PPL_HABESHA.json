@@ -3,6 +3,7 @@
   "nameMain": "Habesha",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH", "ERI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Habesha",

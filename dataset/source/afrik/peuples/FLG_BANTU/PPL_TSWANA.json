@@ -3,6 +3,7 @@
   "nameMain": "Tswana",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BWA", "ZAF", "NAM"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tswana",

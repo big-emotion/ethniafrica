@@ -3,6 +3,7 @@
   "nameMain": "Zenata",
   "languageFamilyId": "FLG_BERBERE",
   "currentCountries": ["DZA", "MAR", "TUN", "LBY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Zenata",

@@ -3,6 +3,7 @@
   "nameMain": "Nsenga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "MOZ", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nsenga",

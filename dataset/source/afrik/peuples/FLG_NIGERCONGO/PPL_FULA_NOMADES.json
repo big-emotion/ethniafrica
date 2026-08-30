@@ -3,6 +3,7 @@
   "nameMain": "Fula (Nomades)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Fula (Nomades)",

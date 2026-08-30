@@ -3,6 +3,7 @@
   "nameMain": "Peuples Austronésiens de Madagascar (macro-groupe)",
   "languageFamilyId": "FLG_AUSTRONESIENNE",
   "currentCountries": ["MDG"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Austronésiens de Madagascar (macro-groupe)",

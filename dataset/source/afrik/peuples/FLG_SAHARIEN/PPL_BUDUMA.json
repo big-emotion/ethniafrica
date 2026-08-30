@@ -3,6 +3,7 @@
   "nameMain": "Buduma",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NGA", "CMR", "NER"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Buduma",

@@ -3,6 +3,7 @@
   "nameMain": "Mina",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["TGO", "BEN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mina",

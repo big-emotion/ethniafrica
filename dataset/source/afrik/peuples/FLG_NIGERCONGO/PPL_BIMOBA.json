@@ -3,6 +3,7 @@
   "nameMain": "Bimoba",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "TGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bimoba",

@@ -3,6 +3,7 @@
   "nameMain": "Sotho (Nord)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Sotho du Nord (Pedi)",

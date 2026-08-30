@@ -3,6 +3,7 @@
   "nameMain": "Indo-Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Indo-Seychellois",

@@ -3,6 +3,7 @@
   "nameMain": "Urhobo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Urhobo",

@@ -3,6 +3,7 @@
   "nameMain": "Bamiléké",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bamiléké",

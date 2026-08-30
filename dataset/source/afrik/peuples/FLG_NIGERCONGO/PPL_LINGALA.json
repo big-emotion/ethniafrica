@@ -3,6 +3,7 @@
   "nameMain": "Lingala (locuteurs)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG", "CAF", "AGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Lingala (locuteurs)",

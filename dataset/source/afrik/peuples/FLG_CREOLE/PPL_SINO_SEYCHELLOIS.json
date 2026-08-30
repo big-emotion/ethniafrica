@@ -3,6 +3,7 @@
   "nameMain": "Sino-Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sino-Seychellois",

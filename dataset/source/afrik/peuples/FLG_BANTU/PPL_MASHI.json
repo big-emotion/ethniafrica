@@ -3,6 +3,7 @@
   "nameMain": "Mashi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "AGO", "NAM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mashi",

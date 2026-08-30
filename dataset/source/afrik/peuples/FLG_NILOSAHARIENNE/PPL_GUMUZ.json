@@ -3,6 +3,7 @@
   "nameMain": "Gumuz",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["ETH", "SDN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gumuz",

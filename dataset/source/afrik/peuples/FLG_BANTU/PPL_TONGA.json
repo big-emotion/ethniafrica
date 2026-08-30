@@ -3,6 +3,7 @@
   "nameMain": "Tonga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE", "MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tonga",

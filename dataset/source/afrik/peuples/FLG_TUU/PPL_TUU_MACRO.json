@@ -3,6 +3,7 @@
   "nameMain": "Peuples Tuu (macro-groupe)",
   "languageFamilyId": "FLG_TUU",
   "currentCountries": ["BWA", "NAM", "ZAF"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Tuu (macro-groupe)",

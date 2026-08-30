@@ -3,6 +3,7 @@
   "nameMain": "Oromo",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "KEN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Oromo",
