@@ -92,7 +92,7 @@ export const FOOTPRINT_WORDING: Record<
 > = {
   "member-peoples": {
     legend: ["Empreinte reconstruite", "depuis les peuples, pas déclarée."],
-    sectionNote: "dérivée · union des pays actuels des peuples rattachés",
+    sectionNote: "Union des pays actuels des peuples rattachés à la famille",
     origin: "peuples rattachés à la famille",
   },
   "declared-associated-peoples": {
@@ -100,8 +100,7 @@ export const FOOTPRINT_WORDING: Record<
       "Empreinte reconstruite",
       "depuis les peuples que la fiche nomme.",
     ],
-    sectionNote:
-      "dérivée · union des pays actuels des peuples que la fiche nomme",
+    sectionNote: "Union des pays actuels des peuples que la fiche nomme",
     origin: "peuples que la fiche nomme elle-même",
   },
 };

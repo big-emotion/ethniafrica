@@ -23,7 +23,10 @@ import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
-import { FicheSection } from "@/components/fiche/FicheSection";
+import {
+  FicheSection,
+  SOURCE_TIER_NOTE,
+} from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
@@ -123,10 +126,7 @@ export function PeopleDetailViewV2({
       </div>
 
       {/* 1. The name borne, the names imposed — first, before any figure. */}
-      <FicheSection
-        title="Le nom porté, les noms subis"
-        note="Rubrique « appellations » de la fiche"
-      >
+      <FicheSection title="Le nom porté, les noms subis">
         <PeopleNamingBlock
           nameMain={data.hero.nameMain}
           selfAppellation={people.appellations?.selfAppellation}
@@ -148,7 +148,7 @@ export function PeopleDetailViewV2({
         </FicheSection>
       )}
 
-      <FicheSection title="Origines & formation" note="Rubrique « origines »">
+      <FicheSection title="Origines & formation">
         {hasOriginContent(data.origin) ? (
           <PeopleOriginBlock data={data.origin} />
         ) : (
@@ -156,7 +156,7 @@ export function PeopleDetailViewV2({
         )}
       </FicheSection>
 
-      <FicheSection title="Langue" note="Rubrique « langues »">
+      <FicheSection title="Langue">
         {data.language.mainLanguage ||
         data.language.isoCodes.length > 0 ||
         data.language.dialects.length > 0 ||
@@ -167,7 +167,7 @@ export function PeopleDetailViewV2({
         )}
       </FicheSection>
 
-      <FicheSection title="Rôle historique" note="Rubrique « rôle historique »">
+      <FicheSection title="Rôle historique">
         {data.history.kingdomsOrChiefdoms ||
         data.history.relationsWithNeighbors ||
         data.history.conflictsOrAlliances ||
@@ -183,7 +183,7 @@ export function PeopleDetailViewV2({
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
       <PeopleNamesSection data={data.names} />
 
-      <FicheSection title="Culture & spiritualité" note="Rubrique « culture »">
+      <FicheSection title="Culture & spiritualité">
         {hasCultureContent(data.culture) ? (
           <PeopleCultureGrid data={data.culture} />
         ) : (
@@ -224,10 +224,7 @@ export function PeopleDetailViewV2({
         </div>
       </FicheSection>
 
-      <FicheSection
-        title="Peuples voisins & organisation"
-        note="Rubriques « groupes associés » et « organisation »"
-      >
+      <FicheSection title="Peuples voisins & organisation">
         {hasRelatedContent(data.relatedPeoples) ||
         relationsPreview.length > 0 ? (
           <PeopleRelatedPeoplesSection
@@ -242,7 +239,7 @@ export function PeopleDetailViewV2({
 
       <FicheSection
         title="Répartition géographique"
-        note="Rubrique « démographie » · année de référence 2025"
+        note="Année de référence : 2025"
       >
         {data.countries.distributions.length > 0 ? (
           <PeopleCountriesSection
@@ -276,7 +273,7 @@ export function PeopleDetailViewV2({
           chip on a people fiche resolved to nothing. */}
       <FicheSection
         title="Sources"
-        note="Rubrique « sources » de la fiche · politique de paliers"
+        note={SOURCE_TIER_NOTE}
         as="footer"
         id="sources"
       >
