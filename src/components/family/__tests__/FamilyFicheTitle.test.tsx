@@ -66,6 +66,30 @@ describe("FamilyFicheTitle (REQ-091)", () => {
     );
   });
 
+  // The predicate is an editorial constant, not a corpus field, and it makes
+  // a claim about the corpus: that this family leaves its area to be rebuilt.
+  // A fiche that declares a distribution contradicts it, and the parchment
+  // already says so by withholding its "Distribution non déclarée" chip. Both
+  // read the same provenance so the head and the chip cannot disagree.
+  // @req REQ-091
+  it("drops the predicate when the fiche declares a distribution", () => {
+    render(
+      <FamilyFicheTitle
+        family={{
+          ...family,
+          content: {
+            ...family.content,
+            distribution: { distributionByCountry: { ZAF: 15_134_712 } },
+          },
+        }}
+      />
+    );
+
+    const heading = screen.getByRole("heading", { level: 1 });
+    expect(heading).toHaveTextContent("Bantou");
+    expect(heading).not.toHaveTextContent("une aire à reconstruire");
+  });
+
   // The five families that argue nothing, and any family reviewed as
   // consensual, show no badge and nothing standing in for one — the head keeps
   // the three elements it had.

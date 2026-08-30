@@ -87,6 +87,30 @@ describe("country fiche charter", () => {
     expect(head).toHaveTextContent("République fédérale du Nigéria");
   });
 
+  // Every fiche printed its name twice for as long as `name_official` had no
+  // column to land in: the mapper fell back to `nameFr`, and the h1 resolves
+  // to the same French common name. The pipeline is fixed, but the head also
+  // refuses the repetition on its own — the family lede already declines to
+  // name the autonym and the English name when they are one word, and this is
+  // the same fact presented as two.
+  // @req REQ-115
+  it("states the official name once, never twice", () => {
+    const { container } = renderTitle(
+      countryFixture({
+        id: "ZAF",
+        nameFr: "Afrique du Sud",
+        nameCommonFr: "Afrique du Sud",
+        nameOfficial: "Afrique du Sud",
+      })
+    );
+
+    const head = container.querySelector(".afh-parchment-head");
+    expect(
+      within(head as HTMLElement).getByRole("heading", { level: 1 })
+    ).toHaveTextContent("Afrique du Sud");
+    expect(head!.querySelector(".afh-parchment-lede")).toBeNull();
+  });
+
   // The mockup writes "un nom de 1914" in italics beside the title. No corpus
   // field carries it, so the fiche would be asserting a date it cannot source.
   // @req REQ-115
