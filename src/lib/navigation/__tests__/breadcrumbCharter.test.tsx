@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { ContextTriad } from "@/components/fiche/ContextTriad";
+import { PeopleLanguageSection } from "@/components/people/PeopleLanguageSection";
 import {
   PAGE_TYPES,
   getCountryRoute,
@@ -267,8 +267,13 @@ describe("the trail a fiche renders", () => {
   /**
    * The consequence the owner accepted when the trail became derived: a
    * people's family is no longer an ancestor in the URL, so it is no longer a
-   * crumb. It must not therefore vanish from the page — the triad is what
-   * carries it, and this is the assertion that keeps that true.
+   * crumb. It must not therefore vanish from the page.
+   *
+   * What carries it has changed hands — it was the context triad above the
+   * chapters, and the chapters are gone; it is now the parchment's own
+   * "Famille linguistique" field. The assertion is the same one either way,
+   * because the guarantee is about the fiche, not about the component: from a
+   * people, the family is one click away.
    */
   // @req REQ-091
   it("keeps the family reachable from a people fiche once the crumb is gone", () => {
@@ -279,16 +284,21 @@ describe("the trail a fiche renders", () => {
     ).toEqual(["Accueil", "Explorer", "Peuples", "Yoruba"]);
 
     const { container } = render(
-      <ContextTriad context={{ entityType: "people", payload: YORUBA }} />
+      <PeopleLanguageSection
+        data={{
+          languageFamilyId: YORUBA.languageFamilyId,
+          languageFamilyName: "Niger-Congo",
+          isoCodes: [],
+          dialects: [],
+        }}
+      />
     );
 
-    const familyChip = container.querySelector(
-      '[data-context-triad-kind="family"] a'
-    );
-    expect(familyChip?.getAttribute("href")).toBe(
+    const familyLink = container.querySelector("a");
+    expect(familyLink?.getAttribute("href")).toBe(
       getFamilyRoute("fr", YORUBA.languageFamilyId)
     );
-    expect(familyChip?.textContent?.length).toBeGreaterThan(0);
+    expect(familyLink?.textContent).toBe("Niger-Congo");
   });
 });
 

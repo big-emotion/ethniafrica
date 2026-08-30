@@ -21,7 +21,6 @@ import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
  */
 
 export interface FamilyTargetFactsInput {
-  familyId: string;
   familyNameFr: string;
   /** The family's own member count — never the sum of the per-country counts. */
   memberPeopleCount: number;
@@ -77,7 +76,6 @@ const percentFr = new Intl.NumberFormat("fr-FR", {
 
 // @req REQ-117
 export function buildFamilyTargetFacts({
-  familyId,
   familyNameFr,
   memberPeopleCount,
   peopleNamesByCountry,
@@ -150,7 +148,7 @@ export function buildFamilyTargetFacts({
           <a
             href="#fiche"
             style={{ color: "var(--accent-ink, var(--accent))" }}
-            aria-label={`Lire la fiche complète de ${familyNameFr} (${familyId})`}
+            aria-label={`Lire la fiche complète de ${familyNameFr}`}
           >
             Lire la fiche complète →
           </a>

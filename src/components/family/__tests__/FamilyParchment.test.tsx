@@ -56,9 +56,6 @@ function undeclaredFamily(): FamilyPageData {
       whyProblematic: null,
       selfAppellation: "Benue–Congo",
       contemporaryUsage: null,
-      geographicArea: null,
-      numberOfLanguages: 900,
-      totalSpeakers: 500_000_000,
     },
     generalInfo: {
       branches: [],
@@ -102,6 +99,36 @@ function renderParchment(data: FamilyPageData = undeclaredFamily()) {
 }
 
 describe("FamilyParchment — what the fiche declares", () => {
+  // The head opened on "N peuples · M pays dérivés" — the same two figures
+  // the empreinte section states a screen below, in a sentence that also says
+  // what they were derived from and by which rule. Bare in a chip they were
+  // the conclusion without the argument, and the word "dérivés" asserted a
+  // provenance the chip could not name.
+  // @req REQ-116
+  it("leaves the derived figures to the section that explains them", () => {
+    renderParchment();
+
+    expect(screen.queryByText(/pays dérivés/)).toBeNull();
+    // The sentence that does explain them is asserted in « says the area is
+    // calculated, not read from the fiche » below.
+  });
+
+  // Removing the last unconditional chip left the head band rendering an empty
+  // bordered strip under the globe on any fiche that declares a distribution.
+  // @req REQ-116
+  it("renders no head band when there is no chip to put in it", () => {
+    const { container } = renderParchment({
+      ...undeclaredFamily(),
+      distribution: {
+        totalSpeakers: null,
+        distributionByCountry: { COD: 3 },
+        footprintByCountry: {},
+      },
+    });
+
+    expect(container.querySelector(".afh-parchment-head")).toBeNull();
+  });
+
   // @req REQ-119
   it("reads « vide » for a field the fiche does not declare", () => {
     renderParchment();
@@ -165,6 +192,26 @@ describe("FamilyParchment — what the fiche declares", () => {
 
     expect(screen.getByTestId("stat-card-langues")).toHaveTextContent("900");
     expect(screen.getByTestId("stat-card-locuteurs")).toHaveTextContent("500");
+  });
+
+  // The head opened on a "900 langues" chip and the stat card printed 900 a
+  // few lines below it — the same field, twice, on one screen. The card is the
+  // one that carries the rubric naming where the figure is read and the
+  // provenance marker when it is missing; the chip carried neither.
+  // @req REQ-116
+  it("states the languages count once, on the card that names its rubric", () => {
+    const { container } = renderParchment();
+
+    const stated = Array.from(container.querySelectorAll("*")).filter(
+      (element) =>
+        element.children.length === 0 &&
+        /\b900\b/.test(element.textContent ?? "")
+    );
+
+    expect(stated).toHaveLength(1);
+    expect(
+      stated[0].closest("[data-testid='stat-card-langues']")
+    ).not.toBeNull();
   });
 });
 
@@ -303,6 +350,24 @@ describe("FamilyParchment — the trail", () => {
 });
 
 describe("FamilyParchment — the sources", () => {
+  // A family declaring no source lost the section outright — and with it
+  // #sources, the landmark deep links across the app point at, so those links
+  // scrolled nowhere on exactly the fiches whose sourcing a reader would most
+  // want to check. The people and country parchments print the section with a
+  // missing marker instead, which is charter §4: state the gap, never hide it.
+  // @req REQ-116
+  it("keeps its footer landmark for a family that declares no source", () => {
+    const { container } = renderParchment({
+      ...undeclaredFamily(),
+      sources: [],
+    });
+
+    const footer = container.querySelector("#sources");
+    expect(footer).not.toBeNull();
+    expect(footer?.tagName.toLowerCase()).toBe("footer");
+    expect(footer?.textContent).toMatch(/Donnée manquante/);
+  });
+
   // @req REQ-116
   it("labels a source by its own tier, never by the retired Tier 1/2/3 scale", () => {
     // The mockup stamps every source "Tier 1". The project retired that scale
