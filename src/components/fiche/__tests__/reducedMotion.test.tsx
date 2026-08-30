@@ -26,7 +26,6 @@ import type { FichePanelContext } from "../panelRegistry";
 import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
 import {
   NIGER_CONGO,
-  NIGER_CONGO_BRANCHES,
   NIGERIA,
   RELATIONS,
   YORUBA,
@@ -59,7 +58,6 @@ const COUNTRY_CONTEXT: FichePanelContext = {
 const FAMILY_CONTEXT: FichePanelContext = {
   entityType: "language-family",
   payload: NIGER_CONGO,
-  branches: NIGER_CONGO_BRANCHES,
   relations: RELATIONS,
 };
 

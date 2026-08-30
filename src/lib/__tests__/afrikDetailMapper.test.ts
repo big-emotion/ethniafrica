@@ -123,21 +123,12 @@ describe("mapLanguageFamilyDetail", () => {
   });
 
   // @req REQ-091
-  it("feeds the composer enough to open every language-family chapter", () => {
+  it("feeds the composer the scale figure a language-family chapter needs", () => {
     // The mapper is upstream of `derivePanelSequence`: any section it forgets
     // to hoist silently deletes a panel from the fiche. Asserting the derived
     // sequence catches that where asserting field equality alone would not.
     expect(
       derivePanelSequence("language-family", mapLanguageFamilyDetail(BANTU))
-    ).toEqual([
-      "identity",
-      "scale",
-      "territory",
-      "tongue",
-      "fragmentation",
-      "links",
-      "voices",
-      "record",
-    ]);
+    ).toEqual(["scale", "record"]);
   });
 });

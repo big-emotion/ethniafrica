@@ -83,34 +83,12 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // Stubbed so the reading-gate count below can only come from the route's own
 // wiring, never from a <details> buried in the legacy view.
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
-  LanguageFamilyDetailViewV2: ({
-    family,
-    classificationTree,
-  }: {
-    family: LanguageFamily;
-    classificationTree?: React.ReactNode;
-  }) => (
+  LanguageFamilyDetailViewV2: ({ family }: { family: LanguageFamily }) => (
     <div
       data-testid="family-record-view"
       data-family-id={family.id}
       data-carries-content-blob={String(Boolean(family.content))}
-    >
-      {classificationTree}
-    </div>
-  ),
-}));
-
-vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
-  FamilyClassificationTreeSection: ({
-    familyId,
-    tree,
-  }: {
-    familyId: string;
-    tree: FamilyTreeSkeleton;
-  }) => (
-    <div data-testid="family-classification-section" data-family-id={familyId}>
-      {tree.branches.map((branch) => branch.name).join(", ")}
-    </div>
+    />
   ),
 }));
 
@@ -268,11 +246,7 @@ describe("/[lang]/familles/[slug] page", () => {
     it("opens the record under the globe, ahead of the remaining chapters", async () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      expect(panelAnchors(container)).toEqual([
-        "fiche-record",
-        "fiche-scale",
-        "fiche-tongue",
-      ]);
+      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
       expect(
         container
           .querySelector("#fiche-record")
@@ -406,51 +380,21 @@ describe("/[lang]/familles/[slug] page", () => {
       const recordView = getByTestId("family-record-view");
       expect(recordView.dataset.familyId).toBe("FLG_BANTU");
       expect(recordView.dataset.carriesContentBlob).toBe("true");
-      expect(getByTestId("family-classification-section")).toBeInTheDocument();
     });
 
+    // Both chapters drew a family → language → people hierarchy no editorial
+    // field carries: their language level was ISO codes deduplicated across the
+    // people fiches, not a declared classification. With neither rendering, the
+    // route has no reason left to read the tree skeleton at all.
     // @req REQ-047
-    it("fetches the tree skeleton server-side and passes a classification section to the live view", async () => {
-      const { getByTestId } = await renderFamillesPage("FLG_BANTU");
-
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledWith("FLG_BANTU");
-      const classificationSection = getByTestId(
-        "family-classification-section"
-      );
-      expect(classificationSection).toHaveAttribute(
-        "data-family-id",
-        "FLG_BANTU"
-      );
-      expect(classificationSection).toHaveTextContent("Shona");
-      expect(classificationSection).toHaveTextContent("Swahili");
-    });
-
-    // @req REQ-091
-    it("opens the tongue chapter from the classification tree already fetched", async () => {
+    it("renders neither classification chapter, and no longer reads the tree skeleton", async () => {
       const { container } = await renderFamillesPage("FLG_BANTU");
 
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledTimes(1);
-      const tongue = container.querySelector("#fiche-tongue");
-      expect(tongue).not.toBeNull();
-      // TonguePanel names each branch twice (tree canvas + text index), so the
-      // branch names are counted rather than fetched as unique nodes.
-      expect(
-        within(tongue as HTMLElement).getAllByText("Shona").length
-      ).toBeGreaterThan(0);
-      expect(
-        within(tongue as HTMLElement).getAllByText("Swahili").length
-      ).toBeGreaterThan(0);
-    });
-
-    // @req REQ-091
-    it("drops the tongue chapter, and nothing else, for a family with no tree", async () => {
-      mockGetFamilyTreeSkeleton.mockResolvedValue(null);
-
-      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
-
+      expect(mockGetFamilyTreeSkeleton).not.toHaveBeenCalled();
       expect(container.querySelector("#fiche-tongue")).toBeNull();
-      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
-      expect(getByTestId("family-record-view")).toBeInTheDocument();
+      expect(
+        container.querySelector('[data-fiche-section="Classification"]')
+      ).toBeNull();
     });
 
     // @req REQ-047
