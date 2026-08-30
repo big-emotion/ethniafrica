@@ -3,6 +3,7 @@
   "nameMain": "Kongo (Brazzaville)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kongo (Brazzaville)",

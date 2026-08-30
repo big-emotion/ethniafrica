@@ -3,6 +3,7 @@
   "nameMain": "Dan",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["CIV", "LBR", "GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dan",

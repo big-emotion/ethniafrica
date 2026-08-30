@@ -1,4 +1,5 @@
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -10,6 +11,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ThemeProvider } from "next-themes";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { HEADER_RETRACTED_ATTRIBUTE } from "@/hooks/use-header-reveal";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
@@ -551,5 +553,83 @@ describe("SiteHeader — the panel opens over the page, not through it", () => {
     fireEvent.click(trigger("Explorer"));
 
     expect(declarationsFor("\\.sh-panel")).toMatch(/position:\s*absolute/);
+  });
+});
+
+/**
+ * Taking the panel out of the flow removed the one emitter that had been
+ * measured — the anchoring correction the panel's own 224px provoked. It left
+ * the coupling that made that emitter fatal: the retraction is derived from
+ * the scroll position, `SiteHeader` closes the panel whenever the bar
+ * retracts, and the scroll position moves for plenty of reasons the reader
+ * had no hand in — a font or an image landing, a lazy section settling, a
+ * smooth scroll still running out its easing, the browser restoring a
+ * position on a back-navigation. Any one of them crosses RETRACT_BELOW_PX and
+ * takes the menu down with it, and the reader sees a click that did nothing.
+ *
+ * So the bar holds its place while a menu is open. The reader opened it
+ * deliberately; the ways out are the ones they can aim at — the trigger
+ * again, Escape, or a destination in the panel.
+ */
+describe("SiteHeader — a scroll the reader did not make cannot close the menu", () => {
+  const scrollPageTo = (y: number) => {
+    Object.defineProperty(window, "scrollY", {
+      value: y,
+      configurable: true,
+      writable: true,
+    });
+    fireEvent.scroll(window);
+  };
+
+  /**
+   * The hook takes its decision once per frame, so the assertion has to stand
+   * on the far side of one. `waitFor` cannot do this job: it succeeds on its
+   * first poll, which lands *before* the frame runs, and every "the menu is
+   * still open" assertion then passes whatever the code does. The retraction
+   * case below is what proves this flush is real.
+   */
+  const settleOneFrame = () =>
+    act(
+      () =>
+        new Promise<void>((resolve) => {
+          requestAnimationFrame(() => resolve());
+        })
+    );
+
+  beforeEach(() => scrollPageTo(0));
+
+  // @req REQ-114
+  it("holds the masthead open while the axis panel is open", async () => {
+    renderHeader();
+    fireEvent.click(trigger("Explorer"));
+    expect(panel()).toBeInTheDocument();
+
+    // Well past RETRACT_BELOW_PX and travelling down: everything the bar
+    // needs to retract, and none of it asked for by the reader.
+    scrollPageTo(400);
+    await settleOneFrame();
+
+    expect(
+      document.documentElement.getAttribute(HEADER_RETRACTED_ATTRIBUTE)
+    ).toBe("false");
+    expect(panel()).toBeInTheDocument();
+  });
+
+  // @req REQ-114
+  it("lets the masthead retract again once the reader has closed the menu", async () => {
+    renderHeader();
+    fireEvent.click(trigger("Explorer"));
+    scrollPageTo(400);
+    await settleOneFrame();
+
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
+
+    scrollPageTo(800);
+    await settleOneFrame();
+
+    expect(
+      document.documentElement.getAttribute(HEADER_RETRACTED_ATTRIBUTE)
+    ).toBe("true");
   });
 });

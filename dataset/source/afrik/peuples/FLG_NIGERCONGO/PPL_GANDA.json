@@ -3,6 +3,7 @@
   "nameMain": "Ganda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ganda",

@@ -3,6 +3,7 @@
   "nameMain": "Azande",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["COD", "CAF", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Azande",

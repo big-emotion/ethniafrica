@@ -3,6 +3,7 @@
   "nameMain": "Masa",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["TCD", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Masa",

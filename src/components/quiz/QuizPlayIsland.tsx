@@ -16,17 +16,18 @@ import { cn } from "@/lib/utils";
 const t = translations.fr.quiz;
 
 /**
- * Lazily, and the split is load-bearing rather than incidental: the loader
- * carries `AFRICA_LANDMASS_PATH`, and importing it directly put the island
- * 0.6 KB over the 15 KB gzipped budget `scripts/quiz-bundle-size.ts` holds it
- * to. Nothing is lost by splitting it — the figure stays invisible for its
- * first 300 ms whatever happens (`LOADER_REVEAL_DELAY_MS`), which is far
- * longer than its own chunk takes to arrive alongside the session request.
+ * Lazily, and the split is load-bearing rather than incidental: the wait
+ * reaches both `AFRICA_LANDMASS_PATH` and the whole "Saviez-vous" bank, and
+ * importing the continent alone already put the island 0.6 KB over the 15 KB
+ * gzipped budget `scripts/quiz-bundle-size.ts` holds it to. Nothing is lost by
+ * splitting it — the wait stays invisible for its first 300 ms whatever
+ * happens (`LOADER_REVEAL_DELAY_MS`), which is longer than its own chunk takes
+ * to arrive alongside the session request.
  */
-const LazyAfricaTraceLoader = dynamic(
+const LazyQuizSessionWait = dynamic(
   () =>
-    import("@/components/system/AfricaTraceLoader").then(
-      (mod) => mod.AfricaTraceLoader
+    import("@/components/quiz/QuizSessionWait").then(
+      (mod) => mod.QuizSessionWait
     ),
   { ssr: false }
 );
@@ -58,19 +59,19 @@ export const QuizPlayIsland = ({
 
   if (session.status === "loading") {
     // The session is fetched client-side, so this wait is the island's own —
-    // no route boundary can cover it, and a bare sentence on an empty page
-    // was the whole screen for as long as it lasted. `AfricaTraceLoader`
-    // carries the sentence for a screen reader and gives a sighted reader the
-    // same coastline every other wait on the site draws. It paints nothing
-    // for the first 300 ms, so a fast session still opens straight onto its
-    // first question.
+    // no route boundary can cover it, which is why it spent a release as the
+    // one wait on the site showing a silhouette and nothing else.
+    // `QuizSessionWait` gives it what every other wait gets: a fact, in the
+    // Jouer accent. The band's reserved height is not redundant with the
+    // loader's own — it holds the page open during the chunk's flight, before
+    // there is a loader to hold it.
     return (
       <div
         data-testid="quiz-loading-band"
         className={className}
         style={{ minHeight: "min(52vh, 420px)" }}
       >
-        <LazyAfricaTraceLoader label={t.loadingSession} />
+        <LazyQuizSessionWait />
       </div>
     );
   }

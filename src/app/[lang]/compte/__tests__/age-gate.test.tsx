@@ -25,8 +25,8 @@ vi.mock("@/lib/supabase/auth-server", () => ({
 vi.mock("@/lib/supabase/admin", () => ({
   createAdminClient: vi.fn(),
 }));
-vi.mock("@/lib/api/turnstile", () => ({
-  verifyTurnstileToken: vi.fn(),
+vi.mock("@/lib/api/antibot", () => ({
+  verifyAntibotProof: vi.fn(),
 }));
 vi.mock("@/lib/ratelimit/flagRateLimit", () => ({
   checkFlagRateLimit: vi.fn(),
@@ -35,7 +35,7 @@ vi.mock("@/lib/ratelimit/flagRateLimit", () => ({
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { verifyAntibotProof } from "@/lib/api/antibot";
 import { checkFlagRateLimit } from "@/lib/ratelimit/flagRateLimit";
 import InscriptionPage from "../inscription/page";
 import { GET as callbackGET } from "@/app/api/auth/callback/route";
@@ -197,16 +197,32 @@ describe("POST /api/v2/flags — age gate guard", () => {
     target_id: "PPL_YORUBA",
     flag_kind: "inaccurate",
     reason_text: "The published claim needs a newer source.",
-    turnstile_token: "turnstile-token",
+    antibot: {
+      salt: "test-salt",
+      nonce: "42",
+      difficultyBits: 8,
+      expiresAt: 4102444800000,
+      signature: "test-signature",
+    },
+    elapsedMs: 12_000,
   };
 
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.mocked(verifyTurnstileToken).mockResolvedValue("verified");
+    vi.mocked(verifyAntibotProof).mockResolvedValue("verified");
     vi.mocked(checkFlagRateLimit).mockResolvedValue({ allowed: true });
   });
 
-  it("returns 403 when contributor has no age_confirmed_at", async () => {
+  /**
+   * The gate moved rather than disappeared: age confirmation is what licenses
+   * publishing a contributor's name, so it now decides who a report is
+   * credited to rather than who may file one (moderation charter §2).
+   * Refusing was also a dead end — `age_confirmed_at` is only ever written by
+   * the registration callback, so an account created through the sign-in page
+   * could never clear it and was barred from reporting for good.
+   */
+  // @req REQ-045
+  it("accepts the report anonymously when contributor has no age_confirmed_at", async () => {
     vi.mocked(createAdminClient).mockReturnValue(makeAdminMock(null) as never);
 
     const res = await flagPOST(
@@ -220,9 +236,8 @@ describe("POST /api/v2/flags — age gate guard", () => {
       })
     );
 
-    expect(res.status).toBe(403);
-    expect((await res.json()).errors[0].code).toBe("AGE_CONFIRMATION_REQUIRED");
-    expect(verifyTurnstileToken).not.toHaveBeenCalled();
+    expect(res.status).toBe(201);
+    expect(verifyAntibotProof).toHaveBeenCalled();
   });
 
   it("returns 201 when contributor has age_confirmed_at set", async () => {
@@ -242,9 +257,8 @@ describe("POST /api/v2/flags — age gate guard", () => {
     );
 
     expect(res.status).toBe(201);
-    expect(verifyTurnstileToken).toHaveBeenCalledWith(
-      "turnstile-token",
-      undefined
+    expect(verifyAntibotProof).toHaveBeenCalledWith(
+      expect.objectContaining({ salt: "test-salt" })
     );
   });
 });

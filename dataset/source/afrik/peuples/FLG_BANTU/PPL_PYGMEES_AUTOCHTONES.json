@@ -3,6 +3,7 @@
   "nameMain": "Peuples autochtones des forets d'Afrique centrale (Baka, Bagyeli, Bedzan)",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR", "GAB", "COG", "CAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Peuples autochtones des forets / Chasseurs-cueilleurs forestiers",

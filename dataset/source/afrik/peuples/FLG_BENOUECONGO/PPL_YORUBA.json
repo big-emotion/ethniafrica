@@ -3,6 +3,7 @@
   "nameMain": "Yoruba",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "BEN", "TGO", "GHA", "SLE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Yoruba",

@@ -1,3 +1,4 @@
+import { FicheFieldList } from "@/components/fiche/FicheProse";
 import type { FamilyLinguisticTraitsData } from "@/lib/familyDataTransformer";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
@@ -27,13 +28,11 @@ export function FamilyLinguisticTraits({ data }: FamilyLinguisticTraitsProps) {
       data-fiche-section={CHAPTER_TITLE}
     >
       <h2 id="family-linguistic-traits-heading">{CHAPTER_TITLE}</h2>
-      {traitFields.map(([label, field]) =>
-        data[field] ? (
-          <p key={field}>
-            <strong>{label} :</strong> {data[field]}
-          </p>
-        ) : null
-      )}
+      <FicheFieldList
+        fields={traitFields.flatMap(([label, field]) =>
+          data[field] ? [{ label, prose: data[field] }] : []
+        )}
+      />
     </section>
   );
 }

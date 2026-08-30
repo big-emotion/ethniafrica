@@ -3,6 +3,7 @@
   "nameMain": "Busansi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["BFA", "GHA", "TGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Busansi",

@@ -3,6 +3,7 @@
   "nameMain": "Dagaaba",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "BFA", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Dagaaba",

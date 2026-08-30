@@ -3,6 +3,7 @@
   "nameMain": "Nyangatom",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["ETH", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nyangatom",

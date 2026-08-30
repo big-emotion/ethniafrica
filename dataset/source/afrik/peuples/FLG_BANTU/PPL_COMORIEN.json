@@ -3,6 +3,7 @@
   "nameMain": "Comoriens",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COM", "MYT", "FRA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Comoriens",

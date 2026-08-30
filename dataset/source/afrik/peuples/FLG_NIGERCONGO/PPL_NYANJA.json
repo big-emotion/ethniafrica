@@ -3,6 +3,7 @@
   "nameMain": "Nyanja",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI", "ZMB", "MOZ", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nyanja",

@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -226,7 +227,14 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
-    expect(screen.getByText("Bantu")).toHaveAttribute("lang", "sw");
+    // The tag sits on the definition, which wraps the whole value, rather than
+    // on a span inside it: it qualifies every block the field holds, and `lang`
+    // inherits. What matters is that the endonym is announced in its own
+    // language, not which element carries the attribute.
+    expect(screen.getByText("Bantu").closest("[lang]")).toHaveAttribute(
+      "lang",
+      "sw"
+    );
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
     ).toHaveAttribute(
@@ -345,21 +353,8 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
 
   // @req REQ-012 (AC5)
-  it("renders a disabled FlagTarget shell on the History section by default", () => {
+  it("renders a live report control on the History section", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
-
-    const flagTarget = screen.getByTestId("section-flag-target-history");
-    expect(within(flagTarget).getByRole("button")).toBeDisabled();
-  });
-
-  // @req REQ-012 (AC5)
-  it("wires the live fiche_section FlagTarget on the History section when turnstileSiteKey is provided", () => {
-    render(
-      <LanguageFamilyDetailViewV2
-        family={completeFamily}
-        turnstileSiteKey="test-site-key"
-      />
-    );
 
     const flagTarget = screen.getByTestId("section-flag-target-history");
     expect(

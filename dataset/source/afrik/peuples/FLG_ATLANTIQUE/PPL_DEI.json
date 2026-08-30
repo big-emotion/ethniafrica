@@ -3,6 +3,7 @@
   "nameMain": "Dei",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["LBR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dei",

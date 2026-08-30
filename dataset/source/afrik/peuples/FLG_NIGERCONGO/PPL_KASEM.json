@@ -3,6 +3,7 @@
   "nameMain": "Kasem",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kasem",

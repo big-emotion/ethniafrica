@@ -3,6 +3,7 @@
   "nameMain": "Mbukushu",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BWA", "NAM", "AGO", "ZMB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mbukushu",

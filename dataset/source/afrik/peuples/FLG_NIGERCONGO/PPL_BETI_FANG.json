@@ -3,6 +3,7 @@
   "nameMain": "Béti-Fang",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["CMR", "GNQ", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Béti-Fang",

@@ -3,6 +3,7 @@
   "nameMain": "Gourounsi",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gourounsi",

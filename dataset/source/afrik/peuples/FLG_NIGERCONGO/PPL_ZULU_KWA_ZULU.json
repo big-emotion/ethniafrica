@@ -3,6 +3,7 @@
   "nameMain": "Zulu (KwaZulu)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Zulu (KwaZulu)",

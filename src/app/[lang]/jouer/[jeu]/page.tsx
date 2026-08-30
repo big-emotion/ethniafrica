@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { MercatorSurface } from "@/components/mercator/MercatorSurface";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
+import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
@@ -58,7 +59,12 @@ export default async function GamePage({ params }: GamePageProps) {
     0
   );
 
-  const envelope = await getGameRoundsHandler(game, seed);
+  // The continent the Mercator stage draws. Caught the way the explorer hub
+  // catches it: a failed count costs the per-country field, not the round.
+  const [envelope, peopleCountsByCountry] = await Promise.all([
+    getGameRoundsHandler(game, seed),
+    getContinentPeopleCounts().catch(() => undefined),
+  ]);
 
   // Measured server-side and handed down, the way the rounds are: summing
   // fifty-eight outlines is a few hundred thousand trigonometric calls, and
@@ -108,6 +114,7 @@ export default async function GamePage({ params }: GamePageProps) {
           rounds={envelope.data.rounds}
           facts={facts}
           corpusLimited={envelope.data.corpusLimited}
+          peopleCountsByCountry={peopleCountsByCountry}
         />
       </div>
     </PageLayout>

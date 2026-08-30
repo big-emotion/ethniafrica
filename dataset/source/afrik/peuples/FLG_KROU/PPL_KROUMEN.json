@@ -3,6 +3,7 @@
   "nameMain": "Kroumen",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kroumen",

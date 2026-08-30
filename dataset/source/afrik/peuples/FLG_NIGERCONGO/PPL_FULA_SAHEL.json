@@ -3,6 +3,7 @@
   "nameMain": "Fula (Sahel)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SEN", "MLI", "BFA", "NER", "NGA", "CMR", "TCD", "MRT"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fula (Sahel)",

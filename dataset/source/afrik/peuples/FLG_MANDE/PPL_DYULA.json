@@ -3,6 +3,7 @@
   "nameMain": "Dyula",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["CIV", "BFA", "MLI", "GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dyula",

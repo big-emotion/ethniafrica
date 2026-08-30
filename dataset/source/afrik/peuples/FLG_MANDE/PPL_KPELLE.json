@@ -3,6 +3,7 @@
   "nameMain": "Kpelle",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["GIN", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kpelle",

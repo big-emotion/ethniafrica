@@ -3,6 +3,7 @@
   "nameMain": "Kreda",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kreda",

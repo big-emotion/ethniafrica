@@ -23,6 +23,7 @@
 import { readdirSync, readFileSync, statSync } from "fs";
 import { join } from "path";
 
+import { proseOnly } from "@/lib/prose/ficheProse";
 import {
   namedExonym,
   selectVerbatimFragment,
@@ -117,15 +118,18 @@ const INVERSION_RUBRICS: ReadonlyArray<{
     content: NonNullable<PeopleFiche["content"]>
   ) => string | string[] | null | undefined;
 }> = [
-  { templateId: "T6", read: (c) => c.culture?.majorRites },
-  { templateId: "T7", read: (c) => c.culture?.spiritualities },
-  { templateId: "T8", read: (c) => c.culture?.symbols },
-  { templateId: "T9", read: (c) => c.historicalRole?.kingdomsOrChiefdoms },
+  { templateId: "T6", read: (c) => proseOnly(c.culture?.majorRites) },
+  { templateId: "T7", read: (c) => proseOnly(c.culture?.spiritualities) },
+  { templateId: "T8", read: (c) => proseOnly(c.culture?.symbols) },
+  {
+    templateId: "T9",
+    read: (c) => proseOnly(c.historicalRole?.kingdomsOrChiefdoms),
+  },
   {
     templateId: "T10",
-    read: (c) => c.organization?.traditionalPoliticalSystem,
+    read: (c) => proseOnly(c.organization?.traditionalPoliticalSystem),
   },
-  { templateId: "T11", read: (c) => c.origins?.migrationRoutes },
+  { templateId: "T11", read: (c) => proseOnly(c.origins?.migrationRoutes) },
 ];
 
 /**

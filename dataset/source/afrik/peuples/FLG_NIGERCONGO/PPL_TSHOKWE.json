@@ -3,6 +3,7 @@
   "nameMain": "Tshokwe",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "AGO", "ZMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tshokwe",

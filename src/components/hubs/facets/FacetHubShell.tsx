@@ -95,9 +95,9 @@ export function FacetHubShell({
                 No measure of its own. It sat in a hand-set 62ch box while the
                 switcher above and the filter bar below both filled the
                 container, so a caption describing two full-width controls
-                stopped at two-fifths of them. The typography charter's 65ch
-                cap governs running prose and exempts what fills its container;
-                a label between two widgets belongs with the widgets. */}
+                stopped at two-fifths of them. The typography charter gives
+                running prose no measure at all now, and a label between two
+                widgets belongs with the widgets either way. */}
             <p
               data-testid="facet-filter-hint"
               className="text-afh-small text-afh-text-soft"

@@ -3,6 +3,7 @@
   "nameMain": "Nankana",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nankana",

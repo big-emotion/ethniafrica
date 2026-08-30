@@ -20,11 +20,18 @@
   margin-bottom: 4px;
 }
 
+/* The measure came out with the sub-headings. The people fiche is on the same
+   parchment as the family and the country — its chapters are FicheSections —
+   and `.afh-parchment-section p` deliberately sets no max-width, because the
+   parchment decides where a line ends. Capped at 65ch this was the one
+   paragraph on the page still breaking off mid-width while the stat cards,
+   tags and rankings beside it ran to both edges. The structure the corpus now
+   carries is what makes the full width readable: a chapter cut every three or
+   four sentences is no longer the slab the cap was defending against. */
 .people-section-body {
   font-size: var(--afh-text-body);
-  /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
+  /* Reading-surface density: UX-DR2 line-height ≥ 1.6 */
   line-height: var(--afh-leading-body);
-  max-width: var(--afh-measure-prose);
   color: var(--country-text);
 }
 
