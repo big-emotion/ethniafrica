@@ -1183,6 +1183,26 @@ describe("AtlasGlobe — coming closer to a small country (REQ-117)", () => {
     expect(zoomControls().in).toBeEnabled();
   });
 
+  /**
+   * A fiche opens on the whole globe, not on a dolly that cuts the limb off.
+   *
+   * The stage is a band far wider than it is tall — 1512x520 on a laptop — and
+   * the sphere is fit to its *height*, so an automatic 1.6x framing makes the
+   * sphere 1.6 stage-heights across and hangs 30% of it off the top and the
+   * bottom. That crop is a ratio, not a shortfall of pixels: a taller band
+   * scales the sphere with it and cuts away exactly as much, which is why the
+   * fix is the opening zoom rather than --afh-globe-stage-height. Coming
+   * closer stays the reader's move — the controls below are still there — and
+   * choosing a country still flies in on it.
+   */
+  // @req REQ-117
+  it("opens a country fiche on the whole globe, undollied", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    expect(zoomControls().out).toBeDisabled();
+    expect(zoomControls().in).toBeEnabled();
+  });
+
   // @req REQ-117
   it("comes closer when the reader presses in, and can go back", () => {
     render(
