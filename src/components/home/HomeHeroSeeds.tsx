@@ -3,7 +3,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import type { SearchEntityType } from "@/types/afrik-frontend";
+import {
+  FALLBACK_SEED_WORDS,
+  type SeedKind,
+  type SeedWordsByKind,
+} from "@/lib/home/seedWords";
 
 /**
  * The three example queries under the hero's search field, each a slot reel.
@@ -48,7 +52,7 @@ export const REEL_MS = 320;
 const REEL_EASING = "cubic-bezier(0, 0, 0.2, 1)";
 
 export interface SeedPool {
-  kind: SearchEntityType;
+  kind: SeedKind;
   words: string[];
   /**
    * Deliberately non-commensurate across the three pools: dwells that share a
@@ -60,31 +64,27 @@ export interface SeedPool {
 }
 
 /**
- * An editorial selection, not a query of the corpus — but asserted against it
- * by homeHeroSeedsCorpus.test.ts, because a first pass of this list held four
- * words the fiches do not carry under those spellings.
+ * The cadence of each reel, which is presentation and belongs here. The words
+ * are the corpus' business and arrive as a prop — drawn per request by
+ * loadSeedWords, or the curated dozen when the database has nothing to say.
  */
-// @req REQ-002
-export const SEED_POOLS: SeedPool[] = [
-  {
-    kind: "people",
-    words: ["Yoruba", "Bété", "Himba", "Zoulou"],
-    dwellMs: 2300,
-    startDelayMs: 600,
-  },
-  {
-    kind: "country",
-    words: ["Cameroun", "Bénin", "Namibie", "Éthiopie"],
-    dwellMs: 2900,
-    startDelayMs: 1400,
-  },
-  {
-    kind: "languageFamily",
-    words: ["Bantou", "Afro-asiatique", "Mandé", "Nilotique"],
-    dwellMs: 3700,
-    startDelayMs: 2200,
-  },
+const SEED_CADENCE: {
+  kind: SeedKind;
+  dwellMs: number;
+  startDelayMs: number;
+}[] = [
+  { kind: "people", dwellMs: 2300, startDelayMs: 600 },
+  { kind: "country", dwellMs: 2900, startDelayMs: 1400 },
+  { kind: "languageFamily", dwellMs: 3700, startDelayMs: 2200 },
 ];
+
+// @req REQ-002
+export function seedPools(words: SeedWordsByKind): SeedPool[] {
+  return SEED_CADENCE.map((cadence) => ({
+    ...cadence,
+    words: words[cadence.kind],
+  }));
+}
 
 interface ReelHold {
   /** Transient: a pointer or a focus ring is on the row. Leaving takes it up. */
@@ -220,15 +220,26 @@ export interface HomeHeroSeedsProps {
   onPick: (word: string) => void;
   /** Raised by the field as soon as the reader types, alongside hover and focus. */
   engaged?: boolean;
+  /**
+   * Drawn from the corpus by the server on every request. Defaults to the
+   * curated dozen so Storybook and a test can render the row without a
+   * database behind it.
+   */
+  words?: SeedWordsByKind;
 }
 
 // @req REQ-002
-export function HomeHeroSeeds({ onPick, engaged = false }: HomeHeroSeedsProps) {
+export function HomeHeroSeeds({
+  onPick,
+  engaged = false,
+  words = FALLBACK_SEED_WORDS,
+}: HomeHeroSeedsProps) {
   // React maps onFocus/onBlur to focusin/focusout, which bubble — so a chip
   // taking keyboard focus holds the whole row, and the reader tabbing to a
   // word gets the same still row the reader pointing at one gets.
   const [visiting, setVisiting] = useState(false);
   const hold = { paused: visiting, ended: engaged };
+  const pools = seedPools(words);
 
   return (
     <ul
@@ -239,7 +250,7 @@ export function HomeHeroSeeds({ onPick, engaged = false }: HomeHeroSeedsProps) {
       onFocus={() => setVisiting(true)}
       onBlur={() => setVisiting(false)}
     >
-      {SEED_POOLS.map((pool) => (
+      {pools.map((pool) => (
         <SeedChip key={pool.kind} pool={pool} hold={hold} onPick={onPick} />
       ))}
 

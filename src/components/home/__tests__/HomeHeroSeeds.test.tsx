@@ -1,7 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, act, fireEvent } from "@testing-library/react";
 
-import { HomeHeroSeeds, SEED_POOLS, REEL_MS } from "../HomeHeroSeeds";
+import { HomeHeroSeeds, seedPools, REEL_MS } from "../HomeHeroSeeds";
+import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";
+
+/** What the row turns through when the page injects nothing. */
+const SEED_POOLS = seedPools(FALLBACK_SEED_WORDS);
 
 function setReducedMotion(reduced: boolean) {
   window.matchMedia = vi.fn().mockImplementation((query: string) => ({
@@ -173,6 +177,23 @@ describe("HomeHeroSeeds — the three example queries", () => {
 
     expect(onPick).toHaveBeenCalledWith(visible);
     expect(visible).not.toBe(SEED_POOLS[0].words[0]);
+  });
+
+  // The words are the corpus' business, not the component's: the page draws
+  // ten per kind on every request and hands them down. A row that quietly
+  // ignored them would look right and go on teaching the same twelve names.
+  // @req REQ-002
+  it("turns through the words the page hands it", () => {
+    const drawn = {
+      people: ["Baoulé", "Sérère"],
+      country: ["Togo", "Ghana"],
+      languageFamily: ["Songhaï", "Oubanguienne"],
+    };
+    render(<HomeHeroSeeds onPick={vi.fn()} words={drawn} />);
+
+    expect(shownWord(0)).toBe("Baoulé");
+    advancePastFirstRoll(0);
+    expect(shownWord(0)).toBe("Sérère");
   });
 
   // A word swapping itself is not an announcement. Without this a screen
