@@ -8,6 +8,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
   const baseData: PeoplesData = {
     totalPopulation: 50000000,
     totalPopulationFormatted: "50M",
+    everyPeopleDeclaresPopulation: true,
     peopleCount: 2,
     rows: [
       {
@@ -85,6 +86,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
     const empty: PeoplesData = {
       totalPopulation: 0,
       totalPopulationFormatted: "0",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 0,
       rows: [],
     };
