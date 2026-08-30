@@ -1,30 +1,34 @@
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
- * The home's opening band (REQ-115).
+ * The home's opening band (REQ-115): a question, and one sentence answering it.
  *
- * The copy states the thesis rather than the medium. « Le continent raconté
- * comme une carte vivante » described how the page looked; a reader landing
- * cold could not tell what the atlas holds or what makes it different from
- * any other encyclopedia. What makes it different is the naming: a people
- * appears under the name it gives itself, beside the name it was given from
- * outside, with who gave it, from where, and when. That is the one sentence
- * the band owes a first-time reader, so it is the H1.
+ * The band used to run three registers — a nine-word headline, a lede, a
+ * standfirst — and asked the reader to hold seven items before the first
+ * scroll: four in the lede's list, three in the standfirst's. A reader
+ * retains one. Eighty-six words of it were spent announcing what the section
+ * immediately below (PurposeBlocks) then demonstrates on three cases: a
+ * country named by its merchandise, a people carrying an exonym, a language
+ * family long read as a people. The same claim was being made twice, and the
+ * announcement was the weaker of the two — which is why the standfirst left
+ * rather than shrank.
  *
- * The headline says « les peuples », never « chaque peuple »: an autonym is
- * required only from `confidence >= medium` upward, so a per-fiche guarantee
- * would be a claim the corpus does not carry.
+ * The headline is now the question a first-time visitor actually arrives
+ * with. It presumes nothing, which is the register the games charter §8 asks
+ * of every quiz stem ("the audience knows nothing about the subject") applied
+ * to the first line of the site; and a question is the one form a reader
+ * retains whole.
  *
- * Three registers, in descending order of voice: the headline states the
- * thesis, the lede glosses it, the standfirst says plainly what the site is
- * and what rule it holds itself to. The band used to stop after the lede and
- * hand the reader a globe, which meant the one question a first-time visitor
- * actually has — what is this site? — went unanswered above the fold.
+ * What the answer states is deliberately narrow: how the atlas proceeds
+ * (peuple par peuple), what it costs (rien), and the one rule it holds
+ * itself to (every answer carries its source). Not what the corpus contains
+ * — the axis cards below print counts that read themselves, and a list here
+ * would rebuild the lede that was just removed.
  *
- * The module that used to fill the rest of the band now stands lower on the
- * page as its own section (FeaturedModule), with a heading of its own. The
- * band is copy, and it sizes to its copy: the viewport-height floor it used
- * to carry existed to hold the globe and left with it.
+ * Dropping the standfirst also flips the page order it used to justify: the
+ * axes came first because the standfirst told the reader what the atlas was
+ * for above the fold. It no longer does, so the argument goes back in front
+ * of the three doors (see the section order in app/[lang]/page.tsx).
  *
  * The band ends on a seam rather than a fade: the edge where the hero stops
  * and the archive starts is the page's one large gesture, and a gradient
@@ -42,41 +46,23 @@ export function HomeHero() {
       className="home-hero"
     >
       <header className="home-hero-copy">
-        <h1>
-          Les peuples d&apos;Afrique, sous{" "}
-          {/* The article is bound to its noun: balanced wrapping otherwise
-              ends a line on « sous le », which reads as a broken sentence
-              at exactly the moment the headline states its thesis. */}
-          <em>le&nbsp;nom qu&apos;ils se donnent</em>
-        </h1>
-        <p className="home-hero-lede">
-          Leurs langues, leurs familles, leurs pays — et, derrière chaque nom,
-          qui l&apos;a donné, depuis où et à quelle époque.
-        </p>
-        {/* The lede glosses the headline; the standfirst says what the site
-            is, to a reader who has landed on it for the first time and has
-            no idea yet whether this is an encyclopedia, a map or a game.
-            Two sentences: what the atlas publishes, and the rule it holds
-            itself to.
-
-            No figures in it. « 803 peuples » would be a literal the corpus
-            outgrows silently — the axis cards already print counts that read
-            themselves (getCorpusCounts), and that is where a number belongs. */}
-        <p className="home-hero-standfirst" data-testid="home-hero-standfirst">
-          {/* One string, not the product name followed by JSX text. Next's
-              SWC transform drops the space between an expression and the
-              text that follows it on the same line, so the band shipped
-              « EthniAfricapublie » — in the first line of prose the site
-              offers. Neither vitest's transform nor Prettier reproduces
-              that reading: the runner keeps the space, so every test here
-              stayed green, and Prettier deletes an explicit space
-              expression it believes JSX already implies. Inside a template
-              literal no whitespace rule applies at all. */}
-          {`${PRODUCT_NAME} publie en accès libre les peuples du continent, ` +
-            `leurs langues, leurs familles linguistiques et leurs pays, ` +
-            `chacun sous le nom qu'il se donne. Chaque affirmation y porte ` +
-            `sa source et son niveau de confiance, et ce qui reste débattu ` +
-            `est signalé comme tel.`}
+        {/* The thin no-break space is the French rule before a question
+            mark, and it is load-bearing here rather than typographic
+            politeness: the headline wraps to two lines on a phone, and a
+            plain space lets « ? » start the third one on its own. */}
+        <h1>Qui sont les peuples d&apos;Afrique&nbsp;?</h1>
+        {/* One string, not the product name followed by JSX text. Next's
+            SWC transform drops the space between an expression and the text
+            that follows it on the same line, so the band once shipped
+            « EthniAfricapublie » — in the first line of prose the site
+            offers. Neither vitest's transform nor Prettier reproduces that
+            reading: the runner keeps the space, so every test here stayed
+            green, and Prettier deletes an explicit space expression it
+            believes JSX already implies. Inside a template literal no
+            whitespace rule applies at all. */}
+        <p className="home-hero-answer" data-testid="home-hero-answer">
+          {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
+            `et donne la source de chaque réponse.`}
         </p>
       </header>
 
@@ -110,38 +96,22 @@ export function HomeHero() {
           text-wrap: balance;
           color: var(--afh-text);
         }
-        .home-hero-copy h1 em {
-          font-style: italic;
-          color: var(--afh-display-accent);
-        }
-        /* Class, not \`.home-hero-copy p\`: a descendant selector outranks a
-           single class, so the element rule would have overridden the
-           standfirst's own size and ink below however it was written. */
-        .home-hero-lede {
-          margin: 0 auto;
-          max-width: 56ch;
-          font-size: var(--home-text-hero-copy);
-          line-height: 1.6;
-          color: var(--afh-text-soft);
-        }
 
-        /* The standfirst is the page's first prose, so it takes the reading
-           size and the full ink — the lede above it stays the smaller, softer
-           gloss on the headline. Set the other way round, two paragraphs of
-           near-identical grey would read as one four-line block and the
-           reader would skip both.
+        /* A class, not \`.home-hero-copy p\`: a descendant selector outranks
+           a single class, so an element rule would silently override
+           whatever the answer sets for itself.
 
-           A hairline rather than a rule: it marks where the claim stops and
-           the description starts, without cutting the band in two. */
-        .home-hero-standfirst {
+           Reading size and full ink, because this is now the band's only
+           prose. At the retired lede's smaller, softer grey it would read
+           as a caption under the headline rather than as its answer. No
+           rule above it either — the hairline separated a standfirst from
+           a lede, and neither is here now. */
+        .home-hero-answer {
           margin: 0 auto;
-          margin-top: 22px;
-          padding-top: 22px;
-          max-width: 62ch;
+          max-width: 52ch;
           font-size: var(--afh-text-body);
           line-height: var(--afh-leading-body);
           color: var(--afh-text);
-          border-top: 1px solid var(--afh-border);
         }
 
         .home-hero-seam {
@@ -160,11 +130,10 @@ export function HomeHero() {
           }
         }
 
-        /* No viewport-height floor any more. It existed to keep the globe
-           and its controls inside the first screen; with the module gone to
-           its own section, the same rule would stretch three paragraphs over
-           a full screen and push the three entry points below the fold —
-           which is the opposite of why they were moved up here. */
+        /* No viewport-height floor. It existed to keep the globe and its
+           controls inside the first screen; with the module gone to its own
+           section, the same rule would stretch two lines of copy over a full
+           screen and push the argument below the fold. */
       `}</style>
     </section>
   );
