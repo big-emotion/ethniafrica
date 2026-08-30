@@ -44,18 +44,47 @@ export interface DidYouKnowProps {
  * re-runs during hydration and cannot desynchronise the client tree), which
  * is why nothing here is a client component any more.
  *
- * The band's own dress is deliberately bare: no card, no frame, no surface
- * between the reader and the sentence.
+ * ── The composition ──────────────────────────────────────────────────────
  *
- * It also has to fit a viewport whole, which the deck had stopped doing: at
- * twenty-four facts stacked in one grid cell it stood 893px tall against an
- * 800px screen and pushed its own controls under the fold. Dropping the deck
- * removed the controls and most of the height; what is kept from that fix is
- * the vertical rhythm — tighter padding than the sections around it, and the
- * title one rung down. That override of the section-heading unit is the only
- * one on the home and the only section with grounds for it: everywhere else
- * the title is a fixed label three words long, here it is the fact itself and
- * runs to ninety characters, which at --afh-text-h1 takes four lines.
+ * The band once had to fit a viewport whole, and everything about it was set
+ * against that budget: eight pixels under the title, ten between paragraphs,
+ * the heading held one rung below every other section on the page. What it
+ * bought in height it spent in legibility — six centred lines of prose with
+ * five registers of type stacked around them, none of the gaps telling the
+ * reader which lines belonged together.
+ *
+ * That budget is deliberately given up here. In its place the band composes:
+ *
+ *   rhythm      Gaps come from the spacing scale and are graded — twelve
+ *               pixels inside a group, twenty to twenty-four between two.
+ *               The seam a reader has to see is the one between the fact and
+ *               its provenance, not the one between two paragraphs.
+ *
+ *   focus       The title takes the shared heading unit's own rung rather
+ *               than the rung below it. The override that held it down was
+ *               half dead anyway: its companion `max-width` lost the cascade
+ *               to `.afh-section-heading.is-centred`, so the measure it
+ *               claimed to widen had been 28ch all along.
+ *
+ *   ground      A field of question marks and lenses sits behind the band at
+ *               five percent, decorative and out of the accessible tree. It
+ *               is the only thing on the home that says « this is where the
+ *               atlas asks a question » before a word is read.
+ *
+ *   asymmetry   Below the tablet floor the prose stays centred, because
+ *               src/styles/mobile-text.css is right that a forty-character
+ *               measure composes better centred than ragged. Above it the
+ *               prose takes the left edge while the title, the chips and the
+ *               provenance stay centred — so the band reads as a composed
+ *               page rather than one undifferentiated cone of text.
+ *
+ *   register    Two inks in the prose, not five: the lede carries the fact
+ *               and takes the full ink, the tail carries the context and
+ *               takes the soft one. The provenance was mono, uppercase and
+ *               tracked — the eyebrow's exact dress, on the least important
+ *               line of the band, which is why the reader met two eyebrows
+ *               and no hierarchy. It is a footnote now, and still readable:
+ *               the Source Tier policy makes it content, not chrome.
  *
  * The picture and the four controls on `/comprendre/anecdotes` stay on that
  * page. The band is met, not sought: a reader who did not ask for an anecdote
@@ -66,6 +95,13 @@ export interface DidYouKnowProps {
  * find the search box themselves. The link below them is the band's other
  * exit, and the only one that can be bookmarked or shared.
  */
+
+/**
+ * The motif's pattern id is fixed rather than generated: the band renders
+ * once per page by construction (the home draws one fact), and `useId` is not
+ * available to a server component.
+ */
+const MOTIF_TILE_ID = "home-dyk-motif-tile";
 
 function entityHref(language: Language, entity: DidYouKnowEntity): string {
   if (entity.kind === "country") return getCountryRoute(language, entity.id);
@@ -81,6 +117,59 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
 
   return (
     <section className="home-dyk" data-testid="home-did-you-know">
+      <div className="home-dyk-motif" aria-hidden="true">
+        <svg focusable="false">
+          <defs>
+            {/* A 280px tile carrying four marks. The first pass tiled three
+                marks every 150px, which at desktop width put roughly forty
+                glyphs behind the fact and read as wallpaper rather than as
+                grain — the band has to hold a question, not be papered in
+                them. Sparser at the same weight is what makes it a mood. */}
+            <pattern
+              id={MOTIF_TILE_ID}
+              width="280"
+              height="280"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(-9)"
+            >
+              <text
+                className="home-dyk-motif-glyph"
+                x="18"
+                y="86"
+                fontSize={64}
+              >
+                ?
+              </text>
+              <circle className="home-dyk-motif-lens" cx="196" cy="62" r="20" />
+              <line
+                className="home-dyk-motif-lens"
+                x1="210"
+                y1="76"
+                x2="230"
+                y2="96"
+              />
+              <text
+                className="home-dyk-motif-glyph"
+                x="150"
+                y="242"
+                fontSize={64}
+              >
+                ?
+              </text>
+              <circle className="home-dyk-motif-lens" cx="52" cy="206" r="13" />
+              <line
+                className="home-dyk-motif-lens"
+                x1="61"
+                y1="215"
+                x2="74"
+                y2="228"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#${MOTIF_TILE_ID})`} />
+        </svg>
+      </div>
+
       <div className="home-dyk-inner">
         <article className="home-dyk-fact">
           <SectionHeading
@@ -89,14 +178,21 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
             title={fact.headline}
             className="home-dyk-heading"
           />
-          {fact.body.map((paragraph, position) => (
-            <p
-              key={paragraph.slice(0, 32)}
-              className={position === 0 ? "home-dyk-lede" : undefined}
-            >
-              {paragraph}
-            </p>
-          ))}
+
+          {/* The prose is wrapped rather than left loose in the article: the
+              wrapper is what carries the measure, the alignment switch and
+              the last paragraph's cleared margin, none of which the article
+              can hold without also holding the chips and the provenance. */}
+          <div className="home-dyk-prose">
+            {fact.body.map((paragraph, position) => (
+              <p
+                key={paragraph.slice(0, 32)}
+                className={position === 0 ? "home-dyk-lede" : undefined}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
           <ul className="home-dyk-chips">
             {fact.entities.map((entity) => (
@@ -121,30 +217,65 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
         {/* The band is a hook, and a hook has no URL. This is the only exit
             from it that a reader can bookmark, share or be sent by a search
             engine. It says « d'autres » rather than a count: the reader is
-            being offered more, not shown how little there is. */}
+            being offered more, not shown how little there is. The arrow is
+            what tells a reader it leaves the page at all — the underline
+            alone put it in the same register as the provenance above it. */}
         <p className="home-dyk-all">
           <Link href={getLocalizedRoute(language, "anecdotes")}>
             Lire d&apos;autres anecdotes
+            <span aria-hidden="true"> →</span>
           </Link>
         </p>
       </div>
 
       <style>{`
-        /* The band has one size constraint the other sections do not: a
-           reader must be able to see the whole fact and the link out of it
-           without scrolling. Every measure below is set against that budget
-           rather than against the page's usual rhythm, which is why this
-           section is tighter than its neighbours. */
         .home-dyk {
+          position: relative;
+          overflow: hidden;
           background: var(--afh-bg-warm);
           border-top: 1px solid var(--afh-border);
           border-bottom: 1px solid var(--afh-border);
-          padding: 24px 20px 20px;
+          padding: var(--afh-space-6xl) var(--afh-space-4xl);
           width: 100vw;
           margin-left: calc(50% - 50vw);
           margin-right: calc(50% - 50vw);
         }
+
+        /* Mood, not information. At five percent the glyphs read as a grain
+           in the paper rather than as marks on it, so the band's text still
+           contrasts against the warm ground alone and the a11y gates see the
+           surface they measured. Decorative, hidden, and inert to the
+           pointer: a full-bleed layer that swallowed taps would take the
+           chips with it. */
+        .home-dyk-motif {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          opacity: 0.04;
+          color: var(--afh-text);
+        }
+        .home-dyk-motif svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        .home-dyk-motif-glyph {
+          font-family: var(--afh-font-display);
+          font-weight: 600;
+          fill: currentColor;
+        }
+        .home-dyk-motif-lens {
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 3;
+          stroke-linecap: round;
+        }
+
         .home-dyk-inner {
+          /* Positioned so the band's own content paints over the motif: an
+             absolutely positioned sibling otherwise sits above every static
+             box that follows it, motif over prose. */
+          position: relative;
           /* Wider than the reading measure the other sections take: four
              lines of centred display type is where the band overflowed, and
              a few more characters per line removes one of them. */
@@ -152,18 +283,15 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           margin: 0 auto;
           text-align: center;
         }
-        /* The eyebrow and the title are the shared unit's now
-           (src/styles/section-heading.css). Only the spacing is local. */
-        .home-dyk-heading {
-          margin-bottom: 8px;
-        }
-        /* The one place the section-heading unit is overridden, and the only
-           section that has grounds to: everywhere else the title is a fixed
-           label three words long, here it is the fact itself and runs to
-           ninety characters. Held at --afh-text-h1 the longest fact takes four
-           lines; one rung down it takes three, and the band fits a viewport. */
-        .home-dyk-heading .afh-section-heading-title {
-          font-size: var(--afh-text-h2);
+        /* The eyebrow, the title and the gap under them are the shared
+           unit's now (src/styles/section-heading.css) — the band declares
+           none of the three. Its one remaining claim on the unit is the
+           measure: every other section title is a fixed label three words
+           long, this one is the fact itself and runs to ninety characters.
+           Written at the unit's own weight so it wins the cascade — the
+           version it replaces sat two classes below the centred modifier and
+           never applied. */
+        .home-dyk .afh-section-heading.is-centred .afh-section-heading-title {
           max-width: 32ch;
         }
 
@@ -178,32 +306,37 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           .home-dyk-fact { animation: none; }
         }
 
-        .home-dyk p {
-          margin: 0 0 10px;
+        /* The prose takes the atlas's own reading measure rather than the
+           band's wider one: 68ch of centred display type is what the title
+           needs to lose a line, and what a paragraph gains nothing from. */
+        .home-dyk-prose {
+          max-width: var(--afh-measure-prose);
+          margin: 0 auto;
+        }
+        .home-dyk-prose p {
+          margin: 0 0 var(--afh-space-lg);
           font-size: var(--afh-text-body);
-          line-height: 1.55;
+          line-height: 1.6;
           color: var(--afh-text-soft);
         }
-        .home-dyk .home-dyk-lede {
+        /* Two registers, and only two: the lede states the fact, the tail
+           gives it its context. The gap below the group is the chips' to
+           declare, so the last paragraph clears its own. */
+        .home-dyk-prose .home-dyk-lede {
           font-size: var(--afh-text-lead);
           color: var(--afh-text);
         }
-
-        /* The last paragraph's bottom margin sits between the prose and the
-           chips, which already declare their own top margin — two gaps for
-           one seam. Selected by what follows it rather than by
-           :last-of-type, which would land on the tier: the tier is a <p>
-           too, and is the real last one. */
-        .home-dyk-fact > p:has(+ .home-dyk-chips) {
+        .home-dyk-prose p:last-child {
           margin-bottom: 0;
         }
+
         .home-dyk-chips {
           list-style: none;
-          margin: 12px 0 0;
+          margin: var(--afh-space-5xl) 0 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
-          gap: 8px;
+          gap: var(--afh-space-md);
           justify-content: center;
         }
         /* Each chip carries its own accent class, so it reads var(--accent)
@@ -244,20 +377,23 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
              what separate the kind from the name; the colour stays legible,
              like the tier line below. */
         }
+        /* The band's provenance, in the register of a footnote. It used to
+           be set mono, uppercase and tracked, which is the eyebrow's dress
+           exactly — so the band opened and closed with the same shout and
+           the reader had no way to tell which of the two was the heading.
+           Sentence case, body face and the caption rung file it under the
+           fact instead. The ink still clears AA: the whole point of the
+           Source Tier policy is that a reader can see what a claim rests on,
+           which makes this content. */
         .home-dyk-tier {
-          margin: 10px 0 0;
-          font-family: var(--font-mono, ui-monospace, monospace);
-          font-size: var(--afh-text-eyebrow);
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          /* The tier is the band's provenance — the whole point of the
-             Source Tier policy is that a reader can see what a claim rests
-             on, so it is content and takes an ink that clears AA. */
-          color: var(--afh-fg-muted);
+          margin: var(--afh-space-4xl) 0 0;
+          font-size: var(--afh-text-caption);
+          line-height: var(--afh-leading-caption);
+          color: var(--afh-text-soft);
         }
 
         .home-dyk-all {
-          margin: 18px 0 0;
+          margin: var(--afh-space-5xl) 0 0;
           text-align: center;
           font-size: var(--afh-text-caption);
         }
@@ -272,16 +408,36 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
         }
 
         /* Under 430px the same fact costs three or four more lines. These buy
-           them back without touching the type sizes, which are already at the
-           bottom of their clamps here. */
+           some of them back without touching the type sizes, which are
+           already at the bottom of their clamps here. */
         @media (max-width: 430px) {
-          .home-dyk { padding: 20px 16px 18px; }
-          .home-dyk p { line-height: 1.5; }
+          .home-dyk { padding: var(--afh-space-5xl) var(--afh-space-2xl); }
+          .home-dyk-prose p { line-height: 1.55; }
           .home-dyk-chip { padding: 5px 12px 5px 9px; }
         }
 
-        @media (min-width: 720px) {
-          .home-dyk { padding: 36px 40px 30px; }
+        /* One tablet edge for the whole band, and it is the site's own:
+           src/styles/mobile-text.css centres every run of copy below 768px
+           and names that floor as the line a component opts back out at.
+           Splitting the band's padding step off onto a second breakpoint
+           would put the composition change and the space change on either
+           side of a 48px no man's land. */
+        @media (min-width: 768px) {
+          .home-dyk {
+            padding: var(--afh-space-8xl) var(--afh-space-7xl);
+          }
+          /* Six centred lines is a poster, not a paragraph. The title, the
+             chips and the provenance stay on the axis; only the prose moves,
+             which is what gives the band a composition instead of a cone.
+
+             It moves onto an edge that exists: dropping the auto margins
+             lands the prose on the inner column's own left edge. Centred as
+             a block it would instead have floated a few characters inside
+             that edge, aligned to nothing on the page. */
+          .home-dyk-prose {
+            margin-inline: 0;
+            text-align: left;
+          }
         }
       `}</style>
     </section>
