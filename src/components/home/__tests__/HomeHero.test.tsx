@@ -2,10 +2,16 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
+
+// The band carries an interactive island since the search field landed in it,
+// and useRouter throws outside an app-router tree rather than degrading.
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
 
 describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // @req REQ-044
