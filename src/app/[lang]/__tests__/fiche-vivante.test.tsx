@@ -167,10 +167,6 @@ vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
   ),
 }));
 
-vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
-  FamilyClassificationTreeSection: () => <div data-testid="family-tree" />,
-}));
-
 // ---------------------------------------------------------------------------
 // Subjects under test — imported after the boundaries are in place
 // ---------------------------------------------------------------------------

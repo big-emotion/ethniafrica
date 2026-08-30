@@ -16,7 +16,6 @@ import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
-import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
@@ -207,8 +206,10 @@ export default async function FamillesSlugPage({
       ? familyMemberPeoples
       : await getPeoplesByIds(declaredAssociatedPeopleIds(family));
 
-  // The tongue chapter reuses the tree the record chapter already renders — a
-  // second fetch would cost a round trip to restate the same three queries.
+  // The tongue chapter is the only consumer of the tree skeleton since the
+  // Classification chapter was withdrawn: it named a family → language → people
+  // hierarchy the editorial model does not carry, so its language level was
+  // deduplicated ISO codes rather than a declared classification.
   // Branches are keyed by ISO 639-3 because that is what TonguePanel sends back
   // to the tree/branch endpoint when a visitor expands one.
   const tongueBranches = tree?.branches.map((branch) => ({
@@ -264,11 +265,6 @@ export default async function FamillesSlugPage({
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeoples.length}
       footprintProvenance={footprintProvenance}
-      classificationTree={
-        tree ? (
-          <FamilyClassificationTreeSection familyId={parsed.slug} tree={tree} />
-        ) : undefined
-      }
     />
   );
 

@@ -1,5 +1,4 @@
 import { transformFamilyData } from "@/lib/familyDataTransformer";
-import type { ReactNode } from "react";
 import type { LanguageFamily } from "@/types/afrik";
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
 import type { MemberPeopleLike } from "@/lib/familyFootprintRanking";
@@ -55,7 +54,6 @@ import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTrai
  */
 export interface LanguageFamilyDetailViewV2Props {
   family: LanguageFamily;
-  classificationTree?: ReactNode;
   /** Enables the live section FlagTarget on the history section (REQ-012 AC5). */
   turnstileSiteKey?: string;
   /** The same countries, in the same order, the globe drew — so the ranking and the map cannot disagree. */
@@ -69,7 +67,6 @@ export interface LanguageFamilyDetailViewV2Props {
 // @req REQ-047
 export function LanguageFamilyDetailViewV2({
   family,
-  classificationTree,
   turnstileSiteKey,
   footprintCountries = [],
   memberPeoples = [],
@@ -78,7 +75,7 @@ export function LanguageFamilyDetailViewV2({
 }: LanguageFamilyDetailViewV2Props) {
   const data = transformFamilyData(family);
 
-  // Inside the parchment, not after it: these four chapters used to follow the
+  // Inside the parchment, not after it: these chapters used to follow the
   // sources footer, which made the fiche read as ending one chapter early.
   return (
     <FamilyParchment
@@ -101,9 +98,6 @@ export function LanguageFamilyDetailViewV2({
           turnstileSiteKey={turnstileSiteKey}
         />
       </div>
-      {classificationTree ? (
-        <div className="afh-parchment-section">{classificationTree}</div>
-      ) : null}
     </FamilyParchment>
   );
 }
