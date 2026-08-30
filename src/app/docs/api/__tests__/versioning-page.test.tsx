@@ -71,8 +71,10 @@ describe("the versioning strategy page", () => {
     ).toHaveAttribute("href", "/docs/api");
   });
 
-  // The table is the one element that cannot shrink below its content, so at
-  // 430px it has to scroll inside its own box rather than push the page wide.
+  // The table and the example block are the two things that cannot shrink to
+  // their container, so each scrolls in its own box rather than pushing the
+  // page wide. Measured in a real browser at 320/430/720/1200 — happy-dom has
+  // no layout, so what is pinned here is the structure that produced it.
   // @req REQ-037
   it("lets the header table scroll on its own rather than widening the page", () => {
     const { container } = render(<ApiVersioningPage />);
@@ -80,6 +82,29 @@ describe("the versioning strategy page", () => {
     const table = screen.getByRole("table", { name: /en-têtes/i });
     expect(table.closest(".overflow-x-auto")).not.toBeNull();
     expect(container.querySelector(".overflow-x-hidden")).toBeNull();
+  });
+
+  // @req REQ-037
+  it("lets the example block scroll on its own", () => {
+    const { container } = render(<ApiVersioningPage />);
+
+    const example = container.querySelector("pre");
+    expect(example?.closest(".overflow-x-auto")).not.toBeNull();
+  });
+
+  // Without min-w-0 a flex child refuses to shrink below its widest line, and
+  // the example block's longest header pushed the whole page to 629px at a
+  // 430px viewport — the scroll box around it cannot help while its own
+  // column will not narrow.
+  // @req REQ-037
+  it("lets the text column beside each icon narrow below its content", () => {
+    const { container } = render(<ApiVersioningPage />);
+
+    const iconRows = [...container.querySelectorAll(".flex.items-start")];
+    expect(iconRows.length).toBeGreaterThan(0);
+    for (const row of iconRows) {
+      expect(row.querySelector(".min-w-0")).not.toBeNull();
+    }
   });
 });
 

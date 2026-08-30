@@ -93,12 +93,12 @@ export default function ApiVersioningPage() {
             Une majeure est un segment d&apos;URL
           </h2>
           <p className="text-afh-small text-muted-foreground">
-            La version majeure figure dans le chemin :{" "}
-            <code className="font-mono">/api/v2</code> aujourd&apos;hui,{" "}
-            <code className="font-mono">/api/v3</code> le jour où une évolution
-            ne pourra plus être rétrocompatible. C&apos;est la seule chose qui
-            puisse casser une intégration, et elle est visible dans chaque URL
-            que vous appelez.
+            La version majeure figure dans le chemin : aujourd&apos;hui,{" "}
+            <code className="font-mono">/api/v2</code>. Le jour où une évolution
+            ne pourra plus être rétrocompatible, elle deviendra{" "}
+            <code className="font-mono">/api/v3</code>. C&apos;est la seule
+            chose qui puisse casser une intégration, et elle est visible dans
+            chaque URL que vous appelez.
           </p>
           <p className="text-afh-small text-muted-foreground">
             Une majeure publiée n&apos;est jamais modifiée de façon cassante :
@@ -121,27 +121,26 @@ export default function ApiVersioningPage() {
           </p>
           <p className="text-afh-small text-muted-foreground">
             La contrepartie est à votre charge : votre client doit{" "}
-            <strong>tolérer les champs inconnus</strong> plutôt que rejeter la
-            réponse qui les contient. Un parseur strict, qui échoue sur une clé
-            qu&apos;il ne connaît pas, cassera sur un ajout que cette politique
-            autorise explicitement.
+            <strong>tolérer les champs inconnus</strong>. Un parseur strict, qui
+            rejette la réponse entière sur une clé qu&apos;il ne connaît pas,
+            cassera sur un ajout que cette politique autorise explicitement.
           </p>
         </Card>
 
         <Card className="p-6 space-y-3">
           <div className="flex items-start gap-3">
             <CalendarClock className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-            <div className="space-y-3">
+            <div className="min-w-0 space-y-3">
               <h2 className="text-afh-h2 font-semibold">
                 Six mois avant tout retrait
               </h2>
               <p className="text-afh-small text-muted-foreground">
                 Quand un endpoint est voué au retrait, il commence à répondre
-                avec l&apos;en-tête{" "}
-                <code className="font-mono">Deprecation</code> et la date de son
-                retrait. Il s&apos;écoule <strong>au minimum six mois</strong>{" "}
-                entre cette première réponse et la date annoncée. Pendant tout
-                ce délai l&apos;endpoint continue de fonctionner normalement.
+                avec la date de ce retrait et l&apos;en-tête{" "}
+                <code className="font-mono">Deprecation</code>. Entre cette
+                première réponse et la date annoncée, il s&apos;écoule{" "}
+                <strong>au minimum six mois</strong>. Pendant tout ce délai
+                l&apos;endpoint continue de fonctionner normalement.
               </p>
               <p className="text-afh-small text-muted-foreground">
                 Ce délai est la raison d&apos;être des en-têtes : une
@@ -215,7 +214,7 @@ export default function ApiVersioningPage() {
         <Card className="p-6 space-y-3">
           <div className="flex items-start gap-3">
             <Info className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-            <div className="space-y-3">
+            <div className="min-w-0 space-y-3">
               <h2 className="text-afh-h2 font-semibold">
                 Ce que reçoit un appel vers un endpoint retiré à terme
               </h2>
