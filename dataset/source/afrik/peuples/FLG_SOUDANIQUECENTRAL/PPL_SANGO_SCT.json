@@ -3,6 +3,7 @@
   "nameMain": "Sango",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["CAF", "COD", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Sango",

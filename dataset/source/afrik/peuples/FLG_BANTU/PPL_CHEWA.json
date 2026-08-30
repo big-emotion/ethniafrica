@@ -3,6 +3,7 @@
   "nameMain": "Chewa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["MWI", "ZMB", "MOZ", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Chewa",

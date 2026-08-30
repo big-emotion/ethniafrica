@@ -23,6 +23,7 @@ import type {
   QuizCountryFixture,
   QuizPeopleFixture,
 } from "@/types/quiz";
+import { proseOnly } from "@/lib/prose/ficheProse";
 import { toQuizConfidenceScore } from "@/lib/quiz/eligibility";
 import type {
   QuizAssertionSource,
@@ -219,13 +220,16 @@ export function mapPeopleRowToFiche(
     // eleven it already answers.
     exonyms: content.appellations?.exonyms ?? [],
     whyProblematic: content.appellations?.whyProblematic ?? null,
+    // The corpus carries the markup; a stimulus and an assertion statement see
+    // bare prose. A field holding no prose at all — a serialised JSON object,
+    // say — yields null here, and its template builds no round.
     rubrics: {
-      T6: content.culture?.majorRites ?? null,
-      T7: content.culture?.spiritualities ?? null,
-      T8: content.culture?.symbols ?? null,
-      T9: content.historicalRole?.kingdomsOrChiefdoms ?? null,
-      T10: content.organization?.traditionalPoliticalSystem ?? null,
-      T11: content.origins?.migrationRoutes ?? null,
+      T6: proseOnly(content.culture?.majorRites) ?? null,
+      T7: proseOnly(content.culture?.spiritualities) ?? null,
+      T8: proseOnly(content.culture?.symbols) ?? null,
+      T9: proseOnly(content.historicalRole?.kingdomsOrChiefdoms) ?? null,
+      T10: proseOnly(content.organization?.traditionalPoliticalSystem) ?? null,
+      T11: proseOnly(content.origins?.migrationRoutes) ?? null,
     },
   };
 }

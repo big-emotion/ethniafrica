@@ -3,6 +3,7 @@
   "nameMain": "Tigre",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ERI", "SDN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tigre",

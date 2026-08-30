@@ -3,6 +3,7 @@
   "nameMain": "Papelo",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["GNB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Papelo",

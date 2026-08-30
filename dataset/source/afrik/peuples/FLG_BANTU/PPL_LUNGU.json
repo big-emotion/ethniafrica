@@ -3,6 +3,7 @@
   "nameMain": "Lungu",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lungu",

@@ -3,6 +3,7 @@
   "nameMain": "Bidyogo",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bidyogo",

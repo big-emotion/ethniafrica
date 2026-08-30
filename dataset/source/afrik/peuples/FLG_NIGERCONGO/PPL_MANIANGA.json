@@ -3,6 +3,7 @@
   "nameMain": "Manianga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Manianga",

@@ -3,6 +3,7 @@
   "nameMain": "Twa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["RWA", "BDI", "COD", "UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Twa",

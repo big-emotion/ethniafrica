@@ -3,6 +3,7 @@
   "nameMain": "Créole Cap-Verdien",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["CPV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Créole Cap-Verdien",

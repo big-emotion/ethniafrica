@@ -3,6 +3,7 @@
   "nameMain": "Mijikenda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mijikenda",

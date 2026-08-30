@@ -3,6 +3,7 @@
   "nameMain": "Africains d'origine recente (Cap-Vert)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["CPV"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Africains d'origine recente",

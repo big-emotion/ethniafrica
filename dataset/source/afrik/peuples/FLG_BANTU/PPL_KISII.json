@@ -3,6 +3,7 @@
   "nameMain": "Kisii",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kisii",

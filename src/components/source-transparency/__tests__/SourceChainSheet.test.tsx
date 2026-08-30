@@ -14,6 +14,7 @@ import SourceChainSheet, {
 } from "../SourceChainSheet";
 
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -129,15 +130,20 @@ describe("SourceChainSheet", () => {
     expect(screen.queryByTestId("section-revision")).toBeNull();
   });
 
-  it("renders a disabled FlagTarget shell button", () => {
+  // @req REQ-012
+  it("offers no assertion report control when the assertion carries no id", () => {
     renderSheet();
     const flagTarget = screen.getByTestId("section-flag-target");
-    const btn = within(flagTarget).getByRole("button");
-    expect(btn).toBeDisabled();
+
+    // Not a Turnstile question: with no assertion id there is no target to
+    // report. The shell that used to stand here was the dead-key fallback,
+    // and it made this genuine guard indistinguishable from that one.
+    expect(within(flagTarget).queryByRole("button")).toBeNull();
+    expect(flagTarget.textContent).not.toMatch(/bientôt disponible/i);
   });
 
   // @req REQ-012
-  it("wires the live FlagTarget when assertion.id and turnstileSiteKey are provided", () => {
+  it("wires the live FlagTarget when the assertion carries an id", () => {
     renderSheet({
       assertion: {
         statement: "Le peuple Seereer est attesté depuis le XIIIe siècle.",
@@ -147,7 +153,6 @@ describe("SourceChainSheet", () => {
         id: "assertion-42",
         fieldPath: "histoire",
       },
-      turnstileSiteKey: "test-site-key",
     });
     const flagTarget = screen.getByTestId("section-flag-target");
     const btn = within(flagTarget).getByRole("button", {
@@ -157,26 +162,12 @@ describe("SourceChainSheet", () => {
   });
 
   // @req REQ-012 (AC6)
-  it("renders a disabled FlagTarget shell button per source by default", () => {
+  it("offers a live report control per source", () => {
     renderSheet();
     const flagTarget = screen.getByTestId("source-flag-target-src-1");
-    const btn = within(flagTarget).getByRole("button");
-    expect(btn).toBeDisabled();
-  });
-
-  // @req REQ-012 (AC6)
-  it("wires the live FlagTarget with type 'source' when turnstileSiteKey is provided", () => {
-    renderSheet({
-      sources: [
-        { ...baseSource, citation: "Diop, M. (2021). Atlas linguistique." },
-      ],
-      turnstileSiteKey: "test-site-key",
-    });
-    const flagTarget = screen.getByTestId("source-flag-target-src-1");
-    const btn = within(flagTarget).getByRole("button", {
-      name: "Signaler cette source",
-    });
-    expect(btn).toBeEnabled();
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette source" })
+    ).toBeEnabled();
   });
 
   it("renders broken-link sources with line-through URL and a calm badge", () => {

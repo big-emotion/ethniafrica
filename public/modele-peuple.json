@@ -8,6 +8,7 @@
   "nameMain": "<Nom principal du peuple>",
   "languageFamilyId": "FLG_XXXXX",
   "currentCountries": ["ISO1", "ISO2"],
+  "classificationStatus": "<consensual | contested | colonial-legacy | reconstructive — omettre tant que la fiche n'a pas ete revue>",
   "content": {
     "appellations": {
       "mainName": "<Nom principal du peuple>",

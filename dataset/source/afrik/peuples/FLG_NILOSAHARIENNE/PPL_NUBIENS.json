@@ -3,6 +3,7 @@
   "nameMain": "Nubiens",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["SDN", "EGY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nubiens",

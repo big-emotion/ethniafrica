@@ -5,13 +5,17 @@ import {
   getAgeConfirmedAt,
   getAuthenticatedContributor,
   getFlagByIdOrSlug,
+  getModeratorByAccessToken,
   listFlags,
+  transitionFlag,
   type CreatedFlag,
   type FlagCreateInput,
   type FlagListFilters,
   type FlagListResult,
   type PublicFlag,
+  type FlagStatus,
 } from "@/api/v2/services/flags";
+import { auditLog, type AuditLogInput } from "@/lib/audit/log";
 import {
   API_ATTRIBUTION,
   API_LICENSE,
@@ -20,7 +24,8 @@ import {
   type ApiEnvelope,
   type ApiError,
 } from "@/api/v2/utils/response";
-import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { verifyAntibotProof } from "@/lib/api/antibot";
+import type { Proof } from "@/lib/antibot/proofOfWork";
 import {
   checkFlagRateLimit,
   type FlagRateLimitResult,
@@ -46,6 +51,14 @@ const FLAG_STATUSES = [
 
 const trimmedRequiredString = z.string().trim().min(1);
 
+/**
+ * Nobody reads a fiche, finds an error and describes it in under three
+ * seconds. Generous on purpose: the cost of refusing a real reader is far
+ * higher than the cost of letting one fast bot through to the proof of work,
+ * which will charge it anyway.
+ */
+const MIN_DWELL_MS = 3_000;
+
 const flagCreateSchema = z.object({
   target_type: trimmedRequiredString,
   target_id: trimmedRequiredString,
@@ -55,7 +68,17 @@ const flagCreateSchema = z.object({
   counter_source_url: z.string().trim().url().optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
   proposed_rewrite: z.string().trim().max(5000).optional(),
-  turnstile_token: trimmedRequiredString,
+  antibot: z.object({
+    salt: trimmedRequiredString,
+    nonce: trimmedRequiredString,
+    difficultyBits: z.number().int().positive(),
+    expiresAt: z.number().int().positive(),
+    signature: trimmedRequiredString,
+  }),
+  /** Hidden field. A human never fills it; a naive bot fills everything. */
+  website: z.string().max(0).optional(),
+  /** Milliseconds the form was open. Instant submissions are not readers. */
+  elapsedMs: z.number().int().nonnegative().optional(),
 });
 
 const flagListSchema = z.object({
@@ -70,20 +93,17 @@ const flagDetailSchema = z.object({
   identifier: trimmedRequiredString,
 });
 
-type TurnstileVerificationResult = "verified" | "rejected" | "unavailable";
+type AntibotVerdict = "verified" | "rejected" | "unavailable";
 
 export interface FlagHandlerDependencies {
   getAuthenticatedContributor: (
     accessToken: string
   ) => Promise<{ id: string } | null>;
   getAgeConfirmedAt: (contributorId: string) => Promise<string | null>;
-  verifyTurnstileToken: (
-    token: string,
-    clientIp?: string
-  ) => Promise<TurnstileVerificationResult>;
+  verifyAntibotProof: (proof: Proof) => Promise<AntibotVerdict>;
   checkFlagRateLimit: (contributorId: string) => Promise<FlagRateLimitResult>;
   createFlag: (
-    contributorId: string,
+    contributorId: string | null,
     input: FlagCreateInput
   ) => Promise<CreatedFlag>;
   listFlags: (filters: FlagListFilters) => Promise<FlagListResult>;
@@ -122,7 +142,7 @@ export interface FlagHandlerResult<T> {
 const defaultDependencies: FlagHandlerDependencies = {
   getAuthenticatedContributor,
   getAgeConfirmedAt,
-  verifyTurnstileToken,
+  verifyAntibotProof,
   checkFlagRateLimit,
   createFlag,
   listFlags,
@@ -182,22 +202,6 @@ export async function handleFlagCreate(
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
 
-  if (!accessToken) {
-    return {
-      status: 401,
-      body: errorResponse("UNAUTHENTICATED", "Authentication required"),
-    };
-  }
-
-  const contributor =
-    await dependencies.getAuthenticatedContributor(accessToken);
-  if (!contributor) {
-    return {
-      status: 401,
-      body: errorResponse("UNAUTHENTICATED", "Authentication required"),
-    };
-  }
-
   const parsed = flagCreateSchema.safeParse(rawInput);
   if (!parsed.success) {
     return {
@@ -206,18 +210,46 @@ export async function handleFlagCreate(
     };
   }
 
-  const ageConfirmedAt = await dependencies.getAgeConfirmedAt(contributor.id);
-  if (!ageConfirmedAt) {
+  /**
+   * Who the report is credited to — never whether it is accepted.
+   *
+   * A report is a message *about* the corpus, not a signed contribution *to*
+   * it, so it does not carry the CC-BY-SA consent that publishing a name
+   * does. The proof of work verified below is the control. See
+   * `docs/design/moderation-charter.md` §2.
+   *
+   * Attribution needs both a resolvable session and a confirmed age: the
+   * confirmation is what licenses publishing that name. Missing either, the
+   * report is recorded anonymously — a state `PublicFlagsQueue` already
+   * renders — rather than refused. Refusing was a dead end in practice, since
+   * `age_confirmed_at` is only ever written by the registration callback and
+   * an account created through the sign-in page can never obtain it.
+   */
+  const contributor = accessToken
+    ? await dependencies.getAuthenticatedContributor(accessToken)
+    : null;
+  const attributedTo =
+    contributor && (await dependencies.getAgeConfirmedAt(contributor.id))
+      ? contributor.id
+      : null;
+
+  /**
+   * The two free filters, before the proof of work is even looked at.
+   *
+   * A filled honeypot or an instant submission is a bot, and answering it the
+   * same way a failed proof is answered tells it nothing about which of its
+   * mistakes gave it away.
+   */
+  if (
+    parsed.data.website ||
+    (parsed.data.elapsedMs ?? Infinity) < MIN_DWELL_MS
+  ) {
     return {
       status: 403,
-      body: errorResponse(
-        "AGE_CONFIRMATION_REQUIRED",
-        "Age confirmation required (FR45). Complete your profile at /fr/compte/profil."
-      ),
+      body: errorResponse("UNAUTHORIZED", "vérification anti-robot échouée"),
     };
   }
 
-  const { turnstile_token } = parsed.data;
   const flagInput: FlagCreateInput = {
     target_type: parsed.data.target_type,
     target_id: parsed.data.target_id,
@@ -228,19 +260,22 @@ export async function handleFlagCreate(
     counter_source_citation: parsed.data.counter_source_citation,
     proposed_rewrite: parsed.data.proposed_rewrite,
   };
-  const turnstileResult = await dependencies.verifyTurnstileToken(
-    turnstile_token,
-    context.clientIp
+  // The cast is the price of `strictNullChecks: false`: zod infers every
+  // property of a parsed object as optional, so a schema that guarantees these
+  // five fields still types them as maybe-absent. Validation above is the real
+  // guarantee.
+  const verdict = await dependencies.verifyAntibotProof(
+    parsed.data.antibot as Proof
   );
 
-  if (turnstileResult === "rejected") {
+  if (verdict === "rejected") {
     return {
       status: 403,
       body: errorResponse("UNAUTHORIZED", "vérification anti-bot échouée"),
     };
   }
 
-  if (turnstileResult === "unavailable") {
+  if (verdict === "unavailable") {
     return {
       status: 503,
       body: errorResponse(
@@ -250,7 +285,19 @@ export async function handleFlagCreate(
     };
   }
 
-  const limitResult = await dependencies.checkFlagRateLimit(contributor.id);
+  /**
+   * An anonymous report has no contributor to key the bucket on, so it is
+   * keyed on the caller's address. The `ip:` prefix keeps that namespace
+   * apart from contributor UUIDs, which could otherwise collide.
+   *
+   * An address the platform did not forward falls into one shared bucket.
+   * That is deliberate: a caller the atlas cannot tell apart from any other
+   * is exactly the caller a shared limit should hold back. Rate limiting is
+   * off entirely until Upstash is configured (ETNI-64), and anonymous
+   * reporting is what turns that ticket from a refinement into a prerequisite.
+   */
+  const rateLimitKey = attributedTo ?? `ip:${context.clientIp ?? "unknown"}`;
+  const limitResult = await dependencies.checkFlagRateLimit(rateLimitKey);
   if ("retryAfter" in limitResult) {
     return {
       status: 429,
@@ -262,7 +309,7 @@ export async function handleFlagCreate(
     };
   }
 
-  const flag = await dependencies.createFlag(contributor.id, flagInput);
+  const flag = await dependencies.createFlag(attributedTo, flagInput);
   return {
     status: 201,
     body: createApiResponse(flag),
@@ -353,4 +400,111 @@ export async function handleFlagDetail(
     status: 200,
     body: createApiResponse(flag),
   };
+}
+
+const flagTransitionSchema = z.object({
+  status: z.enum(FLAG_STATUSES),
+  moderator_notes: z.string().trim().max(5000).optional(),
+});
+
+export interface FlagTransitionDependencies {
+  getModeratorByAccessToken: (
+    accessToken: string
+  ) => Promise<{ id: string; role: string } | null>;
+  transitionFlag: (
+    identifier: string,
+    next: { status: FlagStatus; moderatorId: string; moderatorNotes?: string }
+  ) => Promise<
+    | { ok: true; flag: PublicFlag; previousStatus: FlagStatus }
+    | { ok: false; reason: "not_found" | "illegal_transition" }
+  >;
+  writeAuditLog: (input: AuditLogInput) => Promise<void>;
+}
+
+const defaultTransitionDependencies: FlagTransitionDependencies = {
+  getModeratorByAccessToken,
+  transitionFlag,
+  writeAuditLog: (input) => auditLog.write(input),
+};
+
+/**
+ * Drive one report through the state machine (ETNI-72).
+ *
+ * The machine itself is enforced by the `flags_enforce_state_machine` trigger
+ * (migration 022) and is not restated here: the handler proposes a move and
+ * reports the refusal. What the handler owns is the authorization, and it is
+ * the only check there is — RLS deliberately gives a contributor no path to a
+ * status change, so a moderator write travels on the service-role client and
+ * nothing below this function will ask again who the caller is.
+ *
+ * See docs/design/moderation-charter.md §4.
+ */
+// @req REQ-042
+export async function handleFlagTransition(
+  identifier: string,
+  rawInput: unknown,
+  context: FlagHandlerContext,
+  injectedDependencies: Partial<FlagTransitionDependencies> = {}
+): Promise<FlagHandlerResult<ApiEnvelope<PublicFlag> | ApiEnvelope<null>>> {
+  const dependencies = {
+    ...defaultTransitionDependencies,
+    ...injectedDependencies,
+  };
+  const accessToken = context.accessToken?.trim();
+
+  // Refuse by default: no token, or a token that resolves to no moderator
+  // role, are the same answer. Neither says why, so a probe learns nothing
+  // about which flags exist.
+  const moderator = accessToken
+    ? await dependencies.getModeratorByAccessToken(accessToken)
+    : null;
+  if (!moderator) {
+    return {
+      status: 403,
+      body: errorResponse("UNAUTHORIZED", "Moderator role required"),
+    };
+  }
+
+  const parsed = flagTransitionSchema.safeParse(rawInput);
+  if (!parsed.success) {
+    return { status: 400, body: validationError(parsed.error.issues) };
+  }
+
+  const result = await dependencies.transitionFlag(identifier, {
+    status: parsed.data.status,
+    moderatorId: moderator.id,
+    ...(parsed.data.moderator_notes === undefined
+      ? {}
+      : { moderatorNotes: parsed.data.moderator_notes }),
+  });
+
+  // `in`, not `!result.ok`: with strictNullChecks off the compiler does not
+  // narrow this union on its boolean discriminant, and silently types the
+  // failure branch as the success one.
+  if ("reason" in result) {
+    return result.reason === "not_found"
+      ? {
+          status: 404,
+          body: errorResponse("NOT_FOUND", "Flag not found"),
+        }
+      : {
+          status: 409,
+          body: errorResponse(
+            "ILLEGAL_TRANSITION",
+            `Cette transition n'est pas permise depuis l'état courant.`
+          ),
+        };
+  }
+
+  await dependencies.writeAuditLog({
+    actorId: moderator.id,
+    action: "flag.transition",
+    targetType: "flag",
+    targetId: identifier,
+    before: { status: result.previousStatus },
+    after: { status: result.flag.status },
+    ip: context.clientIp ?? null,
+  });
+
+  return { status: 200, body: createApiResponse(result.flag) };
 }

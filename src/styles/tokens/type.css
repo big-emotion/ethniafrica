@@ -101,8 +101,10 @@
   --afh-density-developer: var(--afh-leading-snug);
 
   /* ─── Measure ─────────────────────────────────────────────── */
-  /* Prose line length is set by the text, not by the shell: the
-     country container is 800 px wide, which at 17 px body would run
-     to ~94 characters — half again the comfortable maximum. */
+  /* Band compositions only. Running prose carries no measure —
+     charter §5: a capped paragraph beside full-width stat cards and
+     tables was the one thing on the page that stopped mid-width.
+     What is left is the centred band, where there is no empty right
+     half to create: the home's "Saviez-vous" is the only consumer. */
   --afh-measure-prose: 65ch;
 }

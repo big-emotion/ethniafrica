@@ -49,7 +49,7 @@ describe("applyCorsHeaders — no allowed origin configured", () => {
   it("still announces the methods and headers the API accepts", () => {
     const response = applyCorsHeaders(new Response(null));
     expect(response.headers.get("Access-Control-Allow-Methods")).toBe(
-      "GET,POST,OPTIONS"
+      "GET,POST,PATCH,OPTIONS"
     );
     expect(response.headers.get("Access-Control-Allow-Headers")).toBe(
       "Content-Type,Authorization"

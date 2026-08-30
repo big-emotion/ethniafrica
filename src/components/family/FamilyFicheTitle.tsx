@@ -1,5 +1,6 @@
 import type { LanguageFamily } from "@/types/afrik";
 import { transformFamilyData } from "@/lib/familyDataTransformer";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 
 /**
  * The second half of the fiche's title — what a family fiche says a family is.
@@ -40,6 +41,13 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
         <h1>
           {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
         </h1>
+        {/* 19 of the 24 families explain in prose that their name was imposed
+            — Bantou was coined by Bleek and made an apartheid legal category —
+            and the head could not say so as data. The badge stands alone under
+            the name rather than opening a chip row: the chips are figures
+            about the document and belong with the parchment, but a
+            classification qualifies the name itself. */}
+        <ClassificationBadge status={family.classificationStatus} />
         <p className="afh-parchment-lede">
           {/* Naming both when they are the same word would present one fact as
               two, and quietly overstate how much the fiche knows. */}

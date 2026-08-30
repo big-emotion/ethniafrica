@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Zimbabwe (Matabele)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Zimbabwe (Matabele)",

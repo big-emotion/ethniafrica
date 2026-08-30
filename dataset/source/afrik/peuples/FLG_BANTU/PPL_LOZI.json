@@ -3,6 +3,7 @@
   "nameMain": "Lozi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "BWA", "NAM", "AGO", "ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Lozi",

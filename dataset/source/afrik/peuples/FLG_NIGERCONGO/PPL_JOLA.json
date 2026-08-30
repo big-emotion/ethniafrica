@@ -3,6 +3,7 @@
   "nameMain": "Jola",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SEN", "GMB", "GNB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Jola",

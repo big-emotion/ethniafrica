@@ -56,10 +56,10 @@
   --home-text-module-chip: 11px;
   --home-text-panel-close: 13px;
 
-  /* ── HomeGlobe — the band's own controls ──────────────────── */
-  --home-text-globe-readout: 11.5px;
-  --home-text-globe-morph-label: 11px;
-  --home-text-globe-tool: 12.5px;
+  /* The three --home-text-globe-* sizes went with the point cloud
+     (ETNI-1360). The globe's own caption and controls are AtlasGlobe's now,
+     on text-afh-caption, so a home-scoped size for them would be a second
+     opinion about the same text. */
 
   /* ── The hero previews and the trust strip ────────────────── */
   --home-text-crown-readout: 11.5px;
@@ -79,11 +79,5 @@
        used to make by hand is in the clamp. */
     --home-text-axis-stake: 12.5px;
     --home-text-axis-figure: 11.5px;
-  }
-}
-
-@media (max-width: 700px) {
-  :root {
-    --home-text-globe-readout: 10.5px;
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Kalenjin",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["KEN", "UGA", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kalenjin",

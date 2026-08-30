@@ -3,6 +3,7 @@
   "nameMain": "Kurtey",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["NER", "MLI", "BEN", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kurtey",

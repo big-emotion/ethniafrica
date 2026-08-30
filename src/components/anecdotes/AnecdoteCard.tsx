@@ -188,8 +188,12 @@ export function AnecdoteCard({
           background: var(--afh-bg-warm);
           border: 1px solid var(--afh-border);
         }
+        /* Contained, not cropped: the bank runs from a 0.60 portrait
+           engraving to a 2.30 panorama, so filling the fixed frame cut the
+           subject off the edges of the document the anecdote is about. The
+           warm ground the picture floats on reads as its mount. */
         .anecdote-image {
-          object-fit: cover;
+          object-fit: contain;
         }
         .anecdote-credit {
           margin: 10px auto 0;

@@ -3,6 +3,7 @@
   "nameMain": "Touareg",
   "languageFamilyId": "FLG_BERBERE",
   "currentCountries": ["MLI", "NER", "DZA", "LBY", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Touareg",

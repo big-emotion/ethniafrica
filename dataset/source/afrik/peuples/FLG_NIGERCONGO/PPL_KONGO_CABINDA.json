@@ -3,6 +3,7 @@
   "nameMain": "Kongo (Cabinda)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kongo (Cabinda)",

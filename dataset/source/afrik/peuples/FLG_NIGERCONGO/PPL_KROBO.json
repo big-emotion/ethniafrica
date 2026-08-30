@@ -3,6 +3,7 @@
   "nameMain": "Krobo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Krobo",

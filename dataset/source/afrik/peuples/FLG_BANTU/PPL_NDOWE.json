@@ -3,6 +3,7 @@
   "nameMain": "Ndowe",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GNQ", "CMR", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndowe",

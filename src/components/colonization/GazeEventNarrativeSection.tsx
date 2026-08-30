@@ -86,7 +86,7 @@ export function GazeEventNarrativeSection({
             <MigrationEventCard event={event} confidence={eventConfidence} />
 
             {event.paragraphs.map((paragraph, index) => (
-              <p key={index} className="mt-3 text-foreground max-w-[75ch]">
+              <p key={index} className="mt-3 text-foreground">
                 {paragraph.text}{" "}
                 <ConfidenceChip
                   id={`${event.id}-paragraph-${index}`}
@@ -105,7 +105,7 @@ export function GazeEventNarrativeSection({
                 <h3 className="font-afh-display font-semibold text-afh-small">
                   {DEBATE_LABEL}
                 </h3>
-                <p className="mt-1 text-afh-small text-foreground max-w-[75ch]">
+                <p className="mt-1 text-afh-small text-foreground">
                   {event.debate}
                 </p>
               </div>

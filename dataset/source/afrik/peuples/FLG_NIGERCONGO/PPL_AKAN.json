@@ -3,6 +3,7 @@
   "nameMain": "Akan",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Akan",

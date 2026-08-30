@@ -3,6 +3,7 @@
   "nameMain": "Sérère",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SEN", "GMB", "MRT"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sérère",

@@ -3,6 +3,7 @@
   "nameMain": "Luhya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN", "UGA", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Luhya",

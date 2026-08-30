@@ -19,7 +19,6 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ReadingColumn } from "@/components/pages/ReadingColumn";
 
 const DEFAULT_CHANGELOG_URL =
   "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/018_editorial_doctrine_seed.sql";
@@ -70,7 +69,7 @@ export default async function DoctrineSlugPage({
       hideHeader
       trailLabel={entry.title}
     >
-      <ReadingColumn className="container mx-auto space-y-6 px-4 py-8">
+      <div className="container mx-auto space-y-6 px-4 py-8">
         <article>
           <header className="space-y-3 border-b pb-4">
             <h1 className="text-afh-h1 font-bold">{entry.title}</h1>
@@ -105,7 +104,7 @@ export default async function DoctrineSlugPage({
             />
           </div>
         </article>
-      </ReadingColumn>
+      </div>
     </PageLayout>
   );
 }

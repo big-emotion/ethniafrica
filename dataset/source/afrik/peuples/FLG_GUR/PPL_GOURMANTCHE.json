@@ -3,6 +3,7 @@
   "nameMain": "Gourmantché",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "TGO", "NER", "BEN", "GHA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Gourmantché",

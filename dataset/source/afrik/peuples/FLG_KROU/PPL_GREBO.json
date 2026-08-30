@@ -3,6 +3,7 @@
   "nameMain": "Grebo",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Grebo",

@@ -37,8 +37,8 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-vi.mock("@/components/home/HomeGlobeStage", () => ({
-  HomeGlobeStage: () => <div data-testid="home-globe-stage" />,
+vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
+  ContinentGlobeStage: () => <div data-testid="home-globe-stage" />,
 }));
 
 import Home from "../page";
