@@ -260,14 +260,21 @@ export function HomeHeroSeeds({ onPick, engaged = false }: HomeHeroSeedsProps) {
           display: block;
         }
 
+        /* No bottom edge, so the track is two line-heights tall rather than
+           one: pinned to all four sides it would be clamped to the mask, the
+           flex children would shrink to half a line each — both words legible
+           at once — and translateY(-50%) would travel half a word. */
         .home-hero-seed-track {
           position: absolute;
-          inset: 0;
+          top: 0;
+          left: 0;
+          right: 0;
           display: flex;
           flex-direction: column;
         }
         .home-hero-seed-track > span {
           display: block;
+          flex: 0 0 auto;
           height: 1.4em;
         }
       `}</style>

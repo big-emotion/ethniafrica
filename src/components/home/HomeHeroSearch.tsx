@@ -45,6 +45,27 @@ import type { Language } from "@/types/shared";
  * nor transient, and it stops as soon as the reader arrives.
  */
 
+/**
+ * The field's one visible label, and the field's accessible name — the same
+ * string, so what is read and what is heard cannot drift (WCAG 2.5.3).
+ *
+ * It names three kinds and no more. `/api/v2/search` answers
+ * `{ peoples, countries, families }`; a label mentioning languages would
+ * promise a result the panel can never produce, which is the one promise this
+ * surface may not break.
+ *
+ * There is no second line of help under it. What the reader gets — a
+ * documented record, with its sources — is what the hero's own answer states
+ * forty pixels above, and saying it twice is the failure that cost this band
+ * its previous standfirst (see the docblock in HomeHero).
+ */
+// @req REQ-002
+export const SEARCH_LABEL =
+  "Cherchez un peuple, un pays ou une famille linguistique";
+
+/** What to type, never what will be found: that is the label's job. */
+const SEARCH_PLACEHOLDER = "Tapez un nom…";
+
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
 export const DEBOUNCE_MS = 300;
@@ -245,8 +266,8 @@ export function HomeHeroSearch({
         action={getLocalizedRoute(language, "search")}
         className="home-hero-search-form"
       >
-        <label htmlFor={inputId} className="sr-only">
-          Rechercher un peuple, un pays ou une famille linguistique
+        <label htmlFor={inputId} className="home-hero-search-label">
+          {SEARCH_LABEL}
         </label>
 
         <div className="home-hero-search-field">
@@ -276,10 +297,7 @@ export function HomeHeroSearch({
             aria-activedescendant={
               activeIndex >= 0 ? optionId(activeIndex) : undefined
             }
-            // A rotating placeholder would rename the control mid-sentence for
-            // a screen reader; the <label> above is what carries the name, and
-            // this string only states what the corpus holds.
-            placeholder="Un peuple, un pays, une langue…"
+            placeholder={SEARCH_PLACEHOLDER}
             type="search"
             inputMode="search"
             enterKeyHint="search"
@@ -385,9 +403,29 @@ export function HomeHeroSearch({
       )}
 
       <style>{`
+        /* 32 and 48 are steps of the brand charter §7 ramp, not measured
+           values: the band's job here is to read as two objects — a question
+           with its answer, then a way in — rather than as one paragraph that
+           happens to end in a text box. */
         .home-hero-search {
-          margin-top: 24px;
+          margin-top: 32px;
           text-align: left;
+        }
+
+        /* A label, so full ink and reading weight: it is the only place the
+           three searchable kinds are named where the reader keeps them while
+           typing. The placeholder cannot do this — it empties at focus. */
+        .home-hero-search-label {
+          /* Its own line above the field, which is the next flex item. */
+          flex: 0 0 100%;
+          margin-bottom: 8px;
+          font-size: var(--afh-text-small);
+          font-weight: 600;
+          color: var(--afh-text);
+          /* Centred while the copy above it is centred. The block sets
+             text-align: left for the input and the panel, so the label has to
+             opt back in rather than inherit — one alignment per block. */
+          text-align: center;
         }
 
         .home-hero-search-form {
@@ -588,7 +626,10 @@ export function HomeHeroSearch({
 
         @media (min-width: 768px) {
           .home-hero-search {
-            margin-top: 28px;
+            margin-top: 48px;
+          }
+          .home-hero-search-label {
+            text-align: left;
           }
           .home-hero-search-seeds {
             justify-content: flex-start;

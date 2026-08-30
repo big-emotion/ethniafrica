@@ -12,6 +12,7 @@ import {
   HomeHeroSearch,
   DEBOUNCE_MS,
   PENDING_DELAY_MS,
+  SEARCH_LABEL,
 } from "../HomeHeroSearch";
 import { SEED_POOLS } from "../HomeHeroSeeds";
 import {
@@ -79,13 +80,39 @@ describe("HomeHeroSearch", () => {
   it("names the field from a label rather than from its placeholder", () => {
     renderSearch();
 
-    const input = field();
-    expect(input).toHaveAccessibleName(
-      "Rechercher un peuple, un pays ou une famille linguistique"
-    );
-    expect(input.getAttribute("placeholder")).not.toBe(
-      input.getAttribute("aria-label")
-    );
+    expect(field()).toHaveAccessibleName(SEARCH_LABEL);
+  });
+
+  // The label used to be sr-only, so a sighted reader had only the
+  // placeholder — which empties at the moment of focus, exactly when the
+  // scope would be worth reading.
+  // @req REQ-002
+  it("shows the label instead of reserving it for screen readers", () => {
+    const { container } = renderSearch();
+
+    const label = container.querySelector("label");
+    expect(label).toHaveTextContent(SEARCH_LABEL);
+    expect(label?.className ?? "").not.toContain("sr-only");
+  });
+
+  // /api/v2/search answers { peoples, countries, families }. Naming a fourth
+  // kind would promise a result the panel can never produce, on the surface
+  // whose whole argument is that a claim carries its provenance.
+  // @req REQ-002
+  it("names only the kinds the search can return", () => {
+    expect(SEARCH_LABEL).not.toMatch(/langue/i);
+  });
+
+  // Label and placeholder twenty pixels apart, saying the same sentence, is
+  // read twice and learnt once. The label carries the scope, so the
+  // placeholder carries what to type instead.
+  // @req REQ-002
+  it("does not repeat the scope in the placeholder", () => {
+    renderSearch();
+
+    const placeholder = field().getAttribute("placeholder") ?? "";
+    expect(placeholder).not.toBe(SEARCH_LABEL);
+    expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
   });
 
   // Opening the phone keyboard on load buries the page under it and steals
