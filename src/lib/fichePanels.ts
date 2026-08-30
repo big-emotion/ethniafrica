@@ -4,7 +4,7 @@
  * Pure function deriving the ordered panel sequence for an entity from its
  * payload — empty panels are impossible by construction, not by review.
  * Identity(1), Scale(2) and The Record(8) are mandatory and always present;
- * the rest (Territory, Tongue, Fragmentation, Links, Voices) are data-gated
+ * the rest (Territory, Fragmentation, Links, Voices) are data-gated
  * and vary per entity type.
  *
  * `epic-15-fiche-vivante.md` (the spec this story's ticket references) is
@@ -28,7 +28,6 @@ export type PanelKind =
   | "identity"
   | "scale"
   | "territory"
-  | "tongue"
   | "fragmentation"
   | "links"
   | "voices"
@@ -48,7 +47,6 @@ export const PANEL_TABLE: readonly PanelDefinition[] = [
   { kind: "identity", order: 1, mandatory: true },
   { kind: "scale", order: 2, mandatory: true },
   { kind: "territory", order: 3, mandatory: false },
-  { kind: "tongue", order: 4, mandatory: false },
   { kind: "fragmentation", order: 5, mandatory: false },
   { kind: "links", order: 6, mandatory: false },
   { kind: "voices", order: 7, mandatory: false },
@@ -64,8 +62,7 @@ export const PANEL_TABLE: readonly PanelDefinition[] = [
  * scale repeat the fiche head's autonym and population chips, territory draws
  * a second, coarser map under the globe, and fragmentation and voices are the
  * very components the parchment already renders — twice on screen, and twice
- * fetched, in the voices case. `tongue` never had a people panel at all
- * (panelRegistry returns null for anything but a language family).
+ * fetched, in the voices case.
  *
  * `links` was the one chapter with no parchment equivalent, so its data moved
  * rather than being dropped: the route now feeds the sourced ego-network to
@@ -82,16 +79,15 @@ const ENTITY_INVENTORY: Record<FicheEntityType, readonly PanelKind[]> = {
   // identity, territory, fragmentation and voices are people-shaped panels the
   // registry declines for a country. Nothing moved, because nothing rendered.
   country: ["record"],
-  "language-family": [
-    "identity",
-    "scale",
-    "territory",
-    "tongue",
-    "fragmentation",
-    "links",
-    "voices",
-    "record",
-  ],
+  // A family keeps its scale figure — `generalInfo.numberOfLanguages` is a
+  // declared editorial field — and its dossier. The five panels that stood
+  // between them were people-shaped: identity, territory, fragmentation and
+  // voices are declined by the registry for anything but a people, and `links`
+  // reads a `relations` context the family route never passes. `tongue` did
+  // render, but it drew the same family → language → people hierarchy the
+  // withdrawn Classification chapter drew, from the same deduplicated ISO
+  // codes, under the heading "Classification — <famille>".
+  "language-family": ["scale", "record"],
 };
 
 /** True when a value (or any of its nested leaves) carries actual content. */
@@ -129,17 +125,17 @@ const COUNTRY_GATES: Partial<
   Record<PanelKind, GatingPredicate<CountryDetail>>
 > = {};
 
+/**
+ * A family's inventory holds the mandatory scale and record, which no gate can
+ * remove. The gates that stood here keyed on fields unrelated to what the
+ * panels actually read — `tongue` on `linguisticCharacteristics` when the panel
+ * read `context.branches`, `links` on `associatedPeoples` when the panel read
+ * `context.relations` — and let a family pass the composer only to resolve to
+ * null downstream, the same defect already cleared for peoples and countries.
+ */
 const LANGUAGE_FAMILY_GATES: Partial<
   Record<PanelKind, GatingPredicate<LanguageFamilyDetail>>
-> = {
-  territory: (payload) =>
-    isPresent(payload.generalInfo?.geographicArea) ||
-    isPresent(payload.distribution),
-  tongue: (payload) => isPresent(payload.linguisticCharacteristics),
-  fragmentation: (payload) => isPresent(payload.generalInfo?.branches),
-  links: (payload) => isPresent(payload.associatedPeoples),
-  voices: (payload) => isPresent(payload.historyAndOrigins),
-};
+> = {};
 
 function derivePanels<T>(
   entityType: FicheEntityType,

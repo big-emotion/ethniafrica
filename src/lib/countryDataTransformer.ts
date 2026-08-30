@@ -86,8 +86,9 @@ export interface PeopleRow {
   endonymLang?: string;
   pejorativeTerm?: string;
   percentage: number;
-  population: number;
-  populationFormatted: string;
+  /** Undefined where the fiche states a share but no headcount. */
+  population?: number;
+  populationFormatted?: string;
   region?: string;
   languageFamily?: string;
   colorIndex: number;
@@ -98,7 +99,14 @@ export interface PeopleRow {
 
 export interface PeoplesData {
   totalPopulation: number;
-  totalPopulationFormatted: string;
+  /** Undefined where no people of the fiche declares a population. */
+  totalPopulationFormatted?: string;
+  /**
+   * Whether `totalPopulation` sums over every people shown. Where it does
+   * not, the figure is a floor rather than the country's population, and the
+   * section must say so instead of labelling it "habitants".
+   */
+  everyPeopleDeclaresPopulation: boolean;
   peopleCount: number;
   rows: PeopleRow[];
 }
@@ -688,7 +696,7 @@ export function transformPeoples(
   if (!demographics?.peoples || demographics.peoples.length === 0) {
     return {
       totalPopulation: 0,
-      totalPopulationFormatted: "0",
+      everyPeopleDeclaresPopulation: false,
       peopleCount: 0,
       rows: [],
     };
@@ -721,11 +729,13 @@ export function transformPeoples(
     (p) => !/\bautres\b/i.test(p.name)
   );
 
-  // Calculate total population (after filtering)
-  const totalPopulation = filtered.reduce(
-    (sum, p) => sum + (p.population || 0),
-    0
-  );
+  // The model asks each people for a `population`, and 25 of the 53 country
+  // fiches leave it out on every entry. Summing those absences to zero is how
+  // the section came to print "0 habitants" for South Africa: an undeclared
+  // headcount is not a headcount of zero, and only the peoples that state one
+  // may enter the total.
+  const counted = filtered.filter((p) => p.population > 0);
+  const totalPopulation = counted.reduce((sum, p) => sum + p.population, 0);
 
   // Sort by percentage descending
   const sorted = [...filtered].sort(
@@ -744,8 +754,9 @@ export function transformPeoples(
       endonymLang: p.mainLanguageCode,
       pejorativeTerm: pejorativeMap.get(nameKey),
       percentage: p.percentageInCountry || 0,
-      population: p.population || 0,
-      populationFormatted: formatPopulation(p.population || 0),
+      population: p.population > 0 ? p.population : undefined,
+      populationFormatted:
+        p.population > 0 ? formatPopulation(p.population) : undefined,
       region: p.region ? shortenRegion(p.region) : undefined,
       languageFamily: p.languageFamily
         ? shortenFamily(p.languageFamily)
@@ -762,7 +773,10 @@ export function transformPeoples(
 
   return {
     totalPopulation,
-    totalPopulationFormatted: formatPopulation(totalPopulation),
+    totalPopulationFormatted:
+      counted.length > 0 ? formatPopulation(totalPopulation) : undefined,
+    everyPeopleDeclaresPopulation:
+      filtered.length > 0 && counted.length === filtered.length,
     peopleCount: sorted.length,
     rows: groupedRows,
   };
@@ -799,7 +813,10 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
         name: names.join(" · "),
         percentage: rows[i].percentage,
         population: rows[i].population,
-        populationFormatted: `${formatPopulation(rows[i].population)} chacun`,
+        populationFormatted:
+          rows[i].population > 0
+            ? `${formatPopulation(rows[i].population)} chacun`
+            : undefined,
         colorIndex: rows[i].colorIndex,
         groupedNames: names,
       });
