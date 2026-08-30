@@ -475,10 +475,15 @@ export const translations = {
         // surrounding chrome supplies the subject. The band has no such
         // context, so it names the axis *and* what the axis leads into.
         pageTitle: "Explorer les peuples d'Afrique",
+        // « Le corpus » and « une entité » are the team's words for the
+        // collection and for what it holds. Both name the thing from the
+        // inside, and neither is glossed anywhere a reader passes through
+        // (ETNI-857) — so the menu that is supposed to say where a click
+        // lands was written in the vocabulary of the people who built it.
         blurb:
-          "L'axe des objets du corpus : peuples, pays, langues et familles linguistiques, chacun sous sa propre fiche.",
+          "L'axe des fiches : peuples, pays, langues et familles linguistiques, chacun sous la sienne.",
         menuBlurb:
-          "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus.",
+          "Quand on sait ce qu'on cherche — un peuple, un pays, une langue, un nom.",
         hubEntryName: "Le hub d'exploration",
       },
       comprendre: {
@@ -494,9 +499,9 @@ export const translations = {
         title: "Jouer",
         pageTitle: "Jouer avec les peuples d'Afrique",
         blurb:
-          "L'axe de la mise à l'épreuve : des jeux et des quiz tirés du corpus, dont chaque réponse renvoie à sa fiche.",
+          "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
         menuBlurb:
-          "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements.",
+          "Quand on veut se tester — mise en regard, écarts, rapprochements.",
         hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",

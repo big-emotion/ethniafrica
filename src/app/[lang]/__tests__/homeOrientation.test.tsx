@@ -53,21 +53,32 @@ const precedes = (first: Element, second: Element) =>
   );
 
 describe("home — what the reader meets, and in what order (REQ-113)", () => {
-  // The three doors used to sit at the bottom, behind the argument, on the
-  // reading that a reader cannot choose an axis before being told what the
-  // atlas is for. The standfirst now does that telling in two sentences,
-  // above the fold, so the doors no longer have to wait for it.
+  // The doors came first while the hero's standfirst was doing the telling
+  // above the fold. The hero is now a question and one sentence, so the
+  // telling moved back down into the argument — and the argument has to
+  // reach the reader before the three doors it makes sense of.
+  //
+  // The order also settles a vocabulary problem: the Explorer card offers
+  // « familles linguistiques », a term nothing on the page glossed before
+  // the reader met it. PurposeBlocks defines a language family by example
+  // — « Bantou » names a kinship between 500 languages, not a people — so
+  // standing it first is what makes the card's own wording readable.
   // @req REQ-113
-  it("opens on the three entry points, not on the module of the month", async () => {
+  it("opens on the argument, then the three entry points, then the module of the month", async () => {
     const { container } = await renderHome();
 
+    const purpose = container.querySelector(
+      '[data-testid="home-purpose-blocks"]'
+    );
     const axes = container.querySelector('[data-testid="access-axes"]');
     const featured = container.querySelector(
       '[data-testid="home-featured-module"]'
     );
 
+    expect(purpose).not.toBeNull();
     expect(axes).not.toBeNull();
     expect(featured).not.toBeNull();
+    expect(precedes(purpose!, axes!)).toBe(true);
     expect(precedes(axes!, featured!)).toBe(true);
   });
 
@@ -88,16 +99,16 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
   });
 
   // @req REQ-113
-  it("states what the atlas is in two sentences under the headline", async () => {
+  it("answers the headline in one sentence, and says the answers are sourced", async () => {
     await renderHome();
 
-    const standfirst = screen.getByTestId("home-hero-standfirst");
-    const sentences = standfirst
+    const answer = screen.getByTestId("home-hero-answer");
+    const sentences = answer
       .textContent!.split(/(?<=\.)\s+/)
       .filter((part) => part.trim().length > 0);
 
-    expect(sentences).toHaveLength(2);
-    expect(standfirst).toHaveTextContent(/sourc/i);
+    expect(sentences).toHaveLength(1);
+    expect(answer).toHaveTextContent(/sourc/i);
   });
 
   // Every section says its own name. The three that did not were the

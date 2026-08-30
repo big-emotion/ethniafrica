@@ -1,13 +1,27 @@
 # Home illustrations — provenance and licences
 
-These three images are not stock photography. Each one is a document the
-block it sits in is _about_, which is why a generic photograph of the
-continent would not substitute for any of them.
+These images are not stock photography. Each one is a document the block it
+sits in is _about_, which is why a generic photograph of the continent would
+not substitute for any of them.
 
 Licences were read from the Wikimedia Commons API (`extmetadata`), not
 assumed. Anything under CC BY-SA must keep its credit visible in the
 rendered page, not only in this file — `PurposeBlocks` prints it as the
 figure caption.
+
+## `al-idrisi-1154.jpg`
+
+- **Work**: Muhammad al-Idrisi, world map from the _Tabula Rogeriana_, 1154 —
+  drawn for Roger II of Sicily, oriented with south at the top.
+- **Source**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Al-Idrisi%27s_world_map.JPG)
+- **Licence**: **Public domain** — read from the Commons API (`extmetadata`:
+  `LicenseShortName = Public domain`), not assumed. No attribution required,
+  credited anyway.
+- **Why this one**: the hero's headline is about who names, from where, and
+  when. Al-Idrisi was born in Ceuta and drew the world from inside it, south
+  up, so Africa fills the upper half. A photograph of the continent would
+  illustrate the page; this argues it.
+- **Edit**: none beyond the Commons 960px rendition.
 
 ## `guinea-ogilby-1670.jpg`
 

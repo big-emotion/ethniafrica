@@ -1,0 +1,142 @@
+/* ============================================================
+   Africa History — The page hero
+   ------------------------------------------------------------
+   One band, two heights. `PageHero.tsx` carries the rationale;
+   this file carries the measurements.
+
+   The ground is full-bleed and the content is not: `.afh-hero`
+   escapes to the viewport, `.afh-hero-inner` is the shell box.
+   That pairing is what puts the hero title on the same left
+   edge as the logo above it and the copyright below it.
+   ============================================================ */
+
+.afh-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  background: var(--afh-bg-warm);
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-hero-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--afh-space-6xl);
+  padding-block: var(--afh-space-7xl) var(--afh-space-6xl);
+}
+
+/* ─── The two heights ─────────────────────────────────────────
+   `svh` rather than `vh`: on a phone `100vh` is the window with
+   the URL bar retracted, so a `100vh` hero is always taller than
+   the screen it is on and the page below it can never be seen
+   without scrolling twice.
+
+   The `min(…, 760px)` floor is the reference's own: without it a
+   short, wide window gives a band with a title marooned in the
+   middle of an empty field. */
+.afh-hero[data-hero-variant="immersive"] {
+  min-height: min(100svh, 760px);
+}
+
+@media (min-width: 768px) {
+  .afh-hero[data-hero-variant="immersive"] {
+    min-height: 100svh;
+  }
+}
+
+/* Short enough that what the reader came for is on screen with the title.
+   The reference's band is 420px, but it holds its own header inside; ours
+   sits below a separate bar, so the equivalent weight is that minus the bar. */
+.afh-hero[data-hero-variant="compact"] {
+  min-height: 220px;
+}
+
+@media (min-width: 768px) {
+  .afh-hero[data-hero-variant="compact"] {
+    min-height: 320px;
+  }
+}
+
+/* ─── The plate ───────────────────────────────────────────────
+   White on parchment, brown at night — both come free from
+   `--afh-surface`, which the night block already rebinds to
+   `--afh-night-surface-2`. A second, hand-picked brown here
+   would be a colour that stops tracking the theme the day
+   someone edits the token. */
+.afh-hero-plate {
+  min-width: 0;
+  max-width: 42rem;
+  padding: var(--afh-space-5xl);
+  background: var(--afh-surface);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  box-shadow: var(--afh-elev-2);
+}
+
+.afh-hero[data-hero-variant="immersive"] .afh-hero-plate {
+  max-width: 34rem;
+}
+
+.afh-hero-title {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h1);
+  line-height: var(--afh-leading-h1);
+  letter-spacing: -0.014em;
+  text-wrap: balance;
+}
+
+.afh-hero[data-hero-variant="immersive"] .afh-hero-title {
+  font-size: var(--afh-text-hero);
+  line-height: var(--afh-leading-hero);
+}
+
+.afh-hero-subtitle {
+  margin: var(--afh-space-lg) 0 0;
+  max-width: 46ch;
+  font-size: var(--afh-text-lead);
+  line-height: var(--afh-leading-lead);
+  color: var(--afh-text-soft);
+}
+
+/* ─── The visual ──────────────────────────────────────────────
+   Only the immersive band takes one, and only from `md` up: at
+   phone width the plate already fills the band, and a picture
+   under it would push the copy off the first screen. */
+.afh-hero-media {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .afh-hero-media {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 28rem;
+  }
+
+  .afh-hero-media :is(img, svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--afh-radius-lg);
+  }
+}
+
+/* Below the shell's own breakpoint the band is one column: the plate takes
+   the width it is given and the visual is withdrawn rather than shrunk. */
+@media (max-width: 767px) {
+  .afh-hero-inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding-block: var(--afh-space-6xl) var(--afh-space-5xl);
+  }
+
+  .afh-hero-plate {
+    max-width: none;
+  }
+}

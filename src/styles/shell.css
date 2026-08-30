@@ -1,0 +1,23 @@
+/* ============================================================
+   Africa History — The shell box
+   ------------------------------------------------------------
+   One measure, shared by every surface the reader sees at once:
+   the bar, the hero, the trail, the body and the footer.
+
+   Before this class the four of them carried four widths
+   (1240 / 1400 / 1280 / 780) and five gutter scales, so the
+   logo, the page title and the copyright line each started on
+   a different vertical. Nothing was broken — it simply never
+   lined up, which is the kind of defect a reader feels without
+   being able to name.
+
+   A background may still run bord à bord: put `.afh-shell` on
+   the *content* inside the full-bleed band, not on the band.
+   ============================================================ */
+
+.afh-shell {
+  width: 100%;
+  max-width: var(--afh-shell-max);
+  margin-inline: auto;
+  padding-inline: var(--afh-page-padding);
+}

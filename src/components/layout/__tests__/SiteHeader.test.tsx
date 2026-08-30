@@ -112,10 +112,13 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
   it("carries the brand back to the home", () => {
     renderHeader();
 
-    expect(screen.getByRole("link", { name: PRODUCT_NAME })).toHaveAttribute(
-      "href",
-      "/fr"
-    );
+    // The lockup gained its qualifier, so the link's accessible name is now
+    // the name *and* what the site is. Matched on the opening rather than
+    // exactly: the visible text is the accessible text, deliberately, and
+    // pinning the whole string here would make the tagline unrewritable.
+    expect(
+      screen.getByRole("link", { name: new RegExp(`^${PRODUCT_NAME}`) })
+    ).toHaveAttribute("href", "/fr");
   });
 
   // The brandmark is the coloured continent, not a gradient disc: the mark

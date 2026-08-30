@@ -1,30 +1,36 @@
+import Image from "next/image";
+
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
- * The home's opening band (REQ-115).
+ * The home's opening band (REQ-115): a question, and one sentence answering it.
  *
- * The copy states the thesis rather than the medium. « Le continent raconté
- * comme une carte vivante » described how the page looked; a reader landing
- * cold could not tell what the atlas holds or what makes it different from
- * any other encyclopedia. What makes it different is the naming: a people
- * appears under the name it gives itself, beside the name it was given from
- * outside, with who gave it, from where, and when. That is the one sentence
- * the band owes a first-time reader, so it is the H1.
+ * The band used to run three registers — a nine-word headline, a lede, a
+ * standfirst — and asked the reader to hold seven items before the first
+ * scroll: four in the lede's list, three in the standfirst's. A reader
+ * retains one. Eighty-six words of it were spent announcing what the section
+ * immediately below (PurposeBlocks) then demonstrates on three cases: a
+ * country named by its merchandise, a people carrying an exonym, a language
+ * family long read as a people. The same claim was being made twice, and the
+ * announcement was the weaker of the two — which is why the standfirst left
+ * rather than shrank.
  *
- * The headline says « les peuples », never « chaque peuple »: an autonym is
- * required only from `confidence >= medium` upward, so a per-fiche guarantee
- * would be a claim the corpus does not carry.
+ * The headline is now the question a first-time visitor actually arrives
+ * with. It presumes nothing, which is the register the games charter §8 asks
+ * of every quiz stem ("the audience knows nothing about the subject") applied
+ * to the first line of the site; and a question is the one form a reader
+ * retains whole.
  *
- * Three registers, in descending order of voice: the headline states the
- * thesis, the lede glosses it, the standfirst says plainly what the site is
- * and what rule it holds itself to. The band used to stop after the lede and
- * hand the reader a globe, which meant the one question a first-time visitor
- * actually has — what is this site? — went unanswered above the fold.
+ * What the answer states is deliberately narrow: how the atlas proceeds
+ * (peuple par peuple), what it costs (rien), and the one rule it holds
+ * itself to (every answer carries its source). Not what the corpus contains
+ * — the axis cards below print counts that read themselves, and a list here
+ * would rebuild the lede that was just removed.
  *
- * The module that used to fill the rest of the band now stands lower on the
- * page as its own section (FeaturedModule), with a heading of its own. The
- * band is copy, and it sizes to its copy: the viewport-height floor it used
- * to carry existed to hold the globe and left with it.
+ * Dropping the standfirst also flips the page order it used to justify: the
+ * axes came first because the standfirst told the reader what the atlas was
+ * for above the fold. It no longer does, so the argument goes back in front
+ * of the three doors (see the section order in app/[lang]/page.tsx).
  *
  * The band ends on a seam rather than a fade: the edge where the hero stops
  * and the archive starts is the page's one large gesture, and a gradient
@@ -41,44 +47,54 @@ export function HomeHero() {
       aria-label={PRODUCT_NAME}
       className="home-hero"
     >
-      <header className="home-hero-copy">
-        <h1>
-          Les peuples d&apos;Afrique, sous{" "}
-          {/* The article is bound to its noun: balanced wrapping otherwise
-              ends a line on « sous le », which reads as a broken sentence
-              at exactly the moment the headline states its thesis. */}
-          <em>le&nbsp;nom qu&apos;ils se donnent</em>
-        </h1>
-        <p className="home-hero-lede">
-          Leurs langues, leurs familles, leurs pays — et, derrière chaque nom,
-          qui l&apos;a donné, depuis où et à quelle époque.
-        </p>
-        {/* The lede glosses the headline; the standfirst says what the site
-            is, to a reader who has landed on it for the first time and has
-            no idea yet whether this is an encyclopedia, a map or a game.
-            Two sentences: what the atlas publishes, and the rule it holds
-            itself to.
-
-            No figures in it. « 803 peuples » would be a literal the corpus
-            outgrows silently — the axis cards already print counts that read
-            themselves (getCorpusCounts), and that is where a number belongs. */}
-        <p className="home-hero-standfirst" data-testid="home-hero-standfirst">
+      {/* Copy left, visual right — the shell box, so the headline starts on
+          the same left edge as the logo above it. */}
+      <div className="afh-shell home-hero-inner">
+        <header className="home-hero-copy">
+          {/* The thin no-break space is the French rule before a question
+              mark, and it is load-bearing here rather than typographic
+              politeness: the headline wraps to two lines on a phone, and a
+              plain space lets « ? » start the third one on its own. */}
+          <h1>Qui sont les peuples d&apos;Afrique&nbsp;?</h1>
           {/* One string, not the product name followed by JSX text. Next's
-              SWC transform drops the space between an expression and the
-              text that follows it on the same line, so the band shipped
+              SWC transform drops the space between an expression and the text
+              that follows it on the same line, so the band once shipped
               « EthniAfricapublie » — in the first line of prose the site
-              offers. Neither vitest's transform nor Prettier reproduces
-              that reading: the runner keeps the space, so every test here
-              stayed green, and Prettier deletes an explicit space
-              expression it believes JSX already implies. Inside a template
-              literal no whitespace rule applies at all. */}
-          {`${PRODUCT_NAME} publie en accès libre les peuples du continent, ` +
-            `leurs langues, leurs familles linguistiques et leurs pays, ` +
-            `chacun sous le nom qu'il se donne. Chaque affirmation y porte ` +
-            `sa source et son niveau de confiance, et ce qui reste débattu ` +
-            `est signalé comme tel.`}
-        </p>
-      </header>
+              offers. Neither vitest's transform nor Prettier reproduces that
+              reading: the runner keeps the space, so every test here stayed
+              green, and Prettier deletes an explicit space expression it
+              believes JSX already implies. Inside a template literal no
+              whitespace rule applies at all. */}
+          <p className="home-hero-answer" data-testid="home-hero-answer">
+            {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
+              `et donne la source de chaque réponse.`}
+          </p>
+        </header>
+
+        {/* The argument, drawn. Not decoration and not a photograph of the
+            continent: al-Idrisi made this in 1154 for Roger II of Sicily,
+            oriented south-up, and he was born in Ceuta. A world map made from
+            inside Africa, by someone naming it from where he stood, answers
+            the headline's question in one image.
+
+            The credit is rendered, not filed: public/images/home/CREDITS.md
+            records the provenance, but a licence is only honoured on the page
+            the picture is published on. */}
+        <figure className="home-hero-figure" data-testid="home-hero-figure">
+          <Image
+            src="/images/home/al-idrisi-1154.jpg"
+            alt="Mappemonde d'al-Idrisi, 1154 : le sud est en haut, et l'Afrique occupe la moitié supérieure de la carte."
+            width={960}
+            height={1046}
+            sizes="(max-width: 767px) 100vw, 34rem"
+            priority
+          />
+          <figcaption>
+            Al-Idrisi, mappemonde de la <em>Tabula Rogeriana</em>, 1154 —
+            Wikimedia Commons, domaine public
+          </figcaption>
+        </figure>
+      </div>
 
       <div className="home-hero-seam" aria-hidden="true" />
 
@@ -95,8 +111,27 @@ export function HomeHero() {
           color: var(--afh-text);
         }
 
+        /* The band the home shares with the three axis hubs.
+
+           svh, never vh or dvh: on a phone 100vh is the window measured with
+           the URL bar retracted, so a 100vh band is always taller than the
+           screen it is on and the page below can never be reached in one
+           scroll. The min(…, 760px) floor keeps a short, wide window from
+           stranding the copy in an empty field. */
+        .home-hero {
+          min-height: min(100svh, 760px);
+        }
+
+        .home-hero-inner {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 32px;
+          padding-block: 46px 40px;
+        }
+
         .home-hero-copy {
-          padding: 46px 24px 40px;
           max-width: 780px;
           margin: 0 auto;
           text-align: center;
@@ -110,38 +145,22 @@ export function HomeHero() {
           text-wrap: balance;
           color: var(--afh-text);
         }
-        .home-hero-copy h1 em {
-          font-style: italic;
-          color: var(--afh-display-accent);
-        }
-        /* Class, not \`.home-hero-copy p\`: a descendant selector outranks a
-           single class, so the element rule would have overridden the
-           standfirst's own size and ink below however it was written. */
-        .home-hero-lede {
-          margin: 0 auto;
-          max-width: 56ch;
-          font-size: var(--home-text-hero-copy);
-          line-height: 1.6;
-          color: var(--afh-text-soft);
-        }
 
-        /* The standfirst is the page's first prose, so it takes the reading
-           size and the full ink — the lede above it stays the smaller, softer
-           gloss on the headline. Set the other way round, two paragraphs of
-           near-identical grey would read as one four-line block and the
-           reader would skip both.
+        /* A class, not \`.home-hero-copy p\`: a descendant selector outranks
+           a single class, so an element rule would silently override
+           whatever the answer sets for itself.
 
-           A hairline rather than a rule: it marks where the claim stops and
-           the description starts, without cutting the band in two. */
-        .home-hero-standfirst {
+           Reading size and full ink, because this is now the band's only
+           prose. At the retired lede's smaller, softer grey it would read
+           as a caption under the headline rather than as its answer. No
+           rule above it either — the hairline separated a standfirst from
+           a lede, and neither is here now. */
+        .home-hero-answer {
           margin: 0 auto;
-          margin-top: 22px;
-          padding-top: 22px;
-          max-width: 62ch;
+          max-width: 52ch;
           font-size: var(--afh-text-body);
           line-height: var(--afh-leading-body);
           color: var(--afh-text);
-          border-top: 1px solid var(--afh-border);
         }
 
         .home-hero-seam {
@@ -155,16 +174,70 @@ export function HomeHero() {
            floor (styles/mobile-text.css), and a band that opted out was the
            one surface disagreeing with every page under it. */
         @media (max-width: 700px) {
-          .home-hero-copy {
-            padding: 34px 20px 30px;
+          .home-hero-inner {
+            padding-block: 34px 30px;
           }
         }
 
-        /* No viewport-height floor any more. It existed to keep the globe
-           and its controls inside the first screen; with the module gone to
-           its own section, the same rule would stretch three paragraphs over
-           a full screen and push the three entry points below the fold —
-           which is the opposite of why they were moved up here. */
+        /* ─── The visual ────────────────────────────────────────────────
+           Withdrawn below the shell's breakpoint rather than shrunk: at
+           phone width the question and its answer already fill the band,
+           and a picture under them would push the answer off the first
+           screen. */
+        .home-hero-figure {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .home-hero-inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 56px;
+          }
+
+          /* Left, and left-aligned. Centred copy beside a picture reads as
+             two objects sharing a row; ragged-right beside it reads as one
+             column with an illustration. */
+          .home-hero-copy {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+            max-width: 34rem;
+            text-align: left;
+          }
+          .home-hero-answer {
+            margin-inline: 0;
+          }
+
+          .home-hero-figure {
+            display: block;
+            flex: 0 1 34rem;
+            min-width: 0;
+            margin: 0;
+          }
+          .home-hero-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--afh-radius-lg);
+            border: 1px solid var(--afh-border);
+          }
+          .home-hero-figure figcaption {
+            margin-top: 10px;
+            font-size: var(--afh-text-caption);
+            line-height: var(--afh-leading-caption);
+            color: var(--afh-text-soft);
+          }
+
+          /* The viewport-height floor is back, but not on the band it was
+             removed from. It went because two lines of copy stretched over a
+             full screen is air; the band is two columns now, so the height is
+             filled by the picture that answers the question beside it. */
+          .home-hero {
+            min-height: 100svh;
+          }
+        }
       `}</style>
     </section>
   );
