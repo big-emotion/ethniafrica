@@ -1,15 +1,16 @@
 import type { ReactNode } from "react";
 
-import type { HeroVariant } from "@/lib/layout/heroVariant";
-
 /**
  * The band every page opens on.
  *
- * Two variants, one component. The immersive band takes the viewport and is
- * reserved for the four entry points (home, and the three axis hubs); the
- * compact band is short and belongs to every destination. Splitting them into
- * two components is how a system ends up with two title treatments that drift
- * apart — `heroVariant.ts` decides which, from the route.
+ * One band, one height. It shipped with two — a short one for destinations
+ * and a viewport-tall one for the home and the three axis hubs — and the tall
+ * one was wrong on every route that could reach it. The plate is bottom-
+ * aligned, so a screen-tall band set the title at the foot of a screen of
+ * empty parchment: a reader opening the Explorer hub met the masthead, a field
+ * of nothing, and the page's own name somewhere near the fold. The home, the
+ * one surface the tall band was designed around, never rendered it at all —
+ * it passes `hideHeader` and opens on its own globe.
  *
  * Inside the band sits the plate: an opaque card carrying the title, the
  * subtitle and the trail, in that order. The order is the whole point. The
@@ -22,52 +23,55 @@ import type { HeroVariant } from "@/lib/layout/heroVariant";
  * same left edge as the logo above it and the copyright below.
  */
 export interface PageHeroProps {
-  variant: HeroVariant;
-  title: string;
+  /** The page's name, when the shell can compose the head from strings. */
+  title?: string;
   subtitle?: string;
+  /**
+   * A head the page composed itself, filling the plate in place of `title` and
+   * `subtitle`.
+   *
+   * The five surfaces a reader actually comes here for cannot state themselves
+   * in two strings: a people fiche names its subject with the autonym beside
+   * the exonym and the `lang` attribute that makes the pair readable, a
+   * country fiche prints the corpus identifier and the reference year, a facet
+   * prints its provenance line. They used to opt out of the band entirely
+   * (`hideHeader`) and raise that head in a box of their own — which cost them
+   * the plate, and sent the trail back to a second container on a second
+   * vertical.
+   *
+   * When a head is given the band composes no title beside it: the head brings
+   * the page's only h1.
+   */
+  head?: ReactNode;
   /**
    * The breadcrumb, passed in rather than mounted. `SiteTrail` derives itself
    * from the router; taking it as a slot keeps this component a plain function
    * of its props and lets the shell stay the single place the trail is built.
    */
   trail?: ReactNode;
-  /**
-   * The visual the immersive band sets beside its copy. Decorative by
-   * contract — it argues the copy next to it, so a reader who has the copy has
-   * already had the argument, and an alt text here would say it twice.
-   */
-  media?: ReactNode;
 }
 
 // @req REQ-115
-export function PageHero({
-  variant,
-  title,
-  subtitle,
-  trail,
-  media,
-}: PageHeroProps) {
+export function PageHero({ title, subtitle, head, trail }: PageHeroProps) {
   return (
-    <section
-      className="afh-hero"
-      data-testid="page-hero"
-      data-hero-variant={variant}
-    >
+    <section className="afh-hero" data-testid="page-hero">
       <div className="afh-shell afh-hero-inner">
         <div className="afh-hero-plate" data-testid="page-hero-plate">
-          <h1 className="afh-hero-title page-title-gradient">{title}</h1>
-          {subtitle ? (
-            <p className="afh-hero-subtitle" data-testid="page-hero-subtitle">
-              {subtitle}
-            </p>
-          ) : null}
+          {head ?? (
+            <>
+              <h1 className="afh-hero-title page-title-gradient">{title}</h1>
+              {subtitle ? (
+                <p
+                  className="afh-hero-subtitle"
+                  data-testid="page-hero-subtitle"
+                >
+                  {subtitle}
+                </p>
+              ) : null}
+            </>
+          )}
           {trail}
         </div>
-        {media ? (
-          <div className="afh-hero-media" data-testid="page-hero-media">
-            {media}
-          </div>
-        ) : null}
       </div>
     </section>
   );

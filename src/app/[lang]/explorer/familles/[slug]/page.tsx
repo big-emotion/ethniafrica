@@ -11,6 +11,7 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
@@ -256,13 +257,16 @@ export default async function FamillesSlugPage({
     <PageLayout
       language="fr"
       sectionName="Familles linguistiques"
-      hideHeader
       flushTop
       trailLabel={family.nameFr}
+      heroHead={
+        <FicheHeroHead entityType="language-family">
+          <FamilyFicheTitle family={family} />
+        </FicheHeroHead>
+      }
     >
       <FicheSequence
         entityType="language-family"
-        title={<FamilyFicheTitle family={family} />}
         globe={
           <FicheHeroBand>
             <AtlasGlobe
