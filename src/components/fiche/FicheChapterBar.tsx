@@ -23,6 +23,7 @@
 import { ChevronDown } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import {
   FICHE_CHAPTER_ATTRIBUTE,
   readFicheChapters,
@@ -44,8 +45,21 @@ function padded(position: number): string {
   return String(position).padStart(2, "0");
 }
 
+export interface FicheChapterBarProps {
+  /**
+   * What the fiche is about, so the rail's report control has a subject.
+   * Omitted, the rail is still a rail — it simply carries no report control,
+   * because a report with no subject is a message the moderator cannot act on.
+   */
+  entityId?: string;
+  entityName?: string;
+}
+
 // @req REQ-091
-export function FicheChapterBar() {
+export function FicheChapterBar({
+  entityId,
+  entityName,
+}: FicheChapterBarProps = {}) {
   const railRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const [chapters, setChapters] = useState<FicheChapter[]>([]);
@@ -207,6 +221,37 @@ export function FicheChapterBar() {
             <ChevronDown className="afh-chapter-bar-caret" />
           </span>
         </button>
+
+        {/* The report control, moderation charter §3: reachable at every
+            moment of the reading, and knowing what is being read. It stands
+            here rather than floating over the page because the rail is the one
+            thing that already tracks the chapter in view — a floating button
+            would be just as reachable and would have to ask the reader which
+            part they meant, which is §1 again.
+
+            A sibling of the toggle, never inside it: the toggle is a button,
+            and a button inside a button is invalid and unreachable by keyboard.
+
+            The per-section controls stay. They serve the reader aiming at
+            something narrower than a chapter. */}
+        {entityId ? (
+          <div className="afh-chapter-bar-report">
+            <FlagTarget
+              target={{
+                type: "fiche_section",
+                id: entityId,
+                name: entityName,
+                // The chapter's anchor, which is a published address a
+                // moderator can open, rather than a JSON path they would have
+                // to translate back into a place on the page.
+                fieldPath: current.id,
+                fieldLabel: current.title,
+              }}
+              triggerLabel="Signaler"
+              className="w-auto h-9 px-3 text-afh-caption"
+            />
+          </div>
+        ) : null}
 
         {/* The read rule: how much of the fiche is behind the reader. */}
         <span className="afh-chapter-bar-read" aria-hidden="true" />

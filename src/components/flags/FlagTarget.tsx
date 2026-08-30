@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -52,6 +52,19 @@ export interface FlagTargetProps {
   target: FlagFormTarget;
   triggerLabel?: string;
   className?: string;
+  /**
+   * Lets a surface supply its own trigger instead of the outlined button.
+   *
+   * Only for a control that has to join a row this component did not build.
+   * The anecdote reader's reactions are three pills side by side; an outlined
+   * button dropped among them reads as a fourth thing rather than the third
+   * of three, and the reader loses the row. The actions charter's rule that a
+   * button is never rebuilt by hand (§4) is about picking a new shape for a
+   * lone control — not about matching a row that already exists.
+   *
+   * The default stays the primitive, and every new surface should take it.
+   */
+  renderTrigger?: (open: () => void) => ReactNode;
 }
 
 // @req REQ-012
@@ -59,6 +72,7 @@ export function FlagTarget({
   target,
   triggerLabel = "Signaler",
   className,
+  renderTrigger,
 }: FlagTargetProps) {
   const titleId = useId();
   const [open, setOpen] = useState(false);
@@ -106,14 +120,18 @@ export function FlagTarget({
 
   return (
     <>
-      <Button
-        type="button"
-        variant="outline"
-        className={cn("w-full", className)}
-        onClick={() => handleOpenChange(true)}
-      >
-        {triggerLabel}
-      </Button>
+      {renderTrigger ? (
+        renderTrigger(() => handleOpenChange(true))
+      ) : (
+        <Button
+          type="button"
+          variant="outline"
+          className={cn("w-full", className)}
+          onClick={() => handleOpenChange(true)}
+        >
+          {triggerLabel}
+        </Button>
+      )}
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent aria-labelledby={titleId} className="max-w-lg">
           <DialogHeader>

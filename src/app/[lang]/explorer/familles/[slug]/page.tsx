@@ -267,6 +267,8 @@ export default async function FamillesSlugPage({
     >
       <FicheSequence
         entityType="language-family"
+        entityId={parsed.slug}
+        entityName={familyDetail.nameFr}
         globe={
           <FicheHeroBand>
             <AtlasGlobe

@@ -41,6 +41,13 @@ export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
 
 export interface FicheSequenceProps {
   entityType: FicheEntityType;
+  /**
+   * What the fiche is about. The rail carries the reader's report control
+   * (moderation charter §3) and a report needs a subject, so the shell passes
+   * the entity's identity down rather than have the rail guess it from a URL.
+   */
+  entityId?: string;
+  entityName?: string;
   /** The entity's dossier — the parchment the page is. */
   record: ReactNode;
   /** The REQ-116 atlas globe (AtlasGlobe), on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
@@ -51,6 +58,8 @@ export interface FicheSequenceProps {
 // @req REQ-091
 export function FicheSequence({
   entityType,
+  entityId,
+  entityName,
   record,
   globe,
   className,
@@ -72,7 +81,7 @@ export function FicheSequence({
       {/* The rail opens the reading, not the map: pinned here it starts
           following the reader exactly where the parchment starts, and the globe
           keeps the screen to itself while it is the subject. */}
-      <FicheChapterBar />
+      <FicheChapterBar entityId={entityId} entityName={entityName} />
       {/* Neither the globe nor the parchment is boxed in a measured column.
           The globe runs edge to edge; the parchment carries its own reading
           measure, and a column here would apply a second, wider one on top of

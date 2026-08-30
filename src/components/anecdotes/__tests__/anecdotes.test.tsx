@@ -7,6 +7,25 @@ import { AnecdoteReader } from "@/components/anecdotes/AnecdoteReader";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { getCountryRoute } from "@/lib/routing";
 
+// Contesting an anecdote now opens the report dialog in place. These stand in
+// for what that dialog reaches for and this suite is not about: a session, a
+// toast, the consent state, and a proof of work the browser would have to pay.
+vi.mock("@/lib/supabase/auth-client", () => ({
+  createBrowserSupabaseClient: vi.fn(),
+}));
+
+vi.mock("@/hooks/use-toast", () => ({
+  useToast: () => ({ toast: vi.fn() }),
+}));
+
+vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
+}));
+
+vi.mock("@/components/flags/ProofOfWorkGate", () => ({
+  ProofOfWorkGate: () => null,
+}));
+
 const SOURCED: DidYouKnowFact = {
   id: "cameroun",
   headline: "Le Cameroun porte le nom d'un crustacé.",
@@ -192,14 +211,33 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
     ).toHaveAttribute("aria-pressed", "false");
   });
 
-  // An objection that stays on the reader's machine is not an objection.
+  // An objection that stays on the reader's machine is not an objection — and
+  // neither is one handed to a page that cannot take it. This used to be a
+  // link away to the report-error page, whose form is a third-party embed the
+  // site's own CSP blocks: the reader left the anecdote and landed on prose
+  // promising a form that was never going to mount. The report is taken where
+  // the reader stands instead.
   // @req REQ-113
-  it("sends a contestation to the signalement form, naming the anecdote", () => {
+  it("takes a contestation where the reader stands, naming the anecdote", async () => {
+    const user = userEvent.setup();
+    render(<AnecdoteReader language="fr" deck={DECK} />);
+
+    await user.click(
+      screen.getByRole("button", { name: "Je conteste cette anecdote" })
+    );
+
+    expect(await screen.findByRole("dialog")).toHaveTextContent(
+      "Le Cameroun porte le nom d'un crustacé."
+    );
+  });
+
+  // @req REQ-113
+  it("no longer sends the reader away to a page with no form to offer", () => {
     render(<AnecdoteReader language="fr" deck={DECK} />);
 
     expect(
-      screen.getByRole("link", { name: "Je conteste cette anecdote" })
-    ).toHaveAttribute("href", "/fr/report-error?anecdote=cameroun");
+      screen.queryByRole("link", { name: "Je conteste cette anecdote" })
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-113

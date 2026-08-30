@@ -241,6 +241,8 @@ export default async function PaysSlugPage({
     >
       <FicheSequence
         entityType="country"
+        entityId={countryDetail.id}
+        entityName={countryDetail.nameCommonFr || countryDetail.nameFr}
         globe={
           // The picker lives inside the globe now, which is what lets choosing
           // a country re-aim the camera instead of loading another fiche: the
