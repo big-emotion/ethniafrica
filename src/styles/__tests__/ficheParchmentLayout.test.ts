@@ -33,6 +33,16 @@ const countryBriefSource = readFileSync(
   "utf8"
 );
 
+/**
+ * The people fiche's body paragraphs are not `.afh-parchment-section p` — they
+ * are ProseWithChip's own class, declared in the people surface's token file.
+ * Same parchment, same chapter, a second stylesheet.
+ */
+const peopleTokensSource = readFileSync(
+  resolve(process.cwd(), "src/styles/people-tokens.css"),
+  "utf8"
+);
+
 /** The body of one rule, looked up by its exact selector. */
 function ruleBodyIn(source: string, selector: string): string {
   const escaped = selector.replace(/[.[\]="^$*+?()|{}\\]/g, "\\$&");
@@ -107,6 +117,18 @@ describe("parchment layout — one continuous document", () => {
   // @req REQ-115
   it("lets the country chapô fill its block", () => {
     expect(ruleBodyIn(countryBriefSource, ".fiche-brief-summary")).not.toMatch(
+      /max-width/
+    );
+  });
+
+  // The people fiche escaped the fix its own parchment received: its chapters
+  // render ProseWithChip, whose class lives in people-tokens.css and kept the
+  // 65ch cap. So "Culture & spiritualité" broke off at three-fifths of the
+  // parchment while the stat cards in the chapter above it ran to both edges —
+  // the same defect as `.afh-parchment-section p`, one stylesheet over.
+  // @req REQ-115
+  it("lets the people fiche's prose fill the parchment", () => {
+    expect(ruleBodyIn(peopleTokensSource, ".people-section-body")).not.toMatch(
       /max-width/
     );
   });

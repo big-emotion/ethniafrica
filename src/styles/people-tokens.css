@@ -20,11 +20,14 @@
   margin-bottom: 4px;
 }
 
+/* No measure. The parchment decides where a line ends, exactly as it does for
+   `.afh-parchment-section p` — this class is the same prose, one stylesheet
+   over. Capped at 65ch it broke off at three-fifths of a desktop chapter while
+   the stat cards and tables beside it ran to both edges. */
 .people-section-body {
   font-size: var(--afh-text-body);
-  /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
+  /* Reading-surface density: UX-DR2 line-height ≥ 1.6 */
   line-height: var(--afh-leading-body);
-  max-width: var(--afh-measure-prose);
   color: var(--country-text);
 }
 
