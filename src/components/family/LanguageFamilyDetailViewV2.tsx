@@ -55,7 +55,6 @@ import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTrai
 export interface LanguageFamilyDetailViewV2Props {
   family: LanguageFamily;
   /** Enables the live section FlagTarget on the history section (REQ-012 AC5). */
-  turnstileSiteKey?: string;
   /** The same countries, in the same order, the globe drew — so the ranking and the map cannot disagree. */
   footprintCountries?: readonly FamilyFootprintCountry[];
   memberPeoples?: readonly MemberPeopleLike[];
@@ -67,7 +66,6 @@ export interface LanguageFamilyDetailViewV2Props {
 // @req REQ-047
 export function LanguageFamilyDetailViewV2({
   family,
-  turnstileSiteKey,
   footprintCountries = [],
   memberPeoples = [],
   memberPeopleCount = 0,
@@ -92,11 +90,7 @@ export function LanguageFamilyDetailViewV2({
         <FamilyLinguisticTraits data={data.linguisticTraits} />
       </div>
       <div className="afh-parchment-section">
-        <FamilyHistorySection
-          data={data.history}
-          familyId={data.hero.id}
-          turnstileSiteKey={turnstileSiteKey}
-        />
+        <FamilyHistorySection data={data.history} familyId={data.hero.id} />
       </div>
     </FamilyParchment>
   );

@@ -7,9 +7,22 @@ there.
 
 |                         |                                                                                                                           |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Above the surfaces**  | [`brand-charter.md`](brand-charter.md) — the name, the promise, one token spine, colour, rhythm, composition, imagery     |
 | **The rules**           | [`atlas-charter.md`](atlas-charter.md) — cartographic grammar, accent scope, the three entry points, empty-state doctrine |
+| **The type**            | [`typography-charter.md`](typography-charter.md) — nine roles, the fluid scale, the card's three levels                   |
+| **The clicks**          | [`actions-charter.md`](actions-charter.md) — four shapes, and what a radius means                                         |
+| **The games**           | [`games-charter.md`](games-charter.md) — the item doctrine and what the Jouer hub owes                                    |
 | **The engine decision** | [`../adr/0007-atlas-globe-engine.md`](../adr/0007-atlas-globe-engine.md) — three.js r169, one component for every surface |
 | **The rendering**       | `mockups/` — four runnable pages, below                                                                                   |
+
+Each of the four surface charters governs one surface. `brand-charter.md` sits
+above them and answers the question none of them does — what this is and who is
+speaking. Where it and a surface charter disagree, the surface charter is more
+specific and wins, and the disagreement is a bug in one of them.
+
+Every question about the brand, the look of a page or the coherence of an
+assembly goes through the `/afrik-art-director` skill, which loads these in the
+right order and knows how to render the surface to judge it.
 
 ## The four mockups
 

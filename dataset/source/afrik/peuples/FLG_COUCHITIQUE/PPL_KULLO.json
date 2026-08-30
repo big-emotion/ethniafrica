@@ -3,6 +3,7 @@
   "nameMain": "Kullo",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kullo",

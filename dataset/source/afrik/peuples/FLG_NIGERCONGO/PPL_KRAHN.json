@@ -3,6 +3,7 @@
   "nameMain": "Krahn",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Krahn",

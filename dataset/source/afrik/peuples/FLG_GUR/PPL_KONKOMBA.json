@@ -3,6 +3,7 @@
   "nameMain": "Konkomba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "TGO", "BFA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Konkomba",

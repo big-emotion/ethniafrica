@@ -3,6 +3,7 @@
   "nameMain": "Indo-Mauriciens",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["MUS"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Indo-Mauriciens",

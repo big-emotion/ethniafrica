@@ -3,6 +3,7 @@
   "nameMain": "Amhara",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Amhara",

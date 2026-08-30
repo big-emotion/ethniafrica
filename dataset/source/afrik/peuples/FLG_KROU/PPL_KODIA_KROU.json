@@ -3,6 +3,7 @@
   "nameMain": "Kodia Krou",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kodia Krou",

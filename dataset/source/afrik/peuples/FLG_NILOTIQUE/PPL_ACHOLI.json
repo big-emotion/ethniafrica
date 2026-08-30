@@ -3,6 +3,7 @@
   "nameMain": "Acholi",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["UGA", "SSD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Acholi",

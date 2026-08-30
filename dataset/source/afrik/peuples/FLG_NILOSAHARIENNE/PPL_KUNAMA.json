@@ -3,6 +3,7 @@
   "nameMain": "Kunama",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["ERI", "ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kunama",

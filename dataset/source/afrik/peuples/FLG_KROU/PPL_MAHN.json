@@ -3,6 +3,7 @@
   "nameMain": "Mahn",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR", "GIN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mahn",

@@ -103,7 +103,7 @@ node src/lib/atlas/assets/generate-world-basemap.mjs \
 ```
 
 Committed size: ~20 KB raw / ~8.7 KB gzipped, in the globe's lazy chunk
-rather than the initial bundle (`HomeGlobe` is a `ssr: false` dynamic import).
+rather than the initial bundle (`AtlasGlobeCanvas` is a `ssr: false` dynamic import).
 
 ## Per-country geometry (`africaAdmin0.ts`)
 

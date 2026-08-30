@@ -3,6 +3,7 @@
   "nameMain": "Tutsi du Burundi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BDI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tutsi du Burundi",

@@ -3,6 +3,7 @@
   "nameMain": "Bakongo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG", "AGO", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bakongo",

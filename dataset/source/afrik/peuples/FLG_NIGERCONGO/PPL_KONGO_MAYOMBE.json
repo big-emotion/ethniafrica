@@ -3,6 +3,7 @@
   "nameMain": "Kongo (Mayombe)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG", "AGO", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kongo (Mayombe)",

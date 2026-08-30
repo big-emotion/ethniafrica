@@ -3,6 +3,7 @@
   "nameMain": "Peuples Songhay (macro-groupe)",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Peuples Songhay (macro-groupe)",

@@ -3,6 +3,7 @@
   "nameMain": "Swahili (Somalie)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SOM", "KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Swahili de Somalie (Bajuni et Bravanese)",

@@ -3,6 +3,7 @@
   "nameMain": "Yombe",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yombe",

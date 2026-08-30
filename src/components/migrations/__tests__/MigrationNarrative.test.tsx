@@ -163,6 +163,27 @@ describe("MigrationNarrative", () => {
     ]);
   });
 
+  // The narrative sits in the same chapter as the atlas and the chronology
+  // table, both of which fill their container. Held to 75ch, the paragraphs
+  // were the only thing on a desktop page that stopped mid-width.
+  // @req REQ-101 FR81 FR82 FR78
+  it("gives the narrative paragraphs no measure of their own", () => {
+    const { container } = render(
+      <MigrationNarrative
+        events={[
+          makeEvent({
+            classificationStatus: "contested",
+            debate: "Les datations divergent.",
+          }),
+        ]}
+      />
+    );
+
+    const paragraphs = Array.from(container.querySelectorAll("p"));
+    expect(paragraphs.length).toBeGreaterThan(1);
+    expect(paragraphs.every((p) => !/max-w-/.test(p.className))).toBe(true);
+  });
+
   // @req REQ-101 FR81 FR82 FR78
   it("renders an empty state when there are no events", () => {
     render(<MigrationNarrative events={[]} />);

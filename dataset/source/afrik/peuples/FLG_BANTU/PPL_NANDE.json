@@ -3,6 +3,7 @@
   "nameMain": "Nande",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nande",

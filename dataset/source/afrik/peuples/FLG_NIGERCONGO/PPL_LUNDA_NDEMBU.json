@@ -3,6 +3,7 @@
   "nameMain": "Lunda-Ndembu",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO", "ZMB", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lunda-Ndembu",

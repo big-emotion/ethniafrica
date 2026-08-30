@@ -8,6 +8,7 @@
   "nameMain": "Borana",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "KEN", "SOM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Borana",
