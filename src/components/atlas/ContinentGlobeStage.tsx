@@ -110,7 +110,31 @@ export function ContinentGlobeStage({
           fallbackNote="Carte de l'Afrique, à plat : ce navigateur ne peut pas afficher le globe."
           wholeAreaLabel="Tout le continent"
           areaNoun="le continent"
-          targetPicker="markers"
+          /*
+           * This scene opens no country (atlas-charter §1).
+           *
+           * It reached the home's featured module and /jouer/mercator reusing
+           * `buildContinentOverlay` — the Explorer hub's scene — and inherited
+           * the hub's whole offer with it: twelve pinned countries, a tap
+           * anywhere on the sphere selecting the nearest one, and a legend
+           * promising « appuyez sur un point pour ouvrir le pays ». Neither
+           * surface is browsing the corpus. Both are making one claim about
+           * what a flat map does to area, and a mark saying « this country
+           * opens » is a second, unrelated offer laid over the argument — on
+           * /jouer/mercator, a way out of a standing round.
+           *
+           * The frame still draws all fifty-four outlines: the continent is
+           * the body whose surface is being argued about, and it is the
+           * marks, not the geography, that made a promise this scene cannot
+           * keep.
+           */
+          targetPicker="none"
+          /*
+           * And it is argued with the bar rather than the button: the
+           * demonstration is the movement, and the reader has to be able to
+           * stop in the middle of it.
+           */
+          projectionControl="morph"
         />
       )}
       <style>{`
