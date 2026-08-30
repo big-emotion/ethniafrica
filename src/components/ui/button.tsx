@@ -10,7 +10,7 @@ import {
 
 const buttonVariants = cva(
   cn(
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-afh-base text-afh-small font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-afh-lg text-afh-small font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     CHARTER_FOCUS_RING,
     CHARTER_HOVER_LIFT
   ),
@@ -18,6 +18,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-afh-terracotta text-white hover:brightness-95",
+        /**
+         * Takes the surface's accent instead of the brand terracotta, so a
+         * primary action on Jouer is periwinkle and one on Explorer is ochre
+         * without either learning which (atlas-charter §2).
+         *
+         * It exists because seven files hand-rolled exactly this — an inline
+         * style setting --accent as the background — rather than reach for a
+         * primitive that could not do it, and each picked its own radius on
+         * the way past.
+         */
+        accent:
+          "bg-[color:var(--accent)] text-[color:var(--accent-foreground)] hover:brightness-95",
         destructive:
           "bg-afh-classification-disputed text-white hover:brightness-95",
         outline:
@@ -28,8 +40,8 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-11 px-4 py-2",
-        sm: "h-9 rounded-afh-base px-3",
-        lg: "h-11 rounded-afh-base px-8",
+        sm: "h-9 rounded-afh-lg px-3",
+        lg: "h-11 rounded-afh-lg px-8",
         icon: "h-11 w-11",
       },
     },

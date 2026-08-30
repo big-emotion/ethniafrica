@@ -33,7 +33,7 @@ means.
 | ------------------- | ----------------------- | ------------------------------------------ |
 | **A — action link** | goes to another page    | label + arrow, no container                |
 | **B — inline link** | goes to another page    | underlined, inside a running sentence      |
-| **C — button**      | _does_ something        | filled or outlined container, radius 12 px |
+| **C — button**      | _does_ something        | filled or outlined container, radius 14 px |
 | **D — chip**        | one value among several | pill, radius full                          |
 
 A and B carry the same promise and differ only by where they stand: B exists
@@ -91,8 +91,11 @@ answer, filter, open, close, copy. Navigation between editorial pages is
 form A, whatever its visual weight.
 
 One implementation: `src/components/ui/button.tsx`. It is not to be rebuilt by
-hand — the audit found the primary button reconstructed in seven files at two
-radii the primitive does not use.
+hand — the audit found the primary button reconstructed in nine files, seven of
+them setting `--accent` as a background through an inline style because the
+primitive had no accent variant. It has one now: `variant="accent"` takes the
+surface's accent, so a primary action on Jouer is periwinkle and one on
+Explorer is ochre, neither of them learning which.
 
 **No arrow inside a button.** The container is already the affordance; the
 arrow would be a second one making a promise the button does not keep, since a
@@ -117,21 +120,34 @@ Three values. Each one says what kind of thing it wraps.
 | Token               | Value | Means                             | Where                                            |
 | ------------------- | ----- | --------------------------------- | ------------------------------------------------ |
 | `--afh-radius-0`    | 0     | **the source apparatus**          | citations, tier marks, version banners, captions |
-| `--afh-radius-base` | 12 px | **an action, or a content thing** | buttons, cards, module tiles                     |
+| `--afh-radius-lg`   | 14 px | **an action, or a content thing** | buttons, inputs, cards, panels, module tiles     |
 | `--afh-radius-full` | full  | **a value among several**         | chips, filters, facets, entity pills             |
 
 The sharp corner says _this is a document, not an application_ — the corpus's
 citation apparatus is the one layer that must look auditable. The softened
-rectangle is already the card's radius, and the card is the atlas's unit of
+rectangle is the card's own radius, and the card is the atlas's unit of
 content. The pill says the thing is one of a set.
 
-**The rule binds clickable elements.** A panel, an image or a container may
-still use another step of the radius scale; what is forbidden is that something
-the reader can click chooses its own. Enforced for the `ui/` primitives by
-`charterPrimitives.test.tsx`, and beyond them by `actionsCharter.test.tsx`.
+### Why controls and surfaces share one value
 
-The other six steps of `radius.css` therefore stay, but stop being public
-choices for controls.
+The codebase used to split them: `--afh-radius-base` (12 px) on the form
+controls — button, input, select, textarea, tabs — and `--afh-radius-lg`
+(14 px) on cards, alerts and panels. That reads like a real distinction and it
+is not one, because **no reader can see two pixels**. A semantic difference
+nobody can perceive is bookkeeping, not a sign, and this charter's whole claim
+is that shape carries meaning. So the two collapse, onto the value already in
+use three times as often.
+
+`--afh-radius-base` and the other five steps stay in `radius.css` for internal
+surfaces that are neither an action, a value, nor a source. What is forbidden
+is that something the reader can click chooses its own.
+
+**A control keeps the control radius wherever it stands** — including inside
+the citation apparatus, whose sharp corner belongs to the block, not to the
+copy button sitting in it.
+
+Enforced for the `ui/` primitives by `charterPrimitives.test.tsx`, and beyond
+them by `actionsCharter.test.tsx`.
 
 ---
 

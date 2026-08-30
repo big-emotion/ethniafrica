@@ -3,6 +3,7 @@ import Link from "next/link";
 import { translations } from "@/lib/translations";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const t = translations.fr.quiz;
 
@@ -165,16 +166,9 @@ export const QuizScopePicker = ({
 
           <p className="text-afh-small text-afh-text-soft">{t.scopeHint}</p>
 
-          <button
-            type="submit"
-            className="min-h-11 w-full rounded-afh-lg px-4 py-2 font-medium"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "var(--accent-foreground)",
-            }}
-          >
+          <Button type="submit" variant="accent" className="w-full">
             {t.scopeSubmit}
-          </button>
+          </Button>
         </fieldset>
       </form>
 

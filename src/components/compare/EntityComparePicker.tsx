@@ -266,7 +266,7 @@ export function EntityComparePicker({
             id={listboxId}
             role="listbox"
             aria-label={`Suggestions ${TYPE_LABELS[type]}`}
-            className="absolute z-10 mt-1 max-h-64 w-full overflow-auto rounded-afh-base border border-afh-border bg-afh-surface shadow-afh-1"
+            className="absolute z-10 mt-1 max-h-64 w-full overflow-auto rounded-afh-lg border border-afh-border bg-afh-surface shadow-afh-1"
           >
             {suggestions.map((candidate, index) => (
               <li

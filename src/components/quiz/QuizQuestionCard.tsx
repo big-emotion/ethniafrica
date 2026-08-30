@@ -7,6 +7,7 @@ import type {
   QuizSessionQuestionView,
   QuizOptionValue,
 } from "@/api/v2/schemas/quiz";
+import { Button } from "@/components/ui/button";
 
 const t = translations.fr.quiz;
 
@@ -117,13 +118,13 @@ export const QuizQuestionCard = ({
           ))}
         </RadioGroup>
       </fieldset>
-      <button
+      <Button
         type="submit"
         disabled={selectedOption === null}
-        className="min-h-11 w-full rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full"
       >
         {t.validate}
-      </button>
+      </Button>
     </form>
   );
 };
