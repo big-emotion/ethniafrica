@@ -56,9 +56,6 @@ function undeclaredFamily(): FamilyPageData {
       whyProblematic: null,
       selfAppellation: "Benue–Congo",
       contemporaryUsage: null,
-      geographicArea: null,
-      numberOfLanguages: 900,
-      totalSpeakers: 500_000_000,
     },
     generalInfo: {
       branches: [],
@@ -102,6 +99,36 @@ function renderParchment(data: FamilyPageData = undeclaredFamily()) {
 }
 
 describe("FamilyParchment — what the fiche declares", () => {
+  // The head opened on "N peuples · M pays dérivés" — the same two figures
+  // the empreinte section states a screen below, in a sentence that also says
+  // what they were derived from and by which rule. Bare in a chip they were
+  // the conclusion without the argument, and the word "dérivés" asserted a
+  // provenance the chip could not name.
+  // @req REQ-116
+  it("leaves the derived figures to the section that explains them", () => {
+    renderParchment();
+
+    expect(screen.queryByText(/pays dérivés/)).toBeNull();
+    // The sentence that does explain them is asserted in « says the area is
+    // calculated, not read from the fiche » below.
+  });
+
+  // Removing the last unconditional chip left the head band rendering an empty
+  // bordered strip under the globe on any fiche that declares a distribution.
+  // @req REQ-116
+  it("renders no head band when there is no chip to put in it", () => {
+    const { container } = renderParchment({
+      ...undeclaredFamily(),
+      distribution: {
+        totalSpeakers: null,
+        distributionByCountry: { COD: 3 },
+        footprintByCountry: {},
+      },
+    });
+
+    expect(container.querySelector(".afh-parchment-head")).toBeNull();
+  });
+
   // @req REQ-119
   it("reads « vide » for a field the fiche does not declare", () => {
     renderParchment();
@@ -165,6 +192,26 @@ describe("FamilyParchment — what the fiche declares", () => {
 
     expect(screen.getByTestId("stat-card-langues")).toHaveTextContent("900");
     expect(screen.getByTestId("stat-card-locuteurs")).toHaveTextContent("500");
+  });
+
+  // The head opened on a "900 langues" chip and the stat card printed 900 a
+  // few lines below it — the same field, twice, on one screen. The card is the
+  // one that carries the rubric naming where the figure is read and the
+  // provenance marker when it is missing; the chip carried neither.
+  // @req REQ-116
+  it("states the languages count once, on the card that names its rubric", () => {
+    const { container } = renderParchment();
+
+    const stated = Array.from(container.querySelectorAll("*")).filter(
+      (element) =>
+        element.children.length === 0 &&
+        /\b900\b/.test(element.textContent ?? "")
+    );
+
+    expect(stated).toHaveLength(1);
+    expect(
+      stated[0].closest("[data-testid='stat-card-langues']")
+    ).not.toBeNull();
   });
 });
 
@@ -303,6 +350,24 @@ describe("FamilyParchment — the trail", () => {
 });
 
 describe("FamilyParchment — the sources", () => {
+  // A family declaring no source lost the section outright — and with it
+  // #sources, the landmark deep links across the app point at, so those links
+  // scrolled nowhere on exactly the fiches whose sourcing a reader would most
+  // want to check. The people and country parchments print the section with a
+  // missing marker instead, which is charter §4: state the gap, never hide it.
+  // @req REQ-116
+  it("keeps its footer landmark for a family that declares no source", () => {
+    const { container } = renderParchment({
+      ...undeclaredFamily(),
+      sources: [],
+    });
+
+    const footer = container.querySelector("#sources");
+    expect(footer).not.toBeNull();
+    expect(footer?.tagName.toLowerCase()).toBe("footer");
+    expect(footer?.textContent).toMatch(/Donnée manquante/);
+  });
+
   // @req REQ-116
   it("labels a source by its own tier, never by the retired Tier 1/2/3 scale", () => {
     // The mockup stamps every source "Tier 1". The project retired that scale
@@ -365,33 +430,41 @@ describe("FamilyParchment — the sources", () => {
  *
  * The family fiche was the first surface to say where each figure comes from,
  * and it said it in the corpus's own key names — "generalInfo.totalSpeakers"
- * under a card headed "Locuteurs". The claim was right and the audience was
- * wrong. The gap paragraph goes the same way: it already names the two empty
- * rubrics in French, and repeating them as JSON keys adds nothing a reader
- * can act on.
+ * under a card headed "Locuteurs". Translating those into the model's French
+ * rubric names moved the sentence out of JSON without moving it towards the
+ * reader: "Rubriques « informations générales » et « répartition » de la
+ * fiche" still names the machinery.
  *
- * The derivation prose is the one place a key still belongs. It walks a reader
- * through how the footprint was computed, and the charter itself states that
- * rule with the field names in it (§1) — naming them is what makes the
- * reconstruction checkable rather than a claim to trust.
+ * What survives is what the reader can act on: the derivation prose, which
+ * walks through how the footprint was computed (the charter states that rule
+ * with the field names in it, §1), and the tier note, which says what the
+ * badge on each source means.
  */
 describe("FamilyParchment — provenance addressed to the reader", () => {
   const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+  const MODEL_RUBRIC = /rubriques?\s+«/i;
 
+  /**
+   * The card's third line was the mockup's field annotation twice translated:
+   * out of "generalInfo.totalSpeakers", then into "Informations générales ·
+   * total de locuteurs" — under a card already headed "Locuteurs". The
+   * provenance marker below the figure is what a reader acts on.
+   */
   // @req REQ-119
-  it("prints no field path on a stat card", () => {
+  it("gives a figure a label and a provenance marker, and no third line", () => {
     renderParchment();
 
-    const sources = Array.from(
-      document.querySelectorAll(".afh-stat-card-src")
-    ).map((node) => node.textContent ?? "");
-
-    expect(sources).toHaveLength(4);
-    for (const source of sources) expect(source).not.toMatch(FIELD_PATH);
+    expect(document.querySelectorAll(".afh-stat-card-src")).toHaveLength(0);
+    expect(document.querySelectorAll(".afh-stat-card")).toHaveLength(4);
+    expect(
+      within(screen.getByTestId("stat-card-branches")).getByText(
+        "Donnée manquante"
+      )
+    ).toBeTruthy();
   });
 
   // @req REQ-119
-  it("prints no field path in a section's provenance note", () => {
+  it("names neither a field path nor a rubric of the fiche model in a note", () => {
     renderParchment();
 
     const notes = Array.from(
@@ -399,17 +472,28 @@ describe("FamilyParchment — provenance addressed to the reader", () => {
     ).map((node) => node.textContent ?? "");
 
     expect(notes.length).toBeGreaterThan(0);
-    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+    for (const note of notes) {
+      expect(note).not.toMatch(FIELD_PATH);
+      expect(note).not.toMatch(MODEL_RUBRIC);
+    }
   });
 
+  /**
+   * Charter §4 wants the gap stated, not argued. The paragraph used to weigh
+   * the editorial alternatives out loud — "plutôt que de masquer la section ou
+   * d'inventer une aire" — a decision the reader was never asked to make.
+   */
   // @req REQ-119
-  it("names the two empty rubrics without naming their JSON keys", () => {
+  it("states the gap and its consequence, without arguing the choice", () => {
     renderParchment();
 
     const gap = document.querySelector(".afh-parchment-gap");
     expect(gap).not.toBeNull();
     expect(gap?.textContent).toMatch(/branches/i);
     expect(gap?.textContent).toMatch(/répartition/i);
+    expect(gap?.textContent).toMatch(/reconstruite/i);
+    expect(gap?.textContent).not.toMatch(/plutôt que|l'état du corpus/i);
+    expect(gap?.querySelector("h3")).toBeNull();
     expect(gap?.querySelector("code")).toBeNull();
   });
 });

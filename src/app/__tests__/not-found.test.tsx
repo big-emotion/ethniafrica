@@ -36,10 +36,23 @@ describe("NotFound (root boundary)", () => {
     ).toBeTruthy();
   });
 
+  /**
+   * The page used to prove it was pinned to `fr` by printing the three route
+   * templates, corpus key prefixes and all. Its links carry the same proof
+   * without teaching the reader a URL grammar they cannot use: a mistyped
+   * address is not repairable from a template, and a dead link was never
+   * typed at all.
+   */
   // @req REQ-099
-  it("teaches the fr fiche-URL pattern, never the rejected segment", () => {
+  it("points at fr, never at the rejected segment, and spells out no key", () => {
     const { container } = render(<NotFound />);
-    expect(container.textContent).toContain(getPeopleRoute("fr", "PPL_XXXXX"));
+
+    expect(
+      screen
+        .getByRole("link", { name: /rechercher une fiche/i })
+        .getAttribute("href")
+    ).toContain("/fr/");
+    expect(container.textContent).not.toMatch(/PPL_|FLG_/);
   });
 
   // @req REQ-099

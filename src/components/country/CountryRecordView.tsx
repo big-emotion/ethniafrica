@@ -65,10 +65,7 @@ export function CountryRecordView({
         country={country}
         hasSourceFlag={hasSourceFlag}
       >
-        <Section
-          title="Noms à travers l'histoire"
-          note="Rubrique « noms historiques » de la fiche"
-        >
+        <Section title="Noms à travers l'histoire">
           {data.timeline.items.length > 0 ? (
             <HistoryTimeline data={data.timeline} />
           ) : (
@@ -76,10 +73,7 @@ export function CountryRecordView({
           )}
         </Section>
 
-        <Section
-          title="Faits historiques majeurs"
-          note="Rubrique « faits historiques » de la fiche"
-        >
+        <Section title="Faits historiques majeurs">
           {data.historicalFacts ? (
             <HistoricalFactsSection data={data.historicalFacts} />
           ) : (
@@ -87,10 +81,7 @@ export function CountryRecordView({
           )}
         </Section>
 
-        <Section
-          title="Langues"
-          note="Rubrique « culture » de la fiche, « langues principales »"
-        >
+        <Section title="Langues">
           {data.languages.bubbles.length > 0 ? (
             <LanguagesSection data={data.languages} />
           ) : (
@@ -98,10 +89,7 @@ export function CountryRecordView({
           )}
         </Section>
 
-        <Section
-          title="Culture et société"
-          note="Rubrique « culture » de la fiche"
-        >
+        <Section title="Culture et société">
           <CultureGrid data={data.culture} />
           <div data-testid="section-flag-target-culture" className="mt-3">
             {turnstileSiteKey ? (

@@ -166,22 +166,27 @@ describe("country fiche charter", () => {
     expect(peoples?.textContent).not.toContain("Donnée manquante");
   });
 
+  /**
+   * The shortfall is admitted once, and in figures the reader can check
+   * against the bar above it. It used to be admitted twice — the coverage note
+   * asserted here, then a callout restating it behind the number of the
+   * validation rule that defines the tolerated band.
+   */
   // @req REQ-092
-  it("explains why the declared shares fall short of the whole", () => {
+  it("admits how much of the country its peoples account for, once", () => {
     const { container } = renderParchment(countryFixture());
 
-    const shortfall = Array.from(
-      container.querySelectorAll(".afh-parchment-callout")
-    ).find((node) => /100/.test(node.textContent ?? ""));
+    const coverage = container.querySelector("[data-demo-coverage-note]");
 
-    expect(shortfall).toBeDefined();
-    expect(shortfall).toHaveTextContent(/99/);
-    // "totalitédes" shipped once: the JSX transform drops the space opening a
-    // text node that follows an element.
-    expect(shortfall?.textContent).toContain("totalité des fiches");
+    expect(coverage).toBeDefined();
+    expect(coverage?.textContent).toMatch(/50\s%/);
+    expect(coverage?.textContent).toContain("pas encore réparti");
     // The mockup blames a top-eight cut-off. This fiche lists every people it
     // has, so that sentence would be false here.
-    expect(shortfall).not.toHaveTextContent(/huit premiers/i);
+    expect(container.textContent).not.toMatch(/huit premiers/i);
+    expect(container.querySelectorAll(".afh-parchment-callout")).toHaveLength(
+      1
+    );
   });
 
   // @req REQ-092
@@ -263,21 +268,27 @@ describe("country fiche parchment — head and closing", () => {
 });
 
 /**
- * Where a chapter's claim comes from, said to the reader.
+ * A chapter's note earns its line, or there is no line.
  *
  * The notes started life as the JSON path a developer would grep for —
- * "content.etymology · nameOriginActor" over the étymologie chapter. The
- * charter's intent is right and the audience was wrong: a reader checking a
- * claim looks for the fiche's rubric, not for a key in a file they will never
- * open.
+ * "content.etymology · nameOriginActor" over the étymologie chapter. They were
+ * then translated into the fiche model's French rubric names, which read like
+ * prose but named the same machinery: under a heading already reading
+ * "Royaumes et formations politiques" stood "Rubrique « royaumes » de la
+ * fiche". Both spellings annotate the fiche for whoever builds it.
+ *
+ * A note survives only where it states something the title does not — the
+ * reference year of a figure, a derivation, what the tier badge means.
  */
-describe("country fiche — provenance notes address the reader", () => {
+describe("country fiche — a note only where it adds something", () => {
   // A dotted lowerCamelCase path: "content.culture", "generalInfo.branches".
   // French prose never produces one, so its presence is the tell.
   const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+  // The model's own section names, quoted at the reader.
+  const MODEL_RUBRIC = /rubriques?\s+«/i;
 
   // @req REQ-119
-  it("prints no field path in the parchment's notes", () => {
+  it("names neither a field path nor a rubric of the fiche model", () => {
     const { container } = renderParchment(countryFixture());
 
     const notes = Array.from(
@@ -285,22 +296,27 @@ describe("country fiche — provenance notes address the reader", () => {
     ).map((node) => node.textContent ?? "");
 
     expect(notes.length).toBeGreaterThan(0);
-    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+    for (const note of notes) {
+      expect(note).not.toMatch(FIELD_PATH);
+      expect(note).not.toMatch(MODEL_RUBRIC);
+    }
   });
 
   // @req REQ-119
-  it("names the rubric each chapter reads", () => {
+  it("leaves a chapter bare when its title already says where it reads", () => {
     const { container } = renderParchment(countryFixture());
 
     const noteFor = (title: string) =>
       container.querySelector(
         `[data-fiche-section="${title}"] .afh-parchment-note`
-      )?.textContent ?? "";
+      );
 
-    expect(noteFor("Étymologie du nom")).toMatch(/étymologie/i);
-    expect(noteFor("Peuples du pays")).toMatch(/démographie/i);
-    expect(noteFor("Royaumes et formations politiques")).toMatch(/royaumes/i);
-    expect(noteFor("Sources")).toMatch(/sources/i);
+    expect(noteFor("Étymologie du nom")).toBeNull();
+    expect(noteFor("Peuples du pays")).toBeNull();
+    expect(noteFor("Royaumes et formations politiques")).toBeNull();
+
+    // Sources keeps one: the tier badge on each row is not self-explanatory.
+    expect(noteFor("Sources")?.textContent).toMatch(/palier/i);
   });
 });
 
@@ -313,14 +329,18 @@ describe("country fiche — provenance notes address the reader", () => {
  * naming a path for years.
  */
 describe("country record view — the chapters the page adds", () => {
-  const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
-
   function renderRecord(country: CountryDetail) {
     return render(<CountryRecordView country={country} />);
   }
 
+  /**
+   * Each of the four repeated its own heading back as a rubric — "Rubrique
+   * « faits historiques » de la fiche" under "Faits historiques majeurs". None
+   * of them states a reference year or a derivation, so none of them has a
+   * note left to print.
+   */
   // @req REQ-119
-  it("prints no field path in the added chapters' notes", () => {
+  it("prints no note at all, having nothing its titles do not say", () => {
     const { container } = renderRecord(
       countryFixture({
         historicalNames: { contemporary: "Nigéria depuis 1960." },
@@ -332,12 +352,20 @@ describe("country record view — the chapters the page adds", () => {
       } as Partial<CountryDetail>)
     );
 
-    const notes = Array.from(
-      container.querySelectorAll(".afh-parchment-note")
-    ).map((node) => node.textContent ?? "");
-
-    expect(notes.length).toBeGreaterThan(4);
-    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+    // Scoped to the four: the view wraps CountryParchment, whose Sources
+    // chapter keeps the one note that still earns its line.
+    for (const title of [
+      "Noms à travers l'histoire",
+      "Faits historiques majeurs",
+      "Langues",
+      "Culture et société",
+    ]) {
+      expect(
+        container.querySelector(
+          `[data-fiche-section="${title}"] .afh-parchment-note`
+        )
+      ).toBeNull();
+    }
   });
 
   // @req REQ-119
@@ -390,5 +418,36 @@ describe("country record view — the chapters the page adds", () => {
     render(<CountryRecordView country={countryFixture()} />);
 
     expect(screen.queryByTestId("country-back-to-people")).toBeNull();
+  });
+});
+
+/**
+ * Internal vocabulary is not editorial content.
+ *
+ * The fiche printed the identifier of the validation rule behind a demographic
+ * shortfall ("la règle FR28 porte sur…") and a label announcing the fiche's own
+ * editorial posture ("Ce que la fiche refuse de taire"). Neither addresses the
+ * reader: a visitor cannot act on a requirement number, and the callout's
+ * accent rule is what already sets the passage apart. What the reader is owed
+ * is the claim itself — who named the country, and how much of its population
+ * the fiche accounts for.
+ */
+describe("what the parchment never says out loud", () => {
+  // @req REQ-115
+  it("names no internal requirement behind a shortfall it admits", () => {
+    const { container } = renderParchment(countryFixture());
+
+    expect(container.textContent).toContain("50 % de la population");
+    expect(container.textContent).not.toMatch(
+      /\b(?:FR|NFR)\d{1,3}\b|REQ-\d+|DEC-\d+|ARCH-\d+|ETNI-\d+/
+    );
+  });
+
+  // @req REQ-115
+  it("states who named the country without announcing its own posture", () => {
+    const { container } = renderParchment(countryFixture());
+
+    expect(container.textContent).toContain("Flora Shaw");
+    expect(container.textContent).not.toMatch(/refuse de taire/i);
   });
 });

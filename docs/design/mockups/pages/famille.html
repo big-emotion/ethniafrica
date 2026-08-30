@@ -131,22 +131,20 @@
     </header>
 
     <section class="sec">
-      <h2>Ce que la fiche déclare, ce qu'elle ne déclare pas</h2>
-      <p class="sec-note">content.generalInfo · content.distribution</p>
+      <h2>La famille en chiffres</h2>
       <div class="scale-cards" id="scale"></div>
       <div class="empty" id="gap" style="margin-top:16px"></div>
     </section>
 
     <section class="sec">
       <h2>L'empreinte, et d'où elle vient</h2>
-      <p class="sec-note">dérivée · union des currentCountries des peuples rattachés</p>
+      <p class="sec-note">Union des pays actuels des peuples rattachés à la famille</p>
       <p id="footprint-explain"></p>
       <div class="rank" id="rank" style="margin-top:16px"></div>
     </section>
 
     <section class="sec">
       <h2>D'où vient le nom de la famille</h2>
-      <p class="sec-note">content.decolonialHeader.originOfHistoricalTerm</p>
       <p id="term"></p>
     </section>
 
@@ -158,7 +156,7 @@
 
     <section class="sec">
       <h2>Sources</h2>
-      <p class="sec-note">content.sources · politique de paliers</p>
+      <p class="sec-note">Chaque source porte son palier — l'autorité qu'on peut lui accorder.</p>
       <div class="sources" id="sources"></div>
     </section>
   </div>
@@ -382,31 +380,23 @@ document.getElementById("scale").innerHTML = `
   <div class="scale-card">
     <span class="n">${nf.format(F.numberOfLanguages)}</span>
     <span class="k">Langues</span>
-    <span class="src">generalInfo.numberOfLanguages</span>
   </div>
   <div class="scale-card">
     <span class="n">${(F.totalSpeakers / 1e6).toFixed(0)} M</span>
     <span class="k">Locuteurs</span>
-    <span class="src">generalInfo.totalSpeakers</span>
   </div>
   <div class="scale-card" data-missing="true">
     <span class="n">vide</span>
     <span class="k">Branches</span>
-    <span class="src">generalInfo.branches = []</span>
   </div>
   <div class="scale-card" data-missing="true">
     <span class="n">vide</span>
     <span class="k">Distribution</span>
-    <span class="src">distribution.distributionByCountry = {}</span>
   </div>`;
 
 document.getElementById("gap").innerHTML = `
-  <h3>Deux champs vides, et ce qu'on en fait</h3>
-  <p>Les <b>24 fiches famille</b> du corpus déclarent zéro branche et zéro pays : <code>generalInfo.branches</code>
-  et <code>distribution.distributionByCountry</code> sont vides partout. Une carte fidèle à la seule fiche famille
-  n'aurait donc rien à dessiner. Plutôt que de masquer la section ou d'inventer une aire, la fiche affiche le manque —
-  puis reconstruit ce qui est reconstructible, en le signalant comme tel. Un champ vide reste une information sur
-  l'état du corpus&nbsp;; l'effacer la ferait disparaître.</p>`;
+  <p>Cette fiche ne déclare ni ses branches ni sa répartition par pays. L'aire dessinée plus haut est donc
+  reconstruite depuis les peuples rattachés à la famille, et signalée comme telle.</p>`;
 
 document.getElementById("footprint-explain").innerHTML =
   `L'aire ci-dessus n'est pas lue dans la fiche famille : elle est <strong>calculée</strong>. Chaque fiche peuple porte

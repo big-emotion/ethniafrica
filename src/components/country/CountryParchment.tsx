@@ -1,12 +1,13 @@
+import { Info } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
-import {
-  PeoplesSection,
-  declaredShare,
-} from "@/components/country/PeoplesSection";
+import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import {
+  FicheSection as Section,
+  SOURCE_TIER_NOTE,
+} from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
@@ -59,7 +60,6 @@ export function CountryParchment({
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
   const hasPeoples = data.peoples.rows.length > 0;
-  const declared = hasPeoples ? declaredShare(data.peoples.rows) : 100;
 
   return (
     <div className="afh-parchment" id="fiche">
@@ -67,16 +67,17 @@ export function CountryParchment({
           reader is told which country they opened before the band fills the
           screen. The parchment opens on its first chapter. */}
 
-      <Section
-        title="Étymologie du nom"
-        note="Rubriques « étymologie » et « origine du nom » de la fiche"
-      >
+      <Section title="Étymologie du nom">
         {etymology || nameOriginActor ? (
           <>
             {etymology && <p>{etymology}</p>}
             {nameOriginActor && (
               <div className="afh-parchment-callout">
-                <b>Ce que la fiche refuse de taire.</b> {nameOriginActor}
+                <Info
+                  className="afh-parchment-callout-icon"
+                  aria-hidden="true"
+                />
+                {nameOriginActor}
               </div>
             )}
           </>
@@ -85,35 +86,20 @@ export function CountryParchment({
         )}
       </Section>
 
-      <Section
-        title="Peuples du pays"
-        note="Rubriques « démographie » et « peuples principaux » de la fiche"
-      >
+      <Section title="Peuples du pays">
         {!hasPeoples ? (
           <FieldProvenanceMarker state="missing" />
         ) : (
-          <>
-            <PeoplesSection data={data.peoples} />
-            {declared < 99 && (
-              <div className="afh-parchment-callout">
-                <b>Pourquoi la somme n&apos;atteint pas 100&nbsp;%.</b> La règle
-                FR28 porte sur la <em>totalité</em>{" "}
-                {/* Explicit: the JSX transform drops the space that opens a
-                    text node following an element, and "totalitédes" shipped
-                    once. */}
-                des fiches d&apos;un pays, qui doivent sommer dans la bande [99,
-                101]&nbsp;% — le reste n&apos;est pas encore réparti dans le
-                corpus.
-              </div>
-            )}
-          </>
+          /* A shortfall in the declared shares is stated once, by
+             PeoplesSection's own coverage note, in the reader's terms. The
+             callout that stood here repeated that sentence and prefixed it
+             with the identifier of the validation rule behind it — a number
+             no visitor can act on. */
+          <PeoplesSection data={data.peoples} />
         )}
       </Section>
 
-      <Section
-        title="Royaumes et formations politiques"
-        note="Rubrique « royaumes » de la fiche"
-      >
+      <Section title="Royaumes et formations politiques">
         {data.kingdoms.cards.length > 0 ? (
           <KingdomsTimeline cards={data.kingdoms.cards} />
         ) : (
@@ -123,12 +109,7 @@ export function CountryParchment({
 
       {children}
 
-      <Section
-        title="Sources"
-        note="Rubrique « sources » de la fiche · politique de paliers"
-        as="footer"
-        id="sources"
-      >
+      <Section title="Sources" note={SOURCE_TIER_NOTE} as="footer" id="sources">
         {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}

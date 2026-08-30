@@ -1,10 +1,13 @@
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
-import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import {
+  FicheSection as Section,
+  SOURCE_TIER_NOTE,
+} from "@/components/fiche/FicheSection";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
@@ -24,28 +27,17 @@ import { isSourceTier, SOURCE_TIER_LABELS_FR } from "@/types/sources";
  * The family fiche's reading: an opening and five sections on parchment, below
  * the night band the globe stands in.
  *
- * The section a reader might expect to be hidden — "what this fiche does not
- * declare" — is the one the page opens on. A family fiche declares no
- * geographic distribution at all, and the honest response is neither to hide
- * the section nor to quietly substitute the derived footprint for it, but to
- * show the gap and then show what can be reconstructed around it, labelled as
- * reconstruction. An empty field is a fact about the state of the corpus;
- * erasing it would delete that fact.
- */
-
-/**
- * The second half of the fiche's title.
+ * A family fiche may declare no geographic distribution at all, and the honest
+ * response is neither to hide the chapter nor to quietly substitute the derived
+ * footprint for it, but to show the gap and then show what can be reconstructed
+ * around it, labelled as reconstruction. An empty field is a fact about the
+ * state of the corpus; erasing it would delete that fact.
  *
- * Not a corpus field. It is true of all 24 family fiches for the same
- * structural reason — none declares its own distribution — so storing it would
- * mean writing the same sentence into 24 files and keeping them in step. It
- * lives here, as one editorial constant, with its reason attached.
- *
- * The day a family fiche does declare a distribution, this stops being true of
- * that fiche and has to become conditional on the same provenance check the
- * cards below already run.
+ * The gap is shown by the cards and the derived marker, not argued in prose.
+ * The chapter was once headed "Ce que la fiche déclare, ce qu'elle ne déclare
+ * pas" — a title about the atlas's editorial method, above four figures about
+ * a linguistic family.
  */
-const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
 
 const numberFr = new Intl.NumberFormat("fr-FR");
 
@@ -75,10 +67,14 @@ export interface FamilyParchmentProps {
 }
 
 /**
- * One figure, and where it comes from — said as the fiche's own rubric, not as
- * the key a developer would grep for. "generalInfo.totalSpeakers" under a card
- * headed "Locuteurs" told a reader nothing they could act on; the rubric names
- * the place in the fiche they would actually go and look.
+ * One figure, and whether the fiche declares it.
+ *
+ * The card carried a third line naming the rubric the figure was read from —
+ * "Informations générales · total de locuteurs" under a card already headed
+ * "Locuteurs". That was the mockup's field annotation, twice translated: first
+ * out of the JSON key a developer would grep for, then into French. Neither
+ * spelling was ever addressed to a reader, and the marker below the figure is
+ * what actually tells them whether to trust it.
  *
  * `provenance` is computed, never hard-coded. The mockup writes "vide" into
  * the branches and distribution cards because that is what the recette
@@ -91,14 +87,11 @@ export interface FamilyParchmentProps {
 function StatCard({
   id,
   label,
-  rubric,
   value,
   emptyValue,
 }: {
   id: string;
   label: string;
-  /** Where in the fiche the figure is read, in the reader's terms. */
-  rubric: string;
   value: unknown;
   emptyValue?: string;
 }) {
@@ -123,7 +116,6 @@ function StatCard({
     >
       <span className="afh-stat-card-n">{shown}</span>
       <span className="afh-stat-card-k">{label}</span>
-      <span className="afh-stat-card-src">{rubric}</span>
       {/* The app has one wording for an absent field, and it lives in
           FieldProvenanceMarker. Writing a second one here would let the two
           drift and leave readers with two vocabularies for one idea. */}
@@ -207,51 +199,44 @@ export function FamilyParchment({
         }))
   );
 
-  const selfAppellation = decolonialHeader.selfAppellation;
-  const nameEn = hero.nameEn ?? decolonialHeader.nameEn;
-
   const distributionProvenance = classifyFieldProvenance(
     distribution.distributionByCountry
   ).state;
 
   return (
     <div className="afh-parchment" id="fiche">
-      {/* The head and the trail stand above the globe now
-          (FamilyFicheTitle). The chips stayed: they are figures about this
-          document, and the chapters below immediately qualify them. */}
-      <div className="afh-parchment-head">
-        <div className="afh-chips">
-          {generalInfo.numberOfLanguages !== null && (
-            <span className="afh-chip" data-tone="stable">
-              {numberFr.format(generalInfo.numberOfLanguages)} langues
-            </span>
-          )}
-          <span className="afh-chip" data-tone="derived">
-            {memberPeopleCount} peuples · {footprint.length} pays dérivés
-          </span>
-          {distributionProvenance === "missing" && (
+      {/* The head and the trail stand above the globe now (FamilyFicheTitle).
+          One chip stayed, and it is the only one that says something no
+          section below says better: that the fiche declares no distribution
+          at all. The two that left each restated a section a screen down —
+          the languages count, which the "Langues" stat card states under the
+          rubric naming where it is read; and "N peuples · M pays dérivés",
+          which the empreinte section states in a sentence that also says what
+          they were derived from and by which rule. Bare in a chip, "dérivés"
+          asserted a provenance the chip could not name.
+
+          Rendered only when that chip applies: an empty bordered strip under
+          the globe is worse than no band. */}
+      {distributionProvenance === "missing" && (
+        <div className="afh-parchment-head">
+          <div className="afh-chips">
             <span className="afh-chip" data-tone="missing">
               Distribution non déclarée
             </span>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
-      <Section
-        title="Ce que la fiche déclare, ce qu'elle ne déclare pas"
-        note="Rubriques « informations générales » et « répartition » de la fiche"
-      >
+      <Section title="La famille en chiffres">
         <div className="afh-stat-cards">
           <StatCard
             id="langues"
             label="Langues"
-            rubric="Informations générales · nombre de langues"
             value={generalInfo.numberOfLanguages}
           />
           <StatCard
             id="locuteurs"
             label="Locuteurs"
-            rubric="Informations générales · total de locuteurs"
             value={
               generalInfo.totalSpeakers !== null
                 ? `${Math.round(generalInfo.totalSpeakers / 1e6)} M`
@@ -261,28 +246,28 @@ export function FamilyParchment({
           <StatCard
             id="branches"
             label="Branches"
-            rubric="Informations générales · branches"
             value={generalInfo.branches}
           />
           <StatCard
             id="distribution"
             label="Distribution"
-            rubric="Répartition · par pays"
             value={distribution.distributionByCountry}
           />
         </div>
 
         {distributionProvenance === "missing" && (
+          /* Charter §4 asks that a real gap be stated, then that what is
+             derivable be derived and marked as such. The two cards above
+             state it and the footprint below is marked derived, so what is
+             left to write is the consequence — one sentence. The paragraph
+             that stood here argued the editorial choice to the reader
+             ("plutôt que de masquer la section ou d'inventer une aire…"),
+             which is a decision they were never asked to weigh. */
           <div className="afh-parchment-gap">
-            <h3>Deux champs vides, et ce qu&apos;on en fait</h3>
             <p>
-              Cette fiche ne déclare ni ses branches ni sa répartition par
-              pays&nbsp;: les deux rubriques sont vides. Une carte fidèle à la
-              seule fiche famille n&apos;aurait donc rien à dessiner. Plutôt que
-              de masquer la section ou d&apos;inventer une aire, la fiche
-              affiche le manque — puis reconstruit ce qui est reconstructible,
-              en le signalant comme tel. Un champ vide reste une information sur
-              l&apos;état du corpus&nbsp;; l&apos;effacer la ferait disparaître.
+              Cette fiche ne déclare ni ses branches ni sa répartition par pays.
+              L&apos;aire dessinée plus haut est donc reconstruite depuis les
+              peuples rattachés à la famille, et signalée comme telle.
             </p>
           </div>
         )}
@@ -367,10 +352,7 @@ export function FamilyParchment({
       </Section>
 
       {decolonialHeader.originOfHistoricalTerm && (
-        <Section
-          title="D'où vient le nom de la famille"
-          note="Rubrique « en-tête décoloniale » de la fiche, « origine du terme historique »"
-        >
+        <Section title="D'où vient le nom de la famille">
           <p>{decolonialHeader.originOfHistoricalTerm}</p>
         </Section>
       )}
@@ -413,16 +395,22 @@ export function FamilyParchment({
 
       {children}
 
-      {data.sources.length > 0 && (
-        <Section
-          title="Sources"
-          note="Rubrique « sources » de la fiche · politique de paliers"
-          testId="family-sources"
-          /* Deep links across the app point at #sources, and the sources are
-             the fiche's own footer landmark. Both predate this layout. */
-          as="footer"
-          id="sources"
-        >
+      {/* Printed whether or not the fiche declares a source. It used to be
+          gated on there being one, so a family with no sources lost the
+          section — and with it #sources, the landmark deep links across the
+          app point at, on exactly the fiches whose sourcing a reader would
+          most want to check. The people and country parchments have always
+          shown the gap instead, which is charter §4. */}
+      <Section
+        title="Sources"
+        note={SOURCE_TIER_NOTE}
+        testId="family-sources"
+        /* Deep links across the app point at #sources, and the sources are
+           the fiche's own footer landmark. Both predate this layout. */
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
           <ul className="afh-sources">
             {data.sources.map((source, index) => {
               const label = ficheSourceLabel(source);
@@ -441,8 +429,10 @@ export function FamilyParchment({
               );
             })}
           </ul>
-        </Section>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </Section>
     </div>
   );
 }
