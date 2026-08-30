@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 import { ChapterHeading } from "../ChapterHeading";
-import { ReadingColumn } from "../ReadingColumn";
 import { LegalDocument } from "@/components/layout/LegalDocument";
 import { legalPages } from "@/lib/legal-pages";
 import AboutPageContent from "../AboutPageContent";
@@ -32,6 +31,39 @@ function assertNoSkippedLevels(levels: number[]) {
 }
 
 const NO_MOTION_PATTERN = /motion-safe:|transition-|duration-\[|animate-/;
+
+/**
+ * The 72ch reading column is retired: running prose takes the width of the
+ * document it belongs to.
+ *
+ * The assertion is on `ch` caps specifically, because two different decisions
+ * both spell themselves `max-w-`. A `ch` cap is a *reading measure* — it is
+ * counted in characters, it is the thing being retired, and it is what left a
+ * paragraph stopping mid-page against an empty right half. A page box
+ * (`max-w-5xl`) is a *layout* decision: the title, the rules and the prose all
+ * sit in it together, and narrowing the text alone is what broke the column in
+ * the first place. Walking the ancestry rather than scanning the markup also
+ * spares the legal notice's h1, held to 18ch so it breaks where the editor
+ * wants — a headline is not a paragraph.
+ */
+function assertProseCarriesNoMeasure(container: HTMLElement) {
+  const capped = Array.from(container.querySelectorAll("p")).flatMap(
+    (paragraph) => {
+      const chain: string[] = [];
+      for (
+        let node: Element | null = paragraph;
+        node && node !== container;
+        node = node.parentElement
+      ) {
+        if (/max-w-\[[\d.]+ch\]/.test(node.className))
+          chain.push(node.className);
+      }
+      return chain;
+    }
+  );
+
+  expect(capped).toEqual([]);
+}
 
 // ---------------------------------------------------------------------------
 // ChapterHeading — the shared primitive
@@ -77,22 +109,6 @@ describe("ChapterHeading (chapter anatomy primitive)", () => {
 });
 
 // ---------------------------------------------------------------------------
-// ReadingColumn — the 72ch measure primitive
-// ---------------------------------------------------------------------------
-
-describe("ReadingColumn (72ch reading measure)", () => {
-  // @req REQ-091
-  it("constrains its children to the charter's reading measure", () => {
-    const { container } = render(
-      <ReadingColumn>
-        <p>Corps de texte.</p>
-      </ReadingColumn>
-    );
-    expect(container.firstElementChild?.className).toMatch(/max-w-\[72ch\]/);
-  });
-});
-
-// ---------------------------------------------------------------------------
 // Legal templates — zero motion, print-safe, chapter anatomy per section
 // ---------------------------------------------------------------------------
 
@@ -117,11 +133,11 @@ describe("LegalDocument (legal template family)", () => {
   });
 
   // @req REQ-091
-  it("keeps the reading column on section body paragraphs", () => {
+  it("lets the section body paragraphs fill the page", () => {
     const { container } = render(
       <LegalDocument document={legalPages.legalNotice} />
     );
-    expect(container.innerHTML).toMatch(/max-w-\[72ch\]/);
+    assertProseCarriesNoMeasure(container);
   });
 
   // @req REQ-091
@@ -151,9 +167,9 @@ describe("AboutPageContent", () => {
   });
 
   // @req REQ-091
-  it("keeps the reading column on its prose content", () => {
+  it("lets its prose content fill the page", () => {
     const { container } = render(<AboutPageContent language="fr" />);
-    expect(container.innerHTML).toMatch(/max-w-\[72ch\]/);
+    assertProseCarriesNoMeasure(container);
   });
 });
 
@@ -175,9 +191,9 @@ describe("DoctrinePageContent", () => {
   });
 
   // @req REQ-091
-  it("keeps the reading column on its prose content", () => {
+  it("lets its prose content fill the page", () => {
     const { container } = render(<DoctrinePageContent />);
-    expect(container.innerHTML).toMatch(/max-w-\[72ch\]/);
+    assertProseCarriesNoMeasure(container);
   });
 
   // @req REQ-091
@@ -221,7 +237,7 @@ vi.mock("@/lib/doctrine/fetchDoctrineEntry", () => ({
 
 describe("doctrine article page (metadata regression)", () => {
   // @req REQ-091
-  it("keeps version metadata, changelog link and mdx content intact under the reading column", async () => {
+  it("keeps version metadata, changelog link and mdx content intact", async () => {
     mockFetchDoctrineEntry.mockResolvedValueOnce({
       id: "uuid-1",
       slug: "classifications-contestees",
@@ -248,6 +264,6 @@ describe("doctrine article page (metadata regression)", () => {
     expect(getByTestId("mdx-remote").textContent).toContain(
       "Classifications contestées"
     );
-    expect(container.innerHTML).toMatch(/max-w-\[72ch\]/);
+    assertProseCarriesNoMeasure(container);
   });
 });

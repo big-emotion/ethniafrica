@@ -3,6 +3,7 @@
   "nameMain": "Fulbe (Fula / Peul)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GIN", "MLI", "BFA", "NER", "CMR", "TCD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fulbe (Fula / Peul)",

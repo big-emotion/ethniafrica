@@ -10,6 +10,7 @@ import { SynthesisRail } from "@/components/home/SynthesisRail";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
+import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import {
   DEFAULT_HERO_MODULE_ID,
   pickHeroModule,
@@ -73,12 +74,17 @@ interface HomeProps {
 // @req REQ-113
 // @req REQ-115
 export default async function Home({ searchParams }: HomeProps) {
-  const [{ hero }, counts, modulesByAxis, syntheses] = await Promise.all([
-    searchParams,
-    getCorpusCounts(),
-    getModulesByAxis(),
-    loadSynthesisRail(),
-  ]);
+  const [{ hero }, counts, modulesByAxis, syntheses, peopleCountsByCountry] =
+    await Promise.all([
+      searchParams,
+      getCorpusCounts(),
+      getModulesByAxis(),
+      loadSynthesisRail(),
+      // The continent scene's own signal, for whichever module the slot draws.
+      // Caught like the explorer hub catches it: a failed count costs the
+      // scene's per-country field, not the page.
+      getContinentPeopleCounts().catch(() => undefined),
+    ]);
 
   // Drawn per request, like the hero's module and for the same reason: the
   // draw runs in a server component, so it never re-runs during hydration
@@ -133,7 +139,11 @@ export default async function Home({ searchParams }: HomeProps) {
       {/* Where the axes used to stand. The module is the page's invitation
           to do something rather than read something, which lands better
           after the atlas has shown what it holds than before. */}
-      <FeaturedModule heroModule={heroModule} heroPreview={heroPreview} />
+      <FeaturedModule
+        heroModule={heroModule}
+        heroPreview={heroPreview}
+        peopleCountsByCountry={peopleCountsByCountry}
+      />
       <TrustStrip language="fr" />
       <style>{`
         .home-axes-section {

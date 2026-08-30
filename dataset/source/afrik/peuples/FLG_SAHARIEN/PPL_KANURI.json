@@ -3,6 +3,7 @@
   "nameMain": "Kanuri",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["NGA", "NER", "TCD", "CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kanuri",

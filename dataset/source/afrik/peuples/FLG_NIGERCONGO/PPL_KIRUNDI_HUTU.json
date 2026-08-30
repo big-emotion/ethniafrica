@@ -3,6 +3,7 @@
   "nameMain": "Hutu",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["BDI", "RWA", "COD", "UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Hutu",

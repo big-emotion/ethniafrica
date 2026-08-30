@@ -3,6 +3,7 @@
   "nameMain": "Bobo",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["BFA", "MLI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bobo",

@@ -7,6 +7,7 @@ interface PeopleHistoryTimelineProps {
   chips?: HistoryChips;
 }
 
+// @req REQ-003
 export function PeopleHistoryTimeline({
   data,
   chips,
@@ -20,43 +21,51 @@ export function PeopleHistoryTimeline({
   if (!hasContent) return null;
 
   return (
-    <div className="space-y-[14px]">
+    <dl className="afh-prose-fields space-y-[14px]">
       {data.kingdomsOrChiefdoms && (
         <div>
-          <p className="people-section-label">Royaumes & chefferies</p>
-          <ProseWithChip
-            text={data.kingdomsOrChiefdoms}
-            chip={chips?.kingdomsOrChiefdoms}
-          />
+          <dt className="people-section-label">Royaumes &amp; chefferies</dt>
+          <dd className="afh-prose-def">
+            <ProseWithChip
+              text={data.kingdomsOrChiefdoms}
+              chip={chips?.kingdomsOrChiefdoms}
+            />
+          </dd>
         </div>
       )}
 
       {data.relationsWithNeighbors && (
         <div>
-          <p className="people-section-label">Relations avec les voisins</p>
-          <ProseWithChip
-            text={data.relationsWithNeighbors}
-            chip={chips?.relationsWithNeighbors}
-          />
+          <dt className="people-section-label">Relations avec les voisins</dt>
+          <dd className="afh-prose-def">
+            <ProseWithChip
+              text={data.relationsWithNeighbors}
+              chip={chips?.relationsWithNeighbors}
+            />
+          </dd>
         </div>
       )}
 
       {data.conflictsOrAlliances && (
         <div>
-          <p className="people-section-label">Conflits & alliances</p>
-          <ProseWithChip
-            text={data.conflictsOrAlliances}
-            chip={chips?.conflictsOrAlliances}
-          />
+          <dt className="people-section-label">Conflits &amp; alliances</dt>
+          <dd className="afh-prose-def">
+            <ProseWithChip
+              text={data.conflictsOrAlliances}
+              chip={chips?.conflictsOrAlliances}
+            />
+          </dd>
         </div>
       )}
 
       {data.diaspora && (
         <div>
-          <p className="people-section-label">Diaspora</p>
-          <ProseWithChip text={data.diaspora} chip={chips?.diaspora} />
+          <dt className="people-section-label">Diaspora</dt>
+          <dd className="afh-prose-def">
+            <ProseWithChip text={data.diaspora} chip={chips?.diaspora} />
+          </dd>
         </div>
       )}
-    </div>
+    </dl>
   );
 }

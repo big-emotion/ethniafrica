@@ -3,6 +3,7 @@
   "nameMain": "Setswana (National)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["BWA", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Setswana (National)",

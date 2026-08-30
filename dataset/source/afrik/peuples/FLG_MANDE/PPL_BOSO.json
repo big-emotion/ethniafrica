@@ -3,6 +3,7 @@
   "nameMain": "Bozo",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "CIV", "NER"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bozo",

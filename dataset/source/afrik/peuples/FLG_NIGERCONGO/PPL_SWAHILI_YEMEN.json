@@ -3,6 +3,7 @@
   "nameMain": "Swahili (Yemen)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["YEM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Communautes d'ascendance swahili au Yemen (Akhdam / Al-Muwalladeen)",

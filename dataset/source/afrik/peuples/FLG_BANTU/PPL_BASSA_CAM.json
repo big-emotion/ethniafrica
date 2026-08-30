@@ -3,6 +3,7 @@
   "nameMain": "Bassa du Cameroun",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bassa du Cameroun",

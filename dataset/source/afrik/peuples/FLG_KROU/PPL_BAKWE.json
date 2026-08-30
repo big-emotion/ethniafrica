@@ -3,6 +3,7 @@
   "nameMain": "Bakwé",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bakwé",

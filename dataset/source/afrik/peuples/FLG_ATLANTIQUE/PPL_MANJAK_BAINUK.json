@@ -3,6 +3,7 @@
   "nameMain": "Manjak / Bainuk",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB", "SEN", "GMB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Manjak / Bainuk",

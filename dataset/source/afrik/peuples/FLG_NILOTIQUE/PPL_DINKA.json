@@ -3,6 +3,7 @@
   "nameMain": "Dinka",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["SSD", "SDN", "UGA", "KEN", "ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Dinka",

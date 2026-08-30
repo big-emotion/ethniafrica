@@ -1,5 +1,4 @@
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
-import { ReadingColumn } from "@/components/pages/ReadingColumn";
 
 interface LegalSection {
   title: string;
@@ -34,11 +33,11 @@ export function LegalDocument({ document }: LegalDocumentProps) {
         <p className="mt-5 text-afh-caption text-afh-fg-muted">
           {document.lastUpdated}
         </p>
-        <ReadingColumn className="mt-8">
+        <div className="mt-8">
           <p className="text-afh-lead leading-[1.45] text-afh-text-soft">
             {document.introduction}
           </p>
-        </ReadingColumn>
+        </div>
       </header>
 
       <div className="divide-y divide-afh-border">
@@ -48,11 +47,11 @@ export function LegalDocument({ document }: LegalDocumentProps) {
               stepLabel={`${String(index + 1).padStart(2, "0")} · Section`}
               heading={section.title}
             />
-            <ReadingColumn className="mt-5 space-y-4 text-afh-body leading-[1.65] text-afh-text-soft">
+            <div className="mt-5 space-y-4 text-afh-body leading-[1.65] text-afh-text-soft">
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-            </ReadingColumn>
+            </div>
           </section>
         ))}
       </div>

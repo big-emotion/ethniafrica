@@ -67,7 +67,7 @@ describe("getFlagBySlug", () => {
     updated_at: "2025-01-15T10:00:00Z",
     severity: null,
     auto_generated: false,
-    turnstile_token_verified: true,
+    human_verified: true,
   };
 
   beforeEach(() => {

@@ -3,6 +3,7 @@
   "nameMain": "Wolayta",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Wolayta",

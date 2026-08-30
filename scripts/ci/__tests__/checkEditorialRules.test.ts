@@ -88,6 +88,31 @@ describe("checkEditorialRules — helpers", () => {
         extractClassificationStatus({ id: "PPL_X", content: {} })
       ).toBeNull();
     });
+
+    // The corpus writes camelCase: the loader reads `people.classificationStatus`
+    // (migrateAfrikToDatabase.ts:244) and validateAfrikData already validates
+    // that spelling on migration, relation and nom fiches. Reading only the
+    // snake_case form made Rule 2 match nothing while reporting green.
+    // @req REQ-023
+    it("returns the top-level camelCase classificationStatus the corpus writes", () => {
+      const fiche: Fiche = {
+        id: "FLG_X",
+        classificationStatus: "colonial-legacy",
+        content: {},
+      };
+      expect(extractClassificationStatus(fiche)).toBe("colonial-legacy");
+    });
+
+    // @req REQ-023
+    it("prefers the snake_case spelling when a fiche carries both", () => {
+      const fiche: Fiche = {
+        id: "PPL_X",
+        classification_status: "contested",
+        classificationStatus: "reconstructive",
+        content: {},
+      };
+      expect(extractClassificationStatus(fiche)).toBe("contested");
+    });
   });
 
   describe("extractSources", () => {
@@ -187,6 +212,34 @@ describe("checkSourcesCount (Rule 2)", () => {
     expect(r!.severity).toBe("error");
     expect(r!.rule).toBe("sources-count");
     expect(r!.slug).toBe("PPL_X");
+  });
+
+  // ETNI-1359: the whole rule was unreachable from the corpus. Every PPL and
+  // FLG fiche spells the field `classificationStatus`, so a fiche could be
+  // published as colonial-legacy on a single source and this gate would still
+  // report green.
+  // @req REQ-023
+  it("errors when a camelCase contested fiche carries fewer than 2 sources", () => {
+    const fiche: Fiche = {
+      id: "PPL_CORPUS",
+      classificationStatus: "contested",
+      content: { sources: ["only-one"] },
+    };
+    const r = checkSourcesCount(fiche, "PPL_CORPUS.json");
+    expect(r).not.toBeNull();
+    expect(r!.severity).toBe("error");
+    expect(r!.rule).toBe("sources-count");
+    expect(r!.slug).toBe("PPL_CORPUS");
+  });
+
+  // @req REQ-023
+  it("passes when a camelCase contested fiche carries 2 sources", () => {
+    const fiche: Fiche = {
+      id: "PPL_CORPUS",
+      classificationStatus: "contested",
+      content: { sources: ["a", "b"] },
+    };
+    expect(checkSourcesCount(fiche, "PPL_CORPUS.json")).toBeNull();
   });
 
   it("errors when colonial-legacy and sources.length < 2", () => {

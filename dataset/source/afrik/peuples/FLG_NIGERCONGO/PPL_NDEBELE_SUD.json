@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Sud (Ndzundza)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Sud (Ndzundza)",

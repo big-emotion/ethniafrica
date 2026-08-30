@@ -3,6 +3,7 @@
   "nameMain": "Ngonde",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["MWI", "TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ngonde",

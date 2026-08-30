@@ -3,6 +3,7 @@
   "nameMain": "Kresh",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["SSD", "SDN", "CAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kresh",

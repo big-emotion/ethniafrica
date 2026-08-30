@@ -3,6 +3,7 @@
   "nameMain": "Khoikhoi",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["ZAF", "NAM", "BWA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Khoikhoi",

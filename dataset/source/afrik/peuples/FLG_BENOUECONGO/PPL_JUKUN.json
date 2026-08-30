@@ -3,6 +3,7 @@
   "nameMain": "Jukun",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Jukun",

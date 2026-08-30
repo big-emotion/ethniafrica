@@ -196,6 +196,55 @@ describe("peopleAssertionTargets", () => {
   });
 
   /**
+   * 31 fiches hold a serialised JSON object where their culture prose belongs.
+   * The fragment selector split those braces on the periods inside them and the
+   * loader wrote the pieces out as claims — an assertion the fiche never made,
+   * shown verbatim in the source-chain sheet. A field that holds no prose must
+   * assert nothing.
+   */
+  // @req REQ-122
+  it("asserts nothing from a rubric holding a serialised JSON object", () => {
+    const withJson = fiche({
+      content: {
+        ...fiche().content,
+        culture: {
+          majorRites:
+            '{"initiationRites": {"maleInitiation": "L\'initiation masculine (gar) est le rite de passage le plus important de la societe."}}',
+        },
+      },
+    });
+
+    expect(
+      peopleAssertionTargets(withJson).find(
+        (t) => t.fieldPath === "content.culture.majorRites"
+      )
+    ).toBeUndefined();
+  });
+
+  /**
+   * The corpus carries the markup; a claim quoted back to a player must not.
+   */
+  // @req REQ-122
+  it("strips the markup before a rubric becomes an assertion statement", () => {
+    const withMarkup = fiche({
+      content: {
+        ...fiche().content,
+        culture: {
+          majorRites:
+            "Les **ceremonies des recoltes** rassemblent les lignages autour du *roi* chaque annee, en septembre.",
+        },
+      },
+    });
+
+    const target = peopleAssertionTargets(withMarkup).find(
+      (t) => t.fieldPath === "content.culture.majorRites"
+    );
+    expect(target?.statement).toBe(
+      "Les ceremonies des recoltes rassemblent les lignages autour du roi chaque annee, en septembre."
+    );
+  });
+
+  /**
    * The statement is the fragment a question will actually quote, not the whole
    * rubric — an assertion records the claim that gets made, and the sentence
    * naming the subject never reaches a reader.

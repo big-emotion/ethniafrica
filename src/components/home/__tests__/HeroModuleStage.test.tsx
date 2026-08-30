@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import { renderToStaticMarkup } from "react-dom/server";
 
-vi.mock("@/components/home/HomeGlobeStage", () => ({
-  HomeGlobeStage: () => <div data-testid="stage-globe" />,
+vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
+  ContinentGlobeStage: () => <div data-testid="stage-globe" />,
 }));
 vi.mock("@/components/play/GamePlayHost", () => ({
   GamePlayHost: () => <div data-testid="stage-game" />,
@@ -105,8 +105,8 @@ describe("HeroModuleStage", () => {
     // dynamic(..., { ssr: false }), and only the first frame carries the
     // <style> the rules live in.
     // The game branch, because it is the one that renders .hero-stage-box —
-    // `globe` delegates to HomeGlobeStage, whose own floor is asserted in
-    // HomeGlobeStage.test.tsx.
+    // `globe` delegates to ContinentGlobeStage, whose own floor is asserted
+    // in atlas/__tests__/ContinentGlobeStage.test.tsx.
     const styleSheet = renderToStaticMarkup(
       <HeroModuleStage preview={SAMPLE.game} />
     );

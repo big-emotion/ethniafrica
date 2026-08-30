@@ -3,6 +3,7 @@
   "nameMain": "Chagga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Chagga",

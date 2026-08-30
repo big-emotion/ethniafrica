@@ -3,6 +3,7 @@
   "nameMain": "Béti",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR", "GNQ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Béti",
