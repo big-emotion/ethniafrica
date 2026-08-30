@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
@@ -175,28 +175,76 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
   });
 
-  // The viewport-height floor existed to keep the globe and its controls
-  // inside the first screen. With the module gone to its own section, the
-  // same rule would stretch the copy over a full screen and push the
-  // argument below the fold — the opposite of why it was moved up.
+  /**
+   * REVERSED, deliberately. This test used to forbid a viewport-height band,
+   * and the reason it gave was sound at the time: two lines of copy stretched
+   * over a full screen is air, and it pushed the argument below the fold.
+   *
+   * What changed is the band, not the argument. It is now two columns — the
+   * question and its answer beside the picture that answers it — so the height
+   * is filled by content rather than by whitespace, and the home takes the
+   * same immersive band as the three axis hubs (`heroVariant.ts`) rather than
+   * being the one entry point that opens short.
+   *
+   * `svh`, never `vh` or `dvh`: on a phone `100vh` is the window measured with
+   * the URL bar retracted, so a `100vh` band is always taller than the screen
+   * it is on. The `min(…, 760px)` floor keeps a short, wide window from
+   * stranding the copy in an empty field.
+   */
   // @req REQ-115
-  it("sizes to its copy instead of claiming a full viewport at desktop", () => {
+  it("claims the viewport the way the other entry points do", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
     expect(container.querySelector("section.home-hero")).not.toBeNull();
+    expect(styles).toMatch(/min-height:\s*min\(100svh,\s*760px\)/);
+    expect(styles).toMatch(/min-height:\s*100svh/);
     expect(styles).not.toMatch(/min-height:\s*calc\(100dvh/);
     expect(styles).not.toMatch(/min-height:\s*calc\(100vh/);
   });
 
+  /**
+   * The visual is the argument, not decoration. The repo's rule for home
+   * imagery (public/images/home/CREDITS.md) is that each picture is a document
+   * the block it sits in is *about* — a generic photograph of the continent
+   * would substitute for none of them.
+   *
+   * Al-Idrisi drew this in 1154 for Roger II of Sicily, oriented south-up, and
+   * he was born in Ceuta. A map of the world made from inside Africa, by
+   * someone naming it from where he stood, is the headline restated in one
+   * image: who named, from where, and when.
+   */
+  // @req REQ-115
+  it("carries its visual with the credit its licence is published under", () => {
+    render(<HomeHero />);
+
+    const figure = screen.getByTestId("home-hero-figure");
+
+    expect(within(figure).getByRole("img")).toHaveAttribute(
+      "alt",
+      expect.stringMatching(/.+/)
+    );
+    expect(figure).toHaveTextContent(/al-Idrisi/i);
+    expect(figure).toHaveTextContent(/domaine public/i);
+  });
+
+  /**
+   * Document order, not direct childhood: the band gained a row wrapper when
+   * it gained its second column, and what the reader — or a screen reader
+   * walking the band — must meet first is the argument, not the picture of it.
+   * CSS may put the visual wherever the width allows; the source may not.
+   */
   // @req REQ-115
   it("keeps the copy first in the band", () => {
     const { container } = render(<HomeHero />);
     const copy = container.querySelector(".home-hero-copy");
+    const figure = screen.getByTestId("home-hero-figure");
 
     expect(copy).not.toBeNull();
-    expect(container.querySelector("section")?.firstElementChild).toBe(copy);
+    expect(
+      copy!.compareDocumentPosition(figure) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
   });
 });

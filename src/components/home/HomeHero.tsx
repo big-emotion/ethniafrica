@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
@@ -45,26 +47,54 @@ export function HomeHero() {
       aria-label={PRODUCT_NAME}
       className="home-hero"
     >
-      <header className="home-hero-copy">
-        {/* The thin no-break space is the French rule before a question
-            mark, and it is load-bearing here rather than typographic
-            politeness: the headline wraps to two lines on a phone, and a
-            plain space lets « ? » start the third one on its own. */}
-        <h1>Qui sont les peuples d&apos;Afrique&nbsp;?</h1>
-        {/* One string, not the product name followed by JSX text. Next's
-            SWC transform drops the space between an expression and the text
-            that follows it on the same line, so the band once shipped
-            « EthniAfricapublie » — in the first line of prose the site
-            offers. Neither vitest's transform nor Prettier reproduces that
-            reading: the runner keeps the space, so every test here stayed
-            green, and Prettier deletes an explicit space expression it
-            believes JSX already implies. Inside a template literal no
-            whitespace rule applies at all. */}
-        <p className="home-hero-answer" data-testid="home-hero-answer">
-          {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
-            `et donne la source de chaque réponse.`}
-        </p>
-      </header>
+      {/* Copy left, visual right — the shell box, so the headline starts on
+          the same left edge as the logo above it. */}
+      <div className="afh-shell home-hero-inner">
+        <header className="home-hero-copy">
+          {/* The thin no-break space is the French rule before a question
+              mark, and it is load-bearing here rather than typographic
+              politeness: the headline wraps to two lines on a phone, and a
+              plain space lets « ? » start the third one on its own. */}
+          <h1>Qui sont les peuples d&apos;Afrique&nbsp;?</h1>
+          {/* One string, not the product name followed by JSX text. Next's
+              SWC transform drops the space between an expression and the text
+              that follows it on the same line, so the band once shipped
+              « EthniAfricapublie » — in the first line of prose the site
+              offers. Neither vitest's transform nor Prettier reproduces that
+              reading: the runner keeps the space, so every test here stayed
+              green, and Prettier deletes an explicit space expression it
+              believes JSX already implies. Inside a template literal no
+              whitespace rule applies at all. */}
+          <p className="home-hero-answer" data-testid="home-hero-answer">
+            {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
+              `et donne la source de chaque réponse.`}
+          </p>
+        </header>
+
+        {/* The argument, drawn. Not decoration and not a photograph of the
+            continent: al-Idrisi made this in 1154 for Roger II of Sicily,
+            oriented south-up, and he was born in Ceuta. A world map made from
+            inside Africa, by someone naming it from where he stood, answers
+            the headline's question in one image.
+
+            The credit is rendered, not filed: public/images/home/CREDITS.md
+            records the provenance, but a licence is only honoured on the page
+            the picture is published on. */}
+        <figure className="home-hero-figure" data-testid="home-hero-figure">
+          <Image
+            src="/images/home/al-idrisi-1154.jpg"
+            alt="Mappemonde d'al-Idrisi, 1154 : le sud est en haut, et l'Afrique occupe la moitié supérieure de la carte."
+            width={960}
+            height={1046}
+            sizes="(max-width: 767px) 100vw, 34rem"
+            priority
+          />
+          <figcaption>
+            Al-Idrisi, mappemonde de la <em>Tabula Rogeriana</em>, 1154 —
+            Wikimedia Commons, domaine public
+          </figcaption>
+        </figure>
+      </div>
 
       <div className="home-hero-seam" aria-hidden="true" />
 
@@ -81,8 +111,27 @@ export function HomeHero() {
           color: var(--afh-text);
         }
 
+        /* The band the home shares with the three axis hubs.
+
+           svh, never vh or dvh: on a phone 100vh is the window measured with
+           the URL bar retracted, so a 100vh band is always taller than the
+           screen it is on and the page below can never be reached in one
+           scroll. The min(…, 760px) floor keeps a short, wide window from
+           stranding the copy in an empty field. */
+        .home-hero {
+          min-height: min(100svh, 760px);
+        }
+
+        .home-hero-inner {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 32px;
+          padding-block: 46px 40px;
+        }
+
         .home-hero-copy {
-          padding: 46px 24px 40px;
           max-width: 780px;
           margin: 0 auto;
           text-align: center;
@@ -125,15 +174,70 @@ export function HomeHero() {
            floor (styles/mobile-text.css), and a band that opted out was the
            one surface disagreeing with every page under it. */
         @media (max-width: 700px) {
-          .home-hero-copy {
-            padding: 34px 20px 30px;
+          .home-hero-inner {
+            padding-block: 34px 30px;
           }
         }
 
-        /* No viewport-height floor. It existed to keep the globe and its
-           controls inside the first screen; with the module gone to its own
-           section, the same rule would stretch two lines of copy over a full
-           screen and push the argument below the fold. */
+        /* ─── The visual ────────────────────────────────────────────────
+           Withdrawn below the shell's breakpoint rather than shrunk: at
+           phone width the question and its answer already fill the band,
+           and a picture under them would push the answer off the first
+           screen. */
+        .home-hero-figure {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .home-hero-inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 56px;
+          }
+
+          /* Left, and left-aligned. Centred copy beside a picture reads as
+             two objects sharing a row; ragged-right beside it reads as one
+             column with an illustration. */
+          .home-hero-copy {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+            max-width: 34rem;
+            text-align: left;
+          }
+          .home-hero-answer {
+            margin-inline: 0;
+          }
+
+          .home-hero-figure {
+            display: block;
+            flex: 0 1 34rem;
+            min-width: 0;
+            margin: 0;
+          }
+          .home-hero-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--afh-radius-lg);
+            border: 1px solid var(--afh-border);
+          }
+          .home-hero-figure figcaption {
+            margin-top: 10px;
+            font-size: var(--afh-text-caption);
+            line-height: var(--afh-leading-caption);
+            color: var(--afh-text-soft);
+          }
+
+          /* The viewport-height floor is back, but not on the band it was
+             removed from. It went because two lines of copy stretched over a
+             full screen is air; the band is two columns now, so the height is
+             filled by the picture that answers the question beside it. */
+          .home-hero {
+            min-height: 100svh;
+          }
+        }
       `}</style>
     </section>
   );

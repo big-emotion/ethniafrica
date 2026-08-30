@@ -23,15 +23,16 @@ export function SiteFooter({ language }: SiteFooterProps) {
     >
       <div
         data-testid="footer-content"
-        className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 sm:px-6 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-x-6 md:gap-y-3 xl:flex-row xl:flex-nowrap xl:px-8"
+        className="afh-shell flex flex-col gap-4 py-8 text-afh-small"
       >
-        {/* « À propos » sits by the copyright rather than in the legal nav:
-            it is editorial, so filing it under "Informations légales" would
-            make that landmark's accessible name inaccurate. */}
-        <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-1 text-afh-caption">
-          <p>
-            © {year} {footer.copyright}
-          </p>
+        {/* Row 1 — everywhere the footer can take you.
+            « À propos » sits outside the legal nav rather than inside it: it
+            is editorial, so filing it under "Informations légales" would make
+            that landmark's accessible name inaccurate. */}
+        <div
+          data-testid="footer-links"
+          className="flex flex-wrap items-center gap-x-5 gap-y-2"
+        >
           <Link
             href={`/${language}/about`}
             className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -44,72 +45,79 @@ export function SiteFooter({ language }: SiteFooterProps) {
           >
             {footer.api}
           </Link>
+
+          <nav aria-label={footer.legalNavigationLabel}>
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <li>
+                <Link
+                  href={`/${language}/mentions-legales`}
+                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {footer.legalNotice}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${language}/politique-de-donnees`}
+                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {footer.dataPolicy}
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setShowBanner(true)}
+                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {footer.cookieSettings}
+                </button>
+              </li>
+              <li>
+                <Link
+                  href={`/${language}/accessibilite`}
+                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {footer.accessibility}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${language}/plan-du-site`}
+                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {footer.sitemap}
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
 
-        <nav
-          aria-label={footer.legalNavigationLabel}
-          className="order-3 w-full xl:order-none xl:w-auto"
-        >
-          <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-afh-caption xl:flex-nowrap">
-            <li>
-              <Link
-                href={`/${language}/mentions-legales`}
-                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {footer.legalNotice}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/${language}/politique-de-donnees`}
-                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {footer.dataPolicy}
-              </Link>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => setShowBanner(true)}
-                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {footer.cookieSettings}
-              </button>
-            </li>
-            <li>
-              <Link
-                href={`/${language}/accessibilite`}
-                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {footer.accessibility}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/${language}/plan-du-site`}
-                className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {footer.sitemap}
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {/* Row 2 — who owns this. The one line in the footer that is not a
+            destination, which is exactly why it stopped sharing a row with
+            five things that are. */}
+        <p data-testid="footer-ownership">
+          © {year} {footer.copyright}
+        </p>
 
-        <a
-          href="https://big-emotion.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex shrink-0 items-center gap-2 text-afh-caption transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <span>{footer.attribution}</span>
-          <Image
-            src="/brand/big-emotion.svg"
-            alt={footer.partnerLogoAlt}
-            width={159}
-            height={81}
-            className="h-auto w-16"
-          />
-        </a>
+        {/* Row 3 — who built it. */}
+        <div data-testid="footer-credit">
+          <a
+            href="https://big-emotion.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <span>{footer.attribution}</span>
+            <Image
+              src="/brand/big-emotion.svg"
+              alt={footer.partnerLogoAlt}
+              width={159}
+              height={81}
+              className="h-auto w-16"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );

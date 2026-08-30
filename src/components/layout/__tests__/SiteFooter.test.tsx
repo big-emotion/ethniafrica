@@ -71,7 +71,10 @@ describe("SiteFooter", () => {
 
     expect(footer).toHaveClass("bg-afh-bg-warm", "text-afh-text-soft");
     expect(footer).not.toHaveClass("bg-card", "bg-afh-earth");
-    expect(content).toHaveClass("py-5", "xl:flex-row", "xl:flex-nowrap");
+    // The content is three declared rows on the shared shell box, not the
+    // wrapping flex row it used to be — at which width the copyright landed
+    // between two links was a property of the window.
+    expect(content).toHaveClass("afh-shell", "flex-col");
     expect(footer.innerHTML).not.toContain("64_100%_57%");
   });
 

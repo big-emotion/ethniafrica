@@ -34,7 +34,7 @@ import {
 
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import { PRODUCT_NAME } from "@/lib/brand";
+import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { getTranslation } from "@/lib/translations";
 import {
@@ -319,16 +319,26 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
   return (
     <header data-testid="site-header" className="sh-header">
       <nav className="sh-bar" aria-label="Navigation principale">
-        <Link href={`/${language}`} className="sh-brand">
+        {/* One link, two lines: the name, and what the site is. The mark is
+            decorative because the wordmark beside it already says the name —
+            an alt here makes a screen reader announce it twice. */}
+        <Link
+          href={`/${language}`}
+          className="sh-brand"
+          data-testid="site-brand"
+        >
           <Image
             src="/africa.png"
             alt=""
-            width={26}
-            height={26}
+            width={44}
+            height={44}
             className="sh-brand-mark"
             priority
           />
-          <span className="sh-brand-name">{PRODUCT_NAME}</span>
+          <span className="sh-brand-text">
+            <span className="sh-brand-name">{PRODUCT_NAME}</span>
+            <span className="sh-brand-tagline">{PRODUCT_TAGLINE}</span>
+          </span>
         </Link>
 
         <div className="sh-axes" role="group" aria-label="Points d'entrée">
@@ -478,12 +488,17 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           z-index: 40;
         }
 
+        /* The bar takes the shell box rather than its own: its left edge is
+           the one the page title and the copyright line are measured against,
+           so a width private to the header is a misalignment by construction.
+           Only the vertical padding is the bar's to choose. */
         .sh-bar {
           display: flex;
           align-items: center;
           gap: 16px;
-          padding: 8px 22px;
-          max-width: 1240px;
+          padding-block: 8px;
+          padding-inline: var(--afh-page-padding);
+          max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
 
@@ -498,22 +513,56 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         }
         /* The coloured continent, restored: the nav rewrite replaced it with
            a radial-gradient disc, and a disc denotes nothing. The silhouette
-           is what lets the mark be read as the subject at 26 px. object-fit
-           keeps the square asset undistorted. */
+           is what lets the mark be read as the subject. object-fit keeps the
+           square asset undistorted.
+
+           At 26px it was a favicon sitting in the page — legible as a shape,
+           not as a continent. 44px is the size at which the coastline reads,
+           and it is also the lockup's two text lines stacked, so the mark and
+           the wordmark share one optical height. */
         .sh-brand-mark {
-          width: 26px;
-          height: 26px;
+          width: 44px;
+          height: 44px;
           flex: none;
           object-fit: contain;
+        }
+        .sh-brand-text {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
         }
         .sh-brand-name {
           font-family: var(--afh-font-display);
           font-weight: 900;
-          font-size: var(--afh-text-small);
+          font-size: var(--afh-text-h3);
+          line-height: 1.15;
           letter-spacing: -0.01em;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+        }
+        /* The qualifier production carries and the app had dropped, in the
+           gradient production sets it in. Declared once as --gradient-warm;
+           the @supports guard is what keeps it a plain coloured line rather
+           than an invisible one where background-clip: text is missing. */
+        .sh-brand-tagline {
+          font-family: var(--afh-font-display);
+          font-weight: 700;
+          font-size: var(--afh-text-caption);
+          line-height: 1.2;
+          letter-spacing: 0.005em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: var(--afh-display-accent);
+        }
+        @supports (background-clip: text) or (-webkit-background-clip: text) {
+          .sh-brand-tagline {
+            background: var(--gradient-warm);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
         }
 
         .sh-axes {
@@ -535,11 +584,17 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           font-family: inherit;
           color: var(--sh-ink-2);
         }
+        /* Reading size, not control size. The three axes are the site's own
+           table of contents rather than a toolbar, and at the fixed 16px
+           interface step they read as the smallest text on the page. The
+           reference sets its nav at 18px, which is where --afh-text-body
+           lands on a wide window — a role, not a hand-picked pixel, which the
+           typography charter forbids outright. */
         .sh-axis-pill {
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          font-size: var(--afh-text-small);
+          font-size: var(--afh-text-body);
           padding: 6px 12px;
           border: 1px solid transparent;
           border-radius: var(--afh-radius-full);
@@ -634,7 +689,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
         .sh-panel {
           background: var(--afh-bg);
           border-bottom: 1px solid var(--afh-cat-ocre);
-          padding: 20px 22px 22px;
+          padding: 20px var(--afh-page-padding) 22px;
           animation: sh-panel-in var(--afh-duration-slow) var(--afh-ease-spring);
         }
         @keyframes sh-panel-in {
@@ -653,7 +708,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           gap: 14px;
           flex-wrap: wrap;
           margin: 0 auto 14px;
-          max-width: 1240px;
+          max-width: var(--afh-shell-max);
         }
         .sh-panel-title {
           font-family: var(--afh-font-display);
@@ -674,7 +729,7 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
           gap: 9px;
-          max-width: 1240px;
+          max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
 
@@ -908,9 +963,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
            three axes only appear once the bar is wide enough to hold them.
            One component, one switch, so the two branches cannot disagree
            about which viewport they are on. */
-        .sh-bar {
-          padding: 8px 16px;
-        }
         .sh-axes,
         .sh-panel {
           display: none;
@@ -919,9 +971,6 @@ export function SiteHeader({ language, onSearchClick }: SiteHeaderProps) {
           display: inline-grid;
         }
         @media (min-width: ${NAV_BREAKPOINT_PX + 1}px) {
-          .sh-bar {
-            padding: 8px 22px;
-          }
           .sh-axes {
             display: flex;
           }
