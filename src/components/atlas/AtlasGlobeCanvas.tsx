@@ -24,8 +24,14 @@ import {
   DEFAULT_FIT_MARGIN,
   fitScale,
   type SphereLayer,
+  type SphereLighting,
 } from "@/lib/atlas/sphereLayer";
-import { resolveGlobePalette } from "@/lib/atlas/globePalette";
+import {
+  FICHE_LIGHTING,
+  GLOBE_LIGHTING,
+  resolveGlobePalette,
+  type GlobeSurface,
+} from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
@@ -193,6 +199,21 @@ function createProgram(
   return program;
 }
 
+/**
+ * How each surface is lit. Night is the fiche's near framing, which is also
+ * sphereLayer's own default; parchment needs saying, because on a ground
+ * *lighter* than the ocean the disc already states its edge — the warm limb rim
+ * reads as a halo there, and the low ambient floor turns the unlit half into a
+ * shadow the page has nowhere to put.
+ *
+ * A function rather than an inline ternary because the layer's construction and
+ * setSurface both need the answer, and the two drifting apart would light a
+ * globe one way on mount and another way after a theme flip.
+ */
+function lightingFor(surface: GlobeSurface): SphereLighting {
+  return surface === "night" ? FICHE_LIGHTING : GLOBE_LIGHTING.parchment;
+}
+
 export interface AtlasGlobeCanvasProps {
   overlay: Exclude<AtlasOverlay, { kind: "people-field-missing" }>;
   /** The camera AtlasGlobe owns (REQ-117). Every change to it repaints one frame. */
@@ -216,6 +237,15 @@ export interface AtlasGlobeCanvasProps {
    * missing, with nothing thrown and nothing logged.
    */
   onUnavailable?: () => void;
+  /**
+   * Which of the two painted surfaces the sphere is (globePalette.ts).
+   *
+   * Night is the fiche's, and the default. The parchment half had been
+   * unreachable since ETNI-1360 — this call passed no argument, so ten
+   * `--afh-globe-parchment-*` tokens and half of GLOBE_LIGHTING were
+   * maintained code nothing could render.
+   */
+  surface?: GlobeSurface;
 }
 
 /**
@@ -242,12 +272,22 @@ export function AtlasGlobeCanvas({
   accentHex,
   focusedCountryId = null,
   onUnavailable,
+  surface = "night",
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
   const poseRef = useRef(pose);
   const drawRef = useRef<(() => void) | null>(null);
+  // The live layer, so a surface change repaints it instead of rebuilding it.
+  const sphereRef = useRef<SphereLayer | null>(null);
+  // Read inside the mount effect, which deliberately does not depend on the
+  // surface; the effect below is what carries a change across.
+  const surfaceRef = useRef(surface);
+  surfaceRef.current = surface;
+  // What the live texture was actually painted for, which is not the same as
+  // the prop the moment the mount effect re-runs for an overlay change.
+  const appliedSurfaceRef = useRef(surface);
   const focusRef = useRef<CountryId | null>(focusedCountryId);
   const replayRevealRef = useRef<(() => void) | null>(null);
 
@@ -313,16 +353,26 @@ export function AtlasGlobeCanvas({
     // (atlas-charter §1).
     const sphere: SphereLayer | null = createSphereLayer(
       gl,
-      resolveGlobePalette(),
+      resolveGlobePalette(surfaceRef.current),
       document.createElement("canvas"),
       undefined,
       false,
-      undefined,
+      lightingFor(surfaceRef.current),
       // A fiche paints the national boundaries: a chosen country has to be
-      // read against its neighbours, not float on a blank continent. The
-      // home hero, framed far off, leaves them off.
+      // read against its neighbours, not float on a blank continent.
+      //
+      // Pinned true, which the continent scene does not need: it draws the
+      // same 52 outlines again as its overlay frame, so the hubs, the home and
+      // the Mercator game pay for the mesh twice. Left pinned deliberately —
+      // the hinge is the scene, not the surface, and moving it touches four
+      // surfaces that are not what this change is about.
       true
     );
+    sphereRef.current = sphere;
+    // The layer was just built for this surface, so the effect below has
+    // nothing to carry across — including when an overlay change rebuilds it
+    // in the same commit as a theme flip.
+    appliedSurfaceRef.current = surfaceRef.current;
 
     // The terrain rides the same camera as the overlay drawn over it. A
     // boundary that dollies toward the reader while the ground stays put
@@ -697,8 +747,32 @@ export function AtlasGlobeCanvas({
       window.removeEventListener("resize", handleResize);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
       sphere?.dispose();
+      sphereRef.current = null;
     };
   }, [overlay, accentHex]);
+
+  /**
+   * A theme flip repaints the surface; it does not rebuild the layer.
+   *
+   * Listing `surface` in the effect above would be the obvious wiring and the
+   * wrong one: tearing the layer down recompiles both shader programs,
+   * re-uploads the whole mesh, and drops the angle the reader had turned the
+   * globe to — they would ask for a different colour and be handed back to the
+   * Atlantic. `setSurface` re-paints one texture and keeps the camera.
+   *
+   * Guarded on the applied value because the mount effect already built the
+   * layer with the current surface; without it, every mount would repaint a
+   * 2048×1024 texture to arrive at the picture it just drew.
+   */
+  useEffect(() => {
+    if (appliedSurfaceRef.current === surface) return;
+    appliedSurfaceRef.current = surface;
+    sphereRef.current?.setSurface(
+      resolveGlobePalette(surface),
+      lightingFor(surface)
+    );
+    drawRef.current?.();
+  }, [surface]);
 
   useEffect(() => {
     poseRef.current = pose;

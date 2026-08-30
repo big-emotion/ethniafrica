@@ -695,6 +695,77 @@ describe("AtlasGlobeCanvas", () => {
     expect(modes).toContain(fakeGl.POINTS);
     expect(modes).not.toContain(fakeGl.LINE_LOOP);
   });
+
+  /**
+   * The obvious wiring for the surface prop is to list it in the mount
+   * effect's dependencies, and it is the wrong one: that tears the layer down
+   * and rebuilds it, which recompiles both programs, re-uploads the mesh and
+   * drops the angle the reader had turned the globe to. They asked for a
+   * different colour and would be handed back to the Atlantic.
+   *
+   * Counted on createProgram rather than on a repaint alone, because a test
+   * that only checked "the texture was written again" passes either way — a
+   * rebuild repaints too.
+   */
+  // @req REQ-112
+  it("repaints the surface on a theme flip instead of rebuilding the globe", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        surface="parchment"
+      />
+    );
+
+    const programsAfterMount = fakeGl.createProgram.mock.calls.length;
+    const texturesAfterMount = fakeGl.texImage2D.mock.calls.length;
+    expect(programsAfterMount).toBeGreaterThan(0);
+
+    act(() => {
+      rerender(
+        <AtlasGlobeCanvas
+          overlay={countryOverlay}
+          pose={IDLE_POSE}
+          surface="night"
+        />
+      );
+    });
+
+    expect(fakeGl.createProgram.mock.calls.length).toBe(programsAfterMount);
+    expect(fakeGl.texImage2D.mock.calls.length).toBeGreaterThan(
+      texturesAfterMount
+    );
+  });
+
+  /**
+   * The witness for the guard that makes the above cheap: a mount already
+   * builds the layer for its own surface, so repainting a 2048×1024 texture to
+   * arrive at the picture just drawn is pure waste.
+   */
+  // @req REQ-112
+  it("does not repaint the texture when the surface has not moved", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        surface="parchment"
+      />
+    );
+
+    const texturesAfterMount = fakeGl.texImage2D.mock.calls.length;
+
+    act(() => {
+      rerender(
+        <AtlasGlobeCanvas
+          overlay={countryOverlay}
+          pose={{ ...IDLE_POSE }}
+          surface="parchment"
+        />
+      );
+    });
+
+    expect(fakeGl.texImage2D.mock.calls.length).toBe(texturesAfterMount);
+  });
 });
 
 /**
