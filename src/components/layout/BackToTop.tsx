@@ -16,6 +16,8 @@ import { useEffect, useState, type RefObject } from "react";
  * How far down the control becomes worth offering, in screenfuls. One screen
  * is the point at which the top of the page has left the reader's memory of
  * where they are; below it, a flick of the wheel does the same job.
+ *
+ * @req REQ-114
  */
 export const OFFER_AFTER_SCREENS = 1;
 
@@ -33,6 +35,7 @@ export interface BackToTopProps {
   returnFocusTo?: RefObject<HTMLElement | null>;
 }
 
+// @req REQ-114
 export function BackToTop({ returnFocusTo }: BackToTopProps = {}) {
   const [offered, setOffered] = useState(false);
 

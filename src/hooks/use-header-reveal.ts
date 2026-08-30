@@ -15,6 +15,8 @@ import {
  * independently and none of which is going to remember a hardcoded figure in
  * a second stylesheet. Anything else pinned to the top of the screen reads it
  * to sit *under* the bar instead of behind it.
+ *
+ * @req REQ-114
  */
 export const HEADER_HEIGHT_PROPERTY = "--afh-header-height";
 
@@ -24,6 +26,8 @@ export const HEADER_HEIGHT_PROPERTY = "--afh-header-height";
  * attribute rather than a prop: the fiche's chapter rail is nowhere near the
  * masthead in the tree, and threading a boolean between them would put the
  * whole chrome in one component's hands.
+ *
+ * @req REQ-114
  */
 export const HEADER_RETRACTED_ATTRIBUTE = "data-header-retracted";
 
@@ -34,6 +38,8 @@ export const HEADER_RETRACTED_ATTRIBUTE = "data-header-retracted";
  * `barRef` points at the bar proper, not at the `<header>`: the axis panel
  * opens *inside* the header, and measuring the whole element would shove
  * every pinned rail on the page down by the height of an open menu.
+ *
+ * @req REQ-114
  */
 export function useHeaderReveal(
   barRef: RefObject<HTMLElement | null>

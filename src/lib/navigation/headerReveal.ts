@@ -20,6 +20,8 @@
  * the first notch of the wheel reads as a glitch rather than as room being
  * made — which is also why coming back above this line always restores it,
  * whatever direction the reader was travelling in.
+ *
+ * @req REQ-114
  */
 export const RETRACT_BELOW_PX = 140;
 
@@ -27,6 +29,8 @@ export const RETRACT_BELOW_PX = 140;
  * How far the reader must travel one way before the bar changes its mind.
  * Trackpads and inertial phone scrolls both emit single-pixel reversals; with
  * no slack the bar blinks on every one of them.
+ *
+ * @req REQ-114
  */
 export const DIRECTION_TOLERANCE_PX = 8;
 
@@ -41,6 +45,7 @@ export interface RevealState {
   travelled: number;
 }
 
+/** The bar as a page opens: in place, with no run behind it. @req REQ-114 */
 export const INITIAL_REVEAL_STATE: RevealState = {
   retracted: false,
   travelled: 0,
@@ -52,6 +57,8 @@ export const INITIAL_REVEAL_STATE: RevealState = {
  * Note the ordering: the floor is checked before the tolerance, so a reader
  * who lands back at the top of the document finds the masthead there even if
  * they arrived travelling downwards — a jump to an anchor near the top, say.
+ *
+ * @req REQ-114
  */
 export function nextRevealState(
   state: RevealState,
