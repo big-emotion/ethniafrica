@@ -4,7 +4,10 @@ import type { ReactNode } from "react";
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import { FicheSection as Section } from "@/components/fiche/FicheSection";
+import {
+  FicheSection as Section,
+  SOURCE_TIER_NOTE,
+} from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
@@ -64,10 +67,7 @@ export function CountryParchment({
           reader is told which country they opened before the band fills the
           screen. The parchment opens on its first chapter. */}
 
-      <Section
-        title="Étymologie du nom"
-        note="Rubriques « étymologie » et « origine du nom » de la fiche"
-      >
+      <Section title="Étymologie du nom">
         {etymology || nameOriginActor ? (
           <>
             {etymology && <p>{etymology}</p>}
@@ -86,10 +86,7 @@ export function CountryParchment({
         )}
       </Section>
 
-      <Section
-        title="Peuples du pays"
-        note="Rubriques « démographie » et « peuples principaux » de la fiche"
-      >
+      <Section title="Peuples du pays">
         {!hasPeoples ? (
           <FieldProvenanceMarker state="missing" />
         ) : (
@@ -102,10 +99,7 @@ export function CountryParchment({
         )}
       </Section>
 
-      <Section
-        title="Royaumes et formations politiques"
-        note="Rubrique « royaumes » de la fiche"
-      >
+      <Section title="Royaumes et formations politiques">
         {data.kingdoms.cards.length > 0 ? (
           <KingdomsTimeline cards={data.kingdoms.cards} />
         ) : (
@@ -115,12 +109,7 @@ export function CountryParchment({
 
       {children}
 
-      <Section
-        title="Sources"
-        note="Rubrique « sources » de la fiche · politique de paliers"
-        as="footer"
-        id="sources"
-      >
+      <Section title="Sources" note={SOURCE_TIER_NOTE} as="footer" id="sources">
         {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}

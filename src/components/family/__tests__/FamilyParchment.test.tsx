@@ -430,33 +430,41 @@ describe("FamilyParchment — the sources", () => {
  *
  * The family fiche was the first surface to say where each figure comes from,
  * and it said it in the corpus's own key names — "generalInfo.totalSpeakers"
- * under a card headed "Locuteurs". The claim was right and the audience was
- * wrong. The gap paragraph goes the same way: it already names the two empty
- * rubrics in French, and repeating them as JSON keys adds nothing a reader
- * can act on.
+ * under a card headed "Locuteurs". Translating those into the model's French
+ * rubric names moved the sentence out of JSON without moving it towards the
+ * reader: "Rubriques « informations générales » et « répartition » de la
+ * fiche" still names the machinery.
  *
- * The derivation prose is the one place a key still belongs. It walks a reader
- * through how the footprint was computed, and the charter itself states that
- * rule with the field names in it (§1) — naming them is what makes the
- * reconstruction checkable rather than a claim to trust.
+ * What survives is what the reader can act on: the derivation prose, which
+ * walks through how the footprint was computed (the charter states that rule
+ * with the field names in it, §1), and the tier note, which says what the
+ * badge on each source means.
  */
 describe("FamilyParchment — provenance addressed to the reader", () => {
   const FIELD_PATH = /[a-z][A-Za-z0-9]*\.[a-zA-Z]/;
+  const MODEL_RUBRIC = /rubriques?\s+«/i;
 
+  /**
+   * The card's third line was the mockup's field annotation twice translated:
+   * out of "generalInfo.totalSpeakers", then into "Informations générales ·
+   * total de locuteurs" — under a card already headed "Locuteurs". The
+   * provenance marker below the figure is what a reader acts on.
+   */
   // @req REQ-119
-  it("prints no field path on a stat card", () => {
+  it("gives a figure a label and a provenance marker, and no third line", () => {
     renderParchment();
 
-    const sources = Array.from(
-      document.querySelectorAll(".afh-stat-card-src")
-    ).map((node) => node.textContent ?? "");
-
-    expect(sources).toHaveLength(4);
-    for (const source of sources) expect(source).not.toMatch(FIELD_PATH);
+    expect(document.querySelectorAll(".afh-stat-card-src")).toHaveLength(0);
+    expect(document.querySelectorAll(".afh-stat-card")).toHaveLength(4);
+    expect(
+      within(screen.getByTestId("stat-card-branches")).getByText(
+        "Donnée manquante"
+      )
+    ).toBeTruthy();
   });
 
   // @req REQ-119
-  it("prints no field path in a section's provenance note", () => {
+  it("names neither a field path nor a rubric of the fiche model in a note", () => {
     renderParchment();
 
     const notes = Array.from(
@@ -464,17 +472,28 @@ describe("FamilyParchment — provenance addressed to the reader", () => {
     ).map((node) => node.textContent ?? "");
 
     expect(notes.length).toBeGreaterThan(0);
-    for (const note of notes) expect(note).not.toMatch(FIELD_PATH);
+    for (const note of notes) {
+      expect(note).not.toMatch(FIELD_PATH);
+      expect(note).not.toMatch(MODEL_RUBRIC);
+    }
   });
 
+  /**
+   * Charter §4 wants the gap stated, not argued. The paragraph used to weigh
+   * the editorial alternatives out loud — "plutôt que de masquer la section ou
+   * d'inventer une aire" — a decision the reader was never asked to make.
+   */
   // @req REQ-119
-  it("names the two empty rubrics without naming their JSON keys", () => {
+  it("states the gap and its consequence, without arguing the choice", () => {
     renderParchment();
 
     const gap = document.querySelector(".afh-parchment-gap");
     expect(gap).not.toBeNull();
     expect(gap?.textContent).toMatch(/branches/i);
     expect(gap?.textContent).toMatch(/répartition/i);
+    expect(gap?.textContent).toMatch(/reconstruite/i);
+    expect(gap?.textContent).not.toMatch(/plutôt que|l'état du corpus/i);
+    expect(gap?.querySelector("h3")).toBeNull();
     expect(gap?.querySelector("code")).toBeNull();
   });
 });

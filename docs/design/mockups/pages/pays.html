@@ -118,7 +118,6 @@
 
     <section class="sec">
       <h2>Étymologie du nom</h2>
-      <p class="sec-note">content.etymology · nameOriginActor</p>
       <p id="etym"></p>
       <div class="note" id="etym-note"></div>
     </section>
@@ -134,13 +133,12 @@
 
     <section class="sec">
       <h2>Royaumes et formations politiques</h2>
-      <p class="sec-note">content.kingdoms</p>
       <div class="timeline" id="kingdoms"></div>
     </section>
 
     <section class="sec">
       <h2>Sources</h2>
-      <p class="sec-note">content.sources · politique de paliers</p>
+      <p class="sec-note">Chaque source porte son palier — l'autorité qu'on peut lui accorder.</p>
       <div class="sources" id="sources"></div>
     </section>
   </div>
@@ -378,7 +376,7 @@ document.getElementById("etym-note").innerHTML =
   `<svg class="note-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>${C.nameOriginActor}</span>`;
 
 document.getElementById("peoples-note").textContent =
-  `content.demographics.peoples · ${C.peoples.length} premières entrées sur ${CORPUS.countryPeoples[C.id].n}`;
+  `${C.peoples.length} premières entrées sur ${CORPUS.countryPeoples[C.id].n}`;
 
 const maxPct = Math.max(...C.peoples.map((p) => p.percentageInCountry));
 document.getElementById("peoples-bars").innerHTML = C.peoples.map((p) => `
