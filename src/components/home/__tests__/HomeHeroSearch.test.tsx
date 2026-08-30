@@ -1,13 +1,19 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   render,
   screen,
   within,
   fireEvent,
   waitFor,
+  act,
 } from "@testing-library/react";
 
-import { HomeHeroSearch, SEED_QUERIES } from "../HomeHeroSearch";
+import {
+  HomeHeroSearch,
+  SEED_QUERIES,
+  DEBOUNCE_MS,
+  PENDING_DELAY_MS,
+} from "../HomeHeroSearch";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -248,6 +254,62 @@ describe("HomeHeroSearch", () => {
     expect(fetchResults).toHaveBeenCalledWith(SEED_QUERIES[0]);
   });
 
+  // The native WebKit cross is suppressed by the field's own stylesheet, so a
+  // replacement is owed rather than optional.
+  // @req REQ-002
+  it("offers nothing to clear while the field is empty", () => {
+    renderSearch();
+
+    expect(
+      screen.queryByRole("button", { name: "Effacer la recherche" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-002
+  it("empties the field and hands the focus back", async () => {
+    renderSearch();
+
+    await type("kongo");
+    fireEvent.click(
+      screen.getByRole("button", { name: "Effacer la recherche" })
+    );
+
+    expect(field()).toHaveValue("");
+    expect(document.activeElement).toBe(field());
+  });
+
+  // The field sits in a GET form, where a button with no type is a submit
+  // button: clearing would navigate to the search page instead of emptying.
+  // @req REQ-002
+  it("clears without submitting the form", async () => {
+    renderSearch();
+
+    await type("kongo");
+
+    expect(
+      screen.getByRole("button", { name: "Effacer la recherche" })
+    ).toHaveAttribute("type", "button");
+  });
+
+  // Two gestures, one key: the panel goes first because it is what the reader
+  // can see, and only a second press touches their text.
+  // @req REQ-002
+  it("dismisses the panel on Escape before it clears the query", async () => {
+    renderSearch();
+
+    await type("yoruba");
+    await screen.findByRole("listbox");
+
+    fireEvent.keyDown(field(), { key: "Escape" });
+    await waitFor(() =>
+      expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    expect(field()).toHaveValue("yoruba");
+
+    fireEvent.keyDown(field(), { key: "Escape" });
+    expect(field()).toHaveValue("");
+  });
+
   // A plain GET form, so the hero still reaches the search page on a phone
   // that never ran the island's JavaScript. The panel is the enhancement;
   // this is the feature.
@@ -259,5 +321,82 @@ describe("HomeHeroSearch", () => {
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", getLocalizedRoute("fr", "search"));
     expect(field()).toHaveAttribute("name", "q");
+  });
+
+  // The silence between the last keystroke and the panel is the debounce plus
+  // a round trip — long enough on a phone to read as a broken field.
+  describe("while the corpus is being asked", () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    function deferredSearch() {
+      let settle!: (results: SearchResult[]) => void;
+      const answer = new Promise<SearchResult[]>((resolve) => {
+        settle = resolve;
+      });
+      return { fetchResults: () => answer, settle };
+    }
+
+    async function tick(ms: number) {
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(ms);
+      });
+    }
+
+    // @req REQ-002
+    it("marks the field busy for as long as the request is in flight", async () => {
+      const { fetchResults, settle } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+      await tick(DEBOUNCE_MS + 10);
+      expect(field()).toHaveAttribute("aria-busy", "true");
+
+      await act(async () => {
+        settle([]);
+      });
+      expect(field()).toHaveAttribute("aria-busy", "false");
+    });
+
+    // An indicator that appears and vanishes inside 150 ms is a flicker, and
+    // reads worse than the silence it was meant to fill.
+    // @req REQ-002
+    it("shows no indicator when the answer comes back quickly", async () => {
+      const { fetchResults, settle } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+      await tick(DEBOUNCE_MS + 10);
+      await act(async () => {
+        settle([]);
+      });
+      await tick(PENDING_DELAY_MS + 50);
+
+      expect(screen.queryByTestId("home-hero-search-pending")).toBeNull();
+    });
+
+    // @req REQ-002
+    it("shows an indicator once the wait becomes noticeable", async () => {
+      const { fetchResults } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+
+      await tick(DEBOUNCE_MS + 10);
+      expect(screen.queryByTestId("home-hero-search-pending")).toBeNull();
+
+      await tick(PENDING_DELAY_MS + 20);
+      expect(
+        screen.getByTestId("home-hero-search-pending")
+      ).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent(
+        "Recherche en cours"
+      );
+    });
   });
 });

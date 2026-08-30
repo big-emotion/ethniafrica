@@ -3,7 +3,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { SEARCH_EMPTY_LINK_LABEL } from "@/components/ui/EmptyState";
@@ -41,7 +41,19 @@ import type { Language } from "@/types/shared";
  */
 
 const MIN_QUERY_LENGTH = 2;
-const DEBOUNCE_MS = 300;
+// @req REQ-002
+export const DEBOUNCE_MS = 300;
+
+/**
+ * The wait only becomes worth reporting once it is long enough to be felt.
+ * Below the delay the request is never announced at all — an indicator that
+ * appears and vanishes inside a tenth of a second reads worse than the silence
+ * it replaced. Once shown it stays for the minimum, so a request that settles
+ * just after the delay does not produce the same flicker one frame later.
+ */
+// @req REQ-002
+export const PENDING_DELAY_MS = 150;
+const PENDING_MIN_MS = 400;
 /** Enough to prove the kind exists without turning the band into a listing. */
 const MAX_PER_GROUP = 3;
 
@@ -87,8 +99,12 @@ export function HomeHeroSearch({
   const [dismissed, setDismissed] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [pending, setPending] = useState(false);
+  const [showPending, setShowPending] = useState(false);
   const inputId = useId();
   const listboxId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const pendingShownAt = useRef(0);
   // Only the newest query may write to state: a slow "yor" landing after
   // "yoruba" would otherwise repopulate the panel with the wrong answer.
   const latestQuery = useRef(0);
@@ -102,19 +118,45 @@ export function HomeHeroSearch({
       // React bail out instead of scheduling another render of this effect.
       setResults((current) => (current.length === 0 ? current : []));
       setAnswered(false);
+      setPending(false);
       return;
     }
 
     const ticket = ++latestQuery.current;
     const timer = setTimeout(async () => {
-      const found = await fetchResults(trimmed);
-      if (ticket !== latestQuery.current) return;
-      setResults(found);
-      setAnswered(true);
+      // Armed here rather than on the keystroke: the debounce is deliberate
+      // dead time, and reporting it would blink the indicator on every letter.
+      setPending(true);
+      try {
+        const found = await fetchResults(trimmed);
+        if (ticket !== latestQuery.current) return;
+        setResults(found);
+        setAnswered(true);
+      } finally {
+        if (ticket === latestQuery.current) setPending(false);
+      }
     }, DEBOUNCE_MS);
 
     return () => clearTimeout(timer);
   }, [trimmed, longEnough, fetchResults]);
+
+  useEffect(() => {
+    if (pending) {
+      const timer = setTimeout(() => {
+        pendingShownAt.current = Date.now();
+        setShowPending(true);
+      }, PENDING_DELAY_MS);
+      return () => clearTimeout(timer);
+    }
+    if (!showPending) return;
+
+    const shownFor = Date.now() - pendingShownAt.current;
+    const timer = setTimeout(
+      () => setShowPending(false),
+      Math.max(0, PENDING_MIN_MS - shownFor)
+    );
+    return () => clearTimeout(timer);
+  }, [pending, showPending]);
 
   const groups = useMemo(() => {
     let cursor = 0;
@@ -145,10 +187,25 @@ export function HomeHeroSearch({
   const goTo = (result: SearchResult) =>
     router.push(ficheHref(result, language));
 
+  const clearQuery = () => {
+    setQuery("");
+    setDismissed(false);
+    setActiveIndex(-1);
+    inputRef.current?.focus();
+  };
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Escape") {
-      setDismissed(true);
-      setActiveIndex(-1);
+      // The panel first, the text second. Escape is the platform's clear
+      // gesture in a search field and its dismiss gesture for a popup; taking
+      // the reader's words while a panel is covering them would be the wrong
+      // one of the two.
+      if (open) {
+        setDismissed(true);
+        setActiveIndex(-1);
+      } else if (query) {
+        clearQuery();
+      }
       return;
     }
     if (!showListbox) return;
@@ -188,13 +245,25 @@ export function HomeHeroSearch({
         </label>
 
         <div className="home-hero-search-field">
-          <Search
-            aria-hidden="true"
-            className="size-5 shrink-0 text-afh-text-soft"
-          />
+          {/* The indicator takes the magnifier's slot rather than a slot of
+              its own: same width, so the text never shifts as it appears. */}
+          {showPending ? (
+            <span
+              data-testid="home-hero-search-pending"
+              aria-hidden="true"
+              className="home-hero-search-spinner"
+            />
+          ) : (
+            <Search
+              aria-hidden="true"
+              className="size-5 shrink-0 text-afh-text-soft"
+            />
+          )}
           <input
+            ref={inputRef}
             id={inputId}
             name="q"
+            aria-busy={pending}
             role="combobox"
             aria-expanded={showListbox}
             aria-controls={listboxId}
@@ -220,6 +289,20 @@ export function HomeHeroSearch({
             }}
             onKeyDown={handleKeyDown}
           />
+
+          {/* type="button" is load-bearing: this sits inside a GET form, where
+              a button with no type is a submit button — the cross would
+              navigate to the search page instead of emptying the field. */}
+          {query && (
+            <button
+              type="button"
+              aria-label="Effacer la recherche"
+              className="home-hero-search-clear"
+              onClick={clearQuery}
+            >
+              <X aria-hidden="true" className="size-4" />
+            </button>
+          )}
         </div>
 
         <Button
@@ -241,12 +324,17 @@ export function HomeHeroSearch({
         ))}
       </ul>
 
+      {/* The spinner is the sighted half of the same message; this is the
+          other half, and it reports the same two moments — the wait starting,
+          and what came back. */}
       <div role="status" aria-live="polite" className="sr-only">
-        {open
-          ? flat.length > 0
-            ? `${flat.length} suggestion${flat.length > 1 ? "s" : ""}`
-            : "Aucune suggestion"
-          : ""}
+        {showPending
+          ? "Recherche en cours…"
+          : open
+            ? flat.length > 0
+              ? `${flat.length} suggestion${flat.length > 1 ? "s" : ""}`
+              : "Aucune suggestion"
+            : ""}
       </div>
 
       {showListbox && (
@@ -317,7 +405,11 @@ export function HomeHeroSearch({
           display: flex;
           align-items: center;
           gap: 8px;
-          flex: 1 1 12rem;
+          /* Full width on a phone, so the button wraps under it rather than
+             taking half the row: side by side at 430px the field is ~200px
+             and clips its own placeholder, which is the one thing on this
+             band that states what the corpus holds. */
+          flex: 1 1 100%;
           min-width: 0;
           padding: 0 14px;
           min-height: 52px;
@@ -350,14 +442,68 @@ export function HomeHeroSearch({
           -webkit-appearance: none;
         }
 
+        .home-hero-search-clear {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 0 0 auto;
+          width: 44px;
+          height: 44px;
+          margin-right: -10px;
+          border: 0;
+          border-radius: var(--afh-radius-full);
+          background: transparent;
+          color: var(--afh-text-soft);
+          cursor: pointer;
+        }
+        .home-hero-search-clear:hover {
+          background: var(--afh-bg-warm);
+          color: var(--afh-text);
+        }
+
+        /* A ring, not a dot, and never a dimming of the results behind it:
+           lowering the opacity of text is how this site has broken its own
+           contrast gate before. */
+        .home-hero-search-spinner {
+          flex: 0 0 auto;
+          width: 20px;
+          height: 20px;
+          border-radius: var(--afh-radius-full);
+          border: 2px solid var(--accent-tint);
+          border-top-color: var(--accent-ink);
+          animation: home-hero-search-spin 700ms linear infinite;
+        }
+
+        @keyframes home-hero-search-spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        /* Not driven by the motion tokens: they collapse every duration to
+           0.01ms under this query, which would spin the ring at roughly a
+           hundred turns a second instead of stopping it. The ring holds
+           still and the status region carries the message. */
+        @media (prefers-reduced-motion: reduce) {
+          .home-hero-search-spinner {
+            animation: none;
+          }
+        }
+
         .home-hero-search-submit {
           min-height: 52px;
           flex: 1 1 8rem;
         }
 
+        /* Centred while the copy above it is centred, ragged-right once the
+           copy goes ragged-right at the two-column breakpoint. Alignment is a
+           property of the block (brand charter §8.1), and this row sits in the
+           same header as the question and its answer — a left-aligned row of
+           chips under a centred headline is the third alignment in one block. */
         .home-hero-search-seeds {
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
           gap: 8px;
           margin: 12px 0 0;
           padding: 0;
@@ -390,6 +536,18 @@ export function HomeHeroSearch({
           background: var(--afh-surface);
           border: 1px solid var(--afh-border);
           border-radius: var(--afh-radius-lg);
+        }
+
+        /* Three classes deep on purpose. src/styles/mobile-text.css centres
+           every paragraph inside .afh-phone-centred below 768px at
+           specificity 0,2,0, and this panel is a descendant of the hero's
+           centred header.
+           A two-class override ties and loses to the later sheet, which left
+           the group headings centred over ragged-right options — three
+           alignments inside one card (brand charter §8.1). */
+        .home-hero-search .home-hero-search-panel .home-hero-search-group,
+        .home-hero-search .home-hero-search-panel p {
+          text-align: left;
         }
 
         .home-hero-search-group {
@@ -433,6 +591,20 @@ export function HomeHeroSearch({
         @media (min-width: 768px) {
           .home-hero-search {
             margin-top: 28px;
+          }
+          .home-hero-search-seeds {
+            justify-content: flex-start;
+          }
+          /* The field takes every pixel the button does not need. They used
+             to grow at the same rate, which gave a 235px button the same
+             weight as the field it serves — on a band whose whole purpose is
+             the query, not the verb. */
+          .home-hero-search-field {
+            flex: 1 1 auto;
+            min-width: 16rem;
+          }
+          .home-hero-search-submit {
+            flex: 0 0 auto;
           }
         }
       `}</style>
