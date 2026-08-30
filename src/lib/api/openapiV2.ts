@@ -854,7 +854,7 @@ const options: swaggerJsdoc.Options = {
             license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              example: "Africa History — africahistory.org",
+              example: "EthniAfrica — ethniafrica.com",
             },
             confidence: {
               type: ["number", "null"],
@@ -863,7 +863,7 @@ const options: swaggerJsdoc.Options = {
             },
             pinned_url: {
               type: ["string", "null"],
-              example: "https://africahistory.org/peuples/yoruba@v4",
+              example: "https://ethniafrica.com/peuples/yoruba@v4",
             },
             pagination: {
               $ref: "#/components/schemas/PaginationMeta",
@@ -2061,7 +2061,7 @@ const options: swaggerJsdoc.Options = {
             license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              example: "Africa History — africahistory.org",
+              example: "EthniAfrica — ethniafrica.com",
             },
             pagination: { $ref: "#/components/schemas/CursorPaginationMeta" },
           },
@@ -2218,7 +2218,7 @@ const options: swaggerJsdoc.Options = {
             license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              example: "Africa History — africahistory.org",
+              example: "EthniAfrica — ethniafrica.com",
             },
             pagination: {
               $ref: "#/components/schemas/FeedCursorPaginationMeta",
@@ -2514,7 +2514,7 @@ const options: swaggerJsdoc.Options = {
             license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              example: "Africa History — africahistory.org",
+              example: "EthniAfrica — ethniafrica.com",
             },
             pagination: {
               $ref: "#/components/schemas/FlagCursorPaginationMeta",

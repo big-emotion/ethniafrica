@@ -35,7 +35,7 @@ function baseEnvelope<T>(data: T): ApiEnvelope<T> {
     data,
     meta: {
       license: "CC-BY-SA-4.0",
-      attribution: "Africa History — africahistory.org",
+      attribution: "EthniAfrica — ethniafrica.com",
     },
     errors: [],
   };
@@ -72,7 +72,7 @@ describe("GET /api/v2/sources", () => {
       ...baseEnvelope<Source[]>([]),
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         pagination: { total: 0, page: 1, perPage: 20, totalPages: 1 },
       },
     });

@@ -3,6 +3,7 @@
  */
 
 import type { ApiResponse, PaginationMeta } from "@/types/afrik";
+import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
 
 /**
  * Module #0 envelope license & attribution defaults.
@@ -10,7 +11,16 @@ import type { ApiResponse, PaginationMeta } from "@/types/afrik";
  * decision D3 (license CC-BY-SA-4.0).
  */
 export const API_LICENSE = "CC-BY-SA-4.0";
-export const API_ATTRIBUTION = "Africa History — africahistory.org";
+
+/**
+ * Composed rather than written out, because this string is the one a reuser
+ * carries away in a citation. It spent a release naming a retired product and
+ * a domain that serves nothing, so every fiche cited in that window points at
+ * a site nobody can reach. The brand charter §1 makes `src/lib/brand.ts` the
+ * only place a name is stated, and this is the furthest-travelling consumer of
+ * that rule.
+ */
+export const API_ATTRIBUTION = `${PRODUCT_NAME} — ${CANONICAL_DOMAIN}`;
 
 /**
  * Envelope meta block for Module #0 endpoints.

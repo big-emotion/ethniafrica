@@ -25,7 +25,7 @@ const withSunset = (path: string): Map<string, SunsetNotice> =>
       path,
       {
         sunset: "2027-03-01T00:00:00.000Z",
-        migrationUrl: "https://africahistory.org/docs/api/versioning",
+        migrationUrl: "https://ethniafrica.com/docs/api/versioning",
       },
     ],
   ]);
@@ -104,7 +104,7 @@ describe("a sunset endpoint, per RFC 8594", () => {
       deprecation: "true",
       // RFC 8594 §3 requires an HTTP-date, not the ISO-8601 the config stores.
       sunset: "Mon, 01 Mar 2027 00:00:00 GMT",
-      link: '<https://africahistory.org/docs/api/versioning>; rel="sunset"',
+      link: '<https://ethniafrica.com/docs/api/versioning>; rel="sunset"',
     });
   });
 

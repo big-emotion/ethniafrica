@@ -34,7 +34,7 @@ describe("POST /api/v2/flags client IP", () => {
           data: { id: "flag-1" },
           meta: {
             license: "CC-BY-SA-4.0",
-            attribution: "Africa History — africahistory.org",
+            attribution: "EthniAfrica — ethniafrica.com",
           },
           errors: [],
         },

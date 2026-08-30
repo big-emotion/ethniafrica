@@ -1,7 +1,16 @@
 import type { FeedRevisionItem } from "@/api/v2/services/feedRevisions";
+import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
 
-const FEED_TITLE = "EthniAfrica Revisions Feed";
-const FEED_ID_BASE = "https://africahistory.org/feeds/revisions";
+const FEED_TITLE = `${PRODUCT_NAME} Revisions Feed`;
+
+/**
+ * An Atom `id` is a permanent IRI, so it is the one string here that must not
+ * be allowed to drift — and it was the one built on a domain the project does
+ * not own, in a file whose title constant already said EthniAfrica. Corrected
+ * before production rather than after, because a published feed id cannot be
+ * changed without every subscriber re-seeing every entry.
+ */
+const FEED_ID_BASE = `https://${CANONICAL_DOMAIN}/feeds/revisions`;
 
 function escapeXml(str: string): string {
   return str

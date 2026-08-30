@@ -6,6 +6,7 @@ import {
   getContributorAttribution,
   getFlagBySlug,
 } from "@/lib/supabase/queries/flags/getFlagBySlug";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
  * ISR: revalidate on every request in dev; in production the pg_notify →
@@ -29,12 +30,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   return {
-    title: `Signalement ${slug} — Africa History`,
+    title: `Signalement ${slug} — ${PRODUCT_NAME}`,
     robots: { index: true, follow: true },
     openGraph: {
-      title: `Signalement ${slug} — Africa History`,
-      description:
-        "Consultation d'un signalement éditorial sur la plateforme Africa History.",
+      title: `Signalement ${slug} — ${PRODUCT_NAME}`,
+      description: `Consultation d'un signalement éditorial sur la plateforme ${PRODUCT_NAME}.`,
       type: "article",
     },
   };

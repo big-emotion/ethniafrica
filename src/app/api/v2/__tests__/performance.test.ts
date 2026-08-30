@@ -134,7 +134,7 @@ describe("API v2 - Performance Tests", () => {
         data: { peoples, countries, total: 100 },
         meta: {
           license: "CC-BY-SA-4.0",
-          attribution: "Africa History — africahistory.org",
+          attribution: "EthniAfrica — ethniafrica.com",
         },
         errors: [],
       });
