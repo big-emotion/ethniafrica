@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {
+  FacebookGlyph,
+  InstagramGlyph,
+  LinkedinGlyph,
+} from "@/components/layout/SocialGlyphs";
 import { useConsent } from "@/hooks/use-consent";
+import { PRODUCT_NAME } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
@@ -10,11 +17,65 @@ interface SiteFooterProps {
   language: Language;
 }
 
+/**
+ * Written once rather than seven times. The seven copies it replaces were
+ * identical, which is exactly why the eighth would not have been.
+ */
+const FOOTER_LINK_CLASS =
+  "underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+/**
+ * Where the project is followed, and where it will be.
+ *
+ * `href: null` is the honest state for an account that is not open yet: the
+ * network is named, its mark is drawn, and nothing pretends to be clickable.
+ * Give an entry a URL and it becomes a link — that is the whole edit.
+ */
+const SOCIAL_NETWORKS: ReadonlyArray<{
+  name: string;
+  Glyph: (props: { className?: string }) => JSX.Element;
+  href: string | null;
+}> = [
+  { name: "Facebook", Glyph: FacebookGlyph, href: null },
+  { name: "LinkedIn", Glyph: LinkedinGlyph, href: null },
+  { name: "Instagram", Glyph: InstagramGlyph, href: null },
+];
+
 // @req REQ-046
 export function SiteFooter({ language }: SiteFooterProps) {
   const { setShowBanner } = useConsent();
   const { footer } = getTranslation(language);
+  const { directory } = footer;
   const year = new Date().getFullYear();
+
+  const rubrics = [
+    {
+      id: "explorer",
+      heading: directory.explorerHeading,
+      links: [
+        {
+          label: directory.countries,
+          href: getLocalizedRoute(language, "countries"),
+        },
+        {
+          label: directory.peoples,
+          href: getLocalizedRoute(language, "peoples"),
+        },
+        {
+          label: directory.families,
+          href: getLocalizedRoute(language, "families"),
+        },
+      ],
+    },
+    {
+      id: "participer",
+      heading: directory.participateHeading,
+      links: [
+        { label: directory.contribute, href: `/${language}/contribute` },
+        { label: directory.reportError, href: `/${language}/report-error` },
+      ],
+    },
+  ];
 
   return (
     <footer
@@ -23,35 +84,120 @@ export function SiteFooter({ language }: SiteFooterProps) {
     >
       <div
         data-testid="footer-content"
-        className="afh-shell flex flex-col gap-4 py-8 text-afh-small"
+        className="afh-shell flex flex-col gap-afh-lg py-afh-xl text-afh-small"
       >
-        {/* Row 1 — everywhere the footer can take you.
+        {/* Étage 1 — the directory. A reader who reached the bottom of a
+            fiche was previously offered the mentions légales and nothing
+            else; the rubrics the atlas is made of belong here too. */}
+        <div
+          data-testid="footer-directory"
+          className="flex flex-col items-center gap-afh-lg md:flex-row md:items-start md:justify-between md:gap-afh-xl md:text-left"
+        >
+          {/* The mark and the name, not a link: the masthead already carries
+              the way home, and a second one at the bottom of the page is a
+              destination the reader has to rule out rather than use. */}
+          <div
+            data-testid="footer-brand"
+            className="flex items-center gap-afh-sm"
+          >
+            <Image
+              src="/africa.png"
+              alt=""
+              width={44}
+              height={44}
+              className="h-11 w-11"
+            />
+            <span className="font-afh-display text-afh-h3 text-afh-text">
+              {PRODUCT_NAME}
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center gap-afh-lg sm:flex-row sm:items-start sm:gap-afh-2xl">
+            {rubrics.map((rubric) => (
+              <nav
+                key={rubric.id}
+                aria-labelledby={`footer-rubric-${rubric.id}`}
+              >
+                <p
+                  id={`footer-rubric-${rubric.id}`}
+                  className="font-afh-display text-afh-lead text-afh-text"
+                >
+                  {rubric.heading}
+                </p>
+                <ul className="mt-afh-sm flex flex-col gap-afh-xs">
+                  {rubric.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className={FOOTER_LINK_CLASS}>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+
+            <div>
+              <p className="font-afh-display text-afh-lead text-afh-text">
+                {directory.followHeading}
+              </p>
+              {/* Each mark keeps a 44px hit area, which insets the glyph by
+                  12px inside it. Pulled back by the same 12px so the first
+                  glyph sits on the heading's edge rather than a tap target's. */}
+              <ul
+                data-testid="footer-follow"
+                className="mt-afh-sm flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+              >
+                {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
+                  <li key={name}>
+                    {href ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={name}
+                        className="inline-flex h-11 w-11 items-center justify-center transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        <Glyph className="h-5 w-5" />
+                      </a>
+                    ) : (
+                      <span
+                        role="img"
+                        aria-label={`${name} — ${directory.followPending}`}
+                        className="inline-flex h-11 w-11 items-center justify-center text-afh-fg-muted"
+                      >
+                        <Glyph className="h-5 w-5" />
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr className="border-afh-border" />
+
+        {/* Étage 2, row 1 — everywhere else the footer can take you.
             « À propos » sits outside the legal nav rather than inside it: it
             is editorial, so filing it under "Informations légales" would make
             that landmark's accessible name inaccurate. */}
         <div
           data-testid="footer-links"
-          className="flex flex-wrap items-center gap-x-5 gap-y-2"
+          className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
         >
-          <Link
-            href={`/${language}/about`}
-            className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
+          <Link href={`/${language}/about`} className={FOOTER_LINK_CLASS}>
             {footer.about}
           </Link>
-          <Link
-            href="/docs/api/v2"
-            className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
+          <Link href="/docs/api/v2" className={FOOTER_LINK_CLASS}>
             {footer.api}
           </Link>
 
           <nav aria-label={footer.legalNavigationLabel}>
-            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
               <li>
                 <Link
                   href={`/${language}/mentions-legales`}
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={FOOTER_LINK_CLASS}
                 >
                   {footer.legalNotice}
                 </Link>
@@ -59,7 +205,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               <li>
                 <Link
                   href={`/${language}/politique-de-donnees`}
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={FOOTER_LINK_CLASS}
                 >
                   {footer.dataPolicy}
                 </Link>
@@ -68,7 +214,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
                 <button
                   type="button"
                   onClick={() => setShowBanner(true)}
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={FOOTER_LINK_CLASS}
                 >
                   {footer.cookieSettings}
                 </button>
@@ -76,7 +222,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               <li>
                 <Link
                   href={`/${language}/accessibilite`}
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={FOOTER_LINK_CLASS}
                 >
                   {footer.accessibility}
                 </Link>
@@ -84,7 +230,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               <li>
                 <Link
                   href={`/${language}/plan-du-site`}
-                  className="underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={FOOTER_LINK_CLASS}
                 >
                   {footer.sitemap}
                 </Link>
@@ -93,30 +239,33 @@ export function SiteFooter({ language }: SiteFooterProps) {
           </nav>
         </div>
 
-        {/* Row 2 — who owns this. The one line in the footer that is not a
-            destination, which is exactly why it stopped sharing a row with
-            five things that are. */}
-        <p data-testid="footer-ownership">
-          © {year} {footer.copyright}
-        </p>
+        {/* Étage 2, row 2 — who owns this and who built it. The same
+            statement said twice, so it reads as one line rather than two. */}
+        <div
+          data-testid="footer-baseline"
+          className="flex flex-wrap items-center justify-center gap-x-afh-base gap-y-afh-xs"
+        >
+          <p data-testid="footer-ownership">
+            © {year} {footer.copyright}
+          </p>
 
-        {/* Row 3 — who built it. */}
-        <div data-testid="footer-credit">
-          <a
-            href="https://big-emotion.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <span>{footer.attribution}</span>
-            <Image
-              src="/brand/big-emotion.svg"
-              alt={footer.partnerLogoAlt}
-              width={159}
-              height={81}
-              className="h-auto w-16"
-            />
-          </a>
+          <div data-testid="footer-credit">
+            <a
+              href="https://big-emotion.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <span>{footer.attribution}</span>
+              <Image
+                src="/brand/big-emotion.svg"
+                alt={footer.partnerLogoAlt}
+                width={159}
+                height={81}
+                className="h-auto w-16"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
