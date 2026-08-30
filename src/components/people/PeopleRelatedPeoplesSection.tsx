@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { ActionLink } from "@/components/ui/ActionLink";
+
 import {
   hasRelatedContent,
   type PeopleRelatedData,
@@ -47,12 +49,16 @@ export function PeopleRelatedPeoplesSection({
               </div>
             ))}
           </div>
-          <Link
+          {/* `text-afh-accent` was not a colour: the Tailwind config has no
+              afh-accent key, so the class resolved to nothing and the link
+              inherited the surrounding ink. ActionLink reads --accent-ink
+              directly. */}
+          <ActionLink
             href={getPeopleLinksRoute("fr", peopleId)}
-            className="inline-flex items-center min-h-[44px] mt-[4px] text-afh-small font-semibold text-afh-accent"
+            className="mt-[4px]"
           >
-            voir tous les liens →
-          </Link>
+            Voir tous les liens
+          </ActionLink>
         </div>
       )}
 

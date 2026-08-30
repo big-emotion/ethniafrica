@@ -6,6 +6,7 @@ import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
+import { ActionLink } from "@/components/ui/ActionLink";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -132,23 +133,19 @@ export function buildCountryTargetFacts(
   };
 }
 
-const LINK_STYLE: CSSProperties = {
-  fontSize: "var(--afh-text-small)",
-  fontWeight: 700,
-  color: "var(--accent)",
-};
-
 /**
  * Where the panel sends the reader. The fiche's own country is already on the
  * page, so it points at the parchment rather than reloading the route the
  * reader is standing on.
+ *
+ * It used to hand-set its own dress, and coloured its text with --accent —
+ * the fill, which measures 3.10-4.39:1 and drops further under the hover
+ * wash. AccessAxes moved off that ink for exactly this reason; the fix never
+ * reached here because the two links shared no code. ActionLink takes
+ * --accent-ink for all of them at once.
  */
 function ReadTheFiche({ href }: { href: string }) {
-  return (
-    <a href={href} style={LINK_STYLE}>
-      Lire la fiche complète →
-    </a>
-  );
+  return <ActionLink href={href}>Lire la fiche complète</ActionLink>;
 }
 
 export interface CountryAtlasFactsInput {

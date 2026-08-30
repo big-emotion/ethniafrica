@@ -3,6 +3,7 @@ import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import { inCountry } from "@/lib/atlas/countryPreposition";
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryId, GlobalDemographySection } from "@/types/afrik";
+import { ActionLink } from "@/components/ui/ActionLink";
 
 const populationFr = new Intl.NumberFormat("fr-FR");
 const shareFr = new Intl.NumberFormat("fr-FR", {
@@ -115,12 +116,9 @@ export function buildPeoplePresenceFacts({
           {/* Anchored on the record section rather than the top of the page:
               a reader who came for this country should land on the prose, not
               back on the globe they just left. */}
-          <a
-            href={`#${FICHE_RECORD_ANCHOR}`}
-            className="underline underline-offset-2"
-          >
-            Lire la fiche complète →
-          </a>
+          <ActionLink href={`#${FICHE_RECORD_ANCHOR}`}>
+            Lire la fiche complète
+          </ActionLink>
         </div>
       ),
     };
