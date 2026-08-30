@@ -5,13 +5,17 @@ import {
   getAgeConfirmedAt,
   getAuthenticatedContributor,
   getFlagByIdOrSlug,
+  getModeratorByAccessToken,
   listFlags,
+  transitionFlag,
   type CreatedFlag,
   type FlagCreateInput,
   type FlagListFilters,
   type FlagListResult,
   type PublicFlag,
+  type FlagStatus,
 } from "@/api/v2/services/flags";
+import { auditLog, type AuditLogInput } from "@/lib/audit/log";
 import {
   API_ATTRIBUTION,
   API_LICENSE,
@@ -361,4 +365,111 @@ export async function handleFlagDetail(
     status: 200,
     body: createApiResponse(flag),
   };
+}
+
+const flagTransitionSchema = z.object({
+  status: z.enum(FLAG_STATUSES),
+  moderator_notes: z.string().trim().max(5000).optional(),
+});
+
+export interface FlagTransitionDependencies {
+  getModeratorByAccessToken: (
+    accessToken: string
+  ) => Promise<{ id: string; role: string } | null>;
+  transitionFlag: (
+    identifier: string,
+    next: { status: FlagStatus; moderatorId: string; moderatorNotes?: string }
+  ) => Promise<
+    | { ok: true; flag: PublicFlag; previousStatus: FlagStatus }
+    | { ok: false; reason: "not_found" | "illegal_transition" }
+  >;
+  writeAuditLog: (input: AuditLogInput) => Promise<void>;
+}
+
+const defaultTransitionDependencies: FlagTransitionDependencies = {
+  getModeratorByAccessToken,
+  transitionFlag,
+  writeAuditLog: (input) => auditLog.write(input),
+};
+
+/**
+ * Drive one report through the state machine (ETNI-72).
+ *
+ * The machine itself is enforced by the `flags_enforce_state_machine` trigger
+ * (migration 022) and is not restated here: the handler proposes a move and
+ * reports the refusal. What the handler owns is the authorization, and it is
+ * the only check there is — RLS deliberately gives a contributor no path to a
+ * status change, so a moderator write travels on the service-role client and
+ * nothing below this function will ask again who the caller is.
+ *
+ * See docs/design/moderation-charter.md §4.
+ */
+// @req REQ-042
+export async function handleFlagTransition(
+  identifier: string,
+  rawInput: unknown,
+  context: FlagHandlerContext,
+  injectedDependencies: Partial<FlagTransitionDependencies> = {}
+): Promise<FlagHandlerResult<ApiEnvelope<PublicFlag> | ApiEnvelope<null>>> {
+  const dependencies = {
+    ...defaultTransitionDependencies,
+    ...injectedDependencies,
+  };
+  const accessToken = context.accessToken?.trim();
+
+  // Refuse by default: no token, or a token that resolves to no moderator
+  // role, are the same answer. Neither says why, so a probe learns nothing
+  // about which flags exist.
+  const moderator = accessToken
+    ? await dependencies.getModeratorByAccessToken(accessToken)
+    : null;
+  if (!moderator) {
+    return {
+      status: 403,
+      body: errorResponse("UNAUTHORIZED", "Moderator role required"),
+    };
+  }
+
+  const parsed = flagTransitionSchema.safeParse(rawInput);
+  if (!parsed.success) {
+    return { status: 400, body: validationError(parsed.error.issues) };
+  }
+
+  const result = await dependencies.transitionFlag(identifier, {
+    status: parsed.data.status,
+    moderatorId: moderator.id,
+    ...(parsed.data.moderator_notes === undefined
+      ? {}
+      : { moderatorNotes: parsed.data.moderator_notes }),
+  });
+
+  // `in`, not `!result.ok`: with strictNullChecks off the compiler does not
+  // narrow this union on its boolean discriminant, and silently types the
+  // failure branch as the success one.
+  if ("reason" in result) {
+    return result.reason === "not_found"
+      ? {
+          status: 404,
+          body: errorResponse("NOT_FOUND", "Flag not found"),
+        }
+      : {
+          status: 409,
+          body: errorResponse(
+            "ILLEGAL_TRANSITION",
+            `Cette transition n'est pas permise depuis l'état courant.`
+          ),
+        };
+  }
+
+  await dependencies.writeAuditLog({
+    actorId: moderator.id,
+    action: "flag.transition",
+    targetType: "flag",
+    targetId: identifier,
+    before: { status: result.previousStatus },
+    after: { status: result.flag.status },
+    ip: context.clientIp ?? null,
+  });
+
+  return { status: 200, body: createApiResponse(result.flag) };
 }
