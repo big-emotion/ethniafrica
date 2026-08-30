@@ -1,18 +1,22 @@
 import type { LanguageFamily } from "@/types/afrik";
 import { transformFamilyData } from "@/lib/familyDataTransformer";
+import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 
 /**
  * The second half of the fiche's title — what a family fiche says a family is.
  *
- * Not a corpus field. It is true of all 24 family fiches for the same
- * structural reason — none declares its own distribution — so storing it would
- * mean writing the same sentence into 24 files and keeping them in step. It
- * lives here, as one editorial constant, with its reason attached.
+ * Not a corpus field, and not unconditional either. It was written as a flat
+ * constant because it was true of all 24 fiches for one structural reason —
+ * none declared its own distribution — and storing the same sentence in 24
+ * files would only let them drift apart. The comment that shipped with it
+ * named the condition under which it would stop being true.
  *
- * The day a family fiche does declare a distribution, this stops being true of
- * that fiche and has to become conditional on the same provenance check the
- * parchment's stat cards already run.
+ * That day came: the 24 fiches now carry a `distribution.distributionByCountry`
+ * and the constant kept asserting the opposite over every one of them, on the
+ * same page where the parchment withheld its "Distribution non déclarée" chip.
+ * A head and a chip disagreeing about the same fact is worse than either
+ * verdict alone, so both now read the one provenance check.
  */
 const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
 
@@ -26,9 +30,12 @@ const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
  */
 // @req REQ-091
 export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
-  const { hero, decolonialHeader } = transformFamilyData(family);
+  const { hero, decolonialHeader, distribution } = transformFamilyData(family);
   const selfAppellation = decolonialHeader.selfAppellation;
   const nameEn = hero.nameEn ?? decolonialHeader.nameEn;
+  const rebuildsItsArea =
+    classifyFieldProvenance(distribution.distributionByCountry).state ===
+    "missing";
 
   // The trail is the shell's now (`PageLayout` → `SiteTrail`).
   return (
@@ -39,7 +46,13 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
             the row in the database, not the family in the world. */}
         <p className="afh-parchment-eyebrow">Famille linguistique</p>
         <h1>
-          {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
+          {rebuildsItsArea ? (
+            <>
+              {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
+            </>
+          ) : (
+            hero.nameFr
+          )}
         </h1>
         {/* 19 of the 24 families explain in prose that their name was imposed
             — Bantou was coined by Bleek and made an apartheid legal category —

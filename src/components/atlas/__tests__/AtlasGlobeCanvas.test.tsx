@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AtlasGlobeCanvas } from "@/components/atlas/AtlasGlobeCanvas";
 import { IDLE_POSE } from "@/lib/atlas/camera";
+import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import type {
   ContinentFieldOverlay,
   CountryOutlineOverlay,
@@ -147,24 +148,35 @@ function createFakeGl() {
   };
 }
 
-/** Absorbs the texture painter's draw calls without asserting on them. */
+/**
+ * Absorbs the texture painter's draw calls, and records the colour of each
+ * fill. The indicatrices are painted into a texture and then read back only
+ * by a shader, so the colour they were filled with is the one place a test
+ * can see whether they were drawn at all.
+ */
 function fakeTexture2d() {
-  return {
+  const filledColours: string[] = [];
+  const context = {
     canvas: { width: 0, height: 0 },
     fillStyle: "",
     strokeStyle: "",
     lineWidth: 0,
+    filledColours,
     fillRect: vi.fn(),
     beginPath: vi.fn(),
+    closePath: vi.fn(),
     moveTo: vi.fn(),
     lineTo: vi.fn(),
     stroke: vi.fn(),
-    fill: vi.fn(),
+    fill: vi.fn(() => {
+      filledColours.push(context.fillStyle);
+    }),
     save: vi.fn(),
     restore: vi.fn(),
     translate: vi.fn(),
     scale: vi.fn(),
   };
+  return context;
 }
 
 /** Float comparison that survives the ramp's arithmetic. */
@@ -209,9 +221,12 @@ describe("AtlasGlobeCanvas", () => {
   let frameCallbacks: Map<number, FrameRequestCallback>;
   let nextFrameId: number;
   let matchMediaDescriptor: PropertyDescriptor | undefined;
+  /** The scratch canvas the sphere layer paints its texture on. */
+  let textureContext: ReturnType<typeof fakeTexture2d> | null;
 
   beforeEach(() => {
     fakeGl = createFakeGl();
+    textureContext = null;
     matchMediaMatches = false;
     frameCallbacks = new Map();
     nextFrameId = 1;
@@ -220,10 +235,11 @@ describe("AtlasGlobeCanvas", () => {
     // layer asks a scratch canvas for "2d" to paint its texture, so a spy
     // that answered WebGL to everything would feed it the wrong object.
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockImplementation(
-      (type: string) =>
-        type === "2d"
-          ? (fakeTexture2d() as unknown as RenderingContext)
-          : (fakeGl as unknown as RenderingContext)
+      (type: string) => {
+        if (type !== "2d") return fakeGl as unknown as RenderingContext;
+        textureContext = fakeTexture2d();
+        return textureContext as unknown as RenderingContext;
+      }
     );
     vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockImplementation(
       () => 300
@@ -323,6 +339,40 @@ describe("AtlasGlobeCanvas", () => {
     expect(() =>
       render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />)
     ).not.toThrow();
+  });
+
+  /**
+   * Tissot's indicatrices — the discs the Mercator lesson is made of. Each
+   * covers the same real area, so the swelling a reader sees on the flat map
+   * is the projection's doing and nothing else.
+   *
+   * They were painted by the engine ETNI-1360 deleted, and this canvas passed
+   * `false` where that argument goes: the discs disappeared from the home's
+   * module and from /jouer/mercator with every test still green, because
+   * nothing here could see what the texture had been painted with.
+   */
+  // @req REQ-112
+  it("paints the indicatrices into its texture when a stage asks for them", () => {
+    render(
+      <AtlasGlobeCanvas
+        overlay={continentOverlay}
+        pose={IDLE_POSE}
+        showTissot
+      />
+    );
+
+    expect(textureContext?.filledColours).toContain(
+      resolveGlobePalette("night").tissot
+    );
+  });
+
+  // @req REQ-112
+  it("paints none on a fiche, which makes no argument about area", () => {
+    render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
+
+    expect(textureContext?.filledColours).not.toContain(
+      resolveGlobePalette("night").tissot
+    );
   });
 
   // @req REQ-116 — the people encoding guard: GL_POINTS only, never a line or fill.

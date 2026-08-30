@@ -5,8 +5,18 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
-  AtlasGlobeCanvas: ({ pose }: { pose: { morph: number } }) => (
-    <canvas data-testid="atlas-globe-canvas-mock" data-morph={pose.morph} />
+  AtlasGlobeCanvas: ({
+    pose,
+    showTissot,
+  }: {
+    pose: { morph: number };
+    showTissot?: boolean;
+  }) => (
+    <canvas
+      data-testid="atlas-globe-canvas-mock"
+      data-morph={pose.morph}
+      data-tissot={showTissot ? "true" : "false"}
+    />
   ),
 }));
 
@@ -30,6 +40,29 @@ describe("ContinentGlobeStage (ARCH-014 capability gate)", () => {
     expect(
       screen.queryByTestId("atlas-globe-canvas-mock")
     ).not.toBeInTheDocument();
+  });
+
+  /**
+   * The indicatrices are the argument this stage exists to make: the home's
+   * module and /jouer/mercator both stand on it, and both are named after the
+   * surface Mercator hides. The engine deleted in ETNI-1360 drew them by
+   * default; the consolidation dropped them on the way across, leaving a globe
+   * that demonstrates nothing about area.
+   */
+  // @req REQ-112
+  it("draws the indicatrices, which is the argument this stage makes", async () => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
+
+    render(<ContinentGlobeStage peopleCountsByCountry={peopleCounts} />);
+
+    await waitFor(() =>
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-tissot",
+        "true"
+      )
+    );
   });
 
   // @req REQ-112
