@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 
-const ALLOWED_METHODS = "GET,POST,OPTIONS";
+// PATCH is here for the moderator transition on /v2/flags/{id} (ETNI-72).
+// This only advertises the verb in the preflight; a route still answers no
+// method it does not export.
+const ALLOWED_METHODS = "GET,POST,PATCH,OPTIONS";
 const ALLOWED_HEADERS = "Content-Type,Authorization";
 
 /**

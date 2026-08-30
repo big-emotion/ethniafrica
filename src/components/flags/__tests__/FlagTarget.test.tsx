@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { FlagTarget } from "../FlagTarget";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { useToast } from "@/hooks/use-toast";
-import { useConsent } from "@/hooks/use-consent";
+import { useOptionalConsent } from "@/hooks/use-consent";
 
 vi.mock("@/lib/supabase/auth-client", () => ({
   createBrowserSupabaseClient: vi.fn(),
@@ -16,16 +16,33 @@ vi.mock("@/hooks/use-toast", () => ({
 }));
 
 vi.mock("@/hooks/use-consent", () => ({
-  useConsent: vi.fn(),
+  useOptionalConsent: vi.fn(),
 }));
 
-vi.mock("@/components/flags/TurnstileWidget", () => ({
-  TurnstileWidget: ({
-    onTokenChange,
+/**
+ * The real gate fetches a challenge and starts a worker; neither belongs in a
+ * suite about what FlagTarget does with a solved proof. It is stood in for by
+ * a button, so the test can say "the browser has finished paying" at the
+ * moment it chooses.
+ */
+vi.mock("@/components/flags/ProofOfWorkGate", () => ({
+  ProofOfWorkGate: ({
+    onSolved,
   }: {
-    onTokenChange: (token: string | null) => void;
+    onSolved: (proof: Record<string, unknown>) => void;
   }) => (
-    <button type="button" onClick={() => onTokenChange("test-turnstile-token")}>
+    <button
+      type="button"
+      onClick={() =>
+        onSolved({
+          salt: "test-salt",
+          nonce: "42",
+          difficultyBits: 8,
+          expiresAt: 4102444800000,
+          signature: "test-signature",
+        })
+      }
+    >
       Valider le contrôle (test)
     </button>
   ),
@@ -82,10 +99,7 @@ const sourceTarget = {
 
 function renderFlagTarget(overrides: Partial<{ target: unknown }> = {}) {
   return render(
-    <FlagTarget
-      target={(overrides.target as never) ?? assertionTarget}
-      turnstileSiteKey="test-site-key"
-    />
+    <FlagTarget target={(overrides.target as never) ?? assertionTarget} />
   );
 }
 
@@ -98,7 +112,7 @@ describe("FlagTarget", () => {
       dismiss: vi.fn(),
       toasts: [],
     } as never);
-    vi.mocked(useConsent).mockReturnValue({
+    vi.mocked(useOptionalConsent).mockReturnValue({
       consentState: {
         hasConsented: true,
         preferences: { essential: true, analytics: true, functional: true },
@@ -130,29 +144,29 @@ describe("FlagTarget", () => {
     ).toBeInTheDocument();
   });
 
-  describe("unauthenticated branch", () => {
+  /**
+   * Reporting used to open on an account check and then an age check, and the
+   * form only appeared to a reader who had cleared both. The sign-up path left
+   * the page; the age confirmation had no screen that could grant it. Both
+   * gates are gone (moderation charter §2): Turnstile is the control, and the
+   * session only decides who the report is credited to.
+   */
+  describe("no gate before the form", () => {
     // @req REQ-012
-    it("shows a sign-in prompt with connexion and inscription links carrying the current URL", async () => {
+    it("opens straight onto the form for a reader with no session", async () => {
       mockSupabaseClient({ session: null });
       renderFlagTarget();
 
       fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
 
-      const signIn = await screen.findByRole("link", { name: /se connecter/i });
-      const signUp = screen.getByRole("link", { name: /créer un compte/i });
-
-      expect(signIn.getAttribute("href")).toMatch(
-        /^\/fr\/compte\/connexion\?redirect=/
-      );
-      expect(signUp.getAttribute("href")).toMatch(
-        /^\/fr\/compte\/inscription\?redirect=/
-      );
+      expect(
+        await screen.findByRole("button", { name: "Envoyer" })
+      ).toBeInTheDocument();
+      expect(screen.queryByRole("link", { name: /se connecter/i })).toBeNull();
     });
-  });
 
-  describe("unconfirmed-age branch", () => {
     // @req REQ-045
-    it("shows the age confirmation prompt with a CTA to the profile page", async () => {
+    it("opens straight onto the form when the account has not confirmed its age", async () => {
       mockSupabaseClient({
         session: { user: { id: "user-1" }, access_token: "token-1" },
         ageConfirmedAt: null,
@@ -162,12 +176,11 @@ describe("FlagTarget", () => {
       fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
 
       expect(
-        await screen.findByText(/confirmer votre âge pour contribuer/i)
+        await screen.findByRole("button", { name: "Envoyer" })
       ).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: /confirmer/i })).toHaveAttribute(
-        "href",
-        "/fr/compte/profil"
-      );
+      expect(
+        screen.queryByText(/confirmer votre âge pour contribuer/i)
+      ).toBeNull();
     });
   });
 
@@ -182,20 +195,20 @@ describe("FlagTarget", () => {
       await screen.findByRole("button", { name: "Envoyer" });
     }
 
+    /**
+     * The slug used to be written to the browser console, and this suite
+     * asserted it. `no-console` does not reach client components, so the
+     * debugging line survived review and shipped. The slug is what the
+     * reporter needs, so it belongs on screen — not in a console nobody opens.
+     */
     // @req REQ-012
-    it("submits successfully, closes the dialog, toasts, logs the slug and fires analytics", async () => {
+    it("submits successfully, closes the dialog, toasts and fires analytics", async () => {
       const user = userEvent.setup();
-      const consoleLogSpy = vi
-        .spyOn(console, "log")
-        .mockImplementation(() => {});
 
       await openAndReachForm();
 
-      await user.click(
-        screen.getByRole("radio", { name: /contenu offensant/i })
-      );
       await user.type(
-        screen.getByLabelText("Raison du signalement"),
+        screen.getByLabelText(/qu.est-ce qui ne va pas/i),
         "Cette explication contient assez de détails pour être examinée."
       );
       await user.click(
@@ -210,15 +223,12 @@ describe("FlagTarget", () => {
       expect(toastMock).toHaveBeenCalledWith(
         expect.objectContaining({ description: "signalement enregistré" })
       );
-      expect(consoleLogSpy).toHaveBeenCalledWith("flag-abc123");
       expect(window.plausible).toHaveBeenCalledWith(
         "flag_submitted",
         expect.objectContaining({
           props: expect.objectContaining({ target_type: "assertion" }),
         })
       );
-
-      consoleLogSpy.mockRestore();
     });
   });
 

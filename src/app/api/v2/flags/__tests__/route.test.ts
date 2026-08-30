@@ -79,7 +79,14 @@ describe("flags API routes", () => {
       target_id: "PPL_YORUBA",
       flag_kind: "inaccurate",
       reason_text: "The published figure needs a newer source.",
-      turnstile_token: "turnstile-token",
+      antibot: {
+        salt: "test-salt",
+        nonce: "42",
+        difficultyBits: 8,
+        expiresAt: 4102444800000,
+        signature: "test-signature",
+      },
+      elapsedMs: 12_000,
     };
     vi.mocked(handleFlagCreate).mockResolvedValue({
       status: 201,
@@ -268,7 +275,7 @@ describe("flags API routes", () => {
     expect(response.status).toBe(204);
     expect(response.headers.get("access-control-allow-origin")).toBeTruthy();
     expect(response.headers.get("access-control-allow-methods")).toBe(
-      "GET,POST,OPTIONS"
+      "GET,POST,PATCH,OPTIONS"
     );
     expect(response.headers.get("access-control-allow-headers")).toContain(
       "Authorization"

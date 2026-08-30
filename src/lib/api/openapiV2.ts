@@ -75,7 +75,7 @@ const options: swaggerJsdoc.Options = {
       {
         name: "API v2 - Flags",
         description:
-          "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
+          "Editorial reports on AFRIK entities. Submission is open — a bearer token is optional and decides attribution only. The control is a proof of work computed in the reader's browser and verified here, so no visitor data reaches a third party (moderation charter §2).",
       },
       {
         name: "API v2 - Reference Library",
@@ -2277,7 +2277,7 @@ const options: swaggerJsdoc.Options = {
             "target_id",
             "flag_kind",
             "reason_text",
-            "turnstile_token",
+            "antibot",
           ],
           properties: {
             target_type: {
@@ -2321,12 +2321,32 @@ const options: swaggerJsdoc.Options = {
               maxLength: 5000,
               example: "Update the population figure using the 2024 census.",
             },
-            turnstile_token: {
-              type: "string",
-              minLength: 1,
+            antibot: {
+              type: "object",
               writeOnly: true,
-              example: "0.ABC123.turnstile-response",
-              description: "Cloudflare Turnstile verification token",
+              required: [
+                "salt",
+                "nonce",
+                "difficultyBits",
+                "expiresAt",
+                "signature",
+              ],
+              description:
+                "A solved proof-of-work challenge, obtained from GET /v2/antibot/challenge. Single-use and short-lived. Nothing in it identifies the caller.",
+              properties: {
+                salt: { type: "string", example: "9f2c1ab4d7e60358" },
+                nonce: { type: "string", example: "418209" },
+                difficultyBits: { type: "integer", example: 20 },
+                expiresAt: { type: "integer", example: 1788080000000 },
+                signature: { type: "string", example: "3b1f…" },
+              },
+            },
+            elapsedMs: {
+              type: "integer",
+              writeOnly: true,
+              example: 18400,
+              description:
+                "Milliseconds the form was open before submission. A submission faster than a person could have written it is refused.",
             },
           },
           example: {
@@ -2341,7 +2361,14 @@ const options: swaggerJsdoc.Options = {
               "National Statistics Office, 2024 census, table 12.",
             proposed_rewrite:
               "Update the population figure using the 2024 census.",
-            turnstile_token: "0.ABC123.turnstile-response",
+            antibot: {
+              salt: "9f2c1ab4d7e60358",
+              nonce: "418209",
+              difficultyBits: 20,
+              expiresAt: 1788080000000,
+              signature: "3b1f…",
+            },
+            elapsedMs: 18400,
           },
         },
         FlagCreated: {
