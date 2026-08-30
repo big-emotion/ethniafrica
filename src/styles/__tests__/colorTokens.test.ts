@@ -513,41 +513,43 @@ describe("home did-you-know chip softens with ink, not opacity", () => {
 });
 
 /**
- * The footer's qualifier — « Atlas des Peuples d'Afrique » — is set in the
- * spectrum the mark itself is drawn in: the red, orange, ochre, green and blue
- * sampled off `public/africa.png`. A brand gradient is the one place a
- * multi-hue ramp is the subject rather than an accident.
+ * The brand lockup — the mark, « EthniAfrica », « Atlas des Peuples d'Afrique »
+ * — appears twice on every page, in the masthead and in the footer, and it gets
+ * **one** colour treatment.
  *
- * It is a token with a night rebinding for the reason `--accent-tint` already
- * cost us once: stops chosen against parchment stay put under `.dark`, where
- * the ground is #1d1710 and every one of them flips from dark-on-light to
- * dark-on-dark. Each stop clears AA on its own ground, so the ramp is
- * readable at both ends rather than only the one it was drawn for.
+ * It got two. The masthead painted the qualifier in `--afh-gradient-brand`;
+ * the footer painted the identical string in `--afh-gradient-spectrum`, a
+ * five-hue ramp read off `public/africa.png` that existed for that one caller.
+ * A reader who meets the same words twice on a page reads two treatments as two
+ * different things, and brand charter §5.3 scopes the gradient to the lockup
+ * precisely so this cannot happen. The spectrum is retired, its single consumer
+ * moved, and the token deleted rather than left declared-and-unconsumed — the
+ * failure `--afh-section-gap` already cost us (charter §7).
  */
-describe("the brand spectrum carries both themes", () => {
-  function spectrumStops(scope: string): string[] {
-    const declaration = scope.match(/--afh-gradient-spectrum:\s*([^;]+);/);
-    if (!declaration) throw new Error("Missing --afh-gradient-spectrum");
-    return declaration[1].match(/hsl\([^)]*\)/g) ?? [];
-  }
-
-  const dayScope = colorCss.slice(0, colorCss.indexOf(".dark,"));
+describe("the brand lockup has one gradient", () => {
+  const indexCss = readFileSync(
+    resolve(process.cwd(), "src/index.css"),
+    "utf8"
+  );
 
   // @req REQ-090
-  it("declares the spectrum on parchment and rebinds it for night", () => {
-    expect(spectrumStops(dayScope).length).toBeGreaterThanOrEqual(4);
-    expect(spectrumStops(nightScopeOf(colorCss)).length).toBeGreaterThanOrEqual(
-      4
+  it("paints the footer qualifier in the gradient the masthead uses", () => {
+    const tagline = indexCss.match(
+      /\.afh-brand-tagline\s*\{[^}]*background:\s*var\(([^)]+)\)/
     );
+
+    expect(tagline?.[1]).toBe("--gradient-warm");
   });
 
+  /**
+   * The declaration, not the name: both files still say why the ramp went, and
+   * a retirement note that cannot mention what it retired is worthless.
+   */
   // @req REQ-090
-  it("keeps every parchment stop darker than every night stop", () => {
-    const lightness = (stop: string): number =>
-      Number.parseFloat(stop.match(/([\d.]+)%\s*\)/)![1]);
-
-    expect(Math.max(...spectrumStops(dayScope).map(lightness))).toBeLessThan(
-      Math.min(...spectrumStops(nightScopeOf(colorCss)).map(lightness))
+  it("leaves no retired spectrum ramp behind in either theme", () => {
+    expect(colorCss).not.toMatch(/--afh-gradient-spectrum\s*:/);
+    expect(indexCss).not.toMatch(
+      /var\(--afh-gradient-spectrum\)|\.afh-brand-spectrum/
     );
   });
 

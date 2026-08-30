@@ -344,22 +344,12 @@
      every headline that wants an accented word. */
   --afh-display-accent: var(--afh-cat-ocre-ink);
 
-  /* The mark's own palette, read back off `public/africa.png`: red, orange,
-     ochre, green, blue. Reserved for the brand qualifier — a multi-hue ramp
-     anywhere else in the atlas would compete with the cartographic encodings,
-     which is exactly the noise the charter spends its accent scope avoiding.
-
-     The stops are darkened from the mark's fills because the mark is a shape
-     and this is text: each one clears 4.5:1 on --afh-color-bg-warm, the ground
-     the footer sits on, rather than only reading as "the logo colours". */
-  --afh-gradient-spectrum: linear-gradient(
-    100deg,
-    hsl(0 72% 42%),
-    hsl(16 80% 39%),
-    hsl(38 90% 30%),
-    hsl(146 60% 26%),
-    hsl(216 58% 40%)
-  );
+  /* Retired: --afh-gradient-spectrum, a five-hue ramp read off
+     `public/africa.png` and reserved for the footer's brand qualifier. The
+     qualifier now takes --afh-gradient-brand, the gradient the masthead sets
+     the identical string in, so the ramp had exactly zero consumers left.
+     Declared-and-unconsumed is the failure --afh-section-gap already cost us
+     (brand charter §7); a dead token is deleted, not kept warm. */
 }
 
 /* ─── Night theme (REQ-115) ───────────────────────────────────────
@@ -403,18 +393,6 @@
   --accent-foreground: #1a1208;
 
   --afh-display-accent: var(--afh-night-ocre-soft);
-
-  /* Same five hues, lifted off the night ground instead of pressed into
-     parchment. Rebinding is not optional here: the day stops sit between 26%
-     and 42% lightness, which on #1d1710 is dark ink on a dark surface. */
-  --afh-gradient-spectrum: linear-gradient(
-    100deg,
-    hsl(0 78% 68%),
-    hsl(18 82% 64%),
-    hsl(40 82% 60%),
-    hsl(146 45% 56%),
-    hsl(214 62% 68%)
-  );
 
   /* Rebinding the tokens is not enough on its own: `color` is resolved
      once on body and then inherited, so text with no colour of its own
