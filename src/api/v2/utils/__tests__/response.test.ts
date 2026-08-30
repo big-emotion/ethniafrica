@@ -7,6 +7,7 @@ import {
 } from "../response";
 
 describe("createApiResponse", () => {
+  // @req REQ-084
   it("returns the canonical Module #0 envelope shape", () => {
     const envelope = createApiResponse({ id: "PPL_SHONA" });
 

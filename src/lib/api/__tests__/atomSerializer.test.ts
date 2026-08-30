@@ -28,6 +28,7 @@ const ITEMS: FeedRevisionItem[] = [
 ];
 
 describe("buildAtomFeed", () => {
+  // @req REQ-084
   it("produces valid XML with the Atom namespace declaration", () => {
     const xml = buildAtomFeed(ITEMS, {
       baseUrl: BASE_URL,

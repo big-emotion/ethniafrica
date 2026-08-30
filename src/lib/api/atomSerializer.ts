@@ -28,6 +28,7 @@ export interface AtomFeedOptions {
   updated: string;
 }
 
+// @req REQ-084
 export function buildAtomFeed(
   items: FeedRevisionItem[],
   options: AtomFeedOptions

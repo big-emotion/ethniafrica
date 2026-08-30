@@ -10,6 +10,7 @@ import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
  * All v2 responses surface a Creative-Commons attribution per architecture
  * decision D3 (license CC-BY-SA-4.0).
  */
+// @req REQ-019
 export const API_LICENSE = "CC-BY-SA-4.0";
 
 /**
@@ -20,6 +21,7 @@ export const API_LICENSE = "CC-BY-SA-4.0";
  * only place a name is stated, and this is the furthest-travelling consumer of
  * that rule.
  */
+// @req REQ-019
 export const API_ATTRIBUTION = `${PRODUCT_NAME} — ${CANONICAL_DOMAIN}`;
 
 /**
@@ -61,6 +63,7 @@ interface CreateApiResponseOptions {
  * Always carries `license` and `attribution` (AR8). Optionally embeds
  * pagination, confidence score, and pinned-version URL.
  */
+// @req REQ-084
 export function createApiResponse<T>(
   data: T,
   options: CreateApiResponseOptions = {}
@@ -90,6 +93,7 @@ export function createApiResponse<T>(
  * taxonomy entries. `meta` still carries license + attribution so consumers
  * can rely on the envelope shape regardless of status code.
  */
+// @req REQ-084
 export function createApiError(
   errors: ApiError | ApiError[]
 ): ApiEnvelope<null> {
@@ -108,6 +112,7 @@ export function createApiError(
  * Create a paginated API response (legacy v2 envelope, kept for backward
  * compatibility with peoples/countries/language-families endpoints).
  */
+// @req REQ-084
 export function createPaginatedResponse<T>(
   data: T[],
   total: number,
@@ -132,6 +137,7 @@ export function createPaginatedResponse<T>(
 /**
  * Create a single item API response (legacy v2 envelope).
  */
+// @req REQ-084
 export function createResponse<T>(data: T): ApiResponse<T> {
   return {
     data,

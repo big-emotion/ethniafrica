@@ -11,6 +11,7 @@
  * Anything here is prose a reader only meets by navigating to a legal page.
  * Nothing else belongs in this file.
  */
+// @req REQ-088
 export const legalPages = {
   legalNotice: {
     eyebrow: "Informations essentielles",
