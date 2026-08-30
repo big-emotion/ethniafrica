@@ -118,9 +118,6 @@ describe("familyDataTransformer", () => {
         whyProblematic: null,
         selfAppellation: null,
         contemporaryUsage: null,
-        geographicArea: null,
-        numberOfLanguages: null,
-        totalSpeakers: null,
       },
       generalInfo: {
         branches: [],

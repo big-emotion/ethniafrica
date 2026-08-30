@@ -27,7 +27,7 @@ const KNOWN_CHARTER_CONTRACT_FILES = [
   "src/lib/hubs/__tests__/directoryAccentCharter.test.ts",
   "src/components/forms/__tests__/formsCharter.test.tsx",
   "src/components/__tests__/searchCharter.test.tsx",
-  "src/components/fiche/__tests__/FichePanel.test.tsx",
+  "src/components/fiche/__tests__/FicheSequence.test.tsx",
   "src/components/pages/__tests__/editorialCharter.test.tsx",
   "scripts/__tests__/qualityGateRoutes.test.ts",
 ] as const;
