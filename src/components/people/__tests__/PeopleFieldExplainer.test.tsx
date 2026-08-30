@@ -26,12 +26,15 @@ describe("PeopleFieldExplainer (REQ-116)", () => {
     expect(screen.getByText(/2 populations par pays/)).toBeInTheDocument();
   });
 
+  // The legend keys the gradient; it no longer repeats the roll of countries,
+  // which « Répartition géographique » prints with the share, the note, the
+  // link and the source line.
   // @req REQ-116
   it("carries the legend, so the gradient can be read rather than guessed", () => {
     render(<PeopleFieldExplainer distribution={distribution} />);
 
     expect(screen.getByText(/bord nul/i)).toBeInTheDocument();
-    expect(screen.getAllByRole("listitem")).toHaveLength(2);
+    expect(screen.queryByRole("listitem")).not.toBeInTheDocument();
   });
 
   // @req REQ-119

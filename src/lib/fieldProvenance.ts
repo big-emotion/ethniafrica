@@ -10,12 +10,30 @@
  * gap by skipping the model check.
  */
 
-import { isPresent } from "@/lib/fichePanels";
 import modeleLinguistique from "../../public/modele-linguistique.json";
 import modelePeuple from "../../public/modele-peuple.json";
 import modelePays from "../../public/modele-pays.json";
 
 export type ProvenanceState = "declared" | "derived" | "missing";
+
+/**
+ * True when a value — or any leaf nested inside it — carries actual content.
+ *
+ * An empty string, an empty array, an object whose every leaf is empty: all
+ * absent. It lived in the panel composer, which gated a chapter on it; the
+ * composer is retired and provenance is the only caller left, which is where
+ * it always belonged — "is this field filled" is the provenance question.
+ */
+// @req REQ-119
+export function isPresent(value: unknown): boolean {
+  if (value === null || value === undefined) return false;
+  if (Array.isArray(value)) return value.some(isPresent);
+  if (typeof value === "string") return value.trim().length > 0;
+  if (typeof value === "object") {
+    return Object.values(value as Record<string, unknown>).some(isPresent);
+  }
+  return true;
+}
 
 export interface FieldProvenance {
   state: ProvenanceState;

@@ -1,24 +1,21 @@
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryDistribution } from "@/types/afrik";
 
-const populationFr = new Intl.NumberFormat("fr-FR");
-
-interface LegendRow {
-  countryId: string;
-  label: string;
-  population: number;
-  drawn: boolean;
-}
-
 /**
- * The key to the field, and the fiche's full roll of declared presences.
+ * The key to the field, and what the field leaves out.
  *
- * It resolves what is drawable through `getAdmin0NameFr` — the same resolver
- * the globe draws with — so the list and the map cannot end up disagreeing
- * about which countries exist. A presence outside the atlas's Africa scope is
- * listed and marked "hors carte" rather than omitted: 38 of them sit across 24
- * fiches, and dropping them would make the fiche's own count of countries
- * disagree with what the reader can see.
+ * It used to print the fiche's whole roll of declared presences — every
+ * country, with its population. That is the same field, in full, that
+ * "Répartition géographique" prints further down, where each country also
+ * carries its share, the fiche's own note on where inside it the people are,
+ * a link to the country and the source line. Two rolls of the same list, and
+ * the shorter one won by being nearer the map.
+ *
+ * What only the map's own key can say is what the map does not draw. 38
+ * declared presences across 24 fiches sit outside the atlas's Africa scope;
+ * naming them here is what keeps the fiche's count of countries from
+ * disagreeing with what the reader can see. `getAdmin0NameFr` is the resolver
+ * the globe draws with, so the two cannot fall out of step.
  */
 // @req REQ-116
 export function PeopleFieldLegend({
@@ -28,25 +25,9 @@ export function PeopleFieldLegend({
 }) {
   if (!distribution || distribution.length === 0) return null;
 
-  const rows: LegendRow[] = distribution
-    .map((entry) => {
-      const nameFr = getAdmin0NameFr(entry.country);
-      return {
-        countryId: entry.country,
-        // An off-map country has no French name in the asset, so its ISO code
-        // is all there is — and showing that beats showing nothing.
-        label: nameFr ?? entry.country,
-        population: entry.population ?? 0,
-        drawn: Boolean(nameFr),
-      };
-    })
-    // Drawable first, then by population: the reader scans what is on the map
-    // before what is only in the record.
-    .sort((a, b) =>
-      a.drawn === b.drawn
-        ? b.population - a.population
-        : Number(b.drawn) - Number(a.drawn)
-    );
+  const offMap = distribution
+    .filter((entry) => !getAdmin0NameFr(entry.country))
+    .map((entry) => entry.country);
 
   return (
     <div className="flex flex-col gap-afh-xs">
@@ -60,25 +41,17 @@ export function PeopleFieldLegend({
         />
         Densité décroissante, bord nul
       </p>
-      <ul className="flex flex-col gap-afh-xs text-afh-small text-afh-text-soft">
-        {rows.map((row) => (
-          <li
-            key={row.countryId}
-            data-legend-drawn={row.drawn ? "true" : "false"}
-            className="flex flex-wrap items-baseline gap-afh-xs"
-          >
-            <span>{row.label}</span>
-            <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
-              {populationFr.format(row.population)}
-            </span>
-            {!row.drawn && (
-              <span className="text-afh-caption uppercase tracking-wide">
-                hors carte
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
+      {offMap.length > 0 && (
+        <p
+          data-testid="people-field-off-map"
+          className="text-afh-small text-afh-text-soft"
+        >
+          {offMap.length === 1
+            ? "Une présence déclarée est hors carte, l'atlas ne couvrant que l'Afrique :"
+            : `${offMap.length} présences déclarées sont hors carte, l'atlas ne couvrant que l'Afrique :`}{" "}
+          {offMap.join(", ")}.
+        </p>
+      )}
     </div>
   );
 }

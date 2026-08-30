@@ -16,7 +16,6 @@ vi.mock("@/hooks/use-consent", () => ({
   }),
 }));
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
-import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import type { LanguageFamily } from "@/types/afrik";
 import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
@@ -78,8 +77,8 @@ describe("LanguageFamilyDetailViewV2", () => {
     expect(
       screen.getByText("Désignation linguistique contemporaine.")
     ).toBeTruthy();
-    // The branch names are presented by TonguePanel, above The Record, which
-    // is where the route feeds them; The Record states how many there are.
+    // The branch names are the classification tree's, which the route feeds
+    // into the parchment; the stat card states how many there are.
     expect(screen.getByTestId("stat-card-branches")).toHaveTextContent("1");
     expect(screen.getByText("Shona")).toBeTruthy();
     expect(screen.getByText("Langues agglutinantes")).toBeTruthy();
@@ -221,9 +220,6 @@ describe("LanguageFamilyDetailViewV2", () => {
           whyProblematic: null,
           selfAppellation: "Bantu",
           contemporaryUsage: null,
-          geographicArea: null,
-          numberOfLanguages: null,
-          totalSpeakers: null,
         }}
         selfAppellationLang="sw"
       />
@@ -238,35 +234,102 @@ describe("LanguageFamilyDetailViewV2", () => {
     );
   });
 
+  // The header printed nameFr, nameEn and the historical appellations as three
+  // bare paragraphs, one after another, with nothing saying which was which —
+  // three names stacked, and a reader had to guess. They are the subject of
+  // this section, so they are labelled like every other field in it.
   // @req REQ-047
-  it("surfaces confidence and contested-classification affordances in the hero", () => {
+  it("labels the names it prints instead of stacking them bare", () => {
     render(
-      <FamilyHero
+      <FamilyDecolonialHeader
         data={{
-          id: "FLG_BANTU",
-          nameFr: "Famille bantoue",
+          linkWithFamily: null,
+          nameFr: "Bantou",
           nameEn: null,
-          classificationStatus: "contested",
+          historicalAppellations: ["Cafres", "Bantous"],
+          originOfHistoricalTerm: null,
+          whyProblematic: null,
+          selfAppellation: null,
+          contemporaryUsage: null,
         }}
       />
     );
 
-    expect(screen.getByText("voir les sources")).toHaveAttribute(
-      "href",
-      "#sources"
-    );
-    expect(screen.getByRole("link", { name: /contesté/i })).toHaveAttribute(
-      "href",
-      `${getLocalizedRoute("fr", "doctrine")}#contested`
-    );
-    expect(
-      screen.getAllByRole("link", { name: "Lire la doctrine" })[0]
-    ).toHaveAttribute(
-      "href",
-      `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`
-    );
+    expect(screen.getByText(/Nom français/)).toBeTruthy();
+    expect(screen.getByText(/Appellations historiques/)).toBeTruthy();
+    expect(screen.getByText(/Cafres · Bantous/)).toBeTruthy();
   });
 
+  // `nameEn` here is the very field the title band above the globe already
+  // states, labelled — the band reads `hero.nameEn ?? decolonialHeader.nameEn`,
+  // so whenever this one renders at all it is the same string a second time.
+  // @req REQ-047
+  it("leaves the English name to the title band that already labels it", () => {
+    render(
+      <FamilyDecolonialHeader
+        data={{
+          linkWithFamily: null,
+          nameFr: null,
+          nameEn: "Bantu languages",
+          historicalAppellations: [],
+          originOfHistoricalTerm: null,
+          whyProblematic: null,
+          selfAppellation: null,
+          contemporaryUsage: null,
+        }}
+      />
+    );
+
+    expect(screen.queryByText("Bantu languages")).toBeNull();
+  });
+
+  // The parchment gives this field a section of its own — "D'où vient le nom
+  // de la famille" — and the header listed it again as a labelled line. That
+  // was the open half of the mockup's arbitrage on this section: it isolated
+  // the field without deciding what became of the header around it. The
+  // titled section wins; it is the one a reader can navigate to.
+  // @req REQ-047
+  it("leaves the origin of the historical term to the section built around it", () => {
+    render(
+      <FamilyDecolonialHeader
+        data={{
+          linkWithFamily: null,
+          nameFr: null,
+          nameEn: null,
+          historicalAppellations: [],
+          originOfHistoricalTerm: "Forgé par Wilhelm Bleek en 1862.",
+          whyProblematic: null,
+          selfAppellation: null,
+          contemporaryUsage: null,
+        }}
+      />
+    );
+
+    expect(screen.queryByText(/Wilhelm Bleek/)).toBeNull();
+  });
+
+  // With every field it still prints empty, the section is a heading over
+  // nothing. `originOfHistoricalTerm` no longer counts towards its content,
+  // or it would open an empty section for a field it does not render.
+  // @req REQ-047
+  it("renders nothing when the only field left is one it no longer prints", () => {
+    const { container } = render(
+      <FamilyDecolonialHeader
+        data={{
+          linkWithFamily: null,
+          nameFr: null,
+          nameEn: "Bantu languages",
+          historicalAppellations: [],
+          originOfHistoricalTerm: "Forgé par Wilhelm Bleek en 1862.",
+          whyProblematic: null,
+          selfAppellation: null,
+          contemporaryUsage: null,
+        }}
+      />
+    );
+
+    expect(container.firstChild).toBeNull();
+  });
   // @req REQ-050
   it("anchors source affordances and deep-links each country distribution", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);

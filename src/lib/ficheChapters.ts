@@ -18,6 +18,18 @@
 // @req REQ-091
 export const FICHE_CHAPTER_ATTRIBUTE = "data-fiche-section";
 
+/**
+ * The anchor the fiche's dossier stands under.
+ *
+ * A published address, not an implementation detail: the globe's facts panel
+ * links a country back to the dossier through it, and deep links from
+ * elsewhere in the app point at it. It was derived from a panel kind while the
+ * chapter engine existed; with the dossier the only thing a fiche composes, it
+ * is simply the name of that section.
+ */
+// @req REQ-091
+export const FICHE_RECORD_ANCHOR = "fiche-record";
+
 export interface FicheChapter {
   /** The anchor a rail entry links to — the element's own `id`. */
   id: string;

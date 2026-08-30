@@ -240,13 +240,17 @@ describe("/[lang]/familles/[slug] page", () => {
   });
 
   describe("live fiche", () => {
-    // One globe, one parchment: the fiche's reading opens directly under the
-    // band, and the remaining chapters follow it instead of preceding it.
+    // One globe, one parchment. The two chapters that used to trail the
+    // parchment both restated it — the scale figure is the languages count the
+    // head chip prints, the tongue chapter the classification tree the
+    // parchment renders below — and they fell *after* the parchment's own
+    // Sources footer, which told a reader the document had ended one chapter
+    // early.
     // @req REQ-091
-    it("opens the record under the globe, ahead of the remaining chapters", async () => {
+    it("opens the record under the globe, and closes the fiche on it", async () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
+      expect(panelAnchors(container)).toEqual(["fiche-record"]);
       expect(
         container
           .querySelector("#fiche-record")
