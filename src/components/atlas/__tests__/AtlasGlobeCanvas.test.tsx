@@ -64,7 +64,6 @@ const continentOverlay: ContinentFieldOverlay = {
       countryId: "NGA",
       center: { lon: 8, lat: 9 },
       documentedPeopleCount: 40,
-      documentedPeopleShare: 1,
     },
   ],
 };
@@ -386,15 +385,22 @@ describe("AtlasGlobeCanvas", () => {
    * The continent frame locates, it never measures: its fillOpacity is 0, and
    * skipping the fill pass outright is what makes a per-country area
    * physically impossible to paint rather than merely invisible.
+   *
+   * GL_POINTS is the field, and it is asserted absent for the same reason the
+   * fill is. The field is the people fiche's encoding; borrowed here it put a
+   * glow on twelve countries against a quantity the hub never named. The two
+   * renderers have drifted apart before — focus dimming shipped in the SVG
+   * path and not in this one — so the rule is asserted in both.
    */
   // @req REQ-116
-  it("strokes the continent frame without ever issuing a filled area", () => {
+  it("strokes the continent frame without ever issuing a filled area or a field", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={continentOverlay} pose={IDLE_POSE} />);
 
     const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
     expect(modes).toContain(fakeGl.LINE_LOOP);
     expect(modes).not.toContain(fakeGl.TRIANGLES);
+    expect(modes).not.toContain(fakeGl.POINTS);
   });
 
   // @req REQ-116

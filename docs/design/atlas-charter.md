@@ -25,14 +25,30 @@ allowed to claim.
 simplification, not "just for the hover state", not in the non-WebGL fallback.
 If a future feature needs a people-shaped polygon, it needs a source first.
 
-**A mark is not an encoding.** The three rows above are what the _data_ claims.
-A mark pinned on the stage claims something else entirely — "this country
-opens" — and that is the whole of what it may say. It never states how much the
-corpus holds there: that is the radial field's job, and the field is sized from
-the data while a mark is not.
+**An encoding is owned by the entity it describes.** The three rows above bind
+a mark's shape to what the _data_ claims, and an encoding borrowed by a scene
+that describes something else stops being readable. The radial field is the
+_people_ encoding: it earns its feathered edge on a people fiche, where the
+quantity is a declared distribution and `PeopleFieldLegend` names it.
+
+So **the continent scene draws no radial field.** It carried one — twelve
+halos ranking the best-documented countries — and the quantity behind the glow
+was fiches counted in the corpus, which no legend on the hub ever named. A
+reader met twelve luminous zones over an unlabelled continent with no way to
+learn they meant "well documented" rather than "densely populated" or "where
+these peoples live", and read the map as asserting the one thing it was not
+saying. The count now reaches the reader as a sentence in the panel, where it
+can say what it counts. The hub locates; the fiche measures. Contract:
+`src/components/atlas/__tests__/continentFieldCharter.test.tsx`, asserted in
+both renderers — the SVG path draws no `<circle>`, the WebGL path issues no
+`GL_POINTS` — because the two have drifted apart before.
+
+**A mark is not an encoding.** A mark pinned on the stage claims one thing —
+"this country opens" — and that is the whole of what it may say. It never
+states how much the corpus holds there.
 
 So **every mark on one scene has one shape**. The continent stage used to pin a
-bordered 22 px button on the twelve countries the field ranks and a 7 px dot on
+bordered 22 px button on the twelve countries the field ranked and a 7 px dot on
 the other forty-two, which made the twelve read as a different _kind_ of thing
 rather than as the same offer, better documented. The corpus declares no such
 hierarchy — all fifty-four open the same fiche the same way — and a reader has
@@ -47,8 +63,9 @@ sends the reader hunting for a target the scene never drew. Contract:
 
 **Where the surfaces come from.** Country and family outlines are Natural Earth
 admin-0 110 m — public, versioned, checkable. A people's field is _computed_
-from `content.demography.distributionByCountry`; nobody draws the blob by hand,
-which is exactly what makes it citable. A family's footprint is the union of
+from `content.demography.distributionByCountry` — on a people fiche, the one
+scene that draws it; nobody draws the blob by hand, which is exactly what makes
+it citable. A family's footprint is the union of
 `currentCountries` over the peoples carrying that `languageFamilyId`.
 
 ---

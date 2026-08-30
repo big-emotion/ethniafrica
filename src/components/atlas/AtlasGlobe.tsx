@@ -341,11 +341,17 @@ function AtlasGlobeFallback({
   }
 
   /**
-   * The continent scene: a geographic frame that locates, and radial fields
-   * that measure. `fill="none"` on every ring is the invariant — a filled
-   * country would encode the peoples counted inside it as a closed-border
-   * area, which is exactly what atlas-charter §1 forbids for a people. The
-   * areas carry no rings at all, so nothing here can outline one.
+   * The continent scene: a geographic frame that locates, and nothing that
+   * measures. `fill="none"` on every ring is the invariant — a filled country
+   * would encode the peoples counted inside it as a closed-border area, which
+   * is exactly what atlas-charter §1 forbids for a people. The areas carry no
+   * rings at all, so nothing here can outline one.
+   *
+   * The frame used to sit under twelve radial fields ranking the countries by
+   * documented fiches. The glow was legible and the quantity was not: nothing
+   * on the hub named it, so the brightest zones read as population, or as
+   * where the peoples live. The field is the people fiche's encoding, where a
+   * legend discharges it; here the areas survive only as targets.
    */
   if (overlay.kind === "continent-field") {
     return (
@@ -353,7 +359,6 @@ function AtlasGlobeFallback({
         figureTransform={figureTransform}
         style={FALLBACK_BASEMAP_STYLE}
       >
-        <PeopleFieldDefs />
         {overlay.frame.flatMap((country) =>
           country.rings.map((ring, index) => (
             <polygon
@@ -366,14 +371,6 @@ function AtlasGlobeFallback({
             />
           ))
         )}
-        <PeopleFieldCircles
-          blobs={overlay.areas.map((area) => ({
-            countryId: area.countryId,
-            center: area.center,
-            weight: area.documentedPeopleShare,
-          }))}
-          chosenCountryId={chosenCountryId}
-        />
       </AfricaBasemap>
     );
   }
