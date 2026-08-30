@@ -13,17 +13,18 @@ const { footer } = getTranslation("fr");
 /**
  * The footer was one wrapping flex row holding three unrelated groups, so
  * what a reader saw depended entirely on the window: at one width the
- * copyright sat between two links, at another it led the line. Three declared
- * rows say the same thing at every width — what the site offers, who owns it,
- * who built it — in that order.
+ * copyright sat between two links, at another it led the line. Declared rows
+ * say the same thing at every width — what the site offers, who owns it, who
+ * built it — in that order. Ownership and credit now share the last one, but
+ * the order they read in is the invariant, not the row count.
  *
  * All of it was set at `--afh-text-caption`, the 13px role the charter
  * reserves for figure captions and source lines. A whole landmark at caption
  * size is a landmark the reader is being told not to read.
  */
-describe("the footer — three rows, and a size worth reading (REQ-046)", () => {
+describe("the footer — declared rows, and a size worth reading (REQ-046)", () => {
   // @req REQ-046
-  it("gives the links, the ownership and the credit a row each", () => {
+  it("keeps the links, the ownership and the credit each addressable", () => {
     render(<SiteFooter language="fr" />);
 
     expect(screen.getByTestId("footer-links")).toBeInTheDocument();
