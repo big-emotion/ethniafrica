@@ -1,5 +1,5 @@
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
-import { sectionIdForPanel } from "@/components/fiche/panelRegistry";
+import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import { inCountry } from "@/lib/atlas/countryPreposition";
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryId, GlobalDemographySection } from "@/types/afrik";
@@ -116,7 +116,7 @@ export function buildPeoplePresenceFacts({
               a reader who came for this country should land on the prose, not
               back on the globe they just left. */}
           <a
-            href={`#${sectionIdForPanel("record")}`}
+            href={`#${FICHE_RECORD_ANCHOR}`}
             className="underline underline-offset-2"
           >
             Lire la fiche complète →

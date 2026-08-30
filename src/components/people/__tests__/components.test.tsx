@@ -311,7 +311,13 @@ describe("PeopleCountriesSection", () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders totalPopulationFormatted", () => {
+  // The section opened on the same figure the fiche head states above the
+  // globe — "45M personnes · réf. 2025" there, "45M habitants · 2025" here,
+  // set in the display face so it read as a second headline for the same
+  // fact. The head is where a fiche states its scale; the rows below carry
+  // their own populations.
+  // @req REQ-115
+  it("leaves the headline population to the fiche head", () => {
     const data: PeopleCountriesData = {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
@@ -326,7 +332,8 @@ describe("PeopleCountriesSection", () => {
       ],
     };
     render(<PeopleCountriesSection data={data} />);
-    expect(screen.getByText("45M")).toBeTruthy();
+    expect(screen.queryByText("45M")).toBeNull();
+    expect(screen.queryByText(/habitants/)).toBeNull();
   });
 
   it("renders country distribution rows", () => {
@@ -355,14 +362,43 @@ describe("PeopleCountriesSection", () => {
     expect(screen.getByText("7%")).toBeTruthy();
   });
 
-  it("renders referenceYear when provided", () => {
+  // The roll moved here from the field legend beside the globe, and it must
+  // arrive with what the legend was carrying: the country's French name, and
+  // the mark on a presence the atlas's Africa scope cannot draw. A row that
+  // printed only "USA" would state the presence and hide that the map omits
+  // it, which is how the fiche's own country count comes to disagree with
+  // what the reader sees.
+  // @req REQ-115
+  it("names each country, and marks the ones the map cannot draw", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 45000000,
+      totalPopulationFormatted: "45M",
+      distributions: [
+        { country: "NGA", percentage: 89 },
+        { country: "USA", percentage: 3 },
+      ],
+    };
+    const { container } = render(<PeopleCountriesSection data={data} />);
+
+    expect(screen.getByText("Nigeria")).toBeTruthy();
+
+    const offMap = container.querySelector('[data-off-map="true"]');
+    expect(offMap?.textContent).toContain("USA");
+    expect(offMap?.textContent).toMatch(/hors carte/i);
+    expect(container.querySelectorAll('[data-off-map="true"]')).toHaveLength(1);
+  });
+
+  // @req REQ-115
+  it("renders referenceYear on the source line rather than as a headline", () => {
     const data: PeopleCountriesData = {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
       referenceYear: 2025,
+      source: "UNFPA",
       distributions: [{ country: "NGA", percentage: 89 }],
     };
     render(<PeopleCountriesSection data={data} />);
+    expect(screen.getByText(/UNFPA/)).toBeTruthy();
     expect(screen.getByText(/2025/)).toBeTruthy();
   });
 });

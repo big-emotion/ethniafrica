@@ -54,8 +54,11 @@ export const CHARTER_CONTRACT_EXTRA_FILES = [
   "src/components/home/__tests__/DottedContinent.test.tsx",
   // Charter V2 search overlay restyle (ETNI-802 · FR107).
   "src/components/__tests__/SearchModalV2.test.tsx",
-  // Asserts --accent/--accent-tint charter token wiring per entity type.
-  "src/components/fiche/__tests__/FichePanel.test.tsx",
+  // Asserts the per-entity --accent/--accent-tint scope (charter §2) and that
+  // the scoped fiche shell emits no colour literal. Was FichePanel.test.tsx,
+  // beside a panel the chapter engine's retirement removed; the contract
+  // outlived the component and moved to whatever carries the scope class.
+  "src/components/fiche/__tests__/FicheSequence.test.tsx",
   // Cross-family route matrix contract (ETNI-979/980/981 · FR110).
   "scripts/__tests__/qualityGateRoutes.test.ts",
   // Shared search result card: entity accent scope and the link contract that

@@ -1,10 +1,12 @@
 /**
- * One fiche per entity type, shared by the panel-registry and the sequence
- * suites so both assert the resolution matrix against the same corpus shape.
+ * One fiche per entity type, richly filled, shared by the route suites so they
+ * assert against the same corpus shape rather than each inventing its own.
  *
- * Each payload carries every section `derivePanelSequence` gates on, so the
- * composer yields the entity's full inventory and the suites can isolate what
- * the registry itself drops.
+ * Each payload carries every editorial section its entity's strict model
+ * declares. That was originally so the retired panel composer would yield an
+ * entity's full chapter inventory; it is still the right shape, because a
+ * fiche rendered from a payload with holes in it proves nothing about the
+ * fiche rendered from a real one.
  */
 
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";

@@ -31,13 +31,6 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * being able to.
  */
 
-/**
- * The corpus states no per-country reference year — the shares in every fiche
- * are read against the same one, so it belongs to the atlas rather than to the
- * country. Printing it in the eyebrow is what dates the figures below.
- */
-const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
-
 export interface CountryParchmentProps {
   data: CountryPageData;
   /**

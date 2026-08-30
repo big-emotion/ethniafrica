@@ -118,14 +118,13 @@ vi.mock("@/components/source-transparency/PinnedVersionBanner", () => ({
 }));
 
 import PaysSlugPage from "../[slug]/page";
-import { derivePanelSequence } from "@/lib/fichePanels";
-import { mapCountryDetail } from "@/lib/afrikDetailMapper";
+import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 /**
- * A country row carrying every content section `derivePanelSequence` gates on,
- * so the composer yields the full country inventory and the assertions below
- * isolate what the panel registry itself declines to render.
+ * A country row carrying every editorial section the strict country model
+ * declares, so the assertions below run against the fiche a full corpus
+ * produces rather than one with holes in it.
  */
 const NIGERIA_ROW = {
   id: "NGA",
@@ -392,25 +391,17 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     );
   });
 
-  // The composer used to ask for chapters the registry then declined, which
-  // left the fiche's shape depending on two rules agreeing. It asks for one
-  // chapter now, so there is nothing left to decline.
+  // The fiche used to compose chapters around its dossier from a table of
+  // eight kinds. There is one section now, whatever the corpus carries.
   // @req REQ-091
-  it("asks for the dossier and nothing else", async () => {
+  it("renders the dossier and nothing else", async () => {
     const { container } = await renderPage("NGA");
 
     expect(
-      derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW))
-    ).toEqual(["record"]);
-    for (const kind of [
-      "identity",
-      "scale",
-      "territory",
-      "fragmentation",
-      "voices",
-    ] as const) {
-      expect(container.querySelector(`#fiche-${kind}`)).toBeNull();
-    }
+      Array.from(container.querySelectorAll("section[id^='fiche-']")).map(
+        (section) => section.id
+      )
+    ).toEqual([FICHE_RECORD_ANCHOR]);
   });
 
   // @req REQ-019

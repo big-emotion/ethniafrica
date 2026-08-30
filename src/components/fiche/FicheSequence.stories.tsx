@@ -5,14 +5,6 @@ import {
   FICHE_A11Y_PARAMETERS,
   atFicheBreakpoint,
 } from "@/components/fiche/ficheStoryViewports";
-import type { FichePanelContext } from "@/components/fiche/panelRegistry";
-import {
-  RELATIONS,
-  YORUBA,
-  YORUBA_DISTRIBUTIONS,
-  YORUBA_FRAGMENTATION,
-  YORUBA_NAMES_DOSSIER,
-} from "@/components/fiche/__tests__/ficheContextFixtures";
 
 const meta = {
   title: "Fiche/FicheSequence",
@@ -25,36 +17,45 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * `hasOralNarratives` stays absent so the sequence resolves without the client
- * fetch VoicesPanel would fire; the voices chapter is proofed on its own in
- * VoicesPanel.stories.tsx, and its absence here is the FR98 gate doing its job.
+ * The shell, with stand-ins for the two things a route hands it.
+ *
+ * The globe and the parchment are proofed where they live — a story here that
+ * mounted a real AtlasGlobe would be proofing WebGL, and one that mounted a
+ * real parchment would duplicate the three fiche stories. What this story is
+ * for is the shell's own decisions: the accent scope, the measured head band
+ * against the two full-bleed slots, and the order head → globe → rail →
+ * dossier at each of the three fiche breakpoints.
  */
-const yorubaContext: FichePanelContext = {
-  entityType: "people",
-  payload: YORUBA,
-  namesDossier: YORUBA_NAMES_DOSSIER,
-  distributions: YORUBA_DISTRIBUTIONS,
-  fragmentation: YORUBA_FRAGMENTATION,
-  relations: RELATIONS,
-};
-
-const peopleSequence: Story = {
+const peopleFiche: Story = {
   args: {
-    context: yorubaContext,
+    entityType: "people",
+    title: (
+      <h1 className="font-afh-display text-afh-h1 font-black text-afh-text">
+        Yoruba
+      </h1>
+    ),
+    globe: (
+      <div className="grid h-[320px] w-full place-items-center bg-afh-bg-warm text-afh-text-soft">
+        Bande atlas
+      </div>
+    ),
     record: (
-      <div className="mt-afh-md flex flex-col gap-afh-sm">
+      <div className="mt-afh-md flex flex-col gap-afh-sm px-4">
         <h2 className="font-afh-display text-afh-h3 font-black text-afh-text">
           Dossier AFRIK
         </h2>
         <p className="text-afh-body text-afh-text-soft">
-          La vue détaillée du peuple est rendue ici, derrière la porte de
-          lecture du dernier chapitre.
+          Le parchemin du peuple est rendu ici, déplié, et porte sa propre
+          mesure de lecture.
         </p>
       </div>
     ),
   },
 };
 
-export const Mobile430 = atFicheBreakpoint(peopleSequence, "ficheMobile430");
-export const Tablet720 = atFicheBreakpoint(peopleSequence, "ficheTablet720");
-export const Desktop800 = atFicheBreakpoint(peopleSequence, "ficheDesktop800");
+// @req REQ-091
+export const Mobile430 = atFicheBreakpoint(peopleFiche, "ficheMobile430");
+// @req REQ-091
+export const Tablet720 = atFicheBreakpoint(peopleFiche, "ficheTablet720");
+// @req REQ-091
+export const Desktop800 = atFicheBreakpoint(peopleFiche, "ficheDesktop800");

@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import { mapLanguageFamilyDetail } from "../afrikDetailMapper";
-import { derivePanelSequence } from "@/lib/fichePanels";
 import type { LanguageFamily } from "@/types/afrik";
 
 /**
@@ -53,7 +52,7 @@ const BANTU: LanguageFamily = {
 
 describe("mapLanguageFamilyDetail", () => {
   // @req REQ-091
-  it("hoists every editorial section the fiche panels read out of the content blob", () => {
+  it("hoists every editorial section the parchment reads out of the content blob", () => {
     const detail = mapLanguageFamilyDetail(BANTU);
 
     expect(detail.decolonialHeader).toEqual(BANTU.content.decolonialHeader);
@@ -120,15 +119,5 @@ describe("mapLanguageFamilyDetail", () => {
     expect(detail.id).toBe("FLG_EMPTY");
     expect(detail.generalInfo).toBeUndefined();
     expect(detail.sources).toBeUndefined();
-  });
-
-  // @req REQ-091
-  it("feeds the composer the scale figure a language-family chapter needs", () => {
-    // The mapper is upstream of `derivePanelSequence`: any section it forgets
-    // to hoist silently deletes a panel from the fiche. Asserting the derived
-    // sequence catches that where asserting field equality alone would not.
-    expect(
-      derivePanelSequence("language-family", mapLanguageFamilyDetail(BANTU))
-    ).toEqual(["scale", "record"]);
   });
 });
