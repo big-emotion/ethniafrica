@@ -153,11 +153,10 @@ describe("the filter hint — a caption on the controls, at the controls' width"
    * two full-width controls stopped at two-fifths of them and read as a column
    * someone had forgotten to finish.
    *
-   * The typography charter caps *prose* at 65ch and exempts what fills its
-   * container — tables, card grids, the atlas panel. This is a caption on a
-   * control row, not running prose: it belongs with the controls it describes,
-   * and the measure that keeps a paragraph legible is not the rule that
-   * governs a label sitting between two widgets.
+   * The typography charter now gives running prose no measure of its own, so
+   * the question does not even arise here — and it would not have anyway: this
+   * is a caption on a control row, not running prose, and it belongs with the
+   * controls it describes.
    */
   // @req REQ-114
   it("gives the hint no measure of its own", () => {

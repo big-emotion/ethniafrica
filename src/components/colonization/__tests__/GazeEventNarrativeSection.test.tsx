@@ -239,6 +239,29 @@ describe("GazeEventNarrativeSection", () => {
     expect(screen.queryByText("Lire la doctrine")).toBeNull();
   });
 
+  // The section shares its chapter with the chronology table and the border
+  // crossings, both of which run to both edges. A 75ch cap made the narrative
+  // the one column on the page that stopped against nothing.
+  // @req REQ-101 FR90
+  it("gives the narrative paragraphs no measure of their own", () => {
+    const { container } = render(
+      <GazeEventNarrativeSection
+        eventType="resistance"
+        events={[
+          makeEvent({
+            classificationStatus: "contested",
+            debate: "Débat test.",
+          }),
+        ]}
+        title="Résistances"
+      />
+    );
+
+    const paragraphs = Array.from(container.querySelectorAll("p"));
+    expect(paragraphs.length).toBeGreaterThan(1);
+    expect(paragraphs.every((p) => !/max-w-/.test(p.className))).toBe(true);
+  });
+
   describe("Accessibility (axe)", () => {
     // @req REQ-101
     it("has no axe violations with populated events", async () => {
