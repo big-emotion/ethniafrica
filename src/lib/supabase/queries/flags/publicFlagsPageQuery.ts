@@ -10,7 +10,16 @@ export type PublicFlagTargetType =
   | "assertion"
   | "source"
   | "fiche_section"
-  | "classification";
+  | "classification"
+  /**
+   * A report that names no entity, filed from the "Signaler une erreur" page
+   * the footer offers on every screen. The register needs its own column for
+   * it: folded into `assertion` — where the fallback below used to send every
+   * unrecognised value — a general report would claim to contest a specific
+   * statement, and a moderator filtering for assertions would keep opening
+   * reports that contest nothing in particular.
+   */
+  | "general";
 
 export interface PublicFlagFilters {
   statuses?: PublicFlagStatus[];
@@ -208,7 +217,8 @@ function getEntityTargetType(entityType: string | null): PublicFlagTargetType {
   if (
     entityType === "source" ||
     entityType === "fiche_section" ||
-    entityType === "classification"
+    entityType === "classification" ||
+    entityType === "general"
   ) {
     return entityType;
   }

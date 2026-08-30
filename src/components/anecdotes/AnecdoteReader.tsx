@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -10,6 +9,7 @@ import {
 } from "react";
 
 import { AnecdoteCard } from "@/components/anecdotes/AnecdoteCard";
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import {
   shuffleDidYouKnowDeck,
   type DidYouKnowFact,
@@ -256,12 +256,26 @@ export function AnecdoteReader({
             Partager
           </button>
 
-          <Link
-            className="anecdote-action"
-            href={`/${language}/report-error?anecdote=${fact.id}`}
-          >
-            Je conteste cette anecdote
-          </Link>
+          {/* The objection is taken here, not somewhere else. It used to be a
+              link to the report-error page, whose form is a Typeform embed the
+              site's own CSP blocks — so the reader left the anecdote behind
+              and arrived at a page promising a form that could never mount.
+
+              The dialog also knows which anecdote is being contested, which
+              the page never did: it read the id out of a query string and
+              handed it to a third party that had never heard of it. */}
+          <FlagTarget
+            target={{
+              type: "assertion",
+              id: fact.id,
+              name: fact.headline,
+            }}
+            renderTrigger={(open) => (
+              <button type="button" className="anecdote-action" onClick={open}>
+                Je conteste cette anecdote
+              </button>
+            )}
+          />
         </div>
 
         {isSharing ? (

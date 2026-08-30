@@ -57,7 +57,13 @@ export interface FlagFormProps {
   onSubmit: (
     payload: FlagSubmissionPayload
   ) => Promise<{ public_slug: string }>;
-  onCancel: () => void;
+  /**
+   * Omitted where there is nothing to cancel back to. In the dialog it closes
+   * the dialog; on the "Signaler une erreur" page the form *is* the page, and
+   * a button that abandons a page the reader deliberately opened would either
+   * do nothing or navigate somewhere they did not ask for.
+   */
+  onCancel?: () => void;
   /**
    * The anti-bot control, injected rather than imported.
    *
@@ -91,6 +97,7 @@ const TARGET_LABELS: Record<string, string> = {
   fiche_section: "Section de fiche",
   assertion: "Affirmation",
   source: "Source",
+  general: "Signalement général",
 };
 
 function isValidHttpUrl(value: string) {
@@ -506,15 +513,17 @@ export function FlagForm({
       </details>
 
       <div className="flex flex-col-reverse gap-afh-lg md:flex-row md:justify-end">
-        <Button
-          className="min-h-11"
-          disabled={isSubmitting}
-          onClick={onCancel}
-          type="button"
-          variant="outline"
-        >
-          Annuler
-        </Button>
+        {onCancel && (
+          <Button
+            className="min-h-11"
+            disabled={isSubmitting}
+            onClick={onCancel}
+            type="button"
+            variant="outline"
+          >
+            Annuler
+          </Button>
+        )}
         <Button className="min-h-11" disabled={isSubmitting} type="submit">
           {isSubmitting ? "Envoi en cours…" : "Envoyer"}
         </Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
-import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { cn } from "@/lib/utils";
 import {
   FlagForm,
@@ -20,6 +19,7 @@ import {
   type FlagSubmissionPayload,
 } from "@/components/flags/FlagForm";
 import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
+import { submitFlag } from "@/components/flags/submitFlag";
 
 declare global {
   interface Window {
@@ -30,28 +30,23 @@ declare global {
   }
 }
 
-/**
- * The session, when there is one, for attribution only.
- *
- * This used to be a gate: no session, or an account whose age was not
- * confirmed, and the dialog offered links instead of a form. Reporting now
- * costs no account (moderation charter §2), so the token is passed when it
- * exists and omitted when it does not — the API decides what to credit, and
- * accepts either way.
- */
-async function currentAccessToken(): Promise<string | null> {
-  const supabase = createBrowserSupabaseClient();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  return session?.access_token ?? null;
-}
-
 export interface FlagTargetProps {
   target: FlagFormTarget;
   triggerLabel?: string;
   className?: string;
+  /**
+   * Lets a surface supply its own trigger instead of the outlined button.
+   *
+   * Only for a control that has to join a row this component did not build.
+   * The anecdote reader's reactions are three pills side by side; an outlined
+   * button dropped among them reads as a fourth thing rather than the third
+   * of three, and the reader loses the row. The actions charter's rule that a
+   * button is never rebuilt by hand (§4) is about picking a new shape for a
+   * lone control — not about matching a row that already exists.
+   *
+   * The default stays the primitive, and every new surface should take it.
+   */
+  renderTrigger?: (open: () => void) => ReactNode;
 }
 
 // @req REQ-012
@@ -59,6 +54,7 @@ export function FlagTarget({
   target,
   triggerLabel = "Signaler",
   className,
+  renderTrigger,
 }: FlagTargetProps) {
   const titleId = useId();
   const [open, setOpen] = useState(false);
@@ -70,23 +66,7 @@ export function FlagTarget({
   }
 
   async function handleSubmit(payload: FlagSubmissionPayload) {
-    const accessToken = await currentAccessToken();
-
-    const response = await fetch("/api/v2/flags", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
-      },
-      body: JSON.stringify(payload),
-    });
-    const json = await response.json();
-
-    if (!response.ok) {
-      throw new Error(json?.errors?.[0]?.message ?? "flag submission failed");
-    }
-
-    const publicSlug = json.data.public_slug as string;
+    const { public_slug: publicSlug } = await submitFlag(payload);
 
     if (consent?.consentState.preferences.analytics) {
       window.plausible?.("flag_submitted", {
@@ -106,14 +86,18 @@ export function FlagTarget({
 
   return (
     <>
-      <Button
-        type="button"
-        variant="outline"
-        className={cn("w-full", className)}
-        onClick={() => handleOpenChange(true)}
-      >
-        {triggerLabel}
-      </Button>
+      {renderTrigger ? (
+        renderTrigger(() => handleOpenChange(true))
+      ) : (
+        <Button
+          type="button"
+          variant="outline"
+          className={cn("w-full", className)}
+          onClick={() => handleOpenChange(true)}
+        >
+          {triggerLabel}
+        </Button>
+      )}
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent aria-labelledby={titleId} className="max-w-lg">
           <DialogHeader>

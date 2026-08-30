@@ -235,6 +235,8 @@ export default async function PeoplesSlugPage({
     >
       <FicheSequence
         entityType="people"
+        entityId={parsed.slug}
+        entityName={peopleDetail.nameMain}
         globe={
           <FicheHeroBand>
             <AtlasGlobe

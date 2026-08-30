@@ -85,16 +85,26 @@
 }
 
 /* The bar proper. Its own box so the read rule below stays under the bar and
-   does not drop to the foot of the summary when that opens. */
+   does not drop to the foot of the summary when that opens.
+
+   A row, because the rail carries two controls: the summary toggle, which
+   takes whatever width is left, and the report control, which keeps its own
+   (moderation charter §3). */
 .afh-chapter-bar-head {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .afh-chapter-bar-toggle {
   display: flex;
   align-items: center;
   gap: var(--afh-space-lg);
-  width: 100%;
+  /* Takes the room the report control does not. `min-width: 0` is what lets
+     the chapter title ellipsize instead of pushing the report control off the
+     rail — a flex item's default minimum is its content. */
+  flex: 1 1 auto;
+  min-width: 0;
   min-height: var(--afh-chapter-bar-height);
   padding: 0 var(--afh-space-lg);
   border: 0;
@@ -145,6 +155,18 @@
    reader either way (aria-label). */
 .afh-chapter-bar-cue-label {
   display: none;
+}
+
+/* The report control keeps its width at every breakpoint, including 430px.
+   Which word gives way when the rail runs out of room is a decision, and this
+   is the opposite one from the summary's: "Sommaire" names a control the count
+   and the caret already explain, so it can go, while "Signaler" names a gesture
+   a reader cannot guess from anything else on the rail. What yields instead is
+   the chapter title, which ellipsizes — it is also the one thing on the rail
+   the reader can read off the page itself. */
+.afh-chapter-bar-report {
+  flex: none;
+  padding-right: var(--afh-space-lg);
 }
 
 .afh-chapter-bar-caret {
@@ -226,6 +248,11 @@
 
   .afh-chapter-bar-toggle {
     padding: 0 var(--afh-space-4xl);
+  }
+
+  /* The report control sits against the parchment's gutter, like the toggle. */
+  .afh-chapter-bar-report {
+    padding-right: var(--afh-space-4xl);
   }
 
   .afh-chapter-bar-cue-label {

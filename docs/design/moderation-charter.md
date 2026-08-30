@@ -50,8 +50,15 @@ assigns it.
 **then** they can report it in two actions: open, send.
 
 No account, no e-mail, no age confirmation stands between the reader and the
-send button. Cloudflare Turnstile is the control, verified server-side; it asks
-the reader for nothing.
+send button. A proof of work is the control, computed by the reader's own
+browser and verified server-side; it asks the reader for nothing and sends
+nothing about them anywhere. It replaced Cloudflare Turnstile, which sent the
+reader's IP to a third party.
+
+**It has one server-only secret, `ANTIBOT_HMAC_SECRET`, and it is not optional.**
+Unset, `GET /api/v2/antibot/challenge` answers 503, the dialog tells the reader
+the verification did not complete, and this whole section is untrue — silently,
+on a green build. The deployment checklist carries the curl that proves it.
 
 ### Why no account
 
@@ -61,7 +68,7 @@ three things, and none of them is needed for a first report:
 - **attribution** — a benefit to the contributor, not a precondition;
 - **follow-up** — the public slug already gives anyone a stable URL to watch;
 - **anti-abuse** — magic-link accounts are free to create, so an account is a
-  weak control where Turnstile and rate limiting are the real ones.
+  weak control where the proof of work and rate limiting are the real ones.
 
 ### Where age belongs
 
@@ -97,7 +104,8 @@ what is being read.**
 The fiche's chapter bar is `position: sticky` and already tracks the chapter in
 view. The report control belongs there: always on screen, thumb-reachable on
 mobile, and anchored to the chapter the reader is actually looking at, so the
-dialog can open saying _Fiche Bénin — Culture et société_ without asking.
+dialog opens saying _Section de fiche · Afrique du Sud — Culture et société_
+without asking.
 
 The per-section controls stay. They serve the reader who wants to aim at
 something narrower than a chapter.
@@ -105,6 +113,52 @@ something narrower than a chapter.
 A floating button detached from the reading would have been reachable and
 context-free — it would have moved the "which part?" question from the page back
 onto the reader, which is §1 again.
+
+### One general entry point, and why it is not a contradiction
+
+The footer offers "Signaler une erreur" on every screen of the site, and
+`/fr/report-error` answers it with a form filed against a **`general`** target.
+
+That is an exception to everything above, taken deliberately. The rule's
+reasoning holds — an aimed report is a better report, and the rail now makes one
+available on every fiche. But the rule was being used to justify a page that
+gave the reader _nothing_: a Typeform embed the site's own CSP blocked, under
+four paragraphs promising "le formulaire ci-dessous". A reader reporting a
+broken page, a wrong translation, or something they saw and did not bookmark has
+no fiche to aim from, and **an entry point that leads nowhere is worse than one
+that lands imprecisely.**
+
+Two conditions keep the exception honest:
+
+- **`general` is its own column in the public register**, never folded into
+  `assertion`. A general report contests nothing in particular, and filing it as
+  an assertion would make every moderator filtering for assertions open reports
+  that dispute no statement.
+- **The page names the aimed path** and says it is the better one, so the
+  general form is the fallback it is and not the front door.
+
+The page is also where the form _is_, not what a button on it opens: a reader
+who has already chosen "Signaler une erreur" has stated their intent, and a
+second control before the field is exactly the toll §2 exists to remove.
+
+### Which word gives way at 430 px
+
+The rail holds three things and cannot show them all on a narrow screen. The
+order of sacrifice is fixed: **the chapter title ellipsizes first**, because it
+is the one thing on the rail the reader can also read off the page itself. Then
+the word "Sommaire", which names a control the position readout and the caret
+already explain. **"Signaler" never goes**, and never becomes an icon — the
+actions charter licenses no glyph but the arrow (§7), and an unlabelled flag
+asks the reader to guess at the one gesture this charter exists to make easy.
+
+### This rule was written before it was built
+
+For as long as it went unbuilt, every report control in the product hung off a
+single chapter of the parchment — "Culture et société" on a country fiche. A
+reader who found an error in chapter two had to scroll to chapter seven to say
+so, and arrived at a dialog naming the wrong section. Held by
+`src/components/fiche/__tests__/ficheChapterBarReportCharter.test.tsx`, so the
+control cannot quietly go back to riding one chapter.
 
 ---
 
@@ -128,7 +182,7 @@ erasing the old one.
 
 | Transition                                               | Who                                | How                                     |
 | -------------------------------------------------------- | ---------------------------------- | --------------------------------------- |
-| _(create)_ → `open`                                      | anyone, Turnstile verified         | `POST /v2/flags`                        |
+| _(create)_ → `open`                                      | anyone, proof of work verified     | `POST /v2/flags`                        |
 | `open` → `withdrawn`                                     | the contributor, on their own flag | RLS policy `flags_contributor_withdraw` |
 | `open` → `under_review`                                  | moderator                          | `PATCH /v2/flags/{id}`                  |
 | `under_review` → `accepted` \| `rejected` \| `duplicate` | moderator                          | `PATCH /v2/flags/{id}`                  |
