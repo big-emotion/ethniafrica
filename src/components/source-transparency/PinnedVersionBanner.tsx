@@ -81,6 +81,15 @@ export function PinnedVersionBanner({
     setCollapsed(nextCollapsed);
   };
 
+  /**
+   * Form B (actions charter §3): the expanded banner drops this link into the
+   * middle of a sentence, so it is underlined and carries no arrow. It used
+   * to grow one only in the collapsed state, which made a single link two
+   * different shapes on one component — and an arrow mid-sentence breaks the
+   * line, which is the whole reason form B exists.
+   *
+   * The earth ink is the source layer's own, not the surface accent.
+   */
   const liveLink = (
     <a
       href={liveUrl}
@@ -89,9 +98,6 @@ export function PinnedVersionBanner({
       {hasResolvedFlags && !collapsed
         ? "voir version vivante"
         : "voir la version vivante"}
-      {!hasResolvedFlags || collapsed ? (
-        <span aria-hidden="true"> →</span>
-      ) : null}
     </a>
   );
 

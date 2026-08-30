@@ -240,7 +240,10 @@ export function CitationBlock({
           <Button
             type="button"
             onClick={copyCitation}
-            className="w-full rounded-afh-md bg-afh-earth font-afh text-afh-small text-afh-surface hover:bg-afh-terracotta md:w-auto"
+            // The colour stays — it is the citation apparatus's own — but the
+            // radius override goes: a control takes the control radius
+            // wherever it stands, including inside the source layer.
+            className="w-full bg-afh-earth font-afh text-afh-small text-afh-surface hover:bg-afh-terracotta md:w-auto"
           >
             <Copy aria-hidden="true" />
             Copier la citation

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { frenchNumber } from "@/lib/games/format";
 import type { EstimateRound } from "@/lib/games/gameKinds";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const COPY_FR = {
   commit: "Valider mon estimation",
@@ -88,18 +89,17 @@ export const EstimateSlider = ({
 
       <p className="text-afh-small text-afh-text-soft">{COPY_FR.hint}</p>
 
-      <button
+      <Button
         type="button"
+        variant="accent"
         disabled={disabled}
         onClick={() => onAnswer(estimate)}
-        className="min-h-11 w-full rounded-afh-lg px-4 py-2 font-medium disabled:cursor-not-allowed disabled:opacity-50"
-        style={{
-          backgroundColor: "var(--accent)",
-          color: "var(--accent-foreground)",
-        }}
+        // min-h on top of the primitive's fixed h-11: a floor survives a
+        // label that wraps, where a fixed height clips it.
+        className="min-h-11 w-full"
       >
         {COPY_FR.commit}
-      </button>
+      </Button>
     </section>
   );
 };

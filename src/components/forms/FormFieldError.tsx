@@ -19,7 +19,7 @@ const VARIANT_CLASSES: Record<
 > = {
   inline: "text-afh-small font-medium text-afh-error",
   banner:
-    "rounded-afh-base border border-afh-error bg-afh-error/10 px-3 py-2 text-afh-small text-afh-error",
+    "rounded-afh-lg border border-afh-error bg-afh-error/10 px-3 py-2 text-afh-small text-afh-error",
 };
 
 // @req REQ-045

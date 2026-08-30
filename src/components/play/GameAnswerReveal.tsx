@@ -10,6 +10,7 @@ import { frenchNumber } from "@/lib/games/format";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
 import { sourceStandingLabelFr } from "@/types/sources";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const COPY_FR = {
   correctVerdict: "Bonne réponse",
@@ -176,17 +177,14 @@ export const GameAnswerReveal = ({
         </a>
       </div>
 
-      <button
+      <Button
         type="button"
+        variant="accent"
         onClick={onNext}
-        className="mt-auto min-h-11 w-full rounded-afh-lg px-4 py-2 font-medium"
-        style={{
-          backgroundColor: "var(--accent)",
-          color: "var(--accent-foreground)",
-        }}
+        className="mt-auto w-full"
       >
         {isLastRound ? COPY_FR.seeScore : COPY_FR.nextRound}
-      </button>
+      </Button>
     </div>
   );
 };

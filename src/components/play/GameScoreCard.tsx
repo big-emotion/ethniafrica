@@ -4,6 +4,7 @@ import { ScaleFactCard } from "@/components/play/ScaleFactCard";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const COPY_FR = {
   heading: "Partie terminée",
@@ -96,17 +97,16 @@ export const GameScoreCard = ({
               {COPY_FR.corpusLimited}
             </p>
           ) : null}
-          <button
+          <Button
             type="button"
+            variant="accent"
             onClick={onPlayAgain}
-            className="min-h-11 w-full rounded-afh-lg px-4 py-2 font-medium"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "var(--accent-foreground)",
-            }}
+            // min-h on top of the primitive's fixed h-11: a floor survives a
+            // label that wraps, where a fixed height clips it.
+            className="min-h-11 w-full"
           >
             {COPY_FR.playAgain}
-          </button>
+          </Button>
         </>
       ) : (
         <div data-testid="game-score-empty" className="flex flex-col gap-2">

@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { translations } from "@/lib/translations";
+import { Button } from "@/components/ui/button";
 
 const t = translations.fr.quiz;
 
@@ -75,19 +76,20 @@ export const QuizScoreCard = ({
         </ul>
       ) : null}
       <div className="flex w-full flex-col gap-2">
-        <Link
-          href={playAgainHref}
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white"
-        >
-          {t.playAgain}
-        </Link>
-        <button
+        {/* A link, but the primary action of the screen — so it wears the
+            button (actions charter §4: starting another run is doing
+            something, not going to read). asChild keeps it an anchor. */}
+        <Button asChild className="w-full">
+          <Link href={playAgainHref}>{t.playAgain}</Link>
+        </Button>
+        <Button
           type="button"
+          variant="outline"
           onClick={onShare}
-          className="min-h-11 w-full rounded-afh-lg border border-afh-border px-4 py-2 font-medium text-afh-text"
+          className="w-full"
         >
           {t.shareScoreLabel}
-        </button>
+        </Button>
         <p
           role="status"
           aria-live="polite"

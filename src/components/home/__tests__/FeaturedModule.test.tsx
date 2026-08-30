@@ -2,6 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FeaturedModule } from "@/components/home/FeaturedModule";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 
 const gameModule = {
@@ -19,6 +20,9 @@ const readingModule = {
   id: "migrations",
   name: "Les routes du peuplement",
   accessMode: "comprendre",
+  // A module outside Jouer is addressed by its PageType, not by a slug —
+  // getModuleHref resolves the two in that order.
+  page: "migrations",
   gameSlug: undefined,
 } as unknown as HubModule;
 
@@ -123,6 +127,67 @@ describe("FeaturedModule — the module the home puts forward (REQ-113/REQ-115)"
     expect(styles.match(/\.home-globe-holder\s*{[^}]*}/)?.[0]).not.toMatch(
       /min-height/
     );
+  });
+
+  /**
+   * The section promises « à essayer maintenant » and used to offer nothing
+   * to press: its only link was HeroProvenanceChip, whose job is to say
+   * where the module lives — a breadcrumb standing in for a door. The
+   * reader was back to working out from the globe's controls that this was
+   * a game, which is the failure moving the slot out of the hero was meant
+   * to end.
+   */
+  // @req REQ-115
+  it("offers a button that starts the drawn module", () => {
+    render(<FeaturedModule heroModule={gameModule} heroPreview={preview} />);
+
+    const start = screen.getByTestId("home-featured-start");
+    expect(start).toHaveAttribute(
+      "href",
+      `${getAxisHubRoute("fr", "jouer")}/mercator`
+    );
+    expect(start).toHaveTextContent("La taille qu'on vous a cachée");
+  });
+
+  // @req REQ-115
+  it("says « ouvrir » rather than « jouer » for a module that is not a game", () => {
+    render(<FeaturedModule heroModule={readingModule} heroPreview={preview} />);
+
+    expect(screen.getByTestId("home-featured-start")).toHaveTextContent(
+      /^Ouvrir/
+    );
+  });
+
+  /**
+   * The name is the whole point of the label — a truncated one names no
+   * game. The provenance chip above ellipses on purpose to keep the globe
+   * above the fold; the button must not inherit that.
+   */
+  // @req REQ-115
+  it("never truncates the module name in the button", () => {
+    render(<FeaturedModule heroModule={gameModule} heroPreview={preview} />);
+
+    const start = screen.getByTestId("home-featured-start");
+    expect(start.className).not.toContain("truncate");
+    expect(start.className).not.toContain("whitespace-nowrap");
+  });
+
+  // Form C of the actions charter: the container is the affordance, so a
+  // second one inside it would promise a departure a button does not make.
+  // @req REQ-115
+  it("carries no arrow inside the button", () => {
+    render(<FeaturedModule heroModule={gameModule} heroPreview={preview} />);
+
+    expect(screen.getByTestId("home-featured-start").textContent).not.toContain(
+      "→"
+    );
+  });
+
+  // @req REQ-115
+  it("offers nothing to start when no module was drawn", () => {
+    render(<FeaturedModule />);
+
+    expect(screen.queryByTestId("home-featured-start")).toBeNull();
   });
 
   // The globe carries its own readout, which also tracks the morph. A

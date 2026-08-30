@@ -11,6 +11,7 @@ import type {
   QuizSessionQuestionView,
   QuizOptionValue,
 } from "@/api/v2/schemas/quiz";
+import { Button } from "@/components/ui/button";
 
 const t = translations.fr.quiz;
 
@@ -129,13 +130,9 @@ export const QuizAnswerReveal = ({
         {t.openSourceChain}
       </button>
 
-      <button
-        type="button"
-        onClick={onNext}
-        className="mt-auto min-h-11 w-full rounded-afh-lg bg-afh-terracotta px-4 py-2 font-medium text-white"
-      >
+      <Button type="button" onClick={onNext} className="mt-auto w-full">
         {isLastQuestion ? t.seeScore : t.nextQuestion}
-      </button>
+      </Button>
 
       <LazySourceChainSheet
         open={sheetOpen}

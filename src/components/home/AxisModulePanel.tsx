@@ -643,7 +643,7 @@ export function AxisModulePanel({
           gap: 6px;
           padding: 8px 14px;
           border: 1px solid var(--afh-border);
-          border-radius: 999px;
+          border-radius: var(--afh-radius-full);
           background: transparent;
           color: var(--afh-text);
           font-size: var(--home-text-panel-back);
@@ -668,7 +668,7 @@ export function AxisModulePanel({
         }
         .axis-module-chip {
           flex: none;
-          border-radius: 999px;
+          border-radius: var(--afh-radius-full);
           border: 1px solid var(--afh-border);
           padding: 2px 9px;
           font-size: var(--home-text-module-chip);
@@ -682,7 +682,7 @@ export function AxisModulePanel({
           margin: 18px auto 0;
           padding: 8px 18px;
           border: 1px solid var(--afh-border);
-          border-radius: 999px;
+          border-radius: var(--afh-radius-full);
           background: transparent;
           color: var(--afh-text);
           font-size: var(--home-text-panel-close);

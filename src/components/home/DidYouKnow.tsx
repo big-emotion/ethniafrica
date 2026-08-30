@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SectionHeading } from "@/components/home/SectionHeading";
+import { ActionLink } from "@/components/ui/ActionLink";
 
 import type {
   DidYouKnowEntity,
@@ -221,10 +222,9 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
             what tells a reader it leaves the page at all — the underline
             alone put it in the same register as the provenance above it. */}
         <p className="home-dyk-all">
-          <Link href={getLocalizedRoute(language, "anecdotes")}>
+          <ActionLink href={getLocalizedRoute(language, "anecdotes")}>
             Lire d&apos;autres anecdotes
-            <span aria-hidden="true"> →</span>
-          </Link>
+          </ActionLink>
         </p>
       </div>
 
@@ -348,7 +348,7 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           gap: 7px;
           padding: 6px 13px 6px 10px;
           border: 1px solid var(--accent);
-          border-radius: 100px;
+          border-radius: var(--afh-radius-full);
           background: var(--afh-color-card);
           color: var(--accent-ink);
           font-size: var(--afh-text-caption);
@@ -392,19 +392,12 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           color: var(--afh-text-soft);
         }
 
+        /* The exit is an ActionLink now (actions charter form A), so it
+           brings its own size, weight, ink and 44px target. All this rule
+           still owes it is where it sits. */
         .home-dyk-all {
           margin: var(--afh-space-5xl) 0 0;
           text-align: center;
-          font-size: var(--afh-text-caption);
-        }
-        .home-dyk-all a {
-          color: var(--afh-text-soft);
-          text-decoration: underline;
-          text-underline-offset: 3px;
-        }
-        .home-dyk-all a:hover,
-        .home-dyk-all a:focus-visible {
-          color: var(--afh-text);
         }
 
         /* Under 430px the same fact costs three or four more lines. These buy
