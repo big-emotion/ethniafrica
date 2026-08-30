@@ -236,19 +236,26 @@ What remains:
 
 ## 7. Consumer / new-contributor flow
 
-| Step                                      | Status | Evidence                                                                                                     |
-| ----------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------ |
-| `git clone` + `npm ci --legacy-peer-deps` | ✅     | documented in CLAUDE.md; the peer-dep conflict is intentional and explained                                  |
-| `.env.example` → `.env.local`             | ✅     | `check:env-example` passes, verified both directions                                                         |
-| migrations apply in order                 | ✅     | `check:migration-files` — 47 files, no duplicate prefix, no hole                                             |
-| corpus load                               | ✅     | `scripts/migrateAfrikToDatabase.ts` + `docs/runbooks/afrik-data-sync.md`                                     |
-| first admin seeded                        | ✅     | `scripts/seedAdmin.ts`, documents its own prerequisite                                                       |
-| `npm run dev`                             | ✅     | build passes clean                                                                                           |
-| `/api/v2/*` returns data                  | ⚠️     | requires real Supabase credentials; no local fixture path                                                    |
-| `/docs/api` renders                       | ✅     | route present in the build manifest                                                                          |
-| `/admin` gated by RBAC                    | ✅     | `src/middleware.ts` admin block + `user_roles` (5 roles: reader / contributor / moderator / admin / advisor) |
+| Step                                      | Status | Evidence                                                                                                                         |
+| ----------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| `git clone` + `npm ci --legacy-peer-deps` | ✅     | documented in CLAUDE.md; the peer-dep conflict is intentional and explained                                                      |
+| `.env.example` → `.env.local`             | ✅     | `check:env-example` passes, verified both directions                                                                             |
+| migrations apply in order                 | ✅     | `check:migration-files` — 47 files, no duplicate prefix, no hole                                                                 |
+| corpus load                               | ✅     | `scripts/migrateAfrikToDatabase.ts` + `docs/runbooks/afrik-data-sync.md`                                                         |
+| first admin seeded                        | ✅     | `scripts/seedAdmin.ts`, documents its own prerequisite                                                                           |
+| `npm run dev`                             | ✅     | build passes clean                                                                                                               |
+| `/api/v2/*` returns data                  | ⚠️     | requires real Supabase credentials; no local fixture path                                                                        |
+| `/docs/api` renders                       | ✅     | route present in the build manifest                                                                                              |
+| `/admin` gated by RBAC                    | ✅     | `src/middleware.ts` admin block, reading `contributor_profiles.moderator_role` — **not** `user_roles`. See the correction below. |
 
 One friction point (`⚠️`): a contributor with no Supabase project cannot exercise the API locally. Everything else is a single documented command.
+
+**Correction (2026-08-30).** The `/admin` row above was wrong in both halves, and the error mattered because it read as reassurance.
+
+- The middleware reads **`contributor_profiles.moderator_role`** (`none | editor | senior_editor | admin`), not `user_roles`. A user who is `moderator` in `user_roles` opens no door: that table is read in two files, `contributor` is assigned on the auth callback and never checked, and `advisor` is enforced nowhere at all. Three role models coexist — `user_roles`, `moderator_role`, and `api_keys.tier` — and they do not interoperate. `docs/design/moderation-charter.md` §7 records this as unsettled.
+- Until 2026-08-30 the route tree it guarded was **empty**: `src/app/[lang]/admin/` held only `connexion/page.tsx`, so a successful moderator sign-in redirected into a 404. `/fr/admin` now exists and lists the reports awaiting a decision.
+
+The audit also never said that the **write** path was dead. Every report button in the product was a disabled shell, because the Turnstile site key was declared without the `NEXT_PUBLIC_` prefix and no page supplied one — so `/fr/signalements` could only ever be empty or seeded, and no moderator screen existed to empty it. Both halves are fixed on `feat/signalement-en-deux-clics`; what remains open is listed in the charter's §7.
 
 ---
 
