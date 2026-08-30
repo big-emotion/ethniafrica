@@ -83,7 +83,7 @@ export interface FlagHandlerDependencies {
   ) => Promise<TurnstileVerificationResult>;
   checkFlagRateLimit: (contributorId: string) => Promise<FlagRateLimitResult>;
   createFlag: (
-    contributorId: string,
+    contributorId: string | null,
     input: FlagCreateInput
   ) => Promise<CreatedFlag>;
   listFlags: (filters: FlagListFilters) => Promise<FlagListResult>;
@@ -182,22 +182,6 @@ export async function handleFlagCreate(
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
 
-  if (!accessToken) {
-    return {
-      status: 401,
-      body: errorResponse("UNAUTHENTICATED", "Authentication required"),
-    };
-  }
-
-  const contributor =
-    await dependencies.getAuthenticatedContributor(accessToken);
-  if (!contributor) {
-    return {
-      status: 401,
-      body: errorResponse("UNAUTHENTICATED", "Authentication required"),
-    };
-  }
-
   const parsed = flagCreateSchema.safeParse(rawInput);
   if (!parsed.success) {
     return {
@@ -206,16 +190,28 @@ export async function handleFlagCreate(
     };
   }
 
-  const ageConfirmedAt = await dependencies.getAgeConfirmedAt(contributor.id);
-  if (!ageConfirmedAt) {
-    return {
-      status: 403,
-      body: errorResponse(
-        "AGE_CONFIRMATION_REQUIRED",
-        "Age confirmation required (FR45). Complete your profile at /fr/compte/profil."
-      ),
-    };
-  }
+  /**
+   * Who the report is credited to — never whether it is accepted.
+   *
+   * A report is a message *about* the corpus, not a signed contribution *to*
+   * it, so it does not carry the CC-BY-SA consent that publishing a name
+   * does. Turnstile, verified below, is the control. See
+   * `docs/design/moderation-charter.md` §2.
+   *
+   * Attribution needs both a resolvable session and a confirmed age: the
+   * confirmation is what licenses publishing that name. Missing either, the
+   * report is recorded anonymously — a state `PublicFlagsQueue` already
+   * renders — rather than refused. Refusing was a dead end in practice, since
+   * `age_confirmed_at` is only ever written by the registration callback and
+   * an account created through the sign-in page can never obtain it.
+   */
+  const contributor = accessToken
+    ? await dependencies.getAuthenticatedContributor(accessToken)
+    : null;
+  const attributedTo =
+    contributor && (await dependencies.getAgeConfirmedAt(contributor.id))
+      ? contributor.id
+      : null;
 
   const { turnstile_token } = parsed.data;
   const flagInput: FlagCreateInput = {
@@ -250,7 +246,19 @@ export async function handleFlagCreate(
     };
   }
 
-  const limitResult = await dependencies.checkFlagRateLimit(contributor.id);
+  /**
+   * An anonymous report has no contributor to key the bucket on, so it is
+   * keyed on the caller's address. The `ip:` prefix keeps that namespace
+   * apart from contributor UUIDs, which could otherwise collide.
+   *
+   * An address the platform did not forward falls into one shared bucket.
+   * That is deliberate: a caller the atlas cannot tell apart from any other
+   * is exactly the caller a shared limit should hold back. Rate limiting is
+   * off entirely until Upstash is configured (ETNI-64), and anonymous
+   * reporting is what turns that ticket from a refinement into a prerequisite.
+   */
+  const rateLimitKey = attributedTo ?? `ip:${context.clientIp ?? "unknown"}`;
+  const limitResult = await dependencies.checkFlagRateLimit(rateLimitKey);
   if ("retryAfter" in limitResult) {
     return {
       status: 429,
@@ -262,7 +270,7 @@ export async function handleFlagCreate(
     };
   }
 
-  const flag = await dependencies.createFlag(contributor.id, flagInput);
+  const flag = await dependencies.createFlag(attributedTo, flagInput);
   return {
     status: 201,
     body: createApiResponse(flag),

@@ -142,7 +142,8 @@ export async function getAgeConfirmedAt(
 
 // @req REQ-012
 export async function createFlag(
-  contributorId: string,
+  /** Null for an anonymous report — see moderation-charter.md §2. */
+  contributorId: string | null,
   input: FlagCreateInput
 ): Promise<CreatedFlag> {
   const supabase = createAdminClient();

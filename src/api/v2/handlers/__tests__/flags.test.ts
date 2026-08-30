@@ -69,49 +69,48 @@ describe("flag handlers", () => {
   });
 
   describe("handleFlagCreate", () => {
+    /**
+     * An account used to be a precondition of reporting. It bought
+     * attribution, follow-up and a weak anti-abuse signal — none of them
+     * needed for a first report, all of them charged before the reader had
+     * written a word. Turnstile is the control (charter §2).
+     */
     // @req REQ-012
-    it("rejects a missing access token before validation", async () => {
+    it("accepts a report with no access token, recorded anonymously", async () => {
       const dependencies = makeDependencies();
 
       const result = await handleFlagCreate(
-        {},
+        validInput(),
         { accessToken: null },
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 401,
-        body: {
-          data: null,
-          errors: [{ code: "UNAUTHENTICATED" }],
-        },
-      });
+      expect(result.status).toBe(201);
       expect(dependencies.getAuthenticatedContributor).not.toHaveBeenCalled();
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.objectContaining({ target_id: "PPL_YORUBA" })
+      );
     });
 
     // @req REQ-012
-    it("rejects an invalid access token before validation", async () => {
+    it("records a report anonymously when the access token no longer resolves", async () => {
       const dependencies = makeDependencies();
       dependencies.getAuthenticatedContributor.mockResolvedValue(null);
 
       const result = await handleFlagCreate(
-        {},
+        validInput(),
         { accessToken: "invalid-token" },
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 401,
-        body: {
-          data: null,
-          errors: [{ code: "UNAUTHENTICATED" }],
-        },
-      });
-      expect(dependencies.getAuthenticatedContributor).toHaveBeenCalledWith(
-        "invalid-token"
+      // An expired session is the reader's problem to fix later, not a
+      // reason to discard what they just wrote.
+      expect(result.status).toBe(201);
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.anything()
       );
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
     // @req REQ-012
@@ -190,8 +189,20 @@ describe("flag handlers", () => {
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
-    // @req REQ-012
-    it("preserves the FR45 age confirmation gate", async () => {
+    /**
+     * Age confirmation is a consequence of account creation, not of
+     * reporting: GDPR Article 8 governs consent for processing a minor's
+     * personal data, and an anonymous report collects no identifier and
+     * publishes nothing under a name. So an unconfirmed account is recorded
+     * anonymously rather than refused (charter §2).
+     *
+     * This also removes the user-visible harm of a live defect: age_confirmed_at
+     * is only ever written by the registration callback, so an account created
+     * through the sign-in page could never confirm it, and used to be barred
+     * from reporting for good.
+     */
+    // @req REQ-045
+    it("records a report anonymously when the account has not confirmed its age", async () => {
       const dependencies = makeDependencies();
       dependencies.getAgeConfirmedAt.mockResolvedValue(null);
 
@@ -201,15 +212,33 @@ describe("flag handlers", () => {
         dependencies
       );
 
-      expect(result).toMatchObject({
-        status: 403,
-        body: {
-          data: null,
-          errors: [{ code: "AGE_CONFIRMATION_REQUIRED" }],
-        },
-      });
-      expect(dependencies.verifyTurnstileToken).not.toHaveBeenCalled();
-      expect(dependencies.createFlag).not.toHaveBeenCalled();
+      expect(result.status).toBe(201);
+      expect(dependencies.verifyTurnstileToken).toHaveBeenCalled();
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        null,
+        expect.anything()
+      );
+    });
+
+    /**
+     * Attribution is the one thing the account buys, and it is the one thing
+     * the age confirmation licenses: a name published under CC-BY-SA.
+     */
+    // @req REQ-045
+    it("attributes the report when the account has confirmed its age", async () => {
+      const dependencies = makeDependencies();
+
+      const result = await handleFlagCreate(
+        validInput(),
+        { accessToken: "valid-token" },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
+      expect(dependencies.createFlag).toHaveBeenCalledWith(
+        contributor.id,
+        expect.anything()
+      );
     });
 
     // @req REQ-012

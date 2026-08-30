@@ -206,7 +206,16 @@ describe("POST /api/v2/flags — age gate guard", () => {
     vi.mocked(checkFlagRateLimit).mockResolvedValue({ allowed: true });
   });
 
-  it("returns 403 when contributor has no age_confirmed_at", async () => {
+  /**
+   * The gate moved rather than disappeared: age confirmation is what licenses
+   * publishing a contributor's name, so it now decides who a report is
+   * credited to rather than who may file one (moderation charter §2).
+   * Refusing was also a dead end — `age_confirmed_at` is only ever written by
+   * the registration callback, so an account created through the sign-in page
+   * could never clear it and was barred from reporting for good.
+   */
+  // @req REQ-045
+  it("accepts the report anonymously when contributor has no age_confirmed_at", async () => {
     vi.mocked(createAdminClient).mockReturnValue(makeAdminMock(null) as never);
 
     const res = await flagPOST(
@@ -220,9 +229,8 @@ describe("POST /api/v2/flags — age gate guard", () => {
       })
     );
 
-    expect(res.status).toBe(403);
-    expect((await res.json()).errors[0].code).toBe("AGE_CONFIRMATION_REQUIRED");
-    expect(verifyTurnstileToken).not.toHaveBeenCalled();
+    expect(res.status).toBe(201);
+    expect(verifyTurnstileToken).toHaveBeenCalled();
   });
 
   it("returns 201 when contributor has age_confirmed_at set", async () => {

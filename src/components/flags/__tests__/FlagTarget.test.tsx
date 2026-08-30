@@ -130,29 +130,29 @@ describe("FlagTarget", () => {
     ).toBeInTheDocument();
   });
 
-  describe("unauthenticated branch", () => {
+  /**
+   * Reporting used to open on an account check and then an age check, and the
+   * form only appeared to a reader who had cleared both. The sign-up path left
+   * the page; the age confirmation had no screen that could grant it. Both
+   * gates are gone (moderation charter §2): Turnstile is the control, and the
+   * session only decides who the report is credited to.
+   */
+  describe("no gate before the form", () => {
     // @req REQ-012
-    it("shows a sign-in prompt with connexion and inscription links carrying the current URL", async () => {
+    it("opens straight onto the form for a reader with no session", async () => {
       mockSupabaseClient({ session: null });
       renderFlagTarget();
 
       fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
 
-      const signIn = await screen.findByRole("link", { name: /se connecter/i });
-      const signUp = screen.getByRole("link", { name: /créer un compte/i });
-
-      expect(signIn.getAttribute("href")).toMatch(
-        /^\/fr\/compte\/connexion\?redirect=/
-      );
-      expect(signUp.getAttribute("href")).toMatch(
-        /^\/fr\/compte\/inscription\?redirect=/
-      );
+      expect(
+        await screen.findByRole("button", { name: "Envoyer" })
+      ).toBeInTheDocument();
+      expect(screen.queryByRole("link", { name: /se connecter/i })).toBeNull();
     });
-  });
 
-  describe("unconfirmed-age branch", () => {
     // @req REQ-045
-    it("shows the age confirmation prompt with a CTA to the profile page", async () => {
+    it("opens straight onto the form when the account has not confirmed its age", async () => {
       mockSupabaseClient({
         session: { user: { id: "user-1" }, access_token: "token-1" },
         ageConfirmedAt: null,
@@ -162,12 +162,11 @@ describe("FlagTarget", () => {
       fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
 
       expect(
-        await screen.findByText(/confirmer votre âge pour contribuer/i)
+        await screen.findByRole("button", { name: "Envoyer" })
       ).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: /confirmer/i })).toHaveAttribute(
-        "href",
-        "/fr/compte/profil"
-      );
+      expect(
+        screen.queryByText(/confirmer votre âge pour contribuer/i)
+      ).toBeNull();
     });
   });
 

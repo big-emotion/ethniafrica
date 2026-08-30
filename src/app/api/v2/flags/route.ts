@@ -107,11 +107,17 @@
  *                 - code: INTERNAL_ERROR
  *                   message: Internal server error
  *   post:
- *     summary: Submit a flag on an AFRIK entity
- *     description: Authenticated contributors can submit a flag for editorial review after age and anti-bot verification. Responses are mutable and use Cache-Control no-store.
+ *     summary: Submit a report on an AFRIK entity
+ *     description: >-
+ *       Anyone may submit a report for editorial review, subject to anti-bot
+ *       verification. A bearer token is optional and decides attribution only:
+ *       a report from a session whose account has confirmed its age is credited
+ *       to that contributor, and every other report is recorded anonymously
+ *       rather than refused. Responses are mutable and use Cache-Control no-store.
  *     tags: [API v2 - Flags]
  *     security:
  *       - SupabaseJwtAuth: []
+ *       - {}
  *     requestBody:
  *       required: true
  *       content:
@@ -165,22 +171,8 @@
  *                 - code: VALIDATION_ERROR
  *                   message: String must contain at least 10 character(s)
  *                   field: reason_text
- *       401:
- *         description: Missing or invalid Supabase access token.
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/ApiErrorEnvelope'
- *             example:
- *               data: null
- *               meta:
- *                 license: CC-BY-SA-4.0
- *                 attribution: Africa History — africahistory.org
- *               errors:
- *                 - code: UNAUTHENTICATED
- *                   message: Authentication required
  *       403:
- *         description: Age confirmation is missing or anti-bot verification failed.
+ *         description: Anti-bot verification failed.
  *         content:
  *           application/json:
  *             schema:

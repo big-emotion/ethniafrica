@@ -75,7 +75,7 @@ const options: swaggerJsdoc.Options = {
       {
         name: "API v2 - Flags",
         description:
-          "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
+          "Editorial reports on AFRIK entities. Submission is open — a bearer token is optional and decides attribution only; Turnstile is the control (moderation charter §2).",
       },
       {
         name: "API v2 - Reference Library",
