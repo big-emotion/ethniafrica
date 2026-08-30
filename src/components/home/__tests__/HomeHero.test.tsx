@@ -206,6 +206,35 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   });
 
   /**
+   * The band is immersive at every width, so it owes content at every width.
+   *
+   * The picture used to be `display: none` below 768px, on the reading that
+   * "at phone width the question and its answer already fill the band".
+   * Measured, they do not: the floor is 760px and the copy is 135px of it, so
+   * a phone met 82% empty parchment — the product's first screen, on an atlas
+   * of African peoples, showing no Africa larger than its 40px logo.
+   *
+   * The floor is not the defect and the test above still holds it. This one
+   * holds the other half: whatever the width, the band draws the thing that
+   * fills it.
+   */
+  // @req REQ-115
+  it("draws its visual at every width, never hiding it on a phone", () => {
+    const { container } = render(<HomeHero />);
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
+
+    // Asserted on the whole sheet rather than on the block before the first
+    // media query, and that is the stronger reading: the contract is that no
+    // width hides the picture, so a display:none anywhere under this selector
+    // fails — including one reintroduced inside a media query, which a
+    // base-block-only assertion would wave through.
+    expect(styles).toMatch(/\.home-hero-figure\s*\{[^}]*display:\s*block/);
+    expect(styles).not.toMatch(/\.home-hero-figure\s*\{[^}]*display:\s*none/);
+  });
+
+  /**
    * The visual is the argument, not decoration. The repo's rule for home
    * imagery (public/images/home/CREDITS.md) is that each picture is a document
    * the block it sits in is *about* — a generic photograph of the continent
