@@ -55,7 +55,11 @@
   margin: 0;
   font-family: var(--afh-font-display);
   font-size: var(--afh-text-h1);
-  font-weight: 600;
+  /* 700, not 600. Fraunces is loaded at 300/500/700/900 (app/layout.tsx), so
+     a 600 request has always resolved to 700 — this states what renders
+     rather than changing it. Brand charter §6: two display weights, both
+     loaded, 700 for a heading role and 900 for a page's own h1. */
+  font-weight: 700;
   line-height: var(--afh-leading-h1);
   letter-spacing: -0.014em;
   color: var(--afh-text);

@@ -259,9 +259,11 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           width: 100%;
           height: 100%;
         }
+        /* 700, not 600: Fraunces is loaded at 300/500/700/900, so 600 has
+           always resolved to 700. Stating what renders — brand charter §6. */
         .home-dyk-motif-glyph {
           font-family: var(--afh-font-display);
-          font-weight: 600;
+          font-weight: 700;
           fill: currentColor;
         }
         .home-dyk-motif-lens {
