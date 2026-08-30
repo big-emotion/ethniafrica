@@ -739,6 +739,22 @@ function globeSurfaceLabel(turns: boolean): string {
     : "Carte de l'atlas. Glissez ou utilisez les flèches pour déplacer.";
 }
 
+/**
+ * The one sentence the stage always shows, so it is where the offer is
+ * stated. A mark is inert and silent: a reader who does not already know that
+ * the dots are countries has nothing on screen that says so, and the whole
+ * scene reads as decoration. It is said only where marks exist — a country
+ * fiche traces one outline and marks nothing, and promising a point there
+ * sends the reader hunting for a target the scene never drew.
+ */
+function globeLegendSentence(turns: boolean, marksCountries: boolean): string {
+  const gesture = turns ? "Glissez pour tourner" : "Glissez pour déplacer";
+  const offer = marksCountries
+    ? " ; appuyez sur un point pour ouvrir le pays."
+    : ".";
+  return `Afrique à sa surface réelle. ${gesture}${offer}`;
+}
+
 const NIGHT_STAGE_STYLE: CSSProperties = {
   position: "relative",
   width: "100%",
@@ -1223,6 +1239,15 @@ export function AtlasGlobe({
         stageAspect ?? STAGE_ASPECT
       );
 
+  /**
+   * Whether anything on the stage is a country the reader can open. Read from
+   * what was actually placed rather than from the overlay kind, so a scene
+   * whose marks were all thinned out by crowding does not promise a point
+   * that is not there.
+   */
+  const marksCountries =
+    choiceMarks.length > 0 || (pinsAMarkerPerTarget && targets.length > 0);
+
   const handlePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
     const wasDrag = travelled.current > TAP_TRAVEL_TOLERANCE_PX;
     stopDragging();
@@ -1326,33 +1351,43 @@ export function AtlasGlobe({
         />
       ))}
 
-      {offersList && (
-        <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
-          <AtlasTargetPicker
-            targets={choosableTargets}
-            subtitleByCountry={subtitleByCountry}
-            chosenCountryId={chosenCountryId}
-            onChoose={chooseTarget}
-            areaNoun={areaNoun}
-          />
-        </div>
-      )}
+      {/* One top-anchored column, so the picker and the legend cannot collide
+          at any width. Pinned to the same edge they did: the picker wraps to
+          two lines at 430px, and every fixed offset that cleared it on a
+          desktop ran under it on a phone. Transparent to the pointer, like
+          the toolbar band below — the picker takes the pointer back for
+          itself.
 
-      {/* Below the panel breakpoint the legend steps aside for the bottom
-          sheet — but only once there is a sheet. Hiding it unconditionally
-          left a phone reader with a globe that moves and no statement of what
-          dragging does, which is what "it spins and I can't stop it" was
-          describing. */}
-      {legend ?? (
-        <p
-          data-atlas-legend=""
-          className="pointer-events-none absolute inset-x-0 top-0 p-3 text-afh-caption"
-          style={{ color: "var(--afh-night-ink-2)" }}
-        >
-          Afrique à sa surface réelle.{" "}
-          {surfaceTurns ? "Glissez pour tourner." : "Glissez pour déplacer."}
-        </p>
-      )}
+          The legend stays visible at every width. It was `hidden` below
+          760px, which left a phone reader with a globe that moves under the
+          finger and no statement of what dragging does — "it spins and I
+          cannot stop it". A fiche that writes its own legend places it
+          itself, so only the default one is stacked here. */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex flex-col items-center gap-1 p-3">
+        {offersList && (
+          <div className="pointer-events-auto relative z-[7]">
+            <AtlasTargetPicker
+              targets={choosableTargets}
+              subtitleByCountry={subtitleByCountry}
+              chosenCountryId={chosenCountryId}
+              onChoose={chooseTarget}
+              areaNoun={areaNoun}
+            />
+          </div>
+        )}
+
+        {!legend && (
+          <p
+            data-atlas-legend=""
+            className="w-full text-afh-caption"
+            style={{ color: "var(--afh-night-ink-2)" }}
+          >
+            {globeLegendSentence(surfaceTurns, marksCountries)}
+          </p>
+        )}
+      </div>
+
+      {legend}
 
       {/* The mockup lays these out at every width — centred, wrapping. They
           used to be hidden below 760px, which left a phone with no way to
