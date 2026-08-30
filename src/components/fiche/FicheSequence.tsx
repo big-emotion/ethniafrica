@@ -1,7 +1,9 @@
 /**
  * FicheSequence — the shell every fiche stands in.
  *
- * Head, globe band, reading rail, dossier. It began (Epic 15 · Story 15.9) as
+ * Globe band, reading rail, dossier — the head having since moved up into the
+ * shell's hero plate, which sits above the globe just as the head did and
+ * carries the trail beside it. It began (Epic 15 · Story 15.9) as
  * a chapter engine: it asked a composer which chapters an entity had, a
  * registry what rendered each one, and dropped whatever resolved to nothing.
  * The Atlas mockup asks for something simpler than that engine could express —
@@ -12,7 +14,7 @@
  *
  * So this file is the shell and nothing else. It still decides the two things
  * that are genuinely shared: which accent the page is scoped to, and the order
- * head → globe → rail → dossier.
+ * globe → rail → dossier.
  */
 
 import type { ReactNode } from "react";
@@ -41,19 +43,6 @@ export interface FicheSequenceProps {
   entityType: FicheEntityType;
   /** The entity's dossier — the parchment the page is. */
   record: ReactNode;
-  /**
-   * The fiche's own head — eyebrow, name, lede, chips — rendered *above* the
-   * globe.
-   *
-   * It used to sit inside the parchment, below a full-bleed band some 520px
-   * tall, so a reader arriving on a fiche saw a globe and no indication of
-   * which fiche they were on: the name was below the fold on every screen.
-   * The band still opens the page; it just no longer opens it alone.
-   *
-   * This carries the page's only h1. PageLayout's own title band stays off
-   * (`hideHeader`) precisely so there is never a second one.
-   */
-  title?: ReactNode;
   /** The REQ-116 atlas globe (AtlasGlobe), on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
   globe?: ReactNode;
   className?: string;
@@ -63,7 +52,6 @@ export interface FicheSequenceProps {
 export function FicheSequence({
   entityType,
   record,
-  title,
   globe,
   className,
 }: FicheSequenceProps) {
@@ -76,16 +64,10 @@ export function FicheSequence({
         className
       )}
     >
-      {/* The head comes first, so the reader knows which fiche they opened
-          before the band fills their screen. */}
-      {title ? (
-        <div
-          data-fiche-title-band=""
-          className="mx-auto w-full max-w-4xl px-4 pt-afh-base"
-        >
-          {title}
-        </div>
-      ) : null}
+      {/* No head here. It is the shell's now, in the hero plate above this
+          sequence: it was raised at this position to get above the globe, and
+          the plate is above the globe too — with the trail beside it and the
+          same card every other route opens on. */}
       {globe}
       {/* The rail opens the reading, not the map: pinned here it starts
           following the reader exactly where the parchment starts, and the globe

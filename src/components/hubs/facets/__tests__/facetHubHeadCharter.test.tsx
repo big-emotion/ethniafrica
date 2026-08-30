@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { FacetHubShell } from "@/components/hubs/facets/FacetHubShell";
+import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { FACETS, getFacet } from "@/lib/hubs/facets";
 
 /**
@@ -26,9 +27,24 @@ vi.mock("next/navigation", async () => {
   return { usePathname: () => getFacetRoute("fr", "peoples") };
 });
 
+/**
+ * The shell stands in for the real one, but it has to render the plate slot:
+ * the head is what this file is about, and the head is now a prop the facet
+ * hands the shell rather than a block it prints itself. A mock that took only
+ * `children` would drop the head and pass the file by asserting nothing.
+ */
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
+  PageLayout: ({
+    children,
+    heroHead,
+  }: {
+    children: React.ReactNode;
+    heroHead?: React.ReactNode;
+  }) => (
+    <div data-testid="page-layout">
+      {heroHead}
+      {children}
+    </div>
   ),
 }));
 
@@ -75,12 +91,19 @@ describe("the facet head — the page names itself before the globe fills it", (
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   });
 
+  /**
+   * The head used to inherit the accent from the hub wrapper it sat inside.
+   * It sits in the shell's plate now, outside that wrapper, so the scope has
+   * to travel with it — unbound, `--accent` falls back to the bare HSL triplet
+   * index.css declares under the same name and the ink resolves to nothing.
+   */
   // @req REQ-114
-  it("sets the head over the facet's own accent scope", () => {
+  it("carries the facet's own accent scope into the plate", () => {
     renderShell();
 
-    const scope = screen.getByTestId("facet-hub");
-    expect(scope).toContainElement(screen.getByTestId("facet-hub-head"));
+    const head = screen.getByTestId("facet-hub-head");
+    expect(head).toHaveClass(DIRECTORY_ACCENT_CLASS["people"]);
+    expect(head).not.toBe(screen.getByTestId("facet-hub"));
   });
 
   /**
