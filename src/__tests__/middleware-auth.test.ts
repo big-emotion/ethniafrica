@@ -33,9 +33,12 @@ const { mockNextResponseNext, mockNextResponseJson, mockResponseHeaders } =
       }
     );
 
+    // Carries real Headers: the middleware stamps the API version onto every
+    // response it returns itself, so a headerless stand-in would fail on a
+    // path the real NextResponse.json supports.
     const mockNextResponseJson = vi.fn(
       (body: unknown, init?: { status?: number }) => {
-        return { status: init?.status ?? 200, body };
+        return { status: init?.status ?? 200, body, headers: new Headers() };
       }
     );
 
@@ -359,6 +362,7 @@ describe("middleware - /api/v2/* authentication", () => {
     it("returns the 429 from the IP pre-limit and never calls validateApiKey", async () => {
       vi.mocked(applyIpRateLimit).mockResolvedValueOnce({
         status: 429,
+        headers: new Headers(),
       } as unknown as Awaited<ReturnType<typeof applyIpRateLimit>>);
 
       const request = createMockRequest(
@@ -368,7 +372,7 @@ describe("middleware - /api/v2/* authentication", () => {
       const response = await middleware(request);
 
       expect(validateApiKey).not.toHaveBeenCalled();
-      expect(response).toEqual({ status: 429 });
+      expect(response.status).toBe(429);
     });
 
     // @req REQ-059
