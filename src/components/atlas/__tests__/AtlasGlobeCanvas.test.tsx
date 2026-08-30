@@ -81,7 +81,6 @@ function createFakeGl() {
     ONE_MINUS_SRC_ALPHA: 8,
     COLOR_BUFFER_BIT: 9,
     POINTS: 10,
-    TRIANGLE_FAN: 11,
     LINE_LOOP: 12,
     // The shared sphere layer's own surface (REQ-112). Without these the
     // layer would throw, be caught, and the terrain would silently vanish
@@ -328,7 +327,7 @@ describe("AtlasGlobeCanvas", () => {
   });
 
   // @req REQ-116 — the people encoding guard: GL_POINTS only, never a line or fill.
-  it("draws a people field with GL_POINTS only, never LINE_LOOP or TRIANGLE_FAN", () => {
+  it("draws a people field with GL_POINTS only, never LINE_LOOP or a filled area", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
 
@@ -343,21 +342,21 @@ describe("AtlasGlobeCanvas", () => {
       expect.anything()
     );
     expect(fakeGl.drawArrays).not.toHaveBeenCalledWith(
-      fakeGl.TRIANGLE_FAN,
+      fakeGl.TRIANGLES,
       expect.anything(),
       expect.anything()
     );
   });
 
   // @req REQ-116
-  it("draws a country outline as a filled fan plus a stroked line loop per ring", () => {
+  it("draws a country outline as a filled area plus a stroked line loop per ring", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
-      fakeGl.TRIANGLE_FAN,
+      fakeGl.TRIANGLES,
       0,
-      square.length + 2
+      (square.length - 2) * 3
     );
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.LINE_LOOP,
@@ -367,14 +366,14 @@ describe("AtlasGlobeCanvas", () => {
   });
 
   // @req REQ-116
-  it("draws a family footprint as a dashed, tinted fan plus line loop per ring", () => {
+  it("draws a family footprint as a dashed, tinted area plus line loop per ring", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
 
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
-      fakeGl.TRIANGLE_FAN,
+      fakeGl.TRIANGLES,
       0,
-      square.length + 2
+      (square.length - 2) * 3
     );
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.LINE_LOOP,
@@ -389,13 +388,13 @@ describe("AtlasGlobeCanvas", () => {
    * physically impossible to paint rather than merely invisible.
    */
   // @req REQ-116
-  it("strokes the continent frame without ever issuing a TRIANGLE_FAN fill", () => {
+  it("strokes the continent frame without ever issuing a filled area", () => {
     matchMediaMatches = true;
     render(<AtlasGlobeCanvas overlay={continentOverlay} pose={IDLE_POSE} />);
 
     const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
     expect(modes).toContain(fakeGl.LINE_LOOP);
-    expect(modes).not.toContain(fakeGl.TRIANGLE_FAN);
+    expect(modes).not.toContain(fakeGl.TRIANGLES);
   });
 
   // @req REQ-116
@@ -406,14 +405,14 @@ describe("AtlasGlobeCanvas", () => {
     // Each country's own geometry reaches the GPU — a four-point ring and a
     // five-point one — rather than one wash over the union of the two.
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
-      fakeGl.TRIANGLE_FAN,
+      fakeGl.TRIANGLES,
       0,
-      square.length + 2
+      (square.length - 2) * 3
     );
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
-      fakeGl.TRIANGLE_FAN,
+      fakeGl.TRIANGLES,
       0,
-      elsewhere.length + 2
+      (elsewhere.length - 2) * 3
     );
     expect(fakeGl.drawArrays).toHaveBeenCalledWith(
       fakeGl.LINE_LOOP,
