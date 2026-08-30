@@ -1,11 +1,6 @@
-import Link from "next/link";
-
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
-import { getPeopleRoute } from "@/lib/routing";
-import type { Language } from "@/types/shared";
 
 export interface CountrySynthesisBriefProps {
-  language: Language;
   synthesis: CountrySynthesis;
 }
 
@@ -13,28 +8,34 @@ export interface CountrySynthesisBriefProps {
  * The country fiche's chapô: the same synthesis as the home's card, opened
  * out.
  *
- * A fiche runs eight chapters. The brief is not a ninth — it is the eight
- * compressed, which is why it sits above them rather than among them, and
- * why it stays four lines long. Every line it prints appears again below in
- * more detail; that redundancy is what a summary *is*, and it stops being
- * acceptable the moment the brief tries to say everything.
+ * It was written as "the eight chapters compressed", sitting above the eight —
+ * a summary whose redundancy was the point. There are no chapters. The brief
+ * now stands between the globe and a parchment, and three of its four facts
+ * were the parchment's own sections restated a screen early: the peoples it
+ * listed appear below with their shares and their own links, the kingdoms on
+ * a dated timeline, the languages with the family each belongs to. A summary
+ * of the thing directly beneath it is not a summary; it is the same page
+ * twice, and the reader meets the second copy first.
  *
- * It lives under components/fiche/ rather than components/country/ because
- * it belongs to the fiche shell, beside FicheHeroBand, not to the country
- * domain rendering — and because the people it names are inline links into
- * their own fiches, where AutonymExonymHeading does the naming properly.
+ * What is left is what only the brief holds: the corpus's own chapeau, and
+ * the former names — `historicalNames.formerNames`, which
+ * countryDataTransformer never reads, so this is the fiche's only sight of
+ * them.
+ *
+ * It lives under components/fiche/ rather than components/country/ because it
+ * belongs to the fiche shell, beside FicheHeroBand, not to the country domain
+ * rendering.
  */
 // @req REQ-113
 export function CountrySynthesisBrief({
-  language,
   synthesis,
 }: CountrySynthesisBriefProps) {
-  const { summary, formerNames, peoples, kingdoms, languages } = synthesis;
+  const { summary, formerNames } = synthesis;
 
   // Charter §4: a surface says what the corpus does not hold rather than
-  // dressing the absence. With no chapeau and no peoples there is no brief
-  // to write, so the fiche opens straight onto its chapters.
-  if (!summary && peoples.length === 0) return null;
+  // dressing the absence. With neither chapeau nor former names there is no
+  // brief to write, so the fiche opens straight onto its parchment.
+  if (!summary && formerNames.length === 0) return null;
 
   return (
     <section
@@ -52,40 +53,6 @@ export function CountrySynthesisBrief({
           <div>
             <dt>Anciens noms et appellations</dt>
             <dd>{formerNames.join(" · ")}</dd>
-          </div>
-        ) : null}
-
-        {peoples.length > 0 ? (
-          <div>
-            <dt>Groupes ethniques principaux</dt>
-            <dd>
-              {peoples.map((people, index) => (
-                <span key={people.peopleId ?? people.name}>
-                  {index > 0 ? ", " : null}
-                  {people.peopleId ? (
-                    <Link href={getPeopleRoute(language, people.peopleId)}>
-                      {people.name}
-                    </Link>
-                  ) : (
-                    people.name
-                  )}
-                </span>
-              ))}
-            </dd>
-          </div>
-        ) : null}
-
-        {kingdoms.length > 0 ? (
-          <div>
-            <dt>Héritage historique</dt>
-            <dd>{kingdoms.join(" · ")}</dd>
-          </div>
-        ) : null}
-
-        {languages.length > 0 ? (
-          <div>
-            <dt>Langues et identité</dt>
-            <dd>{languages.join(", ")}</dd>
           </div>
         ) : null}
       </dl>
@@ -147,16 +114,6 @@ export function CountrySynthesisBrief({
           font-size: var(--afh-text-small);
           line-height: 1.55;
           color: var(--afh-text);
-        }
-        .fiche-brief-facts dd a {
-          color: inherit;
-          text-decoration: underline;
-          text-decoration-color: var(--afh-border);
-          text-underline-offset: 2px;
-        }
-        .fiche-brief-facts dd a:hover,
-        .fiche-brief-facts dd a:focus-visible {
-          text-decoration-color: var(--accent);
         }
         @media (min-width: 720px) {
           .fiche-brief { padding: 30px 30px 26px; }

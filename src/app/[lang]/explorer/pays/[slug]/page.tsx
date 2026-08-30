@@ -270,7 +270,6 @@ export default async function PaysSlugPage({
                 FicheSequence slot: it is part of what the record says, and
                 the sequence already knows where the record belongs. */}
             <CountrySynthesisBrief
-              language="fr"
               synthesis={deriveCountrySynthesisFromDetail(countryDetail)}
             />
             <CountryRecordView

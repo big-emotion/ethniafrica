@@ -199,26 +199,27 @@ export function FamilyParchment({
 
   return (
     <div className="afh-parchment" id="fiche">
-      {/* The head and the trail stand above the globe now
-          (FamilyFicheTitle). The chips stayed: they are figures about this
-          document, and the chapters below immediately qualify them. */}
-      <div className="afh-parchment-head">
-        <div className="afh-chips">
-          {/* The languages count is not here: the stat card below states it,
-              under the rubric naming where in the fiche it is read and with
-              the provenance marker when it is absent. A chip stating the same
-              figure a few lines above, carrying neither, said it twice and
-              said it worse. */}
-          <span className="afh-chip" data-tone="derived">
-            {memberPeopleCount} peuples · {footprint.length} pays dérivés
-          </span>
-          {distributionProvenance === "missing" && (
+      {/* The head and the trail stand above the globe now (FamilyFicheTitle).
+          One chip stayed, and it is the only one that says something no
+          section below says better: that the fiche declares no distribution
+          at all. The two that left each restated a section a screen down —
+          the languages count, which the "Langues" stat card states under the
+          rubric naming where it is read; and "N peuples · M pays dérivés",
+          which the empreinte section states in a sentence that also says what
+          they were derived from and by which rule. Bare in a chip, "dérivés"
+          asserted a provenance the chip could not name.
+
+          Rendered only when that chip applies: an empty bordered strip under
+          the globe is worse than no band. */}
+      {distributionProvenance === "missing" && (
+        <div className="afh-parchment-head">
+          <div className="afh-chips">
             <span className="afh-chip" data-tone="missing">
               Distribution non déclarée
             </span>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       <Section
         title="Ce que la fiche déclare, ce qu'elle ne déclare pas"
@@ -396,16 +397,22 @@ export function FamilyParchment({
 
       {children}
 
-      {data.sources.length > 0 && (
-        <Section
-          title="Sources"
-          note="Rubrique « sources » de la fiche · politique de paliers"
-          testId="family-sources"
-          /* Deep links across the app point at #sources, and the sources are
-             the fiche's own footer landmark. Both predate this layout. */
-          as="footer"
-          id="sources"
-        >
+      {/* Printed whether or not the fiche declares a source. It used to be
+          gated on there being one, so a family with no sources lost the
+          section — and with it #sources, the landmark deep links across the
+          app point at, on exactly the fiches whose sourcing a reader would
+          most want to check. The people and country parchments have always
+          shown the gap instead, which is charter §4. */}
+      <Section
+        title="Sources"
+        note="Rubrique « sources » de la fiche · politique de paliers"
+        testId="family-sources"
+        /* Deep links across the app point at #sources, and the sources are
+           the fiche's own footer landmark. Both predate this layout. */
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
           <ul className="afh-sources">
             {data.sources.map((source, index) => {
               const label = ficheSourceLabel(source);
@@ -424,8 +431,10 @@ export function FamilyParchment({
               );
             })}
           </ul>
-        </Section>
-      )}
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </Section>
     </div>
   );
 }
