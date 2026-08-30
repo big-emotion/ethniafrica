@@ -132,14 +132,14 @@
   color: var(--afh-text-soft);
 }
 
-/* The measure, not the container, decides where a line ends. A section spans
-   the full parchment because its figures and tables need the width; its
-   running prose does not, and uncapped it ran past 120 characters a line on a
-   desktop fiche while the callout beside it stopped at 72ch. Two measures in
-   one document is what made the reading look unedited. */
+/* The parchment, not a measure, decides where a line ends. Capped at 72ch the
+   prose stopped around 60% of a desktop chapter and left the rest of the row
+   empty, while the figures, rankings and tables in the same chapter ran to
+   both edges — the paragraph was the only thing on the page that broke off
+   mid-width, against nothing. The section's own gutters are the margin now,
+   so the reading is as wide as the document it belongs to. */
 .afh-parchment-section p {
   margin: 0 0 12px;
-  max-width: 72ch;
   font-size: var(--afh-text-body);
   line-height: 1.7;
   color: var(--afh-text-soft);
@@ -369,7 +369,6 @@
 
 .afh-parchment-callout {
   margin-top: 16px;
-  max-width: 72ch;
   padding: 13px 16px;
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--afh-radius-md) var(--afh-radius-md) 0;
