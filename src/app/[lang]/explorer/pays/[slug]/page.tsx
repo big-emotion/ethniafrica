@@ -11,6 +11,7 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
@@ -226,19 +227,20 @@ export default async function PaysSlugPage({
     <PageLayout
       language="fr"
       sectionName="Pays"
-      hideHeader
       flushTop
       trailLabel={countryDetail.nameFr}
-    >
-      <FicheSequence
-        entityType="country"
-        title={
+      heroHead={
+        <FicheHeroHead entityType="country">
           <CountryFicheTitle
             country={countryDetail}
             fromPeopleId={navigationContext.fromPeopleId}
             fromPeopleName={navigationContext.fromPeopleName}
           />
-        }
+        </FicheHeroHead>
+      }
+    >
+      <FicheSequence
+        entityType="country"
         globe={
           // The picker lives inside the globe now, which is what lets choosing
           // a country re-aim the camera instead of loading another fiche: the

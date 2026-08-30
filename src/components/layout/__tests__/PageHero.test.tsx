@@ -18,7 +18,7 @@ const trail = <nav aria-label="Fil d'ariane">Accueil › Jouer › Quiz</nav>;
 describe("the page hero — the plate, and what it carries (REQ-115)", () => {
   // @req REQ-115
   it("names the page in the one h1 the band raises", () => {
-    render(<PageHero variant="compact" title="Choisis ton parcours" />);
+    render(<PageHero title="Choisis ton parcours" />);
 
     const heading = screen.getByRole("heading", { level: 1 });
     expect(heading).toHaveTextContent("Choisis ton parcours");
@@ -33,7 +33,6 @@ describe("the page hero — the plate, and what it carries (REQ-115)", () => {
   it("renders the subtitle the shell used to swallow", () => {
     render(
       <PageHero
-        variant="compact"
         title="Choisis ton parcours"
         subtitle="Huit questions, tirées du corpus."
       />
@@ -46,9 +45,7 @@ describe("the page hero — the plate, and what it carries (REQ-115)", () => {
 
   // @req REQ-115
   it("raises no subtitle element when the page gives none", () => {
-    const { container } = render(
-      <PageHero variant="compact" title="Mentions légales" />
-    );
+    const { container } = render(<PageHero title="Mentions légales" />);
 
     expect(
       container.querySelector("[data-testid='page-hero-subtitle']")
@@ -61,14 +58,7 @@ describe("the page hero — the plate, and what it carries (REQ-115)", () => {
    */
   // @req REQ-115
   it("puts the trail below the title and the subtitle, inside the plate", () => {
-    render(
-      <PageHero
-        variant="compact"
-        title="Quiz"
-        subtitle="Huit questions."
-        trail={trail}
-      />
-    );
+    render(<PageHero title="Quiz" subtitle="Huit questions." trail={trail} />);
 
     const plate = screen.getByTestId("page-hero-plate");
     const heading = within(plate).getByRole("heading", { level: 1 });
@@ -84,46 +74,60 @@ describe("the page hero — the plate, and what it carries (REQ-115)", () => {
         Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
   });
+});
 
-  /**
-   * The two variants differ by height alone, and the height is a class rather
-   * than a style so the viewport unit stays in the stylesheet where a media
-   * query can reach it.
-   */
+/**
+ * A fiche's head is not a string.
+ *
+ * A people fiche names its subject with the autonym beside the exonym and the
+ * `lang` attribute that makes the pair readable — a treatment an ESLint rule
+ * makes mandatory. A country fiche prints the corpus identifier and the
+ * reference year, and, when the reader came from a people, the way back.
+ * Flattening any of that into `title` + `subtitle` would lose it, so the plate
+ * takes a head the page composed instead.
+ */
+describe("the page hero — a head the page composed itself (REQ-115)", () => {
+  const ficheHead = (
+    <header data-testid="fiche-head">
+      <p>BEN · fiche pays</p>
+      <h1>Bénin</h1>
+    </header>
+  );
+
   // @req REQ-115
-  it("marks which of the two bands it is", () => {
-    const { rerender } = render(<PageHero variant="immersive" title="Jouer" />);
-    expect(screen.getByTestId("page-hero")).toHaveAttribute(
-      "data-hero-variant",
-      "immersive"
-    );
+  it("fills the plate with the head a page hands it", () => {
+    render(<PageHero head={ficheHead} />);
 
-    rerender(<PageHero variant="compact" title="Quiz" />);
-    expect(screen.getByTestId("page-hero")).toHaveAttribute(
-      "data-hero-variant",
-      "compact"
+    const plate = screen.getByTestId("page-hero-plate");
+    expect(plate).toContainElement(screen.getByTestId("fiche-head"));
+    expect(within(plate).getByRole("heading", { level: 1 })).toHaveTextContent(
+      "Bénin"
     );
   });
 
   /**
-   * The immersive band is the only one that takes a visual, and it must not
-   * announce it: the picture argues the copy beside it, so a screen reader
-   * that reads the copy has already had the argument.
+   * One h1 per page. A head that brings its own title and a band that composes
+   * a second one is the fault the fiches passed `hideHeader` to avoid, back
+   * when the only way to keep one heading was to raise no band at all.
    */
   // @req REQ-115
-  it("carries a visual only when one is given", () => {
-    const { rerender } = render(
-      <PageHero variant="immersive" title="EthniAfrica" />
-    );
-    expect(screen.queryByTestId("page-hero-media")).toBeNull();
+  it("composes no title of its own beside the head", () => {
+    const { container } = render(<PageHero head={ficheHead} title="Pays" />);
 
-    rerender(
-      <PageHero
-        variant="immersive"
-        title="EthniAfrica"
-        media={<img src="/x.jpg" alt="" />}
-      />
-    );
-    expect(screen.getByTestId("page-hero-media")).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+    expect(container.querySelector(".afh-hero-title")).toBeNull();
+  });
+
+  // @req REQ-115
+  it("still hangs the trail under the head", () => {
+    render(<PageHero head={ficheHead} trail={trail} />);
+
+    const plate = screen.getByTestId("page-hero-plate");
+    const head = within(plate).getByTestId("fiche-head");
+    const crumbs = within(plate).getByLabelText("Fil d'ariane");
+
+    expect(
+      head.compareDocumentPosition(crumbs) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
   });
 });

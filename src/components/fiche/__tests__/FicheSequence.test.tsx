@@ -58,11 +58,7 @@ describe("FicheSequence — accent scope", () => {
   // @req REQ-091
   it("paints through the accent tokens, never a colour literal", () => {
     const { container } = render(
-      <FicheSequence
-        entityType="country"
-        record={RECORD}
-        title={<h1>Nigéria</h1>}
-      />
+      <FicheSequence entityType="country" record={RECORD} />
     );
 
     const html = container.innerHTML;
@@ -162,43 +158,36 @@ describe("FicheSequence — measures and order", () => {
     expect(record?.parentElement).toBe(root);
   });
 
-  // The head is the one thing that *is* measured: it stands in a band four
-  // columns wide, not in the parchment's own measure.
+  // The sequence measures nothing. The globe runs edge to edge and the
+  // parchment carries its own reading measure; a column here would lay a
+  // second, wider one over it. The one measured band it used to hold was the
+  // head's, and the head is the shell's now.
   // @req REQ-091
-  it("measures the title band, and only the title band", () => {
+  it("lays no measure of its own over the globe or the parchment", () => {
     const { container } = render(
       <FicheSequence
         entityType="people"
         record={RECORD}
-        title={<h1>Yoruba</h1>}
         globe={<div data-testid="globe-stage" />}
       />
     );
 
-    const measured = container.querySelectorAll(".max-w-4xl");
-    expect(measured).toHaveLength(1);
-    expect(measured[0].querySelector("h1")?.textContent).toBe("Yoruba");
+    expect(container.querySelectorAll("[class*='max-w-']")).toHaveLength(0);
   });
 
-  // The head used to sit inside the parchment, below a band some 520px tall,
-  // so a reader arriving on a fiche saw a globe and no indication of which
-  // fiche they were on. Order is the fix, and this is what holds it.
   // @req REQ-091
-  it("opens on the head, then the globe, and closes on the dossier", () => {
+  it("opens on the globe and closes on the dossier", () => {
     const { container } = render(
       <FicheSequence
         entityType="people"
         record={RECORD}
-        title={<h1>Yoruba</h1>}
         globe={<div data-testid="globe-stage" />}
       />
     );
 
     const children = Array.from(container.firstElementChild!.children);
-    const titleBand = container.querySelector("[data-fiche-title-band]");
 
-    expect(children.indexOf(titleBand as Element)).toBe(0);
-    expect(children.indexOf(screen.getByTestId("globe-stage"))).toBe(1);
+    expect(children.indexOf(screen.getByTestId("globe-stage"))).toBe(0);
     expect(children.indexOf(container.querySelector("section")!)).toBe(
       children.length - 1
     );

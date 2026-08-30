@@ -1,7 +1,7 @@
 /* ============================================================
    Africa History — The page hero
    ------------------------------------------------------------
-   One band, two heights. `PageHero.tsx` carries the rationale;
+   One band, one height. `PageHero.tsx` carries the rationale;
    this file carries the measurements.
 
    The ground is full-bleed and the content is not: `.afh-hero`
@@ -10,54 +10,33 @@
    edge as the logo above it and the copyright below it.
    ============================================================ */
 
+/* Short enough that what the reader came for is on screen with the title.
+   The reference's band is 420px, but it holds its own header inside; ours
+   sits below a separate bar, so the equivalent weight is that minus the bar.
+
+   Nothing here is measured against the viewport, and `heroBandCharter`
+   holds that: the band used to have a second, screen-tall height for the
+   home and the three hubs, which — the plate being bottom-aligned — put a
+   hub's title under a full screen of empty parchment. */
 .afh-hero {
   position: relative;
   display: flex;
   align-items: flex-end;
   width: 100vw;
+  min-height: 220px;
   margin-inline: calc(50% - 50vw);
   background: var(--afh-bg-warm);
   border-bottom: 1px solid var(--afh-border);
 }
 
-.afh-hero-inner {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--afh-space-6xl);
-  padding-block: var(--afh-space-7xl) var(--afh-space-6xl);
-}
-
-/* ─── The two heights ─────────────────────────────────────────
-   `svh` rather than `vh`: on a phone `100vh` is the window with
-   the URL bar retracted, so a `100vh` hero is always taller than
-   the screen it is on and the page below it can never be seen
-   without scrolling twice.
-
-   The `min(…, 760px)` floor is the reference's own: without it a
-   short, wide window gives a band with a title marooned in the
-   middle of an empty field. */
-.afh-hero[data-hero-variant="immersive"] {
-  min-height: min(100svh, 760px);
-}
-
 @media (min-width: 768px) {
-  .afh-hero[data-hero-variant="immersive"] {
-    min-height: 100svh;
-  }
-}
-
-/* Short enough that what the reader came for is on screen with the title.
-   The reference's band is 420px, but it holds its own header inside; ours
-   sits below a separate bar, so the equivalent weight is that minus the bar. */
-.afh-hero[data-hero-variant="compact"] {
-  min-height: 220px;
-}
-
-@media (min-width: 768px) {
-  .afh-hero[data-hero-variant="compact"] {
+  .afh-hero {
     min-height: 320px;
   }
+}
+
+.afh-hero-inner {
+  padding-block: var(--afh-space-7xl) var(--afh-space-6xl);
 }
 
 /* ─── The plate ───────────────────────────────────────────────
@@ -76,10 +55,6 @@
   box-shadow: var(--afh-elev-2);
 }
 
-.afh-hero[data-hero-variant="immersive"] .afh-hero-plate {
-  max-width: 34rem;
-}
-
 .afh-hero-title {
   margin: 0;
   font-family: var(--afh-font-display);
@@ -90,11 +65,6 @@
   text-wrap: balance;
 }
 
-.afh-hero[data-hero-variant="immersive"] .afh-hero-title {
-  font-size: var(--afh-text-hero);
-  line-height: var(--afh-leading-hero);
-}
-
 .afh-hero-subtitle {
   margin: var(--afh-space-lg) 0 0;
   max-width: 46ch;
@@ -103,36 +73,27 @@
   color: var(--afh-text-soft);
 }
 
-/* ─── The visual ──────────────────────────────────────────────
-   Only the immersive band takes one, and only from `md` up: at
-   phone width the plate already fills the band, and a picture
-   under it would push the copy off the first screen. */
-.afh-hero-media {
-  display: none;
+/* ─── A head the page brought with it ─────────────────────────
+   The fiches and the facets fill the plate with their own head
+   — the parchment head, which was built to stand on the page
+   ground above the figures it introduced. Both of the things
+   that made it work there are wrong inside a card: its rule
+   becomes a line drawn across the plate, and its padding a
+   second inset inside the plate's own. The plate supplies both.
+
+   The trail follows the head, so it needs the separation the
+   head's own bottom padding used to give it. */
+.afh-hero-plate .afh-parchment-head {
+  padding: 0;
+  border-bottom: 0;
+  margin-bottom: var(--afh-space-lg);
 }
 
-@media (min-width: 768px) {
-  .afh-hero-media {
-    display: block;
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: 28rem;
-  }
-
-  .afh-hero-media :is(img, svg) {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: var(--afh-radius-lg);
-  }
-}
-
-/* Below the shell's own breakpoint the band is one column: the plate takes
-   the width it is given and the visual is withdrawn rather than shrunk. */
+/* Below the shell's own breakpoint the plate takes the width it is given:
+   at phone width a 42rem measure is wider than the screen, and the band's
+   own gutter is the only inset the card should have. */
 @media (max-width: 767px) {
   .afh-hero-inner {
-    flex-direction: column;
-    align-items: stretch;
     padding-block: var(--afh-space-6xl) var(--afh-space-5xl);
   }
 

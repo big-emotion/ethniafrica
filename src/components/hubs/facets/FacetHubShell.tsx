@@ -50,35 +50,35 @@ export function FacetHubShell({
     <PageLayout
       language="fr"
       sectionName={facet.sectionName}
-      hideHeader
       flushTop
+      heroHead={
+        /* The head goes into the shell's plate rather than into the page.
+           It has to sit above the globe — that is some 520px of full-bleed
+           night, so a title below it is past the fold on every screen — and
+           the plate is the only box above it. It used to be raised here, in
+           the page body, which meant the facet gave up the band entirely
+           (`hideHeader`) and left the trail floating in a container of its
+           own above a bare title.
+
+           It carries the h1 for all three facets, which is why none of the
+           facet pages carries one of its own. */
+        <header
+          data-testid="facet-hub-head"
+          className={`${DIRECTORY_ACCENT_CLASS[facet.entityType]} afh-parchment-head`}
+        >
+          {/* The facet eyebrows are written in running case in the registry
+              and set in caps here, so the string stays readable at the one
+              place an editor changes it. */}
+          <p className="afh-parchment-eyebrow uppercase">{facet.eyebrow}</p>
+          <h1>{facet.title}</h1>
+        </header>
+      }
     >
       <div
         className={DIRECTORY_ACCENT_CLASS[facet.entityType]}
         data-testid="facet-hub"
         data-facet={facet.key}
       >
-        {/* The head comes before the band, not inside the parchment under it:
-            the globe is some 520px of full-bleed night, so a title below it is
-            past the fold on every screen and the trail was the only thing
-            naming the page. It carries the h1 for all three facets, which is
-            why none of the facet pages carries one of its own. */}
-        {/* No gutter of its own. Every block of the hub hangs off `main`'s
-            single padding, so the title, the switcher, the hint, the filters,
-            the cards and the pager all share one left edge — three different
-            ones is most of what made the reading read as a pasted-in panel. */}
-        <header
-          data-testid="facet-hub-head"
-          className="pt-afh-base pb-afh-base flex flex-col gap-afh-xs"
-        >
-          <p className="font-[family-name:var(--afh-font-mono)] text-afh-caption uppercase tracking-[0.1em] text-afh-text-soft">
-            {facet.eyebrow}
-          </p>
-          <h1 className="font-display font-black text-afh-h1 leading-[1.1] tracking-[-0.015em]">
-            {facet.title}
-          </h1>
-        </header>
-
         <FacetCountryIndexProvider>
           <FacetGlobeIsland
             peopleCountsByCountry={peopleCountsByCountry}
