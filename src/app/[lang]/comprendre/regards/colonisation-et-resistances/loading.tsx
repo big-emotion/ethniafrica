@@ -4,9 +4,6 @@ import { PageLoadingScreen } from "@/components/system/PageLoadingScreen";
 // @req REQ-104
 export default function ColonisationLoading() {
   return (
-    <PageLoadingScreen
-      label="Chargement des regards sur la colonisation"
-      sectionName="Comprendre"
-    />
+    <PageLoadingScreen label="Chargement des regards sur la colonisation" />
   );
 }
