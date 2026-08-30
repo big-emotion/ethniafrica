@@ -747,6 +747,15 @@ export interface AtlasGlobeProps {
    * difference. See STAGE_ROLE_TOKENS.
    */
   surface?: GlobeSurface;
+  /**
+   * Whether the sphere carries Tissot's indicatrices.
+   *
+   * Off by default, because a fiche shows a people or a country and makes no
+   * claim about area. The continent stage asks for them: the home's opening
+   * module and /jouer/mercator both exist to show that a flat map lies about
+   * surface, and the discs are what makes that measurable rather than asserted.
+   */
+  showTissot?: boolean;
 }
 
 /** The drag distance the point cloud used, kept so the gesture did not change under readers when its engine did. */
@@ -952,6 +961,7 @@ export function AtlasGlobe({
   pinnedProjection,
   pinnedProjectionNote,
   surface = "night",
+  showTissot = false,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(
     probedWebglSupport ?? false
@@ -1431,6 +1441,7 @@ export function AtlasGlobe({
           focusedCountryId={chosenCountryId}
           onUnavailable={handleCanvasUnavailable}
           surface={surface}
+          showTissot={showTissot}
         />
       ) : (
         <AtlasGlobeFallback

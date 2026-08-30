@@ -40,13 +40,21 @@ vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
   AtlasGlobeCanvas: ({
     pose,
     onUnavailable,
+    showTissot,
   }: {
     pose: { morph: number };
     onUnavailable?: () => void;
+    showTissot?: boolean;
   }) => {
     if (canvasGivesUpOnMount) onUnavailable?.();
     return (
-      <canvas data-testid="atlas-globe-canvas-mock" data-morph={pose.morph} />
+      <canvas
+        data-testid="atlas-globe-canvas-mock"
+        data-morph={pose.morph}
+        // Published for the same reason as the morph: the indicatrices only
+        // ever exist as pixels in a texture read by a shader.
+        data-tissot={showTissot ? "true" : "false"}
+      />
     );
   },
 }));
@@ -1833,5 +1841,47 @@ describe("AtlasGlobe — when the canvas gives up (REQ-112)", () => {
     );
 
     expect(serverHtml).toContain("africa-landmass");
+  });
+
+  /**
+   * Whether the sphere carries Tissot's indicatrices is the caller's call,
+   * not the globe's: they are an argument about area, which the Mercator
+   * lesson makes and a fiche does not.
+   */
+  // @req REQ-112
+  it("carries the indicatrices to its canvas when a caller asks for them", async () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+        showTissot
+      />
+    );
+
+    await waitFor(() =>
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-tissot",
+        "true"
+      )
+    );
+  });
+
+  // @req REQ-112
+  it("leaves them off for a caller that says nothing, which is every fiche", async () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+      />
+    );
+
+    await waitFor(() =>
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+        "data-tissot",
+        "false"
+      )
+    );
   });
 });
