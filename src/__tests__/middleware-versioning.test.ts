@@ -99,7 +99,7 @@ describe("versioning headers in middleware", () => {
   });
 
   // @req REQ-035
-  it.each(["/api/contributions", "/api/download", "/fr/explorer/pays"])(
+  it.each(["/api/contributions", "/api/download", "/fr"])(
     "leaves %s free of the public API's version claim",
     async (pathname) => {
       const response = await middleware(

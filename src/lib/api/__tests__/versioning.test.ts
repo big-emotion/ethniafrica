@@ -79,7 +79,7 @@ describe("paths that are not the public API", () => {
     "/api/contributions",
     "/api/admin/revalidate",
     "/api/download",
-    "/fr/explorer/pays",
+    "/fr",
   ])("leaves %s untouched, so it never claims to be v2", (pathname) => {
     const response = applyVersioningHeaders(Response.json({}), pathname);
     expect(versionHeaders(response)).toEqual({ version: null, stable: null });
