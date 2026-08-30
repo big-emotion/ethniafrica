@@ -10,6 +10,50 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-08-04
+
+### Added
+
+- Public flag reporting and moderation surfaces, including API endpoints, a
+  unified submission form, the public moderation queue and Turnstile anti-spam
+  protection (ETNI-58, ETNI-61, ETNI-62, ETNI-63).
+- Contributor profile management with atomic account erasure and anonymized
+  attribution for retained moderation records (ETNI-57).
+- Pinned fiche version banners, frozen-doctrine links and pinned doctrine
+  resolution for stable historical citations (ETNI-50, ETNI-53).
+- Accessible citation components and formatting contracts for transparent
+  source attribution (ETNI-48).
+- OpenAPI 3.1 documentation with complete endpoint schemas and reusable error
+  responses.
+- A compact branded footer, legal pages and the territorial mosaic treatment
+  for the Big Emotion identity.
+- An AFRIK source-tier audit gate for validating people profiles before Prismic
+  migration (ETNI-403).
+
+### Changed
+
+- Production deployments now synchronize AFRIK data after a successful deploy
+  using the supported Node.js 22 runtime.
+- Country and people indexes now paginate their Supabase reads, while country
+  sorting and search use canonical French common names (ETNI-395, ETNI-397).
+- Language-family people lists are derived from canonical relations instead of
+  legacy embedded values (ETNI-394).
+- Supabase migration numbering was normalized to preserve a single ordered
+  sequence.
+
+### Fixed
+
+- Restored and hardened direct navigation hydration across public routes.
+- Canonical publication and audit dates now render in UTC instead of shifting
+  to the previous day in negative-offset time zones.
+- External diaspora relations are skipped during AFRIK synchronization, and
+  staging synchronization now includes target guards and drift verification
+  (ETNI-396).
+- Citation previews meet contrast requirements and accept relative fiche URLs
+  (ETNI-48).
+- Responsive titles retain a safe gradient fallback, and the Big Emotion logo
+  renders its complete letterforms.
+
 ## [2.0.0] - 2026-07-21
 
 First release since `v1.2.0` (2025-11-14). It covers the full V1 → V2 rewrite:
@@ -101,5 +145,6 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/big-emotion/ethniafrica/compare/v1.2.0...v2.0.0
