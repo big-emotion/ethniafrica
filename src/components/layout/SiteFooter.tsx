@@ -96,38 +96,46 @@ export function SiteFooter({ language }: SiteFooterProps) {
             space themselves across the shell. */}
         <div
           data-testid="footer-directory"
-          className="flex flex-col items-center gap-afh-xl text-center md:flex-row md:items-start md:justify-between md:gap-afh-lg md:text-left"
+          className="flex flex-col items-center gap-afh-6xl text-center md:flex-row md:items-start md:justify-between md:gap-afh-lg md:text-left"
         >
           {/* The mark, the name and what the site is — none of them a link:
               the masthead already carries the way home, and a second one at
               the bottom of the page is a destination the reader has to rule
               out rather than use. */}
+          {/* Mark to the left of the name, qualifier under the name — the
+              masthead's own geometry, at twice its size. Stacked vertically
+              the three parts read as three things; beside each other they
+              read as one mark. It also widens the block by the mark, which is
+              what starts the rubrics at a third of the measure rather than a
+              quarter. */}
           <div
             data-testid="footer-brand"
-            className="flex flex-col items-center gap-afh-xs md:items-start"
+            className="flex items-center gap-afh-lg"
           >
             <Image
               src="/africa.png"
               alt=""
               width={80}
               height={80}
-              className="h-20 w-20"
+              className="h-20 w-20 shrink-0"
             />
-            {/* The masthead lockup, one role up because the mark beside it is
-                80px rather than 44px. Not `h1`: that role belongs to the fiche
-                the reader has just finished, and a wordmark that matches it
-                makes the page look like it has two titles. */}
-            <span className="font-afh-display text-afh-h2 text-afh-text">
-              {PRODUCT_NAME}
-            </span>
-            {/* The same qualifier as the masthead, in the same gradient. It
-                ran in a five-hue ramp of its own until the two treatments were
-                seen on one page: one lockup, one colour. */}
-            <span
-              data-testid="footer-tagline"
-              className="afh-brand-tagline font-afh-display text-afh-small font-bold"
-            >
-              {PRODUCT_TAGLINE}
+            <span className="flex flex-col text-left">
+              {/* The masthead lockup, one role up because the mark beside it is
+                  80px rather than 44px. Not `h1`: that role belongs to the fiche
+                  the reader has just finished, and a wordmark that matches it
+                  makes the page look like it has two titles. */}
+              <span className="font-afh-display text-afh-h2 text-afh-text">
+                {PRODUCT_NAME}
+              </span>
+              {/* The same qualifier as the masthead, in the same gradient. It
+                  ran in a five-hue ramp of its own until the two treatments were
+                  seen on one page: one lockup, one colour. */}
+              <span
+                data-testid="footer-tagline"
+                className="afh-brand-tagline font-afh-display text-afh-small font-bold"
+              >
+                {PRODUCT_TAGLINE}
+              </span>
             </span>
           </div>
 
@@ -143,8 +151,11 @@ export function SiteFooter({ language }: SiteFooterProps) {
                 {rubric.heading}
               </p>
               {/* The links take the column's own `small`: a footer link is a
-                  control label, and at `lead` it outran its rubric heading. */}
-              <ul className="mt-afh-sm flex flex-col gap-afh-xs">
+                  control label, and at `lead` it outran its rubric heading.
+                  Their spacing is the column's, not the type's: at a 4px gap
+                  three underlined labels stacked into one grey block and the
+                  rubric read as a paragraph rather than a list. */}
+              <ul className="mt-afh-5xl flex flex-col gap-afh-lg">
                 {rubric.links.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className={FOOTER_LINK_CLASS}>
@@ -162,10 +173,12 @@ export function SiteFooter({ language }: SiteFooterProps) {
             </p>
             {/* Each mark keeps a 44px hit area, which insets the glyph by
                   12px inside it. Pulled back by the same 12px so the first
-                  glyph sits on the heading's edge rather than a tap target's. */}
+                  glyph sits on the heading's edge rather than a tap target's,
+                  and given half the rubrics' top margin for the same reason:
+                  the other 12px is already inside the target. */}
             <ul
               data-testid="footer-follow"
-              className="mt-afh-sm flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+              className="mt-afh-lg flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
             >
               {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
                 <li key={name}>

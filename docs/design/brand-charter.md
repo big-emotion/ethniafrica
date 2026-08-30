@@ -258,6 +258,15 @@ which is the failure §7 records against `--afh-section-gap`.
 `colorTokens.test.ts` asserts both halves: the footer qualifier resolves to
 `--gradient-warm`, and no spectrum declaration survives in either theme.
 
+**One treatment covers the geometry too.** The lockup is mark, then name to its
+right, then qualifier under the name — the masthead's arrangement, which the
+footer takes at twice the size rather than restating as a single column. Stacked
+vertically the three parts sit at three heights and read as three things; the
+block is also narrow enough that the footer rubrics beside it start at a quarter
+of the measure instead of a third, which is the "mark stranded on the left"
+complaint this étage has already been through once.
+`siteFooterDirectory.test.tsx` asserts the arrangement.
+
 **The cost this rule accepts.** The retired ramp was built to clear 4.5:1 on
 `--afh-color-bg-warm`; the brand gradient's gold stop measures **1.52:1** on
 that same ground (flame, the other stop, measures 3.13:1). Coherence was
