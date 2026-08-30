@@ -227,7 +227,6 @@
       "peoples": [
         {
           "name": "Temne",
-          "population": 2250000,
           "percentageInCountry": 30,
           "peopleId": "PPL_TEMNE",
           "region": "Nord et centre de la Sierra Leone",
@@ -235,7 +234,6 @@
         },
         {
           "name": "Mende",
-          "population": 1800000,
           "percentageInCountry": 24,
           "peopleId": "PPL_MENDE",
           "region": "Sud-Est de la Sierra Leone",
@@ -275,7 +273,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 1560000,
           "percentageInCountry": 20.8,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions de la Sierra Leone"

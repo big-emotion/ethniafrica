@@ -232,7 +232,6 @@
       "peoples": [
         {
           "name": "Arabes du Maroc",
-          "population": 25900000,
           "percentageInCountry": 70,
           "percentageInAfrica": 14.4,
           "peopleId": "PPL_ARABES_AFRIQUE",

@@ -290,7 +290,6 @@
       "peoples": [
         {
           "name": "Ovambo",
-          "population": 1300000,
           "percentageInCountry": 50,
           "peopleId": "PPL_OVAMBO",
           "region": "Nord de la Namibie"

@@ -261,7 +261,6 @@
       "peoples": [
         {
           "name": "Maures / Beidhane",
-          "population": 1900000,
           "percentageInCountry": 40,
           "percentageInAfrica": 1.1,
           "peopleId": "PPL_ARABES_AFRIQUE",
@@ -270,7 +269,6 @@
         },
         {
           "name": "Haratine",
-          "population": 1425000,
           "percentageInCountry": 30,
           "peopleId": "PPL_HARATINE",
           "region": "Toutes les régions de la Mauritanie",

@@ -229,7 +229,6 @@
       "peoples": [
         {
           "name": "Arabes soudanais",
-          "population": 35000000,
           "percentageInCountry": 70,
           "peopleId": "PPL_ARABES_AFRIQUE",
           "region": "Toute la vallée du Nil, zones urbaines",

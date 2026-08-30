@@ -173,7 +173,6 @@
       "peoples": [
         {
           "name": "Ewe",
-          "population": 3500000,
           "percentageInCountry": 42,
           "peopleId": "PPL_EWE",
           "region": "Sud du Togo",
@@ -181,7 +180,6 @@
         },
         {
           "name": "Kabye",
-          "population": 1200000,
           "percentageInCountry": 14.4,
           "peopleId": "PPL_KABYE",
           "region": "Nord du Togo",
@@ -197,7 +195,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 2800000,
           "percentageInCountry": 34,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions du Togo"

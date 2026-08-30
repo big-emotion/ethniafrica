@@ -253,25 +253,35 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Statistics South Africa – Mid-year population estimates 2025 (P0302, population by population group)",
+        "url": "https://www.statssa.gov.za/publications/P0302/P03022025.pdf",
+        "tier": "official",
+        "notes": "National statistical office; supplies the 2025 headcount per population group."
       }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Africains noirs",
-          "percentageInCountry": 81.4
+          "percentageInCountry": 81.4,
+          "population": 51600000
         },
         {
           "name": "Métis (Coloureds)",
-          "percentageInCountry": 8.2
+          "percentageInCountry": 8.2,
+          "population": 5300000
         },
         {
           "name": "Blancs",
-          "percentageInCountry": 7.3
+          "percentageInCountry": 7.3,
+          "population": 4500000
         },
         {
           "name": "Indiens / Asiatiques",
-          "percentageInCountry": 2.7
+          "percentageInCountry": 2.7,
+          "population": 1600000
         },
         {
           "name": "Autres / Non spécifié",

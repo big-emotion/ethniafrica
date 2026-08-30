@@ -281,7 +281,6 @@
       "peoples": [
         {
           "name": "Arabes d'Algérie",
-          "population": 31500000,
           "percentageInCountry": 70,
           "percentageInAfrica": 17.5,
           "peopleId": "PPL_ARABES_AFRIQUE",
