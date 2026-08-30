@@ -1,10 +1,8 @@
+import { Info } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
-import {
-  PeoplesSection,
-  declaredShare,
-} from "@/components/country/PeoplesSection";
+import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
@@ -59,7 +57,6 @@ export function CountryParchment({
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
   const hasPeoples = data.peoples.rows.length > 0;
-  const declared = hasPeoples ? declaredShare(data.peoples.rows) : 100;
 
   return (
     <div className="afh-parchment" id="fiche">
@@ -76,7 +73,11 @@ export function CountryParchment({
             {etymology && <p>{etymology}</p>}
             {nameOriginActor && (
               <div className="afh-parchment-callout">
-                <b>Ce que la fiche refuse de taire.</b> {nameOriginActor}
+                <Info
+                  className="afh-parchment-callout-icon"
+                  aria-hidden="true"
+                />
+                {nameOriginActor}
               </div>
             )}
           </>
@@ -92,21 +93,12 @@ export function CountryParchment({
         {!hasPeoples ? (
           <FieldProvenanceMarker state="missing" />
         ) : (
-          <>
-            <PeoplesSection data={data.peoples} />
-            {declared < 99 && (
-              <div className="afh-parchment-callout">
-                <b>Pourquoi la somme n&apos;atteint pas 100&nbsp;%.</b> La règle
-                FR28 porte sur la <em>totalité</em>{" "}
-                {/* Explicit: the JSX transform drops the space that opens a
-                    text node following an element, and "totalitédes" shipped
-                    once. */}
-                des fiches d&apos;un pays, qui doivent sommer dans la bande [99,
-                101]&nbsp;% — le reste n&apos;est pas encore réparti dans le
-                corpus.
-              </div>
-            )}
-          </>
+          /* A shortfall in the declared shares is stated once, by
+             PeoplesSection's own coverage note, in the reader's terms. The
+             callout that stood here repeated that sentence and prefixed it
+             with the identifier of the validation rule behind it — a number
+             no visitor can act on. */
+          <PeoplesSection data={data.peoples} />
         )}
       </Section>
 

@@ -166,22 +166,27 @@ describe("country fiche charter", () => {
     expect(peoples?.textContent).not.toContain("Donnée manquante");
   });
 
+  /**
+   * The shortfall is admitted once, and in figures the reader can check
+   * against the bar above it. It used to be admitted twice — the coverage note
+   * asserted here, then a callout restating it behind the number of the
+   * validation rule that defines the tolerated band.
+   */
   // @req REQ-092
-  it("explains why the declared shares fall short of the whole", () => {
+  it("admits how much of the country its peoples account for, once", () => {
     const { container } = renderParchment(countryFixture());
 
-    const shortfall = Array.from(
-      container.querySelectorAll(".afh-parchment-callout")
-    ).find((node) => /100/.test(node.textContent ?? ""));
+    const coverage = container.querySelector("[data-demo-coverage-note]");
 
-    expect(shortfall).toBeDefined();
-    expect(shortfall).toHaveTextContent(/99/);
-    // "totalitédes" shipped once: the JSX transform drops the space opening a
-    // text node that follows an element.
-    expect(shortfall?.textContent).toContain("totalité des fiches");
+    expect(coverage).toBeDefined();
+    expect(coverage?.textContent).toMatch(/50\s%/);
+    expect(coverage?.textContent).toContain("pas encore réparti");
     // The mockup blames a top-eight cut-off. This fiche lists every people it
     // has, so that sentence would be false here.
-    expect(shortfall).not.toHaveTextContent(/huit premiers/i);
+    expect(container.textContent).not.toMatch(/huit premiers/i);
+    expect(container.querySelectorAll(".afh-parchment-callout")).toHaveLength(
+      1
+    );
   });
 
   // @req REQ-092
@@ -390,5 +395,36 @@ describe("country record view — the chapters the page adds", () => {
     render(<CountryRecordView country={countryFixture()} />);
 
     expect(screen.queryByTestId("country-back-to-people")).toBeNull();
+  });
+});
+
+/**
+ * Internal vocabulary is not editorial content.
+ *
+ * The fiche printed the identifier of the validation rule behind a demographic
+ * shortfall ("la règle FR28 porte sur…") and a label announcing the fiche's own
+ * editorial posture ("Ce que la fiche refuse de taire"). Neither addresses the
+ * reader: a visitor cannot act on a requirement number, and the callout's
+ * accent rule is what already sets the passage apart. What the reader is owed
+ * is the claim itself — who named the country, and how much of its population
+ * the fiche accounts for.
+ */
+describe("what the parchment never says out loud", () => {
+  // @req REQ-115
+  it("names no internal requirement behind a shortfall it admits", () => {
+    const { container } = renderParchment(countryFixture());
+
+    expect(container.textContent).toContain("50 % de la population");
+    expect(container.textContent).not.toMatch(
+      /\b(?:FR|NFR)\d{1,3}\b|REQ-\d+|DEC-\d+|ARCH-\d+|ETNI-\d+/
+    );
+  });
+
+  // @req REQ-115
+  it("states who named the country without announcing its own posture", () => {
+    const { container } = renderParchment(countryFixture());
+
+    expect(container.textContent).toContain("Flora Shaw");
+    expect(container.textContent).not.toMatch(/refuse de taire/i);
   });
 });
