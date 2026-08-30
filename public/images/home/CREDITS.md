@@ -9,6 +9,15 @@ assumed. Anything under CC BY-SA must keep its credit visible in the
 rendered page, not only in this file — `PurposeBlocks` prints it as the
 figure caption.
 
+**Re-verified against the live Commons API on 30 August 2026.** All four
+licences are as recorded below. One thing the first pass got wrong: naming a
+licence in the caption is not the same as publishing it. CC BY-SA 2.0 §4(a)
+asks a reuser to include "a copy of, or the Uniform Resource Identifier for,
+this License with every copy of the Work you distribute", and the caption read
+"Patrick Gruban, CC BY-SA 2.0" and stopped. The licence name is now a link to
+the licence itself, and the file's Commons page is linked beside it — the same
+discipline every source in the corpus already carries.
+
 ## `al-idrisi-1154.jpg`
 
 - **Work**: Muhammad al-Idrisi, world map from the _Tabula Rogeriana_, 1154 —
@@ -39,8 +48,12 @@ figure caption.
 - **Work**: Tifinagh inscriptions carved in rock, Algeria (2006).
 - **Author**: Patrick Gruban.
 - **Source**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tifinagh_Algeria.jpg)
-- **Licence**: **CC BY-SA 2.0** — attribution and licence notice are
-  **required**, and the caption in `PurposeBlocks` carries both.
+- **Licence**: **CC BY-SA 2.0** — the API returns
+  `AttributionRequired = true` and `Artist = "Gruban / Patrick Gruban from
+Munich, Germany"`. Attribution **and** the licence URI are required, and the
+  caption in `PurposeBlocks` now carries both, plus a link to this file's
+  Commons page.
+- **Original size**: 3072 × 2044.
 - **Why this one**: the block is about a people the Greeks named _barbaros_,
   "those who do not speak our language". Showing their writing answers it.
 - **Edit**: cropped to the inscriptions, resized to 900px.
@@ -51,6 +64,10 @@ figure caption.
 - **Source**: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wilhelm_Bleek.jpg)
 - **Licence**: **Public domain**.
 - **Why this one**: Bleek coined "Bantu". The block is about him.
-- **Note**: the only public-domain portrait available is 183px wide. It is
-  used at vignette size deliberately — enlarging it would be blurry, and
-  substituting another face would misidentify the subject.
+- **Original size**: 165 × 206 — the file is smaller than the 183px this note
+  first recorded.
+- **Note**: it is used at vignette size deliberately — enlarging it would be
+  blurry, and substituting another face would misidentify the subject.
+  Searched again on 30 August 2026: Commons holds no other portrait of him.
+  The near-matches are a living German political scientist of the same name
+  and a photograph of his grave in Wynberg Cemetery.

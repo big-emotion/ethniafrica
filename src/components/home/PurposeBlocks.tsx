@@ -45,7 +45,26 @@ interface PurposeBlock {
   claim: React.ReactNode;
   followUp: string;
   cta: { label: string; href: (language: Language) => string };
-  image: { src: string; alt: string; credit: string; portrait?: boolean };
+  image: {
+    src: string;
+    alt: string;
+    credit: string;
+    /**
+     * The licence's own URI, for a picture whose licence requires one.
+     *
+     * CC BY-SA 2.0 §4(a) asks the reuser to include "a copy of, or the
+     * Uniform Resource Identifier for, this License with every copy of the
+     * Work you distribute". Naming the licence is not that: the caption read
+     * "Patrick Gruban, CC BY-SA 2.0" and stopped, which credits the author
+     * correctly and leaves the licence itself unreachable.
+     *
+     * Public-domain pictures carry no such obligation and pass nothing here.
+     */
+    licence?: { name: string; href: string };
+    /** Where the file is published, so a reader can check the claim. */
+    sourceHref?: string;
+    portrait?: boolean;
+  };
 }
 
 const BLOCKS: PurposeBlock[] = [
@@ -100,7 +119,13 @@ const BLOCKS: PurposeBlock[] = [
     image: {
       src: "/images/home/tifinagh-algeria.jpg",
       alt: "Inscriptions en tifinagh gravées dans la roche, en Algérie.",
-      credit: "Inscriptions tifinagh, Algérie — Patrick Gruban, CC BY-SA 2.0",
+      credit: "Inscriptions tifinagh, Algérie — Patrick Gruban,",
+      licence: {
+        name: "CC BY-SA 2.0",
+        href: "https://creativecommons.org/licenses/by-sa/2.0/",
+      },
+      sourceHref:
+        "https://commons.wikimedia.org/wiki/File:Tifinagh_Algeria.jpg",
     },
   },
   {
@@ -183,7 +208,39 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
               height={block.image.portrait ? 424 : 595}
               sizes="(min-width: 720px) 46vw, 92vw"
             />
-            <figcaption>{block.image.credit}</figcaption>
+            {/* The licence and the source are links because a licence notice
+                that cannot be reached is not a notice. Form B of the actions
+                charter — inline, underlined, no arrow: they sit inside the
+                running credit line rather than standing on their own. */}
+            <figcaption>
+              {block.image.credit}
+              {block.image.licence ? (
+                <>
+                  {" "}
+                  <a
+                    className="home-purpose-credit-link"
+                    href={block.image.licence.href}
+                    rel="license noopener noreferrer"
+                    target="_blank"
+                  >
+                    {block.image.licence.name}
+                  </a>
+                </>
+              ) : null}
+              {block.image.sourceHref ? (
+                <>
+                  {" · "}
+                  <a
+                    className="home-purpose-credit-link"
+                    href={block.image.sourceHref}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    source
+                  </a>
+                </>
+              ) : null}
+            </figcaption>
           </figure>
 
           <div className="home-purpose-body">
@@ -269,6 +326,16 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
           color: var(--afh-fg-muted);
           width: 100%;
           box-sizing: border-box;
+        }
+        /* Form B of the actions charter: underlined at rest, no arrow,
+           inheriting the size of the credit line it sits inside. It inherits
+           the colour too — a licence notice is apparatus, not an invitation,
+           and colouring it would make the quietest line on the home compete
+           with the block's own action link. */
+        .home-purpose-credit-link {
+          color: inherit;
+          text-decoration: underline;
+          text-underline-offset: 2px;
         }
         .home-purpose-kicker {
           display: flex;
