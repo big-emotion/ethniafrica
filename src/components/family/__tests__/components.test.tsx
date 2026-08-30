@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -345,11 +346,15 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
 
   // @req REQ-012 (AC5)
-  it("renders a disabled FlagTarget shell on the History section by default", () => {
+  it("renders a live report control on the History section, with no prop", () => {
+    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
+
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
 
     const flagTarget = screen.getByTestId("section-flag-target-history");
-    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
   });
 
   // @req REQ-012 (AC5)

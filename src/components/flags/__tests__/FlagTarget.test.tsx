@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { FlagTarget } from "../FlagTarget";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { useToast } from "@/hooks/use-toast";
-import { useConsent } from "@/hooks/use-consent";
+import { useOptionalConsent } from "@/hooks/use-consent";
 
 vi.mock("@/lib/supabase/auth-client", () => ({
   createBrowserSupabaseClient: vi.fn(),
@@ -16,7 +16,7 @@ vi.mock("@/hooks/use-toast", () => ({
 }));
 
 vi.mock("@/hooks/use-consent", () => ({
-  useConsent: vi.fn(),
+  useOptionalConsent: vi.fn(),
 }));
 
 vi.mock("@/components/flags/TurnstileWidget", () => ({
@@ -98,7 +98,7 @@ describe("FlagTarget", () => {
       dismiss: vi.fn(),
       toasts: [],
     } as never);
-    vi.mocked(useConsent).mockReturnValue({
+    vi.mocked(useOptionalConsent).mockReturnValue({
       consentState: {
         hasConsented: true,
         preferences: { essential: true, analytics: true, functional: true },
@@ -182,12 +182,15 @@ describe("FlagTarget", () => {
       await screen.findByRole("button", { name: "Envoyer" });
     }
 
+    /**
+     * The slug used to be written to the browser console, and this suite
+     * asserted it. `no-console` does not reach client components, so the
+     * debugging line survived review and shipped. The slug is what the
+     * reporter needs, so it belongs on screen — not in a console nobody opens.
+     */
     // @req REQ-012
-    it("submits successfully, closes the dialog, toasts, logs the slug and fires analytics", async () => {
+    it("submits successfully, closes the dialog, toasts and fires analytics", async () => {
       const user = userEvent.setup();
-      const consoleLogSpy = vi
-        .spyOn(console, "log")
-        .mockImplementation(() => {});
 
       await openAndReachForm();
 
@@ -210,15 +213,12 @@ describe("FlagTarget", () => {
       expect(toastMock).toHaveBeenCalledWith(
         expect.objectContaining({ description: "signalement enregistré" })
       );
-      expect(consoleLogSpy).toHaveBeenCalledWith("flag-abc123");
       expect(window.plausible).toHaveBeenCalledWith(
         "flag_submitted",
         expect.objectContaining({
           props: expect.objectContaining({ target_type: "assertion" }),
         })
       );
-
-      consoleLogSpy.mockRestore();
     });
   });
 

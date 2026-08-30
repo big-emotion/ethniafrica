@@ -332,27 +332,16 @@ function SourceItem({
         </span>
       ) : null}
       <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
-        {turnstileSiteKey ? (
-          <FlagTarget
-            target={{
-              type: "source",
-              id: source.id,
-              snapshotQuote: source.citation,
-            }}
-            turnstileSiteKey={turnstileSiteKey}
-            triggerLabel="Signaler cette source"
-            className="w-auto text-afh-caption"
-          />
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-2 py-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-            aria-label="Signaler cette source — bientôt disponible"
-          >
-            Signaler cette source (bientôt disponible)
-          </button>
-        )}
+        <FlagTarget
+          target={{
+            type: "source",
+            id: source.id,
+            snapshotQuote: source.citation,
+          }}
+          turnstileSiteKey={turnstileSiteKey}
+          triggerLabel="Signaler cette source"
+          className="w-auto text-afh-caption"
+        />
       </div>
     </li>
   );
@@ -568,7 +557,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 
         {/* 6. FlagTarget */}
         <section data-testid="section-flag-target" className="pt-2">
-          {assertion.id && turnstileSiteKey ? (
+          {/* The `assertion.id` guard stays: with no assertion there is no
+              target to report. Only the Turnstile half of the condition goes. */}
+          {assertion.id ? (
             <FlagTarget
               target={{
                 type: "assertion",
@@ -579,16 +570,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               turnstileSiteKey={turnstileSiteKey}
               triggerLabel="Signaler un problème"
             />
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-              aria-label="Signaler un problème — bientôt disponible"
-            >
-              Signaler un problème (bientôt disponible)
-            </button>
-          )}
+          ) : null}
         </section>
 
         {/* 7. Cite affordance (appears after 4 s dwell) */}

@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useConsent } from "@/hooks/use-consent";
+import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { cn } from "@/lib/utils";
@@ -66,9 +66,26 @@ function currentUrl() {
 
 export interface FlagTargetProps {
   target: FlagFormTarget;
-  turnstileSiteKey: string;
+  /**
+   * Optional override. Left out — which is the normal case — the key is read
+   * from the environment, because a Turnstile *site* key is public by
+   * definition and threading it through four page components and a dozen
+   * intermediate props bought nothing but the opportunity to forget one. That
+   * is exactly what happened: every mount site guarded on this prop, and no
+   * page ever supplied it, so every report button in the product was dead.
+   */
+  turnstileSiteKey?: string;
   triggerLabel?: string;
   className?: string;
+}
+
+/**
+ * The key must be read as one full literal expression. Next.js inlines public
+ * environment variables at build time by textual substitution, so a
+ * destructured or computed lookup resolves to undefined in the browser.
+ */
+function configuredSiteKey(): string {
+  return process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY ?? "";
 }
 
 // @req REQ-012
@@ -78,11 +95,12 @@ export function FlagTarget({
   triggerLabel = "Signaler",
   className,
 }: FlagTargetProps) {
+  const siteKey = turnstileSiteKey?.trim() || configuredSiteKey().trim();
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const [gate, setGate] = useState<GateResult>({ status: "checking" });
   const { toast } = useToast();
-  const { consentState } = useConsent();
+  const consent = useOptionalConsent();
 
   function handleOpenChange(next: boolean) {
     setOpen(next);
@@ -113,8 +131,7 @@ export function FlagTarget({
 
     const publicSlug = json.data.public_slug as string;
 
-    console.log(publicSlug);
-    if (consentState.preferences.analytics) {
+    if (consent?.consentState.preferences.analytics) {
       window.plausible?.("flag_submitted", {
         props: { target_type: target.type },
       });
@@ -127,6 +144,15 @@ export function FlagTarget({
 
   const signInHref = `/fr/compte/connexion?redirect=${encodeURIComponent(currentUrl())}`;
   const signUpHref = `/fr/compte/inscription?redirect=${encodeURIComponent(currentUrl())}`;
+
+  // Below every hook, so the hook order is stable across both branches.
+  //
+  // With no key the widget cannot mint a token and the API refuses the
+  // submission, so a control here could only ever fail. It renders nothing
+  // rather than the dashed "bientôt disponible" button that stood here: that
+  // wording promised a feature in progress, when the truth is a value missing
+  // from the deployment.
+  if (!siteKey) return null;
 
   return (
     <>
@@ -192,7 +218,7 @@ export function FlagTarget({
               onCancel={() => setOpen(false)}
               renderTurnstile={({ onVerify, onError }) => (
                 <TurnstileWidget
-                  siteKey={turnstileSiteKey}
+                  siteKey={siteKey}
                   onTokenChange={(token) => {
                     if (token) onVerify(token);
                     else onError();

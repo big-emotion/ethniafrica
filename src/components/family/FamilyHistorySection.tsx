@@ -45,28 +45,17 @@ export function FamilyHistorySection({
         ) : null
       )}
       <div data-testid="section-flag-target-history">
-        {turnstileSiteKey ? (
-          <FlagTarget
-            target={{
-              type: "fiche_section",
-              id: familyId,
-              fieldPath: "history",
-              fieldLabel: "Histoire et origines",
-            }}
-            turnstileSiteKey={turnstileSiteKey}
-            triggerLabel="Signaler cette section"
-            className="w-auto text-afh-caption"
-          />
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="rounded-md border border-dashed px-2 py-1 text-afh-caption text-muted-foreground"
-            aria-label="Signaler cette section — bientôt disponible"
-          >
-            Signaler cette section (bientôt disponible)
-          </button>
-        )}
+        <FlagTarget
+          target={{
+            type: "fiche_section",
+            id: familyId,
+            fieldPath: "history",
+            fieldLabel: "Histoire et origines",
+          }}
+          turnstileSiteKey={turnstileSiteKey}
+          triggerLabel="Signaler cette section"
+          className="w-auto text-afh-caption"
+        />
       </div>
     </section>
   );

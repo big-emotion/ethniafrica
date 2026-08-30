@@ -14,6 +14,7 @@ import SourceChainSheet, {
 } from "../SourceChainSheet";
 
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -129,11 +130,16 @@ describe("SourceChainSheet", () => {
     expect(screen.queryByTestId("section-revision")).toBeNull();
   });
 
-  it("renders a disabled FlagTarget shell button", () => {
+  // @req REQ-012
+  it("offers no assertion report control when the assertion carries no id", () => {
     renderSheet();
     const flagTarget = screen.getByTestId("section-flag-target");
-    const btn = within(flagTarget).getByRole("button");
-    expect(btn).toBeDisabled();
+
+    // Not a Turnstile question: with no assertion id there is no target to
+    // report. The shell that used to stand here was the dead-key fallback,
+    // and it made this genuine guard indistinguishable from that one.
+    expect(within(flagTarget).queryByRole("button")).toBeNull();
+    expect(flagTarget.textContent).not.toMatch(/bientôt disponible/i);
   });
 
   // @req REQ-012
@@ -157,11 +163,13 @@ describe("SourceChainSheet", () => {
   });
 
   // @req REQ-012 (AC6)
-  it("renders a disabled FlagTarget shell button per source by default", () => {
+  it("offers a live report control per source from the configured site key", () => {
+    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
     renderSheet();
     const flagTarget = screen.getByTestId("source-flag-target-src-1");
-    const btn = within(flagTarget).getByRole("button");
-    expect(btn).toBeDisabled();
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette source" })
+    ).toBeEnabled();
   });
 
   // @req REQ-012 (AC6)
