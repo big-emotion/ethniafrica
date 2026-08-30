@@ -90,7 +90,6 @@ export function CountrySynthesisBrief({
           font-size: var(--afh-text-body);
           line-height: 1.62;
           color: var(--afh-text-soft);
-          max-width: 68ch;
         }
         .fiche-brief-facts {
           display: flex;

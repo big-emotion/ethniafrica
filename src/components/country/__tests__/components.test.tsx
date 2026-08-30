@@ -82,6 +82,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 0,
       totalPopulationFormatted: "0",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 0,
       rows: [],
     };
@@ -93,6 +94,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
       totalPopulationFormatted: "22M",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 3,
       rows: [
         {
@@ -122,6 +124,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
       totalPopulationFormatted: "22M",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 2,
       rows: [
         {
@@ -150,6 +153,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
       totalPopulationFormatted: "22M",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 1,
       rows: [
         {
@@ -172,6 +176,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
       totalPopulationFormatted: "22M",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 1,
       rows: [
         {
@@ -209,6 +214,7 @@ describe("PeoplesSection", () => {
     const data: PeoplesData = {
       totalPopulation: 22000000,
       totalPopulationFormatted: "22M",
+      everyPeopleDeclaresPopulation: true,
       peopleCount: 1,
       rows: [
         {

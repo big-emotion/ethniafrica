@@ -24,12 +24,25 @@ const parchmentCss = readFileSync(
   "utf8"
 );
 
+/**
+ * The country fiche's chapô styles itself in the component, so the measure it
+ * carries is declared there rather than in the stylesheet.
+ */
+const countryBriefSource = readFileSync(
+  resolve(process.cwd(), "src/components/fiche/CountrySynthesisBrief.tsx"),
+  "utf8"
+);
+
 /** The body of one rule, looked up by its exact selector. */
-function ruleBody(selector: string): string {
+function ruleBodyIn(source: string, selector: string): string {
   const escaped = selector.replace(/[.[\]="^$*+?()|{}\\]/g, "\\$&");
-  const match = parchmentCss.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`));
+  const match = source.match(new RegExp(`${escaped}\\s*\\{([^}]*)\\}`));
   if (!match) throw new Error(`No rule for selector ${selector}`);
   return match[1];
+}
+
+function ruleBody(selector: string): string {
+  return ruleBodyIn(parchmentCss, selector);
 }
 
 describe("parchment layout — one continuous document", () => {
@@ -70,13 +83,32 @@ describe("parchment layout — one continuous document", () => {
     expect(ruleBody(".afh-naming-field")).toMatch(/var\(--accent\)/);
   });
 
-  // The section's prose ran the full width of the parchment, which on a
-  // desktop fiche is well past 120 characters a line. The callout beside it
-  // already caps at 72ch; the running text had no cap at all, so the two read
-  // as different documents.
+  // The prose was held to 72ch while the chapter around it ran the full
+  // parchment, so a desktop fiche read as a narrow column against an empty
+  // right half — every paragraph stopped mid-page, in the middle of nothing.
+  // The chapter's figures, rankings and tables already take the whole width;
+  // the prose takes it too, and the parchment is the only thing that decides
+  // where a line ends.
   // @req REQ-115
-  it("holds the running prose to a readable measure", () => {
-    expect(ruleBody(".afh-parchment-section p")).toMatch(/max-width:\s*72ch/);
+  it("lets the running prose fill the parchment", () => {
+    expect(ruleBody(".afh-parchment-section p")).not.toMatch(/max-width/);
+  });
+
+  // The callout is an aside inside that same chapter. Left capped while the
+  // prose around it is not, it becomes the one paragraph on the page that
+  // stops short — the mismatch the cap once fixed, inverted.
+  // @req REQ-115
+  it("lets the callout fill the parchment", () => {
+    expect(ruleBody(".afh-parchment-callout")).not.toMatch(/max-width/);
+  });
+
+  // The country chapô is prose on the same parchment, and a reader has no way
+  // of knowing it is styled in another file.
+  // @req REQ-115
+  it("lets the country chapô fill its block", () => {
+    expect(ruleBodyIn(countryBriefSource, ".fiche-brief-summary")).not.toMatch(
+      /max-width/
+    );
   });
 
   // The confidence chip opens the people fiche above its first section. It was

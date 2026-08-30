@@ -21,7 +21,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   NIGER_CONGO,
-  NIGER_CONGO_BRANCHES,
   NIGERIA,
   RELATIONS,
   YORUBA,
@@ -29,7 +28,6 @@ import {
   YORUBA_FRAGMENTATION,
   YORUBA_NAMES_DOSSIER,
 } from "@/components/fiche/__tests__/ficheContextFixtures";
-import type { FamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import type { LanguageFamily } from "@/types/afrik";
 
 // ---------------------------------------------------------------------------
@@ -43,7 +41,6 @@ const {
   getPeoplesByIds,
   getCountryById,
   getLanguageFamilyById,
-  getFamilyTreeSkeleton,
   getPeopleNamesDossier,
   getPeopleFragmentation,
   getEgoNetwork,
@@ -58,7 +55,6 @@ const {
   getPeoplesByIds: vi.fn(),
   getCountryById: vi.fn(),
   getLanguageFamilyById: vi.fn(),
-  getFamilyTreeSkeleton: vi.fn(),
   getPeopleNamesDossier: vi.fn(),
   getPeopleFragmentation: vi.fn(),
   getEgoNetwork: vi.fn(),
@@ -96,10 +92,6 @@ vi.mock("@/api/v2/services/countryService", () => ({
 
 vi.mock("@/api/v2/services/languageFamilyService", () => ({
   getLanguageFamilyById: (...args: unknown[]) => getLanguageFamilyById(...args),
-}));
-
-vi.mock("@/api/v2/services/languageFamilyTreeService", () => ({
-  getFamilyTreeSkeleton: (...args: unknown[]) => getFamilyTreeSkeleton(...args),
 }));
 
 vi.mock("@/api/v2/services/names", () => ({
@@ -165,10 +157,6 @@ vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
   LanguageFamilyDetailViewV2: () => (
     <div data-testid="family-record-view">Dossier AFRIK de la famille</div>
   ),
-}));
-
-vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
-  FamilyClassificationTreeSection: () => <div data-testid="family-tree" />,
 }));
 
 // ---------------------------------------------------------------------------
@@ -238,18 +226,6 @@ const NIGER_CONGO_ROW: LanguageFamily = {
     historyAndOrigins: NIGER_CONGO.historyAndOrigins,
     sources: NIGER_CONGO.sources,
   },
-};
-
-const NIGER_CONGO_TREE: FamilyTreeSkeleton = {
-  family: { id: NIGER_CONGO.id, nameFr: NIGER_CONGO.nameFr },
-  branches: NIGER_CONGO_BRANCHES.map(({ id, name, peopleCount }) => ({
-    iso639_3: id,
-    name,
-    peopleCount,
-  })),
-  branchProvenance: "language-corpus",
-  declaredBranches: [],
-  unlinkedPeopleCount: 0,
 };
 
 /**
@@ -340,7 +316,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     recordTestId: "family-record-view",
     primeLiveCorpus: () => {
       getLanguageFamilyById.mockResolvedValue(NIGER_CONGO_ROW);
-      getFamilyTreeSkeleton.mockResolvedValue(NIGER_CONGO_TREE);
       getPeoplesByLanguageFamily.mockResolvedValue([]);
       getPeoplesByIds.mockResolvedValue([]);
     },

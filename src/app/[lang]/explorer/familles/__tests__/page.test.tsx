@@ -83,34 +83,12 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // Stubbed so the reading-gate count below can only come from the route's own
 // wiring, never from a <details> buried in the legacy view.
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
-  LanguageFamilyDetailViewV2: ({
-    family,
-    classificationTree,
-  }: {
-    family: LanguageFamily;
-    classificationTree?: React.ReactNode;
-  }) => (
+  LanguageFamilyDetailViewV2: ({ family }: { family: LanguageFamily }) => (
     <div
       data-testid="family-record-view"
       data-family-id={family.id}
       data-carries-content-blob={String(Boolean(family.content))}
-    >
-      {classificationTree}
-    </div>
-  ),
-}));
-
-vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
-  FamilyClassificationTreeSection: ({
-    familyId,
-    tree,
-  }: {
-    familyId: string;
-    tree: FamilyTreeSkeleton;
-  }) => (
-    <div data-testid="family-classification-section" data-family-id={familyId}>
-      {tree.branches.map((branch) => branch.name).join(", ")}
-    </div>
+    />
   ),
 }));
 
@@ -406,51 +384,21 @@ describe("/[lang]/familles/[slug] page", () => {
       const recordView = getByTestId("family-record-view");
       expect(recordView.dataset.familyId).toBe("FLG_BANTU");
       expect(recordView.dataset.carriesContentBlob).toBe("true");
-      expect(getByTestId("family-classification-section")).toBeInTheDocument();
     });
 
+    // Both chapters drew a family → language → people hierarchy no editorial
+    // field carries: their language level was ISO codes deduplicated across the
+    // people fiches, not a declared classification. With neither rendering, the
+    // route has no reason left to read the tree skeleton at all.
     // @req REQ-047
-    it("fetches the tree skeleton server-side and passes a classification section to the live view", async () => {
-      const { getByTestId } = await renderFamillesPage("FLG_BANTU");
+    it("renders neither classification chapter, and no longer reads the tree skeleton", async () => {
+      const { container } = await renderFamillesPage("FLG_BANTU");
 
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledWith("FLG_BANTU");
-      const classificationSection = getByTestId(
-        "family-classification-section"
-      );
-      expect(classificationSection).toHaveAttribute(
-        "data-family-id",
-        "FLG_BANTU"
-      );
-      expect(classificationSection).toHaveTextContent("Shona");
-      expect(classificationSection).toHaveTextContent("Swahili");
-    });
-
-    // The tree was fetched once and drawn twice: the same branches fed the
-    // parchment's classification section and a tongue chapter below it. The
-    // parchment's is the richer of the two — it carries the branch
-    // provenance, the branches the fiche declares itself and the count of
-    // peoples tied to none — so it is the one that stayed.
-    // @req REQ-091
-    it("draws the classification tree once, inside the parchment", async () => {
-      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
-
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledTimes(1);
+      expect(mockGetFamilyTreeSkeleton).not.toHaveBeenCalled();
       expect(container.querySelector("#fiche-tongue")).toBeNull();
-
-      const classification = getByTestId("family-classification-section");
       expect(
-        container.querySelector("#fiche-record")?.contains(classification)
-      ).toBe(true);
-    });
-
-    // @req REQ-091
-    it("keeps the parchment whole for a family whose tree is missing", async () => {
-      mockGetFamilyTreeSkeleton.mockResolvedValue(null);
-
-      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
-
-      expect(panelAnchors(container)).toEqual(["fiche-record"]);
-      expect(getByTestId("family-record-view")).toBeInTheDocument();
+        container.querySelector('[data-fiche-section="Classification"]')
+      ).toBeNull();
     });
 
     // @req REQ-047

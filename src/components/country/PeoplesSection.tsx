@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
 import { getPeopleRoute } from "@/lib/routing";
@@ -16,21 +17,29 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
       {/* Header */}
       <div className="flex justify-between items-end mb-4 md:mb-4">
         <div>
-          <div
-            className="text-afh-h2 font-black leading-none"
-            style={{
-              fontFamily: "var(--country-font-display)",
-              color: "var(--country-terracotta)",
-            }}
-          >
-            {data.totalPopulationFormatted}
-          </div>
-          <div
-            className="text-afh-caption mt-0.5"
-            style={{ color: "var(--country-text-soft)" }}
-          >
-            habitants · 2025
-          </div>
+          {data.totalPopulationFormatted ? (
+            <>
+              <div
+                className="text-afh-h2 font-black leading-none"
+                style={{
+                  fontFamily: "var(--country-font-display)",
+                  color: "var(--country-terracotta)",
+                }}
+              >
+                {data.totalPopulationFormatted}
+              </div>
+              <div
+                className="text-afh-caption mt-0.5"
+                style={{ color: "var(--country-text-soft)" }}
+              >
+                {data.everyPeopleDeclaresPopulation
+                  ? "habitants · 2025"
+                  : "habitants documentés · 2025"}
+              </div>
+            </>
+          ) : (
+            <FieldProvenanceMarker state="missing" />
+          )}
         </div>
         <div
           className="text-afh-h3 font-bold"
@@ -186,7 +195,8 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
           >
             {row.groupedNames ? (
               <>
-                {row.groupedNames.length} peuples · {row.populationFormatted}
+                {row.groupedNames.length} peuples
+                {row.populationFormatted ? ` · ${row.populationFormatted}` : ""}
               </>
             ) : (
               [row.region, row.languageFamily].filter(Boolean).join(" · ")
@@ -229,12 +239,17 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
         >
           {row.percentage}%
         </div>
-        <div
-          className="text-afh-eyebrow mt-0.5"
-          style={{ color: "var(--country-text-soft)" }}
-        >
-          {row.populationFormatted}
-        </div>
+        {/* A share without a headcount is what most fiches carry; the
+            percentage above already stands on its own, so the line is
+            dropped rather than filled with a zero. */}
+        {row.populationFormatted && (
+          <div
+            className="text-afh-eyebrow mt-0.5"
+            style={{ color: "var(--country-text-soft)" }}
+          >
+            {row.populationFormatted}
+          </div>
+        )}
       </div>
     </div>
   );

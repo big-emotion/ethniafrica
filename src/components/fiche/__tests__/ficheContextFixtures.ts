@@ -128,15 +128,3 @@ export const RELATIONS: SourcedRelation[] = [
     neighbor: { id: "PPL_FON", nameMain: "Fon", languageFamilyId: "FLG_KWA" },
   },
 ];
-
-/** A branch of the family tree, as the tree/branch endpoint keys them: ISO 639-3. */
-export interface FamilyBranchFixture {
-  id: string;
-  name: string;
-  peopleCount: number;
-}
-
-// @req REQ-091
-export const NIGER_CONGO_BRANCHES: FamilyBranchFixture[] = [
-  { id: "yor", name: "Yoruba", peopleCount: 3 },
-];
