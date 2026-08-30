@@ -19,6 +19,12 @@ const fixtureCounts = {
   migrations: 5,
 };
 
+// The hero carries an interactive island since the search field landed in it,
+// and useRouter throws outside an app-router tree rather than degrading.
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
+
 vi.mock("@/lib/home/corpusCounts", () => ({
   getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));

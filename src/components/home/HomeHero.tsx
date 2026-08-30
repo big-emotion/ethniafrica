@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { PRODUCT_NAME } from "@/lib/brand";
 
+import { HomeHeroSearch } from "./HomeHeroSearch";
+
 /**
  * The home's opening band (REQ-115): a question, and one sentence answering it.
  *
@@ -69,6 +71,14 @@ export function HomeHero() {
             {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
               `et donne la source de chaque réponse.`}
           </p>
+
+          {/* The band's one action, and it is the one readers were already
+              taking: the masthead's magnifier was the only affordance above
+              the fold, so that is where they went. It carries no count of its
+              own — the axis cards below print figures that read themselves,
+              and restating them here would rebuild the lede this band was
+              stripped of. */}
+          <HomeHeroSearch />
         </header>
 
         {/* The argument, drawn. Not decoration and not a photograph of the

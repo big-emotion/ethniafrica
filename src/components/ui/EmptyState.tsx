@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
 
+// The way out of a fruitless search, worded once. The home's hero panel offers
+// the same escape in a space too small for this component's medallion, and two
+// hand-written copies of one sentence is how the site ended up with three
+// spellings of "no results" already.
+// @req REQ-002
+export const SEARCH_EMPTY_LINK_LABEL = "Parcourir les familles linguistiques";
+
 interface EmptyStateProps {
   message: string;
   variant?: "default" | "search" | "failure";
@@ -37,7 +44,7 @@ export function EmptyState({
             data-cta="primary"
             className="underline underline-offset-2 hover:text-afh-text transition-colors"
           >
-            Parcourir les familles linguistiques
+            {SEARCH_EMPTY_LINK_LABEL}
           </Link>
         </div>
       )}
