@@ -113,15 +113,19 @@ export function SiteFooter({ language }: SiteFooterProps) {
               height={80}
               className="h-20 w-20"
             />
-            <span className="font-afh-display text-afh-h1 text-afh-text">
+            {/* The masthead lockup, one role up because the mark beside it is
+                80px rather than 44px. Not `h1`: that role belongs to the fiche
+                the reader has just finished, and a wordmark that matches it
+                makes the page look like it has two titles. */}
+            <span className="font-afh-display text-afh-h2 text-afh-text">
               {PRODUCT_NAME}
             </span>
-            {/* The qualifier the masthead sets in the warm gradient, here in
-                the mark's full spectrum: the footer is the one place with the
-                room to run all five hues at a size that reads. */}
+            {/* The same qualifier as the masthead, in the same gradient. It
+                ran in a five-hue ramp of its own until the two treatments were
+                seen on one page: one lockup, one colour. */}
             <span
               data-testid="footer-tagline"
-              className="afh-brand-spectrum font-afh-display text-afh-lead font-bold"
+              className="afh-brand-tagline font-afh-display text-afh-small font-bold"
             >
               {PRODUCT_TAGLINE}
             </span>
@@ -129,13 +133,18 @@ export function SiteFooter({ language }: SiteFooterProps) {
 
           {rubrics.map((rubric) => (
             <nav key={rubric.id} aria-labelledby={`footer-rubric-${rubric.id}`}>
+              {/* A card title, not a page title (typography-charter §4):
+                  display family at body size. At `h1` three navigation labels
+                  outweighed the heading of the document they sit under. */}
               <p
                 id={`footer-rubric-${rubric.id}`}
-                className="font-afh-display text-afh-h1 text-afh-text"
+                className="font-afh-display text-afh-body font-bold text-afh-text"
               >
                 {rubric.heading}
               </p>
-              <ul className="mt-afh-sm flex flex-col gap-afh-xs text-afh-lead">
+              {/* The links take the column's own `small`: a footer link is a
+                  control label, and at `lead` it outran its rubric heading. */}
+              <ul className="mt-afh-sm flex flex-col gap-afh-xs">
                 {rubric.links.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className={FOOTER_LINK_CLASS}>
@@ -148,7 +157,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
           ))}
 
           <div>
-            <p className="font-afh-display text-afh-h1 text-afh-text">
+            <p className="font-afh-display text-afh-body font-bold text-afh-text">
               {directory.followHeading}
             </p>
             {/* Each mark keeps a 44px hit area, which insets the glyph by
@@ -185,7 +194,13 @@ export function SiteFooter({ language }: SiteFooterProps) {
           </div>
         </div>
 
-        <hr className="border-afh-border" />
+        {/* The column's `gap` is the rhythm inside an étage; the rule is what
+            separates the two. Left on the gap alone, the directory and the
+            legal block read as one queue of eight rows. */}
+        <hr
+          data-testid="footer-rule"
+          className="my-afh-5xl border-afh-border"
+        />
 
         {/* Étage 2, row 1 — everywhere else the footer can take you.
             « À propos » sits outside the legal nav rather than inside it: it

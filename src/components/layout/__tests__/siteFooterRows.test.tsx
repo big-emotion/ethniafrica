@@ -85,6 +85,23 @@ describe("the footer — declared rows, and a size worth reading (REQ-046)", () 
     expect(container.querySelector(".text-afh-caption")).toBeNull();
   });
 
+  /**
+   * The directory and the legal block are two étages, not four consecutive
+   * rows. The column's own `gap` is the rhythm *inside* an étage; running it
+   * across the rule as well made the reader meet eight blocks in a queue
+   * instead of two groups. The rule carries the separation itself.
+   */
+  // @req REQ-046
+  it("separates the directory from the legal block by more than the column gap", () => {
+    render(<SiteFooter language="fr" />);
+
+    const rule = screen.getByTestId("footer-rule");
+    const column = screen.getByTestId("footer-content");
+
+    expect(column).toHaveClass("gap-afh-lg");
+    expect(rule).toHaveClass("my-afh-5xl");
+  });
+
   // The links row still holds both landmarks it held before: the legal nav
   // keeps its accessible name, and « À propos » stays out of it because it is
   // editorial and would make that name inaccurate.

@@ -186,6 +186,12 @@ describe("the directory takes the full measure (REQ-046)", () => {
     expect(directory).toHaveClass("md:justify-between");
   });
 
+  /**
+   * The rubric heading is a card title, not a page title: display family at
+   * body size, per typography-charter §4. It shipped at `h1` — the role the
+   * fiche's own title takes — so three navigation labels outweighed the
+   * heading of the document they sit under, at 40px on desktop.
+   */
   // @req REQ-046
   it("sets each rubric heading in the display face, above its links", () => {
     render(<SiteFooter language="fr" />);
@@ -197,17 +203,40 @@ describe("the directory takes the full measure (REQ-046)", () => {
       footer.directory.explorerHeading
     );
 
-    expect(heading).toHaveClass("font-afh-display", "text-afh-h1");
-    expect(explorer.querySelector("ul")).toHaveClass("text-afh-lead");
+    expect(heading).toHaveClass("font-afh-display", "text-afh-body");
+    expect(heading).not.toHaveClass("text-afh-h1");
+  });
+
+  /**
+   * A footer link is a control label, so it takes `small` — the role
+   * typography-charter §1 files control labels under, and the size the two
+   * rows below the directory already run at. At `lead` it outran its own
+   * rubric heading.
+   */
+  // @req REQ-046
+  it("sets the rubric links below their heading, at control-label size", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+
+    expect(explorer.querySelector("ul")).not.toHaveClass("text-afh-lead");
+    expect(screen.getByTestId("footer-content")).toHaveClass("text-afh-small");
   });
 });
 
 /**
  * The mark was a 44px favicon beside a name, saying only which site this is —
  * something the masthead 8000 pixels above already said. What it never said is
- * what the site *is*. The qualifier the masthead carries belongs here too, at
- * the one size in the page where there is room for it, in the spectrum the
- * mark is drawn in rather than a flat ink.
+ * what the site *is*. The qualifier the masthead carries belongs here too, in
+ * the same gradient rather than a flat ink.
+ *
+ * It used to be painted in a five-hue ramp sampled off the mark, while the
+ * masthead painted the identical string in the two-stop brand gradient. One
+ * lockup cannot have two colour treatments: the reader meets the same words
+ * twice on one page and reads them as two different things. Brand charter
+ * §5.3 scopes `--afh-gradient-brand` to the lockup, and the footer is one.
  */
 describe("the footer mark names what the atlas is (REQ-046)", () => {
   // @req REQ-046
@@ -221,12 +250,30 @@ describe("the footer mark names what the atlas is (REQ-046)", () => {
   });
 
   // @req REQ-046
-  it("sets the qualifier in the brand spectrum, not in flat ink", () => {
+  it("sets the qualifier in the masthead's brand gradient, not in flat ink", () => {
     render(<SiteFooter language="fr" />);
 
-    expect(screen.getByTestId("footer-tagline")).toHaveClass(
-      "afh-brand-spectrum"
+    const tagline = screen.getByTestId("footer-tagline");
+
+    expect(tagline).toHaveClass("afh-brand-tagline");
+    expect(tagline).not.toHaveClass("afh-brand-spectrum");
+  });
+
+  /**
+   * The lockup is the masthead's, one step up because the mark beside it is
+   * 80px rather than 44px — never the page's own `h1` role, which belongs to
+   * the fiche the reader just finished.
+   */
+  // @req REQ-046
+  it("sets the wordmark below the page-title role", () => {
+    render(<SiteFooter language="fr" />);
+
+    const wordmark = within(screen.getByTestId("footer-brand")).getByText(
+      PRODUCT_NAME
     );
+
+    expect(wordmark).toHaveClass("font-afh-display", "text-afh-h2");
+    expect(wordmark).not.toHaveClass("text-afh-h1");
   });
 
   // @req REQ-046

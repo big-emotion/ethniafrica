@@ -242,11 +242,30 @@ other colour.
 accents** — no surface takes them, no component reads them, only the gradient
 does. `--gradient-warm` aliases it, because callers already read that name.
 
-**Where it is allowed.** The masthead lockup, a brand mark on a share card, and
-**the title of a page that names an axis rather than a subject**. That last one
-is a real distinction and worth keeping: `Explorer`, `Comprendre`, `Jouer` and
-`Recherche` name parts of the apparatus; `!Kung` and `Afrique du Sud` name
-things in the world. A fiche title takes `--afh-text`.
+**Where it is allowed.** The masthead lockup, **the footer lockup**, a brand
+mark on a share card, and **the title of a page that names an axis rather than
+a subject**. That last one is a real distinction and worth keeping: `Explorer`,
+`Comprendre`, `Jouer` and `Recherche` name parts of the apparatus; `!Kung` and
+`Afrique du Sud` name things in the world. A fiche title takes `--afh-text`.
+
+**And a lockup gets one treatment, not one per surface.** The footer used to
+paint « Atlas des Peuples d'Afrique » in a five-hue ramp of its own —
+`--afh-gradient-spectrum`, sampled off `public/africa.png` — while the masthead
+painted the identical string in this gradient. Two treatments of the same words
+on one page do not read as one brand with range; they read as two things. The
+ramp is retired and its token deleted rather than left declared-and-unconsumed,
+which is the failure §7 records against `--afh-section-gap`.
+`colorTokens.test.ts` asserts both halves: the footer qualifier resolves to
+`--gradient-warm`, and no spectrum declaration survives in either theme.
+
+**The cost this rule accepts.** The retired ramp was built to clear 4.5:1 on
+`--afh-color-bg-warm`; the brand gradient's gold stop measures **1.52:1** on
+that same ground (flame, the other stop, measures 3.13:1). Coherence was
+preferred to legibility here because the masthead has shipped exactly this on
+every route since the lockup existed — the footer was the outlier, not the
+regression. Darkening `--afh-brand-gold` would fix both surfaces at once and is
+the right ticket if the pale end proves unreadable; painting the footer a third
+way is not.
 
 An earlier draft of this section claimed the treatment was fragile, because it
 sets `color: transparent`. **It is not.** The declaration sits inside
