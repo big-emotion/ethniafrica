@@ -81,6 +81,26 @@
      lifted that for one surface: the atlas globe stage on a fiche is
      --afh-night-ground/-ink* regardless of the fiche's own accent — see
      src/components/atlas/AtlasGlobe.tsx. No other component may consume it. */
+  /* ─── The brand mark's two stops ──────────────────────────────
+     The warm gradient paints the masthead tagline on every page and
+     the title of each axis hub. It is the most visible colour in the
+     product, and until now neither of its stops was a token: both
+     lived as raw HSL in index.css, outside this palette entirely.
+
+     Named here, at their existing values, byte for byte. Nothing
+     moves a pixel — the point is that the brand's own colour is now
+     in the system that governs every other colour, and greppable.
+
+     They are mark colours, not accents: no surface takes them, no
+     component reads them. Only --afh-gradient-brand does. */
+  --afh-brand-flame: #da622f;
+  --afh-brand-gold: #f2ba36;
+  --afh-gradient-brand: linear-gradient(
+    135deg,
+    var(--afh-brand-flame),
+    var(--afh-brand-gold)
+  );
+
   --afh-cat-ocre: #c9821f;
   --afh-cat-ocre-tint: #f1d9ae;
   --afh-cat-teal: #33a390;
