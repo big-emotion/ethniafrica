@@ -3,6 +3,7 @@
   "nameMain": "Américano-Libériens",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["LBR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Américano-Libériens",

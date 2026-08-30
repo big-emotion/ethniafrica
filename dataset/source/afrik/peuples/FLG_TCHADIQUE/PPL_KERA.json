@@ -3,6 +3,7 @@
   "nameMain": "Kera",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["TCD", "CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kera",

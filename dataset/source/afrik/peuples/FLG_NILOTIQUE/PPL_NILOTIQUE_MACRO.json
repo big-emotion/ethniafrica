@@ -3,6 +3,7 @@
   "nameMain": "Peuples Nilotiques (macro-groupe)",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["SSD", "SDN", "ETH", "UGA", "KEN", "TZA", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Peuples Nilotiques",

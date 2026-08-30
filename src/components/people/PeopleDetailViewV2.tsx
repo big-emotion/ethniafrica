@@ -54,7 +54,6 @@ export interface PeopleDetailViewV2Props {
    * configured — the section renders the disabled placeholder instead, the
    * same way the country fiche does.
    */
-  turnstileSiteKey?: string;
 }
 
 /**
@@ -99,7 +98,6 @@ export function PeopleDetailViewV2({
   fragmentation = null,
   hasSourceFlag = false,
   relations = [],
-  turnstileSiteKey,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
   const distribution = people.demography?.distributionByCountry;
@@ -196,31 +194,15 @@ export function PeopleDetailViewV2({
             the rubric is filled — an empty culture section is exactly the one
             a reader has something to say about. */}
         <div data-testid="section-flag-target-culture" className="mt-3">
-          {turnstileSiteKey ? (
-            <FlagTarget
-              target={{
-                type: "fiche_section",
-                id: people.id,
-                fieldPath: "culture",
-              }}
-              turnstileSiteKey={turnstileSiteKey}
-              triggerLabel="Signaler cette section"
-              className="w-auto text-afh-caption"
-            />
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="rounded-md border border-dashed px-2 py-1 text-afh-caption"
-              style={{
-                borderColor: "var(--afh-border)",
-                color: "var(--afh-text-soft)",
-              }}
-              aria-label="Signaler cette section — bientôt disponible"
-            >
-              Signaler cette section (bientôt disponible)
-            </button>
-          )}
+          <FlagTarget
+            target={{
+              type: "fiche_section",
+              id: people.id,
+              fieldPath: "culture",
+            }}
+            triggerLabel="Signaler cette section"
+            className="w-auto text-afh-caption"
+          />
         </div>
       </FicheSection>
 

@@ -3,6 +3,7 @@
   "nameMain": "Fang",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GAB", "GNQ", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fang",

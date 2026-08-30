@@ -3,6 +3,7 @@
   "nameMain": "Kabyle",
   "languageFamilyId": "FLG_BERBERE",
   "currentCountries": ["DZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kabyle",

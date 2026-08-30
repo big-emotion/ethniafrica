@@ -3,6 +3,7 @@
   "nameMain": "Mursi",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mursi",

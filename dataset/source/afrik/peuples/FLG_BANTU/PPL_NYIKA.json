@@ -3,6 +3,7 @@
   "nameMain": "Nyika",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "MWI", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nyika",

@@ -3,6 +3,7 @@
   "nameMain": "Diola (Joola / Jola)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GMB", "GNB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Diola (Joola / Jola)",

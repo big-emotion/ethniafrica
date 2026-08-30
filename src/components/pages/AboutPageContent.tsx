@@ -1,17 +1,17 @@
 import { Language } from "@/types/shared";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
-import { ReadingColumn } from "@/components/pages/ReadingColumn";
 
 interface AboutPageContentProps {
   language: Language;
 }
 
 /**
- * /[lang]/about content — editorial family (charter §4/§7, FR107). Keeps
- * the reading column (≤ 72ch) and gains chapter anatomy on its two
- * top-level sections. Institution/region group labels (formerly H4) are
- * plain text: H3 is the deepest heading this long-form exception allows.
+ * /[lang]/about content — editorial family (charter §4/§7, FR107). Gains
+ * chapter anatomy on its two top-level sections; the prose carries no reading
+ * measure and fills the page box it shares with its title.
+ * Institution/region group labels (formerly H4) are plain text: H3 is the
+ * deepest heading this long-form exception allows.
  */
 // @req REQ-091
 export default function AboutPageContent({ language }: AboutPageContentProps) {
@@ -621,7 +621,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
   };
 
   return (
-    <ReadingColumn className="mx-auto space-y-8">
+    <div className="mx-auto space-y-8">
       <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
 
       {/* Section About */}
@@ -820,6 +820,6 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           </ul>
         </div>
       </section>
-    </ReadingColumn>
+    </div>
   );
 }

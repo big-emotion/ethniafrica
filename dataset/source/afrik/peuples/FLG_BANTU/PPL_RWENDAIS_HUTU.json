@@ -3,6 +3,7 @@
   "nameMain": "Hutu du Rwanda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["RWA", "BDI", "COD", "UGA", "TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Hutu du Rwanda",

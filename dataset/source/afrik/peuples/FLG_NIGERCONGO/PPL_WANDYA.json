@@ -3,6 +3,7 @@
   "nameMain": "Wandya",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "UGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wandya",

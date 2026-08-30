@@ -3,6 +3,7 @@
   "nameMain": "Karanga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Karanga",

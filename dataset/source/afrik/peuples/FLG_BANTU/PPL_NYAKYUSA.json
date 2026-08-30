@@ -3,6 +3,7 @@
   "nameMain": "Nyakyusa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA", "MWI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nyakyusa",

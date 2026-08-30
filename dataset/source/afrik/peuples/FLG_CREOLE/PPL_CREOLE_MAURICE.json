@@ -3,6 +3,7 @@
   "nameMain": "Créoles Mauriciens",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["MUS"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Créoles Mauriciens",

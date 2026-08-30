@@ -3,6 +3,7 @@
   "nameMain": "Kakwa",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["UGA", "SSD", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kakwa",

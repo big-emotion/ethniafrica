@@ -3,6 +3,7 @@
   "nameMain": "Peuples Kx'a (macro-groupe)",
   "languageFamilyId": "FLG_KXA",
   "currentCountries": ["NAM", "BWA", "AGO"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Kx'a (macro-groupe)",

@@ -3,6 +3,7 @@
   "nameMain": "Nyabwa",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nyabwa",

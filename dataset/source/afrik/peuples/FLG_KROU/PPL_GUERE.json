@@ -3,6 +3,7 @@
   "nameMain": "Guéré",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Guéré",

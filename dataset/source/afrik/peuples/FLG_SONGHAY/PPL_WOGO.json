@@ -3,6 +3,7 @@
   "nameMain": "Wogo",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["NER", "MLI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wogo",

@@ -64,8 +64,8 @@ export interface SpherePoint {
  * Maps a geographic coordinate onto a unit sphere: the true-relative-area
  * counterpart to the equirectangular projectLonLat above, which stretches
  * area as latitude grows. Longitude 0 / latitude 0 faces the camera
- * (+z); HomeGlobe.tsx uses AFRICA_CENTER_LON below to pick the initial
- * yaw that faces Africa's own bounding-box centroid front-on.
+ * (+z); AFRICA_CENTER_LON below picks the initial yaw that faces Africa's
+ * own bounding-box centroid front-on.
  */
 // @req REQ-112
 export function lonLatToSphere(lon: number, lat: number): SpherePoint {
@@ -111,7 +111,7 @@ function multiplyMat3(a: Mat3, b: Mat3): Mat3 {
 
 /**
  * Combined rotation (yaw around Y applied first, then pitch around X), in
- * radians — the single control HomeGlobe drives from pointer drag and
+ * radians — the single control the globe drives from pointer drag and
  * keyboard arrows.
  */
 // @req REQ-112

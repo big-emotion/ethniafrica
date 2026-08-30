@@ -3,6 +3,7 @@
   "nameMain": "Belanda",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Belanda",

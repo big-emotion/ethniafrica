@@ -3,6 +3,7 @@
   "nameMain": "Somali",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["SOM", "DJI", "ETH", "KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Somali",

@@ -106,16 +106,38 @@ A card is a preview, not a page. It gets exactly three levels:
 
 No fourth level. A card that needs one is a fiche.
 
-## 5. Measure is set by the text, not by the shell
+## 5. Measure is set by the container, not by a character count
 
-Prose is capped at `--afh-measure-prose` (65ch), independently of its
-container. The country container is 800 px wide; at 19 px body that runs to
-roughly 94 characters, half again the comfortable maximum. The 800 px is a
-layout decision about the page; 65ch is a legibility decision about the
-paragraph. Neither derives from the other.
+Running prose carries **no measure of its own**. It fills the box it belongs
+to — the parchment on a fiche, the page box on a document.
 
-This applies to running prose only. Tables, card grids and the atlas panel
-fill their container.
+The charter used to say the opposite: prose was capped at `--afh-measure-prose`
+(65ch), and long-form pages went through a 72ch reading column, on the argument
+that 800 px of 19 px body runs to ~94 characters and legibility is a decision
+about the paragraph, not about the page. The reasoning is sound about a page
+that is nothing but paragraphs. It was wrong about this atlas, because our
+paragraphs never sit alone: a fiche chapter puts prose next to stat cards,
+rankings, tables and the atlas panel, all of which fill their container. Capped,
+the paragraph became the one element on a desktop page that stopped mid-width,
+against nothing — the reader sees a column someone forgot to finish, not a
+comfortable measure.
+
+So the cap is retired everywhere prose runs: fiche chapters, migration and
+colonial-gaze narratives, legal notices, the doctrine pages, the about page and
+the site map.
+
+Two things are **not** covered by this and keep their measures:
+
+- **Titles and ledes.** A headline held to 18–28ch breaks where the editor
+  wants it to; a chapô at 58ch is a deliberate opening. These are composition,
+  not reading comfort.
+- **Band compositions.** A centred band — the home's `Saviez-vous`, the hero —
+  states its own width. Centred text has no empty right half, so the defect
+  above does not arise.
+
+A page box (`max-w-5xl`, `--afh-shell-max`) is also not a reading measure: the
+title, the rules and the prose all sit inside it together. Narrowing the text
+alone is precisely what broke the column.
 
 ## 6. How to reach a size
 

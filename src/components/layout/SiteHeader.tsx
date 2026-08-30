@@ -152,8 +152,14 @@ export function SiteHeader({
   // The bar, not the header: the panel below opens inside the same element,
   // and the height the rest of the chrome lines itself up against is the
   // height of the row that stays.
+  //
+  // An open menu holds the bar in place. The retraction reads the scroll
+  // position, which moves for reasons the reader had no hand in, and every
+  // one of those used to close the menu they had just opened — see the hook.
+  // The ways out stay the ones the reader can aim at: the trigger again,
+  // Escape, or a destination in the panel.
   const barRef = useRef<HTMLElement>(null);
-  const retracted = useHeaderReveal(barRef);
+  const retracted = useHeaderReveal(barRef, openAxis !== null || trayOpen);
 
   // A panel left open would ride off the top of the screen with the bar and
   // come back several hundred pixels later, over a page the reader has since

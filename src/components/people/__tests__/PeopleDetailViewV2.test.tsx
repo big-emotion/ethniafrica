@@ -5,6 +5,7 @@ import { render, screen, cleanup, within } from "@testing-library/react";
 // provider owns. The fiche itself has no opinion on consent, so the provider
 // is stubbed rather than mounted around every case.
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -188,7 +189,7 @@ describe("PeopleDetailViewV2", () => {
    * away with the surface they described.
    */
   // @req REQ-012
-  it("offers a disabled report shell on the culture section until a Turnstile key is configured", () => {
+  it("offers a live report control on the culture section", () => {
     render(
       <PeopleDetailViewV2
         people={{
@@ -199,7 +200,9 @@ describe("PeopleDetailViewV2", () => {
     );
 
     const flagTarget = screen.getByTestId("section-flag-target-culture");
-    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
   });
 
   // @req REQ-012
@@ -210,7 +213,6 @@ describe("PeopleDetailViewV2", () => {
           ...ewe,
           culture: { spiritualities: "Culte de Mawu" },
         }}
-        turnstileSiteKey="test-site-key"
       />
     );
 

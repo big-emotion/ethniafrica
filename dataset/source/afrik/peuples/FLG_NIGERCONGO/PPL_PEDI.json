@@ -3,6 +3,7 @@
   "nameMain": "Pedi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Pedi",

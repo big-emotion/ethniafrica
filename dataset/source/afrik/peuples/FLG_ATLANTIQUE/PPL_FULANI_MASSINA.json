@@ -3,6 +3,7 @@
   "nameMain": "Fulbe du Massina (Peuls du Massina / Macina)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["MLI", "CIV", "GHA", "BFA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fulbe du Massina (Peuls du Massina / Macina)",

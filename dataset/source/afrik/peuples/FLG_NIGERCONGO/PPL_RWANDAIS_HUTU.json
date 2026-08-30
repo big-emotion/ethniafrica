@@ -3,6 +3,7 @@
   "nameMain": "Rwandais (Hutu)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["RWA", "COD", "UGA", "BDI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Rwandais (Hutu)",

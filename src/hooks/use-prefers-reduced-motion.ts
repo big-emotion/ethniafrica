@@ -7,7 +7,7 @@ const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
  * existing components (DottedContinent, ScalePanel, ...) read
  * `window.matchMedia` directly and once at mount; this hook additionally
  * reacts if the user's OS preference changes while the page is open, which
- * HomeGlobe needs since it keeps a live render loop rather than drawing a
+ * the globe needs since it keeps a live render loop rather than drawing a
  * single canvas frame.
  */
 // @req REQ-112
