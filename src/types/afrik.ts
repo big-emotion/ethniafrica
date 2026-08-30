@@ -390,6 +390,12 @@ export interface PeopleDemographicEntry {
   name: string;
   peopleId?: PeopleId;
   population?: number;
+  /**
+   * Year `population` was counted, when it is not the atlas's own 2025 — a
+   * census headcount is dated by its census. FR32 reads the value against the
+   * country total of this year; absent, it reads against 2025.
+   */
+  referenceYear?: number;
   percentageInCountry?: number;
   percentageInAfrica?: number;
   region?: string;

@@ -1,4 +1,4 @@
-id_pays,nom_pays,population_totale_2025,source,source_url,annee
+id_pays,nom_pays,population_totale,source,source_url,annee
 AGO,"République d'Angola",39000000,"UNFPA – World Population Dashboard","https://www.unfpa.org/data/world-population/AO",2025
 BDI,"République du Burundi",14400000,"UNFPA – World Population Dashboard","https://www.unfpa.org/data/world-population/BI",2025
 BEN,"République du Bénin",14800000,"UNFPA – World Population Dashboard","https://www.unfpa.org/data/world-population/BJ",2025

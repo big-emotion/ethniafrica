@@ -32,9 +32,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
                 className="text-afh-caption mt-0.5"
                 style={{ color: "var(--country-text-soft)" }}
               >
-                {data.everyPeopleDeclaresPopulation
-                  ? "habitants · 2025"
-                  : "habitants documentés · 2025"}
+                {populationCaption(data)}
               </div>
             </>
           ) : (
@@ -68,6 +66,26 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
       </div>
     </div>
   );
+}
+
+/**
+ * What the figure above the bar actually is.
+ *
+ * Two things qualify it, and both have been got wrong here before. "documentés"
+ * says the total sums only the peoples that declare a headcount, so it is a
+ * floor rather than the country's population. The year is the one the corpus
+ * dates those headcounts to — it used to be the literal 2025, which published a
+ * census count under a year it never claimed. Where the counted peoples come
+ * from different years there is no single snapshot, and the caption names none.
+ */
+function populationCaption(data: PeoplesData): string {
+  const noun = data.everyPeopleDeclaresPopulation
+    ? "habitants"
+    : "habitants documentés";
+
+  return data.populationReferenceYear
+    ? `${noun} · ${data.populationReferenceYear}`
+    : noun;
 }
 
 // ==========================================

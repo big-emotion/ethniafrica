@@ -72,6 +72,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       totalPopulation: 12700000,
       totalPopulationFormatted: "12.7M",
       everyPeopleDeclaresPopulation: true,
+      populationReferenceYear: 2025,
       peopleCount: 2,
       rows: [
         {
@@ -93,5 +94,59 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
 
     render(<PeoplesSection data={complete} />);
     expect(screen.getByText(/^habitants · 2025$/)).toBeTruthy();
+  });
+
+  // The eyebrow used to hardcode 2025, so a headcount read off the 2019 Kenyan
+  // census was published under a year it never claimed.
+  // @req REQ-092
+  it("prints the year the headcounts are actually dated to", () => {
+    const census2019: PeoplesData = {
+      totalPopulation: 8148668,
+      totalPopulationFormatted: "8.1M",
+      everyPeopleDeclaresPopulation: true,
+      populationReferenceYear: 2019,
+      peopleCount: 1,
+      rows: [
+        {
+          name: "Kikuyu",
+          percentage: 17.1,
+          population: 8148668,
+          populationFormatted: "8.1M",
+          colorIndex: 1,
+        },
+      ],
+    };
+
+    render(<PeoplesSection data={census2019} />);
+    expect(screen.getByText(/^habitants · 2019$/)).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("names no year when the counted peoples come from different ones", () => {
+    const mixed: PeoplesData = {
+      totalPopulation: 15848668,
+      totalPopulationFormatted: "15.8M",
+      everyPeopleDeclaresPopulation: true,
+      peopleCount: 2,
+      rows: [
+        {
+          name: "Kikuyu",
+          percentage: 17.1,
+          population: 8148668,
+          populationFormatted: "8.1M",
+          colorIndex: 1,
+        },
+        {
+          name: "Luhya",
+          percentage: 14.3,
+          population: 7700000,
+          populationFormatted: "7.7M",
+          colorIndex: 2,
+        },
+      ],
+    };
+
+    render(<PeoplesSection data={mixed} />);
+    expect(screen.getByText(/^habitants$/)).toBeTruthy();
   });
 });
