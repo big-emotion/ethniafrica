@@ -46,25 +46,41 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 35 35% 97%;
-    --foreground: 25 25% 15%;
+    /* 24 29.4% 13.3% is #2c2018 exactly — the same ink as --afh-text. It used to
+       be 25 25% 15% (#30251d), and both painted h1 elements in production:
+       the home took --afh-text, every fiche and facet took this one. Two
+       inks for one role, and which a title got was an accident of which
+       layer its component inherited from. Brand charter §4. */
+    --foreground: 24 29.4% 13.3%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
+    --card-foreground: 24 29.4% 13.3%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
+    --popover-foreground: 24 29.4% 13.3%;
 
     --primary: 18 70% 42%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 35 60% 88%;
-    --secondary-foreground: 25 25% 15%;
+    --secondary-foreground: 24 29.4% 13.3%;
 
     --muted: 35 30% 92%;
     --muted-foreground: 25 15% 38%;
 
-    --accent: 42 88% 58%;
-    --accent-foreground: 25 25% 15%;
+    /* Namespaced away from the atlas accent, which owns the bare name.
+       The two collided outright: .afh-accent-ocre sets --accent to the hex
+       #c9821f while this block held the triplet 42 88% 58%, so inside any
+       accent-scoped subtree hsl(var(--accent)) — what every Tailwind
+       *-accent utility compiles to — resolved to rgba(0, 0, 0, 0). Measured
+       on a people fiche. On dropdown-menu that is the focus and the open
+       state painting transparent, so a keyboard reader lost the highlight
+       telling them where they were.
+
+       Brand charter §4: the shadcn layer is an implementation detail of
+       src/components/ui/**, and nothing outside it reads one of these. */
+    --ui-accent: 42 88% 58%;
+    --ui-accent-foreground: 25 25% 15%;
 
     --destructive: 0 84% 40%;
     --destructive-foreground: 0 0% 100%;
@@ -136,8 +152,8 @@ All colors MUST be HSL.
     --muted: 25 15% 22%;
     --muted-foreground: 35 20% 65%;
 
-    --accent: 42 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    --ui-accent: 42 85% 60%;
+    --ui-accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
