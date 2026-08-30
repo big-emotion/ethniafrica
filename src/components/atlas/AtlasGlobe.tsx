@@ -965,11 +965,22 @@ export function AtlasGlobe({
    * The continent scene keeps IDLE_POSE. It is a geographic frame rather than
    * an entity, and it is already framed on its whole subject — enclosing its
    * fifty-one countries would move a hub that is right as it stands.
+   *
+   * The frame gives the turn but not the dolly: at rest the globe is whole.
+   * The sphere is fit to the stage's height, and the stage is a band roughly
+   * three times wider than it is tall, so the framing dolly — up to 1.62x for
+   * a country the size of South Africa — made the sphere taller than the band
+   * and hung a third of it off the top and the bottom. Nothing in the band's
+   * height can answer that: the crop is a ratio, and a taller band scales the
+   * sphere with it. So the opening pose faces the subject undollied, and
+   * coming closer is the reader's own move — the zoom controls, a drag, or
+   * choosing the country from the picker, which still flies in on it.
    */
   const restPose = useMemo(() => {
     if (!cameraFollowsChoice) return IDLE_POSE;
     const frame = enclosingFrame(targets);
-    return frame ? poseForTarget(frame, NO_BIAS) : IDLE_POSE;
+    if (!frame) return IDLE_POSE;
+    return { ...poseForTarget(frame, NO_BIAS), zoom: MIN_ZOOM };
   }, [cameraFollowsChoice, targets]);
 
   const camera = useGlobeCamera(
