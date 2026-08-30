@@ -254,20 +254,25 @@ All colors MUST be HSL.
     }
   }
 
-  /* The brand qualifier, set in the mark's own spectrum.
+  /* The brand qualifier, in the gradient the masthead already paints it in.
+
+     It ran in a five-hue ramp of its own (`--afh-gradient-spectrum`, now
+     retired) while `.sh-brand-tagline` set the identical string in the
+     two-stop brand gradient. A reader meets the same words twice on one page
+     and reads two treatments as two different things — brand charter §5.3
+     scopes the gradient to the lockup, and the footer is one.
 
      The colour outside the @supports block is not a fallback nobody sees: it
-     is what a browser without background-clip: text renders, and it is also
-     what the glyphs fall back to if the gradient fails to paint. Setting it to
-     the first stop rather than to `transparent` is the difference between a
+     is what a browser without background-clip: text renders. Setting it to the
+     display accent rather than to `transparent` is the difference between a
      line that loses its gradient and a line that disappears. */
-  .afh-brand-spectrum {
-    color: hsl(16 80% 39%);
+  .afh-brand-tagline {
+    color: var(--afh-display-accent);
   }
 
   @supports ((background-clip: text) or (-webkit-background-clip: text)) {
-    .afh-brand-spectrum {
-      background: var(--afh-gradient-spectrum);
+    .afh-brand-tagline {
+      background: var(--gradient-warm);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
