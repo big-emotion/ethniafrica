@@ -32,6 +32,7 @@ export async function getAllAfrikCountries(
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    nameOfficial: row.name_official || undefined,
     summary: row.summary || undefined,
     etymology: row.etymology || undefined,
     nameOriginActor: row.name_origin_actor || undefined,
@@ -69,6 +70,7 @@ export async function getAfrikCountryById(
   return {
     id: data.id,
     nameFr: data.name_fr,
+    nameOfficial: data.name_official || undefined,
     summary: data.summary || undefined,
     etymology: data.etymology || undefined,
     nameOriginActor: data.name_origin_actor || undefined,
@@ -99,6 +101,7 @@ export async function searchAfrikCountries(query: string): Promise<Country[]> {
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    nameOfficial: row.name_official || undefined,
     summary: row.summary || undefined,
     etymology: row.etymology || undefined,
     nameOriginActor: row.name_origin_actor || undefined,
@@ -160,6 +163,7 @@ export async function getAfrikCountriesByIds(
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    nameOfficial: row.name_official || undefined,
     summary: row.summary || undefined,
     etymology: row.etymology || undefined,
     nameOriginActor: row.name_origin_actor || undefined,

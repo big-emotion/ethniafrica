@@ -146,6 +146,17 @@ repository's credentials cannot reach that project.
 | `042_migration_ledger_introspection.sql`      | applied (`042`)                             | unknown          |
 | `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below | unknown          |
 | `044_afrik_ranked_search.sql`                 | applied (`044`)                             | unknown          |
+| `045_afrik_countries_summary.sql`             | applied (`045`)                             | unknown          |
+| `046_quiz_stimulus.sql`                       | applied (`046`)                             | unknown          |
+| `047_quiz_bank_indexes.sql`                   | applied (`047`)                             | unknown          |
+| `048_antibot.sql`                             | applied (`048`)                             | unknown          |
+| `049_afrik_countries_name_official.sql`       | pending — applies on merge to `recette`     | unknown          |
+
+> **Correction, 2026-08-30.** The table stopped at `044` while `045` through `048` had already
+> been applied to recette by `migrate-recette.yml`. A direct read of the recette ledger lists all
+> four under their own numeric versions; the rows above now say so. The gap is the same failure
+> mode the 2026-08-28 correction records — the automation applies migrations, this document is
+> updated by hand, and nothing fails when the hand forgets.
 
 > **Correction, 2026-08-28.** This table listed `040`, `041` and `042` as not applied. A direct
 > read of the recette ledger shows all three present under their own numeric versions. The prose
