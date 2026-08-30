@@ -138,6 +138,7 @@ function hasUnbalancedEmphasis(raw: string): boolean {
  * Total by construction: never throws, never loops — every branch consumes a
  * whole line — and never produces markup.
  */
+// @req REQ-122
 export function parseFicheProse(raw: string): ParsedProse {
   if (!raw || raw.trim() === "") return { blocks: [], defect: null };
   if (isSerialisedJson(raw)) return { blocks: [], defect: "serialised-json" };
@@ -203,6 +204,7 @@ export function parseFicheProse(raw: string): ParsedProse {
  * verbatim. Serialised JSON yields nothing, which is what stops a malformed
  * field from becoming an assertion.
  */
+// @req REQ-122
 export function plainTextOf(raw: string): string {
   const { blocks } = parseFicheProse(raw);
   return blocks
@@ -222,6 +224,7 @@ export function plainTextOf(raw: string): string {
  * server component — while the gate must be exhaustive. One function could not
  * be both without being either slow or lax.
  */
+// @req REQ-122
 export function lintFicheProse(raw: string): ProseDefect[] {
   if (!raw || raw.trim() === "") return [];
 
@@ -236,4 +239,28 @@ export function lintFicheProse(raw: string): ProseDefect[] {
   if (defect === "orphan-heading") defects.push("orphan-heading");
 
   return defects;
+}
+
+/**
+ * The quiz boundary, in the shape the rubric readers already pass around.
+ *
+ * A rubric feeds `selectVerbatimFragment`, whose fragment becomes a stimulus on
+ * screen and an `assertions.statement` row in the database. Markup reaching
+ * either would show through, and would spend the fragment's 400-character
+ * budget four characters at a time.
+ *
+ * A field that holds no prose yields `null` rather than an empty string, so the
+ * template returns null and no round is built from it. That is what stops the
+ * 94 serialised-JSON fields from being sliced on the periods inside their own
+ * braces and written out as claims the fiche never made.
+ */
+// @req REQ-122
+export function proseOnly(
+  value: string | string[] | null | undefined
+): string | string[] | null | undefined {
+  if (value === null || value === undefined) return value;
+  if (Array.isArray(value)) {
+    return value.map(plainTextOf).filter((entry) => entry !== "");
+  }
+  return plainTextOf(value) || null;
 }

@@ -4,6 +4,7 @@ import {
   lintFicheProse,
   parseFicheProse,
   plainTextOf,
+  proseOnly,
 } from "@/lib/prose/ficheProse";
 
 /**
@@ -237,6 +238,37 @@ describe("plainTextOf — the quiz boundary", () => {
   // @req REQ-122
   it("joins several paragraphs with a single space", () => {
     expect(plainTextOf("Un.\nDeux.")).toBe("Un. Deux.");
+  });
+});
+
+describe("proseOnly — the shape the rubric readers pass around", () => {
+  // @req REQ-122
+  it("passes null and undefined through untouched", () => {
+    expect(proseOnly(null)).toBeNull();
+    expect(proseOnly(undefined)).toBeUndefined();
+  });
+
+  // @req REQ-122
+  it("turns a field holding no prose into null, so no round is built from it", () => {
+    expect(proseOnly(DINKA_SERIALISED)).toBeNull();
+    expect(proseOnly("## Tonalité\n- Haut\n- Bas")).toBeNull();
+  });
+
+  /**
+   * An orphan heading is demoted to a paragraph rather than dropped, so its
+   * text survives — and it is the only content the field has. The quiz may read
+   * it; `MIN_SENTENCE_LENGTH` is what decides whether it is worth a round.
+   */
+  // @req REQ-122
+  it("keeps the text of a heading that was demoted for having nothing under it", () => {
+    expect(proseOnly("## Zones de contact")).toBe("Zones de contact");
+  });
+
+  // @req REQ-122
+  it("strips the markup from every entry of a list-valued rubric", () => {
+    expect(
+      proseOnly(["Route par le **Nil**.", "Route par le *Sahel*."])
+    ).toEqual(["Route par le Nil.", "Route par le Sahel."]);
   });
 });
 
