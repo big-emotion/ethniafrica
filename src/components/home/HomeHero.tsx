@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 import { HomeHeroSearch } from "./HomeHeroSearch";
+import type { SeedWordsByKind } from "@/lib/home/seedWords";
 
 /**
  * The home's opening band (REQ-115): a question, and one sentence answering it.
@@ -38,9 +39,18 @@ import { HomeHeroSearch } from "./HomeHeroSearch";
  * and the archive starts is the page's one large gesture, and a gradient
  * would blur exactly the transition it exists to state.
  */
+export interface HomeHeroProps {
+  /**
+   * The seed chips' words, drawn from the corpus per request by the page.
+   * Optional so Storybook can render the band with no database behind it —
+   * the chips then fall back to the curated dozen.
+   */
+  seedWords?: SeedWordsByKind;
+}
+
 // @req REQ-044
 // @req REQ-115
-export function HomeHero() {
+export function HomeHero({ seedWords }: HomeHeroProps = {}) {
   return (
     <section
       // Landmark label dropped during the light-parchment swap (ETNI-820,
@@ -78,7 +88,7 @@ export function HomeHero() {
               own — the axis cards below print figures that read themselves,
               and restating them here would rebuild the lede this band was
               stripped of. */}
-          <HomeHeroSearch />
+          <HomeHeroSearch seedWords={seedWords} />
         </header>
 
         {/* The argument, drawn. Not decoration and not a photograph of the

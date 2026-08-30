@@ -29,6 +29,17 @@ vi.mock("@/lib/home/corpusCounts", () => ({
   getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));
 
+// The seed chips draw their words from the corpus per request. Only the draw
+// is stubbed — the words, the cap and the row budget stay real, so the row
+// these tests render is the row a reader gets when the database is silent.
+vi.mock("@/lib/home/seedWords", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/home/seedWords")>();
+  return {
+    ...actual,
+    loadSeedWords: vi.fn(async () => actual.FALLBACK_SEED_WORDS),
+  };
+});
+
 // The axis panels open on the home itself, so the page resolves every
 // axis's modules server-side. The availability probe is a Supabase round
 // trip wrapped in unstable_cache, and these tests are about what the page

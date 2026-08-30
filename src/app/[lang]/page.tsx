@@ -10,6 +10,7 @@ import { SynthesisRail } from "@/components/home/SynthesisRail";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
+import { loadSeedWords } from "@/lib/home/seedWords";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import {
   DEFAULT_HERO_MODULE_ID,
@@ -74,17 +75,26 @@ interface HomeProps {
 // @req REQ-113
 // @req REQ-115
 export default async function Home({ searchParams }: HomeProps) {
-  const [{ hero }, counts, modulesByAxis, syntheses, peopleCountsByCountry] =
-    await Promise.all([
-      searchParams,
-      getCorpusCounts(),
-      getModulesByAxis(),
-      loadSynthesisRail(),
-      // The continent scene's own signal, for whichever module the slot draws.
-      // Caught like the explorer hub catches it: a failed count costs the
-      // scene's per-country field, not the page.
-      getContinentPeopleCounts().catch(() => undefined),
-    ]);
+  const [
+    { hero },
+    counts,
+    modulesByAxis,
+    syntheses,
+    peopleCountsByCountry,
+    seedWords,
+  ] = await Promise.all([
+    searchParams,
+    getCorpusCounts(),
+    getModulesByAxis(),
+    loadSynthesisRail(),
+    // The continent scene's own signal, for whichever module the slot draws.
+    // Caught like the explorer hub catches it: a failed count costs the
+    // scene's per-country field, not the page.
+    getContinentPeopleCounts().catch(() => undefined),
+    // Ten names per chip, drawn from the corpus for this reader — the hero's
+    // module is not the only thing this page draws per request.
+    loadSeedWords(),
+  ]);
 
   // Drawn per request, like the hero's module and for the same reason: the
   // draw runs in a server component, so it never re-runs during hydration
@@ -112,7 +122,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <PageLayout language="fr" hideHeader flushTop>
-      <HomeHero />
+      <HomeHero seedWords={seedWords} />
       {/* Argument first, then the doors, then proof and sample.
           The doors came first while the hero carried a standfirst that told
           the reader what the atlas was for above the fold. The hero is now a

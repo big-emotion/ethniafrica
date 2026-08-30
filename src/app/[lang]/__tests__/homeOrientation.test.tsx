@@ -21,6 +21,15 @@ vi.mock("@/lib/home/corpusCounts", () => ({
   getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));
 
+// Only the draw is stubbed; the curated fallback is what the chips then hold.
+vi.mock("@/lib/home/seedWords", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/home/seedWords")>();
+  return {
+    ...actual,
+    loadSeedWords: vi.fn(async () => actual.FALLBACK_SEED_WORDS),
+  };
+});
+
 vi.mock("@/lib/hubs/moduleAvailability", async () => {
   const registry = await import("@/lib/hubs/moduleRegistry");
   return {
