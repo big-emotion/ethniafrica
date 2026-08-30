@@ -766,8 +766,15 @@ describe("AtlasGlobe", () => {
       expect(filled).toHaveLength(0);
     });
 
+    /**
+     * The scene drew one radial field per ranked country, and the glow was
+     * the only thing on the hub sized from the corpus. Nothing named the
+     * quantity, so it read as population, or as where the peoples live —
+     * a claim the corpus never made. The encoding went back to the people
+     * fiche, where `PeopleFieldLegend` says what it counts.
+     */
     // @req REQ-116
-    it("draws one edgeless radial field per documented country", () => {
+    it("draws no radial field, leaving the frame to locate without measuring", () => {
       const { container } = render(
         <AtlasGlobe
           overlay={continentOverlayFrom(CONTINENT_COUNTS)}
@@ -776,28 +783,20 @@ describe("AtlasGlobe", () => {
         />
       );
 
-      const circles = Array.from(container.querySelectorAll("circle"));
-      expect(circles).toHaveLength(Object.keys(CONTINENT_COUNTS).length);
-      expect(
-        circles.every((circle) => circle.getAttribute("stroke") === "none")
-      ).toBe(true);
+      expect(container.querySelectorAll("circle")).toHaveLength(0);
+      expect(container.querySelectorAll("polygon").length).toBeGreaterThan(0);
     });
 
-    /**
-     * Two scenes, one formula. A second radius formula would let the same
-     * weight read as two different quantities depending on which page the
-     * reader is on.
-     */
     /**
      * The complaint this answers: "there are still only a few countries shown
      * and clickable". The scene documented fifty-four countries, drew twelve
      * radial fields and offered every one of them to a tap — but nothing on
      * screen said so, so the twelve halos read as the whole choosable set.
      *
-     * The two layers are not interchangeable. A halo says how much the corpus
-     * documents in a country; a choice mark says the country can be opened.
-     * Counting them separately here is what keeps a later change from
-     * collapsing one into the other.
+     * Removing the halos settles it from the other side: with one layer left,
+     * a country cannot look more offered than its neighbour. The count is
+     * still asserted here, because the failure it guards against is a later
+     * change reintroducing a second, denser-looking class of country.
      */
     // @req REQ-117
     it("marks every choosable country, not only the ones carrying a field", () => {
@@ -821,11 +820,9 @@ describe("AtlasGlobe", () => {
       ).map((mark) => mark.getAttribute("data-atlas-choice"));
 
       expect(marked.sort()).toEqual(Object.keys(documented).sort());
-      // The density layer is untouched: still one radial field per country the
-      // overlay ranked, not one per choosable country.
-      expect(container.querySelectorAll("circle")).toHaveLength(
-        Object.keys(CONTINENT_COUNTS).length
-      );
+      // And no second layer behind them: nothing on this scene is sized from
+      // the corpus, so every one of the marks is an offer and only an offer.
+      expect(container.querySelectorAll("circle")).toHaveLength(0);
     });
 
     /**
@@ -944,30 +941,6 @@ describe("AtlasGlobe", () => {
       expect(
         container.querySelector("[data-atlas-choice]")
       ).not.toBeInTheDocument();
-    });
-
-    // @req REQ-116
-    it("sizes a continent field exactly as it sizes a people field of the same weight", () => {
-      const continent = render(
-        <AtlasGlobe
-          overlay={continentOverlayFrom({ NGA: 40 })}
-          missingMessage="n/a"
-          targetFacts={continentTargetFacts}
-        />
-      );
-      const continentRadius = continent.container
-        .querySelector("circle")
-        ?.getAttribute("r");
-      continent.unmount();
-
-      const people = render(
-        <AtlasGlobe overlay={peopleOverlay} missingMessage="n/a" />
-      );
-      const peopleRadius = people.container
-        .querySelector("circle")
-        ?.getAttribute("r");
-
-      expect(continentRadius).toBe(peopleRadius);
     });
 
     /**

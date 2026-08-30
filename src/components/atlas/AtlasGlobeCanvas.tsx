@@ -484,26 +484,8 @@ export function AtlasGlobeCanvas({
       };
     };
 
-    /**
-     * The areas the field layer draws, on whichever overlay carries one.
-     *
-     * The continent's weight is a share of the best-documented country, not a
-     * population share — a different quantity reaching the same encoding,
-     * which is exactly what `populationShare` normalising to 1 lets it do.
-     */
-    const fieldAreas: PeopleFieldArea[] | null =
-      overlay.kind === "people-field"
-        ? overlay.areas
-        : overlay.kind === "continent-field"
-          ? overlay.areas.map((area) => ({
-              countryId: area.countryId,
-              center: area.center,
-              populationShare: area.documentedPeopleShare,
-            }))
-          : null;
-
     if (overlay.kind === "people-field") {
-      const drawField = fieldAreas && createFieldLayer(fieldAreas);
+      const drawField = createFieldLayer(overlay.areas);
       if (!drawField) {
         giveUp();
         return;
@@ -585,12 +567,6 @@ export function AtlasGlobeCanvas({
             fill: fillsRings ? buildRingFill(ring) : null,
             loop: buildRingLineLoop(ring),
           }));
-
-      // Built here, drawn last: on the continent the frame is reference and
-      // the field is the claim, so the counts sit over the outlines rather
-      // than under them. Null on every other boundary overlay, which carries
-      // no field at all.
-      const drawField = fieldAreas ? createFieldLayer(fieldAreas) : null;
 
       const fillBuffer = gl.createBuffer();
       const fillFlatBuffer = gl.createBuffer();
@@ -676,8 +652,6 @@ export function AtlasGlobeCanvas({
           gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
           gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
         });
-
-        drawField?.(camera);
       };
     }
 
