@@ -3,7 +3,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import type { SearchEntityType } from "@/types/afrik-frontend";
+import {
+  FALLBACK_SEED_WORDS,
+  type SeedKind,
+  type SeedWordsByKind,
+} from "@/lib/home/seedWords";
 
 /**
  * The three example queries under the hero's search field, each a slot reel.
@@ -27,9 +31,18 @@ import type { SearchEntityType } from "@/types/afrik-frontend";
  * - **A wider word would move the neighbours.** The mask sizes to its content,
  *   so each chip carries a zero-height ghost of its whole pool and takes the
  *   width of the longest word from the first paint.
- * - **Motion that starts by itself has to be stoppable** (WCAG 2.2.2). It
- *   stops for good at the first sign of the reader — hover, focus, or a
- *   keystroke in the field — and in any case after a bounded number of turns.
+ * - **Motion that starts by itself has to be stoppable** (WCAG 2.2.2), and
+ *   there are two ways to stop it because there are two reasons to. Resting a
+ *   pointer or a focus ring on the row **pauses** it, and leaving takes it up
+ *   again: a word being aimed at must not move, but a pointer merely crossing
+ *   the row on its way to the field should not spend the teaching. Reaching
+ *   the field itself **ends** it, for as long as the page lives — a reader
+ *   composing a query is owed a still row beside what they are typing.
+ *
+ *   An earlier pass also capped the reel at six turns. That counted turns
+ *   since the page loaded rather than turns this reader saw, so a home left
+ *   open, or read from the second band down, showed a row already dead. The
+ *   reader who has had enough now says so, by hovering or by typing.
  */
 
 /** Mirrors --afh-duration-slow. WAAPI cannot read a CSS custom property. */
@@ -37,12 +50,9 @@ import type { SearchEntityType } from "@/types/afrik-frontend";
 export const REEL_MS = 320;
 /** Mirrors --afh-ease-out. */
 const REEL_EASING = "cubic-bezier(0, 0, 0.2, 1)";
-/** Read twice, a ticker stops teaching and starts interrupting. */
-// @req REQ-002
-export const MAX_CYCLES = 6;
 
 export interface SeedPool {
-  kind: SearchEntityType;
+  kind: SeedKind;
   words: string[];
   /**
    * Deliberately non-commensurate across the three pools: dwells that share a
@@ -54,42 +64,45 @@ export interface SeedPool {
 }
 
 /**
- * An editorial selection, not a query of the corpus — but asserted against it
- * by homeHeroSeedsCorpus.test.ts, because a first pass of this list held four
- * words the fiches do not carry under those spellings.
+ * The cadence of each reel, which is presentation and belongs here. The words
+ * are the corpus' business and arrive as a prop — drawn per request by
+ * loadSeedWords, or the curated dozen when the database has nothing to say.
  */
-// @req REQ-002
-export const SEED_POOLS: SeedPool[] = [
-  {
-    kind: "people",
-    words: ["Yoruba", "Bété", "Himba", "Zoulou"],
-    dwellMs: 2300,
-    startDelayMs: 600,
-  },
-  {
-    kind: "country",
-    words: ["Cameroun", "Bénin", "Namibie", "Éthiopie"],
-    dwellMs: 2900,
-    startDelayMs: 1400,
-  },
-  {
-    kind: "languageFamily",
-    words: ["Bantou", "Afro-asiatique", "Mandé", "Nilotique"],
-    dwellMs: 3700,
-    startDelayMs: 2200,
-  },
+const SEED_CADENCE: {
+  kind: SeedKind;
+  dwellMs: number;
+  startDelayMs: number;
+}[] = [
+  { kind: "people", dwellMs: 2300, startDelayMs: 600 },
+  { kind: "country", dwellMs: 2900, startDelayMs: 1400 },
+  { kind: "languageFamily", dwellMs: 3700, startDelayMs: 2200 },
 ];
 
-function useSlotReel(pool: SeedPool, engaged: boolean) {
+// @req REQ-002
+export function seedPools(words: SeedWordsByKind): SeedPool[] {
+  return SEED_CADENCE.map((cadence) => ({
+    ...cadence,
+    words: words[cadence.kind],
+  }));
+}
+
+interface ReelHold {
+  /** Transient: a pointer or a focus ring is on the row. Leaving takes it up. */
+  paused: boolean;
+  /** For the life of the page: the reader has reached the field. */
+  ended: boolean;
+}
+
+function useSlotReel(pool: SeedPool, { paused, ended }: ReelHold) {
   const { words, dwellMs, startDelayMs } = pool;
   const trackRef = useRef<HTMLSpanElement>(null);
   const [cursor, setCursor] = useState(0);
   const reduced = usePrefersReducedMotion();
 
-  const stopped = useRef(false);
-  const cycles = useRef(0);
   const animation = useRef<Animation | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  // The start delay staggers the three chips, and only on first paint: a reel
+  // taking up again after a pause owes the reader a dwell, not the stagger.
+  const turned = useRef(false);
 
   // Post-commit, pre-paint. The freshly rendered pair already draws the roll's
   // destination word at translateY(0), which is pixel-identical to the held
@@ -100,23 +113,35 @@ function useSlotReel(pool: SeedPool, engaged: boolean) {
     animation.current = null;
   }, [cursor]);
 
+  // A hidden tab throttles timers to once a minute and paints nothing, so a
+  // reel left running there spends its words on no one and hands the returning
+  // reader a chip that changed while they were away. Held, like a hover.
+  const [documentHidden, setDocumentHidden] = useState(false);
   useEffect(() => {
-    if (reduced) return;
+    const readVisibility = () =>
+      setDocumentHidden(document.visibilityState !== "visible");
+    readVisibility();
+    document.addEventListener("visibilitychange", readVisibility);
+    return () =>
+      document.removeEventListener("visibilitychange", readVisibility);
+  }, []);
+
+  const held = reduced || ended || paused || documentHidden;
+
+  useEffect(() => {
+    if (held) return;
+
+    let timer: ReturnType<typeof setTimeout>;
 
     const settle = () => {
+      turned.current = true;
       setCursor((current) => (current + 1) % words.length);
-      cycles.current += 1;
-      if (cycles.current >= MAX_CYCLES) {
-        stopped.current = true;
-        return;
-      }
-      timer.current = setTimeout(roll, dwellMs);
+      timer = setTimeout(roll, dwellMs);
     };
 
     const roll = () => {
       const track = trackRef.current;
-      if (!track || stopped.current) return;
-      if (document.visibilityState !== "visible") return;
+      if (!track) return;
 
       // No WAAPI (an old browser, or the test environment): the word still
       // changes, it simply does not travel. The teaching survives; only the
@@ -137,35 +162,19 @@ function useSlotReel(pool: SeedPool, engaged: boolean) {
       rolling.onfinish = settle;
     };
 
-    const onVisibility = () => {
-      if (stopped.current) return;
-      if (document.visibilityState === "visible") {
-        timer.current = setTimeout(roll, dwellMs);
-      } else {
-        clearTimeout(timer.current);
-      }
-    };
-
-    document.addEventListener("visibilitychange", onVisibility);
-    timer.current = setTimeout(roll, startDelayMs);
+    timer = setTimeout(roll, turned.current ? dwellMs : startDelayMs);
 
     return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
-      clearTimeout(timer.current);
-      animation.current?.cancel();
+      // finish() rather than cancel(), and before the timer is cleared: a roll
+      // caught in flight is jumped to its destination, so a hold leaves the
+      // reel on a whole word and by the same path as a roll nobody touched.
+      // cancel() would rewind it and the reader would watch the outgoing word
+      // travel backwards. The settle this fires books one more turn, which the
+      // next line then cancels.
+      animation.current?.finish();
+      clearTimeout(timer);
     };
-  }, [reduced, words, dwellMs, startDelayMs]);
-
-  // Engagement stops the reel for good, and settles it on a whole word:
-  // finish() jumps to the animation's end state, so an interrupted roll leaves
-  // through the same path as one that was never touched. cancel() would rewind
-  // it and the reader would watch the outgoing word scroll backwards.
-  useEffect(() => {
-    if (!engaged) return;
-    stopped.current = true;
-    clearTimeout(timer.current);
-    animation.current?.finish();
-  }, [engaged]);
+  }, [held, words, dwellMs, startDelayMs]);
 
   return {
     trackRef,
@@ -176,12 +185,12 @@ function useSlotReel(pool: SeedPool, engaged: boolean) {
 
 interface SeedChipProps {
   pool: SeedPool;
-  engaged: boolean;
+  hold: ReelHold;
   onPick: (word: string) => void;
 }
 
-function SeedChip({ pool, engaged, onPick }: SeedChipProps) {
-  const { trackRef, settled, incoming } = useSlotReel(pool, engaged);
+function SeedChip({ pool, hold, onPick }: SeedChipProps) {
+  const { trackRef, settled, incoming } = useSlotReel(pool, hold);
 
   return (
     <li>
@@ -211,27 +220,38 @@ export interface HomeHeroSeedsProps {
   onPick: (word: string) => void;
   /** Raised by the field as soon as the reader types, alongside hover and focus. */
   engaged?: boolean;
+  /**
+   * Drawn from the corpus by the server on every request. Defaults to the
+   * curated dozen so Storybook and a test can render the row without a
+   * database behind it.
+   */
+  words?: SeedWordsByKind;
 }
 
 // @req REQ-002
-export function HomeHeroSeeds({ onPick, engaged = false }: HomeHeroSeedsProps) {
-  const [touched, setTouched] = useState(false);
-  const stop = () => setTouched(true);
+export function HomeHeroSeeds({
+  onPick,
+  engaged = false,
+  words = FALLBACK_SEED_WORDS,
+}: HomeHeroSeedsProps) {
+  // React maps onFocus/onBlur to focusin/focusout, which bubble — so a chip
+  // taking keyboard focus holds the whole row, and the reader tabbing to a
+  // word gets the same still row the reader pointing at one gets.
+  const [visiting, setVisiting] = useState(false);
+  const hold = { paused: visiting, ended: engaged };
+  const pools = seedPools(words);
 
   return (
     <ul
       className="home-hero-search-seeds"
       aria-label="Exemples de recherche"
-      onPointerEnter={stop}
-      onFocus={stop}
+      onPointerEnter={() => setVisiting(true)}
+      onPointerLeave={() => setVisiting(false)}
+      onFocus={() => setVisiting(true)}
+      onBlur={() => setVisiting(false)}
     >
-      {SEED_POOLS.map((pool) => (
-        <SeedChip
-          key={pool.kind}
-          pool={pool}
-          engaged={engaged || touched}
-          onPick={onPick}
-        />
+      {pools.map((pool) => (
+        <SeedChip key={pool.kind} pool={pool} hold={hold} onPick={onPick} />
       ))}
 
       <style>{`
