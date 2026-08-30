@@ -229,11 +229,7 @@ export default async function PeoplesSlugPage({
       trailLabel={peopleDetail.nameMain}
     >
       <FicheSequence
-        // Entity and payload only. The context's other corpora exist to feed
-        // panels, and a people fiche composes none — the parchment below takes
-        // each of them as its own prop instead. Handing them over twice would
-        // cost a transform per render for a reader nobody has.
-        context={{ entityType: "people", payload: peopleDetail }}
+        entityType="people"
         title={<PeopleFicheTitle people={peopleDetail} />}
         globe={
           <FicheHeroBand>
@@ -274,7 +270,6 @@ export default async function PeoplesSlugPage({
         }
         // The mockup has no reading gate: the parchment is the fiche, not a
         // chapter filed under it.
-        recordPlacement="body"
         record={
           // Server-rendered, from what this route already awaited. The view
           // it replaces fetched the same fiche, fragmentation and names

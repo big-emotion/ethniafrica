@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
-import type { FicheEntityType } from "@/lib/fichePanels";
+import type { FicheEntityType } from "@/types/fiche";
 import { AfricaTraceLoader } from "@/components/system/AfricaTraceLoader";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";

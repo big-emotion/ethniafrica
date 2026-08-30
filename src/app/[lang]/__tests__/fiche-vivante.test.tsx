@@ -180,18 +180,8 @@ import PaysSlugPage from "../explorer/pays/[slug]/page";
 import FamillesSlugPage from "../explorer/familles/[slug]/page";
 
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
-import { sectionIdForPanel } from "@/components/fiche/panelRegistry";
-import {
-  derivePanelSequence,
-  PANEL_TABLE,
-  type FicheEntityType,
-  type PanelKind,
-} from "@/lib/fichePanels";
-import {
-  mapCountryDetail,
-  mapLanguageFamilyDetail,
-  mapPeopleDetail,
-} from "@/lib/afrikDetailMapper";
+import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
+import type { FicheEntityType } from "@/types/fiche";
 
 // ---------------------------------------------------------------------------
 // Corpus — the stored rows the three routes read, built from the fixtures the
@@ -290,21 +280,6 @@ interface FicheRouteUnderTest {
   primeLiveCorpus: () => void;
   /** Feeds the route's revision service a frozen snapshot for `slug@vN`. */
   primeFrozenRevision: () => void;
-  /** The chapter sequence the composer derives from that same live corpus. */
-  composedSequence: () => PanelKind[];
-  /**
-   * Whether the dossier is a gated chapter (FR97) or the page's own body.
-   * A fiche whose parchment *is* the page opens it unfolded; asking the reader
-   * to disclose what they came for is what the Atlas mockup removes.
-   */
-  gatesRecord: boolean;
-  /**
-   * Whether the route hands the dossier to FicheSequence as the page body
-   * (`recordPlacement="body"`). A body-placed record opens directly under the
-   * globe, ahead of every chapter, so it sits outside PANEL_TABLE's ordering
-   * by design rather than by accident.
-   */
-  recordIsPageBody: boolean;
 }
 
 const FICHE_ROUTES: FicheRouteUnderTest[] = [
@@ -334,12 +309,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         confidence: 81,
       });
     },
-    composedSequence: () =>
-      derivePanelSequence("people", mapPeopleDetail(YORUBA_ROW)),
-    // No chapter runs above the parchment to cite it, and the parchment is
-    // not a citation of itself.
-    gatesRecord: false,
-    recordIsPageBody: false,
   },
   {
     segment: "pays",
@@ -361,10 +330,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         doctrine: null,
       });
     },
-    composedSequence: () =>
-      derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW)),
-    gatesRecord: false,
-    recordIsPageBody: true,
   },
   {
     segment: "familles",
@@ -388,13 +353,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         doctrine: null,
       });
     },
-    composedSequence: () =>
-      derivePanelSequence(
-        "language-family",
-        mapLanguageFamilyDetail(NIGER_CONGO_ROW)
-      ),
-    gatesRecord: false,
-    recordIsPageBody: true,
   },
 ];
 
@@ -489,74 +447,36 @@ afterEach(() => {
 // ---------------------------------------------------------------------------
 
 describe("fiche vivante — journey anchors", () => {
+  // All three fiches are one globe and one parchment. A second anchor here is
+  // a chapter that has come back beside a parchment already saying what it
+  // says — which is what these routes each spent a PR removing.
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: every anchor names a chapter the composer asked for",
+    "$segment: the fiche's only journey anchor is its dossier",
     async (route) => {
       const { container } = await renderLiveFiche(route);
 
-      const composedAnchors = route.composedSequence().map(sectionIdForPanel);
-      const rendered = journeyAnchors(container);
-
-      expect(rendered.length).toBeGreaterThan(0);
-      for (const anchor of rendered) {
-        // An anchor outside the composed sequence is a destination the fiche
-        // offers for a chapter it was never asked to tell.
-        expect(composedAnchors).toContain(anchor);
-      }
+      expect(journeyAnchors(container)).toEqual([FICHE_RECORD_ANCHOR]);
     }
   );
 
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: no anchor scrolls to an empty chapter",
+    "$segment: no anchor scrolls to an empty section",
     async (route) => {
       const { container } = await renderLiveFiche(route);
 
-      // Retried rather than asserted once: the voices chapter fills from
-      // VoicesPanel's own client fetch (REQ-095), so its content lands after
-      // the first paint. Everything else is server-rendered and passes on the
-      // first attempt.
+      // Retried rather than asserted once: the parchment's oral narratives
+      // fill from a client fetch (REQ-095), so their content lands after the
+      // first paint. Everything else is server-rendered and passes first try.
       await waitFor(() => {
         for (const section of ficheSections(container)) {
-          // Catches a panel that resolved but rendered nothing — the registry
-          // returning a component is not yet proof the chapter exists.
           expect(
             (section.textContent ?? "").trim(),
             `${section.id} is an anchor onto nothing`
           ).not.toBe("");
         }
       });
-    }
-  );
-
-  // @req REQ-091
-  it.each(FICHE_ROUTES)(
-    "$segment: chapters follow the order PANEL_TABLE declares",
-    async (route) => {
-      const { container } = await renderLiveFiche(route);
-
-      const rendered = journeyAnchors(container);
-      const recordAnchor = sectionIdForPanel("record");
-
-      // A body-placed dossier is not a chapter and takes no place in the
-      // table's order: it opens the page, under the globe and ahead of
-      // everything the composer sequenced. Asserted here rather than exempted
-      // silently, so the placement stays a stated fact about the route.
-      if (route.recordIsPageBody) {
-        expect(rendered[0]).toBe(recordAnchor);
-      }
-      const chapters = route.recordIsPageBody
-        ? rendered.filter((anchor) => anchor !== recordAnchor)
-        : rendered;
-
-      const tableOrder = [...PANEL_TABLE]
-        .sort((left, right) => left.order - right.order)
-        .map((panel) => sectionIdForPanel(panel.kind));
-
-      expect(chapters).toEqual(
-        tableOrder.filter((anchor) => chapters.includes(anchor))
-      );
     }
   );
 });
@@ -584,7 +504,7 @@ describe("fiche vivante — the dossier citation contract", () => {
       // ContextTriad (ETNI-818) can also point a "N peuples" counter at the
       // record anchor — that is hierarchy navigation, not a dossier citation,
       // so it is excluded rather than counted.
-      const recordAnchor = `#${sectionIdForPanel("record")}`;
+      const recordAnchor = `#${FICHE_RECORD_ANCHOR}`;
       const citationLinksToRecord = Array.from(
         container.querySelectorAll<HTMLAnchorElement>(
           `a[href="${recordAnchor}"]`
@@ -629,20 +549,19 @@ describe("fiche vivante — accent scope", () => {
 });
 
 describe("fiche vivante — the reading gate", () => {
+  // The dossier is what the reader came for, and on all three fiches it is
+  // the page. FR97's disclosure belonged to a shape where the dossier was the
+  // last of eight chapters; over a parchment it asks the reader to open what
+  // they navigated to, which is what the Atlas mockup removes.
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: gates the dossier exactly as its shape asks, and no more",
+    "$segment: opens the dossier unfolded, behind no gate at all",
     async (route) => {
       const { container, getByTestId } = await renderLiveFiche(route);
 
-      // Two means a route wrapped a record the sequence already gates, burying
-      // the dossier under a disclosure inside a disclosure. Zero is the body
-      // placement, where the dossier is the page and there is nothing to open.
       expect(container.querySelectorAll("details.reading-gate")).toHaveLength(
-        route.gatesRecord ? 1 : 0
+        0
       );
-
-      // Gated or not, the dossier itself is always in the DOM.
       expect(getByTestId(route.recordTestId)).toBeInTheDocument();
     }
   );
@@ -652,7 +571,7 @@ describe("fiche vivante — pinned revisions (DEC-004)", () => {
   // @req REQ-019
   // @req REQ-091
   it.each(FICHE_ROUTES)(
-    "$segment: a pinned @v URL shows the stored revision and no chapter at all",
+    "$segment: a pinned @v URL shows the stored revision and no fiche section at all",
     async (route) => {
       route.primeFrozenRevision();
 

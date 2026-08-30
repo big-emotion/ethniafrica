@@ -272,11 +272,7 @@ export default async function FamillesSlugPage({
       trailLabel={family.nameFr}
     >
       <FicheSequence
-        // No side-loaded branches: the family fiche is one globe and one
-        // parchment, so the sequence resolves to the record alone and the
-        // classification tree is rendered once, inside the parchment.
-        context={{ entityType: "language-family", payload: familyDetail }}
-        recordPlacement="body"
+        entityType="language-family"
         title={<FamilyFicheTitle family={family} />}
         globe={
           <FicheHeroBand>
