@@ -44,15 +44,7 @@ export function HistoryTimeline({ data }: HistoryTimelineProps) {
           {item.name && (
             <div
               className="text-afh-h3 font-bold leading-[1.25] mb-0.5"
-              style={{
-                fontFamily: "var(--country-font-display)",
-                ...(item.type === "colonial"
-                  ? {
-                      textDecoration: "line-through",
-                      textDecorationColor: "var(--country-colonial)",
-                    }
-                  : {}),
-              }}
+              style={{ fontFamily: "var(--country-font-display)" }}
             >
               {item.name}
               {item.type === "sovereign" && " ✦"}
