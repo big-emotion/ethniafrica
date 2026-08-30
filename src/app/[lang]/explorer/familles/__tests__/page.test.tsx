@@ -262,17 +262,17 @@ describe("/[lang]/familles/[slug] page", () => {
   });
 
   describe("live fiche", () => {
-    // One globe, one parchment: the fiche's reading opens directly under the
-    // band, and the remaining chapters follow it instead of preceding it.
+    // One globe, one parchment. The two chapters that used to trail the
+    // parchment both restated it — the scale figure is the languages count the
+    // head chip prints, the tongue chapter the classification tree the
+    // parchment renders below — and they fell *after* the parchment's own
+    // Sources footer, which told a reader the document had ended one chapter
+    // early.
     // @req REQ-091
-    it("opens the record under the globe, ahead of the remaining chapters", async () => {
+    it("opens the record under the globe, and closes the fiche on it", async () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      expect(panelAnchors(container)).toEqual([
-        "fiche-record",
-        "fiche-scale",
-        "fiche-tongue",
-      ]);
+      expect(panelAnchors(container)).toEqual(["fiche-record"]);
       expect(
         container
           .querySelector("#fiche-record")
@@ -425,31 +425,31 @@ describe("/[lang]/familles/[slug] page", () => {
       expect(classificationSection).toHaveTextContent("Swahili");
     });
 
+    // The tree was fetched once and drawn twice: the same branches fed the
+    // parchment's classification section and a tongue chapter below it. The
+    // parchment's is the richer of the two — it carries the branch
+    // provenance, the branches the fiche declares itself and the count of
+    // peoples tied to none — so it is the one that stayed.
     // @req REQ-091
-    it("opens the tongue chapter from the classification tree already fetched", async () => {
-      const { container } = await renderFamillesPage("FLG_BANTU");
+    it("draws the classification tree once, inside the parchment", async () => {
+      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
       expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledTimes(1);
-      const tongue = container.querySelector("#fiche-tongue");
-      expect(tongue).not.toBeNull();
-      // TonguePanel names each branch twice (tree canvas + text index), so the
-      // branch names are counted rather than fetched as unique nodes.
+      expect(container.querySelector("#fiche-tongue")).toBeNull();
+
+      const classification = getByTestId("family-classification-section");
       expect(
-        within(tongue as HTMLElement).getAllByText("Shona").length
-      ).toBeGreaterThan(0);
-      expect(
-        within(tongue as HTMLElement).getAllByText("Swahili").length
-      ).toBeGreaterThan(0);
+        container.querySelector("#fiche-record")?.contains(classification)
+      ).toBe(true);
     });
 
     // @req REQ-091
-    it("drops the tongue chapter, and nothing else, for a family with no tree", async () => {
+    it("keeps the parchment whole for a family whose tree is missing", async () => {
       mockGetFamilyTreeSkeleton.mockResolvedValue(null);
 
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      expect(container.querySelector("#fiche-tongue")).toBeNull();
-      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
+      expect(panelAnchors(container)).toEqual(["fiche-record"]);
       expect(getByTestId("family-record-view")).toBeInTheDocument();
     });
 

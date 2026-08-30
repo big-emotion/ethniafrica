@@ -293,12 +293,6 @@ interface FicheRouteUnderTest {
   /** The chapter sequence the composer derives from that same live corpus. */
   composedSequence: () => PanelKind[];
   /**
-   * Whether any chapter this route renders prints the dossier citation. Only
-   * the panels taking `AFRIK_DOSSIER_CITATION` do; ScalePanel prints its own
-   * corpus source as plain text, so a fiche reduced to scale prints none.
-   */
-  printsDossierCitation: boolean;
-  /**
    * Whether the dossier is a gated chapter (FR97) or the page's own body.
    * A fiche whose parchment *is* the page opens it unfolded; asking the reader
    * to disclose what they came for is what the Atlas mockup removes.
@@ -344,7 +338,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
       derivePanelSequence("people", mapPeopleDetail(YORUBA_ROW)),
     // No chapter runs above the parchment to cite it, and the parchment is
     // not a citation of itself.
-    printsDossierCitation: false,
     gatesRecord: false,
     recordIsPageBody: false,
   },
@@ -370,7 +363,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     },
     composedSequence: () =>
       derivePanelSequence("country", mapCountryDetail(NIGERIA_ROW)),
-    printsDossierCitation: false,
     gatesRecord: false,
     recordIsPageBody: true,
   },
@@ -401,7 +393,6 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
         "language-family",
         mapLanguageFamilyDetail(NIGER_CONGO_ROW)
       ),
-    printsDossierCitation: true,
     gatesRecord: false,
     recordIsPageBody: true,
   },
@@ -584,19 +575,22 @@ describe("fiche vivante — the dossier citation contract", () => {
         .filter((href) => container.querySelector(href) === null);
       expect(dangling).toEqual([]);
 
+      // No fiche prints a dossier citation any more: the panels that carried
+      // `AFRIK_DOSSIER_CITATION` — a chapter pointing back at the dossier
+      // further down the same page — are gone from all three, whose dossier
+      // *is* the page. A citation reappearing here means a chapter has crept
+      // back above a parchment that already says what it cites.
+      //
       // ContextTriad (ETNI-818) can also point a "N peuples" counter at the
       // record anchor — that is hierarchy navigation, not a dossier citation,
-      // so it is excluded here to keep this assertion about what the panels
-      // themselves print.
+      // so it is excluded rather than counted.
       const recordAnchor = `#${sectionIdForPanel("record")}`;
       const citationLinksToRecord = Array.from(
         container.querySelectorAll<HTMLAnchorElement>(
           `a[href="${recordAnchor}"]`
         )
       ).filter((link) => !link.closest("[data-context-triad]"));
-      expect(citationLinksToRecord.length > 0).toBe(
-        route.printsDossierCitation
-      );
+      expect(citationLinksToRecord).toHaveLength(0);
 
       // The citation is only a promise kept if the dossier itself is in the
       // DOM at the far end of it, gate closed or not.

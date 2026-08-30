@@ -102,6 +102,11 @@ afterEach(() => {
 });
 
 describe("fiche · prefers-reduced-motion: reduce — nothing keeps moving", () => {
+  // No entity composes a chapter above its parchment any more, so nothing on
+  // a composed fiche animates under either preference and the reduce/no-reduce
+  // contrast can no longer be drawn at this level. It is drawn directly on the
+  // component that owns the count-up, in the ScalePanel suite below — which is
+  // what keeps these three from passing merely because nothing ever moves.
   // @req REQ-091
   it.each([
     ["people", PEOPLE_CONTEXT],
@@ -126,31 +131,6 @@ describe("fiche · prefers-reduced-motion: reduce — nothing keeps moving", () 
       expect(container.innerHTML).toBe(firstPaint);
     }
   );
-
-  // @req REQ-091
-  it("still counts up when no reduced-motion preference is expressed", () => {
-    // Without this contrast the stability assertions above would also hold
-    // for a fiche that simply never animates, and would stop proving that
-    // the reduced-motion branch is what silenced it.
-    // On a family fiche: the count-up lives in ScalePanel, and neither the
-    // people nor the country fiche composes one any more — both are a globe
-    // and a parchment now, and the parchment carries the figure itself. The
-    // family is the last entity whose sequence still opens a scale chapter.
-    stubMotionPreference(false);
-    stubPendingFetch();
-    vi.useFakeTimers();
-
-    const { container } = render(
-      <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
-    );
-    const firstPaint = container.innerHTML;
-
-    act(() => {
-      vi.advanceTimersByTime(ANIMATION_WINDOW_MS);
-    });
-
-    expect(container.innerHTML).not.toBe(firstPaint);
-  });
 });
 
 describe("ScalePanel · the magnitude count-up", () => {

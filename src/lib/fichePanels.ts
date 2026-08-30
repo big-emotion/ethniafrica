@@ -82,16 +82,23 @@ const ENTITY_INVENTORY: Record<FicheEntityType, readonly PanelKind[]> = {
   // identity, territory, fragmentation and voices are people-shaped panels the
   // registry declines for a country. Nothing moved, because nothing rendered.
   country: ["record"],
-  "language-family": [
-    "identity",
-    "scale",
-    "territory",
-    "tongue",
-    "fragmentation",
-    "links",
-    "voices",
-    "record",
-  ],
+  // A language family has only its dossier, and it is the last of the three
+  // fiches to say so. Two chapters still resolved above its parchment and both
+  // restated it: `scale` printed `generalInfo.numberOfLanguages`, which the
+  // head chip and the "Langues" stat card already carry, and `tongue` was the
+  // same classification tree FamilyClassificationTreeSection renders — the
+  // route built `tree.branches` once and handed it to both. `links` had no
+  // relation source to read (the route passes none; getEgoNetwork is
+  // people-centred), and identity, territory, fragmentation and voices are
+  // people-shaped panels the registry declines for a family. Nothing moved,
+  // because nothing rendered that the parchment does not render better: the
+  // tree section carries the branch provenance, the declared branches and the
+  // unlinked-people count on top of the same branches.
+  //
+  // The two also fell *after* the parchment's own Sources footer, and carried
+  // no `data-fiche-section`, so the reading rail could not name them — it sat
+  // on the last chapter while the reader scrolled through two more.
+  "language-family": ["record"],
 };
 
 /** True when a value (or any of its nested leaves) carries actual content. */
@@ -129,17 +136,17 @@ const COUNTRY_GATES: Partial<
   Record<PanelKind, GatingPredicate<CountryDetail>>
 > = {};
 
+/**
+ * A language family's inventory holds only the mandatory record, which no gate
+ * can remove — so there is nothing left for a predicate to decide. The gates
+ * that stood here opened chapters onto the very sections the parchment reads:
+ * `fragmentation` on `generalInfo.branches` and `tongue` on
+ * `linguisticCharacteristics`, both of which the classification tree already
+ * renders.
+ */
 const LANGUAGE_FAMILY_GATES: Partial<
   Record<PanelKind, GatingPredicate<LanguageFamilyDetail>>
-> = {
-  territory: (payload) =>
-    isPresent(payload.generalInfo?.geographicArea) ||
-    isPresent(payload.distribution),
-  tongue: (payload) => isPresent(payload.linguisticCharacteristics),
-  fragmentation: (payload) => isPresent(payload.generalInfo?.branches),
-  links: (payload) => isPresent(payload.associatedPeoples),
-  voices: (payload) => isPresent(payload.historyAndOrigins),
-};
+> = {};
 
 function derivePanels<T>(
   entityType: FicheEntityType,

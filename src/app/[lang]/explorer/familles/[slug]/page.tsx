@@ -207,16 +207,6 @@ export default async function FamillesSlugPage({
       ? familyMemberPeoples
       : await getPeoplesByIds(declaredAssociatedPeopleIds(family));
 
-  // The tongue chapter reuses the tree the record chapter already renders — a
-  // second fetch would cost a round trip to restate the same three queries.
-  // Branches are keyed by ISO 639-3 because that is what TonguePanel sends back
-  // to the tree/branch endpoint when a visitor expands one.
-  const tongueBranches = tree?.branches.map((branch) => ({
-    id: branch.iso639_3,
-    name: branch.name,
-    peopleCount: branch.peopleCount,
-  }));
-
   // The globe's footprint is the union of currentCountries across the peoples
   // resolved above (REQ-116 AC4) — never family.distribution.distributionByCountry.
   //
@@ -282,11 +272,10 @@ export default async function FamillesSlugPage({
       trailLabel={family.nameFr}
     >
       <FicheSequence
-        context={{
-          entityType: "language-family",
-          payload: familyDetail,
-          branches: tongueBranches,
-        }}
+        // No side-loaded branches: the family fiche is one globe and one
+        // parchment, so the sequence resolves to the record alone and the
+        // classification tree is rendered once, inside the parchment.
+        context={{ entityType: "language-family", payload: familyDetail }}
         recordPlacement="body"
         title={<FamilyFicheTitle family={family} />}
         globe={

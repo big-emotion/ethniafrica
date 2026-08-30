@@ -95,10 +95,10 @@ describe("fichePanels — panel composition engine (FR98)", () => {
     });
 
     // @req REQ-091
-    it("keeps only identity(1), scale(2) and record(8) for a minimal language-family payload", () => {
+    it("keeps only the record for a minimal language-family payload", () => {
       expect(
         derivePanelSequence("language-family", MINIMAL_LANGUAGE_FAMILY)
-      ).toEqual(["identity", "scale", "record"]);
+      ).toEqual(["record"]);
     });
   });
 
@@ -135,20 +135,36 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       }
     });
 
+    // The family fiche is the last of the three to become one globe and one
+    // parchment. Its two surviving chapters both restated the parchment: the
+    // scale figure is `generalInfo.numberOfLanguages`, which the head chip and
+    // the "Langues" stat card already print, and the tongue chapter was the
+    // very tree FamilyClassificationTreeSection renders, off the same
+    // `tree.branches` the route builds once.
     // @req REQ-091
-    it("derives the full 8-panel language-family inventory from a fully-populated payload", () => {
+    it("keeps the language-family inventory at the record however populated the payload", () => {
       expect(
         derivePanelSequence("language-family", FULL_LANGUAGE_FAMILY)
-      ).toEqual([
+      ).toEqual(["record"]);
+    });
+
+    // @req REQ-091
+    it("includes no chapter kind for a language-family beyond the record", () => {
+      const sequence = derivePanelSequence(
+        "language-family",
+        FULL_LANGUAGE_FAMILY
+      );
+      for (const kind of [
         "identity",
         "scale",
-        "territory",
         "tongue",
+        "territory",
         "fragmentation",
         "links",
         "voices",
-        "record",
-      ]);
+      ] as const) {
+        expect(sequence).not.toContain(kind);
+      }
     });
   });
 
@@ -183,18 +199,32 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       expect(derivePanelSequence("country", withFacts)).toEqual(["record"]);
     });
 
+    // The family gates keyed on the sections its parchment already reads —
+    // branches, linguistic characteristics, associated peoples. Filling any of
+    // them must not open a chapter back above the parchment.
     // @req REQ-091
-    it("adds fragmentation only once branches is non-empty (language-family)", () => {
-      const withBranches: LanguageFamilyDetail = {
-        ...MINIMAL_LANGUAGE_FAMILY,
-        generalInfo: { branches: ["Branch A"] },
-      };
-      expect(derivePanelSequence("language-family", withBranches)).toEqual([
-        "identity",
-        "scale",
-        "fragmentation",
-        "record",
-      ]);
+    it("gates no chapter in for a language-family, whichever section is filled", () => {
+      const filled: LanguageFamilyDetail[] = [
+        { ...MINIMAL_LANGUAGE_FAMILY, generalInfo: { branches: ["Branch A"] } },
+        {
+          ...MINIMAL_LANGUAGE_FAMILY,
+          linguisticCharacteristics: { typology: "SVO" },
+        },
+        {
+          ...MINIMAL_LANGUAGE_FAMILY,
+          associatedPeoples: [{ name: "Test People", peopleId: "PPL_TEST" }],
+        },
+        {
+          ...MINIMAL_LANGUAGE_FAMILY,
+          historyAndOrigins: { probableOrigin: "Y" },
+        },
+      ];
+
+      for (const payload of filled) {
+        expect(derivePanelSequence("language-family", payload)).toEqual([
+          "record",
+        ]);
+      }
     });
   });
 

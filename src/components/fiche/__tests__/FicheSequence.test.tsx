@@ -160,21 +160,20 @@ describe("FicheSequence — accent scope", () => {
 });
 
 describe("FicheSequence — panel order and anchors", () => {
+  // The family was the last fiche still opening chapters above its parchment,
+  // and both restated it — the scale figure is the languages count the head
+  // chip prints, the tongue chapter the tree the parchment renders. Passing a
+  // context carrying every side-load they read is the point: it is the guard
+  // against a chapter creeping back in through the context rather than through
+  // the gate table.
   // @req REQ-091
-  it("renders the family panels in composer order, each under its journey anchor", () => {
+  it("reduces a family fiche to its dossier alone, side-loads notwithstanding", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
     );
 
-    const rendered = renderedAnchors(container);
-    const tableOrder = derivePanelSequence("language-family", NIGER_CONGO).map(
-      (kind) => `fiche-${kind}`
-    );
-
-    expect(rendered.length).toBeGreaterThan(1);
-    expect(rendered).toEqual(tableOrder.filter((id) => rendered.includes(id)));
-    expect(rendered[rendered.length - 1]).toBe("fiche-record");
+    expect(renderedAnchors(container)).toEqual(["fiche-record"]);
   });
 
   // @req REQ-091
@@ -312,72 +311,45 @@ describe("FicheSequence — the dossier as the page's body", () => {
 });
 
 describe("FicheSequence — gating by construction (FR98)", () => {
+  // Every entity's inventory is the record alone, so no context — however
+  // richly side-loaded — can put a chapter above a parchment. The per-kind
+  // "this pair resolves to null" contract, which used to be observed through
+  // the family sequence, lives where it is still observable: on `resolvePanel`
+  // itself (panelRegistry.test.tsx).
   // @req REQ-091
-  it("emits no anchor for a kind the composer includes but no panel supports", () => {
-    stubPanelRuntime();
-    const { container } = render(
-      <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
-    );
+  it.each([
+    ["people", PEOPLE_CONTEXT],
+    ["country", COUNTRY_CONTEXT],
+    ["language-family", FAMILY_CONTEXT],
+  ] as const)(
+    "emits no chapter anchor for a %s fiche",
+    (_entityType, context) => {
+      stubPanelRuntime();
+      const { container } = render(
+        <FicheSequence context={context} record={RECORD} />
+      );
 
-    // The composer lists identity as mandatory for every entity, yet no
-    // language-family identity panel exists — the anchor must be absent, not
-    // empty.
-    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
-      "identity"
-    );
-    expect(container.querySelector("#fiche-identity")).toBeNull();
-    expect(container.querySelector("#fiche-territory")).toBeNull();
-  });
-
-  // @req REQ-091
-  it("emits no anchor for a supported kind whose data is absent", () => {
-    stubPanelRuntime();
-    const { container } = render(
-      <FicheSequence
-        context={{ entityType: "language-family", payload: NIGER_CONGO }}
-        record={RECORD}
-      />
-    );
-
-    // The family payload names associated peoples, so the composer asks for
-    // the links chapter — but the relations it draws are absent from this
-    // context, so the chapter and its anchor go together.
-    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
-      "links"
-    );
-    expect(container.querySelector("#fiche-links")).toBeNull();
-    expect(container.querySelector("#fiche-identity")).toBeNull();
-  });
+      expect(renderedAnchors(container)).toEqual(["fiche-record"]);
+      for (const kind of [
+        "identity",
+        "scale",
+        "territory",
+        "tongue",
+        "fragmentation",
+        "links",
+        "voices",
+      ]) {
+        expect(container.querySelector(`#fiche-${kind}`)).toBeNull();
+      }
+    }
+  );
 
   // @req REQ-091
-  it("keeps only the chapters something can render when the corpus is bare", () => {
+  it("renders nothing at all when the fiche has no dossier to show", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence
         context={{ entityType: "language-family", payload: NIGER_CONGO }}
-        record={null}
-      />
-    );
-
-    // No branches, no record view: scale is the one chapter this family
-    // payload can actually fill.
-    expect(renderedAnchors(container)).toEqual(["fiche-scale"]);
-    expect(screen.getByText("02 · Échelle")).toBeInTheDocument();
-  });
-
-  // @req REQ-091
-  it("emits no scale anchor when the figure has no source to stand on", () => {
-    stubPanelRuntime();
-    // Same family, minus its source line. ScalePanel would render an empty
-    // shell here; the registry asks it first (hasScaleContent), so the chapter
-    // and its journey anchor disappear together. An anchor scrolling to
-    // nothing is the failure this guards against.
-    const { container } = render(
-      <FicheSequence
-        context={{
-          entityType: "language-family",
-          payload: { ...NIGER_CONGO, sources: undefined },
-        }}
         record={null}
       />
     );
