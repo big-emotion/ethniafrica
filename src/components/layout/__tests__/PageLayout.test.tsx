@@ -206,6 +206,25 @@ describe("PageLayout — the trail the shell owns", () => {
     expect(trail).toHaveTextContent("Bénin");
     expect(trail).not.toHaveTextContent("BEN,");
   });
+
+  /**
+   * The one surface that wants no page identity at all is the wait. A trail
+   * rendered there names a destination the reader has not arrived at, and it
+   * takes fold from the interstitial that is meant to be read whole.
+   */
+  // @req REQ-115
+  it("drops the trail for a shell asked to carry no page identity", () => {
+    mockPathname = getLocalizedRoute("fr", "countries");
+    render(
+      <PageLayout language="fr" hideHeader hideTrail>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    expect(
+      screen.queryByRole("navigation", { name: "Fil d'ariane" })
+    ).toBeNull();
+  });
 });
 
 describe("PageLayout — flushTop", () => {

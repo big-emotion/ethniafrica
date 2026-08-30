@@ -1,20 +1,25 @@
 import { render, screen } from "@testing-library/react";
+import type { ReactElement } from "react";
 import { describe, expect, it, vi } from "vitest";
 
 import { PageLoadingScreen } from "@/components/system/PageLoadingScreen";
+import { ConsentProvider } from "@/hooks/use-consent";
+import { getLocalizedRoute } from "@/lib/routing";
 
-vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({
-    children,
-    sectionName,
-  }: {
-    children: React.ReactNode;
-    sectionName?: string;
-  }) => (
-    <div data-testid="page-layout" data-section={sectionName}>
-      {children}
-    </div>
-  ),
+/**
+ * PageLayout is rendered for real rather than mocked. The claims that matter
+ * here are about what the shell puts on the page beside the fact — a title
+ * plate, a trail — and a mocked shell renders neither, so it would report
+ * both defects as absent while they shipped. Its footer reads the consent
+ * context, which the app supplies from providers.tsx.
+ */
+const renderInShell = (ui: ReactElement) =>
+  render(<ConsentProvider>{ui}</ConsentProvider>);
+
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn() }),
+  usePathname: () => getLocalizedRoute("fr", "countries"),
+  useSearchParams: () => new URLSearchParams(),
 }));
 
 describe("PageLoadingScreen", () => {
@@ -25,9 +30,11 @@ describe("PageLoadingScreen", () => {
    */
   // @req REQ-104
   it("announces what the reader is waiting for", () => {
-    render(<PageLoadingScreen label="Chargement du quiz" />);
+    renderInShell(<PageLoadingScreen label="Chargement du quiz" />);
 
-    expect(screen.getByRole("status")).toHaveTextContent("Chargement du quiz");
+    expect(screen.getAllByRole("status")[0]).toHaveTextContent(
+      "Chargement du quiz"
+    );
   });
 
   /**
@@ -36,14 +43,27 @@ describe("PageLoadingScreen", () => {
    * navigation — otherwise the wait reads as a full page reload.
    */
   // @req REQ-098
-  it("keeps the page shell up, carrying the section the header names", () => {
-    render(<PageLoadingScreen label="Chargement" sectionName="Jouer" />);
+  it("keeps the page shell up around the wait", () => {
+    renderInShell(<PageLoadingScreen label="Chargement" />);
 
-    expect(screen.getByTestId("page-layout")).toHaveAttribute(
-      "data-section",
-      "Jouer"
-    );
+    expect(screen.getByTestId("site-header")).toBeInTheDocument();
     expect(screen.getByTestId("page-loading-band")).toBeInTheDocument();
+  });
+
+  /**
+   * The plate and the trail used to be painted here, and on `/fr/explorer`
+   * they took the top of the fold from the one thing the wait exists to show.
+   * Neither names a place the reader has arrived at, so neither is drawn.
+   */
+  // @req REQ-113
+  it("shows the fact alone, under no plate and no trail", () => {
+    renderInShell(<PageLoadingScreen label="Chargement" />);
+
+    expect(screen.getByTestId("did-you-know-loader")).toBeInTheDocument();
+    expect(screen.queryByTestId("page-hero")).toBeNull();
+    expect(
+      screen.queryByRole("navigation", { name: "Fil d'ariane" })
+    ).toBeNull();
   });
 
   /**
@@ -52,7 +72,9 @@ describe("PageLoadingScreen", () => {
    */
   // @req REQ-104
   it("draws the atlas coastline rather than a borrowed spinner", () => {
-    const { container } = render(<PageLoadingScreen label="Chargement" />);
+    const { container } = renderInShell(
+      <PageLoadingScreen label="Chargement" />
+    );
 
     expect(container.querySelector("svg.afh-atl-figure")).not.toBeNull();
   });
@@ -66,7 +88,9 @@ describe("PageLoadingScreen", () => {
    */
   // @req REQ-104
   it("inks the coastline inside an accent scope, never on the bare page", () => {
-    const { container } = render(<PageLoadingScreen label="Chargement" />);
+    const { container } = renderInShell(
+      <PageLoadingScreen label="Chargement" />
+    );
 
     expect(
       container.querySelector("[class*='afh-accent-'] svg.afh-atl-figure")
@@ -75,7 +99,7 @@ describe("PageLoadingScreen", () => {
 
   // @req REQ-113
   it("spends the wait on a fact rather than on a bare indicator", () => {
-    render(<PageLoadingScreen label="Chargement" />);
+    renderInShell(<PageLoadingScreen label="Chargement" />);
 
     expect(screen.getByText("Saviez-vous que")).toBeInTheDocument();
   });

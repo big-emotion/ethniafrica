@@ -430,6 +430,38 @@ screen of ten. The first is empty.
 not on the page. An atlas whose first screen on a phone contains no Africa
 larger than its 40 px logo is not yet an atlas.
 
+### 8.4 One wait, one shape
+
+A wait is the one surface with a single job: be read before it is taken away.
+The site spends it on a `Saviez-vous que` fact — sourced, tiered, drawn from
+the home's own bank — so a reader who navigates a lot ends up having read the
+bank.
+
+Three code paths render that wait, and they had drifted. The client overlay
+(`RouteTransitionLoader`) painted the fact alone, below the measured masthead.
+The two server screens painted a title plate, a trail, and — on a fiche — a
+night stage floored at `--afh-globe-stage-height`. On
+`/fr/explorer/pays/ZAF` the plate and the stage together filled the viewport:
+the fact sat below the fold and was never read, on precisely the routes that
+wait longest. The same click therefore produced two different waits depending
+on whether the segment happened to own a `loading.tsx` — a governance failure,
+not a local bug.
+
+**The rule.** A wait renders the persistent chrome and the interstitial, and
+nothing else: no title plate, no trail, no hero band, no globe stage. The
+chrome is what must not move — masthead, search, footer stay mounted, so the
+navigation never reads as a reload (REQ-098) — and everything that names a
+page is withheld until the reader is on it. A wait names no place it has not
+arrived at.
+
+The continuity argument that put the band there is void: nothing in a wait
+survives into the page it resolves into. The plate that says "Pays" is
+replaced by the plate that says "Afrique du Sud", and the body is swapped
+whole, so there is no still thing for a band to keep still.
+
+Gated by `loaderCoverage.test.ts` (every wait screen, no page identity) and by
+the counterpart clause in `heroCoverageCharter.test.ts`.
+
 ---
 
 ## 9. Imagery
