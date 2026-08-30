@@ -43,11 +43,21 @@ its own. `API_ATTRIBUTION` composes itself from `PRODUCT_NAME` and
 `CANONICAL_DOMAIN`; a test asserts that no other spelling of the name survives
 in `src/`.
 
-**The value is a decision this charter does not get to make**, because the
-domain in production disagrees with the constant, and picking one silently
-would break either every existing citation or every existing link. It has to be
-ruled on and recorded as a DEC on Confluence. What is not open is the shape:
-one name, one file, one spelling.
+**The value, ruled on 30 August 2026: the product is `EthniAfrica`, qualified
+`Atlas des Peuples d'Afrique`.** Both already sit in `brand.ts` as
+`PRODUCT_NAME` and `PRODUCT_TAGLINE`, so the decision costs no new constant —
+it makes the other four spellings wrong, which is the point.
+
+`Africa History` is retired, and with it `africahistory.org`. It was an English
+name on a product that exists only in French, and it survives today only in
+places a reader reaches by accident: an API payload, a citation, a stylesheet
+header.
+
+One thing this section still does not settle: `CANONICAL_DOMAIN` is
+`ethniafrica.com` while recette is served from `africatlas.com`. The name
+decision is consistent with the constant, so the constant stands — but the
+production domain has not been verified against it, and if it differs, the
+canonical link is pointing somewhere the site is not.
 
 ---
 
@@ -68,10 +78,34 @@ citation the site emits declare **CC-BY-SA 4.0**. A reader is told the content
 is share-alike by the citation block and all-rights-reserved by the footer four
 hundred pixels below it.
 
-**The rule.** The footer states the corpus licence, not a reservation of
-rights. Where code and site chrome disagree about the licence, the licence the
-citation apparatus emits is the true one, because that is the string a reader
-carries away.
+**The rule, ruled on 30 August 2026: the corpus is CC BY-SA 4.0**, which is
+what the API meta and the citation apparatus have been declaring all along. The
+footer states that licence instead of reserving rights, and the legal notice
+states what it covers.
+
+Three distinctions the licence line has to keep, because collapsing any of them
+is how the current one became wrong:
+
+- **The content is licensed; the code is not, yet.** They are separate works and
+  nothing obliges them to share a licence. `LICENSE.md` grants CC BY-SA 4.0 over
+  the corpus and the site's own editorial text, and says in as many words that
+  it grants nothing over the source code — which stays reserved until that is
+  ruled on separately.
+- **A third-party source keeps its own licence.** A quotation, an official
+  figure, a Wikimedia image: their terms travel with them and the site's licence
+  does not reach them. This is the same doctrine as the Source Tier policy, one
+  layer up.
+- **Facts are not the database.** Individual facts carry no copyright, and the
+  EU _sui generis_ database right protects a substantial compilation separately
+  from copyright. The legal notice says so rather than leaving a reuser to guess.
+
+Why share-alike rather than plain attribution: the corpus is a claim about
+peoples who have rarely held the rights to descriptions of themselves, and
+`SA` is the clause that keeps every derivative reusable by them. It also keeps
+the site compatible with the CC BY-SA media it already hosts — the Maloti
+photograph on `/fr/comprendre/anecdotes` among them. `NC` was rejected: it
+reads as protective and in practice excludes Wikipedia, excludes commercial
+African media and publishers, and would conflict with that same media.
 
 ---
 
@@ -356,9 +390,13 @@ which the atlas generates, owns and can cite.
 
 ## 10. What this charter does not cover
 
-- **Which name wins** (§1) and **which licence line the footer prints** (§2).
-  Both are decisions for the owner, recorded as DECs; this charter states only
-  that each must have exactly one answer.
+- **The source code's licence.** §2 grants CC BY-SA 4.0 over the content and
+  deliberately grants nothing over the code, which stays reserved until its own
+  decision is taken. That one is legal, not editorial, and belongs to BIG
+  EMOTION as the publisher named in the legal notice.
+- **The production domain.** §1 leaves `CANONICAL_DOMAIN` standing on
+  `ethniafrica.com` without having verified it against the domain production
+  actually serves.
 - **Wording.** Whether a label reads "Parcourir" or "Voir les 803 peuples" is
   content design. `actions-charter.md` §7 draws the same line.
 - **Anything a surface charter already governs.** Where this file and a surface
