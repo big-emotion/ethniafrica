@@ -635,6 +635,66 @@ describe("transformPeoples", () => {
     expect(result.everyPeopleDeclaresPopulation).toBe(true);
   });
 
+  // A census headcount is dated by its census. The fiche says so with
+  // `referenceYear`, and the section has to print that year rather than the
+  // atlas's 2025 — otherwise it dates a 2019 count to a year it never claimed.
+  // @req REQ-001
+  it("carries the year the counted peoples are dated to", () => {
+    const result = transformPeoples({
+      peoples: [
+        {
+          name: "Kikuyu",
+          percentageInCountry: 17.1,
+          population: 8148668,
+          referenceYear: 2019,
+        },
+        {
+          name: "Luhya",
+          percentageInCountry: 14.3,
+          population: 6823842,
+          referenceYear: 2019,
+        },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBe(2019);
+  });
+
+  // @req REQ-001
+  it("dates an undated headcount to the atlas reference year", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Mossi", percentageInCountry: 52, population: 11000000 },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBe(2025);
+  });
+
+  // Two peoples counted in different years share no snapshot, so the section
+  // has no single year to print and must not pick one of them.
+  // @req REQ-001
+  it("states no year when the counted peoples disagree", () => {
+    const result = transformPeoples({
+      peoples: [
+        {
+          name: "Kikuyu",
+          percentageInCountry: 17.1,
+          population: 8148668,
+          referenceYear: 2019,
+        },
+        {
+          name: "Luhya",
+          percentageInCountry: 14.3,
+          population: 7700000,
+          referenceYear: 2025,
+        },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBeUndefined();
+  });
+
   it("maps mainLanguageCode to endonymLang for the lang attribute", () => {
     const result = transformPeoples(
       bfaCountry.demographics,

@@ -14,7 +14,10 @@
  *
  * Idempotent: re-running after --fix yields zero offenders.
  *
- * Country totals come from `public/pays_demographie.csv` (UN/UNFPA 2025).
+ * Country totals come from `public/pays_demographie.csv`, keyed by country and
+ * year: a headcount is measured against the total of its own `referenceYear`,
+ * defaulting to the atlas's 2025. A year the CSV does not cover is left alone
+ * rather than measured against a total that is not its own.
  * ZAF is excluded: issue #129 owns the ZAF demographics rebuild.
  */
 
@@ -24,6 +27,9 @@ import { parse } from "csv-parse/sync";
 
 const DRIFT_THRESHOLD_PP = 2;
 const EXCLUDED_COUNTRIES = new Set(["ZAF"]); // owned by issue #129
+
+/** Year an undated headcount is read against — the atlas's own. */
+const ATLAS_REFERENCE_YEAR = 2025;
 
 const REPO_ROOT = path.resolve(__dirname, "..");
 const PAYS_DIR = path.join(REPO_ROOT, "dataset/source/afrik/pays");
@@ -38,20 +44,26 @@ interface Offender {
   driftPp: number;
 }
 
-/** Load country totals (id_pays → population_totale_2025). */
+/** Load country totals, keyed `${id_pays}:${annee}` — see FR32. */
 function loadCountryTotals(): Map<string, number> {
   const raw = fs.readFileSync(PAYS_CSV, "utf-8");
   const rows = parse(raw, {
     columns: true,
     skip_empty_lines: true,
     trim: true,
-  }) as Array<{ id_pays?: string; population_totale_2025?: string }>;
+  }) as Array<{
+    id_pays?: string;
+    population_totale?: string;
+    annee?: string;
+  }>;
   const totals = new Map<string, number>();
   for (const row of rows) {
-    if (!row.id_pays || !row.population_totale_2025) continue;
-    const total = Number(row.population_totale_2025);
+    if (!row.id_pays || !row.population_totale) continue;
+    const total = Number(row.population_totale);
+    const year = Number(row.annee);
     if (!Number.isFinite(total) || total <= 0) continue;
-    totals.set(row.id_pays, total);
+    if (!Number.isFinite(year)) continue;
+    totals.set(`${row.id_pays}:${year}`, total);
   }
   return totals;
 }
@@ -68,9 +80,6 @@ export function findDriftOffenders(
     const id = path.basename(file, ".json");
     if (!options.includeExcluded && EXCLUDED_COUNTRIES.has(id)) continue;
 
-    const total = countryTotals.get(id);
-    if (!total) continue;
-
     const fullPath = path.join(PAYS_DIR, file);
     const data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
     const peoples = data?.content?.demographics?.peoples ?? [];
@@ -78,6 +87,12 @@ export function findDriftOffenders(
     for (const entry of peoples) {
       if (typeof entry?.population !== "number") continue;
       if (typeof entry?.percentageInCountry !== "number") continue;
+
+      // A headcount is read against the total of the year it carries.
+      const year = entry.referenceYear ?? ATLAS_REFERENCE_YEAR;
+      const total = countryTotals.get(`${id}:${year}`);
+      if (!total) continue;
+
       const implied = (entry.population / total) * 100;
       const drift = Math.abs(implied - entry.percentageInCountry);
       if (drift > DRIFT_THRESHOLD_PP) {

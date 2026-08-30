@@ -1,10 +1,10 @@
 import type { CountryDetail } from "@/types/afrik-frontend";
-import { transformCountryData } from "@/lib/countryDataTransformer";
+import {
+  DEMOGRAPHIC_REFERENCE_YEAR,
+  transformCountryData,
+} from "@/lib/countryDataTransformer";
 import { backLinkLabel } from "@/lib/navigation/deriveTrail";
 import { getPeopleRoute } from "@/lib/routing";
-
-/** The reference year every fiche's shares are read against — see CountryParchment. */
-const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
 
 /**
  * The band a country fiche opens on, above the globe.

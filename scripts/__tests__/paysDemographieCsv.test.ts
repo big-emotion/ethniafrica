@@ -26,7 +26,7 @@ const PAYS_DIR = path.join(process.cwd(), "dataset", "source", "afrik", "pays");
 interface CsvRow {
   id_pays: string;
   nom_pays: string;
-  population_totale_2025: string;
+  population_totale: string;
   source: string;
   source_url: string;
   annee: string;
@@ -58,29 +58,49 @@ describe("public/pays_demographie.csv — the FR32 denominator", () => {
   });
 
   // @req REQ-033
-  it("states a positive total and the 2025 reference year on every row", () => {
+  it("states a positive total and a four-digit year on every row", () => {
     const malformed = readRows()
       .filter(
         (r) =>
-          !/^\d+$/.test(r.population_totale_2025) ||
-          Number(r.population_totale_2025) <= 0 ||
-          r.annee !== "2025"
+          !/^\d+$/.test(r.population_totale) ||
+          Number(r.population_totale) <= 0 ||
+          !/^\d{4}$/.test(r.annee)
       )
-      .map((r) => r.id_pays);
+      .map((r) => `${r.id_pays}:${r.annee}`);
 
     expect(malformed).toEqual([]);
   });
 
-  // A country fiche whose id is absent from the CSV silently skips FR32
+  // (country, year) is the key FR32 looks a total up by. Two rows sharing one
+  // would make the lookup depend on file order, so the check would silently
+  // measure a headcount against whichever total happened to be read last.
+  // @req REQ-033
+  it("holds one total per country and year", () => {
+    const seen = new Set<string>();
+    const duplicates: string[] = [];
+    for (const row of readRows()) {
+      const key = `${row.id_pays}:${row.annee}`;
+      if (seen.has(key)) duplicates.push(key);
+      seen.add(key);
+    }
+
+    expect(duplicates).toEqual([]);
+  });
+
+  // A country fiche with no row for the atlas's own year silently skips FR32
   // entirely — the check warns and moves on, so the gap is a disarmed gate.
   // @req REQ-033
-  it("covers every country fiche in the corpus", () => {
-    const known = new Set(readRows().map((r) => r.id_pays));
+  it("covers every country fiche for the atlas reference year", () => {
+    const covered = new Set(
+      readRows()
+        .filter((r) => r.annee === "2025")
+        .map((r) => r.id_pays)
+    );
     const uncovered = fs
       .readdirSync(PAYS_DIR)
       .filter((f) => f.endsWith(".json"))
       .map((f) => f.replace(/\.json$/, ""))
-      .filter((id) => !known.has(id));
+      .filter((id) => !covered.has(id));
 
     expect(uncovered).toEqual([]);
   });

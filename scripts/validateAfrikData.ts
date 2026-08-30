@@ -1588,16 +1588,20 @@ export async function checkSourceUrls(
  * percentage `(population / country_total) × 100` must agree with the stated
  * `percentageInCountry` within 2 percentage points.
  *
- * Registered as `soft: true` (warning, not failure) for now: the country
- * page transformer (`src/lib/countryDataTransformer.ts`) reads
- * `p.population` directly to compute per-row counts and `totalPopulation`.
- * Deleting drifting `population` values today collapses those values to 0
- * on the country page. Flip to a hard gate once the transformer is updated
- * to derive population from `percentageInCountry × country total`.
+ * This is a **hard gate** — a drift fails the build. The docblock claimed
+ * `soft: true` long after that stopped being true, on the grounds that
+ * dropping a drifting `population` would collapse the value to 0 on the
+ * country page. That precondition is gone: the transformer now leaves an
+ * undeclared headcount undefined and the fiche prints "Donnée manquante".
  *
- * Country totals are loaded from `public/pays_demographie.csv`
- * (UN/UNFPA 2025). If a country has no row in that CSV, the check is skipped
- * for that country with a warning (no invented data). Issue #129 owns ZAF.
+ * Country totals are loaded from `public/pays_demographie.csv`, keyed by
+ * country **and** year. A headcount is read against the total of its own
+ * `referenceYear`, defaulting to the atlas's 2025 — a census count is dated by
+ * its census, and measuring Kenya's 2019 figures against a 2025 total invents
+ * a drift that says nothing about the value. A country with no row for the
+ * atlas year, or a headcount dated to a year the CSV does not cover, is
+ * skipped with a warning rather than measured against a total that is not
+ * its own (no invented data). Issue #129 owns ZAF.
  *
  * Per issue #130 KISS option 2, the `population` field is the optional one:
  * when both are present and drift > 2 pp, delete `population`. See
@@ -1605,6 +1609,13 @@ export async function checkSourceUrls(
  */
 const FR32_DRIFT_PP = 2;
 const FR32_ZAF_SOFT = new Set(["ZAF"]); // owned by issue #129
+
+/**
+ * The year a headcount is read against when the fiche does not date it. It is
+ * the atlas's own reference year, so an undated value keeps the meaning it had
+ * before `referenceYear` existed.
+ */
+const ATLAS_REFERENCE_YEAR = 2025;
 
 export function checkPopulationPercentageDrift(
   datasetRoot: string,
@@ -1618,14 +1629,19 @@ export function checkPopulationPercentageDrift(
     return { ok: true, errors, warnings };
   }
 
-  // Load country totals from CSV (id_pays → population_totale_2025).
+  // Country totals, keyed by country *and* year: a census headcount is dated
+  // by its census, and measuring it against another year's total manufactures
+  // a drift that says nothing about the value.
   const totals = new Map<string, number>();
   if (fs.existsSync(paysCsvPath)) {
     const rows = loadCSV(paysCsvPath);
     for (const row of rows) {
       const id = row.id_pays;
-      const pop = Number(row.population_totale_2025);
-      if (id && Number.isFinite(pop) && pop > 0) totals.set(id, pop);
+      const year = Number(row.annee);
+      const pop = Number(row.population_totale);
+      if (id && Number.isFinite(year) && Number.isFinite(pop) && pop > 0) {
+        totals.set(`${id}:${year}`, pop);
+      }
     }
   } else {
     warnings.push(
@@ -1637,8 +1653,7 @@ export function checkPopulationPercentageDrift(
   const files = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
   for (const file of files) {
     const id = path.basename(file, ".json");
-    const total = totals.get(id);
-    if (!total) {
+    if (!totals.has(`${id}:${ATLAS_REFERENCE_YEAR}`)) {
       warnings.push(
         `FR32 ${id}: no row in pays_demographie.csv — drift check skipped (no invented total)`
       );
@@ -1652,6 +1667,7 @@ export function checkPopulationPercentageDrift(
             name?: string;
             population?: number;
             percentageInCountry?: number;
+            referenceYear?: number;
           }>;
         };
       };
@@ -1667,10 +1683,20 @@ export function checkPopulationPercentageDrift(
     for (const entry of peoples) {
       if (typeof entry?.population !== "number") continue;
       if (typeof entry?.percentageInCountry !== "number") continue;
+
+      const year = entry.referenceYear ?? ATLAS_REFERENCE_YEAR;
+      const total = totals.get(`${id}:${year}`);
+      if (!total) {
+        warnings.push(
+          `FR32 ${id}/${entry.name ?? "(unnamed)"}: headcount dated ${year}, but pays_demographie.csv holds no total for that year — drift check skipped (no invented total)`
+        );
+        continue;
+      }
+
       const implied = (entry.population / total) * 100;
       const drift = Math.abs(implied - entry.percentageInCountry);
       if (drift > FR32_DRIFT_PP) {
-        const msg = `FR32 ${id}/${entry.name ?? "(unnamed)"}: population ${entry.population} implies ${implied.toFixed(2)}% but percentageInCountry is ${entry.percentageInCountry}% (drift ${drift.toFixed(2)} pp > ${FR32_DRIFT_PP} pp threshold) — drop the population field (see scripts/checkPopulationPercentageDrift.ts)`;
+        const msg = `FR32 ${id}/${entry.name ?? "(unnamed)"}: population ${entry.population} implies ${implied.toFixed(2)}% of the ${year} total but percentageInCountry is ${entry.percentageInCountry}% (drift ${drift.toFixed(2)} pp > ${FR32_DRIFT_PP} pp threshold) — date the headcount with referenceYear, or drop it (see scripts/checkPopulationPercentageDrift.ts)`;
         if (FR32_ZAF_SOFT.has(id)) {
           warnings.push(msg + " [soft: owned by issue #129]");
         } else {

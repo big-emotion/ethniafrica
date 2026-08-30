@@ -26,13 +26,14 @@ import {
 
 function writePaysCsv(
   csvPath: string,
-  rows: Array<{ id_pays: string; population_totale_2025: number }>
+  rows: Array<{ id_pays: string; population_totale: number; annee?: number }>
 ) {
   mkdirSync(join(csvPath, ".."), { recursive: true });
-  const header = "id_pays,nom_pays,population_totale_2025,source,annee\n";
+  const header = "id_pays,nom_pays,population_totale,source,source_url,annee\n";
   const body = rows
     .map(
-      (r) => `${r.id_pays},"pays test",${r.population_totale_2025},"ONU",2025`
+      (r) =>
+        `${r.id_pays},"pays test",${r.population_totale},"ONU","https://example.org/${r.id_pays}",${r.annee ?? 2025}`
     )
     .join("\n");
   writeFileSync(csvPath, header + body + "\n");
@@ -45,6 +46,7 @@ function writePaysWithPopulation(
     name: string;
     population?: number;
     percentageInCountry?: number;
+    referenceYear?: number;
   }>
 ) {
   const dir = join(root, "pays");
@@ -722,9 +724,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns ok:true when no entry has both population and percentageInCountry", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 55000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 55000000 }]);
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", percentageInCountry: 22 },
         { name: "Luhya", percentageInCountry: 14 },
@@ -735,10 +735,69 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.errors).toHaveLength(0);
     });
 
-    it("returns ok:true when drift is within 2 pp", () => {
+    // A census headcount is dated by its census, not by the atlas's 2025
+    // reference year. Measured against the 2025 total it always drifts —
+    // Kenya's 2019 Kikuyu count reads 17.1 % of the 2019 country and 14.2 % of
+    // the 2025 one — so the comparison has to reach for the total of the year
+    // the value carries.
+    // @req REQ-032
+    it("compares a dated headcount against the total of its own year", () => {
       writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 10000000 },
+        { id_pays: "KEN", population_totale: 47564296, annee: 2019 },
+        { id_pays: "KEN", population_totale: 57500000, annee: 2025 },
       ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        {
+          name: "Kikuyu",
+          population: 8148668,
+          percentageInCountry: 17.1,
+          referenceYear: 2019,
+        },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-032
+    it("still reads an undated headcount against the 2025 total", () => {
+      writePaysCsv(csvPath, [
+        { id_pays: "KEN", population_totale: 10000000, annee: 2025 },
+      ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toHaveLength(1);
+    });
+
+    // No invented total: a year the CSV does not cover is reported, not
+    // silently measured against a different year's denominator.
+    // @req REQ-032
+    it("warns instead of erroring when the CSV has no total for that year", () => {
+      writePaysCsv(csvPath, [
+        { id_pays: "KEN", population_totale: 57500000, annee: 2025 },
+      ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        {
+          name: "Kikuyu",
+          population: 8148668,
+          percentageInCountry: 17.1,
+          referenceYear: 2019,
+        },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(result.warnings.join(" ")).toMatch(/2019/);
+    });
+
+    it("returns ok:true when drift is within 2 pp", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 10000000 }]);
       // implied = 2100000/10000000*100 = 21%, stated = 20%, drift = 1pp → ok
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", population: 2100000, percentageInCountry: 20 },
@@ -750,9 +809,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns ok:false (hard error) when drift > 2 pp for a non-ZAF country", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 10000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 10000000 }]);
       // implied = 5000000/10000000*100 = 50%, stated = 20%, drift = 30pp → error
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
@@ -765,9 +822,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns warning only (not error) for ZAF regardless of drift", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "ZAF", population_totale_2025: 10000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "ZAF", population_totale: 10000000 }]);
       // drift = 30pp — should warn but not error
       writePaysWithPopulation(tmpDir, "ZAF", [
         { name: "Zulu", population: 5000000, percentageInCountry: 20 },
@@ -780,9 +835,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns warning only when country has no CSV row (no invented total)", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 55000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 55000000 }]);
       // NGR has no CSV row → skip with warning
       writePaysWithPopulation(tmpDir, "NGR", [
         { name: "Hausa", population: 1000000, percentageInCountry: 20 },

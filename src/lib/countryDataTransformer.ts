@@ -79,6 +79,15 @@ export interface TimelineData {
   gradientStops: { goldEnd: number; colonialEnd: number };
 }
 
+/**
+ * The year the atlas reads a demographic figure against when the fiche does
+ * not date it. It lived as a literal in two components and as `2025` spelled
+ * into the section's eyebrow; a headcount now carries its own year, so the
+ * default belongs next to the code that applies it.
+ */
+// @req REQ-001
+export const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
+
 export interface PeopleRow {
   name: string;
   endonym?: string;
@@ -107,6 +116,12 @@ export interface PeoplesData {
    * section must say so instead of labelling it "habitants".
    */
   everyPeopleDeclaresPopulation: boolean;
+  /**
+   * Year the counted peoples are dated to, when they agree on one. Undefined
+   * where none is counted, or where they come from different years and the
+   * section therefore has no single snapshot to name.
+   */
+  populationReferenceYear?: number;
   peopleCount: number;
   rows: PeopleRow[];
 }
@@ -737,6 +752,16 @@ export function transformPeoples(
   const counted = filtered.filter((p) => p.population > 0);
   const totalPopulation = counted.reduce((sum, p) => sum + p.population, 0);
 
+  // The section prints one year over the whole block, so it may only name one
+  // when every counted people carries it. A fiche mixing a census with a later
+  // estimate has no single snapshot, and picking either would date the other
+  // wrongly.
+  const countedYears = new Set(
+    counted.map((p) => p.referenceYear ?? DEMOGRAPHIC_REFERENCE_YEAR)
+  );
+  const populationReferenceYear =
+    countedYears.size === 1 ? [...countedYears][0] : undefined;
+
   // Sort by percentage descending
   const sorted = [...filtered].sort(
     (a, b) => (b.percentageInCountry || 0) - (a.percentageInCountry || 0)
@@ -777,6 +802,7 @@ export function transformPeoples(
       counted.length > 0 ? formatPopulation(totalPopulation) : undefined,
     everyPeopleDeclaresPopulation:
       filtered.length > 0 && counted.length === filtered.length,
+    populationReferenceYear,
     peopleCount: sorted.length,
     rows: groupedRows,
   };
