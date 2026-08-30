@@ -1,6 +1,7 @@
 "use client";
 
 import React, { lazy, Suspense, useState } from "react";
+import { FicheProse } from "@/components/fiche/FicheProse";
 import type { Source } from "@/components/source-transparency/SourceChainSheet";
 
 // Wave-2 imports — excluded from the initial bundle.
@@ -108,24 +109,34 @@ export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
   const paraClass = className ?? "people-section-body";
 
   if (!chip) {
-    return <p className={paraClass}>{text}</p>;
+    return <FicheProse text={text} paragraphClassName={paraClass} />;
   }
 
   const anchorId = `chip-${chip.chipId}`;
 
   return (
-    <p className={paraClass}>
-      {text}{" "}
-      <Suspense fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}>
-        <LazyConfidenceChip
-          id={anchorId}
-          confidenceScore={chip.confidenceScore}
-          sourceCount={chip.sourceCount}
-          lastHumanAuditAt={chip.lastHumanAuditAt}
-          variant={chip.contested ? "contested" : "inline"}
-          onOpen={() => setSheetOpen(true)}
-        />
-      </Suspense>
+    <>
+      <FicheProse
+        text={text}
+        paragraphClassName={paraClass}
+        trailing={
+          <Suspense
+            fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+          >
+            <LazyConfidenceChip
+              id={anchorId}
+              confidenceScore={chip.confidenceScore}
+              sourceCount={chip.sourceCount}
+              lastHumanAuditAt={chip.lastHumanAuditAt}
+              variant={chip.contested ? "contested" : "inline"}
+              onOpen={() => setSheetOpen(true)}
+            />
+          </Suspense>
+        }
+      />
+      {/* The sheet is a dialog, so it renders a div. Inside the paragraph the
+          HTML parser closed the <p> before it and the server markup stopped
+          matching what the client hydrated. It belongs beside the prose. */}
       <Suspense fallback={null}>
         <LazySourceChainSheet
           open={sheetOpen}
@@ -140,7 +151,7 @@ export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
           anchorId={anchorId}
         />
       </Suspense>
-    </p>
+    </>
   );
 }
 

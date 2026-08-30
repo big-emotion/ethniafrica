@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Malawi)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tonga (Malawi)",

@@ -3,6 +3,7 @@
   "nameMain": "Tsonga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ", "ZAF", "ZWE", "SWZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tsonga",

@@ -161,6 +161,87 @@
   margin-inline-start: -4px;
 }
 
+/* ── Structured prose ─────────────────────────────────────────────── */
+
+/* The chapter is an h2, and the corpus has exactly one level under it. There
+   is no h4 role in the type charter and the register is closed, so the grammar
+   produces no fourth level rather than leaving one to arrive by accident. */
+.afh-prose-heading {
+  margin: 22px 0 8px;
+  font-family: var(--afh-font-display);
+  font-weight: var(--afh-weight-semibold);
+  font-size: var(--afh-text-h3);
+  line-height: var(--afh-leading-h3);
+  color: var(--afh-text);
+}
+
+/* A field that opens on its first sub-heading does not dig above it: the
+   field's own term is already the white space. */
+.afh-prose-heading:first-child {
+  margin-top: 0;
+}
+
+/* Every other ul on the parchment is a component's structure wearing
+   list-style: none. This one is a list a reader reads, so it carries a mark. */
+.afh-prose-list {
+  margin: 0 0 12px;
+  padding-inline-start: 1.15em;
+  list-style: disc;
+}
+
+.afh-prose-list li {
+  margin-bottom: 4px;
+  font-size: var(--afh-text-body);
+  line-height: 1.7;
+  color: var(--afh-text-soft);
+}
+
+/* §2: a component never names an accent, it reads the one its surface scopes —
+   and it takes the ink, not the fill. The fills sit between 2.28:1 and 3.09:1
+   on their own tint, which a mark this small cannot carry. */
+.afh-prose-list li::marker {
+  color: var(--accent-ink);
+}
+
+.afh-prose-fields {
+  margin: 0;
+}
+
+/* The label of a field is a term, not a section — it stays out of the document
+   outline so the corpus keeps the one heading level there is under the h2. */
+.afh-prose-term {
+  margin: 18px 0 4px;
+  font-size: var(--afh-text-eyebrow);
+  line-height: var(--afh-leading-eyebrow);
+  font-weight: var(--afh-eyebrow-weight);
+  text-transform: var(--afh-eyebrow-transform);
+  letter-spacing: var(--afh-eyebrow-tracking);
+  color: var(--afh-text-soft);
+}
+
+.afh-prose-term:first-child {
+  margin-top: 0;
+}
+
+/* The user agent indents a dd by 40px, which would set every value out of line
+   with its own term and with every heading in the chapter. */
+.afh-prose-def {
+  margin: 0;
+  margin-inline-start: 0;
+}
+
+/* §4: a corpus defect is said, not made up. The tone is the one the parchment
+   already keeps for something wrong, never the accent — an anomaly is not a
+   category. */
+.afh-prose-defect {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-inline-start: 2px solid var(--afh-color-colonial);
+  font-size: var(--afh-text-caption);
+  line-height: var(--afh-leading-caption);
+  color: var(--afh-color-colonial);
+}
+
 .afh-parchment-section code {
   font-family: var(--afh-font-mono);
   font-size: 0.92em;

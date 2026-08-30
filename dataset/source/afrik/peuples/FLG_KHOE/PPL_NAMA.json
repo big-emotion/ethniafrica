@@ -3,6 +3,7 @@
   "nameMain": "Nama",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["NAM", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nama",

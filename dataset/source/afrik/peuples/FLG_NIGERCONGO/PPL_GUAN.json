@@ -3,6 +3,7 @@
   "nameMain": "Guan",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "TGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Guan",

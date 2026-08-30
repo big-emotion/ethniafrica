@@ -3,6 +3,7 @@
   "nameMain": "Wolof",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["SEN", "GMB", "MRT"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wolof",

@@ -26,6 +26,7 @@ vi.mock("@/lib/flags-client", () => ({
 }));
 
 vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
   useConsent: () => ({
     consentState: {
       hasConsented: true,
@@ -71,30 +72,24 @@ describe("the country dossier with server-provided data", () => {
     // renders from the server's data, which is what is asserted above.
   });
 
+  /**
+   * This assertion used to read "renders a disabled FlagTarget shell by
+   * default", and it passed because the feature was dead in every deployment:
+   * the control was guarded on a key no page supplied. The suite was green
+   * because the button was.
+   *
+   * There is no key to guard on any more — the proof of work needs none — so
+   * the pair of tests that stood here, one for each side of that condition,
+   * collapses into this one.
+   */
   // @req REQ-012 (AC5)
-  it("renders a disabled FlagTarget shell on the country Culture section by default", () => {
+  it("renders a live report control on the country Culture section", () => {
     render(
       <CountryRecordView
         country={{
           ...senegal,
           culture: { dominantReligions: "Islam, christianisme" },
         }}
-      />
-    );
-
-    const flagTarget = screen.getByTestId("section-flag-target-culture");
-    expect(within(flagTarget).getByRole("button")).toBeDisabled();
-  });
-
-  // @req REQ-012 (AC5)
-  it("wires the live fiche_section FlagTarget on the country Culture section when turnstileSiteKey is provided", () => {
-    render(
-      <CountryRecordView
-        country={{
-          ...senegal,
-          culture: { dominantReligions: "Islam, christianisme" },
-        }}
-        turnstileSiteKey="test-site-key"
       />
     );
 

@@ -3,6 +3,7 @@
   "nameMain": "Dogon",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MLI", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dogon",

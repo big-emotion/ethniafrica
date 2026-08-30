@@ -3,6 +3,7 @@
   "nameMain": "Ngbande",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["CAF", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ngbande",

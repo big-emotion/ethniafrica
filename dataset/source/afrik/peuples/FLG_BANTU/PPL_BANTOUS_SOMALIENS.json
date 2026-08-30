@@ -3,6 +3,7 @@
   "nameMain": "Bantous somaliens",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["SOM", "KEN", "USA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bantous somaliens",

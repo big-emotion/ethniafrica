@@ -287,78 +287,12 @@ describe("surface token files carry no second type scale", () => {
   );
 });
 
-// The two labels flanking the home globe's projection slider sit on a pill
-// (`.home-globe-morph`) whose own background is
-// `color-mix(in srgb, var(--afh-bg-warm) 88%, transparent)` — at that
-// strength the pill reads as --afh-bg-warm itself, so that is what the
-// label is measured against. --afh-text-muted clears neither surface
-// (2.86:1 parchment, 4.56:1 night, both under the 4.5:1 AA floor);
-// --afh-fg-muted is the pair token AccessAxes already uses for the same
-// class of label and clears both with margin.
-describe("home globe morph label contrast (ETNI-1344)", () => {
-  const homeGlobe = readFileSync(
-    resolve(process.cwd(), "src/components/home/HomeGlobe.tsx"),
-    "utf8"
-  );
-
-  const nightStart = colorCss.indexOf(".dark,");
-  const dayScope = colorCss.slice(0, nightStart);
-  const nightScope = colorCss.slice(nightStart);
-
-  function bindingIn(scope: string, name: string): string | null {
-    const match = scope.match(
-      new RegExp(`${name}:\\s*(#[0-9a-f]{6}|var\\(--[a-z0-9-]+\\))`, "i")
-    );
-    return match ? match[1] : null;
-  }
-
-  function resolveInScope(name: string, night: boolean): string {
-    let current = name;
-    for (let hop = 0; hop < 8; hop += 1) {
-      const value =
-        (night ? bindingIn(nightScope, current) : null) ??
-        bindingIn(dayScope, current);
-      if (!value) throw new Error(`Unbound token ${current}`);
-      if (value.startsWith("#")) return value;
-      current = value.slice(4, -1);
-    }
-    throw new Error(`Token ${name} never resolves to a hex`);
-  }
-
-  function labelColorToken(): string {
-    const block = homeGlobe.match(/\.home-globe-morph label\s*\{([^}]*)\}/);
-    if (!block) throw new Error("Missing .home-globe-morph label rule");
-    const color = block[1].match(/color:\s*var\((--[a-z0-9-]+)\)/i);
-    if (!color) throw new Error("Missing colour on .home-globe-morph label");
-    return color[1];
-  }
-
-  // @req REQ-112
-  // @req REQ-115
-  it.each([
-    ["parchment", false],
-    ["night", true],
-  ] as const)(
-    "keeps the projection slider labels AA-readable on the %s pill",
-    (_surfaceName, night) => {
-      const token = labelColorToken();
-      const ratio = contrastRatio(
-        resolveInScope(token, night),
-        resolveInScope("--afh-bg-warm", night)
-      );
-
-      expect(
-        ratio,
-        `${token} measures ${ratio.toFixed(2)}:1 against --afh-bg-warm — below the 4.5:1 AA floor`
-      ).toBeGreaterThanOrEqual(4.5);
-    }
-  );
-
-  // @req REQ-112
-  it("never repoints the slider labels back to the token that fails AA", () => {
-    expect(labelColorToken()).not.toBe("--afh-text-muted");
-  });
-});
+// The `.home-globe-morph` slider this file used to measure went with the
+// point cloud (ETNI-1360). Its two flanking labels sat on a parchment pill
+// and ETNI-1344 had to repoint them off --afh-text-muted to clear AA; the
+// control no longer exists, and the surviving globe states its projection
+// with a toolbar button on the night ground, whose ink is measured by the
+// night-theme block below.
 
 describe("night theme (REQ-115)", () => {
   const ground = () => tokenHex("--afh-night-ground");
@@ -564,5 +498,45 @@ describe("home did-you-know chip softens with ink, not opacity", () => {
   // @req REQ-090
   it("does not fade the entity-kind label below its ink", () => {
     expect(ruleBody(".home-dyk-chip-kind")).not.toMatch(/opacity:\s*0?\.\d+/);
+  });
+});
+
+/**
+ * The footer's qualifier — « Atlas des Peuples d'Afrique » — is set in the
+ * spectrum the mark itself is drawn in: the red, orange, ochre, green and blue
+ * sampled off `public/africa.png`. A brand gradient is the one place a
+ * multi-hue ramp is the subject rather than an accident.
+ *
+ * It is a token with a night rebinding for the reason `--accent-tint` already
+ * cost us once: stops chosen against parchment stay put under `.dark`, where
+ * the ground is #1d1710 and every one of them flips from dark-on-light to
+ * dark-on-dark. Each stop clears AA on its own ground, so the ramp is
+ * readable at both ends rather than only the one it was drawn for.
+ */
+describe("the brand spectrum carries both themes", () => {
+  function spectrumStops(scope: string): string[] {
+    const declaration = scope.match(/--afh-gradient-spectrum:\s*([^;]+);/);
+    if (!declaration) throw new Error("Missing --afh-gradient-spectrum");
+    return declaration[1].match(/hsl\([^)]*\)/g) ?? [];
+  }
+
+  const dayScope = colorCss.slice(0, colorCss.indexOf(".dark,"));
+
+  // @req REQ-090
+  it("declares the spectrum on parchment and rebinds it for night", () => {
+    expect(spectrumStops(dayScope).length).toBeGreaterThanOrEqual(4);
+    expect(spectrumStops(nightScopeOf(colorCss)).length).toBeGreaterThanOrEqual(
+      4
+    );
+  });
+
+  // @req REQ-090
+  it("keeps every parchment stop darker than every night stop", () => {
+    const lightness = (stop: string): number =>
+      Number.parseFloat(stop.match(/([\d.]+)%\s*\)/)![1]);
+
+    expect(Math.max(...spectrumStops(dayScope).map(lightness))).toBeLessThan(
+      Math.min(...spectrumStops(nightScopeOf(colorCss)).map(lightness))
+    );
   });
 });

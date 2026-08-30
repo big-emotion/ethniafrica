@@ -52,6 +52,20 @@ const WAIT_SCREENS = {
 } as const;
 
 /**
+ * The waits no route boundary can reach, because what they wait for is
+ * fetched after the page has rendered.
+ *
+ * They are audited beside the three above rather than among them: a
+ * `loading.tsx` importing one of these would be covering a route wait with an
+ * island's screen, which is not the same slot. The quiz session was the hole
+ * this list exists for — it shipped a bare continent, with no fact and no
+ * accent scope, and the gate below only ever looked at `loading.tsx` files.
+ */
+const CLIENT_ISLAND_WAIT_SCREENS = {
+  QuizSessionWait: "src/components/quiz/QuizSessionWait.tsx",
+} as const;
+
+/**
  * Matched on the import rather than anywhere in the file: a loading file that
  * merely *names* a screen in a comment explaining why it does not use it read
  * as covered, and one of them passed this gate that way.
@@ -76,8 +90,28 @@ describe("every wait on the site is the same wait (REQ-104)", () => {
 
   // @req REQ-113
   it("spends every one of those waits on a Saviez-vous fact", () => {
-    for (const path of Object.values(WAIT_SCREENS)) {
+    const screens = [
+      ...Object.values(WAIT_SCREENS),
+      ...Object.values(CLIENT_ISLAND_WAIT_SCREENS),
+    ];
+
+    for (const path of screens) {
       expect(read(join(process.cwd(), path))).toContain("DidYouKnowLoader");
+    }
+  });
+
+  /**
+   * The quiz was rendering the continent outside any `.afh-accent-*` wrapper,
+   * where `var(--accent)` resolves to shadcn's bare HSL triplet: `fill` cannot
+   * read it and the figure paints black. An island wait carries no surrounding
+   * scope of its own — `PageLayout` declares none — so it has to declare one.
+   */
+  // @req REQ-104
+  it("scopes every island wait to an accent, so its continent is inked", () => {
+    for (const path of Object.values(CLIENT_ISLAND_WAIT_SCREENS)) {
+      expect(read(join(process.cwd(), path))).toMatch(
+        /afh-accent-|ACCENT_BY_ACCESS_MODE/
+      );
     }
   });
 

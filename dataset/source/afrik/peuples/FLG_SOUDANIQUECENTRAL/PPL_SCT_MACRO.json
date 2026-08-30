@@ -3,6 +3,7 @@
   "nameMain": "Peuples Soudaniques Centraux (macro-groupe)",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["COD", "UGA", "SDN", "SSD", "CAF", "TCD", "COG"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Soudaniques Centraux",

@@ -2,6 +2,7 @@
   "id": "FLG_ATLANTIQUE",
   "nameFr": "Atlantique",
   "nameEn": "Atlantic (anciennement West Atlantic)",
+  "classificationStatus": "contested",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " L'appellation est critiquée car elle est purement géographique et ne garantit pas une unité génétique cohérente. Historiquement, le terme \"West Atlantic\" a souvent servi de catégorie résiduelle pour classer les langues de la côte ouest-africaine qui ne correspondaient pas aux familles Mandé ou Kwa, créant des confusions avec d'autres groupes côtiers comme les langues Krou (Kru) ou les langues lagunaires. De plus, la diversité interne est telle que certains linguistes (comme Dalby) ont remis en question l'existence de cette famille comme une unité génétique valide, la considérant parfois davantage comme une aire de convergence linguistique. vers Aujourd'hui, le terme est conservé par convention scientifique pour désigner ce regroupement géographique spécifique.",

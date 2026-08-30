@@ -3,6 +3,7 @@
   "nameMain": "Hausa",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN", "BEN", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Hausa",

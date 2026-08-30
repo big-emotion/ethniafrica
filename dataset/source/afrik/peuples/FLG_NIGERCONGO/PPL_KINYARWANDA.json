@@ -3,6 +3,7 @@
   "nameMain": "Banyarwanda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["RWA", "BDI", "UGA", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Banyarwanda",

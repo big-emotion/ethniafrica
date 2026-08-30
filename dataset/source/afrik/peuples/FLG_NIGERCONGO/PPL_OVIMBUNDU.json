@@ -3,6 +3,7 @@
   "nameMain": "Ovimbundu",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ovimbundu",

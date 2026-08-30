@@ -3,6 +3,7 @@
   "nameMain": "Wonnin",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wonnin",

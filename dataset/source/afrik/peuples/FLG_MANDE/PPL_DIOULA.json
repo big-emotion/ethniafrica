@@ -3,6 +3,7 @@
   "nameMain": "Dioula",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["CIV", "BFA", "MLI", "GHA", "GNB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dioula",

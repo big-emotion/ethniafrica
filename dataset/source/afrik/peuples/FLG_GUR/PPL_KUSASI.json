@@ -3,6 +3,7 @@
   "nameMain": "Kusasi",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kusasi",

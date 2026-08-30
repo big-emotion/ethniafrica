@@ -3,6 +3,7 @@
   "nameMain": "Mbunda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO", "ZMB", "NAM", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mbunda",

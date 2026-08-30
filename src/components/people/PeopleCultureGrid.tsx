@@ -31,13 +31,15 @@ export function PeopleCultureGrid({ data, chips }: PeopleCultureGridProps) {
   const present = FIELDS.filter(({ key }) => Boolean(data[key]));
 
   return (
-    <div className="space-y-[14px]">
+    <dl className="afh-prose-fields space-y-[14px]">
       {present.map(({ key, label }) => (
         <div key={key}>
-          <p className="people-section-label">{label}</p>
-          <ProseWithChip text={data[key] as string} chip={chips?.[key]} />
+          <dt className="people-section-label">{label}</dt>
+          <dd className="afh-prose-def">
+            <ProseWithChip text={data[key] as string} chip={chips?.[key]} />
+          </dd>
         </div>
       ))}
-    </div>
+    </dl>
   );
 }

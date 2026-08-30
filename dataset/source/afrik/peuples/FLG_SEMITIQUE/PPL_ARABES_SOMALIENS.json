@@ -3,6 +3,7 @@
   "nameMain": "Arabes somaliens",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["SOM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Arabes somaliens",

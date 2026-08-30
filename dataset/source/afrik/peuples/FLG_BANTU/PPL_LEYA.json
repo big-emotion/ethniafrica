@@ -3,6 +3,7 @@
   "nameMain": "Leya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Leya",
