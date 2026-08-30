@@ -1,13 +1,20 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   render,
   screen,
   within,
   fireEvent,
   waitFor,
+  act,
 } from "@testing-library/react";
 
-import { HomeHeroSearch, SEED_QUERIES } from "../HomeHeroSearch";
+import {
+  HomeHeroSearch,
+  DEBOUNCE_MS,
+  PENDING_DELAY_MS,
+  SEARCH_LABEL,
+} from "../HomeHeroSearch";
+import { SEED_POOLS } from "../HomeHeroSeeds";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -73,13 +80,39 @@ describe("HomeHeroSearch", () => {
   it("names the field from a label rather than from its placeholder", () => {
     renderSearch();
 
-    const input = field();
-    expect(input).toHaveAccessibleName(
-      "Rechercher un peuple, un pays ou une famille linguistique"
-    );
-    expect(input.getAttribute("placeholder")).not.toBe(
-      input.getAttribute("aria-label")
-    );
+    expect(field()).toHaveAccessibleName(SEARCH_LABEL);
+  });
+
+  // The label used to be sr-only, so a sighted reader had only the
+  // placeholder — which empties at the moment of focus, exactly when the
+  // scope would be worth reading.
+  // @req REQ-002
+  it("shows the label instead of reserving it for screen readers", () => {
+    const { container } = renderSearch();
+
+    const label = container.querySelector("label");
+    expect(label).toHaveTextContent(SEARCH_LABEL);
+    expect(label?.className ?? "").not.toContain("sr-only");
+  });
+
+  // /api/v2/search answers { peoples, countries, families }. Naming a fourth
+  // kind would promise a result the panel can never produce, on the surface
+  // whose whole argument is that a claim carries its provenance.
+  // @req REQ-002
+  it("names only the kinds the search can return", () => {
+    expect(SEARCH_LABEL).not.toMatch(/langue/i);
+  });
+
+  // Label and placeholder twenty pixels apart, saying the same sentence, is
+  // read twice and learnt once. The label carries the scope, so the
+  // placeholder carries what to type instead.
+  // @req REQ-002
+  it("does not repeat the scope in the placeholder", () => {
+    renderSearch();
+
+    const placeholder = field().getAttribute("placeholder") ?? "";
+    expect(placeholder).not.toBe(SEARCH_LABEL);
+    expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
   });
 
   // Opening the phone keyboard on load buries the page under it and steals
@@ -234,18 +267,75 @@ describe("HomeHeroSearch", () => {
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
-  // The three seeds teach the three entity kinds at once. A rotating
-  // placeholder shows one at a time and vanishes at the moment of focus.
+  // The three seeds teach the three entity kinds at once, each reeling through
+  // its own pool (HomeHeroSeeds owns that; here only the handover matters).
   // @req REQ-002
   it("runs an example query from a seed chip", async () => {
     const fetchResults = vi.fn(async () => ALL_KINDS);
     renderSearch(fetchResults);
 
-    fireEvent.click(screen.getByRole("button", { name: SEED_QUERIES[0] }));
+    const first = SEED_POOLS[0].words[0];
+    fireEvent.click(screen.getByRole("button", { name: first }));
 
     await screen.findByRole("listbox");
-    expect(field()).toHaveValue(SEED_QUERIES[0]);
-    expect(fetchResults).toHaveBeenCalledWith(SEED_QUERIES[0]);
+    expect(field()).toHaveValue(first);
+    expect(fetchResults).toHaveBeenCalledWith(first);
+  });
+
+  // The native WebKit cross is suppressed by the field's own stylesheet, so a
+  // replacement is owed rather than optional.
+  // @req REQ-002
+  it("offers nothing to clear while the field is empty", () => {
+    renderSearch();
+
+    expect(
+      screen.queryByRole("button", { name: "Effacer la recherche" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-002
+  it("empties the field and hands the focus back", async () => {
+    renderSearch();
+
+    await type("kongo");
+    fireEvent.click(
+      screen.getByRole("button", { name: "Effacer la recherche" })
+    );
+
+    expect(field()).toHaveValue("");
+    expect(document.activeElement).toBe(field());
+  });
+
+  // The field sits in a GET form, where a button with no type is a submit
+  // button: clearing would navigate to the search page instead of emptying.
+  // @req REQ-002
+  it("clears without submitting the form", async () => {
+    renderSearch();
+
+    await type("kongo");
+
+    expect(
+      screen.getByRole("button", { name: "Effacer la recherche" })
+    ).toHaveAttribute("type", "button");
+  });
+
+  // Two gestures, one key: the panel goes first because it is what the reader
+  // can see, and only a second press touches their text.
+  // @req REQ-002
+  it("dismisses the panel on Escape before it clears the query", async () => {
+    renderSearch();
+
+    await type("yoruba");
+    await screen.findByRole("listbox");
+
+    fireEvent.keyDown(field(), { key: "Escape" });
+    await waitFor(() =>
+      expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+    );
+    expect(field()).toHaveValue("yoruba");
+
+    fireEvent.keyDown(field(), { key: "Escape" });
+    expect(field()).toHaveValue("");
   });
 
   // A plain GET form, so the hero still reaches the search page on a phone
@@ -259,5 +349,106 @@ describe("HomeHeroSearch", () => {
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", getLocalizedRoute("fr", "search"));
     expect(field()).toHaveAttribute("name", "q");
+  });
+
+  // The silence between the last keystroke and the panel is the debounce plus
+  // a round trip — long enough on a phone to read as a broken field.
+  describe("while the corpus is being asked", () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    function deferredSearch() {
+      let settle!: (results: SearchResult[]) => void;
+      const answer = new Promise<SearchResult[]>((resolve) => {
+        settle = resolve;
+      });
+      return { fetchResults: () => answer, settle };
+    }
+
+    async function tick(ms: number) {
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(ms);
+      });
+    }
+
+    // The row hears its own hover and focus, but reaching for the field is a
+    // sign of the reader that only this component can see — and a word that
+    // moves while someone is aiming at it is a target that moves. Caught in a
+    // browser, not here: the unit test below is the one that was missing.
+    // @req REQ-002
+    it("stops the seed reels when the field takes focus", async () => {
+      renderSearch();
+
+      const reel = () =>
+        document.querySelector("[data-reel-current]")?.textContent;
+
+      // Witness first: left alone, this reel does turn. Without it the
+      // assertion below would hold just as well on a reel that never moved.
+      const opening = reel();
+      await tick(SEED_POOLS[0].startDelayMs + 50);
+      const turned = reel();
+      expect(turned).not.toBe(opening);
+
+      fireEvent.focus(field());
+      await tick(SEED_POOLS[0].dwellMs * 3);
+
+      expect(reel()).toBe(turned);
+    });
+
+    // @req REQ-002
+    it("marks the field busy for as long as the request is in flight", async () => {
+      const { fetchResults, settle } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+      await tick(DEBOUNCE_MS + 10);
+      expect(field()).toHaveAttribute("aria-busy", "true");
+
+      await act(async () => {
+        settle([]);
+      });
+      expect(field()).toHaveAttribute("aria-busy", "false");
+    });
+
+    // An indicator that appears and vanishes inside 150 ms is a flicker, and
+    // reads worse than the silence it was meant to fill.
+    // @req REQ-002
+    it("shows no indicator when the answer comes back quickly", async () => {
+      const { fetchResults, settle } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+      await tick(DEBOUNCE_MS + 10);
+      await act(async () => {
+        settle([]);
+      });
+      await tick(PENDING_DELAY_MS + 50);
+
+      expect(screen.queryByTestId("home-hero-search-pending")).toBeNull();
+    });
+
+    // @req REQ-002
+    it("shows an indicator once the wait becomes noticeable", async () => {
+      const { fetchResults } = deferredSearch();
+      renderSearch(fetchResults);
+
+      await type("kongo");
+
+      await tick(DEBOUNCE_MS + 10);
+      expect(screen.queryByTestId("home-hero-search-pending")).toBeNull();
+
+      await tick(PENDING_DELAY_MS + 20);
+      expect(
+        screen.getByTestId("home-hero-search-pending")
+      ).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent(
+        "Recherche en cours"
+      );
+    });
   });
 });
