@@ -37,6 +37,11 @@
 
 .afh-section-heading-eyebrow {
   margin: 0 0 6px;
+  /* The eyebrow is a paragraph element but a label, not prose, so it follows
+     the heading unit it files rather than the phone's ragged-right rule for
+     running text (mobile-text.css). Without this an `.is-centred` unit would
+     put its title in the middle and its own kicker at the left edge. */
+  text-align: inherit;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-eyebrow);
   font-weight: var(--afh-eyebrow-weight);
