@@ -25,7 +25,11 @@ import {
   fitScale,
   type SphereLayer,
 } from "@/lib/atlas/sphereLayer";
-import { resolveGlobePalette } from "@/lib/atlas/globePalette";
+import {
+  GLOBE_LIGHTING,
+  resolveGlobePalette,
+  type GlobeSurface,
+} from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
@@ -216,6 +220,15 @@ export interface AtlasGlobeCanvasProps {
    * missing, with nothing thrown and nothing logged.
    */
   onUnavailable?: () => void;
+  /**
+   * Which of the two painted surfaces the sphere is (globePalette.ts).
+   *
+   * Night is the fiche's, and the default. The parchment half had been
+   * unreachable since ETNI-1360 — this call passed no argument, so ten
+   * `--afh-globe-parchment-*` tokens and half of GLOBE_LIGHTING were
+   * maintained code nothing could render.
+   */
+  surface?: GlobeSurface;
 }
 
 /**
@@ -242,6 +255,7 @@ export function AtlasGlobeCanvas({
   accentHex,
   focusedCountryId = null,
   onUnavailable,
+  surface = "night",
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
@@ -311,17 +325,25 @@ export function AtlasGlobeCanvas({
     // ground it does not touch. It draws first and only ever draws
     // terrain, so it can never be what closes a boundary around a people
     // (atlas-charter §1).
+    const nightSurface = surface === "night";
     const sphere: SphereLayer | null = createSphereLayer(
       gl,
-      resolveGlobePalette(),
+      resolveGlobePalette(surface),
       document.createElement("canvas"),
       undefined,
       false,
-      undefined,
+      // Night keeps sphereLayer's own default, which is the fiche's near
+      // framing. Parchment has to be said: on a ground *lighter* than the
+      // ocean the disc already states its edge, so the warm limb rim reads as
+      // a halo and the low ambient floor turns the unlit half into a shadow
+      // the page has nowhere to put.
+      nightSurface ? undefined : GLOBE_LIGHTING.parchment,
       // A fiche paints the national boundaries: a chosen country has to be
       // read against its neighbours, not float on a blank continent. The
-      // home hero, framed far off, leaves them off.
-      true
+      // continent stage, framed far off, leaves them off — this had been
+      // pinned true since ETNI-1360, which is why the home and the Mercator
+      // game grew a border mesh the comment beside it said they did not have.
+      nightSurface
     );
 
     // The terrain rides the same camera as the overlay drawn over it. A
@@ -724,7 +746,7 @@ export function AtlasGlobeCanvas({
       if (frameId !== null) window.cancelAnimationFrame(frameId);
       sphere?.dispose();
     };
-  }, [overlay, accentHex]);
+  }, [overlay, accentHex, surface]);
 
   useEffect(() => {
     poseRef.current = pose;

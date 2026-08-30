@@ -1,8 +1,10 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
+import type { GlobeSurface } from "@/lib/atlas/globePalette";
 import { buildContinentOverlay } from "@/lib/atlas/overlays";
 import { canCreateWebglContext } from "@/lib/home/webglSupport";
 
@@ -64,6 +66,22 @@ export function ContinentGlobeStage({
 }: ContinentGlobeStageProps) {
   const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
 
+  /**
+   * This stage is not a fiche, so DEC-022 does not license the night ground
+   * here (brand-charter §5.1): the globe is the page's *subject*, filling the
+   * opening band, and pinned to night it read as a hole punched through a
+   * parchment page. It follows the reader's own choice instead — which is what
+   * the engine deleted in ETNI-1360 did, and what the consolidation dropped on
+   * the way across.
+   *
+   * Parchment before next-themes has answered, deliberately: it is the site's
+   * ground, so guessing it costs nothing on a light page and spares every
+   * other reader a black band that repaints one frame later.
+   */
+  const { resolvedTheme } = useTheme();
+  const surface: GlobeSurface =
+    resolvedTheme === "dark" ? "night" : "parchment";
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setWebglSupported(canCreateWebglContext());
@@ -76,6 +94,7 @@ export function ContinentGlobeStage({
       {webglSupported !== null && (
         <AtlasGlobe
           overlay={overlay}
+          surface={surface}
           probedWebglSupport={webglSupported}
           pinnedProjection={pinnedProjection}
           pinnedProjectionNote={pinnedProjectionNote}
