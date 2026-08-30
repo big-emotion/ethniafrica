@@ -196,16 +196,29 @@ on an accent tint measures 2.28:1 to 3.09:1 and fails AA.
 turns on the doctrine that **a component never names an accent** — it reads
 `var(--accent)`, and a page-level `.afh-accent-*` wrapper resolves it.
 
-That doctrine is not what the site does. Measured at 1440 px, `/fr`,
-`/fr/explorer`, `/fr/explorer/peuples`, `/fr/comprendre`, `/fr/jouer`,
-`/fr/about`, `/fr/mentions-legales` and both fiches sampled each carry
-**three or four** `.afh-accent-*` wrappers simultaneously. There is no page
-with a dominant accent, so nothing about a page's colour tells a reader where
-they are.
+That doctrine is **already met almost everywhere**, which a first count of
+`.afh-accent-*` wrappers hid. Three of the wrappers on any route are the
+masthead's own axis buttons — a legend in the chrome, not the page speaking:
 
-Worse, the same hue teaches two contradictory lessons within one scroll of the
-home: the masthead paints `Comprendre` teal, and forty lines down a `PAYS` chip
-and the "Trois pays" section are teal too.
+| Route                                           | wrappers | masthead | the page's own |
+| ----------------------------------------------- | -------- | -------- | -------------- |
+| `/fr/mentions-legales`                          | 3        | 3        | **0**          |
+| `/fr/explorer` · `/fr/comprendre` · `/fr/jouer` | 4        | 3        | 1, its axis    |
+| `/fr/explorer/peuples`, and both fiches sampled | 5        | 3        | 2              |
+| **`/fr`**                                       | **13**   | 3        | **10**         |
+
+So the rule holds on every surface but the home, and the home's ten are not
+arbitrary either: the purpose rows carry the entity mapping (pays → teal,
+peuple → ocre, famille → terre) and the axis cards carry the axis mapping
+(Explorer → ocre, Comprendre → teal, Jouer → perv).
+
+What is wrong is that both are true at once. **The same hue teaches two
+lessons within one scroll**: the masthead paints `Comprendre` teal, and forty
+lines down a `PAYS` chip and the "Trois pays" section are teal too. A reader
+cannot learn a code that means two things on one page.
+
+That is a decision about what a hue means, not a defect to patch — and it is
+the one open question this section leaves.
 
 **The rule.** _A page has one accent._ The `.afh-accent-*` wrapper is set once,
 at the page level, and it is the axis's or the entity's colour. A nested
@@ -218,21 +231,29 @@ decoration.
 
 ### 5.3 The gradient is brand, so it is a token and it has a scope
 
-`--gradient-warm: linear-gradient(135deg, hsl(18 70% 52%), hsl(42 88% 58%))`
-paints the masthead tagline on every page and, through `.page-title-gradient`,
-the `h1` of all three axis hubs. Neither stop exists in the `--afh-*` palette.
-The most visible colour in the product is outside the design system.
+The warm gradient paints the masthead tagline on every page and, through
+`.page-title-gradient`, the `h1` of each axis hub and of the search page. It is
+the most visible colour in the product, and neither of its stops was a token:
+both lived as raw HSL in `index.css`, outside the palette that governs every
+other colour.
 
-It also makes those three `h1`s `color: transparent`, so a hub title depends on
-`background-clip: text` to be visible at all.
+**The rule.** The gradient is a **token**: `--afh-gradient-brand`, composed from
+`--afh-brand-flame` and `--afh-brand-gold`. Those two are **mark colours, not
+accents** — no surface takes them, no component reads them, only the gradient
+does. `--gradient-warm` aliases it, because callers already read that name.
 
-**The rule.** The warm gradient is a **brand mark treatment**, not a text
-style. It is a token (`--afh-gradient-brand`) whose stops are `--afh-*`
-primitives, and it is permitted on exactly two things: the masthead lockup, and
-a brand mark on a share card. A page title takes `--afh-text`. Where a hub
-title needs to carry its axis, it carries it in the eyebrow above it, in that
-axis's `--accent-ink` — which is the device the whole site already uses, and
-which the masthead's own coloured dots already taught the reader on the way in.
+**Where it is allowed.** The masthead lockup, a brand mark on a share card, and
+**the title of a page that names an axis rather than a subject**. That last one
+is a real distinction and worth keeping: `Explorer`, `Comprendre`, `Jouer` and
+`Recherche` name parts of the apparatus; `!Kung` and `Afrique du Sud` name
+things in the world. A fiche title takes `--afh-text`.
+
+An earlier draft of this section claimed the treatment was fragile, because it
+sets `color: transparent`. **It is not.** The declaration sits inside
+`@supports ((background-clip: text) or (-webkit-background-clip: text))`, the
+element carries no hard-coded transparency of its own, and
+`PageLayout.test.tsx` asserts exactly that. A browser without the feature gets a
+plain title, which is the correct fallback and was built deliberately.
 
 ### 5.4 A primary action has one colour
 
@@ -255,11 +276,13 @@ be taken needs a different first screen, not a greyed button.
 
 **The display weight the charter names cannot be rendered.** It files every
 heading role under "display 600", and `src/app/layout.tsx` loads Fraunces at
-`300, 500, 700, 900`. A 600 request resolves to 700. Meanwhile production
-paints display headings at four different weights — 600 (`section-heading.css`),
-700 (`hero.css`), 800 (`people-tokens.css`), 900 (`HomeHero`, `AccessAxes`,
-`fiche-parchment.css`, `country-tokens.css`) — of which 600 and 800 are not
-loaded and silently round to 700 and 900.
+`300, 500, 700, 900`. A 600 request resolves to 700, silently.
+
+Counted rather than assumed, the spread was smaller than it looked: **two**
+declarations asked for 600 — `section-heading.css` and `DidYouKnow`'s motif
+glyph — and everything else already sat on 700 or 900. There was never an 800
+on the display family: `people-tokens.css` sets 800 on `.people-section-label`,
+which inherits the **body** face, and Nunito Sans is loaded at 800.
 
 **The rule.** Two display weights, both loaded, both meaning something:
 **700** for every heading role, **900** for the page's own `h1` and for a key
@@ -281,9 +304,23 @@ sections read as one document, and it is the axis with the least governance in
 the repo today.
 
 `--afh-section-gap` (24 / 32 / 48 px) is declared in `space.css`, documented in
-`Spacing.mdx` — and consumed by **zero** components. Every section therefore
-sets its own gap, and the page's cadence is the accident of what each component
-happened to choose.
+`Spacing.mdx` — and consumed by **zero** components.
+
+That does not mean the page is arrhythmic, which an earlier draft of this
+section claimed. Measured on the rendered home, the bands **abut**: there is no
+gap at all, and the cadence between two of them is the previous one's bottom
+padding plus the next one's top.
+
+| width   | cadence between the six bands  |
+| ------- | ------------------------------ |
+| 430 px  | 44 · 70 · 68 · 68 · 74 · 60    |
+| 1440 px | 64 · 96 · 108 · 108 · 100 · 78 |
+
+So it is near-regular in the middle and hand-kept at both ends, at roughly 68
+and 104 — and nowhere near the token's 24 / 32 / 48. **Wiring the token would
+move the most visited page in the product rather than describe it**, which is
+why `space.css` now records both rows beside it instead. Reconciling them is a
+design decision, and those are the numbers it needs.
 
 The scale it would draw from cannot help either. `space.css` names seventeen
 steps, eleven of them between 4 px and 24 px, at 2 px apart: `4, 6, 8, 10, 12,
@@ -315,18 +352,37 @@ Below 768 px `src/styles/mobile-text.css` centres text site-wide. The rule was
 written for a band of one or two lines; it now lands on layouts built
 left-aligned, and it is the single largest source of visual damage on a phone:
 
-- every facet card sets its name left, its gloss centred and its metadata left
-  — three alignments, twenty times down one listing;
-- each home axis card puts its icon left, its title and copy centred and its
-  action link left;
-- the Comprendre hub's question spine draws its connector down the left margin
-  beside centred questions, so the graphic attaches to nothing.
+| page           | centred paragraphs over two lines |
+| -------------- | --------------------------------- |
+| a people fiche | **29**, the longest 21 lines      |
+| the home       | 12                                |
+| search         | 9                                 |
+
+**And the mechanism is not what it looks like.** A facet card reads as though
+it carried three alignments — name flush left, gloss centred, metadata flush
+left, twenty times down one listing. Measured, every element in it computes
+`center`. Nothing declares three. What produces three is that alignment only
+shows on a box **wider than its text**: the full-width gloss centres, while the
+shrink-to-fit heading (49 px) and metadata (30 px) sit at the left edge.
+
+**One declaration produced three alignments, which is worse than three
+declarations** — there was nothing to grep for, and no rule to point at.
 
 **The rule.** Alignment is a property of a block, not of a viewport. A block is
 centred or it is ragged-right, and every element inside it — eyebrow, title,
 prose, metadata, action — obeys that one choice. **Running prose of more than
 two lines is never centred**: a centred paragraph gives the eye no return edge,
 and this is a site made of paragraphs.
+
+The phone keeps the composed-page default on **headings**, which is what
+`mobile-text.css` argues for and argues well. Centred titles over ragged-right
+prose is the composition it gets. Two corollaries the first pass missed:
+
+- `dt` travels with `dd`, not with the headings. A definition list is one
+  block, and splitting the pair put « Population » in the middle of the search
+  card with « 48 482 000 » under it at the left edge.
+- A block carrying `text-center` made a **decision**, not an inheritance, and
+  keeps it. Only the body-level default is overridden.
 
 ### 8.2 A band's height is earned by what is in it
 
