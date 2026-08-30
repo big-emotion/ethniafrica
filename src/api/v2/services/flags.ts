@@ -160,7 +160,7 @@ export async function createFlag(
       proposed_rewrite: input.proposed_rewrite ?? null,
       contributor_id: contributorId,
       status: "open",
-      turnstile_token_verified: true,
+      human_verified: true,
     })
     .select("id, public_slug, status, created_at")
     .single();

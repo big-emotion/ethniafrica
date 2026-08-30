@@ -168,7 +168,7 @@ describe("createFlag", () => {
       proposed_rewrite: "Replace the figure with the 2025 census total.",
       contributor_id: "user-123",
       status: "open",
-      turnstile_token_verified: true,
+      human_verified: true,
     });
     expect(query.select).toHaveBeenCalledWith(
       "id, public_slug, status, created_at"

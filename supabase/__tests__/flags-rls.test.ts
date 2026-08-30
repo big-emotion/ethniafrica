@@ -122,7 +122,7 @@ function entityFlag(
     flag_kind: "inaccurate",
     reason_text: "ETNI-54 integration test flag",
     contributor_id: null,
-    turnstile_token_verified: false,
+    human_verified: false,
     status: "open",
     ...extra,
   };
@@ -191,7 +191,7 @@ describe.skipIf(SKIP)(
     it("T2: anon INSERT is rejected by RLS", async () => {
       const { data, error } = await anonClient()
         .from("flags")
-        .insert(entityFlag({ turnstile_token_verified: true }))
+        .insert(entityFlag({ human_verified: true }))
         .select("id")
         .single();
 
@@ -217,7 +217,7 @@ describe.skipIf(SKIP)(
         .insert(
           entityFlag({
             contributor_id: wrongContributorId,
-            turnstile_token_verified: true,
+            human_verified: true,
           })
         )
         .select("id")
