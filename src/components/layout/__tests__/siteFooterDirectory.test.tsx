@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { getTranslation } from "@/lib/translations";
-import { PRODUCT_NAME } from "@/lib/brand";
+import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 
 vi.mock("@/hooks/use-consent", () => ({
@@ -158,5 +158,85 @@ describe("the legal line — two rows, centred (REQ-046)", () => {
 
     expect(screen.getByTestId("footer-links")).toHaveClass("justify-center");
     expect(screen.getByTestId("footer-baseline")).toHaveClass("justify-center");
+  });
+});
+
+/**
+ * The directory read as a mark stranded on the left and three rubrics bunched
+ * against the right, because the rubrics sat inside a wrapper of their own:
+ * `justify-between` was spreading two children, not four, so the whole gap
+ * fell in one place. Flattening the wrapper is the entire fix — the four
+ * blocks then space themselves across the shell, which is how the reference
+ * footer this was modelled on distributes its own columns.
+ *
+ * The sizes follow from that width: a directory given the full measure can
+ * afford the display face at the h1 role for the rubric a reader is scanning
+ * for, and the lead role for the links under it. At `small` the whole étage
+ * read as fine print, which is the opposite of what a directory is for.
+ */
+describe("the directory takes the full measure (REQ-046)", () => {
+  // @req REQ-046
+  it("spreads the mark and the three rubrics as one row of siblings", () => {
+    render(<SiteFooter language="fr" />);
+
+    const directory = screen.getByTestId("footer-directory");
+
+    expect(Array.from(directory.children)).toHaveLength(4);
+    expect(directory.children[0]).toBe(screen.getByTestId("footer-brand"));
+    expect(directory).toHaveClass("md:justify-between");
+  });
+
+  // @req REQ-046
+  it("sets each rubric heading in the display face, above its links", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+    const heading = within(explorer).getByText(
+      footer.directory.explorerHeading
+    );
+
+    expect(heading).toHaveClass("font-afh-display", "text-afh-h1");
+    expect(explorer.querySelector("ul")).toHaveClass("text-afh-lead");
+  });
+});
+
+/**
+ * The mark was a 44px favicon beside a name, saying only which site this is —
+ * something the masthead 8000 pixels above already said. What it never said is
+ * what the site *is*. The qualifier the masthead carries belongs here too, at
+ * the one size in the page where there is room for it, in the spectrum the
+ * mark is drawn in rather than a flat ink.
+ */
+describe("the footer mark names what the atlas is (REQ-046)", () => {
+  // @req REQ-046
+  it("carries the qualifier under the product name", () => {
+    render(<SiteFooter language="fr" />);
+
+    const brand = screen.getByTestId("footer-brand");
+
+    expect(brand).toHaveTextContent(PRODUCT_NAME);
+    expect(brand).toHaveTextContent(PRODUCT_TAGLINE);
+  });
+
+  // @req REQ-046
+  it("sets the qualifier in the brand spectrum, not in flat ink", () => {
+    render(<SiteFooter language="fr" />);
+
+    expect(screen.getByTestId("footer-tagline")).toHaveClass(
+      "afh-brand-spectrum"
+    );
+  });
+
+  // @req REQ-046
+  it("draws the mark large enough to read as a continent", () => {
+    render(<SiteFooter language="fr" />);
+
+    const mark = within(screen.getByTestId("footer-brand")).getByRole(
+      "presentation"
+    );
+
+    expect(mark).toHaveClass("h-20", "w-20");
   });
 });
