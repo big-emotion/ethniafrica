@@ -54,7 +54,6 @@ export interface PeopleDetailViewV2Props {
    * configured — the section renders the disabled placeholder instead, the
    * same way the country fiche does.
    */
-  turnstileSiteKey?: string;
 }
 
 /**
@@ -99,7 +98,6 @@ export function PeopleDetailViewV2({
   fragmentation = null,
   hasSourceFlag = false,
   relations = [],
-  turnstileSiteKey,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
   const distribution = people.demography?.distributionByCountry;
@@ -202,7 +200,6 @@ export function PeopleDetailViewV2({
               id: people.id,
               fieldPath: "culture",
             }}
-            turnstileSiteKey={turnstileSiteKey}
             triggerLabel="Signaler cette section"
             className="w-auto text-afh-caption"
           />

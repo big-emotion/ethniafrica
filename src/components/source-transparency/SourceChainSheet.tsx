@@ -74,7 +74,6 @@ export type SourceChainSheetProps = {
    * Component. Required together with `assertion.id` to enable the live
    * FlagTarget wiring — otherwise the disabled placeholder is kept.
    */
-  turnstileSiteKey?: string;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -269,13 +268,7 @@ export function formatBrokenDate(iso: string): string {
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function SourceItem({
-  source,
-  turnstileSiteKey,
-}: {
-  source: Source;
-  turnstileSiteKey?: string;
-}) {
+function SourceItem({ source }: { source: Source }) {
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -338,7 +331,6 @@ function SourceItem({
             id: source.id,
             snapshotQuote: source.citation,
           }}
-          turnstileSiteKey={turnstileSiteKey}
           triggerLabel="Signaler cette source"
           className="w-auto text-afh-caption"
         />
@@ -347,15 +339,7 @@ function SourceItem({
   );
 }
 
-function TierGroup({
-  tier,
-  sources,
-  turnstileSiteKey,
-}: {
-  tier: SourceTier;
-  sources: Source[];
-  turnstileSiteKey?: string;
-}) {
+function TierGroup({ tier, sources }: { tier: SourceTier; sources: Source[] }) {
   if (sources.length === 0) return null;
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
@@ -364,34 +348,19 @@ function TierGroup({
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
-          <SourceItem
-            key={s.id}
-            source={s}
-            turnstileSiteKey={turnstileSiteKey}
-          />
+          <SourceItem key={s.id} source={s} />
         ))}
       </ul>
     </div>
   );
 }
 
-function SourceList({
-  sources,
-  turnstileSiteKey,
-}: {
-  sources: Source[];
-  turnstileSiteKey?: string;
-}) {
+function SourceList({ sources }: { sources: Source[] }) {
   const grouped = groupByTier(sources);
   return (
     <div className="space-y-4">
       {TIER_ORDER.map((tier) => (
-        <TierGroup
-          key={tier}
-          tier={tier}
-          sources={grouped[tier]}
-          turnstileSiteKey={turnstileSiteKey}
-        />
+        <TierGroup key={tier} tier={tier} sources={grouped[tier]} />
       ))}
     </div>
   );
@@ -410,7 +379,6 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
   openFlagCount = 0,
   revisionUrl,
   anchorId,
-  turnstileSiteKey,
 }) => {
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
@@ -529,15 +497,12 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   <p className="text-afh-caption font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
-                  <SourceList
-                    sources={pg.sources}
-                    turnstileSiteKey={turnstileSiteKey}
-                  />
+                  <SourceList sources={pg.sources} />
                 </div>
               ))}
             </div>
           ) : (
-            <SourceList sources={sources} turnstileSiteKey={turnstileSiteKey} />
+            <SourceList sources={sources} />
           )}
         </section>
 
@@ -567,7 +532,6 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                 fieldPath: assertion.fieldPath,
                 snapshotQuote: assertion.statement,
               }}
-              turnstileSiteKey={turnstileSiteKey}
               triggerLabel="Signaler un problème"
             />
           ) : null}

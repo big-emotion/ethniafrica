@@ -24,7 +24,8 @@ import {
   type ApiEnvelope,
   type ApiError,
 } from "@/api/v2/utils/response";
-import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { verifyAntibotProof } from "@/lib/api/antibot";
+import type { Proof } from "@/lib/antibot/proofOfWork";
 import {
   checkFlagRateLimit,
   type FlagRateLimitResult,
@@ -50,6 +51,14 @@ const FLAG_STATUSES = [
 
 const trimmedRequiredString = z.string().trim().min(1);
 
+/**
+ * Nobody reads a fiche, finds an error and describes it in under three
+ * seconds. Generous on purpose: the cost of refusing a real reader is far
+ * higher than the cost of letting one fast bot through to the proof of work,
+ * which will charge it anyway.
+ */
+const MIN_DWELL_MS = 3_000;
+
 const flagCreateSchema = z.object({
   target_type: trimmedRequiredString,
   target_id: trimmedRequiredString,
@@ -59,7 +68,17 @@ const flagCreateSchema = z.object({
   counter_source_url: z.string().trim().url().optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
   proposed_rewrite: z.string().trim().max(5000).optional(),
-  turnstile_token: trimmedRequiredString,
+  antibot: z.object({
+    salt: trimmedRequiredString,
+    nonce: trimmedRequiredString,
+    difficultyBits: z.number().int().positive(),
+    expiresAt: z.number().int().positive(),
+    signature: trimmedRequiredString,
+  }),
+  /** Hidden field. A human never fills it; a naive bot fills everything. */
+  website: z.string().max(0).optional(),
+  /** Milliseconds the form was open. Instant submissions are not readers. */
+  elapsedMs: z.number().int().nonnegative().optional(),
 });
 
 const flagListSchema = z.object({
@@ -74,17 +93,14 @@ const flagDetailSchema = z.object({
   identifier: trimmedRequiredString,
 });
 
-type TurnstileVerificationResult = "verified" | "rejected" | "unavailable";
+type AntibotVerdict = "verified" | "rejected" | "unavailable";
 
 export interface FlagHandlerDependencies {
   getAuthenticatedContributor: (
     accessToken: string
   ) => Promise<{ id: string } | null>;
   getAgeConfirmedAt: (contributorId: string) => Promise<string | null>;
-  verifyTurnstileToken: (
-    token: string,
-    clientIp?: string
-  ) => Promise<TurnstileVerificationResult>;
+  verifyAntibotProof: (proof: Proof) => Promise<AntibotVerdict>;
   checkFlagRateLimit: (contributorId: string) => Promise<FlagRateLimitResult>;
   createFlag: (
     contributorId: string | null,
@@ -126,7 +142,7 @@ export interface FlagHandlerResult<T> {
 const defaultDependencies: FlagHandlerDependencies = {
   getAuthenticatedContributor,
   getAgeConfirmedAt,
-  verifyTurnstileToken,
+  verifyAntibotProof,
   checkFlagRateLimit,
   createFlag,
   listFlags,
@@ -199,7 +215,7 @@ export async function handleFlagCreate(
    *
    * A report is a message *about* the corpus, not a signed contribution *to*
    * it, so it does not carry the CC-BY-SA consent that publishing a name
-   * does. Turnstile, verified below, is the control. See
+   * does. The proof of work verified below is the control. See
    * `docs/design/moderation-charter.md` §2.
    *
    * Attribution needs both a resolvable session and a confirmed age: the
@@ -217,7 +233,23 @@ export async function handleFlagCreate(
       ? contributor.id
       : null;
 
-  const { turnstile_token } = parsed.data;
+  /**
+   * The two free filters, before the proof of work is even looked at.
+   *
+   * A filled honeypot or an instant submission is a bot, and answering it the
+   * same way a failed proof is answered tells it nothing about which of its
+   * mistakes gave it away.
+   */
+  if (
+    parsed.data.website ||
+    (parsed.data.elapsedMs ?? Infinity) < MIN_DWELL_MS
+  ) {
+    return {
+      status: 403,
+      body: errorResponse("UNAUTHORIZED", "vérification anti-robot échouée"),
+    };
+  }
+
   const flagInput: FlagCreateInput = {
     target_type: parsed.data.target_type,
     target_id: parsed.data.target_id,
@@ -228,19 +260,22 @@ export async function handleFlagCreate(
     counter_source_citation: parsed.data.counter_source_citation,
     proposed_rewrite: parsed.data.proposed_rewrite,
   };
-  const turnstileResult = await dependencies.verifyTurnstileToken(
-    turnstile_token,
-    context.clientIp
+  // The cast is the price of `strictNullChecks: false`: zod infers every
+  // property of a parsed object as optional, so a schema that guarantees these
+  // five fields still types them as maybe-absent. Validation above is the real
+  // guarantee.
+  const verdict = await dependencies.verifyAntibotProof(
+    parsed.data.antibot as Proof
   );
 
-  if (turnstileResult === "rejected") {
+  if (verdict === "rejected") {
     return {
       status: 403,
       body: errorResponse("UNAUTHORIZED", "vérification anti-bot échouée"),
     };
   }
 
-  if (turnstileResult === "unavailable") {
+  if (verdict === "unavailable") {
     return {
       status: 503,
       body: errorResponse(

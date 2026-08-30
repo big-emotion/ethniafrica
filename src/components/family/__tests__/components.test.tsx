@@ -346,25 +346,8 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
 
   // @req REQ-012 (AC5)
-  it("renders a live report control on the History section, with no prop", () => {
-    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
-
+  it("renders a live report control on the History section", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
-
-    const flagTarget = screen.getByTestId("section-flag-target-history");
-    expect(
-      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
-    ).toBeEnabled();
-  });
-
-  // @req REQ-012 (AC5)
-  it("wires the live fiche_section FlagTarget on the History section when turnstileSiteKey is provided", () => {
-    render(
-      <LanguageFamilyDetailViewV2
-        family={completeFamily}
-        turnstileSiteKey="test-site-key"
-      />
-    );
 
     const flagTarget = screen.getByTestId("section-flag-target-history");
     expect(

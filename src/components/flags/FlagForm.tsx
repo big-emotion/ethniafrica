@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
 
 export type FlagKind =
   | "inaccurate"
@@ -44,7 +45,11 @@ export interface FlagSubmissionPayload {
   counter_source_url?: string;
   counter_source_citation?: string;
   proposed_rewrite?: string;
-  turnstile_token: string;
+  antibot: AntibotProof;
+  /** Always empty. Present so a bot that fills every field gives itself away. */
+  website?: string;
+  /** How long the form was open. A submission in under three seconds is not a reader. */
+  elapsedMs?: number;
 }
 
 export interface FlagFormProps {
@@ -53,10 +58,16 @@ export interface FlagFormProps {
     payload: FlagSubmissionPayload
   ) => Promise<{ public_slug: string }>;
   onCancel: () => void;
-  renderTurnstile?: (callbacks: {
-    onVerify: (token: string) => void;
-    onError: () => void;
-    onExpire: () => void;
+  /**
+   * The anti-bot control, injected rather than imported.
+   *
+   * The form has never known which control it renders — it was a render prop
+   * under Turnstile too, which is why replacing Cloudflare cost this file a
+   * type and not a rewrite.
+   */
+  renderVerification?: (callbacks: {
+    onSolved: (proof: AntibotProof) => void;
+    onFailed: () => void;
   }) => ReactNode;
 }
 
@@ -155,7 +166,7 @@ export function FlagForm({
   target,
   onSubmit,
   onCancel,
-  renderTurnstile,
+  renderVerification,
 }: FlagFormProps) {
   const idPrefix = useId();
   const [counterSourceUrl, setCounterSourceUrl] = useState("");
@@ -163,12 +174,14 @@ export function FlagForm({
   const [proposedRewrite, setProposedRewrite] = useState("");
   const [reason, setReason] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const [turnstileError, setTurnstileError] = useState("");
+  const [proof, setProof] = useState<AntibotProof | null>(null);
+  const [verificationError, setVerificationError] = useState("");
+  // Set once, when the form mounts: the reader opened it now, and how long
+  // they take from here is the signal.
+  const [openedAt] = useState(() => Date.now());
   const [submissionError, setSubmissionError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [publicSlug, setPublicSlug] = useState("");
-  const [turnstileAttempt, setTurnstileAttempt] = useState(0);
 
   const sourceRequirementId = `${idPrefix}-sources-requirement`;
   const sourcesErrorId = `${idPrefix}-sources-error`;
@@ -183,7 +196,7 @@ export function FlagForm({
   const reasonCounterId = `${idPrefix}-reason-counter`;
   const reasonErrorId = `${idPrefix}-reason-error`;
   const turnstileHeadingId = `${idPrefix}-turnstile-heading`;
-  const turnstileErrorId = `${idPrefix}-turnstile-error`;
+  const verificationErrorId = `${idPrefix}-verification-error`;
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -195,11 +208,14 @@ export function FlagForm({
     });
     setErrors(nextErrors);
 
-    if (!turnstileToken) {
-      setTurnstileError(turnstileError || "Validez le contrôle anti-robot.");
+    if (!proof) {
+      setVerificationError(
+        verificationError ||
+          "La vérification anti-robot n'est pas terminée. Patientez un instant."
+      );
     }
 
-    if (Object.keys(nextErrors).length > 0 || !turnstileToken) {
+    if (Object.keys(nextErrors).length > 0 || !proof) {
       return;
     }
 
@@ -228,13 +244,22 @@ export function FlagForm({
         ...(proposedRewrite.trim()
           ? { proposed_rewrite: proposedRewrite.trim() }
           : {}),
-        turnstile_token: turnstileToken,
+        antibot: proof,
+        website: "",
+        elapsedMs: Date.now() - openedAt,
       });
       setPublicSlug(result.public_slug);
     } catch {
-      setTurnstileToken("");
-      setTurnstileError("Validez de nouveau le contrôle anti-robot.");
-      setTurnstileAttempt((attempt) => attempt + 1);
+      // The thrown message is not shown. It may be a transport failure in
+      // English ("Network unavailable"), and a reporter can act on none of it
+      // — the moderation queue is where an API's own words belong, because a
+      // moderator can.
+      //
+      // The proof is cleared because it may well be spent: the server consumes
+      // the salt before it can fail on anything downstream. Clearing it means
+      // a second click cannot silently resubmit against a burnt challenge —
+      // the reader is told to reload, and reloading is what actually works.
+      setProof(null);
       setSubmissionError("L’envoi du signalement a échoué. Réessayez.");
     } finally {
       setIsSubmitting(false);
@@ -495,49 +520,54 @@ export function FlagForm({
         </Button>
       </div>
 
+      <div aria-hidden="true" hidden>
+        <label htmlFor={`${idPrefix}-website`}>
+          Ne remplissez pas ce champ
+        </label>
+        <input
+          autoComplete="off"
+          id={`${idPrefix}-website`}
+          name="website"
+          tabIndex={-1}
+          type="text"
+        />
+      </div>
+
       <section
-        aria-describedby={turnstileError ? turnstileErrorId : undefined}
+        aria-describedby={verificationError ? verificationErrorId : undefined}
         aria-labelledby={turnstileHeadingId}
         className="space-y-afh-md"
       >
         <h3 className="text-afh-body font-semibold" id={turnstileHeadingId}>
           Vérification anti-robot
         </h3>
-        {renderTurnstile ? (
-          <div key={turnstileAttempt}>
-            {renderTurnstile({
-              onVerify: (token) => {
-                setTurnstileToken(token);
-                setTurnstileError("");
-              },
-              onError: () => {
-                setTurnstileToken("");
-                setTurnstileError(
-                  "Le contrôle anti-robot a échoué. Réessayez."
-                );
-                setTurnstileAttempt((attempt) => attempt + 1);
-              },
-              onExpire: () => {
-                setTurnstileToken("");
-                setTurnstileError(
-                  "Le contrôle anti-robot a expiré. Recommencez."
-                );
-                setTurnstileAttempt((attempt) => attempt + 1);
-              },
-            })}
-          </div>
+        {/* Nothing is asked of the reader: the browser pays a small
+            computational cost and reports when it is done. */}
+        {renderVerification ? (
+          renderVerification({
+            onSolved: (solved) => {
+              setProof(solved);
+              setVerificationError("");
+            },
+            onFailed: () => {
+              setProof(null);
+              setVerificationError(
+                "La vérification anti-robot n'a pas abouti. Rechargez la page pour réessayer."
+              );
+            },
+          })
         ) : (
           <p className="text-afh-small text-afh-text-soft">
-            Le contrôle anti-robot sera chargé ici.
+            La vérification anti-robot sera chargée ici.
           </p>
         )}
-        {turnstileError && (
+        {verificationError && (
           <p
             className="text-afh-small text-afh-flag-open"
-            id={turnstileErrorId}
+            id={verificationErrorId}
             role="alert"
           >
-            {turnstileError}
+            {verificationError}
           </p>
         )}
       </section>

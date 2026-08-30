@@ -133,7 +133,13 @@
  *             counter_source_url: https://example.org/census/2024
  *             counter_source_citation: National Statistics Office, 2024 census, table 12.
  *             proposed_rewrite: Update the population figure using the 2024 census.
- *             turnstile_token: 0.ABC123.turnstile-response
+ *             antibot:
+ *               salt: 9f2c1ab4d7e60358
+ *               nonce: "418209"
+ *               difficultyBits: 20
+ *               expiresAt: 1788080000000
+ *               signature: 3b1f…
+ *             elapsedMs: 18400
  *     responses:
  *       201:
  *         description: Flag created successfully.
@@ -189,7 +195,7 @@
  *                     - code: AGE_CONFIRMATION_REQUIRED
  *                       message: Age confirmation required (FR45). Complete your profile at /fr/compte/profil.
  *               unauthorized:
- *                 summary: Cloudflare Turnstile rejected the request
+ *                 summary: The anti-bot proof was missing, invalid or already spent
  *                 value:
  *                   data: null
  *                   meta:

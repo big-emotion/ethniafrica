@@ -45,7 +45,6 @@ export interface CountryRecordViewProps {
   fromPeopleName?: string;
   fromPeopleId?: string;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
-  turnstileSiteKey?: string;
 }
 
 // @req REQ-115
@@ -54,7 +53,6 @@ export function CountryRecordView({
   hasSourceFlag,
   fromPeopleName,
   fromPeopleId,
-  turnstileSiteKey,
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
@@ -98,7 +96,6 @@ export function CountryRecordView({
                 id: country.id,
                 fieldPath: "culture",
               }}
-              turnstileSiteKey={turnstileSiteKey}
               triggerLabel="Signaler cette section"
               className="w-auto text-afh-caption"
             />

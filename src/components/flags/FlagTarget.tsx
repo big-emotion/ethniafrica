@@ -19,7 +19,7 @@ import {
   type FlagFormTarget,
   type FlagSubmissionPayload,
 } from "@/components/flags/FlagForm";
-import { TurnstileWidget } from "@/components/flags/TurnstileWidget";
+import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
 
 declare global {
   interface Window {
@@ -50,36 +50,16 @@ async function currentAccessToken(): Promise<string | null> {
 
 export interface FlagTargetProps {
   target: FlagFormTarget;
-  /**
-   * Optional override. Left out — which is the normal case — the key is read
-   * from the environment, because a Turnstile *site* key is public by
-   * definition and threading it through four page components and a dozen
-   * intermediate props bought nothing but the opportunity to forget one. That
-   * is exactly what happened: every mount site guarded on this prop, and no
-   * page ever supplied it, so every report button in the product was dead.
-   */
-  turnstileSiteKey?: string;
   triggerLabel?: string;
   className?: string;
-}
-
-/**
- * The key must be read as one full literal expression. Next.js inlines public
- * environment variables at build time by textual substitution, so a
- * destructured or computed lookup resolves to undefined in the browser.
- */
-function configuredSiteKey(): string {
-  return process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY ?? "";
 }
 
 // @req REQ-012
 export function FlagTarget({
   target,
-  turnstileSiteKey,
   triggerLabel = "Signaler",
   className,
 }: FlagTargetProps) {
-  const siteKey = turnstileSiteKey?.trim() || configuredSiteKey().trim();
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
@@ -119,14 +99,10 @@ export function FlagTarget({
     return { public_slug: publicSlug };
   }
 
-  // Below every hook, so the hook order is stable across both branches.
-  //
-  // With no key the widget cannot mint a token and the API refuses the
-  // submission, so a control here could only ever fail. It renders nothing
-  // rather than the dashed "bientôt disponible" button that stood here: that
-  // wording promised a feature in progress, when the truth is a value missing
-  // from the deployment.
-  if (!siteKey) return null;
+  // No configuration gate any more. The proof of work needs no public key,
+  // so the control has nothing left to be missing — and the prop that guarded
+  // it, which no page ever supplied, is what kept every report button in the
+  // product dead.
 
   return (
     <>
@@ -157,14 +133,8 @@ export function FlagTarget({
             target={target}
             onSubmit={handleSubmit}
             onCancel={() => setOpen(false)}
-            renderTurnstile={({ onVerify, onError }) => (
-              <TurnstileWidget
-                siteKey={siteKey}
-                onTokenChange={(token) => {
-                  if (token) onVerify(token);
-                  else onError();
-                }}
-              />
+            renderVerification={({ onSolved, onFailed }) => (
+              <ProofOfWorkGate onSolved={onSolved} onFailed={onFailed} />
             )}
           />
         </DialogContent>

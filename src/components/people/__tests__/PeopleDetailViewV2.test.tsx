@@ -189,9 +189,7 @@ describe("PeopleDetailViewV2", () => {
    * away with the surface they described.
    */
   // @req REQ-012
-  it("offers a live report control on the culture section from the configured key", () => {
-    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
-
+  it("offers a live report control on the culture section", () => {
     render(
       <PeopleDetailViewV2
         people={{
@@ -215,7 +213,6 @@ describe("PeopleDetailViewV2", () => {
           ...ewe,
           culture: { spiritualities: "Culte de Mawu" },
         }}
-        turnstileSiteKey="test-site-key"
       />
     );
 

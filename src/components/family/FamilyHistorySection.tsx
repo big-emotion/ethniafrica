@@ -10,7 +10,6 @@ export interface FamilyHistorySectionProps {
   data: FamilyHistoryData;
   familyId: string;
   /** Cloudflare Turnstile public site key, required to enable the live FlagTarget wiring on this heading (AC5). */
-  turnstileSiteKey?: string;
 }
 
 const historyFields = [
@@ -26,7 +25,6 @@ const historyFields = [
 export function FamilyHistorySection({
   data,
   familyId,
-  turnstileSiteKey,
 }: FamilyHistorySectionProps) {
   if (!historyFields.some(([, field]) => Boolean(data[field]))) return null;
 
@@ -52,7 +50,6 @@ export function FamilyHistorySection({
             fieldPath: "history",
             fieldLabel: "Histoire et origines",
           }}
-          turnstileSiteKey={turnstileSiteKey}
           triggerLabel="Signaler cette section"
           className="w-auto text-afh-caption"
         />

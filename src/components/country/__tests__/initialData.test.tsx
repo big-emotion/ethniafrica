@@ -75,66 +75,21 @@ describe("the country dossier with server-provided data", () => {
   /**
    * This assertion used to read "renders a disabled FlagTarget shell by
    * default", and it passed because the feature was dead in every deployment:
-   * the Turnstile key is a *public* site key, but it was declared without the
-   * NEXT_PUBLIC_ prefix, so it could not reach a client component at all — and
-   * no page passed one either. The suite was green because the button was.
+   * the control was guarded on a key no page supplied. The suite was green
+   * because the button was.
    *
-   * The dashed "bientôt disponible" shell was never a product decision. It was
-   * the fallback of a ternary nobody could satisfy.
+   * There is no key to guard on any more — the proof of work needs none — so
+   * the pair of tests that stood here, one for each side of that condition,
+   * collapses into this one.
    */
   // @req REQ-012 (AC5)
-  it("renders a live report control from the configured site key, with no prop", () => {
-    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
-
+  it("renders a live report control on the country Culture section", () => {
     render(
       <CountryRecordView
         country={{
           ...senegal,
           culture: { dominantReligions: "Islam, christianisme" },
         }}
-      />
-    );
-
-    const flagTarget = screen.getByTestId("section-flag-target-culture");
-    expect(
-      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
-    ).toBeEnabled();
-  });
-
-  /**
-   * An unconfigured key cannot produce a Turnstile token, so a submission
-   * would always be refused. Offering a control that cannot succeed is worse
-   * than offering none — and lying about it ("bientôt disponible") is worse
-   * still, since nothing is coming: a value is simply missing from the
-   * deployment.
-   */
-  // @req REQ-012 (AC5)
-  it("renders no report control at all when no site key is configured", () => {
-    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "");
-
-    render(
-      <CountryRecordView
-        country={{
-          ...senegal,
-          culture: { dominantReligions: "Islam, christianisme" },
-        }}
-      />
-    );
-
-    const flagTarget = screen.getByTestId("section-flag-target-culture");
-    expect(within(flagTarget).queryByRole("button")).toBeNull();
-    expect(flagTarget.textContent).not.toMatch(/bientôt disponible/i);
-  });
-
-  // @req REQ-012 (AC5)
-  it("wires the live fiche_section FlagTarget on the country Culture section when turnstileSiteKey is provided", () => {
-    render(
-      <CountryRecordView
-        country={{
-          ...senegal,
-          culture: { dominantReligions: "Islam, christianisme" },
-        }}
-        turnstileSiteKey="test-site-key"
       />
     );
 

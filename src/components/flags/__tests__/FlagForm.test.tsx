@@ -34,7 +34,7 @@ function renderForm(
       target={target}
       onSubmit={onSubmit}
       onCancel={onCancel}
-      renderTurnstile={overrides.renderTurnstile}
+      renderVerification={overrides.renderVerification}
     />
   );
 
@@ -52,7 +52,7 @@ async function submitReport(
   fields: Record<string, string>,
   reason = validReason()
 ) {
-  const view = renderWithTurnstile();
+  const view = renderWithVerification();
 
   fireEvent.change(screen.getByLabelText(REASON_LABEL), {
     target: { value: reason },
@@ -60,7 +60,7 @@ async function submitReport(
   for (const [label, value] of Object.entries(fields)) {
     fireEvent.change(screen.getByLabelText(label), { target: { value } });
   }
-  view.verify("resolved-turnstile-token");
+  view.solve();
   fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
   await waitFor(() => expect(view.onSubmit).toHaveBeenCalled());
@@ -71,28 +71,36 @@ function validReason() {
   return "Cette explication contient assez de détails pour être examinée.";
 }
 
-function renderWithTurnstile(
+/** The solved challenge a real gate would hand back. */
+const SOLVED_PROOF = {
+  salt: "test-salt",
+  nonce: "42",
+  difficultyBits: 8,
+  expiresAt: 4102444800000,
+  signature: "test-signature",
+};
+
+function renderWithVerification(
   overrides: Partial<React.ComponentProps<typeof FlagForm>> = {}
 ) {
-  let verify: (token: string) => void = () => {};
+  let solved: (proof: typeof SOLVED_PROOF) => void = () => {};
   let fail = () => {};
-  let expire = () => {};
 
   const result = renderForm({
-    renderTurnstile: ({ onVerify, onError, onExpire }) => {
-      verify = onVerify;
-      fail = onError;
-      expire = onExpire;
-      return <div data-testid="turnstile-widget">Widget Turnstile</div>;
+    renderVerification: ({ onSolved, onFailed }) => {
+      solved = onSolved;
+      fail = onFailed;
+      return <div data-testid="antibot-gate">Vérification en cours…</div>;
     },
     ...overrides,
   });
 
   return {
     ...result,
-    verify: (token: string) => act(() => verify(token)),
+    // The gate is injected, so the suite plays its part: the browser has
+    // finished paying, here is the proof.
+    solve: () => act(() => solved(SOLVED_PROOF)),
     fail: () => act(() => fail()),
-    expire: () => act(() => expire()),
   };
 }
 
@@ -173,14 +181,14 @@ describe("FlagForm contract and validation", () => {
 
   // @req REQ-012
   it("rejects a non-HTTP counter-source URL", () => {
-    const { onSubmit, verify } = renderWithTurnstile();
+    const { onSubmit, solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     fireEvent.change(screen.getByLabelText("Lien de la contre-source"), {
       target: { value: "ftp://example.org/source" },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -192,14 +200,14 @@ describe("FlagForm contract and validation", () => {
 
   // @req REQ-012
   it("rejects a counter-source citation over 2,000 characters", () => {
-    const { onSubmit, verify } = renderWithTurnstile();
+    const { onSubmit, solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
     fireEvent.change(screen.getByLabelText("Citation de la contre-source"), {
       target: { value: "a".repeat(2001) },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -223,11 +231,11 @@ describe("FlagForm contract and validation", () => {
 
   // @req REQ-012
   it("refuses a description shorter than that", () => {
-    const { onSubmit, verify } = renderWithTurnstile();
+    const { onSubmit, solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: "court" },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -240,10 +248,10 @@ describe("FlagForm contract and validation", () => {
   });
 });
 
-describe("FlagForm submission and Turnstile lifecycle", () => {
+describe("FlagForm submission and anti-bot lifecycle", () => {
   // @req REQ-012
-  it("submits the API-facing payload with the resolved Turnstile token", async () => {
-    const { onSubmit, verify } = renderWithTurnstile();
+  it("submits the API-facing payload with the solved proof", async () => {
+    const { onSubmit, solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: `  ${validReason()}  ` },
     });
@@ -258,7 +266,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
     fireEvent.change(screen.getByLabelText("Citation de la contre-source"), {
       target: { value: "  UNESCO, rapport 2025, p. 42.  " },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -271,13 +279,15 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
       reason_text: validReason(),
       counter_source_citation: "UNESCO, rapport 2025, p. 42.",
       proposed_rewrite: "Une formulation corrigée.",
-      turnstile_token: "resolved-turnstile-token",
+      antibot: SOLVED_PROOF,
+      website: "",
+      elapsedMs: expect.any(Number),
     });
   });
 
   // @req REQ-013
   it("sends nothing from a disclosure the reader emptied again", async () => {
-    const { onSubmit, verify } = renderWithTurnstile();
+    const { onSubmit, solve } = renderWithVerification();
     const rewrite = screen.getByLabelText("Proposition de correction", {
       selector: "textarea",
     });
@@ -286,7 +296,7 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -300,11 +310,11 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
 
   // @req REQ-012
   it("transitions to the French success state with the public permalink", async () => {
-    const { verify } = renderWithTurnstile();
+    const { solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -320,8 +330,8 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
   });
 
   // @req REQ-012
-  it("rejects submission when the Turnstile token is missing", () => {
-    const { onSubmit } = renderWithTurnstile();
+  it("refuses to submit before the verification has finished", () => {
+    const { onSubmit } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
@@ -329,41 +339,33 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
     expect(
-      screen.getByText("Validez le contrôle anti-robot.")
+      screen.getByText(
+        "La vérification anti-robot n'est pas terminée. Patientez un instant."
+      )
     ).toBeInTheDocument();
     expect(onSubmit).not.toHaveBeenCalled();
   });
 
+  /**
+   * Turnstile had two failure modes to clear a token for — an error and an
+   * expiry in the browser. A proof has neither: the deadline is checked
+   * server-side and the reader reloads. One test covers what is left.
+   */
   // @req REQ-012
-  it("clears the token and rejects submission when Turnstile reports a failure", () => {
-    const { fail, onSubmit, verify } = renderWithTurnstile();
+  it("refuses to submit, and says so, when the verification fails", () => {
+    const { fail, onSubmit, solve } = renderWithVerification();
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
-    verify("token-that-must-be-cleared");
+    solve();
     fail();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
     expect(
-      screen.getByText("Le contrôle anti-robot a échoué. Réessayez.")
-    ).toBeInTheDocument();
-    expect(onSubmit).not.toHaveBeenCalled();
-  });
-
-  // @req REQ-012
-  it("clears the token and rejects submission when Turnstile expires", () => {
-    const { expire, onSubmit, verify } = renderWithTurnstile();
-    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
-      target: { value: validReason() },
-    });
-    verify("expired-token");
-    expire();
-
-    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
-
-    expect(
-      screen.getByText("Le contrôle anti-robot a expiré. Recommencez.")
+      screen.getByText(
+        "La vérification anti-robot n'a pas abouti. Rechargez la page pour réessayer."
+      )
     ).toBeInTheDocument();
     expect(onSubmit).not.toHaveBeenCalled();
   });
@@ -373,11 +375,11 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
     const onSubmit = vi
       .fn()
       .mockRejectedValue(new Error("Network unavailable"));
-    const { verify } = renderWithTurnstile({ onSubmit });
+    const { solve } = renderWithVerification({ onSubmit });
     fireEvent.change(screen.getByLabelText(REASON_LABEL), {
       target: { value: validReason() },
     });
-    verify("resolved-turnstile-token");
+    solve();
 
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
 
@@ -389,7 +391,8 @@ describe("FlagForm submission and Turnstile lifecycle", () => {
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
     expect(onSubmit).toHaveBeenCalledOnce();
 
-    verify("fresh-turnstile-token");
+    // A fresh challenge is solved, which is the real recovery path.
+    solve();
     fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
     await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(2));
   });
@@ -459,7 +462,7 @@ describe("FlagForm accessibility and responsive behavior", () => {
   // @req REQ-044
   it("has no axe-core accessibility violations", async () => {
     const { container } = renderForm({
-      renderTurnstile: () => (
+      renderVerification: () => (
         <div aria-label="Contrôle anti-robot" role="group" />
       ),
     });

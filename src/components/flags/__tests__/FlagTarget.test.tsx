@@ -19,13 +19,30 @@ vi.mock("@/hooks/use-consent", () => ({
   useOptionalConsent: vi.fn(),
 }));
 
-vi.mock("@/components/flags/TurnstileWidget", () => ({
-  TurnstileWidget: ({
-    onTokenChange,
+/**
+ * The real gate fetches a challenge and starts a worker; neither belongs in a
+ * suite about what FlagTarget does with a solved proof. It is stood in for by
+ * a button, so the test can say "the browser has finished paying" at the
+ * moment it chooses.
+ */
+vi.mock("@/components/flags/ProofOfWorkGate", () => ({
+  ProofOfWorkGate: ({
+    onSolved,
   }: {
-    onTokenChange: (token: string | null) => void;
+    onSolved: (proof: Record<string, unknown>) => void;
   }) => (
-    <button type="button" onClick={() => onTokenChange("test-turnstile-token")}>
+    <button
+      type="button"
+      onClick={() =>
+        onSolved({
+          salt: "test-salt",
+          nonce: "42",
+          difficultyBits: 8,
+          expiresAt: 4102444800000,
+          signature: "test-signature",
+        })
+      }
+    >
       Valider le contrôle (test)
     </button>
   ),
@@ -82,10 +99,7 @@ const sourceTarget = {
 
 function renderFlagTarget(overrides: Partial<{ target: unknown }> = {}) {
   return render(
-    <FlagTarget
-      target={(overrides.target as never) ?? assertionTarget}
-      turnstileSiteKey="test-site-key"
-    />
+    <FlagTarget target={(overrides.target as never) ?? assertionTarget} />
   );
 }
 

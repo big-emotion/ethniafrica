@@ -40,7 +40,14 @@ function validInput() {
     counter_source_url: "https://example.org/source",
     counter_source_citation: "Example source",
     proposed_rewrite: "Use the latest published estimate.",
-    turnstile_token: "turnstile-token",
+    antibot: {
+      salt: "test-salt",
+      nonce: "42",
+      difficultyBits: 8,
+      expiresAt: 4102444800000,
+      signature: "test-signature",
+    },
+    elapsedMs: 12_000,
   };
 }
 
@@ -48,7 +55,7 @@ function makeDependencies() {
   return {
     getAuthenticatedContributor: vi.fn().mockResolvedValue(contributor),
     getAgeConfirmedAt: vi.fn().mockResolvedValue("2026-01-01T00:00:00.000Z"),
-    verifyTurnstileToken: vi.fn().mockResolvedValue("verified" as const),
+    verifyAntibotProof: vi.fn().mockResolvedValue("verified" as const),
     checkFlagRateLimit: vi.fn().mockResolvedValue({ allowed: true } as const),
     createFlag: vi.fn().mockResolvedValue(createdFlag),
     listFlags: vi.fn().mockResolvedValue({
@@ -73,7 +80,7 @@ describe("flag handlers", () => {
      * An account used to be a precondition of reporting. It bought
      * attribution, follow-up and a weak anti-abuse signal — none of them
      * needed for a first report, all of them charged before the reader had
-     * written a word. Turnstile is the control (charter §2).
+     * written a word. The proof of work is the control (charter §2).
      */
     // @req REQ-012
     it("accepts a report with no access token, recorded anonymously", async () => {
@@ -145,7 +152,7 @@ describe("flag handlers", () => {
           }),
           expect.objectContaining({
             code: "VALIDATION_ERROR",
-            field: "turnstile_token",
+            field: "antibot",
           }),
         ])
       );
@@ -167,7 +174,7 @@ describe("flag handlers", () => {
         { counter_source_citation: "x".repeat(2001) },
       ],
       ["proposed_rewrite", { proposed_rewrite: "x".repeat(5001) }],
-      ["turnstile_token", { turnstile_token: " " }],
+      ["antibot", { antibot: undefined }],
     ])("validates %s", async (field, patch) => {
       const dependencies = makeDependencies();
 
@@ -213,7 +220,7 @@ describe("flag handlers", () => {
       );
 
       expect(result.status).toBe(201);
-      expect(dependencies.verifyTurnstileToken).toHaveBeenCalled();
+      expect(dependencies.verifyAntibotProof).toHaveBeenCalled();
       expect(dependencies.createFlag).toHaveBeenCalledWith(
         null,
         expect.anything()
@@ -242,9 +249,9 @@ describe("flag handlers", () => {
     });
 
     // @req REQ-012
-    it("rejects a failed Turnstile verification without inserting", async () => {
+    it("rejects a failed anti-bot verification without inserting", async () => {
       const dependencies = makeDependencies();
-      dependencies.verifyTurnstileToken.mockResolvedValue("rejected");
+      dependencies.verifyAntibotProof.mockResolvedValue("rejected");
 
       const result = await handleFlagCreate(
         validInput(),
@@ -259,18 +266,17 @@ describe("flag handlers", () => {
           errors: [{ code: "UNAUTHORIZED" }],
         },
       });
-      expect(dependencies.verifyTurnstileToken).toHaveBeenCalledWith(
-        "turnstile-token",
-        "203.0.113.10"
+      expect(dependencies.verifyAntibotProof).toHaveBeenCalledWith(
+        expect.objectContaining({ salt: "test-salt", nonce: "42" })
       );
       expect(dependencies.checkFlagRateLimit).not.toHaveBeenCalled();
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
     // @req REQ-012
-    it("returns unavailable when Turnstile cannot verify without inserting", async () => {
+    it("returns unavailable when the anti-bot control cannot verify, without inserting", async () => {
       const dependencies = makeDependencies();
-      dependencies.verifyTurnstileToken.mockResolvedValue("unavailable");
+      dependencies.verifyAntibotProof.mockResolvedValue("unavailable");
 
       const result = await handleFlagCreate(
         validInput(),

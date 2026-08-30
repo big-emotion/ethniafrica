@@ -25,8 +25,8 @@ vi.mock("@/lib/supabase/auth-server", () => ({
 vi.mock("@/lib/supabase/admin", () => ({
   createAdminClient: vi.fn(),
 }));
-vi.mock("@/lib/api/turnstile", () => ({
-  verifyTurnstileToken: vi.fn(),
+vi.mock("@/lib/api/antibot", () => ({
+  verifyAntibotProof: vi.fn(),
 }));
 vi.mock("@/lib/ratelimit/flagRateLimit", () => ({
   checkFlagRateLimit: vi.fn(),
@@ -35,7 +35,7 @@ vi.mock("@/lib/ratelimit/flagRateLimit", () => ({
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { verifyAntibotProof } from "@/lib/api/antibot";
 import { checkFlagRateLimit } from "@/lib/ratelimit/flagRateLimit";
 import InscriptionPage from "../inscription/page";
 import { GET as callbackGET } from "@/app/api/auth/callback/route";
@@ -197,12 +197,19 @@ describe("POST /api/v2/flags — age gate guard", () => {
     target_id: "PPL_YORUBA",
     flag_kind: "inaccurate",
     reason_text: "The published claim needs a newer source.",
-    turnstile_token: "turnstile-token",
+    antibot: {
+      salt: "test-salt",
+      nonce: "42",
+      difficultyBits: 8,
+      expiresAt: 4102444800000,
+      signature: "test-signature",
+    },
+    elapsedMs: 12_000,
   };
 
   beforeEach(() => {
     vi.clearAllMocks();
-    vi.mocked(verifyTurnstileToken).mockResolvedValue("verified");
+    vi.mocked(verifyAntibotProof).mockResolvedValue("verified");
     vi.mocked(checkFlagRateLimit).mockResolvedValue({ allowed: true });
   });
 
@@ -230,7 +237,7 @@ describe("POST /api/v2/flags — age gate guard", () => {
     );
 
     expect(res.status).toBe(201);
-    expect(verifyTurnstileToken).toHaveBeenCalled();
+    expect(verifyAntibotProof).toHaveBeenCalled();
   });
 
   it("returns 201 when contributor has age_confirmed_at set", async () => {
@@ -250,9 +257,8 @@ describe("POST /api/v2/flags — age gate guard", () => {
     );
 
     expect(res.status).toBe(201);
-    expect(verifyTurnstileToken).toHaveBeenCalledWith(
-      "turnstile-token",
-      undefined
+    expect(verifyAntibotProof).toHaveBeenCalledWith(
+      expect.objectContaining({ salt: "test-salt" })
     );
   });
 });

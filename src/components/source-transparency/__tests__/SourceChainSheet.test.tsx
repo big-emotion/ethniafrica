@@ -143,7 +143,7 @@ describe("SourceChainSheet", () => {
   });
 
   // @req REQ-012
-  it("wires the live FlagTarget when assertion.id and turnstileSiteKey are provided", () => {
+  it("wires the live FlagTarget when the assertion carries an id", () => {
     renderSheet({
       assertion: {
         statement: "Le peuple Seereer est attesté depuis le XIIIe siècle.",
@@ -153,7 +153,6 @@ describe("SourceChainSheet", () => {
         id: "assertion-42",
         fieldPath: "histoire",
       },
-      turnstileSiteKey: "test-site-key",
     });
     const flagTarget = screen.getByTestId("section-flag-target");
     const btn = within(flagTarget).getByRole("button", {
@@ -163,28 +162,12 @@ describe("SourceChainSheet", () => {
   });
 
   // @req REQ-012 (AC6)
-  it("offers a live report control per source from the configured site key", () => {
-    vi.stubEnv("NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY", "test-site-key");
+  it("offers a live report control per source", () => {
     renderSheet();
     const flagTarget = screen.getByTestId("source-flag-target-src-1");
     expect(
       within(flagTarget).getByRole("button", { name: "Signaler cette source" })
     ).toBeEnabled();
-  });
-
-  // @req REQ-012 (AC6)
-  it("wires the live FlagTarget with type 'source' when turnstileSiteKey is provided", () => {
-    renderSheet({
-      sources: [
-        { ...baseSource, citation: "Diop, M. (2021). Atlas linguistique." },
-      ],
-      turnstileSiteKey: "test-site-key",
-    });
-    const flagTarget = screen.getByTestId("source-flag-target-src-1");
-    const btn = within(flagTarget).getByRole("button", {
-      name: "Signaler cette source",
-    });
-    expect(btn).toBeEnabled();
   });
 
   it("renders broken-link sources with line-through URL and a calm badge", () => {

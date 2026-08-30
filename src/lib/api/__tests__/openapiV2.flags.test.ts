@@ -138,7 +138,7 @@ describe("OpenAPI v2 flags contract", () => {
       "target_id",
       "flag_kind",
       "reason_text",
-      "turnstile_token",
+      "antibot",
     ]);
     expect(Object.keys(schemas.FlagCreateInput.properties).sort()).toEqual(
       [
@@ -150,14 +150,15 @@ describe("OpenAPI v2 flags contract", () => {
         "target_field_path",
         "target_id",
         "target_type",
-        "turnstile_token",
+        "antibot",
+        "elapsedMs",
       ].sort()
     );
     expect(schemas.FlagCreateInput.example).toMatchObject({
       target_type: "people",
       target_id: "PPL_YORUBA",
       flag_kind: "inaccurate",
-      turnstile_token: expect.any(String),
+      antibot: expect.objectContaining({ salt: expect.any(String) }),
     });
   });
 
