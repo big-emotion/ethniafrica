@@ -56,8 +56,28 @@ describe("HistoryTimeline", () => {
     expect(colonialItem).toBeTruthy();
   });
 
-  // An era the fiche writes as prose carries no name to strike through or
-  // crown, so it is rendered as the paragraph it is, in full.
+  // A colonial name is shown, never struck. The strike read as a rendering
+  // fault rather than an editorial verdict — the same name sits unstruck in
+  // KingdomsTimeline two blocks above — and it carried no accessible text, so
+  // the nuance existed for sighted readers only. The era colour, the dot and
+  // the gradient still mark the regime.
+  // @req REQ-092
+  it("shows a colonial name without striking it through", () => {
+    const data: TimelineData = {
+      items: [
+        { type: "colonial", era: "1830-1962", name: "Algérie française" },
+      ],
+      gradientStops: { goldEnd: 0, colonialEnd: 100 },
+    };
+
+    render(<HistoryTimeline data={data} />);
+
+    const name = screen.getByText("Algérie française");
+    expect(name.style.textDecoration).toBe("");
+  });
+
+  // An era the fiche writes as prose carries no name to crown, so it is
+  // rendered as the paragraph it is, in full.
   // @req REQ-092
   it("renders an untitled era as its full prose", () => {
     const prose =
@@ -118,6 +138,35 @@ describe("PeoplesSection", () => {
     expect(screen.getByText("52%")).toBeTruthy();
     expect(screen.getByText("Fulani")).toBeTruthy();
     expect(screen.getByText("8%")).toBeTruthy();
+  });
+
+  // The exonym imposed on a people is named, not struck. Same reason as the
+  // colonial name in HistoryTimeline: the strike was an unlabelled decoration
+  // no screen reader conveyed. The warning tint carries the judgement.
+  // @req REQ-092
+  it("names a pejorative exonym without striking it through", () => {
+    const data: PeoplesData = {
+      totalPopulation: 1760000,
+      totalPopulationFormatted: "1.8M",
+      everyPeopleDeclaresPopulation: true,
+      peopleCount: 1,
+      rows: [
+        {
+          name: "Peul",
+          percentage: 8,
+          population: 1760000,
+          populationFormatted: "1.8M",
+          colorIndex: 2,
+          pejorativeTerm: "Fellata",
+        },
+      ],
+    };
+
+    const { container } = render(<PeoplesSection data={data} />);
+
+    const exonym = screen.getByText("Fellata");
+    expect(exonym.className).not.toMatch(/line-through/);
+    expect(container.querySelector(".line-through")).toBeNull();
   });
 
   it("shows demographic bar segments for each row", () => {
