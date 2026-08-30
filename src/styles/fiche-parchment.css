@@ -363,11 +363,18 @@
 }
 
 /* ── Callout ──────────────────────────────────────────────────────────
-   An aside the section cannot say in its own prose: why a total falls
-   short, what a fiche refuses to leave unsaid. A rule in the surface's
-   accent, never a box, so it reads as part of the same document. */
+   An aside the section cannot say in its own prose. A rule in the
+   surface's accent, never a box, so it reads as part of the same
+   document.
+
+   The rule and the glyph are the whole of the signal: the aside used to
+   open on a bold label naming what the fiche was doing ("Ce que la fiche
+   refuse de taire"), which told the reader about the atlas rather than
+   about the country. A marked passage needs no caption. */
 
 .afh-parchment-callout {
+  display: flex;
+  gap: 10px;
   margin-top: 16px;
   padding: 13px 16px;
   border-left: 3px solid var(--accent);
@@ -378,8 +385,15 @@
   color: var(--afh-text-soft);
 }
 
-.afh-parchment-callout b {
-  color: var(--afh-text);
+/* --accent-ink is the accent that clears contrast on the parchment;
+   --accent alone is the fill tone and reads too pale at this size. */
+.afh-parchment-callout-icon {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  /* Optical alignment with the cap-height of the first line, not its box. */
+  margin-top: 4px;
+  color: var(--accent-ink, var(--accent));
 }
 
 /* ── The name borne, the names imposed ────────────────────────────────

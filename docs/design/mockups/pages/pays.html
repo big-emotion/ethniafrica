@@ -128,7 +128,7 @@
       <p class="sec-note" id="peoples-note"></p>
       <div class="bars" id="peoples-bars"></div>
       <div class="note">
-        <b>Pourquoi la somme n'atteint pas 100&nbsp;%.</b> Les huit premiers peuples sont affichés&nbsp;; le reste du corpus tient dans la marge. La règle FR28 exige que la <em>totalité</em> des fiches d'un pays somme dans la bande [99, 101]&nbsp;% — pas les huit premières.
+        <b>Pourquoi la somme n'atteint pas 100&nbsp;%.</b> Les huit premiers peuples sont affichés&nbsp;; le reste de la population se répartit entre les peuples suivants, qui ne tiennent pas dans ce graphique.
       </div>
     </section>
 
@@ -370,8 +370,12 @@ document.getElementById("fh-chips").innerHTML = `
   <span class="state-chip chip-derived"><span class="dot"></span>${CORPUS.countryPeoples[C.id].n} peuples rattachés</span>`;
 
 document.getElementById("etym").textContent = C.etymology;
+/* The accent rule and the glyph are the whole of the signal. A caption
+   naming the fiche's own posture ("Ce que la fiche refuse de taire")
+   addressed the atlas's editors, not the reader of a country. */
+document.getElementById("etym-note").className = "note note-marked";
 document.getElementById("etym-note").innerHTML =
-  `<b>Ce que la fiche refuse de taire.</b> ${C.nameOriginActor}`;
+  `<svg class="note-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>${C.nameOriginActor}</span>`;
 
 document.getElementById("peoples-note").textContent =
   `content.demographics.peoples · ${C.peoples.length} premières entrées sur ${CORPUS.countryPeoples[C.id].n}`;

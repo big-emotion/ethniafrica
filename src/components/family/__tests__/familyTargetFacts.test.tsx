@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 
 const facts = buildFamilyTargetFacts({
-  familyId: "FLG_BENOUECONGO",
   familyNameFr: "Bénoué-Congo",
   memberPeopleCount: 60,
   peopleNamesByCountry: {
@@ -90,9 +89,14 @@ describe("buildFamilyTargetFacts", () => {
   it("offers a way back into the fiche it is quoting", () => {
     renderFacts("NGA");
 
-    expect(
-      screen.getByRole("link", { name: /Lire la fiche complète/i })
-    ).toHaveAttribute("href", "#fiche");
+    const back = screen.getByRole("link", { name: /Lire la fiche complète/i });
+
+    expect(back).toHaveAttribute("href", "#fiche");
+    // The accessible name named the family, then spelled out its corpus key.
+    // A reader hearing "FLG_BENOUECONGO" is being read the database, not the
+    // atlas — the same reason the compact heading stopped printing one.
+    expect(back.getAttribute("aria-label")).toContain("Bénoué-Congo");
+    expect(back.getAttribute("aria-label")).not.toContain("FLG_");
   });
 
   // @req REQ-117
