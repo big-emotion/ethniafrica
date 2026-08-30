@@ -1867,6 +1867,69 @@ describe("AtlasGlobe — when the canvas gives up (REQ-112)", () => {
     );
   });
 
+  /**
+   * The discs are an argument, and a reader is allowed to put it down: the
+   * engine deleted in ETNI-1360 carried a « Pastilles » switch beside its
+   * other tools, and turning them off is how one looks at the continent
+   * rather than at the measurement laid over it.
+   *
+   * Offered only where they are drawn. A fiche has no discs, so the switch
+   * would be a control over nothing.
+   */
+  // @req REQ-112
+  it("offers a switch for the indicatrices where they are drawn", async () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+        showTissot
+      />
+    );
+
+    const toggle = await screen.findByRole("button", { name: "Pastilles" });
+    expect(toggle).toHaveAttribute("aria-pressed", "true");
+  });
+
+  // @req REQ-112
+  it("offers none where they are not drawn", async () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+      />
+    );
+
+    await waitFor(() =>
+      expect(screen.getByTestId("atlas-globe-canvas-mock")).toBeInTheDocument()
+    );
+    expect(
+      screen.queryByRole("button", { name: "Pastilles" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-112
+  it("puts the indicatrices out when the reader presses the switch", async () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+        showTissot
+      />
+    );
+
+    const toggle = await screen.findByRole("button", { name: "Pastilles" });
+    fireEvent.click(toggle);
+
+    expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
+      "data-tissot",
+      "false"
+    );
+    expect(toggle).toHaveAttribute("aria-pressed", "false");
+  });
+
   // @req REQ-112
   it("leaves them off for a caller that says nothing, which is every fiche", async () => {
     render(

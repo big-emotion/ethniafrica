@@ -1120,6 +1120,14 @@ export function AtlasGlobe({
     reducedMotion || !cameraFollowsChoice
   );
 
+  /**
+   * The discs are an argument, and a reader is allowed to put it down and
+   * look at the continent underneath. `showTissot` says whether this stage
+   * draws them at all, and so whether the switch is offered; this says
+   * whether they are lit right now.
+   */
+  const [discsLit, setDiscsLit] = useState(showTissot);
+
   const [readerFlattened, setReaderFlattened] = useState(false);
   // A pin wins outright rather than seeding the reader's state: seeding would
   // let the next `recentre` hand the round's projection back to a control the
@@ -1441,7 +1449,7 @@ export function AtlasGlobe({
           focusedCountryId={chosenCountryId}
           onUnavailable={handleCanvasUnavailable}
           surface={surface}
-          showTissot={showTissot}
+          showTissot={discsLit}
         />
       ) : (
         <AtlasGlobeFallback
@@ -1572,6 +1580,20 @@ export function AtlasGlobe({
               {pinnedProjectionNote}
             </p>
           )
+        )}
+        {/* Offered only where the discs are drawn: on a fiche it would be a
+            switch over nothing. The label is the reader's word for them, and
+            the one the retired engine printed on the same control. */}
+        {showTissot && (
+          <button
+            type="button"
+            aria-pressed={discsLit}
+            onClick={() => setDiscsLit((lit) => !lit)}
+            className={TOOLBAR_BUTTON_CLASS}
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            Pastilles
+          </button>
         )}
         {/* Held together in their own row so the two directions never wrap
             apart on a phone: a lone « + » with its « − » on the line below
