@@ -2,14 +2,33 @@ import type { ReactNode } from "react";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
 
+/**
+ * The one wording for the tier scale, shared by the three fiches so they
+ * cannot drift into three vocabularies for one policy. It replaces
+ * "Rubrique « sources » de la fiche · politique de paliers", whose first half
+ * named the section of the fiche model the sources were read from — an
+ * annotation for whoever builds the fiche, under a heading that already reads
+ * "Sources". The second half named a policy without saying what it was.
+ *
+ * It does not spell the three labels out. Each source row already carries its
+ * own, and a note repeating them would make "Officielle" ambiguous on the page
+ * — the badge and the sentence about badges would answer the same query.
+ *
+ * @req REQ-119
+ */
+export const SOURCE_TIER_NOTE =
+  "Chaque source porte son palier — l'autorité qu'on peut lui accorder.";
+
 export interface FicheSectionProps {
   title: string;
   /**
-   * Where the section's claim comes from, in the reader's own terms.
+   * What the chapter's content rests on, when that is something the title
+   * does not already say: a reference year, a derivation, the tier scale.
    *
-   * Optional because not every section rests on one nameable field. When it
-   * does, saying so is what lets a reader check the claim — the charter's
-   * "declared, derived, or missing" rule applied to a whole chapter.
+   * Not a place to name the section of the fiche model the values were read
+   * from. That names the machinery, and every chapter carried one — the
+   * reader who opened "Royaumes et formations politiques" learnt only that it
+   * came from the "royaumes" rubric.
    */
   note?: string;
   children: ReactNode;

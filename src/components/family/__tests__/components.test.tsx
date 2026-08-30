@@ -124,10 +124,11 @@ describe("LanguageFamilyDetailViewV2", () => {
 
     // The section that reports the gap is the one the parchment opens on, and
     // it is shown precisely because the fields inside it are empty.
+    // The chapter is headed by its subject, not by the atlas's method of
+    // handling it: "Ce que la fiche déclare, ce qu'elle ne déclare pas" named
+    // an editorial procedure above four figures about a linguistic family.
     expect(
-      screen.getByRole("heading", {
-        name: "Ce que la fiche déclare, ce qu'elle ne déclare pas",
-      })
+      screen.getByRole("heading", { name: "La famille en chiffres" })
     ).toBeTruthy();
     expect(
       screen.getByRole("heading", { name: "L'empreinte, et d'où elle vient" })

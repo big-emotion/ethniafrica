@@ -114,9 +114,11 @@ describe("404 state ([lang]/not-found.tsx)", () => {
   });
 
   // @req REQ-099
-  it("still explains the fiche-URL pattern", () => {
+  it("says why the page is missing, and spells out no corpus key", () => {
     const { container } = render(<NotFound />);
-    expect(container.textContent).toMatch(/PPL_|FLG_|\/fr\//);
+
+    expect(container.textContent).toMatch(/pas encore publiée/i);
+    expect(container.textContent).not.toMatch(/PPL_|FLG_/);
   });
 
   // @req REQ-099
