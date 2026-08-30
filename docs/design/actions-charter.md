@@ -151,7 +151,55 @@ them by `actionsCharter.test.tsx`.
 
 ---
 
-## 7. What this charter does not cover
+## 7. A continuous control is not a click
+
+The four shapes above are the four things a **click** may be. A control the
+reader _drags_ is not a fifth shape of click — it is a different gesture — and
+§1's rule still binds it: it may exist only where a distinct thing needs
+saying, and that thing is **"the values between the ends are the point"**.
+
+There is exactly one on the site: the atlas's projection morph bar
+(`AtlasGlobe`, `projectionControl="morph"`), and this is the failure it exists
+to prevent. The home's featured module and `/jouer/mercator` both make one
+claim — a flat map lies about surface area — and the claim is only legible in
+the movement: Tissot's indicatrices swell toward the poles on the plane and
+shrink to a single size on the sphere, so what proves it is watching them do
+that. ETNI-1360 consolidated the two globe engines and replaced the retired
+one's labelled range with a two-state button. Both end states survived; the
+demonstration did not. A reader pressing a button sees a before and an after
+and has to take the middle on trust, which is the one thing this surface was
+built not to ask of them.
+
+So, wherever one is warranted:
+
+- **It takes its own row**, never a slot in a strip of buttons. It needs a
+  width to be draggable at all, and at 430 px a range squeezed between two
+  pills wraps away from its own labels.
+- **Both ends are named, at every width** — §2's rule, for the same reason.
+  An unlabelled range asks the reader to guess which way is which.
+- **It says what it is showing, not what number it is on.** `aria-valuetext`
+  carries the state ("Carte plate", "Projection intermédiaire", "Globe"): a
+  screen reader announcing « 47 » says nothing about a surface, while the
+  sighted reader is getting the shape itself.
+- **A readout states the claim at the position it is in.** Without it the
+  middle of the drag is a shape changing for no stated reason.
+- **Radius `--afh-radius-full` on the track and the thumb**, §6: the thumb is
+  one value among the range's many, which is exactly what the pill says.
+- **The thumb is the touch target**, 24 px, and the row is 44 px. A 4 px track
+  is not something a finger can aim at.
+- **Where it cannot act, it is withdrawn, not disabled.** A range that refuses
+  to move reads as a broken page. `/jouer/mercator` pins the projection while
+  a question stands and replaces the bar with the sentence saying why.
+
+A surface gets the bar **or** the button, never both — two controls over one
+value let a reader flatten the map with one and be told by the other that it
+is round.
+
+Contract: `src/components/atlas/__tests__/projectionMorphBar.test.tsx`.
+
+---
+
+## 8. What this charter does not cover
 
 **Wording.** Whether a label reads "Lire la fiche" or "Découvrir", whether it
 promises what the destination delivers — that is content design, and it is a

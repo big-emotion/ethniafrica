@@ -684,8 +684,15 @@ export interface AtlasGlobeProps {
    * well for the one or few targets a country or people fiche has. "list" is
    * for a family footprint of seventeen countries, where the pastilles overlap
    * into noise and the small ones stop being clickable.
+   *
+   * "none" is for a scene that draws the continent while claiming nothing about
+   * it — the projection surfaces, whose subject is what Mercator does to area.
+   * It withdraws all three ways in at once: the pinned markers, the choice
+   * marks, and the tap on the stage that picks the nearest country. Withdrawing
+   * only the marks would leave the last one, which is invisible until a reader
+   * taps the sphere and lands on a fiche they never aimed at.
    */
-  targetPicker?: "markers" | "list";
+  targetPicker?: "markers" | "list" | "none";
   /**
    * What the reader may choose, when that is wider than what is drawn.
    *
@@ -711,6 +718,21 @@ export interface AtlasGlobeProps {
    * Named rather than a raw 0/1, for the reason camera.ts gives FLAT_MORPH and
    * SPHERE_MORPH their names.
    */
+  /**
+   * Which control the reader is given over the projection.
+   *
+   * "toggle" is the default and what a fiche wants: it shows a people or a
+   * country, makes no claim about area, and the flat map is an aside a reader
+   * may look at. "morph" is for the two surfaces whose whole subject is the
+   * projection — the home's featured module and /jouer/mercator — where the
+   * demonstration *is* the movement: the plane closes into a sphere under the
+   * reader's own hand and every indicatrice shrinks to the same size on the
+   * way. A two-state button skips that, and the middle was the argument.
+   *
+   * Offered only where there is a sphere to morph. On the committed SVG
+   * basemap the bar would move a number nothing reads.
+   */
+  projectionControl?: "toggle" | "morph";
   /**
    * The result of a WebGL probe the caller has already run.
    *
@@ -801,6 +823,61 @@ function globeSurfaceLabel(turns: boolean): string {
  * fiche traces one outline and marks nothing, and promising a point there
  * sends the reader hunting for a target the scene never drew.
  */
+/**
+ * How close to an end the morph has to be before the surface is called by that
+ * end's name. The bar is continuous, but the reader is looking at one of three
+ * things — a plane, a sphere, or a plane in the act of closing — and a surface
+ * 3 % short of round is a globe to every eye that sees it.
+ *
+ * Both ends are still reachable exactly: the bar's own extremes are FLAT_MORPH
+ * and SPHERE_MORPH, and these thresholds only name what is on screen.
+ */
+const NEARLY_FLAT_MORPH = 0.08;
+const NEARLY_SPHERE_MORPH = 0.92;
+
+/**
+ * How many positions the morph bar offers between the plane and the sphere.
+ *
+ * A range input carries integers well and floats badly — a step of 0.01 has
+ * the browser rounding the reader's drag in one direction and this component
+ * in the other — so the bar counts hundredths and divides once on the way in.
+ * Both ends therefore land on FLAT_MORPH and SPHERE_MORPH exactly, which is
+ * what keeps « Recentrer » and the pinned round agreeing with the bar.
+ */
+const MORPH_BAR_STEPS = 100;
+
+/**
+ * The surface, in two words, for the bar's announced value.
+ *
+ * A screen reader saying « 47 » says nothing about a projection. What the
+ * sighted reader gets from the bar is the shape they are watching, so that is
+ * what the value has to carry.
+ */
+function projectionSurfaceName(morph: number): string {
+  if (morph >= NEARLY_SPHERE_MORPH) return "Globe";
+  if (morph <= NEARLY_FLAT_MORPH) return "Carte plate";
+  return "Projection intermédiaire";
+}
+
+/**
+ * What the surface underneath is doing to area, at the position the bar is in.
+ *
+ * This is the sentence the argument rests on, and it is why the control is a
+ * range: at either end it states a measurement, and in between it tells the
+ * reader what to watch while the plane closes. The figure is Africa's real
+ * area; the exponent is Mercator's own scale factor, so the claim is checkable
+ * rather than rhetorical.
+ */
+function projectionReadout(morph: number): string {
+  if (morph >= NEARLY_SPHERE_MORPH) {
+    return "Globe — chaque pastille retrouve sa surface réelle. L'Afrique fait 30,4 M km².";
+  }
+  if (morph <= NEARLY_FLAT_MORPH) {
+    return "Carte plate — Mercator gonfle les surfaces de sec²(latitude) : ×4 à 60°, ×9 à 70°.";
+  }
+  return "En cours de repli — regardez les pastilles reprendre la même taille.";
+}
+
 function globeLegendSentence(turns: boolean, marksCountries: boolean): string {
   const gesture = turns ? "Glissez pour tourner" : "Glissez pour déplacer";
   const offer = marksCountries
@@ -960,6 +1037,7 @@ export function AtlasGlobe({
   probedWebglSupport,
   pinnedProjection,
   pinnedProjectionNote,
+  projectionControl = "toggle",
   surface = "night",
   showTissot = false,
 }: AtlasGlobeProps) {
@@ -1128,14 +1206,26 @@ export function AtlasGlobe({
    */
   const [discsLit, setDiscsLit] = useState(showTissot);
 
-  const [readerFlattened, setReaderFlattened] = useState(false);
+  /**
+   * Where the reader has left the projection, as the shader's own float.
+   *
+   * Held as a position rather than as a flattened/round boolean because the
+   * two controls that write it disagree about how many values exist: the
+   * toggle knows two, the morph bar knows the whole interval. A boolean would
+   * have made the bar's middle unrepresentable, which is the state the
+   * argument is made in.
+   */
+  const [readerMorph, setReaderMorph] = useState(SPHERE_MORPH);
   // A pin wins outright rather than seeding the reader's state: seeding would
   // let the next `recentre` hand the round's projection back to a control the
   // round does not own.
-  const flat =
+  const morph =
     pinnedProjection === undefined
-      ? readerFlattened
-      : pinnedProjection === "flat";
+      ? readerMorph
+      : pinnedProjection === "flat"
+        ? FLAT_MORPH
+        : SPHERE_MORPH;
+  const flat = morph <= NEARLY_FLAT_MORPH;
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
   /**
@@ -1173,11 +1263,11 @@ export function AtlasGlobe({
 
   const pose: CameraPose = {
     ...camera.pose,
-    morph: flat ? FLAT_MORPH : SPHERE_MORPH,
+    morph,
   };
 
   const recentre = () => {
-    setReaderFlattened(false);
+    setReaderMorph(SPHERE_MORPH);
     setChosenCountryId(null);
     // Clearing the choice is not enough on its own: a reader who only turned
     // the globe has changed no state the camera watches, so the camera is
@@ -1323,9 +1413,27 @@ export function AtlasGlobe({
    * alone — there every choosable country already carries its own marker, and a
    * stray tap on one would select a country the reader did not point at.
    */
-  const stageSelectsCountry = drawnOverlay.kind === "continent-field";
+  /**
+   * Whether the reader gets the range rather than the two-state button.
+   *
+   * Gated on the sphere as well as on the caller's request: without WebGL the
+   * stage is the committed SVG basemap, which has no morph to run, and a bar
+   * there would move a number nothing reads. A pin withdraws it for the reason
+   * `pinnedProjection` gives — the round owns the projection, and a control
+   * that refuses to move reads as a broken page rather than as a locked one.
+   */
+  const offersMorphBar =
+    projectionControl === "morph" &&
+    pinnedProjection === undefined &&
+    stageIsSphere;
 
-  const pinsAMarkerPerTarget = targetPicker === "markers" || !offersList;
+  const offersACountry = targetPicker !== "none";
+
+  const stageSelectsCountry =
+    offersACountry && drawnOverlay.kind === "continent-field";
+
+  const pinsAMarkerPerTarget =
+    offersACountry && (targetPicker === "markers" || !offersList);
 
   /**
    * The choosable countries the scene does not already pin a marker on.
@@ -1538,100 +1646,214 @@ export function AtlasGlobe({
           flatten the map, recentre it, or leave a chosen country, on a
           mobile-first project. */}
       <div
-        data-atlas-toolbar=""
         // Transparent to the pointer, because it is a full-width strip pinned
         // across the bottom of the stage: solid, it swallowed every tap in
         // that band, and the stage is now how a reader selects a country. The
-        // buttons take the pointer back for themselves.
-        className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-wrap justify-center gap-2 p-3"
+        // controls take the pointer back for themselves.
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 p-3"
       >
-        {/* The button clears the choice, so the choice is what earns it —
+        {/* Its own row, above the pills, rather than a control among them.
+            The pill strip is a wrapping row of interchangeable little
+            commands; the morph bar is the instrument the page's whole
+            argument is made with, it needs a width to be draggable at all,
+            and at 430px it would have been squeezed between two pills and
+            wrapped away from its own labels. */}
+        {offersMorphBar && (
+          <div
+            data-atlas-morph=""
+            className="pointer-events-auto flex w-full max-w-md flex-col gap-1 rounded-afh-lg border px-3 py-2"
+            style={TOOLBAR_BUTTON_STYLE}
+          >
+            <div className="flex items-center gap-3">
+              {/* The ends are named at every width — actions charter §2. An
+                  unlabelled range asks the reader to guess which way is
+                  which, and the whole point is that they know what they are
+                  moving between. Hidden from the accessibility tree because
+                  the input's own label already names both ends. */}
+              <span
+                aria-hidden="true"
+                className="whitespace-nowrap text-afh-caption"
+              >
+                Carte plate
+              </span>
+              <input
+                type="range"
+                min={0}
+                max={MORPH_BAR_STEPS}
+                step={1}
+                value={Math.round(morph * MORPH_BAR_STEPS)}
+                aria-label="Morphing de la carte plate vers le globe"
+                aria-valuetext={projectionSurfaceName(morph)}
+                onChange={(event) =>
+                  setReaderMorph(Number(event.target.value) / MORPH_BAR_STEPS)
+                }
+                className="atlas-morph-range h-11 min-w-0 flex-1 cursor-pointer bg-transparent"
+              />
+              <span
+                aria-hidden="true"
+                className="whitespace-nowrap text-afh-caption"
+              >
+                Globe
+              </span>
+            </div>
+            <p data-atlas-morph-readout="" className="text-afh-caption">
+              {projectionReadout(morph)}
+            </p>
+            <style>{`
+              /* The track and the thumb are the one place a range can be
+                 dressed, and a browser draws neither from the ambient
+                 palette: left alone, both come out in the platform's blue
+                 over a parchment stage. Both take the stage's own ink so the
+                 bar belongs to the map it moves. */
+              .atlas-morph-range {
+                -webkit-appearance: none;
+                appearance: none;
+              }
+              .atlas-morph-range::-webkit-slider-runnable-track {
+                height: 4px;
+                border-radius: var(--afh-radius-full);
+                background: color-mix(
+                  in srgb,
+                  var(--afh-globe-stage-ink) 30%,
+                  transparent
+                );
+              }
+              .atlas-morph-range::-moz-range-track {
+                height: 4px;
+                border-radius: var(--afh-radius-full);
+                background: color-mix(
+                  in srgb,
+                  var(--afh-globe-stage-ink) 30%,
+                  transparent
+                );
+              }
+              /* 24px, so the touch target the finger aims at is the thumb
+                 rather than the 4px line under it; the 44px row comes from
+                 the input's own height. */
+              .atlas-morph-range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                margin-top: -10px;
+                border-radius: var(--afh-radius-full);
+                border: 2px solid var(--afh-globe-stage-ground);
+                background: var(--accent-ink);
+              }
+              .atlas-morph-range::-moz-range-thumb {
+                width: 24px;
+                height: 24px;
+                border-radius: var(--afh-radius-full);
+                border: 2px solid var(--afh-globe-stage-ground);
+                background: var(--accent-ink);
+              }
+              .atlas-morph-range:focus-visible {
+                outline: 2px solid var(--afh-globe-stage-ink);
+                outline-offset: 2px;
+              }
+            `}</style>
+          </div>
+        )}
+        <div
+          data-atlas-toolbar=""
+          className="flex flex-wrap justify-center gap-2"
+        >
+          {/* The button clears the choice, so the choice is what earns it —
             not the shape of the picker. Gated on the picker, a fiche offering
             pastilles had no way back to the whole area but "Recentrer", which
             also undoes the reader's own turn. */}
-        {(offersList || chosenCountryId !== null) && (
-          <button
-            type="button"
-            aria-pressed={chosenCountryId === null}
-            onClick={() => setChosenCountryId(null)}
-            className={TOOLBAR_BUTTON_CLASS}
-            style={TOOLBAR_BUTTON_STYLE}
-          >
-            {wholeAreaLabel}
-          </button>
-        )}
-        {pinnedProjection === undefined ? (
-          <button
-            type="button"
-            aria-pressed={flat}
-            onClick={() => setReaderFlattened((current) => !current)}
-            className={TOOLBAR_BUTTON_CLASS}
-            style={TOOLBAR_BUTTON_STYLE}
-          >
-            {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
-          </button>
-        ) : (
-          pinnedProjectionNote && (
-            <p
-              data-atlas-projection-note=""
-              className="rounded-full border px-3 py-1 text-afh-caption"
+          {(offersList || chosenCountryId !== null) && (
+            <button
+              type="button"
+              aria-pressed={chosenCountryId === null}
+              onClick={() => setChosenCountryId(null)}
+              className={TOOLBAR_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
-              {pinnedProjectionNote}
-            </p>
-          )
-        )}
-        {/* Offered only where the discs are drawn: on a fiche it would be a
+              {wholeAreaLabel}
+            </button>
+          )}
+          {/* The bar and the button are two spellings of one control, so the
+              strip offers whichever one this stage was given — never both,
+              which would let a reader flatten the map with one and be told by
+              the other that it is round. */}
+          {pinnedProjection === undefined
+            ? !offersMorphBar && (
+                <button
+                  type="button"
+                  aria-pressed={flat}
+                  onClick={() =>
+                    setReaderMorph((current) =>
+                      current <= NEARLY_FLAT_MORPH ? SPHERE_MORPH : FLAT_MORPH
+                    )
+                  }
+                  className={TOOLBAR_BUTTON_CLASS}
+                  style={TOOLBAR_BUTTON_STYLE}
+                >
+                  {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
+                </button>
+              )
+            : pinnedProjectionNote && (
+                <p
+                  data-atlas-projection-note=""
+                  className="rounded-full border px-3 py-1 text-afh-caption"
+                  style={TOOLBAR_BUTTON_STYLE}
+                >
+                  {pinnedProjectionNote}
+                </p>
+              )}
+          {/* Offered only where the discs are drawn: on a fiche it would be a
             switch over nothing. The label is the reader's word for them, and
             the one the retired engine printed on the same control. */}
-        {showTissot && (
-          <button
-            type="button"
-            aria-pressed={discsLit}
-            onClick={() => setDiscsLit((lit) => !lit)}
-            className={TOOLBAR_BUTTON_CLASS}
-            style={TOOLBAR_BUTTON_STYLE}
-          >
-            Pastilles
-          </button>
-        )}
-        {/* Held together in their own row so the two directions never wrap
+          {showTissot && (
+            <button
+              type="button"
+              aria-pressed={discsLit}
+              onClick={() => setDiscsLit((lit) => !lit)}
+              className={TOOLBAR_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              Pastilles
+            </button>
+          )}
+          {/* Held together in their own row so the two directions never wrap
             apart on a phone: a lone « + » with its « − » on the line below
             reads as two unrelated controls. The glyphs are hidden from the
             accessibility tree — a screen reader is told what the press does,
             not which sign is printed on it. */}
-        <div className="flex gap-1">
+          <div className="flex gap-1">
+            <button
+              type="button"
+              aria-label="Dézoomer"
+              title="Dézoomer"
+              disabled={atMinZoom}
+              onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
+              className={ZOOM_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              <span aria-hidden="true">−</span>
+            </button>
+            <button
+              type="button"
+              aria-label="Zoomer"
+              title="Zoomer"
+              disabled={atMaxZoom}
+              onClick={() => camera.zoomBy(ZOOM_STEP)}
+              className={ZOOM_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
           <button
             type="button"
-            aria-label="Dézoomer"
-            title="Dézoomer"
-            disabled={atMinZoom}
-            onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
-            className={ZOOM_BUTTON_CLASS}
+            onClick={recentre}
+            className={TOOLBAR_BUTTON_CLASS}
             style={TOOLBAR_BUTTON_STYLE}
           >
-            <span aria-hidden="true">−</span>
-          </button>
-          <button
-            type="button"
-            aria-label="Zoomer"
-            title="Zoomer"
-            disabled={atMaxZoom}
-            onClick={() => camera.zoomBy(ZOOM_STEP)}
-            className={ZOOM_BUTTON_CLASS}
-            style={TOOLBAR_BUTTON_STYLE}
-          >
-            <span aria-hidden="true">+</span>
+            Recentrer
           </button>
         </div>
-        <button
-          type="button"
-          onClick={recentre}
-          className={TOOLBAR_BUTTON_CLASS}
-          style={TOOLBAR_BUTTON_STYLE}
-        >
-          Recentrer
-        </button>
       </div>
 
       {chosenFacts && (

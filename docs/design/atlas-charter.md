@@ -54,6 +54,20 @@ rather than as the same offer, better documented. The corpus declares no such
 hierarchy — all fifty-four open the same fiche the same way — and a reader has
 no way to learn that the two shapes meant "ranked" rather than "different".
 
+And **a scene that opens no country marks none.** The converse of the rule
+above, and it had to be written because the same code drew both. The continent
+scene belongs to the Explorer hub, where a mark's promise is the whole offer —
+but `ContinentGlobeStage` reused it to stand under the two surfaces that argue
+about projection, the home's featured module and `/jouer/mercator`, and
+inherited the offer with it: twelve pinned countries, a tap anywhere on the
+sphere selecting the nearest, and a legend promising « appuyez sur un point
+pour ouvrir le pays ». Neither surface is browsing the corpus, so the promise
+was false on the home and worse on `/jouer/mercator`, where a tap mid-question
+opened a country panel over a standing round. Withdrawing the marks is not
+enough on its own: the stage-wide tap is the third way in, and it is the one
+nobody sees until a reader lands on a fiche they never aimed at. Contract:
+`src/components/atlas/__tests__/atlasMarksCharter.test.tsx`.
+
 And a scene that marks countries **says so in its legend**. A mark is inert and
 silent; without the sentence, a reader who does not already know the dots are
 countries reads the whole scene as decoration. Said only where marks exist: a
