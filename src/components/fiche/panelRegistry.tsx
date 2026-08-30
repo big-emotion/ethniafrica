@@ -6,8 +6,8 @@
  *
  * Several shipped panels are single-entity by construction — IdentityPanel
  * reads a PeopleNamesDossier, TerritoryPanel reads people country shares,
- * VoicesPanel reads people oral narratives, TonguePanel reads a language
- * family's branches. Their missing per-entity counterparts belong to stories
+ * VoicesPanel reads people oral narratives. Their missing per-entity
+ * counterparts belong to stories
  * 15.3–15.8, not to this route-integration story, so an unsupported pair
  * resolves to `null` and renders nothing — the FR98 invariant, enforced here
  * instead of by review. The gap is deliberate and legible: when a later story
@@ -19,7 +19,6 @@
  *   identity          ✓       ×            ×
  *   scale             ✓       ✓            ✓
  *   territory         ✓       ×            ×
- *   tongue            ×       ×            ✓
  *   fragmentation     ✓       ×            ×
  *   links             ✓       ✓            ✓
  *   voices            ✓       ×            ×
@@ -34,10 +33,6 @@ import { LinksPanel } from "@/components/fiche/LinksPanel";
 import { RecordPanel } from "@/components/fiche/RecordPanel";
 import { ScalePanel } from "@/components/fiche/ScalePanel";
 import { TerritoryPanel } from "@/components/fiche/TerritoryPanel";
-import {
-  TonguePanel,
-  type TonguePanelBranch,
-} from "@/components/fiche/TonguePanel";
 import { VoicesPanel } from "@/components/fiche/VoicesPanel";
 import { hasScaleContent } from "@/lib/ficheScale";
 import { PANEL_TABLE, type PanelKind } from "@/lib/fichePanels";
@@ -87,7 +82,6 @@ export type FichePanelContext =
   | {
       entityType: "language-family";
       payload: LanguageFamilyDetail;
-      branches?: readonly TonguePanelBranch[];
       relations?: readonly SourcedRelation[];
     };
 
@@ -102,11 +96,13 @@ const PANEL_ORDER = new Map<PanelKind, number>(
 const CANVAS_SIZE: FichePanelSize = "md";
 
 /** FR100 alternation: odd panel order sits left, even order sits right. */
+// @req REQ-091
 export function sideForPanelOrder(order: number): FichePanelSide {
   return order % 2 === 1 ? "left" : "right";
 }
 
 /** Journey anchor for a panel — FicheSequence stamps it, source lines cite it. */
+// @req REQ-091
 export function sectionIdForPanel(kind: PanelKind): string {
   return `fiche-${kind}`;
 }
@@ -139,18 +135,13 @@ interface PanelCopy {
  * such a claim would need a Tier-1/Tier-2 citation this layer cannot provide.
  */
 const PANEL_COPY: Record<
-  "territory" | "tongue" | "fragmentation" | "links" | "voices",
+  "territory" | "fragmentation" | "links" | "voices",
   PanelCopy
 > = {
   territory: {
     stepLabel: "03 · Territoire",
     heading: "Où la présence est-elle attestée ?",
     body: "Les pays où le corpus atteste une présence, classés par part de population déclarée.",
-  },
-  tongue: {
-    stepLabel: "04 · Langue",
-    heading: "Comment la famille se ramifie-t-elle ?",
-    body: "Les branches linguistiques rattachées à cette famille, et les peuples que chacune rassemble.",
   },
   fragmentation: {
     stepLabel: "05 · Fragmentation",
@@ -243,24 +234,6 @@ export function resolvePanel(
           side={side}
           sourceLine={AFRIK_DOSSIER_CITATION}
           {...PANEL_COPY.territory}
-        />
-      );
-    }
-
-    case "tongue": {
-      if (context.entityType !== "language-family") return null;
-      if (!context.branches?.length) return null;
-      return (
-        <TonguePanel
-          languageFamilyId={context.payload.id}
-          familyName={context.payload.nameFr}
-          branches={[...context.branches]}
-          size={CANVAS_SIZE}
-          side={side}
-          sourceLine={AFRIK_DOSSIER_CITATION}
-          treeLabel={`Classification — ${context.payload.nameFr}`}
-          textIndexLabel="Classification — version texte"
-          {...PANEL_COPY.tongue}
         />
       );
     }

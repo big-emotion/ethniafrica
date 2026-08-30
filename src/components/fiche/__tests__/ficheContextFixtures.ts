@@ -9,7 +9,6 @@
 
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
-import type { TonguePanelBranch } from "@/components/fiche/TonguePanel";
 import type { CountryDistributionRow } from "@/lib/peopleDataTransformer";
 import type {
   CountryDetail,
@@ -126,9 +125,4 @@ export const RELATIONS: SourcedRelation[] = [
     confidence: null,
     neighbor: { id: "PPL_FON", nameMain: "Fon", languageFamilyId: "FLG_KWA" },
   },
-];
-
-// @req REQ-091
-export const NIGER_CONGO_BRANCHES: TonguePanelBranch[] = [
-  { id: "yor", name: "Yoruba", peopleCount: 3 },
 ];

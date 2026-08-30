@@ -9,7 +9,6 @@ import {
 } from "../panelRegistry";
 import {
   NIGER_CONGO,
-  NIGER_CONGO_BRANCHES,
   NIGERIA,
   RELATIONS,
   YORUBA,
@@ -39,7 +38,6 @@ const COUNTRY_CONTEXT: FichePanelContext = {
 const FAMILY_CONTEXT: FichePanelContext = {
   entityType: "language-family",
   payload: NIGER_CONGO,
-  branches: NIGER_CONGO_BRANCHES,
   relations: RELATIONS,
 };
 
@@ -170,33 +168,6 @@ describe("resolvePanel — territory", () => {
       resolvePanel(
         "territory",
         { entityType: "people", payload: YORUBA, distributions: [] },
-        RECORD
-      )
-    ).toBeNull();
-  });
-});
-
-describe("resolvePanel — tongue", () => {
-  // @req REQ-091
-  it("resolves the language-family tongue panel from its branches", () => {
-    render(<>{resolvePanel("tongue", FAMILY_CONTEXT, RECORD)}</>);
-    expect(
-      screen.getByRole("heading", { level: 2, name: /ramifie/i })
-    ).toBeInTheDocument();
-  });
-
-  // @req REQ-091
-  it("resolves to null for people and country, which have no tongue panel yet", () => {
-    expect(resolvePanel("tongue", PEOPLE_CONTEXT, RECORD)).toBeNull();
-    expect(resolvePanel("tongue", COUNTRY_CONTEXT, RECORD)).toBeNull();
-  });
-
-  // @req REQ-091
-  it("resolves to null when the family exposes no branches", () => {
-    expect(
-      resolvePanel(
-        "tongue",
-        { entityType: "language-family", payload: NIGER_CONGO, branches: [] },
         RECORD
       )
     ).toBeNull();

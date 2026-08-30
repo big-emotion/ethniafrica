@@ -246,11 +246,7 @@ describe("/[lang]/familles/[slug] page", () => {
     it("opens the record under the globe, ahead of the remaining chapters", async () => {
       const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
 
-      expect(panelAnchors(container)).toEqual([
-        "fiche-record",
-        "fiche-scale",
-        "fiche-tongue",
-      ]);
+      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
       expect(
         container
           .querySelector("#fiche-record")
@@ -386,46 +382,19 @@ describe("/[lang]/familles/[slug] page", () => {
       expect(recordView.dataset.carriesContentBlob).toBe("true");
     });
 
-    // The Classification chapter was withdrawn: it announced a
-    // family → language → people hierarchy no editorial field carries, so its
-    // language level was deduplicated ISO codes. The skeleton is still fetched,
-    // for the tongue chapter alone.
+    // Both chapters drew a family → language → people hierarchy no editorial
+    // field carries: their language level was ISO codes deduplicated across the
+    // people fiches, not a declared classification. With neither rendering, the
+    // route has no reason left to read the tree skeleton at all.
     // @req REQ-047
-    it("fetches the tree skeleton server-side without rendering a classification chapter", async () => {
+    it("renders neither classification chapter, and no longer reads the tree skeleton", async () => {
       const { container } = await renderFamillesPage("FLG_BANTU");
 
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledWith("FLG_BANTU");
+      expect(mockGetFamilyTreeSkeleton).not.toHaveBeenCalled();
+      expect(container.querySelector("#fiche-tongue")).toBeNull();
       expect(
         container.querySelector('[data-fiche-section="Classification"]')
       ).toBeNull();
-    });
-
-    // @req REQ-091
-    it("opens the tongue chapter from the tree skeleton already fetched", async () => {
-      const { container } = await renderFamillesPage("FLG_BANTU");
-
-      expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledTimes(1);
-      const tongue = container.querySelector("#fiche-tongue");
-      expect(tongue).not.toBeNull();
-      // TonguePanel names each branch twice (tree canvas + text index), so the
-      // branch names are counted rather than fetched as unique nodes.
-      expect(
-        within(tongue as HTMLElement).getAllByText("Shona").length
-      ).toBeGreaterThan(0);
-      expect(
-        within(tongue as HTMLElement).getAllByText("Swahili").length
-      ).toBeGreaterThan(0);
-    });
-
-    // @req REQ-091
-    it("drops the tongue chapter, and nothing else, for a family with no tree", async () => {
-      mockGetFamilyTreeSkeleton.mockResolvedValue(null);
-
-      const { container, getByTestId } = await renderFamillesPage("FLG_BANTU");
-
-      expect(container.querySelector("#fiche-tongue")).toBeNull();
-      expect(panelAnchors(container)).toEqual(["fiche-record", "fiche-scale"]);
-      expect(getByTestId("family-record-view")).toBeInTheDocument();
     });
 
     // @req REQ-047

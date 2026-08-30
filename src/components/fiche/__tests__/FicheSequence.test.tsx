@@ -10,7 +10,6 @@ import type { FichePanelContext } from "../panelRegistry";
 import { derivePanelSequence } from "@/lib/fichePanels";
 import {
   NIGER_CONGO,
-  NIGER_CONGO_BRANCHES,
   NIGERIA,
   RELATIONS,
   YORUBA,
@@ -40,7 +39,6 @@ const COUNTRY_CONTEXT: FichePanelContext = {
 const FAMILY_CONTEXT: FichePanelContext = {
   entityType: "language-family",
   payload: NIGER_CONGO,
-  branches: NIGER_CONGO_BRANCHES,
   relations: RELATIONS,
 };
 
@@ -313,40 +311,23 @@ describe("FicheSequence — the dossier as the page's body", () => {
 
 describe("FicheSequence — gating by construction (FR98)", () => {
   // @req REQ-091
-  it("emits no anchor for a kind the composer includes but no panel supports", () => {
+  it("no longer asks the registry for a family chapter nothing can render", () => {
     stubPanelRuntime();
     const { container } = render(
       <FicheSequence context={FAMILY_CONTEXT} record={RECORD} />
     );
 
-    // The composer lists identity as mandatory for every entity, yet no
-    // language-family identity panel exists — the anchor must be absent, not
-    // empty.
-    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
-      "identity"
-    );
+    // The composer used to list identity, territory and links for a family and
+    // leave the registry to return null for each — an anchor was suppressed
+    // downstream on every render. It now emits only what renders, so the
+    // invariant is upstream and these anchors can no longer be reached at all.
+    expect(derivePanelSequence("language-family", NIGER_CONGO)).toEqual([
+      "scale",
+      "record",
+    ]);
     expect(container.querySelector("#fiche-identity")).toBeNull();
     expect(container.querySelector("#fiche-territory")).toBeNull();
-  });
-
-  // @req REQ-091
-  it("emits no anchor for a supported kind whose data is absent", () => {
-    stubPanelRuntime();
-    const { container } = render(
-      <FicheSequence
-        context={{ entityType: "language-family", payload: NIGER_CONGO }}
-        record={RECORD}
-      />
-    );
-
-    // The family payload names associated peoples, so the composer asks for
-    // the links chapter — but the relations it draws are absent from this
-    // context, so the chapter and its anchor go together.
-    expect(derivePanelSequence("language-family", NIGER_CONGO)).toContain(
-      "links"
-    );
     expect(container.querySelector("#fiche-links")).toBeNull();
-    expect(container.querySelector("#fiche-identity")).toBeNull();
   });
 
   // @req REQ-091

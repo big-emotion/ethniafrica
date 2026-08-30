@@ -83,12 +83,7 @@ describe("panel registry server/client boundary", () => {
     ).filter(({ fromFile }) => isClientModule(fromFile));
 
     expect(clientImports.map(({ binding }) => binding)).toEqual(
-      expect.arrayContaining([
-        "ScalePanel",
-        "TonguePanel",
-        "VoicesPanel",
-        "RecordPanel",
-      ])
+      expect.arrayContaining(["ScalePanel", "VoicesPanel", "RecordPanel"])
     );
   });
 });

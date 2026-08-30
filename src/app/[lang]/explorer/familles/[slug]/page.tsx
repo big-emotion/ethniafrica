@@ -29,7 +29,6 @@ import {
   declaredAssociatedPeopleIds,
   resolveFootprintProvenance,
 } from "@/lib/familyFootprintSource";
-import { getFamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -187,10 +186,7 @@ export default async function FamillesSlugPage({
     notFound();
   }
 
-  const [tree, familyMemberPeoples] = await Promise.all([
-    getFamilyTreeSkeleton(parsed.slug),
-    getPeoplesByLanguageFamily(parsed.slug),
-  ]);
+  const familyMemberPeoples = await getPeoplesByLanguageFamily(parsed.slug);
 
   // Afro-asiatique is a macro-family: its peoples all carry a sub-family's id
   // (Berbère, Tchadique, Couchitique, Sémitique), so the query above returns
@@ -205,18 +201,6 @@ export default async function FamillesSlugPage({
     footprintProvenance === "member-peoples"
       ? familyMemberPeoples
       : await getPeoplesByIds(declaredAssociatedPeopleIds(family));
-
-  // The tongue chapter is the only consumer of the tree skeleton since the
-  // Classification chapter was withdrawn: it named a family → language → people
-  // hierarchy the editorial model does not carry, so its language level was
-  // deduplicated ISO codes rather than a declared classification.
-  // Branches are keyed by ISO 639-3 because that is what TonguePanel sends back
-  // to the tree/branch endpoint when a visitor expands one.
-  const tongueBranches = tree?.branches.map((branch) => ({
-    id: branch.iso639_3,
-    name: branch.name,
-    peopleCount: branch.peopleCount,
-  }));
 
   // The globe's footprint is the union of currentCountries across the peoples
   // resolved above (REQ-116 AC4) — never family.distribution.distributionByCountry.
@@ -281,7 +265,6 @@ export default async function FamillesSlugPage({
         context={{
           entityType: "language-family",
           payload: familyDetail,
-          branches: tongueBranches,
         }}
         recordPlacement="body"
         title={<FamilyFicheTitle family={family} />}

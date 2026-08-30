@@ -67,13 +67,14 @@ const FULL_LANGUAGE_FAMILY: LanguageFamilyDetail = {
 
 describe("fichePanels — panel composition engine (FR98)", () => {
   // @req REQ-091
-  it("exposes a panel table with 8 stably-ordered panels and mandatory markers on 1, 2 and 8", () => {
-    expect(PANEL_TABLE).toHaveLength(8);
+  it("exposes a panel table with 7 stably-ordered panels and mandatory markers on 1, 2 and 8", () => {
+    expect(PANEL_TABLE).toHaveLength(7);
 
+    // Order 4 is vacant since the tongue chapter was withdrawn. `order` is a
+    // sort key, and the remaining step labels ("05 · Fragmentation"…) are
+    // user-facing chapter numbers — closing the gap would desync the two.
     const byOrder = [...PANEL_TABLE].sort((a, b) => a.order - b.order);
-    expect(byOrder.map((panel) => panel.order)).toEqual([
-      1, 2, 3, 4, 5, 6, 7, 8,
-    ]);
+    expect(byOrder.map((panel) => panel.order)).toEqual([1, 2, 3, 5, 6, 7, 8]);
 
     const mandatoryOrders = PANEL_TABLE.filter((panel) => panel.mandatory).map(
       (panel) => panel.order
@@ -95,10 +96,10 @@ describe("fichePanels — panel composition engine (FR98)", () => {
     });
 
     // @req REQ-091
-    it("keeps only identity(1), scale(2) and record(8) for a minimal language-family payload", () => {
+    it("keeps only scale(2) and record(8) for a minimal language-family payload", () => {
       expect(
         derivePanelSequence("language-family", MINIMAL_LANGUAGE_FAMILY)
-      ).toEqual(["identity", "scale", "record"]);
+      ).toEqual(["scale", "record"]);
     });
   });
 
@@ -125,7 +126,6 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       for (const kind of [
         "identity",
         "scale",
-        "tongue",
         "territory",
         "fragmentation",
         "links",
@@ -136,19 +136,32 @@ describe("fichePanels — panel composition engine (FR98)", () => {
     });
 
     // @req REQ-091
-    it("derives the full 8-panel language-family inventory from a fully-populated payload", () => {
+    // However full the payload, a family fiche is one globe, one scale figure
+    // and one parchment. The five chapters that stood between them resolved to
+    // null for anything but a people, and `tongue` drew the withdrawn
+    // Classification's hierarchy from the same deduplicated ISO codes.
+    // @req REQ-091
+    it("keeps the language-family inventory at scale and record however populated the payload", () => {
       expect(
         derivePanelSequence("language-family", FULL_LANGUAGE_FAMILY)
-      ).toEqual([
+      ).toEqual(["scale", "record"]);
+    });
+
+    // @req REQ-091
+    it("includes no chapter kind for a language-family beyond scale and the record", () => {
+      const sequence = derivePanelSequence(
+        "language-family",
+        FULL_LANGUAGE_FAMILY
+      );
+      for (const kind of [
         "identity",
-        "scale",
         "territory",
-        "tongue",
         "fragmentation",
         "links",
         "voices",
-        "record",
-      ]);
+      ] as const) {
+        expect(sequence).not.toContain(kind);
+      }
     });
   });
 
@@ -183,16 +196,17 @@ describe("fichePanels — panel composition engine (FR98)", () => {
       expect(derivePanelSequence("country", withFacts)).toEqual(["record"]);
     });
 
+    // The guard against a chapter creeping back above the family parchment
+    // through the gate table: `generalInfo.branches` used to open
+    // `fragmentation`, a panel the registry declines for anything but a people.
     // @req REQ-091
-    it("adds fragmentation only once branches is non-empty (language-family)", () => {
+    it("leaves the family sequence untouched when branches is non-empty", () => {
       const withBranches: LanguageFamilyDetail = {
         ...MINIMAL_LANGUAGE_FAMILY,
         generalInfo: { branches: ["Branch A"] },
       };
       expect(derivePanelSequence("language-family", withBranches)).toEqual([
-        "identity",
         "scale",
-        "fragmentation",
         "record",
       ]);
     });
