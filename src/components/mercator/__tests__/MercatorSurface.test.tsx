@@ -11,18 +11,18 @@ import { getCountryRoute } from "@/lib/routing";
 // The stage mounts WebGL, which happy-dom has none of. Standing in for it
 // with a element that prints the props under test keeps this a test about
 // the binding between the round and the globe, not about the renderer.
-vi.mock("@/components/home/HomeGlobeStage", () => ({
-  HomeGlobeStage: ({
-    morphOverride,
-    overrideNoteFr,
+vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
+  ContinentGlobeStage: ({
+    pinnedProjection,
+    pinnedProjectionNote,
   }: {
-    morphOverride?: number | null;
-    overrideNoteFr?: string;
+    pinnedProjection?: "flat" | "sphere";
+    pinnedProjectionNote?: string;
   }) => (
     <div
       data-testid="globe-stage"
-      data-morph={String(morphOverride)}
-      data-note={overrideNoteFr ?? ""}
+      data-projection={pinnedProjection ?? ""}
+      data-note={pinnedProjectionNote ?? ""}
     />
   ),
 }));
@@ -78,7 +78,7 @@ describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
     renderSurface();
 
     const stage = screen.getByTestId("globe-stage");
-    expect(stage).toHaveAttribute("data-morph", "0");
+    expect(stage).toHaveAttribute("data-projection", "flat");
     expect(stage.getAttribute("data-note")).toMatch(
       /se rouvre avec la réponse/
     );
@@ -92,8 +92,8 @@ describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
     await user.click(screen.getByRole("button", { name: "DZA-A" }));
 
     expect(screen.getByTestId("globe-stage")).toHaveAttribute(
-      "data-morph",
-      "1"
+      "data-projection",
+      "sphere"
     );
   });
 

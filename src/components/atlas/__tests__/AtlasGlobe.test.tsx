@@ -5,6 +5,7 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
@@ -30,8 +31,24 @@ import {
 import type { CountryId } from "@/types/afrik";
 import { getCountryRoute } from "@/lib/routing";
 
+// The morph is published as an attribute because it is otherwise only ever a
+// uniform inside a shader: a test that cannot read it can only assert which
+// button is on screen, and the Mercator game's whole point is the projection
+// the reader is looking at rather than the control beside it.
+let canvasGivesUpOnMount = false;
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
-  AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
+  AtlasGlobeCanvas: ({
+    pose,
+    onUnavailable,
+  }: {
+    pose: { morph: number };
+    onUnavailable?: () => void;
+  }) => {
+    if (canvasGivesUpOnMount) onUnavailable?.();
+    return (
+      <canvas data-testid="atlas-globe-canvas-mock" data-morph={pose.morph} />
+    );
+  },
 }));
 
 const square: Ring = [
@@ -1573,5 +1590,224 @@ describe("AtlasGlobe — reaching what the dolly pushed off-stage (REQ-117)", ()
     expect(fireEvent.keyDown(surface, { key: "ArrowRight" })).toBe(false);
 
     expect(markerFor("TZA").style.left).not.toBe(before);
+  });
+});
+
+/**
+ * A caller that owns the projection.
+ *
+ * On a fiche the reader flattens the map when they feel like it, and that
+ * stays true. The Mercator game is the opposite case: the map is held flat
+ * *because a question is standing*, and closing it into a sphere is the answer
+ * being given. The projection there belongs to the round, not to the reader,
+ * so the globe has to accept it from outside and say why it will not move.
+ */
+describe("AtlasGlobe — a caller that pins the projection (REQ-120)", () => {
+  beforeEach(() => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  function morphOnStage(): number {
+    return Number(
+      screen.getByTestId("atlas-globe-canvas-mock").getAttribute("data-morph")
+    );
+  }
+
+  // @req REQ-120
+  it("draws the flat map when the caller pins it flat", () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        pinnedProjection="flat"
+        pinnedProjectionNote="La carte reste à plat le temps de la question."
+      />
+    );
+
+    expect(morphOnStage()).toBe(0);
+  });
+
+  // @req REQ-120
+  it("draws the sphere when the caller pins it to the globe", () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        pinnedProjection="sphere"
+        pinnedProjectionNote="Le globe est revenu."
+      />
+    );
+
+    expect(morphOnStage()).toBe(1);
+  });
+
+  /**
+   * Suppressed rather than disabled. A control that is present but inert reads
+   * as a broken control; the sentence beside the map is what tells the reader
+   * the projection is being held for a reason.
+   */
+  // @req REQ-120
+  it("withdraws the reader's own projection toggle while the pin holds", () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        pinnedProjection="flat"
+        pinnedProjectionNote="La carte reste à plat le temps de la question."
+      />
+    );
+
+    expect(
+      screen.queryByRole("button", { name: "Ce que la carte plate en fait" })
+    ).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: "Revenir au globe" })
+    ).toBeNull();
+  });
+
+  // @req REQ-120
+  it("states why the map will not turn, where the reader is looking", () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        pinnedProjection="flat"
+        pinnedProjectionNote="La carte reste à plat le temps de la question."
+      />
+    );
+
+    expect(
+      screen.getByText("La carte reste à plat le temps de la question.")
+    ).toBeTruthy();
+  });
+
+  // @req REQ-120
+  it("leaves the projection to the reader when nothing is pinned", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    expect(morphOnStage()).toBe(1);
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+    );
+
+    expect(morphOnStage()).toBe(0);
+  });
+
+  /**
+   * `recentre` clears the reader's own flattening. Under a pin there is no
+   * reader flattening to clear, and letting it win would hand the round's
+   * projection back to a button the round does not own.
+   */
+  // @req REQ-120
+  it("keeps the pin when the reader recentres", () => {
+    render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        pinnedProjection="flat"
+        pinnedProjectionNote="La carte reste à plat le temps de la question."
+      />
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    expect(morphOnStage()).toBe(0);
+  });
+});
+
+/**
+ * The late failure (REQ-112 AC2).
+ *
+ * The probe only proves a context can be created. Compiling and linking the
+ * shaders on it can still fail, and by then the committed basemap has already
+ * been swapped out — so the stage is left holding a transparent canvas. The
+ * globe has to be able to come back from that on its own.
+ */
+describe("AtlasGlobe — when the canvas gives up (REQ-112)", () => {
+  beforeEach(() => {
+    canvasGivesUpOnMount = false;
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      {} as unknown as RenderingContext
+    );
+  });
+
+  afterEach(() => {
+    canvasGivesUpOnMount = false;
+    vi.restoreAllMocks();
+  });
+
+  // @req REQ-112
+  it("restores the committed basemap when the canvas reports it cannot run", async () => {
+    canvasGivesUpOnMount = true;
+
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    await waitFor(() =>
+      expect(
+        screen.queryByTestId("atlas-globe-canvas-mock")
+      ).not.toBeInTheDocument()
+    );
+    expect(document.querySelector("path#africa-landmass")).toBeInTheDocument();
+  });
+
+  // @req REQ-112
+  it("keeps the canvas mounted when it initialises cleanly", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    expect(screen.getByTestId("atlas-globe-canvas-mock")).toBeInTheDocument();
+    expect(document.querySelector("path#africa-landmass")).toBeNull();
+  });
+
+  /**
+   * A caller that has already probed.
+   *
+   * The globe's own probe is an effect, so its first commit necessarily
+   * assumes no WebGL and paints the committed basemap. On a fiche that is
+   * right — the figure is the server-rendered content, and a reader without
+   * JavaScript keeps it. A stage that mounts the globe only after its *own*
+   * probe has answered is in the opposite position: it already knows, and
+   * letting the globe assume otherwise paints a flat map that is replaced a
+   * moment later, which reads as a glitch rather than as a fallback.
+   */
+  // @req REQ-112
+  it("skips its own opening assumption when the caller has already probed", () => {
+    const serverHtml = renderToStaticMarkup(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport
+      />
+    );
+
+    expect(serverHtml).not.toContain("africa-landmass");
+  });
+
+  // @req REQ-112
+  it("keeps painting the committed figure for a caller that has not probed", () => {
+    const serverHtml = renderToStaticMarkup(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    expect(serverHtml).toContain("africa-landmass");
+  });
+
+  // @req REQ-112
+  it("shows the committed figure when the caller probed and found no WebGL", () => {
+    const serverHtml = renderToStaticMarkup(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        missingMessage="absent"
+        probedWebglSupport={false}
+      />
+    );
+
+    expect(serverHtml).toContain("africa-landmass");
   });
 });

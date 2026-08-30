@@ -75,7 +75,7 @@ describe("FeaturedModule — the module the home puts forward (REQ-113/REQ-115)"
     const { container } = render(<FeaturedModule />);
 
     // happy-dom has no WebGL, so the capability gate settles on the
-    // committed AfricaBasemap fallback — see HomeGlobeStage.test.tsx for
+    // committed AfricaBasemap fallback — see ContinentGlobeStage.test.tsx for
     // the WebGL-available branch.
     await waitFor(() =>
       expect(

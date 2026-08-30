@@ -691,3 +691,86 @@ describe("AtlasGlobeCanvas", () => {
     expect(modes).not.toContain(fakeGl.LINE_LOOP);
   });
 });
+
+/**
+ * Saying so when it gives up (REQ-112 AC2).
+ *
+ * Probing that a context *can* be created is not the same as proving the
+ * globe will run: compiling and linking the shaders on it fails routinely on
+ * low-end hardware, and every one of this component's bail-outs is a bare
+ * `return` that leaves a transparent canvas where the map should be. A caller
+ * that has already swapped its own fallback out has no way to learn that, so
+ * the hero goes blank with nothing thrown and every test still green.
+ */
+describe("AtlasGlobeCanvas — reporting that it cannot run (REQ-112)", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  // @req REQ-112
+  it("reports unavailable when no WebGL context can be created", () => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+    const gaveUp = vi.fn();
+
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        onUnavailable={gaveUp}
+      />
+    );
+
+    expect(gaveUp).toHaveBeenCalled();
+  });
+
+  // @req REQ-112
+  it("reports unavailable when the shader program will not link", () => {
+    const refusingGl = createFakeGl();
+    refusingGl.getProgramParameter = vi.fn(() => false);
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockImplementation(
+      (type: string) =>
+        type === "2d"
+          ? (fakeTexture2d() as unknown as RenderingContext)
+          : (refusingGl as unknown as RenderingContext)
+    );
+    const gaveUp = vi.fn();
+
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        onUnavailable={gaveUp}
+      />
+    );
+
+    expect(gaveUp).toHaveBeenCalled();
+  });
+
+  // @req REQ-112
+  it("stays silent when it initialises cleanly", () => {
+    const workingGl = createFakeGl();
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockImplementation(
+      (type: string) =>
+        type === "2d"
+          ? (fakeTexture2d() as unknown as RenderingContext)
+          : (workingGl as unknown as RenderingContext)
+    );
+    vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockImplementation(
+      () => 300
+    );
+    vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockImplementation(
+      () => 200
+    );
+    const gaveUp = vi.fn();
+
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={IDLE_POSE}
+        onUnavailable={gaveUp}
+      />
+    );
+
+    expect(gaveUp).not.toHaveBeenCalled();
+  });
+});
