@@ -2,6 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
 import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
+import { applyVersioningHeaders } from "@/lib/api/versioning";
 import {
   resolveCountryDeepLink,
   resolveFamilyDeepLink,
@@ -276,6 +277,17 @@ export async function middleware(request: NextRequest) {
   }
 
   const isApiV2 = request.nextUrl.pathname.startsWith("/api/v2/");
+
+  // Every /api/v2 response states which major version answered — the ones this
+  // middleware returns itself as much as the ones a route handler produces. The
+  // 401 and the 429 below never reach `jsonWithCors`, and they are exactly the
+  // responses an integration is read against when it breaks.
+  //
+  // Self-guarding on the pathname, so wrapping a return that also serves pages
+  // costs nothing and cannot leak the public API's version onto /fr or
+  // /api/contributions.
+  const versioned = <ResponseType extends Response>(response: ResponseType) =>
+    applyVersioningHeaders(response, pathname);
   const requiresApiKeyAuth =
     isApiV2 && !pathname.startsWith("/api/v2/keys/issue");
 
@@ -285,7 +297,7 @@ export async function middleware(request: NextRequest) {
   // request only ever consumes one rate-limit bucket.
   if (isApiV2 && !requiresApiKeyAuth) {
     const rateLimitResponse = await applyRateLimit(request);
-    if (rateLimitResponse) return rateLimitResponse;
+    if (rateLimitResponse) return versioned(rateLimitResponse);
   }
 
   const nonce = btoa(crypto.randomUUID());
@@ -311,8 +323,10 @@ export async function middleware(request: NextRequest) {
 
     if (!rawKey && !devBypass && !sameOriginBypass) {
       const rateLimitResponse = await applyRateLimit(request);
-      if (rateLimitResponse) return rateLimitResponse;
-      return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
+      if (rateLimitResponse) return versioned(rateLimitResponse);
+      return versioned(
+        NextResponse.json({ error: "missing_api_key" }, { status: 401 })
+      );
     }
 
     // Validate before rate limiting so the DB-canonical tier (api_keys.tier)
@@ -334,16 +348,18 @@ export async function middleware(request: NextRequest) {
       // distinct/invalid keys from one IP can't run that expensive check
       // unbounded before a tier is known.
       const ipRateLimitResponse = await applyIpRateLimit(request);
-      if (ipRateLimitResponse) return ipRateLimitResponse;
+      if (ipRateLimitResponse) return versioned(ipRateLimitResponse);
       result = await validateApiKey(rawKey);
     }
 
     const tier = result.valid ? result.tier : "public";
     const rateLimitResponse = await applyRateLimit(request, tier);
-    if (rateLimitResponse) return rateLimitResponse;
+    if (rateLimitResponse) return versioned(rateLimitResponse);
 
     if (result.valid === false) {
-      return NextResponse.json({ error: result.reason }, { status: 401 });
+      return versioned(
+        NextResponse.json({ error: result.reason }, { status: 401 })
+      );
     }
 
     const requestWithKey = NextResponse.next({
@@ -357,7 +373,7 @@ export async function middleware(request: NextRequest) {
     });
 
     applySecurityHeaders(requestWithKey, nonce, pathname);
-    return requestWithKey;
+    return versioned(requestWithKey);
   }
 
   // --- Admin route protection ---
@@ -426,7 +442,7 @@ export async function middleware(request: NextRequest) {
   }
 
   applySecurityHeaders(supabaseResponse, nonce, pathname);
-  return supabaseResponse;
+  return versioned(supabaseResponse);
 }
 
 // @req REQ-052
