@@ -3,6 +3,8 @@
  *   "v{n} · publiée le {long French date}"
  *
  * Story ETNI-30 — version label AC.
+ *
+ * @req REQ-025
  */
 export function formatVersionLabel(
   version: number,
