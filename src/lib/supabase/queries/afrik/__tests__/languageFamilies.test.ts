@@ -182,7 +182,8 @@ describe("AFRIK Language Families Queries", () => {
   });
 
   describe("searchAfrikLanguageFamilies", () => {
-    it("should search language families by query", async () => {
+    // @req REQ-019
+    it("fetches every language family, leaving the accent-insensitive filter to the caller", async () => {
       const mockData = [
         {
           id: "FLG_BANTU",
@@ -194,7 +195,7 @@ describe("AFRIK Language Families Queries", () => {
 
       mockSupabase.order.mockResolvedValue({ data: mockData, error: null });
 
-      const result = await searchAfrikLanguageFamilies("Bantu");
+      const result = await searchAfrikLanguageFamilies();
 
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe("FLG_BANTU");

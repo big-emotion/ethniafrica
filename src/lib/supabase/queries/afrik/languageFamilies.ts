@@ -156,21 +156,23 @@ export async function getAfrikLanguageFamilyById(
 }
 
 /**
- * Search AFRIK language families by query
+ * Fetch AFRIK language families for the ranked-search path.
+ *
+ * There is no ilike filter here on purpose: ilike compares characters
+ * literally, so it cannot fold "Mandé" and "mande" onto each other, and a
+ * family whose name carries an accent would silently drop out of an
+ * accent-mismatched query. At two dozen rows, fetching them all and letting
+ * the caller's accent-insensitive ranking (search.ts's rankLanguageFamilies,
+ * built on normalizeString — REQ-129) decide what matches is cheaper than a
+ * migration, and correct where the ilike filter it replaces was not.
  */
 // @req REQ-019
-export async function searchAfrikLanguageFamilies(
-  query: string
-): Promise<LanguageFamily[]> {
+export async function searchAfrikLanguageFamilies(): Promise<LanguageFamily[]> {
   const supabase = createServerClient();
-  const queryLower = query.toLowerCase();
 
   const { data, error } = await supabase
     .from("afrik_language_families")
     .select("*")
-    .or(
-      `id.ilike.%${queryLower}%,name_fr.ilike.%${queryLower}%,name_en.ilike.%${queryLower}%`
-    )
     .order("name_fr");
 
   if (error) {

@@ -213,7 +213,7 @@ describe("ftsSearchEntities", () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (searchAfrikLanguageFamilies as any).mockResolvedValue([
       { id: "FLG_NILO", nameFr: "Nilo-saharien (bantou compris)", content: {} },
-      { id: "FLG_BANTOIDE", nameFr: "Bantoïde", content: {} },
+      { id: "FLG_BANTOU_GROUP", nameFr: "Bantou (groupe élargi)", content: {} },
       { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
     ]);
 
@@ -225,7 +225,7 @@ describe("ftsSearchEntities", () => {
 
     expect(result.families.map((f) => f.id)).toEqual([
       "FLG_BANTU",
-      "FLG_BANTOIDE",
+      "FLG_BANTOU_GROUP",
       "FLG_NILO",
     ]);
     expect(result.families[0].exactMatch).toBe(true);
@@ -255,10 +255,84 @@ describe("ftsSearchEntities", () => {
       { id: "FLG_BERBERE", nameFr: "Berbère", content: {} },
     ]);
 
-    const result = await ftsSearchEntities({ q: "a", limit: 20, offset: 0 });
+    const result = await ftsSearchEntities({ q: "er", limit: 20, offset: 0 });
 
     expect(result.familiesTotal).toBe(2);
     expect(result.total).toBe(2);
+  });
+
+  // @req REQ-129
+  it("ranks a language family whose name carries an accent from an unaccented query", async () => {
+    // searchAfrikLanguageFamilies no longer filters by ilike (accent-
+    // sensitive); rankLanguageFamilies now owns the accent-insensitive
+    // substring filter this exercises — FLG_MANDE is really named "Mandé"
+    // in the corpus, so an unfixed ilike would have dropped it here.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamilies as any).mockResolvedValue([
+      { id: "FLG_MANDE", nameFr: "Mandé", content: {} },
+      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
+    ]);
+
+    const result = await ftsSearchEntities({
+      q: "mande",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.families.map((f) => f.id)).toEqual(["FLG_MANDE"]);
+    expect(result.families[0].exactMatch).toBe(true);
+  });
+
+  // @req REQ-129
+  it("surfaces a fiche whose name only partially matches the typed prefix", async () => {
+    // Migration 051 does the actual prefix matching in SQL; this asserts the
+    // query layer neither trims nor rejects a partial word before it reaches
+    // the RPC, and passes an accented result straight through unmodified.
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara", { exactMatch: false })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "bamba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_peoples",
+      expect.objectContaining({ p_q: "bamba" })
+    );
+    expect(result.peoples.map((p) => p.nameMain)).toContain("Bambara");
+  });
+
+  // @req REQ-129
+  it("surfaces an accented fiche name from an unaccented query", async () => {
+    // Same rationale as the prefix test above: migration 052 folds accents
+    // in SQL, so this only proves the query layer does not itself strip or
+    // re-encode diacritics on the way back out.
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_MANDE_MACRO", "Peuples Mandé (macro-groupe)", {
+          exactMatch: false,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "mande",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_peoples",
+      expect.objectContaining({ p_q: "mande" })
+    );
+    expect(result.peoples.map((p) => p.nameMain)).toContain(
+      "Peuples Mandé (macro-groupe)"
+    );
   });
 
   // @req REQ-050
