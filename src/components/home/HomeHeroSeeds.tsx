@@ -10,13 +10,19 @@ import {
 } from "@/lib/home/seedWords";
 
 /**
- * The three example queries under the hero's search field, each a slot reel.
+ * The example queries under the hero's search field, each a slot reel.
  *
  * The chips exist to state the breadth of the corpus: three entity kinds, side
  * by side, before the reader has typed anything. Reeling the words extends
  * that from three examples to twelve without asking for a second line — and
  * it is safe *here* in a way it would not be in the field's placeholder, which
  * is a control's name and vanishes at the moment of focus. A chip is neither.
+ *
+ * Phones show one chip for each searchable entity kind. Desktop adds a second
+ * people chip because people are the home question and the largest corpus;
+ * both people chips reel through the pool supplied by the server, offset by
+ * one word. They share a cadence so that offset remains stable and the wider
+ * layout never presents the same people example twice.
  *
  * What that costs, and what is paid for it:
  *
@@ -52,8 +58,10 @@ export const REEL_MS = 320;
 const REEL_EASING = "cubic-bezier(0, 0, 0.2, 1)";
 
 export interface SeedPool {
+  id: string;
   kind: SeedKind;
   words: string[];
+  desktopOnly?: boolean;
   /**
    * Deliberately non-commensurate across the three pools: dwells that share a
    * factor drift back into step after a few turns, and three chips turning
@@ -69,21 +77,46 @@ export interface SeedPool {
  * loadSeedWords, or the curated dozen when the database has nothing to say.
  */
 const SEED_CADENCE: {
+  id: string;
   kind: SeedKind;
   dwellMs: number;
   startDelayMs: number;
+  wordOffset?: number;
+  desktopOnly?: boolean;
 }[] = [
-  { kind: "people", dwellMs: 2300, startDelayMs: 600 },
-  { kind: "country", dwellMs: 2900, startDelayMs: 1400 },
-  { kind: "languageFamily", dwellMs: 3700, startDelayMs: 2200 },
+  { id: "people-primary", kind: "people", dwellMs: 2300, startDelayMs: 600 },
+  { id: "country", kind: "country", dwellMs: 2900, startDelayMs: 1400 },
+  {
+    id: "language-family",
+    kind: "languageFamily",
+    dwellMs: 3700,
+    startDelayMs: 2200,
+  },
+  {
+    id: "people-secondary",
+    kind: "people",
+    dwellMs: 2300,
+    startDelayMs: 600,
+    wordOffset: 1,
+    desktopOnly: true,
+  },
 ];
+
+/** The desktop breakpoint shared by the project and the approved mockup. */
+// @req REQ-002
+export const DESKTOP_SEED_BREAKPOINT_PX = 1200;
 
 // @req REQ-002
 export function seedPools(words: SeedWordsByKind): SeedPool[] {
-  return SEED_CADENCE.map((cadence) => ({
-    ...cadence,
-    words: words[cadence.kind],
-  }));
+  return SEED_CADENCE.map(({ wordOffset = 0, ...cadence }) => {
+    const pool = words[cadence.kind];
+    const offset = pool.length === 0 ? 0 : wordOffset % pool.length;
+
+    return {
+      ...cadence,
+      words: [...pool.slice(offset), ...pool.slice(0, offset)],
+    };
+  });
 }
 
 interface ReelHold {
@@ -193,7 +226,7 @@ function SeedChip({ pool, hold, onPick }: SeedChipProps) {
   const { trackRef, settled, incoming } = useSlotReel(pool, hold);
 
   return (
-    <li>
+    <li className={pool.desktopOnly ? "home-hero-seed-desktop" : undefined}>
       <button type="button" onClick={() => onPick(settled)}>
         <span className="sr-only">{settled}</span>
         <span className="home-hero-seed-reel" aria-hidden="true">
@@ -251,10 +284,24 @@ export function HomeHeroSeeds({
       onBlur={() => setVisiting(false)}
     >
       {pools.map((pool) => (
-        <SeedChip key={pool.kind} pool={pool} hold={hold} onPick={onPick} />
+        <SeedChip key={pool.id} pool={pool} hold={hold} onPick={onPick} />
       ))}
 
       <style>{`
+        /* The compact composition teaches the three searchable kinds without
+           wrapping. The approved desktop composition spends its extra room
+           on a second corpus-provided people example. Hiding it also
+           removes that extra control from the mobile accessibility tree. */
+        .home-hero-seed-desktop {
+          display: none;
+        }
+
+        @media (min-width: ${DESKTOP_SEED_BREAKPOINT_PX}px) {
+          .home-hero-seed-desktop {
+            display: list-item;
+          }
+        }
+
         /* The mask. An opaque ground is not decoration here: a running
            transform promotes the element to its own compositor layer, and a
            transparent layer loses subpixel antialiasing — the word would thin
