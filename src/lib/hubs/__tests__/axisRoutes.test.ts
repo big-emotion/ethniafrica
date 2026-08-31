@@ -70,8 +70,10 @@ describe("which axis owns a page", () => {
     }
   });
 
-  // @req REQ-114
-  it("answers null for a page no axis leads to", () => {
-    expect(getAxisForPage("about")).toBeNull();
+  // About explains the project, so Comprendre owns it even though its
+  // established canonical route remains top-level at /fr/about.
+  // @req REQ-132
+  it("files about under Comprendre", () => {
+    expect(getAxisForPage("about")).toBe("comprendre");
   });
 });
