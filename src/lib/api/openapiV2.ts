@@ -2927,6 +2927,60 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["data", "meta", "errors"],
         },
+        // -----------------------------------------------------------------
+        // API key self-service management (ETNI-81)
+        // -----------------------------------------------------------------
+        ApiKeySummary: {
+          type: "object",
+          description:
+            "One of the caller's own API keys. Never carries the raw key or its hash.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            label: { type: ["string", "null"] },
+            tier: { type: "string", enum: ["public", "partner", "admin"] },
+            active: { type: "boolean" },
+            key_prefix: { type: ["string", "null"] },
+            created_at: { type: "string", format: "date-time" },
+            last_used_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+            expires_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+            revoked_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+          },
+          required: [
+            "id",
+            "label",
+            "tier",
+            "active",
+            "key_prefix",
+            "created_at",
+            "last_used_at",
+            "expires_at",
+            "revoked_at",
+          ],
+        },
+        ApiKeyCreated: {
+          type: "object",
+          description:
+            "Response to a successful key creation. `key` is the raw key — shown only in this response, never retrievable again.",
+          allOf: [
+            { $ref: "#/components/schemas/ApiKeySummary" },
+            {
+              type: "object",
+              properties: {
+                key: { type: "string" },
+              },
+              required: ["key"],
+            },
+          ],
+        },
       },
     },
     security: [{ BearerAuth: [] }],

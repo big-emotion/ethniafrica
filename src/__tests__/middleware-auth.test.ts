@@ -166,6 +166,35 @@ describe("middleware - /api/v2/* authentication", () => {
     expect(mockNextResponseNext).toHaveBeenCalled();
   });
 
+  // @req REQ-056
+  it("should skip api_keys Bearer auth for /api/v2/keys self-service endpoints (session-authenticated, ETNI-81)", async () => {
+    // A Supabase session access token, not an api_keys row — must not be
+    // rejected as an invalid API key before reaching the route handler,
+    // which authenticates it itself.
+    const request = createMockRequest("https://example.com/api/v2/keys", {
+      authorization: "Bearer session-jwt",
+    });
+    await middleware(request);
+
+    expect(validateApiKey).not.toHaveBeenCalled();
+    expect(mockNextResponseJson).not.toHaveBeenCalledWith(
+      { error: "invalid_api_key" },
+      { status: 401 }
+    );
+    expect(mockNextResponseNext).toHaveBeenCalled();
+  });
+
+  // @req REQ-056
+  it("should skip api_keys Bearer auth for /api/v2/keys/{id} revoke (ETNI-81)", async () => {
+    const request = createMockRequest("https://example.com/api/v2/keys/key-1", {
+      authorization: "Bearer session-jwt",
+    });
+    await middleware(request);
+
+    expect(validateApiKey).not.toHaveBeenCalled();
+    expect(mockNextResponseNext).toHaveBeenCalled();
+  });
+
   it("should not apply auth logic for non-v2 routes", async () => {
     const request = createMockRequest("https://example.com/api/health");
     await middleware(request);
