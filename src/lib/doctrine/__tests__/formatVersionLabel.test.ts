@@ -18,6 +18,26 @@ describe("formatVersionLabel", () => {
     expect(label).toContain("décembre");
   });
 
+  // The date is a UTC instant, so it must render as the same calendar day
+  // everywhere. Read in the runner's local zone, a midnight-UTC timestamp
+  // slips to the previous day for every reader west of Greenwich.
+  // @req REQ-025
+  it("renders a midnight-UTC instant as the same calendar day in any zone", () => {
+    expect(formatVersionLabel(1, "2026-05-14T00:00:00Z")).toBe(
+      "v1 · publiée le 14 mai 2026"
+    );
+  });
+
+  // The date is a UTC instant, so it must render as the same calendar day
+  // everywhere. Read in the runner's local zone, a midnight-UTC timestamp
+  // slips to the previous day for every reader west of Greenwich.
+  // @req REQ-025
+  it("renders a midnight-UTC instant as the same calendar day in any zone", () => {
+    expect(formatVersionLabel(1, "2026-05-14T00:00:00Z")).toBe(
+      "v1 · publiée le 14 mai 2026"
+    );
+  });
+
   it("handles double-digit versions", () => {
     const label = formatVersionLabel(42, "2026-05-14T00:00:00Z");
     expect(label.startsWith("v42 · publiée le ")).toBe(true);

@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Validate event envelope
-        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@39a42f9f5607d22c38f453bb33212c0c94750486 # v1.2.0
         with:
           payload: ${{ toJson(github.event.client_payload) }}
 
@@ -75,7 +75,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Resolve agent and execution path
         id: route
-        uses: big-emotion/ferry/.github/actions/ferry-route@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-route@39a42f9f5607d22c38f453bb33212c0c94750486 # v1.2.0
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           event_type: ${{ github.event.action }}
@@ -105,13 +105,13 @@ jobs:
     steps:
       - name: Generate Ferry GitHub App token
         id: ferry-token
-        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v3.2.0
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           app-id: ${{ secrets.FERRY_APP_ID }}
           private-key: ${{ secrets.FERRY_PRIVATE_KEY }}
 
       - name: Run Ferry agent
-        uses: big-emotion/ferry/.github/actions/ferry-run-claude-agent@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-run-claude-agent@39a42f9f5607d22c38f453bb33212c0c94750486 # v1.2.0
         with:
           role: ${{ needs.route.outputs.cc_agent }}
           ferry_version: v1.1.2

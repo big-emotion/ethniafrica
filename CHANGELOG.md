@@ -10,6 +10,152 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-08-31
+
+The release that turns the atlas from a set of directories into a place you can
+read. 510 commits since `2.1.0`: three navigation axes replace the flat module
+grid, every fiche is rebuilt on a globe and a parchment, the games hub is cut to
+what it can actually defend, and the source-tier vocabulary is unified across
+code, database, API and interface.
+
+### Breaking
+
+- **One source-tier vocabulary.** `primary` / `secondary` / `tertiary` are gone
+  from the database, the API payloads and the interface. The scale is now
+  `official` / `referenced` / `unverified`, with authority (`tier`) and
+  provenance (`source_kind`) kept as separate axes — AI-generated text is
+  `unverified` + `ai_generated`, not a tier of its own. The doctrine flipped
+  with it: nothing is forbidden, everything is labelled. Excluding oral,
+  community and amateur knowledge would itself have been a colonial filter, so a
+  weak source is published with its provenance visible rather than suppressed.
+  Migration `041` rewrites existing rows. Consumers reading `tier` must update.
+- **The production corpus sync now targets the production database.** It
+  previously fired on a successful production deploy and wrote into the recette
+  project, then POSTed cache revalidation to a site it had never written to. The
+  production project is now configuration with no default, and a sync that would
+  land on recette is refused outright.
+
+### Added
+
+- **Three entry points instead of a module grid.** _Explorer_, _Comprendre_ and
+  _Jouer_ replace the flat navigation; every module is nested under the hub that
+  leads to it, and the breadcrumb is derived from the route and mounted once in
+  the shell.
+- **Faceted hubs** for countries, peoples and families — one shared map across
+  the three facets, database-side filtering, numbered pagination with a page-size
+  choice, and a loop closed between the map and the list.
+- **The fiches, rebuilt.** One globe and one parchment per fiche: a night band
+  carrying the globe, a server-rendered parchment dossier below it, a sticky
+  reading rail with a chapter summary, a title band, and a facts panel posed on
+  the globe rather than glued to its edge. The globe turns, flattens to Mercator,
+  flies to a subject and opens all 54 countries without leaving the page.
+- **A closed markup grammar for fiche prose**, wired into all three fiches — never
+  heuristic, so a reconstructed form or an em-dash aside cannot corrupt a clean
+  fiche.
+- **A ranked search.** Relevance is computed in Postgres over weighted AFRIK
+  tsvectors through a dedicated RPC: exact matches first, confidence modulating
+  without ordering, and a relation usable as a search of its own.
+- **An entity comparator** — orchestrator, header with an explicit no-verdict
+  rule, sticky bar, entity picker, share bar, and a generated Open Graph card.
+- **The names atlas** (`/fr/noms`): name records with their own strict model and
+  parser, a surname connection rule, a section on the people fiche, and
+  `GET /v2/names`.
+- **Colonisation and resistance** (`/fr/regards/colonisation-et-resistances`):
+  imposed names, border crossings, an event chronology, a gaze-event narrative,
+  and the colonial event types behind them.
+- **Migrations as an interactive atlas** — path layer, time scrubber and detail
+  sheet, with failure, empty and filtered states told apart.
+- **Relations**: an ego-network graph, derived linguistic proximity, a per-people
+  links page and `/v2/relations`.
+- **A quiz built on what the corpus records** — seven templates that ask what the
+  atlas is actually about, sessions scoped to a country or a language family and
+  ordered from familiar ground outwards, a round that names its subject before
+  asking, a shareable score card, and a bank-integrity gate in CI.
+- **A Mercator game** measured off the committed outlines, asking by estimate
+  rather than by coin flip.
+- **Reader reporting without an account** — a one-question form, a general
+  report that names no entity, the control on the reading rail, and an HMAC
+  proof-of-work anti-bot challenge replacing Turnstile.
+- **Anecdotes** — 24 sourced facts under _Comprendre_, read one at a time, with a
+  picture and a way to answer back.
+- **A type scale and an actions charter**: one fluid scale with nine roles, four
+  shapes for a single action, the shadcn primitives moved onto the scale, and the
+  header, footer and legal template brought onto it.
+- **`sitemap.xml`, a generated `robots.txt` and `/fr/plan-du-site`.**
+- **API versioning headers and a deprecation policy** (ETNI-77).
+- Every wait now spends itself on a _Saviez-vous_ fact rather than a spinner.
+
+### Changed
+
+- The home opens on the reader's question in one sentence, over a textured globe,
+  with three corpus-reading slices below and seed chips drawn from the corpus.
+- The _Jouer_ hub is cut from eleven games to two it can defend, each filed onto
+  the corpus entity it questions.
+- Editorial readiness is separated from data availability — a module is
+  advertised only when its data is live.
+- Language-family counts, family branches and country distribution are computed
+  from stored rows instead of embedded legacy values.
+- A headcount is dated by its own census rather than by the atlas's reference
+  year.
+- 492 fiches can now state their own name; every country fiche carries a summary
+  chapeau.
+- Rate limiting is aligned with the canonical `api_keys` tiers.
+- An unapplied Supabase migration is now impossible to miss.
+
+### Fixed
+
+- Structurally-expected empty fields are marked as missing rather than silently
+  omitted.
+- Canonical publication and audit dates render in UTC instead of slipping to the
+  previous day west of Greenwich.
+- The atlas ships a single globe engine; the point cloud is deleted.
+- Accessibility gates for axe, keyboard, zoom and colour-blindness now cover the
+  atlas, the comparator and the quiz.
+
+## [2.1.0] - 2026-08-04
+
+### Added
+
+- Public flag reporting and moderation surfaces, including API endpoints, a
+  unified submission form, the public moderation queue and Turnstile anti-spam
+  protection (ETNI-58, ETNI-61, ETNI-62, ETNI-63).
+- Contributor profile management with atomic account erasure and anonymized
+  attribution for retained moderation records (ETNI-57).
+- Pinned fiche version banners, frozen-doctrine links and pinned doctrine
+  resolution for stable historical citations (ETNI-50, ETNI-53).
+- Accessible citation components and formatting contracts for transparent
+  source attribution (ETNI-48).
+- OpenAPI 3.1 documentation with complete endpoint schemas and reusable error
+  responses.
+- A compact branded footer, legal pages and the territorial mosaic treatment
+  for the Big Emotion identity.
+- An AFRIK source-tier audit gate for validating people profiles before Prismic
+  migration (ETNI-403).
+
+### Changed
+
+- Production deployments now synchronize AFRIK data after a successful deploy
+  using the supported Node.js 22 runtime.
+- Country and people indexes now paginate their Supabase reads, while country
+  sorting and search use canonical French common names (ETNI-395, ETNI-397).
+- Language-family people lists are derived from canonical relations instead of
+  legacy embedded values (ETNI-394).
+- Supabase migration numbering was normalized to preserve a single ordered
+  sequence.
+
+### Fixed
+
+- Restored and hardened direct navigation hydration across public routes.
+- Canonical publication and audit dates now render in UTC instead of shifting
+  to the previous day in negative-offset time zones.
+- External diaspora relations are skipped during AFRIK synchronization, and
+  staging synchronization now includes target guards and drift verification
+  (ETNI-396).
+- Citation previews meet contrast requirements and accept relative fiche URLs
+  (ETNI-48).
+- Responsive titles retain a safe gradient fallback, and the Big Emotion logo
+  renders its complete letterforms.
+
 ## [2.0.0] - 2026-07-21
 
 First release since `v1.2.0` (2025-11-14). It covers the full V1 → V2 rewrite:
@@ -101,5 +247,7 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/big-emotion/ethniafrica/compare/v2.1.0...v3.0.0
+[2.1.0]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/big-emotion/ethniafrica/compare/v1.2.0...v2.0.0

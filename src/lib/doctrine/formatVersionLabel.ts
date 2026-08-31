@@ -3,6 +3,8 @@
  *   "v{n} · publiée le {long French date}"
  *
  * Story ETNI-30 — version label AC.
+ *
+ * @req REQ-025
  */
 export function formatVersionLabel(
   version: number,
@@ -13,6 +15,7 @@ export function formatVersionLabel(
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   });
   return `v${version} · publiée le ${longFrenchDate}`;
 }
