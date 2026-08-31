@@ -1,13 +1,13 @@
--- Migration 052 — the name entity: afrik_patronymes and its nameSystem discriminant
+-- Migration 053 — the name entity: afrik_patronymes and its nameSystem discriminant
 --
 -- Story: ETNI-1454 (Epic ETNI-1453, DEC-038, DEC-039, ARCH-019).
 -- ETNI-1452's LOT 1 originally allocated migration 051 to this ticket. By
 -- the time this branch was cut, 050 and 051 were already claimed on recette
 -- by two unrelated, already-merged tickets outside that plan's LOT 1 —
 -- ETNI-1419 (050_search_query_log.sql) and ETNI-70
--- (051_revision_publication.sql) — so the plan's number allocation for this
--- position is stale. This migration claims 052, the next number actually
--- free on recette, rather than colliding with either.
+-- (051_revision_publication.sql). At merge time 052 was likewise taken on
+-- recette (052_afrik_search_prefix_unaccent.sql), so this migration claims
+-- 053, the next number actually free on recette, rather than colliding.
 --
 -- DEC-038 makes the name a first-class dimension of the corpus, alongside
 -- people and country. DEC-038 also names it deliberately: internally the

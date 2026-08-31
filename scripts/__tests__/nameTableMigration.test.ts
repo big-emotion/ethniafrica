@@ -1,5 +1,5 @@
 /**
- * Static analysis of migration 052_name_table.sql — the first-class "name"
+ * Static analysis of migration 053_name_table.sql — the first-class "name"
  * entity (internally afrik_patronymes, per DEC-038) and its nameSystem
  * discriminant (DEC-039, ARCH-019).
  *
@@ -14,11 +14,11 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const migration = readFileSync(
-  resolve(process.cwd(), "supabase/migrations/052_name_table.sql"),
+  resolve(process.cwd(), "supabase/migrations/053_name_table.sql"),
   "utf8"
 );
 
-describe("051_name_table.sql migration contract", () => {
+describe("053_name_table.sql migration contract", () => {
   // @req REQ-133
   it("declares the name_system_type enum with the five DEC-039 subtypes, idempotently", () => {
     expect(migration).toContain("CREATE TYPE name_system_type AS ENUM");
