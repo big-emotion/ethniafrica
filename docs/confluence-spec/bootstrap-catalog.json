@@ -130,6 +130,377 @@
       "requirementsSatisfied": ["REQ-028", "REQ-032"],
       "source": "docs/adr/0001-fr28-demographic-tolerance.md",
       "status": "Approved"
+    },
+    {
+      "id": "DEC-011",
+      "title": "Separate admission status, evidence tier, and source kind",
+      "context": "The repository currently mixes an Approved four-value display tier, a Tier 1/2 editorial rule, a broader curator list, and hard-coded form/API values.",
+      "decision": "- Maintain one executable catalogue with separate admission (preferred, allowed, discovery_only, review_required, or prohibited), evidenceTier (1 or 2 for publishable factual evidence), and sourceKind fields.\n- Seed preferred and allowed official sources with UN DESA/WPP, UNSD, UNFPA, UNESCO, UNICEF/MICS, World Bank, African Union, ACALAN, national statistical institutes, censuses, ministries, official gazettes, legislation, national archives, CIA World Factbook, Glottolog, SIL Ethnologue, WALS, IWGIA, DHS Program, and IPUMS.\n- Allow peer-reviewed journals, academic monographs, university presses, recognized theses and dissertations, and attributable community- or Indigenous-organization publications with a clearly bounded point of view.\n- Allow underlying works hosted by AJOL, HAL, Persée, OpenEdition, theses.fr (http://theses.fr), eHRAF, ELAR, Pangloss, Gallica/BnF, British Library EAP, and recognized institutional repositories or archival collections; cite the work rather than merely the hosting platform.\n- Treat Wikipedia language versions, WorldCat, Sudoc, library catalogues, search indexes, and book-preview services as discovery tools rather than evidence.\n- Treat AI-generated content, unattributed aggregators, forums, ordinary social posts, and unsourced blogs as prohibited factual evidence.",
+      "alternatives": "Keep separate lists in AGENTS.md (http://AGENTS.md), curator instructions, validators, and forms; or accept any source that supplies a URL.",
+      "tradeoffs": "A maintained catalogue requires governance, but removes contradictory classifications and prevents drift.",
+      "requirementsSatisfied": ["REQ-092", "REQ-093", "REQ-022"],
+      "source": "User-approved structured reference and oral-narrative specification (2026-07-29).",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-012",
+      "title": "Normalize references and preserve a legacy compatibility boundary",
+      "context": "DEC-003 already requires normalized per-assertion provenance, but active AFRIK file models still store undifferentiated string arrays.",
+      "decision": "- Store each cited work once in a stable structured reference registry.\n- Store pages, folios, sections, and timestamps on assertion-reference links.\n- Make new fiche models reference stable source keys.\n- Temporarily accept legacy strings through a lossless compatibility adapter and an auditable migration report.\n- Do not infer or invent missing author, year, tier, identifier, or URL metadata during migration.",
+      "alternatives": "Embed complete source objects in every fiche; continue using strings; or destructively rewrite all citations from inferred metadata.",
+      "tradeoffs": "Compatibility lasts for a defined migration period, but avoids a risky all-at-once rewrite of thousands of existing citations.",
+      "requirementsSatisfied": [
+        "REQ-093",
+        "REQ-008 successor behavior",
+        "DEC-003"
+      ],
+      "source": "User-approved structured reference and oral-narrative specification (2026-07-29).",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-013",
+      "title": "Separate bibliographic references, controlled assets, and oral narratives",
+      "context": "A cited book, a private scan of pages, and a narrated account have different provenance, legal, epistemic, and access requirements.",
+      "decision": "- Keep bibliographic references in the normalized source registry.\n- Keep scans, OCR, recordings, and consent evidence as controlled assets linked to a reference or oral narrative.\n- Keep oral narratives in a separate first-class registry linked to entities and, where appropriate, assertions.\n- Use deny-by-default access for protected assets and expose them only through authorized, time-limited access.\n- Never commit protected scans, recordings, consent documents, or personal narrator data to the public AFRIK dataset or Git repository.",
+      "alternatives": "Put scans and oral accounts into the generic sources table; publish every uploaded asset; or keep oral narratives as unstructured fiche prose.",
+      "tradeoffs": "Separate records add a small number of relations but preserve consent, attribution, narrative plurality, and rights boundaries.",
+      "requirementsSatisfied": [
+        "REQ-094",
+        "REQ-095",
+        "REQ-096",
+        "REQ-024",
+        "REQ-088"
+      ],
+      "source": "User-approved structured reference and oral-narrative specification (2026-07-29).",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-014",
+      "title": "Use Night and Parchment as semantic surface modes",
+      "context": "The approved homepage uses the Night identity while existing inner pages retain the previous UI. Applying Night to every long-form document, form, and dense table would reduce reading comfort, while retaining the legacy light UI would keep the product visually fragmented.",
+      "decision": "Use Night for navigation, page intros, overlays, and immersive modules. Use Parchment for long-form reading, forms, dense tables, API documentation, and moderation. Both modes share semantic tokens and reusable components defined by ARCH-012.\n\nArchitecture dependency: ARCH-012\n\nStatus note: Superseded — by DEC-016 (2026-08-01). The designer overruled the Night ground; Night is retired on the home and the fiches.",
+      "alternatives": "Apply Night to every surface; retain the legacy light UI; or maintain unrelated themes per page family.",
+      "tradeoffs": "Two semantic modes require broader component and contrast testing, but preserve brand continuity, reading quality, and information density.",
+      "requirementsSatisfied": [
+        "REQ-043",
+        "REQ-044",
+        "REQ-064–REQ-069",
+        "REQ-097–REQ-104"
+      ],
+      "source": "EthniAfrica — Full Site Maquette 2026 (https://www.figma.com/design/CdZhTHDZaNkflOy164FoBf)",
+      "status": "Obsolete"
+    },
+    {
+      "id": "DEC-015",
+      "title": "Migrate test-first by route family",
+      "context": "A page-by-page migration would duplicate styles, increase shared-component conflicts, and create inconsistent intermediate states across the current route inventory.",
+      "decision": "Deliver semantic foundations and the global shell first under ARCH-012, then migrate independent route families with failing tests before implementation, followed by one cross-route accessibility, performance, and visual-parity gate.\n\nArchitecture dependency: ARCH-012\n\nStatus note: Pending — substance unchanged by DEC-016; sequencing re-affirmed in the amended delivery plan",
+      "alternatives": "Ship one large refactor; migrate unrelated pages independently; or add visual and accessibility tests only after implementation.",
+      "tradeoffs": "The sequence requires upfront foundation work and ongoing screenshot maintenance, but produces smaller reviews, enables safe parallel route-family work, and lowers regression risk.",
+      "requirementsSatisfied": [
+        "REQ-047",
+        "REQ-048",
+        "REQ-083",
+        "REQ-085",
+        "REQ-097–REQ-105"
+      ],
+      "source": "_bmad-output/planning-artifacts/design-charter-v2.md §10 and module-specs/epic-16-parchment-route-families.md (the Figma maquette is stale until re-aligned with DEC-016)",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-016",
+      "title": "Adopt the light charter: Parchment everywhere, one accent per page",
+      "context": "After reviewing the implemented Night home and Night dataviz insets, the designer overruled the dark ground and the product owner retired it (2026-08-01): large dark blocks weigh pages down and hurt reading, and multiple hue associations per page disturb the visual journey.",
+      "decision": "All home and existing-route surfaces are Parchment (the site's validated warm palette). Each entity page carries exactly one accent — people terre #C4573F, country ocre #C9821F, family teal #33A390 — with data series distinguished by lightness ramps of that accent, never by additional hues. The L2 semantic color systems (confidence, classification, source tier, flag, error) are untouched. Typography becomes Fraunces 900 (true italic axis) + Nunito Sans. Navigation is the validated pattern: static header, sticky context triad on fiches, journey tabs. Dataviz canvases share one uniform height per breakpoint. The Night token group stays dormant as a candidate for immersive module surfaces (epics 7–13) only, designer to confirm.\n\nArchitecture dependency: ARCH-012\n\nPartially superseded by: DEC-020 (2026-08-25), on its home-hero clause only. The two-column hero, the static map-stage figure and the ten-card module grid of option-d-fusion.html are retired. Everything else in this decision stands and is unaffected: the Parchment ground, the per-entity accent rule, the Fraunces 900 + Nunito Sans pairing, the navigation pattern, the uniform dataviz heights and the untouched L2 semantic colour systems. fiches-v2.html remains contract-locked in full.\n\nAmended by: DEC-022 (2026-08-25), on two clauses only — the dormant Night token group, now confirmed for the globe stage; and the per-entity accent triple, now restated for fiche surfaces. Every other clause stands.\n\nStatus note: Approved — product owner, 2026-08-01",
+      "alternatives": "Keep the DEC-014 Night/Parchment split; apply Night everywhere; maintain unrelated themes per page family.",
+      "tradeoffs": "The nocturnal identity is lost outside future module surfaces, in exchange for reading comfort, calmer visual journeys, and a single testable discipline; the Figma maquette must be regenerated from the charter.",
+      "requirementsSatisfied": [
+        "REQ-043",
+        "REQ-044",
+        "REQ-064–REQ-069",
+        "REQ-097–REQ-104 (as amended)"
+      ],
+      "source": "_bmad-output/planning-artifacts/design-charter-v2.md (commit 39884200 on recette) + the contract-locked artifacts under design-proposals/ (option-d-fusion.html, fiches-v2.html and their structural tests)",
+      "status": "Approved"
+    },
+    {
+      "id": "DEC-017",
+      "title": "Resolve role checks through a SECURITY DEFINER helper and scope write policies to write commands",
+      "context": "supabase/migrations/008_user_roles.sql declares an admin policy on user_roles FOR ALL whose USING clause selects from user_roles itself. Postgres raises 42P17 — infinite recursion detected in policy for relation \"user_roles\". Because the moderator policies added by migrations 029_names_atlas.sql and 035_migration_events.sql are also declared FOR ALL, their USING clause is evaluated on SELECT, so an anonymous read of name_records or migration_events recurses and fails even though both tables carry a permissive public-read policy. /fr/noms returns 500 and /fr/migrations renders empty.",
+      "decision": "Role membership is resolved through a single SECURITY DEFINER helper function with a pinned search_path, invoked by every policy that needs a role check. Write policies are declared FOR INSERT, UPDATE, DELETE — never FOR ALL — so that no read path ever evaluates a role subquery.\n\nArchitecture dependency: ARCH-004",
+      "alternatives": "Disable RLS on the affected tables; denormalise the role list onto each table; grant the anon role a bypass.",
+      "tradeoffs": "A SECURITY DEFINER function must be audited and its search_path pinned, in exchange for read paths that cannot recurse and one place to change when the role model evolves.",
+      "requirementsSatisfied": ["REQ-005", "REQ-033", "REQ-055"],
+      "source": "Recette audit 2026-08-25, findings D1 and D2 (reproduced locally on branch recette at 9d25f263).",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-018",
+      "title": "Publish a module only when its data is published",
+      "context": "Every module migration in the epics 7–14 wave carries the note \"Human-applied via supabase db push per the AR45 runbook; this story is code-complete without production application.\" A story is therefore complete once its code exists, whether or not its migration ran or its corpus loaded. isModuleLive compounds this by returning live whenever a route resolves, never asking whether the route has data. The home consequently advertises ten available modules on the strength of ten existing URLs, and visitors reach empty or failing pages.",
+      "decision": "Availability is a property of data, not of routing. A module is published on the home only when its backing data source returns at least one record. The definition of done for a module story includes applying its migration and loading its corpus in the target environment, or leaving the module explicitly unavailable.\n\nArchitecture dependency: ARCH-013",
+      "alternatives": "Keep route-based availability and rely on reviewers to notice empty modules; hand-maintain an availability flag per module.",
+      "tradeoffs": "A data probe on the home adds a cached query per module, in exchange for a home that cannot advertise a feature it cannot deliver.",
+      "requirementsSatisfied": ["REQ-106", "REQ-107"],
+      "source": "Recette audit 2026-08-25, finding E, against module-specs/epic-14-home-carte-vivante.md FR92 (\"a hub with zero live surfaces must not render\").",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-019",
+      "title": "Present the Names Atlas as an ethnonym atlas until an anthroponym corpus exists",
+      "context": "The home card reads « D'où vient un nom ? », which readers understand as personal-name genealogy. The name_records schema attaches names to a people, not to a person: name_text, name_type ∈ {endonym, exonym, historical_spelling, surname}, language_of_origin, meaning, imposed_by, imposition_period, why_problematic, contemporary_usage. The single published fiche shows the module's real strength — Yorùbá as endonym against Nago as an exonym imposed by the French colonial administration, each cited at Tier 1. No anthroponym corpus exists behind the surname value and no fiche uses it, so the module cannot answer where a family name comes from.",
+      "decision": "The module is presented as what it is — an atlas of ethnonyms, endonyms, exonyms and imposed appellations. Personal-name genealogy is out of scope until a feasibility spike establishes that a Tier 1 / Tier 2 anthroponym corpus can be sourced at usable scale; only then does it become its own epic.",
+      "alternatives": "Keep the current label and let readers discover the mismatch; build a surname feature on inferred data, which the project forbids.",
+      "tradeoffs": "The product loses a headline promise it could not keep, and gains a module that delivers exactly what it announces on the corpus it actually has.",
+      "requirementsSatisfied": ["REQ-022", "REQ-092", "REQ-106"],
+      "source": "Recette audit 2026-08-25, finding F1. Corpus: dataset/source/afrik/noms/ holds one fiche, flagged \"illustrative\": true.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-020",
+      "title": "Make the home hero an interactive globe and replace the module grid with three entry points",
+      "context": "DEC-016 locks design-proposals/homepage-modules/option-d-fusion.html as the home's contract-locked artifact: a two-column hero pairing copy with a static map-stage SVG figure, above a grid of ten per-module cards. On 2026-08-25 the product owner reviewed an interactive prototype and validated a different composition, stating two rules in the same session: the home must carry as little reading as possible, and the continent must be shown at its true surface area rather than as a decorative outline. The shipped hero satisfies neither DEC-016 nor this validation — it carries a decorative dot canvas that is aria-hidden, is not geo-referenced, and is bound to no data.",
+      "decision": "- The home hero presents Africa as an interactive WebGL globe, rendered at true relative surface area from the committed Natural Earth basemap through the existing atlas projection. The reader can turn it, and can morph it to the flat Mercator projection to see what that projection does to surface areas.\n- The ten-card module grid is retired. Three animated entry points — Explorer, Comprendre, Jouer — replace it, each carrying a count computed from stored records and a single action verb.\n- Home surfaces present figures and verbs, not prose: no entry point carries a descriptive sentence.\n- Each access mode gains a hub route, since removing the grid removes the only surface that listed the ten modules.\n- Where WebGL is unavailable, the committed AfricaBasemap SVG carries the same information. The hero is never empty.\n\nArchitecture dependency: ARCH-014\n\nSupersedes: DEC-016, on its home-hero clause only. The Parchment ground, the per-entity accent rule, the Fraunces 900 + Nunito Sans pairing, the navigation pattern, the uniform dataviz heights and the L2 semantic colour systems all stand unchanged, and the globe home conforms to them. fiches-v2.html remains contract-locked in full.\n\nAmended by DEC-026: the \"exactly three entry points\" clause of this decision is superseded. Search becomes the site's primary entry point and the results page its central surface. Every other clause of DEC-020 — the interactive globe at true surface area, no module grid, no narrative text in the hero — stands unchanged.",
+      "alternatives": "Keep the static figure of option-d-fusion.html and animate it in two dimensions — rejected as not delivering the true-surface-area argument, which is the editorial point. Ship the globe on its own page and leave the home unchanged — rejected because the home's own headline promises a living map. Keep the module grid below the three entry points — rejected against the minimum-reading rule.",
+      "tradeoffs": "The hero costs roughly 170 kB of WebGL runtime that a static figure does not, accepted by the product owner on the record and contained by ARCH-014 (deferred load, capability fallback, stated budget). Three hub routes must be built that did not exist. In exchange the home delivers the argument the product is built to make, in one gesture and almost no text.",
+      "requirementsSatisfied": ["REQ-112", "REQ-113", "REQ-114"],
+      "source": "Product-owner validation of the interactive home mockup, 2026-08-25, in session with the design exploration that produced it.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-021",
+      "title": "Adopt three.js and render one textured-sphere globe for every atlas surface",
+      "context": "DEC-020 put an interactive globe on the home; ETNI-1214 shipped it as a point cloud — hand-written WebGL drawing one gl_Point per continent dot, across three files (HomeGlobe, HomeGlobeFallback, HomeGlobeStage), with no third-party dependency. Extending the globe to the three entity fiches requires three things a scatter of points cannot express: a closed administrative outline that draws itself, a borderless presence field, and a dashed derived footprint. All three are surface treatments; they need a filled, textured surface to sit on. Four reference mockups were validated on 2026-08-25 rendering exactly that, on three.js r169.",
+      "decision": "- three becomes a runtime dependency, pinned at r169. The atlas renders a morphable sphere⇄Mercator geometry carrying an equirectangular canvas texture, lit by a Lambert term with a rim adjustment.\n- There is exactly one globe component in the codebase. It takes an overlay as a parameter; it is never subclassed, wrapped, or duplicated per entity. Adding a fifth entity is a new overlay function, not a new globe.\n- That component owns its non-WebGL fallback. A missing context is a branch inside it, not a second component, so no fact can exist only in the 3D path.\n- The point-cloud HomeGlobe is superseded. The home hero becomes the same component with a continent overlay, and the three point-cloud files are removed once it does. The two engines must never ship side by side.\n\nArchitecture dependency: ARCH-015\n\nAmended — what actually shipped: this decision records the adoption of three.js r169, but three.js never became a dependency of the project. The atlas globe is hand-written WebGL 1 with GLSL shader strings, and no three package is present. The single-morphable-globe intent of this decision held; only the stated engine is wrong. ADR-0007 in the repository carries the same correction under its \"What actually shipped\" section. This paragraph is recorded so the catalogue stops asserting a dependency that does not exist.",
+      "alternatives": "Extend the point-cloud engine and re-express the three overlays as dot density — rejected because it would redesign the validated mockups to fit the engine, inverting the relationship between design and implementation. Keep both engines, points on the home and textures on the fiches — rejected: two rendering paradigms for one visual object, each needing its own fallback, tests and reviewers. Reimplement a textured pipeline in raw WebGL — rejected as re-deriving geometry, camera and material handling for the sole benefit of avoiding a dependency, moving the same maintenance burden inside the repository instead of outside it.",
+      "tradeoffs": "A real dependency, and merged work discarded. Tree-shaken to what the atlas uses (WebGLRenderer, PerspectiveCamera, Scene, Mesh, BufferGeometry, ShaderMaterial, CanvasTexture) the added weight is on the order of 120–150 kB gzip, inside the ~170 kB DEC-020 already accepted on the record — but that figure must be asserted in CI, and if the measured bundle lands above the DEC-020 budget the product owner must re-accept it before the work merges. The 1.3 MB visible in the mockups is the full unminified library inlined for a self-contained artifact, not a shipping estimate. ETNI-1214 is discarded; the cost is paid once, and the point cloud has no second consumer.",
+      "requirementsSatisfied": [
+        "REQ-116",
+        "REQ-117",
+        "REQ-112 (re-implemented on the new engine, behaviour unchanged)"
+      ],
+      "source": "Product-owner decision, 2026-08-25, on reviewing the four reference mockups: the mockups are the reference and the code aligns to them. Repository record: docs/adr/0007-atlas-globe-engine.md.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-022",
+      "title": "Confirm the globe stage as the one Night surface, and restate the fiche accent",
+      "context": "DEC-016 retired the Night ground and left its token group \"dormant as a candidate for immersive module surfaces (epics 7–13) only, designer to confirm\". That confirmation never happened in writing, yet the home mockup contract-locked by REQ-115 ships a Night band behind its globe, and the four fiche mockups validated on 2026-08-25 do the same. Separately, DEC-016 fixed one accent per entity page — people terre, country ocre, family teal. DirectoryHero.DIRECTORY_ACCENT_CLASS implements exactly that. FicheSequence.ACCENT_CLASS_BY_ENTITY does not: it uses people ocre, country teal, family perv, because inside a fiche IdentityPanel reserves terre for the imposed-exonym marker. DEC-016 did not anticipate that marker, so the deviation is sound but unrecorded — the code has been contradicting an Approved decision with only a source comment to justify it.",
+      "decision": "- The Night token group is confirmed for exactly one surface: the globe stage. A page carries at most one Night band, and it holds the globe; everything the reader reads stays Parchment. The seam between the two is a single ocre rule, and is not repeated inside the Parchment body.\n- On a fiche, the accent is people ocre, country teal, family perv. Terre stays reserved for the imposed-exonym marker, so a fiche never carries it as its page accent.\n- On a directory, the DEC-016 triple stands unchanged — people terre, country ocre, family teal — because a directory carries no such marker.\n- A component still never names an accent. It reads var(--accent) and var(--accent-tint); a page wrapper carries the .afh-accent-* class.\n\nAmends: DEC-016, on two clauses only — the dormant Night group, and the per-entity accent triple as it applies to fiche surfaces. Every other clause of DEC-016 stands: the Parchment ground for reading surfaces, the Fraunces 900 + Nunito Sans pairing, the navigation pattern, the uniform dataviz heights, and the untouched L2 semantic colour systems.",
+      "alternatives": "Align FicheSequence to DEC-016 and paint fiche families teal — rejected: it would collide with the country accent and still leave terre doing two jobs on a people fiche. Keep the deviation undocumented — rejected: shipped code contradicting an Approved decision is drift whether or not it is correct. Extend Night beyond the globe stage — rejected against the reading-comfort reason DEC-016 retired it for.",
+      "tradeoffs": "Three surfaces now carry three accent mappings, which a newcomer must look up rather than infer; in exchange each mapping is stated where the code can be checked against it, and the imposed-exonym marker keeps the one hue that makes it legible. Confirming Night for the globe stage reopens a dark surface the designer had retired, bounded to the one place where it earns its keep — a lit body against a dark ground.",
+      "requirementsSatisfied": ["REQ-116", "REQ-118", "REQ-119"],
+      "source": "Design exploration validated 2026-08-25. Repository record: docs/design/atlas-charter.md §1–§4. Code evidence: src/components/fiche/FicheSequence.tsx, src/components/views/DirectoryHero.tsx.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-023",
+      "title": "Prismic writes, Supabase serves, git archives",
+      "context": "The AFRIK corpus is edited by pull request. Every editorial change — correcting an etymology, adding a source, rewriting a colonial-name explanation — costs a branch, a review and a deploy, which makes the product owner the bottleneck on his own corpus. A CMS is the answer, but the naive framing (\"put the fiches in a CMS and read them from it\") would place a third-party content CDN on the read path of every fiche, and would strand the twenty integrity checks that today run over the JSON source tree.",
+      "decision": "- Prismic becomes the system of record for people, country and language-family fiches. Editing happens there and nowhere else.\n- Supabase becomes a projected read model, written only by the projection described in DEC-024. It is not a backup: it is reconstructible from Prismic at any time, and it is the sole source the site and the public API read.\n- Git becomes the archive. Every successful projection rewrites the canonical AFRIK JSON and commits it, preserving the diffable, auditable history and a complete restoration path independent of the CMS vendor.\n- One direction of writing only. Prismic never reads Supabase to publish, and Supabase never writes to Prismic. There is no bidirectional synchronisation to reconcile.\n\nArchitecture dependency: ARCH-016",
+      "alternatives": "An additive editorial overlay leaving the fiche fields in git — rejected: it does not deliver fiche editing, which is the requirement. Reading Prismic at request time with a database fallback — rejected: a fallback path is rarely exercised and therefore rarely correct, and this design makes the nominal path the resilient one instead. Keeping the corpus in git and editing through a bespoke admin UI — rejected as rebuilding a CMS the project would then have to maintain.",
+      "tradeoffs": "A publication becomes visible only after the projection completes rather than immediately, and one more system sits in the editorial chain. In exchange, a Prismic outage costs publication only — never reading — and the corpus keeps its versioned archive.",
+      "requirementsSatisfied": ["REQ-121", "REQ-122"],
+      "source": "Prismic source-of-record feasibility study, 2026-08-27. Measured on the 886 committed fiches and on the recette Supabase schema.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-024",
+      "title": "Run the existing repository gates on serialized JSON, at release publication",
+      "context": "Prismic offers no server-side validation hook: an editor clicks Publish and the content is published. The corpus is protected today by roughly twenty checks in validateAfrikData.ts (identifier uniqueness, ISO 639-3 validity, the demographic sum band, mandatory source tier, colonial-term context, family structural completeness) plus three decolonial rules in checkEditorialRules.ts. Both read AFRIK JSON files, and the database stores that same shape in a content JSONB column — so the gates do not need porting, only feeding.",
+      "decision": "- Editorial work happens in a Prismic release, never by direct publication.\n- A job queries the release's own ref, serializes each changed document to canonical AFRIK JSON, and runs validateAfrikData and checkEditorialRules unmodified.\n- Green publishes the release through the API and triggers the projection. Red refuses publication and names the failing rule. This is prevention, not post-publication detection.\n- Cross-field constraints that Prismic cannot express — the per-country percentage band, referential validity of an ISO code, the two-source rule on a contested classification — are enforced here and nowhere else.\n\nArchitecture dependency: ARCH-016",
+      "alternatives": "Reimplement the twenty checks against the Prismic model — rejected: two implementations of one rule set drift, and the repository already owns the tested one. Accept post-publication detection with an alert — rejected: it publishes ungated data on an atlas whose entire argument is traceability. Model the constraints as Prismic field validations — rejected as impossible: Prismic validates one field at a time and cannot see its neighbours.",
+      "tradeoffs": "The team accepts the discipline of publishing by release, and the gate becomes a hard dependency of publication. In exchange no check is rewritten, the CI and the CMS enforce literally the same code, and an invalid fiche never reaches the database.",
+      "requirementsSatisfied": ["REQ-122", "REQ-123"],
+      "source": "Prismic source-of-record feasibility study, 2026-08-27.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-025",
+      "title": "Keep the site on the service layer rather than its own HTTP API",
+      "context": "The proposal was raised to have the site consume its own /api/v2 REST surface instead of importing the service layer, on the grounds that it would leave one read path. Today Server Components import @/api/v2/services/* directly and the HTTP routes exist for third parties; only interactive client components call the API over the network.",
+      "decision": "The site keeps calling the service layer directly. Divergence between the HTTP route and the service is closed by contract tests asserting that both return the same payload, not by routing the site through the network.",
+      "alternatives": "Dogfood the API over HTTP — rejected: a fiche render makes five service calls, each becoming a network round trip; the middleware runs on every one, so the site would subject itself to its own Upstash rate limiting; and unstable_cache would be replaced by an HTTP cache layer to re-tune. It closes no divergence that contract tests do not close more cheaply. Its strongest argument — centralising a fallback if Prismic is unreachable — is void under DEC-023, because the site never calls Prismic.",
+      "tradeoffs": "The public API surface is not exercised by ordinary site traffic, so a route regression that the service does not share would surface later. Contract tests are the compensating control and are a prerequisite of this decision, not an optional extra.",
+      "requirementsSatisfied": ["REQ-121"],
+      "source": "Prismic source-of-record feasibility study, 2026-08-27, answering a product-owner question raised in the same session.",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-026",
+      "title": "Search becomes the site's entry point",
+      "context": "Post-V3 user feedback showed readers almost exclusively use search and do not navigate the rubrics. The home currently stacks nine full-bleed bands over roughly 5 400 px — six to seven screens on a 430 px viewport — and the globe, which the brand charter names the strongest visual asset of the site, appears on the sixth. The charter already records the diagnosis under \"The atlas leads\".",
+      "decision": "The search bar becomes the primary entry point of the site and the results page becomes its central surface. The retained results direction is the enriched cartouche: one dominant entity answer, a small number of sourced editorial highlights, then all result types below — peoples, countries, families, quiz questions and persons. Named lenses replace tabs: they re-frame the same result set without switching view. The home keeps the Mercator globe beside the search field rather than below the fold.\n\nSupersedes: DEC-020, on its \"exactly three entry points\" clause only. DEC-020's other clauses (interactive globe at true surface area, no module grid, no narrative text) stand.",
+      "alternatives": "(a) a typed fan of senses as the primary shape — richer for disambiguation but it degenerates to a disguised list until prose is indexed; (b) a chaptered thread — best for exploration, slow to a precise answer, and a hollow chapter is visible on 789 fiches; (c) a typographic wall of autonyms — the strongest answer to the absence of imagery, but slower to scan and it makes corpus fragmentation more visible, not less. All three remain available as later views of the same surface.",
+      "tradeoffs": "The cartouche is the direction closest to Google visually, and it degrades exactly in the ambiguous case: pivot.ts cancels the promoted answer whenever any other result carries the same normalised name, and the reader falls back to a flat list. That refusal to arbitrate between homonyms is a deliberate editorial choice in the code and is kept.",
+      "requirementsSatisfied": ["REQ-124", "REQ-125", "REQ-132", "REQ-002"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-026",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-027",
+      "title": "One search surface, not nineteen paths",
+      "context": "A read of the repository found nineteen distinct search or text-filter paths over the corpus. Three are dead with no production caller. Three separate implementations answer the single question \"find a language family by name\" — an ILIKE in the database, a three-tier ranking in memory, and a substring includes() on the compare page — and they return different results for the same input. Two independent HTTP clients call the same endpoint without sharing code. Nobody decided to have nineteen: each feature added its path without retiring the previous one.",
+      "decision": "One public search surface. The dead paths are deleted, the three family matchings are merged into a single indexed path, and the two HTTP clients are deduplicated. Internal specialisation stays legitimate — one query for peoples and one for quiz questions remain two queries; it is the calling surface that must be unique, not the implementation.",
+      "alternatives": "Leave the paths in place and document them — rejected: three implementations of one matching rule is a correctness problem, not a tidiness problem.",
+      "tradeoffs": "Merging the family matching changes results for short queries, because the current ILIKE path matches substrings while the full-text path matches whole lexemes. Some queries that returned a family today will return nothing until the prefix operator lands, and conversely.",
+      "requirementsSatisfied": ["REQ-002", "REQ-050"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-027",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-028",
+      "title": "The index covers the prose of the fiches",
+      "context": "Measured against migrations 043 and 044: of the twenty-two prose fields of a people fiche, nineteen are outside the search vector — only the appellations section is indexed, and seven of the eight content sections are not. An average fiche carries about 1 465 words of prose across 44 fields. For countries, only name_fr and etymology are indexed; the editorial lede, the densest summary of the fiche, is not. Language families have no search vector at all, which leaves the decolonialHeader block — the colonial-era name, why it is problematic, its contemporary usage — unreachable by any query. The consequence is measurable: \"keïta\" returns nothing although thirty-three occurrences exist in the prose of country fiches.",
+      "decision": "The search vector is extended to the prose of peoples and countries, the country lede included, and language families receive a search vector they never had. The 14 984 quiz questions are indexed as well, but surfaced through a dedicated lens and never blended into the main result flow — they are questions, not answers.",
+      "alternatives": "Adopting an external engine — rejected by DEC-034; no engine finds what is not indexed.",
+      "tradeoffs": "Wider vectors mean lower precision on common words and a larger index. The weighting of migration 043 (A for names and autonyms, B for exonyms, D for prose) is replicated rather than reinvented, so prose can never outrank a name.",
+      "requirementsSatisfied": ["REQ-002", "REQ-129"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-028",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-029",
+      "title": "The 100% demographic rule applies to African countries only",
+      "context": "DEC-010 tightened demographic validation in two stages and its target band (99–101%) is now a blocking gate. Neither DEC-010 nor REQ-028 carries an explicit geographic scope, because the corpus was African by construction. Admitting Afro-descendant peoples outside Africa breaks that implicit assumption: the Gullah are roughly 200 000 people in a country of 340 million, and requiring the percentages of the United States to sum to 100% would mean cataloguing every ethnic group of that country.",
+      "decision": "The rule that per-country demographic percentages sum to 100% applies to the 54 countries of the African reference set. Outside that set, a people declares its share without the completeness obligation.\n\nSupersedes: DEC-010",
+      "alternatives": "Removing the rule entirely — rejected. It is the check that surfaced 25 of 53 countries carrying no declared population at all; dropping it would disarm that detection in Africa too, where it does real work. Scoping keeps the guard where it is meaningful.",
+      "tradeoffs": "A country outside the reference set gets no completeness signal, so an incomplete non-African fiche will not be caught by a gate. That is accepted: outside Africa the atlas documents named groups, not national demography.",
+      "requirementsSatisfied": ["REQ-131", "REQ-032"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-029",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-030",
+      "title": "Belonging to the corpus admits a historical axis",
+      "context": "The corpus is organised strictly as linguistic family → language → people → country. Afro-descendant peoples of the Americas, the Caribbean and the Indian Ocean do not fit that hierarchy. Glottolog classifies each creole under the family of its lexifier — French, English — never under an African family, because genealogical attachment follows the matrix grammar and majority lexicon, not the substrate languages spoken by the captives. Forcing an African family onto Martinican or Haitian creole would fabricate a filiation no scholarly source supports, in the name of representing African ancestry. Michel DeGraff names the surrounding debate creole exceptionalism and shows the line separating creoles from the comparative method is historically racial.",
+      "decision": "A people may be attached to the corpus by history and ancestry, not only by linguistic filiation. The African substrate is documented as a historical and demographic fact — for Palenque, published genetic work links the paternal lineage to the Congo — through a field distinct from the linguistic family, which never claims the language descends from it. The site's subject is not only languages: it is also history and descent, and many Afro-descendants of the Caribbean recognise themselves in that history without an established kinship link.",
+      "alternatives": "(a) attach creoles to an African family — rejected, it fabricates a genealogy; (b) use FLG_UNKNOWN — rejected, it is documented as a temporary placeholder, not a stable category; (c) build a separate diaspora referential — deferred, it doubles the model before the first fiche proves the need.",
+      "tradeoffs": "Two attachment axes make navigation and validation more complex, and the site's name describes its contents less exactly. That second consequence is accepted deliberately: EthniAfrica is kept and defended as the centre of gravity of an Atlantic space, not inherited by accumulation of fiches.",
+      "requirementsSatisfied": ["REQ-127", "REQ-130"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-030",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-031",
+      "title": "The atlas documents named persons",
+      "context": "DEC-019 held personal-name work out of scope \"until a feasibility spike establishes that a Tier 1 / Tier 2 anthroponym corpus can be sourced at usable scale; only then does it become its own epic.\" That spike has now been run. Measured on the 867 core fiches: 4 197 distinct candidate strings over 8 125 occurrences in narrative fields; a manual precision check on 51 candidates returns 37% real individuals, the dominant noise being confusion between a person, a title and a deity; after merging spelling variants the estimate is 600 to 900 distinct individuals, cited in at least 320 fiches. The condition DEC-019 set is met.",
+      "decision": "Named persons become a first-class entity of the corpus, searchable and attached to peoples and countries. Extraction runs as a single anchored pass that never emits a free assertion: each candidate carries the verbatim source sentence and its originating narrative field, and human review is mandatory before publication. Because the fact was already sourced in the fiche, the extraction inherits that source tier rather than falling to ai_generated.\n\nSupersedes: DEC-019",
+      "alternatives": "(a) rules and gazetteers alone — 37% measured precision, too noisy to publish; (b) an offline French NER model — free, but the documented recall deficit on non-Western names makes it unreliable here, and the existence of MasakhaNER is itself the evidence that mainstream tools fail on African names; (c) extending name_records — rejected, that table carries name variants of an existing entity and its surname type denotes a clan naming convention of a people, not an individual's family name.",
+      "tradeoffs": "The corpus's own citation pattern is skewed. Measured by number of citing fiches, David Livingstone ranks second and Cecil Rhodes third, ahead of every African resistance figure; Mansa Musa appears in three fiches, Modibo Keïta in two. A naively built module would therefore display Rhodes before Soundiata. The entity carries a mandatory role field separating a figure of the documented people from an agent of the documentation, and ethnographers are attached by an inverse relation — they belong to no African people, they studied one.",
+      "requirementsSatisfied": ["REQ-126"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-031",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-032",
+      "title": "The CSP admits remote media under a published licence",
+      "context": "No fiche carries an image today; the brand charter records this as a declared gap. Neither media-src nor frame-src is declared in the middleware policy, so both fall back to default-src 'self' and video files and iframes are blocked exactly like remote images. The only CSP extension on record, in ARCH-016, is scoped to four named Prismic hosts.",
+      "decision": "The policy is extended to admit media hosts, by named host and never by wildcard, keeping unsafe-inline excluded. Every media carries its author, a licence URI and its source page. A boolean distinguishes a portrait made in the subject's lifetime from a later reconstruction.",
+      "alternatives": "Self-hosting every asset — heavier and slower to start; kept open for assets that prove durable.",
+      "tradeoffs": "Three consequences are accepted knowingly. Public domain opens roughly seventy years after the author's death while the colonial period runs 1885–1960, so what is freely reusable today is structurally the missionary, administrative and ethnographic archive — free availability and editorial neutrality pull in opposite directions by construction. Coverage will stay partial: 20 to 38% of fiches have a matchable Wikimedia file. And matching is not automatable — a sample check found roughly 7% wrong-subject matches, which scaled to 789 fiches means about fifty silently wrong images, so attaching an image to a fiche stays a manual editorial act. For the same reason no thumbnails are added to search results while coverage is low: an empty slot reads as \"less important entry\", not as \"no photo available\".",
+      "requirementsSatisfied": ["REQ-128", "REQ-069"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-032",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-033",
+      "title": "An external link resolves through an identifier, never a URL",
+      "context": "The corpus already carries ISO 639-3 codes. Roughly half of the people fiches have an automatically matchable Wikidata identifier — a conservative floor. By contrast only about 16% of Wikidata's African ethnic-group entities carry an image: identifiers are abundant where images are not.",
+      "decision": "Outbound references to external registries — Wikidata, Glottolog, ISO 639-3 — are stored as identifiers and the URL is built at render time. A copied URL is never stored as the link of record.",
+      "alternatives": "Storing URLs directly — simpler, but a registry that changes its URL scheme breaks every link at once.",
+      "tradeoffs": "Matching still requires an initial alignment pass and a human check on ambiguous cases.",
+      "requirementsSatisfied": ["REQ-128", "REQ-035"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-033",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-034",
+      "title": "PostgreSQL remains the search engine",
+      "context": "The corpus is about 800 people fiches, 54 countries and 24 families. Documented cases of PostgreSQL full-text search degrading concern corpora two orders of magnitude larger; at this scale the measured cost of a trigram query stays under a millisecond. Prefix matching, accent handling, term highlighting and facets are all native. pg_trgm and fuzzystrmatch are available on the managed instance and simply not installed.",
+      "decision": "Search stays in PostgreSQL. pg_trgm is installed for approximate matching, and prefix matching uses to_tsquery with the :* operator rather than a new engine. The site is not relocated. If an external search service is ever justified, it runs beside the site on a VPS while the front end stays where it is.",
+      "alternatives": "Elasticsearch or OpenSearch — an 8 to 16 GB RAM floor and a JVM to tune for a corpus that fits in tens of megabytes, three orders of magnitude oversized. ParadeDB / pg_search — attractive on paper, but not installable on the managed instance without giving up RLS, PostgREST and auth, which is the whole architecture. ZincSearch is archived; Quickwit targets logs at scale. Meilisearch stays the credible fallback: MIT, a few hundred megabytes, and federated multi-index search with per-index weights.",
+      "tradeoffs": "Adopting :* costs the websearch syntax — quoted phrases, OR, exclusions — which would have to be reimplemented by hand. That is accepted: nobody types quotation marks into an atlas, and everybody types incomplete words. Two of the four known failures are not engine problems at all and no engine would fix them: \"gour\" not finding \"Gur\" needs declared spelling variants, and a two-letter abbreviation needs a declared alias. If a search service later runs on a VPS, DEC-009's \"EU-region managed infrastructure\" clause needs revisiting, because a VPS is in the EU but is not managed.",
+      "requirementsSatisfied": ["REQ-050", "REQ-129"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-034",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-035",
+      "title": "A source no longer blocks publication; it is labelled",
+      "context": "Retro-documentation of a shipped change. The corpus gate used to fail the build on a source deemed unpublishable. It now labels instead: checkAuthorizedSourceTiers never fails, every source publishes, and only the displayed tier changes. The switch shipped inside a CI clean-up commit with no decision recorded. Excluding oral, community and amateur knowledge would itself be a colonial filter; the decolonial posture is to publish the claim together with its provenance.",
+      "decision": "Nothing is forbidden, everything is labelled. A source is never rejected for being weak — it is tiered as official, referenced or unverified, and the fiche's confidence follows from the tiers it rests on. The blocking condition is the opposite one: a source entry with no tier is an error.",
+      "alternatives": "Keeping a publication veto on weak sources — rejected on editorial grounds, and it was already abandoned in the code.",
+      "tradeoffs": "A fiche resting only on unverified sources is published and visibly marked low-confidence. That is the intended outcome, not a defect.",
+      "requirementsSatisfied": ["REQ-092", "REQ-006", "REQ-010"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-035",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-036",
+      "title": "A demographic figure is compared to its own reference year",
+      "context": "Retro-documentation of a shipped change. The drift check compared every people-level census figure to the country total for a fixed atlas year, which made a Kenyan census of 2019 structurally \"drifting\" although it agrees with its own year. The rule was tightened to blocking on 2026-08-30, which made the mismatch load-bearing.",
+      "decision": "Every declared population carries its reference year, and the country totals used for comparison are indexed by country and year. A figure is compared to its own vintage, never to a fixed atlas vintage.",
+      "alternatives": "Rejecting older censuses — rejected: it would delete sourced figures for countries whose most recent count is old.",
+      "tradeoffs": "The country totals reference table has to carry several years per country, and a fiche without a declared year cannot be checked.",
+      "requirementsSatisfied": ["REQ-028", "REQ-032"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-036",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-037",
+      "title": "No environment variable decides whether a feature is visible",
+      "context": "Retro-documentation of a shipped change. The environment-variable feature-flag system was removed and its module deleted. Availability is now derived from published data rather than declared by configuration, which is the same principle DEC-018 states for hub modules.",
+      "decision": "A feature is visible when its data is live, and not because a variable says so. Availability is probed, not configured.",
+      "alternatives": "Keeping flags for progressive rollout — rejected: a flag that nobody flips becomes a second, invisible source of truth about what the site offers.",
+      "tradeoffs": "Shipping an unfinished surface now requires an actual branch or an empty data set, not a switch.",
+      "requirementsSatisfied": ["REQ-106", "REQ-107"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-037",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-038",
+      "title": "The name becomes the fifth dimension of the corpus",
+      "context": "The corpus documents four dimensions — linguistic family, language, people, country. A francophone reader arrives knowing five: the linguistic family, the country, the people, the name, and named persons. Two of those five have no place in the corpus. The measured consequence is that a reader who types their own family name reaches nothing, although between 90 and 100 distinct clan names already sit in the prose of the fiches, concentrated in about thirty of them, and the search vector does not read that prose.",
+      "decision": "The name becomes a first-class entity of the corpus, alongside people and country, and the search engine's job is restated accordingly: it takes a word and classifies it into one of the corpus's dimensions — linguistic family, country, people, name, person — rather than assuming which dimension the reader meant. Naming, public and internal. The reader-facing label is Nom, because that is the word a francophone types. Internally the entity is the patronyme, to keep it distinct from two things already called \"nom\" in this repository: the ethnonym dossier (dataset/source/afrik/noms/, public/modele-nom.json) and the person entity of ARCH-018. The existing ethnonym module, published at /comprendre/noms, is renamed Appellations — which is what it documents: endonyms, exonyms and imposed appellations. Without that rename, three different objects would share one public word. Not a West African decision. The Manding jamu is the clearest case, not the general one, and the corpus must not be shaped around it. A reader from Central or Southern Africa typing a Kongo, Luba or Cameroonian name must reach a useful answer, which is what REQ-134 requires and what DEC-039 makes structurally possible.",
+      "alternatives": "(a) extending name_records — rejected on the schema: its uniqueness key is (entity_type, entity_id, name_text, name_type), which encodes \"an entity has at most one variant named X of type Y\". Nothing in it expresses \"this name is borne by several peoples\", and the source file noms/PPL_YORUBA.json carries id: \"PPL_YORUBA\" — the name is never addressable there. (b) Treating names as a facet of the people fiche — rejected: measured, Traoré appears in 7 fiches, Coulibaly in 6, Keita in 6. The relation is n-to-n, and the corpus states it in prose: \"clans structurés autour de grandes familles patronymiques partagées avec les Bambara et les Malinké\".",
+      "tradeoffs": "A fifth dimension widens the search surface and the editorial workload at once. And the starting coverage is uneven: the Manding, Akan, Nguni, Ganda and Atlantic families list real names in their fiches, while the Cushitic, Khoisan, Saharan, Songhay and Semitic families list none, despite a well-filled field. Pursuing coverage without a deliberate correction would amplify an existing imbalance rather than reduce it.",
+      "requirementsSatisfied": ["REQ-133", "REQ-134", "REQ-135"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-038",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-039",
+      "title": "The naming system discriminates the model",
+      "context": "A single untyped \"name\" entity cannot honestly describe African naming. Nine systems were surveyed and four of them break the assumption that a name is a stable object shared between bearers. In Ethiopia and Eritrea there is no family name at all: a person's second name is their father's first name, regenerated every generation. The Fulɓe carry two incompatible logics under one ethnonym — clanic in Senegambia and Guinea, non-hereditary patronymic in Nigeria, Niger and Cameroon. The Arabic nasab is a filiation chain, that is a relation and not a name. Among the Baganda the structure is inverted: the clan holds a closed list of about twenty male and twenty female given names from which members draw, so it is membership of the list, not the name itself, that signals the lineage.",
+      "decision": "The entity carries a nameSystem discriminant, and each subtype has its own strict model, following the pattern already used for public/modele-*.json. The initial subtypes are: clan name (Manding jamu, Xhosa isiduko, western Fulɓe clans), non-hereditary patronymic (Ethiopian and Eritrean, eastern Fulɓe), Arabo-Berber nisba in its tribal sense, lineage praise name (Yoruba oríkì, Nguni izibongo), and closed-list totemic clan (Baganda ekika). The discriminant gates every other field: it is never a decorative label. Fields belong to one world or to all. Common to every subtype: attested spellings with their own attestation each, transmission mode, the social unit the name designates, associated peoples and countries as n-to-n relations, and a sourced origin distinguishing griot oral tradition from written chronicle from linguistic reconstruction. Specific to one world and therefore always optional: the totemic food prohibition, the closed list of permitted given names, the depth of the patronymic chain, the nisba subtype, and the caste or social function attached to the name — numu the smith, jeli the griot, horon the freeborn on the Manding side, rimɓe and nyeeybe on the Fulɓe side. Caste is not a biographical role. The role category that ARCH-018 attaches to a person — precolonial sovereign, anticolonial resistance, religious leader, contemporary political figure, colonial administrator or ethnographer, intellectual — is an individual biographical axis. The caste or social function attached to a name is a different axis entirely. The two must never share a field.",
+      "alternatives": "A single flat schema with every field optional — rejected: it would either become an unusable form, or, worse, a disguised jamu mould that forces the Ethiopian case, where the name does not exist independently of the person, into a shape that does not fit it.",
+      "tradeoffs": "Five strict models cost more to write and to validate than one. And caste is politically sensitive wherever it exists, which is a reason to record it with its source and never to infer it.",
+      "requirementsSatisfied": ["REQ-133", "REQ-134"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-039",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-040",
+      "title": "No feature returns an ethnic origin for a person",
+      "context": "The name entity makes an inference technically easy that must stay editorially forbidden. A clan name correlates with a lineage, but it does not determine one: the Manding system historically absorbed groups with no blood tie through political allegiance, clientelism and war captivity, so \"Keita means Malinké\" and \"Diallo means Fulɓe\" are both false as rules. Article 9 of the GDPR classes ethnic origin among special categories of personal data, whose processing is forbidden by default — publishing \"the living person Y belongs to people Z\" is the most restricted form of processing there is, more so than an ordinary biography. REQ-088 already commits the project to GDPR compliance in general; it says nothing about special categories or inferred ethnicity.",
+      "decision": "A name fiche states a historical and onomastic association between a name and one or more peoples. It never determines the identity of a named individual. Three rules follow. The bearers listed on a name fiche are deceased persons, or aggregated and anonymised demographic data — never a living named individual presented as belonging to a people because they carry a name. A living person is attached to a people only by their own public self-identification, cited as such. And no feature may take a family name as input and return an ethnic origin for a real person, however convenient such a lookup would be.",
+      "alternatives": "Offering the lookup with a disclaimer — rejected. A disclaimer does not change what the feature does, and what it does is the administrative logic of colonial indirect rule registers and ethnic identity cards, reproduced in software. A decolonial atlas cannot host it.",
+      "tradeoffs": "This forbids a feature readers will ask for, and it is the most likely source of disappointment when the name dimension opens. The association name → people remains publishable as a fact about the name; only the inference about a person is refused. The distinction is narrow and must be visible in the interface, not merely in this decision.",
+      "requirementsSatisfied": ["REQ-133", "REQ-088"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-040",
+      "status": "Pending"
+    },
+    {
+      "id": "DEC-041",
+      "title": "The Wikidata harvest comes after anchored extraction",
+      "context": "Measured by SPARQL against the public endpoint: Wikidata holds 215 800 humans with the citizenship of an African country, of whom 94% carry an occupation, 65% a date of birth, 43% a place of birth and 15% a VIAF identifier; 25% carry a structured family name, pointing at 22 418 distinct name entities. The licence is CC0. Set against the 600 to 900 individuals DEC-031 measured in the corpus prose, that is a factor of roughly 250 for almost no infrastructure cost, which makes it tempting as the foundation of the person entity. It cannot be that foundation as currently specified. DEC-031, ARCH-018 and their tickets all require a person to carry the verbatim source sentence they were extracted from, enforced by a source-or-drop trigger, and REQ-126 has a reviewed extraction inherit the tier of the fiche passage it came from. A Wikidata row has neither a verbatim sentence nor a fiche passage to inherit from. The editorial risk is larger than the technical one: DEC-031 already records that an unqualified list places Cecil Rhodes above Soundiata on 600 to 900 individuals, and drowning that signal under 215 800 rows worsens it by three orders of magnitude.",
+      "decision": "The two paths are sequenced, never merged. The anchored extraction from the corpus ships first, as specified. The Wikidata harvest is a separate track with its own governance: rows are marked by provenance, carry their own tier — Wikidata is an aggregator and is absent from the official-tier list of this project — and are surfaced behind a completeness threshold, so that a row with neither a date nor a resolvable upstream source does not appear as a fiche. A harvested person and an anchored person are never indistinguishable in the interface.",
+      "alternatives": "(a) Importing the harvest into the same entity with the same treatment — rejected above. (b) Refusing the harvest entirely — rejected: it is the only realistic way for a solo project to reach the persons a reader from Central or Southern Africa will actually search for, and refusing it would leave the person dimension permanently thin outside the Manding world.",
+      "tradeoffs": "Two provenances in one entity is a lasting complication, and the completeness threshold means the visible corpus is smaller than the stored one. The alternative — one uniform pile of unreviewed rows about real people — carries a far greater editorial and legal risk.",
+      "requirementsSatisfied": ["REQ-126", "REQ-135"],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/178388993/Decisions#DEC-041",
+      "status": "Pending"
     }
   ],
   "architectures": [
@@ -323,6 +694,193 @@
       ],
       "source": "docs/adr/0002-confluence-source-of-truth.md",
       "status": "Approved"
+    },
+    {
+      "id": "ARCH-011",
+      "title": "Structured reference and oral-narrative intake fabric",
+      "summary": "A shared source-policy catalogue feeds agents, validators, APIs, and forms. Structured references and per-assertion locators extend the existing provenance fabric. Controlled assets and oral narratives remain linked but use separate access-controlled records.",
+      "sourceFiles": [
+        "config/sources/authorized-source-catalog.json",
+        "public/modele-source.json",
+        "public/modele-recit-oral.json",
+        "dataset/source/afrik/sources/",
+        ".agents/skills/afrik-curator/",
+        "src/lib/sources/",
+        "src/api/v2/{schemas,services,handlers}/",
+        "src/app/api/v2/",
+        "src/components/ContributionForm*.tsx",
+        "scripts/migrateLegacySources.ts",
+        "scripts/validateAfrikData.ts",
+        "supabase/migrations/"
+      ],
+      "tests": [
+        "Catalogue consistency and policy tests.",
+        "Structured source schema and legacy-adapter tests.",
+        "Lossless migration and audit-report tests.",
+        "Reference-library API and form tests.",
+        "Oral-narrative consent, RLS, API-redaction, and form tests.",
+        "Mobile form tests at 390 px, followed by tablet and desktop checks."
+      ],
+      "source": "User-approved structured reference and oral-narrative specification (2026-07-29).",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-012",
+      "title": "Shared semantic presentation layer and route-family composition",
+      "summary": "Figma semantic variables map to shared CSS and Tailwind tokens plus shadcn-based component variants. Route pages compose reusable family layouts and choose Night or Parchment at shell or section boundaries. Storybook, component tests, accessibility checks, and visual regression anchor the contract. This contract extends ARCH-002 and does not supersede it.",
+      "sourceFiles": [
+        "src/styles/",
+        "src/components/ui/",
+        "src/components/layout/",
+        "src/components/source-transparency/",
+        "src/app/[lang]/",
+        "src/app/docs/",
+        ".storybook/"
+      ],
+      "tests": [
+        "Semantic-token contract tests under src/lib/__tests__/",
+        "Component tests colocated under src/components/**/__tests__/",
+        "Route-family tests under src/app/**/__tests__/",
+        "scripts/a11y-test.ts",
+        "A route-family visual-parity harness covering 320, 390, 430, 834, and 1440 px"
+      ],
+      "source": "EthniAfrica — Full Site Maquette 2026 (https://www.figma.com/design/CdZhTHDZaNkflOy164FoBf)",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-013",
+      "title": "Honest availability and degraded-state contract",
+      "summary": "Every public surface resolves availability from its data source, not from its route, and renders three distinguishable states — published and populated, published and empty, unavailable. A data-access error is surfaced as an error with a recovery path and logged through the structured logger; it is never rendered as an empty result. This contract extends ARCH-012 for presentation and ARCH-003 for the service boundary; it supersedes neither.",
+      "sourceFiles": [
+        "src/lib/accessModeHubs.ts",
+        "src/components/home/ModuleCard.tsx",
+        "src/components/ui/EmptyState.tsx",
+        "src/api/v2/services/*.ts",
+        "src/app/[lang]/*/page.tsx"
+      ],
+      "tests": [
+        "src/lib/__tests__/accessModeHubs.test.ts — availability derived from data, not route",
+        "src/components/home/__tests__/ModuleCard.test.tsx — an unavailable card exposes no link",
+        "src/api/v2/services/__tests__/*.test.ts — a data-access error propagates as an error, never as an empty list",
+        "src/app/[lang]/**/__tests__/*.test.tsx — the three states render distinct copy"
+      ],
+      "source": "Recette audit 2026-08-25, findings D2, D5 and E, on branch recette at 9d25f263.",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-014",
+      "title": "WebGL client island and capability fallback",
+      "summary": "A WebGL surface is a client island, never part of the server render path. It loads through next/dynamic with ssr: false, behind an IntersectionObserver so its runtime is fetched only when the surface approaches the viewport, and it declares a byte budget that CI asserts. Capability detection decides what renders: where a WebGL context cannot be created, the island renders a committed SVG figure carrying the same information, and the surface is never empty. The 3D geometry and its 2D fallback derive from the same committed source and the same projection (src/lib/atlas/), so the two can never drift apart. prefers-reduced-motion suppresses autonomous motion and holds a meaningful still frame rather than removing the surface. This contract extends ARCH-002 and ARCH-012; it supersedes neither.\n\nAmended by: ARCH-015 (2026-08-25), on its source-file list only. Every clause of this contract — client island, deferred load, declared byte budget, capability fallback, shared projection, reduced-motion still frame — stands unchanged and applies to the successor component.",
+      "sourceFiles": [
+        "src/components/home/HomeGlobe.tsx — the client island",
+        "src/components/home/HomeGlobeFallback.tsx — the SVG capability fallback",
+        "src/components/system/AfricaBasemap.tsx — the committed figure both paths share",
+        "src/lib/atlas/projection.ts — the projection both paths share",
+        "src/lib/atlas/assets/africaLandmassPath.ts — Natural Earth 1:50m geometry",
+        "src/hooks/use-prefers-reduced-motion.ts",
+        "next.config.mjs — bundle-budget configuration"
+      ],
+      "tests": [
+        "src/components/home/__tests__/HomeGlobe.test.tsx — no WebGL context renders the fallback, never an empty node",
+        "src/components/home/__tests__/HomeGlobe.test.tsx — prefers-reduced-motion holds a still frame showing Africa",
+        "src/app/[lang]/__tests__/page.test.tsx — the server render contains no WebGL runtime",
+        "e2e/home-globe.spec.ts — the globe is reachable and operable by keyboard at 430, 720 and 1200 px",
+        "A bundle-budget assertion in CI — the home's server-rendered payload excludes the 3D runtime"
+      ],
+      "source": "Product-owner validation of the interactive home mockup, 2026-08-25. The cost of the 3D runtime was accepted on the record on condition that it never blocks first paint.",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-015",
+      "title": "One atlas globe component and one overlay module",
+      "summary": "The atlas has exactly one globe component and exactly one overlay module. The component renders a morphable sphere⇄Mercator geometry on three.js r169, carrying an equirectangular canvas texture; it takes an overlay descriptor as a parameter and is never subclassed, wrapped or duplicated per entity. Adding an entity type adds an overlay function, not a component, not a file. The component owns its own non-WebGL fallback: a missing context is a branch inside it that renders the same overlay descriptor as flat SVG, not a second component, so no fact can exist only in the 3D path. The highlight layer is a texture distinct from the basemap, repainted only while a reveal animation runs and never at rest, so no page pays for a per-frame texture upload. This contract extends ARCH-014 and replaces its source-file list; every other clause of ARCH-014 — client island, next/dynamic with ssr: false, IntersectionObserver deferral, declared byte budget asserted in CI, capability fallback, shared projection, reduced-motion still frame — applies unchanged. It supersedes neither ARCH-014 nor ARCH-012.",
+      "sourceFiles": [
+        "src/components/atlas/AtlasGlobe.tsx — the only globe component, WebGL path and SVG fallback in one",
+        "src/lib/atlas/overlays.ts — every overlay in one module: continent, country outline, presence field, derived footprint",
+        "src/lib/atlas/projection.ts — unchanged; the projection every path shares",
+        "src/lib/atlas/assets/ — committed geometry, extended with admin-0 boundaries",
+        "src/hooks/use-prefers-reduced-motion.ts — unchanged",
+        "next.config.mjs — bundle budget, restated for the three.js runtime",
+        "package.json — three pinned at r169",
+        "Removed by this contract: src/components/home/HomeGlobe.tsx, HomeGlobeFallback.tsx, HomeGlobeStage.tsx"
+      ],
+      "tests": [
+        "src/components/atlas/__tests__/AtlasGlobe.test.tsx — one component renders all four overlays; no WebGL context renders the fallback, never an empty node",
+        "src/lib/atlas/__tests__/overlays.test.ts — a people overlay emits no closed path and reaches zero opacity at every edge; a country overlay emits a closed path; a family overlay emits a dashed boundary",
+        "src/lib/atlas/__tests__/overlays.test.ts — the presence field's area is proportional to the declared population, and the family footprint equals the union of member peoples' countries",
+        "src/app/[lang]/**/__tests__/*.test.tsx — no fiche server render contains the 3D runtime",
+        "e2e/atlas-globe.spec.ts — fly-to leaves the subject outside the panel's bounding box at 430, 720 and 1200 px",
+        "A bundle-budget assertion in CI — the measured three.js chunk is reported and compared against the figure accepted in DEC-021",
+        "A repository guard — exactly one file under src/components/ creates a WebGLRenderer"
+      ],
+      "source": "Design exploration validated 2026-08-25; four reference mockups held at docs/design/mockups/, rules at docs/design/atlas-charter.md, engine decision at docs/adr/0007-atlas-globe-engine.md.",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-016",
+      "title": "CMS layer, serializer and projection pipeline",
+      "summary": "Prismic is reached through exactly one layer, src/lib/cms/, in the same way the service layer is the only code that reaches Supabase. No component, route or script imports @prismicio/client directly. Within that layer a serializer converts a Prismic document into canonical AFRIK JSON — the shape the repository gates already read and the shape the database stores in its content JSONB column — which is what allows validateAfrikData and checkEditorialRules to run unmodified against CMS content. A publish gate queries a release ref, serializes it and runs those gates, refusing publication on failure. A projection upserts the passing content into the afrik_* tables through the existing upsert path and rewrites the canonical JSON in git. The read path is unaffected: the site and the public API continue to read Supabase through the service layer, and no request-time code path calls Prismic. This contract extends ARCH-005 for the data pipeline and ARCH-003 for the service boundary; it supersedes neither.\n\nAmended by DEC-032: the Content-Security-Policy contract described here is extended beyond the Prismic hosts. Neither media-src nor frame-src is currently declared, so both fall back to default-src 'self' and remote images and video are blocked. The policy now admits media hosts, declared host by host and never by wildcard, and unsafe-inline stays excluded. The test anchoring this contract is extended accordingly: the policy admits the named media hosts and still excludes unsafe-inline.",
+      "sourceFiles": [
+        "src/lib/cms/client.ts — the only module constructing a Prismic client",
+        "src/lib/cms/serialize/ — Prismic document → canonical AFRIK JSON, one module per entity",
+        "src/lib/cms/overlays.ts — editorial content that has no AFRIK counterpart",
+        "customtypes/ — Slice Machine models, versioned in the repository",
+        "src/slices/ — shared slices",
+        "scripts/ci/prismicPublishGate.ts — release ref → serialize → existing gates → publish or refuse",
+        "scripts/projectPrismicToDatabase.ts — upsert into afrik_* and rewrite the git archive",
+        "src/app/api/prismic/revalidate/route.ts — publication webhook; the secret arrives in the JSON body, not an Authorization header",
+        "src/app/api/preview/route.ts, src/app/api/exit-preview/route.ts — Draft Mode",
+        "src/middleware.ts — CSP extended for images.prismic.io, the repository CDN host, static.cdn.prismic.io and the Page Builder as a frame ancestor"
+      ],
+      "tests": [
+        "src/lib/cms/__tests__/roundTrip.test.ts — a serialized document equals its canonical AFRIK JSON, field for field, for each of the three entity types",
+        "src/lib/cms/__tests__/readPathIsolation.test.ts — no server render and no API route resolves a fiche through the CMS layer",
+        "scripts/ci/__tests__/prismicPublishGate.test.ts — a release failing FR28 is refused and names the rule; a passing release publishes",
+        "scripts/__tests__/projectPrismicToDatabase.test.ts — a replayed projection is idempotent and never regresses a newer write",
+        "src/__tests__/middleware.test.ts — the CSP admits the Prismic hosts and still excludes unsafe-inline",
+        "A repository guard — exactly one module outside src/lib/cms/ may import @prismicio/client: none"
+      ],
+      "source": "Prismic source-of-record feasibility study, 2026-08-27. Measured constraints on the 886 committed fiches: a Prismic repeatable group cannot contain another, which affects 54 of 54 country fiches; a UID must be lowercase, while 886 of 886 identifiers carry uppercase; Prismic has no map field for the keyed country distribution used by 10 family fiches; the Migration API is limited to one request per second per repository.",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-017",
+      "title": "Unified search layer",
+      "summary": "One indexing pipeline and one public calling surface for search over the whole corpus. Every entity nature is wired by replicating the weighting and ranking pattern already proven in migration 044 — weighted ts_rank, an accent-insensitive exact-match bonus, ts_headline snippets — rather than by inventing a second mechanism. Prefix matching uses to_tsquery with the :* operator, which the existing GIN index already serves; pg_trgm is installed alongside it for approximate matching. Language families gain a generated search_vector and stop being matched by an in-memory ILIKE. The three dead paths are removed, the three competing family matchings collapse into one, and the two independent HTTP clients are deduplicated into a single caller. Result ranking across heterogeneous natures is normalised in SQL so peoples, countries, families, persons and quiz questions can be ordered together.",
+      "sourceFiles": [
+        "supabase/migrations/ (prefix and unaccent, family vector, people prose vector, country prose vector, alias column, quiz vector), src/lib/supabase/queries/afrik/search.ts, src/lib/supabase/queries/afrik/languageFamilies.ts, src/api/v2/services/searchService.ts, src/api/v2/handlers/search.ts, src/app/api/v2/search/route.ts, src/lib/search/searchEnvelope.ts, src/lib/search/pivot.ts, src/lib/afrikLoader.ts. Removed: searchAfrikAll, searchAfrikPeoples, searchAfrikCountries."
+      ],
+      "tests": [
+        "a partial input returns entities of every nature and not only language families; \"bamba\" returns Bambara; a declared spelling variant resolves to its entity; a query matching nothing returns the near misses rather than an empty envelope; the ranking of a name outranks a prose occurrence of the same term; no module outside the unified service issues its own text query against the corpus."
+      ],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/177963033/Architecture#ARCH-017",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-018",
+      "title": "Named-person entity and anchored extraction",
+      "summary": "A dedicated entity for named persons, with its own identifier prefix, joined to peoples and to countries by two join tables following the pattern of afrik_people_countries. The entity carries a mandatory role category — precolonial sovereign, anticolonial resistance, religious leader, contemporary political figure, colonial administrator or ethnographer, intellectual — because the corpus's own citation pattern is skewed and an unqualified list would rank a colonial administrator above the sovereigns of the peoples documented. The people join carries a relation label, so an ethnographer is attached by an inverse relation: they belong to no African people, they studied one. Spelling variants of a person reuse name_records with the person entity type, which is exactly that table's purpose once the entity exists. Extraction is a batch script, never a runtime path: it emits candidates each carrying the verbatim source sentence and its originating narrative field, and nothing reaches the database without human review. Because the underlying fact was already sourced in the fiche, a reviewed extraction inherits that source tier instead of falling to the AI-generated weight.\n\nAmended by DEC-038 and ARCH-019: the clause stating that spelling variants of a person reuse name_records with the person entity type is extended, not replaced. The same table and the same mechanism carry the transliteration variants of a name, under a third entity type. A parallel variant mechanism must not be built: resolution to the canonical entity happens once, before any join, so that neither a person nor a name is duplicated across its spellings.",
+      "sourceFiles": [
+        "supabase/migrations/ (persons table, person-people and person-country joins, generated search vector and GIN index), scripts/ (anchored extraction and its review output), src/api/v2/services/, src/api/v2/serializers/, src/types/afrik.ts, src/components/search/."
+      ],
+      "tests": [
+        "a person cannot be persisted without a role category; an ethnographer's attachment to a people is expressed by the inverse relation label and never as membership; an extraction candidate without a verbatim source sentence is rejected; a person is returned by the unified search surface with its role visible; a reviewed extraction carries the tier of the fiche passage it came from."
+      ],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/177963033/Architecture#ARCH-018",
+      "status": "Pending"
+    },
+    {
+      "id": "ARCH-019",
+      "title": "The name layer, its alliances and its approximate search",
+      "summary": "A first-class name entity with its own identifier prefix, joined to peoples, to countries and to persons by join tables following the pattern of afrik_people_countries. The entity carries a nameSystem discriminant that gates its optional fields, per DEC-039, and a caste or social-function field kept strictly separate from the biographical role category of ARCH-018 — the two are different axes and must never share a column. Alliances between two names, of which the Manding sanankuya is the documented case, are modelled on the pattern of afrik_people_relations but at name granularity: a dedicated table with an alliance type, a source-or-drop trigger, and a canonical ordering constraint on the pair so that a symmetric alliance cannot be stored twice under two orderings. The alliance registry is never closed: its terminology varies by region — sinankunya, rakiré, toukpê, dendiraagal — so every edge carries its own source and tier rather than inheriting a blanket assertion. Approximate matching is layered, not a single mechanism. Four distinct problems require four answers: accent and apostrophe normalisation extends the unaccented column of the search layer to cover apostrophes; near variants and typing errors use the trigram index; phonetic transcriptions use fuzzystrmatch, available on the instance and not installed; and transliteration families that no algorithm bridges are resolved by declared variants. Declared variants reuse name_records with a third entity type rather than inventing a parallel mechanism, extending the clause ARCH-018 already establishes for person spellings. Resolution to the canonical name happens before any join, so a name is never duplicated across its spellings. Search integration. The name is wired into the unified surface of ARCH-017 by replicating the weighted ranking pattern of the ranked-search migration, with its own RPC rather than a union with peoples or countries, whose columns and filters differ. A name result aggregates its bearers and associated peoples by batched queries, following the existing dossier pattern, never one query per row. Relevance remains comparable within a kind and not across kinds.",
+      "sourceFiles": [
+        "supabase/migrations/ (name table with its system discriminant, name-people, name-country and name-person joins, alliance table, generated search vector and GIN index, fuzzystrmatch extension and phonetic index), public/ (one strict model per naming subtype), dataset/source/afrik/ (a directory distinct from the existing ethnonym dossiers), scripts/ (extraction of the clan names already present in fiche prose), src/api/v2/{schemas,services,handlers}/, src/components/, src/lib/supabase/queries/afrik/."
+      ],
+      "tests": [
+        "a name cannot be persisted without a naming system; the caste field and the biographical role category never resolve to the same column; an alliance stored as (A,B) is not storable again as (B,A); a name associated with several peoples returns all of them; the seven reference queries of REQ-135 each reach their target, and the one that requires a declared variant fails loudly when the variant is absent rather than returning an empty result; no code path takes a family name and returns an ethnic origin for a person, per DEC-040; a harvested person and an anchored person are distinguishable in the API payload, per DEC-041."
+      ],
+      "source": "https://big-emotion.atlassian.net/wiki/spaces/ETHNIAFRIC/pages/177963033/Architecture#ARCH-019",
+      "status": "Pending"
     }
   ],
   "obsolete": [
