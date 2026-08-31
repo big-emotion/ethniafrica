@@ -169,9 +169,18 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/ZW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       }
     ],
     "demographics": {
+      "totalPopulation": 17000000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Shona",

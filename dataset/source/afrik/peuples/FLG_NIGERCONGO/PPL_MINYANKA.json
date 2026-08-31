@@ -1,0 +1,100 @@
+{
+  "id": "PPL_MINYANKA",
+  "nameMain": "Minyanka",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MLI", "BFA"],
+  "classificationStatus": "contested",
+  "content": {
+    "appellations": {
+      "mainName": "Minyanka",
+      "selfAppellation": "Bamana",
+      "exonyms": [
+        "Mianka",
+        "Minianka",
+        "Mamara",
+        "Miniyanka",
+        "Minya",
+        "Myanka",
+        "Tupiire"
+      ],
+      "originOfExonyms": "Le terme Minyanka, aujourd'hui consacré dans l'usage administratif et scientifique, est probablement une déformation de Myanka introduite par les premiers auteurs européens. Mamara est le nom employé dans la classification linguistique de la langue.",
+      "whyProblematic": "Colleyn et Jonckers indiquent que les personnes couramment appelées Minyanka se désignent elles-mêmes comme Bamana dans le contexte étudié. Cette auto-appellation ne doit pas conduire à les confondre automatiquement avec le peuple Bambara ou Bamana répertorié séparément : les usages du nom dépendent du contexte historique, religieux et linguistique.",
+      "contemporaryUsage": "Minyanka reste le nom public le plus répandu. Mamara Senoufo est l'appellation linguistique utilisée par Glottolog pour la langue codée myk.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Sénoufo, branche mamara",
+      "historicalRegion": "Sud du Mali et zones voisines du Burkina Faso",
+      "currentCountries": ["MLI", "BFA"]
+    },
+    "ethnicities": [],
+    "origins": {
+      "ancientOrigins": null,
+      "formationPeriod": null,
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Mali méridional",
+        "Zones voisines du Burkina Faso"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": null
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Mamara Senoufo (myk)",
+      "isoCodes": ["myk"],
+      "dialects": [],
+      "vehicularRole": null
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": null
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": null,
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": null,
+      "referenceYear": 2025,
+      "source": "Aucune estimation démographique 2025 issue d'une source autorisée n'a été identifiée.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": null,
+          "percentage": null,
+          "note": "Présence attestée par Glottolog et par les travaux de Colleyn et Jonckers."
+        },
+        {
+          "country": "BFA",
+          "population": null,
+          "percentage": null,
+          "note": "Présence linguistique attestée par Glottolog."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Mamara Senoufo (myk)",
+        "url": "https://glottolog.org/resource/languoid/id/mama1271",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for Glottolog."
+      },
+      {
+        "title": "Colleyn, Jean-Paul et Jonckers, Danielle — Ceux qui refusent le maître : la conception du pouvoir chez les Minyanka du Mali. Africa 53(4), 1983, p. 43-58",
+        "url": "https://www.cambridge.org/core/journals/africa/article/abs/ceux-qui-refusent-le-maitre-la-conception-du-pouvoir-chez-les-minyanka-du-mali/10D44A79F1FF3B3F9C4E211F24E4BB21",
+        "tier": "referenced",
+        "notes": "Peer-reviewed article published by Cambridge University Press; supports the naming and self-identification note."
+      }
+    ]
+  }
+}

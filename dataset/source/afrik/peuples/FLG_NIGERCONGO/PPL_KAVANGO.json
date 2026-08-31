@@ -85,7 +85,7 @@
         },
         {
           "country": "AGO",
-          "population": 0,
+          "population": null,
           "note": "Presence ancestrale en Angola meridional (Kwando River) ; population actuelle non quantifiee distinctement"
         }
       ]

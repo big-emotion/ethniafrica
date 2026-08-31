@@ -59,7 +59,9 @@ export function CountryParchment({
 }: CountryParchmentProps) {
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
-  const hasPeoples = data.peoples.rows.length > 0;
+  const hasPeoples =
+    data.peoples.rows.length > 0 ||
+    Boolean(data.peoples.totalPopulationFormatted);
 
   return (
     <div className="afh-parchment" id="fiche">

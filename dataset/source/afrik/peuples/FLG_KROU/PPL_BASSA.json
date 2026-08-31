@@ -1,18 +1,18 @@
 {
   "id": "PPL_BASSA",
   "nameMain": "Bassa",
-  "languageFamilyId": "FLG_MANDE",
+  "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR", "CIV", "SLE"],
-  "classificationStatus": "contested",
+  "classificationStatus": "consensual",
   "content": {
     "appellations": {
       "mainName": "Bassa",
       "selfAppellation": "Bassa",
       "exonyms": ["Bassa", "Gboboh", "Adbassa", "Bambog-Mbog"],
       "originOfExonyms": "Le nom Bassa derive selon la tradition orale de Bassa Sooh Nyombe signifiant les gens du Pere Pierre. Les premiers commercants europeens n'ayant pu prononcer la phrase complete, la forme abregee Bassa s'est imposee dans la litterature occidentale. Les variantes Gboboh et Adbassa sont des designations internes.",
-      "whyProblematic": "Le terme Bassa est parfois confondu avec le peuple Bassa du Cameroun (famille afro-asiatique, bantoue), qui est une entite entierement distincte. La classification dans FLG_MANDE est approximative : les Bassa du Liberia sont linguistiquement Kru (Niger-Congo, famille kru), non Mande, bien qu'ils interagissent etroitement avec les peuples mande.",
+      "whyProblematic": "Le terme Bassa est parfois confondu avec le peuple Bassa du Cameroun, dont la langue appartient au groupe bantou de la famille Niger-Congo. Il s'agit d'une entité distincte des Bassa du Liberia, dont la langue bassa (bsq) appartient à la famille krou.",
       "contemporaryUsage": "Le terme Bassa est universellement utilise au Liberia pour designer ce peuple. Ils se designent eux-memes comme Bassa et parlent le bassa (bsq). Ils constituent le deuxieme groupe ethnique du Liberia.",
-      "linguisticFamily": "FLG_MANDE",
+      "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Kru (Niger-Congo), confederation des peuples kru du Liberia et de la Cote d'Ivoire",
       "historicalRegion": "Cote liberienne centrale (Grand Bassa, Rivercess, Margibi, Montserrado)",
       "currentCountries": ["LBR", "CIV", "SLE"]
@@ -93,6 +93,12 @@
       ]
     },
     "sources": [
+      {
+        "title": "Glottolog 5.3 — Bassa (bsq)",
+        "url": "https://glottolog.org/resource/languoid/id/nucl1418",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for Glottolog; supports the Kru classification."
+      },
       {
         "title": "SIL Ethnologue — Bassa (bsq)",
         "url": "https://www.ethnologue.com/language/bsq/",

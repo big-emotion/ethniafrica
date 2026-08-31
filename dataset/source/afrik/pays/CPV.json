@@ -108,10 +108,10 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "ONU / UNFPA – Démographie Cap-Vert 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/CV",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
         "title": "Speeches and Writings\"",
@@ -139,9 +139,14 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Créoles cap-verdiens",
+          "population": 494000,
+          "referenceYear": 2025,
           "percentageInCountry": 99,
           "peopleId": "PPL_CREOLE_CABOVERDIEN",
           "region": "Toutes les îles du Cap-Vert",
@@ -150,6 +155,7 @@
         {
           "name": "Africains d'origine récente",
           "population": 6000,
+          "referenceYear": 2025,
           "percentageInCountry": 1,
           "peopleId": "PPL_AFRICAINS_D_ORIGINE_RECENTE",
           "region": ""
