@@ -4,7 +4,7 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
-        // /fr/comprendre/noms and /fr/comprendre/migrations (further down this list) both returned
+        // /fr/comprendre/appellations and /fr/comprendre/migrations (further down this list) both returned
         // HTTP 500 in CI and were excluded, because lhci's `collect` step
         // aborts the whole run on the first URL that fails to load — which
         // left every route after them unmeasured, not just themselves.
@@ -18,7 +18,7 @@ module.exports = {
         //
         // If either still fails, the honest response is to fix the route, not
         // to re-exclude it: an unmeasured route is a budget nobody enforces.
-        "http://localhost:3000/fr/comprendre/noms",
+        "http://localhost:3000/fr/comprendre/appellations",
         // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
         // journey joins the reference routes so its mobile Performance ≥ 85
         // budget is enforced continuously via the base ".*" assertMatrix
@@ -64,7 +64,7 @@ module.exports = {
         // budgets enforced by the catch-all assertMatrix entry below.
         "http://localhost:3000/fr/comprendre/regards/colonisation-et-resistances",
         // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas, back in
-        // the list for the same reason as /fr/comprendre/noms above. Its tighter CLS/INP
+        // the list for the same reason as /fr/comprendre/appellations above. Its tighter CLS/INP
         // budgets are in assert.assertMatrix below and are no longer inert.
         "http://localhost:3000/fr/comprendre/migrations",
       ],

@@ -482,7 +482,7 @@ describe("SiteHeader â€” reachable and mature are two questions (atlas charter Â
     fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
 
     expect(
-      within(tray).queryByRole("link", { name: /Noms & appellations/ })
+      within(tray).queryByRole("link", { name: /Appellations/ })
     ).not.toBeInTheDocument();
   });
 });

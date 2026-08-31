@@ -82,8 +82,8 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual(["quiz", "mercator"]);
   });
 
-  // "Noms & appellations" answers *why does this people carry this name* —
-  // a question, not a name, so it belongs to Comprendre.
+  // "Appellations" answers *why does this people carry this name* — a
+  // question, not a name, so it belongs to Comprendre.
   // @req REQ-114
   it("files noms under the question axis, not the naming axis", () => {
     const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");

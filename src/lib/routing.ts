@@ -47,7 +47,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     doctrine: "comprendre/doctrine",
     about: "about",
     anecdotes: "comprendre/anecdotes",
-    names: "comprendre/noms",
+    names: "comprendre/appellations",
     compare: "comparer",
     migrations: "comprendre/migrations",
     quiz: "jouer/quiz",
