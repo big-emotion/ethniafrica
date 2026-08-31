@@ -33,6 +33,21 @@ const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
 ].join(" ");
+
+// ARCH-016: the CSP had no media-src or frame-src at all, so both fell back
+// to default-src 'self' and blocked every editorial media/embed host before
+// REQ-128 could render one. Each host below is named explicitly — never a
+// wildcard — so a provider must be declared to be trusted.
+//
+// images.prismic.io is Prismic's single fixed asset-delivery domain, shared
+// by every Prismic repository; it is the one host the committed
+// Prismic-as-editorial-source architecture (ADR-0003) already confirms.
+const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
+
+// prismic.io serves the preview toolbar iframe for the full-site editorial
+// preview (ADR-0003's "Full-site previews" flow). Additional embed providers
+// are added here by exact host as REQ-128 confirms them.
+const FRAME_SRC_HOSTS = ["https://prismic.io"].join(" ");
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -56,6 +71,8 @@ function applySecurityHeaders(
       : `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
     ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),
     "img-src 'self' data:",
+    `media-src 'self' ${MEDIA_SRC_HOSTS}`,
+    `frame-src 'self' ${FRAME_SRC_HOSTS}`,
     "frame-ancestors 'self'",
     // Neither of these falls back to default-src, so omitting them leaves them
     // wide open rather than inheriting 'self'. base-uri stops an injected
