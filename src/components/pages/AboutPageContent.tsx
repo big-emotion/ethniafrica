@@ -1,5 +1,7 @@
+import Link from "next/link";
+
 import { Language } from "@/types/shared";
-import { ATTRIBUTION_STRING } from "@/lib/brand";
+import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 
 interface AboutPageContentProps {
@@ -8,54 +10,93 @@ interface AboutPageContentProps {
 
 /**
  * /[lang]/about content — editorial family (charter §4/§7, FR107). Gains
- * chapter anatomy on its two top-level sections; the prose carries no reading
+ * chapter anatomy across its top-level sections; the prose carries no reading
  * measure and fills the page box it shares with its title.
  * Institution/region group labels (formerly H4) are plain text: H3 is the
  * deepest heading this long-form exception allows.
  */
-// @req REQ-091
+// @req REQ-091 @req REQ-132
 export default function AboutPageContent({ language }: AboutPageContentProps) {
   const content = {
     fr: {
       title: "À propos",
-      navigation: {
-        title: "Navigation",
-        about: "À propos du projet",
-        sources: "Sources",
+      overview: {
+        eyebrow: "Le projet",
+        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples, aux langues, aux familles linguistiques et aux pays d’Afrique.",
+        body: "Le corpus relie ces quatre types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
       },
-      about: {
-        title: "À propos du projet",
-        text1: (
-          <>
-            Le <strong>Dictionnaire des Ethnies d&apos;Afrique</strong> est un
-            projet personnel dont l&apos;objectif est de{" "}
-            <strong>
-              rendre accessibles et claires les informations sur les peuples
-              d&apos;Afrique
-            </strong>
-            .
-          </>
-        ),
-        text2: (
-          <>
-            Avant les nations et les États, il y avait des ethnies, des peuples
-            et des royaumes. L&apos;histoire et les frontières les ont parfois
-            effacés, mais ces peuples existent toujours et continuent de
-            transmettre leurs langues, leurs cultures et leurs traditions.
-          </>
-        ),
-        text3:
-          "Aujourd'hui, je collecte progressivement les informations disponibles pour les organiser dans ce dictionnaire.",
-        text4: (
-          <>
-            Le travail est long, car il est{" "}
-            <strong>
-              difficile de trouver des données fiables sur l&apos;Afrique
-            </strong>
-            , mais le but est de centraliser ce savoir et de le rendre simple à
-            consulter.
-          </>
-        ),
+      contentFamilies: {
+        title: "Ce que contient EthniAfrica",
+        intro:
+          "Quatre objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
+        items: [
+          {
+            title: "Peuples",
+            description:
+              "Des fiches consacrées aux peuples, à leurs appellations et aux relations documentées dans le corpus.",
+            accentClass: "afh-accent-ocre",
+            page: "peoples" as PageType,
+            linkLabel: "Parcourir les peuples",
+          },
+          {
+            title: "Langues",
+            description:
+              "Les langues sont présentées comme des objets propres et reliées aux peuples et aux familles concernées.",
+            accentClass: "afh-accent-perv",
+          },
+          {
+            title: "Familles linguistiques",
+            description:
+              "Les regroupements linguistiques disposent de leurs propres fiches et ne sont pas assimilés à des peuples.",
+            accentClass: "afh-accent-terre",
+            page: "families" as PageType,
+            linkLabel: "Parcourir les familles",
+          },
+          {
+            title: "Pays",
+            description:
+              "Les fiches pays donnent le cadre territorial dans lequel le corpus situe ses autres entrées.",
+            accentClass: "afh-accent-teal",
+            page: "countries" as PageType,
+            linkLabel: "Parcourir les pays",
+          },
+        ],
+      },
+      accessModes: {
+        title: "Trois manières d’entrer dans l’atlas",
+        intro:
+          "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
+        items: [
+          {
+            title: "Explorer",
+            description:
+              "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
+            accentClass: "afh-accent-ocre",
+            page: "explorerHub" as PageType,
+          },
+          {
+            title: "Comprendre",
+            description:
+              "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
+            accentClass: "afh-accent-teal",
+            page: "comprendreHub" as PageType,
+          },
+          {
+            title: "Jouer",
+            description:
+              "Interroger ses repères grâce aux jeux construits à partir du corpus.",
+            accentClass: "afh-accent-perv",
+            page: "jouerHub" as PageType,
+          },
+        ],
+      },
+      doctrine: {
+        title: "À propos et Doctrine : deux rôles distincts",
+        project:
+          "La page À propos présente le projet, le contenu du corpus et les façons de le parcourir.",
+        method:
+          "La Doctrine explique comment les affirmations sont établies, comment les sources sont évaluées et comment les choix éditoriaux sont signalés.",
+        linkLabel: "Consulter la Doctrine éditoriale",
       },
       sources: {
         title: "Sources",
@@ -557,7 +598,6 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           },
         },
       },
-      footer: ATTRIBUTION_STRING,
     },
   };
 
@@ -621,23 +661,128 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
   };
 
   return (
-    <div className="mx-auto space-y-8">
-      <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
+    <div className="mx-auto space-y-afh-6xl text-afh-text">
+      <header
+        data-testid="about-overview"
+        className="grid gap-afh-xl border-b border-afh-border pb-afh-2xl min-[1240px]:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] min-[1240px]:items-end min-[1240px]:gap-afh-5xl"
+      >
+        <div className="space-y-afh-md">
+          <p className="text-afh-eyebrow font-semibold uppercase tracking-wide text-afh-fg-muted">
+            {t.overview.eyebrow}
+          </p>
+          <h1 className="font-afh-display text-afh-hero font-black leading-none">
+            {t.title}
+          </h1>
+          <p className="text-afh-lead font-semibold leading-relaxed">
+            {t.overview.lead}
+          </p>
+        </div>
+        <p className="border-l-2 border-afh-gold pl-afh-md text-afh-small leading-relaxed text-afh-text-soft">
+          {t.overview.body}
+        </p>
+      </header>
 
-      {/* Section About */}
-      <section className="space-y-4">
-        <ChapterHeading stepLabel="01 · Le projet" heading={t.about.title} />
-        <p>{t.about.text1}</p>
-        <p>{t.about.text2}</p>
-        <p>{t.about.text3}</p>
-        <p>{t.about.text4}</p>
+      <section className="space-y-afh-xl" aria-labelledby="about-content-title">
+        <div className="space-y-afh-md">
+          <ChapterHeading
+            id="about-content-title"
+            stepLabel="01 · Le corpus"
+            heading={t.contentFamilies.title}
+          />
+          <p className="text-afh-text-soft">{t.contentFamilies.intro}</p>
+        </div>
+        <ul
+          data-testid="about-content-families"
+          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-2 min-[1240px]:grid-cols-4"
+          role="list"
+        >
+          {t.contentFamilies.items.map((family) => (
+            <li
+              key={family.title}
+              className={`${family.accentClass} flex min-h-full flex-col border-t-2 border-[var(--accent)] bg-afh-bg-warm px-afh-md py-afh-lg`}
+            >
+              <h3 className="font-afh-display text-afh-h3 font-black">
+                {family.title}
+              </h3>
+              <p className="mt-afh-sm flex-1 text-afh-small leading-relaxed text-afh-text-soft">
+                {family.description}
+              </p>
+              {family.page && family.linkLabel ? (
+                <Link
+                  href={getLocalizedRoute(language, family.page)}
+                  className="mt-afh-md inline-flex min-h-[44px] items-center border-t border-afh-border pt-afh-sm text-afh-small font-bold text-[var(--accent-ink)] underline decoration-[var(--accent)] underline-offset-4"
+                >
+                  {family.linkLabel}
+                </Link>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="space-y-afh-xl" aria-labelledby="about-access-title">
+        <div className="space-y-afh-md">
+          <ChapterHeading
+            id="about-access-title"
+            stepLabel="02 · Les accès"
+            heading={t.accessModes.title}
+          />
+          <p className="text-afh-text-soft">{t.accessModes.intro}</p>
+        </div>
+        <div
+          data-testid="about-access-modes"
+          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-3"
+        >
+          {t.accessModes.items.map((mode, index) => (
+            <Link
+              key={mode.title}
+              aria-label={mode.title}
+              href={getLocalizedRoute(language, mode.page)}
+              className={`${mode.accentClass} flex min-h-[11rem] flex-col border border-afh-border bg-afh-surface p-afh-lg no-underline`}
+            >
+              <span className="text-afh-caption font-semibold uppercase tracking-wide text-[var(--accent-ink)]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-afh-md font-afh-display text-afh-h2 font-black">
+                {mode.title}
+              </h3>
+              <p className="mt-afh-sm text-afh-small leading-relaxed text-afh-text-soft">
+                {mode.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section
+        data-testid="about-doctrine-distinction"
+        className="grid gap-afh-xl bg-afh-bg-warm p-afh-lg min-[720px]:p-afh-xl min-[1240px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] min-[1240px]:items-start min-[1240px]:gap-afh-5xl"
+        aria-labelledby="about-doctrine-title"
+      >
+        <ChapterHeading
+          id="about-doctrine-title"
+          stepLabel="03 · La méthode"
+          heading={t.doctrine.title}
+        />
+        <div className="space-y-afh-md text-afh-small leading-relaxed">
+          <p>{t.doctrine.project}</p>
+          <p className="font-semibold">{t.doctrine.method}</p>
+          <Link
+            href={getLocalizedRoute(language, "doctrine")}
+            className="inline-flex min-h-[44px] items-center border-b-2 border-afh-gold font-bold text-afh-text no-underline"
+          >
+            {t.doctrine.linkLabel}
+          </Link>
+        </div>
       </section>
 
       {/* Section Sources */}
-      <section className="space-y-6">
+      <section className="space-y-afh-xl">
         <div>
-          <ChapterHeading stepLabel="02 · Sources" heading={t.sources.title} />
-          <p className="mt-2 text-muted-foreground italic">{t.sources.intro}</p>
+          <ChapterHeading stepLabel="04 · Sources" heading={t.sources.title} />
+          <p className="mt-afh-sm text-afh-small italic text-afh-text-soft">
+            {t.sources.intro}
+          </p>
         </div>
 
         {/* International Sources */}

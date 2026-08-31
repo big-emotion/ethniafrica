@@ -308,7 +308,7 @@ describe("ftsSearchEntities", () => {
 
   // @req REQ-129
   it("surfaces an accented fiche name from an unaccented query", async () => {
-    // Same rationale as the prefix test above: migration 051 folds accents
+    // Same rationale as the prefix test above: migration 052 folds accents
     // in SQL, so this only proves the query layer does not itself strip or
     // re-encode diacritics on the way back out.
     peoplesPayload = {

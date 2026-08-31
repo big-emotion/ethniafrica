@@ -5,7 +5,7 @@
  *     summary: Search — peoples, countries and language families
  *     description: >
  *       Full-text search, ranked in Postgres by `afrik_search_peoples` /
- *       `afrik_search_countries` (migration 051): an accent-insensitive exact
+ *       `afrik_search_countries` (migration 052): an accent-insensitive exact
  *       name match first, then `ts_rank` over the weighted `search_vector`
  *       (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the
  *       accent-insensitive `name_unaccent_vector`, both queried with the `:*`

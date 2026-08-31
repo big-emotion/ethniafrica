@@ -1,4 +1,4 @@
--- Migration 051 — Prefix matching and accent-insensitive name matching (REQ-129)
+-- Migration 052 — Prefix matching and accent-insensitive name matching (REQ-129)
 --
 -- Context: REQ-129 requires "bamba" to find "Bambara" and "mande" (no accent)
 -- to find "Mandé". Neither holds today. websearch_to_tsquery has no prefix
@@ -145,7 +145,7 @@ ALTER TABLE public.afrik_peoples
   ) STORED;
 
 COMMENT ON COLUMN public.afrik_peoples.name_unaccent_vector IS
-  'tsvector of name_main with accents folded before tokenising, so a query normalised the same way (public.afrik_unaccent) matches regardless of how the reader typed accents. Scoped to the name only, not the full prose surface — REQ-129 is about the indexed name. Ranked alongside search_vector (migration 043) by public.afrik_search_peoples (migration 051).';
+  'tsvector of name_main with accents folded before tokenising, so a query normalised the same way (public.afrik_unaccent) matches regardless of how the reader typed accents. Scoped to the name only, not the full prose surface — REQ-129 is about the indexed name. Ranked alongside search_vector (migration 043) by public.afrik_search_peoples (migration 052).';
 
 CREATE INDEX IF NOT EXISTS idx_afrik_peoples_name_unaccent_vector
   ON public.afrik_peoples USING gin(name_unaccent_vector);
@@ -288,7 +288,7 @@ $$;
 
 COMMENT ON FUNCTION public.afrik_search_peoples(
   TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT) IS
-  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 051), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. A null or blank p_q switches both text predicates off (browse mode), which is how "peoples of family X" and "peoples of country Y" are served here. SECURITY INVOKER: reads only tables already published to anon by migrations 015 and 019.';
+  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. A null or blank p_q switches both text predicates off (browse mode), which is how "peoples of family X" and "peoples of country Y" are served here. SECURITY INVOKER: reads only tables already published to anon by migrations 015 and 019.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_peoples(
   TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT) FROM PUBLIC;
@@ -382,7 +382,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_countries(TEXT, INT, INT) IS
-  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 051), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
+  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
 
 REVOKE ALL ON FUNCTION public.afrik_search_countries(TEXT, INT, INT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_countries(TEXT, INT, INT)

@@ -293,6 +293,53 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 });
 
+describe("SiteHeader — the About destination (REQ-132)", () => {
+  // @req REQ-132
+  it("keeps About and the editorial doctrine as distinct Comprendre destinations", () => {
+    renderHeader();
+
+    fireEvent.click(trigger("Comprendre"));
+
+    expect(
+      within(panel()).getByRole("link", { name: "À propos du projet" })
+    ).toHaveAttribute("href", "/fr/about");
+    expect(
+      within(panel()).getByRole("link", { name: "La doctrine éditoriale" })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+  });
+
+  // @req REQ-132
+  it("gives About its dedicated information glyph", () => {
+    renderHeader();
+
+    fireEvent.click(trigger("Comprendre"));
+
+    const glyph = screen
+      .getByTestId("site-nav-module-about")
+      .querySelector(".sh-glyph svg");
+
+    expect(glyph).toBeInTheDocument();
+    expect(glyph).toHaveClass("lucide-info");
+    expect(glyph).not.toHaveClass("lucide-circle");
+  });
+
+  // @req REQ-132
+  it("offers the same distinct About and doctrine links in the mobile tray", () => {
+    renderHeader();
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
+
+    expect(
+      within(tray).getByRole("link", { name: "À propos du projet" })
+    ).toHaveAttribute("href", "/fr/about");
+    expect(
+      within(tray).getByRole("link", { name: "La doctrine éditoriale" })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+  });
+});
+
 describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
   // @req REQ-114
   it("closes on Escape and hands the focus back to the trigger", () => {

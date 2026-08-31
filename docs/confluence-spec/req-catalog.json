@@ -121,7 +121,8 @@
     "REQ-121",
     "REQ-122",
     "REQ-129",
-    "REQ-131"
+    "REQ-131",
+    "REQ-132"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -242,6 +243,7 @@
     "REQ-121": "Confluence FR65 (extension) — inversion templates T6-T11 and contested-exonym T12",
     "REQ-122": "Confluence REQ-122 — fiche prose text shape: closed markup grammar, serialized-JSON and authoring-note gates",
     "REQ-129": "Confluence REQ-129 — a partial input finds entities by prefix: an incomplete term matches entities whose indexed name begins with it, across every entity nature, and a declared spelling variant resolves to its entity",
-    "REQ-131": "Confluence REQ-131 — supersedes REQ-028: FR28/FR28-strict demographic-sum completeness scoped to the 54-country African reference set"
+    "REQ-131": "Confluence REQ-131 — supersedes REQ-028: FR28/FR28-strict demographic-sum completeness scoped to the 54-country African reference set",
+    "REQ-132": "Confluence REQ-132 — About page content and presentation"
   }
 }
