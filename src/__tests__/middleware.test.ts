@@ -425,6 +425,57 @@ describe("middleware", () => {
       expect(csp).toContain("frame-ancestors 'self'");
     });
 
+    // ARCH-016: opens the CSP to the Prismic editorial-media host, declared
+    // explicitly rather than left to the (previously implicit) default-src
+    // fallback.
+    // @req REQ-052
+    it("declares media-src with the Prismic image host and no wildcard", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+
+      expect(mediaSrc).toBeDefined();
+      expect(mediaSrc).toContain("'self'");
+      expect(mediaSrc).toContain("https://images.prismic.io");
+      expect(mediaSrc).not.toContain("*");
+    });
+
+    // frame-src is declared explicitly (no longer an implicit default-src
+    // fallback) but carries no external host yet: REQ-128 owns which embed
+    // provider(s) are trusted, and none is confirmed at this stage.
+    // @req REQ-052
+    it("declares frame-src restricted to 'self' with no external host yet", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
+
+      expect(frameSrc).toBeDefined();
+      expect(frameSrc).toBe("frame-src 'self'");
+      expect(frameSrc).not.toContain("*");
+    });
+
+    // A host that was never declared must stay blocked — the CSP is a
+    // host-by-host allowlist, not an open door once one provider is trusted.
+    // @req REQ-052
+    it("does not declare an undeclared media/embed host", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
+
+      expect(mediaSrc).not.toContain("evil.example");
+      expect(frameSrc).not.toContain("evil.example");
+    });
+
     // Neither directive falls back to default-src, so leaving them out leaves
     // them unrestricted: an injected <base> can re-point every relative URL on
     // the page, and an injected form can post to any origin.
@@ -453,7 +504,8 @@ describe("middleware", () => {
       expect(csp).toContain("form-action 'self'");
     });
 
-    it("does not include 'unsafe-inline' in script-src or style-src", async () => {
+    // @req REQ-052
+    it("does not include 'unsafe-inline' in script-src, style-src, media-src or frame-src", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
       const response = await middleware(request);
 
@@ -462,6 +514,8 @@ describe("middleware", () => {
 
       const scriptSrc = directives.find((d) => d.startsWith("script-src"));
       const styleSrc = directives.find((d) => d.startsWith("style-src"));
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
 
       expect(scriptSrc).toBeDefined();
       expect(scriptSrc).not.toContain("'unsafe-inline'");
@@ -469,6 +523,10 @@ describe("middleware", () => {
       expect(styleSrc).toBeDefined();
       expect(styleSrc).not.toContain("'unsafe-inline'");
       expect(styleSrc).toMatch(/'nonce-[^']+'/);
+      expect(mediaSrc).toBeDefined();
+      expect(mediaSrc).not.toContain("'unsafe-inline'");
+      expect(frameSrc).toBeDefined();
+      expect(frameSrc).not.toContain("'unsafe-inline'");
     });
 
     // @req REQ-052
