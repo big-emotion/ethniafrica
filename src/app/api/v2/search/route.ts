@@ -129,6 +129,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 import { createApiError } from "@/api/v2/utils/response";
 import { logger } from "@/lib/api/logger";
+import { searchQueryLog } from "@/lib/search/searchQueryLog";
 import type { FtsSearchParams } from "@/types/afrik";
 
 const VALID_CLASSIFICATION_STATUSES = new Set([
@@ -275,6 +276,11 @@ export async function GET(request: NextRequest) {
     logger.info("GET /api/v2/search", { params });
 
     const envelope = await ftsSearchHandler(params);
+
+    await searchQueryLog.write({
+      query: params.q,
+      resultCount: envelope.data.total,
+    });
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/search completed", {
