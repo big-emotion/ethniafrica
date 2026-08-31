@@ -9,6 +9,13 @@ import type { ReactNode } from "react";
 import type { PeopleId } from "@/types/afrik";
 import type { SourceTier } from "@/types/sources";
 
+// @req REQ-135
+export const NAME_RECORD_ENTITY_TYPES = ["people", "patronyme"] as const;
+
+export type NameRecordEntityType = (typeof NAME_RECORD_ENTITY_TYPES)[number];
+
+export type PatronymeId = `PAT_${string}`;
+
 export type NameRecordType =
   | "endonym"
   | "exonym"
@@ -39,8 +46,8 @@ export interface NameRecordEntry {
 }
 
 export interface NameRecordDossier {
-  id: PeopleId; // PPL_xxxxx — the entity this naming dossier is for
-  entityType: "people";
+  id: PeopleId | PatronymeId;
+  entityType: NameRecordEntityType;
   names: NameRecordEntry[];
 }
 
