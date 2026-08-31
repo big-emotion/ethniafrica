@@ -12,7 +12,6 @@ vi.mock("@/api/v2/handlers/countries", () => ({
 
 vi.mock("@/api/v2/handlers/search", () => ({
   ftsSearchHandler: vi.fn(),
-  searchHandler: vi.fn(),
 }));
 
 vi.mock("@/api/v2/handlers/peoples", () => ({
