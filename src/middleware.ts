@@ -41,13 +41,14 @@ const NEXT_RUNTIME_STYLE_HASHES = [
 //
 // images.prismic.io is Prismic's single fixed asset-delivery domain, shared
 // by every Prismic repository; it is the one host the committed
-// Prismic-as-editorial-source architecture (ADR-0003) already confirms.
+// Prismic-as-editorial-source architecture already confirms.
 const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
 
-// prismic.io serves the preview toolbar iframe for the full-site editorial
-// preview (ADR-0003's "Full-site previews" flow). Additional embed providers
-// are added here by exact host as REQ-128 confirms them.
-const FRAME_SRC_HOSTS = ["https://prismic.io"].join(" ");
+// No embed provider is confirmed yet — REQ-128 ("Media and external links on
+// the fiche") owns that decision. Left empty rather than guessed so the
+// directive still exists explicitly (not an implicit default-src fallback)
+// and stays a deliberate host-by-host allowlist once REQ-128 names a host.
+const FRAME_SRC_HOSTS: string[] = [];
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -72,7 +73,7 @@ function applySecurityHeaders(
     ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),
     "img-src 'self' data:",
     `media-src 'self' ${MEDIA_SRC_HOSTS}`,
-    `frame-src 'self' ${FRAME_SRC_HOSTS}`,
+    ["frame-src 'self'", ...FRAME_SRC_HOSTS].join(" "),
     "frame-ancestors 'self'",
     // Neither of these falls back to default-src, so omitting them leaves them
     // wide open rather than inheriting 'self'. base-uri stops an injected

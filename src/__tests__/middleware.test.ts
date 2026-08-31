@@ -443,8 +443,11 @@ describe("middleware", () => {
       expect(mediaSrc).not.toContain("*");
     });
 
+    // frame-src is declared explicitly (no longer an implicit default-src
+    // fallback) but carries no external host yet: REQ-128 owns which embed
+    // provider(s) are trusted, and none is confirmed at this stage.
     // @req REQ-052
-    it("declares frame-src with the Prismic host and no wildcard", async () => {
+    it("declares frame-src restricted to 'self' with no external host yet", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
       const response = await middleware(request);
 
@@ -453,8 +456,7 @@ describe("middleware", () => {
       const frameSrc = directives.find((d) => d.startsWith("frame-src"));
 
       expect(frameSrc).toBeDefined();
-      expect(frameSrc).toContain("'self'");
-      expect(frameSrc).toContain("https://prismic.io");
+      expect(frameSrc).toBe("frame-src 'self'");
       expect(frameSrc).not.toContain("*");
     });
 
