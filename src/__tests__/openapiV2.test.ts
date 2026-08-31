@@ -140,3 +140,76 @@ describe("OpenAPI v2 spec - LanguageFamilyV2", () => {
     expect(itemProperties.peopleId.type).toBe("string");
   });
 });
+
+describe("OpenAPI v2 spec - corpus envelopes", () => {
+  const corpusResponses = [
+    ["/api/v2/peoples", "#/components/schemas/PeoplesListEnvelope", [500]],
+    [
+      "/api/v2/peoples/{id}",
+      "#/components/schemas/PeopleDetailEnvelope",
+      [400, 404, 500],
+    ],
+    ["/api/v2/countries", "#/components/schemas/CountriesListEnvelope", [500]],
+    [
+      "/api/v2/countries/{iso}",
+      "#/components/schemas/CountryDetailEnvelope",
+      [400, 404, 500],
+    ],
+    [
+      "/api/v2/language-families",
+      "#/components/schemas/LanguageFamiliesListEnvelope",
+      [500],
+    ],
+    [
+      "/api/v2/language-families/{id}",
+      "#/components/schemas/LanguageFamilyDetailEnvelope",
+      [400, 404, 500],
+    ],
+  ] as const;
+
+  // @req REQ-084
+  it.each(corpusResponses)(
+    "documents %s with success and error envelopes",
+    (path, successSchema, errorStatuses) => {
+      const spec = swaggerSpecV2 as Record<string, unknown>;
+      const paths = spec.paths as Record<string, Record<string, unknown>>;
+      const operation = paths[path].get as Record<string, unknown>;
+      const responses = operation.responses as Record<
+        string,
+        { content: { "application/json": { schema: { $ref: string } } } }
+      >;
+
+      expect(responses["200"].content["application/json"].schema.$ref).toBe(
+        successSchema
+      );
+      for (const status of errorStatuses) {
+        expect(
+          responses[String(status)].content["application/json"].schema.$ref
+        ).toBe("#/components/schemas/ApiErrorEnvelope");
+      }
+    }
+  );
+
+  // @req REQ-084
+  it("documents the same closed error taxonomy as the implementation", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const components = spec.components as Record<string, unknown>;
+    const schemas = components.schemas as Record<
+      string,
+      { properties: Record<string, { enum?: string[] }> }
+    >;
+
+    expect(schemas.ApiErrorEntry.properties.code.enum).toEqual([
+      "ILLEGAL_TRANSITION",
+      "INTERNAL_ERROR",
+      "INVALID_PARAM",
+      "NOT_FOUND",
+      "RATE_LIMITED",
+      "SEMANTIC_ERROR",
+      "UNAUTHENTICATED",
+      "UNAUTHORIZED",
+      "UNAVAILABLE",
+      "VALIDATION_ERROR",
+    ]);
+  });
+});

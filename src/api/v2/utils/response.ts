@@ -2,7 +2,7 @@
  * Response utilities for API v2
  */
 
-import type { ApiResponse, PaginationMeta } from "@/types/afrik";
+import type { PaginationMeta } from "@/types/afrik";
 import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
 
 /**
@@ -45,8 +45,25 @@ export interface ApiEnvelope<T> {
   errors: ApiError[];
 }
 
+/** Error codes currently emitted by API v2 routes and handlers. */
+// @req REQ-084
+export const API_ERROR_CODES = [
+  "ILLEGAL_TRANSITION",
+  "INTERNAL_ERROR",
+  "INVALID_PARAM",
+  "NOT_FOUND",
+  "RATE_LIMITED",
+  "SEMANTIC_ERROR",
+  "UNAUTHENTICATED",
+  "UNAUTHORIZED",
+  "UNAVAILABLE",
+  "VALIDATION_ERROR",
+] as const;
+
+export type ApiErrorCode = (typeof API_ERROR_CODES)[number];
+
 export interface ApiError {
-  code: string;
+  code: ApiErrorCode;
   message: string;
   field?: string;
 }
@@ -105,41 +122,5 @@ export function createApiError(
       attribution: API_ATTRIBUTION,
     },
     errors: list,
-  };
-}
-
-/**
- * Create a paginated API response (legacy v2 envelope, kept for backward
- * compatibility with peoples/countries/language-families endpoints).
- */
-// @req REQ-084
-export function createPaginatedResponse<T>(
-  data: T[],
-  total: number,
-  page: number = 1,
-  perPage: number = 20,
-  extraMeta?: Partial<PaginationMeta>
-): ApiResponse<T[]> {
-  const totalPages = Math.ceil(total / perPage);
-
-  return {
-    data,
-    meta: {
-      total,
-      page,
-      perPage,
-      totalPages,
-      ...extraMeta,
-    },
-  };
-}
-
-/**
- * Create a single item API response (legacy v2 envelope).
- */
-// @req REQ-084
-export function createResponse<T>(data: T): ApiResponse<T> {
-  return {
-    data,
   };
 }

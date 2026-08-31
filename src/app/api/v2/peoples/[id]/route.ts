@@ -23,47 +23,35 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   $ref: '#/components/schemas/PeopleV2'
- *             example:
- *               data:
- *                 id: "PPL_SHONA"
- *                 nameMain: "Shona"
- *                 languageFamilyId: "FLG_BANTU"
- *                 currentCountries: ["ZWE", "MOZ"]
- *                 content: {}
+ *               $ref: '#/components/schemas/PeopleDetailEnvelope'
  *       400:
  *         description: Format d'identifiant invalide
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "Invalid people ID format"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       404:
  *         description: Peuple non trouvé
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "People not found"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
 import { getPeopleHandler } from "@/api/v2/handlers/peoples";
 import { validatePeopleId } from "@/api/v2/utils/validation";
+import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -78,19 +66,26 @@ export async function GET(
     if (!validatePeopleId(id)) {
       logger.warn("Invalid people ID format", { id });
       return jsonWithCors(
-        { error: "Invalid people ID format" },
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Invalid people ID format",
+          field: "id",
+        }),
         { status: 400 }
       );
     }
 
-    const people = await getPeopleHandler(id);
+    const envelope = await getPeopleHandler(id);
 
-    if (!people) {
+    if (!envelope) {
       logger.warn("People not found", { id });
-      return jsonWithCors({ error: "People not found" }, { status: 404 });
+      return jsonWithCors(
+        createApiError({ code: "NOT_FOUND", message: "People not found" }),
+        { status: 404 }
+      );
     }
 
-    const response = jsonWithCors({ data: people });
+    const response = jsonWithCors(envelope);
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/peoples/[id] completed", {
@@ -104,10 +99,17 @@ export async function GET(
     const { id } = await params;
     const duration = Date.now() - startTime;
     logger.error(`Error in GET /api/v2/peoples/${id}`, error, { id, duration });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

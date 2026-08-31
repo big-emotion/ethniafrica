@@ -18,32 +18,24 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 key:
- *                   type: string
- *                   description: Raw API key (shown only once)
- *                 tier:
- *                   type: string
- *                   example: public
- *                 note:
- *                   type: string
+ *               $ref: '#/components/schemas/ApiKeyIssueEnvelope'
  *       409:
  *         description: A public key already exists for this IP address
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       500:
  *         description: Failed to issue key
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 import { NextRequest, NextResponse } from "next/server";
 import { hashApiKey, getKeyPrefix } from "@/lib/api/auth";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { createApiError, createApiResponse } from "@/api/v2/utils/response";
 
 function getClientIp(request: NextRequest): string | null {
   const forwarded = request.headers.get("X-Forwarded-For");
@@ -51,6 +43,7 @@ function getClientIp(request: NextRequest): string | null {
   return request.headers.get("X-Real-IP") ?? null;
 }
 
+// @req REQ-084
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request);
@@ -69,11 +62,11 @@ export async function GET(request: NextRequest) {
 
       if (existing) {
         return NextResponse.json(
-          {
-            error: "key_already_issued",
+          createApiError({
+            code: "RATE_LIMITED",
             message:
               "An active public API key has already been issued for this IP address.",
-          },
+          }),
           { status: 409 }
         );
       }
@@ -95,20 +88,29 @@ export async function GET(request: NextRequest) {
 
     if (error) {
       return NextResponse.json(
-        { error: "failed_to_issue_key" },
+        createApiError({
+          code: "INTERNAL_ERROR",
+          message: "Failed to issue API key",
+        }),
         { status: 500 }
       );
     }
 
     return NextResponse.json(
-      {
+      createApiResponse({
         key: rawKey,
         tier: "public",
         note: "Store this key safely. It will not be shown again.",
-      },
+      }),
       { status: 201 }
     );
   } catch {
-    return NextResponse.json({ error: "failed_to_issue_key" }, { status: 500 });
+    return NextResponse.json(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Failed to issue API key",
+      }),
+      { status: 500 }
+    );
   }
 }

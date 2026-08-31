@@ -16,6 +16,7 @@ vi.mock("@/lib/supabase/admin", () => ({
 
 import { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { API_ATTRIBUTION, API_LICENSE } from "@/api/v2/utils/response";
 import { GET } from "../route";
 
 function makeRequest(headers: Record<string, string> = {}): NextRequest {
@@ -60,10 +61,15 @@ describe("GET /api/v2/keys/issue", () => {
     const json = await response.json();
 
     expect(response.status).toBe(201);
-    expect(json.tier).toBe("public");
-    expect(typeof json.key).toBe("string");
-    expect(json.key.startsWith("pub_")).toBe(true);
-    expect(json.note).toBeDefined();
+    expect(json.meta).toEqual({
+      license: API_LICENSE,
+      attribution: API_ATTRIBUTION,
+    });
+    expect(json.errors).toEqual([]);
+    expect(json.data.tier).toBe("public");
+    expect(typeof json.data.key).toBe("string");
+    expect(json.data.key.startsWith("pub_")).toBe(true);
+    expect(json.data.note).toBeDefined();
   });
 
   it("should return 500 with failed_to_issue_key on DB insert error", async () => {
@@ -73,7 +79,14 @@ describe("GET /api/v2/keys/issue", () => {
     const json = await response.json();
 
     expect(response.status).toBe(500);
-    expect(json.error).toBe("failed_to_issue_key");
+    expect(json.data).toBeNull();
+    expect(json.meta).toEqual({
+      license: API_LICENSE,
+      attribution: API_ATTRIBUTION,
+    });
+    expect(json.errors).toEqual([
+      { code: "INTERNAL_ERROR", message: "Failed to issue API key" },
+    ]);
   });
 
   it("should insert with tier=public, active=true, name=public-key, key_prefix and key_hash", async () => {
@@ -121,7 +134,14 @@ describe("GET /api/v2/keys/issue", () => {
     const json = await response.json();
 
     expect(response.status).toBe(409);
-    expect(json.error).toBe("key_already_issued");
+    expect(json.data).toBeNull();
+    expect(json.errors).toEqual([
+      {
+        code: "RATE_LIMITED",
+        message:
+          "An active public API key has already been issued for this IP address.",
+      },
+    ]);
     expect(mockInsert).not.toHaveBeenCalled();
   });
 

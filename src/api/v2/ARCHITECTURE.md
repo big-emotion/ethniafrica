@@ -54,9 +54,16 @@ export async function GET(request: NextRequest) {
 export async function listCountriesHandler(
   page?: number,
   perPage?: number
-): Promise<ApiResponse<Country[]>> {
+): Promise<ApiEnvelope<Country[]>> {
   const { data, total } = await getCountries(page, perPage);
-  return createPaginatedResponse(data, total, page, perPage);
+  return createApiResponse(data, {
+    pagination: {
+      total,
+      page,
+      perPage,
+      totalPages: Math.ceil(total / perPage),
+    },
+  });
 }
 ```
 
@@ -64,7 +71,7 @@ export async function listCountriesHandler(
 
 - Utilise `utils/response.ts` pour formater les réponses
 - Appelle les services correspondants
-- Retourne toujours un format standardisé `ApiResponse<T>`
+- Always returns the standard `ApiEnvelope<T>` shape
 
 ### 3. Couche Services
 
@@ -162,7 +169,7 @@ export async function loadCountry(
 
 5. Retour en arrière
    ↓ Service retourne Country
-   ↓ Handler formate ApiResponse
+   ↓ Handler formats ApiEnvelope
    ↓ Route retourne NextResponse.json
 ```
 
@@ -170,18 +177,25 @@ export async function loadCountry(
 
 ### `utils/response.ts`
 
-Fonctions pour créer des réponses standardisées :
+Functions for creating standard response envelopes:
 
-- `createPaginatedResponse<T>` : Réponse avec pagination
-- `createResponse<T>` : Réponse simple
+- `createApiResponse<T>`: success envelope with optional pagination
+- `createApiError`: typed error envelope
 
 **Exemple** :
 
 ```typescript
-const response = createPaginatedResponse(countries, 54, 1, 20);
+const response = createApiResponse(countries, {
+  pagination: { total: 54, page: 1, perPage: 20, totalPages: 3 },
+});
 // {
 //   data: [...],
-//   meta: { total: 54, page: 1, perPage: 20, totalPages: 3 }
+//   meta: {
+//     license: "CC-BY-SA-4.0",
+//     attribution: "EthniAfrica — ethniafrica.com",
+//     pagination: { total: 54, page: 1, perPage: 20, totalPages: 3 }
+//   },
+//   errors: []
 // }
 ```
 
