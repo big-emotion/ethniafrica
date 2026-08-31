@@ -81,37 +81,6 @@ export async function getAfrikCountryById(
 }
 
 /**
- * Search AFRIK countries using Postgres FTS on search_vector (websearch, french).
- */
-// @req REQ-019
-export async function searchAfrikCountries(query: string): Promise<Country[]> {
-  const supabase = createServerClient();
-
-  const { data, error } = await supabase
-    .from("afrik_countries")
-    .select("*")
-    .textSearch("search_vector", query, { type: "websearch", config: "french" })
-    .order("name_fr");
-
-  if (error) {
-    logger.error("Error searching AFRIK countries", error);
-    throw error;
-  }
-
-  return (data || []).map((row) => ({
-    id: row.id,
-    nameFr: row.name_fr,
-    nameOfficial: row.name_official || undefined,
-    summary: row.summary || undefined,
-    etymology: row.etymology || undefined,
-    nameOriginActor: row.name_origin_actor || undefined,
-    content: row.content || {},
-    createdAt: row.created_at ? new Date(row.created_at) : undefined,
-    updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
-  }));
-}
-
-/**
  * The ids of every country in the corpus, and nothing else.
  *
  * The home's synthesis rail needs four countries out of fifty-four, drawn
