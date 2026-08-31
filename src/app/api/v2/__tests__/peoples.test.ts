@@ -20,6 +20,7 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { listPeoplesHandler } from "@/api/v2/handlers/peoples";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
 
 describe("API v2 - Peoples Route", () => {
   beforeEach(() => {
@@ -27,6 +28,7 @@ describe("API v2 - Peoples Route", () => {
   });
 
   describe("GET /api/v2/peoples", () => {
+    // @req REQ-084
     it("should return paginated peoples", async () => {
       const mockResponse = {
         data: [
@@ -38,7 +40,12 @@ describe("API v2 - Peoples Route", () => {
             content: {},
           },
         ],
-        meta: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+          pagination: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        },
+        errors: [],
       };
 
       vi.mocked(listPeoplesHandler).mockResolvedValue(mockResponse);
@@ -48,15 +55,19 @@ describe("API v2 - Peoples Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(Array.isArray(data.data)).toBe(true);
+      expect(data).toEqual(mockResponse);
     });
 
     // @req REQ-033
     it("should normalize and forward pagination and filters exactly once", async () => {
       vi.mocked(listPeoplesHandler).mockResolvedValue({
         data: [],
-        meta: { total: 0, page: 2, perPage: 25, totalPages: 0 },
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+          pagination: { total: 0, page: 2, perPage: 25, totalPages: 0 },
+        },
+        errors: [],
       });
 
       const request = new NextRequest(
@@ -75,21 +86,34 @@ describe("API v2 - Peoples Route", () => {
     });
 
     // @req REQ-033
-    it("should not forward an invalid language family ID", async () => {
-      vi.mocked(listPeoplesHandler).mockResolvedValue({
-        data: [],
-        meta: { total: 0, page: 1, perPage: 20, totalPages: 0 },
-      });
-
+    // @req REQ-084
+    it("should return 400 for an invalid language family ID", async () => {
       const request = new NextRequest(
         "http://localhost/api/v2/peoples?languageFamilyId=invalid"
       );
 
-      await GET(request);
+      const response = await GET(request);
+      const data = await response.json();
 
-      expect(listPeoplesHandler).toHaveBeenCalledWith(1, 20, {});
+      expect(response.status).toBe(400);
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [
+          {
+            code: "VALIDATION_ERROR",
+            message: "Invalid language family ID format",
+            field: "languageFamilyId",
+          },
+        ],
+      });
+      expect(listPeoplesHandler).not.toHaveBeenCalled();
     });
 
+    // @req REQ-084
     it("should return 500 on error", async () => {
       vi.mocked(listPeoplesHandler).mockRejectedValue(
         new Error("Database error")
@@ -100,7 +124,14 @@ describe("API v2 - Peoples Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.error).toBe("Internal server error");
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });

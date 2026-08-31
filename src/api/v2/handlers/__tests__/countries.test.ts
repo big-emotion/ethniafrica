@@ -1,14 +1,28 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-vi.mock("../../services/countryService", () => ({
+vi.mock("@/api/v2/services/countryService", () => ({
   getCountries: vi.fn(),
   getCountryById: vi.fn(),
 }));
 
-import { getCountries, getCountryById } from "../../services/countryService";
-import { listCountriesHandler, getCountryHandler } from "../countries";
+import {
+  listCountriesHandler,
+  getCountryHandler,
+} from "@/api/v2/handlers/countries";
+import { getCountries, getCountryById } from "@/api/v2/services/countryService";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
+import type { Country } from "@/types/afrik";
 
-const ZIMBABWE = { id: "ZWE", name: "Zimbabwe" } as any;
+const ZIMBABWE: Country = {
+  id: "ZWE",
+  nameFr: "Zimbabwe",
+  content: {},
+};
+
+const ENVELOPE_META = {
+  license: "CC-BY-SA-4.0",
+  attribution: API_ATTRIBUTION,
+};
 
 describe("Countries Handler", () => {
   beforeEach(() => {
@@ -16,7 +30,8 @@ describe("Countries Handler", () => {
   });
 
   describe("listCountriesHandler", () => {
-    it("should return paginated countries with metadata", async () => {
+    // @req REQ-084
+    it("returns countries in the canonical envelope with pagination metadata", async () => {
       vi.mocked(getCountries).mockResolvedValue({
         data: [ZIMBABWE],
         total: 54,
@@ -25,15 +40,22 @@ describe("Countries Handler", () => {
       const response = await listCountriesHandler(1, 5);
 
       expect(getCountries).toHaveBeenCalledWith(1, 5);
-      expect(response.data).toEqual([ZIMBABWE]);
-      expect(response.meta).toEqual({
-        total: 54,
-        page: 1,
-        perPage: 5,
-        totalPages: 11,
+      expect(response).toEqual({
+        data: [ZIMBABWE],
+        meta: {
+          ...ENVELOPE_META,
+          pagination: {
+            total: 54,
+            page: 1,
+            perPage: 5,
+            totalPages: 11,
+          },
+        },
+        errors: [],
       });
     });
 
+    // @req REQ-084
     it("should handle default pagination", async () => {
       vi.mocked(getCountries).mockResolvedValue({ data: [], total: 0 });
 
@@ -41,21 +63,32 @@ describe("Countries Handler", () => {
 
       expect(getCountries).toHaveBeenCalledWith(undefined, undefined);
       expect(response.data).toEqual([]);
-      expect(response.meta?.page).toBe(1);
-      expect(response.meta?.perPage).toBe(20);
+      expect(response.meta.pagination).toEqual({
+        total: 0,
+        page: 1,
+        perPage: 20,
+        totalPages: 0,
+      });
+      expect(response.errors).toEqual([]);
     });
   });
 
   describe("getCountryHandler", () => {
-    it("should return a country by ISO code", async () => {
+    // @req REQ-084
+    it("returns a country in the canonical envelope", async () => {
       vi.mocked(getCountryById).mockResolvedValue(ZIMBABWE);
 
-      const country = await getCountryHandler("ZWE");
+      const response = await getCountryHandler("ZWE");
 
       expect(getCountryById).toHaveBeenCalledWith("ZWE");
-      expect(country?.id).toBe("ZWE");
+      expect(response).toEqual({
+        data: ZIMBABWE,
+        meta: ENVELOPE_META,
+        errors: [],
+      });
     });
 
+    // @req REQ-084
     it("should return null for non-existent country", async () => {
       vi.mocked(getCountryById).mockResolvedValue(null);
 

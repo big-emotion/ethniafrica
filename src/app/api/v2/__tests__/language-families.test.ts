@@ -16,6 +16,7 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { listLanguageFamiliesHandler } from "@/api/v2/handlers/languageFamilies";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
 
 describe("API v2 - Language Families Route", () => {
   beforeEach(() => {
@@ -23,13 +24,19 @@ describe("API v2 - Language Families Route", () => {
   });
 
   describe("GET /api/v2/language-families", () => {
+    // @req REQ-084
     it("should return paginated language families", async () => {
       const mockResponse = {
         data: [{ id: "FLG_BANTU", nameFr: "Bantou", content: {} }],
-        meta: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+          pagination: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        },
+        errors: [],
       };
 
-      (listLanguageFamiliesHandler as any).mockResolvedValue(mockResponse);
+      vi.mocked(listLanguageFamiliesHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest(
         "http://localhost/api/v2/language-families"
@@ -38,8 +45,30 @@ describe("API v2 - Language Families Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(Array.isArray(data.data)).toBe(true);
+      expect(data).toEqual(mockResponse);
+    });
+
+    // @req REQ-084
+    it("returns a 500 INTERNAL_ERROR envelope when the handler throws", async () => {
+      vi.mocked(listLanguageFamiliesHandler).mockRejectedValue(
+        new Error("database unavailable")
+      );
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/language-families"
+      );
+      const response = await GET(request);
+      const data = await response.json();
+
+      expect(response.status).toBe(500);
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });
