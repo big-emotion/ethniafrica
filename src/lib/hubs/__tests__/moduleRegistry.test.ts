@@ -9,7 +9,6 @@ import {
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
-  type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -62,8 +61,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual(["pays", "peuples", "familles", "recherche"]);
   });
 
-  // Ordered from the most concrete question to the method that answers it.
-  // @req REQ-114
+  // Ordered from the most concrete question to the method that answers it,
+  // with the project itself closing the axis.
+  // @req REQ-114 @req REQ-132
   it("gives comprendre the modules a reader reaches by question", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
     expect(ids).toEqual([
@@ -72,6 +72,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "frise",
       "regards-colonisation",
       "doctrine",
+      "about",
     ]);
   });
 
@@ -89,11 +90,30 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(noms?.accessMode).toBe("comprendre");
   });
 
-  // About is a page about the project, not a way into the corpus; it lives
-  // in the site chrome now.
-  // @req REQ-114
-  it("drops about from the registry entirely", () => {
-    expect(MODULE_DEFINITIONS.map((m) => m.id)).not.toContain("about");
+  // About answers how and why the project exists, so it closes Comprendre.
+  // Keeping it last preserves every positional accent already assigned.
+  // @req REQ-132
+  it("registers about once, last, ready, and under Comprendre", () => {
+    const aboutModules = MODULE_DEFINITIONS.filter((m) => m.id === "about");
+
+    expect(aboutModules).toHaveLength(1);
+    expect(MODULE_DEFINITIONS.at(-1)).toBe(aboutModules[0]);
+    expect(aboutModules[0]).toMatchObject({
+      name: "À propos du projet",
+      accessMode: "comprendre",
+      page: "about",
+      availability: "static",
+      editorialReadiness: "ready",
+    });
+    expect(getModulesForAccessMode("comprendre")).toContain(aboutModules[0]);
+  });
+
+  // @req REQ-132
+  it("routes about to its French-only project page", () => {
+    const about = MODULE_DEFINITIONS.find((m) => m.id === "about");
+
+    expect(about).toBeDefined();
+    expect(getModuleHref(about!, "fr")).toBe("/fr/about");
   });
 
   // The quiz used to hang from NEXT_PUBLIC_FEATURE_QUIZ, so a built route
@@ -168,7 +188,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
 
   // A static module is a page that exists whatever the corpus holds, so
   // gating it behind a row count would hide a working route.
-  // @req REQ-114
+  // @req REQ-114 @req REQ-132
   it("routes every static module without asking the database", () => {
     const staticModules = MODULE_DEFINITIONS.filter(
       (m) => m.availability === "static"
@@ -178,6 +198,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "anecdotes",
       "regards-colonisation",
       "doctrine",
+      "about",
     ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
@@ -259,6 +280,30 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   it("gives every registered module one of the four categorical accents", () => {
     for (const def of MODULE_DEFINITIONS) {
       expect(ACCENT_CYCLE).toContain(accentForModule(def));
+    }
+  });
+
+  // Appending About must not recolor any module readers already know.
+  // @req REQ-132
+  it("preserves every pre-existing positional accent", () => {
+    const expectedAccents = Object.freeze({
+      pays: "afh-accent-ocre",
+      peuples: "afh-accent-teal",
+      familles: "afh-accent-terre",
+      recherche: "afh-accent-perv",
+      anecdotes: "afh-accent-ocre",
+      noms: "afh-accent-teal",
+      frise: "afh-accent-terre",
+      "regards-colonisation": "afh-accent-perv",
+      quiz: "afh-accent-ocre",
+      mercator: "afh-accent-teal",
+      doctrine: "afh-accent-terre",
+    } as const);
+
+    for (const [id, accent] of Object.entries(expectedAccents)) {
+      const definition = MODULE_DEFINITIONS.find((def) => def.id === id);
+      expect(definition, `missing pre-existing module ${id}`).toBeDefined();
+      expect(accentForModule(definition!)).toBe(accent);
     }
   });
 });

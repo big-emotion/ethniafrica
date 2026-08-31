@@ -7,6 +7,7 @@ import {
   checkTestAnnotations,
   resolveLintMode,
 } from "../lintReqAnnotations";
+import requirementCatalog from "../../docs/confluence-spec/req-catalog.json";
 
 describe("resolveLintMode", () => {
   // The 1245 unannotated tests already in the tree mean a repo-wide strict run
@@ -203,6 +204,17 @@ describe("checkNewExports", () => {
 });
 
 describe("checkCatalog", () => {
+  // @req REQ-132
+  it("accepts REQ-132 from the repository requirement catalog", () => {
+    const result = checkCatalog(
+      "// @req REQ-132\ntest('about page', () => {});",
+      "src/app/a-propos/page.test.tsx",
+      requirementCatalog
+    );
+
+    expect(result.errors).toEqual([]);
+  });
+
   // @req REQ-085
   it("reports requirement references absent from the catalog", () => {
     const result = checkCatalog(
