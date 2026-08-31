@@ -135,7 +135,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       links: [
         {
           href: route("names"),
-          label: "Noms & appellations",
+          label: "Appellations",
           note: "Autonymes, exonymes, et ce que l'écart raconte.",
         },
         {

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -367,8 +367,13 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
 
     const band = screen.getByTestId("fiche-hero-band");
     expect(band).toBeInTheDocument();
-    expect(band.contains(container.querySelector("[data-atlas-surface]"))).toBe(
-      true
+
+    // AtlasGlobe now mounts through next/dynamic (ETNI-1378), which resolves
+    // its chunk a tick after the initial render.
+    await waitFor(() =>
+      expect(
+        band.contains(container.querySelector("[data-atlas-surface]"))
+      ).toBe(true)
     );
   });
 

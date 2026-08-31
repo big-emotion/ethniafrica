@@ -245,7 +245,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "noms",
-    name: "Noms & appellations",
+    name: "Appellations",
     accessMode: "comprendre",
     page: "names",
     availability: "data",

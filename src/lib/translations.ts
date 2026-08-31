@@ -19,7 +19,7 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   doctrine: "Doctrine",
   about: "À propos",
   anecdotes: "Anecdotes",
-  names: "Noms",
+  names: "Appellations",
   compare: "Comparer",
   migrations: "Migrations",
   quiz: "Quiz",
@@ -179,7 +179,7 @@ export const translations = {
       },
     },
     names: {
-      pageTitle: "Noms & appellations",
+      pageTitle: "Appellations",
       pageSubtitle:
         "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
       genealogyNote:
