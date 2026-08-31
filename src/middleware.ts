@@ -306,8 +306,13 @@ export async function middleware(request: NextRequest) {
   // /api/contributions.
   const versioned = <ResponseType extends Response>(response: ResponseType) =>
     applyVersioningHeaders(response, pathname);
-  const requiresApiKeyAuth =
-    isApiV2 && !pathname.startsWith("/api/v2/keys/issue");
+  // The whole /api/v2/keys subtree sits outside api_keys Bearer auth: /issue
+  // is anonymous, and the self-service list/create/revoke endpoints (ETNI-81)
+  // authenticate a Supabase session access token themselves inside the route
+  // handler (see @/api/v2/services/keyService.getAuthenticatedUser) rather
+  // than through this gate — a session JWT is not an api_keys row and would
+  // otherwise be rejected here as an invalid API key before ever reaching it.
+  const requiresApiKeyAuth = isApiV2 && !pathname.startsWith("/api/v2/keys");
 
   // Rate limit routes that never validate an API key (e.g. /api/v2/keys/issue)
   // up front, since there is no DB-validated tier to wait for. Routes that do
