@@ -322,13 +322,19 @@ describe("/[lang]/familles/[slug] page", () => {
         { id: "PPL_TUAREG", nameMain: "Touaregs", currentCountries: ["NER"] },
       ]);
 
-      const { getByRole } = await renderFamillesPage("FLG_AFROASIATIQUE");
+      const { findByRole } = await renderFamillesPage("FLG_AFROASIATIQUE");
 
+      // AtlasGlobe now mounts through next/dynamic (ETNI-1378), which
+      // resolves its chunk a tick after the initial render.
       expect(
-        getByRole("button", { name: "Toute l'empreinte" })
+        await findByRole("button", { name: "Toute l'empreinte" })
       ).toBeInTheDocument();
-      expect(getByRole("button", { name: /carte plate/i })).toBeInTheDocument();
-      expect(getByRole("button", { name: "Recentrer" })).toBeInTheDocument();
+      expect(
+        await findByRole("button", { name: /carte plate/i })
+      ).toBeInTheDocument();
+      expect(
+        await findByRole("button", { name: "Recentrer" })
+      ).toBeInTheDocument();
     });
 
     // The negative half of the assertion above: without a footprint there is
@@ -340,13 +346,15 @@ describe("/[lang]/familles/[slug] page", () => {
       mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
       mockGetPeoplesByIds.mockResolvedValue([]);
 
-      const { queryByRole, getByText } =
+      const { queryByRole, findByText } =
         await renderFamillesPage("FLG_AFROASIATIQUE");
 
-      expect(queryByRole("button", { name: "Recentrer" })).toBeNull();
+      // AtlasGlobe now mounts through next/dynamic (ETNI-1378), which
+      // resolves its chunk a tick after the initial render.
       expect(
-        getByText(/Empreinte géographique non disponible/i)
+        await findByText(/Empreinte géographique non disponible/i)
       ).toBeInTheDocument();
+      expect(queryByRole("button", { name: "Recentrer" })).toBeNull();
     });
 
     // The caption over the globe has to name the rule the page applied, or the
@@ -359,9 +367,11 @@ describe("/[lang]/familles/[slug] page", () => {
         { id: "PPL_SOMALI", nameMain: "Somali", currentCountries: ["SOM"] },
       ]);
 
-      const { getByText } = await renderFamillesPage("FLG_AFROASIATIQUE");
+      const { findByText } = await renderFamillesPage("FLG_AFROASIATIQUE");
 
-      expect(getByText(/que la fiche nomme/i)).toBeInTheDocument();
+      // AtlasGlobe now mounts through next/dynamic (ETNI-1378), which
+      // resolves its chunk a tick after the initial render.
+      expect(await findByText(/que la fiche nomme/i)).toBeInTheDocument();
     });
 
     // A family with member peoples of its own must not be sent down the
