@@ -125,7 +125,8 @@ async function upsertSource(
  */
 async function findOrCreateAssertion(
   supabase: AdminClient,
-  peopleId: string,
+  entityType: NameRecordDossier["entityType"],
+  entityId: string,
   fieldPath: string,
   statement: string,
   sourceIds: string[]
@@ -133,8 +134,8 @@ async function findOrCreateAssertion(
   const { data: existing, error: selectError } = await supabase
     .from("assertions")
     .select("id")
-    .eq("entity_type", "people")
-    .eq("entity_id", peopleId)
+    .eq("entity_type", entityType)
+    .eq("entity_id", entityId)
     .eq("field_path", fieldPath)
     .maybeSingle();
 
@@ -157,8 +158,8 @@ async function findOrCreateAssertion(
   const { data: inserted, error: insertError } = await supabase
     .from("assertions")
     .insert({
-      entity_type: "people",
-      entity_id: peopleId,
+      entity_type: entityType,
+      entity_id: entityId,
       field_path: fieldPath,
       statement,
       source_ids: sourceIds,
@@ -174,12 +175,13 @@ async function findOrCreateAssertion(
 
 async function upsertNameRecordEntry(
   supabase: AdminClient,
-  peopleId: string,
+  entityType: NameRecordDossier["entityType"],
+  entityId: string,
   entry: NameRecordEntry,
   report: NameRecordLoadReport
 ): Promise<void> {
   report.total += 1;
-  const recordLabel = `${peopleId}/${entry.nameType}/${entry.nameText}`;
+  const recordLabel = `${entityId}/${entry.nameType}/${entry.nameText}`;
 
   const sourceIds: string[] = [];
   for (const source of entry.sources) {
@@ -196,7 +198,8 @@ async function upsertNameRecordEntry(
   const fieldPath = `names.${entry.nameType}.${normalizeToKey(entry.nameText)}`;
   const assertion = await findOrCreateAssertion(
     supabase,
-    peopleId,
+    entityType,
+    entityId,
     fieldPath,
     entry.nameText,
     sourceIds
@@ -208,8 +211,8 @@ async function upsertNameRecordEntry(
 
   const { error: nameRecordError } = await supabase.from("name_records").upsert(
     {
-      entity_type: "people",
-      entity_id: peopleId,
+      entity_type: entityType,
+      entity_id: entityId,
       name_text: entry.nameText,
       name_type: entry.nameType,
       language_of_origin: entry.languageOfOrigin,
@@ -251,7 +254,13 @@ export async function loadNameRecords(
 
   for (const dossier of dossiers) {
     for (const entry of dossier.names) {
-      await upsertNameRecordEntry(supabase, dossier.id, entry, report);
+      await upsertNameRecordEntry(
+        supabase,
+        dossier.entityType,
+        dossier.id,
+        entry,
+        report
+      );
     }
   }
 
