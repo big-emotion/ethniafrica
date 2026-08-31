@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
@@ -18,7 +19,6 @@ import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
 import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
-import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
@@ -37,6 +37,19 @@ import {
 
 // @req REQ-019
 export const revalidate = 3600;
+
+/**
+ * ETNI-1378/ETNI-1478 — statically importing AtlasGlobe put its whole client
+ * bundle (marker placement, camera hooks, target picker, facts panel, SVG
+ * fallback) into this page's own hydration task, which is what blew the
+ * mobile Total Blocking Time budget on this route (2.9-3.7s against 300ms).
+ * `dynamic()` code-splits it, the same mechanism the explorer hub already
+ * uses (ExplorerContinent, FacetGlobeIsland) — `ssr: false` is not used here
+ * because the globe is this fiche's hero and still has to reach first paint.
+ */
+const AtlasGlobe = dynamic(() =>
+  import("@/components/atlas/AtlasGlobe").then((m) => m.AtlasGlobe)
+);
 
 interface PageParams {
   lang: string;
