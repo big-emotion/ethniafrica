@@ -119,7 +119,8 @@
     "REQ-119",
     "REQ-120",
     "REQ-121",
-    "REQ-122"
+    "REQ-122",
+    "REQ-131"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -238,6 +239,7 @@
     "REQ-119": "Confluence REQ-119",
     "REQ-120": "Confluence REQ-120",
     "REQ-121": "Confluence FR65 (extension) — inversion templates T6-T11 and contested-exonym T12",
-    "REQ-122": "Confluence REQ-122 — fiche prose text shape: closed markup grammar, serialized-JSON and authoring-note gates"
+    "REQ-122": "Confluence REQ-122 — fiche prose text shape: closed markup grammar, serialized-JSON and authoring-note gates",
+    "REQ-131": "Confluence REQ-131 — supersedes REQ-028: FR28/FR28-strict demographic-sum completeness scoped to the 54-country African reference set"
   }
 }

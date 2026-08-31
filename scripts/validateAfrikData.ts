@@ -881,13 +881,84 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
 }
 
 /**
- * FR28 – For each pays JSON, the sum of peoples[].percentageInCountry must be [95, 105].
+ * The 54 UN-recognised sovereign African states, ISO 3166-1 alpha-3. This is
+ * the geographic boundary for FR28/FR28-strict (REQ-131, supersedes REQ-028):
+ * corpus extension beyond Africa is expected to add non-African country
+ * fiches under pays/, and a declared presence there carries no demographic
+ * completeness obligation — the pays/ directory today happens to hold
+ * exactly these 54, but that is a fact about the current corpus, not a rule
+ * this check should rely on.
+ */
+export const AFRICAN_REFERENCE_COUNTRY_CODES: ReadonlySet<string> = new Set([
+  "AGO",
+  "BDI",
+  "BEN",
+  "BFA",
+  "BWA",
+  "CAF",
+  "CIV",
+  "CMR",
+  "COD",
+  "COG",
+  "COM",
+  "CPV",
+  "DJI",
+  "DZA",
+  "EGY",
+  "ERI",
+  "ETH",
+  "GAB",
+  "GHA",
+  "GIN",
+  "GMB",
+  "GNB",
+  "GNQ",
+  "KEN",
+  "LBR",
+  "LBY",
+  "LSO",
+  "MAR",
+  "MDG",
+  "MLI",
+  "MOZ",
+  "MRT",
+  "MUS",
+  "MWI",
+  "NAM",
+  "NER",
+  "NGA",
+  "RWA",
+  "SDN",
+  "SEN",
+  "SLE",
+  "SOM",
+  "SSD",
+  "STP",
+  "SWZ",
+  "SYC",
+  "TCD",
+  "TGO",
+  "TUN",
+  "TZA",
+  "UGA",
+  "ZAF",
+  "ZMB",
+  "ZWE",
+]);
+
+/**
+ * FR28 – For each pays JSON in the African reference set, the sum of
+ * peoples[].percentageInCountry must be [95, 105].
  *
  * Tolerance bands (transition plan — see docs/adr/0001-fr28-demographic-tolerance.md):
  *   - Hard gate (this function):     [95, 105] — errors, fails validation.
  *   - Strict warning (checkPopulationSumsStrict): [99, 101] — warnings only.
  * The strict warning is the doctrinal target; the hard gate will be tightened
  * once all country fiches land inside [99, 101].
+ *
+ * Scope (REQ-131): a pays JSON whose id falls outside
+ * AFRICAN_REFERENCE_COUNTRY_CODES carries no completeness obligation and is
+ * skipped entirely.
  */
 export function checkPopulationSums(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -916,6 +987,9 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
       continue;
     }
 
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
     const peoples = data?.content?.demographics?.peoples;
     if (!peoples || peoples.length === 0) continue;
 
@@ -924,7 +998,6 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
       0
     );
     if (sum < 95 || sum > 105) {
-      const countryId = data.id ?? path.basename(file, ".json");
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (expected 95–105%)`
       );
@@ -941,6 +1014,9 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
  * [99, 101] but inside the FR28 hard gate [95, 105]. Advisory while ~30
  * countries' splits were being re-sourced; enforced since the whole corpus
  * landed inside the target band, so a fiche can no longer drift back out.
+ *
+ * Scope (REQ-131): same African reference set as checkPopulationSums — a
+ * pays JSON outside it carries no completeness obligation and is skipped.
  */
 export function checkPopulationSumsStrict(
   datasetRoot: string
@@ -970,6 +1046,9 @@ export function checkPopulationSumsStrict(
       continue;
     }
 
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
     const peoples = data?.content?.demographics?.peoples;
     if (!peoples || peoples.length === 0) continue;
 
@@ -978,7 +1057,6 @@ export function checkPopulationSumsStrict(
       0
     );
     if (sum < 99 || sum > 101) {
-      const countryId = data.id ?? path.basename(file, ".json");
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
       );
