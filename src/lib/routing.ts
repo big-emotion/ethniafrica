@@ -34,8 +34,10 @@ export type PageType =
 // a module filed under one verb in the registry and another here fails the
 // build rather than shipping two URLs and no canonical.
 //
-// `about` and `compare` carry no prefix on purpose: no axis lists them, so
-// nesting them would invent an ancestor the menu never offers.
+// `about` keeps its established top-level canonical route even though
+// Comprendre now lists it (REQ-132). `compare` carries no prefix because no
+// axis lists it, so nesting that page would invent an ancestor the menu never
+// offers.
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
     countries: "explorer/pays",

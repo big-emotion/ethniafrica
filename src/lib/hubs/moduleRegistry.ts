@@ -330,6 +330,17 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
     editorialReadiness: "ready",
   },
+  // About closes Comprendre without shifting the positional accents of any
+  // module already in the registry.
+  // @req REQ-132
+  {
+    id: "about",
+    name: "À propos du projet",
+    accessMode: "comprendre",
+    page: "about",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
 ];
 
 // @req REQ-114
