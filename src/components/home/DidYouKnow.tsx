@@ -29,9 +29,9 @@ export interface DidYouKnowProps {
 /**
  * The home's anecdote: one fact, drawn afresh on every load.
  *
- * It sits between the opening question and the featured module: a sourced
- * name, taken apart, that turns the hero's promise into a discovery before
- * the reader is invited to try the atlas.
+ * It sits between the argument (why this atlas exists) and the sample (what
+ * a fiche holds) because it is the proof between the two: a name, taken
+ * apart, doing what the whole site claims to do.
  *
  * The band spent a release as a deck the reader could page through, arrows,
  * dots and a « 2 / 24 » counter. Two things were wrong with that. The
@@ -115,6 +115,10 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
   // Rendering the heading over an empty bank would assert the atlas has an
   // anecdote it does not, so the section simply does not exist that day.
   if (!fact) return null;
+
+  const officialSource = fact.sources?.find(
+    (source) => source.tier === "official"
+  );
 
   return (
     <section className="home-dyk" data-testid="home-did-you-know">
@@ -212,7 +216,23 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
             ))}
           </ul>
 
-          <p className="home-dyk-tier">{DID_YOU_KNOW_TIER_LABEL[fact.tier]}</p>
+          <p className="home-dyk-tier">
+            {officialSource ? (
+              <>
+                Source&nbsp;:{" "}
+                <a
+                  data-testid="home-dyk-official-source"
+                  href={officialSource.url}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {officialSource.title}
+                </a>
+              </>
+            ) : (
+              DID_YOU_KNOW_TIER_LABEL[fact.tier]
+            )}
+          </p>
         </article>
 
         {/* The band is a hook, and a hook has no URL. This is the only exit
@@ -392,6 +412,14 @@ export function DidYouKnow({ language, fact }: DidYouKnowProps) {
           font-size: var(--afh-text-caption);
           line-height: var(--afh-leading-caption);
           color: var(--afh-text-soft);
+        }
+        .home-dyk-tier a {
+          color: inherit;
+          text-underline-offset: 3px;
+        }
+        .home-dyk-tier a:hover,
+        .home-dyk-tier a:focus-visible {
+          color: var(--afh-text);
         }
 
         /* The exit is an ActionLink now (actions charter form A), so it

@@ -585,21 +585,30 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
   },
 ];
 
+function hasOfficialSource(fact: DidYouKnowFact): boolean {
+  return fact.sources?.some((source) => source.tier === "official") ?? false;
+}
+
 /**
  * Draw one fact for this request.
  *
- * `random` is injected the way `pickHeroModule` injects it, so the visual
- * snapshot and the tests stay deterministic without the band losing its
- * variation in production.
+ * The home only publishes entries that name an official source. A bank with
+ * no such entry renders no fact rather than silently widening the evidence
+ * boundary. `random` is injected so tests stay deterministic without the
+ * band losing its variation in production.
  */
 // @req REQ-113
 export function pickDidYouKnowFact(
   random: () => number = Math.random,
   facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
 ): DidYouKnowFact | null {
-  if (facts.length === 0) return null;
-  const index = Math.min(facts.length - 1, Math.floor(random() * facts.length));
-  return facts[index];
+  const eligible = facts.filter(hasOfficialSource);
+  if (eligible.length === 0) return null;
+  const index = Math.min(
+    eligible.length - 1,
+    Math.floor(random() * eligible.length)
+  );
+  return eligible[index];
 }
 
 /**
@@ -672,6 +681,8 @@ export function pickNextDidYouKnowFact(
   random: () => number = Math.random,
   facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
 ): DidYouKnowFact | null {
-  const eligible = facts.filter((entry) => entry.id !== previousId);
+  const eligible = facts.filter(
+    (entry) => entry.id !== previousId && hasOfficialSource(entry)
+  );
   return pickDidYouKnowFact(random, eligible.length > 0 ? eligible : facts);
 }

@@ -28,8 +28,9 @@ export interface FeaturedModuleProps {
  *
  * It used to sit inside the hero band, directly under the headline, with no
  * heading of its own: the reader met a globe and had to work out from its
- * controls that it was a game they could play. It now follows the sourced
- * anecdote and says what it is before it is touched.
+ * controls that it was a game they could play. It now stands after the
+ * argument and the sample, where the three axes used to be, and says what
+ * it is before it is touched.
  *
  * The heading reads the drawn module's axis rather than stating « jeu »
  * outright. HERO_SLOT_KINDS admits three preview shapes and only the globe

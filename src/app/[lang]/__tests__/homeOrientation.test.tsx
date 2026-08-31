@@ -2,12 +2,25 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import React from "react";
 
-import type { AccessMode } from "@/lib/hubs/moduleRegistry";
+const fixtureCounts = {
+  peoples: 4213,
+  countries: 91,
+  families: 37,
+  migrations: 5,
+};
 
 // The hero carries an interactive island since the search field landed in it,
 // and useRouter throws outside an app-router tree rather than degrading.
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
+
+vi.mock("@/lib/home/corpusCounts", () => ({
+  getCorpusCounts: vi.fn(async () => fixtureCounts),
+}));
+
+vi.mock("@/api/v2/services/continentPeopleCounts", () => ({
+  getContinentPeopleCounts: vi.fn(async () => ({})),
 }));
 
 // Only the draw is stubbed; the curated fallback is what the chips then hold.
@@ -16,18 +29,6 @@ vi.mock("@/lib/home/seedWords", async (importOriginal) => {
   return {
     ...actual,
     loadSeedWords: vi.fn(async () => actual.FALLBACK_SEED_WORDS),
-  };
-});
-
-vi.mock("@/lib/hubs/moduleAvailability", async () => {
-  const registry = await import("@/lib/hubs/moduleRegistry");
-  return {
-    getHubModules: vi.fn(async (mode: AccessMode) =>
-      registry.getModulesForAccessMode(mode).map((definition) => ({
-        ...definition,
-        available: true,
-      }))
-    ),
   };
 });
 
@@ -43,8 +44,7 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
 
 import Home from "../page";
 
-const renderHome = async () =>
-  render(await Home({ searchParams: Promise.resolve({}) }));
+const renderHome = async () => render(await Home());
 
 /** Document order of two nodes, as the reader scrolls them. */
 const precedes = (first: Element, second: Element) =>
@@ -53,29 +53,45 @@ const precedes = (first: Element, second: Element) =>
   );
 
 describe("home — what the reader meets, and in what order (REQ-113)", () => {
-  // The home now stays focused on discovery: the opening question leads into
-  // one sourced surprise, then a module to try, and finally the sourcing
-  // receipt. The broader presentation narrative lives on About.
+  // The DOM is the phone composition: copy/search/seeds, globe, then the
+  // counters. Desktop reuses those nodes through grid areas rather than
+  // maintaining a second reading order.
   // @req REQ-113
-  it("keeps the retained sequence from hero to anecdote, featured module and trust strip", async () => {
+  it("orders the search-first hero for mobile before enhancing it for desktop", async () => {
+    const { container } = await renderHome();
+
+    const copy = container.querySelector(".home-hero-copy");
+    const globe = container.querySelector(".home-hero-globe");
+    const counts = container.querySelector(".home-hero-counts");
+
+    expect(copy).not.toBeNull();
+    expect(globe).not.toBeNull();
+    expect(counts).not.toBeNull();
+    expect(precedes(copy!, globe!)).toBe(true);
+    expect(precedes(globe!, counts!)).toBe(true);
+  });
+
+  // @req REQ-113
+  it("places exactly one sourced fact after the hero and no retired section", async () => {
     const { container } = await renderHome();
 
     const hero = container.querySelector(".home-hero");
-    const didYouKnow = container.querySelector(
-      '[data-testid="home-did-you-know"]'
-    );
-    const featured = container.querySelector(
-      '[data-testid="home-featured-module"]'
-    );
-    const trust = container.querySelector('[data-testid="home-trust-strip"]');
+    const fact = screen.getByTestId("home-did-you-know");
 
-    expect(hero).not.toBeNull();
-    expect(didYouKnow).not.toBeNull();
-    expect(featured).not.toBeNull();
-    expect(trust).not.toBeNull();
-    expect(precedes(hero!, didYouKnow!)).toBe(true);
-    expect(precedes(didYouKnow!, featured!)).toBe(true);
-    expect(precedes(featured!, trust!)).toBe(true);
+    expect(precedes(hero!, fact)).toBe(true);
+    expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
+    expect(
+      within(fact).getByTestId("home-dyk-official-source")
+    ).toBeInTheDocument();
+    for (const testId of [
+      "home-purpose-blocks",
+      "access-axes",
+      "home-synthesis-rail",
+      "home-featured-module",
+      "home-trust-strip",
+    ]) {
+      expect(screen.queryByTestId(testId)).not.toBeInTheDocument();
+    }
   });
 
   // @req REQ-113
@@ -91,17 +107,49 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(answer).toHaveTextContent(/sourc/i);
   });
 
-  // The two retained content sections keep their h2 landmarks below the
-  // hero's single h1; the trust strip is an aside rather than a new section.
+  // One page title, then the one fact's title. The corpus figures are values,
+  // not three headings competing with the page question.
   // @req REQ-113
-  it("keeps the retained content headings below the hero h1", async () => {
+  it("keeps one h1 and gives the single fact the only h2", async () => {
     await renderHome();
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
-    const didYouKnow = screen.getByTestId("home-did-you-know");
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(1);
     expect(
-      within(didYouKnow).getAllByRole("heading", { level: 2 })
-    ).toHaveLength(1);
-    expect(screen.getByTestId("home-featured-heading").tagName).toBe("H2");
+      within(screen.getByTestId("home-did-you-know")).getByRole("heading", {
+        level: 2,
+      })
+    ).toBeInTheDocument();
+  });
+
+  // Counts keep their definition-list semantics even when the display order
+  // puts each number above its label.
+  // @req REQ-113
+  it("presents the corpus scale as three labelled values", async () => {
+    await renderHome();
+
+    const counts = screen.getAllByRole("term")[0].closest("dl");
+    expect(counts).toHaveAttribute("aria-label", "Le corpus en chiffres");
+    expect(within(counts!).getAllByRole("term")).toHaveLength(3);
+    expect(within(counts!).getAllByRole("definition")).toHaveLength(3);
+    for (const label of ["Peuples", "Pays", "Familles linguistiques"]) {
+      expect(within(counts!).getByText(label).tagName).toBe("DT");
+    }
+  });
+
+  // The one action names the three entity types the corpus can resolve. No
+  // retired axis copy survives around it to compete for the first decision.
+  // @req REQ-113
+  it("names the searchable entity kinds without legacy entry-point rhetoric", async () => {
+    const { container } = await renderHome();
+
+    expect(container.textContent).not.toMatch(/il arrive avec/i);
+    expect(container.textContent).not.toMatch(/il repart avec/i);
+    expect(container.textContent).not.toMatch(/il arrive sans rien/i);
+    expect(
+      screen.getByRole("combobox", {
+        name: /peuple, un pays ou une famille linguistique/i,
+      })
+    ).toBeInTheDocument();
   });
 });

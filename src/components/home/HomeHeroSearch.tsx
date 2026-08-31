@@ -37,11 +37,11 @@ import type { Language } from "@/types/shared";
  * families }`, never one flat list). The taxonomy is taught in the result,
  * where it costs the reader nothing, instead of demanded as a precondition.
  *
- * The three seed chips carry the same teaching in the corpus' own words —
- * literally, since the words are drawn from the fiches on every request
- * (seedWords.ts): they show all three entity kinds at once, and each one
- * reels through ten examples of its kind (HomeHeroSeeds), a different ten on
- * every visit. That motion is deliberately on the
+ * The seed chips carry the same teaching in the corpus' own words — literally,
+ * since the words are drawn from the fiches on every request (seedWords.ts):
+ * three chips show all entity kinds on a phone and a fourth people example
+ * uses the extra desktop room. Each reels through corpus examples, drawn
+ * again on every visit. That motion is deliberately on the
  * chips and not on the placeholder — a placeholder is a control's name, it
  * would be renamed under a screen reader six times a minute, and it vanishes
  * at the exact moment the reader focuses the field. A chip is neither a name
@@ -254,10 +254,9 @@ export function HomeHeroSearch({
     }
   };
 
-  const runSeed = (seed: string) => {
-    setQuery(seed);
-    setDismissed(false);
-  };
+  const searchRoute = getLocalizedRoute(language, "search");
+  const runSeed = (seed: string) =>
+    router.push(`${searchRoute}?${new URLSearchParams({ q: seed })}`);
 
   return (
     <div className="home-hero-search afh-accent-ocre">
@@ -269,7 +268,7 @@ export function HomeHeroSearch({
       <form
         role="search"
         method="get"
-        action={getLocalizedRoute(language, "search")}
+        action={searchRoute}
         className="home-hero-search-form"
       >
         <label htmlFor={inputId} className="home-hero-search-label">
