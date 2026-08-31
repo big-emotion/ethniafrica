@@ -3,6 +3,7 @@
   "nameMain": "Qemant",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Qemant",
@@ -85,11 +86,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue / Glottolog — Qimant (ahg). https://glottolog.org/resource/languoid/id/qima1242",
-      "Joshua Project — Kemant in Ethiopia. https://joshuaproject.net/people_groups/12615",
-      "Frederick C. Gamst — The Qemant : A Pagan-Hebraic Peasantry of Ethiopia. Holt, Rinehart and Winston, 1969.",
-      "Ethiopia Insight — The Ethiopian Qemant of the Agaw in perspective, 2019. https://www.ethiopia-insight.com/2019/03/06/the-ethiopian-qemant-of-the-agaw-in-perspective/",
-      "101 Last Tribes — Qemant people. https://www.101lasttribes.com/tribes/qemant.html"
+      {
+        "title": "SIL Ethnologue / Glottolog — Qimant (ahg)",
+        "url": "https://glottolog.org/resource/languoid/id/qima1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Kemant in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/12615",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Frederick C. Gamst — The Qemant : A Pagan-Hebraic Peasantry of Ethiopia. Holt, Rinehart and Winston, 1969",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethiopia Insight — The Ethiopian Qemant of the Agaw in perspective, 2019",
+        "url": "https://www.ethiopia-insight.com/2019/03/06/the-ethiopian-qemant-of-the-agaw-in-perspective/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ethiopia-insight.com."
+      },
+      {
+        "title": "101 Last Tribes — Qemant people",
+        "url": "https://www.101lasttribes.com/tribes/qemant.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

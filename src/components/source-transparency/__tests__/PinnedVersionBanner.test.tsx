@@ -2,9 +2,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { PinnedVersionBanner } from "../PinnedVersionBanner";
+import { getPeopleRoute } from "@/lib/routing";
 
-const LIVE_URL = "/fr/peuples/yoruba";
-const OTHER_LIVE_URL = "/fr/peuples/bambara";
+const LIVE_URL = getPeopleRoute("fr", "yoruba");
+const OTHER_LIVE_URL = getPeopleRoute("fr", "bambara");
 const storageKey = (liveUrl: string) =>
   `pinned-version-banner:collapsed:${liveUrl}`;
 
@@ -33,7 +34,7 @@ describe("PinnedVersionBanner", () => {
     });
     expect(region).toHaveAttribute("data-pinned-banner");
     expect(region).toHaveTextContent(
-      "Version figée du 21 septembre 2025 (@v34) · voir la version vivante →"
+      "Version figée du 21 septembre 2025 (@v34) · voir la version vivante"
     );
     expect(
       screen.getByRole("link", { name: "voir la version vivante" })
@@ -68,7 +69,7 @@ describe("PinnedVersionBanner", () => {
 
       const region = screen.getByRole("region");
       expect(region).toHaveTextContent(
-        "Version figée (@v34) · voir la version vivante →"
+        "Version figée (@v34) · voir la version vivante"
       );
       expect(region).not.toHaveTextContent("Invalid Date");
     }

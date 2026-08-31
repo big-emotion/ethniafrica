@@ -3,6 +3,7 @@
   "nameMain": "Shua",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Shua",
@@ -95,14 +96,54 @@
       ]
     },
     "sources": [
-      "Glottolog 5.3 — Shua (shua1254), ISO 639-3 : shg. https://glottolog.org/resource/languoid/id/shua1254",
-      "SIL Ethnologue — Shua (shg). https://www.ethnologue.com/language/shg/",
-      "Cook, Anthony. Shua Phonology and Morphology. SOAS, University of London, 2004.",
-      "SciELO — The case of Khoisan languages of Botswana. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
-      "Botswana country page — Joshua Project. https://joshuaproject.net/countries/bc",
-      "IWGIA — Indigenous World 2025. https://iwgia.org/",
-      "Facebook — Culture Botswana : SUA is corruption of original Khwe name. https://www.facebook.com/culturebotswana/posts/788683589930727/",
-      "Laskon Wiki — Shua language. https://laskon.fandom.com/wiki/Shua_language"
+      {
+        "title": "Glottolog 5.3 — Shua (shua1254), ISO 639-3 : shg",
+        "url": "https://glottolog.org/resource/languoid/id/shua1254",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue — Shua (shg)",
+        "url": "https://www.ethnologue.com/language/shg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Cook, Anthony. Shua Phonology and Morphology. SOAS, University of London, 2004",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SciELO — The case of Khoisan languages of Botswana",
+        "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+      },
+      {
+        "title": "Botswana country page — Joshua Project",
+        "url": "https://joshuaproject.net/countries/bc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "IWGIA — Indigenous World 2025",
+        "url": "https://iwgia.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Facebook — Culture Botswana : SUA is corruption of original Khwe name",
+        "url": "https://www.facebook.com/culturebotswana/posts/788683589930727/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Laskon Wiki — Shua language",
+        "url": "https://laskon.fandom.com/wiki/Shua_language",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for fandom.com, matched as a parent of laskon.fandom.com."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Yombe",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yombe",
@@ -94,13 +95,48 @@
       ]
     },
     "sources": [
-      "Smarthistory — Power Figure (Nkisi Nkondi), Kongo peoples. https://smarthistory.org/nkisi-nkondi-kongo-people/",
-      "Metropolitan Museum of Art — Mangaaka Power Figure (Nkisi N'Kondi). https://www.metmuseum.org/art/collection/search/320053",
-      "101 Last Tribes — Yombe people. https://www.101lasttribes.com/tribes/yombe.html",
-      "Joshua Project — Yombe in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/16051/CG",
-      "University of Michigan Museum of Art — Maternity Figure (Phemba). https://umma.umich.edu/objects/maternity-figure-1984-1-257/",
-      "Antique African Art — Phemba, the nurturing mother in Yombe society. https://antiqueafricanart.com/2794-2/",
-      "University of Missouri — Yombe ethnographic profile. https://dice.missouri.edu/assets/docs/niger-congo/Yombe.pdf"
+      {
+        "title": "Smarthistory — Power Figure (Nkisi Nkondi), Kongo peoples",
+        "url": "https://smarthistory.org/nkisi-nkondi-kongo-people/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "Metropolitan Museum of Art — Mangaaka Power Figure (Nkisi N'Kondi)",
+        "url": "https://www.metmuseum.org/art/collection/search/320053",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      },
+      {
+        "title": "101 Last Tribes — Yombe people",
+        "url": "https://www.101lasttribes.com/tribes/yombe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Yombe in Congo, Democratic Republic of",
+        "url": "https://joshuaproject.net/people_groups/16051/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "University of Michigan Museum of Art — Maternity Figure (Phemba)",
+        "url": "https://umma.umich.edu/objects/maternity-figure-1984-1-257/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers umma.umich.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Antique African Art — Phemba, the nurturing mother in Yombe society",
+        "url": "https://antiqueafricanart.com/2794-2/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers antiqueafricanart.com; the tier awaits editorial review."
+      },
+      {
+        "title": "University of Missouri — Yombe ethnographic profile",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Yombe.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      }
     ]
   }
 }

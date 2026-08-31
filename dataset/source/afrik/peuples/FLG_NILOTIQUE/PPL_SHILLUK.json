@@ -95,14 +95,54 @@
       ]
     },
     "sources": [
-      "Ethnologue — Shilluk (SHK). https://www.ethnologue.com/language/shk/",
-      "ASJP Database — Shilluk. https://asjp.clld.org/languages/SHILLUK_2",
-      "Graeber, David. The divine kingship of the Shilluk: On violence, utopia, and the human condition. HAU: Journal of Ethnographic Theory, 2011. https://www.journals.uchicago.edu/doi/full/10.14318/hau1.1.002",
-      "Seligman, C.G. The Shilluk of the Upper Nile. 1911. Études anthropologiques fondatrices.",
-      "Frazer, James George. The Golden Bough. 3e édition, 1922 (analyse de la royauté sacrée shilluk).",
-      "eHRAF World Cultures — Shilluk. https://ehrafworldcultures.yale.edu/cultures/fj23/summary",
-      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-      "UN Peacekeeping — Fashoda history. https://peacekeeping.un.org/en/sign-of-peace-past-british-and-french-ambassadors-visit-historical-town-where-peace-deal-was-reached"
+      {
+        "title": "Ethnologue — Shilluk (SHK)",
+        "url": "https://www.ethnologue.com/language/shk/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ASJP Database — Shilluk",
+        "url": "https://asjp.clld.org/languages/SHILLUK_2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asjp.clld.org."
+      },
+      {
+        "title": "Graeber, David. The divine kingship of the Shilluk: On violence, utopia, and the human condition. HAU: Journal of Ethnographic Theory, 2011",
+        "url": "https://www.journals.uchicago.edu/doi/full/10.14318/hau1.1.002",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers journals.uchicago.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Seligman, C.G. The Shilluk of the Upper Nile. 1911. Études anthropologiques fondatrices",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Frazer, James George. The Golden Bough. 3e édition, 1922 (analyse de la royauté sacrée shilluk)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "eHRAF World Cultures — Shilluk",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fj23/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "CIA World Factbook — South Sudan",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "UN Peacekeeping — Fashoda history",
+        "url": "https://peacekeeping.un.org/en/sign-of-peace-past-british-and-french-ambassadors-visit-historical-town-where-peace-deal-was-reached",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of peacekeeping.un.org."
+      }
     ]
   }
 }

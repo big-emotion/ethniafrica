@@ -3,6 +3,7 @@
   "nameMain": "Belle",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Belle",
@@ -77,11 +78,36 @@
       ]
     },
     "sources": [
-      "Ethnologue – Kuwaa Language (BLH) (https://www.ethnologue.com/language/blh/)",
-      "Joshua Project – Kuwaa, Belle in Liberia (https://joshuaproject.net/people_groups/12894)",
-      "Lughayangu – Kuwaa Belle Kowaao Kwaa language dictionary (https://lughayangu.com/kuwaa)",
-      "AfricaBib – A Kuwaa (Belle) Wordlist, Liberian Studies Journal (https://www.africabib.org/rec.php?RID=188860991)",
-      "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)"
+      {
+        "title": "Ethnologue – Kuwaa Language (BLH)",
+        "url": "https://www.ethnologue.com/language/blh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project – Kuwaa, Belle in Liberia",
+        "url": "https://joshuaproject.net/people_groups/12894",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lughayangu – Kuwaa Belle Kowaao Kwaa language dictionary",
+        "url": "https://lughayangu.com/kuwaa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "AfricaBib – A Kuwaa (Belle) Wordlist, Liberian Studies Journal",
+        "url": "https://www.africabib.org/rec.php?RID=188860991",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africabib.org."
+      },
+      {
+        "title": "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler",
+        "url": "https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      }
     ]
   }
 }

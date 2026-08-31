@@ -35,7 +35,7 @@ function baseEnvelope<T>(data: T): ApiEnvelope<T> {
     data,
     meta: {
       license: "CC-BY-SA-4.0",
-      attribution: "Africa History — africahistory.org",
+      attribution: "EthniAfrica — ethniafrica.com",
     },
     errors: [],
   };
@@ -43,15 +43,23 @@ function baseEnvelope<T>(data: T): ApiEnvelope<T> {
 
 const sampleSource: Source = {
   id: "11111111-1111-1111-1111-111111111111",
+  sourceKey: null,
+  sourceKind: null,
+  tier: null,
+  identifiers: null,
   title: "Sample",
   url: null,
-  type: null,
   pinnedUrl: null,
   year: null,
   author: null,
   publisher: null,
   resolvable: null,
   lastVerifiedAt: null,
+  policy: {
+    key: "unknown",
+    tier: "unverified",
+    sourceKind: "unknown",
+  },
 };
 
 describe("GET /api/v2/sources", () => {
@@ -64,7 +72,7 @@ describe("GET /api/v2/sources", () => {
       ...baseEnvelope<Source[]>([]),
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         pagination: { total: 0, page: 1, perPage: 20, totalPages: 1 },
       },
     });

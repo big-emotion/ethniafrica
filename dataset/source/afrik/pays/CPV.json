@@ -1,11 +1,16 @@
 {
   "id": "CPV",
-  "nameFr": "République du Cabo Verde (República de Cabo Verde)",
+  "nameFr": "Cabo Verde",
   "nameOfficial": "République du Cabo Verde (República de Cabo Verde)",
+  "summary": "Cabo Verde doit son nom au cap Vert sénégalais, près duquel les navigateurs portugais abordèrent l'archipel. Les îles étaient inhabitées : la société cap-verdienne est née de la colonisation et de la traite, et elle est créole de part en part. La morna, la coladeira, le funaná et le batuque en portent la mémoire.",
   "etymology": "Le nom \"Cabo Verde\" (Cap-Vert en français) provient du portugais \"Cabo Verde\" (Cap Vert), en référence au Cap Vert continental situé au Sénégal, près duquel les îles ont été découvertes. Les navigateurs portugais ont nommé les îles \"Ilhas de Cabo Verde\" (Îles du Cap Vert) en référence à ce cap. Le nom officiel international a été normalisé en \"Cabo Verde\" en 2013.",
   "nameOriginActor": "Le nom \"Cabo Verde\" a été donné par les navigateurs portugais et génois qui ont découvert les îles en 1456-1462. Le nom fait référence au Cap Vert continental (Sénégal), près duquel les îles sont situées. Le nom officiel international a été normalisé en \"Cabo Verde\" en 2013 par les autorités cap-verdiennes.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie portugaise du Cap-Vert (1462-1975)",
+        "Cap-Vert (jusqu'en 2013)"
+      ],
       "antiquity": "Les îles du Cap-Vert étaient inhabitées avant l'arrivée des Européens. Aucune population autochtone connue. Pas de nom pour les îles.",
       "middleAges": "Les îles étaient inconnues des Européens jusqu'au XVe siècle. Pas de nom pour les îles.",
       "precolonial": "Les îles étaient inhabitées. Découverte par les navigateurs portugais et génois en 1456-1462. Nom donné : \"Ilhas de Cabo Verde\" (Îles du Cap Vert), en référence au Cap Vert continental (Sénégal).",
@@ -90,18 +95,53 @@
       "postIndependence": "1975-1990 : Régime de parti unique (PAICV). 1990 : Transition vers la démocratie multipartite, nouvelle constitution. Période de stabilité politique et de développement économique. Défis : pauvreté, dépendance aux importations, sécheresses récurrentes, émigration importante. Le Cap-Vert est considéré comme un modèle de démocratie et de stabilité en Afrique de l'Ouest. 2013 : Normalisation du nom officiel international en \"Cabo Verde\"."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Cape Verde",
-      "CIA World Factbook – Cape Verde",
-      "ONU / UNFPA – Démographie Cap-Vert 2025",
-      "Speeches and Writings\"",
-      "Recensements cap-verdiens",
-      "Études anthropologiques sur les peuples créoles du Cap-Vert"
+      {
+        "title": "SIL Ethnologue – Languages of Cape Verde",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Cape Verde",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Cap-Vert 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Speeches and Writings\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements cap-verdiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples créoles du Cap-Vert",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Créoles cap-verdiens",
-          "population": 575000,
           "percentageInCountry": 99,
           "peopleId": "PPL_CREOLE_CABOVERDIEN",
           "region": "Toutes les îles du Cap-Vert",

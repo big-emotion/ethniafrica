@@ -3,6 +3,7 @@
   "nameMain": "Fula (Nomades)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Fula (Nomades)",
@@ -112,11 +113,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Fulah macrolanguage (ful). https://www.ethnologue.com/language/ful/",
-      "Africa Geographic - The Wodaabe Nomads of the North (2019). https://africageographic.com/stories/the-wodaabe-nomads-north/",
-      "Bovin, Mette. Nomads Who Cultivate Beauty: Wodaabe Dances and Visual Arts in Niger. Uppsala : Nordiska Afrikainstitutet, 2001.",
-      "Kirk-Greene, A.H.M. Mutumin Kirki: The Concept of the Good Man in Hausa. Bloomington, 1974.",
-      "IIED - Pastoralism and climate change in the Sahel. https://www.iied.org/pastoralism"
+      {
+        "title": "SIL Ethnologue - Fulah macrolanguage (ful)",
+        "url": "https://www.ethnologue.com/language/ful/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Africa Geographic - The Wodaabe Nomads of the North (2019)",
+        "url": "https://africageographic.com/stories/the-wodaabe-nomads-north/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africageographic.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Bovin, Mette. Nomads Who Cultivate Beauty: Wodaabe Dances and Visual Arts in Niger. Uppsala : Nordiska Afrikainstitutet, 2001",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kirk-Greene, A.H.M. Mutumin Kirki: The Concept of the Good Man in Hausa. Bloomington, 1974",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "IIED - Pastoralism and climate change in the Sahel",
+        "url": "https://www.iied.org/pastoralism",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for iied.org."
+      }
     ]
   }
 }

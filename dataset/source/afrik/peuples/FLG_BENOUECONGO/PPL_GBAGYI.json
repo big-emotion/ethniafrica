@@ -3,6 +3,7 @@
   "nameMain": "Gbagyi",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Gbagyi",
@@ -81,11 +82,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Gbagyi language (gbr) : https://www.ethnologue.com/language/gbr/",
-      "Qiraat Africa — The Gbagyi People of Nigeria (2025) : https://qiraatafrican.com/en/16334/the-gbagyi-people-of-nigeria/",
-      "CEDS — ISO 639-3 Language Codes (Gbagyi : gbr) : https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-      "Nkeyin TV — History, Culture and Tradition of the Gbagyi People (documentaire 2025) : https://www.youtube.com/watch?v=4IZ1VmvZDBc",
-      "Facebook Gbagyi Gone Global — population et distribution : https://www.facebook.com/story.php?story_fbid=326717266873790"
+      {
+        "title": "SIL Ethnologue — Gbagyi language (gbr)",
+        "url": "https://www.ethnologue.com/language/gbr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Qiraat Africa — The Gbagyi People of Nigeria (2025)",
+        "url": "https://qiraatafrican.com/en/16334/the-gbagyi-people-of-nigeria/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "CEDS — ISO 639-3 Language Codes (Gbagyi : gbr)",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Nkeyin TV — History, Culture and Tradition of the Gbagyi People (documentaire 2025)",
+        "url": "https://www.youtube.com/watch?v=4IZ1VmvZDBc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Facebook Gbagyi Gone Global — population et distribution",
+        "url": "https://www.facebook.com/story.php?story_fbid=326717266873790",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

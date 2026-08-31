@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "migration",
+    "directives": [
+      "Never invent dates, paths, or peoples — every claim cites a Tier 1/2 source or is dropped",
+      "classificationStatus is mandatory; contested events cite at least 2 sources",
+      "Years are astronomical integers: negative values are BCE (e.g. -1500), positive values are CE",
+      "Geometry is schematic (corridor-level), never a claim of precise historical borders"
+    ],
+    "eventTypeEnum": [
+      "expansion",
+      "trade_route",
+      "forced_displacement",
+      "pastoral_movement",
+      "fragmentation",
+      "displacement",
+      "imposed_name",
+      "resistance"
+    ]
+  },
+  "id": "MGR_XXXXX",
+  "nameMain": "<Nom principal de l'événement migratoire>",
+  "migrationGroup": "<Slug optionnel regroupant les phases d'une même macro-migration>",
+  "eventType": "expansion",
+  "classificationStatus": "consensual",
+  "timeRange": {
+    "startYear": 0,
+    "endYear": 0,
+    "datingNote": null
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": []
+  },
+  "peoplesInvolved": [{ "id": "PPL_XXXXX", "role": "origin" }],
+  "content": {
+    "summary": "<Résumé bref de l'événement migratoire>",
+    "narrative": "<Récit chronologique en prose, une affirmation sourcée par paragraphe>",
+    "debate": null,
+    "sources": [
+      { "title": "<Titre>", "url": "<URL>", "year": 0, "tier": 1, "notes": "" }
+    ]
+  }
+}

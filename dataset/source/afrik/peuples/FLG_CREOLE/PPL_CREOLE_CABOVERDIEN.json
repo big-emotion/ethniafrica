@@ -3,6 +3,7 @@
   "nameMain": "Créole Cap-Verdien",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["CPV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Créole Cap-Verdien",
@@ -113,12 +114,42 @@
       ]
     },
     "sources": [
-      "UNFPA — Cabo Verde Population 2025. https://www.unfpa.org/data/world-population/CV",
-      "International Kreol Magazine — Creole Culture in Cape Verde. https://kreolmagazine.com/creole-culture-in-cape-verde-a-blend-of-africa-and-europe/",
-      "Al Jazeera — The story of morna: Cape Verde's music of displacement and return. https://www.aljazeera.com/features/2021/5/23/morna-the-music-of-displacement-and-return",
-      "Brava News — Cape Verde Launches Global Survey to Map Diaspora (2025). https://www.brava.news/en/cape%20verde%20launches%20global%20survey%20to%20map%20diaspora%20in%20more%20than%2040%20countries",
-      "JSTOR Daily — Cape Verde's Dilemma(s). https://daily.jstor.org/cape-verdes-dilemmas/",
-      "Ethnologue — Cape Verdean Creole (kea). https://www.ethnologue.com/language/kea/"
+      {
+        "title": "UNFPA — Cabo Verde Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/CV",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "International Kreol Magazine — Creole Culture in Cape Verde",
+        "url": "https://kreolmagazine.com/creole-culture-in-cape-verde-a-blend-of-africa-and-europe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kreolmagazine.com."
+      },
+      {
+        "title": "Al Jazeera — The story of morna: Cape Verde's music of displacement and return",
+        "url": "https://www.aljazeera.com/features/2021/5/23/morna-the-music-of-displacement-and-return",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for aljazeera.com."
+      },
+      {
+        "title": "Brava News — Cape Verde Launches Global Survey to Map Diaspora (2025)",
+        "url": "https://www.brava.news/en/cape%20verde%20launches%20global%20survey%20to%20map%20diaspora%20in%20more%20than%2040%20countries",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers brava.news; the tier awaits editorial review."
+      },
+      {
+        "title": "JSTOR Daily — Cape Verde's Dilemma(s)",
+        "url": "https://daily.jstor.org/cape-verdes-dilemmas/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\" (jstor.org), matched as a parent of daily.jstor.org."
+      },
+      {
+        "title": "Ethnologue — Cape Verdean Creole (kea)",
+        "url": "https://www.ethnologue.com/language/kea/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

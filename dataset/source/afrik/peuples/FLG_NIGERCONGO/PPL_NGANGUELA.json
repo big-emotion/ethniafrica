@@ -3,6 +3,7 @@
   "nameMain": "Nganguela",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nganguela",
@@ -83,11 +84,36 @@
       ]
     },
     "sources": [
-      "Luchazi Language Blog – Signification du terme Nganguela (https://luchazilanguage.blogspot.com)",
-      "Ganguela Facts for Kids – Kiddle (https://kids.kiddle.co/Ganguela)",
-      "Nkangala Language – Ethnologue (https://www.ethnologue.com/language/nkn/)",
-      "Nyemba, Ngangela in Angola – Joshua Project (https://joshuaproject.net/people_groups/14092/AO)",
-      "Angola – Ethnic Groups – Country Studies (https://countrystudies.us/angola/56.htm)"
+      {
+        "title": "Luchazi Language Blog – Signification du terme Nganguela",
+        "url": "https://luchazilanguage.blogspot.com",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blogspot.com, matched as a parent of luchazilanguage.blogspot.com."
+      },
+      {
+        "title": "Ganguela Facts for Kids – Kiddle",
+        "url": "https://kids.kiddle.co/Ganguela",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kids.kiddle.co."
+      },
+      {
+        "title": "Nkangala Language – Ethnologue",
+        "url": "https://www.ethnologue.com/language/nkn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Nyemba, Ngangela in Angola – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14092/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Angola – Ethnic Groups – Country Studies",
+        "url": "https://countrystudies.us/angola/56.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      }
     ]
   }
 }

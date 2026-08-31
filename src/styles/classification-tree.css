@@ -1,0 +1,214 @@
+/* Classification — the filiation column.
+ *
+ * A linguistic classification is a filiation, not a folder listing, so the
+ * level is carried by a rail, a chevron and weight, never by a box: the atlas
+ * charter §1 keeps closed outlines off a people, and the same restraint is
+ * what stops this section reading as a file explorer.
+ *
+ * Colours come from tokens only. --afh-tree-guide was declared with the tree
+ * back in ETNI-461 and never wired to anything; this is what it was for.
+ */
+
+.afh-tree-group {
+  position: relative;
+}
+
+/* One hairline per open branch, dropped at the middle of the chevron column
+ * so it points at the children rather than floating between levels. */
+.afh-tree-group::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: calc(
+    var(--afh-tree-indent) * var(--afh-tree-level, 1) + 11px
+  );
+  border-inline-start: 1px solid var(--afh-tree-guide);
+}
+
+/* The rail belongs to the branch it opens, so it takes the accent while that
+ * branch is the one being read. --accent-ink, never --accent: the fiche's
+ * accent is unreadable as a hairline on parchment. */
+.afh-tree-group[data-open="true"]::before {
+  border-inline-start-color: var(--accent-ink);
+}
+
+.afh-tree-chevron {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--afh-text-soft);
+  transition: transform var(--afh-duration-base, 200ms)
+    var(--afh-ease-in-out, ease-in-out);
+}
+
+.afh-tree-chevron[data-expanded="true"] {
+  transform: rotate(90deg);
+  color: var(--accent-ink);
+}
+
+/* A leaf keeps the chevron's width without its mark, so labels down a branch
+ * stay on one optical line instead of stepping left at every leaf. */
+.afh-tree-chevron-spacer {
+  flex: none;
+  width: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .afh-tree-chevron {
+    transition: none;
+  }
+}
+
+/* A people's name is the fiche's whole subject and often carries its autonym;
+ * clipping it mid-word to save a few pixels loses the thing the atlas exists
+ * to surface. It wraps instead, and the row grows. */
+.afh-tree-label {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Counts read as a column, so they line up on the digit rather than on the
+ * end of a name of unpredictable length. */
+.afh-tree-count {
+  margin-inline-start: auto;
+  flex: none;
+  font-family: var(--afh-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* ── Section chrome ──────────────────────────────────────────────── */
+
+.afh-classification-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block: 10px 14px;
+}
+
+.afh-view-switch {
+  display: inline-flex;
+  align-items: stretch;
+  width: 100%;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-md);
+  overflow: hidden;
+  background: var(--afh-surface);
+}
+
+.afh-view-switch button {
+  flex: 1 1 0;
+  min-height: 40px;
+  padding: 0 12px;
+  font-family: var(--afh-font);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.afh-view-switch button + button {
+  border-inline-start: 1px solid var(--afh-border);
+}
+
+.afh-view-switch button[aria-pressed="true"] {
+  background: var(--accent-tint);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.afh-view-switch button:focus-visible {
+  outline: 2px solid var(--afh-gold);
+  outline-offset: -2px;
+}
+
+/* Charter §4: the fiche says whether a value is declared, derived or missing.
+ * This line is where the classification says it, and it is the reason an
+ * empty language corpus can no longer be mistaken for editorial silence. */
+.afh-classification-provenance {
+  margin: 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+.afh-declared-branches {
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.afh-declared-branches li {
+  padding: 3px 9px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-sm);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+  background: var(--afh-surface);
+}
+
+/* ── The text index (list view) ──────────────────────────────────── */
+
+.afh-text-index,
+.afh-text-index ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-text-index > li {
+  padding-block: 7px;
+  border-block-end: 1px solid var(--afh-border);
+  font-size: var(--afh-text-small);
+}
+
+.afh-text-index > li:last-child {
+  border-block-end: 0;
+}
+
+.afh-text-index ol {
+  margin-block-start: 4px;
+  padding-inline-start: var(--afh-tree-indent);
+  border-inline-start: 1px solid var(--afh-tree-guide);
+}
+
+.afh-text-index a {
+  color: var(--afh-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.afh-text-index-count {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+@media (min-width: 768px) {
+  .afh-classification-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .afh-view-switch {
+    width: auto;
+  }
+
+  .afh-view-switch button {
+    min-width: 92px;
+  }
+}

@@ -10,7 +10,7 @@
       "originOfHistoricalTerm": " Le nom vient de l'ancien Empire Songhay (XVe–XVIe siècles) basé à Gao. Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes. L'origine académique du terme remonte aux classifications linguistiques modernes :"
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Songhay oriental", "Songhay du nord-ouest"],
       "geographicArea": "Vallée moyenne du Niger (Mali–Niger), s'étendant vers l'est jusqu'au Bénin et le nord du Nigeria, et vers le nord dans le Sahara central (Algérie méridionale, nord du Mali).",
       "numberOfLanguages": 10,
       "totalSpeakers": 3500000
@@ -43,23 +43,116 @@
     },
     "distribution": {
       "totalSpeakers": 3500000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NER": 3120000,
+        "MLI": 431700,
+        "NGA": 87800,
+        "BFA": 600
+      }
     },
     "sources": [
-      "[Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]",
-      "[Nicolaï, R.] ([1981]) – *Les dialectes du songhay: contribution à l'étude des changements linguistiques*. [Paris : SELAF]",
-      "[Nicolaï, R.] ([1990]) – *Parentés linguistiques (à propos du songhay)*. [Paris : Éditions du CNRS]",
-      "[Nicolaï, R.] ([2003]) – *La force des choses ou l'épreuve 'nilo-saharienne': questions sur les reconstructions archéologiques et l'évolution des langues*. [Köln : Rüdiger Köppe Verlag]",
-      "[Bender, L.] ([1996]) – *The Nilo-Saharan Languages: A Comparative Essay*. [München : Lincom Europa]",
-      "[Heath, J.] ([1998]) – *A Grammar of Koyra Chiini: the Songhay of Timbuktu*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]",
-      "[Heath, J.] ([1999]) – *A Grammar of Koyraboro (Koroboro) Senni: The Songhay of Gao, Mali*. [Köln : Rüdiger Köppe Verlag]",
-      "[Heath, J.] ([2005]) – *Tondi Songway Kiini (Songhay, Mali): reference grammar and TSK–English–French dictionary*. [Stanford : CSLI Publications]",
-      "[Lacroix, P.-F.] ([1969]) – *L'ensemble songhay-jerma: problèmes et thèmes de travail*. Actes du 8ᵉ Congrès de la SLAO.",
-      "[Lacroix, P.-F.] ([1980]) – *Emghedeshie, 'Songhay language of Agades': à travers les documents de Barth*. Itinérances, Vol. 1. [Société des Africanistes]",
-      "[Dimmendaal, G.] ([2008]) – *Language Ecology and Linguistic Diversity on the African Continent*. [In : Language and Linguistics Compass]",
-      "[SIL Ethnologue] ([2025]) – *Languages of Niger / Mali / Benin / Burkina Faso / Nigeria*. [https://www.ethnologue.com/]",
-      "[Glottolog] ([2025]) – *Songhay Overview*. [https://glottolog.org/resource/languoid/id/song1297]",
-      "[UNESCO] ([2025]) – *Atlas des langues en danger dans le monde*. [https://www.unesco.org/]"
+      {
+        "title": "[Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Nicolaï, R.] ([1981]) – *Les dialectes du songhay: contribution à l'étude des changements linguistiques*. [Paris : SELAF]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Nicolaï, R.] ([1990]) – *Parentés linguistiques (à propos du songhay)*. [Paris : Éditions du CNRS]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Nicolaï, R.] ([2003]) – *La force des choses ou l'épreuve 'nilo-saharienne': questions sur les reconstructions archéologiques et l'évolution des langues*. [Köln : Rüdiger Köppe Verlag]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Bender, L.] ([1996]) – *The Nilo-Saharan Languages: A Comparative Essay*. [München : Lincom Europa]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Heath, J.] ([1998]) – *A Grammar of Koyra Chiini: the Songhay of Timbuktu*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Heath, J.] ([1999]) – *A Grammar of Koyraboro (Koroboro) Senni: The Songhay of Gao, Mali*. [Köln : Rüdiger Köppe Verlag]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Heath, J.] ([2005]) – *Tondi Songway Kiini (Songhay, Mali): reference grammar and TSK–English–French dictionary*. [Stanford : CSLI Publications]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Lacroix, P.-F.] ([1969]) – *L'ensemble songhay-jerma: problèmes et thèmes de travail*. Actes du 8ᵉ Congrès de la SLAO",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Lacroix, P.-F.] ([1980]) – *Emghedeshie, 'Songhay language of Agades': à travers les documents de Barth*. Itinérances, Vol. 1. [Société des Africanistes]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[Dimmendaal, G.] ([2008]) – *Language Ecology and Linguistic Diversity on the African Continent*. [In : Language and Linguistics Compass]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "[SIL Ethnologue] ([2025]) – *Languages of Niger / Mali / Benin / Burkina Faso / Nigeria*",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "[Glottolog] ([2025]) – *Songhay Overview*",
+        "url": "https://glottolog.org/resource/languoid/id/song1297",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "[UNESCO] ([2025]) – *Atlas des langues en danger dans le monde*",
+        "url": "https://www.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Glottolog 5.3 (2025) – \"Songhay\" (glottocode song1307) : arbre de classification confirmant 2 branches immédiates – Eastern Songhay, Northwest Songhay",
+        "url": "https://glottolog.org/resource/languoid/id/song1307",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 11 juin 2016) – \"Zarma [dje]\": 3 120 000 locuteurs au Niger (2013 J. Leclerc), 87 800 au Nigeria (2000), 1 700 au Mali (2012 G. Davis, sous le nom Zarmaci), 600 au Burkina Faso (1987 SIL)",
+        "url": "https://www.ethnologue.com/language/dje",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 28 mai 2016) – \"Koyraboro Senni Songhay [ses]\": 430 000 locuteurs au Mali (2007 SIL)",
+        "url": "https://www.ethnologue.com/language/ses",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

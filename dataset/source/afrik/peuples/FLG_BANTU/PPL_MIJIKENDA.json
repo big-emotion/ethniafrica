@@ -3,6 +3,7 @@
   "nameMain": "Mijikenda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mijikenda",
@@ -90,11 +91,36 @@
       ]
     },
     "sources": [
-      "Traditions and practices associated with the Kayas – UNESCO ICH (https://ich.unesco.org/en/USL/traditions-and-practices-associated-with-the-kayas-in-the-sacred-forests-of-the-mijikenda-00313)",
-      "Sacred Mijikenda Kaya Forests – UNESCO WHC decision 32 COM 8B.50 (https://whc.unesco.org/en/decisions/4265/)",
-      "Githitho A.N., The Sacred Mijikenda Kaya Forests of Coastal Kenya and Biodiversity Conservation – Sacred Land Film Project (https://sacredland.org/wp-content/uploads/2017/07/Mijikenda_Kaya.pdf)",
-      "Ethnic Affiliation Kenya – Kenya National Bureau of Statistics 2009 (https://www.knbs.or.ke/ethnic-affiliation/)",
-      "History of the Mijikenda tribes – MSOLA Africa (https://www.msolafrica.org/2024/08/12/the-history-of-the-mijikenda-tribes-kenya/)"
+      {
+        "title": "Traditions and practices associated with the Kayas – UNESCO ICH",
+        "url": "https://ich.unesco.org/en/USL/traditions-and-practices-associated-with-the-kayas-in-the-sacred-forests-of-the-mijikenda-00313",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Sacred Mijikenda Kaya Forests – UNESCO WHC decision 32 COM 8B.50",
+        "url": "https://whc.unesco.org/en/decisions/4265/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Githitho A.N., The Sacred Mijikenda Kaya Forests of Coastal Kenya and Biodiversity Conservation – Sacred Land Film Project",
+        "url": "https://sacredland.org/wp-content/uploads/2017/07/Mijikenda_Kaya.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sacredland.org."
+      },
+      {
+        "title": "Ethnic Affiliation Kenya – Kenya National Bureau of Statistics 2009",
+        "url": "https://www.knbs.or.ke/ethnic-affiliation/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "History of the Mijikenda tribes – MSOLA Africa",
+        "url": "https://www.msolafrica.org/2024/08/12/the-history-of-the-mijikenda-tribes-kenya/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers msolafrica.org; the tier awaits editorial review."
+      }
     ]
   }
 }

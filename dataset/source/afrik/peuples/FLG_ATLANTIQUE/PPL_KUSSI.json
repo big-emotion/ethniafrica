@@ -3,6 +3,7 @@
   "nameMain": "Kasanga",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB", "SEN"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kasanga",
@@ -78,10 +79,30 @@
       ]
     },
     "sources": [
-      "Ethnologue - Kasanga language (ccj) : https://www.ethnologue.com/language/ccj/",
-      "Joshua Project - Kasanga, Haal in Guinea-Bissau : https://joshuaproject.net/people_groups/print/12555/PU",
-      "Minority Rights Group - Guinea-Bissau (2024) : https://minorityrights.org/country/guinea-bissau/",
-      "US State Department - Guinea-Bissau Background Note : https://2009-2017.state.gov/outofdate/bgn/guineabissau/47466.htm"
+      {
+        "title": "Ethnologue - Kasanga language (ccj)",
+        "url": "https://www.ethnologue.com/language/ccj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project - Kasanga, Haal in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/print/12555/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group - Guinea-Bissau (2024)",
+        "url": "https://minorityrights.org/country/guinea-bissau/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "US State Department - Guinea-Bissau Background Note",
+        "url": "https://2009-2017.state.gov/outofdate/bgn/guineabissau/47466.htm",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for 2009-2017.state.gov."
+      }
     ]
   }
 }

@@ -8,6 +8,7 @@
   "nameMain": "Borana",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "KEN", "SOM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Borana",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "Oromo, Borana in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/19651/ET)",
-      "Borana people – 101 Last Tribes (https://www.101lasttribes.com/tribes/borana.html)",
-      "The Gadaa System of the Oromo People – Participedia (https://participedia.net/method/the-gadaa-system-of-the-oromo-people)",
-      "Oromo – Encyclopaedia Britannica, 2026 (https://www.britannica.com/topic/Oromo)",
-      "Oromo, Borana-Arsi-Guji – Wiktionary ISO 639-3 Africa (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+      {
+        "title": "Oromo, Borana in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/19651/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Borana people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/borana.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "The Gadaa System of the Oromo People – Participedia",
+        "url": "https://participedia.net/method/the-gadaa-system-of-the-oromo-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for participedia.net."
+      },
+      {
+        "title": "Oromo – Encyclopaedia Britannica, 2026",
+        "url": "https://www.britannica.com/topic/Oromo",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Oromo, Borana-Arsi-Guji – Wiktionary ISO 639-3 Africa",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

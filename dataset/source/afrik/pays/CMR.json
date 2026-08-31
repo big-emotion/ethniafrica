@@ -1,11 +1,17 @@
 {
   "id": "CMR",
-  "nameFr": "République du Cameroun (Republic of Cameroon)",
+  "nameFr": "Cameroun",
   "nameOfficial": "République du Cameroun (Republic of Cameroon)",
+  "summary": "Le Cameroun doit son nom aux crevettes du fleuve Wouri, que les Portugais nommèrent « Rio dos Camarões » au XVe siècle. Colonisé successivement par l'Allemagne, la France et la Grande-Bretagne, il en garde un bilinguisme officiel. Plus de 280 peuples s'y côtoient, du royaume Bamoun aux chefferies bamiléké, des Sawa côtiers aux peuples des forêts du Sud.",
   "etymology": "Le nom \"Cameroun\" dérive du portugais \"Rio dos Camarões\" (Rivière des crevettes), donné par les navigateurs portugais au XVe siècle en référence au fleuve Wouri, riche en crevettes. Le terme \"Camarões\" a été adapté en \"Cameroun\" par les Français et \"Cameroons\" par les Britanniques.",
   "nameOriginActor": "Le nom \"Cameroun\" provient des navigateurs portugais qui ont exploré la côte camerounaise au XVe siècle. Le terme \"Rio dos Camarões\" (Rivière des crevettes) a été donné au fleuve Wouri et a ensuite été généralisé pour désigner l'ensemble du territoire. Les colonisateurs allemands, français et britanniques ont adapté ce nom.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Kamerun (allemand, 1884-1916)",
+        "Cameroun français et Cameroons britanniques (1916-1960)",
+        "République unie du Cameroun (1972-1984)"
+      ],
       "antiquity": "Le territoire actuel du Cameroun était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaume Bamoun, chefferies Bamiléké, etc.).",
       "middleAges": "Développement de royaumes et chefferies : royaume Bamoun, chefferies Bamiléké, royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa (côtiers), peuples forestiers, pygmées Baka. Les Portugais utilisaient le terme \"Rio dos Camarões\" pour désigner la région du fleuve Wouri.",
@@ -277,14 +283,60 @@
       "postIndependence": "1984 : Changement de nom pour \"République du Cameroun\" (nom actuel). Période de stabilité politique relative sous la présidence de Paul Biya (depuis 1982). Défis : pauvreté, inégalités sociales, tensions anglophones/francophones, corruption. Le Cameroun est un pays bilingue (français-anglais) unique en Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Cameroon",
-      "CIA World Factbook – Cameroon",
-      "ONU / UNFPA – Démographie Cameroun 2025",
-      "Politics and the Occult in Postcolonial Africa\"",
-      "Archives du royaume Bamoun (Foumban)",
-      "Recensements camerounais",
-      "Études anthropologiques sur les peuples du Cameroun",
-      "CIA World Factbook – Cameroon (ethnic groups, 2018 est.)"
+      {
+        "title": "SIL Ethnologue – Languages of Cameroon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Cameroon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Cameroun 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Politics and the Occult in Postcolonial Africa\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives du royaume Bamoun (Foumban)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements camerounais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Cameroun",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Cameroon (ethnic groups, 2018 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

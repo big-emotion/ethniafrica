@@ -3,6 +3,7 @@
   "nameMain": "Wiyana",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wiyana",
@@ -83,10 +84,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Winyé language (kst): https://www.ethnologue.com/language/kst/",
-      "101 Last Tribes – Gurunsi people (Winiama sculptures): https://www.101lasttribes.com/tribes/gurunsi.html",
-      "SIL Burkina Faso – Gur languages: https://sil-burkina.org/en/content/gur-languages",
-      "Britannica – Grusi: https://www.britannica.com/topic/Grusi"
+      {
+        "title": "SIL Ethnologue – Winyé language (kst)",
+        "url": "https://www.ethnologue.com/language/kst/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes – Gurunsi people (Winiama sculptures)",
+        "url": "https://www.101lasttribes.com/tribes/gurunsi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Burkina Faso – Gur languages",
+        "url": "https://sil-burkina.org/en/content/gur-languages",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for sil-burkina.org."
+      },
+      {
+        "title": "Britannica – Grusi",
+        "url": "https://www.britannica.com/topic/Grusi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

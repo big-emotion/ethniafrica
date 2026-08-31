@@ -115,9 +115,21 @@ const bfaCountry: CountryDetail = {
       "Relations historiques avec le Mali (commerce), la Côte d'Ivoire (commerce, migrations), le Ghana (Dagara, commerce). Intégration dans la CEDEAO et l'UEMOA.",
   },
   sources: [
-    "SIL Ethnologue – Languages of Burkina Faso",
-    "CIA World Factbook – Burkina Faso",
-    "ONU / UNFPA – Démographie Burkina Faso 2025",
+    {
+      title: "SIL Ethnologue – Languages of Burkina Faso",
+      url: null,
+      tier: "unverified",
+    },
+    {
+      title: "CIA World Factbook – Burkina Faso",
+      url: null,
+      tier: "unverified",
+    },
+    {
+      title: "ONU / UNFPA – Démographie Burkina Faso 2025",
+      url: null,
+      tier: "unverified",
+    },
   ],
   demographics: {
     peoples: [
@@ -470,6 +482,56 @@ describe("transformTimeline", () => {
     const result = transformTimeline(undefined);
     expect(result.items).toHaveLength(0);
   });
+
+  // Most fiches write an era as prose, not as a "date : Nom" list. The prose
+  // is not a name, so it is served whole as the item's prose instead of being
+  // cut into a title — which is what put the same clipped sentence twice on
+  // every country fiche.
+  // @req REQ-092
+  it("keeps a prose era whole instead of clipping it into a title", () => {
+    const prose =
+      "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), peuples voltaiques (Sénoufo, Lobi, Koulango).";
+
+    const result = transformTimeline({ precolonial: prose });
+
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].prose).toBe(prose);
+    expect(result.items[0].name).toBeUndefined();
+  });
+
+  // @req REQ-092
+  it("names an era written as a dated list, and gives it no prose", () => {
+    const result = transformTimeline({
+      colonization: "1893-1960 : Colonie de Côte d'Ivoire.",
+    });
+
+    expect(result.items).toHaveLength(1);
+    expect(result.items[0].name).toBe("Colonie de Côte d'Ivoire");
+    expect(result.items[0].era).toBe("1893-1960");
+    expect(result.items[0].prose).toBeUndefined();
+  });
+
+  // @req REQ-092
+  it("clips nothing on any era of a real fiche", () => {
+    const result = transformTimeline(bfaCountry.historicalNames);
+
+    for (const item of result.items) {
+      expect(item.name ?? "").not.toMatch(/\.\.\.$/);
+      expect(item.prose ?? "").not.toMatch(/\.\.\.$/);
+    }
+  });
+
+  // Two prose eras used to collapse into one when both were untitled, because
+  // the de-duplication key read a name that no longer exists.
+  // @req REQ-092
+  it("keeps two distinct prose eras apart", () => {
+    const result = transformTimeline({
+      middleAges: "Développement des royaumes Akan.",
+      precolonial: "Mosaïque de royaumes et chefferies autonomes.",
+    });
+
+    expect(result.items).toHaveLength(2);
+  });
 });
 
 describe("transformPeoples", () => {
@@ -528,6 +590,111 @@ describe("transformPeoples", () => {
     expect(autres).toBeUndefined();
   });
 
+  // 25 of the 53 country fiches state a share for every people and a
+  // population for none — the section printed "0", asserting the corpus had
+  // declared South Africa empty. An absent figure is not a zero.
+  // @req REQ-001
+  it("states no population where the fiche declares none", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Africains noirs", percentageInCountry: 81.4 },
+        { name: "Blancs", percentageInCountry: 7.3 },
+      ],
+    });
+
+    expect(result.totalPopulationFormatted).toBeUndefined();
+    expect(result.rows.every((r) => r.populationFormatted === undefined)).toBe(
+      true
+    );
+  });
+
+  // The sum over the peoples that do declare one is a floor, not the
+  // country's population, so the section may not label it plain "habitants".
+  // @req REQ-001
+  it("flags the total as partial when a people declares no population", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Kikuyu", percentageInCountry: 17.1 },
+        { name: "Luhya", percentageInCountry: 14.3, population: 7700000 },
+      ],
+    });
+
+    expect(result.totalPopulationFormatted).toBe("7.7M");
+    expect(result.everyPeopleDeclaresPopulation).toBe(false);
+  });
+
+  // @req REQ-001
+  it("counts the total as complete when every people declares one", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Mossi", percentageInCountry: 52, population: 11000000 },
+        { name: "Peul", percentageInCountry: 8, population: 1700000 },
+      ],
+    });
+
+    expect(result.everyPeopleDeclaresPopulation).toBe(true);
+  });
+
+  // A census headcount is dated by its census. The fiche says so with
+  // `referenceYear`, and the section has to print that year rather than the
+  // atlas's 2025 — otherwise it dates a 2019 count to a year it never claimed.
+  // @req REQ-001
+  it("carries the year the counted peoples are dated to", () => {
+    const result = transformPeoples({
+      peoples: [
+        {
+          name: "Kikuyu",
+          percentageInCountry: 17.1,
+          population: 8148668,
+          referenceYear: 2019,
+        },
+        {
+          name: "Luhya",
+          percentageInCountry: 14.3,
+          population: 6823842,
+          referenceYear: 2019,
+        },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBe(2019);
+  });
+
+  // @req REQ-001
+  it("dates an undated headcount to the atlas reference year", () => {
+    const result = transformPeoples({
+      peoples: [
+        { name: "Mossi", percentageInCountry: 52, population: 11000000 },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBe(2025);
+  });
+
+  // Two peoples counted in different years share no snapshot, so the section
+  // has no single year to print and must not pick one of them.
+  // @req REQ-001
+  it("states no year when the counted peoples disagree", () => {
+    const result = transformPeoples({
+      peoples: [
+        {
+          name: "Kikuyu",
+          percentageInCountry: 17.1,
+          population: 8148668,
+          referenceYear: 2019,
+        },
+        {
+          name: "Luhya",
+          percentageInCountry: 14.3,
+          population: 7700000,
+          referenceYear: 2025,
+        },
+      ],
+    });
+
+    expect(result.populationReferenceYear).toBeUndefined();
+  });
+
   it("maps mainLanguageCode to endonymLang for the lang attribute", () => {
     const result = transformPeoples(
       bfaCountry.demographics,
@@ -539,6 +706,44 @@ describe("transformPeoples", () => {
 });
 
 describe("transformKingdoms", () => {
+  // The mockup's timeline gives each entity a line of what it was, and the
+  // transformer used to drop `historicalRole` on the floor: the corpus stated
+  // it and no surface could reach it.
+  // @req REQ-001
+  it("carries the historical role the corpus states", () => {
+    const result = transformKingdoms([
+      {
+        name: "Empire du Mali",
+        period: "1235–1670",
+        historicalRole: "Contrôle des routes de l'or transsahariennes.",
+      },
+    ]);
+
+    expect(result.cards[0].historicalRole).toBe(
+      "Contrôle des routes de l'or transsahariennes."
+    );
+  });
+
+  // `tags` keeps its truncated, parenthesis-stripped form for the card layout;
+  // `centers` is the same field unflattened, for the timeline that names them.
+  // @req REQ-001
+  it("keeps the political centres whole, alongside the card's tags", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume Mossi",
+        politicalCenters: ["Ouagadougou", "Tenkodogo", "Fada", "Boussouma"],
+      },
+    ]);
+
+    expect(result.cards[0].centers).toEqual([
+      "Ouagadougou",
+      "Tenkodogo",
+      "Fada",
+      "Boussouma",
+    ]);
+    expect(result.cards[0].tags).toHaveLength(3);
+  });
+
   it("filters out colonies", () => {
     const result = transformKingdoms(bfaCountry.kingdoms);
     expect(result.cards.every((c) => !/colonie/i.test(c.name))).toBe(true);
@@ -630,15 +835,56 @@ describe("transformCulture", () => {
 });
 
 describe("transformSources", () => {
-  it("joins sources with separator", () => {
+  // @req REQ-092
+  it("keeps every source whole, so each can show its own standing", () => {
     const result = transformSources(bfaCountry.sources);
-    expect(result).toContain(" · ");
-    expect(result).toContain("SIL Ethnologue");
-    expect(result).toContain("CIA World Factbook");
+    const labels = result.map((source) => source.label);
+
+    expect(labels.some((label) => label.includes("SIL Ethnologue"))).toBe(true);
+    expect(labels.some((label) => label.includes("CIA World Factbook"))).toBe(
+      true
+    );
+    expect(result.every((source) => source.standing !== undefined)).toBe(true);
   });
 
-  it("returns empty string for no sources", () => {
-    expect(transformSources(undefined)).toBe("");
+  // @req REQ-092
+  it("returns nothing for no sources", () => {
+    expect(transformSources(undefined)).toEqual([]);
+  });
+
+  // The corpus in dataset/source/afrik/ is now structured, but the database
+  // still serves the fiche JSON it was loaded from, which holds bare strings
+  // until the loaders re-run. Reading `.title` off a string returned undefined
+  // and `.replace` threw, taking every country fiche to HTTP 500.
+  // @req REQ-001
+  it("still reads a legacy string source, which the database serves until the loaders re-run", () => {
+    const legacy = [
+      "- SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/",
+      "CIA World Factbook — Burkina Faso",
+    ] as unknown as Parameters<typeof transformSources>[0];
+
+    expect(transformSources(legacy).map((source) => source.label)).toEqual([
+      "SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/",
+      "CIA World Factbook — Burkina Faso",
+    ]);
+    // A bare string asserts no standing of its own, so it reads as awaiting
+    // review rather than being declared unverified.
+    expect(transformSources(legacy).map((source) => source.standing)).toEqual([
+      "needs_review",
+      "needs_review",
+    ]);
+  });
+
+  // @req REQ-001
+  it("skips an entry carrying neither a title nor text, instead of crashing the fiche", () => {
+    const malformed = [
+      { url: "https://example.org", tier: "unverified" },
+      { title: "Kept", url: null, tier: "official" },
+    ] as unknown as Parameters<typeof transformSources>[0];
+
+    expect(transformSources(malformed).map((source) => source.label)).toEqual([
+      "Kept",
+    ]);
   });
 });
 

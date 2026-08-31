@@ -2,10 +2,15 @@
   "id": "BFA",
   "nameFr": "Burkina Faso",
   "nameOfficial": "Burkina Faso (Burkina Faso)",
+  "summary": "Le nom du Burkina Faso est composé dans deux langues nationales : « pays des hommes intègres », de « burkina » en mooré et « faso » en dioula. Le pays s'appelait Haute-Volta jusqu'en 1984. Son histoire est celle des royaumes mossi — Wogodogo, Yatenga, Tenkodogo — et d'une soixantaine de peuples voltaïques.",
   "etymology": "Le nom \"Burkina Faso\" signifie \"Pays des hommes intègres\" en mooré (langue mossi) et en dioula (langue mandé). \"Burkina\" vient du mooré et signifie \"intègres\" ou \"honnêtes\", tandis que \"Faso\" vient du dioula et signifie \"pays\" ou \"patrie\". Le nom a été adopté en 1984 par le président Thomas Sankara pour remplacer \"Haute-Volta\", nom colonial français.",
   "nameOriginActor": "Le nom \"Burkina Faso\" a été choisi par le président Thomas Sankara en 1984 lors de la révolution burkinabè. Il remplace \"Haute-Volta\" (nom colonial français dérivé du fleuve Volta). Le nom reflète l'identité pan-africaine et la diversité linguistique du pays (mooré et dioula).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Haute-Volta (1919-1960)",
+        "République de Haute-Volta (1960-1984)"
+      ],
       "antiquity": "Le territoire actuel du Burkina Faso était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes mossi, chefferies gur, etc.).",
       "middleAges": "Développement de royaumes mossi (XIe-XIXe siècles) : Wogodogo (Ouagadougou), Yatenga, Tenkodogo, Fada N'Gourma. Développement de chefferies gur (Bobo, Gourounsi, Dagara, etc.). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies Bobo, Lobi, Dagara, Gourounsi, Senoufo. Peuples Peuls et Touaregs en transhumance dans le nord. Les Européens utilisaient le terme \"Haute-Volta\" pour désigner la région (dérivé du fleuve Volta).",
@@ -257,13 +262,54 @@
       "postIndependence": "1983-1987 : Révolution burkinabè sous Thomas Sankara, changement de nom pour \"Burkina Faso\" (1984), réformes sociales et économiques. 1987 : Assassinat de Thomas Sankara, prise de pouvoir de Blaise Compaoré. 2014 : Insurrection populaire, chute de Blaise Compaoré. Période de transition et de démocratisation. Défis : pauvreté, insécurité (terrorisme dans le nord), inégalités sociales. Le Burkina Faso est un pays sahélien confronté à des défis sécuritaires et économiques majeurs."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Burkina Faso",
-      "CIA World Factbook – Burkina Faso",
-      "ONU / UNFPA – Démographie Burkina Faso 2025",
-      "Izard, Michel – \"Le Yatenga précolonial\"",
-      "Archives royales du Moogho Naaba (Ouagadougou)",
-      "Recensements burkinabés",
-      "Études anthropologiques sur les peuples du Burkina Faso"
+      {
+        "title": "SIL Ethnologue – Languages of Burkina Faso",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Burkina Faso",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Burkina Faso 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Izard, Michel – \"Le Yatenga précolonial\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives royales du Moogho Naaba (Ouagadougou)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements burkinabés",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Burkina Faso",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

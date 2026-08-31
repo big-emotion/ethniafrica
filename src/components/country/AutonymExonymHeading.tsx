@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { bcp47LanguageTag } from "@/lib/languageTag";
+
 interface AutonymExonymHeadingProps {
   /** The name a people uses for itself — rendered as the primary name. */
   endonym: string;
@@ -20,23 +22,29 @@ interface AutonymExonymHeadingProps {
  * exonym alone, so navigating to the fiche does not reintroduce the primacy
  * inversion this component exists to fix.
  */
+// @req REQ-115
 export function AutonymExonymHeading({
   endonym,
   exonym,
   lang,
   href,
 }: AutonymExonymHeadingProps) {
+  // Normalised here rather than at each call site: the corpus hands over
+  // ISO 639-3 and `lang` wants the shortest tag BCP 47 allows, so a caller
+  // that forgot would emit a tag assistive tech cannot resolve.
+  const endonymLang = bcp47LanguageTag(lang);
+
   const names = (
     <>
       <span
-        lang={lang}
-        className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"
+        lang={endonymLang}
+        className="text-afh-small font-bold leading-snug"
         style={{ fontFamily: "var(--country-font-body)" }}
       >
         {endonym}
       </span>
       <span
-        className="text-[11px] xl:text-[12px]"
+        className="text-afh-caption"
         style={{ color: "var(--country-text-soft)" }}
       >
         {exonym}

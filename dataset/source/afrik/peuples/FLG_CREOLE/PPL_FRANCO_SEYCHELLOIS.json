@@ -3,6 +3,7 @@
   "nameMain": "Franco-Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Franco-Seychellois",
@@ -83,12 +84,42 @@
       ]
     },
     "sources": [
-      "Seychelles Population – Seyvillas (https://www.seyvillas.com/en/guide/at-a-glance/population)",
-      "We, the people of Seychelles – The Nation (Seychelles), 2022 (https://www.nation.sc/articles/15689/we-the-people-of-seychelles)",
-      "Seychelles Population 2026 – World Population Review (https://worldpopulationreview.com/countries/seychelles)",
-      "Seychelles – Encyclopaedia Britannica, 2026 (https://www.britannica.com/place/Seychelles)",
-      "Seychelles' population now stands at 120,581 – The Nation (Seychelles), 2024 (https://www.nation.sc/articles/21345/seychelles-population-now-stands-at-120581)",
-      "Seychelles (11/01) – U.S. Department of State (https://2009-2017.state.gov/outofdate/bgn/seychelles/19601.htm)"
+      {
+        "title": "Seychelles Population – Seyvillas",
+        "url": "https://www.seyvillas.com/en/guide/at-a-glance/population",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers seyvillas.com; the tier awaits editorial review."
+      },
+      {
+        "title": "We, the people of Seychelles – The Nation (Seychelles), 2022",
+        "url": "https://www.nation.sc/articles/15689/we-the-people-of-seychelles",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nation.sc."
+      },
+      {
+        "title": "Seychelles Population 2026 – World Population Review",
+        "url": "https://worldpopulationreview.com/countries/seychelles",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+      },
+      {
+        "title": "Seychelles – Encyclopaedia Britannica, 2026",
+        "url": "https://www.britannica.com/place/Seychelles",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Seychelles' population now stands at 120,581 – The Nation (Seychelles), 2024",
+        "url": "https://www.nation.sc/articles/21345/seychelles-population-now-stands-at-120581",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nation.sc."
+      },
+      {
+        "title": "Seychelles (11/01) – U.S. Department of State",
+        "url": "https://2009-2017.state.gov/outofdate/bgn/seychelles/19601.htm",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for 2009-2017.state.gov."
+      }
     ]
   }
 }

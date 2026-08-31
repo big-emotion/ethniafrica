@@ -16,8 +16,15 @@ import type {
   ConfidenceRecord,
 } from "@/api/v2/schemas/confidence";
 
+const internalEntityTypes: Record<ConfidenceEntityType, string> = {
+  people: "people",
+  "language-family": "language_family",
+  relation: "relation",
+  migration: "migration",
+};
+
 function toInternalEntityType(entityType: ConfidenceEntityType): string {
-  return entityType === "language-family" ? "language_family" : "people";
+  return internalEntityTypes[entityType];
 }
 
 export async function getConfidenceFor(

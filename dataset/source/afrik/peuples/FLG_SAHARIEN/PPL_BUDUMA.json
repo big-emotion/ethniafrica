@@ -3,6 +3,7 @@
   "nameMain": "Buduma",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NGA", "CMR", "NER"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Buduma",
@@ -107,11 +108,36 @@
       ]
     },
     "sources": [
-      "ISO 639-3 — Buduma (bdm). https://localizely.com/iso-639-3-list/",
-      "Guy Immega — The Buduma Culture of Lake Chad. Mother Tongue Editions. https://mothertongue.us/pdfs/The_Buduma_Culture_of_Lake_Chad_by_Guy_Immega.pdf",
-      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
-      "YouTube — The Buduma people, the water nomads of the Lake Chad. https://www.youtube.com/watch?v=5fIDlqgiOl8",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+      {
+        "title": "ISO 639-3 — Buduma (bdm)",
+        "url": "https://localizely.com/iso-639-3-list/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      },
+      {
+        "title": "Guy Immega — The Buduma Culture of Lake Chad. Mother Tongue Editions",
+        "url": "https://mothertongue.us/pdfs/The_Buduma_Culture_of_Lake_Chad_by_Guy_Immega.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mothertongue.us; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group — Chad",
+        "url": "https://minorityrights.org/country/chad/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "YouTube — The Buduma people, the water nomads of the Lake Chad",
+        "url": "https://www.youtube.com/watch?v=5fIDlqgiOl8",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

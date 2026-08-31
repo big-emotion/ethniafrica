@@ -3,6 +3,7 @@
   "nameMain": "Gwandara",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Gwandara",
@@ -92,13 +93,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Gwandara language (gwn). https://www.ethnologue.com/language/gwn/",
-      "Joshua Project — Gwandara in Nigeria. https://joshuaproject.net/people_groups/12015",
-      "OlaLeone.org — History of Gwandara, an Aboriginal of Hausa Land. http://www.olaleone.org/2025/05/history-of-gwandara-aboriginal-of-hausa.html",
-      "IIGDPublishers — Inter-Group Relations Study of Afo and Gwandara People of Nasarawa State. https://iigdpublishers.com/",
-      "Glottolog — Gwandara (gwn). https://glottolog.org/resource/languoid/id/duhw1236",
-      "Swordshare Map — Gwandara (gwn). https://map.swordshare.com/gwn",
-      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+      {
+        "title": "SIL Ethnologue — Gwandara language (gwn)",
+        "url": "https://www.ethnologue.com/language/gwn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Gwandara in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/12015",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "OlaLeone.org — History of Gwandara, an Aboriginal of Hausa Land",
+        "url": "http://www.olaleone.org/2025/05/history-of-gwandara-aboriginal-of-hausa.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers olaleone.org; the tier awaits editorial review."
+      },
+      {
+        "title": "IIGDPublishers — Inter-Group Relations Study of Afo and Gwandara People of Nasarawa State",
+        "url": "https://iigdpublishers.com/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers iigdpublishers.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog — Gwandara (gwn)",
+        "url": "https://glottolog.org/resource/languoid/id/duhw1236",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Swordshare Map — Gwandara (gwn)",
+        "url": "https://map.swordshare.com/gwn",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria",
+        "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

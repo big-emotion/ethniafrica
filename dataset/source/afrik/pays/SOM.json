@@ -1,11 +1,16 @@
 {
   "id": "SOM",
-  "nameFr": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
+  "nameFr": "Somalie",
   "nameOfficial": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
+  "summary": "La Somalie porte le nom que les Somali se donnent eux-mêmes, « Soomaali ». Les sultanats d'Ajuran, d'Ifat, d'Adal et de Mogadiscio s'y sont succédé avant les partages britannique et italien de la fin du XIXe siècle. La poésie orale, le gabay, y tient le rang d'art majeur.",
   "etymology": "Le nom \"Somalie\" provient du peuple Somali (Soomaali), majoritaire dans le pays. Le terme \"Somali\" est utilisé par ce peuple pour se désigner lui-même. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960, fusionnant les territoires britannique (Somaliland britannique) et italien (Somalie italienne). Le nom \"Somaliland\" (terre des Somalis) était utilisé par les Britanniques.",
   "nameOriginActor": "Le peuple Somali (Soomaali) est à l'origine du nom. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960 par le gouvernement somalien, fusionnant les territoires britannique et italien.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Somaliland britannique (1884-1960)",
+        "Somalie italienne (1889-1941)"
+      ],
       "antiquity": "Présence de peuples couchitiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. Développement de royaumes et de sultanats locaux.",
       "middleAges": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes et persans. La région était connue sous le nom de \"Bilad al-Barbar\" (pays des Berbères) par les Arabes, mais les Somali se désignaient comme \"Soomaali\".",
       "precolonial": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes, persans et européens. La région était connue sous le nom de \"Somalie\" par les Européens, mais les Somali se désignaient comme \"Soomaali\".",
@@ -158,13 +163,54 @@
       "postIndependence": "République de Somalie (1960), présidence d'Aden Abdullah Osman Daar (1960-1967), Abdirashid Ali Shermarke (1967-1969), coup d'État (1969), présidence de Siad Barre (1969-1991, régime socialiste, guerre avec l'Éthiopie, 1977-1978), guerre civile (depuis 1991, État effondré, conflits claniques, famine, interventions internationales), transition fédérale (2012), proclamation de la République fédérale de Somalie, Hassan Sheikh Mohamud (2012-2017, 2022-), Mohamed Abdullahi Mohamed (2017-2022). Stabilité politique fragile, État fédéral, reconstruction post-conflit, développement économique (élevage, agriculture, pêche). La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Somalia",
-      "SIL Ethnologue – Languages of Somalia",
-      "Recensements somaliens",
-      "Études anthropologiques sur les peuples de Somalie",
-      "Études historiques sur la colonisation britannique et italienne",
-      "CIA World Factbook – Somalia (ethnic groups)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Somalia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Somalia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements somaliens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Somalie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique et italienne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Somalia (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

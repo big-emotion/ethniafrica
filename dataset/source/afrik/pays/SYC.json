@@ -1,11 +1,16 @@
 {
   "id": "SYC",
-  "nameFr": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
+  "nameFr": "Seychelles",
   "nameOfficial": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
+  "summary": "Les Seychelles portent le nom de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV. Les îles étaient inhabitées : leur population est née de la colonisation française puis britannique. Le créole seychellois y est langue officielle aux côtés du français et de l'anglais.",
   "etymology": "Le nom \"Seychelles\" vient de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV, roi de France. Les îles ont été nommées \"Seychelles\" par les Français en 1756 en son honneur. Le nom créole \"Sesel\" est dérivé de \"Seychelles\". Auparavant, les îles étaient appelées \"Îles de la Ligne\" ou \"Îles de la Soif\" par les navigateurs.",
   "nameOriginActor": "Les Français ont nommé les îles \"Seychelles\" en l'honneur de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV (1756). Le nom a été conservé par les Britanniques puis officialisé lors de l'indépendance (1976).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie française des Seychelles (1756-1814)",
+        "Colonie britannique des Seychelles (1814-1976)"
+      ],
       "antiquity": "Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.",
       "middleAges": "Les îles restent inhabitée. Pas de présence humaine permanente.",
       "precolonial": "Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes \"Îles de la Ligne\" ou \"Îles de la Soif\". Pas de structures politiques ou sociales.",
@@ -163,12 +168,48 @@
       "postIndependence": "République des Seychelles (1976), présidence de James Mancham (1976-1977), coup d'État (1977), présidence de France-Albert René (1977-2004, régime socialiste, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de James Michel (2004-2016), Danny Faure (2016-2020), Wavel Ramkalawan (depuis 2020). Stabilité politique, démocratie multipartite, développement économique (tourisme, pêche, services financiers). Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Seychelles",
-      "SIL Ethnologue – Languages of Seychelles",
-      "Recensements seychellois",
-      "Études anthropologiques sur les peuples des Seychelles",
-      "Études historiques sur la colonisation française et britannique"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements seychellois",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples des Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation française et britannique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

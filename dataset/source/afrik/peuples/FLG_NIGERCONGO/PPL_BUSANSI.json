@@ -3,6 +3,7 @@
   "nameMain": "Busansi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["BFA", "GHA", "TGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Busansi",
@@ -99,11 +100,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bisa language [bib]. https://www.ethnologue.com/language/bib/",
-      "YouTube — Who Are the Bissa (Busanga) People? https://www.youtube.com/watch?v=bP0kGwHPQvk",
-      "Facebook — A Rich Cultural Heritage: The Bissa People. https://www.facebook.com/engrkogwuonyepatrick.patsallyonyeka/videos/949872800427144/",
-      "McFarland, Daniel. Historical Dictionary of Upper Volta (Burkina Faso). Metuchen, NJ: Scarecrow Press, 1978.",
-      "Joshua Project — Bissa people group profile"
+      {
+        "title": "SIL Ethnologue — Bisa language [bib]",
+        "url": "https://www.ethnologue.com/language/bib/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "YouTube — Who Are the Bissa (Busanga) People?",
+        "url": "https://www.youtube.com/watch?v=bP0kGwHPQvk",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Facebook — A Rich Cultural Heritage: The Bissa People",
+        "url": "https://www.facebook.com/engrkogwuonyepatrick.patsallyonyeka/videos/949872800427144/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "McFarland, Daniel. Historical Dictionary of Upper Volta (Burkina Faso). Metuchen, NJ: Scarecrow Press, 1978",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Joshua Project — Bissa people group profile",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

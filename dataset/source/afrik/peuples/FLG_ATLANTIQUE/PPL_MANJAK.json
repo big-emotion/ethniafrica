@@ -97,9 +97,24 @@
       ]
     },
     "sources": [
-      "Joshua Project - Mandyak, Manjago in Guinea-Bissau : https://joshuaproject.net/people_groups/13493/PU",
-      "Ethnologue - Mandjak (mfv) : https://www.ethnologue.com/language/mfv/",
-      "Glottolog - mand1419 Manjak : https://glottolog.org/resource/languoid/id/mand1419"
+      {
+        "title": "Joshua Project - Mandyak, Manjago in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/13493/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue - Mandjak (mfv)",
+        "url": "https://www.ethnologue.com/language/mfv/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog - mand1419 Manjak",
+        "url": "https://glottolog.org/resource/languoid/id/mand1419",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

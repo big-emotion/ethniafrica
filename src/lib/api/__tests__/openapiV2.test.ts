@@ -53,4 +53,22 @@ describe("OpenAPI v2 contract", () => {
       },
     });
   });
+
+  // @req REQ-093
+  it("documents normalized source keys and permits offline citations", () => {
+    const source = swaggerSpecV2.components?.schemas?.Source as {
+      properties?: Record<string, unknown>;
+    };
+
+    expect(source.properties).toMatchObject({
+      sourceKey: { type: ["string", "null"] },
+      sourceKind: { type: ["string", "null"] },
+      tier: {
+        type: ["string", "null"],
+        enum: ["official", "referenced", "unverified", null],
+      },
+      identifiers: { type: ["object", "null"] },
+      url: { type: ["string", "null"] },
+    });
+  });
 });

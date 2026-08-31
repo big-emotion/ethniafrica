@@ -3,6 +3,7 @@
   "nameMain": "Ndebele (Macro)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE", "ZAF", "MOZ", "BWA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele (Macro)",
@@ -106,11 +107,36 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Ndebele (Zimbabwean people). https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
-      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
-      "Joshua Project — Ndebele, Southern in South Africa. https://joshuaproject.net/people_groups/15054",
-      "SIL Ethnologue — Northern Ndebele (nde). https://www.ethnologue.com/language/nde/",
-      "SIL Ethnologue — Southern Ndebele (nbl). https://www.ethnologue.com/language/nbl/"
+      {
+        "title": "Encyclopaedia Britannica — Ndebele (Zimbabwean people)",
+        "url": "https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "South African History Online — Ndebele",
+        "url": "https://sahistory.org.za/article/ndebele",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Joshua Project — Ndebele, Southern in South Africa",
+        "url": "https://joshuaproject.net/people_groups/15054",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Northern Ndebele (nde)",
+        "url": "https://www.ethnologue.com/language/nde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Southern Ndebele (nbl)",
+        "url": "https://www.ethnologue.com/language/nbl/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -1,4 +1,4 @@
-/* Africa History (--afh-*) token foundation — ETNI-21.
+/* EthniAfrica (--afh-*) token foundation — ETNI-21.
    Imported BEFORE country-tokens.css so `--country-*` aliases
    can layer on top during the one-release deprecation window. */
 @import "./styles/tokens/color.css";
@@ -9,6 +9,25 @@
 @import "./styles/tokens/radius.css";
 @import "./styles/country-tokens.css";
 @import "./styles/people-tokens.css";
+/* The one box the bar, the hero, the body and the footer share. */
+@import "./styles/shell.css";
+@import "./styles/hero.css";
+/* A holding pen for the home's 20 half-step sizes, not a scale of its own —
+   see the file's own header and typography-charter.md §6 rule 3. */
+@import "./styles/home-tokens.css";
+/* Before every surface that pins something to the top of the screen: it
+   publishes the masthead's height and travel, which those surfaces read. */
+@import "./styles/site-chrome.css";
+@import "./styles/section-heading.css";
+@import "./styles/fiche-parchment.css";
+@import "./styles/facet-hub.css";
+@import "./styles/pager.css";
+@import "./styles/fiche-chapter-bar.css";
+@import "./styles/classification-tree.css";
+/* Last, and unlayered on purpose: the rule is inherited from `body`, so it
+   must sit after every sheet above it and outside the `base` layer that
+   Tailwind's preflight occupies. */
+@import "./styles/mobile-text.css";
 
 @tailwind base;
 @tailwind components;
@@ -20,32 +39,48 @@ All colors MUST be HSL.
 
 /* Font fallback for Storybook — next/font not available outside Next.js runtime */
 :root {
-  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-fraunces: "Fraunces", Georgia, serif;
+  --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   :root {
     --background: 35 35% 97%;
-    --foreground: 25 25% 15%;
+    /* 24 29.4% 13.3% is #2c2018 exactly — the same ink as --afh-text. It used to
+       be 25 25% 15% (#30251d), and both painted h1 elements in production:
+       the home took --afh-text, every fiche and facet took this one. Two
+       inks for one role, and which a title got was an accident of which
+       layer its component inherited from. Brand charter §4. */
+    --foreground: 24 29.4% 13.3%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
+    --card-foreground: 24 29.4% 13.3%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
+    --popover-foreground: 24 29.4% 13.3%;
 
     --primary: 18 70% 42%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 35 60% 88%;
-    --secondary-foreground: 25 25% 15%;
+    --secondary-foreground: 24 29.4% 13.3%;
 
     --muted: 35 30% 92%;
     --muted-foreground: 25 15% 38%;
 
-    --accent: 42 88% 58%;
-    --accent-foreground: 25 25% 15%;
+    /* Namespaced away from the atlas accent, which owns the bare name.
+       The two collided outright: .afh-accent-ocre sets --accent to the hex
+       #c9821f while this block held the triplet 42 88% 58%, so inside any
+       accent-scoped subtree hsl(var(--accent)) — what every Tailwind
+       *-accent utility compiles to — resolved to rgba(0, 0, 0, 0). Measured
+       on a people fiche. On dropdown-menu that is the focus and the open
+       state painting transparent, so a keyboard reader lost the highlight
+       telling them where they were.
+
+       Brand charter §4: the shadcn layer is an implementation detail of
+       src/components/ui/**, and nothing outside it reads one of these. */
+    --ui-accent: 42 88% 58%;
+    --ui-accent-foreground: 25 25% 15%;
 
     --destructive: 0 84% 40%;
     --destructive-foreground: 0 0% 100%;
@@ -65,8 +100,12 @@ All colors MUST be HSL.
     --ochre: 32 75% 55%;
     --sand: 35 40% 85%;
 
-    /* Gradients */
-    --gradient-warm: linear-gradient(135deg, hsl(18 70% 52%), hsl(42 88% 58%));
+    /* Gradients. The warm one is the brand mark's, and its stops are tokens
+       now — --afh-brand-flame and --afh-brand-gold in tokens/color.css — so
+       the most visible colour in the product lives in the same system as
+       every other colour. Same values, byte for byte; this name is kept
+       because callers already read it. Brand charter §5.3. */
+    --gradient-warm: var(--afh-gradient-brand);
     --gradient-earth: linear-gradient(180deg, hsl(35 35% 97%), hsl(35 40% 92%));
 
     /* Shadows */
@@ -93,7 +132,12 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  /* .afh-on-night: the same night surface scoped to a subtree rather than
+     the page — see the matching rule in tokens/color.css. The shadcn HSL
+     layer has to follow too, or a nav using bg-card would stay parchment
+     inside a night band. */
+  .dark,
+  .afh-on-night {
     --background: 25 20% 12%;
     --foreground: 35 35% 95%;
 
@@ -112,8 +156,8 @@ All colors MUST be HSL.
     --muted: 25 15% 22%;
     --muted-foreground: 35 20% 65%;
 
-    --accent: 42 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    --ui-accent: 42 85% 60%;
+    --ui-accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -129,6 +173,11 @@ All colors MUST be HSL.
     --earth-light: 35 20% 65%;
     --ochre: 32 75% 58%;
     --sand: 35 15% 28%;
+
+    /* PageLayout paints the whole page with .gradient-earth; without a
+       night pair here the app frame would stay parchment under .dark
+       while every surface on top of it went dark. */
+    --gradient-earth: linear-gradient(180deg, hsl(25 20% 12%), hsl(25 22% 8%));
 
     --shadow-warm: 0 10px 40px -10px hsl(18 70% 55% / 0.3);
     --shadow-soft: 0 4px 20px -5px hsl(0 0% 0% / 0.3);
@@ -150,7 +199,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-nunito-sans), sans-serif;
   }
 
   h1,
@@ -160,7 +209,7 @@ All colors MUST be HSL.
   h5,
   h6 {
     @apply font-display;
-    font-family: var(--font-playfair), serif;
+    font-family: var(--font-fraunces), serif;
   }
 }
 
@@ -197,6 +246,32 @@ All colors MUST be HSL.
 
   @supports ((background-clip: text) or (-webkit-background-clip: text)) {
     .page-title-gradient {
+      background: var(--gradient-warm);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  /* The brand qualifier, in the gradient the masthead already paints it in.
+
+     It ran in a five-hue ramp of its own (`--afh-gradient-spectrum`, now
+     retired) while `.sh-brand-tagline` set the identical string in the
+     two-stop brand gradient. A reader meets the same words twice on one page
+     and reads two treatments as two different things — brand charter §5.3
+     scopes the gradient to the lockup, and the footer is one.
+
+     The colour outside the @supports block is not a fallback nobody sees: it
+     is what a browser without background-clip: text renders. Setting it to the
+     display accent rather than to `transparent` is the difference between a
+     line that loses its gradient and a line that disappears. */
+  .afh-brand-tagline {
+    color: var(--afh-display-accent);
+  }
+
+  @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+    .afh-brand-tagline {
       background: var(--gradient-warm);
       background-clip: text;
       -webkit-background-clip: text;

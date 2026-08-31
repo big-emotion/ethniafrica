@@ -87,11 +87,36 @@
       ]
     },
     "sources": [
-      "Omniglot — Myene language and alphabet. https://www.omniglot.com/writing/myene.htm",
-      "Ethnologue SIL — Myene (mye). https://www.ethnologue.com/language/mye/",
-      "Britannica — Gabon. https://www.britannica.com/place/Gabon",
-      "Soul-O-Travels — Gabonese Republic History (Mpongwe and Orungu historical kingdoms). https://soul-o-travels.com/gabonese-republic-history/",
-      "Raponda-Walker, André. Dictionnaire mpongwe-français. Mission Catholique, 1934."
+      {
+        "title": "Omniglot — Myene language and alphabet",
+        "url": "https://www.omniglot.com/writing/myene.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Ethnologue SIL — Myene (mye)",
+        "url": "https://www.ethnologue.com/language/mye/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Gabon",
+        "url": "https://www.britannica.com/place/Gabon",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Soul-O-Travels — Gabonese Republic History (Mpongwe and Orungu historical kingdoms)",
+        "url": "https://soul-o-travels.com/gabonese-republic-history/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers soul-o-travels.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Raponda-Walker, André. Dictionnaire mpongwe-français. Mission Catholique, 1934",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

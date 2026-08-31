@@ -3,6 +3,7 @@
   "nameMain": "Alur",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["UGA", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Alur",
@@ -92,12 +93,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Alur language (alz). https://www.ethnologue.com/language/alz/",
-      "Southall, Aidan — Alur Society: A Study in Processes and Types of Domination. Cambridge : Heffer, 1953.",
-      "Glottolog — Alur. https://glottolog.org/resource/languoid/id/alur1250",
-      "CIA World Factbook — Uganda. https://www.cia.gov/the-world-factbook/countries/uganda/",
-      "CIA World Factbook — Democratic Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
-      "Joshua Project — Alur people profile. https://joshuaproject.net/people_groups/10023"
+      {
+        "title": "SIL Ethnologue — Alur language (alz)",
+        "url": "https://www.ethnologue.com/language/alz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Southall, Aidan — Alur Society: A Study in Processes and Types of Domination. Cambridge : Heffer, 1953",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog — Alur",
+        "url": "https://glottolog.org/resource/languoid/id/alur1250",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "CIA World Factbook — Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Joshua Project — Alur people profile",
+        "url": "https://joshuaproject.net/people_groups/10023",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

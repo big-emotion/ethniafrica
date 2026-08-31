@@ -3,6 +3,7 @@
   "nameMain": "Manyika (Zimbabwe)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Manyika du Zimbabwe",
@@ -90,14 +91,54 @@
       ]
     },
     "sources": [
-      "Encyclopedia Britannica — Manyika. https://www.britannica.com/topic/Manyika",
-      "Joshua Project — Manyika in Zimbabwe. https://joshuaproject.net/people_groups/13520/ZW",
-      "101 Last Tribes — Manyika people. https://www.101lasttribes.com/tribes/manyika.html",
-      "University of Missouri — Manyika, Shona people of Zimbabwe (PDF). https://dice.missouri.edu/assets/docs/niger-congo/Manyinka.pdf",
-      "US Department of Justice EOIR — Manyika/Shona, Zimbabwe (PDF). https://www.justice.gov/sites/default/files/eoir/legacy/2014/01/06/manyika%20.pdf",
-      "Seed Gallery New York — Manyika glossary. https://www.seedgallerynewyork.com/glossary/manyika",
-      "Glottolog — Manyika (many1258). https://glottolog.org/resource/languoid/id/many1258",
-      "Facebook — Manyika people of Zimbabwe and Mozambique. https://www.facebook.com/groups/1055261108291845/posts/2305889616562315/"
+      {
+        "title": "Encyclopedia Britannica — Manyika",
+        "url": "https://www.britannica.com/topic/Manyika",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Manyika in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/13520/ZW",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — Manyika people",
+        "url": "https://www.101lasttribes.com/tribes/manyika.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "University of Missouri — Manyika, Shona people of Zimbabwe (PDF)",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Manyinka.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "US Department of Justice EOIR — Manyika/Shona, Zimbabwe (PDF)",
+        "url": "https://www.justice.gov/sites/default/files/eoir/legacy/2014/01/06/manyika%20.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for justice.gov."
+      },
+      {
+        "title": "Seed Gallery New York — Manyika glossary",
+        "url": "https://www.seedgallerynewyork.com/glossary/manyika",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for seedgallerynewyork.com."
+      },
+      {
+        "title": "Glottolog — Manyika (many1258)",
+        "url": "https://glottolog.org/resource/languoid/id/many1258",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Facebook — Manyika people of Zimbabwe and Mozambique",
+        "url": "https://www.facebook.com/groups/1055261108291845/posts/2305889616562315/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

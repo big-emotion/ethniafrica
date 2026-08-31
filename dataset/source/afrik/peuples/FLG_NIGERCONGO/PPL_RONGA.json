@@ -3,6 +3,7 @@
   "nameMain": "Ronga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Ronga",
@@ -97,12 +98,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Ronga (rng). https://www.ethnologue.com/language/rng/",
-      "Kwekudee — Tsonga People: South African Peaceful People. https://kwekudee-tripdownmemorylane.blogspot.com/2013/06/tsonga-people-south-african-peaceful.html",
-      "Kronos — Photographic Narrations and the Visual Struggle for Mozambique. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902020000100009",
-      "Maputo Essential Tours — Ethnic Groups of Mozambique. https://www.maputoessentialtours.com/general-4",
-      "British and Foreign Bible Society — Ronga Bible (1923)",
-      "Junod, Henri-Alexandre — The Life of a South African Tribe (2 volumes, 1912-1913, re-edition 1927)"
+      {
+        "title": "SIL Ethnologue — Ronga (rng)",
+        "url": "https://www.ethnologue.com/language/rng/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kwekudee — Tsonga People: South African Peaceful People",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/06/tsonga-people-south-african-peaceful.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Kronos — Photographic Narrations and the Visual Struggle for Mozambique",
+        "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902020000100009",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+      },
+      {
+        "title": "Maputo Essential Tours — Ethnic Groups of Mozambique",
+        "url": "https://www.maputoessentialtours.com/general-4",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for maputoessentialtours.com."
+      },
+      {
+        "title": "British and Foreign Bible Society — Ronga Bible (1923)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Junod, Henri-Alexandre — The Life of a South African Tribe (2 volumes, 1912-1913, re-edition 1927)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

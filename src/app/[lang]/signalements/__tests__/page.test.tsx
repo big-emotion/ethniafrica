@@ -120,7 +120,7 @@ describe("/[lang]/signalements page", () => {
   // @req REQ-014
   it("exports the public index metadata and caches its data for one minute", () => {
     expect(metadata).toEqual({
-      title: "Tous les signalements — Africa History",
+      title: "Tous les signalements — EthniAfrica",
       description:
         "Transparence éditoriale — explorez les signalements de la communauté",
     });

@@ -3,6 +3,7 @@
   "nameMain": "Fang",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GAB", "GNQ", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fang",
@@ -101,12 +102,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica – Fang: https://www.britannica.com/topic/Fang-people",
-      "Joshua Project – Fang in Gabon: https://joshuaproject.net/people_groups/print/11187/GB",
-      "Metropolitan Museum of Art – Male Reliquary Figure (Nlo Bieri): https://www.metmuseum.org/art/collection/search/312334",
-      "Sainsbury Centre – Reliquary guardian head Fang: https://sainsburycentre.ac.uk/art-and-objects/240-reliquary-guardian-head-angokh-nlo-byeri/",
-      "Smithsonian Folkways – Fang Bwiti Music from Gabon: https://folkways.si.edu/music-from-an-equatorial-microcosm-fang-bwiti-from-gabon-republic-africa-with-mbiri-selections/world/album/smithsonian",
-      "Qiraat Africa – The Fang people of Africa: https://qiraatafrican.com/en/14988/the-fang-people-of-africa/"
+      {
+        "title": "Encyclopaedia Britannica – Fang",
+        "url": "https://www.britannica.com/topic/Fang-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project – Fang in Gabon",
+        "url": "https://joshuaproject.net/people_groups/print/11187/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Metropolitan Museum of Art – Male Reliquary Figure (Nlo Bieri)",
+        "url": "https://www.metmuseum.org/art/collection/search/312334",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      },
+      {
+        "title": "Sainsbury Centre – Reliquary guardian head Fang",
+        "url": "https://sainsburycentre.ac.uk/art-and-objects/240-reliquary-guardian-head-angokh-nlo-byeri/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers sainsburycentre.ac.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Folkways – Fang Bwiti Music from Gabon",
+        "url": "https://folkways.si.edu/music-from-an-equatorial-microcosm-fang-bwiti-from-gabon-republic-africa-with-mbiri-selections/world/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      },
+      {
+        "title": "Qiraat Africa – The Fang people of Africa",
+        "url": "https://qiraatafrican.com/en/14988/the-fang-people-of-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

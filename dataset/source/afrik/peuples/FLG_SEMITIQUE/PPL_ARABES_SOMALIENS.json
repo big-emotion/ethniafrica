@@ -3,6 +3,7 @@
   "nameMain": "Arabes somaliens",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["SOM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Arabes somaliens",
@@ -100,10 +101,30 @@
       ]
     },
     "sources": [
-      "Minority Rights Group – Coastal minorities including Benadiri, Bajuni and Bravans in Somalia (https://minorityrights.org/communities/benadiri/), mis a jour novembre 2024",
-      "Joshua Project – Arab in Somalia (https://joshuaproject.net/people_groups/10375/SO)",
-      "Ibn Battuta – Rihla (Voyages), XIV e siecle (description du Sultanat de Mogadiscio)",
-      "Cassanelli L.V. – The Origins and Development of Mogadishu AD 1000 to 1850, Universita Roma Tre, 2001"
+      {
+        "title": "Minority Rights Group – Coastal minorities including Benadiri, Bajuni and Bravans in Somalia , mis a jour novembre 2024",
+        "url": "https://minorityrights.org/communities/benadiri/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project – Arab in Somalia",
+        "url": "https://joshuaproject.net/people_groups/10375/SO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ibn Battuta – Rihla (Voyages), XIV e siecle (description du Sultanat de Mogadiscio)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Cassanelli L.V. – The Origins and Development of Mogadishu AD 1000 to 1850, Universita Roma Tre, 2001",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

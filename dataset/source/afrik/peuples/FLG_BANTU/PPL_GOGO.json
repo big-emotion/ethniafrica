@@ -81,11 +81,36 @@
       ]
     },
     "sources": [
-      "Ethnologue – Gogo (gog): https://www.ethnologue.com/language/gog/",
-      "PeopleGroups.org – Gogo of Tanzania: https://peoplegroups.org/people_groups/pg014928/",
-      "National Bureau of Statistics Tanzania – 2022 Population and Housing Census: https://www.nbs.go.tz/",
-      "101 Last Tribes – Gogo people: https://www.101lasttribes.com/tribes/gogo.html",
-      "Kwekudee Trip Down Memory Lane – Wagogo people: https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/wagogo-gogo-people-tanzanian-dancing.html"
+      {
+        "title": "Ethnologue – Gogo (gog)",
+        "url": "https://www.ethnologue.com/language/gog/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org – Gogo of Tanzania",
+        "url": "https://peoplegroups.org/people_groups/pg014928/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "National Bureau of Statistics Tanzania – 2022 Population and Housing Census",
+        "url": "https://www.nbs.go.tz/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for nbs.go.tz."
+      },
+      {
+        "title": "101 Last Tribes – Gogo people",
+        "url": "https://www.101lasttribes.com/tribes/gogo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Kwekudee Trip Down Memory Lane – Wagogo people",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/wagogo-gogo-people-tanzanian-dancing.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Créoles Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Créoles Seychellois",
@@ -86,11 +87,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Seychelles French Creole (crs). https://www.ethnologue.com/language/crs/",
-      "UNESCO — Moutya, patrimoine immatériel (2021). https://ich.unesco.org/en/RL/moutya-01559",
-      "Seychelles.com — The People of Seychelles: A Melting Pot of Cultures. https://www.seychelles.com/blog-details/2589/highlights/people-seychelles-melting-pot-cultures",
-      "The Creole Melting Pot — The Moutya in Seychelles: a Brief History. https://www.thecreolemeltingpot.com/the-moutya-in-seychelles-a-brief-history/",
-      "CIA World Factbook — Seychelles. https://www.cia.gov/the-world-factbook/countries/seychelles/"
+      {
+        "title": "SIL Ethnologue — Seychelles French Creole (crs)",
+        "url": "https://www.ethnologue.com/language/crs/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO — Moutya, patrimoine immatériel (2021)",
+        "url": "https://ich.unesco.org/en/RL/moutya-01559",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Seychelles.com — The People of Seychelles: A Melting Pot of Cultures",
+        "url": "https://www.seychelles.com/blog-details/2589/highlights/people-seychelles-melting-pot-cultures",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers seychelles.com; the tier awaits editorial review."
+      },
+      {
+        "title": "The Creole Melting Pot — The Moutya in Seychelles: a Brief History",
+        "url": "https://www.thecreolemeltingpot.com/the-moutya-in-seychelles-a-brief-history/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers thecreolemeltingpot.com; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Seychelles",
+        "url": "https://www.cia.gov/the-world-factbook/countries/seychelles/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Yao (Mozambique)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Yao (Mozambique)",
@@ -85,11 +86,36 @@
       ]
     },
     "sources": [
-      "Ethnologue — Yao language (yao). https://www.ethnologue.com/language/yao/",
-      "Joshua Project — Yao in Mozambique. https://joshuaproject.net/people_groups/15988/MZ",
-      "Gordon-Conwell Center for Global Christianity — Niassa, Mozambique: The Makhuwa-Shirima and Yao (2020). https://www.gordonconwell.edu/center-for-global-christianity/wp-content/uploads/sites/13/2020/08/Niassa-Dossier.pdf",
-      "Qiraat Africa — The Yao/Wayao people of Lake Malawi. https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
-      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/"
+      {
+        "title": "Ethnologue — Yao language (yao)",
+        "url": "https://www.ethnologue.com/language/yao/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Yao in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/15988/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gordon-Conwell Center for Global Christianity — Niassa, Mozambique: The Makhuwa-Shirima and Yao (2020)",
+        "url": "https://www.gordonconwell.edu/center-for-global-christianity/wp-content/uploads/sites/13/2020/08/Niassa-Dossier.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers gordonconwell.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — The Yao/Wayao people of Lake Malawi",
+        "url": "https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

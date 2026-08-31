@@ -3,6 +3,7 @@
   "nameMain": "Mocha",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mocha",
@@ -73,12 +74,42 @@
       ]
     },
     "sources": [
-      "Shekka in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14887)",
-      "Shekkacho – EthiopiaScripture.org, 2023 (https://www.ethiopiascripture.org/en/languages/s/shekkacho)",
-      "Situation of the Shekha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2015 (https://www.ecoi.net/en/document/1297530.html)",
-      "Statistical Data on Sheka and Keffa Zones – MTU Sociology / CSA Ethiopia, 2007 (https://mtusociology.github.io)",
-      "Leslau, Wolf – Mocha, A Tone Language of The Kafa Group in South-Western Ethiopia, Africa, 1958",
-      "ISO 639-3: moy (Shekkacho) – SIL International / Ethnologue"
+      {
+        "title": "Shekka in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14887",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Shekkacho – EthiopiaScripture.org, 2023",
+        "url": "https://www.ethiopiascripture.org/en/languages/s/shekkacho",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ethiopiascripture.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Situation of the Shekha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2015",
+        "url": "https://www.ecoi.net/en/document/1297530.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      },
+      {
+        "title": "Statistical Data on Sheka and Keffa Zones – MTU Sociology / CSA Ethiopia, 2007",
+        "url": "https://mtusociology.github.io",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mtusociology.github.io; the tier awaits editorial review."
+      },
+      {
+        "title": "Leslau, Wolf – Mocha, A Tone Language of The Kafa Group in South-Western Ethiopia, Africa, 1958",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "ISO 639-3: moy (Shekkacho) – SIL International / Ethnologue",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

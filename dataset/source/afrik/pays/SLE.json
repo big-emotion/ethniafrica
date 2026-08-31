@@ -1,11 +1,17 @@
 {
   "id": "SLE",
-  "nameFr": "République de Sierra Leone (Republic of Sierra Leone)",
+  "nameFr": "Sierra Leone",
   "nameOfficial": "République de Sierra Leone (Republic of Sierra Leone)",
+  "summary": "La Sierra Leone porte un nom espagnol donné par un Portugais : « Sierra Leona », les montagnes du lion, que Pedro de Sintra crut y reconnaître en 1462. Freetown fut fondée en 1787 pour y installer des esclaves affranchis. Temne, Mende, Limba et Krio y font coexister traditions atlantiques, mandé et créoles.",
   "etymology": "Le nom \"Sierra Leone\" vient de l'espagnol \"Sierra Leona\" (montagnes du lion), donné par l'explorateur portugais Pedro de Sintra en 1462. Il aurait vu des montagnes qui ressemblaient à des lions rugissants, d'où le nom \"Serra Lyoa\" (montagnes du lion) en portugais, qui est devenu \"Sierra Leone\" en espagnol puis en anglais. Le nom a été conservé par les Britanniques lors de la colonisation.",
   "nameOriginActor": "L'explorateur portugais Pedro de Sintra a nommé la région \"Serra Lyoa\" (montagnes du lion) en 1462, en référence aux montagnes qui ressemblaient à des lions rugissants. Le nom a été anglicisé en \"Sierra Leone\" par les Britanniques.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Sierra Leona (portugais, 1462)",
+        "Colonie de Freetown (1787-1808)",
+        "Colonie britannique de Sierra Leone (1808-1961)"
+      ],
       "antiquity": "Pas de présence humaine documentée dans la région avant l'arrivée des peuples atlantiques et mandé.",
       "middleAges": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux.",
       "precolonial": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle. La région était connue sous le nom de \"Serra Lyoa\" (montagnes du lion) par les Portugais.",
@@ -174,18 +180,53 @@
       "postIndependence": "République de Sierra Leone (1961), présidence de Siaka Stevens (1968-1985, régime autoritaire, parti unique), présidence de Joseph Momoh (1985-1992), coup d'État (1992), guerre civile (1991-2002, conflit sanglant, diamants de sang, crimes de guerre), transition démocratique (2002), élections multipartites, présidence d'Ahmed Tejan Kabbah (1996-1997, 1998-2007), Ernest Bai Koroma (2007-2018), Julius Maada Bio (depuis 2018). Stabilité politique fragile, démocratie multipartite, reconstruction post-conflit, développement économique (exploitation minière, agriculture). La Sierra Leone est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Sierra Leone",
-      "SIL Ethnologue – Languages of Sierra Leone",
-      "Recensements sierra-léonais",
-      "Études anthropologiques sur les peuples de Sierra Leone",
-      "Études historiques sur la colonisation britannique"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Sierra Leone",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Sierra Leone",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements sierra-léonais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Sierra Leone",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Temne",
-          "population": 2250000,
           "percentageInCountry": 30,
           "peopleId": "PPL_TEMNE",
           "region": "Nord et centre de la Sierra Leone",
@@ -193,7 +234,6 @@
         },
         {
           "name": "Mende",
-          "population": 1800000,
           "percentageInCountry": 24,
           "peopleId": "PPL_MENDE",
           "region": "Sud-Est de la Sierra Leone",
@@ -233,7 +273,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 1560000,
           "percentageInCountry": 20.8,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions de la Sierra Leone"

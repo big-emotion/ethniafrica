@@ -1,11 +1,17 @@
 {
   "id": "EGY",
-  "nameFr": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
+  "nameFr": "Égypte",
   "nameOfficial": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
+  "summary": "L'Égypte s'appelle « Miṣr » en arabe depuis l'Antiquité, et « Kemet », la terre noire, dans la langue des pharaons ; « Égypte » est un mot grec passé par le nom d'un temple de Memphis. Ancien, Moyen et Nouvel Empire, période ptolémaïque, conquête arabe puis domination ottomane s'y sont succédé. Arabophones, Coptes, Siwi et Beja y composent l'une des plus longues continuités culturelles du monde.",
   "etymology": "Le nom \"Égypte\" vient du grec \"Aigyptos\", lui-même dérivé de \"Hikuptah\" (nom d'un temple de Memphis). Le nom arabe \"Miṣr\" (مصر) signifie \"pays\" ou \"frontière\" et est utilisé depuis l'Antiquité. L'ancien nom égyptien était \"Kemet\" (terre noire).",
   "nameOriginActor": "Le nom \"Égypte\" a été donné par les Grecs. Le nom arabe \"Miṣr\" est utilisé depuis la conquête arabe (VIIe siècle).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Kemet (égyptien ancien, « la terre noire »)",
+        "Aigyptos (grec)",
+        "Miṣr (arabe, toujours en usage)"
+      ],
       "antiquity": "Kemet (terre noire, ancien nom égyptien), Aigyptos (grec), Aegyptus (latin). Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.).",
       "middleAges": "Miṣr (arabe), Égypte (français). Domination arabe (VIIe siècle), puis turque (XVIe siècle).",
       "precolonial": "Miṣr (nom arabe), Égypte ottomane (1517-1882), État semi-autonome sous les Mamelouks puis les Ottomans.",
@@ -180,19 +186,59 @@
       "postIndependence": "République arabe d'Égypte (1958), union avec la Syrie (1958-1961), guerre des Six Jours (1967), guerre du Kippour (1973), paix avec Israël (1979), printemps arabe (2011), transition politique."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Egypt",
-      "Ethnologue – Languages of Egypt",
-      "Joshua Project – Coptic in Egypt",
-      "Encyclopaedia of Islam – Egypt",
-      "Recensements égyptiens",
-      "Siwa Heritage Foundation"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Egypt",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Egypt",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project – Coptic in Egypt",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia of Islam – Egypt",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements égyptiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Siwa Heritage Foundation",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes d'Égypte",
-          "population": 94500000,
           "percentageInCountry": 90,
           "percentageInAfrica": 52.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

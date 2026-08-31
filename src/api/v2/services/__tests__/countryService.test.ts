@@ -1,5 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { getCountries, getCountryById } from "../countryService";
+import {
+  getCountries,
+  getCountryById,
+  getCountryIndex,
+} from "../countryService";
 
 vi.mock("@/lib/supabase/queries/afrik/countries", () => ({
   getAllAfrikCountries: vi.fn(),
@@ -17,6 +21,7 @@ describe("Country Service", () => {
   });
 
   describe("getCountries", () => {
+    // @req REQ-019
     it("should return paginated countries", async () => {
       const mockCountries = Array.from({ length: 10 }, (_, i) => ({
         id: `COU${i}`,
@@ -91,6 +96,25 @@ describe("Country Service", () => {
       const country = await getCountryById("XXX");
 
       expect(country).toBeNull();
+    });
+  });
+
+  describe("getCountryIndex", () => {
+    // @req REQ-116
+    it("lists every country the corpus holds a fiche for, id and name only", async () => {
+      vi.mocked(getAllAfrikCountries).mockResolvedValue([
+        { id: "NGA", nameFr: "Nigeria", content: {} },
+        { id: "COM", nameFr: "Comores", content: {} },
+      ]);
+
+      const index = await getCountryIndex();
+
+      // COM has no admin-0 outline; the index is drawn from the corpus, so
+      // it is listed all the same.
+      expect(index).toEqual([
+        { id: "NGA", nameFr: "Nigeria" },
+        { id: "COM", nameFr: "Comores" },
+      ]);
     });
   });
 });

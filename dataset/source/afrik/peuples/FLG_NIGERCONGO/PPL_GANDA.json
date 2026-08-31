@@ -3,6 +3,7 @@
   "nameMain": "Ganda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ganda",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "Buganda Kingdom official website - History. https://buganda.or.ug/history-of-buganda/",
-      "Uganda Bureau of Statistics (UBOS) - Population projections. https://www.ubos.org/",
-      "UNESCO - Barkcloth making in Uganda. https://ich.unesco.org/",
-      "UNESCO - Baganda royal dances. https://ich.unesco.org/",
-      "SIL Ethnologue - Ganda language (lug). https://www.ethnologue.com/language/lug/",
-      "EBSCO Research Starters - Rise of Buganda. https://www.ebsco.com/research-starters/history/rise-buganda"
+      {
+        "title": "Buganda Kingdom official website - History",
+        "url": "https://buganda.or.ug/history-of-buganda/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for buganda.or.ug."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) - Population projections",
+        "url": "https://www.ubos.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "UNESCO - Barkcloth making in Uganda",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "UNESCO - Baganda royal dances",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue - Ganda language (lug)",
+        "url": "https://www.ethnologue.com/language/lug/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "EBSCO Research Starters - Rise of Buganda",
+        "url": "https://www.ebsco.com/research-starters/history/rise-buganda",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      }
     ]
   }
 }

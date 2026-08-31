@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_COMMERCIAL_SONINKE_TUAREG",
+  "relationType": "commercial",
+  "peopleIdA": "PPL_SONINKE",
+  "peopleIdB": "PPL_TUAREG",
+  "direction": "bidirectional",
+  "period": {
+    "startYear": 1200,
+    "endYear": 1600,
+    "label": "XIIIe-XVIe siècle"
+  },
+  "description": "À partir du XIIIe siècle, des communautés marchandes soninké (la diaspora wangara) fondent et exploitent des comptoirs commerciaux dans les villes sahariennes de Oualata et Tombouctou, qui servent de terminus méridionaux aux caravanes transsahariennes de sel, notamment la route reliant les gisements de sel de Taghaza et Taoudenni au Sahel. Les confédérations touarègues contrôlent ces routes caravanières désertiques, échangeant le sel saharien contre de l'or et d'autres biens fournis par les marchands soninké et leurs partenaires sahéliens, dans le cadre des empires du Mali puis, plus tard, du Songhaï.",
+  "sources": [
+    {
+      "title": "The Wangara, an Old Soninke Diaspora in West Africa?",
+      "author": "Andreas W. Massing",
+      "year": 2000,
+      "url": "https://journals.openedition.org/etudesafricaines/175",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Wangara people » et « Oualata », qui citent cet article comme source académique primaire. Article évalué par les pairs, Cahiers d'études africaines, vol. 40, n°158, p. 281-308 (DOI 10.4000/etudesafricaines.175), en accès libre via OpenEdition. Documente les branches septentrionales soninké/wangara gérant les caravanes de sel (notamment depuis Taoudenni) et Tombouctou/Oualata comme grands centres commerciaux soninké."
+    },
+    {
+      "title": "Empires of Medieval West Africa: Ghana, Mali, and Songhay",
+      "author": "David C. Conrad",
+      "year": 2005,
+      "url": "https://sahistory.org.za/sites/default/files/archive-files3/david_c._conrad_empires_of_medieval_west_africabook4me.org_.pdf",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN et FR « Oualata ». Ouvrage académique (Facts On File, coll. « Great Empires of the Past », ISBN 0-8160-5562-9) distinguant explicitement les Berbères sanhadja (partenaires commerciaux à l'époque de l'empire du Ghana) des Touaregs (partenaires à partir de l'époque de l'empire du Mali), et documentant les relations commerciales touarègues avec Oualata/Tombouctou, notamment lors de la conquête songhaï de 1468."
+    }
+  ]
+}

@@ -71,10 +71,30 @@
       ]
     },
     "sources": [
-      "Sumbwa in Tanzania – Joshua Project 2025 (https://joshuaproject.net/people_groups/15120)",
-      "Sumbwa – University of Missouri Ethnographic Survey (https://dice.missouri.edu/assets/docs/niger-congo/Sumbwa.pdf)",
-      "Sumbwa – Glottolog 5.3, code sumb1240 (https://glottolog.org/resource/languoid/id/sumb1240)",
-      "Bantu, Central-Tanzania People Cluster – Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)"
+      {
+        "title": "Sumbwa in Tanzania – Joshua Project 2025",
+        "url": "https://joshuaproject.net/people_groups/15120",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sumbwa – University of Missouri Ethnographic Survey",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Sumbwa.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Sumbwa – Glottolog 5.3, code sumb1240",
+        "url": "https://glottolog.org/resource/languoid/id/sumb1240",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Bantu, Central-Tanzania People Cluster – Joshua Project 2025",
+        "url": "https://www.joshuaproject.net/clusters/341",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

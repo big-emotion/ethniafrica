@@ -3,6 +3,7 @@
   "nameMain": "Arbore",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Arbore",
@@ -75,10 +76,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Arbore people (http://www.101lasttribes.com/tribes/arbore.html)",
-      "Trip Down Memory Lane – Arbore People (https://kwekudee-tripdownmemorylane.blogspot.com/2013/01/the-arbore-are-cushitic-omo-valley.html)",
-      "Ethnologue – Arbore [arv] (https://www.ethnologue.com/language/arv/)",
-      "Sasse H.-J., The Cushitic languages of the Omo-Tana group, 1974"
+      {
+        "title": "101 Last Tribes – Arbore people",
+        "url": "http://www.101lasttribes.com/tribes/arbore.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Trip Down Memory Lane – Arbore People",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/01/the-arbore-are-cushitic-omo-valley.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Ethnologue – Arbore [arv]",
+        "url": "https://www.ethnologue.com/language/arv/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Sasse H.-J., The Cushitic languages of the Omo-Tana group, 1974",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

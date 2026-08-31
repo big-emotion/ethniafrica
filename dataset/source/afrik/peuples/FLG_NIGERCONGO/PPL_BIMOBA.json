@@ -3,6 +3,7 @@
   "nameMain": "Bimoba",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "TGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bimoba",
@@ -77,10 +78,30 @@
       ]
     },
     "sources": [
-      "Bimoba, Moba in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10854)",
-      "Bimoba Dictionary Introduction – Webonary/SIL, 2014 (https://www.webonary.org/bimoba/introduction/)",
-      "Bimoba ISO 639-3 bim – CEDS/ISO, 2024 (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
-      "Bimoba – ScriptSource/Ethnologue (https://www.scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=bim)"
+      {
+        "title": "Bimoba, Moba in Ghana – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/10854",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bimoba Dictionary Introduction – Webonary/SIL, 2014",
+        "url": "https://www.webonary.org/bimoba/introduction/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for webonary.org."
+      },
+      {
+        "title": "Bimoba ISO 639-3 bim – CEDS/ISO, 2024",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Bimoba – ScriptSource/Ethnologue",
+        "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=bim",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      }
     ]
   }
 }

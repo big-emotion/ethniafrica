@@ -3,6 +3,7 @@
   "nameMain": "Ronga (Mozambique)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ronga (Mozambique)",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Ronga (rng). https://www.ethnologue.com/language/rng/",
-      "Junod, Henri-Alexandre — The Life of a South African Tribe (2 volumes, 1912-1913). https://archive.org/",
-      "Kronos — Photographic Narrations and the Visual Struggle for Mozambique. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902020000100009",
-      "British and Foreign Bible Society — Ronga Bible (1923)",
-      "Instituto Nacional de Estatistica de Mocambique — www.ine.gov.mz",
-      "Maputo Essential Tours — Ethnic Groups of Mozambique. https://www.maputoessentialtours.com/general-4"
+      {
+        "title": "SIL Ethnologue — Ronga (rng)",
+        "url": "https://www.ethnologue.com/language/rng/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Junod, Henri-Alexandre — The Life of a South African Tribe (2 volumes, 1912-1913)",
+        "url": "https://archive.org/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.org."
+      },
+      {
+        "title": "Kronos — Photographic Narrations and the Visual Struggle for Mozambique",
+        "url": "http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902020000100009",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.org.za."
+      },
+      {
+        "title": "British and Foreign Bible Society — Ronga Bible (1923)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Instituto Nacional de Estatistica de Mocambique — www.ine.gov.mz",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Maputo Essential Tours — Ethnic Groups of Mozambique",
+        "url": "https://www.maputoessentialtours.com/general-4",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for maputoessentialtours.com."
+      }
     ]
   }
 }

@@ -1,11 +1,16 @@
 {
   "id": "TGO",
-  "nameFr": "République togolaise (Republic of Togo)",
+  "nameFr": "Togo",
   "nameOfficial": "République togolaise (Republic of Togo)",
+  "summary": "Le Togo doit son nom à Togoville, village au bord du lac Togo : « au-delà de l'eau », en éwé. Protectorat allemand, puis mandat français après 1914, le pays a gardé une frontière qui coupe en deux l'aire éwé. Ewe, Kabyè, Mina et Gurma y font se rencontrer côte et savane.",
   "etymology": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), un village situé sur les rives du lac Togo. Le terme \"Togo\" signifie \"au-delà de la rivière\" ou \"au-delà de l'eau\" en langue ewe. Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
   "nameOriginActor": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), nommé par les peuples locaux (Ewe). Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Togoland allemand (1884-1914)",
+        "Togo français (1914-1960)"
+      ],
       "antiquity": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Contacts avec les civilisations voisines. La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
       "middleAges": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
       "precolonial": "Présence de peuples Gbe (Ewe, Fon, Adja) et autres groupes dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens, mais les populations locales avaient leurs propres appellations.",
@@ -121,18 +126,53 @@
       "postIndependence": "République togolaise (1960), présidence de Sylvanus Olympio (1960-1963, assassinat), coup d'État (1963), présidence de Nicolas Grunitzky (1963-1967), coup d'État (1967), présidence de Gnassingbé Eyadéma (1967-2005, régime autoritaire, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de Faure Gnassingbé (depuis 2005, fils de Gnassingbé Eyadéma). Stabilité politique fragile, démocratie multipartite, développement économique (agriculture, exploitation minière). Le Togo est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Togo",
-      "SIL Ethnologue – Languages of Togo",
-      "Recensements togolais",
-      "Études anthropologiques sur les peuples du Togo",
-      "Études historiques sur la colonisation allemande et française"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Togo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Togo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements togolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Togo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation allemande et française",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Ewe",
-          "population": 3500000,
           "percentageInCountry": 42,
           "peopleId": "PPL_EWE",
           "region": "Sud du Togo",
@@ -140,7 +180,6 @@
         },
         {
           "name": "Kabye",
-          "population": 1200000,
           "percentageInCountry": 14.4,
           "peopleId": "PPL_KABYE",
           "region": "Nord du Togo",
@@ -156,7 +195,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 2800000,
           "percentageInCountry": 34,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions du Togo"

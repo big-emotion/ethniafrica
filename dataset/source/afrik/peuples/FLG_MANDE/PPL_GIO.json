@@ -3,6 +3,7 @@
   "nameMain": "Gio",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["LBR", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gio",
@@ -77,12 +78,42 @@
       ]
     },
     "sources": [
-      "Dan, Da in Liberia – Joshua Project (https://joshuaproject.net/people_groups/11485/LI)",
-      "Dan | History, Culture & Religion – Encyclopaedia Britannica (https://www.britannica.com/topic/Dan-African-people)",
-      "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",
-      "Dan people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/dan.html)",
-      "Dan Tribe – Gateway Africa Safaris (https://www.gateway-africa.com/tribe/dan_tribe.html)",
-      "Liberia Population and Housing Census 2022 – LISGIS (https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf)"
+      {
+        "title": "Dan, Da in Liberia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11485/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Dan | History, Culture & Religion – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Dan-African-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Minority Rights Group – Liberia, 2024",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Dan people – 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/dan.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Dan Tribe – Gateway Africa Safaris",
+        "url": "https://www.gateway-africa.com/tribe/dan_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "Liberia Population and Housing Census 2022 – LISGIS",
+        "url": "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for lisgis.gov.lr."
+      }
     ]
   }
 }

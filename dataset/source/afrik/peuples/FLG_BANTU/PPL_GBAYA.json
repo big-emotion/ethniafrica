@@ -3,6 +3,7 @@
   "nameMain": "Gbaya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "CMR", "COG", "COD", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gbaya",
@@ -107,12 +108,42 @@
       ]
     },
     "sources": [
-      "Gbaya – Encyclopaedia Britannica (https://www.britannica.com/topic/Gbaya)",
-      "Gbaya-Bossangoa in Central African Republic – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11844)",
-      "Gbaya, Northwest in Cameroon – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10742/CM)",
-      "Gbaya, Southwest in Central African Republic – Joshua Project (https://joshuaproject.net/people_groups/11843)",
-      "What Is The Ethnic Composition of the Central African Republic – WorldAtlas, 2019 (https://www.worldatlas.com/articles/what-is-the-ethnic-composition-of-the-population-of-central-african-republic.html)",
-      "Gbaya-Bossangoa Language (GBP) – Ethnologue (https://www.ethnologue.com/language/gbp/)"
+      {
+        "title": "Gbaya – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Gbaya",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Gbaya-Bossangoa in Central African Republic – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11844",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gbaya, Northwest in Cameroon – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10742/CM",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gbaya, Southwest in Central African Republic – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11843",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "What Is The Ethnic Composition of the Central African Republic – WorldAtlas, 2019",
+        "url": "https://www.worldatlas.com/articles/what-is-the-ethnic-composition-of-the-population-of-central-african-republic.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldatlas.com."
+      },
+      {
+        "title": "Gbaya-Bossangoa Language (GBP) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/gbp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

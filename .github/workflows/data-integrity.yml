@@ -1,9 +1,10 @@
 name: Data Integrity Gate
 
 on:
+  # Pre-merge only, matching ci.yml. The `push` trigger duplicated every PR run
+  # on merge; corpus drift that appears without a PR (an external source moving)
+  # is what the nightly schedule below is for.
   pull_request:
-    branches: [main, recette]
-  push:
     branches: [main, recette]
   schedule:
     - cron: "0 2 * * *"
@@ -25,17 +26,35 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       # Enforced FR32 gate. Failures block the PR / push.
-      - name: Run data-integrity validation (PR/push)
+      - name: Run FR52-inclusive data-integrity validation (PR/push)
         if: github.event_name != 'schedule'
         run: npx tsx scripts/validateAfrikData.ts
         env:
           CHECK_SOURCE_URLS: "false"
 
-      - name: Run data-integrity validation (nightly — includes URL checks)
+      - name: Run FR52-inclusive data-integrity validation (nightly — includes URL checks)
         if: github.event_name == 'schedule'
         run: npx tsx scripts/validateAfrikData.ts
         env:
           CHECK_SOURCE_URLS: "true"
+
+      # Descending ratchet on sources with no explicit tier (needs_review or
+      # absent). Fails when the count grows; the threshold lives in the script.
+      - name: Check source tier coverage
+        run: npx tsx scripts/ci/checkSourceTierCoverage.ts
+
+      # Reports the tier mix and the untiered tail across the 789 people
+      # fiches, and writes the Prismic eligibility manifest.
+      - name: Run people source tier audit
+        run: npm run audit:people-sources
+
+      - name: Upload people source tier audit artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: people-source-tier-audit
+          path: dataset/source/afrik/logs/people-source-tier-audit.*
+          if-no-files-found: ignore
 
       - name: Upload source-url-health log (nightly only)
         if: github.event_name == 'schedule' && always()
@@ -44,3 +63,51 @@ jobs:
           name: source-url-health-log
           path: dataset/source-url-health.log
           if-no-files-found: ignore
+
+  quiz-bank-integrity:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Enforced QZ-1..QZ-5 gate (FR65/FR69/AR20). Read-only — mutates nothing.
+      - name: Run quiz bank integrity check (--check)
+        run: npx tsx scripts/generateQuizQuestions.ts --check
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+  # A drift watch, not a pre-merge gate. It answers the question nobody was
+  # asking on a schedule: does the recette database still match
+  # supabase/migrations/? It catches the three ways they part company — a
+  # migration merged but never applied, one applied then deleted from the repo,
+  # and one edited after it was applied. All three have happened here.
+  migration-state:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Reconcile supabase/migrations against the recette database
+        run: npm run check:migration-state
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

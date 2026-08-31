@@ -1,11 +1,16 @@
 {
   "id": "SSD",
-  "nameFr": "République du Soudan du Sud (Republic of South Sudan)",
+  "nameFr": "Soudan du Sud",
   "nameOfficial": "République du Soudan du Sud (Republic of South Sudan)",
+  "summary": "Le Soudan du Sud, séparé du Soudan en 2011, hérite de la moitié d'un nom donné de l'extérieur : « le pays des Noirs », chez les géographes arabes. Son territoire est celui du royaume Shilluk, du royaume Zande et des chefferies dinka et nuer. Dinka, Nuer, Shilluk et Zande y perpétuent l'élevage pastoral et la poésie orale.",
   "etymology": "Le nom \"Soudan du Sud\" provient de sa position géographique par rapport au Soudan, dont il s'est séparé en 2011. Le terme \"Soudan\" vient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 pour distinguer le nouveau pays du Soudan (au nord).",
   "nameOriginActor": "Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 par le gouvernement sud-soudanais, suite au référendum d'autodétermination et à la sécession du Soudan.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Soudan anglo-égyptien (1899-1956)",
+        "Sud du Soudan (1956-2011)"
+      ],
       "antiquity": "Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
       "middleAges": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
       "precolonial": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de \"Soudan du Sud\" par les Européens, mais les populations locales avaient leurs propres appellations.",
@@ -158,13 +163,54 @@
       "postIndependence": "République du Soudan du Sud (2011), présidence de Salva Kiir Mayardit (depuis 2011), guerre civile (2013-2020, conflit entre forces gouvernementales et rebelles, violences ethniques, crimes de guerre), accord de paix (2020), transition politique, reconstruction post-conflit. Stabilité politique fragile, État en transition, conflits récents (guerre civile 2013-2020), développement économique (élevage, agriculture, exploitation pétrolière). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – South Sudan",
-      "SIL Ethnologue – Languages of South Sudan",
-      "Recensements sud-soudanais",
-      "Études anthropologiques sur les peuples du Soudan du Sud",
-      "Études historiques sur la colonisation britannique et égyptienne",
-      "CIA World Factbook – South Sudan (ethnic groups)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements sud-soudanais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Soudan du Sud",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique et égyptienne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – South Sudan (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

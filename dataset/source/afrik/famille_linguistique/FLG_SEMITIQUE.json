@@ -2,6 +2,7 @@
   "id": "FLG_SEMITIQUE",
   "nameFr": "Sémitique",
   "nameEn": "Semitic",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Le terme « chamito-sémitique » est profondément racialiste et colonial : il classe des peuples selon des généalogies bibliques et une hiérarchie raciale imaginaire. La notion de « Chamites », opposée à « Sémites », a été utilisée par des auteurs coloniaux (notamment Ernest Renan, Friedrich Müller) pour attribuer certains progrès techniques ou civilisations africaines à des étrangers « non-nègres », créant une dichotomie artificielle entre peuples « civilisés » (Sémites) et « primitifs » (Chamites). Cette classification a servi les discours coloniaux français, britanniques et allemands pour hiérarchiser les peuples africains. Des auteurs africains ont critiqué cette vision : **Cheikh Anta Diop** (1923-1986) dans *Nations nègres et culture* (1954) et *Antériorité des civilisations nègres* (1967) a dénoncé la division Chamites/Sémites comme eurocentrée, affirmant l'origine africaine des langues afro-asiatiques. Le linguiste éthiopien **Wolf Leslau** (1906-2006) a documenté les langues éthiosémitiques comme pleinement inscrites dans le monde africain. Les études génétiques modernes (Kitchen et al. 2009, Pagani et al. 2015) montrent que les populations parlant des langues sémitiques en Afrique présentent des patrimoines génétiques majoritairement africains avec des apports ouest-eurasiens anciens, invalidant toute lecture raciale essentialiste. Aujourd'hui, seule l'appellation **« sémitique »** (linguistique) est conservée, classée comme branche de la famille afro-asiatique (terme préféré à « chamito-sémitique »).",
@@ -11,7 +12,11 @@
       "originOfHistoricalTerm": " Le terme « sémitique » (allemand *Semitisch*, anglais *Semitic*) a été créé en **1781** par **August Ludwig von Schlözer** (1735-1809) dans son article *\"Von den Chaldäern\"* publié dans le *Repertorium für biblische und morgenländische Literatur* de Johann Gottfried Eichhorn. Schlözer proposa ce terme pour désigner les langues apparentées à l'hébreu, l'arabe et l'araméen, en référence biblique au personnage de Sem (hébreu *Šēm*), fils de Noé dans la Genèse. Le terme fut popularisé par **Johann Gottfried Eichhorn** (1752-1827) dans son article *\"Semitische Sprachen\"* en **1795** et dans son ouvrage *Einleitung ins Alte Testament* (1787). Les linguistes du XIXe siècle, notamment **Friedrich Müller** (1876) dans *Grundriss der Sprachwissenschaft*, ont ensuite construit la catégorie « chamito-sémitique » (ou « chamito-sémitique ») en y ajoutant d'autres peuples africains selon une logique biblique non scientifique, opposant les « Sémites » aux « Chamites » (descendants de Cham, autre fils de Noé)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Sémitique oriental (akkadien-éblaïte, éteint)",
+        "Sémitique non classé (amorite, éteint)",
+        "Sémitique occidental"
+      ],
       "geographicArea": "Afrique du Nord-Est (Égypte, Soudan, Maghreb), Corne de l'Afrique (Éthiopie, Érythrée, Djibouti, Somalie), péninsule Arabique (Arabie Saoudite, Yémen, Oman), Levant (Syrie, Liban, Palestine/Israël, Jordanie), Mésopotamie (Irak).",
       "numberOfLanguages": 40,
       "totalSpeakers": 460000000
@@ -49,27 +54,131 @@
     },
     "distribution": {
       "totalSpeakers": 460000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 27191578
+      }
     },
     "sources": [
-      "Kitchen, Andrew ; Ehret, Christopher ; Assefa, Shiferaw ; Mulligan, Connie J. (2009) – *Bayesian phylogenetic analysis of Semitic languages identifies an Early Bronze Age origin of Semitic in the Near East*. Proceedings of the Royal Society B: Biological Sciences, vol. 276, n° 1668, p. 2703-2710. DOI: 10.1098/rspb.2009.0408",
-      "Pagani, Luca ; Schiffels, Stephan ; Gurdasani, Deepti ; et al. (2015) – *Ethiopian genetic diversity reveals linguistic stratification and complex influences on the Ethiopian gene pool*. Nature Communications, vol. 6, article 1552. DOI: 10.1038/ncomms1552",
-      "Schlözer, August Ludwig von (1781) – *Von den Chaldäern*. Repertorium für biblische und morgenländische Literatur, Göttingen.",
-      "Eichhorn, Johann Gottfried (1795) – *Semitische Sprachen*. Allgemeine Bibliothek der biblischen Litteratur, Leipzig.",
-      "Eichhorn, Johann Gottfried (1787) – *Einleitung ins Alte Testament*. Leipzig.",
-      "Müller, Friedrich (1876) – *Grundriss der Sprachwissenschaft*. Stuttgart: Ferdinand Enke.",
-      "Brockelmann, Carl (1908-1913) – *Grundriss der vergleichenden Grammatik der semitischen Sprachen*. Berlin: Reuther & Reichard.",
-      "Greenberg, Joseph H. (1950) – *Studies in African Linguistic Classification: IV. Chamito-Semitic*. Southwestern Journal of Anthropology, vol. 6, n° 4, p. 487-498.",
-      "Hetzron, Robert (1972) – *Ethiopian Semitic: Studies in Classification*. Journal of Semitic Studies, Monograph n° 2. Manchester: Manchester University Press.",
-      "Diop, Cheikh Anta (1954) – *Nations nègres et culture : De l'antiquité nègre égyptienne aux problèmes culturels de l'Afrique noire d'aujourd'hui*. Paris: Présence Africaine.",
-      "Diop, Cheikh Anta (1967) – *Antériorité des civilisations nègres : Mythe ou vérité historique ?*. Paris: Présence Africaine.",
-      "Leslau, Wolf (1995) – *Reference Grammar of Amharic*. Wiesbaden: Harrassowitz Verlag.",
-      "Huehnergard, John ; Pat-El, Na'ama (2019) – *The Semitic Languages*. 2e édition. London: Routledge.",
-      "Britannica Editors (2025) – *Semitic languages*. Encyclopædia Britannica. Consulté en 2025. URL: https://www.britannica.com/topic/Semitic-languages",
-      "SIL International / Ethnologue (2025) – *Languages of the World*. 26e édition. Dallas: SIL International.",
-      "CIA World Factbook (2025) – *Field Listing: Languages*. Central Intelligence Agency. Consulté en 2025.",
-      "United Nations / UNFPA (2025) – *World Population Prospects*. United Nations Department of Economic and Social Affairs. Consulté en 2025.",
-      "Global Mission Data (2025) – *Language Portal*. Consulté en 2025."
+      {
+        "title": "Kitchen, Andrew ; Ehret, Christopher ; Assefa, Shiferaw ; Mulligan, Connie J. (2009) – *Bayesian phylogenetic analysis of Semitic languages identifies an Early Bronze Age origin of Semitic in the Near East*. Proceedings of the Royal Society B: Biological Sciences, vol. 276, n° 1668, p. 2703-2710. DOI: 10.1098/rspb.2009.0408",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pagani, Luca ; Schiffels, Stephan ; Gurdasani, Deepti ; et al. (2015) – *Ethiopian genetic diversity reveals linguistic stratification and complex influences on the Ethiopian gene pool*. Nature Communications, vol. 6, article 1552. DOI: 10.1038/ncomms1552",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Schlözer, August Ludwig von (1781) – *Von den Chaldäern*. Repertorium für biblische und morgenländische Literatur, Göttingen",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Eichhorn, Johann Gottfried (1795) – *Semitische Sprachen*. Allgemeine Bibliothek der biblischen Litteratur, Leipzig",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Eichhorn, Johann Gottfried (1787) – *Einleitung ins Alte Testament*. Leipzig",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Müller, Friedrich (1876) – *Grundriss der Sprachwissenschaft*. Stuttgart: Ferdinand Enke",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Brockelmann, Carl (1908-1913) – *Grundriss der vergleichenden Grammatik der semitischen Sprachen*. Berlin: Reuther & Reichard",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1950) – *Studies in African Linguistic Classification: IV. Chamito-Semitic*. Southwestern Journal of Anthropology, vol. 6, n° 4, p. 487-498",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hetzron, Robert (1972) – *Ethiopian Semitic: Studies in Classification*. Journal of Semitic Studies, Monograph n° 2. Manchester: Manchester University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Diop, Cheikh Anta (1954) – *Nations nègres et culture : De l'antiquité nègre égyptienne aux problèmes culturels de l'Afrique noire d'aujourd'hui*. Paris: Présence Africaine",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Diop, Cheikh Anta (1967) – *Antériorité des civilisations nègres : Mythe ou vérité historique ?*. Paris: Présence Africaine",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Leslau, Wolf (1995) – *Reference Grammar of Amharic*. Wiesbaden: Harrassowitz Verlag",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Huehnergard, John ; Pat-El, Na'ama (2019) – *The Semitic Languages*. 2e édition. London: Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Britannica Editors (2025) – *Semitic languages*. Encyclopædia Britannica. Consulté en 2025. URL",
+        "url": "https://www.britannica.com/topic/Semitic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL International / Ethnologue (2025) – *Languages of the World*. 26e édition. Dallas: SIL International",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook (2025) – *Field Listing: Languages*. Central Intelligence Agency. Consulté en 2025",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "United Nations / UNFPA (2025) – *World Population Prospects*. United Nations Department of Economic and Social Affairs. Consulté en 2025",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Global Mission Data (2025) – *Language Portal*. Consulté en 2025",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.2 – classification génétique \"Semitic [semi1276]\", 3 branches immédiates (East Semitic, Unclassified Semitic, West Semitic) ; les langues sémitiques africaines vivantes (arabe, éthiosémitique) appartiennent toutes au Sémitique occidental",
+        "url": "https://glottolog.org/resource/languoid/id/semi1276",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2/Annexe : somme des nationalités éthiosémitiques recensées (Amhara 19 867 817, Tigrie/Tigrinya 4 483 776, Guragie 1 867 350, Silte 940 766, Hareri 31 869) = 27 191 578",
+        "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Sud (Ndzundza)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Sud (Ndzundza)",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
-      "Joshua Project — Ndebele, Southern in South Africa. https://joshuaproject.net/people_groups/15054",
-      "My Modern Met — Esther Mahlangu: Time in Color. https://mymodernmet.com/esther-mahlangu-time-in-color/",
-      "Kruger Park — Southern Ndebele tribe of South Africa. https://kabirasafaris.com/southern-ndebele/",
-      "Statistics South Africa — Census 2011 (langue isiNdebele). http://www.statssa.gov.za/",
-      "Ethnologue (SIL) — isiNdebele [nbl]. https://www.ethnologue.com/language/nbl"
+      {
+        "title": "South African History Online — Ndebele",
+        "url": "https://sahistory.org.za/article/ndebele",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Joshua Project — Ndebele, Southern in South Africa",
+        "url": "https://joshuaproject.net/people_groups/15054",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "My Modern Met — Esther Mahlangu: Time in Color",
+        "url": "https://mymodernmet.com/esther-mahlangu-time-in-color/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mymodernmet.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kruger Park — Southern Ndebele tribe of South Africa",
+        "url": "https://kabirasafaris.com/southern-ndebele/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kabirasafaris.com."
+      },
+      {
+        "title": "Statistics South Africa — Census 2011 (langue isiNdebele)",
+        "url": "http://www.statssa.gov.za/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      },
+      {
+        "title": "Ethnologue (SIL) — isiNdebele [nbl]",
+        "url": "https://www.ethnologue.com/language/nbl",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

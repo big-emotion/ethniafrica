@@ -3,6 +3,7 @@
   "nameMain": "Peuples Kx'a (macro-groupe)",
   "languageFamilyId": "FLG_KXA",
   "currentCountries": ["NAM", "BWA", "AGO"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Kx'a (macro-groupe)",
@@ -101,12 +102,42 @@
       ]
     },
     "sources": [
-      "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36.",
-      "Glottolog — Kxa language family. https://glottolog.org/resource/languoid/id/kxaa1236",
-      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/",
-      "UNESCO Tentative List — San Living Cultural Landscape. https://whc.unesco.org/en/tentativelists/6096/",
-      "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510. https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
-      "The Genomic Prehistory of Peoples Speaking Khoisan Languages. PMC8117426. https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/"
+      {
+        "title": "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog — Kxa language family",
+        "url": "https://glottolog.org/resource/languoid/id/kxaa1236",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue — Kx'a language subgroup",
+        "url": "https://www.ethnologue.com/subgroup/4285/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO Tentative List — San Living Cultural Landscape",
+        "url": "https://whc.unesco.org/en/tentativelists/6096/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "The Genomic Prehistory of Peoples Speaking Khoisan Languages. PMC8117426",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      }
     ]
   }
 }

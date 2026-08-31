@@ -3,6 +3,7 @@
   "nameMain": "Manjak / Bainuk",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB", "SEN", "GMB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Manjak / Bainuk",
@@ -90,11 +91,36 @@
       ]
     },
     "sources": [
-      "Mandyak, Manjago in Guinea-Bissau – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13493/PU)",
-      "Bainouk, Gunyaamolo in Senegal – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10665/SG)",
-      "Bainuk people – Djola History and Genealogy Society, 2021 (https://www.djola.org/history/blog-post-title-three-3bz78)",
-      "Van Binsbergen W., Migration and religion in Manjak society – Quest Journal, 2001 (http://m.quest-journal.net/shikanda/african_religion/socio.htm)",
-      "Ethnologue – Manjak (mfv) et Bainuk (bcb), SIL International, 2024 (https://www.ethnologue.com)"
+      {
+        "title": "Mandyak, Manjago in Guinea-Bissau – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13493/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bainouk, Gunyaamolo in Senegal – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10665/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bainuk people – Djola History and Genealogy Society, 2021",
+        "url": "https://www.djola.org/history/blog-post-title-three-3bz78",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for djola.org."
+      },
+      {
+        "title": "Van Binsbergen W., Migration and religion in Manjak society – Quest Journal, 2001",
+        "url": "http://m.quest-journal.net/shikanda/african_religion/socio.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers m.quest-journal.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Manjak (mfv) et Bainuk (bcb), SIL International, 2024",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

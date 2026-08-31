@@ -3,6 +3,7 @@
   "nameMain": "Asante",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Asante",
@@ -97,12 +98,42 @@
       ]
     },
     "sources": [
-      "Ghana National Commission on Culture — Ashanti Region. https://ghanaculture.gov.gh/ashanti-region/",
-      "SIL Ethnologue — Twi language (twi/aka). https://www.ethnologue.com/language/twi/",
-      "Ghana Statistical Service — Population Projections Report Ashanti Region 2021-2050. https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/06_Ashanti%20Region_Fau_final.pdf",
-      "R.S. Rattray — Asante Law and Constitution. Oxford: Clarendon Press, 1929.",
-      "EBSCO Research Starters — Ashanti People. https://www.ebsco.com/research-starters/ethnic-and-cultural-studies/ashanti-people",
-      "CIEE — Tradition Goes On At The Ntonso Adinkra Village (Adinkra symbols). https://www.ciee.org/go-abroad/high-school-study-abroad/summer/blog/tradition-goes-ntonso-adinkra-village"
+      {
+        "title": "Ghana National Commission on Culture — Ashanti Region",
+        "url": "https://ghanaculture.gov.gh/ashanti-region/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ghanaculture.gov.gh."
+      },
+      {
+        "title": "SIL Ethnologue — Twi language (twi/aka)",
+        "url": "https://www.ethnologue.com/language/twi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ghana Statistical Service — Population Projections Report Ashanti Region 2021-2050",
+        "url": "https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/06_Ashanti%20Region_Fau_final.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+      },
+      {
+        "title": "R.S. Rattray — Asante Law and Constitution. Oxford: Clarendon Press, 1929",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "EBSCO Research Starters — Ashanti People",
+        "url": "https://www.ebsco.com/research-starters/ethnic-and-cultural-studies/ashanti-people",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "CIEE — Tradition Goes On At The Ntonso Adinkra Village (Adinkra symbols)",
+        "url": "https://www.ciee.org/go-abroad/high-school-study-abroad/summer/blog/tradition-goes-ntonso-adinkra-village",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ciee.org; the tier awaits editorial review."
+      }
     ]
   }
 }

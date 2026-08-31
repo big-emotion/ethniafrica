@@ -3,6 +3,7 @@
   "nameMain": "Gabra",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["KEN", "ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gabra",
@@ -91,12 +92,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Gabra people. https://www.101lasttribes.com/tribes/gabra.html",
-      "Begin North Adventures — Gabra Tribe. https://beginnorthadventures.com/gabra-tribe/",
-      "Joshua Project — Oromo, Gabra in Kenya. https://joshuaproject.net/people_groups/19603/KE",
-      "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax). https://www.ethnologue.com/language/gax/",
-      "Ultimate Wild Safaris — The Gabbra people. https://ultimatewildsafaris.com/index.php/blog/the-journey-to-explore-the-gabbra-cultural-people-living-in-chalbi-desert-kenya",
-      "Robinson, P. W. (1985). Gabra Nomadic Pastoralism in Nineteenth and Twentieth Century Northern Kenya. Northwestern University dissertation."
+      {
+        "title": "101 Last Tribes — Gabra people",
+        "url": "https://www.101lasttribes.com/tribes/gabra.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Begin North Adventures — Gabra Tribe",
+        "url": "https://beginnorthadventures.com/gabra-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+      },
+      {
+        "title": "Joshua Project — Oromo, Gabra in Kenya",
+        "url": "https://joshuaproject.net/people_groups/19603/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax)",
+        "url": "https://www.ethnologue.com/language/gax/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ultimate Wild Safaris — The Gabbra people",
+        "url": "https://ultimatewildsafaris.com/index.php/blog/the-journey-to-explore-the-gabbra-cultural-people-living-in-chalbi-desert-kenya",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ultimatewildsafaris.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Robinson, P. W. (1985). Gabra Nomadic Pastoralism in Nineteenth and Twentieth Century Northern Kenya. Northwestern University dissertation",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

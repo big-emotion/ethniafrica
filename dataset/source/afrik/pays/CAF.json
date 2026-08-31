@@ -1,11 +1,13 @@
 {
   "id": "CAF",
-  "nameFr": "République centrafricaine (République centrafricaine, Ködörösêse tî Bêafrîka)",
+  "nameFr": "République centrafricaine",
   "nameOfficial": "République centrafricaine (République centrafricaine, Ködörösêse tî Bêafrîka)",
+  "summary": "La République centrafricaine porte un nom purement géographique, adopté à l'indépendance en 1960 ; elle s'appelait auparavant Oubangui-Chari, du nom de deux cours d'eau. Son territoire réunit les chefferies banda, gbaya, ngbande et sango. Le sango, d'abord langue d'échange, y est devenu langue nationale.",
   "etymology": "Le nom \"Centrafrique\" ou \"République centrafricaine\" vient de la position géographique du pays au centre de l'Afrique. Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé \"Oubangui-Chari\" pendant la colonisation française (1903-1960), du nom des deux fleuves principaux (Oubangui et Chari).",
   "nameOriginActor": "Le nom \"République centrafricaine\" a été adopté lors de l'indépendance (1960) pour remplacer \"Oubangui-Chari\" (nom colonial français). Le nom fait référence à la position géographique du pays au centre de l'Afrique.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Oubangui-Chari (1903-1960)"],
       "antiquity": "Le territoire actuel de la RCA était peuplé de diverses sociétés (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations de peuples soudaniques centraux (Banda, Ngbande) et bantous (Gbaya, Sango, Manja). Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Consolidation des chefferies (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Commerce régional. Les Européens utilisaient le terme \"Oubangui-Chari\" pour désigner la région.",
@@ -187,12 +189,48 @@
       "postIndependence": "République centrafricaine (1960), présidence de David Dacko (1960-1966, 1979-1981), dictature de Jean-Bédel Bokassa (1966-1979, empire centrafricain, 1976-1979), coups d'État (1979, 1981, 2003, 2013), présidence d'André Kolingba (1981-1993), Ange-Félix Patassé (1993-2003), François Bozizé (2003-2013), Michel Djotodia (2013-2014), Catherine Samba-Panza (2014-2016), Faustin-Archange Touadéra (depuis 2016). Conflits récurrents (guerres civiles, 2012-2013, 2013-2014, 2014-présent), instabilité politique, violences intercommunautaires. Défis : pauvreté, développement économique, sécurité (conflits récurrents, groupes armés), VIH/sida. La RCA est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants et des conflits récurrents."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Central African Republic",
-      "SIL Ethnologue – Languages of Central African Republic",
-      "Recensements centrafricains",
-      "Études anthropologiques sur les peuples de la RCA",
-      "Études historiques sur la colonisation française"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Central African Republic",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Central African Republic",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements centrafricains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la RCA",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation française",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

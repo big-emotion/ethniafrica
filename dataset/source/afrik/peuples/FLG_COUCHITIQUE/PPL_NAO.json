@@ -71,14 +71,54 @@
       ]
     },
     "sources": [
-      "Gesese, Aemero – A History of Na'o People of Goba Warada, Kafa Zone, ca. 1897 to 1991 (these, Universite de Jimma), 2020 (https://repository.ju.edu.et/handle/123456789/5286)",
-      "Nao in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13951)",
-      "Nao in Ethiopia – Mission Infobank / Joshua Project (https://www.missioninfobank.org/mib/index.php?main_page=document_general_info&products_id=37019)",
-      "Nao of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011624/)",
-      "Nayi – Ethnologue (https://www.ethnologue.com/language/noz/)",
-      "Description and Documentation of the Nayi Language – GLOCAL / AFALA, 2023 (https://glocal.soas.ac.uk/afala2024/172-2/)",
-      "Nayi language endangerment – Foundation for Endangered Languages, Ogmios 52, 2013 (http://www.ogmios.org/ogmios/Ogmios_052.pdf)",
-      "ISO 639-3: noz (Nayi) – SIL International / Ethnologue"
+      {
+        "title": "Gesese, Aemero – A History of Na'o People of Goba Warada, Kafa Zone, ca. 1897 to 1991 (these, Universite de Jimma), 2020",
+        "url": "https://repository.ju.edu.et/handle/123456789/5286",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for repository.ju.edu.et."
+      },
+      {
+        "title": "Nao in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13951",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Nao in Ethiopia – Mission Infobank / Joshua Project",
+        "url": "https://www.missioninfobank.org/mib/index.php?main_page=document_general_info&products_id=37019",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers missioninfobank.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Nao of Ethiopia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg011624/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Nayi – Ethnologue",
+        "url": "https://www.ethnologue.com/language/noz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Description and Documentation of the Nayi Language – GLOCAL / AFALA, 2023",
+        "url": "https://glocal.soas.ac.uk/afala2024/172-2/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for glocal.soas.ac.uk."
+      },
+      {
+        "title": "Nayi language endangerment – Foundation for Endangered Languages, Ogmios 52, 2013",
+        "url": "http://www.ogmios.org/ogmios/Ogmios_052.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ogmios.org; the tier awaits editorial review."
+      },
+      {
+        "title": "ISO 639-3: noz (Nayi) – SIL International / Ethnologue",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

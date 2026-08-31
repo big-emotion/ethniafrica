@@ -87,11 +87,36 @@
       ]
     },
     "sources": [
-      "Joshua Project - Antanosy in Madagascar : https://joshuaproject.net/people_groups/10346",
-      "SIL Ethnologue - Tanosy Malagasy (txy) : https://www.ethnologue.com/language/txy/",
-      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
-      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "Britannica - Madagascar Ethnic Groups : https://www.britannica.com/place/Madagascar/Ethnic-groups"
+      {
+        "title": "Joshua Project - Antanosy in Madagascar",
+        "url": "https://joshuaproject.net/people_groups/10346",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue - Tanosy Malagasy (txy)",
+        "url": "https://www.ethnologue.com/language/txy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook - Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Britannica - Madagascar Ethnic Groups",
+        "url": "https://www.britannica.com/place/Madagascar/Ethnic-groups",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Khainai",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Khainai",
@@ -82,12 +83,42 @@
       ]
     },
     "sources": [
-      "Joshua Project — Gxana, llGana in Botswana. https://joshuaproject.net/countries/bc",
-      "!Khwa ttu — The San of Botswana. https://khwattu.org/exhibitions/the-san-of-botswana/",
-      "The New Humanitarian — Culture under threat: Special Report on the San Bushmen. https://www.thenewhumanitarian.org/report/49005/botswana-culture-under-threat-special-report-san-bushmen-ii",
-      "Glottolog — Gana language, code gana1257. https://glottolog.org/",
-      "JSTOR — The Social History of the Khoisan in Botswana. https://www.jstor.org/stable/27255634",
-      "Khoisan.org — The Khoikhoi and San ritual. http://khoisan.org/ritual.htm"
+      {
+        "title": "Joshua Project — Gxana, llGana in Botswana",
+        "url": "https://joshuaproject.net/countries/bc",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "!Khwa ttu — The San of Botswana",
+        "url": "https://khwattu.org/exhibitions/the-san-of-botswana/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers khwattu.org; the tier awaits editorial review."
+      },
+      {
+        "title": "The New Humanitarian — Culture under threat: Special Report on the San Bushmen",
+        "url": "https://www.thenewhumanitarian.org/report/49005/botswana-culture-under-threat-special-report-san-bushmen-ii",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for thenewhumanitarian.org."
+      },
+      {
+        "title": "Glottolog — Gana language, code gana1257",
+        "url": "https://glottolog.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "JSTOR — The Social History of the Khoisan in Botswana",
+        "url": "https://www.jstor.org/stable/27255634",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "Khoisan.org — The Khoikhoi and San ritual",
+        "url": "http://khoisan.org/ritual.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for khoisan.org."
+      }
     ]
   }
 }

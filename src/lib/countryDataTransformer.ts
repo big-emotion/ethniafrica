@@ -5,6 +5,10 @@
  * UI component of the "Carte vivante" country page.
  */
 
+import {
+  ficheSourceEntries,
+  type FicheSourceEntry,
+} from "@/lib/afrik/ficheSourceLabel";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type {
   Kingdom,
@@ -13,7 +17,9 @@ import type {
   HistoricalNamesSection,
   HistoricalFactsSection,
   DemographicsSection,
+  FicheSource,
 } from "@/types/afrik";
+import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
 
 // ==========================================
 // OUTPUT TYPES
@@ -62,14 +68,25 @@ export type TimelineItemType = "kingdom" | "colonial" | "sovereign";
 export interface TimelineItem {
   type: TimelineItemType;
   era: string;
-  name: string;
-  note?: string;
+  /** The historical name, when the era is written as a "date : Nom" list. */
+  name?: string;
+  /** The era's own words, when it holds no name to extract. */
+  prose?: string;
 }
 
 export interface TimelineData {
   items: TimelineItem[];
   gradientStops: { goldEnd: number; colonialEnd: number };
 }
+
+/**
+ * The year the atlas reads a demographic figure against when the fiche does
+ * not date it. It lived as a literal in two components and as `2025` spelled
+ * into the section's eyebrow; a headcount now carries its own year, so the
+ * default belongs next to the code that applies it.
+ */
+// @req REQ-001
+export const DEMOGRAPHIC_REFERENCE_YEAR = 2025;
 
 export interface PeopleRow {
   name: string;
@@ -78,8 +95,9 @@ export interface PeopleRow {
   endonymLang?: string;
   pejorativeTerm?: string;
   percentage: number;
-  population: number;
-  populationFormatted: string;
+  /** Undefined where the fiche states a share but no headcount. */
+  population?: number;
+  populationFormatted?: string;
   region?: string;
   languageFamily?: string;
   colorIndex: number;
@@ -90,7 +108,20 @@ export interface PeopleRow {
 
 export interface PeoplesData {
   totalPopulation: number;
-  totalPopulationFormatted: string;
+  /** Undefined where no people of the fiche declares a population. */
+  totalPopulationFormatted?: string;
+  /**
+   * Whether `totalPopulation` sums over every people shown. Where it does
+   * not, the figure is a floor rather than the country's population, and the
+   * section must say so instead of labelling it "habitants".
+   */
+  everyPeopleDeclaresPopulation: boolean;
+  /**
+   * Year the counted peoples are dated to, when they agree on one. Undefined
+   * where none is counted, or where they come from different years and the
+   * section therefore has no single snapshot to name.
+   */
+  populationReferenceYear?: number;
   peopleCount: number;
   rows: PeopleRow[];
 }
@@ -99,6 +130,14 @@ export interface KingdomCard {
   name: string;
   period?: string;
   peoples?: string;
+  /** What the entity was, as the corpus states it. */
+  historicalRole?: string;
+  /**
+   * The political centres, whole. `tags` is the same field truncated to three
+   * and stripped of parentheses for the card layout; the timeline names them
+   * as they were declared.
+   */
+  centers?: string[];
   tags: string[];
 }
 
@@ -151,7 +190,7 @@ export interface CountryPageData {
   historicalFacts?: HistoricalFactsData;
   languages: LanguagesData;
   culture: CultureGridData;
-  sources: string;
+  sources: FicheSourceEntry[];
 }
 
 // ==========================================
@@ -159,80 +198,23 @@ export interface CountryPageData {
 // ==========================================
 
 /**
- * Generate flag emoji from ISO 3166-1 alpha-3 code.
- * Converts alpha-3 to alpha-2 first, then to regional indicator symbols.
+ * The country hero's flag. Shares `countryFlag.ts`'s table — the mapping lives
+ * in one place — but keeps its own empty-string fallback: this flag is
+ * rendered inline inside the fiche heading, where an unknown code should
+ * contribute nothing at all. The atlas ranking wants the opposite (a
+ * placeholder that holds its column), which is why `countryFlag.flagFromISO3`
+ * returns NEUTRAL_FLAG instead.
  */
+// @req REQ-001
 export function flagFromISO3(iso3: string): string {
-  // Simple alpha-3 to alpha-2 mapping for common African countries
-  const alpha3ToAlpha2: Record<string, string> = {
-    BFA: "BF",
-    NGA: "NG",
-    TGO: "TG",
-    DJI: "DJ",
-    GHA: "GH",
-    MLI: "ML",
-    SEN: "SN",
-    CIV: "CI",
-    NER: "NE",
-    CMR: "CM",
-    TCD: "TD",
-    COD: "CD",
-    COG: "CG",
-    GAB: "GA",
-    GNQ: "GQ",
-    CAF: "CF",
-    AGO: "AO",
-    MOZ: "MZ",
-    ZWE: "ZW",
-    ZAF: "ZA",
-    KEN: "KE",
-    TZA: "TZ",
-    UGA: "UG",
-    RWA: "RW",
-    BDI: "BI",
-    ETH: "ET",
-    ERI: "ER",
-    SOM: "SO",
-    SDN: "SD",
-    SSD: "SS",
-    EGY: "EG",
-    LBY: "LY",
-    TUN: "TN",
-    DZA: "DZ",
-    MAR: "MA",
-    MRT: "MR",
-    GMB: "GM",
-    GNB: "GW",
-    GIN: "GN",
-    SLE: "SL",
-    LBR: "LR",
-    BEN: "BJ",
-    BWA: "BW",
-    NAM: "NA",
-    ZMB: "ZM",
-    MWI: "MW",
-    LSO: "LS",
-    SWZ: "SZ",
-    MDG: "MG",
-    COM: "KM",
-    MUS: "MU",
-    SYC: "SC",
-    CPV: "CV",
-    STP: "ST",
-  };
-
-  const alpha2 = alpha3ToAlpha2[iso3.toUpperCase()];
-  if (!alpha2) return "";
-
-  return String.fromCodePoint(
-    0x1f1e6 + alpha2.charCodeAt(0) - 65,
-    0x1f1e6 + alpha2.charCodeAt(1) - 65
-  );
+  const flag = countryFlag(iso3);
+  return flag === NEUTRAL_FLAG ? "" : flag;
 }
 
 /**
  * Format population number: 23000000 → "23M", 920000 → "920K"
  */
+// @req REQ-001
 export function formatPopulation(n: number): string {
   if (n >= 1_000_000) {
     const m = n / 1_000_000;
@@ -250,6 +232,7 @@ export function formatPopulation(n: number): string {
  * Extract endonym from self-appellation text.
  * "Moaga (singulier), Moose (pluriel)" → "Moaga · Moose"
  */
+// @req REQ-001
 export function extractEndonym(text: string): string {
   const parts = text.match(/(\S+)\s*\(/g);
   if (parts) {
@@ -262,6 +245,7 @@ export function extractEndonym(text: string): string {
  * Extract pejorative term from remarks text.
  * '"Fellata" peut avoir une connotation péjorative' → "Fellata"
  */
+// @req REQ-001
 export function extractPejorative(text: string): string | undefined {
   if (!text) return undefined;
   const lower = text.toLowerCase();
@@ -282,6 +266,7 @@ export function extractPejorative(text: string): string | undefined {
  * Shorten a region string.
  * "Plateau central du Burkina Faso (Ouagadougou, Yatenga)" → "Plateau central"
  */
+// @req REQ-001
 export function shortenRegion(text: string): string {
   // Remove parenthetical content
   const clean = text.replace(/\([^)]*\)/g, "").trim();
@@ -294,6 +279,7 @@ export function shortenRegion(text: string): string {
  * Shorten language family string.
  * "Niger-Congo – Gur (FLG_GUR)" → "Niger-Congo Gur"
  */
+// @req REQ-001
 export function shortenFamily(text: string): string {
   return text
     .replace(/\s*\(FLG_\w+\)/g, "")
@@ -304,6 +290,7 @@ export function shortenFamily(text: string): string {
 /**
  * Extract keywords from a paragraph.
  */
+// @req REQ-001
 export function extractKeywords(text: string, maxKeywords = 5): string[] {
   if (!text) return [];
   // Remove parenthetical content
@@ -328,6 +315,7 @@ export function extractKeywords(text: string, maxKeywords = 5): string[] {
 // TRANSFORM FUNCTIONS
 // ==========================================
 
+// @req REQ-001
 export function transformHero(country: CountryDetail): HeroData {
   const etymology = country.etymology || "";
   const iso = country.id;
@@ -394,6 +382,7 @@ export function transformHero(country: CountryDetail): HeroData {
   };
 }
 
+// @req REQ-001
 export function transformEtymology(
   etymology?: string
 ): EtymologyData | undefined {
@@ -526,6 +515,7 @@ export function transformEtymology(
   };
 }
 
+// @req REQ-001
 export function transformOrigin(
   nameOriginActor?: string,
   etymology?: string,
@@ -613,6 +603,7 @@ export function transformOrigin(
   };
 }
 
+// @req REQ-001
 export function transformTimeline(
   historicalNames?: HistoricalNamesSection
 ): TimelineData {
@@ -653,10 +644,11 @@ export function transformTimeline(
     ).forEach((i) => items.push(i));
   }
 
-  // Remove duplicates (keep unique by name)
+  // Remove duplicates (keep unique by name, or by the prose that stands in
+  // for one — two untitled eras are two entries, not one)
   const seen = new Set<string>();
   const uniqueItems = items.filter((item) => {
-    const key = item.name.toLowerCase();
+    const key = (item.name ?? item.prose ?? item.era).toLowerCase();
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -695,35 +687,23 @@ function parseEraItems(
     });
   }
 
-  // If no date-name patterns found, use the whole text as one item
+  // The era holds no dated list, so it is prose about the period rather than
+  // a name to display. Serving it whole is the point: clipping it into a
+  // title left every fiche showing the same cut sentence twice over.
   if (items.length === 0) {
-    // Try to extract a date range
     const dateMatch = text.match(/(\d{4}(?:[–-]\d{4})?)/);
-    const era = dateMatch ? dateMatch[1] : eraLabel;
-
-    // Extract main entity name
-    const entityNames = text.match(
-      /(?:royaumes?\s+)?([\wÀ-ÿ]+(?:\s+[\wÀ-ÿ]+)*)/i
-    );
-    const name = entityNames ? truncateNote(text, 80) : text.substring(0, 80);
 
     items.push({
       type: defaultType,
-      era,
-      name: name,
-      note:
-        text.length > 80 ? text.substring(0, 120).trim() + "..." : undefined,
+      era: dateMatch ? dateMatch[1] : eraLabel,
+      prose: text,
     });
   }
 
   return items;
 }
 
-function truncateNote(text: string, maxLen: number): string {
-  if (text.length <= maxLen) return text;
-  return text.substring(0, maxLen).trim() + "...";
-}
-
+// @req REQ-001
 export function transformPeoples(
   demographics?: DemographicsSection,
   majorPeoples?: MajorPeopleEntry[]
@@ -731,7 +711,7 @@ export function transformPeoples(
   if (!demographics?.peoples || demographics.peoples.length === 0) {
     return {
       totalPopulation: 0,
-      totalPopulationFormatted: "0",
+      everyPeopleDeclaresPopulation: false,
       peopleCount: 0,
       rows: [],
     };
@@ -764,11 +744,23 @@ export function transformPeoples(
     (p) => !/\bautres\b/i.test(p.name)
   );
 
-  // Calculate total population (after filtering)
-  const totalPopulation = filtered.reduce(
-    (sum, p) => sum + (p.population || 0),
-    0
+  // The model asks each people for a `population`, and 25 of the 53 country
+  // fiches leave it out on every entry. Summing those absences to zero is how
+  // the section came to print "0 habitants" for South Africa: an undeclared
+  // headcount is not a headcount of zero, and only the peoples that state one
+  // may enter the total.
+  const counted = filtered.filter((p) => p.population > 0);
+  const totalPopulation = counted.reduce((sum, p) => sum + p.population, 0);
+
+  // The section prints one year over the whole block, so it may only name one
+  // when every counted people carries it. A fiche mixing a census with a later
+  // estimate has no single snapshot, and picking either would date the other
+  // wrongly.
+  const countedYears = new Set(
+    counted.map((p) => p.referenceYear ?? DEMOGRAPHIC_REFERENCE_YEAR)
   );
+  const populationReferenceYear =
+    countedYears.size === 1 ? [...countedYears][0] : undefined;
 
   // Sort by percentage descending
   const sorted = [...filtered].sort(
@@ -787,8 +779,9 @@ export function transformPeoples(
       endonymLang: p.mainLanguageCode,
       pejorativeTerm: pejorativeMap.get(nameKey),
       percentage: p.percentageInCountry || 0,
-      population: p.population || 0,
-      populationFormatted: formatPopulation(p.population || 0),
+      population: p.population > 0 ? p.population : undefined,
+      populationFormatted:
+        p.population > 0 ? formatPopulation(p.population) : undefined,
       region: p.region ? shortenRegion(p.region) : undefined,
       languageFamily: p.languageFamily
         ? shortenFamily(p.languageFamily)
@@ -805,7 +798,11 @@ export function transformPeoples(
 
   return {
     totalPopulation,
-    totalPopulationFormatted: formatPopulation(totalPopulation),
+    totalPopulationFormatted:
+      counted.length > 0 ? formatPopulation(totalPopulation) : undefined,
+    everyPeopleDeclaresPopulation:
+      filtered.length > 0 && counted.length === filtered.length,
+    populationReferenceYear,
     peopleCount: sorted.length,
     rows: groupedRows,
   };
@@ -842,7 +839,10 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
         name: names.join(" · "),
         percentage: rows[i].percentage,
         population: rows[i].population,
-        populationFormatted: `${formatPopulation(rows[i].population)} chacun`,
+        populationFormatted:
+          rows[i].population > 0
+            ? `${formatPopulation(rows[i].population)} chacun`
+            : undefined,
         colorIndex: rows[i].colorIndex,
         groupedNames: names,
       });
@@ -859,6 +859,7 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
   return result;
 }
 
+// @req REQ-001
 export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   if (!kingdoms || kingdoms.length === 0) {
     return {
@@ -885,6 +886,8 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
       name: k.name.replace(/^\[|\]$/g, ""),
       period: k.period,
       peoples: k.dominantPeoples?.join(", "),
+      historicalRole: k.historicalRole,
+      centers: k.politicalCenters,
       tags,
     };
   });
@@ -911,6 +914,7 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   return { title, cards, layout };
 }
 
+// @req REQ-001
 export function transformLanguages(culture?: CultureSection): LanguagesData {
   if (!culture?.mainLanguages || culture.mainLanguages.length === 0) {
     return { bubbles: [], totalCount: 0, overflowCount: 0 };
@@ -949,6 +953,7 @@ export function transformLanguages(culture?: CultureSection): LanguagesData {
   return { bubbles, totalCount, overflowCount };
 }
 
+// @req REQ-001
 export function transformCulture(culture?: CultureSection): CultureGridData {
   if (!culture) {
     return { items: [] };
@@ -987,11 +992,12 @@ export function transformCulture(culture?: CultureSection): CultureGridData {
   return { items };
 }
 
-export function transformSources(sources?: string[]): string {
-  if (!sources || sources.length === 0) return "";
-  return sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ");
+// @req REQ-001
+export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
+  return ficheSourceEntries(sources);
 }
 
+// @req REQ-001
 export function transformHistoricalFacts(
   historicalFacts?: HistoricalFactsSection
 ): HistoricalFactsData | undefined {
@@ -1022,6 +1028,7 @@ export function transformHistoricalFacts(
 // MAIN TRANSFORM
 // ==========================================
 
+// @req REQ-001
 export function transformCountryData(country: CountryDetail): CountryPageData {
   return {
     hero: transformHero(country),

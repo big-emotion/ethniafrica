@@ -2,7 +2,7 @@ name: A11y — axe-core
 
 on:
   pull_request:
-    branches: [main]
+    branches: [recette, main]
   push:
     branches: [main]
 
@@ -34,5 +34,46 @@ jobs:
       - name: Install Playwright (chromium)
         run: npx playwright install --with-deps chromium
 
+      # Skip cleanly on forks / Dependabot PRs that cannot access the Supabase
+      # secrets — the Storybook-only axe check above still runs and gates.
+      # Mirrors .github/workflows/lighthouse.yml.
+      - name: Check required secrets are present
+        id: secrets
+        run: |
+          if [ -n "${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping live-route a11y audit (/fr/noms, dossier fiche) — NEXT_PUBLIC_SUPABASE_URL secret not available (fork or Dependabot PR)."
+          fi
+
+      - name: Build Next.js app
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
+          # unless this is set, which would silently audit nothing.
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
+
+      - name: Start Next.js server
+        if: steps.secrets.outputs.present == 'true'
+        run: npm run start &
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
+
+      - name: Wait for server to be ready
+        if: steps.secrets.outputs.present == 'true'
+        run: npx wait-on http://localhost:3000 --timeout 60000
+
       - name: Run axe-core checks
         run: npx tsx scripts/a11y-test.ts
+        env:
+          A11Y_LIVE_BASE_URL: ${{ steps.secrets.outputs.present == 'true' && 'http://localhost:3000' || '' }}

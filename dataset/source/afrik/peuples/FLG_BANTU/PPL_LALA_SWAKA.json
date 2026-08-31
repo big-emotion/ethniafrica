@@ -67,10 +67,30 @@
       ]
     },
     "sources": [
-      "Swaka of Zambia – PeopleGroups.org, PGID PG015635 (https://peoplegroups.org/people_groups/pg015635/)",
-      "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Ichibwela Mushi – Luano Town Council (https://www.luanocouncil.gov.zm/?page_id=2517)",
-      "Chief Chitina of the Lala-Swaka people of Mkushi District – QFM Zambia, 2025 (https://www.facebook.com/qfmzambia/videos/chief-chitina-of-the-lala-swaka-people-of-mkushi-district-central-province-has-p/2234345853678729/)"
+      {
+        "title": "Swaka of Zambia – PeopleGroups.org, PGID PG015635",
+        "url": "https://peoplegroups.org/people_groups/pg015635/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008",
+        "url": "https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarexchange.furman.edu."
+      },
+      {
+        "title": "Ichibwela Mushi – Luano Town Council",
+        "url": "https://www.luanocouncil.gov.zm/?page_id=2517",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers luanocouncil.gov.zm; the tier awaits editorial review."
+      },
+      {
+        "title": "Chief Chitina of the Lala-Swaka people of Mkushi District – QFM Zambia, 2025",
+        "url": "https://www.facebook.com/qfmzambia/videos/chief-chitina-of-the-lala-swaka-people-of-mkushi-district-central-province-has-p/2234345853678729/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Chleuh",
   "languageFamilyId": "FLG_BERBERE",
   "currentCountries": ["MAR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Chleuh",
@@ -94,11 +95,36 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL International - Tachelhit (shi) : https://www.ethnologue.com/language/shi/",
-      "IRCAM (Institut Royal de la Culture Amazighe, Rabat) : https://www.ircam.ma/",
-      "Iwziwn.com - Tachelhit, language of the Souss and High Atlas : https://www.iwziwn.com/tachelhit-language-of-the-souss-and-high-atlas/",
-      "eHRAF World Cultures Yale - Shluh (Chleuh) : https://ehrafworldcultures.yale.edu/cultures/mw11/summary",
-      "Recensement HCP Maroc 2024 : https://www.hcp.ma/"
+      {
+        "title": "Ethnologue SIL International - Tachelhit (shi)",
+        "url": "https://www.ethnologue.com/language/shi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "IRCAM (Institut Royal de la Culture Amazighe, Rabat)",
+        "url": "https://www.ircam.ma/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ircam.ma."
+      },
+      {
+        "title": "Iwziwn.com - Tachelhit, language of the Souss and High Atlas",
+        "url": "https://www.iwziwn.com/tachelhit-language-of-the-souss-and-high-atlas/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers iwziwn.com; the tier awaits editorial review."
+      },
+      {
+        "title": "eHRAF World Cultures Yale - Shluh (Chleuh)",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/mw11/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Recensement HCP Maroc 2024",
+        "url": "https://www.hcp.ma/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for hcp.ma."
+      }
     ]
   }
 }

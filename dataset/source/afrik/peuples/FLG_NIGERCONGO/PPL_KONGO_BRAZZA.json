@@ -3,6 +3,7 @@
   "nameMain": "Kongo (Brazzaville)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kongo (Brazzaville)",
@@ -95,13 +96,48 @@
       ]
     },
     "sources": [
-      "Minority Rights Group International — Republic of Congo. https://minorityrights.org/country/republic-of-congo/",
-      "Joshua Project — Kongo in Congo Republic. https://joshuaproject.net/people_groups/12774/CF",
-      "Joshua Project — Kituba (Monokutuba) in Congo Republic. https://joshuaproject.net/countries/cf",
-      "SIL Ethnologue — Laari (ldi). https://www.ethnologue.com/language/ldi/",
-      "Trading Economics — Republic of Congo Population 2025. https://tradingeconomics.com/republic-of-the-congo/population",
-      "TribeGuess — Bakongo (Congo-Brazzaville). https://www.tribeguess.com/learn/bakongo",
-      "101 Last Tribes — Kongo People. https://www.101lasttribes.com/tribes/kongo.html"
+      {
+        "title": "Minority Rights Group International — Republic of Congo",
+        "url": "https://minorityrights.org/country/republic-of-congo/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project — Kongo in Congo Republic",
+        "url": "https://joshuaproject.net/people_groups/12774/CF",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Kituba (Monokutuba) in Congo Republic",
+        "url": "https://joshuaproject.net/countries/cf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Laari (ldi)",
+        "url": "https://www.ethnologue.com/language/ldi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Trading Economics — Republic of Congo Population 2025",
+        "url": "https://tradingeconomics.com/republic-of-the-congo/population",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tradingeconomics.com."
+      },
+      {
+        "title": "TribeGuess — Bakongo (Congo-Brazzaville)",
+        "url": "https://www.tribeguess.com/learn/bakongo",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tribeguess.com."
+      },
+      {
+        "title": "101 Last Tribes — Kongo People",
+        "url": "https://www.101lasttribes.com/tribes/kongo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

@@ -81,11 +81,36 @@
       ]
     },
     "sources": [
-      "Blakk Rasta – Story of the Nabdam people, YouTube, 2025 (https://www.youtube.com/watch?v=h6GcSiCZkMA)",
-      "Mamprusi People – The Nangodi Traditional Area, Facebook, 2020 (https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area)",
-      "Ghana Statistical Service – Population and Housing Census 2021 (https://www.statsghana.gov.gh)",
-      "JSTOR – Sylvan Memories of People, Place, and Trees in Nangodi (https://www.jstor.org/stable/26795889)",
-      "NABT NKOR – Nabt language Upper East Ghana (https://www.nabtnkornccs.org/en/about-us/who-we-are)"
+      {
+        "title": "Blakk Rasta – Story of the Nabdam people, YouTube, 2025",
+        "url": "https://www.youtube.com/watch?v=h6GcSiCZkMA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Mamprusi People – The Nangodi Traditional Area, Facebook, 2020",
+        "url": "https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Ghana Statistical Service – Population and Housing Census 2021",
+        "url": "https://www.statsghana.gov.gh",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+      },
+      {
+        "title": "JSTOR – Sylvan Memories of People, Place, and Trees in Nangodi",
+        "url": "https://www.jstor.org/stable/26795889",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "NABT NKOR – Nabt language Upper East Ghana",
+        "url": "https://www.nabtnkornccs.org/en/about-us/who-we-are",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nabtnkornccs.org; the tier awaits editorial review."
+      }
     ]
   }
 }

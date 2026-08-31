@@ -3,6 +3,7 @@
   "nameMain": "Songo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Songo",
@@ -69,12 +70,42 @@
       ]
     },
     "sources": [
-      "Bantu Questionnaire Songo – University of Missouri, 2011 (https://dice.missouri.edu/assets/docs/niger-congo/Songo.pdf)",
-      "Joshua Project – Songo, Nsongo in Angola (https://joshuaproject.net/people_groups/19052)",
-      "Swordshare Map – Songo NSX (https://map.swordshare.com/nsx)",
-      "GhanaWeb – Songo, the African tribe where children are raised by their uncles (https://www.ghanaweb.com/GhanaHomePage/africa/Songo-the-African-tribe-where-children-are-raised-by-their-uncles-1757216)",
-      "ISO 639-3 – code nsx: Nsongo (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
-      "ScriptSource – Language Songo NSX (https://scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=nsx)"
+      {
+        "title": "Bantu Questionnaire Songo – University of Missouri, 2011",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Songo.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Joshua Project – Songo, Nsongo in Angola",
+        "url": "https://joshuaproject.net/people_groups/19052",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Swordshare Map – Songo NSX",
+        "url": "https://map.swordshare.com/nsx",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "GhanaWeb – Songo, the African tribe where children are raised by their uncles",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/africa/Songo-the-African-tribe-where-children-are-raised-by-their-uncles-1757216",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "ISO 639-3 – code nsx: Nsongo",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "ScriptSource – Language Songo NSX",
+        "url": "https://scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=nsx",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      }
     ]
   }
 }

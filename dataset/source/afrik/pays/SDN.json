@@ -1,11 +1,16 @@
 {
   "id": "SDN",
-  "nameFr": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
+  "nameFr": "Soudan",
   "nameOfficial": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
+  "summary": "Le Soudan porte un nom donné de l'extérieur : « Bilād as-Sūdān », le pays des Noirs, chez les géographes arabes. Royaumes de Koush et de Méroé, royaumes chrétiens nubiens, sultanat de Sennar : son histoire est celle de la vallée du Nil en amont de l'Égypte. Arabes soudanais, Beja, Nubiens et Four y composent la population.",
   "etymology": "Le nom \"Soudan\" provient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Ce terme était historiquement utilisé par les géographes arabes pour désigner la région subsaharienne habitée par des populations noires africaines, par opposition au \"Bilād al-Bayḍā\" (pays des Blancs) qui désignait l'Afrique du Nord. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle.",
   "nameOriginActor": "Les géographes arabes médiévaux ont utilisé le terme \"Bilād as-Sūdān\" (pays des Noirs) pour désigner la région. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle lors de la création du Soudan anglo-égyptien.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Bilād as-Sūdān (arabe, « pays des Noirs »)",
+        "Soudan anglo-égyptien (1899-1956)"
+      ],
       "antiquity": "Présence de royaumes nubiens (Koush, Méroé) dans la région. Contacts avec les civilisations égyptiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
       "middleAges": "Présence de royaumes chrétiens nubiens (Makurie, Nobatie, Alodie). Expansion de l'islam à partir du VIIe siècle. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes.",
       "precolonial": "Présence de royaumes et de sultanats (Sultanat de Sennar, Sultanat de Darfour). Expansion de l'islam et de l'arabisation. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
@@ -177,18 +182,53 @@
       "postIndependence": "République du Soudan (1956), présidence d'Ismail al-Azhari (1956-1958), coups d'État (1958, 1969), présidence de Gaafar Nimeiry (1969-1985, régime socialiste, guerre civile avec le Soudan du Sud, 1955-1972, 1983-2005), présidence d'Omar el-Béchir (1989-2019, régime islamiste, guerre civile, Darfour, 2003-2020), révolution (2019), transition démocratique (2019-2021), coup d'État (2021), guerre civile (depuis 2023, conflit entre forces armées et paramilitaires). Stabilité politique fragile, État en transition, conflits récents (guerre civile, Darfour, sécession du Soudan du Sud en 2011), développement économique (agriculture, exploitation minière). Le Soudan est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Sudan",
-      "SIL Ethnologue – Languages of Sudan",
-      "Recensements soudanais",
-      "Études anthropologiques sur les peuples du Soudan",
-      "Études historiques sur la colonisation britannique et égyptienne"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements soudanais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Soudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation britannique et égyptienne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes soudanais",
-          "population": 35000000,
           "percentageInCountry": 70,
           "peopleId": "PPL_ARABES_AFRIQUE",
           "region": "Toute la vallée du Nil, zones urbaines",

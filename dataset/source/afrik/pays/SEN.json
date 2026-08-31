@@ -1,11 +1,16 @@
 {
   "id": "SEN",
-  "nameFr": "République du Sénégal",
+  "nameFr": "Sénégal",
   "nameOfficial": "République du Sénégal",
+  "summary": "Le Sénégal doit peut-être son nom à « sunu gaal », « notre pirogue » en wolof, que des marins auraient répondu aux navigateurs portugais. Empire du Jolof, royaumes sérères et Fouta Toro s'y sont partagé le territoire. Wolof, Peuls, Sérères, Diola, Mandinka et Soninké y perpétuent la parole des griots.",
   "etymology": "Le nom \"Sénégal\" vient probablement de \"Sunugal\" (notre pirogue en wolof), expression wolof donnée par les navigateurs locaux aux Portugais au XVe siècle. Les Portugais ont ensuite nommé le fleuve \"Rio de Senega\" puis le territoire \"Senega\".",
   "nameOriginActor": "Le nom a été donné par les Portugais au XVe siècle, probablement dérivé de l'expression wolof \"Sunugal\" (notre pirogue). Le fleuve Sénégal a été nommé en premier, puis le territoire.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Senega (portugais, XVe siècle)",
+        "Sénégal (AOF, 1895-1960)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes wolof, sérère, peul, mandinka, jola sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont influencé la région.",
       "middleAges": "XIIIe-XVIe siècles : Empire du Jolof (Wolof) avec royaumes vassaux (Cayor, Baol, Waalo, Sine, Saloum). Fouta Toro (théocratie peule).",
       "precolonial": "Royaumes wolof (Jolof, Cayor, Baol, Waalo), royaumes sérères (Sine, Saloum), théocratie peule du Fouta Toro, royaumes jola de Casamance. Commerce transsaharien et commerce côtier.",
@@ -140,14 +145,60 @@
       "postIndependence": "Première République (1960-1980) : présidence de Senghor, stabilité politique. Deuxième République (1981-2000) : présidence d'Abdou Diouf. Troisième République depuis 2000 : alternance démocratique, stabilité politique, développement économique."
     },
     "sources": [
-      "CIA World Factbook – Senegal",
-      "SIL Ethnologue – Languages of Senegal",
-      "Recensements nationaux sénégalais (ANSD)",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples sénégalais",
-      "Études historiques sur l'empire du Jolof",
-      "CIA World Factbook – Senegal (ethnic groups, 2019 est.)"
+      {
+        "title": "CIA World Factbook – Senegal",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Senegal",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux sénégalais (ANSD)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sénégalais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Jolof",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Senegal (ethnic groups, 2019 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

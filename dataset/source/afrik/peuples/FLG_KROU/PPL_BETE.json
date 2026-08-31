@@ -3,6 +3,7 @@
   "nameMain": "Bété",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bété",
@@ -102,13 +103,48 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Bete people. https://www.101lasttribes.com/tribes/bete.html",
-      "Joshua Project – Bete, Gagnoa in Côte d'Ivoire. https://joshuaproject.net/people_groups/15357",
-      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
-      "Ethnologue – Bété, Daloa (bev). https://www.ethnologue.com/language/bev/",
-      "Ethnologue – Bété, Guiberoua (bet). https://www.ethnologue.com/language/bet/",
-      "Tchetche, Mathieu Obou – L'exemple des effets du KUIZI chez le peuple Bété de Côte d'Ivoire. Revue SLC, 2023. https://www.revue-slc.org/wp-content/uploads/2023/12/29_Mathieu-Obou-TCHETCHE.pdf",
-      "Loucou, Jean-Noël – Histoire de la Côte d'Ivoire. Abidjan : CEDA, 1984."
+      {
+        "title": "101 Last Tribes – Bete people",
+        "url": "https://www.101lasttribes.com/tribes/bete.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Bete, Gagnoa in Côte d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/15357",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group – Krou in Côte d'Ivoire",
+        "url": "https://minorityrights.org/communities/krou/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Ethnologue – Bété, Daloa (bev)",
+        "url": "https://www.ethnologue.com/language/bev/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue – Bété, Guiberoua (bet)",
+        "url": "https://www.ethnologue.com/language/bet/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Tchetche, Mathieu Obou – L'exemple des effets du KUIZI chez le peuple Bété de Côte d'Ivoire. Revue SLC, 2023",
+        "url": "https://www.revue-slc.org/wp-content/uploads/2023/12/29_Mathieu-Obou-TCHETCHE.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for revue-slc.org."
+      },
+      {
+        "title": "Loucou, Jean-Noël – Histoire de la Côte d'Ivoire. Abidjan : CEDA, 1984",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

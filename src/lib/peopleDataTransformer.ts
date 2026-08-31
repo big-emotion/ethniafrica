@@ -5,6 +5,10 @@
  * UI component of the people detail page.
  */
 
+import {
+  ficheSourceEntries,
+  type FicheSourceEntry,
+} from "@/lib/afrik/ficheSourceLabel";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import type {
   OriginsSection,
@@ -18,6 +22,13 @@ import type {
   LanguageFamilyId,
   PeopleId,
 } from "@/types/afrik";
+import type {
+  PeopleNamesDossier,
+  PeopleNameRecord,
+} from "@/api/v2/schemas/names";
+import type { NameRecordView } from "@/types/names";
+import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
+import type { SourcedRelation } from "@/types/relations";
 
 // ==========================================
 // OUTPUT TYPES
@@ -35,6 +46,10 @@ export interface PeopleHeroData {
   whyProblematic?: string;
   historicalRegion?: string;
   ethnoLinguisticGroup?: string;
+  /** Who coined the exonyms, and from where — the fiche's own answer. */
+  originOfExonyms?: string;
+  /** Whether the name is claimed, tolerated or refused today. */
+  contemporaryUsage?: string;
 }
 
 export interface PeopleOriginData {
@@ -63,18 +78,16 @@ export interface PeopleHistoryData {
   diaspora?: string;
 }
 
+/**
+ * The four prose fields `content.culture` declares. Field names are kept
+ * identical to the corpus keys so a reader of the fiche and a reader of this
+ * type are looking at the same thing.
+ */
 export interface PeopleCultureData {
-  supremeDeity?: string;
-  intermediates: string[];
-  initiation?: string;
-  femaleInitiation?: string;
-  funerary?: string;
-  symbols: string[];
-  music?: string;
-  gastronomy?: string;
-  christianityPercentage?: number;
-  islamPercentage?: number;
-  syncretism?: string;
+  majorRites?: string;
+  symbols?: string;
+  artsAndMusic?: string;
+  spiritualities?: string;
 }
 
 export interface PeopleRelatedData {
@@ -82,6 +95,26 @@ export interface PeopleRelatedData {
   politicalSystem?: string;
   clanOrganization?: string;
   ageClassSystems?: string;
+  roleOfLineages?: string;
+  religiousAuthority?: string;
+}
+
+/** One row of the fiche's "Liens" preview (Epic 11, FR72/FR75) — the full corpus lives at `/fr/peuples/{id}/liens`. */
+export interface PeopleRelationPreviewItem {
+  id: string;
+  type: RelationBadgeType;
+  derived: boolean;
+  neighborName: string;
+}
+
+/** Read-time shape of the `/api/v2/peoples/{id}/relations` envelope's `data`, kept minimal on purpose. */
+export interface EgoNetworkPreviewSource {
+  sourced: Array<{
+    relationId: string;
+    type: string;
+    otherPeople: { nameMain: string };
+  }>;
+  derived: Array<{ otherPeople: { id: string; nameMain: string } }>;
 }
 
 export interface CountryDistributionRow {
@@ -89,6 +122,8 @@ export interface CountryDistributionRow {
   population?: number;
   populationFormatted?: string;
   percentage?: number;
+  /** Where inside the country, in the fiche's own words. */
+  note?: string;
 }
 
 export interface PeopleCountriesData {
@@ -99,6 +134,30 @@ export interface PeopleCountriesData {
   source?: string;
 }
 
+/** One name record shaped for `NameOriginCard`, plus the raw fields its `confidenceChip` slot needs. */
+export interface PeopleNameRecordViewData {
+  record: NameRecordView;
+  confidenceScore: number | null;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
+/** One historical spelling shaped for `NameSpellingHistory`, plus its own confidence-chip fields. */
+export interface PeopleNameSpellingData {
+  nameText: string;
+  periodLabel: string | null;
+  confidenceScore: number | null;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
+export interface PeopleNamesData {
+  autonym: string | null;
+  endonyms: PeopleNameRecordViewData[];
+  exonyms: PeopleNameRecordViewData[];
+  spellingHistory: PeopleNameSpellingData[];
+}
+
 export interface PeoplePageData {
   hero: PeopleHeroData;
   origin: PeopleOriginData;
@@ -107,7 +166,9 @@ export interface PeoplePageData {
   culture: PeopleCultureData;
   relatedPeoples: PeopleRelatedData;
   countries: PeopleCountriesData;
-  sources: string;
+  /** Each source keeps its own tier, url and notes — a joined line destroys all three. */
+  sources: FicheSourceEntry[];
+  names: PeopleNamesData | null;
 }
 
 // ==========================================
@@ -117,6 +178,7 @@ export interface PeoplePageData {
 /**
  * Format population number: 40000000 → "40M", 500000 → "500K"
  */
+// @req REQ-003
 export function formatPeoplePopulation(n: number): string {
   if (n >= 1_000_000) {
     const m = n / 1_000_000;
@@ -134,6 +196,7 @@ export function formatPeoplePopulation(n: number): string {
  * Extract short display form from a selfAppellation string.
  * "Ọmọ Oòduà (singulier), Yorùbá (pluriel)" → "Ọmọ Oòduà · Yorùbá"
  */
+// @req REQ-003
 export function extractAppellationShort(selfAppellation?: string): string {
   if (!selfAppellation) return "";
   const parts = selfAppellation.match(/([^(,]+?)\s*\(/g);
@@ -147,6 +210,7 @@ export function extractAppellationShort(selfAppellation?: string): string {
 // TRANSFORM FUNCTIONS
 // ==========================================
 
+// @req REQ-003
 export function transformPeopleHero(raw: PeopleDetail): PeopleHeroData {
   return {
     peopleId: raw.id,
@@ -160,9 +224,12 @@ export function transformPeopleHero(raw: PeopleDetail): PeopleHeroData {
     whyProblematic: raw.appellations?.whyProblematic,
     historicalRegion: raw.appellations?.historicalRegion,
     ethnoLinguisticGroup: raw.appellations?.ethnoLinguisticGroup,
+    originOfExonyms: raw.appellations?.originOfExonyms,
+    contemporaryUsage: raw.appellations?.contemporaryUsage,
   };
 }
 
+// @req REQ-003
 export function transformPeopleOrigins(
   origins?: OriginsSection
 ): PeopleOriginData {
@@ -177,6 +244,7 @@ export function transformPeopleOrigins(
   };
 }
 
+// @req REQ-003
 export function transformPeopleLanguages(
   languages?: LanguagesSection,
   languageFamilyId?: string,
@@ -192,6 +260,7 @@ export function transformPeopleLanguages(
   };
 }
 
+// @req REQ-003
 export function transformPeopleHistory(
   historicalRole?: HistoricalRoleSection
 ): PeopleHistoryData {
@@ -203,56 +272,58 @@ export function transformPeopleHistory(
   };
 }
 
+// @req REQ-003
 export function transformPeopleCulture(
   culture?: DetailedCultureSection
 ): PeopleCultureData {
-  if (!culture) {
-    return {
-      supremeDeity: undefined,
-      intermediates: [],
-      initiation: undefined,
-      femaleInitiation: undefined,
-      funerary: undefined,
-      symbols: [],
-      music: undefined,
-      gastronomy: undefined,
-      christianityPercentage: undefined,
-      islamPercentage: undefined,
-      syncretism: undefined,
-    };
-  }
-
-  const deity = culture.divinitiesAndSpirits?.supremeDeity;
-  const supremeDeity = deity?.name ?? deity?.endonym;
-
-  const intermediates = (
-    culture.divinitiesAndSpirits?.intermediateDivinities ?? []
-  )
-    .map((d) => d.name ?? d.endonym ?? "")
-    .filter(Boolean);
-
-  const symbols = (culture.symbolsAndArts?.symbols ?? []).map((s) => s.name);
-
   return {
-    supremeDeity,
-    intermediates,
-    initiation: culture.ritesAndPractices?.initiationRites?.maleInitiation,
-    femaleInitiation:
-      culture.ritesAndPractices?.initiationRites?.femaleInitiation,
-    funerary: culture.ritesAndPractices?.funeraryRites?.wake,
-    symbols,
-    music: culture.symbolsAndArts?.artsAndMusic?.musicalInstruments,
-    gastronomy: culture.symbolsAndArts?.gastronomy?.emblematicDishes,
-    christianityPercentage:
-      culture.contemporarySpirituality?.christianity?.percentageOfPopulation,
-    islamPercentage:
-      culture.contemporarySpirituality?.islam?.percentageOfPopulation,
-    syncretism:
-      culture.contemporarySpirituality?.religiousSyncretism
-        ?.coexistenceOfPractices,
+    majorRites: culture?.majorRites,
+    symbols: culture?.symbols,
+    artsAndMusic: culture?.artsAndMusic,
+    spiritualities: culture?.spiritualities,
   };
 }
 
+/**
+ * Whether the culture chapter has anything to show.
+ *
+ * One predicate, two callers — the fiche's section gate and the grid itself.
+ * They used to carry a condition each, and the outer one tested fewer fields
+ * than the inner, so a fiche could satisfy the grid and still never reach it.
+ */
+// @req REQ-003
+export function hasCultureContent(culture: PeopleCultureData): boolean {
+  return Object.values(culture).some(Boolean);
+}
+
+/**
+ * Whether the origins chapter has anything to show.
+ *
+ * Same reason as {@link hasCultureContent}: the fiche's gate tested five of
+ * the seven fields `PeopleOriginBlock` renders, so a fiche declaring only
+ * `unificationsOrDivisions` or `majorHistoricalEvents` had them dropped.
+ */
+// @req REQ-003
+export function hasOriginContent(origin: PeopleOriginData): boolean {
+  return Object.values(origin).some((value) =>
+    Array.isArray(value) ? value.length > 0 : Boolean(value)
+  );
+}
+
+/**
+ * Whether the neighbours-and-organisation chapter has anything of its own.
+ *
+ * The relations preview is deliberately excluded: it comes from another
+ * service, and the fiche gate ORs it in separately.
+ */
+// @req REQ-097
+export function hasRelatedContent(related: PeopleRelatedData): boolean {
+  return Object.values(related).some((value) =>
+    Array.isArray(value) ? value.length > 0 : Boolean(value)
+  );
+}
+
+// @req REQ-097
 export function transformPeopleRelatedPeoples(
   ethnicities?: string[],
   organization?: OrganizationSection
@@ -262,9 +333,54 @@ export function transformPeopleRelatedPeoples(
     politicalSystem: organization?.traditionalPoliticalSystem,
     clanOrganization: organization?.clanOrganization,
     ageClassSystems: organization?.ageClassSystems,
+    roleOfLineages: organization?.roleOfLineages,
+    religiousAuthority: organization?.religiousAuthority,
   };
 }
 
+// @req REQ-097
+export function transformEgoNetworkPreview(
+  network: EgoNetworkPreviewSource
+): PeopleRelationPreviewItem[] {
+  return [
+    ...network.sourced.map((relation) => ({
+      id: relation.relationId,
+      type: relation.type as RelationBadgeType,
+      derived: false,
+      neighborName: relation.otherPeople.nameMain,
+    })),
+    ...network.derived.map((link) => ({
+      id: `derived_${link.otherPeople.id}`,
+      type: "linguistic" as const,
+      derived: true,
+      neighborName: link.otherPeople.nameMain,
+    })),
+  ];
+}
+
+/**
+ * The same preview, from the ego network a *server* route already awaited.
+ *
+ * `transformEgoNetworkPreview` reads the REST envelope, which is what the
+ * browser gets; a fiche route holds `SourcedRelation`s instead and would
+ * otherwise have to re-serialize them into an envelope shape to reuse it.
+ * Only sourced relations are mapped here: a derived link is computed from the
+ * AFRIK hierarchy rather than stated by a source (FR73), and the fiche's
+ * relations surface shows what the corpus documents.
+ */
+// @req REQ-097
+export function transformSourcedRelationsPreview(
+  relations: readonly SourcedRelation[]
+): PeopleRelationPreviewItem[] {
+  return relations.map((relation) => ({
+    id: relation.id,
+    type: relation.relationType,
+    derived: false,
+    neighborName: relation.neighbor.nameMain,
+  }));
+}
+
+// @req REQ-003
 export function transformPeopleCountries(
   demography?: GlobalDemographySection
 ): PeopleCountriesData {
@@ -278,6 +394,7 @@ export function transformPeopleCountries(
     populationFormatted:
       d.population != null ? formatPeoplePopulation(d.population) : undefined,
     percentage: d.percentage,
+    note: d.note,
   }));
 
   return {
@@ -289,15 +406,99 @@ export function transformPeopleCountries(
   };
 }
 
+/**
+ * Shape one `PeopleNameRecord` (API view) into a `NameOriginCard`-compatible
+ * `NameRecordView` plus the raw confidence fields its chip slot needs. The
+ * card and the chip are composed by the caller (`PeopleNamesSection`) —
+ * this transformer stays free of JSX.
+ */
+// @req REQ-054
+export function transformPeopleNameRecord(
+  entry: PeopleNameRecord
+): PeopleNameRecordViewData {
+  return {
+    record: {
+      nameText: entry.nameText,
+      nameType: entry.nameType,
+      languageOfOrigin: entry.languageOfOrigin,
+      meaning: entry.meaning,
+      periodLabel: entry.periodLabel,
+      imposedBy: entry.imposition?.imposedBy ?? null,
+      impositionPeriod: entry.imposition?.impositionPeriod ?? null,
+      whyProblematic: entry.imposition?.whyProblematic ?? null,
+      contemporaryUsage: entry.imposition?.contemporaryUsage ?? null,
+    },
+    confidenceScore: entry.confidence?.score ?? null,
+    sourceCount: entry.sources.length,
+    lastHumanAuditAt: entry.confidence?.recomputedAt ?? null,
+  };
+}
+
+/**
+ * Shape a `PeopleNamesDossier` (GET /v2/peoples/{id}/names) into the
+ * endonyms-first `names` payload for `PeopleNamesSection`. Returns `null`
+ * when there is nothing to show (UX-DR31) — the section omits itself
+ * entirely rather than rendering an empty shell.
+ */
+// @req REQ-054
+export function transformPeopleNames(
+  dossier?: PeopleNamesDossier | null
+): PeopleNamesData | null {
+  if (!dossier || dossier.names.length === 0) return null;
+
+  const endonyms = dossier.names
+    .filter((n) => n.nameType === "endonym")
+    .map(transformPeopleNameRecord);
+  const exonyms = dossier.names
+    .filter((n) => n.nameType === "exonym")
+    .map(transformPeopleNameRecord);
+  const spellingHistory: PeopleNameSpellingData[] = dossier.names
+    .filter((n) => n.nameType === "historical_spelling")
+    .map((n) => ({
+      nameText: n.nameText,
+      periodLabel: n.periodLabel,
+      confidenceScore: n.confidence?.score ?? null,
+      sourceCount: n.sources.length,
+      lastHumanAuditAt: n.confidence?.recomputedAt ?? null,
+    }));
+
+  if (
+    endonyms.length === 0 &&
+    exonyms.length === 0 &&
+    spellingHistory.length === 0
+  ) {
+    return null;
+  }
+
+  return {
+    autonym: dossier.autonym,
+    endonyms,
+    exonyms,
+    spellingHistory,
+  };
+}
+
+/** Fetches the names dossier for a people from the fiche's data flow (GET /v2/peoples/{id}/names). */
+// @req REQ-054
+export async function fetchPeopleNamesDossier(
+  peopleId: string
+): Promise<PeopleNamesDossier | null> {
+  const response = await fetch(`/api/v2/peoples/${peopleId}/names`);
+  if (!response.ok) return null;
+  const body = await response.json();
+  return (body.data ?? null) as PeopleNamesDossier | null;
+}
+
 // ==========================================
 // MAIN TRANSFORM
 // ==========================================
 
-export function transformPeopleData(raw: PeopleDetail): PeoplePageData {
-  const sources =
-    raw.sources && raw.sources.length > 0
-      ? raw.sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ")
-      : "";
+// @req REQ-003
+export function transformPeopleData(
+  raw: PeopleDetail,
+  namesDossier?: PeopleNamesDossier | null
+): PeoplePageData {
+  const sources = ficheSourceEntries(raw.sources);
 
   return {
     hero: transformPeopleHero(raw),
@@ -315,5 +516,6 @@ export function transformPeopleData(raw: PeopleDetail): PeoplePageData {
     ),
     countries: transformPeopleCountries(raw.demography),
     sources,
+    names: transformPeopleNames(namesDossier),
   };
 }

@@ -80,14 +80,54 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Sissala people (https://www.101lasttribes.com/tribes/sissala.html)",
-      "Joshua Project – Sisaala, Tumulung in Ghana (https://joshuaproject.net/people_groups/14952)",
-      "Joshua Project – Sisaala, Western in Ghana (https://joshuaproject.net/people_groups/14953)",
-      "Joshua Project – Sisaala, Pasaale in Ghana (https://joshuaproject.net/people_groups/14325)",
-      "Joshua Project – Sissala in Burkina Faso (https://joshuaproject.net/people_groups/14956)",
-      "Ethnologue – Sisaala, Tumulung SIL (https://www.ethnologue.com/language/sil/)",
-      "Ethnologue – Sisaala, Western SSL (https://www.ethnologue.com/language/ssl/)",
-      "Ghana Statistical Service – 2021 Population and Housing Census, Sissala West District"
+      {
+        "title": "101 Last Tribes – Sissala people",
+        "url": "https://www.101lasttribes.com/tribes/sissala.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Sisaala, Tumulung in Ghana",
+        "url": "https://joshuaproject.net/people_groups/14952",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Sisaala, Western in Ghana",
+        "url": "https://joshuaproject.net/people_groups/14953",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Sisaala, Pasaale in Ghana",
+        "url": "https://joshuaproject.net/people_groups/14325",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Sissala in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/14956",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Sisaala, Tumulung SIL",
+        "url": "https://www.ethnologue.com/language/sil/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue – Sisaala, Western SSL",
+        "url": "https://www.ethnologue.com/language/ssl/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ghana Statistical Service – 2021 Population and Housing Census, Sissala West District",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

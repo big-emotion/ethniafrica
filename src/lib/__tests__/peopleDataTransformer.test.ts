@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import {
   formatPeoplePopulation,
   extractAppellationShort,
@@ -7,11 +7,17 @@ import {
   transformPeopleLanguages,
   transformPeopleHistory,
   transformPeopleCulture,
+  hasOriginContent,
   transformPeopleRelatedPeoples,
+  transformEgoNetworkPreview,
   transformPeopleCountries,
   transformPeopleData,
+  transformPeopleNameRecord,
+  transformPeopleNames,
+  fetchPeopleNamesDossier,
 } from "../peopleDataTransformer";
 import type { PeopleDetail } from "@/types/afrik-frontend";
+import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 
 // ==========================================
 // MOCK DATA: Yoruba (PPL_YORUBA)
@@ -59,58 +65,21 @@ const yorubaPeople: PeopleDetail = {
     dialects: ["Oyo", "Lagos", "Ekiti", "Ondo"],
     vehicularRole: "Langue véhiculaire en Afrique de l'Ouest",
   },
+  // The four flat keys `public/modele-peuple.json` declares for
+  // `content.culture`, taken verbatim from PPL_YORUBA. The fixture this
+  // replaced described a nested A-F structure that the TXT parser flattened
+  // years ago and that no fiche in the corpus carries — so the suite was
+  // green against a shape the corpus never produces. See
+  // scripts/audit/gapAnalyzer.ts, which tracks restoring the nesting.
   culture: {
-    divinitiesAndSpirits: {
-      supremeDeity: {
-        name: "Olodumare",
-        attributes: "Créateur suprême",
-        veneration: "Indirect via Orisha",
-      },
-      intermediateDivinities: [
-        {
-          name: "Shango",
-          domain: "Tonnerre et foudre",
-          role: "Dieu du tonnerre",
-        },
-        { name: "Oya", domain: "Vent et changement" },
-      ],
-    },
-    ritesAndPractices: {
-      initiationRites: {
-        maleInitiation: "Initiation à l'Ogboni",
-        femaleInitiation: "Rites de puberté",
-      },
-      funeraryRites: {
-        wake: "Veillée funèbre Egungun",
-        burial: "Inhumation traditionnelle",
-      },
-    },
-    symbolsAndArts: {
-      symbols: [
-        { name: "Ile-Ife", meaning: "Cité berceau" },
-        { name: "Ase", meaning: "Pouvoir divin" },
-      ],
-      artsAndMusic: {
-        musicalInstruments: "Bàtá, gangan (tambour parlant)",
-        dances: "Bata dance",
-      },
-      gastronomy: {
-        emblematicDishes: "Egusi soup, jollof rice, pounded yam",
-      },
-    },
-    contemporarySpirituality: {
-      christianity: {
-        percentageOfPopulation: 40,
-        denominations: "Pentecôtisme, catholicisme",
-      },
-      islam: {
-        percentageOfPopulation: 50,
-        specificPractices: "Pratiques soufies",
-      },
-      religiousSyncretism: {
-        coexistenceOfPractices: "Coexistence Islam-Christianisme-Ifá",
-      },
-    },
+    majorRites:
+      "Le culte des orisha structure la vie rituelle. La divination Ifa est inscrite au patrimoine culturel immateriel de l'UNESCO (2005). Les masques Gelede celebrent la puissance des femmes agees (iyami).",
+    symbols:
+      "Les bronzes et sculptures de Ife et Benin representent le sommet de l'art classique yoruba. Les tissus aso-oke et adire sont les symboles textiles de l'identite.",
+    artsAndMusic:
+      "Le dundun (tambour parlant), le bata et le sekere sont les instruments classiques. Le juju music, l'afrobeat et le fuji sont des genres modernes d'origine yoruba.",
+    spiritualities:
+      "La religion traditionnelle yoruba (Aborisa) reconnait un Dieu supreme Olodumare et un pantheon de divinites secondaires, les orisha.",
   },
   historicalRole: {
     kingdomsOrChiefdoms:
@@ -124,7 +93,12 @@ const yorubaPeople: PeopleDetail = {
   demography: {
     totalPopulation: 40000000,
     distributionByCountry: [
-      { country: "NGA", population: 35000000, percentage: 87.5 },
+      {
+        country: "NGA",
+        population: 35000000,
+        percentage: 87.5,
+        note: "Sud-ouest : Lagos, Ibadan, Oyo, Osun, Ogun, Ondo, Ekiti.",
+      },
       { country: "BEN", population: 3000000, percentage: 7.5 },
       { country: "TGO", population: 500000, percentage: 1.25 },
     ],
@@ -132,9 +106,13 @@ const yorubaPeople: PeopleDetail = {
     source: "SIL Ethnologue 2025",
   },
   sources: [
-    "SIL Ethnologue – Yoruba",
-    "CIA World Factbook – Nigeria",
-    "UNESCO – Cultural heritage of the Yoruba people",
+    { title: "SIL Ethnologue – Yoruba", url: null, tier: "unverified" },
+    { title: "CIA World Factbook – Nigeria", url: null, tier: "unverified" },
+    {
+      title: "UNESCO – Cultural heritage of the Yoruba people",
+      url: null,
+      tier: "unverified",
+    },
   ],
 };
 
@@ -150,6 +128,7 @@ const minimalPeople: PeopleDetail = {
 // ==========================================
 
 describe("formatPeoplePopulation", () => {
+  // @req REQ-003
   it("formats whole millions", () => {
     expect(formatPeoplePopulation(40000000)).toBe("40M");
   });
@@ -176,6 +155,7 @@ describe("formatPeoplePopulation", () => {
 });
 
 describe("extractAppellationShort", () => {
+  // @req REQ-003
   it("extracts short forms from parenthetical format", () => {
     expect(extractAppellationShort("Moaga (singulier), Moose (pluriel)")).toBe(
       "Moaga · Moose"
@@ -206,6 +186,7 @@ describe("extractAppellationShort", () => {
 // ==========================================
 
 describe("transformPeopleHero", () => {
+  // @req REQ-003
   it("extracts basic identity fields", () => {
     const hero = transformPeopleHero(yorubaPeople);
     expect(hero.peopleId).toBe("PPL_YORUBA");
@@ -245,9 +226,24 @@ describe("transformPeopleHero", () => {
     expect(hero.exonyms).toEqual([]);
     expect(hero.currentCountries).toEqual([]);
   });
+
+  // The corpus fills both on all 789 fiches; only the games engine read them,
+  // so the fiche's own naming block showed neither.
+  // @req REQ-003
+  it("carries the origin of the exonyms", () => {
+    const hero = transformPeopleHero(yorubaPeople);
+    expect(hero.originOfExonyms).toContain("Hausa");
+  });
+
+  // @req REQ-003
+  it("carries the contemporary usage of the name", () => {
+    const hero = transformPeopleHero(yorubaPeople);
+    expect(hero.contemporaryUsage).toContain("self-accepted");
+  });
 });
 
 describe("transformPeopleOrigins", () => {
+  // @req REQ-003
   it("extracts all origin fields", () => {
     const result = transformPeopleOrigins(yorubaPeople.origins);
     expect(result.ancientOrigins).toBe(
@@ -277,7 +273,33 @@ describe("transformPeopleOrigins", () => {
   });
 });
 
+describe("hasOriginContent", () => {
+  // The fiche's gate used to test five of the seven fields the block renders,
+  // so a fiche declaring only one of the other two lost it silently.
+  // @req REQ-003
+  it("is true for a fiche declaring only unifications or only major events", () => {
+    const base = { migrationRoutes: [], historicalSettlementZones: [] };
+    expect(
+      hasOriginContent({ ...base, unificationsOrDivisions: "Unification" })
+    ).toBe(true);
+    expect(
+      hasOriginContent({ ...base, majorHistoricalEvents: "Guerres" })
+    ).toBe(true);
+  });
+
+  // @req REQ-003
+  it("is false when the fiche declares no origin at all", () => {
+    expect(
+      hasOriginContent({
+        migrationRoutes: [],
+        historicalSettlementZones: [],
+      })
+    ).toBe(false);
+  });
+});
+
 describe("transformPeopleLanguages", () => {
+  // @req REQ-003
   it("extracts language data", () => {
     const result = transformPeopleLanguages(yorubaPeople.languages);
     expect(result.mainLanguage).toBe("Yoruba");
@@ -304,6 +326,7 @@ describe("transformPeopleLanguages", () => {
 });
 
 describe("transformPeopleHistory", () => {
+  // @req REQ-003
   it("extracts all historical role fields", () => {
     const result = transformPeopleHistory(yorubaPeople.historicalRole);
     expect(result.kingdomsOrChiefdoms).toContain("Empire Oyo");
@@ -322,61 +345,46 @@ describe("transformPeopleHistory", () => {
 });
 
 describe("transformPeopleCulture", () => {
-  it("extracts supreme deity name", () => {
+  // @req REQ-003
+  it("carries the major rites the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.supremeDeity).toBe("Olodumare");
+    expect(result.majorRites).toContain("orisha");
   });
 
-  it("extracts intermediate divinities as name list", () => {
+  // @req REQ-003
+  it("carries the symbols the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.intermediates).toContain("Shango");
-    expect(result.intermediates).toContain("Oya");
+    expect(result.symbols).toContain("aso-oke");
   });
 
-  it("extracts initiation rites", () => {
+  // @req REQ-003
+  it("carries the arts and music the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.initiation).toContain("Ogboni");
+    expect(result.artsAndMusic).toContain("dundun");
   });
 
-  it("extracts female initiation rites", () => {
+  // @req REQ-003
+  it("carries the spiritualities the fiche declares", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.femaleInitiation).toContain("puberté");
+    expect(result.spiritualities).toContain("Olodumare");
   });
 
-  it("extracts funerary rites", () => {
+  // Every one of the 789 people fiches fills all four keys, so a transform
+  // that drops any of them empties the chapter for the whole corpus — which
+  // is exactly what shipped while this suite asserted a nested shape.
+  // @req REQ-003
+  it("keeps all four declared fields, none dropped", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.funerary).toContain("Egungun");
+    expect(Object.values(result).filter(Boolean)).toHaveLength(4);
   });
 
-  it("extracts symbols as name list", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.symbols).toContain("Ile-Ife");
-    expect(result.symbols).toContain("Ase");
-  });
-
-  it("extracts music and gastronomy", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.music).toContain("Bàtá");
-    expect(result.gastronomy).toContain("Egusi");
-  });
-
-  it("extracts spirituality percentages", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.christianityPercentage).toBe(40);
-    expect(result.islamPercentage).toBe(50);
-  });
-
-  it("extracts syncretism description", () => {
-    const result = transformPeopleCulture(yorubaPeople.culture);
-    expect(result.syncretism).toContain("Ifá");
-  });
-
+  // @req REQ-003
   it("returns safe defaults when culture is undefined", () => {
     const result = transformPeopleCulture(undefined);
-    expect(result.supremeDeity).toBeUndefined();
-    expect(result.intermediates).toEqual([]);
-    expect(result.symbols).toEqual([]);
-    expect(result.christianityPercentage).toBeUndefined();
+    expect(result.majorRites).toBeUndefined();
+    expect(result.symbols).toBeUndefined();
+    expect(result.artsAndMusic).toBeUndefined();
+    expect(result.spiritualities).toBeUndefined();
   });
 });
 
@@ -415,9 +423,71 @@ describe("transformPeopleRelatedPeoples", () => {
     expect(result.politicalSystem).toBeUndefined();
     expect(result.ethnicities).toEqual(["Oyo"]);
   });
+
+  // @req REQ-003
+  it("carries the role of lineages and the religious authority", () => {
+    const result = transformPeopleRelatedPeoples(
+      yorubaPeople.ethnicities,
+      yorubaPeople.organization
+    );
+    expect(result.roleOfLineages).toContain("lignages");
+    expect(result.religiousAuthority).toContain("Alaafin");
+  });
+});
+
+describe("transformEgoNetworkPreview", () => {
+  // @req REQ-097 FR72
+  it("maps sourced relations to preview items", () => {
+    const result = transformEgoNetworkPreview({
+      sourced: [
+        {
+          relationId: "REL_1",
+          type: "migratory",
+          otherPeople: { nameMain: "Fon" },
+        },
+      ],
+      derived: [],
+    });
+    expect(result).toEqual([
+      { id: "REL_1", type: "migratory", derived: false, neighborName: "Fon" },
+    ]);
+  });
+
+  // @req REQ-097 FR73
+  it("maps derived linguistic links with a derived id and flag", () => {
+    const result = transformEgoNetworkPreview({
+      sourced: [],
+      derived: [{ otherPeople: { id: "PPL_BAMILEKE", nameMain: "Bamiléké" } }],
+    });
+    expect(result).toEqual([
+      {
+        id: "derived_PPL_BAMILEKE",
+        type: "linguistic",
+        derived: true,
+        neighborName: "Bamiléké",
+      },
+    ]);
+  });
+
+  // @req REQ-097 FR72
+  it("returns an empty array for an empty network", () => {
+    expect(transformEgoNetworkPreview({ sourced: [], derived: [] })).toEqual(
+      []
+    );
+  });
 });
 
 describe("transformPeopleCountries", () => {
+  // 1063 of these were written across 486 fiches before the strict model
+  // declared the field, so the transform dropped every one of them.
+  // @req REQ-003
+  it("carries the per-country note the fiche writes", () => {
+    const result = transformPeopleCountries(yorubaPeople.demography);
+    const nigeria = result.distributions.find((d) => d.country === "NGA");
+    expect(nigeria?.note).toContain("Ibadan");
+  });
+
+  // @req REQ-003
   it("extracts total population and formats it", () => {
     const result = transformPeopleCountries(yorubaPeople.demography);
     expect(result.totalPopulation).toBe(40000000);
@@ -458,6 +528,167 @@ describe("transformPeopleCountries", () => {
 });
 
 // ==========================================
+// NAMES PAYLOAD (ETNI-473)
+// ==========================================
+
+const dinkaNamesDossier: PeopleNamesDossier = {
+  peopleId: "PPL_DINKA",
+  autonym: "Jieng",
+  names: [
+    {
+      id: "nr-1",
+      nameText: "Jieng",
+      nameType: "endonym",
+      languageOfOrigin: "din",
+      meaning: "peuple",
+      periodLabel: null,
+      imposition: null,
+      assertionId: "as-1",
+      sources: [
+        {
+          id: "s-1",
+          title: "SIL Ethnologue",
+          url: null,
+          year: 2025,
+          tier: "1",
+        },
+      ],
+      confidence: { score: 90, recomputedAt: "2025-01-01" },
+    },
+    {
+      id: "nr-2",
+      nameText: "Dinka",
+      nameType: "exonym",
+      languageOfOrigin: null,
+      meaning: null,
+      periodLabel: null,
+      imposition: {
+        imposedBy: "administration coloniale britannique",
+        impositionPeriod: "1898-1956",
+        whyProblematic: "efface l'auto-appellation Jieng",
+        contemporaryUsage: "toujours utilisé internationalement",
+      },
+      assertionId: "as-2",
+      sources: [],
+      confidence: null,
+    },
+    {
+      id: "nr-3",
+      nameText: "Denka",
+      nameType: "historical_spelling",
+      languageOfOrigin: null,
+      meaning: null,
+      periodLabel: "1850-1900",
+      imposition: null,
+      assertionId: "as-3",
+      sources: [],
+      confidence: { score: 60, recomputedAt: "2025-02-01" },
+    },
+  ],
+};
+
+describe("transformPeopleNameRecord", () => {
+  // @req REQ-056
+  it("flattens the imposition object into the record view", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[1]);
+    expect(result.record.imposedBy).toBe(
+      "administration coloniale britannique"
+    );
+    expect(result.record.impositionPeriod).toBe("1898-1956");
+    expect(result.record.whyProblematic).toContain("Jieng");
+    expect(result.record.contemporaryUsage).toContain("internationalement");
+  });
+
+  // @req REQ-054
+  it("returns null imposition fields when imposition is null", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[0]);
+    expect(result.record.imposedBy).toBeNull();
+    expect(result.record.impositionPeriod).toBeNull();
+  });
+
+  // @req REQ-054
+  it("extracts confidence fields and source count", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[0]);
+    expect(result.confidenceScore).toBe(90);
+    expect(result.lastHumanAuditAt).toBe("2025-01-01");
+    expect(result.sourceCount).toBe(1);
+  });
+
+  // @req REQ-054
+  it("defaults confidence fields to null when absent", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[1]);
+    expect(result.confidenceScore).toBeNull();
+    expect(result.lastHumanAuditAt).toBeNull();
+    expect(result.sourceCount).toBe(0);
+  });
+});
+
+describe("transformPeopleNames", () => {
+  // @req REQ-054 REQ-056
+  it("separates endonyms, exonyms and spelling history, endonyms first", () => {
+    const result = transformPeopleNames(dinkaNamesDossier);
+    expect(result).not.toBeNull();
+    expect(result!.autonym).toBe("Jieng");
+    expect(result!.endonyms).toHaveLength(1);
+    expect(result!.endonyms[0].record.nameText).toBe("Jieng");
+    expect(result!.exonyms).toHaveLength(1);
+    expect(result!.exonyms[0].record.nameText).toBe("Dinka");
+    expect(result!.spellingHistory).toHaveLength(1);
+    expect(result!.spellingHistory[0].nameText).toBe("Denka");
+    expect(result!.spellingHistory[0].periodLabel).toBe("1850-1900");
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier is null (UX-DR31)", () => {
+    expect(transformPeopleNames(null)).toBeNull();
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier is undefined (UX-DR31)", () => {
+    expect(transformPeopleNames(undefined)).toBeNull();
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier has zero published name records (UX-DR31)", () => {
+    const empty: PeopleNamesDossier = {
+      peopleId: "PPL_TEST",
+      autonym: null,
+      names: [],
+    };
+    expect(transformPeopleNames(empty)).toBeNull();
+  });
+});
+
+describe("fetchPeopleNamesDossier", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  // @req REQ-054
+  it("returns the dossier from the response envelope on success", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({ data: dinkaNamesDossier }),
+      }))
+    );
+    const result = await fetchPeopleNamesDossier("PPL_DINKA");
+    expect(result).toEqual(dinkaNamesDossier);
+  });
+
+  // @req REQ-054
+  it("returns null when the response is not ok", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: false, json: async () => ({}) }))
+    );
+    const result = await fetchPeopleNamesDossier("PPL_UNKNOWN");
+    expect(result).toBeNull();
+  });
+});
+
+// ==========================================
 // MAIN TRANSFORM TESTS
 // ==========================================
 
@@ -468,12 +699,13 @@ describe("transformPeopleData", () => {
     expect(result.origin.migrationRoutes).toHaveLength(1);
     expect(result.language.mainLanguage).toBe("Yoruba");
     expect(result.history.kingdomsOrChiefdoms).toContain("Oyo");
-    expect(result.culture.supremeDeity).toBe("Olodumare");
+    expect(result.culture.spiritualities).toContain("Olodumare");
     expect(result.relatedPeoples.ethnicities).toHaveLength(5);
     expect(result.countries.totalPopulation).toBe(40000000);
     expect(result.sources).toBeTruthy();
   });
 
+  // @req REQ-003
   it("all 8 sections are present in the result", () => {
     const result = transformPeopleData(yorubaPeople);
     expect(result).toHaveProperty("hero");
@@ -486,11 +718,22 @@ describe("transformPeopleData", () => {
     expect(result).toHaveProperty("sources");
   });
 
-  it("joins sources with separator", () => {
+  // Joining them into one line destroyed tier, url and notes before any
+  // component could see them, which is why no people fiche could show a tier.
+  // @req REQ-001
+  it("hands each source through whole, rather than as one joined line", () => {
     const result = transformPeopleData(yorubaPeople);
-    expect(result.sources).toContain(" · ");
-    expect(result.sources).toContain("SIL Ethnologue");
-    expect(result.sources).toContain("UNESCO");
+
+    expect(Array.isArray(result.sources)).toBe(true);
+    expect(result.sources.map((source) => source.label)).toEqual(
+      expect.arrayContaining([
+        expect.stringContaining("SIL Ethnologue"),
+        expect.stringContaining("UNESCO"),
+      ])
+    );
+    result.sources.forEach((source) => {
+      expect(source.standing).toBeTruthy();
+    });
   });
 
   it("handles a minimal PeopleDetail without throwing", () => {
@@ -499,9 +742,22 @@ describe("transformPeopleData", () => {
     expect(result.hero.nameMain).toBe("TestPeople");
     expect(result.origin.migrationRoutes).toEqual([]);
     expect(result.language.isoCodes).toEqual([]);
-    expect(result.culture.intermediates).toEqual([]);
+    expect(result.culture.majorRites).toBeUndefined();
     expect(result.relatedPeoples.ethnicities).toEqual([]);
     expect(result.countries.distributions).toEqual([]);
-    expect(result.sources).toBe("");
+    expect(result.sources).toEqual([]);
+  });
+
+  // @req REQ-054
+  it("defaults names to null when no namesDossier is provided", () => {
+    const result = transformPeopleData(yorubaPeople);
+    expect(result.names).toBeNull();
+  });
+
+  // @req REQ-054 REQ-056
+  it("threads a provided namesDossier into the names payload", () => {
+    const result = transformPeopleData(yorubaPeople, dinkaNamesDossier);
+    expect(result.names).not.toBeNull();
+    expect(result.names!.endonyms).toHaveLength(1);
   });
 });

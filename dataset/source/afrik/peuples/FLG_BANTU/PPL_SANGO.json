@@ -88,13 +88,48 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Sango people : https://www.101lasttribes.com/tribes/sango.html",
-      "Oubangui Medias — Le peuple Ngbandi, le cas des Sango et Yakoma : https://oubanguimedias.com/2022/05/27/le-peuple-ngbandi-le-cas-des-sango-et-yakoma-photo-dun-village-sango-en-1905/",
-      "APiCS Online — Survey chapter: Sango (lingua franca) : https://apics-online.info/surveys/59",
-      "SIL Ethnologue — Sango (sag) : https://www.ethnologue.com/language/sag",
-      "SIL Ethnologue — Ngbandi septentrional (ngb) : https://www.ethnologue.com/language/ngb",
-      "CIA World Factbook — Central African Republic : https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
-      "Joshua Project — Sango in Central African Republic : https://joshuaproject.net/people_groups/14728/CT"
+      {
+        "title": "101 Last Tribes — Sango people",
+        "url": "https://www.101lasttribes.com/tribes/sango.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Oubangui Medias — Le peuple Ngbandi, le cas des Sango et Yakoma",
+        "url": "https://oubanguimedias.com/2022/05/27/le-peuple-ngbandi-le-cas-des-sango-et-yakoma-photo-dun-village-sango-en-1905/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers oubanguimedias.com; the tier awaits editorial review."
+      },
+      {
+        "title": "APiCS Online — Survey chapter: Sango (lingua franca)",
+        "url": "https://apics-online.info/surveys/59",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for apics-online.info."
+      },
+      {
+        "title": "SIL Ethnologue — Sango (sag)",
+        "url": "https://www.ethnologue.com/language/sag",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Ngbandi septentrional (ngb)",
+        "url": "https://www.ethnologue.com/language/ngb",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Central African Republic",
+        "url": "https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Joshua Project — Sango in Central African Republic",
+        "url": "https://joshuaproject.net/people_groups/14728/CT",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

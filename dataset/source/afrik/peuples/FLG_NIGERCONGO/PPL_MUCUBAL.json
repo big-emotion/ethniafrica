@@ -72,12 +72,42 @@
       ]
     },
     "sources": [
-      "Cubal people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/cubal.html)",
-      "The Cubal tribe of Angola – Last Places (https://lastplaces.com/en/travel-is-knowledge/cubal-tribe-of-angola/)",
-      "Kumakonda African Travel Experience – Tribes of Angola (https://kumakonda.com/tribes-of-angola/)",
-      "Slow Food Foundation – Mucubal Cattle, Ark of Taste (https://www.fondazioneslowfood.com/en/ark-of-taste-slow-food/mucubal-cattle/)",
-      "Embassy of Angola – Grupos Etnicos (https://angola.org/grupos-etnicos/)",
-      "Responsible Travel – Angola's tribal groups (https://www.responsibletravel.com/holidays/angola/travel-guide/angolas-tribal-groups)"
+      {
+        "title": "Cubal people – AFRICA 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/cubal.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "The Cubal tribe of Angola – Last Places",
+        "url": "https://lastplaces.com/en/travel-is-knowledge/cubal-tribe-of-angola/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lastplaces.com."
+      },
+      {
+        "title": "Kumakonda African Travel Experience – Tribes of Angola",
+        "url": "https://kumakonda.com/tribes-of-angola/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+      },
+      {
+        "title": "Slow Food Foundation – Mucubal Cattle, Ark of Taste",
+        "url": "https://www.fondazioneslowfood.com/en/ark-of-taste-slow-food/mucubal-cattle/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers fondazioneslowfood.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Embassy of Angola – Grupos Etnicos",
+        "url": "https://angola.org/grupos-etnicos/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers angola.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Responsible Travel – Angola's tribal groups",
+        "url": "https://www.responsibletravel.com/holidays/angola/travel-guide/angolas-tribal-groups",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers responsibletravel.com; the tier awaits editorial review."
+      }
     ]
   }
 }

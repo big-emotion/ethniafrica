@@ -1,106 +1,102 @@
-# Runbook — V1 schema removal cutover
+# Runbook — V1 schema removal cutover (2026-05)
+
+**Status: historical record of 2026-05-14. The cutover is complete; this is not a procedure to
+run.**
+
+Kept as the account of how the V1 schema left the databases, and because one loose end from it
+is still open (see the bottom of this page). For applying a migration today, see
+[`migration-state.md`](./migration-state.md).
 
 **Migration:** `supabase/migrations/007_remove_v1_add_v2_contribution_types.sql`
-**Date drafted:** 2026-05-14
-**Status:** ready to apply — staging then production
-**Owner:** TBD (assign before running)
+**Applied:** 2026-05-14, staging then production, with an idempotent re-apply the same day
 **Related issue:** AUDIT-5 (`#102`)
 
-## Why
+> The recette-backing project's ledger records this as plain version `007` today. The
+> timestamped ledger entries from the day of the cutover were noted at the time but are not
+> what that ledger now shows, so they are not reproduced here — read the live ledger, not this
+> record, when you need the version strings.
 
-The V1 schema (regions, countries v1, ethnic*groups, ethnic_group*\*, languages v1, sources) has been removed from the application code (see `MEMORY.md` — "V1 → V2 Migration COMPLETED"). Migration 007 was committed but never applied to production. As a result:
+---
 
-- Production still carries 7 dead V1 tables and unused enum values.
-- A fresh dev database (after `supabase db reset`) diverges from production.
-- The new V2 contribution types (`new_people`, `update_people`, `new_country`, `update_country`, `new_language_family`, `update_language_family`) are present in code but not necessarily in the production enum, so any V2 contribution path can fail at `INSERT` time.
+## Why it happened
 
-## What migration 007 does
+The V1 schema — `african_regions`, `countries` (v1), `ethnic_groups`, `ethnic_group_*`,
+`languages` (v1), `sources` — had already been removed from the application code, but migration
+`007` was committed and never applied. The databases therefore carried seven dead tables, a
+fresh `supabase db reset` diverged from the deployed schema, and the V2 contribution types
+existed in TypeScript but not necessarily in the `contribution_type` enum, so a V2 contribution
+could fail at `INSERT` time.
 
-1. Adds the V2 contribution-type enum values (`ADD VALUE IF NOT EXISTS`, idempotent).
-2. Drops the V1 tables in dependency order:
-   - `ethnic_group_sources`, `ethnic_group_languages`, `ethnic_group_presence`
-   - `ethnic_groups`, `languages` (v1), `sources`
-   - `countries` (v1), `african_regions`
-3. Leaves the unused V1 enum values in `contribution_type` — Postgres does not support `DROP VALUE`. They are harmless.
+This is the first recorded instance of the failure mode that
+[`migration-state.md`](./migration-state.md) now exists to catch: **a merged migration is not an
+applied migration.**
 
-## Pre-flight (must be true before applying)
+---
 
-- [ ] `git grep -nE "from\(['\"](ethnic_group|african_regions|sources)" src/ scripts/` returns **zero** hits in code that is still routed.
-- [ ] No active read replica or external system reads the V1 tables.
-- [ ] `pg_dump` of production succeeded within the last 24 h and is restorable.
-- [ ] Staging mirror was reset from production within the last 7 days.
+## What migration 007 did
 
-## Steps — staging first
+1. Added the V2 contribution-type enum values with `ADD VALUE IF NOT EXISTS` (idempotent):
+   `new_people`, `update_people`, `new_country`, `update_country`, `new_language_family`,
+   `update_language_family`.
+2. Dropped the V1 tables in dependency order: `ethnic_group_sources`,
+   `ethnic_group_languages`, `ethnic_group_presence`, `ethnic_groups`, `languages` (v1),
+   `sources`, `countries` (v1), `african_regions`.
+3. Left the unused V1 enum values in `contribution_type` — Postgres has no `DROP VALUE`. They
+   are inert.
 
-1. Take a staging snapshot:
+Step 2 had a consequence nobody caught at the time. `DROP TABLE sources CASCADE` also dropped
+`sources_title_key`, the UNIQUE constraint migration `003` had added so the AFRIK loaders could
+upsert on `title`. Migration `009` recreated `sources` with `CREATE TABLE IF NOT EXISTS` and did
+not restore it, and the ledger went on reporting `003` as applied. Every `upsertSource` failed
+from then until migration `039` restored the constraint on 2026-08-25 — three months later.
+That is why [`migration-state.md`](./migration-state.md) says to verify the object, not the
+ledger row.
 
-   ```bash
-   supabase --project-ref <staging-ref> db dump --data-only --file staging-pre-007.sql
-   ```
+---
 
-2. Apply migration 007:
+## How it was applied
 
-   ```bash
-   supabase --project-ref <staging-ref> db push
-   ```
+Staging first, then production — the same ordering the two-step rule now formalises.
 
-3. Smoke-test V2 contribution flows in staging:
+Pre-flight, all confirmed before applying:
 
-   ```bash
-   # POST a `new_country` contribution via /api/admin/contributions
-   # PATCH it to "approve" via /api/admin/contributions/[id]
-   # Confirm the row lands in afrik_countries
-   ```
+- `git grep -nE "from\(['\"](ethnic_group|african_regions|sources)" src/ scripts/` returned no
+  hits in routed code.
+- No read replica or external system read the V1 tables.
+- A `pg_dump` under 24 h old and restorable.
+- The staging mirror had been reset from production within the previous 7 days.
 
-4. Watch Sentry + structured logs for 30 minutes. No new errors expected.
+Per environment: snapshot, `supabase db push`, then verification —
 
-## Steps — production
+```sql
+-- The V1 tables are gone (expected: 0 rows).
+SELECT table_name FROM information_schema.tables
+ WHERE table_schema = 'public'
+   AND table_name IN ('ethnic_group_sources','ethnic_group_languages',
+                      'ethnic_group_presence','ethnic_groups',
+                      'languages','sources','countries','african_regions');
 
-1. Schedule a low-traffic window (currently: weekday 03:00-04:00 CET).
-2. Snapshot:
+-- The V2 enum values are present.
+SELECT unnest(enum_range(NULL::contribution_type));
+```
 
-   ```bash
-   supabase --project-ref <prod-ref> db dump --file prod-pre-007.sql
-   ```
+Followed by 30 minutes watching Sentry and the structured logs. No new errors appeared.
 
-3. Apply:
+The migration was **not** reversible — it drops tables and their data. The rollback plan was a
+restore from the pre-cutover dump, or PITR where available.
 
-   ```bash
-   supabase --project-ref <prod-ref> db push
-   ```
+---
 
-4. Verify the 7 V1 tables are gone:
+## Outcome and open loose end
 
-   ```sql
-   SELECT table_name
-     FROM information_schema.tables
-    WHERE table_schema = 'public'
-      AND table_name IN (
-        'ethnic_group_sources', 'ethnic_group_languages',
-        'ethnic_group_presence', 'ethnic_groups',
-        'languages', 'sources', 'countries', 'african_regions'
-      );
-   -- expected: 0 rows
-   ```
+The V1 tables are gone and the V2 enum values are present on the databases that were in use.
+Verified again during the 2026-05 audit.
 
-5. Verify the V2 enum values:
+**Still open:** five orphaned V1 `update_ethnicity` rows remain in `contributions`. They point
+at entities that no longer exist. Nothing reads them and nothing breaks, but they are the last
+V1 residue in the data and should be deleted or archived deliberately rather than left to be
+rediscovered.
 
-   ```sql
-   SELECT unnest(enum_range(NULL::contribution_type));
-   -- expected to include new_people, update_people, new_country,
-   -- update_country, new_language_family, update_language_family
-   ```
-
-## Rollback
-
-The migration is **not** trivially reversible: it drops tables and their data. If a regression appears post-deploy:
-
-1. Restore from `prod-pre-007.sql` (point-in-time recovery is preferred if available — Supabase Pro has PITR).
-2. Revert any application code that depends on the V2-only schema (none expected as of 2026-05-14).
-3. Re-enable monitoring and post-mortem.
-
-## Follow-up (after migration applies cleanly)
-
-- Delete `src/lib/api/openapi.ts` (V1 OpenAPI spec) — already flagged in audit issue `#122 P1.2`.
-- Close `#102`.
-- Update `MEMORY.md` "V1 → V2 Migration" section: replace "(not yet applied to prod)" with the date of production cutover.
+`src/lib/api/openapi.ts` — the V1 OpenAPI spec, flagged for deletion in the original follow-up
+list — is still present in the tree. Whether it is still reachable is worth a look before
+removing it.

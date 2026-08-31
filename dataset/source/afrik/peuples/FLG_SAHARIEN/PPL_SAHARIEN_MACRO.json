@@ -3,6 +3,7 @@
   "nameMain": "Peuples Sahariens (macro-groupe)",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NER", "NGA", "SDN", "LBY", "CMR"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Sahariens (macro-groupe)",
@@ -122,10 +123,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Saharan subgroup. https://www.ethnologue.com/subgroup/767/",
-      "Country Studies US — Chad. https://countrystudies.us/chad/19.htm",
-      "Michigan State University ALMA — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
-      "CIA World Factbook — Country profiles. https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "SIL Ethnologue — Saharan subgroup",
+        "url": "https://www.ethnologue.com/subgroup/767/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Country Studies US — Chad",
+        "url": "https://countrystudies.us/chad/19.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Michigan State University ALMA — Introduction to the Kanuri Language",
+        "url": "https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for alma.matrix.msu.edu."
+      },
+      {
+        "title": "CIA World Factbook — Country profiles",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

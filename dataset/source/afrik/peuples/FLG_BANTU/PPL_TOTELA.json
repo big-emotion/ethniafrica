@@ -77,10 +77,30 @@
       ]
     },
     "sources": [
-      "Teresa Crane, Completion and Dissociation in Totela Tense and Aspect, ACAL 42, 2012 (http://www.lingref.com/cpp/acal/42/paper2770.pdf)",
-      "Nature, Genetic perspectives on the origin of clicks in Bantu languages from southwestern Zambia, 2012 (https://www.nature.com/articles/ejhg2012192)",
-      "Language in Zambia (PDF), Zambian Christian University, donnees demographiques (http://www.zambiancu.org/1zRead/Language_in_Zambia.pdf)",
-      "Joshua Project, Totela in Zambia (https://joshuaproject.net/people_groups/15571)"
+      {
+        "title": "Teresa Crane, Completion and Dissociation in Totela Tense and Aspect, ACAL 42, 2012",
+        "url": "http://www.lingref.com/cpp/acal/42/paper2770.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lingref.com."
+      },
+      {
+        "title": "Nature, Genetic perspectives on the origin of clicks in Bantu languages from southwestern Zambia, 2012",
+        "url": "https://www.nature.com/articles/ejhg2012192",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nature.com."
+      },
+      {
+        "title": "Language in Zambia (PDF), Zambian Christian University, donnees demographiques",
+        "url": "http://www.zambiancu.org/1zRead/Language_in_Zambia.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers zambiancu.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project, Totela in Zambia",
+        "url": "https://joshuaproject.net/people_groups/15571",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

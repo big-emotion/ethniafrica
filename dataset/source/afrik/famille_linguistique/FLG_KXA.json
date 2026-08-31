@@ -2,6 +2,7 @@
   "id": "FLG_KXA",
   "nameFr": "Kx'a",
   "nameEn": "Kx'a",
+  "classificationStatus": "reconstructive",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " **PREUVES - Auteurs coloniaux problématiques :** - Joseph Greenberg (1963) dans *The Languages of Africa* a créé la catégorie \"Khoisan\" comme macro-famille regroupant toutes les langues à clics d'Afrique australe sans preuve génétique solide. *(Définition : une langue à clic est une langue utilisant des consonnes à clics comme phonèmes distinctifs. Les clics sont des sons produits en créant une occlusion dans la bouche et en relâchant l'air, produisant un son distinctif. Les langues à clics sont principalement présentes en Afrique australe et orientale, avec des inventaires variant de quelques clics à plus de 50 phonèmes clics distincts.)*",
@@ -11,7 +12,10 @@
       "originOfHistoricalTerm": " Le terme « Kx'a » a été introduit par Henry Honken et Bernd Heine en 2010 dans leur ouvrage \"The Kx'a Family: A New Khoisan Genealogy\" publié dans le *Journal of Asian and African Studies* (vol. 79, p. 5–36). Le terme est basé sur le mot reconstruit *kxʼà* signifiant \"terre\" ou \"sol\", partagé par les deux branches de la famille (Juu et ǂHoan). Cette reconstruction phonologique systématique a démontré la relation génétique entre les langues Ju (ex. Ju|'hoan) et ǂHoan, formant une famille distincte."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "ǂʼAmkoe (anciennement ǂHoan ; N!aqriaxe, Sasi)",
+        "Ju / Ju-Kung (Juǀʼhoan et variétés apparentées, !Kung, Vasekela)"
+      ],
       "geographicArea": "Nord du désert du Kalahari : principalement en Namibie (régions de Tsumkwe, Grootfontein, Otjozondjupa) et au Botswana (régions de Ghanzi, Kgalagadi, Ngamiland). Présence minoritaire en Angola (province de Cuando Cubango). Zones arides et semi-arides du Kalahari central et septentrional.",
       "numberOfLanguages": 2,
       "totalSpeakers": null
@@ -45,20 +49,96 @@
     },
     "distribution": {
       "totalSpeakers": null,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NAM": 30000,
+        "BWA": 5050
+      }
     },
     "sources": [
-      "Honken, H. & Heine, B. (2010) – *The Kx'a Family: A New Khoisan Genealogy*. *Journal of Asian and African Studies*, vol. 79, p. 5–36.",
-      "Sands, B. (1998) – *The Linguistic Relationship between the Khoisan Languages*. In *Language and Linguistics in Southern Africa: Studies in the History of Language and Society*. Witwatersrand University Press.",
-      "Traill, A. (1998) – *The Khoisan Languages*. In *The Cambridge Encyclopedia of the World's Ancient Languages*. Cambridge University Press.",
-      "Westphal, E. O. J. (1963) – *The linguistic prehistory of southern Africa: Bush, Kwadi, Hottentot, and Bantu linguistic relationships*. *Africa*, vol. 33, no. 3, p. 237–265.",
-      "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press.",
-      "SIL International (2025) – *Ethnologue: Languages of the World*. [https://www.ethnologue.com/](https://www.ethnologue.com/)",
-      "United Nations (2025) – *World Population Prospects*. [https://population.un.org/wpp/](https://population.un.org/wpp/)",
-      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. [http://www.unesco.org/languages-atlas/](http://www.unesco.org/languages-atlas/)",
-      "Heine, B. & Nurse, D. (2000) – *African Languages: An Introduction*. Cambridge University Press.",
-      "Henn, B. M., Gignoux, C. R., Jobin, M., Granka, J. M., Macpherson, J. M., Kidd, J. M., ... & Mountain, J. L. (2011) – *Hunter-gatherer genomic diversity suggests a southern African origin for modern humans*. *Proceedings of the National Academy of Sciences*, vol. 108, no. 13, p. 5154–5162.",
-      "Tishkoff, S. A., Reed, F. A., Friedlaender, F. R., Ehret, C., Ranciaro, A., Froment, A., ... & Williams, S. M. (2009) – *The genetic structure and history of Africans and African Americans*. *Science*, vol. 324, no. 5930, p. 1035–1044."
+      {
+        "title": "Honken, H. & Heine, B. (2010) – *The Kx'a Family: A New Khoisan Genealogy*. *Journal of Asian and African Studies*, vol. 79, p. 5–36",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Sands, B. (1998) – *The Linguistic Relationship between the Khoisan Languages*. In *Language and Linguistics in Southern Africa: Studies in the History of Language and Society*. Witwatersrand University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Traill, A. (1998) – *The Khoisan Languages*. In *The Cambridge Encyclopedia of the World's Ancient Languages*. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Westphal, E. O. J. (1963) – *The linguistic prehistory of southern Africa: Bush, Kwadi, Hottentot, and Bantu linguistic relationships*. *Africa*, vol. 33, no. 3, p. 237–265",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL International (2025) – *Ethnologue: Languages of the World*",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "United Nations (2025) – *World Population Prospects*",
+        "url": "https://population.un.org/wpp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+      },
+      {
+        "title": "UNESCO (2025) – *Atlas of the World's Languages in Danger*",
+        "url": "http://www.unesco.org/languages-atlas/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Heine, B. & Nurse, D. (2000) – *African Languages: An Introduction*. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henn, B. M., Gignoux, C. R., Jobin, M., Granka, J. M., Macpherson, J. M., Kidd, J. M., ... & Mountain, J. L. (2011) – *Hunter-gatherer genomic diversity suggests a southern African origin for modern humans*. *Proceedings of the National Academy of Sciences*, vol. 108, no. 13, p. 5154–5162",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Tishkoff, S. A., Reed, F. A., Friedlaender, F. R., Ehret, C., Ranciaro, A., Froment, A., ... & Williams, S. M. (2009) – *The genetic structure and history of Africans and African Americans*. *Science*, vol. 324, no. 5930, p. 1035–1044",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.0 (2024) – Classification du nœud \"Kxa\" [kxaa1236] : deux branches directes, \"ǂʼAmkoe\" [hoaa1235] et \"Ju-Kung\" [juku1256]",
+        "url": "https://glottolog.org/resource/languoid/id/kxaa1236",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue (16e éd., 2009) – Juǀʼhoan [ktz] : Namibie ≈30 000, Botswana ≈5 000 locuteurs. (chiffres vérifiés via Wikipédia FR « Juǀʼhoan », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+        "url": "https://www.ethnologue.com/language/ktz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gerlach, Linda (2015) – *Phonetic and phonological description of the Nǃaqriaxe variety of ǂʼAmkoe and the impact of language contact*. PhD dissertation, Humboldt University of Berlin, p. 14-15. [ǂʼAmkoe occidental : 20-50 locuteurs, Botswana]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

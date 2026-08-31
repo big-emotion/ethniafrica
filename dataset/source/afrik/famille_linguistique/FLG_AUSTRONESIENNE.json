@@ -2,6 +2,7 @@
   "id": "FLG_AUSTRONESIENNE",
   "nameFr": "Austronésienne (présente en Afrique uniquement via Madagascar)",
   "nameEn": "Austronesian / Malayo-Polynesian",
+  "classificationStatus": "contested",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " L'expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique. En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l'africanité du peuple malgache en insistant uniquement sur l'origine austronésienne, invisibilisant les apports bantous et est-africains. **Preuves des travaux coloniaux problématiques :**",
@@ -11,7 +12,10 @@
       "originOfHistoricalTerm": "Terme forgé par le linguiste autrichien Wilhelm Schmidt (vers 1899-1906) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien, remplaçant l'ancienne dénomination \"Malayo-Polynesian\" pour inclure les langues de Formose (Taiwan)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "North-Central Malagasic (malgache du Nord-Centre : Merina, Betsileo, Sakalava du Nord, Betsimisaraka, Tsimihety, Antankarana)",
+        "Southwestern Malagasic (malgache du Sud-Ouest : Bara, Tandroy, Mahafaly, Vezo, Antaisaka)"
+      ],
       "geographicArea": "Madagascar (Afrique). Famille mondiale présente également en Asie du Sud-Est, Océanie, et Formose.",
       "numberOfLanguages": 1,
       "totalSpeakers": 27000000
@@ -52,20 +56,89 @@
     },
     "distribution": {
       "totalSpeakers": 27000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "MDG": 25000000
+      }
     },
     "sources": [
-      "Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge.",
-      "Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet.",
-      "Blust, Robert (2013) – *The Austronesian Languages*. Asia-Pacific Linguistics.",
-      "Blench, Roger (2007) – \"New palaeozoogeographical evidence for the settlement of Madagascar\". *Azania: Archaeological Research in Africa*.",
-      "Hurles, Matthew E. et al. (2005) – \"The Dual Origin of the Malagasy in Island Southeast Asia and East Africa: Evidence from Maternal and Paternal Lineages\". *American Journal of Human Genetics*.",
-      "Pierron, Denis et al. (2017) – \"Genomic landscape of human diversity across Madagascar\". *Proceedings of the National Academy of Sciences*.",
-      "UNESCO – *Atlas of the World's Languages in Danger* (2010)",
-      "SIL Ethnologue – Malagasy (mlg) – https://www.ethnologue.com/language/mlg",
-      "CIA World Factbook – Madagascar (2025) – https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "ONU/UNFPA – Projections démographiques Madagascar (2025)",
-      "Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea*"
+      {
+        "title": "Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blust, Robert (2013) – *The Austronesian Languages*. Asia-Pacific Linguistics",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2007) – \"New palaeozoogeographical evidence for the settlement of Madagascar\". *Azania: Archaeological Research in Africa*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hurles, Matthew E. et al. (2005) – \"The Dual Origin of the Malagasy in Island Southeast Asia and East Africa: Evidence from Maternal and Paternal Lineages\". *American Journal of Human Genetics*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pierron, Denis et al. (2017) – \"Genomic landscape of human diversity across Madagascar\". *Proceedings of the National Academy of Sciences*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNESCO – *Atlas of the World's Languages in Danger* (2010)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue – Malagasy (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook – Madagascar (2025)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "ONU/UNFPA – Projections démographiques Madagascar (2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.0 (2024) – Classification du nœud \"Malagasic\" [mala1537] : deux branches directes, \"North-Central Malagasic\" [nort3196] et \"Southwestern Malagasic\" [sout3174]",
+        "url": "https://glottolog.org/resource/languoid/id/mala1537",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "World Bank (2023) – Population, total, Madagascar : 31 195 932 habitants. (contexte démographique du chiffre de ≈25 000 000 locuteurs du malgache retenu d'après Adelaar 2005)",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MG",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+      }
     ]
   }
 }

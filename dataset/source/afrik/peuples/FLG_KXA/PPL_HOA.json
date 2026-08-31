@@ -3,6 +3,7 @@
   "nameMain": "ǂHoan",
   "languageFamilyId": "FLG_KXA",
   "currentCountries": ["BWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "ǂHoan",
@@ -91,12 +92,42 @@
       ]
     },
     "sources": [
-      "Glottolog — Amkoe (ǂHoan) language entry (huc). https://glottolog.org/resource/languoid/id/hoaa1235",
-      "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36.",
-      "Batibo, Herman M. (2005). Language Decline and Death in Africa. Multilingual Matters. (cite dans Glottolog)",
-      "Moumakwa, Tshiamiso V. & Monaka, Kemmonye C. (2017). Speakers living and languages dying: The endangerment of !Xoo and oHua in Botswana. University of Namibia Repository. https://repository.unam.edu.na/bitstreams/9844648c-ce29-49ac-9a94-2ae8e4594fd1/download",
-      "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510. https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
-      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/"
+      {
+        "title": "Glottolog — Amkoe (ǂHoan) language entry (huc)",
+        "url": "https://glottolog.org/resource/languoid/id/hoaa1235",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Batibo, Herman M. (2005). Language Decline and Death in Africa. Multilingual Matters. (cite dans Glottolog)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Moumakwa, Tshiamiso V. & Monaka, Kemmonye C. (2017). Speakers living and languages dying: The endangerment of !Xoo and oHua in Botswana. University of Namibia Repository",
+        "url": "https://repository.unam.edu.na/bitstreams/9844648c-ce29-49ac-9a94-2ae8e4594fd1/download",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for repository.unam.edu.na."
+      },
+      {
+        "title": "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "SIL Ethnologue — Kx'a language subgroup",
+        "url": "https://www.ethnologue.com/subgroup/4285/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Wonnin",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wonnin",
@@ -71,12 +72,42 @@
       ]
     },
     "sources": [
-      "Godie in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11913)",
-      "Ethnologue – Godié language (god), SIL International, 2024 (https://www.ethnologue.com/language/god/)",
-      "Les Godiés : ce sous-groupe des Krou – VoixVoie de Femme, 2025 (https://voiedefemme.net/2025/02/17/les-godies-ce-sous-groupe-des-krou/)",
-      "Kouassi Lowa Jonas, Origines des Godié du Tigrou (sous-préfecture de Lakota) – Bulletin d'information et de liaison des Instituts d'ethno-sociologie et de géographie tropicale, Abidjan, 1967/2, p. 13-39",
-      "Djagnan Raymond Degri, Organisation sociale des Godie – EPHE, Paris, 1965",
-      "Ch. Kokra, Notion de spiritisme chez les Godié de Fresco – Notes Africaine, 70, 1956, pp. 52-54"
+      {
+        "title": "Godie in Côte d'Ivoire – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11913",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Godié language (god), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/god/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Les Godiés : ce sous-groupe des Krou – VoixVoie de Femme, 2025",
+        "url": "https://voiedefemme.net/2025/02/17/les-godies-ce-sous-groupe-des-krou/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers voiedefemme.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Kouassi Lowa Jonas, Origines des Godié du Tigrou (sous-préfecture de Lakota) – Bulletin d'information et de liaison des Instituts d'ethno-sociologie et de géographie tropicale, Abidjan, 1967/2, p. 13-39",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Djagnan Raymond Degri, Organisation sociale des Godie – EPHE, Paris, 1965",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ch. Kokra, Notion de spiritisme chez les Godié de Fresco – Notes Africaine, 70, 1956, pp. 52-54",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

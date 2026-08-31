@@ -3,6 +3,7 @@
   "nameMain": "Zenata",
   "languageFamilyId": "FLG_BERBERE",
   "currentCountries": ["DZA", "MAR", "TUN", "LBY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Zenata",
@@ -103,12 +104,42 @@
       ]
     },
     "sources": [
-      "Ibn Khaldun. Kitab al-Ibar (Histoire des Berberes). Trad. de Slane. Alger, 1852-1856.",
-      "Modéran, Yves. Les Maures et l'Afrique romaine (4e-7e siecle). Rome: Ecole francaise de Rome, 2003.",
-      "Ilahiane, Hsain. Historical Dictionary of the Berbers (Imazighen). Lanham: Scarecrow Press, 2006.",
-      "Encyclopaedie Berbere — articles sur Zenata, Marinides, Zayyanides. https://journals.openedition.org/encyclopedieberbere/",
-      "Ethnologue — Tarifit (rif). https://www.ethnologue.com/language/rif/",
-      "Ethnologue — Chaoui (shy). https://www.ethnologue.com/language/shy/"
+      {
+        "title": "Ibn Khaldun. Kitab al-Ibar (Histoire des Berberes). Trad. de Slane. Alger, 1852-1856",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Modéran, Yves. Les Maures et l'Afrique romaine (4e-7e siecle). Rome: Ecole francaise de Rome, 2003",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ilahiane, Hsain. Historical Dictionary of the Berbers (Imazighen). Lanham: Scarecrow Press, 2006",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Encyclopaedie Berbere — articles sur Zenata, Marinides, Zayyanides",
+        "url": "https://journals.openedition.org/encyclopedieberbere/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "Ethnologue — Tarifit (rif)",
+        "url": "https://www.ethnologue.com/language/rif/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue — Chaoui (shy)",
+        "url": "https://www.ethnologue.com/language/shy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

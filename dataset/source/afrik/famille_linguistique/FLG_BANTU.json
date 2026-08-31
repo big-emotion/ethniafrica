@@ -2,6 +2,7 @@
   "id": "FLG_BANTU",
   "nameFr": "Bantou",
   "nameEn": "Bantu",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Carl Meinhof (1857-1944) : Linguiste allemand dont les travaux reflétaient des perspectives coloniales et eurocentriques. Harry Hamilton Johnston (1858-1927) : Administrateur colonial britannique qui a utilisé le terme « bantou » dans un contexte de classification raciale. Placide Tempels (1906-1977) : Missionnaire belge qui, dans La philosophie bantoue (1945), a présenté une vision occidentale et paternaliste des cultures africaines. En Afrique du Sud, le gouvernement de l'apartheid a utilisé le terme « Bantu » pour désigner les populations noires, créant des catégories légales discriminatoires (« Bantu Education Act » de 1953). Des intellectuels africains ont critiqué cette terminologie. Le concept d'Ubuntu a été mis en avant par des penseurs africains pour défendre l'humanité et la solidarité inhérentes aux cultures africaines. Des études génétiques contemporaines (Berniell-Lee et al., 2009) ont montré que les populations parlant ces langues sont génétiquement diverses, remettant en question l'homogénéité supposée par le terme « bantou ». Aujourd'hui, « bantou » est strictement linguistique, pas racial. Le terme est utilisé uniquement pour désigner une famille linguistique au sein du Niger-Congo, sans aucune connotation raciale ou ethnique.",
@@ -11,7 +12,12 @@
       "originOfHistoricalTerm": " Le terme « bantou » a été créé par le philologue allemand Wilhelm Heinrich Immanuel Bleek (1827-1875) en 1862 dans son ouvrage A Comparative Grammar of South African Languages. Bleek a observé que de nombreuses langues africaines partageaient des éléments syntaxiques suggérant une origine commune. Il a choisi le terme « Bantu » car ce mot signifie « gens » ou « personnes » dans plusieurs de ces langues, dérivé de la racine proto-Bantu ba-ntu où ba- est le préfixe de classe nominale pour le pluriel et -ntu signifie « personne » ou « être humain ». Le terme a été popularisé par Carl Meinhof dans Grundzüge einer vergleichenden Grammatik der Bantusprachen (1906) et par Harry Hamilton Johnston dans A Comparative Study of the Bantu and Semi-Bantu Languages (1919)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Bantu A-B10-B20-B30",
+        "Central-Western Bantu",
+        "East Bantu",
+        "Mbam-Bubi"
+      ],
       "geographicArea": "Afrique centrale, orientale et australe, de la région des Grassfields (Cameroun-Nigeria) jusqu'au Cap de Bonne-Espérance (Afrique du Sud), et de la côte atlantique à la côte indienne.",
       "numberOfLanguages": 500,
       "totalSpeakers": 350000000
@@ -77,21 +83,95 @@
     },
     "distribution": {
       "totalSpeakers": 350000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ZAF": 15134712
+      }
     },
     "sources": [
-      "Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon.",
-      "Meinhof, C. (1906) – Grundzüge einer vergleichenden Grammatik der Bantusprachen. Berlin : Reimer.",
-      "Guthrie, M. (1948) – The Classification of the Bantu Languages. London : International African Institute, Oxford University Press.",
-      "Greenberg, J. H. (1963) – The Languages of Africa. Bloomington : Indiana University.",
-      "Nurse, D. & Philippson, G. (2003) – The Bantu Languages. London : Routledge.",
-      "Vansina, J. (1990) – Paths in the Rainforests. Madison : University of Wisconsin Press.",
-      "Ehret, C. (1998) – An African Classical Age. Charlottesville : University Press of Virginia.",
-      "Berniell-Lee, G. et al. (2009) – \"Genetic and Demographic Implications of the Bantu Expansion\", Molecular Biology and Evolution, vol. 26, n°7, pp. 1581-1589.",
-      "Henn, B. M. et al. (2011) – \"Hunter-gatherer genomic diversity suggests a southern African origin for modern humans\", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162.",
-      "ONU (2025) – World Population Prospects 2025. New York : United Nations.",
-      "UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA.",
-      "SIL Ethnologue (2025) – \"Bantu languages\". https://www.ethnologue.com/subgroups/bantu"
+      {
+        "title": "Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Meinhof, C. (1906) – Grundzüge einer vergleichenden Grammatik der Bantusprachen. Berlin : Reimer",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Guthrie, M. (1948) – The Classification of the Bantu Languages. London : International African Institute, Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, J. H. (1963) – The Languages of Africa. Bloomington : Indiana University",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Nurse, D. & Philippson, G. (2003) – The Bantu Languages. London : Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vansina, J. (1990) – Paths in the Rainforests. Madison : University of Wisconsin Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ehret, C. (1998) – An African Classical Age. Charlottesville : University Press of Virginia",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Berniell-Lee, G. et al. (2009) – \"Genetic and Demographic Implications of the Bantu Expansion\", Molecular Biology and Evolution, vol. 26, n°7, pp. 1581-1589",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henn, B. M. et al. (2011) – \"Hunter-gatherer genomic diversity suggests a southern African origin for modern humans\", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "ONU (2025) – World Population Prospects 2025. New York : United Nations",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue (2025) – \"Bantu languages\"",
+        "url": "https://www.ethnologue.com/subgroups/bantu",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog (2025) – \"Narrow Bantu\"",
+        "url": "https://glottolog.org/resource/languoid/id/narr1281",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiZulu home language)",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      }
     ]
   }
 }

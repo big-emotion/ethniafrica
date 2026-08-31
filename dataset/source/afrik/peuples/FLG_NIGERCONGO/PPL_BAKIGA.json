@@ -3,6 +3,7 @@
   "nameMain": "Bakiga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["UGA", "RWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bakiga",
@@ -100,13 +101,48 @@
       ]
     },
     "sources": [
-      "Select Adventure Safari — The Bakiga tribe. https://selectadventuresafari.com/the-bakiga-tribe/",
-      "Joshua Project — Bakiga in Uganda. https://joshuaproject.net/people_groups/11331",
-      "Trip Down Memory Lane (Kwekudee) — Bakiga (Kiga) People. https://kwekudee-tripdownmemorylane.blogspot.com/2013/07/bakiga-kiga-people-beautiful-and.html",
-      "Uganda Bureau of Statistics (UBOS) — National Population and Housing Census 2024 Final Report. https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
-      "Ethnologue — Kiga language (cgg). SIL International. https://www.ethnologue.com/language/cgg/",
-      "Glottolog — Kiga language. https://glottolog.org/",
-      "Facebook — Estimated Population: Ethnic Groups in Uganda (2025). https://www.facebook.com/EmmanuelMotelin/posts/estimated-population-ethnic-groups-in-uganda-2025"
+      {
+        "title": "Select Adventure Safari — The Bakiga tribe",
+        "url": "https://selectadventuresafari.com/the-bakiga-tribe/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers selectadventuresafari.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Bakiga in Uganda",
+        "url": "https://joshuaproject.net/people_groups/11331",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Trip Down Memory Lane (Kwekudee) — Bakiga (Kiga) People",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/07/bakiga-kiga-people-beautiful-and.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) — National Population and Housing Census 2024 Final Report",
+        "url": "https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "Ethnologue — Kiga language (cgg). SIL International",
+        "url": "https://www.ethnologue.com/language/cgg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Kiga language",
+        "url": "https://glottolog.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Facebook — Estimated Population: Ethnic Groups in Uganda (2025)",
+        "url": "https://www.facebook.com/EmmanuelMotelin/posts/estimated-population-ethnic-groups-in-uganda-2025",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

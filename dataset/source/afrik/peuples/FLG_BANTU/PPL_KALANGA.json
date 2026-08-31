@@ -3,6 +3,7 @@
   "nameMain": "Kalanga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BWA", "ZWE", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kalanga",
@@ -95,10 +96,30 @@
       ]
     },
     "sources": [
-      "The History of Kalanga People – TG Silundika Cultural Community Centre, 2025 (https://tgsilundikaculturalcommunitycentre.org/the-history-of-kalanga-people/)",
-      "Kalanga in Botswana – Joshua Project, 2026 (https://joshuaproject.net/people_groups/12446/BC)",
-      "Kalanga – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kalanga.pdf)",
-      "Culture and Travel – Kalanga.org, 2020 (https://kalanga.org/culture-and-travel/)"
+      {
+        "title": "The History of Kalanga People – TG Silundika Cultural Community Centre, 2025",
+        "url": "https://tgsilundikaculturalcommunitycentre.org/the-history-of-kalanga-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tgsilundikaculturalcommunitycentre.org."
+      },
+      {
+        "title": "Kalanga in Botswana – Joshua Project, 2026",
+        "url": "https://joshuaproject.net/people_groups/12446/BC",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kalanga – DICE Database, University of Missouri",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Kalanga.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Culture and Travel – Kalanga.org, 2020",
+        "url": "https://kalanga.org/culture-and-travel/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kalanga.org; the tier awaits editorial review."
+      }
     ]
   }
 }

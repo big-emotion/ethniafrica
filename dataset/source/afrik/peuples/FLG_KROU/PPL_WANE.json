@@ -3,6 +3,7 @@
   "nameMain": "Wane",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wane",
@@ -78,15 +79,60 @@
       ]
     },
     "sources": [
-      "PeopleGroups.org — Wane of Cote d'Ivoire (PGID: PG013141). https://peoplegroups.org/people_groups/pg013141/",
-      "SIL Ethnologue — Wane language (hwa). https://www.ethnologue.com/language/hwa/",
-      "Glottolog — Wane (wane1242). https://glottolog.org/resource/languoid/id/wane1242",
-      "Day Translations — Ivory Coast Language Profile (hwa: 2 100 locuteurs 1993). https://www.daytranslations.com/blog/guide/ivory-coast/4/",
-      "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
-      "CIA World Factbook — Cote d'Ivoire. https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
-      "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012). https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
-      "Ethnologue CI — Cote d'Ivoire languages (Wane listed). https://www.ethnologue.com/country/CI/",
-      "Britannica — Kru ethnic group. https://www.britannica.com/topic/Kru"
+      {
+        "title": "PeopleGroups.org — Wane of Cote d'Ivoire (PGID: PG013141)",
+        "url": "https://peoplegroups.org/people_groups/pg013141/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "SIL Ethnologue — Wane language (hwa)",
+        "url": "https://www.ethnologue.com/language/hwa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Wane (wane1242)",
+        "url": "https://glottolog.org/resource/languoid/id/wane1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Day Translations — Ivory Coast Language Profile (hwa: 2 100 locuteurs 1993)",
+        "url": "https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for daytranslations.com."
+      },
+      {
+        "title": "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire",
+        "url": "https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for refworld.org."
+      },
+      {
+        "title": "CIA World Factbook — Cote d'Ivoire",
+        "url": "https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012)",
+        "url": "https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for llacan.cnrs.fr."
+      },
+      {
+        "title": "Ethnologue CI — Cote d'Ivoire languages (Wane listed)",
+        "url": "https://www.ethnologue.com/country/CI/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Kru ethnic group",
+        "url": "https://www.britannica.com/topic/Kru",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

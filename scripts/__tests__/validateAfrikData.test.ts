@@ -16,19 +16,24 @@ import {
   checkOrphanFiches,
   checkSourceUrls,
   checkPopulationPercentageDrift,
+  checkAuthorizedSourceTiers,
+  checkCountryNameFrDistinctFromOfficial,
+  checkFamilyStructuralCompleteness,
+  checkCountryCodesResolve,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
 function writePaysCsv(
   csvPath: string,
-  rows: Array<{ id_pays: string; population_totale_2025: number }>
+  rows: Array<{ id_pays: string; population_totale: number; annee?: number }>
 ) {
   mkdirSync(join(csvPath, ".."), { recursive: true });
-  const header = "id_pays,nom_pays,population_totale_2025,source,annee\n";
+  const header = "id_pays,nom_pays,population_totale,source,source_url,annee\n";
   const body = rows
     .map(
-      (r) => `${r.id_pays},"pays test",${r.population_totale_2025},"ONU",2025`
+      (r) =>
+        `${r.id_pays},"pays test",${r.population_totale},"ONU","https://example.org/${r.id_pays}",${r.annee ?? 2025}`
     )
     .join("\n");
   writeFileSync(csvPath, header + body + "\n");
@@ -41,6 +46,7 @@ function writePaysWithPopulation(
     name: string;
     population?: number;
     percentageInCountry?: number;
+    referenceYear?: number;
   }>
 ) {
   const dir = join(root, "pays");
@@ -101,6 +107,19 @@ function writePays(
       id: isoCode,
       content: { demographics: { peoples } },
     })
+  );
+}
+
+function writePaysNames(
+  root: string,
+  isoCode: string,
+  names: { nameFr?: string; nameOfficial?: string }
+) {
+  const dir = join(root, "pays");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${isoCode}.json`),
+    JSON.stringify({ id: isoCode, ...names, content: {} })
   );
 }
 
@@ -376,6 +395,177 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
+  // ── checkCountryCodesResolve ───────────────────────────────────────────────
+
+  describe("checkCountryCodesResolve", () => {
+    function writeDistribution(
+      countries: Array<{ country: string; population: number }>
+    ): void {
+      const dir = join(tmpDir, "peuples", "FLG_BANTU");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, "PPL_ZULU.json"),
+        JSON.stringify({
+          id: "PPL_ZULU",
+          content: {
+            languages: { isoCodes: ["zul"] },
+            demography: { distributionByCountry: countries },
+            sources: [],
+          },
+        })
+      );
+    }
+
+    // "GBN" for Gabon passed FR29 for as long as it existed: the shape check
+    // only asks for three uppercase letters, so a typo reads as valid and the
+    // presence silently stops being drawable. This is the check that fails.
+    // @req REQ-119
+    it("rejects a well-formed code that names no country the atlas knows", () => {
+      writeDistribution([{ country: "GBN", population: 50000 }]);
+
+      const result = checkCountryCodesResolve(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((error) => error.includes("GBN"))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("accepts a country the admin-0 asset draws", () => {
+      writeDistribution([{ country: "ZAF", population: 10000000 }]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // The asset is keyed by Natural Earth codes for two territories; the
+    // corpus writes ISO. Both spellings name geometry that exists.
+    // @req REQ-119
+    it("accepts an ISO code the asset holds under its Natural Earth key", () => {
+      writeDistribution([{ country: "SSD", population: 1000000 }]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // A diaspora outside Africa is a real declared presence, not an error —
+    // but it has to be declared here too, so a new one is a deliberate act
+    // rather than a typo that happens to fall through.
+    // @req REQ-119
+    it("accepts an off-map country only when it is on the declared list", () => {
+      writeDistribution([{ country: "USA", population: 1200000 }]);
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+
+      writeDistribution([{ country: "JPN", population: 1200 }]);
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(false);
+    });
+  });
+
+  // ── FR90 : checkFamilyStructuralCompleteness ───────────────────────────────
+
+  describe("checkFamilyStructuralCompleteness (FR90)", () => {
+    function writeFlgWithContent(
+      root: string,
+      id: string,
+      overrides: {
+        branches?: unknown;
+        distributionByCountry?: unknown;
+      } = {}
+    ) {
+      const dir = join(root, "famille_linguistique");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, `${id}.json`),
+        JSON.stringify({
+          id,
+          content: {
+            generalInfo: {
+              branches: overrides.branches ?? ["Bénoué-Congo"],
+            },
+            distribution: {
+              distributionByCountry: overrides.distributionByCountry ?? {
+                COD: 50000000,
+              },
+            },
+          },
+        })
+      );
+    }
+
+    // @req REQ-119
+    it("returns ok:true when branches and distributionByCountry are populated", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU");
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { branches: [] });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when branches contains a blank entry", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        branches: ["Bantoïde", "  "],
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) => e.includes("generalInfo.branches"))
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when distributionByCountry is empty", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", { distributionByCountry: {} });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((e) =>
+          e.includes("distribution.distributionByCountry")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a country code is not ISO 3166-1 α-3", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { cod: 50000000 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("cod"))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:false when a speaker count is not a positive number", () => {
+      writeFlgWithContent(tmpDir, "FLG_BANTU", {
+        distributionByCountry: { COD: 0 },
+      });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes('["COD"]'))).toBe(true);
+    });
+
+    // @req REQ-119
+    it("returns ok:true when famille_linguistique directory is empty", () => {
+      mkdirSync(join(tmpDir, "famille_linguistique"), { recursive: true });
+
+      const result = checkFamilyStructuralCompleteness(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+  });
+
   // ── FR30/FR31 : checkSourceUrls ────────────────────────────────────────────
 
   describe("checkSourceUrls (FR30/FR31)", () => {
@@ -435,6 +625,95 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
+  // ── Source tiers ────────────────────────────────────────────────────────
+
+  describe("checkAuthorizedSourceTiers", () => {
+    // @req REQ-092
+    it("tiers a discovery-only citation as unverified instead of refusing it", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkAuthorizedSourceTiers(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(
+        result.warnings.some((warning) =>
+          warning.includes(
+            'cites "wikipedia", which publishes at tier unverified'
+          )
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("tiers an AI-generated citation as unverified instead of refusing it", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://chatgpt.com/share/example" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceTiers(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(
+        result.warnings.some((warning) =>
+          warning.includes(
+            'cites "ai-generated", which publishes at tier unverified'
+          )
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("tiers an off-catalogue citation as unverified", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://unlisted.example/source" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceTiers(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(
+        result.warnings.some((warning) =>
+          warning.includes(
+            'cites "unknown", which publishes at tier unverified'
+          )
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("says nothing about a catalogued authority", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://www.unesco.org/en/languages" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceTiers(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(result.warnings).toHaveLength(0);
+    });
+  });
+
   // ── FR32 : checkPopulationPercentageDrift ─────────────────────────────────
 
   describe("checkPopulationPercentageDrift (FR32)", () => {
@@ -445,9 +724,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns ok:true when no entry has both population and percentageInCountry", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 55000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 55000000 }]);
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", percentageInCountry: 22 },
         { name: "Luhya", percentageInCountry: 14 },
@@ -458,10 +735,69 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.errors).toHaveLength(0);
     });
 
-    it("returns ok:true when drift is within 2 pp", () => {
+    // A census headcount is dated by its census, not by the atlas's 2025
+    // reference year. Measured against the 2025 total it always drifts —
+    // Kenya's 2019 Kikuyu count reads 17.1 % of the 2019 country and 14.2 % of
+    // the 2025 one — so the comparison has to reach for the total of the year
+    // the value carries.
+    // @req REQ-032
+    it("compares a dated headcount against the total of its own year", () => {
       writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 10000000 },
+        { id_pays: "KEN", population_totale: 47564296, annee: 2019 },
+        { id_pays: "KEN", population_totale: 57500000, annee: 2025 },
       ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        {
+          name: "Kikuyu",
+          population: 8148668,
+          percentageInCountry: 17.1,
+          referenceYear: 2019,
+        },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-032
+    it("still reads an undated headcount against the 2025 total", () => {
+      writePaysCsv(csvPath, [
+        { id_pays: "KEN", population_totale: 10000000, annee: 2025 },
+      ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toHaveLength(1);
+    });
+
+    // No invented total: a year the CSV does not cover is reported, not
+    // silently measured against a different year's denominator.
+    // @req REQ-032
+    it("warns instead of erroring when the CSV has no total for that year", () => {
+      writePaysCsv(csvPath, [
+        { id_pays: "KEN", population_totale: 57500000, annee: 2025 },
+      ]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        {
+          name: "Kikuyu",
+          population: 8148668,
+          percentageInCountry: 17.1,
+          referenceYear: 2019,
+        },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(result.warnings.join(" ")).toMatch(/2019/);
+    });
+
+    it("returns ok:true when drift is within 2 pp", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 10000000 }]);
       // implied = 2100000/10000000*100 = 21%, stated = 20%, drift = 1pp → ok
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", population: 2100000, percentageInCountry: 20 },
@@ -473,9 +809,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns ok:false (hard error) when drift > 2 pp for a non-ZAF country", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 10000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 10000000 }]);
       // implied = 5000000/10000000*100 = 50%, stated = 20%, drift = 30pp → error
       writePaysWithPopulation(tmpDir, "KEN", [
         { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
@@ -488,9 +822,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns warning only (not error) for ZAF regardless of drift", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "ZAF", population_totale_2025: 10000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "ZAF", population_totale: 10000000 }]);
       // drift = 30pp — should warn but not error
       writePaysWithPopulation(tmpDir, "ZAF", [
         { name: "Zulu", population: 5000000, percentageInCountry: 20 },
@@ -503,9 +835,7 @@ describe("validateAfrikData – new integrity checks", () => {
     });
 
     it("returns warning only when country has no CSV row (no invented total)", () => {
-      writePaysCsv(csvPath, [
-        { id_pays: "KEN", population_totale_2025: 55000000 },
-      ]);
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale: 55000000 }]);
       // NGR has no CSV row → skip with warning
       writePaysWithPopulation(tmpDir, "NGR", [
         { name: "Hausa", population: 1000000, percentageInCountry: 20 },
@@ -525,6 +855,68 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPopulationPercentageDrift(tmpDir, missingCsv);
       expect(result.ok).toBe(true);
       expect(result.warnings.some((w) => w.includes("not found"))).toBe(true);
+    });
+  });
+
+  describe("checkCountryNameFrDistinctFromOfficial (FR33)", () => {
+    // @req REQ-033
+    it("returns ok:true when nameFr differs from nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "Nigeria",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-033
+    it("returns ok:true when nameOfficial is absent", () => {
+      writePaysNames(tmpDir, "NGA", { nameFr: "Nigeria" });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false (hard error) when nameFr duplicates nameOfficial", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "République fédérale du Nigeria (Federal Republic of Nigeria)",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("NGA"))).toBe(true);
+      expect(
+        result.errors.some((e) => e.includes("duplicates nameOfficial"))
+      ).toBe(true);
+    });
+
+    // @req REQ-033
+    it("returns ok:false when nameFr is missing or empty", () => {
+      writePaysNames(tmpDir, "NGA", {
+        nameFr: "",
+        nameOfficial:
+          "République fédérale du Nigeria (Federal Republic of Nigeria)",
+      });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("missing or empty"))).toBe(
+        true
+      );
+    });
+
+    // @req REQ-033
+    it("returns ok:true when pays directory has no JSON files", () => {
+      mkdirSync(join(tmpDir, "pays"), { recursive: true });
+
+      const result = checkCountryNameFrDistinctFromOfficial(tmpDir);
+      expect(result.ok).toBe(true);
     });
   });
 

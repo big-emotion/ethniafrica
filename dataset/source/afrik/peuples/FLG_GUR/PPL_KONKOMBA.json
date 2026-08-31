@@ -3,6 +3,7 @@
   "nameMain": "Konkomba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "TGO", "BFA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Konkomba",
@@ -93,11 +94,36 @@
       ]
     },
     "sources": [
-      "Minority Rights Group — Konkomba in Ghana. https://minorityrights.org/communities/konkomba/",
-      "Joshua Project — Konkomba in all countries. https://joshuaproject.net/people_groups/10842",
-      "Ethnologue — Konkomba Language (XON). https://www.ethnologue.com/language/xon/",
-      "101 Last Tribes — Konkomba people. https://www.101lasttribes.com/tribes/konkomba.html",
-      "Modern Ghana — Konkomba Identity, Historical Claims (2025). https://www.modernghana.com/news/1442722/konkomba-identity-historical-claims-and-the-sear.html"
+      {
+        "title": "Minority Rights Group — Konkomba in Ghana",
+        "url": "https://minorityrights.org/communities/konkomba/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project — Konkomba in all countries",
+        "url": "https://joshuaproject.net/people_groups/10842",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Konkomba Language (XON)",
+        "url": "https://www.ethnologue.com/language/xon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Konkomba people",
+        "url": "https://www.101lasttribes.com/tribes/konkomba.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Modern Ghana — Konkomba Identity, Historical Claims (2025)",
+        "url": "https://www.modernghana.com/news/1442722/konkomba-identity-historical-claims-and-the-sear.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      }
     ]
   }
 }

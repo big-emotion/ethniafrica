@@ -3,6 +3,7 @@
   "nameMain": "Mbochi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mbochi",
@@ -108,13 +109,48 @@
       ]
     },
     "sources": [
-      "101 Last Tribes Africa — Mbochi people. https://www.101lasttribes.com/tribes/mbochi.html",
-      "BTI Transformation Index — Congo Republic 2024. https://bti-project.org/en/reports/country-report/COG",
-      "StudyGuides.com — M'Bochi African Ethnic Group. https://studyguides.com/study-methods/overview/cmkyhtf0qhkgn01d52dv4scq2",
-      "Ethnologue — Mbosi language (mdw). https://www.ethnologue.com/language/mdw",
-      "Embassy of Republic of Congo — People and Culture. http://www.ambacongo-us.org/en/about-congo/people-culture/people",
-      "Worldscholars — Mboshi and Teke Culture Contact. https://worldscholars.org/index.php/ajhss/article/download/505/pdf",
-      "CIA World Factbook — Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/"
+      {
+        "title": "101 Last Tribes Africa — Mbochi people",
+        "url": "https://www.101lasttribes.com/tribes/mbochi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "BTI Transformation Index — Congo Republic 2024",
+        "url": "https://bti-project.org/en/reports/country-report/COG",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for bti-project.org."
+      },
+      {
+        "title": "StudyGuides.com — M'Bochi African Ethnic Group",
+        "url": "https://studyguides.com/study-methods/overview/cmkyhtf0qhkgn01d52dv4scq2",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for studyguides.com."
+      },
+      {
+        "title": "Ethnologue — Mbosi language (mdw)",
+        "url": "https://www.ethnologue.com/language/mdw",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Embassy of Republic of Congo — People and Culture",
+        "url": "http://www.ambacongo-us.org/en/about-congo/people-culture/people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for ambacongo-us.org."
+      },
+      {
+        "title": "Worldscholars — Mboshi and Teke Culture Contact",
+        "url": "https://worldscholars.org/index.php/ajhss/article/download/505/pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers worldscholars.org; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

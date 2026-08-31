@@ -13,6 +13,22 @@ import SourceChainSheet, {
   type SourceChainSheetProps,
 } from "../SourceChainSheet";
 
+vi.mock("@/hooks/use-consent", () => ({
+  useOptionalConsent: () => null,
+  useConsent: () => ({
+    consentState: {
+      hasConsented: true,
+      preferences: { essential: true, analytics: false, functional: true },
+      consentDate: null,
+    },
+    acceptAll: vi.fn(),
+    rejectAll: vi.fn(),
+    updatePreferences: vi.fn(),
+    showBanner: false,
+    setShowBanner: vi.fn(),
+  }),
+}));
+
 const baseSource: Source = {
   id: "src-1",
   title: "Atlas linguistique de l'Afrique",
@@ -20,7 +36,7 @@ const baseSource: Source = {
   year: 2021,
   page: "p. 42",
   url: "https://example.org/atlas",
-  tier: "primary",
+  tier: "official",
   brokenAt: null,
 };
 
@@ -114,11 +130,44 @@ describe("SourceChainSheet", () => {
     expect(screen.queryByTestId("section-revision")).toBeNull();
   });
 
-  it("renders a disabled FlagTarget shell button", () => {
+  // @req REQ-012
+  it("offers no assertion report control when the assertion carries no id", () => {
     renderSheet();
     const flagTarget = screen.getByTestId("section-flag-target");
-    const btn = within(flagTarget).getByRole("button");
-    expect(btn).toBeDisabled();
+
+    // Not a Turnstile question: with no assertion id there is no target to
+    // report. The shell that used to stand here was the dead-key fallback,
+    // and it made this genuine guard indistinguishable from that one.
+    expect(within(flagTarget).queryByRole("button")).toBeNull();
+    expect(flagTarget.textContent).not.toMatch(/bientôt disponible/i);
+  });
+
+  // @req REQ-012
+  it("wires the live FlagTarget when the assertion carries an id", () => {
+    renderSheet({
+      assertion: {
+        statement: "Le peuple Seereer est attesté depuis le XIIIe siècle.",
+        confidenceScore: 0.82,
+        sourceCount: 3,
+        lastHumanAuditAt: "2026-04-01",
+        id: "assertion-42",
+        fieldPath: "histoire",
+      },
+    });
+    const flagTarget = screen.getByTestId("section-flag-target");
+    const btn = within(flagTarget).getByRole("button", {
+      name: "Signaler un problème",
+    });
+    expect(btn).toBeEnabled();
+  });
+
+  // @req REQ-012 (AC6)
+  it("offers a live report control per source", () => {
+    renderSheet();
+    const flagTarget = screen.getByTestId("source-flag-target-src-1");
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette source" })
+    ).toBeEnabled();
   });
 
   it("renders broken-link sources with line-through URL and a calm badge", () => {
@@ -186,7 +235,7 @@ describe("SourceChainSheet", () => {
               ...baseSource,
               id: "src-b",
               title: "Source B",
-              tier: "secondary",
+              tier: "referenced",
             },
           ],
         },
@@ -206,25 +255,30 @@ describe("SourceChainSheet", () => {
   it("groups single-list sources by tier", () => {
     renderSheet({
       sources: [
-        { ...baseSource, id: "p1", tier: "primary", title: "Primary src" },
-        { ...baseSource, id: "s1", tier: "secondary", title: "Secondary src" },
-        { ...baseSource, id: "t1", tier: "tertiary", title: "Tertiary src" },
-        { ...baseSource, id: "a1", tier: "ai-enriched", title: "AI src" },
+        { ...baseSource, id: "o1", tier: "official", title: "Official src" },
+        {
+          ...baseSource,
+          id: "r1",
+          tier: "referenced",
+          title: "Referenced src",
+        },
+        { ...baseSource, id: "u1", tier: "unverified", title: "Aggregator" },
+        { ...baseSource, id: "u2", tier: "unverified", title: "AI src" },
       ],
     });
     const sourcesSection = screen.getByTestId("section-sources");
     expect(
-      within(sourcesSection).getByTestId("tier-group-primary")
+      within(sourcesSection).getByTestId("tier-group-official")
     ).toBeInTheDocument();
     expect(
-      within(sourcesSection).getByTestId("tier-group-secondary")
+      within(sourcesSection).getByTestId("tier-group-referenced")
     ).toBeInTheDocument();
-    expect(
-      within(sourcesSection).getByTestId("tier-group-tertiary")
-    ).toBeInTheDocument();
-    expect(
-      within(sourcesSection).getByTestId("tier-group-ai-enriched")
-    ).toBeInTheDocument();
+
+    const unverified = within(sourcesSection).getByTestId(
+      "tier-group-unverified"
+    );
+    expect(unverified).toHaveTextContent("Aggregator");
+    expect(unverified).toHaveTextContent("AI src");
   });
 
   it("renders the confidence block with the score", () => {

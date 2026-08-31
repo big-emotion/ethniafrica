@@ -3,6 +3,7 @@
   "nameMain": "Bassa du Cameroun",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bassa du Cameroun",
@@ -93,10 +94,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Basaa language (bas) : https://www.ethnologue.com/language/bas/",
-      "Glottolog — Basaa (basa1284) : https://glottolog.org/resource/languoid/id/basa1284",
-      "Joshua Project — Bassa Cameroon people group : https://joshuaproject.net/people_groups/10367",
-      "UNESCO — Liste du patrimoine oral (traditions et expressions orales Bassa)"
+      {
+        "title": "SIL Ethnologue — Basaa language (bas)",
+        "url": "https://www.ethnologue.com/language/bas/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Basaa (basa1284)",
+        "url": "https://glottolog.org/resource/languoid/id/basa1284",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Bassa Cameroon people group",
+        "url": "https://joshuaproject.net/people_groups/10367",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO — Liste du patrimoine oral (traditions et expressions orales Bassa)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

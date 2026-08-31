@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Exploring the Rich Culture of the Batooro People – Kitara Foundation for Sustainable Tourism, 2025 (https://kitararcc.com/batooro-people/)",
-      "Toro – History, Culture and Traditions – Encyclopedia Britannica, 1998 (https://www.britannica.com/topic/Toro-people)",
-      "Batooro in Uganda – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15561)",
-      "Tooro Language (TTJ) – Ethnologue SIL (https://www.ethnologue.com/language/ttj/)",
-      "Language Runyoro-Rutooro – WALS Online (https://wals.info/languoid/lect/wals_code_rru)"
+      {
+        "title": "Exploring the Rich Culture of the Batooro People – Kitara Foundation for Sustainable Tourism, 2025",
+        "url": "https://kitararcc.com/batooro-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kitararcc.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Toro – History, Culture and Traditions – Encyclopedia Britannica, 1998",
+        "url": "https://www.britannica.com/topic/Toro-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Batooro in Uganda – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/15561",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tooro Language (TTJ) – Ethnologue SIL",
+        "url": "https://www.ethnologue.com/language/ttj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Language Runyoro-Rutooro – WALS Online",
+        "url": "https://wals.info/languoid/lect/wals_code_rru",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Tsonga",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ", "ZAF", "ZWE", "SWZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tsonga",
@@ -113,11 +114,36 @@
       ]
     },
     "sources": [
-      "Junod, Henri-Alexandre — The Life of a South African Tribe (2 vol., 1912-1913, reed. 1927). Neuchatel: Attinger. Archive.org: https://archive.org/details/lifeofsouthafric02junouoft",
-      "Britannica — Henri Alexandre Junod, Missionary, Ethnographer. https://www.britannica.com/biography/Henri-Alexandre-Junod",
-      "UNISA — Junod Archives (HA & HP Junod). https://www.unisa.ac.za/sites/corporate/default/Library/Library-services/Archival-and-special-collections/Special-collections/Archival-collections/Junod-Archives",
-      "SIL Ethnologue — Tsonga (tso). https://www.ethnologue.com/language/tso/",
-      "Joshua Project — Tsonga, Shangaan in Eswatini. https://joshuaproject.net/people_groups/15596/wz"
+      {
+        "title": "Junod, Henri-Alexandre — The Life of a South African Tribe (2 vol., 1912-1913, reed. 1927). Neuchatel: Attinger. Archive.org",
+        "url": "https://archive.org/details/lifeofsouthafric02junouoft",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.org."
+      },
+      {
+        "title": "Britannica — Henri Alexandre Junod, Missionary, Ethnographer",
+        "url": "https://www.britannica.com/biography/Henri-Alexandre-Junod",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "UNISA — Junod Archives (HA & HP Junod)",
+        "url": "https://www.unisa.ac.za/sites/corporate/default/Library/Library-services/Archival-and-special-collections/Special-collections/Archival-collections/Junod-Archives",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers unisa.ac.za; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Tsonga (tso)",
+        "url": "https://www.ethnologue.com/language/tso/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Tsonga, Shangaan in Eswatini",
+        "url": "https://joshuaproject.net/people_groups/15596/wz",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

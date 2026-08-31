@@ -3,6 +3,7 @@
   "nameMain": "Fipa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fipa",
@@ -72,10 +73,30 @@
       ]
     },
     "sources": [
-      "Fipa in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11211)",
-      "Fipa – Encyclopaedia Britannica (https://www.britannica.com/topic/Fipa)",
-      "Fipa tribe – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/fipa.html)",
-      "Waters, T. – Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa, African Studies Quarterly, Univ. of Florida (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)"
+      {
+        "title": "Fipa in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11211",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Fipa – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Fipa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Fipa tribe – Africa 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/fipa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Waters, T. – Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa, African Studies Quarterly, Univ. of Florida",
+        "url": "https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asq.africa.ufl.edu."
+      }
     ]
   }
 }

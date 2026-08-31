@@ -3,6 +3,7 @@
   "nameMain": "Logba",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Logba",
@@ -70,9 +71,24 @@
       ]
     },
     "sources": [
-      "Joshua Project – Logba in Ghana (https://joshuaproject.net/people_groups/13083)",
-      "International Development Publications – Serendipitous Socio-Cultural Dynamics of Logba Traditional Musical Ensembles in Ghana, 2015 (https://www.idpublications.org/wp-content/uploads/2014/12/SERENDIPITOUS-SOCIO-CULTURAL-DYNAMICS-OF-LOGBA-TRADITIONAL-MUSICAL-ENSEMBLES-IN-GHANA.pdf)",
-      "Rosetta Panglossia – Logba Language lgq (https://rosettapanglossia.longnow.org/index.php?title=Logba_Language_%28lgq%29)"
+      {
+        "title": "Joshua Project – Logba in Ghana",
+        "url": "https://joshuaproject.net/people_groups/13083",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "International Development Publications – Serendipitous Socio-Cultural Dynamics of Logba Traditional Musical Ensembles in Ghana, 2015",
+        "url": "https://www.idpublications.org/wp-content/uploads/2014/12/SERENDIPITOUS-SOCIO-CULTURAL-DYNAMICS-OF-LOGBA-TRADITIONAL-MUSICAL-ENSEMBLES-IN-GHANA.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers idpublications.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Rosetta Panglossia – Logba Language lgq",
+        "url": "https://rosettapanglossia.longnow.org/index.php?title=Logba_Language_%28lgq%29",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      }
     ]
   }
 }

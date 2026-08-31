@@ -3,6 +3,7 @@
   "nameMain": "Manja",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "CMR", "TCD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Manja",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Manja in Central African Republic, 2025 (https://joshuaproject.net/people_groups/13514/CT)",
-      "101 Last Tribes – Mandja people (https://www.101lasttribes.com/tribes/mandja.html)",
-      "PeopleGroups.org – Manja of Central African Republic (https://peoplegroups.org/people_groups/pg012889/)",
-      "Vergiat, Antonin Marius – Moeurs et coutumes des Manjas, Payot, Paris, 1937",
-      "Gaud, Fernand – Les Mandja (Congo francais), A. de Wit, Bruxelles, 1911",
-      "Olson, James Stuart – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996"
+      {
+        "title": "Joshua Project – Manja in Central African Republic, 2025",
+        "url": "https://joshuaproject.net/people_groups/13514/CT",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Mandja people",
+        "url": "https://www.101lasttribes.com/tribes/mandja.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "PeopleGroups.org – Manja of Central African Republic",
+        "url": "https://peoplegroups.org/people_groups/pg012889/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Vergiat, Antonin Marius – Moeurs et coutumes des Manjas, Payot, Paris, 1937",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Gaud, Fernand – Les Mandja (Congo francais), A. de Wit, Bruxelles, 1911",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Olson, James Stuart – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

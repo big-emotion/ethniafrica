@@ -1,11 +1,17 @@
 {
   "id": "COD",
-  "nameFr": "République démocratique du Congo (RDC)",
+  "nameFr": "République démocratique du Congo",
   "nameOfficial": "République démocratique du Congo (RDC)",
+  "summary": "La République démocratique du Congo porte le nom du royaume Kongo, que les Portugais ont transcrit puis appliqué au fleuve et au pays. Elle fut successivement propriété privée de Léopold II, Congo belge, puis Zaïre. Les empires Luba et Lunda, et quatre langues nationales — lingala, swahili, tshiluba, kikongo — en font l'un des espaces culturels les plus denses du continent.",
   "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. \"Démocratique\" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).",
   "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Zaïre\" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo \"nzadi\" signifiant \"fleuve\").",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "État indépendant du Congo (1885-1908)",
+        "Congo belge (1908-1960)",
+        "Zaïre (1971-1997)"
+      ],
       "antiquity": "Le territoire actuel de la RDC était peuplé de nombreuses entités politiques indépendantes sans nom unifié. Les royaumes précoloniaux (Luba, Lunda, Kongo, Mangbetu, Zande) dominaient différentes régions.",
       "middleAges": "Développement des grands royaumes et empires (Royaume Kongo, Empire Luba, Empire Lunda) sans nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies indépendants : Empire Luba, Empire Lunda, Royaume Kongo, royaumes Mangbetu, sultanats Zande, chefferies Mongo, etc. Aucun nom unifié pour l'ensemble du territoire.",
@@ -228,15 +234,66 @@
       "postIndependence": "Régime Mobutu (1965-1997) : Zaïre, dictature, corruption. Première guerre du Congo (1996-1997) : chute de Mobutu. Deuxième guerre du Congo (1998-2003) : \"guerre mondiale africaine\". Transition démocratique difficile. Défis de reconstruction et de stabilisation."
     },
     "sources": [
-      "CIA World Factbook – Democratic Republic of the Congo",
-      "SIL Ethnologue – Languages of DRC",
-      "Recensements nationaux congolais",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples congolais",
-      "Études historiques sur les royaumes précoloniaux",
-      "Ethnologie du Congo",
-      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)"
+      {
+        "title": "CIA World Factbook – Democratic Republic of the Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of DRC",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux congolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples congolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les royaumes précoloniaux",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologie du Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

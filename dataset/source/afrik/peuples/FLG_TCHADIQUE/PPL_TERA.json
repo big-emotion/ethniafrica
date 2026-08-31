@@ -3,6 +3,7 @@
   "nameMain": "Tera",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tera",
@@ -83,14 +84,54 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL – Tera language (ttr). https://www.ethnologue.com/language/ttr/",
-      "Joshua Project – Tera in Nigeria. https://joshuaproject.net/people_groups/15440",
-      "101 Last Tribes – Tera people. https://101lasttribes.com/tribes/tera.html",
-      "Triumph Newspapers – Ngwarda annual harvesting festival of Tera people, 2024. https://triumphnewspapers.ng/ngwarda-annual-harvesting-festival-of-tera-people-in-zambuk-gombe-state/",
-      "Tench, Paul. A New Orthography in Tera. https://www.paultenchdocs.co.uk/wp-content/uploads/2014/02/A-New-Orthography-in-Tera.pdf",
-      "GRN Journal – A Case Study of Tera (Nymalti) Language of North-East, Nigeria. https://www.grnjournal.us/index.php/STEM/article/download/5681/5052/10074",
-      "Blench, Roger. 2006. Afro-Asiatic Languages. Cambridge University Press.",
-      "Peoplegroups.org – Tera in Nigeria, population 2024."
+      {
+        "title": "Ethnologue SIL – Tera language (ttr)",
+        "url": "https://www.ethnologue.com/language/ttr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project – Tera in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/15440",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Tera people",
+        "url": "https://101lasttribes.com/tribes/tera.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Triumph Newspapers – Ngwarda annual harvesting festival of Tera people, 2024",
+        "url": "https://triumphnewspapers.ng/ngwarda-annual-harvesting-festival-of-tera-people-in-zambuk-gombe-state/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers triumphnewspapers.ng; the tier awaits editorial review."
+      },
+      {
+        "title": "Tench, Paul. A New Orthography in Tera",
+        "url": "https://www.paultenchdocs.co.uk/wp-content/uploads/2014/02/A-New-Orthography-in-Tera.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers paultenchdocs.co.uk; the tier awaits editorial review."
+      },
+      {
+        "title": "GRN Journal – A Case Study of Tera (Nymalti) Language of North-East, Nigeria",
+        "url": "https://www.grnjournal.us/index.php/STEM/article/download/5681/5052/10074",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers grnjournal.us; the tier awaits editorial review."
+      },
+      {
+        "title": "Blench, Roger. 2006. Afro-Asiatic Languages. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Peoplegroups.org – Tera in Nigeria, population 2024",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -1,11 +1,13 @@
 {
   "id": "LSO",
-  "nameFr": "Royaume du Lesotho (Kingdom of Lesotho, Muso oa Lesotho)",
+  "nameFr": "Lesotho",
   "nameOfficial": "Royaume du Lesotho (Kingdom of Lesotho, Muso oa Lesotho)",
+  "summary": "Le Lesotho signifie « pays des Sotho » en sesotho — un nom que le royaume s'est donné lui-même. Fondé au XIXe siècle sous le roi Moshoeshoe, il devint le protectorat britannique du Basutoland avant de reprendre son nom en 1966. C'est l'un des rares États du continent bâtis autour d'un seul peuple et d'une seule langue.",
   "etymology": "Le nom \"Lesotho\" signifie \"pays des Sotho\" en langue sesotho. Il s'agit du nom traditionnel du royaume. Le nom a été officialisé lors de l'indépendance en 1966. Le pays était auparavant connu sous le nom de \"Basutoland\" (pays des Basotho) pendant la colonisation britannique.",
   "nameOriginActor": "Le nom \"Lesotho\" est le nom traditionnel du royaume sotho. Le nom \"Basutoland\" a été donné par les Britanniques lors de la colonisation. Le roi Moshoeshoe Ier est considéré comme le fondateur du royaume moderne. Le nom \"Lesotho\" a été officialisé à l'indépendance en 1966.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Basutoland (1868-1966)"],
       "antiquity": "Le territoire actuel du Lesotho était peuplé de peuples khoïsan sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations bantoues vers la région. Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Formation du royaume sotho au XIXe siècle sous le roi Moshoeshoe Ier. Le royaume était connu sous le nom traditionnel \"Lesotho\" (pays des Sotho). Expansion du royaume sotho, résistance aux Zoulous et aux Boers. Consolidation du royaume traditionnel.",
@@ -90,18 +92,53 @@
       "postIndependence": "1966-1990 : Période de stabilité politique relative, présidence de Leabua Jonathan (1966-1986), puis coups d'État. 1990-présent : Transition démocratique, instabilité politique, coups d'État récurrents. Défis : pauvreté, dépendance économique de l'Afrique du Sud, VIH/sida, développement économique. Le Lesotho est l'un des pays les plus pauvres d'Afrique. Le royaume est un État enclavé dans l'Afrique du Sud."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Lesotho",
-      "CIA World Factbook – Lesotho",
-      "ONU / UNFPA – Démographie Lesotho 2025",
-      "Recensements lesothans",
-      "Études anthropologiques sur les peuples sotho",
-      "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier"
+      {
+        "title": "SIL Ethnologue – Languages of Lesotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Lesotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Lesotho 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements lesothans",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Sotho / Basotho",
-          "population": 2200000,
           "percentageInCountry": 99,
           "peopleId": "PPL_SOTHO",
           "region": "Toutes les régions du Lesotho"

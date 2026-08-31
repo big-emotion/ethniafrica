@@ -3,6 +3,7 @@
   "nameMain": "Oron",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA", "CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Oron",
@@ -94,10 +95,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes, Oron people: https://www.101lasttribes.com/tribes/oron.html",
-      "Joshua Project, Oron in Nigeria: https://joshuaproject.net/people_groups/14222",
-      "National Repository of Nigeria, A history of Oron people: https://nigeriareposit.nln.gov.ng/items/3093c34c-b4b8-44d9-b271-cd508b224529/full",
-      "Nwednyin.org, Oron Museum: https://www.nwednyin.org/articles/oron-museum"
+      {
+        "title": "101 Last Tribes, Oron people",
+        "url": "https://www.101lasttribes.com/tribes/oron.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project, Oron in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/14222",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "National Repository of Nigeria, A history of Oron people",
+        "url": "https://nigeriareposit.nln.gov.ng/items/3093c34c-b4b8-44d9-b271-cd508b224529/full",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nigeriareposit.nln.gov.ng; the tier awaits editorial review."
+      },
+      {
+        "title": "Nwednyin.org, Oron Museum",
+        "url": "https://www.nwednyin.org/articles/oron-museum",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nwednyin.org; the tier awaits editorial review."
+      }
     ]
   }
 }

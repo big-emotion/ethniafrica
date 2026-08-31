@@ -3,6 +3,7 @@
   "nameMain": "Fulbe (Fula / Peul)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GIN", "MLI", "BFA", "NER", "CMR", "TCD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fulbe (Fula / Peul)",
@@ -119,11 +120,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Fulfulde dialects. https://www.ethnologue.com/language/ful/",
-      "Joshua Project — Fulani, Maasina in Mali. https://joshuaproject.net/people_groups/11773/ml",
-      "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025). https://www.sciencedirect.com/science/article/pii/S0002929724004579",
-      "UNFPA — Sahel population data. https://www.unfpa.org/",
-      "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977."
+      {
+        "title": "SIL Ethnologue — Fulfulde dialects",
+        "url": "https://www.ethnologue.com/language/ful/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Fulani, Maasina in Mali",
+        "url": "https://joshuaproject.net/people_groups/11773/ml",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025)",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0002929724004579",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+      },
+      {
+        "title": "UNFPA — Sahel population data",
+        "url": "https://www.unfpa.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Mursi",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mursi",
@@ -66,11 +67,36 @@
       ]
     },
     "sources": [
-      "Mursi in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13887)",
-      "Worku Firew – A Grammar of Mursi, a Nilo-Saharan Language of Ethiopia (these JCU / Brill), 2020-2021 (https://researchonline.jcu.edu.au/65453/)",
-      "Lip-plates – Mursi Online (https://www.mursi.org/introducing-the-mursi/Body%20Decoration/lip-plates)",
-      "Omo Valley Tribes – Survival International (https://survivalinternational.org/peoples/omovalley)",
-      "ISO 639-3: muz (Mursi) – SIL International / Ethnologue"
+      {
+        "title": "Mursi in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13887",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Worku Firew – A Grammar of Mursi, a Nilo-Saharan Language of Ethiopia (these JCU / Brill), 2020-2021",
+        "url": "https://researchonline.jcu.edu.au/65453/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for researchonline.jcu.edu.au."
+      },
+      {
+        "title": "Lip-plates – Mursi Online",
+        "url": "https://www.mursi.org/introducing-the-mursi/Body%20Decoration/lip-plates",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mursi.org."
+      },
+      {
+        "title": "Omo Valley Tribes – Survival International",
+        "url": "https://survivalinternational.org/peoples/omovalley",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for survivalinternational.org."
+      },
+      {
+        "title": "ISO 639-3: muz (Mursi) – SIL International / Ethnologue",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

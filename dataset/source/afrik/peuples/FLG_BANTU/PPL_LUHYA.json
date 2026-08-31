@@ -3,6 +3,7 @@
   "nameMain": "Luhya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN", "UGA", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Luhya",
@@ -140,11 +141,36 @@
       ]
     },
     "sources": [
-      "Luhya Culture, Language & Traditions – Encyclopaedia Britannica (https://www.britannica.com/topic/Luhya)",
-      "A Cultural Guide to the Luhya People – Village Volunteers (https://www.villagevolunteers.org/wp-content/uploads/2011/10/Luhya-Cultural-Guide.pdf)",
-      "101 Last Tribes – Luhya people (https://www.101lasttribes.com/tribes/luhya.html)",
-      "List of Luhya Sub Tribes – Logmma Regency Hotel (https://logmma.com/list-of-luhya-sub-tribes/)",
-      "KNBS Kenya Census 2019 – Kenya National Bureau of Statistics (https://www.knbs.or.ke)"
+      {
+        "title": "Luhya Culture, Language & Traditions – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Luhya",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "A Cultural Guide to the Luhya People – Village Volunteers",
+        "url": "https://www.villagevolunteers.org/wp-content/uploads/2011/10/Luhya-Cultural-Guide.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers villagevolunteers.org; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes – Luhya people",
+        "url": "https://www.101lasttribes.com/tribes/luhya.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "List of Luhya Sub Tribes – Logmma Regency Hotel",
+        "url": "https://logmma.com/list-of-luhya-sub-tribes/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers logmma.com; the tier awaits editorial review."
+      },
+      {
+        "title": "KNBS Kenya Census 2019 – Kenya National Bureau of Statistics",
+        "url": "https://www.knbs.or.ke",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      }
     ]
   }
 }

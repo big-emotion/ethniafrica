@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
 import { Language } from "@/types/shared";
 
+// @req REQ-088
 export default function PrivacyPolicyMineurPage() {
   const params = useParams();
   const lang = params?.lang as string;
@@ -25,7 +26,7 @@ export default function PrivacyPolicyMineurPage() {
     >
       <div className="max-w-4xl mx-auto space-y-8 py-12 px-4">
         <div>
-          <h1 className="text-3xl font-display font-bold">
+          <h1 className="text-afh-h1 font-display font-bold">
             Politique de confidentialité
           </h1>
           <p className="text-muted-foreground mt-2">
@@ -33,7 +34,7 @@ export default function PrivacyPolicyMineurPage() {
           </p>
         </div>
 
-        <p className="text-lg">
+        <p className="text-afh-h3">
           Cette politique décrit comment EthniAfrica traite vos données
           personnelles dans le respect du RGPD (UE 2016/679) et des lois
           applicables en matière de protection des mineurs.
@@ -41,12 +42,12 @@ export default function PrivacyPolicyMineurPage() {
 
         {/* MINEURS — anchor target for registration form link */}
         <section id="mineurs" className="space-y-4 scroll-mt-20">
-          <h2 className="text-2xl font-display font-bold">
+          <h2 className="text-afh-h2 font-display font-bold">
             Protection des mineurs (COPPA / RGPD Article 8)
           </h2>
 
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Âge minimum requis</h3>
+            <h3 className="text-afh-h3 font-semibold">Âge minimum requis</h3>
             <p>
               L&apos;accès aux fonctionnalités de contribution (signalements,
               corrections) est réservé aux personnes âgées d&apos;au moins{" "}
@@ -59,7 +60,7 @@ export default function PrivacyPolicyMineurPage() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-afh-h3 font-semibold">
               Données collectées lors de l&apos;inscription
             </h3>
             <ul className="list-disc ml-6 space-y-1">
@@ -80,7 +81,7 @@ export default function PrivacyPolicyMineurPage() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-afh-h3 font-semibold">
               Absence de publicité ciblée
             </h3>
             <p>
@@ -94,7 +95,26 @@ export default function PrivacyPolicyMineurPage() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Durées de conservation</h3>
+            <h3 className="text-afh-h3 font-semibold">
+              Vérification anti-robot
+            </h3>
+            <p>
+              Signaler une erreur ne demande ni compte ni adresse e-mail. Pour
+              que le registre public des signalements ne soit pas rempli par des
+              robots, votre navigateur résout un petit calcul avant l&apos;envoi
+              — vous n&apos;avez rien à faire, et rien à cocher.
+            </p>
+            <p>
+              Ce calcul est vérifié <strong>par nos propres serveurs</strong>.
+              Aucune donnée, pas même votre adresse IP, n&apos;est transmise à
+              un service tiers pour cette vérification.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-afh-h3 font-semibold">
+              Durées de conservation
+            </h3>
             <ul className="list-disc ml-6 space-y-1">
               <li>
                 Profil contributeur (email, nom d&apos;affichage,
@@ -111,7 +131,9 @@ export default function PrivacyPolicyMineurPage() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Droit à l&apos;effacement</h3>
+            <h3 className="text-afh-h3 font-semibold">
+              Droit à l&apos;effacement
+            </h3>
             <p>
               Conformément à l&apos;article 17 du RGPD, vous pouvez demander la
               suppression de votre profil et de vos données personnelles à tout
@@ -133,7 +155,7 @@ export default function PrivacyPolicyMineurPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-display font-bold">Contact</h2>
+          <h2 className="text-afh-h2 font-display font-bold">Contact</h2>
           <p>
             Pour toute question relative à cette politique ou pour exercer vos
             droits :
@@ -146,7 +168,7 @@ export default function PrivacyPolicyMineurPage() {
               contact@ethniafrica.com
             </a>
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-afh-small text-muted-foreground">
             Pour la politique complète incluant les sous-traitants, bases
             légales et gestion du consentement analytique, consultez notre{" "}
             <a

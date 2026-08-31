@@ -3,6 +3,7 @@
   "nameMain": "Sesotho (National)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["LSO", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sesotho (National)",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "University of Cape Town — Sekoele Basotho: Protecting Initiation through the Law in Lesotho. https://humanities.uct.ac.za/apc/sekoele-basotho-protecting-initiation-through-law-lesotho",
-      "Vogue — The Rich History Behind Basotho Heritage Blankets. https://www.vogue.com/article/basotho-heritage-blankets",
-      "SIL Ethnologue — Sesotho (sot). https://www.ethnologue.com/language/sot/",
-      "CIA World Factbook — Lesotho. https://www.cia.gov/the-world-factbook/countries/lesotho/",
-      "Mofolo, Thomas. Chaka. Morija Sesuto Book Depot, 1925."
+      {
+        "title": "University of Cape Town — Sekoele Basotho: Protecting Initiation through the Law in Lesotho",
+        "url": "https://humanities.uct.ac.za/apc/sekoele-basotho-protecting-initiation-through-law-lesotho",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for humanities.uct.ac.za."
+      },
+      {
+        "title": "Vogue — The Rich History Behind Basotho Heritage Blankets",
+        "url": "https://www.vogue.com/article/basotho-heritage-blankets",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers vogue.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Sesotho (sot)",
+        "url": "https://www.ethnologue.com/language/sot/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Lesotho",
+        "url": "https://www.cia.gov/the-world-factbook/countries/lesotho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Mofolo, Thomas. Chaka. Morija Sesuto Book Depot, 1925",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

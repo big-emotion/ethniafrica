@@ -5,12 +5,16 @@
     "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
   },
   "id": "XXX",
-  "nameFr": "<Nom officiel en français>",
-  "nameOfficial": "<Nom officiel complet>",
+  "nameFr": "<Nom d'usage courant en français — le nom utilisé dans le langage ordinaire, distinct du nom officiel (ex: 'Nigeria', pas 'République fédérale du Nigeria')>",
+  "nameOfficial": "<Nom officiel complet — nom protocolaire (ex: 'République fédérale du Nigeria (Federal Republic of Nigeria)')>",
+  "summary": "<Chapeau de 2 à 3 phrases, condensé de la fiche — ce qu'un lecteur doit retenir s'il ne lit rien d'autre. N'introduit aucune affirmation absente du reste de la fiche : c'est un résumé, pas une section, et il ne porte donc pas de sources propres. Ouvre sur l'histoire du nom quand elle est parlante.>",
   "etymology": "<Étymologie du nom du pays — origine, sens, histoire du terme>",
   "nameOriginActor": "<Personne / peuple / administration à l'origine du nom>",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "<Ancien nom, daté quand la date est connue — ex: 'Haute-Volta (1919-1960)'. Liste tirée de la prose des périodes ci-dessous, jamais de connaissances extérieures. 1 à 4 entrées, les plus parlantes.>"
+      ],
       "antiquity": null,
       "middleAges": null,
       "precolonial": null,
@@ -40,7 +44,11 @@
     ],
     "culture": {
       "mainLanguages": [
-        { "name": "<Langue>", "isoCode": "xxx", "isPrimary": true }
+        {
+          "name": "<Langue>",
+          "isoCode": "xxx",
+          "isPrimary": true
+        }
       ],
       "culturalTraditions": null,
       "dominantReligions": null,
@@ -56,13 +64,21 @@
       "independenceStruggle": null,
       "postIndependence": null
     },
-    "sources": ["<Titre – Auteur/URL>"],
+    "sources": [
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier : entrée du catalogue, règle de domaine, ou forme de citation>"
+      }
+    ],
     "demographics": {
       "peoples": [
         {
           "name": "<Nom du peuple>",
           "peopleId": "PPL_XXXXX",
           "population": 0,
+          "referenceYear": "<Année du recensement d'où vient l'effectif, si ce n'est pas l'année de référence de l'atlas (2025) — ou null>",
           "percentageInCountry": 0,
           "percentageInAfrica": null,
           "region": null,

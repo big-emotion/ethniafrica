@@ -13,6 +13,7 @@ const SwaggerUI = dynamic(
   { ssr: false }
 );
 
+// @req REQ-099
 export default function ApiDocsV2Page() {
   const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
 
@@ -26,16 +27,12 @@ export default function ApiDocsV2Page() {
 
   if (!spec) {
     return (
-      <div className="min-h-screen gradient-earth">
-        <div className="container mx-auto px-4 py-10">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-3xl font-display font-bold mb-4">
-              API Documentation v2 - AFRIK
-            </h1>
-            <p className="text-muted-foreground">
-              Loading API documentation...
-            </p>
-          </div>
+      <div className="container mx-auto px-4 py-10">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-afh-h1 font-display font-bold mb-4">
+            API Documentation v2 - AFRIK
+          </h1>
+          <p className="text-muted-foreground">Loading API documentation...</p>
         </div>
       </div>
     );
@@ -47,137 +44,135 @@ export default function ApiDocsV2Page() {
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
 
   return (
-    <div className="min-h-screen gradient-earth">
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-6xl mx-auto space-y-6">
-          {/* Header */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-lg bg-primary/10">
-                <BookOpen className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h1 className="text-3xl md:text-4xl font-display font-bold">
-                  API Documentation v2 - AFRIK
-                </h1>
-                <p className="text-muted-foreground mt-1">
-                  Documentation interactive de l&apos;API publique v2 basée sur
-                  la méthodologie AFRIK
-                </p>
-              </div>
+    <div className="container mx-auto px-4 py-10">
+      <div className="max-w-6xl mx-auto space-y-6">
+        {/* Header */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-lg bg-primary/10">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="text-afh-h1 font-display font-bold">
+                API Documentation v2 - AFRIK
+              </h1>
+              <p className="text-muted-foreground mt-1">
+                Documentation interactive de l&apos;API publique v2 basée sur la
+                méthodologie AFRIK
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* Version selector */}
-          <Card className="p-4 bg-muted/50">
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">
-                Vous consultez la documentation de l&apos;API v2 (AFRIK)
-              </p>
-              <Link href="/docs/api/v1">
-                <Button variant="outline" size="sm">
-                  Voir l&apos;API v1
+        {/* Version selector */}
+        <Card className="p-4 bg-muted/50">
+          <div className="flex items-center justify-between">
+            <p className="text-afh-small text-muted-foreground">
+              Vous consultez la documentation de l&apos;API v2 (AFRIK)
+            </p>
+            <Link href="/docs/api/v1">
+              <Button variant="outline" size="sm">
+                Voir l&apos;API v1
+              </Button>
+            </Link>
+          </div>
+        </Card>
+
+        {/* Quick Links */}
+        <Card className="p-6">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <Info className="h-5 w-5 text-primary" />
+              <h2 className="text-afh-h2 font-semibold">Accès rapide</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+              <Link href="/api/v2/search" target="_blank">
+                <Button variant="outline" className="w-full justify-start">
+                  <Search className="h-4 w-4 mr-2" />
+                  Recherche
+                </Button>
+              </Link>
+              <Link href="/api/v2/countries" target="_blank">
+                <Button variant="outline" className="w-full justify-start">
+                  <Code className="h-4 w-4 mr-2" />
+                  Pays
+                </Button>
+              </Link>
+              <Link href="/api/v2/peoples" target="_blank">
+                <Button variant="outline" className="w-full justify-start">
+                  <Code className="h-4 w-4 mr-2" />
+                  Peuples
+                </Button>
+              </Link>
+              <Link href="/api/v2/language-families" target="_blank">
+                <Button variant="outline" className="w-full justify-start">
+                  <Code className="h-4 w-4 mr-2" />
+                  Familles linguistiques
                 </Button>
               </Link>
             </div>
-          </Card>
-
-          {/* Quick Links */}
-          <Card className="p-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Info className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Accès rapide</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                <Link href="/api/v2/search" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Search className="h-4 w-4 mr-2" />
-                    Recherche
-                  </Button>
-                </Link>
-                <Link href="/api/v2/countries" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Pays
-                  </Button>
-                </Link>
-                <Link href="/api/v2/peoples" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Peuples
-                  </Button>
-                </Link>
-                <Link href="/api/v2/language-families" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Familles linguistiques
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </Card>
-
-          {/* Introduction */}
-          <Card className="p-6 bg-muted/50">
-            <div className="space-y-3">
-              <h2 className="text-lg font-semibold">
-                À propos de l&apos;API v2
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                L&apos;API v2 est basée sur la méthodologie AFRIK et utilise des
-                identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3).
-                Toutes les réponses suivent un format standardisé avec
-                pagination. Les données sont stockées en JSONB pour permettre
-                l&apos;évolution sans migration de schéma.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  REST API v2
-                </span>
-                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  AFRIK
-                </span>
-                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  Pagination
-                </span>
-                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  OpenAPI 3.0
-                </span>
-                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  CORS activé
-                </span>
-              </div>
-            </div>
-          </Card>
-
-          {/* Swagger UI */}
-          <Card className="p-6">
-            <div className="swagger-ui-wrapper">
-              {/* @ts-expect-error - SwaggerUI types are not fully compatible */}
-              <SwaggerUI spec={spec} />
-            </div>
-          </Card>
-
-          {/* Footer Info */}
-          <div className="text-center text-sm text-muted-foreground space-y-2">
-            <p>
-              Base URL de l&apos;API :{" "}
-              <code className="px-2 py-1 rounded bg-muted text-foreground">
-                {baseUrl}
-              </code>
-            </p>
-            <p>
-              Pour plus d&apos;informations, consultez la{" "}
-              <Link
-                href="/fr/contribute"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                page Contribuer
-              </Link>
-              .
-            </p>
           </div>
+        </Card>
+
+        {/* Introduction */}
+        <Card className="p-6 bg-muted/50">
+          <div className="space-y-3">
+            <h2 className="text-afh-h3 font-semibold">
+              À propos de l&apos;API v2
+            </h2>
+            <p className="text-afh-small text-muted-foreground">
+              L&apos;API v2 est basée sur la méthodologie AFRIK et utilise des
+              identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3).
+              Toutes les réponses suivent un format standardisé avec pagination.
+              Les données sont stockées en JSONB pour permettre l&apos;évolution
+              sans migration de schéma.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
+                REST API v2
+              </span>
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
+                AFRIK
+              </span>
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
+                Pagination
+              </span>
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
+                OpenAPI 3.0
+              </span>
+              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
+                CORS activé
+              </span>
+            </div>
+          </div>
+        </Card>
+
+        {/* Swagger UI */}
+        <Card className="p-6">
+          <div className="swagger-ui-wrapper">
+            {/* @ts-expect-error - SwaggerUI types are not fully compatible */}
+            <SwaggerUI spec={spec} />
+          </div>
+        </Card>
+
+        {/* Footer Info */}
+        <div className="text-center text-afh-small text-muted-foreground space-y-2">
+          <p>
+            Base URL de l&apos;API :{" "}
+            <code className="px-2 py-1 rounded bg-muted text-foreground">
+              {baseUrl}
+            </code>
+          </p>
+          <p>
+            Pour plus d&apos;informations, consultez la{" "}
+            <Link
+              href="/fr/contribute"
+              className="underline underline-offset-4 hover:text-primary"
+            >
+              page Contribuer
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </div>

@@ -46,7 +46,11 @@ jobs:
       contents: read
 
     steps:
+      # Full history: `lint:req --base` diffs against the merge base with the
+      # target branch, which a shallow clone cannot resolve.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
@@ -77,17 +81,51 @@ jobs:
 
       - run: npm run lint
 
-      - run: npm run lint:req
+      # Diff-scoped, like the pre-commit hook but against the PR base instead of
+      # HEAD. A bare run only surveys (the tree still holds ~1245 tests that
+      # predate the rule); `--base` is what makes it block, and it blocks on the
+      # same two rules the hook enforces — every new test carries a @req, every
+      # new export carries one and is covered by a test with the same ID. Without
+      # it CI checked neither, so `--no-verify` or a GitHub web edit walked past
+      # the rule entirely.
+      #
+      # A `recette → main` promotion is the one PR where the base is the wrong
+      # reference. It carries the whole integration backlog, and every commit in
+      # it already passed this rule against `recette` when it landed. Diffed
+      # against `main`, the gate re-reads hundreds of already-annotated exports
+      # as new — the first such promotion reported 239 violations, none of them
+      # a real defect — and the release blocks on nothing. So a promotion is
+      # measured against `recette`, which is the state each of its commits was
+      # actually gated against. Every other PR keeps its own base.
+      - run: npm run lint:req -- --base "origin/$REQ_BASE"
+        env:
+          REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
 
       - run: npm run check:jira-template
 
       - run: npm run check:action-pins
+
+      - run: npm run check:env-example
+
+      # Pre-merge, only what is knowable without a database: no two files
+      # claiming the same version or name, no hole in the sequence. Whether a
+      # migration is *applied* is meaningless here — the one this PR adds is
+      # pending by definition — so that check runs after the merge, in
+      # migrate-recette.yml, and nightly in data-integrity.yml.
+      - run: npm run check:migration-files
 
       - run: npm run typecheck
 
       - run: npm run format:check
 
       - run: npm run test:coverage
+
+      # Aggregated charter-v2 contract suite (ETNI-982 · FR110): already
+      # covered by test:coverage above, but a dedicated named step attributes
+      # a charter regression to "charter contract suite failed" instead of
+      # burying it in the generic test run's output.
+      - name: Charter contract suite
+        run: npm run test:charter-contracts
 
       # .next/cache is content-hashed by Next, so a stale entry is ignored,
       # never mis-served — restoring it only ever saves compile work.

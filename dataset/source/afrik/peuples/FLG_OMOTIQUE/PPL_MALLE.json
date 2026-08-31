@@ -3,6 +3,7 @@
   "nameMain": "Malle",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Malle",
@@ -79,10 +80,30 @@
       ]
     },
     "sources": [
-      "Omo Region Tours — Malle Tribe. https://omoregiontours.com/malle-tribe/",
-      "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy. https://glottolog.org/resource/languoid/id/male1284",
-      "Donham, Donald L. Divine Kingship in Malle, Southwest Ethiopia. Cambridge Journal of Anthropology, vol. 6, 1980. https://www.africabib.org/rec.php?RID=P00016096",
-      "Recensement éthiopien 2007 — List of ethnic groups in Ethiopia (Male : 98 114 individus)."
+      {
+        "title": "Omo Region Tours — Malle Tribe",
+        "url": "https://omoregiontours.com/malle-tribe/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers omoregiontours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy",
+        "url": "https://glottolog.org/resource/languoid/id/male1284",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Donham, Donald L. Divine Kingship in Malle, Southwest Ethiopia. Cambridge Journal of Anthropology, vol. 6, 1980",
+        "url": "https://www.africabib.org/rec.php?RID=P00016096",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africabib.org."
+      },
+      {
+        "title": "Recensement éthiopien 2007 — List of ethnic groups in Ethiopia (Male : 98 114 individus)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

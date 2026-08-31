@@ -3,6 +3,7 @@
   "nameMain": "Koyra Boro Seyo",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["MLI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Koyra Boro Seyo",
@@ -97,11 +98,36 @@
       ]
     },
     "sources": [
-      "Ethnologue — Songhay, Koyraboro Senni (ses). https://www.ethnologue.com/language/ses/",
-      "Joshua Project — Songhai-Koyraboro in Mali. https://joshuaproject.net/people_groups/14989",
-      "ScriptSource — Koyraboro Senni Songhay (ses). https://scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=uthnk4pcdr",
-      "UNESCO — Tombeau des Askia, Gao (patrimoine mondial). https://whc.unesco.org/fr/list/1139",
-      "CIA World Factbook — Mali"
+      {
+        "title": "Ethnologue — Songhay, Koyraboro Senni (ses)",
+        "url": "https://www.ethnologue.com/language/ses/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Songhai-Koyraboro in Mali",
+        "url": "https://joshuaproject.net/people_groups/14989",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ScriptSource — Koyraboro Senni Songhay (ses)",
+        "url": "https://scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=uthnk4pcdr",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      },
+      {
+        "title": "UNESCO — Tombeau des Askia, Gao (patrimoine mondial)",
+        "url": "https://whc.unesco.org/fr/list/1139",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "CIA World Factbook — Mali",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

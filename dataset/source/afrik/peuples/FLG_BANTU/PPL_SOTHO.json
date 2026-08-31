@@ -3,6 +3,7 @@
   "nameMain": "Sotho",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["LSO", "ZAF"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sotho",
@@ -101,12 +102,42 @@
       ]
     },
     "sources": [
-      "Worldometer — Lesotho population 2025 : https://www.worldometers.info/world-population/lesotho-population/",
-      "Statistics South Africa — Census 2011 : http://www.statssa.gov.za/census/census_2011/",
-      "Joshua Project — Basotho profile : https://joshuaproject.net/people_groups/10271",
-      "MatheVK — Basotho clans : http://www.mathevk.org/clans/",
-      "CIA World Factbook — Lesotho : https://www.cia.gov/the-world-factbook/countries/lesotho/",
-      "SIL Ethnologue — Sotho Southern (sot) : https://www.ethnologue.com/language/sot/"
+      {
+        "title": "Worldometer — Lesotho population 2025",
+        "url": "https://www.worldometers.info/world-population/lesotho-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldometers.info."
+      },
+      {
+        "title": "Statistics South Africa — Census 2011",
+        "url": "http://www.statssa.gov.za/census/census_2011/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      },
+      {
+        "title": "Joshua Project — Basotho profile",
+        "url": "https://joshuaproject.net/people_groups/10271",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "MatheVK — Basotho clans",
+        "url": "http://www.mathevk.org/clans/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mathevk.org; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Lesotho",
+        "url": "https://www.cia.gov/the-world-factbook/countries/lesotho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "SIL Ethnologue — Sotho Southern (sot)",
+        "url": "https://www.ethnologue.com/language/sot/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -88,11 +88,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Makonde (kde) : https://www.ethnologue.com/language/kde/",
-      "Ethnologue Free — Makonde central group : https://www.ethnologue.com/subgroup/54/",
-      "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
-      "CIA World Factbook — Mozambique : https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "UNESCO — Patrimoine culturel de l'Afrique de l'Est : https://en.unesco.org/"
+      {
+        "title": "SIL Ethnologue — Makonde (kde)",
+        "url": "https://www.ethnologue.com/language/kde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue Free — Makonde central group",
+        "url": "https://www.ethnologue.com/subgroup/54/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Tanzania",
+        "url": "https://www.cia.gov/the-world-factbook/countries/tanzania/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "UNESCO — Patrimoine culturel de l'Afrique de l'Est",
+        "url": "https://en.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+      }
     ]
   }
 }

@@ -26,6 +26,10 @@ vi.mock("@/lib/api/rate-limit", () => ({
 
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
 import { applyRateLimit } from "@/lib/api/rate-limit";
+import {
+  buildSearchParams,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
 
 const mockEnvelope = {
   data: {
@@ -43,7 +47,7 @@ const mockEnvelope = {
   },
   meta: {
     license: "CC-BY-SA-4.0",
-    attribution: "Africa History — africahistory.org",
+    attribution: "EthniAfrica — ethniafrica.com",
   },
   errors: [],
 };
@@ -249,5 +253,132 @@ describe("GET /api/v2/search (route)", () => {
     const res = await OPTIONS();
 
     expect(res.status).toBe(204);
+  });
+
+  // ── client/route contract ───────────────────────────────────────────────
+  // The site's own callers went unnoticed for two releases while every search
+  // 400ed, because each side was only ever tested against its own idea of the
+  // query string. This drives the route with the URL the client actually
+  // builds, so the two can no longer drift apart silently.
+  describe("accepts the URLs the site's own callers build", () => {
+    // @req REQ-002
+    it("answers 200 to a request built by the shared client adapter", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const params = buildSearchParams("bété", {
+        limit: 6,
+        classificationStatus: "contested",
+        minConfidence: "0.5",
+      });
+      const res = await GET(
+        new NextRequest(`http://localhost/api/v2/search?${params}`)
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "bété", limit: 6 })
+      );
+    });
+
+    // @req REQ-002
+    it("hands the adapter an envelope it can read back", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest(
+          `http://localhost/api/v2/search?${buildSearchParams("yoruba")}`
+        )
+      );
+
+      expect(mapSearchEnvelope(await res.json())).toEqual([
+        expect.objectContaining({ id: "PPL_YORUBA", name: "Yoruba" }),
+      ]);
+    });
+  });
+
+  describe("relation-scoped search", () => {
+    // @req REQ-002
+    it("accepts a language family as a search in its own right", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?familyId=FLG_KROU")
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ familyId: "FLG_KROU" })
+      );
+    });
+
+    // @req REQ-002
+    it("accepts a country as a search in its own right", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?countryId=CIV")
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ countryId: "CIV" })
+      );
+    });
+
+    // @req REQ-002
+    it("narrows a free-text query to a relation when both are given", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      await GET(
+        new NextRequest(
+          "http://localhost/api/v2/search?q=b%C3%A9t%C3%A9&familyId=FLG_KROU"
+        )
+      );
+
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "bété", familyId: "FLG_KROU" })
+      );
+    });
+
+    // @req REQ-002
+    it("rejects a family identifier that is not one", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?familyId=krou")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("familyId");
+    });
+
+    // @req REQ-002
+    it("rejects a country code that is not alpha-3", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?countryId=CI")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("countryId");
+    });
+
+    // @req REQ-002
+    it("still requires a query when no relation scopes it", async () => {
+      const res = await GET(new NextRequest("http://localhost/api/v2/search"));
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0].field).toBe("q");
+    });
   });
 });

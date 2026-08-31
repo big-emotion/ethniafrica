@@ -1,11 +1,13 @@
 {
   "id": "ZWE",
-  "nameFr": "République du Zimbabwe (Republic of Zimbabwe)",
+  "nameFr": "Zimbabwe",
   "nameOfficial": "République du Zimbabwe (Republic of Zimbabwe)",
+  "summary": "Le Zimbabwe porte le nom des « maisons de pierre » — dzimba-dza-mabwe en shona — c'est-à-dire des ruines du Grand Zimbabwe, centre commercial majeur du XIe au XVe siècle. Royaumes Mutapa, Rozvi puis Ndebele s'y sont succédé, avant la Rhodésie du Sud. Shona, Ndebele et Tonga y perpétuent la sculpture sur pierre et la peinture murale.",
   "etymology": "Le nom \"Zimbabwe\" vient du terme shona \"dzimba-dza-mabwe\", qui signifie \"maisons de pierre\" ou \"grandes maisons de pierre\". Ce terme fait référence aux ruines du Grand Zimbabwe, un site archéologique majeur construit entre le XIe et le XVe siècle.",
   "nameOriginActor": "Le nom \"Zimbabwe\" a été adopté lors de l'indépendance en 1980, remplaçant \"Rhodésie du Sud\". Il rend hommage à l'ancienne civilisation du Grand Zimbabwe, construite par le peuple Shona.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Rhodésie du Sud (1890-1980)"],
       "antiquity": "Le territoire était peuplé de groupes bantous et khoïsan. Présence de civilisations anciennes.",
       "middleAges": "Royaume du Grand Zimbabwe (XIe-XVe siècles), centre commercial majeur, civilisation shona avancée. Autres royaumes shona (Mutapa, Rozvi).",
       "precolonial": "Royaumes shona (Mutapa, Rozvi), royaume Ndebele (Mthwakazi). Le territoire était divisé entre plusieurs entités politiques.",
@@ -120,13 +122,54 @@
       "postIndependence": "République du Zimbabwe (1980), Robert Mugabe (1980-2017), réforme agraire controversée (années 2000), crise économique, transition politique (2017), défis économiques et politiques."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Zimbabwe",
-      "Ethnologue – Languages of Zimbabwe",
-      "Études anthropologiques sur les peuples bantous du Zimbabwe",
-      "Études historiques sur le royaume du Grand Zimbabwe",
-      "Recensements zimbabwéens",
-      "CIA World Factbook – Zimbabwe (ethnic groups, 2012 census)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Zimbabwe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Zimbabwe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples bantous du Zimbabwe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume du Grand Zimbabwe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements zimbabwéens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Zimbabwe (ethnic groups, 2012 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

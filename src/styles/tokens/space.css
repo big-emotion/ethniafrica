@@ -1,5 +1,5 @@
 /* ============================================================
-   Africa History — Spacing Tokens
+   EthniAfrica — Spacing Tokens
    ETNI-21 · UX-DR4
    ------------------------------------------------------------
    4 px base, T-shirt scale plus numeric aliases. Used for
@@ -29,8 +29,47 @@
   /* Layout-level aliases (mobile-first containers) */
   --afh-page-padding: 12px;
   --afh-card-padding: 18px;
+  /* UNCONSUMED, and it does not describe what ships. Recorded rather than
+     quietly wired, because wiring it would move the page instead of naming it.
+
+     The bands of the home do not sit in a gap: they abut, and the cadence
+     between two of them is the previous one's bottom padding plus the next
+     one's top. Measured on the rendered page:
+
+       430px   44 · 70 · 68 · 68 · 74 · 60
+       1440px  64 · 96 · 108 · 108 · 100 · 78
+
+     So the real rhythm is near-regular in the middle and hand-kept at both
+     ends, at roughly 68 and 104 — not the 24/32/48 below. Reconciling the two
+     is a design decision about the most visited page in the product, and the
+     values a designer needs to take it are the two rows above.
+
+     Brand charter §7. Until then, treat this token as a target, not as a
+     description: nothing reads it. */
   --afh-section-gap: 24px;
   --afh-container-max: 430px;
+
+  /* The shell box, distinct from `--afh-container-max` above.
+     `--afh-container-max` is a *reading* measure that tracks the breakpoints
+     themselves (430 / 720 / 800) — it is what a country fiche's prose column
+     is allowed to grow to. `--afh-shell-max` is the *page* box: the width the
+     bar, the hero, the body and the footer all stop at so their left edges
+     agree. Binding the shell to the reading measure would put the whole site
+     in an 800 px column.
+
+     One value, no breakpoint steps: below it the box is never reached and the
+     gutter alone does the work. 1240 px is the width the bar already carried,
+     and the nearest round number to the 1200 px of the reference the shell was
+     calibrated against. */
+  --afh-shell-max: 1240px;
+
+  /* HierarchyTree (ETNI-461) — guide-line color reuses --afh-border.
+     The indent is the tree's one cost in width: at 430px, three levels at
+     20px eat 60px of line length and start breaking people names. It opens
+     back up at 768px, where the width is there to spend. */
+  --afh-tree-indent: 14px;
+  --afh-tree-guide: var(--afh-border);
+  --afh-tree-node-min-h: 44px; /* touch target, UX-DR37 */
 }
 
 @media (min-width: 768px) {
@@ -39,6 +78,7 @@
     --afh-card-padding: 24px;
     --afh-section-gap: 32px;
     --afh-container-max: 720px;
+    --afh-tree-indent: 20px;
   }
 }
 
@@ -48,5 +88,21 @@
     --afh-card-padding: 32px;
     --afh-section-gap: 48px;
     --afh-container-max: 800px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Globe stage height · Epic 19 LOT 1
+   A fiche's globe is a fixed band, not an aspect-ratio box: the
+   shell went full-bleed, and an aspect ratio at full width made
+   the stage grow taller the wider the viewport got.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --afh-globe-stage-height: 470px;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --afh-globe-stage-height: 520px;
   }
 }

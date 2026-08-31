@@ -1,11 +1,17 @@
 {
   "id": "LBY",
-  "nameFr": "État de Libye (Dawlat Lībiyā)",
+  "nameFr": "Libye",
   "nameOfficial": "État de Libye (Dawlat Lībiyā)",
+  "summary": "La Libye porte un nom que les Grecs donnaient à toute l'Afrique du Nord. Berbères antiques, Cyrénaïque grecque, Tripolitaine romaine, califats puis régences ottomanes s'y sont succédé, avant la colonisation italienne qui officialisa le nom en 1911. Arabes, Nafusi, Touaregs et Toubou y composent la population.",
   "etymology": "Le nom \"Libye\" vient du grec \"Libya\", qui désignait l'Afrique du Nord dans l'Antiquité. Le nom arabe \"Lībiyā\" (ليبيا) est utilisé depuis le XXe siècle. L'ancien nom était \"Tripolitaine\" (région de Tripoli) et \"Cyrénaïque\" (région de Benghazi).",
   "nameOriginActor": "Le nom \"Libye\" a été officialisé lors de l'indépendance (1951). Le nom vient de l'Antiquité grecque.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Libya (grec)",
+        "Tripolitaine et Cyrénaïque (régences ottomanes)",
+        "Colonie italienne de Libye (1911-1951)"
+      ],
       "antiquity": "Libya (grec), Libye (latin). Le territoire était peuplé de Berbères (Libyens), Grecs (Cyrénaïque), Phéniciens (Tripolitaine).",
       "middleAges": "Ifriqiya (nom arabe pour la région), Barqa (Cyrénaïque), Tarabulus (Tripoli). Domination arabe puis ottomane.",
       "precolonial": "Régences de Tripoli et de Benghazi (1551-1911), États ottomans semi-autonomes. Le territoire était divisé en Tripolitaine et Cyrénaïque.",
@@ -150,18 +156,53 @@
       "postIndependence": "Royaume de Libye (1951-1969), coup d'État de Kadhafi (1969), république (1969-2011), révolution de 2011, guerre civile, instabilité politique."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Libya",
-      "Ethnologue – Languages of Libya",
-      "Minority Rights Group – Amazigh in Libya",
-      "CNRS – Berbères",
-      "Recensements libyens"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Libya",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Libya",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Amazigh in Libya",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CNRS – Berbères",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements libyens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes de Libye",
-          "population": 6300000,
           "percentageInCountry": 90,
           "percentageInAfrica": 3.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

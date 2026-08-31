@@ -13,6 +13,7 @@ import type {
   PeopleId,
   LanguageId,
   ClassificationStatus,
+  FicheSource,
   // Content sections
   AppellationsSection,
   OriginsSection,
@@ -40,6 +41,11 @@ export interface PaginationMeta {
   page: number;
   perPage: number;
   totalPages: number;
+  /**
+   * Peoples not reachable through any returnable family, surfaced instead of
+   * silently omitted (REQ-108). Only populated on the language-families list.
+   */
+  unclassifiedPeoplesCount?: number;
 }
 
 export interface PaginatedResponse<T> {
@@ -119,7 +125,7 @@ export interface LanguageFamilyDetail {
   };
 
   // Section 6: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 }
 
 // ==========================================
@@ -184,7 +190,7 @@ export interface PeopleDetail {
   demography?: GlobalDemographySection;
 
   // Sources
-  sources?: string[];
+  sources?: FicheSource[];
 }
 
 /**
@@ -264,6 +270,8 @@ export interface CountryDetail {
   nameFr: string;
   nameCommonFr: string;
   nameOfficial?: string;
+  /** The chapeau — see Country.summary. Absent on fiches not yet written. */
+  summary?: string;
   etymology?: string;
   nameOriginActor?: string;
   createdAt?: string;
@@ -285,7 +293,7 @@ export interface CountryDetail {
   historicalFacts?: HistoricalFactsSection;
 
   // Section 7: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Démographie
   demographics?: DemographicsSection;
@@ -296,7 +304,10 @@ export interface CountryDetail {
 // ==========================================
 
 export type SearchEntityType =
-  "country" | "people" | "language" | "languageFamily";
+  | "country"
+  | "people"
+  | "language"
+  | "languageFamily";
 
 /**
  * Filtres de recherche
@@ -317,13 +328,32 @@ export interface SearchResult {
   type: SearchEntityType;
   id: string;
   name: string;
+  /**
+   * Extrait expliquant la correspondance, termes appariés encadrés par
+   * `[[` et `]]` (voir `src/lib/search/highlight.ts`).
+   */
   snippet?: string;
+  /**
+   * Score de pertinence lexicale. Comparable **au sein** d'un type d'entité,
+   * pas entre types : un peuple est noté `ts_rank × confiance`, un pays
+   * `ts_rank` nu, une famille par palier. Trier entre types passe donc par
+   * `compareByRelevance`, qui départage d'abord sur `exactMatch`.
+   */
   relevance?: number;
+  /** Le nom de l'entité est exactement la requête, accents et casse ignorés. */
+  exactMatch?: boolean;
   // Données supplémentaires selon le type
   languageFamilyId?: LanguageFamilyId;
   languageFamilyName?: string;
   countryIds?: CountryId[];
   population?: number;
+  classificationStatus?: ClassificationStatus | null;
+  /** Score de confiance sur [0, 1] — l'échelle de la base, pas celle du chip. */
+  confidence?: number;
+  /** Autonyme (selfAppellation) du peuple, quand le corpus le porte. */
+  autonym?: string;
+  /** Exonymes connus, dans l'ordre de la fiche. */
+  exonyms?: string[];
 }
 
 /**
@@ -387,17 +417,14 @@ export interface CountryPeopleDistribution {
 // ==========================================
 
 /**
- * Élément de l'arbre de navigation hiérarchique
+ * Élément de l'arbre de navigation hiérarchique.
+ *
+ * Superseded by the richer `HierarchyNode` in
+ * `src/components/system/hierarchy-types.ts` (shared by the classification
+ * tree and HierarchyTextIndex). Re-exported here for compatibility; import
+ * from `@/components/system/hierarchy-types` in new code.
  */
-export interface HierarchyNode {
-  id: string;
-  type: "family" | "people" | "country";
-  name: string;
-  childCount?: number;
-  children?: HierarchyNode[];
-  isLoaded?: boolean;
-  isExpanded?: boolean;
-}
+export type { HierarchyNode } from "@/components/system/hierarchy-types";
 
 /**
  * Breadcrumb pour la navigation

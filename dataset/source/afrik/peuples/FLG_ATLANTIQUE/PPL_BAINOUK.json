@@ -3,6 +3,7 @@
   "nameMain": "Bainouk",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GMB", "GNB"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bainouk",
@@ -116,9 +117,24 @@
       ]
     },
     "sources": [
-      "Joshua Project. Bainouk, Gunyaamolo in Senegal. https://joshuaproject.net/people_groups/10665/SG",
-      "Sorosoro. Le baynunk. https://www.sorosoro.org/le-baynunk/",
-      "Djola History and Genealogy Society. Bainuk, Fulup and Baiote. https://www.djola.org/history/blog-post-title-three-3bz78 (2021)"
+      {
+        "title": "Joshua Project. Bainouk, Gunyaamolo in Senegal",
+        "url": "https://joshuaproject.net/people_groups/10665/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sorosoro. Le baynunk",
+        "url": "https://www.sorosoro.org/le-baynunk/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sorosoro.org."
+      },
+      {
+        "title": "Djola History and Genealogy Society. Bainuk, Fulup and Baiote. (2021)",
+        "url": "https://www.djola.org/history/blog-post-title-three-3bz78",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for djola.org."
+      }
     ]
   }
 }

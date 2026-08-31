@@ -75,10 +75,30 @@
       ]
     },
     "sources": [
-      "Nchumburu, Kyombaron in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/13266)",
-      "Chumburung – Glottolog 5.3, ISO 639-3 ncu (https://glottolog.org/resource/languoid/id/chum1261)",
-      "Chumburung language and alphabet – Omniglot, 2023 (https://www.omniglot.com/writing/chumburung.htm)",
-      "Chumburung history and religion – Open Book / Northern Ghana Peoples (http://www.northernghanapeoples.co.uk/CHUMBURUNG%20MASTER.doc)"
+      {
+        "title": "Nchumburu, Kyombaron in Ghana – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/13266",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Chumburung – Glottolog 5.3, ISO 639-3 ncu",
+        "url": "https://glottolog.org/resource/languoid/id/chum1261",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Chumburung language and alphabet – Omniglot, 2023",
+        "url": "https://www.omniglot.com/writing/chumburung.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Chumburung history and religion – Open Book / Northern Ghana Peoples",
+        "url": "http://www.northernghanapeoples.co.uk/CHUMBURUNG%20MASTER.doc",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers northernghanapeoples.co.uk; the tier awaits editorial review."
+      }
     ]
   }
 }

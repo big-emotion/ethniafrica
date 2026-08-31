@@ -2,15 +2,36 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { getPendingContributions } from "@/lib/supabase/admin-queries";
 import type { Contribution } from "@/lib/supabase/admin-queries";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
+type PendingAction =
+  | { kind: "approve"; id: string }
+  | { kind: "reject"; id: string };
+
+// @req REQ-091
 export default function AdminContributionsPage() {
   const router = useRouter();
   const [contributions, setContributions] = useState<Contribution[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
+  const [pendingAction, setPendingAction] = useState<PendingAction | null>(
+    null
+  );
+  const [rejectNotes, setRejectNotes] = useState("");
 
   const loadContributions = useCallback(async () => {
     try {
@@ -35,9 +56,15 @@ export default function AdminContributionsPage() {
 
   useEffect(() => {
     loadContributions();
-  }, [loadContributions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const handleApprove = async (id: string) => {
+  function closeConfirmation() {
+    setPendingAction(null);
+    setRejectNotes("");
+  }
+
+  async function confirmApprove(id: string) {
     try {
       const response = await fetch(`/api/admin/contributions/${id}`, {
         method: "PATCH",
@@ -53,19 +80,18 @@ export default function AdminContributionsPage() {
       }
       await loadContributions();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Unknown error");
+      setActionError(err instanceof Error ? err.message : "Unknown error");
     }
-  };
+  }
 
-  const handleReject = async (id: string) => {
-    const notes = prompt("Rejection notes (optional):");
+  async function confirmReject(id: string) {
     try {
       const response = await fetch(`/api/admin/contributions/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           action: "reject",
-          moderator_notes: notes || null,
+          moderator_notes: rejectNotes || null,
         }),
       });
       if (!response.ok) {
@@ -77,9 +103,20 @@ export default function AdminContributionsPage() {
       }
       await loadContributions();
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Unknown error");
+      setActionError(err instanceof Error ? err.message : "Unknown error");
     }
-  };
+  }
+
+  async function handleConfirm() {
+    if (!pendingAction) return;
+    setActionError(null);
+    if (pendingAction.kind === "approve") {
+      await confirmApprove(pendingAction.id);
+    } else {
+      await confirmReject(pendingAction.id);
+    }
+    closeConfirmation();
+  }
 
   const handleLogout = async () => {
     try {
@@ -96,73 +133,143 @@ export default function AdminContributionsPage() {
   };
 
   if (loading) {
-    return <div className="p-8">Loading contributions...</div>;
+    return (
+      <div className="p-8 font-afh text-afh-text-soft" role="status">
+        Loading contributions...
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="p-8 text-red-500">Error: {error}</div>;
+    return (
+      <div
+        className="p-8 font-afh text-afh-classification-disputed"
+        role="alert"
+      >
+        Error: {error}
+      </div>
+    );
   }
 
   return (
-    <div className="p-8 max-w-6xl mx-auto">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Contributions Pending Review</h1>
+    <div className="mx-auto max-w-6xl p-8 font-afh text-afh-text">
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="font-afh-display text-afh-h1 font-black text-afh-text">
+          Contributions Pending Review
+        </h1>
         <Button onClick={handleLogout} variant="outline">
           Logout
         </Button>
       </div>
+
+      {actionError && (
+        <p
+          role="alert"
+          className="mb-4 font-afh text-afh-small text-afh-classification-disputed"
+        >
+          {actionError}
+        </p>
+      )}
+
       {contributions.length === 0 ? (
-        <p>No pending contributions.</p>
+        <p className="text-afh-text-soft">No pending contributions.</p>
       ) : (
         <div className="space-y-4">
           {contributions.map((contribution) => (
-            <div
+            <article
               key={contribution.id}
-              className="border rounded-lg p-4 space-y-2"
+              className="space-y-2 rounded-afh-lg border border-afh-border bg-afh-surface p-4"
             >
-              <div className="flex justify-between items-start">
+              <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="font-semibold">Type: {contribution.type}</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-semibold text-afh-text">
+                    Type: {contribution.type}
+                  </h3>
+                  <p className="text-afh-small text-afh-text-soft">
                     Submitted:{" "}
                     {new Date(contribution.created_at).toLocaleString()}
                   </p>
                   {contribution.contributor_name && (
-                    <p className="text-sm">
+                    <p className="text-afh-small text-afh-text">
                       Contributor: {contribution.contributor_name}
                     </p>
                   )}
                   {contribution.notes && (
-                    <p className="text-sm mt-2">{contribution.notes}</p>
+                    <p className="mt-2 text-afh-small text-afh-text">
+                      {contribution.notes}
+                    </p>
                   )}
                 </div>
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => handleApprove(contribution.id)}
-                    className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                  <Button
+                    onClick={() =>
+                      setPendingAction({ kind: "approve", id: contribution.id })
+                    }
                   >
                     Approve
-                  </button>
-                  <button
-                    onClick={() => handleReject(contribution.id)}
-                    className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    onClick={() =>
+                      setPendingAction({ kind: "reject", id: contribution.id })
+                    }
                   >
                     Reject
-                  </button>
+                  </Button>
                 </div>
               </div>
               <details className="mt-2">
-                <summary className="cursor-pointer text-sm text-gray-600">
+                <summary className="cursor-pointer text-afh-small text-afh-text-soft">
                   View payload
                 </summary>
-                <pre className="mt-2 p-2 bg-gray-100 rounded text-xs overflow-auto">
+                <pre className="mt-2 overflow-auto rounded-afh-lg bg-afh-bg-warm p-2 text-afh-caption text-afh-text">
                   {JSON.stringify(contribution.proposed_payload, null, 2)}
                 </pre>
               </details>
-            </div>
+            </article>
           ))}
         </div>
       )}
+
+      <AlertDialog
+        open={pendingAction !== null}
+        onOpenChange={(open) => {
+          if (!open) closeConfirmation();
+        }}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              {pendingAction?.kind === "approve"
+                ? "Confirm approval"
+                : "Confirm rejection"}
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              This action is irreversible and cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+
+          {pendingAction?.kind === "reject" && (
+            <div className="space-y-2">
+              <Label htmlFor="reject-notes">Rejection notes (optional)</Label>
+              <Input
+                id="reject-notes"
+                value={rejectNotes}
+                onChange={(event) => setRejectNotes(event.target.value)}
+              />
+            </div>
+          )}
+
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={closeConfirmation}>
+              Cancel
+            </AlertDialogCancel>
+            <AlertDialogAction onClick={handleConfirm}>
+              Confirm
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

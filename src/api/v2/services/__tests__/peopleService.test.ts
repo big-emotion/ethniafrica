@@ -53,6 +53,7 @@ describe("People Service", () => {
   });
 
   describe("getPeopleById", () => {
+    // @req REQ-019
     it("should return a people by PPL_ ID", async () => {
       const mockPeople = {
         id: "PPL_SHONA",
@@ -71,6 +72,7 @@ describe("People Service", () => {
       expect(people?.nameMain).toBe("Shona");
     });
 
+    // @req REQ-019
     it("should return null for non-existent people", async () => {
       vi.mocked(getAfrikPeopleById).mockResolvedValue(null);
 
@@ -81,6 +83,7 @@ describe("People Service", () => {
   });
 
   describe("getPeoplesByLanguageFamily", () => {
+    // @req REQ-019
     it("should return peoples by language family", async () => {
       const mockPeoples = [
         {

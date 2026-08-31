@@ -3,6 +3,7 @@
   "nameMain": "Indo-Seychellois",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SYC"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Indo-Seychellois",
@@ -79,10 +80,30 @@
       ]
     },
     "sources": [
-      "247th Anniversary of Arrival of First Indian Settlers to Seychelles – Seychelles Nation, 2017 (https://www.nation.sc/archive/255508/247th-anniversary-of-arrival-of-first-indian-settlers-to-seychelles-remembered)",
-      "Seychelles Population 2026 – World Population Review, 2025 (https://worldpopulationreview.com/countries/seychelles)",
-      "Population of Overseas Indians – Ministry of External Affairs of India, 2023 (https://mea.gov.in/images/attach/nris-and-pios_1.pdf)",
-      "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024 (https://www.britannica.com/place/Seychelles/People)"
+      {
+        "title": "247th Anniversary of Arrival of First Indian Settlers to Seychelles – Seychelles Nation, 2017",
+        "url": "https://www.nation.sc/archive/255508/247th-anniversary-of-arrival-of-first-indian-settlers-to-seychelles-remembered",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nation.sc."
+      },
+      {
+        "title": "Seychelles Population 2026 – World Population Review, 2025",
+        "url": "https://worldpopulationreview.com/countries/seychelles",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+      },
+      {
+        "title": "Population of Overseas Indians – Ministry of External Affairs of India, 2023",
+        "url": "https://mea.gov.in/images/attach/nris-and-pios_1.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mea.gov.in; the tier awaits editorial review."
+      },
+      {
+        "title": "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024",
+        "url": "https://www.britannica.com/place/Seychelles/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

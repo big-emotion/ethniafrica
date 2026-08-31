@@ -1,11 +1,13 @@
 {
   "id": "NER",
-  "nameFr": "République du Niger",
+  "nameFr": "Niger",
   "nameOfficial": "République du Niger (République du Niger)",
+  "summary": "Le Niger porte le nom du fleuve qui le traverse, d'un terme berbère ou touareg signifiant « la rivière des rivières ». Cités-États hausa, royaumes songhay et confédérations touarègues s'y sont partagé le territoire. Hausa, Zarma, Peuls, Touaregs, Kanuri et Toubou y articulent Sahel et Sahara.",
   "etymology": "Le nom \"Niger\" vient du fleuve Niger, qui traverse le pays. Le nom du fleuve vient du terme berbère \"n-igere-n\" (rivière des rivières) ou du terme touareg \"egerew n-igerewen\" (grande rivière). Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé \"Colonie du Niger\" pendant la colonisation française.",
   "nameOriginActor": "Le nom \"Niger\" vient du fleuve Niger, nommé par les Berbères ou les Touareg. Le nom a été adopté par les Français lors de la création de la colonie (1922) puis officialisé lors de l'indépendance (1960).",
   "content": {
     "historicalNames": {
+      "formerNames": ["Colonie du Niger (1890-1960)"],
       "antiquity": "Le territoire actuel du Niger était peuplé de diverses sociétés (Hausa, Zarma, Peul, Touareg, Kanuri). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement des cités-États hausa (Kano, Katsina, Zaria), royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Consolidation des cités-États hausa, royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Les Européens utilisaient le terme \"Niger\" pour désigner la région du fleuve Niger.",
@@ -198,13 +200,54 @@
       "postIndependence": "République du Niger (1960), présidence de Hamani Diori (1960-1974), coups d'État (1974, 1996, 1999, 2010), rébellions touarègues (1990s-2010s), transition démocratique (depuis 1999), présidence de Mamadou Tandja (1999-2010), Mahamadou Issoufou (2011-2021), Mohamed Bazoum (2021-2023), coup d'État (2023), Abdourahamane Tiani (depuis 2023). Défis : pauvreté, développement économique, sécurité (terrorisme, rébellions touarègues), changement climatique (désertification). Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Niger",
-      "SIL Ethnologue – Languages of Niger",
-      "Recensements nigériens",
-      "Études anthropologiques sur les peuples du Niger",
-      "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou",
-      "CIA World Factbook – Niger (ethnic groups, 2006 census)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nigériens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger (ethnic groups, 2006 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

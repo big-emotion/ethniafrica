@@ -19,7 +19,9 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
   it("renders autonym with correct lang attribute", () => {
     render(<AutonymExonymHeading autonym="Yorùbá" autonymIso639_3="yor" />);
     const autonymEl = screen.getByText("Yorùbá");
-    expect(autonymEl).toHaveAttribute("lang", "yor");
+    // The corpus writes ISO 639-3; `lang` carries the shortest tag BCP 47
+    // allows, which is what a screen reader switches voice on.
+    expect(autonymEl).toHaveAttribute("lang", "yo");
   });
 
   // 2. Renders exonym beside autonym
@@ -158,9 +160,9 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
     expect(screen.queryByText("Yorùbá-Nago")).toBeNull();
   });
 
-  // 9. ipa prop: visual span is aria-hidden; sr-only span carries aria-label with no inner text
+  // 9. ipa prop: visual span is aria-hidden; sr-only span carries the phonetic label as text content
   it("renders IPA with aria-hidden visual text and sr-only phonetic label when ipa is provided", () => {
-    const { container } = render(
+    render(
       <AutonymExonymHeading
         autonym="Yorùbá"
         autonymIso639_3="yor"
@@ -173,17 +175,12 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
     expect(visualIpa).toBeInTheDocument();
     expect(visualIpa).toHaveAttribute("aria-hidden", "true");
 
-    // Screen-reader-only span has the descriptive aria-label only — no inner text
-    // to prevent double-announcement on older AT (NVDA+Firefox) per ARIA 1.2 §6.3
-    const srSpan = container.querySelector(
-      "span.sr-only[aria-label='Prononciation phonétique : jōrùbá']"
-    );
-    expect(srSpan).not.toBeNull();
-    expect(srSpan).toHaveAttribute(
-      "aria-label",
-      "Prononciation phonétique : jōrùbá"
-    );
-    expect(srSpan?.textContent).toBe("");
+    // Screen-reader-only span carries the descriptive label as text content —
+    // not `aria-label` on an empty span, which axe-core's aria-prohibited-attr
+    // rule flags on role-less elements (ETNI-476)
+    const srText = screen.getByText("Prononciation phonétique : jōrùbá");
+    expect(srText).toHaveClass("sr-only");
+    expect(srText).not.toHaveAttribute("aria-label");
   });
 
   // 10. No ipa: IPA element absent
@@ -204,26 +201,10 @@ describe("AutonymExonymHeading — hero/inline/card variants", () => {
   });
 });
 
-describe("AutonymExonymHeading — compact variant (exonym/autonym/code)", () => {
+describe("AutonymExonymHeading — compact variant (exonym/autonym)", () => {
   it("renders the exonym (main name)", () => {
     render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
     expect(screen.getByText("Bantou")).toBeInTheDocument();
-  });
-
-  it("renders the code when provided", () => {
-    render(
-      <AutonymExonymHeading
-        variant="compact"
-        exonym="Bantou"
-        code="FLG_BANTU"
-      />
-    );
-    expect(screen.getByText("FLG_BANTU")).toBeInTheDocument();
-  });
-
-  it("does not render a code element when code is not provided", () => {
-    render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
-    expect(screen.queryByText(/FLG_/)).not.toBeInTheDocument();
   });
 
   it("renders the autonym when provided and different from exonym", () => {
@@ -314,5 +295,39 @@ describe("AutonymExonymHeading — people-hero/people-section variants", () => {
       />
     );
     expect(container.querySelector("[data-exonyms]")).toBeNull();
+  });
+
+  /**
+   * The two names used to be adjacent spans with nothing between them, so the
+   * heading's own text read "YorùbáYoruba". Styling separated them for an eye
+   * and for nothing else — a screen reader announced one word.
+   */
+  // @req REQ-115
+  it("puts a space between the autonym and a second name", () => {
+    render(
+      <AutonymExonymHeading variant="hero" autonym="Yorùbá" exonym="Yoruba" />
+    );
+
+    expect(screen.getByRole("heading").textContent).toBe("Yorùbá Yoruba");
+  });
+
+  /**
+   * A predicate is not a name. Every people fiche shipped an h1 reading
+   * "!Kungun peuple sans bord" because the predicate went through the exonym
+   * prop, which joins with a space and, before this, with nothing at all.
+   */
+  // @req REQ-115
+  it("joins a predicate to the name with a comma, the way a fiche title reads", () => {
+    render(
+      <AutonymExonymHeading
+        variant="hero"
+        autonym="!Kung"
+        predicate="un peuple sans bord"
+      />
+    );
+
+    expect(screen.getByRole("heading").textContent).toBe(
+      "!Kung, un peuple sans bord"
+    );
   });
 });

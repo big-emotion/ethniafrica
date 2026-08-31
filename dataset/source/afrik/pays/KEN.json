@@ -1,11 +1,16 @@
 {
   "id": "KEN",
-  "nameFr": "République du Kenya (Republic of Kenya)",
+  "nameFr": "Kenya",
   "nameOfficial": "République du Kenya (Republic of Kenya)",
+  "summary": "Le Kenya porte le nom d'une montagne que les Kikuyu appellent Kirinyaga, « la montagne de blancheur » ; les explorateurs européens du XIXe siècle en ont fait « Kenya ». Cités swahili de la côte, royaumes bantous et confédérations nilotiques s'y rencontrent. Kikuyu, Luhya, Kalenjin, Luo, Kamba et Somali y ont le swahili pour langue commune.",
   "etymology": "Le nom \"Kenya\" vient du mont Kenya, appelé \"Kirinyaga\" (montagne de blancheur) par les Kikuyu. Les explorateurs européens du XIXe siècle ont utilisé \"Kenya\" d'après le mont Kenya. Le nom a été officialisé lors de la colonisation britannique.",
   "nameOriginActor": "Le nom vient du mont Kenya, appelé \"Kirinyaga\" par les Kikuyu. Les explorateurs européens ont popularisé le terme \"Kenya\" au XIXe siècle. Le nom a été officialisé par les Britanniques lors de la colonisation.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Protectorat britannique de l'Afrique de l'Est (1895-1920)",
+        "Colonie du Kenya (1920-1963)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Kikuyu, Luo, Maasai, etc.) avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement de royaumes et chefferies indépendants. Commerce avec les Arabes et les Swahili sur la côte.",
       "precolonial": "Mosaïque de peuples bantous (Kikuyu, Luhya, Kamba, Meru), nilotiques (Luo, Maasai, Samburu, Pokot, Turkana) et couchitiques (Somali, Borana). Commerce côtier swahili. Pas de nom unifié pour l'ensemble du territoire.",
@@ -196,14 +201,60 @@
       "postIndependence": "Première République (1963-1978) : présidence de Jomo Kenyatta, stabilité politique. Deuxième République (1978-2002) : présidence de Daniel arap Moi. Troisième République depuis 2002 : alternance démocratique, développement économique, hub est-africain."
     },
     "sources": [
-      "CIA World Factbook – Kenya",
-      "SIL Ethnologue – Languages of Kenya",
-      "Recensements nationaux kenyans",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples kenyans",
-      "Études historiques sur la colonisation et l'indépendance",
-      "CIA World Factbook – Kenya (ethnic groups, 2019 census)"
+      {
+        "title": "CIA World Factbook – Kenya",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Kenya",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux kenyans",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples kenyans",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation et l'indépendance",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Kenya (ethnic groups, 2019 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

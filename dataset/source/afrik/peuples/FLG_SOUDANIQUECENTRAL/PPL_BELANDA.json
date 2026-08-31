@@ -3,6 +3,7 @@
   "nameMain": "Belanda",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Belanda",
@@ -81,11 +82,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Belanda Bor in South Sudan. https://joshuaproject.net/people_groups/10773",
-      "SIL Ethnologue — Belanda Bor (bxb). https://www.ethnologue.com/language/bxb/",
-      "SIL Ethnologue — Belanda Viri (bvi). https://www.ethnologue.com/language/bvi/",
-      "Amnesty International — South Sudan: War crimes against Azande and Balanda Bviri (2021)",
-      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/"
+      {
+        "title": "Joshua Project — Belanda Bor in South Sudan",
+        "url": "https://joshuaproject.net/people_groups/10773",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Belanda Bor (bxb)",
+        "url": "https://www.ethnologue.com/language/bxb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Belanda Viri (bvi)",
+        "url": "https://www.ethnologue.com/language/bvi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Amnesty International — South Sudan: War crimes against Azande and Balanda Bviri (2021)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — South Sudan",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

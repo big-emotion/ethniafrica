@@ -92,14 +92,54 @@
       ]
     },
     "sources": [
-      "Joshua Project – Dida, Lakota in Côte d'Ivoire. https://joshuaproject.net/people_groups/12959",
-      "Joshua Project – Dida, Yocoboue in Côte d'Ivoire. https://joshuaproject.net/people_groups/16046",
-      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
-      "Ethnologue – Dida, Lakota (dic). https://www.ethnologue.com/language/dic/",
-      "Ethnologue – Dida, Yocoboué (gud). https://www.ethnologue.com/language/gud/",
-      "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire. https://searchworks.stanford.edu/view/11373252",
-      "France 24 / YouTube – Djaka festival en Côte d'Ivoire. https://www.youtube.com/watch?v=SYLpywVLMOE",
-      "Scribd – INTRODUCTION Dida. https://www.scribd.com/document/696994712/INTRODUCTION-dida"
+      {
+        "title": "Joshua Project – Dida, Lakota in Côte d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/12959",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Dida, Yocoboue in Côte d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/16046",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group – Krou in Côte d'Ivoire",
+        "url": "https://minorityrights.org/communities/krou/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Ethnologue – Dida, Lakota (dic)",
+        "url": "https://www.ethnologue.com/language/dic/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue – Dida, Yocoboué (gud)",
+        "url": "https://www.ethnologue.com/language/gud/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire",
+        "url": "https://searchworks.stanford.edu/view/11373252",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for searchworks.stanford.edu."
+      },
+      {
+        "title": "France 24 / YouTube – Djaka festival en Côte d'Ivoire",
+        "url": "https://www.youtube.com/watch?v=SYLpywVLMOE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Scribd – INTRODUCTION Dida",
+        "url": "https://www.scribd.com/document/696994712/INTRODUCTION-dida",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com."
+      }
     ]
   }
 }

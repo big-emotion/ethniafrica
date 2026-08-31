@@ -36,7 +36,7 @@ describe("GET /api/v2/confidence/[entityType]/[entityId]", () => {
       },
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         confidence: 73,
       },
       errors: [],

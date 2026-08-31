@@ -20,6 +20,7 @@ vi.mock("@/lib/api/logger", () => ({
 }));
 
 import { POST, OPTIONS } from "../route";
+import { getLocalizedRoute } from "@/lib/routing";
 
 function makeRequest(
   body: unknown,
@@ -126,9 +127,12 @@ describe("POST /api/internal/revalidate", () => {
       expect(mockRevalidateTag).toHaveBeenCalledWith("afrik-peoples", "max");
     });
 
-    it("revalidates the /fr/peuples path", async () => {
+    // @req REQ-091
+    it("revalidates the peoples directory path", async () => {
       await POST(makeRequest(PEOPLE_PAYLOAD, AUTH));
-      expect(mockRevalidatePath).toHaveBeenCalledWith("/fr/peuples");
+      expect(mockRevalidatePath).toHaveBeenCalledWith(
+        getLocalizedRoute("fr", "peoples")
+      );
     });
 
     it("includes invalidated tags in response", async () => {
@@ -154,9 +158,12 @@ describe("POST /api/internal/revalidate", () => {
       );
     });
 
-    it("revalidates the /fr/familles path", async () => {
+    // @req REQ-091
+    it("revalidates the families directory path", async () => {
       await POST(makeRequest(FAMILY_PAYLOAD, AUTH));
-      expect(mockRevalidatePath).toHaveBeenCalledWith("/fr/familles");
+      expect(mockRevalidatePath).toHaveBeenCalledWith(
+        getLocalizedRoute("fr", "families")
+      );
     });
   });
 
@@ -172,9 +179,12 @@ describe("POST /api/internal/revalidate", () => {
       expect(mockRevalidateTag).toHaveBeenCalledWith("afrik-countries", "max");
     });
 
-    it("revalidates the /fr/pays path", async () => {
+    // @req REQ-091
+    it("revalidates the countries directory path", async () => {
       await POST(makeRequest(COUNTRY_PAYLOAD, AUTH));
-      expect(mockRevalidatePath).toHaveBeenCalledWith("/fr/pays");
+      expect(mockRevalidatePath).toHaveBeenCalledWith(
+        getLocalizedRoute("fr", "countries")
+      );
     });
   });
 

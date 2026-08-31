@@ -22,12 +22,13 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { isSourceTier, type SourceTier } from "@/types/sources";
 
 export interface Source {
   id: string;
   title: string;
   url: string | null;
-  tier: string | null;
+  tier: SourceTier | null;
 }
 
 export interface ConfidenceScore {
@@ -80,6 +81,7 @@ function uniqueStrings(values: string[]): string[] {
  *   2) hydrate `sources` rows for the union of source_ids
  * Results are grouped client-side into Map<peopleId, Source[]>.
  */
+// @req REQ-007
 export async function getSourcesMap(
   peopleIds: string[]
 ): Promise<Map<string, Source[]>> {
@@ -128,8 +130,15 @@ export async function getSourcesMap(
         logger.error("module-zero-batch.getSourcesMap failed", error);
         return new Map();
       }
-      for (const src of (data || []) as Source[]) {
-        sourcesById.set(src.id, src);
+      for (const src of data || []) {
+        // A row still carrying an untiered or retired value reads as null
+        // rather than leaking a non-vocabulary string into the payload.
+        sourcesById.set(src.id, {
+          id: src.id,
+          title: src.title,
+          url: src.url,
+          tier: isSourceTier(src.tier) ? src.tier : null,
+        });
       }
     }
   }
@@ -149,13 +158,17 @@ export async function getSourcesMap(
 }
 
 /**
- * Latest confidence score per peopleId.
+ * Latest confidence score per entityId, scoped to a single entity_type.
  *
  * Post-014 schema: `confidence_scores` is entity-scoped. Query directly with
- * (entity_type='people', entity_id IN (...)). First seen non-null per id wins.
+ * (entity_type, entity_id IN (...)). First seen non-null per id wins.
+ * Defaults to "people" for existing callers (peopleIds); pass an explicit
+ * entityType (e.g. "country", "language_family") for other entity kinds.
  */
+// @req REQ-006
 export async function getConfidenceMap(
-  peopleIds: string[]
+  peopleIds: string[],
+  entityType: string = "people"
 ): Promise<Map<string, ConfidenceScore>> {
   if (peopleIds.length === 0) return new Map();
 
@@ -169,7 +182,7 @@ export async function getConfidenceMap(
       .select(
         "entity_id, score, source_count, avg_source_quality, last_human_audit_at, open_flag_count, recomputed_at"
       )
-      .eq("entity_type", "people")
+      .eq("entity_type", entityType)
       .in("entity_id", ids);
 
     if (error) {
@@ -205,6 +218,7 @@ export async function getConfidenceMap(
  * Per-peopleId flag summary: total flag count and the subset still "open"
  * (status not in {resolved, dismissed}).
  */
+// @req REQ-014
 export async function getFlagsSummaryMap(
   peopleIds: string[]
 ): Promise<Map<string, FlagSummary>> {
@@ -249,6 +263,7 @@ export async function getFlagsSummaryMap(
  * Single query (per chunk): `revisions` filtered by `entity_id IN (...)`,
  * ordered by `created_at DESC`. First row seen per entity wins.
  */
+// @req REQ-009
 export async function getLatestRevisionMap(
   peopleIds: string[]
 ): Promise<Map<string, Revision>> {

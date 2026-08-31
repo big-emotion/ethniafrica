@@ -1,0 +1,220 @@
+{
+  "version": 2,
+  "entries": [
+    {
+      "key": "un-desa-wpp",
+      "name": "UN DESA World Population Prospects",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["un.org", "population.un.org"]
+    },
+    {
+      "key": "unsd",
+      "name": "United Nations Statistics Division",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unstats.un.org"]
+    },
+    {
+      "key": "unfpa",
+      "name": "United Nations Population Fund",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unfpa.org"]
+    },
+    {
+      "key": "unesco",
+      "name": "UNESCO",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unesco.org"]
+    },
+    {
+      "key": "unicef-mics",
+      "name": "UNICEF MICS",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unicef.org", "mics.unicef.org"]
+    },
+    {
+      "key": "world-bank",
+      "name": "World Bank",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["worldbank.org"]
+    },
+    {
+      "key": "african-union",
+      "name": "African Union",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["au.int"]
+    },
+    {
+      "key": "acalan",
+      "name": "African Academy of Languages",
+      "tier": "official",
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["acalan-au.org"]
+    },
+    {
+      "key": "cia-world-factbook",
+      "name": "CIA World Factbook",
+      "tier": "official",
+      "sourceKind": "government",
+      "matchDomains": ["cia.gov"]
+    },
+    {
+      "key": "glottolog",
+      "name": "Glottolog",
+      "tier": "official",
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["glottolog.org"]
+    },
+    {
+      "key": "ethnologue",
+      "name": "SIL Ethnologue",
+      "tier": "official",
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["ethnologue.com", "sil.org"]
+    },
+    {
+      "key": "wals",
+      "name": "World Atlas of Language Structures",
+      "tier": "official",
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["wals.info"]
+    },
+    {
+      "key": "iwgia",
+      "name": "International Work Group for Indigenous Affairs",
+      "tier": "official",
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["iwgia.org"]
+    },
+    {
+      "key": "dhs-program",
+      "name": "DHS Program",
+      "tier": "official",
+      "sourceKind": "official_statistics",
+      "matchDomains": ["dhsprogram.com"]
+    },
+    {
+      "key": "ipums",
+      "name": "IPUMS",
+      "tier": "official",
+      "sourceKind": "official_statistics",
+      "matchDomains": ["ipums.org"]
+    },
+    {
+      "key": "jstor",
+      "name": "JSTOR",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["jstor.org"]
+    },
+    {
+      "key": "ajol",
+      "name": "African Journals Online",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["ajol.info"]
+    },
+    {
+      "key": "hal",
+      "name": "HAL",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["hal.science", "archives-ouvertes.fr"]
+    },
+    {
+      "key": "persee",
+      "name": "Persée",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["persee.fr"]
+    },
+    {
+      "key": "openedition",
+      "name": "OpenEdition",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["openedition.org"]
+    },
+    {
+      "key": "theses-fr",
+      "name": "theses.fr",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["theses.fr"]
+    },
+    {
+      "key": "ehraf",
+      "name": "eHRAF",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["ehrafworldcultures.yale.edu"]
+    },
+    {
+      "key": "elar",
+      "name": "Endangered Languages Archive",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["elararchive.org"]
+    },
+    {
+      "key": "pangloss",
+      "name": "Pangloss Collection",
+      "tier": "referenced",
+      "sourceKind": "repository",
+      "matchDomains": ["pangloss.cnrs.fr"]
+    },
+    {
+      "key": "gallica-bnf",
+      "name": "Gallica / BnF",
+      "tier": "referenced",
+      "sourceKind": "archive",
+      "matchDomains": ["gallica.bnf.fr", "bnf.fr"]
+    },
+    {
+      "key": "british-library-eap",
+      "name": "British Library Endangered Archives Programme",
+      "tier": "referenced",
+      "sourceKind": "archive",
+      "matchDomains": ["bl.uk"]
+    },
+    {
+      "key": "wikipedia",
+      "name": "Wikipedia",
+      "tier": "unverified",
+      "sourceKind": "discovery",
+      "matchDomains": ["wikipedia.org"]
+    },
+    {
+      "key": "worldcat",
+      "name": "WorldCat",
+      "tier": "unverified",
+      "sourceKind": "discovery",
+      "matchDomains": ["worldcat.org"]
+    },
+    {
+      "key": "sudoc",
+      "name": "Sudoc",
+      "tier": "unverified",
+      "sourceKind": "discovery",
+      "matchDomains": ["sudoc.abes.fr"]
+    },
+    {
+      "key": "ai-generated",
+      "name": "AI-generated content",
+      "tier": "unverified",
+      "sourceKind": "ai_generated",
+      "matchDomains": [
+        "chat.openai.com",
+        "chatgpt.com",
+        "claude.ai",
+        "gemini.google.com"
+      ]
+    }
+  ]
+}

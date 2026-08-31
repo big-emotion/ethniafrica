@@ -5,7 +5,11 @@ import type { User } from "@supabase/supabase-js";
 import { createServerSupabaseClient } from "../supabase/auth-server";
 
 export type UserRole =
-  "reader" | "contributor" | "moderator" | "admin" | "advisor";
+  | "reader"
+  | "contributor"
+  | "moderator"
+  | "admin"
+  | "advisor";
 
 export interface UserRoleRecord {
   user_id: string;

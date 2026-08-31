@@ -1,0 +1,103 @@
+/* ============================================================
+   EthniAfrica — The page hero
+   ------------------------------------------------------------
+   One band, one height. `PageHero.tsx` carries the rationale;
+   this file carries the measurements.
+
+   The ground is full-bleed and the content is not: `.afh-hero`
+   escapes to the viewport, `.afh-hero-inner` is the shell box.
+   That pairing is what puts the hero title on the same left
+   edge as the logo above it and the copyright below it.
+   ============================================================ */
+
+/* Short enough that what the reader came for is on screen with the title.
+   The reference's band is 420px, but it holds its own header inside; ours
+   sits below a separate bar, so the equivalent weight is that minus the bar.
+
+   Nothing here is measured against the viewport, and `heroBandCharter`
+   holds that: the band used to have a second, screen-tall height for the
+   home and the three hubs, which — the plate being bottom-aligned — put a
+   hub's title under a full screen of empty parchment. */
+.afh-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  min-height: 220px;
+  margin-inline: calc(50% - 50vw);
+  background: var(--afh-bg-warm);
+  border-bottom: 1px solid var(--afh-border);
+}
+
+@media (min-width: 768px) {
+  .afh-hero {
+    min-height: 320px;
+  }
+}
+
+.afh-hero-inner {
+  padding-block: var(--afh-space-7xl) var(--afh-space-6xl);
+}
+
+/* ─── The plate ───────────────────────────────────────────────
+   White on parchment, brown at night — both come free from
+   `--afh-surface`, which the night block already rebinds to
+   `--afh-night-surface-2`. A second, hand-picked brown here
+   would be a colour that stops tracking the theme the day
+   someone edits the token. */
+.afh-hero-plate {
+  min-width: 0;
+  max-width: 42rem;
+  padding: var(--afh-space-5xl);
+  background: var(--afh-surface);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  box-shadow: var(--afh-elev-2);
+}
+
+.afh-hero-title {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h1);
+  line-height: var(--afh-leading-h1);
+  letter-spacing: -0.014em;
+  text-wrap: balance;
+}
+
+.afh-hero-subtitle {
+  margin: var(--afh-space-lg) 0 0;
+  max-width: 46ch;
+  font-size: var(--afh-text-lead);
+  line-height: var(--afh-leading-lead);
+  color: var(--afh-text-soft);
+}
+
+/* ─── A head the page brought with it ─────────────────────────
+   The fiches and the facets fill the plate with their own head
+   — the parchment head, which was built to stand on the page
+   ground above the figures it introduced. Both of the things
+   that made it work there are wrong inside a card: its rule
+   becomes a line drawn across the plate, and its padding a
+   second inset inside the plate's own. The plate supplies both.
+
+   The trail follows the head, so it needs the separation the
+   head's own bottom padding used to give it. */
+.afh-hero-plate .afh-parchment-head {
+  padding: 0;
+  border-bottom: 0;
+  margin-bottom: var(--afh-space-lg);
+}
+
+/* Below the shell's own breakpoint the plate takes the width it is given:
+   at phone width a 42rem measure is wider than the screen, and the band's
+   own gutter is the only inset the card should have. */
+@media (max-width: 767px) {
+  .afh-hero-inner {
+    padding-block: var(--afh-space-6xl) var(--afh-space-5xl);
+  }
+
+  .afh-hero-plate {
+    max-width: none;
+  }
+}

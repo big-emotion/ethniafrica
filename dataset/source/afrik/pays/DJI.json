@@ -1,11 +1,16 @@
 {
   "id": "DJI",
-  "nameFr": "République de Djibouti",
+  "nameFr": "Djibouti",
   "nameOfficial": "République de Djibouti (République de Djibouti)",
+  "summary": "Djibouti porte le nom de la ville fondée par les Français en 1888, dont l'origine reste incertaine — peut-être l'afar « gabouti ». Le territoire, celui du sultanat d'Adal et des chefferies somali, fut la Côte française des Somalis puis le Territoire français des Afars et des Issas. Somali et Afar y perpétuent le pastoralisme nomade et la poésie orale.",
   "etymology": "Le nom \"Djibouti\" provient de la ville de Djibouti, fondée par les Français en 1888. L'origine du nom de la ville est incertaine, mais pourrait dériver du mot afar \"gabouti\" (panier en fibres de palmier) ou d'une légende locale. Le nom a été adopté pour le pays à l'indépendance en 1977.",
   "nameOriginActor": "Le nom \"Djibouti\" a été donné par les Français lors de la fondation de la ville de Djibouti en 1888. Le nom a été officialisé pour le pays à l'indépendance en 1977, remplaçant \"Territoire français des Afars et des Issas\". Le nom reflète l'identité de la capitale et du pays.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Côte française des Somalis (1896-1967)",
+        "Territoire français des Afars et des Issas (1967-1977)"
+      ],
       "antiquity": "Le territoire actuel de Djibouti était peuplé de peuples Afar et Somali sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires (Adal, Dankali, etc.).",
       "middleAges": "Développement de sultanats et chefferies : sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de sultanats et chefferies autonomes : sultanat d'Adal (Afar, aussi appelé Dankali), chefferies Somali (Issa, Gadabursi, Isaaq). Les Européens utilisaient les termes \"Côte française des Somalis\" ou \"Pays des Afars et des Issas\" pour désigner la région.",
@@ -133,18 +138,53 @@
       "postIndependence": "1977-présent : République de Djibouti, présidence de Hassan Gouled Aptidon (1977-1999) puis d'Ismaïl Omar Guelleh (depuis 1999). Stabilité politique relative. Défis : pauvreté, dépendance aux services portuaires et aux bases militaires étrangères, tensions ethniques (Afar/Somali). Le port de Djibouti est stratégique pour l'Éthiopie (accès à la mer) et accueille des bases militaires étrangères (France, États-Unis, Chine, etc.)."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Djibouti",
-      "CIA World Factbook – Djibouti",
-      "ONU / UNFPA – Démographie Djibouti 2025",
-      "Recensements djiboutiens",
-      "Études anthropologiques sur les peuples de Djibouti",
-      "Études historiques sur le sultanat d'Adal"
+      {
+        "title": "SIL Ethnologue – Languages of Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Djibouti 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements djiboutiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Djibouti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le sultanat d'Adal",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Somali",
-          "population": 650000,
           "percentageInCountry": 60,
           "peopleId": "PPL_SOMALI",
           "region": "Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq",
@@ -152,7 +192,6 @@
         },
         {
           "name": "Afar",
-          "population": 380000,
           "percentageInCountry": 35,
           "peopleId": "PPL_AFAR",
           "region": "Nord et Centre de Djibouti",

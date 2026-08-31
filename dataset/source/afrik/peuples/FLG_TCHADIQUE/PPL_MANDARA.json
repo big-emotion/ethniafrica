@@ -3,6 +3,7 @@
   "nameMain": "Mandara",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mandara",
@@ -90,11 +91,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Mandara, Wandala in Cameroon. https://joshuaproject.net/people_groups/13487/CM",
-      "Joshua Project — Mandara, Wandala in Nigeria. https://joshuaproject.net/people_groups/13487/NI",
-      "101 Last Tribes — Mandara people. https://www.101lasttribes.com/tribes/mandara.html",
-      "SIL Ethnologue — Wandala (mfi). https://www.ethnologue.com/language/mfi",
-      "MacEachern, Scott — What was the Wandala state, and who are the Wandala? Academia.edu. https://www.academia.edu/12092979/"
+      {
+        "title": "Joshua Project — Mandara, Wandala in Cameroon",
+        "url": "https://joshuaproject.net/people_groups/13487/CM",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Mandara, Wandala in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/13487/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — Mandara people",
+        "url": "https://www.101lasttribes.com/tribes/mandara.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Wandala (mfi)",
+        "url": "https://www.ethnologue.com/language/mfi",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "MacEachern, Scott — What was the Wandala state, and who are the Wandala? Academia.edu",
+        "url": "https://www.academia.edu/12092979/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      }
     ]
   }
 }

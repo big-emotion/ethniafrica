@@ -1,284 +1,274 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { AlertTriangle } from "lucide-react";
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
-import { getPeople } from "@/lib/afrikLoader";
-import { transformPeopleData } from "@/lib/peopleDataTransformer";
 import {
-  PeopleHero,
+  hasCultureContent,
+  hasOriginContent,
+  hasRelatedContent,
+  transformPeopleData,
+  transformSourcedRelationsPreview,
+} from "@/lib/peopleDataTransformer";
+import type { SourcedRelation } from "@/types/relations";
+import {
   PeopleOriginBlock,
   PeopleLanguageSection,
   PeopleHistoryTimeline,
   PeopleCultureGrid,
   PeopleRelatedPeoplesSection,
   PeopleCountriesSection,
-  PeopleSourcesFooter,
 } from "@/components/people";
-import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+// One sources footer for the three fiches. It lives under country/ for
+// historical reasons only — it takes FicheSourceEntry[] and knows nothing
+// about countries.
+import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
+import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
+import {
+  FicheSection,
+  SOURCE_TIER_NOTE,
+} from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import { FragmentationView } from "@/components/colonization/FragmentationView";
+import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
+import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
+import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
+import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 
-interface PeopleDetailViewV2Props {
-  peopleId: string;
-  onBack?: () => void;
-  onFlagCtaClick?: () => void;
+export interface PeopleDetailViewV2Props {
+  people: PeopleDetail;
+  namesDossier?: PeopleNamesDossier | null;
+  fragmentation?: PeopleFragmentation | null;
+  /** An open flag on this fiche's sourcing, resolved by the route. */
+  hasSourceFlag?: boolean;
+  /**
+   * The fiche's sourced ego network, awaited by the route.
+   *
+   * The parchment is the fiche's only relations surface now that the panel
+   * sequence no longer runs above it, so the neighbours section reads from
+   * here instead of standing empty.
+   */
+  relations?: readonly SourcedRelation[];
+  /**
+   * Turnstile's public site key, which the culture section's report control
+   * needs to be more than a shell. Absent — as it is until the key is
+   * configured — the section renders the disabled placeholder instead, the
+   * same way the country fiche does.
+   */
 }
 
-const SECTION_DELAY_MS = [0, 50, 100, 150, 200, 250, 300] as const;
-
-function SectionCard({
-  children,
-  label,
-  icon,
-  iconBg,
-  iconColor,
-  delayIndex,
-}: {
-  children: React.ReactNode;
-  label: string;
-  icon: string;
-  iconBg: string;
-  iconColor: string;
-  delayIndex: number;
-}) {
-  return (
-    <section
-      className="people-fade-in rounded-[var(--country-radius-xl)] md:rounded-[20px] xl:rounded-[22px] p-[18px] md:p-6 xl:p-7 relative overflow-hidden"
-      style={{
-        background: "var(--country-card)",
-        border: "1px solid var(--country-border)",
-        animationDelay: `${SECTION_DELAY_MS[delayIndex] ?? 0}ms`,
-      }}
-    >
-      <div
-        className="flex items-center gap-[6px] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
-        style={{ color: "var(--country-text-soft)" }}
-      >
-        <span
-          className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-[11px]"
-          style={{ background: iconBg, color: iconColor }}
-        >
-          {icon}
-        </span>
-        {label}
-      </div>
-      {children}
-    </section>
-  );
-}
-
+/**
+ * The people fiche's parchment — the prose half of the page, under the globe.
+ *
+ * It is a **server component**, fed by the route. It used to be a client one
+ * that fetched its own fiche, fragmentation, names dossier and relations from
+ * the browser, which cost the page its server rendering — and with it the axe
+ * audit and the Lighthouse score, on a fiche that is measured on both. The
+ * route already awaits every one of those, so the fetching was duplicated as
+ * well as costly.
+ *
+ * Two sections open it, in the mockup's order, before any figure:
+ *   1. "Le nom porté, les noms subis" — the fiche's editorial position.
+ *   2. "Pourquoi la carte ne trace pas de frontière" — the grammar of the
+ *      globe above, in the reader's terms, plus the legend for it.
+ *
+ * The relations preview is fed by the route, from the ego network it already
+ * awaited. It briefly stood empty here while FicheSequence's links panel was
+ * the fiche's relations surface; that panel no longer runs above the
+ * parchment, so this is the surface.
+ *
+ * **Charter §4, and where it stops.** Every chapter answering a rubric of
+ * `modele-peuple.json` — origines, langues, rôle historique, culture,
+ * organisation, démographie, sources — is printed whether or not the corpus
+ * fills it, and an unfilled one carries `FieldProvenanceMarker`: the corpus
+ * being silent about a people's origins is a fact about the corpus, and
+ * dropping the chapter is what deletes that fact.
+ *
+ * Two things on this page deliberately stay conditional, because their absence
+ * is not a silence. The globe's grammar section explains a map that a fiche
+ * with no distribution does not draw, and colonial fragmentation only exists
+ * where a people straddles a border. Neither is a rubric anyone failed to
+ * fill, and marking them would invent a gap. The same line holds one level
+ * down: an optional field inside a block — an exonym, a `whyProblematic` —
+ * stays absent, because the model never asked every fiche for one.
+ */
+// @req REQ-091
 export function PeopleDetailViewV2({
-  peopleId,
-  onBack,
-  onFlagCtaClick,
+  people,
+  namesDossier = null,
+  fragmentation = null,
+  hasSourceFlag = false,
+  relations = [],
 }: PeopleDetailViewV2Props) {
-  const [people, setPeople] = useState<PeopleDetail | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLoading(true);
-
-    setError(null);
-
-    getPeople(peopleId)
-      .then((data) => {
-        if (cancelled) return;
-        if (data) {
-          setPeople(data);
-        } else {
-          setError("Peuple non trouvé");
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setError("Échec du chargement de la fiche");
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [peopleId]);
-
-  if (loading) {
-    return (
-      <div className="w-full">
-        <div className="mx-3 md:mx-4 xl:mx-5 mt-3 rounded-[20px] overflow-hidden">
-          <Skeleton className="h-[260px] w-full" />
-        </div>
-        <div className="px-3 md:px-4 xl:px-5 space-y-3 mt-3">
-          <Skeleton className="h-[140px] w-full rounded-[16px]" />
-          <Skeleton className="h-[180px] w-full rounded-[16px]" />
-          <Skeleton className="h-[220px] w-full rounded-[16px]" />
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !people) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[300px] gap-3 p-6">
-        <AlertTriangle className="h-10 w-10 text-destructive" />
-        <p className="text-destructive text-sm font-medium">
-          {error || "Peuple non trouvé"}
-        </p>
-      </div>
-    );
-  }
-
-  const data = transformPeopleData(people);
-
-  const breadcrumbs = [
-    { label: "Familles", href: "/fr/familles" },
-    ...(people.languageFamilyId
-      ? [
-          {
-            label: people.languageFamilyName ?? people.languageFamilyId,
-            href: `/fr/familles/${people.languageFamilyId}`,
-          },
-        ]
-      : []),
-    { label: data.hero.nameMain },
-  ];
+  const data = transformPeopleData(people, namesDossier);
+  const distribution = people.demography?.distributionByCountry;
+  const relationsPreview = transformSourcedRelationsPreview(relations);
 
   return (
-    <div
-      className="w-full pb-3 md:pb-4 xl:pb-5"
-      style={{
-        fontFamily: "var(--country-font-body)",
-        color: "var(--country-text)",
-      }}
-    >
-      {/* 1. Hero — always above fold */}
-      <PeopleHero
-        data={data.hero}
-        onBack={onBack}
-        onFlagCtaClick={onFlagCtaClick}
-      />
+    <div className="afh-parchment" id="fiche">
+      {/* The head and the trail moved above the globe (PeopleFicheTitle), so
+          a reader arriving on the fiche is told which fiche it is before the
+          band fills their screen.
 
-      {/* 2. Breadcrumbs — below hero, small type */}
-      <AfrikBreadcrumbs items={breadcrumbs} />
-
-      {/* Content area — max-width 800px reading surface */}
-      <div
-        className="px-3 md:px-4 xl:px-5 space-y-[10px] md:space-y-[14px] xl:space-y-4 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
-        style={{ maxWidth: "800px" }}
-      >
-        {/* 2. Origins */}
-        {(data.origin.ancientOrigins ||
-          data.origin.formationPeriod ||
-          data.origin.migrationRoutes.length > 0 ||
-          data.origin.historicalSettlementZones.length > 0 ||
-          data.origin.externalInfluences) && (
-          <SectionCard
-            label="Origines & formation"
-            icon="◎"
-            iconBg="var(--country-earth-bg)"
-            iconColor="var(--country-earth)"
-            delayIndex={0}
-          >
-            <PeopleOriginBlock data={data.origin} />
-          </SectionCard>
-        )}
-
-        {/* 3. Language */}
-        {(data.language.mainLanguage ||
-          data.language.isoCodes.length > 0 ||
-          data.language.dialects.length > 0 ||
-          data.language.vehicularRole) && (
-          <SectionCard
-            label="Langue"
-            icon="🗣"
-            iconBg="var(--country-green-bg)"
-            iconColor="var(--country-green)"
-            delayIndex={1}
-          >
-            <PeopleLanguageSection data={data.language} />
-          </SectionCard>
-        )}
-
-        {/* 4. History */}
-        {(data.history.kingdomsOrChiefdoms ||
-          data.history.relationsWithNeighbors ||
-          data.history.conflictsOrAlliances ||
-          data.history.diaspora) && (
-          <SectionCard
-            label="Rôle historique"
-            icon="↳"
-            iconBg="var(--country-gold-bg)"
-            iconColor="var(--country-gold)"
-            delayIndex={2}
-          >
-            <PeopleHistoryTimeline data={data.history} />
-          </SectionCard>
-        )}
-
-        {/* 5. Culture */}
-        {(data.culture.supremeDeity ||
-          data.culture.intermediates.length > 0 ||
-          data.culture.symbols.length > 0 ||
-          data.culture.music ||
-          data.culture.gastronomy ||
-          data.culture.christianityPercentage != null ||
-          data.culture.islamPercentage != null) && (
-          <SectionCard
-            label="Culture & spiritualité"
-            icon="◈"
-            iconBg="var(--country-terracotta-bg)"
-            iconColor="var(--country-terracotta)"
-            delayIndex={3}
-          >
-            <PeopleCultureGrid data={data.culture} />
-          </SectionCard>
-        )}
-
-        {/* 6. Related peoples & organization */}
-        {(data.relatedPeoples.ethnicities.length > 0 ||
-          data.relatedPeoples.politicalSystem ||
-          data.relatedPeoples.clanOrganization ||
-          data.relatedPeoples.ageClassSystems) && (
-          <SectionCard
-            label="Peuples voisins & organisation"
-            icon="◉"
-            iconBg="var(--country-earth-bg)"
-            iconColor="var(--country-earth)"
-            delayIndex={4}
-          >
-            <PeopleRelatedPeoplesSection data={data.relatedPeoples} />
-          </SectionCard>
-        )}
-
-        {/* 7. Countries & demographics */}
-        {data.countries.distributions.length > 0 && (
-          <SectionCard
-            label="Répartition géographique"
-            icon="◉"
-            iconBg="var(--country-terracotta-bg)"
-            iconColor="var(--country-terracotta)"
-            delayIndex={5}
-          >
-            <PeopleCountriesSection
-              data={data.countries}
-              fromPeopleId={data.hero.peopleId}
-              fromPeopleName={data.hero.nameMain}
-            />
-          </SectionCard>
-        )}
+          The confidence chip did not go with them: it cites this document's
+          sources and links to their footer, so it belongs inside the document
+          that owns that anchor rather than in the band above it. */}
+      <div className="afh-parchment-confidence">
+        <ConfidenceChip
+          confidenceScore={null}
+          sourceCount={data.sources.length || null}
+          lastHumanAuditAt={null}
+          variant="hero"
+          id={data.hero.peopleId}
+          ariaSuffix={`pour la fiche ${data.hero.nameMain}`}
+        />
       </div>
 
-      {/* 8. Sources footer (outside content padding, max-width) */}
-      {data.sources && (
-        <div
-          className="px-3 md:px-4 xl:px-5 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
-          style={{ maxWidth: "800px" }}
+      {/* 1. The name borne, the names imposed — first, before any figure. */}
+      <FicheSection title="Le nom porté, les noms subis">
+        <PeopleNamingBlock
+          nameMain={data.hero.nameMain}
+          selfAppellation={people.appellations?.selfAppellation}
+          exonyms={people.appellations?.exonyms}
+          originOfExonyms={data.hero.originOfExonyms}
+          whyProblematic={people.appellations?.whyProblematic}
+          contemporaryUsage={data.hero.contemporaryUsage}
+          isoCode={people.languages?.isoCodes?.[0]}
+        />
+      </FicheSection>
+
+      {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
+      {distribution && distribution.length > 0 && (
+        <FicheSection
+          title="Pourquoi la carte ne trace pas de frontière"
+          note="Dérivé de la répartition par pays"
         >
-          <PeopleSourcesFooter sources={data.sources} />
-        </div>
+          <PeopleFieldExplainer distribution={distribution} />
+        </FicheSection>
       )}
+
+      <FicheSection title="Origines & formation">
+        {hasOriginContent(data.origin) ? (
+          <PeopleOriginBlock data={data.origin} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection title="Langue">
+        {data.language.mainLanguage ||
+        data.language.isoCodes.length > 0 ||
+        data.language.dialects.length > 0 ||
+        data.language.vehicularRole ? (
+          <PeopleLanguageSection data={data.language} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection title="Rôle historique">
+        {data.history.kingdomsOrChiefdoms ||
+        data.history.relationsWithNeighbors ||
+        data.history.conflictsOrAlliances ||
+        data.history.diaspora ? (
+          <PeopleHistoryTimeline data={data.history} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <OralNarrativesSection peopleId={data.hero.peopleId} />
+
+      {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
+      <PeopleNamesSection data={data.names} />
+
+      <FicheSection title="Culture & spiritualité">
+        {hasCultureContent(data.culture) ? (
+          <PeopleCultureGrid data={data.culture} />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+        {/* The same report control the country fiche's culture section
+            carries. It used to live only on the legacy tabbed people view;
+            retiring that view without moving it here would have taken the
+            people half of the requirement with it. It stays whether or not
+            the rubric is filled — an empty culture section is exactly the one
+            a reader has something to say about. */}
+        <div data-testid="section-flag-target-culture" className="mt-3">
+          <FlagTarget
+            target={{
+              type: "fiche_section",
+              id: people.id,
+              fieldPath: "culture",
+            }}
+            triggerLabel="Signaler cette section"
+            className="w-auto text-afh-caption"
+          />
+        </div>
+      </FicheSection>
+
+      <FicheSection title="Peuples voisins & organisation">
+        {hasRelatedContent(data.relatedPeoples) ||
+        relationsPreview.length > 0 ? (
+          <PeopleRelatedPeoplesSection
+            data={data.relatedPeoples}
+            peopleId={data.hero.peopleId}
+            relationsPreview={relationsPreview}
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection
+        title="Répartition géographique"
+        note="Année de référence : 2025"
+      >
+        {data.countries.distributions.length > 0 ? (
+          <PeopleCountriesSection
+            data={data.countries}
+            fromPeopleId={data.hero.peopleId}
+            fromPeopleName={data.hero.nameMain}
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      {/* Fragmentation coloniale (FR85) — absent below 2 countries.
+          Not a rubric of the fiche model but a reading that only exists where
+          a people straddles a border, so its absence is inapplicability, not
+          a gap in the corpus, and it carries no missing marker. */}
+      {fragmentation && (
+        <FicheSection
+          title="Fragmentation coloniale"
+          note="Dérivé de la présence du peuple dans plusieurs pays"
+        >
+          <FragmentationView
+            fragmentation={fragmentation}
+            variant="fiche-section"
+          />
+        </FicheSection>
+      )}
+
+      {/* Deep links across the app point at #sources; until now the only such
+          anchor in the tree belonged to the family fiche, so every citation
+          chip on a people fiche resolved to nothing. */}
+      <FicheSection
+        title="Sources"
+        note={SOURCE_TIER_NOTE}
+        as="footer"
+        id="sources"
+      >
+        {data.sources.length > 0 ? (
+          <SourcesFooter
+            sources={data.sources}
+            hasSourceFlag={hasSourceFlag}
+            variant="parchment"
+          />
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
     </div>
   );
 }

@@ -1,11 +1,16 @@
 {
   "id": "GAB",
-  "nameFr": "République gabonaise",
+  "nameFr": "Gabon",
   "nameOfficial": "République gabonaise (République gabonaise)",
+  "summary": "Le Gabon doit son nom au portugais « Gabão », la gabardine, dont l'estuaire du Komo rappelait la forme aux navigateurs du XVe siècle. Peuplé par les migrations bantoues, il compte plus de quarante peuples — Fang, Punu, Nzebi, Teke, Myene, Mbete. Ses masques, dont le ngil fang, comptent parmi les plus connus d'Afrique centrale.",
   "etymology": "Le nom \"Gabon\" provient du portugais \"Gabão\" (gabardine, manteau), donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo qui ressemble à une gabardine. Le terme a été adapté en \"Gabon\" par les Français.",
   "nameOriginActor": "Le nom \"Gabon\" a été donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo. Les Français ont adapté ce nom lors de la colonisation. Le nom a été officialisé lors de l'indépendance en 1960.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Gabão (portugais, XVe siècle)",
+        "Colonie française du Gabon (1885-1960)"
+      ],
       "antiquity": "Le territoire actuel du Gabon était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux dans les forêts équatoriales. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de chefferies et royaumes autonomes : chefferies Fang, Punu, Nzebi, Teke, Myene, Mbete, et autres peuples bantous forestiers. Les Portugais utilisaient le terme \"Gabão\" pour désigner la région de l'estuaire du Komo.",
@@ -184,13 +189,54 @@
       "postIndependence": "1960-1967 : Présidence de Léon M'ba. 1967-2009 : Présidence d'Omar Bongo (1967-2009), période de stabilité politique et de développement économique basé sur le pétrole. 2009-présent : Présidence d'Ali Bongo Ondimba (fils d'Omar Bongo). Défis : dépendance au pétrole, inégalités sociales, corruption. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne grâce à ses ressources pétrolières et forestières."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Gabon",
-      "CIA World Factbook – Gabon",
-      "ONU / UNFPA – Démographie Gabon 2025",
-      "Recensements gabonais",
-      "Études anthropologiques sur les peuples du Gabon",
-      "Études sur l'art gabonais (masques, sculptures)",
-      "CIA World Factbook – Gabon (ethnic groups, 2021 est.)"
+      {
+        "title": "SIL Ethnologue – Languages of Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Gabon 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements gabonais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Gabon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études sur l'art gabonais (masques, sculptures)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Gabon (ethnic groups, 2021 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

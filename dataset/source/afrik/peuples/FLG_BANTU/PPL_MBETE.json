@@ -3,6 +3,7 @@
   "nameMain": "Mbete",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GAB", "COG", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mbete",
@@ -87,12 +88,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Mbete people (https://www.101lasttribes.com/tribes/mbete.html)",
-      "Joshua Project – Mbede in Gabon (https://joshuaproject.net/people_groups/10277/GB)",
-      "Dupre, Marie-Claude – L'art kota est-il vraiment kota ?, 1980",
-      "Loubamono-Bessacque, Guy Claver – Les forets natales : Arts d'Afrique equatoriale atlantique, 2017",
-      "Olson, James S. – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996, p. 366-367",
-      "Perrois, Louis – Ambete reliquary figures (Eliot Elisofon)"
+      {
+        "title": "101 Last Tribes – Mbete people",
+        "url": "https://www.101lasttribes.com/tribes/mbete.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Mbede in Gabon",
+        "url": "https://joshuaproject.net/people_groups/10277/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Dupre, Marie-Claude – L'art kota est-il vraiment kota ?, 1980",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Loubamono-Bessacque, Guy Claver – Les forets natales : Arts d'Afrique equatoriale atlantique, 2017",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Olson, James S. – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996, p. 366-367",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Perrois, Louis – Ambete reliquary figures (Eliot Elisofon)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

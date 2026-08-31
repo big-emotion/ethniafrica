@@ -3,6 +3,7 @@
   "nameMain": "Swahili",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["KEN", "TZA", "MOZ", "COM", "COD", "UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Swahili",
@@ -113,11 +114,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Swahili (swa) : https://www.ethnologue.com/language/swa/",
-      "UNESCO World Heritage — Stone Town of Zanzibar : https://whc.unesco.org/en/list/173/",
-      "Joshua Project — Swahili in United States : https://joshuaproject.net/people_groups/15145/US",
-      "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
-      "CIA World Factbook — Kenya : https://www.cia.gov/the-world-factbook/countries/kenya/"
+      {
+        "title": "SIL Ethnologue — Swahili (swa)",
+        "url": "https://www.ethnologue.com/language/swa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO World Heritage — Stone Town of Zanzibar",
+        "url": "https://whc.unesco.org/en/list/173/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Joshua Project — Swahili in United States",
+        "url": "https://joshuaproject.net/people_groups/15145/US",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "CIA World Factbook — Tanzania",
+        "url": "https://www.cia.gov/the-world-factbook/countries/tanzania/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Kenya",
+        "url": "https://www.cia.gov/the-world-factbook/countries/kenya/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

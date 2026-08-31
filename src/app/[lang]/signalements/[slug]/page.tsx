@@ -6,6 +6,7 @@ import {
   getContributorAttribution,
   getFlagBySlug,
 } from "@/lib/supabase/queries/flags/getFlagBySlug";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 /**
  * ISR: revalidate on every request in dev; in production the pg_notify →
@@ -29,12 +30,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   return {
-    title: `Signalement ${slug} — Africa History`,
+    title: `Signalement ${slug} — ${PRODUCT_NAME}`,
     robots: { index: true, follow: true },
     openGraph: {
-      title: `Signalement ${slug} — Africa History`,
-      description:
-        "Consultation d'un signalement éditorial sur la plateforme Africa History.",
+      title: `Signalement ${slug} — ${PRODUCT_NAME}`,
+      description: `Consultation d'un signalement éditorial sur la plateforme ${PRODUCT_NAME}.`,
       type: "article",
     },
   };
@@ -86,13 +86,14 @@ export default async function SignalementsSlugPage({
       language="fr"
       title={`Signalement ${slug}`}
       sectionName="Signalements"
+      trailLabel={`Signalement ${slug}`}
     >
       <article
         className="container mx-auto max-w-3xl px-4 py-8 space-y-8"
         data-testid="signalement-page"
       >
         <header className="space-y-3 border-b pb-4">
-          <h1 className="text-2xl font-bold">Signalement {slug}</h1>
+          <h1 className="text-afh-h2 font-bold">Signalement {slug}</h1>
           <FlagPublicStatus
             status={flag.status}
             moderatorNotes={flag.moderator_notes}
@@ -101,8 +102,8 @@ export default async function SignalementsSlugPage({
 
         {/* Target */}
         <section className="space-y-2">
-          <h2 className="text-lg font-semibold">Entité concernée</h2>
-          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+          <h2 className="text-afh-h3 font-semibold">Entité concernée</h2>
+          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-afh-small">
             {flag.entity_type && (
               <>
                 <dt className="text-muted-foreground">Type</dt>
@@ -124,7 +125,7 @@ export default async function SignalementsSlugPage({
           </dl>
           {snapshotQuote && (
             <blockquote
-              className="mt-3 border-l-4 border-muted pl-4 text-sm italic text-muted-foreground"
+              className="mt-3 border-l-4 border-muted pl-4 text-afh-small italic text-muted-foreground"
               data-testid="snapshot-quote"
             >
               {snapshotQuote}
@@ -134,15 +135,15 @@ export default async function SignalementsSlugPage({
 
         {/* Flag details */}
         <section className="space-y-2">
-          <h2 className="text-lg font-semibold">Détails du signalement</h2>
-          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+          <h2 className="text-afh-h3 font-semibold">Détails du signalement</h2>
+          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-afh-small">
             <dt className="text-muted-foreground">Type</dt>
             <dd data-testid="flag-kind">
               {FLAG_KIND_LABELS[flag.flag_kind] ?? flag.flag_kind}
             </dd>
           </dl>
           {flag.reason_text && (
-            <p className="text-sm mt-2" data-testid="reason-text">
+            <p className="text-afh-small mt-2" data-testid="reason-text">
               {flag.reason_text}
             </p>
           )}
@@ -151,19 +152,19 @@ export default async function SignalementsSlugPage({
         {/* Counter source */}
         {flag.counter_source_url && (
           <section className="space-y-2">
-            <h2 className="text-lg font-semibold">Source contradictoire</h2>
+            <h2 className="text-afh-h3 font-semibold">Source contradictoire</h2>
             <a
               href={flag.counter_source_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm underline hover:no-underline break-all"
+              className="text-afh-small underline hover:no-underline break-all"
               data-testid="counter-source-url"
             >
               {flag.counter_source_url}
             </a>
             {flag.counter_source_citation && (
               <p
-                className="text-sm text-muted-foreground"
+                className="text-afh-small text-muted-foreground"
                 data-testid="counter-source-citation"
               >
                 {flag.counter_source_citation}
@@ -175,9 +176,11 @@ export default async function SignalementsSlugPage({
         {/* Proposed rewrite */}
         {flag.proposed_rewrite && (
           <section className="space-y-2">
-            <h2 className="text-lg font-semibold">Proposition de réécriture</h2>
+            <h2 className="text-afh-h3 font-semibold">
+              Proposition de réécriture
+            </h2>
             <blockquote
-              className="border-l-4 border-muted pl-4 text-sm italic"
+              className="border-l-4 border-muted pl-4 text-afh-small italic"
               data-testid="proposed-rewrite"
             >
               {flag.proposed_rewrite}
@@ -186,7 +189,7 @@ export default async function SignalementsSlugPage({
         )}
 
         {/* Timestamps + contributor */}
-        <footer className="border-t pt-4 space-y-1 text-sm text-muted-foreground">
+        <footer className="border-t pt-4 space-y-1 text-afh-small text-muted-foreground">
           <p>
             <span>Signalé le </span>
             <time dateTime={flag.created_at} data-testid="created-at">

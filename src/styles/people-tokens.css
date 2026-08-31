@@ -2,11 +2,17 @@
    ETHNIAFRICA — People Fiche Design Tokens & Utility Classes
    Variante "Carte vivante" — People adaptation
    ETNI-35
+
+   The three classes below carried their own 768px type step —
+   10/11, 13/14, 11/12 px — which is a second scale in a file
+   ESLint never parses. They now read --afh-text-*, and the
+   steps are gone: the roles they point at are either fluid
+   already or fixed by design.
    ============================================================ */
 
 /* Section typography utilities (reuse --country-* / --afh-* tokens) */
 .people-section-label {
-  font-size: 10px;
+  font-size: var(--afh-text-eyebrow);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -14,41 +20,30 @@
   margin-bottom: 4px;
 }
 
-@media (min-width: 768px) {
-  .people-section-label {
-    font-size: 11px;
-  }
-}
-
+/* The measure came out with the sub-headings. The people fiche is on the same
+   parchment as the family and the country — its chapters are FicheSections —
+   and `.afh-parchment-section p` deliberately sets no max-width, because the
+   parchment decides where a line ends. Capped at 65ch this was the one
+   paragraph on the page still breaking off mid-width while the stat cards,
+   tags and rankings beside it ran to both edges. The structure the corpus now
+   carries is what makes the full width readable: a chapter cut every three or
+   four sentences is no longer the slab the cap was defending against. */
 .people-section-body {
-  font-size: 13px;
-  /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
-  line-height: 1.6;
-  max-width: 72ch;
+  font-size: var(--afh-text-body);
+  /* Reading-surface density: UX-DR2 line-height ≥ 1.6 */
+  line-height: var(--afh-leading-body);
   color: var(--country-text);
-}
-
-@media (min-width: 768px) {
-  .people-section-body {
-    font-size: 14px;
-  }
 }
 
 .people-tag {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: var(--afh-text-caption);
   font-weight: 600;
   background-color: var(--country-card);
   border: 1px solid var(--country-border);
   color: var(--country-text);
-}
-
-@media (min-width: 768px) {
-  .people-tag {
-    font-size: 12px;
-  }
 }
 
 /* Section fade-in animation (same keyframes as country) */

@@ -3,6 +3,7 @@
   "nameMain": "Hausa",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN", "BEN", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Hausa",
@@ -138,13 +139,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Hausa language (hau). https://www.ethnologue.com/language/hau/",
-      "UNESCO — Durbar festival inscrit au patrimoine immatériel, décembre 2024. https://www.unesco.org/",
-      "NKENNE — History of the Seven Original Hausa States. https://www.nkenne.com/blog/hausa-bakwai-seven-original-hausa-states-history",
-      "European Union Agency for Asylum — Nigeria Country Focus. https://www.euaa.europa.eu/nigeria-country-focus/13-demographics",
-      "Last Places — Durbar Festival. https://lastplaces.com/en/travel-is-knowledge/durbar-festival-hausa/",
-      "Hausa and the Chadic Languages (IU ScholarWorks). https://scholarworks.iu.edu/dspace/bitstreams/b175371d-4472-4485-abd1-f96698068937/download",
-      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+      {
+        "title": "SIL Ethnologue — Hausa language (hau)",
+        "url": "https://www.ethnologue.com/language/hau/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO — Durbar festival inscrit au patrimoine immatériel, décembre 2024",
+        "url": "https://www.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "NKENNE — History of the Seven Original Hausa States",
+        "url": "https://www.nkenne.com/blog/hausa-bakwai-seven-original-hausa-states-history",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nkenne.com; the tier awaits editorial review."
+      },
+      {
+        "title": "European Union Agency for Asylum — Nigeria Country Focus",
+        "url": "https://www.euaa.europa.eu/nigeria-country-focus/13-demographics",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for euaa.europa.eu."
+      },
+      {
+        "title": "Last Places — Durbar Festival",
+        "url": "https://lastplaces.com/en/travel-is-knowledge/durbar-festival-hausa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lastplaces.com."
+      },
+      {
+        "title": "Hausa and the Chadic Languages (IU ScholarWorks)",
+        "url": "https://scholarworks.iu.edu/dspace/bitstreams/b175371d-4472-4485-abd1-f96698068937/download",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarworks.iu.edu."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria",
+        "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

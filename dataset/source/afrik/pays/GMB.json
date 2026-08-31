@@ -1,11 +1,13 @@
 {
   "id": "GMB",
-  "nameFr": "République de Gambie (Republic of The Gambia)",
+  "nameFr": "Gambie",
   "nameOfficial": "République de Gambie (Republic of The Gambia)",
+  "summary": "La Gambie tient son nom du fleuve qui la traverse et la définit — le pays épouse ses rives. Royaumes mandinka, chefferies wolof et peuples fula s'y côtoyaient avant la colonie britannique de 1888. Griots, kora et rites d'initiation kankurang y prolongent l'héritage mandé.",
   "etymology": "Le nom \"Gambie\" provient du fleuve Gambie qui traverse le pays. Le nom du fleuve vient probablement du portugais \"Gambia\" ou du terme local \"Kambra\" / \"Kambaa\". Les Britanniques ont adopté ce nom pour leur colonie. Le nom officiel inclut l'article \"The\" (La Gambie) pour le distinguer de la Zambie.",
   "nameOriginActor": "Le nom \"Gambie\" a été donné par les navigateurs portugais au XVe siècle en référence au fleuve Gambie. Les Britanniques ont officialisé ce nom lors de la colonisation. Le nom a été officialisé à l'indépendance en 1965.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Gambia Colony and Protectorate (1888-1965)"],
       "antiquity": "Le territoire actuel de la Gambie était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement de royaumes et chefferies : royaumes Mandinka, chefferies Wolof, peuples Fula. Pas de nom unifié pour l'ensemble du territoire. Le fleuve Gambie était une voie commerciale importante.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes Mandinka (héritiers de l'empire du Mali), chefferies Wolof, peuples Fula (pasteurs), Jola, Serer. Les Portugais utilisaient le terme \"Gambia\" pour désigner la région du fleuve Gambie.",
@@ -194,13 +196,54 @@
       "postIndependence": "1965-1994 : Présidence de Dawda Jawara, période de stabilité politique et de démocratie. 1994 : Coup d'État militaire, présidence de Yahya Jammeh (1994-2017). 2017 : Transition démocratique, élection d'Adama Barrow. Défis : pauvreté, dépendance économique du Sénégal, développement économique. La Gambie est l'un des plus petits pays d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of The Gambia",
-      "CIA World Factbook – The Gambia",
-      "ONU / UNFPA – Démographie Gambie 2025",
-      "Recensements gambiens",
-      "Études anthropologiques sur les peuples de la Gambie",
-      "Études historiques sur l'empire du Mali et la Sénégambie",
-      "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)"
+      {
+        "title": "SIL Ethnologue – Languages of The Gambia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – The Gambia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Gambie 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements gambiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Gambie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Mali et la Sénégambie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

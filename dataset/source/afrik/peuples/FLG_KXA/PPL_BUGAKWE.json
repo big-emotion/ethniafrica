@@ -3,6 +3,7 @@
   "nameMain": "Bugakwe",
   "languageFamilyId": "FLG_KXA",
   "currentCountries": ["BWA", "NAM", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bugakwe",
@@ -102,11 +103,36 @@
       ]
     },
     "sources": [
-      "Hitchcock, Robert K. & Babchuk, Wayne A. The Okavango Delta Peoples of Botswana. 101 Last Tribes / Africa Research Project. https://www.101lasttribes.com/tribes/okavango.pdf",
-      "SIL Ethnologue — Kxoe language (xuu). https://www.ethnologue.com/language/xuu/",
-      "Glottolog — Kxoe language entry. https://glottolog.org/resource/languoid/id/kxoe1243",
-      "IWGIA — Indigenous Peoples in Africa: Botswana. https://www.iwgia.org/en/botswana.html",
-      "Statistics Botswana — Population & Housing Census 2022. https://www.statsbots.org.bw"
+      {
+        "title": "Hitchcock, Robert K. & Babchuk, Wayne A. The Okavango Delta Peoples of Botswana. 101 Last Tribes / Africa Research Project",
+        "url": "https://www.101lasttribes.com/tribes/okavango.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Kxoe language (xuu)",
+        "url": "https://www.ethnologue.com/language/xuu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Kxoe language entry",
+        "url": "https://glottolog.org/resource/languoid/id/kxoe1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "IWGIA — Indigenous Peoples in Africa: Botswana",
+        "url": "https://www.iwgia.org/en/botswana.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Statistics Botswana — Population & Housing Census 2022",
+        "url": "https://www.statsbots.org.bw",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsbots.org.bw."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Hadiya",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Hadiya",
@@ -90,11 +91,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Hadiyya (hdy). https://www.ethnologue.com/language/hdy/",
-      "Braukamper, Ulrich. A History of the Hadiyya in Southern Ethiopia. Wiesbaden : Franz Steiner Verlag, 1980.",
-      "History of Hadiya state and political struggles for self-determination. https://hadiyajourney.com/wp-content/uploads/2022/02/History-of-Hadiya-state-and-political-struggles-for-self.pdf",
-      "Academia.edu — Wedding Ceremonies in Hadiyya. https://www.academia.edu/3666145/Wedding_Ceremonies_in_Hadiyya",
-      "Recensement national ethiopien 2007. Ethiopian Statistics Services. https://ess.gov.et/"
+      {
+        "title": "SIL Ethnologue — Hadiyya (hdy)",
+        "url": "https://www.ethnologue.com/language/hdy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Braukamper, Ulrich. A History of the Hadiyya in Southern Ethiopia. Wiesbaden : Franz Steiner Verlag, 1980",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "History of Hadiya state and political struggles for self-determination",
+        "url": "https://hadiyajourney.com/wp-content/uploads/2022/02/History-of-Hadiya-state-and-political-struggles-for-self.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers hadiyajourney.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Academia.edu — Wedding Ceremonies in Hadiyya",
+        "url": "https://www.academia.edu/3666145/Wedding_Ceremonies_in_Hadiyya",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      },
+      {
+        "title": "Recensement national ethiopien 2007. Ethiopian Statistics Services",
+        "url": "https://ess.gov.et/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      }
     ]
   }
 }

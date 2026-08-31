@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import * as nextNavigation from "next/navigation";
 import { RecherchePageContent } from "../RecherchePageContent";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 // ── shadcn Select (Radix portal crashes in happy-dom) ────────────────────────
 vi.mock("@/components/ui/select", () => ({
@@ -101,29 +102,36 @@ const mockFetch = vi.fn();
 global.fetch = mockFetch as unknown as typeof fetch;
 
 // ── fixtures ─────────────────────────────────────────────────────────────────
-const emptyApiResponse = { data: { results: [], total: 0 } };
+// These mirror the envelope /api/v2/search actually emits: typed arrays of
+// domain rows. An earlier `{ results: [...] }` fixture was invented here, and
+// it kept the suite green while the page rendered nothing in production.
+const emptyApiResponse = {
+  data: { peoples: [], countries: [], families: [], total: 0 },
+};
 const suggestApiResponse = {
   data: {
-    results: [
-      { id: "PPL_SHONA", type: "people", name: "Shona" },
-      { id: "PPL_YORUBA", type: "people", name: "Yoruba" },
+    peoples: [
+      { id: "PPL_SHONA", nameMain: "Shona", content: {} },
+      { id: "PPL_YORUBA", nameMain: "Yoruba", content: {} },
     ],
+    countries: [],
+    families: [],
     total: 2,
   },
 };
 const searchApiResponse = {
   data: {
-    results: [
+    peoples: [
       {
         id: "PPL_ZULU",
-        type: "people",
-        name: "Zulu",
-        snippet: "Peuple bantou d'Afrique australe",
-        population: 12000000,
-        languageFamilyName: "Bantou",
-        countryIds: ["ZAF"],
+        nameMain: "Zulu",
+        languageFamilyId: "FLG_NIGER_CONGO",
+        currentCountries: ["ZAF"],
+        content: { demography: { totalPopulation: 12000000 } },
       },
     ],
+    countries: [],
+    families: [],
     total: 1,
   },
 };
@@ -143,6 +151,9 @@ describe("RecherchePageContent", () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
       new URLSearchParams() as ReturnType<typeof nextNavigation.useSearchParams>
     );
+    // Only the navigation methods this component calls are stubbed. The cast
+    // keeps the mock from having to track every field Next adds to
+    // AppRouterInstance — 16.3 added `bfcacheId`, which no test asserts on.
     vi.mocked(nextNavigation.useRouter).mockReturnValue({
       replace: vi.fn(),
       push: vi.fn(),
@@ -150,7 +161,7 @@ describe("RecherchePageContent", () => {
       forward: vi.fn(),
       refresh: vi.fn(),
       prefetch: vi.fn(),
-    });
+    } as unknown as ReturnType<typeof nextNavigation.useRouter>);
     mockFetch.mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(emptyApiResponse),
@@ -379,7 +390,8 @@ describe("RecherchePageContent", () => {
     });
   });
 
-  it("empty state has a 'Parcourir par famille' link to /fr/familles", async () => {
+  // @req REQ-002
+  it("empty state has a 'Parcourir par famille' link to the families directory", async () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
@@ -395,7 +407,9 @@ describe("RecherchePageContent", () => {
     await waitFor(() => {
       const link = screen.getByRole("link", { name: /parcourir par famille/i });
       expect(link).toBeInTheDocument();
-      expect(link.getAttribute("href")).toBe("/fr/familles");
+      expect(link.getAttribute("href")).toBe(
+        getLocalizedRoute("fr", "families")
+      );
     });
   });
 
@@ -440,6 +454,193 @@ describe("RecherchePageContent", () => {
     await waitFor(() => {
       expect(screen.getByText("Zulu")).toBeInTheDocument();
     });
+  });
+
+  // @req REQ-002
+  it("makes every result card a link to its fiche", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "peuples zoulous" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: "Zulu" })).toHaveAttribute(
+        "href",
+        getPeopleRoute("fr", "PPL_ZULU")
+      );
+    });
+  });
+
+  // @req REQ-002
+  it("keeps country and family hits when a region filter is active", async () => {
+    // Only peoples carry countryIds, so testing every result against the
+    // region erased country and family hits the moment one was picked.
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("q=Krou&region=west") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [],
+          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire" }],
+          families: [{ id: "FLG_KROU", nameFr: "Krou" }],
+          total: 2,
+        },
+      })
+    );
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole("link", { name: "Côte d'Ivoire" })
+      ).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Krou" })).toBeInTheDocument();
+    });
+  });
+
+  // @req REQ-002
+  it("orders results by relevance across entity kinds, not peoples first", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "PPL_LOW", nameMain: "Peuple", relevance: 0.2, content: {} },
+          ],
+          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire", relevance: 0.3 }],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "ivoire" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    // The envelope groups peoples first; "Pertinence" must reorder across
+    // kinds rather than fall through to a no-op comparator.
+    await waitFor(() => {
+      expect(
+        screen
+          .getAllByTestId("search-result-card")
+          .map((card) => card.getAttribute("data-result-type"))
+      ).toEqual(["country", "people"]);
+    });
+  });
+
+  // @req REQ-002
+  it("runs a family-scoped search when the URL carries one and no query", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("family=FLG_KROU") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringContaining("familyId=FLG_KROU")
+    );
+  });
+
+  // @req REQ-002
+  it("shows the active relation as a dismissible chip", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("country=CIV") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    const chipRow = screen.getByTestId("filter-chip-row");
+    expect(
+      within(chipRow).getByText(
+        /peuples du pays côte d’ivoire|peuples du pays côte d'ivoire/i
+      )
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-002
+  it("leads with a pivot block when the query names one entity exactly", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Zulu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+    });
+    // Promoted, not duplicated.
+    expect(screen.queryAllByTestId("search-result-card")).toHaveLength(0);
+    expect(
+      within(screen.getByTestId("search-pivot")).getByRole("link", {
+        name: /ouvrir la fiche/i,
+      })
+    ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_ZULU"));
+  });
+
+  // @req REQ-002
+  it("renders no pivot for an ambiguous query", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "A", nameMain: "Bété", relevance: 0.8, content: {} },
+            { id: "B", nameMain: "Béti", relevance: 0.75, content: {} },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "bet" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId("search-result-card")).toHaveLength(2);
+    });
+    expect(screen.queryByTestId("search-pivot")).not.toBeInTheDocument();
   });
 
   // ── 8. no session history ──────────────────────────────────────────────────

@@ -3,6 +3,7 @@
   "nameMain": "Gana",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gana",
@@ -91,10 +92,30 @@
       ]
     },
     "sources": [
-      "Cambridge University Press – The G/wi and G//ana of the central Kalahari: https://www.cambridge.org/core/books/hunters-and-herders-of-southern-africa/gwi-and-gana-of-the-central-kalahari/ACAB14045D1FAE8988698311A31334D9",
-      "Orville Jenkins – Gwikwe Bushmen Profile: http://orvillejenkins.com/profiles/gwikwe.html",
-      "Khoisan language family data – Ling.fju.edu.tw: http://www.ling.fju.edu.tw/typology/Khoisan.htm",
-      "CEDS ISO 639-3 – G//ana (gnk): https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+      {
+        "title": "Cambridge University Press – The G/wi and G//ana of the central Kalahari",
+        "url": "https://www.cambridge.org/core/books/hunters-and-herders-of-southern-africa/gwi-and-gana-of-the-central-kalahari/ACAB14045D1FAE8988698311A31334D9",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      },
+      {
+        "title": "Orville Jenkins – Gwikwe Bushmen Profile",
+        "url": "http://orvillejenkins.com/profiles/gwikwe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Khoisan language family data – Ling.fju.edu.tw",
+        "url": "http://www.ling.fju.edu.tw/typology/Khoisan.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ling.fju.edu.tw; the tier awaits editorial review."
+      },
+      {
+        "title": "CEDS ISO 639-3 – G//ana (gnk)",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

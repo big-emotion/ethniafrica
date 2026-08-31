@@ -3,6 +3,7 @@
   "nameMain": "Habesha",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH", "ERI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Habesha",
@@ -97,13 +98,48 @@
       ]
     },
     "sources": [
-      "ZeHabesha — Fascinating History and Culture of the Habesha People. https://zehabesha.com/fascinating-history-and-culture-of-habesha-people/",
-      "Marcus, Harold G. — A History of Ethiopia. University of California Press, 2002.",
-      "Pankhurst, Richard — The Ethiopians: A History. Blackwell, 2001.",
-      "Ethnologue — Amharic (amh). https://www.ethnologue.com/language/amh",
-      "Ethnologue — Tigrinya (tir). https://www.ethnologue.com/language/tir",
-      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/",
-      "CIA World Factbook — Eritrea. https://www.cia.gov/the-world-factbook/countries/eritrea/"
+      {
+        "title": "ZeHabesha — Fascinating History and Culture of the Habesha People",
+        "url": "https://zehabesha.com/fascinating-history-and-culture-of-habesha-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers zehabesha.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Marcus, Harold G. — A History of Ethiopia. University of California Press, 2002",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pankhurst, Richard — The Ethiopians: A History. Blackwell, 2001",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue — Amharic (amh)",
+        "url": "https://www.ethnologue.com/language/amh",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue — Tigrinya (tir)",
+        "url": "https://www.ethnologue.com/language/tir",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Ethiopia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Eritrea",
+        "url": "https://www.cia.gov/the-world-factbook/countries/eritrea/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

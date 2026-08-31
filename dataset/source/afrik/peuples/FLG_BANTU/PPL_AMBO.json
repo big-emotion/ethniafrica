@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Zambia's Traditional History – Ambo (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/ambo/)",
-      "Joshua Project – Ambo in Zambia (https://joshuaproject.net/people_groups/18917)",
-      "PeopleGroups.org – Ambo of Zambia (https://peoplegroups.org/people_groups/pg015563/)",
-      "Ethnologue – Lala-Bisa language (leb) (https://www.ethnologue.com/language/leb/)",
-      "Britannica – Ambo people (https://www.britannica.com/topic/Ambo-people)"
+      {
+        "title": "Zambia's Traditional History – Ambo",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/ambo/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "Joshua Project – Ambo in Zambia",
+        "url": "https://joshuaproject.net/people_groups/18917",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org – Ambo of Zambia",
+        "url": "https://peoplegroups.org/people_groups/pg015563/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Ethnologue – Lala-Bisa language (leb)",
+        "url": "https://www.ethnologue.com/language/leb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica – Ambo people",
+        "url": "https://www.britannica.com/topic/Ambo-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { lazy, Suspense, useState } from "react";
+import { FicheProse } from "@/components/fiche/FicheProse";
 import type { Source } from "@/components/source-transparency/SourceChainSheet";
 
 // Wave-2 imports — excluded from the initial bundle.
@@ -47,13 +48,12 @@ export interface HistoryChips {
   diaspora?: ParagraphChipData;
 }
 
+/** Keyed by the four `content.culture` fields the strict model declares. */
 export interface CultureChips {
-  initiation?: ParagraphChipData;
-  femaleInitiation?: ParagraphChipData;
-  funerary?: ParagraphChipData;
-  music?: ParagraphChipData;
-  gastronomy?: ParagraphChipData;
-  syncretism?: ParagraphChipData;
+  majorRites?: ParagraphChipData;
+  symbols?: ParagraphChipData;
+  artsAndMusic?: ParagraphChipData;
+  spiritualities?: ParagraphChipData;
 }
 
 export interface LanguageChips {
@@ -73,7 +73,7 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
           e.preventDefault();
           onOpen();
         }}
-        className="text-sm underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
+        className="text-afh-small underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
       >
         voir les sources
       </a>
@@ -102,30 +102,41 @@ interface ProseWithChipProps {
  *   ConfidenceChip itself renders "voir les sources" when any data field is null.
  *   The Suspense fallback also shows "voir les sources" while the lazy chunk loads.
  */
+// @req REQ-003
 export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const paraClass = className ?? "people-section-body";
 
   if (!chip) {
-    return <p className={paraClass}>{text}</p>;
+    return <FicheProse text={text} paragraphClassName={paraClass} />;
   }
 
   const anchorId = `chip-${chip.chipId}`;
 
   return (
-    <p className={paraClass}>
-      {text}{" "}
-      <Suspense fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}>
-        <LazyConfidenceChip
-          id={anchorId}
-          confidenceScore={chip.confidenceScore}
-          sourceCount={chip.sourceCount}
-          lastHumanAuditAt={chip.lastHumanAuditAt}
-          variant={chip.contested ? "contested" : "inline"}
-          onOpen={() => setSheetOpen(true)}
-        />
-      </Suspense>
+    <>
+      <FicheProse
+        text={text}
+        paragraphClassName={paraClass}
+        trailing={
+          <Suspense
+            fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+          >
+            <LazyConfidenceChip
+              id={anchorId}
+              confidenceScore={chip.confidenceScore}
+              sourceCount={chip.sourceCount}
+              lastHumanAuditAt={chip.lastHumanAuditAt}
+              variant={chip.contested ? "contested" : "inline"}
+              onOpen={() => setSheetOpen(true)}
+            />
+          </Suspense>
+        }
+      />
+      {/* The sheet is a dialog, so it renders a div. Inside the paragraph the
+          HTML parser closed the <p> before it and the server markup stopped
+          matching what the client hydrated. It belongs beside the prose. */}
       <Suspense fallback={null}>
         <LazySourceChainSheet
           open={sheetOpen}
@@ -140,7 +151,7 @@ export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
           anchorId={anchorId}
         />
       </Suspense>
-    </p>
+    </>
   );
 }
 

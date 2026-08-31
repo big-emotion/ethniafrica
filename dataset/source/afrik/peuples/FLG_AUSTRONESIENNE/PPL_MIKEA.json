@@ -3,6 +3,7 @@
   "nameMain": "Mikea",
   "languageFamilyId": "FLG_AUSTRONESIENNE",
   "currentCountries": ["MDG"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mikea",
@@ -83,11 +84,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Masikoro Malagasy (msh) : https://www.ethnologue.com/language/msh/",
-      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
-      "Blench, R. et Walsh, M. (2009) - Faunal names in Malagasy : their etymology and implications for the prehistory of the East African coast, etude sur les substrats linguistiques Mikea",
-      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "Banque mondiale - Madagascar donnees demographiques : https://data.worldbank.org/country/madagascar"
+      {
+        "title": "SIL Ethnologue - Masikoro Malagasy (msh)",
+        "url": "https://www.ethnologue.com/language/msh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Blench, R. et Walsh, M. (2009) - Faunal names in Malagasy : their etymology and implications for the prehistory of the East African coast, etude sur les substrats linguistiques Mikea",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook - Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Banque mondiale - Madagascar donnees demographiques",
+        "url": "https://data.worldbank.org/country/madagascar",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"world-bank\" (worldbank.org), matched as a parent of data.worldbank.org."
+      }
     ]
   }
 }

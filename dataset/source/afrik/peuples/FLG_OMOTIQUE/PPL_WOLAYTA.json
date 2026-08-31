@@ -3,6 +3,7 @@
   "nameMain": "Wolayta",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Wolayta",
@@ -86,12 +87,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Wolaytta (WAL). https://www.ethnologue.com/language/wal/",
-      "Joshua Project — Wolaitta in Ethiopia. https://joshuaproject.net/people_groups/15835",
-      "Data Commons — Wolayita Zone population 2021. https://datacommons.org/place/wikidataId/Q8029709",
-      "Primal Religion of Wolaitta in African Context. International Journal of Innovative Technology and Exploring Engineering, 2019. https://www.ijitee.org/wp-content/uploads/papers/v8i7c/G10120587C19.pdf",
-      "Qiraat Africa — Welayta, People of southern Ethiopia. https://qiraatafrican.com/en/19027/welayta-people-of-southern-ethiopia/",
-      "Bahru Zewde — A History of Modern Ethiopia. Ohio University Press, 2001."
+      {
+        "title": "Ethnologue — Wolaytta (WAL)",
+        "url": "https://www.ethnologue.com/language/wal/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Wolaitta in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/15835",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Data Commons — Wolayita Zone population 2021",
+        "url": "https://datacommons.org/place/wikidataId/Q8029709",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for datacommons.org."
+      },
+      {
+        "title": "Primal Religion of Wolaitta in African Context. International Journal of Innovative Technology and Exploring Engineering, 2019",
+        "url": "https://www.ijitee.org/wp-content/uploads/papers/v8i7c/G10120587C19.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijitee.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — Welayta, People of southern Ethiopia",
+        "url": "https://qiraatafrican.com/en/19027/welayta-people-of-southern-ethiopia/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Bahru Zewde — A History of Modern Ethiopia. Ohio University Press, 2001",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

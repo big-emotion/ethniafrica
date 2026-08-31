@@ -81,6 +81,15 @@ export function PinnedVersionBanner({
     setCollapsed(nextCollapsed);
   };
 
+  /**
+   * Form B (actions charter §3): the expanded banner drops this link into the
+   * middle of a sentence, so it is underlined and carries no arrow. It used
+   * to grow one only in the collapsed state, which made a single link two
+   * different shapes on one component — and an arrow mid-sentence breaks the
+   * line, which is the whole reason form B exists.
+   *
+   * The earth ink is the source layer's own, not the surface accent.
+   */
   const liveLink = (
     <a
       href={liveUrl}
@@ -89,9 +98,6 @@ export function PinnedVersionBanner({
       {hasResolvedFlags && !collapsed
         ? "voir version vivante"
         : "voir la version vivante"}
-      {!hasResolvedFlags || collapsed ? (
-        <span aria-hidden="true"> →</span>
-      ) : null}
     </a>
   );
 
@@ -100,7 +106,7 @@ export function PinnedVersionBanner({
       role="region"
       aria-label="indicateur de version figée"
       data-pinned-banner
-      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-sm text-afh-text ${
+      className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-afh-small text-afh-text ${
         collapsed ? "ml-auto w-fit max-w-full px-2 py-1" : "px-3 py-2"
       }`}
     >
@@ -150,7 +156,7 @@ export function PinnedVersionBanner({
               ? "développer l’indicateur de version figée"
               : "réduire l’indicateur de version figée"
           }
-          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-afh-sm text-xl leading-none text-afh-text-soft hover:bg-afh-surface hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
+          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-afh-sm text-afh-h2 leading-none text-afh-text-soft hover:bg-afh-surface hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
         >
           <span aria-hidden="true">{collapsed ? "+" : "−"}</span>
         </button>

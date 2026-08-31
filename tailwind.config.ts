@@ -21,8 +21,8 @@ export default {
       // ETNI-21: Africa History (`--afh-*`) token surface for Tailwind utilities.
       // Additive only — existing shadcn HSL tokens below are untouched.
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        display: ["var(--font-playfair)", "serif"],
+        sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
         afh: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
         "afh-display": ["var(--font-fraunces)", "Georgia", "serif"],
       },
@@ -31,11 +31,11 @@ export default {
         "afh-h1": "var(--afh-text-h1)",
         "afh-h2": "var(--afh-text-h2)",
         "afh-h3": "var(--afh-text-h3)",
+        "afh-lead": "var(--afh-text-lead)",
         "afh-body": "var(--afh-text-body)",
         "afh-small": "var(--afh-text-small)",
         "afh-caption": "var(--afh-text-caption)",
-        "afh-micro": "var(--afh-text-micro)",
-        "afh-nano": "var(--afh-text-nano)",
+        "afh-eyebrow": "var(--afh-text-eyebrow)",
       },
       spacing: {
         "afh-xs": "var(--afh-space-xs)",
@@ -74,7 +74,11 @@ export default {
         "afh-border": "var(--afh-border)",
         "afh-text": "var(--afh-text)",
         "afh-text-soft": "var(--afh-text-soft)",
+        // `afh-text-muted` is 3.08:1 on the page ground: it dresses marks and
+        // inactive controls, never running text. `afh-fg-muted` is the quiet
+        // ink that clears AA — reach for it whenever the element holds words.
         "afh-text-muted": "var(--afh-text-muted)",
+        "afh-fg-muted": "var(--afh-fg-muted)",
         "afh-earth": "var(--afh-earth)",
         "afh-terracotta": "var(--afh-terracotta)",
         "afh-gold": "var(--afh-gold)",
@@ -90,6 +94,15 @@ export default {
         "afh-flag-open": "var(--afh-flag-open)",
         "afh-flag-resolved": "var(--afh-flag-resolved)",
         "afh-error": "var(--afh-error)",
+        "afh-relation-linguistic": "var(--afh-relation-linguistic)",
+        "afh-relation-migratory": "var(--afh-relation-migratory)",
+        "afh-relation-commercial": "var(--afh-relation-commercial)",
+        "afh-relation-religious": "var(--afh-relation-religious)",
+        "afh-atlas-land": "var(--afh-atlas-land)",
+        "afh-atlas-coastline": "var(--afh-atlas-coastline)",
+        "afh-atlas-path-inactive": "var(--afh-atlas-path-inactive)",
+        "afh-atlas-path-active": "var(--afh-atlas-path-active)",
+        "afh-atlas-path-selected": "var(--afh-atlas-path-selected)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -112,8 +125,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsl(var(--ui-accent))",
+          foreground: "hsl(var(--ui-accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -146,6 +159,10 @@ export default {
         "afh-xl": "var(--afh-radius-xl)",
         "afh-2xl": "var(--afh-radius-2xl)",
         "afh-3xl": "var(--afh-radius-3xl)",
+        // The pill the mockups use for every chip, badge and globe control.
+        // The token existed in radius.css from the start with no utility
+        // behind it, so callers reached for `rounded-full` and left the scale.
+        "afh-full": "var(--afh-radius-full)",
       },
       keyframes: {
         "accordion-down": {

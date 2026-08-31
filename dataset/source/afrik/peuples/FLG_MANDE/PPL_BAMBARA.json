@@ -3,6 +3,7 @@
   "nameMain": "Bambara",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bambara",
@@ -107,13 +108,48 @@
       ]
     },
     "sources": [
-      "African History Extra — The empire of Segu (2025). https://www.africanhistoryextra.com/p/the-empire-of-segu-1712-1861-ethnic",
-      "SIL Ethnologue — Bambara (bam). https://www.ethnologue.com/language/bam/",
-      "Joshua Project — Bambara in Mali. https://joshuaproject.net/people_groups/10530/ML",
-      "Marc Ladreit de Lacharriere Collection — N'tomo masks. https://collection-lacharriere.quaibranly.fr/en/ntomo-masks",
-      "Britannica — Umar Tal. https://www.britannica.com/biography/Umar-Tal",
-      "Zahan, Dominique. La Dialectique du verbe chez les Bambara. Paris : Mouton, 1963.",
-      "Dieterlen, Germaine. Essai sur la religion bambara. Paris : PUF, 1951."
+      {
+        "title": "African History Extra — The empire of Segu (2025)",
+        "url": "https://www.africanhistoryextra.com/p/the-empire-of-segu-1712-1861-ethnic",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africanhistoryextra.com."
+      },
+      {
+        "title": "SIL Ethnologue — Bambara (bam)",
+        "url": "https://www.ethnologue.com/language/bam/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Bambara in Mali",
+        "url": "https://joshuaproject.net/people_groups/10530/ML",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Marc Ladreit de Lacharriere Collection — N'tomo masks",
+        "url": "https://collection-lacharriere.quaibranly.fr/en/ntomo-masks",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers collection-lacharriere.quaibranly.fr; the tier awaits editorial review."
+      },
+      {
+        "title": "Britannica — Umar Tal",
+        "url": "https://www.britannica.com/biography/Umar-Tal",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Zahan, Dominique. La Dialectique du verbe chez les Bambara. Paris : Mouton, 1963",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dieterlen, Germaine. Essai sur la religion bambara. Paris : PUF, 1951",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

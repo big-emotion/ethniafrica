@@ -77,12 +77,42 @@
       ]
     },
     "sources": [
-      "Lenje in Zambia – Joshua Project, PGID 13039 (https://joshuaproject.net/people_groups/13039)",
-      "Lenje of Zambia – PeopleGroups.org, PGID PG015590 (https://peoplegroups.org/people_groups/pg015590/)",
-      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
-      "A case of Chisungu tradition of the Lenje people in Chibombo district – World Journal of Advanced Research and Reviews, 2025 (https://journalwjarr.com/sites/default/files/fulltext_pdf/WJARR-2025-0690.pdf)",
-      "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)",
-      "Lenje – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/lenj1248)"
+      {
+        "title": "Lenje in Zambia – Joshua Project, PGID 13039",
+        "url": "https://joshuaproject.net/people_groups/13039",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lenje of Zambia – PeopleGroups.org, PGID PG015590",
+        "url": "https://peoplegroups.org/people_groups/pg015590/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025",
+        "url": "https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for explorelusaka.com."
+      },
+      {
+        "title": "A case of Chisungu tradition of the Lenje people in Chibombo district – World Journal of Advanced Research and Reviews, 2025",
+        "url": "https://journalwjarr.com/sites/default/files/fulltext_pdf/WJARR-2025-0690.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers journalwjarr.com; the tier awaits editorial review."
+      },
+      {
+        "title": "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023",
+        "url": "https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+      },
+      {
+        "title": "Lenje – Glottolog 5.3, SIL International",
+        "url": "https://glottolog.org/resource/languoid/id/lenj1248",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

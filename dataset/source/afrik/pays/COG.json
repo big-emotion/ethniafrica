@@ -1,11 +1,16 @@
 {
   "id": "COG",
-  "nameFr": "République du Congo",
+  "nameFr": "Congo",
   "nameOfficial": "République du Congo (République du Congo)",
+  "summary": "La République du Congo partage son nom avec le royaume Kongo et avec le fleuve qui en porte la trace. Son territoire fut celui du royaume Tio et des chefferies mbochi avant de devenir colonie française. Le kikongo et le lingala y accompagnent le français, et la rumba congolaise y a trouvé l'un de ses foyers.",
   "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. Le pays est aussi appelé \"Congo-Brazzaville\" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).",
   "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Congo-Brazzaville\" a été utilisé pour distinguer ce pays de la République démocratique du Congo (Congo-Kinshasa) après l'indépendance des deux pays en 1960.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Congo français (1880-1960)",
+        "Congo-Brazzaville (usage courant)"
+      ],
       "antiquity": "Le territoire actuel de la République du Congo était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement des royaumes et chefferies bantoues (Royaume Kongo, chefferies Teke) sans nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies indépendants : Royaume Kongo (partie ouest), royaume Tio (Teke), chefferies Mbochi, et autres peuples bantous. Les Portugais utilisaient le terme \"Congo\" pour désigner la région du royaume Kongo.",
@@ -127,14 +132,60 @@
       "postIndependence": "Première République (1960-1969) : régime de Fulbert Youlou. République populaire du Congo (1969-1991) : période socialiste sous Marien Ngouabi puis Denis Sassou-Nguesso. Transition démocratique (1991) : multipartisme. Guerres civiles (1993-1999, 2016-2017) : conflits politiques et ethniques. République du Congo depuis 1991 : développement économique basé sur le pétrole, défis de démocratisation et de réconciliation."
     },
     "sources": [
-      "CIA World Factbook – Republic of the Congo",
-      "SIL Ethnologue – Languages of the Republic of the Congo",
-      "Recensements nationaux congolais (RGPH-5, 2023)",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples congolais",
-      "Études historiques sur le royaume Kongo et le royaume Tio",
-      "CIA World Factbook – Republic of the Congo (ethnic groups)"
+      {
+        "title": "CIA World Factbook – Republic of the Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of the Republic of the Congo",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux congolais (RGPH-5, 2023)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples congolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume Kongo et le royaume Tio",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Republic of the Congo (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Lac)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MWI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tonga du Lac (Lakeshore Tonga)",
@@ -95,11 +96,36 @@
       ]
     },
     "sources": [
-      "Encyclopedia.com — Lakeshore Tonga. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lakeshore-tonga",
-      "eHRAF World Cultures — Lakeshore Tonga (fr07). https://ehrafworldcultures.yale.edu/cultures/fr07/summary",
-      "SIL Ethnologue — Tonga (tog, Malawi). https://www.ethnologue.com/language/tog/",
-      "Cochrane, Thandeka — Politics of Literature in Malawi: Filemon Chirwa, Nthanu za Chitonga and the Battle for the Atonga Tribal Council. Cambridge University Press, 2022. https://www.cambridge.org/core/services/aop-cambridge-core/content/view/28B6EEE65784897FB1F5BF9B06B550BA/",
-      "Malawi Project — Customs, Traditions, and Religion in the Tribes of Malawi. https://www.malawiproject.org/download/malawi_project_brochures/2024/04-FLYER-CustomsTraditions.pdf"
+      {
+        "title": "Encyclopedia.com — Lakeshore Tonga",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lakeshore-tonga",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "eHRAF World Cultures — Lakeshore Tonga (fr07)",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fr07/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "SIL Ethnologue — Tonga (tog, Malawi)",
+        "url": "https://www.ethnologue.com/language/tog/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Cochrane, Thandeka — Politics of Literature in Malawi: Filemon Chirwa, Nthanu za Chitonga and the Battle for the Atonga Tribal Council. Cambridge University Press, 2022",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/28B6EEE65784897FB1F5BF9B06B550BA/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      },
+      {
+        "title": "Malawi Project — Customs, Traditions, and Religion in the Tribes of Malawi",
+        "url": "https://www.malawiproject.org/download/malawi_project_brochures/2024/04-FLYER-CustomsTraditions.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for malawiproject.org."
+      }
     ]
   }
 }

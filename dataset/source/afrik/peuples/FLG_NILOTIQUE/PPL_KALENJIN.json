@@ -3,6 +3,7 @@
   "nameMain": "Kalenjin",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["KEN", "UGA", "TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kalenjin",
@@ -128,11 +129,36 @@
       ]
     },
     "sources": [
-      "Ethnologue – Kalenjin macrolanguage [kln] (https://www.ethnologue.com/language/kln/)",
-      "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
-      "Anderson D. – Mau Mau and the Kalenjin (histoire coloniale et resistance nandi)",
-      "Kipkorir B.E. – The Marakwet of Kenya, East African Literature Bureau, 1973",
-      "Were G.S. & Wilson D.A. – East Africa through a Thousand Years, Evans Brothers, 1968"
+      {
+        "title": "Ethnologue – Kalenjin macrolanguage [kln]",
+        "url": "https://www.ethnologue.com/language/kln/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Anderson D. – Mau Mau and the Kalenjin (histoire coloniale et resistance nandi)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Kipkorir B.E. – The Marakwet of Kenya, East African Literature Bureau, 1973",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Were G.S. & Wilson D.A. – East Africa through a Thousand Years, Evans Brothers, 1968",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

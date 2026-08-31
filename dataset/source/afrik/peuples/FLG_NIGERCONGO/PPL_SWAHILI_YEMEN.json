@@ -3,6 +3,7 @@
   "nameMain": "Swahili (Yemen)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["YEM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Communautes d'ascendance swahili au Yemen (Akhdam / Al-Muwalladeen)",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "Sana'a Center for Strategic Studies — Muwalladeen in Yemen: Racialization, Stigmatization (2022). https://sanaacenter.org/publications/main-publications/18105",
-      "Al Jazeera — Yemen's Muwaladeen: The struggle for equal citizenship (2014). https://www.aljazeera.com/opinions/2014/4/5/yemens-muwaladeen-the-struggle-for-equal-citizenship",
-      "Scholarly Publishing Collective — We Are All Suffering Equally: The Impact of the War on Muwalladin (2022). https://scholarlypublishingcollective.org/msup/neas/article/22/1/165/381346/We-Are-All-Suffering-Equally-The-Impact-of-the-War",
-      "Joshua Project — Muhamasheen, Akhdam in Yemen. https://joshuaproject.net/people_groups/10380/ym",
-      "Pink Jinn — African Arabs: Migration and cultural exchange on the Swahili coast (2020). https://www.pinkjinn.com/2020/09/09/african-arabs-migration-and-cultural-exchange-on-the-swahili-coast/",
-      "CIA Reading Room — Southern Yemen (Aden): The Society. https://www.cia.gov/readingroom/docs/CIA-RDP01-00707R000200100018-6.pdf"
+      {
+        "title": "Sana'a Center for Strategic Studies — Muwalladeen in Yemen: Racialization, Stigmatization (2022)",
+        "url": "https://sanaacenter.org/publications/main-publications/18105",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers sanaacenter.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Al Jazeera — Yemen's Muwaladeen: The struggle for equal citizenship (2014)",
+        "url": "https://www.aljazeera.com/opinions/2014/4/5/yemens-muwaladeen-the-struggle-for-equal-citizenship",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for aljazeera.com."
+      },
+      {
+        "title": "Scholarly Publishing Collective — We Are All Suffering Equally: The Impact of the War on Muwalladin (2022)",
+        "url": "https://scholarlypublishingcollective.org/msup/neas/article/22/1/165/381346/We-Are-All-Suffering-Equally-The-Impact-of-the-War",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarlypublishingcollective.org."
+      },
+      {
+        "title": "Joshua Project — Muhamasheen, Akhdam in Yemen",
+        "url": "https://joshuaproject.net/people_groups/10380/ym",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pink Jinn — African Arabs: Migration and cultural exchange on the Swahili coast (2020)",
+        "url": "https://www.pinkjinn.com/2020/09/09/african-arabs-migration-and-cultural-exchange-on-the-swahili-coast/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pinkjinn.com; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA Reading Room — Southern Yemen (Aden): The Society",
+        "url": "https://www.cia.gov/readingroom/docs/CIA-RDP01-00707R000200100018-6.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

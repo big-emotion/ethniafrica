@@ -1,349 +1,334 @@
-# Guide de déploiement - Migration vers données enrichies
+# Deployment guide
 
-Ce guide explique comment déployer la nouvelle version avec les données enrichies sur staging puis production.
+How an EthniAfrica change reaches users, and what an operator has to do by hand.
 
-## Prérequis
+The short version: **the application deploys itself, the database does not.** Vercel builds and
+serves whatever is on the branch. Every schema change and every corpus load is a manual,
+two-step operation that no pipeline performs for you.
 
-- Accès à Supabase (staging et production)
-- Variables d'environnement configurées
-- Scripts de migration disponibles localement
+---
 
-## Étapes de déploiement
+## Environments
 
-### Phase 1 : Staging
+| Environment | Branch    | Supabase project                           | Notes                                         |
+| ----------- | --------- | ------------------------------------------ | --------------------------------------------- |
+| Local       | any       | your own project, or a shared one          | `.env.local`, never committed                 |
+| Recette     | `recette` | `shmrjtnfbqzceovroqjj`                     | the integration environment; protected branch |
+| Production  | `main`    | a second project, ref not recorded in-repo | serves `ethniafrica.com`                      |
 
-#### 1.1 Configuration de la base de données staging
+**Both Supabase projects call their environment "production", and neither label means what it
+looks like.** A Supabase project has exactly one environment, and Supabase names it
+"production" — there is no staging branch inside a project. The label therefore describes the
+project's own environment, not the application environment it serves. `shmrjtnfbqzceovroqjj`
+serves **recette**; the production application is served by the other project, whose ref is not
+recorded in this repository. Before touching a database, read
+[`runbooks/migration-state.md`](./runbooks/migration-state.md) — it carries the project
+identity table, the applied-migration state, and the two-step rollout rule.
 
-1. **Créer/configurer le projet Supabase staging**
-   - Créer un nouveau projet Supabase pour staging (si pas déjà fait)
-   - Noter l'URL et les clés API
+The AFRIK corpus sync used to hard-code `shmrjtnfbqzceovroqjj` as its "production" target, so
+every production deploy loaded the corpus into recette and then revalidated `ethniafrica.com`,
+a site it had not written to. That is fixed. `scripts/lib/afrikSyncTarget.ts` now resolves
+`--target=recette` against a checked-in recette ref and `--target=production` against the
+`AFRIK_PRODUCTION_SUPABASE_URL` environment variable, with no default and an outright refusal
+if it is configured as the recette project. `.github/workflows/production-data-sync.yml`
+supplies it from two repository secrets belonging to the production project —
+`PRODUCTION_SUPABASE_URL` and `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` — and fails, rather than
+skipping, when either is missing.
 
-2. **Appliquer les migrations SQL**
+---
 
-   Exécuter les migrations dans l'ordre :
+## Deploying the application
 
-   ```sql
-   -- Migration 001 : Schéma initial
-   -- Exécuter le contenu de supabase/migrations/001_initial_schema.sql
-   ```
+Vercel is connected to the repository and deploys on push:
 
-   ```sql
-   -- Migration 002 : Champs enrichis
-   -- Exécuter le contenu de supabase/migrations/002_add_enriched_fields.sql
-   ```
+- a push to `recette` produces the recette deployment;
+- a push to `main` produces the production deployment.
 
-   ```sql
-   -- Migration 003 : Contrainte UNIQUE sur sources.title
-   -- Exécuter le contenu de supabase/migrations/003_add_unique_constraint_sources_title.sql
-   ```
+There is no `vercel.json` in the repository — build settings and environment variables live in
+the Vercel project. `next.config.ts` wraps the config in `withSentryConfig`, which uploads
+source maps when `SENTRY_AUTH_TOKEN` is present and deletes them after upload, so the browser
+never serves them.
 
-   **Via Supabase Dashboard** :
-   - Aller dans SQL Editor
-   - Copier/coller le contenu de chaque fichier de migration
-   - Exécuter dans l'ordre (001, 002, puis 003)
+Both branches are protected. Every change arrives through a pull request; `recette → main` sync
+PRs must use a **merge commit**, never a squash.
 
-   **Via Supabase CLI** (si configuré) :
+### Tagging
 
-   ```bash
-   supabase db push --db-url "postgresql://..."
-   ```
+`npm run` has no release script. Versioning is a marker only — the tag records what shipped, it
+does not trigger the deploy. The `/ethniafrica-release` project skill bumps `package.json`,
+updates `CHANGELOG.md` and creates the annotated tag on `main`.
 
-3. **Vérifier les migrations**
+---
 
-   Après avoir appliqué les migrations, vérifier que tout est correct :
+## What CI gates before a merge
 
-   ```bash
-   tsx scripts/verifyDeployment.ts
-   ```
+`.github/workflows/ci.yml` runs on every pull request targeting `recette` or `main`, as two
+jobs:
 
-   Ce script vérifie :
-   - Que toutes les tables existent
-   - Que toutes les colonnes enrichies sont présentes
-   - Que les données sont accessibles
+- **gitleaks** — scans the PR's working tree (`--no-git`) against `.gitleaks.toml`.
+- **build** — `npm run lint`, `lint:req`, `check:jira-template`, `check:action-pins`,
+  `check:env-example`, `typecheck`, `format:check`, `test:coverage`, `test:charter-contracts`,
+  then `npm run build`.
 
-#### 1.2 Configuration des variables d'environnement staging
+The build step passes placeholder Supabase values so that fork and Dependabot PRs, which have
+no access to secrets, still gate. The Supabase modules validate their configuration at module
+scope and throw when it is missing; the placeholders only need to parse, nothing queries the
+database during a build.
 
-Créer/configurer `.env.local` ou les variables d'environnement de staging :
+Separate workflows carry the heavier domain gates: `a11y.yml`, `lighthouse.yml`, `e2e.yml`,
+`data-integrity.yml`, `editorial-rules.yml`, `openapi-diff.yml`, `storybook-deploy.yml`.
 
-```env
-NEXT_PUBLIC_SITE_URL=https://staging.ethniafrica.com
-NEXT_PUBLIC_SUPABASE_URL=https://[project-ref].supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=[anon-key]
-SUPABASE_SERVICE_ROLE_KEY=[service-role-key]
-USE_SUPABASE=true
-```
+> Which of these are _required_ contexts on `recette` and `main` is a branch-protection
+> setting, not a repository file — check it on GitHub rather than inferring it from this list.
+> A workflow that runs but cannot block a merge is not a gate.
 
-#### 1.3 Seeding the first admin user
-
-After applying the user_roles migration (008), seed the first admin user:
-
-1. **Have the admin user sign up first**
-   - The user must create their account via the login page
-   - They can use magic link or OAuth (Google, etc.)
-
-2. **Run the seed script**
-
-   ```bash
-   # Using environment variable
-   ADMIN_EMAIL=admin@example.com npx tsx scripts/seedAdmin.ts
-
-   # Or using CLI argument
-   npx tsx scripts/seedAdmin.ts admin@example.com
-   ```
-
-3. **Verify the admin role**
-   - Check the `user_roles` table in Supabase Dashboard
-   - The user should have a row with `role = 'admin'`
-
-**Note:** The recommended first admin email for documentation purposes is `admin@ethniafrica.com`. Replace with your actual admin email.
-
-#### 1.4 Migration des données enrichies
-
-1. **Préparer les fichiers sources**
-   - Vérifier que les fichiers CSV enrichis sont dans `dataset/source/{region}/{country}/`
-   - Vérifier que les fichiers de description (`.txt`) sont présents
-
-2. **Exécuter les scripts de migration**
-
-   ```bash
-   # 1. Parser les CSV enrichis
-   tsx scripts/parseEnrichedCountryCSV.ts
-
-   # 2. Parser les descriptions
-   tsx scripts/parseCountryDescriptions.ts
-
-   # 3. Matcher CSV et descriptions
-   tsx scripts/matchCSVAndDescriptions.ts
-
-   # 4. Migrer vers Supabase staging
-   # ⚠️ S'assurer que NEXT_PUBLIC_SUPABASE_URL pointe vers staging
-   tsx scripts/migrateEnrichedData.ts
-   ```
-
-3. **Vérifier les données**
-   - Vérifier dans Supabase Dashboard que les données sont présentes
-   - Vérifier les relations parent/sous-groupes
-   - Vérifier les descriptions et anciens noms
-
-#### 1.5 Vérification finale
-
-Avant de déployer, vérifier que tout est prêt :
+Run the same gate locally before pushing:
 
 ```bash
-tsx scripts/verifyDeployment.ts
+make check        # lint + typecheck + format:check + all tests, must stay under 5 min
+npm run e2e       # Playwright, deliberately outside `make check`
 ```
 
-#### 1.6 Déploiement de l'application staging
+---
 
-1. **Build et test local**
+## Environment variables
 
-   ```bash
-   npm run build
-   npm start
-   ```
+`.env.example` is the annotated, authoritative list — copy it, do not copy this section.
 
-2. **Vérifications fonctionnelles**
-   - [ ] Page d'accueil : compteur d'ethnies inclut les sous-groupes
-   - [ ] Liste des ethnies : sous-groupes visibles
-   - [ ] Page pays : top 5 ethnies et langues affichés
-   - [ ] Page pays : anciens noms affichés (max 3)
-   - [ ] Page ethnie : top 5 langues affichés (si pas sous-groupe)
-   - [ ] Page ethnie : anciens noms affichés (max 3)
-   - [ ] Page ethnie : tableau des sous-groupes (si groupe parent)
-   - [ ] CTAs "Voir plus" fonctionnent
-   - [ ] Export CSV/Excel inclut les champs enrichis
-   - [ ] API retourne les champs enrichis
+```bash
+cp .env.example .env.local
+```
 
-3. **Déployer sur Vercel/staging**
-   - Configurer les variables d'environnement dans Vercel
-   - Déployer la branche staging
-   - Vérifier que le site fonctionne
+Required for the app to run at all:
 
-### Phase 2 : Production
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` — **server-only**, never expose it to the browser bundle
 
-⚠️ **IMPORTANT** : Ne déployer en production qu'après validation complète en staging.
+Required for a reader to report an error:
 
-#### 2.1 Backup de la base de données production
+- `ANTIBOT_HMAC_SECRET` — **server-only**, any long random string. It signs the proof-of-work
+  challenge that stands in front of `POST /v2/flags`.
 
-1. **Sauvegarder la base de données actuelle**
-   - Via Supabase Dashboard : Settings → Database → Backups
-   - Ou exporter manuellement les données importantes
+  It is not inert when unset, which is why it is listed here and not below.
+  `GET /api/v2/antibot/challenge` answers **503** without it, the report dialog shows _"la
+  vérification n'a pas abouti"_, and no reader can file anything — on a build whose every
+  other check is green. That is exactly what happened when the proof of work replaced
+  Cloudflare Turnstile: the secret was added to `.env.example` and this list still named the
+  vendor that had just been removed, so nobody knew there was a new secret to set. Rotating it
+  is harmless — challenges in flight are invalidated and readers are handed new ones.
 
-#### 2.2 Application des migrations SQL en production
+  **Generating one.** Any long random string; 48 random bytes is ample.
 
-1. **Appliquer la migration 001** (si pas déjà fait)
-   - Vérifier que le schéma initial existe
-   - Si non, appliquer `001_initial_schema.sql`
+  ```bash
+  openssl rand -base64 48 | tr -d '\n' > antibot-secret.txt   # umask 077 first
+  ```
 
-2. **Appliquer la migration 002**
-   - Exécuter `002_add_enriched_fields.sql` en production
-   - Vérifier que les colonnes sont ajoutées
+  **Setting it.** The same value on all three Vercel environments, and in your own
+  `.env.local`. It is read only on the server, so it never needs a `NEXT_PUBLIC_` twin.
 
-3. **Appliquer la migration 003**
-   - Exécuter `003_add_unique_constraint_sources_title.sql` en production
-   - Cette migration ajoute la contrainte UNIQUE sur `sources.title` nécessaire pour les upserts
+  ```bash
+  for target in production preview development; do
+    tr -d '\n' < antibot-secret.txt | vercel env add ANTIBOT_HMAC_SECRET "$target"
+  done
+  vercel env ls | grep ANTIBOT          # expect three rows
+  ```
 
-#### 2.3 Migration des données enrichies en production
+  Then **redeploy** — a Vercel environment variable does not reach a build that already ran.
 
-1. **Préparer l'environnement**
+  **Checking parity without printing the secret.** The value must be identical across
+  environments, or a challenge minted by one and verified by another is refused. Compare
+  fingerprints rather than values:
 
-   ```bash
-   # S'assurer que NEXT_PUBLIC_SUPABASE_URL pointe vers PRODUCTION
-   # ⚠️ ATTENTION : Vérifier deux fois avant d'exécuter
-   ```
+  ```bash
+  shasum -a 256 antibot-secret.txt | cut -c1-16
+  ```
 
-2. **Exécuter les scripts de migration**
+  **Rotation is harmless and needs no window.** Challenges in flight are invalidated and
+  their readers are handed new ones; nothing durable is signed with it. Rotate on the usual
+  schedule, or immediately if the value is ever printed into a log, a terminal transcript or
+  a pull request.
 
-   ```bash
-   # Les scripts utilisent ON CONFLICT, donc ils mettront à jour les données existantes
-   tsx scripts/parseEnrichedCountryCSV.ts
-   tsx scripts/parseCountryDescriptions.ts
-   tsx scripts/matchCSVAndDescriptions.ts
-   tsx scripts/migrateEnrichedData.ts
-   ```
+  Verify it after every deploy, on each environment:
 
-3. **Vérifier les données en production**
-   - Vérifier dans Supabase Dashboard
-   - Comparer avec staging si possible
+  ```bash
+  curl -s https://<host>/api/v2/antibot/challenge | head -c 200   # expect salt + signature, not UNAVAILABLE
+  ```
 
-#### 2.4 Déploiement de l'application production
+  A 200 with a `salt` proves the secret is set. It does **not** prove the two environments
+  agree — only a report that actually sends does that.
 
-1. **Mettre à jour les variables d'environnement**
-   - Vérifier que `NEXT_PUBLIC_SUPABASE_URL` pointe vers production
-   - Vérifier toutes les autres variables
+Optional subsystems, each inert when unset: `UPSTASH_REDIS_REST_URL` /
+`UPSTASH_REDIS_REST_TOKEN` (rate limiting), `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`,
+`NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `ANTIBOT_DIFFICULTY_BITS` (defaults to 20),
+`REVALIDATE_SECRET`, `SUPABASE_WEBHOOK_SECRET`, `NEXT_PUBLIC_FEATURE_QUIZ`,
+`CORS_ALLOWED_ORIGIN`.
 
-2. **Déployer sur Vercel/production**
-   - Déployer depuis la branche main/master
-   - Vérifier que le build passe
+`AFRIK_PRODUCTION_SUPABASE_URL` is loader-only: set it only when syncing the AFRIK corpus with
+`--target=production`. Its CI counterparts, `PRODUCTION_SUPABASE_URL` and
+`PRODUCTION_SUPABASE_SERVICE_ROLE_KEY`, are GitHub Actions repository secrets read only by
+`.github/workflows/production-data-sync.yml` — they are never local environment variables.
 
-3. **Tests post-déploiement**
-   - [ ] Site accessible
-   - [ ] Données chargées depuis Supabase
-   - [ ] Toutes les fonctionnalités enrichies fonctionnent
-   - [ ] Pas de régression sur les fonctionnalités existantes
-
-## Checklist de déploiement
-
-### Staging
-
-- [ ] Base de données staging créée
-- [ ] Migration 001 appliquée
-- [ ] Migration 002 appliquée
-- [ ] Migration 003 appliquée
-- [ ] Migration 008 appliquée (user_roles)
-- [ ] Vérification des migrations (`tsx scripts/verifyDeployment.ts`)
-- [ ] Variables d'environnement staging configurées
-- [ ] First admin user seeded (`npx tsx scripts/seedAdmin.ts admin@example.com`)
-- [ ] Données enrichies migrées
-- [ ] Vérification finale (`tsx scripts/verifyDeployment.ts`)
-- [ ] Tests fonctionnels passés
-- [ ] Application déployée et testée
-
-### Production
-
-- [ ] Backup de la base de données production effectué
-- [ ] Migration 001 vérifiée/appliquée
-- [ ] Migration 002 appliquée
-- [ ] Migration 003 appliquée
-- [ ] Migration 008 appliquée (user_roles)
-- [ ] Vérification des migrations (`tsx scripts/verifyDeployment.ts`)
-- [ ] Variables d'environnement production vérifiées
-- [ ] First admin user seeded (`npx tsx scripts/seedAdmin.ts admin@example.com`)
-- [ ] Données enrichies migrées
-- [ ] Vérification finale (`tsx scripts/verifyDeployment.ts`)
-- [ ] Tests fonctionnels passés
-- [ ] Application déployée et testée
-- [ ] Monitoring activé
-
-## Rollback
-
-En cas de problème en production :
-
-1. **Rollback de l'application**
-   - Revenir à la version précédente sur Vercel
-   - L'ancienne version fonctionne toujours avec l'ancienne structure de données
-
-2. **Rollback de la base de données** (si nécessaire)
-   - Restaurer depuis le backup
-   - Ou supprimer les colonnes ajoutées par la migration 002 :
-     ```sql
-     ALTER TABLE countries DROP COLUMN IF EXISTS description;
-     ALTER TABLE countries DROP COLUMN IF EXISTS ancient_names;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS description;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS ancient_name;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS society_type;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS religion;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS linguistic_family;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS historical_status;
-     ALTER TABLE ethnic_groups DROP COLUMN IF EXISTS regional_presence;
-     ALTER TABLE ethnic_group_presence DROP COLUMN IF EXISTS region;
-     ```
-
-## Variables d'environnement requises
-
-### Obligatoires
-
-- `NEXT_PUBLIC_SUPABASE_URL` : URL du projet Supabase
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé anonyme Supabase
-- `SUPABASE_SERVICE_ROLE_KEY` : Clé service role (pour migrations)
-- `USE_SUPABASE=true` : Activer l'utilisation de Supabase
-
-### Optionnelles
-
-- `NEXT_PUBLIC_SITE_URL` : URL du site
-- `CORS_ALLOWED_ORIGIN` : Origine CORS autorisée
+`scripts/checkEnvExample.ts` compares `.env.example` against the variables the code actually
+reads. Run it after adding any `process.env` reference.
 
 ### Rate limiting `/api/v2/*`
 
-En production, configurer Upstash Redis pour activer le rate limiting :
+`src/middleware.ts` applies Upstash rate limiting. Without `UPSTASH_REDIS_REST_URL` and
+`UPSTASH_REDIS_REST_TOKEN`, the limiter is disabled — acceptable locally, not in production.
 
-- `UPSTASH_REDIS_REST_URL` : URL REST Upstash (requis en prod)
-- `UPSTASH_REDIS_REST_TOKEN` : Token Upstash (requis en prod)
+| Variable                 | Meaning                                                        | Default |
+| ------------------------ | -------------------------------------------------------------- | ------- |
+| `RATE_LIMIT_IP_RPM`      | anonymous requests per IP                                      | `60`    |
+| `RATE_LIMIT_PUBLIC_RPM`  | a `public`-tier API key                                        | `600`   |
+| `RATE_LIMIT_PARTNER_RPM` | a `partner`-tier API key                                       | `6000`  |
+| `RATE_LIMIT_WINDOW`      | window accepted by `@upstash/ratelimit` (`"1 m"`, `"30 s"`, …) | `"1 m"` |
 
-Quotas par tier (RPM = requêtes par minute, défauts conservent le comportement actuel) :
+The tier (`public` / `partner` / `admin`) comes from the `api_keys.tier` column (migration
+`013`), resolved by `validateApiKey()`. There is no key list to maintain in the environment.
+Same-origin requests are exempt from API-key validation, so the frontend embeds no key.
 
-- `RATE_LIMIT_IP_RPM` : quota requêtes anonymes par IP (défaut `60`)
-- `RATE_LIMIT_PUBLIC_RPM` : quota pour une clé API publique (défaut `600`)
-- `RATE_LIMIT_PARTNER_RPM` : quota pour une clé API partenaire (défaut `6000`)
-- `RATE_LIMIT_WINDOW` : fenêtre acceptée par `@upstash/ratelimit` (`"1 m"`, `"30 s"`, …)
+---
 
-Routage par clé :
+## Database changes
 
-- `RATE_LIMIT_PARTNER_KEYS` : liste de clés API (séparées par virgule) servies au tier partenaire
-- `RATE_LIMIT_ADMIN_KEYS` : liste de clés API admin (non rate-limitées)
+Schema and data are two different operations with two different runbooks. Neither is automated.
 
-La configuration complète et commentée est dans `.env.example`.
+### Schema
 
-## Dépannage
+Read [`runbooks/migration-state.md`](./runbooks/migration-state.md) first. It records which
+migrations are live on which project and why "the ticket is Done" has already meant "the
+migration was never applied".
 
-### Erreur "Missing Supabase environment variables"
+The rule, in one line: **apply to the recette-backing project, verify against the recette
+application, then apply the same file to the production-backing project.** Never one alone,
+never production first.
 
-- Vérifier que toutes les variables sont définies
-- Vérifier qu'elles sont bien chargées (pas de typo)
+Migrations are numbered sequentially in `supabase/migrations/`. The highest-numbered file is not
+necessarily the highest-numbered applied migration — that gap is the whole subject of the
+runbook.
 
-### Erreur de migration SQL
+### AFRIK corpus
 
-- Vérifier que la migration 001 a été appliquée avant la 002
-- Vérifier les permissions de la base de données
-- Vérifier les logs Supabase
+The editorial corpus lives as ~890 JSON fiches under `dataset/source/afrik/`, in git. Loading
+it into Supabase is a separate step, documented in
+[`runbooks/afrik-data-sync.md`](./runbooks/afrik-data-sync.md).
 
-### Données manquantes après migration
+Validate before loading anything:
 
-- Vérifier les logs des scripts de migration
-- Vérifier que les fichiers sources sont au bon format
-- Vérifier que les chemins des fichiers sont corrects
+```bash
+npx tsx scripts/validateAfrikData.ts        # AFRIK data integrity
+npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules
+```
 
-### L'application ne charge pas les données enrichies
+Then preview, then apply:
 
-- Vérifier que `USE_SUPABASE=true`
-- Vérifier que les colonnes existent dans la base de données
-- Vérifier les logs du serveur Next.js
+```bash
+npx tsx scripts/migrateAfrikToDatabase.ts --target=production
+npx tsx scripts/migrateAfrikToDatabase.ts --target=production --apply
+```
 
-## Support
+`--target` names the application environment: `recette` or `production`. `--target=recette`
+resolves to `shmrjtnfbqzceovroqjj`; `--target=production` resolves to whatever
+`AFRIK_PRODUCTION_SUPABASE_URL` names, and refuses to run if that is unset or is the recette
+project. `NEXT_PUBLIC_SUPABASE_URL` must match the resolved target, so loading production by
+hand means pointing both variables at the production project. `--target=staging` is retired and
+now throws.
 
-En cas de problème :
+`.github/workflows/production-data-sync.yml` runs the same validate → preview → apply sequence
+automatically after a successful Vercel _Production_ deployment of `main`, then POSTs a cache
+revalidation to `https://ethniafrica.com/api/admin/revalidate`. It reads
+`PRODUCTION_SUPABASE_URL` and `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` — both the production
+project's, both distinct from the recette values the rest of CI uses — and fails if either is
+absent.
 
-1. Vérifier les logs Supabase Dashboard
-2. Vérifier les logs Vercel
-3. Vérifier les logs des scripts de migration
-4. Consulter la documentation dans `docs/DATA_MIGRATION.md`
+Requires **Node ≥ 22** for the loaders: `@supabase/supabase-js` needs a native `WebSocket`, and
+on Node 20 the run dies with `native WebSocket not found` before the target guard is reached.
+(The application itself pins Node `20.x` in `package.json` `engines` — the loaders are the
+exception.)
+
+---
+
+## First admin user
+
+Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`, `moderator`,
+`admin`, `advisor`. Authentication is Supabase Auth: magic link, GitHub and Google OAuth.
+
+1. The person signs in once at `/admin/login` so their auth account exists.
+2. Grant the role:
+
+   ```bash
+   ADMIN_EMAIL=admin@example.com npx tsx scripts/seedAdmin.ts
+   # or
+   npx tsx scripts/seedAdmin.ts admin@example.com
+   ```
+
+3. Confirm the `user_roles` row shows `role = 'admin'`.
+
+---
+
+## Post-deploy verification
+
+- [ ] The deployment is green in Vercel and the site loads.
+- [ ] `/fr` renders — the middleware canonicalizes every locale segment to `fr`.
+- [ ] A fiche route renders for each entity type: a country, a people, a language family.
+      _A green axe check has previously masked an HTTP 500 on every fiche route for two
+      releases. Load one for real._
+- [ ] `/api/v2/countries` returns 200 from the browser (same-origin, no API key) and 401
+      without a key from `curl`.
+- [ ] Sentry shows no new issue class in the first 30 minutes.
+- [ ] If a migration shipped in this release: its state table row in
+      [`runbooks/migration-state.md`](./runbooks/migration-state.md) is updated for **both**
+      projects.
+
+---
+
+## Rollback
+
+**Application.** Redeploy the previous deployment from the Vercel dashboard. Nothing else is
+required — the frontend holds no state.
+
+**Database.** Migrations are not generally reversible; several drop tables and their data.
+Restore from a snapshot rather than hand-writing a down migration. See
+[`runbooks/restore-procedure.md`](./runbooks/restore-procedure.md) for PITR and logical
+restore, with the RTO/RPO targets that apply.
+
+An application rollback without a database rollback is usually the safer combination: the
+previous build tolerates a newer schema far more often than the reverse. Roll the app back
+first, then decide about the data.
+
+---
+
+## Troubleshooting
+
+**`Missing Supabase environment variables`** — the Supabase modules validate at module scope.
+Check `.env.local` exists and is loaded; a typo reads as absent.
+
+**API returns 401 from `curl` but works in the browser** — expected. `src/middleware.ts`
+exempts same-origin requests from API-key validation. Pass a key, or call from the app.
+
+**`22P02` on `migration_events.event_type`** — migration `037` is not applied on that project.
+See [`runbooks/migration-state.md`](./runbooks/migration-state.md).
+
+**`42P17` recursion on an anonymous read** — migration `038` is not applied on that project.
+The service-role key masks this, because it bypasses RLS entirely; reproduce with the anon key.
+
+**`no unique or exclusion constraint matching the ON CONFLICT specification`** — migration
+`039` is not applied, or `sources_title_key` was dropped by a later table recreation.
+
+**A corpus loads fewer rows than there are files** — a parser rejection, not a database
+problem. The preview output reports the per-corpus parse count and a `Failed to parse` line.
+Compare against the files on disk before applying.
+
+**A route renders an empty state while row counts are non-zero** — the rows are there and RLS
+is blocking the read. Test with the anon key, never the service role.
+
+---
+
+## Related
+
+- [`runbooks/migration-state.md`](./runbooks/migration-state.md) — which migrations are live where
+- [`runbooks/afrik-data-sync.md`](./runbooks/afrik-data-sync.md) — loading the corpus
+- [`runbooks/restore-procedure.md`](./runbooks/restore-procedure.md) — backup restore, RTO/RPO
+- [`runbooks/revisions-dba-bypass.md`](./runbooks/revisions-dba-bypass.md) — overriding the append-only invariant
+- [`../CLAUDE.md`](../CLAUDE.md) — architecture and repository conventions

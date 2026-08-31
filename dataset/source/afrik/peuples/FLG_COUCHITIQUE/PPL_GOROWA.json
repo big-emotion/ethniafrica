@@ -8,6 +8,7 @@
   "nameMain": "Gorowa",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gorowa",
@@ -81,10 +82,30 @@
       ]
     },
     "sources": [
-      "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
-      "Harvey A., Toward a description of the Gorwaa language, 2018 (https://andrewdtharvey.com/wp-content/uploads/2019/01/harvey-andrew-2018-the-gorwaa-noun-toward-a-description-of-the-gorwaa-language.pdf)",
-      "Gorwaa Language (GOW) – Ethnologue (https://www.ethnologue.com/language/gow/)",
-      "Glottolog : Gorwaa goro1270 (https://glottolog.org/resource/languoid/id/goro1270)"
+      {
+        "title": "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal",
+        "url": "https://www.lddjournal.org/article/1200/galley/2445/download/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lddjournal.org."
+      },
+      {
+        "title": "Harvey A., Toward a description of the Gorwaa language, 2018",
+        "url": "https://andrewdtharvey.com/wp-content/uploads/2019/01/harvey-andrew-2018-the-gorwaa-noun-toward-a-description-of-the-gorwaa-language.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers andrewdtharvey.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Gorwaa Language (GOW) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/gow/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog : Gorwaa goro1270",
+        "url": "https://glottolog.org/resource/languoid/id/goro1270",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

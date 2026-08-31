@@ -1,0 +1,456 @@
+<title>Fiche Famille au globe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;700&display=swap">
+
+<style>
+/*@SHELLCSS@*/
+
+/* La fiche famille est sur terre — l'accent que accessModeHubs.ts donne
+   au module « L'arbre des familles ». C'est le seul accent dont le texte
+   posé dessus doit être sombre. */
+#frame { --accent: var(--afh-cat-terre); --accent-tint: var(--afh-cat-terre-tint); --accent-foreground: #2c2018; }
+
+.scale-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 11px; }
+.scale-card { background: var(--afh-surface); border: 1px solid var(--afh-border); border-radius: var(--afh-radius-md); padding: 14px 15px; }
+.scale-card .n { display: block; font-family: var(--afh-font-mono); font-size: 26px; font-weight: 700; color: var(--afh-text); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.scale-card .k { display: block; margin-top: 5px; font-size: var(--afh-text-caption); letter-spacing: .1em; text-transform: uppercase; color: var(--afh-text-muted); font-weight: 700; }
+.scale-card .src { display: block; margin-top: 7px; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-muted); line-height: 1.6; }
+.scale-card[data-missing="true"] { border-color: var(--afh-color-colonial); background: var(--afh-color-colonial-bg); }
+.scale-card[data-missing="true"] .n { color: var(--afh-color-colonial); font-size: 19px; }
+
+.rank { display: grid; gap: 6px; }
+.rank-row { display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: center; }
+.rank-row .flag { font-size: 17px; }
+.rank-row .name { font-size: var(--afh-text-small); color: var(--afh-text); }
+.rank-row .n { font-family: var(--afh-font-mono); font-size: var(--afh-text-caption); color: var(--afh-text-soft); font-variant-numeric: tabular-nums; }
+.rank-row .track { grid-column: 2 / -1; height: 5px; background: var(--afh-color-earth-bg); border-radius: var(--afh-radius-full); overflow: hidden; }
+.rank-row .fill { display: block; height: 100%; background: var(--accent); }
+
+.members { display: grid; gap: 7px; }
+.member { display: flex; align-items: baseline; gap: 10px; font-size: var(--afh-text-small); color: var(--afh-text-soft); padding: 8px 12px; background: var(--afh-surface); border: 1px solid var(--afh-border); border-radius: var(--afh-radius-md); }
+.member b { color: var(--afh-text); font-weight: 700; }
+.member .spread { margin-left: auto; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-muted); white-space: nowrap; }
+</style>
+
+<div class="bench-bar">
+  <p>Maquette · fiche famille au globe</p>
+  <div class="bench-controls">
+    <div class="switch" role="group" aria-label="Rendu du globe">
+      <button type="button" data-webgl="on" aria-pressed="true">WebGL</button>
+      <button type="button" data-webgl="off" aria-pressed="false">Sans WebGL</button>
+    </div>
+    <div class="switch" role="group" aria-label="Viewport">
+      <button type="button" data-vp="mobile" aria-pressed="true">Mobile 430</button>
+      <button type="button" data-vp="desktop" aria-pressed="false">Desktop</button>
+    </div>
+  </div>
+</div>
+
+<div class="frame" id="frame" data-viewport="mobile" data-webgl="on">
+  <div class="hero-band" id="navshell">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Atlas des Peuples d'Afrique</span>
+      </div>
+      <div class="axis-nav" id="axis-nav" role="group" aria-label="Points d'entrée"></div>
+      <div class="nav-icons">
+        <button class="icon-btn" type="button" aria-label="Rechercher">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        </button>
+        <button class="icon-btn nav-burger" type="button" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="megapanel" id="megapanel" data-open="false"></div>
+
+    <div class="globe-holder">
+      <p class="globe-caption">Empreinte reconstruite<br>depuis les peuples, pas déclarée.</p>
+
+      <div class="picker">
+        <button class="picker-btn" type="button" id="picker-btn" aria-expanded="false" aria-controls="picker-list" aria-haspopup="listbox">
+          <span class="seed" aria-hidden="true"></span>
+          <span id="picker-label">Choisir un pays de l'empreinte</span>
+          <span class="caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="picker-list" id="picker-list" data-open="false" role="listbox" aria-label="Pays de l'empreinte"></div>
+      </div>
+
+      <canvas id="globe" aria-label="Globe terrestre, empreinte de la famille linguistique"></canvas>
+
+      <div class="nowebgl" id="nowebgl">
+        <svg viewBox="0 0 800 758" role="img" aria-label="Silhouette de l'Afrique, empreinte de la famille" id="fallback-map"></svg>
+        <p id="fallback-note"></p>
+      </div>
+
+      <aside class="sheet" id="sheet" data-open="false" aria-live="polite">
+        <div class="sheet-head">
+          <span class="flag" id="sheet-flag" aria-hidden="true"></span>
+          <div style="min-width:0">
+            <h2 id="sheet-title"></h2>
+            <span class="sub" id="sheet-sub"></span>
+          </div>
+          <button class="icon-btn close" type="button" id="sheet-close" aria-label="Fermer le panneau">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <div class="sheet-body" id="sheet-body"></div>
+        <div class="sheet-foot"><a href="#fiche" id="sheet-link">Lire la fiche complète →</a></div>
+      </aside>
+
+      <div class="globe-tools">
+        <button class="g-btn" type="button" id="whole" aria-pressed="true">Toute l'empreinte</button>
+        <button class="g-btn" type="button" id="flatten" aria-pressed="false">Ce que la carte plate en fait</button>
+        <button class="g-btn" type="button" id="recentre">Recentrer</button>
+      </div>
+    </div>
+
+    <div class="seam" aria-hidden="true"></div>
+
+    <div class="scrim" id="scrim" data-open="false"></div>
+    <aside class="drawer" id="drawer" data-open="false" aria-label="Menu">
+      <div class="drawer-head">
+        <span>Trois entrées</span>
+        <button class="icon-btn" type="button" id="drawer-close" aria-label="Fermer le menu">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div id="drawer-body"></div>
+    </aside>
+  </div>
+
+  <div class="paper" id="fiche">
+    <header class="fiche-head">
+      <p class="eyebrow" id="fh-eyebrow"></p>
+      <h1 id="fh-title"></h1>
+      <p class="lede" id="fh-lede"></p>
+      <div class="chips" id="fh-chips"></div>
+    </header>
+
+    <section class="sec">
+      <h2>La famille en chiffres</h2>
+      <div class="scale-cards" id="scale"></div>
+      <div class="empty" id="gap" style="margin-top:16px"></div>
+    </section>
+
+    <section class="sec">
+      <h2>L'empreinte, et d'où elle vient</h2>
+      <p class="sec-note">Union des pays actuels des peuples rattachés à la famille</p>
+      <p id="footprint-explain"></p>
+      <div class="rank" id="rank" style="margin-top:16px"></div>
+    </section>
+
+    <section class="sec">
+      <h2>D'où vient le nom de la famille</h2>
+      <p id="term"></p>
+    </section>
+
+    <section class="sec">
+      <h2>Peuples rattachés</h2>
+      <p class="sec-note" id="members-note"></p>
+      <div class="members" id="members"></div>
+    </section>
+
+    <section class="sec">
+      <h2>Sources</h2>
+      <p class="sec-note">Chaque source porte son palier — l'autorité qu'on peut lui accorder.</p>
+      <div class="sources" id="sources"></div>
+    </section>
+  </div>
+</div>
+
+<script type="module">
+/*@THREE@*/
+
+const GEO = /*@GEO@*/;
+const CORPUS = /*@CORPUS@*/;
+const AFRICA_PATH = "/*@AFRICA_PATH@*/";
+
+/*@NAVCORE@*/
+/*@GLOBECORE@*/
+
+mountNav("familles");
+
+/* ══════════════════════════════════════════════════════════════════
+   FICHE FAMILLE — le cas où la donnée manque, et où le design doit le
+   dire au lieu de le combler.
+
+   Les 24 fiches famille du corpus ont toutes `distribution.
+   distributionByCountry` et `generalInfo.branches` vides. Une carte
+   fidèle à la fiche seule n'aurait donc rien à dessiner.
+
+   Mais l'empreinte est RECONSTRUCTIBLE : chaque peuple porte son
+   languageFamilyId et ses currentCountries. L'union de ces pays, pondérée
+   par le nombre de peuples présents, donne une choroplèthe qu'on peut
+   citer — et le bord tireté dit qu'il s'agit d'un agrégat, pas d'une aire
+   déclarée. La section « ce que la fiche ne déclare pas » reste visible :
+   dériver une donnée ne dispense pas de signaler qu'elle manque.
+   ══════════════════════════════════════════════════════════════════ */
+
+const F = CORPUS.family;
+const FOOT = Object.entries(F.derivedFootprint)
+  .filter(([iso]) => GEO[iso])
+  .sort((a, b) => b[1] - a[1]);
+const MAX_MEMBERS = FOOT[0][1];
+const nf = new Intl.NumberFormat("fr-FR");
+
+const flagOf = (iso3) => {
+  const a2 = GEO[iso3]?.a2;
+  if (!a2 || a2.length !== 2) return "🏳";
+  return String.fromCodePoint(...[...a2].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
+};
+
+let focused = null;
+
+/** Choroplèthe dérivée : teinte par nombre de peuples, bord tireté. */
+function drawFootprint(ctx, { w, h, progress, ringPath, GEO }) {
+  ctx.save();
+  ctx.lineJoin = "round";
+  for (const [iso, count] of FOOT) {
+    const rings = GEO[iso].rings;
+    const dim = focused && focused !== iso;
+    const weight = count / MAX_MEMBERS;
+
+    ctx.globalAlpha = (dim ? 0.12 : 0.16 + 0.46 * weight) * progress;
+    ctx.fillStyle = "#c4573f";
+    for (const ring of rings) { ringPath(ctx, ring, w, h); ctx.fill(); }
+
+    ctx.globalAlpha = (dim ? 0.22 : 0.85) * progress;
+    ctx.strokeStyle = focused === iso ? "#f0a68f" : "#c4573f";
+    ctx.lineWidth = focused === iso ? 2.8 : 1.8;
+    // Tireté : l'aire est un agrégat de présences, pas une frontière.
+    ctx.setLineDash([9, 7]);
+    for (const ring of rings) { ringPath(ctx, ring, w, h); ctx.stroke(); }
+  }
+  ctx.restore();
+}
+
+const canvas = document.getElementById("globe");
+const frame = document.getElementById("frame");
+const sheet = document.getElementById("sheet");
+const globe = createGlobe({ canvas, GEO, AFRICA_PATH, drawOverlay: drawFootprint });
+
+/* ── Sélecteur : les pays de l'empreinte, classés par densité ──── */
+const pickerBtn = document.getElementById("picker-btn");
+const pickerList = document.getElementById("picker-list");
+const pickerLabel = document.getElementById("picker-label");
+
+pickerList.innerHTML = FOOT.map(([iso, count]) => `
+  <button type="button" role="option" data-iso="${iso}" aria-selected="false">
+    <span aria-hidden="true">${flagOf(iso)}</span>${GEO[iso].fr}
+    <span class="iso">${count} peuple${count > 1 ? "s" : ""}</span>
+  </button>`).join("");
+
+const setPicker = (open) => {
+  pickerList.dataset.open = String(open);
+  pickerBtn.setAttribute("aria-expanded", String(open));
+  if (open) pickerList.querySelector("button").focus();
+};
+pickerBtn.addEventListener("click", () => setPicker(pickerList.dataset.open !== "true"));
+pickerList.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-iso]");
+  if (btn) focusCountry(btn.dataset.iso);
+});
+
+function focusCountry(iso) {
+  focused = iso;
+  const count = F.derivedFootprint[iso];
+  const centre = centroidOf(iso, GEO);
+  const here = F.topMembers.filter((m) => m.countries.includes(iso));
+
+  globe.flyTo(centre[0], centre[1], spanOf(iso, GEO) * 1.9);
+  wholeBtn.setAttribute("aria-pressed", "false");
+
+  pickerLabel.textContent = GEO[iso].fr;
+  setPicker(false);
+  pickerList.querySelectorAll("[data-iso]").forEach((b) =>
+    b.setAttribute("aria-selected", String(b.dataset.iso === iso)));
+
+  document.getElementById("sheet-flag").textContent = flagOf(iso);
+  document.getElementById("sheet-title").textContent = GEO[iso].fr;
+  document.getElementById("sheet-sub").textContent = `${iso} · part de l'empreinte ${F.nameFr}`;
+  document.getElementById("sheet-body").innerHTML = `
+    <div class="fact">
+      <dt>Peuples ${F.nameFr} présents</dt>
+      <dd class="num">${count}</dd>
+    </div>
+    <div class="fact">
+      <dt>Sur les ${F.memberCount} de la famille</dt>
+      <dd>
+        <div class="bar-row">
+          <span class="lbl">${GEO[iso].fr}</span>
+          <span class="val">${((count / F.memberCount) * 100).toFixed(1)}&nbsp;%</span>
+          <span class="track"><span class="fill" style="width:${(count / F.memberCount) * 100}%"></span></span>
+        </div>
+      </dd>
+    </div>
+    ${here.length ? `
+    <div class="fact">
+      <dt>Parmi les plus répandus</dt>
+      <dd style="font-size:var(--afh-text-small); line-height:1.65">${here.map((m) => m.name).join(" · ")}</dd>
+    </div>` : ""}
+    <span class="state-chip chip-derived"><span class="dot"></span>Dérivé — non déclaré par la fiche famille</span>`;
+  sheet.dataset.open = "true";
+  biasForSheet(globe, frame, sheet);
+
+  globe.reveal();
+  paintFallback();
+}
+
+document.getElementById("sheet-close").addEventListener("click", () => {
+  sheet.dataset.open = "false";
+  biasForSheet(globe, frame, sheet);
+});
+
+const wholeBtn = document.getElementById("whole");
+wholeBtn.addEventListener("click", () => {
+  focused = null;
+  wholeBtn.setAttribute("aria-pressed", "true");
+  pickerLabel.textContent = "Choisir un pays de l'empreinte";
+  pickerList.querySelectorAll("[data-iso]").forEach((b) => b.setAttribute("aria-selected", "false"));
+  sheet.dataset.open = "false";
+  biasForSheet(globe, frame, sheet);
+  globe.recentre();
+  globe.reveal();
+  paintFallback();
+});
+
+const flattenBtn = document.getElementById("flatten");
+flattenBtn.addEventListener("click", () => {
+  const on = flattenBtn.getAttribute("aria-pressed") !== "true";
+  flattenBtn.setAttribute("aria-pressed", String(on));
+  flattenBtn.textContent = on ? "Revenir au globe" : "Ce que la carte plate en fait";
+  globe.setFlat(on);
+});
+
+document.getElementById("recentre").addEventListener("click", () => {
+  flattenBtn.setAttribute("aria-pressed", "false");
+  flattenBtn.textContent = "Ce que la carte plate en fait";
+  globe.setFlat(false);
+  globe.recentre();
+});
+
+/* ── Repli sans WebGL ───────────────────────────────────────── */
+const BOUNDS = { lonMin: -25, lonMax: 52, latMin: -35, latMax: 38 };
+const BASE = { w: 800, h: 758 };
+const fx = (lon) => ((lon - BOUNDS.lonMin) / (BOUNDS.lonMax - BOUNDS.lonMin)) * BASE.w;
+const fy = (lat) => ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) * BASE.h;
+const ringToPath = (ring) =>
+  ring.map(([lon, lat], i) => `${i ? "L" : "M"}${fx(lon).toFixed(1)},${fy(lat).toFixed(1)}`).join("") + "Z";
+
+function paintFallback() {
+  const shapes = FOOT.map(([iso, count]) => {
+    const dim = focused && focused !== iso;
+    const o = dim ? 0.12 : (0.16 + 0.46 * (count / MAX_MEMBERS)).toFixed(2);
+    return `<path d="${GEO[iso].rings.map(ringToPath).join("")}" fill="#c4573f" fill-opacity="${o}"
+                  stroke="${focused === iso ? "#f0a68f" : "#c4573f"}" stroke-width="${focused === iso ? 3.2 : 2}"
+                  stroke-opacity="${dim ? 0.22 : 0.85}" stroke-dasharray="9 7"/>`;
+  }).join("");
+
+  document.getElementById("fallback-map").innerHTML = `
+    <path d="${AFRICA_PATH}" fill="#3a2a16" stroke="#8a6234" stroke-width="2.4"/>
+    ${shapes}`;
+
+  document.getElementById("fallback-note").textContent = focused
+    ? `${GEO[focused].fr} dans l'empreinte ${F.nameFr}, sans rendu 3D. Le bord reste tireté : c'est un agrégat.`
+    : `L'empreinte ${F.nameFr} sur ${FOOT.length} pays, sans rendu 3D. Teinte selon le nombre de peuples présents.`;
+}
+paintFallback();
+
+/* ══════════════════════════════════════════════════════════════════
+   LE PARCHEMIN — ordre des sections de LanguageFamilyDetailViewV2.tsx,
+   avec la section vide traitée comme une information, pas comme un trou.
+   ══════════════════════════════════════════════════════════════════ */
+document.getElementById("fh-eyebrow").textContent = `${F.id} · famille linguistique`;
+document.getElementById("fh-title").innerHTML = `${F.nameFr}, <em>une aire à reconstruire</em>`;
+// Ici l'auto-appellation et le nom anglais sont identiques : les répéter
+// donnerait l'illusion de deux informations là où il n'y en a qu'une.
+document.getElementById("fh-lede").textContent = F.selfAppellation === F.nameEn
+  ? `Auto-appellation et nom anglais : ${F.selfAppellation}. Le français seul francise.`
+  : `Auto-appellation : ${F.selfAppellation}. Nom anglais : ${F.nameEn}.`;
+document.getElementById("fh-chips").innerHTML = `
+  <span class="state-chip chip-stable"><span class="dot"></span>${nf.format(F.numberOfLanguages)} langues</span>
+  <span class="state-chip chip-derived"><span class="dot"></span>${F.memberCount} peuples · ${FOOT.length} pays dérivés</span>
+  <span class="state-chip chip-missing"><span class="dot"></span>Distribution non déclarée</span>`;
+
+document.getElementById("scale").innerHTML = `
+  <div class="scale-card">
+    <span class="n">${nf.format(F.numberOfLanguages)}</span>
+    <span class="k">Langues</span>
+  </div>
+  <div class="scale-card">
+    <span class="n">${(F.totalSpeakers / 1e6).toFixed(0)} M</span>
+    <span class="k">Locuteurs</span>
+  </div>
+  <div class="scale-card" data-missing="true">
+    <span class="n">vide</span>
+    <span class="k">Branches</span>
+  </div>
+  <div class="scale-card" data-missing="true">
+    <span class="n">vide</span>
+    <span class="k">Distribution</span>
+  </div>`;
+
+document.getElementById("gap").innerHTML = `
+  <p>Cette fiche ne déclare ni ses branches ni sa répartition par pays. L'aire dessinée plus haut est donc
+  reconstruite depuis les peuples rattachés à la famille, et signalée comme telle.</p>`;
+
+document.getElementById("footprint-explain").innerHTML =
+  `L'aire ci-dessus n'est pas lue dans la fiche famille : elle est <strong>calculée</strong>. Chaque fiche peuple porte
+   son <code>languageFamilyId</code> et ses <code>currentCountries</code>&nbsp;; l'union de ces pays sur les
+   <strong>${F.memberCount} peuples</strong> rattachés à ${F.id} donne les <strong>${FOOT.length} pays</strong> teintés,
+   l'intensité suivant le nombre de peuples présents. Le bord reste tireté partout : une famille linguistique n'a pas
+   de frontière, et cet agrégat encore moins que le reste.`;
+
+document.getElementById("rank").innerHTML = FOOT.map(([iso, count]) => `
+  <div class="rank-row">
+    <span class="flag" aria-hidden="true">${flagOf(iso)}</span>
+    <span class="name">${GEO[iso].fr}</span>
+    <span class="n">${count}</span>
+    <span class="track"><span class="fill" style="width:${(count / MAX_MEMBERS) * 100}%"></span></span>
+  </div>`).join("");
+
+document.getElementById("term").textContent = F.historicalTerm;
+
+document.getElementById("members-note").textContent =
+  `${F.topMembers.length} des ${F.memberCount} peuples rattachés, classés par étendue`;
+document.getElementById("members").innerHTML = F.topMembers.map((m) => `
+  <div class="member">
+    <b>${m.name}</b>
+    <span class="spread">${m.countries.length} pays · ${m.countries.join(" ")}</span>
+  </div>`).join("");
+
+// Les sources du corpus contiennent des liens en markdown et de l'emphase :
+// les rendre lisibles ici évite d'afficher la syntaxe à l'écran.
+const renderSource = (raw) => raw
+  .replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, '<a href="$2" style="color:var(--accent)">$1</a>')
+  .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+document.getElementById("sources").innerHTML = F.sources.map((s) => `
+  <div class="source-row">
+    <span class="state-chip chip-t1"><span class="dot"></span>Tier 1</span>
+    <span>${renderSource(s)}</span>
+  </div>`).join("");
+
+/* ── Chrome de l'établi ──────────────────────────────────────── */
+document.querySelectorAll("[data-vp]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("[data-vp]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    frame.dataset.viewport = btn.dataset.vp;
+    setTimeout(() => { globe.resize(); biasForSheet(globe, frame, sheet); }, 340);
+  });
+});
+
+document.querySelectorAll("button[data-webgl]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("button[data-webgl]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    frame.dataset.webgl = btn.dataset.webgl;
+    if (btn.dataset.webgl === "on") setTimeout(globe.resize, 40);
+  });
+});
+
+globe.reveal();
+</script>

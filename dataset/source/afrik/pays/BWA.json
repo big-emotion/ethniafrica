@@ -1,11 +1,13 @@
 {
   "id": "BWA",
-  "nameFr": "République du Botswana (Republic of Botswana)",
+  "nameFr": "Botswana",
   "nameOfficial": "République du Botswana (Republic of Botswana)",
+  "summary": "Le Botswana tire son nom du peuple tswana : le préfixe « bo- » signifie « pays de » en setswana. Le territoire fut d'abord celui des peuples khoïsan, puis des chefferies tswana, avant de devenir le protectorat britannique du Bechuanaland. San, Kalanga, Herero et Mbukushu y vivent aux côtés des Tswana.",
   "etymology": "Le nom \"Botswana\" dérive de \"Tswana\", le nom du peuple majoritaire, avec le préfixe \"Bo-\" qui signifie \"pays de\" en setswana. \"Botswana\" signifie donc \"pays des Tswana\". Le nom a été adopté à l'indépendance en 1966 pour remplacer \"Bechuanaland\", nom colonial britannique.",
   "nameOriginActor": "Le nom \"Botswana\" a été choisi par les dirigeants tswana à l'indépendance en 1966. Il remplace \"Bechuanaland\", nom colonial britannique dérivé de \"Bechuana\" (ancienne orthographe de \"Tswana\"). Le nom \"Botswana\" reflète l'identité du peuple majoritaire (Batswana).",
   "content": {
     "historicalNames": {
+      "formerNames": ["Protectorat du Bechuanaland (1885-1966)"],
       "antiquity": "Le territoire actuel du Botswana était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Arrivée et expansion des peuples bantous (Tswana) dans la région. Développement de chefferies tswana. Contacts entre peuples bantous et Khoisan. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de chefferies tswana autonomes (Bakwena, Bangwato, Bangwaketse, Batawana, etc.). Peuples Khoisan (San) dans le désert du Kalahari. Les Européens utilisaient le terme \"Bechuanaland\" pour désigner la région.",
@@ -188,15 +190,66 @@
       "postIndependence": "1966-présent : Stabilité politique remarquable, démocratie multipartite, présidence de Seretse Khama (1966-1980). Découverte et exploitation des diamants (années 1970), transformation économique. Développement économique et social, amélioration des indicateurs de développement. Défis : VIH/sida, inégalités sociales, dépendance aux diamants. Le Botswana est considéré comme un modèle de démocratie et de développement en Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Botswana",
-      "CIA World Factbook – Botswana",
-      "ONU / UNFPA – Démographie Botswana 2025",
-      "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
-      "Parsons, Neil – \"A New History of Southern Africa\"",
-      "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
-      "Recensements botswanais",
-      "Études anthropologiques sur les peuples du Botswana",
-      "CIA World Factbook – Botswana (ethnic groups)"
+      {
+        "title": "SIL Ethnologue – Languages of Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Botswana 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Parsons, Neil – \"A New History of Southern Africa\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements botswanais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Botswana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Botswana (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

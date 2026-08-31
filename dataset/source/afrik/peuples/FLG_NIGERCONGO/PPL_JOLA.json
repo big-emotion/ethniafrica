@@ -3,6 +3,7 @@
   "nameMain": "Jola",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SEN", "GMB", "GNB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Jola",
@@ -107,14 +108,54 @@
       ]
     },
     "sources": [
-      "Ethnologue SIL — Jola-Fonyi (dyo). https://www.ethnologue.com/subgroup/1247/",
-      "Minority Rights Group — Diola (Jola) in Senegal. https://minorityrights.org/communities/diola-jola/",
-      "Sage Reference — Encyclopedia of African Religion: Diola. https://sk.sagepub.com/ency/edvol/africanreligion/chpt/diola",
-      "Academia.edu — Ritual and Masking Traditions in Jola Men's Initiation. https://www.academia.edu/63748523/Ritual_and_Masking_Traditions_in_Jola_Mens_Initiation",
-      "Public Intelligence — Senegal Cultural Field Guide. https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
-      "Glottolog — Jola. https://glottolog.org/resource/languoid/id/jola1264",
-      "Baum, Robert M. — Shrines of the Slave Trade: Diola Religion and Society in Precolonial Senegambia. Oxford University Press, 1999.",
-      "Mark, Peter — A Cultural, Economic and Religious History of the Basse Casamance since 1500. Franz Steiner Verlag, 1985."
+      {
+        "title": "Ethnologue SIL — Jola-Fonyi (dyo)",
+        "url": "https://www.ethnologue.com/subgroup/1247/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Minority Rights Group — Diola (Jola) in Senegal",
+        "url": "https://minorityrights.org/communities/diola-jola/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Sage Reference — Encyclopedia of African Religion: Diola",
+        "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/diola",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
+      },
+      {
+        "title": "Academia.edu — Ritual and Masking Traditions in Jola Men's Initiation",
+        "url": "https://www.academia.edu/63748523/Ritual_and_Masking_Traditions_in_Jola_Mens_Initiation",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      },
+      {
+        "title": "Public Intelligence — Senegal Cultural Field Guide",
+        "url": "https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for info.publicintelligence.net."
+      },
+      {
+        "title": "Glottolog — Jola",
+        "url": "https://glottolog.org/resource/languoid/id/jola1264",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Baum, Robert M. — Shrines of the Slave Trade: Diola Religion and Society in Precolonial Senegambia. Oxford University Press, 1999",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Mark, Peter — A Cultural, Economic and Religious History of the Basse Casamance since 1500. Franz Steiner Verlag, 1985",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

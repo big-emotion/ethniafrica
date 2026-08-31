@@ -2,10 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import NotFound from "@/app/[lang]/not-found";
 
-vi.mock("next/navigation", () => ({
-  useParams: () => ({ lang: "fr" }),
-}));
-
 vi.mock("next/link", () => ({
   __esModule: true,
   default: ({
@@ -30,9 +26,11 @@ describe("NotFound ([lang]/not-found)", () => {
     ).toBeTruthy();
   });
 
-  it("explains the fiche-URL pattern", () => {
+  // @req REQ-099
+  it("says why the page is missing, and spells out no corpus key", () => {
     const { container } = render(<NotFound />);
-    expect(container.textContent).toMatch(/PPL_|FLG_|\/fr\//);
+    expect(container.textContent).toMatch(/pas encore publiée/i);
+    expect(container.textContent).not.toMatch(/PPL_|FLG_/);
   });
 
   it("renders a search affordance link or input", () => {

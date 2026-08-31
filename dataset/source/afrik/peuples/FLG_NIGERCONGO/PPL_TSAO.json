@@ -3,6 +3,7 @@
   "nameMain": "Tsao",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tsao",
@@ -80,13 +81,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — langues du Congo (COD). https://www.ethnologue.com/country/CD/",
-      "Glottolog 5.3 — Bantou Zone H (Central-Western Bantu). https://glottolog.org/resource/languoid/id/cent2260",
-      "Britannica — People of the Democratic Republic of the Congo. https://www.britannica.com/place/Democratic-Republic-of-the-Congo/People",
-      "IWGIA — Indigenous peoples in the Democratic Republic of Congo. https://iwgia.org/en/democratic-republic-of-congo.html",
-      "Vansina, Jan — Paths in the Rainforests: Toward a History of Political Tradition in Equatorial Africa. University of Wisconsin Press, 1990.",
-      "CIA World Factbook — Democratic Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
-      "CIA World Factbook — Angola. https://www.cia.gov/the-world-factbook/countries/angola/"
+      {
+        "title": "SIL Ethnologue — langues du Congo (COD)",
+        "url": "https://www.ethnologue.com/country/CD/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog 5.3 — Bantou Zone H (Central-Western Bantu)",
+        "url": "https://glottolog.org/resource/languoid/id/cent2260",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Britannica — People of the Democratic Republic of the Congo",
+        "url": "https://www.britannica.com/place/Democratic-Republic-of-the-Congo/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "IWGIA — Indigenous peoples in the Democratic Republic of Congo",
+        "url": "https://iwgia.org/en/democratic-republic-of-congo.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Vansina, Jan — Paths in the Rainforests: Toward a History of Political Tradition in Equatorial Africa. University of Wisconsin Press, 1990",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Angola",
+        "url": "https://www.cia.gov/the-world-factbook/countries/angola/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

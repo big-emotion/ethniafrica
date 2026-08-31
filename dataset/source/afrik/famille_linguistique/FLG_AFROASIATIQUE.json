@@ -2,6 +2,7 @@
   "id": "FLG_AFROASIATIQUE",
   "nameFr": "Afro-asiatique",
   "nameEn": "Afroasiatic",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Le concept est une construction artificielle sans validité scientifique démontrée (aucune loi phonétique commune, aucune proto-langue reconstruite entre les 5 groupes). Il mélange critères raciaux, bibliques et linguistiques pour nier l'africanité de l'Égypte. Le terme « chamitique » est colonial et obsolète.",
@@ -11,7 +12,13 @@
       "originOfHistoricalTerm": " Le terme « chamito-sémitique » a été forgé au XIXe siècle par Friedrich Müller dans un but idéologique : séparer l'Égypte ancienne de l'Afrique noire et rattacher l'Afrique du Nord au Moyen-Orient. Il repose sur une classification biblique (Cham/Sem) et non scientifique."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Berbère",
+        "Tchadique",
+        "Couchitique",
+        "Égyptien",
+        "Sémitique"
+      ],
       "geographicArea": "Afrique du Nord, Corne de l'Afrique, Sahel et Sahara, Extensions sahéliennes (Afrique de l'Ouest, Centrale et de l'Est)",
       "numberOfLanguages": 375,
       "totalSpeakers": 500000000
@@ -66,15 +73,80 @@
     },
     "distribution": {
       "totalSpeakers": 500000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 25488344,
+        "KEN": 2780502,
+        "NGA": 61481627,
+        "MAR": 9444131
+      }
     },
     "sources": [
-      "Friedrich Müller (inventeur du terme \"chamito-sémitique\" et de la classification originelle)",
-      "Théophile Obenga – *L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
-      "Théophile Obenga – *La Philosophie africaine de la période pharaonique*",
-      "Cheikh Anta Diop – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
-      "Hetzron (2003) – *The Semitic Languages* (pour la classification classique)",
-      "Glottolog – Afroasiatic overview"
+      {
+        "title": "Friedrich Müller (inventeur du terme \"chamito-sémitique\" et de la classification originelle)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Théophile Obenga – *L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Théophile Obenga – *La Philosophie africaine de la période pharaonique*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Cheikh Anta Diop – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Hetzron (2003) – *The Semitic Languages* (pour la classification classique)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog – Afroasiatic overview",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.2 – classification génétique \"Afro-Asiatic [afro1255]\", 5 branches immédiates (Berber, Chadic, Cushitic, Egyptian, Semitic)",
+        "url": "https://glottolog.org/resource/languoid/id/afro1255",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2 : population Oromo (couchitique) = 25 488 344",
+        "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics (2019) – 2019 Kenya Population and Housing Census, Volume IV: Distribution of Population by Socio-Economic Characteristics, Table 2.31 : Kenyan Somali (couchitique) = 2 780 502",
+        "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "The DHS Program / ICF – Nigeria Demographic and Health Survey 2018, Final Report (FR359), p. 55 : le hausa (tchadique) est l'ethnie principale de 30 % des femmes et 31 % des hommes enquêtés. ; taux appliqué à la population totale du Nigeria (204 938 755 en 2018, World Bank – SP.POP.TOTL) pour estimer ~61,5 millions de locuteurs",
+        "url": "https://dhsprogram.com/pubs/pdf/FR359/FR359.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"dhs-program\". Original entry: \"The DHS Program / ICF – Nigeria Demographic and Health Survey 2018, Final Report (FR359), p. 55 : le hausa (tchadique) est l'ethnie principale de 30 % des femmes et 31 % des hommes enquêtés. https://dhsprogram.com/pubs/pdf/FR359/FR359.pdf ; taux appliqué à la population totale du Nigeria (204 938 755 en 2018, World Bank – SP.POP.TOTL) pour estimer ~61,5 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NG\""
+      },
+      {
+        "title": "Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \"Les expressions linguistiques de la langue Amazighe utilisées par la population\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh (berbère) au quotidien. ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs",
+        "url": "https://www.hcp.ma/file/244434/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for hcp.ma. Original entry: \"Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \\\"Les expressions linguistiques de la langue Amazighe utilisées par la population\\\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh (berbère) au quotidien. https://www.hcp.ma/file/244434/ ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MA\""
+      }
     ]
   }
 }

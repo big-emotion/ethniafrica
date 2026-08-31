@@ -19,6 +19,7 @@
     "BEN",
     "TGO"
   ],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Bénoué-Congo",
@@ -157,10 +158,30 @@
       ]
     },
     "sources": [
-      "Britannica : Benue-Congo languages https://www.britannica.com/topic/Benue-Congo-languages",
-      "EBSCO Research Starters : Benue-Congo Languages https://www.ebsco.com/research-starters/language-and-linguistics/benue-congo-languages",
-      "LanguagesGulper : Benue-Congo Languages https://www.languagesgulper.com/eng/Benue.html",
-      "Ethnologue (SIL International, 2017) : 976 langues bénoué-congo https://www.ethnologue.com"
+      {
+        "title": "Britannica : Benue-Congo languages",
+        "url": "https://www.britannica.com/topic/Benue-Congo-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "EBSCO Research Starters : Benue-Congo Languages",
+        "url": "https://www.ebsco.com/research-starters/language-and-linguistics/benue-congo-languages",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "LanguagesGulper : Benue-Congo Languages",
+        "url": "https://www.languagesgulper.com/eng/Benue.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for languagesgulper.com."
+      },
+      {
+        "title": "Ethnologue (SIL International, 2017) : 976 langues bénoué-congo",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

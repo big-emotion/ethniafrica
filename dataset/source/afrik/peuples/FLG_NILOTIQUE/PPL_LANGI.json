@@ -3,6 +3,7 @@
   "nameMain": "Langi",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["UGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Langi",
@@ -72,13 +73,48 @@
       ]
     },
     "sources": [
-      "Driberg J.H. – The Lango, a Nilotic tribe of Uganda, T.F. Unwin, Londres, 1923",
-      "Tosh J. – Clan Leaders and Colonial Chiefs in Lango, Clarendon Press, Oxford, 1978",
-      "Hayley T.T.S. – The Anatomy of Lango Religion and Groups, Negro Universities Press, 1970 (1e ed. 1947)",
-      "Curley R.T. – Elders, Shades and Women: Ceremonial Change in Lango, Uganda, University of California Press, 1973",
-      "Encyclopaedia Britannica – Lango (https://www.britannica.com/topic/Lango)",
-      "Cross-Cultural Foundation Uganda – Culture and the Rights of Women and Girls in Lango, 2019",
-      "SIL Ethnologue – Lango language [laj] (https://www.ethnologue.com/language/laj/)"
+      {
+        "title": "Driberg J.H. – The Lango, a Nilotic tribe of Uganda, T.F. Unwin, Londres, 1923",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Tosh J. – Clan Leaders and Colonial Chiefs in Lango, Clarendon Press, Oxford, 1978",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Hayley T.T.S. – The Anatomy of Lango Religion and Groups, Negro Universities Press, 1970 (1e ed. 1947)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Curley R.T. – Elders, Shades and Women: Ceremonial Change in Lango, Uganda, University of California Press, 1973",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Britannica – Lango",
+        "url": "https://www.britannica.com/topic/Lango",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Cross-Cultural Foundation Uganda – Culture and the Rights of Women and Girls in Lango, 2019",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Lango language [laj]",
+        "url": "https://www.ethnologue.com/language/laj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

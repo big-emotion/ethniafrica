@@ -2,6 +2,7 @@
   "id": "FLG_SOUDANIQUECENTRAL",
   "nameFr": "Soudanique central",
   "nameEn": "Central Sudanic",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Auteurs coloniaux problématiques : - Carl Meinhof (début XXe siècle) utilisait « Sudanic » comme terme géographique colonial, sans fondement linguistique rigoureux. - Les classifications de Greenberg (1955-1963) s'inscrivent dans un contexte post-colonial mais reposent sur la méthode « mass-comparison » (comparaison de masse), critiquée par des linguistes contemporains pour son manque de rigueur dans certaines classifications, notamment le phylum Nilo-Saharan dont dépend Central Sudanic. - Les priorités coloniales de cartographie linguistique ont influencé les cadres de classification, souvent sans consultation des communautés locales. Auteurs locaux / défense de l'africanité : - Certains linguistes africains et contemporains critiquent l'hypothèse du phylum Nilo-Saharien (dont Central Sudanic dépend) comme peu fondée ou trop similaire aux constructions extérieures imposées. - Pascal Boyeldieu (2020) note dans *The Oxford Handbook of African Languages* que l'unité génétique du Central Sudanic reste « à confirmer » par la méthode comparative stricte. - George Starostin (2016) remet en question certaines subdivisions, notamment la division Est/Ouest, estimant que la branche ouest (Bongo-Bagirmi) est moins bien fondée que la branche est (Moru-Madi, Lendu). Études génétiques modernes : - Les analyses génétiques récentes montrent une grande diversité parmi les populations d'Afrique centrale, incluant les locuteurs de langues Central Sudanic, mais ne confirment pas nécessairement l'unicité génétique correspondant strictement à la famille linguistique. - Fan et al. (2019) dans *Genome Biology* montrent des clines de similarité selon la langue et la géographie, mais pas toujours un « cluster linguistique » Central Sudanic clairement délimité. - Des études sur les populations d'Afrique de l'Est et du Soudan montrent un composant génétique distinct lié aux groupes parlants du Nilo-Saharan, incluant les locuteurs de langues Central Sudanic, ce qui corrobore une certaine cohésion linguistique, mais aussi des mélanges importants avec des populations voisines. → Le terme « soudanique » évoque le « Soudan » colonial, un espace géographique et administratif fortement marqué par la colonisation, non par les locuteurs eux-mêmes. L'amalgame entre groupes du « Soudan » (au sens colonial) a contribué à effacer des identités linguistiques distinctes. → Afrik utilise la version **scientifiquement définie : Central Sudanic**, tout en reconnaissant les débats académiques sur son unité et son placement dans Nilo-Saharan.",
@@ -11,7 +12,13 @@
       "originOfHistoricalTerm": " Le terme « Central Sudanic » (Soudanique central) a été introduit par Joseph H. Greenberg dans *The Languages of Africa* (1963, Indiana University Press / Mouton), pour désigner une branche du phylum proposé Nilo-Saharan. Greenberg classe Central Sudanic au sein du groupe « Chari-Nile » de sa classification. Prédécesseurs : Diedrich Westermann (début XXe siècle) incluait certaines langues aujourd'hui Central Sudanic dans son concept « Niloto-Sudanic ». Carl Meinhof utilisait le terme « Sudanic » comme un fourre-tout géographique colonial plutôt que sur des bases linguistiques internes rigoureuses."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Sara-Bongo-Bagirmi",
+        "Moru-Madi",
+        "Mangbetu-Asua",
+        "Membi-Mangbutu-Efe",
+        "Lenduic"
+      ],
       "geographicArea": "Nord-est de la RDC, Soudan du Sud, Ouganda, Tchad central",
       "numberOfLanguages": 40,
       "totalSpeakers": 10000000
@@ -46,23 +53,127 @@
     },
     "distribution": {
       "totalSpeakers": 10000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "COD": 2210000,
+        "UGA": 808100,
+        "SSD": 70000
+      }
     },
     "sources": [
-      "Bender, Lionel M. (1992) – \"Central Sudanic segmental and lexical reconstruction.\" *Afrikanistische Arbeitspapiere*, 29:5-61.",
-      "Blackings, Mairi (2011) – *A Grammar of Ma'di*. Walter de Gruyter.",
-      "Boyeldieu, Pascal (2020) – \"Central Sudanic\", dans *The Oxford Handbook of African Languages*, éd. M. Hafri, P. Boyeldieu, etc. Oxford University Press. URL: https://academic.oup.com/edited-volume/38608/chapter/334726296",
-      "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations.\" *Genome Biology*, 20:82. URL: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1679-2",
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press / Mouton & Co., The Hague. (2e éd., 1966)",
-      "Starostin, George (2016) – \"The Nilo-Saharan hypothesis tested through lexicostatistics: current state of affairs.\" *Journal of Language Relationship*. URL: https://justapedia.org/wiki/Central_Sudanic_languages",
-      "Ethnologue (dernières éditions) – \"Central Sudanic languages\". SIL International.",
-      "Glottolog (dernières éditions) – \"Central Sudanic branch\". Max Planck Institute for the Science of Human History.",
-      "UNESCO – *Atlas des langues africaines*. UNESCO Publishing.",
-      "Britannica – \"Central Sudanic languages\", \"Nilo-Saharan languages / Linguistic characteristics\". Encyclopaedia Britannica.",
-      "Santandrea, Stefano (1976) – Travaux sur Yulu et groupe Kresh.",
-      "Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. (Référence générale)",
-      "Village Assessment Survey (2013) – IOM South Sudan. Survey sur populations déplacées, incluant données linguistiques.",
-      "Recensements nationaux : Tchad, République centrafricaine, République démocratique du Congo, Ouganda, Soudan du Sud (années 2010-2025 approximatives, selon disponibilité)."
+      {
+        "title": "Bender, Lionel M. (1992) – \"Central Sudanic segmental and lexical reconstruction.\" *Afrikanistische Arbeitspapiere*, 29:5-61",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blackings, Mairi (2011) – *A Grammar of Ma'di*. Walter de Gruyter",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Boyeldieu, Pascal (2020) – \"Central Sudanic\", dans *The Oxford Handbook of African Languages*, éd. M. Hafri, P. Boyeldieu, etc. Oxford University Press. URL",
+        "url": "https://academic.oup.com/edited-volume/38608/chapter/334726296",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academic.oup.com."
+      },
+      {
+        "title": "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations.\" *Genome Biology*, 20:82. URL",
+        "url": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1679-2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for biomedcentral.com, matched as a parent of genomebiology.biomedcentral.com."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press / Mouton & Co., The Hague. (2e éd., 1966)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Starostin, George (2016) – \"The Nilo-Saharan hypothesis tested through lexicostatistics: current state of affairs.\" *Journal of Language Relationship*. URL",
+        "url": "https://justapedia.org/wiki/Central_Sudanic_languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for justapedia.org."
+      },
+      {
+        "title": "Ethnologue (dernières éditions) – \"Central Sudanic languages\". SIL International",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog (dernières éditions) – \"Central Sudanic branch\". Max Planck Institute for the Science of Human History",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – *Atlas des langues africaines*. UNESCO Publishing",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Britannica – \"Central Sudanic languages\", \"Nilo-Saharan languages / Linguistic characteristics\". Encyclopaedia Britannica",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Santandrea, Stefano (1976) – Travaux sur Yulu et groupe Kresh",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. (Référence générale)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Village Assessment Survey (2013) – IOM South Sudan. Survey sur populations déplacées, incluant données linguistiques",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux : Tchad, République centrafricaine, République démocratique du Congo, Ouganda, Soudan du Sud (années 2010-2025 approximatives, selon disponibilité)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.3 (2025) – \"Central Sudanic\" (glottocode cent2225) : arbre de classification confirmant 5 branches immédiates – Sara-Bongo-Bagirmi, Moru-Madi, Mangbetu-Asua, Membi-Mangbutu-Efe, Lenduic",
+        "url": "https://glottolog.org/resource/languoid/id/cent2225",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 20 juin 2016) – \"Lugbara [lgg]\": 797 000 locuteurs en Ouganda (2004), 840 000 en RDC (Johnstone & Mandryk 2001)",
+        "url": "https://www.ethnologue.com/language/lgg",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 25 mai 2016) – \"Mangbetu [mdj]\": 620 000 locuteurs en RDC",
+        "url": "https://www.ethnologue.com/language/mdj",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 21 juin 2016) – \"Lendu [led]\": 750 000 locuteurs en RDC (1996 SIL), plus la variété Ndrulo : 11 100 locuteurs en Ouganda (2002 SIL)",
+        "url": "https://www.ethnologue.com/language/led",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 14 août 2016) – \"Moru [mgd]\": 70 000 locuteurs au Soudan du Sud (1982 SIL)",
+        "url": "https://www.ethnologue.com/language/mgd",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

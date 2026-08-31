@@ -3,6 +3,7 @@
   "nameMain": "Beri",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "SDN", "LBY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Beri",
@@ -101,12 +102,42 @@
       ]
     },
     "sources": [
-      "Unicode Consortium — Zaghawa Script Proposal (ISO 639-3 : zag). https://www.unicode.org/L2/L2024/24004r-zaghawa-proposal.pdf",
-      "Joshua Project — Zaghawa in Libya. https://joshuaproject.net/people_groups/16080/LY",
-      "Minority Rights Group — Chad ethnic groups. https://minorityrights.org/country/chad/",
-      "Ethnologue — Zaghawa (ZAG). https://www.ethnologue.com/language/zag/",
-      "Daoud Hari — The Translator. Random House, 2008.",
-      "Halima Bashir & Damien Lewis — Tears of the Desert. Hodder & Stoughton, 2008."
+      {
+        "title": "Unicode Consortium — Zaghawa Script Proposal (ISO 639-3 : zag)",
+        "url": "https://www.unicode.org/L2/L2024/24004r-zaghawa-proposal.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers unicode.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Zaghawa in Libya",
+        "url": "https://joshuaproject.net/people_groups/16080/LY",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group — Chad ethnic groups",
+        "url": "https://minorityrights.org/country/chad/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Ethnologue — Zaghawa (ZAG)",
+        "url": "https://www.ethnologue.com/language/zag/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Daoud Hari — The Translator. Random House, 2008",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Halima Bashir & Damien Lewis — Tears of the Desert. Hodder & Stoughton, 2008",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

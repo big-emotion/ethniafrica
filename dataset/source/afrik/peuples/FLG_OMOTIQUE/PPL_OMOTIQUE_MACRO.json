@@ -3,6 +3,7 @@
   "nameMain": "Peuples Omotiques (macro-groupe)",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Omotiques (macro-groupe)",
@@ -112,12 +113,42 @@
       ]
     },
     "sources": [
-      "Fleming, Harold C. Omotic Overview. In Bender (ed.), The Non-Semitic Languages of Ethiopia, 1976.",
-      "Bender, M. Lionel. Omotic: A New Afroasiatic Language Family. Occasional Papers, Southern Illinois University, 1975.",
-      "Cambridge Handbook of Linguistic Typology — The Omotic Language Family (chapter 26). https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA",
-      "Donham, Donald L. & James, Wendy (eds.). The Southern Marches of Imperial Ethiopia. Cambridge University Press, 1986.",
-      "Eric ED549340 — Omotic Peoples and the Early History of Agriculture in Ethiopia (dissertation). https://eric.ed.gov/?id=ED549340",
-      "Ethnologue — Omotic language family. https://www.ethnologue.com"
+      {
+        "title": "Fleming, Harold C. Omotic Overview. In Bender (ed.), The Non-Semitic Languages of Ethiopia, 1976",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel. Omotic: A New Afroasiatic Language Family. Occasional Papers, Southern Illinois University, 1975",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Cambridge Handbook of Linguistic Typology — The Omotic Language Family (chapter 26)",
+        "url": "https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      },
+      {
+        "title": "Donham, Donald L. & James, Wendy (eds.). The Southern Marches of Imperial Ethiopia. Cambridge University Press, 1986",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Eric ED549340 — Omotic Peoples and the Early History of Agriculture in Ethiopia (dissertation)",
+        "url": "https://eric.ed.gov/?id=ED549340",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for eric.ed.gov."
+      },
+      {
+        "title": "Ethnologue — Omotic language family",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

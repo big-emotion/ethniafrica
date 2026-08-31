@@ -2,6 +2,7 @@
   "id": "FLG_COUCHITIQUE",
   "nameFr": "Couchitique",
   "nameEn": "Cushitic",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " - Le mot « couchitique » est hérité d'une grille de lecture biblique/coloniale qui attribuait des origines « extra-africaines » à certains peuples pour les distinguer des Africains « noirs » dans une logique raciale. Cette théorie a été utilisée pour justifier des hiérarchies raciales et des politiques coloniales.",
@@ -11,7 +12,12 @@
       "originOfHistoricalTerm": " Le terme « Cushitic » a été créé par le linguiste autrichien Friedrich Müller (1834-1898) en 1876 dans son ouvrage *Grundriss der Sprachwissenschaft* (Vienne, 1876-1888). Müller a dérivé ce terme de « Koush/Cush », figure biblique mentionnée dans la Genèse (10:6-8) comme fils de Cham et petit-fils de Noé, considéré comme l'ancêtre éponyme des peuples de la région de Koush (Nubie, Éthiopie). Cette appellation a été adoptée par les linguistes européens du XIXᵉ siècle selon une vision pseudo-généalogique inspirée de la Bible, dans le cadre de la théorie « chamito-couchitique » qui classait les langues africaines selon des critères raciaux."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Beja (couchitique septentrional)",
+        "Agaw (couchitique central)",
+        "Couchitique oriental",
+        "Couchitique méridional"
+      ],
       "geographicArea": "Corne de l'Afrique (Éthiopie, Somalie, Djibouti, Érythrée, nord du Kenya, est du Soudan)",
       "numberOfLanguages": 40,
       "totalSpeakers": 45000000
@@ -55,34 +61,180 @@
     },
     "distribution": {
       "totalSpeakers": 45000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ETH": 25488344,
+        "KEN": 3558307
+      }
     },
     "sources": [
-      "Appleyard, D. (2006) – *A Comparative Dictionary of the Agaw Languages*. Köppe, Cologne.",
-      "Bender, M. L. (1975) – *Omotic: A New Afroasiatic Language Family*. Southern Illinois University Press.",
-      "Bideri, D. (2003) – *Une nouvelle identité des Batutsi du Rwanda et du Burundi ou la radicalisation de la théorie chamito-couchitique par l'Institut Havila*. Fondation Ntarama. URL : https://francegenocidetutsi.org/LaTheorieHamitoCouchitiqueParLinstitutHavila2003.html.fr",
-      "CIA World Factbook (2025) – *Ethiopia, Somalia, Djibouti, Eritrea, Kenya, Sudan*. Central Intelligence Agency. URL : https://www.cia.gov/the-world-factbook/",
-      "Cohen, D. (1988) – *Les langues chamito-sémitiques*. CNRS Éditions, Paris.",
-      "Ehret, C. (2002) – *The Civilizations of Africa: A History to 1800*. University Press of Virginia, Charlottesville.",
-      "Ehret, C. (2011) – *History and the Testimony of Language*. University of California Press, Berkeley.",
-      "Fattovich, R. (2010) – *The Development of Ancient States in the Northern Horn of Africa, c. 3000 BC–AD 1000: An Archaeological Outline*. Journal of World Prehistory, 23(3), 145-175.",
-      "Glottolog (2025) – *Cushitic branch*. Max Planck Institute for Evolutionary Anthropology. URL : https://glottolog.org/",
-      "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press, Bloomington.",
-      "Hodgson, J. A., Mulligan, C. J., Al-Meeri, A., & Raaum, R. L. (2014) – *Early Back-to-Africa Migration into the Horn of Africa*. PLOS Genetics, 10(6), e1004393.",
-      "Lewis, I. M. (1969) – *Peoples of the Horn of Africa: Somali, Afar and Saho*. International African Institute, London.",
-      "Mamdani, M. (2001) – *When Victims Become Killers: Colonialism, Nativism, and the Genocide in Rwanda*. Princeton University Press, Princeton.",
-      "Meinhof, C. (1912) – *Die Sprachen der Hamiten*. Abhandlungen des Hamburgischen Kolonialinstituts, Band 9. L. Friederichsen & Co., Hamburg.",
-      "Newbury, C. (1988) – *The Cohesion of Oppression: Clientship and Ethnicity in Rwanda, 1860-1960*. Columbia University Press, New York.",
-      "Müller, F. (1876-1888) – *Grundriss der Sprachwissenschaft*. 3 volumes. Alfred Hölder, Vienne. (Volume 1, 1876 : classification des langues africaines selon des critères raciaux ; introduction du terme « Cushitic »)",
-      "ONU (2025) – *World Population Prospects 2025*. Département des affaires économiques et sociales, Nations Unies. URL : https://population.un.org/wpp/",
-      "Reinisch, L. (1900-1903) – *Die Somali-Sprache*. 3 volumes. Alfred Hölder, Vienne. (Développement de la théorie chamito-couchitique appliquée aux langues de la Corne de l'Afrique)",
-      "Pagani, L., Kivisild, T., Tarekegn, A., Ekong, R., Plaster, C., Gallego Romero, I., ... & Tyler-Smith, C. (2012) – *Ethiopian Genetic Diversity Reveals Linguistic Stratification and Complex Influences on the Ethiopian Gene Pool*. American Journal of Human Genetics, 91(1), 83-96.",
-      "Phillipson, D. W. (2012) – *Foundations of an African Civilisation: Aksum and the Northern Horn, 1000 BC–AD 1300*. James Currey, Woodbridge.",
-      "Pickrell, J. K., Patterson, N., Loh, P. R., Lipson, M., Berger, B., Stoneking, M., ... & Reich, D. (2014) – *Ancient West Eurasian Ancestry in Southern and Eastern Africa*. Proceedings of the National Academy of Sciences, 111(7), 2632-2637.",
-      "Rilly, C. (2010) – *Le méroïtique et sa famille linguistique*. Peeters, Louvain.",
-      "SIL Ethnologue (2025) – *Languages of the World: Cushitic languages*. SIL International. URL : https://www.ethnologue.com/",
-      "UNFPA (2025) – *State of World Population 2025*. Fonds des Nations Unies pour la population. URL : https://www.unfpa.org/",
-      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. Organisation des Nations Unies pour l'éducation, la science et la culture. URL : https://www.unesco.org/"
+      {
+        "title": "Appleyard, D. (2006) – *A Comparative Dictionary of the Agaw Languages*. Köppe, Cologne",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. L. (1975) – *Omotic: A New Afroasiatic Language Family*. Southern Illinois University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bideri, D. (2003) – *Une nouvelle identité des Batutsi du Rwanda et du Burundi ou la radicalisation de la théorie chamito-couchitique par l'Institut Havila*. Fondation Ntarama. URL",
+        "url": "https://francegenocidetutsi.org/LaTheorieHamitoCouchitiqueParLinstitutHavila2003.html.fr",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers francegenocidetutsi.org; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook (2025) – *Ethiopia, Somalia, Djibouti, Eritrea, Kenya, Sudan*. Central Intelligence Agency. URL",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Cohen, D. (1988) – *Les langues chamito-sémitiques*. CNRS Éditions, Paris",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ehret, C. (2002) – *The Civilizations of Africa: A History to 1800*. University Press of Virginia, Charlottesville",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ehret, C. (2011) – *History and the Testimony of Language*. University of California Press, Berkeley",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Fattovich, R. (2010) – *The Development of Ancient States in the Northern Horn of Africa, c. 3000 BC–AD 1000: An Archaeological Outline*. Journal of World Prehistory, 23(3), 145-175",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog (2025) – *Cushitic branch*. Max Planck Institute for Evolutionary Anthropology. URL",
+        "url": "https://glottolog.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press, Bloomington",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hodgson, J. A., Mulligan, C. J., Al-Meeri, A., & Raaum, R. L. (2014) – *Early Back-to-Africa Migration into the Horn of Africa*. PLOS Genetics, 10(6), e1004393",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Lewis, I. M. (1969) – *Peoples of the Horn of Africa: Somali, Afar and Saho*. International African Institute, London",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Mamdani, M. (2001) – *When Victims Become Killers: Colonialism, Nativism, and the Genocide in Rwanda*. Princeton University Press, Princeton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Meinhof, C. (1912) – *Die Sprachen der Hamiten*. Abhandlungen des Hamburgischen Kolonialinstituts, Band 9. L. Friederichsen & Co., Hamburg",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Newbury, C. (1988) – *The Cohesion of Oppression: Clientship and Ethnicity in Rwanda, 1860-1960*. Columbia University Press, New York",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Müller, F. (1876-1888) – *Grundriss der Sprachwissenschaft*. 3 volumes. Alfred Hölder, Vienne. (Volume 1, 1876 : classification des langues africaines selon des critères raciaux ; introduction du terme « Cushitic »)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "ONU (2025) – *World Population Prospects 2025*. Département des affaires économiques et sociales, Nations Unies. URL",
+        "url": "https://population.un.org/wpp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+      },
+      {
+        "title": "Reinisch, L. (1900-1903) – *Die Somali-Sprache*. 3 volumes. Alfred Hölder, Vienne. (Développement de la théorie chamito-couchitique appliquée aux langues de la Corne de l'Afrique)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pagani, L., Kivisild, T., Tarekegn, A., Ekong, R., Plaster, C., Gallego Romero, I., ... & Tyler-Smith, C. (2012) – *Ethiopian Genetic Diversity Reveals Linguistic Stratification and Complex Influences on the Ethiopian Gene Pool*. American Journal of Human Genetics, 91(1), 83-96",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Phillipson, D. W. (2012) – *Foundations of an African Civilisation: Aksum and the Northern Horn, 1000 BC–AD 1300*. James Currey, Woodbridge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pickrell, J. K., Patterson, N., Loh, P. R., Lipson, M., Berger, B., Stoneking, M., ... & Reich, D. (2014) – *Ancient West Eurasian Ancestry in Southern and Eastern Africa*. Proceedings of the National Academy of Sciences, 111(7), 2632-2637",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Rilly, C. (2010) – *Le méroïtique et sa famille linguistique*. Peeters, Louvain",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue (2025) – *Languages of the World: Cushitic languages*. SIL International. URL",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNFPA (2025) – *State of World Population 2025*. Fonds des Nations Unies pour la population. URL",
+        "url": "https://www.unfpa.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "UNESCO (2025) – *Atlas of the World's Languages in Danger*. Organisation des Nations Unies pour l'éducation, la science et la culture. URL",
+        "url": "https://www.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Glottolog 5.2 – classification génétique \"Cushitic [cush1243]\", 4 branches immédiates (Beja, Agaw, East Cushitic, South Cushitic)",
+        "url": "https://glottolog.org/resource/languoid/id/cush1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2 : population Oromo (couchitique oriental) = 25 488 344",
+        "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics (2019) – 2019 Kenya Population and Housing Census, Volume IV: Distribution of Population by Socio-Economic Characteristics, Table 2.31 : somme des nationalités couchitiques recensées (Kenyan Somali 2 780 502, Borana 276 236, Orma 158 993, Gabra 141 200, Rendile 96 313, Sakuye 27 006, Burji 36 938, Aweer/Waata 20 103, Dasenach 19 337, El Molo 1 104, Dahalo 575) = 3 558 307",
+        "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      }
     ]
   }
 }

@@ -1,0 +1,101 @@
+/* ============================================================
+   EthniAfrica — Text alignment on a phone
+
+   Below the tablet floor the atlas centres its text. The measure
+   on a 375px screen is around 40 characters; at that width a
+   centred column reads as a composed page, where the same copy
+   ragged against the left edge reads as a column that ran out of
+   room. The site is read on a phone first, so the phone gets the
+   composition rather than the fallback.
+
+   One declaration, on `body`, inherited by everything under it.
+   Stated per surface instead, the rule would have to be restated
+   in every component that ships its own `<style>` — and the ones
+   that were missed would be the ones a reader notices.
+
+   Two families of element keep their own alignment, because
+   centring them breaks a function rather than a look:
+
+     form fields — the caret sits where the text is, so a centred
+                   empty field puts the caret in the middle and
+                   walks it outward as the reader types.
+
+     data tables — a column header carries the alignment of the
+                   values under it. Centring the cells while the
+                   headers keep the `text-left` they are written
+                   with would leave every table's head sitting
+                   off its own column.
+
+   The floor is 768px — Tailwind's `md`, so a component can opt a
+   run of copy back out with `md:text-left` and land on exactly
+   the same edge this file uses.
+   ============================================================ */
+
+@media (max-width: 767px) {
+  body {
+    text-align: center;
+  }
+
+  input,
+  textarea,
+  select {
+    text-align: left;
+  }
+
+  table {
+    text-align: left;
+  }
+
+  /* ─── Running prose is not composition ────────────────────────
+     The argument above holds for a line or two of standfirst. It
+     does not survive a paragraph: centred prose gives the eye no
+     return edge, so every line starts at a different x and the
+     reader hunts for the beginning of each one.
+
+     Measured before this rule, at 430px: 29 centred paragraphs on
+     one people fiche — the longest 21 lines — 12 on the home, 9 on
+     the search page. This is a site made of paragraphs.
+
+     It is also what made cards look broken without any rule
+     disagreeing. `text-align` only shows on a box wider than its
+     text, so inside one listing card the full-width gloss centred
+     while the shrink-to-fit heading and metadata stayed at the left
+     edge. Nothing declared three alignments; one declaration
+     produced three, which is worse, because there was nothing to
+     grep for.
+
+     Headings keep the centred inheritance. Centred titles over
+     ragged-right prose is the composition the phone gets — brand
+     charter §8.1.
+
+     `dt` travels with `dd` and not with the headings, even though
+     it is a label: a definition list is one block, and splitting
+     the pair put « Population » in the middle of the search card
+     with « 48 482 000 » under it at the left edge. */
+  p,
+  blockquote,
+  dt,
+  dd {
+    text-align: left;
+  }
+
+  /* Only the body-level default is overridden. A block that asked
+     for centring in its own right — the 404's plate, a medallion
+     state, anything carrying `text-center` — keeps it, because that
+     was a decision rather than an inheritance. */
+  .text-center p,
+  .text-center blockquote,
+  .text-center dd {
+    text-align: inherit;
+  }
+
+  /* And the blocks that are genuinely one or two composed lines opt
+     back in by name. Opt-in rather than opt-out on purpose: a block
+     this rule misses reads ragged-right, which is plain; a block the
+     old default missed read as a centred wall of text, which is not. */
+  .afh-phone-centred,
+  .afh-phone-centred p,
+  .afh-phone-centred blockquote {
+    text-align: center;
+  }
+}

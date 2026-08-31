@@ -13,6 +13,7 @@
     "MRT",
     "EGY"
   ],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Amazigh (Berberes)",
@@ -164,12 +165,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica - Berber : https://www.britannica.com/topic/Berber",
-      "IWGIA - The Indigenous World 2025: Morocco : https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
-      "Ethnologue SIL International - Berber languages : https://www.ethnologue.com/",
-      "Peabody Museum Harvard - Imazighen! Beauty and Artisanship : https://peabody.harvard.edu/OE-imazighen",
-      "Encyclopedie berbere (CNRS/INALCO) : https://journals.openedition.org/encyclopedieberbere/",
-      "Ibn Khaldoun, Muqaddima (14e siecle), traductions modernes"
+      {
+        "title": "Encyclopaedia Britannica - Berber",
+        "url": "https://www.britannica.com/topic/Berber",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "IWGIA - The Indigenous World 2025: Morocco",
+        "url": "https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Ethnologue SIL International - Berber languages",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Peabody Museum Harvard - Imazighen! Beauty and Artisanship",
+        "url": "https://peabody.harvard.edu/OE-imazighen",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers peabody.harvard.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopedie berbere (CNRS/INALCO)",
+        "url": "https://journals.openedition.org/encyclopedieberbere/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "Ibn Khaldoun, Muqaddima (14e siecle), traductions modernes",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Twa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["RWA", "BDI", "COD", "UGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Twa",
@@ -95,14 +96,54 @@
       ]
     },
     "sources": [
-      "Minority Rights Group International, Twa in Rwanda (https://minorityrights.org/communities/twa-2/)",
-      "Minority Rights Group International, Twa Women, Twa Rights in the Great Lakes Region, Dorothy Jackson, 2003 (https://minorityrights.org/resources/twa-women-twa-rights-in-the-great-lakes-region-of-africa/)",
-      "Jerome Lewis, The Batwa Pygmies of the Great Lakes Region, MRG Report, 2000 (https://citizenshiprightsafrica.org/wp-content/uploads/2001/03/Lewis-Batwa-report-MRG-2000.pdf)",
-      "UNPO, Rapport UPR Rwanda 23e session – situation des Batwa (https://upr-info.org/sites/default/files/documents/2015-10/unpo_upr23_rwa_e_main.pdf)",
-      "Africa Public Service Delivery and Performance Review, Civic and political rights of the Batwa in Uganda, 2018 (https://apsdpr.org/index.php/apsdpr/article/view/162/280)",
-      "Voice of America, The Twa: The Forgotten People of the Great Lakes, 2006 (https://www.voanews.com/a/a-13-2006-05-25-voa13/325093.html)",
-      "101 Last Tribes, Twa Great Lakes (https://www.101lasttribes.com/tribes/twa_great_lakes.html)",
-      "IWGIA (International Work Group for Indigenous Affairs), profil des Batwa des Grands Lacs (https://www.iwgia.org)"
+      {
+        "title": "Minority Rights Group International, Twa in Rwanda",
+        "url": "https://minorityrights.org/communities/twa-2/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Minority Rights Group International, Twa Women, Twa Rights in the Great Lakes Region, Dorothy Jackson, 2003",
+        "url": "https://minorityrights.org/resources/twa-women-twa-rights-in-the-great-lakes-region-of-africa/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Jerome Lewis, The Batwa Pygmies of the Great Lakes Region, MRG Report, 2000",
+        "url": "https://citizenshiprightsafrica.org/wp-content/uploads/2001/03/Lewis-Batwa-report-MRG-2000.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citizenshiprightsafrica.org."
+      },
+      {
+        "title": "UNPO, Rapport UPR Rwanda 23e session – situation des Batwa",
+        "url": "https://upr-info.org/sites/default/files/documents/2015-10/unpo_upr23_rwa_e_main.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers upr-info.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Africa Public Service Delivery and Performance Review, Civic and political rights of the Batwa in Uganda, 2018",
+        "url": "https://apsdpr.org/index.php/apsdpr/article/view/162/280",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers apsdpr.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Voice of America, The Twa: The Forgotten People of the Great Lakes, 2006",
+        "url": "https://www.voanews.com/a/a-13-2006-05-25-voa13/325093.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers voanews.com; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes, Twa Great Lakes",
+        "url": "https://www.101lasttribes.com/tribes/twa_great_lakes.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "IWGIA (International Work Group for Indigenous Affairs), profil des Batwa des Grands Lacs",
+        "url": "https://www.iwgia.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      }
     ]
   }
 }

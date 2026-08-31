@@ -3,6 +3,7 @@
   "nameMain": "Beja",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["SDN", "ERI", "EGY"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Beja",
@@ -101,9 +102,24 @@
       ]
     },
     "sources": [
-      "Fanack — The Beja: A Long, Cultural Presence in Sudan and Egypt. https://fanack.com/sudan/society-of-sudan/the-beja-a-long-cultural-presence-in-sudan-and-egypt/",
-      "SIL Ethnologue — Beja language (bej). https://www.ethnologue.com/language/bej/",
-      "ISO 639-3 Language Codes — CEDS. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+      {
+        "title": "Fanack — The Beja: A Long, Cultural Presence in Sudan and Egypt",
+        "url": "https://fanack.com/sudan/society-of-sudan/the-beja-a-long-cultural-presence-in-sudan-and-egypt/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers fanack.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Beja language (bej)",
+        "url": "https://www.ethnologue.com/language/bej/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ISO 639-3 Language Codes — CEDS",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

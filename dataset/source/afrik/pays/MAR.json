@@ -1,11 +1,16 @@
 {
   "id": "MAR",
-  "nameFr": "Royaume du Maroc (Al-Mamlaka al-Maġribiyya)",
+  "nameFr": "Maroc",
   "nameOfficial": "Royaume du Maroc (Al-Mamlaka al-Maġribiyya)",
+  "summary": "Le Maroc s'appelle « Al-Maġrib » en arabe, « le couchant » ; « Maroc » vient de Marrakech, son ancienne capitale. Royaumes berbères antiques, dynasties idrisside, almoravide et almohade, puis alaouite depuis 1666 : son histoire est celle d'une longue continuité dynastique. Chleuhs, Rifains, Aït Atta et Ghomara y maintiennent le tamazight, langue officielle aux côtés de l'arabe.",
   "etymology": "Le nom \"Maroc\" vient de \"Marrakech\", ancienne capitale du pays. Le nom arabe \"Al-Maġrib\" (المغرب) signifie \"l'Occident\" ou \"le couchant\". Le nom officiel est \"Al-Mamlaka al-Maġribiyya\" (Royaume du Maroc).",
   "nameOriginActor": "Le nom \"Maroc\" vient de \"Marrakech\", fondée par les Almoravides au XIe siècle. Le nom arabe \"Al-Maġrib\" est utilisé depuis le Moyen Âge.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Maurétanie (province romaine)",
+        "Al-Maġrib (arabe, « le couchant »)"
+      ],
       "antiquity": "Maurétanie (province romaine), royaumes berbères (Maures). Le territoire était peuplé de Berbères (Amazighs).",
       "middleAges": "Al-Maġrib (nom arabe), Marrakech (capitale, origine du nom \"Maroc\"). Dynasties berbères (Idrissides, Almoravides, Almohades, Mérinides).",
       "precolonial": "Royaume du Maroc (dynasties alaouites depuis 1666), État chérifien. Le nom \"Maroc\" est utilisé en Europe depuis le Moyen Âge.",
@@ -180,18 +185,53 @@
       "postIndependence": "Royaume du Maroc (1956), modernisation de l'État, développement économique, printemps arabe (2011), réformes constitutionnelles."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Morocco",
-      "Ethnologue – Languages of Morocco",
-      "IRCAM (Institut royal de la culture amazighe)",
-      "Minority Rights Group – Amazigh in Morocco",
-      "Recensements marocains"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Morocco",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Morocco",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "IRCAM (Institut royal de la culture amazighe)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Amazigh in Morocco",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements marocains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes du Maroc",
-          "population": 25900000,
           "percentageInCountry": 70,
           "percentageInAfrica": 14.4,
           "peopleId": "PPL_ARABES_AFRIQUE",

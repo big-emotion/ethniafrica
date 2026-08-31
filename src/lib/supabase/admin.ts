@@ -1,10 +1,16 @@
+// This module holds SUPABASE_SERVICE_ROLE_KEY, which bypasses every RLS policy.
+// `server-only` is what actually keeps it out of a client bundle: importing this
+// file from a client component fails the build. The comment that used to stand
+// here in its place stopped nothing.
+import "server-only";
+
 /**
  * Client Supabase admin (pour modération)
  * Utilise la service role key pour bypasser RLS
- * ⚠️ À utiliser uniquement côté serveur, jamais exposé au client
  */
 import { createClient } from "@supabase/supabase-js";
 
+// @req REQ-054
 export const createAdminClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;

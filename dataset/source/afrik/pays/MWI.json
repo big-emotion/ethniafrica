@@ -1,11 +1,13 @@
 {
   "id": "MWI",
-  "nameFr": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "nameFr": "Malawi",
   "nameOfficial": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "summary": "Le Malawi tire son nom de Maravi, royaume des XVIe et XVIIe siècles dont le nom évoque en chewa les flammes ou les reflets. Protectorat britannique du Nyasaland jusqu'en 1964, il reprit alors ce nom ancien. Chewa, Tumbuka, Lomwe et Yao y perpétuent le Gule Wamkulu, grand rituel masqué.",
   "etymology": "Le nom \"Malawi\" vient du mot \"Maravi\", nom d'un ancien royaume qui dominait la région aux XVIe-XVIIe siècles. \"Maravi\" signifie \"flammes\" ou \"reflets\" en langue chewa, en référence aux reflets du soleil sur le lac Malawi. Le nom a été officialisé lors de l'indépendance en 1964.",
   "nameOriginActor": "Le nom \"Malawi\" vient de l'ancien royaume de Maravi. Le nom \"Nyasaland\" (pays du Nyasa, du nom du lac) était utilisé pendant la colonisation britannique. Le nom \"Malawi\" a été officialisé à l'indépendance en 1964 par le président Hastings Kamuzu Banda.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Nyasaland (1891-1964)"],
       "antiquity": "Le territoire actuel du Malawi était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "XVIe-XVIIe siècles : Royaume de Maravi, puissant royaume qui dominait la région. Le royaume était centré sur le lac Malawi (lac Nyasa). Développement des chefferies Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga. Commerce régional et avec les Portugais. Les Européens utilisaient le terme \"Nyasaland\" (pays du Nyasa) pour désigner la région.",
@@ -197,13 +199,54 @@
       "postIndependence": "1964-1994 : Présidence de Hastings Kamuzu Banda, régime autoritaire, parti unique. 1994-présent : Transition démocratique, élections multipartites, présidence de Bakili Muluzi (1994-2004), Bingu wa Mutharika (2004-2012), Joyce Banda (2012-2014), Peter Mutharika (2014-2020), Lazarus Chakwera (depuis 2020). Défis : pauvreté, développement économique, VIH/sida, sécurité alimentaire. Le Malawi est l'un des pays les plus pauvres d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Malawi",
-      "CIA World Factbook – Malawi",
-      "ONU / UNFPA – Démographie Malawi 2025",
-      "Recensements malawiens",
-      "Études anthropologiques sur les peuples du Malawi",
-      "Études historiques sur le royaume de Maravi",
-      "CIA World Factbook – Malawi (ethnic groups, 2018 census)"
+      {
+        "title": "SIL Ethnologue – Languages of Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Malawi 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements malawiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Malawi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume de Maravi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Malawi (ethnic groups, 2018 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

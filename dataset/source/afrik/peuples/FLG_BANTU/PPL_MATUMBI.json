@@ -71,10 +71,30 @@
       ]
     },
     "sources": [
-      "PeopleGroups.org – Matumbi of Tanzania (https://peoplegroups.org/people_groups/pg014986/)",
-      "Global Prayer Resource Network – Matumbi People of Tanzania (http://www.globalprn.com/wp-content/uploads/Jan-Day-11-20.pdf)",
-      "Orville Jenkins – Language, Tribe and Ethnic Clusters: Analyzing the Ndengereko (http://orvillejenkins.com/ethnicity/langtribendengereko.html)",
-      "Ethnologue – Matuumbi (mgw) (https://www.ethnologue.com/language/mgw/)"
+      {
+        "title": "PeopleGroups.org – Matumbi of Tanzania",
+        "url": "https://peoplegroups.org/people_groups/pg014986/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Global Prayer Resource Network – Matumbi People of Tanzania",
+        "url": "http://www.globalprn.com/wp-content/uploads/Jan-Day-11-20.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers globalprn.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Orville Jenkins – Language, Tribe and Ethnic Clusters: Analyzing the Ndengereko",
+        "url": "http://orvillejenkins.com/ethnicity/langtribendengereko.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Ethnologue – Matuumbi (mgw)",
+        "url": "https://www.ethnologue.com/language/mgw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Nsenga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "MOZ", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nsenga",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "Nsenga – Encyclopaedia Britannica (https://www.britannica.com/topic/Nsenga)",
-      "Nsenga in Zambia – Joshua Project (https://joshuaproject.net/people_groups/print/14047/ZA)",
-      "The Nsenga People – Nsenga Bible Community (https://www.nsengabiblecommunity.org/en/culture/our-history)",
-      "Nsenga people – 101lasttribes.com (https://www.101lasttribes.com/tribes/nsenga.html)",
-      "Nsenga – Glottolog (https://glottolog.org/resource/languoid/id/nsen1242)"
+      {
+        "title": "Nsenga – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Nsenga",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Nsenga in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14047/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Nsenga People – Nsenga Bible Community",
+        "url": "https://www.nsengabiblecommunity.org/en/culture/our-history",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nsengabiblecommunity.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Nsenga people – 101lasttribes.com",
+        "url": "https://www.101lasttribes.com/tribes/nsenga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Nsenga – Glottolog",
+        "url": "https://glottolog.org/resource/languoid/id/nsen1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

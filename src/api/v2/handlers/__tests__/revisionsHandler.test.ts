@@ -41,7 +41,7 @@ describe("listPeopleRevisionsHandler", () => {
       data: items,
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         pagination: { limit: 20, next_cursor: null },
       },
       errors: [],
@@ -103,7 +103,7 @@ describe("getPeopleRevisionSnapshotHandler", () => {
       data: snapshot.data,
       meta: {
         license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
+        attribution: "EthniAfrica — ethniafrica.com",
         confidence: 0.92,
         pinned_url: "/api/v2/peoples/PPL_YORUBA/versions/3",
       },

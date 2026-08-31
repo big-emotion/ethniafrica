@@ -1,11 +1,16 @@
 {
   "id": "ZAF",
-  "nameFr": "République d'Afrique du Sud (Republic of South Africa)",
+  "nameFr": "Afrique du Sud",
   "nameOfficial": "République d'Afrique du Sud (Republic of South Africa)",
+  "summary": "L'Afrique du Sud porte un nom purement géographique, officialisé en 1961. Peuples khoïsan, royaumes nguni et chefferies sotho-tswana en occupaient le territoire avant la colonie du Cap. Onze langues officielles y disent une histoire faite de royaumes africains, de colonisation européenne et de sortie de l'apartheid.",
   "etymology": "Le nom \"Afrique du Sud\" est géographique, désignant la position du pays à l'extrémité australe du continent africain. Le nom a été officialisé en 1961 lors de la proclamation de la République. Avant cela, le territoire était appelé \"Union sud-africaine\" (1910-1961).",
   "nameOriginActor": "Le nom \"Afrique du Sud\" est géographique et a été officialisé par les autorités sud-africaines en 1961. Les navigateurs portugais utilisaient \"Cabo da Boa Esperança\" (Cap de Bonne-Espérance) pour désigner la région du Cap.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie du Cap (1652-1910)",
+        "Union sud-africaine (1910-1961)"
+      ],
       "antiquity": "Le territoire était peuplé de peuples Khoisan (San et Khoikhoi), Nguni, Sotho-Tswana, Venda et Tsonga sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement de royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de sociétés autonomes : Khoisan (San et Khoikhoi), royaumes Nguni, chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas d'unification politique.",
@@ -195,32 +200,88 @@
       "postIndependence": "Apartheid (1948-1994) : système de ségrégation raciale, résistance, sanctions internationales. Transition démocratique (1994) : élection de Nelson Mandela, réconciliation nationale. République démocratique depuis 1994 : développement économique, défis de réconciliation et d'égalité."
     },
     "sources": [
-      "CIA World Factbook – South Africa",
-      "SIL Ethnologue – Languages of South Africa",
-      "Recensements nationaux sud-africains",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples sud-africains",
-      "Études historiques sur l'apartheid et la transition démocratique",
-      "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022) – https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
+      {
+        "title": "CIA World Factbook – South Africa",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of South Africa",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux sud-africains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sud-africains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'apartheid et la transition démocratique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022)",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Statistics South Africa – Mid-year population estimates 2025 (P0302, population by population group)",
+        "url": "https://www.statssa.gov.za/publications/P0302/P03022025.pdf",
+        "tier": "official",
+        "notes": "National statistical office; supplies the 2025 headcount per population group."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Africains noirs",
-          "percentageInCountry": 81.4
+          "percentageInCountry": 81.4,
+          "population": 51600000
         },
         {
           "name": "Métis (Coloureds)",
-          "percentageInCountry": 8.2
+          "percentageInCountry": 8.2,
+          "population": 5300000
         },
         {
           "name": "Blancs",
-          "percentageInCountry": 7.3
+          "percentageInCountry": 7.3,
+          "population": 4500000
         },
         {
           "name": "Indiens / Asiatiques",
-          "percentageInCountry": 2.7
+          "percentageInCountry": 2.7,
+          "population": 1600000
         },
         {
           "name": "Autres / Non spécifié",

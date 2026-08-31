@@ -3,6 +3,7 @@
   "nameMain": "Banyarwanda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["RWA", "BDI", "UGA", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Banyarwanda",
@@ -104,12 +105,42 @@
       ]
     },
     "sources": [
-      "UNFPA — Rwanda Population 2025. https://www.unfpa.org/data/world-population/RW",
-      "Minority Rights Group — Banyarwanda in the DRC. https://minorityrights.org/communities/banyarwanda/",
-      "Bilinguistics — Kinyarwanda Speech and Language Development. https://bilinguistics.com/languages/kinyarwanda-speech-and-language-development/",
-      "TrekRwandaGorillas — Rwanda Population 2025. https://trekrwandagorillas.com/rwanda-population/",
-      "SIL Ethnologue — Kinyarwanda (kin). https://www.ethnologue.com/language/kin",
-      "USHMM — Divided by Ethnicity : Rwanda. https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity"
+      {
+        "title": "UNFPA — Rwanda Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/RW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Minority Rights Group — Banyarwanda in the DRC",
+        "url": "https://minorityrights.org/communities/banyarwanda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Bilinguistics — Kinyarwanda Speech and Language Development",
+        "url": "https://bilinguistics.com/languages/kinyarwanda-speech-and-language-development/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bilinguistics.com; the tier awaits editorial review."
+      },
+      {
+        "title": "TrekRwandaGorillas — Rwanda Population 2025",
+        "url": "https://trekrwandagorillas.com/rwanda-population/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers trekrwandagorillas.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Kinyarwanda (kin)",
+        "url": "https://www.ethnologue.com/language/kin",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "USHMM — Divided by Ethnicity : Rwanda",
+        "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ushmm.org."
+      }
     ]
   }
 }

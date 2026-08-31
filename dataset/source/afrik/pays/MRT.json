@@ -1,11 +1,16 @@
 {
   "id": "MRT",
-  "nameFr": "République Islamique de Mauritanie (Al-Jumhūriyyah al-Islāmiyyah al-Mūrītāniyyah)",
+  "nameFr": "Mauritanie",
   "nameOfficial": "République Islamique de Mauritanie (Al-Jumhūriyyah al-Islāmiyyah al-Mūrītāniyyah)",
+  "summary": "La Mauritanie doit son nom à la « Mauretania » des Romains, repris par les Français au début du XXe siècle. Terre de l'empire almoravide, elle est un seuil entre le Maghreb et l'Afrique de l'Ouest. Maures, Haratines, Halpulaar, Soninké et Wolof y font coexister le hassaniya, le pulaar, le soninké et le wolof.",
   "etymology": "Le nom \"Mauritanie\" vient du terme \"Mauretania\" utilisé par les Romains pour désigner la région de l'Afrique du Nord-Ouest. Le nom moderne \"Mauritanie\" a été adopté par les Français lors de la colonisation (1904-1960). Le terme \"Maures\" (Beidhane) désigne les populations arabophones nomades de la région. Les Européens utilisaient \"Pays des Maures\" pour désigner la région.",
   "nameOriginActor": "Les Français ont adopté le nom \"Mauritanie\" lors de la création du protectorat (1904) puis de la colonie (1920). Le nom fait référence aux \"Maures\" (Beidhane), populations arabophones nomades de la région. Le terme \"Mauretania\" était utilisé par les Romains pour désigner une région différente (actuel Maroc et Algérie occidentale), sans continuité réelle avec la Mauritanie moderne.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Mauretania (romain)",
+        "Colonie de Mauritanie (1920-1960)"
+      ],
       "antiquity": "Le territoire actuel de la Mauritanie était peuplé de Berbères Sanhaja (Lemtouna, Massufa, Godala) et de populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de nom unifié pour l'ensemble du territoire.",
       "middleAges": "VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara). Termes locaux : \"Bilad Chinguetti\" (pays de Chinguetti), \"trilhad\" (pays des nomades). Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères.",
       "precolonial": "Tribus Maures (Beidhane), populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine). Les Européens utilisaient \"Pays des Maures\" (Mauretania dérivé de l'Antiquité, mais sans continuité réelle).",
@@ -197,20 +202,65 @@
       "postIndependence": "République Islamique de Mauritanie (1960), présidence de Mokhtar Ould Daddah (1960-1978), coups d'État (1978, 1984, 2005, 2008), abolition officielle de l'esclavage (1981, mais pratiques persistantes), conflit du Sahara occidental (1975-1979), tensions ethniques (1989-1991, expulsion de Négro-Mauritaniens), transition démocratique (depuis 2007), présidence de Mohamed Ould Abdel Aziz (2008-2019), Mohamed Ould Ghazouani (depuis 2019). Défis : esclavage (pratiques persistantes malgré l'abolition officielle), tensions ethniques, développement économique, sécurité (terrorisme)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Mauritania",
-      "SIL Ethnologue – Languages of Mauritania",
-      "Minority Rights Group – Haratine in Mauritania",
-      "Anti-Slavery International – Slavery in Mauritania",
-      "Recensements mauritaniens",
-      "Études anthropologiques sur les peuples de Mauritanie",
-      "Études historiques sur l'empire Almoravide"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Haratine in Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Anti-Slavery International – Slavery in Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements mauritaniens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Mauritanie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire Almoravide",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Maures / Beidhane",
-          "population": 1900000,
           "percentageInCountry": 40,
           "percentageInAfrica": 1.1,
           "peopleId": "PPL_ARABES_AFRIQUE",
@@ -219,7 +269,6 @@
         },
         {
           "name": "Haratine",
-          "population": 1425000,
           "percentageInCountry": 30,
           "peopleId": "PPL_HARATINE",
           "region": "Toutes les régions de la Mauritanie",

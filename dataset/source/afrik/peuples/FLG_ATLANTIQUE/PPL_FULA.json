@@ -16,6 +16,7 @@
     "MRT",
     "SLE"
   ],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Fula (Fulbe / Peul)",
@@ -173,12 +174,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Fulfulde language (ful). https://www.ethnologue.com/language/ful/",
-      "Last, Murray — The Sokoto Caliphate. Longman, 1967.",
-      "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977.",
-      "Diallo, Thierno — Les institutions politiques du Fouta-Djallon au XIXe siecle. IFAN, 1972.",
-      "UNFPA — Sahel population data. https://www.unfpa.org/",
-      "CIA World Factbook — Country profiles. https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "SIL Ethnologue — Fulfulde language (ful)",
+        "url": "https://www.ethnologue.com/language/ful/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Last, Murray — The Sokoto Caliphate. Longman, 1967",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Diallo, Thierno — Les institutions politiques du Fouta-Djallon au XIXe siecle. IFAN, 1972",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNFPA — Sahel population data",
+        "url": "https://www.unfpa.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "CIA World Factbook — Country profiles",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

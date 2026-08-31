@@ -3,6 +3,7 @@
   "nameMain": "Nyakyusa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA", "MWI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nyakyusa",
@@ -93,15 +94,60 @@
       ]
     },
     "sources": [
-      "Nyakyusa, Ngonde in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14078/TZ)",
-      "Nyakyusa, Ngonde in Malawi – Joshua Project (https://joshuaproject.net/people_groups/14078/MI)",
-      "Nyakyusa And Ngonde – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fn17/summary)",
-      "Nyakyusa people – 101lasttribes.com (https://www.101lasttribes.com/tribes/nyakyusa.html)",
-      "Nyakyusa – Encyclopaedia Britannica (https://www.britannica.com/topic/Nyakyusa)",
-      "Wilson, Monica – Good Company: A Study of Nyakyusa Age-Villages, Oxford University Press, 1951",
-      "Wilson, Monica – Communal Rituals of the Nyakyusa, Oxford University Press / International African Institute, 1959",
-      "Wilson, Godfrey – An Introduction to Nyakyusa Society, Bantu Studies 10, 1936, pp. 253-291 (https://ehrafworldcultures.yale.edu/cultures/fn17/documents/008)",
-      "Nyakyusa-Ngonde – Glottolog (https://glottolog.org/resource/languoid/id/nyak1260)"
+      {
+        "title": "Nyakyusa, Ngonde in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14078/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Nyakyusa, Ngonde in Malawi – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14078/MI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Nyakyusa And Ngonde – eHRAF World Cultures, Yale University",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fn17/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Nyakyusa people – 101lasttribes.com",
+        "url": "https://www.101lasttribes.com/tribes/nyakyusa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Nyakyusa – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Nyakyusa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Wilson, Monica – Good Company: A Study of Nyakyusa Age-Villages, Oxford University Press, 1951",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Wilson, Monica – Communal Rituals of the Nyakyusa, Oxford University Press / International African Institute, 1959",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Wilson, Godfrey – An Introduction to Nyakyusa Society, Bantu Studies 10, 1936, pp. 253-291",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fn17/documents/008",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Nyakyusa-Ngonde – Glottolog",
+        "url": "https://glottolog.org/resource/languoid/id/nyak1260",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

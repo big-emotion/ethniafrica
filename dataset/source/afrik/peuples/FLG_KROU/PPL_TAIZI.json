@@ -3,6 +3,7 @@
   "nameMain": "Tajuasohn",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["LBR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tajuasohn",
@@ -78,14 +79,54 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Tajuasohn language (tja). https://www.ethnologue.com/language/tja/",
-      "Glottolog 5.3 — Tajuasohn (taju1238). https://glottolog.org/resource/languoid/id/taju1238",
-      "Ethnologue — Liberia languages. https://www.ethnologue.com/country/LR/",
-      "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire/Liberia. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
-      "101 Last Tribes — Kru people. https://www.101lasttribes.com/tribes/kru.html",
-      "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012). https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
-      "Britannica — Kru ethnic group. https://www.britannica.com/topic/Kru",
-      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/"
+      {
+        "title": "SIL Ethnologue — Tajuasohn language (tja)",
+        "url": "https://www.ethnologue.com/language/tja/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog 5.3 — Tajuasohn (taju1238)",
+        "url": "https://glottolog.org/resource/languoid/id/taju1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethnologue — Liberia languages",
+        "url": "https://www.ethnologue.com/country/LR/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire/Liberia",
+        "url": "https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for refworld.org."
+      },
+      {
+        "title": "101 Last Tribes — Kru people",
+        "url": "https://www.101lasttribes.com/tribes/kru.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012)",
+        "url": "https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for llacan.cnrs.fr."
+      },
+      {
+        "title": "Britannica — Kru ethnic group",
+        "url": "https://www.britannica.com/topic/Kru",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "CIA World Factbook — Liberia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/liberia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

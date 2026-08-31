@@ -10,7 +10,10 @@ import {
   getPaginatedAfrikPeoples,
   getAfrikPeoplesByLanguageFamily,
   getAfrikPeoplesByCountry,
+  getAfrikPeoplesByIds,
   searchAfrikPeoples,
+  getPeopleCountsByLanguageFamily,
+  UNCLASSIFIED_FAMILY_KEY,
 } from "../peoples";
 import { createServerClient } from "../../../server";
 
@@ -104,6 +107,7 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("getAllAfrikPeoples", () => {
+    // @req REQ-019
     it("should return all peoples with relations", async () => {
       setupMock({
         peoplesData: [
@@ -232,6 +236,7 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("getAfrikPeopleById", () => {
+    // @req REQ-019
     it("should return a people by ID", async () => {
       setupMock({
         peoplesSingleData: {
@@ -250,6 +255,7 @@ describe("AFRIK Peoples Queries", () => {
       expect(result?.currentCountries).toContain("ZWE");
     });
 
+    // @req REQ-019
     it("should return null when not found", async () => {
       mockSupabase.from.mockReturnValue(mockSupabase);
       mockSupabase.select.mockReturnValue(mockSupabase);
@@ -266,6 +272,7 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("getAfrikPeoplesByLanguageFamily", () => {
+    // @req REQ-019
     it("should filter peoples by language family", async () => {
       setupMock({
         peoplesData: [
@@ -287,6 +294,7 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("getAfrikPeoplesByCountry", () => {
+    // @req REQ-019
     it("should filter peoples by country", async () => {
       mockSupabase.from.mockImplementation((table: string) => {
         if (table === "afrik_people_countries") {
@@ -338,6 +346,7 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("searchAfrikPeoples", () => {
+    // @req REQ-019
     it("should use FTS textSearch on search_vector with french config", async () => {
       // Chain: from().select().textSearch().order()
       mockSupabase.from.mockImplementation((table: string) => {
@@ -382,6 +391,7 @@ describe("AFRIK Peoples Queries", () => {
       expect(result[0].id).toBe("PPL_SHONA");
     });
 
+    // @req REQ-019
     it("should return stemmed matches via french dictionary", async () => {
       mockSupabase.from.mockImplementation((table: string) => {
         if (table === "afrik_people_countries") {
@@ -424,6 +434,94 @@ describe("AFRIK Peoples Queries", () => {
       );
       expect(result).toHaveLength(1);
       expect(result[0].nameMain).toBe("Kikongo");
+    });
+  });
+
+  describe("getPeopleCountsByLanguageFamily", () => {
+    // @req REQ-108
+    it("should group stored peoples rows by language_family_id in a single query", async () => {
+      const rows = [
+        ...Array.from({ length: 28 }, () => ({
+          language_family_id: "FLG_X",
+        })),
+        { language_family_id: null },
+        { language_family_id: null },
+      ];
+      const chain = { select: vi.fn() };
+      chain.select.mockResolvedValue({ data: rows, error: null });
+      mockSupabase.from.mockReturnValue(chain);
+
+      const result = await getPeopleCountsByLanguageFamily();
+
+      expect(mockSupabase.from).toHaveBeenCalledWith("afrik_peoples");
+      expect(chain.select).toHaveBeenCalledWith("language_family_id");
+      expect(mockSupabase.from).toHaveBeenCalledTimes(1);
+      expect(result.get("FLG_X")).toBe(28);
+      expect(result.get(UNCLASSIFIED_FAMILY_KEY)).toBe(2);
+    });
+
+    // @req REQ-108
+    it("should throw when the query fails", async () => {
+      const chain = { select: vi.fn() };
+      chain.select.mockResolvedValue({
+        data: null,
+        error: { message: "boom" },
+      });
+      mockSupabase.from.mockReturnValue(chain);
+
+      await expect(getPeopleCountsByLanguageFamily()).rejects.toBeTruthy();
+    });
+  });
+
+  describe("getAfrikPeoplesByIds", () => {
+    // @req REQ-116
+    it("should return the named peoples with their country relations", async () => {
+      setupMock({
+        peoplesData: [
+          {
+            id: "PPL_SOMALI",
+            name_main: "Somali",
+            language_family_id: "FLG_COUCHITIQUE",
+            content: {},
+          },
+          {
+            id: "PPL_TUAREG",
+            name_main: "Touaregs",
+            language_family_id: "FLG_BERBERE",
+            content: {},
+          },
+        ],
+        relationsData: [
+          { people_id: "PPL_SOMALI", country_id: "SOM" },
+          { people_id: "PPL_TUAREG", country_id: "NER" },
+        ],
+      });
+
+      const result = await getAfrikPeoplesByIds(["PPL_SOMALI", "PPL_TUAREG"]);
+
+      expect(mockSupabase.in).toHaveBeenCalledWith("id", [
+        "PPL_SOMALI",
+        "PPL_TUAREG",
+      ]);
+      expect(result.map((people) => people.id)).toEqual([
+        "PPL_SOMALI",
+        "PPL_TUAREG",
+      ]);
+      expect(result[0].currentCountries).toContain("SOM");
+      expect(result[1].currentCountries).toContain("NER");
+    });
+
+    /**
+     * A family whose fiche names no identified people reaches here with an
+     * empty list. PostgREST answers `in.()` with a syntax error, so the guard
+     * is what keeps an ordinary editorial gap from reading as an outage.
+     */
+    // @req REQ-116
+    it("should answer an empty list without touching the database", async () => {
+      const result = await getAfrikPeoplesByIds([]);
+
+      expect(result).toEqual([]);
+      expect(mockSupabase.from).not.toHaveBeenCalled();
     });
   });
 });

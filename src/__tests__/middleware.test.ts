@@ -216,6 +216,63 @@ describe("middleware", () => {
     });
   });
 
+  // The three hub URLs shipped under their resource names before the axes
+  // gave them verbs. They were published, so they are indexed and
+  // bookmarked: the rename has to leave a trail rather than a 404.
+  describe("legacy hub redirects (REQ-114)", () => {
+    // @req REQ-114
+    it.each([
+      ["peuples-hub", "comprendre"],
+      ["pays-hub", "explorer"],
+      ["familles-hub", "jouer"],
+    ])("redirects /fr/%s to /fr/%s with 308", async (legacy, current) => {
+      const request = new NextRequest(`http://localhost:3000/fr/${legacy}`);
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        `http://localhost:3000/fr/${current}`
+      );
+    });
+
+    // @req REQ-114
+    it("carries the query string across the rename", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/fr/pays-hub?from=newsletter"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/explorer?from=newsletter"
+      );
+    });
+
+    // @req REQ-114
+    it("normalizes a trailing slash rather than 404ing on it", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/peuples-hub/");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/comprendre"
+      );
+    });
+
+    // The rename moved a hub, not the resource pages it groups. /fr/explorer/peuples
+    // is a live route and must not be swept up by a prefix match on
+    // "peuples".
+    // @req REQ-114
+    it("leaves the resource pages the hubs group untouched", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/fr/explorer/peuples"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).not.toBe(308);
+    });
+  });
+
   describe("language redirect (FR-only)", () => {
     it("redirects /en to /fr with 308 (permanent)", async () => {
       const request = new NextRequest("http://localhost:3000/en");
@@ -233,27 +290,46 @@ describe("middleware", () => {
       expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
     });
 
-    it("redirects /en/peuples to /fr/peuples preserving subpath", async () => {
+    // @req REQ-091
+    it("redirects /en/peuples to /fr/explorer/peuples preserving subpath", async () => {
       const request = new NextRequest("http://localhost:3000/en/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/peuples"
+        "http://localhost:3000/fr/explorer/peuples"
       );
     });
 
-    it("redirects /es/pays/zaf to /fr/pays/zaf preserving deep subpath", async () => {
+    // @req REQ-091
+    it("redirects /es/pays/zaf to /fr/explorer/pays/zaf preserving deep subpath", async () => {
       const request = new NextRequest("http://localhost:3000/es/pays/zaf");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/pays/zaf"
+        "http://localhost:3000/fr/explorer/pays/zaf"
       );
     });
 
     it("preserves query string on language redirect", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/en/peuples?tri=population"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/explorer/peuples?tri=population"
+      );
+    });
+
+    // A query naming a fiche is spent by the redirect rather than forwarded:
+    // it produced the path. Forwarding it too would hand the directory an
+    // identifier it would act on, which is the second hop this composition
+    // exists to remove.
+    // @req REQ-091
+    it("spends a deep-link query rather than forwarding it", async () => {
       const request = new NextRequest(
         "http://localhost:3000/en/peuples?people=PPL_YORUBA"
       );
@@ -261,7 +337,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/peuples?people=PPL_YORUBA"
+        "http://localhost:3000/fr/explorer/peuples/PPL_YORUBA"
       );
     });
 
@@ -273,8 +349,11 @@ describe("middleware", () => {
       expect(response.headers.get("location")).toBeNull();
     });
 
-    it("does not redirect /fr/peuples", async () => {
-      const request = new NextRequest("http://localhost:3000/fr/peuples");
+    // @req REQ-091
+    it("does not redirect /fr/explorer/peuples", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/fr/explorer/peuples"
+      );
       const response = await middleware(request);
 
       expect(response.status).toBe(200);
@@ -346,6 +425,34 @@ describe("middleware", () => {
       expect(csp).toContain("frame-ancestors 'self'");
     });
 
+    // Neither directive falls back to default-src, so leaving them out leaves
+    // them unrestricted: an injected <base> can re-point every relative URL on
+    // the page, and an injected form can post to any origin.
+    // @req REQ-052
+    it("restricts base-uri and form-action, which do not inherit default-src", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+
+      expect(csp).toContain("base-uri 'self'");
+      expect(csp).toContain("form-action 'self'");
+    });
+
+    // The style relaxation is scoped to public localized pages; these two are
+    // not, so the branch that loosens style-src must still carry them.
+    // @req REQ-052
+    it("restricts base-uri and form-action on public localized pages too", async () => {
+      const request = new NextRequest("http://localhost:3000/fr");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+
+      expect(csp).toContain("style-src 'self' 'unsafe-inline'");
+      expect(csp).toContain("base-uri 'self'");
+      expect(csp).toContain("form-action 'self'");
+    });
+
     it("does not include 'unsafe-inline' in script-src or style-src", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
       const response = await middleware(request);
@@ -362,6 +469,60 @@ describe("middleware", () => {
       expect(styleSrc).toBeDefined();
       expect(styleSrc).not.toContain("'unsafe-inline'");
       expect(styleSrc).toMatch(/'nonce-[^']+'/);
+    });
+
+    // @req REQ-052
+    it("allows only the known Next.js runtime style hashes", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const styleSrc = directives.find((d) => d.startsWith("style-src "));
+
+      expect(styleSrc).toContain(
+        "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='"
+      );
+      expect(styleSrc).toContain(
+        "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='"
+      );
+    });
+
+    // @req REQ-052
+    it("allows inline style attributes only on public localized pages", async () => {
+      for (const pathname of [
+        "/fr",
+        "/fr/explorer/pays/SEN",
+        "/fr/explorer/familles/FLG_BANTU",
+      ]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
+
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBe("style-src-attr 'unsafe-inline'");
+        expect(
+          directives.find((directive) => directive.startsWith("style-src "))
+        ).toBe("style-src 'self' 'unsafe-inline'");
+      }
+
+      for (const pathname of ["/api/v2/countries/SEN", "/admin/login"]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
+
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBeUndefined();
+      }
     });
 
     it("generates a different nonce for each request", async () => {

@@ -3,6 +3,7 @@
   "nameMain": "Bakongo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "COG", "AGO", "GAB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bakongo",
@@ -104,10 +105,30 @@
       ]
     },
     "sources": [
-      "The Bakongo: History, Spirituality, and Civilizational Legacy – Yaden Africa, 2025 (https://www.yaden-africa.com/bakongo/)",
-      "Kongo People History, Language and Religion – Study.com (https://study.com/academy/lesson/kongo-people-history-kingdom-language-bakongo.html)",
-      "UNFPA Congo DRC Population 2025 (https://www.unfpa.org/data/world-population/CD)",
-      "Glottolog : Kongo, ISO 639-3 : kon/kng (https://glottolog.org)"
+      {
+        "title": "The Bakongo: History, Spirituality, and Civilizational Legacy – Yaden Africa, 2025",
+        "url": "https://www.yaden-africa.com/bakongo/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers yaden-africa.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kongo People History, Language and Religion – Study.com",
+        "url": "https://study.com/academy/lesson/kongo-people-history-kingdom-language-bakongo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "UNFPA Congo DRC Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/CD",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Glottolog : Kongo, ISO 639-3 : kon/kng",
+        "url": "https://glottolog.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

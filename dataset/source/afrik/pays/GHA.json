@@ -1,11 +1,13 @@
 {
   "id": "GHA",
-  "nameFr": "République du Ghana (Republic of Ghana)",
+  "nameFr": "Ghana",
   "nameOfficial": "République du Ghana (Republic of Ghana)",
+  "summary": "Le Ghana a choisi en 1957 le nom d'un empire qui ne se trouvait pas sur son territoire : le Wagadu, situé plus au nord-ouest. Son sol est celui des royaumes akan — Ashanti, Denkyira, Akwamu — et des peuples mole-dagbani, ewe et ga-dangme. Le kente et l'adinkra en sont les signatures visuelles.",
   "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
   "nameOriginActor": "Le nom \"Ghana\" a été choisi par Kwame Nkrumah et les nationalistes ghanéens lors de l'indépendance en 1957 pour honorer l'héritage historique de l'empire du Ghana, bien que l'empire historique ne se trouvait pas sur le territoire actuel.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Côte-de-l'Or / Gold Coast (XVe-XIXe siècles)"],
       "antiquity": "Le territoire était peuplé de royaumes Akan (Bono, Akwamu, Denkyira, Asante, Fante, Akuapem), peuples Ga-Dangme, Guan, Gur et Mandé sans nom unifié. L'empire du Ghana (Wagadu) était situé en Mauritanie/Mali, pas dans le Ghana actuel.",
       "middleAges": "Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti (Asante) devient le plus puissant. Commerce avec les Européens (or, esclaves).",
       "precolonial": "Royaumes Akan puissants (Ashanti, Denkyira, Akwamu), peuples Ga-Dangme sur la côte, royaumes gur au nord (Dagomba, Mamprusi). Commerce côtier avec les Européens. Pas de nom unifié pour l'ensemble du territoire.",
@@ -150,14 +152,60 @@
       "postIndependence": "Première République (1957-1966) : présidence de Nkrumah, socialisme africain. Régimes militaires (1966-1992). Quatrième République depuis 1992 : alternance démocratique, développement économique, modèle de démocratie en Afrique."
     },
     "sources": [
-      "CIA World Factbook – Ghana",
-      "SIL Ethnologue – Languages of Ghana",
-      "Recensements nationaux ghanéens",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples ghanéens",
-      "Études historiques sur le royaume Ashanti",
-      "CIA World Factbook – Ghana (ethnic groups, 2010 census)"
+      {
+        "title": "CIA World Factbook – Ghana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Ghana",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux ghanéens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples ghanéens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume Ashanti",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Ghana (ethnic groups, 2010 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

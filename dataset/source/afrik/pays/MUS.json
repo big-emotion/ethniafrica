@@ -1,11 +1,17 @@
 {
   "id": "MUS",
-  "nameFr": "République de Maurice (Republic of Mauritius, Repiblik Moris)",
+  "nameFr": "Maurice",
   "nameOfficial": "République de Maurice (Republic of Mauritius, Repiblik Moris)",
+  "summary": "Maurice porte le nom d'un prince néerlandais, Maurice de Nassau, qui n'y a jamais mis les pieds. L'île était inhabitée : sa population entière est issue de la colonisation, de l'esclavage et de l'engagisme. Indo-Mauriciens, Créoles, Sino-Mauriciens et Franco-Mauriciens y ont fait du créole mauricien une langue commune.",
   "etymology": "Le nom \"Maurice\" vient du prince Maurice de Nassau (Maurice d'Orange), en l'honneur duquel l'île a été nommée par les Néerlandais en 1598. Le nom créole \"Moris\" est dérivé de \"Maurice\". L'île était auparavant appelée \"Dina Arobi\" (île déserte) par les Arabes.",
   "nameOriginActor": "Les Néerlandais ont nommé l'île \"Mauritius\" en l'honneur du prince Maurice de Nassau (Maurice d'Orange), stathouder des Provinces-Unies. Les Français l'ont appelée \"Île de France\" (1715-1810), puis les Britanniques ont restauré le nom \"Mauritius\" (1810).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Dina Arobi (arabe, « île déserte »)",
+        "Mauritius (néerlandais, 1598)",
+        "Île de France (1715-1810)"
+      ],
       "antiquity": "L'île Maurice était inhabitée. Les Arabes l'ont appelée \"Dina Arobi\" (île déserte) mais ne l'ont pas colonisée.",
       "middleAges": "L'île reste inhabitée. Les Arabes connaissent l'île mais ne s'y installent pas.",
       "precolonial": "L'île reste inhabitée jusqu'à l'arrivée des Européens. Pas de nom unifié avant la colonisation.",
@@ -212,12 +218,48 @@
       "postIndependence": "République de Maurice (1968), développement économique (tourisme, industrie textile, services financiers), stabilité politique, démocratie multipartite, développement social. Maurice est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Mauritius",
-      "SIL Ethnologue – Languages of Mauritius",
-      "Recensements mauriciens",
-      "Études anthropologiques sur les peuples de Maurice",
-      "Histoire de Maurice (colonisation, immigration indienne, créolisation)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mauritius",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Mauritius",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements mauriciens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Maurice",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Histoire de Maurice (colonisation, immigration indienne, créolisation)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

@@ -3,6 +3,7 @@
   "nameMain": "Kroumen",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kroumen",
@@ -94,12 +95,42 @@
       ]
     },
     "sources": [
-      "OpenEdition Ethnomusicologie — La danse bollo des Kroumen en Côte d'Ivoire, 2023. https://journals.openedition.org/ethnomusicologie/5068",
-      "Glottolog — Tepo Krumen (ted). https://glottolog.org/resource/languoid/id/tepo1239",
-      "Kroumen.com — Aspects of tone change in three Krumen languages. https://kroumen.com/sites/www.kroumen.com/files/20414%20Krumen%20Tones%20ver2_0.pdf",
-      "History Today — Kroomen: Black Slaver Hunters. https://www.historytoday.com/archive/feature/kroomen-black-slaver-hunters",
-      "Qiraat Africa — The Kru/Kroo of West Africa. https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/",
-      "Facebook/APRNews1 — Les Kroumen, 2024. https://www.facebook.com/APRNEWS1/posts/connais-tu-les-kroumen"
+      {
+        "title": "OpenEdition Ethnomusicologie — La danse bollo des Kroumen en Côte d'Ivoire, 2023",
+        "url": "https://journals.openedition.org/ethnomusicologie/5068",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "Glottolog — Tepo Krumen (ted)",
+        "url": "https://glottolog.org/resource/languoid/id/tepo1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kroumen.com — Aspects of tone change in three Krumen languages",
+        "url": "https://kroumen.com/sites/www.kroumen.com/files/20414%20Krumen%20Tones%20ver2_0.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kroumen.com; the tier awaits editorial review."
+      },
+      {
+        "title": "History Today — Kroomen: Black Slaver Hunters",
+        "url": "https://www.historytoday.com/archive/feature/kroomen-black-slaver-hunters",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers historytoday.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — The Kru/Kroo of West Africa",
+        "url": "https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Facebook/APRNews1 — Les Kroumen, 2024",
+        "url": "https://www.facebook.com/APRNEWS1/posts/connais-tu-les-kroumen",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

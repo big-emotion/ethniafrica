@@ -5,10 +5,12 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { useLanguage } from "@/hooks/use-language";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 
 const content = {
   fr: {
@@ -32,6 +34,7 @@ const content = {
   },
 };
 
+// @req REQ-052
 export default function ConnexionPage() {
   const params = useParams();
   const lang = (params?.lang as string) || "fr";
@@ -88,87 +91,87 @@ export default function ConnexionPage() {
     <PageLayout language={language} onLanguageChange={setLanguage} hideHeader>
       <div className="max-w-md mx-auto space-y-8 py-12 px-4">
         <div className="space-y-2">
-          <h1 className="text-2xl font-display font-bold">{t.title}</h1>
-          <p className="text-muted-foreground text-sm">{t.subtitle}</p>
+          <h1 className="text-afh-h2 font-display font-bold">{t.title}</h1>
+          <p className="text-muted-foreground text-afh-small">{t.subtitle}</p>
         </div>
 
         {status === "sent" ? (
           <p
             role="status"
-            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800"
+            className="rounded-md bg-green-50 border border-green-200 px-4 py-3 text-afh-small text-green-800"
           >
             {t.magicLinkSent}
           </p>
         ) : (
-          <form onSubmit={handleMagicLink} noValidate className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="email">{t.emailLabel}</Label>
-              <Input
-                id="email"
-                type="email"
-                autoComplete="email"
-                placeholder={t.emailPlaceholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                aria-required="true"
-                aria-invalid={status === "error" ? "true" : undefined}
-              />
-              <button
-                type="button"
-                onClick={handleMagicLinkPrefill}
-                className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+          <Card className="rounded-afh-xl p-6 sm:p-8">
+            <form onSubmit={handleMagicLink} noValidate className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="email">{t.emailLabel}</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder={t.emailPlaceholder}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  aria-required="true"
+                  aria-invalid={status === "error" ? "true" : undefined}
+                />
+                <button
+                  type="button"
+                  onClick={handleMagicLinkPrefill}
+                  className="text-afh-caption text-muted-foreground underline underline-offset-2 hover:text-foreground"
+                >
+                  {t.forgotPasswordText} → {t.magicLinkButton.toLowerCase()}
+                </button>
+              </div>
+
+              {status === "error" && errorMsg && (
+                <FormFieldError>{errorMsg}</FormFieldError>
+              )}
+
+              <Button
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full md:w-auto"
               >
-                {t.forgotPasswordText} → {t.magicLinkButton.toLowerCase()}
-              </button>
-            </div>
+                {t.magicLinkButton}
+              </Button>
 
-            {status === "error" && errorMsg && (
-              <p role="alert" className="text-sm text-red-600">
-                {errorMsg}
-              </p>
-            )}
+              <div className="relative flex items-center gap-3">
+                <div className="flex-1 border-t" aria-hidden="true" />
+                <span className="text-afh-caption text-muted-foreground">
+                  {t.orSeparator}
+                </span>
+                <div className="flex-1 border-t" aria-hidden="true" />
+              </div>
 
-            <Button
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full"
-            >
-              {t.magicLinkButton}
-            </Button>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => handleOAuth("github")}
+                disabled={status === "loading"}
+              >
+                <GitHubIcon aria-hidden="true" />
+                {t.githubButton}
+              </Button>
 
-            <div className="relative flex items-center gap-3">
-              <div className="flex-1 border-t" aria-hidden="true" />
-              <span className="text-xs text-muted-foreground">
-                {t.orSeparator}
-              </span>
-              <div className="flex-1 border-t" aria-hidden="true" />
-            </div>
-
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full gap-2"
-              onClick={() => handleOAuth("github")}
-              disabled={status === "loading"}
-            >
-              <GitHubIcon aria-hidden="true" />
-              {t.githubButton}
-            </Button>
-
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full gap-2"
-              onClick={() => handleOAuth("google")}
-              disabled={status === "loading"}
-            >
-              <GoogleIcon aria-hidden="true" />
-              {t.googleButton}
-            </Button>
-          </form>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => handleOAuth("google")}
+                disabled={status === "loading"}
+              >
+                <GoogleIcon aria-hidden="true" />
+                {t.googleButton}
+              </Button>
+            </form>
+          </Card>
         )}
 
-        <p className="text-sm text-center text-muted-foreground">
+        <p className="text-afh-small text-center text-muted-foreground">
           {t.registerLink}{" "}
           <Link
             href={`/${lang}/compte/inscription`}

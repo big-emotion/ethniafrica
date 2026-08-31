@@ -3,6 +3,7 @@
   "nameMain": "Xhosa (Ciskei)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Xhosa du Ciskei",
@@ -87,11 +88,36 @@
       ]
     },
     "sources": [
-      "South African History Online — Ciskei. https://www.sahistory.org.za/place/ciskei",
-      "Human Rights Watch — South Africa: Ciskei: Ten Years on. https://www.hrw.org/reports/1991/southafrica3/",
-      "SIL Ethnologue — Xhosa (xho). https://www.ethnologue.com/language/xho/",
-      "Statistics South Africa — Census 2011. http://www.statssa.gov.za/",
-      "CIA World Factbook — South Africa. https://www.cia.gov/the-world-factbook/countries/south-africa/"
+      {
+        "title": "South African History Online — Ciskei",
+        "url": "https://www.sahistory.org.za/place/ciskei",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Human Rights Watch — South Africa: Ciskei: Ten Years on",
+        "url": "https://www.hrw.org/reports/1991/southafrica3/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "SIL Ethnologue — Xhosa (xho)",
+        "url": "https://www.ethnologue.com/language/xho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Statistics South Africa — Census 2011",
+        "url": "http://www.statssa.gov.za/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      },
+      {
+        "title": "CIA World Factbook — South Africa",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-africa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

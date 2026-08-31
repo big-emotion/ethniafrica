@@ -3,6 +3,7 @@
   "nameMain": "Kodia Krou",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kodia Krou",
@@ -73,10 +74,30 @@
       ]
     },
     "sources": [
-      "Ethnologue – Kodia Language (KWP) (https://www.ethnologue.com/language/kwp/)",
-      "Joshua Project – Cote d'Ivoire people groups, Kwadia (https://joshuaproject.net/countries/iv)",
-      "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirité and Conflict (https://www.landinfo.no/asset/514/1/514_1.pdf)",
-      "Facebook – Ethnies de CI : peuple Kodia (https://www.facebook.com/ethniesdeCI/posts/3360851760603000/)"
+      {
+        "title": "Ethnologue – Kodia Language (KWP)",
+        "url": "https://www.ethnologue.com/language/kwp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project – Cote d'Ivoire people groups, Kwadia",
+        "url": "https://joshuaproject.net/countries/iv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirité and Conflict",
+        "url": "https://www.landinfo.no/asset/514/1/514_1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for landinfo.no."
+      },
+      {
+        "title": "Facebook – Ethnies de CI : peuple Kodia",
+        "url": "https://www.facebook.com/ethniesdeCI/posts/3360851760603000/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

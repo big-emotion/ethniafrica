@@ -3,6 +3,7 @@
   "nameMain": "Makonde (Mozambique)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Makonde (Mozambique)",
@@ -86,12 +87,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Makonde (kde). https://www.ethnologue.com/language/kde/",
-      "Joshua Project — Makonde in Mozambique. https://joshuaproject.net/people_groups/13427/MZ",
-      "Museu do Aljube — Mueda Plateau Meeting 1960. https://www.museudoaljube.pt/en/2023/06/17/mueda-plateau-meeting/",
-      "African Blackwood Conservation Project — Makonde Art. https://www.blackwoodconservation.org/makonde-art/",
-      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "Mozambique High Commission — Cabo Delgado. http://www.mozambiquehighcommission.org.uk/cabo-delgado.html"
+      {
+        "title": "SIL Ethnologue — Makonde (kde)",
+        "url": "https://www.ethnologue.com/language/kde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Makonde in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/13427/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Museu do Aljube — Mueda Plateau Meeting 1960",
+        "url": "https://www.museudoaljube.pt/en/2023/06/17/mueda-plateau-meeting/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers museudoaljube.pt; the tier awaits editorial review."
+      },
+      {
+        "title": "African Blackwood Conservation Project — Makonde Art",
+        "url": "https://www.blackwoodconservation.org/makonde-art/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blackwoodconservation.org."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Mozambique High Commission — Cabo Delgado",
+        "url": "http://www.mozambiquehighcommission.org.uk/cabo-delgado.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mozambiquehighcommission.org.uk; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -76,12 +76,42 @@
       ]
     },
     "sources": [
-      "Rangi in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14519)",
-      "Exploring contact in Rangi- and Alagwa-speaking communities – Gibson & Mous, LHEAF 2024 (https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf)",
-      "Why Rangi Christians Continue to Practice African Traditional Religion – Cox, DIU 2007 (https://diu.edu/documents/gialens/Vol2-3/Cox-Why-Rangi-Christians-Practice-ATR.pdf)",
-      "Rangi of Tanzania – Pray Africa (https://prayafrica.org/project/rangi-of-tanzania/)",
-      "Rangi language and alphabet – Omniglot (https://www.omniglot.com/writing/rangi.htm)",
-      "Tanzania and the Rangi – Africa Inland Mission Europe, 2023 (https://eu.aimint.org/resources/tanzania-and-the-rangi/)"
+      {
+        "title": "Rangi in Tanzania – Joshua Project",
+        "url": "https://www.joshuaproject.net/people_groups/14519",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Exploring contact in Rangi- and Alagwa-speaking communities – Gibson & Mous, LHEAF 2024",
+        "url": "https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lheaf.org."
+      },
+      {
+        "title": "Why Rangi Christians Continue to Practice African Traditional Religion – Cox, DIU 2007",
+        "url": "https://diu.edu/documents/gialens/Vol2-3/Cox-Why-Rangi-Christians-Practice-ATR.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers diu.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Rangi of Tanzania – Pray Africa",
+        "url": "https://prayafrica.org/project/rangi-of-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for prayafrica.org."
+      },
+      {
+        "title": "Rangi language and alphabet – Omniglot",
+        "url": "https://www.omniglot.com/writing/rangi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Tanzania and the Rangi – Africa Inland Mission Europe, 2023",
+        "url": "https://eu.aimint.org/resources/tanzania-and-the-rangi/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers eu.aimint.org; the tier awaits editorial review."
+      }
     ]
   }
 }

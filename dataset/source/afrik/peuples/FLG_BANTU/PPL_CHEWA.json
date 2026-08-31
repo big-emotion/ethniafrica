@@ -3,6 +3,7 @@
   "nameMain": "Chewa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["MWI", "ZMB", "MOZ", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Chewa",
@@ -100,10 +101,30 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica, Chewa: https://www.britannica.com/topic/Chewa-people",
-      "101 Last Tribes, Chewa people: https://www.101lasttribes.com/tribes/chewa.html",
-      "Ethnologue, Chichewa (nya): https://www.ethnologue.com/language/nya/",
-      "Deutsche Welle, The Nyau cult: https://www.dw.com/en/the-nyau-cult-unmasking-one-of-africas-secret-societies/a-38463791"
+      {
+        "title": "Encyclopaedia Britannica, Chewa",
+        "url": "https://www.britannica.com/topic/Chewa-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes, Chewa people",
+        "url": "https://www.101lasttribes.com/tribes/chewa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue, Chichewa (nya)",
+        "url": "https://www.ethnologue.com/language/nya/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Deutsche Welle, The Nyau cult",
+        "url": "https://www.dw.com/en/the-nyau-cult-unmasking-one-of-africas-secret-societies/a-38463791",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dw.com."
+      }
     ]
   }
 }

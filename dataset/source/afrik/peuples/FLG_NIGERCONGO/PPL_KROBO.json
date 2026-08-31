@@ -3,6 +3,7 @@
   "nameMain": "Krobo",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Krobo",
@@ -84,11 +85,36 @@
       ]
     },
     "sources": [
-      "Adangme (Dangme) – Glottolog 5.3, ISO 639-3 : ada (https://glottolog.org/resource/languoid/id/adan1247)",
-      "Lower Manya Krobo population – CityPopulation.de (https://www.citypopulation.de)",
-      "Yilo Krobo Municipal population 2021 – Ghana Statistical Service (https://microdata.statsghana.gov.gh)",
-      "Krobo People Migration from Klo Mountains – Facebook / Groupes communautaires (https://www.facebook.com/groups/924725521287406/posts/2143468266079786/)",
-      "Lower Manya Krobo Ghana statistics 2025 – Global Populations (https://globalpopulations.com/gh/2840258-lower-manya-krobo/)"
+      {
+        "title": "Adangme (Dangme) – Glottolog 5.3, ISO 639-3 : ada",
+        "url": "https://glottolog.org/resource/languoid/id/adan1247",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Lower Manya Krobo population – CityPopulation.de",
+        "url": "https://www.citypopulation.de",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Yilo Krobo Municipal population 2021 – Ghana Statistical Service",
+        "url": "https://microdata.statsghana.gov.gh",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh, matched as a parent of microdata.statsghana.gov.gh."
+      },
+      {
+        "title": "Krobo People Migration from Klo Mountains – Facebook / Groupes communautaires",
+        "url": "https://www.facebook.com/groups/924725521287406/posts/2143468266079786/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Lower Manya Krobo Ghana statistics 2025 – Global Populations",
+        "url": "https://globalpopulations.com/gh/2840258-lower-manya-krobo/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for globalpopulations.com."
+      }
     ]
   }
 }

@@ -78,11 +78,36 @@
       ]
     },
     "sources": [
-      "Nkhumbi in Angola – Joshua Project, joshuaproject.net/people_groups/13417 (2025)",
-      "Nyaneka in Angola – Joshua Project, joshuaproject.net/people_groups/14084 (2025)",
-      "The Nyaneka-Nkhumbi – Contemporary Capoeira, capoeirahistory.com/the-nyaneka-nkhumbi/ (2024)",
-      "Angola – Ethnic Groups – Encyclopaedia Britannica, www.britannica.com/place/Angola/People (consulte 2025)",
-      "Glottolog 5.3 – Nkhumbi, glottolog.org/resource/languoid/id/nkhu1238 (2025)"
+      {
+        "title": "Nkhumbi in Angola – Joshua Project, joshuaproject.net/people_groups/13417 (2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Nyaneka in Angola – Joshua Project, joshuaproject.net/people_groups/14084 (2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Nyaneka-Nkhumbi – Contemporary Capoeira, capoeirahistory.com/the-nyaneka-nkhumbi/ (2024)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Angola – Ethnic Groups – Encyclopaedia Britannica, www.britannica.com/place/Angola/People (consulte 2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.3 – Nkhumbi, glottolog.org/resource/languoid/id/nkhu1238 (2025)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

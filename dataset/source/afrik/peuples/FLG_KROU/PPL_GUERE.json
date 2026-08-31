@@ -3,6 +3,7 @@
   "nameMain": "Guéré",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Guéré",
@@ -99,12 +100,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Guere people. https://www.101lasttribes.com/tribes/guere.html",
-      "Joshua Project — Guere in Côte d'Ivoire. https://joshuaproject.net/people_groups/11124",
-      "ECOI/IRB Canada — Côte d'Ivoire : information sur l'ethnie Wé, 2018. https://www.ecoi.net/de/dokument/2041625.html",
-      "Minority Rights Group — Côte d'Ivoire. https://minorityrights.org/country/cote-divoire/",
-      "Guiblehon, Bi Drombé — La conception du temps chez les Wè en Côte d'Ivoire. Sycomore 5.1, 2011. https://translation.bible/publications/sycomore/5.1/Guiblehon_Syc_5.1_2011_25-39.pdf",
-      "Holsoe, Svend E. & Lauer, Joseph — Who Are the Kran/Guere and the Gio/Yacouba? African Studies Review 19(1), 1976. https://www.cambridge.org/core/journals/african-studies-review/article/who-are-the-kranguere-and-the-gioyacouba-ethnic-identifications-along-the-liberiaivory-coast-border/4E33CA4D6CDC5962A21AEE535A3E10AD"
+      {
+        "title": "101 Last Tribes — Guere people",
+        "url": "https://www.101lasttribes.com/tribes/guere.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Guere in Côte d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/11124",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ECOI/IRB Canada — Côte d'Ivoire : information sur l'ethnie Wé, 2018",
+        "url": "https://www.ecoi.net/de/dokument/2041625.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      },
+      {
+        "title": "Minority Rights Group — Côte d'Ivoire",
+        "url": "https://minorityrights.org/country/cote-divoire/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Guiblehon, Bi Drombé — La conception du temps chez les Wè en Côte d'Ivoire. Sycomore 5.1, 2011",
+        "url": "https://translation.bible/publications/sycomore/5.1/Guiblehon_Syc_5.1_2011_25-39.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for translation.bible."
+      },
+      {
+        "title": "Holsoe, Svend E. & Lauer, Joseph — Who Are the Kran/Guere and the Gio/Yacouba? African Studies Review 19(1), 1976",
+        "url": "https://www.cambridge.org/core/journals/african-studies-review/article/who-are-the-kranguere-and-the-gioyacouba-ethnic-identifications-along-the-liberiaivory-coast-border/4E33CA4D6CDC5962A21AEE535A3E10AD",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org."
+      }
     ]
   }
 }

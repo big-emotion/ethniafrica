@@ -9,13 +9,31 @@ interface AfrikBreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
+// @req REQ-115
 export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
-  if (!items.length) return null;
+  // A trail that leads nowhere but here is not a trail. The home derives a
+  // single crumb — itself, marked `aria-current` — so the shell used to print
+  // a lone "Accueil" above the accueil. The test is the href rather than the
+  // crumb count: a trail truncated on a segment it cannot name keeps every
+  // href, and that lone way back is worth rendering.
+  if (!items.some((item) => item.href)) return null;
 
   return (
-    <nav aria-label="Fil d'ariane" className="px-3 md:px-4 xl:px-5 mt-2 mb-1">
+    // Vertical rhythm only: the horizontal gutter belongs to whatever mounts
+    // the trail, so it lines up with that surface's title and body instead of
+    // stacking a second indent on top of the container's.
+    <nav aria-label="Fil d'ariane" className="mt-2 mb-1">
+      {/* The interface step, not the caption one. On the three facets the
+          trail is the only thing naming the reader's position above a
+          full-bleed globe, and 13px is the size reserved for an annotation
+          under a figure — it read as a caption of the page rather than as the
+          way back out of it. */}
       <ol
-        className="flex flex-wrap items-center gap-1 text-[11px] md:text-[12px]"
+        // justify-*, not text-align: the site centres its text on a phone
+        // by inheritance from `body` (styles/mobile-text.css), and a flex
+        // row ignores that entirely. Without this the trail was the one
+        // thing still hanging off the left edge on every route.
+        className="flex flex-wrap items-center justify-center gap-1.5 text-afh-small md:justify-start"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
       >
         {items.map((item, index) => (
@@ -28,12 +46,23 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
             {item.href ? (
               <Link
                 href={item.href}
+                prefetch={false}
                 className="hover:underline hover:opacity-80 transition-opacity"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="font-medium opacity-80">{item.label}</span>
+              // The crumb with no href is where the reader actually is, and it
+              // was the only one dimmed — soft text made softer, which axe
+              // reads as a serious contrast failure. It gets full ink instead;
+              // the path back is the part that can afford to be quiet.
+              <span
+                className="font-medium"
+                style={{ color: "var(--afh-text, #111827)" }}
+                aria-current="page"
+              >
+                {item.label}
+              </span>
             )}
           </li>
         ))}

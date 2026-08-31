@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Zimbabwe)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE", "ZMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tonga (Zimbabwe)",
@@ -93,13 +94,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Tonga (toi), langue du Zimbabwe et Zambie. https://www.ethnologue.com/language/toi/",
-      "Matebeleland Pulse (2026) — 23 000 BaTonga Displaced from Kariba. https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
-      "International Rivers Resource Hub (1995/2007) — Legacy of Dams on the Zambezi. https://riverresourcehub.org/resources/legacy-of-dams-on-the-zambezi-group-works-to-right-wrongs-at-kariba-dam-1995/",
-      "Mashingaidze, Terence M. — The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements, 1956-1980s. Journal of African History of Social Sciences, vol. 9, no. 1. https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf",
-      "Colson, Elizabeth (1971) — The Social Consequences of Resettlement. Manchester University Press.",
-      "Zimtribes.com — Tonga Tribes, clans and political organization. https://www.blog.zimtribes.com/tonga-groups/",
-      "Smithsonian Folkways — Dance Songs with Drums from the Valley Tonga. https://folkways.si.edu/dance-songs-with-drums-from-the-valley-tonga-people-of-zambia/world/music/album/smithsonian"
+      {
+        "title": "SIL Ethnologue — Tonga (toi), langue du Zimbabwe et Zambie",
+        "url": "https://www.ethnologue.com/language/toi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Matebeleland Pulse (2026) — 23 000 BaTonga Displaced from Kariba",
+        "url": "https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for matebelelandpulse.co.zw."
+      },
+      {
+        "title": "International Rivers Resource Hub (1995/2007) — Legacy of Dams on the Zambezi",
+        "url": "https://riverresourcehub.org/resources/legacy-of-dams-on-the-zambezi-group-works-to-right-wrongs-at-kariba-dam-1995/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers riverresourcehub.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Mashingaidze, Terence M. — The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements, 1956-1980s. Journal of African History of Social Sciences, vol. 9, no. 1",
+        "url": "https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+      },
+      {
+        "title": "Colson, Elizabeth (1971) — The Social Consequences of Resettlement. Manchester University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Zimtribes.com — Tonga Tribes, clans and political organization",
+        "url": "https://www.blog.zimtribes.com/tonga-groups/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blog.zimtribes.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Folkways — Dance Songs with Drums from the Valley Tonga",
+        "url": "https://folkways.si.edu/dance-songs-with-drums-from-the-valley-tonga-people-of-zambia/world/music/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      }
     ]
   }
 }

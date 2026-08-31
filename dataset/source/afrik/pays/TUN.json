@@ -1,11 +1,17 @@
 {
   "id": "TUN",
-  "nameFr": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
+  "nameFr": "Tunisie",
   "nameOfficial": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
+  "summary": "La Tunisie porte le nom de sa capitale, dont l'origine est peut-être berbère ou punique. Carthage, l'Afrique romaine — d'où vient le nom du continent —, le royaume vandale et les califats s'y sont succédé, avant la régence de Tunis et le protectorat français. Arabes et Berbères de Tunisie y perpétuent le malouf et le mezoued.",
   "etymology": "Le nom \"Tunisie\" vient de \"Tunis\", la capitale. Le nom \"Tunis\" vient probablement de \"Tynes\" (ancien nom berbère) ou de \"Tunès\" (nom punique). Le nom arabe \"Tūnis\" (تونس) est utilisé depuis le Moyen Âge.",
   "nameOriginActor": "Le nom \"Tunisie\" vient de \"Tunis\", fondée par les Berbères puis développée par les Arabes. Le nom a été officialisé lors de la colonisation française.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Ifriqiya (berbère puis arabe)",
+        "Africa (romain, origine du nom du continent)",
+        "Régence de Tunis (1574-1881)"
+      ],
       "antiquity": "Ifriqiya (nom berbère), Africa (nom romain, origine du nom du continent), Carthage (ancienne capitale punique). Le territoire était peuplé de Berbères et de Phéniciens.",
       "middleAges": "Ifriqiya (nom arabe), Tunis (capitale). Dynasties arabes et berbères (Aghlabides, Fatimides, Zirides, Hafsides).",
       "precolonial": "Régence de Tunis (1574-1881), État ottoman semi-autonome dirigé par des beys. Le territoire était appelé \"Ifriqiya\" ou \"Tunis\".",
@@ -141,17 +147,47 @@
       "postIndependence": "République tunisienne (1956), modernisation de l'État, développement économique, révolution de 2011 (printemps arabe), transition démocratique."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Tunisia",
-      "Ethnologue – Languages of Tunisia",
-      "Minority Rights Group – Amazigh in Tunisia",
-      "Recensements tunisiens"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Tunisia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Tunisia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Amazigh in Tunisia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements tunisiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes de Tunisie",
-          "population": 11760000,
           "percentageInCountry": 98,
           "percentageInAfrica": 6.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

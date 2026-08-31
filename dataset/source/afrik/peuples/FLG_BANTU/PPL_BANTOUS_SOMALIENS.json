@@ -3,6 +3,7 @@
   "nameMain": "Bantous somaliens",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["SOM", "KEN", "USA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bantous somaliens",
@@ -102,11 +103,36 @@
       ]
     },
     "sources": [
-      "Minority Rights Group – Bantu in Somalia, 2024 (https://minorityrights.org/communities/bantu/)",
-      "Gosha people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gosha.html)",
-      "The Somali Bantu: Their History and Culture – Cultural Orientation Resource Exchange (http://www.culturalorientation.net/content/download/1359/7917/version/2/file/The+Somali+Bantu.pdf)",
-      "Orville Jenkins – Who are the 'Somali Bantu'?, 2015 (http://orvillejenkins.com/peoples/somalibantu.html)",
-      "Refworld – World Directory of Minorities and Indigenous Peoples – Somalia (https://www.refworld.org/reference/countryrep/mrgi/2018/121768)"
+      {
+        "title": "Minority Rights Group – Bantu in Somalia, 2024",
+        "url": "https://minorityrights.org/communities/bantu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Gosha people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/gosha.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "The Somali Bantu: Their History and Culture – Cultural Orientation Resource Exchange",
+        "url": "http://www.culturalorientation.net/content/download/1359/7917/version/2/file/The+Somali+Bantu.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers culturalorientation.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Orville Jenkins – Who are the 'Somali Bantu'?, 2015",
+        "url": "http://orvillejenkins.com/peoples/somalibantu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Refworld – World Directory of Minorities and Indigenous Peoples – Somalia",
+        "url": "https://www.refworld.org/reference/countryrep/mrgi/2018/121768",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for refworld.org."
+      }
     ]
   }
 }

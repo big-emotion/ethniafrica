@@ -1,11 +1,13 @@
 {
   "id": "TCD",
-  "nameFr": "République du Tchad (Republic of Chad, جمهورية تشاد)",
+  "nameFr": "Tchad",
   "nameOfficial": "République du Tchad (Republic of Chad, جمهورية تشاد)",
+  "summary": "Le Tchad porte le nom de son lac, du kanembu « tsade », la grande étendue d'eau. Royaumes du Kanem et du Bornou, chefferies sara : son territoire articule Sahara, Sahel et savane. Sara, Arabes tchadiens, Kanembu et Toubou y font coexister traditions soudaniques et sahariennes.",
   "etymology": "Le nom \"Tchad\" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme \"Tchad\" (ou \"Chad\" en anglais) est dérivé du mot kanembu \"tsade\" ou \"sade\", signifiant \"grande étendue d'eau\" ou \"lac\". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle.",
   "nameOriginActor": "Le nom \"Tchad\" vient du lac Tchad, nommé par les peuples locaux (Kanembu). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle lors de la création de la colonie du Tchad.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Colonie française du Tchad (1900-1960)"],
       "antiquity": "Présence de peuples sahariens et soudaniques centraux dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Kanem\" par les géographes arabes.",
       "middleAges": "Présence de peuples sahariens (Kanembu, Toubou) et soudaniques centraux (Sara) dans la région. Développement du royaume du Kanem (VIIIe-XIVe siècles) et du royaume du Bornou (XIVe-XIXe siècles). La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes.",
       "precolonial": "Présence de peuples sahariens (Kanembu, Toubou), soudaniques centraux (Sara), et arabes dans la région. Développement du royaume du Kanem-Bornou. La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
@@ -155,18 +157,53 @@
       "postIndependence": "République du Tchad (1960), présidence de François Tombalbaye (1960-1975, régime autoritaire, parti unique), coup d'État (1975), guerre civile (1965-1979, 2005-2010), présidence d'Hissène Habré (1982-1990, régime autoritaire, crimes contre l'humanité), présidence d'Idriss Déby (1990-2021, régime autoritaire, rébellions), mort d'Idriss Déby (2021), transition militaire, présidence de Mahamat Idriss Déby (depuis 2021). Stabilité politique fragile, État en transition, conflits récents (guerre civile, rébellions, coups d'État), développement économique (agriculture, élevage, exploitation pétrolière). Le Tchad est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Chad",
-      "SIL Ethnologue – Languages of Chad",
-      "Recensements tchadiens",
-      "Études anthropologiques sur les peuples du Tchad",
-      "Études historiques sur la colonisation française"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Chad",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Chad",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements tchadiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Tchad",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation française",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Sara",
-          "population": 3000000,
           "percentageInCountry": 18,
           "peopleId": "PPL_SARA",
           "region": "Sud du Tchad",
@@ -174,7 +211,6 @@
         },
         {
           "name": "Arabes tchadiens",
-          "population": 2500000,
           "percentageInCountry": 15,
           "peopleId": "PPL_ARABES_AFRIQUE",
           "region": "Centre et est du Tchad, zones désertiques",
@@ -198,7 +234,6 @@
         },
         {
           "name": "Autres groupes",
-          "population": 10450000,
           "percentageInCountry": 60.7,
           "peopleId": "PPL_AUTRES_GROUPES",
           "region": "Toutes les régions du Tchad"

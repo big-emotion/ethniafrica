@@ -108,13 +108,48 @@
       ]
     },
     "sources": [
-      "Britannica — Kingdom of Loango. https://www.britannica.com/place/Kingdom-of-Loango",
-      "Britannica — Vili people. https://www.britannica.com/topic/Vili-people",
-      "SIL ISO 639-3 — Vili (vif). https://iso639-3.sil.org/code/vif",
-      "Ethnologue — Vili language (vif). https://www.ethnologue.com/language/vif/",
-      "Joshua Project — Vili, Fioti in Congo, Republic of the. https://joshuaproject.net/people_groups/15792/CF",
-      "African History Extra — A history of the Loango kingdom (ca.1500-1883). https://www.africanhistoryextra.com/p/a-history-of-the-loango-kingdom-ca1500",
-      "101 Last Tribes — Vili people. https://www.101lasttribes.com/tribes/vili.html"
+      {
+        "title": "Britannica — Kingdom of Loango",
+        "url": "https://www.britannica.com/place/Kingdom-of-Loango",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Britannica — Vili people",
+        "url": "https://www.britannica.com/topic/Vili-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL ISO 639-3 — Vili (vif)",
+        "url": "https://iso639-3.sil.org/code/vif",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\" (sil.org), matched as a parent of iso639-3.sil.org."
+      },
+      {
+        "title": "Ethnologue — Vili language (vif)",
+        "url": "https://www.ethnologue.com/language/vif/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Vili, Fioti in Congo, Republic of the",
+        "url": "https://joshuaproject.net/people_groups/15792/CF",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "African History Extra — A history of the Loango kingdom (ca.1500-1883)",
+        "url": "https://www.africanhistoryextra.com/p/a-history-of-the-loango-kingdom-ca1500",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africanhistoryextra.com."
+      },
+      {
+        "title": "101 Last Tribes — Vili people",
+        "url": "https://www.101lasttribes.com/tribes/vili.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

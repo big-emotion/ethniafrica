@@ -3,6 +3,7 @@
   "nameMain": "Saho",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ERI", "ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Saho",
@@ -85,12 +86,42 @@
       ]
     },
     "sources": [
-      "Saho, Irob in Eritrea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/er)",
-      "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
-      "History of the Saho – Saho Archive, 2023 (https://www.sahoarchive.org/history/)",
-      "The Animal Caretakers : The Saho of Eritrea – Eritrea Ministry of Information / Shabait, 2016 (https://shabait.com/2016/08/26/the-animal-caretakers-the-saho-of-eritrea/)",
-      "Saho – Encyclopedia Britannica, 2008 (https://www.britannica.com/topic/Saho)",
-      "Saho in Ethiopia (PGID PG042732) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg042732/)"
+      {
+        "title": "Saho, Irob in Eritrea – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14641/er",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Saho, Irob in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14641/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "History of the Saho – Saho Archive, 2023",
+        "url": "https://www.sahoarchive.org/history/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for sahoarchive.org."
+      },
+      {
+        "title": "The Animal Caretakers : The Saho of Eritrea – Eritrea Ministry of Information / Shabait, 2016",
+        "url": "https://shabait.com/2016/08/26/the-animal-caretakers-the-saho-of-eritrea/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for shabait.com."
+      },
+      {
+        "title": "Saho – Encyclopedia Britannica, 2008",
+        "url": "https://www.britannica.com/topic/Saho",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Saho in Ethiopia (PGID PG042732) – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg042732/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

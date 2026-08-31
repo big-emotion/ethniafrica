@@ -3,6 +3,7 @@
   "nameMain": "Brong",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Brong",
@@ -95,10 +96,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Bono/Brong people. https://www.101lasttribes.com/tribes/bono.html",
-      "SIL Ethnologue — Abron language [abr]. https://www.ethnologue.com/language/abr/",
-      "Yengafrica — Bono cultural heritage. https://yengafrica.com/",
-      "Joshua Project — Brong people group profile"
+      {
+        "title": "101 Last Tribes — Bono/Brong people",
+        "url": "https://www.101lasttribes.com/tribes/bono.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Abron language [abr]",
+        "url": "https://www.ethnologue.com/language/abr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Yengafrica — Bono cultural heritage",
+        "url": "https://yengafrica.com/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers yengafrica.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Brong people group profile",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

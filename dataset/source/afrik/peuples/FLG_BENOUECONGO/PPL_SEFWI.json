@@ -73,9 +73,24 @@
       ]
     },
     "sources": [
-      "Esahie Language (SFW) – Ethnologue (https://www.ethnologue.com/language/sfw/)",
-      "Akan Heritage – History of Sefwi (https://akanheritage.com.gh/history.html)",
-      "Sehwi – Wikidata Q36593 (https://www.wikidata.org/wiki/Q36593)"
+      {
+        "title": "Esahie Language (SFW) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/sfw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Akan Heritage – History of Sefwi",
+        "url": "https://akanheritage.com.gh/history.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for akanheritage.com.gh."
+      },
+      {
+        "title": "Sehwi – Wikidata Q36593",
+        "url": "https://www.wikidata.org/wiki/Q36593",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wikidata.org."
+      }
     ]
   }
 }

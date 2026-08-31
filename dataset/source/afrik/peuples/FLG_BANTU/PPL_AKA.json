@@ -3,6 +3,7 @@
   "nameMain": "Aka",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CAF", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Aka",
@@ -74,12 +75,42 @@
       ]
     },
     "sources": [
-      "Aka in Central African Republic – Minority Rights Group International, 2018 (https://minorityrights.org/communities/aka/)",
-      "Culture and the Mind – Aka fieldsites, Universite de Sheffield (https://cultureandmind.sites.sheffield.ac.uk/fieldsites/aka)",
-      "Kisliuk, Michelle – Seize the Dance! BaAka Musical Life and the Ethnography of Performance, Oxford University Press, 2000",
-      "Verdu, Paul et al. – Origins and Genetic Diversity of Pygmy Hunter-Gatherers from Western Central Africa, Science, 2009 (https://www.science.org/content/article/short-history-african-pygmies)",
-      "UNESCO – Polyphonic Singing of the Ba'Aka, Intangible Cultural Heritage (https://ich.unesco.org)",
-      "Discover Afrika – The BAaka peoples (https://discover-afrika.com/baaka-peoples/)"
+      {
+        "title": "Aka in Central African Republic – Minority Rights Group International, 2018",
+        "url": "https://minorityrights.org/communities/aka/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Culture and the Mind – Aka fieldsites, Universite de Sheffield",
+        "url": "https://cultureandmind.sites.sheffield.ac.uk/fieldsites/aka",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cultureandmind.sites.sheffield.ac.uk."
+      },
+      {
+        "title": "Kisliuk, Michelle – Seize the Dance! BaAka Musical Life and the Ethnography of Performance, Oxford University Press, 2000",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Verdu, Paul et al. – Origins and Genetic Diversity of Pygmy Hunter-Gatherers from Western Central Africa, Science, 2009",
+        "url": "https://www.science.org/content/article/short-history-african-pygmies",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for science.org."
+      },
+      {
+        "title": "UNESCO – Polyphonic Singing of the Ba'Aka, Intangible Cultural Heritage",
+        "url": "https://ich.unesco.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Discover Afrika – The BAaka peoples",
+        "url": "https://discover-afrika.com/baaka-peoples/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers discover-afrika.com; the tier awaits editorial review."
+      }
     ]
   }
 }

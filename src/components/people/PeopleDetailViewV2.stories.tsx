@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
-import { PeopleHero } from "./PeopleHero";
+import { PeopleFicheHead } from "./PeopleFicheHead";
+import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
+import type { PeopleDetail } from "@/types/afrik-frontend";
 import { PeopleOriginBlock } from "./PeopleOriginBlock";
 import { PeopleLanguageSection } from "./PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
 import { PeopleCultureGrid } from "./PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
-import { PeopleSourcesFooter } from "./PeopleSourcesFooter";
+import { SourcesFooter } from "@/components/country/SourcesFooter";
 import type {
   PeopleHeroData,
   PeopleOriginData,
@@ -86,17 +88,14 @@ const history: PeopleHistoryData = {
 };
 
 const culture: PeopleCultureData = {
-  supremeDeity: "Olódùmarè",
-  intermediates: ["Obàtálá", "Ṣàngó", "Ọ̀ṣun", "Ògún", "Yemọja"],
-  initiation: "Culte Ògún (initiation masculine par le travail du fer)",
-  funerary: "Cérémonie Ẹẹgúngún (masques ancestraux)",
-  symbols: ["Àdìrẹ cloth", "Ìlẹkẹ̀ beads", "Ẹẹgúngún mask"],
-  music: "Dundun (talking drum), bata, sekere",
-  gastronomy: "Egusi soup, amala, jollof rice",
-  christianityPercentage: 45,
-  islamPercentage: 50,
-  syncretism:
-    "Pratique simultanée de l'Islam/Christianisme et de cultes traditionnels (Ifá).",
+  majorRites:
+    "Le culte des orisha structure la vie rituelle : chaque divinité dispose de fêtes annuelles et de pratiques initiatiques. La divination Ifá est inscrite au patrimoine culturel immatériel de l'UNESCO (2005).",
+  symbols:
+    "Les bronzes et sculptures d'Ifè représentent le sommet de l'art classique yoruba. Les tissus aso-oke (brocart tissé) et adire (batik à l'indigo) sont les symboles textiles de l'identité.",
+  artsAndMusic:
+    "Le dundun (tambour parlant), le bata (tambour sacré d'orisha) et le sekere sont les instruments classiques. Le juju, l'afrobeat et le fuji sont des genres modernes d'origine yoruba.",
+  spiritualities:
+    "La religion traditionnelle (Aborisa) reconnaît un Dieu suprême, Olódùmarè, et un panthéon d'orisha. Christianisme et islam coexistent avec ces cultes, souvent chez les mêmes familles.",
 };
 
 const relatedPeoples: PeopleRelatedData = {
@@ -200,6 +199,7 @@ function Card({ children }: { children: React.ReactNode }) {
 // AutonymExonymHeading — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const AutonymHeading_Mobile: Story = {
   name: "AutonymExonymHeading — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -215,12 +215,14 @@ export const AutonymHeading_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const AutonymHeading_Tablet: Story = {
   name: "AutonymExonymHeading — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: AutonymHeading_Mobile.render,
 };
 
+// @req REQ-115
 export const AutonymHeading_Desktop: Story = {
   name: "AutonymExonymHeading — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -228,18 +230,18 @@ export const AutonymHeading_Desktop: Story = {
 };
 
 // ==========================================
-// PeopleHero — 430 / 720 / 1200
+// PeopleFicheHead — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Hero_Mobile: Story = {
-  name: "PeopleHero — 430px",
+  name: "PeopleFicheHead — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
-      <PeopleHero
-        data={yorubaHero}
-        onBack={() => {}}
-        onFlagCtaClick={() => {}}
+      <PeopleFicheHead
+        hero={yorubaHero}
+        countries={countries}
         confidenceScore={null}
         sourceCount={null}
         lastHumanAuditAt={null}
@@ -248,14 +250,16 @@ export const Hero_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Hero_Tablet: Story = {
-  name: "PeopleHero — 720px",
+  name: "PeopleFicheHead — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Hero_Mobile.render,
 };
 
+// @req REQ-115
 export const Hero_Desktop: Story = {
-  name: "PeopleHero — 1200px",
+  name: "PeopleFicheHead — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Hero_Mobile.render,
 };
@@ -264,6 +268,7 @@ export const Hero_Desktop: Story = {
 // PeopleOriginBlock — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Origin_Mobile: Story = {
   name: "PeopleOriginBlock — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -274,18 +279,21 @@ export const Origin_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Origin_Tablet: Story = {
   name: "PeopleOriginBlock — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Origin_Mobile.render,
 };
 
+// @req REQ-115
 export const Origin_Desktop: Story = {
   name: "PeopleOriginBlock — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Origin_Mobile.render,
 };
 
+// @req REQ-115
 export const Origin_Empty: Story = {
   name: "PeopleOriginBlock — empty (calm omission, UX-DR31)",
   render: () => {
@@ -293,22 +301,7 @@ export const Origin_Empty: Story = {
       migrationRoutes: [],
       historicalSettlementZones: [],
     };
-    return (
-      <div style={{ padding: "24px" }}>
-        <p
-          style={{
-            color: "#999",
-            fontSize: "12px",
-            marginBottom: "8px",
-            fontStyle: "italic",
-          }}
-        >
-          Section sans données — elle s&apos;omit silencieusement (retourne
-          null).
-        </p>
-        <PeopleOriginBlock data={empty} />
-      </div>
-    );
+    return <PeopleOriginBlock data={empty} />;
   },
 };
 
@@ -316,6 +309,7 @@ export const Origin_Empty: Story = {
 // PeopleLanguageSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Language_Mobile: Story = {
   name: "PeopleLanguageSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -326,12 +320,14 @@ export const Language_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Language_Tablet: Story = {
   name: "PeopleLanguageSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Language_Mobile.render,
 };
 
+// @req REQ-115
 export const Language_Desktop: Story = {
   name: "PeopleLanguageSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -342,6 +338,7 @@ export const Language_Desktop: Story = {
 // PeopleHistoryTimeline — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const History_Mobile: Story = {
   name: "PeopleHistoryTimeline — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -352,12 +349,14 @@ export const History_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const History_Tablet: Story = {
   name: "PeopleHistoryTimeline — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: History_Mobile.render,
 };
 
+// @req REQ-115
 export const History_Desktop: Story = {
   name: "PeopleHistoryTimeline — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -368,6 +367,7 @@ export const History_Desktop: Story = {
 // PeopleCultureGrid — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Culture_Mobile: Story = {
   name: "PeopleCultureGrid — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -378,12 +378,14 @@ export const Culture_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Culture_Tablet: Story = {
   name: "PeopleCultureGrid — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Culture_Mobile.render,
 };
 
+// @req REQ-115
 export const Culture_Desktop: Story = {
   name: "PeopleCultureGrid — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -394,6 +396,7 @@ export const Culture_Desktop: Story = {
 // PeopleRelatedPeoplesSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Related_Mobile: Story = {
   name: "PeopleRelatedPeoplesSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -404,12 +407,14 @@ export const Related_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Related_Tablet: Story = {
   name: "PeopleRelatedPeoplesSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Related_Mobile.render,
 };
 
+// @req REQ-115
 export const Related_Desktop: Story = {
   name: "PeopleRelatedPeoplesSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -420,6 +425,7 @@ export const Related_Desktop: Story = {
 // PeopleCountriesSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Countries_Mobile: Story = {
   name: "PeopleCountriesSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -430,12 +436,14 @@ export const Countries_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Countries_Tablet: Story = {
   name: "PeopleCountriesSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Countries_Mobile.render,
 };
 
+// @req REQ-115
 export const Countries_Desktop: Story = {
   name: "PeopleCountriesSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -446,24 +454,215 @@ export const Countries_Desktop: Story = {
 // PeopleSourcesFooter — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Sources_Mobile: Story = {
   name: "PeopleSourcesFooter — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ padding: "12px" }}>
-      <PeopleSourcesFooter sources="SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook 2024 · UNESCO 2023" />
+      {/* One source per tier the corpus actually uses, so the story shows
+          what a low-confidence fiche looks like next to a well-sourced one. */}
+      <SourcesFooter
+        sources={[
+          {
+            label: "SIL Ethnologue 2025",
+            url: "https://www.ethnologue.com/",
+            standing: "official",
+          },
+          {
+            label: "Ajayi, J. F. A., History of West Africa (1976)",
+            url: null,
+            standing: "referenced",
+          },
+          { label: "Joshua Project", url: null, standing: "unverified" },
+          {
+            label: "Témoignage recueilli à Abeokuta, 1974",
+            url: null,
+            standing: "needs_review",
+          },
+        ]}
+      />
     </div>
   ),
 };
 
+// @req REQ-115
 export const Sources_Tablet: Story = {
   name: "PeopleSourcesFooter — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Sources_Mobile.render,
 };
 
+// @req REQ-115
 export const Sources_Desktop: Story = {
   name: "PeopleSourcesFooter — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Sources_Mobile.render,
+};
+
+// ==========================================
+// The whole fiche — the three regimes the corpus has
+//
+// Every story above renders one section on one fixture. None of them shows
+// what the fiche looks like assembled, and the three regimes assemble
+// differently: half the corpus declares a single country and gets neither a
+// picker nor a share bar, the mockup was drawn on five, and PPL_BANTU stacks
+// 21. A story of the middle case alone would keep saying the edges are fine.
+// ==========================================
+
+function sampleFiche(
+  countries: Array<{ country: string; population: number }>
+): PeopleDetail {
+  return {
+    id: "PPL_SAMPLE",
+    nameMain: "Yoruba",
+    languageFamilyId: "FLG_BENOUECONGO",
+    languageFamilyName: "Bénoué-Congo",
+    currentCountries: countries.map((entry) => entry.country),
+    appellations: {
+      mainName: "Yoruba",
+      selfAppellation: "Yoruba (Yoruba eniyan)",
+      exonyms: ["Nago (terme colonial francophone)", "Aku (diaspora)"],
+      whyProblematic:
+        "Nago peut être perçu comme réducteur par les communautés concernées.",
+      ethnoLinguisticGroup: "Volta-Congo, Yoruboid",
+      historicalRegion: "Sud-Ouest du Nigeria, Yorubaland",
+    },
+    languages: {
+      mainLanguage: "Yoruba",
+      isoCodes: ["yor"],
+      dialects: ["Oyo", "Ijebu", "Ekiti"],
+    },
+    origins: {
+      ancientOrigins:
+        "Les traditions orales placent l'origine du peuple à Ile-Ife.",
+      migrationRoutes: [],
+      historicalSettlementZones: [],
+    },
+    demography: {
+      totalPopulation: countries.reduce((sum, e) => sum + e.population, 0),
+      referenceYear: 2025,
+      distributionByCountry: countries,
+    },
+    sources: [
+      { title: "SIL Ethnologue 2025", url: null, tier: "official" },
+      { title: "Témoignage de terrain", url: null, tier: "needs_review" },
+    ],
+  };
+}
+
+const MONO_COUNTRY = sampleFiche([{ country: "NGA", population: 45500000 }]);
+
+const FIVE_COUNTRIES = sampleFiche([
+  { country: "NGA", population: 45500000 },
+  { country: "BEN", population: 1800000 },
+  { country: "TGO", population: 450000 },
+  { country: "GHA", population: 150000 },
+  { country: "SLE", population: 7300 },
+]);
+
+const TWENTY_ONE_COUNTRIES = sampleFiche(
+  [
+    "COD",
+    "TZA",
+    "AGO",
+    "ZMB",
+    "KEN",
+    "UGA",
+    "MOZ",
+    "ZWE",
+    "MWI",
+    "CMR",
+    "RWA",
+    "BDI",
+    "COG",
+    "GAB",
+    "NAM",
+    "BWA",
+    "ZAF",
+    "GNQ",
+    "CAF",
+    "SSD",
+    "SWZ",
+  ].map((country, index) => ({
+    country,
+    population: 40000000 - index * 1500000,
+  }))
+);
+
+// Named rather than an anonymous arrow: react/display-name is an error here,
+// and a story whose component shows as "Unknown" in the Storybook panel is
+// harder to place than the extra line costs.
+function wholeFiche(people: PeopleDetail) {
+  function WholeFicheStory() {
+    return (
+      <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
+        <PeopleDetailViewV2 people={people} />
+      </div>
+    );
+  }
+  return WholeFicheStory;
+}
+
+// @req REQ-115
+export const WholeFiche_Mono_Mobile: Story = {
+  name: "Fiche entière · 1 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Mono_Tablet: Story = {
+  name: "Fiche entière · 1 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Mono_Desktop: Story = {
+  name: "Fiche entière · 1 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Mobile: Story = {
+  name: "Fiche entière · 5 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Tablet: Story = {
+  name: "Fiche entière · 5 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Desktop: Story = {
+  name: "Fiche entière · 5 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Mobile: Story = {
+  name: "Fiche entière · 21 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Tablet: Story = {
+  name: "Fiche entière · 21 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Desktop: Story = {
+  name: "Fiche entière · 21 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
 };

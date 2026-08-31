@@ -3,6 +3,7 @@
   "nameMain": "Edo",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Edo",
@@ -84,11 +85,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Edo, Bini in Nigeria (2025). https://joshuaproject.net/people_groups/11714",
-      "British Museum — Benin Bronzes. https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes",
-      "Benin History — Who Are Edo People? https://beninhistory.org/origins/f/who-are-edo-people",
-      "Kumakonda — Benin City and Edo culture. https://kumakonda.com/benin-city-culture-and-masks-edo-nigeria/",
-      "Ethnologue (SIL International) — Edo language, code bin. https://www.ethnologue.com/language/bin/"
+      {
+        "title": "Joshua Project — Edo, Bini in Nigeria (2025)",
+        "url": "https://joshuaproject.net/people_groups/11714",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "British Museum — Benin Bronzes",
+        "url": "https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for britishmuseum.org."
+      },
+      {
+        "title": "Benin History — Who Are Edo People?",
+        "url": "https://beninhistory.org/origins/f/who-are-edo-people",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers beninhistory.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Kumakonda — Benin City and Edo culture",
+        "url": "https://kumakonda.com/benin-city-culture-and-masks-edo-nigeria/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+      },
+      {
+        "title": "Ethnologue (SIL International) — Edo language, code bin",
+        "url": "https://www.ethnologue.com/language/bin/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

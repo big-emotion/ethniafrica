@@ -1,11 +1,17 @@
 {
   "id": "TZA",
-  "nameFr": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
+  "nameFr": "République-Unie de Tanzanie",
   "nameOfficial": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
+  "summary": "La Tanzanie est un mot composé : « Tanganyika » et « Zanzibar », soudés à l'unification de 1964. Cités-États swahilies de la côte, sultanat de Zanzibar et royaumes bantous de l'intérieur en composent l'histoire. Sukuma, Chaga, Haya, Nyamwezi et Maasai y ont le swahili pour langue commune.",
   "etymology": "Le nom \"Tanzanie\" est une combinaison de \"Tanganyika\" et \"Zanzibar\", créé lors de l'unification en 1964. \"Tanganyika\" vient probablement du swahili \"tanga\" (voile) et \"nyika\" (plaine désertique), ou de \"tanga\" (voile) et \"hika\" (étendre). \"Zanzibar\" vient de l'arabe \"Zanj\" (noir) et \"barr\" (côte), signifiant \"côte des Noirs\".",
   "nameOriginActor": "Le nom \"Tanzanie\" a été créé en 1964 lors de l'unification du Tanganyika et de Zanzibar. \"Tanganyika\" était le nom colonial allemand puis britannique. \"Zanzibar\" était le nom du sultanat puis protectorat.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Afrique orientale allemande (1885-1918)",
+        "Tanganyika (1919-1964)",
+        "Sultanat de Zanzibar (jusqu'en 1964)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Sukuma, Chaga, Maasai, etc.) avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement des cités-États swahili sur la côte (Kilwa, Zanzibar, Pemba). Commerce avec les Arabes, les Indiens et les Perses.",
       "precolonial": "Mosaïque de peuples bantous (Sukuma, Chaga, Nyamwezi, Haya), nilotiques (Maasai, Luo) et couchitiques. Cité-États swahili sur la côte. Sultanat de Zanzibar. Pas de nom unifié pour l'ensemble du territoire.",
@@ -160,14 +166,60 @@
       "postIndependence": "1964 : Unification du Tanganyika et de Zanzibar. Première République (1964-1992) : parti unique, socialisme africain (Ujamaa). Deuxième République depuis 1992 : multipartisme, développement économique, stabilité politique, hub est-africain."
     },
     "sources": [
-      "CIA World Factbook – Tanzania",
-      "SIL Ethnologue – Languages of Tanzania",
-      "Recensements nationaux tanzaniens",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples tanzaniens",
-      "Études historiques sur les cités-États swahili",
-      "CIA World Factbook – Tanzania (ethnic groups)"
+      {
+        "title": "CIA World Factbook – Tanzania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Tanzania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux tanzaniens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples tanzaniens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les cités-États swahili",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Tanzania (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

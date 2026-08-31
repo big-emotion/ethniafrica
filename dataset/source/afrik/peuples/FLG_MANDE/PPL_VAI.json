@@ -88,13 +88,48 @@
       ]
     },
     "sources": [
-      "Joshua Project — Vai in Liberia. https://www.joshuaproject.net/people-profile.php?peo3=15762&rog3=LI",
-      "Joshua Project — Vai in Sierra Leone. https://joshuaproject.net/people_groups/15762/SL",
-      "Omniglot — Vai Syllabary. https://www.omniglot.com/writing/vaisyllabary.htm",
-      "SIL Ethnologue — Vai language (vai). https://www.ethnologue.com/language/vai/",
-      "Rosetta Panglossia — Vai Language (vai). https://rosettapanglossia.longnow.org/index.php?title=Vai_Language_%28vai%29",
-      "Massaquoi, Momolu. Vai History and Oral Traditions. Liberia National Archives.",
-      "Kelly, Piers. The Vai script — origin and development. Annual Review of Linguistics, 2018. https://www.annualreviews.org/doi/abs/10.1146/annurev-linguistics-011718-012348"
+      {
+        "title": "Joshua Project — Vai in Liberia",
+        "url": "https://www.joshuaproject.net/people-profile.php?peo3=15762&rog3=LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Vai in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/15762/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Omniglot — Vai Syllabary",
+        "url": "https://www.omniglot.com/writing/vaisyllabary.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "SIL Ethnologue — Vai language (vai)",
+        "url": "https://www.ethnologue.com/language/vai/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Rosetta Panglossia — Vai Language (vai)",
+        "url": "https://rosettapanglossia.longnow.org/index.php?title=Vai_Language_%28vai%29",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      },
+      {
+        "title": "Massaquoi, Momolu. Vai History and Oral Traditions. Liberia National Archives",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Kelly, Piers. The Vai script — origin and development. Annual Review of Linguistics, 2018",
+        "url": "https://www.annualreviews.org/doi/abs/10.1146/annurev-linguistics-011718-012348",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for annualreviews.org."
+      }
     ]
   }
 }

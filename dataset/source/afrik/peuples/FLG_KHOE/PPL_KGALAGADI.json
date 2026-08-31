@@ -3,6 +3,7 @@
   "nameMain": "Kgalagadi",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA", "NAM", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kgalagadi",
@@ -98,12 +99,42 @@
       ]
     },
     "sources": [
-      "Qiraat Africa — The Kgalagadi of Botswana. https://qiraatafrican.com/en/19023/the-kgalagadi-of-botswana/",
-      "Joshua Project — Bangologa, Kgalagadi in Botswana. https://joshuaproject.net/people_groups/12646/BC",
-      "Ethnologue SIL International — Kgalagadi language (xkv). https://www.ethnologue.com/language/xkv/",
-      "Britannica — Kgalagadi people. https://www.britannica.com/topic/Kgalagadi",
-      "Statistics Botswana — Population Distribution 2022. https://statsbots.org.bw/",
-      "Global Recordings Network — Kgalagadi (xkv). https://globalrecordings.net/en/language/xkv"
+      {
+        "title": "Qiraat Africa — The Kgalagadi of Botswana",
+        "url": "https://qiraatafrican.com/en/19023/the-kgalagadi-of-botswana/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Joshua Project — Bangologa, Kgalagadi in Botswana",
+        "url": "https://joshuaproject.net/people_groups/12646/BC",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue SIL International — Kgalagadi language (xkv)",
+        "url": "https://www.ethnologue.com/language/xkv/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Kgalagadi people",
+        "url": "https://www.britannica.com/topic/Kgalagadi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Statistics Botswana — Population Distribution 2022",
+        "url": "https://statsbots.org.bw/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsbots.org.bw."
+      },
+      {
+        "title": "Global Recordings Network — Kgalagadi (xkv)",
+        "url": "https://globalrecordings.net/en/language/xkv",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalrecordings.net."
+      }
     ]
   }
 }

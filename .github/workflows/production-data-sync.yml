@@ -19,8 +19,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      NEXT_PUBLIC_SUPABASE_URL: https://shmrjtnfbqzceovroqjj.supabase.co
-      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      # This job runs on a Vercel *Production* deploy of `main` and revalidates
+      # ethniafrica.com, so every credential here must be the production project's.
+      #
+      # It used to hard-code the recette project ref, because the constant it read was
+      # named AFRIK_PRODUCTION_SUPABASE_URL while holding the recette ref — so every
+      # production deploy loaded the corpus into recette and then busted caches on a site
+      # it had not written to. The guard enforced that pairing rather than catching it.
+      # resolveAfrikSyncTarget now refuses the combination outright.
+      #
+      # Both secrets below belong to the project backing PRODUCTION. They are distinct
+      # from NEXT_PUBLIC_SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY, which are recette's and
+      # are what the rest of CI uses.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      AFRIK_PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY }}
       PRODUCTION_REVALIDATE_SECRET: ${{ secrets.PRODUCTION_REVALIDATE_SECRET }}
 
     steps:
@@ -44,9 +57,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Require production credentials
+      # Fails rather than skipping. A skipped sync leaves the production corpus stale
+      # while the deploy reports success, which is the shape of the defect this workflow
+      # just had. A red run on a production deploy is the correct signal that production
+      # data is not syncing.
+      - name: Require the production project's credentials
         run: |
-          : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY is required}"
+          : "${NEXT_PUBLIC_SUPABASE_URL:?PRODUCTION_SUPABASE_URL is not set — the AFRIK corpus cannot be synced to production. Set it to the Supabase project backing the production application (not recette).}"
+          : "${SUPABASE_SERVICE_ROLE_KEY:?PRODUCTION_SUPABASE_SERVICE_ROLE_KEY is not set — this must be the production project's service-role key, not recette's.}"
 
       - name: Validate canonical AFRIK sources
         env:

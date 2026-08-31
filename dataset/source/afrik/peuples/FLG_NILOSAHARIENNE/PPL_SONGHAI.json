@@ -3,6 +3,7 @@
   "nameMain": "Songhai",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Songhai",
@@ -114,10 +115,30 @@
       ]
     },
     "sources": [
-      "Britannica – Songhai (ethnolinguistic group), 2026 (https://www.britannica.com/topic/Songhai)",
-      "Britannica – Songhai Empire, 2024 (https://www.britannica.com/place/Songhai-empire)",
-      "Glottolog – Koyraboro Senni ISO 639-3 : ses (https://glottolog.org/resource/languoid/id/koyr1242)",
-      "South African History Online – Songhai, African Empire 15-16th Century (https://sahistory.org.za/article/songhai-african-empire-15-16th-century)"
+      {
+        "title": "Britannica – Songhai (ethnolinguistic group), 2026",
+        "url": "https://www.britannica.com/topic/Songhai",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Britannica – Songhai Empire, 2024",
+        "url": "https://www.britannica.com/place/Songhai-empire",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Glottolog – Koyraboro Senni ISO 639-3 : ses",
+        "url": "https://glottolog.org/resource/languoid/id/koyr1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "South African History Online – Songhai, African Empire 15-16th Century",
+        "url": "https://sahistory.org.za/article/songhai-african-empire-15-16th-century",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      }
     ]
   }
 }

@@ -1,0 +1,558 @@
+/**
+ * The three fiche-globe overlays and the continent scene the /fr/explorer hub
+ * opens on (REQ-116, atlas-charter §1): pure data
+ * builders, no rendering. `AtlasGlobe` (src/components/atlas/AtlasGlobe.tsx)
+ * draws whatever these return, in both its WebGL and non-WebGL paths, so no
+ * fact about an encoding can exist only in one rendering technique.
+ *
+ * The hard rule the charter states: a people never receives a closed line —
+ * `PeopleFieldOverlay`/`PeopleFieldMissingOverlay` below have no `rings`
+ * field at all, so a caller cannot stroke one by mistake.
+ */
+import type { CountryDistribution, CountryId } from "@/types/afrik";
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
+import {
+  BASEMAP_VIEWBOX,
+  projectLonLat,
+  type AtlasViewport,
+} from "@/lib/atlas/projection";
+
+export interface LonLat {
+  lon: number;
+  lat: number;
+}
+
+export type Ring = LonLat[];
+
+function toRings(rawRings: readonly (readonly [number, number])[][]): Ring[] {
+  return rawRings.map((ring) => ring.map(([lon, lat]) => ({ lon, lat })));
+}
+
+/**
+ * Area-weighted centroid of a ring (shoelace formula), treating lon/lat as
+ * planar — a stylised placement, not a survey-grade one, the same tradeoff
+ * projection.ts's own sphere geometry already makes.
+ */
+// @req REQ-116
+export function ringCentroid(ring: Ring): LonLat {
+  let area = 0;
+  let cx = 0;
+  let cy = 0;
+
+  for (let i = 0; i < ring.length; i++) {
+    const p0 = ring[i];
+    const p1 = ring[(i + 1) % ring.length];
+    const cross = p0.lon * p1.lat - p1.lon * p0.lat;
+    area += cross;
+    cx += (p0.lon + p1.lon) * cross;
+    cy += (p0.lat + p1.lat) * cross;
+  }
+  area *= 0.5;
+
+  if (area === 0) {
+    const n = ring.length || 1;
+    return {
+      lon: ring.reduce((sum, p) => sum + p.lon, 0) / n,
+      lat: ring.reduce((sum, p) => sum + p.lat, 0) / n,
+    };
+  }
+
+  return { lon: cx / (6 * area), lat: cy / (6 * area) };
+}
+
+function largestRingCentroid(rings: Ring[]): LonLat {
+  const largest = rings.reduce((best, ring) =>
+    ring.length > best.length ? ring : best
+  );
+  return ringCentroid(largest);
+}
+
+/**
+ * Natural Earth's admin-0 layer keys two territories by its own codes rather
+ * than by ISO 3166-1 alpha-3, and the asset is generated from it verbatim.
+ * The corpus writes ISO. Without this bridge the geometry is present and
+ * unreachable — 27 declared South Sudan presences read as unmappable purely
+ * over a nomenclature disagreement.
+ *
+ * Somaliland is deliberately absent: the asset holds it as SOL and it has no
+ * ISO code at all, so aliasing it onto SOM would make the atlas assert a
+ * sovereignty claim no source in the corpus supports.
+ */
+const ADMIN0_KEY_BY_ISO: Record<string, string> = {
+  SSD: "SDS", // South Sudan
+  ESH: "SAH", // Western Sahara
+};
+
+function admin0Entry(countryId: CountryId) {
+  return (
+    AFRICA_ADMIN0[countryId] ?? AFRICA_ADMIN0[ADMIN0_KEY_BY_ISO[countryId]]
+  );
+}
+
+/** Undefined for any country absent from the committed asset — treated as missing, never as a silently dropped shape. */
+// @req REQ-116
+export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
+  const country = admin0Entry(countryId);
+  return country ? toRings(country.rings) : undefined;
+}
+
+/**
+ * The asset's own French name for a country, through the same alias as its
+ * geometry.
+ *
+ * Reading `AFRICA_ADMIN0[countryId].nameFr` directly is what broke the moment
+ * ISO codes started resolving: rings came back for SSD while the name did not,
+ * so every fiche declaring a South Sudan presence read a property off
+ * undefined. One resolver for both is the only arrangement where they cannot
+ * disagree again.
+ */
+// @req REQ-116
+export function getAdmin0NameFr(countryId: CountryId): string | undefined {
+  return admin0Entry(countryId)?.nameFr;
+}
+
+/**
+ * The six non-African silhouettes, reachable again.
+ *
+ * `WORLD_COMPARE` was generated for « Vraie taille » and orphaned when that
+ * game was retired as a category — committed, versioned and read by nothing.
+ * The Jouer hub's scene needs exactly one of them to state what Mercator does
+ * to Greenland, so the asset is either consumed here or it should be deleted;
+ * a generated asset with no consumer is a maintenance cost that pays nothing.
+ *
+ * Keys are the asset's own, not ISO: `EUW` is an aggregate of Western Europe
+ * and has no country code, which is why this takes a plain string where
+ * `getAdmin0Rings` takes a `CountryId`.
+ */
+// @req REQ-116
+export function getWorldCompareRings(shapeId: string): Ring[] | undefined {
+  const shape = WORLD_COMPARE[shapeId];
+  return shape ? toRings(shape.rings) : undefined;
+}
+
+// @req REQ-116
+export function getWorldCompareNameFr(shapeId: string): string | undefined {
+  return WORLD_COMPARE[shapeId]?.nameFr;
+}
+
+/**
+ * Every African ring in the asset, as one flat list.
+ *
+ * For silhouettes rather than for choosing: the committed world path holds
+ * every landmass Natural Earth does *not* assign to Africa, so a map that
+ * wants a whole planet draws that path and this together. Keys are ignored
+ * on purpose — a silhouette has no need of the ISO aliasing that matters
+ * when a fiche asks for one country.
+ */
+// @req REQ-116
+export function getAfricaAdmin0Rings(): Ring[] {
+  return Object.values(AFRICA_ADMIN0).flatMap((country) =>
+    toRings(country.rings)
+  );
+}
+
+// ─── Country: closed outline, stroked as it draws, 22% fill ────────────────
+
+// @req REQ-116
+// Raised from 0.22 once the terrain gained national boundaries: against a
+// bordered continent the old fill no longer separated the chosen country
+// from the graticule and neighbour lines crossing underneath it.
+export const COUNTRY_FILL_OPACITY = 0.34;
+
+export interface CountryOutlineOverlay {
+  kind: "country-outline";
+  countryId: CountryId;
+  rings: Ring[];
+  fillOpacity: number;
+}
+
+// @req REQ-116
+export function buildCountryOutlineOverlay(
+  countryId: CountryId
+): CountryOutlineOverlay | null {
+  const rings = getAdmin0Rings(countryId);
+  if (!rings || rings.length === 0) return null;
+  return {
+    kind: "country-outline",
+    countryId,
+    rings,
+    fillOpacity: COUNTRY_FILL_OPACITY,
+  };
+}
+
+// ─── People: radial field, no edge anywhere, radius ∝ √population ─────────
+
+export interface PeopleFieldArea {
+  countryId: CountryId;
+  center: LonLat;
+  /**
+   * 0..1, normalised to the largest declared share in this fiche's
+   * distribution. This is a population weight, not a radius — AtlasGlobe
+   * derives the drawn radius as ∝ √populationShare so the eye reads area,
+   * matching the charter's "radius ∝ √population" rule.
+   */
+  populationShare: number;
+}
+
+/**
+ * A declared presence the globe has no geometry for: a diaspora outside the
+ * atlas's Africa scope, or a country code the asset does not carry.
+ *
+ * It is carried rather than filtered so the surrounding UI can name it —
+ * charter §4 asks for an unresolved country to be shown as missing, never
+ * dropped. It has no `center`, because inventing one would place a halo the
+ * corpus cannot justify.
+ */
+export interface PeopleFieldUndrawnArea {
+  countryId: CountryId;
+  /** The declared figure, on whichever axis the fiche used (percentage, else population). */
+  rawWeight: number;
+}
+
+export interface PeopleFieldOverlay {
+  kind: "people-field";
+  areas: PeopleFieldArea[];
+  undrawn: PeopleFieldUndrawnArea[];
+}
+
+/** REQ-119: a fiche with no drawable distribution renders as declared-missing, not as an empty globe. */
+export interface PeopleFieldMissingOverlay {
+  kind: "people-field-missing";
+  /** Present even here: a fiche whose every presence is off-map still declared those presences. */
+  undrawn: PeopleFieldUndrawnArea[];
+}
+
+// @req REQ-116
+export function buildPeopleFieldOverlay(
+  distributionByCountry: CountryDistribution[] | undefined
+): PeopleFieldOverlay | PeopleFieldMissingOverlay {
+  if (!distributionByCountry || distributionByCountry.length === 0) {
+    return { kind: "people-field-missing", undrawn: [] };
+  }
+
+  const declared = distributionByCountry.map((entry) => ({
+    countryId: entry.country,
+    rawWeight: entry.percentage ?? entry.population ?? 0,
+    rings: getAdmin0Rings(entry.country),
+  }));
+
+  const drawable = declared.filter(
+    (entry): entry is typeof entry & { rings: Ring[] } =>
+      Boolean(entry.rings) && entry.rawWeight > 0
+  );
+  const undrawn: PeopleFieldUndrawnArea[] = declared
+    .filter((entry) => !entry.rings || entry.rawWeight <= 0)
+    .map(({ countryId, rawWeight }) => ({ countryId, rawWeight }));
+
+  if (drawable.length === 0) {
+    return { kind: "people-field-missing", undrawn };
+  }
+
+  // Normalised over what is drawn, so a large off-map diaspora cannot shrink
+  // every halo on the continent. What share a country holds of the whole
+  // people is a different figure, and the panel reads it from the demography.
+  const maxWeight = Math.max(...drawable.map((entry) => entry.rawWeight));
+
+  const areas: PeopleFieldArea[] = drawable.map((entry) => ({
+    countryId: entry.countryId,
+    center: largestRingCentroid(entry.rings),
+    populationShare: maxWeight > 0 ? entry.rawWeight / maxWeight : 0,
+  }));
+
+  return { kind: "people-field", areas, undrawn };
+}
+
+// ─── Language family: derived choropleth, dashed boundary, tint by member count ─
+
+/**
+ * One country of the footprint, carrying its own density. A single tint for the
+ * whole family could only ever say "this family is here"; the reader's question
+ * is where it is *concentrated*, and that needs a value per country.
+ */
+export interface FamilyFootprintCountry {
+  countryId: CountryId;
+  rings: Ring[];
+  /** How many member peoples name this country in their currentCountries. */
+  memberCount: number;
+  /**
+   * 0..1, normalised to the densest country of this footprint, which is always
+   * exactly 1. This is the choropleth's input; AtlasGlobe turns it into an
+   * opacity. Relative to the family, never to some absolute scale: a small
+   * family's densest country should read as strongly on its own fiche as a
+   * large family's does on its.
+   */
+  weight: number;
+}
+
+export interface FamilyFootprintOverlay {
+  kind: "family-footprint";
+  /** Densest first, ties broken on the country id — see buildFamilyFootprintOverlay. */
+  countries: FamilyFootprintCountry[];
+  /** The family's own member count, which is *not* the sum of memberCount above. */
+  memberPeopleCount: number;
+}
+
+/**
+ * The footprint is the union of `currentCountries` over every people carrying
+ * this family's languageFamilyId — never the family's own
+ * `distribution.distributionByCountry`, which the recette database reads empty
+ * for all 24 families (atlas-charter §4). `memberCurrentCountries` is one array
+ * per member people; the caller (the family fiche route) is the one that
+ * already knows which peoples carry this family's id.
+ *
+ * The order is total on purpose. Twelve of the seventeen countries in the
+ * reference family sit at one people each, so density alone leaves them
+ * unordered and their relative positions would depend on input order — the
+ * ranking and the country picker would reshuffle between two renders of the
+ * same data. Ties therefore break on the country id.
+ */
+// @req REQ-116
+export function buildFamilyFootprintOverlay(
+  memberCurrentCountries: CountryId[][],
+  memberPeopleCount: number
+): FamilyFootprintOverlay | null {
+  const memberCountByCountry = new Map<CountryId, number>();
+  for (const declaredCountries of memberCurrentCountries) {
+    // Deduplicated per people: currentCountries is a declared list, not a set,
+    // and one fiche repeating a country must not inflate that country's tint.
+    for (const countryId of new Set(declaredCountries)) {
+      memberCountByCountry.set(
+        countryId,
+        (memberCountByCountry.get(countryId) ?? 0) + 1
+      );
+    }
+  }
+
+  const drawable = Array.from(memberCountByCountry.entries())
+    .map(([countryId, memberCount]) => ({
+      countryId,
+      memberCount,
+      rings: getAdmin0Rings(countryId),
+    }))
+    // Excluded, not drawn at zero: a country the committed asset cannot draw
+    // has no shape to tint, and a zero-weight entry would still take a row in
+    // the ranking and an option in the picker.
+    .filter(
+      (entry): entry is typeof entry & { rings: Ring[] } =>
+        entry.rings !== undefined
+    );
+
+  if (drawable.length === 0) return null;
+
+  const densest = Math.max(...drawable.map((entry) => entry.memberCount));
+
+  const countries = drawable
+    .sort(
+      (a, b) =>
+        b.memberCount - a.memberCount || a.countryId.localeCompare(b.countryId)
+    )
+    .map(({ countryId, rings, memberCount }) => ({
+      countryId,
+      rings,
+      memberCount,
+      weight: memberCount / densest,
+    }));
+
+  return { kind: "family-footprint", countries, memberPeopleCount };
+}
+
+// ─── Continent: the whole atlas as one field, framed but never filled ──────
+
+/**
+ * The frame locates, it never measures. Tinting a country would encode the
+ * peoples counted inside it as a closed-border area — exactly what the
+ * charter §1 forbids for a people. This opacity is 0 and stays 0.
+ *
+ * It stayed 0 while radial fields carried the count instead; now that the
+ * continent scene draws no field either, it is the only thing standing between
+ * a per-country quantity and a shape the reader would read as a border.
+ */
+// @req REQ-116
+export const CONTINENT_FRAME_FILL_OPACITY = 0;
+
+/**
+ * Past a dozen marks the stage stops reading as a map and starts reading as a
+ * ranking. The cap was written for the radial fields; the marks it now bounds
+ * are the home hero's and the Mercator game's, which pin one per area.
+ */
+// @req REQ-116
+export const CONTINENT_MAX_AREAS = 12;
+
+/** AtlasGlobe lays a 22px round button over each area; two closer than that overlap. */
+// @req REQ-116
+export const CONTINENT_MARKER_DIAMETER_PX = 22;
+
+/**
+ * Narrowest stage the app supports (mobile-first, 430px). Markers crowd worst
+ * there, so de-duplication is decided at that width and the result holds at
+ * every wider one.
+ */
+// @req REQ-116
+export const CONTINENT_MIN_STAGE_WIDTH_PX = 430;
+
+const MIN_STAGE_VIEWPORT: AtlasViewport = {
+  width: CONTINENT_MIN_STAGE_WIDTH_PX,
+  height:
+    (CONTINENT_MIN_STAGE_WIDTH_PX * BASEMAP_VIEWBOX.height) /
+    BASEMAP_VIEWBOX.width,
+};
+
+/** One country of the geographic frame: a reference outline, carrying no count of its own. */
+export interface ContinentFrameCountry {
+  countryId: CountryId;
+  rings: Ring[];
+}
+
+/**
+ * A country the continent scene offers, and how much the corpus holds there.
+ * Deliberately has no `rings` key — same structural guarantee as
+ * `PeopleFieldArea`: what the type cannot carry, a renderer cannot stroke.
+ *
+ * It used to carry a normalised share as well, which the renderers turned into
+ * a radial field. Nothing sized against the corpus is drawn on this scene any
+ * more (charter §1), so the count reaches the reader as a sentence in the
+ * panel, where it can say what it counts.
+ */
+export interface ContinentFieldArea {
+  countryId: CountryId;
+  center: LonLat;
+  /** How many peoples fiches name this country. A corpus size, never a population. */
+  documentedPeopleCount: number;
+}
+
+export interface ContinentFieldOverlay {
+  kind: "continent-field";
+  frame: ContinentFrameCountry[];
+  /** Always CONTINENT_FRAME_FILL_OPACITY; carried on the overlay so the renderers read it rather than choose one. */
+  fillOpacity: number;
+  areas: ContinentFieldArea[];
+}
+
+function projectedDistancePx(a: LonLat, b: LonLat): number {
+  const pa = projectLonLat(a.lon, a.lat, MIN_STAGE_VIEWPORT);
+  const pb = projectLonLat(b.lon, b.lat, MIN_STAGE_VIEWPORT);
+  return Math.hypot(pa.x - pb.x, pa.y - pb.y);
+}
+
+/**
+ * The continent scene (REQ-116): every committed country as a frame, and the
+ * best-documented of them as radial fields. `peopleCountsByCountry` is the
+ * plain ISO-3166-1-alpha-3 → count record the country service caches, not a
+ * Map, so it survives serialization into a server component.
+ *
+ * De-duplication happens here rather than in CSS because it is a fact about
+ * the data — which areas can coexist on one stage — and a builder is the only
+ * place a unit test can hold it. Sorting first means a collision is always
+ * resolved in favour of the better-documented country; capping last means a
+ * collision costs a country, not a slot.
+ */
+// @req REQ-116
+export function buildContinentOverlay(
+  peopleCountsByCountry: Record<CountryId, number> | undefined
+): ContinentFieldOverlay | PeopleFieldMissingOverlay {
+  const counted = Object.entries(peopleCountsByCountry ?? {})
+    .map(([countryId, documentedPeopleCount]) => ({
+      countryId,
+      documentedPeopleCount,
+      rings: getAdmin0Rings(countryId),
+    }))
+    .filter(
+      (entry): entry is typeof entry & { rings: Ring[] } =>
+        Boolean(entry.rings) && entry.documentedPeopleCount > 0
+    )
+    .sort(
+      (a, b) =>
+        b.documentedPeopleCount - a.documentedPeopleCount ||
+        a.countryId.localeCompare(b.countryId)
+    );
+
+  if (counted.length === 0) {
+    // The continent scene declares no per-country presences of its own, so
+    // there is nothing undrawn to carry — only nothing to draw.
+    return { kind: "people-field-missing", undrawn: [] };
+  }
+
+  const areas: ContinentFieldArea[] = [];
+
+  for (const entry of counted) {
+    if (areas.length === CONTINENT_MAX_AREAS) break;
+
+    const center = largestRingCentroid(entry.rings);
+    const overlapsKeptMarker = areas.some(
+      (kept) =>
+        projectedDistancePx(kept.center, center) < CONTINENT_MARKER_DIAMETER_PX
+    );
+    if (overlapsKeptMarker) continue;
+
+    areas.push({
+      countryId: entry.countryId,
+      center,
+      documentedPeopleCount: entry.documentedPeopleCount,
+    });
+  }
+
+  const frame: ContinentFrameCountry[] = Object.keys(AFRICA_ADMIN0)
+    .sort()
+    .map((countryId) => ({
+      countryId,
+      rings: getAdmin0Rings(countryId) ?? [],
+    }));
+
+  return {
+    kind: "continent-field",
+    frame,
+    fillOpacity: CONTINENT_FRAME_FILL_OPACITY,
+    areas,
+  };
+}
+
+// ─── Country set: the same closed outlines, offered as a round's choices ───
+
+/**
+ * An arbitrary set of countries offered as choices — the shape a game round
+ * needs (REQ-120). Distinct from `FamilyFootprintOverlay`, which asserts "this
+ * family lives here": this one asserts nothing about the countries it draws,
+ * it only says "pick one of these". Same encoding as a country outline, so a
+ * round introduces no visual language the atlas does not already speak.
+ */
+export interface CountrySetOverlay {
+  kind: "country-set";
+  countryIds: CountryId[];
+  rings: Ring[];
+  fillOpacity: number;
+}
+
+/**
+ * Order is the caller's, not sorted: a round decides which choice comes first
+ * and the markers follow it. Ids absent from the committed admin-0 asset drop
+ * out one by one rather than voiding the round — only a round where nothing at
+ * all resolves is null, which is what makes AtlasGlobe declare it missing
+ * (REQ-119) instead of drawing an empty globe.
+ */
+// @req REQ-120
+export function buildCountrySetOverlay(
+  countryIds: CountryId[]
+): CountrySetOverlay | null {
+  const resolvedCountryIds = Array.from(new Set(countryIds)).filter((id) =>
+    Boolean(getAdmin0Rings(id))
+  );
+  const rings = resolvedCountryIds.flatMap((id) => getAdmin0Rings(id) ?? []);
+
+  if (rings.length === 0) return null;
+
+  return {
+    kind: "country-set",
+    countryIds: resolvedCountryIds,
+    rings,
+    fillOpacity: COUNTRY_FILL_OPACITY,
+  };
+}
+
+export type AtlasOverlay =
+  | CountryOutlineOverlay
+  | CountrySetOverlay
+  | PeopleFieldOverlay
+  | PeopleFieldMissingOverlay
+  | FamilyFootprintOverlay
+  | ContinentFieldOverlay;

@@ -14,6 +14,7 @@
     "BFA",
     "FRA"
   ],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Soninke",
@@ -166,12 +167,42 @@
       ]
     },
     "sources": [
-      "Joshua Project — Soninke people group all countries (2025). https://joshuaproject.net/people_groups/14996",
-      "Minority Rights Group — Mali. https://minorityrights.org/country/mali/",
-      "Glottolog — Soninke (snk). https://glottolog.org/resource/languoid/id/soni1259",
-      "SIL CEDS — ISO 639-3: Soninke = snk. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-      "Joshua Project — Soninke in Mali. https://joshuaproject.net/people_groups/14996/ML",
-      "Rosetta Panglossia — Soninke Language (snk). https://rosettapanglossia.longnow.org/index.php?title=Soninke_Language_%28snk%29"
+      {
+        "title": "Joshua Project — Soninke people group all countries (2025)",
+        "url": "https://joshuaproject.net/people_groups/14996",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group — Mali",
+        "url": "https://minorityrights.org/country/mali/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Glottolog — Soninke (snk)",
+        "url": "https://glottolog.org/resource/languoid/id/soni1259",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL CEDS — ISO 639-3: Soninke = snk",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Joshua Project — Soninke in Mali",
+        "url": "https://joshuaproject.net/people_groups/14996/ML",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Rosetta Panglossia — Soninke Language (snk)",
+        "url": "https://rosettapanglossia.longnow.org/index.php?title=Soninke_Language_%28snk%29",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      }
     ]
   }
 }

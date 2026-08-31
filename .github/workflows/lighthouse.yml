@@ -27,6 +27,23 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
+      # Epic 10, Story 10.11 (ETNI-500 · NFR18–NFR23, AR20) — a standalone
+      # esbuild bundle of the quiz play-island entry, so this needs neither
+      # Supabase secrets nor the full Next.js build below and always runs,
+      # including on forks / Dependabot PRs.
+      - name: Check quiz play-island bundle size (≤ 15 KB gzipped)
+        run: npm run bundle-size:quiz
+
+      # The home's two WebGL islands, measured the same standalone way: the
+      # hero globe (DEC-020, 170 KB) and the axis panels' link graph
+      # (REQ-114, 25 KB). The globe's budget script has existed since
+      # ETNI-1214 without ever being run by CI — a cap nothing enforces is
+      # an estimate, so both are wired here rather than only the new one.
+      - name: Check home WebGL island bundle sizes
+        run: |
+          npm run bundle-size:home-globe
+          npm run bundle-size:axis-graph
+
       # Skip cleanly on forks / Dependabot PRs that cannot access the Supabase
       # secrets. When the secret is set (i.e. on PRs from the same repo) the
       # gate is enforced — no continue-on-error masks failures.
@@ -48,6 +65,9 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
+          # unless this is set, which would silently audit nothing.
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
 
       - name: Start Next.js server
         if: steps.secrets.outputs.present == 'true'
@@ -57,6 +77,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
 
       - name: Wait for server to be ready
         if: steps.secrets.outputs.present == 'true'
@@ -66,15 +87,16 @@ jobs:
         if: steps.secrets.outputs.present == 'true'
         run: npm install -g @lhci/cli --legacy-peer-deps
 
-      # Advisory while perf/a11y/BP work is still in flight (issue tracked
-      # separately). The report is still posted on the PR; we just don't gate
-      # merges on it yet. Flip back to enforced (drop continue-on-error) once
-      # the routes meet thresholds.
+      - name: Install Chromium for Lighthouse
+        if: steps.secrets.outputs.present == 'true'
+        run: |
+          npx playwright install --with-deps chromium
+          node -e 'console.log("CHROME_PATH=" + require("playwright").chromium.executablePath())' >> "$GITHUB_ENV"
+
       - name: Run Lighthouse CI
         id: lhci
         if: steps.secrets.outputs.present == 'true'
         run: lhci autorun
-        continue-on-error: true
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
@@ -110,8 +132,20 @@ jobs:
               '',
               '**Routes audited:**',
               '- `/`',
-              '- `/fr/pays/senegal`',
-              '- `/fr/peuples/wolof`',
+              '- `/fr`',
+              '- `/fr/peuples`',
+              '- `/fr/recherche`',
+              '- `/fr/mentions-legales`',
+              '- `/fr/admin/connexion`',
+              '- `/fr/pays/SEN`',
+              '- `/fr/peuples/PPL_WOLOF`',
+              '- `/fr/familles/FLG_BANTU`',
+              '- `/fr/peuples/PPL_WOLOF/liens`',
+              '- `/fr/comparer`',
+              '- `/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE`',
+              '- `/fr/quiz`',
+              '',
+              '_Not audited: `/fr/noms`, `/fr/migrations` — both currently return HTTP 500 in CI, unrelated to this PR._',
               publicLinks,
             ].join('\n');
 

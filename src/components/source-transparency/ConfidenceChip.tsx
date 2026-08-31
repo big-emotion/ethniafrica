@@ -100,6 +100,7 @@ function ensureKeyframesInjected(): void {
   document.head.appendChild(style);
 }
 
+// @req REQ-019
 export function ConfidenceChip({
   confidenceScore,
   sourceCount,
@@ -144,7 +145,7 @@ export function ConfidenceChip({
               onOpen();
             }
           }}
-          className="text-sm underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
+          className="text-afh-small underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
         >
           voir les sources
         </a>
@@ -163,10 +164,10 @@ export function ConfidenceChip({
 
   const variantClasses: Record<ConfidenceChipVariant, string> = {
     inline:
-      "text-xs font-medium tracking-tight text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]",
-    hero: "text-sm font-semibold tracking-tight text-[color:var(--afh-text,var(--country-text,#2C2018))]",
+      "text-afh-caption font-medium tracking-tight text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]",
+    hero: "text-afh-small font-semibold tracking-tight text-[color:var(--afh-text,var(--country-text,#2C2018))]",
     contested:
-      "text-xs font-medium italic underline decoration-dotted underline-offset-4 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]",
+      "text-afh-caption font-medium italic underline decoration-dotted underline-offset-4 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]",
   };
 
   const pillBgClasses =
@@ -183,7 +184,7 @@ export function ConfidenceChip({
         className={cn(
           "inline-flex items-center justify-center p-3 min-h-[44px] min-w-[44px] rounded-full",
           "whitespace-nowrap select-none",
-          "transition-colors",
+          "motion-safe:transition-colors",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
           "focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]",
           pillBgClasses,

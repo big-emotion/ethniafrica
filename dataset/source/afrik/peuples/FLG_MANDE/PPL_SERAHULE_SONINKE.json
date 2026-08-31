@@ -3,6 +3,7 @@
   "nameMain": "Soninke",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "SEN", "MRT", "GMB", "GNB", "GIN", "BFA", "CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Soninke",
@@ -134,10 +135,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Soninke in Guinea, 2025 (https://joshuaproject.net/people_groups/14996/GV)",
-      "101 Last Tribes – Soninke people (https://www.101lasttribes.com/tribes/soninke.html)",
-      "Soninkara.com – Association culturelle soninke (https://www.soninkara.com)",
-      "COCOON/HUMA-NUM – Fiche langue Soninke ISO snk (https://cocoon.huma-num.fr/exist/crdo/language/snk)"
+      {
+        "title": "Joshua Project – Soninke in Guinea, 2025",
+        "url": "https://joshuaproject.net/people_groups/14996/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Soninke people",
+        "url": "https://www.101lasttribes.com/tribes/soninke.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Soninkara.com – Association culturelle soninke",
+        "url": "https://www.soninkara.com",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers soninkara.com; the tier awaits editorial review."
+      },
+      {
+        "title": "COCOON/HUMA-NUM – Fiche langue Soninke ISO snk",
+        "url": "https://cocoon.huma-num.fr/exist/crdo/language/snk",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cocoon.huma-num.fr."
+      }
     ]
   }
 }

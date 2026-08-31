@@ -68,12 +68,42 @@
       ]
     },
     "sources": [
-      "Kerewe in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12637)",
-      "Kerewe – Encyclopaedia Britannica (https://www.britannica.com/topic/Kerewe)",
-      "Kerewe language – Lugha Yangu, 2023 (https://lughayangu.com/kerewe)",
-      "Ukerewe Island Cultural Tour (https://ukereweislandculturaltour.wordpress.com)",
-      "Omulago Muhya 1946 – Bible.com (https://www.bible.com/versions/3282-ked1946-omulago-muhya-1946-kikahindurwa-mu-kikerewe)",
-      "Mojola, Aloo Osotsi – See My Language: A History of Bible Translation in East Africa, 1999"
+      {
+        "title": "Kerewe in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12637",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kerewe – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Kerewe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Kerewe language – Lugha Yangu, 2023",
+        "url": "https://lughayangu.com/kerewe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "Ukerewe Island Cultural Tour",
+        "url": "https://ukereweislandculturaltour.wordpress.com",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of ukereweislandculturaltour.wordpress.com."
+      },
+      {
+        "title": "Omulago Muhya 1946 – Bible.com",
+        "url": "https://www.bible.com/versions/3282-ked1946-omulago-muhya-1946-kikahindurwa-mu-kikerewe",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bible.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Mojola, Aloo Osotsi – See My Language: A History of Bible Translation in East Africa, 1999",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Nzebi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GAB", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nzebi",
@@ -104,12 +105,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Nzebi people. https://www.101lasttribes.com/tribes/nzebi.html",
-      "Qiraat Africa — The Nzebi people (2025). https://qiraatafrican.com/en/15644/the-nzebi-people/",
-      "Omniglot — Njebi language and alphabet. https://www.omniglot.com/writing/njebi.htm",
-      "PeopleGroups.org — Nzebi of Gabon. https://peoplegroups.org/people_groups/pg013010/",
-      "SIL Ethnologue — Nzebi language, code nzb. https://www.ethnologue.com/language/nzb/",
-      "Musee du Quai Branly-Jacques Chirac — masque Nzebi (fin 19e-debut 20e siecle)"
+      {
+        "title": "101 Last Tribes — Nzebi people",
+        "url": "https://www.101lasttribes.com/tribes/nzebi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Qiraat Africa — The Nzebi people (2025)",
+        "url": "https://qiraatafrican.com/en/15644/the-nzebi-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Omniglot — Njebi language and alphabet",
+        "url": "https://www.omniglot.com/writing/njebi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "PeopleGroups.org — Nzebi of Gabon",
+        "url": "https://peoplegroups.org/people_groups/pg013010/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "SIL Ethnologue — Nzebi language, code nzb",
+        "url": "https://www.ethnologue.com/language/nzb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Musee du Quai Branly-Jacques Chirac — masque Nzebi (fin 19e-debut 20e siecle)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -2,6 +2,7 @@
   "id": "FLG_CREOLE",
   "nameFr": "Créole (familles créoles d'Afrique)",
   "nameEn": "Creole (African Creoles)",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Termes coloniaux péjoratifs appliqués aux créoles africains : - Les langues créoles africaines ont longtemps été dévalorisées par les autorités coloniales, exclues de l'éducation formelle et considérées comme des \"baragouins\" ou \"jargons\", niant leur statut de langues à part entière avec leurs propres structures grammaticales. - L'usage du terme \"créole\" lui-même, issu d'un contexte colonial (criollo/crioulo désignant initialement les personnes nées dans les colonies), peut être perçu comme portant l'héritage de classifications raciales coloniales.",
@@ -11,7 +12,11 @@
       "originOfHistoricalTerm": " Le terme \"créole\" provient de l'espagnol *criollo* et du portugais *crioulo*, eux-mêmes dérivés du latin *creare* signifiant « élever » ou « nourrir ». Application aux langues créoles d'Afrique : En Afrique, le terme \"créole\" est utilisé principalement pour désigner des langues nées du contact entre langues européennes (portugais, français, anglais) et langues africaines dans des contextes de commerce, de comptoirs coloniaux et de traite transatlantique. Les créoles africains les plus anciens sont les créoles à base portugaise, attestés dès le XVIIe siècle dans les comptoirs portugais d'Afrique de l'Ouest (Cap-Vert, Guinée-Bissau). Le terme *Kriolu* / *Kriol* (du portugais *crioulo*) est l'auto-appellation des locuteurs cap-verdiens et bissau-guinéens depuis cette époque. Contexte historique africain : Les familles linguistiques créoles d'Afrique sont nées dans des contextes : - d'esclavage transatlantique (XVIe-XIXe siècle), - de domination coloniale portugaise, française et britannique, - de contacts forcés entre langues africaines (bantoues, mandé, atlantiques) et langues européennes (portugais, français, anglais)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Créoles à base lexicale portugaise (Kabuverdianu — Cap-Vert ; Kriol — Guinée-Bissau/Casamance ; Forro, Angolar, Lung'Ie/Principense — São Tomé-et-Príncipe)",
+        "Créoles à base lexicale anglaise (Krio — Sierra Leone ; Pichi — Guinée équatoriale/Bioko)",
+        "Créoles à base lexicale française (Seselwa — Seychelles ; Morisyen — Maurice ; Rodriguais ; Réunionnais)"
+      ],
       "geographicArea": "Afrique de l’Ouest, Afrique centrale côtière, Afrique australe côtière, Océan Indien",
       "numberOfLanguages": 15,
       "totalSpeakers": 10000000
@@ -44,19 +49,98 @@
     },
     "distribution": {
       "totalSpeakers": 10000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "MUS": 1090000,
+        "CPV": 871000,
+        "SLE": 860000,
+        "GNB": 350000
+      }
     },
     "sources": [
-      "Telusma, Henri-Claude (2017) – *Thèse doctorale, Université de Strasbourg* – Origine et évolution du terme \"créole\"",
-      "Turner, Lorenzo Dow (1949) – *Africanisms in the Gullah Dialect* – Démonstration des liens linguistiques entre créoles américains et langues africaines (Sierra Leone)",
-      "Toepke, Alvaro & Serrano, Angel (1998) – *The Language You Cry In* (documentaire) – Retrace l'histoire d'une chanson Gullah enregistrée par Turner en 1933 et son utilisation pour retrouver les origines sierra-léonaises",
-      "Université Laval (Axl.cefan) – *Aménagement linguistique dans le monde* – Créoles africains et usage historique du terme",
-      "Trésor de la langue française – Étymologie et évolution sémantique du terme \"créole\"",
-      "Sorbonne Université – *Les langues créoles* – Histoire sociolinguistique des créoles d'Afrique",
-      "Holm, J. – *Pidgins and Creoles*",
-      "Michaelis et al. – *Atlas of Pidgin and Creole Language Structures (APiCS)*",
-      "SIL Ethnologue – Creole languages",
-      "UNESCO – langues de contact d'Afrique et de l'océan Indien"
+      {
+        "title": "Telusma, Henri-Claude (2017) – *Thèse doctorale, Université de Strasbourg* – Origine et évolution du terme \"créole\"",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Turner, Lorenzo Dow (1949) – *Africanisms in the Gullah Dialect* – Démonstration des liens linguistiques entre créoles américains et langues africaines (Sierra Leone)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Toepke, Alvaro & Serrano, Angel (1998) – *The Language You Cry In* (documentaire) – Retrace l'histoire d'une chanson Gullah enregistrée par Turner en 1933 et son utilisation pour retrouver les origines sierra-léonaises",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Université Laval (Axl.cefan) – *Aménagement linguistique dans le monde* – Créoles africains et usage historique du terme",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Trésor de la langue française – Étymologie et évolution sémantique du terme \"créole\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Sorbonne Université – *Les langues créoles* – Histoire sociolinguistique des créoles d'Afrique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Holm, J. – *Pidgins and Creoles*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Michaelis et al. – *Atlas of Pidgin and Creole Language Structures (APiCS)*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Creole languages",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – langues de contact d'Afrique et de l'océan Indien",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue (19e éd., 2016) – Kabuverdianu [kea] : ≈871 000 locuteurs (2017), Cap-Vert. (chiffre vérifié via Wikipédia EN « Kabuverdianu », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+        "url": "https://www.ethnologue.com/language/kea/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue (27e éd., 2024) – Guinea-Bissau Creole [pov] : ≈350 000 locuteurs natifs (2013-2022), Guinée-Bissau. (chiffre vérifié via Wikipédia EN « Guinea-Bissau Creole », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/pov/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue (27e éd., 2024) – Sierra Leonean Creole/Krio [kri] : ≈860 000 locuteurs natifs (2021), Sierra Leone. (chiffre vérifié via Wikipédia EN « Krio language », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/kri/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "United Nations Statistics Division (données 2012, citées par Ethnologue) – Morisyen/Mauritian Creole : ≈1 090 000 locuteurs natifs, Maurice. (chiffre vérifié via Wikipédia EN « Mauritian Creole », consulté en 2026)",
+        "url": "https://unstats.un.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ]
   }
 }

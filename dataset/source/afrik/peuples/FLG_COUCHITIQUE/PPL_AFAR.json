@@ -3,6 +3,7 @@
   "nameMain": "Afar",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "DJI", "ERI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Afar",
@@ -97,12 +98,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Afar (aar). https://www.ethnologue.com/language/aar/",
-      "Joshua Project — Afar in Ethiopia. https://joshuaproject.net/people_groups/11486/et",
-      "AfriGO Magazine — People Groups: the Afar of Djibouti. https://afrigo.org/articles/people-groups-the-afar-of-djibouti/",
-      "Wiktionary — ISO 639-3 codes Africa (confirmation code aar). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-      "Nesbitt, L.M. Desert and Forest: Exploration of Abyssinian Danakil. London: Jonathan Cape, 1934.",
-      "Trimingham, J. Spencer. Islam in Ethiopia. Oxford: Oxford University Press, 1952."
+      {
+        "title": "Ethnologue — Afar (aar)",
+        "url": "https://www.ethnologue.com/language/aar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Afar in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/11486/et",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "AfriGO Magazine — People Groups: the Afar of Djibouti",
+        "url": "https://afrigo.org/articles/people-groups-the-afar-of-djibouti/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers afrigo.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Wiktionary — ISO 639-3 codes Africa (confirmation code aar)",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Nesbitt, L.M. Desert and Forest: Exploration of Abyssinian Danakil. London: Jonathan Cape, 1934",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Trimingham, J. Spencer. Islam in Ethiopia. Oxford: Oxford University Press, 1952",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

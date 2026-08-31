@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_XXXXX",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "<Nom, tel qu'attesté par la source>",
+      "nameType": "endonym",
+      "languageOfOrigin": "xxx",
+      "meaning": "<Signification/étymologie du nom, si connue>",
+      "periodLabel": "<Période d'usage — ex: contemporain, XIXe siècle>",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "<Usage contemporain du nom, si pertinent>",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "<Titre de la source>",
+          "author": "<Auteur>",
+          "year": 0,
+          "url": "<URL résolvable>",
+          "tier": 1,
+          "notes": "<Si tier 2 : chemin Wikipedia avec versions linguistiques croisées>"
+        }
+      ]
+    }
+  ]
+}

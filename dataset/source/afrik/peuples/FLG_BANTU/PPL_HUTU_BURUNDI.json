@@ -3,6 +3,7 @@
   "nameMain": "Hutu du Burundi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BDI", "RWA", "TZA", "UGA", "COD"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Hutu du Burundi",
@@ -108,11 +109,36 @@
       ]
     },
     "sources": [
-      "UNFPA — Burundi Population 2025. https://www.unfpa.org/data/world-population/BI",
-      "Ethnologue (SIL) — Rundi [run]. https://www.ethnologue.com/language/run/",
-      "World Population Review — Burundi Population 2026. https://worldpopulationreview.com/countries/burundi",
-      "Rapport de la Commission internationale d'enquête pour le Burundi (ONU, 1996) — contexte génocide 1993",
-      "Accord d'Arusha pour la Paix et la Réconciliation au Burundi, 2000. https://peacemaker.un.org/burundi-arusha-agreement2000"
+      {
+        "title": "UNFPA — Burundi Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/BI",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Ethnologue (SIL) — Rundi [run]",
+        "url": "https://www.ethnologue.com/language/run/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "World Population Review — Burundi Population 2026",
+        "url": "https://worldpopulationreview.com/countries/burundi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+      },
+      {
+        "title": "Rapport de la Commission internationale d'enquête pour le Burundi (ONU, 1996) — contexte génocide 1993",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Accord d'Arusha pour la Paix et la Réconciliation au Burundi, 2000",
+        "url": "https://peacemaker.un.org/burundi-arusha-agreement2000",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of peacemaker.un.org."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Baggara",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["SDN", "TCD", "NGA", "CMR", "CAF", "NER", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Baggara",
@@ -131,10 +132,30 @@
       ]
     },
     "sources": [
-      "Joshua Project — Baggara, Shuwa Arab in Central African Republic. https://joshuaproject.net/people_groups/14926/CT",
-      "Study.com — Baggara Arabs: History, Culture and Language. https://study.com/academy/lesson/baggara-arabs-history-culture-language.html",
-      "Kunzaar — Baggara Arabs (Shuwa Arabs): A Cultural Insight. https://kunzaar.com.ng/baggara-arabs-tribe/",
-      "Ethnologue — Chadian Arabic (shu). SIL International."
+      {
+        "title": "Joshua Project — Baggara, Shuwa Arab in Central African Republic",
+        "url": "https://joshuaproject.net/people_groups/14926/CT",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Study.com — Baggara Arabs: History, Culture and Language",
+        "url": "https://study.com/academy/lesson/baggara-arabs-history-culture-language.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "Kunzaar — Baggara Arabs (Shuwa Arabs): A Cultural Insight",
+        "url": "https://kunzaar.com.ng/baggara-arabs-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kunzaar.com.ng."
+      },
+      {
+        "title": "Ethnologue — Chadian Arabic (shu). SIL International",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

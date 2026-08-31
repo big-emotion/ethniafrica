@@ -16,8 +16,13 @@ export async function listLanguageFamiliesHandler(
   page?: number,
   perPage?: number
 ): Promise<ApiResponse<LanguageFamily[]>> {
-  const { data, total } = await getLanguageFamilies(page, perPage);
-  return createPaginatedResponse(data, total, page, perPage);
+  const { data, total, unclassifiedPeoplesCount } = await getLanguageFamilies(
+    page,
+    perPage
+  );
+  return createPaginatedResponse(data, total, page, perPage, {
+    unclassifiedPeoplesCount,
+  });
 }
 
 /**

@@ -1,11 +1,16 @@
 {
   "id": "RWA",
-  "nameFr": "République du Rwanda (Repubulika y'u Rwanda)",
+  "nameFr": "Rwanda",
   "nameOfficial": "République du Rwanda (Repubulika y'u Rwanda)",
+  "summary": "Le Rwanda tire probablement son nom du verbe « kwanda », s'étendre, en kinyarwanda, en référence au royaume qui l'a précédé. Monarchie centralisée depuis le XVe siècle, il passa sous protectorat allemand puis sous tutelle belge au sein du Ruanda-Urundi. Hutu, Tutsi et Twa y partagent une même langue, le kinyarwanda.",
   "etymology": "Le nom \"Rwanda\" vient probablement du verbe \"kwanda\" signifiant \"s'étendre\" en kinyarwanda, ou de \"ruanda\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Rwanda.",
   "nameOriginActor": "Le nom vient du royaume précolonial du Rwanda (Royaume du Rwanda), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Afrique orientale allemande (1885-1916)",
+        "Ruanda-Urundi (1916-1962)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.",
       "middleAges": "Développement du royaume du Rwanda à partir du XVe siècle. Le royaume s'appelait \"Rwanda\" ou \"Imana y'u Rwanda\" (Rwanda de Dieu).",
       "precolonial": "Royaume du Rwanda (XVe - XIXe siècles) avec une monarchie centralisée. Le nom \"Rwanda\" était utilisé pour désigner le royaume et son territoire.",
@@ -96,15 +101,66 @@
       "postIndependence": "Première République (1962-1973) : tensions ethniques, exodes répétés des Tutsi. Deuxième République (1973-1994) : régime Habyarimana, politique d'exclusion. Génocide de 1994 : extermination de 800 000 à 1 million de Tutsi et Hutu modérés. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles, politique de réconciliation, développement économique remarquable."
     },
     "sources": [
-      "CIA World Factbook – Rwanda",
-      "SIL Ethnologue – Kinyarwanda language (kin)",
-      "Recensements nationaux rwandais",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les Grands Lacs",
-      "Études historiques sur le royaume du Rwanda",
-      "Commission nationale de lutte contre le génocide",
-      "CIA World Factbook – Rwanda (ethnic groups, pre-1994 census)"
+      {
+        "title": "CIA World Factbook – Rwanda",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Kinyarwanda language (kin)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux rwandais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les Grands Lacs",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume du Rwanda",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Commission nationale de lutte contre le génocide",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Rwanda (ethnic groups, pre-1994 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

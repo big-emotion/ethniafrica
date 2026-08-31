@@ -3,6 +3,7 @@
   "nameMain": "Batonga / Tonga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Batonga / Tonga",
@@ -93,12 +94,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Tonga (African people) : https://www.britannica.com/topic/Tonga-African-people",
-      "Toward Freedom — Why Zimbabwe's People of the Great River Have No Water (2023) : https://towardfreedom.org/story/archives/africa-archives/why-zimbabwes-people-of-the-great-river-have-no-water/",
-      "Music In Africa — Lwiindi Ceremony : https://www.musicinafrica.net/directory/lwiindi-ceremony",
-      "SIL Ethnologue — Tonga (toi) : https://www.ethnologue.com/language/toi/",
-      "Matebeleland Pulse — 23 000 BaTonga displaced for Kariba Dam (2026) : https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
-      "ScienceDirect — Local knowledge among Tonga people in Zambia and Zimbabwe (2023) : https://www.sciencedirect.com/science/article/pii/S146290112300028X"
+      {
+        "title": "Encyclopaedia Britannica — Tonga (African people)",
+        "url": "https://www.britannica.com/topic/Tonga-African-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Toward Freedom — Why Zimbabwe's People of the Great River Have No Water (2023)",
+        "url": "https://towardfreedom.org/story/archives/africa-archives/why-zimbabwes-people-of-the-great-river-have-no-water/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers towardfreedom.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Music In Africa — Lwiindi Ceremony",
+        "url": "https://www.musicinafrica.net/directory/lwiindi-ceremony",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers musicinafrica.net; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Tonga (toi)",
+        "url": "https://www.ethnologue.com/language/toi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Matebeleland Pulse — 23 000 BaTonga displaced for Kariba Dam (2026)",
+        "url": "https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for matebelelandpulse.co.zw."
+      },
+      {
+        "title": "ScienceDirect — Local knowledge among Tonga people in Zambia and Zimbabwe (2023)",
+        "url": "https://www.sciencedirect.com/science/article/pii/S146290112300028X",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+      }
     ]
   }
 }

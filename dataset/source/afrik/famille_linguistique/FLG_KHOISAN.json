@@ -2,6 +2,7 @@
   "id": "FLG_KHOISAN",
   "nameFr": "Khoïsan (macro-groupe non génétique)",
   "nameEn": "Khoisan (typological group, not a genetic family)",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " **1. Contexte eugéniste et colonial :** Leonhard Schultze appartenait au même courant de pensée anthropologique qu'Eugen Fischer (1874-1967), anthropologue allemand dont les travaux sur les populations mixtes de Namibie (notamment *Die Rehobother Bastards und das Bastardierungsproblem beim Menschen*, 1913) ont directement influencé Adolf Hitler dans la rédaction des lois de Nuremberg (1935). Le terme « Khoisan » a donc été créé dans un contexte scientifique européen colonial qui cherchait à classer et hiérarchiser les populations selon des critères raciaux. **2. Catégorisation non génétique :** Le terme « Khoisan » n'est **pas une famille linguistique génétique** : c'est un regroupement typologique basé uniquement sur la présence de consonnes à clics. Les linguistes modernes (notamment Rainer Vossen, Tom Güldemann, Anthony Traill) ont démontré que les langues regroupées sous cette étiquette appartiennent en réalité à trois familles linguistiques distinctes sans parenté génétique prouvée : **Khoe-Kwadi**, **Kx'a** (ou Ju-ǂHoan), et **Tuu** (ou ǃUi-Taa). **3. Homogénéisation problématique :** Le terme regroupe artificiellement des peuples aux cultures, modes de vie et langues distincts (pasteurs Khoekhoe vs chasseurs-cueilleurs San), effaçant leurs spécificités et leurs identités propres. **4. Termes péjoratifs associés :** Plusieurs termes associés — notamment **« Hottentot »** (terme néerlandais utilisé dès le XVIIe siècle, probablement d'origine onomatopéique moqueuse, se référant à leur langue) et **« Bushmen »** — ont été utilisés de manière péjorative, raciste ou exotisante par les colons européens, justifiant des discriminations, spoliations de terres, et même des génocides (génocide des Herero et Nama par les Allemands, 1904-1908). **5. Défenseurs de l'africanité et critiques modernes :** François-Xavier Fauvelle (*L'invention du Hottentot*, 2018) a analysé comment les Européens ont construit des représentations stéréotypées des Khoisan. Des chercheurs africains et des activistes autochtones (comme ceux regroupés dans l'Organisation des premiers peuples Khoisan d'Afrique du Sud) contestent ces catégorisations imposées et revendiquent leurs auto-appellations. **6. Preuves génétiques modernes :** Les études génétiques contemporaines (Carina Schlebusch, 2017 ; Pontus Skoglund, 2017 ; Mark Stoneking) démontrent que les populations San possèdent la plus grande diversité génétique au monde et représentent l'une des plus anciennes lignées humaines, avec une séparation estimée à 260 000-350 000 ans. Ces travaux confirment leur importance dans l'histoire humaine et invalident les catégorisations raciales coloniales. → Afrik utilise **Khoïsan uniquement comme macro-étiquette technique** pour désigner l'aire linguistique à clics d'Afrique australe, tout en reconnaissant que ce sont des familles linguistiques distinctes : **Khoe-Kwadi** (FLG_KHOE), **Kx'a** (FLG_KXA), **Tuu** (FLG_TUU).",
@@ -11,7 +12,7 @@
       "originOfHistoricalTerm": " Le terme « Khoisan » a été créé en 1928 par l'anthropologue et médecin allemand Leonhard Schultze (1871-1955), dans son ouvrage *Zur Kenntnis des Körpers der Hottentotten und Buschmänner* (Jena: Gustav Fischer, 1928). Schultze, membre d'une expédition scientifique allemande en Afrique du Sud-Ouest (actuelle Namibie) entre 1926 et 1927, a combiné les termes « Khoi » (du nom Khoikhoi) et « San » pour créer une catégorie anthropologique censée regrouper les peuples autochtones d'Afrique australe sur des critères biométriques et raciaux. Les linguistes ont ensuite repris cette étiquette pour désigner un ensemble de langues à clics, même si aucune filiation génétique solide n'a été démontrée."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Khoe-Kwadi", "Kx'a", "Tuu"],
       "geographicArea": "Afrique australe : principalement Namibie (régions centrales et nord), Botswana (désert du Kalahari, Okavango), Afrique du Sud (province du Cap-Nord, Cap-Occidental), Angola (sud, région de Cuando Cubango), Zambie (extrême ouest), Zimbabwe (très minoritaire).",
       "numberOfLanguages": 30,
       "totalSpeakers": null
@@ -58,37 +59,223 @@
     },
     "distribution": {
       "totalSpeakers": null,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "NAM": 234700,
+        "BWA": 15750,
+        "ZAF": 2000
+      }
     },
     "sources": [
-      "Schultze, L. (1928) – *Zur Kenntnis des Körpers der Hottentotten und Buschmänner*. Jena: Gustav Fischer.",
-      "Boeseken, A. J. (1972) – *The meaning, origin and use of the terms Khoikhoi, San and Khoisan*. Cabo, 1(1), 5-10.",
-      "Greenberg, J. H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press.",
-      "Westphal, E. O. J. (1962) – *The linguistic prehistory of Southern Africa: Bush, Kwadi, Hottentot and Bantu linguistic relationships*. Africa, 32(3), 237-265.",
-      "Westphal, E. O. J. (1971) – *The Click Languages of Southern Africa*. In: *Current Trends in Linguistics*, T. A. Sebeok (Ed.), 7, 367-420. The Hague: Mouton.",
-      "Vossen, R. (1997) – *Die Khoe-Sprachen: Ein Beitrag zur Erforschung der Sprachgeschichte Afrikas*. Cologne: Rüdiger Köppe Verlag.",
-      "Vossen, R. (Ed.) (2013) – *The Khoisan Languages*. London: Routledge.",
-      "Güldemann, T. (1998) – *San Languages for Education?* In: *Language, Democracy and Education in Africa*, K. Legère (Ed.), 77-105. Uppsala: Nordic Africa Institute.",
-      "Traill, A. (1998) – *The Khoisan Languages*. In: *Encyclopædia Britannica*.",
-      "Traill, A. (2005) – *Khoisan languages*. In: *Encyclopædia Britannica Online*.",
-      "Sands, B. (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Cologne: Rüdiger Köppe Verlag.",
-      "Sands, B. (2020) – *The ǂ'Amkoe Language: Phonetics, Phonology, and Morphosyntax*. In: *The Oxford Handbook of African Languages*, R. Vossen & G. Dimmendaal (Eds.), 489-506. Oxford: Oxford University Press.",
-      "Fauvelle, F.-X. (2018) – *L'invention du Hottentot: Histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Paris: Éditions de la Sorbonne.",
-      "Fauvelle, F.-X. (2018) – *À la recherche du sauvage idéal*. En Attendant Nadeau. https://www.en-attendant-nadeau.fr/2018/02/06/fabrique-sauvage-fauvelle/",
-      "Schlebusch, C. M., Malmström, H., Günther, T., Sjödin, P., Coutinho, A., Edlund, H., ... & Jakobsson, M. (2017) – *Southern African ancient genomes estimate modern human divergence to 350,000 to 260,000 years ago*. Science, 358(6363), 652-655.",
-      "Skoglund, P., Thompson, J. C., Prendergast, M. E., Mittnik, A., Sirak, K., Hajdinjak, M., ... & Reich, D. (2017) – *Reconstructing Prehistoric African Population Structure*. Cell, 171(1), 59-71.",
-      "Gerlach, L. (2015) – *A Grammar of ǂ'Amkoe: A Kx'a Language of Botswana*. PhD dissertation, Humboldt University of Berlin.",
-      "Collins, C., & Gruber, J. (2013) – *A Phonetic and Phonological Description of ǂHoan*. In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium*, R. Vossen (Ed.), 27-48. Cologne: Rüdiger Köppe Verlag.",
-      "\"Khoisan languages\" – *Encyclopædia Britannica*. https://www.britannica.com/topic/Khoisan-languages",
-      "\"Famille khoïsane\" – *Aménagement linguistique dans le monde (AXL-Cefan)*. https://www.axl.cefan.ulaval.ca/monde/famkhoisane.htm",
-      "\"Classement des langues khoïsan par nombre de locuteurs\" – *Atlasocio.com*. https://atlasocio.com/classements/langues/familles/classement-langues-khoisan-par-nombre-locuteurs-total-monde.php",
-      "\"The Khoisan\" – *South African History Online*. https://www.sahistory.org.za/article/khoisan",
-      "\"Afrique du Sud : qui sont les Khoïsan, qui demandent plus de reconnaissance ?\" – *TV5MONDE* (2018). https://information.tv5monde.com/afrique/afrique-du-sud-qui-sont-les-khoisan-qui-demandent-plus-de-reconnaissance-83836",
-      "\"Qui sont les Khoisans ?\" – *Jeune Afrique*. https://www.jeuneafrique.com/221145/archives-thematique/qui-sont-les-khoisans/",
-      "SIL Ethnologue (2024) – *Khoisan languages*. https://www.ethnologue.com/subgroups/khoisan",
-      "Glottolog (2024) – *Khoisan languages classification*. https://glottolog.org/",
-      "ONU / UNFPA (2025) – *World Population Prospects 2025* (estimations démographiques).",
-      "CIA World Factbook (2025) – *Namibie, Botswana, Afrique du Sud, Angola* (données démographiques)."
+      {
+        "title": "Schultze, L. (1928) – *Zur Kenntnis des Körpers der Hottentotten und Buschmänner*. Jena: Gustav Fischer",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Boeseken, A. J. (1972) – *The meaning, origin and use of the terms Khoikhoi, San and Khoisan*. Cabo, 1(1), 5-10",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, J. H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Westphal, E. O. J. (1962) – *The linguistic prehistory of Southern Africa: Bush, Kwadi, Hottentot and Bantu linguistic relationships*. Africa, 32(3), 237-265",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Westphal, E. O. J. (1971) – *The Click Languages of Southern Africa*. In: *Current Trends in Linguistics*, T. A. Sebeok (Ed.), 7, 367-420. The Hague: Mouton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vossen, R. (1997) – *Die Khoe-Sprachen: Ein Beitrag zur Erforschung der Sprachgeschichte Afrikas*. Cologne: Rüdiger Köppe Verlag",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vossen, R. (Ed.) (2013) – *The Khoisan Languages*. London: Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Güldemann, T. (1998) – *San Languages for Education?* In: *Language, Democracy and Education in Africa*, K. Legère (Ed.), 77-105. Uppsala: Nordic Africa Institute",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Traill, A. (1998) – *The Khoisan Languages*. In: *Encyclopædia Britannica*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Traill, A. (2005) – *Khoisan languages*. In: *Encyclopædia Britannica Online*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Sands, B. (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Cologne: Rüdiger Köppe Verlag",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Sands, B. (2020) – *The ǂ'Amkoe Language: Phonetics, Phonology, and Morphosyntax*. In: *The Oxford Handbook of African Languages*, R. Vossen & G. Dimmendaal (Eds.), 489-506. Oxford: Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Fauvelle, F.-X. (2018) – *L'invention du Hottentot: Histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Paris: Éditions de la Sorbonne",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Fauvelle, F.-X. (2018) – *À la recherche du sauvage idéal*. En Attendant Nadeau",
+        "url": "https://www.en-attendant-nadeau.fr/2018/02/06/fabrique-sauvage-fauvelle/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers en-attendant-nadeau.fr; the tier awaits editorial review."
+      },
+      {
+        "title": "Schlebusch, C. M., Malmström, H., Günther, T., Sjödin, P., Coutinho, A., Edlund, H., ... & Jakobsson, M. (2017) – *Southern African ancient genomes estimate modern human divergence to 350,000 to 260,000 years ago*. Science, 358(6363), 652-655",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Skoglund, P., Thompson, J. C., Prendergast, M. E., Mittnik, A., Sirak, K., Hajdinjak, M., ... & Reich, D. (2017) – *Reconstructing Prehistoric African Population Structure*. Cell, 171(1), 59-71",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Gerlach, L. (2015) – *A Grammar of ǂ'Amkoe: A Kx'a Language of Botswana*. PhD dissertation, Humboldt University of Berlin",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Collins, C., & Gruber, J. (2013) – *A Phonetic and Phonological Description of ǂHoan*. In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium*, R. Vossen (Ed.), 27-48. Cologne: Rüdiger Köppe Verlag",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "\"Khoisan languages\" – *Encyclopædia Britannica*",
+        "url": "https://www.britannica.com/topic/Khoisan-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "\"Famille khoïsane\" – *Aménagement linguistique dans le monde (AXL-Cefan)*",
+        "url": "https://www.axl.cefan.ulaval.ca/monde/famkhoisane.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for axl.cefan.ulaval.ca."
+      },
+      {
+        "title": "\"Classement des langues khoïsan par nombre de locuteurs\" – *Atlasocio.com*",
+        "url": "https://atlasocio.com/classements/langues/familles/classement-langues-khoisan-par-nombre-locuteurs-total-monde.php",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for atlasocio.com."
+      },
+      {
+        "title": "\"The Khoisan\" – *South African History Online*",
+        "url": "https://www.sahistory.org.za/article/khoisan",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "\"Afrique du Sud : qui sont les Khoïsan, qui demandent plus de reconnaissance ?\" – *TV5MONDE* (2018)",
+        "url": "https://information.tv5monde.com/afrique/afrique-du-sud-qui-sont-les-khoisan-qui-demandent-plus-de-reconnaissance-83836",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers information.tv5monde.com; the tier awaits editorial review."
+      },
+      {
+        "title": "\"Qui sont les Khoisans ?\" – *Jeune Afrique*",
+        "url": "https://www.jeuneafrique.com/221145/archives-thematique/qui-sont-les-khoisans/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers jeuneafrique.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue (2024) – *Khoisan languages*",
+        "url": "https://www.ethnologue.com/subgroups/khoisan",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog (2024) – *Khoisan languages classification*",
+        "url": "https://glottolog.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "ONU / UNFPA (2025) – *World Population Prospects 2025* (estimations démographiques)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook (2025) – *Namibie, Botswana, Afrique du Sud, Angola* (données démographiques)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.0 (2024) – Familles \"Khoe-Kwadi\" [khoe1240], \"Kxa\" [kxaa1236] et \"Tuu\" [tuuu1241] : trois nœuds génétiques indépendants (aucun ancêtre commun reconstruit), confirmant que « Khoïsan » regroupe trois familles sans parenté prouvée",
+        "url": "https://glottolog.org/resource/languoid/id/khoe1240",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Original entry: \"Glottolog 5.0 (2024) – Familles \\\"Khoe-Kwadi\\\" [khoe1240], \\\"Kxa\\\" [kxaa1236] et \\\"Tuu\\\" [tuuu1241] : trois nœuds génétiques indépendants (aucun ancêtre commun reconstruit), confirmant que « Khoïsan » regroupe trois familles sans parenté prouvée. https://glottolog.org/resource/languoid/id/khoe1240 ; https://glottolog.org/resource/languoid/id/kxaa1236 ; https://glottolog.org/resource/languoid/id/tuuu1241\""
+      },
+      {
+        "title": "Brenzinger, Matthias (2011) – \"The twelve modern Khoisan languages\". In: *Khoisan Languages and Linguistics: Proceedings of the 3rd International Symposium* (Research in Khoisan Studies 29). Cologne: Rüdiger Köppe Verlag. [Nama : Namibie ≈200 000 ; Khwe : Namibie ≈3 700 ; Naro : Namibie ≈1 000 locuteurs]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue – Khoekhoegowab/Nama [naq] : Namibie ≈200 000, Afrique du Sud ≈2 000, Botswana ≈200 locuteurs. (chiffres vérifiés via Wikipédia FR « Nama (langue) », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)",
+        "url": "https://www.ethnologue.com/language/naq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue (16e éd., 2009) – Juǀʼhoan [ktz] : Namibie ≈30 000, Botswana ≈5 000 locuteurs. (chiffres vérifiés via Wikipédia FR « Juǀʼhoan », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/ktz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue (18e éd., 2015) – Naro [nhr] : Botswana ≈8 000 locuteurs (2014). (chiffre vérifié via Wikipédia EN « Naro language », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/nhr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue (19e éd., 2016) – Taa/ǃXóõ [nmn] : ≈2 500 locuteurs (2011), pour l'essentiel au Botswana. (chiffre vérifié via Wikipédia EN « Taa language », consulté en 2026)",
+        "url": "https://www.ethnologue.com/language/nmn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gerlach, Linda (2015) – *Phonetic and phonological description of the Nǃaqriaxe variety of ǂʼAmkoe and the impact of language contact*. PhD dissertation, Humboldt University of Berlin, p. 14-15. [ǂʼAmkoe occidental : 20-50 locuteurs, Botswana]",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

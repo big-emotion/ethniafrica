@@ -3,6 +3,7 @@
   "nameMain": "!Kung",
   "languageFamilyId": "FLG_KXA",
   "currentCountries": ["NAM", "BWA", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "!Kung",
@@ -108,10 +109,30 @@
       ]
     },
     "sources": [
-      "Joshua Project — Ju'hoan language resources (ktz). https://joshuaproject.net/languages/ktz",
-      "UNESCO Tentative List — San Living Cultural Landscape. https://whc.unesco.org/en/tentativelists/6096/",
-      "Internet Archive — N/um tchai: The Ceremonial Dance of the !Kung Bushmen (Marshall, 1969). https://archive.org/details/numtchaitheceremonialdanceofthekungbushmen",
-      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/"
+      {
+        "title": "Joshua Project — Ju'hoan language resources (ktz)",
+        "url": "https://joshuaproject.net/languages/ktz",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO Tentative List — San Living Cultural Landscape",
+        "url": "https://whc.unesco.org/en/tentativelists/6096/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Internet Archive — N/um tchai: The Ceremonial Dance of the !Kung Bushmen (Marshall, 1969)",
+        "url": "https://archive.org/details/numtchaitheceremonialdanceofthekungbushmen",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.org."
+      },
+      {
+        "title": "SIL Ethnologue — Kx'a language subgroup",
+        "url": "https://www.ethnologue.com/subgroup/4285/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

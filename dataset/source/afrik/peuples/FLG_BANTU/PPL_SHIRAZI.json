@@ -3,6 +3,7 @@
   "nameMain": "Shirazi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA", "KEN", "COM", "MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Shirazi",
@@ -94,12 +95,42 @@
       ]
     },
     "sources": [
-      "Shirazi and Arabs of Zanzibar – Minority Rights Group (https://minorityrights.org/communities/shirazi-and-arabs-of-zanzibar/)",
-      "Eastern Africa: The Shirazi migration – Britannica (https://www.britannica.com/place/eastern-Africa/The-Shirazi-migration)",
-      "Shirazi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14915/TZ)",
-      "Shirazi of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg050316/)",
-      "Jerman, Helena – Washirazi identity and Islam, XVIIe siecle (reference academique)",
-      "The Kilwa Chronicle (document medieval arabe-portugais)"
+      {
+        "title": "Shirazi and Arabs of Zanzibar – Minority Rights Group",
+        "url": "https://minorityrights.org/communities/shirazi-and-arabs-of-zanzibar/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Eastern Africa: The Shirazi migration – Britannica",
+        "url": "https://www.britannica.com/place/eastern-Africa/The-Shirazi-migration",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Shirazi in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14915/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Shirazi of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg050316/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Jerman, Helena – Washirazi identity and Islam, XVIIe siecle (reference academique)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Kilwa Chronicle (document medieval arabe-portugais)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

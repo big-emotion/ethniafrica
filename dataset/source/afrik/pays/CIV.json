@@ -1,11 +1,16 @@
 {
   "id": "CIV",
-  "nameFr": "République de Côte d'Ivoire",
+  "nameFr": "Côte d'Ivoire",
   "nameOfficial": "République de Côte d'Ivoire (République de Côte d'Ivoire)",
+  "summary": "La Côte d'Ivoire porte le nom d'une marchandise : les navigateurs portugais désignaient ce littoral par ce qu'on y achetait, et le français a fixé l'appellation au XIXe siècle. Le pays réunit royaumes akan, peuples krou, mandé et voltaïques, soit une soixantaine de groupes. Le baoulé, l'agni et le dioula structurent le quotidien à côté du français.",
   "etymology": "Le nom \"Côte d'Ivoire\" provient du français et fait référence au commerce de l'ivoire qui se pratiquait le long de la côte atlantique depuis le XVe siècle. Les navigateurs portugais utilisaient le terme \"Costa do Marfim\" (Côte d'Ivoire en portugais) pour désigner cette région riche en éléphants et en ivoire. Le nom a été officialisé par les Français lors de la création de la colonie en 1893.",
   "nameOriginActor": "Le nom \"Côte d'Ivoire\" a été donné par les navigateurs européens (portugais, puis français) à partir du XVe siècle en référence au commerce de l'ivoire pratiqué le long de la côte. Les Français ont officialisé ce nom lors de la création de la colonie de Côte d'Ivoire en 1893. Le nom n'est pas traduit dans les langues étrangères (contrairement à d'autres pays) pour préserver l'identité nationale.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Costa do Marfim (portugais, XVe siècle)",
+        "Colonie de Côte d'Ivoire (1893-1960)"
+      ],
       "antiquity": "Le territoire actuel de la Côte d'Ivoire était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes Akan, chefferies Krou, etc.).",
       "middleAges": "Développement de royaumes Akan (Baoulé, Agni, Abron) migrés depuis le Ghana, peuples Krou forestiers (Bété, Wé, Dida), populations Mandé du Nord (héritage de l'empire du Mali), peuples voltaiques (Sénoufo, Lobi, Koulango). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), Mandé du Sud (Dan, Gouro, Wan), peuples voltaiques (Sénoufo, Lobi, Koulango). Les Européens utilisaient le terme \"Côte d'Ivoire\" ou \"Costa do Marfim\" pour désigner la région côtière riche en commerce d'ivoire.",
@@ -267,19 +272,59 @@
       "postIndependence": "1960-1993 : Présidence de Félix Houphouët-Boigny, période de stabilité politique et de développement économique (\"miracle ivoirien\"). 1993-2011 : Période d'instabilité politique, coups d'État, crises électorales, guerre civile (2002-2011). 2011-présent : Période de stabilisation et de reconstruction. Défis : réconciliation nationale, développement économique, gestion des migrations. La Côte d'Ivoire est le premier producteur mondial de cacao."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Côte d'Ivoire",
-      "CIA World Factbook – Côte d'Ivoire",
-      "ONU / UNFPA – Démographie Côte d'Ivoire 2025",
-      "Memel-Fotê, Harris – \"Le modèle politique ivoirien\"",
-      "Archives culturelles ivoiriennes",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples de la Côte d'Ivoire"
+      {
+        "title": "SIL Ethnologue – Languages of Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Côte d'Ivoire 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Memel-Fotê, Harris – \"Le modèle politique ivoirien\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives culturelles ivoiriennes",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements ivoiriens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Akan",
-          "population": 11340000,
           "percentageInCountry": 42,
           "peopleId": "PPL_AKAN",
           "region": "Centre, Est et Sud de la Côte d'Ivoire",
@@ -287,7 +332,6 @@
         },
         {
           "name": "Voltaïques / Gur",
-          "population": 4590000,
           "percentageInCountry": 17,
           "peopleId": "PPL_SENUFO",
           "region": "Nord de la Côte d'Ivoire",
@@ -295,7 +339,6 @@
         },
         {
           "name": "Mandé du Nord",
-          "population": 4320000,
           "percentageInCountry": 16,
           "peopleId": "PPL_MALINKE",
           "region": "Nord de la Côte d'Ivoire",

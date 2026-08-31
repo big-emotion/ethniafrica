@@ -8,6 +8,7 @@
   "nameMain": "<Nom principal du peuple>",
   "languageFamilyId": "FLG_XXXXX",
   "currentCountries": ["ISO1", "ISO2"],
+  "classificationStatus": "<consensual | contested | colonial-legacy | reconstructive — omettre tant que la fiche n'a pas ete revue>",
   "content": {
     "appellations": {
       "mainName": "<Nom principal du peuple>",
@@ -57,9 +58,21 @@
       "referenceYear": 2025,
       "source": "<Source démographique — ex: UNFPA 2025>",
       "distributionByCountry": [
-        { "country": "ISO1", "population": 0, "percentage": 0 }
+        {
+          "country": "ISO1",
+          "population": 0,
+          "percentage": 0,
+          "note": "<Où dans le pays — régions, villes ; facultatif>"
+        }
       ]
     },
-    "sources": ["<Titre – Auteur/URL>"]
+    "sources": [
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier : entrée du catalogue, règle de domaine, ou forme de citation>"
+      }
+    ]
   }
 }

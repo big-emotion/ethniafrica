@@ -3,10 +3,78 @@ module.exports = {
     collect: {
       url: [
         "http://localhost:3000/",
-        "http://localhost:3000/fr/pays/senegal",
-        "http://localhost:3000/fr/peuples/wolof",
+        "http://localhost:3000/fr",
+        // /fr/comprendre/noms and /fr/comprendre/migrations (further down this list) both returned
+        // HTTP 500 in CI and were excluded, because lhci's `collect` step
+        // aborts the whole run on the first URL that fails to load — which
+        // left every route after them unmeasured, not just themselves.
+        //
+        // Migration 039 restored the `sources_title_key` UNIQUE constraint
+        // that `onConflict: "title"` upserts depend on. Without it every
+        // upsertSource in nameRecordJsonLoader and migrationJsonLoader
+        // aborted its fiche, so `name_records` and `migration_events` stayed
+        // empty — which is what these two routes read. 039 was applied on
+        // 2026-08-25, so the cause is gone and both are measured again.
+        //
+        // If either still fails, the honest response is to fix the route, not
+        // to re-exclude it: an unmeasured route is a budget nobody enforces.
+        "http://localhost:3000/fr/comprendre/noms",
+        // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
+        // journey joins the reference routes so its mobile Performance ≥ 85
+        // budget is enforced continuously via the base ".*" assertMatrix
+        // entry below, not just checked once at ship time.
+        "http://localhost:3000/fr/jouer/quiz",
+        // One representative route per charter route-family rolled out in
+        // 16.4–16.9 (ETNI-807 · FR110), in addition to the fiche routes
+        // below. Dropping one leaves that family's mobile budget unmeasured.
+        // The Explorer hub and its three facets. They were one route-family
+        // when they were three directories, and one sample stood for all of
+        // them; they are not one any more. The three facets share a layout
+        // that mounts a WebGL globe and holds it across a switch, and the hub
+        // carries a scene of its own — so a budget measured on `peuples`
+        // alone says nothing about what the other two cost.
+        "http://localhost:3000/fr/explorer",
+        "http://localhost:3000/fr/explorer/peuples",
+        "http://localhost:3000/fr/explorer/familles",
+        "http://localhost:3000/fr/explorer/pays",
+        "http://localhost:3000/fr/explorer/recherche",
+        "http://localhost:3000/fr/mentions-legales",
+        "http://localhost:3000/fr/admin/connexion",
+        // The next three are one representative assembled fiche per AFRIK
+        // entity type (FR102) — country, people, language family. Each entity
+        // type resolves a different chapter sequence (panelRegistry.tsx), so
+        // dropping one leaves that sequence's mobile budget unmeasured.
+        "http://localhost:3000/fr/explorer/pays/SEN",
+        "http://localhost:3000/fr/explorer/peuples/PPL_WOLOF",
+        // ETNI-463 (7.11) AC1 — also the large-family sample (FLG_BANTU:
+        // 6 languages, 174 associated peoples, the largest currently-seeded).
+        "http://localhost:3000/fr/explorer/familles/FLG_BANTU",
+        // Epic 11, Story 11.11 (FR75, NFR1) — the links page with the lazy
+        // (ssr:false) ego-network graph must not regress mobile performance.
+        "http://localhost:3000/fr/explorer/peuples/PPL_WOLOF/liens",
+        // ETNI-488 (9.11) AC1 — comparator picker + one seeded comparison
+        // route (illustrative staging IDs, same FLG_ATLANTIQUE family as the
+        // /fr/explorer/peuples/PPL_WOLOF fiche above). Tighter CWV budgets for both
+        // are scoped in assert.assertMatrix below.
+        "http://localhost:3000/fr/comparer",
+        "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE",
+        // Epic 13, Story 13.12 (ETNI-536) — the colonization module's
+        // timeline (EventTimelineMarkers + EventChronologyTable) must not
+        // regress the base mobile Performance ≥ 85 / Accessibility = 100
+        // budgets enforced by the catch-all assertMatrix entry below.
+        "http://localhost:3000/fr/comprendre/regards/colonisation-et-resistances",
+        // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas, back in
+        // the list for the same reason as /fr/comprendre/noms above. Its tighter CLS/INP
+        // budgets are in assert.assertMatrix below and are no longer inert.
+        "http://localhost:3000/fr/comprendre/migrations",
       ],
       numberOfRuns: 3,
+      // Audit returning-user performance with essential-only consent. The
+      // live axe run still exercises the consent banner for new visitors.
+      puppeteerScript: "./scripts/lighthouse-setup.cjs",
+      puppeteerLaunchOptions: {
+        args: ["--no-sandbox"],
+      },
       settings: {
         // Mobile emulation with 4G throttling
         formFactor: "mobile",
@@ -31,11 +99,53 @@ module.exports = {
       },
     },
     assert: {
-      assertions: {
-        "categories:performance": ["error", { minScore: 0.85 }],
-        "categories:accessibility": ["error", { minScore: 1 }],
-        "categories:best-practices": ["error", { minScore: 0.95 }],
-      },
+      // ETNI-488 (9.11) AC1 fix (review) — LHCI's `assertMatrix` and the
+      // top-level `assertions` block are mutually exclusive: when
+      // `assertMatrix` is present, any URL not matched by one of its
+      // entries gets no assertions at all. The base site-wide gates are
+      // therefore folded in here as the first, catch-all entry so every
+      // route (including the comparator ones) keeps
+      // `categories:performance ≥ 0.85` and the other base budgets. The
+      // comparator entry below adds its stricter LCP/CLS/FID budgets on
+      // top for the comparator routes only.
+      assertMatrix: [
+        {
+          matchingUrlPattern: ".*",
+          assertions: {
+            "categories:performance": ["error", { minScore: 0.85 }],
+            "categories:accessibility": ["error", { minScore: 1 }],
+            "categories:best-practices": ["error", { minScore: 0.95 }],
+            "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
+            "total-blocking-time": ["error", { maxNumericValue: 300 }],
+          },
+        },
+        // ETNI-488 (9.11) AC1 — comparator routes are additionally held to
+        // the story's tighter field-metric budgets (LCP ≤ 2.5s / CLS ≤ 0.1 /
+        // INP ≤ 200ms, max-potential-fid as the lab proxy for INP), on top
+        // of the base gates above. Scoped by URL pattern so the looser
+        // site-wide LCP budget and the (currently ungated) CLS on fiche
+        // routes are left untouched — only the comparator picker and
+        // comparison routes tighten.
+        {
+          matchingUrlPattern: "^http://localhost:3000/fr/comparer(/.*)?$",
+          assertions: {
+            "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
+            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
+            "max-potential-fid": ["error", { maxNumericValue: 200 }],
+          },
+        },
+        // ETNI-522/1104 — the migrations atlas route additionally holds
+        // CLS ≤ 0.1 and INP ≤ 200ms (max-potential-fid as the lab proxy),
+        // on top of the base Performance ≥ 85 gate above.
+        {
+          matchingUrlPattern:
+            "^http://localhost:3000/fr/comprendre/migrations(/.*)?$",
+          assertions: {
+            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
+            "max-potential-fid": ["error", { maxNumericValue: 200 }],
+          },
+        },
+      ],
     },
     upload: {
       target: "temporary-public-storage",

@@ -3,6 +3,7 @@
   "nameMain": "Lunda (Norte)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lunda de Lunda Norte",
@@ -88,11 +89,36 @@
       ]
     },
     "sources": [
-      "Country Studies — Angola, Lunda-Chokwe. https://countrystudies.us/angola/62.htm",
-      "EPR Atlas — Ethnicity in Angola. https://growup.ethz.ch/atlas/pdf/Angola.pdf",
-      "Scribd — Introduction Lunda Tshokwe (traduction). https://www.scribd.com/document/912218309/INTRODUCTION-LUNDA-TSHOKWE",
-      "SIL Ethnologue — Lunda (lun). https://www.ethnologue.com/language/lun/",
-      "CIA World Factbook — Angola. https://www.cia.gov/the-world-factbook/countries/angola/"
+      {
+        "title": "Country Studies — Angola, Lunda-Chokwe",
+        "url": "https://countrystudies.us/angola/62.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "EPR Atlas — Ethnicity in Angola",
+        "url": "https://growup.ethz.ch/atlas/pdf/Angola.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers growup.ethz.ch; the tier awaits editorial review."
+      },
+      {
+        "title": "Scribd — Introduction Lunda Tshokwe (traduction)",
+        "url": "https://www.scribd.com/document/912218309/INTRODUCTION-LUNDA-TSHOKWE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com."
+      },
+      {
+        "title": "SIL Ethnologue — Lunda (lun)",
+        "url": "https://www.ethnologue.com/language/lun/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Angola",
+        "url": "https://www.cia.gov/the-world-factbook/countries/angola/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

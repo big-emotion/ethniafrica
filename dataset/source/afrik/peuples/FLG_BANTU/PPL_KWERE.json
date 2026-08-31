@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Kwere in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12923)",
-      "Kwere people – 101 Last Tribes (https://www.101lasttribes.com/tribes/kwere.html)",
-      "Kwere Tribe – Gateway Africa (https://www.gateway-africa.com/tribe/kwere_tribe.html)",
-      "Kwere of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014972/)",
-      "Kwere Language (CWE) – Ethnologue, SIL International (https://www.ethnologue.com/language/cwe/)"
+      {
+        "title": "Kwere in Tanzania – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/12923",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kwere people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/kwere.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Kwere Tribe – Gateway Africa",
+        "url": "https://www.gateway-africa.com/tribe/kwere_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "Kwere of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg014972/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Kwere Language (CWE) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/cwe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

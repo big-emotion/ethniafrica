@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_MIGRATORY_ZULU_XHOSA",
+  "relationType": "migratory",
+  "peopleIdA": "PPL_ZULU",
+  "peopleIdB": "PPL_XHOSA",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 1820,
+    "endYear": 1835,
+    "label": "Années 1820-1830 (Mfecane)"
+  },
+  "description": "Le bouleversement du Mfecane, consécutif à l'expansion militaire du royaume zoulou sous Shaka dans les années 1820, provoque la dispersion de plusieurs groupes nguni du Natal (Hlubi, Bhele, Zizi). Une partie de ces réfugiés migre vers le sud jusqu'au territoire xhosa de la frontière du Cap, où ils sont accueillis comme dépendants par des chefs xhosa, notamment le chef gcaleka Hintsa, à partir du début des années 1820. Ces groupes, connus plus tard sous le nom d'amaMfengu, forment une population distincte au sein de la société frontalière du Cap oriental ; l'ampleur exacte de cette migration de réfugiés fait l'objet d'un débat historiographique (Cobbing, Webster, Stapleton).",
+  "sources": [
+    {
+      "title": "The Zulu Aftermath: A Nineteenth-Century Revolution in Bantu Africa",
+      "author": "J.D. Omer-Cooper",
+      "year": 1966,
+      "url": "https://archive.org/details/zuluaftermath0000unse",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Fengu people » et FR « Fingos » sur l'origine des Mfengu pendant le Mfecane. Histoire académique de référence sur le Mfecane, comportant un chapitre dédié à l'histoire du peuple fingo (mfengu). Éditeur : Northwestern University Press, 1966 ; page archive.org confirmée accessible."
+    },
+    {
+      "title": "The House of Phalo: A History of the Xhosa People in the Days of Their Independence",
+      "author": "J.B. Peires",
+      "year": 1981,
+      "url": "https://archive.org/details/houseofphalohist0000peir",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Fengu people » et FR « Fingos ». Histoire académique de référence sur les Xhosa, couvrant l'arrivée et l'accueil des réfugiés mfengu en territoire xhosa. Éditeur : Ravan Press, 1981 ; page archive.org confirmée accessible."
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const isCI = Boolean(process.env.CI);
 const baseURL = process.env.BASE_URL ?? "http://localhost:3000";
+const serverPort = new URL(baseURL).port || "3000";
 
 // Reference device profile per TEA Test Design ASR-7.
 // Africa History target audience: lycéenne in Dakar on entry-level Android, 4G, rationed data.
@@ -24,6 +25,13 @@ const referenceDesktop = {
   viewport: { width: 800, height: 900 },
 };
 
+// ETNI-1216/REQ-114: the access-mode hub a11y spec is required at 1200 px,
+// a width no existing project covers.
+const wideDesktop = {
+  ...devices["Desktop Chrome"],
+  viewport: { width: 1200, height: 900 },
+};
+
 const moderatorDesktop = {
   ...devices["Desktop Chrome"],
   viewport: { width: 1280, height: 900 },
@@ -32,7 +40,13 @@ const moderatorDesktop = {
 export default defineConfig({
   testDir: "./e2e",
   timeout: 60_000,
-  expect: { timeout: 10_000 },
+  expect: {
+    timeout: 10_000,
+    toHaveScreenshot: {
+      pathTemplate:
+        "_bmad-output/planning-artifacts/module-specs/assets/{arg}{ext}",
+    },
+  },
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 1 : 0,
@@ -87,6 +101,13 @@ export default defineConfig({
       testIgnore: /\.setup\.ts$/,
       grep: /@cross-viewport/,
     },
+    {
+      name: "desktop-1200",
+      use: wideDesktop,
+      dependencies: ["setup"],
+      testIgnore: /\.setup\.ts$/,
+      grep: /@cross-viewport/,
+    },
     // Fatou (moderator) journey runs on desktop ≥ 1024 px per UX spec L91.
     {
       name: "moderator-1024",
@@ -99,7 +120,7 @@ export default defineConfig({
   webServer: process.env.SKIP_WEB_SERVER
     ? undefined
     : {
-        command: "npm run dev",
+        command: `npm run dev -- --port ${serverPort}`,
         url: baseURL,
         reuseExistingServer: !isCI,
         timeout: 120_000,

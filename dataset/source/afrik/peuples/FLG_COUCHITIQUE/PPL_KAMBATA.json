@@ -3,6 +3,7 @@
   "nameMain": "Kambata",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kambata",
@@ -92,11 +93,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kambaata (ktb). https://www.ethnologue.com/language/ktb/",
-      "Joshua Project — Kambata in Ethiopia. https://joshuaproject.net/people_groups/12468",
-      "Wolde Lakew Hirigo. The Case of Kambata and Hadiya (1890s–1990s). Haramaya University, 2023. http://ir.haramaya.edu.et/hru/bitstream/handle/123456789/7065/Wolde%20Lakew%20Hirigo.pdf",
-      "Tagesse Shuramo. Ethnic Interaction in South Central Ethiopia: The Case of Kambata and Hadya (1890s–1990s). Jimma University. https://repository.ju.edu.et/bitstream/handle/123456789/833/tagesse.2.pdf",
-      "Recensement national ethiopien 2007. Ethiopian Statistics Services. https://ess.gov.et/"
+      {
+        "title": "SIL Ethnologue — Kambaata (ktb)",
+        "url": "https://www.ethnologue.com/language/ktb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Kambata in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/12468",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Wolde Lakew Hirigo. The Case of Kambata and Hadiya (1890s–1990s). Haramaya University, 2023",
+        "url": "http://ir.haramaya.edu.et/hru/bitstream/handle/123456789/7065/Wolde%20Lakew%20Hirigo.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ir.haramaya.edu.et; the tier awaits editorial review."
+      },
+      {
+        "title": "Tagesse Shuramo. Ethnic Interaction in South Central Ethiopia: The Case of Kambata and Hadya (1890s–1990s). Jimma University",
+        "url": "https://repository.ju.edu.et/bitstream/handle/123456789/833/tagesse.2.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for repository.ju.edu.et."
+      },
+      {
+        "title": "Recensement national ethiopien 2007. Ethiopian Statistics Services",
+        "url": "https://ess.gov.et/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      }
     ]
   }
 }

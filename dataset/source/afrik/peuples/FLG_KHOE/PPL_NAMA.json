@@ -3,6 +3,7 @@
   "nameMain": "Nama",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["NAM", "ZAF"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nama",
@@ -100,13 +101,48 @@
       ]
     },
     "sources": [
-      "Glottolog 5.3 — Nama (Namibia) (nama1264), ISO 639-3 : naq. https://glottolog.org/resource/languoid/id/nama1264",
-      "Encyclopaedia Britannica — Nama. https://www.britannica.com/topic/Nama-people",
-      "Joshua Project — Nama, Khoekhoe in Namibia. https://joshuaproject.net/people_groups/13931/WA",
-      "UNESCO — Intangible Cultural Heritage : Aixan/Gana/Ob#ANS TSI //Khasigu ancestral musical sound (Namibia, 2020). https://ich.unesco.org/en/USL/01544",
-      "Namibia Statistics Agency — 2023 Population and Housing Census. https://nsa.org.na/census/",
-      "khoisan.org — Ritual: The Khoikhoi and the San. http://khoisan.org/ritual.htm",
-      "IWGIA — The Indigenous World 2025 : Namibia. https://iwgia.org/en/namibia/5634-iw-2025-namibia.html"
+      {
+        "title": "Glottolog 5.3 — Nama (Namibia) (nama1264), ISO 639-3 : naq",
+        "url": "https://glottolog.org/resource/languoid/id/nama1264",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Nama",
+        "url": "https://www.britannica.com/topic/Nama-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Nama, Khoekhoe in Namibia",
+        "url": "https://joshuaproject.net/people_groups/13931/WA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO — Intangible Cultural Heritage : Aixan/Gana/Ob#ANS TSI //Khasigu ancestral musical sound (Namibia, 2020)",
+        "url": "https://ich.unesco.org/en/USL/01544",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Namibia Statistics Agency — 2023 Population and Housing Census",
+        "url": "https://nsa.org.na/census/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for nsa.org.na."
+      },
+      {
+        "title": "khoisan.org — Ritual: The Khoikhoi and the San",
+        "url": "http://khoisan.org/ritual.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for khoisan.org."
+      },
+      {
+        "title": "IWGIA — The Indigenous World 2025 : Namibia",
+        "url": "https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      }
     ]
   }
 }

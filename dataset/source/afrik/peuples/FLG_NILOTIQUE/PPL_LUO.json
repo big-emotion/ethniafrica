@@ -3,6 +3,7 @@
   "nameMain": "Luo",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["KEN", "TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Luo",
@@ -86,12 +87,42 @@
       ]
     },
     "sources": [
-      "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
-      "Ogot B.A. – History of the Southern Luo, East African Publishing House, 1967",
-      "Cohen D.W. & Atieno Odhiambo E.S. – Siaya: The Historical Anthropology of an African Landscape, James Currey, 1989",
-      "Tishkoff S.A. et al. – The Genetic Structure and History of Africans and African Americans, Science, 2009",
-      "SIL Ethnologue – Dholuo language [luo] (https://www.ethnologue.com/language/luo/)",
-      "UNESCO World Heritage – Thimlich Ohinga Archaeological Site (https://whc.unesco.org/en/list/1450/)"
+      {
+        "title": "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ogot B.A. – History of the Southern Luo, East African Publishing House, 1967",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Cohen D.W. & Atieno Odhiambo E.S. – Siaya: The Historical Anthropology of an African Landscape, James Currey, 1989",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Tishkoff S.A. et al. – The Genetic Structure and History of Africans and African Americans, Science, 2009",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue – Dholuo language [luo]",
+        "url": "https://www.ethnologue.com/language/luo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO World Heritage – Thimlich Ohinga Archaeological Site",
+        "url": "https://whc.unesco.org/en/list/1450/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

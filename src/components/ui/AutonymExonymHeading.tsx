@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { bcp47LanguageTag } from "@/lib/languageTag";
 
 export type AutonymExonymHeadingVariant =
-  "hero" | "inline" | "card" | "people-hero" | "people-section" | "compact";
+  | "hero"
+  | "parchment"
+  | "inline"
+  | "card"
+  | "people-hero"
+  | "people-section"
+  | "people-naming"
+  | "compact";
 
 export interface AutonymExonymHeadingProps {
   /** Self-appellation / autonym. Primary heading text for hero, inline and card variants. */
@@ -13,6 +21,12 @@ export interface AutonymExonymHeadingProps {
   autonymIso639_3?: string;
   /** Secondary name shown beside the autonym (hero/inline/card) or below it when different (compact). */
   exonym?: string;
+  /**
+   * What the fiche says the subject *is*, joined to the name by a comma —
+   * "Krou, une aire à reconstruire". Distinct from `exonym`, which is another
+   * name for the same subject and is joined by a space.
+   */
+  predicate?: string;
   /** Alternate names, shown with a "+N autres" expand/collapse toggle (hero/inline/card variants). */
   alternateNames?: string[];
   /** IPA pronunciation shown next to the autonym (hero/inline/card variants). */
@@ -21,8 +35,6 @@ export interface AutonymExonymHeadingProps {
   nameMain?: string;
   /** Multiple exonyms rendered as pill chips below `nameMain` (people-hero/people-section variants). */
   exonyms?: string[];
-  /** Optional identifier code badge, e.g. FLG_BANTU, PPL_YORUBA, ISO-3166 code (compact variant). */
-  code?: string | null;
   className?: string;
   variant?: AutonymExonymHeadingVariant;
 }
@@ -32,6 +44,21 @@ const headingVariantConfig = {
     tag: "h1" as const,
     autonymClasses: "font-afh-display font-black text-afh-hero",
     exonymClasses: "font-afh font-medium text-afh-h2",
+  },
+  /**
+   * The title of a fiche standing in `.afh-parchment-head`, which already
+   * dresses the h1 and sets its predicate in the surface's accent ink. The
+   * variant names no size and no face of its own on purpose: the country and
+   * family fiches get their title from that unit directly, and a people fiche
+   * has to pass through this component — the `afh/no-bare-people-name` rule
+   * reaches no name that does not. Declaring the type here would be the same
+   * title in two places, free to drift apart.
+   */
+  parchment: {
+    tag: "h1" as const,
+    autonymClasses: "",
+    exonymClasses: "font-afh font-medium text-afh-h2",
+    predicateEmphasis: true,
   },
   inline: {
     tag: "h2" as const,
@@ -54,33 +81,89 @@ const peopleVariantConfig = {
       fontSize: "var(--country-text-hero)",
       fontWeight: 900,
     },
-    autonymClasses: "text-white/70 text-[14px] md:text-[15px] mt-1 font-medium",
+    autonymClasses: "text-white/70 text-afh-small mt-1 font-medium",
     exonymClasses:
-      "px-[8px] py-[2px] rounded-full text-[11px] font-medium bg-white/10 border border-white/15 text-white/80",
+      "px-[8px] py-[2px] rounded-full text-afh-caption font-medium bg-white/10 border border-white/15 text-white/80",
   },
   "people-section": {
     wrapperClasses: "mb-1",
     nameClasses: "leading-tight tracking-tight",
     nameStyle: { fontFamily: "var(--country-font-display)", fontWeight: 700 },
-    autonymClasses: "text-[color:var(--country-text-soft)] text-[13px] mt-0.5",
+    autonymClasses:
+      "text-[color:var(--country-text-soft)] text-afh-caption mt-0.5",
     exonymClasses:
-      "px-[6px] py-[1px] rounded-full text-[10px] font-medium bg-[color:var(--country-card)] border border-[color:var(--country-border)] text-[color:var(--country-text-soft)]",
+      "px-[6px] py-[1px] rounded-full text-afh-caption font-medium bg-[color:var(--country-card)] border border-[color:var(--country-border)] text-[color:var(--country-text-soft)]",
   },
 };
 
+// @req REQ-115
 export function AutonymExonymHeading({
   autonym,
   autonymIso639_3,
   exonym,
+  predicate,
   alternateNames,
   ipa,
   nameMain,
   exonyms,
-  code,
   className,
   variant = "hero",
 }: AutonymExonymHeadingProps) {
   const [expanded, setExpanded] = useState(false);
+
+  // The corpus writes ISO 639-3 and `lang` wants the shortest tag the language
+  // has. Emitting `yor` where BCP 47 asks for `yo` reads the autonym in the
+  // page's own voice — the one thing this component exists to prevent.
+  const autonymLang = bcp47LanguageTag(autonymIso639_3);
+
+  /**
+   * The fiche's opening statement: the name borne, and the names imposed, set
+   * side by side — autonym on the accent, exonyms on the colonial red.
+   *
+   * It lives inside this component rather than in the section that uses it
+   * because the pairing *is* the doctrine: keep colonial-era names, explain
+   * why they are problematic, and never let one reach the page without the
+   * autonym beside it. A section assembling that layout from the outside would
+   * be free to drift out of it, and afh/no-bare-people-name would have nothing
+   * to say — the rule only reaches names passed through here.
+   */
+  if (variant === "people-naming") {
+    const imposedNames = exonyms ?? [];
+
+    // The dress is fiche-parchment.css's, not this component's: the fiche is
+    // one continuous document, and the two fields are set apart by a rule in
+    // ink rather than by a card. Their inks — accent for the name borne,
+    // colonial for the names imposed — are the doctrine, and the stylesheet
+    // keys them off `data-role` so the pairing survives a restyle.
+    return (
+      <div className={cn("afh-naming", className)}>
+        <div className="afh-naming-field" data-role="borne">
+          <h3 className="afh-naming-label">Auto-appellation</h3>
+          <p
+            data-autonym="true"
+            lang={autonymLang}
+            className="afh-naming-value"
+          >
+            {autonym ?? nameMain}
+          </p>
+        </div>
+
+        {/* Four fiches record no exonym at all. An empty red block would read
+            as "no colonial name exists for this people" — a claim, where the
+            corpus only has an absence. */}
+        {imposedNames.length > 0 && (
+          <div className="afh-naming-field" data-role="imposed">
+            <h3 className="afh-naming-label">Exonymes</h3>
+            <ul data-exonyms="true" className="afh-naming-list">
+              {imposedNames.map((imposed) => (
+                <li key={imposed}>{imposed}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   if (variant === "people-hero" || variant === "people-section") {
     const {
@@ -125,16 +208,17 @@ export function AutonymExonymHeading({
 
     return (
       <div className={cn("space-y-0.5", className)}>
+        {/* This used to lead with a mono badge holding the corpus identifier —
+            PPL_YORUBA beside the name it identifies. A reader who can see the
+            name has no use for the key, and the three callers that passed one
+            were listing peoples, where the name is the whole point. */}
         <div className="flex items-center gap-2 flex-wrap">
-          {code && (
-            <span className="text-xs font-mono text-muted-foreground bg-muted px-1.5 py-0.5 rounded shrink-0">
-              {code}
-            </span>
-          )}
-          <h3 className="font-semibold text-base">{exonym}</h3>
+          <h2 className="font-semibold text-afh-small">{exonym}</h2>
         </div>
         {showAutonym && (
-          <p className="text-sm text-muted-foreground italic">{autonym}</p>
+          <p className="text-afh-small text-muted-foreground italic">
+            {autonym}
+          </p>
         )}
       </div>
     );
@@ -144,7 +228,10 @@ export function AutonymExonymHeading({
     tag: Heading,
     autonymClasses,
     exonymClasses,
-  } = headingVariantConfig[variant];
+    predicateEmphasis = false,
+  } = headingVariantConfig[variant] as (typeof headingVariantConfig)["hero"] & {
+    predicateEmphasis?: boolean;
+  };
 
   const hasAlternateNames =
     Array.isArray(alternateNames) && alternateNames.length > 0;
@@ -157,7 +244,7 @@ export function AutonymExonymHeading({
       data-variant={variant}
     >
       <Heading>
-        <span lang={autonymIso639_3} className={autonymClasses}>
+        <span lang={autonymLang} className={autonymClasses}>
           {autonym}
         </span>
         {ipa && (
@@ -165,13 +252,34 @@ export function AutonymExonymHeading({
             <span aria-hidden="true" className="font-afh text-afh-small ml-1">
               [{ipa}]
             </span>
-            <span
-              className="sr-only"
-              aria-label={`Prononciation phonétique : ${ipa}`}
-            />
+            <span className="sr-only">
+              {`Prononciation phonétique : ${ipa}`}
+            </span>
           </>
         )}
-        {exonym && <span className={exonymClasses}>{exonym}</span>}
+        {/* Two names need a space between them. Without it the heading's own
+            textContent reads "YorùbáYoruba" — the styling separates them for
+            an eye, and for nothing else: a screen reader announces one word,
+            and so does every assertion made on text. */}
+        {exonym && (
+          <>
+            {" "}
+            <span className={exonymClasses}>{exonym}</span>
+          </>
+        )}
+        {/* A predicate is not a name. "!Kung" and "un peuple sans bord" are a
+            subject and what the fiche says about it, so they are joined the
+            way the family fiche joins them — by a comma, not by whitespace.
+            The parchment head sets it in italic accent ink through the `em`,
+            which is also what the family and country fiches write by hand. */}
+        {predicate &&
+          (predicateEmphasis ? (
+            <>
+              , <em>{predicate}</em>
+            </>
+          ) : (
+            <span className={exonymClasses}>, {predicate}</span>
+          ))}
       </Heading>
       {hasAlternateNames && (
         <div data-alternate-names>

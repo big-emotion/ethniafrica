@@ -3,6 +3,7 @@
   "nameMain": "Krio",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["SLE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Krio",
@@ -100,11 +101,36 @@
       ]
     },
     "sources": [
-      "Creole Heritage Organization California — The Krios: An Abridged History. https://cho-ca.org/the-krios-an-abridged-history",
-      "BBC News — The story of Sierra Leone's Krio people. https://www.bbc.com/news/world-africa-49726461",
-      "Kreol Magazine — Krio: The Creole Language That Unites Sierra Leone. https://kreolmagazine.com/krio-the-creole-language-that-unites-sierra-leone/",
-      "EBSCO Research Starters — Sierra Leone Creole people. https://www.ebsco.com/research-starters/history/sierra-leone-creole-people",
-      "SIL Ethnologue — Krio language (kri). https://www.ethnologue.com/language/kri/"
+      {
+        "title": "Creole Heritage Organization California — The Krios: An Abridged History",
+        "url": "https://cho-ca.org/the-krios-an-abridged-history",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers cho-ca.org; the tier awaits editorial review."
+      },
+      {
+        "title": "BBC News — The story of Sierra Leone's Krio people",
+        "url": "https://www.bbc.com/news/world-africa-49726461",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for bbc.com."
+      },
+      {
+        "title": "Kreol Magazine — Krio: The Creole Language That Unites Sierra Leone",
+        "url": "https://kreolmagazine.com/krio-the-creole-language-that-unites-sierra-leone/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kreolmagazine.com."
+      },
+      {
+        "title": "EBSCO Research Starters — Sierra Leone Creole people",
+        "url": "https://www.ebsco.com/research-starters/history/sierra-leone-creole-people",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "SIL Ethnologue — Krio language (kri)",
+        "url": "https://www.ethnologue.com/language/kri/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

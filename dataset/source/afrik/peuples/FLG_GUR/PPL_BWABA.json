@@ -3,6 +3,7 @@
   "nameMain": "Bwaba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "MLI"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bwaba",
@@ -91,13 +92,48 @@
       ]
     },
     "sources": [
-      "Africa Direct — Bwa People. https://africadirect.com/blogs/people/african-peoples-art-bwa",
-      "Smarthistory — Mask (Nwantantay) Bwa peoples. https://smarthistory.org/mask-nwantantay/",
-      "SKOUNT Art — Bwa Owl Mask: African Symbolism. https://www.skountart.com/blog/bwa-owl-mask-african-symbolism",
-      "Joshua Project — Red Bobo Bwa in Burkina Faso. https://joshuaproject.net/people_groups/11056/UV",
-      "Pacific Lutheran University — Learn More: Bwa Mask. https://www.plu.edu/africanartcollection/masks/bwa-mask/learn-more-bwa-mask/",
-      "Encyclopaedia Britannica — Bwa. https://www.britannica.com/topic/Bwa",
-      "Roy, Christopher D. et Wheelock, Thomas G. B. Land of the Flying Masks: Art and Culture in Burkina Faso. Prestel Verlag, 2007."
+      {
+        "title": "Africa Direct — Bwa People",
+        "url": "https://africadirect.com/blogs/people/african-peoples-art-bwa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africadirect.com."
+      },
+      {
+        "title": "Smarthistory — Mask (Nwantantay) Bwa peoples",
+        "url": "https://smarthistory.org/mask-nwantantay/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "SKOUNT Art — Bwa Owl Mask: African Symbolism",
+        "url": "https://www.skountart.com/blog/bwa-owl-mask-african-symbolism",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers skountart.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Red Bobo Bwa in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/11056/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pacific Lutheran University — Learn More: Bwa Mask",
+        "url": "https://www.plu.edu/africanartcollection/masks/bwa-mask/learn-more-bwa-mask/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for plu.edu."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Bwa",
+        "url": "https://www.britannica.com/topic/Bwa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Roy, Christopher D. et Wheelock, Thomas G. B. Land of the Flying Masks: Art and Culture in Burkina Faso. Prestel Verlag, 2007",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Dan",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["CIV", "LBR", "GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dan",
@@ -93,12 +94,42 @@
       ]
     },
     "sources": [
-      "Dan, Da in Liberia – Joshua Project 2025 (https://joshuaproject.net/people_groups/11485/LI)",
-      "Minority Rights Group – Liberia (https://minorityrights.org/country/liberia/)",
-      "Daniel B. Reed, Dan Ge Performance: Masks and Music in Contemporary Cote d'Ivoire, Indiana University Press, 2003",
-      "Hugo Zemp, Musique dan : la musique dans la pensee et la vie sociale d'une societe africaine, Mouton, La Haye, 1971",
-      "Dan – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/dann1241)",
-      "101 Last Tribes – The Dan (https://www.101lasttribes.com/tribes/dan.html)"
+      {
+        "title": "Dan, Da in Liberia – Joshua Project 2025",
+        "url": "https://joshuaproject.net/people_groups/11485/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group – Liberia",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Daniel B. Reed, Dan Ge Performance: Masks and Music in Contemporary Cote d'Ivoire, Indiana University Press, 2003",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hugo Zemp, Musique dan : la musique dans la pensee et la vie sociale d'une societe africaine, Mouton, La Haye, 1971",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dan – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/dann1241",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "101 Last Tribes – The Dan",
+        "url": "https://www.101lasttribes.com/tribes/dan.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

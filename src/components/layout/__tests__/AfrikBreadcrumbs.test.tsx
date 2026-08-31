@@ -1,11 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { AfrikBreadcrumbs } from "../AfrikBreadcrumbs";
+import { getLocalizedRoute } from "@/lib/routing";
 
 describe("AfrikBreadcrumbs", () => {
   const items = [
-    { label: "Familles", href: "/fr/familles" },
-    { label: "FLG_BANTU", href: "/fr/familles?family=FLG_BANTU" },
+    { label: "Familles", href: getLocalizedRoute("fr", "families") },
+    {
+      label: "FLG_BANTU",
+      href: `${getLocalizedRoute("fr", "families")}?family=FLG_BANTU`,
+    },
     { label: "Kikongo", href: undefined },
     { label: "Bakongo", href: undefined },
   ];
@@ -21,7 +25,9 @@ describe("AfrikBreadcrumbs", () => {
   it("renders links for items with href", () => {
     render(<AfrikBreadcrumbs items={items} />);
     const famillesLink = screen.getByRole("link", { name: "Familles" });
-    expect(famillesLink.getAttribute("href")).toBe("/fr/familles");
+    expect(famillesLink.getAttribute("href")).toBe(
+      getLocalizedRoute("fr", "families")
+    );
   });
 
   it("renders plain text for items without href", () => {
@@ -46,5 +52,40 @@ describe("AfrikBreadcrumbs", () => {
   it("renders nothing when items array is empty", () => {
     const { container } = render(<AfrikBreadcrumbs items={[]} />);
     expect(container.firstChild).toBeNull();
+  });
+
+  /**
+   * The gutter is the mount's, not the trail's.
+   *
+   * Carrying its own horizontal padding meant the trail could only ever align
+   * with a mount that had none: everywhere it sat inside a padded container —
+   * the shell, the profile page — the two stacked and the crumbs started right
+   * of the title they belong to. A trail that adds nothing lands wherever its
+   * mount lands.
+   */
+  // @req REQ-091
+  it("adds no horizontal gutter of its own", () => {
+    render(<AfrikBreadcrumbs items={items} />);
+
+    const trail = screen.getByRole("navigation", { name: /fil d'ariane/i });
+    expect(trail.className).not.toMatch(/(^|\s|:)(px|pl|pr)-/);
+  });
+
+  /**
+   * The trail is a flex row, so it is the one run of text on the page that
+   * the site's phone-width centring cannot reach: `text-align` says nothing
+   * about where a flex row places its items. Left alone it hung against the
+   * left edge above a centred title, on every route.
+   */
+  // @req REQ-091
+  it("centres its crumbs on a phone and starts them at the edge above it", () => {
+    render(<AfrikBreadcrumbs items={items} />);
+
+    const crumbs = screen
+      .getByRole("navigation", { name: /fil d'ariane/i })
+      .querySelector("ol");
+
+    expect(crumbs).toHaveClass("justify-center");
+    expect(crumbs).toHaveClass("md:justify-start");
   });
 });

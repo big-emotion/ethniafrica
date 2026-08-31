@@ -3,6 +3,7 @@
   "nameMain": "Lobi / Birifor",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "CIV", "GHA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lobi / Birifor",
@@ -88,12 +89,42 @@
       ]
     },
     "sources": [
-      "Lobi people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082)",
-      "Lobi in Burkina Faso – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082/UV)",
-      "Birifor, Southern in Côte d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/10869/IV)",
-      "Birifor, Southern in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10869/GH)",
-      "The Birifor of Burkina Faso – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg012375/)",
-      "Les Racines du Ciel (roman) – Gary R., 1956 (inspiration : peuple Lobi)"
+      {
+        "title": "Lobi people group in all countries – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13082",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lobi in Burkina Faso – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13082/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Birifor, Southern in Côte d'Ivoire – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/10869/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Birifor, Southern in Ghana – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/10869/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Birifor of Burkina Faso – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg012375/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Les Racines du Ciel (roman) – Gary R., 1956 (inspiration : peuple Lobi)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

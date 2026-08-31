@@ -2,6 +2,7 @@
   "id": "FLG_KROU",
   "nameFr": "Krou",
   "nameEn": "Kru",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " Le terme « Kru/Krou » pose plusieurs problèmes décoloniaux : **Auteurs coloniaux problématiques :** - Le terme a été imposé par les navigateurs et administrateurs coloniaux européens (XVIIᵉ–XIXᵉ siècles) sans consultation des populations locales, reflétant une vision extérieure et simplificatrice. - Les colonisateurs l'ont utilisé comme catégorie professionnelle (marins, intermédiaires commerciaux), effaçant la diversité ethnolinguistique des groupes (Bété, Dida, Wè, Grebo, Godié, etc.). - Cette classification colonialiste a regroupé des peuples aux identités culturelles et linguistiques distinctes sous une même appellation générique, occultant leurs spécificités. **Auteurs locaux défendant l'africanité :** - Frédéric Bruly Bouabré (artiste et intellectuel bété, né en 1923) a œuvré pour la reconnaissance et la valorisation des identités culturelles propres aux peuples concernés, notamment à travers son syllabaire bété créé en 1958 et ses œuvres artistiques célébrant la culture bété. - Des chercheurs contemporains comme Lynell Marchese ont souligné la complexité et la diversité interne des langues krou, remettant en question les classifications simplistes héritées de l'époque coloniale. **Études génétiques modernes :** - Les études génétiques contemporaines ont montré la diversité génétique importante au sein des populations dites « Krou », confirmant que ces groupes ne constituent pas une unité génétique homogène et remettant en question les classifications coloniales simplifiées basées sur des critères externes. → Le terme moderne « Krou » est linguistiquement valide (classifié par Greenberg 1963 dans le Niger-Congo), mais son héritage colonial doit être expliqué et les auto-appellations des peuples concernés doivent être privilégiées.",
@@ -11,7 +12,7 @@
       "originOfHistoricalTerm": " Le terme apparaît pour la première fois en 1588 sous la forme « Crua » dans le récit de voyage de James Welsh, publié par Richard Hakluyt dans ses *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation* (1589). Ce terme faisait référence au point géographique côtier correspondant à l'actuel Settra-Kru au Liberia. La graphie « Krou » est une corruption de l'une des nombreuses appellations données à travers les âges aux ressortissants du peuple krao. Le terme a été systématisé par des chercheurs comme Pieter Jan-L. Vandenhoute (1948) dans son étude sur les masques krou, puis par Bohumil Holas après ses enquêtes au Liberia en 1948. Les linguistes ont ensuite étendu le terme pour désigner un ensemble beaucoup plus large de langues parlées en Côte d'Ivoire et au Liberia."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Eastern Kru", "Greater Western Kru"],
       "geographicArea": "Côte d'Ivoire (centre-sud, sud-ouest, ouest), Liberia (est, sud-est, zones côtières), Sierra Leone (minorité à Freetown). Zone forestière guinéo-congolaise le long du littoral atlantique, s'étendant sur environ 120 000 km².",
       "numberOfLanguages": 30,
       "totalSpeakers": 3000000
@@ -54,26 +55,125 @@
     },
     "distribution": {
       "totalSpeakers": 3000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "CIV": 2091798
+      }
     },
     "sources": [
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
-      "Marchese, Lynell (1984) – *Atlas linguistique kru*. Agence de coopération culturelle et technique, Université d'Abidjan.",
-      "Godé, Victor (2008) – *Le dadjriwalé, langue kru de la Côte d'Ivoire*. L'Harmattan.",
-      "Schwartz, Alfred (1980) – « Quelques repères dans l'histoire des Kroumen ». *Outre-Mers. Revue d'histoire*, tome 67, n°246-247, pp. 151-155. Persée : https://www.persee.fr/doc/outre_0300-9513_1980_num_67_246_2242",
-      "Vandenhoute, Pieter Jan-L. (1948) – *Masques krou*. Anthropologie et arts africains.",
-      "Duitsman, John (1986) – *Phonologie du wê/guéré*. In *Langues et cultures africaines*.",
-      "Hakluyt, Richard (1589) – *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation*. Londres.",
-      "Holas, Bohumil (1948) – Enquêtes ethnographiques au Liberia (influences sur la classification krou).",
-      "CIA World Factbook (2025) – *Côte d'Ivoire, Liberia, Sierra Leone*. https://www.cia.gov/the-world-factbook/",
-      "SIL Ethnologue (2025) – *Kru languages*. https://www.ethnologue.com/",
-      "ONU / UNFPA (2025) – Données démographiques Côte d'Ivoire, Liberia, Sierra Leone.",
-      "Atlasocio.com (2021) – *Classement des langues krou par nombre de locuteurs*. https://atlasocio.com/classements/langues/familles/classement-langues-krou-par-nombre-locuteurs-total-monde.php",
-      "Minority Rights Group International (s.d.) – *Krou in Côte d'Ivoire*. https://minorityrights.org/communities/krou/",
-      "La Dépêche d'Abidjan (2021) – « Hommage à Frédéric Bruly Bouabré – Le Peuple bété, Histoires et Cultures ». https://ladepechedabidjan.info/2021/11/20/hommage-a-frederic-bruly-bouabre-le-peuple-bete-histoires-et-cultures/",
-      "Encyclopaedia Universalis (s.d.) – *Krou*. https://www.universalis.fr/dictionnaire/krou/",
-      "Ivoire 225 (2025) – « Les Peuples de Côte d'Ivoire : Diversité, Culture et Cohésion Nationale ». https://ivoire225.com/2025/08/06/les-peuples-de-cote-divoire-diversite-culture-et-cohesion-nationale/",
-      "« Les masques « Krou » de Côte-d'Ivoire ». *Anthropologie et arts africains* (2025). https://journals.openedition.org/aaa/767"
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Marchese, Lynell (1984) – *Atlas linguistique kru*. Agence de coopération culturelle et technique, Université d'Abidjan",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Godé, Victor (2008) – *Le dadjriwalé, langue kru de la Côte d'Ivoire*. L'Harmattan",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Schwartz, Alfred (1980) – « Quelques repères dans l'histoire des Kroumen ». *Outre-Mers. Revue d'histoire*, tome 67, n°246-247, pp. 151-155. Persée",
+        "url": "https://www.persee.fr/doc/outre_0300-9513_1980_num_67_246_2242",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"persee\"."
+      },
+      {
+        "title": "Vandenhoute, Pieter Jan-L. (1948) – *Masques krou*. Anthropologie et arts africains",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Duitsman, John (1986) – *Phonologie du wê/guéré*. In *Langues et cultures africaines*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hakluyt, Richard (1589) – *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation*. Londres",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Holas, Bohumil (1948) – Enquêtes ethnographiques au Liberia (influences sur la classification krou)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook (2025) – *Côte d'Ivoire, Liberia, Sierra Leone*",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "SIL Ethnologue (2025) – *Kru languages*",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ONU / UNFPA (2025) – Données démographiques Côte d'Ivoire, Liberia, Sierra Leone",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Atlasocio.com (2021) – *Classement des langues krou par nombre de locuteurs*",
+        "url": "https://atlasocio.com/classements/langues/familles/classement-langues-krou-par-nombre-locuteurs-total-monde.php",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for atlasocio.com."
+      },
+      {
+        "title": "Minority Rights Group International (s.d.) – *Krou in Côte d'Ivoire*",
+        "url": "https://minorityrights.org/communities/krou/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "La Dépêche d'Abidjan (2021) – « Hommage à Frédéric Bruly Bouabré – Le Peuple bété, Histoires et Cultures »",
+        "url": "https://ladepechedabidjan.info/2021/11/20/hommage-a-frederic-bruly-bouabre-le-peuple-bete-histoires-et-cultures/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ladepechedabidjan.info; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Universalis (s.d.) – *Krou*",
+        "url": "https://www.universalis.fr/dictionnaire/krou/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers universalis.fr; the tier awaits editorial review."
+      },
+      {
+        "title": "Ivoire 225 (2025) – « Les Peuples de Côte d'Ivoire : Diversité, Culture et Cohésion Nationale »",
+        "url": "https://ivoire225.com/2025/08/06/les-peuples-de-cote-divoire-diversite-culture-et-cohesion-nationale/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ivoire225.com; the tier awaits editorial review."
+      },
+      {
+        "title": "« Les masques « Krou » de Côte-d'Ivoire ». *Anthropologie et arts africains* (2025)",
+        "url": "https://journals.openedition.org/aaa/767",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "Glottolog (2025) – \"Kru\"",
+        "url": "https://glottolog.org/resource/languoid/id/krua1234",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique Krou, classification Bouquet)",
+        "url": "https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for data.gouv.ci."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Kongo (Cabinda)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["AGO"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kongo (Cabinda)",
@@ -88,14 +89,54 @@
       ]
     },
     "sources": [
-      "Minority Rights Group International — Bakongo and Cabindans in Angola. https://minorityrights.org/communities/bakongo-and-cabindans/",
-      "Immigration and Refugee Board of Canada — Bakongo in Angola (2024). https://www.ecoi.net/en/document/2110281.html",
-      "US State Department — Angola country report (Bakongo 13% of population). https://2009-2017.state.gov/outofdate/bgn/angola/82228.htm",
-      "SIL Ethnologue — Kongo macrolanguage (kon). https://www.ethnologue.com/language/kon/",
-      "Joshua Project — Kongo in Angola. https://joshuaproject.net/people_groups/12774/AO",
-      "EBSCO Research Starters — Kongo (historical kingdom). https://www.ebsco.com/research-starters/history/kongo-historical-kingdom",
-      "101 Last Tribes — Kongo People (subgroups in Angola). https://www.101lasttribes.com/tribes/kongo.html",
-      "The Bamoun Collection — Between Two Worlds (Woyo nkisi objects). https://www.thebamouncollection.com/between-two-worlds"
+      {
+        "title": "Minority Rights Group International — Bakongo and Cabindans in Angola",
+        "url": "https://minorityrights.org/communities/bakongo-and-cabindans/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Immigration and Refugee Board of Canada — Bakongo in Angola (2024)",
+        "url": "https://www.ecoi.net/en/document/2110281.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      },
+      {
+        "title": "US State Department — Angola country report (Bakongo 13% of population)",
+        "url": "https://2009-2017.state.gov/outofdate/bgn/angola/82228.htm",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for 2009-2017.state.gov."
+      },
+      {
+        "title": "SIL Ethnologue — Kongo macrolanguage (kon)",
+        "url": "https://www.ethnologue.com/language/kon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Kongo in Angola",
+        "url": "https://joshuaproject.net/people_groups/12774/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "EBSCO Research Starters — Kongo (historical kingdom)",
+        "url": "https://www.ebsco.com/research-starters/history/kongo-historical-kingdom",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "101 Last Tribes — Kongo People (subgroups in Angola)",
+        "url": "https://www.101lasttribes.com/tribes/kongo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "The Bamoun Collection — Between Two Worlds (Woyo nkisi objects)",
+        "url": "https://www.thebamouncollection.com/between-two-worlds",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers thebamouncollection.com; the tier awaits editorial review."
+      }
     ]
   }
 }

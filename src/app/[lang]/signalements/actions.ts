@@ -31,6 +31,7 @@ const PUBLIC_TARGET_TYPES = new Set<PublicFlagTargetType>([
   "source",
   "fiche_section",
   "classification",
+  "general",
 ]);
 
 function allowedValues<T extends string>(

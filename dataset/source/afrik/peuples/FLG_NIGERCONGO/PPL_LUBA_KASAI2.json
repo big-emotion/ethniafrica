@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Luba-Kasai (lua). https://www.ethnologue.com/language/lua/",
-      "IJREHC — Luba People and Politeness in their Everyday Speeches. https://ijrehc.com/uploads2024/ijrehc05_55.pdf",
-      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
-      "Minority Rights Group — Kasaians of Luba origin. https://minorityrights.org/communities/kasaians-of-luba-origin/",
-      "Wikimedia Commons — Tshiluba language. https://commons.wikimedia.org/wiki/Category:Tshiluba_language"
+      {
+        "title": "SIL Ethnologue — Luba-Kasai (lua)",
+        "url": "https://www.ethnologue.com/language/lua/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "IJREHC — Luba People and Politeness in their Everyday Speeches",
+        "url": "https://ijrehc.com/uploads2024/ijrehc05_55.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ijrehc.com."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Luba",
+        "url": "https://www.britannica.com/topic/Luba-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Minority Rights Group — Kasaians of Luba origin",
+        "url": "https://minorityrights.org/communities/kasaians-of-luba-origin/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Wikimedia Commons — Tshiluba language",
+        "url": "https://commons.wikimedia.org/wiki/Category:Tshiluba_language",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for commons.wikimedia.org."
+      }
     ]
   }
 }

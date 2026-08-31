@@ -10,7 +10,7 @@
       "originOfHistoricalTerm": " Le terme « Mandé » (ou « Mandéga ») a été introduit pour la première fois par le missionnaire allemand **Sigismund Wilhelm Koelle** en **1854**, dans son ouvrage *Polyglotta Africana*, où il classe treize langues sous le nom « North-Western High-Sudan Family, or Mandéga Family of Languages ». Koelle recueillait des vocabulaires auprès d'anciens esclaves originaires d'Afrique de l'Ouest à Freetown (Sierra Leone). Il a segmenté le mot *mandenka* (qui signifie « habitant du pays Manden ») en supposant à tort que *-nka* était un suffixe « habitant », donnant *Mandé*, alors que le suffixe est *-ka*. Le terme a ensuite été affiné par **Maurice Delafosse** (1901) qui distingue deux sous-groupes « mandé-tan » (nord) et « mandé-fu » (sud) selon leur mot pour « dix », puis par **Louis Tauxier** (1924), **William E. Welmers** (1958), et **Joseph Greenberg** (1963) dans *The Languages of Africa*."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Eastern Mande", "Western Mande"],
       "geographicArea": "Mali, Guinée, Côte d'Ivoire, Burkina Faso, Sierra Leone, Liberia, Sénégal, Gambie, Guinée-Bissau, Mauritanie, Ghana, Bénin, Nigeria",
       "numberOfLanguages": 60,
       "totalSpeakers": 60000000
@@ -48,26 +48,132 @@
     },
     "distribution": {
       "totalSpeakers": 60000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "SEN": 465052,
+        "CIV": 6433783
+      }
     },
     "sources": [
-      "Koelle, Sigismund Wilhelm (1854) – *Polyglotta Africana or a comparative vocabulary of nearly three hundred words and phrases, in more than one hundred distinct African languages*. Church Missionary House, Londres.",
-      "Delafosse, Maurice (1901) – *Essai de manuel pratique de la langue mandé ou mandingue*. Leroux, Paris.",
-      "Tauxier, Louis (1924) – Classification des langues mandé.",
-      "Welmers, William E. (1958) – \"The Mande Languages\", article de classification lexicostatistique dans *Papers in African Languages and Linguistics*.",
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
-      "Vydrin, Valentin (2016) – \"On the Problem of the Proto-Mande Homeland\", *Journal of Language Relationship*.",
-      "Dimmendaal, Gerrit J. (2008) – \"Language Ecology and Linguistic Diversity on the African Continent\", *Language and Linguistics Compass*, et *Historical Linguistics and the Comparative Study of African Languages*.",
-      "Güldemann, Tom (2018) – *The Languages and Linguistics of Africa*. De Gruyter Mouton.",
-      "Creissels, Denis & Sambou, Pierre (2013) – *Le mandinka : phonologie, grammaire, textes*. Karthala.",
-      "Creissels, Denis (2019) – \"Tonologie du mandinka du Pakaawu\", *Mandenkan* 61.",
-      "Khachaturyan, Lusine (2020) – *A typological portrait of Mano, Southern Mande*. De Gruyter Brill.",
-      "Durvasula, Arun & Sankararaman, Sriram (2020) – \"Recovering signals of ghost archaic admixture in the genomes of present-day Africans\", *Science Advances*.",
-      "Rosa, Alexandra et al. (2011) – \"Y-Chromosomal diversity in the population of Guinea-Bissau: a multiethnic perspective\", *Molecular Biology and Evolution* 28(3): 1255-1266.",
-      "Nikitina, Tatiana (2019) – \"Missionary descriptions of Mande languages: verbal morphology…\", *Folia Linguistica* 50(2).",
-      "Ethnologue/SIL International – \"Mande languages\" entrée pour 2025.",
-      "UNESCO – *Atlas des langues en danger dans le monde*.",
-      "Britannica – \"Mande languages\" et \"Mande peoples\" articles."
+      {
+        "title": "Koelle, Sigismund Wilhelm (1854) – *Polyglotta Africana or a comparative vocabulary of nearly three hundred words and phrases, in more than one hundred distinct African languages*. Church Missionary House, Londres",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Delafosse, Maurice (1901) – *Essai de manuel pratique de la langue mandé ou mandingue*. Leroux, Paris",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Tauxier, Louis (1924) – Classification des langues mandé",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Welmers, William E. (1958) – \"The Mande Languages\", article de classification lexicostatistique dans *Papers in African Languages and Linguistics*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vydrin, Valentin (2016) – \"On the Problem of the Proto-Mande Homeland\", *Journal of Language Relationship*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J. (2008) – \"Language Ecology and Linguistic Diversity on the African Continent\", *Language and Linguistics Compass*, et *Historical Linguistics and the Comparative Study of African Languages*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Güldemann, Tom (2018) – *The Languages and Linguistics of Africa*. De Gruyter Mouton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Creissels, Denis & Sambou, Pierre (2013) – *Le mandinka : phonologie, grammaire, textes*. Karthala",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Creissels, Denis (2019) – \"Tonologie du mandinka du Pakaawu\", *Mandenkan* 61",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Khachaturyan, Lusine (2020) – *A typological portrait of Mano, Southern Mande*. De Gruyter Brill",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Durvasula, Arun & Sankararaman, Sriram (2020) – \"Recovering signals of ghost archaic admixture in the genomes of present-day Africans\", *Science Advances*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Rosa, Alexandra et al. (2011) – \"Y-Chromosomal diversity in the population of Guinea-Bissau: a multiethnic perspective\", *Molecular Biology and Evolution* 28(3): 1255-1266",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Nikitina, Tatiana (2019) – \"Missionary descriptions of Mande languages: verbal morphology…\", *Folia Linguistica* 50(2)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue/SIL International – \"Mande languages\" entrée pour 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – *Atlas des langues en danger dans le monde*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Britannica – \"Mande languages\" et \"Mande peoples\" articles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog (2025) – \"Mande\"",
+        "url": "https://glottolog.org/resource/languoid/id/mand1469",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Mandinka / Màndienka langue courante)",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ansd.sn."
+      },
+      {
+        "title": "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique Mandé du Nord + Mandé du Sud, agrégat, classification Bouquet)",
+        "url": "https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for data.gouv.ci."
+      }
     ]
   }
 }

@@ -1,11 +1,17 @@
 {
   "id": "NGA",
-  "nameFr": "République fédérale du Nigeria (Federal Republic of Nigeria)",
+  "nameFr": "Nigeria",
   "nameOfficial": "République fédérale du Nigeria (Federal Republic of Nigeria)",
+  "summary": "Le Nigeria porte un nom composé en 1914 par Flora Shaw, à partir du fleuve Niger et du suffixe « -ia ». Califat de Sokoto, royaume d'Oyo, royaume du Bénin et sultanats haoussa s'y étaient épanouis avant l'unification coloniale. Hausa-Fulani, Yoruba, Igbo, Ijaw, Kanuri et Tiv font du pays le plus peuplé du continent l'un des plus divers.",
   "etymology": "Le nom \"Nigeria\" a été créé en 1914 par Flora Shaw (épouse de Lord Lugard, gouverneur général de la colonie) en combinant \"Niger\" (fleuve Niger) avec le suffixe \"-ia\" (pays). Le nom fait référence au fleuve Niger qui traverse le pays.",
   "nameOriginActor": "Le nom a été créé par Flora Shaw en 1914 lors de l'\"Amalgamation\" (unification) des protectorats du Nord et du Sud par les Britanniques. C'est un nom colonial qui ne reflète pas les appellations précoloniales.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Protectorats du Nord et du Sud Nigeria (XIXe siècle)",
+        "Nigeria (1914, nom composé par Flora Shaw)",
+        "Fédération du Nigeria (1960-1963)"
+      ],
       "antiquity": "Le territoire était peuplé de nombreux royaumes et entités politiques indépendantes sans nom unifié : sultanats haoussa, empire Kanem-Bornou, royaume d'Oyo, Ile-Ife, chefferies igbo, royaumes ijaw, royaume du Bénin.",
       "middleAges": "Développement des sultanats haoussa (Kano, Katsina, Zaria), empire Kanem-Bornou, royaume d'Oyo, civilisation yoruba d'Ife, royaumes igbo décentralisés, royaume du Bénin.",
       "precolonial": "Mosaïque de royaumes puissants : califat de Sokoto, royaume d'Oyo, royaume du Bénin, cités-États haoussa, chefferies igbo. Commerce transsaharien et commerce côtier (or, esclaves, ivoire).",
@@ -199,14 +205,60 @@
       "postIndependence": "Guerre du Biafra (1967-1970) : sécession igbo, conflit meurtrier. Régimes militaires (1966-1979, 1983-1999). Transition démocratique depuis 1999. Développement économique (pétrole), défis de gouvernance et de sécurité."
     },
     "sources": [
-      "CIA World Factbook – Nigeria",
-      "SIL Ethnologue – Languages of Nigeria",
-      "Recensements nationaux nigérians",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples nigérians",
-      "Études historiques sur les royaumes précoloniaux",
-      "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)"
+      {
+        "title": "CIA World Factbook – Nigeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Nigeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux nigérians",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples nigérians",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les royaumes précoloniaux",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

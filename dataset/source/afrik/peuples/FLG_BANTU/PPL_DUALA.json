@@ -3,6 +3,7 @@
   "nameMain": "Duala",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["CMR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Duala",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Duala (dua): https://www.ethnologue.com/language/dua/",
-      "Glottolog, Duala: https://glottolog.org/resource/languoid/id/dual1243",
-      "Joshua Project, Duala Uli Cameroon: https://joshuaproject.net/people_groups/11622",
-      "Xinhua, Ngondo Festival UNESCO: https://english.news.cn/africa/20251210/e09a83c714fc46fcb8f44d7a6e1c8235/c.html",
-      "Qiraat Africa, The Duala people: https://qiraatafrican.com/en/13435/the-duala-people-of-cameroon/"
+      {
+        "title": "Ethnologue, Duala (dua)",
+        "url": "https://www.ethnologue.com/language/dua/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog, Duala",
+        "url": "https://glottolog.org/resource/languoid/id/dual1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project, Duala Uli Cameroon",
+        "url": "https://joshuaproject.net/people_groups/11622",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Xinhua, Ngondo Festival UNESCO",
+        "url": "https://english.news.cn/africa/20251210/e09a83c714fc46fcb8f44d7a6e1c8235/c.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers english.news.cn; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa, The Duala people",
+        "url": "https://qiraatafrican.com/en/13435/the-duala-people-of-cameroon/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

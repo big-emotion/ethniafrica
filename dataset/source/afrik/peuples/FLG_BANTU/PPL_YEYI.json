@@ -3,6 +3,7 @@
   "nameMain": "Yeyi",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["BWA", "NAM"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yeyi",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "Omniglot – Yeyi language and alphabet (https://www.omniglot.com/writing/yeyi.htm)",
-      "US Department of Justice – Wayeyi profile (https://www.justice.gov/eoir/file/876336/dl)",
-      "Minority Rights Group – Wayeyi in Botswana (https://minorityrights.org/communities/wayeyi/)",
-      "Survival International – Wayeyi related material (https://www.survivalinternational.org/materials/95)",
-      "Africa 101 Last Tribes – The Okavango Delta Peoples of Botswana (https://www.101lasttribes.com/tribes/okavango.pdf)"
+      {
+        "title": "Omniglot – Yeyi language and alphabet",
+        "url": "https://www.omniglot.com/writing/yeyi.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "US Department of Justice – Wayeyi profile",
+        "url": "https://www.justice.gov/eoir/file/876336/dl",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for justice.gov."
+      },
+      {
+        "title": "Minority Rights Group – Wayeyi in Botswana",
+        "url": "https://minorityrights.org/communities/wayeyi/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Survival International – Wayeyi related material",
+        "url": "https://www.survivalinternational.org/materials/95",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for survivalinternational.org."
+      },
+      {
+        "title": "Africa 101 Last Tribes – The Okavango Delta Peoples of Botswana",
+        "url": "https://www.101lasttribes.com/tribes/okavango.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

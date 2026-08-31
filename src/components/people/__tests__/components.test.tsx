@@ -1,16 +1,13 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import type { ParagraphChipData } from "../ProseWithChip";
-import { PeopleHero } from "../PeopleHero";
 import { PeopleOriginBlock } from "../PeopleOriginBlock";
 import { PeopleLanguageSection } from "../PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "../PeopleHistoryTimeline";
 import { PeopleCultureGrid } from "../PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
-import { PeopleSourcesFooter } from "../PeopleSourcesFooter";
 import type {
-  PeopleHeroData,
   PeopleOriginData,
   PeopleLanguageData,
   PeopleHistoryData,
@@ -20,68 +17,11 @@ import type {
 } from "@/lib/peopleDataTransformer";
 
 // ==========================================
-// PeopleHero
+// PeopleFicheHead replaced PeopleHero: the mockup's fiche head is an
+// overline, a title, a lede and two chips on parchment, where the old hero
+// was a teal gradient card — teal is the country accent, and a people fiche
+// is ocre (atlas-charter §2). Its own tests live in PeopleFicheHead.test.tsx.
 // ==========================================
-
-describe("PeopleHero", () => {
-  const baseHero: PeopleHeroData = {
-    peopleId: "PPL_YORUBA",
-    nameMain: "Yoruba",
-    selfAppellation: "Ọmọ Oòduà",
-    exonyms: ["Yariba"],
-    languageFamilyId: "FLG_NIGER_CONGO",
-    languageFamilyName: "Niger-Congo",
-    currentCountries: ["NGA", "BEN", "TGO"],
-    classificationStatus: null,
-  };
-
-  it("renders nameMain in hero", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Yoruba")).toBeTruthy();
-  });
-
-  it("renders selfAppellation when provided", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Ọmọ Oòduà")).toBeTruthy();
-  });
-
-  it("renders exonyms", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Yariba")).toBeTruthy();
-  });
-
-  it("renders languageFamilyName badge when provided", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText("Niger-Congo")).toBeTruthy();
-  });
-
-  it("renders country count badge", () => {
-    render(<PeopleHero data={baseHero} />);
-    expect(screen.getByText(/3 pays/)).toBeTruthy();
-  });
-
-  it("shows confidence fallback link when no confidence data", () => {
-    render(
-      <PeopleHero
-        data={baseHero}
-        confidenceScore={null}
-        sourceCount={null}
-        lastHumanAuditAt={null}
-      />
-    );
-    expect(screen.getByText("voir les sources")).toBeTruthy();
-  });
-
-  it("renders flag CTA button when onFlagCtaClick provided", () => {
-    render(<PeopleHero data={baseHero} onFlagCtaClick={() => {}} />);
-    expect(screen.getByRole("button", { name: /signaler/i })).toBeTruthy();
-  });
-
-  it("renders back button when onBack provided", () => {
-    render(<PeopleHero data={baseHero} onBack={() => {}} />);
-    expect(screen.getByRole("button", { name: /retour/i })).toBeTruthy();
-  });
-});
 
 // ==========================================
 // PeopleOriginBlock
@@ -263,76 +203,43 @@ describe("PeopleHistoryTimeline", () => {
 // ==========================================
 
 describe("PeopleCultureGrid", () => {
-  it("returns null when all fields empty", () => {
-    const empty: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-    };
-    const { container } = render(<PeopleCultureGrid data={empty} />);
+  // @req REQ-003
+  it("returns null when the fiche declares no culture", () => {
+    const { container } = render(<PeopleCultureGrid data={{}} />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders supremeDeity when present", () => {
+  // The four fields every fiche in the corpus fills. Rendering fewer than
+  // four is the defect this suite exists to catch.
+  // @req REQ-003
+  it("renders each of the four declared fields under its own label", () => {
     const data: PeopleCultureData = {
-      supremeDeity: "Olódùmarè",
-      intermediates: [],
-      symbols: [],
+      majorRites: "Le culte des orisha structure la vie rituelle.",
+      symbols: "Les tissus aso-oke et adire.",
+      artsAndMusic: "Le dundun, tambour parlant.",
+      spiritualities: "Aborisa reconnait Olodumare.",
     };
     render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Olódùmarè")).toBeTruthy();
+
+    expect(screen.getByText("Rites majeurs")).toBeTruthy();
+    expect(screen.getByText("Symboles")).toBeTruthy();
+    expect(screen.getByText("Arts & musique")).toBeTruthy();
+    expect(screen.getByText("Spiritualités")).toBeTruthy();
+
+    expect(screen.getByText(/culte des orisha/)).toBeTruthy();
+    expect(screen.getByText(/aso-oke/)).toBeTruthy();
+    expect(screen.getByText(/dundun/)).toBeTruthy();
+    expect(screen.getByText(/Olodumare/)).toBeTruthy();
   });
 
-  it("renders intermediates list when non-empty", () => {
-    const data: PeopleCultureData = {
-      intermediates: ["Obàtálá", "Ṣàngó", "Ọ̀ṣun"],
-      symbols: [],
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Obàtálá")).toBeTruthy();
-    expect(screen.getByText("Ṣàngó")).toBeTruthy();
-    expect(screen.getByText("Ọ̀ṣun")).toBeTruthy();
-  });
+  // @req REQ-003
+  it("omits the fields the fiche leaves empty, and keeps the rest", () => {
+    render(<PeopleCultureGrid data={{ symbols: "Le masque gre." }} />);
 
-  it("renders symbols list when non-empty", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: ["Àdìrẹ cloth", "Ìlẹkẹ̀ beads"],
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Àdìrẹ cloth")).toBeTruthy();
-    expect(screen.getByText("Ìlẹkẹ̀ beads")).toBeTruthy();
-  });
-
-  it("renders christianityPercentage and islamPercentage when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      christianityPercentage: 45,
-      islamPercentage: 50,
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText(/45/)).toBeTruthy();
-    expect(screen.getByText(/50/)).toBeTruthy();
-  });
-
-  it("renders music when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      music: "Dundun, bata",
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Dundun, bata")).toBeTruthy();
-  });
-
-  it("renders gastronomy when present", () => {
-    const data: PeopleCultureData = {
-      intermediates: [],
-      symbols: [],
-      gastronomy: "Egusi soup, jollof rice",
-    };
-    render(<PeopleCultureGrid data={data} />);
-    expect(screen.getByText("Egusi soup, jollof rice")).toBeTruthy();
+    expect(screen.getByText("Symboles")).toBeTruthy();
+    expect(screen.queryByText("Rites majeurs")).toBeNull();
+    expect(screen.queryByText("Arts & musique")).toBeNull();
+    expect(screen.queryByText("Spiritualités")).toBeNull();
   });
 });
 
@@ -404,7 +311,13 @@ describe("PeopleCountriesSection", () => {
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders totalPopulationFormatted", () => {
+  // The section opened on the same figure the fiche head states above the
+  // globe — "45M personnes · réf. 2025" there, "45M habitants · 2025" here,
+  // set in the display face so it read as a second headline for the same
+  // fact. The head is where a fiche states its scale; the rows below carry
+  // their own populations.
+  // @req REQ-115
+  it("leaves the headline population to the fiche head", () => {
     const data: PeopleCountriesData = {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
@@ -419,7 +332,8 @@ describe("PeopleCountriesSection", () => {
       ],
     };
     render(<PeopleCountriesSection data={data} />);
-    expect(screen.getByText("45M")).toBeTruthy();
+    expect(screen.queryByText("45M")).toBeNull();
+    expect(screen.queryByText(/habitants/)).toBeNull();
   });
 
   it("renders country distribution rows", () => {
@@ -448,42 +362,52 @@ describe("PeopleCountriesSection", () => {
     expect(screen.getByText("7%")).toBeTruthy();
   });
 
-  it("renders referenceYear when provided", () => {
+  // The roll moved here from the field legend beside the globe, and it must
+  // arrive with what the legend was carrying: the country's French name, and
+  // the mark on a presence the atlas's Africa scope cannot draw. A row that
+  // printed only "USA" would state the presence and hide that the map omits
+  // it, which is how the fiche's own country count comes to disagree with
+  // what the reader sees.
+  // @req REQ-115
+  it("names each country, and marks the ones the map cannot draw", () => {
+    const data: PeopleCountriesData = {
+      totalPopulation: 45000000,
+      totalPopulationFormatted: "45M",
+      distributions: [
+        { country: "NGA", percentage: 89 },
+        { country: "USA", percentage: 3 },
+      ],
+    };
+    const { container } = render(<PeopleCountriesSection data={data} />);
+
+    expect(screen.getByText("Nigeria")).toBeTruthy();
+
+    const offMap = container.querySelector('[data-off-map="true"]');
+    expect(offMap?.textContent).toContain("USA");
+    expect(offMap?.textContent).toMatch(/hors carte/i);
+    expect(container.querySelectorAll('[data-off-map="true"]')).toHaveLength(1);
+  });
+
+  // @req REQ-115
+  it("renders referenceYear on the source line rather than as a headline", () => {
     const data: PeopleCountriesData = {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
       referenceYear: 2025,
+      source: "UNFPA",
       distributions: [{ country: "NGA", percentage: 89 }],
     };
     render(<PeopleCountriesSection data={data} />);
+    expect(screen.getByText(/UNFPA/)).toBeTruthy();
     expect(screen.getByText(/2025/)).toBeTruthy();
   });
 });
 
 // ==========================================
-// PeopleSourcesFooter
+// The sources footer is shared across the three fiches and tested at
+// src/components/country/__tests__/components.test.tsx — one footer and one
+// suite, rather than a people-shaped copy of each.
 // ==========================================
-
-describe("PeopleSourcesFooter", () => {
-  it("returns null when sources string is empty", () => {
-    const { container } = render(<PeopleSourcesFooter sources="" />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders sources text", () => {
-    render(
-      <PeopleSourcesFooter sources="SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook" />
-    );
-    expect(
-      screen.getByText("SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook")
-    ).toBeTruthy();
-  });
-
-  it("renders section header label", () => {
-    render(<PeopleSourcesFooter sources="SIL Ethnologue 2025" />);
-    expect(screen.getByText("Sources & Références")).toBeTruthy();
-  });
-});
 
 // ==========================================
 // Inline chip integration (ETNI-36, Story 2.4)
@@ -585,11 +509,12 @@ describe("PeopleHistoryTimeline — chip integration", () => {
 });
 
 describe("PeopleCultureGrid — chip integration", () => {
-  it("renders chip for music when chip provided", async () => {
+  // @req REQ-003
+  it("renders the source chip on arts and music when one is provided", async () => {
     render(
       <PeopleCultureGrid
-        data={{ intermediates: [], symbols: [], music: "Dundun, bata." }}
-        chips={{ music: sampleChip }}
+        data={{ artsAndMusic: "Dundun, bata." }}
+        chips={{ artsAndMusic: sampleChip }}
       />
     );
     expect(screen.getByText("Dundun, bata.")).toBeTruthy();
@@ -600,18 +525,15 @@ describe("PeopleCultureGrid — chip integration", () => {
     });
   });
 
-  it("renders chip for initiation when chip provided", async () => {
+  // @req REQ-003
+  it("renders the source chip on major rites when one is provided", async () => {
     render(
       <PeopleCultureGrid
-        data={{
-          intermediates: [],
-          symbols: [],
-          initiation: "Rites masculins.",
-        }}
-        chips={{ initiation: sampleChip }}
+        data={{ majorRites: "Rites de passage." }}
+        chips={{ majorRites: sampleChip }}
       />
     );
-    expect(screen.getByText("Rites masculins.")).toBeTruthy();
+    expect(screen.getByText("Rites de passage.")).toBeTruthy();
     await waitFor(() => {
       expect(
         screen.queryByRole("button") ?? screen.queryByText("voir les sources")

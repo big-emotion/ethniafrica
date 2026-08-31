@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_MIGRATORY_BAGANDA_BANYORO",
+  "relationType": "migratory",
+  "peopleIdA": "PPL_BAGANDA",
+  "peopleIdB": "PPL_BANYORO",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 1600,
+    "endYear": 1900,
+    "label": "XVIIe siècle - 1900 (expansion du Buganda et cession des « comtés perdus »)"
+  },
+  "description": "Aux XVIIe et XVIIIe siècles, le royaume du Buganda étend son territoire principalement aux dépens du Bunyoro. Les kabaka prélèvent butin et tribut sur les provinces conquises et y installent des agents pour les administrer ; l'implantation de clans ganda sur ces terres nouvellement acquises modifie l'organisation clanique traditionnelle et accompagne la construction d'une administration centralisée. Ce mouvement de peuplement et d'administration se poursuit après la conquête coloniale du Bunyoro en 1894, lorsque plusieurs comtés (les « lost counties ») sont cédés au Buganda par les Britanniques et administrés par des agents ganda.",
+  "sources": [
+    {
+      "title": "Africans: The History of a Continent (2nd edition)",
+      "author": "John Iliffe",
+      "year": 2007,
+      "url": "https://sahistory.org.za/sites/default/files/archive-files3/john_iliffe_africans_the_history_of_a_continentbookos.org_.pdf",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia FR « Bunyoro » (qui cite l'édition française d'Iliffe, « Les Africains, histoire d'un continent », Flammarion 2016) et EN « Buganda ». Le texte confirme : « Buganda's subsequent history was dominated by territorial expansion, chiefly at Bunyoro's expense... Kabakas drew booty and tribute from conquered provinces and appointed agents to govern them... the settlement of Ganda clansmen in conquered lands broke up the clans' territorial solidarity. » Éditeur : Cambridge University Press, 2007."
+    },
+    {
+      "title": "The Sub-Imperialism of the Baganda",
+      "author": "A.D. Roberts",
+      "year": 1962,
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7D4F50F370C0D76922E5CC358EFC05C5/S0021853700003340a.pdf/subimperialism_of_the_baganda.pdf",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Buganda ». Article évalué par les pairs (The Journal of African History, vol. 3, n°3, p. 435-450) documentant le déploiement d'agents ganda pour administrer le Bunyoro et les royaumes voisins après la conquête de 1894 et la cession des « lost counties » ; confirme l'ampleur de l'installation ganda (par exemple « au moins 12 000 Baganda en Ankole » en 1911)."
+    }
+  ]
+}

@@ -85,12 +85,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Ogoni in Nigeria (https://joshuaproject.net/people_groups/19639)",
-      "Oyinlade, A. Olu et Vincent, Jeffery M. – The Ogoni of Nigeria, University of Nebraska-Lincoln, 2016 (https://digitalcommons.unl.edu/anthropologyfacpub/113/)",
-      "Right Livelihood – Ken Saro-Wiwa / MOSOP (https://rightlivelihood.org/the-change-makers/find-a-laureate/ken-saro-wiwa-movement-for-the-survival-of-the-ogoni-people/)",
-      "Human Rights Watch – Nigeria 1995 (https://www.hrw.org/reports/1995/Nigeria.htm)",
-      "UNEP – Environmental Assessment of Ogoniland, 2011 (https://www.unep.org/explore-topics/disasters-conflicts/where-we-work/nigeria/environmental-assessment-ogoniland)",
-      "USC Scalar – Ken Saro-Wiwa, MOSOP and the International Response (https://scalar.usc.edu/works/niger-delta-black-gold-blues/15-the-1990s-ken-saro-wiwa-mosop-and-the-international-response-rachel)"
+      {
+        "title": "Joshua Project – Ogoni in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/19639",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Oyinlade, A. Olu et Vincent, Jeffery M. – The Ogoni of Nigeria, University of Nebraska-Lincoln, 2016",
+        "url": "https://digitalcommons.unl.edu/anthropologyfacpub/113/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for digitalcommons.unl.edu."
+      },
+      {
+        "title": "Right Livelihood – Ken Saro-Wiwa / MOSOP",
+        "url": "https://rightlivelihood.org/the-change-makers/find-a-laureate/ken-saro-wiwa-movement-for-the-survival-of-the-ogoni-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers rightlivelihood.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Human Rights Watch – Nigeria 1995",
+        "url": "https://www.hrw.org/reports/1995/Nigeria.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "UNEP – Environmental Assessment of Ogoniland, 2011",
+        "url": "https://www.unep.org/explore-topics/disasters-conflicts/where-we-work/nigeria/environmental-assessment-ogoniland",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers unep.org; the tier awaits editorial review."
+      },
+      {
+        "title": "USC Scalar – Ken Saro-Wiwa, MOSOP and the International Response",
+        "url": "https://scalar.usc.edu/works/niger-delta-black-gold-blues/15-the-1990s-ken-saro-wiwa-mosop-and-the-international-response-rachel",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers scalar.usc.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

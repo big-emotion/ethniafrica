@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Manga Kanuri (kby). https://www.ethnologue.com/language/kby/",
-      "Joshua Project — Kanuri, Manga in Niger. https://joshuaproject.net/people_groups/13496/NG",
-      "Joshua Project — Kanuri, Manga in Nigeria. https://joshuaproject.net/people_groups/13496/NI",
-      "Encyclopaedia Britannica — Manga people. https://www.britannica.com/topic/Manga-people",
-      "Introduction to the Kanuri Language — Michigan State University (ALMA). https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf"
+      {
+        "title": "SIL Ethnologue — Manga Kanuri (kby)",
+        "url": "https://www.ethnologue.com/language/kby/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Kanuri, Manga in Niger",
+        "url": "https://joshuaproject.net/people_groups/13496/NG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Kanuri, Manga in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/13496/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Manga people",
+        "url": "https://www.britannica.com/topic/Manga-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Introduction to the Kanuri Language — Michigan State University (ALMA)",
+        "url": "https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for alma.matrix.msu.edu."
+      }
     ]
   }
 }

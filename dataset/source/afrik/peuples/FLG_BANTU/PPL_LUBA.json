@@ -88,11 +88,36 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Luba : https://www.britannica.com/topic/Luba-people",
-      "Joshua Project — Luba-Lulua in DRC : https://joshuaproject.net/people_groups/13134/CG",
-      "SIL Ethnologue — Luba-Katanga (lub) : https://www.ethnologue.com/language/lub/",
-      "Omniglot — Luba-Katanga language : https://www.omniglot.com/writing/lubakatanga.htm",
-      "Mary Nooter Roberts & Allen F. Roberts — Memory : Luba Art and the Making of History. Museum for African Art, New York, 1996."
+      {
+        "title": "Encyclopaedia Britannica — Luba",
+        "url": "https://www.britannica.com/topic/Luba-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Luba-Lulua in DRC",
+        "url": "https://joshuaproject.net/people_groups/13134/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Luba-Katanga (lub)",
+        "url": "https://www.ethnologue.com/language/lub/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Omniglot — Luba-Katanga language",
+        "url": "https://www.omniglot.com/writing/lubakatanga.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Mary Nooter Roberts & Allen F. Roberts — Memory : Luba Art and the Making of History. Museum for African Art, New York, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

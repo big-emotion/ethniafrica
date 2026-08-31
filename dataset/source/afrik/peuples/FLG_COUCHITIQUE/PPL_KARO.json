@@ -3,6 +3,7 @@
   "nameMain": "Karo",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Karo",
@@ -67,10 +68,30 @@
       ]
     },
     "sources": [
-      "Karo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12547)",
-      "Karo (Ethiopia) – Glottolog 5.1, 2024 (https://glottolog.org/resource/languoid/id/karo1297)",
-      "A Look at the Kara Tribe, Ethiopia's Famous Body Painters – Absolute Ethiopia Tours, 2025 (https://absoluteethiopia.com/a-look-at-the-kara-tribe-ethiopias-famous-body-painters/)",
-      "Omotic languages – Encyclopaedia Britannica, 2024 (https://www.britannica.com/topic/Omotic-languages)"
+      {
+        "title": "Karo in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12547",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Karo (Ethiopia) – Glottolog 5.1, 2024",
+        "url": "https://glottolog.org/resource/languoid/id/karo1297",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "A Look at the Kara Tribe, Ethiopia's Famous Body Painters – Absolute Ethiopia Tours, 2025",
+        "url": "https://absoluteethiopia.com/a-look-at-the-kara-tribe-ethiopias-famous-body-painters/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for absoluteethiopia.com."
+      },
+      {
+        "title": "Omotic languages – Encyclopaedia Britannica, 2024",
+        "url": "https://www.britannica.com/topic/Omotic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

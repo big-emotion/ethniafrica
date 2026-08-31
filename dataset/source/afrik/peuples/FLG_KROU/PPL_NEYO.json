@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "Neyo in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13323)",
-      "Ethnologue – Neyo language (ney), SIL International, 2024 (https://www.ethnologue.com/language/ney/)",
-      "Omniglot – Neyo language and alphabet, 2021 (https://www.omniglot.com/writing/neyo.htm)",
-      "Neyo people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/neyo.html)",
-      "Thomann Georges, Essai de manuel de la langue néouolé parlée dans la partie occidentale de la Côte d'Ivoire – E. Leroux, 1905"
+      {
+        "title": "Neyo in Côte d'Ivoire – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13323",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue – Neyo language (ney), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/ney/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Omniglot – Neyo language and alphabet, 2021",
+        "url": "https://www.omniglot.com/writing/neyo.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Neyo people – 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/neyo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Thomann Georges, Essai de manuel de la langue néouolé parlée dans la partie occidentale de la Côte d'Ivoire – E. Leroux, 1905",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

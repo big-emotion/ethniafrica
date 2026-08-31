@@ -22,8 +22,13 @@ import type {
 } from "@/types/afrik-frontend";
 
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
+import {
+  buildSearchParams,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { mapCountryDetail, mapPeopleDetail } from "@/lib/afrikDetailMapper";
 
 // ==========================================
 // CONSTANTS
@@ -77,6 +82,7 @@ async function handleFetchError(
 // LANGUAGE FAMILIES
 // ==========================================
 
+// @req REQ-108
 /**
  * Récupère la liste des familles linguistiques (paginée)
  */
@@ -110,7 +116,8 @@ export async function getLanguageFamilies(
           totalSpeakers: generalInfo.totalSpeakers,
           numberOfLanguages: generalInfo.numberOfLanguages,
           geographicArea: generalInfo.geographicArea,
-          peopleCount: content.associatedPeoples?.length,
+          // Row-computed by the API (REQ-108) — not fiche-declared content.
+          peopleCount: family.peopleCount,
         };
       }
     );
@@ -125,313 +132,19 @@ export async function getLanguageFamilies(
   }
 }
 
-/**
- * Récupère les détails d'une famille linguistique
- */
-export async function getLanguageFamily(
-  id: string
-): Promise<LanguageFamilyDetail | null> {
-  try {
-    const response = await fetch(
-      `${API_BASE}/language-families/${encodeURIComponent(id)}`
-    );
-
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-      const error = await handleFetchError(
-        response,
-        `load language family ${id}`
-      );
-      logger.error("[getLanguageFamily] Error", error);
-      return null;
-    }
-
-    const result = await response.json();
-    const apiData = result.data;
-
-    if (!apiData) {
-      return null;
-    }
-
-    // Transform API response to frontend type
-    const detail: LanguageFamilyDetail = {
-      id: apiData.id,
-      nameFr: apiData.nameFr || apiData.name_fr,
-      nameEn: apiData.nameEn || apiData.name_en,
-      createdAt: apiData.createdAt || apiData.created_at,
-      updatedAt: apiData.updatedAt || apiData.updated_at,
-      classificationStatus:
-        apiData.classificationStatus ?? apiData.classification_status ?? null,
-      // Content sections
-      decolonialHeader: apiData.content?.decolonialHeader,
-      generalInfo: apiData.content?.generalInfo,
-      associatedPeoples: apiData.associatedPeoples,
-      linguisticCharacteristics: apiData.content?.linguisticCharacteristics,
-      historyAndOrigins: apiData.content?.historyAndOrigins,
-      distribution: apiData.content?.distribution,
-      sources: apiData.content?.sources,
-    };
-
-    return detail;
-  } catch (error) {
-    logger.error("[getLanguageFamily] Exception", error, { id });
-    return null;
-  }
-}
-
 // ==========================================
 // PEOPLES
 // ==========================================
-
-/**
- * Récupère la liste des peuples (paginée, avec filtres optionnels)
- */
-export async function getPeoples(
-  options: PeopleFilterOptions = {}
-): Promise<PaginatedResponse<PeopleSummary>> {
-  const {
-    page = DEFAULT_PAGE,
-    perPage = DEFAULT_PER_PAGE,
-    languageFamilyId,
-    countryId,
-    search,
-    letter,
-  } = options;
-
-  try {
-    // Build query params
-    const params = new URLSearchParams({
-      page: page.toString(),
-      perPage: perPage.toString(),
-    });
-
-    if (search) {
-      params.set("search", search);
-    }
-    if (letter) {
-      params.set("letter", letter);
-    }
-    if (languageFamilyId) {
-      params.set("languageFamilyId", languageFamilyId);
-    }
-
-    const response = await fetch(`${API_BASE}/peoples?${params}`);
-
-    if (!response.ok) {
-      const error = await handleFetchError(response, "load peoples");
-      logger.error("[getPeoples] Error", error);
-      return { data: [], meta: createEmptyMeta(page, perPage) };
-    }
-
-    const result = await response.json();
-
-    // Transform API response to frontend types
-    const data: PeopleSummary[] = (result.data || []).map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (people: any) => {
-        const content = people.content || {};
-        const countries =
-          people.currentCountries || people.current_countries || [];
-        return {
-          id: people.id,
-          nameMain: people.nameMain || people.name_main,
-          languageFamilyId:
-            people.languageFamilyId || people.language_family_id,
-          currentCountries: countries,
-          totalPopulation: content.demography?.totalPopulation,
-          countryCount: countries.length,
-          selfAppellation: content.appellations?.selfAppellation,
-        };
-      }
-    );
-
-    // The people endpoint does not yet expose the country filter.
-    let filteredData = data;
-    if (countryId) {
-      filteredData = filteredData.filter((p) =>
-        p.currentCountries.includes(countryId)
-      );
-    }
-
-    return {
-      data: filteredData,
-      meta: transformMeta(result.meta, page, perPage),
-    };
-  } catch (error) {
-    logger.error("[getPeoples] Exception", error);
-    return { data: [], meta: createEmptyMeta(page, perPage) };
-  }
-}
-
-/**
- * Récupère les détails d'un peuple (avec les 8 sections AFRIK)
- */
-export async function getPeople(id: string): Promise<PeopleDetail | null> {
-  try {
-    const response = await fetch(
-      `${API_BASE}/peoples/${encodeURIComponent(id)}`
-    );
-
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-      const error = await handleFetchError(response, `load people ${id}`);
-      logger.error("[getPeople] Error", error);
-      return null;
-    }
-
-    const result = await response.json();
-    const apiData = result.data;
-
-    if (!apiData) {
-      return null;
-    }
-
-    // Transform API response to frontend type with all 8 AFRIK sections
-    const detail: PeopleDetail = {
-      id: apiData.id,
-      nameMain: apiData.nameMain || apiData.name_main,
-      languageFamilyId: apiData.languageFamilyId || apiData.language_family_id,
-      currentCountries:
-        apiData.currentCountries || apiData.current_countries || [],
-      createdAt: apiData.createdAt || apiData.created_at,
-      updatedAt: apiData.updatedAt || apiData.updated_at,
-      classificationStatus:
-        apiData.classificationStatus ?? apiData.classification_status ?? null,
-      // 8 AFRIK sections from content
-      appellations: apiData.content?.appellations,
-      ethnicities: apiData.content?.ethnicities,
-      origins: apiData.content?.origins,
-      organization: apiData.content?.organization,
-      languages: apiData.content?.languages,
-      culture: apiData.content?.culture,
-      historicalRole: apiData.content?.historicalRole,
-      demography: apiData.content?.demography,
-      sources: apiData.content?.sources,
-    };
-
-    return detail;
-  } catch (error) {
-    logger.error("[getPeople] Exception", error, { id });
-    return null;
-  }
-}
 
 // ==========================================
 // COUNTRIES
 // ==========================================
 
-/**
- * Récupère la liste des pays (paginée)
- */
-export async function getCountries(
-  page: number = DEFAULT_PAGE,
-  perPage: number = DEFAULT_PER_PAGE
-): Promise<PaginatedResponse<CountrySummary>> {
-  try {
-    const response = await fetch(
-      `${API_BASE}/countries?page=${page}&perPage=${perPage}`
-    );
-
-    if (!response.ok) {
-      const error = await handleFetchError(response, "load countries");
-      logger.error("[getCountries] Error", error);
-      return { data: [], meta: createEmptyMeta(page, perPage) };
-    }
-
-    const result = await response.json();
-
-    // Transform API response to frontend types
-    const data: CountrySummary[] = (result.data || []).map(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (country: any) => {
-        const content = country.content || {};
-        const nameFr = country.nameFr ?? country.name_fr;
-        const nameOfficial =
-          country.nameOfficial ?? country.name_official ?? nameFr;
-        return {
-          id: country.id,
-          nameFr,
-          nameCommonFr: getFrenchCountryCommonName(country.id, nameOfficial),
-          nameOfficial,
-          majorPeoplesCount: content.majorPeoples?.length,
-          population: content.demographics?.totalPopulation,
-        };
-      }
-    );
-
-    return {
-      data,
-      meta: transformMeta(result.meta, page, perPage),
-    };
-  } catch (error) {
-    logger.error("[getCountries] Exception", error);
-    return { data: [], meta: createEmptyMeta(page, perPage) };
-  }
-}
-
-/**
- * Récupère les détails d'un pays
- */
-export async function getCountry(iso: string): Promise<CountryDetail | null> {
-  try {
-    const response = await fetch(
-      `${API_BASE}/countries/${encodeURIComponent(iso)}`
-    );
-
-    if (!response.ok) {
-      if (response.status === 404) {
-        return null;
-      }
-      const error = await handleFetchError(response, `load country ${iso}`);
-      logger.error("[getCountry] Error", error);
-      return null;
-    }
-
-    const result = await response.json();
-    const apiData = result.data;
-
-    if (!apiData) {
-      return null;
-    }
-
-    // Transform API response to frontend type
-    const nameFr = apiData.nameFr ?? apiData.name_fr;
-    const nameOfficial =
-      apiData.nameOfficial ?? apiData.name_official ?? nameFr;
-    const detail: CountryDetail = {
-      id: apiData.id,
-      nameFr,
-      nameCommonFr: getFrenchCountryCommonName(apiData.id, nameOfficial),
-      nameOfficial,
-      etymology: apiData.etymology,
-      nameOriginActor: apiData.nameOriginActor || apiData.name_origin_actor,
-      createdAt: apiData.createdAt || apiData.created_at,
-      updatedAt: apiData.updatedAt || apiData.updated_at,
-      // Content sections
-      historicalNames: apiData.content?.historicalNames,
-      kingdoms: apiData.content?.kingdoms,
-      majorPeoples: apiData.content?.majorPeoples,
-      culture: apiData.content?.culture,
-      historicalFacts: apiData.content?.historicalFacts,
-      sources: apiData.content?.sources,
-      demographics: apiData.content?.demographics,
-    };
-
-    return detail;
-  } catch (error) {
-    logger.error("[getCountry] Exception", error, { iso });
-    return null;
-  }
-}
-
 // ==========================================
 // SEARCH
 // ==========================================
 
+// @req REQ-108
 /**
  * Recherche multi-entités avec filtres
  */
@@ -440,21 +153,9 @@ export async function search(
   filters: Omit<SearchFilters, "query"> = {}
 ): Promise<SearchResult[]> {
   try {
-    // Build query params
-    const params = new URLSearchParams();
-
-    if (query) {
-      params.set("query", query);
-    }
-    if (filters.type) {
-      params.set("type", filters.type);
-    }
-    if (filters.languageFamilyId) {
-      params.set("languageFamilyId", filters.languageFamilyId);
-    }
-    if (filters.countryId) {
-      params.set("countryId", filters.countryId);
-    }
+    // The route matches on `q` alone and ignores entity/relation filters, so
+    // the narrowing the search modal's tabs ask for happens on the results.
+    const params = buildSearchParams(query);
 
     const response = await fetch(`${API_BASE}/search?${params}`);
 
@@ -464,24 +165,23 @@ export async function search(
       return [];
     }
 
-    const result = await response.json();
+    let results = mapSearchEnvelope(await response.json());
 
-    // Transform API response to frontend types
-    const data: SearchResult[] = (result.data || []).map(
-      (item: Record<string, unknown>) => ({
-        type: item.type,
-        id: item.id,
-        name: item.name,
-        snippet: item.snippet,
-        relevance: item.relevance,
-        languageFamilyId: item.languageFamilyId || item.language_family_id,
-        languageFamilyName: item.languageFamilyName,
-        countryIds: item.countryIds || item.country_ids,
-        population: item.population,
-      })
-    );
+    if (filters.type) {
+      results = results.filter((result) => result.type === filters.type);
+    }
+    if (filters.languageFamilyId) {
+      results = results.filter(
+        (result) => result.languageFamilyId === filters.languageFamilyId
+      );
+    }
+    if (filters.countryId) {
+      results = results.filter((result) =>
+        result.countryIds?.includes(filters.countryId)
+      );
+    }
 
-    return data;
+    return results;
   } catch (error) {
     logger.error("[search] Exception", error);
     return [];
@@ -491,62 +191,6 @@ export async function search(
 // ==========================================
 // STATISTICS
 // ==========================================
-
-/**
- * Récupère les statistiques globales pour la page d'accueil
- * Agrège les totaux depuis les différents endpoints
- */
-export async function getStats(): Promise<GlobalStats> {
-  try {
-    // Fetch counts from each endpoint in parallel
-    const [familiesRes, peoplesRes, countriesRes] = await Promise.all([
-      fetch(`${API_BASE}/language-families?page=1&perPage=1`),
-      fetch(`${API_BASE}/peoples?page=1&perPage=1`),
-      fetch(`${API_BASE}/countries?page=1&perPage=1`),
-    ]);
-
-    let totalLanguageFamilies = 0;
-    let totalPeoples = 0;
-    let totalCountries = 0;
-    let totalPopulation = 0;
-
-    // Extract totals from meta
-    if (familiesRes.ok) {
-      const data = await familiesRes.json();
-      totalLanguageFamilies = data.meta?.total || 0;
-    }
-
-    if (peoplesRes.ok) {
-      const data = await peoplesRes.json();
-      totalPeoples = data.meta?.total || 0;
-    }
-
-    if (countriesRes.ok) {
-      const data = await countriesRes.json();
-      totalCountries = data.meta?.total || 0;
-    }
-
-    // Calculate total African population (approximately 1.4 billion for 2025)
-    // This could be fetched from a dedicated stats endpoint in the future
-    totalPopulation = 1_400_000_000;
-
-    return {
-      totalLanguageFamilies,
-      totalPeoples,
-      totalCountries,
-      totalPopulation,
-      lastUpdated: new Date().toISOString(),
-    };
-  } catch (error) {
-    logger.error("[getStats] Exception", error);
-    return {
-      totalLanguageFamilies: 0,
-      totalPeoples: 0,
-      totalCountries: 0,
-      totalPopulation: 0,
-    };
-  }
-}
 
 // ==========================================
 // HELPER FUNCTIONS
@@ -583,6 +227,9 @@ function transformMeta(
     page: (apiMeta.page as number) || page,
     perPage: (apiMeta.perPage as number) || perPage,
     totalPages: Math.ceil(total / perPage) || 0,
+    unclassifiedPeoplesCount: apiMeta.unclassifiedPeoplesCount as
+      | number
+      | undefined,
   };
 }
 
@@ -590,73 +237,7 @@ function transformMeta(
 // UTILITY EXPORTS
 // ==========================================
 
-/**
- * Vide le cache v2
- */
-export function clearV2Cache(): void {
-  const keysToDelete = [
-    CACHE_KEYS.LANGUAGE_FAMILIES,
-    CACHE_KEYS.PEOPLES,
-    CACHE_KEYS.COUNTRIES_V2,
-    CACHE_KEYS.STATS_V2,
-  ];
-
-  if (typeof localStorage !== "undefined") {
-    // Clear all keys starting with our prefixes
-    for (let i = localStorage.length - 1; i >= 0; i--) {
-      const key = localStorage.key(i);
-      if (key && keysToDelete.some((prefix) => key.startsWith(prefix))) {
-        localStorage.removeItem(key);
-      }
-    }
-  }
-}
-
-/**
- * Récupère tous les peuples (sans pagination) - utile pour la recherche
- * Attention: peut être lent si beaucoup de données
- */
-export async function getAllPeoples(): Promise<PeopleSummary[]> {
-  const allPeoples: PeopleSummary[] = [];
-  let page = 1;
-  const perPage = 100; // Max allowed
-
-  while (true) {
-    const result = await getPeoples({ page, perPage });
-    allPeoples.push(...result.data);
-
-    if (page >= result.meta.totalPages || result.data.length === 0) {
-      break;
-    }
-    page++;
-  }
-
-  return allPeoples;
-}
-
-/**
- * Récupère tous les pays (sans pagination) - utile pour les filtres
- */
-export async function getAllCountries(): Promise<CountrySummary[]> {
-  const allCountries: CountrySummary[] = [];
-  let page = 1;
-  const perPage = 100;
-
-  while (true) {
-    const result = await getCountries(page, perPage);
-    allCountries.push(...result.data);
-
-    if (page >= result.meta.totalPages || result.data.length === 0) {
-      break;
-    }
-    page++;
-  }
-
-  return allCountries.sort((first, second) =>
-    first.nameCommonFr.localeCompare(second.nameCommonFr, "fr")
-  );
-}
-
+// @req REQ-108
 /**
  * Récupère toutes les familles linguistiques (sans pagination)
  */

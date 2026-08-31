@@ -87,12 +87,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kumam language (kdi). https://www.ethnologue.com/language/kdi/",
-      "101 Last Tribes — Kumam people. https://www.101lasttribes.com/tribes/kumam.html",
-      "Kumam Cultural Heritage — Clans. https://www.kumamculturalheritage.org/clans/",
-      "Orville Jenkins — The Kumam People of Uganda. http://orvillejenkins.com/profiles/kumam.html",
-      "Joshua Project — Kumam, Akokolemu in Uganda. https://joshuaproject.net/people_groups/12842",
-      "Swordshare Map — Kumam language. https://map.swordshare.com/kdi"
+      {
+        "title": "SIL Ethnologue — Kumam language (kdi)",
+        "url": "https://www.ethnologue.com/language/kdi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Kumam people",
+        "url": "https://www.101lasttribes.com/tribes/kumam.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Kumam Cultural Heritage — Clans",
+        "url": "https://www.kumamculturalheritage.org/clans/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kumamculturalheritage.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Orville Jenkins — The Kumam People of Uganda",
+        "url": "http://orvillejenkins.com/profiles/kumam.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Joshua Project — Kumam, Akokolemu in Uganda",
+        "url": "https://joshuaproject.net/people_groups/12842",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Swordshare Map — Kumam language",
+        "url": "https://map.swordshare.com/kdi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      }
     ]
   }
 }

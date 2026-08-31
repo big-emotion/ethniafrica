@@ -3,6 +3,7 @@
   "nameMain": "Chagga",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Chagga",
@@ -93,11 +94,36 @@
       ]
     },
     "sources": [
-      "Climb Mount Kilimanjaro, Beliefs and Ceremonies of the Chagga: https://www.climbmountkilimanjaro.com/about-the-mountain/the-chagga/beliefs-and-ceremonies/",
-      "Thomson Treks, The People of Kilimanjaro: https://www.thomsontreks.com/blog/tribes-of-kilimanjaro/",
-      "Kilimanjaro Centre, Cultural Traditions of the Chagga: https://mt-kilimanjaro.com/cultural-traditions-of-the-chagga-tribe-near-kilimanjaro/",
-      "Ethnologue, Chaga subgroup (E.621): https://www.ethnologue.com/subgroup/4196/",
-      "Social Science Research, Rewriting Chagga History: https://socialscienceresearch.org/index.php/GJHSS/article/view/1401/1-Rewriting-Chagga-History-Focus_html"
+      {
+        "title": "Climb Mount Kilimanjaro, Beliefs and Ceremonies of the Chagga",
+        "url": "https://www.climbmountkilimanjaro.com/about-the-mountain/the-chagga/beliefs-and-ceremonies/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers climbmountkilimanjaro.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Thomson Treks, The People of Kilimanjaro",
+        "url": "https://www.thomsontreks.com/blog/tribes-of-kilimanjaro/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers thomsontreks.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kilimanjaro Centre, Cultural Traditions of the Chagga",
+        "url": "https://mt-kilimanjaro.com/cultural-traditions-of-the-chagga-tribe-near-kilimanjaro/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mt-kilimanjaro.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue, Chaga subgroup (E.621)",
+        "url": "https://www.ethnologue.com/subgroup/4196/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Social Science Research, Rewriting Chagga History",
+        "url": "https://socialscienceresearch.org/index.php/GJHSS/article/view/1401/1-Rewriting-Chagga-History-Focus_html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers socialscienceresearch.org; the tier awaits editorial review."
+      }
     ]
   }
 }

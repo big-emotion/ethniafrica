@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { FormFieldError } from "@/components/forms/FormFieldError";
+import { SiteTrail } from "@/components/layout/SiteTrail";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 function ModerationLoginForm() {
   const searchParams = useSearchParams();
@@ -71,14 +74,14 @@ function ModerationLoginForm() {
   if (success) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-        <Card className="w-full max-w-md p-8">
-          <h1 className="text-2xl font-bold mb-2 text-center">
+        <Card className="w-full max-w-md rounded-afh-xl p-8">
+          <h1 className="text-afh-h2 font-bold mb-2 text-center">
             Espace modération
           </h1>
-          <p className="text-sm text-center text-muted-foreground mb-6">
-            Africa History
+          <p className="text-afh-small text-center text-muted-foreground mb-6">
+            {PRODUCT_NAME}
           </p>
-          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-sm text-center">
+          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-afh-small text-center">
             Un lien de connexion a été envoyé à <strong>{email}</strong>.
             Cliquez sur le lien dans l&apos;e-mail pour accéder à l&apos;espace
             modération.
@@ -100,17 +103,17 @@ function ModerationLoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md p-8">
-        <h1 className="text-2xl font-bold mb-2 text-center">
+      <Card className="w-full max-w-md rounded-afh-xl p-8">
+        <h1 className="text-afh-h2 font-bold mb-2 text-center">
           Espace modération
         </h1>
-        <p className="text-sm text-center text-muted-foreground mb-6">
-          Africa History
+        <p className="text-afh-small text-center text-muted-foreground mb-6">
+          {PRODUCT_NAME}
         </p>
 
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded text-sm mb-4">
-            {error}
+          <div className="mb-4">
+            <FormFieldError variant="banner">{error}</FormFieldError>
           </div>
         )}
 
@@ -166,7 +169,7 @@ function ModerationLoginForm() {
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
+          <div className="relative flex justify-center text-afh-eyebrow uppercase">
             <span className="bg-card px-2 text-muted-foreground">
               Ou continuer par e-mail
             </span>
@@ -188,7 +191,7 @@ function ModerationLoginForm() {
               disabled={loading}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full md:w-auto" disabled={loading}>
             {loading ? "Envoi en cours…" : "Envoyer le lien de connexion"}
           </Button>
         </form>
@@ -197,23 +200,34 @@ function ModerationLoginForm() {
   );
 }
 
+// @req REQ-052
 export default function AdminConnexionPage() {
+  // This screen mounts no `PageLayout` — it is a full-viewport centred card —
+  // so it mounts the trail itself. Without it the moderation login is a page
+  // with no way back to the site, which is how it shipped.
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <Card className="w-full max-w-md p-8">
-            <h1 className="text-2xl font-bold mb-2 text-center">
-              Espace modération
-            </h1>
-            <p className="text-sm text-center text-muted-foreground">
-              Chargement…
-            </p>
-          </Card>
-        </div>
-      }
-    >
-      <ModerationLoginForm />
-    </Suspense>
+    <>
+      {/* The trail brings no gutter of its own, so this mount supplies one —
+          without it the crumbs sit flush against the viewport edge. */}
+      <div className="px-4">
+        <SiteTrail />
+      </div>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+            <Card className="w-full max-w-md rounded-afh-xl p-8">
+              <h1 className="text-afh-h2 font-bold mb-2 text-center">
+                Espace modération
+              </h1>
+              <p className="text-afh-small text-center text-muted-foreground">
+                Chargement…
+              </p>
+            </Card>
+          </div>
+        }
+      >
+        <ModerationLoginForm />
+      </Suspense>
+    </>
   );
 }

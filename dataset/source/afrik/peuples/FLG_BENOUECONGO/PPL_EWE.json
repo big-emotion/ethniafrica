@@ -96,11 +96,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Ewe language (ewe) : https://www.ethnologue.com/language/ewe/",
-      "Joshua Project — Ewe people group : https://joshuaproject.net/people_groups/11169",
-      "Encyclopaedia Britannica — Ewe : https://www.britannica.com/topic/Ewe-people",
-      "GhanaWeb — The fascinating history and culture of the Ewe : https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-fascinating-history-and-culture-of-the-Ewe-in-Ghana-Togo-Benin-and-Nigeria-1010593",
-      "WALS Online — Language Ewe (ISO 639-3 : ewe) : https://wals.info/languoid/lect/wals_code_ewe"
+      {
+        "title": "SIL Ethnologue — Ewe language (ewe)",
+        "url": "https://www.ethnologue.com/language/ewe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Ewe people group",
+        "url": "https://joshuaproject.net/people_groups/11169",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Ewe",
+        "url": "https://www.britannica.com/topic/Ewe-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "GhanaWeb — The fascinating history and culture of the Ewe",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-fascinating-history-and-culture-of-the-Ewe-in-Ghana-Togo-Benin-and-Nigeria-1010593",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "WALS Online — Language Ewe (ISO 639-3 : ewe)",
+        "url": "https://wals.info/languoid/lect/wals_code_ewe",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      }
     ]
   }
 }

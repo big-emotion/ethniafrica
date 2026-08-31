@@ -3,6 +3,7 @@
   "nameMain": "Yungur",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yungur",
@@ -88,12 +89,42 @@
       ]
     },
     "sources": [
-      "Adamawa Language Projects – Bena-Mboi or Yungur Group, Kleinewillinghöfer 2011 (https://www.blogs.uni-mainz.de/fb07-adamawa/adamawa-languages/)",
-      "LLACAN-CNRS – AdaGram Bena-Yungur (https://llacan.cnrs.fr/AdaGram/bena-yungur.html)",
-      "PeopleGroups.org – Yungur of Nigeria, PG014199 (https://peoplegroups.org/people_groups/pg014199/)",
-      "Joshua Project – Yungur, Binna in Nigeria (https://joshuaproject.net/people_groups/16071)",
-      "Knight Media – The Yungur Chiefdom after 6 decades of loss, 2025 (https://kissingerdotblog.wordpress.com/2025/01/08/the-yungur-chiefdom-after-6-decades-of-loss/)",
-      "Fact Check News – Yungur Chiefdom: Our Heritage, Our Future, 2025 (https://factchecknews.com.ng/2025/01/01/yungur-chiefdom-our-heritage-our/)"
+      {
+        "title": "Adamawa Language Projects – Bena-Mboi or Yungur Group, Kleinewillinghöfer 2011",
+        "url": "https://www.blogs.uni-mainz.de/fb07-adamawa/adamawa-languages/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blogs.uni-mainz.de; the tier awaits editorial review."
+      },
+      {
+        "title": "LLACAN-CNRS – AdaGram Bena-Yungur",
+        "url": "https://llacan.cnrs.fr/AdaGram/bena-yungur.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for llacan.cnrs.fr."
+      },
+      {
+        "title": "PeopleGroups.org – Yungur of Nigeria, PG014199",
+        "url": "https://peoplegroups.org/people_groups/pg014199/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Joshua Project – Yungur, Binna in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/16071",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Knight Media – The Yungur Chiefdom after 6 decades of loss, 2025",
+        "url": "https://kissingerdotblog.wordpress.com/2025/01/08/the-yungur-chiefdom-after-6-decades-of-loss/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of kissingerdotblog.wordpress.com."
+      },
+      {
+        "title": "Fact Check News – Yungur Chiefdom: Our Heritage, Our Future, 2025",
+        "url": "https://factchecknews.com.ng/2025/01/01/yungur-chiefdom-our-heritage-our/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers factchecknews.com.ng; the tier awaits editorial review."
+      }
     ]
   }
 }

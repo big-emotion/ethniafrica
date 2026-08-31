@@ -82,15 +82,60 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Attie people. https://www.101lasttribes.com/tribes/attie.html",
-      "Gateway Africa Safaris — Akye Tribe. https://www.gateway-africa.com/tribe/akye_tribe.html",
-      "Joshua Project — Attie in Cote d'Ivoire. https://joshuaproject.net/people_groups/10483",
-      "SIL Ethnologue — Attie language (ati). https://www.ethnologue.com/language/ati/",
-      "TypeCraft — Typological Features for Attie. https://typecraft.org/tc2wiki/Typological_Features_Template_for_Attie",
-      "Friendly Borders — Ivory Coast Original Settlers. https://www.friendlyborders.org/news/ivory-coasts-original-settlers-and-their-art/",
-      "Akanfo Facebook — Akye Attie people. https://www.facebook.com/Akanfo/posts/the-akye-attie-are-a-separate-akan-people/",
-      "Glottolog — Attie. https://glottolog.org/resource/languoid/id/atti1239",
-      "Peoplegroups.org — Akye (Attie) in Cote d'Ivoire. https://www.peoplegroups.org/explore/GroupDetails.aspx?peid=16025"
+      {
+        "title": "101 Last Tribes — Attie people",
+        "url": "https://www.101lasttribes.com/tribes/attie.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Gateway Africa Safaris — Akye Tribe",
+        "url": "https://www.gateway-africa.com/tribe/akye_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "Joshua Project — Attie in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/10483",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Attie language (ati)",
+        "url": "https://www.ethnologue.com/language/ati/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "TypeCraft — Typological Features for Attie",
+        "url": "https://typecraft.org/tc2wiki/Typological_Features_Template_for_Attie",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers typecraft.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Friendly Borders — Ivory Coast Original Settlers",
+        "url": "https://www.friendlyborders.org/news/ivory-coasts-original-settlers-and-their-art/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers friendlyborders.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Akanfo Facebook — Akye Attie people",
+        "url": "https://www.facebook.com/Akanfo/posts/the-akye-attie-are-a-separate-akan-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Glottolog — Attie",
+        "url": "https://glottolog.org/resource/languoid/id/atti1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Peoplegroups.org — Akye (Attie) in Cote d'Ivoire",
+        "url": "https://www.peoplegroups.org/explore/GroupDetails.aspx?peid=16025",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

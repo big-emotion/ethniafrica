@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -15,21 +14,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ContributionFormFields } from "./ContributionFormFields";
+import { ReferenceLibraryFlow } from "./ReferenceLibraryFlow";
 import { Language } from "@/types/shared";
+import { getContributionSourceCitations } from "@/lib/validations/contribution";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 
 interface ContributionFormProps {
   language: Language;
 }
 
+// @req REQ-092
 export function ContributionForm({
-  language: propLanguage,
+  language: _language,
 }: ContributionFormProps) {
-  const params = useParams();
-  const urlLang = params?.lang as string;
-  const detectedLanguage: Language =
-    urlLang && ["en", "fr"].includes(urlLang)
-      ? (urlLang as Language)
-      : propLanguage;
+  void _language;
   const [type, setType] = useState<string>("");
   const [inputMode, setInputMode] = useState<"json" | "form">("form");
   const [payload, setPayload] = useState<string>("");
@@ -43,59 +41,53 @@ export function ContributionForm({
   const [error, setError] = useState<string | null>(null);
 
   const t = {
-    en: {
-      title: "Submit a Contribution",
-      type: "Contribution Type",
-      inputMode: "Input Mode",
-      jsonMode: "JSON",
-      formMode: "Form",
-      payload: "Data (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Your Name (optional)",
-      email: "Your Email (optional)",
-      notes: "Notes (optional)",
-      submit: "Submit Contribution",
-      submitting: "Submitting...",
-      success: "Contribution submitted successfully!",
-      error: "Error submitting contribution",
-      invalidJson: "Invalid JSON format",
-      selectType: "Select type",
-      newPeople: "New People",
-      updatePeople: "Update People",
-      newCountry: "New Country",
-      updateCountry: "Update Country",
-      newLanguageFamily: "New Language Family",
-      updateLanguageFamily: "Update Language Family",
-      requiredFields: "Please fill in all required fields",
-    },
-    fr: {
-      title: "Soumettre une contribution",
-      type: "Type de contribution",
-      inputMode: "Mode de saisie",
-      jsonMode: "JSON",
-      formMode: "Formulaire",
-      payload: "Données (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Votre nom (optionnel)",
-      email: "Votre email (optionnel)",
-      notes: "Notes (optionnel)",
-      submit: "Soumettre la contribution",
-      submitting: "Envoi en cours...",
-      success: "Contribution soumise avec succès !",
-      error: "Erreur lors de la soumission",
-      invalidJson: "Format JSON invalide",
-      selectType: "Sélectionner un type",
-      newPeople: "Nouveau peuple",
-      updatePeople: "Modifier un peuple",
-      newCountry: "Nouveau pays",
-      updateCountry: "Modifier un pays",
-      newLanguageFamily: "Nouvelle famille linguistique",
-      updateLanguageFamily: "Modifier une famille linguistique",
-      requiredFields: "Veuillez remplir tous les champs obligatoires",
-    },
-  }[detectedLanguage];
+    title: "Soumettre une contribution",
+    type: "Type de contribution",
+    inputMode: "Mode de saisie",
+    jsonMode: "JSON",
+    formMode: "Formulaire",
+    payload: "Données (JSON)",
+    payloadPlaceholder:
+      '{"name_main": "...", "language_family_id": "FLG_...", ...}',
+    name: "Votre nom (optionnel)",
+    email: "Votre email (optionnel)",
+    notes: "Notes (optionnel)",
+    submit: "Soumettre la contribution",
+    submitting: "Envoi en cours...",
+    success: "Contribution soumise avec succès !",
+    error: "Erreur lors de la soumission",
+    invalidJson: "Format JSON invalide",
+    selectType: "Sélectionner un type",
+    newPeople: "Nouveau peuple",
+    updatePeople: "Modifier un peuple",
+    newCountry: "Nouveau pays",
+    updateCountry: "Modifier un pays",
+    newLanguageFamily: "Nouvelle famille linguistique",
+    updateLanguageFamily: "Modifier une famille linguistique",
+    requiredFields: "Veuillez remplir tous les champs obligatoires",
+    sourceUnverified:
+      "Cette source sera publiée avec la mention « Non vérifiée » : la " +
+      "contribution est acceptée, mais l'indice de confiance affiché sur la " +
+      "fiche en tiendra compte et sera plus bas.",
+  };
+
+  const sourceCitations = (() => {
+    if (inputMode === "form") return getContributionSourceCitations(formData);
+
+    try {
+      const parsedPayload = JSON.parse(payload);
+      return parsedPayload && typeof parsedPayload === "object"
+        ? getContributionSourceCitations(parsedPayload)
+        : [];
+    } catch {
+      return [];
+    }
+  })();
+  // Advisory, never a gate: the contributor is told how their citation will be
+  // labelled, and submits anyway.
+  const hasUnverifiedSource = sourceCitations.some(
+    (citation) => citation.tier === "unverified"
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -170,8 +162,8 @@ export function ContributionForm({
   };
 
   return (
-    <Card className="p-6">
-      <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
+    <Card className="rounded-afh-xl p-4 sm:p-6">
+      <h2 className="mb-4 text-afh-h2 font-bold">{t.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="type">{t.type}</Label>
@@ -205,7 +197,7 @@ export function ContributionForm({
         {type && (
           <div>
             <Label>{t.inputMode}</Label>
-            <div className="flex gap-4">
+            <div className="grid gap-2 sm:flex sm:gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
@@ -247,18 +239,20 @@ export function ContributionForm({
               placeholder={t.payloadPlaceholder}
               required
               rows={10}
-              className="font-mono text-sm"
+              className="font-mono text-afh-small"
             />
           </div>
         ) : (
           type && (
             <ContributionFormFields
               type={type}
-              language={detectedLanguage}
+              language="fr"
               onDataChange={setFormData}
             />
           )
         )}
+
+        {type && <ReferenceLibraryFlow />}
 
         <div>
           <Label htmlFor="name">{t.name}</Label>
@@ -301,11 +295,23 @@ export function ContributionForm({
           autoComplete="off"
         />
 
-        {error && <div className="text-red-500 text-sm">{error}</div>}
+        {error && <FormFieldError>{error}</FormFieldError>}
 
-        {success && <div className="text-green-500 text-sm">{t.success}</div>}
+        {hasUnverifiedSource && (
+          <div className="text-afh-small text-amber-700" role="status">
+            {t.sourceUnverified}
+          </div>
+        )}
 
-        <Button type="submit" disabled={loading || !type}>
+        {success && (
+          <div className="text-green-500 text-afh-small">{t.success}</div>
+        )}
+
+        <Button
+          type="submit"
+          className="w-full md:w-auto"
+          disabled={loading || !type}
+        >
           {loading ? t.submitting : t.submit}
         </Button>
       </form>

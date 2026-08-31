@@ -70,9 +70,24 @@
       ]
     },
     "sources": [
-      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
-      "Daaku, Kwame – Oral Traditions of Assin, in The Akan People: A Documentary History, Markus Wiener Publishers",
-      "Modern Ghana – Discover the historic colonial treasures in Assin area, 2021 (https://www.modernghana.com/news/1110502/discover-the-historic-colonial-treasures-in-assin.html)"
+      {
+        "title": "Ghana Statistical Service, Population and Housing Census 2021",
+        "url": "https://census2021.statsghana.gov.gh",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census2021.statsghana.gov.gh."
+      },
+      {
+        "title": "Daaku, Kwame – Oral Traditions of Assin, in The Akan People: A Documentary History, Markus Wiener Publishers",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Modern Ghana – Discover the historic colonial treasures in Assin area, 2021",
+        "url": "https://www.modernghana.com/news/1110502/discover-the-historic-colonial-treasures-in-assin.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      }
     ]
   }
 }

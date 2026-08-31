@@ -7,6 +7,7 @@
   "id": "FLG_XXXXX",
   "nameFr": "<Nom français de la famille>",
   "nameEn": "<English name>",
+  "classificationStatus": "<consensual | contested | colonial-legacy | reconstructive — omettre tant que la fiche n'a pas ete revue>",
   "content": {
     "decolonialHeader": {
       "linkWithFamily": "<Lien avec la famille parente — ex: Sous-branche de FLG_NIGERCONGO>",
@@ -53,6 +54,13 @@
         "ISO2": 0
       }
     },
-    "sources": ["<Titre – Auteur/URL>"]
+    "sources": [
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier : entrée du catalogue, règle de domaine, ou forme de citation>"
+      }
+    ]
   }
 }

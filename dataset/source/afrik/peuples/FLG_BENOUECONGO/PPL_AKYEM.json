@@ -77,8 +77,18 @@
       ]
     },
     "sources": [
-      "Joshua Project – Akan-Akyem in Ghana, 2025 (https://joshuaproject.net/countries/gh)",
-      "LearnAkan – Akan Language dialects (https://learnakan.com/akan-language/)"
+      {
+        "title": "Joshua Project – Akan-Akyem in Ghana, 2025",
+        "url": "https://joshuaproject.net/countries/gh",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "LearnAkan – Akan Language dialects",
+        "url": "https://learnakan.com/akan-language/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers learnakan.com; the tier awaits editorial review."
+      }
     ]
   }
 }

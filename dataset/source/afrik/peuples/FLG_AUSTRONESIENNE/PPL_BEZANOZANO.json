@@ -3,6 +3,7 @@
   "nameMain": "Bezanozano",
   "languageFamilyId": "FLG_AUSTRONESIENNE",
   "currentCountries": ["MDG"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bezanozano",
@@ -86,11 +87,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Bezanozano in Madagascar, https://joshuaproject.net/people_groups/print/10822/MA (consulté 2025)",
-      "PeopleGroups.org — Bezanozano of Madagascar, https://peoplegroups.org/people_groups/pg015296/ (consulté 2025)",
-      "101 Last Tribes — Bezanozano, https://www.101lasttribes.com/tribes/bezanozano.html (consulté 2025)",
-      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
-      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012."
+      {
+        "title": "Joshua Project — Bezanozano in Madagascar, (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/print/10822/MA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Bezanozano of Madagascar, (consulté 2025)",
+        "url": "https://peoplegroups.org/people_groups/pg015296/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "101 Last Tribes — Bezanozano, (consulté 2025)",
+        "url": "https://www.101lasttribes.com/tribes/bezanozano.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook — Madagascar, (consulté 2025)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

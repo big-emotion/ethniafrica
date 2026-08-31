@@ -3,6 +3,7 @@
   "nameMain": "Tongas",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["STP"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Tongas",
@@ -83,10 +84,30 @@
       ]
     },
     "sources": [
-      "São Tomé and Príncipe – Minority Rights Group, 2024 (https://minorityrights.org/country/sao-tome-and-principe/)",
-      "Population and Demographics – SaoTomeExpert, 2022 (https://www.saotomeexpert.pt/en/sao-tome-and-principe-factsheet-population-demographics/)",
-      "People and Culture of Príncipe Island – SaoTomeExpert (https://www.saotomeexpert.pt/en/sao-tome-people-culture-of-principe-island/)",
-      "Sao Tome and Principe Demographics Profile – IndexMundi (https://www.indexmundi.com/sao_tome_and_principe/demographics_profile.html)"
+      {
+        "title": "São Tomé and Príncipe – Minority Rights Group, 2024",
+        "url": "https://minorityrights.org/country/sao-tome-and-principe/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Population and Demographics – SaoTomeExpert, 2022",
+        "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-factsheet-population-demographics/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+      },
+      {
+        "title": "People and Culture of Príncipe Island – SaoTomeExpert",
+        "url": "https://www.saotomeexpert.pt/en/sao-tome-people-culture-of-principe-island/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+      },
+      {
+        "title": "Sao Tome and Principe Demographics Profile – IndexMundi",
+        "url": "https://www.indexmundi.com/sao_tome_and_principe/demographics_profile.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for indexmundi.com."
+      }
     ]
   }
 }

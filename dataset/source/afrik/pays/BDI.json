@@ -1,11 +1,17 @@
 {
   "id": "BDI",
-  "nameFr": "République du Burundi (Republika y'Uburundi)",
+  "nameFr": "Burundi",
   "nameOfficial": "République du Burundi (Republika y'Uburundi)",
+  "summary": "Le Burundi est un pays des Grands Lacs dont le nom désigne simplement « le pays » en kirundi, en référence au royaume précolonial qui l'a précédé. Monarchie ancienne, il passa sous protectorat allemand puis sous tutelle belge au sein du Ruanda-Urundi. Hutu, Tutsi et Twa y partagent une même langue, le kirundi.",
   "etymology": "Le nom \"Burundi\" vient probablement du kirundi \"Uburundi\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Burundi.",
   "nameOriginActor": "Le nom vient du royaume précolonial du Burundi (Royaume du Burundi), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Afrique orientale allemande (1885-1916)",
+        "Ruanda-Urundi (1916-1962)",
+        "Royaume du Burundi (1962-1966)"
+      ],
       "antiquity": "Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.",
       "middleAges": "Développement du royaume du Burundi à partir du XVIe siècle. Le royaume s'appelait \"Burundi\" ou \"Uburundi\".",
       "precolonial": "Royaume du Burundi (XVIe - XIXe siècles) avec une monarchie centralisée. Le nom \"Burundi\" était utilisé pour désigner le royaume et son territoire.",
@@ -95,14 +101,60 @@
       "postIndependence": "Première République (1966-1987) : régime Tutsi, tensions ethniques. Massacres de 1972 : extermination de dizaines de milliers de Hutu. Deuxième République (1987-1993) : transition démocratique. Assassinat du président Ndadaye (1993) : guerre civile. Troisième République depuis 2005 : processus de paix, défis de réconciliation et de développement."
     },
     "sources": [
-      "CIA World Factbook – Burundi",
-      "SIL Ethnologue – Kirundi language (run)",
-      "Recensements nationaux burundais",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les Grands Lacs",
-      "Études historiques sur le royaume du Burundi",
-      "CIA World Factbook – Burundi (ethnic groups)"
+      {
+        "title": "CIA World Factbook – Burundi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Kirundi language (run)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux burundais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les Grands Lacs",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume du Burundi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Burundi (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

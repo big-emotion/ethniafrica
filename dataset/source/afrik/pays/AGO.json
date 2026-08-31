@@ -1,11 +1,16 @@
 {
   "id": "AGO",
-  "nameFr": "République d'Angola (República de Angola)",
+  "nameFr": "Angola",
   "nameOfficial": "République d'Angola (República de Angola)",
+  "summary": "L'Angola est un pays d'Afrique australe façonné par les royaumes Kongo, Ndongo et Matamba, puis par quatre siècles de colonisation portugaise. Son nom vient de « ngola », le titre porté par les rois du Ndongo : les Portugais ont fait un pays d'un titre royal. Sa culture croise traditions bantoues, khoïsan et lusophones.",
   "etymology": "Le nom \"Angola\" dérive de \"Ngola\", titre des rois du royaume Ndongo. Les Portugais ont utilisé ce terme pour désigner la région qu'ils colonisaient à partir du XVIe siècle. \"Ngola\" était le titre royal du souverain du royaume Ndongo, l'un des royaumes précoloniaux les plus puissants de la région.",
   "nameOriginActor": "Le nom provient du royaume Ndongo et de son titre royal \"Ngola\". Les Portugais ont adopté et généralisé ce terme lors de la colonisation à partir de 1575. Le nom a été officialisé comme \"Colónia de Angola\" pendant la période coloniale portugaise (1575-1975).",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colónia de Angola (1575-1975)",
+        "République populaire d'Angola (1975-1990)"
+      ],
       "antiquity": "Le territoire actuel de l'Angola était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires et royaumes.",
       "middleAges": "Développement de royaumes bantous puissants : royaume Kongo (XIVe-XVIIe siècles), royaume Ndongo (XVe-XVIIe siècles), royaume Matamba, royaumes Ovimbundu, et Empire Lunda (XVIe-XIXe siècles). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume Kongo, royaume Ndongo, royaume Matamba, royaumes Ovimbundu, Empire Lunda. Les Portugais utilisaient le terme \"Angola\" basé sur le titre \"Ngola\" des rois du Ndongo.",
@@ -227,15 +232,66 @@
       "postIndependence": "1975-2002 : Guerre civile angolaise entre le MPLA (soutenu par l'URSS et Cuba) et l'UNITA (soutenu par les États-Unis et l'Afrique du Sud). Conflit long et destructeur, millions de déplacés et de réfugiés. 2002 : Fin de la guerre civile après la mort de Jonas Savimbi (leader de l'UNITA). Période de reconstruction et de développement économique (pétrole, diamants). Défis de développement, pauvreté, inégalités sociales."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Angola",
-      "CIA World Factbook – Angola",
-      "ONU / UNFPA – Démographie Angola 2025",
-      "Governance in West Central Africa Before 1600\"",
-      "Early Mbundu States in Angola\"",
-      "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
-      "Recensements angolais",
-      "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
-      "CIA World Factbook – Angola (ethnic groups, 2000 est.)"
+      {
+        "title": "SIL Ethnologue – Languages of Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Angola 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Governance in West Central Africa Before 1600\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Early Mbundu States in Angola\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements angolais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Angola (ethnic groups, 2000 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

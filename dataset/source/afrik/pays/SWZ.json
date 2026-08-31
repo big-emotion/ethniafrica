@@ -1,11 +1,13 @@
 {
   "id": "SWZ",
-  "nameFr": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
+  "nameFr": "Eswatini",
   "nameOfficial": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
+  "summary": "Eswatini signifie « pays des Swazi » en swati — le nom que le royaume se donne, repris officiellement en remplacement du colonial « Swaziland ». Fondé au XVIIIe siècle sous le roi Ngwane, il fut protectorat britannique de 1903 à 1968. L'Incwala et l'Umhlanga y rythment encore la vie royale.",
   "etymology": "Le nom \"Eswatini\" signifie \"pays des Swazi\" en langue swati. Il s'agit du nom traditionnel du royaume. Le nom \"Swaziland\" était le nom colonial britannique (combinaison de \"Swazi\" et \"land\"). Le pays a officiellement changé de nom de \"Swaziland\" à \"Eswatini\" en 2018 pour retrouver son appellation d'origine.",
   "nameOriginActor": "Le nom \"Eswatini\" est le nom traditionnel du royaume swazi. Le nom \"Swaziland\" a été donné par les Britanniques lors de la colonisation. Le roi Mswati III a officiellement changé le nom du pays de \"Swaziland\" à \"Eswatini\" en 2018 pour restaurer le nom traditionnel.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Swaziland (1903-2018)"],
       "antiquity": "Le territoire actuel d'Eswatini était peuplé de peuples bantous sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations bantoues vers la région. Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Formation du royaume swazi au XVIIIe siècle sous le roi Ngwane III. Le royaume était connu sous le nom traditionnel \"Eswatini\" (pays des Swazi). Expansion du royaume swazi, résistance aux Zoulous et aux Boers.",
@@ -90,14 +92,60 @@
       "postIndependence": "1968-1982 : Règne du roi Sobhuza II, abolition de la constitution, établissement du système monarchique absolu. 1982-présent : Règne du roi Mswati III (depuis 1986). Défis : pauvreté, inégalités sociales, VIH/sida, dépendance économique de l'Afrique du Sud. 2018 : Changement de nom officiel de \"Swaziland\" à \"Eswatini\" (19 avril 2018), restauration du nom traditionnel. L'Eswatini est l'un des derniers royaumes absolus d'Afrique."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Eswatini",
-      "CIA World Factbook – Eswatini",
-      "ONU / UNFPA – Démographie Eswatini 2025",
-      "Rank among the Swazi\"",
-      "An Ethnographic Account of the Natives of the Swaziland Protectorate\"",
-      "Recensements eswatinis",
-      "Études anthropologiques sur les peuples swazi",
-      "CIA World Factbook – Eswatini (ethnic groups)"
+      {
+        "title": "SIL Ethnologue – Languages of Eswatini",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Eswatini",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Eswatini 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Rank among the Swazi\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "An Ethnographic Account of the Natives of the Swaziland Protectorate\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements eswatinis",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples swazi",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Eswatini (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

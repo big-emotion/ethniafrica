@@ -72,10 +72,30 @@
       ]
     },
     "sources": [
-      "Burunge – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/buru1320)",
-      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Burunge – Encyclopedia Britannica (https://www.britannica.com/topic/Burunge)",
-      "Burunge tribe – Tanzania Cultural Tours (https://www.hadzabetribe.com/burunge-tribe/)"
+      {
+        "title": "Burunge – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/buru1320",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Appendix ISO 639-3 codes/Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Burunge – Encyclopedia Britannica",
+        "url": "https://www.britannica.com/topic/Burunge",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Burunge tribe – Tanzania Cultural Tours",
+        "url": "https://www.hadzabetribe.com/burunge-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hadzabetribe.com."
+      }
     ]
   }
 }

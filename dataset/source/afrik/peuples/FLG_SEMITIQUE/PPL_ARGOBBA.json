@@ -3,6 +3,7 @@
   "nameMain": "Argobba",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Argobba",
@@ -90,12 +91,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Argobba language (agj). https://www.ethnologue.com/language/agj",
-      "Joshua Project — Argobba in Ethiopia. https://joshuaproject.net/people_groups/10422",
-      "Dergipark — The Gafat and Argobba of Ethiopia: A Historical Survey. https://dergipark.org.tr/en/pub/toplumsalbilimler/article/1352052",
-      "101 Last Tribes — Argobba people. https://www.101lasttribes.com/tribes/argobba.html",
-      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et",
-      "Encyclopaedia Aethiopica, vol. 1 (Uhlig ed.), Harrassowitz Verlag, 2003"
+      {
+        "title": "Ethnologue — Argobba language (agj)",
+        "url": "https://www.ethnologue.com/language/agj",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Argobba in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/10422",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Dergipark — The Gafat and Argobba of Ethiopia: A Historical Survey",
+        "url": "https://dergipark.org.tr/en/pub/toplumsalbilimler/article/1352052",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dergipark.org.tr."
+      },
+      {
+        "title": "101 Last Tribes — Argobba people",
+        "url": "https://www.101lasttribes.com/tribes/argobba.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007",
+        "url": "https://www.csa.gov.et",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica, vol. 1 (Uhlig ed.), Harrassowitz Verlag, 2003",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

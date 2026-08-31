@@ -15,6 +15,7 @@
     "SOM",
     "COM"
   ],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Arabes d'Afrique",
@@ -180,13 +181,48 @@
       ]
     },
     "sources": [
-      "Hourani, Albert - A History of the Arab Peoples. Harvard University Press, 1991.",
-      "Lapidus, Ira M. - A History of Islamic Societies. Cambridge University Press, 2002.",
-      "SIL Ethnologue - Arabic language varieties. https://www.ethnologue.com/subgroups/arabic-1/",
-      "CIA World Factbook - Country profiles (EGY, DZA, MAR, TUN, LBY, SDN, MRT, TCD, DJI, SOM). https://www.cia.gov/the-world-factbook/",
-      "ONU Population Division - World Population Prospects 2024. https://population.un.org/wpp/",
-      "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024.",
-      "Minority Rights Group - Mauritania, Sudan, Chad profiles. https://minorityrights.org/"
+      {
+        "title": "Hourani, Albert - A History of the Arab Peoples. Harvard University Press, 1991",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Lapidus, Ira M. - A History of Islamic Societies. Cambridge University Press, 2002",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue - Arabic language varieties",
+        "url": "https://www.ethnologue.com/subgroups/arabic-1/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook - Country profiles (EGY, DZA, MAR, TUN, LBY, SDN, MRT, TCD, DJI, SOM)",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "ONU Population Division - World Population Prospects 2024",
+        "url": "https://population.un.org/wpp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+      },
+      {
+        "title": "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group - Mauritania, Sudan, Chad profiles",
+        "url": "https://minorityrights.org/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      }
     ]
   }
 }

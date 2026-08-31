@@ -3,6 +3,7 @@
   "nameMain": "Peuples Soudaniques Centraux (macro-groupe)",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["COD", "UGA", "SDN", "SSD", "CAF", "TCD", "COG"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Peuples Soudaniques Centraux",
@@ -126,13 +127,48 @@
       ]
     },
     "sources": [
-      "Greenberg, Joseph H. The Languages of Africa. Indiana University Press, 1963.",
-      "Blench, Roger. Classification of Central Sudanic (2023). Manuscrit de travail.",
-      "Starostin, George. Glottolog classification of Central Sudanic. 2016. https://glottolog.org",
-      "SIL Ethnologue — Central Sudanic family. https://www.ethnologue.com",
-      "CIA World Factbook — Democratic Republic of the Congo, Central African Republic, Chad, Uganda, South Sudan. https://www.cia.gov/the-world-factbook/",
-      "Evans-Pritchard, E.E. Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937.",
-      "Vansina, Jan. Kingdoms of the Savanna. University of Wisconsin Press, 1966."
+      {
+        "title": "Greenberg, Joseph H. The Languages of Africa. Indiana University Press, 1963",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger. Classification of Central Sudanic (2023). Manuscrit de travail",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Starostin, George. Glottolog classification of Central Sudanic. 2016",
+        "url": "https://glottolog.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue — Central Sudanic family",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo, Central African Republic, Chad, Uganda, South Sudan",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Evans-Pritchard, E.E. Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Vansina, Jan. Kingdoms of the Savanna. University of Wisconsin Press, 1966",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

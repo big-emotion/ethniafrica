@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // Mock next/link
 vi.mock("next/link", () => ({
@@ -53,5 +54,36 @@ describe("EmptyState", () => {
       </EmptyState>
     );
     expect(screen.getByRole("button", { name: "Action" })).toBeTruthy();
+  });
+
+  // @req REQ-107
+  it("renders the failure variant with message and a retry control", () => {
+    render(
+      <EmptyState
+        message="Le chargement a échoué."
+        variant="failure"
+        retryHref={getLocalizedRoute("fr", "migrations")}
+        retryLabel="Réessayer"
+      />
+    );
+    expect(screen.getByTestId("state-copy")).toHaveTextContent(
+      "Le chargement a échoué."
+    );
+    const retry = screen.getByTestId("retry");
+    expect(retry).toBeTruthy();
+    expect(retry.getAttribute("href")).toBe(
+      getLocalizedRoute("fr", "migrations")
+    );
+  });
+
+  // @req REQ-107
+  it("does not change default/search variant output", () => {
+    const { container: defaultContainer } = render(
+      <EmptyState message="Aucun résultat" />
+    );
+    expect(defaultContainer.querySelector("[data-testid='retry']")).toBeNull();
+
+    render(<EmptyState message="Aucun résultat" variant="search" lang="fr" />);
+    expect(screen.queryByTestId("retry")).toBeNull();
   });
 });

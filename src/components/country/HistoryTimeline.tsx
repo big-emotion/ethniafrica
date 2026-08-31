@@ -4,6 +4,7 @@ interface HistoryTimelineProps {
   data: TimelineData;
 }
 
+// @req REQ-092
 export function HistoryTimeline({ data }: HistoryTimelineProps) {
   if (data.items.length === 0) return null;
 
@@ -35,32 +36,26 @@ export function HistoryTimeline({ data }: HistoryTimelineProps) {
           />
 
           <div
-            className="text-[var(--country-text-nano)] xl:text-[10px] font-extrabold uppercase tracking-[0.1em] mb-px"
+            className="text-afh-eyebrow font-extrabold uppercase tracking-[0.1em] mb-px"
             style={{ color: getEraColor(item.type) }}
           >
             {item.era}
           </div>
-          <div
-            className="text-base md:text-lg xl:text-xl font-bold leading-[1.25] mb-0.5"
-            style={{
-              fontFamily: "var(--country-font-display)",
-              ...(item.type === "colonial"
-                ? {
-                    textDecoration: "line-through",
-                    textDecorationColor: "var(--country-colonial)",
-                  }
-                : {}),
-            }}
-          >
-            {item.name}
-            {item.type === "sovereign" && " ✦"}
-          </div>
-          {item.note && (
+          {item.name && (
             <div
-              className="text-[11px] md:text-xs xl:text-[13px] leading-[1.4]"
-              style={{ color: "var(--country-text-soft)" }}
+              className="text-afh-h3 font-bold leading-[1.25] mb-0.5"
+              style={{ fontFamily: "var(--country-font-display)" }}
             >
-              {item.note}
+              {item.name}
+              {item.type === "sovereign" && " ✦"}
+            </div>
+          )}
+          {item.prose && (
+            <div
+              className="text-afh-small leading-relaxed"
+              style={{ color: "var(--country-text)" }}
+            >
+              {item.prose}
             </div>
           )}
         </div>

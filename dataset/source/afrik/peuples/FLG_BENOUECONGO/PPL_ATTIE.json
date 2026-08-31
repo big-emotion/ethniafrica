@@ -3,6 +3,7 @@
   "nameMain": "Attié",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["CIV"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Attié",
@@ -89,14 +90,54 @@
       ]
     },
     "sources": [
-      "Ethnologue : Attié language (ATI) https://www.ethnologue.com/language/ati/",
-      "Joshua Project : Attie in Côte d'Ivoire https://joshuaproject.net/people_groups/10483/IV",
-      "UNESCO : Les savoir-faire liés à la fabrication de l'attiéké (2024) https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",
-      "Spirit Land of Africa : Attié culture https://spiritlandofafrica.com/products/list/attie/",
-      "Rezo Ivoire : Le peuple Attié https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html",
-      "101 Last Tribes : Akye https://www.101lasttribes.com/tribes/akye.html",
-      "Santé Tropicale : Approche anthropologique en pays Akyé https://www.santetropicale.com/Resume/14803.pdf",
-      "YouTube : Le peuple Akié, comment est-il arrivé en Côte d'Ivoire ? https://www.youtube.com/watch?v=Qpqx8Biibg4"
+      {
+        "title": "Ethnologue : Attié language (ATI)",
+        "url": "https://www.ethnologue.com/language/ati/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project : Attie in Côte d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/10483/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO : Les savoir-faire liés à la fabrication de l'attiéké (2024)",
+        "url": "https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Spirit Land of Africa : Attié culture",
+        "url": "https://spiritlandofafrica.com/products/list/attie/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers spiritlandofafrica.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Rezo Ivoire : Le peuple Attié",
+        "url": "https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rezoivoire.net."
+      },
+      {
+        "title": "101 Last Tribes : Akye",
+        "url": "https://www.101lasttribes.com/tribes/akye.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Santé Tropicale : Approche anthropologique en pays Akyé",
+        "url": "https://www.santetropicale.com/Resume/14803.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers santetropicale.com; the tier awaits editorial review."
+      },
+      {
+        "title": "YouTube : Le peuple Akié, comment est-il arrivé en Côte d'Ivoire ?",
+        "url": "https://www.youtube.com/watch?v=Qpqx8Biibg4",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      }
     ]
   }
 }

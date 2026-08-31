@@ -3,6 +3,7 @@
   "nameMain": "Kullo",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kullo",
@@ -70,10 +71,30 @@
       ]
     },
     "sources": [
-      "Dawro in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12839)",
-      "The Case of the Dawro in Ethiopia – Jimma University Journals, 2021 (https://journals.ju.edu.et/index.php/ejssls/article/download/4751/1723/)",
-      "Overview of Dawuro Zone, Ethiopia – Scribd, 2025 (https://www.scribd.com/document/809814043/chapter1-4)",
-      "Dawro – Dawrotsuwa Language Info – Swordshare Map (https://map.swordshare.com/dwr)"
+      {
+        "title": "Dawro in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12839",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Case of the Dawro in Ethiopia – Jimma University Journals, 2021",
+        "url": "https://journals.ju.edu.et/index.php/ejssls/article/download/4751/1723/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers journals.ju.edu.et; the tier awaits editorial review."
+      },
+      {
+        "title": "Overview of Dawuro Zone, Ethiopia – Scribd, 2025",
+        "url": "https://www.scribd.com/document/809814043/chapter1-4",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com."
+      },
+      {
+        "title": "Dawro – Dawrotsuwa Language Info – Swordshare Map",
+        "url": "https://map.swordshare.com/dwr",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      }
     ]
   }
 }

@@ -1,11 +1,17 @@
 {
   "id": "ETH",
-  "nameFr": "République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)",
+  "nameFr": "Éthiopie",
   "nameOfficial": "République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)",
+  "summary": "L'Éthiopie est nommée par un mot grec, « Aithiopia », le pays des visages brûlés ; les Égyptiens l'appelaient Pount. Du royaume d'Axoum à l'Empire salomonien, son histoire étatique est ininterrompue, et elle n'a jamais été durablement colonisée — l'occupation italienne mise à part. Oromo, Amhara, Somali, Tigréens, Sidama et Gurage y composent une mosaïque sémitique et couchitique.",
   "etymology": "Le nom \"Éthiopie\" vient du grec \"Αἰθιοπία\" (Aithiopia), signifiant \"pays des visages brûlés\" ou \"pays des Noirs\". Le terme était utilisé par les Grecs anciens pour désigner les terres au sud de l'Égypte. Le nom amharique \"Ityop'iya\" (ኢትዮጵያ) est dérivé du grec.",
   "nameOriginActor": "Le nom \"Éthiopie\" a été utilisé par les Grecs anciens et adopté par les royaumes éthiopiens. Le nom amharique \"Ityop'iya\" est dérivé du grec. Le pays s'est appelé \"Abyssinie\" par les Européens jusqu'au XXe siècle.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Pount (égyptien ancien)",
+        "Abyssinie (usage européen jusqu'au XXe siècle)",
+        "République socialiste d'Éthiopie (1974-1991)"
+      ],
       "antiquity": "Le territoire était connu sous le nom de \"Pount\" par les Égyptiens anciens. Les Grecs anciens utilisaient \"Éthiopie\" pour désigner les terres au sud de l'Égypte. Royaume d'Axoum (Ier-VIIe siècles).",
       "middleAges": "Empire d'Éthiopie (XIIIe-XXe siècles) avec dynasties salomonides. Le nom \"Éthiopie\" était utilisé par les royaumes éthiopiens. Les Européens utilisaient \"Abyssinie\" (dérivé de \"Habesha\").",
       "precolonial": "Empire d'Éthiopie avec empereur (Negus Negast). Le nom \"Éthiopie\" était utilisé officiellement. \"Abyssinie\" était le nom utilisé par les Européens.",
@@ -141,14 +147,60 @@
       "postIndependence": "Chute de l'empire (1974) : révolution, régime socialiste (Derg). Guerre civile, famine. Transition démocratique (1991). République fédérale démocratique (1995) : fédéralisme ethnique, développement économique, défis de gouvernance et de stabilité."
     },
     "sources": [
-      "CIA World Factbook – Ethiopia",
-      "SIL Ethnologue – Languages of Ethiopia",
-      "Recensements nationaux éthiopiens",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples éthiopiens",
-      "Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum",
-      "CIA World Factbook – Ethiopia (ethnic groups, 2007 census)"
+      {
+        "title": "CIA World Factbook – Ethiopia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Ethiopia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux éthiopiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples éthiopiens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Ethiopia (ethnic groups, 2007 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

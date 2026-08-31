@@ -1,11 +1,13 @@
 {
   "id": "GIN",
-  "nameFr": "République de Guinée",
+  "nameFr": "Guinée",
   "nameOfficial": "République de Guinée (République de Guinée)",
+  "summary": "La Guinée porte un nom que les Portugais appliquaient au XVe siècle à toute la côte ouest-africaine. Le pays articule quatre ensembles : le Fouta-Djalon peul, la Haute-Guinée malinké héritée de l'empire du Mali, la Basse-Guinée soussou et les peuples forestiers. Griots, kora et balafon y portent une tradition orale continue.",
   "etymology": "Le nom \"Guinée\" provient du portugais \"Guiné\", terme utilisé par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine au sud du Sénégal. L'origine du terme \"Guiné\" est incertaine, mais pourrait dériver du berbère \"Akal n-Iguinawen\" (terre des Noirs) ou d'un terme local. Les Français ont adapté ce nom pour leur colonie.",
   "nameOriginActor": "Le nom \"Guinée\" a été donné par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine. Les Français ont officialisé ce nom lors de la création de la colonie de Guinée française en 1891. Le nom a été officialisé à l'indépendance en 1958.",
   "content": {
     "historicalNames": {
+      "formerNames": ["Guinée française (1891-1958)"],
       "antiquity": "Le territoire actuel de la Guinée était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Développement de royaumes et empires : empire du Mali (XIIIe-XVIe siècle), empire Songhai, influence de l'empire du Ghana. Le territoire était au cœur du Mandé médiéval. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et entités politiques : empire du Mali (centre historique du Mandé), théocratie peule du Fouta Djallon (XVIIIe-XIXe siècle), royaumes Malinké, peuples forestiers (Kissi, Toma, Guerzé), Soussou (côte). Les Européens utilisaient le terme \"Guinée\" pour désigner la région côtière.",
@@ -211,14 +213,60 @@
       "postIndependence": "1958-1984 : Présidence de Sékou Touré, régime socialiste, politique d'isolement, répression politique. 1984-2008 : Régime militaire, présidence de Lansana Conté. 2008-2010 : Régime militaire, présidence de Moussa Dadis Camara puis Sékouba Konaté. 2010-présent : Transition démocratique, élection d'Alpha Condé (2010-2021) puis de Mamady Doumbouya (depuis 2021, coup d'État). Défis : pauvreté, instabilité politique, développement économique, gestion des ressources minières. La Guinée possède d'importantes ressources minières (bauxite, or, diamants)."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Guinea",
-      "CIA World Factbook – Guinea",
-      "ONU / UNFPA – Démographie Guinée 2025",
-      "Niane, Djibril Tamsir – \"Soundjata ou l'épopée mandingue\"",
-      "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
-      "Recensements guinéens",
-      "Études anthropologiques sur les peuples de la Guinée",
-      "Études historiques sur l'empire du Mali et le Fouta Djallon"
+      {
+        "title": "SIL Ethnologue – Languages of Guinea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Guinea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Guinée 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Niane, Djibril Tamsir – \"Soundjata ou l'épopée mandingue\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements guinéens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Guinée",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Mali et le Fouta Djallon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

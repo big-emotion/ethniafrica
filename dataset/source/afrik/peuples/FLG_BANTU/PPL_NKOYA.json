@@ -3,6 +3,7 @@
   "nameMain": "Nkoya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nkoya",
@@ -75,11 +76,36 @@
       ]
     },
     "sources": [
-      "Nkoya Language (NKA) – Ethnologue (https://www.ethnologue.com/language/nka/)",
-      "Nkoya, Lambya in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13954)",
-      "The Kazanga Ceremony, Kaoma district – Wim van Binsbergen, Quest Journal (https://www.quest-journal.net/shikanda/topicalities/kazanga4/kazanga4.htm)",
-      "The Kazanga Festival – Scholarly Publications Leiden University (https://scholarlypublications.universiteitleiden.nl/access/item:2870800/download)",
-      "Nkoya of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015618/)"
+      {
+        "title": "Nkoya Language (NKA) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/nka/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Nkoya, Lambya in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13954",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Kazanga Ceremony, Kaoma district – Wim van Binsbergen, Quest Journal",
+        "url": "https://www.quest-journal.net/shikanda/topicalities/kazanga4/kazanga4.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers quest-journal.net; the tier awaits editorial review."
+      },
+      {
+        "title": "The Kazanga Festival – Scholarly Publications Leiden University",
+        "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2870800/download",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarlypublications.universiteitleiden.nl."
+      },
+      {
+        "title": "Nkoya of Zambia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015618/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

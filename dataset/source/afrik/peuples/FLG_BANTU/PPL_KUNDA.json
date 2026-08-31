@@ -3,6 +3,7 @@
   "nameMain": "Kunda",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE", "MOZ"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kunda",
@@ -74,12 +75,42 @@
       ]
     },
     "sources": [
-      "Kunda – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/kunda-2/)",
-      "The Kunda of Zambia – Partners in Bible Translation Survey, 2015 (http://partnersinbibletranslation.org/wp-content/uploads/2018/03/KundaSurvey_2015.pdf)",
-      "Kunda people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/kunda.html)",
-      "Kunda in Zambia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12852/ZA)",
-      "Zambia: Tracing History of the Kunda – allAfrica.com, 2006 (https://allafrica.com/stories/200611020687.html)",
-      "Kunda Language (KDN) – Ethnologue, SIL International (https://www.ethnologue.com/language/kdn/)"
+      {
+        "title": "Kunda – Zambia's Traditional History, 2020",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/kunda-2/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "The Kunda of Zambia – Partners in Bible Translation Survey, 2015",
+        "url": "http://partnersinbibletranslation.org/wp-content/uploads/2018/03/KundaSurvey_2015.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for partnersinbibletranslation.org."
+      },
+      {
+        "title": "Kunda people – 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/kunda.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Kunda in Zambia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/12852/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Zambia: Tracing History of the Kunda – allAfrica.com, 2006",
+        "url": "https://allafrica.com/stories/200611020687.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for allafrica.com."
+      },
+      {
+        "title": "Kunda Language (KDN) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/kdn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

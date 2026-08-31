@@ -3,6 +3,7 @@
   "nameMain": "Nyabwa",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Nyabwa",
@@ -87,15 +88,60 @@
       ]
     },
     "sources": [
-      "Aka Konin — L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire. MRAC Tervuren, 2012. https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf",
-      "Glottolog 5.3 — Nyabwa (nyab1255). https://glottolog.org/resource/languoid/id/nyab1255",
-      "SIL Ethnologue — Nyabwa language (nwb). https://www.ethnologue.com/language/nwb/",
-      "Day Translations — Ivory Coast Language Profile. https://www.daytranslations.com/blog/guide/ivory-coast/4/",
-      "Mission Atlas Project — Cote d'Ivoire Country Profile. http://www.worldmap.org/uploads/9/3/4/4/9344303/cote_divoire_country_profile.pdf",
-      "Refworld/MRGI — World Directory of Minorities and Indigenous Peoples, Cote d'Ivoire. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
-      "Ethnologue — Subgroup Nyabwa. https://www.ethnologue.com/subgroup/971/",
-      "Ze Ze Beke (P.) — Les Interdits alimentaires chez les Nyabwa de Cote d'Ivoire, cit. in Aka Konin 2012.",
-      "Holas (B.) — Arts de la Cote d'Ivoire, les tresors du musee d'Abidjan. Vevey, Musee des Beaux-Arts, 1969 (p. 184 : masques niaboua)."
+      {
+        "title": "Aka Konin — L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire. MRAC Tervuren, 2012",
+        "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africamuseum.be."
+      },
+      {
+        "title": "Glottolog 5.3 — Nyabwa (nyab1255)",
+        "url": "https://glottolog.org/resource/languoid/id/nyab1255",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue — Nyabwa language (nwb)",
+        "url": "https://www.ethnologue.com/language/nwb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Day Translations — Ivory Coast Language Profile",
+        "url": "https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for daytranslations.com."
+      },
+      {
+        "title": "Mission Atlas Project — Cote d'Ivoire Country Profile",
+        "url": "http://www.worldmap.org/uploads/9/3/4/4/9344303/cote_divoire_country_profile.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldmap.org."
+      },
+      {
+        "title": "Refworld/MRGI — World Directory of Minorities and Indigenous Peoples, Cote d'Ivoire",
+        "url": "https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for refworld.org."
+      },
+      {
+        "title": "Ethnologue — Subgroup Nyabwa",
+        "url": "https://www.ethnologue.com/subgroup/971/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ze Ze Beke (P.) — Les Interdits alimentaires chez les Nyabwa de Cote d'Ivoire, cit. in Aka Konin 2012",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Holas (B.) — Arts de la Cote d'Ivoire, les tresors du musee d'Abidjan. Vevey, Musee des Beaux-Arts, 1969 (p. 184 : masques niaboua)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

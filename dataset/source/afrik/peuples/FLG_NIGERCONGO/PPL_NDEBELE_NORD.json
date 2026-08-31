@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Nord (Zimbabwe)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Nord (Zimbabwe)",
@@ -98,12 +99,42 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Ndebele (Zimbabwean people). https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
-      "Encyclopaedia Britannica — Lobengula. https://www.britannica.com/biography/Lobengula",
-      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
-      "EBSCO Research Starters — Lobengula. https://www.ebsco.com/research-starters/history/lobengula",
-      "Joshua Project — Ndebele, Tabele in Zimbabwe. https://joshuaproject.net/people_groups/13275/ZI",
-      "SIL Ethnologue — Northern Ndebele (nde). https://www.ethnologue.com/language/nde/"
+      {
+        "title": "Encyclopaedia Britannica — Ndebele (Zimbabwean people)",
+        "url": "https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Lobengula",
+        "url": "https://www.britannica.com/biography/Lobengula",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "South African History Online — Ndebele",
+        "url": "https://sahistory.org.za/article/ndebele",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "EBSCO Research Starters — Lobengula",
+        "url": "https://www.ebsco.com/research-starters/history/lobengula",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "Joshua Project — Ndebele, Tabele in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/13275/ZI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Northern Ndebele (nde)",
+        "url": "https://www.ethnologue.com/language/nde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

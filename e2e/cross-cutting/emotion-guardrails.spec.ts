@@ -6,6 +6,12 @@ import {
   expectNoPopupsOrWalls,
   expectTapTargetsAtLeast44px,
 } from "../support/guardrails";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 
 // TEA Test Design R-10 — "Emotions to avoid" silently regress.
 // One spec that sweeps every reading-surface URL pattern and asserts the
@@ -15,10 +21,12 @@ import {
 // Reading-surface URLs that already exist or are coming soon in Phase 1.
 // Comment-out the lines that 404 today; uncomment as primitives ship.
 const READING_SURFACE_URLS = [
-  "/fr/pays/COM",
-  // "/fr/peuples/PPL_YORUBA",     // Phase 1 — People page
-  // "/fr/familles/FLG_NIGER_CONGO", // Phase 1 — Family page
-  // "/fr/recherche",                // Search page (existing in some form)
+  getCountryRoute("fr", "COM"),
+  // The people fiche renders server-side now, so the guardrails can hold it
+  // to the same five checks as every other reading surface.
+  getPeopleRoute("fr", "PPL_YORUBA"),
+  // getFamilyRoute("fr", "FLG_NIGER_CONGO"), // Phase 1 — Family page
+  // getLocalizedRoute("fr", "search"),                // Search page (existing in some form)
 ] as const;
 
 for (const url of READING_SURFACE_URLS) {

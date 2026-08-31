@@ -3,6 +3,7 @@
   "nameMain": "Iteso",
   "languageFamilyId": "FLG_NILOTIQUE",
   "currentCountries": ["UGA", "KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Iteso",
@@ -89,12 +90,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Iteso in Kenya, 2025 (https://joshuaproject.net/people_groups/15448/KE)",
-      "Uganda Bureau of Statistics – National Population and Housing Census 2024 (https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf)",
-      "Encyclopedia.com – Iteso (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/iteso)",
-      "Omniglot – Ateso language (ISO 639-3 : teo) (https://www.omniglot.com/writing/ateso.htm)",
-      "Ethnologue – Ateso (TEO) (https://www.ethnologue.com/language/teo/)",
-      "Mzee Lima S. scribbles – Clans of Iteso of Uganda and Kenya (https://mzeelimasierra.wordpress.com/2021/01/10/clans-of-iteso-of-uganda-and-kenya/)"
+      {
+        "title": "Joshua Project – Iteso in Kenya, 2025",
+        "url": "https://joshuaproject.net/people_groups/15448/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Uganda Bureau of Statistics – National Population and Housing Census 2024",
+        "url": "https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "Encyclopedia.com – Iteso",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/iteso",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "Omniglot – Ateso language (ISO 639-3 : teo)",
+        "url": "https://www.omniglot.com/writing/ateso.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Ethnologue – Ateso (TEO)",
+        "url": "https://www.ethnologue.com/language/teo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Mzee Lima S. scribbles – Clans of Iteso of Uganda and Kenya",
+        "url": "https://mzeelimasierra.wordpress.com/2021/01/10/clans-of-iteso-of-uganda-and-kenya/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of mzeelimasierra.wordpress.com."
+      }
     ]
   }
 }

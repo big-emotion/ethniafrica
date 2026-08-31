@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_RELIGIOUS_KANURI_HAUSA",
+  "relationType": "religious",
+  "peopleIdA": "PPL_KANURI",
+  "peopleIdB": "PPL_HAUSA",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 1300,
+    "endYear": 1500,
+    "label": "XIVe-XVe siècle"
+  },
+  "description": "L'islam atteint le pays haoussa plus tardivement que le Kanem-Bornou, principalement aux XIVe-XVe siècles. Les chroniques écrites attribuent aux marchands et lettrés wangara (de langue mandé) l'introduction formelle de l'islam à Kano et Katsina durant cette période, mais l'existence d'un nombre important d'emprunts lexicaux kanouri en haoussa, combinée à la proximité géographique et aux contacts commerciaux et politiques soutenus entre le Bornou et les États haoussa, indique que le Bornou a constitué un canal majeur et continu d'influence islamique populaire quotidienne sur le pays haoussa, fonctionnant parallèlement à la route wangara plus visiblement documentée, et peut-être antérieur à celle-ci.",
+  "sources": [
+    {
+      "title": "Towards a Less Orthodox History of Hausaland",
+      "author": "J.E.G. Sutton",
+      "year": 1979,
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7DAC716970D5D7940ACA83020F8D0070/S0021853700017011a.pdf/towards_a_less_orthodox_history_of_hausaland.pdf",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia FR « Royaumes haoussa », qui indique que l'islam atteint les régions haoussa au XIVe siècle via des marchands/voyageurs venus du Bornou voisin, et que l'aristocratie haoussa, étroitement liée aux Kanouri du Kanem-Bornou, adopte l'islam dès le XIe siècle bien qu'il ne s'établisse chez les élites qu'au XVe siècle. Article évalué par les pairs, Journal of African History, 20(2), 1979, p. 179-201, citant explicitement : « It would have been from this side (Bornu) that the main popular Islamic impact was made upon Hausaland and its towns over time. »"
+    },
+    {
+      "title": "Linguistic Evidence for the Influence of the Kanuri on the Hausa",
+      "author": "J.H. Greenberg",
+      "year": 1960,
+      "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/linguistic-evidence-for-the-influence-of-the-kanuri-on-the-hausa/8B6D9AAAF492D00BEB68E8065189F9D7",
+      "tier": 2,
+      "notes": "Vérifié via le même chemin Wikipedia FR « Royaumes haoussa ». Article évalué par les pairs, Journal of African History, 1(2), 1960, p. 205-212, cité par Sutton (1979) comme fondement de l'argument linguistique selon lequel l'influence religieuse et culturelle kanouri/bornouane sur les Haoussa précède ou accompagne le récit centré sur les Wangara."
+    }
+  ]
+}

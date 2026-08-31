@@ -3,6 +3,7 @@
   "nameMain": "Kpelle",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["GIN", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Kpelle",
@@ -101,14 +102,54 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kpelle macrolanguage (kpe). https://www.ethnologue.com/language/kpe/",
-      "SIL Ethnologue — Liberia Kpelle (xpe). https://www.ethnologue.com/language/xpe/",
-      "eHRAF World Cultures — Kpelle. https://ehrafworldcultures.yale.edu/cultures/fd06/summary",
-      "Union of Todeeans in the Americas — History, Migrations and Kingdom of the Kpelle. https://www.utaliberia.org/charity-organization-history-migrations-and-kingdom-of-the-kpelle",
-      "Smithsonian Folkways — Music of the Kpelle of Liberia. https://folkways.si.edu/music-of-the-kpelle-of-liberia/world/album/smithsonian",
-      "Britannica — Poro (secret society). https://www.britannica.com/topic/Poro",
-      "101 Last Tribes — Kpelle people. https://www.101lasttribes.com/tribes/kpelle.html",
-      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/"
+      {
+        "title": "SIL Ethnologue — Kpelle macrolanguage (kpe)",
+        "url": "https://www.ethnologue.com/language/kpe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Liberia Kpelle (xpe)",
+        "url": "https://www.ethnologue.com/language/xpe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "eHRAF World Cultures — Kpelle",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fd06/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Union of Todeeans in the Americas — History, Migrations and Kingdom of the Kpelle",
+        "url": "https://www.utaliberia.org/charity-organization-history-migrations-and-kingdom-of-the-kpelle",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers utaliberia.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Folkways — Music of the Kpelle of Liberia",
+        "url": "https://folkways.si.edu/music-of-the-kpelle-of-liberia/world/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      },
+      {
+        "title": "Britannica — Poro (secret society)",
+        "url": "https://www.britannica.com/topic/Poro",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes — Kpelle people",
+        "url": "https://www.101lasttribes.com/tribes/kpelle.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook — Liberia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/liberia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

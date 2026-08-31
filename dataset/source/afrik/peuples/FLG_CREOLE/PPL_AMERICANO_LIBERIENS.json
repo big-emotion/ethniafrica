@@ -3,6 +3,7 @@
   "nameMain": "Américano-Libériens",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["LBR"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Américano-Libériens",
@@ -91,11 +92,36 @@
       ]
     },
     "sources": [
-      "Americo-Liberians – BlackPast.org, 2025 (https://blackpast.org/global-african-history/americo-liberians/)",
-      "Americo-Liberian in Liberia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10292/LI)",
-      "Liberians: An Introduction to their History and Culture – HartfordInfo.org, 2003 (http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf)",
-      "Americo-Liberian – Encyclopaedia Britannica, 2025 (https://www.britannica.com/topic/Americo-Liberian)",
-      "The Americo-Liberian Community, a story – African American Registry, 2025 (https://aaregistry.org/story/the-americo-liberian-community-a-brief-story/)"
+      {
+        "title": "Americo-Liberians – BlackPast.org, 2025",
+        "url": "https://blackpast.org/global-african-history/americo-liberians/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for blackpast.org."
+      },
+      {
+        "title": "Americo-Liberian in Liberia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10292/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Liberians: An Introduction to their History and Culture – HartfordInfo.org, 2003",
+        "url": "http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hartfordinfo.org."
+      },
+      {
+        "title": "Americo-Liberian – Encyclopaedia Britannica, 2025",
+        "url": "https://www.britannica.com/topic/Americo-Liberian",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "The Americo-Liberian Community, a story – African American Registry, 2025",
+        "url": "https://aaregistry.org/story/the-americo-liberian-community-a-brief-story/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for aaregistry.org."
+      }
     ]
   }
 }

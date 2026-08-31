@@ -2,12 +2,11 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Search, X, Loader2, Users, MapPin, Languages } from "lucide-react";
+import { Search, X, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -16,11 +15,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { SearchResultCard } from "@/components/search/SearchResultCard";
+import { SearchPivotCard } from "@/components/search/SearchPivotCard";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
+import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
+import {
+  buildSearchParams,
+  compareByRelevance,
+  mapSearchEnvelope,
+} from "@/lib/search/searchEnvelope";
+import {
+  readRelation,
+  relationSearchParams,
+  type SearchRelation,
+} from "@/lib/search/relationSearch";
+import { selectPivot } from "@/lib/search/pivot";
+import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type { ClassificationStatus } from "@/types/afrik";
-import type { SearchEntityType } from "@/types/afrik-frontend";
+import type { SearchResult } from "@/types/afrik-frontend";
 
 // ── constants ─────────────────────────────────────────────────────────────────
 
@@ -98,52 +113,11 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
-interface SearchHit {
-  id: string;
-  type: string;
-  name: string;
-  snippet?: string;
-  population?: number;
-  languageFamilyName?: string;
-  countryIds?: string[];
-}
+// The page renders exactly what the shared envelope adapter emits; it used to
+// declare a parallel hit shape, which is how its reader drifted off-contract.
+type SearchHit = SearchResult;
 
 // ── helpers ───────────────────────────────────────────────────────────────────
-
-function getTypeIcon(type: SearchEntityType) {
-  switch (type) {
-    case "languageFamily":
-      return <Languages className="h-5 w-5 text-primary" aria-hidden="true" />;
-    case "people":
-      return <Users className="h-5 w-5 text-primary" aria-hidden="true" />;
-    case "country":
-      return <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />;
-    default:
-      return <Search className="h-5 w-5 text-primary" aria-hidden="true" />;
-  }
-}
-
-function getTypeLabel(type: string): string {
-  const labels: Record<string, string> = {
-    languageFamily: "Famille linguistique",
-    people: "Peuple",
-    country: "Pays",
-    language: "Langue",
-  };
-  return labels[type] ?? type;
-}
-
-function mapApiResults(raw: Record<string, unknown>[]): SearchHit[] {
-  return raw.map((item) => ({
-    id: String(item.id),
-    type: String(item.type),
-    name: String(item.name),
-    snippet: item.snippet as string | undefined,
-    population: item.population as number | undefined,
-    languageFamilyName: item.languageFamilyName as string | undefined,
-    countryIds: item.countryIds as string[] | undefined,
-  }));
-}
 
 function getFilterParam(
   searchParams: { get(name: string): string | null },
@@ -155,6 +129,7 @@ function getFilterParam(
 
 // ── component ─────────────────────────────────────────────────────────────────
 
+// @req REQ-002
 export function RecherchePageContent() {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -172,6 +147,9 @@ export function RecherchePageContent() {
     getFilterParam(searchParams, "minConfidence")
   );
   const [region, setRegion] = useState(getFilterParam(searchParams, "region"));
+  const [relation, setRelation] = useState<SearchRelation | null>(() =>
+    readRelation(searchParams)
+  );
   const [sort, setSort] = useState<SortKey>(
     (searchParams.get("sort") as SortKey) ?? "relevance"
   );
@@ -185,13 +163,21 @@ export function RecherchePageContent() {
   // ── URL sync ────────────────────────────────────────────────────────────────
 
   const syncURL = useCallback(
-    (q: string, cs: string, mc: string, r: string, s: SortKey) => {
+    (
+      q: string,
+      cs: string,
+      mc: string,
+      r: string,
+      s: SortKey,
+      rel: SearchRelation | null
+    ) => {
       const params = new URLSearchParams();
       if (q) params.set("q", q);
       if (cs) params.set("classificationStatus", cs);
       if (mc) params.set("minConfidence", mc);
       if (r) params.set("region", r);
       if (s !== "relevance") params.set("sort", s);
+      if (rel) params.set(rel.kind, rel.id);
       const route = getLocalizedRoute(language, "search");
       const url = params.toString() ? `${route}?${params}` : route;
       router.replace(url, { scroll: false });
@@ -202,24 +188,28 @@ export function RecherchePageContent() {
   // ── main search ─────────────────────────────────────────────────────────────
 
   const performSearch = useCallback(
-    async (q: string, cs: string, mc: string) => {
-      if (!q.trim()) {
+    async (q: string, cs: string, mc: string, rel: SearchRelation | null) => {
+      // A relation on its own is a complete search: "the peoples of the Krou
+      // family" asks something whole without any free text.
+      if (!q.trim() && !rel) {
         setResults([]);
         return;
       }
       setLoading(true);
       setHasSearched(true);
       try {
-        const params = new URLSearchParams({ q, limit: "20" });
-        if (cs) params.set("classificationStatus", cs);
-        if (mc) params.set("minConfidence", mc);
+        const params = buildSearchParams(q, {
+          limit: 20,
+          classificationStatus: cs,
+          minConfidence: mc,
+          ...relationSearchParams(rel),
+        });
         const res = await fetch(`/api/v2/search?${params}`);
         if (!res.ok) {
           setResults([]);
           return;
         }
-        const data = await res.json();
-        setResults(mapApiResults(data.data?.results ?? []));
+        setResults(mapSearchEnvelope(await res.json()));
       } catch {
         setResults([]);
       } finally {
@@ -231,19 +221,36 @@ export function RecherchePageContent() {
 
   // On mount: if URL has a query, search immediately.
   useEffect(() => {
-    if (committedQuery) {
-      performSearch(committedQuery, classificationStatus, minConfidence);
+    if (committedQuery || relation) {
+      performSearch(
+        committedQuery,
+        classificationStatus,
+        minConfidence,
+        relation
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Re-search when filters change (only if a query has already been committed).
   useEffect(() => {
-    if (!committedQuery) return;
-    performSearch(committedQuery, classificationStatus, minConfidence);
-    syncURL(committedQuery, classificationStatus, minConfidence, region, sort);
+    if (!committedQuery && !relation) return;
+    performSearch(
+      committedQuery,
+      classificationStatus,
+      minConfidence,
+      relation
+    );
+    syncURL(
+      committedQuery,
+      classificationStatus,
+      minConfidence,
+      region,
+      sort,
+      relation
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classificationStatus, minConfidence, region, sort]);
+  }, [classificationStatus, minConfidence, region, sort, relation]);
 
   // ── auto-suggest (debounced, fires on input change) ─────────────────────────
 
@@ -256,11 +263,10 @@ export function RecherchePageContent() {
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/v2/search?q=${encodeURIComponent(inputValue)}&limit=6`
+          `/api/v2/search?${buildSearchParams(inputValue, { limit: 6 })}`
         );
         if (!res.ok) return;
-        const data = await res.json();
-        const hits = mapApiResults(data.data?.results ?? []);
+        const hits = mapSearchEnvelope(await res.json());
         setSuggestions(hits);
         setShowSuggestions(hits.length > 0);
       } catch {
@@ -291,16 +297,23 @@ export function RecherchePageContent() {
     const q = inputValue.trim();
     setCommittedQuery(q);
     setShowSuggestions(false);
-    syncURL(q, classificationStatus, minConfidence, region, sort);
-    performSearch(q, classificationStatus, minConfidence);
+    syncURL(q, classificationStatus, minConfidence, region, sort, relation);
+    performSearch(q, classificationStatus, minConfidence, relation);
   };
 
   const handleSuggestionClick = (s: SearchHit) => {
     setInputValue(s.name);
     setCommittedQuery(s.name);
     setShowSuggestions(false);
-    syncURL(s.name, classificationStatus, minConfidence, region, sort);
-    performSearch(s.name, classificationStatus, minConfidence);
+    syncURL(
+      s.name,
+      classificationStatus,
+      minConfidence,
+      region,
+      sort,
+      relation
+    );
+    performSearch(s.name, classificationStatus, minConfidence, relation);
   };
 
   const clearAllFilters = () => {
@@ -308,16 +321,27 @@ export function RecherchePageContent() {
     setMinConfidence("");
     setRegion("");
     setSort("relevance");
-    syncURL(committedQuery, "", "", "", "relevance");
+    setRelation(null);
+    syncURL(committedQuery, "", "", "", "relevance", null);
   };
 
   // ── derived state ───────────────────────────────────────────────────────────
 
-  const hasActiveFilters = !!(classificationStatus || minConfidence || region);
+  const hasActiveFilters = !!(
+    classificationStatus ||
+    minConfidence ||
+    region ||
+    relation
+  );
 
+  // A region narrows *peoples* by where they live. Only peoples carry
+  // countryIds, so testing every result against it silently dropped every
+  // country and language-family hit the moment a region was picked.
   const filteredResults = region
-    ? results.filter((r) =>
-        r.countryIds?.some((id) => REGIONS[region]?.countries.includes(id))
+    ? results.filter(
+        (r) =>
+          r.type !== "people" ||
+          r.countryIds?.some((id) => REGIONS[region]?.countries.includes(id))
       )
     : results;
 
@@ -331,6 +355,13 @@ export function RecherchePageContent() {
         return (b.population ?? 0) - (a.population ?? 0);
       case "pop-asc":
         return (a.population ?? 0) - (b.population ?? 0);
+      // "Pertinence" was offered in the sort menu but had no case here, so it
+      // fell through to a no-op comparator. Cross-kind ordering also needs
+      // compareByRelevance rather than a raw relevance subtraction: the
+      // envelope groups peoples, then countries, then families, and their
+      // scores are not on one scale.
+      case "relevance":
+        return compareByRelevance(a, b);
       default:
         return 0;
     }
@@ -342,10 +373,27 @@ export function RecherchePageContent() {
   const confidenceLabel = minConfidence
     ? (CONFIDENCE_OPTIONS.find((o) => o.value === minConfidence)?.label ?? "")
     : "";
+  // A relation-scoped list ("the peoples of the Krou family") has no single
+  // answer, so it never gets a pivot.
+  const pivot = relation ? null : selectPivot(sortedResults, committedQuery);
+  const listResults = pivot
+    ? sortedResults.filter((r) => r !== pivot)
+    : sortedResults;
+
   const regionLabel = region ? (REGIONS[region]?.label ?? "") : "";
 
-  const formatNumber = (n: number) =>
-    new Intl.NumberFormat("fr-FR").format(Math.round(n));
+  // A country names itself from the ISO code. A family cannot, but every
+  // people returned under a family scope already carries its name, so the
+  // chip reads it from the results rather than paying for a second request.
+  // Until the first response lands it shows the identifier, never a guess.
+  const relationLabel = !relation
+    ? ""
+    : relation.kind === "country"
+      ? `Peuples du pays ${getFrenchCountryCommonName(relation.id, relation.id)}`
+      : `Peuples de la famille ${
+          results.find((r) => r.languageFamilyId === relation.id)
+            ?.languageFamilyName ?? relation.id
+        }`;
 
   // ── render ──────────────────────────────────────────────────────────────────
 
@@ -366,7 +414,7 @@ export function RecherchePageContent() {
         >
           <div className="relative flex-1">
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none"
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-afh-text-muted pointer-events-none"
               aria-hidden="true"
             />
             <Input
@@ -378,7 +426,7 @@ export function RecherchePageContent() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-              className="pl-10 h-12 text-base"
+              className="pl-10 h-12 text-afh-small"
               autoComplete="off"
             />
             {/* auto-suggest dropdown */}
@@ -386,14 +434,14 @@ export function RecherchePageContent() {
               <ul
                 role="listbox"
                 aria-label="Suggestions de recherche"
-                className="absolute z-50 w-full bg-background border rounded-md shadow-lg mt-1 overflow-hidden"
+                className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-1 overflow-hidden"
               >
                 {suggestions.map((s) => (
                   <li
                     key={s.id}
                     role="option"
                     aria-selected={false}
-                    className="px-4 py-2 hover:bg-muted cursor-pointer text-sm"
+                    className="px-4 py-2 hover:bg-afh-bg-warm cursor-pointer text-afh-small"
                     onMouseDown={() => handleSuggestionClick(s)}
                   >
                     {s.name}
@@ -482,20 +530,37 @@ export function RecherchePageContent() {
         {/* ── filter chip row (always visible) ── */}
         <div
           data-testid="filter-chip-row"
+          role="group"
           className="flex flex-wrap items-center gap-2 min-h-[2rem]"
           aria-label="Filtres actifs"
         >
+          {relation && (
+            <Badge
+              variant="secondary"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
+            >
+              {relationLabel}
+              <button
+                type="button"
+                aria-label={`Supprimer le filtre ${relationLabel}`}
+                onClick={() => setRelation(null)}
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+              >
+                <X className="h-3 w-3" aria-hidden="true" />
+              </button>
+            </Badge>
+          )}
           {classificationStatus && classStatusLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {classStatusLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${classStatusLabel}`}
                 onClick={() => setClassificationStatus("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -504,14 +569,14 @@ export function RecherchePageContent() {
           {minConfidence && confidenceLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {confidenceLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${confidenceLabel}`}
                 onClick={() => setMinConfidence("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -520,14 +585,14 @@ export function RecherchePageContent() {
           {region && regionLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-sm"
+              className="flex items-center gap-1 px-3 py-1 text-afh-small"
             >
               {regionLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${regionLabel}`}
                 onClick={() => setRegion("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -537,7 +602,7 @@ export function RecherchePageContent() {
             <button
               type="button"
               onClick={clearAllFilters}
-              className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-2 ml-auto"
+              className="text-afh-small text-afh-fg-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
               Tout effacer
             </button>
@@ -546,7 +611,7 @@ export function RecherchePageContent() {
 
         {/* ── sort + results count ── */}
         <div className="flex items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground" aria-live="polite">
+          <p className="text-afh-small text-afh-text-soft" aria-live="polite">
             {hasSearched && !loading && sortedResults.length > 0
               ? `${sortedResults.length} résultat${sortedResults.length > 1 ? "s" : ""}`
               : null}
@@ -576,49 +641,23 @@ export function RecherchePageContent() {
             aria-busy="true"
           >
             <Loader2
-              className="h-6 w-6 animate-spin text-muted-foreground"
+              className="h-6 w-6 animate-spin text-afh-text-muted"
               aria-label="Chargement en cours"
             />
           </div>
         )}
 
+        {/* ── pivot: the one entity this search is about, if there is one ── */}
+        {!loading && pivot && (
+          <SearchPivotCard result={pivot} language={language} />
+        )}
+
         {/* ── results list ── */}
-        {!loading && sortedResults.length > 0 && (
+        {!loading && listResults.length > 0 && (
           <ul className="space-y-3" aria-label="Résultats de recherche">
-            {sortedResults.map((result, i) => (
+            {listResults.map((result, i) => (
               <li key={`${result.type}-${result.id}-${i}`}>
-                <Card className="p-4 hover:shadow-md transition-all">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1">
-                      {getTypeIcon(result.type as SearchEntityType)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-base mb-1">
-                        {result.name}
-                      </h3>
-                      <div className="flex flex-wrap gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          {getTypeLabel(result.type)}
-                        </Badge>
-                        {result.languageFamilyName && (
-                          <Badge variant="outline" className="text-xs">
-                            {result.languageFamilyName}
-                          </Badge>
-                        )}
-                      </div>
-                      {result.snippet && (
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {result.snippet}
-                        </p>
-                      )}
-                      {result.population !== undefined && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Population : {formatNumber(result.population)}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </Card>
+                <SearchResultCard result={result} language={language} />
               </li>
             ))}
           </ul>
@@ -626,23 +665,23 @@ export function RecherchePageContent() {
 
         {/* ── empty state (post-search, no results) ── */}
         {!loading && hasSearched && sortedResults.length === 0 && (
-          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-md text-center">
-            <p className="text-base text-afh-text-soft max-w-sm">
+          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-afh-lg text-center">
+            <p className="text-afh-small text-afh-text-soft max-w-sm">
               Aucun résultat pour « {committedQuery} ».
             </p>
-            <p className="text-sm text-afh-text-soft">
+            <p className="text-afh-small text-afh-text-soft">
               Vérifiez l&apos;orthographe ou essayez un autre terme.
             </p>
-            <div className="flex flex-col gap-2 text-sm">
+            <div className="flex flex-col gap-2 text-afh-small">
               <Link
                 href={getLocalizedRoute(language, "families")}
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
+                className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
                 Parcourir par famille
               </Link>
               <Link
                 href={`/${language}/contribute?q=${encodeURIComponent(committedQuery)}`}
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
+                className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
                 Signaler donnée manquante
               </Link>

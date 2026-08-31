@@ -80,8 +80,18 @@
       ]
     },
     "sources": [
-      "Bakayoko, Abou et Coulibaly, Yalamoussa – L'installation des Diomande dans le Nord-ouest ivoirien (XVIeme-XIXeme siecle), Revue ASTR-GHANA, 2025 (https://edition-efua.acaref.net/wp-content/uploads/sites/6/2025/11/2.-Abou-BAKAYOKO.pdf)",
-      "Ultimes Griots – Les Mahouka, Facebook, 2024 (https://www.facebook.com/Ultimesgriots/posts/994867092658418/)"
+      {
+        "title": "Bakayoko, Abou et Coulibaly, Yalamoussa – L'installation des Diomande dans le Nord-ouest ivoirien (XVIeme-XIXeme siecle), Revue ASTR-GHANA, 2025",
+        "url": "https://edition-efua.acaref.net/wp-content/uploads/sites/6/2025/11/2.-Abou-BAKAYOKO.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for acaref.net, matched as a parent of edition-efua.acaref.net."
+      },
+      {
+        "title": "Ultimes Griots – Les Mahouka, Facebook, 2024",
+        "url": "https://www.facebook.com/Ultimesgriots/posts/994867092658418/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

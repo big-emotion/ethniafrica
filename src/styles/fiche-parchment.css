@@ -1,0 +1,662 @@
+/**
+ * The family fiche's parchment: the reading below the globe band.
+ *
+ * Sections alternate between the two page grounds and are separated by a
+ * single hairline — no cards, no shadows. The fiche is one continuous
+ * document, and boxing each section would make it read as a dashboard of
+ * unrelated widgets rather than as a text with parts.
+ *
+ * Mobile first throughout: the base rules are the 430px layout, and the
+ * container query raises the type and the gutters from the band's own
+ * breakpoint so the parchment and the globe change shape at the same width.
+ */
+
+.afh-parchment {
+  container-type: inline-size;
+  background: var(--afh-bg);
+  color: var(--afh-text);
+}
+
+.afh-parchment-head {
+  padding: 26px 20px 22px;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+/* --afh-text-soft, never --afh-text-muted, for anything at caption size or
+   below. Muted is #9b8b7d, which reaches only 2.8:1 on --afh-bg-warm and
+   3.3:1 on --afh-surface — under the 4.5:1 small text needs. The mockup uses
+   the lighter ink throughout and is not contrast-tested; axe caught it here
+   at all three widths. Soft clears 4.8:1 on every parchment ground. */
+.afh-parchment-eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  letter-spacing: 0.1em;
+  color: var(--afh-text-soft);
+}
+
+/* A people fiche's eyebrow holds two kinds of thing at once: the corpus keys
+   that name the record — PPL_KUNG, FLG_KXA — and the ethnolinguistic group
+   that names the people in the world. Set in one dress the line reads as a
+   single long machine key, which is what made the head look unedited. The
+   keys keep the mono and the tracking; the group takes the body face at
+   normal tracking, so the eye lands on the words rather than on the ids. */
+.afh-parchment-eyebrow-group {
+  font-family: var(--afh-font-body);
+  letter-spacing: 0;
+  color: var(--afh-text);
+}
+
+.afh-parchment-head h1 {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 900;
+  font-size: var(--afh-text-h1);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  /* Every fiche title is a name followed by what the fiche says the subject
+     is, so it runs two lines at the widths that matter. `pretty`, not
+     `balance`: balancing "!Kung, un peuple sans bord" into two even lines
+     ends the first one on the article. */
+  text-wrap: pretty;
+}
+
+/* The editorial half of the title, set apart from the name it qualifies. */
+.afh-parchment-head h1 em {
+  font-style: italic;
+  color: var(--accent-ink, var(--accent));
+}
+
+.afh-parchment-lede {
+  margin: 12px 0 0;
+  font-size: var(--afh-text-body);
+  line-height: var(--afh-leading-body);
+  color: var(--afh-text-soft);
+  /* The head stands in a band four columns wide, not in the parchment's own
+     measure. A people fiche's lede is a full sentence of geography and would
+     run past 100 characters a line there. */
+  max-width: 58ch;
+}
+
+.afh-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.afh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: var(--afh-radius-full);
+  border: 1px solid var(--afh-border);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+  white-space: nowrap;
+}
+
+/* A missing field is marked in the colonial/gap tone the rest of the app uses
+   for an absence, never in the accent — an absence is not a category. */
+.afh-chip[data-tone="missing"] {
+  border-color: var(--afh-color-colonial);
+  background: var(--afh-color-colonial-bg);
+  color: var(--afh-color-colonial);
+}
+
+.afh-parchment-section {
+  padding: 26px 20px;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+/* Alternating grounds: the seam between two sections is the change of ground,
+   which is why neither needs a card around it. */
+.afh-parchment-section:nth-of-type(even) {
+  background: var(--afh-bg-warm);
+}
+
+.afh-parchment-section h2 {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h2);
+  letter-spacing: -0.01em;
+}
+
+.afh-parchment-note {
+  margin: 6px 0 16px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* The parchment, not a measure, decides where a line ends. Capped at 72ch the
+   prose stopped around 60% of a desktop chapter and left the rest of the row
+   empty, while the figures, rankings and tables in the same chapter ran to
+   both edges — the paragraph was the only thing on the page that broke off
+   mid-width, against nothing. The section's own gutters are the margin now,
+   so the reading is as wide as the document it belongs to. */
+.afh-parchment-section p {
+  margin: 0 0 12px;
+  font-size: var(--afh-text-body);
+  line-height: 1.7;
+  color: var(--afh-text-soft);
+}
+
+/* The confidence chip opens the people fiche above its first section. It is
+   not a section itself, so it states the gutter rather than inheriting one —
+   and it must state the same gutter, or the fiche's first line sits left of
+   every heading under it. */
+.afh-parchment-confidence {
+  padding: 20px 20px 0;
+}
+
+/* ConfidenceChip pads itself by 4px so its focus ring is not clipped where it
+   sits flush against something. That padding is the component's business, but
+   it must not read as an indent here: a gutter is measured to the text, which
+   is what a reader lines the column up against. */
+.afh-parchment-confidence > * {
+  margin-inline-start: -4px;
+}
+
+/* ── Structured prose ─────────────────────────────────────────────── */
+
+/* The chapter is an h2, and the corpus has exactly one level under it. There
+   is no h4 role in the type charter and the register is closed, so the grammar
+   produces no fourth level rather than leaving one to arrive by accident. */
+.afh-prose-heading {
+  margin: 22px 0 8px;
+  font-family: var(--afh-font-display);
+  font-weight: var(--afh-weight-semibold);
+  font-size: var(--afh-text-h3);
+  line-height: var(--afh-leading-h3);
+  color: var(--afh-text);
+}
+
+/* A field that opens on its first sub-heading does not dig above it: the
+   field's own term is already the white space. */
+.afh-prose-heading:first-child {
+  margin-top: 0;
+}
+
+/* Every other ul on the parchment is a component's structure wearing
+   list-style: none. This one is a list a reader reads, so it carries a mark. */
+.afh-prose-list {
+  margin: 0 0 12px;
+  padding-inline-start: 1.15em;
+  list-style: disc;
+}
+
+.afh-prose-list li {
+  margin-bottom: 4px;
+  font-size: var(--afh-text-body);
+  line-height: 1.7;
+  color: var(--afh-text-soft);
+}
+
+/* §2: a component never names an accent, it reads the one its surface scopes —
+   and it takes the ink, not the fill. The fills sit between 2.28:1 and 3.09:1
+   on their own tint, which a mark this small cannot carry. */
+.afh-prose-list li::marker {
+  color: var(--accent-ink);
+}
+
+.afh-prose-fields {
+  margin: 0;
+}
+
+/* The label of a field is a term, not a section — it stays out of the document
+   outline so the corpus keeps the one heading level there is under the h2. */
+.afh-prose-term {
+  margin: 18px 0 4px;
+  font-size: var(--afh-text-eyebrow);
+  line-height: var(--afh-leading-eyebrow);
+  font-weight: var(--afh-eyebrow-weight);
+  text-transform: var(--afh-eyebrow-transform);
+  letter-spacing: var(--afh-eyebrow-tracking);
+  color: var(--afh-text-soft);
+}
+
+.afh-prose-term:first-child {
+  margin-top: 0;
+}
+
+/* The user agent indents a dd by 40px, which would set every value out of line
+   with its own term and with every heading in the chapter. */
+.afh-prose-def {
+  margin: 0;
+  margin-inline-start: 0;
+}
+
+/* §4: a corpus defect is said, not made up. The tone is the one the parchment
+   already keeps for something wrong, never the accent — an anomaly is not a
+   category. */
+.afh-prose-defect {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-inline-start: 2px solid var(--afh-color-colonial);
+  font-size: var(--afh-text-caption);
+  line-height: var(--afh-leading-caption);
+  color: var(--afh-color-colonial);
+}
+
+.afh-parchment-section code {
+  font-family: var(--afh-font-mono);
+  font-size: 0.92em;
+  padding: 1px 5px;
+  border-radius: var(--afh-radius-sm);
+  background: var(--afh-surface);
+  color: var(--afh-text);
+}
+
+/* ── The four figures ─────────────────────────────────────────────── */
+
+.afh-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 11px;
+}
+
+.afh-stat-card {
+  background: var(--afh-surface);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-md);
+  padding: 14px 15px;
+}
+
+.afh-stat-card-n {
+  display: block;
+  font-family: var(--afh-font-mono);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--afh-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.afh-stat-card-k {
+  display: block;
+  margin-top: 5px;
+  font-size: var(--afh-text-caption);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+  font-weight: 700;
+}
+
+.afh-stat-card-src {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+  line-height: 1.6;
+}
+
+/* Driven by the computed provenance, never by a hard-coded label: the day the
+   corpus is loaded these cards fill in and stop being marked. */
+.afh-stat-card[data-provenance="missing"] {
+  border-color: var(--afh-color-colonial);
+  background: var(--afh-color-colonial-bg);
+}
+
+.afh-stat-card[data-provenance="missing"] .afh-stat-card-n {
+  color: var(--afh-color-colonial);
+  font-size: 19px;
+}
+
+.afh-parchment-gap {
+  margin-top: 16px;
+  padding: 15px 16px;
+  border: 1px dashed var(--afh-color-colonial);
+  border-radius: var(--afh-radius-md);
+  background: var(--afh-color-colonial-bg);
+}
+
+.afh-parchment-gap h3 {
+  margin: 0 0 8px;
+  font-family: var(--afh-font-display);
+  font-size: var(--afh-text-h3);
+  color: var(--afh-color-colonial);
+}
+
+.afh-parchment-gap p {
+  margin: 0;
+  font-size: var(--afh-text-small);
+}
+
+/* ── The footprint ranking ────────────────────────────────────────── */
+
+.afh-rank {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-rank-row {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.afh-rank-name {
+  font-size: var(--afh-text-small);
+  color: var(--afh-text);
+}
+
+.afh-rank-n {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.afh-rank-track {
+  grid-column: 2 / -1;
+  height: 5px;
+  border-radius: var(--afh-radius-full);
+  background: var(--afh-surface);
+  overflow: hidden;
+}
+
+.afh-rank-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+/* ── Member peoples ───────────────────────────────────────────────── */
+
+.afh-members {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-member {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-md);
+  background: var(--afh-surface);
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+}
+
+.afh-member b {
+  color: var(--afh-text);
+  font-weight: 700;
+}
+
+.afh-member-spread {
+  margin-left: auto;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+  white-space: nowrap;
+}
+
+/* ── Sources ──────────────────────────────────────────────────────── */
+
+.afh-sources {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-source-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--afh-text-small);
+  line-height: 1.65;
+  color: var(--afh-text-soft);
+}
+
+.afh-source-row a {
+  color: var(--accent-ink, var(--accent));
+}
+
+/* Tier colours come from the tier, so a source cannot be shown at a
+   confidence its own record does not claim. */
+.afh-chip[data-tier="official"] {
+  border-color: var(--afh-color-verified, var(--afh-border));
+  color: var(--afh-text);
+}
+
+/* Unlike the missing-field chip below it, this one keeps the surface's own
+   background — so its tone has to follow the theme rather than ride on a
+   tint it paints itself. It read at 2.2:1 on night before the ink existed. */
+.afh-chip[data-tier="unverified"] {
+  border-color: var(--afh-colonial-ink);
+  color: var(--afh-colonial-ink);
+}
+
+/* ── Callout ──────────────────────────────────────────────────────────
+   An aside the section cannot say in its own prose. A rule in the
+   surface's accent, never a box, so it reads as part of the same
+   document.
+
+   The rule and the glyph are the whole of the signal: the aside used to
+   open on a bold label naming what the fiche was doing ("Ce que la fiche
+   refuse de taire"), which told the reader about the atlas rather than
+   about the country. A marked passage needs no caption. */
+
+.afh-parchment-callout {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 13px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--afh-radius-md) var(--afh-radius-md) 0;
+  background: var(--afh-surface);
+  font-size: var(--afh-text-small);
+  line-height: 1.65;
+  color: var(--afh-text-soft);
+}
+
+/* --accent-ink is the accent that clears contrast on the parchment;
+   --accent alone is the fill tone and reads too pale at this size. */
+.afh-parchment-callout-icon {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  /* Optical alignment with the cap-height of the first line, not its box. */
+  margin-top: 4px;
+  color: var(--accent-ink, var(--accent));
+}
+
+/* ── The name borne, the names imposed ────────────────────────────────
+   The opening rubric of a people fiche, and the one place the surface
+   states two things it refuses to rank. Both are fields of the same
+   rubric, so they take the callout's device — a rule in ink, never a
+   box — and differ only in which ink: the accent for the name a people
+   uses for itself, the colonial tone for the names put on it.
+
+   They used to be two filled cards in a stretching grid, which tied the
+   autonym's height to however many exonyms the fiche happened to record.
+   A one-line autonym beside a nine-name list stood on 300px of empty
+   fill. `align-items: start` is the whole of that fix: the fields state
+   different amounts and are entitled to different heights. */
+
+.afh-naming {
+  display: grid;
+  align-items: start;
+  gap: 18px;
+  margin: 2px 0 18px;
+}
+
+.afh-naming-field {
+  padding: 1px 0 1px 14px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Charter §2 keeps the accent out of components, but the colonial tone is not
+   an accent — it is the atlas's one marker for an imposed name, and it means
+   the same thing on every surface. */
+.afh-naming-field[data-role="imposed"] {
+  border-left-color: var(--afh-colonial-ink);
+}
+
+.afh-naming-label {
+  margin: 0 0 6px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--afh-text-soft);
+}
+
+.afh-naming-field[data-role="imposed"] .afh-naming-label {
+  color: var(--afh-colonial-ink);
+}
+
+/* Two classes, so it outranks `.afh-parchment-section p` — the autonym is the
+   loudest thing in the section, not running prose in the soft ink. */
+.afh-naming .afh-naming-value {
+  margin: 0;
+  max-width: none;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.3;
+  color: var(--afh-text);
+  text-wrap: pretty;
+}
+
+/* The names run on one after another rather than stacking one per row. The
+   corpus swings from one exonym to nine, and a row apiece made !Kung's nine
+   into a column twice the height of everything beside it — the autonym then
+   stood on a void the width of half the page. Flowing them keeps the two
+   fields within a line or two of each other whatever the fiche records, which
+   is what lets them be read face to face at all.
+
+   A bullet list is also the wrong claim: these are not steps or ranked items,
+   they are the set of names imposed on one people. */
+.afh-naming-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--afh-text-small);
+  line-height: 1.6;
+  color: var(--afh-text);
+}
+
+/* Many exonyms are a name followed by a parenthesis naming who imposed it, so
+   an item can be a clause rather than a word. The separator has to survive
+   that without reading as punctuation inside it. */
+.afh-naming-list li:not(:last-child)::after {
+  content: "·";
+  margin: 0 8px;
+  color: var(--afh-text-soft);
+}
+
+/* ── Timeline ─────────────────────────────────────────────────────────
+   Historical political entities: a period, what the entity was, and the
+   centres it was governed from. Rows separated by a hairline rather than
+   boxed, like every other part of the parchment. */
+
+.afh-parchment-timeline {
+  display: grid;
+  gap: 0;
+}
+
+.afh-tl-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--afh-border);
+}
+
+.afh-tl-item:last-child {
+  border-bottom: 0;
+}
+
+/* --accent-ink, not --accent: the mockup sets the period in the fill colour,
+   which lands at 2.3:1 on the parchment at caption size. The ink variant is
+   the same hue scaled to clear AA, which is what accent-coloured text takes
+   anywhere on a tinted surface. axe caught this at all three widths. */
+.afh-tl-period {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-weight: 700;
+  line-height: 1.5;
+  padding-top: 2px;
+  color: var(--accent-ink);
+}
+
+.afh-tl-item h3 {
+  margin: 0 0 4px;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  color: var(--afh-text);
+}
+
+.afh-tl-item p {
+  margin: 0;
+  font-size: var(--afh-text-small);
+  line-height: 1.65;
+  color: var(--afh-text-soft);
+}
+
+/* Soft, not the mockup's muted: this is nano-sized, and muted clears only
+   2.8:1 on the warm ground. The guard in ficheParchmentContrast.test.ts
+   fails the file outright if muted ever appears here. */
+.afh-tl-centers {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* ── Wide layout ──────────────────────────────────────────────────── */
+
+@container (min-width: 760px) {
+  .afh-parchment-head,
+  .afh-parchment-section {
+    padding: 34px 40px;
+  }
+
+  .afh-tl-item {
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+  }
+
+  .afh-parchment-confidence {
+    padding: 26px 40px 0;
+  }
+
+  /* Side by side only once there is room for two measures. Below this the
+     fields stack, which is also the order they are read in: the name borne
+     first, then the names imposed on it. */
+  .afh-naming {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .afh-parchment-head h1 {
+    font-size: var(--afh-text-hero);
+  }
+
+  .afh-parchment-section h2 {
+    font-size: var(--afh-text-h1);
+  }
+}

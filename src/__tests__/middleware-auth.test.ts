@@ -9,6 +9,7 @@ vi.mock("@/lib/api/auth", () => ({
 // pass-through so the auth branch is the only thing under test.
 vi.mock("@/lib/api/rate-limit", () => ({
   applyRateLimit: vi.fn().mockResolvedValue(null),
+  applyIpRateLimit: vi.fn().mockResolvedValue(null),
 }));
 
 // Use vi.hoisted so these are available when vi.mock factories run (hoisted to top)
@@ -32,9 +33,12 @@ const { mockNextResponseNext, mockNextResponseJson, mockResponseHeaders } =
       }
     );
 
+    // Carries real Headers: the middleware stamps the API version onto every
+    // response it returns itself, so a headerless stand-in would fail on a
+    // path the real NextResponse.json supports.
     const mockNextResponseJson = vi.fn(
       (body: unknown, init?: { status?: number }) => {
-        return { status: init?.status ?? 200, body };
+        return { status: init?.status ?? 200, body, headers: new Headers() };
       }
     );
 
@@ -63,6 +67,7 @@ vi.mock("@supabase/ssr", () => ({
 }));
 
 import { validateApiKey } from "@/lib/api/auth";
+import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
 import { middleware } from "../middleware";
 
 function createMockRequest(url: string, headers: Record<string, string> = {}) {
@@ -131,6 +136,7 @@ describe("middleware - /api/v2/* authentication", () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: true,
       apiKeyId: "key-uuid-123",
+      tier: "public",
     });
 
     const request = createMockRequest("https://example.com/api/v2/countries", {
@@ -260,6 +266,7 @@ describe("middleware - /api/v2/* authentication", () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: true,
       apiKeyId: "test-id",
+      tier: "public",
     });
 
     const request = createMockRequest(
@@ -271,5 +278,124 @@ describe("middleware - /api/v2/* authentication", () => {
     await middleware(request);
 
     expect(validateApiKey).toHaveBeenCalledWith("my-secret-api-key");
+  });
+
+  describe("rate limiting uses the DB-validated tier", () => {
+    // @req REQ-059
+    it("passes the partner tier from validateApiKey into applyRateLimit", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: true,
+        apiKeyId: "partner-id",
+        tier: "partner",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer partner-key" }
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request, "partner");
+    });
+
+    // @req REQ-059
+    it("falls back to the public tier for an invalid key", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: false,
+        reason: "invalid_api_key",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer bad-key" }
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request, "public");
+    });
+
+    // @req REQ-059
+    it("does not call validateApiKey before rate limiting a missing-key request", async () => {
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request);
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-059
+    it("rate limits /api/v2/keys/issue without a tier (no key validation)", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/keys/issue"
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request);
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("IP pre-limit bounds validateApiKey", () => {
+    // @req REQ-059
+    it("applies the IP pre-limit before calling validateApiKey", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: true,
+        apiKeyId: "test-id",
+        tier: "public",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer some-key" }
+      );
+      await middleware(request);
+
+      expect(applyIpRateLimit).toHaveBeenCalledWith(request);
+      const ipLimitOrder =
+        vi.mocked(applyIpRateLimit).mock.invocationCallOrder[0];
+      const validateOrder =
+        vi.mocked(validateApiKey).mock.invocationCallOrder[0];
+      expect(ipLimitOrder).toBeLessThan(validateOrder);
+    });
+
+    // @req REQ-059
+    it("returns the 429 from the IP pre-limit and never calls validateApiKey", async () => {
+      vi.mocked(applyIpRateLimit).mockResolvedValueOnce({
+        status: 429,
+        headers: new Headers(),
+      } as unknown as Awaited<ReturnType<typeof applyIpRateLimit>>);
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer some-key" }
+      );
+      const response = await middleware(request);
+
+      expect(validateApiKey).not.toHaveBeenCalled();
+      expect(response.status).toBe(429);
+    });
+
+    // @req REQ-059
+    it("does not apply the IP pre-limit for the dev bypass", async () => {
+      vi.stubEnv("NODE_ENV", "development");
+
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
+
+      expect(applyIpRateLimit).not.toHaveBeenCalled();
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-059
+    it("does not apply the IP pre-limit for the same-origin bypass", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { origin: "https://example.com" }
+      );
+      await middleware(request);
+
+      expect(applyIpRateLimit).not.toHaveBeenCalled();
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
   });
 });

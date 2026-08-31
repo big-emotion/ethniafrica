@@ -3,6 +3,7 @@
   "nameMain": "Sango",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
   "currentCountries": ["CAF", "COD", "COG"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Sango",
@@ -93,12 +94,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Sango (sag). https://www.ethnologue.com/language/sag/",
-      "101 Last Tribes — Sango people. https://www.101lasttribes.com/tribes/sango.html",
-      "Vergiat, Antonin-Marius. Les rites secrets des primitifs de l'Oubangui. Payot, 1936 ; reimpr. L'Harmattan, Paris, 1981. ISBN 2-85802-205-4.",
-      "Samarin, William J. The Black Man's Burden: African Colonial Labor on the Congo and Ubangi Rivers, 1880-1900. Westview Press, 1989.",
-      "CIA World Factbook — Central African Republic. https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
-      "PeopleGroups.org — Sango of Central African Republic. https://peoplegroups.org/people_groups/pg012925/"
+      {
+        "title": "SIL Ethnologue — Sango (sag)",
+        "url": "https://www.ethnologue.com/language/sag/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Sango people",
+        "url": "https://www.101lasttribes.com/tribes/sango.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Vergiat, Antonin-Marius. Les rites secrets des primitifs de l'Oubangui. Payot, 1936 ; reimpr. L'Harmattan, Paris, 1981. ISBN 2-85802-205-4",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Samarin, William J. The Black Man's Burden: African Colonial Labor on the Congo and Ubangi Rivers, 1880-1900. Westview Press, 1989",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — Central African Republic",
+        "url": "https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "PeopleGroups.org — Sango of Central African Republic",
+        "url": "https://peoplegroups.org/people_groups/pg012925/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

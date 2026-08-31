@@ -1,31 +1,17 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
-import {
-  Inter,
-  Playfair_Display,
-  Fraunces,
-  Nunito_Sans,
-} from "next/font/google";
+import { headers } from "next/headers";
+import { Fraunces, Nunito_Sans, JetBrains_Mono } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
 import { PRODUCT_NAME, OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 import PlausibleScript from "@/components/PlausibleScript";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-playfair",
-});
-
 const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["300", "500", "700", "900"],
+  style: ["normal", "italic"],
   variable: "--font-fraunces",
 });
 
@@ -35,6 +21,17 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
 });
 
+// The atlas type scale leans on mono for overlines, field paths and every
+// figure that has to align in a column (--afh-font-mono in type.css). Until it
+// was loaded here the token fell through to the system monospace, whose metrics
+// differ enough that a tabular-nums column stops lining up.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jetbrains-mono",
+});
+
+// @req REQ-044
 export const metadata: Metadata = {
   metadataBase: new URL(
     (() => {
@@ -63,22 +60,27 @@ export const metadata: Metadata = {
   },
 };
 
+// @req REQ-115
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   await connection();
+  // Set by the CSP middleware on the request headers. Providers hands it to
+  // next-themes, whose inline bootstrap script script-src would otherwise
+  // reject.
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
+      className={`${fraunces.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
         <TypeformPreload />
-        <Providers>
+        <Providers nonce={nonce}>
           {children}
           <PlausibleScript />
         </Providers>

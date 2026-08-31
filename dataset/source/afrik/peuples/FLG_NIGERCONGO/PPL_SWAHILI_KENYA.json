@@ -3,6 +3,7 @@
   "nameMain": "Swahili (Kenya)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["KEN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Swahili du Kenya",
@@ -92,12 +93,42 @@
       ]
     },
     "sources": [
-      "UNESCO World Heritage Centre — Lamu Old Town. https://whc.unesco.org/en/list/1055/",
-      "Africa Unfiltered — Stone Towns of the Swahili Coast. https://africaunfiltered.substack.com/p/stone-towns-of-the-swahili-coast",
-      "Friends of Mombasa — The Swahili. https://www.friendsofmombasa.com/migration-rich-cultures/the-swahili/",
-      "African World Heritage Sites — Lamu Old Town. https://www.africanworldheritagesites.org/cultural-places/swahili-coast/lamu-old-town.html",
-      "Stats Kenya — Tribe and Ethnicity in Kenya. https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
-      "SIL Ethnologue — Swahili (swh). https://www.ethnologue.com/language/swh/"
+      {
+        "title": "UNESCO World Heritage Centre — Lamu Old Town",
+        "url": "https://whc.unesco.org/en/list/1055/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Africa Unfiltered — Stone Towns of the Swahili Coast",
+        "url": "https://africaunfiltered.substack.com/p/stone-towns-of-the-swahili-coast",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for substack.com, matched as a parent of africaunfiltered.substack.com."
+      },
+      {
+        "title": "Friends of Mombasa — The Swahili",
+        "url": "https://www.friendsofmombasa.com/migration-rich-cultures/the-swahili/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers friendsofmombasa.com; the tier awaits editorial review."
+      },
+      {
+        "title": "African World Heritage Sites — Lamu Old Town",
+        "url": "https://www.africanworldheritagesites.org/cultural-places/swahili-coast/lamu-old-town.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africanworldheritagesites.org."
+      },
+      {
+        "title": "Stats Kenya — Tribe and Ethnicity in Kenya",
+        "url": "https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for statskenya.co.ke."
+      },
+      {
+        "title": "SIL Ethnologue — Swahili (swh)",
+        "url": "https://www.ethnologue.com/language/swh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

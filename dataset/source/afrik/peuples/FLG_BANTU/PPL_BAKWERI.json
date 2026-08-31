@@ -85,12 +85,42 @@
       ]
     },
     "sources": [
-      "Swordshare Map – Mokpwe (bri) : https://map.swordshare.com/bri",
-      "Lugha Yangu – Bakweri/Kpwe/Mokpwe language : https://lughayangu.com/bakweri",
-      "Joshua Project – Cameroon people groups : https://joshuaproject.net/countries/CM",
-      "101 Last Tribes – Bakweri people : https://www.101lasttribes.com/tribes/bakweri.html",
-      "CIA World Factbook – Cameroon : https://www.cia.gov/the-world-factbook/countries/cameroon/",
-      "Ardener, Edwin (1956). Coastal Bantu of the Cameroons. London: International African Institute."
+      {
+        "title": "Swordshare Map – Mokpwe (bri)",
+        "url": "https://map.swordshare.com/bri",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Lugha Yangu – Bakweri/Kpwe/Mokpwe language",
+        "url": "https://lughayangu.com/bakweri",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "Joshua Project – Cameroon people groups",
+        "url": "https://joshuaproject.net/countries/CM",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Bakweri people",
+        "url": "https://www.101lasttribes.com/tribes/bakweri.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook – Cameroon",
+        "url": "https://www.cia.gov/the-world-factbook/countries/cameroon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Ardener, Edwin (1956). Coastal Bantu of the Cameroons. London: International African Institute",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

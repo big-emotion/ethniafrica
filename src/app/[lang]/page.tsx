@@ -1,252 +1,172 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { useLanguage } from "@/hooks/use-language";
-import { getTranslation } from "@/lib/translations";
-import { getLocalizedRoute } from "@/lib/routing";
+import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { MapPin, Users, Search, Languages } from "lucide-react";
-import { SearchModalV2 } from "@/components/search/SearchModalV2";
-import { useParams } from "next/navigation";
-import { getStats } from "@/lib/afrikLoader";
-import type { GlobalStats, SearchEntityType } from "@/types/afrik-frontend";
+import { HomeHero } from "@/components/home/HomeHero";
+import { AccessAxes } from "@/components/home/AccessAxes";
+import { TrustStrip } from "@/components/home/TrustStrip";
+import { PurposeBlocks } from "@/components/home/PurposeBlocks";
+import { FeaturedModule } from "@/components/home/FeaturedModule";
+import { DidYouKnow } from "@/components/home/DidYouKnow";
+import { SynthesisRail } from "@/components/home/SynthesisRail";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
+import { getCorpusCounts } from "@/lib/home/corpusCounts";
+import { loadSeedWords } from "@/lib/home/seedWords";
+import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
+import {
+  DEFAULT_HERO_MODULE_ID,
+  pickHeroModule,
+} from "@/lib/home/heroRotation";
+import { loadHeroPreview } from "@/lib/home/heroPreviewData";
+import { getHubModules, type HubModule } from "@/lib/hubs/moduleAvailability";
+import { ACCESS_MODES, type AccessMode } from "@/lib/hubs/moduleRegistry";
+import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
-export default function Home() {
-  const params = useParams();
-  const { language, setLanguage } = useLanguage();
-  const router = useRouter();
-  const isMobile = useIsMobile();
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [stats, setStats] = useState<GlobalStats | null>(null);
+/**
+ * The hero draws a different module on every request (REQ-115), so the home
+ * must not be prerendered. Reading searchParams below already forces that,
+ * and so does the root layout awaiting connection() for the CSP nonce — but
+ * both are action at a distance. Stating it here means the day that nonce
+ * moves into middleware alone, the hero does not silently freeze on one
+ * module chosen at build time with nothing failing.
+ *
+ * This is the opposite failure to the one staticParamsBan.test.ts guards:
+ * there a route claimed to be static and answered 500 at request time;
+ * here a route that is dynamic only by inheritance would answer 200 with
+ * the same module forever.
+ */
+// @req REQ-115
+export const dynamic = "force-dynamic";
 
-  const t = getTranslation(language);
+// @req REQ-044 FR95
+export const metadata: Metadata = {
+  title: OG_TITLE,
+  description: OG_DESCRIPTION,
+  alternates: {
+    canonical: "/fr",
+  },
+  openGraph: {
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    type: "website",
+    url: "/fr",
+  },
+};
 
-  // Load statistics from AFRIK v2 API
-  useEffect(() => {
-    const loadStatistics = async () => {
-      try {
-        const statsData = await getStats();
-        setStats(statsData);
-      } catch (error) {
-        console.error("Error loading stats:", error);
-      }
-    };
+/**
+ * The modules behind all three axes, resolved server-side (REQ-114). The
+ * home now opens its axis panels in place, so the reader must not wait on
+ * a Supabase round trip after the click — and the availability probe,
+ * which counts rows in the corpus tables, has no business running in the
+ * browser. getHubModules already caches each data-source probe for 60 s,
+ * so these three calls cost at most one query per backing table per
+ * minute, whatever the traffic.
+ */
+async function getModulesByAxis(): Promise<Record<AccessMode, HubModule[]>> {
+  const entries = await Promise.all(
+    ACCESS_MODES.map(async (mode) => [mode, await getHubModules(mode)] as const)
+  );
+  return Object.fromEntries(entries) as Record<AccessMode, HubModule[]>;
+}
 
-    loadStatistics();
-  }, []);
+interface HomeProps {
+  searchParams: Promise<{ hero?: string | string[] }>;
+}
 
-  const handleSearchResult = (result: {
-    type: SearchEntityType;
-    id: string;
-    name: string;
-  }) => {
-    // Redirect to appropriate page based on search result type
-    switch (result.type) {
-      case "languageFamily":
-        router.push(`${familiesRoute}?family=${result.id}`);
-        break;
-      case "people":
-        router.push(`${peoplesRoute}?people=${result.id}`);
-        break;
-      case "country":
-        router.push(`${countriesRoute}?country=${result.id}`);
-        break;
-      default:
-        console.warn("Unknown search result type:", result.type);
-    }
-    setIsSearchOpen(false);
-  };
+// @req REQ-113
+// @req REQ-115
+export default async function Home({ searchParams }: HomeProps) {
+  const [
+    { hero },
+    counts,
+    modulesByAxis,
+    syntheses,
+    peopleCountsByCountry,
+    seedWords,
+  ] = await Promise.all([
+    searchParams,
+    getCorpusCounts(),
+    getModulesByAxis(),
+    loadSynthesisRail(),
+    // The continent scene's own signal, for whichever module the slot draws.
+    // Caught like the explorer hub catches it: a failed count costs the
+    // scene's per-country field, not the page.
+    getContinentPeopleCounts().catch(() => undefined),
+    // Ten names per chip, drawn from the corpus for this reader — the hero's
+    // module is not the only thing this page draws per request.
+    loadSeedWords(),
+  ]);
 
-  // AFRIK v2 routes
-  const familiesRoute = getLocalizedRoute(language, "families");
-  const peoplesRoute = getLocalizedRoute(language, "peoples");
-  const countriesRoute = getLocalizedRoute(language, "countries");
+  // Drawn per request, like the hero's module and for the same reason: the
+  // draw runs in a server component, so it never re-runs during hydration
+  // and cannot desynchronise the client tree.
+  const didYouKnowFact = pickDidYouKnowFact();
+
+  // The band opens on the globe, every time.
+  //
+  // It used to draw uniformly from the three heroable modules, on the reading
+  // that variation shows the atlas holds more than one. It does not read that
+  // way: a reader who arrives twice sees two different sites, and one who
+  // arrives once has no way to know the band is a sample at all. Until the
+  // band says what it is, showing the same thing is the honest default.
+  //
+  // ?hero=<moduleId> still forces another module — the visual snapshot, the
+  // deep link and design review all need it. Repeated params collapse to the
+  // first rather than throwing: a hand-edited URL should not 500.
+  const requestedPin = Array.isArray(hero) ? hero[0] : hero;
+  const pin = requestedPin ?? DEFAULT_HERO_MODULE_ID;
+  const heroModule = pickHeroModule(modulesByAxis, { pin });
+  // Only the drawn module is resolved, never the whole lot: the slot shows
+  // one module, so loading the other eighteen would be eighteen wasted
+  // round trips per request.
+  const heroPreview = heroModule ? await loadHeroPreview(heroModule) : null;
 
   return (
-    <PageLayout
-      language={language}
-      onLanguageChange={setLanguage}
-      title={t.title}
-      subtitle={t.subtitle}
-      onSearchResult={handleSearchResult}
-    >
-      <div className="space-y-8">
-        {/* Section texte introductive */}
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-display font-bold">
-            Découvrez la Richesse de la Diversité des Groupes Ethniques
-            Africains
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Cette encyclopédie complète documente la diversité ethnique dans les
-            55 pays africains. Nos données fournissent des informations
-            démographiques détaillées, permettant de comprendre la riche
-            mosaïque culturelle qui compose le continent africain. Explorez les
-            régions, pays et groupes ethniques pour découvrir les distributions
-            démographiques, les connexions culturelles et la diversité
-            linguistique.
-          </p>
-        </div>
+    <PageLayout language="fr" hideHeader flushTop>
+      <HomeHero seedWords={seedWords} />
+      {/* Argument first, then the doors, then proof and sample.
+          The doors came first while the hero carried a standfirst that told
+          the reader what the atlas was for above the fold. The hero is now a
+          question and one sentence (ETNI-857), so that telling moved back
+          down here — and PurposeBlocks is where it happens, on three cases
+          rather than in a claim.
 
-        {/* Barre de recherche */}
-        <div className="max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder={t.searchPlaceholder}
-              className="pl-11 h-12 text-base"
-              onClick={() => setIsSearchOpen(true)}
-              readOnly
-            />
-          </div>
-          <SearchModalV2
-            open={isSearchOpen}
-            onClose={() => setIsSearchOpen(false)}
-            language={language}
-            onResultSelect={handleSearchResult}
-          />
-        </div>
-
-        {/* Section Statistiques - AFRIK v2 */}
-        {stats && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Language Families */}
-              <Card className="p-6">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <Languages className="h-10 w-10 text-primary" />
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      Familles linguistiques
-                    </h3>
-                    <p className="text-2xl md:text-3xl font-display font-bold">
-                      {stats.totalLanguageFamilies}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      documentées
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Peoples */}
-              <Card className="p-6">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <Users className="h-10 w-10 text-primary" />
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      Peuples africains
-                    </h3>
-                    <p className="text-2xl md:text-3xl font-display font-bold">
-                      {stats.totalPeoples}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      recensés
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Countries */}
-              <Card className="p-6">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="p-4 rounded-full bg-primary/10">
-                    <MapPin className="h-10 w-10 text-primary" />
-                  </div>
-                  <div className="flex-1 w-full">
-                    <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      Pays africains
-                    </h3>
-                    <p className="text-2xl md:text-3xl font-display font-bold">
-                      {stats.totalCountries}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2">
-                      couverts
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        )}
-
-        {/* Section CTA - 3 boutons vers les pages v2 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(familiesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Languages className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Familles linguistiques
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Explorer la diversité linguistique
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les familles
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(peoplesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Peuples africains
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Découvrir cultures &amp; traditions
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les peuples
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(countriesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <MapPin className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Pays</h3>
-                <p className="text-sm text-muted-foreground">
-                  Parcourir par pays
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les pays
-              </Button>
-            </div>
-          </Card>
-        </div>
-      </div>
+          The order also settles a vocabulary problem the axes could not
+          solve on their own: the Explorer card offers « familles
+          linguistiques », which nothing on the page glossed before the
+          reader met it. Standing the argument first means a language family
+          has been defined by example — « Bantou » names a kinship between
+          500 languages, not a people — by the time the card uses the term. */}
+      <PurposeBlocks language="fr" />
+      <section className="home-axes-section">
+        <AccessAxes
+          language="fr"
+          counts={counts}
+          modulesByAxis={modulesByAxis}
+        />
+      </section>
+      <DidYouKnow language="fr" fact={didYouKnowFact} />
+      <SynthesisRail language="fr" syntheses={syntheses} />
+      {/* Where the axes used to stand. The module is the page's invitation
+          to do something rather than read something, which lands better
+          after the atlas has shown what it holds than before. */}
+      <FeaturedModule
+        heroModule={heroModule}
+        heroPreview={heroPreview}
+        peopleCountsByCountry={peopleCountsByCountry}
+      />
+      <TrustStrip language="fr" />
+      <style>{`
+        .home-axes-section {
+          background: var(--afh-bg);
+          padding: 40px 24px 60px;
+          width: 100vw;
+          margin-left: calc(50% - 50vw);
+          margin-right: calc(50% - 50vw);
+        }
+        @media (max-width: 700px) {
+          .home-axes-section { padding: 30px 20px 44px; }
+        }
+      `}</style>
     </PageLayout>
   );
 }

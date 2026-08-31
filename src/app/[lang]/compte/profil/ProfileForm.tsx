@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 import {
   eraseAccountAction,
   updateProfileAction,
@@ -85,11 +86,9 @@ export function ProfileForm({
 
   return (
     <div className="grid gap-6 min-[1200px]:grid-cols-[minmax(0,2fr)_minmax(20rem,1fr)]">
-      <Card>
+      <Card className="rounded-afh-xl">
         <CardHeader className="p-5 md:p-6">
-          <CardTitle className="text-xl md:text-2xl">
-            Informations du profil
-          </CardTitle>
+          <CardTitle className="text-afh-h2">Informations du profil</CardTitle>
           <CardDescription>
             Choisissez le nom visible avec vos contributions.
           </CardDescription>
@@ -111,7 +110,7 @@ export function ProfileForm({
             <div className="flex items-start justify-between gap-4 rounded-md border p-4">
               <div className="space-y-1">
                 <Label htmlFor="public-profile">Profil public</Label>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-afh-small text-muted-foreground">
                   Afficher votre nom d’affichage avec vos signalements.
                 </p>
               </div>
@@ -129,16 +128,15 @@ export function ProfileForm({
             </div>
 
             {updateState.message ? (
-              <p
-                role="status"
-                className={
-                  updateState.success
-                    ? "text-sm text-green-700"
-                    : "text-sm text-destructive"
-                }
-              >
-                {updateState.message}
-              </p>
+              updateState.success ? (
+                <p role="status" className="text-afh-small text-green-700">
+                  {updateState.message}
+                </p>
+              ) : (
+                <FormFieldError role="status">
+                  {updateState.message}
+                </FormFieldError>
+              )
             ) : null}
 
             <Button
@@ -153,11 +151,11 @@ export function ProfileForm({
       </Card>
 
       <div className="space-y-6">
-        <Card>
+        <Card className="rounded-afh-xl">
           <CardHeader className="p-5 md:p-6">
-            <CardTitle className="text-xl">Détails du compte</CardTitle>
+            <CardTitle className="text-afh-h2">Détails du compte</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 p-5 pt-0 text-sm md:p-6 md:pt-0">
+          <CardContent className="space-y-4 p-5 pt-0 text-afh-small md:p-6 md:pt-0">
             <div>
               <p className="font-medium">Adresse e-mail</p>
               <p className="break-all text-muted-foreground">{maskedEmail}</p>
@@ -175,9 +173,9 @@ export function ProfileForm({
           </CardContent>
         </Card>
 
-        <Card className="border-destructive/50">
+        <Card className="rounded-afh-xl border-destructive/50">
           <CardHeader className="p-5 md:p-6">
-            <CardTitle className="text-xl text-destructive">
+            <CardTitle className="text-afh-h2 text-destructive">
               Supprimer le compte
             </CardTitle>
             <CardDescription>
@@ -221,16 +219,20 @@ export function ProfileForm({
                   </div>
 
                   {erasureState.message ? (
-                    <p
-                      role="status"
-                      className={
-                        erasureState.success
-                          ? "mb-4 text-sm text-green-700"
-                          : "mb-4 text-sm text-destructive"
-                      }
-                    >
-                      {erasureState.message}
-                    </p>
+                    erasureState.success ? (
+                      <p
+                        role="status"
+                        className="mb-4 text-afh-small text-green-700"
+                      >
+                        {erasureState.message}
+                      </p>
+                    ) : (
+                      <div className="mb-4">
+                        <FormFieldError role="status" id="erasure-error">
+                          {erasureState.message}
+                        </FormFieldError>
+                      </div>
+                    )
                   ) : null}
 
                   <AlertDialogFooter>

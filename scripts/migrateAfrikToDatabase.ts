@@ -2,7 +2,9 @@
  * Synchronize canonical AFRIK JSON sources to a guarded Supabase target.
  *
  * Data is processed in AFRIK hierarchy order:
- * language families → peoples → countries → people/country relations.
+ * language families → peoples → countries → people/country relations →
+ * migration events (peoples must exist first — migration_event_peoples FKs
+ * afrik_peoples).
  */
 
 import { config } from "dotenv";
@@ -15,8 +17,18 @@ import { logger } from "@/lib/api/logger";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
+import {
+  loadAllRelationFiles,
+  loadRelations,
+} from "@/lib/afrik/loaders/relationJsonLoader";
+import {
+  loadAllMigrationFiles,
+  loadMigrations,
+} from "@/lib/afrik/loaders/migrationJsonLoader";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country, LanguageFamily, People } from "@/types/afrik";
+import type { RelationRecord } from "@/types/relations";
 import {
   compareAfrikDrift,
   type AfrikContentRecord,
@@ -24,9 +36,9 @@ import {
   type AfrikDriftReport,
 } from "./lib/afrikDrift";
 import {
-  validateAfrikMigrationTarget,
-  type AfrikMigrationTargetInput,
-} from "./lib/afrikMigrationTarget";
+  resolveAfrikSyncTarget,
+  type AfrikSyncTargetInput,
+} from "./lib/afrikSyncTarget";
 
 interface MigrationSectionReport {
   total: number;
@@ -34,11 +46,18 @@ interface MigrationSectionReport {
   errors: string[];
 }
 
+export interface PeopleRelationsSectionReport extends MigrationSectionReport {
+  orphans: string[];
+}
+
 export interface MigrationReport {
   languageFamilies: MigrationSectionReport;
   peoples: MigrationSectionReport;
   countries: MigrationSectionReport;
   relations: MigrationSectionReport;
+  peopleRelations: PeopleRelationsSectionReport;
+  migrations: MigrationSectionReport;
+  names: MigrationSectionReport;
   verification: {
     before: AfrikDriftReport;
     after: AfrikDriftReport | null;
@@ -48,13 +67,15 @@ export interface MigrationReport {
 
 export interface MigrationOptions {
   dryRun?: boolean;
-  target: AfrikMigrationTargetInput;
+  target: AfrikSyncTargetInput;
   writeErrorReport?: boolean;
 }
 
 type AdminClient = ReturnType<typeof createAdminClient>;
 type AfrikTable =
-  "afrik_language_families" | "afrik_peoples" | "afrik_countries";
+  | "afrik_language_families"
+  | "afrik_peoples"
+  | "afrik_countries";
 
 function emptyDriftReport(): AfrikDriftReport {
   return {
@@ -71,6 +92,9 @@ function createMigrationReport(): MigrationReport {
     peoples: { total: 0, inserted: 0, errors: [] },
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
+    peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
+    migrations: { total: 0, inserted: 0, errors: [] },
+    names: { total: 0, inserted: 0, errors: [] },
     verification: {
       before: emptyDriftReport(),
       after: null,
@@ -246,6 +270,11 @@ async function upsertCountries(
         {
           id: country.id,
           name_fr: country.nameFr,
+          // Unmapped fields do not error here, they simply never arrive —
+          // which is how the chapeau could have stayed in git forever, and
+          // how the protocol name went missing for as long again (049).
+          name_official: country.nameOfficial ?? null,
+          summary: country.summary ?? null,
           etymology: country.etymology ?? null,
           name_origin_actor: country.nameOriginActor ?? null,
           content: country.content,
@@ -308,6 +337,39 @@ async function upsertRelations(
   }
 }
 
+/**
+ * Report-only orphan detection (MVP, ETNI-506): a relation present in
+ * afrik_people_relations but absent from the current source tree means it
+ * was deleted from dataset/source/afrik/relations/ without a corresponding
+ * DELETE being applied to the database. Flagged for human review, never
+ * deleted automatically.
+ */
+async function detectRelationOrphans(
+  supabase: AdminClient,
+  sourceRelations: RelationRecord[]
+): Promise<string[]> {
+  const sourceIds = new Set(sourceRelations.map((relation) => relation.id));
+  const { data, error } = await supabase
+    .from("afrik_people_relations")
+    .select("id");
+
+  if (error) {
+    throw new Error(
+      `Failed to read afrik_people_relations identifiers: ${error.message}`
+    );
+  }
+
+  const orphans = toIds(data).filter((id) => !sourceIds.has(id));
+  if (orphans.length > 0) {
+    logger.warn(
+      "Relation(s) found in database with no matching source file (report-only, ETNI-506)",
+      { orphans }
+    );
+  }
+
+  return orphans;
+}
+
 function countRelations(peoples: People[]): number {
   return peoples.reduce(
     (total, people) =>
@@ -322,6 +384,9 @@ function hasErrors(report: MigrationReport): boolean {
     report.peoples.errors.length > 0 ||
     report.countries.errors.length > 0 ||
     report.relations.errors.length > 0 ||
+    report.peopleRelations.errors.length > 0 ||
+    report.migrations.errors.length > 0 ||
+    report.names.errors.length > 0 ||
     report.verification.errors.length > 0
   );
 }
@@ -343,7 +408,7 @@ function saveErrorReport(report: MigrationReport): string {
 export async function migrateAfrikToDatabase(
   options: MigrationOptions
 ): Promise<MigrationReport> {
-  const validatedTarget = validateAfrikMigrationTarget(options.target);
+  const syncTarget = resolveAfrikSyncTarget(options.target);
 
   const dryRun = options.dryRun ?? true;
   const writeErrorReport = options.writeErrorReport ?? true;
@@ -367,12 +432,16 @@ export async function migrateAfrikToDatabase(
 
   if (dryRun) {
     report.relations.total = countRelations(peoples);
+    report.peopleRelations.total = loadAllRelationFiles().length;
+    report.migrations.total = loadAllMigrationFiles().length;
     logger.info("AFRIK synchronization preview completed", {
-      target: validatedTarget.target,
+      target: syncTarget.environment,
       languageFamilies: report.languageFamilies.total,
       peoples: report.peoples.total,
       countries: report.countries.total,
       relations: report.relations.total,
+      peopleRelations: report.peopleRelations.total,
+      migrations: report.migrations.total,
       drift: report.verification.before,
     });
     return report;
@@ -382,6 +451,31 @@ export async function migrateAfrikToDatabase(
   const validFamilyIds = await readIds(supabase, "afrik_language_families");
 
   await upsertPeoples(supabase, peoples, validFamilyIds, report);
+
+  const migrationRecords = loadAllMigrationFiles();
+  const migrationsReport = await loadMigrations(supabase, migrationRecords);
+  report.migrations.total = migrationsReport.total;
+  report.migrations.inserted = migrationsReport.inserted;
+  report.migrations.errors = migrationsReport.errors;
+
+  const namesReport = await loadNameRecords(supabase);
+  report.names.total = namesReport.total;
+  report.names.inserted = namesReport.inserted;
+  report.names.errors = [...namesReport.errors, ...namesReport.dropped];
+
+  const peopleRelationRecords = loadAllRelationFiles();
+  const peopleRelationsReport = await loadRelations(
+    supabase,
+    peopleRelationRecords
+  );
+  report.peopleRelations.total = peopleRelationsReport.total;
+  report.peopleRelations.inserted = peopleRelationsReport.inserted;
+  report.peopleRelations.errors = peopleRelationsReport.errors;
+  report.peopleRelations.orphans = await detectRelationOrphans(
+    supabase,
+    peopleRelationRecords
+  );
+
   await upsertCountries(supabase, countries, report);
   const validCountryIds = await readIds(supabase, "afrik_countries");
 
@@ -403,11 +497,14 @@ export async function migrateAfrikToDatabase(
     });
   } else {
     logger.info("AFRIK synchronization completed", {
-      target: validatedTarget.target,
+      target: syncTarget.environment,
       languageFamilies: report.languageFamilies,
       peoples: report.peoples,
       countries: report.countries,
       relations: report.relations,
+      peopleRelations: report.peopleRelations,
+      migrations: report.migrations,
+      names: report.names,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,
     });
@@ -430,9 +527,9 @@ if (require.main === module) {
   migrateAfrikToDatabase({
     dryRun,
     target: {
-      target: cliTarget(args),
+      environment: cliTarget(args),
       activeSupabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      expectedStagingSupabaseUrl: process.env.AFRIK_STAGING_SUPABASE_URL,
+      productionSupabaseUrl: process.env.AFRIK_PRODUCTION_SUPABASE_URL,
     },
   })
     .then((report) => {

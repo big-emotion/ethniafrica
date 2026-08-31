@@ -3,6 +3,7 @@
   "nameMain": "Kunama",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["ERI", "ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kunama",
@@ -91,11 +92,36 @@
       ]
     },
     "sources": [
-      "Kunama Language (KUN) – Ethnologue, SIL International (https://www.ethnologue.com/language/kun/)",
-      "Kunama in Eritrea – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12850/er)",
-      "Kunama in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12850/ET)",
-      "The Kunama – Omna Tigray, 2022 (https://omnatigray.org/slide-deck/the-kunama/)",
-      "The Indigenous World 2025: Eritrea – IWGIA, 2025 (https://iwgia.org/en/eritrea/5623-iw-2025-eritrea.html)"
+      {
+        "title": "Kunama Language (KUN) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/kun/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kunama in Eritrea – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/12850/er",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kunama in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/12850/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Kunama – Omna Tigray, 2022",
+        "url": "https://omnatigray.org/slide-deck/the-kunama/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers omnatigray.org; the tier awaits editorial review."
+      },
+      {
+        "title": "The Indigenous World 2025: Eritrea – IWGIA, 2025",
+        "url": "https://iwgia.org/en/eritrea/5623-iw-2025-eritrea.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Akan",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Akan",
@@ -101,11 +102,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Akan language (aka). https://www.ethnologue.com/language/aka/",
-      "TOTA World — Akan Geography. https://www.tota.world/article/803/",
-      "CIA World Factbook — Ghana. https://www.cia.gov/the-world-factbook/countries/ghana/",
-      "CIA World Factbook — Cote d'Ivoire. https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
-      "African American Registry — The Akan African Community. https://aaregistry.org/story/the-akan-african-community-a-story/"
+      {
+        "title": "SIL Ethnologue — Akan language (aka)",
+        "url": "https://www.ethnologue.com/language/aka/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "TOTA World — Akan Geography",
+        "url": "https://www.tota.world/article/803/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers tota.world; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Ghana",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ghana/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Cote d'Ivoire",
+        "url": "https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "African American Registry — The Akan African Community",
+        "url": "https://aaregistry.org/story/the-akan-african-community-a-story/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for aaregistry.org."
+      }
     ]
   }
 }

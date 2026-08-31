@@ -8,32 +8,48 @@
  */
 
 import { createServerClient } from "@/lib/supabase/server";
-import type {
-  Source,
-  SourceType,
-  ListSourcesQuery,
-} from "@/api/v2/schemas/sources";
-
-const KNOWN_TYPES: SourceType[] = ["primary", "secondary", "tertiary", "ai"];
+import {
+  evaluateSourceUrl,
+  sourceKindSchema,
+} from "@/lib/sources/authorized-source-catalog";
+import type { Source, ListSourcesQuery } from "@/api/v2/schemas/sources";
+import { isSourceTier } from "@/types/sources";
 
 function mapRowToSource(row: Record<string, unknown>): Source {
-  const rawType = row.type as string | null | undefined;
-  const type =
-    rawType && KNOWN_TYPES.includes(rawType as SourceType)
-      ? (rawType as SourceType)
+  const rawSourceKind = row.source_kind as string | null | undefined;
+  const rawIdentifiers = row.identifiers;
+  const url = typeof row.url === "string" ? row.url : null;
+  const sourceKindResult = sourceKindSchema.safeParse(rawSourceKind);
+  const sourceKind = sourceKindResult.success ? sourceKindResult.data : null;
+  // An untiered legacy row stays null here rather than being coerced: the
+  // payload distinguishes "not yet classified" from "classified unverified".
+  const tier = isSourceTier(row.tier) ? row.tier : null;
+  const identifiers =
+    rawIdentifiers &&
+    typeof rawIdentifiers === "object" &&
+    !Array.isArray(rawIdentifiers)
+      ? Object.fromEntries(
+          Object.entries(rawIdentifiers).filter(
+            ([, value]) => typeof value === "string"
+          )
+        )
       : null;
 
   return {
     id: row.id as string,
+    sourceKey: (row.source_key as string | null) ?? null,
+    sourceKind,
+    tier,
+    identifiers,
     title: (row.title as string) ?? "",
-    url: (row.url as string | null) ?? null,
-    type,
+    url,
     pinnedUrl: (row.pinned_url as string | null) ?? null,
     year: (row.year as number | null) ?? null,
     author: (row.author as string | null) ?? null,
     publisher: (row.publisher as string | null) ?? null,
     resolvable: (row.resolvable as boolean | null) ?? null,
     lastVerifiedAt: (row.last_verified_at as string | null) ?? null,
+    policy: evaluateSourceUrl(url ?? ""),
   };
 }
 
@@ -42,6 +58,7 @@ export interface ListSourcesResult {
   total: number;
 }
 
+// @req REQ-092
 export async function listSources(
   query: ListSourcesQuery
 ): Promise<ListSourcesResult> {
@@ -66,6 +83,7 @@ export async function listSources(
   };
 }
 
+// @req REQ-092
 export async function getSourceById(id: string): Promise<Source | null> {
   const supabase = createServerClient();
   const { data, error } = await supabase

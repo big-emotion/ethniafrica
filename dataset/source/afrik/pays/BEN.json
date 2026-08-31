@@ -1,11 +1,17 @@
 {
   "id": "BEN",
-  "nameFr": "République du Bénin",
+  "nameFr": "Bénin",
   "nameOfficial": "République du Bénin (République du Bénin)",
+  "summary": "Le Bénin porte depuis 1975 le nom d'un royaume qui n'était pas le sien : celui du Bénin, situé dans l'actuel Nigeria. Il s'appelait auparavant Dahomey, du nom du royaume qui domina la région du XVIIe au XIXe siècle. Fon, Adja-Ewe, Yoruba, Bariba et Dendi y ont laissé des traditions royales, la divination Ifá et le vodun.",
   "etymology": "Le nom \"Bénin\" provient de l'ancien royaume du Bénin (actuel Nigeria), mais a été choisi pour le pays en 1975 pour remplacer \"Dahomey\". Le nom \"Dahomey\" venait du royaume du Dahomey (XVIIe-XIXe siècles), lui-même nommé d'après \"Danhomé\" (dans le ventre de Dan), fondé par le roi Houegbadja. Le choix de \"Bénin\" en 1975 visait à créer une identité nationale neutre, sans référence à un groupe ethnique spécifique.",
   "nameOriginActor": "Le nom \"Bénin\" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace \"Dahomey\", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom \"Bénin\" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Colonie du Dahomey (1894-1960)",
+        "République du Dahomey (1960-1975)",
+        "République populaire du Bénin (1975-1990)"
+      ],
       "antiquity": "Le territoire actuel du Bénin était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (Dahomey, Nikki, Kétou, etc.).",
       "middleAges": "Développement de royaumes et chefferies : royaume du Dahomey (Fon, XVIIe-XIXe siècles), royaume de Nikki (Bariba), royaume de Kétou (Yoruba/Nago), royaumes Adja-Ewe. Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume du Dahomey (puissant État militarisé, célèbre pour ses Amazones), royaume de Nikki (Bariba), royaume de Kétou (Yoruba), chefferies Adja-Ewe, peuples Somba/Otamari de l'Atacora. Les Français utilisaient le terme \"Dahomey\" pour désigner la région.",
@@ -224,21 +230,71 @@
       "postIndependence": "1972-1990 : Régime marxiste-léniniste sous Mathieu Kérékou, changement de nom pour \"République populaire du Bénin\" (1975). 1990 : Retour à la démocratie multipartite, nouvelle constitution, changement de nom pour \"République du Bénin\". Période de démocratisation et de développement économique. Défis de développement, pauvreté, inégalités sociales. Le Bénin est considéré comme un modèle de démocratie en Afrique de l'Ouest."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Benin",
-      "CIA World Factbook – Benin",
-      "ONU / UNFPA – Démographie Bénin 2025",
-      "Law, Robin – \"The Kingdom of Allada\"",
-      "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
-      "Archives du Royaume d'Abomey",
-      "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
-      "Recensements béninois",
-      "Études anthropologiques sur les peuples du Bénin"
+      {
+        "title": "SIL Ethnologue – Languages of Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Benin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Bénin 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Law, Robin – \"The Kingdom of Allada\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives du Royaume d'Abomey",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements béninois",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Bénin",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Fon",
-          "population": 5320000,
           "percentageInCountry": 38,
           "peopleId": "PPL_FON",
           "region": "Sud du Bénin (Abomey, Porto-Novo, Cotonou)",

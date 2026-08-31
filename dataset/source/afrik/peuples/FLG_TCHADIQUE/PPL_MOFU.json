@@ -3,6 +3,7 @@
   "nameMain": "Mofu",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Mofu",
@@ -88,14 +89,54 @@
       ]
     },
     "sources": [
-      "mandaras.info — The Mofu Groups. https://www.mandaras.info/MofuGroups.html",
-      "Sterner, J. & David, N. (2020). Gudur revisited. NDJS 2020.2. University of Calgary. https://www.ucalgary.ca/sukur/",
-      "Barreteau, D. (1988). Description du mofu-gudur. Paris : ORSTOM/CNRS.",
-      "Gbaya Art's Blog — The Mafa community (bull festival Maray). https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/",
-      "Maura, D. (2022). Socio-Cultural Heritage, Identity and Political Affirmation through Toponyms in Far-North Cameroon. SCIRP. https://www.scirp.org/journal/paperinformation?paperid=119428",
-      "SIL Ethnologue — Mofu-Gudur (mif). https://www.ethnologue.com/language/mif/",
-      "SIL Ethnologue — Mofu North (mfk). https://www.ethnologue.com/language/mfk/",
-      "Joshua Project — Mofu, North in Cameroon. https://joshuaproject.net/people_groups/13760/CM"
+      {
+        "title": "mandaras.info — The Mofu Groups",
+        "url": "https://www.mandaras.info/MofuGroups.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mandaras.info."
+      },
+      {
+        "title": "Sterner, J. & David, N. (2020). Gudur revisited. NDJS 2020.2. University of Calgary",
+        "url": "https://www.ucalgary.ca/sukur/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ucalgary.ca; the tier awaits editorial review."
+      },
+      {
+        "title": "Barreteau, D. (1988). Description du mofu-gudur. Paris : ORSTOM/CNRS",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Gbaya Art's Blog — The Mafa community (bull festival Maray)",
+        "url": "https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of gbayaart.wordpress.com."
+      },
+      {
+        "title": "Maura, D. (2022). Socio-Cultural Heritage, Identity and Political Affirmation through Toponyms in Far-North Cameroon. SCIRP",
+        "url": "https://www.scirp.org/journal/paperinformation?paperid=119428",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scirp.org."
+      },
+      {
+        "title": "SIL Ethnologue — Mofu-Gudur (mif)",
+        "url": "https://www.ethnologue.com/language/mif/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Mofu North (mfk)",
+        "url": "https://www.ethnologue.com/language/mfk/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Mofu, North in Cameroon",
+        "url": "https://joshuaproject.net/people_groups/13760/CM",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -13,7 +13,7 @@ describe("Ferry router workflow", () => {
   it("pushes agent changes with a GitHub App token", () => {
     expect(workflow).toContain("id: ferry-token");
     expect(workflow).toContain(
-      "uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v3.2.0"
+      "uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0"
     );
     expect(workflow).toContain("app-id: ${{ secrets.FERRY_APP_ID }}");
     expect(workflow).toContain("private-key: ${{ secrets.FERRY_PRIVATE_KEY }}");

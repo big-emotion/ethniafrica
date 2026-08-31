@@ -6,13 +6,14 @@ import {
   expectNoPopupsOrWalls,
   expectTapTargetsAtLeast44px,
 } from "../support/guardrails";
+import { getCountryRoute } from "@/lib/routing";
 
 // TEA Test Design §4.2 — today-testable subset.
-// The country detail page (CountryDetailViewV2) is shipped today, so partial
+// The country detail page (CountryRecordView) is shipped today, so partial
 // Amina coverage + a11y baseline can run before any Phase-1 primitive lands.
 // This is the proof-of-framework: pass = scaffold works end-to-end.
 
-const COUNTRY_ROUTE = "/fr/pays/COM"; // Comoros — small, stable fixture.
+const COUNTRY_ROUTE = getCountryRoute("fr", "COM"); // Comoros — small, stable fixture.
 
 test.describe("@amina @phase-1 — today-testable country page", () => {
   test("1.0-E2E-001 renders the country detail page", async ({ page }) => {
@@ -21,7 +22,7 @@ test.describe("@amina @phase-1 — today-testable country page", () => {
       response?.ok(),
       `Expected 2xx, got ${response?.status()} on ${COUNTRY_ROUTE}`
     ).toBe(true);
-    // CountryDetailViewV2 ships an h1 with the country name. We don't assert
+    // The parchment head ships an h1 with the country name. We don't assert
     // the text content here (data is owned by Supabase and the test should not
     // hardcode the canonical name); we assert the surface is present.
     await expect(page.locator("h1").first()).toBeVisible();

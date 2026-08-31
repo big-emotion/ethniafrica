@@ -1,11 +1,16 @@
 {
   "id": "MOZ",
-  "nameFr": "République du Mozambique (República de Moçambique)",
+  "nameFr": "Mozambique",
   "nameOfficial": "République du Mozambique (República de Moçambique)",
+  "summary": "Le Mozambique porte le nom d'un sultan : Mussa bin Bique, qui régnait au XVe siècle sur l'île que les Portugais abordèrent les premiers. Cités-États swahilies, royaumes shona et chefferies bantoues s'y rencontraient avant cinq siècles de colonisation portugaise. Makua, Tsonga, Shona, Sena, Ndau et Makonde y composent la population.",
   "etymology": "Le nom \"Mozambique\" vient de \"Mozambique\", nom d'une île au large de la côte nord du pays. L'île a été nommée d'après le sultan Mussa bin Bique (ou Musa al-Biq), qui régnait sur l'île au XVe siècle. Les Portugais ont utilisé le nom de l'île pour désigner toute la colonie.",
   "nameOriginActor": "Le nom \"Mozambique\" vient de l'île de Mozambique, nommée d'après le sultan Mussa bin Bique (ou Musa al-Biq), qui régnait sur l'île au XVe siècle. Les Portugais ont utilisé le nom de l'île pour désigner toute la colonie portugaise en Afrique de l'Est.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Moçambique (colonie portugaise, 1498-1975)",
+        "République populaire du Mozambique (1975-1990)"
+      ],
       "antiquity": "Le territoire actuel du Mozambique était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
       "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux. Commerce avec les Arabes et les Swahili (côte). Pas de nom unifié pour l'ensemble du territoire.",
       "precolonial": "Développement des chefferies bantoues (Makua, Tsonga, Shona, Sena, Ndau, Makonde, Yao, Chopi, Tonga). Commerce avec les Arabes et les Swahili (côte, développement des cités-États swahilies). Les Portugais utilisaient le terme \"Moçambique\" pour désigner la colonie.",
@@ -237,13 +242,54 @@
       "postIndependence": "République populaire du Mozambique (1975-1990), régime socialiste, guerre civile (1977-1992, RENAMO contre FRELIMO). 1990 : Adoption de la constitution démocratique, République du Mozambique. 1992 : Accords de paix (Rome), fin de la guerre civile. 1990s-présent : Transition démocratique, élections multipartites, présidence de Joaquim Chissano (1986-2005), Armando Guebuza (2005-2015), Filipe Nyusi (depuis 2015). Défis : pauvreté, développement économique, reconstruction post-guerre, VIH/sida, sécurité (terrorisme dans le nord, depuis 2017). Le Mozambique est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (gaz naturel, charbon)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Mozambique",
-      "SIL Ethnologue – Languages of Mozambique",
-      "Recensements mozambicains",
-      "Études anthropologiques sur les peuples du Mozambique",
-      "Études historiques sur la colonisation portugaise et la guerre de libération",
-      "CIA World Factbook – Mozambique (ethnic groups)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements mozambicains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation portugaise et la guerre de libération",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mozambique (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

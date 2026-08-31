@@ -3,6 +3,7 @@
   "nameMain": "Tonga (Zambie)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tonga (Zambie)",
@@ -96,13 +97,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Tonga (toi, Zambia). https://www.ethnologue.com/language/toi/",
-      "eHRAF World Cultures — Tonga (fq12). https://ehrafworldcultures.yale.edu/cultures/fq12/summary",
-      "The New Humanitarian — The Tonga: Left High and Dry (2007). https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry",
-      "Inclusive Human Learning — Zambia/Tonga/Forced Away. https://inclusivehuman.org/zambia-tonga-forced-away/",
-      "Nkwazi Magazine — Lwiindi Gonde: A Harvest Ceremony of Gratitude. https://nkwazimagazine.com/p-data-block-keylhrgplwiindi-gonde-a-harvest-ceremony-of-gratitudep/",
-      "Encyclopedia.com — Leza. https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/leza",
-      "Facebook/Batonga — The Ancient Tonga Spiritual Hierarchy (Leza, Mizimo). https://www.facebook.com/groups/batonga/posts/10161294996454258/"
+      {
+        "title": "SIL Ethnologue — Tonga (toi, Zambia)",
+        "url": "https://www.ethnologue.com/language/toi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "eHRAF World Cultures — Tonga (fq12)",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fq12/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "The New Humanitarian — The Tonga: Left High and Dry (2007)",
+        "url": "https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for thenewhumanitarian.org."
+      },
+      {
+        "title": "Inclusive Human Learning — Zambia/Tonga/Forced Away",
+        "url": "https://inclusivehuman.org/zambia-tonga-forced-away/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers inclusivehuman.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Nkwazi Magazine — Lwiindi Gonde: A Harvest Ceremony of Gratitude",
+        "url": "https://nkwazimagazine.com/p-data-block-keylhrgplwiindi-gonde-a-harvest-ceremony-of-gratitudep/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for nkwazimagazine.com."
+      },
+      {
+        "title": "Encyclopedia.com — Leza",
+        "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/leza",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "Facebook/Batonga — The Ancient Tonga Spiritual Hierarchy (Leza, Mizimo)",
+        "url": "https://www.facebook.com/groups/batonga/posts/10161294996454258/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

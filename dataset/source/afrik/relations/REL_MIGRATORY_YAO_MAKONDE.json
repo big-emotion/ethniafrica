@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_MIGRATORY_YAO_MAKONDE",
+  "relationType": "migratory",
+  "peopleIdA": "PPL_YAO",
+  "peopleIdB": "PPL_MAKONDE",
+  "direction": "bidirectional",
+  "period": {
+    "startYear": 1750,
+    "endYear": 1890,
+    "label": "Mi-XVIIIe siècle - fin XIXe siècle"
+  },
+  "description": "Entre le milieu du XVIIIe et la fin du XIXe siècle, l'intensification des raids esclavagistes et l'expansion des réseaux commerciaux yao dans la région du fleuve Ruvuma poussent une partie de la population makonde à se replier sur le plateau de Mueda, dans le nord du Mozambique. Ce même plateau accueille par ailleurs des réfugiés d'origine yao et makua fuyant les mêmes violences, qui sont progressivement absorbés par les communautés makonde.",
+  "sources": [
+    {
+      "title": "A History of Mozambique",
+      "author": "M.D.D. Newitt",
+      "year": 1995,
+      "url": "https://archive.org/details/historyofmozambi00newi",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Makonde people » (bouleversement de l'ère esclavagiste dans l'ethnogenèse makonde) et FR « Makondé (peuple) » (repli sur le plateau de Mueda pour fuir les raids esclavagistes, notamment yao). Éditeur : Hurst & Co / Indiana University Press, 1995."
+    },
+    {
+      "title": "Kupilikula: Governance and the Invisible Realm in Mozambique",
+      "author": "Harry G. West",
+      "year": 2005,
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/K/bo3615616.html",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Makonde people », qui cite directement West (2005). L'ouvrage documente l'absorption par les communautés makonde du plateau de Mueda de réfugiés d'origine yao et makua fuyant les violences de la traite. Éditeur : University of Chicago Press, 2005 ; page confirmée accessible."
+    }
+  ]
+}

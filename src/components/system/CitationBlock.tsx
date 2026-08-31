@@ -10,6 +10,7 @@ import {
   formatPlainTextCitation,
   type CitationFormatterInput,
 } from "@/components/system/citation-formatters";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -66,7 +67,7 @@ export function CitationBlock({
   title,
   liveUrl,
   pinned,
-  productName = "Africa History",
+  productName = PRODUCT_NAME,
   accessedAt,
   defaultFormat = "text",
   defaultVariant = "live",
@@ -142,7 +143,7 @@ export function CitationBlock({
 
       <div className="space-y-afh-4xl p-afh-3xl md:p-afh-5xl">
         <header className="border-b border-afh-border pb-afh-2xl">
-          <p className="text-afh-micro font-bold uppercase tracking-wider text-afh-terracotta">
+          <p className="text-afh-eyebrow font-bold uppercase tracking-wider text-afh-terracotta">
             Référence
           </p>
           <h2
@@ -231,7 +232,7 @@ export function CitationBlock({
             value={citation}
             className="min-h-36 w-full resize-y rounded-afh-md border border-afh-border bg-afh-bg px-afh-2xl py-afh-xl font-mono text-afh-small leading-relaxed text-afh-text outline-none focus-visible:ring-2 focus-visible:ring-afh-terracotta focus-visible:ring-offset-2"
           />
-          <span className="pointer-events-none absolute bottom-afh-base right-afh-base text-afh-nano font-bold uppercase tracking-wider text-afh-text-soft">
+          <span className="pointer-events-none absolute bottom-afh-base right-afh-base text-afh-eyebrow font-bold uppercase tracking-wider text-afh-text-soft">
             {FORMAT_LABELS[format]}
           </span>
         </div>
@@ -240,7 +241,10 @@ export function CitationBlock({
           <Button
             type="button"
             onClick={copyCitation}
-            className="w-full rounded-afh-md bg-afh-earth font-afh text-afh-small text-afh-surface hover:bg-afh-terracotta md:w-auto"
+            // The colour stays — it is the citation apparatus's own — but the
+            // radius override goes: a control takes the control radius
+            // wherever it stands, including inside the source layer.
+            className="w-full bg-afh-earth font-afh text-afh-small text-afh-surface hover:bg-afh-terracotta md:w-auto"
           >
             <Copy aria-hidden="true" />
             Copier la citation

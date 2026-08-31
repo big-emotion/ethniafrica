@@ -3,6 +3,7 @@
   "nameMain": "Musgu",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "TCD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Musgu",
@@ -97,11 +98,36 @@
       ]
     },
     "sources": [
-      "Academia.edu — Mousgoum architecture (Oxford University Press, 2014). https://www.academia.edu/71511192/Mousgoum_architecture",
-      "Architecture in Development — Mousgoum dwellings. https://architectureindevelopment.org/project/68",
-      "101lasttribes.com — Musgum people. http://www.101lasttribes.com/tribes/musgum.html",
-      "SIL Ethnologue — Musgu (mug). https://www.ethnologue.com/language/mug/",
-      "The African History Channel — The tolekakay of the Musgum. https://www.facebook.com/TheAfricanHistoryChannelFB/posts/the-tolekakay-of-the-musgum-traditional-architecture-between-the-lower-logone-an/394568216210204/"
+      {
+        "title": "Academia.edu — Mousgoum architecture (Oxford University Press, 2014)",
+        "url": "https://www.academia.edu/71511192/Mousgoum_architecture",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      },
+      {
+        "title": "Architecture in Development — Mousgoum dwellings",
+        "url": "https://architectureindevelopment.org/project/68",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers architectureindevelopment.org; the tier awaits editorial review."
+      },
+      {
+        "title": "101lasttribes.com — Musgum people",
+        "url": "http://www.101lasttribes.com/tribes/musgum.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Musgu (mug)",
+        "url": "https://www.ethnologue.com/language/mug/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "The African History Channel — The tolekakay of the Musgum",
+        "url": "https://www.facebook.com/TheAfricanHistoryChannelFB/posts/the-tolekakay-of-the-musgum-traditional-architecture-between-the-lower-logone-an/394568216210204/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

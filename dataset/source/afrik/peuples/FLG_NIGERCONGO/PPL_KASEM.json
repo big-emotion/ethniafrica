@@ -3,6 +3,7 @@
   "nameMain": "Kasem",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kasem",
@@ -92,11 +93,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Kasem in Ghana. https://joshuaproject.net/people_groups/print/12556/GH",
-      "Joshua Project — Kasem in Burkina Faso. https://joshuaproject.net/people_groups/print/12556/UV",
-      "PeopleGroups.org — Kasena of Ghana. https://peoplegroups.org/people_groups/pg013342/",
-      "SIL Ethnologue — Kasem language (xsm). https://www.ethnologue.com/language/xsm/",
-      "WALS Online — Kasem language. https://wals.info/languoid/lect/wals_code_ksm"
+      {
+        "title": "Joshua Project — Kasem in Ghana",
+        "url": "https://joshuaproject.net/people_groups/print/12556/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Kasem in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/print/12556/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Kasena of Ghana",
+        "url": "https://peoplegroups.org/people_groups/pg013342/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "SIL Ethnologue — Kasem language (xsm)",
+        "url": "https://www.ethnologue.com/language/xsm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "WALS Online — Kasem language",
+        "url": "https://wals.info/languoid/lect/wals_code_ksm",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      }
     ]
   }
 }

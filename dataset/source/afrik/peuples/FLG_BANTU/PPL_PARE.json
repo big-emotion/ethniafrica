@@ -3,6 +3,7 @@
   "nameMain": "Pare",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Pare",
@@ -80,11 +81,36 @@
       ]
     },
     "sources": [
-      "Pare, Asu in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14319)",
-      "Pare People – Africa Direct (https://africadirect.com/blogs/people/african-peoples-art-pare)",
-      "The proud Tribes of Tanzania – Afrimine Tours (https://afriminetours.com/the-proud-tribes-of-tanzania/)",
-      "101 Last Tribes – Pare people (http://www.101lasttribes.com/tribes/pare.html)",
-      "Chasu language – Ethnologue, SIL International, ISO 639-3: asa"
+      {
+        "title": "Pare, Asu in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/14319",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pare People – Africa Direct",
+        "url": "https://africadirect.com/blogs/people/african-peoples-art-pare",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africadirect.com."
+      },
+      {
+        "title": "The proud Tribes of Tanzania – Afrimine Tours",
+        "url": "https://afriminetours.com/the-proud-tribes-of-tanzania/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers afriminetours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes – Pare people",
+        "url": "http://www.101lasttribes.com/tribes/pare.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Chasu language – Ethnologue, SIL International, ISO 639-3: asa",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

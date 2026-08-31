@@ -3,6 +3,7 @@
   "nameMain": "Gova (Hambukushu)",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "BWA", "NAM", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Gova (Hambukushu)",
@@ -105,12 +106,42 @@
       ]
     },
     "sources": [
-      "Mbukushu in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13639/ZA)",
-      "Mbukushu, Gova in Botswana – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13639/BC)",
-      "Mbukushu people – Africa 101 Last Tribes, 2025 (https://www.101lasttribes.com/tribes/mbukushu.html)",
-      "Mbukushu language and alphabet – Omniglot, 2025 (https://www.omniglot.com/writing/mbukushu.htm)",
-      "Zambia people groups – Joshua Project (https://joshuaproject.net/countries/ZA)",
-      "Mbukushu of Angola – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015190/)"
+      {
+        "title": "Mbukushu in Zambia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13639/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mbukushu, Gova in Botswana – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13639/BC",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mbukushu people – Africa 101 Last Tribes, 2025",
+        "url": "https://www.101lasttribes.com/tribes/mbukushu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Mbukushu language and alphabet – Omniglot, 2025",
+        "url": "https://www.omniglot.com/writing/mbukushu.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Zambia people groups – Joshua Project",
+        "url": "https://joshuaproject.net/countries/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mbukushu of Angola – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015190/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

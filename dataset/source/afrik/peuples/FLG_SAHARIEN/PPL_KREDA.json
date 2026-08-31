@@ -3,6 +3,7 @@
   "nameMain": "Kreda",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kreda",
@@ -89,11 +90,36 @@
       ]
     },
     "sources": [
-      "Country Studies US — Chad, Nilo-Saharan Languages. https://countrystudies.us/chad/19.htm",
-      "SIL Ethnologue — Dazaga language (dzg). https://www.ethnologue.com/language/dzg/",
-      "Walters — A Grammar Sketch of Dazaga. https://theswissbay.ch/pdf/Books/Linguistics/Mega%20linguistics%20pack/African/Nilo-Saharan/Daza;%20A%20Grammar%20Sketch%20of%20Dazaga%20(Walters).pdf",
-      "Localizely ISO 639-3 — dzg: Dazaga. https://localizely.com/iso-639-3-list/",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+      {
+        "title": "Country Studies US — Chad, Nilo-Saharan Languages",
+        "url": "https://countrystudies.us/chad/19.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "SIL Ethnologue — Dazaga language (dzg)",
+        "url": "https://www.ethnologue.com/language/dzg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Walters — A Grammar Sketch of Dazaga. ).pdf",
+        "url": "https://theswissbay.ch/pdf/Books/Linguistics/Mega%20linguistics%20pack/African/Nilo-Saharan/Daza;%20A%20Grammar%20Sketch%20of%20Dazaga%20(Walters",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers theswissbay.ch; the tier awaits editorial review."
+      },
+      {
+        "title": "Localizely ISO 639-3 — dzg: Dazaga",
+        "url": "https://localizely.com/iso-639-3-list/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

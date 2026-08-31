@@ -3,6 +3,7 @@
   "nameMain": "Sidama",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sidama",
@@ -84,12 +85,42 @@
       ]
     },
     "sources": [
-      "UNESCO ICH — Fichee-Chambalaalla, New Year festival of the Sidama people (2015). https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
-      "Joshua Project — Sidama in Ethiopia. https://joshuaproject.net/people_groups/14630",
-      "SIL Ethnologue — Sidama (sid). https://www.ethnologue.com",
-      "Glottolog — Sidama (sida1246). https://glottolog.org",
-      "CityPopulation.de — Sidama Region. https://www.citypopulation.de/en/ethiopia/admin/ET08__sidama/",
-      "Academia.edu — Fichee-Chambalalla as a Sidama New Year Festival and World Intangible Cultural Heritage, 2022. https://www.academia.edu/83996948"
+      {
+        "title": "UNESCO ICH — Fichee-Chambalaalla, New Year festival of the Sidama people (2015)",
+        "url": "https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Joshua Project — Sidama in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/14630",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Sidama (sid)",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Sidama (sida1246)",
+        "url": "https://glottolog.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "CityPopulation.de — Sidama Region",
+        "url": "https://www.citypopulation.de/en/ethiopia/admin/ET08__sidama/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Academia.edu — Fichee-Chambalalla as a Sidama New Year Festival and World Intangible Cultural Heritage, 2022",
+        "url": "https://www.academia.edu/83996948",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      }
     ]
   }
 }

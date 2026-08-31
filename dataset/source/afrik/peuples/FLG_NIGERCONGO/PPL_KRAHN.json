@@ -3,6 +3,7 @@
   "nameMain": "Krahn",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["CIV", "LBR"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Krahn",
@@ -96,10 +97,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes - Krahn people. https://www.101lasttribes.com/tribes/krahn.html",
-      "Minority Rights Group - Krou in Cote d'Ivoire. https://minorityrights.org/communities/krou/",
-      "Joshua Project - Krahn, Western in Liberia. https://joshuaproject.net/people_groups/print/15374/LI",
-      "SIL Ethnologue - Western Krahn (krw) et Eastern Krahn (kqo)"
+      {
+        "title": "101 Last Tribes - Krahn people",
+        "url": "https://www.101lasttribes.com/tribes/krahn.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Minority Rights Group - Krou in Cote d'Ivoire",
+        "url": "https://minorityrights.org/communities/krou/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project - Krahn, Western in Liberia",
+        "url": "https://joshuaproject.net/people_groups/print/15374/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue - Western Krahn (krw) et Eastern Krahn (kqo)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

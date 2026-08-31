@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "Joshua Project - Tsimihety in Madagascar : https://joshuaproject.net/people_groups/15593",
-      "SIL Ethnologue - Tsimihety Malagasy (xmw) : https://www.ethnologue.com/language/xmw/",
-      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
-      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
-      "Wilson, Peter J. - Freedom by a Hair's Breadth: Tsimihety in Madagascar, University of Michigan Press, 1992"
+      {
+        "title": "Joshua Project - Tsimihety in Madagascar",
+        "url": "https://joshuaproject.net/people_groups/15593",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue - Tsimihety Malagasy (xmw)",
+        "url": "https://www.ethnologue.com/language/xmw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue - Malagasy macrolanguage (mlg)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook - Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Wilson, Peter J. - Freedom by a Hair's Breadth: Tsimihety in Madagascar, University of Michigan Press, 1992",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

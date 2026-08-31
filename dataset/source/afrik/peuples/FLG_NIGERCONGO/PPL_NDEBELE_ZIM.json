@@ -3,6 +3,7 @@
   "nameMain": "Ndebele du Zimbabwe (Matabele)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Ndebele du Zimbabwe (Matabele)",
@@ -98,10 +99,30 @@
       ]
     },
     "sources": [
-      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
-      "Britannica — Lobengula. https://www.britannica.com/biography/Lobengula",
-      "Joshua Project — Ndebele, Tabele in Zimbabwe. https://joshuaproject.net/people_groups/13275/ZI",
-      "Ethnologue (SIL) — isiNdebele [nde]. https://www.ethnologue.com/language/nde"
+      {
+        "title": "South African History Online — Mfecane",
+        "url": "https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Britannica — Lobengula",
+        "url": "https://www.britannica.com/biography/Lobengula",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Ndebele, Tabele in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/13275/ZI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue (SIL) — isiNdebele [nde]",
+        "url": "https://www.ethnologue.com/language/nde",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

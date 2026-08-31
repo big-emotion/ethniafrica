@@ -3,6 +3,7 @@
   "nameMain": "Bobo",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["BFA", "MLI"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Bobo",
@@ -86,12 +87,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Bobo people. https://www.101lasttribes.com/tribes/bobo.html",
-      "Gateway Africa Safaris — Bobo Tribe. https://www.gateway-africa.com/tribe/bobo_tribe.html",
-      "SIL Ethnologue — Southern Bobo Madare (bwq). https://www.ethnologue.com/language/bwq/",
-      "Chazen Museum of Art — Bobo Mask. https://chazen.wisc.edu/collection/30683/mask/",
-      "Le Moal, Guy. Les Bobo. Nature et fonction des masques. Paris : ORSTOM, 1980.",
-      "Olson, James S. Peoples of Africa. Westport : Greenwood Press, 1996."
+      {
+        "title": "101 Last Tribes — Bobo people",
+        "url": "https://www.101lasttribes.com/tribes/bobo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Gateway Africa Safaris — Bobo Tribe",
+        "url": "https://www.gateway-africa.com/tribe/bobo_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "SIL Ethnologue — Southern Bobo Madare (bwq)",
+        "url": "https://www.ethnologue.com/language/bwq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Chazen Museum of Art — Bobo Mask",
+        "url": "https://chazen.wisc.edu/collection/30683/mask/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers chazen.wisc.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Le Moal, Guy. Les Bobo. Nature et fonction des masques. Paris : ORSTOM, 1980",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Olson, James S. Peoples of Africa. Westport : Greenwood Press, 1996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

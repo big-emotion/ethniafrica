@@ -1,11 +1,17 @@
 {
   "id": "DZA",
-  "nameFr": "République algérienne démocratique et populaire (Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah)",
+  "nameFr": "Algérie",
   "nameOfficial": "République algérienne démocratique et populaire (Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah)",
+  "summary": "L'Algérie tire son nom d'« Al-Djazair », « les îles », donné par les Ottomans aux îlots de la baie d'Alger. Terre des royaumes numides de Massinissa et de Jugurtha, elle fut régence ottomane puis, de 1830 à 1962, colonie et département français. Kabyles, Chaouis, Mozabites et Touaregs y maintiennent les langues amazighes aux côtés de l'arabe.",
   "etymology": "Le nom \"Algérie\" vient de \"Al-Djazair\" (الجزائر), qui signifie \"les îles\" en arabe, en référence aux îlots situés face à la baie d'Alger. Le nom a été donné par les Ottomans au XVIe siècle. Le terme français \"Algérie\" a été officialisé lors de la colonisation française (1830-1962).",
   "nameOriginActor": "Les Ottomans ont nommé la région \"Al-Djazair\" au XVIe siècle. Le nom français \"Algérie\" a été officialisé par l'administration coloniale française en 1839.",
   "content": {
     "historicalNames": {
+      "formerNames": [
+        "Numidie (Antiquité)",
+        "Régence d'Alger (1516-1830)",
+        "Algérie française (1830-1962)"
+      ],
       "antiquity": "Le territoire correspondait à la Numidie (royaumes numides), à la Maurétanie césarienne (région côtière), et à des territoires contrôlés par Carthage puis par Rome. Les peuples autochtones étaient les Numides (Berbères).",
       "middleAges": "Région du Maghreb central, contrôlée par diverses dynasties berbères et arabes (Rustamides, Fatimides, Zirides, Hammadides, Almohades, Zianides). Nom arabe \"Al-Djazair\" apparaît au Moyen Âge.",
       "precolonial": "Régence d'Alger (1516-1830), État ottoman semi-autonome dirigé par des deys. Le territoire était appelé \"Al-Djazair\" par les Ottomans et les populations locales.",
@@ -198,23 +204,83 @@
       "postIndependence": "République algérienne (1962), socialisme algérien, nationalisation des hydrocarbures, guerre civile (1991-2002), printemps arabe (2011), mouvement Hirak (2019), transition politique."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Algeria",
-      "Ethnologue – Languages of Algeria",
-      "Minority Rights Group – Amazigh in Algeria",
-      "CNRS – Berbères",
-      "Salem Chaker – travaux sur les Berbères",
-      "Encyclopaedia of Islam – Algeria",
-      "Joshua Project – Berber, Kabyle in Algeria",
-      "Joshua Project – Berber, Shawiya in Algeria",
-      "UNPO – Kabylia",
-      "Recensements algériens"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue – Languages of Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Amazigh in Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CNRS – Berbères",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Salem Chaker – travaux sur les Berbères",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia of Islam – Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project – Berber, Kabyle in Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project – Berber, Shawiya in Algeria",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNPO – Kabylia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements algériens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Arabes d'Algérie",
-          "population": 31500000,
           "percentageInCountry": 70,
           "percentageInAfrica": 17.5,
           "peopleId": "PPL_ARABES_AFRIQUE",

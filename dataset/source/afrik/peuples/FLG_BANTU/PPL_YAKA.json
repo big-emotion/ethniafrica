@@ -3,6 +3,7 @@
   "nameMain": "Yaka",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["COD", "AGO"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Yaka",
@@ -91,17 +92,72 @@
       ]
     },
     "sources": [
-      "Omniglot — Yaka language and alphabet : https://www.omniglot.com/writing/yaka.htm",
-      "WALS Online — Language Yaka (ISO yaf) : https://wals.info/languoid/lect/wals_code_yak",
-      "Smarthistory — Headdress Yaka peoples (Metropolitan Museum) : https://smarthistory.org/headdress-yaka/",
-      "Metropolitan Museum of Art — Headdress Ndeemba Yaka : https://www.metmuseum.org/art/collection/search/310954",
-      "Joshua Project — Yaka in Congo DRC : https://joshuaproject.net/people_groups/15953/CG",
-      "SIL Ethnologue — Yaka H.31 : https://www.ethnologue.com/subgroup/3342/",
-      "ShareOK — Yaka Mbaala Masks During and After Colonization : https://shareok.org/items/53a62f67-eec5-4a59-b5b8-8b3133d8ae9a",
-      "Glottolog — Yaka (yaka1269) : https://glottolog.org/resource/languoid/id/yaka1269",
-      "UNFPA — DRC Population 2025 : https://www.unfpa.org/data/world-population/CD",
-      "CIA World Factbook — Congo DRC : https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
-      "CIA World Factbook — Angola : https://www.cia.gov/the-world-factbook/countries/angola/"
+      {
+        "title": "Omniglot — Yaka language and alphabet",
+        "url": "https://www.omniglot.com/writing/yaka.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "WALS Online — Language Yaka (ISO yaf)",
+        "url": "https://wals.info/languoid/lect/wals_code_yak",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      },
+      {
+        "title": "Smarthistory — Headdress Yaka peoples (Metropolitan Museum)",
+        "url": "https://smarthistory.org/headdress-yaka/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "Metropolitan Museum of Art — Headdress Ndeemba Yaka",
+        "url": "https://www.metmuseum.org/art/collection/search/310954",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      },
+      {
+        "title": "Joshua Project — Yaka in Congo DRC",
+        "url": "https://joshuaproject.net/people_groups/15953/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Yaka H.31",
+        "url": "https://www.ethnologue.com/subgroup/3342/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ShareOK — Yaka Mbaala Masks During and After Colonization",
+        "url": "https://shareok.org/items/53a62f67-eec5-4a59-b5b8-8b3133d8ae9a",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for shareok.org."
+      },
+      {
+        "title": "Glottolog — Yaka (yaka1269)",
+        "url": "https://glottolog.org/resource/languoid/id/yaka1269",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "UNFPA — DRC Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/CD",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "CIA World Factbook — Congo DRC",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Angola",
+        "url": "https://www.cia.gov/the-world-factbook/countries/angola/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

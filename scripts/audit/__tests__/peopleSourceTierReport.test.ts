@@ -32,6 +32,7 @@ const auditReport: PeopleSourceTierAuditReport = {
       parseSuccess: true,
       currentCountries: ["ZAF"],
       sourceCount: 1,
+      tierCounts: { official: 1, referenced: 0, unverified: 0 },
       findings: [],
       countryDeviations: [],
       countryParseFailures: [],
@@ -43,6 +44,7 @@ const auditReport: PeopleSourceTierAuditReport = {
       parseSuccess: true,
       currentCountries: ["MLI"],
       sourceCount: 0,
+      tierCounts: { official: 0, referenced: 0, unverified: 0 },
       findings: [
         {
           code: "SOURCE_MISSING",
@@ -66,6 +68,7 @@ const auditReport: PeopleSourceTierAuditReport = {
       parseSuccess: true,
       currentCountries: ["GHA"],
       sourceCount: 1,
+      tierCounts: { official: 1, referenced: 0, unverified: 0 },
       findings: [],
       countryDeviations: [],
       countryParseFailures: [],
@@ -93,6 +96,7 @@ const auditReport: PeopleSourceTierAuditReport = {
     ineligibleProfiles: 1,
     parseFailures: 0,
     countryDeviations: 1,
+    tierCounts: { official: 2, referenced: 0, unverified: 0 },
   },
 };
 
@@ -122,7 +126,8 @@ describe("people source tier report rendering", () => {
     expect(markdown).toContain("# People Source Tier Audit");
     expect(markdown).toContain("| Total profiles | 3 |");
     expect(markdown).toContain("| SOURCE_MISSING | 1 |");
-    expect(markdown).toContain("| SOURCE_TIER3 | 0 |");
+    expect(markdown).toContain("| SOURCE_UNTIERED | 0 |");
+    expect(markdown).toContain("| Officielle (official) | 2 |");
     expect(markdown).toContain(
       "| MLI | dataset/source/afrik/pays/MLI.json | 98 | -2 |"
     );

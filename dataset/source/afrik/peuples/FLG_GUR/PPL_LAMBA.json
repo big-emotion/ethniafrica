@@ -3,6 +3,7 @@
   "nameMain": "Lamba",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["TGO", "BEN", "GHA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Lamba",
@@ -80,10 +81,30 @@
       ]
     },
     "sources": [
-      "Lama people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/18887)",
-      "Lama in Togo – Joshua Project, 2024 (https://joshuaproject.net/people_groups/18887/TO)",
-      "Lamba people – Africa 101 Last Tribes (http://www.101lasttribes.com/tribes/lamba_togo.html)",
-      "Togo people groups – Joshua Project (https://joshuaproject.net/countries/to)"
+      {
+        "title": "Lama people group in all countries – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/18887",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lama in Togo – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/18887/TO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lamba people – Africa 101 Last Tribes",
+        "url": "http://www.101lasttribes.com/tribes/lamba_togo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Togo people groups – Joshua Project",
+        "url": "https://joshuaproject.net/countries/to",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

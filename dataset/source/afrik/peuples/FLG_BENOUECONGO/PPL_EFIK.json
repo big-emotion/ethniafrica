@@ -3,6 +3,7 @@
   "nameMain": "Efik",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["NGA"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Efik",
@@ -97,13 +98,48 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Efik. https://www.britannica.com/topic/Efik",
-      "Joshua Project — Efik in Nigeria (2025). https://joshuaproject.net/people_groups/11717/NI",
-      "Talbot, P. Amaury. In the Shadow of the Bush (1912).",
-      "Aye, Ekei Essien. Old Calabar Through the Centuries (2000).",
-      "Ethnologue (SIL International) — Efik language, code efi. https://www.ethnologue.com/",
-      "Study.com — Efik People History, Culture and Language. https://study.com/academy/lesson/efik-history-language-culture-people.html",
-      "Simmons, Donald C. Efik Divination, Ordeals and Omens (1956)."
+      {
+        "title": "Encyclopaedia Britannica — Efik",
+        "url": "https://www.britannica.com/topic/Efik",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Efik in Nigeria (2025)",
+        "url": "https://joshuaproject.net/people_groups/11717/NI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Talbot, P. Amaury. In the Shadow of the Bush (1912)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Aye, Ekei Essien. Old Calabar Through the Centuries (2000)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue (SIL International) — Efik language, code efi",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Study.com — Efik People History, Culture and Language",
+        "url": "https://study.com/academy/lesson/efik-history-language-culture-people.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "Simmons, Donald C. Efik Divination, Ordeals and Omens (1956)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

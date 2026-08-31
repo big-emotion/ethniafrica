@@ -3,6 +3,7 @@
   "nameMain": "Wandya",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD", "UGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Wandya",
@@ -84,12 +85,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — recherche sur les langues bantous des Grands Lacs. https://www.ethnologue.com/subgroup/53/",
-      "101 Last Tribes — Nande people (contexte regional). https://www.101lasttribes.com/tribes/nande.html",
-      "Minority Rights Group — Democratic Republic of the Congo. https://minorityrights.org/country/democratic-republic-of-the-congo/",
-      "Britannica — People of the Democratic Republic of the Congo. https://www.britannica.com/place/Democratic-Republic-of-the-Congo/People",
-      "Joshua Project — Congo, Democratic Republic of people groups. https://joshuaproject.net/countries/cg",
-      "Gorilla Highlands — The Bantu (contexte DRC-Ouganda). https://gorillahighlands.com/bantu/"
+      {
+        "title": "SIL Ethnologue — recherche sur les langues bantous des Grands Lacs",
+        "url": "https://www.ethnologue.com/subgroup/53/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Nande people (contexte regional)",
+        "url": "https://www.101lasttribes.com/tribes/nande.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Minority Rights Group — Democratic Republic of the Congo",
+        "url": "https://minorityrights.org/country/democratic-republic-of-the-congo/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Britannica — People of the Democratic Republic of the Congo",
+        "url": "https://www.britannica.com/place/Democratic-Republic-of-the-Congo/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Congo, Democratic Republic of people groups",
+        "url": "https://joshuaproject.net/countries/cg",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gorilla Highlands — The Bantu (contexte DRC-Ouganda)",
+        "url": "https://gorillahighlands.com/bantu/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers gorillahighlands.com; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Leya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Leya",
@@ -83,9 +84,24 @@
       ]
     },
     "sources": [
-      "Sawka, Mbewe, Josephat, Schwertfeger – The Toka-Leya of Zambia: Linguistic Survey Report, Partners in Bible Translation, 2015 (https://partnersinbibletranslation.org/wp-content/uploads/2018/03/Toka-Leya_Survey_2015.pdf)",
-      "Joshua Project – Leya in Zambia, 2025 (https://joshuaproject.net/people_groups/13048)",
-      "A Short History Of The Leya – Mukuni Royal Dynasty, Calameo, 2019 (https://www.calameo.com/books/005916510ee1bd9d9abeb)"
+      {
+        "title": "Sawka, Mbewe, Josephat, Schwertfeger – The Toka-Leya of Zambia: Linguistic Survey Report, Partners in Bible Translation, 2015",
+        "url": "https://partnersinbibletranslation.org/wp-content/uploads/2018/03/Toka-Leya_Survey_2015.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for partnersinbibletranslation.org."
+      },
+      {
+        "title": "Joshua Project – Leya in Zambia, 2025",
+        "url": "https://joshuaproject.net/people_groups/13048",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "A Short History Of The Leya – Mukuni Royal Dynasty, Calameo, 2019",
+        "url": "https://www.calameo.com/books/005916510ee1bd9d9abeb",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for calameo.com."
+      }
     ]
   }
 }

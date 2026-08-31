@@ -3,6 +3,7 @@
   "nameMain": "Baga",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Baga",
@@ -99,10 +100,30 @@
       ]
     },
     "sources": [
-      "Kutubu Arts. The Baga People of Guinea: History, Culture, and the Iconic Nimba Mask. https://kutubuarts.com/blogs/african-art-curated/baga-history-and-culture (2025)",
-      "Encyclopedia Britannica. Baga. https://www.britannica.com/topic/Baga",
-      "101 Last Tribes. Baga people. https://www.101lasttribes.com/tribes/baga.html",
-      "Ethnologue (SIL International). Baga subgroup. https://www.ethnologue.com/subgroup/1232/"
+      {
+        "title": "Kutubu Arts. The Baga People of Guinea: History, Culture, and the Iconic Nimba Mask. (2025)",
+        "url": "https://kutubuarts.com/blogs/african-art-curated/baga-history-and-culture",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kutubuarts.com."
+      },
+      {
+        "title": "Encyclopedia Britannica. Baga",
+        "url": "https://www.britannica.com/topic/Baga",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes. Baga people",
+        "url": "https://www.101lasttribes.com/tribes/baga.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue (SIL International). Baga subgroup",
+        "url": "https://www.ethnologue.com/subgroup/1232/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

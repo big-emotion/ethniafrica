@@ -1,11 +1,13 @@
 {
   "id": "STP",
-  "nameFr": "République démocratique de São Tomé-et-Príncipe (República Democrática de São Tomé e Príncipe)",
+  "nameFr": "Sao Tomé-et-Principe",
   "nameOfficial": "République démocratique de São Tomé-et-Príncipe (República Democrática de São Tomé e Príncipe)",
+  "summary": "São Tomé porte le nom de l'apôtre Thomas, fêté le jour où les Portugais abordèrent l'île en 1470. Les îles étaient inhabitées : la société santoméenne est née de la plantation et de la traite. Forros, Angolares et Tongas y parlent, outre le portugais, le forro et l'angolar.",
   "etymology": "Le nom \"São Tomé\" vient de \"Saint Thomas\" en portugais, en l'honneur de l'apôtre Thomas. L'île a été découverte par les Portugais le 21 décembre 1470, jour de la fête de saint Thomas. Le nom \"Príncipe\" vient de \"Prince\" en portugais, en l'honneur du prince héritier du Portugal. L'île a été nommée \"Ilha do Príncipe\" (île du Prince) en 1471. Le nom \"São Tomé-et-Príncipe\" a été officialisé lors de l'indépendance en 1975.",
   "nameOriginActor": "Les Portugais ont nommé l'île principale \"São Tomé\" en l'honneur de l'apôtre Thomas (découverte le 21 décembre 1470, jour de la fête de saint Thomas). L'île secondaire a été nommée \"Príncipe\" en l'honneur du prince héritier du Portugal (1471). Le nom \"São Tomé-et-Príncipe\" a été officialisé lors de l'indépendance (1975).",
   "content": {
     "historicalNames": {
+      "formerNames": ["Colonie portugaise de São Tomé-et-Príncipe (1470-1975)"],
       "antiquity": "Les îles de São Tomé-et-Príncipe étaient inhabitées. Pas de présence humaine avant l'arrivée des Portugais.",
       "middleAges": "Les îles restent inhabitées. Pas de présence humaine permanente.",
       "precolonial": "Les îles restent inhabitées jusqu'à l'arrivée des Portugais. Pas de structures politiques ou sociales.",
@@ -135,13 +137,54 @@
       "postIndependence": "République démocratique de São Tomé-et-Príncipe (1975), présidence de Manuel Pinto da Costa (1975-1991), transition démocratique (1991), élections multipartites, présidence de Miguel Trovoada (1991-2001), Fradique de Menezes (2001-2011), Manuel Pinto da Costa (2011-2016), Evaristo Carvalho (2016-2021), Carlos Vila Nova (depuis 2021). Stabilité politique relative, démocratie multipartite, développement économique. Défis : pauvreté, développement économique, dépendance aux exportations de cacao et café, potentiel pétrolier offshore. São Tomé-et-Príncipe est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (pétrole offshore, tourisme)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – São Tomé and Príncipe",
-      "SIL Ethnologue – Languages of São Tomé and Príncipe",
-      "Recensements santoméens",
-      "Études anthropologiques sur les peuples de São Tomé-et-Príncipe",
-      "Études historiques sur la colonisation portugaise et le développement des peuples créoles",
-      "CIA World Factbook – São Tomé and Príncipe (ethnic groups)"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – São Tomé and Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of São Tomé and Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements santoméens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de São Tomé-et-Príncipe",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation portugaise et le développement des peuples créoles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – São Tomé and Príncipe (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

@@ -3,6 +3,7 @@
   "nameMain": "Autres peuples bantous du Gabon",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["GAB"],
+  "classificationStatus": "reconstructive",
   "content": {
     "appellations": {
       "mainName": "Autres peuples bantous du Gabon",
@@ -95,11 +96,36 @@
       ]
     },
     "sources": [
-      "Britannica – Gabon (https://www.britannica.com/place/Gabon)",
-      "Fang people – 101 Last Tribes (https://www.101lasttribes.com/tribes/fang.html)",
-      "Joshua Project – Fang in Gabon (https://joshuaproject.net/people_groups/11187/GB)",
-      "Institut Pasteur – Histoire migratoire des peuples Bantous, 2017 (https://www.pasteur.fr/fr/espace-presse/documents-presse/histoire-migratoire-peuples-bantous)",
-      "CNRS Editions – Langue et histoire des Bantu (https://books.openedition.org/editionscnrs/3955)"
+      {
+        "title": "Britannica – Gabon",
+        "url": "https://www.britannica.com/place/Gabon",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Fang people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/fang.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Fang in Gabon",
+        "url": "https://joshuaproject.net/people_groups/11187/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Institut Pasteur – Histoire migratoire des peuples Bantous, 2017",
+        "url": "https://www.pasteur.fr/fr/espace-presse/documents-presse/histoire-migratoire-peuples-bantous",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pasteur.fr."
+      },
+      {
+        "title": "CNRS Editions – Langue et histoire des Bantu",
+        "url": "https://books.openedition.org/editionscnrs/3955",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of books.openedition.org."
+      }
     ]
   }
 }

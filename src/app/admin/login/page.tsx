@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -75,11 +76,11 @@ function LoginForm() {
   if (success) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-        <Card className="w-full max-w-md p-8">
-          <h1 className="text-2xl font-bold mb-6 text-center">
+        <Card className="w-full max-w-md rounded-afh-xl p-8">
+          <h1 className="text-afh-h2 font-bold mb-6 text-center">
             Check your email
           </h1>
-          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-sm text-center">
+          <div className="p-3 bg-green-50 border border-green-200 text-green-700 rounded text-afh-small text-center">
             We&apos;ve sent a magic link to <strong>{email}</strong>. Click the
             link in the email to sign in.
           </div>
@@ -100,12 +101,12 @@ function LoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+      <Card className="w-full max-w-md rounded-afh-xl p-8">
+        <h1 className="text-afh-h2 font-bold mb-6 text-center">Admin Login</h1>
 
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded text-sm mb-4">
-            {error}
+          <div className="mb-4">
+            <FormFieldError variant="banner">{error}</FormFieldError>
           </div>
         )}
 
@@ -161,7 +162,7 @@ function LoginForm() {
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
-          <div className="relative flex justify-center text-xs uppercase">
+          <div className="relative flex justify-center text-afh-eyebrow uppercase">
             <span className="bg-card px-2 text-muted-foreground">
               Or continue with email
             </span>
@@ -183,7 +184,7 @@ function LoginForm() {
               disabled={loading}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full md:w-auto" disabled={loading}>
             {loading ? "Sending..." : "Send Magic Link"}
           </Button>
         </form>
@@ -192,13 +193,16 @@ function LoginForm() {
   );
 }
 
+// @req REQ-052
 export default function AdminLoginPage() {
   return (
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <Card className="w-full max-w-md p-8">
-            <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
+          <Card className="w-full max-w-md rounded-afh-xl p-8">
+            <h1 className="text-afh-h2 font-bold mb-6 text-center">
+              Admin Login
+            </h1>
             <p className="text-center text-muted-foreground">Loading...</p>
           </Card>
         </div>

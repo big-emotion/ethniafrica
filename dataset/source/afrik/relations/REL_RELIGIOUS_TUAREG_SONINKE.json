@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_RELIGIOUS_TUAREG_SONINKE",
+  "relationType": "religious",
+  "peopleIdA": "PPL_TUAREG",
+  "peopleIdB": "PPL_SONINKE",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 800,
+    "endYear": 1076,
+    "label": "IXe-XIe siècle"
+  },
+  "description": "À partir du IXe siècle, des marchands berbères et touaregs islamisés diffusent l'islam vers le sud le long des routes caravanières reliant le Maghreb aux cités marchandes sahéliennes de l'empire du Ghana (notamment Koumbi Saleh). À la fin du Xe et au XIe siècle, l'élite dirigeante soninké du Ghana a adopté l'islam au niveau de la cour : le roi emploie des interprètes musulmans, et la plupart de ses ministres et trésoriers sont des musulmans lettrés en arabe, tandis que le souverain lui-même et la population dans son ensemble conservent largement la religion traditionnelle. Le mouvement almoravide, mouvement de réforme religieuse berbère né parmi les Berbères sahariens, intensifie ensuite cette islamisation au milieu et à la fin du XIe siècle.",
+  "sources": [
+    {
+      "title": "General History of Africa, Vol. III: Africa from the Seventh to the Eleventh Century, chapitre « The Almoravids »",
+      "author": "I. Hrbek et J. Devisse (chapitre) ; M. El Fasi et I. Hrbek (direction du volume) ; UNESCO",
+      "year": 1988,
+      "url": "https://archive.org/details/unesco_general_history_africa_iii",
+      "tier": 1,
+      "notes": "Histoire générale de l'Afrique de l'UNESCO, vol. III. Le lien direct unesdoc.unesco.org renvoie une erreur 403 (blocage automatisé) dans cet environnement ; la copie Internet Archive de la même publication officielle de l'UNESCO a été utilisée et confirmée accessible. Le chapitre couvre la conquête/réforme almoravide et son effet islamisant sur l'empire du Ghana dirigé par les Soninké."
+    },
+    {
+      "title": "Ancient Ghana and Mali",
+      "author": "Nehemia Levtzion",
+      "year": 1973,
+      "url": "https://sahistory.org.za/sites/default/files/archive-files3/nehemia_levtzion_ancient_ghana_and_malibook4you.pdf",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Ghana Empire » et FR « Empire du Ghana ». Monographie académique (Methuen, 1973 ; réimpr. Africana Publishing, 1980) comportant des chapitres dédiés au « Royaume soninké » et à « L'islam dans les royaumes soudanais », couvrant l'islamisation de l'élite soninké par le contact commercial transsaharien avec les Berbères/Touaregs."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { useKeyboardShortcuts } from "../use-keyboard-shortcuts";
+import { getLocalizedRoute } from "@/lib/routing";
 
 function fireKey(key: string, meta = false, ctrl = false) {
   act(() => {
@@ -30,30 +31,32 @@ describe("useKeyboardShortcuts", () => {
     vi.restoreAllMocks();
   });
 
-  it("calls navigate('/fr/recherche') on Ctrl+K", () => {
+  // @req REQ-091
+  it("navigates to the search route on Ctrl+K", () => {
     renderHook(() =>
       useKeyboardShortcuts({
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     fireKey("k", false, true);
-    expect(navigate).toHaveBeenCalledWith("/fr/recherche");
+    expect(navigate).toHaveBeenCalledWith(getLocalizedRoute("fr", "search"));
   });
 
-  it("calls navigate('/fr/recherche') on Meta+K", () => {
+  // @req REQ-091
+  it("navigates to the search route on Meta+K", () => {
     renderHook(() =>
       useKeyboardShortcuts({
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     fireKey("k", true, false);
-    expect(navigate).toHaveBeenCalledWith("/fr/recherche");
+    expect(navigate).toHaveBeenCalledWith(getLocalizedRoute("fr", "search"));
   });
 
   it("calls openSearch on '/' key when not in input", () => {
@@ -62,7 +65,7 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     fireKey("/");
@@ -78,7 +81,7 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     fireKey("/");
@@ -92,14 +95,14 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
-        peoplesRoute: "/fr/peuples",
-        familiesRoute: "/fr/familles",
+        searchRoute: getLocalizedRoute("fr", "search"),
+        peoplesRoute: getLocalizedRoute("fr", "peoples"),
+        familiesRoute: getLocalizedRoute("fr", "families"),
       })
     );
     fireKey("g");
     fireKey("p");
-    expect(navigate).toHaveBeenCalledWith("/fr/peuples");
+    expect(navigate).toHaveBeenCalledWith(getLocalizedRoute("fr", "peoples"));
   });
 
   it("navigates to families on 'g' then 'f'", () => {
@@ -108,14 +111,14 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
-        peoplesRoute: "/fr/peuples",
-        familiesRoute: "/fr/familles",
+        searchRoute: getLocalizedRoute("fr", "search"),
+        peoplesRoute: getLocalizedRoute("fr", "peoples"),
+        familiesRoute: getLocalizedRoute("fr", "families"),
       })
     );
     fireKey("g");
     fireKey("f");
-    expect(navigate).toHaveBeenCalledWith("/fr/familles");
+    expect(navigate).toHaveBeenCalledWith(getLocalizedRoute("fr", "families"));
   });
 
   it("opens shortcuts modal on '?'", () => {
@@ -124,7 +127,7 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     act(() => {
@@ -142,7 +145,7 @@ describe("useKeyboardShortcuts", () => {
         navigate,
         openSearch,
         openShortcutsModal,
-        searchRoute: "/fr/recherche",
+        searchRoute: getLocalizedRoute("fr", "search"),
       })
     );
     unmount();

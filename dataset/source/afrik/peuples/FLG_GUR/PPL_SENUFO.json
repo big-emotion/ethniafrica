@@ -120,11 +120,36 @@
       ]
     },
     "sources": [
-      "Ethnologue - Cebaara Senufo (sef). https://www.ethnologue.com/language/sef/",
-      "Britannica - Senufo. https://www.britannica.com/topic/Senufo",
-      "Wiktionary - ISO 639-3 codes Africa (Senufo). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
-      "Joshua Project - Senoufo, Southern in Cote d'Ivoire. https://joshuaproject.net/people_groups/15066/IV",
-      "CIA World Factbook - Burkina Faso. https://www.cia.gov/the-world-factbook/countries/burkina-faso/"
+      {
+        "title": "Ethnologue - Cebaara Senufo (sef)",
+        "url": "https://www.ethnologue.com/language/sef/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica - Senufo",
+        "url": "https://www.britannica.com/topic/Senufo",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Wiktionary - ISO 639-3 codes Africa (Senufo)",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Joshua Project - Senoufo, Southern in Cote d'Ivoire",
+        "url": "https://joshuaproject.net/people_groups/15066/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "CIA World Factbook - Burkina Faso",
+        "url": "https://www.cia.gov/the-world-factbook/countries/burkina-faso/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

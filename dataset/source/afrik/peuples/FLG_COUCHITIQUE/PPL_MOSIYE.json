@@ -3,6 +3,7 @@
   "nameMain": "Mosiye",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mosiye",
@@ -81,12 +82,42 @@
       ]
     },
     "sources": [
-      "Harlow, Erika – Phonology of Mosiye (these, Trinity Western University / Arca), 2013 (https://arcabc.ca/islandora/object/twu:319)",
-      "Mosiye in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11581)",
-      "Mosiye 2 Profile – Wycliffe Bible Translators, 2020-2023 (https://www.wycliffe.org/Main%20Uploads/Projects/PDF/Mosiye%202%20Profile%20WEB.pdf)",
-      "Dobase of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011570/)",
-      "ISO 639-3: dox (Bussa/Mositacha) – SIL International / Ethnologue",
-      "Appendix: ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+      {
+        "title": "Harlow, Erika – Phonology of Mosiye (these, Trinity Western University / Arca), 2013",
+        "url": "https://arcabc.ca/islandora/object/twu:319",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for arcabc.ca."
+      },
+      {
+        "title": "Mosiye in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11581",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mosiye 2 Profile – Wycliffe Bible Translators, 2020-2023",
+        "url": "https://www.wycliffe.org/Main%20Uploads/Projects/PDF/Mosiye%202%20Profile%20WEB.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wycliffe.org."
+      },
+      {
+        "title": "Dobase of Ethiopia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg011570/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "ISO 639-3: dox (Bussa/Mositacha) – SIL International / Ethnologue",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Appendix: ISO 639-3 codes/Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

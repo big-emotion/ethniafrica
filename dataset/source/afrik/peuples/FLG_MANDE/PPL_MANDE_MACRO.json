@@ -3,6 +3,7 @@
   "nameMain": "Peuples Mandé (macro-groupe)",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["MLI", "GIN", "SEN", "CIV", "BFA", "GMB", "SLE"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Peuples Mandé (macro-groupe)",
@@ -136,14 +137,54 @@
       ]
     },
     "sources": [
-      "Britannica — Mande. https://www.britannica.com/topic/Mande",
-      "Britannica — Mande languages. https://www.britannica.com/topic/Mande-languages",
-      "EBSCO Research Starters — Mande Languages. https://www.ebsco.com/research-starters/language-and-linguistics/mande-languages",
-      "Trailblazer Travelz — The Mande People. https://www.trailblazertravelz.com/the-mande-people-west-africa/",
-      "Study.com — Mande People History Location Features. https://study.com/academy/lesson/mande-people-location-culture.html",
-      "SIL Ethnologue — Mande language family. https://www.ethnologue.com/subgroup/1238/",
-      "Niane, Djibril Tamsir — Soundjata ou l'epopee mandingue. Paris : Presence Africaine, 1960.",
-      "Levtzion, Nehemia — Ancient Ghana and Mali. Londres : Methuen, 1973."
+      {
+        "title": "Britannica — Mande",
+        "url": "https://www.britannica.com/topic/Mande",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Britannica — Mande languages",
+        "url": "https://www.britannica.com/topic/Mande-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "EBSCO Research Starters — Mande Languages",
+        "url": "https://www.ebsco.com/research-starters/language-and-linguistics/mande-languages",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "Trailblazer Travelz — The Mande People",
+        "url": "https://www.trailblazertravelz.com/the-mande-people-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for trailblazertravelz.com."
+      },
+      {
+        "title": "Study.com — Mande People History Location Features",
+        "url": "https://study.com/academy/lesson/mande-people-location-culture.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "SIL Ethnologue — Mande language family",
+        "url": "https://www.ethnologue.com/subgroup/1238/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Niane, Djibril Tamsir — Soundjata ou l'epopee mandingue. Paris : Presence Africaine, 1960",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Levtzion, Nehemia — Ancient Ghana and Mali. Londres : Methuen, 1973",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -85,10 +85,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Aari in Ethiopia (https://joshuaproject.net/people_groups/10424)",
-      "PeopleGroups.org – Ari of Ethiopia (https://peoplegroups.org/people_groups/pg011548/)",
-      "Ethnologue – Aari [aiw] (https://www.ethnologue.com/language/aiw/)",
-      "Recensement éthiopien 2007, Central Statistical Agency of Ethiopia"
+      {
+        "title": "Joshua Project – Aari in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/10424",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org – Ari of Ethiopia",
+        "url": "https://peoplegroups.org/people_groups/pg011548/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Ethnologue – Aari [aiw]",
+        "url": "https://www.ethnologue.com/language/aiw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Recensement éthiopien 2007, Central Statistical Agency of Ethiopia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

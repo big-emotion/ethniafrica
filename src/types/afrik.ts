@@ -7,6 +7,8 @@
  * - New sections can be added to TXT files without schema migration
  */
 
+import type { SourceTier } from "@/types/sources";
+
 // ==========================================
 // STABLE IDENTIFIERS (IMMUTABLE)
 // ==========================================
@@ -51,7 +53,10 @@ export type PeopleId = string;
  * - `reconstructive`: Classification being actively reconstructed / decolonized
  */
 export type ClassificationStatus =
-  "consensual" | "contested" | "colonial-legacy" | "reconstructive";
+  | "consensual"
+  | "contested"
+  | "colonial-legacy"
+  | "reconstructive";
 
 // ==========================================
 // CORE ENTITIES (with stable IDs)
@@ -66,6 +71,12 @@ export interface Country {
   id: CountryId; // ISO 3166-1 alpha-3 (IMMUTABLE)
   nameFr: string;
   nameOfficial?: string;
+  /**
+   * The chapeau: what a reader takes away if they read nothing else.
+   * It restates the fiche and never adds to it, which is why it carries no
+   * sources of its own — a summary that introduced a claim would need them.
+   */
+  summary?: string;
   etymology?: string;
   nameOriginActor?: string; // Person/people/administration who named it
 
@@ -91,6 +102,21 @@ export interface LanguageFamily {
 
   // Editorial classification status (migration 009)
   classificationStatus?: ClassificationStatus | null;
+
+  /**
+   * Number of afrik_peoples rows whose language_family_id matches this
+   * family, computed from stored rows (REQ-108) — not the fiche-declared
+   * content.associatedPeoples length.
+   */
+  peopleCount?: number;
+
+  /**
+   * Country presence reconstructed from the stored `currentCountries` of
+   * every people carrying this family's id — the union the atlas charter
+   * calls the family's "footprint" (docs/design/atlas-charter.md §1). Always
+   * derived, never the fiche's own declared `content.distribution` (REQ-119).
+   */
+  footprintByCountry?: Record<CountryId, number>;
 
   // Variable content stored in JSONB (evolutionary)
   content: LanguageFamilyContent;
@@ -147,6 +173,27 @@ export interface People {
 // ==========================================
 
 /**
+ * A `sources[]` entry on a peuple, pays or famille fiche, as emitted by
+ * `scripts/codemods/tierStringSources.ts`.
+ *
+ * `needs_review` is deliberately NOT a `SourceTier`: the doctrine is that
+ * every source carries an explicit tier, and `needs_review` marks the tail
+ * that has not been ruled on yet — the count the coverage gate ratchets to
+ * zero. It lives here, at the corpus boundary, and never in the canonical
+ * union.
+ *
+ * The nom, relation, migration and frontière-coloniale fiches still carry the
+ * numeric tier `1 | 2` (see `public/modele-source.json`); their loaders
+ * normalise it through `sourceTierFromLegacyNumber`.
+ */
+export interface FicheSource {
+  title: string;
+  url: string | null;
+  tier: SourceTier | "needs_review";
+  notes?: string;
+}
+
+/**
  * Country content (evolutionary)
  * All sections from modele-pays.txt stored here
  * New sections can be added without schema migration
@@ -168,7 +215,7 @@ export interface CountryContent {
   historicalFacts?: HistoricalFactsSection;
 
   // Section 7: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Demographics data
   demographics?: DemographicsSection;
@@ -221,7 +268,7 @@ export interface LanguageFamilyContent {
   };
 
   // Section 6: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Allow new sections
   [key: string]: unknown;
@@ -270,7 +317,7 @@ export interface PeopleContent {
   demography?: GlobalDemographySection;
 
   // Section 8: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Allow new sections
   [key: string]: unknown;
@@ -281,6 +328,16 @@ export interface PeopleContent {
 // ==========================================
 
 export interface HistoricalNamesSection {
+  /**
+   * The names themselves, as a list.
+   *
+   * The five period fields below are prose — they narrate how a territory
+   * was designated, which is not the same thing as naming it. A surface
+   * that wants to print "Haute-Volta (1919-1960)" as a chip cannot get it
+   * out of a paragraph, so the list is held separately. Every entry is
+   * lifted from that same prose and adds nothing to it.
+   */
+  formerNames?: string[];
   antiquity?: string;
   middleAges?: string;
   precolonial?: string;
@@ -333,6 +390,12 @@ export interface PeopleDemographicEntry {
   name: string;
   peopleId?: PeopleId;
   population?: number;
+  /**
+   * Year `population` was counted, when it is not the atlas's own 2025 — a
+   * census headcount is dated by its census. FR32 reads the value against the
+   * country total of this year; absent, it reads against 2025.
+   */
+  referenceYear?: number;
   percentageInCountry?: number;
   percentageInAfrica?: number;
   region?: string;
@@ -404,251 +467,29 @@ export interface LanguagesSection {
 }
 
 /**
- * Detailed culture section (for people)
- * Includes all subsections from modele-peuple.txt
+ * `content.culture`, exactly as `public/modele-peuple.json` declares it: four
+ * prose fields, no nesting.
+ *
+ * This interface used to describe a six-part nested structure — divinities,
+ * cosmology, person and nature, rites, symbols, contemporary spiritualities —
+ * together with nineteen sub-interfaces. No fiche ever carried it. The TXT
+ * parser flattened those subsections into the four keys below before the
+ * corpus was written to JSON, so all 789 peuples files fill exactly these and
+ * nothing else. Every nested read therefore returned undefined for the whole
+ * corpus, which is why the culture chapter rendered on no people fiche at all.
+ *
+ * Restoring the nesting is a corpus and strict-model change, not a rendering
+ * one; `scripts/audit/gapAnalyzer.ts` already tracks it as a source-parser gap.
  */
 export interface DetailedCultureSection {
-  // A. Divinities and spirits
-  divinitiesAndSpirits?: {
-    supremeDeity?: DeityInfo;
-    intermediateDivinities?: DeityInfo[];
-    natureSpirits?: NatureSpiritsInfo;
-    culturalFigures?: CulturalFiguresInfo;
-    ancestors?: AncestorsInfo;
-  };
-
-  // B. Cosmology
-  cosmology?: {
-    worldStructure?: WorldStructureInfo;
-    spiritualConcepts?: SpiritualConceptsInfo;
-    lifeDeathRebirthCycle?: LifeCycleInfo;
-    sacredTimeAndSpace?: SacredTimeSpaceInfo;
-  };
-
-  // C. Conception of person and nature
-  personAndNature?: {
-    bodyAndSpirit?: BodySpiritInfo;
-    spiritualLifeCycle?: SpiritualLifeCycleInfo;
-    conceptionOfPerson?: PersonConceptionInfo;
-    sacredNature?: SacredNatureInfo;
-    totemicAnimals?: TotemicAnimal[];
-    sacredPlants?: SacredPlant[];
-    cosmicHarmony?: CosmicHarmonyInfo;
-  };
-
-  // D. Rites and spiritual practices
-  ritesAndPractices?: {
-    initiationRites?: InitiationRitesInfo;
-    funeraryRites?: FuneraryRitesInfo;
-    agriculturalRites?: AgriculturalRitesInfo;
-    purificationRites?: PurificationRitesInfo;
-    divination?: DivinationInfo;
-    sacrificesAndOfferings?: SacrificesInfo;
-    otherMajorRites?: string[];
-  };
-
-  // E. Symbols, arts, material culture
-  symbolsAndArts?: {
-    symbols?: Symbol[];
-    artsAndMusic?: ArtsAndMusicInfo;
-    gastronomy?: GastronomyInfo;
-  };
-
-  // F. Contemporary spiritualities
-  contemporarySpirituality?: {
-    christianity?: ChristianityInfo;
-    islam?: IslamInfo;
-    traditionalReligions?: TraditionalReligionsInfo;
-    religiousSyncretism?: SyncretismInfo;
-    culturalResistance?: CulturalResistanceInfo;
-  };
-}
-
-// Sub-types for detailed culture section
-export interface DeityInfo {
-  endonym?: string;
-  exonym?: string;
-  attributes?: string;
-  veneration?: string;
-  name?: string;
-  role?: string;
-  domain?: string;
-}
-
-export interface NatureSpiritsInfo {
-  forestSpirits?: string;
-  waterSpirits?: string;
-  earthSpirits?: string;
-  otherSpirits?: string;
-}
-
-export interface CulturalFiguresInfo {
-  tricksters?: string;
-  culturalHeroes?: string;
-  mythologicalFigures?: string;
-}
-
-export interface AncestorsInfo {
-  roleOfAncestors?: string;
-  cultPractices?: string;
-  sacredStatuesAndObjects?: string;
-}
-
-export interface WorldStructureInfo {
-  upperWorld?: string;
-  intermediateWorld?: string;
-  terrestrialWorld?: string;
-  underworld?: string;
-}
-
-export interface SpiritualConceptsInfo {
-  soulOrVitalForce?: string;
-  spiritOrPersonality?: string;
-  physicalBody?: string;
-  paternalSpiritualHeritage?: string;
-  maternalHeritage?: string;
-}
-
-export interface LifeCycleInfo {
-  conceptionOfDeath?: string;
-  ancestorWorld?: string;
-  reincarnation?: string;
-}
-
-export interface SacredTimeSpaceInfo {
-  sacredDays?: string;
-  sacredPlaces?: string;
-  ritualSeasons?: string;
-}
-
-export interface BodySpiritInfo {
-  physicalBody?: string;
-  spiritualEssence?: string;
-  spiritualDouble?: string;
-}
-
-export interface SpiritualLifeCycleInfo {
-  preExistence?: string;
-  birthAndIncarnation?: string;
-  terrestrialLife?: string;
-  deathAndPassage?: string;
-  ancestrality?: string;
-  reincarnation?: string;
-}
-
-export interface PersonConceptionInfo {
-  personDefinition?: string;
-  moralValues?: string;
-  familyHonor?: string;
-}
-
-export interface SacredNatureInfo {
-  forestConception?: string;
-  sacredGroves?: string;
-  sacredTrees?: string;
-}
-
-export interface TotemicAnimal {
-  name: string;
-  symbolism?: string;
-}
-
-export interface SacredPlant {
-  name: string;
-  ritualUse?: string;
-}
-
-export interface CosmicHarmonyInfo {
-  humanNatureSpiritBalance?: string;
-  respectForTaboos?: string;
-  purificationRituals?: string;
-}
-
-export interface InitiationRitesInfo {
-  maleInitiation?: string;
-  femaleInitiation?: string;
-  secretSocietyInitiation?: string;
-  maskInitiation?: string;
-}
-
-export interface FuneraryRitesInfo {
-  wake?: string;
-  burial?: string;
-  postFuneraryCeremonies?: string;
-  funeraryMasks?: string;
-}
-
-export interface AgriculturalRitesInfo {
-  landBlessing?: string;
-  harvestFestivals?: string;
-  offeringsToEarthSpirits?: string;
-}
-
-export interface PurificationRitesInfo {
-  ritualBaths?: string;
-  fumigation?: string;
-  exorcism?: string;
-}
-
-export interface DivinationInfo {
-  divinationMethods?: string;
-  consultationOfDiviners?: string;
-  interpretationOfSigns?: string;
-}
-
-export interface SacrificesInfo {
-  animalSacrifices?: string;
-  foodOfferings?: string;
-  libations?: string;
-}
-
-export interface Symbol {
-  name: string;
-  meaning?: string;
-}
-
-export interface ArtsAndMusicInfo {
-  sculpture?: string;
-  masks?: string;
-  weaving?: string;
-  musicalInstruments?: string;
-  dances?: string;
-  songs?: string;
-  renownedArtists?: string;
-}
-
-export interface GastronomyInfo {
-  emblematicDishes?: string;
-  culinaryKnowHow?: string;
-  gastronomicHeritage?: string;
-  ritualFoods?: string;
-}
-
-export interface ChristianityInfo {
-  percentageOfPopulation?: number;
-  denominations?: string;
-  christianTraditionalSyncretism?: string;
-}
-
-export interface IslamInfo {
-  percentageOfPopulation?: number;
-  specificPractices?: string;
-  islamicTraditionalSyncretism?: string;
-}
-
-export interface TraditionalReligionsInfo {
-  persistenceOfPractices?: string;
-  guardiansOfTraditions?: string;
-}
-
-export interface SyncretismInfo {
-  coexistenceOfPractices?: string;
-  contemporaryAdaptations?: string;
-}
-
-export interface CulturalResistanceInfo {
-  transmissionToYoungerGenerations?: string;
-  culturalRevitalization?: string;
+  /** Rites of passage, initiation, funerary and divinatory practice. */
+  majorRites?: string;
+  /** Masks, regalia, textiles, emblems — and what they carry. */
+  symbols?: string;
+  /** Instruments, genres, crafts, oral literature. */
+  artsAndMusic?: string;
+  /** Traditional religion, and the religions living alongside it. */
+  spiritualities?: string;
 }
 
 export interface HistoricalRoleSection {
@@ -669,6 +510,14 @@ export interface CountryDistribution {
   country: CountryId;
   population?: number;
   percentage?: number;
+  /**
+   * Where inside the country, in the fiche's own words — regions, cities.
+   *
+   * 1063 of these were written across 486 fiches before the strict model
+   * declared the field, so they were dropped at the transform. A share says
+   * how many; this says where.
+   */
+  note?: string;
 }
 
 export interface LanguageReference {
@@ -738,7 +587,11 @@ export interface NameRecord {
   entityType: "country" | "people" | "language" | "languageFamily";
   entityId: string; // CountryId | PeopleId | LanguageId | LanguageFamilyId
   nameType:
-    "official" | "self-appellation" | "exonym" | "historical" | "colonial";
+    | "official"
+    | "self-appellation"
+    | "exonym"
+    | "historical"
+    | "colonial";
   name: string;
   language?: string; // Language in which the name is used
   period?: string; // Historical period
@@ -756,6 +609,11 @@ export interface PaginationMeta {
   page: number;
   perPage: number;
   totalPages?: number;
+  /**
+   * Peoples not reachable through any returnable family, surfaced instead of
+   * silently omitted (REQ-108). Only populated on the language-families list.
+   */
+  unclassifiedPeoplesCount?: number;
 }
 
 export interface ApiResponse<T> {
@@ -781,17 +639,55 @@ export interface SearchResult {
 
 // ETNI-38 — /v2/search FTS params (websearch_to_tsquery, confidence boost)
 export interface FtsSearchParams {
-  q: string;
+  /** Optional only when a relation scope is given: a relation is a search. */
+  q?: string;
   limit: number;
   offset: number;
   classificationStatus?: ClassificationStatus;
   minConfidence?: number;
   sinceVerifiedAfter?: string;
+  /** Scope to the peoples of one language family (`FLG_*`). */
+  familyId?: string;
+  /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
+  countryId?: string;
+}
+
+/**
+ * A search hit carries its own ranking evidence.
+ *
+ * `relevance` is comparable **within** an entity kind and not across kinds —
+ * a people is scored `ts_rank × confidence`, a country by bare `ts_rank`, a
+ * family by a match tier. `exactMatch` is the one signal that means the same
+ * thing everywhere, which is why it sorts first.
+ */
+export interface RankedPeople extends People {
+  languageFamilyName: string | null;
+  confidence: number | null;
+  relevance: number;
+  exactMatch: boolean;
+  /** Match excerpt; matched terms are wrapped in `[[` and `]]`. */
+  snippet: string | null;
+}
+
+export interface RankedCountry extends Country {
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+}
+
+export interface RankedLanguageFamily extends LanguageFamily {
+  relevance: number;
+  exactMatch: boolean;
 }
 
 export interface FtsSearchResponse {
-  peoples: People[];
-  countries: Country[];
+  peoples: RankedPeople[];
+  countries: RankedCountry[];
+  families: RankedLanguageFamily[];
+  /** Corpus-wide match counts, not the size of the returned page. */
+  peoplesTotal: number;
+  countriesTotal: number;
+  familiesTotal: number;
   total: number;
 }
 

@@ -3,6 +3,7 @@
   "nameMain": "Lunda-Kazembe",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "COD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Lunda-Kazembe",
@@ -94,10 +95,30 @@
       ]
     },
     "sources": [
-      "Kazembe – Encyclopaedia Britannica (https://www.britannica.com/place/Kazembe)",
-      "Luba-Lunda states – Encyclopaedia Britannica (https://www.britannica.com/place/Luba-Lunda-states)",
-      "Kazembe Lunda – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/lunda/kazembe-lunda/)",
-      "Joshua Project – Lunda, Luapula in Zambia, 2025 (https://joshuaproject.net/countries/ZA)"
+      {
+        "title": "Kazembe – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/place/Kazembe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Luba-Lunda states – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/place/Luba-Lunda-states",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Kazembe Lunda – Zambia's Traditional History",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/lunda/kazembe-lunda/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "Joshua Project – Lunda, Luapula in Zambia, 2025",
+        "url": "https://joshuaproject.net/countries/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

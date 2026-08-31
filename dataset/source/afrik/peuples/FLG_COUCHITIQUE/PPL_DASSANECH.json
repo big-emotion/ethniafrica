@@ -8,6 +8,7 @@
   "nameMain": "Dassanech",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH", "KEN", "SSD"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Dassanech",
@@ -96,11 +97,36 @@
       ]
     },
     "sources": [
-      "Daasanach in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14549/ET)",
-      "Daasanach – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/daas1238)",
-      "Daasanach Language (DSH) – Ethnologue (https://www.ethnologue.com/language/dsh/)",
-      "Daasanach of Ethiopia – Horn of Africa Evangelical Mission (https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf)",
-      "The Daasanach Tribe: Nomads of the Omo-Turkana Basin – Begin North Adventures, 2025 (https://beginnorthadventures.com/daasanach-tribe/)"
+      {
+        "title": "Daasanach in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/14549/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Daasanach – Glottolog 5.2",
+        "url": "https://glottolog.org/resource/languoid/id/daas1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Daasanach Language (DSH) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/dsh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Daasanach of Ethiopia – Horn of Africa Evangelical Mission",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+      },
+      {
+        "title": "The Daasanach Tribe: Nomads of the Omo-Turkana Basin – Begin North Adventures, 2025",
+        "url": "https://beginnorthadventures.com/daasanach-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+      }
     ]
   }
 }

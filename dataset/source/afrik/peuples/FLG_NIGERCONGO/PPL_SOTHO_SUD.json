@@ -98,11 +98,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Sesotho (sot). https://www.ethnologue.com/language/sot/",
-      "South Africa Census 2011 — Home language distribution. Stats SA.",
-      "Study.com — Sotho History, Culture and People. https://study.com/academy/lesson/sotho-history-culture-facts-people.html",
-      "southafrica.net — The culture of Basotho. https://www.southafrica.net/za/en/travel/article/the-culture-of-basotho-history-people-clothing-and-food",
-      "PeopleGroups.org — Southern Sotho of Lesotho. https://peoplegroups.org/people_groups/pg015283/"
+      {
+        "title": "SIL Ethnologue — Sesotho (sot)",
+        "url": "https://www.ethnologue.com/language/sot/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "South Africa Census 2011 — Home language distribution. Stats SA",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Study.com — Sotho History, Culture and People",
+        "url": "https://study.com/academy/lesson/sotho-history-culture-facts-people.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "southafrica.net — The culture of Basotho",
+        "url": "https://www.southafrica.net/za/en/travel/article/the-culture-of-basotho-history-people-clothing-and-food",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for southafrica.net."
+      },
+      {
+        "title": "PeopleGroups.org — Southern Sotho of Lesotho",
+        "url": "https://peoplegroups.org/people_groups/pg015283/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

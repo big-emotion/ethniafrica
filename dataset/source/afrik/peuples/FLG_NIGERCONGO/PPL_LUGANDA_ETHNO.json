@@ -102,12 +102,42 @@
       ]
     },
     "sources": [
-      "Buganda Kingdom Official Website — History of Buganda. https://buganda.or.ug/history-of-buganda/",
-      "Uganda Bureau of Statistics (UBOS) — Population Projections 2025-2050. https://www.ubos.org/wp-content/uploads/publications/Population-Projections-2025_2050.pdf",
-      "SIL Ethnologue — Luganda (lug). https://www.ethnologue.com/language/lug/",
-      "eHRAF World Cultures — Ganda summary. https://ehrafworldcultures.yale.edu/cultures/fk07/summary",
-      "UNESCO — Amaggunju performance (patrimoine immatériel). https://ich.unesco.org/",
-      "CIA World Factbook — Uganda. https://www.cia.gov/the-world-factbook/countries/uganda/"
+      {
+        "title": "Buganda Kingdom Official Website — History of Buganda",
+        "url": "https://buganda.or.ug/history-of-buganda/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for buganda.or.ug."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) — Population Projections 2025-2050",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/Population-Projections-2025_2050.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "SIL Ethnologue — Luganda (lug)",
+        "url": "https://www.ethnologue.com/language/lug/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "eHRAF World Cultures — Ganda summary",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fk07/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "UNESCO — Amaggunju performance (patrimoine immatériel)",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "CIA World Factbook — Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

@@ -3,6 +3,7 @@
   "nameMain": "Tokaleya",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["ZMB", "ZWE"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Tokaleya",
@@ -75,10 +76,30 @@
       ]
     },
     "sources": [
-      "Toka-Leya Culture, Zambian Traditions – Peek.com (https://www.peek.com/zambia/r0gbbpp/toka-leya-culture-explore-zambian-traditions/a0d9pwd9)",
-      "Toka-Leya Tribe Safari Tours – Kingsfari (https://www.kingsfari.com/experiences/toka-leya)",
-      "African Cultural Experience: The Leya People – Volunteer International Adventures (https://volunteerinternationaladventures.com/african-cultural/)",
-      "Tonga people – Chalo Chatu, Zambia Online Encyclopedia (http://www.chalochatu.org/index.php?title=Tonga_people)"
+      {
+        "title": "Toka-Leya Culture, Zambian Traditions – Peek.com",
+        "url": "https://www.peek.com/zambia/r0gbbpp/toka-leya-culture-explore-zambian-traditions/a0d9pwd9",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers peek.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Toka-Leya Tribe Safari Tours – Kingsfari",
+        "url": "https://www.kingsfari.com/experiences/toka-leya",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kingsfari.com."
+      },
+      {
+        "title": "African Cultural Experience: The Leya People – Volunteer International Adventures",
+        "url": "https://volunteerinternationaladventures.com/african-cultural/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers volunteerinternationaladventures.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Tonga people – Chalo Chatu, Zambia Online Encyclopedia",
+        "url": "http://www.chalochatu.org/index.php?title=Tonga_people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for chalochatu.org."
+      }
     ]
   }
 }

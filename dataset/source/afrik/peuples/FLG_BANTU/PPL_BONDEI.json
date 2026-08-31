@@ -71,12 +71,42 @@
       ]
     },
     "sources": [
-      "Bondei in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/10930)",
-      "Bondei people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bondei.html)",
-      "Mhando, M.M. (2023). The History of Utani and Burial Traditions of the Bondei People. International Journal of Social and Humanities Sciences (https://dergipark.org.tr/tr/download/article-file/3486509)",
-      "Mhando, M.M. (2023). An outline of History and Cultural identity of the Bondei people. Journal of African Studies (https://journals.co.za/doi/abs/10.31920/2634-7644/2023/v4n1a6)",
-      "Willis, J. (1993). The Makings of a Tribe: Bondei Identities and Histories. Journal of African History, 33(2), 191-208 (https://www.jstor.org/stable/182998)",
-      "Bondei of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014913/)"
+      {
+        "title": "Bondei in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/10930",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bondei people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/bondei.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Mhando, M.M. (2023). The History of Utani and Burial Traditions of the Bondei People. International Journal of Social and Humanities Sciences",
+        "url": "https://dergipark.org.tr/tr/download/article-file/3486509",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dergipark.org.tr."
+      },
+      {
+        "title": "Mhando, M.M. (2023). An outline of History and Cultural identity of the Bondei people. Journal of African Studies",
+        "url": "https://journals.co.za/doi/abs/10.31920/2634-7644/2023/v4n1a6",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for journals.co.za."
+      },
+      {
+        "title": "Willis, J. (1993). The Makings of a Tribe: Bondei Identities and Histories. Journal of African History, 33(2), 191-208",
+        "url": "https://www.jstor.org/stable/182998",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "Bondei of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg014913/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

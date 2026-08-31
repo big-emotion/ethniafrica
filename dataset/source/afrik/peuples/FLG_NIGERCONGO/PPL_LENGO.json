@@ -82,10 +82,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Lengola people. https://www.101lasttribes.com/tribes/lengola.html",
-      "Joshua Project — Lengola in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/13037",
-      "Peoplegroups.org — Lengola of Democratic Republic of the Congo. https://peoplegroups.org/people_groups/pg014611/",
-      "OpenEdition Journals — Paths in the eastern Congo rainforest: Vernacular histories. https://journals.openedition.org/afriques/4465"
+      {
+        "title": "101 Last Tribes — Lengola people",
+        "url": "https://www.101lasttribes.com/tribes/lengola.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Lengola in Congo, Democratic Republic of",
+        "url": "https://joshuaproject.net/people_groups/13037",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Peoplegroups.org — Lengola of Democratic Republic of the Congo",
+        "url": "https://peoplegroups.org/people_groups/pg014611/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "OpenEdition Journals — Paths in the eastern Congo rainforest: Vernacular histories",
+        "url": "https://journals.openedition.org/afriques/4465",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      }
     ]
   }
 }

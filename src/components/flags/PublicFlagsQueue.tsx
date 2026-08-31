@@ -67,6 +67,7 @@ const TARGET_OPTIONS: FilterOption<PublicFlagTargetType>[] = [
   { value: "source", label: copy.targets.source },
   { value: "fiche_section", label: copy.targets.fiche_section },
   { value: "classification", label: copy.targets.classification },
+  { value: "general", label: copy.targets.general },
 ];
 
 const KIND_LABELS = Object.fromEntries(
@@ -235,22 +236,16 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
               <h2 className="break-words font-afh-display text-afh-h3 font-bold leading-tight text-afh-text group-hover:text-afh-terracotta">
                 {targetName}
               </h2>
-              {item.target.entityId &&
-                item.target.entityId !== item.target.label && (
-                  <p className="break-all font-mono text-afh-caption text-afh-text-soft">
-                    {item.target.entityId}
-                  </p>
-                )}
-              {item.target.fieldPath && (
-                <p className="break-all font-mono text-afh-caption text-afh-text-soft">
-                  {item.target.fieldPath}
-                </p>
-              )}
+              {/* The row once printed `entityId` and `fieldPath` under the
+                  title — PPL_BETI, then identity.history. Both are already
+                  said above in words, by the type and entity labels and by
+                  the target's own name, so the two mono lines added nothing
+                  a reader could use and put the schema on a public page. */}
             </div>
 
             {reason && (
               <p
-                className="max-w-3xl font-afh text-sm leading-relaxed text-afh-text-soft"
+                className="max-w-3xl font-afh text-afh-small leading-relaxed text-afh-text-soft"
                 data-testid="flag-reason"
               >
                 {truncateReason(reason)}
@@ -428,14 +423,14 @@ export function PublicFlagsQueue({
       {isPending ? (
         <p
           role="status"
-          className="px-4 py-10 text-center font-afh text-sm text-afh-text-soft md:px-6"
+          className="px-4 py-10 text-center font-afh text-afh-small text-afh-text-soft md:px-6"
         >
           {copy.loading}
         </p>
       ) : error && items.length === 0 ? (
         <p
           role="alert"
-          className="px-4 py-10 text-center font-afh text-sm text-afh-text-soft md:px-6"
+          className="px-4 py-10 text-center font-afh text-afh-small text-afh-text-soft md:px-6"
         >
           {copy.loadError}
         </p>

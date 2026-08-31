@@ -3,6 +3,7 @@
   "nameMain": "Mano",
   "languageFamilyId": "FLG_MANDE",
   "currentCountries": ["LBR", "GIN"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Mano",
@@ -86,11 +87,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Maan in Liberia, 2025 (https://joshuaproject.net/people_groups/16121/LI)",
-      "Joshua Project – Maan in Guinea, 2025 (https://joshuaproject.net/people_groups/16121/GV)",
-      "101 Last Tribes – Mano people of Liberia and Guinea (https://www.101lasttribes.com/tribes/mano.html)",
-      "IndexMundi – Liberia ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)",
-      "Scripture Earth – Mano [mev], SIL International (https://www.scriptureearth.org/00i-Scripture_Index.php?iso=mev)"
+      {
+        "title": "Joshua Project – Maan in Liberia, 2025",
+        "url": "https://joshuaproject.net/people_groups/16121/LI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Maan in Guinea, 2025",
+        "url": "https://joshuaproject.net/people_groups/16121/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Mano people of Liberia and Guinea",
+        "url": "https://www.101lasttribes.com/tribes/mano.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "IndexMundi – Liberia ethnic groups, CIA World Factbook 2021",
+        "url": "https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for indexmundi.com."
+      },
+      {
+        "title": "Scripture Earth – Mano [mev], SIL International",
+        "url": "https://www.scriptureearth.org/00i-Scripture_Index.php?iso=mev",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptureearth.org."
+      }
     ]
   }
 }

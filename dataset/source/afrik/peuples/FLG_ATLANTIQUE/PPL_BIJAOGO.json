@@ -3,6 +3,7 @@
   "nameMain": "Bijago",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["GNB"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Bijago",
@@ -89,10 +90,30 @@
       ]
     },
     "sources": [
-      "Consulado de Guinea-Bissau en Malaga. Bijago culture, traditions, customs and the role of women in a matriarchal society. https://www.consuladoguineabissaumalaga.com/en/Blog/Bijag%C3%B3-culture-traditions-customs-and-the-role-of-women-in-a-matriarchal-society/",
-      "Comboni Missionaries. Guinea Bissau: A People With A Strong Identity. https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/ (2017)",
-      "101 Last Tribes. Bijago people. https://www.101lasttribes.com/tribes/bijago.html",
-      "Ethnologue (SIL International). Bijago Language (BJG). https://www.ethnologue.com/language/bjg/"
+      {
+        "title": "Consulado de Guinea-Bissau en Malaga. Bijago culture, traditions, customs and the role of women in a matriarchal society",
+        "url": "https://www.consuladoguineabissaumalaga.com/en/Blog/Bijag%C3%B3-culture-traditions-customs-and-the-role-of-women-in-a-matriarchal-society/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers consuladoguineabissaumalaga.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Comboni Missionaries. Guinea Bissau: A People With A Strong Identity. (2017)",
+        "url": "https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for combonimissionaries.ie."
+      },
+      {
+        "title": "101 Last Tribes. Bijago people",
+        "url": "https://www.101lasttribes.com/tribes/bijago.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue (SIL International). Bijago Language (BJG)",
+        "url": "https://www.ethnologue.com/language/bjg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

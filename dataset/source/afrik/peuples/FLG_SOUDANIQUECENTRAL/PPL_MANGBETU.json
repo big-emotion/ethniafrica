@@ -96,13 +96,48 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Mangbetu (mdj). https://www.ethnologue.com/language/mdj/",
-      "Smarthistory — Figurative Harp (Domu), Mangbetu peoples. https://smarthistory.org/figurative-harp-domu/",
-      "Khan Academy — Figurative Harp (Domu) (Mangbetu peoples). https://www.khanacademy.org/humanities/art-africa/central-africa/democratic-republic-of-the-congo/a/figurative-harp-domu-mengbetu-peoples",
-      "AMNH Digital Collections — Harp, Mangbetu, American Museum Congo Expedition (1909-1915). https://digitalcollections.amnh.org/archive/Harp--Mangbetu----2URM1TGW6CBO.html",
-      "Encyclopaedia Africana — Nabiembali. https://encyclopaediaafricana.com/nabiembali/",
-      "African History Extra — Kingdoms at the forest's edge: a history of Mangbetu (ca. 1750-1895). https://www.africanhistoryextra.com/p/kingdoms-at-the-forests-edge-a-history",
-      "The Metropolitan Museum of Art — Figurative Harp (Domu). https://www.metmuseum.org/art/collection/search/319553"
+      {
+        "title": "Ethnologue (SIL International) — Mangbetu (mdj)",
+        "url": "https://www.ethnologue.com/language/mdj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Smarthistory — Figurative Harp (Domu), Mangbetu peoples",
+        "url": "https://smarthistory.org/figurative-harp-domu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for smarthistory.org."
+      },
+      {
+        "title": "Khan Academy — Figurative Harp (Domu) (Mangbetu peoples)",
+        "url": "https://www.khanacademy.org/humanities/art-africa/central-africa/democratic-republic-of-the-congo/a/figurative-harp-domu-mengbetu-peoples",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for khanacademy.org."
+      },
+      {
+        "title": "AMNH Digital Collections — Harp, Mangbetu, American Museum Congo Expedition (1909-1915)",
+        "url": "https://digitalcollections.amnh.org/archive/Harp--Mangbetu----2URM1TGW6CBO.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for digitalcollections.amnh.org."
+      },
+      {
+        "title": "Encyclopaedia Africana — Nabiembali",
+        "url": "https://encyclopaediaafricana.com/nabiembali/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers encyclopaediaafricana.com; the tier awaits editorial review."
+      },
+      {
+        "title": "African History Extra — Kingdoms at the forest's edge: a history of Mangbetu (ca. 1750-1895)",
+        "url": "https://www.africanhistoryextra.com/p/kingdoms-at-the-forests-edge-a-history",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africanhistoryextra.com."
+      },
+      {
+        "title": "The Metropolitan Museum of Art — Figurative Harp (Domu)",
+        "url": "https://www.metmuseum.org/art/collection/search/319553",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for metmuseum.org."
+      }
     ]
   }
 }

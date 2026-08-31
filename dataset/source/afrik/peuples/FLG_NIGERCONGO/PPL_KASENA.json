@@ -3,6 +3,7 @@
   "nameMain": "Kasena",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["GHA", "BFA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kasena",
@@ -76,11 +77,36 @@
       ]
     },
     "sources": [
-      "Kasem in Ghana – Joshua Project (https://joshuaproject.net/people_groups/12556/GH)",
-      "Kasem in Burkina Faso – Joshua Project (https://joshuaproject.net/people_groups/print/12556/UV)",
-      "Kasem – Glottolog 5.3, ISO 639-3 : xsm (https://glottolog.org/resource/languoid/id/kase1253)",
-      "Kassena Nankana Municipal – Composite Budget 2022-2025, Ministry of Finance Ghana (https://mofep.gov.gh/sites/default/files/composite-budget/2022/UE/Kasena-Nakana.pdf)",
-      "Ann Cassiman, Stirring Life: Women's Paths and Places Among the Kasena of Northern Ghana, Museum Aan de Stroom (MAS), Antwerp"
+      {
+        "title": "Kasem in Ghana – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12556/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kasem in Burkina Faso – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/12556/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kasem – Glottolog 5.3, ISO 639-3 : xsm",
+        "url": "https://glottolog.org/resource/languoid/id/kase1253",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kassena Nankana Municipal – Composite Budget 2022-2025, Ministry of Finance Ghana",
+        "url": "https://mofep.gov.gh/sites/default/files/composite-budget/2022/UE/Kasena-Nakana.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for mofep.gov.gh."
+      },
+      {
+        "title": "Ann Cassiman, Stirring Life: Women's Paths and Places Among the Kasena of Northern Ghana, Museum Aan de Stroom (MAS), Antwerp",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

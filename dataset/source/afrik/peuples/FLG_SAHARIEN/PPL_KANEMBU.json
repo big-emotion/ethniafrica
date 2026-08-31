@@ -3,6 +3,7 @@
   "nameMain": "Kanembu",
   "languageFamilyId": "FLG_SAHARIEN",
   "currentCountries": ["TCD", "NER", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kanembu",
@@ -103,12 +104,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kanembu language (kbl). https://www.ethnologue.com/language/kbl/",
-      "Glottolog — Kanembu (kane1243). https://glottolog.org/resource/languoid/id/kane1243",
-      "Lumen Learning / SUNY — Bornu Empire. https://courses.lumenlearning.com/suny-hccc-worldcivilization/chapter/bornu-empire/",
-      "Joshua Project — Kanembu in Niger. https://joshuaproject.net/people_groups/12489/NG",
-      "Michigan State University — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+      {
+        "title": "SIL Ethnologue — Kanembu language (kbl)",
+        "url": "https://www.ethnologue.com/language/kbl/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Kanembu (kane1243)",
+        "url": "https://glottolog.org/resource/languoid/id/kane1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Lumen Learning / SUNY — Bornu Empire",
+        "url": "https://courses.lumenlearning.com/suny-hccc-worldcivilization/chapter/bornu-empire/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for courses.lumenlearning.com."
+      },
+      {
+        "title": "Joshua Project — Kanembu in Niger",
+        "url": "https://joshuaproject.net/people_groups/12489/NG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Michigan State University — Introduction to the Kanuri Language",
+        "url": "https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for alma.matrix.msu.edu."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

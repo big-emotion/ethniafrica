@@ -2,6 +2,7 @@
   "id": "FLG_NILOTIQUE",
   "nameFr": "Nilotique",
   "nameEn": "Nilotic",
+  "classificationStatus": "colonial-legacy",
   "content": {
     "decolonialHeader": {
       "whyProblematic": " 1. **Héritage colonial racial** : Carl Meinhof (vers 1912) a introduit le concept de « Nilo-Hamitic » en mélangeant critères linguistiques et suppositions raciales, suggérant que certains groupes nilotiques (Maasai, Tutsi) seraient « supérieurs » car « proches des Hamites ». Cette théorie est aujourd'hui largement rejetée par la linguistique moderne comme fondée sur des préjugés raciaux coloniaux. 2. **Défense de l'africanité** : Bernd Heine et Derek Nurse (2000) dans *African Languages: An Introduction* (Cambridge University Press) affirment que les traits dits « hamitiques » dans les langues nilotiques orientales (genre grammatical, emprunts lexicaux) sont des phénomènes de contact linguistique, non des preuves d'une origine mixte. Plusieurs linguistes africains contemporains (Gerrit Dimmendaal, Lionel Bender) insistent sur l'autonomie des langues nilotiques sans référence à des hypothétiques « éléments hamitiques ». 3. **Études génétiques modernes** :",
@@ -11,7 +12,11 @@
       "originOfHistoricalTerm": " Le terme « Nilotic » dérive du latin *Niloticus*, issu du grec *Neilōtikós*, signifiant « relatif au Nil ». Usage linguistique : Karl Richard Lepsius (1880) a formalisé « Nilotic languages » comme branche dans sa *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas* (Berlin: Verlag von Wilhelm Hertz). Le terme « nilo-chamitique » a été introduit par Carl Meinhof (début XXᵉ siècle) dans le cadre de classifications raciales coloniales, affirmant que certaines langues nilotiques orientales et méridionales (Maasai, Turkana) seraient un mélange de traits nilotiques et « hamitiques/cushitiques ». Joseph Greenberg (1963) dans *The Languages of Africa* (Indiana University Press) a rejeté cette classification et a intégré les langues nilotiques dans le phylum Nilo-Saharien comme branche Eastern Sudanic."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Nilotique oriental",
+        "Nilotique méridional",
+        "Nilotique occidental"
+      ],
       "geographicArea": "Vallées du Nil supérieur (Bahr el-Ghazal, Nil Blanc), région du Sudd (marais du Soudan du Sud), Rift est-africain, bassin du lac Turkana, hauts plateaux du Kenya et de la Tanzanie",
       "numberOfLanguages": 30,
       "totalSpeakers": 30000000
@@ -65,27 +70,152 @@
     },
     "distribution": {
       "totalSpeakers": 30000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "KEN": 5875000,
+        "SSD": 2260020,
+        "UGA": 1170000,
+        "TZA": 753000
+      }
     },
     "sources": [
-      "Lepsius, Karl Richard (1880) – *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas*. Berlin: Verlag von Wilhelm Hertz.",
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press.",
-      "Dimmendaal, Gerrit J. (1988) – \"The lexical reconstruction of Proto-Nilotic: A first reconnaissance\". *Afrikanistische Arbeitspapiere* 16:5-67.",
-      "Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge: Cambridge University Press.",
-      "Dobon, B., Hassan, H., Laayouni, H. et al. (2015) – \"The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape\". *Scientific Reports* 5, Article number: 9996. DOI: 10.1038/srep09996.",
-      "Mulindwa, J., et al. (2020) – \"High levels of genetic diversity within Nilo-Saharan populations: implications for human adaptation\". *American Journal of Human Genetics* 107(3):473-486. DOI: 10.1016/j.ajhg.2020.06.008.",
-      "Tishkoff, Sarah A., Reed, F.A., Friedlaender, F.R., Ehret, C., et al. (2009) – \"The genetic structure and history of Africans and African Americans\". *Science* 324(5930):1035-1044. DOI: 10.1126/science.1172257.",
-      "Britannica Editors (2025) – \"Nilotic languages\". *Britannica.com*. https://www.britannica.com/topic/Nilotic-languages",
-      "Britannica Editors (2025) – \"Nilo-Saharan languages\". *Britannica.com*. https://www.britannica.com/topic/Nilo-Saharan-languages",
-      "Ethnologue (SIL International) (2025) – \"Nilotic languages\". *Ethnologue.com*. https://www.ethnologue.com/subgroups/nilotic",
-      "CIA World Factbook (2024) – Country profiles: South Sudan, Kenya, Uganda, Tanzania, Ethiopia, Sudan, Democratic Republic of the Congo. *CIA.gov*. https://www.cia.gov/the-world-factbook/",
-      "ONU / UNFPA (2024) – Démographie et statistiques par pays. *UN.org*, *UNFPA.org*",
-      "Kenya National Bureau of Statistics (2019) – *Kenya Population and Housing Census Volume IV: Distribution of Population by Socio-Economic Characteristics*. Nairobi: KNBS.",
-      "Uganda Bureau of Statistics (2024) – Population estimates and demographics. *UBOS.org*",
-      "Tanzania National Bureau of Statistics (2022) – *Population and Housing Census*. Dodoma: NBS.",
-      "Glottolog (2025) – \"Nilotic languages classification\". *Glottolog.org*. https://glottolog.org/resource/languoid/id/nilo1247",
-      "Dimmendaal, Gerrit J. (2011) – \"On stable and unstable features in Nilo-Saharan\". In *Diachrony and Typology of Tense-Aspect Systems* (éd. Vit Bubenik). John Benjamins.",
-      "Bender, M. Lionel (1996) – *The Nilo-Saharan Languages: A Comparative Essay*. Lincom Europa."
+      {
+        "title": "Lepsius, Karl Richard (1880) – *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas*. Berlin: Verlag von Wilhelm Hertz",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J. (1988) – \"The lexical reconstruction of Proto-Nilotic: A first reconnaissance\". *Afrikanistische Arbeitspapiere* 16:5-67",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge: Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dobon, B., Hassan, H., Laayouni, H. et al. (2015) – \"The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape\". *Scientific Reports* 5, Article number: 9996. DOI: 10.1038/srep09996",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Mulindwa, J., et al. (2020) – \"High levels of genetic diversity within Nilo-Saharan populations: implications for human adaptation\". *American Journal of Human Genetics* 107(3):473-486. DOI: 10.1016/j.ajhg.2020.06.008",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Tishkoff, Sarah A., Reed, F.A., Friedlaender, F.R., Ehret, C., et al. (2009) – \"The genetic structure and history of Africans and African Americans\". *Science* 324(5930):1035-1044. DOI: 10.1126/science.1172257",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Britannica Editors (2025) – \"Nilotic languages\". *Britannica.com*",
+        "url": "https://www.britannica.com/topic/Nilotic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Britannica Editors (2025) – \"Nilo-Saharan languages\". *Britannica.com*",
+        "url": "https://www.britannica.com/topic/Nilo-Saharan-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Ethnologue (SIL International) (2025) – \"Nilotic languages\". *Ethnologue.com*",
+        "url": "https://www.ethnologue.com/subgroups/nilotic",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook (2024) – Country profiles: South Sudan, Kenya, Uganda, Tanzania, Ethiopia, Sudan, Democratic Republic of the Congo. *CIA.gov*",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "ONU / UNFPA (2024) – Démographie et statistiques par pays. *UN.org*, *UNFPA.org*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics (2019) – *Kenya Population and Housing Census Volume IV: Distribution of Population by Socio-Economic Characteristics*. Nairobi: KNBS",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (2024) – Population estimates and demographics. *UBOS.org*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Tanzania National Bureau of Statistics (2022) – *Population and Housing Census*. Dodoma: NBS",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog (2025) – \"Nilotic languages classification\". *Glottolog.org*",
+        "url": "https://glottolog.org/resource/languoid/id/nilo1247",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J. (2011) – \"On stable and unstable features in Nilo-Saharan\". In *Diachrony and Typology of Tense-Aspect Systems* (éd. Vit Bubenik). John Benjamins",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (1996) – *The Nilo-Saharan Languages: A Comparative Essay*. Lincom Europa",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog 5.3 (2025) – \"Nilotic\": arbre de classification confirmant 3 branches immédiates – Eastern Nilotic, Southern Nilotic, Western Nilotic",
+        "url": "https://glottolog.org/resource/languoid/id/nilo1247",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 21-29 juin 2016) – \"Dholuo [luo]\": 4 044 000 locuteurs au Kenya (recensement 2009), 140 000 en Tanzanie (2005). \"Maasai [mas]\": 842 000 locuteurs au Kenya (recensement 2009), 613 000 en Tanzanie (2013). \"Turkana [tuv]\": 989 000 locuteurs au Kenya (recensement 2009)",
+        "url": "https://www.ethnologue.com/language/luo",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Original entry: \"SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 21-29 juin 2016) – \\\"Dholuo [luo]\\\": 4 044 000 locuteurs au Kenya (recensement 2009), 140 000 en Tanzanie (2005). \\\"Maasai [mas]\\\": 842 000 locuteurs au Kenya (recensement 2009), 613 000 en Tanzanie (2013). \\\"Turkana [tuv]\\\": 989 000 locuteurs au Kenya (recensement 2009). https://www.ethnologue.com/language/luo ; https://www.ethnologue.com/language/mas ; https://www.ethnologue.com/language/tuv\""
+      },
+      {
+        "title": "SIL Ethnologue, 20e éd. (Simons, G.F. & Fennig, C.D., eds., 2017), page consultée via version archivée (Internet Archive, 12 octobre 2017) – \"Dinka [din]\" (macrolangue) : 1 365 900 locuteurs au Soudan du Sud",
+        "url": "https://www.ethnologue.com/language/din",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 11 août 2016) – \"Nuer [nus]\": 894 120 locuteurs au Soudan du Sud (total utilisateurs, dont 893 000 en L1)",
+        "url": "https://www.ethnologue.com/language/nus",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 24 mars 2016) – \"Acholi [ach]\": 1 170 000 locuteurs en Ouganda (recensement 2002)",
+        "url": "https://www.ethnologue.com/language/ach",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

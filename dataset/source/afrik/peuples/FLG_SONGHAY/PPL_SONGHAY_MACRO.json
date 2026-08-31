@@ -3,6 +3,7 @@
   "nameMain": "Peuples Songhay (macro-groupe)",
   "languageFamilyId": "FLG_SONGHAY",
   "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Peuples Songhay (macro-groupe)",
@@ -113,13 +114,48 @@
       ]
     },
     "sources": [
-      "Britannica – Songhai Empire. https://www.britannica.com/place/Songhai-empire",
-      "Hunwick, John O. Timbuktu and the Songhay Empire : Al-Sa'di's Ta'rikh al-Sudan down to 1613. Brill, 1999.",
-      "Kati, Mahmoud. Tarikh al-Fattash (Chronique du chercheur). Traduit par O. Houdas et M. Delafosse. Paris, 1913.",
-      "Stoller, Paul. Fusion of the Worlds : An Ethnography of Possession among the Songhay of Niger. University of Chicago Press, 1989.",
-      "SIL Ethnologue – Songhay languages. https://www.ethnologue.com/subgroup/300/",
-      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/",
-      "OpenStax World History Volume 2 – The Songhai Empire. https://openstax.org/books/world-history-volume-2/pages/3-2-the-songhai-empire"
+      {
+        "title": "Britannica – Songhai Empire",
+        "url": "https://www.britannica.com/place/Songhai-empire",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Hunwick, John O. Timbuktu and the Songhay Empire : Al-Sa'di's Ta'rikh al-Sudan down to 1613. Brill, 1999",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kati, Mahmoud. Tarikh al-Fattash (Chronique du chercheur). Traduit par O. Houdas et M. Delafosse. Paris, 1913",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Stoller, Paul. Fusion of the Worlds : An Ethnography of Possession among the Songhay of Niger. University of Chicago Press, 1989",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue – Songhay languages",
+        "url": "https://www.ethnologue.com/subgroup/300/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": "https://www.cia.gov/the-world-factbook/countries/niger/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "OpenStax World History Volume 2 – The Songhai Empire",
+        "url": "https://openstax.org/books/world-history-volume-2/pages/3-2-the-songhai-empire",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers openstax.org; the tier awaits editorial review."
+      }
     ]
   }
 }

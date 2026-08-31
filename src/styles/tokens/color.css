@@ -1,5 +1,5 @@
 /* ============================================================
-   Africa History — Color Tokens
+   EthniAfrica — Color Tokens
    ETNI-21 · Epic 1 (Source Transparency Fabric) · UX-DR1
    ------------------------------------------------------------
    Two-layer system:
@@ -20,13 +20,12 @@
   --afh-color-border: #e8dfd3;
 
   --afh-color-text: #2c2018;
-  /* text-soft darkened from #7a6b5d for WCAG AA on warm surfaces (#fbf7f2,
-     #f5ede0, #fceee8). Net luminance shift ~2 % — visually indistinguishable
-     while pushing the worst-case ratio from 4.42 to 4.96. */
-  --afh-color-text-soft: #78695b;
+  /* text-soft meets WCAG AA on the earth and other warm surfaces. */
+  --afh-color-text-soft: #746557;
   --afh-color-text-muted: #9b8b7d;
 
-  --afh-color-gold: #b8860b;
+  /* gold meets WCAG AA on white, gold, and warm surfaces. */
+  --afh-color-gold: #7a5a00;
   --afh-color-gold-bg: #fdf5e1;
   --afh-color-green: #2b6b42;
   --afh-color-green-bg: #e8f5ed;
@@ -55,6 +54,86 @@
   --afh-color-error-bg: #fce8e8;
   --afh-color-error-border: #e5b8b8;
 
+  /* Home night surface */
+  --afh-night-ground: #120e0a;
+  --afh-night-surface: #1d1710;
+  --afh-night-surface-2: #271e14;
+  --afh-night-line: #3a2e1f;
+  --afh-night-ink: #f1e7d8;
+  --afh-night-ink-2: #c9b99f;
+  --afh-night-ink-3: #8f7f66;
+  --afh-night-ocre: #c9821f;
+  --afh-night-ocre-soft: #e8b96a;
+  --afh-night-teal: #33a390;
+  --afh-night-terre: #c4573f;
+  --afh-night-perv: #7a8ce8;
+  /* The colonial tone lightened for a dark ground. #9b3030 is a day ink and
+     sits at 2.2–2.6:1 on the night grounds; this clears 6.1:1 on the darkest
+     of them. Not --afh-night-terre, which the charter reserves as
+     IdentityPanel's imposed-exonym accent and which only reaches 3.7:1 here
+     anyway. */
+  --afh-night-colonial: #d98a7a;
+
+  /* Charter categorical accents (V2, ETNI-798 · FR104) — the CVD-validated
+     set promoted to first-class tokens. Base hexes match the dormant
+     --afh-night-{ocre,teal,terre,perv} above; the -tint variants are new.
+     The --afh-night-* group stays otherwise dormant. DEC-022 (ETNI-1284)
+     lifted that for one surface: the atlas globe stage on a fiche is
+     --afh-night-ground/-ink* regardless of the fiche's own accent — see
+     src/components/atlas/AtlasGlobe.tsx. No other component may consume it. */
+  /* ─── The brand mark's two stops ──────────────────────────────
+     The warm gradient paints the masthead tagline on every page and
+     the title of each axis hub. It is the most visible colour in the
+     product, and until now neither of its stops was a token: both
+     lived as raw HSL in index.css, outside this palette entirely.
+
+     Named here, at their existing values, byte for byte. Nothing
+     moves a pixel — the point is that the brand's own colour is now
+     in the system that governs every other colour, and greppable.
+
+     They are mark colours, not accents: no surface takes them, no
+     component reads them. Only --afh-gradient-brand does. */
+  --afh-brand-flame: #da622f;
+  --afh-brand-gold: #f2ba36;
+  --afh-gradient-brand: linear-gradient(
+    135deg,
+    var(--afh-brand-flame),
+    var(--afh-brand-gold)
+  );
+
+  --afh-cat-ocre: #c9821f;
+  --afh-cat-ocre-tint: #f1d9ae;
+  --afh-cat-teal: #33a390;
+  --afh-cat-teal-tint: #cbe7df;
+  --afh-cat-terre: #c4573f;
+  --afh-cat-terre-tint: #f0d2c8;
+  --afh-cat-perv: #7a8ce8;
+  --afh-cat-perv-tint: #dce1f9;
+
+  /* -ink variants: the accent as *text on its own tint*. The base hexes are
+     fill colours — each one lands between 2.28:1 and 3.09:1 against its tint,
+     so accent-coloured label text on a tinted card fails WCAG AA. Each ink is
+     its base scaled toward black on the same hue, the lightest step that
+     clears 4.5:1, so an accent still reads as itself when it carries text. */
+  --afh-cat-ocre-ink: #835514;
+  --afh-cat-teal-ink: #226d60;
+  --afh-cat-terre-ink: #974331;
+  --afh-cat-perv-ink: #535f9e;
+
+  /* The night half of the same pair. The inks above were scaled toward
+     black to read on the parchment tint; on a night card that makes them
+     dark-on-dark (2.47:1 to 2.73:1), worse than the fill they replaced.
+     Here the readable direction is the other one, so ocre, teal and perv
+     need no lift at all — the base fill already measures 5.2:1 on the
+     card and 5.9:1 on the ground. Only terre is too dark at full
+     strength (3.73:1), so it alone is lifted toward white on its own hue,
+     to the darkest step clearing the bar with margin on both surfaces
+     (4.81:1 card, 5.44:1 ground). */
+  --afh-cat-ocre-ink-night: var(--afh-cat-ocre);
+  --afh-cat-teal-ink-night: var(--afh-cat-teal);
+  --afh-cat-terre-ink-night: #cd725e;
+  --afh-cat-perv-ink-night: var(--afh-cat-perv);
+
   /* ─── L2 · Semantic aliases ────────────────────────────────── */
 
   /* Surface */
@@ -67,6 +146,19 @@
   --afh-text: var(--afh-color-text);
   --afh-text-soft: var(--afh-color-text-soft);
   --afh-text-muted: var(--afh-color-text-muted);
+
+  /* The readable colonial tone, for anything inked against the theme's own
+     ground — the imposed-exonym marker, the unverified-source chip. It stands
+     to the raw tone exactly as the accent ink stands to the accent fill: the
+     fill keeps its place on blocks that carry their own pale tint, and this
+     one follows the surface into night. A rule that paints
+     --afh-color-colonial-bg under itself keeps the raw tone, because that
+     tint is parchment and travels with it.
+
+     Written without a colon after any token name: charterTokens.test.ts reads
+     this file line by line, and prose shaped like a declaration is picked up
+     as one. */
+  --afh-colonial-ink: var(--afh-color-colonial);
 
   /* Muted surface + foreground pair — used by source-transparency badges
      (SourceChainSheet tier pills, etc.) and other low-emphasis chips. The
@@ -89,6 +181,16 @@
   --afh-conf-mid-bg: var(--afh-color-gold-bg);
   --afh-conf-low: var(--afh-color-clay);
   --afh-conf-low-bg: var(--afh-color-earth-bg);
+  /* Clay is a fill, not an ink: #b87d5b reads 3.22:1 on the page ground, so
+     the header's « Bientôt » chip — which is state a reader has to be able to
+     read, not decoration — failed AA wherever it was set in it. The darker
+     sibling of the same family clears at 5.42:1. Same mirror that --accent-ink
+     holds against the accent fill — marks take the fill, type takes the ink.
+
+     Written without a `--token` + colon anywhere above: charterTokens.test.ts
+     reads the accent declarations with a regex over this file, and a comment
+     shaped like a declaration is captured as one. */
+  --afh-conf-low-ink: var(--afh-color-earth);
 
   /* Classification state — fiche-level editorial status */
   --afh-classification-stable: var(--afh-color-green);
@@ -116,4 +218,259 @@
   --afh-error: var(--afh-color-error);
   --afh-error-bg: var(--afh-color-error-bg);
   --afh-error-border: var(--afh-color-error-border);
+
+  /* Relation type — RelationTypeBadge / EgoNetworkGraph edges (Epic 11,
+     ETNI-509). Hues reference the existing calm palette — no new colors,
+     no red. Linguistic proximity is always AFRIK-derived, never sourced
+     individually, hence the dashed stroke pairing. */
+  --afh-relation-linguistic: var(--afh-color-green);
+  --afh-relation-migratory: var(--afh-color-earth);
+  --afh-relation-commercial: var(--afh-color-gold);
+  --afh-relation-religious: var(--afh-color-terracotta);
+  --afh-relation-derived-dash: 4 3;
+
+  /* Atlas — AfricaBasemap foundation (Epic 12, ETNI-519). Aliases only, no
+     new raw hex: the basemap silhouette reuses the earth palette so it
+     reads as "terrain" without introducing a new hue. Epic 12/13 overlay
+     layers (rendered as AfricaBasemap children) pick their own tokens. */
+  --afh-atlas-land: var(--afh-color-earth-bg);
+  --afh-atlas-coastline: var(--afh-color-earth);
+
+  /* Atlas — the shared textured sphere (REQ-112/REQ-116), night surface.
+     DEC-022 puts dataviz on the Night surface, which is still what a fiche's
+     atlas does whatever the reader's page theme. The home's globe is the one
+     exception: it is the page's subject rather than a panel inside it, and a
+     dark disc punched through a parchment page read as a hole — so it takes
+     the parchment counterpart below when the reader is on parchment.
+     Ocean and land are darker/warmer siblings of the night ground rather
+     than new hues; coast and equator reuse existing tokens outright. */
+  --afh-globe-ocean: #120e0a;
+  --afh-globe-graticule: #42341f;
+  --afh-globe-graticule-major: #5d4a2e;
+  --afh-globe-land: #6b4a22;
+  /* The rest of the world, drawn under Africa. The corpus can only vouch
+     for African geography, so the other continents wear the hero title's
+     own ink at low opacity: enough to put Africa on a real planet, faint
+     enough that one continent alone still reads as painted. */
+  --afh-globe-land-far: rgba(241, 231, 216, 0.4);
+  --afh-globe-coast: var(--afh-night-ocre-soft);
+  /* The equator is the one line that is a measurement, not terrain, so it
+     takes the categorical accent no landmass ever wears. */
+  --afh-globe-equator: var(--afh-cat-perv);
+  /* Tissot indicatrices — every disc covers the same real area, so they
+     read as instrumentation rather than terrain and take teal, the accent
+     no landmass and no boundary ever wears. */
+  --afh-globe-tissot: rgba(51, 163, 144, 0.3);
+  --afh-globe-tissot-edge: var(--afh-cat-teal);
+  /* National boundaries. Faint on purpose: they are the frame the chosen
+     country is read against, never a second subject competing with it.
+     Drawn under every highlight, so the surlignage always wins. */
+  --afh-globe-border: rgba(232, 185, 106, 0.28);
+
+  /* Atlas — the same sphere on the parchment surface. Role for role with
+     the night group above, so nothing downstream learns which surface it
+     is painting; only the values differ.
+
+     The relation between ocean and page is what flips. On night the ocean
+     IS the ground, and the body is separated from it by the lit limb; on
+     parchment the ocean is a shade deeper than the page (--afh-color-bg),
+     so the disc states its own edge and needs no rim — see GLOBE_LIGHTING
+     in globePalette.ts, which is the other half of this pair.
+
+     Land is the terracotta the rest of the parchment surface already uses
+     for a warm foreground, so the continent stays the one mass painted as
+     terrain without introducing a hue the charter does not have. */
+  --afh-globe-parchment-ocean: #e6dcc7;
+  --afh-globe-parchment-graticule: #cdbc9f;
+  --afh-globe-parchment-graticule-major: #b09a78;
+  --afh-globe-parchment-land: var(--afh-color-terracotta);
+  /* The far continents, in the page's own ink at low alpha — the mirror of
+     the night group's hero ink: faint enough that Africa alone still reads
+     as the painted one. */
+  --afh-globe-parchment-land-far: rgba(44, 32, 24, 0.16);
+  --afh-globe-parchment-coast: #6b3a1c;
+  --afh-globe-parchment-equator: var(--afh-cat-perv);
+  --afh-globe-parchment-tissot: rgba(51, 163, 144, 0.28);
+  --afh-globe-parchment-tissot-edge: var(--afh-cat-teal);
+  --afh-globe-parchment-border: rgba(107, 58, 28, 0.26);
+
+  /* Atlas — MigrationPathLayer overlay (Epic 12, Story 12.9, ETNI-522).
+     Active/selected state is never color-alone: stroke-width + opacity in
+     the component carry the signal, these tokens only supply the hue. */
+  --afh-atlas-path-inactive: var(--afh-color-text-muted);
+  --afh-atlas-path-active: var(--afh-color-terracotta);
+  --afh-atlas-path-selected: var(--afh-color-gold);
+
+  /* Accent scoping (ETNI-798 · FR104) — the ONLY path a component may use
+     to receive an accent colour. A page or route wrapper scopes an accent
+     by overriding --accent and --accent-tint to one of the --afh-cat-
+     base/tint pairs above (e.g. a `.afh-accent-teal` wrapper sets
+     `--accent: var(--afh-cat-teal); --accent-tint: var(--afh-cat-teal-tint);`).
+     Components must consume var(--accent) / var(--accent-tint) and must
+     never reference an --afh-cat- token or a hex literal directly — that
+     keeps the accent swappable per page without touching component code.
+     The default below (ocre) keeps unscoped components valid.
+
+     --accent-foreground pairs with --accent for text placed directly on
+     the full-strength accent fill (e.g. a selected filter pill). It must
+     satisfy WCAG AA (≥ 4.5:1) against --accent. It is the dark ink, not
+     white: measured, white lands at 3.14:1 on ocre, 3.10:1 on teal and
+     3.11:1 on perv — every accent fill in the product, not the edge case
+     terre was once thought to be. The dark ink clears all three (5.91,
+     5.98, 5.95); terre alone still needs its own darker override, because
+     even this ink only reaches 4.22:1 on it (see .afh-accent-terre below).
+
+     The night block below already said this, for the same reason: an accent
+     fill is a light patch whichever theme it sits in, and the --afh-cat-*
+     hexes are identical in day and night, so the ink on them must be too.
+
+     It stayed invisible because --accent used to hold a hex here and a bare
+     shadcn HSL triplet in index.css, so bg-[color:var(--accent)] resolved to
+     rgba(0, 0, 0, 0) outside an accent scope: the fill never painted, and
+     axe-core measured white text on parchment instead. Asserted now in
+     src/styles/__tests__/colorTokens.test.ts.
+
+     --accent-ink is the mirror image: text placed on --accent-tint rather
+     than on the full-strength fill. --accent itself is never legible there,
+     so any accent-coloured text over a tinted surface takes --accent-ink. */
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
+  --accent-foreground: #1a1208;
+
+  /* Display type carries its accent as text, not as a fill, so it needs the
+     ocre that stays readable on the surface it is set on — the dark ink on
+     parchment, the soft gold on night. One token instead of a theme test in
+     every headline that wants an accented word. */
+  --afh-display-accent: var(--afh-cat-ocre-ink);
+
+  /* Retired: --afh-gradient-spectrum, a five-hue ramp read off
+     `public/africa.png` and reserved for the footer's brand qualifier. The
+     qualifier now takes --afh-gradient-brand, the gradient the masthead sets
+     the identical string in, so the ramp had exactly zero consumers left.
+     Declared-and-unconsumed is the failure --afh-section-gap already cost us
+     (brand charter §7); a dead token is deleted, not kept warm. */
+}
+
+/* ─── Night theme (REQ-115) ───────────────────────────────────────
+   The reader's choice between parchment and night, applied site-wide.
+   next-themes writes `.dark` on <html>, which is also what Tailwind's
+   `darkMode: ["class"]` reads, so one class drives both systems.
+
+   Only the L2 semantic aliases are rebound. Nothing below this line
+   learns which theme it is under: a component that already reads
+   --afh-bg / --afh-text / --afh-surface follows the swap untouched,
+   and one that hardcodes a hex would not have followed either way.
+   The raw --afh-color-* ramp stays put — it is the parchment palette,
+   and the night surface has its own --afh-night-* group.
+
+   .afh-on-night is the same swap applied to a subtree instead of the
+   page: the home's hero band is night whatever the reader chose, because
+   a lit globe only reads as a body against a dark sky (DEC-022). Sharing
+   the rule rather than copying it is what stops the band and the page
+   theme drifting into two different nights. */
+.dark,
+.afh-on-night {
+  --afh-bg: var(--afh-night-ground);
+  --afh-bg-warm: var(--afh-night-surface);
+  --afh-surface: var(--afh-night-surface-2);
+  --afh-border: var(--afh-night-line);
+
+  --afh-text: var(--afh-night-ink);
+  --afh-text-soft: var(--afh-night-ink-2);
+  --afh-text-muted: var(--afh-night-ink-3);
+
+  --afh-colonial-ink: var(--afh-night-colonial);
+
+  /* fg-muted must clear AA on --afh-muted; ink-3 sits at 4.2:1 on the
+     raised surface, so the muted pair takes ink-2 the way the parchment
+     pair takes text-soft rather than text-muted. */
+  --afh-muted: var(--afh-night-surface);
+  --afh-fg-muted: var(--afh-night-ink-2);
+
+  /* An accent fill is a light patch on a dark page, so the text on it
+     flips to the dark ink for the same reason terre needs it in day. */
+  --accent-foreground: #1a1208;
+
+  --afh-display-accent: var(--afh-night-ocre-soft);
+
+  /* Rebinding the tokens is not enough on its own: `color` is resolved
+     once on body and then inherited, so text with no colour of its own
+     stays parchment-dark inside a night subtree. Stating it here is what
+     makes the scope carry to anything that never set a colour — the nav's
+     wordmark went unreadable on the home band without it. */
+  color: var(--afh-text);
+}
+
+/* ─── Accent scope wrappers (ETNI-798 · FR104 · ETNI-927) ─────────
+   The sanctioned way to put a page or a subtree on a different accent:
+   a wrapper element rebinds --accent / --accent-tint for everything
+   below it. Scoping belongs here rather than in components so a route
+   changes its accent by swapping one class — no component learns which
+   accent it was rendered under, and none needs editing to be reused on
+   another accent.
+
+   Naming mirrors the --afh-cat-* pairs; adding an accent means adding a
+   pair above and a rule here, nothing else. */
+.afh-accent-ocre {
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
+}
+
+.afh-accent-teal {
+  --accent: var(--afh-cat-teal);
+  --accent-tint: var(--afh-cat-teal-tint);
+  --accent-ink: var(--afh-cat-teal-ink);
+}
+
+/* Terre doubles as IdentityPanel's colonial-marker accent — scoping a whole
+   page to it would drown that marker. Available, but not for fiche scopes. */
+.afh-accent-terre {
+  --accent: var(--afh-cat-terre);
+  --accent-tint: var(--afh-cat-terre-tint);
+  --accent-ink: var(--afh-cat-terre-ink);
+  /* #c4573f only clears WCAG AA (4.5:1) against black, not white
+     (4.39:1) — axe-core flagged this on the live /fr/peuples route. */
+  --accent-foreground: #000;
+}
+
+.afh-accent-perv {
+  --accent: var(--afh-cat-perv);
+  --accent-tint: var(--afh-cat-perv-tint);
+  --accent-ink: var(--afh-cat-perv-ink);
+}
+
+/* The ink half of each accent pair flips with the surface, exactly as
+   --accent-foreground does above: on a dark page the readable accent is
+   the light one. Written as a night-scoped override of the same wrappers
+   so a component still only ever reads --accent-ink and never learns
+   which surface it was rendered on. */
+
+.dark .afh-accent-ocre,
+.afh-on-night .afh-accent-ocre,
+.afh-accent-ocre.dark,
+.afh-accent-ocre.afh-on-night {
+  --accent-ink: var(--afh-cat-ocre-ink-night);
+}
+
+.dark .afh-accent-teal,
+.afh-on-night .afh-accent-teal,
+.afh-accent-teal.dark,
+.afh-accent-teal.afh-on-night {
+  --accent-ink: var(--afh-cat-teal-ink-night);
+}
+
+.dark .afh-accent-terre,
+.afh-on-night .afh-accent-terre,
+.afh-accent-terre.dark,
+.afh-accent-terre.afh-on-night {
+  --accent-ink: var(--afh-cat-terre-ink-night);
+}
+
+.dark .afh-accent-perv,
+.afh-on-night .afh-accent-perv,
+.afh-accent-perv.dark,
+.afh-accent-perv.afh-on-night {
+  --accent-ink: var(--afh-cat-perv-ink-night);
 }

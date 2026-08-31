@@ -3,6 +3,7 @@
   "nameMain": "Nubiens",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
   "currentCountries": ["SDN", "EGY"],
+  "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Nubiens",
@@ -92,10 +93,30 @@
       ]
     },
     "sources": [
-      "Minority Rights Group – Nubians in Egypt, 2024 (https://minorityrights.org/communities/nubians/)",
-      "Rilly, C. & de Voogt, A. – The Meroitic Language and Writing System, 2012",
-      "Language Documentation and Description – Nobiin language snapshot (https://www.lddjournal.org/article/1214/galley/2458/download/)",
-      "National Geographic – The Nubian kingdom of Kush, 2025 (https://www.nationalgeographic.com/history/history-magazine/article/ancient-egypt-nubian-kingdom-pyramids-sudan)"
+      {
+        "title": "Minority Rights Group – Nubians in Egypt, 2024",
+        "url": "https://minorityrights.org/communities/nubians/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Rilly, C. & de Voogt, A. – The Meroitic Language and Writing System, 2012",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Language Documentation and Description – Nobiin language snapshot",
+        "url": "https://www.lddjournal.org/article/1214/galley/2458/download/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lddjournal.org."
+      },
+      {
+        "title": "National Geographic – The Nubian kingdom of Kush, 2025",
+        "url": "https://www.nationalgeographic.com/history/history-magazine/article/ancient-egypt-nubian-kingdom-pyramids-sudan",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nationalgeographic.com."
+      }
     ]
   }
 }
