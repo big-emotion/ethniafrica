@@ -1,4 +1,4 @@
-export type SourceTier = "official" | "referenced" | "unverified";
+import type { SourceTier } from "../../src/types/sources";
 
 export interface FicheSource {
   title: string;
@@ -32,7 +32,7 @@ export interface ClanNameCandidate {
   sourceCandidates: FicheSource[];
   inheritedTier: SourceTier | null;
   sourceKind: string | null;
-  tierResolution: "single_source" | "uniform_fiche_tier" | "review_required";
+  tierResolution: "single_source" | "uniform_bound_sources" | "review_required";
   reviewFlags: string[];
   reviewStatus: "unreviewed" | "approved" | "rejected";
 }
