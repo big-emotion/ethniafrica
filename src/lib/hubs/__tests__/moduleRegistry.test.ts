@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import {
   ACCENT_CYCLE,
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
@@ -24,6 +25,15 @@ afterEach(() => {
 });
 
 describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
+  // @req REQ-114
+  it("owns the exact French label of every access mode", () => {
+    expect(ACCESS_MODE_LABELS).toEqual({
+      explorer: "Consulter",
+      comprendre: "Enquêter",
+      jouer: "Jouer",
+    });
+  });
+
   // @req REQ-114
   it("enumerates the three intents a reader arrives with", () => {
     expect(ACCESS_MODES).toEqual(["explorer", "comprendre", "jouer"]);

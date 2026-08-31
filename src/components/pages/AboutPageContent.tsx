@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Language } from "@/types/shared";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 
 interface AboutPageContentProps {
@@ -68,21 +69,21 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
         items: [
           {
-            title: "Explorer",
+            title: ACCESS_MODE_LABELS.explorer,
             description:
               "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
             accentClass: "afh-accent-ocre",
             page: "explorerHub" as PageType,
           },
           {
-            title: "Comprendre",
+            title: ACCESS_MODE_LABELS.comprendre,
             description:
               "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
             accentClass: "afh-accent-teal",
             page: "comprendreHub" as PageType,
           },
           {
-            title: "Jouer",
+            title: ACCESS_MODE_LABELS.jouer,
             description:
               "Interroger ses repères grâce aux jeux construits à partir du corpus.",
             accentClass: "afh-accent-perv",

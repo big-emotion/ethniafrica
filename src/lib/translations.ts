@@ -1,5 +1,6 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import type { PageType } from "@/lib/routing";
 
 /**
@@ -24,9 +25,9 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   migrations: "Migrations",
   quiz: "Quiz",
   colonization: "Colonisation & résistances",
-  explorerHub: "Explorer",
-  comprendreHub: "Comprendre",
-  jouerHub: "Jouer",
+  explorerHub: ACCESS_MODE_LABELS.explorer,
+  comprendreHub: ACCESS_MODE_LABELS.comprendre,
+  jouerHub: ACCESS_MODE_LABELS.jouer,
 };
 
 // @req REQ-014
@@ -344,11 +345,10 @@ export const translations = {
     // it. The home's cards (AccessAxes) carry the same change.
     hubs: {
       explorer: {
-        title: "Explorer",
-        // What the shell's title band prints. `title` names the axis inside
-        // the site's own vocabulary — a trail crumb, a menu entry — where the
-        // surrounding chrome supplies the subject. The band has no such
-        // context, so it names the axis *and* what the axis leads into.
+        title: ACCESS_MODE_LABELS.explorer,
+        // `title` keeps the short reader-facing label available to legacy
+        // translation consumers. The band has a different job: it names the
+        // page and what it leads into, so `pageTitle` remains descriptive.
         pageTitle: "Explorer les peuples d'Afrique",
         // « Le corpus » and « une entité » are the team's words for the
         // collection and for what it holds. Both name the thing from the
@@ -362,7 +362,7 @@ export const translations = {
         hubEntryName: "Le hub d'exploration",
       },
       comprendre: {
-        title: "Comprendre",
+        title: ACCESS_MODE_LABELS.comprendre,
         pageTitle: "Comprendre les peuples d'Afrique",
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
@@ -371,7 +371,7 @@ export const translations = {
         hubEntryName: "Le hub de lecture",
       },
       jouer: {
-        title: "Jouer",
+        title: ACCESS_MODE_LABELS.jouer,
         pageTitle: "Jouer avec les peuples d'Afrique",
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",

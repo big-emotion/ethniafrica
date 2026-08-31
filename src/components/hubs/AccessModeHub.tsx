@@ -7,6 +7,7 @@ import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import {
   ACCENT_BY_ACCESS_MODE,
+  ACCESS_MODE_LABELS,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -113,7 +114,7 @@ export function AccessModeHub({
     <section
       data-testid={`access-mode-hub-${mode}`}
       className={accentClass}
-      aria-label={hubStrings.title}
+      aria-label={ACCESS_MODE_LABELS[mode]}
     >
       <p
         data-testid={`access-mode-hub-${mode}-blurb`}

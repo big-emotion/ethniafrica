@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { HeroProvenanceChip } from "@/components/home/HeroProvenanceChip";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import { getLocalizedRoute } from "@/lib/routing";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 
 const hubModule = (overrides: Partial<HubModule> = {}): HubModule => ({
   id: "mercator",
@@ -21,12 +22,12 @@ describe("HeroProvenanceChip", () => {
   it("names the axis the module belongs to, and the module", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
-    expect(screen.getByText("Jouer")).toBeTruthy();
+    expect(screen.getByText(ACCESS_MODE_LABELS.jouer)).toBeTruthy();
     expect(screen.getByText("La taille qu'on vous a cachée")).toBeTruthy();
   });
 
   // @req REQ-115
-  it("takes the axis label from the translations, not a local copy", () => {
+  it("takes the axis label from the canonical access-mode map", () => {
     render(
       <HeroProvenanceChip
         language="fr"
@@ -34,7 +35,7 @@ describe("HeroProvenanceChip", () => {
       />
     );
 
-    expect(screen.getByText("Comprendre")).toBeTruthy();
+    expect(screen.getByText(ACCESS_MODE_LABELS.comprendre)).toBeTruthy();
   });
 
   // @req REQ-115
@@ -51,7 +52,7 @@ describe("HeroProvenanceChip", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
     expect(screen.getByRole("link").getAttribute("aria-label")).toBe(
-      "Jouer — La taille qu'on vous a cachée"
+      `${ACCESS_MODE_LABELS.jouer} — La taille qu'on vous a cachée`
     );
   });
 

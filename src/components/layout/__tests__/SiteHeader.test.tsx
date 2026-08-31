@@ -15,7 +15,7 @@ import { HEADER_RETRACTED_ATTRIBUTE } from "@/hooks/use-header-reveal";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
-import { getNavModules } from "@/lib/hubs/moduleRegistry";
+import { ACCESS_MODE_LABELS, getNavModules } from "@/lib/hubs/moduleRegistry";
 import type { ModuleAvailabilityMap } from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
@@ -110,9 +110,9 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
     ).getAllByRole("button");
 
     expect(entries.map((button) => button.textContent)).toEqual([
-      "Explorer",
-      "Comprendre",
-      "Jouer",
+      ACCESS_MODE_LABELS.explorer,
+      ACCESS_MODE_LABELS.comprendre,
+      ACCESS_MODE_LABELS.jouer,
     ]);
   });
 
@@ -167,9 +167,12 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("leads with the axis's own hub, and reaches every entry it holds", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "true");
+    expect(trigger(ACCESS_MODE_LABELS.explorer)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
     expect(panel()).toHaveTextContent(t.hubs.explorer.menuBlurb);
 
     // The axis label is a disclosure button, so before this the page the axis
@@ -203,7 +206,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("names destinations without printing their addresses", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
     expect(panel()).not.toHaveTextContent(getAxisHubRoute("fr", "explorer"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "search"));
@@ -216,10 +219,13 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("closes when its own trigger is clicked again", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "false");
+    expect(trigger(ACCESS_MODE_LABELS.explorer)).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
     expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
   });
 
@@ -227,11 +233,17 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("swaps to another axis without closing first", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "false");
-    expect(trigger("Comprendre")).toHaveAttribute("aria-expanded", "true");
+    expect(trigger(ACCESS_MODE_LABELS.explorer)).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
+    expect(trigger(ACCESS_MODE_LABELS.comprendre)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
     expect(panel()).toHaveTextContent(t.hubs.comprendre.menuBlurb);
   });
 
@@ -241,7 +253,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("closes when the reader lands on a new route", () => {
     const { rerender } = renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
     mockPathname = getLocalizedRoute("fr", "peoples");
     rerender(
       <ThemeProvider attribute="class">
@@ -257,7 +269,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
     mockPathname = getLocalizedRoute("fr", "peoples");
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
     expect(screen.getByRole("link", { name: "Peuples" })).toHaveAttribute(
       "aria-current",
@@ -272,7 +284,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("keeps the facets on a single scrolling row", () => {
     const { container } = renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
     // happy-dom lays nothing out, so the row's shape is asserted on the
     // declaration itself. The facets are states of one hub: stacked, they
@@ -298,7 +310,7 @@ describe("SiteHeader — the About destination (REQ-132)", () => {
   it("keeps About and the editorial doctrine as distinct Comprendre destinations", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
 
     expect(
       within(panel()).getByRole("link", { name: "À propos du projet" })
@@ -312,7 +324,7 @@ describe("SiteHeader — the About destination (REQ-132)", () => {
   it("gives About its dedicated information glyph", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
 
     const glyph = screen
       .getByTestId("site-nav-module-about")
@@ -329,7 +341,11 @@ describe("SiteHeader — the About destination (REQ-132)", () => {
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
-    fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.comprendre),
+      })
+    );
 
     expect(
       within(tray).getByRole("link", { name: "À propos du projet" })
@@ -345,26 +361,32 @@ describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
   it("closes on Escape and hands the focus back to the trigger", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jouer));
     fireEvent.keyDown(document, { key: "Escape" });
 
     expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
-    expect(trigger("Jouer")).toHaveFocus();
+    expect(trigger(ACCESS_MODE_LABELS.jouer)).toHaveFocus();
   });
 
   // @req REQ-114
   it("moves between axes with the arrow keys, wrapping at both ends", () => {
     renderHeader();
 
-    trigger("Explorer").focus();
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowRight" });
-    expect(trigger("Comprendre")).toHaveFocus();
+    trigger(ACCESS_MODE_LABELS.explorer).focus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.explorer), {
+      key: "ArrowRight",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.comprendre)).toHaveFocus();
 
-    fireEvent.keyDown(trigger("Comprendre"), { key: "ArrowLeft" });
-    expect(trigger("Explorer")).toHaveFocus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.comprendre), {
+      key: "ArrowLeft",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.explorer)).toHaveFocus();
 
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowLeft" });
-    expect(trigger("Jouer")).toHaveFocus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.explorer), {
+      key: "ArrowLeft",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.jouer)).toHaveFocus();
   });
 
   // An open panel follows the focus, so arrowing along the bar reads the
@@ -373,10 +395,15 @@ describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
   it("carries an open panel along with the arrow keys", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowRight" });
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.explorer), {
+      key: "ArrowRight",
+    });
 
-    expect(trigger("Comprendre")).toHaveAttribute("aria-expanded", "true");
+    expect(trigger(ACCESS_MODE_LABELS.comprendre)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
     expect(panel()).toHaveTextContent(t.hubs.comprendre.menuBlurb);
   });
 });
@@ -386,7 +413,7 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
   it("never offers a route that does not resolve", () => {
     renderHeader();
 
-    for (const axis of ["Explorer", "Comprendre", "Jouer"]) {
+    for (const axis of Object.values(ACCESS_MODE_LABELS)) {
       fireEvent.click(trigger(axis));
       for (const link of within(panel()).getAllByRole("link")) {
         expect(link.getAttribute("href")).toMatch(/^\/fr\//);
@@ -397,7 +424,7 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
   // @req REQ-106
   it("renders an unbuilt module as an unfocusable Bientôt entry", () => {
     renderHeader();
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jouer));
 
     const unbuilt = getNavModules("jouer").filter(
       (navModule) => getModuleHref(navModule, "fr") === null
@@ -439,7 +466,7 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
     );
     expect(drafts.length).toBeGreaterThan(0);
 
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
     for (const navModule of drafts) {
       expectInert(entryFor(navModule.id));
     }
@@ -456,7 +483,7 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   it("withholds it from a ready module whose corpus came back empty", () => {
     renderHeader({}, { quiz: false });
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jouer));
     expectInert(entryFor("quiz"));
   });
 
@@ -464,7 +491,7 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   it("offers that same module once its corpus fills", () => {
     renderHeader({}, { quiz: true });
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jouer));
     const entry = entryFor("quiz");
     expect(entry.tagName).toBe("A");
     expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "quiz"));
@@ -479,7 +506,11 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
-    fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.comprendre),
+      })
+    );
 
     expect(
       within(tray).queryByRole("link", { name: /Appellations/ })
@@ -535,7 +566,7 @@ describe("SiteHeader — the controls that stay in the bar", () => {
   it("gives every bar control a >= 44px hit area", () => {
     renderHeader();
 
-    for (const label of ["Explorer", "Comprendre", "Jouer", "Rechercher"]) {
+    for (const label of [...Object.values(ACCESS_MODE_LABELS), "Rechercher"]) {
       expect(trigger(label)).toHaveClass("min-h-11");
     }
   });
@@ -549,7 +580,7 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
     fireEvent.click(screen.getByTestId(BURGER));
 
     const tray = screen.getByRole("dialog");
-    for (const axis of ["Explorer", "Comprendre", "Jouer"]) {
+    for (const axis of Object.values(ACCESS_MODE_LABELS)) {
       expect(
         within(tray).getByRole("button", { name: new RegExp(axis) })
       ).toBeInTheDocument();
@@ -562,7 +593,11 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
-    fireEvent.click(within(tray).getByRole("button", { name: /Explorer/ }));
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.explorer),
+      })
+    );
 
     // The tray is the only navigation below 760px, so a hub reachable in the
     // panel and not here would be unreachable on a phone.
@@ -597,7 +632,7 @@ describe("SiteHeader — the panel opens over the page, not through it", () => {
   // @req REQ-114
   it("takes the panel out of the masthead's flow, so opening it cannot move the page", () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
     expect(declarationsFor("\\.sh-panel")).toMatch(/position:\s*absolute/);
   });
@@ -648,7 +683,7 @@ describe("SiteHeader — a scroll the reader did not make cannot close the menu"
   // @req REQ-114
   it("holds the masthead open while the axis panel is open", async () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
     expect(panel()).toBeInTheDocument();
 
     // Well past RETRACT_BELOW_PX and travelling down: everything the bar
@@ -665,7 +700,7 @@ describe("SiteHeader — a scroll the reader did not make cannot close the menu"
   // @req REQ-114
   it("lets the masthead retract again once the reader has closed the menu", async () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
     scrollPageTo(400);
     await settleOneFrame();
 

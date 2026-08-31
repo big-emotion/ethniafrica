@@ -5,6 +5,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { AccessModeHub } from "@/components/hubs/AccessModeHub";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
@@ -95,7 +96,7 @@ describe("AccessModeHub — hub component (REQ-114/REQ-106)", () => {
     );
 
     expect(screen.getByTestId("access-mode-hub-explorer")).toHaveAccessibleName(
-      "Explorer"
+      ACCESS_MODE_LABELS.explorer
     );
     expect(screen.queryByRole("heading", { level: 1 })).toBeNull();
   });

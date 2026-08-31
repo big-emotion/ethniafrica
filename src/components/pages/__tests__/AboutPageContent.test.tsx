@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 
 function headingLevels(container: HTMLElement): number[] {
@@ -55,15 +56,18 @@ describe("AboutPageContent (REQ-132)", () => {
 
     const modes = screen.getByTestId("about-access-modes");
     expect(
-      within(modes).getByRole("link", { name: "Explorer" })
+      within(modes).getByRole("link", {
+        name: ACCESS_MODE_LABELS.explorer,
+      })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "explorerHub"));
     expect(
-      within(modes).getByRole("link", { name: "Comprendre" })
+      within(modes).getByRole("link", {
+        name: ACCESS_MODE_LABELS.comprendre,
+      })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "comprendreHub"));
-    expect(within(modes).getByRole("link", { name: "Jouer" })).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "jouerHub")
-    );
+    expect(
+      within(modes).getByRole("link", { name: ACCESS_MODE_LABELS.jouer })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "jouerHub"));
   });
 
   // @req REQ-132

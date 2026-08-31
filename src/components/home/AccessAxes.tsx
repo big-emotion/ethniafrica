@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import {
   ACCENT_BY_ACCESS_MODE,
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   getModulesForAccessMode,
   type AccessMode,
@@ -35,7 +36,6 @@ import {
  */
 interface AxisDefinition {
   id: AccessMode;
-  name: string;
   cta: string;
   /**
    * What the reader finds behind the card, in one line.
@@ -58,7 +58,6 @@ const plural = (count: number, singular: string, many = `${singular}s`) =>
 const AXES: AxisDefinition[] = [
   {
     id: "explorer",
-    name: "Explorer",
     cta: "Parcourir",
     stake:
       // « Le corpus » is the team's word for the collection, not the
@@ -70,7 +69,6 @@ const AXES: AxisDefinition[] = [
   },
   {
     id: "comprendre",
-    name: "Comprendre",
     cta: "Remonter",
     stake:
       "D'où viennent les noms, par où sont passés les peuples, et sur quelles sources.",
@@ -78,7 +76,6 @@ const AXES: AxisDefinition[] = [
   },
   {
     id: "jouer",
-    name: "Jouer",
     cta: "Se tester",
     stake:
       "Des jeux et des quiz tirés des fiches, dont chaque réponse est sourcée.",
@@ -334,7 +331,9 @@ export function AccessAxes({
               </span>
               {/* h3: the card is an item of the section whose heading sits
                   above the grid, not a sibling of it. */}
-              <h3 id={`access-axis-title-${axis.id}`}>{axis.name}</h3>
+              <h3 id={`access-axis-title-${axis.id}`}>
+                {ACCESS_MODE_LABELS[axis.id]}
+              </h3>
               <p
                 data-testid={`access-axis-stake-${axis.id}`}
                 className="access-axis-stake"

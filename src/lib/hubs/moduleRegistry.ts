@@ -23,6 +23,13 @@ export type AccessMode = "explorer" | "comprendre" | "jouer";
 // @req REQ-114
 export const ACCESS_MODES: AccessMode[] = ["explorer", "comprendre", "jouer"];
 
+// @req REQ-114
+export const ACCESS_MODE_LABELS = {
+  explorer: "Consulter",
+  comprendre: "Enquêter",
+  jouer: "Jouer",
+} satisfies Record<AccessMode, string>;
+
 // One categorical accent per mode, from the CVD-validated four (color.css
 // §"Categorical accents"). Terre stays out: it is the fiche-level accent
 // for families, and reusing it for an axis would make the axis and the

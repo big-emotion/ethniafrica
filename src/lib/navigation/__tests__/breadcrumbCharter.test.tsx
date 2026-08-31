@@ -13,6 +13,7 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import { YORUBA } from "@/components/fiche/__tests__/ficheContextFixtures";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 
 /**
  * The trail's contract, in one file so the rule and its consequences stay
@@ -34,7 +35,10 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens on the home and the axis that leads to the page", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      {
+        label: ACCESS_MODE_LABELS.explorer,
+        href: getLocalizedRoute("fr", "explorerHub"),
+      },
       { label: "Pays" },
     ]);
   });
@@ -48,7 +52,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("does not repeat the axis on the axis hub itself", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "explorerHub"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer" },
+      { label: ACCESS_MODE_LABELS.explorer },
     ]);
   });
 
@@ -85,14 +89,20 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      {
+        label: ACCESS_MODE_LABELS.explorer,
+        href: getLocalizedRoute("fr", "explorerHub"),
+      },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
         { label: "Accueil", href: "/fr" },
-        { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+        {
+          label: ACCESS_MODE_LABELS.explorer,
+          href: getLocalizedRoute("fr", "explorerHub"),
+        },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -105,7 +115,10 @@ describe("deriveTrail — the trail comes from the route", () => {
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      {
+        label: ACCESS_MODE_LABELS.explorer,
+        href: getLocalizedRoute("fr", "explorerHub"),
+      },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -118,7 +131,10 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      {
+        label: ACCESS_MODE_LABELS.explorer,
+        href: getLocalizedRoute("fr", "explorerHub"),
+      },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -133,7 +149,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail.map((crumb) => crumb.label)).toEqual([
       "Accueil",
-      "Explorer",
+      ACCESS_MODE_LABELS.explorer,
       "Peuples",
       "Yoruba",
     ]);
@@ -219,7 +235,10 @@ describe("deriveTrail — the trail comes from the route", () => {
       )
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Jouer", href: getLocalizedRoute("fr", "jouerHub") },
+      {
+        label: ACCESS_MODE_LABELS.jouer,
+        href: getLocalizedRoute("fr", "jouerHub"),
+      },
       { label: "La taille qu'on vous a cachée" },
     ]);
   });
@@ -233,7 +252,10 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("names a known sub-route from the table rather than the entity label", () => {
     expect(deriveTrail(`${getLocalizedRoute("fr", "quiz")}/score`)).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Jouer", href: getLocalizedRoute("fr", "jouerHub") },
+      {
+        label: ACCESS_MODE_LABELS.jouer,
+        href: getLocalizedRoute("fr", "jouerHub"),
+      },
       { label: "Quiz", href: getLocalizedRoute("fr", "quiz") },
       { label: "Score" },
     ]);
@@ -281,7 +303,7 @@ describe("the trail a fiche renders", () => {
       deriveTrail(getPeopleRoute("fr", "PPL_YORUBA"), "Yoruba").map(
         (crumb) => crumb.label
       )
-    ).toEqual(["Accueil", "Explorer", "Peuples", "Yoruba"]);
+    ).toEqual(["Accueil", ACCESS_MODE_LABELS.explorer, "Peuples", "Yoruba"]);
 
     const { container } = render(
       <PeopleLanguageSection
