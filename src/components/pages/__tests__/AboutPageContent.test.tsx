@@ -3,6 +3,45 @@ import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import type { AccessMode } from "@/lib/hubs/moduleRegistry";
+import type { CorpusCounts } from "@/lib/home/corpusCounts";
+import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
+
+const counts: CorpusCounts = {
+  peoples: 4213,
+  countries: 91,
+  families: 37,
+  migrations: 5,
+};
+
+const modulesByAxis: Record<AccessMode, HubModule[]> = {
+  explorer: [],
+  comprendre: [],
+  jouer: [],
+};
+
+const syntheses: CountrySynthesis[] = [
+  {
+    id: "BDI",
+    nameFr: "Burundi",
+    summary: "Chapeau du Burundi.",
+    formerNames: [],
+    peoples: [{ name: "Peuple test", peopleId: "PPL_TEST" }],
+    kingdoms: [],
+    languages: ["kirundi"],
+  },
+];
+
+const renderAbout = () =>
+  render(
+    <AboutPageContent
+      language="fr"
+      counts={counts}
+      modulesByAxis={modulesByAxis}
+      syntheses={syntheses}
+    />
+  );
 
 function headingLevels(container: HTMLElement): number[] {
   return Array.from(container.querySelectorAll("h1,h2,h3,h4,h5,h6")).map(
@@ -22,7 +61,7 @@ function expectNoSkippedHeadingLevels(levels: number[]) {
 describe("AboutPageContent (REQ-132)", () => {
   // @req REQ-132
   it("opens with a clear overview of EthniAfrica", () => {
-    render(<AboutPageContent language="fr" />);
+    renderAbout();
 
     expect(
       screen.getByRole("heading", { level: 1, name: "À propos" })
@@ -34,7 +73,7 @@ describe("AboutPageContent (REQ-132)", () => {
 
   // @req REQ-132
   it("names the four distinct families of content in the corpus", () => {
-    render(<AboutPageContent language="fr" />);
+    renderAbout();
 
     const families = screen.getByTestId("about-content-families");
     for (const family of [
@@ -50,25 +89,84 @@ describe("AboutPageContent (REQ-132)", () => {
   });
 
   // @req REQ-132
-  it("exposes the three access modes as distinct destinations", () => {
-    render(<AboutPageContent language="fr" />);
+  it("renders the existing purpose argument after the overview", () => {
+    const { container } = renderAbout();
 
-    const modes = screen.getByTestId("about-access-modes");
+    const overview = screen.getByTestId("about-overview");
+    const purpose = screen.getByTestId("home-purpose-blocks");
+    const corpus = screen.getByTestId("about-content-families");
+
     expect(
-      within(modes).getByRole("link", { name: "Explorer" })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "explorerHub"));
+      overview.compareDocumentPosition(purpose) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
     expect(
-      within(modes).getByRole("link", { name: "Comprendre" })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "comprendreHub"));
-    expect(within(modes).getByRole("link", { name: "Jouer" })).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "jouerHub")
-    );
+      purpose.compareDocumentPosition(corpus) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    expect(
+      container.querySelectorAll('[data-testid="home-purpose-blocks"]')
+    ).toHaveLength(1);
+  });
+
+  // @req REQ-132
+  it("places the corpus synthesis before the existing three access axes", () => {
+    renderAbout();
+
+    const corpus = screen.getByTestId("about-content-families");
+    const synthesis = screen.getByTestId("home-synthesis-rail");
+    const axes = screen.getByTestId("access-axes");
+
+    expect(
+      corpus.compareDocumentPosition(synthesis) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    expect(
+      synthesis.compareDocumentPosition(axes) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  // @req REQ-132
+  it("preserves the access framing around one interactive axis-card set", () => {
+    renderAbout();
+
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Trois manières d’entrer dans l’atlas",
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
+        { exact: true }
+      )
+    ).toBeInTheDocument();
+
+    for (const description of [
+      "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
+      "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
+      "Interroger ses repères grâce aux jeux construits à partir du corpus.",
+    ]) {
+      expect(
+        screen.getByText(description, { exact: true })
+      ).toBeInTheDocument();
+    }
+
+    expect(screen.queryByTestId("about-access-modes")).toBeNull();
+    expect(
+      screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
+    ).toHaveLength(3);
+
+    for (const name of ["Explorer", "Comprendre", "Jouer"]) {
+      expect(screen.getAllByRole("heading", { level: 3, name })).toHaveLength(
+        1
+      );
+    }
   });
 
   // @req REQ-132
   it("distinguishes this project overview from the Doctrine and links to it", () => {
-    render(<AboutPageContent language="fr" />);
+    renderAbout();
 
     const distinction = screen.getByTestId("about-doctrine-distinction");
     expect(distinction).toHaveTextContent(
@@ -86,7 +184,7 @@ describe("AboutPageContent (REQ-132)", () => {
 
   // @req REQ-132
   it("keeps one valid H1 → H2 → H3 document outline", () => {
-    const { container } = render(<AboutPageContent language="fr" />);
+    const { container } = renderAbout();
     const levels = headingLevels(container);
 
     expect(levels.filter((level) => level === 1)).toHaveLength(1);
@@ -95,21 +193,20 @@ describe("AboutPageContent (REQ-132)", () => {
 
   // @req REQ-132
   it("declares mobile-first grids that widen at tablet and editorial desktop", () => {
-    render(<AboutPageContent language="fr" />);
+    renderAbout();
 
     const families = screen.getByTestId("about-content-families");
     expect(families.className).toMatch(/grid-cols-1/);
     expect(families.className).toMatch(/min-\[720px\]:grid-cols-2/);
     expect(families.className).toMatch(/min-\[1240px\]:grid-cols-4/);
 
-    const modes = screen.getByTestId("about-access-modes");
-    expect(modes.className).toMatch(/grid-cols-1/);
-    expect(modes.className).toMatch(/min-\[720px\]:grid-cols-3/);
+    const axes = screen.getByTestId("access-axes");
+    expect(axes.className).toContain("access-axes");
   });
 
   // @req REQ-132
   it("keeps the source bibliography available through accessible links", () => {
-    render(<AboutPageContent language="fr" />);
+    renderAbout();
 
     expect(
       screen.getByRole("heading", { level: 2, name: "Sources" })
