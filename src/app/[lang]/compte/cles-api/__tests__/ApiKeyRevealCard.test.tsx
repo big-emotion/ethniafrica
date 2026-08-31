@@ -13,7 +13,7 @@ describe("ApiKeyRevealCard", () => {
     render(
       <ApiKeyRevealCard
         label="Local dev"
-        apiKey="usr_abcdef123456"
+        apiKey="usr_abcdef123456" // gitleaks:allow
         onDismiss={vi.fn()}
       />
     );
@@ -35,7 +35,7 @@ describe("ApiKeyRevealCard", () => {
     render(
       <ApiKeyRevealCard
         label="Local dev"
-        apiKey="usr_abcdef123456"
+        apiKey="usr_abcdef123456" // gitleaks:allow
         onDismiss={vi.fn()}
       />
     );
@@ -58,7 +58,7 @@ describe("ApiKeyRevealCard", () => {
     render(
       <ApiKeyRevealCard
         label="Local dev"
-        apiKey="usr_abcdef123456"
+        apiKey="usr_abcdef123456" // gitleaks:allow
         onDismiss={vi.fn()}
       />
     );
@@ -76,7 +76,7 @@ describe("ApiKeyRevealCard", () => {
     render(
       <ApiKeyRevealCard
         label="Local dev"
-        apiKey="usr_abcdef123456"
+        apiKey="usr_abcdef123456" // gitleaks:allow
         onDismiss={onDismiss}
       />
     );

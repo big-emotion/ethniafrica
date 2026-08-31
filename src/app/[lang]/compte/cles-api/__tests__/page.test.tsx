@@ -73,7 +73,7 @@ describe("ApiKeysPage", () => {
         label: "CI pipeline",
         tier: "public",
         active: true,
-        key_prefix: "usr_abcd1234",
+        key_prefix: "usr_abcd1234", // gitleaks:allow
         created_at: "2026-01-15T12:00:00.000Z",
         last_used_at: null,
         expires_at: null,

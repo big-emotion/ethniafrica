@@ -12,7 +12,7 @@ const keySummary = {
   label: "CI script",
   tier: "public" as const,
   active: true,
-  key_prefix: "usr_abcdef012345678901",
+  key_prefix: "usr_abcdef012345678901", // gitleaks:allow
   created_at: "2026-01-01T00:00:00.000Z",
   last_used_at: null,
   expires_at: null,
