@@ -3248,6 +3248,167 @@ export function checkNameRecordDuplicates(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * ETNI-1460 – Naming-system model validator (docs/design/naming-subtype-taxonomy.md).
+ *
+ * Validates dataset/source/afrik/systemes_onomastiques/*.json fiches against
+ * one strict model per subtype (public/modele-nom-<subtype>.json): the
+ * shared fields are read off the intersection of every subtype model so the
+ * set is declared once, in the model files, rather than duplicated here; the
+ * subtype-only fields are whatever a given model adds on top of that
+ * intersection. A fiche may only carry the subtype-only fields of its own
+ * declared namingSystem — a field belonging to another system is refused.
+ * "undetermined" requires the shared fields and forbids every subtype-only
+ * field, so it can never read as (or be mistaken for) the clan model.
+ */
+
+const NAMING_SYSTEM_SUBTYPE_MODELS: Record<string, string> = {
+  totemic_clan: "modele-nom-totemique.json",
+  patronymic_chain: "modele-nom-patronymique.json",
+  nisba: "modele-nom-nisba.json",
+  jamu: "modele-nom-jamu.json",
+};
+
+const NAMING_SYSTEM_TIERS = new Set(["official", "referenced", "unverified"]);
+
+/** List every dataset/source/afrik/systemes_onomastiques/*.json file path. Empty when the dir is absent. */
+function collectNamingSystemFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const dir = path.join(datasetRoot, "systemes_onomastiques");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(dir, file) }));
+}
+
+/** Top-level keys of a subtype model, excluding _meta. */
+function loadNamingSystemSubtypeKeys(
+  publicRoot: string
+): Record<string, Set<string>> {
+  const keysBySubtype: Record<string, Set<string>> = {};
+  for (const [subtype, fileName] of Object.entries(
+    NAMING_SYSTEM_SUBTYPE_MODELS
+  )) {
+    const modelPath = path.join(publicRoot, fileName);
+    const model = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+    keysBySubtype[subtype] = new Set(
+      Object.keys(model).filter((k) => k !== "_meta")
+    );
+  }
+  return keysBySubtype;
+}
+
+function namingSystemSourceTierErrors(
+  file: string,
+  fieldPath: string,
+  sources: unknown
+): string[] {
+  const errors: string[] = [];
+  const list = Array.isArray(sources) ? sources : [];
+  list.forEach((source, i) => {
+    const tier = source?.tier;
+    if (!NAMING_SYSTEM_TIERS.has(tier)) {
+      errors.push(
+        `ONS-tier: ${file}: ${fieldPath}[${i}] carries no valid tier ("official" | "referenced" | "unverified") — every source must be explicitly tiered`
+      );
+    }
+  });
+  return errors;
+}
+
+export function checkNamingSystemModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectNamingSystemFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const keysBySubtype = loadNamingSystemSubtypeKeys(PUBLIC_ROOT);
+  const subtypeNames = Object.keys(keysBySubtype);
+
+  const sharedKeys = subtypeNames.reduce(
+    (shared, subtype) => {
+      if (!shared) return new Set(keysBySubtype[subtype]);
+      return new Set([...shared].filter((k) => keysBySubtype[subtype].has(k)));
+    },
+    null as Set<string> | null
+  ) as Set<string>;
+
+  const subtypeOnlyKeys: Record<string, Set<string>> = {};
+  const allSubtypeOnlyKeys = new Set<string>();
+  for (const subtype of subtypeNames) {
+    const onlyKeys = new Set(
+      [...keysBySubtype[subtype]].filter((k) => !sharedKeys.has(k))
+    );
+    subtypeOnlyKeys[subtype] = onlyKeys;
+    onlyKeys.forEach((k) => allSubtypeOnlyKeys.add(k));
+  }
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const namingSystem = data.namingSystem;
+    const isKnownSubtype =
+      typeof namingSystem === "string" && namingSystem in keysBySubtype;
+    const isUndetermined = namingSystem === "undetermined";
+
+    if (!isKnownSubtype && !isUndetermined) {
+      errors.push(
+        `ONS-namingSystem: ${file}: namingSystem "${namingSystem}" is not a recognized subtype and is not "undetermined"`
+      );
+      continue;
+    }
+
+    for (const key of sharedKeys) {
+      if (!(key in data) || data[key] === null || data[key] === undefined) {
+        errors.push(
+          `ONS-shared: ${file}: missing required shared field "${key}"`
+        );
+      }
+    }
+
+    const allowedSubtypeOnlyKeys = isUndetermined
+      ? new Set<string>()
+      : subtypeOnlyKeys[namingSystem as string];
+
+    for (const key of allSubtypeOnlyKeys) {
+      if (!(key in data)) continue;
+      if (allowedSubtypeOnlyKeys.has(key)) continue;
+      errors.push(
+        `ONS-subtype: ${file}: field "${key}" belongs to another naming system and is refused for namingSystem "${String(namingSystem)}"`
+      );
+    }
+
+    const attestedForms = Array.isArray(data.attestedForms)
+      ? data.attestedForms
+      : [];
+    attestedForms.forEach((entry, i) => {
+      errors.push(
+        ...namingSystemSourceTierErrors(
+          file,
+          `attestedForms[${i}].attestation`,
+          [entry?.attestation]
+        )
+      );
+    });
+
+    const origin = data.origin as { sources?: unknown } | undefined;
+    errors.push(
+      ...namingSystemSourceTierErrors(file, "origin.sources", origin?.sources)
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 // ─── Run summary ─────────────────────────────────────────────────────────────
 
 /**
@@ -3587,6 +3748,14 @@ async function main() {
   newChecks.push({
     name: "FR55-surname Name record surname connection",
     result: checkNameRecordSurnameConnection(datasetRoot),
+  });
+
+  console.log(
+    "ETNI-1460 – Naming-system model (subtype fields + undetermined)..."
+  );
+  newChecks.push({
+    name: "ETNI-1460 Naming-system model",
+    result: checkNamingSystemModel(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {
