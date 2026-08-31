@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
@@ -95,15 +95,14 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     ).not.toBeInTheDocument();
   });
 
-  // The band is copy now: the module that used to fill it stands lower on
-  // the page, under a heading of its own (FeaturedModule). A globe left
-  // here would be the second one on the route.
-  // @req REQ-115
-  it("hands the module slot to its own section rather than holding it", () => {
+  // ETNI-1404 restores the shared Mercator globe as the search-first hero's
+  // visual without restoring the retired featured-module wrapper.
+  // @req REQ-115 @req ETNI-1404
+  it("holds the shared globe directly, not the old module slot", () => {
     const { container } = render(<HomeHero />);
 
     expect(container.querySelector(".home-globe-holder")).toBeNull();
-    expect(container.querySelector(".home-globe-stage")).toBeNull();
+    expect(container.querySelector(".home-globe-stage")).not.toBeNull();
   });
 
   // The band stays on the reader's chosen surface: on parchment a dark
@@ -181,105 +180,53 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
   });
 
-  /**
-   * REVERSED, deliberately. This test used to forbid a viewport-height band,
-   * and the reason it gave was sound at the time: two lines of copy stretched
-   * over a full screen is air, and it pushed the argument below the fold.
-   *
-   * What changed is the band, not the argument. It is now two columns — the
-   * question and its answer beside the picture that answers it — so the height
-   * is filled by content rather than by whitespace, and the home takes the
-   * same immersive band as the three axis hubs (`heroVariant.ts`) rather than
-   * being the one entry point that opens short.
-   *
-   * `svh`, never `vh` or `dvh`: on a phone `100vh` is the window measured with
-   * the URL bar retracted, so a `100vh` band is always taller than the screen
-   * it is on. The `min(…, 760px)` floor keeps a short, wide window from
-   * stranding the copy in an empty field.
-   */
-  // @req REQ-115
-  it("claims the viewport the way the other entry points do", () => {
+  // Search and globe must fit by content on a phone; a viewport-height floor
+  // is what pushed the globe below the first screen.
+  // @req REQ-115 @req ETNI-1404
+  it("lets content size the band rather than claiming a viewport height", () => {
+    const source = readFileSync(
+      join(process.cwd(), "src/components/home/HomeHero.tsx"),
+      "utf8"
+    );
+
+    expect(source).not.toMatch(/\b(?:dvh|svh|vh)\b|min-h-screen/);
+  });
+
+  // @req REQ-115 @req ETNI-1404
+  it("draws the globe at every width, never hiding it on a phone", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(container.querySelector("section.home-hero")).not.toBeNull();
-    expect(styles).toMatch(/min-height:\s*min\(100svh,\s*760px\)/);
-    expect(styles).toMatch(/min-height:\s*100svh/);
-    expect(styles).not.toMatch(/min-height:\s*calc\(100dvh/);
-    expect(styles).not.toMatch(/min-height:\s*calc\(100vh/);
+    expect(container.querySelector(".home-hero-globe")).not.toBeNull();
+    expect(styles).not.toMatch(/\.home-hero-globe\s*\{[^}]*display:\s*none/);
   });
 
-  /**
-   * The band is immersive at every width, so it owes content at every width.
-   *
-   * The picture used to be `display: none` below 768px, on the reading that
-   * "at phone width the question and its answer already fill the band".
-   * Measured, they do not: the floor is 760px and the copy is 135px of it, so
-   * a phone met 82% empty parchment — the product's first screen, on an atlas
-   * of African peoples, showing no Africa larger than its 40px logo.
-   *
-   * The floor is not the defect and the test above still holds it. This one
-   * holds the other half: whatever the width, the band draws the thing that
-   * fills it.
-   */
-  // @req REQ-115
-  it("draws its visual at every width, never hiding it on a phone", () => {
-    const { container } = render(<HomeHero />);
-    const styles = Array.from(container.querySelectorAll("style"))
-      .map((style) => style.textContent)
-      .join("\n");
-
-    // Asserted on the whole sheet rather than on the block before the first
-    // media query, and that is the stronger reading: the contract is that no
-    // width hides the picture, so a display:none anywhere under this selector
-    // fails — including one reintroduced inside a media query, which a
-    // base-block-only assertion would wave through.
-    expect(styles).toMatch(/\.home-hero-figure\s*\{[^}]*display:\s*block/);
-    expect(styles).not.toMatch(/\.home-hero-figure\s*\{[^}]*display:\s*none/);
-  });
-
-  /**
-   * The visual is the argument, not decoration. The repo's rule for home
-   * imagery (public/images/home/CREDITS.md) is that each picture is a document
-   * the block it sits in is *about* — a generic photograph of the continent
-   * would substitute for none of them.
-   *
-   * Al-Idrisi drew this in 1154 for Roger II of Sicily, oriented south-up, and
-   * he was born in Ceuta. A map of the world made from inside Africa, by
-   * someone naming it from where he stood, is the headline restated in one
-   * image: who named, from where, and when.
-   */
-  // @req REQ-115
-  it("carries its visual with the credit its licence is published under", () => {
+  // @req REQ-115 @req ETNI-1404
+  it("retires the historical map from the interactive hero", () => {
     render(<HomeHero />);
 
-    const figure = screen.getByTestId("home-hero-figure");
-
-    expect(within(figure).getByRole("img")).toHaveAttribute(
-      "alt",
-      expect.stringMatching(/.+/)
-    );
-    expect(figure).toHaveTextContent(/al-Idrisi/i);
-    expect(figure).toHaveTextContent(/domaine public/i);
+    expect(screen.queryByTestId("home-hero-figure")).toBeNull();
+    expect(screen.queryByText(/al-Idrisi/i)).toBeNull();
   });
 
   /**
    * Document order, not direct childhood: the band gained a row wrapper when
    * it gained its second column, and what the reader — or a screen reader
-   * walking the band — must meet first is the argument, not the picture of it.
+   * walking the band — must meet first is the argument, not the globe.
    * CSS may put the visual wherever the width allows; the source may not.
    */
   // @req REQ-115
   it("keeps the copy first in the band", () => {
     const { container } = render(<HomeHero />);
     const copy = container.querySelector(".home-hero-copy");
-    const figure = screen.getByTestId("home-hero-figure");
+    const globe = container.querySelector(".home-hero-globe");
 
     expect(copy).not.toBeNull();
+    expect(globe).not.toBeNull();
     expect(
-      copy!.compareDocumentPosition(figure) & Node.DOCUMENT_POSITION_FOLLOWING
+      copy!.compareDocumentPosition(globe!) & Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
   });
 });
