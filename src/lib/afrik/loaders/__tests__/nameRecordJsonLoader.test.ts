@@ -440,30 +440,20 @@ describe("nameRecordJsonLoader", () => {
     });
 
     // @req REQ-135
-    it.each([
-      ["has no source", []],
-      [
-        "only cites an unverified source",
-        [{ ...dialloVariantSource, tier: "unverified" }],
-      ],
-    ] satisfies [string, NameRecordSource[]][])(
-      "rejects a patronyme entry that %s before assertion persistence",
-      async (_label, sources) => {
-        const database = createSupabaseDouble();
-        const dossier = patronymeDossierWithSources(sources);
+    it("loads a patronyme entry sourced only at unverified (Source Tier Policy: nothing is forbidden, everything is labelled)", async () => {
+      const database = createSupabaseDouble();
+      const dossier = patronymeDossierWithSources([
+        { ...dialloVariantSource, tier: "unverified" },
+      ]);
 
-        const report = await loadNameRecords(database.client as never, [
-          dossier,
-        ]);
+      const report = await loadNameRecords(database.client as never, [dossier]);
 
-        expect(report).toMatchObject({ total: 1, inserted: 0 });
-        expect(report.dropped).toHaveLength(1);
-        expect(report.dropped[0]).toContain("PAT_DIALLO/surname/Diallo");
-        expect(report.dropped[0]).toContain("qualifying Tier 1/2 source");
-        expect(database.assertions).toEqual([]);
-        expect(database.nameRecords).toEqual([]);
-      }
-    );
+      expect(report).toMatchObject({ total: 1, inserted: 1 });
+      expect(report.dropped).toEqual([]);
+      expect(database.assertions).toHaveLength(1);
+      expect(database.nameRecords).toHaveLength(1);
+      expect(database.sources[0]).toMatchObject({ tier: "unverified" });
+    });
 
     // @req REQ-057
     it("upserts sources, one assertion per record, then the name_records row", async () => {

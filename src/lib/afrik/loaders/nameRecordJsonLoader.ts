@@ -183,20 +183,6 @@ async function upsertNameRecordEntry(
   report.total += 1;
   const recordLabel = `${entityId}/${entry.nameType}/${entry.nameText}`;
 
-  const hasQualifyingSource = entry.sources.some(
-    (source) =>
-      source.tier === "official" ||
-      source.tier === "referenced" ||
-      (source.tier as unknown) === 1 ||
-      (source.tier as unknown) === 2
-  );
-  if (!hasQualifyingSource) {
-    const reason = "no qualifying Tier 1/2 source (source or drop, FR57)";
-    logger.warn(`name_records row rejected for ${recordLabel}`, { reason });
-    report.dropped.push(`${recordLabel}: ${reason}`);
-    return;
-  }
-
   const sourceIds: string[] = [];
   for (const source of entry.sources) {
     const result = await upsertSource(supabase, source);
