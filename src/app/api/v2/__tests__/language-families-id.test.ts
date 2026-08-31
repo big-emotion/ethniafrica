@@ -16,6 +16,7 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { getLanguageFamilyHandler } from "@/api/v2/handlers/languageFamilies";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
 
 describe("API v2 - Single Language Family Route", () => {
   beforeEach(() => {
@@ -23,6 +24,7 @@ describe("API v2 - Single Language Family Route", () => {
   });
 
   describe("GET /api/v2/language-families/[id]", () => {
+    // @req REQ-084
     it("should return a language family by ID", async () => {
       const mockFamily = {
         id: "FLG_BANTU",
@@ -30,8 +32,16 @@ describe("API v2 - Single Language Family Route", () => {
         nameEn: "Bantu",
         content: {},
       };
+      const mockResponse = {
+        data: mockFamily,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [],
+      };
 
-      (getLanguageFamilyHandler as any).mockResolvedValue(mockFamily);
+      vi.mocked(getLanguageFamilyHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest(
         "http://localhost/api/v2/language-families/FLG_BANTU"
@@ -42,8 +52,7 @@ describe("API v2 - Single Language Family Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(data.data.id).toBe("FLG_BANTU");
+      expect(data).toEqual(mockResponse);
     });
 
     // @req REQ-033
@@ -59,7 +68,14 @@ describe("API v2 - Single Language Family Route", () => {
         content: { associatedPeoples },
       };
 
-      vi.mocked(getLanguageFamilyHandler).mockResolvedValue(mockFamily);
+      vi.mocked(getLanguageFamilyHandler).mockResolvedValue({
+        data: mockFamily,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [],
+      });
 
       const request = new NextRequest(
         "http://localhost/api/v2/language-families/FLG_AFROASIATIQUE"
@@ -76,6 +92,7 @@ describe("API v2 - Single Language Family Route", () => {
       ]);
     });
 
+    // @req REQ-084
     it("should return 400 for invalid ID format", async () => {
       const request = new NextRequest(
         "http://localhost/api/v2/language-families/BANTU"
@@ -86,11 +103,19 @@ describe("API v2 - Single Language Family Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.error).toContain("Invalid");
+      expect(data.errors).toEqual([
+        {
+          code: "VALIDATION_ERROR",
+          message: "Invalid language family ID format",
+          field: "id",
+        },
+      ]);
+      expect(data.data).toBeNull();
     });
 
+    // @req REQ-084
     it("should return 404 for non-existent language family", async () => {
-      (getLanguageFamilyHandler as any).mockResolvedValue(null);
+      vi.mocked(getLanguageFamilyHandler).mockResolvedValue(null);
 
       const request = new NextRequest(
         "http://localhost/api/v2/language-families/FLG_NONEXISTENT"
@@ -101,7 +126,39 @@ describe("API v2 - Single Language Family Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(404);
-      expect(data.error).toBe("Language family not found");
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "NOT_FOUND", message: "Language family not found" }],
+      });
+    });
+
+    // @req REQ-084
+    it("returns a 500 INTERNAL_ERROR envelope when the handler throws", async () => {
+      vi.mocked(getLanguageFamilyHandler).mockRejectedValue(
+        new Error("database unavailable")
+      );
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/language-families/FLG_BANTU"
+      );
+      const response = await GET(request, {
+        params: Promise.resolve({ id: "FLG_BANTU" }),
+      });
+      const data = await response.json();
+
+      expect(response.status).toBe(500);
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });
