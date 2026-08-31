@@ -24,8 +24,13 @@ vi.mock("@/lib/api/rate-limit", () => ({
   applyRateLimit: vi.fn().mockResolvedValue(null),
 }));
 
+vi.mock("@/lib/search/searchQueryLog", () => ({
+  searchQueryLog: { write: vi.fn().mockResolvedValue(undefined) },
+}));
+
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
 import { applyRateLimit } from "@/lib/api/rate-limit";
+import { searchQueryLog } from "@/lib/search/searchQueryLog";
 import {
   buildSearchParams,
   mapSearchEnvelope,
@@ -89,6 +94,31 @@ describe("GET /api/v2/search (route)", () => {
     expect(ftsSearchHandler).toHaveBeenCalledWith(
       expect.objectContaining({ q: "Bantu", limit: 10, offset: 20 })
     );
+  });
+
+  // ── query log (ETNI-1419 / REQ-002) ────────────────────────────────────
+  // @req REQ-002
+  it("logs the query and result count exactly once per executed search", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      mockEnvelope
+    );
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=Yoruba");
+    await GET(req);
+
+    expect(searchQueryLog.write).toHaveBeenCalledTimes(1);
+    expect(searchQueryLog.write).toHaveBeenCalledWith({
+      query: "Yoruba",
+      resultCount: mockEnvelope.data.total,
+    });
+  });
+
+  // @req REQ-002
+  it("does not log a search that fails parameter validation", async () => {
+    const req = new NextRequest("http://localhost/api/v2/search");
+    await GET(req);
+
+    expect(searchQueryLog.write).not.toHaveBeenCalled();
   });
 
   // ── empty query ─────────────────────────────────────────────────────────
