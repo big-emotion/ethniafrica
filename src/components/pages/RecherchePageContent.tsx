@@ -404,13 +404,13 @@ export function RecherchePageContent() {
       title="Recherche"
       subtitle="Rechercher des peuples, familles linguistiques et pays"
     >
-      <div className="space-y-6 max-w-4xl mx-auto px-4">
+      <div className="afh-shell space-y-afh-5xl">
         {/* ── search form ── */}
         <form
           onSubmit={handleSubmit}
           role="search"
           aria-label="Formulaire de recherche"
-          className="flex flex-col sm:flex-row gap-2"
+          className="flex flex-col md:flex-row gap-afh-md"
         >
           <div className="relative flex-1">
             <Search
@@ -434,14 +434,14 @@ export function RecherchePageContent() {
               <ul
                 role="listbox"
                 aria-label="Suggestions de recherche"
-                className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-1 overflow-hidden"
+                className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-afh-xs overflow-hidden"
               >
                 {suggestions.map((s) => (
                   <li
                     key={s.id}
                     role="option"
                     aria-selected={false}
-                    className="px-4 py-2 hover:bg-afh-bg-warm cursor-pointer text-afh-small"
+                    className="px-afh-2xl py-afh-md hover:bg-afh-bg-warm cursor-pointer text-afh-small"
                     onMouseDown={() => handleSuggestionClick(s)}
                   >
                     {s.name}
@@ -456,7 +456,7 @@ export function RecherchePageContent() {
         </form>
 
         {/* ── filter selects ── */}
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-afh-lg">
           <Select
             value={classificationStatus || ALL_FILTER_VALUES}
             onValueChange={(value) =>
@@ -531,20 +531,20 @@ export function RecherchePageContent() {
         <div
           data-testid="filter-chip-row"
           role="group"
-          className="flex flex-wrap items-center gap-2 min-h-[2rem]"
+          className="flex flex-wrap items-center gap-afh-md min-h-[2rem]"
           aria-label="Filtres actifs"
         >
           {relation && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-afh-small"
+              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
             >
               {relationLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${relationLabel}`}
                 onClick={() => setRelation(null)}
-                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -553,14 +553,14 @@ export function RecherchePageContent() {
           {classificationStatus && classStatusLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-afh-small"
+              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
             >
               {classStatusLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${classStatusLabel}`}
                 onClick={() => setClassificationStatus("")}
-                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -569,14 +569,14 @@ export function RecherchePageContent() {
           {minConfidence && confidenceLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-afh-small"
+              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
             >
               {confidenceLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${confidenceLabel}`}
                 onClick={() => setMinConfidence("")}
-                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -585,14 +585,14 @@ export function RecherchePageContent() {
           {region && regionLabel && (
             <Badge
               variant="secondary"
-              className="flex items-center gap-1 px-3 py-1 text-afh-small"
+              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
             >
               {regionLabel}
               <button
                 type="button"
                 aria-label={`Supprimer le filtre ${regionLabel}`}
                 onClick={() => setRegion("")}
-                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
+                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -610,7 +610,7 @@ export function RecherchePageContent() {
         </div>
 
         {/* ── sort + results count ── */}
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-afh-2xl">
           <p className="text-afh-small text-afh-text-soft" aria-live="polite">
             {hasSearched && !loading && sortedResults.length > 0
               ? `${sortedResults.length} résultat${sortedResults.length > 1 ? "s" : ""}`
@@ -654,7 +654,7 @@ export function RecherchePageContent() {
 
         {/* ── results list ── */}
         {!loading && listResults.length > 0 && (
-          <ul className="space-y-3" aria-label="Résultats de recherche">
+          <ul className="space-y-afh-lg" aria-label="Résultats de recherche">
             {listResults.map((result, i) => (
               <li key={`${result.type}-${result.id}-${i}`}>
                 <SearchResultCard result={result} language={language} />
@@ -665,14 +665,14 @@ export function RecherchePageContent() {
 
         {/* ── empty state (post-search, no results) ── */}
         {!loading && hasSearched && sortedResults.length === 0 && (
-          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-afh-lg text-center">
+          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-afh-2xl px-afh-5xl py-afh-7xl bg-afh-bg-warm rounded-afh-lg text-center">
             <p className="text-afh-small text-afh-text-soft max-w-sm">
               Aucun résultat pour « {committedQuery} ».
             </p>
             <p className="text-afh-small text-afh-text-soft">
               Vérifiez l&apos;orthographe ou essayez un autre terme.
             </p>
-            <div className="flex flex-col gap-2 text-afh-small">
+            <div className="flex flex-col gap-afh-md text-afh-small">
               <Link
                 href={getLocalizedRoute(language, "families")}
                 className="underline underline-offset-2 hover:text-afh-text transition-colors"
