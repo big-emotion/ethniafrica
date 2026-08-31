@@ -29,9 +29,9 @@ export interface DidYouKnowProps {
 /**
  * The home's anecdote: one fact, drawn afresh on every load.
  *
- * It sits between the argument (why this atlas exists) and the sample (what
- * a fiche holds) because it is the proof between the two: a name, taken
- * apart, doing what the whole site claims to do.
+ * It sits between the opening question and the featured module: a sourced
+ * name, taken apart, that turns the hero's promise into a discovery before
+ * the reader is invited to try the atlas.
  *
  * The band spent a release as a deck the reader could page through, arrows,
  * dots and a « 2 / 24 » counter. Two things were wrong with that. The

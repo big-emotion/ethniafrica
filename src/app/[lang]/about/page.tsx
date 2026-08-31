@@ -1,32 +1,26 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { useLanguage } from "@/hooks/use-language";
-import { PageLayout } from "@/components/layout/PageLayout";
-import { useEffect } from "react";
-import { Language } from "@/types/shared";
+import AboutPageShell from "@/components/pages/AboutPageShell";
 import AboutPageContent from "@/components/pages/AboutPageContent";
+import { getModulesByAxis } from "@/lib/home/accessAxesData";
+import { getCorpusCounts } from "@/lib/home/corpusCounts";
+import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 
 // @req REQ-091
-export default function AboutPage() {
-  const params = useParams();
-  const lang = params?.lang as string;
-  const { language, setLanguage } = useLanguage();
-
-  // Sync language from URL param
-  useEffect(() => {
-    if (lang && ["fr"].includes(lang) && lang !== language) {
-      setLanguage(lang as Language);
-    }
-  }, [lang, language, setLanguage]);
+// @req REQ-132
+export default async function AboutPage() {
+  const [counts, modulesByAxis, syntheses] = await Promise.all([
+    getCorpusCounts(),
+    getModulesByAxis(),
+    loadSynthesisRail(),
+  ]);
 
   return (
-    <PageLayout
-      language={language}
-      onLanguageChange={setLanguage}
-      hideHeader={true}
-    >
-      <AboutPageContent language={language} />
-    </PageLayout>
+    <AboutPageShell>
+      <AboutPageContent
+        language="fr"
+        counts={counts}
+        modulesByAxis={modulesByAxis}
+        syntheses={syntheses}
+      />
+    </AboutPageShell>
   );
 }

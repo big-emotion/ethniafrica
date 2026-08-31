@@ -1,32 +1,15 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { AccessMode } from "@/lib/hubs/moduleRegistry";
 
-// Home renders whatever counts getCorpusCounts resolves to; these tests
-// exercise page layout/content, not the Supabase query layer (covered by
-// src/lib/home/__tests__/corpusCounts.test.ts), so the counts are replaced
-// with a deterministic fixture that is deliberately not 803/54/24 — proving
-// the rendered figures track the mock rather than a literal.
-const fixtureCounts = {
-  peoples: 4213,
-  countries: 91,
-  families: 37,
-  migrations: 5,
-};
-
 // The hero carries an interactive island since the search field landed in it,
 // and useRouter throws outside an app-router tree rather than degrading.
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
-}));
-
-vi.mock("@/lib/home/corpusCounts", () => ({
-  getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));
 
 // The seed chips draw their words from the corpus per request. Only the draw
@@ -40,10 +23,10 @@ vi.mock("@/lib/home/seedWords", async (importOriginal) => {
   };
 });
 
-// The axis panels open on the home itself, so the page resolves every
-// axis's modules server-side. The availability probe is a Supabase round
-// trip wrapped in unstable_cache, and these tests are about what the page
-// renders — so the registry stands in, with every routed module live.
+// Hero rotation still resolves the available modules server-side. The
+// availability probe is a Supabase round trip wrapped in unstable_cache, and
+// these tests are about what the page renders — so the registry stands in,
+// with every routed module live.
 vi.mock("@/lib/hubs/moduleAvailability", async () => {
   const registry = await import("@/lib/hubs/moduleRegistry");
   return {
@@ -55,15 +38,6 @@ vi.mock("@/lib/hubs/moduleAvailability", async () => {
     ),
   };
 });
-
-// The synthesis rail reads the corpus over Supabase. Unmocked, the client
-// spends the whole test timeout retrying a connection that is not there —
-// loadSynthesisRail swallows the failure by design, but only after the
-// retries, which is far too late for a render test. The rail's own content
-// is covered in src/lib/home/__tests__ and src/components/home/__tests__.
-vi.mock("@/lib/home/synthesisRailData", () => ({
-  loadSynthesisRail: vi.fn(async () => []),
-}));
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
@@ -77,12 +51,9 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
 
 import Home, { metadata } from "../page";
 
-describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-115)", () => {
-  // The page used to run flat: one h1 and eleven h2 siblings, because three
-  // sections had no heading of their own and the items inside the other two
-  // sat at the same level as the sections. It now has three rungs — the
-  // outline in homeOrientation.test.tsx asserts the shape; this keeps the
-  // headline itself verbatim.
+describe("home page — the hero, discovery and the receipt (REQ-113/REQ-115)", () => {
+  // The outline in homeOrientation.test.tsx covers the retained sections;
+  // this keeps the headline itself verbatim.
   // @req FR91 @req FR95
   // @req REQ-044
   it("renders the hero with a single verbatim H1", async () => {
@@ -112,62 +83,13 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
   });
 
-  // @req REQ-113
-  it("renders exactly three axes below the hero and no per-module card grid", async () => {
+  // @req REQ-132
+  it("does not repeat the presentation blocks moved to the About page", async () => {
     render(await Home({ searchParams: Promise.resolve({}) }));
 
-    expect(
-      screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
-    ).toHaveLength(3);
-    expect(screen.queryAllByTestId(/^module-card-/)).toHaveLength(0);
-    expect(
-      screen.queryByRole("group", { name: "Filtrer les modules" })
-    ).not.toBeInTheDocument();
-  });
-
-  // @req REQ-113
-  it("sources each axis figure from getCorpusCounts, not a literal", async () => {
-    render(await Home({ searchParams: Promise.resolve({}) }));
-
-    expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
-      `${fixtureCounts.peoples} peuples · ${fixtureCounts.countries} pays`
-    );
-    expect(
-      screen.getByTestId("access-axis-figure-comprendre")
-    ).toHaveTextContent(`${fixtureCounts.migrations} repères · 1 doctrine`);
-  });
-
-  // The hub route survives as the anchor's href — the path for a reader
-  // without JavaScript, and for a crawler — but the click never leaves the
-  // home any more.
-  // @req REQ-114
-  it("keeps each axis's hub route as its fallback href", async () => {
-    render(await Home({ searchParams: Promise.resolve({}) }));
-
-    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "explorerHub")
-    );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "comprendreHub")
-    );
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "jouerHub")
-    );
-  });
-
-  // @req REQ-114
-  it("hands the axes their modules from the server, ready to deploy on click", async () => {
-    render(await Home({ searchParams: Promise.resolve({}) }));
-
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
-
-    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "peoples")
-    );
+    expect(screen.queryByTestId("home-purpose-blocks")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("access-axes")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("home-synthesis-rail")).not.toBeInTheDocument();
   });
 
   // @req REQ-113

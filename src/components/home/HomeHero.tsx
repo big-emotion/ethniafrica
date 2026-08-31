@@ -11,12 +11,10 @@ import type { SeedWordsByKind } from "@/lib/home/seedWords";
  * The band used to run three registers — a nine-word headline, a lede, a
  * standfirst — and asked the reader to hold seven items before the first
  * scroll: four in the lede's list, three in the standfirst's. A reader
- * retains one. Eighty-six words of it were spent announcing what the section
- * immediately below (PurposeBlocks) then demonstrates on three cases: a
- * country named by its merchandise, a people carrying an exonym, a language
- * family long read as a people. The same claim was being made twice, and the
- * announcement was the weaker of the two — which is why the standfirst left
- * rather than shrank.
+ * retains one. Eighty-six words of it were spent announcing the broader
+ * presentation narrative that now lives on the About page. The same claim
+ * was being made twice, and the announcement was the weaker of the two —
+ * which is why the standfirst left rather than shrank.
  *
  * The headline is now the question a first-time visitor actually arrives
  * with. It presumes nothing, which is the register the games charter §8 asks
@@ -27,16 +25,11 @@ import type { SeedWordsByKind } from "@/lib/home/seedWords";
  * What the answer states is deliberately narrow: how the atlas proceeds
  * (peuple par peuple), what it costs (rien), and the one rule it holds
  * itself to (every answer carries its source). Not what the corpus contains
- * — the axis cards below print counts that read themselves, and a list here
- * would rebuild the lede that was just removed.
- *
- * Dropping the standfirst also flips the page order it used to justify: the
- * axes came first because the standfirst told the reader what the atlas was
- * for above the fold. It no longer does, so the argument goes back in front
- * of the three doors (see the section order in app/[lang]/page.tsx).
+ * — discovery starts immediately below, and a list here would rebuild the
+ * lede that was just removed.
  *
  * The band ends on a seam rather than a fade: the edge where the hero stops
- * and the archive starts is the page's one large gesture, and a gradient
+ * and discovery starts is the page's one large gesture, and a gradient
  * would blur exactly the transition it exists to state.
  */
 export interface HomeHeroProps {
@@ -85,9 +78,8 @@ export function HomeHero({ seedWords }: HomeHeroProps = {}) {
           {/* The band's one action, and it is the one readers were already
               taking: the masthead's magnifier was the only affordance above
               the fold, so that is where they went. It carries no count of its
-              own — the axis cards below print figures that read themselves,
-              and restating them here would rebuild the lede this band was
-              stripped of. */}
+              own — restating the corpus inventory here would rebuild the lede
+              this band was stripped of. */}
           <HomeHeroSearch seedWords={seedWords} />
         </header>
 
