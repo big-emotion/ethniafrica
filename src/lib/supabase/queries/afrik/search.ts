@@ -31,11 +31,14 @@ import type {
  * ranking that nothing executed. Migrations 043/044 moved both the weighting
  * and the ranking into the database; this layer now only shapes the rows.
  *
- * Language families keep the ilike query: they have no tsvector, and at two
- * dozen rows a match tier computed here is smaller than the migration an
- * index would cost. Their `relevance` is a tier, so it is comparable between
- * families and not with the other two kinds — `exactMatch` is what callers
- * sort on across kinds.
+ * Language families have no tsvector and no ilike filter: they have no
+ * migration to give them one, and at two dozen rows a full fetch plus an
+ * accent-insensitive substring/prefix tier computed here (normalizeString —
+ * REQ-129) is smaller than the migration an index would cost, and correct
+ * where an ilike filter cannot be (it compares characters literally, so it
+ * cannot fold "Mandé" onto "mande"). Their `relevance` is a tier, so it is
+ * comparable between families and not with the other two kinds —
+ * `exactMatch` is what callers sort on across kinds.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
  * not a search: peoples are listed for that scope, and countries and families
@@ -77,7 +80,7 @@ export async function ftsSearchEntities(
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text ? searchAfrikLanguageFamilies(text) : Promise.resolve([]),
+    text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
   ]);
 
   if (peopleResult.error) {
@@ -174,6 +177,7 @@ function rankLanguageFamilies(
   if (!wanted) return [];
 
   return families
+    .filter((family) => normalizeString(family.nameFr).includes(wanted))
     .map((family) => {
       const name = normalizeString(family.nameFr);
       const exactMatch = name === wanted;
