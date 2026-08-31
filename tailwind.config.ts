@@ -49,6 +49,7 @@ export default {
         "afh-4xl": "var(--afh-space-4xl)",
         "afh-5xl": "var(--afh-space-5xl)",
         "afh-6xl": "var(--afh-space-6xl)",
+        "afh-7xl": "var(--afh-space-7xl)",
       },
       boxShadow: {
         "afh-1": "var(--afh-elev-1)",
