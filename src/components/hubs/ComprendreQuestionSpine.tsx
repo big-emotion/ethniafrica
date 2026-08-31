@@ -38,7 +38,7 @@ const STOPS: SpineStop[] = [
   {
     question: "Pourquoi ce peuple porte-t-il ce nom ?",
     moduleId: "noms",
-    answeredBy: "Noms & appellations",
+    answeredBy: "Appellations",
   },
   {
     question: "D'où viennent-ils, et quand ?",

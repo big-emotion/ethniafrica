@@ -109,6 +109,43 @@ export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
   "familles-hub": "jouer",
 };
 
+// ETNI-1458 renamed the ethnonym module from Noms to Appellations, freeing
+// the word "Nom" for the person-name entity (ARCH-018). The published,
+// indexed address was already nested one level below its hub
+// (`comprendre/noms`), which fits neither existing table: RENAMED_HUB_SEGMENTS
+// matches exactly one top-level segment, and RELOCATED_SEGMENTS is keyed on
+// the single old top-level segment the V1 flat structure used. A rename that
+// starts and ends below the hub needs a key that can itself hold a slash.
+// @req REQ-091
+export const RENAMED_MODULE_PATHS: Record<string, string> = {
+  "comprendre/noms": "comprendre/appellations",
+};
+
+/**
+ * Where a renamed module's old nested path leads now, tail (and trailing
+ * slash) handled the same way `resolveRelocatedPath` handles them — carried
+ * verbatim, dropped when absent — so the two tables read alike even though
+ * their keys are shaped differently.
+ *
+ * Exported for `redirectCharter.test.ts`, alongside `resolveRelocatedPath`.
+ */
+// @req REQ-091
+export function resolveRenamedModulePath(pathname: string): string | null {
+  const match = pathname.match(/^\/([a-z]{2})\/(.+)$/);
+  if (!match) return null;
+
+  const [, locale, rawRest] = match;
+  const rest = rawRest.replace(/\/+$/, "");
+
+  for (const [oldPath, newPath] of Object.entries(RENAMED_MODULE_PATHS)) {
+    if (rest === oldPath || rest.startsWith(`${oldPath}/`)) {
+      const tail = rest.slice(oldPath.length);
+      return `/${locale}/${newPath}${tail}`;
+    }
+  }
+  return null;
+}
+
 // Lot 3 moved every module below the hub that leads to it, so the top-level
 // segment each one was published under has to keep resolving — this time for
 // a whole subtree, not one page: `/fr/peuples/PPL_YORUBA/liens` is as indexed
@@ -132,7 +169,7 @@ export const RELOCATED_SEGMENTS: Record<string, string> = {
   familles: "explorer/familles",
   recherche: "explorer/recherche",
   doctrine: "comprendre/doctrine",
-  noms: "comprendre/noms",
+  noms: "comprendre/appellations",
   migrations: "comprendre/migrations",
   regards: "comprendre/regards",
   quiz: "jouer/quiz",
@@ -241,7 +278,7 @@ function isSameOriginRequest(request: NextRequest): boolean {
 
 // @req REQ-052
 export async function middleware(request: NextRequest) {
-  // Three rewrites, one redirect.
+  // Four rewrites, one redirect.
   //
   // They compose rather than each returning: `/en/peuples` is both a
   // non-canonical locale and a relocated module, and answering it with
@@ -249,7 +286,7 @@ export async function middleware(request: NextRequest) {
   // redirects again. Two 308s is what the one-hop rule forbids, and the
   // second one would be entirely of our own making.
   //
-  // All three are 308: none of them is a page moving temporarily, so a
+  // All four are 308: none of them is a page moving temporarily, so a
   // crawler should transfer the old URL's standing rather than keep
   // revisiting it.
   const { pathname } = request.nextUrl;
@@ -283,6 +320,16 @@ export async function middleware(request: NextRequest) {
   if (relocated) {
     canonicalPath = relocated.path;
     keepQuery = relocated.keepQuery;
+    moved = true;
+  }
+
+  // ETNI-1458's within-hub rename: comprendre/noms to comprendre/appellations.
+  // A rewrite of its own, composing into the same single 308 as the three
+  // above for the same reason — two hops would spend the old URL's standing
+  // twice.
+  const renamedModule = resolveRenamedModulePath(canonicalPath);
+  if (renamedModule) {
+    canonicalPath = renamedModule;
     moved = true;
   }
 

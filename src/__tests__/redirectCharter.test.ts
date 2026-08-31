@@ -5,7 +5,9 @@ import { describe, expect, it } from "vitest";
 import {
   RELOCATED_SEGMENTS,
   RENAMED_HUB_SEGMENTS,
+  RENAMED_MODULE_PATHS,
   resolveRelocatedPath,
+  resolveRenamedModulePath,
 } from "@/middleware";
 import {
   PAGE_TYPES,
@@ -70,6 +72,61 @@ describe("the relocation table lands in one hop", () => {
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
     expect(path("/fr/pays/")!.path).toBe("/fr/explorer/pays");
+  });
+});
+
+describe("the module-rename table lands in one hop (ETNI-1458)", () => {
+  // @req REQ-091
+  it("moves the old nested path to a path that is not itself relocated", () => {
+    for (const oldPath of Object.keys(RENAMED_MODULE_PATHS)) {
+      const once = resolveRenamedModulePath(`/fr/${oldPath}`);
+      expect(once, oldPath).not.toBeNull();
+
+      // The defining property, same as the flat table above: feeding the
+      // answer back in must change nothing.
+      expect(
+        resolveRenamedModulePath(once!),
+        `${oldPath} redirects twice`
+      ).toBeNull();
+      expect(path(once!), `${oldPath} re-enters the flat table too`).toBeNull();
+    }
+  });
+
+  // @req REQ-091
+  it("carries the tail verbatim below the renamed module", () => {
+    expect(resolveRenamedModulePath("/fr/comprendre/noms/PPL_YORUBA")).toBe(
+      "/fr/comprendre/appellations/PPL_YORUBA"
+    );
+  });
+
+  // @req REQ-091
+  it("treats a trailing slash as no tail at all", () => {
+    expect(resolveRenamedModulePath("/fr/comprendre/noms/")).toBe(
+      "/fr/comprendre/appellations"
+    );
+  });
+
+  // @req REQ-091
+  it("has a page file behind the renamed module", () => {
+    for (const destination of Object.values(RENAMED_MODULE_PATHS)) {
+      const route = resolve(
+        __dirname,
+        "../app/[lang]",
+        destination,
+        "page.tsx"
+      );
+      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+    }
+  });
+
+  // The flat legacy address (/fr/noms) and the nested one it once redirected
+  // to must now agree on the same destination, or a reader following either
+  // one lands somewhere different from the other.
+  // @req REQ-091
+  it("agrees with the flat legacy table on where the module now lives", () => {
+    expect(path("/fr/noms")!.path).toBe(
+      resolveRenamedModulePath("/fr/comprendre/noms")
+    );
   });
 });
 
