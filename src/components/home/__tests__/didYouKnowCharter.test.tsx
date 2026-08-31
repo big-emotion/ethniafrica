@@ -32,6 +32,13 @@ const FACT: DidYouKnowFact = {
     { kind: "country", id: "MAR", label: "Maroc" },
   ],
   tier: "referenced",
+  sources: [
+    {
+      title: "SIL Ethnologue — Amazigh",
+      url: "https://www.ethnologue.com/",
+      tier: "official",
+    },
+  ],
 };
 
 const SOURCE = readFileSync(
@@ -59,6 +66,15 @@ function fromBreakpoint(minWidth: number): string {
 }
 
 describe("DidYouKnow — the band's composition (REQ-113)", () => {
+  // @req REQ-113
+  it("names and links the official source supporting the home fact", () => {
+    render(<DidYouKnow language="fr" fact={FACT} />);
+
+    expect(
+      screen.getByRole("link", { name: "SIL Ethnologue — Amazigh" })
+    ).toHaveAttribute("href", "https://www.ethnologue.com/");
+  });
+
   // The band's only bookmarkable exit was a bare underline among five other
   // pieces of small type. The arrow is what separates a link that goes
   // somewhere from a label; it is decoration for a screen reader, which
