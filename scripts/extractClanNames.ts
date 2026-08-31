@@ -12,10 +12,14 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 
 import type {
+  ClanNameCandidate,
   ClanNameReviewArtifact,
-  FamilyCoverage,
+  FicheSource,
   LoadedPeopleFiche,
 } from "./lib/clanNameTypes";
+import { detectClanNameCandidates } from "./lib/clanNameDetection";
+import { buildCoverageByFamily } from "./lib/clanNameReview";
+import { resolveClanNameSourceTier } from "./lib/clanNameSourceTier";
 
 const DEFAULT_PEOPLE_ROOT = path.join(
   __dirname,
@@ -81,23 +85,31 @@ function readPeopleFiches(peopleRoot: string): LoadedPeopleFiche[] {
   });
 }
 
-function emptyCoverage(fiches: LoadedPeopleFiche[]): FamilyCoverage[] {
-  const counts = new Map<string, number>();
-  for (const fiche of fiches) {
-    counts.set(
-      fiche.languageFamilyId,
-      (counts.get(fiche.languageFamilyId) ?? 0) + 1
-    );
-  }
+function readFicheSources(fiche: LoadedPeopleFiche): FicheSource[] {
+  const sources = fiche.content.sources;
+  if (!Array.isArray(sources)) return [];
 
-  return [...counts.entries()]
-    .sort(([left], [right]) => left.localeCompare(right))
-    .map(([linguisticFamilyId, fichesScanned]) => ({
-      linguisticFamilyId,
-      fichesScanned,
-      candidateOccurrences: 0,
-      distinctNames: 0,
+  return sources.filter(
+    (source): source is FicheSource =>
+      source !== null &&
+      typeof source === "object" &&
+      typeof (source as Record<string, unknown>).title === "string"
+  );
+}
+
+function extractCandidates(fiches: LoadedPeopleFiche[]): ClanNameCandidate[] {
+  const candidates = fiches.flatMap((fiche) => {
+    const sourceResolution = resolveClanNameSourceTier(readFicheSources(fiche));
+
+    return detectClanNameCandidates(fiche).map((candidate) => ({
+      ...candidate,
+      ...sourceResolution,
     }));
+  });
+
+  return candidates.sort((left, right) =>
+    left.candidateId.localeCompare(right.candidateId, "en")
+  );
 }
 
 /**
@@ -113,10 +125,11 @@ export function extractClanNamesToArtifact(
   assertOutputPathIsSafe(peopleRoot, outputPath);
 
   const fiches = readPeopleFiches(peopleRoot);
+  const candidates = extractCandidates(fiches);
   const artifact: ClanNameReviewArtifact = {
     schemaVersion: 1,
-    candidates: [],
-    coverageByFamily: emptyCoverage(fiches),
+    candidates,
+    coverageByFamily: buildCoverageByFamily(fiches, candidates),
   };
 
   mkdirSync(path.dirname(outputPath), { recursive: true });

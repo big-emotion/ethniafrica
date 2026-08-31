@@ -48,22 +48,77 @@ describe("extractClanNamesToArtifact (ETNI-1456)", () => {
   });
 
   // @req REQ-133
-  it("writes one machine-readable review artifact outside the AFRIK corpus", () => {
+  it("writes one deterministic unreviewed artifact without changing the corpus", () => {
     const outputPath = join(reviewRoot, "clan-name-candidates.json");
+    const sourcePath = join(peopleRoot, "FLG_TEST/PPL_TEST.json");
+    const sourceBefore = readFileSync(sourcePath, "utf8");
 
     const result = extractClanNamesToArtifact({ peopleRoot, outputPath });
+    const firstWrite = readFileSync(outputPath, "utf8");
+    extractClanNamesToArtifact({ peopleRoot, outputPath });
 
     expect(result.fichesScanned).toBe(1);
     expect(existsSync(outputPath)).toBe(true);
-    expect(JSON.parse(readFileSync(outputPath, "utf8"))).toMatchObject({
+    expect(readFileSync(outputPath, "utf8")).toBe(firstWrite);
+    expect(readFileSync(sourcePath, "utf8")).toBe(sourceBefore);
+    expect(JSON.parse(firstWrite)).toMatchObject({
       schemaVersion: 1,
-      candidates: [],
+      candidates: [
+        {
+          name: "Barry",
+          normalizedName: "barry",
+          sourceFicheId: "PPL_TEST",
+          linguisticFamilyId: "FLG_TEST",
+          sourcePath: "content.organization.clanOrganization",
+          verbatimPassage: "Les clans Diallo et Barry sont attestés.",
+          sourceCandidates: [
+            {
+              title: "Source test",
+              url: "https://www.unesco.org/test",
+              tier: "official",
+              notes: "",
+            },
+          ],
+          inheritedTier: null,
+          sourceKind: null,
+          tierResolution: "review_required",
+          reviewFlags: expect.arrayContaining([
+            "source_tier_unresolved",
+            "source_review_required",
+          ]),
+          reviewStatus: "unreviewed",
+        },
+        {
+          name: "Diallo",
+          normalizedName: "diallo",
+          sourceFicheId: "PPL_TEST",
+          linguisticFamilyId: "FLG_TEST",
+          sourcePath: "content.organization.clanOrganization",
+          verbatimPassage: "Les clans Diallo et Barry sont attestés.",
+          sourceCandidates: [
+            {
+              title: "Source test",
+              url: "https://www.unesco.org/test",
+              tier: "official",
+              notes: "",
+            },
+          ],
+          inheritedTier: null,
+          sourceKind: null,
+          tierResolution: "review_required",
+          reviewFlags: expect.arrayContaining([
+            "source_tier_unresolved",
+            "source_review_required",
+          ]),
+          reviewStatus: "unreviewed",
+        },
+      ],
       coverageByFamily: [
         {
           linguisticFamilyId: "FLG_TEST",
           fichesScanned: 1,
-          candidateOccurrences: 0,
-          distinctNames: 0,
+          candidateOccurrences: 2,
+          distinctNames: 2,
         },
       ],
     });
