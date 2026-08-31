@@ -5,24 +5,13 @@
  * afrik_search_countries functions (migration 044), which rank over the
  * weighted tsvectors of migration 043. This module maps their rows; it does
  * not order them.
- *
- * The legacy searchAfrikAll is kept for backward compatibility with existing
- * callers (admin pages, legacy API routes that have not yet been migrated).
  */
 
-import { searchAfrikCountries } from "./countries";
-import {
-  searchAfrikPeoples,
-  getAfrikPeoplesByLanguageFamily,
-  getAfrikPeoplesByCountry,
-} from "./peoples";
 import { searchAfrikLanguageFamilies } from "./languageFamilies";
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
 import { normalizeString } from "@/lib/normalize";
 import type {
-  SearchFilters,
-  SearchResult,
   FtsSearchParams,
   FtsSearchResponse,
   LanguageFamily,
@@ -201,88 +190,4 @@ function rankLanguageFamilies(
         b.relevance - a.relevance ||
         a.nameFr.localeCompare(b.nameFr, "fr")
     );
-}
-
-// @req REQ-002
-/**
- * Legacy multi-entity search (kept for backward compatibility).
- * New callers should use ftsSearchEntities.
- */
-export async function searchAfrikAll(
-  filters: SearchFilters = {}
-): Promise<SearchResult[]> {
-  const results: SearchResult[] = [];
-
-  if (!filters.type || filters.type === "country") {
-    if (filters.query) {
-      const countries = await searchAfrikCountries(filters.query);
-      for (const country of countries) {
-        if (filters.countryId && country.id !== filters.countryId) continue;
-        results.push({
-          type: "country",
-          id: country.id,
-          name: country.nameFr,
-          data: country,
-        });
-      }
-    } else if (filters.countryId) {
-      const { getAfrikCountryById } = await import("./countries");
-      const country = await getAfrikCountryById(filters.countryId);
-      if (country) {
-        results.push({
-          type: "country",
-          id: country.id,
-          name: country.nameFr,
-          data: country,
-        });
-      }
-    }
-  }
-
-  if (!filters.type || filters.type === "people") {
-    let peoples: Awaited<ReturnType<typeof searchAfrikPeoples>> = [];
-
-    if (filters.languageFamilyId) {
-      peoples = await getAfrikPeoplesByLanguageFamily(filters.languageFamilyId);
-    } else if (filters.countryId) {
-      peoples = await getAfrikPeoplesByCountry(filters.countryId);
-    } else if (filters.query) {
-      peoples = await searchAfrikPeoples(filters.query);
-    }
-
-    for (const people of peoples) {
-      if (
-        filters.countryId &&
-        !people.currentCountries.includes(filters.countryId)
-      )
-        continue;
-      if (
-        filters.languageFamilyId &&
-        people.languageFamilyId !== filters.languageFamilyId
-      )
-        continue;
-      results.push({
-        type: "people",
-        id: people.id,
-        name: people.nameMain,
-        data: people,
-      });
-    }
-  }
-
-  if (!filters.type || filters.type === "languageFamily") {
-    if (filters.query) {
-      const families = await searchAfrikLanguageFamilies(filters.query);
-      for (const family of families) {
-        results.push({
-          type: "languageFamily",
-          id: family.id,
-          name: family.nameFr,
-          data: family,
-        });
-      }
-    }
-  }
-
-  return results;
 }
