@@ -1,6 +1,6 @@
 # Runbook — Supabase migration state
 
-**Last verified:** 2026-08-28 (live read of `supabase_migrations.schema_migrations`)
+**Last verified:** 2026-08-31 (live read of `supabase_migrations.schema_migrations` on **both** projects)
 **Applies to:** every file under `supabase/migrations/`
 
 There are two Supabase projects, and both look like "production" for a structural reason: **a
@@ -67,90 +67,136 @@ See [`afrik-data-sync.md`](./afrik-data-sync.md).
 This is the corpus only. **Schema migrations are still applied by hand, and still in two
 steps** — nothing below is automated for the production-backing project.
 
-### Why the production-backing project's state is still unread
+### The production-backing project, read at last — and what the read found
 
-The ref `jajggbeimfudpzcxytbb` was supplied by the environment owner on 2026-08-26 and is now
-the value of the `PRODUCTION_SUPABASE_URL` repository secret. It has **not been verified from
-here**: the Supabase access token available to tooling in this repository sees exactly one
-project (`shmrjtnfbqzceovroqjj`, org `yrdutxiucwjgsqexvcop`), and a `get_project` call against
-the production ref returns "You do not have permission to perform this action". So its ledger
-could not be read, and the state column below **is deliberately left unread rather than
-guessed**.
+The ref `jajggbeimfudpzcxytbb` was supplied by the environment owner on 2026-08-26. It could
+not be verified from here for five days: the Supabase access token available to tooling in this
+repository sees exactly one project (`shmrjtnfbqzceovroqjj`), and `get_project` against the
+production ref answers "You do not have permission to perform this action". The MCP server still
+cannot reach it. **A direct Postgres connection can**, with the database password from
+Settings → Database, and that is how the column below stopped being a guess.
 
-Getting it wrong is not silent: `resolveAfrikSyncTarget` refuses to sync unless the active
-Supabase URL equals the configured production one, and refuses outright if that value is the
-recette ref. A wrong ref fails the job; it does not write anywhere.
+The first read, on 2026-08-31, found two things the table had been asserting wrongly.
 
-To fill it in, authenticate against the account that owns it and run:
+**Production was at `019`, not `027`.** Thirty migrations were outstanding, not the twenty-two
+this document implied. The gap had never been measured, only inferred from what `main` carried,
+and `main` carrying a migration file says nothing about any database.
 
+**The ledger was written in timestamp versions, not file versions.** Thirty rows, recorded by
+`mcp__supabase__apply_migration` and by hand, under versions like `20260514155308` and names
+offset by one from the repository (`008_module_zero_fabric` for what is `009` here). Because no
+local file matched those versions, `supabase db push` refused outright with
+`LegacyDbPushMissingLocalError` and the CLI's own suggestion — `migration repair --status
+reverted` on all thirty, then `db pull` — would have adopted the drift as the new truth.
+
+The repair that was actually correct, and is the one to reuse if this recurs:
+
+```bash
+# 1. Back up first. pg_dump must match the server major version (17).
+/opt/homebrew/opt/postgresql@17/bin/pg_dump "$PROD_DB_URL" \
+  --schema=public --schema=supabase_migrations --no-owner --no-privileges -f backup.sql
+
+# 2. Clear the legacy timestamp rows. No schema change.
+supabase migration repair --db-url "$PROD_DB_URL" --status reverted <the 30 timestamps>
+
+# 3. Record what is genuinely applied, under the versions the files use.
+supabase migration repair --db-url "$PROD_DB_URL" --status applied 001 002 ... 019
+
+# 4. Confirm the plan is exactly the missing files, then apply.
+supabase db push --db-url "$PROD_DB_URL" --include-all --dry-run
+supabase db push --db-url "$PROD_DB_URL" --include-all
 ```
-mcp__supabase__list_projects
-mcp__supabase__list_migrations  { project_id: "<production-backing-ref>" }
-```
 
-Then complete the identity row above and the right-hand column of the state table below, and
-update the "Last verified" date.
+Step 3 is the one the CLI does not suggest and the one that matters: without it, `db push`
+replays `001` onward, and `007_remove_v1_add_v2_contribution_types.sql` opens with
+`DROP TABLE IF EXISTS sources CASCADE`.
+
+**Verify by measuring, never by the tool's own report.** What was checked afterwards:
+
+- ledger: 49 rows, `001` → `049`, no version outside that range;
+- schema: `information_schema.columns` on both projects, **318 columns each, zero difference in
+  either direction**;
+- the functions the code calls: `afrik_search_peoples`, `afrik_search_countries`,
+  `recompute_confidence`, `applied_migrations`, `enforce_name_record_sources`;
+- `sources_tier_check` reads `official | referenced | unverified`, `sources_title_key` restored;
+- data intact: 713 peoples, 54 countries, 1003 people-country links, 4 doctrine entries.
+
+The eight columns the rollout dropped — `flags.flag_type`, `flags.created_by`,
+`flags.description` and five on `revisions` — were on tables holding zero rows, checked before
+applying rather than hoped for afterwards.
+
+### The corpus is a separate question from the schema
+
+The schema is now level across both projects. The **corpus is not**: production holds 713
+peoples, 54 countries and 24 families, but **0 sources, 0 assertions and 0 languages**. The
+`PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` repository secret does not exist, so
+`production-data-sync.yml` fails rather than skips. Confidence chips and source transparency have
+nothing to render until that secret is set and a load runs.
 
 ---
 
 ## State table
 
-Read from the recette-backing project's (`shmrjtnfbqzceovroqjj`)
-`supabase_migrations.schema_migrations` ledger on 2026-08-26. **Only the recette column is a
-measurement.** The production column is not "presumed unapplied" — it is unread, because this
-repository's credentials cannot reach that project.
+Both columns are now measurements, read from each project's
+`supabase_migrations.schema_migrations` ledger on 2026-08-31 — recette over the Supabase MCP,
+production over a direct Postgres connection. Neither is inferred from what a branch carries.
 
-| File                                          | Recette (`shmrjtnfbqzceovroqjj`)            | Production (`?`) |
-| --------------------------------------------- | ------------------------------------------- | ---------------- |
-| `001_initial_schema.sql`                      | applied (`001`)                             | unknown          |
-| `002_add_enriched_fields.sql`                 | applied (`002`)                             | unknown          |
-| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below  | unknown          |
-| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                             | unknown          |
-| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                             | unknown          |
-| `006_afrik_schema.sql`                        | applied (`006`)                             | unknown          |
-| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                             | unknown          |
-| `008_user_roles.sql`                          | applied (`008`)                             | unknown          |
-| `009_module_zero_fabric.sql`                  | applied (`009`)                             | unknown          |
-| `010_classification_status_enum.sql`          | applied (`010`)                             | unknown          |
-| `011_assertions_triggers.sql`                 | applied (`011`)                             | unknown          |
-| `012_api_keys.sql`                            | applied (`012`)                             | unknown          |
-| `013_api_keys_tier.sql`                       | applied (`013`)                             | unknown          |
-| `014_flags_severity_auto.sql`                 | applied (`014`)                             | unknown          |
-| `015_module_zero_fabric_align.sql`            | applied (`015`)                             | unknown          |
-| `016_module_zero_triggers.sql`                | applied (`016`)                             | unknown          |
-| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                             | unknown          |
-| `018_editorial_doctrine_seed.sql`             | applied (`018`)                             | unknown          |
-| `019_afrik_rls.sql`                           | applied (`019`)                             | unknown          |
-| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                             | unknown          |
-| `021_revisions_ddl.sql`                       | applied (`021`)                             | unknown          |
-| `022_flags_full_ddl.sql`                      | applied (`022`)                             | unknown          |
-| `023_moderator_schema.sql`                    | applied (`023`)                             | unknown          |
-| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                             | unknown          |
-| `025_search_vectors.sql`                      | applied (`025`)                             | unknown          |
-| `026_contributor_profiles.sql`                | applied (`026`)                             | unknown          |
-| `027_contributor_erasure.sql`                 | applied (`027`)                             | unknown          |
-| `028_language_tree_support.sql`               | applied (`028`)                             | unknown          |
-| `029_names_atlas.sql`                         | applied (`029`)                             | unknown          |
-| `030_people_relations.sql`                    | applied (`030`)                             | unknown          |
-| `031_normalized_sources.sql`                  | applied (`031`)                             | unknown          |
-| `032_oral_narratives.sql`                     | applied (`032`)                             | unknown          |
-| `033_rights_consent_access_controls.sql`      | applied (`033`)                             | unknown          |
-| `034_source_working_assets.sql`               | applied (`034`)                             | unknown          |
-| `035_migration_events.sql`                    | applied (`035`)                             | unknown          |
-| `036_quiz_engine.sql`                         | applied (`036`)                             | unknown          |
-| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`   | unknown          |
-| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`   | unknown          |
-| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`   | unknown          |
-| `040_assertion_references_rls.sql`            | applied (`040`)                             | unknown          |
-| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                             | unknown          |
-| `042_migration_ledger_introspection.sql`      | applied (`042`)                             | unknown          |
-| `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below | unknown          |
-| `044_afrik_ranked_search.sql`                 | applied (`044`)                             | unknown          |
-| `045_afrik_countries_summary.sql`             | applied (`045`)                             | unknown          |
-| `046_quiz_stimulus.sql`                       | applied (`046`)                             | unknown          |
-| `047_quiz_bank_indexes.sql`                   | applied (`047`)                             | unknown          |
-| `048_antibot.sql`                             | applied (`048`)                             | unknown          |
-| `049_afrik_countries_name_official.sql`       | pending — applies on merge to `recette`     | unknown          |
+The production column says `applied` rather than repeating each version string because its
+ledger was rewritten during the 2026-08-31 repair: `001` → `019` were re-recorded under the
+file versions after their legacy timestamp rows were cleared, and `020` → `049` were written by
+`db push`. All 49 are present, and the two schemas are column-for-column identical.
+
+| File                                          | Recette (`shmrjtnfbqzceovroqjj`)            | Production (`jajggbeimfudpzcxytbb`) |
+| --------------------------------------------- | ------------------------------------------- | ----------------------------------- |
+| `001_initial_schema.sql`                      | applied (`001`)                             | applied                             |
+| `002_add_enriched_fields.sql`                 | applied (`002`)                             | applied                             |
+| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below  | applied                             |
+| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                             | applied                             |
+| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                             | applied                             |
+| `006_afrik_schema.sql`                        | applied (`006`)                             | applied                             |
+| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                             | applied                             |
+| `008_user_roles.sql`                          | applied (`008`)                             | applied                             |
+| `009_module_zero_fabric.sql`                  | applied (`009`)                             | applied                             |
+| `010_classification_status_enum.sql`          | applied (`010`)                             | applied                             |
+| `011_assertions_triggers.sql`                 | applied (`011`)                             | applied                             |
+| `012_api_keys.sql`                            | applied (`012`)                             | applied                             |
+| `013_api_keys_tier.sql`                       | applied (`013`)                             | applied                             |
+| `014_flags_severity_auto.sql`                 | applied (`014`)                             | applied                             |
+| `015_module_zero_fabric_align.sql`            | applied (`015`)                             | applied                             |
+| `016_module_zero_triggers.sql`                | applied (`016`)                             | applied                             |
+| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                             | applied                             |
+| `018_editorial_doctrine_seed.sql`             | applied (`018`)                             | applied                             |
+| `019_afrik_rls.sql`                           | applied (`019`)                             | applied                             |
+| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                             | applied                             |
+| `021_revisions_ddl.sql`                       | applied (`021`)                             | applied                             |
+| `022_flags_full_ddl.sql`                      | applied (`022`)                             | applied                             |
+| `023_moderator_schema.sql`                    | applied (`023`)                             | applied                             |
+| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                             | applied                             |
+| `025_search_vectors.sql`                      | applied (`025`)                             | applied                             |
+| `026_contributor_profiles.sql`                | applied (`026`)                             | applied                             |
+| `027_contributor_erasure.sql`                 | applied (`027`)                             | applied                             |
+| `028_language_tree_support.sql`               | applied (`028`)                             | applied                             |
+| `029_names_atlas.sql`                         | applied (`029`)                             | applied                             |
+| `030_people_relations.sql`                    | applied (`030`)                             | applied                             |
+| `031_normalized_sources.sql`                  | applied (`031`)                             | applied                             |
+| `032_oral_narratives.sql`                     | applied (`032`)                             | applied                             |
+| `033_rights_consent_access_controls.sql`      | applied (`033`)                             | applied                             |
+| `034_source_working_assets.sql`               | applied (`034`)                             | applied                             |
+| `035_migration_events.sql`                    | applied (`035`)                             | applied                             |
+| `036_quiz_engine.sql`                         | applied (`036`)                             | applied                             |
+| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`   | applied                             |
+| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`   | applied                             |
+| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`   | applied                             |
+| `040_assertion_references_rls.sql`            | applied (`040`)                             | applied                             |
+| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                             | applied                             |
+| `042_migration_ledger_introspection.sql`      | applied (`042`)                             | applied                             |
+| `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below | applied                             |
+| `044_afrik_ranked_search.sql`                 | applied (`044`)                             | applied                             |
+| `045_afrik_countries_summary.sql`             | applied (`045`)                             | applied                             |
+| `046_quiz_stimulus.sql`                       | applied (`046`)                             | applied                             |
+| `047_quiz_bank_indexes.sql`                   | applied (`047`)                             | applied                             |
+| `048_antibot.sql`                             | applied (`048`)                             | applied                             |
+| `049_afrik_countries_name_official.sql`       | applied (`049`)                             | applied                             |
 
 > **Correction, 2026-08-30.** The table stopped at `044` while `045` through `048` had already
 > been applied to recette by `migrate-recette.yml`. A direct read of the recette ledger lists all
