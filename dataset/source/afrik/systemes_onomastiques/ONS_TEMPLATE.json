@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "systeme-onomastique",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes. Voir aussi docs/design/naming-subtype-taxonomy.md.",
+    "illustrative": true
+  },
+  "id": "ONS_TEMPLATE",
+  "nameMain": "Système totémique clanique (gabarit illustratif)",
+  "namingSystem": "totemic_clan",
+  "attestedForms": [
+    {
+      "spelling": "Totem clanique",
+      "attestation": {
+        "title": "Ethnologue: Languages of the World",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": ""
+      }
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "associatedPeoples": ["PPL_XXXXX"],
+  "associatedCountries": ["XXX"],
+  "origin": {
+    "originType": "griot_oral_tradition",
+    "sources": [
+      {
+        "title": "Exemple de source pour la tradition orale griotique",
+        "url": "https://example.org/",
+        "tier": "unverified",
+        "notes": "Gabarit illustratif — à remplacer par une source réelle avant publication."
+      }
+    ]
+  },
+  "totemicFoodProhibition": "Interdit alimentaire totémique (exemple)",
+  "permittedGivenNames": ["Prénom autorisé (exemple)"],
+  "casteOrSocialFunction": "Fonction sociale associée au clan (exemple)"
+}
