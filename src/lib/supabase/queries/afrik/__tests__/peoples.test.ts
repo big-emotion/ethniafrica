@@ -11,7 +11,6 @@ import {
   getAfrikPeoplesByLanguageFamily,
   getAfrikPeoplesByCountry,
   getAfrikPeoplesByIds,
-  searchAfrikPeoples,
   getPeopleCountsByLanguageFamily,
   UNCLASSIFIED_FAMILY_KEY,
 } from "../peoples";
@@ -342,98 +341,6 @@ describe("AFRIK Peoples Queries", () => {
       const result = await getAfrikPeoplesByCountry("ZWE");
 
       expect(result).toHaveLength(1);
-    });
-  });
-
-  describe("searchAfrikPeoples", () => {
-    // @req REQ-019
-    it("should use FTS textSearch on search_vector with french config", async () => {
-      // Chain: from().select().textSearch().order()
-      mockSupabase.from.mockImplementation((table: string) => {
-        if (table === "afrik_people_countries") {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const relChain: any = {
-            select: vi.fn(() => relChain),
-            in: vi.fn(() =>
-              Promise.resolve({
-                data: [{ people_id: "PPL_SHONA", country_id: "ZWE" }],
-                error: null,
-              })
-            ),
-          };
-          return relChain;
-        }
-        return mockSupabase;
-      });
-
-      mockSupabase.select.mockReturnValue(mockSupabase);
-      mockSupabase.textSearch.mockReturnValue(mockSupabase);
-      mockSupabase.order.mockResolvedValue({
-        data: [
-          {
-            id: "PPL_SHONA",
-            name_main: "Shona",
-            language_family_id: "FLG_BANTU",
-            content: {},
-          },
-        ],
-        error: null,
-      });
-
-      const result = await searchAfrikPeoples("Shona");
-
-      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
-        "search_vector",
-        "Shona",
-        { type: "websearch", config: "french" }
-      );
-      expect(result).toHaveLength(1);
-      expect(result[0].id).toBe("PPL_SHONA");
-    });
-
-    // @req REQ-019
-    it("should return stemmed matches via french dictionary", async () => {
-      mockSupabase.from.mockImplementation((table: string) => {
-        if (table === "afrik_people_countries") {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const relChain: any = {
-            select: vi.fn(() => relChain),
-            in: vi.fn(() =>
-              Promise.resolve({
-                data: [{ people_id: "PPL_KIKONGO", country_id: "COD" }],
-                error: null,
-              })
-            ),
-          };
-          return relChain;
-        }
-        return mockSupabase;
-      });
-
-      mockSupabase.select.mockReturnValue(mockSupabase);
-      mockSupabase.textSearch.mockReturnValue(mockSupabase);
-      mockSupabase.order.mockResolvedValue({
-        data: [
-          {
-            id: "PPL_KIKONGO",
-            name_main: "Kikongo",
-            language_family_id: "FLG_BANTU",
-            content: {},
-          },
-        ],
-        error: null,
-      });
-
-      // "kikongos" is the stemmed query; french dict should match "Kikongo"
-      const result = await searchAfrikPeoples("kikongos");
-
-      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
-        "search_vector",
-        "kikongos",
-        { type: "websearch", config: "french" }
-      );
-      expect(result).toHaveLength(1);
-      expect(result[0].nameMain).toBe("Kikongo");
     });
   });
 

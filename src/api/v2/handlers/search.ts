@@ -2,16 +2,11 @@
  * Search Handler — API handlers for the /v2/search endpoint.
  *
  * ftsSearchHandler: ETNI-38 FTS handler returning the Module #0 envelope.
- * searchHandler: legacy handler (backward compatibility).
  */
 
-import { ftsSearch, search } from "../services/searchService";
+import { ftsSearch } from "../services/searchService";
 import { createApiResponse } from "../utils/response";
-import type {
-  SearchFilters,
-  SearchResult,
-  FtsSearchParams,
-} from "@/types/afrik";
+import type { FtsSearchParams } from "@/types/afrik";
 import type { ApiEnvelope } from "../utils/response";
 
 export interface FtsSearchData {
@@ -45,11 +40,4 @@ export async function ftsSearchHandler(
     familiesTotal: result.familiesTotal,
     total: result.total,
   });
-}
-
-// @req REQ-002
-export async function searchHandler(
-  filters: SearchFilters = {}
-): Promise<SearchResult[]> {
-  return search(filters);
 }
