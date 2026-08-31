@@ -23,74 +23,72 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   $ref: '#/components/schemas/CountryV2'
- *             example:
- *               data:
- *                 id: "ZWE"
- *                 nameFr: "Zimbabwe"
- *                 nameOfficial: "Republic of Zimbabwe"
- *                 etymology: "Nom dérivé de..."
- *                 content: {}
+ *               $ref: '#/components/schemas/CountryDetailEnvelope'
  *       400:
  *         description: Format de code ISO invalide
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "Invalid country ISO code format"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       404:
  *         description: Pays non trouvé
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "Country not found"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
 import { getCountryHandler } from "@/api/v2/handlers/countries";
+import { createApiError } from "@/api/v2/utils/response";
 import { validateCountryId } from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ iso: string }> }
 ) {
   const startTime = Date.now();
-  try {
-    const { iso } = await params;
+  const { iso } = await params;
 
+  try {
     logger.info("GET /api/v2/countries/[iso]", { iso });
 
     // Validate ISO code format
     if (!validateCountryId(iso)) {
       logger.warn("Invalid country ISO code format", { iso });
       return jsonWithCors(
-        { error: "Invalid country ISO code format" },
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Invalid country ISO code format",
+          field: "iso",
+        }),
         { status: 400 }
       );
     }
 
-    const country = await getCountryHandler(iso);
+    const envelope = await getCountryHandler(iso);
 
-    if (!country) {
+    if (!envelope) {
       logger.warn("Country not found", { iso });
-      return jsonWithCors({ error: "Country not found" }, { status: 404 });
+      return jsonWithCors(
+        createApiError({
+          code: "NOT_FOUND",
+          message: "Country not found",
+        }),
+        { status: 404 }
+      );
     }
 
-    const response = jsonWithCors({ data: country });
+    const response = jsonWithCors(envelope);
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/countries/[iso] completed", {
@@ -101,16 +99,22 @@ export async function GET(
 
     return response;
   } catch (error) {
-    const { iso } = await params;
     const duration = Date.now() - startTime;
     logger.error(`Error in GET /api/v2/countries/${iso}`, error, {
       iso,
       duration,
     });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

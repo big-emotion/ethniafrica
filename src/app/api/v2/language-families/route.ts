@@ -32,40 +32,23 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/LanguageFamilyV2'
- *                 meta:
- *                   $ref: '#/components/schemas/PaginationMeta'
- *             example:
- *               data:
- *                 - id: "FLG_BANTU"
- *                   nameFr: "Bantou"
- *                   nameEn: "Bantu"
- *                   peopleCount: 28
- *               meta:
- *                 total: 20
- *                 page: 1
- *                 perPage: 20
- *                 totalPages: 1
- *                 unclassifiedPeoplesCount: 64
+ *               $ref: '#/components/schemas/LanguageFamiliesListEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
 import { listLanguageFamiliesHandler } from "@/api/v2/handlers/languageFamilies";
+import { createApiError } from "@/api/v2/utils/response";
 import { validatePage, validatePerPage } from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
   try {
@@ -90,10 +73,17 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const duration = Date.now() - startTime;
     logger.error("Error in GET /api/v2/language-families", error, { duration });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

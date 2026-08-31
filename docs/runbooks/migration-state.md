@@ -137,9 +137,11 @@ nothing to render until that secret is set and a load runs.
 
 ## State table
 
-Both columns are now measurements, read from each project's
+Rows `001` through `049` are measurements read from each project's
 `supabase_migrations.schema_migrations` ledger on 2026-08-31 — recette over the Supabase MCP,
-production over a direct Postgres connection. Neither is inferred from what a branch carries.
+production over a direct Postgres connection. Rows added after that read state explicitly that
+they have not been measured or applied; neither column infers database state from what a branch
+carries.
 
 The production column says `applied` rather than repeating each version string because its
 ledger was rewritten during the 2026-08-31 repair: `001` → `019` were re-recorded under the
@@ -197,6 +199,12 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `047_quiz_bank_indexes.sql`                   | applied (`047`)                             | applied                             |
 | `048_antibot.sql`                             | applied (`048`)                             | applied                             |
 | `049_afrik_countries_name_official.sql`       | applied (`049`)                             | applied                             |
+| `050_search_query_log.sql`                    | not measured after `049`                    | not measured after `049`            |
+| `051_revision_publication.sql`                | pending — not applied by ETNI-70            | pending — not applied by ETNI-70    |
+
+Migration `051` adds the authenticated `publish_revision(uuid, text)` transaction boundary.
+ETNI-70 deliberately leaves it unapplied: rollout remains recette first, application verification
+second, then production, with a fresh ledger read after each step.
 
 > **Correction, 2026-08-30.** The table stopped at `044` while `045` through `048` had already
 > been applied to recette by `migrate-recette.yml`. A direct read of the recette ledger lists all

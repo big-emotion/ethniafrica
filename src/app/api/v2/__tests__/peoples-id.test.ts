@@ -16,6 +16,7 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { getPeopleHandler } from "@/api/v2/handlers/peoples";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
 
 describe("API v2 - Single People Route", () => {
   beforeEach(() => {
@@ -23,6 +24,7 @@ describe("API v2 - Single People Route", () => {
   });
 
   describe("GET /api/v2/peoples/[id]", () => {
+    // @req REQ-084
     it("should return a people by ID", async () => {
       const mockPeople = {
         id: "PPL_SHONA",
@@ -32,7 +34,15 @@ describe("API v2 - Single People Route", () => {
         content: {},
       };
 
-      (getPeopleHandler as any).mockResolvedValue(mockPeople);
+      const mockEnvelope = {
+        data: mockPeople,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [],
+      };
+      vi.mocked(getPeopleHandler).mockResolvedValue(mockEnvelope);
 
       const request = new NextRequest(
         "http://localhost/api/v2/peoples/PPL_SHONA"
@@ -43,10 +53,10 @@ describe("API v2 - Single People Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(data.data.id).toBe("PPL_SHONA");
+      expect(data).toEqual(mockEnvelope);
     });
 
+    // @req REQ-084
     it("should return 400 for invalid ID format", async () => {
       const request = new NextRequest("http://localhost/api/v2/peoples/SHONA");
       const response = await GET(request, {
@@ -55,11 +65,25 @@ describe("API v2 - Single People Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.error).toContain("Invalid");
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [
+          {
+            code: "VALIDATION_ERROR",
+            message: "Invalid people ID format",
+            field: "id",
+          },
+        ],
+      });
     });
 
+    // @req REQ-084
     it("should return 404 for non-existent people", async () => {
-      (getPeopleHandler as any).mockResolvedValue(null);
+      vi.mocked(getPeopleHandler).mockResolvedValue(null);
 
       const request = new NextRequest(
         "http://localhost/api/v2/peoples/PPL_NONEXISTENT"
@@ -70,7 +94,39 @@ describe("API v2 - Single People Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(404);
-      expect(data.error).toBe("People not found");
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "NOT_FOUND", message: "People not found" }],
+      });
+    });
+
+    // @req REQ-084
+    it("should return 500 when the handler fails", async () => {
+      vi.mocked(getPeopleHandler).mockRejectedValue(
+        new Error("Database error")
+      );
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/peoples/PPL_SHONA"
+      );
+      const response = await GET(request, {
+        params: Promise.resolve({ id: "PPL_SHONA" }),
+      });
+      const data = await response.json();
+
+      expect(response.status).toBe(500);
+      expect(data).toEqual({
+        data: null,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });

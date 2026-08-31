@@ -16,6 +16,12 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { listCountriesHandler } from "@/api/v2/handlers/countries";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
+
+const ENVELOPE_META = {
+  license: "CC-BY-SA-4.0",
+  attribution: API_ATTRIBUTION,
+};
 
 describe("API v2 - Countries Route", () => {
   beforeEach(() => {
@@ -23,13 +29,18 @@ describe("API v2 - Countries Route", () => {
   });
 
   describe("GET /api/v2/countries", () => {
-    it("should return paginated countries", async () => {
+    // @req REQ-084
+    it("returns paginated countries in the canonical envelope", async () => {
       const mockResponse = {
         data: [{ id: "ZWE", nameFr: "Zimbabwe", content: {} }],
-        meta: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        meta: {
+          ...ENVELOPE_META,
+          pagination: { total: 1, page: 1, perPage: 20, totalPages: 1 },
+        },
+        errors: [],
       };
 
-      (listCountriesHandler as any).mockResolvedValue(mockResponse);
+      vi.mocked(listCountriesHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest(
         "http://localhost/api/v2/countries?page=1&perPage=20"
@@ -38,18 +49,21 @@ describe("API v2 - Countries Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(Array.isArray(data.data)).toBe(true);
-      expect(data.meta).toBeDefined();
+      expect(data).toEqual(mockResponse);
     });
 
+    // @req REQ-084
     it("should handle default pagination", async () => {
       const mockResponse = {
         data: [],
-        meta: { total: 0, page: 1, perPage: 20, totalPages: 0 },
+        meta: {
+          ...ENVELOPE_META,
+          pagination: { total: 0, page: 1, perPage: 20, totalPages: 0 },
+        },
+        errors: [],
       };
 
-      (listCountriesHandler as any).mockResolvedValue(mockResponse);
+      vi.mocked(listCountriesHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest("http://localhost/api/v2/countries");
       const response = await GET(request);
@@ -58,8 +72,9 @@ describe("API v2 - Countries Route", () => {
       expect(listCountriesHandler).toHaveBeenCalledWith(1, 20);
     });
 
-    it("should return 500 on error", async () => {
-      (listCountriesHandler as any).mockRejectedValue(
+    // @req REQ-084
+    it("returns a 500 INTERNAL_ERROR envelope when the handler throws", async () => {
+      vi.mocked(listCountriesHandler).mockRejectedValue(
         new Error("Database error")
       );
 
@@ -68,7 +83,11 @@ describe("API v2 - Countries Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.error).toBe("Internal server error");
+      expect(data).toEqual({
+        data: null,
+        meta: ENVELOPE_META,
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });

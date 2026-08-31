@@ -8,11 +8,8 @@ const options: swaggerJsdoc.Options = {
       version: "2.2.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
-        "## Response envelope shapes\n\n" +
-        "Two envelope shapes coexist on `/api/v2/*` during the Module #0 rollout:\n\n" +
-        "- **Module #0 endpoints** (`/sources`, `/sources/{id}`, `/doctrine`, `/confidence/{entityType}/{entityId}`, and future `/assertions`) return the new envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors: [] }`. License and attribution are always present (AR8); `errors[]` is `[]` on success and populated on non-2xx responses.\n" +
-        "- **Legacy v2 endpoints** (`/peoples`, `/countries`, `/language-families`, `/search`) still use the older shape: `{ data, meta: { total, page, perPage, totalPages } }` for list responses and `{ data }` for item responses. They do not surface `license`, `attribution`, or an `errors` array.\n\n" +
-        "Both shapes are stable for the lifetime of v2. Convergence onto the Module #0 envelope across all endpoints is tracked as a separate follow-up ticket; until then, treat the envelope shape as endpoint-scoped.\n\n" +
+        "## Response envelope\n\n" +
+        "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
         "## 2.1.0 — one source-tier vocabulary (breaking)\n\n" +
         'Source authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: "unverified"` + `source_kind: "ai_generated"` rather than a tier of its own.\n\n' +
         "Removed, all superseded by `tier`:\n\n" +
@@ -879,15 +876,16 @@ const options: swaggerJsdoc.Options = {
             code: {
               type: "string",
               enum: [
-                "VALIDATION_ERROR",
-                "NOT_FOUND",
-                "SEMANTIC_ERROR",
+                "ILLEGAL_TRANSITION",
                 "INTERNAL_ERROR",
-                "UNAUTHENTICATED",
-                "AGE_CONFIRMATION_REQUIRED",
-                "UNAUTHORIZED",
+                "INVALID_PARAM",
+                "NOT_FOUND",
                 "RATE_LIMITED",
+                "SEMANTIC_ERROR",
+                "UNAUTHENTICATED",
+                "UNAUTHORIZED",
                 "UNAVAILABLE",
+                "VALIDATION_ERROR",
               ],
               example: "NOT_FOUND",
             },
@@ -910,6 +908,132 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
               minItems: 1,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PeoplesListEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleV2" },
+            },
+            meta: {
+              allOf: [
+                { $ref: "#/components/schemas/ApiResponseMeta" },
+                { required: ["pagination"] },
+              ],
+            },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PeopleDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PeopleV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        CountriesListEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/CountryV2" },
+            },
+            meta: {
+              allOf: [
+                { $ref: "#/components/schemas/ApiResponseMeta" },
+                { required: ["pagination"] },
+              ],
+            },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        CountryDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/CountryV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        LanguageFamiliesListEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageFamilyV2" },
+            },
+            meta: {
+              allOf: [
+                { $ref: "#/components/schemas/ApiResponseMeta" },
+                { required: ["pagination"] },
+              ],
+            },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        LanguageFamilyDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/LanguageFamilyV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        ApiKeyIssueEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "object",
+              properties: {
+                key: {
+                  type: "string",
+                  description: "Raw API key, shown only once.",
+                },
+                tier: { type: "string", const: "public" },
+                note: { type: "string" },
+              },
+              required: ["key", "tier", "note"],
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
             },
           },
           required: ["data", "meta", "errors"],
@@ -2802,6 +2926,60 @@ const options: swaggerJsdoc.Options = {
             },
           },
           required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
+        // API key self-service management (ETNI-81)
+        // -----------------------------------------------------------------
+        ApiKeySummary: {
+          type: "object",
+          description:
+            "One of the caller's own API keys. Never carries the raw key or its hash.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            label: { type: ["string", "null"] },
+            tier: { type: "string", enum: ["public", "partner", "admin"] },
+            active: { type: "boolean" },
+            key_prefix: { type: ["string", "null"] },
+            created_at: { type: "string", format: "date-time" },
+            last_used_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+            expires_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+            revoked_at: {
+              type: ["string", "null"],
+              format: "date-time",
+            },
+          },
+          required: [
+            "id",
+            "label",
+            "tier",
+            "active",
+            "key_prefix",
+            "created_at",
+            "last_used_at",
+            "expires_at",
+            "revoked_at",
+          ],
+        },
+        ApiKeyCreated: {
+          type: "object",
+          description:
+            "Response to a successful key creation. `key` is the raw key — shown only in this response, never retrievable again.",
+          allOf: [
+            { $ref: "#/components/schemas/ApiKeySummary" },
+            {
+              type: "object",
+              properties: {
+                key: { type: "string" },
+              },
+              required: ["key"],
+            },
+          ],
         },
       },
     },

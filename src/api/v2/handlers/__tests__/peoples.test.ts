@@ -7,6 +7,7 @@ vi.mock("../../services/peopleService", () => ({
 
 import { getPeoples, getPeopleById } from "../../services/peopleService";
 import { listPeoplesHandler, getPeopleHandler } from "../peoples";
+import { API_ATTRIBUTION } from "../../utils/response";
 import type { People } from "@/types/afrik";
 
 const SHONA: People = {
@@ -24,6 +25,7 @@ describe("Peoples Handler", () => {
 
   describe("listPeoplesHandler", () => {
     // @req REQ-033
+    // @req REQ-084
     it("should forward filters and build metadata from the exact total", async () => {
       vi.mocked(getPeoples).mockResolvedValue({ data: [SHONA], total: 924 });
 
@@ -35,15 +37,23 @@ describe("Peoples Handler", () => {
       const response = await listPeoplesHandler(2, 5, filters);
 
       expect(getPeoples).toHaveBeenCalledWith(2, 5, filters);
-      expect(response.data).toEqual([SHONA]);
-      expect(response.meta).toEqual({
-        total: 924,
-        page: 2,
-        perPage: 5,
-        totalPages: 185,
+      expect(response).toEqual({
+        data: [SHONA],
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+          pagination: {
+            total: 924,
+            page: 2,
+            perPage: 5,
+            totalPages: 185,
+          },
+        },
+        errors: [],
       });
     });
 
+    // @req REQ-084
     it("should handle default pagination", async () => {
       vi.mocked(getPeoples).mockResolvedValue({ data: [], total: 0 });
 
@@ -51,21 +61,31 @@ describe("Peoples Handler", () => {
 
       expect(getPeoples).toHaveBeenCalledWith(undefined, undefined, {});
       expect(response.data).toEqual([]);
-      expect(response.meta?.page).toBe(1);
-      expect(response.meta?.perPage).toBe(20);
+      expect(response.meta.pagination?.page).toBe(1);
+      expect(response.meta.pagination?.perPage).toBe(20);
+      expect(response.errors).toEqual([]);
     });
   });
 
   describe("getPeopleHandler", () => {
+    // @req REQ-084
     it("should return a people by PPL_ ID", async () => {
       vi.mocked(getPeopleById).mockResolvedValue(SHONA);
 
-      const people = await getPeopleHandler("PPL_SHONA");
+      const response = await getPeopleHandler("PPL_SHONA");
 
       expect(getPeopleById).toHaveBeenCalledWith("PPL_SHONA");
-      expect(people?.id).toBe("PPL_SHONA");
+      expect(response).toEqual({
+        data: SHONA,
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: API_ATTRIBUTION,
+        },
+        errors: [],
+      });
     });
 
+    // @req REQ-084
     it("should return null for non-existent people", async () => {
       vi.mocked(getPeopleById).mockResolvedValue(null);
 

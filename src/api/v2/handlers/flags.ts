@@ -23,6 +23,7 @@ import {
   createApiResponse,
   type ApiEnvelope,
   type ApiError,
+  type ApiErrorCode,
 } from "@/api/v2/utils/response";
 import { verifyAntibotProof } from "@/lib/api/antibot";
 import type { Proof } from "@/lib/antibot/proofOfWork";
@@ -166,7 +167,7 @@ function validationError(issues: z.ZodIssue[]): ApiEnvelope<null> {
   return createApiError(errors);
 }
 
-function errorResponse(code: string, message: string): ApiEnvelope<null> {
+function errorResponse(code: ApiErrorCode, message: string): ApiEnvelope<null> {
   return createApiError({ code, message });
 }
 
