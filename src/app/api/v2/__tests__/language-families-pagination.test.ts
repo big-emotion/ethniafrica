@@ -42,6 +42,7 @@ import {
   countAfrikLanguageFamilies,
   getAfrikLanguageFamilyRoster,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
 
 const ALL_FAMILIES = Array.from({ length: 24 }, (_, i) => ({
   id: `FLG_${String(i).padStart(2, "0")}`,
@@ -78,8 +79,11 @@ describe("API v2 - Language Families pagination contract (REQ-110)", () => {
     const body = await response.json();
 
     expect(body.data.length).toBe(24);
-    expect(body.meta.perPage).toBe(100);
-    expect(body.meta.total).toBe(24);
+    expect(body.meta.pagination.perPage).toBe(100);
+    expect(body.meta.pagination.total).toBe(24);
+    expect(body.meta.license).toBe("CC-BY-SA-4.0");
+    expect(body.meta.attribution).toBe(API_ATTRIBUTION);
+    expect(body.errors).toEqual([]);
   });
 
   // @req REQ-110
@@ -95,7 +99,7 @@ describe("API v2 - Language Families pagination contract (REQ-110)", () => {
       const body = await response.json();
 
       body.data.forEach((family: { id: string }) => seenIds.add(family.id));
-      totalPages = body.meta.totalPages;
+      totalPages = body.meta.pagination.totalPages;
     }
 
     expect(totalPages).toBe(3);
@@ -110,7 +114,7 @@ describe("API v2 - Language Families pagination contract (REQ-110)", () => {
     const response = await GET(request);
     const body = await response.json();
 
-    expect(body.meta.perPage).toBe(100);
+    expect(body.meta.pagination.perPage).toBe(100);
     expect(body.data.length).toBeLessThanOrEqual(100);
   });
 });

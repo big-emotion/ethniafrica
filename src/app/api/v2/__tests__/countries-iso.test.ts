@@ -16,6 +16,12 @@ vi.mock("@/lib/api/cors", () => ({
 }));
 
 import { getCountryHandler } from "@/api/v2/handlers/countries";
+import { API_ATTRIBUTION } from "@/api/v2/utils/response";
+
+const ENVELOPE_META = {
+  license: "CC-BY-SA-4.0",
+  attribution: API_ATTRIBUTION,
+};
 
 describe("API v2 - Single Country Route", () => {
   beforeEach(() => {
@@ -23,14 +29,20 @@ describe("API v2 - Single Country Route", () => {
   });
 
   describe("GET /api/v2/countries/[iso]", () => {
-    it("should return a country by ISO code", async () => {
+    // @req REQ-084
+    it("returns a country in the canonical envelope", async () => {
       const mockCountry = {
         id: "ZWE",
         nameFr: "Zimbabwe",
         content: {},
       };
+      const mockResponse = {
+        data: mockCountry,
+        meta: ENVELOPE_META,
+        errors: [],
+      };
 
-      (getCountryHandler as any).mockResolvedValue(mockCountry);
+      vi.mocked(getCountryHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest("http://localhost/api/v2/countries/ZWE");
       const response = await GET(request, {
@@ -39,11 +51,11 @@ describe("API v2 - Single Country Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(200);
-      expect(data.data).toBeDefined();
-      expect(data.data.id).toBe("ZWE");
+      expect(data).toEqual(mockResponse);
     });
 
-    it("should return 400 for invalid ISO format", async () => {
+    // @req REQ-084
+    it("returns a 400 VALIDATION_ERROR envelope for invalid ISO format", async () => {
       const request = new NextRequest("http://localhost/api/v2/countries/zw");
       const response = await GET(request, {
         params: Promise.resolve({ iso: "zw" }),
@@ -51,11 +63,22 @@ describe("API v2 - Single Country Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.error).toContain("Invalid");
+      expect(data).toEqual({
+        data: null,
+        meta: ENVELOPE_META,
+        errors: [
+          {
+            code: "VALIDATION_ERROR",
+            message: "Invalid country ISO code format",
+            field: "iso",
+          },
+        ],
+      });
     });
 
-    it("should return 404 for non-existent country", async () => {
-      (getCountryHandler as any).mockResolvedValue(null);
+    // @req REQ-084
+    it("returns a 404 NOT_FOUND envelope for a non-existent country", async () => {
+      vi.mocked(getCountryHandler).mockResolvedValue(null);
 
       const request = new NextRequest("http://localhost/api/v2/countries/XXX");
       const response = await GET(request, {
@@ -64,11 +87,18 @@ describe("API v2 - Single Country Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(404);
-      expect(data.error).toBe("Country not found");
+      expect(data).toEqual({
+        data: null,
+        meta: ENVELOPE_META,
+        errors: [{ code: "NOT_FOUND", message: "Country not found" }],
+      });
     });
 
-    it("should return 500 on error", async () => {
-      (getCountryHandler as any).mockRejectedValue(new Error("Database error"));
+    // @req REQ-084
+    it("returns a 500 INTERNAL_ERROR envelope when the handler throws", async () => {
+      vi.mocked(getCountryHandler).mockRejectedValue(
+        new Error("Database error")
+      );
 
       const request = new NextRequest("http://localhost/api/v2/countries/ZWE");
       const response = await GET(request, {
@@ -77,7 +107,11 @@ describe("API v2 - Single Country Route", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.error).toBe("Internal server error");
+      expect(data).toEqual({
+        data: null,
+        meta: ENVELOPE_META,
+        errors: [{ code: "INTERNAL_ERROR", message: "Internal server error" }],
+      });
     });
   });
 });

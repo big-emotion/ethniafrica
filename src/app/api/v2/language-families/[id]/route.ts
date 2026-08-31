@@ -23,48 +23,37 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   $ref: '#/components/schemas/LanguageFamilyV2'
- *             example:
- *               data:
- *                 id: "FLG_BANTU"
- *                 nameFr: "Bantou"
- *                 nameEn: "Bantu"
- *                 content: {}
+ *               $ref: '#/components/schemas/LanguageFamilyDetailEnvelope'
  *       400:
  *         description: Format d'identifiant invalide
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "Invalid language family ID format"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       404:
  *         description: Famille linguistique non trouvée
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
- *             example:
- *               error: "Language family not found"
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
 import { getLanguageFamilyHandler } from "@/api/v2/handlers/languageFamilies";
+import { createApiError } from "@/api/v2/utils/response";
 import { validateLanguageFamilyId } from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const startTime = Date.now();
@@ -77,22 +66,29 @@ export async function GET(
     if (!validateLanguageFamilyId(id)) {
       logger.warn("Invalid language family ID format", { id });
       return jsonWithCors(
-        { error: "Invalid language family ID format" },
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Invalid language family ID format",
+          field: "id",
+        }),
         { status: 400 }
       );
     }
 
-    const family = await getLanguageFamilyHandler(id);
+    const envelope = await getLanguageFamilyHandler(id);
 
-    if (!family) {
+    if (!envelope) {
       logger.warn("Language family not found", { id });
       return jsonWithCors(
-        { error: "Language family not found" },
+        createApiError({
+          code: "NOT_FOUND",
+          message: "Language family not found",
+        }),
         { status: 404 }
       );
     }
 
-    const response = jsonWithCors({ data: family });
+    const response = jsonWithCors(envelope);
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/language-families/[id] completed", {
@@ -109,10 +105,17 @@ export async function GET(
       id,
       duration,
     });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

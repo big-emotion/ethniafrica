@@ -4,7 +4,7 @@ import { swaggerSpecV2 } from "@/lib/api/openapiV2";
 
 describe("OpenAPI v2 contract", () => {
   // @req REQ-036
-  it("documents optional people list filters and the legacy pagination envelope", () => {
+  it("documents optional people list filters and the standard envelope", () => {
     expect(swaggerSpecV2).toMatchObject({
       paths: {
         "/api/v2/peoples": {
@@ -31,18 +31,7 @@ describe("OpenAPI v2 contract", () => {
                 content: {
                   "application/json": {
                     schema: {
-                      type: "object",
-                      properties: {
-                        data: {
-                          type: "array",
-                          items: {
-                            $ref: "#/components/schemas/PeopleV2",
-                          },
-                        },
-                        meta: {
-                          $ref: "#/components/schemas/PaginationMeta",
-                        },
-                      },
+                      $ref: "#/components/schemas/PeoplesListEnvelope",
                     },
                   },
                 },

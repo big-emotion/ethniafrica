@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { swaggerSpecV2 } from "@/lib/api/openapiV2";
+import { API_ERROR_CODES } from "@/api/v2/utils/response";
 
 interface SchemaObject {
   $ref?: string;
@@ -290,18 +291,7 @@ describe("OpenAPI v2 flags contract", () => {
 
   // @req REQ-084
   it("documents complete error codes and rate-limit headers", () => {
-    expect(schemas.ApiErrorEntry.properties.code.enum).toEqual(
-      expect.arrayContaining([
-        "VALIDATION_ERROR",
-        "UNAUTHENTICATED",
-        "AGE_CONFIRMATION_REQUIRED",
-        "UNAUTHORIZED",
-        "RATE_LIMITED",
-        "UNAVAILABLE",
-        "NOT_FOUND",
-        "INTERNAL_ERROR",
-      ])
-    );
+    expect(schemas.ApiErrorEntry.properties.code.enum).toEqual(API_ERROR_CODES);
 
     expect(
       Object.keys(flagCollection.post.responses["429"].headers).sort()

@@ -5,31 +5,43 @@
 import {
   getLanguageFamilies,
   getLanguageFamilyById,
-} from "../services/languageFamilyService";
-import type { LanguageFamily, ApiResponse } from "@/types/afrik";
-import { createPaginatedResponse } from "../utils/response";
+} from "@/api/v2/services/languageFamilyService";
+import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
+import type { LanguageFamily } from "@/types/afrik";
 
 /**
  * List language families with pagination
  */
+// @req REQ-084
 export async function listLanguageFamiliesHandler(
   page?: number,
   perPage?: number
-): Promise<ApiResponse<LanguageFamily[]>> {
+): Promise<ApiEnvelope<LanguageFamily[]>> {
   const { data, total, unclassifiedPeoplesCount } = await getLanguageFamilies(
     page,
     perPage
   );
-  return createPaginatedResponse(data, total, page, perPage, {
-    unclassifiedPeoplesCount,
+  const appliedPage = page ?? 1;
+  const appliedPerPage = perPage ?? 20;
+
+  return createApiResponse(data, {
+    pagination: {
+      total,
+      page: appliedPage,
+      perPage: appliedPerPage,
+      totalPages: Math.ceil(total / appliedPerPage),
+      unclassifiedPeoplesCount,
+    },
   });
 }
 
 /**
  * Get a single language family by FLG_ ID
  */
+// @req REQ-084
 export async function getLanguageFamilyHandler(
   id: string
-): Promise<LanguageFamily | null> {
-  return await getLanguageFamilyById(id);
+): Promise<ApiEnvelope<LanguageFamily> | null> {
+  const family = await getLanguageFamilyById(id);
+  return family ? createApiResponse(family) : null;
 }
