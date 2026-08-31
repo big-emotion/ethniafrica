@@ -187,6 +187,36 @@ describe("RecherchePageContent", () => {
     expect(screen.getByTestId("filter-chip-row")).toBeInTheDocument();
   });
 
+  // ── design system wiring (ETNI-1386) ───────────────────────────────────────
+
+  // @req REQ-002
+  it("wraps its content in .afh-shell instead of the ad-hoc max-w-4xl container", () => {
+    const { container } = render(<RecherchePageContent />);
+    const wrapper = screen.getByTestId("page-layout").firstElementChild;
+    expect(wrapper?.className).toContain("afh-shell");
+    expect(wrapper?.className).not.toMatch(/max-w-4xl|mx-auto\b/);
+    // px-4 is an ad-hoc gutter; .afh-shell owns the gutter via --afh-page-padding.
+    expect(container.querySelector(".afh-shell")).not.toBeNull();
+  });
+
+  // @req REQ-002
+  it("drives structural spacing from --afh-* tokens, not raw step utilities", () => {
+    const { container } = render(<RecherchePageContent />);
+    const raw = container.innerHTML;
+    expect(raw).not.toMatch(/\bspace-y-6\b/);
+    expect(raw).not.toMatch(/\bspace-y-3\b/);
+  });
+
+  // @req REQ-002
+  it("uses the project's md breakpoint on the search form row, not sm", () => {
+    render(<RecherchePageContent />);
+    const form = screen.getByRole("search", {
+      name: /formulaire de recherche/i,
+    });
+    expect(form.className).toContain("md:flex-row");
+    expect(form.className).not.toMatch(/\bsm:flex-row\b/);
+  });
+
   it("renders a sort control that is a <select>-based dropdown, not a chip row", () => {
     render(<RecherchePageContent />);
     // shadcn Select renders a combobox role
