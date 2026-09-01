@@ -492,27 +492,3 @@ export async function getPeopleCountsByLanguageFamily(): Promise<
   }
   return counts;
 }
-
-/**
- * Search AFRIK peoples using Postgres FTS on search_vector (websearch, french).
- */
-// @req REQ-019
-export async function searchAfrikPeoples(query: string): Promise<People[]> {
-  const supabase = createServerClient();
-
-  const { data, error } = await supabase
-    .from("afrik_peoples")
-    .select("*")
-    .textSearch("search_vector", query, { type: "websearch", config: "french" })
-    .order("name_main");
-
-  if (error) {
-    logger.error("Error searching AFRIK peoples", error);
-    throw error;
-  }
-
-  const peopleIds = (data || []).map((row) => row.id);
-  const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
-
-  return mapRowsToPeoples(data || [], relationsMap);
-}

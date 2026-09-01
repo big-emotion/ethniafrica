@@ -97,10 +97,10 @@
         "name": "Bassa",
         "selfAppellation": "Bassa",
         "exonyms": ["Bassa (terme utilisé par les Européens)"],
-        "peopleId": "PPL_BASSA_LIBERIA",
+        "peopleId": "PPL_BASSA",
         "mainRegion": "Côte libérienne (centre et sud)",
         "languages": ["Bassa (bsq", "ISO 639-3)", "anglais"],
-        "languageFamily": "FLG_MANDE",
+        "languageFamily": "FLG_KROU",
         "appellationRemarks": "\"Bassa\" est l'auto-appellation. Pas de terme péjoratif connu. L'un des peuples les plus anciens de la côte libérienne."
       },
       {
@@ -343,10 +343,10 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "ONU / UNFPA – Démographie Libéria 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/LR",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
         "title": "Recensements libériens",
@@ -380,6 +380,9 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 5700000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Kpelle",
@@ -391,9 +394,9 @@
         {
           "name": "Bassa",
           "percentageInCountry": 13.4,
-          "peopleId": "PPL_BASSA_LIBERIA",
+          "peopleId": "PPL_BASSA",
           "region": "Côte libérienne (centre et sud)",
-          "languageFamily": "FLG_MANDE"
+          "languageFamily": "FLG_KROU"
         },
         {
           "name": "Grebo",

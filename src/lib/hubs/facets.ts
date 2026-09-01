@@ -6,7 +6,7 @@ import type { Language } from "@/types/shared";
  * The three facets of the unified Explorer hub.
  *
  * They are three *static sibling routes*, not `explorer/[facet]`: a dynamic
- * segment there would swallow `/fr/explorer/recherche`, and the facet switch
+ * segment there would swallow `/fr/atlas/recherche`, and the facet switch
  * has to be three plain anchors so it works with no JavaScript and a crawler
  * can follow it.
  *

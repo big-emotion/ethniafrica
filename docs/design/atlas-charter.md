@@ -58,11 +58,11 @@ And **a scene that opens no country marks none.** The converse of the rule
 above, and it had to be written because the same code drew both. The continent
 scene belongs to the Explorer hub, where a mark's promise is the whole offer —
 but `ContinentGlobeStage` reused it to stand under the two surfaces that argue
-about projection, the home's featured module and `/jouer/mercator`, and
+about projection, the home's featured module and `/fr/jeux/mercator`, and
 inherited the offer with it: twelve pinned countries, a tap anywhere on the
 sphere selecting the nearest, and a legend promising « appuyez sur un point
 pour ouvrir le pays ». Neither surface is browsing the corpus, so the promise
-was false on the home and worse on `/jouer/mercator`, where a tap mid-question
+was false on the home and worse on `/fr/jeux/mercator`, where a tap mid-question
 opened a country panel over a standing round. Withdrawing the marks is not
 enough on its own: the stage-wide tap is the third way in, and it is the one
 nobody sees until a reader lands on a fiche they never aimed at. Contract:
@@ -125,22 +125,40 @@ white.
 
 ## 3. The three entry points
 
-The header carries **three intentions, not ten modules**: _Explorer_ when you
-know what you are looking for, _Comprendre_ when you want to know where what
-you are reading comes from, _Jouer_ when you want the corpus to answer.
+The header carries the atlas's **content register** through three access
+modes, not ten modules: **L'atlas** for the fiches — countries, peoples,
+language families, names, search — **Les dossiers** for a transversal text
+crossing several fiches, and **Les jeux** for a round the corpus answers.
+`DEC-045` moved this register from a verbal one (_Consulter_, _Enquêter_,
+_Jouer_) to this nominal one, naming the content each mode groups rather than
+the intent a reader arrives with; it supersedes `DEC-044` on that rename
+clause only.
 
-The modules live behind the click, in a panel (desktop) or a drawer (mobile
-< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
+ETNI-1615 (`REQ-138`) closed the transitional state `DEC-045`'s tradeoffs
+section once recorded: identifier, label and URL segment now name the same
+thing. **L'atlas** carries the identifier `atlas` and routes under
+`/fr/atlas/*`; **Les dossiers** carries `dossiers` and `/fr/dossiers/*`;
+**Les jeux** carries `jeux` and `/fr/jeux/*`. The verb-shaped predecessors —
+`explorer`, `comprendre`, `jouer` — are retired identifiers now, permanently
+redirected rather than reachable: every address published under them reaches
+its successor in one hop (`src/middleware.ts`, `RELOCATED_SEGMENTS`).
+
+The access-mode label is a non-navigating heading or disclosure; direct module
+links sit beneath it. A live module is exactly one click away from the global
+navigation: the reader selects that module, never an intermediate axis landing
+page first. The register uses a panel on desktop and a drawer on mobile
+(< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
 generated from it, never hand-listed.
 
 - A module with **no resolvable route** renders as **Bientôt** and is not
-  focusable. The menu never offers a route that does not resolve.
+  focusable. The menu never offers a route that does not resolve. Unavailable
+  entries stay inert.
 
   This used to read "a module whose `page` is `null`", and that was the same
   sentence for as long as `page` was the only way to address a module. REQ-120
-  gave Jouer eleven games addressed by `gameSlug`, each carrying `page: null`
+  gave Jouer 11 games addressed by `gameSlug`, each carrying `page: null`
   on purpose so `PageType` stays a closed union — and the rule as written made
-  eleven playable games render as **Bientôt** on the home. Resolution is
+  all 11 playable games render as **Bientôt** on the home. Resolution is
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 
@@ -148,31 +166,24 @@ generated from it, never hand-listed.
   absent from the menu is a module absent from the corpus.
 
   This used to read "the panel shows each destination's real route", and the
-  panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` in
-  monospace under its label. That is the router's path scheme rendered as
-  editorial content — the atlas publishing its own plumbing to a reader who
+  panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
+  a route under **Les dossiers**, at its address of the time — in monospace
+  under its label. That is the router's path scheme
+  rendered as editorial content — the atlas publishing its own plumbing to a reader who
   came for peoples and languages. The address lives in the link's `href`,
   where the browser's status bar, the crawler and the screen reader all agree
   to look for it; a URL long enough to wrap over two lines was never the thing
   that told a reader where a click lands.
 
-- **A facet is not a destination.** Peoples, countries and families are three
-  states of one page — the Explorer hub — not three pages beside it. The menu
-  says so: the axis leads with its own hub, and the facets are offered beneath
-  it under their short names. They were once told apart by printing an address
-  under the hub and none under the facets; now that no entry carries one, the
-  distinction rests where it belonged all along — the hub leads the group, the
-  facets sit inside it.
+- **A facet is a direct destination, not a second navigation level.** Peoples,
+  countries and families remain three facets of the Explorer surface, grouped
+  together under **L'atlas**, but each facet receives its own module link. A
+  separate Explorer landing page would add a click without adding a choice.
 
   Which entries are facets is read off `src/lib/hubs/facets.ts` through
-  `getFacetByPage`, never restated in the menu. `moduleRegistry` still declares
-  the four Explorer modules separately, and deliberately: the axis hub renders
-  them as four unconditional server-side links, which is the way in when there
-  is no WebGL and no JavaScript.
-
-- **The axis label opens the panel; it does not navigate.** So the hub needs an
-  entry of its own inside the panel — without one, `/fr/explorer` is reachable
-  from no navigation surface on any viewport, which is what it was.
+  `getFacetByPage`, never restated in the menu. `moduleRegistry` declares the
+  Explorer modules separately so the global navigation can render each direct
+  link under the shared intention.
 
 - **Reachable and mature are two separate questions.** A module is _listed_
   because it exists. It is _clickable_ because what sits behind the click is
@@ -203,20 +214,18 @@ generated from it, never hand-listed.
   row count could ever have spoken for it: its readiness was never measurable,
   only declarable, and that is precisely the gap this field closes.
 
-- **A page states one availability, not one per surface.** A hub row and the
-  scene beside it are two assertions about the same module, and when they
-  disagree the page is simply wrong. `/fr/comprendre` shipped that way: a
-  question spine linking to _Noms & appellations_ directly above the row
-  marking that module **Bientôt**. A scene therefore takes `HubModule[]` —
-  the resolved availability the rows read — never a hand-kept list of routes.
-- **Shelves nest, they never hide.** An axis holding more modules than a scene
-  can place files them onto shelves (`ModuleGroupId`), and the panel opens on
-  the shelves rather than on every module at once. A shelf carries its count,
-  so nothing is asserted absent; the hub route still lists every module, each
-  on its own row under a heading. A shelf holding one module stands in for
-  that module — a click that offers no choice is not a level.
-- Escape steps back one level before it closes, then closes and returns focus
-  to the trigger. Arrow keys move between axes.
+- **A page states one availability, not one per surface.** A navigation entry
+  and any scene advertising it are two assertions about the same module; when
+  they disagree, the interface is simply wrong. Every surface therefore takes
+  `HubModule[]` — the same resolved availability the navigation reads — never a
+  hand-kept list of routes.
+- **Groups organise, they never add a navigation level.** An access mode may
+  divide a long module list with `ModuleGroupId`, but each group label is a
+  non-navigating heading and its module links remain directly beneath it. A
+  one-module group shows the module link, not a disclosure that offers no
+  choice.
+- Escape closes the open disclosure or drawer and returns focus to its trigger.
+  Arrow keys move between access-mode groups.
 
 Build both on the shadcn primitives already in the repo — `navigation-menu`
 for the panel, `drawer` for the mobile tray. No competing component library

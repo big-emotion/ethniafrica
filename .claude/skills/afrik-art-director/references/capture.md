@@ -89,8 +89,8 @@ slice is for the judgement.
 
 Routes with a `loading.tsx` return the shell, not the content, so scraping
 hrefs with `curl | grep` yields nothing. Read the live DOM instead. Fiche URLs
-carry the corpus identifier verbatim — `/fr/explorer/peuples/PPL_KUNG`,
-`/fr/explorer/pays/ZAF`, `/fr/explorer/familles/FLG_ATLANTIQUE`.
+carry the corpus identifier verbatim — `/fr/atlas/peuples/PPL_KUNG`,
+`/fr/atlas/pays/ZAF`, `/fr/atlas/familles/FLG_ATLANTIQUE`.
 
 ### 5. A worktree-isolated session refuses compound shell
 
@@ -129,30 +129,36 @@ The public surface, for a full sweep:
 
 ```
 /fr
-/fr/explorer                       /fr/comprendre                 /fr/jouer
-/fr/explorer/peuples               /fr/comprendre/anecdotes       /fr/jouer/mercator
-/fr/explorer/pays                  /fr/comprendre/doctrine        /fr/jouer/quiz
-/fr/explorer/familles              /fr/comprendre/migrations
-/fr/explorer/peuples/PPL_KUNG      /fr/comprendre/noms
-/fr/explorer/pays/ZAF              /fr/comprendre/regards/colonisation-et-resistances
-/fr/explorer/familles/FLG_ATLANTIQUE
-/fr/explorer/peuples/PPL_KUNG/liens
-/fr/explorer/recherche?q=yoruba
+/fr/atlas/peuples               /fr/dossiers/anecdotes       /fr/jeux/mercator
+/fr/atlas/pays                  /fr/dossiers/doctrine        /fr/jeux/quiz
+/fr/atlas/familles              /fr/dossiers/migrations
+/fr/atlas/peuples/PPL_KUNG      /fr/dossiers/appellations
+/fr/atlas/pays/ZAF              /fr/dossiers/regards/colonisation-et-resistances
+/fr/atlas/familles/FLG_ATLANTIQUE
+/fr/atlas/peuples/PPL_KUNG/liens
+/fr/atlas/recherche?q=yoruba
 /fr/comparer   /fr/about   /fr/contribute   /fr/plan-du-site   /fr/signalements
 /fr/mentions-legales   /fr/accessibilite   /fr/confidentialite
 /fr/compte/connexion   /fr/compte/inscription   /fr/report-error
 /docs/api/v2
-/fr/explorer/peuples/ceci-nexiste-pas        ← the 404, which has no shell
+/fr/atlas/peuples/ceci-nexiste-pas        ← the 404, which has no shell
 ```
+
+**There is no `/fr/atlas`, `/fr/dossiers` or `/fr/jeux`.** ETNI-1555
+removed the three axis landing pages: an axis is a heading in the masthead that
+opens a panel of direct module links, never a page of its own, and
+`navigationCharter.test.tsx` holds that shape. Pointing the harness at one of
+them photographs the 404 and reads as a broken sweep. The axis segments survive
+only as the prefix of their children — `/fr/atlas/*`, `/fr/dossiers/*`,
+`/fr/jeux/*`.
 
 Document heights at 430 px, as a sense of scale — a page an order of magnitude
 longer than its siblings is a finding in itself:
 
-| Route                                                            | px            |
-| ---------------------------------------------------------------- | ------------- |
-| `/fr/comprendre/regards/colonisation-et-resistances`             | 29 679        |
-| `/fr/explorer/peuples/PPL_KUNG`                                  | 15 195        |
-| `/fr`                                                            | 8 381         |
-| `/fr/explorer/pays/ZAF` · `/fr/explorer/familles/FLG_ATLANTIQUE` | ~7 300        |
-| the three axis hubs                                              | 1 600 – 1 700 |
-| `/fr/comparer`                                                   | 1 106         |
+| Route                                                      | px     |
+| ---------------------------------------------------------- | ------ |
+| `/fr/dossiers/regards/colonisation-et-resistances`         | 29 679 |
+| `/fr/atlas/peuples/PPL_KUNG`                               | 15 195 |
+| `/fr`                                                      | 8 381  |
+| `/fr/atlas/pays/ZAF` · `/fr/atlas/familles/FLG_ATLANTIQUE` | ~7 300 |
+| `/fr/comparer`                                             | 1 106  |

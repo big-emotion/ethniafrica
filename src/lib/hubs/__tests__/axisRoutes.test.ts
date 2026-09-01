@@ -22,9 +22,9 @@ describe("axis hub routes", () => {
 
   // @req REQ-114
   it("builds each axis hub route from the routing table", () => {
-    expect(getAxisHubRoute("fr", "explorer")).toBe("/fr/explorer");
-    expect(getAxisHubRoute("fr", "comprendre")).toBe("/fr/comprendre");
-    expect(getAxisHubRoute("fr", "jouer")).toBe("/fr/jouer");
+    expect(getAxisHubRoute("fr", "atlas")).toBe("/fr/atlas");
+    expect(getAxisHubRoute("fr", "dossiers")).toBe("/fr/dossiers");
+    expect(getAxisHubRoute("fr", "jeux")).toBe("/fr/jeux");
   });
 
   // The point of the helper: a caller composing a route below an axis — a
@@ -70,8 +70,13 @@ describe("which axis owns a page", () => {
     }
   });
 
-  // @req REQ-114
-  it("answers null for a page no axis leads to", () => {
+  // About and Doctrine describe the project rather than the corpus, so no
+  // axis leads to them and the map has nothing to answer. That is what lets
+  // both keep a top-level canonical route without contradicting the nesting
+  // rule the modules follow.
+  // @req REQ-132
+  it("claims no axis for the project pages", () => {
     expect(getAxisForPage("about")).toBeNull();
+    expect(getAxisForPage("doctrine")).toBeNull();
   });
 });

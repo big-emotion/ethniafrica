@@ -30,7 +30,7 @@ export function HistoricalFactsSection({ data }: HistoricalFactsSectionProps) {
           {/* Period content */}
           <div
             className="text-afh-small leading-relaxed"
-            style={{ color: "var(--country-text)" }}
+            style={{ color: "var(--afh-color-text)" }}
           >
             {period.content}
           </div>

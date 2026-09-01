@@ -778,6 +778,13 @@ export interface AtlasGlobeProps {
    * surface, and the discs are what makes that measurable rather than asserted.
    */
   showTissot?: boolean;
+  /**
+   * "editorial" keeps the projection argument but places it after the
+   * figure. The default retains the complete atlas toolbar over the stage.
+   */
+  presentation?: "standard" | "editorial";
+  /** Multiplier applied to the rendered camera without changing atlas limits. */
+  viewScale?: number;
 }
 
 /** The drag distance the point cloud used, kept so the gesture did not change under readers when its engine did. */
@@ -928,13 +935,16 @@ const STAGE_ROLE_TOKENS: Record<GlobeSurface, Record<string, string>> = {
   },
 };
 
-function stageStyle(surface: GlobeSurface): CSSProperties {
+function stageStyle(
+  surface: GlobeSurface,
+  presentation: "standard" | "editorial" = "standard"
+): CSSProperties {
   return {
     position: "relative",
     width: "100%",
     height: "var(--afh-globe-stage-height)",
     backgroundColor: "var(--afh-globe-stage-ground)",
-    overflow: "hidden",
+    overflow: presentation === "editorial" ? "visible" : "hidden",
     ...STAGE_ROLE_TOKENS[surface],
   } as CSSProperties;
 }
@@ -1040,6 +1050,8 @@ export function AtlasGlobe({
   projectionControl = "toggle",
   surface = "night",
   showTissot = false,
+  presentation = "standard",
+  viewScale = 1,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(
     probedWebglSupport ?? false
@@ -1263,6 +1275,7 @@ export function AtlasGlobe({
 
   const pose: CameraPose = {
     ...camera.pose,
+    zoom: camera.pose.zoom * viewScale,
     morph,
   };
 
@@ -1373,7 +1386,7 @@ export function AtlasGlobe({
 
   if (!drawnOverlay || drawnOverlay.kind === "people-field-missing") {
     return (
-      <div className={cn(className)} style={stageStyle(surface)}>
+      <div className={cn(className)} style={stageStyle(surface, presentation)}>
         <AtlasGlobeMissing message={missingMessage} />
       </div>
     );
@@ -1531,7 +1544,7 @@ export function AtlasGlobe({
           : undefined
       }
       className={cn(className)}
-      style={stageStyle(surface)}
+      style={stageStyle(surface, presentation)}
     >
       {/* The canvas below stays aria-hidden — it is paint. This element is
           what the reader actually operates, which is why the name, the role
@@ -1634,7 +1647,11 @@ export function AtlasGlobe({
             className="w-full text-afh-caption"
             style={{ color: "var(--afh-globe-stage-ink)" }}
           >
-            {globeLegendSentence(surfaceTurns, marksCountries)}
+            {presentation === "editorial"
+              ? surfaceTurns
+                ? "Glissez pour tourner."
+                : "Glissez pour déplacer."
+              : globeLegendSentence(surfaceTurns, marksCountries)}
           </p>
         )}
       </div>
@@ -1646,11 +1663,18 @@ export function AtlasGlobe({
           flatten the map, recentre it, or leave a chosen country, on a
           mobile-first project. */}
       <div
+        data-atlas-controls=""
+        data-atlas-controls-placement={
+          presentation === "editorial" ? "below" : "overlay"
+        }
         // Transparent to the pointer, because it is a full-width strip pinned
         // across the bottom of the stage: solid, it swallowed every tap in
         // that band, and the stage is now how a reader selects a country. The
         // controls take the pointer back for themselves.
-        className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 p-3"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 flex flex-col items-center gap-2 p-3",
+          presentation === "editorial" ? "top-full" : "bottom-0"
+        )}
       >
         {/* Its own row, above the pills, rather than a control among them.
             The pill strip is a wrapping row of interchangeable little
@@ -1661,7 +1685,10 @@ export function AtlasGlobe({
         {offersMorphBar && (
           <div
             data-atlas-morph=""
-            className="pointer-events-auto flex w-full max-w-md flex-col gap-1 rounded-afh-lg border px-3 py-2"
+            className={cn(
+              "pointer-events-auto flex w-full flex-col gap-1 rounded-afh-lg border px-3 py-2",
+              presentation === "editorial" ? "max-w-none" : "max-w-md"
+            )}
             style={TOOLBAR_BUTTON_STYLE}
           >
             <div className="flex items-center gap-3">
@@ -1756,56 +1783,60 @@ export function AtlasGlobe({
         )}
         <div
           data-atlas-toolbar=""
-          className="flex flex-wrap justify-center gap-2"
+          className="pointer-events-auto flex flex-wrap justify-center gap-2"
         >
           {/* The button clears the choice, so the choice is what earns it —
             not the shape of the picker. Gated on the picker, a fiche offering
             pastilles had no way back to the whole area but "Recentrer", which
             also undoes the reader's own turn. */}
-          {(offersList || chosenCountryId !== null) && (
-            <button
-              type="button"
-              aria-pressed={chosenCountryId === null}
-              onClick={() => setChosenCountryId(null)}
-              className={TOOLBAR_BUTTON_CLASS}
-              style={TOOLBAR_BUTTON_STYLE}
-            >
-              {wholeAreaLabel}
-            </button>
-          )}
+          {presentation === "standard" &&
+            (offersList || chosenCountryId !== null) && (
+              <button
+                type="button"
+                aria-pressed={chosenCountryId === null}
+                onClick={() => setChosenCountryId(null)}
+                className={TOOLBAR_BUTTON_CLASS}
+                style={TOOLBAR_BUTTON_STYLE}
+              >
+                {wholeAreaLabel}
+              </button>
+            )}
           {/* The bar and the button are two spellings of one control, so the
               strip offers whichever one this stage was given — never both,
               which would let a reader flatten the map with one and be told by
               the other that it is round. */}
-          {pinnedProjection === undefined
-            ? !offersMorphBar && (
-                <button
-                  type="button"
-                  aria-pressed={flat}
-                  onClick={() =>
-                    setReaderMorph((current) =>
-                      current <= NEARLY_FLAT_MORPH ? SPHERE_MORPH : FLAT_MORPH
-                    )
-                  }
-                  className={TOOLBAR_BUTTON_CLASS}
-                  style={TOOLBAR_BUTTON_STYLE}
-                >
-                  {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
-                </button>
-              )
-            : pinnedProjectionNote && (
-                <p
-                  data-atlas-projection-note=""
-                  className="rounded-full border px-3 py-1 text-afh-caption"
-                  style={TOOLBAR_BUTTON_STYLE}
-                >
-                  {pinnedProjectionNote}
-                </p>
-              )}
+          {presentation === "standard" &&
+            (pinnedProjection === undefined
+              ? !offersMorphBar && (
+                  <button
+                    type="button"
+                    aria-pressed={flat}
+                    onClick={() =>
+                      setReaderMorph((current) =>
+                        current <= NEARLY_FLAT_MORPH ? SPHERE_MORPH : FLAT_MORPH
+                      )
+                    }
+                    className={TOOLBAR_BUTTON_CLASS}
+                    style={TOOLBAR_BUTTON_STYLE}
+                  >
+                    {flat
+                      ? "Revenir au globe"
+                      : "Ce que la carte plate en fait"}
+                  </button>
+                )
+              : pinnedProjectionNote && (
+                  <p
+                    data-atlas-projection-note=""
+                    className="rounded-full border px-3 py-1 text-afh-caption"
+                    style={TOOLBAR_BUTTON_STYLE}
+                  >
+                    {pinnedProjectionNote}
+                  </p>
+                ))}
           {/* Offered only where the discs are drawn: on a fiche it would be a
             switch over nothing. The label is the reader's word for them, and
             the one the retired engine printed on the same control. */}
-          {showTissot && (
+          {showTissot && stageIsSphere && (
             <button
               type="button"
               aria-pressed={discsLit}
@@ -1845,14 +1876,16 @@ export function AtlasGlobe({
               <span aria-hidden="true">+</span>
             </button>
           </div>
-          <button
-            type="button"
-            onClick={recentre}
-            className={TOOLBAR_BUTTON_CLASS}
-            style={TOOLBAR_BUTTON_STYLE}
-          >
-            Recentrer
-          </button>
+          {presentation === "standard" && (
+            <button
+              type="button"
+              onClick={recentre}
+              className={TOOLBAR_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              Recentrer
+            </button>
+          )}
         </div>
       </div>
 

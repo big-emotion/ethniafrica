@@ -11,8 +11,8 @@ surface a game borrows. Engine and registry: `src/lib/games/`.
 
 ## 0. The diagnosis this charter answers
 
-Eleven games shipped under REQ-120. They are four interactions (`binary`,
-`quad`, `globeTap`, `areaCompare`) applied to eleven corpus slices — an
+REQ-120's original scope shipped 11 games. They are four interactions
+(`binary`, `quad`, `globeTap`, `areaCompare`) applied to 11 corpus slices — an
 efficient engine carrying a design that was never made. Four defects, each
 located in code rather than inferred from a screenshot:
 
@@ -40,7 +40,7 @@ is needed to obey this charter.
 
 ## 1. The scope cut
 
-Eleven approximate games are worth less than three finished ones. **Three ship;
+11 approximate games were worth less than three finished ones. **Three ship;
 eight are retired** until the loop below is proven.
 
 ### Kept
@@ -125,11 +125,12 @@ something transferable. Without the stimulus the same item is a coin flip.
 
 **The rule has one exception, and it is not a loophole.** A round must name its
 subject **unless the subject is what is being guessed**. « Le pays d'avant »
-asks which country carries a former name: naming that country above the
-question would be handing over the answer, so the round carries no stimulus and
-is right not to. « La taille qu'on vous a cachée » names both its countries in
-its own options and needs none either. Written as first drafted, this section
-asked all three games for a subject line and would have broken two of them —
+(`pays-davant`, retired in the second scope cut — see §1) asked which country
+carried a former name: naming that country above the question would have
+handed over the answer, so its rounds carried no stimulus and were right not
+to. « La taille qu'on vous a cachée » names both its countries in its own
+options and needs none either. Written as first drafted, this section asked
+every kept game for a subject line and would have broken two of them —
 `GameStimulus` is therefore optional on `GameRoundBase`, deliberately, and a
 generator that omits it is obeying this rule rather than skipping it.
 
@@ -148,11 +149,11 @@ interface GameStimulus {
 `promptFr` on a round then means _the stem of this round_.
 
 The rename of the registry's `promptFr` to `standingPromptFr` that this section
-first asked for **is withdrawn**. It renames a field on three games, touches
-every consumer, and changes nothing a reader sees — the round's stem and the
-registry's standing question were already distinct values, only similarly
-named. It is cosmetic, and cosmetic churn in a shared registry is how an
-unrelated game breaks.
+first asked for **is withdrawn**. It renames a field shared across every game
+the registry declares, touches every consumer, and changes nothing a reader
+sees — the round's stem and the registry's standing question were already
+distinct values, only similarly named. It is cosmetic, and cosmetic churn in a
+shared registry is how an unrelated game breaks.
 
 ---
 
@@ -209,9 +210,12 @@ A session is drawn from a **scoped pool**, chosen before play:
 - **One country** — its peoples only. « Les peuples du Ghana. »
 - **One language family** — its peoples only. « Les peuples nigéro-congolais. »
 
-Two axes over 54 countries and 24 families turn three games into hundreds of
-distinct sessions without a single new mechanic. `QuizSegmentPicker` already
-exists for the quiz surface and is the component to reuse rather than rebuild.
+Two axes over 54 countries and 24 families would turn a scope-friendly game
+into hundreds of distinct sessions without a single new mechanic — moot for
+the hub's one surviving game, `mercator`, which plays over the whole continent
+and has nothing to narrow to (§1). `QuizSegmentPicker` already exists for the
+quiz surface and is the component to reuse rather than rebuild, should a
+scope-friendly game return.
 
 Scoping also _improves_ the items it feeds: inside a country run, every
 distractor is automatically a plausible one.
@@ -231,8 +235,9 @@ distractor pool     the near-pool rule of §3
 reveal              the verbatim corpus text and its field path
 ```
 
-Two consequences follow, and both are already respected by the eleven
-generators — they are recorded here so a new template does not lose them:
+Two consequences follow, and both are already respected by `mercator`'s round
+generator, the one that survived both scope cuts — they are recorded here so a
+new template does not lose them:
 
 - **A round that cannot be filled is not generated.** Returning `null` beats
   inventing an option (FR65/FR66).
@@ -322,7 +327,7 @@ Ordered by dependency, not by size:
 2. Every renderer prints the stimulus above the stem.
 3. Near-pool distractor selection in `options.ts`.
 4. Difficulty band on `GameRound`; session ordered by band.
-5. Scope picker on `/fr/jouer/<jeu>`, pool filtered by country or family.
+5. Scope picker on `/fr/jeux/<jeu>`, pool filtered by country or family.
 6. Reveal gains source tier and a link to the fiche.
 7. Eight games retired from `GAME_DEFINITIONS`; the `areaCompare` kind is
    deleted with them.

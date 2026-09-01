@@ -156,6 +156,16 @@
         "languages": ["Malinké", "français"],
         "languageFamily": "FLG_MANDE",
         "appellationRemarks": "Le terme \"Mandingo\" peut être péjoratif. L'auto-appellation \"Maninka\" ou \"Mandinka\" est préférée. \"Malinké\" est accepté."
+      },
+      {
+        "name": "Minyanka",
+        "selfAppellation": "Bamana",
+        "exonyms": ["Mianka", "Minianka", "Mamara", "Myanka"],
+        "peopleId": "PPL_MINYANKA",
+        "mainRegion": "Sud du Mali",
+        "languages": ["Mamara / Minyanka (myk)"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Minyanka est l'appellation publique consacrée. Selon Colleyn et Jonckers, les intéressés se désignent comme Bamana dans le contexte étudié ; cet usage ne doit pas être confondu automatiquement avec le peuple Bambara ou Bamana."
       }
     ],
     "culture": {
@@ -199,10 +209,10 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "UNFPA – Projections démographiques 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/ML",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
         "title": "Études anthropologiques sur les peuples maliens",
@@ -223,6 +233,18 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
+        "title": "Glottolog 5.3 — Mamara Senoufo (myk)",
+        "url": "https://glottolog.org/resource/languoid/id/mama1271",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for Glottolog."
+      },
+      {
+        "title": "Colleyn, Jean-Paul et Jonckers, Danielle — Ceux qui refusent le maître : la conception du pouvoir chez les Minyanka du Mali. Africa 53(4), 1983, p. 43-58",
+        "url": "https://www.cambridge.org/core/journals/africa/article/abs/ceux-qui-refusent-le-maitre-la-conception-du-pouvoir-chez-les-minyanka-du-mali/10D44A79F1FF3B3F9C4E211F24E4BB21",
+        "tier": "referenced",
+        "notes": "Peer-reviewed article published by Cambridge University Press; supports the naming and self-identification note."
+      },
+      {
         "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
@@ -230,6 +252,9 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 25200000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Bambara",
@@ -288,11 +313,20 @@
           "languageFamily": "FLG_MANDE"
         },
         {
+          "name": "Minyanka",
+          "population": null,
+          "percentageInCountry": null,
+          "peopleId": "PPL_MINYANKA",
+          "region": "Sud du Mali",
+          "languageFamily": "FLG_NIGERCONGO",
+          "mainLanguageCode": "myk"
+        },
+        {
           "name": "Autres groupes ethniques",
           "peopleId": null,
           "region": "Divers",
           "languageFamily": null,
-          "percentageInCountry": 18
+          "percentageInCountry": 18.5
         }
       ]
     }

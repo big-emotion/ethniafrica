@@ -157,6 +157,23 @@ describe("ContinentGlobeStage (ARCH-014 capability gate)", () => {
     const styles = container.querySelector("style")?.textContent ?? "";
     expect(styles).toMatch(/--afh-globe-stage-height:\s*560px/);
   });
+
+  // The external projection band plus the 44px figure-tool row are about
+  // 181px tall at phone width. The reservation keeps both above the counters.
+  // @req REQ-115
+  it("reserves enough flow space for the homepage projection band", () => {
+    const { container } = render(
+      <ContinentGlobeStage
+        peopleCountsByCountry={peopleCounts}
+        presentation="hero"
+      />
+    );
+
+    const styles = container.querySelector("style")?.textContent ?? "";
+    expect(styles).toMatch(
+      /\.home-globe-stage--hero\s*\{[^}]*padding-bottom:\s*184px/
+    );
+  });
 });
 
 /**

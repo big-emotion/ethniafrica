@@ -7,6 +7,7 @@ import {
   DID_YOU_KNOW_FACTS,
   findDidYouKnowFact,
   pickDidYouKnowFact,
+  pickDidYouKnowFacts,
   pickNextDidYouKnowFact,
   shuffleDidYouKnowDeck,
   type DidYouKnowFact,
@@ -18,6 +19,24 @@ const fact = (id: string): DidYouKnowFact => ({
   body: [`Corps ${id}`],
   entities: [],
   tier: "referenced",
+  sources: [
+    {
+      title: `Source officielle ${id}`,
+      url: `https://example.org/${id}`,
+      tier: "official",
+    },
+  ],
+});
+
+const factWithoutOfficialSource = (id: string): DidYouKnowFact => ({
+  ...fact(id),
+  sources: [
+    {
+      title: `Source secondaire ${id}`,
+      url: `https://example.org/${id}`,
+      tier: "referenced",
+    },
+  ],
 });
 
 /**
@@ -169,11 +188,46 @@ describe("pickNextDidYouKnowFact — the draw the loader uses", () => {
 
 describe("pickDidYouKnowFact — the home band's draw", () => {
   // @req REQ-113
-  it("keeps drawing across the whole bank", () => {
-    const bank = [fact("a"), fact("b")];
+  it("draws only facts backed by an official source", () => {
+    const bank = [factWithoutOfficialSource("a"), fact("b"), fact("c")];
 
-    expect(pickDidYouKnowFact(() => 0, bank)?.id).toBe("a");
-    expect(pickDidYouKnowFact(() => 0.99, bank)?.id).toBe("b");
+    expect(pickDidYouKnowFact(() => 0, bank)?.id).toBe("b");
+    expect(pickDidYouKnowFact(() => 0.99, bank)?.id).toBe("c");
+  });
+
+  // @req REQ-113
+  it("returns nothing when the bank cannot support a home-page claim", () => {
+    expect(
+      pickDidYouKnowFact(() => 0, [factWithoutOfficialSource("a")])
+    ).toBeNull();
+  });
+});
+
+describe("pickDidYouKnowFacts — the home section's two-card draw", () => {
+  // @req REQ-113
+  it("draws two distinct facts backed by official sources", () => {
+    const bank = [
+      factWithoutOfficialSource("a"),
+      fact("b"),
+      fact("c"),
+      fact("d"),
+    ];
+
+    const drawn = pickDidYouKnowFacts(2, () => 0, bank);
+
+    expect(drawn).toHaveLength(2);
+    expect(new Set(drawn.map((entry) => entry.id)).size).toBe(2);
+    expect(drawn.map((entry) => entry.id)).not.toContain("a");
+  });
+
+  // @req REQ-113
+  it("returns every eligible fact when fewer than two can support the claim", () => {
+    const drawn = pickDidYouKnowFacts(2, () => 0, [
+      factWithoutOfficialSource("a"),
+      fact("b"),
+    ]);
+
+    expect(drawn.map((entry) => entry.id)).toEqual(["b"]);
   });
 });
 

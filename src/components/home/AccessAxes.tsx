@@ -7,9 +7,10 @@ import { AxisModulePanel } from "@/components/home/AxisModulePanel";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
-import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getModuleHref } from "@/lib/hubs/moduleHref";
 import {
   ACCENT_BY_ACCESS_MODE,
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   getModulesForAccessMode,
   type AccessMode,
@@ -35,7 +36,6 @@ import {
  */
 interface AxisDefinition {
   id: AccessMode;
-  name: string;
   cta: string;
   /**
    * What the reader finds behind the card, in one line.
@@ -57,8 +57,7 @@ const plural = (count: number, singular: string, many = `${singular}s`) =>
 
 const AXES: AxisDefinition[] = [
   {
-    id: "explorer",
-    name: "Explorer",
+    id: "atlas",
     cta: "Parcourir",
     stake:
       // « Le corpus » is the team's word for the collection, not the
@@ -69,16 +68,14 @@ const AXES: AxisDefinition[] = [
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
   {
-    id: "comprendre",
-    name: "Comprendre",
+    id: "dossiers",
     cta: "Remonter",
     stake:
       "D'où viennent les noms, par où sont passés les peuples, et sur quelles sources.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
   },
   {
-    id: "jouer",
-    name: "Jouer",
+    id: "jeux",
     cta: "Se tester",
     stake:
       "Des jeux et des quiz tirés des fiches, dont chaque réponse est sourcée.",
@@ -90,8 +87,7 @@ const AXES: AxisDefinition[] = [
     // Filtered through the same lock the hub uses, so the card and the hub
     // behind it count the same entries: a module behind a dark flag is not
     // listed there and must not be counted here.
-    figure: () =>
-      plural(getModulesForAccessMode("jouer").length, "jeu", "jeux"),
+    figure: () => plural(getModulesForAccessMode("jeux").length, "jeu", "jeux"),
   },
 ];
 
@@ -108,7 +104,7 @@ function AxisGlyph({
 }) {
   const cls = (name: string) => (animated ? name : undefined);
 
-  if (axis === "explorer") {
+  if (axis === "atlas") {
     // Peoples scattered across the continent, briefly finding each other.
     const dots: Array<[number, number]> = [
       [14, 18],
@@ -154,7 +150,7 @@ function AxisGlyph({
     );
   }
 
-  if (axis === "comprendre") {
+  if (axis === "dossiers") {
     // A trajectory writing itself across time.
     return (
       <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
@@ -214,6 +210,24 @@ function axisHasLiveModule(modules: HubModule[]): boolean {
   return modules.some((module) => module.available);
 }
 
+/**
+ * Where the card sends a reader who never runs its JavaScript, and where a
+ * crawler follows.
+ *
+ * It was the axis landing page until ETNI-1555 deleted the three of them, so
+ * the fallback is now the first module the axis actually offers — the same
+ * place the panel's first row leads, one load earlier. An axis offering
+ * nothing yet has no honest destination at all, and says so by returning
+ * null: the card renders as the button it has always behaved as.
+ */
+function fallbackAxisHref(
+  modules: HubModule[],
+  language: Language
+): string | null {
+  const first = modules.find((module) => module.available);
+  return first ? getModuleHref(first, language) : null;
+}
+
 const PENDING_CTA = "Bientôt";
 
 function pendingFigure(modules: HubModule[]): string {
@@ -238,7 +252,10 @@ export function AccessAxes({
   const animated = !reducedMotion;
 
   const [openAxis, setOpenAxis] = useState<AccessMode | null>(null);
-  const cardRefs = useRef<Partial<Record<AccessMode, HTMLAnchorElement>>>({});
+  // The card is an anchor when the axis has somewhere to send a reader
+  // without JavaScript, and a button when it has not — the close handler only
+  // ever asks it to take focus.
+  const cardRefs = useRef<Partial<Record<AccessMode, HTMLElement>>>({});
 
   const close = useCallback(() => {
     setOpenAxis((current) => {
@@ -271,7 +288,7 @@ export function AccessAxes({
           the outline gains the rung it was missing. */}
       <SectionHeading
         eyebrow="Par où commencer"
-        title="Trois entrées, selon ce que vous cherchez."
+        title="Trois chemins, selon ce que vous cherchez."
         testId="home-axes-heading"
         className="access-axes-heading"
       />
@@ -286,45 +303,41 @@ export function AccessAxes({
           const modules = modulesByAxis[axis.id] ?? [];
           const available = axisHasLiveModule(modules);
           const open = openAxis === axis.id;
+          const fallbackHref = fallbackAxisHref(modules, language);
 
-          return (
-            <Link
-              key={axis.id}
-              // The hub route stays on the anchor as the path for a reader
-              // without JavaScript and for a crawler. With JavaScript the
-              // click never spends a page load on the axis slug — it opens
-              // the modules here, and the next click is the module itself.
-              href={getAxisHubRoute(language, axis.id)}
-              ref={(element) => {
-                if (element) cardRefs.current[axis.id] = element;
-              }}
-              data-testid={`access-axis-${axis.id}`}
-              // The click never leaves the home, and the route interstitial
-              // has no other way to know: it reads clicks off the document,
-              // where a card cancelling its own navigation and Next's Link
-              // cancelling the native one look identical.
-              data-opens-in-place="true"
-              data-available={available ? "true" : "false"}
-              data-state={open ? "open" : undefined}
-              aria-expanded={open}
-              aria-controls={`axis-panel-${axis.id}`}
-              onClick={(event) => {
-                event.preventDefault();
-                if (open) close();
-                else setOpenAxis(axis.id);
-              }}
-              className={cn(
-                "access-axis min-h-11",
-                ACCENT_BY_ACCESS_MODE[axis.id],
-                animated && !openAxis && "access-axis-reveal",
-                !available && "access-axis-pending"
-              )}
-              style={
-                animated && !openAxis
-                  ? { animationDelay: `${index * 90}ms` }
-                  : undefined
-              }
-            >
+          const cardProps = {
+            ref: (element: HTMLElement | null) => {
+              if (element) cardRefs.current[axis.id] = element;
+            },
+            "data-testid": `access-axis-${axis.id}`,
+            // The click never leaves the home, and the route interstitial
+            // has no other way to know: it reads clicks off the document,
+            // where a card cancelling its own navigation and Next's Link
+            // cancelling the native one look identical.
+            "data-opens-in-place": "true",
+            "data-available": available ? "true" : "false",
+            "data-state": open ? "open" : undefined,
+            "aria-expanded": open,
+            "aria-controls": `axis-panel-${axis.id}`,
+            onClick: (event: { preventDefault: () => void }) => {
+              event.preventDefault();
+              if (open) close();
+              else setOpenAxis(axis.id);
+            },
+            className: cn(
+              "access-axis min-h-11",
+              ACCENT_BY_ACCESS_MODE[axis.id],
+              animated && !openAxis && "access-axis-reveal",
+              !available && "access-axis-pending"
+            ),
+            style:
+              animated && !openAxis
+                ? { animationDelay: `${index * 90}ms` }
+                : undefined,
+          };
+
+          const card = (
+            <>
               <span
                 data-testid={`access-axis-glyph-${axis.id}`}
                 aria-hidden="true"
@@ -334,7 +347,9 @@ export function AccessAxes({
               </span>
               {/* h3: the card is an item of the section whose heading sits
                   above the grid, not a sibling of it. */}
-              <h3 id={`access-axis-title-${axis.id}`}>{axis.name}</h3>
+              <h3 id={`access-axis-title-${axis.id}`}>
+                {ACCESS_MODE_LABELS[axis.id]}
+              </h3>
               <p
                 data-testid={`access-axis-stake-${axis.id}`}
                 className="access-axis-stake"
@@ -361,7 +376,22 @@ export function AccessAxes({
                   </span>
                 </span>
               )}
+            </>
+          );
+
+          // With JavaScript the click never spends a page load on the href:
+          // it deploys the modules here, and the next click is the module
+          // itself. The href only ever served the reader who runs none, and
+          // the crawler — which is why an axis with nothing to offer drops it
+          // rather than invent a destination.
+          return fallbackHref ? (
+            <Link key={axis.id} href={fallbackHref} {...cardProps}>
+              {card}
             </Link>
+          ) : (
+            <button key={axis.id} type="button" {...cardProps}>
+              {card}
+            </button>
           );
         })}
 

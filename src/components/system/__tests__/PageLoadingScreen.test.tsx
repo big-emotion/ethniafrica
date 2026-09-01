@@ -51,7 +51,7 @@ describe("PageLoadingScreen", () => {
   });
 
   /**
-   * The plate and the trail used to be painted here, and on `/fr/explorer`
+   * The plate and the trail used to be painted here, and on `/fr/atlas`
    * they took the top of the fold from the one thing the wait exists to show.
    * Neither names a place the reader has arrived at, so neither is drawn.
    */

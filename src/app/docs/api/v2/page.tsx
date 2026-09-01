@@ -7,6 +7,12 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Code, Info, Search } from "lucide-react";
 import Link from "next/link";
 
+// The explorer ships no styles of its own; without this it renders as bare
+// HTML. Every rule in the sheet is scoped under `.swagger-ui`, so it cannot
+// reach the parchment chrome the layout puts around it, and Next only serves
+// it on this route.
+import "swagger-ui-react/swagger-ui.css";
+
 // Import dynamique de SwaggerUI pour éviter les problèmes SSR
 const SwaggerUI = dynamic(
   () => import("swagger-ui-react").then((mod) => mod.default),

@@ -1,8 +1,13 @@
 "use client";
 
-import { useEffect, useId } from "react";
+import { useEffect, useId, useState } from "react";
 import { ErrorState } from "@/components/ui/ErrorState";
+import {
+  pickDidYouKnowFact,
+  type DidYouKnowFact,
+} from "@/lib/home/didYouKnowFacts";
 
+// @req REQ-099
 export default function Error({
   error,
   reset,
@@ -16,6 +21,11 @@ export default function Error({
 
   const id = useId();
   const errorRefId = error.digest ?? id.replace(/:/g, "").toUpperCase();
+  const [anecdote] = useState<DidYouKnowFact | null>(() =>
+    pickDidYouKnowFact()
+  );
 
-  return <ErrorState errorRef={errorRefId} onRetry={reset} />;
+  return (
+    <ErrorState errorRef={errorRefId} onRetry={reset} anecdote={anecdote} />
+  );
 }

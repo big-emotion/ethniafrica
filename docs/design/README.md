@@ -86,6 +86,6 @@ Three corpus gaps, each with an open correction ticket:
    `NGA.nameFr` == `NGA.nameOfficial` == "République fédérale du Nigeria (…)".
    There is no common-name field in the country model, so a fiche title has
    nowhere to get "Nigeria" from.
-3. **The home's _Comprendre_ card claims "3 000 ans".** `accessModeHubs.ts`
+3. **The home's _Enquêter_ card claims "3 000 ans".** `moduleRegistry.ts`
    retitled that module to "Premiers repères de migrations" (ETNI-1198) precisely
    because it rests on 6 sourced events. The figure outlived the retitling.

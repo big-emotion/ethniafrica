@@ -1,5 +1,5 @@
 /**
- * The three fiche-globe overlays and the continent scene the /fr/explorer hub
+ * The three fiche-globe overlays and the continent scene the /fr/atlas hub
  * opens on (REQ-116, atlas-charter §1): pure data
  * builders, no rendering. `AtlasGlobe` (src/components/atlas/AtlasGlobe.tsx)
  * draws whatever these return, in both its WebGL and non-WebGL paths, so no

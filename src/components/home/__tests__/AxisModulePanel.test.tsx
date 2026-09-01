@@ -19,7 +19,7 @@ const explorerModules: HubModule[] = [
   {
     id: "peuples",
     name: "Les peuples d'Afrique",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "peoples",
     availability: "data",
     available: true,
@@ -27,7 +27,7 @@ const explorerModules: HubModule[] = [
   {
     id: "doctrine",
     name: "La doctrine éditoriale",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "doctrine",
     availability: "static",
     available: true,
@@ -35,7 +35,7 @@ const explorerModules: HubModule[] = [
   {
     id: "noms",
     name: "Noms & appellations",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "names",
     availability: "data",
     available: false,
@@ -46,7 +46,7 @@ const jouerModules: HubModule[] = [
   {
     id: "liens",
     name: "Les liens invisibles",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     gameSlug: "liens",
     availability: "data",
@@ -56,7 +56,7 @@ const jouerModules: HubModule[] = [
   {
     id: "annonce",
     name: "Un module annonce\u0301 avant sa route",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     availability: "data",
     available: false,
@@ -70,9 +70,9 @@ function renderPanel(
   render(
     <AxisModulePanel
       language="fr"
-      mode="explorer"
+      mode="atlas"
       modules={modules}
-      labelledBy="access-axis-title-explorer"
+      labelledBy="access-axis-title-atlas"
       onClose={onClose}
     />
   );
@@ -135,7 +135,7 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
       .getAllByRole("link")
       .filter(
         (link) =>
-          link.getAttribute("href") === getLocalizedRoute("fr", "explorerHub")
+          link.getAttribute("href") === getLocalizedRoute("fr", "atlasHub")
       );
     expect(toHub).toHaveLength(0);
   });
@@ -154,23 +154,23 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
   // A game carries `page: null` by design — it is addressed by slug so
   // PageType stays a closed union — so a panel that reads `page` alone
-  // renders every live game as "Bientot". That is how eleven playable
-  // games sat inert on the home while the hub linked all eleven.
+  // renders every live game as "Bientot". That is how all 11 playable
+  // games sat inert on the home while the hub linked every one of them.
   // @req REQ-114
   it("addresses a game by its slug rather than leaving it on Bientot", () => {
     render(
       <AxisModulePanel
         language="fr"
-        mode="jouer"
+        mode="jeux"
         modules={jouerModules}
-        labelledBy="access-axis-title-jouer"
+        labelledBy="access-axis-title-jeux"
         onClose={vi.fn()}
       />
     );
 
     expect(screen.getByTestId("axis-module-link-liens")).toHaveAttribute(
       "href",
-      `${getLocalizedRoute("fr", "jouerHub")}/liens`
+      `${getLocalizedRoute("fr", "jeuxHub")}/liens`
     );
     expect(
       screen.queryByTestId("axis-module-unavailable-liens")
@@ -184,9 +184,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
     render(
       <AxisModulePanel
         language="fr"
-        mode="jouer"
+        mode="jeux"
         modules={jouerModules}
-        labelledBy="access-axis-title-jouer"
+        labelledBy="access-axis-title-jeux"
         onClose={vi.fn()}
       />
     );
@@ -203,9 +203,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
   it("takes its accessible name from the axis card that opened it", () => {
     renderPanel();
 
-    expect(screen.getByTestId("axis-panel-explorer")).toHaveAttribute(
+    expect(screen.getByTestId("axis-panel-atlas")).toHaveAttribute(
       "aria-labelledby",
-      "access-axis-title-explorer"
+      "access-axis-title-atlas"
     );
   });
 
@@ -213,7 +213,7 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
   it("closes on the close control", async () => {
     const onClose = renderPanel();
 
-    await userEvent.click(screen.getByTestId("axis-panel-close-explorer"));
+    await userEvent.click(screen.getByTestId("axis-panel-close-atlas"));
 
     expect(onClose).toHaveBeenCalledTimes(1);
   });
@@ -235,14 +235,15 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
 /**
  * Mirrors the registry's jouer shelves: one that holds several games and one
- * that holds a single game, which is the shape the taxonomy produces now the
- * hub carries three games rather than eleven.
+ * that holds a single game — a general shape the panel must still support
+ * even though the live registry, after two scope cuts (games-charter.md §1),
+ * currently gives every Jouer shelf exactly one module.
  */
 const shelvedModules: HubModule[] = [
   {
     id: "appellations",
     name: "Eux, ou les autres ?",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     gameSlug: "appellations",
     availability: "data",
@@ -253,7 +254,7 @@ const shelvedModules: HubModule[] = [
   {
     id: "mercator",
     name: "La taille qu'on vous a cachée",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     gameSlug: "mercator",
     availability: "data",
@@ -264,7 +265,7 @@ const shelvedModules: HubModule[] = [
   {
     id: "pays-davant",
     name: "Le pays d'avant",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     gameSlug: "pays-davant",
     availability: "data",
@@ -278,9 +279,9 @@ const renderShelved = (onClose = vi.fn()) => {
   render(
     <AxisModulePanel
       language="fr"
-      mode="jouer"
+      mode="jeux"
       modules={shelvedModules}
-      labelledBy="access-axis-title-jouer"
+      labelledBy="access-axis-title-jeux"
       onClose={onClose}
     />
   );
@@ -310,7 +311,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-appellations")).toHaveAttribute(
       "href",
-      `${getLocalizedRoute("fr", "jouerHub")}/appellations`
+      `${getLocalizedRoute("fr", "jeuxHub")}/appellations`
     );
     expect(
       screen.queryByTestId("axis-shelf-jeux-quiz")
@@ -334,7 +335,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
 
     expect(screen.getByTestId("axis-module-link-mercator")).toHaveAttribute(
       "href",
-      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
+      `${getLocalizedRoute("fr", "jeuxHub")}/mercator`
     );
     expect(
       screen.getByTestId("axis-module-link-pays-davant")
@@ -380,7 +381,7 @@ describe("AxisModulePanel — a shelf between the axis and its games (REQ-120)",
     renderShelved();
 
     await userEvent.click(screen.getByTestId("axis-shelf-open-jeux-pays"));
-    expect(screen.getByTestId("axis-panel-jouer")).toHaveFocus();
+    expect(screen.getByTestId("axis-panel-jeux")).toHaveFocus();
   });
 
   // An axis whose modules carry no shelf never grows the level at all.

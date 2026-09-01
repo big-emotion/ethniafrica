@@ -58,7 +58,7 @@ export function FeaturedModule({
   peopleCountsByCountry,
 }: FeaturedModuleProps = {}) {
   const labelled = heroModule && heroPreview;
-  const isGame = heroModule?.accessMode === "jouer";
+  const isGame = heroModule?.accessMode === "jeux";
 
   return (
     <section

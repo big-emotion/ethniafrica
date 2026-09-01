@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   render,
   screen,
@@ -14,7 +14,10 @@ import { CompareStickyBar } from "../CompareStickyBar";
 import { EntityComparePicker } from "../EntityComparePicker";
 import { CompareEntityHeader } from "../CompareEntityHeader";
 import { ComparisonView } from "../ComparisonView";
-import type { CompareCandidate } from "@/hooks/use-compare-selection";
+import type {
+  CompareCandidate,
+  CompareEntityType,
+} from "@/hooks/use-compare-selection";
 import type { ComparisonColumn, ComparisonPageData } from "@/types/compare";
 import { getLocalizedRoute } from "@/lib/routing";
 
@@ -62,15 +65,6 @@ const FAMILIES: CompareCandidate[] = [
   { id: "FLG_MANDE", type: "language-families", exonym: "Mandé" },
 ];
 
-const ALL_24_FAMILIES: CompareCandidate[] = Array.from(
-  { length: 24 },
-  (_, index) => ({
-    id: "FLG_" + String(index).padStart(2, "0"),
-    type: "language-families" as const,
-    exonym: "Famille " + String(index).padStart(2, "0"),
-  })
-);
-
 describe("CompareStickyBar", () => {
   // @req REQ-097
   it("shows the N/max count and disables comparer below the minimum", () => {
@@ -101,31 +95,23 @@ describe("CompareStickyBar", () => {
 
 describe("EntityComparePicker", () => {
   let fetchSuggestions: (
-    type: "peoples" | "countries",
+    type: CompareEntityType,
     query: string
   ) => Promise<CompareCandidate[]>;
-  let fetchLanguageFamilies: () => Promise<CompareCandidate[]>;
 
   beforeEach(() => {
-    fetchSuggestions = vi.fn(async (type: "peoples" | "countries") =>
-      type === "peoples" ? PEOPLES : COUNTRIES
-    );
-    fetchLanguageFamilies = vi.fn(async () => FAMILIES);
+    fetchSuggestions = vi.fn(async (type: CompareEntityType) => {
+      if (type === "peoples") return PEOPLES;
+      if (type === "countries") return COUNTRIES;
+      return FAMILIES;
+    });
   });
 
-  function renderPicker(
-    onCompare = vi.fn(),
-    overrides: {
-      fetchLanguageFamilies?: () => Promise<CompareCandidate[]>;
-    } = {}
-  ) {
+  function renderPicker(onCompare = vi.fn()) {
     return render(
       <EntityComparePicker
         onCompare={onCompare}
         fetchSuggestions={fetchSuggestions}
-        fetchLanguageFamilies={
-          overrides.fetchLanguageFamilies ?? fetchLanguageFamilies
-        }
       />,
       { wrapper: createWrapper() }
     );
@@ -167,38 +153,30 @@ describe("EntityComparePicker", () => {
   });
 
   // @req REQ-097
-  it("renders the static family list without a search round-trip", async () => {
+  it("fetches family suggestions from /v2/search once ≥2 characters are typed, same as peoples and countries (DEC-027)", async () => {
     renderPicker();
     fireEvent.click(
       screen.getByRole("radio", { name: /familles linguistiques/i })
     );
+    const input = screen.getByRole("combobox");
+    fireEvent.change(input, { target: { value: "b" } });
+    expect(fetchSuggestions).not.toHaveBeenCalled();
+
+    fireEvent.change(input, { target: { value: "ba" } });
+    await waitFor(() => expect(fetchSuggestions).toHaveBeenCalled());
+    expect(fetchSuggestions).toHaveBeenCalledWith("language-families", "ba");
     expect(
       await screen.findByRole("option", { name: /bantu/i })
     ).toBeInTheDocument();
-
-    const input = screen.getByRole("combobox");
-    fireEvent.change(input, { target: { value: "man" } });
-    await waitFor(() =>
-      expect(
-        screen.queryByRole("option", { name: /bantu/i })
-      ).not.toBeInTheDocument()
-    );
-    expect(screen.getByRole("option", { name: /mandé/i })).toBeInTheDocument();
-    // fetched once (not per keystroke) — the list is filtered client-side.
-    expect(fetchLanguageFamilies).toHaveBeenCalledTimes(1);
   });
 
   // @req REQ-097
-  it("renders all 24 FLG entries unfiltered — the family list is never truncated to the search suggestion cap", async () => {
-    renderPicker(vi.fn(), {
-      fetchLanguageFamilies: vi.fn(async () => ALL_24_FAMILIES),
-    });
+  it("shows no family suggestions before the 2-character minimum is reached — no more static roster browsed on open", () => {
+    renderPicker();
     fireEvent.click(
       screen.getByRole("radio", { name: /familles linguistiques/i })
     );
-
-    await screen.findByRole("option", { name: /famille 00/i });
-    expect(screen.getAllByRole("option")).toHaveLength(24);
+    expect(screen.queryByRole("option")).not.toBeInTheDocument();
   });
 
   // @req REQ-097
@@ -264,6 +242,60 @@ describe("EntityComparePicker", () => {
 
     expect(screen.getByText(/3 maximum/i)).toBeInTheDocument();
     expect(input).toBeDisabled();
+  });
+});
+
+// The picker's default (un-injected) fetcher is what production actually
+// wires up — the tests above only prove the picker calls whatever function
+// it is given. This proves that function is /api/v2/search itself: the same
+// endpoint RecherchePageContent and SearchModalV2 call through
+// buildSearchParams/mapSearchEnvelope, so a family search from the compare
+// page can no longer diverge from the other two entry points (DEC-027).
+describe("EntityComparePicker default fetchSuggestions (DEC-027 canonical path)", () => {
+  const mockFetch = vi.fn();
+
+  beforeEach(() => {
+    vi.stubGlobal("fetch", mockFetch);
+    mockFetch.mockReset();
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  // @req REQ-097
+  it("routes family suggestions through /api/v2/search, preserving the database-ranked order", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        data: {
+          families: [
+            { id: "FLG_MANDE", nameFr: "Mandé" },
+            { id: "FLG_MANDING", nameFr: "Manding" },
+          ],
+        },
+      }),
+    });
+
+    render(<EntityComparePicker />, { wrapper: createWrapper() });
+    fireEvent.click(
+      screen.getByRole("radio", { name: /familles linguistiques/i })
+    );
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "man" },
+    });
+
+    await waitFor(() => expect(mockFetch).toHaveBeenCalled());
+    const [requestUrl] = mockFetch.mock.calls[0];
+    expect(String(requestUrl)).toMatch(/^\/api\/v2\/search\?/);
+    expect(String(requestUrl)).toContain("q=man");
+
+    const options = await screen.findAllByRole("option");
+    // Not re-sorted client-side: the order the API returned is the order shown.
+    expect(options.map((option) => option.textContent)).toEqual([
+      "Mandé",
+      "Manding",
+    ]);
   });
 });
 
@@ -473,10 +505,7 @@ describe("Accessibility (axe)", () => {
   // @req REQ-097
   it("EntityComparePicker has no axe violations", async () => {
     const { container } = render(
-      <EntityComparePicker
-        fetchSuggestions={async () => []}
-        fetchLanguageFamilies={async () => []}
-      />,
+      <EntityComparePicker fetchSuggestions={async () => []} />,
       { wrapper: createWrapper() }
     );
     await expectNoAxeViolations(container);

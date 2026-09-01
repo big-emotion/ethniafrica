@@ -1,5 +1,6 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import type { PageType } from "@/lib/routing";
 
 /**
@@ -18,15 +19,16 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   search: "Recherche",
   doctrine: "Doctrine",
   about: "À propos",
+  sources: "Sources",
   anecdotes: "Anecdotes",
-  names: "Noms",
+  names: "Appellations",
   compare: "Comparer",
   migrations: "Migrations",
   quiz: "Quiz",
   colonization: "Colonisation & résistances",
-  explorerHub: "Explorer",
-  comprendreHub: "Comprendre",
-  jouerHub: "Jouer",
+  atlasHub: ACCESS_MODE_LABELS.atlas,
+  dossiersHub: ACCESS_MODE_LABELS.dossiers,
+  jeuxHub: ACCESS_MODE_LABELS.jeux,
 };
 
 // @req REQ-014
@@ -93,6 +95,15 @@ export const translations = {
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",
+        // The three pages that describe the project rather than the corpus.
+        // No access mode lists them — an axis is a way into the corpus — so
+        // the footer is where a reader now finds them, and the only place
+        // the doctrine and the source bibliography are reachable from the
+        // chrome at all.
+        projectHeading: "Le projet",
+        doctrine: "Doctrine éditoriale",
+        about: "À propos",
+        sources: "Sources",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },
@@ -179,7 +190,7 @@ export const translations = {
       },
     },
     names: {
-      pageTitle: "Noms & appellations",
+      pageTitle: "Appellations",
       pageSubtitle:
         "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
       genealogyNote:
@@ -343,12 +354,11 @@ export const translations = {
     // was already the back half of every one of these, is now the whole of
     // it. The home's cards (AccessAxes) carry the same change.
     hubs: {
-      explorer: {
-        title: "Explorer",
-        // What the shell's title band prints. `title` names the axis inside
-        // the site's own vocabulary — a trail crumb, a menu entry — where the
-        // surrounding chrome supplies the subject. The band has no such
-        // context, so it names the axis *and* what the axis leads into.
+      atlas: {
+        title: ACCESS_MODE_LABELS.atlas,
+        // `title` keeps the short reader-facing label available to legacy
+        // translation consumers. The band has a different job: it names the
+        // page and what it leads into, so `pageTitle` remains descriptive.
         pageTitle: "Explorer les peuples d'Afrique",
         // « Le corpus » and « une entité » are the team's words for the
         // collection and for what it holds. Both name the thing from the
@@ -361,8 +371,8 @@ export const translations = {
           "Quand on sait ce qu'on cherche — un peuple, un pays, une langue, un nom.",
         hubEntryName: "Le hub d'exploration",
       },
-      comprendre: {
-        title: "Comprendre",
+      dossiers: {
+        title: ACCESS_MODE_LABELS.dossiers,
         pageTitle: "Comprendre les peuples d'Afrique",
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
@@ -370,8 +380,8 @@ export const translations = {
           "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
         hubEntryName: "Le hub de lecture",
       },
-      jouer: {
-        title: "Jouer",
+      jeux: {
+        title: ACCESS_MODE_LABELS.jeux,
         pageTitle: "Jouer avec les peuples d'Afrique",
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
@@ -380,7 +390,7 @@ export const translations = {
         hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
-      menuLabel: "Trois entrées",
+      menuLabel: "Trois chemins",
       // Names the row of facet links under the hub entry. The facets are
       // states of one page, so the menu says so rather than listing them
       // beside the hub as if they were three more destinations — which is

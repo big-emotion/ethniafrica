@@ -1,4 +1,5 @@
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -66,31 +67,23 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
     getLocalizedRoute(language, page);
 
   return [
+    /**
+     * The three access modes were listed here as destinations of their own.
+     * They are not pages: ETNI-1555 deleted the axis landing pages, because
+     * the reader picks a module and never stops on an intermediate level.
+     * What is left is the accueil, where the three axes deploy their modules
+     * in place — and the three rubrics below, which are those axes.
+     */
     {
-      id: "entrees",
-      title: "Les trois entrées",
+      id: "accueil",
+      title: "L'accueil",
       blurb:
-        "L'atlas s'ouvre par l'intention, pas par le sommaire : selon que vous venez chercher, comprendre ou jouer, il vous emmène ailleurs.",
+        "L'atlas s'ouvre par l'intention, pas par le sommaire : chercher, comprendre ou jouer déplie ses modules sur l'accueil même, et le clic suivant est le module.",
       links: [
         {
           href: `/${language}`,
           label: "Accueil",
           note: "Le globe et les trois axes.",
-        },
-        {
-          href: route("explorerHub"),
-          label: "Explorer",
-          note: "Parcourir le corpus par entité.",
-        },
-        {
-          href: route("comprendreHub"),
-          label: "Comprendre",
-          note: "Les noms, les migrations, la méthode.",
-        },
-        {
-          href: route("jouerHub"),
-          label: "Jouer",
-          note: "Trois jeux et un quiz, tous tirés du corpus.",
         },
       ],
     },
@@ -128,14 +121,14 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       ],
     },
     {
-      id: "comprendre",
-      title: "Comprendre",
+      id: "dossiers",
+      title: ACCESS_MODE_LABELS.dossiers,
       blurb:
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
         {
           href: route("names"),
-          label: "Noms & appellations",
+          label: "Appellations",
           note: "Autonymes, exonymes, et ce que l'écart raconte.",
         },
         {
@@ -155,8 +148,8 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       ],
     },
     {
-      id: "jouer",
-      title: "Jouer",
+      id: "jeux",
+      title: ACCESS_MODE_LABELS.jeux,
       blurb:
         "Chaque partie est tirée du corpus : gagner suppose d'avoir lu quelque chose, jamais d'avoir deviné.",
       links: [
@@ -165,7 +158,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           label: "Le quiz des parcours",
         },
         ...GAME_DEFINITIONS.map((game) => ({
-          href: `${route("jouerHub")}/${game.slug}`,
+          href: `${route("jeuxHub")}/${game.slug}`,
           label: game.nameFr,
           note: game.promptFr,
         })),
@@ -195,6 +188,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       blurb: "Qui publie, sous quelles règles, et comment lire les données.",
       links: [
         { href: `/${language}/about`, label: "À propos" },
+        {
+          href: route("sources"),
+          label: "Sources",
+          note: "La bibliographie qui documente le corpus.",
+        },
         {
           href: "/docs/api/v2",
           label: "API publique v2",

@@ -1,21 +1,25 @@
 /* ══════════════════════════════════════════════════════════════════
    LES TROIS POINTS D'ENTRÉE — même barre sur les trois fiches.
 
-   Liste recopiée de src/lib/accessModeHubs.ts. Un module dont `page`
-   vaut null sort en « Bientôt » : le menu ne propose jamais une route
-   qui n'existe pas.
+   Liste recopiée de MODULE_DEFINITIONS (src/lib/hubs/moduleRegistry.ts),
+   dans l'ordre de ce fichier : l'accent d'un module est sa position dans
+   le registre, parcourue en boucle sur ocre · teal · terre · perv. Un
+   module dont `href` vaut null sort en « Bientôt » : le menu ne propose
+   jamais une route qui n'existe pas.
    ══════════════════════════════════════════════════════════════════ */
 const MODULES = [
-  { id: "pays",      title: "Les pays d'Afrique",             axis: "explorer",   accent: "ocre",  icon: "globe",   href: "/fr/explorer/pays" },
-  { id: "peuples",   title: "Les peuples d'Afrique",          axis: "explorer",   accent: "teal",  icon: "users",   href: "/fr/explorer/peuples" },
-  { id: "familles",  title: "L'arbre des familles",           axis: "explorer",   accent: "terre", icon: "network", href: "/fr/explorer/familles" },
-  { id: "recherche", title: "Recherche libre",                axis: "explorer",   accent: "perv",  icon: "search",  href: "/fr/explorer/recherche" },
-  { id: "noms",      title: "Noms & appellations",            axis: "explorer",   accent: "ocre",  icon: "tag",     href: "/fr/comprendre/noms" },
-  { id: "doctrine",  title: "La doctrine éditoriale",         axis: "comprendre", accent: "teal",  icon: "book",    href: "/fr/comprendre/doctrine" },
-  { id: "about",     title: "À propos du projet",             axis: "comprendre", accent: "terre", icon: "info",    href: "/fr/a-propos" },
-  { id: "frise",     title: "Premiers repères de migrations", axis: "comprendre", accent: "perv",  icon: "history", href: "/fr/comprendre/migrations" },
-  { id: "liens",     title: "Les liens invisibles",           axis: "jouer",      accent: "ocre",  icon: "link",    href: null },
-  { id: "comparer",  title: "Comparer deux peuples",          axis: "jouer",      accent: "teal",  icon: "compare", href: "/fr/comparer" },
+  { id: "pays",                 title: "Les pays d'Afrique",                  axis: "atlas",   accent: "ocre",  icon: "globe",    href: "/fr/atlas/pays" },
+  { id: "peuples",              title: "Les peuples d'Afrique",               axis: "atlas",   accent: "teal",  icon: "users",    href: "/fr/atlas/peuples" },
+  { id: "familles",             title: "L'arbre des familles",                axis: "atlas",   accent: "terre", icon: "network",  href: "/fr/atlas/familles" },
+  { id: "recherche",            title: "Recherche libre",                     axis: "atlas",   accent: "perv",  icon: "search",   href: "/fr/atlas/recherche" },
+  { id: "anecdotes",            title: "Anecdotes",                           axis: "dossiers", accent: "ocre",  icon: "bubble",   href: "/fr/dossiers/anecdotes" },
+  { id: "noms",                 title: "Appellations",                        axis: "dossiers", accent: "teal",  icon: "tag",      href: "/fr/dossiers/appellations" },
+  { id: "frise",                title: "Premiers repères de migrations",      axis: "dossiers", accent: "terre", icon: "history",  href: "/fr/dossiers/migrations" },
+  { id: "regards-colonisation", title: "Regards : colonisation et résistances", axis: "dossiers", accent: "perv",  icon: "gaze",     href: "/fr/dossiers/regards/colonisation-et-resistances" },
+  { id: "quiz",                 title: "Le quiz des parcours",                axis: "jeux",      accent: "ocre",  icon: "quiz",     href: "/fr/jeux/quiz" },
+  { id: "mercator",             title: "La taille qu'on vous a cachée",       axis: "jeux",      accent: "teal",  icon: "truesize", href: "/fr/jeux/mercator" },
+  { id: "doctrine",             title: "La doctrine éditoriale",              axis: "dossiers", accent: "terre", icon: "book",     href: "/fr/dossiers/doctrine" },
+  { id: "about",                title: "À propos du projet",                  axis: "dossiers", accent: "perv",  icon: "info",     href: "/fr/about" },
 ];
 
 const ICONS = {
@@ -27,18 +31,23 @@ const ICONS = {
   book:    `<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22Z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20"/>`,
   info:    `<circle cx="12" cy="12" r="9"/><path d="M12 16v-4.5"/><circle cx="12" cy="8.2" r=".9" fill="currentColor"/>`,
   history: `<path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4.5V9h4.5"/><path d="M12 7.5V12l3 2"/>`,
-  link:    `<path d="M9.5 14.5a4 4 0 0 1 0-5.7l2.4-2.4a4 4 0 1 1 5.7 5.7l-1.2 1.2"/><path d="M14.5 9.5a4 4 0 0 1 0 5.7l-2.4 2.4a4 4 0 1 1-5.7-5.7l1.2-1.2"/>`,
-  compare: `<circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><circle cx="18" cy="12" r="2.6"/><path d="M8.6 7.6 15.6 11M8.6 16.4 15.6 13"/>`,
+  bubble:  `<path d="M20.5 11.8a7.5 7.5 0 0 1-10.9 6.7L4 20l1.8-5.4A7.5 7.5 0 1 1 20.5 11.8Z"/>`,
+  gaze:    `<path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>`,
+  quiz:    `<circle cx="12" cy="12" r="9"/><path d="M9.4 9.4a2.7 2.7 0 0 1 5.2.9c0 1.8-2.6 2.3-2.6 3.8"/><circle cx="12" cy="17.2" r=".9" fill="currentColor"/>`,
+  truesize:`<path d="M3 9V4.5A1.5 1.5 0 0 1 4.5 3H9"/><path d="M15 3h4.5A1.5 1.5 0 0 1 21 4.5V9"/><path d="M21 15v4.5a1.5 1.5 0 0 1-1.5 1.5H15"/><path d="M9 21H4.5A1.5 1.5 0 0 1 3 19.5V15"/><rect x="8.5" y="8.5" width="7" height="7" rx="1"/>`,
 };
 const icon = (name) =>
   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
+/* `id` = AccessMode, `label` = ACCESS_MODE_LABELS : le libellé nominal vient
+   de DEC-045 (ETNI-1614), l'identifiant `atlas`/`dossiers`/`jeux` aligné
+   dessus par ETNI-1615 (REQ-138). */
 const AXES = [
-  { id: "explorer",   label: "Explorer",   accent: "ocre",
+  { id: "atlas",     label: "L'atlas", accent: "ocre",
     blurb: "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus." },
-  { id: "comprendre", label: "Comprendre", accent: "teal",
+  { id: "dossiers",  label: "Les dossiers",  accent: "teal",
     blurb: "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long." },
-  { id: "jouer",      label: "Jouer",      accent: "perv",
+  { id: "jeux",      label: "Les jeux",     accent: "perv",
     blurb: "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements." },
 ];
 

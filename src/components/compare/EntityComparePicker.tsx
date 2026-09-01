@@ -8,17 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
-import { normalizeString } from "@/lib/normalize";
 import { cn } from "@/lib/utils";
-import { getAllLanguageFamilies } from "@/lib/afrikLoader";
 import {
   useCompareSelection,
   type CompareCandidate,
   type CompareEntityType,
 } from "@/hooks/use-compare-selection";
 import { CompareStickyBar } from "./CompareStickyBar";
-
-type SearchableType = Exclude<CompareEntityType, "language-families">;
 
 const TYPE_LABELS: Record<CompareEntityType, string> = {
   peoples: "peuples",
@@ -36,8 +32,21 @@ const MAX_SUGGESTIONS = 6;
 const MIN_QUERY_LENGTH = 2;
 const DEBOUNCE_MS = 300;
 
+const ENVELOPE_KEY_BY_TYPE: Record<CompareEntityType, string> = {
+  peoples: "peoples",
+  countries: "countries",
+  "language-families": "families",
+};
+
+/**
+ * Every entity type is fetched from the same ranked search the search page
+ * and quick-search modal use (`ftsSearchEntities`, DEC-027) — this used to be
+ * the sole divergence: families were loaded once as a static roster and
+ * filtered client-side, so the same input could rank differently here than
+ * on those two other entry points.
+ */
 async function defaultFetchSuggestions(
-  type: SearchableType,
+  type: CompareEntityType,
   query: string
 ): Promise<CompareCandidate[]> {
   const params = new URLSearchParams({
@@ -49,9 +58,7 @@ async function defaultFetchSuggestions(
 
   const envelope = await response.json();
   const rows: Record<string, unknown>[] =
-    type === "peoples"
-      ? (envelope.data?.peoples ?? [])
-      : (envelope.data?.countries ?? []);
+    envelope.data?.[ENVELOPE_KEY_BY_TYPE[type]] ?? [];
 
   return rows.map((row) => ({
     id: String(row.id),
@@ -60,23 +67,13 @@ async function defaultFetchSuggestions(
   }));
 }
 
-async function defaultFetchLanguageFamilies(): Promise<CompareCandidate[]> {
-  const families = await getAllLanguageFamilies();
-  return families.map((family) => ({
-    id: family.id,
-    type: "language-families" as const,
-    exonym: family.nameFr,
-  }));
-}
-
 export interface EntityComparePickerProps {
   className?: string;
   onCompare?: (type: CompareEntityType, ids: string[]) => void;
   fetchSuggestions?: (
-    type: SearchableType,
+    type: CompareEntityType,
     query: string
   ) => Promise<CompareCandidate[]>;
-  fetchLanguageFamilies?: () => Promise<CompareCandidate[]>;
 }
 
 // @req REQ-097
@@ -88,7 +85,6 @@ export function EntityComparePicker({
   className,
   onCompare,
   fetchSuggestions = defaultFetchSuggestions,
-  fetchLanguageFamilies = defaultFetchLanguageFamilies,
 }: EntityComparePickerProps) {
   const selection = useCompareSelection();
   const [type, setType] = useState<CompareEntityType>("peoples");
@@ -107,38 +103,17 @@ export function EntityComparePicker({
 
   const searchQuery = useQuery({
     queryKey: ["compare-suggestions", type, debouncedQuery],
-    queryFn: () =>
-      fetchSuggestions(type as SearchableType, debouncedQuery.trim()),
-    enabled:
-      type !== "language-families" &&
-      debouncedQuery.trim().length >= MIN_QUERY_LENGTH,
+    queryFn: () => fetchSuggestions(type, debouncedQuery.trim()),
+    enabled: debouncedQuery.trim().length >= MIN_QUERY_LENGTH,
     staleTime: 60_000,
-  });
-
-  const familiesQuery = useQuery({
-    queryKey: ["compare-language-families"],
-    queryFn: fetchLanguageFamilies,
-    enabled: type === "language-families",
-    staleTime: Infinity,
   });
 
   const suggestions = useMemo<CompareCandidate[]>(() => {
     const selectedIds = new Set(selection.selected.map((entity) => entity.id));
-
-    if (type === "language-families") {
-      const all = familiesQuery.data ?? [];
-      const filtered = query.trim()
-        ? all.filter((family) =>
-            normalizeString(family.exonym).includes(normalizeString(query))
-          )
-        : all;
-      return filtered.filter((family) => !selectedIds.has(family.id));
-    }
-
     return (searchQuery.data ?? []).filter(
       (candidate) => !selectedIds.has(candidate.id)
     );
-  }, [type, query, familiesQuery.data, searchQuery.data, selection.selected]);
+  }, [searchQuery.data, selection.selected]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -151,9 +126,7 @@ export function EntityComparePicker({
     if (selection.lockedType) return;
     setType(nextType);
     setQuery("");
-    // The family list is static (no round-trip), so it browses open
-    // immediately; peoples/countries suggestions stay gated behind typing.
-    setOpen(nextType === "language-families");
+    setOpen(false);
   };
 
   const handleSelect = (candidate: CompareCandidate) => {

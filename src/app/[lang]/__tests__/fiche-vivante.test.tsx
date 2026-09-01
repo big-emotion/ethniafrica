@@ -84,9 +84,9 @@ vi.mock("@/api/v2/services/peopleService", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => getCountryById(...args),
-  getCountryIndex: async () => [
-    { id: "NGA", nameFr: "Nigeria" },
-    { id: "KEN", nameFr: "Kenya" },
+  getCountryAtlasIndex: async () => [
+    { id: "NGA", languages: ["haoussa", "yoruba", "igbo"] },
+    { id: "KEN", languages: ["swahili", "anglais", "kikuyu"] },
   ],
 }));
 
@@ -163,9 +163,9 @@ vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
 // Subjects under test — imported after the boundaries are in place
 // ---------------------------------------------------------------------------
 
-import PeuplesSlugPage from "../explorer/peuples/[slug]/page";
-import PaysSlugPage from "../explorer/pays/[slug]/page";
-import FamillesSlugPage from "../explorer/familles/[slug]/page";
+import PeuplesSlugPage from "../atlas/peuples/[slug]/page";
+import PaysSlugPage from "../atlas/pays/[slug]/page";
+import FamillesSlugPage from "../atlas/familles/[slug]/page";
 
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";

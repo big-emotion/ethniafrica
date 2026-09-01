@@ -1,4 +1,4 @@
-# Games rollout plan — from eleven approximate games to three finished ones
+# Games rollout plan — from REQ-120's original scope to three finished games
 
 > **Partly superseded, 2026-08-29.** The hub was cut again, from three games to
 > two surfaces: the quiz and `mercator` (games charter §1). Every phase below
@@ -17,7 +17,7 @@ pass) and lands as one commit. A phase is done when `make check` is green.
 
 ## What the code actually needs
 
-The charter was written while looking at eleven games. Eight of them are being
+The charter was written while looking at REQ-120's original 11 games. Eight of them are being
 retired, and the defects do not distribute evenly across the three that stay.
 Grepped, not assumed:
 

@@ -13,6 +13,7 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import { YORUBA } from "@/components/fiche/__tests__/ficheContextFixtures";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 
 /**
  * The trail's contract, in one file so the rule and its consequences stay
@@ -30,11 +31,18 @@ import { YORUBA } from "@/components/fiche/__tests__/ficheContextFixtures";
  */
 
 describe("deriveTrail — the trail comes from the route", () => {
-  // @req REQ-091
-  it("opens on the home and the axis that leads to the page", () => {
+  /**
+   * The axis crumb names the access mode the page sits under and links
+   * nowhere. It once pointed at the axis landing page; ETNI-1555 deleted the
+   * three of them, because the reader picks a module and never lands on an
+   * intermediate page — so the crumb is what the atlas charter already called
+   * it, a non-navigating heading.
+   */
+  // @req REQ-114
+  it("opens on the home and names the axis without linking to it", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays" },
     ]);
   });
@@ -46,9 +54,9 @@ describe("deriveTrail — the trail comes from the route", () => {
    */
   // @req REQ-091
   it("does not repeat the axis on the axis hub itself", () => {
-    expect(deriveTrail(getLocalizedRoute("fr", "explorerHub"))).toEqual([
+    expect(deriveTrail(getLocalizedRoute("fr", "atlasHub"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer" },
+      { label: ACCESS_MODE_LABELS.atlas },
     ]);
   });
 
@@ -85,14 +93,14 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
         { label: "Accueil", href: "/fr" },
-        { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+        { label: ACCESS_MODE_LABELS.atlas },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -105,7 +113,7 @@ describe("deriveTrail — the trail comes from the route", () => {
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -118,7 +126,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Explorer", href: getLocalizedRoute("fr", "explorerHub") },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -133,7 +141,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail.map((crumb) => crumb.label)).toEqual([
       "Accueil",
-      "Explorer",
+      ACCESS_MODE_LABELS.atlas,
       "Peuples",
       "Yoruba",
     ]);
@@ -214,12 +222,12 @@ describe("deriveTrail — the trail comes from the route", () => {
     ]);
     expect(
       deriveTrail(
-        `${getLocalizedRoute("fr", "jouerHub")}/mercator`,
+        `${getLocalizedRoute("fr", "jeuxHub")}/mercator`,
         "La taille qu'on vous a cachée"
       )
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Jouer", href: getLocalizedRoute("fr", "jouerHub") },
+      { label: ACCESS_MODE_LABELS.jeux },
       { label: "La taille qu'on vous a cachée" },
     ]);
   });
@@ -233,7 +241,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("names a known sub-route from the table rather than the entity label", () => {
     expect(deriveTrail(`${getLocalizedRoute("fr", "quiz")}/score`)).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Jouer", href: getLocalizedRoute("fr", "jouerHub") },
+      { label: ACCESS_MODE_LABELS.jeux },
       { label: "Quiz", href: getLocalizedRoute("fr", "quiz") },
       { label: "Score" },
     ]);
@@ -265,6 +273,28 @@ describe("the trail a fiche renders", () => {
   });
 
   /**
+   * Two crumbs now render without an href, and they mean opposite things: the
+   * last one is where the reader stands, the axis one is a heading the reader
+   * cannot go to. Only the last may claim `aria-current`, or a screen reader
+   * is told the page is in two places at once.
+   */
+  // @req REQ-114
+  it("marks only the reader's own crumb as current, never the axis heading", () => {
+    render(
+      <AfrikBreadcrumbs
+        items={deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")}
+      />
+    );
+
+    const axis = screen.getByText(ACCESS_MODE_LABELS.atlas);
+    expect(axis.getAttribute("aria-current")).toBeNull();
+    expect(axis.closest("a")).toBeNull();
+    expect(
+      screen.queryByRole("link", { name: ACCESS_MODE_LABELS.atlas })
+    ).toBeNull();
+  });
+
+  /**
    * The consequence the owner accepted when the trail became derived: a
    * people's family is no longer an ancestor in the URL, so it is no longer a
    * crumb. It must not therefore vanish from the page.
@@ -281,7 +311,7 @@ describe("the trail a fiche renders", () => {
       deriveTrail(getPeopleRoute("fr", "PPL_YORUBA"), "Yoruba").map(
         (crumb) => crumb.label
       )
-    ).toEqual(["Accueil", "Explorer", "Peuples", "Yoruba"]);
+    ).toEqual(["Accueil", ACCESS_MODE_LABELS.atlas, "Peuples", "Yoruba"]);
 
     const { container } = render(
       <PeopleLanguageSection

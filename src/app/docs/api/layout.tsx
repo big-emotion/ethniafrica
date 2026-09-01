@@ -1,15 +1,15 @@
 import type { ReactNode } from "react";
+import { PageLayout } from "@/components/layout/PageLayout";
 
-// Developer portal shell (charter §6): parchment chrome only — the Swagger
-// UI rendered by children is never restyled from here.
+// The global shell owns the site navigation and footer. The inner portal
+// surface keeps Swagger isolated on the parchment background.
 // @req REQ-099
 export default function ApiDocsLayout({ children }: { children: ReactNode }) {
   return (
-    <div
-      data-testid="docs-api-shell"
-      className="min-h-screen bg-afh-bg text-afh-text"
-    >
-      {children}
-    </div>
+    <PageLayout language="fr">
+      <div data-testid="docs-api-shell" className="bg-afh-bg text-afh-text">
+        {children}
+      </div>
+    </PageLayout>
   );
 }

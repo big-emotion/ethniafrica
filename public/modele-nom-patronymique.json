@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "systeme-onomastique",
+    "namingSystem": "patronymic_chain",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes. Voir aussi docs/design/naming-subtype-taxonomy.md."
+  },
+  "id": "ONS_XXXXX",
+  "nameMain": "<Nom du système de nomination>",
+  "namingSystem": "patronymic_chain",
+  "attestedForms": [
+    {
+      "spelling": "<Forme attestée>",
+      "attestation": {
+        "title": "<Titre de la source>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier>"
+      }
+    }
+  ],
+  "transmissionMode": "patrilineal | matrilineal | bilateral | elective | other",
+  "designatedSocialUnit": "individual | lineage | clan | caste | age_set | settlement | other",
+  "associatedPeoples": ["PPL_XXXXX"],
+  "associatedCountries": ["ISO1"],
+  "origin": {
+    "originType": "griot_oral_tradition | written_chronicle | linguistic_reconstruction",
+    "sources": [
+      {
+        "title": "<Titre de la source>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier>"
+      }
+    ]
+  },
+  "patronymicChainDepth": 0
+}

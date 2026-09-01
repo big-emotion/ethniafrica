@@ -18,6 +18,7 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
+import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
 import { getAdmin0Rings } from "../src/lib/atlas/overlays";
@@ -881,13 +882,84 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
 }
 
 /**
- * FR28 – For each pays JSON, the sum of peoples[].percentageInCountry must be [95, 105].
+ * The 54 UN-recognised sovereign African states, ISO 3166-1 alpha-3. This is
+ * the geographic boundary for FR28/FR28-strict (REQ-131, supersedes REQ-028):
+ * corpus extension beyond Africa is expected to add non-African country
+ * fiches under pays/, and a declared presence there carries no demographic
+ * completeness obligation — the pays/ directory today happens to hold
+ * exactly these 54, but that is a fact about the current corpus, not a rule
+ * this check should rely on.
+ */
+export const AFRICAN_REFERENCE_COUNTRY_CODES: ReadonlySet<string> = new Set([
+  "AGO",
+  "BDI",
+  "BEN",
+  "BFA",
+  "BWA",
+  "CAF",
+  "CIV",
+  "CMR",
+  "COD",
+  "COG",
+  "COM",
+  "CPV",
+  "DJI",
+  "DZA",
+  "EGY",
+  "ERI",
+  "ETH",
+  "GAB",
+  "GHA",
+  "GIN",
+  "GMB",
+  "GNB",
+  "GNQ",
+  "KEN",
+  "LBR",
+  "LBY",
+  "LSO",
+  "MAR",
+  "MDG",
+  "MLI",
+  "MOZ",
+  "MRT",
+  "MUS",
+  "MWI",
+  "NAM",
+  "NER",
+  "NGA",
+  "RWA",
+  "SDN",
+  "SEN",
+  "SLE",
+  "SOM",
+  "SSD",
+  "STP",
+  "SWZ",
+  "SYC",
+  "TCD",
+  "TGO",
+  "TUN",
+  "TZA",
+  "UGA",
+  "ZAF",
+  "ZMB",
+  "ZWE",
+]);
+
+/**
+ * FR28 – For each pays JSON in the African reference set, the sum of
+ * peoples[].percentageInCountry must be [95, 105].
  *
  * Tolerance bands (transition plan — see docs/adr/0001-fr28-demographic-tolerance.md):
  *   - Hard gate (this function):     [95, 105] — errors, fails validation.
  *   - Strict warning (checkPopulationSumsStrict): [99, 101] — warnings only.
  * The strict warning is the doctrinal target; the hard gate will be tightened
  * once all country fiches land inside [99, 101].
+ *
+ * Scope (REQ-131): a pays JSON whose id falls outside
+ * AFRICAN_REFERENCE_COUNTRY_CODES carries no completeness obligation and is
+ * skipped entirely.
  */
 export function checkPopulationSums(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -916,6 +988,9 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
       continue;
     }
 
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
     const peoples = data?.content?.demographics?.peoples;
     if (!peoples || peoples.length === 0) continue;
 
@@ -924,7 +999,6 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
       0
     );
     if (sum < 95 || sum > 105) {
-      const countryId = data.id ?? path.basename(file, ".json");
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (expected 95–105%)`
       );
@@ -941,6 +1015,9 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
  * [99, 101] but inside the FR28 hard gate [95, 105]. Advisory while ~30
  * countries' splits were being re-sourced; enforced since the whole corpus
  * landed inside the target band, so a fiche can no longer drift back out.
+ *
+ * Scope (REQ-131): same African reference set as checkPopulationSums — a
+ * pays JSON outside it carries no completeness obligation and is skipped.
  */
 export function checkPopulationSumsStrict(
   datasetRoot: string
@@ -970,6 +1047,9 @@ export function checkPopulationSumsStrict(
       continue;
     }
 
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
     const peoples = data?.content?.demographics?.peoples;
     if (!peoples || peoples.length === 0) continue;
 
@@ -978,7 +1058,6 @@ export function checkPopulationSumsStrict(
       0
     );
     if (sum < 99 || sum > 101) {
-      const countryId = data.id ?? path.basename(file, ".json");
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
       );
@@ -2973,9 +3052,29 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
 }
 
 /**
- * FR57-source – every name record cites ≥1 source with tier 1 or 2; every
- * Tier 2 source records a non-empty Wikipedia cross-check note in "notes"
- * (auditable chain required).
+ * Normalises a name-record source's `tier` to the current vocabulary.
+ *
+ * `dataset/source/afrik/noms/` mixes the retired numeric axis (wave 1,
+ * `PPL_YORUBA.json`, tier 1/2) with the current official/referenced/
+ * unverified vocabulary the rest of the corpus uses (see CLAUDE.md's Source
+ * Tier Policy) — `ficheSourceTierSchema` already accepts both when parsing,
+ * so this validator has to recognise both too instead of only the numeric
+ * one. Returns null for anything that is neither (missing, malformed).
+ */
+function normalizedNameRecordTier(tier: unknown): SourceTier | null {
+  if (tier === 1 || tier === "1") return "official";
+  if (tier === 2 || tier === "2") return "referenced";
+  if (tier === "official" || tier === "referenced" || tier === "unverified") {
+    return tier;
+  }
+  return null;
+}
+
+/**
+ * FR57-source – every name record cites ≥1 source at official or referenced
+ * tier (the current-vocabulary equivalent of the retired "Tier 1/2"); every
+ * referenced-tier source records a non-empty Wikipedia cross-check note in
+ * "notes" (auditable chain required).
  */
 export function checkNameRecordSources(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -2993,22 +3092,23 @@ export function checkNameRecordSources(datasetRoot: string): ValidationResult {
     const names = Array.isArray(data.names) ? data.names : [];
     names.forEach((entry, i) => {
       const sources = Array.isArray(entry?.sources) ? entry.sources : [];
-      const hasValidTierSource = sources.some(
-        (s) => s?.tier === 1 || s?.tier === 2
-      );
+      const hasValidTierSource = sources.some((s) => {
+        const tier = normalizedNameRecordTier(s?.tier);
+        return tier === "official" || tier === "referenced";
+      });
       if (!hasValidTierSource) {
         errors.push(
-          `FR57-source: ${file}: names[${i}] has no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+          `FR57-source: ${file}: names[${i}] has no source at official or referenced tier — at least one is required`
         );
       }
 
       sources.forEach((source, j) => {
         if (
-          source?.tier === 2 &&
+          normalizedNameRecordTier(source?.tier) === "referenced" &&
           (typeof source.notes !== "string" || !source.notes.trim())
         ) {
           errors.push(
-            `FR57-source: ${file}: names[${i}].sources[${j}] is Tier 2 and requires a non-empty Wikipedia cross-check note in "notes"`
+            `FR57-source: ${file}: names[${i}].sources[${j}] is referenced-tier and requires a non-empty Wikipedia cross-check note in "notes"`
           );
         }
       });
@@ -3163,6 +3263,322 @@ export function checkNameRecordDuplicates(
         );
       } else {
         seen.set(key, file);
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * ETNI-1460 – Naming-system model validator (docs/design/naming-subtype-taxonomy.md).
+ *
+ * Validates dataset/source/afrik/systemes_onomastiques/*.json fiches against
+ * one strict model per subtype (public/modele-nom-<subtype>.json): the
+ * shared fields are read off the intersection of every subtype model so the
+ * set is declared once, in the model files, rather than duplicated here; the
+ * subtype-only fields are whatever a given model adds on top of that
+ * intersection. A fiche may only carry the subtype-only fields of its own
+ * declared namingSystem — a field belonging to another system is refused.
+ * "undetermined" requires the shared fields and forbids every subtype-only
+ * field, so it can never read as (or be mistaken for) the clan model.
+ */
+
+const NAMING_SYSTEM_SUBTYPE_MODELS: Record<string, string> = {
+  totemic_clan: "modele-nom-totemique.json",
+  patronymic_chain: "modele-nom-patronymique.json",
+  nisba: "modele-nom-nisba.json",
+  jamu: "modele-nom-jamu.json",
+};
+
+const NAMING_SYSTEM_TIERS = new Set(["official", "referenced", "unverified"]);
+
+/** List every dataset/source/afrik/systemes_onomastiques/*.json file path. Empty when the dir is absent. */
+function collectNamingSystemFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const dir = path.join(datasetRoot, "systemes_onomastiques");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(dir, file) }));
+}
+
+/** Top-level keys of a subtype model, excluding _meta. */
+function loadNamingSystemSubtypeKeys(
+  publicRoot: string
+): Record<string, Set<string>> {
+  const keysBySubtype: Record<string, Set<string>> = {};
+  for (const [subtype, fileName] of Object.entries(
+    NAMING_SYSTEM_SUBTYPE_MODELS
+  )) {
+    const modelPath = path.join(publicRoot, fileName);
+    const model = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+    keysBySubtype[subtype] = new Set(
+      Object.keys(model).filter((k) => k !== "_meta")
+    );
+  }
+  return keysBySubtype;
+}
+
+function namingSystemSourceTierErrors(
+  file: string,
+  fieldPath: string,
+  sources: unknown
+): string[] {
+  const errors: string[] = [];
+  const list = Array.isArray(sources) ? sources : [];
+  list.forEach((source, i) => {
+    const tier = source?.tier;
+    if (!NAMING_SYSTEM_TIERS.has(tier)) {
+      errors.push(
+        `ONS-tier: ${file}: ${fieldPath}[${i}] carries no valid tier ("official" | "referenced" | "unverified") — every source must be explicitly tiered`
+      );
+    }
+  });
+  return errors;
+}
+
+export function checkNamingSystemModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectNamingSystemFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const keysBySubtype = loadNamingSystemSubtypeKeys(PUBLIC_ROOT);
+  const subtypeNames = Object.keys(keysBySubtype);
+
+  const sharedKeys = subtypeNames.reduce(
+    (shared, subtype) => {
+      if (!shared) return new Set(keysBySubtype[subtype]);
+      return new Set([...shared].filter((k) => keysBySubtype[subtype].has(k)));
+    },
+    null as Set<string> | null
+  ) as Set<string>;
+
+  const subtypeOnlyKeys: Record<string, Set<string>> = {};
+  const allSubtypeOnlyKeys = new Set<string>();
+  for (const subtype of subtypeNames) {
+    const onlyKeys = new Set(
+      [...keysBySubtype[subtype]].filter((k) => !sharedKeys.has(k))
+    );
+    subtypeOnlyKeys[subtype] = onlyKeys;
+    onlyKeys.forEach((k) => allSubtypeOnlyKeys.add(k));
+  }
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const namingSystem = data.namingSystem;
+    const isKnownSubtype =
+      typeof namingSystem === "string" && namingSystem in keysBySubtype;
+    const isUndetermined = namingSystem === "undetermined";
+
+    if (!isKnownSubtype && !isUndetermined) {
+      errors.push(
+        `ONS-namingSystem: ${file}: namingSystem "${namingSystem}" is not a recognized subtype and is not "undetermined"`
+      );
+      continue;
+    }
+
+    for (const key of sharedKeys) {
+      if (!(key in data) || data[key] === null || data[key] === undefined) {
+        errors.push(
+          `ONS-shared: ${file}: missing required shared field "${key}"`
+        );
+      }
+    }
+
+    const allowedSubtypeOnlyKeys = isUndetermined
+      ? new Set<string>()
+      : subtypeOnlyKeys[namingSystem as string];
+
+    for (const key of allSubtypeOnlyKeys) {
+      if (!(key in data)) continue;
+      if (allowedSubtypeOnlyKeys.has(key)) continue;
+      errors.push(
+        `ONS-subtype: ${file}: field "${key}" belongs to another naming system and is refused for namingSystem "${String(namingSystem)}"`
+      );
+    }
+
+    const attestedForms = Array.isArray(data.attestedForms)
+      ? data.attestedForms
+      : [];
+    attestedForms.forEach((entry, i) => {
+      errors.push(
+        ...namingSystemSourceTierErrors(
+          file,
+          `attestedForms[${i}].attestation`,
+          [entry?.attestation]
+        )
+      );
+    });
+
+    const origin = data.origin as { sources?: unknown } | undefined;
+    errors.push(
+      ...namingSystemSourceTierErrors(file, "origin.sources", origin?.sources)
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+// ─── Language model (ETNI-1503) ───────────────────────────────────────────────
+
+const LANGUAGE_SOURCE_TIERS = new Set(["official", "referenced", "unverified"]);
+
+function collectLanguageFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const dir = path.join(datasetRoot, "langues");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(dir, file) }));
+}
+
+/**
+ * ETNI-1503 AC1 — a language fiche requires a valid ISO 639-3 id (matching its
+ * filename), a family reference resolving to an existing famille_linguistique/
+ * fiche, and an explicit tier on every source.
+ */
+export function checkLanguageModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectLanguageFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const flgIds = loadFlgIds(datasetRoot);
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const id = typeof data.id === "string" ? data.id : undefined;
+    const expectedId = path.basename(file, ".json");
+    if (!id || !ISO_639_3_PATTERN.test(id)) {
+      errors.push(
+        `LNG-iso: ${file}: id "${data.id}" is missing or is not a valid ISO 639-3 code (expected 3 lowercase letters)`
+      );
+    } else if (id !== expectedId) {
+      errors.push(
+        `LNG-iso: ${file}: id "${id}" does not match its filename "${expectedId}.json"`
+      );
+    }
+
+    const familyId =
+      typeof data.familyId === "string" ? data.familyId : undefined;
+    if (!familyId || !flgIds.has(familyId)) {
+      errors.push(
+        `LNG-family: ${file}: familyId "${data.familyId}" does not resolve to an existing fiche under famille_linguistique/`
+      );
+    }
+
+    const content = data.content as { sources?: unknown } | undefined;
+    const sources = Array.isArray(content?.sources) ? content!.sources : [];
+    sources.forEach((source, i) => {
+      const tier = (source as { tier?: unknown })?.tier;
+      if (typeof tier !== "string" || !LANGUAGE_SOURCE_TIERS.has(tier)) {
+        errors.push(
+          `LNG-tier: ${file}: content.sources[${i}] carries no valid tier ("official" | "referenced" | "unverified")`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * ETNI-1503 AC2 — a language and a family are different objects: a language
+ * fiche that borrows a family-only field (or omits a required language field)
+ * is rejected. Same top-key / content-key diff as validateMigrationEvents.
+ */
+export function checkLanguageStrictSchema(
+  datasetRoot: string,
+  modelPath: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectLanguageFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  if (!fs.existsSync(modelPath)) {
+    return {
+      ok: false,
+      errors: [`Language model not found at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  let model: { content?: Record<string, unknown>; [key: string]: unknown };
+  try {
+    model = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+  } catch {
+    return {
+      ok: false,
+      errors: [`Could not parse language model at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  const modelTopKeys = new Set(Object.keys(model).filter((k) => k !== "_meta"));
+  const modelContentKeys = new Set(Object.keys(model.content ?? {}));
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const ficheTopKeys = new Set(
+      Object.keys(data).filter((k) => k !== "_meta")
+    );
+    const missingTop = [...modelTopKeys].filter((k) => !ficheTopKeys.has(k));
+    const extraTop = [...ficheTopKeys].filter((k) => !modelTopKeys.has(k));
+    if (missingTop.length || extraTop.length) {
+      errors.push(
+        `LNG-schema: ${file}: top-level keys do not match modele-langue.json (missing: ${
+          missingTop.join(", ") || "none"
+        }; unexpected: ${extraTop.join(", ") || "none"})`
+      );
+    }
+
+    if (data.content && typeof data.content === "object") {
+      const ficheContentKeys = new Set(
+        Object.keys(data.content as Record<string, unknown>)
+      );
+      const missingContent = [...modelContentKeys].filter(
+        (k) => !ficheContentKeys.has(k)
+      );
+      const extraContent = [...ficheContentKeys].filter(
+        (k) => !modelContentKeys.has(k)
+      );
+      if (missingContent.length || extraContent.length) {
+        errors.push(
+          `LNG-schema: ${file}: content keys do not match modele-langue.json (missing: ${
+            missingContent.join(", ") || "none"
+          }; unexpected: ${extraContent.join(", ") || "none"})`
+        );
       }
     }
   }
@@ -3509,6 +3925,33 @@ async function main() {
   newChecks.push({
     name: "FR55-surname Name record surname connection",
     result: checkNameRecordSurnameConnection(datasetRoot),
+  });
+
+  console.log(
+    "ETNI-1460 – Naming-system model (subtype fields + undetermined)..."
+  );
+  newChecks.push({
+    name: "ETNI-1460 Naming-system model",
+    result: checkNamingSystemModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-136 – Language model (ISO 639-3 + family + per-source tier)..."
+  );
+  newChecks.push({
+    name: "REQ-136 Language model required fields",
+    result: checkLanguageModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-136 – Language strict schema (family-only fields rejected)..."
+  );
+  newChecks.push({
+    name: "REQ-136 Language strict schema",
+    result: checkLanguageStrictSchema(
+      datasetRoot,
+      path.join(PUBLIC_ROOT, "modele-langue.json")
+    ),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

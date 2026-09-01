@@ -108,8 +108,10 @@ export interface PeopleRow {
 
 export interface PeoplesData {
   totalPopulation: number;
-  /** Undefined where no people of the fiche declares a population. */
+  /** Undefined where neither a national total nor a people headcount exists. */
   totalPopulationFormatted?: string;
+  /** The total is the independently sourced country population. */
+  totalPopulationIsNational?: boolean;
   /**
    * Whether `totalPopulation` sums over every people shown. Where it does
    * not, the figure is a floor rather than the country's population, and the
@@ -117,9 +119,9 @@ export interface PeoplesData {
    */
   everyPeopleDeclaresPopulation: boolean;
   /**
-   * Year the counted peoples are dated to, when they agree on one. Undefined
-   * where none is counted, or where they come from different years and the
-   * section therefore has no single snapshot to name.
+   * Year of the national total, or the shared year of the counted peoples when
+   * no national total exists. Undefined where no figure is dated or the people
+   * headcounts come from different years.
    */
   populationReferenceYear?: number;
   peopleCount: number;
@@ -708,10 +710,24 @@ export function transformPeoples(
   demographics?: DemographicsSection,
   majorPeoples?: MajorPeopleEntry[]
 ): PeoplesData {
+  const totalPopulationIsNational =
+    typeof demographics?.totalPopulation === "number" &&
+    demographics.totalPopulation > 0;
+  const nationalPopulation = totalPopulationIsNational
+    ? demographics.totalPopulation
+    : 0;
+
   if (!demographics?.peoples || demographics.peoples.length === 0) {
     return {
-      totalPopulation: 0,
+      totalPopulation: nationalPopulation,
+      totalPopulationFormatted: totalPopulationIsNational
+        ? formatPopulation(nationalPopulation)
+        : undefined,
+      totalPopulationIsNational,
       everyPeopleDeclaresPopulation: false,
+      populationReferenceYear: totalPopulationIsNational
+        ? demographics?.referenceYear
+        : undefined,
       peopleCount: 0,
       rows: [],
     };
@@ -750,7 +766,13 @@ export function transformPeoples(
   // headcount is not a headcount of zero, and only the peoples that state one
   // may enter the total.
   const counted = filtered.filter((p) => p.population > 0);
-  const totalPopulation = counted.reduce((sum, p) => sum + p.population, 0);
+  const documentedPopulation = counted.reduce(
+    (sum, p) => sum + p.population,
+    0
+  );
+  const totalPopulation = totalPopulationIsNational
+    ? nationalPopulation
+    : documentedPopulation;
 
   // The section prints one year over the whole block, so it may only name one
   // when every counted people carries it. A fiche mixing a census with a later
@@ -759,8 +781,11 @@ export function transformPeoples(
   const countedYears = new Set(
     counted.map((p) => p.referenceYear ?? DEMOGRAPHIC_REFERENCE_YEAR)
   );
-  const populationReferenceYear =
-    countedYears.size === 1 ? [...countedYears][0] : undefined;
+  const populationReferenceYear = totalPopulationIsNational
+    ? demographics.referenceYear
+    : countedYears.size === 1
+      ? [...countedYears][0]
+      : undefined;
 
   // Sort by percentage descending
   const sorted = [...filtered].sort(
@@ -799,7 +824,10 @@ export function transformPeoples(
   return {
     totalPopulation,
     totalPopulationFormatted:
-      counted.length > 0 ? formatPopulation(totalPopulation) : undefined,
+      totalPopulationIsNational || counted.length > 0
+        ? formatPopulation(totalPopulation)
+        : undefined,
+    totalPopulationIsNational,
     everyPeopleDeclaresPopulation:
       filtered.length > 0 && counted.length === filtered.length,
     populationReferenceYear,

@@ -117,7 +117,7 @@ describe("the hub and the game registry agree", () => {
   // @req REQ-120
   it("lists two Jouer entries once the quiz is counted", () => {
     const jouerModules = MODULE_DEFINITIONS.filter(
-      (entry) => entry.accessMode === "jouer"
+      (entry) => entry.accessMode === "jeux"
     );
     expect(jouerModules).toHaveLength(2);
     expect(jouerModules.some((entry) => entry.id === "quiz")).toBe(true);
@@ -127,7 +127,7 @@ describe("the hub and the game registry agree", () => {
   // @req REQ-120
   it("leaves no Jouer entry marked unavailable", () => {
     const jouerModules = MODULE_DEFINITIONS.filter(
-      (entry) => entry.accessMode === "jouer"
+      (entry) => entry.accessMode === "jeux"
     );
     for (const entry of jouerModules) {
       expect(entry.availability).not.toBe("unavailable");

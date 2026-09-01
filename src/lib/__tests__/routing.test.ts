@@ -17,27 +17,27 @@ import {
 describe("entity routes (ContextTriad, ETNI-818)", () => {
   // @req REQ-091
   it("builds a localized country fiche href", () => {
-    expect(getCountryRoute("fr", "NGA")).toBe("/fr/explorer/pays/NGA");
+    expect(getCountryRoute("fr", "NGA")).toBe("/fr/atlas/pays/NGA");
   });
 
   // @req REQ-091
   it("builds a localized language-family fiche href", () => {
     expect(getFamilyRoute("fr", "FLG_NIGER_CONGO")).toBe(
-      "/fr/explorer/familles/FLG_NIGER_CONGO"
+      "/fr/atlas/familles/FLG_NIGER_CONGO"
     );
   });
 
   // @req REQ-097
   it("builds a localized people fiche href", () => {
     expect(getPeopleRoute("fr", "PPL_YORUBA")).toBe(
-      "/fr/explorer/peuples/PPL_YORUBA"
+      "/fr/atlas/peuples/PPL_YORUBA"
     );
   });
 
   // @req REQ-097 FR72
   it("builds a localized people links (liens) fiche href", () => {
     expect(getPeopleLinksRoute("fr", "PPL_YORUBA")).toBe(
-      "/fr/explorer/peuples/PPL_YORUBA/liens"
+      "/fr/atlas/peuples/PPL_YORUBA/liens"
     );
   });
 });
@@ -65,50 +65,50 @@ describe("migrations page type (Epic 12, Story 12.8, ETNI-521)", () => {
   // @req REQ-101 FR81
   it("resolves the French slug for the migrations page type", () => {
     expect(getLocalizedRoute("fr", "migrations")).toBe(
-      "/fr/comprendre/migrations"
+      "/fr/dossiers/migrations"
     );
   });
 
   // @req REQ-101 FR81
   it("resolves the migrations page type from the migrations slug", () => {
-    expect(getPageFromRoute("/fr/comprendre/migrations")).toBe("migrations");
+    expect(getPageFromRoute("/fr/dossiers/migrations")).toBe("migrations");
   });
 });
 
 describe("quiz page type (Epic 10, Story 10.8, ETNI-497)", () => {
   // @req REQ-103 FR66
   it("resolves the French slug for the quiz page type", () => {
-    expect(getLocalizedRoute("fr", "quiz")).toBe("/fr/jouer/quiz");
+    expect(getLocalizedRoute("fr", "quiz")).toBe("/fr/jeux/quiz");
   });
 
   // @req REQ-103 FR66
   it("resolves the quiz page type from the quiz slug", () => {
-    expect(getPageFromRoute("/fr/jouer/quiz")).toBe("quiz");
+    expect(getPageFromRoute("/fr/jeux/quiz")).toBe("quiz");
   });
 });
 
 describe("access-mode hub page types (REQ-114)", () => {
   // @req REQ-114
   it("resolves the French slug for each hub page type", () => {
-    expect(getLocalizedRoute("fr", "explorerHub")).toBe("/fr/explorer");
-    expect(getLocalizedRoute("fr", "comprendreHub")).toBe("/fr/comprendre");
-    expect(getLocalizedRoute("fr", "jouerHub")).toBe("/fr/jouer");
+    expect(getLocalizedRoute("fr", "atlasHub")).toBe("/fr/atlas");
+    expect(getLocalizedRoute("fr", "dossiersHub")).toBe("/fr/dossiers");
+    expect(getLocalizedRoute("fr", "jeuxHub")).toBe("/fr/jeux");
   });
 
   // @req REQ-114
   it("round-trips each hub slug back to its page type", () => {
-    expect(getPageFromRoute("/fr/explorer")).toBe("explorerHub");
-    expect(getPageFromRoute("/fr/comprendre")).toBe("comprendreHub");
-    expect(getPageFromRoute("/fr/jouer")).toBe("jouerHub");
+    expect(getPageFromRoute("/fr/atlas")).toBe("atlasHub");
+    expect(getPageFromRoute("/fr/dossiers")).toBe("dossiersHub");
+    expect(getPageFromRoute("/fr/jeux")).toBe("jeuxHub");
   });
 
   // The axis slug is a verb and the resource slug a noun, so the two can
   // no longer shadow each other the way peuples-hub/peuples once could.
   // @req REQ-114
   it("keeps an axis route distinct from the resource pages it groups", () => {
-    expect(getPageFromRoute("/fr/explorer/peuples")).toBe("peoples");
-    expect(getPageFromRoute("/fr/explorer/peuples/PPL_YORUBA")).toBe("peoples");
-    expect(getPageFromRoute("/fr/explorer")).toBe("explorerHub");
+    expect(getPageFromRoute("/fr/atlas/peuples")).toBe("peoples");
+    expect(getPageFromRoute("/fr/atlas/peuples/PPL_YORUBA")).toBe("peoples");
+    expect(getPageFromRoute("/fr/atlas")).toBe("atlasHub");
   });
 });
 
@@ -116,14 +116,14 @@ describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   // @req REQ-091 FR90
   it("resolves the French-only nested slug for the colonization page type", () => {
     expect(getLocalizedRoute("fr", "colonization")).toBe(
-      "/fr/comprendre/regards/colonisation-et-resistances"
+      "/fr/dossiers/regards/colonisation-et-resistances"
     );
   });
 
   // @req REQ-091 FR90
   it("resolves the colonization page type from its multi-segment slug", () => {
     expect(
-      getPageFromRoute("/fr/comprendre/regards/colonisation-et-resistances")
+      getPageFromRoute("/fr/dossiers/regards/colonisation-et-resistances")
     ).toBe("colonization");
   });
 
@@ -133,9 +133,9 @@ describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   // the assertion is here to protect is unchanged and is the half that could
   // mislead a reader: a bare directory is not the article underneath it.
   // @req REQ-091 FR90
-  it("answers the hub, not the article, for the bare /fr/comprendre/regards directory", () => {
-    expect(getPageFromRoute("/fr/comprendre/regards")).toBe("comprendreHub");
-    expect(getPageFromRoute("/fr/comprendre/regards")).not.toBe("colonization");
+  it("answers the hub, not the article, for the bare /fr/dossiers/regards directory", () => {
+    expect(getPageFromRoute("/fr/dossiers/regards")).toBe("dossiersHub");
+    expect(getPageFromRoute("/fr/dossiers/regards")).not.toBe("colonization");
   });
 });
 
@@ -143,7 +143,7 @@ describe("people deep link (the retired ?people= directory form)", () => {
   // @req REQ-097
   it("sends a people query to that people's fiche", () => {
     expect(resolvePeopleDeepLink("fr", { people: "PPL_YORUBA" })).toBe(
-      "/fr/explorer/peuples/PPL_YORUBA"
+      "/fr/atlas/peuples/PPL_YORUBA"
     );
   });
 
@@ -171,7 +171,7 @@ describe("people deep link (the retired ?people= directory form)", () => {
   // @req REQ-097
   it("encodes the identifier, so a crafted query cannot leave the site", () => {
     expect(resolvePeopleDeepLink("fr", { people: "//evil.com" })).toBe(
-      "/fr/explorer/peuples/%2F%2Fevil.com"
+      "/fr/atlas/peuples/%2F%2Fevil.com"
     );
   });
 });
@@ -180,7 +180,7 @@ describe("country deep link (the retired ?country= directory form)", () => {
   // @req REQ-091
   it("sends a country query to that country's fiche", () => {
     expect(resolveCountryDeepLink("fr", { country: "NGA" })).toBe(
-      "/fr/explorer/pays/NGA"
+      "/fr/atlas/pays/NGA"
     );
   });
 
@@ -208,7 +208,7 @@ describe("country deep link (the retired ?country= directory form)", () => {
   // @req REQ-091
   it("encodes the identifier, so a crafted query cannot leave the site", () => {
     expect(resolveCountryDeepLink("fr", { country: "//evil.com" })).toBe(
-      "/fr/explorer/pays/%2F%2Fevil.com"
+      "/fr/atlas/pays/%2F%2Fevil.com"
     );
   });
 
@@ -218,7 +218,7 @@ describe("country deep link (the retired ?country= directory form)", () => {
   // @req REQ-091
   it("forwards an identifier it does not recognise", () => {
     expect(resolveCountryDeepLink("fr", { country: "XYZ" })).toBe(
-      "/fr/explorer/pays/XYZ"
+      "/fr/atlas/pays/XYZ"
     );
   });
 });
@@ -227,7 +227,7 @@ describe("family deep link (the retired ?family= directory form)", () => {
   // @req REQ-091
   it("sends a family query to that family's fiche", () => {
     expect(resolveFamilyDeepLink("fr", { family: "FLG_NIGER_CONGO" })).toBe(
-      "/fr/explorer/familles/FLG_NIGER_CONGO"
+      "/fr/atlas/familles/FLG_NIGER_CONGO"
     );
   });
 
@@ -250,7 +250,7 @@ describe("family deep link (the retired ?family= directory form)", () => {
   // @req REQ-091
   it("encodes the identifier, so a crafted query cannot leave the site", () => {
     expect(resolveFamilyDeepLink("fr", { family: "//evil.com" })).toBe(
-      "/fr/explorer/familles/%2F%2Fevil.com"
+      "/fr/atlas/familles/%2F%2Fevil.com"
     );
   });
 });
@@ -265,20 +265,20 @@ describe("deep links read from a URLSearchParams", () => {
   it("resolves each entity's fiche from a URLSearchParams", () => {
     expect(
       resolveCountryDeepLink("fr", new URLSearchParams("country=NGA"))
-    ).toBe("/fr/explorer/pays/NGA");
+    ).toBe("/fr/atlas/pays/NGA");
     expect(
       resolvePeopleDeepLink("fr", new URLSearchParams("people=PPL_YORUBA"))
-    ).toBe("/fr/explorer/peuples/PPL_YORUBA");
+    ).toBe("/fr/atlas/peuples/PPL_YORUBA");
     expect(
       resolveFamilyDeepLink("fr", new URLSearchParams("family=FLG_KHOE"))
-    ).toBe("/fr/explorer/familles/FLG_KHOE");
+    ).toBe("/fr/atlas/familles/FLG_KHOE");
   });
 
   // @req REQ-091
   it("applies the same encoding rule to a URLSearchParams query", () => {
     expect(
       resolveFamilyDeepLink("fr", new URLSearchParams("family=//evil.com"))
-    ).toBe("/fr/explorer/familles/%2F%2Fevil.com");
+    ).toBe("/fr/atlas/familles/%2F%2Fevil.com");
   });
 
   // @req REQ-091
@@ -325,7 +325,7 @@ describe("page-type round trip", () => {
 
   // A helper answering "which page is this" with the pathname's second
   // segment is wrong the moment a page lives under an axis: it would answer
-  // "explorer" for every Explorer page. Nothing may bring it back.
+  // "atlas" for every Explorer page. Nothing may bring it back.
   // @req REQ-091
   it("exposes no helper that reads a page from a bare path segment", () => {
     expect(Object.keys(routing)).not.toContain("getSlugFromRoute");

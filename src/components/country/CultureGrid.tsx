@@ -64,7 +64,7 @@ function CultureGridCell({ item }: { item: CultureGridItem }) {
 
       <div
         className="text-afh-caption leading-[1.4]"
-        style={{ color: "var(--country-text-soft)" }}
+        style={{ color: "var(--afh-color-text-soft)" }}
       >
         {item.keywords.join(", ")}
       </div>

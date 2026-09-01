@@ -5,24 +5,16 @@
  * afrik_search_countries functions (migration 044), which rank over the
  * weighted tsvectors of migration 043. This module maps their rows; it does
  * not order them.
- *
- * The legacy searchAfrikAll is kept for backward compatibility with existing
- * callers (admin pages, legacy API routes that have not yet been migrated).
  */
 
-import { searchAfrikCountries } from "./countries";
 import {
-  searchAfrikPeoples,
-  getAfrikPeoplesByLanguageFamily,
-  getAfrikPeoplesByCountry,
-} from "./peoples";
-import { searchAfrikLanguageFamilies } from "./languageFamilies";
+  searchAfrikLanguageFamilies,
+  searchAfrikLanguageFamiliesByText,
+} from "./languageFamilies";
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
 import { normalizeString } from "@/lib/normalize";
 import type {
-  SearchFilters,
-  SearchResult,
   FtsSearchParams,
   FtsSearchResponse,
   LanguageFamily,
@@ -42,11 +34,18 @@ import type {
  * ranking that nothing executed. Migrations 043/044 moved both the weighting
  * and the ranking into the database; this layer now only shapes the rows.
  *
- * Language families keep the ilike query: they have no tsvector, and at two
- * dozen rows a match tier computed here is smaller than the migration an
- * index would cost. Their `relevance` is a tier, so it is comparable between
- * families and not with the other two kinds — `exactMatch` is what callers
- * sort on across kinds.
+ * Language families rank on two independent signals rather than one SQL
+ * query. Their name still ranks with a full fetch plus an accent-insensitive
+ * substring/prefix tier computed here (normalizeString — REQ-129), because
+ * `search_vector`'s French-stemmed matching (migration 056) does not carry
+ * that accent-insensitivity and an ilike filter cannot either (it compares
+ * characters literally, so it cannot fold "Mandé" onto "mande"). Their
+ * decolonial text (content->decolonialHeader) ranks separately, by asking
+ * `search_vector` directly for the ids it matches (DEC-028) — this is what
+ * lets a term that appears only in that prose, and nowhere in the name,
+ * still surface the family. `relevance` is a tier, so it is comparable
+ * between families and not with the other two kinds — `exactMatch` is what
+ * callers sort on across kinds.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
  * not a search: peoples are listed for that scope, and countries and families
@@ -70,26 +69,28 @@ export async function ftsSearchEntities(
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
 
-  const [peopleResult, countryResult, familyRows] = await Promise.all([
-    supabase.rpc("afrik_search_peoples", {
-      p_q: text || null,
-      p_limit: limit,
-      p_offset: offset,
-      p_classification_status: classificationStatus ?? null,
-      p_min_confidence: minConfidence ?? null,
-      p_since_verified_after: sinceVerifiedAfter ?? null,
-      p_family_id: familyId ?? null,
-      p_country_id: countryId ?? null,
-    }),
-    text
-      ? supabase.rpc("afrik_search_countries", {
-          p_q: text,
-          p_limit: limit,
-          p_offset: offset,
-        })
-      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text ? searchAfrikLanguageFamilies(text) : Promise.resolve([]),
-  ]);
+  const [peopleResult, countryResult, familyRows, familyProseMatchIds] =
+    await Promise.all([
+      supabase.rpc("afrik_search_peoples", {
+        p_q: text || null,
+        p_limit: limit,
+        p_offset: offset,
+        p_classification_status: classificationStatus ?? null,
+        p_min_confidence: minConfidence ?? null,
+        p_since_verified_after: sinceVerifiedAfter ?? null,
+        p_family_id: familyId ?? null,
+        p_country_id: countryId ?? null,
+      }),
+      text
+        ? supabase.rpc("afrik_search_countries", {
+            p_q: text,
+            p_limit: limit,
+            p_offset: offset,
+          })
+        : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+      text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
+      text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
+    ]);
 
   if (peopleResult.error) {
     logger.error("Error in ranked peoples search", peopleResult.error);
@@ -105,7 +106,11 @@ export async function ftsSearchEntities(
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
-  const families = rankLanguageFamilies(familyRows, text);
+  const families = rankLanguageFamilies(
+    familyRows,
+    text,
+    new Set(familyProseMatchIds)
+  );
 
   return {
     peoples,
@@ -172,19 +177,31 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
   };
 }
 
-/** Exact name, then prefix, then anywhere. Accents and case are folded away. */
+/**
+ * Exact name, then prefix, then anywhere in the name, then only in the
+ * decolonial text (DEC-028). Name tiers fold accents and case away; the
+ * prose tier is membership in `proseMatchIds`, decided by Postgres full-text
+ * search over `search_vector` (searchAfrikLanguageFamiliesByText).
+ */
 const FAMILY_TIER_EXACT = 1;
 const FAMILY_TIER_PREFIX = 0.6;
 const FAMILY_TIER_SUBSTRING = 0.3;
+const FAMILY_TIER_PROSE = 0.1;
 
 function rankLanguageFamilies(
   families: LanguageFamily[],
-  query: string
+  query: string,
+  proseMatchIds: ReadonlySet<string>
 ): RankedLanguageFamily[] {
   const wanted = normalizeString(query);
   if (!wanted) return [];
 
   return families
+    .filter(
+      (family) =>
+        normalizeString(family.nameFr).includes(wanted) ||
+        proseMatchIds.has(family.id)
+    )
     .map((family) => {
       const name = normalizeString(family.nameFr);
       const exactMatch = name === wanted;
@@ -192,7 +209,9 @@ function rankLanguageFamilies(
         ? FAMILY_TIER_EXACT
         : name.startsWith(wanted)
           ? FAMILY_TIER_PREFIX
-          : FAMILY_TIER_SUBSTRING;
+          : name.includes(wanted)
+            ? FAMILY_TIER_SUBSTRING
+            : FAMILY_TIER_PROSE;
       return { ...family, relevance, exactMatch };
     })
     .sort(
@@ -201,88 +220,4 @@ function rankLanguageFamilies(
         b.relevance - a.relevance ||
         a.nameFr.localeCompare(b.nameFr, "fr")
     );
-}
-
-// @req REQ-002
-/**
- * Legacy multi-entity search (kept for backward compatibility).
- * New callers should use ftsSearchEntities.
- */
-export async function searchAfrikAll(
-  filters: SearchFilters = {}
-): Promise<SearchResult[]> {
-  const results: SearchResult[] = [];
-
-  if (!filters.type || filters.type === "country") {
-    if (filters.query) {
-      const countries = await searchAfrikCountries(filters.query);
-      for (const country of countries) {
-        if (filters.countryId && country.id !== filters.countryId) continue;
-        results.push({
-          type: "country",
-          id: country.id,
-          name: country.nameFr,
-          data: country,
-        });
-      }
-    } else if (filters.countryId) {
-      const { getAfrikCountryById } = await import("./countries");
-      const country = await getAfrikCountryById(filters.countryId);
-      if (country) {
-        results.push({
-          type: "country",
-          id: country.id,
-          name: country.nameFr,
-          data: country,
-        });
-      }
-    }
-  }
-
-  if (!filters.type || filters.type === "people") {
-    let peoples: Awaited<ReturnType<typeof searchAfrikPeoples>> = [];
-
-    if (filters.languageFamilyId) {
-      peoples = await getAfrikPeoplesByLanguageFamily(filters.languageFamilyId);
-    } else if (filters.countryId) {
-      peoples = await getAfrikPeoplesByCountry(filters.countryId);
-    } else if (filters.query) {
-      peoples = await searchAfrikPeoples(filters.query);
-    }
-
-    for (const people of peoples) {
-      if (
-        filters.countryId &&
-        !people.currentCountries.includes(filters.countryId)
-      )
-        continue;
-      if (
-        filters.languageFamilyId &&
-        people.languageFamilyId !== filters.languageFamilyId
-      )
-        continue;
-      results.push({
-        type: "people",
-        id: people.id,
-        name: people.nameMain,
-        data: people,
-      });
-    }
-  }
-
-  if (!filters.type || filters.type === "languageFamily") {
-    if (filters.query) {
-      const families = await searchAfrikLanguageFamilies(filters.query);
-      for (const family of families) {
-        results.push({
-          type: "languageFamily",
-          id: family.id,
-          name: family.nameFr,
-          data: family,
-        });
-      }
-    }
-  }
-
-  return results;
 }

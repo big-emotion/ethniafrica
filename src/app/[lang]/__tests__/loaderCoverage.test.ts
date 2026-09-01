@@ -25,14 +25,14 @@ const segmentOf = (loadingFile: string) =>
  * it resolves before the boundary streams, and that is a change to how the
  * fiches fetch rather than to how they wait.
  *
- * Measured on a dev server, not assumed: `/fr/explorer/peuples/PPL_INEXISTANT`
+ * Measured on a dev server, not assumed: `/fr/atlas/peuples/PPL_INEXISTANT`
  * answers 200. Nothing may join this list — the assertion below is what stops
  * the next loading.tsx from quietly turning another 404 into a soft one.
  */
 const GRANDFATHERED_SOFT_404_SEGMENTS = [
-  "explorer/familles/[slug]",
-  "explorer/pays/[slug]",
-  "explorer/peuples/[slug]",
+  "atlas/familles/[slug]",
+  "atlas/pays/[slug]",
+  "atlas/peuples/[slug]",
 ];
 
 /**

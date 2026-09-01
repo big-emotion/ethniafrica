@@ -50,9 +50,9 @@ export interface ProjectedNode {
  */
 // @req REQ-114
 export const LAYOUT_BY_AXIS: Record<AccessMode, AxisLayout> = {
-  explorer: "ring",
-  comprendre: "arc",
-  jouer: "pair",
+  atlas: "ring",
+  dossiers: "arc",
+  jeux: "pair",
 };
 
 /** Camera distance in unit space. Shallow enough that depth reads. */
@@ -80,7 +80,7 @@ export const MODULE_LABEL_FONT_SIZE = 15;
 /**
  * The box one module card occupies. The panel's CSS reads these too, so the
  * room the geometry reserves and the room a card actually takes cannot
- * drift apart — which is how eleven cards ended up 36px apart while being
+ * drift apart — which is how 11 cards ended up 36px apart while being
  * 50 to 85px tall.
  *
  * The height is what a **three**-line label needs. Two was the count the
@@ -501,8 +501,8 @@ export function sceneBox(
  * The pairs the panel's height can do nothing for: two nodes within a card
  * of each other horizontally and at the very same height. Every other tight
  * pair is the height's business, and taking those away from `panelHeightFor`
- * would undo REQ-120's fix — Jouer's eleven rows are close because the panel
- * is short, and the answer to that is a taller panel.
+ * would undo REQ-120's fix — Jouer's 11 rows were close because the panel
+ * was short, and the answer was a taller panel.
  */
 function tiedPairs(
   nodes: GraphNode[],
@@ -611,9 +611,9 @@ export function sceneNodes(
  * `panelWidth` wide.
  *
  * `pair` was written for the two modules Jouer held when it shipped and
- * kept a fixed 420px when REQ-120 handed it eleven: six rows over a fixed
+ * kept a fixed 420px when REQ-120 handed it 11: six rows over a fixed
  * span put them 36px apart under cards up to 85px tall, so three of the
- * eleven could not be clicked at their own centre. Deriving the height from
+ * 11 could not be clicked at their own centre. Deriving the height from
  * the node set means a layout can be handed any count without the author of
  * the next module having to remember this.
  *

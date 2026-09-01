@@ -74,7 +74,11 @@ function mockCorpus() {
   ]);
 }
 
-const unfiltered = { languageFamilyId: null, sort: "nom" } as const;
+const unfiltered = {
+  languageFamilyId: null,
+  search: null,
+  sort: "nom",
+} as const;
 
 describe("the countries facet's selection", () => {
   beforeEach(() => {
@@ -146,6 +150,72 @@ describe("the countries facet's selection", () => {
     });
 
     expect(rows.map((row) => row.id)).toEqual(["COD"]);
+  });
+
+  it("matches a country name without regard to accents or case", async () => {
+    const byAccent = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "benin",
+    });
+    const byCase = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "CONGO",
+    });
+
+    expect(byAccent.rows.map((row) => row.id)).toEqual(["BEN"]);
+    expect(byCase.rows.map((row) => row.id)).toEqual(["COD"]);
+  });
+
+  it("matches a country by its identifier", async () => {
+    const { rows } = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "nga",
+    });
+
+    expect(rows.map((row) => row.id)).toEqual(["NGA"]);
+  });
+
+  it("does not create a match across the identifier and name boundary", async () => {
+    const { rows } = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "n b",
+    });
+
+    expect(rows).toEqual([]);
+  });
+
+  it("collapses repeated spaces in a multiword country search", async () => {
+    const { rows } = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "pays   d'essai",
+    });
+
+    expect(rows.map((row) => row.id)).toEqual(["ZZZ"]);
+  });
+
+  it("intersects text search with the selected language family", async () => {
+    const matching = await getCountryFacetSelection({
+      languageFamilyId: "FLG_NIGER_CONGO",
+      search: "benin",
+      sort: "nom",
+    });
+    const excluded = await getCountryFacetSelection({
+      languageFamilyId: "FLG_NILO_SAHARIEN",
+      search: "benin",
+      sort: "nom",
+    });
+
+    expect(matching.rows.map((row) => row.id)).toEqual(["BEN"]);
+    expect(excluded.rows).toEqual([]);
+  });
+
+  it("treats a whitespace-only search as no narrowing", async () => {
+    const { rows } = await getCountryFacetSelection({
+      ...unfiltered,
+      search: "   ",
+    });
+
+    expect(rows).toHaveLength(4);
   });
 
   /**

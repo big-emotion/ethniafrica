@@ -4,8 +4,9 @@
  * Peoples and countries are ranked by the SQL functions of migration 044, so
  * these tests drive the RPC boundary: what parameters go down, and that the
  * order coming back is preserved rather than re-sorted here. The families
- * branch delegates to the existing ilike query, mocked as a unit, so this
- * file asserts composition rather than re-testing it.
+ * branch delegates to two mocked units — the full fetch (name-based ranking)
+ * and the search_vector text match (decolonial-prose ranking, DEC-028) — so
+ * this file asserts composition rather than re-testing either one.
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
@@ -15,10 +16,14 @@ vi.mock("../../../server", () => ({
 
 vi.mock("../languageFamilies", () => ({
   searchAfrikLanguageFamilies: vi.fn(),
+  searchAfrikLanguageFamiliesByText: vi.fn(),
 }));
 
 import { ftsSearchEntities } from "../search";
-import { searchAfrikLanguageFamilies } from "../languageFamilies";
+import {
+  searchAfrikLanguageFamilies,
+  searchAfrikLanguageFamiliesByText,
+} from "../languageFamilies";
 import { createServerClient } from "../../../server";
 
 function peopleRow(
@@ -35,6 +40,24 @@ function peopleRow(
     classificationStatus: null,
     content: {},
     confidence: 0.7,
+    relevance: 0.5,
+    exactMatch: false,
+    snippet: null,
+    ...over,
+  };
+}
+
+function countryRow(
+  id: string,
+  nameFr: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    nameFr,
+    etymology: null,
+    nameOriginActor: null,
+    content: {},
     relevance: 0.5,
     exactMatch: false,
     snippet: null,
@@ -69,6 +92,8 @@ describe("ftsSearchEntities", () => {
     (createServerClient as any).mockReturnValue(mockSupabase);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (searchAfrikLanguageFamilies as any).mockResolvedValue([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue([]);
   });
 
   // @req REQ-002
@@ -93,6 +118,96 @@ describe("ftsSearchEntities", () => {
       "Béti-Fang",
       "Amhara",
     ]);
+  });
+
+  // @req REQ-002
+  it("surfaces a people found only through prose (DEC-028), ranked below a name match", async () => {
+    // "Soundiata" appears only in PPL_MANDINKA's historicalRole prose (weight
+    // D, migration 058); PPL_KEITA carries it as a name (weight A, migration
+    // 043). Migration 044's ranking function is what orders these — this test
+    // only proves the query layer passes the DB order through untouched.
+    peoplesPayload = {
+      total: 2,
+      rows: [
+        peopleRow("PPL_KEITA", "Soundiata Keïta", {
+          relevance: 0.9,
+          exactMatch: true,
+        }),
+        peopleRow("PPL_MANDINKA", "Mandinka", {
+          relevance: 0.12,
+          exactMatch: false,
+          snippet: "fondateur de l'empire du [[Soundiata]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Soundiata",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.peoples.map((p) => p.nameMain)).toEqual([
+      "Soundiata Keïta",
+      "Mandinka",
+    ]);
+    expect(result.peoplesTotal).toBe(2);
+  });
+
+  // @req REQ-002
+  it("surfaces a country found only through prose (DEC-028), ranked below a name match", async () => {
+    // "Keïta" appears only in MLI's kingdoms[].historicalRole prose (weight
+    // D, migration 059); a country literally carrying the name in its
+    // name_fr would rank at weight A (migration 043). Migration 044's
+    // ranking function is what orders these — this test only proves the
+    // query layer passes the DB order through untouched.
+    countriesPayload = {
+      total: 2,
+      rows: [
+        countryRow("KEI", "Keïta", {
+          relevance: 0.9,
+          exactMatch: true,
+        }),
+        countryRow("MLI", "Mali", {
+          relevance: 0.12,
+          exactMatch: false,
+          snippet: "fondé par l'empereur [[Keïta]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.countries.map((c) => c.nameFr)).toEqual(["Keïta", "Mali"]);
+    expect(result.countriesTotal).toBe(2);
+  });
+
+  // @req REQ-002
+  it("surfaces a people through a declared spelling alias (DEC-034)", async () => {
+    // PPL_GUR declares "Gour" as a spelling_aliases entry (migration 060),
+    // folded into search_vector at weight B — the same weight as an exonym.
+    // Migration 044's ranking function is what matches and orders this; this
+    // test only proves the query layer passes an alias-matched row through
+    // untouched, exactly as it already does for a name or an exonym match.
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_GUR", "Gur", {
+          relevance: 0.6,
+          exactMatch: true,
+          snippet: "[[Gour]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "gour", limit: 20, offset: 0 });
+
+    expect(result.peoples.map((p) => p.nameMain)).toEqual(["Gur"]);
+    expect(result.peoplesTotal).toBe(1);
   });
 
   // @req REQ-019
@@ -213,7 +328,7 @@ describe("ftsSearchEntities", () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (searchAfrikLanguageFamilies as any).mockResolvedValue([
       { id: "FLG_NILO", nameFr: "Nilo-saharien (bantou compris)", content: {} },
-      { id: "FLG_BANTOIDE", nameFr: "Bantoïde", content: {} },
+      { id: "FLG_BANTOU_GROUP", nameFr: "Bantou (groupe élargi)", content: {} },
       { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
     ]);
 
@@ -225,7 +340,7 @@ describe("ftsSearchEntities", () => {
 
     expect(result.families.map((f) => f.id)).toEqual([
       "FLG_BANTU",
-      "FLG_BANTOIDE",
+      "FLG_BANTOU_GROUP",
       "FLG_NILO",
     ]);
     expect(result.families[0].exactMatch).toBe(true);
@@ -255,10 +370,117 @@ describe("ftsSearchEntities", () => {
       { id: "FLG_BERBERE", nameFr: "Berbère", content: {} },
     ]);
 
-    const result = await ftsSearchEntities({ q: "a", limit: 20, offset: 0 });
+    const result = await ftsSearchEntities({ q: "er", limit: 20, offset: 0 });
 
     expect(result.familiesTotal).toBe(2);
     expect(result.total).toBe(2);
+  });
+
+  // @req REQ-002
+  it("surfaces a family whose only match is inside its decolonial text (DEC-028)", async () => {
+    // FLG_KROU's name matches neither "administrateurs" nor any substring of
+    // it — only content.decolonialHeader.whyProblematic does, in the corpus.
+    // Before this ticket, rankLanguageFamilies filtered on nameFr alone and
+    // dropped this family outright, however search_vector matched it.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamilies as any).mockResolvedValue([
+      { id: "FLG_KROU", nameFr: "Krou", content: {} },
+      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
+    ]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue(["FLG_KROU"]);
+
+    const result = await ftsSearchEntities({
+      q: "administrateurs",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.families.map((f) => f.id)).toEqual(["FLG_KROU"]);
+    expect(result.families[0].exactMatch).toBe(false);
+  });
+
+  // @req REQ-002
+  it("asks search_vector for the term before ranking families", async () => {
+    await ftsSearchEntities({ q: "administrateurs", limit: 20, offset: 0 });
+
+    expect(searchAfrikLanguageFamiliesByText).toHaveBeenCalledWith(
+      "administrateurs"
+    );
+  });
+
+  // @req REQ-129
+  it("ranks a language family whose name carries an accent from an unaccented query", async () => {
+    // searchAfrikLanguageFamilies no longer filters by ilike (accent-
+    // sensitive); rankLanguageFamilies now owns the accent-insensitive
+    // substring filter this exercises — FLG_MANDE is really named "Mandé"
+    // in the corpus, so an unfixed ilike would have dropped it here.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamilies as any).mockResolvedValue([
+      { id: "FLG_MANDE", nameFr: "Mandé", content: {} },
+      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
+    ]);
+
+    const result = await ftsSearchEntities({
+      q: "mande",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.families.map((f) => f.id)).toEqual(["FLG_MANDE"]);
+    expect(result.families[0].exactMatch).toBe(true);
+  });
+
+  // @req REQ-129
+  it("surfaces a fiche whose name only partially matches the typed prefix", async () => {
+    // Migration 051 does the actual prefix matching in SQL; this asserts the
+    // query layer neither trims nor rejects a partial word before it reaches
+    // the RPC, and passes an accented result straight through unmodified.
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara", { exactMatch: false })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "bamba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_peoples",
+      expect.objectContaining({ p_q: "bamba" })
+    );
+    expect(result.peoples.map((p) => p.nameMain)).toContain("Bambara");
+  });
+
+  // @req REQ-129
+  it("surfaces an accented fiche name from an unaccented query", async () => {
+    // Same rationale as the prefix test above: migration 052 folds accents
+    // in SQL, so this only proves the query layer does not itself strip or
+    // re-encode diacritics on the way back out.
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_MANDE_MACRO", "Peuples Mandé (macro-groupe)", {
+          exactMatch: false,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "mande",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_peoples",
+      expect.objectContaining({ p_q: "mande" })
+    );
+    expect(result.peoples.map((p) => p.nameMain)).toContain(
+      "Peuples Mandé (macro-groupe)"
+    );
   });
 
   // @req REQ-050

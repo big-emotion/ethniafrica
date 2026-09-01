@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 /**
- * Contract test for the eleven games (REQ-120). It is named *Charter* so
+ * Contract test for the Jouer games (REQ-120). It is named *Charter* so
  * `discoverCharterNamedTests()` enrols it with no manifest edit.
  *
  * It reads source rather than rendering, for the same reason the other
@@ -89,7 +89,7 @@ describe("Jouer games charter contract (REQ-120)", () => {
   // @req REQ-120
   it("declares the Jouer accent in the token registry, not in a component", () => {
     expect(readFileSync(HUB_REGISTRY, "utf8")).toContain(
-      'jouer: "afh-accent-perv"'
+      'jeux: "afh-accent-perv"'
     );
 
     const inlined = playComponentFiles().filter((file) =>

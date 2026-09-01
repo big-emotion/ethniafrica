@@ -8,6 +8,7 @@ import {
   getLocalizedRoute,
   getPeopleRoute,
 } from "@/lib/routing";
+import { resolveRelocatedPath, resolveRenamedModulePath } from "@/middleware";
 import { LIVE_ROUTES } from "../a11yRoutes";
 
 const require = createRequire(import.meta.url);
@@ -89,6 +90,24 @@ describe("browser quality-gate routes", () => {
     }
   });
 
+  /**
+   * `lhci collect` aborts the whole run on the first URL that fails to load,
+   * so one dead address does not cost one measurement — it costs every
+   * measurement after it. ETNI-1555 deleted the three axis landing pages
+   * while `/fr/atlas` was still first in the list.
+   */
+  // @req REQ-114
+  it("audits no retired axis landing page in either browser gate", () => {
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+      const route = getLocalizedRoute("fr", page);
+
+      expect(lighthouseConfig.ci.collect.url, route).not.toContain(
+        `http://localhost:3000${route}`
+      );
+      expect(axeRoutes, route).not.toContain(route);
+    }
+  });
+
   // @req REQ-091
   it("gates every Lighthouse budget at error level so the fiche routes block the build", () => {
     for (const [audit, assertion] of Object.entries(
@@ -139,6 +158,40 @@ describe("browser quality-gate routes", () => {
       expect(axeRoutes, `axe must audit the ${family} route-family`).toContain(
         route
       );
+    }
+  });
+
+  /**
+   * The property the named lists above cannot state: that a URL nobody
+   * thought to list is still an address the site serves.
+   *
+   * `.lighthouserc.js` spells its routes out, while `a11yRoutes.ts`
+   * recomposes them from the slug table -- so the two drift apart exactly
+   * when a slug moves, and only the hand-written one goes stale. Moving
+   * Appellations from Comprendre to Explorer left this file auditing
+   * `/fr/dossiers/appellations`, and every assertion here passed, because
+   * appellations belongs to none of the families enumerated above.
+   *
+   * Asked through the middleware's own resolvers rather than against a
+   * second copy of the slug table: a collect URL that the middleware would
+   * answer with a 308 is by definition an address that has moved. Lighthouse
+   * would still measure it -- it follows the redirect -- so the budget is
+   * silently attributed to a route the config no longer names, and `lhci`
+   * has one more hop to abort on.
+   */
+  // @req REQ-091
+  it("audits no address the middleware would redirect", () => {
+    for (const url of lighthouseConfig.ci.collect.url as string[]) {
+      const { pathname, searchParams } = new URL(url);
+
+      expect(
+        resolveRelocatedPath(pathname, searchParams),
+        `${url} has moved (relocated segment)`
+      ).toBeNull();
+      expect(
+        resolveRenamedModulePath(pathname),
+        `${url} has moved (renamed module path)`
+      ).toBeNull();
     }
   });
 

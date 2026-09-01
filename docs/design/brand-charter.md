@@ -103,7 +103,7 @@ Why share-alike rather than plain attribution: the corpus is a claim about
 peoples who have rarely held the rights to descriptions of themselves, and
 `SA` is the clause that keeps every derivative reusable by them. It also keeps
 the site compatible with the CC BY-SA media it already hosts — the Maloti
-photograph on `/fr/comprendre/anecdotes` among them. `NC` was rejected: it
+photograph on `/fr/dossiers/anecdotes` among them. `NC` was rejected: it
 reads as protective and in practice excludes Wikipedia, excludes commercial
 African media and publishers, and would conflict with that same media.
 
@@ -200,20 +200,27 @@ That doctrine is **already met almost everywhere**, which a first count of
 `.afh-accent-*` wrappers hid. Three of the wrappers on any route are the
 masthead's own axis buttons — a legend in the chrome, not the page speaking:
 
-| Route                                           | wrappers | masthead | the page's own |
-| ----------------------------------------------- | -------- | -------- | -------------- |
-| `/fr/mentions-legales`                          | 3        | 3        | **0**          |
-| `/fr/explorer` · `/fr/comprendre` · `/fr/jouer` | 4        | 3        | 1, its axis    |
-| `/fr/explorer/peuples`, and both fiches sampled | 5        | 3        | 2              |
-| **`/fr`**                                       | **13**   | 3        | **10**         |
+| Route                                        | wrappers | masthead | the page's own |
+| -------------------------------------------- | -------- | -------- | -------------- |
+| `/fr/mentions-legales`                       | 3        | 3        | **0**          |
+| `/fr/atlas` · `/fr/dossiers` · `/fr/jeux`    | 4        | 3        | 1, its axis    |
+| `/fr/atlas/peuples`, and both fiches sampled | 5        | 3        | 2              |
+| **`/fr`**                                    | **13**   | 3        | **10**         |
+
+The second row is kept as measured and no longer describes a live surface: the
+three axis landing pages were removed by ETNI-1555, so `/fr/atlas`,
+`/fr/dossiers` and `/fr/jeux` answer 404. Only their `/fr/<axis>/*` children
+remain, and the count above is what an axis page did while it existed.
 
 So the rule holds on every surface but the home, and the home's ten are not
 arbitrary either: the purpose rows carry the entity mapping (pays → teal,
 peuple → ocre, famille → terre) and the axis cards carry the axis mapping
-(Explorer → ocre, Comprendre → teal, Jouer → perv).
+(L'atlas → ocre, Les dossiers → teal, Les jeux → perv). Those three labels
+are `ACCESS_MODE_LABELS`; DEC-045 (ETNI-1614) renamed them from their
+previous verbal register (Consulter, Enquêter, Jouer) to this nominal one.
 
 What is wrong is that both are true at once. **The same hue teaches two
-lessons within one scroll**: the masthead paints `Comprendre` teal, and forty
+lessons within one scroll**: the masthead paints `Les dossiers` teal, and forty
 lines down a `PAYS` chip and the "Trois pays" section are teal too. A reader
 cannot learn a code that means two things on one page.
 
@@ -244,8 +251,8 @@ does. `--gradient-warm` aliases it, because callers already read that name.
 
 **Where it is allowed.** The masthead lockup, **the footer lockup**, a brand
 mark on a share card, and **the title of a page that names an axis rather than
-a subject**. That last one is a real distinction and worth keeping: `Explorer`,
-`Comprendre`, `Jouer` and `Recherche` name parts of the apparatus; `!Kung` and
+a subject**. That last one is a real distinction and worth keeping: `L'atlas`,
+`Les dossiers`, `Les jeux` and `Recherche` name parts of the apparatus; `!Kung` and
 `Afrique du Sud` name things in the world. A fiche title takes `--afh-text`.
 
 **And a lockup gets one treatment, not one per surface.** The footer used to
@@ -450,7 +457,7 @@ Three code paths render that wait, and they had drifted. The client overlay
 (`RouteTransitionLoader`) painted the fact alone, below the measured masthead.
 The two server screens painted a title plate, a trail, and — on a fiche — a
 night stage floored at `--afh-globe-stage-height`. On
-`/fr/explorer/pays/ZAF` the plate and the stage together filled the viewport:
+`/fr/atlas/pays/ZAF` the plate and the stage together filled the viewport:
 the fact sat below the fold and was never read, on precisely the routes that
 wait longest. The same click therefore produced two different waits depending
 on whether the segment happened to own a `loading.tsx` — a governance failure,
@@ -493,7 +500,7 @@ and said every gaze there was from outside. **Both halves were wrong**, and
 
 Four pictures, not three, and the third is already the second register.
 Al-Idrisi was born in Ceuta; his map is the opposite of an outside view, which
-is exactly why the hero carries it. `/fr/comprendre/anecdotes` does the same
+is exactly why the hero carries it. `/fr/dossiers/anecdotes` does the same
 thing with a photograph of a village in the Maloti mountains — it is a second
 example, not the only one.
 

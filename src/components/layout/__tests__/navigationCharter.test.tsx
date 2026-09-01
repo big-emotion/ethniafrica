@@ -9,6 +9,7 @@ import {
   MODULE_DEFINITIONS,
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { FICHE_BAND_BREAKPOINT_PX } from "@/components/fiche/FicheHeroBand";
 
@@ -104,6 +105,23 @@ describe("atlas charter §3 — three intentions, not ten modules", () => {
       "afh-accent-teal",
       "afh-accent-perv",
     ]);
+  });
+
+  // @req REQ-114
+  it("makes each access mode a non-navigating group of direct module links", () => {
+    const text = charter();
+
+    expect(text).toMatch(/access-mode label is a non-navigating heading/i);
+    expect(text).toMatch(/direct module\s+links sit beneath it/i);
+    expect(text).toMatch(
+      /live module is exactly one click away from the global\s+navigation/i
+    );
+    expect(text).toMatch(/unavailable\s+entries stay inert/i);
+    for (const mode of ACCESS_MODES) {
+      expect(text).toContain(`${getAxisHubRoute("fr", mode)}/`);
+    }
+    expect(text).not.toMatch(/hub needs an entry of its own inside the panel/i);
+    expect(text).not.toMatch(/axis leads with its own hub/i);
   });
 });
 
@@ -224,10 +242,9 @@ describe("atlas charter §3 — the phone bar reaches both edges", () => {
  * off is a destination the phone reader cannot reach.
  */
 describe("atlas charter §3 — the tray shows what it holds", () => {
-  // A grid item's implicit minimum is its content, so the hub's one-line
-  // facet row widened the fold's column past the tray and pushed the cards'
-  // right edge off the screen. `minmax(0, …)` is what lets the column be
-  // narrower than the row it contains.
+  // A grid item's implicit minimum is its content, so a long module label can
+  // widen the fold's column past the tray and push the cards' right edge off
+  // the screen. `minmax(0, …)` is what lets the column stay within the tray.
   // @req REQ-114
   it("keeps its entries inside the tray however wide their contents are", () => {
     const [foldBody] = ruleBodies(source(), ".sh-fold-body");
@@ -235,15 +252,10 @@ describe("atlas charter §3 — the tray shows what it holds", () => {
     expect(foldBody).toMatch(/grid-template-columns:\s*minmax\(\s*0/);
   });
 
-  // In the wide panel the facets scroll sideways on one line, because a
-  // 205px card wraps them into a stack that reads as destinations. The tray
-  // has no such card and no pointer to drag with, so there the row wraps
-  // and every facet is simply on screen.
+  // Facets are direct module entries now. Keeping the retired nested facet
+  // row would reintroduce a second navigation level below the access mode.
   // @req REQ-114
-  it("wraps the hub's facets rather than hiding them behind a scroll", () => {
-    const [trayFacets] = ruleBodies(source(), ".sh-fold-body .sh-facets");
-
-    expect(trayFacets).toMatch(/flex-wrap:\s*wrap/);
-    expect(trayFacets).toMatch(/overflow-x:\s*visible/);
+  it("contains no retired hub or facet sub-navigation", () => {
+    expect(source()).not.toMatch(/axisHubEntry|sh-hub|sh-facets/);
   });
 });

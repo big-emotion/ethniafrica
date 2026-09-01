@@ -6,6 +6,10 @@ import {
   getAllAfrikCountries,
   getAfrikCountryById,
 } from "@/lib/supabase/queries/afrik/countries";
+import {
+  compactCountryAtlasLanguages,
+  deriveCountrySynthesis,
+} from "@/lib/home/countrySynthesis";
 import type { Country } from "@/types/afrik";
 
 export interface PaginatedResult<T> {
@@ -40,6 +44,34 @@ export async function getCountryIndex(): Promise<
 > {
   const all = await getAllAfrikCountries();
   return all.map((country) => ({ id: country.id, nameFr: country.nameFr }));
+}
+
+export interface CountryAtlasIndexEntry {
+  id: string;
+  population?: number;
+  referenceYear?: number;
+  languages: string[];
+}
+
+/**
+ * The narrow country index required by the atlas picker and its brief panel.
+ * Query access stays inside the service boundary; the route receives only
+ * serializable facts that the panel is approved to show.
+ */
+// @req REQ-117
+export async function getCountryAtlasIndex(): Promise<
+  CountryAtlasIndexEntry[]
+> {
+  const all = await getAllAfrikCountries();
+
+  return all.map((country) => ({
+    id: country.id,
+    population: country.content?.demographics?.totalPopulation,
+    referenceYear: country.content?.demographics?.referenceYear,
+    languages: compactCountryAtlasLanguages(
+      deriveCountrySynthesis(country).languages
+    ),
+  }));
 }
 
 /**

@@ -119,7 +119,16 @@
     "REQ-119",
     "REQ-120",
     "REQ-121",
-    "REQ-122"
+    "REQ-122",
+    "REQ-126",
+    "REQ-129",
+    "REQ-131",
+    "REQ-132",
+    "REQ-133",
+    "REQ-135",
+    "REQ-136",
+    "REQ-137",
+    "REQ-138"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -238,6 +247,14 @@
     "REQ-119": "Confluence REQ-119",
     "REQ-120": "Confluence REQ-120",
     "REQ-121": "Confluence FR65 (extension) — inversion templates T6-T11 and contested-exonym T12",
-    "REQ-122": "Confluence REQ-122 — fiche prose text shape: closed markup grammar, serialized-JSON and authoring-note gates"
+    "REQ-122": "Confluence REQ-122 — fiche prose text shape: closed markup grammar, serialized-JSON and authoring-note gates",
+    "REQ-129": "Confluence REQ-129 — a partial input finds entities by prefix: an incomplete term matches entities whose indexed name begins with it, across every entity nature, and a declared spelling variant resolves to its entity",
+    "REQ-131": "Confluence REQ-131 — supersedes REQ-028: FR28/FR28-strict demographic-sum completeness scoped to the 54-country African reference set",
+    "REQ-132": "Confluence REQ-132 — About page content and presentation",
+    "REQ-133": "Confluence REQ-133 — a name fiche states its origin, its spread and its bearers",
+    "REQ-135": "Confluence REQ-135 — an approximate input reaches the canonical name, including declared transliteration variants",
+    "REQ-136": "Confluence REQ-136 — The language layer is loaded, complete and reachable",
+    "REQ-137": "Confluence REQ-137 — ARCH-018: a person cannot be persisted without a role category or an attached source, and an ethnographer's link to a people is recorded via the inverse observation relation, never as membership",
+    "REQ-138": "Confluence REQ-138 — The navigation names content, and identifier, label and URL agree"
   }
 }

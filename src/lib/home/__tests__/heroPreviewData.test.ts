@@ -38,7 +38,7 @@ import type { HubModule } from "@/lib/hubs/moduleAvailability";
 const hubModule = (overrides: Partial<HubModule>): HubModule => ({
   id: "x",
   name: "X",
-  accessMode: "jouer",
+  accessMode: "jeux",
   page: null,
   availability: "data",
   available: true,

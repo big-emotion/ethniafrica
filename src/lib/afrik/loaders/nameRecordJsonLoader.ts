@@ -1,7 +1,8 @@
 /**
  * Name-record JSON loader — reads dataset/source/afrik/noms/*.json and writes
- * each dossier's entries into sources, assertions, and name_records (Module 0
- * fabric, FR57). See Epic 8 Story 8.5 (ETNI-469).
+ * each dossier's entries into sources, a placeholder fiche_revisions row,
+ * assertions, and name_records (Module 0 fabric, FR57). See Epic 8 Story 8.5
+ * (ETNI-469).
  */
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
@@ -119,22 +120,75 @@ async function upsertSource(
 }
 
 /**
+ * `assertions.fiche_revision_id` is a NOT NULL FK to `fiche_revisions`
+ * (migration 020) — every assertion has to be anchored to a published
+ * snapshot. The moderation pipeline (migration 051) creates that snapshot
+ * as part of publishing a reviewed revision; a noms/ dossier has no such
+ * revision, so this loader stands up a single placeholder `fiche_revisions`
+ * row per entity (version 1) and reuses it across every name entry in that
+ * entity's dossier — same find-or-create shape as `findOrCreateAssertion`.
+ */
+async function findOrCreateFicheRevision(
+  supabase: AdminClient,
+  entityType: NameRecordDossier["entityType"],
+  entityId: string
+): Promise<{ id: string } | { error: string }> {
+  const { data: existing, error: selectError } = await supabase
+    .from("fiche_revisions")
+    .select("id")
+    .eq("entity_type", entityType)
+    .eq("entity_id", entityId)
+    .order("version", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (selectError) {
+    return { error: errorMessage(selectError) };
+  }
+  if (existing) {
+    return { id: existing.id as string };
+  }
+
+  const { data: inserted, error: insertError } = await supabase
+    .from("fiche_revisions")
+    .insert({
+      entity_type: entityType,
+      entity_id: entityId,
+      version: 1,
+      content_snapshot: {
+        source: "nameRecordJsonLoader",
+        note: "Placeholder revision for name-record assertions; dataset/source/afrik/noms/ is the canonical source, not a moderation-authored fiche revision.",
+      },
+      published_at: new Date().toISOString(),
+    })
+    .select("id")
+    .single();
+
+  if (insertError || !inserted) {
+    return { error: errorMessage(insertError) };
+  }
+  return { id: inserted.id as string };
+}
+
+/**
  * assertions has no unique constraint on (entity_type, entity_id,
  * field_path), so idempotency on re-run is enforced here via
  * select-before-write rather than a database guarantee.
  */
 async function findOrCreateAssertion(
   supabase: AdminClient,
-  peopleId: string,
+  entityType: NameRecordDossier["entityType"],
+  entityId: string,
   fieldPath: string,
   statement: string,
-  sourceIds: string[]
+  sourceIds: string[],
+  ficheRevisionId: string
 ): Promise<{ id: string } | { error: string }> {
   const { data: existing, error: selectError } = await supabase
     .from("assertions")
     .select("id")
-    .eq("entity_type", "people")
-    .eq("entity_id", peopleId)
+    .eq("entity_type", entityType)
+    .eq("entity_id", entityId)
     .eq("field_path", fieldPath)
     .maybeSingle();
 
@@ -157,11 +211,12 @@ async function findOrCreateAssertion(
   const { data: inserted, error: insertError } = await supabase
     .from("assertions")
     .insert({
-      entity_type: "people",
-      entity_id: peopleId,
+      entity_type: entityType,
+      entity_id: entityId,
       field_path: fieldPath,
       statement,
       source_ids: sourceIds,
+      fiche_revision_id: ficheRevisionId,
     })
     .select("id")
     .single();
@@ -174,12 +229,13 @@ async function findOrCreateAssertion(
 
 async function upsertNameRecordEntry(
   supabase: AdminClient,
-  peopleId: string,
+  entityType: NameRecordDossier["entityType"],
+  entityId: string,
   entry: NameRecordEntry,
   report: NameRecordLoadReport
 ): Promise<void> {
   report.total += 1;
-  const recordLabel = `${peopleId}/${entry.nameType}/${entry.nameText}`;
+  const recordLabel = `${entityId}/${entry.nameType}/${entry.nameText}`;
 
   const sourceIds: string[] = [];
   for (const source of entry.sources) {
@@ -193,13 +249,27 @@ async function upsertNameRecordEntry(
     sourceIds.push(result.id);
   }
 
+  const ficheRevision = await findOrCreateFicheRevision(
+    supabase,
+    entityType,
+    entityId
+  );
+  if ("error" in ficheRevision) {
+    report.errors.push(
+      `${recordLabel}: fiche_revisions — ${ficheRevision.error}`
+    );
+    return;
+  }
+
   const fieldPath = `names.${entry.nameType}.${normalizeToKey(entry.nameText)}`;
   const assertion = await findOrCreateAssertion(
     supabase,
-    peopleId,
+    entityType,
+    entityId,
     fieldPath,
     entry.nameText,
-    sourceIds
+    sourceIds,
+    ficheRevision.id
   );
   if ("error" in assertion) {
     report.errors.push(`${recordLabel}: assertion — ${assertion.error}`);
@@ -208,8 +278,8 @@ async function upsertNameRecordEntry(
 
   const { error: nameRecordError } = await supabase.from("name_records").upsert(
     {
-      entity_type: "people",
-      entity_id: peopleId,
+      entity_type: entityType,
+      entity_id: entityId,
       name_text: entry.nameText,
       name_type: entry.nameType,
       language_of_origin: entry.languageOfOrigin,
@@ -251,7 +321,13 @@ export async function loadNameRecords(
 
   for (const dossier of dossiers) {
     for (const entry of dossier.names) {
-      await upsertNameRecordEntry(supabase, dossier.id, entry, report);
+      await upsertNameRecordEntry(
+        supabase,
+        dossier.entityType,
+        dossier.id,
+        entry,
+        report
+      );
     }
   }
 

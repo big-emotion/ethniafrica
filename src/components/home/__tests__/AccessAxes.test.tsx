@@ -8,6 +8,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { AccessAxes, type AccessAxesProps } from "@/components/home/AccessAxes";
 import { getLocalizedRoute } from "@/lib/routing";
 import {
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   getModulesForAccessMode,
   type AccessMode,
@@ -67,20 +68,29 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 
     const axes = screen.getAllByTestId(/^access-axis-\w+$/);
     expect(axes.map((axis) => axis.dataset.testid)).toEqual([
-      "access-axis-explorer",
-      "access-axis-comprendre",
-      "access-axis-jouer",
+      "access-axis-atlas",
+      "access-axis-dossiers",
+      "access-axis-jeux",
     ]);
     // h3: the cards are items of the section its own heading opens, not
     // siblings of it.
     expect(
-      screen.getByRole("heading", { level: 3, name: "Explorer" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.atlas,
+      })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 3, name: "Comprendre" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.dossiers,
+      })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 3, name: "Jouer" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.jeux,
+      })
     ).toBeInTheDocument();
   });
 
@@ -96,7 +106,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     const heading = screen.getByTestId("home-axes-heading");
     expect(heading.tagName).toBe("H2");
     expect(heading).toHaveTextContent(
-      "Trois entrées, selon ce que vous cherchez."
+      "Trois chemins, selon ce que vous cherchez."
     );
     expect(screen.queryByTestId("access-axes-lead")).toBeNull();
     expect(screen.queryByText(/Avec quoi le lecteur/)).toBeNull();
@@ -108,9 +118,9 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   // would land.
   // @req REQ-113
   it.each([
-    ["explorer", /peuples, pays, langues et familles/i],
-    ["comprendre", /d'où viennent les noms/i],
-    ["jouer", /jeux et des quiz tirés des fiches/i],
+    ["atlas", /peuples, pays, langues et familles/i],
+    ["dossiers", /d'où viennent les noms/i],
+    ["jeux", /jeux et des quiz tirés des fiches/i],
   ])("says what %s holds, not what the reader does", (id, contents) => {
     renderAxes();
 
@@ -119,24 +129,43 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     expect(stake.textContent).not.toMatch(/il arrive|il repart/i);
   });
 
-  // The href survives as the no-JS and crawler path, but a reader with
-  // JavaScript never spends a page load on the axis slug any more.
+  /**
+   * The fallback href is the no-JS and crawler path, and it used to be the
+   * axis landing page. ETNI-1555 deleted those three pages, so the card now
+   * falls back to the first module the axis actually offers — a real
+   * destination inside the axis rather than a 308 into a 404.
+   */
   // @req REQ-114
-  it("keeps the hub route as a fallback href on every axis", () => {
+  it("falls back to the axis's first live module on every axis", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "explorerHub")
-    );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "comprendreHub")
-    );
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "jouerHub")
-    );
+    for (const mode of ACCESS_MODES) {
+      const first = modulesByAxis[mode][0];
+      const href = first.gameSlug
+        ? `${getLocalizedRoute("fr", "jeuxHub")}/${first.gameSlug}`
+        : getLocalizedRoute("fr", first.page);
+
+      expect(screen.getByTestId(`access-axis-${mode}`), mode).toHaveAttribute(
+        "href",
+        href
+      );
+    }
+  });
+
+  /**
+   * The three axis landing pages are gone. A card that still pointed at one
+   * would send a crawler — and a reader without JavaScript — to a 404.
+   */
+  // @req REQ-114
+  it("points no axis card at a retired axis landing page", () => {
+    renderAxes();
+
+    for (const mode of ACCESS_MODES) {
+      expect(
+        screen.getByTestId(`access-axis-${mode}`).getAttribute("href"),
+        mode
+      ).not.toBe(getLocalizedRoute("fr", `${mode}Hub`));
+    }
   });
 
   // Every figure on the home is a count of something a reader could go
@@ -145,12 +174,12 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   it("counts real corpus entries rather than announcing an era", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-figure-atlas")).toHaveTextContent(
       "803 peuples · 54 pays"
     );
-    expect(
-      screen.getByTestId("access-axis-figure-comprendre")
-    ).toHaveTextContent("6 repères · 1 doctrine");
+    expect(screen.getByTestId("access-axis-figure-dossiers")).toHaveTextContent(
+      "6 repères · 1 doctrine"
+    );
     expect(screen.queryByText(/3\s?000\s?ans/)).not.toBeInTheDocument();
   });
 
@@ -160,25 +189,25 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       counts: { ...counts, peoples: 12, countries: 3, migrations: 1 },
     });
 
-    expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-figure-atlas")).toHaveTextContent(
       "12 peuples · 3 pays"
     );
-    expect(
-      screen.getByTestId("access-axis-figure-comprendre")
-    ).toHaveTextContent("1 repère · 1 doctrine");
+    expect(screen.getByTestId("access-axis-figure-dossiers")).toHaveTextContent(
+      "1 repère · 1 doctrine"
+    );
   });
 
   // @req REQ-113
   it("gives each axis one action verb, not a paragraph", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-cta-explorer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-cta-atlas")).toHaveTextContent(
       "Parcourir"
     );
-    expect(screen.getByTestId("access-axis-cta-comprendre")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-cta-dossiers")).toHaveTextContent(
       "Remonter"
     );
-    expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-cta-jeux")).toHaveTextContent(
       "Se tester"
     );
   });
@@ -187,13 +216,13 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   it("scopes each axis to its own categorical accent", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-explorer")).toHaveClass(
+    expect(screen.getByTestId("access-axis-atlas")).toHaveClass(
       "afh-accent-ocre"
     );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveClass(
+    expect(screen.getByTestId("access-axis-dossiers")).toHaveClass(
       "afh-accent-teal"
     );
-    expect(screen.getByTestId("access-axis-jouer")).toHaveClass(
+    expect(screen.getByTestId("access-axis-jeux")).toHaveClass(
       "afh-accent-perv"
     );
   });
@@ -204,7 +233,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   it("carries a decorative animated glyph per axis", () => {
     renderAxes();
 
-    for (const id of ["explorer", "comprendre", "jouer"]) {
+    for (const id of ["atlas", "dossiers", "jeux"]) {
       const glyph = screen.getByTestId(`access-axis-glyph-${id}`);
       expect(glyph.querySelector("svg")).toHaveAttribute("aria-hidden", "true");
     }
@@ -215,10 +244,10 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     reducedMotion = true;
     renderAxes();
 
-    const axis = screen.getByTestId("access-axis-explorer");
+    const axis = screen.getByTestId("access-axis-atlas");
     expect(axis.className).not.toContain("access-axis-reveal");
     expect(
-      screen.getByTestId("access-axis-glyph-explorer").innerHTML
+      screen.getByTestId("access-axis-glyph-atlas").innerHTML
     ).not.toContain("g-dot");
   });
 
@@ -226,7 +255,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   it("keeps every axis above the 44px touch target", () => {
     renderAxes();
 
-    for (const id of ["explorer", "comprendre", "jouer"]) {
+    for (const id of ["atlas", "dossiers", "jeux"]) {
       expect(screen.getByTestId(`access-axis-${id}`).className).toContain(
         "min-h-11"
       );
@@ -246,13 +275,13 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
   it("promises the action once one module behind the axis is live", () => {
     renderAxes({ counts });
 
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-jeux")).toHaveAttribute(
       "data-available",
       "true"
     );
-    expect(
-      screen.getByTestId("access-axis-figure-jouer")
-    ).not.toHaveTextContent("en préparation");
+    expect(screen.getByTestId("access-axis-figure-jeux")).not.toHaveTextContent(
+      "en préparation"
+    );
   });
 
   // The axis used to promise « 2 peuples face à face », a sentence written
@@ -263,8 +292,8 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
   it("counts the games it offers rather than describing one of them", () => {
     renderAxes({ counts });
 
-    const figure = screen.getByTestId("access-axis-figure-jouer");
-    expect(figure).toHaveTextContent(`${modulesByAxis.jouer.length} jeux`);
+    const figure = screen.getByTestId("access-axis-figure-jeux");
+    expect(figure).toHaveTextContent(`${modulesByAxis.jeux.length} jeux`);
     expect(figure).not.toHaveTextContent("2 peuples face à face");
   });
 
@@ -285,14 +314,14 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       {
         id: "quiz",
         name: "Le quiz des parcours",
-        accessMode: "jouer",
+        accessMode: "jeux",
         page: "quiz",
         availability: "data",
       },
       {
         id: "liens",
         name: "Les liens invisibles",
-        accessMode: "jouer",
+        accessMode: "jeux",
         page: null,
         availability: "data",
       },
@@ -303,24 +332,23 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
         counts,
         modulesByAxis: {
           ...modulesByAxis,
-          jouer: darkJouer.map((definition) => ({
+          jeux: darkJouer.map((definition) => ({
             ...definition,
             available: false,
           })),
         },
       });
 
-      const jouer = screen.getByTestId("access-axis-jouer");
+      const jouer = screen.getByTestId("access-axis-jeux");
       expect(jouer).toHaveAttribute("data-available", "false");
-      expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+      expect(screen.getByTestId("access-axis-cta-jeux")).toHaveTextContent(
         "Bientôt"
       );
-      // Still a link: without JavaScript the hub is where the reader sees
-      // what is coming.
-      expect(jouer).toHaveAttribute(
-        "href",
-        getLocalizedRoute("fr", "jouerHub")
-      );
+      // An axis offering nothing has nowhere to send a reader without
+      // JavaScript, so the card drops the anchor and stays what it has
+      // always behaved as: the button that deploys the modules.
+      expect(jouer).not.toHaveAttribute("href");
+      expect(jouer.tagName).toBe("BUTTON");
     } finally {
       if (quizFlag === undefined) {
         delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
@@ -336,15 +364,15 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
   it("leaves the axes with live modules promising their action", () => {
     renderAxes({ counts });
 
-    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-atlas")).toHaveAttribute(
       "data-available",
       "true"
     );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-dossiers")).toHaveAttribute(
       "data-available",
       "true"
     );
-    expect(screen.getByTestId("access-axis-cta-explorer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-cta-atlas")).toHaveTextContent(
       "Parcourir"
     );
   });
@@ -401,16 +429,16 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   // @req REQ-114
   it("swallows the navigation and deploys the axis in place", () => {
     renderAxes();
-    const explorer = screen.getByTestId("access-axis-explorer");
+    const explorer = screen.getByTestId("access-axis-atlas");
     expect(explorer).toHaveAttribute("aria-expanded", "false");
 
     // fireEvent reports false when a handler called preventDefault.
     const proceeded = fireEvent.click(explorer);
 
     expect(proceeded).toBe(false);
-    expect(screen.getByTestId("axis-panel-explorer")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-panel-atlas")).toBeInTheDocument();
     expect(explorer).toHaveAttribute("aria-expanded", "true");
-    expect(explorer).toHaveAttribute("aria-controls", "axis-panel-explorer");
+    expect(explorer).toHaveAttribute("aria-controls", "axis-panel-atlas");
   });
 
   // @req REQ-114
@@ -433,9 +461,9 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   it("deploys the modules of the axis that was opened, and no others", async () => {
     renderAxes();
 
-    await userEvent.click(screen.getByTestId("access-axis-comprendre"));
+    await userEvent.click(screen.getByTestId("access-axis-dossiers"));
 
-    expect(screen.getByTestId("axis-module-doctrine")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-anecdotes")).toBeInTheDocument();
     expect(screen.getByTestId("axis-module-frise")).toBeInTheDocument();
     expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
   });
@@ -447,7 +475,7 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   it("sends a facet click to that facet of the hub, never to the axis slug", async () => {
     renderAxes();
 
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.click(screen.getByTestId("access-axis-atlas"));
 
     expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
       "href",
@@ -459,11 +487,11 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   it("keeps a single axis open, switching rather than stacking", async () => {
     renderAxes();
 
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
-    await userEvent.click(screen.getByTestId("access-axis-jouer"));
+    await userEvent.click(screen.getByTestId("access-axis-atlas"));
+    await userEvent.click(screen.getByTestId("access-axis-jeux"));
 
-    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
-    expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
+    expect(screen.queryByTestId("axis-panel-atlas")).not.toBeInTheDocument();
+    expect(screen.getByTestId("axis-panel-jeux")).toBeInTheDocument();
   });
 
   // @req REQ-114
@@ -474,11 +502,11 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
       "none"
     );
 
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.click(screen.getByTestId("access-axis-atlas"));
 
     expect(screen.getByTestId("access-axes")).toHaveAttribute(
       "data-open",
-      "explorer"
+      "atlas"
     );
   });
 
@@ -488,10 +516,10 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   it("drops the action verb from the card it has opened", async () => {
     renderAxes();
 
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.click(screen.getByTestId("access-axis-atlas"));
 
     expect(
-      screen.queryByTestId("access-axis-cta-explorer")
+      screen.queryByTestId("access-axis-cta-atlas")
     ).not.toBeInTheDocument();
   });
 
@@ -500,24 +528,24 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
   // @req REQ-114
   it("closes on Escape and hands focus back to the card that opened it", async () => {
     renderAxes();
-    const explorer = screen.getByTestId("access-axis-explorer");
+    const explorer = screen.getByTestId("access-axis-atlas");
 
     await userEvent.click(explorer);
     await userEvent.keyboard("{Escape}");
 
-    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("axis-panel-atlas")).not.toBeInTheDocument();
     expect(explorer).toHaveFocus();
   });
 
   // @req REQ-114
   it("closes when the opened card is clicked a second time", async () => {
     renderAxes();
-    const explorer = screen.getByTestId("access-axis-explorer");
+    const explorer = screen.getByTestId("access-axis-atlas");
 
     await userEvent.click(explorer);
     await userEvent.click(explorer);
 
-    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("axis-panel-atlas")).not.toBeInTheDocument();
     expect(explorer).toHaveAttribute("aria-expanded", "false");
   });
 
@@ -533,11 +561,11 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
     renderAxes({
       modulesByAxis: {
         ...modulesByAxis,
-        jouer: [
+        jeux: [
           {
             id: "annonce",
             name: "Un module annoncé avant sa route",
-            accessMode: "jouer",
+            accessMode: "jeux",
             page: null,
             availability: "data",
             available: false,
@@ -546,7 +574,7 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
       },
     });
 
-    await userEvent.click(screen.getByTestId("access-axis-jouer"));
+    await userEvent.click(screen.getByTestId("access-axis-jeux"));
 
     expect(
       screen.getByTestId("axis-module-unavailable-annonce")
@@ -569,7 +597,7 @@ describe("AccessAxes — Escape on the one level Jouer now has (REQ-120)", () =>
   // @req REQ-120
   it("offers no shelf to step back to, and closes on the first press", async () => {
     renderAxes();
-    const jouer = screen.getByTestId("access-axis-jouer");
+    const jouer = screen.getByTestId("access-axis-jeux");
 
     await userEvent.click(jouer);
     expect(screen.getByTestId("axis-module-link-mercator")).toBeInTheDocument();
@@ -578,7 +606,7 @@ describe("AccessAxes — Escape on the one level Jouer now has (REQ-120)", () =>
     ).not.toBeInTheDocument();
 
     await userEvent.keyboard("{Escape}");
-    expect(screen.queryByTestId("axis-panel-jouer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("axis-panel-jeux")).not.toBeInTheDocument();
     expect(jouer).toHaveFocus();
   });
 
@@ -587,9 +615,9 @@ describe("AccessAxes — Escape on the one level Jouer now has (REQ-120)", () =>
   it("still closes an unfiled axis on the first press", async () => {
     renderAxes();
 
-    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.click(screen.getByTestId("access-axis-atlas"));
     await userEvent.keyboard("{Escape}");
 
-    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("axis-panel-atlas")).not.toBeInTheDocument();
   });
 });

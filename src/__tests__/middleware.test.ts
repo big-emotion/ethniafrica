@@ -218,13 +218,15 @@ describe("middleware", () => {
 
   // The three hub URLs shipped under their resource names before the axes
   // gave them verbs. They were published, so they are indexed and
-  // bookmarked: the rename has to leave a trail rather than a 404.
+  // bookmarked: the rename has to leave a trail rather than a 404. ETNI-1555
+  // then deleted the three landing pages they had been retargeted at, so each
+  // one now lands on the facet that holds the resource it was named for.
   describe("legacy hub redirects (REQ-114)", () => {
     // @req REQ-114
     it.each([
-      ["peuples-hub", "comprendre"],
-      ["pays-hub", "explorer"],
-      ["familles-hub", "jouer"],
+      ["peuples-hub", "atlas/peuples"],
+      ["pays-hub", "atlas/pays"],
+      ["familles-hub", "atlas/familles"],
     ])("redirects /fr/%s to /fr/%s with 308", async (legacy, current) => {
       const request = new NextRequest(`http://localhost:3000/fr/${legacy}`);
       const response = await middleware(request);
@@ -244,7 +246,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer?from=newsletter"
+        "http://localhost:3000/fr/atlas/pays?from=newsletter"
       );
     });
 
@@ -255,21 +257,35 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/comprendre"
+        "http://localhost:3000/fr/atlas/peuples"
       );
     });
 
-    // The rename moved a hub, not the resource pages it groups. /fr/explorer/peuples
+    // The rename moved a hub, not the resource pages it groups. /fr/atlas/peuples
     // is a live route and must not be swept up by a prefix match on
     // "peuples".
     // @req REQ-114
     it("leaves the resource pages the hubs group untouched", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/atlas/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).not.toBe(308);
+    });
+
+    // ETNI-1615 (REQ-138): the verb-prefixed address the hub rename above
+    // still targeted (before this ticket) is now itself retired — a reader
+    // arriving on it has to reach the noun-prefixed successor, not a 404.
+    // @req REQ-091
+    it("also retires the verb-prefixed address the hub used to target", async () => {
       const request = new NextRequest(
         "http://localhost:3000/fr/explorer/peuples"
       );
       const response = await middleware(request);
 
-      expect(response.status).not.toBe(308);
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/atlas/peuples"
+      );
     });
   });
 
@@ -291,24 +307,24 @@ describe("middleware", () => {
     });
 
     // @req REQ-091
-    it("redirects /en/peuples to /fr/explorer/peuples preserving subpath", async () => {
+    it("redirects /en/peuples to /fr/atlas/peuples preserving subpath", async () => {
       const request = new NextRequest("http://localhost:3000/en/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples"
+        "http://localhost:3000/fr/atlas/peuples"
       );
     });
 
     // @req REQ-091
-    it("redirects /es/pays/zaf to /fr/explorer/pays/zaf preserving deep subpath", async () => {
+    it("redirects /es/pays/zaf to /fr/atlas/pays/zaf preserving deep subpath", async () => {
       const request = new NextRequest("http://localhost:3000/es/pays/zaf");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/pays/zaf"
+        "http://localhost:3000/fr/atlas/pays/zaf"
       );
     });
 
@@ -320,7 +336,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples?tri=population"
+        "http://localhost:3000/fr/atlas/peuples?tri=population"
       );
     });
 
@@ -337,7 +353,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples/PPL_YORUBA"
+        "http://localhost:3000/fr/atlas/peuples/PPL_YORUBA"
       );
     });
 
@@ -350,10 +366,8 @@ describe("middleware", () => {
     });
 
     // @req REQ-091
-    it("does not redirect /fr/explorer/peuples", async () => {
-      const request = new NextRequest(
-        "http://localhost:3000/fr/explorer/peuples"
-      );
+    it("does not redirect /fr/atlas/peuples", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/atlas/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(200);
@@ -425,6 +439,57 @@ describe("middleware", () => {
       expect(csp).toContain("frame-ancestors 'self'");
     });
 
+    // ARCH-016: opens the CSP to the Prismic editorial-media host, declared
+    // explicitly rather than left to the (previously implicit) default-src
+    // fallback.
+    // @req REQ-052
+    it("declares media-src with the Prismic image host and no wildcard", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+
+      expect(mediaSrc).toBeDefined();
+      expect(mediaSrc).toContain("'self'");
+      expect(mediaSrc).toContain("https://images.prismic.io");
+      expect(mediaSrc).not.toContain("*");
+    });
+
+    // frame-src is declared explicitly (no longer an implicit default-src
+    // fallback) but carries no external host yet: REQ-128 owns which embed
+    // provider(s) are trusted, and none is confirmed at this stage.
+    // @req REQ-052
+    it("declares frame-src restricted to 'self' with no external host yet", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
+
+      expect(frameSrc).toBeDefined();
+      expect(frameSrc).toBe("frame-src 'self'");
+      expect(frameSrc).not.toContain("*");
+    });
+
+    // A host that was never declared must stay blocked — the CSP is a
+    // host-by-host allowlist, not an open door once one provider is trusted.
+    // @req REQ-052
+    it("does not declare an undeclared media/embed host", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
+
+      expect(mediaSrc).not.toContain("evil.example");
+      expect(frameSrc).not.toContain("evil.example");
+    });
+
     // Neither directive falls back to default-src, so leaving them out leaves
     // them unrestricted: an injected <base> can re-point every relative URL on
     // the page, and an injected form can post to any origin.
@@ -453,7 +518,8 @@ describe("middleware", () => {
       expect(csp).toContain("form-action 'self'");
     });
 
-    it("does not include 'unsafe-inline' in script-src or style-src", async () => {
+    // @req REQ-052
+    it("does not include 'unsafe-inline' in script-src, style-src, media-src or frame-src", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
       const response = await middleware(request);
 
@@ -462,6 +528,8 @@ describe("middleware", () => {
 
       const scriptSrc = directives.find((d) => d.startsWith("script-src"));
       const styleSrc = directives.find((d) => d.startsWith("style-src"));
+      const mediaSrc = directives.find((d) => d.startsWith("media-src"));
+      const frameSrc = directives.find((d) => d.startsWith("frame-src"));
 
       expect(scriptSrc).toBeDefined();
       expect(scriptSrc).not.toContain("'unsafe-inline'");
@@ -469,6 +537,10 @@ describe("middleware", () => {
       expect(styleSrc).toBeDefined();
       expect(styleSrc).not.toContain("'unsafe-inline'");
       expect(styleSrc).toMatch(/'nonce-[^']+'/);
+      expect(mediaSrc).toBeDefined();
+      expect(mediaSrc).not.toContain("'unsafe-inline'");
+      expect(frameSrc).toBeDefined();
+      expect(frameSrc).not.toContain("'unsafe-inline'");
     });
 
     // @req REQ-052
@@ -491,8 +563,8 @@ describe("middleware", () => {
     it("allows inline style attributes only on public localized pages", async () => {
       for (const pathname of [
         "/fr",
-        "/fr/explorer/pays/SEN",
-        "/fr/explorer/familles/FLG_BANTU",
+        "/fr/atlas/pays/SEN",
+        "/fr/atlas/familles/FLG_BANTU",
       ]) {
         const response = await middleware(
           new NextRequest(`http://localhost:3000${pathname}`)
@@ -523,6 +595,27 @@ describe("middleware", () => {
           directives.find((directive) => directive.startsWith("style-src-attr"))
         ).toBeUndefined();
       }
+    });
+
+    // The developer portal now mounts the global header. Its static CSS is a
+    // client-injected <style> element, while the portal itself needs no style
+    // attributes. Keep the relaxation narrower than the localized pages.
+    // @req REQ-099
+    it("allows the developer portal header style element without allowing style attributes", async () => {
+      const response = await middleware(
+        new NextRequest("http://localhost:3000/docs/api/v2")
+      );
+      const directives = response.headers
+        .get("Content-Security-Policy")!
+        .split(";")
+        .map((directive) => directive.trim());
+
+      expect(
+        directives.find((directive) => directive.startsWith("style-src "))
+      ).toBe("style-src 'self' 'unsafe-inline'");
+      expect(
+        directives.find((directive) => directive.startsWith("style-src-attr"))
+      ).toBeUndefined();
     });
 
     it("generates a different nonce for each request", async () => {

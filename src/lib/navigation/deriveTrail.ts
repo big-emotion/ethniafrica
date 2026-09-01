@@ -3,11 +3,7 @@ import {
   getLocalizedRoute,
   getPageFromRoute,
 } from "@/lib/routing";
-import {
-  AXIS_HUB_PAGE,
-  getAxisForPage,
-  getAxisHubRoute,
-} from "@/lib/hubs/axisRoutes";
+import { AXIS_HUB_PAGE, getAxisForPage } from "@/lib/hubs/axisRoutes";
 import { translations } from "@/lib/translations";
 
 /**
@@ -65,9 +61,15 @@ export function deriveTrail(
    * being an escape hatch rather than a hierarchy, because inventing a parent
    * for the legal pages would be inventing a claim about the site's shape.
    *
-   * The axis crumb is skipped on the axis hub itself. `Accueil › Explorer ›
-   * Explorer` would name the same place twice, and the charter already rules
-   * on that shape: a level offering no choice is not a level.
+   * The axis crumb carries no href. It names the access mode the page sits
+   * under; it does not lead anywhere, because there is nowhere to lead to —
+   * ETNI-1555 deleted the three axis landing pages, since a level offering no
+   * choice is not a level. The atlas charter had already called this crumb a
+   * non-navigating heading.
+   *
+   * The axis crumb is skipped on the axis hub itself, for the same reason
+   * under a different name: `Accueil › Explorer › Explorer` would name the
+   * same place twice.
    */
   const crumbs: TrailCrumb[] = [{ label: t.home, href: `/${language}` }];
 
@@ -86,15 +88,23 @@ export function deriveTrail(
 
   if (page) {
     const axis = getAxisForPage(page);
-    if (axis && AXIS_HUB_PAGE[axis] !== page) {
-      crumbs.push({
-        label: t.pages[AXIS_HUB_PAGE[axis]],
-        href: getAxisHubRoute(language, axis),
-      });
+    const isAxisHub = axis !== null && AXIS_HUB_PAGE[axis] === page;
+
+    if (axis && !isAxisHub) {
+      crumbs.push({ label: t.pages[AXIS_HUB_PAGE[axis]] });
     }
 
     base = getLocalizedRoute(language, page);
-    crumbs.push({ label: t.pages[page], href: base });
+
+    // A game — `/fr/jeux/mercator` — has no `PageType` of its own, so the
+    // slug table answers with the axis hub and the axis arrives here as the
+    // page rather than above it. It is the same crumb and owes the same
+    // silence: `base` still opens the walk below it, but nothing links to it.
+    crumbs.push(
+      isAxisHub
+        ? { label: t.pages[page] }
+        : { label: t.pages[page], href: base }
+    );
   }
 
   const tail = pathname.slice(base.length).split("/").filter(Boolean);

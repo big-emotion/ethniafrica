@@ -282,6 +282,7 @@ export interface LanguageContent {
   speakers?: number;
   script?: string;
   status?: string;
+  spellingAliases?: string[]; // Alternate spellings of the same name (DEC-034)
 
   // Allow new sections
   [key: string]: unknown;
@@ -383,6 +384,12 @@ export interface HistoricalFactsSection {
 }
 
 export interface DemographicsSection {
+  /** Official country population, independently of people-level coverage. */
+  totalPopulation?: number;
+  /** Reference year of `totalPopulation`. */
+  referenceYear?: number;
+  /** Human-readable provenance matching a structured country source. */
+  source?: string;
   peoples?: PeopleDemographicEntry[];
 }
 
@@ -432,6 +439,7 @@ export interface AppellationsSection {
   mainName: string;
   selfAppellation: string; // Endonym
   exonyms?: string[]; // Historical names
+  spellingAliases?: string[]; // Alternate spellings of the same name (DEC-034)
   originOfExonyms?: string;
   whyProblematic?: string; // Why some terms are problematic
   contemporaryUsage?: string;

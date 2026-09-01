@@ -56,31 +56,13 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/PeopleV2'
- *                 meta:
- *                   $ref: '#/components/schemas/PaginationMeta'
- *             example:
- *               data:
- *                 - id: "PPL_SHONA"
- *                   nameMain: "Shona"
- *                   languageFamilyId: "FLG_BANTU"
- *                   currentCountries: ["ZWE", "MOZ"]
- *               meta:
- *                 total: 592
- *                 page: 1
- *                 perPage: 20
- *                 totalPages: 30
+ *               $ref: '#/components/schemas/PeoplesListEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
@@ -90,9 +72,11 @@ import {
   validatePage,
   validatePerPage,
 } from "@/api/v2/utils/validation";
+import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
   try {
@@ -104,10 +88,22 @@ export async function GET(request: NextRequest) {
       searchParams.get("letter")?.trim().toUpperCase() || undefined;
     const rawLanguageFamilyId =
       searchParams.get("languageFamilyId")?.trim() || undefined;
-    const languageFamilyId =
-      rawLanguageFamilyId && validateLanguageFamilyId(rawLanguageFamilyId)
-        ? rawLanguageFamilyId
-        : undefined;
+
+    if (rawLanguageFamilyId && !validateLanguageFamilyId(rawLanguageFamilyId)) {
+      logger.warn("Invalid language family ID format", {
+        languageFamilyId: rawLanguageFamilyId,
+      });
+      return jsonWithCors(
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Invalid language family ID format",
+          field: "languageFamilyId",
+        }),
+        { status: 400 }
+      );
+    }
+
+    const languageFamilyId = rawLanguageFamilyId;
     const filters = {
       ...(search ? { search } : {}),
       ...(initialLetter ? { initialLetter } : {}),
@@ -132,10 +128,17 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const duration = Date.now() - startTime;
     logger.error("Error in GET /api/v2/peoples", error, { duration });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

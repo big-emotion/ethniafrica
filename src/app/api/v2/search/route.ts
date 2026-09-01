@@ -4,14 +4,21 @@
  *   get:
  *     summary: Search — peoples, countries and language families
  *     description: >
- *       Full-text search using `websearch_to_tsquery('french', q)` against the
- *       weighted `search_vector` columns (migration 043), ranked in Postgres by
- *       `afrik_search_peoples` / `afrik_search_countries` (migration 044): an
- *       accent-insensitive exact name match first, then `ts_rank` over the
- *       weights (A = name and autonym, B = exonyms, C/D = prose), multiplied
- *       for peoples by a 0.5–1.0 confidence factor. Language families have no
- *       tsvector column and are name-matched, then tiered exact > prefix >
- *       substring.
+ *       Full-text search, ranked in Postgres by `afrik_search_peoples` /
+ *       `afrik_search_countries` (migration 052): an accent-insensitive exact
+ *       name match first, then `ts_rank` over the weighted `search_vector`
+ *       (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the
+ *       accent-insensitive `name_unaccent_vector`, both queried with the `:*`
+ *       prefix operator on the last word of `q` — so a partial trailing word
+ *       ("bamba") matches a longer indexed name ("Bambara"), and an unaccented
+ *       query ("mande") matches an accented name ("Mandé") by construction,
+ *       not by stemmer coincidence (REQ-129). Relevance is multiplied for
+ *       peoples by a 0.5–1.0 confidence factor. Language families have no
+ *       tsvector column and are name-matched the same accent-insensitive way
+ *       in the application layer, then tiered exact > prefix > substring.
+ *       `q` no longer accepts websearch syntax — quoted phrases, `OR` and `-`
+ *       exclusions are not recognised (DEC-034); each word except the last
+ *       must now match as a complete word.
  *       Each result carries `relevance`, `exactMatch` and a `snippet` whose
  *       matched terms are wrapped in `[[` and `]]` — deliberately not HTML,
  *       because `ts_headline` does not escape the source document.
@@ -31,9 +38,11 @@
  *           type: string
  *           minLength: 1
  *         description: >
- *           Full-text search query (websearch syntax). Required unless
- *           familyId or countryId is given — a relation scope is a complete
- *           search on its own.
+ *           Full-text search query. Matches by prefix on its last word and is
+ *           accent-insensitive throughout (REQ-129) — no websearch syntax:
+ *           quoted phrases, `OR` and `-` exclusions are not recognised
+ *           (DEC-034). Required unless familyId or countryId is given — a
+ *           relation scope is a complete search on its own.
  *         example: "Yoruba Nigeria"
  *       - in: query
  *         name: familyId
@@ -129,6 +138,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 import { createApiError } from "@/api/v2/utils/response";
 import { logger } from "@/lib/api/logger";
+import { searchQueryLog } from "@/lib/search/searchQueryLog";
 import type { FtsSearchParams } from "@/types/afrik";
 
 const VALID_CLASSIFICATION_STATUSES = new Set([
@@ -275,6 +285,11 @@ export async function GET(request: NextRequest) {
     logger.info("GET /api/v2/search", { params });
 
     const envelope = await ftsSearchHandler(params);
+
+    await searchQueryLog.write({
+      query: params.q,
+      resultCount: envelope.data.total,
+    });
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/search completed", {

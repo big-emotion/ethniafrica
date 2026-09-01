@@ -37,9 +37,9 @@ const distanceFromOrigin = (node: GraphNode) =>
 describe("axisGraphGeometry — where the module nodes sit and how they project", () => {
   // @req REQ-114
   it("gives each axis the layout its opening choreography needs", () => {
-    expect(LAYOUT_BY_AXIS.explorer).toBe("ring");
-    expect(LAYOUT_BY_AXIS.comprendre).toBe("arc");
-    expect(LAYOUT_BY_AXIS.jouer).toBe("pair");
+    expect(LAYOUT_BY_AXIS.atlas).toBe("ring");
+    expect(LAYOUT_BY_AXIS.dossiers).toBe("arc");
+    expect(LAYOUT_BY_AXIS.jeux).toBe("pair");
   });
 
   // @req REQ-114
@@ -346,9 +346,9 @@ describe("sceneNodes — the shape a panel of a given width can actually hold", 
 
 describe("panelHeightFor — the room a scene needs for the count it was handed", () => {
   // The regression this exists to prevent: `pair` was sized for the two
-  // modules Jouer held when it shipped, and REQ-120 handed it eleven. At a
+  // modules Jouer held when it shipped, and REQ-120 handed it 11. At a
   // fixed 420px the rows landed 36px apart under cards up to 85px tall, and
-  // three of the eleven could not be clicked at their own centre.
+  // three of the 11 could not be clicked at their own centre.
   // @req REQ-114
   it("grows the panel once the modules stack tighter than a card", () => {
     const width = MAX_PANEL_WIDTH;

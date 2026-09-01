@@ -1,9 +1,11 @@
 // @req REQ-028
 // @req REQ-032
+// @req REQ-131
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdirSync, writeFileSync, rmSync } from "fs";
 import { join } from "path";
 import {
+  AFRICAN_REFERENCE_COUNTRY_CODES,
   checkPopulationSums,
   checkPopulationSumsStrict,
   summarizeValidationRun,
@@ -86,6 +88,56 @@ describe("FR28 demographics gate", () => {
     expect(
       SOFT_CHECK_NAMES.has("FR28-strict Population sums (target 99–101%)")
     ).toBe(false);
+  });
+});
+
+describe("FR28/FR28-strict scope to the 54-country African reference set (REQ-131)", () => {
+  let tmpDir: string;
+
+  beforeEach(() => {
+    tmpDir = join(
+      __dirname,
+      `tmp_scope_${Date.now()}_${Math.random().toString(36).slice(2)}`
+    );
+    mkdirSync(tmpDir, { recursive: true });
+  });
+
+  afterEach(() => {
+    rmSync(tmpDir, { recursive: true, force: true });
+  });
+
+  // @req REQ-131
+  it("holds exactly the 54 UN-recognised African states, ISO 3166-1 alpha-3", () => {
+    expect(AFRICAN_REFERENCE_COUNTRY_CODES.size).toBe(54);
+    expect(AFRICAN_REFERENCE_COUNTRY_CODES.has("ZAF")).toBe(true);
+    expect(AFRICAN_REFERENCE_COUNTRY_CODES.has("FRA")).toBe(false);
+  });
+
+  // @req REQ-131
+  it("still fails a country inside the reference set whose sum leaves the hard band", () => {
+    writePays(tmpDir, "ZAF", [60, 60]);
+
+    expect(checkPopulationSums(tmpDir).ok).toBe(false);
+  });
+
+  // @req REQ-131
+  it("applies no FR28 completeness requirement to a country outside the reference set", () => {
+    writePays(tmpDir, "FRA", [10]);
+
+    const result = checkPopulationSums(tmpDir);
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toHaveLength(0);
+  });
+
+  // @req REQ-131
+  it("applies no FR28-strict completeness requirement to a country outside the reference set", () => {
+    writePays(tmpDir, "USA", [10]);
+
+    const result = checkPopulationSumsStrict(tmpDir);
+
+    expect(result.ok).toBe(true);
+    expect(result.errors).toHaveLength(0);
   });
 });
 

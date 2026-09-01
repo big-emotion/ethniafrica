@@ -10,7 +10,7 @@ interface PeoplesSectionProps {
 
 // @req REQ-092
 export function PeoplesSection({ data }: PeoplesSectionProps) {
-  if (data.rows.length === 0) return null;
+  if (data.rows.length === 0 && !data.totalPopulationFormatted) return null;
 
   return (
     <div>
@@ -39,31 +39,39 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
             <FieldProvenanceMarker state="missing" />
           )}
         </div>
-        <div
-          className="text-afh-h3 font-bold"
-          style={{
-            fontFamily: "var(--country-font-display)",
-            color: "var(--country-text)",
-          }}
-        >
-          {data.peopleCount}+ peuples
-        </div>
+        {data.rows.length > 0 ? (
+          <div
+            className="text-afh-h3 font-bold"
+            style={{
+              fontFamily: "var(--country-font-display)",
+              color: "var(--country-text)",
+            }}
+          >
+            {data.peopleCount}+ peuples
+          </div>
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
       </div>
 
-      {/* Visual demographic bar */}
-      <DemoBar rows={data.rows} />
-      <CoverageNote rows={data.rows} />
+      {data.rows.length > 0 ? (
+        <>
+          {/* Visual demographic bar */}
+          <DemoBar rows={data.rows} />
+          <CoverageNote rows={data.rows} />
 
-      {/* People rows */}
-      <div className="mt-3 md:mt-4">
-        {data.rows.map((row, i) => (
-          <PeopleRowItem
-            key={i}
-            row={row}
-            isLast={i === data.rows.length - 1}
-          />
-        ))}
-      </div>
+          {/* People rows */}
+          <div className="mt-3 md:mt-4">
+            {data.rows.map((row, i) => (
+              <PeopleRowItem
+                key={i}
+                row={row}
+                isLast={i === data.rows.length - 1}
+              />
+            ))}
+          </div>
+        </>
+      ) : null}
     </div>
   );
 }
@@ -71,17 +79,17 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
 /**
  * What the figure above the bar actually is.
  *
- * Two things qualify it, and both have been got wrong here before. "documentés"
- * says the total sums only the peoples that declare a headcount, so it is a
- * floor rather than the country's population. The year is the one the corpus
- * dates those headcounts to — it used to be the literal 2025, which published a
- * census count under a year it never claimed. Where the counted peoples come
- * from different years there is no single snapshot, and the caption names none.
+ * An independently sourced national total says plain "habitants", regardless
+ * of how much of the people breakdown is currently documented. Without one,
+ * "documentés" says the total sums only rows that declare a headcount and is a
+ * floor rather than the country's population. The year always follows the
+ * figure itself; mixed-year row totals name no single snapshot.
  */
 function populationCaption(data: PeoplesData): string {
-  const noun = data.everyPeopleDeclaresPopulation
-    ? "habitants"
-    : "habitants documentés";
+  const noun =
+    data.totalPopulationIsNational || data.everyPeopleDeclaresPopulation
+      ? "habitants"
+      : "habitants documentés";
 
   return data.populationReferenceYear
     ? `${noun} · ${data.populationReferenceYear}`

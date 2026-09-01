@@ -37,6 +37,21 @@ const FACT: DidYouKnowFact = {
   tier: "referenced",
 };
 
+const SECOND_FACT: DidYouKnowFact = {
+  id: "cameroun",
+  headline: "Le Cameroun porte le nom d'un crustacé.",
+  body: ["Rio dos Camarões signifie la rivière des crevettes."],
+  entities: [{ kind: "country", id: "CMR", label: "Cameroun" }],
+  tier: "referenced",
+  sources: [
+    {
+      title: "Ministère des Relations extérieures du Cameroun — Histoire",
+      url: "https://www.diplocam.cm/histoire/",
+      tier: "official",
+    },
+  ],
+};
+
 describe("CountrySynthesisCard — showing what a fiche holds (REQ-113)", () => {
   // @req REQ-113
   it("sends the reader to the country's own fiche", () => {
@@ -88,7 +103,7 @@ describe("CountrySynthesisCard — showing what a fiche holds (REQ-113)", () => 
 describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // @req REQ-113
   it("routes each chip to its own kind of fiche", () => {
-    render(<DidYouKnow language="fr" fact={FACT} />);
+    render(<DidYouKnow language="fr" facts={[FACT]} />);
 
     expect(screen.getByRole("link", { name: /Liberia/ })).toHaveAttribute(
       "href",
@@ -103,7 +118,7 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // asserts just as much and owes the same.
   // @req REQ-113
   it("states the tier of the source behind the fact", () => {
-    render(<DidYouKnow language="fr" fact={FACT} />);
+    render(<DidYouKnow language="fr" facts={[FACT]} />);
 
     expect(screen.getByText("Source référencée")).toBeInTheDocument();
   });
@@ -112,7 +127,7 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // atlas does not have.
   // @req REQ-113
   it("renders nothing at all when the bank has none to give", () => {
-    const { container } = render(<DidYouKnow language="fr" fact={null} />);
+    const { container } = render(<DidYouKnow language="fr" facts={[]} />);
 
     expect(container).toBeEmptyDOMElement();
   });
@@ -121,7 +136,7 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // the only place the bank exists and none of it can be shared.
   // @req REQ-113
   it("offers the reader the page holding the others", () => {
-    render(<DidYouKnow language="fr" fact={FACT} />);
+    render(<DidYouKnow language="fr" facts={[FACT]} />);
 
     expect(
       screen.getByRole("link", { name: "Lire d'autres anecdotes" })
@@ -132,11 +147,44 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
   // fixed inventory — « 2 / 24 » — where the reader is handed a single card.
   // @req REQ-113
   it("carries no pager over the drawn fact", () => {
-    render(<DidYouKnow language="fr" fact={FACT} />);
+    render(<DidYouKnow language="fr" facts={[FACT]} />);
 
     expect(screen.queryByRole("button", { name: "Fait suivant" })).toBeNull();
     expect(screen.queryByRole("button", { name: "Fait précédent" })).toBeNull();
     expect(screen.queryByText(/^\d+ \/ \d+$/)).toBeNull();
+  });
+
+  // The home is a two-card editorial preview, not the interactive anecdote
+  // reader. The two documents alternate around their text from tablet width
+  // upward while every phone keeps the image first in reading order.
+  // @req REQ-113
+  it("shows two illustrated facts with alternating image sides", () => {
+    const { container } = render(
+      <DidYouKnow language="fr" facts={[FACT, SECOND_FACT]} />
+    );
+
+    const cards = screen.getAllByTestId("home-dyk-fact");
+    expect(cards).toHaveLength(2);
+    expect(container.querySelectorAll("figure img")).toHaveLength(2);
+    expect(cards[0]).toHaveClass("home-dyk-card--image-start");
+    expect(cards[1]).toHaveClass("home-dyk-card--image-end");
+  });
+
+  // Controls belong to the dedicated reader. The home preview remains a
+  // section in the page flow, with links to the corpus but no carousel or
+  // reaction surface.
+  // @req REQ-113
+  it("does not import the anecdote reader's controls", () => {
+    render(<DidYouKnow language="fr" facts={[FACT, SECOND_FACT]} />);
+
+    for (const name of [
+      "Suivant",
+      "Cette anecdote est intéressante",
+      "Je conteste cette anecdote",
+      "Partager",
+    ]) {
+      expect(screen.queryByRole("button", { name })).toBeNull();
+    }
   });
 });
 

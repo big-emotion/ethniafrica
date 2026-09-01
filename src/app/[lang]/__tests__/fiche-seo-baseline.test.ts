@@ -42,29 +42,29 @@ vi.mock("next/font/google", () => {
 import { metadata as rootLayoutMetadata } from "@/app/layout";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
-import * as peuplesFicheRoute from "../explorer/peuples/[slug]/page";
-import * as paysFicheRoute from "../explorer/pays/[slug]/page";
-import * as famillesFicheRoute from "../explorer/familles/[slug]/page";
+import * as peuplesFicheRoute from "../atlas/peuples/[slug]/page";
+import * as paysFicheRoute from "../atlas/pays/[slug]/page";
+import * as famillesFicheRoute from "../atlas/familles/[slug]/page";
 
 const FICHE_ROUTES = [
   {
     segment: "peuples",
     routeModule: peuplesFicheRoute,
-    sourcePath: "src/app/[lang]/explorer/peuples/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/atlas/peuples/[slug]/page.tsx",
     canonical: getPeopleRoute("fr", "PPL_YORUBA"),
     slug: "PPL_YORUBA",
   },
   {
     segment: "pays",
     routeModule: paysFicheRoute,
-    sourcePath: "src/app/[lang]/explorer/pays/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/atlas/pays/[slug]/page.tsx",
     canonical: getCountryRoute("fr", "BEN"),
     slug: "BEN",
   },
   {
     segment: "familles",
     routeModule: famillesFicheRoute,
-    sourcePath: "src/app/[lang]/explorer/familles/[slug]/page.tsx",
+    sourcePath: "src/app/[lang]/atlas/familles/[slug]/page.tsx",
     canonical: getFamilyRoute("fr", "FLG_BANTU"),
     slug: "FLG_BANTU",
   },

@@ -55,7 +55,7 @@ export interface HeroDrawOptions {
  * Which module the home's hero shows on this request (REQ-115).
  *
  * This file is deliberately random, in a repo that is deliberately not:
- * /fr/jouer/[jeu] derives its seed from the slug so a game round stays pure
+ * /fr/jeux/[jeu] derives its seed from the slug so a game round stays pure
  * and the page stays cacheable. Neither reason applies here. Variation *is*
  * the feature — the hero exists to show that the atlas holds more than one
  * module — and the home has no route cache to lose, since the root layout

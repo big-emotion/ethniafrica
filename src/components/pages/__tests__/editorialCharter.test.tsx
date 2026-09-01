@@ -7,6 +7,23 @@ import { LegalDocument } from "@/components/layout/LegalDocument";
 import { legalPages } from "@/lib/legal-pages";
 import AboutPageContent from "../AboutPageContent";
 import DoctrinePageContent from "../DoctrinePageContent";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import type { AccessMode } from "@/lib/hubs/moduleRegistry";
+
+const aboutData = {
+  counts: {
+    peoples: 4213,
+    countries: 91,
+    families: 37,
+    migrations: 5,
+  },
+  modulesByAxis: {
+    atlas: [],
+    dossiers: [],
+    jeux: [],
+  } as Record<AccessMode, HubModule[]>,
+  syntheses: [],
+};
 
 // ---------------------------------------------------------------------------
 // Shared heading-outline helpers (FR107 — H1 → H2 → H3 without skips)
@@ -156,19 +173,25 @@ describe("LegalDocument (legal template family)", () => {
 describe("AboutPageContent", () => {
   // @req REQ-091
   it("has a valid H1 → H2 → H3 heading outline with no skips", () => {
-    const { container } = render(<AboutPageContent language="fr" />);
+    const { container } = render(
+      <AboutPageContent language="fr" {...aboutData} />
+    );
     assertNoSkippedLevels(headingLevels(container));
   });
 
   // @req REQ-091
   it("gains chapter anatomy on its top-level sections", () => {
-    const { container } = render(<AboutPageContent language="fr" />);
+    const { container } = render(
+      <AboutPageContent language="fr" {...aboutData} />
+    );
     expect(container.querySelectorAll("hr").length).toBeGreaterThanOrEqual(2);
   });
 
   // @req REQ-091
   it("lets its prose content fill the page", () => {
-    const { container } = render(<AboutPageContent language="fr" />);
+    const { container } = render(
+      <AboutPageContent language="fr" {...aboutData} />
+    );
     assertProseCarriesNoMeasure(container);
   });
 });
@@ -247,9 +270,8 @@ describe("doctrine article page (metadata regression)", () => {
       publishedAt: "2026-05-14T00:00:00Z",
     });
 
-    const DoctrineSlugPage = (
-      await import("@/app/[lang]/comprendre/doctrine/[slug]/page")
-    ).default;
+    const DoctrineSlugPage = (await import("@/app/[lang]/doctrine/[slug]/page"))
+      .default;
     const ui = await DoctrineSlugPage({
       params: Promise.resolve({
         lang: "fr",

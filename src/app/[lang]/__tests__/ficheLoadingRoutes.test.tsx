@@ -4,9 +4,9 @@ import { describe, expect, it, vi } from "vitest";
 
 import { ConsentProvider } from "@/hooks/use-consent";
 
-import CountryFicheLoading from "@/app/[lang]/explorer/pays/[slug]/loading";
-import PeopleFicheLoading from "@/app/[lang]/explorer/peuples/[slug]/loading";
-import FamilyFicheLoading from "@/app/[lang]/explorer/familles/[slug]/loading";
+import CountryFicheLoading from "@/app/[lang]/atlas/pays/[slug]/loading";
+import PeopleFicheLoading from "@/app/[lang]/atlas/peuples/[slug]/loading";
+import FamilyFicheLoading from "@/app/[lang]/atlas/familles/[slug]/loading";
 import { getCountryRoute } from "@/lib/routing";
 
 vi.mock("next/navigation", () => ({

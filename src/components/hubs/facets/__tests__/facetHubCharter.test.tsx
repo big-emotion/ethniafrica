@@ -55,9 +55,7 @@ describe("facet hub charter — the seam the three facets share", () => {
 
   // @req REQ-114
   it("claims neither the Explorer hub itself nor its search", () => {
-    expect(
-      getFacetFromRoute(getLocalizedRoute("fr", "explorerHub"))
-    ).toBeNull();
+    expect(getFacetFromRoute(getLocalizedRoute("fr", "atlasHub"))).toBeNull();
     expect(getFacetFromRoute(getLocalizedRoute("fr", "search"))).toBeNull();
   });
 

@@ -11,15 +11,15 @@ import type { Language } from "@/types/shared";
  */
 // @req REQ-114
 export const AXIS_HUB_PAGE: Record<AccessMode, PageType> = {
-  explorer: "explorerHub",
-  comprendre: "comprendreHub",
-  jouer: "jouerHub",
+  atlas: "atlasHub",
+  dossiers: "dossiersHub",
+  jeux: "jeuxHub",
 };
 
 /**
  * Where an axis lives, for callers composing a route below it.
  *
- * A game is `<jouer hub>/<slug>` and a facet will be `<explorer hub>/<facet>`;
+ * A game is `<jeux hub>/<slug>` and a facet will be `<atlas hub>/<facet>`;
  * both used to spell the segment out. Spelled out, the segment stays behind
  * when the axis moves — which is the whole failure mode the slug table exists
  * to prevent.

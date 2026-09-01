@@ -27,12 +27,34 @@ import type { Language } from "@/types/shared";
 const isPublicLocalizedPage = (pathname: string) =>
   pathname === "/fr" || pathname.startsWith("/fr/");
 
+// The public developer portal sits outside the localized tree but mounts the
+// same global header. That header carries static CSS in a client-injected
+// <style> element; unlike the data-driven fiches, it uses no style attributes.
+const isDeveloperPortalPage = (pathname: string) =>
+  pathname === "/docs/api" || pathname.startsWith("/docs/api/");
+
 // Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
 // exact hash because the framework does not propagate the request nonce.
 const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
 ].join(" ");
+
+// ARCH-016: the CSP had no media-src or frame-src at all, so both fell back
+// to default-src 'self' and blocked every editorial media/embed host before
+// REQ-128 could render one. Each host below is named explicitly — never a
+// wildcard — so a provider must be declared to be trusted.
+//
+// images.prismic.io is Prismic's single fixed asset-delivery domain, shared
+// by every Prismic repository; it is the one host the committed
+// Prismic-as-editorial-source architecture already confirms.
+const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
+
+// No embed provider is confirmed yet — REQ-128 ("Media and external links on
+// the fiche") owns that decision. Left empty rather than guessed so the
+// directive still exists explicitly (not an implicit default-src fallback)
+// and stays a deliberate host-by-host allowlist once REQ-128 names a host.
+const FRAME_SRC_HOSTS: string[] = [];
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -46,16 +68,20 @@ function applySecurityHeaders(
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
   const publicLocalizedPage = isPublicLocalizedPage(pathname);
+  const allowsInlineStyleElements =
+    publicLocalizedPage || isDeveloperPortalPage(pathname);
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'${
       process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
     }`,
-    publicLocalizedPage
+    allowsInlineStyleElements
       ? "style-src 'self' 'unsafe-inline'"
       : `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
     ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),
     "img-src 'self' data:",
+    `media-src 'self' ${MEDIA_SRC_HOSTS}`,
+    ["frame-src 'self'", ...FRAME_SRC_HOSTS].join(" "),
     "frame-ancestors 'self'",
     // Neither of these falls back to default-src, so omitting them leaves them
     // wide open rather than inheriting 'self'. base-uri stops an injected
@@ -64,7 +90,7 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
+    "connect-src 'self' https://*.supabase.co https://supabase.ethniafrica.com https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }
@@ -84,12 +110,80 @@ const RELOCATED_SEGMENT = /^\/([a-z]{2})\/([a-z-]+)(\/.*)?$/;
 // indexed and bookmarked and have to keep resolving. Keyed on the whole
 // segment, never a prefix: /fr/peuples is a live resource page and must
 // not be swept up by the /fr/peuples-hub entry.
+//
+// The targets are facets, not axes. These three pointed at the axis landing
+// pages until ETNI-1555 deleted them, which turned every entry into a 308
+// into a 404 — a permanent move to nothing, as far as a crawler is concerned.
+// Each one now lands on the facet holding the resource its old name promised,
+// which is also the closest thing the site still serves to what the reader
+// bookmarked. `redirectCharter.test.ts` asserts a page file behind each.
 // @req REQ-114
 export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
-  "peuples-hub": "comprendre",
-  "pays-hub": "explorer",
-  "familles-hub": "jouer",
+  "peuples-hub": "atlas/peuples",
+  "pays-hub": "atlas/pays",
+  "familles-hub": "atlas/familles",
 };
+
+// ETNI-1458 renamed the ethnonym module from Noms to Appellations, freeing
+// the word "Nom" for the person-name entity (ARCH-018). The published,
+// indexed address was already nested one level below its hub
+// (`comprendre/noms`), which fits neither existing table: RENAMED_HUB_SEGMENTS
+// matches exactly one top-level segment, and RELOCATED_SEGMENTS is keyed on
+// the single old top-level segment the V1 flat structure used. A rename that
+// starts and ends below the hub needs a key that can itself hold a slash.
+//
+// Regrouping the modules by the registry's own filing rule then gave that
+// table two more entries, and both are *moves across* axes rather than
+// renames within one:
+//
+//   · Appellations went to Explorer (now Atlas), so the address ETNI-1458
+//     published (`comprendre/appellations`) is itself now legacy. It is
+//     keyed here in its own right rather than chained behind
+//     `comprendre/noms`: redirectCharter.test.ts forbids a target that is
+//     itself a key, and a reader arriving on either published address must
+//     reach Atlas in the one hop a 308 can afford to spend.
+//   · Doctrine left the axes entirely, and a page no axis lists carries no
+//     prefix — so it lands back at the top level, where `RELOCATED_SEGMENTS`
+//     stops holding an entry for it and starts leaving it alone.
+//
+// ETNI-1615's keys read `dossiers/...`, not the historical `comprendre/...`
+// a reader actually followed: within one middleware call, `RELOCATED_SEGMENTS`
+// already rewrote `comprendre` to `dossiers` by the time this table is
+// consulted (the two compose on `canonicalPath`, see `middleware()` below), so
+// a key still spelled `comprendre/noms` would never match and this table
+// would silently stop firing. The historical address is still honoured — it
+// just reaches this table already half-rewritten.
+// @req REQ-091
+export const RENAMED_MODULE_PATHS: Record<string, string> = {
+  "dossiers/noms": "atlas/appellations",
+  "dossiers/appellations": "atlas/appellations",
+  "dossiers/doctrine": "doctrine",
+};
+
+/**
+ * Where a renamed module's old nested path leads now, tail (and trailing
+ * slash) handled the same way `resolveRelocatedPath` handles them — carried
+ * verbatim, dropped when absent — so the two tables read alike even though
+ * their keys are shaped differently.
+ *
+ * Exported for `redirectCharter.test.ts`, alongside `resolveRelocatedPath`.
+ */
+// @req REQ-091
+export function resolveRenamedModulePath(pathname: string): string | null {
+  const match = pathname.match(/^\/([a-z]{2})\/(.+)$/);
+  if (!match) return null;
+
+  const [, locale, rawRest] = match;
+  const rest = rawRest.replace(/\/+$/, "");
+
+  for (const [oldPath, newPath] of Object.entries(RENAMED_MODULE_PATHS)) {
+    if (rest === oldPath || rest.startsWith(`${oldPath}/`)) {
+      const tail = rest.slice(oldPath.length);
+      return `/${locale}/${newPath}${tail}`;
+    }
+  }
+  return null;
+}
 
 // Lot 3 moved every module below the hub that leads to it, so the top-level
 // segment each one was published under has to keep resolving — this time for
@@ -107,28 +201,48 @@ export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
 // `[lang]/[section]` route redirected client-side. They were the reason that
 // route existed; carried here they cost one table row each, and left behind
 // they would have died with it, silently, since nothing links to them.
+//
+// ETNI-1615 adds `explorer`, `comprendre` and `jouer` as three more keys, of a
+// different shape than the rest: those below name a *retired flat V1 address*
+// (`/fr/pays`); these three name the *whole axis prefix* the modules were
+// nested under until this rename, so a single row here carries every
+// currently-published fiche and hub address under that prefix — the tail is
+// preserved verbatim by `resolveRelocatedPath` regardless of depth. Every
+// other entry's destination is written directly against the new axis prefix
+// (`atlas/pays`, not `explorer/pays`) for the same one-hop reason: were it
+// left as `explorer/pays`, the *first* redirect would land on an address that
+// the new `explorer` entry itself now relocates, and a second request would
+// pay for a second 308 this table exists to rule out.
 // @req REQ-091
 export const RELOCATED_SEGMENTS: Record<string, string> = {
-  pays: "explorer/pays",
-  peuples: "explorer/peuples",
-  familles: "explorer/familles",
-  recherche: "explorer/recherche",
-  doctrine: "comprendre/doctrine",
-  noms: "comprendre/noms",
-  migrations: "comprendre/migrations",
-  regards: "comprendre/regards",
-  quiz: "jouer/quiz",
+  pays: "atlas/pays",
+  peuples: "atlas/peuples",
+  familles: "atlas/familles",
+  recherche: "atlas/recherche",
+  // `doctrine` was a key here while the page lived under Comprendre. It is
+  // served at the top level again, so an entry would send a live route to
+  // itself — the loop the charter suite walks this table to rule out.
+  noms: "atlas/appellations",
+  migrations: "dossiers/migrations",
+  regards: "dossiers/regards",
+  quiz: "jeux/quiz",
   // English spellings, published by V1 and still linked from outside.
-  countries: "explorer/pays",
-  families: "explorer/familles",
-  peoples: "explorer/peuples",
+  countries: "atlas/pays",
+  families: "atlas/familles",
+  peoples: "atlas/peuples",
   // Regions became linguistic families; ethnicities became peoples.
-  regions: "explorer/familles",
-  regiones: "explorer/familles",
-  regioes: "explorer/familles",
-  ethnicities: "explorer/peuples",
-  ethnies: "explorer/peuples",
-  etnias: "explorer/peuples",
+  regions: "atlas/familles",
+  regiones: "atlas/familles",
+  regioes: "atlas/familles",
+  ethnicities: "atlas/peuples",
+  ethnies: "atlas/peuples",
+  etnias: "atlas/peuples",
+  // The three retired axis prefixes, ETNI-1615 (REQ-138): every module moved
+  // from the verb the reader arrived with to the noun the label already
+  // named. See the block comment above.
+  explorer: "atlas",
+  comprendre: "dossiers",
+  jouer: "jeux",
 };
 
 // Which directory a relocated segment was, for the deep links that named a
@@ -162,7 +276,7 @@ const DEEP_LINK_RESOLVERS: Record<
  * Where a legacy path leads now.
  *
  * `keepQuery` is false only when the query is what produced the target: a
- * `?country=BEN` that became `/fr/explorer/pays/BEN` has been spent, and
+ * `?country=BEN` that became `/fr/atlas/pays/BEN` has been spent, and
  * carrying it along would leave the identifier stated twice, once in the path
  * and once in a query the directory it lands on would read and act on again.
  *
@@ -187,7 +301,7 @@ export function resolveRelocatedPath(
 
   const [, locale, segment] = match;
   // A trailing slash is not a tail. Left in, it would send `/fr/pays/` to
-  // `/fr/explorer/pays/` and skip the deep-link resolution below.
+  // `/fr/atlas/pays/` and skip the deep-link resolution below.
   const tail = (match[3] ?? "").replace(/\/+$/, "");
   const destination = RELOCATED_SEGMENTS[segment];
   if (!destination) return null;
@@ -223,7 +337,7 @@ function isSameOriginRequest(request: NextRequest): boolean {
 
 // @req REQ-052
 export async function middleware(request: NextRequest) {
-  // Three rewrites, one redirect.
+  // Four rewrites, one redirect.
   //
   // They compose rather than each returning: `/en/peuples` is both a
   // non-canonical locale and a relocated module, and answering it with
@@ -231,7 +345,7 @@ export async function middleware(request: NextRequest) {
   // redirects again. Two 308s is what the one-hop rule forbids, and the
   // second one would be entirely of our own making.
   //
-  // All three are 308: none of them is a page moving temporarily, so a
+  // All four are 308: none of them is a page moving temporarily, so a
   // crawler should transfer the old URL's standing rather than keep
   // revisiting it.
   const { pathname } = request.nextUrl;
@@ -268,6 +382,19 @@ export async function middleware(request: NextRequest) {
     moved = true;
   }
 
+  // The nested moves: the historical comprendre/noms and
+  // comprendre/appellations addresses to atlas/appellations, comprendre/
+  // doctrine back to the top level — read here as dossiers/noms,
+  // dossiers/appellations, dossiers/doctrine, because the axis-prefix rewrite
+  // above already ran (see the comment on RENAMED_MODULE_PATHS). A rewrite of
+  // its own, composing into the same single 308 as the three above for the
+  // same reason — two hops would spend the old URL's standing twice.
+  const renamedModule = resolveRenamedModulePath(canonicalPath);
+  if (renamedModule) {
+    canonicalPath = renamedModule;
+    moved = true;
+  }
+
   if (moved) {
     const search = keepQuery ? request.nextUrl.search : "";
     return NextResponse.redirect(
@@ -288,8 +415,13 @@ export async function middleware(request: NextRequest) {
   // /api/contributions.
   const versioned = <ResponseType extends Response>(response: ResponseType) =>
     applyVersioningHeaders(response, pathname);
-  const requiresApiKeyAuth =
-    isApiV2 && !pathname.startsWith("/api/v2/keys/issue");
+  // The whole /api/v2/keys subtree sits outside api_keys Bearer auth: /issue
+  // is anonymous, and the self-service list/create/revoke endpoints (ETNI-81)
+  // authenticate a Supabase session access token themselves inside the route
+  // handler (see @/api/v2/services/keyService.getAuthenticatedUser) rather
+  // than through this gate — a session JWT is not an api_keys row and would
+  // otherwise be rejected here as an invalid API key before ever reaching it.
+  const requiresApiKeyAuth = isApiV2 && !pathname.startsWith("/api/v2/keys");
 
   // Rate limit routes that never validate an API key (e.g. /api/v2/keys/issue)
   // up front, since there is no DB-validated tier to wait for. Routes that do

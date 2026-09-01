@@ -66,6 +66,27 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
     expect(screen.getByText(/habitants documentés/)).toBeTruthy();
   });
 
+  // A national total remains a complete country-level fact even when the
+  // people rows cover only part of the population. The coverage note carries
+  // that separate limitation below the bar.
+  // @req REQ-092
+  it("does not qualify an official national total as a partial headcount", () => {
+    const national: PeoplesData = {
+      totalPopulation: 29900000,
+      totalPopulationFormatted: "29.9M",
+      totalPopulationIsNational: true,
+      everyPeopleDeclaresPopulation: false,
+      populationReferenceYear: 2025,
+      peopleCount: 1,
+      rows: [{ name: "Beti-Fang-Bulu", percentage: 22, colorIndex: 1 }],
+    };
+
+    render(<PeoplesSection data={national} />);
+    expect(screen.getByText(/^habitants · 2025$/)).toBeTruthy();
+    expect(screen.getByText(/22\s*% de la population/)).toBeTruthy();
+    expect(screen.queryByText(/habitants documentés/)).toBeNull();
+  });
+
   // @req REQ-092
   it("says plain habitants when every people is counted", () => {
     const complete: PeoplesData = {

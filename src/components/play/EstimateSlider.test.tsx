@@ -24,7 +24,7 @@ const ROUND: EstimateRound = {
     fieldPath: "lib/atlas/assets/worldCompare",
     sources: [],
     confidence: null,
-    ficheHref: getAxisHubRoute("fr", "explorer"),
+    ficheHref: getAxisHubRoute("fr", "atlas"),
   },
 };
 

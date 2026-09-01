@@ -12,7 +12,6 @@ vi.mock("@/api/v2/handlers/countries", () => ({
 
 vi.mock("@/api/v2/handlers/search", () => ({
   ftsSearchHandler: vi.fn(),
-  searchHandler: vi.fn(),
 }));
 
 vi.mock("@/api/v2/handlers/peoples", () => ({
@@ -38,6 +37,7 @@ import {
 } from "@/api/v2/handlers/countries";
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
 import { listPeoplesHandler } from "@/api/v2/handlers/peoples";
+import { API_ATTRIBUTION, API_LICENSE } from "@/api/v2/utils/response";
 
 describe("API v2 - Performance Tests", () => {
   beforeEach(() => {
@@ -52,7 +52,12 @@ describe("API v2 - Performance Tests", () => {
           nameFr: `Country ${i}`,
           content: {},
         })),
-        meta: { total: 54, page: 1, perPage: 20, totalPages: 3 },
+        meta: {
+          license: API_LICENSE,
+          attribution: API_ATTRIBUTION,
+          pagination: { total: 54, page: 1, perPage: 20, totalPages: 3 },
+        },
+        errors: [],
       };
 
       (listCountriesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
@@ -80,7 +85,12 @@ describe("API v2 - Performance Tests", () => {
           currentCountries: [],
           content: {},
         })),
-        meta: { total: 924, page: 1, perPage: 20, totalPages: 47 },
+        meta: {
+          license: API_LICENSE,
+          attribution: API_ATTRIBUTION,
+          pagination: { total: 924, page: 1, perPage: 20, totalPages: 47 },
+        },
+        errors: [],
       });
 
       const start = Date.now();

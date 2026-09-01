@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_HAUSA",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Hausawa (pluriel) ; Bahaushe (singulier masculin) ; Bahaushiya (singulier féminin)",
+      "nameType": "endonym",
+      "languageOfOrigin": "hau",
+      "meaning": null,
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme employé par les locuteurs eux-mêmes ; « Hausa » (Haoussa en français) est la désignation standard dans toutes les langues d'Afrique de l'Ouest.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Hausa (hau)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/hau/",
+          "tier": "official",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

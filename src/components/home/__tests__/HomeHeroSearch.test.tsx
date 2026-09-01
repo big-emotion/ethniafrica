@@ -117,6 +117,7 @@ describe("HomeHeroSearch", () => {
     const placeholder = field().getAttribute("placeholder") ?? "";
     expect(placeholder).not.toBe(SEARCH_LABEL);
     expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
+    expect(placeholder).toBe("Ex. Bafut, Namibie, Bantou");
   });
 
   // Opening the phone keyboard on load buries the page under it and steals
@@ -271,19 +272,22 @@ describe("HomeHeroSearch", () => {
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
-  // The three seeds teach the three entity kinds at once, each reeling through
-  // its own pool (HomeHeroSeeds owns that; here only the handover matters).
+  // A seed is a shortcut to the full result page, not a second search mode.
+  // Its activation therefore follows the same GET path as typing that word
+  // and submitting the form, rather than stopping in the suggestion panel.
   // @req REQ-002
-  it("runs an example query from a seed chip", async () => {
+  it("submits a seed chip through the full search path", () => {
     const fetchResults = vi.fn(async () => ALL_KINDS);
     renderSearch(fetchResults);
 
     const first = SEED_POOLS[0].words[0];
     fireEvent.click(screen.getByRole("button", { name: first }));
 
-    await screen.findByRole("listbox");
-    expect(field()).toHaveValue(first);
-    expect(fetchResults).toHaveBeenCalledWith(first);
+    expect(push).toHaveBeenCalledWith(
+      `${getLocalizedRoute("fr", "search")}?${new URLSearchParams({ q: first })}`
+    );
+    expect(field()).toHaveValue("");
+    expect(fetchResults).not.toHaveBeenCalled();
   });
 
   // The native WebKit cross is suppressed by the field's own stylesheet, so a

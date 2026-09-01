@@ -32,38 +32,23 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: object
- *               properties:
- *                 data:
- *                   type: array
- *                   items:
- *                     $ref: '#/components/schemas/CountryV2'
- *                 meta:
- *                   $ref: '#/components/schemas/PaginationMeta'
- *             example:
- *               data:
- *                 - id: "ZWE"
- *                   nameFr: "Zimbabwe"
- *                   nameOfficial: "Republic of Zimbabwe"
- *               meta:
- *                 total: 55
- *                 page: 1
- *                 perPage: 20
- *                 totalPages: 3
+ *               $ref: '#/components/schemas/CountriesListEnvelope'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Error'
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
 import { NextRequest } from "next/server";
 import { listCountriesHandler } from "@/api/v2/handlers/countries";
+import { createApiError } from "@/api/v2/utils/response";
 import { validatePage, validatePerPage } from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
   try {
@@ -88,10 +73,17 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     const duration = Date.now() - startTime;
     logger.error("Error in GET /api/v2/countries", error, { duration });
-    return jsonWithCors({ error: "Internal server error" }, { status: 500 });
+    return jsonWithCors(
+      createApiError({
+        code: "INTERNAL_ERROR",
+        message: "Internal server error",
+      }),
+      { status: 500 }
+    );
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

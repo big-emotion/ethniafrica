@@ -1,11 +1,11 @@
 /**
  * A picture for each anecdote, and the credit that makes it citable.
  *
- * This is deliberately not a field on `DidYouKnowFact`. The home band shows
- * no picture and never will — an illustration is something the reading
- * surface adds, the way `didYouKnowPresentation` adds labels and accents,
- * not something the fact carries. Keeping it here means the bank stays a
- * bank and the anecdote page owns its own dress.
+ * This is deliberately not a field on `DidYouKnowFact`. An illustration is
+ * something a reading surface adds, the way `didYouKnowPresentation` adds
+ * labels and accents, not something the fact carries. Keeping it here means
+ * the bank stays a bank while the anecdote page, home previews and loading
+ * surfaces each own their own dress.
  *
  * Every file is a document the anecdote is *about* — a map that makes the
  * mistake, the object that was traded, the person who did the naming. That
@@ -184,4 +184,16 @@ export function illustrationFor(
   factId: string
 ): DidYouKnowIllustration | undefined {
   return DID_YOU_KNOW_ILLUSTRATIONS[factId];
+}
+
+/**
+ * Give a single-fact surface a stable side from the bank's editorial order.
+ * Consecutive facts therefore alternate without a client-side draw that could
+ * flip the layout after hydration.
+ */
+// @req REQ-104
+// @req REQ-113
+export function illustrationSideFor(factId: string): "start" | "end" {
+  const index = Object.keys(DID_YOU_KNOW_ILLUSTRATIONS).indexOf(factId);
+  return index < 0 || index % 2 === 0 ? "start" : "end";
 }

@@ -255,6 +255,24 @@ describe("PageLayout — flushTop", () => {
     expect(main?.className).not.toMatch(/\bpy-\d/);
     expect(main?.className).not.toMatch(/\bpt-\d/);
   });
+
+  // A full-bleed last section owns the seam with the footer just as a
+  // full-bleed first section owns the seam with the chrome. Keeping main's
+  // bottom padding inserts a strip of unrelated page ground between them.
+  // @req REQ-044
+  it("can let a full-bleed final section meet the footer without a gap", () => {
+    mockPathname = "/fr";
+    render(
+      <PageLayout language="fr" hideHeader flushTop flushBottom>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(main?.className).not.toMatch(/\bpb-\d/);
+    expect(main?.className).not.toMatch(/\bpy-\d/);
+    expect(main?.className).not.toMatch(/\bpt-\d/);
+  });
 });
 
 /**
@@ -305,7 +323,7 @@ describe("PageLayout — the section band a fiche must not raise", () => {
 describe("PageLayout — the band names the page, not the product", () => {
   // @req REQ-043
   it("carries no brand mark beside the title", () => {
-    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    mockPathname = getLocalizedRoute("fr", "dossiersHub");
     render(
       <PageLayout language="fr" title="Comprendre les peuples d'Afrique">
         <p>corps</p>
@@ -318,7 +336,7 @@ describe("PageLayout — the band names the page, not the product", () => {
 
   // @req REQ-043
   it("raises no band at all rather than falling back to the product name", () => {
-    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    mockPathname = getLocalizedRoute("fr", "dossiersHub");
     render(
       <PageLayout language="fr">
         <p data-testid="content">corps</p>

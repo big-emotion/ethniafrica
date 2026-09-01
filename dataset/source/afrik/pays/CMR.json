@@ -296,10 +296,10 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "ONU / UNFPA – Démographie Cameroun 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/CM",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
         "title": "Politics and the Occult in Postcolonial Africa\"",
@@ -339,6 +339,9 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 29900000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Beti-Fang-Bulu",

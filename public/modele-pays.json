@@ -73,6 +73,9 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 0,
+      "referenceYear": "<Reference year for the official national population>",
+      "source": "<Demographic source matching a structured source entry>",
       "peoples": [
         {
           "name": "<Nom du peuple>",

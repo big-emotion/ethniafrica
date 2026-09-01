@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getTranslation } from "@/lib/translations";
 
 /**
@@ -13,7 +14,7 @@ import { getTranslation } from "@/lib/translations";
  */
 describe("hub blurbs", () => {
   const { hubs } = getTranslation("fr");
-  const axes = ["explorer", "comprendre", "jouer"] as const;
+  const axes = ["atlas", "dossiers", "jeux"] as const;
 
   // The hub paragraph renders inside max-w-[58ch]; past ~140 characters it
   // overflows the two lines the layout reserves for it.
@@ -29,7 +30,7 @@ describe("hub blurbs", () => {
   });
 
   // The same rewrite has to reach the home's cards: a reader who read the
-  // formula on /fr and the description on /fr/explorer would be looking at
+  // formula on /fr and the description on /fr/atlas would be looking at
   // two different products.
   // @req REQ-113
   it("keeps the header panel's blurbs free of the formula too", () => {
@@ -58,7 +59,7 @@ describe("hub blurbs", () => {
 /**
  * The band above a hub names the page, not the product.
  *
- * It used to fall back to the product name, so `/fr/comprendre` opened on
+ * It used to fall back to the product name, so `/fr/dossiers` opened on
  * « Atlas des Peuples d'Afrique » — already spelled out in the bar directly
  * above it — and told a reader nothing about where they stood. The title the
  * band now carries states the axis *and* what the axis leads into, which is
@@ -66,14 +67,12 @@ describe("hub blurbs", () => {
  */
 describe("hub page titles", () => {
   const { hubs, title } = getTranslation("fr");
-  const axes = ["explorer", "comprendre", "jouer"] as const;
+  const axes = ["atlas", "dossiers", "jeux"] as const;
 
   // @req REQ-114
-  it("opens on the axis the reader took", () => {
+  it("keeps the short axis labels on the canonical access-mode map", () => {
     for (const axis of axes) {
-      expect(hubs[axis].pageTitle).toMatch(
-        new RegExp(`^${hubs[axis].title}\\b`)
-      );
+      expect(hubs[axis].title).toBe(ACCESS_MODE_LABELS[axis]);
     }
   });
 

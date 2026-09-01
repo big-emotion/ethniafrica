@@ -8,6 +8,7 @@ import {
   loadAllNameRecordDossiers,
   loadNameRecords,
 } from "../nameRecordJsonLoader";
+import type { NameRecordDossier, NameRecordSource } from "@/types/names";
 
 // ─── fixtures ─────────────────────────────────────────────────────────────
 
@@ -70,6 +71,40 @@ function validNameFile(overrides: Record<string, unknown> = {}) {
   };
 }
 
+const dialloVariantSource: NameRecordSource = {
+  title: "Waccugol Almaami Alfaajo — English translation",
+  author: "Boston University NEH Ajami project",
+  year: 2022,
+  url: "https://sites.bu.edu/nehajami/files/2022/08/Waccugol-Almaami-Alfaajo_English-translation.pdf",
+  tier: "referenced",
+  notes:
+    "Discovered and cross-checked via https://en.wikipedia.org/wiki/Diallo and https://de.wikipedia.org/wiki/Diallo.",
+};
+
+function patronymeDossierWithSources(
+  sources: NameRecordSource[]
+): NameRecordDossier {
+  return {
+    id: "PAT_DIALLO",
+    entityType: "patronyme",
+    names: [
+      {
+        nameText: "Diallo",
+        nameType: "surname",
+        languageOfOrigin: null,
+        meaning: null,
+        periodLabel: null,
+        imposedBy: null,
+        impositionPeriod: null,
+        whyProblematic: null,
+        contemporaryUsage: null,
+        sortRank: 0,
+        sources,
+      },
+    ],
+  };
+}
+
 function writeNomsFile(
   root: string,
   fileName: string,
@@ -99,6 +134,14 @@ interface AssertionRow {
   field_path: string;
   statement?: string;
   source_ids?: string[];
+  fiche_revision_id?: string;
+}
+
+interface FicheRevisionRow {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  version: number;
 }
 
 interface NameRecordRow {
@@ -119,10 +162,47 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const sources: SourceRow[] = [];
   const assertions: AssertionRow[] = [];
   const nameRecords: NameRecordRow[] = [];
+  const ficheRevisions: FicheRevisionRow[] = [];
   let idCounter = 0;
   const nextId = (prefix: string) => `${prefix}-${++idCounter}`;
 
   const from = vi.fn((table: string) => {
+    if (table === "fiche_revisions") {
+      return {
+        select: vi.fn(() => {
+          const filters: Record<string, unknown> = {};
+          const builder = {
+            eq: vi.fn((col: string, value: unknown) => {
+              filters[col] = value;
+              return builder;
+            }),
+            order: vi.fn(() => builder),
+            limit: vi.fn(() => builder),
+            maybeSingle: vi.fn(async () => {
+              const matches = ficheRevisions
+                .filter(
+                  (r) =>
+                    r.entity_type === filters.entity_type &&
+                    r.entity_id === filters.entity_id
+                )
+                .sort((a, b) => b.version - a.version);
+              return { data: matches[0] ?? null, error: null };
+            }),
+          };
+          return builder;
+        }),
+        insert: vi.fn((row: Omit<FicheRevisionRow, "id">) => ({
+          select: vi.fn(() => ({
+            single: vi.fn(async () => {
+              const created = { id: nextId("rev"), ...row };
+              ficheRevisions.push(created);
+              return { data: { id: created.id }, error: null };
+            }),
+          })),
+        })),
+      };
+    }
+
     if (table === "sources") {
       return {
         upsert: vi.fn((row: Omit<SourceRow, "id">) => ({
@@ -216,7 +296,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     throw new Error(`Unexpected table in test double: ${table}`);
   });
 
-  return { client: { from }, sources, assertions, nameRecords };
+  return { client: { from }, sources, assertions, nameRecords, ficheRevisions };
 }
 
 // ─── tests ──────────────────────────────────────────────────────────────────
@@ -309,6 +389,140 @@ describe("nameRecordJsonLoader", () => {
   });
 
   describe("loadNameRecords", () => {
+    // @req REQ-135
+    it("loads sourced patronyme spellings under one canonical entity", async () => {
+      const database = createSupabaseDouble();
+      const dossier: NameRecordDossier = {
+        id: "PAT_DIALLO",
+        entityType: "patronyme",
+        names: [
+          {
+            nameText: "Diallo",
+            nameType: "surname",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 0,
+            sources: [dialloVariantSource],
+          },
+          {
+            nameText: "Jallow",
+            nameType: "historical_spelling",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 1,
+            sources: [dialloVariantSource],
+          },
+          {
+            nameText: "Jalloh",
+            nameType: "historical_spelling",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 2,
+            sources: [dialloVariantSource],
+          },
+        ],
+      };
+
+      const report = await loadNameRecords(database.client as never, [dossier]);
+
+      expect(report).toMatchObject({ total: 3, inserted: 3 });
+      expect(report.errors).toEqual([]);
+      expect(report.dropped).toEqual([]);
+      expect(database.sources).toEqual([
+        expect.objectContaining({
+          url: dialloVariantSource.url,
+          tier: "referenced",
+          notes: expect.stringContaining(
+            "https://en.wikipedia.org/wiki/Diallo"
+          ),
+        }),
+      ]);
+      expect(database.sources[0].notes).toContain(
+        "https://de.wikipedia.org/wiki/Diallo"
+      );
+      expect(database.assertions).toHaveLength(3);
+      expect(database.assertions).toEqual(
+        expect.arrayContaining(
+          dossier.names.map((entry) =>
+            expect.objectContaining({
+              entity_type: "patronyme",
+              entity_id: "PAT_DIALLO",
+              statement: entry.nameText,
+            })
+          )
+        )
+      );
+      expect(database.nameRecords).toHaveLength(3);
+      expect(database.nameRecords).toEqual(
+        expect.arrayContaining(
+          dossier.names.map((entry) =>
+            expect.objectContaining({
+              entity_type: "patronyme",
+              entity_id: "PAT_DIALLO",
+              name_text: entry.nameText,
+            })
+          )
+        )
+      );
+      expect(
+        new Set(database.nameRecords.map((record) => record.entity_id))
+      ).toEqual(new Set(["PAT_DIALLO"]));
+    });
+
+    // @req REQ-135
+    it("creates one fiche_revisions placeholder per entity and reuses it across every name entry in the dossier (assertions.fiche_revision_id is NOT NULL, migration 020)", async () => {
+      const database = createSupabaseDouble();
+      const dossier = patronymeDossierWithSources([dialloVariantSource]);
+      dossier.names.push(
+        { ...dossier.names[0], nameText: "Jallow", sortRank: 1 },
+        { ...dossier.names[0], nameText: "Jalloh", sortRank: 2 }
+      );
+
+      await loadNameRecords(database.client as never, [dossier]);
+
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.ficheRevisions[0]).toMatchObject({
+        entity_type: "patronyme",
+        entity_id: "PAT_DIALLO",
+        version: 1,
+      });
+      const revisionId = database.ficheRevisions[0].id;
+      expect(
+        database.assertions.every((a) => a.fiche_revision_id === revisionId)
+      ).toBe(true);
+    });
+
+    // @req REQ-135
+    it("loads a patronyme entry sourced only at unverified (Source Tier Policy: nothing is forbidden, everything is labelled)", async () => {
+      const database = createSupabaseDouble();
+      const dossier = patronymeDossierWithSources([
+        { ...dialloVariantSource, tier: "unverified" },
+      ]);
+
+      const report = await loadNameRecords(database.client as never, [dossier]);
+
+      expect(report).toMatchObject({ total: 1, inserted: 1 });
+      expect(report.dropped).toEqual([]);
+      expect(database.assertions).toHaveLength(1);
+      expect(database.nameRecords).toHaveLength(1);
+      expect(database.sources[0]).toMatchObject({ tier: "unverified" });
+    });
+
     // @req REQ-057
     it("upserts sources, one assertion per record, then the name_records row", async () => {
       const database = createSupabaseDouble();
@@ -415,6 +629,7 @@ describe("nameRecordJsonLoader", () => {
       expect(database.sources).toHaveLength(2);
       expect(database.assertions).toHaveLength(2);
       expect(database.nameRecords).toHaveLength(2);
+      expect(database.ficheRevisions).toHaveLength(1);
     });
 
     // @req REQ-057

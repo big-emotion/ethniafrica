@@ -37,11 +37,11 @@ import type { Language } from "@/types/shared";
  * families }`, never one flat list). The taxonomy is taught in the result,
  * where it costs the reader nothing, instead of demanded as a precondition.
  *
- * The three seed chips carry the same teaching in the corpus' own words —
- * literally, since the words are drawn from the fiches on every request
- * (seedWords.ts): they show all three entity kinds at once, and each one
- * reels through ten examples of its kind (HomeHeroSeeds), a different ten on
- * every visit. That motion is deliberately on the
+ * The seed chips carry the same teaching in the corpus' own words — literally,
+ * since the words are drawn from the fiches on every request (seedWords.ts):
+ * three chips show all entity kinds on a phone and a fourth people example
+ * uses the extra desktop room. Each reels through corpus examples, drawn
+ * again on every visit. That motion is deliberately on the
  * chips and not on the placeholder — a placeholder is a control's name, it
  * would be renamed under a screen reader six times a minute, and it vanishes
  * at the exact moment the reader focuses the field. A chip is neither a name
@@ -66,8 +66,8 @@ import type { Language } from "@/types/shared";
 export const SEARCH_LABEL =
   "Cherchez un peuple, un pays ou une famille linguistique";
 
-/** What to type, never what will be found: that is the label's job. */
-const SEARCH_PLACEHOLDER = "Tapez un nom…";
+/** Concrete examples complement the scope named by the visible label. */
+const SEARCH_PLACEHOLDER = "Ex. Bafut, Namibie, Bantou";
 
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
@@ -254,10 +254,9 @@ export function HomeHeroSearch({
     }
   };
 
-  const runSeed = (seed: string) => {
-    setQuery(seed);
-    setDismissed(false);
-  };
+  const searchRoute = getLocalizedRoute(language, "search");
+  const runSeed = (seed: string) =>
+    router.push(`${searchRoute}?${new URLSearchParams({ q: seed })}`);
 
   return (
     <div className="home-hero-search afh-accent-ocre">
@@ -269,7 +268,7 @@ export function HomeHeroSearch({
       <form
         role="search"
         method="get"
-        action={getLocalizedRoute(language, "search")}
+        action={searchRoute}
         className="home-hero-search-form"
       >
         <label htmlFor={inputId} className="home-hero-search-label">
@@ -413,12 +412,10 @@ export function HomeHeroSearch({
       )}
 
       <style>{`
-        /* 32 and 48 are steps of the brand charter §7 ramp, not measured
-           values: the band's job here is to read as two objects — a question
-           with its answer, then a way in — rather than as one paragraph that
-           happens to end in a text box. */
+        /* The search remains a distinct action while sitting close enough to
+           the answer to read as its way into the corpus. */
         .home-hero-search {
-          margin-top: 32px;
+          margin-top: 24px;
           text-align: left;
         }
 

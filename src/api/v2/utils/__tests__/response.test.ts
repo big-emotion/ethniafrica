@@ -4,6 +4,7 @@ import {
   createApiError,
   API_LICENSE,
   API_ATTRIBUTION,
+  API_ERROR_CODES,
 } from "../response";
 
 describe("createApiResponse", () => {
@@ -49,6 +50,22 @@ describe("createApiResponse", () => {
 });
 
 describe("createApiError", () => {
+  // @req REQ-084
+  it("publishes the closed v2 error taxonomy", () => {
+    expect(API_ERROR_CODES).toEqual([
+      "ILLEGAL_TRANSITION",
+      "INTERNAL_ERROR",
+      "INVALID_PARAM",
+      "NOT_FOUND",
+      "RATE_LIMITED",
+      "SEMANTIC_ERROR",
+      "UNAUTHENTICATED",
+      "UNAUTHORIZED",
+      "UNAVAILABLE",
+      "VALIDATION_ERROR",
+    ]);
+  });
+
   it("wraps a single error into the envelope errors array", () => {
     const envelope = createApiError({
       code: "NOT_FOUND",
@@ -65,8 +82,8 @@ describe("createApiError", () => {
 
   it("supports multiple errors", () => {
     const envelope = createApiError([
-      { code: "VALIDATION", message: "Invalid", field: "id" },
-      { code: "VALIDATION", message: "Invalid", field: "type" },
+      { code: "VALIDATION_ERROR", message: "Invalid", field: "id" },
+      { code: "VALIDATION_ERROR", message: "Invalid", field: "type" },
     ]);
 
     expect(envelope.errors).toHaveLength(2);

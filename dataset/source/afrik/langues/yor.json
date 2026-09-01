@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "yor",
+  "isoCode639_3": "yor",
+  "glottocode": "yoru1245",
+  "nameFr": "Yoruba",
+  "nameEn": "Yoruba",
+  "alternateNames": ["Yariba", "Aku", "Nago"],
+  "spellingAliases": [],
+  "familyId": "FLG_BENOUECONGO",
+  "peoples": [{ "name": "Yoruba", "peopleId": "PPL_YORUBA" }],
+  "content": {
+    "vehicularRole": "regional_lingua_franca",
+    "dialects": ["Ọ̀yọ́", "Ìjẹ̀bú", "Ẹ̀gbá", "Èkìtì", "Ifẹ̀"],
+    "vitalityStatus": {
+      "status": "Institutional",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2026
+    },
+    "sources": [
+      {
+        "title": "yor | ISO 639-3",
+        "url": "https://iso639-3.sil.org/code/yor",
+        "tier": "official",
+        "notes": "SIL International — registration authority for ISO 639-3 codes."
+      },
+      {
+        "title": "Glottolog 5.3 - Yoruba",
+        "url": "https://glottolog.org/resource/languoid/id/yoru1245",
+        "tier": "official",
+        "notes": "Glottolog — authoritative languoid catalogue, source of the glottocode."
+      },
+      {
+        "title": "Yoruba Language (YOR) – L1 & L2 Speakers, Status, Map, Endangered Level & Official Use",
+        "url": "https://www.ethnologue.com/language/yor/",
+        "tier": "official",
+        "notes": "Ethnologue — EGIDS vitality classification, grouped as Institutional."
+      }
+    ]
+  }
+}

@@ -5,7 +5,10 @@ import {
   FICHE_A11Y_PARAMETERS,
   atFicheBreakpoint,
 } from "@/components/fiche/ficheStoryViewports";
-import type { CompareCandidate } from "@/hooks/use-compare-selection";
+import type {
+  CompareCandidate,
+  CompareEntityType,
+} from "@/hooks/use-compare-selection";
 
 const PEOPLES: CompareCandidate[] = [
   { id: "PPL_YORUBA", type: "peoples", exonym: "Yoruba", autonym: "Yorùbá" },
@@ -24,11 +27,9 @@ const FAMILIES: CompareCandidate[] = [
   { id: "FLG_NIGERCONGO", type: "language-families", exonym: "Niger-Congo" },
 ];
 
-async function storySuggestions(type: "peoples" | "countries") {
-  return type === "peoples" ? PEOPLES : COUNTRIES;
-}
-
-async function storyLanguageFamilies() {
+async function storySuggestions(type: CompareEntityType) {
+  if (type === "peoples") return PEOPLES;
+  if (type === "countries") return COUNTRIES;
   return FAMILIES;
 }
 
@@ -51,7 +52,6 @@ const meta = {
   ],
   args: {
     fetchSuggestions: storySuggestions,
-    fetchLanguageFamilies: storyLanguageFamilies,
   },
 } satisfies Meta<typeof EntityComparePicker>;
 

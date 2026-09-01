@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import {
   ACCENT_CYCLE,
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
@@ -9,7 +10,6 @@ import {
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
-  type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -26,8 +26,17 @@ afterEach(() => {
 
 describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
+  it("owns the exact French label of every access mode", () => {
+    expect(ACCESS_MODE_LABELS).toEqual({
+      atlas: "L'atlas",
+      dossiers: "Les dossiers",
+      jeux: "Les jeux",
+    });
+  });
+
+  // @req REQ-114
   it("enumerates the three intents a reader arrives with", () => {
-    expect(ACCESS_MODES).toEqual(["explorer", "comprendre", "jouer"]);
+    expect(ACCESS_MODES).toEqual(["atlas", "dossiers", "jeux"]);
   });
 
   // @req REQ-114
@@ -58,42 +67,47 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // find a people.
   // @req REQ-114
   it("gives explorer the modules a reader reaches by name, country first", () => {
-    const ids = getModulesForAccessMode("explorer").map((m) => m.id);
-    expect(ids).toEqual(["pays", "peuples", "familles", "recherche"]);
+    const ids = getModulesForAccessMode("atlas").map((m) => m.id);
+    expect(ids).toEqual(["pays", "peuples", "familles", "noms", "recherche"]);
   });
 
   // Ordered from the most concrete question to the method that answers it.
   // @req REQ-114
-  it("gives comprendre the modules a reader reaches by question", () => {
-    const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual([
-      "anecdotes",
-      "noms",
-      "frise",
-      "regards-colonisation",
-      "doctrine",
-    ]);
+  it("gives comprendre only the questions asked of the corpus", () => {
+    const ids = getModulesForAccessMode("dossiers").map((m) => m.id);
+    expect(ids).toEqual(["anecdotes", "frise", "regards-colonisation"]);
   });
 
   // @req REQ-114 @req REQ-120
   it("gives jouer the quiz and the one surviving game, in playing order", () => {
-    const ids = getModulesForAccessMode("jouer").map((m) => m.id);
+    const ids = getModulesForAccessMode("jeux").map((m) => m.id);
     expect(ids).toEqual(["quiz", "mercator"]);
   });
 
-  // "Noms & appellations" answers *why does this people carry this name* —
-  // a question, not a name, so it belongs to Comprendre.
+  // ETNI-1453 makes the name a corpus entity with its own fiche, so
+  // Appellations now takes a name and returns a fiche — the filing rule for
+  // Explorer, and the same rule pays/peuples/familles are filed under.
   // @req REQ-114
-  it("files noms under the question axis, not the naming axis", () => {
+  it("files noms with the other nominal entry points", () => {
     const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
-    expect(noms?.accessMode).toBe("comprendre");
+    expect(noms?.accessMode).toBe("atlas");
   });
 
-  // About is a page about the project, not a way into the corpus; it lives
-  // in the site chrome now.
-  // @req REQ-114
-  it("drops about from the registry entirely", () => {
-    expect(MODULE_DEFINITIONS.map((m) => m.id)).not.toContain("about");
+  // Doctrine and About describe the project, not the corpus: neither takes a
+  // name nor answers a question about a people, so neither is filed on an
+  // access mode at all. They are reached from the footer.
+  // @req REQ-132
+  it("keeps the project pages out of the access-mode taxonomy", () => {
+    const ids = MODULE_DEFINITIONS.map((m) => m.id);
+
+    expect(ids).not.toContain("doctrine");
+    expect(ids).not.toContain("about");
+  });
+
+  // @req REQ-132
+  it("still routes the project pages, module or not", () => {
+    expect(getLocalizedRoute("fr", "about")).toBe("/fr/about");
+    expect(getLocalizedRoute("fr", "doctrine")).toBe("/fr/doctrine");
   });
 
   // The quiz used to hang from NEXT_PUBLIC_FEATURE_QUIZ, so a built route
@@ -102,7 +116,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("registers the quiz as a data module over its own bank", () => {
     const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
-    expect(quiz?.accessMode).toBe("jouer");
+    expect(quiz?.accessMode).toBe("jeux");
     expect(quiz?.availability).toBe("data");
     expect(quiz?.dataSource).toBe("quiz_questions");
     expect(quiz?.page).toBe("quiz");
@@ -110,7 +124,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
 
   // @req REQ-120
   it("gives every jouer module somewhere to go", () => {
-    for (const def of getModulesForAccessMode("jouer")) {
+    for (const def of getModulesForAccessMode("jeux")) {
       expect(def.page ?? def.gameSlug).toBeTruthy();
     }
   });
@@ -119,7 +133,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // union instead of growing one variant per game.
   // @req REQ-120
   it("addresses every game by slug and the quiz by its own page", () => {
-    const jouer = getModulesForAccessMode("jouer");
+    const jouer = getModulesForAccessMode("jeux");
     const quiz = jouer.find((m) => m.id === "quiz");
     expect(quiz?.page).toBe("quiz");
     expect(quiz?.gameSlug).toBeUndefined();
@@ -177,7 +191,6 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "recherche",
       "anecdotes",
       "regards-colonisation",
-      "doctrine",
     ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
@@ -187,9 +200,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("scopes each access mode to its own categorical accent", () => {
     expect(ACCENT_BY_ACCESS_MODE).toEqual({
-      explorer: "afh-accent-ocre",
-      comprendre: "afh-accent-teal",
-      jouer: "afh-accent-perv",
+      atlas: "afh-accent-ocre",
+      dossiers: "afh-accent-teal",
+      jeux: "afh-accent-perv",
     });
   });
 });
@@ -199,7 +212,7 @@ describe("moduleRegistry — the editorial gazes are an axis module (REQ-114)", 
   // it is a destination the reader can no longer reach from the header.
   // @req REQ-114
   it("files the colonial gazes under Comprendre", () => {
-    const gazes = getModulesForAccessMode("comprendre").find(
+    const gazes = getModulesForAccessMode("dossiers").find(
       (def) => def.page === "colonization"
     );
 
@@ -216,10 +229,10 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
   // @req REQ-114
   it("lists the quiz whatever the environment says", () => {
     process.env.NEXT_PUBLIC_FEATURE_QUIZ = "false";
-    expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
+    expect(getNavModules("jeux").map((def) => def.id)).toContain("quiz");
 
     delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
-    expect(getNavModules("jouer").map((def) => def.id)).toContain("quiz");
+    expect(getNavModules("jeux").map((def) => def.id)).toContain("quiz");
   });
 
   // @req REQ-106
@@ -233,8 +246,8 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
   it("keeps the registry order so the accent cycle is stable across renders", () => {
     process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
 
-    expect(getNavModules("explorer").map((def) => def.id)).toEqual(
-      getModulesForAccessMode("explorer").map((def) => def.id)
+    expect(getNavModules("atlas").map((def) => def.id)).toEqual(
+      getModulesForAccessMode("atlas").map((def) => def.id)
     );
   });
 });
@@ -245,7 +258,7 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   // ocre · teal · terre · perv in docs/design/mockups/parts/nav-core.js.
   // @req REQ-114
   it("walks the four categorical accents in registry order", () => {
-    const explorer = getModulesForAccessMode("explorer").slice(0, 4);
+    const explorer = getModulesForAccessMode("atlas").slice(0, 4);
 
     expect(explorer.map(accentForModule)).toEqual([
       "afh-accent-ocre",
@@ -261,12 +274,38 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       expect(ACCENT_CYCLE).toContain(accentForModule(def));
     }
   });
+
+  // The accent is positional, so regrouping repaints. Pinning the whole map
+  // is what makes that repaint a decision rather than a side effect: moving
+  // Appellations up to fourth turns it perv and pushes recherche and
+  // anecdotes one step back round the cycle.
+  // @req REQ-114
+  it("pins the accent every module wears after the regrouping", () => {
+    const expectedAccents = Object.freeze({
+      pays: "afh-accent-ocre",
+      peuples: "afh-accent-teal",
+      familles: "afh-accent-terre",
+      noms: "afh-accent-perv",
+      recherche: "afh-accent-ocre",
+      anecdotes: "afh-accent-teal",
+      frise: "afh-accent-terre",
+      "regards-colonisation": "afh-accent-perv",
+      quiz: "afh-accent-ocre",
+      mercator: "afh-accent-teal",
+    } as const);
+
+    for (const [id, accent] of Object.entries(expectedAccents)) {
+      const definition = MODULE_DEFINITIONS.find((def) => def.id === id);
+      expect(definition, `missing pre-existing module ${id}`).toBeDefined();
+      expect(accentForModule(definition!)).toBe(accent);
+    }
+  });
 });
 
 describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => {
   // @req REQ-120
   it("gives every game a shelf, so none can fall off the surface", () => {
-    for (const def of getModulesForAccessMode("jouer")) {
+    for (const def of getModulesForAccessMode("jeux")) {
       expect(def.group).toBeTruthy();
       expect(MODULE_GROUPS[def.group]).toBeTruthy();
     }
@@ -276,7 +315,7 @@ describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => 
   // modules to read at once, and filing them would add a level for nothing.
   // @req REQ-120
   it("leaves explorer and comprendre unfiled", () => {
-    for (const mode of ["explorer", "comprendre"] as const) {
+    for (const mode of ["atlas", "dossiers"] as const) {
       for (const def of getModulesForAccessMode(mode)) {
         expect(def.group).toBeUndefined();
       }

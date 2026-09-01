@@ -13,11 +13,13 @@
  *         schema:
  *           type: string
  *           enum: [language_family, people, country]
+ *         example: people
  *       - in: query
  *         name: entityId
  *         required: true
  *         schema:
  *           type: string
+ *         example: PPL_SHONA
  *       - in: query
  *         name: page
  *         schema:
@@ -59,6 +61,7 @@ import { createApiError } from "@/api/v2/utils/response";
 import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-095
 export const revalidate = 0;
 
 const CACHE_CONTROL = "no-store";
@@ -114,6 +117,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+// @req REQ-095
 export function OPTIONS() {
   return corsOptionsResponse();
 }

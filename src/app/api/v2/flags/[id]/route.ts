@@ -169,6 +169,7 @@ export async function GET(
  *         required: true
  *         schema:
  *           type: string
+ *         example: flag-7kq3m2
  *         description: Flag UUID or public slug.
  *     requestBody:
  *       required: true

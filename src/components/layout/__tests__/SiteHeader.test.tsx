@@ -15,11 +15,16 @@ import { HEADER_RETRACTED_ATTRIBUTE } from "@/hooks/use-header-reveal";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
-import { getNavModules } from "@/lib/hubs/moduleRegistry";
-import type { ModuleAvailabilityMap } from "@/lib/hubs/moduleOffer";
+import {
+  ACCESS_MODE_LABELS,
+  ACCESS_MODES,
+  getNavModules,
+} from "@/lib/hubs/moduleRegistry";
+import {
+  isModuleOffered,
+  type ModuleAvailabilityMap,
+} from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
-import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
-import { getFacetByPage } from "@/lib/hubs/facets";
 import { getLocalizedRoute } from "@/lib/routing";
 
 let mockPathname = "/fr";
@@ -110,9 +115,9 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
     ).getAllByRole("button");
 
     expect(entries.map((button) => button.textContent)).toEqual([
-      "Explorer",
-      "Comprendre",
-      "Jouer",
+      ACCESS_MODE_LABELS.atlas,
+      ACCESS_MODE_LABELS.dossiers,
+      ACCESS_MODE_LABELS.jeux,
     ]);
   });
 
@@ -160,33 +165,65 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
 
     expect(container.querySelector(".sh-brand img")).toHaveAttribute("alt", "");
   });
+
+  // At phone widths the three fixed-size controls need the brand lockup to
+  // yield space. A non-shrinking lockup widened the whole document to 394px
+  // in a 375px viewport as soon as this header reached the developer portal.
+  // @req REQ-111
+  it("lets the mobile brand lockup shrink before the controls overflow", () => {
+    renderHeader();
+
+    expect(declarationsFor("\\.sh-brand")).toMatch(/flex:\s*0 1 auto/);
+    expect(declarationsFor("\\.sh-brand")).not.toMatch(/flex:\s*none/);
+    expect(declarationsFor("\\.sh-controls")).toMatch(/flex:\s*none/);
+  });
 });
 
 describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   // @req REQ-114
-  it("leads with the axis's own hub, and reaches every entry it holds", () => {
+  it("keeps the access mode non-navigating and exposes every module as a direct entry", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "true");
-    expect(panel()).toHaveTextContent(t.hubs.explorer.menuBlurb);
-
-    // The axis label is a disclosure button, so before this the page the axis
-    // is named after was reachable from no navigation surface at all.
+    expect(trigger(ACCESS_MODE_LABELS.atlas)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+    expect(panel()).toHaveTextContent(t.hubs.atlas.menuBlurb);
+    expect(trigger(ACCESS_MODE_LABELS.atlas).tagName).toBe("BUTTON");
+    expect(trigger(ACCESS_MODE_LABELS.atlas)).not.toHaveAttribute("href");
     expect(
-      screen.getByRole("link", { name: t.hubs.explorer.hubEntryName })
-    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
+      within(panel()).getByRole("heading", {
+        name: ACCESS_MODE_LABELS.atlas,
+      })
+    ).not.toHaveAttribute("href");
+    expect(
+      within(panel()).queryByTestId("site-nav-hub-atlas")
+    ).not.toBeInTheDocument();
 
-    for (const navModule of getNavModules("explorer")) {
-      const href = getModuleHref(navModule, "fr");
-      const facet = navModule.page ? getFacetByPage(navModule.page) : null;
+    // Directory facets are modules in navigation: each one keeps its own
+    // destination, full name and availability contract under the access mode.
+    //
+    // A module in preparation is listed and named like the rest and carries
+    // no destination at all — the Bientôt row. Explorer holds one since
+    // Appellations moved onto it, so the destination is asserted against the
+    // same predicate the header itself renders from rather than against the
+    // assumption that every module on this axis is offered.
+    for (const navModule of getNavModules("atlas")) {
+      const entry = within(panel()).getByTestId(
+        `site-nav-module-${navModule.id}`
+      );
 
-      // A facet is offered under its short name, because it names a state of
-      // the hub rather than a destination competing with it.
-      expect(
-        screen.getByRole("link", { name: facet ? facet.label : navModule.name })
-      ).toHaveAttribute("href", href);
+      expect(entry).toHaveTextContent(navModule.name);
+      if (isModuleOffered(navModule, null)) {
+        expect(entry).toHaveAccessibleName(navModule.name);
+        expect(entry).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+      } else {
+        // A Bientôt row is a span with no role, so it has no accessible name
+        // to carry — which is the point: it is not a destination.
+        expect(entry).not.toHaveAttribute("href");
+      }
     }
   });
 
@@ -203,9 +240,8 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("names destinations without printing their addresses", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
-    expect(panel()).not.toHaveTextContent(getAxisHubRoute("fr", "explorer"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "search"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "peoples"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "countries"));
@@ -216,10 +252,13 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("closes when its own trigger is clicked again", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "false");
+    expect(trigger(ACCESS_MODE_LABELS.atlas)).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
     expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
   });
 
@@ -227,12 +266,18 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("swaps to another axis without closing first", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
 
-    expect(trigger("Explorer")).toHaveAttribute("aria-expanded", "false");
-    expect(trigger("Comprendre")).toHaveAttribute("aria-expanded", "true");
-    expect(panel()).toHaveTextContent(t.hubs.comprendre.menuBlurb);
+    expect(trigger(ACCESS_MODE_LABELS.atlas)).toHaveAttribute(
+      "aria-expanded",
+      "false"
+    );
+    expect(trigger(ACCESS_MODE_LABELS.dossiers)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+    expect(panel()).toHaveTextContent(t.hubs.dossiers.menuBlurb);
   });
 
   // The mockup has no router; in a SPA the panel would otherwise survive the
@@ -241,7 +286,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   it("closes when the reader lands on a new route", () => {
     const { rerender } = renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
     mockPathname = getLocalizedRoute("fr", "peoples");
     rerender(
       <ThemeProvider attribute="class">
@@ -253,43 +298,82 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 
   // @req REQ-114
-  it("marks the facet the reader is already reading", () => {
+  it("marks the direct module the reader is already reading", () => {
     mockPathname = getLocalizedRoute("fr", "peoples");
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
-    expect(screen.getByRole("link", { name: "Peuples" })).toHaveAttribute(
+    expect(screen.getByTestId("site-nav-module-peuples")).toHaveAttribute(
       "aria-current",
       "page"
     );
-    expect(screen.getByRole("link", { name: "Pays" })).not.toHaveAttribute(
+    expect(screen.getByTestId("site-nav-module-pays")).not.toHaveAttribute(
       "aria-current"
     );
   });
 
   // @req REQ-114
-  it("keeps the facets on a single scrolling row", () => {
-    const { container } = renderHeader();
+  it("renders Explorer directory modules in registry order without a facet sub-navigation", () => {
+    renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
-    // happy-dom lays nothing out, so the row's shape is asserted on the
-    // declaration itself. The facets are states of one hub: stacked, they
-    // read as three destinations competing with the hub they belong to.
-    const sheet = container.querySelector("style")?.textContent ?? "";
-    const facetRow = sheet.slice(sheet.indexOf(".sh-facets {"));
-
-    expect(facetRow).toMatch(/flex-wrap:\s*nowrap/);
-    expect(facetRow).toMatch(/overflow-x:\s*auto/);
-    // The wider hub card is what keeps that scrollbar unused at the widths
-    // the panel is actually painted on.
-    expect(sheet).toMatch(
-      /\.sh-grid \.sh-hub\[data-has-facets\] \{[^}]*grid-column:\s*span 2/
+    expect(
+      within(panel())
+        .getAllByTestId(/^site-nav-module-/)
+        .map((entry) => entry.dataset.testid)
+    ).toEqual(
+      getNavModules("atlas").map(
+        (navModule) => `site-nav-module-${navModule.id}`
+      )
     );
-    expect(screen.getByTestId("site-nav-hub-explorer")).toHaveAttribute(
-      "data-has-facets"
+    expect(
+      within(panel()).queryByTestId(/^site-nav-facet-/)
+    ).not.toBeInTheDocument();
+  });
+});
+
+/**
+ * About and the doctrine were listed under Comprendre, which promised a way
+ * into the corpus and delivered two pages about the project. An access mode
+ * is a reading intention, so neither is filed on one any more and the header
+ * — which is generated from the registry — stops naming them. The footer's
+ * « Le projet » rubric is where they are reached (siteFooterDirectory).
+ */
+describe("SiteHeader — the project pages are not an axis (REQ-132)", () => {
+  // @req REQ-132
+  it("names neither About nor the doctrine under Comprendre", () => {
+    renderHeader();
+
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    expect(
+      within(panel()).queryByTestId("site-nav-module-about")
+    ).not.toBeInTheDocument();
+    expect(
+      within(panel()).queryByTestId("site-nav-module-doctrine")
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-132
+  it("names neither of them in the mobile tray either", () => {
+    renderHeader();
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+      })
     );
+
+    expect(
+      within(tray).queryByTestId("site-nav-module-about")
+    ).not.toBeInTheDocument();
+    expect(
+      within(tray).queryByTestId("site-nav-module-doctrine")
+    ).not.toBeInTheDocument();
   });
 });
 
@@ -298,26 +382,32 @@ describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
   it("closes on Escape and hands the focus back to the trigger", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
     fireEvent.keyDown(document, { key: "Escape" });
 
     expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
-    expect(trigger("Jouer")).toHaveFocus();
+    expect(trigger(ACCESS_MODE_LABELS.jeux)).toHaveFocus();
   });
 
   // @req REQ-114
   it("moves between axes with the arrow keys, wrapping at both ends", () => {
     renderHeader();
 
-    trigger("Explorer").focus();
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowRight" });
-    expect(trigger("Comprendre")).toHaveFocus();
+    trigger(ACCESS_MODE_LABELS.atlas).focus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.atlas), {
+      key: "ArrowRight",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.dossiers)).toHaveFocus();
 
-    fireEvent.keyDown(trigger("Comprendre"), { key: "ArrowLeft" });
-    expect(trigger("Explorer")).toHaveFocus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.dossiers), {
+      key: "ArrowLeft",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.atlas)).toHaveFocus();
 
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowLeft" });
-    expect(trigger("Jouer")).toHaveFocus();
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.atlas), {
+      key: "ArrowLeft",
+    });
+    expect(trigger(ACCESS_MODE_LABELS.jeux)).toHaveFocus();
   });
 
   // An open panel follows the focus, so arrowing along the bar reads the
@@ -326,11 +416,16 @@ describe("SiteHeader — keyboard contract (atlas charter §3)", () => {
   it("carries an open panel along with the arrow keys", () => {
     renderHeader();
 
-    fireEvent.click(trigger("Explorer"));
-    fireEvent.keyDown(trigger("Explorer"), { key: "ArrowRight" });
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+    fireEvent.keyDown(trigger(ACCESS_MODE_LABELS.atlas), {
+      key: "ArrowRight",
+    });
 
-    expect(trigger("Comprendre")).toHaveAttribute("aria-expanded", "true");
-    expect(panel()).toHaveTextContent(t.hubs.comprendre.menuBlurb);
+    expect(trigger(ACCESS_MODE_LABELS.dossiers)).toHaveAttribute(
+      "aria-expanded",
+      "true"
+    );
+    expect(panel()).toHaveTextContent(t.hubs.dossiers.menuBlurb);
   });
 });
 
@@ -339,7 +434,7 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
   it("never offers a route that does not resolve", () => {
     renderHeader();
 
-    for (const axis of ["Explorer", "Comprendre", "Jouer"]) {
+    for (const axis of Object.values(ACCESS_MODE_LABELS)) {
       fireEvent.click(trigger(axis));
       for (const link of within(panel()).getAllByRole("link")) {
         expect(link.getAttribute("href")).toMatch(/^\/fr\//);
@@ -350,9 +445,9 @@ describe("SiteHeader — what the corpus does not have (REQ-106)", () => {
   // @req REQ-106
   it("renders an unbuilt module as an unfocusable Bientôt entry", () => {
     renderHeader();
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
 
-    const unbuilt = getNavModules("jouer").filter(
+    const unbuilt = getNavModules("jeux").filter(
       (navModule) => getModuleHref(navModule, "fr") === null
     );
 
@@ -387,12 +482,12 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   it("withholds the invitation from every module declared in preparation", () => {
     renderHeader();
 
-    const drafts = getNavModules("comprendre").filter(
+    const drafts = getNavModules("dossiers").filter(
       (navModule) => navModule.editorialReadiness === "draft"
     );
     expect(drafts.length).toBeGreaterThan(0);
 
-    fireEvent.click(trigger("Comprendre"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
     for (const navModule of drafts) {
       expectInert(entryFor(navModule.id));
     }
@@ -409,7 +504,7 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   it("withholds it from a ready module whose corpus came back empty", () => {
     renderHeader({}, { quiz: false });
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
     expectInert(entryFor("quiz"));
   });
 
@@ -417,7 +512,7 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   it("offers that same module once its corpus fills", () => {
     renderHeader({}, { quiz: true });
 
-    fireEvent.click(trigger("Jouer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
     const entry = entryFor("quiz");
     expect(entry.tagName).toBe("A");
     expect(entry).toHaveAttribute("href", getLocalizedRoute("fr", "quiz"));
@@ -432,10 +527,14 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
-    fireEvent.click(within(tray).getByRole("button", { name: /Comprendre/ }));
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+      })
+    );
 
     expect(
-      within(tray).queryByRole("link", { name: /Noms & appellations/ })
+      within(tray).queryByRole("link", { name: /Appellations/ })
     ).not.toBeInTheDocument();
   });
 });
@@ -488,7 +587,7 @@ describe("SiteHeader — the controls that stay in the bar", () => {
   it("gives every bar control a >= 44px hit area", () => {
     renderHeader();
 
-    for (const label of ["Explorer", "Comprendre", "Jouer", "Rechercher"]) {
+    for (const label of [...Object.values(ACCESS_MODE_LABELS), "Rechercher"]) {
       expect(trigger(label)).toHaveClass("min-h-11");
     }
   });
@@ -502,7 +601,7 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
     fireEvent.click(screen.getByTestId(BURGER));
 
     const tray = screen.getByRole("dialog");
-    for (const axis of ["Explorer", "Comprendre", "Jouer"]) {
+    for (const axis of Object.values(ACCESS_MODE_LABELS)) {
       expect(
         within(tray).getByRole("button", { name: new RegExp(axis) })
       ).toBeInTheDocument();
@@ -510,23 +609,84 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
   });
 
   // @req REQ-114
-  it("deploys the hub and its facets inside the tray", () => {
+  it("deploys direct module entries without a hub landing link", () => {
     renderHeader();
 
     fireEvent.click(screen.getByTestId(BURGER));
     const tray = screen.getByRole("dialog");
-    fireEvent.click(within(tray).getByRole("button", { name: /Explorer/ }));
-
-    // The tray is the only navigation below 760px, so a hub reachable in the
-    // panel and not here would be unreachable on a phone.
-    expect(
-      within(tray).getByRole("link", { name: t.hubs.explorer.hubEntryName })
-    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
-
-    expect(within(tray).getByRole("link", { name: "Peuples" })).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "peoples")
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.atlas),
+      })
     );
+
+    expect(
+      within(tray).queryByTestId("site-nav-hub-atlas")
+    ).not.toBeInTheDocument();
+    expect(
+      within(tray).getByRole("heading", {
+        name: ACCESS_MODE_LABELS.atlas,
+      })
+    ).not.toHaveAttribute("href");
+    for (const navModule of getNavModules("atlas")) {
+      const entry = within(tray).getByTestId(`site-nav-module-${navModule.id}`);
+
+      // Same contract as the wide panel: offered means a destination, in
+      // preparation means none.
+      if (isModuleOffered(navModule, null)) {
+        expect(entry).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+      } else {
+        expect(entry).not.toHaveAttribute("href");
+      }
+    }
+  });
+
+  // @req REQ-114
+  it("keeps panel and tray destination contracts aligned for every access mode", () => {
+    renderHeader();
+
+    const contractsFor = (scope: HTMLElement) =>
+      within(scope)
+        .getAllByTestId(/^site-nav-module-/)
+        .map((entry) => ({
+          testId: entry.dataset.testid,
+          href: entry.getAttribute("href"),
+          disabled: entry.getAttribute("aria-disabled"),
+        }));
+
+    const panelContracts = new Map<string, ReturnType<typeof contractsFor>>();
+    for (const axis of ACCESS_MODES) {
+      fireEvent.click(trigger(ACCESS_MODE_LABELS[axis]));
+      expect(
+        within(panel()).getByRole("heading", {
+          name: ACCESS_MODE_LABELS[axis],
+        })
+      ).not.toHaveAttribute("href");
+      const contracts = contractsFor(panel());
+      expect(contracts.map(({ testId }) => testId)).toEqual(
+        getNavModules(axis).map(
+          (navModule) => `site-nav-module-${navModule.id}`
+        )
+      );
+      panelContracts.set(axis, contracts);
+    }
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    for (const axis of ACCESS_MODES) {
+      expect(
+        within(tray).getByRole("heading", {
+          name: ACCESS_MODE_LABELS[axis],
+        })
+      ).not.toHaveAttribute("href");
+      fireEvent.click(
+        within(tray).getByRole("button", {
+          name: new RegExp(ACCESS_MODE_LABELS[axis]),
+        })
+      );
+      expect(contractsFor(tray)).toEqual(panelContracts.get(axis));
+    }
   });
 });
 
@@ -550,7 +710,7 @@ describe("SiteHeader — the panel opens over the page, not through it", () => {
   // @req REQ-114
   it("takes the panel out of the masthead's flow, so opening it cannot move the page", () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
     expect(declarationsFor("\\.sh-panel")).toMatch(/position:\s*absolute/);
   });
@@ -601,7 +761,7 @@ describe("SiteHeader — a scroll the reader did not make cannot close the menu"
   // @req REQ-114
   it("holds the masthead open while the axis panel is open", async () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
     expect(panel()).toBeInTheDocument();
 
     // Well past RETRACT_BELOW_PX and travelling down: everything the bar
@@ -618,7 +778,7 @@ describe("SiteHeader — a scroll the reader did not make cannot close the menu"
   // @req REQ-114
   it("lets the masthead retract again once the reader has closed the menu", async () => {
     renderHeader();
-    fireEvent.click(trigger("Explorer"));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
     scrollPageTo(400);
     await settleOneFrame();
 
