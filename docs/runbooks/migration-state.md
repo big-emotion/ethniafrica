@@ -210,6 +210,18 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **REQ-136 (ETNI-1506).** `068` gives the language entity (`afrik_languages`) the search
+> apparatus every other atlas entity already has: a `name_unaccent_vector` column (mirroring
+> `afrik_peoples`/`afrik_countries`, `052`) and `afrik_search_languages`, modelled on
+> `afrik_search_countries` (`052`) — no confidence/classification filters, since
+> `afrik_languages` carries neither. It differs in one respect: the exact-match bonus fires on
+> the ISO 639-3 id as well as on the name, so a reader who types "swa" reaches Swahili exactly as
+> precisely as one who types its name (the language's `search_vector` already weights the ISO id
+> at tier A since migration `055`, so no new column was needed for that half). File `067` is
+> omitted from this table (added after the last full read, same as `050`/`064`/`065`); `068` is
+> the next free version on `recette`.
 
 > **REQ-135 (ETNI-1457).** `066` gives the name entity (`afrik_patronymes`, `053`) the search
 > apparatus every other entity already has, plus one mechanism none of them do: a
