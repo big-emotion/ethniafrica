@@ -40,12 +40,12 @@ export const metadata: Metadata = {
   },
 };
 
-// @req REQ-113
-// @req REQ-115
 interface HomePageProps {
   searchParams?: Promise<{ hero?: string | string[] }>;
 }
 
+// @req REQ-113
+// @req REQ-115
 export default async function Home({ searchParams }: HomePageProps = {}) {
   // Drawn on the server once per request: no hydration mismatch and no visual
   // swap after the first paint. The force-dynamic contract above prevents the
