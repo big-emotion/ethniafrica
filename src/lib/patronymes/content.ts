@@ -34,7 +34,11 @@ export interface AttestedForm {
 }
 
 export type TransmissionMode =
-  "patrilineal" | "matrilineal" | "bilateral" | "elective" | "other";
+  | "patrilineal"
+  | "matrilineal"
+  | "bilateral"
+  | "elective"
+  | "other";
 
 const TRANSMISSION_MODES: TransmissionMode[] = [
   "patrilineal",
@@ -64,7 +68,9 @@ const DESIGNATED_SOCIAL_UNITS: DesignatedSocialUnit[] = [
 ];
 
 export type OriginType =
-  "griot_oral_tradition" | "written_chronicle" | "linguistic_reconstruction";
+  | "griot_oral_tradition"
+  | "written_chronicle"
+  | "linguistic_reconstruction";
 
 const ORIGIN_TYPES: OriginType[] = [
   "griot_oral_tradition",
