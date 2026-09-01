@@ -11,6 +11,7 @@ interface SearchLensDef {
 
 // @req REQ-136
 // @req REQ-126
+// @req REQ-135
 const SEARCH_LENSES: SearchLensDef[] = [
   { value: "all", label: "Tout" },
   { value: "languageFamily", label: "Familles" },
@@ -18,6 +19,8 @@ const SEARCH_LENSES: SearchLensDef[] = [
   { value: "people", label: "Peuples" },
   { value: "country", label: "Pays" },
   { value: "person", label: "Personnes" },
+  // ETNI-1463: the name reaches the unified surface as its own lens.
+  { value: "patronyme", label: "Noms" },
 ];
 
 interface SearchLensBarProps {

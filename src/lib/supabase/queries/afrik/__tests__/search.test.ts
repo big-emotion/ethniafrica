@@ -1227,6 +1227,35 @@ describe("ftsSearchEntities", () => {
     );
   });
 
+  // ETNI-1463 AC3 (ETNI-1744): a name query that resolves to nothing — no
+  // patronyme hit and no hit in any other kind — still routes into the
+  // REQ-125 near-miss surface, same as any other zero-hit query.
+  // @req REQ-125
+  it("routes a zero-hit name query into the near-miss leads surface", async () => {
+    leadsPayload = {
+      rows: [
+        {
+          kind: "people",
+          id: "PPL_MANDINKA",
+          name: "Mandinka",
+          similarity: 0.3,
+        },
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keitaaa",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes).toEqual([]);
+    expect(result.total).toBe(0);
+    expect(result.leads).toEqual([
+      { kind: "people", id: "PPL_MANDINKA", name: "Mandinka", similarity: 0.3 },
+    ]);
+  });
+
   // @req REQ-125
   it("returns no leads when q is empty even with a relation scope and zero total", async () => {
     const result = await ftsSearchEntities({
@@ -1314,6 +1343,33 @@ describe("ftsSearchEntities", () => {
       "PPL_ELE_B",
       "PPL_EPE",
     ]);
+  });
+
+  // @req REQ-135
+  it("ranks a Manding and a Kongo name of equal evidential strength equally (AC1)", async () => {
+    // Both fixtures sit at the same normalizedScore, standing in for equal
+    // Source Tier confidence — the ranking has no region field to read, so
+    // an equal score can only resolve by name, then id, never by origin.
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", { normalizedScore: 0.8 }),
+        patronymeRow("PATR_NZINGA", "Nzinga", { normalizedScore: 0.8 }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "name", limit: 20, offset: 0 });
+
+    const patronymeHits = result.results.filter(
+      (hit) => hit.kind === "patronyme"
+    );
+    expect(patronymeHits.map((hit) => hit.id)).toEqual([
+      "PATR_KEITA",
+      "PATR_NZINGA",
+    ]);
+    expect(patronymeHits[0].normalizedScore).toBe(
+      patronymeHits[1].normalizedScore
+    );
   });
 
   // @req REQ-002

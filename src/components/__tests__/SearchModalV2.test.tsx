@@ -29,6 +29,7 @@ const ZERO_LENS_COUNTS = {
   languageFamily: 0,
   language: 0,
   person: 0,
+  patronyme: 0,
 };
 
 /** Approximates the corpus-wide totals the API would return, from the mocked page alone. */
@@ -151,6 +152,8 @@ describe("SearchModalV2", () => {
     expect(
       screen.getByRole("button", { name: "Personnes" })
     ).toBeInTheDocument();
+    // @req REQ-135
+    expect(screen.getByRole("button", { name: "Noms" })).toBeInTheDocument();
   });
 
   it("should show instruction text when search query is empty", () => {
@@ -184,7 +187,7 @@ describe("SearchModalV2", () => {
 
     // Verify all lenses are rendered
     const lenses = within(lensGroup).getAllByRole("button");
-    expect(lenses).toHaveLength(6); // Tout, Familles, Langues, Peuples, Pays, Personnes
+    expect(lenses).toHaveLength(7); // Tout, Familles, Langues, Peuples, Pays, Personnes, Noms
   });
 
   it("should not render when closed", () => {
@@ -227,6 +230,7 @@ describe("SearchModalV2", () => {
         "Peuples",
         "Pays",
         "Personnes",
+        "Noms",
       ]) {
         expect(screen.getByRole("button", { name }).className).toMatch(
           /rounded-full/
@@ -244,6 +248,7 @@ describe("SearchModalV2", () => {
         "Peuples",
         "Pays",
         "Personnes",
+        "Noms",
       ]) {
         expect(screen.getByRole("button", { name }).className).toMatch(
           /min-h-11/
@@ -402,6 +407,86 @@ describe("SearchModalV2", () => {
       fireEvent.click(screen.getByRole("link", { name: "Shona" }));
 
       expect(mockOnClose).toHaveBeenCalled();
+    });
+  });
+
+  // ── ETNI-1463 AC2 — absence of a name fiche shown explicitly ────────────
+
+  describe("no-name absence marker", () => {
+    // @req REQ-135
+    it("shows an explicit absence marker when persons are found but no name fiche is", async () => {
+      mockSearch([
+        {
+          type: "person",
+          id: "PER_X",
+          name: "Someone",
+          roleCategory: "historian",
+        },
+      ]);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Someone" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText("Someone")).toBeInTheDocument();
+      });
+      expect(screen.getByTestId("no-name-fiche-note")).toBeInTheDocument();
+    });
+
+    // @req REQ-135
+    it("does not show the absence marker when a name fiche is also found", async () => {
+      mockSearch([
+        {
+          type: "person",
+          id: "PER_X",
+          name: "Someone",
+          roleCategory: "historian",
+        },
+        { type: "patronyme", id: "PATR_X", name: "Someone" },
+      ]);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Someone" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getAllByText("Someone").length).toBeGreaterThan(0);
+      });
+      expect(
+        screen.queryByTestId("no-name-fiche-note")
+      ).not.toBeInTheDocument();
+    });
+
+    // @req REQ-135
+    it("does not show the absence marker when there are no person results either", async () => {
+      mockSearch(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText("Shona")).toBeInTheDocument();
+      });
+      expect(
+        screen.queryByTestId("no-name-fiche-note")
+      ).not.toBeInTheDocument();
     });
   });
 

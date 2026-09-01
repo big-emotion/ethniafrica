@@ -3286,8 +3286,21 @@ const options: swaggerJsdoc.Options = {
             labelFr: { type: "string", example: "Ghana" },
             activeQuestionCount: { type: "integer", minimum: 0 },
             playable: { type: "boolean" },
+            playableThemeIds: {
+              type: "array",
+              items: { type: "string" },
+              description:
+                "The themes this track can fill a session of, in the picker's order. A theme absent from the list cannot be crossed with this track — `?pays=GHA&theme=…` naming an omitted theme answers 422.",
+              example: ["noms", "langues", "croyances"],
+            },
           },
-          required: ["id", "labelFr", "activeQuestionCount", "playable"],
+          required: [
+            "id",
+            "labelFr",
+            "activeQuestionCount",
+            "playable",
+            "playableThemeIds",
+          ],
         },
         QuizThemeOption: {
           type: "object",

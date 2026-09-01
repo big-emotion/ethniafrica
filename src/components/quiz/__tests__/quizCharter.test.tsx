@@ -9,6 +9,10 @@ import {
   sessionBandPlan,
   QUIZ_SESSION_SIZE,
 } from "@/lib/quiz/quizScope";
+import {
+  QUIZ_THEME_IDS,
+  QUIZ_THEME_SPECIMENS_FR,
+} from "@/lib/quiz/segmentPolicy";
 
 /**
  * What the quiz owes the games charter (`docs/design/games-charter.md`), now
@@ -81,12 +85,61 @@ describe("Quiz charter contract (REQ-103)", () => {
   // Charter §9.2 — an option looks answerable, at least 44px per WCAG 2.5.8.
   // @req REQ-103
   it("gives every answer option and the exit a 44px minimum target", () => {
+    // `QuizScopePicker.tsx` stood here until the picker became cards: its 88
+    // targets are all one component now, so that is where the rule bites. The
+    // list follows the target, not the file that used to draw it.
     for (const file of [
       "QuizQuestionCard.tsx",
       "QuizSessionExit.tsx",
-      "QuizScopePicker.tsx",
+      "QuizTrackCard.tsx",
     ]) {
       expect(readQuizSource(file)).toMatch(/min-h-11/);
+    }
+  });
+
+  /**
+   * A client component reached from a server one may only take serialisable
+   * props. `QuizScopePicker` is a server component and `QuizScopeDeck` is
+   * `"use client"`, so a builder handed across that boundary is not a type
+   * error and not a test failure — it is a 500 on the whole route, and only a
+   * production render shows it. This suite renders in happy-dom, where the
+   * boundary does not exist, so the guard has to read the source.
+   *
+   * It caught nothing when written: it was added *after* two `(id) => string`
+   * props took `/fr/jeux/quiz` down in CI. `AtlasGlobe` carries the same note
+   * for the same reason.
+   */
+  // @req REQ-121
+  it("gives the client deck no prop a server component cannot serialise", () => {
+    const source = readQuizSource("QuizScopeDeck.tsx");
+    const props = source.slice(
+      source.indexOf("export interface QuizScopeDeckProps"),
+      source.indexOf("export const QuizScopeDeck")
+    );
+
+    expect(props).not.toBe("");
+    // Every declared prop, minus the doc comments around them.
+    const declarations = props
+      .split("\n")
+      .filter((line) => /^\s{2}\w+\??:/.test(line));
+    expect(declarations.length).toBeGreaterThan(0);
+    for (const declaration of declarations) {
+      expect(declaration).not.toMatch(/=>/);
+    }
+  });
+
+  /**
+   * A theme card offers a track by showing the question that track asks. A
+   * theme with no specimen would fall back to a bare label — an `<option>` with
+   * a border, which is the shape this surface was rebuilt to leave behind.
+   */
+  // @req REQ-121
+  it("carries a specimen for every theme", () => {
+    expect(Object.keys(QUIZ_THEME_SPECIMENS_FR).sort()).toEqual(
+      [...QUIZ_THEME_IDS].sort()
+    );
+    for (const specimen of Object.values(QUIZ_THEME_SPECIMENS_FR)) {
+      expect(specimen).toMatch(/ \?$/);
     }
   });
 

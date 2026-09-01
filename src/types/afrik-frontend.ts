@@ -315,7 +315,8 @@ export type SearchEntityType =
   | "people"
   | "language"
   | "languageFamily"
-  | "person";
+  | "person"
+  | "patronyme";
 
 /**
  * Filtres de recherche

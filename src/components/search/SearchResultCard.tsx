@@ -20,6 +20,7 @@ import {
   getCountryRoute,
   getFamilyRoute,
   getLanguageRoute,
+  getPatronymeRoute,
   getPeopleRoute,
   getPersonRoute,
 } from "@/lib/routing";
@@ -57,6 +58,8 @@ export function ficheHrefFor(result: SearchResult, language: Language): string {
   if (result.type === "languageFamily")
     return getFamilyRoute(language, result.id);
   if (result.type === "person") return getPersonRoute(language, result.id);
+  if (result.type === "patronyme")
+    return getPatronymeRoute(language, result.id);
   if (result.type === "language") return getLanguageRoute(language, result.id);
   return getPeopleRoute(language, result.id);
 }

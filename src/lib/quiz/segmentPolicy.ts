@@ -229,6 +229,34 @@ export const QUIZ_THEME_LABELS_FR: Record<QuizThemeId, string> = {
 };
 
 /**
+ * One question each theme actually asks, for the card that offers it.
+ *
+ * A specimen, not a tagline: the picker replaced a `<select>` whose options
+ * could only carry a label, and what a card buys over an `<option>` is exactly
+ * this line — the reader chooses a subject rather than a taxonomy entry.
+ *
+ * Five are the verbatim stems of the inversion templates (T6, T7, T9, T10,
+ * T11) in `questionTemplates.ts`. The other four are the stems of T2, T4, T1
+ * and T3 with the drawn subject replaced by « ce peuple », because a card has
+ * not drawn one. Keep them in step with the templates: a specimen that stops
+ * being what the theme asks is decoration, and a reader who picks a card on it
+ * has been mis-sold the track.
+ */
+// @req REQ-121
+export const QUIZ_THEME_SPECIMENS_FR: Record<QuizThemeId, string> = {
+  noms: "Quel nom ce peuple se donne-t-il à lui-même ?",
+  langues: "Quelle est la langue principale de ce peuple ?",
+  "parente-linguistique":
+    "À quelle famille linguistique appartient ce peuple ?",
+  territoire: "Dans quel pays ce peuple est-il principalement présent ?",
+  "rites-et-culture": "Quel peuple pratique ces rites ?",
+  croyances: "Quel peuple a ces croyances ?",
+  "royaumes-et-histoire": "Quel peuple a connu cette histoire ?",
+  organisation: "Quel peuple s'organise ainsi ?",
+  migrations: "Quel peuple a suivi ce chemin ?",
+};
+
+/**
  * The theme a stored question belongs to, read from the field path rather than
  * the template id.
  *

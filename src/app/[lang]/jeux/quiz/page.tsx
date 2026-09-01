@@ -5,6 +5,7 @@ import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import { describeScope, getQuizScopesHandler } from "@/api/v2/handlers/quiz";
 import { parseQuizScope } from "@/lib/quiz/quizScope";
 import { getLocalizedRoute } from "@/lib/routing";
+import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { translations } from "@/lib/translations";
 
 const t = translations.fr.quiz;
@@ -61,12 +62,20 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
   if (scope) {
     return (
       <PageLayout language="fr" title={t.pageTitle} subtitle={scope.labelFr}>
-        <QuizPlayHost
-          scope={asked}
-          theme={query.theme ?? null}
-          scopeLabelFr={scope.labelFr}
-          exitHref={QUIZ_PATH}
-        />
+        {/* The axis accent, bound here for the reason spelled out in
+            src/app/[lang]/jeux/[jeu]/page.tsx: a quiz page is not a hub, so
+            nothing else on the route binds `--accent` and it fell through to
+            the bare shadcn HSL triplet that shares the name. Every card's
+            hover tint and every `variant="accent"` control on this surface
+            read it. */}
+        <div className={ACCENT_BY_ACCESS_MODE.jeux}>
+          <QuizPlayHost
+            scope={asked}
+            theme={query.theme ?? null}
+            scopeLabelFr={scope.labelFr}
+            exitHref={QUIZ_PATH}
+          />
+        </div>
       </PageLayout>
     );
   }
@@ -80,7 +89,9 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
 
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
-      <QuizScopePicker scopes={envelope.data} action={QUIZ_PATH} />
+      <div className={ACCENT_BY_ACCESS_MODE.jeux}>
+        <QuizScopePicker scopes={envelope.data} action={QUIZ_PATH} />
+      </div>
     </PageLayout>
   );
 }

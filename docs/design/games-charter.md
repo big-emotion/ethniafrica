@@ -213,12 +213,36 @@ A session is drawn from a **scoped pool**, chosen before play:
 Two axes over 54 countries and 24 families would turn a scope-friendly game
 into hundreds of distinct sessions without a single new mechanic — moot for
 the hub's one surviving game, `mercator`, which plays over the whole continent
-and has nothing to narrow to (§1). `QuizSegmentPicker` already exists for the
-quiz surface and is the component to reuse rather than rebuild, should a
-scope-friendly game return.
+and has nothing to narrow to (§1).
 
 Scoping also _improves_ the items it feeds: inside a country run, every
 distractor is automatically a plausible one.
+
+### Amended, 2026-09-01 — the quiz crosses two axes on purpose
+
+Two sentences above are now history and are kept rather than deleted, because
+what replaced them is the argument.
+
+**`QuizSegmentPicker` no longer exists.** The component to reuse is
+`QuizScopePicker`, and its shape changed with it: the three `<select>`s are
+gone and the surface is a board of cards — the two whole-corpus runs, the nine
+themes, the 54 countries, the 23 families — each one a link to its own track.
+
+**And the quiz does cross two axes, deliberately.** A country card deploys the
+themes that country can fill, so « les croyances des peuples du Ghana » is one
+tap away. What makes that affordable is not a new mechanic but the shape of the
+answer: the crossing is 486 addressable pairs the picker already holds, and a
+pair the corpus cannot fill is **not offered** rather than offered and refused.
+No greying, no count — the same discipline §6 states for a round that cannot be
+filled.
+
+**And the threshold's worked example has expired.** « Khoïsan — one people,
+four questions », the case `isPlayableScope` was written against, holds eleven
+today. No family, country or theme is unplayable on its own any more: all 54,
+all 23 and all 9 fill a session. The dead ends live only in the crossings —
+123 of the 486 — which is why the picker stopped printing a count beside every
+option. It warned where nothing was at risk and said nothing where the risk was
+real.
 
 ---
 

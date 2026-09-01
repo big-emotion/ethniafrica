@@ -130,10 +130,8 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   // reading `peoples` off an Array and crashing the whole modal.
   if (!data || Array.isArray(data)) return [];
 
-  const { peoples, countries, families, persons, languages } = data as Record<
-    string,
-    unknown
-  >;
+  const { peoples, countries, families, persons, patronymes, languages } =
+    data as Record<string, unknown>;
 
   return [
     ...asRows(peoples).map(
@@ -188,6 +186,19 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         name: String(row.fullName ?? ""),
         roleCategory: String(row.roleCategory ?? ""),
         peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
+        snippet: (row.snippet as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+      })
+    ),
+    // ETNI-1463: the name (patronyme) reaches the unified surface as its own
+    // kind — a query that resolves to a lineage name rather than a people,
+    // country or family must still return something.
+    ...asRows(patronymes).map(
+      (row): SearchResult => ({
+        type: "patronyme",
+        id: String(row.id),
+        name: String(row.nameMain ?? ""),
         snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,
@@ -254,6 +265,7 @@ export const EMPTY_SEARCH_LENS_COUNTS: SearchLensCounts = {
   languageFamily: 0,
   language: 0,
   person: 0,
+  patronyme: 0,
 };
 
 function numberOrZero(value: unknown): number {
@@ -263,10 +275,8 @@ function numberOrZero(value: unknown): number {
 /**
  * Corpus-wide match counts, one per lens (REQ-124). Read straight off the
  * totals `shapeSearchData` (handlers/search.ts) already computes. `all` is
- * the sum of the five lenses shown here, not `data.total` — that field also
- * folds in `patronymesTotal`, and there is no patronyme lens or result card,
- * so reading it directly would let "Tout (N)" exceed the sum of the visible
- * chips whenever a nom matches.
+ * the sum of the six lenses shown here (ETNI-1463 added the patronyme lens),
+ * not `data.total`, which can carry totals for kinds that have no lens.
  */
 // @req REQ-124
 export function mapSearchCounts(envelope: unknown): SearchLensCounts {
@@ -279,13 +289,15 @@ export function mapSearchCounts(envelope: unknown): SearchLensCounts {
   const languageFamily = numberOrZero(row.familiesTotal);
   const language = numberOrZero(row.languagesTotal);
   const person = numberOrZero(row.personsTotal);
+  const patronyme = numberOrZero(row.patronymesTotal);
   return {
-    all: people + country + languageFamily + language + person,
+    all: people + country + languageFamily + language + person + patronyme,
     people,
     country,
     languageFamily,
     language,
     person,
+    patronyme,
   };
 }
 
