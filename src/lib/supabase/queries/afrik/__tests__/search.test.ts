@@ -186,6 +186,30 @@ describe("ftsSearchEntities", () => {
     expect(result.countriesTotal).toBe(2);
   });
 
+  // @req REQ-002
+  it("surfaces a people through a declared spelling alias (DEC-034)", async () => {
+    // PPL_GUR declares "Gour" as a spelling_aliases entry (migration 060),
+    // folded into search_vector at weight B — the same weight as an exonym.
+    // Migration 044's ranking function is what matches and orders this; this
+    // test only proves the query layer passes an alias-matched row through
+    // untouched, exactly as it already does for a name or an exonym match.
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_GUR", "Gur", {
+          relevance: 0.6,
+          exactMatch: true,
+          snippet: "[[Gour]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "gour", limit: 20, offset: 0 });
+
+    expect(result.peoples.map((p) => p.nameMain)).toEqual(["Gur"]);
+    expect(result.peoplesTotal).toBe(1);
+  });
+
   // @req REQ-019
   it("calls the ranking function with p_-prefixed named parameters", async () => {
     await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
