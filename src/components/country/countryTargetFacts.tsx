@@ -1,12 +1,14 @@
 import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
+import type { CountryAtlasBrief } from "@/api/v2/services/countryService";
 import { flagFromISO3 } from "@/lib/countryFlag";
 import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 import { ActionLink } from "@/components/ui/ActionLink";
+import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -82,6 +84,118 @@ function ProvenanceChip({ declared }: { declared: boolean }) {
 }
 
 const countFr = new Intl.NumberFormat("fr-FR");
+const compactNumberFr = new Intl.NumberFormat("fr-FR", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+
+const BRIEF_VALUE_STYLE: CSSProperties = {
+  marginTop: 4,
+  color: "var(--afh-text)",
+  fontWeight: 700,
+  lineHeight: 1.25,
+};
+
+const BRIEF_METRIC_LABEL_STYLE: CSSProperties = {
+  ...LABEL_STYLE,
+  fontSize: "var(--afh-text-eyebrow)",
+  letterSpacing: ".05em",
+};
+
+const BRIEF_METRIC_STYLE: CSSProperties = {
+  minWidth: 0,
+  padding: "10px 11px",
+  border: "1px solid var(--afh-border)",
+  borderRadius: "var(--afh-radius-md)",
+  backgroundColor: "var(--afh-bg-warm)",
+};
+
+function formatPopulation(
+  population: number,
+  referenceYear: number | undefined
+): string {
+  const value = compactNumberFr.format(population);
+  return referenceYear ? `${value} · ${referenceYear}` : value;
+}
+
+function CountryBriefBody({
+  brief,
+  documented,
+  declared,
+}: {
+  brief: CountryAtlasBrief | undefined;
+  documented: number;
+  declared: boolean;
+}) {
+  const hasPopulation =
+    typeof brief?.population === "number" && brief.population > 0;
+
+  return (
+    <div data-country-brief="" className="grid gap-3">
+      <dl className="grid grid-cols-2 gap-2">
+        {hasPopulation ? (
+          <div style={BRIEF_METRIC_STYLE}>
+            <dt style={BRIEF_METRIC_LABEL_STYLE}>Population</dt>
+            <dd style={BRIEF_VALUE_STYLE}>
+              {formatPopulation(
+                brief.population,
+                brief.populationReferenceYear
+              )}
+            </dd>
+          </div>
+        ) : null}
+
+        <div
+          className={hasPopulation ? undefined : "col-span-2"}
+          style={BRIEF_METRIC_STYLE}
+        >
+          <dt style={BRIEF_METRIC_LABEL_STYLE}>
+            {declared ? "Peuples déclarés par la fiche" : "Peuples documentés"}
+          </dt>
+          <dd style={BRIEF_VALUE_STYLE}>
+            {documented > 0 ? countFr.format(documented) : "Non renseigné"}
+          </dd>
+        </div>
+      </dl>
+
+      {brief?.languages.length ? (
+        <div>
+          <span style={LABEL_STYLE}>Langues principales</span>
+          <p
+            className="mt-1 leading-relaxed"
+            style={{ color: "var(--afh-text)" }}
+          >
+            {brief.languages.join(" · ")}
+          </p>
+        </div>
+      ) : null}
+
+      {brief?.peoples.length ? (
+        <div>
+          <span style={LABEL_STYLE}>Peuples principaux</span>
+          <p
+            className="mt-1 leading-relaxed"
+            style={{ color: "var(--afh-text)" }}
+          >
+            {brief.peoples.join(" · ")}
+          </p>
+        </div>
+      ) : null}
+
+      {documented === 0 ? (
+        <span
+          style={{
+            fontSize: "var(--afh-text-small)",
+            lineHeight: 1.65,
+            color: "var(--afh-text-soft)",
+          }}
+        >
+          Aucun peuple rattaché à ce pays dans le corpus.
+        </span>
+      ) : null}
+    </div>
+  );
+}
 
 // @req REQ-117
 export function buildCountryTargetFacts(
@@ -155,6 +269,8 @@ export interface CountryAtlasFactsInput {
   targets: AtlasTarget[];
   /** Documented peoples per country, from the corpus. */
   peopleCounts: Record<string, number>;
+  /** Small factual records for every country offered by the picker. */
+  countryBriefs: CountryAtlasBrief[];
 }
 
 /**
@@ -192,13 +308,32 @@ export function buildCountryAtlasFacts({
   country,
   targets,
   peopleCounts,
+  countryBriefs,
 }: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
   const own = buildCountryTargetFacts(country);
+  const briefsByCountry = new Map(
+    countryBriefs.map((brief) => [brief.id, brief])
+  );
+  const ownSynthesis = deriveCountrySynthesisFromDetail(country);
+  const ownBrief = briefsByCountry.get(country.id) ?? {
+    id: country.id,
+    nameFr: country.nameFr,
+    officialName: country.nameOfficial,
+    population: country.demographics?.totalPopulation,
+    populationReferenceYear: country.demographics?.referenceYear,
+    languages: ownSynthesis.languages.slice(0, 3),
+    peoples: ownSynthesis.peoples.slice(0, 3).map((people) => people.name),
+  };
 
   return Object.fromEntries(
     targets.map((target) => {
       if (target.countryId === country.id) {
         const ownFacts = own[country.id];
+        const declared = (
+          country.demographics?.peoples ??
+          country.majorPeoples ??
+          []
+        ).filter((people) => Boolean(people.name?.trim())).length;
         return [
           target.countryId,
           {
@@ -208,7 +343,11 @@ export function buildCountryAtlasFacts({
             icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
-                {ownFacts?.body}
+                <CountryBriefBody
+                  brief={ownBrief}
+                  documented={declared}
+                  declared
+                />
                 <ProvenanceChip declared />
                 <ReadTheFiche href="#fiche" />
               </div>
@@ -218,6 +357,7 @@ export function buildCountryAtlasFacts({
       }
 
       const documented = peopleCounts[target.countryId] ?? 0;
+      const brief = briefsByCountry.get(target.countryId);
 
       return [
         target.countryId,
@@ -225,22 +365,17 @@ export function buildCountryAtlasFacts({
           title: target.nameFr,
           icon: flagFromISO3(target.countryId),
           description:
-            documented === 1
+            brief?.officialName ||
+            (documented === 1
               ? "1 peuple documenté"
-              : `${countFr.format(documented)} peuples documentés`,
+              : `${countFr.format(documented)} peuples documentés`),
           body: (
             <div style={{ display: "grid", gap: 14 }}>
-              {documented === 0 && (
-                <span
-                  style={{
-                    fontSize: "var(--afh-text-small)",
-                    lineHeight: 1.65,
-                    color: "var(--afh-text-soft)",
-                  }}
-                >
-                  Aucun peuple rattaché à ce pays dans le corpus.
-                </span>
-              )}
+              <CountryBriefBody
+                brief={brief}
+                documented={documented}
+                declared={false}
+              />
               <ProvenanceChip declared={false} />
               <ReadTheFiche href={getCountryRoute("fr", target.countryId)} />
             </div>

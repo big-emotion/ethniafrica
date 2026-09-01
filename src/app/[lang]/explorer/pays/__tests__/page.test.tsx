@@ -4,13 +4,13 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
   mockGetCountryById,
-  mockGetCountryIndex,
+  mockGetCountryAtlasIndex,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
   mockGetActiveSourceFlags,
 } = vi.hoisted(() => ({
   mockGetCountryById: vi.fn(),
-  mockGetCountryIndex: vi.fn(),
+  mockGetCountryAtlasIndex: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
   mockGetActiveSourceFlags: vi.fn(),
@@ -34,7 +34,7 @@ vi.mock("@/api/v2/services/revisions", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => mockGetCountryById(...args),
-  getCountryIndex: () => mockGetCountryIndex(),
+  getCountryAtlasIndex: () => mockGetCountryAtlasIndex(),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
@@ -192,9 +192,14 @@ describe("/[lang]/pays/[slug] page", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
-    mockGetCountryIndex.mockResolvedValue([
-      { id: "NGA", nameFr: "Nigeria" },
-      { id: "KEN", nameFr: "Kenya" },
+    mockGetCountryAtlasIndex.mockResolvedValue([
+      {
+        id: "NGA",
+        nameFr: "Nigeria",
+        languages: [],
+        peoples: ["Yoruba"],
+      },
+      { id: "KEN", nameFr: "Kenya", languages: [], peoples: [] },
     ]);
   });
 
@@ -324,9 +329,14 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
-    mockGetCountryIndex.mockResolvedValue([
-      { id: "NGA", nameFr: "Nigeria" },
-      { id: "KEN", nameFr: "Kenya" },
+    mockGetCountryAtlasIndex.mockResolvedValue([
+      {
+        id: "NGA",
+        nameFr: "Nigeria",
+        languages: [],
+        peoples: ["Yoruba"],
+      },
+      { id: "KEN", nameFr: "Kenya", languages: [], peoples: [] },
     ]);
   });
 

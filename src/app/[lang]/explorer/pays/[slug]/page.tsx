@@ -23,8 +23,8 @@ import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import {
+  getCountryAtlasIndex,
   getCountryById,
-  getCountryIndex,
 } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
@@ -200,15 +200,16 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, allCountries, peopleCounts] = await Promise.all([
-    getCountryById(parsed.slug),
-    getActiveSourceFlags("country", parsed.slug),
-    getCountryIndex(),
-    // The globe can now be aimed at any country, so the panel has to answer
-    // for any country. A failed count costs the other countries' subtitle,
-    // never the fiche.
-    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
-  ]);
+  const [country, sourceFlags, countryAtlasIndex, peopleCounts] =
+    await Promise.all([
+      getCountryById(parsed.slug),
+      getActiveSourceFlags("country", parsed.slug),
+      getCountryAtlasIndex(),
+      // The globe can now be aimed at any country, so the panel has to answer
+      // for any country. A failed count costs the other countries' subtitle,
+      // never the fiche.
+      getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+    ]);
   if (!country) {
     notFound();
   }
@@ -223,7 +224,7 @@ export default async function PaysSlugPage({
   // lines. Every corpus country resolves, South Sudan included: the ISO/asset
   // alias in overlays.ts is what makes SSD find the shape filed as SDS.
   const pickerTargets = buildCountryPickerTargets(
-    allCountries.map((entry) => entry.id)
+    countryAtlasIndex.map((entry) => entry.id)
   );
 
   // Live version (revalidate = 3600 at segment level).
@@ -276,6 +277,7 @@ export default async function PaysSlugPage({
                 country: countryDetail,
                 targets: pickerTargets,
                 peopleCounts,
+                countryBriefs: countryAtlasIndex,
               })}
               missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
             />

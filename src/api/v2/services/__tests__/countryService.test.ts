@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
   getCountries,
+  getCountryAtlasIndex,
   getCountryById,
   getCountryIndex,
 } from "../countryService";
@@ -114,6 +115,46 @@ describe("Country Service", () => {
       expect(index).toEqual([
         { id: "NGA", nameFr: "Nigeria" },
         { id: "COM", nameFr: "Comores" },
+      ]);
+    });
+  });
+
+  describe("getCountryAtlasIndex", () => {
+    // @req REQ-117
+    it("returns only the concise facts needed by a selected-country panel", async () => {
+      vi.mocked(getAllAfrikCountries).mockResolvedValue([
+        {
+          id: "KEN",
+          nameFr: "République du Kenya",
+          nameOfficial: "République du Kenya",
+          summary: "Un pays d'Afrique de l'Est.",
+          content: {
+            demographics: {
+              totalPopulation: 57_500_000,
+              referenceYear: 2025,
+            },
+            culture: {
+              mainLanguages: [{ name: "swahili" }, { name: "anglais" }],
+            },
+            majorPeoples: [
+              { name: "Kikuyu" },
+              { name: "Luhya" },
+              { name: "Kalenjin" },
+            ],
+          },
+        },
+      ]);
+
+      await expect(getCountryAtlasIndex()).resolves.toEqual([
+        {
+          id: "KEN",
+          nameFr: "République du Kenya",
+          officialName: "République du Kenya",
+          population: 57_500_000,
+          populationReferenceYear: 2025,
+          languages: ["swahili", "anglais"],
+          peoples: ["Kikuyu", "Luhya", "Kalenjin"],
+        },
       ]);
     });
   });

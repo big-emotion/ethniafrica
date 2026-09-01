@@ -101,6 +101,26 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
       country: countryWith([{ name: "Zoulou" }]),
       targets,
       peopleCounts,
+      countryBriefs: [
+        {
+          id: "NGA",
+          nameFr: "République fédérale du Nigéria",
+          officialName: "République fédérale du Nigéria",
+          population: 237_500_000,
+          populationReferenceYear: 2025,
+          languages: ["haoussa", "yoruba", "igbo"],
+          peoples: ["Haoussa", "Yoruba", "Igbo"],
+        },
+        {
+          id: "KEN",
+          nameFr: "République du Kenya",
+          officialName: "République du Kenya",
+          population: 57_500_000,
+          populationReferenceYear: 2025,
+          languages: ["swahili", "anglais"],
+          peoples: ["Kikuyu", "Luhya", "Kalenjin"],
+        },
+      ],
     });
   }
 
@@ -129,8 +149,20 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
   });
 
   // @req REQ-117
-  it("counts documented peoples rather than a population", () => {
-    expect(facts().KEN?.description).toBe("12 peuples documentés");
+  it("shows a concise country brief alongside the corpus count", () => {
+    const kenya = facts().KEN;
+
+    expect(kenya?.description).toBe("République du Kenya");
+    render(<>{kenya?.body}</>);
+
+    expect(screen.getByText("Population")).toBeVisible();
+    expect(screen.getByText(/57,5\s*M · 2025/)).toBeVisible();
+    expect(screen.getByText("Peuples documentés")).toBeVisible();
+    expect(screen.getByText("12")).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeVisible();
+    expect(screen.getByText("swahili · anglais")).toBeVisible();
+    expect(screen.getByText("Peuples principaux")).toBeVisible();
+    expect(screen.getByText("Kikuyu · Luhya · Kalenjin")).toBeVisible();
   });
 
   // A zero here means the corpus is silent, not that a country is empty.
@@ -159,6 +191,7 @@ describe("what the panel's subtitle states", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3 },
+      countryBriefs: [],
     });
 
     expect(facts.NGA?.description).toMatch(
@@ -183,6 +216,7 @@ describe("what the panel shows it is", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3, KEN: 12 },
+      countryBriefs: [],
     });
   }
 
@@ -200,6 +234,23 @@ describe("what the panel shows it is", () => {
 
     expect(screen.getByText(/Peuples déclarés par la fiche/)).toBeVisible();
     expect(screen.getByText(/Fiche rédigée/)).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("keeps counting a fiche that declares peoples in its legacy major-peoples field", () => {
+    const legacyCountry = countryWith(undefined);
+    legacyCountry.majorPeoples = [{ name: "Yoruba" }, { name: "Igbo" }];
+    const legacyFacts = buildCountryAtlasFacts({
+      country: legacyCountry,
+      targets: buildCountryPickerTargets(["NGA"]),
+      peopleCounts: { NGA: 2 },
+      countryBriefs: [],
+    });
+
+    render(<>{legacyFacts.NGA?.body}</>);
+
+    expect(screen.getByText("Peuples déclarés par la fiche")).toBeVisible();
+    expect(screen.getByText("2")).toBeVisible();
   });
 
   // @req REQ-117
