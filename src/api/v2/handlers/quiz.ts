@@ -20,7 +20,7 @@ import {
   QUIZ_SESSION_SIZE,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
-import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
+import { QUIZ_THEME_IDS, type QuizThemeId } from "@/lib/quiz/segmentPolicy";
 import type { QuizEntityType } from "@/types/quiz";
 import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
@@ -45,10 +45,16 @@ const CORPUS_SCOPE_LABELS_FR = {
  * A track is launchable when it can fill a session outright.
  *
  * Not "holds at least one question": a track offering three is a track that
- * repeats the same subject three times over eight rounds, and the picker
- * saying « 3 questions » next to a button that starts a session of eight is
- * the picker lying quietly. Khoïsan — one people, four questions — is the case
- * this threshold exists for. It is listed, counted honestly and not launchable.
+ * repeats the same subject three times over eight rounds.
+ *
+ * Khoïsan — one people, four questions — was the case this was written
+ * against. It holds eleven now, and measured 2026-09-01 no country, family or
+ * theme is unplayable on its own: all 54, all 23 and all 9 fill a session. The
+ * threshold has not become decorative, it has moved — `playableThemeIds` runs
+ * it over the 486 country × theme pairs, 123 of which cannot pay, and
+ * `composeQuizSessionHandler` runs it again over the pool a draw actually
+ * found. One predicate for both, so what the picker offers and what the
+ * session refuses cannot drift.
  */
 // @req REQ-103
 export function isPlayableScope(activeQuestionCount: number): boolean {
@@ -61,6 +67,14 @@ function toScopeOptionView(option: QuizScopeOption): QuizScopeOptionView {
     labelFr: option.labelFr,
     activeQuestionCount: option.activeQuestionCount,
     playable: isPlayableScope(option.activeQuestionCount),
+    // The same threshold as the track itself, deliberately: what the picker
+    // offers and what `composeQuizSessionHandler` refuses have to be one
+    // predicate, or a card appears for a pair the session then rejects.
+    // Ordered by QUIZ_THEME_IDS rather than by count — the picker is a table of
+    // contents and must not reshuffle as the bank grows.
+    playableThemeIds: QUIZ_THEME_IDS.filter((themeId) =>
+      isPlayableScope(option.questionCountByTheme?.[themeId] ?? 0)
+    ),
   };
 }
 
@@ -76,6 +90,11 @@ export async function getQuizScopesHandler(): Promise<
     labelFr: CORPUS_SCOPE_LABELS_FR[id],
     activeQuestionCount: catalogue.totalActiveQuestionCount,
     playable: isPlayableScope(catalogue.totalActiveQuestionCount),
+    // A whole-corpus track can play whatever the corpus itself can play, so
+    // this reads the same totals the `themes` axis is built from.
+    playableThemeIds: catalogue.themes
+      .filter((theme) => isPlayableScope(theme.activeQuestionCount))
+      .map((theme) => theme.id),
   });
 
   return createApiResponse({
@@ -304,11 +323,34 @@ export async function composeQuizSessionHandler(
     };
   }
 
-  const questions = await composeQuizSession({
+  const draw = await composeQuizSession({
     scope,
     count: query.count,
     theme: query.theme as QuizThemeId | undefined,
   });
+  const questions = draw.questions;
+
+  // A pair the corpus cannot fill is refused, never half-dealt.
+  //
+  // Zero and three are different events, and the asymmetry below is deliberate.
+  // Zero deals nothing and has nothing to be dishonest about — the client has a
+  // calm empty state written for it. One to seven *is* dealt: it presents
+  // itself as a track and is a stub whose difficulty ladder has no top rung,
+  // which is what « Djibouti + Migrations » used to serve in silence.
+  //
+  // Measured against `poolSize`, not against the session, so a fat pool the
+  // serve-time freshness gate shortened still answers 200: a pair that could
+  // pay and then failed a re-check is not a pair the corpus never held.
+  //
+  // The threshold is `isPlayableScope`, the same predicate the picker offers
+  // tracks with, so what is offered and what is refused cannot drift apart.
+  if (draw.poolSize > 0 && !isPlayableScope(draw.poolSize)) {
+    return {
+      ok: false,
+      code: "SEMANTIC_ERROR",
+      message: `Not enough questions to fill a session of ${query.count} for this track`,
+    };
+  }
 
   if (questions.length === 0) {
     return {

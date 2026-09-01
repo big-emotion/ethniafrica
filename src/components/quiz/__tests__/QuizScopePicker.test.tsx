@@ -2,144 +2,195 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
-import { getLocalizedRoute } from "@/lib/routing";
+import {
+  QUIZ_THEME_IDS,
+  QUIZ_THEME_LABELS_FR,
+  QUIZ_THEME_SPECIMENS_FR,
+} from "@/lib/quiz/segmentPolicy";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
+import { getLocalizedRoute } from "@/lib/routing";
 
-const QUIZ_PATH = getLocalizedRoute("fr", "quiz");
+// Composed, never written out: `routeLiteralCharter` forbids the literal, and
+// this is also the value the page hands the component in production.
+const ACTION = getLocalizedRoute("fr", "quiz");
+const track = (query: string) => `${ACTION}?${query}`;
 
-const scopes = {
-  countries: [
-    { id: "GHA", labelFr: "Ghana", activeQuestionCount: 90, playable: true },
-  ],
-  families: [
-    {
-      id: "FLG_NIGER_CONGO",
-      labelFr: "Nigéro-congolaise",
+function scopes(overrides: Partial<QuizScopesData> = {}): QuizScopesData {
+  return {
+    countries: [
+      {
+        id: "GHA",
+        labelFr: "Ghana",
+        activeQuestionCount: 90,
+        playable: true,
+        playableThemeIds: ["noms", "croyances"],
+      },
+      {
+        id: "DJI",
+        labelFr: "Djibouti",
+        activeQuestionCount: 12,
+        playable: true,
+        playableThemeIds: [],
+      },
+    ],
+    families: [
+      {
+        id: "FLG_NIGER_CONGO",
+        labelFr: "Niger-Congo",
+        activeQuestionCount: 1103,
+        playable: true,
+        playableThemeIds: ["noms"],
+      },
+    ],
+    themes: QUIZ_THEME_IDS.map((id) => ({
+      id,
+      labelFr: QUIZ_THEME_LABELS_FR[id],
       activeQuestionCount: 400,
       playable: true,
-    },
-  ],
-  themes: [
-    {
-      id: "croyances",
-      labelFr: "Croyances",
-      activeQuestionCount: 400,
+    })),
+    mixed: {
+      id: "mixed",
+      labelFr: "Tout le continent",
+      activeQuestionCount: 5711,
       playable: true,
+      playableThemeIds: [...QUIZ_THEME_IDS],
     },
-    {
-      id: "migrations",
-      labelFr: "Migrations",
-      activeQuestionCount: 2,
-      playable: false,
+    random: {
+      id: "random",
+      labelFr: "Au hasard",
+      activeQuestionCount: 5711,
+      playable: true,
+      playableThemeIds: [...QUIZ_THEME_IDS],
     },
-  ],
-  mixed: {
-    id: "mixed",
-    labelFr: "Tout le continent",
-    activeQuestionCount: 2504,
-    playable: true,
-  },
-  random: {
-    id: "random",
-    labelFr: "Au hasard",
-    activeQuestionCount: 2504,
-    playable: true,
-  },
-} as unknown as QuizScopesData;
+    ...overrides,
+  } as QuizScopesData;
+}
 
 describe("QuizScopePicker", () => {
   /**
-   * The card linked to the bare quiz path, and the page only opens a session
-   * when the URL names a track — so it always landed back on the picker it was
-   * clicked from. It also said the same thing as « Au hasard » to a reader:
-   * eight questions from the whole corpus.
+   * The single most important assertion in the redesign. Every option used to
+   * carry « — N questions disponibles », a number that protected nothing (all
+   * 54 countries, 23 families and 9 themes are playable alone) and that went
+   * stale the moment two axes were crossed, since the counts were never
+   * combined.
    */
-  // @req REQ-103 FR66
-  it("offers no whole-continent card beside the random one", () => {
-    render(<QuizScopePicker scopes={scopes} action={QUIZ_PATH} />);
-
-    expect(screen.queryByTestId("quiz-scope-mixed")).not.toBeInTheDocument();
-    expect(screen.getByTestId("quiz-scope-random")).toBeInTheDocument();
-  });
-
-  /**
-   * Left on « Tous les pays » / « Toutes les familles » the form submitted
-   * `?pays=&famille=`, which names no track — so « Lancer ce parcours » walked
-   * the reader back to the picker. The marker is what makes an unfiltered
-   * submission a track of its own.
-   */
-  // @req REQ-103 FR66
-  it("submits the whole-corpus marker so an unfiltered run still opens", () => {
+  // @req REQ-103
+  it("prints no question count anywhere", () => {
     const { container } = render(
-      <QuizScopePicker scopes={scopes} action={QUIZ_PATH} />
+      <QuizScopePicker scopes={scopes()} action={ACTION} />
     );
 
-    const marker = container.querySelector('input[name="mode"]');
-    expect(marker).toHaveValue("mixte");
+    expect(container.textContent).not.toMatch(/\d+\s*questions?/);
+    expect(container.textContent).not.toMatch(/disponibles/);
+  });
+
+  // @req REQ-103
+  it("renders no form and no select", () => {
+    const { container } = render(
+      <QuizScopePicker scopes={scopes()} action={ACTION} />
+    );
+
+    expect(container.querySelector("form")).toBeNull();
+    expect(container.querySelector("select")).toBeNull();
   });
 
   /**
-   * The picker offered two axes, and both answer *who* a question is about.
-   * Neither answers *what* it asks — which is the axis a reader was actually
-   * missing once the bank held nine domains instead of four.
+   * Inverts the assertion this file used to carry. « Tout le continent » was
+   * deleted once because it linked to the bare path, which names no track and
+   * bounced the reader back to the picker. It carries `?mode=mixte` now — the
+   * marker the retired hidden input submitted — so it is a track like any
+   * other. Deleting it again would take the laddered whole-corpus run with it.
    */
-  // @req REQ-121
-  it("offers a theme alongside the country and the family", () => {
-    render(<QuizScopePicker scopes={scopes} action={QUIZ_PATH} />);
+  // @req REQ-103
+  it("offers the whole continent as a track of its own, beside the random one", () => {
+    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
 
-    expect(screen.getByLabelText("Thème")).toHaveAttribute("name", "theme");
-    expect(screen.getByLabelText("Pays")).toHaveAttribute("name", "pays");
-    expect(screen.getByLabelText("Famille linguistique")).toHaveAttribute(
-      "name",
-      "famille"
+    expect(
+      screen.getByTestId("quiz-scope-mixed").querySelector("a")
+    ).toHaveAttribute("href", track("mode=mixte"));
+    expect(
+      screen.getByTestId("quiz-scope-random").querySelector("a")
+    ).toHaveAttribute("href", track("mode=aleatoire"));
+  });
+
+  // @req REQ-103
+  it("offers every country, family and theme as a link to its own track", () => {
+    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+
+    expect(screen.getByRole("link", { name: "Ghana" })).toHaveAttribute(
+      "href",
+      track("pays=GHA")
+    );
+    expect(screen.getByRole("link", { name: "Niger-Congo" })).toHaveAttribute(
+      "href",
+      track("famille=FLG_NIGER_CONGO")
+    );
+    expect(screen.getByRole("link", { name: "Croyances" })).toHaveAttribute(
+      "href",
+      track("theme=croyances")
     );
   });
 
   /**
-   * All three submit from one `method="get"` form, which is what makes
-   * « les croyances des peuples d'Afrique du Sud » a single navigation rather
-   * than a track the picker would have had to enumerate.
+   * What a card buys over an `<option>`: the theme's card shows the question it
+   * asks, not the size of its pool.
    */
   // @req REQ-121
-  it("submits the three axes together, so they compose", () => {
-    render(<QuizScopePicker scopes={scopes} action={QUIZ_PATH} />);
+  it("shows each theme's question rather than its size", () => {
+    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
 
-    const form = screen.getByTestId("quiz-scope-picker");
-    const names = Array.from(form.querySelectorAll("select")).map(
-      (select) => select.name
-    );
-    expect(names).toEqual(["pays", "famille", "theme"]);
-  });
-
-  // @req REQ-121
-  it("defaults every axis to no filter, so the bare form is the whole corpus", () => {
-    render(<QuizScopePicker scopes={scopes} action={QUIZ_PATH} />);
-
-    for (const label of ["Pays", "Famille linguistique", "Thème"]) {
-      expect((screen.getByLabelText(label) as HTMLSelectElement).value).toBe(
-        ""
-      );
+    for (const id of QUIZ_THEME_IDS) {
+      expect(screen.getByText(QUIZ_THEME_SPECIMENS_FR[id])).toBeInTheDocument();
     }
-    expect(screen.getByText("Tous les thèmes")).toBeInTheDocument();
+  });
+
+  // @req REQ-103
+  it("gives every tappable a 44px target", () => {
+    const { container } = render(
+      <QuizScopePicker scopes={scopes()} action={ACTION} />
+    );
+
+    const cards = container.querySelectorAll("[class*='min-h-11']");
+    expect(cards.length).toBeGreaterThanOrEqual(
+      2 + QUIZ_THEME_IDS.length + 2 + 1
+    );
   });
 
   /**
-   * A theme too thin to fill eight rounds is listed with its honest count and
-   * disabled — the treatment Khoïsan already gets on the track axis. Hiding it
-   * would make the corpus look narrower than it is.
+   * The A–Z sort is the service's single responsibility (`byLabel` in
+   * quizService); the picker must not re-sort, or the two orders drift and the
+   * one a reader sees stops being the one the API documents.
+   */
+  // @req REQ-103
+  it("lists the countries in the order the catalogue hands them", () => {
+    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+
+    const links = screen
+      .getAllByRole("link")
+      .map((link) => link.getAttribute("href"));
+    expect(links.indexOf(track("pays=GHA"))).toBeLessThan(
+      links.indexOf(track("pays=DJI"))
+    );
+  });
+
+  /**
+   * `colonizationChildrenExclusion.test.tsx` renders this component with a
+   * catalogue built before the themes axis existed. Keeping the tolerance means
+   * that file needs no edit, and its « every href starts with /fr/jeux/quiz »
+   * assertion still holds because every link here is a query on `action`.
    */
   // @req REQ-121
-  it("lists a theme that cannot fill a session, and refuses it", () => {
-    render(<QuizScopePicker scopes={scopes} action={QUIZ_PATH} />);
+  it("survives a catalogue with no themes key", () => {
+    const withoutThemes = scopes();
+    delete (withoutThemes as { themes?: unknown }).themes;
 
-    const migrations = screen.getByRole("option", {
-      name: /Migrations/,
-    }) as HTMLOptionElement;
-    expect(migrations.disabled).toBe(true);
+    const { container } = render(
+      <QuizScopePicker scopes={withoutThemes} action={ACTION} />
+    );
 
-    const croyances = screen.getByRole("option", {
-      name: /Croyances — 400 questions disponibles/,
-    }) as HTMLOptionElement;
-    expect(croyances.disabled).toBe(false);
+    expect(screen.getByRole("link", { name: "Ghana" })).toBeInTheDocument();
+    for (const link of Array.from(container.querySelectorAll("a"))) {
+      expect(link.getAttribute("href")).toMatch(/^\/fr\/jeux\/quiz/);
+    }
   });
 });

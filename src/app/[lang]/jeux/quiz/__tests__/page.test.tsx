@@ -54,6 +54,7 @@ vi.mock("@/components/quiz/QuizPlayHost", () => ({
 }));
 
 import { notFound } from "next/navigation";
+import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import QuizPage from "../page";
 
 function scopesEnvelope() {
@@ -194,5 +195,38 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
 
     expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
+  });
+
+  // Nothing else on this route binds `--accent`: a quiz page is not a hub, so
+  // the token fell through to the bare shadcn HSL triplet that shares the name
+  // and `variant="accent"` painted ochre on the Jouer axis. Same diagnosis, and
+  // same fix, as src/app/[lang]/jeux/[jeu]/page.tsx.
+  // @req REQ-103
+  it("paints both branches in the Jouer accent", async () => {
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
+    const picker = render(
+      await QuizPage({ searchParams: Promise.resolve({}) })
+    );
+
+    expect(
+      picker.container.querySelector(
+        `.${ACCENT_BY_ACCESS_MODE.jeux} [data-testid="quiz-scope-picker"]`
+      )
+    ).not.toBeNull();
+
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
+    const session = render(
+      await QuizPage({ searchParams: Promise.resolve({ pays: "GHA" }) })
+    );
+
+    expect(
+      session.container.querySelector(
+        `.${ACCENT_BY_ACCESS_MODE.jeux} [data-testid="quiz-play-host"]`
+      )
+    ).not.toBeNull();
   });
 });

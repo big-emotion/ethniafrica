@@ -33,19 +33,22 @@ async function expectNoSeriousOrCriticalViolations(page: Page) {
   ).toEqual([]);
 }
 
-async function pickFirstLaunchableSegment(page: Page) {
-  const segmentButtons = page.getByRole("listitem");
-  const count = await segmentButtons.count();
-  for (let i = 0; i < count; i++) {
-    const button = segmentButtons.nth(i);
-    if (await button.isEnabled()) {
-      await button.click();
-      return;
-    }
-  }
-  throw new Error(
-    "No launchable quiz segment found — the seeded test data has no active questions in any rung."
-  );
+/**
+ * Starts the one track that is always launchable, in one click.
+ *
+ * This replaces `pickFirstLaunchableSegment`, which walked `getByRole("listitem")`
+ * looking for an enabled one — a shape retired two designs ago. Against the
+ * form of selects that followed it, it matched nothing and threw a clear error;
+ * against the card board it would match every non-interactive `<li>` wrapper,
+ * report them as enabled, click one to no effect, and leave the suite hanging
+ * on the next assertion. A stale helper that starts matching again is worse
+ * than one that fails.
+ *
+ * « Tout le continent » draws from the whole bank, so it needs no probing of
+ * the seeded data to know it can fill a session.
+ */
+async function startWholeContinentTrack(page: Page) {
+  await page.getByRole("link", { name: "Tout le continent" }).click();
 }
 
 async function answerCurrentQuestion(page: Page) {
@@ -82,13 +85,36 @@ test.describe("@nfr-a11y quiz session — axe-core", () => {
     await expectNoSeriousOrCriticalViolations(page);
   });
 
+  /**
+   * The deployed theme panel exists only after a click, so the static
+   * `/fr/quiz` audit in `scripts/a11y-test.ts` cannot see it — it covers the 88
+   * cards in their closed state and nothing more. This is the only gate that
+   * reads the open panel, which is also the only part of the picker a server
+   * render cannot prove.
+   */
+  // @req REQ-121 FR71
+  test("has zero serious/critical violations with a country's sujets deployed", async ({
+    page,
+  }) => {
+    await page.goto(QUIZ_URL);
+    await page.waitForLoadState("networkidle");
+
+    const country = page
+      .locator('[data-testid^="quiz-scope-country-"] a[aria-expanded]')
+      .first();
+    await country.click();
+    await expect(country).toHaveAttribute("aria-expanded", "true");
+
+    await expectNoSeriousOrCriticalViolations(page);
+  });
+
   // @req REQ-103 FR67 FR68 FR71
   test("has zero serious/critical violations mid-session (question + reveal)", async ({
     page,
   }) => {
     await page.goto(QUIZ_URL);
     await page.waitForLoadState("networkidle");
-    await pickFirstLaunchableSegment(page);
+    await startWholeContinentTrack(page);
 
     await expect(page.getByRole("radiogroup")).toBeVisible();
     await expectNoSeriousOrCriticalViolations(page);
@@ -105,7 +131,7 @@ test.describe("@nfr-a11y quiz session — axe-core", () => {
   }) => {
     await page.goto(QUIZ_URL);
     await page.waitForLoadState("networkidle");
-    await pickFirstLaunchableSegment(page);
+    await startWholeContinentTrack(page);
     await playFullQuizSession(page);
 
     await expectNoSeriousOrCriticalViolations(page);
@@ -142,29 +168,16 @@ test.describe("@nfr-a11y quiz session — keyboard-only journey", () => {
     await page.goto(QUIZ_URL);
     await page.waitForLoadState("networkidle");
 
-    const segmentButtons = page.getByRole("listitem");
-    const segmentCount = await segmentButtons.count();
-    let launchableSegment: Locator | null = null;
-    for (let i = 0; i < segmentCount; i++) {
-      const button = segmentButtons.nth(i);
-      if (await button.isEnabled()) {
-        launchableSegment = button;
-        break;
-      }
-    }
+    // The whole-continent card, which needs no probing of the seeded data: it
+    // draws from the entire bank. It sits in the first block of the board, so
+    // it is among the earliest tab stops on the page.
+    const wholeContinent = page.getByRole("link", {
+      name: "Tout le continent",
+    });
+    const reachedTrack = await tabUntilFocused(page, wholeContinent, 40);
     expect(
-      launchableSegment,
-      "No launchable quiz segment found — the seeded test data has no active questions in any rung."
-    ).not.toBeNull();
-
-    const reachedSegment = await tabUntilFocused(
-      page,
-      launchableSegment as Locator,
-      40
-    );
-    expect(
-      reachedSegment,
-      "the launchable segment button never receives focus via Tab"
+      reachedTrack,
+      "the whole-continent track never receives focus via Tab"
     ).toBe(true);
     await page.keyboard.press("Enter");
 

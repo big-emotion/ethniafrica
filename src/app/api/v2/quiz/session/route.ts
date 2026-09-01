@@ -17,9 +17,11 @@
  *       sweep never reaches a player. The answer key ships in the payload
  *       (`correctOption`, `explanationFr`, `source`): reveal is client-side,
  *       there is nothing to cheat for (no leaderboard, no persistence, no
- *       stakes). Fewer eligible questions than requested returns 200 with the
- *       shorter array; zero returns 200 with an empty array (calm empty
- *       state).
+ *       stakes). A track whose pool cannot fill the session asked for answers
+ *       422: a short session is a track with no top rung, which the ladder
+ *       above is the whole point of. A pool that was big enough and was then
+ *       thinned by the FR65 gate still answers 200, with however many questions
+ *       survived — including none, the calm empty state.
  *     tags: ["API v2 - Quiz"]
  *     security: []
  *     parameters:
@@ -85,7 +87,7 @@
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *       422:
- *         description: Well-formed scope naming a country or family that does not exist
+ *         description: Well-formed scope naming a country or family that does not exist, or a track whose pool cannot fill the session requested
  *         content:
  *           application/json:
  *             schema:
