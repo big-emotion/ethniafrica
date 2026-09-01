@@ -912,6 +912,62 @@ describe("RecherchePageContent", () => {
     );
   });
 
+  // @req REQ-124
+  it("shows the sourced highlight block between the pivot card and the results, with its tier visible", async () => {
+    await renderPivotWithRelatedResults();
+
+    const main = screen.getByTestId("search-results-main");
+    const children = Array.from(main.children);
+    const pivotIndex = children.indexOf(screen.getByTestId("search-pivot"));
+    const highlightIndex = children.indexOf(
+      screen.getByTestId("sourced-highlight-block")
+    );
+    expect(highlightIndex).toBeGreaterThan(pivotIndex);
+
+    expect(screen.getByTestId("sourced-highlight-block")).toHaveTextContent(
+      /philologue en 1862/
+    );
+    expect(screen.getByTestId("sourced-highlight-tier")).toHaveTextContent(
+      "Source référencée"
+    );
+  });
+
+  // @req REQ-124
+  it("omits the sourced highlight block when the bank has no fact about the pivot", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            {
+              id: "PPL_UNKNOWN_ENTITY",
+              nameMain: "Peuple inconnu",
+              content: {},
+            },
+          ],
+          countries: [],
+          families: [],
+          total: 1,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Peuple inconnu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+    });
+    expect(
+      screen.queryByTestId("sourced-highlight-block")
+    ).not.toBeInTheDocument();
+  });
+
   // @req REQ-002
   it("renders no pivot for an ambiguous query", async () => {
     mockFetch.mockResolvedValue(

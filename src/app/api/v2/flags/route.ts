@@ -110,10 +110,12 @@
  *     summary: Submit a report on an AFRIK entity
  *     description: >-
  *       Anyone may submit a report for editorial review, subject to anti-bot
- *       verification. A bearer token is optional and decides attribution only:
- *       a report from a session whose account has confirmed its age is credited
- *       to that contributor, and every other report is recorded anonymously
- *       rather than refused. Responses are mutable and use Cache-Control no-store.
+ *       verification. No account is required or offered. An optional
+ *       reporter_email buys the reader the moderation decision by e-mail and
+ *       nothing else: the report is created and published whether or not one is
+ *       supplied, a single-use link confirms the address, and only a confirmed
+ *       address is ever written to. The address is never published and never
+ *       returned. Responses are mutable and use Cache-Control no-store.
  *     tags: [API v2 - Flags]
  *     security:
  *       - SupabaseJwtAuth: []
@@ -184,16 +186,6 @@
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  *             examples:
- *               ageConfirmationRequired:
- *                 summary: Contributor has not confirmed the age requirement
- *                 value:
- *                   data: null
- *                   meta:
- *                     license: CC-BY-SA-4.0
- *                     attribution: EthniAfrica — ethniafrica.com
- *                   errors:
- *                     - code: AGE_CONFIRMATION_REQUIRED
- *                       message: Age confirmation required (FR45). Complete your profile at /fr/compte/profil.
  *               unauthorized:
  *                 summary: The anti-bot proof was missing, invalid or already spent
  *                 value:

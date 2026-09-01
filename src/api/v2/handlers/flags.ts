@@ -34,9 +34,15 @@ import {
 } from "@/lib/ratelimit/flagRateLimit";
 import {
   sendFlagResolutionEmail,
-  type FlagResolutionContributor,
+  sendFlagVerificationEmail,
+  type FlagResolutionRecipient,
   type FlagResolutionStatus,
+  type FlagVerificationEmail,
 } from "@/lib/email/flagNotification";
+import {
+  createReporterContact,
+  getVerifiedReporterEmail,
+} from "@/lib/flags/reporterContact";
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
 
@@ -77,6 +83,12 @@ const flagCreateSchema = z.object({
   counter_source_url: z.string().trim().url().optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
   proposed_rewrite: z.string().trim().max(5000).optional(),
+  /**
+   * Optional, and the only personal datum a report can carry. It buys the
+   * reader a decision in their inbox and nothing else — it is not attribution,
+   * not an account, and never appears on the public queue.
+   */
+  reporter_email: z.string().trim().email().max(320).optional(),
   antibot: z.object({
     salt: trimmedRequiredString,
     nonce: trimmedRequiredString,
@@ -120,6 +132,13 @@ export interface FlagHandlerDependencies {
   decodeFlagCursor: (
     cursor: string
   ) => { createdAt: string; id: string } | null;
+  createReporterContact: (
+    flagId: string,
+    email: string
+  ) => Promise<string | null>;
+  sendFlagVerificationEmail: (
+    input: FlagVerificationEmail
+  ) => Promise<void | boolean>;
 }
 
 export interface FlagHandlerContext {
@@ -157,6 +176,8 @@ const defaultDependencies: FlagHandlerDependencies = {
   listFlags,
   getFlagByIdOrSlug,
   decodeFlagCursor,
+  createReporterContact,
+  sendFlagVerificationEmail,
 };
 
 function resolveDependencies(
@@ -319,6 +340,34 @@ export async function handleFlagCreate(
   }
 
   const flag = await dependencies.createFlag(attributedTo, flagInput);
+
+  /**
+   * Best-effort from here on. The report is committed, so nothing below may
+   * change the answer the reader gets: a lost address is a reader who hears
+   * nothing back, while a failed 201 is a reader who files the same report
+   * three times.
+   */
+  if (parsed.data.reporter_email) {
+    try {
+      const token = await dependencies.createReporterContact(
+        flag.id,
+        parsed.data.reporter_email
+      );
+      if (token) {
+        await dependencies.sendFlagVerificationEmail({
+          email: parsed.data.reporter_email,
+          token,
+          publicSlug: flag.public_slug,
+        });
+      }
+    } catch (error) {
+      logger.error("Failed to set up a reporter contact", error, {
+        flagId: flag.id,
+      });
+      Sentry.captureException(error);
+    }
+  }
+
   return {
     status: 201,
     body: createApiResponse(flag),
@@ -419,7 +468,7 @@ const flagTransitionSchema = z.object({
 export interface FlagTransitionDependencies {
   getModeratorByAccessToken: (
     accessToken: string
-  ) => Promise<{ id: string; role: string } | null>;
+  ) => Promise<{ id: string } | null>;
   transitionFlag: (
     identifier: string,
     next: { status: FlagStatus; moderatorId: string; moderatorNotes?: string }
@@ -429,6 +478,7 @@ export interface FlagTransitionDependencies {
   >;
   writeAuditLog: (input: AuditLogInput) => Promise<void>;
   getContributorEmail: (contributorId: string) => Promise<string | null>;
+  getVerifiedReporterEmail: (flagId: string) => Promise<string | null>;
   sendFlagResolutionEmail: (
     flag: {
       public_slug: string;
@@ -437,7 +487,7 @@ export interface FlagTransitionDependencies {
       target_type: string | null;
       target_id: string | null;
     },
-    contributor: FlagResolutionContributor | null
+    recipient: FlagResolutionRecipient | null
   ) => Promise<void>;
 }
 
@@ -446,6 +496,7 @@ const defaultTransitionDependencies: FlagTransitionDependencies = {
   transitionFlag,
   writeAuditLog: (input) => auditLog.write(input),
   getContributorEmail,
+  getVerifiedReporterEmail,
   sendFlagResolutionEmail,
 };
 
@@ -548,11 +599,22 @@ export async function handleFlagTransition(
   if (NOTIFIABLE_STATUSES.includes(result.flag.status)) {
     try {
       const contributorId = result.flag.contributor_id;
-      const email = contributorId
+      const contributorEmail = contributorId
         ? await dependencies.getContributorEmail(contributorId)
         : null;
-      const contributor: FlagResolutionContributor | null =
-        contributorId && email ? { id: contributorId, email } : null;
+
+      /**
+       * An accountless report can now be answered too. The reader may have
+       * left an address and proved it by following the link; an address left
+       * and never proved is deliberately not used, because it may belong to
+       * someone who never reported anything.
+       */
+      const email =
+        contributorEmail ??
+        (await dependencies.getVerifiedReporterEmail(result.flag.id));
+      const recipient: FlagResolutionRecipient | null = email
+        ? { email }
+        : null;
 
       await dependencies.sendFlagResolutionEmail(
         {
@@ -562,7 +624,7 @@ export async function handleFlagTransition(
           target_type: result.flag.target_type,
           target_id: result.flag.target_id,
         },
-        contributor
+        recipient
       );
     } catch (error) {
       logger.error("Flag resolution notification failed", error, {

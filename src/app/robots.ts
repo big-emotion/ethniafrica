@@ -30,7 +30,6 @@ export default function robots(): MetadataRoute.Robots {
         // should not have to make.
         disallow: [
           "/fr/admin/",
-          "/fr/compte/",
           "/fr/confidentialite",
           "/fr/politique-confidentialite",
         ],

@@ -1,0 +1,115 @@
+/* Swagger's own night, re-tinted to the atlas night — REQ-115 · REQ-099
+ *
+ * `useSwaggerNightSurface` turns on the explorer's bundled dark theme by
+ * writing `dark-mode` on <html>. That theme is legible but cold: a slate
+ * ground (#1c2022 / #2a2e30) under a near-white ink, dropped inside a page
+ * whose night is a warm brown (--afh-night-ground). Two palettes four hundred
+ * pixels apart is the failure the brand charter §5.1 names — the ground is the
+ * brand — so the surfaces are re-tinted here.
+ *
+ * Only the grounds, the borders and the body ink move. The per-method hues
+ * (GET blue, POST green, DELETE red) are the explorer's own vocabulary and
+ * stay the vendor's.
+ *
+ * Every selector carries BOTH classes: `.dark-mode` alone is what the vendor
+ * rules match on, so `html.dark.dark-mode …` outranks them, and the sheet is
+ * imported after `swagger-ui.css` so equal specificity still resolves here.
+ * Semantic aliases only (charter §4) — under `.dark` they already resolve to
+ * the --afh-night-* group, so this sheet never names a primitive or a literal.
+ */
+
+/* The vendor paints the document itself, which would repaint the night ground
+   the layout put behind the whole route. */
+html.dark.dark-mode {
+  background: var(--afh-bg);
+}
+
+/* The explorer sits inside the page's own card; it owns the ink, not a ground. */
+html.dark.dark-mode .swagger-ui {
+  background: transparent;
+  color: var(--afh-text);
+}
+
+/* Raised chrome: response bodies, model trees, dialogs, the topbar. */
+html.dark.dark-mode .swagger-ui .topbar,
+html.dark.dark-mode .swagger-ui .dialog-ux .modal-ux,
+html.dark.dark-mode .swagger-ui .model-box,
+html.dark.dark-mode .swagger-ui section.models,
+html.dark.dark-mode .swagger-ui section.models .model-container,
+html.dark.dark-mode .swagger-ui .json-schema-2020-12,
+html.dark.dark-mode .swagger-ui .json-schema-2020-12 button,
+html.dark.dark-mode .swagger-ui .opblock pre.microlight,
+html.dark.dark-mode .swagger-ui .opblock .highlight-code pre.microlight,
+html.dark.dark-mode .swagger-ui .opblock .curl-command .btn.active {
+  background: var(--afh-surface);
+}
+
+/* Inputs and the server picker read as recessed, not raised. */
+html.dark.dark-mode .swagger-ui .scheme-container,
+html.dark.dark-mode .swagger-ui input,
+html.dark.dark-mode .swagger-ui select,
+html.dark.dark-mode .swagger-ui select[multiple],
+html.dark.dark-mode .swagger-ui textarea {
+  background: var(--afh-bg-warm);
+  border-color: var(--afh-border);
+  color: var(--afh-text);
+}
+
+/* A hole in the vendor's own dark theme: `.swagger-ui label` is pinned to the
+   light ink and only two of its descendants are overridden, so the server
+   picker's label stayed #3b4151 on the night ground — measured at 1.74:1.
+   Blanket-covering `label` closes it; the two the vendor does override are
+   more specific and keep winning. */
+html.dark.dark-mode .swagger-ui label,
+html.dark.dark-mode .swagger-ui .servers > label {
+  color: var(--afh-text);
+}
+
+/* Body copy. The vendor sets these explicitly, so inheriting from the root
+   above is not enough — these are the blocks that shipped unreadable. */
+html.dark.dark-mode .swagger-ui .info .base-url,
+html.dark.dark-mode .swagger-ui .info li,
+html.dark.dark-mode .swagger-ui .info p,
+html.dark.dark-mode .swagger-ui .info table,
+html.dark.dark-mode .swagger-ui .info .title,
+html.dark.dark-mode .swagger-ui .opblock-tag,
+html.dark.dark-mode .swagger-ui .opblock-tag small,
+html.dark.dark-mode .swagger-ui .opblock .opblock-summary-description,
+html.dark.dark-mode .swagger-ui .opblock .opblock-summary-path,
+html.dark.dark-mode .swagger-ui .opblock .opblock-description-wrapper p,
+html.dark.dark-mode .swagger-ui .opblock .opblock-section-header h4,
+html.dark.dark-mode .swagger-ui .opblock .responses-inner h4,
+html.dark.dark-mode .swagger-ui .opblock .responses-inner h5,
+html.dark.dark-mode .swagger-ui .markdown li,
+html.dark.dark-mode .swagger-ui .markdown p,
+html.dark.dark-mode .swagger-ui .renderedMarkdown li,
+html.dark.dark-mode .swagger-ui .renderedMarkdown p,
+html.dark.dark-mode .swagger-ui .model-box .model,
+html.dark.dark-mode .swagger-ui .model-box .model-title,
+html.dark.dark-mode .swagger-ui section.models h4 span,
+html.dark.dark-mode .swagger-ui .parameter__name,
+html.dark.dark-mode .swagger-ui table thead tr td,
+html.dark.dark-mode .swagger-ui table thead tr th {
+  color: var(--afh-text);
+}
+
+/* Secondary ink: types, formats, the muted half of the schema tree. */
+html.dark.dark-mode .swagger-ui .parameter__type,
+html.dark.dark-mode .swagger-ui .model .property,
+html.dark.dark-mode .swagger-ui .model .property.primitive,
+html.dark.dark-mode .swagger-ui .json-schema-2020-12__attribute--muted,
+html.dark.dark-mode .swagger-ui .json-schema-2020-12-keyword--description {
+  color: var(--afh-text-soft);
+}
+
+/* One line colour across the whole explorer, so the tag rules, the model
+   frames and the server picker stop drawing three different greys. */
+html.dark.dark-mode .swagger-ui .opblock-tag,
+html.dark.dark-mode .swagger-ui section.models,
+html.dark.dark-mode .swagger-ui section.models .model-container,
+html.dark.dark-mode .swagger-ui .model-box,
+html.dark.dark-mode .swagger-ui .dialog-ux .modal-ux,
+html.dark.dark-mode .swagger-ui table thead tr td,
+html.dark.dark-mode .swagger-ui table thead tr th {
+  border-color: var(--afh-border);
+}

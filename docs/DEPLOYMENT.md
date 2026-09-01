@@ -297,12 +297,29 @@ exception.)
 
 ---
 
-## First admin user
+## First moderator
+
+Access to `/fr/admin` is an address on `admin_allowlist` — not a role, and not an
+account, because the atlas has no public accounts. Put the address on the list, then
+have the person request a link at `/fr/admin/connexion`:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
+  npx tsx scripts/seedAdminAllowlist.ts moderation@example.org "Responsable éditorial de la modération"
+```
+
+The magic link only works once Supabase Auth's redirect allow-list carries this
+environment's `/api/auth/callback`; otherwise Supabase silently substitutes the
+project's Site URL. Full procedure and the failure modes:
+`docs/runbooks/moderation-access.md`.
+
+## Legacy `user_roles`
 
 Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`, `moderator`,
-`admin`, `advisor`. Authentication is Supabase Auth: magic link, GitHub and Google OAuth.
+`admin`, `advisor`. They gate the legacy `/admin/contributions` workspace and open no
+door in the moderation console.
 
-1. The person signs in once at `/admin/login` so their auth account exists.
+1. The person signs in once at `/fr/admin/connexion` so their auth account exists.
 2. Grant the role:
 
    ```bash

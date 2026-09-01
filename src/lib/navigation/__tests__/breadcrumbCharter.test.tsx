@@ -199,10 +199,10 @@ describe("deriveTrail — the trail comes from the route", () => {
       { label: "Accueil", href: "/fr" },
       { label: "Mentions légales" },
     ]);
-    expect(deriveTrail("/fr/compte/profil")).toEqual([
+    expect(deriveTrail("/fr/admin/connexion")).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: "Compte", href: "/fr/compte" },
-      { label: "Profil" },
+      { label: "Administration", href: "/fr/admin" },
+      { label: "Connexion" },
     ]);
   });
 

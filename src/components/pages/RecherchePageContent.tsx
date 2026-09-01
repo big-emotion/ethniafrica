@@ -20,6 +20,7 @@ import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { SearchPeopleGroupCard } from "@/components/search/SearchPeopleGroupCard";
 import { SearchPivotCard } from "@/components/search/SearchPivotCard";
 import { DominantAnswerPanel } from "@/components/search/DominantAnswerPanel";
+import { SourcedHighlightBlock } from "@/components/search/SourcedHighlightBlock";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -678,6 +679,7 @@ export function RecherchePageContent() {
               className="min-w-0 space-y-afh-5xl"
             >
               <SearchPivotCard result={pivot} language={language} />
+              <SourcedHighlightBlock result={pivot} />
               {resultsList}
             </div>
             <div

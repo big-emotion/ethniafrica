@@ -69,6 +69,11 @@ const options: swaggerJsdoc.Options = {
           "Public, attributed oral narratives. Restricted narratives and protected metadata are never returned.",
       },
       {
+        name: "API v2 - Media",
+        description:
+          "Media credits (author, licence URI, source page) attached to a fiche. Metadata only — never binary media content (REQ-128).",
+      },
+      {
         name: "API v2 - Feed",
         description:
           "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
@@ -1986,6 +1991,55 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+        Media: {
+          type: "object",
+          description:
+            "A media credit (author, licence URI, source page) attached to a fiche. Carries no binary media content or image URL — matching an actual image to a fiche is a separate, manually-curated step (ETNI-1412).",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            entityType: {
+              type: "string",
+              enum: ["language_family", "language", "people", "country"],
+            },
+            entityId: { type: "string", example: "PPL_SHONA" },
+            author: { type: ["string", "null"] },
+            licenceUri: {
+              type: "string",
+              format: "uri",
+              example: "https://creativecommons.org/licenses/by-sa/4.0/",
+            },
+            sourcePageUrl: { type: ["string", "null"], format: "uri" },
+            period: { type: ["string", "null"] },
+            depictionTiming: {
+              type: "string",
+              enum: ["contemporary", "reconstitution"],
+            },
+          },
+          required: [
+            "id",
+            "entityType",
+            "entityId",
+            "author",
+            "licenceUri",
+            "sourcePageUrl",
+            "period",
+            "depictionTiming",
+          ],
+        },
+        MediaListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/Media" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
         ConfidenceRecord: {
           type: "object",
           description:
@@ -2988,6 +3042,14 @@ const options: swaggerJsdoc.Options = {
               minLength: 10,
               maxLength: 2000,
               example: "Population figure appears outdated vs. 2024 census.",
+            },
+            reporter_email: {
+              type: "string",
+              format: "email",
+              maxLength: 320,
+              example: "lectrice@example.org",
+              description:
+                "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint.",
             },
             counter_source_url: {
               type: "string",

@@ -45,6 +45,8 @@ export interface FlagSubmissionPayload {
   counter_source_url?: string;
   counter_source_citation?: string;
   proposed_rewrite?: string;
+  /** Optional. Buys the reader a decision in their inbox, nothing else. */
+  reporter_email?: string;
   antibot: AntibotProof;
   /** Always empty. Present so a bot that fills every field gives itself away. */
   website?: string;
@@ -84,6 +86,7 @@ interface FormErrors {
   counterSourceCitation?: string;
   proposedRewrite?: string;
   reason?: string;
+  reporterEmail?: string;
 }
 
 // Every target type the triggers mount, so the fallback below never has to
@@ -134,15 +137,20 @@ export function deriveFlagKind({
   return "other";
 }
 
+/** Deliberately loose — the API is the real check, this only catches typos. */
+const LOOKS_LIKE_AN_ADDRESS = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function validateForm({
   counterSourceUrl,
   counterSourceCitation,
   reason,
+  reporterEmail,
 }: {
   counterSourceUrl: string;
   counterSourceCitation: string;
   proposedRewrite: string;
   reason: string;
+  reporterEmail: string;
 }): FormErrors {
   const errors: FormErrors = {};
 
@@ -165,6 +173,15 @@ function validateForm({
       "La description doit contenir entre 10 et 2 000 caractères.";
   }
 
+  // An address left blank is the expected case, not an omission.
+  if (
+    reporterEmail.trim() &&
+    !LOOKS_LIKE_AN_ADDRESS.test(reporterEmail.trim())
+  ) {
+    errors.reporterEmail =
+      "Saisissez une adresse e-mail valide, ou laissez le champ vide.";
+  }
+
   return errors;
 }
 
@@ -180,6 +197,7 @@ export function FlagForm({
   const [counterSourceCitation, setCounterSourceCitation] = useState("");
   const [proposedRewrite, setProposedRewrite] = useState("");
   const [reason, setReason] = useState("");
+  const [reporterEmail, setReporterEmail] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [proof, setProof] = useState<AntibotProof | null>(null);
   const [verificationError, setVerificationError] = useState("");
@@ -202,6 +220,8 @@ export function FlagForm({
   const reasonId = `${idPrefix}-reason`;
   const reasonCounterId = `${idPrefix}-reason-counter`;
   const reasonErrorId = `${idPrefix}-reason-error`;
+  const reporterEmailId = `${idPrefix}-reporter-email`;
+  const reporterEmailErrorId = `${idPrefix}-reporter-email-error`;
   const turnstileHeadingId = `${idPrefix}-turnstile-heading`;
   const verificationErrorId = `${idPrefix}-verification-error`;
 
@@ -212,6 +232,7 @@ export function FlagForm({
       counterSourceCitation,
       proposedRewrite,
       reason,
+      reporterEmail,
     });
     setErrors(nextErrors);
 
@@ -251,6 +272,9 @@ export function FlagForm({
         ...(proposedRewrite.trim()
           ? { proposed_rewrite: proposedRewrite.trim() }
           : {}),
+        ...(reporterEmail.trim()
+          ? { reporter_email: reporterEmail.trim() }
+          : {}),
         antibot: proof,
         website: "",
         elapsedMs: Date.now() - openedAt,
@@ -286,8 +310,13 @@ export function FlagForm({
         >
           Signalement enregistré
         </h2>
+        {/* This used to promise an e-mail unconditionally, while the form
+            collected no address and an anonymous report had no recipient. The
+            sentence now depends on what the reader actually left. */}
         <p className="text-afh-body">
-          Merci — vous recevrez un email quand la modération aura tranché.
+          {reporterEmail.trim()
+            ? "Merci — confirmez votre adresse depuis le message que nous venons de vous envoyer, et vous recevrez la décision de la modération."
+            : "Merci — votre signalement est consultable ci-dessous, et son statut y sera mis à jour."}
         </p>
         <a
           className="inline-flex min-h-11 items-center font-semibold text-afh-terracotta underline underline-offset-4"
@@ -399,6 +428,45 @@ export function FlagForm({
               </p>
             )}
           </div>
+        </div>
+      </details>
+
+      {/* The third optional panel, and the only one that asks for something
+          about the reader rather than about the corpus. It stays collapsed and
+          stays optional: charter §2 keeps reporting at two actions, and an
+          address is a way back, never a toll. */}
+      <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
+        <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
+          Vous voulez connaître la décision&nbsp;?{" "}
+          <span aria-hidden="true">▸</span>
+        </summary>
+        <div className="space-y-afh-md pt-afh-md">
+          <Label htmlFor={reporterEmailId}>Votre adresse e-mail</Label>
+          <Input
+            aria-describedby={
+              errors.reporterEmail ? reporterEmailErrorId : undefined
+            }
+            aria-invalid={Boolean(errors.reporterEmail)}
+            autoComplete="email"
+            id={reporterEmailId}
+            onChange={(event) => setReporterEmail(event.target.value)}
+            type="email"
+            value={reporterEmail}
+          />
+          <p className="text-afh-caption text-afh-fg-muted">
+            Nous vous enverrons un lien pour confirmer cette adresse, puis la
+            décision de la modération. Elle n&apos;apparaît jamais publiquement
+            et ne sert à rien d&apos;autre.
+          </p>
+          {errors.reporterEmail && (
+            <p
+              className="text-afh-small text-afh-flag-open"
+              id={reporterEmailErrorId}
+              role="alert"
+            >
+              {errors.reporterEmail}
+            </p>
+          )}
         </div>
       </details>
 

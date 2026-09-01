@@ -9,11 +9,11 @@ const navigationMocks = vi.hoisted(() => ({
 
 vi.mock("next/navigation", () => ({
   redirect: navigationMocks.redirect,
-  usePathname: () => "/fr/compte/cles-api",
+  usePathname: () => "/fr/admin/cles-api",
 }));
 
-vi.mock("@/lib/supabase/auth-server", () => ({
-  createServerSupabaseClient: vi.fn(),
+vi.mock("@/lib/supabase/moderator", () => ({
+  getModeratorSession: vi.fn(),
 }));
 
 vi.mock("@/api/v2/services/keyService", () => ({
@@ -21,17 +21,8 @@ vi.mock("@/api/v2/services/keyService", () => ({
 }));
 
 import { listUserApiKeys } from "@/api/v2/services/keyService";
-import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
+import { getModeratorSession } from "@/lib/supabase/moderator";
 import ApiKeysPage from "../page";
-
-function makeSupabaseClient(userId = "user-123") {
-  const getUser = vi.fn().mockResolvedValue({
-    data: { user: { id: userId } },
-    error: null,
-  });
-
-  return { auth: { getUser } };
-}
 
 async function renderPage() {
   const ui = await ApiKeysPage();
@@ -44,29 +35,23 @@ describe("ApiKeysPage", () => {
   });
 
   // @req REQ-056
-  it("redirects an unauthenticated visitor to the French sign-in page", async () => {
-    vi.mocked(createServerSupabaseClient).mockResolvedValue({
-      auth: {
-        getUser: vi.fn().mockResolvedValue({
-          data: { user: null },
-          error: { message: "No session" },
-        }),
-      },
-    } as never);
+  it("turns away anyone the admin allowlist does not hold", async () => {
+    vi.mocked(getModeratorSession).mockImplementation(() => {
+      navigationMocks.redirect("/fr/admin/connexion");
+      return Promise.reject(new Error("unreachable"));
+    });
 
     await expect(ApiKeysPage()).rejects.toThrow(
-      "NEXT_REDIRECT:/fr/compte/connexion"
+      "NEXT_REDIRECT:/fr/admin/connexion"
     );
-    expect(navigationMocks.redirect).toHaveBeenCalledWith(
-      "/fr/compte/connexion"
-    );
+    expect(listUserApiKeys).not.toHaveBeenCalled();
   });
 
   // @req REQ-056
   it("loads the caller's own keys and renders the manager", async () => {
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      makeSupabaseClient("user-123") as never
-    );
+    vi.mocked(getModeratorSession).mockResolvedValue({
+      user: { id: "user-123" },
+    } as never);
     vi.mocked(listUserApiKeys).mockResolvedValue([
       {
         id: "key-1",
