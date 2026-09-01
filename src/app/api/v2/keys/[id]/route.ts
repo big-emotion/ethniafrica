@@ -18,6 +18,7 @@
  *         schema:
  *           type: string
  *         description: API key UUID.
+ *         example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
  *     responses:
  *       200:
  *         description: The key was revoked.

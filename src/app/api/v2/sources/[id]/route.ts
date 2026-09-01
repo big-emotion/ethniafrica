@@ -15,6 +15,7 @@
  *         schema:
  *           type: string
  *           format: uuid
+ *         example: 3fa85f64-5717-4562-b3fc-2c963f66afa6
  *     responses:
  *       200:
  *         description: Source envelope
@@ -49,6 +50,7 @@ import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -106,6 +108,7 @@ export async function GET(
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }
