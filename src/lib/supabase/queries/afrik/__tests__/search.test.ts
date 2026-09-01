@@ -47,6 +47,24 @@ function peopleRow(
   };
 }
 
+function countryRow(
+  id: string,
+  nameFr: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    nameFr,
+    etymology: null,
+    nameOriginActor: null,
+    content: {},
+    relevance: 0.5,
+    exactMatch: false,
+    snippet: null,
+    ...over,
+  };
+}
+
 describe("ftsSearchEntities", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockSupabase: any;
@@ -134,6 +152,38 @@ describe("ftsSearchEntities", () => {
       "Mandinka",
     ]);
     expect(result.peoplesTotal).toBe(2);
+  });
+
+  // @req REQ-002
+  it("surfaces a country found only through prose (DEC-028), ranked below a name match", async () => {
+    // "Keïta" appears only in MLI's kingdoms[].historicalRole prose (weight
+    // D, migration 059); a country literally carrying the name in its
+    // name_fr would rank at weight A (migration 043). Migration 044's
+    // ranking function is what orders these — this test only proves the
+    // query layer passes the DB order through untouched.
+    countriesPayload = {
+      total: 2,
+      rows: [
+        countryRow("KEI", "Keïta", {
+          relevance: 0.9,
+          exactMatch: true,
+        }),
+        countryRow("MLI", "Mali", {
+          relevance: 0.12,
+          exactMatch: false,
+          snippet: "fondé par l'empereur [[Keïta]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.countries.map((c) => c.nameFr)).toEqual(["Keïta", "Mali"]);
+    expect(result.countriesTotal).toBe(2);
   });
 
   // @req REQ-019
