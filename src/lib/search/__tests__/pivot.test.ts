@@ -31,6 +31,7 @@ describe("selectPivot", () => {
     expect(selectPivot(results, "bet")).toBeNull();
   });
 
+  // @req REQ-124
   // @req REQ-002
   it("selects nothing when another result shares the head's normalized name", () => {
     const results = [people("A", "Bété", 0.9), people("B", "BETE", 0.1)];

@@ -42,6 +42,7 @@ export interface SearchPivotCardProps {
   onNavigate?: () => void;
 }
 
+// @req REQ-124
 // @req REQ-002
 export function SearchPivotCard({
   result,
