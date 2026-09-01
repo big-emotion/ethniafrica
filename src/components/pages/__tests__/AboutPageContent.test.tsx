@@ -166,6 +166,19 @@ describe("AboutPageContent (REQ-132)", () => {
   });
 
   // @req REQ-132
+  it("names the static access-modes section with the current axis labels", () => {
+    renderAbout();
+
+    const staticItems = screen.getByTestId("about-access-mode-list");
+    for (const name of Object.values(ACCESS_MODE_LABELS)) {
+      expect(within(staticItems).getByText(name)).toBeInTheDocument();
+    }
+
+    expect(within(staticItems).queryByText("Explorer")).toBeNull();
+    expect(within(staticItems).queryByText("Comprendre")).toBeNull();
+  });
+
+  // @req REQ-132
   it("distinguishes this project overview from the Doctrine and links to it", () => {
     renderAbout();
 

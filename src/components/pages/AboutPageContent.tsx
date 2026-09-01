@@ -6,7 +6,7 @@ import { SynthesisRail } from "@/components/home/SynthesisRail";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
-import type { AccessMode } from "@/lib/hubs/moduleRegistry";
+import { ACCESS_MODE_LABELS, type AccessMode } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
@@ -83,16 +83,19 @@ export default function AboutPageContent({
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
         items: [
           {
+            id: "explorer" as AccessMode,
             description:
               "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
             accentClass: "afh-accent-ocre",
           },
           {
+            id: "comprendre" as AccessMode,
             description:
               "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
             accentClass: "afh-accent-teal",
           },
           {
+            id: "jouer" as AccessMode,
             description:
               "Interroger ses repères grâce aux jeux construits à partir du corpus.",
             accentClass: "afh-accent-perv",
@@ -747,15 +750,19 @@ export default function AboutPageContent({
             <p className="text-afh-text-soft">{t.accessModes.intro}</p>
           </div>
           <ul
+            data-testid="about-access-mode-list"
             className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-3"
             role="list"
           >
             {t.accessModes.items.map((mode) => (
               <li
-                key={mode.description}
+                key={mode.id}
                 className={`${mode.accentClass} border-l-2 border-[var(--accent)] pl-afh-md text-afh-small leading-relaxed text-afh-text-soft`}
               >
-                {mode.description}
+                <p className="font-bold text-afh-text">
+                  {ACCESS_MODE_LABELS[mode.id]}
+                </p>
+                <p className="mt-afh-xs">{mode.description}</p>
               </li>
             ))}
           </ul>
