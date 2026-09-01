@@ -1,26 +1,19 @@
 import AboutPageShell from "@/components/pages/AboutPageShell";
 import AboutPageContent from "@/components/pages/AboutPageContent";
-import { getModulesByAxis } from "@/lib/home/accessAxesData";
-import { getCorpusCounts } from "@/lib/home/corpusCounts";
-import { loadSynthesisRail } from "@/lib/home/synthesisRailData";
 
+/**
+ * No longer fetches corpus counts, hub modules or country syntheses: those
+ * fed the three blocks trimmed from AboutPageContent (2026-09-01) — the
+ * example-country cards, the interactive access cards and the source
+ * bibliography. The page is now static, and stays a server component only so
+ * `AboutPageShell` can do its client-only language sync outside the route.
+ */
 // @req REQ-091
 // @req REQ-132
-export default async function AboutPage() {
-  const [counts, modulesByAxis, syntheses] = await Promise.all([
-    getCorpusCounts(),
-    getModulesByAxis(),
-    loadSynthesisRail(),
-  ]);
-
+export default function AboutPage() {
   return (
     <AboutPageShell>
-      <AboutPageContent
-        language="fr"
-        counts={counts}
-        modulesByAxis={modulesByAxis}
-        syntheses={syntheses}
-      />
+      <AboutPageContent language="fr" />
     </AboutPageShell>
   );
 }

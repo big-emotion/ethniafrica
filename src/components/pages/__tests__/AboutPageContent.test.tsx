@@ -3,46 +3,8 @@ import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
-import { getLocalizedRoute } from "@/lib/routing";
-import type { HubModule } from "@/lib/hubs/moduleAvailability";
-import type { AccessMode } from "@/lib/hubs/moduleRegistry";
-import type { CorpusCounts } from "@/lib/home/corpusCounts";
-import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
 
-const counts: CorpusCounts = {
-  peoples: 4213,
-  countries: 91,
-  families: 37,
-  migrations: 5,
-};
-
-const modulesByAxis: Record<AccessMode, HubModule[]> = {
-  atlas: [],
-  dossiers: [],
-  jeux: [],
-};
-
-const syntheses: CountrySynthesis[] = [
-  {
-    id: "BDI",
-    nameFr: "Burundi",
-    summary: "Chapeau du Burundi.",
-    formerNames: [],
-    peoples: [{ name: "Peuple test", peopleId: "PPL_TEST" }],
-    kingdoms: [],
-    languages: ["kirundi"],
-  },
-];
-
-const renderAbout = () =>
-  render(
-    <AboutPageContent
-      language="fr"
-      counts={counts}
-      modulesByAxis={modulesByAxis}
-      syntheses={syntheses}
-    />
-  );
+const renderAbout = () => render(<AboutPageContent language="fr" />);
 
 function headingLevels(container: HTMLElement): number[] {
   return Array.from(container.querySelectorAll("h1,h2,h3,h4,h5,h6")).map(
@@ -109,25 +71,14 @@ describe("AboutPageContent (REQ-132)", () => {
     ).toHaveLength(1);
   });
 
+  // Trimmed 2026-09-01: the example-country cards ("Ce que contient une
+  // fiche"), the interactive access cards ("Par où commencer") and the
+  // About/Doctrine distinction ("03 · La méthode") each duplicated a block
+  // sitting right next to them. This test replaces
+  // "places the corpus synthesis before the existing three access axes" and
+  // "preserves the access framing around one interactive axis-card set".
   // @req REQ-132
-  it("places the corpus synthesis before the existing three access axes", () => {
-    renderAbout();
-
-    const corpus = screen.getByTestId("about-content-families");
-    const synthesis = screen.getByTestId("home-synthesis-rail");
-    const axes = screen.getByTestId("access-axes");
-
-    expect(
-      corpus.compareDocumentPosition(synthesis) &
-        Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
-    expect(
-      synthesis.compareDocumentPosition(axes) & Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
-  });
-
-  // @req REQ-132
-  it("preserves the access framing around one interactive axis-card set", () => {
+  it("names the three access modes as a static list, with nothing else duplicating them", () => {
     renderAbout();
 
     expect(
@@ -143,57 +94,17 @@ describe("AboutPageContent (REQ-132)", () => {
       )
     ).toBeInTheDocument();
 
-    for (const description of [
-      "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
-      "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
-      "Interroger ses repères grâce aux jeux construits à partir du corpus.",
-    ]) {
-      expect(
-        screen.getByText(description, { exact: true })
-      ).toBeInTheDocument();
-    }
-
-    expect(screen.queryByTestId("about-access-modes")).toBeNull();
-    expect(
-      screen.getAllByTestId(/^access-axis-(atlas|dossiers|jeux)$/)
-    ).toHaveLength(3);
-
-    for (const name of Object.values(ACCESS_MODE_LABELS)) {
-      expect(screen.getAllByRole("heading", { level: 3, name })).toHaveLength(
-        1
-      );
-    }
-  });
-
-  // @req REQ-132
-  it("names the static access-modes section with the current axis labels", () => {
-    renderAbout();
-
     const staticItems = screen.getByTestId("about-access-mode-list");
     for (const name of Object.values(ACCESS_MODE_LABELS)) {
       expect(within(staticItems).getByText(name)).toBeInTheDocument();
     }
 
-    expect(within(staticItems).queryByText("Explorer")).toBeNull();
-    expect(within(staticItems).queryByText("Comprendre")).toBeNull();
-  });
-
-  // @req REQ-132
-  it("distinguishes this project overview from the Doctrine and links to it", () => {
-    renderAbout();
-
-    const distinction = screen.getByTestId("about-doctrine-distinction");
-    expect(distinction).toHaveTextContent(
-      /La page À propos présente le projet/i
-    );
-    expect(distinction).toHaveTextContent(
-      /La Doctrine explique comment les affirmations sont établies/i
-    );
+    expect(screen.queryByTestId("home-synthesis-rail")).toBeNull();
+    expect(screen.queryByTestId("access-axes")).toBeNull();
+    expect(screen.queryByTestId("about-doctrine-distinction")).toBeNull();
     expect(
-      within(distinction).getByRole("link", {
-        name: "Consulter la Doctrine éditoriale",
-      })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+      screen.queryByRole("heading", { name: /Sources/i })
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-132
@@ -214,21 +125,8 @@ describe("AboutPageContent (REQ-132)", () => {
     expect(families.className).toMatch(/min-\[720px\]:grid-cols-2/);
     expect(families.className).toMatch(/min-\[1240px\]:grid-cols-4/);
 
-    const axes = screen.getByTestId("access-axes");
-    expect(axes.className).toContain("access-axes");
-  });
-
-  // @req REQ-132
-  it("keeps the source bibliography available through accessible links", () => {
-    renderAbout();
-
-    expect(
-      screen.getByRole("heading", { level: 2, name: "Sources" })
-    ).toBeTruthy();
-    expect(
-      screen.getByRole("link", {
-        name: /United Nations, Department of Economic and Social Affairs/i,
-      })
-    ).toHaveAttribute("href", "https://population.un.org/wpp/");
+    const accessModes = screen.getByTestId("about-access-mode-list");
+    expect(accessModes.className).toMatch(/grid-cols-1/);
+    expect(accessModes.className).toMatch(/min-\[720px\]:grid-cols-3/);
   });
 });

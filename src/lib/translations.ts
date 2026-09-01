@@ -19,6 +19,7 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   search: "Recherche",
   doctrine: "Doctrine",
   about: "À propos",
+  sources: "Sources",
   anecdotes: "Anecdotes",
   names: "Appellations",
   compare: "Comparer",
@@ -94,13 +95,15 @@ export const translations = {
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",
-        // The two pages that describe the project rather than the corpus. No
-        // access mode lists them — an axis is a way into the corpus — so the
-        // footer is where a reader now finds them, and the only place the
-        // doctrine is reachable from the chrome at all.
+        // The three pages that describe the project rather than the corpus.
+        // No access mode lists them — an axis is a way into the corpus — so
+        // the footer is where a reader now finds them, and the only place
+        // the doctrine and the source bibliography are reachable from the
+        // chrome at all.
         projectHeading: "Le projet",
         doctrine: "Doctrine éditoriale",
         about: "À propos",
+        sources: "Sources",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },

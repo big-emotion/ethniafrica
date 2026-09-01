@@ -7,6 +7,7 @@ export type PageType =
   | "search"
   | "doctrine"
   | "about"
+  | "sources"
   | "anecdotes"
   | "names"
   | "compare"
@@ -34,10 +35,10 @@ export type PageType =
 // and no such file has ever existed — so a module filed under one verb in
 // the registry and another here is caught by review, not by the build.
 //
-// `about`, `doctrine` and `compare` carry no prefix, for one reason:
-// no axis lists them, so nesting them would invent an ancestor the menu
-// never offers. The first two describe the project rather than the corpus
-// and left the access-mode taxonomy for the footer (REQ-132).
+// `about`, `doctrine`, `sources` and `compare` carry no prefix, for one
+// reason: no axis lists them, so nesting them would invent an ancestor the
+// menu never offers. The first three describe the project rather than the
+// corpus and left the access-mode taxonomy for the footer (REQ-132).
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
     countries: "atlas/pays",
@@ -46,6 +47,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     search: "atlas/recherche",
     doctrine: "doctrine",
     about: "about",
+    sources: "sources",
     anecdotes: "dossiers/anecdotes",
     names: "atlas/appellations",
     compare: "comparer",
