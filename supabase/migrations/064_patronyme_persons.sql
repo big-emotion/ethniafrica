@@ -1,4 +1,4 @@
--- Migration 063 — the deferred join: afrik_patronyme_persons
+-- Migration 064 — the deferred join: afrik_patronyme_persons
 --
 -- Story: ETNI-1462 (Serve the name through the public API).
 --
