@@ -70,6 +70,34 @@ three things, and none of them is needed for a first report:
 - **anti-abuse** — magic-link accounts are free to create, so an account is a
   weak control where the proof of work and rate limiting are the real ones.
 
+The atlas has since taken this to its conclusion: **there are no public accounts
+at all.** Sign-up, sign-in and the GitHub and Google providers are gone. The only
+sign-in left is `/fr/admin/connexion`, which sends a link to an address on
+`admin_allowlist` and to no other. Nothing a reader does requires one.
+
+### The address is optional, and it is not an account
+
+**Given** a reader who wants to know what became of their report,
+**when** they send it,
+**then** they may leave an address, and the report is published either way.
+
+This is the one thing §2 collects about a person, and it is worth stating what it
+is not. It is not an account: no password, no profile, no name attached to the
+report, which stays anonymous on the public queue. It is not a condition: the
+report is created, published and queued whether the field was filled or left
+empty, and the send button never waits on it. And it is not usable until the
+reader proves it — a single-use link, valid 24 hours, stored only as a hash.
+
+The proof matters because anyone can type anyone's address into a public form.
+Confirming is what turns an address into a channel; an unconfirmed one is written
+to exactly once, with the confirmation itself, and then never again.
+
+The address is never published, never returned by the API, and never joins
+`flags` — it lives in `flag_reporter_contacts`, which carries RLS and no policy.
+A column on `flags` would be readable straight off PostgREST, because
+`flags_read_public` is `SELECT USING (true)` and our own column allowlist does
+not apply there.
+
 ### Where age belongs
 
 Age confirmation is a consequence of **account creation**, not of reporting.
@@ -233,11 +261,23 @@ carry the CC-BY-SA consent that an authored contribution does.
 
 The reader who sends a report receives, in the dialog and without navigating:
 the confirmation, and the public slug of their report. That slug is the whole
-feedback loop for an anonymous reporter: a stable URL they can return to.
+feedback loop for a reader who left no address: a stable URL they can return to,
+where the status is shown and kept up to date.
 
-E-mail notification on state change is a real improvement and is **not** part of
-this charter's minimum — it presupposes an address, which §2 deliberately does
-not collect. It belongs to the account path, where an address already exists.
+**E-mail notification on the decision is now part of the minimum**, for the
+reader who asked for it. This section used to say the opposite — that it
+"presupposes an address, which §2 deliberately does not collect", and that it
+"belongs to the account path". Both halves are void: §2 collects an optional
+address, and there is no account path any more.
+
+What was true and stayed true is that the confirmation panel must not promise
+what the atlas cannot deliver. It said "vous recevrez un email quand la
+modération aura tranché" to every reader, including the ones who had left no
+address and to whom nothing could ever be sent. It now says one thing to a reader
+who left an address — confirm it — and another to a reader who did not.
+
+A decision is sent only to a **confirmed** address. An unconfirmed one is treated
+as belonging to someone who never reported anything, because it may.
 
 ---
 
@@ -252,8 +292,12 @@ Named here so the gaps are visible rather than discovered:
 - **Rate limiting.** Anonymous reporting makes it a prerequisite rather than a
   refinement.
 - **The three role models.** `user_roles`, `contributor_profiles.moderator_role`
-  and `api_keys.tier` do not interoperate; only the second one opens any door.
-  This charter uses it and takes no position on unifying them.
+  and `api_keys.tier` did not interoperate, and only the second opened any door
+  — badly: it lived on a row the sign-in wrote under `id` while every reader
+  queried `user_id`, so no profile was ever found and nobody ever held a role.
+  The console now authorizes against `admin_allowlist` and reads none of the
+  three. `moderator_role` survives for `revision_drafts` RLS; unifying what is
+  left is still open.
 - **The legacy `contributions` stack** and the Typeform on `/fr/report-error`
   are two further report paths that bypass this one entirely. Their retirement
   is a separate decision.

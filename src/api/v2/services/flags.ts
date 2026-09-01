@@ -422,3 +422,73 @@ export async function getContributorEmail(
 
   return data?.user?.email ?? null;
 }
+
+export interface ModerationQueueFilters {
+  /** Absent or empty means every status — the console hides nothing by default. */
+  statuses?: readonly FlagStatus[];
+  kind?: FlagKind;
+  entityType?: string;
+  sort: "recent" | "oldest";
+  /** 1-based, as it appears in the address. */
+  page: number;
+  pageSize: number;
+}
+
+export interface ModerationQueuePage {
+  items: PublicFlag[];
+  /** Reports in the current selection, not in the table behind it. */
+  total: number;
+}
+
+/**
+ * The console's reading of the queue.
+ *
+ * Distinct from `listFlags`, which serves the public API and pages by opaque
+ * cursor. A moderator needs what a cursor cannot give: how many reports the
+ * selection holds, and the ability to jump to a page rather than walk to it.
+ * So this one pages by offset and asks for an exact count.
+ *
+ * It also defaults to *every* status. The queue used to serve `open` and
+ * `under_review` only, which meant a moderator who had just accepted a report
+ * could no longer find it, and nothing on screen said the other three states
+ * existed.
+ */
+// @req REQ-042
+export async function listFlagsForModeration(
+  filters: ModerationQueueFilters
+): Promise<ModerationQueuePage> {
+  const supabase = createAdminClient();
+  const page = Math.max(1, Math.trunc(filters.page) || 1);
+  const from = (page - 1) * filters.pageSize;
+
+  let query = supabase
+    .from("flags")
+    .select(PUBLIC_FLAG_COLUMNS, { count: "exact" })
+    .order("created_at", { ascending: filters.sort === "oldest" });
+
+  if (filters.statuses?.length) {
+    query = query.in("status", filters.statuses);
+  }
+  if (filters.kind) {
+    query = query.eq("flag_kind", filters.kind);
+  }
+  if (filters.entityType) {
+    query = query.eq("entity_type", filters.entityType);
+  }
+
+  const { data, count, error } = await query.range(
+    from,
+    from + filters.pageSize - 1
+  );
+
+  if (error) {
+    // Never degrade to an empty page: a moderator would read "nothing to do".
+    logger.error("Failed to read the moderation queue", error);
+    throw new Error(`Failed to read the moderation queue: ${error.message}`);
+  }
+
+  return {
+    items: (data ?? []).map(mapFlagRow),
+    total: count ?? 0,
+  };
+}
