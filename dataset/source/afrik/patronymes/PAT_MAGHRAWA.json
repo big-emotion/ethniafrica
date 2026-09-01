@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent sur une désignation tribale historique classée provisoirement comme nisba."
+  },
+  "id": "PAT_MAGHRAWA",
+  "nameMain": "Maghrawa",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Maghrawa",
+      "attestations": [
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["brown-sale-1971"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZENATA",
+      "status": "attested",
+      "sourceRefs": ["zenata-branches-2021"]
+    }
+  ],
+  "countries": [],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "brown-sale-1971",
+      "title": "People of Salé: Tradition and Change in a Moroccan City, 1830–1930",
+      "url": "https://www.hesperis-tamuda.com/Downloads/1970-1979/Hesperis-Tamuda%201971.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "L'étude publiée par l'Université Mohammed V emploie Maghrawa dans son exposé des groupes zénètes liés à Salé."
+    },
+    {
+      "sourceKey": "zenata-branches-2021",
+      "title": "The Political and the Religious Doctrines Roles of the Zenata Tribe in Central Maghreb: The Case of Banu Yefren and Maghrawa",
+      "url": "https://asjp.cerist.dz/index.php/en/article/164273",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "L'article universitaire présente Maghrawa comme l'une des principales branches zénètes du Maghreb central."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nisbaSubtype",
+      "reason": "Les sources établissent une désignation tribale historique, mais pas son emploi comme nisba personnelle ; le sous-type reste donc vide."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Aucune source ne permet de traiter Maghrawa comme un nom de famille héréditaire moderne."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "L'attestation marocaine situe l'usage documentaire ; aucune distribution contemporaine du nom n'est affirmée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur individuel sûr n'est documenté dans le périmètre de cette fiche."
+    }
+  ]
+}

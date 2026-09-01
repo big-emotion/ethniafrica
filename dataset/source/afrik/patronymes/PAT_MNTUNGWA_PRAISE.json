@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité à l'attestation académique d'un nom de louange de lignée."
+  },
+  "id": "PAT_MNTUNGWA_PRAISE",
+  "nameMain": "Mntungwa",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Mntungwa",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["nwu-zulu-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["nwu-zulu-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "nwu-zulu-names",
+      "title": "The Social and Literary Aspects of Zulu Personal Names",
+      "url": "https://repository.nwu.ac.za/bitstreams/ea16f498-c289-4e9a-8f98-c9ed3b0354ab/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "L'étude présente Mntungwa dans la séquence des izithakazelo khumalo, ce qui fournit une attestation directe comme nom de louange de lignée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le lien de sélection vers la fiche ndebele du Nord ne suffit pas à établir une association ethnique directe ; aucune attribution à une personne n'est faite."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "La source atteste la séquence de louange, mais ne fournit pas une tradition d'origine transcrite complète."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le mode précis de transmission de Mntungwa n'est pas établi par l'extrait académique."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La distinction avec une entité de clan Khumalo reste à documenter par une source séparée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur individuel n'est ajouté à partir d'une séquence de louange."
+    }
+  ]
+}

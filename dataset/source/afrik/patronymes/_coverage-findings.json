@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "ticket": "ETNI-1461",
+  "subtask": "ETNI-1686",
+  "reviewStatus": "current_corpus_reviewed",
+  "methodologyFr": "Ces constats résultent d'une relecture du corpus local actuel. Un compteur de détection à zéro sert uniquement à orienter la relecture et ne prouve pas l'absence d'un nom ou d'un système de nom dans les traditions vivantes.",
+  "findings": [
+    {
+      "linguisticFamilyId": "FLG_KHOISAN",
+      "finding": "no_named_candidate_after_corpus_review",
+      "candidateNames": [],
+      "reviewedFiles": [
+        "dataset/source/afrik/peuples/FLG_KHOISAN/PPL_HADZA.json",
+        "dataset/source/afrik/peuples/FLG_KHOISAN/PPL_SANDAWE.json"
+      ],
+      "evidence": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_KHOISAN/PPL_SANDAWE.json",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Foyers nucleaires organises en clans patrilineaires exogames qui forment la base de communautes locales autonomes. Mariage monogame avec bride-wealth interdit entre cousins paralleles et prefere avec la fille de l'oncle maternel. Residence patrilocale avec periode initiale chez les parents de l'epouse.",
+          "sourceTier": "unresolved",
+          "sourceReviewStatus": "review_required"
+        }
+      ],
+      "readerExplanationFr": "La fiche Sandawe décrit des clans patrilinéaires exogames, mais aucun nom de clan n'est donné dans les deux fiches Khoisan relues. Le corpus actuel ne permet pas de sélectionner une entité de nom stable et ce constat ne prouve pas son absence dans la tradition sandawe."
+    },
+    {
+      "linguisticFamilyId": "FLG_KXA",
+      "finding": "system_present_entity_unresolved",
+      "candidateNames": [],
+      "reviewedFiles": [
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_BUGAKWE.json",
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_HOA.json",
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_JUHOANSI.json",
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_KUNG.json",
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_KXA_MACRO.json",
+        "dataset/source/afrik/peuples/FLG_KXA/PPL_TSAO_KXA.json"
+      ],
+      "evidence": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_KXA/PPL_JUHOANSI.json",
+          "fieldPath": "content.organization.roleOfLineages",
+          "excerpt": "Lignages bilatéraux : un individu peut appartenir au n!ore de son pere ou de sa mere et y exercer des droits. Les noms propres sont limites et partages selon un systeme complexe de jonction : deux personnes portant le meme nom etablissent une relation sociale particuliere (ko). Ce systeme de denomination lie les individus a travers les generations.",
+          "sourceTier": "unresolved",
+          "sourceReviewStatus": "review_required"
+        }
+      ],
+      "readerExplanationFr": "Le corpus Kx'a atteste chez les Ju|'hoansi un système ko qui crée une relation sociale entre personnes partageant un même prénom. Il ne permet pas d'isoler un nom précis comme entité stable à publier ; une recherche sourcée complémentaire reste nécessaire."
+    },
+    {
+      "linguisticFamilyId": "FLG_SONGHAY",
+      "finding": "positive_candidate",
+      "candidateNames": ["Kurtey", "Taguru"],
+      "reviewedFiles": [
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_DENDI.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_KOYRA_BORO_SEYO.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_KOYRA_CHIINI.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_KURTEY.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_SONGHAY_GURMA.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_SONGHAY_MACRO.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_SONGHAY_NIGERIEN.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_WOGO.json",
+        "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_ZARMA.json"
+      ],
+      "evidence": [
+        {
+          "name": "Kurtey",
+          "file": "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_KURTEY.json",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique patrilinéaire héritée de l'ascendance peule et consolidée par le métissage avec les Songhaï-Zarma. Les clans Kurtey maintiennent des généalogies qui les rattachent à la fois aux Peuls fondateurs et aux populations songhaï-zarma assimilées. Endogamie clanale partielle : préférence pour les alliances matrimoniales au sein du même groupe ou avec les Wogo. Castes spécialisées héritées : pêcheurs (héritage sorko), agriculteurs, éleveurs (héritage peul).",
+          "sourceTier": "unresolved",
+          "sourceReviewStatus": "review_required"
+        },
+        {
+          "name": "Taguru",
+          "file": "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_ZARMA.json",
+          "fieldPath": "content.historicalRole.kingdomsOrChiefdoms",
+          "excerpt": "Le sultanat de Dosso (fonde ca. 1750 par Zarmakoy Aboubacar du clan Taguru) est la principale entite politique zarma historique. Il survit ceremonielement a ce jour. Zarmakoy Kossom (1856-1865) unifia l'ensemble de la Zarma orientale. Le Zarmakoy de Dosso devint un pilier de l'administration coloniale francaise, recevant en contrepartie des pouvoirs etendus — l'un des exemples les plus elabores d'administration indirecte en Afrique francophone. En 1923, la capitale coloniale fut deplacee de Zinder a Niamey, en territoire zarma. L'emirat zarma des Zabarma fonda au 19e siecle un etat militaire sur le plateau voltaique (Burkina Faso actuel, nord Ghana), sous le commandement de Babatu.",
+          "sourceTier": "unresolved",
+          "sourceReviewStatus": "review_required"
+        }
+      ],
+      "readerExplanationFr": "Le corpus Songhay fournit deux pistes positives : Kurtey dans une description de structure clanique et Taguru explicitement qualifié de clan dans l'histoire du sultanat de Dosso. Ces passages justifient leur sélection comme candidats, sous réserve d'une attribution de source et d'une revue éditoriale avant toute fiche PAT."
+    },
+    {
+      "linguisticFamilyId": "FLG_TUU",
+      "finding": "system_present_entity_unresolved",
+      "candidateNames": [],
+      "reviewedFiles": [
+        "dataset/source/afrik/peuples/FLG_TUU/PPL_NUU.json",
+        "dataset/source/afrik/peuples/FLG_TUU/PPL_TAA.json",
+        "dataset/source/afrik/peuples/FLG_TUU/PPL_TUU_MACRO.json",
+        "dataset/source/afrik/peuples/FLG_TUU/PPL_WEST_TAA.json"
+      ],
+      "evidence": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_TUU/PPL_TUU_MACRO.json",
+          "fieldPath": "content.organization.roleOfLineages",
+          "excerpt": "Lignages bilatEraux sans primaute systematique de la ligne paternelle ou maternelle. L'appartenance a un groupe repose sur la descendance, le mariage et les alliances de reciprocite (partage de nourriture, visite). Les regles de nomination (nom transmis par les grands-parents) structuraient les identites.",
+          "sourceTier": "unresolved",
+          "sourceReviewStatus": "review_required"
+        }
+      ],
+      "readerExplanationFr": "Le corpus Tuu décrit une règle de nomination où le nom est transmis par les grands-parents. Il ne permet pas d'identifier un nom précis et stable comme entité publiable ; une recherche sourcée complémentaire reste nécessaire."
+    }
+  ]
+}
