@@ -184,7 +184,8 @@ export const getPersonRoute = (language: Language, id: string): string =>
  */
 // @req REQ-091
 export type DeepLinkQuery =
-  Record<string, string | string[] | undefined> | URLSearchParams;
+  | Record<string, string | string[] | undefined>
+  | URLSearchParams;
 
 /**
  * The single value the query holds under `key`, or null when it holds none or
