@@ -105,10 +105,13 @@ describe("SiteFooter", () => {
     );
   });
 
+  // Once, and from the « Le projet » rubric — not once there and once again
+  // in the row below it.
   // @req REQ-088
-  it("offers À propos as a footer destination", () => {
+  it("offers À propos exactly once, as a footer destination", () => {
     render(<SiteFooter language="fr" />);
 
+    expect(screen.getAllByRole("link", { name: "À propos" })).toHaveLength(1);
     expect(screen.getByRole("link", { name: "À propos" })).toHaveAttribute(
       "href",
       "/fr/about"

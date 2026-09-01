@@ -95,15 +95,43 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // @req REQ-091
   it("carries the tail verbatim below the renamed module", () => {
     expect(resolveRenamedModulePath("/fr/comprendre/noms/PPL_YORUBA")).toBe(
-      "/fr/comprendre/appellations/PPL_YORUBA"
+      "/fr/explorer/appellations/PPL_YORUBA"
     );
   });
 
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
     expect(resolveRenamedModulePath("/fr/comprendre/noms/")).toBe(
-      "/fr/comprendre/appellations"
+      "/fr/explorer/appellations"
     );
+  });
+
+  // Appellations was published under Comprendre before ETNI-1453 made the
+  // name a corpus entity and moved it to Explorer. The address it was
+  // published under has to reach the new one directly: chaining it through
+  // `comprendre/noms` would spend the 308 twice.
+  // @req REQ-114
+  it("sends both published appellations addresses to Explorer in one hop", () => {
+    expect(resolveRenamedModulePath("/fr/comprendre/appellations")).toBe(
+      "/fr/explorer/appellations"
+    );
+    expect(resolveRenamedModulePath("/fr/comprendre/noms")).toBe(
+      "/fr/explorer/appellations"
+    );
+  });
+
+  // Doctrine leaves the axes with About: a page no axis lists carries no
+  // prefix, the rule `compare` already follows.
+  // @req REQ-114
+  it("lifts the doctrine subtree back to the top level", () => {
+    expect(resolveRenamedModulePath("/fr/comprendre/doctrine")).toBe(
+      "/fr/doctrine"
+    );
+    expect(
+      resolveRenamedModulePath("/fr/comprendre/doctrine/endonymes-vs-exonymes")
+    ).toBe("/fr/doctrine/endonymes-vs-exonymes");
+    // And the address it lands on is served, not relocated again.
+    expect(path("/fr/doctrine")).toBeNull();
   });
 
   // @req REQ-091

@@ -20,7 +20,10 @@ import {
   ACCESS_MODES,
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
-import type { ModuleAvailabilityMap } from "@/lib/hubs/moduleOffer";
+import {
+  isModuleOffered,
+  type ModuleAvailabilityMap,
+} from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getLocalizedRoute } from "@/lib/routing";
 
@@ -201,14 +204,26 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
 
     // Directory facets are modules in navigation: each one keeps its own
     // destination, full name and availability contract under the access mode.
+    //
+    // A module in preparation is listed and named like the rest and carries
+    // no destination at all — the Bientôt row. Explorer holds one since
+    // Appellations moved onto it, so the destination is asserted against the
+    // same predicate the header itself renders from rather than against the
+    // assumption that every module on this axis is offered.
     for (const navModule of getNavModules("explorer")) {
-      const href = getModuleHref(navModule, "fr");
       const entry = within(panel()).getByTestId(
         `site-nav-module-${navModule.id}`
       );
 
-      expect(entry).toHaveAccessibleName(navModule.name);
-      expect(entry).toHaveAttribute("href", href);
+      expect(entry).toHaveTextContent(navModule.name);
+      if (isModuleOffered(navModule, null)) {
+        expect(entry).toHaveAccessibleName(navModule.name);
+        expect(entry).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+      } else {
+        // A Bientôt row is a span with no role, so it has no accessible name
+        // to carry — which is the point: it is not a destination.
+        expect(entry).not.toHaveAttribute("href");
+      }
     }
   });
 
@@ -319,38 +334,30 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 });
 
-describe("SiteHeader — the About destination (REQ-132)", () => {
+/**
+ * About and the doctrine were listed under Comprendre, which promised a way
+ * into the corpus and delivered two pages about the project. An access mode
+ * is a reading intention, so neither is filed on one any more and the header
+ * — which is generated from the registry — stops naming them. The footer's
+ * « Le projet » rubric is where they are reached (siteFooterDirectory).
+ */
+describe("SiteHeader — the project pages are not an axis (REQ-132)", () => {
   // @req REQ-132
-  it("keeps About and the editorial doctrine as distinct Comprendre destinations", () => {
+  it("names neither About nor the doctrine under Comprendre", () => {
     renderHeader();
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
 
     expect(
-      within(panel()).getByRole("link", { name: "À propos du projet" })
-    ).toHaveAttribute("href", "/fr/about");
+      within(panel()).queryByTestId("site-nav-module-about")
+    ).not.toBeInTheDocument();
     expect(
-      within(panel()).getByRole("link", { name: "La doctrine éditoriale" })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+      within(panel()).queryByTestId("site-nav-module-doctrine")
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-132
-  it("gives About its dedicated information glyph", () => {
-    renderHeader();
-
-    fireEvent.click(trigger(ACCESS_MODE_LABELS.comprendre));
-
-    const glyph = screen
-      .getByTestId("site-nav-module-about")
-      .querySelector(".sh-glyph svg");
-
-    expect(glyph).toBeInTheDocument();
-    expect(glyph).toHaveClass("lucide-info");
-    expect(glyph).not.toHaveClass("lucide-circle");
-  });
-
-  // @req REQ-132
-  it("offers the same distinct About and doctrine links in the mobile tray", () => {
+  it("names neither of them in the mobile tray either", () => {
     renderHeader();
 
     fireEvent.click(screen.getByTestId(BURGER));
@@ -362,11 +369,11 @@ describe("SiteHeader — the About destination (REQ-132)", () => {
     );
 
     expect(
-      within(tray).getByRole("link", { name: "À propos du projet" })
-    ).toHaveAttribute("href", "/fr/about");
+      within(tray).queryByTestId("site-nav-module-about")
+    ).not.toBeInTheDocument();
     expect(
-      within(tray).getByRole("link", { name: "La doctrine éditoriale" })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+      within(tray).queryByTestId("site-nav-module-doctrine")
+    ).not.toBeInTheDocument();
   });
 });
 
@@ -622,9 +629,15 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
       })
     ).not.toHaveAttribute("href");
     for (const navModule of getNavModules("explorer")) {
-      expect(
-        within(tray).getByTestId(`site-nav-module-${navModule.id}`)
-      ).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+      const entry = within(tray).getByTestId(`site-nav-module-${navModule.id}`);
+
+      // Same contract as the wide panel: offered means a destination, in
+      // preparation means none.
+      if (isModuleOffered(navModule, null)) {
+        expect(entry).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+      } else {
+        expect(entry).not.toHaveAttribute("href");
+      }
     }
   });
 

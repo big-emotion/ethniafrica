@@ -29,25 +29,25 @@ export type PageType =
 //
 // The prefix is written out rather than composed from `moduleRegistry`,
 // which imports this file: deriving it would put a cycle in the module
-// every page and the middleware load. `routingCharter.test.ts` closes the
-// gap instead, asserting each module's slug opens on its own axis hub — so
-// a module filed under one verb in the registry and another here fails the
-// build rather than shipping two URLs and no canonical.
+// every page and the middleware load. Nothing closes that gap
+// automatically — a comment here once claimed `routingCharter.test.ts` did,
+// and no such file has ever existed — so a module filed under one verb in
+// the registry and another here is caught by review, not by the build.
 //
-// `about` keeps its established top-level canonical route even though
-// Comprendre now lists it (REQ-132). `compare` carries no prefix because no
-// axis lists it, so nesting that page would invent an ancestor the menu never
-// offers.
+// `about`, `doctrine` and `compare` carry no prefix, for one reason:
+// no axis lists them, so nesting them would invent an ancestor the menu
+// never offers. The first two describe the project rather than the corpus
+// and left the access-mode taxonomy for the footer (REQ-132).
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
     countries: "explorer/pays",
     families: "explorer/familles",
     peoples: "explorer/peuples",
     search: "explorer/recherche",
-    doctrine: "comprendre/doctrine",
+    doctrine: "doctrine",
     about: "about",
     anecdotes: "comprendre/anecdotes",
-    names: "comprendre/appellations",
+    names: "explorer/appellations",
     compare: "comparer",
     migrations: "comprendre/migrations",
     quiz: "jouer/quiz",

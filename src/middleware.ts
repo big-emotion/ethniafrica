@@ -131,9 +131,25 @@ export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
 // matches exactly one top-level segment, and RELOCATED_SEGMENTS is keyed on
 // the single old top-level segment the V1 flat structure used. A rename that
 // starts and ends below the hub needs a key that can itself hold a slash.
+//
+// Regrouping the modules by the registry's own filing rule then gave that
+// table two more entries, and both are *moves across* axes rather than
+// renames within one:
+//
+//   · Appellations went to Explorer, so the address ETNI-1458 published
+//     (`comprendre/appellations`) is itself now legacy. It is keyed here in
+//     its own right rather than chained behind `comprendre/noms`:
+//     redirectCharter.test.ts forbids a target that is itself a key, and a
+//     reader arriving on either published address must reach Explorer in the
+//     one hop a 308 can afford to spend.
+//   · Doctrine left the axes entirely, and a page no axis lists carries no
+//     prefix — so it lands back at the top level, where `RELOCATED_SEGMENTS`
+//     stops holding an entry for it and starts leaving it alone.
 // @req REQ-091
 export const RENAMED_MODULE_PATHS: Record<string, string> = {
-  "comprendre/noms": "comprendre/appellations",
+  "comprendre/noms": "explorer/appellations",
+  "comprendre/appellations": "explorer/appellations",
+  "comprendre/doctrine": "doctrine",
 };
 
 /**
@@ -183,8 +199,10 @@ export const RELOCATED_SEGMENTS: Record<string, string> = {
   peuples: "explorer/peuples",
   familles: "explorer/familles",
   recherche: "explorer/recherche",
-  doctrine: "comprendre/doctrine",
-  noms: "comprendre/appellations",
+  // `doctrine` was a key here while the page lived under Comprendre. It is
+  // served at the top level again, so an entry would send a live route to
+  // itself — the loop the charter suite walks this table to rule out.
+  noms: "explorer/appellations",
   migrations: "comprendre/migrations",
   regards: "comprendre/regards",
   quiz: "jouer/quiz",
@@ -338,8 +356,9 @@ export async function middleware(request: NextRequest) {
     moved = true;
   }
 
-  // ETNI-1458's within-hub rename: comprendre/noms to comprendre/appellations.
-  // A rewrite of its own, composing into the same single 308 as the three
+  // The nested moves: comprendre/noms and comprendre/appellations to
+  // explorer/appellations, comprendre/doctrine back to the top level. A
+  // rewrite of its own, composing into the same single 308 as the three
   // above for the same reason — two hops would spend the old URL's standing
   // twice.
   const renamedModule = resolveRenamedModulePath(canonicalPath);

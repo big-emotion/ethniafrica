@@ -13,7 +13,7 @@ const AXIS_HUB_PAGES = [
 
 const REPRESENTATIVE_NESTED_PAGES = [
   "src/app/[lang]/explorer/peuples/page.tsx",
-  "src/app/[lang]/comprendre/doctrine/page.tsx",
+  "src/app/[lang]/comprendre/anecdotes/page.tsx",
   "src/app/[lang]/jouer/[jeu]/page.tsx",
 ] as const;
 
