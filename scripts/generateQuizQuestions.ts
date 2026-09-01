@@ -428,11 +428,12 @@ async function runGenerationSweep(
   supabase: SupabaseClient,
   rebuildAll: boolean
 ): Promise<void> {
-  const { entries, pools } = await buildFicheEntries(supabase);
+  const { entries, countryEntries, pools } = await buildFicheEntries(supabase);
   const activeQuestions = await fetchActiveQuestions(supabase);
 
   const plan = computeSweepPlan({
     entries,
+    countryEntries,
     pools,
     activeQuestions,
     rebuildAll,
