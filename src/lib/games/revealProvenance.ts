@@ -11,7 +11,7 @@
  * `fieldPath` stays exactly as it is in the data: it is the auditable record,
  * it keys the assertion rows, and the sweep compares against it. What changes
  * is that the *presentation* layer translates it. Keeping the two apart is why
- * this lives here and not on `GameReveal` — the bank holds eleven thousand
+ * this lives here and not on `GameReveal` — the bank holds many thousands of
  * rounds, and re-wording them would have meant a migration to fix a caption.
  *
  * A path with no wording returns `null` and the reveal simply omits the line.
