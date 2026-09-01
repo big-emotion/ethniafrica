@@ -20,6 +20,7 @@ import type { SearchResult } from "@/types/afrik-frontend";
 /** How far ahead of the runner-up a head must be to stand alone. */
 const DOMINANCE_RATIO = 2;
 
+// @req REQ-124
 // @req REQ-002
 export function selectPivot(
   results: SearchResult[],
