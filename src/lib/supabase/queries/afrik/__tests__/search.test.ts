@@ -4,8 +4,9 @@
  * Peoples and countries are ranked by the SQL functions of migration 044, so
  * these tests drive the RPC boundary: what parameters go down, and that the
  * order coming back is preserved rather than re-sorted here. The families
- * branch delegates to the existing ilike query, mocked as a unit, so this
- * file asserts composition rather than re-testing it.
+ * branch delegates to two mocked units — the full fetch (name-based ranking)
+ * and the search_vector text match (decolonial-prose ranking, DEC-028) — so
+ * this file asserts composition rather than re-testing either one.
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
@@ -15,10 +16,14 @@ vi.mock("../../../server", () => ({
 
 vi.mock("../languageFamilies", () => ({
   searchAfrikLanguageFamilies: vi.fn(),
+  searchAfrikLanguageFamiliesByText: vi.fn(),
 }));
 
 import { ftsSearchEntities } from "../search";
-import { searchAfrikLanguageFamilies } from "../languageFamilies";
+import {
+  searchAfrikLanguageFamilies,
+  searchAfrikLanguageFamiliesByText,
+} from "../languageFamilies";
 import { createServerClient } from "../../../server";
 
 function peopleRow(
@@ -69,6 +74,8 @@ describe("ftsSearchEntities", () => {
     (createServerClient as any).mockReturnValue(mockSupabase);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (searchAfrikLanguageFamilies as any).mockResolvedValue([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue([]);
   });
 
   // @req REQ-002
@@ -259,6 +266,39 @@ describe("ftsSearchEntities", () => {
 
     expect(result.familiesTotal).toBe(2);
     expect(result.total).toBe(2);
+  });
+
+  // @req REQ-002
+  it("surfaces a family whose only match is inside its decolonial text (DEC-028)", async () => {
+    // FLG_KROU's name matches neither "administrateurs" nor any substring of
+    // it — only content.decolonialHeader.whyProblematic does, in the corpus.
+    // Before this ticket, rankLanguageFamilies filtered on nameFr alone and
+    // dropped this family outright, however search_vector matched it.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamilies as any).mockResolvedValue([
+      { id: "FLG_KROU", nameFr: "Krou", content: {} },
+      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
+    ]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue(["FLG_KROU"]);
+
+    const result = await ftsSearchEntities({
+      q: "administrateurs",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.families.map((f) => f.id)).toEqual(["FLG_KROU"]);
+    expect(result.families[0].exactMatch).toBe(false);
+  });
+
+  // @req REQ-002
+  it("asks search_vector for the term before ranking families", async () => {
+    await ftsSearchEntities({ q: "administrateurs", limit: 20, offset: 0 });
+
+    expect(searchAfrikLanguageFamiliesByText).toHaveBeenCalledWith(
+      "administrateurs"
+    );
   });
 
   // @req REQ-129

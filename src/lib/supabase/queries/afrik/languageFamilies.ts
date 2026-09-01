@@ -191,3 +191,36 @@ export async function searchAfrikLanguageFamilies(): Promise<LanguageFamily[]> {
     updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
   }));
 }
+
+/**
+ * Ids of families whose `search_vector` (migration 055 — DEC-028) matches
+ * `query` — weight A on name_fr/name_en, weight D on every string inside
+ * content->decolonialHeader. This is what lets a term that appears only in a
+ * family's decolonial text (whyProblematic, contemporaryUsage, …) surface
+ * that family: rankLanguageFamilies (search.ts) unions this id set with its
+ * own name-based tiers rather than replacing them, because search_vector's
+ * French-stemmed matching does not carry the accent-insensitivity REQ-129
+ * already guarantees for names via normalizeString — narrowing this query to
+ * ids-only keeps that guarantee entirely in the caller's hands.
+ */
+// @req REQ-002
+export async function searchAfrikLanguageFamiliesByText(
+  query: string
+): Promise<string[]> {
+  const supabase = createServerClient();
+
+  const { data, error } = await supabase
+    .from("afrik_language_families")
+    .select("id")
+    .textSearch("search_vector", query, {
+      type: "websearch",
+      config: "french",
+    });
+
+  if (error) {
+    logger.error("Error full-text searching AFRIK language families", error);
+    throw error;
+  }
+
+  return (data || []).map((row) => row.id as string);
+}
