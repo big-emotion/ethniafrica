@@ -56,6 +56,13 @@ export interface PeopleRelationsSectionReport extends MigrationSectionReport {
   orphans: string[];
 }
 
+export interface ProtectedClassificationDrift {
+  id: string;
+  field: "classification_status";
+  databaseStatus: unknown;
+  sourceStatus: unknown;
+}
+
 export interface MigrationReport {
   languageFamilies: MigrationSectionReport;
   languages: LanguageLoadReport;
@@ -65,6 +72,10 @@ export interface MigrationReport {
   peopleRelations: PeopleRelationsSectionReport;
   migrations: MigrationSectionReport;
   names: MigrationSectionReport;
+  protectedDrift: {
+    languageFamilies: ProtectedClassificationDrift[];
+    peoples: ProtectedClassificationDrift[];
+  };
   verification: {
     before: AfrikDriftReport;
     after: AfrikDriftReport | null;
@@ -83,6 +94,7 @@ type AfrikTable =
   | "afrik_language_families"
   | "afrik_peoples"
   | "afrik_countries";
+type ClassifiedAfrikTable = "afrik_language_families" | "afrik_peoples";
 
 function emptyDriftReport(): AfrikDriftReport {
   return {
@@ -103,6 +115,7 @@ function createMigrationReport(): MigrationReport {
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
     migrations: { total: 0, inserted: 0, errors: [] },
     names: { total: 0, inserted: 0, errors: [] },
+    protectedDrift: { languageFamilies: [], peoples: [] },
     verification: {
       before: emptyDriftReport(),
       after: null,
@@ -197,19 +210,75 @@ function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : "Unknown error";
 }
 
+async function readClassificationStatuses(
+  supabase: AdminClient,
+  table: ClassifiedAfrikTable
+): Promise<Map<string, unknown>> {
+  const { data, error } = await supabase
+    .from(table)
+    .select("id, classification_status");
+
+  if (error) {
+    throw new Error(
+      `Failed to read ${table} classification statuses: ${error.message}`
+    );
+  }
+
+  const statuses = new Map<string, unknown>();
+  if (!Array.isArray(data)) {
+    return statuses;
+  }
+
+  for (const row of data) {
+    if (isRecord(row) && typeof row.id === "string") {
+      statuses.set(row.id, row.classification_status ?? null);
+    }
+  }
+  return statuses;
+}
+
+function findProtectedClassificationDrift(
+  records: Array<{ id: string; classificationStatus?: unknown }>,
+  existingStatuses: Map<string, unknown>
+): ProtectedClassificationDrift[] {
+  return records.flatMap((record) => {
+    if (!existingStatuses.has(record.id)) {
+      return [];
+    }
+
+    const sourceStatus = record.classificationStatus ?? null;
+    const databaseStatus = existingStatuses.get(record.id);
+    if (sourceStatus === databaseStatus) {
+      return [];
+    }
+
+    return [
+      {
+        id: record.id,
+        field: "classification_status" as const,
+        databaseStatus,
+        sourceStatus,
+      },
+    ];
+  });
+}
+
 async function upsertLanguageFamilies(
   supabase: AdminClient,
   languageFamilies: LanguageFamily[],
+  existingStatuses: Map<string, unknown>,
   report: MigrationReport
 ): Promise<void> {
   for (const family of languageFamilies) {
+    const classificationStatus = family.classificationStatus ?? null;
+    const exists = existingStatuses.has(family.id);
     try {
       const { error } = await supabase.from("afrik_language_families").upsert(
         {
           id: family.id,
           name_fr: family.nameFr,
           name_en: family.nameEn ?? null,
-          classification_status: family.classificationStatus ?? null,
+          ...(exists ? {} : { classification_status: classificationStatus }),
           content: family.content,
           updated_at: new Date().toISOString(),
         },
@@ -233,6 +302,7 @@ async function upsertPeoples(
   supabase: AdminClient,
   peoples: People[],
   validFamilyIds: Set<string>,
+  existingStatuses: Map<string, unknown>,
   report: MigrationReport
 ): Promise<void> {
   for (const people of peoples) {
@@ -243,13 +313,15 @@ async function upsertPeoples(
       continue;
     }
 
+    const classificationStatus = people.classificationStatus ?? null;
+    const exists = existingStatuses.has(people.id);
     try {
       const { error } = await supabase.from("afrik_peoples").upsert(
         {
           id: people.id,
           name_main: people.nameMain,
           language_family_id: people.languageFamilyId,
-          classification_status: people.classificationStatus ?? null,
+          ...(exists ? {} : { classification_status: classificationStatus }),
           content: people.content,
           updated_at: new Date().toISOString(),
         },
@@ -442,6 +514,23 @@ export async function migrateAfrikToDatabase(
     await databaseSnapshot(supabase)
   );
 
+  const languageFamilyStatuses = await readClassificationStatuses(
+    supabase,
+    "afrik_language_families"
+  );
+  const peopleStatuses = await readClassificationStatuses(
+    supabase,
+    "afrik_peoples"
+  );
+  report.protectedDrift.languageFamilies = findProtectedClassificationDrift(
+    languageFamilies,
+    languageFamilyStatuses
+  );
+  report.protectedDrift.peoples = findProtectedClassificationDrift(
+    peoples,
+    peopleStatuses
+  );
+
   if (dryRun) {
     report.relations.total = countRelations(peoples);
     report.peopleRelations.total = loadAllRelationFiles().length;
@@ -455,18 +544,30 @@ export async function migrateAfrikToDatabase(
       relations: report.relations.total,
       peopleRelations: report.peopleRelations.total,
       migrations: report.migrations.total,
+      protectedDrift: report.protectedDrift,
       drift: report.verification.before,
     });
     return report;
   }
 
-  await upsertLanguageFamilies(supabase, languageFamilies, report);
+  await upsertLanguageFamilies(
+    supabase,
+    languageFamilies,
+    languageFamilyStatuses,
+    report
+  );
   const validFamilyIds = await readIds(supabase, "afrik_language_families");
 
   // Families must be committed before languages so language.family_id resolves.
   report.languages = await loadLanguages(supabase, languageRecords);
 
-  await upsertPeoples(supabase, peoples, validFamilyIds, report);
+  await upsertPeoples(
+    supabase,
+    peoples,
+    validFamilyIds,
+    peopleStatuses,
+    report
+  );
 
   const migrationRecords = loadAllMigrationFiles();
   const migrationsReport = await loadMigrations(supabase, migrationRecords);
@@ -522,6 +623,7 @@ export async function migrateAfrikToDatabase(
       peopleRelations: report.peopleRelations,
       migrations: report.migrations,
       names: report.names,
+      protectedDrift: report.protectedDrift,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,
     });

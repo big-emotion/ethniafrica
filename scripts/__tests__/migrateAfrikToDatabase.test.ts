@@ -81,6 +81,10 @@ interface UpsertOperation {
 interface SupabaseDoubleOptions {
   rows?: Partial<Record<TableName, DatabaseRow[]>>;
   persistUpserts?: boolean;
+  writeError?: (
+    operation: UpsertOperation,
+    existingRow: DatabaseRow | undefined
+  ) => { message: string } | null;
 }
 
 function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
@@ -97,25 +101,30 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const from = vi.fn((table: TableName) => ({
     select: vi.fn(async () => ({ data: rows[table], error: null })),
     upsert: vi.fn(async (row: DatabaseRow) => {
-      operations.push({ table, row });
+      const operation = { table, row } satisfies UpsertOperation;
+      operations.push(operation);
+
+      const key =
+        table === "afrik_people_countries"
+          ? `${row.people_id}:${row.country_id}`
+          : row.id;
+      const index = rows[table].findIndex((candidate) => {
+        const candidateKey =
+          table === "afrik_people_countries"
+            ? `${candidate.people_id}:${candidate.country_id}`
+            : candidate.id;
+        return candidateKey === key;
+      });
+      const error = options.writeError?.(operation, rows[table][index]);
+      if (error) {
+        return { error };
+      }
 
       if (persistUpserts) {
-        const key =
-          table === "afrik_people_countries"
-            ? `${row.people_id}:${row.country_id}`
-            : row.id;
-        const index = rows[table].findIndex((candidate) => {
-          const candidateKey =
-            table === "afrik_people_countries"
-              ? `${candidate.people_id}:${candidate.country_id}`
-              : candidate.id;
-          return candidateKey === key;
-        });
-
         if (index === -1) {
           rows[table].push(row);
         } else {
-          rows[table][index] = row;
+          rows[table][index] = { ...rows[table][index], ...row };
         }
       }
 
@@ -281,6 +290,110 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.before.hasDrift).toBe(true);
     expect(report.verification.after).toMatchObject({ hasDrift: false });
     expect(report.verification.errors).toEqual([]);
+  });
+
+  // @req REQ-032
+  it("does not rewrite an unchanged protected classification while synchronizing content", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          {
+            id: afroasiaticFamily.id,
+            classification_status: familyFixture.classificationStatus ?? null,
+            content: {},
+          },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [
+          {
+            id: betePeople.id,
+            classification_status: peopleFixture.classificationStatus ?? null,
+            content: {},
+          },
+        ],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const protectedWrites = database.operations.filter(
+      ({ table, row }) =>
+        (table === "afrik_language_families" || table === "afrik_peoples") &&
+        Object.hasOwn(row, "classification_status")
+    );
+    expect(protectedWrites).toEqual([]);
+    expect(report.languageFamilies.errors).toEqual([]);
+    expect(report.peoples.errors).toEqual([]);
+    expect(report.protectedDrift).toEqual({
+      languageFamilies: [],
+      peoples: [],
+    });
+    expect(report.verification.after?.hasDrift).toBe(false);
+  });
+
+  // @req REQ-032
+  it("synchronizes content while preserving and reporting protected classification drift", async () => {
+    const integrityError =
+      'Integrity check failed: UPDATE requires an assertion row for field_path "classification_status"';
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          {
+            id: afroasiaticFamily.id,
+            classification_status: familyFixture.classificationStatus ?? null,
+            content: {},
+          },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [
+          {
+            id: betePeople.id,
+            classification_status: null,
+            content: {},
+          },
+        ],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+      writeError: (operation, existingRow) => {
+        if (
+          existingRow &&
+          Object.hasOwn(operation.row, "classification_status") &&
+          operation.row.classification_status !==
+            existingRow.classification_status
+        ) {
+          return { message: integrityError };
+        }
+        return null;
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const peopleWrites = database.operations.filter(
+      ({ table }) => table === "afrik_peoples"
+    );
+    expect(peopleWrites).toHaveLength(1);
+    expect(peopleWrites[0].row).not.toHaveProperty("classification_status");
+    expect(report.peoples.inserted).toBe(1);
+    expect(report.peoples.errors).toEqual([]);
+    expect(report.protectedDrift.peoples).toEqual([
+      {
+        id: betePeople.id,
+        field: "classification_status",
+        databaseStatus: null,
+        sourceStatus: peopleFixture.classificationStatus,
+      },
+    ]);
+    expect(report.verification.after?.peoples.stale).toEqual([]);
   });
 
   // @req REQ-032
