@@ -13,9 +13,9 @@ import { getLocalizedRoute } from "@/lib/routing";
 // is one of its modules. `scripts/a11yRoutes.ts` audits these same three
 // addresses at one width; the cross-viewport sweep is what this file adds.
 const ENTRY_ROUTES = [
-  { mode: "explorer", url: getLocalizedRoute("fr", "peoples") },
-  { mode: "comprendre", url: getLocalizedRoute("fr", "names") },
-  { mode: "jouer", url: getLocalizedRoute("fr", "quiz") },
+  { mode: "atlas", url: getLocalizedRoute("fr", "peoples") },
+  { mode: "dossiers", url: getLocalizedRoute("fr", "names") },
+  { mode: "jeux", url: getLocalizedRoute("fr", "quiz") },
 ];
 
 // @req REQ-114
