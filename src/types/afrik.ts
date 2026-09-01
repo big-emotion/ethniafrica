@@ -448,6 +448,16 @@ export interface AppellationsSection {
   ethnoLinguisticGroup?: string;
   historicalRegion?: string;
   currentCountries?: CountryId[];
+  /**
+   * Shared identifier for a people split across several competing fiches
+   * (e.g. seven Fulani fiches, six Kongo fiches) — every fiche belonging to
+   * the same people carries the same `peopleGroupId` so a search surfacing
+   * several of them at once can present one named group instead of apparent
+   * duplicates (ETNI-1391). Absent when the fiche is not part of a split.
+   */
+  peopleGroupId?: string;
+  /** Display label for the group, e.g. "Peul / Fulani". Required alongside `peopleGroupId`. */
+  peopleGroupLabel?: string;
 }
 
 export interface OriginsSection {

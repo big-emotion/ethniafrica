@@ -16,6 +16,8 @@
       "originOfExonyms": "Le terme Kongo Sud (ou Kongo du Bas-Congo) est une denomination academique et administrative pour designer les Bakongo de l'actuelle province du Kongo Central en RDC (anciennement province du Bas-Congo). Cette province correspond au coeur historique du Royaume du Kongo sur la rive gauche du fleuve Congo. Le terme Bas-Congo (rebaptise Kongo Central en 2015) est d'origine coloniale belge.",
       "whyProblematic": "L'appellation Kongo Sud regroupe de nombreux sous-groupes distincts (Manianga, Ntandu, Ndibu, Mboma, Solongo, Lemfu, Bwende, etc.) qui ont leurs propres identites et dialectes. La fragmentation politique post-independance a cree des tensions entre les Bakongo de la RDC et le gouvernement central kinois domine par d'autres groupes ethniques. Le Bundu dia Kongo, un mouvement politico-religieux visant a restaurer le Royaume du Kongo en secession des trois Etats actuels, est particulierement actif dans cette province.",
       "contemporaryUsage": "Les habitants s'identifient d'abord par leur sous-groupe specifique (Manianga, Ntandu, Ndibu, etc.), puis comme Bakongo au sens large. L'identite bakongo est politiquement mobilisee par le Bundu dia Kongo, mouvement syncrétiste et independantiste. La province du Kongo Central est consideree comme le berceau historique et culturel de l'ensemble du peuple kongo.",
+      "peopleGroupId": "PGRP_KONGO",
+      "peopleGroupLabel": "Kongo (Bakongo)",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Bantou Zone H (groupe H.10-H.16)",
       "historicalRegion": "Province du Kongo Central (anciennement Bas-Congo) en RDC : territoire entre le fleuve Congo, la cote atlantique et la frontiere angolaise; coeur du Royaume du Kongo historique",

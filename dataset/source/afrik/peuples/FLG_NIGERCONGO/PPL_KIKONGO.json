@@ -12,6 +12,8 @@
       "originOfExonyms": "Le terme Kikongo designe la langue et est parfois utilise par extension pour le peuple. Kongo est la forme abregee utilisee par les explorateurs portugais depuis 1483. Le prefixe Ba- est le pluriel bantu designant les personnes.",
       "whyProblematic": "La confusion entre le nom de la langue (Kikongo) et celui du peuple (Bakongo) est frequente dans la litterature coloniale et populaire. Le terme Kongo peut aussi designer le Royaume du Kongo historique sans lien direct avec un groupe ethnique specifique.",
       "contemporaryUsage": "Bakongo est la denomination ethnique standard. Kikongo designe specifiquement la langue. Le terme est utilise dans les trois pays principaux (RDC, Congo-Brazzaville, Angola) ainsi que dans la diaspora.",
+      "peopleGroupId": "PGRP_KONGO",
+      "peopleGroupLabel": "Kongo (Bakongo)",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Bantu (Zone H)",
       "historicalRegion": "Afrique centrale atlantique : bas-Congo, Pool Malebo, nord Angola",

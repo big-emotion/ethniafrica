@@ -17,6 +17,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
+import { SearchPeopleGroupCard } from "@/components/search/SearchPeopleGroupCard";
 import { SearchPivotCard } from "@/components/search/SearchPivotCard";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
@@ -31,6 +32,7 @@ import {
   type SearchRelation,
 } from "@/lib/search/relationSearch";
 import { selectPivot } from "@/lib/search/pivot";
+import { groupPeopleResults } from "@/lib/search/groupPeopleResults";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type { ClassificationStatus } from "@/types/afrik";
 import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
@@ -648,13 +650,22 @@ export function RecherchePageContent() {
         )}
 
         {/* ── results list ── */}
+        {/* Split fiches of the same people (ETNI-1391) are grouped into one
+            card here, at display time only — the underlying result order and
+            count are unaffected. */}
         {!loading && listResults.length > 0 && (
           <ul className="space-y-afh-lg" aria-label="Résultats de recherche">
-            {listResults.map((result, i) => (
-              <li key={`${result.type}-${result.id}-${i}`}>
-                <SearchResultCard result={result} language={language} />
-              </li>
-            ))}
+            {groupPeopleResults(listResults).map((entry, i) =>
+              entry.type === "peopleGroup" ? (
+                <li key={`peopleGroup-${entry.peopleGroupId}-${i}`}>
+                  <SearchPeopleGroupCard group={entry} language={language} />
+                </li>
+              ) : (
+                <li key={`${entry.type}-${entry.id}-${i}`}>
+                  <SearchResultCard result={entry} language={language} />
+                </li>
+              )
+            )}
           </ul>
         )}
 

@@ -144,6 +144,37 @@ describe("mapSearchEnvelope", () => {
     expect(people.confidence).toBe(0.71);
   });
 
+  // @req REQ-002
+  it("carries the people-group id and label a split fiche declares (ETNI-1391)", () => {
+    const [fulani] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_FULANI_MASSINA",
+            nameMain: "Peul du Massina",
+            content: {
+              appellations: {
+                peopleGroupId: "PGRP_FULANI",
+                peopleGroupLabel: "Peul / Fulani",
+              },
+            },
+          },
+        ],
+      },
+    });
+
+    expect(fulani.peopleGroupId).toBe("PGRP_FULANI");
+    expect(fulani.peopleGroupLabel).toBe("Peul / Fulani");
+  });
+
+  // @req REQ-002
+  it("leaves the people-group fields undefined when a fiche is not split", () => {
+    const [bete] = mapSearchEnvelope(envelope);
+
+    expect(bete.peopleGroupId).toBeUndefined();
+    expect(bete.peopleGroupLabel).toBeUndefined();
+  });
+
   // @req REQ-126
   it("maps a person row, carrying roleCategory and peopleLinks untouched", () => {
     const [person] = mapSearchEnvelope({

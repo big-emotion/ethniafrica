@@ -17,6 +17,8 @@
       "originOfExonyms": "Peul : derive du wolof Pel, utilise par les colonisateurs français. Fula : anglicisation du terme mandingue. Fulani : forme haoussa devenue courante au Nigeria et dans le monde anglophone. Fellata : terme arabe (Soudan, Tchad) designant les Peuls installes sur les routes du pelerinage de La Mecque, associe a des stereotypes negatifs.",
       "whyProblematic": "Fellata est considere comme pejoratif, associe a des stereotypes de migrants indesirables (etrangers nomades). Les exonymes Peul et Fula sont des classifications externes ne reflétant pas l'auto-identification Fulbe. Massina ou Macina designe specifiquement les Fulbe du delta interieur du Niger, les distinguant des autres Fulbe.",
       "contemporaryUsage": "Fulbe Maasina est prefere dans les contextes academiques et communautaires pour ce sous-groupe. Peul du Massina ou Peul du Macina restent largement utilises en français. Massina Fulani est l'usage anglais. Macina designe aussi bien la region geographique que le groupe ethnique specifique.",
+      "peopleGroupId": "PGRP_FULANI",
+      "peopleGroupLabel": "Fulbe (Peul / Fulani)",
       "linguisticFamily": "FLG_ATLANTIQUE",
       "ethnoLinguisticGroup": "Atlantique Nord (groupe Fula-Wolof)",
       "historicalRegion": "Delta interieur du Niger (Massina / Macina), Mali central, regions de Mopti et Segou",
