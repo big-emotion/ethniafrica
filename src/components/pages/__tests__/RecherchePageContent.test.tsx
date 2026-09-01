@@ -577,6 +577,66 @@ describe("RecherchePageContent", () => {
   });
 
   // @req REQ-002
+  it("groups split fiches of the same people into one card (ETNI-1391)", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            {
+              id: "PPL_FULANI",
+              nameMain: "Peul",
+              relevance: 0.5,
+              content: {
+                appellations: {
+                  peopleGroupId: "PGRP_FULANI",
+                  peopleGroupLabel: "Peul / Fulani",
+                },
+              },
+            },
+            {
+              id: "PPL_FULANI_MASSINA",
+              nameMain: "Peul du Massina",
+              relevance: 0.4,
+              content: {
+                appellations: {
+                  peopleGroupId: "PGRP_FULANI",
+                  peopleGroupLabel: "Peul / Fulani",
+                },
+              },
+            },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "fulani" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(
+        screen.getByTestId("search-people-group-card")
+      ).toBeInTheDocument();
+    });
+    expect(screen.queryAllByTestId("search-result-card")).toHaveLength(0);
+    expect(screen.getByRole("link", { name: "Peul" })).toHaveAttribute(
+      "href",
+      getPeopleRoute("fr", "PPL_FULANI")
+    );
+    expect(
+      screen.getByRole("link", { name: "Peul du Massina" })
+    ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_FULANI_MASSINA"));
+  });
+
+  // @req REQ-002
   it("runs a family-scoped search when the URL carries one and no query", async () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
       new URLSearchParams("family=FLG_KROU") as ReturnType<
