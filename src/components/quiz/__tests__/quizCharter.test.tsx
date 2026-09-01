@@ -9,6 +9,10 @@ import {
   sessionBandPlan,
   QUIZ_SESSION_SIZE,
 } from "@/lib/quiz/quizScope";
+import {
+  QUIZ_THEME_IDS,
+  QUIZ_THEME_SPECIMENS_FR,
+} from "@/lib/quiz/segmentPolicy";
 
 /**
  * What the quiz owes the games charter (`docs/design/games-charter.md`), now
@@ -81,12 +85,30 @@ describe("Quiz charter contract (REQ-103)", () => {
   // Charter §9.2 — an option looks answerable, at least 44px per WCAG 2.5.8.
   // @req REQ-103
   it("gives every answer option and the exit a 44px minimum target", () => {
+    // `QuizScopePicker.tsx` stood here until the picker became cards: its 88
+    // targets are all one component now, so that is where the rule bites. The
+    // list follows the target, not the file that used to draw it.
     for (const file of [
       "QuizQuestionCard.tsx",
       "QuizSessionExit.tsx",
-      "QuizScopePicker.tsx",
+      "QuizTrackCard.tsx",
     ]) {
       expect(readQuizSource(file)).toMatch(/min-h-11/);
+    }
+  });
+
+  /**
+   * A theme card offers a track by showing the question that track asks. A
+   * theme with no specimen would fall back to a bare label — an `<option>` with
+   * a border, which is the shape this surface was rebuilt to leave behind.
+   */
+  // @req REQ-121
+  it("carries a specimen for every theme", () => {
+    expect(Object.keys(QUIZ_THEME_SPECIMENS_FR).sort()).toEqual(
+      [...QUIZ_THEME_IDS].sort()
+    );
+    for (const specimen of Object.values(QUIZ_THEME_SPECIMENS_FR)) {
+      expect(specimen).toMatch(/ \?$/);
     }
   });
 
