@@ -125,7 +125,8 @@
     "REQ-132",
     "REQ-133",
     "REQ-135",
-    "REQ-136"
+    "REQ-136",
+    "REQ-137"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -250,6 +251,7 @@
     "REQ-132": "Confluence REQ-132 — About page content and presentation",
     "REQ-133": "Confluence REQ-133 — a name fiche states its origin, its spread and its bearers",
     "REQ-135": "Confluence REQ-135 — an approximate input reaches the canonical name, including declared transliteration variants",
-    "REQ-136": "Confluence REQ-136 — The language layer is loaded, complete and reachable"
+    "REQ-136": "Confluence REQ-136 — The language layer is loaded, complete and reachable",
+    "REQ-137": "Confluence REQ-137 — ARCH-018: a person cannot be persisted without a role category or an attached source, and an ethnographer's link to a people is recorded via the inverse observation relation, never as membership"
   }
 }
