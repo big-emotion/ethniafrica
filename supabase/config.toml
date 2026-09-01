@@ -28,7 +28,17 @@ enabled = true
 # sign-up to configure.
 [auth]
 enabled = true
-site_url = "http://localhost:3000"
+
+# The fallback, and only the fallback: GoTrue uses this when a requested
+# redirect is not in the allow-list below. Every legitimate redirect now
+# matches, so it should never fire — which is exactly the reasoning that let it
+# sit on a dead Vercel deployment unnoticed, so it is set to somewhere real.
+#
+# It names the recette domain rather than localhost because this file is what
+# `supabase config push` sends to the recette project, and a shared environment
+# falling back to a developer's machine is worse than a developer's machine
+# falling back to recette.
+site_url = "https://recette.africatlas.com"
 
 # **Every entry must carry the callback path.**
 #

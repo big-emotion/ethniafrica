@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration 074: flag_reporter_contacts — an optional address, verified by link
+-- Migration 075: flag_reporter_contacts — an optional address, verified by link
 -- =============================================================================
 -- Moderation charter §2 keeps reporting at two actions and no account. This
 -- adds a third thing the reader *may* do and is never required to: leave an

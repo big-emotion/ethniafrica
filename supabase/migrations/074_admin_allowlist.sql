@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration 073: admin_allowlist — the only authorization model for the console
+-- Migration 074: admin_allowlist — the only authorization model for the console
 -- =============================================================================
 -- The atlas no longer has public accounts: reporting costs no account
 -- (moderation charter §2) and the sign-up, sign-in and SSO surfaces are gone.
