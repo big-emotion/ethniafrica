@@ -36,36 +36,49 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
         className="flex flex-wrap items-center justify-center gap-1.5 text-afh-small md:justify-start"
         style={{ color: "var(--afh-text-soft, #9ca3af)" }}
       >
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-1">
-            {index > 0 && (
-              <span aria-hidden="true" className="select-none opacity-50">
-                ›
-              </span>
-            )}
-            {item.href ? (
-              <Link
-                href={item.href}
-                prefetch={false}
-                className="hover:underline hover:opacity-80 transition-opacity"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              // The crumb with no href is where the reader actually is, and it
-              // was the only one dimmed — soft text made softer, which axe
-              // reads as a serious contrast failure. It gets full ink instead;
-              // the path back is the part that can afford to be quiet.
-              <span
-                className="font-medium"
-                style={{ color: "var(--afh-text, #111827)" }}
-                aria-current="page"
-              >
-                {item.label}
-              </span>
-            )}
-          </li>
-        ))}
+        {items.map((item, index) => {
+          // Two crumbs render without an href and they mean opposite things.
+          // The last one is where the reader stands. The other is the access
+          // mode the page sits under — a heading, since ETNI-1555 removed the
+          // axis landing pages it used to link to. Only the first may claim
+          // `aria-current`, or the page is announced as being in two places.
+          const isCurrent = !item.href && index === items.length - 1;
+
+          return (
+            <li key={index} className="flex items-center gap-1">
+              {index > 0 && (
+                <span aria-hidden="true" className="select-none opacity-50">
+                  ›
+                </span>
+              )}
+              {item.href ? (
+                <Link
+                  href={item.href}
+                  prefetch={false}
+                  className="hover:underline hover:opacity-80 transition-opacity"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                // The reader's own crumb was the only one dimmed — soft text
+                // made softer, which axe reads as a serious contrast failure.
+                // It gets full ink instead; the path back is the part that can
+                // afford to be quiet, and so is the axis heading beside it.
+                <span
+                  className={isCurrent ? "font-medium" : undefined}
+                  style={
+                    isCurrent
+                      ? { color: "var(--afh-text, #111827)" }
+                      : undefined
+                  }
+                  aria-current={isCurrent ? "page" : undefined}
+                >
+                  {item.label}
+                </span>
+              )}
+            </li>
+          );
+        })}
       </ol>
     </nav>
   );

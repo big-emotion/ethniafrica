@@ -129,24 +129,43 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     expect(stake.textContent).not.toMatch(/il arrive|il repart/i);
   });
 
-  // The href survives as the no-JS and crawler path, but a reader with
-  // JavaScript never spends a page load on the axis slug any more.
+  /**
+   * The fallback href is the no-JS and crawler path, and it used to be the
+   * axis landing page. ETNI-1555 deleted those three pages, so the card now
+   * falls back to the first module the axis actually offers — a real
+   * destination inside the axis rather than a 308 into a 404.
+   */
   // @req REQ-114
-  it("keeps the hub route as a fallback href on every axis", () => {
+  it("falls back to the axis's first live module on every axis", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "explorerHub")
-    );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "comprendreHub")
-    );
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "jouerHub")
-    );
+    for (const mode of ACCESS_MODES) {
+      const first = modulesByAxis[mode][0];
+      const href = first.gameSlug
+        ? `${getLocalizedRoute("fr", "jouerHub")}/${first.gameSlug}`
+        : getLocalizedRoute("fr", first.page);
+
+      expect(screen.getByTestId(`access-axis-${mode}`), mode).toHaveAttribute(
+        "href",
+        href
+      );
+    }
+  });
+
+  /**
+   * The three axis landing pages are gone. A card that still pointed at one
+   * would send a crawler — and a reader without JavaScript — to a 404.
+   */
+  // @req REQ-114
+  it("points no axis card at a retired axis landing page", () => {
+    renderAxes();
+
+    for (const mode of ACCESS_MODES) {
+      expect(
+        screen.getByTestId(`access-axis-${mode}`).getAttribute("href"),
+        mode
+      ).not.toBe(getLocalizedRoute("fr", `${mode}Hub`));
+    }
   });
 
   // Every figure on the home is a count of something a reader could go
@@ -325,12 +344,11 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
         "Bientôt"
       );
-      // Still a link: without JavaScript the hub is where the reader sees
-      // what is coming.
-      expect(jouer).toHaveAttribute(
-        "href",
-        getLocalizedRoute("fr", "jouerHub")
-      );
+      // An axis offering nothing has nowhere to send a reader without
+      // JavaScript, so the card drops the anchor and stays what it has
+      // always behaved as: the button that deploys the modules.
+      expect(jouer).not.toHaveAttribute("href");
+      expect(jouer.tagName).toBe("BUTTON");
     } finally {
       if (quizFlag === undefined) {
         delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;

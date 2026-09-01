@@ -4,24 +4,27 @@ import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getSiteTree } from "@/lib/siteTree";
 
-describe("getSiteTree — access-mode labels", () => {
-  // @req REQ-110 @req REQ-114
-  it("names access-mode destinations from the canonical map", () => {
-    const tree = getSiteTree("fr");
-    const links = tree.flatMap((section) => section.links);
+describe("getSiteTree — access modes are sections, not destinations", () => {
+  /**
+   * The three axis landing pages were deleted with ETNI-1555: the reader picks
+   * a module, never an intermediate page. The tree feeds both `/fr/plan-du-site`
+   * and `sitemap.xml`, so a leftover entry does not merely dead-end a reader —
+   * it publishes a 404 to every crawler that reads the sitemap.
+   */
+  // @req REQ-114
+  it("links to no retired axis landing page", () => {
+    const hrefs = getSiteTree("fr").flatMap((section) =>
+      section.links.map((link) => link.href)
+    );
 
-    for (const [mode, page] of [
-      ["explorer", "explorerHub"],
-      ["comprendre", "comprendreHub"],
-      ["jouer", "jouerHub"],
-    ] as const) {
-      expect(links).toContainEqual(
-        expect.objectContaining({
-          href: getLocalizedRoute("fr", page),
-          label: ACCESS_MODE_LABELS[mode],
-        })
-      );
+    for (const page of ["explorerHub", "comprendreHub", "jouerHub"] as const) {
+      expect(hrefs, page).not.toContain(getLocalizedRoute("fr", page));
     }
+  });
+
+  // @req REQ-110
+  it("still names its rubrics with the canonical access-mode labels", () => {
+    const tree = getSiteTree("fr");
 
     expect(tree.find((section) => section.id === "comprendre")?.title).toBe(
       ACCESS_MODE_LABELS.comprendre

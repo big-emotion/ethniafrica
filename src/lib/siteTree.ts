@@ -67,31 +67,23 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
     getLocalizedRoute(language, page);
 
   return [
+    /**
+     * The three access modes were listed here as destinations of their own.
+     * They are not pages: ETNI-1555 deleted the axis landing pages, because
+     * the reader picks a module and never stops on an intermediate level.
+     * What is left is the accueil, where the three axes deploy their modules
+     * in place — and the three rubrics below, which are those axes.
+     */
     {
-      id: "entrees",
-      title: "Les trois entrées",
+      id: "accueil",
+      title: "L'accueil",
       blurb:
-        "L'atlas s'ouvre par l'intention, pas par le sommaire : selon que vous venez chercher, comprendre ou jouer, il vous emmène ailleurs.",
+        "L'atlas s'ouvre par l'intention, pas par le sommaire : chercher, comprendre ou jouer déplie ses modules sur l'accueil même, et le clic suivant est le module.",
       links: [
         {
           href: `/${language}`,
           label: "Accueil",
           note: "Le globe et les trois axes.",
-        },
-        {
-          href: route("explorerHub"),
-          label: ACCESS_MODE_LABELS.explorer,
-          note: "Parcourir le corpus par entité.",
-        },
-        {
-          href: route("comprendreHub"),
-          label: ACCESS_MODE_LABELS.comprendre,
-          note: "Les noms, les migrations, la méthode.",
-        },
-        {
-          href: route("jouerHub"),
-          label: ACCESS_MODE_LABELS.jouer,
-          note: "Trois jeux et un quiz, tous tirés du corpus.",
         },
       ],
     },

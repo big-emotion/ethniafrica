@@ -31,14 +31,18 @@ import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
  */
 
 describe("deriveTrail — the trail comes from the route", () => {
-  // @req REQ-091
-  it("opens on the home and the axis that leads to the page", () => {
+  /**
+   * The axis crumb names the access mode the page sits under and links
+   * nowhere. It once pointed at the axis landing page; ETNI-1555 deleted the
+   * three of them, because the reader picks a module and never lands on an
+   * intermediate page — so the crumb is what the atlas charter already called
+   * it, a non-navigating heading.
+   */
+  // @req REQ-114
+  it("opens on the home and names the axis without linking to it", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.explorer,
-        href: getLocalizedRoute("fr", "explorerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.explorer },
       { label: "Pays" },
     ]);
   });
@@ -89,20 +93,14 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.explorer,
-        href: getLocalizedRoute("fr", "explorerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.explorer },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
         { label: "Accueil", href: "/fr" },
-        {
-          label: ACCESS_MODE_LABELS.explorer,
-          href: getLocalizedRoute("fr", "explorerHub"),
-        },
+        { label: ACCESS_MODE_LABELS.explorer },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -115,10 +113,7 @@ describe("deriveTrail — the trail comes from the route", () => {
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.explorer,
-        href: getLocalizedRoute("fr", "explorerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.explorer },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -131,10 +126,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.explorer,
-        href: getLocalizedRoute("fr", "explorerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.explorer },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -235,10 +227,7 @@ describe("deriveTrail — the trail comes from the route", () => {
       )
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.jouer,
-        href: getLocalizedRoute("fr", "jouerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.jouer },
       { label: "La taille qu'on vous a cachée" },
     ]);
   });
@@ -252,10 +241,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("names a known sub-route from the table rather than the entity label", () => {
     expect(deriveTrail(`${getLocalizedRoute("fr", "quiz")}/score`)).toEqual([
       { label: "Accueil", href: "/fr" },
-      {
-        label: ACCESS_MODE_LABELS.jouer,
-        href: getLocalizedRoute("fr", "jouerHub"),
-      },
+      { label: ACCESS_MODE_LABELS.jouer },
       { label: "Quiz", href: getLocalizedRoute("fr", "quiz") },
       { label: "Score" },
     ]);
@@ -284,6 +270,28 @@ describe("the trail a fiche renders", () => {
       screen.getByRole("link", { name: "Pays" }).getAttribute("href")
     ).toBe(getLocalizedRoute("fr", "countries"));
     expect(screen.getByText("Bénin").getAttribute("aria-current")).toBe("page");
+  });
+
+  /**
+   * Two crumbs now render without an href, and they mean opposite things: the
+   * last one is where the reader stands, the axis one is a heading the reader
+   * cannot go to. Only the last may claim `aria-current`, or a screen reader
+   * is told the page is in two places at once.
+   */
+  // @req REQ-114
+  it("marks only the reader's own crumb as current, never the axis heading", () => {
+    render(
+      <AfrikBreadcrumbs
+        items={deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")}
+      />
+    );
+
+    const axis = screen.getByText(ACCESS_MODE_LABELS.explorer);
+    expect(axis.getAttribute("aria-current")).toBeNull();
+    expect(axis.closest("a")).toBeNull();
+    expect(
+      screen.queryByRole("link", { name: ACCESS_MODE_LABELS.explorer })
+    ).toBeNull();
   });
 
   /**
