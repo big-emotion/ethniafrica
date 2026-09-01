@@ -2,7 +2,7 @@
  * @swagger
  * /api/v2/search:
  *   get:
- *     summary: Search — peoples, countries and language families
+ *     summary: Search the main corpus or the dedicated quiz lens
  *     description: >
  *       Full-text search, ranked in Postgres by `afrik_search_peoples` /
  *       `afrik_search_countries` (migration 052): an accent-insensitive exact
@@ -26,9 +26,11 @@
  *       Each entity kind is returned in its own array, and `results` carries
  *       the same hits merged into one cross-kind ranking on `normalizedScore`
  *       (migration 068) — the magnitude that, unlike `relevance`, is
- *       comparable between kinds. Quiz questions (REQ-121) join that ranking
- *       with their stem only: the options, the correct answer and the
- *       explanation are searched and never returned.
+ *       comparable between kinds. Without `lens`, quiz questions are not
+ *       queried or returned in the main search stream; with `lens=quiz`, only
+ *       quiz questions are queried and returned (REQ-121). The dedicated quiz
+ *       projection contains the stem only: options, the correct answer and the
+ *       explanation are never returned.
  *       Named persons (migration 065, REQ-126) and names
  *       (patronymes — migration 066, REQ-135) rank the same way, with
  *       patronymes additionally folding in a dmetaphone phonetic match so a
@@ -61,6 +63,17 @@
  *           (DEC-034). Required unless familyId or countryId is given — a
  *           relation scope is a complete search on its own.
  *         example: "Yoruba Nigeria"
+ *       - in: query
+ *         name: lens
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [quiz]
+ *         description: >
+ *           Selects the dedicated, exclusive quiz-question stream. With
+ *           `lens=quiz`, only quiz questions are queried and returned. Without
+ *           this parameter, quiz questions are not queried and remain excluded
+ *           from the main search stream.
  *       - in: query
  *         name: familyId
  *         schema:
@@ -192,6 +205,18 @@ function parseParams(
     };
   }
 
+  const lensRaw = searchParams.get("lens");
+  let lens: FtsSearchParams["lens"];
+  if (lensRaw !== null) {
+    if (lensRaw !== "quiz") {
+      return {
+        error: "lens must be quiz",
+        field: "lens",
+      };
+    }
+    lens = lensRaw;
+  }
+
   // q — required only when no relation scope is given. A relation on its own
   // is a valid search: "the peoples of the Krou family" asks something
   // complete without any free text.
@@ -270,6 +295,7 @@ function parseParams(
     ...(sinceVerifiedAfter !== undefined && { sinceVerifiedAfter }),
     ...(familyId !== null && { familyId }),
     ...(countryId !== null && { countryId }),
+    ...(lens !== undefined && { lens }),
   };
 
   return { params };
