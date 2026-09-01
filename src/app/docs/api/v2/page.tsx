@@ -6,12 +6,17 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Code, Info, Search } from "lucide-react";
 import Link from "next/link";
+import { useSwaggerNightSurface } from "./useSwaggerNightSurface";
 
 // The explorer ships no styles of its own; without this it renders as bare
 // HTML. Every rule in the sheet is scoped under `.swagger-ui`, so it cannot
 // reach the parchment chrome the layout puts around it, and Next only serves
 // it on this route.
 import "swagger-ui-react/swagger-ui.css";
+
+// Re-tints the vendor's own dark theme to the atlas night. Must load after
+// the sheet above: it overrides it selector for selector.
+import "@/styles/swagger-night.css";
 
 // Import dynamique de SwaggerUI pour éviter les problèmes SSR
 const SwaggerUI = dynamic(
@@ -22,6 +27,8 @@ const SwaggerUI = dynamic(
 // @req REQ-099
 export default function ApiDocsV2Page() {
   const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
+
+  useSwaggerNightSurface();
 
   useEffect(() => {
     // Charger la spécification OpenAPI v2
