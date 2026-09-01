@@ -145,6 +145,20 @@ export const getFamilyRoute = (language: Language, id: string): string =>
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
 
+// A person (REQ-126) is not a fourth peer of pays/peuples/familles on the
+// Explorer axis — it is reached only from a search result or from the people
+// it is linked to, never from a hub listing — so it takes a standalone slug
+// map rather than a `PageType`, which would otherwise pull it into
+// `moduleRegistry` and every other exhaustive consumer of that union for no
+// module that will ever exist.
+const PERSON_SLUG: Record<Language, string> = {
+  fr: "atlas/personnes",
+};
+
+// @req REQ-126
+export const getPersonRoute = (language: Language, id: string): string =>
+  `/${language}/${PERSON_SLUG[language]}/${id}`;
+
 // ---------------------------------------------------------------------------
 // Retired directory deep links
 // ---------------------------------------------------------------------------
