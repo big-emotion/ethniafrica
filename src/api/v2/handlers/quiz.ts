@@ -317,11 +317,34 @@ export async function composeQuizSessionHandler(
     };
   }
 
-  const questions = await composeQuizSession({
+  const draw = await composeQuizSession({
     scope,
     count: query.count,
     theme: query.theme as QuizThemeId | undefined,
   });
+  const questions = draw.questions;
+
+  // A pair the corpus cannot fill is refused, never half-dealt.
+  //
+  // Zero and three are different events, and the asymmetry below is deliberate.
+  // Zero deals nothing and has nothing to be dishonest about — the client has a
+  // calm empty state written for it. One to seven *is* dealt: it presents
+  // itself as a track and is a stub whose difficulty ladder has no top rung,
+  // which is what « Djibouti + Migrations » used to serve in silence.
+  //
+  // Measured against `poolSize`, not against the session, so a fat pool the
+  // serve-time freshness gate shortened still answers 200: a pair that could
+  // pay and then failed a re-check is not a pair the corpus never held.
+  //
+  // The threshold is `isPlayableScope`, the same predicate the picker offers
+  // tracks with, so what is offered and what is refused cannot drift apart.
+  if (draw.poolSize > 0 && !isPlayableScope(draw.poolSize)) {
+    return {
+      ok: false,
+      code: "SEMANTIC_ERROR",
+      message: `Not enough questions to fill a session of ${query.count} for this track`,
+    };
+  }
 
   if (questions.length === 0) {
     return {

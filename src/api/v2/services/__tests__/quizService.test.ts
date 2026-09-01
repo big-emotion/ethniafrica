@@ -355,6 +355,42 @@ describe("getQuizScopeLabel", () => {
 });
 
 describe("composeQuizSession", () => {
+  /**
+   * The pool is what the corpus held for the scope, after the theme filter and
+   * the self-answering drop and before the ladder. The handler needs it to tell
+   * « this pair cannot fill a session » from « the freshness gate shortened a
+   * session that could have ».
+   */
+  // @req REQ-103
+  it("reports the pool it drew from, not the session it dealt", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-a", "PPL_A"),
+      questionRow("q-b", "PPL_B"),
+      questionRow("q-c", "PPL_C"),
+    ]);
+
+    const draw = await composeQuizSession({
+      scope: { kind: "family", entityId: "FLG_NIGER_CONGO" },
+      count: 8,
+    });
+
+    expect(draw.poolSize).toBe(3);
+    expect(draw.questions).toHaveLength(3);
+  });
+
+  // @req REQ-103
+  it("reports an empty pool when the scope holds nothing", async () => {
+    tableRows.set("quiz_questions", []);
+
+    const draw = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(draw.poolSize).toBe(0);
+    expect(draw.questions).toEqual([]);
+  });
+
   // @req REQ-103
   it("draws only from the peoples of the scoped country", async () => {
     tableRows.set("quiz_questions", [
@@ -363,7 +399,7 @@ describe("composeQuizSession", () => {
       questionRow("q-c", "PPL_C"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -379,7 +415,7 @@ describe("composeQuizSession", () => {
       questionRow("q-b", "PPL_B"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "family", entityId: "FLG_NIGER_CONGO" },
       count: 3,
     });
@@ -405,7 +441,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -424,7 +460,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -445,7 +481,7 @@ describe("composeQuizSession", () => {
       ])
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -460,7 +496,7 @@ describe("composeQuizSession", () => {
       new Map([["PPL_A", { openCount: 1 }]])
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -475,7 +511,7 @@ describe("composeQuizSession", () => {
       ["q1", "q2", "q3", "q4", "q5"].map((id) => questionRow(id, "PPL_A"))
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 3,
     });
@@ -487,7 +523,7 @@ describe("composeQuizSession", () => {
   it("returns an empty array without consulting the batched lookups when the scope is empty", async () => {
     tableRows.set("quiz_questions", []);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "ZZZ" },
       count: 8,
     });
@@ -514,7 +550,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
       theme: "croyances",
@@ -533,7 +569,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -560,7 +596,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -591,7 +627,7 @@ describe("composeQuizSession", () => {
       questionRow("q-people", "PPL_A"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -611,7 +647,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -623,7 +659,7 @@ describe("composeQuizSession", () => {
   it("returns an empty array without throwing on a query error", async () => {
     tableErrors.set("quiz_questions", { message: "boom" });
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });

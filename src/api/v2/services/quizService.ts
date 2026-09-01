@@ -117,6 +117,21 @@ export interface QuizSessionQuestion {
   sourceIds: string[];
 }
 
+/**
+ * What one draw yielded: the session, and the size of the pool it came out of.
+ *
+ * Two numbers rather than one because they answer different questions. The
+ * handler refuses a pool too small to fill the session that was asked for, and
+ * a session shortened *after* the pool was big enough — by the serve-time
+ * freshness gate — is not that, and still serves.
+ */
+export interface QuizSessionDraw {
+  poolSize: number;
+  questions: QuizSessionQuestion[];
+}
+
+const EMPTY_DRAW: QuizSessionDraw = { poolSize: 0, questions: [] };
+
 interface QuizQuestionRow {
   id: string;
   template_id: QuizTemplateId;
@@ -679,16 +694,22 @@ async function getSourceGateInfoMap(
  *
  * `random` is the one scope that skips the ladder: it is the mode that exists
  * to be unstructured, and ordering it would make it a second `mixed`.
+ *
+ * `poolSize` is what the scope held before the ladder and before the gate —
+ * after the theme filter and the self-answering drop, which are what make a
+ * pair thin in the first place. The handler needs the two numbers apart: a
+ * pool of three is a pair the corpus never held and must be refused, while a
+ * fat pool the freshness gate shortened is a different event and still serves.
  */
 // @req REQ-103
 export async function composeQuizSession(
   params: ComposeQuizSessionParams
-): Promise<QuizSessionQuestion[]> {
+): Promise<QuizSessionDraw> {
   const supabase = createServerClient();
   const { scope, count, theme } = params;
 
   const subjectIds = await resolveScopedSubjects(supabase, scope);
-  if (subjectIds !== null && subjectIds.length === 0) return [];
+  if (subjectIds !== null && subjectIds.length === 0) return EMPTY_DRAW;
 
   const [candidates, countryNameFr] = await Promise.all([
     fetchCandidates(supabase, subjectIds),
@@ -702,7 +723,7 @@ export async function composeQuizSession(
       countryNameFr
     )
   );
-  if (playable.length === 0) return [];
+  if (playable.length === 0) return EMPTY_DRAW;
 
   let ordered: CandidateRow[];
   if (scope.kind === "random") {
@@ -741,7 +762,7 @@ export async function composeQuizSession(
 
   if (error) {
     logger.error("quizService.composeQuizSession failed", error);
-    return [];
+    return EMPTY_DRAW;
   }
 
   // The ladder's order is the session's order, and `.in()` does not preserve it.
@@ -751,7 +772,7 @@ export async function composeQuizSession(
   const rows = ordered
     .map((candidate) => rowById.get(candidate.id))
     .filter((row): row is QuizQuestionRow => Boolean(row));
-  if (rows.length === 0) return [];
+  if (rows.length === 0) return { poolSize: playable.length, questions: [] };
 
   const entityIds = Array.from(new Set(rows.map((row) => row.entity_id)));
   const sourceIds = Array.from(
@@ -807,5 +828,5 @@ export async function composeQuizSession(
     }
   }
 
-  return survivors;
+  return { poolSize: playable.length, questions: survivors };
 }
