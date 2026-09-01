@@ -14,6 +14,7 @@ export interface FtsSearchData {
   countries: object[];
   families: object[];
   persons: object[];
+  patronymes: object[];
   /**
    * Corpus-wide match counts. `total` used to be the size of the returned
    * page, which made it useless for paging; the ranking functions of
@@ -23,6 +24,7 @@ export interface FtsSearchData {
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
+  patronymesTotal: number;
   total: number;
 }
 
@@ -38,10 +40,12 @@ export async function ftsSearchHandler(
     countries: result.countries as object[],
     families: (result.families ?? []) as object[],
     persons: (result.persons ?? []) as object[],
+    patronymes: (result.patronymes ?? []) as object[],
     peoplesTotal: result.peoplesTotal,
     countriesTotal: result.countriesTotal,
     familiesTotal: result.familiesTotal,
     personsTotal: result.personsTotal,
+    patronymesTotal: result.patronymesTotal,
     total: result.total,
   });
 }

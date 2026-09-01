@@ -321,6 +321,41 @@ describe("GET /api/v2/search (route)", () => {
     expect(body.data.personsTotal).toBe(1);
   });
 
+  // REQ-135 AC4: a name published after human review appears in the unified
+  // search results, ranked alongside the other natures.
+  // @req REQ-135
+  it("returns names (patronymes) alongside the other natures in the response envelope", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "patronymic",
+            casteOrSocialFunction: null,
+            relevance: 1,
+            exactMatch: true,
+            snippet: null,
+            content: {},
+          },
+        ],
+        patronymesTotal: 1,
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=Keita");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.patronymes).toEqual([
+      expect.objectContaining({ id: "PATR_KEITA", nameMain: "Keïta" }),
+    ]);
+    expect(body.data.patronymesTotal).toBe(1);
+  });
+
   // ── client/route contract ───────────────────────────────────────────────
   // The site's own callers went unnoticed for two releases while every search
   // 400ed, because each side was only ever tested against its own idea of the

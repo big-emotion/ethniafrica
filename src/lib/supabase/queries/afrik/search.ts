@@ -2,9 +2,10 @@
  * Supabase queries for AFRIK search (multi-entity).
  *
  * ftsSearchEntities delegates ranking to the afrik_search_peoples /
- * afrik_search_countries / afrik_search_persons functions (migrations 044,
- * 065), which rank over the weighted tsvectors of migrations 043, 057. This
- * module maps their rows; it does not order them.
+ * afrik_search_countries / afrik_search_persons / afrik_search_patronymes
+ * functions (migrations 044, 065, 066), which rank over the weighted
+ * tsvectors of migrations 043, 057, 066. This module maps their rows; it
+ * does not order them.
  */
 
 import {
@@ -20,6 +21,7 @@ import type {
   LanguageFamily,
   RankedCountry,
   RankedLanguageFamily,
+  RankedPatronyme,
   RankedPeople,
   RankedPerson,
 } from "@/types/afrik";
@@ -79,6 +81,7 @@ export async function ftsSearchEntities(
     peopleResult,
     countryResult,
     personResult,
+    patronymeResult,
     familyRows,
     familyProseMatchIds,
   ] = await Promise.all([
@@ -106,6 +109,13 @@ export async function ftsSearchEntities(
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
+      ? supabase.rpc("afrik_search_patronymes", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
     text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
   ]);
@@ -122,10 +132,15 @@ export async function ftsSearchEntities(
     logger.error("Error in ranked persons search", personResult.error);
     throw personResult.error;
   }
+  if (patronymeResult.error) {
+    logger.error("Error in ranked patronymes search", patronymeResult.error);
+    throw patronymeResult.error;
+  }
 
   const peoplePayload = asRankedPayload(peopleResult.data);
   const countryPayload = asRankedPayload(countryResult.data);
   const personPayload = asRankedPayload(personResult.data);
+  const patronymePayload = asRankedPayload(patronymeResult.data);
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
@@ -141,21 +156,25 @@ export async function ftsSearchEntities(
   const persons = personPayload.rows.map((row) =>
     toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
   );
+  const patronymes = patronymePayload.rows.map(toRankedPatronyme);
 
   return {
     peoples,
     countries,
     families,
     persons,
+    patronymes,
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
     familiesTotal: families.length,
     personsTotal: personPayload.total,
+    patronymesTotal: patronymePayload.total,
     total:
       peoplePayload.total +
       countryPayload.total +
       families.length +
-      personPayload.total,
+      personPayload.total +
+      patronymePayload.total,
   };
 }
 
@@ -260,6 +279,19 @@ function toRankedPerson(
     exactMatch: row.exactMatch === true,
     snippet: (row.snippet as string) ?? null,
     peopleLinks,
+  };
+}
+
+function toRankedPatronyme(row: Record<string, unknown>): RankedPatronyme {
+  return {
+    id: row.id as string,
+    nameMain: row.nameMain as string,
+    nameSystem: row.nameSystem as string,
+    casteOrSocialFunction: (row.casteOrSocialFunction as string) ?? null,
+    content: (row.content as Record<string, unknown>) || {},
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
   };
 }
 
