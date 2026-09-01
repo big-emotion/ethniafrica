@@ -5,8 +5,8 @@ import { getLocalizedRoute } from "@/lib/routing";
 
 describe("moduleHref — where a hub module's click lands (REQ-114)", () => {
   // The bug this resolver exists to prevent: a game carries `page: null`
-  // by design, so a resolver that only reads `page` renders eleven live
-  // games as "Bientôt".
+  // by design, so a resolver that only reads `page` renders every live
+  // game as "Bientôt".
   // @req REQ-114
   it("sends a game to its slug under the jouer hub", () => {
     expect(getModuleHref({ page: null, gameSlug: "mercator" }, "fr")).toBe(

@@ -155,9 +155,9 @@ generated from it, never hand-listed.
 
   This used to read "a module whose `page` is `null`", and that was the same
   sentence for as long as `page` was the only way to address a module. REQ-120
-  gave Jouer eleven games addressed by `gameSlug`, each carrying `page: null`
+  gave Jouer 11 games addressed by `gameSlug`, each carrying `page: null`
   on purpose so `PageType` stays a closed union — and the rule as written made
-  eleven playable games render as **Bientôt** on the home. Resolution is
+  all 11 playable games render as **Bientôt** on the home. Resolution is
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 

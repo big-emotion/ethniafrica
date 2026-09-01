@@ -154,8 +154,8 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
   // A game carries `page: null` by design — it is addressed by slug so
   // PageType stays a closed union — so a panel that reads `page` alone
-  // renders every live game as "Bientot". That is how eleven playable
-  // games sat inert on the home while the hub linked all eleven.
+  // renders every live game as "Bientot". That is how all 11 playable
+  // games sat inert on the home while the hub linked every one of them.
   // @req REQ-114
   it("addresses a game by its slug rather than leaving it on Bientot", () => {
     render(
@@ -235,8 +235,9 @@ describe("AxisModulePanel — the modules an axis deploys on the home (REQ-114)"
 
 /**
  * Mirrors the registry's jouer shelves: one that holds several games and one
- * that holds a single game, which is the shape the taxonomy produces now the
- * hub carries three games rather than eleven.
+ * that holds a single game — a general shape the panel must still support
+ * even though the live registry, after two scope cuts (games-charter.md §1),
+ * currently gives every Jouer shelf exactly one module.
  */
 const shelvedModules: HubModule[] = [
   {

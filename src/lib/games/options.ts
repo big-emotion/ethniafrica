@@ -1,10 +1,10 @@
 import type { QuizOptionValue } from "@/types/quiz";
 
 /**
- * Option assembly shared by the quiz templates (REQ-080) and the eleven
- * games of the Jouer hub (REQ-120). Extracted from questionTemplates.ts,
- * where these were module-private, so a game can obey FR65/FR66 through
- * the same code path the quiz already proved.
+ * Option assembly shared by the quiz templates (REQ-080) and the Jouer hub's
+ * games (REQ-120). Extracted from questionTemplates.ts, where these were
+ * module-private, so a game can obey FR65/FR66 through the same code path
+ * the quiz already proved.
  */
 
 // @req REQ-103 @req REQ-120

@@ -9,8 +9,8 @@ import type { Language } from "@/types/shared";
  * read this. They used to each resolve the href themselves, and that
  * duplication is exactly what drifted: REQ-120 made the games addressable
  * by slug, the hub learnt the new rule and the panel never did, so the home
- * rendered eleven live games as "Bientôt" while the hub linked all eleven.
- * One resolver is what stops the two from disagreeing again.
+ * rendered all 11 live games as "Bientôt" while the hub linked every one of
+ * them. One resolver is what stops the two from disagreeing again.
  */
 // @req REQ-114
 export function getModuleHref(
