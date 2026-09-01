@@ -406,6 +406,7 @@ describe("afrikLoader", () => {
         languageFamily: 0,
         language: 0,
         person: 0,
+        patronyme: 0,
       });
     });
 
@@ -426,6 +427,7 @@ describe("afrikLoader", () => {
         languageFamily: 0,
         language: 0,
         person: 0,
+        patronyme: 0,
       });
     });
   });

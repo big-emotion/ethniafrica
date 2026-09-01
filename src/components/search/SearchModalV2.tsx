@@ -15,6 +15,7 @@ import { Language } from "@/types/shared";
 import { searchWithLeads } from "@/lib/afrikLoader";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
+import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
 import { SearchLensBar } from "@/components/search/SearchLensBar";
 import {
   EMPTY_SEARCH_LENS_COUNTS,
@@ -118,6 +119,12 @@ export const SearchModalV2 = ({
   const hasQuery = searchQuery.trim().length >= 2;
   const showNoResultsGuidance = !loading && hasQuery && results.length === 0;
   const showPrompt = !loading && !hasQuery && results.length === 0;
+  // ETNI-1463 AC2: persons came back but the corpus holds no name fiche for
+  // this query — shown as an absence, not silence.
+  const showNoNameFicheNote =
+    !loading &&
+    results.some((result) => result.type === "person") &&
+    !results.some((result) => result.type === "patronyme");
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -180,6 +187,7 @@ export const SearchModalV2 = ({
             </div>
           ) : (
             <div className="space-y-2" data-testid="search-results-list">
+              {showNoNameFicheNote && <NoNameFicheNote className="mb-2" />}
               {results.map((result, index) => (
                 <SearchResultCard
                   key={`${result.type}-${result.id}-${index}`}

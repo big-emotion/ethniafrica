@@ -10,6 +10,7 @@ import {
   getFamilyRoute,
   getLanguageRoute,
   getLocalizedRoute,
+  getPatronymeRoute,
   getPeopleRoute,
   getPersonRoute,
 } from "@/lib/routing";
@@ -215,6 +216,31 @@ describe("SearchResultCard", () => {
   // @req REQ-126
   it("scopes a person result to a neutral accent, not a fifth categorical hue", () => {
     renderCard(delafosse);
+    const card = screen.getByTestId("search-result-card");
+
+    expect(card.className).toContain("afh-accent-neutral");
+    expect(card.className).not.toContain("--afh-cat-");
+  });
+
+  const keita: SearchResult = {
+    type: "patronyme",
+    id: "PATR_KEITA",
+    name: "Keïta",
+  };
+
+  // @req REQ-135
+  it("links a patronyme result to its fiche", () => {
+    renderCard(keita);
+
+    expect(screen.getByRole("link", { name: "Keïta" })).toHaveAttribute(
+      "href",
+      getPatronymeRoute("fr", "PATR_KEITA")
+    );
+  });
+
+  // @req REQ-135
+  it("scopes a patronyme result to a neutral accent, not a fifth categorical hue", () => {
+    renderCard(keita);
     const card = screen.getByTestId("search-result-card");
 
     expect(card.className).toContain("afh-accent-neutral");

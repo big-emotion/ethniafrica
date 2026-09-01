@@ -44,6 +44,13 @@ export const SEARCH_ENTITY_ACCENT: Record<
     markClassName: "bg-afh-text-muted",
     accentScopeClassName: "afh-accent-neutral",
   },
+  // ETNI-1463: a name (patronyme) is not a fifth corpus entity kind either —
+  // it reuses person's neutral treatment for the same reason (see above).
+  patronyme: {
+    label: "Nom",
+    markClassName: "bg-afh-text-muted",
+    accentScopeClassName: "afh-accent-neutral",
+  },
 };
 
 // @req REQ-091

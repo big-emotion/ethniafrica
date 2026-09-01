@@ -22,6 +22,7 @@ describe("SearchLensBar", () => {
       "Peuples",
       "Pays",
       "Personnes",
+      "Noms",
     ]) {
       expect(screen.getByRole("button", { name })).toBeInTheDocument();
     }
@@ -54,6 +55,7 @@ describe("SearchLensBar", () => {
           languageFamily: 1,
           language: 0,
           person: 0,
+          patronyme: 0,
         }}
         showCounts
         onChange={vi.fn()}
