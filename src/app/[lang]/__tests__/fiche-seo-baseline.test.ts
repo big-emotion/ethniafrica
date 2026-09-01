@@ -41,10 +41,16 @@ vi.mock("next/font/google", () => {
 
 import { metadata as rootLayoutMetadata } from "@/app/layout";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getPatronymeRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 import * as peuplesFicheRoute from "../atlas/peuples/[slug]/page";
 import * as paysFicheRoute from "../atlas/pays/[slug]/page";
 import * as famillesFicheRoute from "../atlas/familles/[slug]/page";
+import * as appellationsFicheRoute from "../atlas/appellations/[slug]/page";
 
 const FICHE_ROUTES = [
   {
@@ -67,6 +73,13 @@ const FICHE_ROUTES = [
     sourcePath: "src/app/[lang]/atlas/familles/[slug]/page.tsx",
     canonical: getFamilyRoute("fr", "FLG_BANTU"),
     slug: "FLG_BANTU",
+  },
+  {
+    segment: "appellations",
+    routeModule: appellationsFicheRoute,
+    sourcePath: "src/app/[lang]/atlas/appellations/[slug]/page.tsx",
+    canonical: getPatronymeRoute("fr", "PAT_KEITA"),
+    slug: "PAT_KEITA",
   },
 ] as const;
 

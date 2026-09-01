@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getPatronymeRoute,
+  getPeopleRoute,
+} from "@/lib/routing";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import type { Language } from "@/types/shared";
 
@@ -30,7 +35,7 @@ import type { Language } from "@/types/shared";
  * canonicals is the window in which the duplicate gets indexed.
  */
 // @req REQ-091
-export type FicheKind = "country" | "people" | "family";
+export type FicheKind = "country" | "people" | "family" | "name";
 
 const ROUTE_BY_KIND: Record<
   FicheKind,
@@ -39,6 +44,7 @@ const ROUTE_BY_KIND: Record<
   country: getCountryRoute,
   people: getPeopleRoute,
   family: getFamilyRoute,
+  name: getPatronymeRoute,
 };
 
 /**

@@ -31,12 +31,19 @@ import { cn } from "@/lib/utils";
  * Terre is deliberately absent: it is reserved as the colonial-marker accent
  * for imposed exonyms. A fiche scoped to terre would paint that marker in the
  * page's own accent and it would stop reading as a marker at all.
+ *
+ * `name` (REQ-133) reuses `ocre` rather than allocating a fourth accent: a
+ * patronyme is a naming fact about a people, the closest kinship of the three
+ * existing scopes, and the atlas charter's accent table is closed at three
+ * cartographic entities — a name fiche carries no globe of its own to justify
+ * a new row in it.
  */
 // @req REQ-091
 export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
   people: "afh-accent-ocre",
   country: "afh-accent-teal",
   "language-family": "afh-accent-perv",
+  name: "afh-accent-ocre",
 };
 
 export interface FicheSequenceProps {

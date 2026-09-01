@@ -1,0 +1,74 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+
+import { PatronymeAssociationsSection } from "@/components/patronymes/PatronymeAssociationsSection";
+import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
+
+const base: PublicPatronyme = {
+  id: "PAT_KEITA",
+  nameMain: "Keïta",
+  nameSystem: "clan_name",
+  casteOrSocialFunction: null,
+  content: {},
+  associatedPeoples: [
+    {
+      id: "PPL_MANDINKA",
+      nameMain: "Mandingues",
+      autonym: "Mandenka",
+      slug: "PPL_MANDINKA",
+    },
+  ],
+  associatedCountries: [{ id: "MLI", nameFr: "Mali" }],
+  bearers: [],
+};
+
+describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
+  // @req REQ-133
+  it("links each associated people and country", () => {
+    render(<PatronymeAssociationsSection patronyme={base} />);
+
+    expect(screen.getByRole("link", { name: /Mandingues/ })).toHaveAttribute(
+      "href",
+      "/fr/atlas/peuples/PPL_MANDINKA"
+    );
+    expect(screen.getByRole("link", { name: /Mali/ })).toHaveAttribute(
+      "href",
+      "/fr/atlas/pays/MLI"
+    );
+  });
+
+  // @req REQ-133
+  it("shows the non-hereditary guidance note only for that system", () => {
+    render(
+      <PatronymeAssociationsSection
+        patronyme={{ ...base, nameSystem: "non_hereditary_patronymic" }}
+      />
+    );
+
+    expect(
+      screen.getByText(/n'est pas transmis de façon héréditaire/)
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("omits the non-hereditary guidance note for other systems", () => {
+    render(<PatronymeAssociationsSection patronyme={base} />);
+
+    expect(
+      screen.queryByText(/n'est pas transmis de façon héréditaire/)
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("states explicitly when no association is documented", () => {
+    render(
+      <PatronymeAssociationsSection
+        patronyme={{ ...base, associatedPeoples: [], associatedCountries: [] }}
+      />
+    );
+
+    expect(
+      screen.getByText(/Aucun peuple ou pays associé/)
+    ).toBeInTheDocument();
+  });
+});

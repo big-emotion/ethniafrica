@@ -217,6 +217,84 @@ export const translations = {
         reportMissing: "Signaler une donnée manquante",
       },
     },
+    // Patronyme fiche (ETNI-1464, REQ-133). Distinct from `names` above:
+    // `names` covers ethnonyms (how a *people* is called); this covers
+    // patronymes (the naming system a *person* is named under).
+    patronymes: {
+      eyebrow: "Patronyme",
+      nameSystemSectionTitle: "Le nom",
+      nameSystemStatementPrefix: "Système de nommage :",
+      nameSystemLabels: {
+        clan_name: "Nom de clan",
+        non_hereditary_patronymic: "Patronyme non héréditaire",
+        nisba: "Nisba",
+        praise_name: "Nom d'éloge (jamu)",
+        totemic_clan: "Clan totémique",
+      },
+      casteOrSocialFunctionLabel: "Caste ou fonction sociale",
+      attestedFormsTitle: "Graphies attestées",
+      transmissionModeLabel: "Mode de transmission",
+      transmissionModeLabels: {
+        patrilineal: "Patrilinéaire",
+        matrilineal: "Matrilinéaire",
+        bilateral: "Bilatérale",
+        elective: "Élective",
+        other: "Autre",
+      },
+      designatedSocialUnitLabel: "Unité sociale désignée",
+      designatedSocialUnitLabels: {
+        individual: "Individu",
+        lineage: "Lignage",
+        clan: "Clan",
+        caste: "Caste",
+        age_set: "Classe d'âge",
+        settlement: "Établissement",
+        other: "Autre",
+      },
+      totemicFoodProhibitionLabel: "Interdit alimentaire totémique",
+      permittedGivenNamesLabel: "Prénoms autorisés",
+      nisbaSubtypeLabel: "Type de nisba",
+      nisbaSubtypeLabels: {
+        geographic: "Géographique",
+        tribal: "Tribale",
+        occupational: "Occupationnelle",
+        other: "Autre",
+      },
+      originTitle: "Origine",
+      originTypeLabels: {
+        griot_oral_tradition: "Tradition orale griotique",
+        written_chronicle: "Chronique écrite",
+        linguistic_reconstruction: "Reconstruction linguistique",
+      },
+      // Attributed to the transcription and its griot rather than stated as
+      // a bare fact: an oral chain of transmission is the source, and a
+      // fiche that dropped that attribution would present a griot's telling
+      // as if it were the corpus's own claim.
+      griotOriginNote:
+        "Cette origine est transmise par tradition orale griotique. Elle est présentée telle que transcrite, avec sa source et, lorsqu'il est documenté, le griot qui l'a transmise.",
+      griotAttributionPrefix: "Transmis par",
+      sourcesTitle: "Sources",
+      filiationTitle: "Filiation",
+      filiationClaimedLabel: "Filiation revendiquée",
+      filiationCompetingLabel: "Version concurrente",
+      associationsTitle: "Peuples et pays concernés",
+      associatedPeoplesLabel: "Peuples",
+      associatedCountriesLabel: "Pays",
+      // AC4: a non-hereditary patronymic works differently by region — the
+      // fiche says so explicitly rather than let the reader assume the
+      // hereditary-surname model that `nameSystem` elsewhere denies.
+      nonHereditaryGuidance:
+        "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
+      associationsEmpty: "Aucun peuple ou pays associé n'est documenté.",
+      bearersTitle: "Porteurs et porteuses",
+      // DEC-040: no code path derives a living person's ethnic origin from
+      // this patronyme, and this note states that editorial guarantee to
+      // the reader rather than leave it implicit in what the list omits.
+      bearersEditorialNote:
+        "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
+      bearersEmpty: "Aucun porteur ou porteuse n'est encore documenté.",
+      roleCategoryFallback: "Rôle non renseigné",
+    },
     migrations: {
       navLabel: "Migrations",
       pageTitle: "Frise des migrations",
