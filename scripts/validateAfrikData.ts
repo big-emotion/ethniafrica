@@ -1354,22 +1354,34 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
  * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
  * meaningless, and silently undrawable.
  *
- * BRA and HTI (REQ-130, supersedes REQ-001) are the host countries the
- * Afro-descendant peoples of DEC-030 need — attached to the corpus by
- * history rather than linguistic filiation — ahead of corpus extension
- * beyond the African continent.
+ * BRA and HTI (REQ-130, supersedes REQ-001) were the first host countries the
+ * Afro-descendant peoples of DEC-030 needed — attached to the corpus by
+ * history rather than linguistic filiation. ETNI-1388 completes that corpus
+ * extension: BLZ, COL, GLP, GTM, GUF, HND, JAM, NIC and SUR are the remaining
+ * host countries for the ten Afro-descendant people fiches (Garinagu,
+ * Palenqueros, Raizales, Saamaka, Okanisi, Guadeloupe Creoles, Jamaican
+ * Maroons).
  */
 export const OFF_MAP_COUNTRIES = new Set([
   "AUS",
+  "BLZ",
   "BRA",
   "CAN",
+  "COL",
   "ESP",
   "FRA",
   "GBR",
+  "GLP",
+  "GTM",
+  "GUF",
+  "HND",
   "HTI",
+  "JAM",
+  "NIC",
   "NLD",
   "OMN",
   "PRT",
+  "SUR",
   "USA",
   "YEM",
 ]);
