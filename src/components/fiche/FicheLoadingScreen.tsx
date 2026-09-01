@@ -13,6 +13,7 @@ const WAIT_LABEL: Record<FicheEntityType, string> = {
   people: "Chargement de la fiche peuple",
   "language-family": "Chargement de la fiche famille",
   language: "Chargement de la fiche langue",
+  name: "Chargement de la fiche appellation",
 };
 
 export interface FicheLoadingScreenProps {
