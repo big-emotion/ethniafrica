@@ -1,5 +1,5 @@
 /**
- * Static analysis of migration 068_unified_search_surface.sql — the blocking
+ * Static analysis of migration 069_unified_search_surface.sql — the blocking
  * SQL contract behind cross-kind search (ETNI-1707).
  *
  * Same discipline as scripts/__tests__/nameTableMigration.test.ts: parse the
@@ -19,7 +19,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const migration = readFileSync(
-  resolve(process.cwd(), "supabase/migrations/068_unified_search_surface.sql"),
+  resolve(process.cwd(), "supabase/migrations/069_unified_search_surface.sql"),
   "utf8"
 );
 
@@ -55,7 +55,7 @@ function functionBody(name: string): string {
   return migration.slice(start, end);
 }
 
-describe("068 — one bounded score, comparable across kinds", () => {
+describe("069 — one bounded score, comparable across kinds", () => {
   // @req REQ-002
   it("declares a single shared score helper rather than one formula per kind", () => {
     expect(migration).toContain(
@@ -90,7 +90,7 @@ describe("068 — one bounded score, comparable across kinds", () => {
   });
 });
 
-describe("068 — per-kind normalized scores", () => {
+describe("069 — per-kind normalized scores", () => {
   for (const kind of PRE_EXISTING_KINDS) {
     // @req REQ-002
     it(`${kind} gains normalizedScore without losing its existing keys`, () => {
@@ -138,7 +138,7 @@ describe("068 — per-kind normalized scores", () => {
   });
 });
 
-describe("068 — quiz questions become searchable without leaking answers", () => {
+describe("069 — quiz questions become searchable without leaking answers", () => {
   // @req REQ-121
   it("declares an active-only quiz RPC", () => {
     expect(migration).toContain(
@@ -183,7 +183,7 @@ describe("068 — quiz questions become searchable without leaking answers", () 
   });
 });
 
-describe("068 — exposure and idempotence", () => {
+describe("069 — exposure and idempotence", () => {
   // @req REQ-126
   it("runs every search function as the caller, so RLS still applies", () => {
     expect(countOccurrences(migration, "SECURITY INVOKER")).toBe(
