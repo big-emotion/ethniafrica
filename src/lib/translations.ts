@@ -380,7 +380,7 @@ export const translations = {
         hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
-      menuLabel: "Trois entrées",
+      menuLabel: "Trois chemins",
       // Names the row of facet links under the hub entry. The facets are
       // states of one page, so the menu says so rather than listing them
       // beside the hub as if they were three more destinations — which is
