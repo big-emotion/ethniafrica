@@ -81,6 +81,24 @@ function personRow(
   };
 }
 
+function patronymeRow(
+  id: string,
+  nameMain: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    nameMain,
+    nameSystem: "patronymic",
+    casteOrSocialFunction: null,
+    content: {},
+    relevance: 0.5,
+    exactMatch: false,
+    snippet: null,
+    ...over,
+  };
+}
+
 describe("ftsSearchEntities", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockSupabase: any;
@@ -89,6 +107,7 @@ describe("ftsSearchEntities", () => {
   let peoplesPayload: { total: number; rows: unknown[] };
   let countriesPayload: { total: number; rows: unknown[] };
   let personsPayload: { total: number; rows: unknown[] };
+  let patronymesPayload: { total: number; rows: unknown[] };
   let personPeoplesRows: Record<string, unknown>[];
 
   beforeEach(() => {
@@ -97,6 +116,7 @@ describe("ftsSearchEntities", () => {
     peoplesPayload = { total: 0, rows: [] };
     countriesPayload = { total: 0, rows: [] };
     personsPayload = { total: 0, rows: [] };
+    patronymesPayload = { total: 0, rows: [] };
     personPeoplesRows = [];
 
     rpc = vi.fn((fn: string) => {
@@ -106,6 +126,8 @@ describe("ftsSearchEntities", () => {
         return Promise.resolve({ data: countriesPayload, error: null });
       if (fn === "afrik_search_persons")
         return Promise.resolve({ data: personsPayload, error: null });
+      if (fn === "afrik_search_patronymes")
+        return Promise.resolve({ data: patronymesPayload, error: null });
       throw new Error(`unexpected rpc ${fn}`);
     });
 
@@ -677,5 +699,143 @@ describe("ftsSearchEntities", () => {
     expect(result.persons).toEqual([]);
     expect(result.personsTotal).toBe(0);
     expect(mockSupabase.from).not.toHaveBeenCalled();
+  });
+
+  // REQ-135 AC1: a misspelling that shares a phonetic key with the canonical
+  // name (dmetaphone, migration 066) still reaches it. The SQL function does
+  // the phonetic matching; this only proves the query layer passes a
+  // phonetic-only-matched row through untouched.
+  // @req REQ-135
+  it("surfaces a name reached only through a phonetic match", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          relevance: 0.5,
+          exactMatch: false,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keyta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes.map((p) => p.nameMain)).toEqual(["Keïta"]);
+    expect(result.patronymesTotal).toBe(1);
+  });
+
+  // REQ-135 AC2: an apostrophe in the query or the fiche never blocks a
+  // match — afrik_unaccent (migration 066) folds it away on both sides.
+  // @req REQ-135
+  it("surfaces a name across an apostrophe difference between query and fiche", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [patronymeRow("PATR_ETOO", "Eto'o", { exactMatch: false })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Eto",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes.map((p) => p.nameMain)).toEqual(["Eto'o"]);
+  });
+
+  // REQ-135 AC3: a single-letter typo with no lexical or phonetic match
+  // still reaches the name through the pg_trgm fallback (migration 066),
+  // ranked below any lexical/phonetic match — the SQL function is the
+  // ranking authority; this only proves the query layer passes the DB
+  // order through untouched.
+  // @req REQ-135
+  it("keeps the database's ranking for names reached through the trigram fallback", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_MASAMBA", "Masamba", { relevance: 0.4 }),
+        patronymeRow("PATR_MAKALA", "Makala", { relevance: 0.32 }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Masambo",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes.map((p) => p.nameMain)).toEqual([
+      "Masamba",
+      "Makala",
+    ]);
+  });
+
+  // REQ-135 AC4: an exact name match ranks first among names, ahead of any
+  // lexical/phonetic/trigram-only match, mirroring the same rule already
+  // proven for peoples and persons.
+  // @req REQ-135
+  it("ranks an exact name match first among names", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_SONG", "Song", {
+          relevance: 1,
+          exactMatch: true,
+        }),
+        patronymeRow("PATR_SONGO", "Songo", {
+          relevance: 0.4,
+          exactMatch: false,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "Song", limit: 20, offset: 0 });
+
+    expect(result.patronymes.map((p) => p.nameMain)).toEqual(["Song", "Songo"]);
+    expect(result.patronymes[0].exactMatch).toBe(true);
+  });
+
+  // @req REQ-135
+  it("calls afrik_search_patronymes with p_-prefixed named parameters", async () => {
+    await ftsSearchEntities({ q: "keita", limit: 20, offset: 0 });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_patronymes",
+      expect.objectContaining({ p_q: "keita", p_limit: 20, p_offset: 0 })
+    );
+  });
+
+  // @req REQ-135
+  it("reports zero names and an empty array when nothing matches", async () => {
+    const result = await ftsSearchEntities({
+      q: "nonexistent",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes).toEqual([]);
+    expect(result.patronymesTotal).toBe(0);
+  });
+
+  // @req REQ-135
+  it("counts names in the corpus-wide total alongside the other natures", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [patronymeRow("PATR_KEITA", "Keïta", { exactMatch: true })],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.total).toBe(2);
   });
 });

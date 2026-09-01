@@ -705,16 +705,35 @@ export interface RankedPerson {
   peopleLinks: PersonPeopleLink[];
 }
 
+/**
+ * A name (patronyme) search hit (REQ-135). `nameMain` is the canonical
+ * spelling; `content` is forwarded opaquely, same posture as the dossier
+ * endpoint (`PublicPatronyme`) — DEC-039's per-subtype fields are not
+ * re-typed here ahead of ETNI-1460.
+ */
+export interface RankedPatronyme {
+  id: string;
+  nameMain: string;
+  nameSystem: string;
+  casteOrSocialFunction: string | null;
+  content: Record<string, unknown>;
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+}
+
 export interface FtsSearchResponse {
   peoples: RankedPeople[];
   countries: RankedCountry[];
   families: RankedLanguageFamily[];
   persons: RankedPerson[];
+  patronymes: RankedPatronyme[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
+  patronymesTotal: number;
   total: number;
 }
 
