@@ -305,6 +305,37 @@ describe("auditMigrationFiles", () => {
 });
 
 describe("normaliseSql", () => {
+  // Dollar-quoted bodies are opaque to SQL's quoting rules, and 018's editorial
+  // seed is French prose full of apostrophes inside `$mdx$ ... $mdx$`. Reading
+  // those as string delimiters desynchronises the scanner: with an odd number of
+  // them everything after the block is misparsed, so a trailing `;` survives on
+  // one side and not the other and the migration reports as drifted forever.
+  // This is what made 018, 038 and 039 look changed when the database and the
+  // files agreed. Reproduced before it was fixed.
+  // @req REQ-032
+  it("treats a dollar-quoted body as opaque, apostrophes included", () => {
+    const body = "$mdx$ l'exonyme est un nom donne de l exterieur $mdx$";
+    const withTerminator = `insert into t values (${body}) on conflict do nothing;`;
+    const withoutTerminator = `insert into t values (${body}) on conflict do nothing`;
+
+    expect(normaliseSql(withTerminator)).toBe(normaliseSql(withoutTerminator));
+  });
+
+  // `$$` is the empty tag, which is the form every function body in 038 uses.
+  // @req REQ-032
+  it("handles the empty dollar tag used by function bodies", () => {
+    const fn =
+      "create function f() returns boolean as $$ select 'a' = 'b' $$ language sql";
+
+    expect(normaliseSql(`${fn};`)).toBe(normaliseSql(fn));
+  });
+
+  // A semicolon inside a dollar-quoted body is content, not a separator.
+  // @req REQ-032
+  it("keeps a semicolon that lives inside a dollar-quoted body", () => {
+    expect(normaliseSql("select $$a;b$$")).toContain("a;b");
+  });
+
   // Terminators go too: the ledger stores statements without them, so keeping
   // them would make every file differ from its own recorded form.
   // @req REQ-032

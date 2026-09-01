@@ -95,6 +95,21 @@ export function normaliseSql(sql: string): string {
   while (index < sql.length) {
     const char = sql[index];
 
+    // Dollar-quoted bodies come first, because inside one the ordinary quoting
+    // rules do not apply. 018 seeds editorial doctrine as French prose inside
+    // `$mdx$ ... $mdx$`, and reading its apostrophes as string delimiters
+    // desynchronised the scanner: with an odd number of them everything after
+    // the block was misparsed, a trailing `;` survived on one side only, and
+    // three migrations reported as drifted while the database and the files
+    // agreed.
+    const dollarTag = readDollarTag(sql, index);
+    if (dollarTag !== null) {
+      const end = findDollarEnd(sql, index + dollarTag.length, dollarTag);
+      out += sql.slice(index, end);
+      index = end;
+      continue;
+    }
+
     if (char === "'") {
       const end = findStringEnd(sql, index);
       out += sql.slice(index, end);
@@ -123,6 +138,25 @@ export function normaliseSql(sql: string): string {
   }
 
   return out.replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+/**
+ * The dollar-quote tag opening at `start` (`$$`, `$mdx$`, `$fn$`), or null.
+ *
+ * Postgres allows an optional identifier between the dollars, and the closing
+ * delimiter must repeat it exactly — which is the whole point of the syntax:
+ * a body can then contain any quote character without escaping.
+ */
+function readDollarTag(sql: string, start: number): string | null {
+  if (sql[start] !== "$") return null;
+  const match = /^\$[A-Za-z_][A-Za-z0-9_]*\$|^\$\$/.exec(sql.slice(start));
+  return match ? match[0] : null;
+}
+
+/** Index just past the closing dollar tag, or the end of input if unterminated. */
+function findDollarEnd(sql: string, from: number, tag: string): number {
+  const close = sql.indexOf(tag, from);
+  return close === -1 ? sql.length : close + tag.length;
 }
 
 /** Index just past the closing quote, treating `''` as an escaped quote. */
