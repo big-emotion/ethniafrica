@@ -47,6 +47,8 @@ describe("sitemap entity ids", () => {
       afrik_peoples: ids("PPL_", 3),
       afrik_countries: ids("C", 2),
       afrik_language_families: ids("FLG_", 1),
+      afrik_languages: ids("bam", 2),
+      afrik_patronymes: ids("PAT_", 1),
     });
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
       client
@@ -57,6 +59,8 @@ describe("sitemap entity ids", () => {
     expect(entries.peoples).toHaveLength(3);
     expect(entries.countries).toEqual(["C0000", "C0001"]);
     expect(entries.families).toEqual(["FLG_0000"]);
+    expect(entries.languages).toEqual(["bam0000", "bam0001"]);
+    expect(entries.patronymes).toEqual(["PAT_0000"]);
   });
 
   // An unranged select is silently capped at 1000 rows server-side. The corpus
@@ -69,6 +73,8 @@ describe("sitemap entity ids", () => {
       afrik_peoples: ids("PPL_", SITEMAP_ID_PAGE_SIZE * 2 + 7),
       afrik_countries: [],
       afrik_language_families: [],
+      afrik_languages: [],
+      afrik_patronymes: [],
     });
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
       client
@@ -86,6 +92,8 @@ describe("sitemap entity ids", () => {
       afrik_peoples: ids("PPL_", 5),
       afrik_countries: [],
       afrik_language_families: [],
+      afrik_languages: [],
+      afrik_patronymes: [],
     });
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
       client
@@ -94,7 +102,7 @@ describe("sitemap entity ids", () => {
     await getSitemapEntityIds();
 
     // One request per table, since each first page came back short.
-    expect(client.range).toHaveBeenCalledTimes(3);
+    expect(client.range).toHaveBeenCalledTimes(5);
     expect(client.range).toHaveBeenCalledWith(0, SITEMAP_ID_PAGE_SIZE - 1);
   });
 
@@ -116,6 +124,8 @@ describe("sitemap entity ids", () => {
       peoples: [],
       countries: [],
       families: [],
+      languages: [],
+      patronymes: [],
     });
   });
 
@@ -131,6 +141,8 @@ describe("sitemap entity ids", () => {
       peoples: [],
       countries: [],
       families: [],
+      languages: [],
+      patronymes: [],
     });
   });
 });

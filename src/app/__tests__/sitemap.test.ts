@@ -12,7 +12,9 @@ import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
   getLocalizedRoute,
+  getPatronymeRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
 } from "@/lib/routing";
@@ -25,6 +27,8 @@ const CORPUS = {
   peoples: ["PPL_BAMILEKE", "PPL_WOLOF"],
   countries: ["CMR", "SEN"],
   families: ["FLG_NIGER_CONGO"],
+  languages: ["bam", "wol"],
+  patronymes: ["PAT_BAMBA_CLAN"],
 };
 
 async function urls() {
@@ -60,6 +64,21 @@ describe("sitemap.xml", () => {
     expect(all).toContain(`${base}${getCountryRoute("fr", "CMR")}`);
   });
 
+  // Languages (748) and patronymes (30) have fiche routes but were absent
+  // from the sitemap, leaving them unreachable by crawlers (ETNI-1800).
+  // @req REQ-139
+  // @req REQ-110
+  it("carries one url per language and patronyme fiche", async () => {
+    const all = await urls();
+    const base = `https://${CANONICAL_DOMAIN}`;
+
+    expect(all).toContain(`${base}${getLanguageRoute("fr", "bam")}`);
+    expect(all).toContain(`${base}${getLanguageRoute("fr", "wol")}`);
+    expect(all).toContain(
+      `${base}${getPatronymeRoute("fr", "PAT_BAMBA_CLAN")}`
+    );
+  });
+
   // @req REQ-110
   it("lists the rubrics a reader enters by", async () => {
     const all = await urls();
@@ -71,6 +90,23 @@ describe("sitemap.xml", () => {
       getLocalizedRoute("fr", "countries"),
       getLocalizedRoute("fr", "families"),
       "/fr/plan-du-site",
+    ]) {
+      expect(all, path).toContain(`${base}${path}`);
+    }
+  });
+
+  // Same treatment as the other corpus rubrics and the already-shipped
+  // appellations index (ETNI-1453): the languages and patronymes hub routes
+  // are reachable pages, so they are crawlable ones too (ETNI-1795).
+  // @req REQ-139
+  // @req REQ-110
+  it("lists the languages and patronymes hub routes as rubrics", async () => {
+    const all = await urls();
+    const base = `https://${CANONICAL_DOMAIN}`;
+
+    for (const path of [
+      getLocalizedRoute("fr", "languages"),
+      getLocalizedRoute("fr", "patronymes"),
     ]) {
       expect(all, path).toContain(`${base}${path}`);
     }
@@ -120,25 +156,22 @@ describe("sitemap.xml", () => {
     );
   });
 
-  // Languages are reachable only nested under a family; they have no route of
-  // their own, so there is nothing to list.
-  // @req REQ-110
-  it("lists no standalone language route", async () => {
-    const all = await urls();
-    expect(all.filter((url) => url.includes("/langues"))).toEqual([]);
-  });
-
+  // @req REQ-139
   // @req REQ-110
   it("still ships the rubrics when the corpus cannot be read", async () => {
     mockedEntityIds.mockResolvedValue({
       peoples: [],
       countries: [],
       families: [],
+      languages: [],
+      patronymes: [],
     });
 
     const all = await urls();
     expect(all).toContain(`https://${CANONICAL_DOMAIN}/fr`);
     expect(all.some((url) => url.includes("/peuples/PPL_"))).toBe(false);
+    expect(all.some((url) => url.includes("/atlas/langues/"))).toBe(false);
+    expect(all.some((url) => url.includes("/atlas/noms/"))).toBe(false);
   });
 
   // @req REQ-110

@@ -4,6 +4,8 @@ import { CANONICAL_DOMAIN } from "@/lib/brand";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
+  getPatronymeRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
 } from "@/lib/routing";
@@ -43,7 +45,8 @@ function entry(
 
 // @req REQ-110
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { peoples, countries, families } = await getSitemapEntityIds();
+  const { peoples, countries, families, languages, patronymes } =
+    await getSitemapEntityIds();
 
   const rubrics = getSiteTreePaths(LANGUAGE).map((path) =>
     entry(path, RUBRIC_CHANGE_FREQUENCY, path === `/${LANGUAGE}` ? 1 : 0.8)
@@ -56,6 +59,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       getPeopleLinksRoute(LANGUAGE, id),
     ]),
     ...countries.map((id) => getCountryRoute(LANGUAGE, id)),
+    ...languages.map((id) => getLanguageRoute(LANGUAGE, id)),
+    ...patronymes.map((id) => getPatronymeRoute(LANGUAGE, id)),
   ].map((path) => entry(path, FICHE_CHANGE_FREQUENCY, 0.6));
 
   return [...rubrics, ...fiches];
