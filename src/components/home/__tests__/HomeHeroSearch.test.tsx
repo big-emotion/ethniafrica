@@ -34,7 +34,10 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ push, replace: vi.fn() }),
 }));
 
-vi.mock("@/lib/afrikLoader", () => ({ search: vi.fn(async () => []) }));
+vi.mock("@/lib/afrikLoader", () => ({
+  search: vi.fn(async () => []),
+  searchWithLeads: vi.fn(async () => ({ results: [], leads: [] })),
+}));
 
 const YORUBA: SearchResult = {
   type: "people",

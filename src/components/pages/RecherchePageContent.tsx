@@ -23,13 +23,8 @@ import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
-import {
-  buildSearchParams,
-  compareByRelevance,
-  mapSearchEnvelope,
-  mapSearchLeads,
-} from "@/lib/search/searchEnvelope";
-import { search as searchCorpus } from "@/lib/afrikLoader";
+import { compareByRelevance } from "@/lib/search/searchEnvelope";
+import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
   readRelation,
   relationSearchParams,
@@ -207,21 +202,14 @@ export function RecherchePageContent() {
       setLoading(true);
       setHasSearched(true);
       try {
-        const params = buildSearchParams(q, {
+        const { results, leads: nearMisses } = await searchWithLeads(q, {
           limit: RESULTS_PER_SEARCH,
           classificationStatus: cs,
           minConfidence: mc,
           ...relationSearchParams(rel),
         });
-        const res = await fetch(`/api/v2/search?${params}`);
-        if (!res.ok) {
-          setResults([]);
-          setLeads([]);
-          return;
-        }
-        const envelope = await res.json();
-        setResults(mapSearchEnvelope(envelope));
-        setLeads(mapSearchLeads(envelope));
+        setResults(results);
+        setLeads(nearMisses);
       } catch {
         setResults([]);
         setLeads([]);

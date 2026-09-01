@@ -166,8 +166,8 @@ describe("SearchModalV2", () => {
   // The modal reaches the corpus only through the shared client (ETNI-1415
   // AC2); it never fetches /api/v2/search itself.
   // @req REQ-108
-  it("queries the corpus through afrikLoader.search, scoped to the active tab", async () => {
-    vi.mocked(afrikLoader.search).mockResolvedValue(mockSearchResults);
+  it("queries the corpus through afrikLoader.searchWithLeads, scoped to the active tab", async () => {
+    mockSearch(mockSearchResults);
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     // Radix activates a trigger on pointer-down, not on the synthetic click.
@@ -179,7 +179,7 @@ describe("SearchModalV2", () => {
       await new Promise((r) => setTimeout(r, 350));
     });
 
-    expect(afrikLoader.search).toHaveBeenCalledWith("Shona", {
+    expect(afrikLoader.searchWithLeads).toHaveBeenCalledWith("Shona", {
       type: "people",
     });
   });

@@ -200,18 +200,21 @@ export interface SearchWithLeads {
 
 // @req REQ-125
 /**
- * Same query as `search`, additionally carrying the near-miss leads a
- * zero-result search returns. A distinct function rather than an added
- * parameter, so every existing `search()` caller keeps its `SearchResult[]`
- * return type untouched.
+ * Same single browser path as `search` (ETNI-1415, AC2), additionally carrying
+ * the near-miss leads a zero-result search returns. A distinct function rather
+ * than an added parameter, so every existing `search()` caller keeps its
+ * `SearchResult[]` return type untouched; it takes the same `SearchOptions`, so
+ * a surface that needs both leads and the server-side scopes (the /recherche
+ * page) reaches the corpus through here instead of fetching the endpoint itself.
  */
 export async function searchWithLeads(
   query: string,
-  filters: Omit<SearchFilters, "query"> = {}
+  options: SearchOptions = {}
 ): Promise<SearchWithLeads> {
   try {
-    const params = buildSearchParams(query);
-    const response = await fetch(`${API_BASE}/search?${params}`);
+    const response = await fetch(
+      `${API_BASE}/search?${buildSearchParams(query, options)}`
+    );
 
     if (!response.ok) {
       const error = await handleFetchError(response, "search");
@@ -220,24 +223,15 @@ export async function searchWithLeads(
     }
 
     const envelope = await response.json();
-    let results = mapSearchEnvelope(envelope);
+    const results = mapSearchEnvelope(envelope);
     const leads = mapSearchLeads(envelope);
 
-    if (filters.type) {
-      results = results.filter((result) => result.type === filters.type);
-    }
-    if (filters.languageFamilyId) {
-      results = results.filter(
-        (result) => result.languageFamilyId === filters.languageFamilyId
-      );
-    }
-    if (filters.countryId) {
-      results = results.filter((result) =>
-        result.countryIds?.includes(filters.countryId)
-      );
-    }
-
-    return { results, leads };
+    return {
+      results: options.type
+        ? results.filter((result) => result.type === options.type)
+        : results,
+      leads,
+    };
   } catch (error) {
     logger.error("[searchWithLeads] Exception", error);
     return { results: [], leads: [] };
@@ -284,6 +278,7 @@ function transformMeta(
     perPage: (apiMeta.perPage as number) || perPage,
     totalPages: Math.ceil(total / perPage) || 0,
     unclassifiedPeoplesCount: apiMeta.unclassifiedPeoplesCount as
-      number | undefined,
+      | number
+      | undefined,
   };
 }
