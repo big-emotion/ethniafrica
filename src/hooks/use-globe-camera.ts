@@ -23,6 +23,10 @@ interface Journey {
 
 export interface GlobeCamera {
   pose: CameraPose;
+  /** Whether the opt-in arrival rotation is currently running. */
+  autoRotating: boolean;
+  /** Permanently hands the camera back to the reader for this mount. */
+  stopAutoRotation: () => void;
   /**
    * The reader's own turn, applied to the live pose rather than accumulated
    * beside it. A delta added on top of the animated pose — the shape this had
@@ -76,7 +80,8 @@ export interface GlobeCamera {
 export function useGlobeCamera(
   destination: CameraPose | null,
   restPose: CameraPose,
-  reducedMotion: boolean
+  reducedMotion: boolean,
+  autoRotate = false
 ): GlobeCamera {
   const aim = destination ?? restPose;
   const [pose, setPose] = useState<CameraPose>(aim);
@@ -93,6 +98,18 @@ export function useGlobeCamera(
 
   const journeyRef = useRef<Journey | null>(null);
   const frameRef = useRef<number | null>(null);
+  const autoFrameRef = useRef<number | null>(null);
+  const autoRotationStoppedRef = useRef(false);
+  const [autoRotating, setAutoRotating] = useState(false);
+
+  const stopAutoRotation = useCallback(() => {
+    autoRotationStoppedRef.current = true;
+    if (autoFrameRef.current !== null) {
+      window.cancelAnimationFrame(autoFrameRef.current);
+      autoFrameRef.current = null;
+    }
+    setAutoRotating(false);
+  }, []);
 
   /**
    * Where the camera was last aimed. Held as state so a new aim can land
@@ -179,6 +196,50 @@ export function useGlobeCamera(
 
   useEffect(() => cancelFlight, [cancelFlight]);
 
+  useEffect(() => {
+    if (reducedMotion || !autoRotate || autoRotationStoppedRef.current) {
+      if (autoFrameRef.current !== null) {
+        window.cancelAnimationFrame(autoFrameRef.current);
+        autoFrameRef.current = null;
+      }
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setAutoRotating(false);
+      return;
+    }
+
+    // One full turn takes three minutes: visible enough to signal life, slow
+    // enough not to compete with the question and search action.
+    const radiansPerMillisecond = (Math.PI * 2) / 180_000;
+    let lastTimestamp: number | null = null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAutoRotating(true);
+
+    const step = (timestamp: number) => {
+      autoFrameRef.current = null;
+      if (autoRotationStoppedRef.current) return;
+
+      if (lastTimestamp !== null) {
+        const elapsed = Math.min(timestamp - lastTimestamp, 100);
+        const current = poseRef.current;
+        settle({
+          ...current,
+          yaw: advanceYaw(current.yaw, elapsed * radiansPerMillisecond),
+        });
+      }
+      lastTimestamp = timestamp;
+      autoFrameRef.current = window.requestAnimationFrame(step);
+    };
+
+    autoFrameRef.current = window.requestAnimationFrame(step);
+
+    return () => {
+      if (autoFrameRef.current !== null) {
+        window.cancelAnimationFrame(autoFrameRef.current);
+        autoFrameRef.current = null;
+      }
+    };
+  }, [autoRotate, reducedMotion, settle]);
+
   const turnBy = useCallback(
     (deltaYaw: number, deltaPitch: number) => {
       // Under a finger the surface has to keep up with the finger, so the
@@ -240,5 +301,13 @@ export function useGlobeCamera(
     flyTo(restPose);
   }, [cancelFlight, flyTo, reducedMotion, restPose, settle]);
 
-  return { pose, turnBy, zoomBy, panBy, recentre };
+  return {
+    pose,
+    autoRotating,
+    stopAutoRotation,
+    turnBy,
+    zoomBy,
+    panBy,
+    recentre,
+  };
 }

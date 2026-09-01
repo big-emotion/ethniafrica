@@ -210,6 +210,28 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     expect(drawHomeHeroVisualMock).toHaveBeenCalledTimes(2);
   });
 
+  // @req REQ-115
+  it("allows browser checks to request the globe without changing random visitors", async () => {
+    drawHomeHeroVisualMock.mockReturnValue({
+      kind: "image",
+      image: {
+        id: "test-map",
+        src: "/images/home/al-idrisi-1154.jpg",
+        alt: "Une carte historique de l'Afrique.",
+        credit: "Carte de test — domaine public",
+        position: "center",
+      },
+    });
+
+    await render(
+      await Home({ searchParams: Promise.resolve({ hero: "globe" }) })
+    );
+
+    expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
+    expect(getContinentPeopleCountsMock).toHaveBeenCalledOnce();
+    expect(drawHomeHeroVisualMock).not.toHaveBeenCalled();
+  });
+
   // @req REQ-044
   it("declares the canonical and OpenGraph metadata", () => {
     expect(metadata.alternates?.canonical).toBe("/fr");

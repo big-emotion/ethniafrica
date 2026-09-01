@@ -49,17 +49,16 @@ export type HomeHeroVisual =
 /**
  * Draw the homepage visual once per server request.
  *
- * Slot zero of a modulo-three draw is the globe. Slots one and two draw an
- * image from the existing project stock, giving the requested 1/3–2/3 split.
- * The random source is injectable so the boundary and every image stay
- * deterministic under test.
+ * The lower half of the draw is the globe. The upper half draws an image from
+ * the existing project stock, giving each branch a 50/50 chance. The random
+ * source is injectable so the boundary and every image stay deterministic
+ * under test.
  */
 // @req REQ-115
 export function drawHomeHeroVisual(
   random: () => number = Math.random
 ): HomeHeroVisual {
-  const slot = Math.min(2, Math.floor(random() * 3));
-  if (slot === 0) return { kind: "globe" };
+  if (random() < 0.5) return { kind: "globe" };
 
   const imageIndex = Math.min(
     HOME_HERO_IMAGES.length - 1,

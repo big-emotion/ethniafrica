@@ -10,10 +10,9 @@ import type { Page } from "@playwright/test";
 // desktop-800/moderator-1024), so every test below sets its viewport
 // explicitly rather than relying on project config, mirroring
 // e2e/home-visual.spec.ts.
-// Pinned: the hero draws one of eleven modules per request (REQ-115), and
-// this suite is about the globe specifically. Without the pin ten runs in
-// eleven would open on a game and fail on a locator that is simply not on
-// the page.
+// Pinned: the hero is randomized per request (REQ-115), and this suite is
+// about the globe specifically. The query pin keeps browser assertions
+// deterministic without changing ordinary visitors' draws.
 const HOME_URL = "/fr?hero=mercator";
 const BREAKPOINTS = [430, 720, 1200] as const;
 // The surface renames itself with what a drag will do: a sphere turns, a flat
@@ -58,6 +57,9 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
         name: GLOBE_SURFACE_NAME,
       });
       await expect(globeSurface).toBeVisible();
+      await expect(
+        page.getByRole("button", { name: "Recentrer sur l’Afrique" })
+      ).toBeVisible();
 
       // Africa faces the reader on first paint: the WebGL globe (or its
       // fallback, on runners without a usable context) must be mounted
@@ -99,7 +101,7 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
 
       const zoomOut = page.getByRole("button", { name: "Dézoomer" });
       await expect(zoomOut).toBeDisabled();
-      await page.getByRole("button", { name: "Zoomer" }).click();
+      await page.getByRole("button", { name: "Zoomer", exact: true }).click();
       await expect(zoomOut).toBeEnabled();
 
       expect(pageErrors).toEqual([]);
@@ -161,7 +163,9 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
     await expect(morph).toHaveAttribute("aria-valuetext", "Carte plate");
 
     await expect(page.getByRole("button", { name: "Pastilles" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Zoomer" })).toBeEnabled();
+    await expect(
+      page.getByRole("button", { name: "Zoomer", exact: true })
+    ).toBeEnabled();
 
     expect(pageErrors).toEqual([]);
   });

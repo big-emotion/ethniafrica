@@ -41,11 +41,20 @@ export const metadata: Metadata = {
 
 // @req REQ-113
 // @req REQ-115
-export default async function Home() {
+interface HomePageProps {
+  searchParams?: Promise<{ hero?: string | string[] }>;
+}
+
+export default async function Home({ searchParams }: HomePageProps = {}) {
   // Drawn on the server once per request: no hydration mismatch and no visual
   // swap after the first paint. The force-dynamic contract above prevents the
   // result from being frozen into a prerendered page.
-  const heroVisual = drawHomeHeroVisual();
+  const params = await searchParams;
+  const heroParam = params?.hero;
+  const heroVisual =
+    heroParam === "globe" || heroParam === "mercator"
+      ? ({ kind: "globe" } as const)
+      : drawHomeHeroVisual();
 
   const [counts, peopleCountsByCountry, seedWords] = await Promise.all([
     // A failed total read is not an empty corpus. The counter component says
