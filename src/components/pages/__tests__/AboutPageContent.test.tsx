@@ -2,6 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { AccessMode } from "@/lib/hubs/moduleRegistry";
@@ -157,7 +158,7 @@ describe("AboutPageContent (REQ-132)", () => {
       screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
     ).toHaveLength(3);
 
-    for (const name of ["Explorer", "Comprendre", "Jouer"]) {
+    for (const name of Object.values(ACCESS_MODE_LABELS)) {
       expect(screen.getAllByRole("heading", { level: 3, name })).toHaveLength(
         1
       );

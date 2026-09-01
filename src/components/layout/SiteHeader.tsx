@@ -47,6 +47,7 @@ import { cn } from "@/lib/utils";
 import { getTranslation } from "@/lib/translations";
 import {
   ACCENT_BY_ACCESS_MODE,
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   accentForModule,
   getNavModules,
@@ -416,7 +417,7 @@ export function SiteHeader({
             >
               <span className="sh-axis-pill">
                 <span className="sh-seed" aria-hidden="true" />
-                {t.hubs[axis].title}
+                {ACCESS_MODE_LABELS[axis]}
                 <ChevronDown
                   className="sh-caret"
                   size={11}
@@ -468,7 +469,9 @@ export function SiteHeader({
           <div className="sh-panel-head">
             {/* Not a heading: the trigger already names this region, and an
                 h4 here would open a level in every page's outline. */}
-            <span className="sh-panel-title">{t.hubs[openAxis].title}</span>
+            <span className="sh-panel-title">
+              {ACCESS_MODE_LABELS[openAxis]}
+            </span>
             <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
           </div>
           <div className="sh-grid">
@@ -502,7 +505,7 @@ export function SiteHeader({
                   className="sh-fold-trigger min-h-11"
                 >
                   <span className="sh-seed" aria-hidden="true" />
-                  {t.hubs[axis].title}
+                  {ACCESS_MODE_LABELS[axis]}
                   <span className="sh-fold-count">{entryCount}</span>
                   <ChevronDown
                     className="sh-caret"

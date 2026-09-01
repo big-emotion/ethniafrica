@@ -1,4 +1,5 @@
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -79,17 +80,17 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         },
         {
           href: route("explorerHub"),
-          label: "Explorer",
+          label: ACCESS_MODE_LABELS.explorer,
           note: "Parcourir le corpus par entité.",
         },
         {
           href: route("comprendreHub"),
-          label: "Comprendre",
+          label: ACCESS_MODE_LABELS.comprendre,
           note: "Les noms, les migrations, la méthode.",
         },
         {
           href: route("jouerHub"),
-          label: "Jouer",
+          label: ACCESS_MODE_LABELS.jouer,
           note: "Trois jeux et un quiz, tous tirés du corpus.",
         },
       ],
@@ -129,7 +130,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
     },
     {
       id: "comprendre",
-      title: "Comprendre",
+      title: ACCESS_MODE_LABELS.comprendre,
       blurb:
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
@@ -156,7 +157,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
     },
     {
       id: "jouer",
-      title: "Jouer",
+      title: ACCESS_MODE_LABELS.jouer,
       blurb:
         "Chaque partie est tirée du corpus : gagner suppose d'avoir lu quelque chose, jamais d'avoir deviné.",
       links: [
