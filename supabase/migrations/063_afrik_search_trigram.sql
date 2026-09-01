@@ -13,6 +13,15 @@
 -- the ranking function below compares against — so similarity()/`%` stay
 -- index-backed instead of falling back to a sequential scan.
 --
+-- The fold goes through `public.afrik_unaccent` (052), never the raw
+-- two-argument `extensions.unaccent(regdictionary, text)` that 044 calls:
+-- despite 044's comment, that form is STABLE here (pg_proc.provolatile = 's'
+-- on both projects), and an index expression must be IMMUTABLE — building
+-- this index on the raw call is rejected outright. The ranking function must
+-- use the wrapper too, not just the index: an index on afrik_unaccent() with
+-- a predicate on the raw call is a different expression, so the planner never
+-- matches the two and the fallback tier silently seq-scans afrik_peoples.
+--
 -- ── Ranking rule ─────────────────────────────────────────────────────────
 -- afrik_search_peoples (migration 044) gains a fallback tier, not a
 -- replacement: a row only takes the trigram path when the lexical predicate
@@ -51,7 +60,7 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA extensions;
 CREATE INDEX IF NOT EXISTS idx_afrik_peoples_name_main_trgm
   ON public.afrik_peoples
   USING gin (
-    (extensions.unaccent('extensions.unaccent'::regdictionary, lower(name_main)))
+    (public.afrik_unaccent(lower(name_main)))
     extensions.gin_trgm_ops
   );
 
@@ -79,8 +88,7 @@ WITH q AS (
     CASE WHEN COALESCE(btrim(p_q), '') = '' THEN NULL
          ELSE websearch_to_tsquery('french', p_q) END AS tsq,
     CASE WHEN COALESCE(btrim(p_q), '') = '' THEN NULL
-         ELSE extensions.unaccent('extensions.unaccent'::regdictionary,
-                                  lower(btrim(p_q))) END AS exact_key
+         ELSE public.afrik_unaccent(lower(btrim(p_q))) END AS exact_key
 ),
 matched AS (
   SELECT
@@ -102,15 +110,13 @@ matched AS (
         -- already matched. The boolean lexical_match tier above (not this
         -- magnitude) is what keeps a lexical match ranked first.
         (extensions.similarity(
-           extensions.unaccent('extensions.unaccent'::regdictionary,
-                               lower(p.name_main)),
+           public.afrik_unaccent(lower(p.name_main)),
            q.exact_key)
           * (0.5 + 0.5 * COALESCE(cs.score, 0.5)))::real
       ELSE 0::real
     END AS relevance,
     (q.exact_key IS NOT NULL
-     AND extensions.unaccent('extensions.unaccent'::regdictionary,
-                             lower(p.name_main)) = q.exact_key) AS exact_match
+     AND public.afrik_unaccent(lower(p.name_main)) = q.exact_key) AS exact_match
   FROM public.afrik_peoples p
   LEFT JOIN public.confidence_scores cs
     ON cs.entity_type = 'people' AND cs.entity_id = p.id
@@ -119,8 +125,7 @@ matched AS (
       q.tsq IS NULL
       OR p.search_vector @@ q.tsq
       OR extensions.similarity(
-           extensions.unaccent('extensions.unaccent'::regdictionary,
-                               lower(p.name_main)),
+           public.afrik_unaccent(lower(p.name_main)),
            q.exact_key) >= 0.4
     )
     AND (p_classification_status IS NULL

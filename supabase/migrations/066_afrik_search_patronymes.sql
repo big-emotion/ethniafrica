@@ -127,7 +127,7 @@ CREATE INDEX IF NOT EXISTS idx_afrik_patronymes_name_phonetic
 CREATE INDEX IF NOT EXISTS idx_afrik_patronymes_name_main_trgm
   ON public.afrik_patronymes
   USING gin (
-    (extensions.unaccent('extensions.unaccent'::regdictionary, lower(name_main)))
+    (public.afrik_unaccent(lower(name_main)))
     extensions.gin_trgm_ops
   );
 
@@ -217,8 +217,7 @@ matched AS (
       WHEN q.tsq IS NOT NULL THEN
         -- Fallback tier only — never reached when tier 2 already matched.
         extensions.similarity(
-          extensions.unaccent('extensions.unaccent'::regdictionary,
-                              lower(p.name_main)),
+          public.afrik_unaccent(lower(p.name_main)),
           q.exact_key)::real
       ELSE 0::real
     END AS relevance,
@@ -233,8 +232,7 @@ matched AS (
           AND p.name_unaccent_vector @@ q.tsq_unaccent)
       OR (q.phonetic_key IS NOT NULL AND p.name_phonetic = q.phonetic_key)
       OR (q.exact_key IS NOT NULL AND extensions.similarity(
-            extensions.unaccent('extensions.unaccent'::regdictionary,
-                                lower(p.name_main)),
+            public.afrik_unaccent(lower(p.name_main)),
             q.exact_key) >= 0.4)
     )
 ),
