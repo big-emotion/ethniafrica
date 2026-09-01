@@ -4,13 +4,10 @@
  * ftsSearch: ETNI-38 FTS search (prefix + accent-insensitive matching,
  * confidence boost — migration 052, REQ-129).
  *
- * The response carries both shapes and this layer chooses neither: the
- * grouped arrays (peoples, countries, families, persons, patronymes,
- * quizzes) answer a facet's question about one kind, and `results` is the
- * same hits merged and ordered on the cross-kind `normalizedScore` of
- * migration 068. Both are built in the query layer, where every mapped row
- * exists at once and where the sort can be proven against the RPC payloads
- * that produced it.
+ * The query layer chooses one exclusive stream. Without a lens it returns the
+ * non-quiz corpus kinds; `lens=quiz` returns quiz questions alone. In either
+ * mode the grouped arrays and `results` are two shapes over the same selected
+ * hits, ordered on the cross-kind `normalizedScore` of migration 069.
  */
 
 import { ftsSearchEntities } from "@/lib/supabase/queries/afrik/search";

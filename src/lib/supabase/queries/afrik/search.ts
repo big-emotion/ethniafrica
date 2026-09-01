@@ -5,7 +5,8 @@
  * _countries, _persons, _patronymes, _languages, _language_families and _quiz
  * (migrations 044, 052, 065, 066, 068, 069) — over the weighted tsvectors of
  * migrations 043, 056, 057, 066, 068 and 069. This module maps their rows and
- * merges them; it ranks nothing itself.
+ * merges the main-stream kinds; the quiz function is available only through
+ * its dedicated lens. This layer ranks nothing itself.
  */
 
 import { createServerClient } from "../../server";
@@ -30,7 +31,7 @@ import type {
 } from "@/types/persons";
 
 /**
- * Ranked search across the seven atlas kinds.
+ * Ranked search across the main atlas stream or the dedicated quiz lens.
  *
  * Ordering happens in Postgres, in the same statement as the LIMIT, because
  * that is the only place it can be correct. This function used to page in SQL
@@ -45,12 +46,12 @@ import type {
  * 069 reproduces that ladder in SQL — same tiers, same accent folding — so
  * families are now ranked in the same process as everything else.
  *
- * `results` is the merge of all six normalized-score kinds on
- * `normalizedScore`, the one magnitude migration 069 makes comparable across
- * them. Languages (migration 068) are exposed as a grouped facet only, since
- * their RPC does not yet project that score. The grouped arrays are kept
- * beside `results`: a facet still needs to know what matched among peoples
- * alone.
+ * In the main stream, `results` merges the five normalized-score non-quiz
+ * kinds on `normalizedScore`, the one magnitude migration 069 makes
+ * comparable across them. The quiz lens instead returns only quiz hits.
+ * Languages (migration 068) remain a grouped facet because their RPC does not
+ * yet project that score. Grouped arrays stay beside `results` so a facet can
+ * still ask what matched within one kind.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
  * not a search: peoples are listed for that scope, and no other kind is
@@ -62,6 +63,7 @@ export async function ftsSearchEntities(
 ): Promise<FtsSearchResponse> {
   const {
     q,
+    lens,
     limit,
     offset,
     classificationStatus,
@@ -73,6 +75,7 @@ export async function ftsSearchEntities(
 
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
+  const quizOnly = lens === "quiz";
 
   const [
     peopleResult,
@@ -83,52 +86,54 @@ export async function ftsSearchEntities(
     quizResult,
     languageResult,
   ] = await Promise.all([
-    supabase.rpc("afrik_search_peoples", {
-      p_q: text || null,
-      p_limit: limit,
-      p_offset: offset,
-      p_classification_status: classificationStatus ?? null,
-      p_min_confidence: minConfidence ?? null,
-      p_since_verified_after: sinceVerifiedAfter ?? null,
-      p_family_id: familyId ?? null,
-      p_country_id: countryId ?? null,
-    }),
-    text
+    !quizOnly
+      ? supabase.rpc("afrik_search_peoples", {
+          p_q: text || null,
+          p_limit: limit,
+          p_offset: offset,
+          p_classification_status: classificationStatus ?? null,
+          p_min_confidence: minConfidence ?? null,
+          p_since_verified_after: sinceVerifiedAfter ?? null,
+          p_family_id: familyId ?? null,
+          p_country_id: countryId ?? null,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    !quizOnly && text
       ? supabase.rpc("afrik_search_countries", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text
+    !quizOnly && text
       ? supabase.rpc("afrik_search_persons", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text
+    !quizOnly && text
       ? supabase.rpc("afrik_search_patronymes", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text
+    !quizOnly && text
       ? supabase.rpc("afrik_search_language_families", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text
+    quizOnly && text
       ? supabase.rpc("afrik_search_quiz", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text
+    !quizOnly && text
       ? supabase.rpc("afrik_search_languages", {
           p_q: text,
           p_limit: limit,
@@ -204,7 +209,9 @@ export async function ftsSearchEntities(
   // empty (REQ-125) — a non-empty result set is not a dead end, so it never
   // needs a near-miss.
   const leads =
-    text && total === 0 ? await fetchSearchLeads(supabase, text) : [];
+    !quizOnly && text && total === 0
+      ? await fetchSearchLeads(supabase, text)
+      : [];
 
   return {
     peoples,

@@ -650,6 +650,8 @@ export interface SearchResult {
 export interface FtsSearchParams {
   /** Optional only when a relation scope is given: a relation is a search. */
   q?: string;
+  /** Selects the dedicated quiz-question search stream. */
+  lens?: "quiz";
   limit: number;
   offset: number;
   classificationStatus?: ClassificationStatus;
@@ -667,9 +669,9 @@ export interface FtsSearchParams {
  * `relevance` is comparable **within** an entity kind and not across kinds —
  * a people is scored `ts_rank × confidence`, a country by bare `ts_rank`, a
  * family by a match tier. `normalizedScore` is the one magnitude that is
- * comparable everywhere: migration 068 maps each kind's raw relevance onto a
- * band of [0,1] chosen by the match class, so the six kinds can be merged
- * into `FtsSearchResponse.results`.
+ * comparable everywhere: migration 069 maps each kind's raw relevance onto a
+ * band of [0,1] chosen by the match class. The main-stream kinds can therefore
+ * be merged, while the quiz kind uses the same score in its dedicated lens.
  */
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
@@ -820,7 +822,7 @@ export interface FtsSearchResponse {
   patronymes: RankedPatronyme[];
   quizzes: RankedQuizQuestion[];
   languages: RankedLanguage[];
-  /** Every hit above, merged and ordered on `normalizedScore`. */
+  /** Every hit in the selected main or quiz stream, ordered on `normalizedScore`. */
   results: RankedSearchHit[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;

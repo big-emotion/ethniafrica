@@ -67,6 +67,100 @@ const RANKED_HITS = [
   },
 ];
 
+const QUIZ = {
+  id: "QZ_YORUBA_AUTONYM",
+  prompt: "Quel est l'autonyme des Yoruba ?",
+  entityType: "people",
+  entityId: "PPL_YORUBA",
+  subjectName: "Yoruba",
+  relevance: 0.7,
+  exactMatch: true,
+  normalizedScore: 0.71,
+  snippet: "[[Yoruba]] · Quel est l'autonyme",
+};
+
+const OVER_BROAD_GROUPS = {
+  peoples: [
+    {
+      id: "PPL_YORUBA",
+      nameMain: "Yoruba",
+      languageFamilyId: "FLG_NIGER_CONGO",
+      languageFamilyName: "Niger-Congo",
+      currentCountries: ["NGA"],
+      classificationStatus: null,
+      content: {},
+      confidence: null,
+      relevance: 0.7,
+      exactMatch: true,
+      normalizedScore: 1,
+      snippet: "[[Yoruba]]",
+    },
+  ],
+  countries: [
+    {
+      id: "NGA",
+      nameFr: "Nigéria",
+      content: {},
+      relevance: 0.7,
+      exactMatch: true,
+      normalizedScore: 0.71,
+      snippet: null,
+    },
+  ],
+  families: [
+    {
+      id: "FLG_NIGER_CONGO",
+      nameFr: "Niger-Congo",
+      classificationStatus: null,
+      content: {},
+      relevance: 0.4,
+      exactMatch: false,
+      normalizedScore: 0.4,
+      snippet: null,
+    },
+  ],
+  persons: [
+    {
+      id: "PER_JOHNSON" as const,
+      fullName: "Samuel Johnson",
+      roleCategory: "historian",
+      relevance: 0.4,
+      exactMatch: false,
+      normalizedScore: 0.4,
+      snippet: null,
+      peopleLinks: [],
+    },
+  ],
+  patronymes: [
+    {
+      id: "PAT_ADEBAYO",
+      nameMain: "Adébayo",
+      nameSystem: "patronymic",
+      casteOrSocialFunction: null,
+      content: {},
+      relevance: 0,
+      exactMatch: false,
+      normalizedScore: 0,
+      snippet: null,
+    },
+  ],
+  languages: [
+    {
+      id: "yor",
+      name: "Yoruba",
+      familyId: "FLG_NIGER_CONGO",
+      familyName: "Niger-Congo",
+      content: {},
+      relevance: 0.7,
+      exactMatch: true,
+      snippet: null,
+    },
+  ],
+} satisfies Pick<
+  FtsSearchResponse,
+  "peoples" | "countries" | "families" | "persons" | "patronymes" | "languages"
+>;
+
 function serviceResponse(
   overrides: Partial<FtsSearchResponse> = {}
 ): FtsSearchResponse {
@@ -77,6 +171,7 @@ function serviceResponse(
     persons: [],
     patronymes: [],
     quizzes: [],
+    languages: [],
     results: RANKED_HITS,
     peoplesTotal: 0,
     countriesTotal: 0,
@@ -84,6 +179,7 @@ function serviceResponse(
     personsTotal: 0,
     patronymesTotal: 0,
     quizzesTotal: 0,
+    languagesTotal: 0,
     total: 0,
     ...overrides,
   } as FtsSearchResponse;
@@ -95,27 +191,81 @@ describe("ftsSearchHandler — unified results", () => {
   });
 
   // @req REQ-002
-  it("publishes the ranked hits in the order the service returned them", async () => {
+  it("publishes the main-stream hits in their service order", async () => {
     vi.mocked(ftsSearch).mockResolvedValue(serviceResponse());
 
     const envelope = await ftsSearchHandler(QUERY);
 
-    expect(envelope.data.results).toEqual(RANKED_HITS);
+    expect(envelope.data.results).toEqual(
+      RANKED_HITS.filter((hit) => hit.kind !== "quiz")
+    );
   });
 
   // @req REQ-121
-  it("carries a quiz hit through the envelope with its discriminator", async () => {
-    vi.mocked(ftsSearch).mockResolvedValue(serviceResponse());
+  it("removes an over-broad quiz response from the default stream", async () => {
+    vi.mocked(ftsSearch).mockResolvedValue(
+      serviceResponse({
+        quizzes: [QUIZ],
+        quizzesTotal: 7,
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        personsTotal: 1,
+        patronymesTotal: 4,
+        languagesTotal: 6,
+        total: 35,
+      })
+    );
 
     const envelope = await ftsSearchHandler(QUERY);
 
-    expect(envelope.data.results.map((hit) => hit.kind)).toContain("quiz");
-    expect(
-      envelope.data.results.find((hit) => hit.kind === "quiz")
-    ).toMatchObject({
-      id: "QZ_YORUBA_AUTONYM",
-      name: "Quel est l'autonyme des Yoruba ?",
+    expect(envelope.data.quizzes).toEqual([]);
+    expect(envelope.data.quizzesTotal).toBe(0);
+    expect(envelope.data.results.some((hit) => hit.kind === "quiz")).toBe(
+      false
+    );
+    expect(envelope.data.total).toBe(28);
+  });
+
+  // @req REQ-121
+  it("returns only quiz data from an over-broad quiz-lens response", async () => {
+    vi.mocked(ftsSearch).mockResolvedValue(
+      serviceResponse({
+        ...OVER_BROAD_GROUPS,
+        quizzes: [QUIZ],
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        personsTotal: 1,
+        patronymesTotal: 4,
+        quizzesTotal: 7,
+        languagesTotal: 6,
+        total: 35,
+      })
+    );
+
+    const envelope = await ftsSearchHandler({ ...QUERY, lens: "quiz" });
+
+    expect(envelope.data).toMatchObject({
+      peoples: [],
+      countries: [],
+      families: [],
+      persons: [],
+      patronymes: [],
+      quizzes: [QUIZ],
+      languages: [],
+      peoplesTotal: 0,
+      countriesTotal: 0,
+      familiesTotal: 0,
+      personsTotal: 0,
+      patronymesTotal: 0,
+      quizzesTotal: 7,
+      languagesTotal: 0,
+      total: 7,
     });
+    expect(envelope.data.results).toEqual([
+      expect.objectContaining({ kind: "quiz", id: "QZ_YORUBA_AUTONYM" }),
+    ]);
   });
 
   // @req REQ-129
@@ -125,7 +275,7 @@ describe("ftsSearchHandler — unified results", () => {
     const envelope = await ftsSearchHandler(QUERY);
 
     expect(envelope.data.results.map((hit) => hit.normalizedScore)).toEqual([
-      1, 0.71, 0.71, 0.4, 0.4, 0,
+      1, 0.71, 0.4, 0.4, 0,
     ]);
     for (const hit of envelope.data.results) {
       expect(hit.normalizedScore).toBeGreaterThanOrEqual(0);
@@ -160,9 +310,9 @@ describe("ftsSearchHandler — unified results", () => {
       peoplesTotal: 12,
       countriesTotal: 3,
       personsTotal: 1,
-      quizzesTotal: 7,
-      total: 23,
+      quizzesTotal: 0,
+      total: 16,
     });
-    expect(envelope.data.results).toHaveLength(RANKED_HITS.length);
+    expect(envelope.data.results).toHaveLength(RANKED_HITS.length - 1);
   });
 });

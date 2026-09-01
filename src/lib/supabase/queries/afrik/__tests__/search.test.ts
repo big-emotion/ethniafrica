@@ -887,14 +887,20 @@ describe("ftsSearchEntities", () => {
   // ── quiz (ETNI-1709) ──────────────────────────────────────────────────────
 
   // @req REQ-121
-  it("calls afrik_search_quiz with p_-prefixed named parameters", async () => {
-    await ftsSearchEntities({ q: "wolof", limit: 20, offset: 0 });
+  it("calls only afrik_search_quiz when the quiz lens is selected", async () => {
+    await ftsSearchEntities({
+      q: "wolof",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+    });
 
     expect(rpc).toHaveBeenCalledWith("afrik_search_quiz", {
       p_q: "wolof",
       p_limit: 20,
       p_offset: 0,
     });
+    expect(rpc).toHaveBeenCalledTimes(1);
   });
 
   // @req REQ-121
@@ -914,6 +920,7 @@ describe("ftsSearchEntities", () => {
       q: "Wolof",
       limit: 20,
       offset: 0,
+      lens: "quiz",
     });
 
     expect(result.quizzes).toEqual([
@@ -950,7 +957,12 @@ describe("ftsSearchEntities", () => {
     };
 
     const [quiz] = (
-      await ftsSearchEntities({ q: "Wolof", limit: 20, offset: 0 })
+      await ftsSearchEntities({
+        q: "Wolof",
+        limit: 20,
+        offset: 0,
+        lens: "quiz",
+      })
     ).quizzes;
 
     for (const leak of [
@@ -966,7 +978,7 @@ describe("ftsSearchEntities", () => {
   });
 
   // @req REQ-121
-  it("counts quiz questions in the corpus-wide total alongside the other natures", async () => {
+  it("keeps quiz questions out of the main search stream", async () => {
     quizPayload = {
       total: 9,
       rows: [quizRow("QZ_1", "Quel est l'autonyme des Wolof ?")],
@@ -982,8 +994,50 @@ describe("ftsSearchEntities", () => {
       offset: 0,
     });
 
+    expect(rpc).not.toHaveBeenCalledWith(
+      "afrik_search_quiz",
+      expect.anything()
+    );
+    expect(result.quizzes).toEqual([]);
+    expect(result.quizzesTotal).toBe(0);
+    expect(result.results.every((hit) => hit.kind !== "quiz")).toBe(true);
+    expect(result.total).toBe(1);
+  });
+
+  // @req REQ-121
+  it("returns only quiz hits and totals through the quiz lens", async () => {
+    quizPayload = {
+      total: 9,
+      rows: [quizRow("QZ_1", "Quel est l'autonyme des Wolof ?")],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_WOLOF", "Wolof")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+    });
+
+    expect(result.quizzes).toHaveLength(1);
     expect(result.quizzesTotal).toBe(9);
-    expect(result.total).toBe(10);
+    expect(result.results.map((hit) => hit.kind)).toEqual(["quiz"]);
+    expect(result.peoples).toEqual([]);
+    expect(result.countries).toEqual([]);
+    expect(result.families).toEqual([]);
+    expect(result.persons).toEqual([]);
+    expect(result.patronymes).toEqual([]);
+    expect(result.languages).toEqual([]);
+    expect(result.peoplesTotal).toBe(0);
+    expect(result.countriesTotal).toBe(0);
+    expect(result.familiesTotal).toBe(0);
+    expect(result.personsTotal).toBe(0);
+    expect(result.patronymesTotal).toBe(0);
+    expect(result.languagesTotal).toBe(0);
+    expect(result.total).toBe(9);
   });
 
   // @req REQ-121
@@ -995,7 +1049,12 @@ describe("ftsSearchEntities", () => {
     );
 
     await expect(
-      ftsSearchEntities({ q: "Wolof", limit: 20, offset: 0 })
+      ftsSearchEntities({
+        q: "Wolof",
+        limit: 20,
+        offset: 0,
+        lens: "quiz",
+      })
     ).rejects.toMatchObject({ message: "quiz boom" });
   });
 
@@ -1217,15 +1276,6 @@ describe("ftsSearchEntities", () => {
       total: 1,
       rows: [patronymeRow("PATR_NDIAYE", "Ndiaye", { normalizedScore: 0.83 })],
     };
-    quizPayload = {
-      total: 1,
-      rows: [
-        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
-          normalizedScore: 0.44,
-        }),
-      ],
-    };
-
     const result = await ftsSearchEntities({
       q: "Wolof",
       limit: 20,
@@ -1238,7 +1288,6 @@ describe("ftsSearchEntities", () => {
       ["person", "PER_DIOP"],
       ["country", "SEN"],
       ["languageFamily", "FLG_ATLANTIQUE"],
-      ["quiz", "QZ_1"],
     ]);
   });
 
@@ -1278,16 +1327,6 @@ describe("ftsSearchEntities", () => {
         }),
       ],
     };
-    quizPayload = {
-      total: 1,
-      rows: [
-        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
-          normalizedScore: 0.44,
-          snippet: "Wolof · Quel est l'autonyme",
-        }),
-      ],
-    };
-
     const result = await ftsSearchEntities({
       q: "Wolof",
       limit: 20,
@@ -1301,13 +1340,6 @@ describe("ftsSearchEntities", () => {
         name: "Wolof",
         normalizedScore: 0.97,
         snippet: "[[Wolof]]",
-      },
-      {
-        kind: "quiz",
-        id: "QZ_1",
-        name: "Quel est l'autonyme des Wolof ?",
-        normalizedScore: 0.44,
-        snippet: "Wolof · Quel est l'autonyme",
       },
     ]);
   });
