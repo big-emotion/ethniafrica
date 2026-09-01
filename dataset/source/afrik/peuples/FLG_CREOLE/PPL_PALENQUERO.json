@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_PALENQUERO",
+  "nameMain": "Palenqueros",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["COL"],
+  "content": {
+    "appellations": {
+      "mainName": "Palenqueros",
+      "selfAppellation": "Palenquero(a) ; leur langue est nommee en interne lengua ou lengua ri Palenge (« la langue de Palenque »)",
+      "exonyms": ["Afro-Colombiens de San Basilio de Palenque"],
+      "spellingAliases": [],
+      "originOfExonyms": "Le nom derive de palenque, terme espagnol designant une palissade fortifiee — un village retranche fonde par des captifs marrons (cimarrones) dans l'Amerique espagnole coloniale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Palenquero designe aujourd'hui a la fois les habitants de San Basilio de Palenque et leur langue creole ; c'est l'un des trois groupes reconnus par l'Etat colombien au sein de la population noire, afro-colombienne, raizale et palenquera, aux cotes des Raizales de l'archipel de San Andres et Providencia et des Negros/Mulatos/Afro-Colombiens. Le terme est revendique avec fierte par la communaute, qui se decrit souvent comme « africaine avant d'etre colombienne ».",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Descendants de captifs marrons (cimarrones) evades des plantations et de la ville de Cartagena des Indes aux XVIe-XVIIe siecles",
+      "Population reconnue comme l'un des trois groupes ethniques afro-colombiens officiels, aux cotes des Raizales et des Negros/Mulatos/Afro-Colombiens"
+    ],
+    "origins": {
+      "ancientOrigins": null,
+      "formationPeriod": "Fondation vers 1599-1600 par un groupe de captifs marrons menes par le capitaine Domingo Bioho, dit Benkos Bioho, dans les zones marecageuses au sud-est de Cartagena des Indes ; consolidation au cours du XVIIe siecle jusqu'a la reconnaissance royale espagnole de sa liberte en 1713.",
+      "migrationRoutes": [
+        "Traite negriere transatlantique depuis l'Afrique centrale (bassin du Congo, populations de langue kikongo, notamment les Yombe) vers le port negrier de Cartagena des Indes",
+        "Marronnage : fuite des plantations et de la ville de Cartagena vers les zones refuges des Montes de Maria, ou fut fonde le palenque"
+      ],
+      "historicalSettlementZones": [
+        "San Basilio de Palenque, municipalite de Mahates, departement de Bolivar, Colombie"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": "1599-1600 : fondation du palenque par un groupe de captifs evades sous la conduite du capitaine Benkos Bioho. 1621 : capture et execution de Benkos Bioho par les autorites coloniales espagnoles. 1713 : reconnaissance officielle par la Couronne espagnole de la liberte de San Basilio de Palenque, negociee avec l'eveque de Cartagena — San Basilio de Palenque est ainsi considere comme le premier village libre d'Afro-descendants des Ameriques. 2005 : proclamation par l'UNESCO comme Chef-d'oeuvre du patrimoine oral et immateriel de l'humanite. 2008 : inscription sur la Liste representative du patrimoine culturel immateriel de l'humanite."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation historique de type militaire et defensif (le palenque fortifie), dirigee par des capitaines marrons ; aujourd'hui, conseil communautaire et autorites locales reconnues par l'Etat colombien au titre des communautes afro-descendantes.",
+      "clanOrganization": null,
+      "ageClassSystems": "Systeme des ma-kuagro : groupes d'age constitues des l'enfance, structurant des liens de solidarite et un ensemble de droits et de devoirs mutuels entre leurs membres tout au long de la vie ; cette institution est identifiee par l'UNESCO comme un element central de l'organisation sociale de Palenque.",
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Palenquero, ou lengua ri Palenge (pln)",
+      "isoCodes": ["pln"],
+      "dialects": [],
+      "vehicularRole": "Le palenquero coexiste avec l'espagnol dans une situation diglossique ; il est reconnu comme le seul creole a base lexicale espagnole encore parle en Amerique latine, combinant un lexique majoritairement espagnol a une structure grammaticale d'origine bantoue (kikongo)."
+    },
+    "historicalAffiliation": {
+      "description": "L'origine africaine des Palenqueros de San Basilio de Palenque est documentee a la fois par la tradition orale de la communaute, par la linguistique et par la genetique. La tradition orale palenquera situe l'origine des ancetres fondateurs dans le royaume Kongo et sa region, en Afrique centrale. Cette memoire a ete corroboree par les travaux du linguiste Armin Schwegler, qui a etabli que le substrat africain dominant de la langue palenquero — dans son lexique, sa phonologie et sa morphosyntaxe — est le kikongo, langue bantoue parlee dans le bassin du fleuve Congo. Une etude genetique publiee en 2016 dans les Proceedings of the Royal Society B a confirme cette filiation cote paternel : l'analyse du chromosome Y de la population de Palenque montre une proximite genetique specifique avec le peuple yombe, un groupe de langue kikongo de la Republique du Congo, tandis que l'ADN mitochondrial (transmission maternelle) revele une ascendance subsaharienne plus large, sans source unique identifiable. Ce faisceau convergent — tradition orale, substrat linguistique kikongo et donnees genetiques — etablit un lien historique documente entre les fondateurs du palenque, captifs deportes par la traite transatlantique depuis l'Afrique centrale, et la region kongo actuelle, independamment de toute filiation linguistique directe avec une famille africaine puisque les Palenqueros parlent aujourd'hui un creole a base espagnole.",
+      "sources": [
+        {
+          "title": "Ansari-Pour, N. et al., « Palenque de San Basilio in Colombia: genetic data support an oral history of a paternal ancestry in Congo »",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4822459/",
+          "tier": "referenced",
+          "notes": "Article publie dans Proceedings of the Royal Society B: Biological Sciences (2016) ; tier fonde sur la nature academique et evaluee par les pairs de la revue."
+        },
+        {
+          "title": "Schwegler, A., « On the African origin(s) of Palenquero »",
+          "url": "https://benjamins.com/catalog/coll.54.02sch",
+          "tier": "referenced",
+          "notes": "Chapitre academique publie chez John Benjamins Publishing, etablissant le kikongo comme substrat africain dominant du palenquero a partir de donnees lexicales, phonologiques et morphosyntaxiques. Tier fonde sur la nature academique et identifiable de la publication."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": "Le lumbalu, chant et danse funeraires d'origine kongo accompagnant les veillees mortuaires, identifie par l'UNESCO comme un element central du patrimoine immateriel de Palenque.",
+      "symbols": "La figure de Benkos Bioho, capitaine fondateur et symbole de la resistance marronne ; la lengua ri Palenge elle-meme comme emblEme identitaire de la communaute.",
+      "artsAndMusic": "Expressions musicales et chorégraphiques telles que le bullerengue sentado, le son palenquero et le son de negro, accompagnant baptemes, mariages et fetes religieuses ; reconnues comme composantes du patrimoine culturel immateriel de l'humanite (UNESCO, 2005).",
+      "spiritualities": "Syncretisme entre catholicisme populaire et pratiques rituelles d'origine kongo, notamment autour du lumbalu funeraire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Negociations puis affrontements repetes avec les autorites coloniales espagnoles de Cartagena des Indes tout au long du XVIIe siecle, jusqu'a la reconnaissance royale de la liberte du palenque en 1713.",
+      "conflictsOrAlliances": "Plusieurs expeditions militaires espagnoles furent lancees contre le palenque au cours du XVIIe siecle, avant que la Couronne ne reconnaisse son autonomie par accord avec l'eveque de Cartagena en 1713.",
+      "diaspora": "Presence de Palenqueros et de leurs descendants a Cartagena des Indes et a Barranquilla ; une diaspora plus large, moins precisement denombree, existe egalement a l'etranger."
+    },
+    "demography": {
+      "totalPopulation": 6637,
+      "referenceYear": 2018,
+      "source": "DANE (Departamento Administrativo Nacional de Estadistica), Censo Nacional de Poblacion y Vivienda (CNPV) 2018 — population autoreconnue comme palenquera.",
+      "distributionByCountry": [
+        {
+          "country": "COL",
+          "population": 6637,
+          "note": "Population autoreconnue comme palenquera au recensement national de 2018, concentree a San Basilio de Palenque (Bolivar) ; en recul par rapport aux 7 470 personnes recensees en 2005. Une diaspora supplementaire, non denombree avec precision par l'Etat, vit a Cartagena, Barranquilla et a l'etranger."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "DANE — Poblacion Negra, Afrocolombiana, Raizal y Palenquera",
+        "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico/poblacion-negra-afrocolombiana-raizal-y-palenquera",
+        "tier": "official",
+        "notes": "Institut national de statistique de la Colombie (DANE) ; tier fonde sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus."
+      },
+      {
+        "title": "UNESCO — El espacio cultural de Palenque de San Basilio (Patrimonio Cultural Inmaterial)",
+        "url": "https://ich.unesco.org/es/RL/el-espacio-cultural-de-palenque-de-san-basilio-00102",
+        "tier": "official",
+        "notes": "Fiche d'inscription de l'UNESCO sur la Liste representative du patrimoine culturel immateriel de l'humanite ; tier fonde sur le catalogue de domaines autorises (unesco.org)."
+      },
+      {
+        "title": "SIL Ethnologue — Palenquero language (pln)",
+        "url": "https://www.ethnologue.com/language/pln/",
+        "tier": "official",
+        "notes": "Tier fonde sur le catalogue de domaines autorises (ethnologue.com)."
+      }
+    ]
+  }
+}

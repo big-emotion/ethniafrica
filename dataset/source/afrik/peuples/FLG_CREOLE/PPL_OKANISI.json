@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_OKANISI",
+  "nameMain": "Okanisi",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SUR"],
+  "content": {
+    "appellations": {
+      "mainName": "Okanisi",
+      "selfAppellation": "Okanisi",
+      "exonyms": ["Ndyuka", "Aukan", "Djuka", "Bush Negroes"],
+      "spellingAliases": ["Ndyuka tongo (nom courant de la langue)", "Aukaans"],
+      "originOfExonyms": "« Ndyuka » (ou « Djuka ») et « Aukan » sont les exonymes les plus courants dans la litterature academique et administrative neerlandaise puis anglophone ; « Okanisi » est l'auto-designation du peuple, attestee notamment dans le titre du dictionnaire bilingue de reference « A buku fu Okanisi anga Ingiisi wowtu » (SIL) et retenue par l'historiographie academique recente.",
+      "whyProblematic": null,
+      "contemporaryUsage": "« Ndyuka » demeure le terme le plus employe dans la litterature academique et les publications internationales (y compris pour le code ISO 639-3 djk et le nom de la langue) ; « Okanisi » est l'auto-designation employee par le peuple lui-meme et de plus en plus reprise par les chercheurs soucieux de restituer l'endonyme.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Okanisi : branche orientale des peuples marrons du Suriname, avec les Aluku et les Paramaka, qui partagent des variantes proches de la meme langue",
+      "Aluku (Boni) : peuple marron apparente, installe principalement en Guyane francaise",
+      "Paramaka : peuple marron apparente, installe le long du fleuve Marowijne"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Okanisi descendent d'Africains reduits en esclavage sur les plantations neerlandaises de l'est de la colonie du Suriname, le long des rivieres Cottica et Commewijne, qui se sont enfuis vers l'interieur forestier oriental au cours des 17e et 18e siecles. Comme pour l'ensemble des personnes deportees vers le Suriname par la traite neerlandaise entre 1658 et le debut du 19e siecle, leurs ancetres provenaient de plusieurs regions ouest et centre-africaines mises en coupe par la Compagnie neerlandaise des Indes occidentales, notamment la Cote-de-l'Or et la region Loango/Kongo-Angola.",
+      "formationPeriod": "La societe okanisi se constitue par vagues de fuites depuis les plantations de l'est de la colonie entre la fin du 17e siecle et 1760, annee du tout premier traite de paix conclu par un peuple marron avec les autorites coloniales neerlandaises.",
+      "migrationRoutes": [
+        "Plantations des rivieres Cottica et Commewijne vers les fleuves Tapanahony et Marowijne, 17e-18e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Bassins des fleuves Tapanahony et Marowijne (Suriname)",
+        "Paramaribo et sa peripherie",
+        "Guyane francaise (rive gauche du fleuve Maroni)"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Influence directe des cosmologies ouest et centre-africaines dans la religion traditionnelle winti ; contacts et echanges avec les peuples autochtones kalinya et trio de l'interieur du Suriname.",
+      "majorHistoricalEvents": "10 octobre 1760 : signature avec les autorites coloniales neerlandaises du tout premier traite de paix conclu par un peuple marron du Suriname, negocie notamment par Adyako Benti Basiton, un ancien esclave originaire de Jamaique qui connaissait le precedent traite conclu par les Marrons jamaicains. Cette date est commemoree depuis 2010 comme jour ferie national du Suriname (Dag der Marrons)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Autorite politique organisee autour d'un chef supreme (gaanman), a succession matrilineaire, assiste de capitaines de village (kabiten) et d'assesseurs (basiya) ; les decisions se prennent par consensus au sein de conseils ou les titulaires de charges se contrebalancent mutuellement.",
+      "clanOrganization": "Societe organisee en clans matrilineaires (lo) — la litterature academique en denombre quatorze —, eux-memes subdivises en groupes de filiation (bee) ; la plupart des villages sont rattaches a un lo particulier.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'appartenance clanique et les charges politiques (gaanman, kabiten) se transmettent en ligne matrilineaire, le successeur devant appartenir a la generation suivante d'un meme lo.",
+      "religiousAuthority": "Autorite religieuse et politique etroitement imbriquees : le gaanman et les kabiten jouent un role de mediation avec les ancetres, tandis que devins, guerisseurs et maitres de ceremonie funeraire (obiyaman) sont consultes par voie oraculaire. Le mouvement de l'oracle Gaan Tata, apparu au 19e siecle, illustre l'imbrication historique du religieux et du politique dans la societe okanisi, documentee par l'etude ethnographique de reference de Thoden van Velzen et van Wetering."
+    },
+    "languages": {
+      "mainLanguage": "Okanisi / Ndyuka (creole a base lexicale anglaise, djk)",
+      "isoCodes": ["djk"],
+      "dialects": [],
+      "vehicularRole": "Le okanisi n'a pas de role vehiculaire hors de la communaute ; des variantes proches sont parlees par les peuples aluku et paramaka apparentes de la meme branche orientale."
+    },
+    "historicalAffiliation": {
+      "description": "Les Okanisi (Ndyuka, Aukan) sont un peuple marron forme par les Africains reduits en esclavage sur les plantations neerlandaises de l'est de la colonie du Suriname — le long des rivieres Cottica et Commewijne — qui se sont enfuis vers l'interieur forestier au cours des 17e et 18e siecles pour fonder une societe libre le long des fleuves Tapanahony et Marowijne. Comme pour l'ensemble des personnes deportees par la traite neerlandaise vers le Suriname entre 1658 et le debut du 19e siecle, leurs ancetres provenaient de plusieurs regions de la cote atlantique et de l'Afrique centrale exploitees par la Compagnie neerlandaise des Indes occidentales. Le 10 octobre 1760, les Okanisi signent avec les autorites coloniales neerlandaises le tout premier traite de paix jamais conclu par un peuple marron du Suriname, reconnaissant leur autonomie territoriale — un precedent pour les traites saamaka (1762) et matawai qui suivront. Ce traite fut en partie negocie par Adyako Benti Basiton, un ancien esclave originaire de Jamaique qui savait lire et ecrire et connaissait le traite conclu en 1739 par les Marrons jamaicains, temoignage documente d'une circulation transatlantique de savoirs et de strategies entre societes marronnes des Ameriques. L'historiographie academique recente designe ce peuple par son auto-designation, Okanisi — retenue par l'historien Marcel van der Linden dans son etude de synthese sur trois siecles d'histoire de la communaute (1712-2010) — plutot que par les exonymes Ndyuka ou Aukan herites de l'administration coloniale et de l'ethnographie ancienne. Le lien avec l'Afrique se prolonge dans les pratiques religieuses et rituelles : la religion traditionnelle winti, la consultation oraculaire et les langues rituelles de possession spirituelle attestees chez plusieurs peuples marrons du Suriname sont documentees par la recherche linguistique et anthropologique comme des heritages directs, recomposes, de cosmologies et de pratiques ouest et centre-africaines.",
+      "sources": [
+        {
+          "title": "Marcel van der Linden, « The Okanisi: A Surinamese Maroon Community, c.1712-2010 »",
+          "url": "https://www.cambridge.org/core/journals/international-review-of-social-history/article/okanisi-a-surinamese-maroon-community-c17122010/FEB980D8422F82D4154CEFAE020DAA04",
+          "tier": "referenced",
+          "notes": "Article academique publie dans International Review of Social History, vol. 60, n°3 (Cambridge University Press, 2015), retracant trois siecles d'histoire de la communaute okanisi et retenant l'auto-designation « Okanisi » plutot que les exonymes usuels. Tier fonde sur la nature academique et evaluee par les pairs de la publication."
+        },
+        {
+          "title": "Kenneth Bilby, « How the \"Older Heads\" Talk: A Jamaican Maroon Spirit Possession Language and Its Relationship to the Creoles of Suriname and Sierra Leone »",
+          "url": "https://www.jstor.org/stable/41849105",
+          "tier": "referenced",
+          "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine jstor.org) ; etude academique documentant la parente entre les langues rituelles de possession des peuples marrons du Suriname et d'autres societes marronnes des Ameriques, temoin d'un heritage religieux africain commun."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": "La religion traditionnelle okanisi, designee winti, est une synthese de traditions religieuses africaines diverses (notamment akan, fon et kongo) recomposee dans le contexte du marronnage ; elle repose sur le culte des ancetres et la consultation oraculaire, et a coexiste historiquement avec des mouvements prophetiques comme celui de l'oracle Gaan Tata."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Okanisi n'ont pas forme de royaume mais une confederation de clans autonomes sous l'autorite d'un gaanman, reconnue comme entite politique distincte par le traite de paix de 1760 avec les Pays-Bas — le premier de ce type conclu par un peuple marron du Suriname.",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles puis apaisees avec l'administration coloniale neerlandaise apres 1760 ; relations de proximite avec les peuples marrons apparentes aluku et paramaka, issus de la meme branche orientale ; contacts avec les peuples autochtones kalinya et trio.",
+      "conflictsOrAlliances": "Guerres de marronnage contre les colons neerlandais durant la premiere moitie du 18e siecle, achevees par le traite de 1760 qui fait des Okanisi le premier peuple marron du Suriname a obtenir la reconnaissance de son autonomie territoriale.",
+      "diaspora": "Diaspora urbaine importante a Paramaribo et dans sa peripherie ; communautes transfrontalieres en Guyane francaise le long du fleuve Maroni ; diaspora aux Pays-Bas, ancienne puissance coloniale."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2014,
+      "source": "Richard Price, « The Maroon Population Explosion: Suriname and Guyane », New West Indian Guide 87(3-4), 2013 — estimation fondee sur le recensement de 2012 du Suriname et de la Guyane, projetee a 2014 ; repartition par zone telle que synthetisee dans la notice Wikipedia « Ndyuka people », verifiee en remontant a la source primaire chez Brill.",
+      "distributionByCountry": [
+        {
+          "country": "SUR",
+          "population": 56000,
+          "note": "Bassins du Marowijne et du Tapanahony (26 000) et agglomeration de Paramaribo (30 000)."
+        },
+        {
+          "country": "GUF",
+          "population": 21000,
+          "note": "Guyane francaise, rive gauche du fleuve Maroni."
+        },
+        {
+          "country": "NLD",
+          "population": 7500,
+          "note": "Diaspora aux Pays-Bas."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue — Aukan language (djk)",
+        "url": "https://www.ethnologue.com/language/djk/",
+        "tier": "official",
+        "notes": "Tier resolu depuis le catalogue des sources autorisees (entree « ethnologue »)."
+      },
+      {
+        "title": "ISO 639-3 Registration Authority — djk",
+        "url": "https://iso639-3.sil.org/code/djk",
+        "tier": "official",
+        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; confirme le code ISO 639-3 djk (Eastern Maroon Creole, anciennement « Aukan »)."
+      },
+      {
+        "title": "SIL International — A buku fu Okanisi anga Ingiisi wowtu (dictionnaire okanisi-anglais)",
+        "url": "https://www.sil.org/resources/archives/13443",
+        "tier": "official",
+        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; dictionnaire de reference compile avec des locuteurs okanisi (Evert D. Koanting, Carlo T. Velanti), attestant l'auto-designation « Okanisi » des le titre de l'ouvrage."
+      },
+      {
+        "title": "Minority Rights Group International — Maroons in Suriname",
+        "url": "https://minorityrights.org/communities/maroons/",
+        "tier": "referenced",
+        "notes": "Rapport identifiable et publie par une organisation de reference sur les droits des minorites ; distingue les Okanisi (Ndyuka) comme l'un des deux plus grands peuples marrons du Suriname et documente le traite de 1760."
+      },
+      {
+        "title": "Richard Price, « The Maroon Population Explosion: Suriname and Guyane »",
+        "url": "https://brill.com/view/journals/nwig/87/3-4/article-p323_3.xml?language=en",
+        "tier": "referenced",
+        "notes": "Article academique evalue par les pairs, revue New West Indian Guide (Brill, 2013) ; source des chiffres demographiques."
+      }
+    ]
+  }
+}

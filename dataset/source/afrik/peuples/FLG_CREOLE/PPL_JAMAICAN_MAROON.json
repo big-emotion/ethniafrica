@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_JAMAICAN_MAROON",
+  "nameMain": "Marrons jamaïcains",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["JAM"],
+  "classificationStatus": "colonial-legacy",
+  "content": {
+    "appellations": {
+      "mainName": "Marrons jamaïcains",
+      "selfAppellation": "Maroons",
+      "exonyms": ["Jamaican Maroons", "Marrons de la Jamaïque"],
+      "spellingAliases": ["Maroon", "Marron"],
+      "originOfExonyms": "Le mot anglais Maroon dérive de l'espagnol cimarrón (« sauvage », « indompté »), lui-même emprunté à une racine taïno signifiant « fugitif, échappé » ; le terme désignait à l'origine le bétail retourné à l'état sauvage à Hispaniola, puis les esclaves en fuite dans l'ensemble des Amériques.",
+      "whyProblematic": "Le terme renvoie à une catégorie forgée par les colonisateurs pour désigner des fugitifs ; les communautés elles-mêmes l'ont toutefois repris et revendiqué comme nom d'identité politique et culturelle, notamment depuis les traités de 1739-1740 qui reconnaissent leur autonomie sous ce nom.",
+      "contemporaryUsage": "« Maroons » est aujourd'hui le terme couramment employé, y compris par les communautés elles-mêmes, souvent précisé par le nom de la ville marronne d'appartenance (Accompong Town Maroons, Moore Town Maroons, Charles Town Maroons, Scott's Hall Maroons).",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Leeward Maroons (Marrons du Vent, Cockpit Country, ouest de la Jamaïque), historiquement centrés sur Accompong Town",
+      "Windward Maroons (Marrons de l'Est, Blue Mountains), historiquement centrés sur Moore Town, Charles Town et Scott's Hall"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Marrons jamaïcains descendent d'Africains réduits en esclavage qui se sont échappés des plantations espagnoles puis britanniques de la Jamaïque à partir du XVIIe siècle, en particulier après la prise de l'île par les Anglais en 1655, pour se réfugier dans les montagnes intérieures (Cockpit Country à l'ouest, Blue Mountains à l'est). Une part importante des insurrections fondatrices, entre 1673 et 1690, est menée par des captifs récemment arrivés de la Côte-de-l'Or (actuel Ghana), identifiés dans les archives coloniales comme Fante ou Coromantee (Akan), ce qui donne aux communautés marronnes naissantes une organisation politique et militaire fortement marquée par les traditions akan/ashanti.",
+      "formationPeriod": "L'identité marronne jamaïcaine se constitue durant près de soixante-dix ans de guérilla contre l'administration coloniale britannique (fin du XVIIe siècle - 1739), et se stabilise institutionnellement avec les traités de paix de 1739 (Marrons du Vent, sous Cudjoe) et 1740 (Marrons de l'Est, sous Quao), qui leur reconnaissent des terres et une autonomie judiciaire.",
+      "migrationRoutes": [
+        "Côte-de-l'Or (actuel Ghana) vers la Jamaïque, fin du XVIIe - début du XVIIIe siècle, via la traite négrière britannique, puis fuite des plantations vers l'intérieur montagneux de l'île"
+      ],
+      "historicalSettlementZones": [
+        "Cockpit Country (paroisse de St. Elizabeth, ouest de la Jamaïque)",
+        "Blue Mountains (paroisses de Portland et St. Mary, est de la Jamaïque)"
+      ],
+      "unificationsOrDivisions": "Deux ensembles distincts et rivaux à l'origine : les Marrons du Vent (Leeward) sous l'autorité unifiée de Cudjoe, et les Marrons de l'Est (Windward), de structure plus fédérative, rassemblant plusieurs chefs locaux dont Nanny et Quao.",
+      "externalInfluences": "Colonisation espagnole puis britannique de la Jamaïque ; abrogation unilatérale des dispositions des traités par les autorités britanniques en 1842.",
+      "majorHistoricalEvents": "1655 : prise de la Jamaïque par les Anglais aux Espagnols, point de départ des grandes vagues de marronnage. 1673-1690 : soulèvements fondateurs des communautés marronnes, en partie menés par des captifs coromantee (akan) récemment déportés. 1728-1739 : Première Guerre marronne. 1er mars 1739 : traité de paix entre Cudjoe et les autorités britanniques pour les Marrons du Vent, reconnaissant leur liberté et environ 1500 acres de terres dans le Cockpit Country. 23 décembre 1739 (ou 1740 selon les sources) : traité signé par Quao pour les Marrons de l'Est. 1842 : la Jamaïque annule unilatéralement l'essentiel des dispositions des traités."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Marrons du Vent (Leeward) étaient structurés sous l'autorité unique de Cudjoe, tandis que les Marrons de l'Est (Windward) formaient une fédération plus lâche de chefferies locales, sous plusieurs chefs dont Nanny et Quao ; les traités de 1739-1740 leur reconnaissent une juridiction et une administration territoriale propres, encore revendiquées aujourd'hui par certaines communautés comme Accompong.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Les cérémonies Kromanti Play sont dirigées par des spécialistes rituels marrons qui invoquent les ancêtres et communiquent avec eux dans la langue rituelle kromanti, transmise de façon largement secrète au sein des familles marronnes."
+    },
+    "languages": {
+      "mainLanguage": "Créole jamaïcain / Jamaican Patois (jam)",
+      "isoCodes": ["jam"],
+      "dialects": [
+        "Kromanti : registre cérémoniel d'origine akan, distinct du créole jamaïcain (Patois) parlé au quotidien, réservé aux rites Kromanti Play et de moins en moins transmis aux jeunes générations"
+      ],
+      "vehicularRole": "Le créole jamaïcain (Patois), à lexique majoritairement anglais, est la langue quotidienne des communautés marronnes comme du reste de la Jamaïque ; le kromanti reste cantonné à l'usage rituel."
+    },
+    "historicalAffiliation": {
+      "description": "Le lien historique des Marrons jamaïcains avec l'Afrique se noue dans la traite négrière britannique et se prolonge dans une transmission culturelle continue jusqu'à aujourd'hui. Une part significative des insurrections fondatrices des communautés marronnes, entre 1673 et 1690, est portée par des captifs récemment déportés de la Côte-de-l'Or (actuel Ghana), désignés dans les sources coloniales comme Fante ou Coromantee et rattachés au monde akan/ashanti ; ces arrivants imposent aux groupes marrons naissants une organisation politique et militaire de type akan. La figure la plus documentée de cette filiation est Nanny, cheffe spirituelle et militaire des Marrons de l'Est, dont la tradition historique jamaïcaine retient une origine ashanti ; érigée héroïne nationale de la Jamaïque en 1975 (seule femme parmi les héros nationaux), elle est associée à la conduite de la résistance jusqu'au traité de 1740. Cet héritage akan se prolonge dans la pratique rituelle du Kromanti Play, cérémonie d'invocation des ancêtres propre aux communautés marronnes, qui emploie une langue rituelle également nommée kromanti, distincte du créole jamaïcain parlé quotidiennement, et dont l'UNESCO a reconnu la valeur patrimoniale en inscrivant le patrimoine marron de Moore Town sur sa liste représentative du patrimoine culturel immatériel. Ce fil akan/ashanti, de la déportation depuis la Côte-de-l'Or jusqu'aux pratiques rituelles contemporaines, constitue le lien non linguistique documenté entre les Marrons jamaïcains et l'Afrique.",
+      "sources": [
+        {
+          "title": "Queen Nanny of the Maroons (? - 1733)",
+          "url": "https://blackpast.org/global-african-history/queen-nanny-maroons-1733/",
+          "tier": "referenced",
+          "notes": "BlackPast.org : encyclopédie en ligne à comité éditorial et auteurs identifiés (fondée par un historien universitaire) ; source de l'origine ashanti attribuée à Nanny dans l'historiographie jamaïcaine. Plafonnée volontairement à « referenced » pour cette fiche (voir directive éditoriale ETNI-1388 : aucune source « official » n'est utilisée dans ce fichier)."
+        },
+        {
+          "title": "Maroon heritage of Moore Town — Representative List of the Intangible Cultural Heritage of Humanity",
+          "url": "https://ich.unesco.org/en/RL/maroon-heritage-of-moore-town-00053",
+          "tier": "referenced",
+          "notes": "Fiche UNESCO du patrimoine culturel immatériel documentant les cérémonies Kromanti Play et leur langue rituelle d'origine akan. Bien que le catalogue de sources autorisées classe unesco.org en tier « official », cette fiche applique la directive éditoriale ETNI-1388 qui plafonne délibérément toutes les sources à « referenced »/« unverified », le ticket testant explicitement le chemin de publication sans source « official » disponible."
+        },
+        {
+          "title": "The Maroon Treaty of 1739",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-031-81880-6_2",
+          "tier": "referenced",
+          "notes": "Chapitre d'ouvrage académique (Springer) sur le traité de 1739 entre Cudjoe et les autorités britanniques, qui institutionnalise l'autonomie marronne issue de la résistance au marronnage."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": "Le Kromanti Play, cérémonie collective d'invocation des ancêtres par la danse, le chant et des styles de percussion spécifiques, reconnue par l'UNESCO comme fondement de l'identité marronne de Moore Town.",
+      "symbols": "L'abeng, corne utilisée historiquement comme instrument de communication et d'alerte lors de la résistance au marronnage, reste un symbole fort de l'identité marronne.",
+      "artsAndMusic": "Musique et tambours Kromanti (dont le tambour prentin), proclamés en 2003 chef-d'œuvre du patrimoine oral et immatériel de l'humanité par l'UNESCO avant leur inscription en 2008 sur la liste représentative.",
+      "spiritualities": "Pratiques spirituelles Kromanti d'origine akan, transmises de façon largement secrète au sein des familles marronnes et coexistant avec le christianisme pratiqué par ailleurs en Jamaïque."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies marronnes reconnues par les traités de 1739-1740 sous l'autorité de Cudjoe (Marrons du Vent) et de Nanny puis Quao (Marrons de l'Est), avec une administration territoriale et judiciaire propre sur des terres concédées par la couronne britannique.",
+      "relationsWithNeighbors": "Relations ambivalentes avec les autorités coloniales britanniques : après les traités de 1739-1740, certains Marrons sont employés comme chasseurs d'esclaves fugitifs pour le compte des Britanniques, ce qui a nourri des tensions durables avec d'autres communautés d'ascendance africaine de l'île.",
+      "conflictsOrAlliances": "Première Guerre marronne (fin des années 1720-1739) contre les forces coloniales britanniques, conclue par les traités de paix de 1739 et 1740 ; abrogation unilatérale de l'essentiel de ces traités par la Jamaïque en 1842.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 8000,
+      "referenceYear": 2024,
+      "source": "Estimation agrégée non officielle (aucun recensement jamaïcain ne dénombre les Marrons comme catégorie ethnique distincte) ; fourchette de 5 000 à 10 000 personnes réparties dans les quatre villes marronnes reconnues, croisée entre plusieurs sources secondaires.",
+      "distributionByCountry": [
+        {
+          "country": "JAM",
+          "population": 8000,
+          "percentage": 100,
+          "note": "Estimation ; principales communautés à Accompong Town (St. Elizabeth), Moore Town et Charles Town (Portland), Scott's Hall (St. Mary). Accompong Town comptait à elle seule environ 600 habitants selon une estimation récente."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "First Maroon War",
+        "url": "https://www.ebsco.com/research-starters/history/first-maroon-war",
+        "tier": "referenced",
+        "notes": "Encyclopedic reference work (EBSCO Research Starters) à auteurs identifiés, utilisé pour la chronologie et les termes des traités de 1739-1740."
+      },
+      {
+        "title": "True-Born Maroons (Kenneth Bilby)",
+        "url": "https://upf.com/book.asp?id=9780813032788",
+        "tier": "referenced",
+        "notes": "Ouvrage universitaire (University Press of Florida, 2005) fondé sur plus de deux décennies de terrain ethnographique auprès des communautés marronnes ; référence académique majeure sur la culture, l'histoire orale et la religion kromanti."
+      },
+      {
+        "title": "The Early Political Development of Jamaican Maroon Societies (Barbara Klamon Kopytoff)",
+        "url": "https://books.google.com/books/about/The_Early_Political_Development_of_Jamai.html?id=6Ot0PgAACAAJ",
+        "tier": "referenced",
+        "notes": "Travail académique de référence sur l'organisation politique des sociétés marronnes jamaïcaines et l'effet des traités de 1739-1740."
+      },
+      {
+        "title": "Meet the legendary community that fought for its freedom in Jamaica",
+        "url": "https://www.nationalgeographic.com/culture/article/legendary-community-that-fought-for-its-freedom-in-jamaica",
+        "tier": "referenced",
+        "notes": "Presse établie (National Geographic) ; source d'une estimation de population (environ 700 personnes dans les villages marrons autonomes, selon l'Institute of Jamaica) et d'éléments sur les origines akan/coromantee."
+      },
+      {
+        "title": "The Maroon Community of the Caribbean",
+        "url": "https://aaregistry.org/story/thee-maroon-community-of-the-caribbean-a-brief-article/",
+        "tier": "referenced",
+        "notes": "African American Registry, organisation éducative à but non lucratif publiant des articles signés ; source de l'étymologie cimarrón et de la population estimée d'Accompong Town (environ 600 habitants)."
+      },
+      {
+        "title": "The History of Jamaican Maroons: Resistance, Survival, and Legacy",
+        "url": "https://www.jamrockmuseum.com/education/the-history-of-jamaican-maroons-resistance-survival-and-legacy-2/",
+        "tier": "unverified",
+        "notes": "Page éducative sans auteur identifié ni source citée ; utilisée uniquement pour l'ordre de grandeur de la population totale (5 000 à 10 000 personnes), croisée avec les estimations par ville tirées de sources « referenced »."
+      }
+    ]
+  }
+}
