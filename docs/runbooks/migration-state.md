@@ -214,6 +214,7 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 
 > **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
 > the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:
