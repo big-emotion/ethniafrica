@@ -26,6 +26,7 @@ export interface PeoplesFacetFilters {
   familyId: string | null;
   countryId: string | null;
   letter: string | null;
+  search?: string | null;
 }
 
 export interface PeoplesFacetOption {
@@ -70,6 +71,8 @@ export const PEOPLES_FACET_PAGE_SIZES = [20, 50, 100] as const;
 /** The facet's filters in the shape the query layer names them. */
 function toQueryFilters(filters: PeoplesFacetFilters): PeopleQueryFilters {
   const query: PeopleQueryFilters = {};
+  const search = filters.search?.trim();
+  if (search) query.search = search;
   if (filters.familyId) query.languageFamilyId = filters.familyId;
   if (filters.countryId) query.countryId = filters.countryId;
   if (filters.letter) query.initialLetter = filters.letter;

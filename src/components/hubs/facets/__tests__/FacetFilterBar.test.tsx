@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -50,9 +50,86 @@ const COUNTRY: FacetFilterField = {
 const PEUPLES = getFacetRoute("fr", "peoples");
 const FAMILLES = getFacetRoute("fr", "families");
 
+const SEARCH = {
+  name: "q",
+  label: "Rechercher un peuple",
+  placeholder: "Nom ou identifiant",
+  value: "Akan",
+};
+
 const advanced = () => screen.getByTestId("facet-filter-advanced");
 
 describe("the facet filter bar — one line, and a fold", () => {
+  it("renders the URL-valued native search before the selects and outside the fold", () => {
+    render(
+      <FacetFilterBar
+        action={PEUPLES}
+        searchField={SEARCH}
+        primaryField={FAMILY}
+        advancedFields={[COUNTRY]}
+      />
+    );
+
+    const search = screen.getByRole("searchbox", {
+      name: "Rechercher un peuple",
+    });
+    const primary = screen.getByLabelText("Famille linguistique");
+
+    expect(search).toHaveAttribute("type", "search");
+    expect(search).toHaveAttribute("name", "q");
+    expect(search).toHaveAttribute("value", "Akan");
+    expect(search).toHaveAttribute("placeholder", "Nom ou identifiant");
+    expect(search.compareDocumentPosition(primary)).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING
+    );
+    expect(advanced().contains(search)).toBe(false);
+  });
+
+  it("resets an unsent edit when navigation changes the URL search value", () => {
+    const { rerender } = render(
+      <FacetFilterBar
+        action={PEUPLES}
+        searchField={SEARCH}
+        primaryField={FAMILY}
+      />
+    );
+
+    fireEvent.change(
+      screen.getByRole("searchbox", { name: "Rechercher un peuple" }),
+      { target: { value: "unsent edit" } }
+    );
+
+    rerender(
+      <FacetFilterBar
+        action={PEUPLES}
+        searchField={{ ...SEARCH, value: "Mandé" }}
+        primaryField={FAMILY}
+      />
+    );
+
+    expect(
+      screen.getByRole("searchbox", { name: "Rechercher un peuple" })
+    ).toHaveValue("Mandé");
+  });
+
+  it("gives search a full mobile row and a 44px minimum target before compacting", () => {
+    render(
+      <FacetFilterBar
+        action={PEUPLES}
+        searchField={SEARCH}
+        primaryField={FAMILY}
+      />
+    );
+
+    const search = screen.getByRole("searchbox", {
+      name: "Rechercher un peuple",
+    });
+    const searchSlot = search.parentElement;
+
+    expect(search).toHaveClass("min-h-11", "w-full");
+    expect(searchSlot).toHaveClass("basis-full", "md:basis-auto");
+  });
+
   // @req REQ-114
   it("keeps the facet's own axis on the line, outside the fold", () => {
     render(

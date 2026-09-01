@@ -35,10 +35,17 @@ vi.mock("next/navigation", () => ({
  * contract to test, not this route's.
  */
 vi.mock("@/components/hubs/facets/FacetCountryIndex", () => ({
-  PublishFacetCountryIndex: ({ index }: { index: unknown }) => (
+  PublishFacetCountryIndex: ({
+    index,
+    narrowing,
+  }: {
+    index: unknown;
+    narrowing: unknown;
+  }) => (
     <div
       data-testid="published-country-index"
       data-index={JSON.stringify(index)}
+      data-narrowing={JSON.stringify(narrowing)}
     />
   ),
 }));
@@ -93,6 +100,13 @@ function publishedIndex() {
   const raw = screen
     .getByTestId("published-country-index")
     .getAttribute("data-index");
+  return JSON.parse(raw ?? "{}");
+}
+
+function publishedNarrowing(): Record<string, string> {
+  const raw = screen
+    .getByTestId("published-country-index")
+    .getAttribute("data-narrowing");
   return JSON.parse(raw ?? "{}");
 }
 
@@ -193,6 +207,38 @@ describe("the peoples facet — what it reads", () => {
 });
 
 describe("the peoples facet — where the filtering happens", () => {
+  it("renders q and gives the same trimmed search to the list and globe", async () => {
+    render(
+      await renderRoute({
+        q: "  akan  ",
+        famille: "FLG_NIGER_CONGO",
+        pays: "GHA",
+      })
+    );
+
+    const expected = {
+      familyId: "FLG_NIGER_CONGO",
+      countryId: "GHA",
+      letter: null,
+      search: "akan",
+    };
+    expect(filtersPassed(mockGetPage)).toEqual(expected);
+    expect(filtersPassed(mockGetIndex)).toEqual(expected);
+    expect(
+      screen.getByRole("searchbox", { name: /rechercher un peuple/i })
+    ).toHaveValue("akan");
+  });
+
+  it("treats a whitespace-only q as no search", async () => {
+    render(await renderRoute({ q: "   " }));
+
+    expect(filtersPassed(mockGetPage)).toEqual({
+      familyId: null,
+      countryId: null,
+      letter: null,
+    });
+  });
+
   // @req REQ-106
   it("carries the reader's selects to the database, not to rows it has already loaded", async () => {
     render(await renderRoute({ famille: "FLG_NIGER_CONGO", pays: "GHA" }));
@@ -241,6 +287,15 @@ describe("the peoples facet — where the filtering happens", () => {
     const form = screen.getByTestId("facet-filter-bar");
     const carried = new FormData(form as HTMLFormElement);
     expect(carried.get("lettre")).toBe("K");
+    expect(container.querySelector('input[name="page"]')).toBeNull();
+  });
+
+  it("keeps q in the form while dropping the current page on submit", async () => {
+    const { container } = render(await renderRoute({ q: "akan", page: "4" }));
+
+    const form = screen.getByTestId("facet-filter-bar") as HTMLFormElement;
+    const data = new FormData(form);
+    expect(data.get("q")).toBe("akan");
     expect(container.querySelector('input[name="page"]')).toBeNull();
   });
 
@@ -338,6 +393,42 @@ describe("the peoples facet — paging a filtered set", () => {
     const query = new URLSearchParams(href.split("?")[1]);
     expect(query.get("page")).toBe("2");
     expect(query.get("famille")).toBe("FLG_NIGER_CONGO");
+  });
+
+  it("keeps q in pagination, page-size, letter, folded-filter, and globe addresses", async () => {
+    mockGetPage.mockResolvedValue({
+      peoples: [akan],
+      page: 1,
+      total: 45,
+      totalPages: 3,
+    });
+
+    render(
+      await renderRoute({
+        q: "akan",
+        famille: "FLG_NIGER_CONGO",
+        taille: "50",
+      })
+    );
+
+    const addresses = [
+      screen.getAllByRole("link", { name: /suivante/i })[0],
+      screen.getByRole("link", { name: "20 par page" }),
+      screen.getByRole("link", { name: "A" }),
+      screen.getByRole("link", { name: /retirer le filtre famille/i }),
+    ];
+    for (const link of addresses) {
+      const query = new URLSearchParams(
+        (link.getAttribute("href") ?? "").split("?")[1]
+      );
+      expect(query.get("q")).toBe("akan");
+    }
+
+    const globeQuery = new URLSearchParams(
+      publishedNarrowing().GHA.split("?")[1]
+    );
+    expect(globeQuery.get("q")).toBe("akan");
+    expect(globeQuery.get("pays")).toBe("GHA");
   });
 
   // @req REQ-108

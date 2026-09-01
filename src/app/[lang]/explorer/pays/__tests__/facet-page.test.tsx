@@ -337,6 +337,48 @@ describe("the countries facet's filters", () => {
     expect(screen.getByLabelText(/^Tri$/i)).toHaveValue("peuples");
   });
 
+  it("shows the trimmed text search from the URL and applies it with the other filters", async () => {
+    render(
+      await renderRoute({
+        q: "  benin  ",
+        famille: "FLG_NIGER_CONGO",
+        tri: "peuples",
+      })
+    );
+
+    expect(
+      screen.getByRole("searchbox", { name: /rechercher un pays/i })
+    ).toHaveValue("benin");
+    expect(mockGetCountryFacetSelection).toHaveBeenCalledWith({
+      languageFamilyId: "FLG_NIGER_CONGO",
+      search: "benin",
+      sort: "peuples",
+    });
+  });
+
+  it("keeps q when a folded filter is removed", async () => {
+    render(await renderRoute({ q: "benin", tri: "peuples" }));
+
+    const removeSort = screen.getByRole("link", {
+      name: /retirer le filtre tri/i,
+    });
+    const query = new URLSearchParams(
+      (removeSort.getAttribute("href") ?? "").split("?")[1]
+    );
+
+    expect(query.get("q")).toBe("benin");
+    expect(query.get("tri")).toBeNull();
+  });
+
+  it("treats a whitespace-only q as no search", async () => {
+    render(await renderRoute({ q: "   " }));
+
+    expect(mockGetCountryFacetSelection).toHaveBeenCalledWith({
+      languageFamilyId: null,
+      sort: "nom",
+    });
+  });
+
   /**
    * A native `<select>` submits its empty option as `""`. Read as a value it
    * would narrow the corpus to a family called "", and the reader would be
