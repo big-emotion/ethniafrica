@@ -23,12 +23,11 @@ import { getAfrikLanguagesByFamily } from "@/lib/supabase/queries/afrik/language
 import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
 
 /**
- * The language corpus is empty in every deployed database: no `langues/`
- * directory exists under `dataset/source/afrik/` and the migration script
- * never writes `afrik_languages`. These tests pin the behaviour the atlas
- * charter §4 demands of that gap — derive what the people fiches do declare,
- * and say that it was derived, rather than reporting a projection lag as an
- * editorial silence.
+ * The language corpus can populate `afrik_languages` from its sourced CSV and
+ * strict language fiches. These tests pin both that authoritative path and the
+ * compatibility fallback for a family with no loaded languages: derive what
+ * the people fiches declare and identify the result as derived rather than
+ * reporting a projection lag as an editorial silence.
  */
 const atlantique: LanguageFamily = {
   id: "FLG_ATLANTIQUE",
