@@ -523,7 +523,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 064, REQ-126). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
+            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
@@ -547,7 +547,7 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/PersonSearchResultV2" },
               description:
-                "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 064): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
+                "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 065): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
             },
             peoplesTotal: {
               type: "integer",

@@ -1,4 +1,4 @@
--- Migration 064 — Ranked search RPC for persons (REQ-126, ETNI-1673)
+-- Migration 065 — Ranked search RPC for persons (REQ-126, ETNI-1673)
 --
 -- Context: REQ-126 wires named persons (migration 057) into the unified
 -- search surface on the same footing as peoples/countries/families. Those

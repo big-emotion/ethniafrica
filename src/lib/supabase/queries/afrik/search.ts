@@ -3,7 +3,7 @@
  *
  * ftsSearchEntities delegates ranking to the afrik_search_peoples /
  * afrik_search_countries / afrik_search_persons functions (migrations 044,
- * 064), which rank over the weighted tsvectors of migrations 043, 057. This
+ * 065), which rank over the weighted tsvectors of migrations 043, 057. This
  * module maps their rows; it does not order them.
  */
 
