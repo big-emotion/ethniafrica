@@ -595,6 +595,34 @@ describe("RecherchePageContent", () => {
     );
   });
 
+  // The page no longer builds the query itself — it calls the shared client
+  // (ETNI-1415 AC2), which must still carry every filter to the route.
+  // @req REQ-002
+  it("carries the page limit and both fiche filters onto the request", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams(
+        "q=Zulu&classificationStatus=consensual&minConfidence=0.7"
+      ) as ReturnType<typeof nextNavigation.useSearchParams>
+    );
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    const requested = new URL(
+      String(mockFetch.mock.calls[0][0]),
+      "http://localhost"
+    );
+    expect(Object.fromEntries(requested.searchParams)).toEqual({
+      q: "Zulu",
+      limit: "20",
+      classificationStatus: "consensual",
+      minConfidence: "0.7",
+    });
+  });
+
   // @req REQ-002
   it("shows the active relation as a dismissible chip", async () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(

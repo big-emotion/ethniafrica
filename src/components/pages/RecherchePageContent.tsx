@@ -22,11 +22,8 @@ import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
-import {
-  buildSearchParams,
-  compareByRelevance,
-  mapSearchEnvelope,
-} from "@/lib/search/searchEnvelope";
+import { compareByRelevance } from "@/lib/search/searchEnvelope";
+import { search as searchCorpus } from "@/lib/afrikLoader";
 import {
   readRelation,
   relationSearchParams,
@@ -100,6 +97,10 @@ const CONFIDENCE_OPTIONS = [
 ];
 
 const ALL_FILTER_VALUES = "__all__";
+
+/** Per-kind ceilings the route applies to each ranked query. */
+const RESULTS_PER_SEARCH = 20;
+const SUGGESTIONS_PER_KEYSTROKE = 6;
 
 type SortKey = "relevance" | "az" | "za" | "pop-desc" | "pop-asc";
 
@@ -198,20 +199,14 @@ export function RecherchePageContent() {
       setLoading(true);
       setHasSearched(true);
       try {
-        const params = buildSearchParams(q, {
-          limit: 20,
-          classificationStatus: cs,
-          minConfidence: mc,
-          ...relationSearchParams(rel),
-        });
-        const res = await fetch(`/api/v2/search?${params}`);
-        if (!res.ok) {
-          setResults([]);
-          return;
-        }
-        setResults(mapSearchEnvelope(await res.json()));
-      } catch {
-        setResults([]);
+        setResults(
+          await searchCorpus(q, {
+            limit: RESULTS_PER_SEARCH,
+            classificationStatus: cs,
+            minConfidence: mc,
+            ...relationSearchParams(rel),
+          })
+        );
       } finally {
         setLoading(false);
       }
@@ -261,17 +256,11 @@ export function RecherchePageContent() {
       return;
     }
     const timer = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `/api/v2/search?${buildSearchParams(inputValue, { limit: 6 })}`
-        );
-        if (!res.ok) return;
-        const hits = mapSearchEnvelope(await res.json());
-        setSuggestions(hits);
-        setShowSuggestions(hits.length > 0);
-      } catch {
-        // ignore suggest errors silently
-      }
+      const hits = await searchCorpus(inputValue, {
+        limit: SUGGESTIONS_PER_KEYSTROKE,
+      });
+      setSuggestions(hits);
+      setShowSuggestions(hits.length > 0);
     }, 300);
     return () => clearTimeout(timer);
   }, [inputValue]);

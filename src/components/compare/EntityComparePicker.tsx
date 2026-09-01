@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { cn } from "@/lib/utils";
+import { search as searchCorpus } from "@/lib/afrikLoader";
+import type { SearchEntityType } from "@/types/afrik-frontend";
 import {
   useCompareSelection,
   type CompareCandidate,
@@ -32,10 +34,10 @@ const MAX_SUGGESTIONS = 6;
 const MIN_QUERY_LENGTH = 2;
 const DEBOUNCE_MS = 300;
 
-const ENVELOPE_KEY_BY_TYPE: Record<CompareEntityType, string> = {
-  peoples: "peoples",
-  countries: "countries",
-  "language-families": "families",
+const SEARCH_KIND_BY_TYPE: Record<CompareEntityType, SearchEntityType> = {
+  peoples: "people",
+  countries: "country",
+  "language-families": "languageFamily",
 };
 
 /**
@@ -49,22 +51,12 @@ async function defaultFetchSuggestions(
   type: CompareEntityType,
   query: string
 ): Promise<CompareCandidate[]> {
-  const params = new URLSearchParams({
-    q: query,
-    limit: String(MAX_SUGGESTIONS),
+  const hits = await searchCorpus(query, {
+    limit: MAX_SUGGESTIONS,
+    type: SEARCH_KIND_BY_TYPE[type],
   });
-  const response = await fetch(`/api/v2/search?${params}`);
-  if (!response.ok) return [];
 
-  const envelope = await response.json();
-  const rows: Record<string, unknown>[] =
-    envelope.data?.[ENVELOPE_KEY_BY_TYPE[type]] ?? [];
-
-  return rows.map((row) => ({
-    id: String(row.id),
-    type,
-    exonym: String(type === "peoples" ? row.nameMain : row.nameFr),
-  }));
+  return hits.map((hit) => ({ id: hit.id, type, exonym: hit.name }));
 }
 
 export interface EntityComparePickerProps {
