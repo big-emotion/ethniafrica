@@ -14,6 +14,7 @@
       "mainName": "<Nom principal du peuple>",
       "selfAppellation": "<Auto-appellation obligatoire — endonyme dans la langue locale>",
       "exonyms": ["<Exonyme 1 (si applicable)>"],
+      "spellingAliases": ["<Orthographe alternative 1 (si applicable)>"],
       "originOfExonyms": null,
       "whyProblematic": null,
       "contemporaryUsage": null
