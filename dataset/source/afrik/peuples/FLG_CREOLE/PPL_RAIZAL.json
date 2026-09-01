@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_RAIZAL",
+  "nameMain": "Raizales",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["COL"],
+  "classificationStatus": "contested",
+  "content": {
+    "appellations": {
+      "mainName": "Raizales",
+      "selfAppellation": "Raizal (singulier), Raizales (pluriel) — auto-désignation ethnopolitique de la population afro-antillaise anglophone autochtone de l'archipel, de l'espagnol raíz (« racine »)",
+      "exonyms": ["Isleños"],
+      "spellingAliases": ["Raizal People"],
+      "originOfExonyms": "« Isleño/a » (« insulaire ») est le terme générique employé en espagnol pour désigner tout habitant de l'archipel de San Andrés, Providencia et Santa Catalina, sans distinction ethnique ; le terme « Raizal » s'est imposé à partir des années 1990 pour affirmer l'autochtonie du groupe afro-antillais anglophone face à l'immigration continentale hispanophone croissante.",
+      "whyProblematic": "Le terme générique « isleño » efface la spécificité ethnique, linguistique et religieuse (protestante et anglophone) des Raizales en les assimilant à l'ensemble de la population résidant sur l'archipel, y compris les migrants continentaux hispanophones et catholiques installés depuis les politiques de « colombianisation » engagées à partir de 1953.",
+      "contemporaryUsage": "« Raizal » est le terme officiellement reconnu depuis la Constitution colombienne de 1991, employé par le DANE dans ses recensements et revendiqué par les organisations politiques raizales, notamment l'Archipelago Movement for Ethnic Native Self-Determination (AMEN-SD).",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Ascendance ouest-africaine (populations réduites en esclavage, transportées vers l'archipel via la Jamaïque et les Antilles britanniques)",
+      "Ascendance européenne (colons puritains anglais et écossais, planteurs jamaïcains)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Raizales descendent du peuplement de l'archipel de San Andrés, Providencia et Santa Catalina à partir de 1629 par des colons puritains anglais réunis dans la Providence Island Company, venus des Bermudes et accompagnés d'Africains réduits en esclavage, puis, au XVIIIe siècle, par des planteurs jamaïcains qui y importent une économie de plantation reposant sur une main-d'œuvre africaine asservie.",
+      "formationPeriod": "Formation du groupe entre 1629 (colonisation puritaine de Providencia) et l'abolition de l'esclavage sur l'archipel en 1834 ; consolidation politique de l'identité raizale à partir de la reconnaissance constitutionnelle de 1991.",
+      "migrationRoutes": [
+        "Traite négrière transatlantique depuis l'Afrique de l'Ouest vers la Jamaïque et les Antilles britanniques",
+        "Colonisation puritaine anglaise de Providencia depuis les Bermudes (1629-1630)",
+        "Migration de planteurs et d'esclaves jamaïcains vers San Andrés et Providencia au XVIIIe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Île de Providencia (colonie puritaine, 1629-1641)",
+        "Île de San Andrés",
+        "Île de Santa Catalina"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Colonisation puritaine anglaise, occupation espagnole après 1641, rattachement à la Grande Colombie puis à la République de Colombie, hispanisation politique et religieuse engagée à partir de 1953 sous le nom de « colombianisation ».",
+      "majorHistoricalEvents": "1629-1630 : fondation de la colonie puritaine de Providence Island par la Providence Island Company, avec une main-d'œuvre africaine réduite en esclavage. 1641 : prise espagnole de la colonie. XVIIIe siècle : repeuplement par des planteurs et esclaves jamaïcains sous domination britannique de fait. 1834 : abolition de l'esclavage sur l'archipel. 1953 : début de la politique de « colombianisation », déclarant l'archipel port franc et intensifiant l'immigration continentale hispanophone et catholique. 1991 : reconnaissance constitutionnelle du peuple raizal comme groupe ethnique de Colombie. 2012 : la Cour internationale de justice confirme la souveraineté colombienne sur les îles de San Andrés, Providencia et Santa Catalina tout en attribuant au Nicaragua une large part des eaux maritimes environnantes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Autorité religieuse historiquement baptiste (protestante), héritée de la colonisation puritaine anglaise et de l'évangélisation britannique ultérieure ; concurrencée depuis les politiques de « colombianisation » (à partir de 1953) par le catholicisme diffusé depuis le continent colombien."
+    },
+    "languages": {
+      "mainLanguage": "Créole anglais de San Andrés-Providencia (Islander Creole English), créole à base lexicale anglaise",
+      "isoCodes": ["icr"],
+      "dialects": [
+        "Créole de San Andrés, variété basilectale",
+        "Créole de Providencia, variété plus acrolectale du créole caribéen occidental"
+      ],
+      "vehicularRole": "Langue vernaculaire et identitaire de la communauté raizale, coexistant avec l'anglais standard, langue liturgique et scolaire historique, et avec l'espagnol, langue officielle de la Colombie imposée dans l'enseignement depuis les politiques de colombianisation."
+    },
+    "historicalAffiliation": {
+      "description": "Le lien historique des Raizales avec l'Afrique tient à la traite négrière transatlantique britannique, non à une filiation linguistique : leur langue vernaculaire, le créole anglais de San Andrés-Providencia, est un créole à base lexicale anglaise, sans parenté avec une langue africaine. L'archipel de San Andrés, Providencia et Santa Catalina est colonisé à partir de 1629 par des puritains anglais réunis dans la Providence Island Company, qui y importent une main-d'œuvre africaine réduite en esclavage dès les premières années de la colonie — un basculement d'une économie de serviteurs sous contrat vers une économie fondée sur l'esclavage africain documenté par l'historiographie de la colonie puritaine. Après la prise espagnole de la colonie en 1641 puis plusieurs décennies de disputes de souveraineté, l'archipel est repeuplé au XVIIIe siècle par des planteurs jamaïcains qui y transfèrent une nouvelle main-d'œuvre africaine asservie, achevant de fixer sur les îles une population afro-antillaise anglophone et protestante. L'esclavage y est aboli en 1834. C'est cette ascendance directe — captifs africains déportés vers les colonies britanniques des Caraïbes puis vers l'archipel — qui fonde le rattachement des Raizales au corpus AFRIK, indépendamment de la classification de leur créole comme langue à lexique anglais.",
+      "sources": [
+        {
+          "title": "Kupperman, K. O., « Providence Island, 1630-1641: The Other Puritan Colony »",
+          "url": "https://www.cambridge.org/core/books/abs/providence-island-16301641/providence-island-company-and-its-colony-the-program/286208AFED06439921A3752C04DE44B7",
+          "tier": "referenced",
+          "notes": "Ouvrage académique publié par Cambridge University Press (1993) ; son chapitre « Servants into Slaves » documente le basculement d'une main-d'œuvre sous contrat vers une main-d'œuvre africaine asservie sur Providence Island dès 1629-1630."
+        },
+        {
+          "title": "Black Central Americas Project — San Andrés and Providencia",
+          "url": "https://www.blackcentralamericasproject.org/map-locations/san-andres-providencia",
+          "tier": "unverified",
+          "notes": "Plateforme associative sans autorité éditoriale académique identifiée ; corrobore l'arrivée d'Africains asservis dès la colonisation puritaine de 1629-1630 et le repeuplement par des planteurs jamaïcains au XVIIIe siècle."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": "Protestantisme baptiste historique, distinct du catholicisme majoritaire en Colombie continentale, resté un marqueur identitaire fort de la communauté raizale malgré la diffusion du catholicisme depuis 1953."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Rivalité de souveraineté hispano-britannique sur l'archipel du XVIIe au XIXe siècle ; différend territorial et maritime avec le Nicaragua, tranché en 2012 par la Cour internationale de justice, qui confirme la souveraineté colombienne sur les îles elles-mêmes tout en attribuant au Nicaragua une large part des eaux maritimes environnantes.",
+      "conflictsOrAlliances": "Alternance de contrôle anglais et espagnol sur l'archipel entre le XVIIe et le XIXe siècle ; contestation continentale colombienne de l'autonomie culturelle raizale à partir des politiques de « colombianisation » de 1953.",
+      "diaspora": "Diaspora raizale sur le continent colombien, notamment à Cartagena, Barranquilla et Bogotá, et, dans une moindre mesure, au Panama et aux États-Unis, résultant des migrations économiques et de la marginalisation croissante de la population raizale sur l'archipel depuis les années 1950-1960."
+    },
+    "demography": {
+      "totalPopulation": 25515,
+      "referenceYear": 2018,
+      "source": "DANE (Departamento Administrativo Nacional de Estadística), Censo Nacional de Población y Vivienda (CNPV) 2018 — population autoreconnue comme raizale ; chiffre recoupé via l'article Wikipédia « Raizal », qui cite la même donnée du CNPV 2018.",
+      "distributionByCountry": [
+        {
+          "country": "COL",
+          "population": 25515,
+          "note": "Population autoreconnue comme raizale au recensement national de 2018, très majoritairement concentrée dans le département de l'archipel de San Andrés, Providencia y Santa Catalina, où elle ne représentait plus que 39,4% des habitants en 2015 contre 57% en 2005, du fait de la migration continentale."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue — Islander Creole English (icr)",
+        "url": "https://www.ethnologue.com/language/icr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Confirme la classification du créole de San Andrés-Providencia comme créole à base lexicale anglaise."
+      },
+      {
+        "title": "DANE — Población Negra, Afrocolombiana, Raizal y Palenquera",
+        "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/enfoque-diferencial-e-interseccional/autorreconocimiento-etnico/poblacion-negra-afrocolombiana-raizal-y-palenquera",
+        "tier": "official",
+        "notes": "Institut national de statistique de la Colombie (DANE) ; tier fondé sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus."
+      },
+      {
+        "title": "Minority Rights Group — Raizales in Colombia",
+        "url": "https://minorityrights.org/communities/raizales/",
+        "tier": "referenced",
+        "notes": "Profil publié par une organisation non gouvernementale internationale de défense des droits des minorités ; source de l'auto-désignation du groupe, de l'évolution de sa part démographique sur l'archipel et de son héritage protestant."
+      },
+      {
+        "title": "Universidad Nacional de Colombia, Análisis Político — « Colombia insular: construcción de identidad y movilización del pueblo raizal del archipiélago de San Andrés y Providencia »",
+        "url": "https://revistas.unal.edu.co/index.php/anpol/article/view/58047",
+        "tier": "referenced",
+        "notes": "Article publié dans une revue académique universitaire ; documente la politique de « colombianisation » engagée en 1953 et la mobilisation identitaire raizale ayant abouti à la reconnaissance constitutionnelle de 1991."
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_GARIFUNA",
+  "nameMain": "Garinagu",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["BLZ", "HND", "GTM", "NIC"],
+  "classificationStatus": "colonial-legacy",
+  "content": {
+    "appellations": {
+      "mainName": "Garinagu",
+      "selfAppellation": "Garinagu (forme plurielle et collective) ; Garifuna au singulier, qui désigne aussi bien un individu que la langue",
+      "exonyms": ["Black Caribs", "Caraïbes noirs"],
+      "spellingAliases": ["Garifuna", "Garífuna"],
+      "originOfExonyms": "« Black Caribs » est une désignation coloniale britannique apparue au XVIIIe siècle pour distinguer les Garinagu, à l'ascendance mêlée afro-amérindienne, des Kalinagos de Saint-Vincent que les colons qualifiaient par contraste de « Yellow » ou « Red Caribs ».",
+      "whyProblematic": "L'exonyme « Black Caribs » a servi, dans la bouche des administrateurs coloniaux britanniques, à minorer la légitimité des Garinagu en tant que peuple autochtone de Saint-Vincent en insistant sur leur ascendance africaine plutôt que sur leur enracinement insulaire ; les Garinagu revendiquent au contraire cette double filiation africaine et kalinago comme le cœur de leur identité.",
+      "contemporaryUsage": "Garinagu et Garifuna sont les termes acceptés et employés par la communauté elle-même, y compris dans les instruments internationaux (UNESCO) et par les organisations garinagu ; « Black Caribs » reste un terme historique, rarement utilisé aujourd'hui hors contexte académique.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Ascendance ouest-africaine (populations akan, dont ashanti, igbo et yoruba selon les études historiques disponibles)",
+      "Kalinago (Caraïbes insulaires de Saint-Vincent)",
+      "Arawak"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Garinagu ne descendent d'aucune ethnie africaine unique : leur formation remonte à des captifs ouest-africains, rescapés vers 1635 (parfois datés de 1675 selon les sources) du naufrage de navires négriers espagnols au large de l'île de Bequia, dans l'archipel de Saint-Vincent-et-les-Grenadines, qui se sont ensuite mêlés à la population amérindienne kalinago déjà installée sur l'île de Saint-Vincent.",
+      "formationPeriod": "L'identité garinagu se cristallise entre le milieu du XVIIe siècle, au moment du métissage afro-kalinago à Saint-Vincent, et 1797, année de la déportation britannique vers le Honduras.",
+      "migrationRoutes": [
+        "Naufrage de navires négriers espagnols au large de Bequia et arrivée à Saint-Vincent (v. 1635-1675)",
+        "Déportation britannique de Saint-Vincent vers l'île de Roatán, au Honduras (avril 1797)",
+        "Diffusion depuis Roatán vers la côte continentale du Honduras, puis vers le Belize, le Guatemala et le Nicaragua (XIXe siècle)",
+        "Migration économique vers les États-Unis (New York, Los Angeles) au XXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Île de Saint-Vincent (Petites Antilles)",
+        "Île de Roatán (Honduras)",
+        "Côte caraïbe du Honduras, du Belize, du Guatemala et du Nicaragua"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Métissage avec la population amérindienne kalinago de Saint-Vincent ; influence coloniale française puis britannique sur l'île avant la déportation de 1797.",
+      "majorHistoricalEvents": "V. 1635 (ou 1675 selon les sources) : naufrage de navires négriers espagnols au large de Bequia, dont les survivants rejoignent Saint-Vincent. 1795 : mort au combat du chef Joseph Chatoyer (Satuye) face aux troupes britanniques. 1796 : défaite finale des Garinagu à Saint-Vincent. 11 avril 1797 : déportation d'environ 2 026 survivants par la marine britannique vers l'île de Roatán, au Honduras. 2001 : proclamation par l'UNESCO de la langue, la danse et la musique garinagu comme chef-d'œuvre du patrimoine oral et immatériel de l'humanité ; inscription en 2008 sur la Liste représentative du patrimoine culturel immatériel de l'humanité."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Les buyei (chamanes-prêtres), identifiés dès l'enfance, dirigent les rituels religieux, notamment le dügü, et assurent la médiation entre les vivants et les ancêtres (hiuruha)."
+    },
+    "languages": {
+      "mainLanguage": "Garifuna, langue arawak (maipuréenne), branche ta-maipuréenne/caribéenne (groupe iñeri) — et non un créole à lexique européen, malgré un vocabulaire fortement marqué par des apports ouest-africains et par l'influence du kalinago insulaire",
+      "isoCodes": ["cab"],
+      "dialects": [],
+      "vehicularRole": null
+    },
+    "historicalAffiliation": {
+      "description": "Les Garinagu ne sont pas rattachés à l'Afrique par une filiation linguistique : leur langue, le garifuna, appartient à la famille arawak/maipuréenne (branche ta-maipuréenne, groupe iñeri) et n'a pas d'origine africaine. Le lien historique avec l'Afrique tient à la traite négrière transatlantique et à l'épisode fondateur du naufrage, vers 1635 (parfois daté de 1675), de navires négriers espagnols au large de l'île de Bequia, dans l'archipel de Saint-Vincent-et-les-Grenadines : les captifs qui parviennent à s'échapper et à rejoindre la terre, originaires selon les études historiques disponibles de populations akan (dont ashanti), igbo et yoruba d'Afrique de l'Ouest, se mêlent à la population amérindienne kalinago (« Caraïbes insulaires ») déjà installée sur Saint-Vincent, donnant naissance au peuple garinagu, désigné « Black Caribs » dans la terminologie coloniale britannique. Après plus d'un siècle de résistance à la colonisation britannique de l'île, marquée par la mort au combat du chef Joseph Chatoyer (Satuye) en 1795, les Garinagu sont vaincus en 1796 ; environ 2 026 survivants sont déportés par la marine britannique le 11 avril 1797 sur l'île alors inhabitée de Roatán, au large du Honduras, d'où ils essaiment ensuite vers les côtes continentales du Honduras, du Belize, du Guatemala et du Nicaragua. C'est cette généalogie — captivité et déportation depuis l'Afrique de l'Ouest, puis métissage antillais et déportation coloniale secondaire vers l'Amérique centrale — qui fonde l'appartenance des Garinagu au corpus AFRIK, indépendamment de la classification linguistique de leur langue.",
+      "sources": [
+        {
+          "title": "EBSCO Research Starters — Garifuna people (Josephine Campbell, 2023)",
+          "url": "https://www.ebsco.com/research-starters/language-and-linguistics/garifuna-people",
+          "tier": "referenced",
+          "notes": "Article signé, publié par EBSCO Research Starters ; détaille l'origine akan/ashanti, igbo et yoruba des naufragés de 1635 et le déroulement de la déportation de 1797 vers Roatán."
+        },
+        {
+          "title": "Encyclopaedia Britannica — Saint Vincent and the Grenadines: History",
+          "url": "https://www.britannica.com/place/Saint-Vincent-and-the-Grenadines/History",
+          "tier": "referenced",
+          "notes": "Encyclopédie de référence à autorité éditoriale identifiée ; corrobore le naufrage de navires négriers espagnols au large de Saint-Vincent en 1635 et la formation des « Black Caribs » par métissage avec les Kalinagos."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": "Dügü (« adugurahani », littéralement « fouler la terre ») : rituel majeur, préparé pendant environ une année et célébré sur plusieurs jours, visant à apaiser les ancêtres et à rétablir l'équilibre spirituel, physique et social de la famille.",
+      "symbols": "Drapeau garinagu à trois bandes horizontales noire, blanche et jaune : le noir renvoie aux épreuves traversées par le peuple, le blanc à la paix, le jaune à l'ascendance amérindienne et à l'espoir.",
+      "artsAndMusic": "Punta et paranda, deux genres musicaux et chorégraphiques majeurs mêlant éléments arawak et africains, joués aux tambours ; la langue, la danse et la musique garinagu ont été proclamées en 2001 chef-d'œuvre du patrimoine oral et immatériel de l'humanité par l'UNESCO.",
+      "spiritualities": "Syncrétisme entre le culte ancestral, dirigé par les buyei, et le catholicisme ; les défunts sont considérés comme des agents actifs de la vie quotidienne, capables de protéger ou de sanctionner les vivants selon le respect des obligations rituelles envers eux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Alliances avec la France contre la Grande-Bretagne à Saint-Vincent au XVIIIe siècle, avant la défaite finale de 1796.",
+      "conflictsOrAlliances": "Résistance armée prolongée aux tentatives britanniques de colonisation de Saint-Vincent, menée notamment par le chef Joseph Chatoyer (Satuye), tué au combat en 1795 ; défaite finale en 1796 suivie de la déportation de 1797 vers Roatán.",
+      "diaspora": "Diaspora importante aux États-Unis depuis le XXe siècle, du fait de migrations économiques, en particulier à New York — la plus importante concentration garinagu hors d'Amérique centrale — et à Los Angeles, où se sont installés en majorité les Garinagu originaires du Belize."
+    },
+    "demography": {
+      "totalPopulation": 222000,
+      "referenceYear": 2003,
+      "source": "Minority Rights Group, « Garifuna (Garinagu) in Belize » — estimations agrégées par pays, dernière année pour laquelle un chiffrage par pays est disponible, faute de recensement national désagrégeant les Garinagu comme groupe ethnique distinct dans la plupart des pays concernés (le Belize excepté).",
+      "distributionByCountry": [
+        {
+          "country": "HND",
+          "population": 200000,
+          "note": "Estimation 2003 (Minority Rights Group), principalement le long de la côte nord du Honduras"
+        },
+        {
+          "country": "BLZ",
+          "population": 15000,
+          "note": "Estimation 2003 (Minority Rights Group) ; le Belize est le seul des quatre pays à recenser les Garinagu comme groupe ethnique distinct"
+        },
+        {
+          "country": "GTM",
+          "population": 5000,
+          "note": "Estimation 2003 (Minority Rights Group), essentiellement à Livingston"
+        },
+        {
+          "country": "NIC",
+          "population": 2000,
+          "note": "Estimation 2003 (Minority Rights Group)"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue — Garifuna language (cab)",
+        "url": "https://www.ethnologue.com/language/cab/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Confirme la classification arawak/maipuréenne (ta-maipuréenne, groupe iñeri) de la langue garifuna."
+      },
+      {
+        "title": "UNESCO — Language, dance and music of the Garifuna",
+        "url": "https://ich.unesco.org/en/RL/language-dance-and-music-of-the-garifuna-00001",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for unesco.org (sous-domaine ich.unesco.org). Fiche d'inscription sur la Liste représentative du patrimoine culturel immatériel de l'humanité (proclamation 2001, inscription 2008)."
+      },
+      {
+        "title": "Minority Rights Group — Garifuna (Garinagu) in Belize",
+        "url": "https://minorityrights.org/communities/garifuna-garinagu/",
+        "tier": "referenced",
+        "notes": "Profil publié par une organisation non gouvernementale internationale de défense des droits des minorités ; source des estimations de population par pays et de l'usage courant des autonymes Garinagu/Garífuna."
+      },
+      {
+        "title": "Encyclopedia.com — Garifuna Religion",
+        "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/garifuna-religion",
+        "tier": "unverified",
+        "notes": "Encyclopédie tertiaire agrégeant des notices de référence sans autorité éditoriale académique directement vérifiable ; utilisée pour la description du dügü et du rôle des buyei."
+      },
+      {
+        "title": "Warasa Garifuna Drum School — The Garifuna flag",
+        "url": "https://www.warasadrumschool.com/garifuna-culture/the-garifuna-flag/",
+        "tier": "unverified",
+        "notes": "Site associatif communautaire sans autorité éditoriale académique identifiée ; utilisé pour la symbolique des couleurs du drapeau garinagu (noir, blanc, jaune)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_QUILOMBOLA",
+  "nameMain": "Quilombolas",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["BRA"],
+  "content": {
+    "appellations": {
+      "mainName": "Quilombolas",
+      "selfAppellation": "Quilombola (autodesignation fondee sur l'autoattribution, au sens du decret federal 4.887/2003)",
+      "exonyms": ["Remanescentes de quilombo", "Comunidade quilombola"],
+      "spellingAliases": [],
+      "originOfExonyms": "Le terme quilombola derive de quilombo, lui-meme issu du kimbundu kilombo (« campement de guerre »), parle en Angola. Chez les Imbangala d'Angola, le kilombo designait a la fois un campement fortifie et une institution militaire initiatique reunissant des combattants de lignages divers ; le terme fut repris au Bresil colonial pour designer les etablissements de personnes africaines et afro-descendantes en fuite de l'esclavage.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Quilombola est le terme juridique et politique en usage au Bresil, employe par l'Etat (IBGE, Fundacao Cultural Palmares) comme par les communautes elles-memes selon un critere d'autoattribution. Il coexiste avec des autodesignations locales plus anciennes comme terras de preto, comunidade negra rural ou mocambo, que certaines communautes continuent de revendiquer meme apres leur certification officielle comme quilombolas.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Descendants de personnes africaines reduites en esclavage, originaires en majorite de l'Afrique centre-occidentale de langue bantoue (Angola, bassin du Congo) et, dans une moindre mesure, de l'Afrique de l'Ouest et de l'Afrique orientale (region du Mozambique)",
+      "Communautes rurales et urbaines reconnues aujourd'hui par autoattribution ethnique-raciale au titre du decret federal 4.887/2003"
+    ],
+    "origins": {
+      "ancientOrigins": null,
+      "formationPeriod": "Du XVIe au XIXe siecle, pendant toute la duree de l'esclavage colonial et imperial au Bresil (1501-1888), avec une intensification particuliere a partir du debut du XVIIe siecle, periode de l'apogee du Quilombo dos Palmares (v. 1605-1694).",
+      "migrationRoutes": [
+        "Traite negriere transatlantique depuis l'Afrique centre-occidentale (Angola, Congo) et, secondairement, l'Afrique de l'Ouest et l'Afrique orientale (Mozambique) vers les ports bresiliens (Salvador de Bahia, Recife, Rio de Janeiro)",
+        "Marronnage : fuite des plantations et des villes coloniales vers des zones refuges interieures (forets, montagnes, littoral isole) ou se sont formes les quilombos"
+      ],
+      "historicalSettlementZones": [
+        "Bresil : concentration dans la region du Nordeste (68,1 % de la population quilombola recensee en 2022), notamment au Maranhao, et en Amazonie legale (32,1 % de la population quilombola nationale)"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": "1605-1694 : formation puis apogee du Quilombo dos Palmares (actuels Etats d'Alagoas et du Pernambouc), surnomme Angola Janga (« petite Angola »), detruit en 1694 par les troupes de Domingos Jorge Velho ; mort de son dernier chef, Zumbi, le 20 novembre 1695, date devenue le Jour national de la Conscience noire au Bresil. 13 mai 1888 : abolition de l'esclavage (Lei Aurea). 1988 : la nouvelle Constitution federale reconnait aux communautes quilombolas un droit a la propriete collective de leurs terres (art. 68 des Dispositions constitutionnelles transitoires). 2003 : le decret 4.887 fixe la procedure d'autoattribution et de certification par la Fundacao Cultural Palmares. 2022 : le recensement demographique denombre pour la premiere fois specifiquement la population quilombola du pays."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "A Palmares, une organisation de type etatique s'est structuree autour d'un chef (roi), d'un conseil et d'une hierarchie militaire, calquee sur le modele politique et militaire des Etats d'Angola ; dans les communautes quilombolas contemporaines, l'organisation repose sur des associations communautaires juridiquement reconnues et des assemblees locales.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "L'appartenance quilombola repose sur la filiation et la memoire genealogique collective — une ascendance noire liee a la resistance historique a l'esclavage — criteres retenus par le decret federal 4.887/2003 pour la certification des communautes.",
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Portugais (por)",
+      "isoCodes": ["por"],
+      "dialects": [
+        "Cupopia (communaute de Cafundo, Etat de Sao Paulo) : variete de portugais rural a lexique d'origine bantoue (kimbundu, kikongo, umbundu, environ 160 items lexicaux recenses) et grammaire portugaise, employee comme code interne rituel et identitaire"
+      ],
+      "vehicularRole": "Le portugais est la langue commune a toutes les communautes quilombolas ; les parlers a lexique africain comme la cupopia restent circonscrits a un usage rituel ou identitaire interne et ne jouent aucun role vehiculaire."
+    },
+    "historicalAffiliation": {
+      "description": "Les quilombolas descendent de personnes africaines deportees par la traite negriere transatlantique vers le Bresil colonial, puis de leurs descendants ayant forme des communautes de resistance (les quilombos) par la fuite des plantations. La majorite des captifs deportes vers le Bresil provenaient de l'Afrique centre-occidentale de langue bantoue (actuels Angola et Republique du Congo), avec des apports plus tardifs venus d'Afrique de l'Ouest et, via le commerce indien-oceanique, du Mozambique. L'exemple le plus documente est le Quilombo dos Palmares (v. 1605-1694), qui rassembla jusqu'a plusieurs dizaines de milliers de personnes et fut surnomme Angola Janga (« petite Angola ») en raison du poids demographique et culturel angolais parmi ses habitants. L'historien John Thornton a montre que l'organisation politique et militaire de Palmares — dirigee par un roi entoure d'un conseil et d'une hierarchie guerriere — reproduisait le modele du kilombo, institution militaire d'origine imbangala (Angola) qui integrait des captifs de guerre de lignages divers dans une nouvelle communaute combattante ; ce modele aurait ete transpose au Bresil par des captifs eux-memes issus de ces societes guerrieres angolaises. Cette filiation politique et culturelle avec l'Afrique centre-occidentale, documentee par l'historiographie, constitue le lien historique non linguistique retenu ici, les quilombolas parlant aujourd'hui le portugais et non une langue africaine.",
+      "sources": [
+        {
+          "title": "Thornton, J. K., « Les Etats de l'Angola et la formation de Palmares (Bresil) »",
+          "url": "https://shs.cairn.info/revue-annales-2008-4-page-769?lang=fr",
+          "tier": "referenced",
+          "notes": "Article academique publie dans Annales. Histoire, Sciences Sociales (2008), demontrant la filiation entre les structures politiques et militaires angolaises (institution du kilombo chez les Imbangala) et l'organisation de Palmares. Tier fonde sur la nature academique, evaluee par les pairs, de la revue Annales HSS."
+        },
+        {
+          "title": "Anderson, R. N., « The Quilombo of Palmares: A New Overview of a Maroon State in Seventeenth-Century Brazil »",
+          "url": "https://www.cambridge.org/core/journals/journal-of-latin-american-studies/article/abs/quilombo-of-palmares-a-new-overview-of-a-maroon-state-in-seventeenthcentury-brazil/AD9E754B4082F2086559E701BD8B37BB",
+          "tier": "referenced",
+          "notes": "Journal of Latin American Studies (Cambridge University Press, 1996) ; synthese historiographique de reference sur l'origine centre-africaine (Angola, Congo) de la majorite des captifs ayant forme Palmares."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": "Zumbi dos Palmares, dernier chef de Palmares, erige en figure symbolique nationale de la resistance noire bresilienne ; le 20 novembre, jour de sa mort (1695), est devenu le Jour national de la Conscience noire.",
+      "artsAndMusic": "Plusieurs communautes quilombolas sont associees a des expressions musicales et chorégraphiques d'origine africaine reconnues comme patrimoine culturel immateriel bresilien, telles que le jongo et la samba de roda du Reconcavo baiano.",
+      "spiritualities": "De nombreuses communautes quilombolas sont des foyers de religions afro-bresiliennes (candomble, umbanda), souvent en syncretisme avec le catholicisme populaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Quilombo dos Palmares (v. 1605-1694) constitue l'exemple historique le plus documente d'une formation politique quilombola de type etatique, dotee de chefs successifs (dont Ganga Zumba puis Zumbi) et d'une organisation militaire structuree.",
+      "relationsWithNeighbors": "Palmares negocia puis s'affronta a plusieurs reprises avec les autorites coloniales portugaises et, temporairement, neerlandaises, ainsi qu'avec des expeditions armees (bandeiras) financees par les colons.",
+      "conflictsOrAlliances": "De multiples expeditions militaires portugaises et neerlandaises furent lancees contre Palmares au cours du XVIIe siecle, jusqu'a sa destruction finale en 1694 par les troupes de Domingos Jorge Velho et la mort de Zumbi en 1695.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 1330186,
+      "referenceYear": 2022,
+      "source": "IBGE (Institut bresilien de geographie et de statistique), Recensement demographique 2022, 2e apuration des resultats sur la population quilombola (decembre 2023).",
+      "distributionByCountry": [
+        {
+          "country": "BRA",
+          "population": 1330186,
+          "note": "Population recensee dans 1 696 municipalites et 8 441 localites quilombolas ; 68,1 % dans la region du Nordeste (notamment le Maranhao) et 32,1 % en Amazonie legale ; seulement 4,3 % vit dans des territoires deja officiellement regularises."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "IBGE News Agency — 2022 Census: Brazil has 1.3 million quilombolas in 1,696 municipalities",
+        "url": "https://censo2022.ibge.gov.br/en/component/content/article/2184-news-agency/news/37488-brazil-has-1-3-million-quilombolas-in-1-696-municipalities.html",
+        "tier": "official",
+        "notes": "Institut national de statistique du Bresil (IBGE) ; tier fonde sur le statut d'institut national de statistique reconnu par la doctrine des sources du corpus."
+      },
+      {
+        "title": "Fundacao Cultural Palmares — Informacoes Quilombolas",
+        "url": "https://www.gov.br/palmares/pt-br/departamentos/protecao-preservacao-e-articulacao/informacoes-quilombolas",
+        "tier": "referenced",
+        "notes": "Organisme federal charge de la certification des communautes quilombolas (decret 4.887/2003) ; source pour le critere d'autoattribution et les autres autodesignations locales. Tier referenced : organisme public identifiable et verifiable, mais non un institut national de statistique."
+      },
+      {
+        "title": "Oxford English Dictionary — quilombo, n.",
+        "url": "https://www.oed.com/dictionary/quilombo_n",
+        "tier": "referenced",
+        "notes": "Dictionnaire academique a auteurs identifies (Oxford University Press) ; confirme l'etymologie kimbundu (kilombo) du terme quilombo, croisee independamment avec les travaux historiques de Thornton citant la meme racine."
+      }
+    ]
+  }
+}
