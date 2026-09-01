@@ -108,7 +108,7 @@ describe("OpenAPI v2 language detail contract", () => {
       "sources",
     ]);
     expect(language.properties).toEqual({
-      id: { type: "string", pattern: "^[a-z]{3}$" },
+      id: { type: "string", pattern: "^[a-z]{3}$", example: "yor" },
       name: { type: "string", minLength: 1 },
       nameProvenance: {
         type: "string",

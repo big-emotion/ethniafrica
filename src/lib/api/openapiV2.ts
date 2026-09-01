@@ -853,7 +853,11 @@ const options: swaggerJsdoc.Options = {
         LanguageV2: {
           type: "object",
           properties: {
-            id: { type: "string", pattern: "^[a-z]{3}$" },
+            id: {
+              type: "string",
+              pattern: "^[a-z]{3}$",
+              example: "yor",
+            },
             name: { type: "string", minLength: 1 },
             nameProvenance: {
               type: "string",
