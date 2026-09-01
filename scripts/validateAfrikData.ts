@@ -1215,13 +1215,20 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
  * checked that a code was three uppercase letters, which is how "GBN" stood in
  * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
  * meaningless, and silently undrawable.
+ *
+ * BRA and HTI (REQ-130, supersedes REQ-001) are the host countries the
+ * Afro-descendant peoples of DEC-030 need — attached to the corpus by
+ * history rather than linguistic filiation — ahead of corpus extension
+ * beyond the African continent.
  */
 export const OFF_MAP_COUNTRIES = new Set([
   "AUS",
+  "BRA",
   "CAN",
   "ESP",
   "FRA",
   "GBR",
+  "HTI",
   "NLD",
   "OMN",
   "PRT",

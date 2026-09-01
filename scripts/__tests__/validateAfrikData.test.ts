@@ -5,6 +5,7 @@
 // @req REQ-030
 // @req REQ-031
 // @req REQ-032
+// @req REQ-130
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
 import { join, resolve } from "path";
@@ -21,6 +22,8 @@ import {
   checkCountryNameFrDistinctFromOfficial,
   checkFamilyStructuralCompleteness,
   checkCountryCodesResolve,
+  OFF_MAP_COUNTRIES,
+  AFRICAN_REFERENCE_COUNTRY_CODES,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -576,6 +579,50 @@ describe("validateAfrikData – new integrity checks", () => {
 
       writeDistribution([{ country: "JPN", population: 1200 }]);
       expect(checkCountryCodesResolve(tmpDir).ok).toBe(false);
+    });
+
+    // DEC-030 attaches Afro-descendant peoples by history rather than
+    // filiation; their host countries — Brazil, Haiti — carry no admin-0
+    // geometry, so a fiche declaring them needs the same off-map path USA
+    // already uses.
+    // @req REQ-130
+    it("accepts Brazil and Haiti as declared off-map presences", () => {
+      writeDistribution([
+        { country: "BRA", population: 15000000 },
+        { country: "HTI", population: 9000000 },
+      ]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // Extending the off-map list must not change how a country already
+    // covered by admin-0 geometry resolves.
+    // @req REQ-130
+    it("still resolves an African country through admin-0 geometry, unaffected by the off-map list", () => {
+      writeDistribution([{ country: "ZAF", population: 10000000 }]);
+
+      const result = checkCountryCodesResolve(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+  });
+
+  // ── OFF_MAP_COUNTRIES (REQ-130) ────────────────────────────────────────────
+
+  describe("OFF_MAP_COUNTRIES holds the non-African host codes (REQ-130)", () => {
+    // @req REQ-130
+    it("declares Brazil and Haiti alongside the pre-existing codes", () => {
+      expect(OFF_MAP_COUNTRIES.has("BRA")).toBe(true);
+      expect(OFF_MAP_COUNTRIES.has("HTI")).toBe(true);
+      expect(OFF_MAP_COUNTRIES.has("USA")).toBe(true);
+    });
+
+    // @req REQ-130
+    it("never holds a code from the African reference set", () => {
+      for (const code of OFF_MAP_COUNTRIES) {
+        expect(AFRICAN_REFERENCE_COUNTRY_CODES.has(code)).toBe(false);
+      }
     });
   });
 
