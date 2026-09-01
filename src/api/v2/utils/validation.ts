@@ -2,9 +2,12 @@
  * Validation utilities for API v2
  */
 
+import { mediaSchema, type MediaInput } from "@/api/v2/schemas/media";
+
 /**
  * Validate and parse page parameter
  */
+// @req REQ-110
 export function validatePage(page?: string | null): number {
   if (!page) return 1;
   const parsed = parseInt(page, 10);
@@ -14,6 +17,7 @@ export function validatePage(page?: string | null): number {
 /**
  * Validate and parse perPage parameter
  */
+// @req REQ-110
 export function validatePerPage(
   perPage?: string | null,
   max: number = 100
@@ -27,6 +31,7 @@ export function validatePerPage(
 /**
  * Validate ISO country code (3 letters)
  */
+// @req REQ-084
 export function validateCountryId(id: string): boolean {
   return /^[A-Z]{3}$/.test(id);
 }
@@ -34,6 +39,7 @@ export function validateCountryId(id: string): boolean {
 /**
  * Validate FLG_ language family ID
  */
+// @req REQ-084
 export function validateLanguageFamilyId(id: string): boolean {
   return /^FLG_[A-Z_]+$/.test(id);
 }
@@ -41,6 +47,15 @@ export function validateLanguageFamilyId(id: string): boolean {
 /**
  * Validate PPL_ people ID
  */
+// @req REQ-084
 export function validatePeopleId(id: string): boolean {
   return /^PPL_[A-Z_]+$/.test(id);
+}
+
+/**
+ * Reject invalid media before it reaches the persistence layer.
+ */
+// @req REQ-128
+export function validateMedia(media: unknown): MediaInput {
+  return mediaSchema.parse(media);
 }
