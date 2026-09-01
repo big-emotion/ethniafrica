@@ -134,6 +134,14 @@ interface AssertionRow {
   field_path: string;
   statement?: string;
   source_ids?: string[];
+  fiche_revision_id?: string;
+}
+
+interface FicheRevisionRow {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  version: number;
 }
 
 interface NameRecordRow {
@@ -154,10 +162,47 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const sources: SourceRow[] = [];
   const assertions: AssertionRow[] = [];
   const nameRecords: NameRecordRow[] = [];
+  const ficheRevisions: FicheRevisionRow[] = [];
   let idCounter = 0;
   const nextId = (prefix: string) => `${prefix}-${++idCounter}`;
 
   const from = vi.fn((table: string) => {
+    if (table === "fiche_revisions") {
+      return {
+        select: vi.fn(() => {
+          const filters: Record<string, unknown> = {};
+          const builder = {
+            eq: vi.fn((col: string, value: unknown) => {
+              filters[col] = value;
+              return builder;
+            }),
+            order: vi.fn(() => builder),
+            limit: vi.fn(() => builder),
+            maybeSingle: vi.fn(async () => {
+              const matches = ficheRevisions
+                .filter(
+                  (r) =>
+                    r.entity_type === filters.entity_type &&
+                    r.entity_id === filters.entity_id
+                )
+                .sort((a, b) => b.version - a.version);
+              return { data: matches[0] ?? null, error: null };
+            }),
+          };
+          return builder;
+        }),
+        insert: vi.fn((row: Omit<FicheRevisionRow, "id">) => ({
+          select: vi.fn(() => ({
+            single: vi.fn(async () => {
+              const created = { id: nextId("rev"), ...row };
+              ficheRevisions.push(created);
+              return { data: { id: created.id }, error: null };
+            }),
+          })),
+        })),
+      };
+    }
+
     if (table === "sources") {
       return {
         upsert: vi.fn((row: Omit<SourceRow, "id">) => ({
@@ -251,7 +296,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     throw new Error(`Unexpected table in test double: ${table}`);
   });
 
-  return { client: { from }, sources, assertions, nameRecords };
+  return { client: { from }, sources, assertions, nameRecords, ficheRevisions };
 }
 
 // ─── tests ──────────────────────────────────────────────────────────────────
@@ -440,6 +485,29 @@ describe("nameRecordJsonLoader", () => {
     });
 
     // @req REQ-135
+    it("creates one fiche_revisions placeholder per entity and reuses it across every name entry in the dossier (assertions.fiche_revision_id is NOT NULL, migration 020)", async () => {
+      const database = createSupabaseDouble();
+      const dossier = patronymeDossierWithSources([dialloVariantSource]);
+      dossier.names.push(
+        { ...dossier.names[0], nameText: "Jallow", sortRank: 1 },
+        { ...dossier.names[0], nameText: "Jalloh", sortRank: 2 }
+      );
+
+      await loadNameRecords(database.client as never, [dossier]);
+
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.ficheRevisions[0]).toMatchObject({
+        entity_type: "patronyme",
+        entity_id: "PAT_DIALLO",
+        version: 1,
+      });
+      const revisionId = database.ficheRevisions[0].id;
+      expect(
+        database.assertions.every((a) => a.fiche_revision_id === revisionId)
+      ).toBe(true);
+    });
+
+    // @req REQ-135
     it("loads a patronyme entry sourced only at unverified (Source Tier Policy: nothing is forbidden, everything is labelled)", async () => {
       const database = createSupabaseDouble();
       const dossier = patronymeDossierWithSources([
@@ -561,6 +629,7 @@ describe("nameRecordJsonLoader", () => {
       expect(database.sources).toHaveLength(2);
       expect(database.assertions).toHaveLength(2);
       expect(database.nameRecords).toHaveLength(2);
+      expect(database.ficheRevisions).toHaveLength(1);
     });
 
     // @req REQ-057
