@@ -8,8 +8,12 @@ import type { CountryOutlineOverlay, Ring } from "@/lib/atlas/overlays";
 // publishes it. A test that cannot read it can only assert which control is on
 // screen, and the control is not the thing this surface is judged on.
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
-  AtlasGlobeCanvas: ({ pose }: { pose: { morph: number } }) => (
-    <canvas data-testid="atlas-globe-canvas-mock" data-morph={pose.morph} />
+  AtlasGlobeCanvas: ({ pose }: { pose: { morph: number; zoom: number } }) => (
+    <canvas
+      data-testid="atlas-globe-canvas-mock"
+      data-morph={pose.morph}
+      data-zoom={pose.zoom}
+    />
   ),
 }));
 
@@ -75,6 +79,39 @@ afterEach(() => {
  * here reads the morph off the surface rather than off the control beside it.
  */
 describe("the projection morph bar", () => {
+  // The homepage keeps the projection argument but gives the globe the whole
+  // visual field: the range follows the figure in normal reading order and
+  // fiche-only camera controls do not compete with the primary search.
+  // @req REQ-112 @req REQ-115
+  it("offers the homepage an external, editorial control band and a wider opening frame", async () => {
+    const { container } = render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        projectionControl="morph"
+        presentation="editorial"
+        viewScale={0.84}
+        probedWebglSupport
+        showTissot
+        missingMessage="absent"
+      />
+    );
+
+    const stage = container.querySelector("[data-atlas-stage]");
+    const controls = container.querySelector("[data-atlas-controls]");
+    const canvas = await screen.findByTestId("atlas-globe-canvas-mock");
+
+    expect(stage).toHaveStyle({ overflow: "visible" });
+    expect(controls).toHaveAttribute("data-atlas-controls-placement", "below");
+    expect(controls?.className).toContain("top-full");
+    expect(canvas).toHaveAttribute("data-zoom", "0.84");
+    expect(screen.getByText("Glissez pour tourner.")).toBeInTheDocument();
+    expect(morphBar()).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Pastilles" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Dézoomer" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Zoomer" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Recentrer" })).toBeNull();
+  });
+
   // @req REQ-117
   it("offers a range from the flat map to the globe rather than a two-state button", () => {
     render(

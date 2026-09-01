@@ -14,12 +14,15 @@ vi.mock("next/navigation", () => ({
 vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
   ContinentGlobeStage: ({
     peopleCountsByCountry,
+    presentation,
   }: {
     peopleCountsByCountry?: Record<string, number>;
+    presentation?: string;
   }) => (
     <div
       data-testid="search-first-globe"
       data-people-count={peopleCountsByCountry?.NGA}
+      data-presentation={presentation}
     />
   ),
 }));
@@ -63,6 +66,7 @@ describe("search-first home charter (ETNI-1404 / ETNI-1509)", () => {
     expect(follows(copy, globe)).toBe(true);
     expect(follows(globe, counts)).toBe(true);
     expect(globe).toHaveAttribute("data-people-count", "40");
+    expect(globe).toHaveAttribute("data-presentation", "hero");
   });
 
   // The globe component owns the capability probe, committed SVG fallback,
@@ -101,7 +105,7 @@ describe("search-first home charter (ETNI-1404 / ETNI-1509)", () => {
       /@media\s*\(min-width:\s*1200px\)[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)\s*minmax\(0,\s*1fr\)[\s\S]*?grid-template-areas:\s*"copy globe"\s*"counts globe"/
     );
     expect(source).toMatch(
-      /\.home-hero-globe\s+\.home-globe-stage\s*\{[^}]*min-height:\s*320px[^}]*--afh-globe-stage-height:\s*320px/
+      /\.home-hero-globe\s+\.home-globe-stage\s*\{[^}]*min-height:\s*300px[^}]*--afh-globe-stage-height:\s*300px/
     );
   });
 
