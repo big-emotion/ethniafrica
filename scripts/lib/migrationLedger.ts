@@ -111,8 +111,22 @@ export function normaliseSql(sql: string): string {
     }
 
     if (char === "'") {
-      const end = findStringEnd(sql, index);
-      out += sql.slice(index, end);
+      // SQL concatenates adjacent string literals separated by whitespace, so a
+      // comment written across several quoted lines in a file is a single
+      // string once the database has it. 039 writes its constraint comment that
+      // way and reported as drifted against a ledger holding the joined result.
+      // Adjacency on the same line is not valid SQL, so folding on any
+      // whitespace cannot merge two strings the parser would keep apart.
+      let end = findStringEnd(sql, index);
+      let body = sql.slice(index, end);
+      let next = skipWhitespace(sql, end);
+      while (sql[next] === "'") {
+        const nextEnd = findStringEnd(sql, next);
+        body = body.slice(0, -1) + sql.slice(next + 1, nextEnd);
+        end = nextEnd;
+        next = skipWhitespace(sql, end);
+      }
+      out += body;
       index = end;
       continue;
     }
@@ -157,6 +171,13 @@ function readDollarTag(sql: string, start: number): string | null {
 function findDollarEnd(sql: string, from: number, tag: string): number {
   const close = sql.indexOf(tag, from);
   return close === -1 ? sql.length : close + tag.length;
+}
+
+/** Index of the first non-whitespace character at or after `from`. */
+function skipWhitespace(sql: string, from: number): number {
+  let index = from;
+  while (index < sql.length && /\s/.test(sql[index])) index += 1;
+  return index;
 }
 
 /** Index just past the closing quote, treating `''` as an escaped quote. */
