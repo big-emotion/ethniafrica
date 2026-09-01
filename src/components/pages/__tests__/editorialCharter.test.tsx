@@ -270,9 +270,8 @@ describe("doctrine article page (metadata regression)", () => {
       publishedAt: "2026-05-14T00:00:00Z",
     });
 
-    const DoctrineSlugPage = (
-      await import("@/app/[lang]/comprendre/doctrine/[slug]/page")
-    ).default;
+    const DoctrineSlugPage = (await import("@/app/[lang]/doctrine/[slug]/page"))
+      .default;
     const ui = await DoctrineSlugPage({
       params: Promise.resolve({
         lang: "fr",

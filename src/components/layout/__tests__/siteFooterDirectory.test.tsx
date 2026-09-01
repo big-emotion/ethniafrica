@@ -62,6 +62,27 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
+  /**
+   * Doctrine and À propos describe the project, not the corpus, so no access
+   * mode lists them. The footer is where a page about the project belongs —
+   * and the only place a reader can now reach the doctrine from the chrome.
+   */
+  // @req REQ-132
+  it("gathers the pages about the project itself under one rubric", () => {
+    render(<SiteFooter language="fr" />);
+
+    const project = screen.getByRole("navigation", {
+      name: footer.directory.projectHeading,
+    });
+
+    expect(
+      within(project).getByRole("link", { name: footer.directory.doctrine })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+    expect(
+      within(project).getByRole("link", { name: footer.directory.about })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "about"));
+  });
+
   // @req REQ-046
   it("offers both ways to talk back to the corpus", () => {
     render(<SiteFooter language="fr" />);
@@ -176,12 +197,12 @@ describe("the legal line — two rows, centred (REQ-046)", () => {
  */
 describe("the directory takes the full measure (REQ-046)", () => {
   // @req REQ-046
-  it("spreads the mark and the three rubrics as one row of siblings", () => {
+  it("spreads the mark and every rubric as one row of siblings", () => {
     render(<SiteFooter language="fr" />);
 
     const directory = screen.getByTestId("footer-directory");
 
-    expect(Array.from(directory.children)).toHaveLength(4);
+    expect(Array.from(directory.children)).toHaveLength(5);
     expect(directory.children[0]).toBe(screen.getByTestId("footer-brand"));
     expect(directory).toHaveClass("md:justify-between");
   });

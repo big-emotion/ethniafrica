@@ -61,14 +61,18 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     const { container } = await renderHome();
 
     const copy = container.querySelector(".home-hero-copy");
-    const globe = container.querySelector(".home-hero-globe");
+    // `.home-hero-visual`, not `.home-hero-globe`: the band's visual is drawn
+    // at random from the eligible hero kinds, and only the globe draw carries
+    // the second class. Reading order is the same whichever kind is drawn, so
+    // the assertion belongs on the slot rather than on one of its outcomes.
+    const visual = container.querySelector(".home-hero-visual");
     const counts = container.querySelector(".home-hero-counts");
 
     expect(copy).not.toBeNull();
-    expect(globe).not.toBeNull();
+    expect(visual).not.toBeNull();
     expect(counts).not.toBeNull();
-    expect(precedes(copy!, globe!)).toBe(true);
-    expect(precedes(globe!, counts!)).toBe(true);
+    expect(precedes(copy!, visual!)).toBe(true);
+    expect(precedes(visual!, counts!)).toBe(true);
   });
 
   // @req REQ-113

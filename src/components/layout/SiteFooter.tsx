@@ -75,6 +75,24 @@ export function SiteFooter({ language }: SiteFooterProps) {
         { label: directory.reportError, href: `/${language}/report-error` },
       ],
     },
+    // Doctrine and À propos describe the project, not the corpus, so the
+    // three access modes stopped listing them. A rubric here is where they
+    // land: the footer is the one part of the chrome that is allowed to name
+    // the site itself rather than a way into it.
+    {
+      id: "projet",
+      heading: directory.projectHeading,
+      links: [
+        {
+          label: directory.doctrine,
+          href: getLocalizedRoute(language, "doctrine"),
+        },
+        {
+          label: directory.about,
+          href: getLocalizedRoute(language, "about"),
+        },
+      ],
+    },
   ];
 
   return (
@@ -216,16 +234,17 @@ export function SiteFooter({ language }: SiteFooterProps) {
         />
 
         {/* Étage 2, row 1 — everywhere else the footer can take you.
-            « À propos » sits outside the legal nav rather than inside it: it
-            is editorial, so filing it under "Informations légales" would make
-            that landmark's accessible name inaccurate. */}
+            « À propos » used to open this row. It moved up into the « Le
+            projet » rubric with the doctrine, where a reader looking for the
+            project finds both at once; kept here as well it was the same
+            destination offered twice on one screen. The API link stays: it is
+            a developer's entry, on no rubric and in no landmark, and it sits
+            outside the legal nav so that landmark's accessible name keeps
+            describing what is actually under it. */}
         <div
           data-testid="footer-links"
           className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
         >
-          <Link href={`/${language}/about`} className={FOOTER_LINK_CLASS}>
-            {footer.about}
-          </Link>
           <Link href="/docs/api/v2" className={FOOTER_LINK_CLASS}>
             {footer.api}
           </Link>

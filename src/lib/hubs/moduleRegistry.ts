@@ -14,10 +14,21 @@ import type { PageType } from "@/lib/routing";
 // The filing rule is "what the reader arrives with, what they leave with":
 // Explorer takes a name and returns a fiche, Comprendre takes a question
 // and returns an explanation crossing several fiches, Jouer takes nothing
-// and returns a result the machine produced. That rule is what moved
-// "Noms & appellations" out of Explorer — it answers *why does this people
-// carry this name*, which is a question, not a name. It is the most
-// decolonial module in the corpus and it was filed on the wrong side.
+// and returns a result the machine produced.
+//
+// Two consequences of that rule are worth stating, because both were once
+// filed the other way:
+//
+//   · "Appellations" sits under Explorer. It was moved out on the reading
+//     that it answers *why does this people carry this name* — a question.
+//     ETNI-1453 (DEC-038) settles it the other way: the name becomes a
+//     corpus entity with its own fiche, its own search-result kind and its
+//     own endpoint, so Appellations takes a name and returns a fiche,
+//     exactly like pays, peuples and familles.
+//   · Doctrine and À propos are on no axis at all. An access mode is a way
+//     into the *corpus*; those two pages describe the *project*, so filing
+//     them behind a reading intention promised a fiche and delivered a
+//     colophon. They are reached from the footer's "Le projet" rubric.
 export type AccessMode = "explorer" | "comprendre" | "jouer";
 
 // @req REQ-114
@@ -87,8 +98,8 @@ export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
 // waits on is its corpus, never a switch:
 //
 // - "data": live once its backing table (dataSource) holds >= 1 row.
-// - "static": a page that exists whatever the corpus holds — search and
-//   doctrine render from code, so probing a table for them would only
+// - "static": a page that exists whatever the corpus holds — search and the
+//   anecdotes render from code, so probing a table for them would only
 //   invent a way for a working route to disappear.
 //
 // "flagged" and "unavailable" are gone. The first hid a built route behind
@@ -226,6 +237,28 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "afrik_language_families",
     heroable: "family-crown",
   },
+  // The fourth nominal entry point. A reader who arrives holding a name the
+  // corpus files as an appellation — an exonym, a colonial-era spelling —
+  // arrives the same way as one holding a country's, and ETNI-1453 gives
+  // that name a fiche of its own to land on.
+  {
+    id: "noms",
+    name: "Appellations",
+    accessMode: "explorer",
+    page: "names",
+    availability: "data",
+    // This read "ready", on the reasoning that an empty `name_records`
+    // already said everything there was to say. It does not: the corpus holds
+    // one fiche — `dataset/source/afrik/noms/PPL_YORUBA.json`, alone — for 803
+    // peoples, and the loader is wired. The row count would therefore stop
+    // speaking the moment that single fiche lands, and offer an atlas of names
+    // that names one people. Readiness is what withholds the invitation while
+    // the route stays built.
+    editorialReadiness: "draft",
+    dataSource: "name_records",
+  },
+  // Recherche closes Explorer: it is where a reader goes once naming the
+  // entity has not been enough.
   {
     id: "recherche",
     name: "Recherche libre",
@@ -235,7 +268,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     editorialReadiness: "ready",
   },
   // Comprendre runs from the most concrete question to the method that
-  // answers it: why this name, where they came from, who says so.
+  // answers it: what the corpus turned up, where they came from, who says so.
   // The anecdotes are the only Comprendre module whose corpus is the repo
   // rather than the database: the bank is a TypeScript constant, so there is
   // no table for the availability probe to count and "static" is the honest
@@ -249,22 +282,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "anecdotes",
     availability: "static",
     editorialReadiness: "ready",
-  },
-  {
-    id: "noms",
-    name: "Appellations",
-    accessMode: "comprendre",
-    page: "names",
-    availability: "data",
-    // This read "ready", on the reasoning that an empty `name_records`
-    // already said everything there was to say. It does not: the corpus holds
-    // one fiche — `dataset/source/afrik/noms/PPL_YORUBA.json`, alone — for 803
-    // peoples, and the loader is wired. The row count would therefore stop
-    // speaking the moment that single fiche lands, and offer an atlas of names
-    // that names one people. Readiness is what withholds the invitation while
-    // the route stays built.
-    editorialReadiness: "draft",
-    dataSource: "name_records",
   },
   {
     // Named for what the corpus actually holds — six sourced events, not a
@@ -329,25 +346,6 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // opened on. The chip still sends a reader to the game itself.
     heroable: "globe",
   },
-  {
-    id: "doctrine",
-    name: "La doctrine éditoriale",
-    accessMode: "comprendre",
-    page: "doctrine",
-    availability: "static",
-    editorialReadiness: "ready",
-  },
-  // About closes Comprendre without shifting the positional accents of any
-  // module already in the registry.
-  // @req REQ-132
-  {
-    id: "about",
-    name: "À propos du projet",
-    accessMode: "comprendre",
-    page: "about",
-    availability: "static",
-    editorialReadiness: "ready",
-  },
 ];
 
 // @req REQ-114
@@ -394,8 +392,10 @@ const ACCENT_INDEX_BY_MODULE_ID = new Map(
  * Explorer reads ocre · teal · terre · perv
  * (docs/design/mockups/parts/nav-core.js).
  *
- * Derived rather than declared: an accent field on twenty-one entries is
- * twenty-one chances to file a duplicate beside its neighbour.
+ * Derived rather than declared: an accent field on every entry is one more
+ * chance per entry to file a duplicate beside its neighbour. The cost is that
+ * inserting, removing or reordering an entry repaints every module after it,
+ * which is why the whole map is pinned in moduleRegistry.test.ts.
  */
 // @req REQ-114
 export function accentForModule(

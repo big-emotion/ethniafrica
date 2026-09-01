@@ -68,22 +68,14 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("gives explorer the modules a reader reaches by name, country first", () => {
     const ids = getModulesForAccessMode("explorer").map((m) => m.id);
-    expect(ids).toEqual(["pays", "peuples", "familles", "recherche"]);
+    expect(ids).toEqual(["pays", "peuples", "familles", "noms", "recherche"]);
   });
 
-  // Ordered from the most concrete question to the method that answers it,
-  // with the project itself closing the axis.
-  // @req REQ-114 @req REQ-132
-  it("gives comprendre the modules a reader reaches by question", () => {
+  // Ordered from the most concrete question to the method that answers it.
+  // @req REQ-114
+  it("gives comprendre only the questions asked of the corpus", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual([
-      "anecdotes",
-      "noms",
-      "frise",
-      "regards-colonisation",
-      "doctrine",
-      "about",
-    ]);
+    expect(ids).toEqual(["anecdotes", "frise", "regards-colonisation"]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -92,38 +84,30 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual(["quiz", "mercator"]);
   });
 
-  // "Appellations" answers *why does this people carry this name* — a
-  // question, not a name, so it belongs to Comprendre.
+  // ETNI-1453 makes the name a corpus entity with its own fiche, so
+  // Appellations now takes a name and returns a fiche — the filing rule for
+  // Explorer, and the same rule pays/peuples/familles are filed under.
   // @req REQ-114
-  it("files noms under the question axis, not the naming axis", () => {
+  it("files noms with the other nominal entry points", () => {
     const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
-    expect(noms?.accessMode).toBe("comprendre");
+    expect(noms?.accessMode).toBe("explorer");
   });
 
-  // About answers how and why the project exists, so it closes Comprendre.
-  // Keeping it last preserves every positional accent already assigned.
+  // Doctrine and About describe the project, not the corpus: neither takes a
+  // name nor answers a question about a people, so neither is filed on an
+  // access mode at all. They are reached from the footer.
   // @req REQ-132
-  it("registers about once, last, ready, and under Comprendre", () => {
-    const aboutModules = MODULE_DEFINITIONS.filter((m) => m.id === "about");
+  it("keeps the project pages out of the access-mode taxonomy", () => {
+    const ids = MODULE_DEFINITIONS.map((m) => m.id);
 
-    expect(aboutModules).toHaveLength(1);
-    expect(MODULE_DEFINITIONS.at(-1)).toBe(aboutModules[0]);
-    expect(aboutModules[0]).toMatchObject({
-      name: "À propos du projet",
-      accessMode: "comprendre",
-      page: "about",
-      availability: "static",
-      editorialReadiness: "ready",
-    });
-    expect(getModulesForAccessMode("comprendre")).toContain(aboutModules[0]);
+    expect(ids).not.toContain("doctrine");
+    expect(ids).not.toContain("about");
   });
 
   // @req REQ-132
-  it("routes about to its French-only project page", () => {
-    const about = MODULE_DEFINITIONS.find((m) => m.id === "about");
-
-    expect(about).toBeDefined();
-    expect(getModuleHref(about!, "fr")).toBe("/fr/about");
+  it("still routes the project pages, module or not", () => {
+    expect(getLocalizedRoute("fr", "about")).toBe("/fr/about");
+    expect(getLocalizedRoute("fr", "doctrine")).toBe("/fr/doctrine");
   });
 
   // The quiz used to hang from NEXT_PUBLIC_FEATURE_QUIZ, so a built route
@@ -198,7 +182,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
 
   // A static module is a page that exists whatever the corpus holds, so
   // gating it behind a row count would hide a working route.
-  // @req REQ-114 @req REQ-132
+  // @req REQ-114
   it("routes every static module without asking the database", () => {
     const staticModules = MODULE_DEFINITIONS.filter(
       (m) => m.availability === "static"
@@ -207,8 +191,6 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "recherche",
       "anecdotes",
       "regards-colonisation",
-      "doctrine",
-      "about",
     ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
@@ -293,21 +275,23 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
     }
   });
 
-  // Appending About must not recolor any module readers already know.
-  // @req REQ-132
-  it("preserves every pre-existing positional accent", () => {
+  // The accent is positional, so regrouping repaints. Pinning the whole map
+  // is what makes that repaint a decision rather than a side effect: moving
+  // Appellations up to fourth turns it perv and pushes recherche and
+  // anecdotes one step back round the cycle.
+  // @req REQ-114
+  it("pins the accent every module wears after the regrouping", () => {
     const expectedAccents = Object.freeze({
       pays: "afh-accent-ocre",
       peuples: "afh-accent-teal",
       familles: "afh-accent-terre",
-      recherche: "afh-accent-perv",
-      anecdotes: "afh-accent-ocre",
-      noms: "afh-accent-teal",
+      noms: "afh-accent-perv",
+      recherche: "afh-accent-ocre",
+      anecdotes: "afh-accent-teal",
       frise: "afh-accent-terre",
       "regards-colonisation": "afh-accent-perv",
       quiz: "afh-accent-ocre",
       mercator: "afh-accent-teal",
-      doctrine: "afh-accent-terre",
     } as const);
 
     for (const [id, accent] of Object.entries(expectedAccents)) {

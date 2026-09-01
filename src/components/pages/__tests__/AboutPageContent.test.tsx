@@ -144,7 +144,7 @@ describe("AboutPageContent (REQ-132)", () => {
     ).toBeInTheDocument();
 
     for (const description of [
-      "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
+      "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
       "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
       "Interroger ses repères grâce aux jeux construits à partir du corpus.",
     ]) {

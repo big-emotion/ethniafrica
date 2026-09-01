@@ -85,7 +85,7 @@ export default function AboutPageContent({
           {
             id: "explorer" as AccessMode,
             description:
-              "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
+              "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
             accentClass: "afh-accent-ocre",
           },
           {

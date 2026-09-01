@@ -70,10 +70,13 @@ describe("which axis owns a page", () => {
     }
   });
 
-  // About explains the project, so Comprendre owns it even though its
-  // established canonical route remains top-level at /fr/about.
+  // About and Doctrine describe the project rather than the corpus, so no
+  // axis leads to them and the map has nothing to answer. That is what lets
+  // both keep a top-level canonical route without contradicting the nesting
+  // rule the modules follow.
   // @req REQ-132
-  it("files about under Comprendre", () => {
-    expect(getAxisForPage("about")).toBe("comprendre");
+  it("claims no axis for the project pages", () => {
+    expect(getAxisForPage("about")).toBeNull();
+    expect(getAxisForPage("doctrine")).toBeNull();
   });
 });

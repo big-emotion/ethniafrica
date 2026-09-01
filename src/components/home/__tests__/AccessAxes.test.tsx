@@ -463,7 +463,7 @@ describe("AccessAxes — an axis opens on the home rather than loading its hub (
 
     await userEvent.click(screen.getByTestId("access-axis-comprendre"));
 
-    expect(screen.getByTestId("axis-module-doctrine")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-anecdotes")).toBeInTheDocument();
     expect(screen.getByTestId("axis-module-frise")).toBeInTheDocument();
     expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
   });

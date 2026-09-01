@@ -178,14 +178,15 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   });
 
   // @req REQ-106 @req REQ-114
-  it("surfaces doctrine as live even when every table is empty", async () => {
+  it("surfaces a static module as live even when every table is empty", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock({}));
 
-    const modules = await getHubModules("comprendre");
+    const comprendre = await getHubModules("comprendre");
+    const explorer = await getHubModules("explorer");
 
-    expect(modules.find((m) => m.id === "doctrine")?.available).toBe(true);
-    expect(modules.find((m) => m.id === "frise")?.available).toBe(false);
-    expect(modules.find((m) => m.id === "noms")?.available).toBe(false);
+    expect(comprendre.find((m) => m.id === "anecdotes")?.available).toBe(true);
+    expect(comprendre.find((m) => m.id === "frise")?.available).toBe(false);
+    expect(explorer.find((m) => m.id === "noms")?.available).toBe(false);
   });
 
   // The hub used to drop a module behind a dark flag, so the quiz was
@@ -278,7 +279,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     ).toBe(false);
     // Its neighbour on the same axis is static too, and stays live: nothing
     // about being static decides this either way.
-    expect(modules.find((m) => m.id === "doctrine")?.available).toBe(true);
+    expect(modules.find((m) => m.id === "anecdotes")?.available).toBe(true);
   });
 
   // Listed, always. Withholding the click is the whole of what draft does.

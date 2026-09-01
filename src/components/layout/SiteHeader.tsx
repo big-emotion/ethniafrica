@@ -12,7 +12,6 @@ import {
 } from "react";
 import {
   ArrowUpDown,
-  BookOpen,
   ChevronDown,
   Circle,
   Crown,
@@ -21,7 +20,6 @@ import {
   Globe,
   HelpCircle,
   History,
-  Info,
   Landmark,
   Link2,
   Maximize2,
@@ -87,10 +85,14 @@ import type { Language } from "@/types/shared";
 const NAV_BREAKPOINT_PX = 760;
 
 /**
- * One glyph per module. The mockup draws ten by hand; the registry holds
- * twenty-one, and a set half hand-drawn and half library would read as two
- * different stroke weights side by side. Sized 15px at stroke 1.9 — the
- * mockup's own metrics.
+ * One glyph per module, from the library rather than the mockup's hand-drawn
+ * set: half hand-drawn and half library would read as two different stroke
+ * weights side by side. Sized 15px at stroke 1.9 — the mockup's own metrics.
+ *
+ * Keyed loosely rather than by `HubModuleDefinition["id"]`, so the map may
+ * hold a key the registry no longer files — the fallback below is `Circle`,
+ * and a module with no glyph is a smaller failure than a build that breaks
+ * because a game was retired.
  */
 const MODULE_GLYPHS: Record<string, LucideIcon> = {
   peuples: Users,
@@ -100,8 +102,6 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   noms: Tag,
   frise: History,
   "regards-colonisation": Eye,
-  doctrine: BookOpen,
-  about: Info,
   quiz: HelpCircle,
   appellations: Tags,
   "plus-ou-moins": ArrowUpDown,

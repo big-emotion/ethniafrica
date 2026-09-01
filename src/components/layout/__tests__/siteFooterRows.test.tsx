@@ -102,9 +102,11 @@ describe("the footer — declared rows, and a size worth reading (REQ-046)", () 
     expect(rule).toHaveClass("my-afh-5xl");
   });
 
-  // The links row still holds both landmarks it held before: the legal nav
-  // keeps its accessible name, and « À propos » stays out of it because it is
-  // editorial and would make that name inaccurate.
+  // The legal nav keeps its accessible name because the row's other link is
+  // outside it: the API is a developer's entry, not a legal notice, and
+  // filing it under "Informations légales" would make that name inaccurate.
+  // « À propos » left this row for the « Le projet » rubric — offered in
+  // both places it was the same destination twice on one screen.
   // @req REQ-046
   it("keeps the legal navigation a named landmark beside the editorial links", () => {
     render(<SiteFooter language="fr" />);
@@ -114,7 +116,8 @@ describe("the footer — declared rows, and a size worth reading (REQ-046)", () 
       name: footer.legalNavigationLabel,
     });
 
-    expect(within(legal).queryByText(footer.about)).toBeNull();
-    expect(within(row).getByText(footer.about)).toBeInTheDocument();
+    expect(within(legal).queryByText(footer.api)).toBeNull();
+    expect(within(row).getByText(footer.api)).toBeInTheDocument();
+    expect(within(row).queryByText(footer.about)).toBeNull();
   });
 });
