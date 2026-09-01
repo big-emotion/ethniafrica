@@ -46,7 +46,9 @@ describe("PatronymeOriginSection (REQ-133)", () => {
     );
 
     expect(screen.getByText(/tradition orale griotique/)).toBeInTheDocument();
-    expect(screen.getByText(/Fadama Diarra/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Transmis par\s+Fadama Diarra/)
+    ).toBeInTheDocument();
     expect(screen.getByText("Récit de Fadama Diarra")).toBeInTheDocument();
   });
 

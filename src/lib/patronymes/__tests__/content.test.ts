@@ -24,7 +24,7 @@ describe("patronyme content readers (REQ-133)", () => {
             tier: "referenced",
           },
         },
-        { spelling: "not an object" },
+        "not an object",
       ],
     });
     expect(forms).toEqual([

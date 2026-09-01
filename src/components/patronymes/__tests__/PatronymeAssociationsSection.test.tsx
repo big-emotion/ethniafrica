@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { PatronymeAssociationsSection } from "@/components/patronymes/PatronymeAssociationsSection";
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
+import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 
 const base: PublicPatronyme = {
   id: "PAT_KEITA",
@@ -29,11 +30,11 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
 
     expect(screen.getByRole("link", { name: /Mandingues/ })).toHaveAttribute(
       "href",
-      "/fr/atlas/peuples/PPL_MANDINKA"
+      getPeopleRoute("fr", "PPL_MANDINKA")
     );
     expect(screen.getByRole("link", { name: /Mali/ })).toHaveAttribute(
       "href",
-      "/fr/atlas/pays/MLI"
+      getCountryRoute("fr", "MLI")
     );
   });
 

@@ -33,8 +33,8 @@ export function PatronymeBearersSection({
         <ul>
           {bearers.map((bearer) => (
             <li key={bearer.id}>
-              {bearer.fullName} —{" "}
-              {bearer.roleCategory || t.roleCategoryFallback}
+              <span>{bearer.fullName}</span> —{" "}
+              <span>{bearer.roleCategory || t.roleCategoryFallback}</span>
             </li>
           ))}
         </ul>

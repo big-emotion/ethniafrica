@@ -110,7 +110,7 @@ function readSource(value: unknown): PatronymeSource | null {
     title: value.title,
     url: typeof value.url === "string" ? value.url : null,
     tier: isSourceTier(value.tier) ? value.tier : "unverified",
-    notes: typeof value.notes === "string" ? value.notes : null,
+    ...(typeof value.notes === "string" ? { notes: value.notes } : {}),
   };
 }
 
