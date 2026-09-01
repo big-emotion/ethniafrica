@@ -89,6 +89,11 @@ const options: swaggerJsdoc.Options = {
           "Name-variant records (endonyms, exonyms, historical spellings, surnames) — browsable, filterable, searchable index (FR53, FR55, FR58).",
       },
       {
+        name: "API v2 - Patronymes",
+        description:
+          "Family names (patronymes) — a name's naming system, caste or social function, associated peoples and countries, and bearers. Distinct from API v2 - Names (the ethnonym dossier); bearer entries are a narrow allow-listed summary and never carry ethnic-origin data for a named living person (DEC-040, REQ-133).",
+      },
+      {
         name: "API v2 - Compare",
         description:
           "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38).",
@@ -908,6 +913,83 @@ const options: swaggerJsdoc.Options = {
             "sources",
           ],
         },
+        PatronymeV2: {
+          type: "object",
+          description:
+            "A name (patronyme) — DEC-038's fifth corpus dimension. Bearer entries are a narrow allow-listed summary; no code path takes a family name and returns an ethnic origin for a named living person (DEC-040).",
+          properties: {
+            id: {
+              type: "string",
+              pattern: "^PAT_[A-Z0-9_]+$",
+              example: "PAT_KEITA",
+            },
+            nameMain: { type: "string", minLength: 1 },
+            nameSystem: {
+              type: "string",
+              enum: [
+                "clan_name",
+                "non_hereditary_patronymic",
+                "nisba",
+                "praise_name",
+                "totemic_clan",
+              ],
+            },
+            casteOrSocialFunction: { type: ["string", "null"] },
+            content: {
+              type: "object",
+              description:
+                "Opaque passthrough of the name's remaining DEC-039 fields, forwarded as-is pending ETNI-1460's strict per-subtype shape.",
+            },
+            associatedPeoples: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", minLength: 1 },
+                  nameMain: { type: "string", minLength: 1 },
+                  autonym: { type: ["string", "null"] },
+                  slug: { type: "string", minLength: 1 },
+                },
+                required: ["id", "nameMain", "autonym", "slug"],
+              },
+            },
+            associatedCountries: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", minLength: 1 },
+                  nameFr: { type: "string", minLength: 1 },
+                },
+                required: ["id", "nameFr"],
+              },
+            },
+            bearers: {
+              type: "array",
+              description:
+                "Narrow allow-listed summary — id, fullName, roleCategory only (DEC-040).",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", minLength: 1 },
+                  fullName: { type: "string", minLength: 1 },
+                  roleCategory: { type: "string", minLength: 1 },
+                },
+                required: ["id", "fullName", "roleCategory"],
+              },
+            },
+          },
+          required: [
+            "id",
+            "nameMain",
+            "nameSystem",
+            "casteOrSocialFunction",
+            "content",
+            "associatedPeoples",
+            "associatedCountries",
+            "bearers",
+          ],
+        },
         Error: {
           type: "object",
           properties: {
@@ -1095,6 +1177,19 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             data: { $ref: "#/components/schemas/LanguageV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PatronymeDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PatronymeV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
