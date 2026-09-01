@@ -40,15 +40,14 @@ const icon = (name) =>
   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
 /* `id` = AccessMode, `label` = ACCESS_MODE_LABELS : les deux diffèrent,
-   l'axe se code `explorer` et se lit « Consulter ».
-   DEC-045 renomme ces labels en L'atlas / Les dossiers / Les jeux — c'est
-   ETNI-1614 qui les remettra à jour ici. */
+   l'axe se code toujours `explorer` et se lit désormais « L'atlas »,
+   par DEC-045 (ETNI-1614). */
 const AXES = [
-  { id: "explorer",   label: "Consulter", accent: "ocre",
+  { id: "explorer",   label: "L'atlas", accent: "ocre",
     blurb: "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus." },
-  { id: "comprendre", label: "Enquêter",  accent: "teal",
+  { id: "comprendre", label: "Les dossiers",  accent: "teal",
     blurb: "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long." },
-  { id: "jouer",      label: "Jouer",     accent: "perv",
+  { id: "jouer",      label: "Les jeux",     accent: "perv",
     blurb: "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements." },
 ];
 

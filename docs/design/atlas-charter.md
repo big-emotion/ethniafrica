@@ -125,13 +125,22 @@ white.
 
 ## 3. The three entry points
 
-The header carries the atlas's **content register** through three access modes,
-not ten modules: _Consulter_ when you know what you are looking for,
-_Enquêter_ when you want to know where what you are reading comes from, and
-_Jouer_ when you want the corpus to answer. These are reader-facing labels;
-the `explorer`, `comprendre` and `jouer` identifiers stay unchanged, and their
-child routes keep the `/fr/explorer/*`, `/fr/comprendre/*` and `/fr/jouer/*`
-prefixes.
+The header carries the atlas's **content register** through three access
+modes, not ten modules: **L'atlas** for the fiches — countries, peoples,
+language families, names, search — **Les dossiers** for a transversal text
+crossing several fiches, and **Les jeux** for a round the corpus answers.
+`DEC-045` moved this register from a verbal one (_Consulter_, _Enquêter_,
+_Jouer_) to this nominal one, naming the content each mode groups rather than
+the intent a reader arrives with; it supersedes `DEC-044` on that rename
+clause only.
+
+This is a **transitional state**, not the settled one: the axis labelled
+**L'atlas** still carries the identifier `explorer` and routes under
+`/fr/explorer/*`; **Les dossiers** still carries `comprendre` and
+`/fr/comprendre/*`; **Les jeux** still carries `jouer` and `/fr/jouer/*`. A
+sibling change (ETNI-1615) aligns each identifier, label and URL segment to
+denote the same thing; until it lands, the label a reader sees and the
+address bar disagree, exactly as `DEC-045`'s tradeoffs section records.
 
 The access-mode label is a non-navigating heading or disclosure; direct module
 links sit beneath it. A live module is exactly one click away from the global
@@ -156,8 +165,10 @@ generated from it, never hand-listed.
   absent from the menu is a module absent from the corpus.
 
   This used to read "the panel shows each destination's real route", and the
-  panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` in
-  monospace under its label. That is the router's path scheme rendered as
+  panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
+  a route under **Les dossiers**, at its still-transitional `comprendre`
+  prefix — in monospace under its label. That is the router's path scheme
+  rendered as
   editorial content — the atlas publishing its own plumbing to a reader who
   came for peoples and languages. The address lives in the link's `href`,
   where the browser's status bar, the crawler and the screen reader all agree
@@ -166,7 +177,7 @@ generated from it, never hand-listed.
 
 - **A facet is a direct destination, not a second navigation level.** Peoples,
   countries and families remain three facets of the Explorer surface, grouped
-  together under _Consulter_, but each facet receives its own module link. A
+  together under **L'atlas**, but each facet receives its own module link. A
   separate Explorer landing page would add a click without adding a choice.
 
   Which entries are facets is read off `src/lib/hubs/facets.ts` through
