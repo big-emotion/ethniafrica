@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { REEL_MS, type ReelHold, useSlotReel } from "@/hooks/use-slot-reel";
 import {
   FALLBACK_SEED_WORDS,
   type SeedKind,
@@ -51,11 +51,13 @@ import {
  *   reader who has had enough now says so, by hovering or by typing.
  */
 
-/** Mirrors --afh-duration-slow. WAAPI cannot read a CSS custom property. */
+/**
+ * Re-exported because the reel's timing is what a test of this row has to
+ * advance by, and the row is what it renders. The value itself belongs with
+ * the hook that spends it.
+ */
 // @req REQ-002
-export const REEL_MS = 320;
-/** Mirrors --afh-ease-out. */
-const REEL_EASING = "cubic-bezier(0, 0, 0.2, 1)";
+export { REEL_MS };
 
 export interface SeedPool {
   id: string;
@@ -117,103 +119,6 @@ export function seedPools(words: SeedWordsByKind): SeedPool[] {
       words: [...pool.slice(offset), ...pool.slice(0, offset)],
     };
   });
-}
-
-interface ReelHold {
-  /** Transient: a pointer or a focus ring is on the row. Leaving takes it up. */
-  paused: boolean;
-  /** For the life of the page: the reader has reached the field. */
-  ended: boolean;
-}
-
-function useSlotReel(pool: SeedPool, { paused, ended }: ReelHold) {
-  const { words, dwellMs, startDelayMs } = pool;
-  const trackRef = useRef<HTMLSpanElement>(null);
-  const [cursor, setCursor] = useState(0);
-  const reduced = usePrefersReducedMotion();
-
-  const animation = useRef<Animation | null>(null);
-  // The start delay staggers the three chips, and only on first paint: a reel
-  // taking up again after a pause owes the reader a dwell, not the stagger.
-  const turned = useRef(false);
-
-  // Post-commit, pre-paint. The freshly rendered pair already draws the roll's
-  // destination word at translateY(0), which is pixel-identical to the held
-  // -50%, so cancelling the filled animation here is invisible. After paint it
-  // would snap back for a frame and flash the word the reader just left.
-  useLayoutEffect(() => {
-    animation.current?.cancel();
-    animation.current = null;
-  }, [cursor]);
-
-  // A hidden tab throttles timers to once a minute and paints nothing, so a
-  // reel left running there spends its words on no one and hands the returning
-  // reader a chip that changed while they were away. Held, like a hover.
-  const [documentHidden, setDocumentHidden] = useState(false);
-  useEffect(() => {
-    const readVisibility = () =>
-      setDocumentHidden(document.visibilityState !== "visible");
-    readVisibility();
-    document.addEventListener("visibilitychange", readVisibility);
-    return () =>
-      document.removeEventListener("visibilitychange", readVisibility);
-  }, []);
-
-  const held = reduced || ended || paused || documentHidden;
-
-  useEffect(() => {
-    if (held) return;
-
-    let timer: ReturnType<typeof setTimeout>;
-
-    const settle = () => {
-      turned.current = true;
-      setCursor((current) => (current + 1) % words.length);
-      timer = setTimeout(roll, dwellMs);
-    };
-
-    const roll = () => {
-      const track = trackRef.current;
-      if (!track) return;
-
-      // No WAAPI (an old browser, or the test environment): the word still
-      // changes, it simply does not travel. The teaching survives; only the
-      // flourish is lost.
-      if (typeof track.animate !== "function") {
-        settle();
-        return;
-      }
-
-      const rolling = track.animate(
-        [{ transform: "translateY(0)" }, { transform: "translateY(-50%)" }],
-        { duration: REEL_MS, easing: REEL_EASING, fill: "forwards" }
-      );
-      animation.current = rolling;
-      // onfinish rather than the `finished` promise: cancel() rejects that
-      // promise, and Sentry reports unhandled rejections — leaving the home
-      // would file one per reel.
-      rolling.onfinish = settle;
-    };
-
-    timer = setTimeout(roll, turned.current ? dwellMs : startDelayMs);
-
-    return () => {
-      // finish() rather than cancel(), and before the timer is cleared: a roll
-      // caught in flight is jumped to its destination, so a hold leaves the
-      // reel on a whole word and by the same path as a roll nobody touched.
-      // cancel() would rewind it and the reader would watch the outgoing word
-      // travel backwards. The settle this fires books one more turn, which the
-      // next line then cancels.
-      animation.current?.finish();
-      clearTimeout(timer);
-    };
-  }, [held, words, dwellMs, startDelayMs]);
-
-  return {
-    trackRef,
-    settled: words[cursor],
-    incoming: words[(cursor + 1) % words.length],
-  };
 }
 
 interface SeedChipProps {

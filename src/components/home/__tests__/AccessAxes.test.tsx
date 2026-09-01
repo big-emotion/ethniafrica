@@ -19,8 +19,10 @@ import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 const counts: CorpusCounts = {
   peoples: 803,
+  languages: 748,
   countries: 54,
   families: 24,
+  nameForms: 3134,
   migrations: 6,
 };
 
@@ -267,7 +269,14 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 // reader to a dead end. The axis reads its own state off the registry, so it
 // starts and stops promising by itself — nothing here to remember to undo.
 describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
-  const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
+  const counts = {
+    peoples: 890,
+    languages: 748,
+    countries: 54,
+    families: 24,
+    nameForms: 3134,
+    migrations: 6,
+  };
 
   // Jouer has had something real behind it since REQ-120 turned its two
   // `unavailable` placeholders into live games.

@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { HEADLINE_ACCESSIBLE_NAME } from "@/lib/home/headlineSegments";
 import { HOME_HERO_IMAGES } from "@/lib/home/homeHeroVisuals";
 
 // The band carries an interactive island since the search field landed in it,
@@ -34,17 +35,37 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     ).not.toBeInTheDocument();
   });
 
+  // The headline now names a class that turns, so its *text* is no longer a
+  // fixed string to compare against — the reel carries a zero-height ghost of
+  // every segment and textContent holds all five at once. What must not move
+  // is the accessible name: a level-one heading is a landmark, and this one
+  // states the five classes once and never changes.
   // @req REQ-044
-  it("renders a single H1 with the exact verbatim headline and zero H3", () => {
+  it("renders a single H1 whose accessible name names every class and never turns", () => {
     render(<HomeHero />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
 
-    const h1 = headings[0];
-    expect(h1.textContent?.replace(/\s+/g, " ").trim()).toBe(
-      "Qui sont les peuples d'Afrique ?"
-    );
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: HEADLINE_ACCESSIBLE_NAME,
+      })
+    ).toBeInTheDocument();
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
+  });
+
+  // The frame around the reel is what a reader actually reads, and it holds
+  // the space either side of the turning class — the space SWC drops when an
+  // expression sits beside bare JSX text, which is how this band once shipped
+  // « EthniAfricapublie ».
+  // @req REQ-044
+  it("keeps a space either side of the class it names", () => {
+    render(<HomeHero />);
+    const h1 = screen.getByRole("heading", { level: 1 });
+
+    expect(h1.textContent).toContain("Une question sur les ");
+    expect(h1.textContent).toMatch(/ d'Afrique\s?\?$/);
   });
 
   // The headline is the question the reader arrives with, so it stays a
@@ -77,7 +98,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
       .filter((part) => part.trim().length > 0);
 
     expect(sentences).toHaveLength(1);
-    expect(answer).toHaveTextContent(/y répond peuple par peuple/i);
+    expect(answer).toHaveTextContent(/y répond fiche par fiche/i);
     expect(answer).toHaveTextContent(/la source de chaque réponse/i);
   });
 
