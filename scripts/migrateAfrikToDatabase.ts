@@ -3,8 +3,8 @@
  *
  * Data is processed in AFRIK hierarchy order:
  * language families → languages → peoples → people/language relations →
- * countries → people/country relations → migration events (peoples must
- * exist first — migration_event_peoples FKs afrik_peoples).
+ * countries → people/country relations → persons → patronymes → migration
+ * events (every normalized join is loaded only after its FK parents exist).
  */
 
 import { config } from "dotenv";
@@ -25,6 +25,15 @@ import {
 } from "@/lib/afrik/loaders/languageProvenanceLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
+import {
+  loadAllPatronymeDossiers,
+  loadPatronymes,
+  type PatronymeLoadReport,
+} from "@/lib/afrik/loaders/patronymeJsonLoader";
+import {
+  loadAllPersonDossiers,
+  loadPersons,
+} from "@/lib/afrik/loaders/personJsonLoader";
 import {
   loadAllRelationFiles,
   loadRelations,
@@ -75,6 +84,8 @@ export interface MigrationReport {
   peopleRelations: PeopleRelationsSectionReport;
   migrations: MigrationSectionReport;
   names: MigrationSectionReport;
+  persons: MigrationSectionReport;
+  patronymes: PatronymeLoadReport;
   protectedDrift: {
     languageFamilies: ProtectedClassificationDrift[];
     peoples: ProtectedClassificationDrift[];
@@ -119,6 +130,17 @@ function createMigrationReport(): MigrationReport {
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
     migrations: { total: 0, inserted: 0, errors: [] },
     names: { total: 0, inserted: 0, errors: [] },
+    persons: { total: 0, inserted: 0, errors: [] },
+    patronymes: {
+      total: 0,
+      inserted: 0,
+      spellings: 0,
+      peopleLinks: 0,
+      countryLinks: 0,
+      bearerLinks: 0,
+      alliances: 0,
+      errors: [],
+    },
     protectedDrift: { languageFamilies: [], peoples: [] },
     verification: {
       before: emptyDriftReport(),
@@ -547,6 +569,8 @@ function hasErrors(report: MigrationReport): boolean {
     report.peopleRelations.errors.length > 0 ||
     report.migrations.errors.length > 0 ||
     report.names.errors.length > 0 ||
+    report.persons.errors.length > 0 ||
+    report.patronymes.errors.length > 0 ||
     report.verification.errors.length > 0
   );
 }
@@ -592,6 +616,11 @@ export async function migrateAfrikToDatabase(
   const countries = await loadAllCountries();
   report.countries.total = countries.length;
 
+  const personDossiers = loadAllPersonDossiers();
+  report.persons.total = personDossiers.length;
+
+  const patronymeBatch = loadAllPatronymeDossiers();
+
   const sources = sourceSnapshot(languageFamilies, peoples, countries);
   report.verification.before = compareAfrikDrift(
     sources,
@@ -619,6 +648,15 @@ export async function migrateAfrikToDatabase(
     report.relations.total = countRelations(peoples);
     report.peopleRelations.total = loadAllRelationFiles().length;
     report.migrations.total = loadAllMigrationFiles().length;
+    report.patronymes = await loadPatronymes(supabase, patronymeBatch, {
+      dryRun: true,
+      references: {
+        peopleIds: new Set(peoples.map(({ id }) => id)),
+        countryIds: new Set(countries.map(({ id }) => id)),
+        personIds: new Set(personDossiers.map(({ id }) => id)),
+        patronymeIds: new Set(),
+      },
+    });
     logger.info("AFRIK synchronization preview completed", {
       target: syncTarget.environment,
       languageFamilies: report.languageFamilies.total,
@@ -629,6 +667,8 @@ export async function migrateAfrikToDatabase(
       relations: report.relations.total,
       peopleRelations: report.peopleRelations.total,
       migrations: report.migrations.total,
+      persons: report.persons.total,
+      patronymes: report.patronymes,
       protectedDrift: report.protectedDrift,
       drift: report.verification.before,
     });
@@ -659,6 +699,18 @@ export async function migrateAfrikToDatabase(
     report.peopleLanguages
   );
 
+  await upsertCountries(supabase, countries, report);
+  const validCountryIds = await readIds(supabase, "afrik_countries");
+
+  await upsertRelations(supabase, peoples, validCountryIds, report);
+
+  const personsReport = await loadPersons(supabase, personDossiers);
+  report.persons.total = personsReport.total;
+  report.persons.inserted = personsReport.inserted;
+  report.persons.errors = [...personsReport.errors, ...personsReport.dropped];
+
+  report.patronymes = await loadPatronymes(supabase, patronymeBatch);
+
   const migrationRecords = loadAllMigrationFiles();
   const migrationsReport = await loadMigrations(supabase, migrationRecords);
   report.migrations.total = migrationsReport.total;
@@ -682,11 +734,6 @@ export async function migrateAfrikToDatabase(
     supabase,
     peopleRelationRecords
   );
-
-  await upsertCountries(supabase, countries, report);
-  const validCountryIds = await readIds(supabase, "afrik_countries");
-
-  await upsertRelations(supabase, peoples, validCountryIds, report);
 
   report.verification.after = compareAfrikDrift(
     sources,
@@ -714,6 +761,8 @@ export async function migrateAfrikToDatabase(
       peopleRelations: report.peopleRelations,
       migrations: report.migrations,
       names: report.names,
+      persons: report.persons,
+      patronymes: report.patronymes,
       protectedDrift: report.protectedDrift,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,

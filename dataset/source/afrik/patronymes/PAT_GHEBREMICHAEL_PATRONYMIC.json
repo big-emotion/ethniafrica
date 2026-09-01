@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français distinguant un patronyme non héréditaire d'un nom de famille."
+  },
+  "id": "PAT_GHEBREMICHAEL_PATRONYMIC",
+  "nameMain": "Ghebremichael",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ghebremichael",
+      "attestations": [
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["munden-eritrean-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "ERI",
+      "status": "attested",
+      "sourceRefs": ["munden-eritrean-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "munden-eritrean-names",
+      "title": "How Students in Eritrea and Norway Make Sense of Literature",
+      "url": "https://brage.inn.no/inn-xmlui/bitstream/handle/11250/132010/Munden_J_How%20students%20in%20Eritrea%20and%20Norway.pdf?sequence=3&isAllowed=y",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "La note sur les noms érythréens identifie Ghebremichael comme nom personnel du père dans Yohannes Ghebremichael Kifle et explique que cet élément n'est pas un nom de famille héréditaire."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le lien de recherche vers une fiche tigréenne ne suffit pas à attribuer une identité ethnique à la personne citée par l'exemple."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "L'étymologie et les variantes de translittération ne sont pas établies par la source retenue."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Cette fiche documente Ghebremichael comme élément du nom personnel du père, et non comme nom de famille héréditaire ; aucune lignée permanente n'est affirmée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L'exemple académique illustre une structure de nom et n'est pas traité comme une attribution ethnique ou comme une fiche de personne."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_SIBANDA",
+  "nameMain": "Sibanda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sibanda",
+      "attestations": [
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NDEBELE_NORD",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZWE",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-ndebele-nord-organisation",
+      "title": "Corpus AFRIK — PPL_NDEBELE_NORD, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le passage ne précise pas le mode de transmission du nom."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+    }
+  ]
+}

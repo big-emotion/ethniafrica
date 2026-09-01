@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité aux attestations directement sourcées du clan totémique baganda."
+  },
+  "id": "PAT_NGONGE",
+  "nameMain": "Ngonge",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Ngonge",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["accord-ekika-2012", "uganda-journal-clans"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GANDA",
+      "status": "attested",
+      "sourceRefs": ["accord-ekika-2012"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["accord-ekika-2012"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "accord-ekika-2012",
+      "title": "Conflict Resolution under the Ekika System of the Baganda in Uganda",
+      "url": "https://www.accord.org.za/wp-content/uploads/2024/06/Monograph-July-2012-Conflict-resolution-under-the-Ekika-system-of-the-Baganda-in-Uganda.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "La monographie institutionnelle cite Ngonge parmi les cinq groupes de parenté originels baganda."
+    },
+    {
+      "sourceKey": "uganda-journal-clans",
+      "title": "Clan Names",
+      "url": "https://tile.loc.gov/storage-services/service/gdc/gdcwdl/wd/l_/13/80/8/wdl_13808/wdl_13808.pdf",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Numéro de l'Uganda Journal numérisé par la Library of Congress ; le tableau des noms de clan donne Ngonge et le totem loutre."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Aucune tradition orale transcrite ni reconstruction linguistique directement vérifiable n'a été retenue."
+    },
+    {
+      "fieldPath": "totemicFoodProhibition",
+      "reason": "La source identifie le totem, mais ne documente pas un interdit alimentaire précis."
+    },
+    {
+      "fieldPath": "permittedGivenNames",
+      "reason": "Aucun prénom autorisé n'est établi par les sources consultées."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé n'a été ajouté sans source nominative sûre."
+    }
+  ]
+}

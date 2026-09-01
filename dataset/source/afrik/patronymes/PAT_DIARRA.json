@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DIARRA",
+  "nameMain": "Diarra",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diarra",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["corpus-ppl-bambara-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAMBARA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-bambara-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-bambara-organisation",
+      "title": "Corpus AFRIK — PPL_BAMBARA, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+    }
+  ]
+}

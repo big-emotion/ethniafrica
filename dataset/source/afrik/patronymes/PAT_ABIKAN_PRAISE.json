@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité à l'attestation académique d'un nom de louange de lignée."
+  },
+  "id": "PAT_ABIKAN_PRAISE",
+  "nameMain": "Abikan",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Abikan",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ayeleru-oriki"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["ayeleru-oriki"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["ayeleru-oriki"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ayeleru-oriki",
+      "title": "Language Hybridization in African Literary Texts: A Study of Selected Novels by Lola Fassinou and Abimbola Adelakun",
+      "url": "https://english.fullerton.edu/publications/clnArchives/pdf/Ayeleru%20NOVEL.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "L'article identifie la séquence généalogique Omo Abikan comme un oríkì yoruba, explicitement décrit comme nom de louange de lignée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "La source atteste la fonction de louange de lignée, mais ne fournit pas une tradition d'origine transcrite complète."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le mode précis de transmission d'Abikan n'est pas établi par l'extrait académique."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur individuel n'est ajouté à partir d'un exemple littéraire."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance entre lignées n'est documentée par la source retenue."
+    }
+  ]
+}
