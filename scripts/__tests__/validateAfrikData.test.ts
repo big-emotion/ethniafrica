@@ -11,6 +11,7 @@ import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
+  checkPeopleGroupConsistency,
   checkPopulationSums,
   checkIsoValidity,
   checkOrphanFiches,
@@ -87,6 +88,28 @@ function writePPL(
   writeFileSync(
     join(dir, `${pplId}.json`),
     JSON.stringify({ ...base, ...overrides })
+  );
+}
+
+function writePplWithAppellations(
+  root: string,
+  flgFolder: string,
+  pplId: string,
+  appellations: { peopleGroupId?: string; peopleGroupLabel?: string }
+) {
+  const dir = join(root, "peuples", flgFolder);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${pplId}.json`),
+    JSON.stringify({
+      id: pplId,
+      content: {
+        appellations,
+        languages: { isoCodes: ["ful"] },
+        demography: { distributionByCountry: [] },
+        sources: [],
+      },
+    })
   );
 }
 
@@ -227,6 +250,104 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPplDuplicates(tmpDir);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("PPL_ZULU"))).toBe(true);
+    });
+  });
+
+  // ── ETNI-1391 : checkPeopleGroupConsistency ────────────────────────────────
+
+  describe("checkPeopleGroupConsistency (ETNI-1391)", () => {
+    // @req REQ-002
+    it("returns ok:true when no fiche declares a people group", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-002
+    it("returns ok:true when split fiches agree on id and label", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI_MASSINA", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.warnings).toHaveLength(0);
+    });
+
+    // @req REQ-002
+    it("errors when a peopleGroupId is set without a peopleGroupLabel", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("PGRP_FULANI") && e.includes("peopleGroupLabel")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("errors when a peopleGroupLabel is set without a peopleGroupId", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("Peul / Fulani") && e.includes("peopleGroupId")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("errors when two fiches share a peopleGroupId but disagree on the label", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI_MASSINA", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Fulani (Massina)",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("PGRP_FULANI") && e.includes("disagreeing")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("warns, but does not error, when a peopleGroupId is declared by only one fiche", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.warnings.some((w) => w.includes("single fiche"))).toBe(
+        true
+      );
     });
   });
 

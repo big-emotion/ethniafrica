@@ -883,6 +883,91 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
 }
 
 /**
+ * ETNI-1391 – A split people's fiches must agree on their group identity.
+ *
+ * `content.appellations.peopleGroupId`/`peopleGroupLabel` is the fiche-level
+ * opt-in that lets several PPL fiches (e.g. `PPL_FULANI`, `PPL_FULANI_MASSINA`)
+ * declare themselves one people, split — grouping is applied at display time
+ * from this pair alone (see `src/lib/search/groupPeopleResults.ts`), so a
+ * fiche with a stray id, a missing label, or a label that disagrees with its
+ * siblings would silently produce either no group or a mislabeled one.
+ */
+export function checkPeopleGroupConsistency(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const labelsById = new Map<string, Map<string, string[]>>(); // groupId → label → files
+  const membersById = new Map<string, string[]>(); // groupId → files
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        appellations?: { peopleGroupId?: unknown; peopleGroupLabel?: unknown };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const appellations = data.content?.appellations;
+    const peopleGroupId =
+      typeof appellations?.peopleGroupId === "string"
+        ? appellations.peopleGroupId
+        : undefined;
+    const peopleGroupLabel =
+      typeof appellations?.peopleGroupLabel === "string"
+        ? appellations.peopleGroupLabel
+        : undefined;
+
+    if (!peopleGroupId && !peopleGroupLabel) continue;
+
+    if (peopleGroupId && !peopleGroupLabel) {
+      errors.push(
+        `${fullPath}: peopleGroupId "${peopleGroupId}" is set but peopleGroupLabel is missing`
+      );
+      continue;
+    }
+    if (!peopleGroupId && peopleGroupLabel) {
+      errors.push(
+        `${fullPath}: peopleGroupLabel "${peopleGroupLabel}" is set but peopleGroupId is missing`
+      );
+      continue;
+    }
+
+    const id = peopleGroupId as string;
+    const label = peopleGroupLabel as string;
+
+    membersById.set(id, [...(membersById.get(id) ?? []), fullPath]);
+
+    const byLabel = labelsById.get(id) ?? new Map<string, string[]>();
+    byLabel.set(label, [...(byLabel.get(label) ?? []), fullPath]);
+    labelsById.set(id, byLabel);
+  }
+
+  for (const [id, byLabel] of labelsById) {
+    if (byLabel.size <= 1) continue;
+    const labels = [...byLabel.entries()]
+      .map(([label, files]) => `"${label}" (${files.join(", ")})`)
+      .join(" vs ");
+    errors.push(`peopleGroupId "${id}" carries disagreeing labels: ${labels}`);
+  }
+
+  for (const [id, files] of membersById) {
+    if (files.length === 1) {
+      warnings.push(
+        `peopleGroupId "${id}" is declared by a single fiche (${files[0]}) — no split to group yet`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * The 54 UN-recognised sovereign African states, ISO 3166-1 alpha-3. This is
  * the geographic boundary for FR28/FR28-strict (REQ-131, supersedes REQ-028):
  * corpus extension beyond Africa is expected to add non-African country
@@ -3794,6 +3879,12 @@ async function main() {
   newChecks.push({
     name: "FR27 PPL duplicates",
     result: checkPplDuplicates(datasetRoot),
+  });
+
+  console.log("ETNI-1391 – People-group consistency...");
+  newChecks.push({
+    name: "ETNI-1391 People-group consistency",
+    result: checkPeopleGroupConsistency(datasetRoot),
   });
 
   console.log("FR28 – Population sums...");
