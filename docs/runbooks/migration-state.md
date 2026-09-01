@@ -208,6 +208,21 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `060_afrik_spelling_aliases.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **ETNI-1411 (DEC-034).** `063` is DEC-034's second mechanism: pg_trgm plus a trigram GIN index
+> on the accent-folded `afrik_peoples.name_main`, and a fallback tier inside
+> `afrik_search_peoples` (migration 044) so a single-letter typo with no declared alias still
+> surfaces a fiche. The fallback only fires when the lexical predicate (`search_vector @@ tsq`)
+> finds nothing, and an explicit `lexical_match` boolean orders ahead of the continuous
+> `relevance` score, so a real lexical or exact match always outranks a fuzzy-only one regardless
+> of magnitude. Similarity threshold 0.4 deliberately excludes the two documented non-goals —
+> "gour" (too short for reliable trigrams) and "bt" (an abbreviation) — both of which remain
+> migration 060's alias mechanism. Queue position 6, after 060 (ETNI-1408); no RPC signature
+> change, so the query layer (`ftsSearchEntities`) and OpenAPI needed no edit. Rollout is
+> two-step: recette applies automatically when this PR merges; production is manual, by hand.
+> Until production carries `063`, a single-letter typo on a people's name resolves on recette but
+> not yet on production.
 
 > **Drift closure.** `062` restores the fourteen `COMMENT ON` statements that `038` declares and
 > the database never received. `migrations:diff` reported three drifted migrations on recette;
