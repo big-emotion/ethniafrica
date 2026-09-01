@@ -1,6 +1,6 @@
 /**
  * Person parser — Zod schema + parsePersonFile for the ARCH-018 person
- * strict model. See supabase/migrations/056_person_schema.sql, ETNI-1382.
+ * strict model. See supabase/migrations/057_person_schema.sql, ETNI-1382.
  */
 
 import { z } from "zod";
@@ -53,7 +53,7 @@ export const personDossierSchema = z
     }),
     fullName: z.string().min(1),
     roleCategory: z.string().min(1, {
-      message: "roleCategory is required (NOT NULL, migration 056)",
+      message: "roleCategory is required (NOT NULL, migration 057)",
     }),
     countryIds: z.array(z.string().regex(/^[A-Z]{3}$/)).default([]),
     peopleLinks: z.array(personPeopleLinkSchema).default([]),

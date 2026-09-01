@@ -3,7 +3,7 @@
  * entity (ethnographer, author, informant, translator, historian, etc.).
  *
  * Distinct from `People` (src/types/afrik.ts), which is the AFRIK
- * ethnic-group entity. Mirrors supabase/migrations/056_person_schema.sql.
+ * ethnic-group entity. Mirrors supabase/migrations/057_person_schema.sql.
  */
 
 import type { CountryId, PeopleId } from "@/types/afrik";

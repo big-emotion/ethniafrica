@@ -1,5 +1,5 @@
 /**
- * Supabase queries for the ARCH-018 person entity (migration 056).
+ * Supabase queries for the ARCH-018 person entity (migration 057).
  */
 
 import { createServerClient } from "../../server";
@@ -52,7 +52,7 @@ async function getPersonCountryIds(
 /**
  * Attached sources, resolved through the Module 0 fabric indirection
  * (persons.assertion_id -> assertions.source_ids -> sources), the same path
- * the source-or-nothing trigger checks (056_person_schema.sql).
+ * the source-or-nothing trigger checks (057_person_schema.sql).
  */
 async function getPersonSources(
   supabase: ReturnType<typeof createServerClient>,

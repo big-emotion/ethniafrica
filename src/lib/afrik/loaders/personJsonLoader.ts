@@ -1,7 +1,7 @@
 /**
  * Person JSON loader — reads dataset/source/afrik/personnes/*.json and writes
  * each fiche's sources, assertion and person row (plus its people/country
- * joins) into the Module 0 fabric + persons schema (ARCH-018, migration 056).
+ * joins) into the Module 0 fabric + persons schema (ARCH-018, migration 057).
  * See ETNI-1382/ETNI-1586.
  */
 import { readdirSync, readFileSync } from "fs";

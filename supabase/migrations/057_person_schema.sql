@@ -1,4 +1,4 @@
--- Migration 056 — the person entity: role category, joins, source-or-nothing (ARCH-018)
+-- Migration 057 — the person entity: role category, joins, source-or-nothing (ARCH-018)
 --
 -- Story: ETNI-1382 (ARCH-018), refined into ETNI-1585 (this migration),
 -- ETNI-1586 (loader), ETNI-1587 (service), ETNI-1588 (contract tests).
