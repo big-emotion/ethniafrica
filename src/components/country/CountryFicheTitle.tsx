@@ -10,7 +10,7 @@ import { getPeopleRoute } from "@/lib/routing";
  * The band a country fiche opens on, above the globe.
  *
  * Same move as the people fiche: the head used to sit inside the parchment,
- * below a full-bleed band, so a reader arriving on `/fr/explorer/pays/BEN`
+ * below a full-bleed band, so a reader arriving on `/fr/atlas/pays/BEN`
  * met a globe and nothing naming the page. The figures stay with the
  * parchment; the band carries the identity and the way back.
  */

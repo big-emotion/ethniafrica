@@ -9,7 +9,7 @@ import type { AccessMode } from "@/lib/hubs/moduleRegistry";
 const hubModule = (overrides: Partial<HubModule>): HubModule => ({
   id: "x",
   name: "X",
-  accessMode: "jouer",
+  accessMode: "jeux",
   page: null,
   availability: "data",
   available: true,
@@ -17,9 +17,9 @@ const hubModule = (overrides: Partial<HubModule>): HubModule => ({
 });
 
 const byAxis = (modules: HubModule[]): Record<AccessMode, HubModule[]> => ({
-  explorer: modules.filter((m) => m.accessMode === "explorer"),
-  comprendre: modules.filter((m) => m.accessMode === "comprendre"),
-  jouer: modules.filter((m) => m.accessMode === "jouer"),
+  atlas: modules.filter((m) => m.accessMode === "atlas"),
+  dossiers: modules.filter((m) => m.accessMode === "dossiers"),
+  jeux: modules.filter((m) => m.accessMode === "jeux"),
 });
 
 // A draw that always lands on the first eligible module, so the tests assert
@@ -60,12 +60,12 @@ describe("pickHeroModule", () => {
     const modules = byAxis([
       hubModule({
         id: "familles",
-        accessMode: "explorer",
+        accessMode: "atlas",
         heroable: "globe",
       }),
       hubModule({
         id: "frise",
-        accessMode: "comprendre",
+        accessMode: "dossiers",
         heroable: "globe",
       }),
       hubModule({ id: "mercator", heroable: "globe" }),
@@ -141,12 +141,12 @@ describe("pickHeroModule", () => {
     const modules = byAxis([
       hubModule({
         id: "familles",
-        accessMode: "explorer",
+        accessMode: "atlas",
         heroable: "family-crown",
       }),
       hubModule({
         id: "frise",
-        accessMode: "comprendre",
+        accessMode: "dossiers",
         heroable: "migration-paths",
       }),
       hubModule({ id: "mercator", heroable: "globe" }),
@@ -175,7 +175,7 @@ describe("pickHeroModule", () => {
     const modules = byAxis([
       hubModule({
         id: "familles",
-        accessMode: "explorer",
+        accessMode: "atlas",
         heroable: "family-crown",
       }),
       hubModule({ id: DEFAULT_HERO_MODULE_ID, heroable: "globe" }),
@@ -196,7 +196,7 @@ describe("pickHeroModule", () => {
     const withoutTheDefault = byAxis([
       hubModule({
         id: "familles",
-        accessMode: "explorer",
+        accessMode: "atlas",
         heroable: "family-crown",
       }),
     ]);

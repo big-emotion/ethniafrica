@@ -28,7 +28,7 @@ export type GameDataSource = "countries";
 
 export interface GameDefinition {
   id: GameId;
-  /** Slug in /fr/jouer/<slug>; equal to the id for every game today. */
+  /** Slug in /fr/jeux/<slug>; equal to the id for every game today. */
   slug: string;
   nameFr: string;
   /**

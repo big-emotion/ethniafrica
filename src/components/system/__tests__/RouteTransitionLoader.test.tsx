@@ -14,7 +14,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 // Composed from the slug table rather than written out: a module that is
 // re-slugged must break here rather than silently stop being tested.
 const HOME = "/fr";
-const EXPLORER_HUB = getLocalizedRoute("fr", "explorerHub");
+const EXPLORER_HUB = getLocalizedRoute("fr", "atlasHub");
 const COUNTRIES = getLocalizedRoute("fr", "countries");
 
 let currentPathname = HOME;

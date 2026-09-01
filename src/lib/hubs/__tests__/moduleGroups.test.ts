@@ -26,7 +26,7 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // is; it used to vanish with an unset environment variable.
   // @req REQ-120
   it("files every jouer module onto a shelf, in registry order", () => {
-    const shelves = getGroupedModules(liveModules("jouer"));
+    const shelves = getGroupedModules(liveModules("jeux"));
 
     expect(shelves.map((shelf) => shelf.group.id)).toEqual([
       "jeux-pays",
@@ -44,7 +44,7 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // reads as a flat row of cards.
   // @req REQ-120
   it("marks a shelf that holds a single module as one to skip past", () => {
-    const shelves = getGroupedModules(liveModules("jouer"));
+    const shelves = getGroupedModules(liveModules("jeux"));
     const bySize = Object.fromEntries(
       shelves.map((shelf) => [shelf.group.id, shelf.singleton])
     );
@@ -57,8 +57,8 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // once, so nothing is filed and both surfaces stay flat.
   // @req REQ-120
   it("leaves an axis whose modules carry no shelf ungrouped", () => {
-    expect(getGroupedModules(liveModules("explorer"))).toEqual([]);
-    expect(getGroupedModules(liveModules("comprendre"))).toEqual([]);
+    expect(getGroupedModules(liveModules("atlas"))).toEqual([]);
+    expect(getGroupedModules(liveModules("dossiers"))).toEqual([]);
   });
 
   // A shelf whose modules were all dropped upstream — a dark feature flag,
@@ -66,7 +66,7 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   // @req REQ-120
   it("drops a shelf left with nothing on it", () => {
     const onlyTheQuiz = asModules(
-      getModulesForAccessMode("jouer").filter((m) => m.id === "quiz")
+      getModulesForAccessMode("jeux").filter((m) => m.id === "quiz")
     );
 
     expect(getGroupedModules(onlyTheQuiz).map((s) => s.group.id)).toEqual([

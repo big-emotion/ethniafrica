@@ -42,7 +42,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens on the home and names the axis without linking to it", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.explorer },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays" },
     ]);
   });
@@ -54,9 +54,9 @@ describe("deriveTrail — the trail comes from the route", () => {
    */
   // @req REQ-091
   it("does not repeat the axis on the axis hub itself", () => {
-    expect(deriveTrail(getLocalizedRoute("fr", "explorerHub"))).toEqual([
+    expect(deriveTrail(getLocalizedRoute("fr", "atlasHub"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.explorer },
+      { label: ACCESS_MODE_LABELS.atlas },
     ]);
   });
 
@@ -93,14 +93,14 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.explorer },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
         { label: "Accueil", href: "/fr" },
-        { label: ACCESS_MODE_LABELS.explorer },
+        { label: ACCESS_MODE_LABELS.atlas },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -113,7 +113,7 @@ describe("deriveTrail — the trail comes from the route", () => {
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.explorer },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -126,7 +126,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.explorer },
+      { label: ACCESS_MODE_LABELS.atlas },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -141,7 +141,7 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail.map((crumb) => crumb.label)).toEqual([
       "Accueil",
-      ACCESS_MODE_LABELS.explorer,
+      ACCESS_MODE_LABELS.atlas,
       "Peuples",
       "Yoruba",
     ]);
@@ -222,12 +222,12 @@ describe("deriveTrail — the trail comes from the route", () => {
     ]);
     expect(
       deriveTrail(
-        `${getLocalizedRoute("fr", "jouerHub")}/mercator`,
+        `${getLocalizedRoute("fr", "jeuxHub")}/mercator`,
         "La taille qu'on vous a cachée"
       )
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.jouer },
+      { label: ACCESS_MODE_LABELS.jeux },
       { label: "La taille qu'on vous a cachée" },
     ]);
   });
@@ -241,7 +241,7 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("names a known sub-route from the table rather than the entity label", () => {
     expect(deriveTrail(`${getLocalizedRoute("fr", "quiz")}/score`)).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.jouer },
+      { label: ACCESS_MODE_LABELS.jeux },
       { label: "Quiz", href: getLocalizedRoute("fr", "quiz") },
       { label: "Score" },
     ]);
@@ -286,11 +286,11 @@ describe("the trail a fiche renders", () => {
       />
     );
 
-    const axis = screen.getByText(ACCESS_MODE_LABELS.explorer);
+    const axis = screen.getByText(ACCESS_MODE_LABELS.atlas);
     expect(axis.getAttribute("aria-current")).toBeNull();
     expect(axis.closest("a")).toBeNull();
     expect(
-      screen.queryByRole("link", { name: ACCESS_MODE_LABELS.explorer })
+      screen.queryByRole("link", { name: ACCESS_MODE_LABELS.atlas })
     ).toBeNull();
   });
 
@@ -311,7 +311,7 @@ describe("the trail a fiche renders", () => {
       deriveTrail(getPeopleRoute("fr", "PPL_YORUBA"), "Yoruba").map(
         (crumb) => crumb.label
       )
-    ).toEqual(["Accueil", ACCESS_MODE_LABELS.explorer, "Peuples", "Yoruba"]);
+    ).toEqual(["Accueil", ACCESS_MODE_LABELS.atlas, "Peuples", "Yoruba"]);
 
     const { container } = render(
       <PeopleLanguageSection

@@ -10,7 +10,7 @@ describe("moduleHref — where a hub module's click lands (REQ-114)", () => {
   // @req REQ-114
   it("sends a game to its slug under the jouer hub", () => {
     expect(getModuleHref({ page: null, gameSlug: "mercator" }, "fr")).toBe(
-      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
+      `${getLocalizedRoute("fr", "jeuxHub")}/mercator`
     );
   });
 
@@ -34,7 +34,7 @@ describe("moduleHref — where a hub module's click lands (REQ-114)", () => {
   it("prefers the slug when a module somehow carries both", () => {
     expect(
       getModuleHref({ page: "quiz", gameSlug: "appellations" }, "fr")
-    ).toBe(`${getLocalizedRoute("fr", "jouerHub")}/appellations`);
+    ).toBe(`${getLocalizedRoute("fr", "jeuxHub")}/appellations`);
   });
 
   // A module with neither is one whose surface isn't wired to any route:

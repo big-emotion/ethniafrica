@@ -8,7 +8,7 @@ import type { HubModule } from "@/lib/hubs/moduleAvailability";
 const gameModule = {
   id: "mercator",
   name: "La taille qu'on vous a cachée",
-  accessMode: "jouer",
+  accessMode: "jeux",
   page: null,
   availability: "static",
   gameSlug: "mercator",
@@ -19,7 +19,7 @@ const readingModule = {
   ...gameModule,
   id: "migrations",
   name: "Les routes du peuplement",
-  accessMode: "comprendre",
+  accessMode: "dossiers",
   // A module outside Jouer is addressed by its PageType, not by a slug —
   // getModuleHref resolves the two in that order.
   page: "migrations",
@@ -143,7 +143,7 @@ describe("FeaturedModule — the module the home puts forward (REQ-113/REQ-115)"
     expect(screen.queryByTestId("home-featured-start")).toBeNull();
     expect(screen.getByTestId("hero-provenance")).toHaveAttribute(
       "href",
-      `${getAxisHubRoute("fr", "jouer")}/mercator`
+      `${getAxisHubRoute("fr", "jeux")}/mercator`
     );
   });
 

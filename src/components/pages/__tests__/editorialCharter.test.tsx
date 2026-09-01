@@ -18,9 +18,9 @@ const aboutData = {
     migrations: 5,
   },
   modulesByAxis: {
-    explorer: [],
-    comprendre: [],
-    jouer: [],
+    atlas: [],
+    dossiers: [],
+    jeux: [],
   } as Record<AccessMode, HubModule[]>,
   syntheses: [],
 };

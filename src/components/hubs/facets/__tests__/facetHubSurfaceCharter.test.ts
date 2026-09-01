@@ -22,9 +22,9 @@ const read = (path: string): string =>
   readFileSync(resolve(process.cwd(), path), "utf8");
 
 const FACET_PAGES = [
-  "src/app/[lang]/explorer/peuples/page.tsx",
-  "src/app/[lang]/explorer/familles/page.tsx",
-  "src/app/[lang]/explorer/pays/page.tsx",
+  "src/app/[lang]/atlas/peuples/page.tsx",
+  "src/app/[lang]/atlas/familles/page.tsx",
+  "src/app/[lang]/atlas/pays/page.tsx",
 ];
 
 describe("The facet hub reading is the page's own ground (REQ-114)", () => {

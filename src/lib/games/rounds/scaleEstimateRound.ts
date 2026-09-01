@@ -138,7 +138,7 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
       // fiche to lead to, so the way in is the atlas itself — which is also
       // the honest destination, the round being about the continent rather
       // than about the shape it is measured against.
-      ficheHref: getAxisHubRoute("fr", "explorer"),
+      ficheHref: getAxisHubRoute("fr", "atlas"),
     },
   };
 }

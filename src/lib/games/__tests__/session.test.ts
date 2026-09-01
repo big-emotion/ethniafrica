@@ -17,7 +17,7 @@ const round = (subjectId: string): GameRound => ({
     fieldPath: "lib/atlas/assets/africaAdmin0",
     sources: [],
     confidence: null,
-    ficheHref: getAxisHubRoute("fr", "explorer"),
+    ficheHref: getAxisHubRoute("fr", "atlas"),
   },
 });
 

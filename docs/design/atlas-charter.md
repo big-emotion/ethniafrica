@@ -58,11 +58,11 @@ And **a scene that opens no country marks none.** The converse of the rule
 above, and it had to be written because the same code drew both. The continent
 scene belongs to the Explorer hub, where a mark's promise is the whole offer —
 but `ContinentGlobeStage` reused it to stand under the two surfaces that argue
-about projection, the home's featured module and `/fr/jouer/mercator`, and
+about projection, the home's featured module and `/fr/jeux/mercator`, and
 inherited the offer with it: twelve pinned countries, a tap anywhere on the
 sphere selecting the nearest, and a legend promising « appuyez sur un point
 pour ouvrir le pays ». Neither surface is browsing the corpus, so the promise
-was false on the home and worse on `/fr/jouer/mercator`, where a tap mid-question
+was false on the home and worse on `/fr/jeux/mercator`, where a tap mid-question
 opened a country panel over a standing round. Withdrawing the marks is not
 enough on its own: the stage-wide tap is the third way in, and it is the one
 nobody sees until a reader lands on a fiche they never aimed at. Contract:
@@ -134,13 +134,14 @@ _Jouer_) to this nominal one, naming the content each mode groups rather than
 the intent a reader arrives with; it supersedes `DEC-044` on that rename
 clause only.
 
-This is a **transitional state**, not the settled one: the axis labelled
-**L'atlas** still carries the identifier `explorer` and routes under
-`/fr/explorer/*`; **Les dossiers** still carries `comprendre` and
-`/fr/comprendre/*`; **Les jeux** still carries `jouer` and `/fr/jouer/*`. A
-sibling change (ETNI-1615) aligns each identifier, label and URL segment to
-denote the same thing; until it lands, the label a reader sees and the
-address bar disagree, exactly as `DEC-045`'s tradeoffs section records.
+ETNI-1615 (`REQ-138`) closed the transitional state `DEC-045`'s tradeoffs
+section once recorded: identifier, label and URL segment now name the same
+thing. **L'atlas** carries the identifier `atlas` and routes under
+`/fr/atlas/*`; **Les dossiers** carries `dossiers` and `/fr/dossiers/*`;
+**Les jeux** carries `jeux` and `/fr/jeux/*`. The verb-shaped predecessors —
+`explorer`, `comprendre`, `jouer` — are retired identifiers now, permanently
+redirected rather than reachable: every address published under them reaches
+its successor in one hop (`src/middleware.ts`, `RELOCATED_SEGMENTS`).
 
 The access-mode label is a non-navigating heading or disclosure; direct module
 links sit beneath it. A live module is exactly one click away from the global
@@ -166,8 +167,8 @@ generated from it, never hand-listed.
 
   This used to read "the panel shows each destination's real route", and the
   panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
-  a route under **Les dossiers**, at its still-transitional `comprendre`
-  prefix — in monospace under its label. That is the router's path scheme
+  a route under **Les dossiers**, at its address of the time — in monospace
+  under its label. That is the router's path scheme
   rendered as editorial content — the atlas publishing its own plumbing to a reader who
   came for peoples and languages. The address lives in the link's `href`,
   where the browser's status bar, the crawler and the screen reader all agree

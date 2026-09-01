@@ -89,7 +89,7 @@ describe("Jouer games charter contract (REQ-120)", () => {
   // @req REQ-120
   it("declares the Jouer accent in the token registry, not in a component", () => {
     expect(readFileSync(HUB_REGISTRY, "utf8")).toContain(
-      'jouer: "afh-accent-perv"'
+      'jeux: "afh-accent-perv"'
     );
 
     const inlined = playComponentFiles().filter((file) =>

@@ -37,9 +37,9 @@ const distanceFromOrigin = (node: GraphNode) =>
 describe("axisGraphGeometry — where the module nodes sit and how they project", () => {
   // @req REQ-114
   it("gives each axis the layout its opening choreography needs", () => {
-    expect(LAYOUT_BY_AXIS.explorer).toBe("ring");
-    expect(LAYOUT_BY_AXIS.comprendre).toBe("arc");
-    expect(LAYOUT_BY_AXIS.jouer).toBe("pair");
+    expect(LAYOUT_BY_AXIS.atlas).toBe("ring");
+    expect(LAYOUT_BY_AXIS.dossiers).toBe("arc");
+    expect(LAYOUT_BY_AXIS.jeux).toBe("pair");
   });
 
   // @req REQ-114

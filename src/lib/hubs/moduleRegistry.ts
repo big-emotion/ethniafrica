@@ -29,16 +29,16 @@ import type { PageType } from "@/lib/routing";
 //     into the *corpus*; those two pages describe the *project*, so filing
 //     them behind a reading intention promised a fiche and delivered a
 //     colophon. They are reached from the footer's "Le projet" rubric.
-export type AccessMode = "explorer" | "comprendre" | "jouer";
+export type AccessMode = "atlas" | "dossiers" | "jeux";
 
 // @req REQ-114
-export const ACCESS_MODES: AccessMode[] = ["explorer", "comprendre", "jouer"];
+export const ACCESS_MODES: AccessMode[] = ["atlas", "dossiers", "jeux"];
 
 // @req REQ-114
 export const ACCESS_MODE_LABELS = {
-  explorer: "L'atlas",
-  comprendre: "Les dossiers",
-  jouer: "Les jeux",
+  atlas: "L'atlas",
+  dossiers: "Les dossiers",
+  jeux: "Les jeux",
 } satisfies Record<AccessMode, string>;
 
 // One categorical accent per mode, from the CVD-validated four (color.css
@@ -47,9 +47,9 @@ export const ACCESS_MODE_LABELS = {
 // entity read as the same scope.
 // @req REQ-114
 export const ACCENT_BY_ACCESS_MODE: Record<AccessMode, string> = {
-  explorer: "afh-accent-ocre",
-  comprendre: "afh-accent-teal",
-  jouer: "afh-accent-perv",
+  atlas: "afh-accent-ocre",
+  dossiers: "afh-accent-teal",
+  jeux: "afh-accent-perv",
 };
 
 // The Supabase table whose row count decides whether a "data" module is
@@ -151,7 +151,7 @@ export interface HubModuleDefinition {
    */
   editorialReadiness?: EditorialReadiness;
   dataSource?: ModuleDataSource;
-  /** A game under the Jouer hub, addressed as /fr/jouer/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
+  /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
   gameSlug?: string;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
   group?: ModuleGroupId;
@@ -178,7 +178,7 @@ export interface HubModuleDefinition {
  *
  * - "globe": the textured globe, self-contained, no corpus behind it.
  * - "game": the play loop itself, rounds built server-side exactly as
- *   /fr/jouer/[jeu] builds them. One branch covers all eleven games.
+ *   /fr/jeux/[jeu] builds them. One branch covers all eleven games.
  * - "migration-paths": the sourced events drawn on the Africa basemap.
  * - "family-crown": the linguistic families laid out in a radial crown,
  *   each weighted by the peoples it holds.
@@ -212,7 +212,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "pays",
     name: "Les pays d'Afrique",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "countries",
     availability: "data",
     editorialReadiness: "ready",
@@ -221,7 +221,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "peuples",
     name: "Les peuples d'Afrique",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "peoples",
     availability: "data",
     editorialReadiness: "ready",
@@ -230,7 +230,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "familles",
     name: "L'arbre des familles",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "families",
     availability: "data",
     editorialReadiness: "ready",
@@ -244,7 +244,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "noms",
     name: "Appellations",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "names",
     availability: "data",
     // This read "ready", on the reasoning that an empty `name_records`
@@ -262,7 +262,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "recherche",
     name: "Recherche libre",
-    accessMode: "explorer",
+    accessMode: "atlas",
     page: "search",
     availability: "static",
     editorialReadiness: "ready",
@@ -278,7 +278,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "anecdotes",
     name: "Anecdotes",
-    accessMode: "comprendre",
+    accessMode: "dossiers",
     page: "anecdotes",
     availability: "static",
     editorialReadiness: "ready",
@@ -288,7 +288,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // three-millennia timeline (ETNI-1198).
     id: "frise",
     name: "Premiers repères de migrations",
-    accessMode: "comprendre",
+    accessMode: "dossiers",
     page: "migrations",
     availability: "data",
     // Six sourced events. The table is not empty, so no row count was ever
@@ -305,7 +305,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // than in a utility row beside it.
     id: "regards-colonisation",
     name: "Regards : colonisation et résistances",
-    accessMode: "comprendre",
+    accessMode: "dossiers",
     page: "colonization",
     availability: "static",
     // Static, so it has no table whose emptiness could have spoken for it:
@@ -321,7 +321,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     id: "quiz",
     group: "jeux-quiz",
     name: "Le quiz des parcours",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: "quiz",
     // Read from its own bank, like every other data module reads its table.
     // It used to hang from `NEXT_PUBLIC_FEATURE_QUIZ`, which meant a built
@@ -334,7 +334,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     id: "mercator",
     group: "jeux-pays",
     name: "La taille qu'on vous a cachée",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     gameSlug: "mercator",
     availability: "data",

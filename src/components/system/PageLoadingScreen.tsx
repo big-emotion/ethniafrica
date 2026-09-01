@@ -34,7 +34,7 @@ export interface PageLoadingScreenProps {
  *
  * It carries no page identity, though: no section name, so no title plate,
  * and no trail (brand charter §8.4). Both used to be drawn here, and on
- * `/fr/explorer` the plate alone took the top of the fold from the one thing
+ * `/fr/atlas` the plate alone took the top of the fold from the one thing
  * the wait exists to show. Neither names a page the reader has arrived at,
  * and the client overlay that covers the segments a boundary would damage
  * has never drawn either.

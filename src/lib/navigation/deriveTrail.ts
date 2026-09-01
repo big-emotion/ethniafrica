@@ -96,7 +96,7 @@ export function deriveTrail(
 
     base = getLocalizedRoute(language, page);
 
-    // A game — `/fr/jouer/mercator` — has no `PageType` of its own, so the
+    // A game — `/fr/jeux/mercator` — has no `PageType` of its own, so the
     // slug table answers with the axis hub and the axis arrives here as the
     // page rather than above it. It is the same crumb and owes the same
     // silence: `base` still opens the walk below it, but nothing links to it.

@@ -46,7 +46,7 @@ describe("ActionLink — actions charter form A", () => {
   // @req REQ-091
   it("draws an arrow on every action link", () => {
     render(
-      <ActionLink href={getLocalizedRoute("fr", "comprendreHub")}>
+      <ActionLink href={getLocalizedRoute("fr", "dossiersHub")}>
         Remonter
       </ActionLink>
     );
@@ -70,7 +70,7 @@ describe("ActionLink — actions charter form A", () => {
   // @req REQ-091
   it("carries the charter's label size and target height", () => {
     render(
-      <ActionLink href={getLocalizedRoute("fr", "jouerHub")}>
+      <ActionLink href={getLocalizedRoute("fr", "jeuxHub")}>
         Se tester
       </ActionLink>
     );
@@ -83,7 +83,7 @@ describe("ActionLink — actions charter form A", () => {
   // @req REQ-091
   it("is bare at rest and underlines only on hover and focus", () => {
     render(
-      <ActionLink href={getLocalizedRoute("fr", "jouerHub")}>
+      <ActionLink href={getLocalizedRoute("fr", "jeuxHub")}>
         Se tester
       </ActionLink>
     );

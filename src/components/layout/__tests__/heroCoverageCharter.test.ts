@@ -29,9 +29,9 @@ const read = (path: string): string =>
 
 /** Every surface that opens on a globe and names its own subject. */
 const SURFACES = [
-  "src/app/[lang]/explorer/pays/[slug]/page.tsx",
-  "src/app/[lang]/explorer/peuples/[slug]/page.tsx",
-  "src/app/[lang]/explorer/familles/[slug]/page.tsx",
+  "src/app/[lang]/atlas/pays/[slug]/page.tsx",
+  "src/app/[lang]/atlas/peuples/[slug]/page.tsx",
+  "src/app/[lang]/atlas/familles/[slug]/page.tsx",
   "src/components/hubs/facets/FacetHubShell.tsx",
 ] as const;
 

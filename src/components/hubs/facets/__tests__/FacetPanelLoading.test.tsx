@@ -2,9 +2,9 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { FacetPanelLoading } from "@/components/hubs/facets/FacetPanelLoading";
-import FamillesLoading from "@/app/[lang]/explorer/familles/loading";
-import PaysLoading from "@/app/[lang]/explorer/pays/loading";
-import PeuplesLoading from "@/app/[lang]/explorer/peuples/loading";
+import FamillesLoading from "@/app/[lang]/atlas/familles/loading";
+import PaysLoading from "@/app/[lang]/atlas/pays/loading";
+import PeuplesLoading from "@/app/[lang]/atlas/peuples/loading";
 
 /**
  * The wait of a facet reading, as opposed to the wait of a page.

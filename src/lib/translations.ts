@@ -25,9 +25,9 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   migrations: "Migrations",
   quiz: "Quiz",
   colonization: "Colonisation & résistances",
-  explorerHub: ACCESS_MODE_LABELS.explorer,
-  comprendreHub: ACCESS_MODE_LABELS.comprendre,
-  jouerHub: ACCESS_MODE_LABELS.jouer,
+  atlasHub: ACCESS_MODE_LABELS.atlas,
+  dossiersHub: ACCESS_MODE_LABELS.dossiers,
+  jeuxHub: ACCESS_MODE_LABELS.jeux,
 };
 
 // @req REQ-014
@@ -351,8 +351,8 @@ export const translations = {
     // was already the back half of every one of these, is now the whole of
     // it. The home's cards (AccessAxes) carry the same change.
     hubs: {
-      explorer: {
-        title: ACCESS_MODE_LABELS.explorer,
+      atlas: {
+        title: ACCESS_MODE_LABELS.atlas,
         // `title` keeps the short reader-facing label available to legacy
         // translation consumers. The band has a different job: it names the
         // page and what it leads into, so `pageTitle` remains descriptive.
@@ -368,8 +368,8 @@ export const translations = {
           "Quand on sait ce qu'on cherche — un peuple, un pays, une langue, un nom.",
         hubEntryName: "Le hub d'exploration",
       },
-      comprendre: {
-        title: ACCESS_MODE_LABELS.comprendre,
+      dossiers: {
+        title: ACCESS_MODE_LABELS.dossiers,
         pageTitle: "Comprendre les peuples d'Afrique",
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
@@ -377,8 +377,8 @@ export const translations = {
           "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
         hubEntryName: "Le hub de lecture",
       },
-      jouer: {
-        title: ACCESS_MODE_LABELS.jouer,
+      jeux: {
+        title: ACCESS_MODE_LABELS.jeux,
         pageTitle: "Jouer avec les peuples d'Afrique",
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",

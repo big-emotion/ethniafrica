@@ -69,7 +69,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("explorer");
+    const modules = await getHubModules("atlas");
     const peuples = modules.find((m) => m.id === "peuples");
 
     expect(peuples?.available).toBe(false);
@@ -82,8 +82,8 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     // Drawn from Explorer and Jouer rather than Comprendre: every Comprendre
     // module that reads a table is now declared `draft`, so none of them can
     // stand in for "the row count is what decides".
-    const explorer = await getHubModules("explorer");
-    const jouer = await getHubModules("jouer");
+    const explorer = await getHubModules("atlas");
+    const jouer = await getHubModules("jeux");
 
     expect(explorer.find((m) => m.id === "pays")?.available).toBe(true);
     expect(jouer.find((m) => m.id === "quiz")?.available).toBe(true);
@@ -101,7 +101,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("comprendre");
+    const modules = await getHubModules("dossiers");
     const frise = modules.find((m) => m.id === "frise");
 
     expect(frise?.available).toBe(false);
@@ -114,7 +114,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     });
     createServerClientMock.mockReturnValue({ from });
 
-    const modules = await getHubModules("explorer");
+    const modules = await getHubModules("atlas");
     const familles = modules.find((m) => m.id === "familles");
 
     expect(familles?.available).toBe(false);
@@ -146,7 +146,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     const supabase = buildSupabaseMock(ALL_LIVE_RESULTS);
     createServerClientMock.mockReturnValue(supabase);
 
-    const modules = await getHubModules("jouer");
+    const modules = await getHubModules("jeux");
 
     expect(supabase.from).toHaveBeenCalledWith("afrik_countries");
     expect(modules.find((m) => m.id === "mercator")?.available).toBe(true);
@@ -163,7 +163,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("jouer");
+    const modules = await getHubModules("jeux");
 
     expect(modules.find((m) => m.id === "mercator")?.available).toBe(false);
     expect(modules.find((m) => m.id === "quiz")?.available).toBe(true);
@@ -181,8 +181,8 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("surfaces a static module as live even when every table is empty", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock({}));
 
-    const comprendre = await getHubModules("comprendre");
-    const explorer = await getHubModules("explorer");
+    const comprendre = await getHubModules("dossiers");
+    const explorer = await getHubModules("atlas");
 
     expect(comprendre.find((m) => m.id === "anecdotes")?.available).toBe(true);
     expect(comprendre.find((m) => m.id === "frise")?.available).toBe(false);
@@ -199,7 +199,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
     try {
-      const modules = await getHubModules("jouer");
+      const modules = await getHubModules("jeux");
 
       expect(modules.map((m) => m.id)).toContain("quiz");
       expect(modules.find((m) => m.id === "quiz")?.available).toBe(true);
@@ -219,7 +219,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("jouer");
+    const modules = await getHubModules("jeux");
     const quiz = modules.find((m) => m.id === "quiz");
 
     // Listed and honest, rather than gone: a reader can see the module
@@ -243,7 +243,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("keeps a module in preparation unavailable however full its table is", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
-    const modules = await getHubModules("comprendre");
+    const modules = await getHubModules("dossiers");
     const frise = modules.find((m) => m.id === "frise");
 
     expect(frise).toBeDefined();
@@ -272,7 +272,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("takes a static module off the invitation when it is declared unready", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
-    const modules = await getHubModules("comprendre");
+    const modules = await getHubModules("dossiers");
 
     expect(
       modules.find((m) => m.id === "regards-colonisation")?.available
@@ -287,7 +287,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("still lists a module in preparation", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
-    const modules = await getHubModules("comprendre");
+    const modules = await getHubModules("dossiers");
 
     expect(modules.map((m) => m.id)).toContain("frise");
     expect(modules.map((m) => m.id)).toContain("regards-colonisation");

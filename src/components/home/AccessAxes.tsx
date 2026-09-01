@@ -57,7 +57,7 @@ const plural = (count: number, singular: string, many = `${singular}s`) =>
 
 const AXES: AxisDefinition[] = [
   {
-    id: "explorer",
+    id: "atlas",
     cta: "Parcourir",
     stake:
       // « Le corpus » is the team's word for the collection, not the
@@ -68,14 +68,14 @@ const AXES: AxisDefinition[] = [
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
   {
-    id: "comprendre",
+    id: "dossiers",
     cta: "Remonter",
     stake:
       "D'où viennent les noms, par où sont passés les peuples, et sur quelles sources.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
   },
   {
-    id: "jouer",
+    id: "jeux",
     cta: "Se tester",
     stake:
       "Des jeux et des quiz tirés des fiches, dont chaque réponse est sourcée.",
@@ -87,8 +87,7 @@ const AXES: AxisDefinition[] = [
     // Filtered through the same lock the hub uses, so the card and the hub
     // behind it count the same entries: a module behind a dark flag is not
     // listed there and must not be counted here.
-    figure: () =>
-      plural(getModulesForAccessMode("jouer").length, "jeu", "jeux"),
+    figure: () => plural(getModulesForAccessMode("jeux").length, "jeu", "jeux"),
   },
 ];
 
@@ -105,7 +104,7 @@ function AxisGlyph({
 }) {
   const cls = (name: string) => (animated ? name : undefined);
 
-  if (axis === "explorer") {
+  if (axis === "atlas") {
     // Peoples scattered across the continent, briefly finding each other.
     const dots: Array<[number, number]> = [
       [14, 18],
@@ -151,7 +150,7 @@ function AxisGlyph({
     );
   }
 
-  if (axis === "comprendre") {
+  if (axis === "dossiers") {
     // A trajectory writing itself across time.
     return (
       <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">

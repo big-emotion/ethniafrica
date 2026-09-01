@@ -13,15 +13,15 @@ export type PageType =
   | "migrations"
   | "quiz"
   | "colonization"
-  | "explorerHub"
-  | "comprendreHub"
-  | "jouerHub";
+  | "atlasHub"
+  | "dossiersHub"
+  | "jeuxHub";
 
 // Mapping des slugs par langue.
 //
 // A module's slug opens on the hub that leads to it, so the URL states the
-// same hierarchy the menu does: `/fr/explorer/pays` rather than `/fr/pays`
-// beside a `/fr/explorer` that claims to lead there. The three hubs were
+// same hierarchy the menu does: `/fr/atlas/pays` rather than `/fr/pays`
+// beside a `/fr/atlas` that claims to lead there. The three hubs were
 // published as the three entry points and then led to pages that sat above
 // them, which left every module addressable without ever naming the axis it
 // belonged to — and so no way for a reader, or a crawler, to tell an axis
@@ -40,25 +40,25 @@ export type PageType =
 // and left the access-mode taxonomy for the footer (REQ-132).
 const SLUGS: Record<Language, Record<PageType, string>> = {
   fr: {
-    countries: "explorer/pays",
-    families: "explorer/familles",
-    peoples: "explorer/peuples",
-    search: "explorer/recherche",
+    countries: "atlas/pays",
+    families: "atlas/familles",
+    peoples: "atlas/peuples",
+    search: "atlas/recherche",
     doctrine: "doctrine",
     about: "about",
-    anecdotes: "comprendre/anecdotes",
-    names: "explorer/appellations",
+    anecdotes: "dossiers/anecdotes",
+    names: "atlas/appellations",
     compare: "comparer",
-    migrations: "comprendre/migrations",
-    quiz: "jouer/quiz",
+    migrations: "dossiers/migrations",
+    quiz: "jeux/quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
-    colonization: "comprendre/regards/colonisation-et-resistances",
-    // REQ-114: one hub route per access mode. The slug is the verb the
-    // reader arrived with, which is what keeps it from colliding with the
-    // resource pages (peuples/pays/familles) it now holds.
-    explorerHub: "explorer",
-    comprendreHub: "comprendre",
-    jouerHub: "jouer",
+    colonization: "dossiers/regards/colonisation-et-resistances",
+    // REQ-114/REQ-138: one hub route per access mode. The slug is the verb
+    // the reader arrived with, which is what keeps it from colliding with
+    // the resource pages (peuples/pays/familles) it now holds.
+    atlasHub: "atlas",
+    dossiersHub: "dossiers",
+    jeuxHub: "jeux",
   },
 };
 
@@ -87,8 +87,8 @@ export const getLocalizedRoute = (
  * shorter one sharing its first segment.
  *
  * Now that the modules nest, every one of them shares its first segment with
- * its hub, so that sort is what separates `/fr/explorer/pays` from
- * `/fr/explorer`. It needed no change to do it — the ordering was already
+ * its hub, so that sort is what separates `/fr/atlas/pays` from
+ * `/fr/atlas`. It needed no change to do it — the ordering was already
  * the rule, only rarely exercised.
  */
 // @req REQ-091

@@ -14,7 +14,7 @@ const REVEAL = {
   fieldPath: "lib/atlas/assets/africaAdmin0",
   sources: [],
   confidence: null,
-  ficheHref: getAxisHubRoute("fr", "explorer"),
+  ficheHref: getAxisHubRoute("fr", "atlas"),
 };
 
 const binary: BinaryRound = {

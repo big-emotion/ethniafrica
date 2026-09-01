@@ -36,7 +36,7 @@ describe("QuizSessionWait", () => {
     const { container } = render(<QuizSessionWait />);
 
     expect(container.querySelector(".afh-dykl")?.parentElement).toHaveClass(
-      ACCENT_BY_ACCESS_MODE.jouer
+      ACCENT_BY_ACCESS_MODE.jeux
     );
   });
 

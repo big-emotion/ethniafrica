@@ -22,7 +22,7 @@ export interface HeroFamilyNode {
 /**
  * What the hero slot needs in hand before it can render the drawn module
  * (REQ-115). Everything here crosses the server/client boundary as props,
- * so it stays serialisable — the contract /fr/jouer/[jeu] already honours
+ * so it stays serialisable — the contract /fr/jeux/[jeu] already honours
  * when it hands rounds to GamePlayHost.
  */
 export type HeroPreview =
@@ -37,7 +37,7 @@ const HERO_MIGRATION_LIMIT = 8;
 /**
  * The seed offsets each game into a different stretch of the corpus pool,
  * derived from the slug rather than a clock — the discipline
- * /fr/jouer/[jeu] set, and the reason the same game always opens on the
+ * /fr/jeux/[jeu] set, and the reason the same game always opens on the
  * same round here too. Only *which module* the home draws is random; what
  * that module then shows is not.
  */

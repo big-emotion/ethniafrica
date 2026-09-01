@@ -27,9 +27,9 @@ const mocks = vi.hoisted(() => ({
     },
   ],
   modulesByAxis: {
-    explorer: [{ id: "search", available: true }],
-    comprendre: [{ id: "names", available: true }],
-    jouer: [{ id: "quiz", available: true }],
+    atlas: [{ id: "search", available: true }],
+    dossiers: [{ id: "names", available: true }],
+    jeux: [{ id: "quiz", available: true }],
   },
   getCorpusCounts: vi.fn(),
   getHubModules: vi.fn(),
@@ -114,9 +114,9 @@ describe("AboutPage server boundary (REQ-091)", () => {
     expect(mocks.getCorpusCounts).toHaveBeenCalledOnce();
     expect(mocks.loadSynthesisRail).toHaveBeenCalledOnce();
     expect(mocks.getHubModules.mock.calls.map(([mode]) => mode)).toEqual([
-      "explorer",
-      "comprendre",
-      "jouer",
+      "atlas",
+      "dossiers",
+      "jeux",
     ]);
 
     const content = screen.getByTestId("about-page-content");
@@ -127,9 +127,9 @@ describe("AboutPage server boundary (REQ-091)", () => {
     expect(content).toHaveAttribute(
       "data-module-ids",
       JSON.stringify({
-        explorer: ["search"],
-        comprendre: ["names"],
-        jouer: ["quiz"],
+        atlas: ["search"],
+        dossiers: ["names"],
+        jeux: ["quiz"],
       })
     );
     expect(content).toHaveAttribute("data-synthesis-ids", "BDI");

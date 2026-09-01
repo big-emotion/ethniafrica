@@ -8,7 +8,7 @@ import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 const hubModule = (overrides: Partial<HubModule> = {}): HubModule => ({
   id: "mercator",
   name: "La taille qu'on vous a cachée",
-  accessMode: "jouer",
+  accessMode: "jeux",
   page: null,
   gameSlug: "mercator",
   availability: "data",
@@ -22,7 +22,7 @@ describe("HeroProvenanceChip", () => {
   it("names the axis the module belongs to, and the module", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
-    expect(screen.getByText(ACCESS_MODE_LABELS.jouer)).toBeTruthy();
+    expect(screen.getByText(ACCESS_MODE_LABELS.jeux)).toBeTruthy();
     expect(screen.getByText("La taille qu'on vous a cachée")).toBeTruthy();
   });
 
@@ -31,11 +31,11 @@ describe("HeroProvenanceChip", () => {
     render(
       <HeroProvenanceChip
         language="fr"
-        module={hubModule({ accessMode: "comprendre", id: "frise" })}
+        module={hubModule({ accessMode: "dossiers", id: "frise" })}
       />
     );
 
-    expect(screen.getByText(ACCESS_MODE_LABELS.comprendre)).toBeTruthy();
+    expect(screen.getByText(ACCESS_MODE_LABELS.dossiers)).toBeTruthy();
   });
 
   // @req REQ-115
@@ -43,7 +43,7 @@ describe("HeroProvenanceChip", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
     expect(screen.getByRole("link").getAttribute("href")).toBe(
-      `${getLocalizedRoute("fr", "jouerHub")}/mercator`
+      `${getLocalizedRoute("fr", "jeuxHub")}/mercator`
     );
   });
 
@@ -52,7 +52,7 @@ describe("HeroProvenanceChip", () => {
     render(<HeroProvenanceChip language="fr" module={hubModule()} />);
 
     expect(screen.getByRole("link").getAttribute("aria-label")).toBe(
-      `${ACCESS_MODE_LABELS.jouer} — La taille qu'on vous a cachée`
+      `${ACCESS_MODE_LABELS.jeux} — La taille qu'on vous a cachée`
     );
   });
 

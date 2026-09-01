@@ -32,7 +32,7 @@ const darkJouer: HubModule[] = [
   {
     id: "dark-one",
     name: "Un module éteint",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     availability: "data",
     available: false,
@@ -40,7 +40,7 @@ const darkJouer: HubModule[] = [
   {
     id: "dark-two",
     name: "Un autre module éteint",
-    accessMode: "jouer",
+    accessMode: "jeux",
     page: null,
     availability: "data",
     available: false,
@@ -51,7 +51,7 @@ const modulesByAxis: Record<AccessMode, HubModule[]> = {
   ...(Object.fromEntries(
     ACCESS_MODES.map((mode) => [mode, liveModules(mode)])
   ) as Record<AccessMode, HubModule[]>),
-  jouer: darkJouer,
+  jeux: darkJouer,
 };
 
 const renderAxes = () =>
@@ -64,7 +64,7 @@ describe("AccessAxes — an axis whose every module is dark (REQ-114)", () => {
   it("marks the axis unavailable rather than advertising its action", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-jeux")).toHaveAttribute(
       "data-available",
       "false"
     );
@@ -74,7 +74,7 @@ describe("AccessAxes — an axis whose every module is dark (REQ-114)", () => {
   it("replaces the action verb with the pending label", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-cta-jeux")).toHaveTextContent(
       "Bientôt"
     );
   });
@@ -83,7 +83,7 @@ describe("AccessAxes — an axis whose every module is dark (REQ-114)", () => {
   it("counts the dark modules instead of promising what they would show", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-figure-jouer")).toHaveTextContent(
+    expect(screen.getByTestId("access-axis-figure-jeux")).toHaveTextContent(
       "2 modules en préparation"
     );
   });
@@ -94,11 +94,11 @@ describe("AccessAxes — an axis whose every module is dark (REQ-114)", () => {
   it("leaves the axes with live modules promising their action", () => {
     renderAxes();
 
-    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-atlas")).toHaveAttribute(
       "data-available",
       "true"
     );
-    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
+    expect(screen.getByTestId("access-axis-dossiers")).toHaveAttribute(
       "data-available",
       "true"
     );
