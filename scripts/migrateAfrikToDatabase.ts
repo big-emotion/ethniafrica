@@ -26,6 +26,11 @@ import {
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import {
+  loadPeopleAppellations,
+  emptyAppellationLoadReport,
+  type AppellationLoadReport,
+} from "@/lib/afrik/loaders/peopleAppellationLoader";
+import {
   loadAllRelationFiles,
   loadRelations,
 } from "@/lib/afrik/loaders/relationJsonLoader";
@@ -87,6 +92,7 @@ export interface MigrationReport {
   peopleRelations: PeopleRelationsSectionReport;
   migrations: MigrationSectionReport;
   names: MigrationSectionReport;
+  appellations: AppellationLoadReport;
   protectedDrift: {
     languageFamilies: ProtectedClassificationDrift[];
     peoples: ProtectedClassificationDrift[];
@@ -142,6 +148,7 @@ function createMigrationReport(): MigrationReport {
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
     migrations: { total: 0, inserted: 0, errors: [] },
     names: { total: 0, inserted: 0, errors: [] },
+    appellations: emptyAppellationLoadReport(),
     protectedDrift: { languageFamilies: [], peoples: [] },
     corpusOrphans: {
       afrik_language_families: emptyOrphanReport(),
@@ -669,6 +676,7 @@ function hasErrors(report: MigrationReport): boolean {
     report.peopleRelations.errors.length > 0 ||
     report.migrations.errors.length > 0 ||
     report.names.errors.length > 0 ||
+    report.appellations.errors.length > 0 ||
     // A refusal is a red run on purpose: the database and the corpus disagree
     // by more than the sync dares resolve on its own, and a green board would
     // bury that.
@@ -800,6 +808,11 @@ export async function migrateAfrikToDatabase(
   report.migrations.inserted = migrationsReport.inserted;
   report.migrations.errors = migrationsReport.errors;
 
+  // Derived first, hand-sourced dossiers second: loadNameRecords upserts on
+  // the same (entity, name, type) key, so a noms/ entry overwrites the
+  // weaker record derived from the fiche rather than competing with it.
+  report.appellations = await loadPeopleAppellations(supabase, peoples);
+
   const namesReport = await loadNameRecords(supabase);
   report.names.total = namesReport.total;
   report.names.inserted = namesReport.inserted;
@@ -857,6 +870,12 @@ export async function migrateAfrikToDatabase(
       peopleRelations: report.peopleRelations,
       migrations: report.migrations,
       names: report.names,
+      appellations: {
+        total: report.appellations.total,
+        inserted: report.appellations.inserted,
+        rejected: report.appellations.rejected.length,
+        errors: report.appellations.errors.length,
+      },
       protectedDrift: report.protectedDrift,
       corpusOrphans: report.corpusOrphans,
       driftBefore: report.verification.before,
