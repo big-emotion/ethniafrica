@@ -1,30 +1,27 @@
 /**
  * Supabase queries for AFRIK search (multi-entity).
  *
- * ftsSearchEntities delegates ranking to the afrik_search_peoples /
- * afrik_search_countries / afrik_search_persons / afrik_search_patronymes
- * functions (migrations 044, 065, 066), which rank over the weighted
- * tsvectors of migrations 043, 057, 066. This module maps their rows; it
- * does not order them.
+ * Every kind is ranked by its own SQL function — afrik_search_peoples,
+ * _countries, _persons, _patronymes, _languages, _language_families and _quiz
+ * (migrations 044, 052, 065, 066, 068, 069) — over the weighted tsvectors of
+ * migrations 043, 056, 057, 066, 068 and 069. This module maps their rows and
+ * merges them; it ranks nothing itself.
  */
 
-import {
-  searchAfrikLanguageFamilies,
-  searchAfrikLanguageFamiliesByText,
-} from "./languageFamilies";
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
-import { normalizeString } from "@/lib/normalize";
 import type {
   FtsSearchParams,
   FtsSearchResponse,
-  LanguageFamily,
   RankedCountry,
   RankedLanguage,
   RankedLanguageFamily,
   RankedPatronyme,
   RankedPeople,
   RankedPerson,
+  RankedQuizQuestion,
+  RankedSearchHit,
+  SearchHitKind,
 } from "@/types/afrik";
 import type {
   PersonPeopleLink,
@@ -32,8 +29,7 @@ import type {
 } from "@/types/persons";
 
 /**
- * Ranked search across the four atlas entities (peoples, countries,
- * language families, persons).
+ * Ranked search across the seven atlas kinds.
  *
  * Ordering happens in Postgres, in the same statement as the LIMIT, because
  * that is the only place it can be correct. This function used to page in SQL
@@ -43,22 +39,21 @@ import type {
  * ranking that nothing executed. Migrations 043/044 moved both the weighting
  * and the ranking into the database; this layer now only shapes the rows.
  *
- * Language families rank on two independent signals rather than one SQL
- * query. Their name still ranks with a full fetch plus an accent-insensitive
- * substring/prefix tier computed here (normalizeString — REQ-129), because
- * `search_vector`'s French-stemmed matching (migration 056) does not carry
- * that accent-insensitivity and an ilike filter cannot either (it compares
- * characters literally, so it cannot fold "Mandé" onto "mande"). Their
- * decolonial text (content->decolonialHeader) ranks separately, by asking
- * `search_vector` directly for the ids it matches (DEC-028) — this is what
- * lets a term that appears only in that prose, and nowhere in the name,
- * still surface the family. `relevance` is a tier, so it is comparable
- * between families and not with the other two kinds — `exactMatch` is what
- * callers sort on across kinds.
+ * Language families were the last kind still ranked here: their whole roster
+ * was fetched over the wire and put through a four-tier JS ladder. Migration
+ * 069 reproduces that ladder in SQL — same tiers, same accent folding — so
+ * families are now ranked in the same process as everything else.
+ *
+ * `results` is the merge of all six normalized-score kinds on
+ * `normalizedScore`, the one magnitude migration 069 makes comparable across
+ * them. Languages (migration 068) are exposed as a grouped facet only, since
+ * their RPC does not yet project that score. The grouped arrays are kept
+ * beside `results`: a facet still needs to know what matched among peoples
+ * alone.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
- * not a search: peoples are listed for that scope, and countries and families
- * are not queried, because nothing was asked of them.
+ * not a search: peoples are listed for that scope, and no other kind is
+ * queried, because nothing was asked of them.
  */
 // @req REQ-002
 export async function ftsSearchEntities(
@@ -83,9 +78,9 @@ export async function ftsSearchEntities(
     countryResult,
     personResult,
     patronymeResult,
+    familyResult,
+    quizResult,
     languageResult,
-    familyRows,
-    familyProseMatchIds,
   ] = await Promise.all([
     supabase.rpc("afrik_search_peoples", {
       p_q: text || null,
@@ -119,14 +114,26 @@ export async function ftsSearchEntities(
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     text
+      ? supabase.rpc("afrik_search_language_families", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
+      ? supabase.rpc("afrik_search_quiz", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
       ? supabase.rpc("afrik_search_languages", {
           p_q: text,
           p_limit: limit,
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
-    text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
   ]);
 
   if (peopleResult.error) {
@@ -145,6 +152,17 @@ export async function ftsSearchEntities(
     logger.error("Error in ranked patronymes search", patronymeResult.error);
     throw patronymeResult.error;
   }
+  if (familyResult.error) {
+    logger.error(
+      "Error in ranked language families search",
+      familyResult.error
+    );
+    throw familyResult.error;
+  }
+  if (quizResult.error) {
+    logger.error("Error in ranked quiz search", quizResult.error);
+    throw quizResult.error;
+  }
   if (languageResult.error) {
     logger.error("Error in ranked languages search", languageResult.error);
     throw languageResult.error;
@@ -154,15 +172,14 @@ export async function ftsSearchEntities(
   const countryPayload = asRankedPayload(countryResult.data);
   const personPayload = asRankedPayload(personResult.data);
   const patronymePayload = asRankedPayload(patronymeResult.data);
+  const familyPayload = asRankedPayload(familyResult.data);
+  const quizPayload = asRankedPayload(quizResult.data);
   const languagePayload = asRankedPayload(languageResult.data);
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
-  const families = rankLanguageFamilies(
-    familyRows,
-    text,
-    new Set(familyProseMatchIds)
-  );
+  const families = familyPayload.rows.map(toRankedLanguageFamily);
+  const quizzes = quizPayload.rows.map(toRankedQuizQuestion);
   const personPeopleLinksById = await getPersonPeopleLinksByIds(
     supabase,
     personPayload.rows.map((row) => row.id as string)
@@ -179,19 +196,30 @@ export async function ftsSearchEntities(
     families,
     persons,
     patronymes,
+    quizzes,
     languages,
+    results: mergeIntoOneRanking({
+      peoples,
+      countries,
+      families,
+      persons,
+      patronymes,
+      quizzes,
+    }),
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
-    familiesTotal: families.length,
+    familiesTotal: familyPayload.total,
     personsTotal: personPayload.total,
     patronymesTotal: patronymePayload.total,
+    quizzesTotal: quizPayload.total,
     languagesTotal: languagePayload.total,
     total:
       peoplePayload.total +
       countryPayload.total +
-      families.length +
+      familyPayload.total +
       personPayload.total +
       patronymePayload.total +
+      quizPayload.total +
       languagePayload.total,
   };
 }
@@ -229,6 +257,7 @@ function toRankedPeople(row: Record<string, unknown>): RankedPeople {
     confidence: typeof row.confidence === "number" ? row.confidence : null,
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
     snippet: (row.snippet as string) ?? null,
     createdAt: toDate(row.createdAt),
     updatedAt: toDate(row.updatedAt),
@@ -244,6 +273,7 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
     content: (row.content as Record<string, unknown>) || {},
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
     snippet: (row.snippet as string) ?? null,
     createdAt: toDate(row.createdAt),
     updatedAt: toDate(row.updatedAt),
@@ -295,6 +325,7 @@ function toRankedPerson(
     roleCategory: row.roleCategory as string,
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
     snippet: (row.snippet as string) ?? null,
     peopleLinks,
   };
@@ -309,7 +340,28 @@ function toRankedPatronyme(row: Record<string, unknown>): RankedPatronyme {
     content: (row.content as Record<string, unknown>) || {},
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
     snippet: (row.snippet as string) ?? null,
+  };
+}
+
+function toRankedLanguageFamily(
+  row: Record<string, unknown>
+): RankedLanguageFamily {
+  return {
+    id: row.id as string,
+    nameFr: row.nameFr as string,
+    nameEn: (row.nameEn as string) || undefined,
+    classificationStatus:
+      (row.classificationStatus as RankedLanguageFamily["classificationStatus"]) ??
+      null,
+    content: (row.content as Record<string, unknown>) || {},
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
+    snippet: (row.snippet as string) ?? null,
+    createdAt: toDate(row.createdAt),
+    updatedAt: toDate(row.updatedAt),
   };
 }
 
@@ -329,46 +381,90 @@ function toRankedLanguage(row: Record<string, unknown>): RankedLanguage {
 }
 
 /**
- * Exact name, then prefix, then anywhere in the name, then only in the
- * decolonial text (DEC-028). Name tiers fold accents and case away; the
- * prose tier is membership in `proseMatchIds`, decided by Postgres full-text
- * search over `search_vector` (searchAfrikLanguageFamiliesByText).
+ * The answer key is absent by construction: this reads the keys migration 069
+ * projects and nothing else, so a column added to the RPC later cannot leak
+ * into the response by accident.
  */
-const FAMILY_TIER_EXACT = 1;
-const FAMILY_TIER_PREFIX = 0.6;
-const FAMILY_TIER_SUBSTRING = 0.3;
-const FAMILY_TIER_PROSE = 0.1;
+function toRankedQuizQuestion(
+  row: Record<string, unknown>
+): RankedQuizQuestion {
+  return {
+    id: row.id as string,
+    prompt: row.prompt as string,
+    entityType: row.entityType as string,
+    entityId: row.entityId as string,
+    subjectName: (row.subjectName as string) ?? null,
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    normalizedScore: toScore(row.normalizedScore),
+    snippet: (row.snippet as string) ?? null,
+  };
+}
 
-function rankLanguageFamilies(
-  families: LanguageFamily[],
-  query: string,
-  proseMatchIds: ReadonlySet<string>
-): RankedLanguageFamily[] {
-  const wanted = normalizeString(query);
-  if (!wanted) return [];
+function toScore(value: unknown): number {
+  return typeof value === "number" ? value : 0;
+}
 
-  return families
-    .filter(
-      (family) =>
-        normalizeString(family.nameFr).includes(wanted) ||
-        proseMatchIds.has(family.id)
-    )
-    .map((family) => {
-      const name = normalizeString(family.nameFr);
-      const exactMatch = name === wanted;
-      const relevance = exactMatch
-        ? FAMILY_TIER_EXACT
-        : name.startsWith(wanted)
-          ? FAMILY_TIER_PREFIX
-          : name.includes(wanted)
-            ? FAMILY_TIER_SUBSTRING
-            : FAMILY_TIER_PROSE;
-      return { ...family, relevance, exactMatch };
-    })
-    .sort(
-      (a, b) =>
-        Number(b.exactMatch) - Number(a.exactMatch) ||
-        b.relevance - a.relevance ||
-        a.nameFr.localeCompare(b.nameFr, "fr")
-    );
+interface RankedGroups {
+  peoples: RankedPeople[];
+  countries: RankedCountry[];
+  families: RankedLanguageFamily[];
+  persons: RankedPerson[];
+  patronymes: RankedPatronyme[];
+  quizzes: RankedQuizQuestion[];
+}
+
+/**
+ * The six grouped arrays, flattened into one list ordered on the score they
+ * share (migration 069).
+ *
+ * Ties are frequent by design — the score bands a match class, so two exact
+ * hits of different kinds routinely land on the same value — and an unstable
+ * tie-break would reshuffle a result page between two identical requests.
+ * Name in French collation, then id, gives one deterministic order; "fr"
+ * matters because a byte comparison sorts every accented name after "Z".
+ */
+function mergeIntoOneRanking(groups: RankedGroups): RankedSearchHit[] {
+  const hits: RankedSearchHit[] = [
+    ...groups.peoples.map((hit) =>
+      toSearchHit("people", hit.id, hit.nameMain, hit)
+    ),
+    ...groups.countries.map((hit) =>
+      toSearchHit("country", hit.id, hit.nameFr, hit)
+    ),
+    ...groups.families.map((hit) =>
+      toSearchHit("languageFamily", hit.id, hit.nameFr, hit)
+    ),
+    ...groups.persons.map((hit) =>
+      toSearchHit("person", hit.id, hit.fullName, hit)
+    ),
+    ...groups.patronymes.map((hit) =>
+      toSearchHit("patronyme", hit.id, hit.nameMain, hit)
+    ),
+    ...groups.quizzes.map((hit) =>
+      toSearchHit("quiz", hit.id, hit.prompt, hit)
+    ),
+  ];
+
+  return hits.sort(
+    (a, b) =>
+      b.normalizedScore - a.normalizedScore ||
+      a.name.localeCompare(b.name, "fr") ||
+      a.id.localeCompare(b.id)
+  );
+}
+
+function toSearchHit(
+  kind: SearchHitKind,
+  id: string,
+  name: string,
+  hit: { normalizedScore: number; snippet: string | null }
+): RankedSearchHit {
+  return {
+    kind,
+    id,
+    name,
+    normalizedScore: hit.normalizedScore,
+    snippet: hit.snippet,
+  };
 }

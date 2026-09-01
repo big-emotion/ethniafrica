@@ -1,12 +1,10 @@
 /**
  * Query-layer tests for the ranked search.
  *
- * Peoples and countries are ranked by the SQL functions of migration 044, so
- * these tests drive the RPC boundary: what parameters go down, and that the
- * order coming back is preserved rather than re-sorted here. The families
- * branch delegates to two mocked units — the full fetch (name-based ranking)
- * and the search_vector text match (decolonial-prose ranking, DEC-028) — so
- * this file asserts composition rather than re-testing either one.
+ * Every kind is ranked by a SQL function (migrations 044, 052, 065, 066,
+ * 068), so these tests drive the RPC boundary: what parameters go down, that
+ * the order coming back is preserved rather than re-sorted here, and that the
+ * cross-kind `results` list merges the six kinds on the one score they share.
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
@@ -14,16 +12,7 @@ vi.mock("../../../server", () => ({
   createServerClient: vi.fn(),
 }));
 
-vi.mock("../languageFamilies", () => ({
-  searchAfrikLanguageFamilies: vi.fn(),
-  searchAfrikLanguageFamiliesByText: vi.fn(),
-}));
-
 import { ftsSearchEntities } from "../search";
-import {
-  searchAfrikLanguageFamilies,
-  searchAfrikLanguageFamiliesByText,
-} from "../languageFamilies";
 import { createServerClient } from "../../../server";
 
 function peopleRow(
@@ -99,6 +88,44 @@ function patronymeRow(
   };
 }
 
+function familyRow(
+  id: string,
+  nameFr: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    nameFr,
+    nameEn: null,
+    classificationStatus: null,
+    content: {},
+    relevance: 0.3,
+    exactMatch: false,
+    normalizedScore: 0.6,
+    snippet: null,
+    ...over,
+  };
+}
+
+function quizRow(
+  id: string,
+  prompt: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    prompt,
+    entityType: "people",
+    entityId: "PPL_WOLOF",
+    subjectName: "Wolof",
+    relevance: 0.5,
+    exactMatch: false,
+    normalizedScore: 0.6,
+    snippet: null,
+    ...over,
+  };
+}
+
 function languageRow(
   id: string,
   name: string,
@@ -126,6 +153,8 @@ describe("ftsSearchEntities", () => {
   let countriesPayload: { total: number; rows: unknown[] };
   let personsPayload: { total: number; rows: unknown[] };
   let patronymesPayload: { total: number; rows: unknown[] };
+  let familiesPayload: { total: number; rows: unknown[] };
+  let quizPayload: { total: number; rows: unknown[] };
   let languagesPayload: { total: number; rows: unknown[] };
   let personPeoplesRows: Record<string, unknown>[];
 
@@ -136,6 +165,8 @@ describe("ftsSearchEntities", () => {
     countriesPayload = { total: 0, rows: [] };
     personsPayload = { total: 0, rows: [] };
     patronymesPayload = { total: 0, rows: [] };
+    familiesPayload = { total: 0, rows: [] };
+    quizPayload = { total: 0, rows: [] };
     languagesPayload = { total: 0, rows: [] };
     personPeoplesRows = [];
 
@@ -148,6 +179,10 @@ describe("ftsSearchEntities", () => {
         return Promise.resolve({ data: personsPayload, error: null });
       if (fn === "afrik_search_patronymes")
         return Promise.resolve({ data: patronymesPayload, error: null });
+      if (fn === "afrik_search_language_families")
+        return Promise.resolve({ data: familiesPayload, error: null });
+      if (fn === "afrik_search_quiz")
+        return Promise.resolve({ data: quizPayload, error: null });
       if (fn === "afrik_search_languages")
         return Promise.resolve({ data: languagesPayload, error: null });
       throw new Error(`unexpected rpc ${fn}`);
@@ -171,10 +206,6 @@ describe("ftsSearchEntities", () => {
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([]);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue([]);
   });
 
   // @req REQ-002
@@ -439,30 +470,54 @@ describe("ftsSearchEntities", () => {
   });
 
   // @req REQ-002
-  it("asks nothing of countries and families when browsing a relation", async () => {
+  it("asks nothing of countries, families or the quiz bank when browsing a relation", async () => {
     const result = await ftsSearchEntities({
       familyId: "FLG_KROU",
       limit: 20,
       offset: 0,
     });
 
-    expect(rpc).not.toHaveBeenCalledWith(
+    for (const skipped of [
       "afrik_search_countries",
-      expect.anything()
-    );
-    expect(searchAfrikLanguageFamilies).not.toHaveBeenCalled();
+      "afrik_search_language_families",
+      "afrik_search_quiz",
+    ]) {
+      expect(rpc).not.toHaveBeenCalledWith(skipped, expect.anything());
+    }
     expect(result.countries).toEqual([]);
     expect(result.families).toEqual([]);
+    expect(result.quizzes).toEqual([]);
   });
 
   // @req REQ-002
-  it("ranks language families exact before prefix before substring", async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([
-      { id: "FLG_NILO", nameFr: "Nilo-saharien (bantou compris)", content: {} },
-      { id: "FLG_BANTOU_GROUP", nameFr: "Bantou (groupe élargi)", content: {} },
-      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
-    ]);
+  it("calls afrik_search_language_families with p_-prefixed named parameters", async () => {
+    await ftsSearchEntities({ q: "bantou", limit: 20, offset: 0 });
+
+    expect(rpc).toHaveBeenCalledWith("afrik_search_language_families", {
+      p_q: "bantou",
+      p_limit: 20,
+      p_offset: 0,
+    });
+  });
+
+  // @req REQ-002
+  it("keeps the database's ranking of language families instead of re-sorting them", async () => {
+    // The tier ladder now lives in afrik_search_language_families (migration
+    // 068). Handing the rows back in an order no JS comparator would produce
+    // — a substring tier ahead of the exact match — is what proves the ladder
+    // is no longer recomputed here.
+    familiesPayload = {
+      total: 3,
+      rows: [
+        familyRow("FLG_NILO", "Nilo-saharien (bantou compris)", {
+          relevance: 0.3,
+        }),
+        familyRow("FLG_BANTU", "Bantou", { relevance: 1, exactMatch: true }),
+        familyRow("FLG_BANTOU_GROUP", "Bantou (groupe élargi)", {
+          relevance: 0.6,
+        }),
+      ],
+    };
 
     const result = await ftsSearchEntities({
       q: "bantou",
@@ -471,96 +526,61 @@ describe("ftsSearchEntities", () => {
     });
 
     expect(result.families.map((f) => f.id)).toEqual([
+      "FLG_NILO",
       "FLG_BANTU",
       "FLG_BANTOU_GROUP",
-      "FLG_NILO",
     ]);
-    expect(result.families[0].exactMatch).toBe(true);
   });
 
   // @req REQ-002
-  it("matches a language family without regard to accents", async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([
-      { id: "FLG_BANTOIDE", nameFr: "Bantoïde", content: {} },
-    ]);
+  it("carries the ranking evidence onto every language family", async () => {
+    familiesPayload = {
+      total: 1,
+      rows: [
+        familyRow("FLG_BANTU", "Bantou", {
+          relevance: 1,
+          exactMatch: true,
+          normalizedScore: 0.95,
+          snippet: "[[Bantou]]",
+        }),
+      ],
+    };
 
-    const result = await ftsSearchEntities({
-      q: "bantoide",
-      limit: 20,
-      offset: 0,
-    });
+    const [family] = (
+      await ftsSearchEntities({ q: "bantou", limit: 20, offset: 0 })
+    ).families;
 
-    expect(result.families[0].exactMatch).toBe(true);
+    expect(family.relevance).toBe(1);
+    expect(family.exactMatch).toBe(true);
+    expect(family.normalizedScore).toBe(0.95);
+    expect(family.snippet).toBe("[[Bantou]]");
   });
 
   // @req REQ-002
-  it("counts families in the reported total", async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([
-      { id: "FLG_NIGER_CONGO", nameFr: "Niger-Congo", content: {} },
-      { id: "FLG_BERBERE", nameFr: "Berbère", content: {} },
-    ]);
+  it("reports the corpus-wide family count rather than the page size", async () => {
+    familiesPayload = {
+      total: 7,
+      rows: [familyRow("FLG_NIGER_CONGO", "Niger-Congo")],
+    };
 
-    const result = await ftsSearchEntities({ q: "er", limit: 20, offset: 0 });
+    const result = await ftsSearchEntities({ q: "er", limit: 1, offset: 0 });
 
-    expect(result.familiesTotal).toBe(2);
-    expect(result.total).toBe(2);
+    expect(result.familiesTotal).toBe(7);
+    expect(result.families).toHaveLength(1);
+    expect(result.total).toBe(7);
   });
 
   // @req REQ-002
-  it("surfaces a family whose only match is inside its decolonial text (DEC-028)", async () => {
-    // FLG_KROU's name matches neither "administrateurs" nor any substring of
-    // it — only content.decolonialHeader.whyProblematic does, in the corpus.
-    // Before this ticket, rankLanguageFamilies filtered on nameFr alone and
-    // dropped this family outright, however search_vector matched it.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([
-      { id: "FLG_KROU", nameFr: "Krou", content: {} },
-      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
-    ]);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamiliesByText as any).mockResolvedValue(["FLG_KROU"]);
-
-    const result = await ftsSearchEntities({
-      q: "administrateurs",
-      limit: 20,
-      offset: 0,
-    });
-
-    expect(result.families.map((f) => f.id)).toEqual(["FLG_KROU"]);
-    expect(result.families[0].exactMatch).toBe(false);
-  });
-
-  // @req REQ-002
-  it("asks search_vector for the term before ranking families", async () => {
-    await ftsSearchEntities({ q: "administrateurs", limit: 20, offset: 0 });
-
-    expect(searchAfrikLanguageFamiliesByText).toHaveBeenCalledWith(
-      "administrateurs"
+  it("surfaces a family ranking failure instead of answering with an empty list", async () => {
+    rpc.mockImplementation((fn: string) =>
+      fn === "afrik_search_language_families"
+        ? Promise.resolve({ data: null, error: { message: "families boom" } })
+        : Promise.resolve({ data: { total: 0, rows: [] }, error: null })
     );
-  });
 
-  // @req REQ-129
-  it("ranks a language family whose name carries an accent from an unaccented query", async () => {
-    // searchAfrikLanguageFamilies no longer filters by ilike (accent-
-    // sensitive); rankLanguageFamilies now owns the accent-insensitive
-    // substring filter this exercises — FLG_MANDE is really named "Mandé"
-    // in the corpus, so an unfixed ilike would have dropped it here.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (searchAfrikLanguageFamilies as any).mockResolvedValue([
-      { id: "FLG_MANDE", nameFr: "Mandé", content: {} },
-      { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
-    ]);
-
-    const result = await ftsSearchEntities({
-      q: "mande",
-      limit: 20,
-      offset: 0,
-    });
-
-    expect(result.families.map((f) => f.id)).toEqual(["FLG_MANDE"]);
-    expect(result.families[0].exactMatch).toBe(true);
+    await expect(
+      ftsSearchEntities({ q: "bantou", limit: 20, offset: 0 })
+    ).rejects.toMatchObject({ message: "families boom" });
   });
 
   // @req REQ-129
@@ -860,6 +880,122 @@ describe("ftsSearchEntities", () => {
 
     expect(result.total).toBe(2);
   });
+  // ── quiz (ETNI-1709) ──────────────────────────────────────────────────────
+
+  // @req REQ-121
+  it("calls afrik_search_quiz with p_-prefixed named parameters", async () => {
+    await ftsSearchEntities({ q: "wolof", limit: 20, offset: 0 });
+
+    expect(rpc).toHaveBeenCalledWith("afrik_search_quiz", {
+      p_q: "wolof",
+      p_limit: 20,
+      p_offset: 0,
+    });
+  });
+
+  // @req REQ-121
+  it("surfaces a quiz question through the name of the people it is about", async () => {
+    quizPayload = {
+      total: 1,
+      rows: [
+        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
+          exactMatch: true,
+          normalizedScore: 0.95,
+          snippet: "[[Wolof]] · Quel est l'autonyme",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.quizzes).toEqual([
+      {
+        id: "QZ_1",
+        prompt: "Quel est l'autonyme des Wolof ?",
+        entityType: "people",
+        entityId: "PPL_WOLOF",
+        subjectName: "Wolof",
+        relevance: 0.5,
+        exactMatch: true,
+        normalizedScore: 0.95,
+        snippet: "[[Wolof]] · Quel est l'autonyme",
+      },
+    ]);
+    expect(result.quizzesTotal).toBe(1);
+  });
+
+  // REQ-121: the answer key never leaves the database through search. The
+  // SQL projection is a closed list, but a row that somehow carried the
+  // options or the explanation must still not reach a reader through this
+  // mapping.
+  // @req REQ-121
+  it("never carries a quiz question's options, correct answer or explanation", async () => {
+    quizPayload = {
+      total: 1,
+      rows: [
+        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
+          options_fr: ["Wolof", "Sérère", "Peul", "Diola"],
+          correct_option: 0,
+          explanation_fr: "Les Wolof se nomment eux-mêmes Wolof.",
+        }),
+      ],
+    };
+
+    const [quiz] = (
+      await ftsSearchEntities({ q: "Wolof", limit: 20, offset: 0 })
+    ).quizzes;
+
+    for (const leak of [
+      "options_fr",
+      "options",
+      "correct_option",
+      "correctOption",
+      "explanation_fr",
+      "explanation",
+    ]) {
+      expect(quiz).not.toHaveProperty(leak);
+    }
+  });
+
+  // @req REQ-121
+  it("counts quiz questions in the corpus-wide total alongside the other natures", async () => {
+    quizPayload = {
+      total: 9,
+      rows: [quizRow("QZ_1", "Quel est l'autonyme des Wolof ?")],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_WOLOF", "Wolof")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.quizzesTotal).toBe(9);
+    expect(result.total).toBe(10);
+  });
+
+  // @req REQ-121
+  it("surfaces a quiz ranking failure instead of answering with an empty list", async () => {
+    rpc.mockImplementation((fn: string) =>
+      fn === "afrik_search_quiz"
+        ? Promise.resolve({ data: null, error: { message: "quiz boom" } })
+        : Promise.resolve({ data: { total: 0, rows: [] }, error: null })
+    );
+
+    await expect(
+      ftsSearchEntities({ q: "Wolof", limit: 20, offset: 0 })
+    ).rejects.toMatchObject({ message: "quiz boom" });
+  });
+
+  // ── languages (ETNI-1506) ─────────────────────────────────────────────────
 
   // REQ-136: a language name reaches the language fiche through the unified
   // search surface, not only the peoples that mention it.
@@ -981,5 +1117,156 @@ describe("ftsSearchEntities", () => {
     });
 
     expect(result.total).toBe(2);
+  });
+
+  // ── the cross-kind ordered list (ETNI-1710) ───────────────────────────────
+
+  // @req REQ-002
+  it("orders every kind into one list by the score they share", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_WOLOF", "Wolof", { normalizedScore: 0.97 })],
+    };
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("SEN", "Sénégal", { normalizedScore: 0.62 })],
+    };
+    familiesPayload = {
+      total: 1,
+      rows: [
+        familyRow("FLG_ATLANTIQUE", "Atlantique", {
+          normalizedScore: 0.55,
+        }),
+      ],
+    };
+    personsPayload = {
+      total: 1,
+      rows: [
+        personRow("PER_DIOP", "Cheikh Anta Diop", {
+          normalizedScore: 0.71,
+        }),
+      ],
+    };
+    patronymesPayload = {
+      total: 1,
+      rows: [patronymeRow("PATR_NDIAYE", "Ndiaye", { normalizedScore: 0.83 })],
+    };
+    quizPayload = {
+      total: 1,
+      rows: [
+        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
+          normalizedScore: 0.44,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.results.map((hit) => [hit.kind, hit.id])).toEqual([
+      ["people", "PPL_WOLOF"],
+      ["patronyme", "PATR_NDIAYE"],
+      ["person", "PER_DIOP"],
+      ["country", "SEN"],
+      ["languageFamily", "FLG_ATLANTIQUE"],
+      ["quiz", "QZ_1"],
+    ]);
+  });
+
+  // @req REQ-002
+  it("breaks a tie between two kinds on the French name, then on the id", async () => {
+    // Élé sorts before Epe in French collation and after it byte-wise, so a
+    // plain string comparison would invert this pair.
+    peoplesPayload = {
+      total: 2,
+      rows: [
+        peopleRow("PPL_EPE", "Epe", { normalizedScore: 0.7 }),
+        peopleRow("PPL_ELE_B", "Élé", { normalizedScore: 0.7 }),
+      ],
+    };
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("ELE", "Élé", { normalizedScore: 0.7 })],
+    };
+
+    const result = await ftsSearchEntities({ q: "e", limit: 20, offset: 0 });
+
+    expect(result.results.map((hit) => hit.id)).toEqual([
+      "ELE",
+      "PPL_ELE_B",
+      "PPL_EPE",
+    ]);
+  });
+
+  // @req REQ-002
+  it("carries a name and a snippet on every row of the ordered list", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_WOLOF", "Wolof", {
+          normalizedScore: 0.97,
+          snippet: "[[Wolof]]",
+        }),
+      ],
+    };
+    quizPayload = {
+      total: 1,
+      rows: [
+        quizRow("QZ_1", "Quel est l'autonyme des Wolof ?", {
+          normalizedScore: 0.44,
+          snippet: "Wolof · Quel est l'autonyme",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.results).toEqual([
+      {
+        kind: "people",
+        id: "PPL_WOLOF",
+        name: "Wolof",
+        normalizedScore: 0.97,
+        snippet: "[[Wolof]]",
+      },
+      {
+        kind: "quiz",
+        id: "QZ_1",
+        name: "Quel est l'autonyme des Wolof ?",
+        normalizedScore: 0.44,
+        snippet: "Wolof · Quel est l'autonyme",
+      },
+    ]);
+  });
+
+  // @req REQ-002
+  it("keeps the grouped arrays and their totals alongside the ordered list", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_WOLOF", "Wolof", { normalizedScore: 0.9 })],
+    };
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("SEN", "Sénégal", { normalizedScore: 0.8 })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolof",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.peoples.map((p) => p.id)).toEqual(["PPL_WOLOF"]);
+    expect(result.countries.map((c) => c.id)).toEqual(["SEN"]);
+    expect(result.peoplesTotal).toBe(1);
+    expect(result.countriesTotal).toBe(1);
+    expect(result.results).toHaveLength(2);
   });
 });

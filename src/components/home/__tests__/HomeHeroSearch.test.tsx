@@ -26,12 +26,15 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import type { SearchResult } from "@/types/afrik-frontend";
+import { search as searchCorpus } from "@/lib/afrikLoader";
 
 const push = vi.fn();
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push, replace: vi.fn() }),
 }));
+
+vi.mock("@/lib/afrikLoader", () => ({ search: vi.fn(async () => []) }));
 
 const YORUBA: SearchResult = {
   type: "people",
@@ -77,6 +80,22 @@ beforeEach(() => {
 });
 
 describe("HomeHeroSearch", () => {
+  // Production renders this component without a fetcher, so the default is
+  // the only path the hero ever takes to the corpus (ETNI-1415 AC2).
+  // @req REQ-108
+  it("searches through the shared corpus client when no fetcher is injected", async () => {
+    render(<HomeHeroSearch />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Yoruba" },
+      });
+      await new Promise((r) => setTimeout(r, DEBOUNCE_MS + 50));
+    });
+
+    expect(searchCorpus).toHaveBeenCalledWith("Yoruba");
+  });
+
   // The accessible name has to survive a placeholder that the design may
   // animate later: a rotating placeholder would otherwise rename the control
   // under a screen-reader user mid-sentence.
