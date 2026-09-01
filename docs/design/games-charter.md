@@ -322,7 +322,7 @@ Ordered by dependency, not by size:
 2. Every renderer prints the stimulus above the stem.
 3. Near-pool distractor selection in `options.ts`.
 4. Difficulty band on `GameRound`; session ordered by band.
-5. Scope picker on `/fr/jouer/<jeu>`, pool filtered by country or family.
+5. Scope picker on `/fr/jeux/<jeu>`, pool filtered by country or family.
 6. Reveal gains source tier and a link to the fiche.
 7. Eight games retired from `GAME_DEFINITIONS`; the `areaCompare` kind is
    deleted with them.

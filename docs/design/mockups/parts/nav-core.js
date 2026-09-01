@@ -8,18 +8,18 @@
    jamais une route qui n'existe pas.
    ══════════════════════════════════════════════════════════════════ */
 const MODULES = [
-  { id: "pays",                 title: "Les pays d'Afrique",                  axis: "explorer",   accent: "ocre",  icon: "globe",    href: "/fr/explorer/pays" },
-  { id: "peuples",              title: "Les peuples d'Afrique",               axis: "explorer",   accent: "teal",  icon: "users",    href: "/fr/explorer/peuples" },
-  { id: "familles",             title: "L'arbre des familles",                axis: "explorer",   accent: "terre", icon: "network",  href: "/fr/explorer/familles" },
-  { id: "recherche",            title: "Recherche libre",                     axis: "explorer",   accent: "perv",  icon: "search",   href: "/fr/explorer/recherche" },
-  { id: "anecdotes",            title: "Anecdotes",                           axis: "comprendre", accent: "ocre",  icon: "bubble",   href: "/fr/comprendre/anecdotes" },
-  { id: "noms",                 title: "Appellations",                        axis: "comprendre", accent: "teal",  icon: "tag",      href: "/fr/comprendre/appellations" },
-  { id: "frise",                title: "Premiers repères de migrations",      axis: "comprendre", accent: "terre", icon: "history",  href: "/fr/comprendre/migrations" },
-  { id: "regards-colonisation", title: "Regards : colonisation et résistances", axis: "comprendre", accent: "perv",  icon: "gaze",     href: "/fr/comprendre/regards/colonisation-et-resistances" },
-  { id: "quiz",                 title: "Le quiz des parcours",                axis: "jouer",      accent: "ocre",  icon: "quiz",     href: "/fr/jouer/quiz" },
-  { id: "mercator",             title: "La taille qu'on vous a cachée",       axis: "jouer",      accent: "teal",  icon: "truesize", href: "/fr/jouer/mercator" },
-  { id: "doctrine",             title: "La doctrine éditoriale",              axis: "comprendre", accent: "terre", icon: "book",     href: "/fr/comprendre/doctrine" },
-  { id: "about",                title: "À propos du projet",                  axis: "comprendre", accent: "perv",  icon: "info",     href: "/fr/about" },
+  { id: "pays",                 title: "Les pays d'Afrique",                  axis: "atlas",   accent: "ocre",  icon: "globe",    href: "/fr/atlas/pays" },
+  { id: "peuples",              title: "Les peuples d'Afrique",               axis: "atlas",   accent: "teal",  icon: "users",    href: "/fr/atlas/peuples" },
+  { id: "familles",             title: "L'arbre des familles",                axis: "atlas",   accent: "terre", icon: "network",  href: "/fr/atlas/familles" },
+  { id: "recherche",            title: "Recherche libre",                     axis: "atlas",   accent: "perv",  icon: "search",   href: "/fr/atlas/recherche" },
+  { id: "anecdotes",            title: "Anecdotes",                           axis: "dossiers", accent: "ocre",  icon: "bubble",   href: "/fr/dossiers/anecdotes" },
+  { id: "noms",                 title: "Appellations",                        axis: "dossiers", accent: "teal",  icon: "tag",      href: "/fr/dossiers/appellations" },
+  { id: "frise",                title: "Premiers repères de migrations",      axis: "dossiers", accent: "terre", icon: "history",  href: "/fr/dossiers/migrations" },
+  { id: "regards-colonisation", title: "Regards : colonisation et résistances", axis: "dossiers", accent: "perv",  icon: "gaze",     href: "/fr/dossiers/regards/colonisation-et-resistances" },
+  { id: "quiz",                 title: "Le quiz des parcours",                axis: "jeux",      accent: "ocre",  icon: "quiz",     href: "/fr/jeux/quiz" },
+  { id: "mercator",             title: "La taille qu'on vous a cachée",       axis: "jeux",      accent: "teal",  icon: "truesize", href: "/fr/jeux/mercator" },
+  { id: "doctrine",             title: "La doctrine éditoriale",              axis: "dossiers", accent: "terre", icon: "book",     href: "/fr/dossiers/doctrine" },
+  { id: "about",                title: "À propos du projet",                  axis: "dossiers", accent: "perv",  icon: "info",     href: "/fr/about" },
 ];
 
 const ICONS = {
@@ -39,15 +39,15 @@ const ICONS = {
 const icon = (name) =>
   `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
-/* `id` = AccessMode, `label` = ACCESS_MODE_LABELS : les deux diffèrent,
-   l'axe se code toujours `explorer` et se lit désormais « L'atlas »,
-   par DEC-045 (ETNI-1614). */
+/* `id` = AccessMode, `label` = ACCESS_MODE_LABELS : le libellé nominal vient
+   de DEC-045 (ETNI-1614), l'identifiant `atlas`/`dossiers`/`jeux` aligné
+   dessus par ETNI-1615 (REQ-138). */
 const AXES = [
-  { id: "explorer",   label: "L'atlas", accent: "ocre",
+  { id: "atlas",     label: "L'atlas", accent: "ocre",
     blurb: "Quand on sait ce qu'on cherche — une entité, un nom, une entrée du corpus." },
-  { id: "comprendre", label: "Les dossiers",  accent: "teal",
+  { id: "dossiers",  label: "Les dossiers",  accent: "teal",
     blurb: "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long." },
-  { id: "jouer",      label: "Les jeux",     accent: "perv",
+  { id: "jeux",      label: "Les jeux",     accent: "perv",
     blurb: "Quand on veut que le corpus réponde — mise en regard, écarts, rapprochements." },
 ];
 

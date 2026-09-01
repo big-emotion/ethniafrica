@@ -160,7 +160,7 @@ saying, and that thing is **"the values between the ends are the point"**.
 
 There is exactly one on the site: the atlas's projection morph bar
 (`AtlasGlobe`, `projectionControl="morph"`), and this is the failure it exists
-to prevent. The home's featured module and `/fr/jouer/mercator` both make one
+to prevent. The home's featured module and `/fr/jeux/mercator` both make one
 claim — a flat map lies about surface area — and the claim is only legible in
 the movement: Tissot's indicatrices swell toward the poles on the plane and
 shrink to a single size on the sphere, so what proves it is watching them do
@@ -188,7 +188,7 @@ So, wherever one is warranted:
 - **The thumb is the touch target**, 24 px, and the row is 44 px. A 4 px track
   is not something a finger can aim at.
 - **Where it cannot act, it is withdrawn, not disabled.** A range that refuses
-  to move reads as a broken page. `/fr/jouer/mercator` pins the projection while
+  to move reads as a broken page. `/fr/jeux/mercator` pins the projection while
   a question stands and replaces the bar with the sentence saying why.
 
 A surface gets the bar **or** the button, never both — two controls over one
