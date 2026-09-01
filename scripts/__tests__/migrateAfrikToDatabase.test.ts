@@ -292,6 +292,7 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.errors).toEqual([]);
   });
 
+  // @req REQ-032
   it("does not rewrite an unchanged protected classification while synchronizing content", async () => {
     const database = useSupabaseDouble({
       rows: {
@@ -335,6 +336,7 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.after?.hasDrift).toBe(false);
   });
 
+  // @req REQ-032
   it("synchronizes content while preserving and reporting protected classification drift", async () => {
     const integrityError =
       'Integrity check failed: UPDATE requires an assertion row for field_path "classification_status"';
