@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes. Une langue est un objet distinct d'une famille linguistique (public/modele-linguistique.json) : elle ne porte jamais de champs de famille tels que branches, numberOfLanguages ou totalSpeakers."
+  },
+  "id": "<code ISO 639-3, en minuscules — identifiant et nom de fichier, ex: yor>",
+  "isoCode639_3": "<code ISO 639-3, identique à id>",
+  "glottocode": "<code Glottolog — ex: yoru1245, ou null si non répertorié>",
+  "nameFr": "<Nom français de la langue>",
+  "nameEn": "<English name>",
+  "alternateNames": ["<Nom attesté 1>", "<Nom attesté 2>"],
+  "familyId": "FLG_XXXXX",
+  "peoples": [{ "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" }],
+  "content": {
+    "vehicularRole": "<vehicular | non_vehicular | national_official | regional_lingua_franca>",
+    "dialects": ["<Nom du dialecte 1>", "<Nom du dialecte 2>"],
+    "vitalityStatus": {
+      "status": "<Statut attesté — ex: Institutional, Developing, Moribund>",
+      "scale": "<EGIDS (Ethnologue) | UNESCO>",
+      "asOf": 0
+    },
+    "sources": [
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier>"
+      }
+    ]
+  }
+}

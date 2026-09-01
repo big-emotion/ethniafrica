@@ -3409,6 +3409,161 @@ export function checkNamingSystemModel(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+// ─── Language model (ETNI-1503) ───────────────────────────────────────────────
+
+const LANGUAGE_SOURCE_TIERS = new Set(["official", "referenced", "unverified"]);
+
+function collectLanguageFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const dir = path.join(datasetRoot, "langues");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(dir, file) }));
+}
+
+/**
+ * ETNI-1503 AC1 — a language fiche requires a valid ISO 639-3 id (matching its
+ * filename), a family reference resolving to an existing famille_linguistique/
+ * fiche, and an explicit tier on every source.
+ */
+export function checkLanguageModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectLanguageFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const flgIds = loadFlgIds(datasetRoot);
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const id = typeof data.id === "string" ? data.id : undefined;
+    const expectedId = path.basename(file, ".json");
+    if (!id || !ISO_639_3_PATTERN.test(id)) {
+      errors.push(
+        `LNG-iso: ${file}: id "${data.id}" is missing or is not a valid ISO 639-3 code (expected 3 lowercase letters)`
+      );
+    } else if (id !== expectedId) {
+      errors.push(
+        `LNG-iso: ${file}: id "${id}" does not match its filename "${expectedId}.json"`
+      );
+    }
+
+    const familyId =
+      typeof data.familyId === "string" ? data.familyId : undefined;
+    if (!familyId || !flgIds.has(familyId)) {
+      errors.push(
+        `LNG-family: ${file}: familyId "${data.familyId}" does not resolve to an existing fiche under famille_linguistique/`
+      );
+    }
+
+    const content = data.content as { sources?: unknown } | undefined;
+    const sources = Array.isArray(content?.sources) ? content!.sources : [];
+    sources.forEach((source, i) => {
+      const tier = (source as { tier?: unknown })?.tier;
+      if (typeof tier !== "string" || !LANGUAGE_SOURCE_TIERS.has(tier)) {
+        errors.push(
+          `LNG-tier: ${file}: content.sources[${i}] carries no valid tier ("official" | "referenced" | "unverified")`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * ETNI-1503 AC2 — a language and a family are different objects: a language
+ * fiche that borrows a family-only field (or omits a required language field)
+ * is rejected. Same top-key / content-key diff as validateMigrationEvents.
+ */
+export function checkLanguageStrictSchema(
+  datasetRoot: string,
+  modelPath: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectLanguageFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  if (!fs.existsSync(modelPath)) {
+    return {
+      ok: false,
+      errors: [`Language model not found at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  let model: { content?: Record<string, unknown>; [key: string]: unknown };
+  try {
+    model = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+  } catch {
+    return {
+      ok: false,
+      errors: [`Could not parse language model at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  const modelTopKeys = new Set(Object.keys(model).filter((k) => k !== "_meta"));
+  const modelContentKeys = new Set(Object.keys(model.content ?? {}));
+
+  for (const { file, fullPath } of files) {
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const ficheTopKeys = new Set(
+      Object.keys(data).filter((k) => k !== "_meta")
+    );
+    const missingTop = [...modelTopKeys].filter((k) => !ficheTopKeys.has(k));
+    const extraTop = [...ficheTopKeys].filter((k) => !modelTopKeys.has(k));
+    if (missingTop.length || extraTop.length) {
+      errors.push(
+        `LNG-schema: ${file}: top-level keys do not match modele-langue.json (missing: ${
+          missingTop.join(", ") || "none"
+        }; unexpected: ${extraTop.join(", ") || "none"})`
+      );
+    }
+
+    if (data.content && typeof data.content === "object") {
+      const ficheContentKeys = new Set(
+        Object.keys(data.content as Record<string, unknown>)
+      );
+      const missingContent = [...modelContentKeys].filter(
+        (k) => !ficheContentKeys.has(k)
+      );
+      const extraContent = [...ficheContentKeys].filter(
+        (k) => !modelContentKeys.has(k)
+      );
+      if (missingContent.length || extraContent.length) {
+        errors.push(
+          `LNG-schema: ${file}: content keys do not match modele-langue.json (missing: ${
+            missingContent.join(", ") || "none"
+          }; unexpected: ${extraContent.join(", ") || "none"})`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 // ─── Run summary ─────────────────────────────────────────────────────────────
 
 /**
@@ -3756,6 +3911,25 @@ async function main() {
   newChecks.push({
     name: "ETNI-1460 Naming-system model",
     result: checkNamingSystemModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-136 – Language model (ISO 639-3 + family + per-source tier)..."
+  );
+  newChecks.push({
+    name: "REQ-136 Language model required fields",
+    result: checkLanguageModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-136 – Language strict schema (family-only fields rejected)..."
+  );
+  newChecks.push({
+    name: "REQ-136 Language strict schema",
+    result: checkLanguageStrictSchema(
+      datasetRoot,
+      path.join(PUBLIC_ROOT, "modele-langue.json")
+    ),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

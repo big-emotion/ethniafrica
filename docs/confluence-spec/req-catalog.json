@@ -250,6 +250,6 @@
     "REQ-132": "Confluence REQ-132 — About page content and presentation",
     "REQ-133": "Confluence REQ-133 — a name fiche states its origin, its spread and its bearers",
     "REQ-135": "Confluence REQ-135 — an approximate input reaches the canonical name, including declared transliteration variants",
-    "REQ-136": "Confluence REQ-136 — a people's spoken languages are queryable as a relation (afrik_people_languages), not only read from content.languages.isoCodes"
+    "REQ-136": "Confluence REQ-136 — The language layer is loaded, complete and reachable"
   }
 }
