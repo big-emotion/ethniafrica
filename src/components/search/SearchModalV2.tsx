@@ -73,6 +73,7 @@ export const SearchModalV2 = ({
     return {
       all: "Tout",
       families: "Familles",
+      languages: "Langues",
       peoples: "Peuples",
       countries: "Pays",
       persons: "Personnes",
@@ -140,6 +141,12 @@ export const SearchModalV2 = ({
                 className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
               >
                 {tabLabels.families}
+              </TabsTrigger>
+              <TabsTrigger
+                value="language"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.languages}
               </TabsTrigger>
               <TabsTrigger
                 value="people"

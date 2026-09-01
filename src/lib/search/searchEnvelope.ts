@@ -106,7 +106,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   // reading `peoples` off an Array and crashing the whole modal.
   if (!data || Array.isArray(data)) return [];
 
-  const { peoples, countries, families, persons } = data as Record<
+  const { peoples, countries, families, persons, languages } = data as Record<
     string,
     unknown
   >;
@@ -164,6 +164,20 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         name: String(row.fullName ?? ""),
         roleCategory: String(row.roleCategory ?? ""),
         peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
+        snippet: (row.snippet as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+      })
+    ),
+    // REQ-136: a language reaches the unified surface as its own kind, not
+    // only through the peoples that mention it.
+    ...asRows(languages).map(
+      (row): SearchResult => ({
+        type: "language",
+        id: String(row.id),
+        name: String(row.name ?? ""),
+        languageFamilyId: row.familyId as SearchResult["languageFamilyId"],
+        languageFamilyName: (row.familyName as string) || undefined,
         snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,

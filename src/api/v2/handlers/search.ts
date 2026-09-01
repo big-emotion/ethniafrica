@@ -16,8 +16,9 @@ export interface FtsSearchData {
   persons: object[];
   patronymes: object[];
   quizzes: object[];
+  languages: object[];
   /**
-   * Every hit above, merged and ordered on `normalizedScore` (migration 068).
+   * Every hit above, merged and ordered on `normalizedScore` (migration 069).
    * The grouped arrays stay beside it because a facet asks about one kind.
    */
   results: RankedSearchHit[];
@@ -32,6 +33,7 @@ export interface FtsSearchData {
   personsTotal: number;
   patronymesTotal: number;
   quizzesTotal: number;
+  languagesTotal: number;
   total: number;
 }
 
@@ -49,6 +51,7 @@ export async function ftsSearchHandler(
     persons: (result.persons ?? []) as object[],
     patronymes: (result.patronymes ?? []) as object[],
     quizzes: (result.quizzes ?? []) as object[],
+    languages: (result.languages ?? []) as object[],
     results: result.results ?? [],
     peoplesTotal: result.peoplesTotal,
     countriesTotal: result.countriesTotal,
@@ -56,6 +59,7 @@ export async function ftsSearchHandler(
     personsTotal: result.personsTotal,
     patronymesTotal: result.patronymesTotal,
     quizzesTotal: result.quizzesTotal,
+    languagesTotal: result.languagesTotal,
     total: result.total,
   });
 }

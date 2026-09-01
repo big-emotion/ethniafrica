@@ -54,10 +54,7 @@ export type PeopleId = string;
  * - `reconstructive`: Classification being actively reconstructed / decolonized
  */
 export type ClassificationStatus =
-  | "consensual"
-  | "contested"
-  | "colonial-legacy"
-  | "reconstructive";
+  "consensual" | "contested" | "colonial-legacy" | "reconstructive";
 
 // ==========================================
 // CORE ENTITIES (with stable IDs)
@@ -596,11 +593,7 @@ export interface NameRecord {
   entityType: "country" | "people" | "language" | "languageFamily";
   entityId: string; // CountryId | PeopleId | LanguageId | LanguageFamilyId
   nameType:
-    | "official"
-    | "self-appellation"
-    | "exonym"
-    | "historical"
-    | "colonial";
+    "official" | "self-appellation" | "exonym" | "historical" | "colonial";
   name: string;
   language?: string; // Language in which the name is used
   period?: string; // Historical period
@@ -756,12 +749,7 @@ export interface RankedQuizQuestion {
 }
 
 export type SearchHitKind =
-  | "people"
-  | "country"
-  | "languageFamily"
-  | "person"
-  | "patronyme"
-  | "quiz";
+  "people" | "country" | "languageFamily" | "person" | "patronyme" | "quiz";
 
 /**
  * One row of the canonical cross-kind ranking.
@@ -780,6 +768,24 @@ export interface RankedSearchHit {
   snippet: string | null;
 }
 
+/**
+ * A language search hit (REQ-136). `familyName` is denormalised alongside
+ * `familyId` — same posture as `RankedPeople.languageFamilyName` — so a
+ * result card never has to issue a second fetch to render its family.
+ */
+export interface RankedLanguage {
+  id: LanguageId;
+  name: string;
+  familyId: LanguageFamilyId;
+  familyName: string | null;
+  content: LanguageContent;
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
 export interface FtsSearchResponse {
   peoples: RankedPeople[];
   countries: RankedCountry[];
@@ -787,6 +793,7 @@ export interface FtsSearchResponse {
   persons: RankedPerson[];
   patronymes: RankedPatronyme[];
   quizzes: RankedQuizQuestion[];
+  languages: RankedLanguage[];
   /** Every hit above, merged and ordered on `normalizedScore`. */
   results: RankedSearchHit[];
   /** Corpus-wide match counts, not the size of the returned page. */
@@ -796,6 +803,7 @@ export interface FtsSearchResponse {
   personsTotal: number;
   patronymesTotal: number;
   quizzesTotal: number;
+  languagesTotal: number;
   total: number;
 }
 

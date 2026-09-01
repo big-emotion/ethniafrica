@@ -8,6 +8,7 @@ import type { SearchResult } from "@/types/afrik-frontend";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
   getLocalizedRoute,
   getPeopleRoute,
   getPersonRoute,
@@ -75,6 +76,17 @@ describe("SearchResultCard", () => {
     expect(screen.getByRole("link", { name: "Krou" })).toHaveAttribute(
       "href",
       getFamilyRoute("fr", "FLG_KROU")
+    );
+  });
+
+  // REQ-136: a language reaches its own fiche, not a peoples-scoped search.
+  // @req REQ-136
+  it("links a language result to its fiche", () => {
+    renderCard({ type: "language", id: "swa", name: "Swahili" });
+
+    expect(screen.getByRole("link", { name: "Swahili" })).toHaveAttribute(
+      "href",
+      getLanguageRoute("fr", "swa")
     );
   });
 

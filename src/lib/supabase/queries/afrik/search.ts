@@ -2,10 +2,10 @@
  * Supabase queries for AFRIK search (multi-entity).
  *
  * Every kind is ranked by its own SQL function — afrik_search_peoples,
- * _countries, _persons, _patronymes, _language_families and _quiz (migrations
- * 044, 052, 065, 066, 068) — over the weighted tsvectors of migrations 043,
- * 056, 057, 066 and 068. This module maps their rows and merges them; it
- * ranks nothing itself.
+ * _countries, _persons, _patronymes, _languages, _language_families and _quiz
+ * (migrations 044, 052, 065, 066, 068, 069) — over the weighted tsvectors of
+ * migrations 043, 056, 057, 066, 068 and 069. This module maps their rows and
+ * merges them; it ranks nothing itself.
  */
 
 import { createServerClient } from "../../server";
@@ -14,6 +14,7 @@ import type {
   FtsSearchParams,
   FtsSearchResponse,
   RankedCountry,
+  RankedLanguage,
   RankedLanguageFamily,
   RankedPatronyme,
   RankedPeople,
@@ -28,7 +29,7 @@ import type {
 } from "@/types/persons";
 
 /**
- * Ranked search across the six atlas kinds.
+ * Ranked search across the seven atlas kinds.
  *
  * Ordering happens in Postgres, in the same statement as the LIMIT, because
  * that is the only place it can be correct. This function used to page in SQL
@@ -40,12 +41,14 @@ import type {
  *
  * Language families were the last kind still ranked here: their whole roster
  * was fetched over the wire and put through a four-tier JS ladder. Migration
- * 068 reproduces that ladder in SQL — same tiers, same accent folding — so
+ * 069 reproduces that ladder in SQL — same tiers, same accent folding — so
  * families are now ranked in the same process as everything else.
  *
- * `results` is the merge of all six kinds on `normalizedScore`, the one
- * magnitude migration 068 makes comparable across kinds. The grouped arrays
- * are kept beside it: a facet still needs to know what matched among peoples
+ * `results` is the merge of all six normalized-score kinds on
+ * `normalizedScore`, the one magnitude migration 069 makes comparable across
+ * them. Languages (migration 068) are exposed as a grouped facet only, since
+ * their RPC does not yet project that score. The grouped arrays are kept
+ * beside `results`: a facet still needs to know what matched among peoples
  * alone.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
@@ -77,6 +80,7 @@ export async function ftsSearchEntities(
     patronymeResult,
     familyResult,
     quizResult,
+    languageResult,
   ] = await Promise.all([
     supabase.rpc("afrik_search_peoples", {
       p_q: text || null,
@@ -123,6 +127,13 @@ export async function ftsSearchEntities(
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
+      ? supabase.rpc("afrik_search_languages", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
   ]);
 
   if (peopleResult.error) {
@@ -152,6 +163,10 @@ export async function ftsSearchEntities(
     logger.error("Error in ranked quiz search", quizResult.error);
     throw quizResult.error;
   }
+  if (languageResult.error) {
+    logger.error("Error in ranked languages search", languageResult.error);
+    throw languageResult.error;
+  }
 
   const peoplePayload = asRankedPayload(peopleResult.data);
   const countryPayload = asRankedPayload(countryResult.data);
@@ -159,6 +174,7 @@ export async function ftsSearchEntities(
   const patronymePayload = asRankedPayload(patronymeResult.data);
   const familyPayload = asRankedPayload(familyResult.data);
   const quizPayload = asRankedPayload(quizResult.data);
+  const languagePayload = asRankedPayload(languageResult.data);
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
@@ -172,6 +188,7 @@ export async function ftsSearchEntities(
     toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
   );
   const patronymes = patronymePayload.rows.map(toRankedPatronyme);
+  const languages = languagePayload.rows.map(toRankedLanguage);
 
   return {
     peoples,
@@ -180,6 +197,7 @@ export async function ftsSearchEntities(
     persons,
     patronymes,
     quizzes,
+    languages,
     results: mergeIntoOneRanking({
       peoples,
       countries,
@@ -194,13 +212,15 @@ export async function ftsSearchEntities(
     personsTotal: personPayload.total,
     patronymesTotal: patronymePayload.total,
     quizzesTotal: quizPayload.total,
+    languagesTotal: languagePayload.total,
     total:
       peoplePayload.total +
       countryPayload.total +
       familyPayload.total +
       personPayload.total +
       patronymePayload.total +
-      quizPayload.total,
+      quizPayload.total +
+      languagePayload.total,
   };
 }
 
@@ -345,8 +365,23 @@ function toRankedLanguageFamily(
   };
 }
 
+function toRankedLanguage(row: Record<string, unknown>): RankedLanguage {
+  return {
+    id: row.id as string,
+    name: row.name as string,
+    familyId: row.familyId as string,
+    familyName: (row.familyName as string) ?? null,
+    content: (row.content as RankedLanguage["content"]) || {},
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
+    createdAt: toDate(row.createdAt),
+    updatedAt: toDate(row.updatedAt),
+  };
+}
+
 /**
- * The answer key is absent by construction: this reads the keys migration 068
+ * The answer key is absent by construction: this reads the keys migration 069
  * projects and nothing else, so a column added to the RPC later cannot leak
  * into the response by accident.
  */
@@ -381,7 +416,7 @@ interface RankedGroups {
 
 /**
  * The six grouped arrays, flattened into one list ordered on the score they
- * share (migration 068).
+ * share (migration 069).
  *
  * Ties are frequent by design — the score bands a match class, so two exact
  * hits of different kinds routinely land on the same value — and an unstable

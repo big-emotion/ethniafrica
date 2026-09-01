@@ -528,7 +528,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data, in two shapes over the same hits. `results` is the canonical cross-kind ranking: every hit, best first, each row carrying a `kind` discriminator. Each entity kind is ALSO returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match). `normalizedScore` is the magnitude that IS comparable across kinds: migration 068 places each kind\'s raw relevance inside a band chosen by the match class (exact [0.90,1.00], lexical [0.50,0.90], fallback [0.00,0.50]), and it is what `results` sorts on. A person\'s link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people\'s own membership.",
+            "Search result data, in two shapes over the same hits. `results` is the canonical cross-kind ranking: every hit, best first, each row carrying a `kind` discriminator. Each entity kind is ALSO returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match), languages by the same prefix/unaccent ranking with no confidence factor and an exact-match bonus that also fires on the ISO 639-3 id (migration 068, REQ-136). `normalizedScore` is the magnitude that IS comparable across kinds: migration 069 places each kind's raw relevance inside a band chosen by the match class (exact [0.90,1.00], lexical [0.50,0.90], fallback [0.00,0.50]), and it is what `results` sorts on; languages are exposed as a facet only and are not folded into `results`. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
@@ -546,7 +546,7 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageFamilyV2" },
               description:
-                "Matching language families, ranked by afrik_search_language_families (migration 068): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the French name, then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries relevance, exactMatch, normalizedScore and a snippet.",
+                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the French name, then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries relevance, exactMatch, normalizedScore and a snippet.",
             },
             persons: {
               type: "array",
@@ -564,13 +564,19 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/QuizSearchResultV2" },
               description:
-                "Matching quiz questions from the active bank (REQ-121), ranked by afrik_search_quiz (migration 068) on the stem, the stimulus, the explanation and the subject entity's name. Revoked questions are invisible; the options, the correct answer and the explanation are never returned.",
+                "Matching quiz questions from the active bank (REQ-121), ranked by afrik_search_quiz (migration 069) on the stem, the stimulus, the explanation and the subject entity's name. Revoked questions are invisible; the options, the correct answer and the explanation are never returned.",
             },
             results: {
               type: "array",
               items: { $ref: "#/components/schemas/SearchHitV2" },
               description:
                 "Every hit above, merged and ordered on normalizedScore descending, ties broken on the French collation of the name then on the id. This is the list a single unified result page renders.",
+            },
+            languages: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageSearchResultV2" },
+              description:
+                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match. Each carries relevance, exactMatch, familyName and a snippet.",
             },
             peoplesTotal: {
               type: "integer",
@@ -603,10 +609,15 @@ const options: swaggerJsdoc.Options = {
               description: "Active quiz questions matching corpus-wide",
               example: 0,
             },
+            languagesTotal: {
+              type: "integer",
+              description: "Languages matching corpus-wide",
+              example: 0,
+            },
             total: {
               type: "integer",
               description:
-                "Sum of the six corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+                "Sum of the seven corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
             },
           },
@@ -617,6 +628,7 @@ const options: swaggerJsdoc.Options = {
             "persons",
             "patronymes",
             "quizzes",
+            "languages",
             "results",
             "peoplesTotal",
             "countriesTotal",
@@ -624,6 +636,7 @@ const options: swaggerJsdoc.Options = {
             "personsTotal",
             "patronymesTotal",
             "quizzesTotal",
+            "languagesTotal",
             "total",
           ],
         },
@@ -661,7 +674,7 @@ const options: swaggerJsdoc.Options = {
               minimum: 0,
               maximum: 1,
               description:
-                "Cross-kind ranking score on [0,1] (migration 068), the magnitude `results` sorts on.",
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
               example: 0.94,
             },
             snippet: {
@@ -712,7 +725,7 @@ const options: swaggerJsdoc.Options = {
               minimum: 0,
               maximum: 1,
               description:
-                "Cross-kind ranking score on [0,1] (migration 068). The match class picks a disjoint band and the kind's own raw relevance is placed inside it, so the class always dominates and the raw magnitude — measured on a different scale per kind — only breaks ties within one class.",
+                "Cross-kind ranking score on [0,1] (migration 069). The match class picks a disjoint band and the kind's own raw relevance is placed inside it, so the class always dominates and the raw magnitude — measured on a different scale per kind — only breaks ties within one class.",
               example: 0.94,
             },
             snippet: {
@@ -982,7 +995,7 @@ const options: swaggerJsdoc.Options = {
               minimum: 0,
               maximum: 1,
               description:
-                "Cross-kind ranking score on [0,1] (migration 068), the magnitude `results` sorts on.",
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
               example: 0.94,
             },
             snippet: {
@@ -1047,7 +1060,7 @@ const options: swaggerJsdoc.Options = {
               minimum: 0,
               maximum: 1,
               description:
-                "Cross-kind ranking score on [0,1] (migration 068), the magnitude `results` sorts on.",
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
               example: 0.94,
             },
             snippet: {
@@ -1065,6 +1078,60 @@ const options: swaggerJsdoc.Options = {
             "relevance",
             "exactMatch",
             "normalizedScore",
+            "snippet",
+          ],
+        },
+        LanguageSearchResultV2: {
+          type: "object",
+          description:
+            "A language search hit (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the accent/case-insensitive name, then a prefix/accent-insensitive lexical match over the weighted search_vector (migration 055) OR name_unaccent_vector (this migration).",
+          properties: {
+            id: {
+              type: "string",
+              description: "ISO 639-3 code",
+              example: "swa",
+            },
+            name: {
+              type: "string",
+              example: "Swahili",
+            },
+            familyId: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_NIGER_CONGO",
+            },
+            familyName: {
+              type: ["string", "null"],
+              example: "Niger-Congo",
+            },
+            content: {
+              type: "object",
+              description: "Evolutionary JSONB content, forwarded opaquely.",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              description:
+                'Fires on the ISO 639-3 id as well as on the name — a reader who types "swa" has named the language exactly as precisely as one who types "Swahili".',
+              example: false,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over name; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: [
+            "id",
+            "name",
+            "familyId",
+            "familyName",
+            "content",
+            "relevance",
+            "exactMatch",
             "snippet",
           ],
         },

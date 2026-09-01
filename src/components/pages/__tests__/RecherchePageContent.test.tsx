@@ -701,6 +701,37 @@ describe("RecherchePageContent", () => {
     expect(screen.queryByTestId("search-pivot")).not.toBeInTheDocument();
   });
 
+  // @req REQ-124
+  it("promotes no card and keeps the list flat when two results share a normalized name (homonymy)", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "A", nameMain: "Bété", relevance: 0.9, content: {} },
+            { id: "B", nameMain: "BETE", relevance: 0.1, content: {} },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Bété" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId("search-result-card")).toHaveLength(2);
+    });
+    expect(screen.queryByTestId("search-pivot")).not.toBeInTheDocument();
+  });
+
   // ── 8. no session history ──────────────────────────────────────────────────
 
   it("input uses autocomplete=off to prevent browser search history", () => {

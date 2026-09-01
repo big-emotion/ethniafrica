@@ -1,4 +1,4 @@
--- Migration 068 — One comparable score across every kind (REQ-002, ETNI-1707)
+-- Migration 069 — One comparable score across every kind (REQ-002, ETNI-1707)
 --
 -- Context: search now answers over six kinds — peoples (044/052/063),
 -- countries (052), persons (065), names (066), linguistic families and quiz
@@ -274,7 +274,7 @@ $$;
 
 COMMENT ON FUNCTION public.afrik_search_peoples(
   TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT) IS
-  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact name_main match, then a lexical match on the weighted search_vector (ts_rank times a confidence multiplier), then a pg_trgm similarity fallback (>= 0.4) for a query that finds no lexical match at all — DEC-034''s typo-tolerance mechanism, migration 063. Each row also carries normalizedScore, the same ranking expressed on the cross-kind [0,1] scale of migration 068. A null or blank p_q switches the text predicate off, which is how "peoples of family X" and "peoples of country Y" are served here. Runs as the calling role, so it reads only what migrations 015 and 019 already publish to anon.';
+  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact name_main match, then a lexical match on the weighted search_vector (ts_rank times a confidence multiplier), then a pg_trgm similarity fallback (>= 0.4) for a query that finds no lexical match at all — DEC-034''s typo-tolerance mechanism, migration 063. Each row also carries normalizedScore, the same ranking expressed on the cross-kind [0,1] scale of migration 069. A null or blank p_q switches the text predicate off, which is how "peoples of family X" and "peoples of country Y" are served here. Runs as the calling role, so it reads only what migrations 015 and 019 already publish to anon.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_peoples(
   TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT) FROM PUBLIC;
@@ -382,7 +382,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_countries(TEXT, INT, INT) IS
-  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 068. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
+  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
 
 REVOKE ALL ON FUNCTION public.afrik_search_countries(TEXT, INT, INT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_countries(TEXT, INT, INT)
@@ -498,7 +498,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_persons(TEXT, INT, INT) IS
-  'Ranked, paginated persons search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact full_name match, then a prefix/accent-insensitive lexical match over search_vector or name_unaccent_vector (public.afrik_prefix_tsquery, mirroring 052), then a pg_trgm similarity fallback (>= 0.4, mirroring 063). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 068. No classification/confidence/family/country filters — those are peoples-only concepts. Runs as the calling role, so it reads only what migration 057 already publishes to anon. REQ-126.';
+  'Ranked, paginated persons search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact full_name match, then a prefix/accent-insensitive lexical match over search_vector or name_unaccent_vector (public.afrik_prefix_tsquery, mirroring 052), then a pg_trgm similarity fallback (>= 0.4, mirroring 063). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. No classification/confidence/family/country filters — those are peoples-only concepts. Runs as the calling role, so it reads only what migration 057 already publishes to anon. REQ-126.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_persons(TEXT, INT, INT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_persons(TEXT, INT, INT)
@@ -629,7 +629,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_patronymes(TEXT, INT, INT) IS
-  'Ranked, paginated name (patronyme) search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact accent/apostrophe-insensitive name match, then a lexical tier that is a prefix/accent-insensitive match on search_vector or name_unaccent_vector OR a dmetaphone phonetic match (REQ-135 AC1), then a pg_trgm similarity fallback (>= 0.4, mirroring 063). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 068. A null or blank p_q browses the whole corpus. Runs as the calling role, so it reads only what migration 053 already publishes to anon.';
+  'Ranked, paginated name (patronyme) search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact accent/apostrophe-insensitive name match, then a lexical tier that is a prefix/accent-insensitive match on search_vector or name_unaccent_vector OR a dmetaphone phonetic match (REQ-135 AC1), then a pg_trgm similarity fallback (>= 0.4, mirroring 063). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. A null or blank p_q browses the whole corpus. Runs as the calling role, so it reads only what migration 053 already publishes to anon.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_patronymes(TEXT, INT, INT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_patronymes(TEXT, INT, INT)
@@ -745,7 +745,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT) IS
-  'Ranked, paginated linguistic-family search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Replaces the JavaScript rankLanguageFamilies: accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on name_fr, then a prose tier (0.1) through the migration 056 search_vector (DEC-028). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 068. A blank p_q matches nothing — browsing the roster is the facet''s job, not search''s. Runs as the calling role, so it reads only what migration 015 already publishes to anon. REQ-002, REQ-129.';
+  'Ranked, paginated linguistic-family search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Replaces the JavaScript rankLanguageFamilies: accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on name_fr, then a prose tier (0.1) through the migration 056 search_vector (DEC-028). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. A blank p_q matches nothing — browsing the roster is the facet''s job, not search''s. Runs as the calling role, so it reads only what migration 015 already publishes to anon. REQ-002, REQ-129.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT)
@@ -781,7 +781,7 @@ ALTER TABLE public.quiz_questions
   ) STORED;
 
 COMMENT ON COLUMN public.quiz_questions.search_vector IS
-  'Accent-folded weighted French tsvector: A = prompt_fr, C = stimulus_fr, D = explanation_fr. Folded through public.afrik_unaccent so a query folded the same way matches whatever accents the reader typed. Queried by public.afrik_search_quiz (migration 068); the explanation is searchable but never returned, since it states the answer.';
+  'Accent-folded weighted French tsvector: A = prompt_fr, C = stimulus_fr, D = explanation_fr. Folded through public.afrik_unaccent so a query folded the same way matches whatever accents the reader typed. Queried by public.afrik_search_quiz (migration 069); the explanation is searchable but never returned, since it states the answer.';
 
 CREATE INDEX IF NOT EXISTS idx_quiz_questions_search_vector
   ON public.quiz_questions USING gin(search_vector)

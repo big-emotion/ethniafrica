@@ -85,6 +85,7 @@ export function HomeHero({
             <ContinentGlobeStage
               peopleCountsByCountry={peopleCountsByCountry}
               presentation="hero"
+              autoRotate
             />
           ) : (
             <figure className="home-hero-figure" data-testid="home-hero-figure">

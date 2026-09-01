@@ -356,6 +356,41 @@ describe("GET /api/v2/search (route)", () => {
     expect(body.data.patronymesTotal).toBe(1);
   });
 
+  // REQ-136: a language name — or its ISO 639-3 code — reaches the language
+  // fiche through the unified search surface, alongside the other natures.
+  // @req REQ-136
+  it("returns languages alongside the other natures in the response envelope", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            relevance: 1,
+            exactMatch: true,
+            snippet: null,
+            content: {},
+          },
+        ],
+        languagesTotal: 1,
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=swa");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.languages).toEqual([
+      expect.objectContaining({ id: "swa", name: "Swahili" }),
+    ]);
+    expect(body.data.languagesTotal).toBe(1);
+  });
+
   // ── client/route contract ───────────────────────────────────────────────
   // The site's own callers went unnoticed for two releases while every search
   // 400ed, because each side was only ever tested against its own idea of the
