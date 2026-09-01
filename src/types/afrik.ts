@@ -8,6 +8,7 @@
  */
 
 import type { SourceTier } from "@/types/sources";
+import type { PersonId, PersonPeopleLink } from "@/types/persons";
 
 // ==========================================
 // STABLE IDENTIFIERS (IMMUTABLE)
@@ -688,14 +689,32 @@ export interface RankedLanguageFamily extends LanguageFamily {
   exactMatch: boolean;
 }
 
+/**
+ * A person search hit (REQ-126). `peopleLinks` carries this person's typed
+ * relation to each studied/belonged-to people — membership vs observation —
+ * so an ethnographer's link to a people is never confused with membership
+ * in it.
+ */
+export interface RankedPerson {
+  id: PersonId;
+  fullName: string;
+  roleCategory: string;
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+  peopleLinks: PersonPeopleLink[];
+}
+
 export interface FtsSearchResponse {
   peoples: RankedPeople[];
   countries: RankedCountry[];
   families: RankedLanguageFamily[];
+  persons: RankedPerson[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;
   countriesTotal: number;
   familiesTotal: number;
+  personsTotal: number;
   total: number;
 }
 

@@ -2,9 +2,9 @@
  * Supabase queries for AFRIK search (multi-entity).
  *
  * ftsSearchEntities delegates ranking to the afrik_search_peoples /
- * afrik_search_countries functions (migration 044), which rank over the
- * weighted tsvectors of migration 043. This module maps their rows; it does
- * not order them.
+ * afrik_search_countries / afrik_search_persons functions (migrations 044,
+ * 065), which rank over the weighted tsvectors of migrations 043, 057. This
+ * module maps their rows; it does not order them.
  */
 
 import {
@@ -21,10 +21,16 @@ import type {
   RankedCountry,
   RankedLanguageFamily,
   RankedPeople,
+  RankedPerson,
 } from "@/types/afrik";
+import type {
+  PersonPeopleLink,
+  PersonPeopleRelationLabel,
+} from "@/types/persons";
 
 /**
- * Ranked search across the three atlas entities.
+ * Ranked search across the four atlas entities (peoples, countries,
+ * language families, persons).
  *
  * Ordering happens in Postgres, in the same statement as the LIMIT, because
  * that is the only place it can be correct. This function used to page in SQL
@@ -69,28 +75,40 @@ export async function ftsSearchEntities(
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
 
-  const [peopleResult, countryResult, familyRows, familyProseMatchIds] =
-    await Promise.all([
-      supabase.rpc("afrik_search_peoples", {
-        p_q: text || null,
-        p_limit: limit,
-        p_offset: offset,
-        p_classification_status: classificationStatus ?? null,
-        p_min_confidence: minConfidence ?? null,
-        p_since_verified_after: sinceVerifiedAfter ?? null,
-        p_family_id: familyId ?? null,
-        p_country_id: countryId ?? null,
-      }),
-      text
-        ? supabase.rpc("afrik_search_countries", {
-            p_q: text,
-            p_limit: limit,
-            p_offset: offset,
-          })
-        : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-      text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
-      text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
-    ]);
+  const [
+    peopleResult,
+    countryResult,
+    personResult,
+    familyRows,
+    familyProseMatchIds,
+  ] = await Promise.all([
+    supabase.rpc("afrik_search_peoples", {
+      p_q: text || null,
+      p_limit: limit,
+      p_offset: offset,
+      p_classification_status: classificationStatus ?? null,
+      p_min_confidence: minConfidence ?? null,
+      p_since_verified_after: sinceVerifiedAfter ?? null,
+      p_family_id: familyId ?? null,
+      p_country_id: countryId ?? null,
+    }),
+    text
+      ? supabase.rpc("afrik_search_countries", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
+      ? supabase.rpc("afrik_search_persons", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
+    text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
+  ]);
 
   if (peopleResult.error) {
     logger.error("Error in ranked peoples search", peopleResult.error);
@@ -100,9 +118,14 @@ export async function ftsSearchEntities(
     logger.error("Error in ranked countries search", countryResult.error);
     throw countryResult.error;
   }
+  if (personResult.error) {
+    logger.error("Error in ranked persons search", personResult.error);
+    throw personResult.error;
+  }
 
   const peoplePayload = asRankedPayload(peopleResult.data);
   const countryPayload = asRankedPayload(countryResult.data);
+  const personPayload = asRankedPayload(personResult.data);
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
@@ -111,15 +134,28 @@ export async function ftsSearchEntities(
     text,
     new Set(familyProseMatchIds)
   );
+  const personPeopleLinksById = await getPersonPeopleLinksByIds(
+    supabase,
+    personPayload.rows.map((row) => row.id as string)
+  );
+  const persons = personPayload.rows.map((row) =>
+    toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
+  );
 
   return {
     peoples,
     countries,
     families,
+    persons,
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
     familiesTotal: families.length,
-    total: peoplePayload.total + countryPayload.total + families.length,
+    personsTotal: personPayload.total,
+    total:
+      peoplePayload.total +
+      countryPayload.total +
+      families.length +
+      personPayload.total,
   };
 }
 
@@ -174,6 +210,56 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
     snippet: (row.snippet as string) ?? null,
     createdAt: toDate(row.createdAt),
     updatedAt: toDate(row.updatedAt),
+  };
+}
+
+/**
+ * Batched person_peoples lookup for a page of search results — one query
+ * for the whole page rather than one per person. Carries relation_label
+ * (membership vs observation) so a person's link to a studied people is
+ * never collapsed into membership in it (REQ-126).
+ */
+async function getPersonPeopleLinksByIds(
+  supabase: ReturnType<typeof createServerClient>,
+  personIds: string[]
+): Promise<Map<string, PersonPeopleLink[]>> {
+  const links = new Map<string, PersonPeopleLink[]>();
+  if (personIds.length === 0) return links;
+
+  const { data, error } = await supabase
+    .from("person_peoples")
+    .select("person_id, people_id, relation_label")
+    .in("person_id", personIds);
+
+  if (error) {
+    logger.error("Error fetching person_peoples for search results", error);
+    throw error;
+  }
+
+  for (const row of data || []) {
+    const personId = row.person_id as string;
+    const link: PersonPeopleLink = {
+      peopleId: row.people_id as string,
+      relationLabel: row.relation_label as PersonPeopleRelationLabel,
+    };
+    links.set(personId, [...(links.get(personId) ?? []), link]);
+  }
+
+  return links;
+}
+
+function toRankedPerson(
+  row: Record<string, unknown>,
+  peopleLinks: PersonPeopleLink[]
+): RankedPerson {
+  return {
+    id: row.id as RankedPerson["id"],
+    fullName: row.fullName as string,
+    roleCategory: row.roleCategory as string,
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
+    peopleLinks,
   };
 }
 
