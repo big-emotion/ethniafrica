@@ -74,13 +74,13 @@ import type { Language } from "@/types/shared";
  * corpus cannot answer with is the promise this surface may not break — which
  * is what the three-kind rule was protecting all along.
  *
- * Note what this is *not* aligned with. The headline above and the tiles below
- * name five **corpus classes**, and their fifth is appellations — the 3134
- * folded name forms of the peoples. The panel's fifth is *Noms*, the 30
- * patronyme fiches. Two different objects that are both names: the tiles count
- * how peoples are named, this returns records about family names. Four classes
- * are shared, the fifth is not, and collapsing them would have the band claim
- * 3134 of something the panel returns 30 of.
+ * Note what this is *not* aligned with. The headline above names five
+ * **corpus classes**, and their fifth is appellations — the 3134 folded name
+ * forms of the peoples. The panel's fifth is *Noms*, the 30 patronyme fiches.
+ * Two different objects that are both names: the headline counts how peoples
+ * are named, this returns records about family names. Four classes are
+ * shared, the fifth is not, and collapsing them would have the panel claim
+ * 3134 of something it returns 30 of.
  *
  * There is no second line of help under it. What the reader gets — a
  * documented record, with its sources — is what the hero's own answer states
@@ -122,10 +122,10 @@ const MAX_PER_GROUP = 3;
 // Plural of the singular labels in SEARCH_ENTITY_ACCENT — a group heads a set.
 // The accent still comes from that one table, so a kind's colour is assigned
 // in a single place across the whole product.
-// Exported so a charter contract can hold the headline, the corpus tiles and
-// this panel to the same set of classes — the three used to drift apart in
-// three separate files, which is how the band came to name one class above a
-// panel that showed three above a corpus that holds five.
+// Exported so a charter contract can hold the headline and this panel to the
+// same set of classes — the two used to drift apart in separate files, which
+// is how the band came to name one class above a panel that showed three
+// above a corpus that holds five.
 // @req REQ-002
 export const SEARCH_RESULT_GROUPS: {
   type: SearchEntityType;

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
@@ -17,9 +16,9 @@ import { HomeHeroSearch } from "./HomeHeroSearch";
  * The search-first opening band (REQ-115, ETNI-1404).
  *
  * Reading order stays stable across widths: question and primary search,
- * drawn visual, then corpus counters. At desktop the grid places the first
- * and third items in the left column while the visual occupies the
- * right; CSS never changes the accessible order.
+ * then drawn visual. At desktop the grid places the copy in the left column
+ * while the visual occupies the right; CSS never changes the accessible
+ * order.
  */
 export interface HomeHeroProps {
   /**
@@ -30,8 +29,6 @@ export interface HomeHeroProps {
   seedWords?: SeedWordsByKind;
   /** Documented peoples per country, forwarded to the globe's honest field. */
   peopleCountsByCountry?: Record<string, number>;
-  /** Corpus counters supplied by the server page, after the visual in reading order. */
-  counts?: ReactNode;
   /**
    * The classes the headline turns through, figures included, built by the
    * server page from the same totals the counters show. Defaults to the five
@@ -48,7 +45,6 @@ export interface HomeHeroProps {
 export function HomeHero({
   seedWords,
   peopleCountsByCountry,
-  counts,
   headline = headlineSegments(null),
   visual = { kind: "globe" },
 }: HomeHeroProps = {}) {
@@ -133,8 +129,6 @@ export function HomeHero({
             </figure>
           )}
         </div>
-
-        {counts && <div className="home-hero-counts">{counts}</div>}
       </div>
 
       <div className="home-hero-seam" aria-hidden="true" />
@@ -155,8 +149,7 @@ export function HomeHero({
           grid-template-columns: minmax(0, 1fr);
           grid-template-areas:
             "copy"
-            "globe"
-            "counts";
+            "globe";
           gap: 16px;
           padding-block: 24px 28px;
         }
@@ -249,11 +242,6 @@ export function HomeHero({
           color: var(--afh-text-soft);
         }
 
-        .home-hero-counts {
-          grid-area: counts;
-          min-width: 0;
-        }
-
         .home-hero-seam {
           height: 26px;
           background: var(--afh-bg);
@@ -277,17 +265,13 @@ export function HomeHero({
 
         @media (min-width: 1200px) {
           .home-hero-inner {
-            /* 1.15/0.85, not an even split. The shell is 1240px less 64px of
-               page padding, so an even split leaves the left column 564px —
-               five corpus tiles at 103px, and "linguistiques" alone measures
-               more than the 79px a tile has left after its padding. Tilting
-               the columns buys the left one ~622px, which is what the five
-               tiles need. The visual gives up ~18% of its width and nothing
-               else: its 620px is a max-width, a ceiling and not a floor. */
+            /* 1.15/0.85, not an even split: the copy column keeps the room
+               that lets « Une question sur les » stay on one line (see
+               .home-hero-copy below). The visual gives up ~18% of its width
+               and nothing else: its 620px is a max-width, a ceiling and not
+               a floor. */
             grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-            grid-template-areas:
-              "copy globe"
-              "counts globe";
+            grid-template-areas: "copy globe";
             align-items: center;
             column-gap: 48px;
             row-gap: 20px;

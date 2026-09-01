@@ -1,7 +1,5 @@
-import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { HomeCorpusCounts } from "@/components/home/HomeCorpusCounts";
 import { SEARCH_RESULT_GROUPS } from "@/components/home/HomeHeroSearch";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
@@ -24,31 +22,25 @@ const FULL_CORPUS = {
 };
 
 /**
- * The home says what the corpus holds in three places at once — the headline
- * names a class, the tiles count them, the search panel groups what comes
- * back — and each used to keep its own list in its own file. They drifted:
- * the band asked "Qui sont les peuples d'Afrique ?" above three tiles above a
- * panel of three groups, while the corpus held five classes and the API
- * answered six kinds. A reader was told the product was a third of its size.
+ * The home says what the corpus holds in two places at once — the headline
+ * names a class, the search panel groups what comes back — and each used to
+ * keep its own list in its own file. They drifted: the band asked "Qui sont
+ * les peuples d'Afrique ?" above a panel of three groups, while the corpus
+ * held five classes and the API answered six kinds. A reader was told the
+ * product was a third of its size.
  *
  * There are two invariants here, not one, and conflating them is its own
- * failure. The headline and the tiles speak of **corpus classes**; the panel
- * and the field's label speak of **search result kinds**. They overlap in four
+ * failure. The headline speaks of **corpus classes**; the panel and the
+ * field's label speak of **search result kinds**. They overlap in four
  * places and part company in the fifth — appellations are name forms of
  * peoples, Noms are patronyme fiches.
  */
 describe("home charter — what the band claims the corpus is", () => {
   // @req REQ-113
-  it("counts exactly the classes the headline names, in the same order", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
-
-    const tiles = screen
-      .getAllByRole("term")
-      .map((term) => term.textContent?.trim());
+  it("names exactly the classes the corpus declares, in the same order", () => {
     const named = headlineSegments(FULL_CORPUS);
 
-    expect(tiles).toHaveLength(named.length);
-    expect(tiles).toEqual(CORPUS_CLASSES.map((entity) => entity.tileLabel));
+    expect(named).toHaveLength(CORPUS_CLASSES.length);
     expect(named).toEqual(
       CORPUS_CLASSES.map(
         (entity) =>
@@ -95,7 +87,7 @@ describe("home charter — what the band claims the corpus is", () => {
   });
 
   // The overlap is deliberate and partial. Asserting it keeps the next reader
-  // from "fixing" the asymmetry by making the tile count patronymes.
+  // from "fixing" the asymmetry by making the headline count patronymes.
   // @req REQ-113
   it("shares four classes with the search panel and parts company on the fifth", () => {
     const groupedTypes = SEARCH_RESULT_GROUPS.map((group) => group.type);

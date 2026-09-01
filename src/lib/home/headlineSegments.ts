@@ -12,8 +12,8 @@ const formatFigure = new Intl.NumberFormat("fr-FR", {
  * whose name changed every three seconds would be a landmark that moves. So
  * the rotation is decoration — `aria-hidden` — and this sentence is what the
  * heading is called, naming all five classes at once. It carries no figures:
- * those are announced by the corpus list below it, which is a definition list
- * and says them far better than a run-on sentence would.
+ * a fixed name cannot commit to a number that turns on its own a few seconds
+ * later.
  */
 // @req REQ-115
 export const HEADLINE_ACCESSIBLE_NAME =
@@ -24,9 +24,8 @@ export const HEADLINE_ACCESSIBLE_NAME =
  * The rotating half of the headline, one entry per class.
  *
  * A class whose figure could not be read keeps its word and loses its number,
- * rather than claiming zero — the same doctrine the tiles apply when they say
- * *Indisponible*. The headline still names the class, it simply stops
- * asserting a size for it.
+ * rather than claiming zero: the headline still names the class, it simply
+ * stops asserting a size for it.
  */
 // @req REQ-115
 export function headlineSegments(counts: CorpusCounts | null): string[] {

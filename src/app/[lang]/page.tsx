@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
-import { HomeCorpusCounts } from "@/components/home/HomeCorpusCounts";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
@@ -80,9 +79,6 @@ export default async function Home({ searchParams }: HomePageProps = {}) {
       <HomeHero
         seedWords={seedWords}
         peopleCountsByCountry={peopleCountsByCountry}
-        counts={<HomeCorpusCounts counts={counts} />}
-        // Same totals as the counters, so the headline and the tiles can never
-        // claim different sizes for the same corpus.
         headline={headlineSegments(counts)}
         visual={heroVisual}
       />
