@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import {
   buildSearchParams,
   compareByRelevance,
+  mapSearchCounts,
   mapSearchEnvelope,
   mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
@@ -409,5 +410,46 @@ describe("mapSearchLeads", () => {
     expect(mapSearchLeads({ data: [{ id: "PPL_BETE" }] })).toEqual([]);
     expect(mapSearchLeads({})).toEqual([]);
     expect(mapSearchLeads(null)).toEqual([]);
+  });
+});
+
+describe("mapSearchCounts", () => {
+  // @req REQ-124
+  it("reads the per-type totals the handler already computes, keyed to the lens values", () => {
+    const counts = mapSearchCounts({
+      data: {
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        languagesTotal: 5,
+        personsTotal: 1,
+        total: 23,
+      },
+    });
+
+    expect(counts).toEqual({
+      all: 23,
+      people: 12,
+      country: 3,
+      languageFamily: 2,
+      language: 5,
+      person: 1,
+    });
+  });
+
+  // @req REQ-124
+  it("defaults every count to zero when a total is missing, an array data, or no data", () => {
+    const zero = {
+      all: 0,
+      people: 0,
+      country: 0,
+      languageFamily: 0,
+      language: 0,
+      person: 0,
+    };
+    expect(mapSearchCounts({ data: {} })).toEqual(zero);
+    expect(mapSearchCounts({ data: [{ id: "PPL_BETE" }] })).toEqual(zero);
+    expect(mapSearchCounts({})).toEqual(zero);
+    expect(mapSearchCounts(null)).toEqual(zero);
   });
 });

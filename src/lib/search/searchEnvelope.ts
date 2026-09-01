@@ -12,7 +12,11 @@
  * impossible rather than merely fixed.
  */
 
-import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
+import type {
+  SearchEntityType,
+  SearchLead,
+  SearchResult,
+} from "@/types/afrik-frontend";
 import type { PersonPeopleLink } from "@/types/persons";
 
 export interface SearchQueryOptions {
@@ -237,6 +241,44 @@ export function mapSearchLeads(envelope: unknown): SearchLead[] {
       },
     ];
   });
+}
+
+/** Per-type match counts (REQ-124) for the named-lens chips. */
+export type SearchLensCounts = Record<SearchEntityType | "all", number>;
+
+// @req REQ-124
+export const EMPTY_SEARCH_LENS_COUNTS: SearchLensCounts = {
+  all: 0,
+  people: 0,
+  country: 0,
+  languageFamily: 0,
+  language: 0,
+  person: 0,
+};
+
+function numberOrZero(value: unknown): number {
+  return typeof value === "number" && Number.isFinite(value) ? value : 0;
+}
+
+/**
+ * Corpus-wide match counts, one per lens (REQ-124). Read straight off the
+ * totals `shapeSearchData` (handlers/search.ts) already computes — `total`
+ * there already excludes the quiz stream, so `all` needs no re-summing here.
+ */
+// @req REQ-124
+export function mapSearchCounts(envelope: unknown): SearchLensCounts {
+  const data = (envelope as { data?: unknown })?.data;
+  if (!data || Array.isArray(data)) return { ...EMPTY_SEARCH_LENS_COUNTS };
+
+  const row = data as Record<string, unknown>;
+  return {
+    all: numberOrZero(row.total),
+    people: numberOrZero(row.peoplesTotal),
+    country: numberOrZero(row.countriesTotal),
+    languageFamily: numberOrZero(row.familiesTotal),
+    language: numberOrZero(row.languagesTotal),
+    person: numberOrZero(row.personsTotal),
+  };
 }
 
 /**

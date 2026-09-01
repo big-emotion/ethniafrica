@@ -25,8 +25,11 @@ import type {
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import {
   buildSearchParams,
+  EMPTY_SEARCH_LENS_COUNTS,
+  mapSearchCounts,
   mapSearchEnvelope,
   mapSearchLeads,
+  type SearchLensCounts,
   type SearchQueryOptions,
 } from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
@@ -196,6 +199,8 @@ export interface SearchWithLeads {
   results: SearchResult[];
   /** Near-miss leads (REQ-125) — non-empty only when the API's own total is 0. */
   leads: SearchLead[];
+  /** Per-type match counts (REQ-124) for the named-lens chips. */
+  counts: SearchLensCounts;
 }
 
 // @req REQ-125
@@ -219,22 +224,28 @@ export async function searchWithLeads(
     if (!response.ok) {
       const error = await handleFetchError(response, "search");
       logger.error("[searchWithLeads] Error", error);
-      return { results: [], leads: [] };
+      return {
+        results: [],
+        leads: [],
+        counts: { ...EMPTY_SEARCH_LENS_COUNTS },
+      };
     }
 
     const envelope = await response.json();
     const results = mapSearchEnvelope(envelope);
     const leads = mapSearchLeads(envelope);
+    const counts = mapSearchCounts(envelope);
 
     return {
       results: options.type
         ? results.filter((result) => result.type === options.type)
         : results,
       leads,
+      counts,
     };
   } catch (error) {
     logger.error("[searchWithLeads] Exception", error);
-    return { results: [], leads: [] };
+    return { results: [], leads: [], counts: { ...EMPTY_SEARCH_LENS_COUNTS } };
   }
 }
 

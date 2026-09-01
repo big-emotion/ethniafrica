@@ -376,6 +376,58 @@ describe("afrikLoader", () => {
       expect(results).toHaveLength(0);
       expect(leads).toHaveLength(0);
     });
+
+    // @req REQ-124
+    it("carries the per-type lens counts alongside the results", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: {
+              peoples: [{ id: "PPL_SHONA", nameMain: "Shona", content: {} }],
+              countries: [],
+              families: [],
+              peoplesTotal: 1,
+              countriesTotal: 0,
+              familiesTotal: 0,
+              languagesTotal: 0,
+              personsTotal: 0,
+              total: 1,
+            },
+          }),
+      });
+
+      const { counts } = await searchWithLeads("shona");
+
+      expect(counts).toEqual({
+        all: 1,
+        people: 1,
+        country: 0,
+        languageFamily: 0,
+        language: 0,
+        person: 0,
+      });
+    });
+
+    // @req REQ-124
+    it("defaults every lens count to zero on error", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: () => Promise.resolve({ error: { message: "Server error" } }),
+      });
+
+      const { counts } = await searchWithLeads("test");
+
+      expect(counts).toEqual({
+        all: 0,
+        people: 0,
+        country: 0,
+        languageFamily: 0,
+        language: 0,
+        person: 0,
+      });
+    });
   });
 
   describe("error handling", () => {
