@@ -33,6 +33,8 @@
       "originOfExonyms": "Peul vient du wolof Pel, adopte par les colonisateurs français. Fula vient du mandingue. Fulani est la forme haoussa, courante au Nigeria et en anglais. Fellata est un terme arabe (Tchad, Soudan) parfois associe aux Peuls en pelerinage vers La Mecque.",
       "whyProblematic": "Fellata est considere comme pejoratif dans certains contextes (Sudan, Tchad), associe a des stereotypes de migrants indesirables. Les exonymes ne reflètent pas l'auto-identification Fulbe. Fulani est parfois employe abusivement pour designer uniquement les pasteurs nomades.",
       "contemporaryUsage": "Fulbe est prefere dans les contextes academiques et communautaires. Peul reste l'usage dominant en français. Fula et Fulani sont courants en anglais selon la region.",
+      "peopleGroupId": "PGRP_FULANI",
+      "peopleGroupLabel": "Fulbe (Peul / Fulani)",
       "linguisticFamily": "FLG_ATLANTIQUE",
       "ethnoLinguisticGroup": "Atlantique (branche senegambienne)",
       "historicalRegion": "Bande sahelienne de l'Atlantique au Tchad",
