@@ -15,8 +15,11 @@ import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
   getLocalizedRoute,
+  getPatronymeRoute,
   getPeopleRoute,
+  getPersonRoute,
 } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import type {
@@ -38,14 +41,16 @@ import type { Language } from "@/types/shared";
  * here, because both ask the reader to classify a query they often cannot:
  * Kongo is a people *and* a country, Yoruba a people *and* a language. So the
  * field takes plain text and the panel groups what comes back — which is also
- * the shape `/api/v2/search` already answers in (`{ peoples, countries,
- * families }`, never one flat list). The taxonomy is taught in the result,
- * where it costs the reader nothing, instead of demanded as a precondition.
+ * the shape `/api/v2/search` already answers in (one key per kind, never one
+ * flat list). The taxonomy is taught in the result, where it costs the reader
+ * nothing, instead of demanded as a precondition.
  *
  * The seed chips carry the same teaching in the corpus' own words — literally,
  * since the words are drawn from the fiches on every request (seedWords.ts):
- * three chips show all entity kinds on a phone and a fourth people example
- * uses the extra desktop room. Each reels through corpus examples, drawn
+ * three chips on a phone, and a fourth people example uses the extra desktop
+ * room. They cover three of the five kinds the panel now groups rather than
+ * all of them; a chip per kind would wrap the row, and the classes the chips
+ * leave out are named by the headline above. Each reels through corpus examples, drawn
  * again on every visit. That motion is deliberately on the
  * chips and not on the placeholder — a placeholder is a control's name, it
  * would be renamed under a screen reader six times a minute, and it vanishes
@@ -57,10 +62,25 @@ import type { Language } from "@/types/shared";
  * The field's one visible label, and the field's accessible name — the same
  * string, so what is read and what is heard cannot drift (WCAG 2.5.3).
  *
- * It names three kinds and no more. `/api/v2/search` answers
- * `{ peoples, countries, families }`; a label mentioning languages would
- * promise a result the panel can never produce, which is the one promise this
- * surface may not break.
+ * The rule is unchanged and is the whole point of this constant: **it names
+ * exactly the kinds `SEARCH_RESULT_GROUPS` below can show, no more and no
+ * fewer.** What moved is the number. The label promised three because
+ * `/api/v2/search` once answered `{ peoples, countries, families }`; it has
+ * answered six kinds since migration 069 — languages, patronymes and persons
+ * besides — while the panel still grouped three. Widening the panel is what
+ * lets the label widen with it.
+ *
+ * Persons stay out of both. `persons` has no rows, and naming a kind the
+ * corpus cannot answer with is the promise this surface may not break — which
+ * is what the three-kind rule was protecting all along.
+ *
+ * Note what this is *not* aligned with. The headline above and the tiles below
+ * name five **corpus classes**, and their fifth is appellations — the 3134
+ * folded name forms of the peoples. The panel's fifth is *Noms*, the 30
+ * patronyme fiches. Two different objects that are both names: the tiles count
+ * how peoples are named, this returns records about family names. Four classes
+ * are shared, the fifth is not, and collapsing them would have the band claim
+ * 3134 of something the panel returns 30 of.
  *
  * There is no second line of help under it. What the reader gets — a
  * documented record, with its sources — is what the hero's own answer states
@@ -69,10 +89,18 @@ import type { Language } from "@/types/shared";
  */
 // @req REQ-002
 export const SEARCH_LABEL =
-  "Cherchez un peuple, un pays ou une famille linguistique";
+  "Cherchez un peuple, une langue, un pays, une famille linguistique ou un nom";
 
-/** Concrete examples complement the scope named by the visible label. */
-const SEARCH_PLACEHOLDER = "Ex. Bafut, Namibie, Bantou";
+/**
+ * Concrete examples complement the scope named by the visible label.
+ *
+ * Four, not five: the label names the classes, and a placeholder long enough
+ * to exemplify every one of them is truncated on a phone anyway. Each of these
+ * is a row that exists — "Fulfulde" is what the corpus calls the language a
+ * reader would type as "peul", and "Keïta" carries its diaeresis where
+ * "Traore" is stored without one.
+ */
+const SEARCH_PLACEHOLDER = "Ex. Bafut, Fulfulde, Namibie, Keïta";
 
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
@@ -94,10 +122,20 @@ const MAX_PER_GROUP = 3;
 // Plural of the singular labels in SEARCH_ENTITY_ACCENT — a group heads a set.
 // The accent still comes from that one table, so a kind's colour is assigned
 // in a single place across the whole product.
-const GROUPS: { type: SearchEntityType; heading: string }[] = [
+// Exported so a charter contract can hold the headline, the corpus tiles and
+// this panel to the same set of classes — the three used to drift apart in
+// three separate files, which is how the band came to name one class above a
+// panel that showed three above a corpus that holds five.
+// @req REQ-002
+export const SEARCH_RESULT_GROUPS: {
+  type: SearchEntityType;
+  heading: string;
+}[] = [
   { type: "people", heading: "Peuples" },
+  { type: "language", heading: "Langues" },
   { type: "country", heading: "Pays" },
   { type: "languageFamily", heading: "Familles linguistiques" },
+  { type: "patronyme", heading: "Noms" },
 ];
 
 // Hoisted, not written inline as a default parameter: a fresh closure on every
@@ -111,11 +149,30 @@ const fetchFromCorpus = (query: string) => searchCorpus(query);
 const fetchLeadsFromCorpus = (query: string) =>
   searchWithLeads(query).then((r) => r.leads);
 
+/**
+ * A table rather than a chain of ifs, and typed `Record<SearchEntityType, …>`
+ * so a seventh kind cannot be added to the union without a route for it.
+ *
+ * The chain this replaces ended in `return getPeopleRoute(...)`, which was
+ * correct while the panel showed three kinds and silently wrong the moment it
+ * showed five: a language would have been addressed as `/fr/atlas/peuples/bam`
+ * and answered 404. `strictNullChecks` is off in this project, so no compiler
+ * error was ever going to catch that — an exhaustive record is what does.
+ */
+const FICHE_ROUTE: Record<
+  SearchEntityType,
+  (language: Language, id: string) => string
+> = {
+  people: getPeopleRoute,
+  country: getCountryRoute,
+  languageFamily: getFamilyRoute,
+  language: getLanguageRoute,
+  patronyme: getPatronymeRoute,
+  person: getPersonRoute,
+};
+
 function ficheHref(result: SearchResult, language: Language): string {
-  if (result.type === "country") return getCountryRoute(language, result.id);
-  if (result.type === "languageFamily")
-    return getFamilyRoute(language, result.id);
-  return getPeopleRoute(language, result.id);
+  return FICHE_ROUTE[result.type](language, result.id);
 }
 
 export interface HomeHeroSearchProps {
@@ -219,7 +276,7 @@ export function HomeHeroSearch({
 
   const groups = useMemo(() => {
     let cursor = 0;
-    return GROUPS.map(({ type, heading }) => {
+    return SEARCH_RESULT_GROUPS.map(({ type, heading }) => {
       const options = results
         .filter((result) => result.type === type)
         .slice(0, MAX_PER_GROUP)

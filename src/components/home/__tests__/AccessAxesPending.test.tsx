@@ -20,7 +20,14 @@ import type { HubModule } from "@/lib/hubs/moduleAvailability";
  * uncovered. Deleting this file would leave a promise-check that never runs.
  */
 
-const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
+const counts = {
+  peoples: 890,
+  languages: 748,
+  countries: 54,
+  families: 24,
+  nameForms: 3134,
+  migrations: 6,
+};
 
 const liveModules = (mode: AccessMode): HubModule[] =>
   getModulesForAccessMode(mode).map((definition) => ({

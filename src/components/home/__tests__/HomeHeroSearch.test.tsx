@@ -13,8 +13,10 @@ import {
   DEBOUNCE_MS,
   PENDING_DELAY_MS,
   SEARCH_LABEL,
+  SEARCH_RESULT_GROUPS,
 } from "../HomeHeroSearch";
 import { seedPools } from "../HomeHeroSeeds";
+import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";
 
 /** The pools the row renders when no words are injected. */
@@ -124,12 +126,28 @@ describe("HomeHeroSearch", () => {
     expect(label?.className ?? "").not.toContain("sr-only");
   });
 
-  // /api/v2/search answers { peoples, countries, families }. Naming a fourth
-  // kind would promise a result the panel can never produce, on the surface
-  // whose whole argument is that a claim carries its provenance.
+  // The label may name a kind only if the panel below can group it. It once
+  // named three because the panel showed three; both now carry five, and the
+  // invariant is what is asserted rather than the number.
   // @req REQ-002
-  it("names only the kinds the search can return", () => {
-    expect(SEARCH_LABEL).not.toMatch(/langue/i);
+  it("names every kind the panel groups, and no other", () => {
+    for (const { type } of SEARCH_RESULT_GROUPS) {
+      // The singular of the same kind, from the one table that assigns a
+      // kind's label and accent product-wide.
+      const kind = SEARCH_ENTITY_ACCENT[type].label.toLowerCase();
+      expect(SEARCH_LABEL.toLowerCase()).toContain(kind);
+    }
+  });
+
+  // `persons` has no rows. Naming a kind the corpus cannot return is the one
+  // promise this surface may not break — the reason the label was held to
+  // three kinds in the first place.
+  // @req REQ-002
+  it("names no kind the corpus cannot answer with", () => {
+    expect(SEARCH_LABEL).not.toMatch(/personne/i);
+    expect(SEARCH_RESULT_GROUPS.map((group) => group.type)).not.toContain(
+      "person"
+    );
   });
 
   // Label and placeholder twenty pixels apart, saying the same sentence, is
@@ -141,8 +159,8 @@ describe("HomeHeroSearch", () => {
 
     const placeholder = field().getAttribute("placeholder") ?? "";
     expect(placeholder).not.toBe(SEARCH_LABEL);
-    expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
-    expect(placeholder).toBe("Ex. Bafut, Namibie, Bantou");
+    expect(placeholder).not.toMatch(/peuple|pays|famille|langue|\bnom\b/i);
+    expect(placeholder).toBe("Ex. Bafut, Fulfulde, Namibie, Keïta");
   });
 
   // Opening the phone keyboard on load buries the page under it and steals
