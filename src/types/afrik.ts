@@ -54,7 +54,10 @@ export type PeopleId = string;
  * - `reconstructive`: Classification being actively reconstructed / decolonized
  */
 export type ClassificationStatus =
-  "consensual" | "contested" | "colonial-legacy" | "reconstructive";
+  | "consensual"
+  | "contested"
+  | "colonial-legacy"
+  | "reconstructive";
 
 // ==========================================
 // CORE ENTITIES (with stable IDs)
@@ -593,7 +596,11 @@ export interface NameRecord {
   entityType: "country" | "people" | "language" | "languageFamily";
   entityId: string; // CountryId | PeopleId | LanguageId | LanguageFamilyId
   nameType:
-    "official" | "self-appellation" | "exonym" | "historical" | "colonial";
+    | "official"
+    | "self-appellation"
+    | "exonym"
+    | "historical"
+    | "colonial";
   name: string;
   language?: string; // Language in which the name is used
   period?: string; // Historical period
@@ -749,7 +756,12 @@ export interface RankedQuizQuestion {
 }
 
 export type SearchHitKind =
-  "people" | "country" | "languageFamily" | "person" | "patronyme" | "quiz";
+  | "people"
+  | "country"
+  | "languageFamily"
+  | "person"
+  | "patronyme"
+  | "quiz";
 
 /**
  * One row of the canonical cross-kind ranking.
