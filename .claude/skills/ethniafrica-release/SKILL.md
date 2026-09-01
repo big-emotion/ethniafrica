@@ -14,7 +14,9 @@ This skill writes to the local repo first. It only runs `git push` after the use
 
 ## Deployment reality — read this before promising anything
 
-Production is **self-hosted on the OVH VPS in Frankfurt**, not on Vercel. It is built and started by `.github/workflows/deploy-production.yml`, which listens on exactly one event: **a published GitHub Release**.
+Production is **self-hosted on the OVH VPS in Gravelines** (`51.195.82.98`, SSH on port `49152`), not on Vercel. It is built and started by `.github/workflows/deploy-production.yml`, which listens on exactly one event: **a published GitHub Release**.
+
+> Documents produced during this migration call that host "Francfort". They are wrong about the name and right about the address — Frankfurt is `145.239.76.125`, a different machine running different things. Everything is configured against the address.
 
 Consequences this skill must state truthfully, every run:
 
@@ -197,7 +199,7 @@ What this actually does, in order:
   2. `git push origin v<next_version>` → publishes the tag. Still deploys
      nothing. The tag exists so the Release has something to point at.
   3. `gh release create v<next_version>` → THIS is the deploy trigger. It fires
-     `deploy-production.yml`, which SSHes to the OVH VPS in Frankfurt, checks
+     `deploy-production.yml`, which SSHes to the OVH VPS in Gravelines, checks
      out this exact tag, rebuilds the image and restarts the container on
      ethniafrica.com. On success, `production-data-sync.yml` then loads the
      AFRIK corpus into the production Supabase project and busts its caches.
