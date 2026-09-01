@@ -370,6 +370,10 @@ export const translations = {
       scopeThemeHeading: "Un sujet",
       scopeCountryHeading: "Un pays",
       scopeFamilyHeading: "Une famille de langues",
+      scopeCountryHint:
+        "Touchez un pays : les sujets qu'il peut remplir se déplient.",
+      scopeThemePanelHint: "Choisissez un sujet, ou jouez le pays entier.",
+      scopeThemePanelNoTheme: "Jouer sans thème",
       scopeMixedHint:
         "Huit questions tirées de tout le corpus, des peuples les plus connus aux moins documentés.",
       scopeRandomHint: "Huit questions au hasard, sans ordre de difficulté.",

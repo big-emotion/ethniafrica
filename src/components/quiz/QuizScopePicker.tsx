@@ -1,3 +1,4 @@
+import { QuizScopeDeck } from "@/components/quiz/QuizScopeDeck";
 import { QuizTrackCard } from "@/components/quiz/QuizTrackCard";
 import { translations } from "@/lib/translations";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
@@ -99,19 +100,30 @@ export const QuizScopePicker = ({
         <h2 className="font-afh-display text-afh-h3 font-bold text-afh-text">
           {t.scopeCountryHeading}
         </h2>
-        {/* One column at 430 px: « République démocratique du Congo » does not
-            fit two. The order is the catalogue's own A–Z sort, kept the
-            service's single responsibility. */}
-        <ul className="grid list-none grid-cols-1 gap-3 p-0 md:grid-cols-2 xl:grid-cols-3">
-          {countries.map((country) => (
-            <li key={country.id}>
-              <QuizTrackCard
-                href={trackHref(`pays=${country.id}`)}
-                labelFr={country.labelFr}
-              />
-            </li>
-          ))}
-        </ul>
+        <p className="text-afh-small text-afh-text-soft">
+          {t.scopeCountryHint}
+        </p>
+        {/* The one block that hydrates. One column at 430 px:
+            « République démocratique du Congo » does not fit two. The order is
+            the catalogue's own A–Z sort, kept the service's responsibility. */}
+        <QuizScopeDeck
+          items={countries.map((country) => ({
+            id: country.id,
+            labelFr: country.labelFr,
+            playableThemeIds: country.playableThemeIds ?? [],
+          }))}
+          themes={themes.map((theme) => ({
+            id: theme.id,
+            labelFr: theme.labelFr,
+          }))}
+          trackHref={(id) => trackHref(`pays=${id}`)}
+          crossedHref={(id, themeId) =>
+            trackHref(`pays=${id}&theme=${themeId}`)
+          }
+          panelHintFr={t.scopeThemePanelHint}
+          wholeTrackLabelFr={t.scopeThemePanelNoTheme}
+          closeLabelFr={translations.fr.close}
+        />
       </section>
 
       <section className="flex flex-col gap-3">
