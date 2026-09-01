@@ -34,6 +34,7 @@ import {
   type LedgerRow,
   type Reconciliation,
 } from "../lib/migrationLedger";
+import { ADJUDICATED_DRIFT, unadjudicatedDrift } from "./adjudicatedDrift";
 
 const MIGRATIONS_DIR = path.resolve(
   import.meta.dirname,
@@ -93,6 +94,19 @@ export async function fetchLedger(
   }));
 }
 
+/**
+ * Whether the comparison is settled: nothing pending or orphaned, and every
+ * drifted migration explained. Drift alone is not a failure — unexplained drift
+ * is.
+ */
+export function isSettled(result: Reconciliation): boolean {
+  if (result.pending.length > 0 || result.orphaned.length > 0) return false;
+  return (
+    unadjudicatedDrift(result.drifted.map((entry) => entry.filename)).length ===
+    0
+  );
+}
+
 export function formatReport(result: Reconciliation, target: string): string {
   const lines: string[] = [];
   const say = (line: string) => lines.push(line);
@@ -117,10 +131,38 @@ export function formatReport(result: Reconciliation, target: string): string {
   }
 
   if (result.drifted.length > 0) {
-    say("");
-    say("DRIFTED — the file changed after it was applied; the two disagree:");
-    for (const entry of result.drifted) {
-      say(`  ${entry.filename} (applied as version ${entry.ledgerVersion})`);
+    const unsettled = new Set(
+      unadjudicatedDrift(result.drifted.map((entry) => entry.filename))
+    );
+
+    const open = result.drifted.filter((entry) =>
+      unsettled.has(entry.filename)
+    );
+    const settled = result.drifted.filter(
+      (entry) => !unsettled.has(entry.filename)
+    );
+
+    if (open.length > 0) {
+      say("");
+      say("DRIFTED — the file changed after it was applied; the two disagree:");
+      for (const entry of open) {
+        say(`  ${entry.filename} (applied as version ${entry.ledgerVersion})`);
+      }
+    }
+
+    // Listed, not hidden: an adjudicated entry is a settled question, and the
+    // reader should be able to see which ones were settled and why.
+    if (settled.length > 0) {
+      say("");
+      say(
+        "ADJUDICATED — examined and closed; see scripts/ci/adjudicatedDrift.ts:"
+      );
+      for (const entry of settled) {
+        const record = ADJUDICATED_DRIFT.find(
+          (candidate) => candidate.filename === entry.filename
+        );
+        say(`  ${entry.filename} (${record?.adjudicatedOn ?? "undated"})`);
+      }
     }
   }
 
@@ -133,8 +175,8 @@ export function formatReport(result: Reconciliation, target: string): string {
 
   say("");
   say(
-    result.isClean
-      ? "check:migration-state — OK (every migration applied and unchanged)"
+    isSettled(result)
+      ? "check:migration-state — OK (every migration applied; any drift adjudicated)"
       : "check:migration-state — the database and supabase/migrations/ disagree"
   );
 
@@ -197,7 +239,9 @@ async function runCli(): Promise<void> {
     console.log(formatReport(result, target));
   }
 
-  if (!result.isClean || fileErrors.length > 0) process.exitCode = 1;
+  // `isClean` counts any drift as a failure. The gate fails on *unexplained*
+  // drift instead, so a settled difference cannot keep it red forever.
+  if (!isSettled(result) || fileErrors.length > 0) process.exitCode = 1;
 }
 
 if (

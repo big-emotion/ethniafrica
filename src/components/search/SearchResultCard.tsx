@@ -16,8 +16,17 @@ import {
   CHARTER_HOVER_LIFT,
 } from "@/components/ui/charter-motion";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
-import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getPeopleRoute,
+  getPersonRoute,
+} from "@/lib/routing";
 import { buildRelationSearchHref } from "@/lib/search/relationSearch";
+import {
+  getPersonRelationLabel,
+  getPersonRoleLabel,
+} from "@/lib/search/personResultLabels";
 import { cn } from "@/lib/utils";
 import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
@@ -46,6 +55,7 @@ export function ficheHrefFor(result: SearchResult, language: Language): string {
   if (result.type === "country") return getCountryRoute(language, result.id);
   if (result.type === "languageFamily")
     return getFamilyRoute(language, result.id);
+  if (result.type === "person") return getPersonRoute(language, result.id);
   return getPeopleRoute(language, result.id);
 }
 
@@ -120,10 +130,50 @@ export function SearchResultCard({
         )}
 
         <ClassificationBadge status={result.classificationStatus} />
+
+        {/* REQ-126: rendered unconditionally whenever the card carries a
+            roleCategory — no tooltip, no hover, no "show more". A person
+            result the reader cannot immediately place is exactly the
+            editorial failure this ticket exists to close. */}
+        {result.type === "person" && result.roleCategory && (
+          <Badge variant="outline" className="text-afh-caption">
+            {getPersonRoleLabel(result.roleCategory)}
+          </Badge>
+        )}
       </div>
 
       {result.snippet && (
         <SearchSnippet snippet={result.snippet} className="mt-1 line-clamp-2" />
+      )}
+
+      {result.type === "person" && (result.peopleLinks?.length ?? 0) > 0 && (
+        <ul
+          className="relative z-10 mt-2 flex flex-wrap items-center gap-2"
+          aria-label="Peuples cités"
+        >
+          {result.peopleLinks?.map((link) => (
+            <li key={link.peopleId}>
+              <Link
+                href={getPeopleRoute(language, link.peopleId)}
+                className={cn("rounded-full", CHARTER_FOCUS_RING)}
+              >
+                {/* membership and observation carry distinct wording, never
+                    just a colour, so the two never read as interchangeable
+                    (REQ-126) — an observer must never look like a member. */}
+                <Badge
+                  variant={
+                    link.relationLabel === "membership"
+                      ? "secondary"
+                      : "outline"
+                  }
+                  className="text-afh-caption"
+                >
+                  {getPersonRelationLabel(link.relationLabel)} {link.peopleId}
+                </Badge>
+              </Link>
+            </li>
+          ))}
+        </ul>
       )}
 
       {shownCountries.length > 0 && (

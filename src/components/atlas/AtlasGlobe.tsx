@@ -1053,8 +1053,26 @@ export function AtlasGlobe({
   presentation = "standard",
   viewScale = 1,
 }: AtlasGlobeProps) {
-  const [webglSupported, setWebglSupported] = useState(
-    probedWebglSupport ?? false
+  /**
+   * Three states, not two: `undefined` is "not probed yet", and it is different
+   * from "unsupported".
+   *
+   * Collapsing them cost the fiche its Largest Contentful Paint. The server has
+   * no WebGL, so a two-state probe started `false`, the legend rendered
+   * « Glissez pour déplacer », and the post-hydration probe rewrote it to
+   * « Glissez pour tourner ». Changing the text of the largest element ~4s in
+   * *is* the LCP, which is how a fiche measured 6.3s against a 5.5s budget
+   * while painting its first frame at 1.5s.
+   *
+   * The two readings below are deliberately different. The stage stays
+   * conservative — an unproven context draws the fallback figure, because
+   * drawing a sphere that cannot exist is worse than drawing the map. The
+   * legend is optimistic, because it only describes a gesture and the
+   * overwhelming majority of readers will get the sphere; being briefly wrong
+   * for the rest costs them nothing, and they already see the fallback.
+   */
+  const [webglSupported, setWebglSupported] = useState<boolean | undefined>(
+    probedWebglSupport
   );
   // The probe above only proves a context can be created. Compiling and
   // linking the shaders on it can still fail — the common case on low-end
@@ -1260,7 +1278,9 @@ export function AtlasGlobe({
    * the drag pans the map instead, which is also the only way to reach a
    * country the dolly has pushed off-stage.
    */
-  const surfaceTurns = webglSupported && !flat;
+  // Optimistic while the probe is unresolved — see the useState above. This is
+  // the reading that keeps the legend's text stable across hydration.
+  const surfaceTurns = (webglSupported ?? true) && !flat;
 
   /**
    * Whether either direction has anywhere left to go. Compared with a
@@ -1397,7 +1417,9 @@ export function AtlasGlobe({
   // carries for a bare outline. AtlasGlobeCanvas now draws the continent's
   // radial field alongside that frame, so the hub and the facets get the same
   // globe as the three fiches rather than a flat map that claims to turn.
-  const stageIsSphere = webglSupported && !canvasGaveUp;
+  // Conservative: an unproven context draws the fallback figure rather than a
+  // sphere that may never arrive.
+  const stageIsSphere = webglSupported === true && !canvasGaveUp;
 
   // A fiche asks for a list because its targets are its presence countries,
   // and it has them whether there are seventeen or one. 394 of the corpus's
