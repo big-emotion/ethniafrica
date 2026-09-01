@@ -45,10 +45,16 @@ const CORPUS_SCOPE_LABELS_FR = {
  * A track is launchable when it can fill a session outright.
  *
  * Not "holds at least one question": a track offering three is a track that
- * repeats the same subject three times over eight rounds, and the picker
- * saying « 3 questions » next to a button that starts a session of eight is
- * the picker lying quietly. Khoïsan — one people, four questions — is the case
- * this threshold exists for. It is listed, counted honestly and not launchable.
+ * repeats the same subject three times over eight rounds.
+ *
+ * Khoïsan — one people, four questions — was the case this was written
+ * against. It holds eleven now, and measured 2026-09-01 no country, family or
+ * theme is unplayable on its own: all 54, all 23 and all 9 fill a session. The
+ * threshold has not become decorative, it has moved — `playableThemeIds` runs
+ * it over the 486 country × theme pairs, 123 of which cannot pay, and
+ * `composeQuizSessionHandler` runs it again over the pool a draw actually
+ * found. One predicate for both, so what the picker offers and what the
+ * session refuses cannot drift.
  */
 // @req REQ-103
 export function isPlayableScope(activeQuestionCount: number): boolean {
