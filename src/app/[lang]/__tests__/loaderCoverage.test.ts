@@ -33,6 +33,7 @@ const GRANDFATHERED_SOFT_404_SEGMENTS = [
   "atlas/familles/[slug]",
   "atlas/pays/[slug]",
   "atlas/peuples/[slug]",
+  "atlas/langues/[slug]",
 ];
 
 /**

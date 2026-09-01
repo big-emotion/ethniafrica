@@ -4,6 +4,7 @@ export type PageType =
   | "countries"
   | "families"
   | "peoples"
+  | "languages"
   | "search"
   | "doctrine"
   | "about"
@@ -44,6 +45,10 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     countries: "atlas/pays",
     families: "atlas/familles",
     peoples: "atlas/peuples",
+    // ETNI-1507: the fiche exists ahead of a hub listing it (no index page
+    // yet reads afrik_languages), so this slug currently has no ancestor to
+    // land a reader who walks the crumb up.
+    languages: "atlas/langues",
     search: "atlas/recherche",
     doctrine: "doctrine",
     about: "about",
@@ -144,6 +149,10 @@ export const getFamilyRoute = (language: Language, id: string): string =>
 // @req REQ-097
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
+
+// @req REQ-136
+export const getLanguageRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "languages")}/${id}`;
 
 // ---------------------------------------------------------------------------
 // Retired directory deep links

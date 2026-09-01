@@ -441,6 +441,19 @@
   --accent-ink: var(--afh-cat-perv-ink);
 }
 
+/* The language fiche (ETNI-1507) reads under the same pervenche as its
+   family — a language sits directly under a family in the AFRIK hierarchy,
+   and no fifth hue has been through CVD validation yet. A distinct class
+   name, rather than reusing `.afh-accent-perv` on the language route too,
+   keeps each fiche's accent scope exclusive to its own entity: two entity
+   types painted through the same selector would make a "no foreign accent
+   on this page" check unable to tell its own root from another entity's. */
+.afh-accent-language {
+  --accent: var(--afh-cat-perv);
+  --accent-tint: var(--afh-cat-perv-tint);
+  --accent-ink: var(--afh-cat-perv-ink);
+}
+
 /* The ink half of each accent pair flips with the surface, exactly as
    --accent-foreground does above: on a dark page the readable accent is
    the light one. Written as a night-scoped override of the same wrappers
@@ -472,5 +485,12 @@
 .afh-on-night .afh-accent-perv,
 .afh-accent-perv.dark,
 .afh-accent-perv.afh-on-night {
+  --accent-ink: var(--afh-cat-perv-ink-night);
+}
+
+.dark .afh-accent-language,
+.afh-on-night .afh-accent-language,
+.afh-accent-language.dark,
+.afh-accent-language.afh-on-night {
   --accent-ink: var(--afh-cat-perv-ink-night);
 }
