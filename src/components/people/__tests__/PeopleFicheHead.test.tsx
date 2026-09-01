@@ -165,4 +165,16 @@ describe("PeopleFicheHead (REQ-115)", () => {
       });
     }
   });
+
+  // The doctrine that a people has no citable edge belongs to the globe's
+  // legend, which states it once over the mark it explains. Repeating it as a
+  // title predicate made every one of the 924 fiches announce the same
+  // sentence in place of saying anything about its own subject.
+  // @req REQ-115
+  it("titles the fiche with the people's name and nothing appended to it", () => {
+    render(<PeopleFicheHead hero={hero} countries={countries} />);
+
+    const title = screen.getByRole("heading", { level: 1 });
+    expect(title.textContent?.trim()).toBe("Yoruba");
+  });
 });

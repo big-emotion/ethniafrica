@@ -64,11 +64,15 @@ export function PeopleFicheHead({
         {group && <span className="afh-parchment-eyebrow-group">{group}</span>}
       </p>
 
-      <AutonymExonymHeading
-        variant="parchment"
-        autonym={hero.nameMain}
-        predicate="un peuple sans bord"
-      />
+      {/* No predicate. The family fiche earns one because "une aire à
+          reconstruire" is a verdict on that fiche's own provenance and falls
+          away when the fiche declares its distribution. A people has no such
+          condition to test: the atlas charter's hard rule holds for all 924 of
+          them, so "un peuple sans bord" was the same sentence on every title,
+          crowding out the one slot that names this subject. The doctrine is
+          not lost — the globe's legend states it once, over the borderless
+          mark it actually explains. */}
+      <AutonymExonymHeading variant="parchment" autonym={hero.nameMain} />
 
       {hero.historicalRegion && (
         <p className="afh-parchment-lede">{hero.historicalRegion}</p>

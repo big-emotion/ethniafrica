@@ -25,6 +25,14 @@ allowed to claim.
 simplification, not "just for the hover state", not in the non-WebGL fallback.
 If a future feature needs a people-shaped polygon, it needs a source first.
 
+**And it is stated once, next to the mark.** The globe's legend — "Aucune
+frontière ici. Une présence, et sa densité." — is where the reader is told why
+the field has no edge, because that is where the field is. The people fiche's
+`h1` used to repeat it as a predicate, "X, un peuple sans bord", which held for
+all 924 fiches and so said nothing about any of them; a family fiche's
+predicate earns its place only because it falls away when that fiche declares
+its distribution. A rule true of every subject is a legend, not a title.
+
 **An encoding is owned by the entity it describes.** The three rows above bind
 a mark's shape to what the _data_ claims, and an encoding borrowed by a scene
 that describes something else stops being readable. The radial field is the
