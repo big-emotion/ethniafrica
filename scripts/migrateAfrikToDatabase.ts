@@ -26,6 +26,11 @@ import {
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import {
+  loadPeopleAppellations,
+  emptyAppellationLoadReport,
+  type AppellationLoadReport,
+} from "@/lib/afrik/loaders/peopleAppellationLoader";
+import {
   loadAllPatronymeDossiers,
   loadPatronymes,
   type PatronymeLoadReport,
@@ -55,7 +60,8 @@ import {
   resolveAfrikSyncTarget,
   type AfrikSyncTargetInput,
 } from "./lib/afrikSyncTarget";
-import { chunk } from "./lib/supabasePaging";
+import { scanCorpusOrphans } from "./lib/afrikCorpusOrphans";
+import { chunk, fetchAllPages } from "./lib/supabasePaging";
 
 interface MigrationSectionReport {
   total: number;
@@ -74,6 +80,17 @@ export interface ProtectedClassificationDrift {
   sourceStatus: unknown;
 }
 
+/**
+ * What a fiche deleted from the corpus left behind in one table, and whether
+ * the sync was willing to remove it. `refusal` outranks `orphans`: a populated
+ * list with a refusal means "found, not touched, look at this by hand".
+ */
+export interface CorpusOrphanReport {
+  orphans: string[];
+  refusal: string | null;
+  deleted: number;
+}
+
 export interface MigrationReport {
   languageFamilies: MigrationSectionReport;
   languages: LanguageLoadReport;
@@ -84,12 +101,14 @@ export interface MigrationReport {
   peopleRelations: PeopleRelationsSectionReport;
   migrations: MigrationSectionReport;
   names: MigrationSectionReport;
+  appellations: AppellationLoadReport;
   persons: MigrationSectionReport;
   patronymes: PatronymeLoadReport;
   protectedDrift: {
     languageFamilies: ProtectedClassificationDrift[];
     peoples: ProtectedClassificationDrift[];
   };
+  corpusOrphans: Record<AfrikTable, CorpusOrphanReport>;
   verification: {
     before: AfrikDriftReport;
     after: AfrikDriftReport | null;
@@ -101,6 +120,12 @@ export interface MigrationOptions {
   dryRun?: boolean;
   target: AfrikSyncTargetInput;
   writeErrorReport?: boolean;
+  /**
+   * Delete rows the corpus no longer declares. Opt-in, and inert without
+   * `--apply`: the scan always runs and always reports, but nothing is
+   * removed unless a human asked for removal on this particular run.
+   */
+  prune?: boolean;
 }
 
 type AdminClient = ReturnType<typeof createAdminClient>;
@@ -119,6 +144,10 @@ function emptyDriftReport(): AfrikDriftReport {
   };
 }
 
+function emptyOrphanReport(): CorpusOrphanReport {
+  return { orphans: [], refusal: null, deleted: 0 };
+}
+
 function createMigrationReport(): MigrationReport {
   return {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
@@ -130,6 +159,7 @@ function createMigrationReport(): MigrationReport {
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
     migrations: { total: 0, inserted: 0, errors: [] },
     names: { total: 0, inserted: 0, errors: [] },
+    appellations: emptyAppellationLoadReport(),
     persons: { total: 0, inserted: 0, errors: [] },
     patronymes: {
       total: 0,
@@ -142,6 +172,11 @@ function createMigrationReport(): MigrationReport {
       errors: [],
     },
     protectedDrift: { languageFamilies: [], peoples: [] },
+    corpusOrphans: {
+      afrik_language_families: emptyOrphanReport(),
+      afrik_peoples: emptyOrphanReport(),
+      afrik_countries: emptyOrphanReport(),
+    },
     verification: {
       before: emptyDriftReport(),
       after: null,
@@ -550,6 +585,100 @@ async function detectRelationOrphans(
   return orphans;
 }
 
+/**
+ * Finds — and, when asked, removes — rows the corpus no longer declares.
+ *
+ * Paged rather than a plain `select("id")`: PostgREST truncates at 1000 rows
+ * without saying so, and a truncated read would both hide orphans and shrink
+ * the denominator the safety cap is measured against.
+ */
+async function pruneCorpusOrphans(
+  supabase: AdminClient,
+  table: AfrikTable,
+  sourceIds: readonly string[],
+  options: { prune: boolean }
+): Promise<CorpusOrphanReport> {
+  const rows = await fetchAllPages<{ id: string }>((from, to) =>
+    supabase.from(table).select("id").range(from, to)
+  );
+
+  const scan = scanCorpusOrphans({
+    table,
+    databaseIds: rows.map((row) => row.id),
+    sourceIds,
+  });
+
+  if (scan.orphans.length === 0) {
+    return { ...scan, deleted: 0 };
+  }
+
+  if (scan.refusal) {
+    logger.error("Corpus orphan prune refused", {
+      table,
+      refusal: scan.refusal,
+      orphans: scan.orphans.slice(0, 20),
+    });
+    return { ...scan, deleted: 0 };
+  }
+
+  if (!options.prune) {
+    logger.warn(
+      "Row(s) present in the database with no fiche in the corpus — rerun with --prune --apply to remove them",
+      { table, orphans: scan.orphans }
+    );
+    return { ...scan, deleted: 0 };
+  }
+
+  const { error } = await supabase.from(table).delete().in("id", scan.orphans);
+  if (error) {
+    return {
+      ...scan,
+      refusal: `Failed to prune ${table}: ${error.message}`,
+      deleted: 0,
+    };
+  }
+
+  logger.info("Pruned rows the corpus no longer declares", {
+    table,
+    deleted: scan.orphans,
+  });
+  return { ...scan, deleted: scan.orphans.length };
+}
+
+async function scanAllCorpusOrphans(
+  supabase: AdminClient,
+  corpus: {
+    languageFamilies: LanguageFamily[];
+    peoples: People[];
+    countries: Country[];
+  },
+  options: { prune: boolean }
+): Promise<Record<AfrikTable, CorpusOrphanReport>> {
+  const ids = <T extends { id: string }>(records: T[]) =>
+    records.map((record) => record.id);
+
+  return {
+    afrik_language_families: await pruneCorpusOrphans(
+      supabase,
+      "afrik_language_families",
+      ids(corpus.languageFamilies),
+      options
+    ),
+    afrik_peoples: await pruneCorpusOrphans(
+      supabase,
+      "afrik_peoples",
+      ids(corpus.peoples),
+      options
+    ),
+    afrik_countries: await pruneCorpusOrphans(
+      supabase,
+      "afrik_countries",
+      ids(corpus.countries),
+      options
+    ),
+  };
+}
+
 function countRelations(peoples: People[]): number {
   return peoples.reduce(
     (total, people) =>
@@ -569,8 +698,13 @@ function hasErrors(report: MigrationReport): boolean {
     report.peopleRelations.errors.length > 0 ||
     report.migrations.errors.length > 0 ||
     report.names.errors.length > 0 ||
+    report.appellations.errors.length > 0 ||
     report.persons.errors.length > 0 ||
     report.patronymes.errors.length > 0 ||
+    // A refusal is a red run on purpose: the database and the corpus disagree
+    // by more than the sync dares resolve on its own, and a green board would
+    // bury that.
+    Object.values(report.corpusOrphans).some((table) => table.refusal) ||
     report.verification.errors.length > 0
   );
 }
@@ -595,6 +729,7 @@ export async function migrateAfrikToDatabase(
   const syncTarget = resolveAfrikSyncTarget(options.target);
 
   const dryRun = options.dryRun ?? true;
+  const prune = options.prune ?? false;
   const writeErrorReport = options.writeErrorReport ?? true;
   const supabase = createAdminClient();
   const report = createMigrationReport();
@@ -648,6 +783,13 @@ export async function migrateAfrikToDatabase(
     report.relations.total = countRelations(peoples);
     report.peopleRelations.total = loadAllRelationFiles().length;
     report.migrations.total = loadAllMigrationFiles().length;
+    // Never prunes here whatever the flag says — a preview that deleted rows
+    // would not be a preview.
+    report.corpusOrphans = await scanAllCorpusOrphans(
+      supabase,
+      { languageFamilies, peoples, countries },
+      { prune: false }
+    );
     report.patronymes = await loadPatronymes(supabase, patronymeBatch, {
       dryRun: true,
       references: {
@@ -670,6 +812,7 @@ export async function migrateAfrikToDatabase(
       persons: report.persons.total,
       patronymes: report.patronymes,
       protectedDrift: report.protectedDrift,
+      corpusOrphans: report.corpusOrphans,
       drift: report.verification.before,
     });
     return report;
@@ -717,6 +860,11 @@ export async function migrateAfrikToDatabase(
   report.migrations.inserted = migrationsReport.inserted;
   report.migrations.errors = migrationsReport.errors;
 
+  // Derived first, hand-sourced dossiers second: loadNameRecords upserts on
+  // the same (entity, name, type) key, so a noms/ entry overwrites the
+  // weaker record derived from the fiche rather than competing with it.
+  report.appellations = await loadPeopleAppellations(supabase, peoples);
+
   const namesReport = await loadNameRecords(supabase);
   report.names.total = namesReport.total;
   report.names.inserted = namesReport.inserted;
@@ -733,6 +881,14 @@ export async function migrateAfrikToDatabase(
   report.peopleRelations.orphans = await detectRelationOrphans(
     supabase,
     peopleRelationRecords
+  );
+
+  // After every upsert, so a fiche added on this very run is never mistaken
+  // for a row the corpus dropped.
+  report.corpusOrphans = await scanAllCorpusOrphans(
+    supabase,
+    { languageFamilies, peoples, countries },
+    { prune }
   );
 
   report.verification.after = compareAfrikDrift(
@@ -761,9 +917,16 @@ export async function migrateAfrikToDatabase(
       peopleRelations: report.peopleRelations,
       migrations: report.migrations,
       names: report.names,
+      appellations: {
+        total: report.appellations.total,
+        inserted: report.appellations.inserted,
+        rejected: report.appellations.rejected.length,
+        errors: report.appellations.errors.length,
+      },
       persons: report.persons,
       patronymes: report.patronymes,
       protectedDrift: report.protectedDrift,
+      corpusOrphans: report.corpusOrphans,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,
     });
@@ -785,6 +948,7 @@ if (require.main === module) {
 
   migrateAfrikToDatabase({
     dryRun,
+    prune: args.includes("--prune"),
     target: {
       environment: cliTarget(args),
       activeSupabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,

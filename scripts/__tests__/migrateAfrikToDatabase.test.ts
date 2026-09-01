@@ -15,6 +15,10 @@ import {
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import {
+  emptyAppellationLoadReport,
+  loadPeopleAppellations,
+} from "@/lib/afrik/loaders/peopleAppellationLoader";
+import {
   loadAllPatronymeDossiers,
   loadPatronymes,
 } from "@/lib/afrik/loaders/patronymeJsonLoader";
@@ -44,6 +48,7 @@ vi.mock("@/lib/afrik/loaders/languageProvenanceLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
 vi.mock("@/lib/afrik/loaders/nameRecordJsonLoader");
+vi.mock("@/lib/afrik/loaders/peopleAppellationLoader");
 vi.mock("@/lib/afrik/loaders/patronymeJsonLoader");
 vi.mock("@/lib/afrik/loaders/personJsonLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
@@ -59,6 +64,10 @@ function emptyLanguageReport(): LanguageLoadReport {
     perFamily: {},
     errors: [],
   };
+}
+
+function emptyAppellationReport() {
+  return { total: 0, inserted: 0, rejected: [], errors: [] };
 }
 
 const PRODUCTION_URL = "https://ethniafrica-production.supabase.co";
@@ -120,8 +129,31 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const upsertCalls: UpsertCall[] = [];
   const persistUpserts = options.persistUpserts ?? true;
 
+  const deleted: Array<{ table: TableName; ids: string[] }> = [];
+
   const from = vi.fn((table: TableName) => ({
-    select: vi.fn(async () => ({ data: rows[table], error: null })),
+    // Thenable rather than async: an unqualified `select()` still resolves to
+    // the whole table as it always did, while the orphan scan's paged read
+    // reaches `.range()` on the same object. The double holds far fewer rows
+    // than a page, so one range is always the whole table.
+    select: vi.fn(() => ({
+      then: (
+        resolve: (value: { data: DatabaseRow[]; error: null }) => unknown
+      ) => resolve({ data: rows[table], error: null }),
+      range: async (from: number, to: number) => ({
+        data: rows[table].slice(from, to + 1),
+        error: null,
+      }),
+    })),
+    delete: vi.fn(() => ({
+      in: async (_column: string, ids: string[]) => {
+        deleted.push({ table, ids });
+        rows[table] = rows[table].filter(
+          (row) => !ids.includes(row.id as string)
+        );
+        return { error: null };
+      },
+    })),
     upsert: vi.fn(
       async (
         payload: DatabaseRow | DatabaseRow[],
@@ -168,7 +200,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     ),
   }));
 
-  return { client: { from }, operations, rows, upsertCalls };
+  return { client: { from }, operations, rows, upsertCalls, deleted };
 }
 
 function useSupabaseDouble(options: SupabaseDoubleOptions = {}) {
@@ -193,6 +225,12 @@ describe("migrateAfrikToDatabase", () => {
       }))
     );
     vi.mocked(emptyLanguageLoadReport).mockImplementation(emptyLanguageReport);
+    vi.mocked(emptyAppellationLoadReport).mockImplementation(
+      emptyAppellationReport
+    );
+    vi.mocked(loadPeopleAppellations).mockResolvedValue(
+      emptyAppellationReport()
+    );
     vi.mocked(loadLanguages).mockResolvedValue(emptyLanguageReport());
     vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture]);
     // A JSON import widens every string to `string`, so the fiche's
@@ -1063,5 +1101,91 @@ describe("migrateAfrikToDatabase", () => {
         ({ table }) => table === "afrik_people_relations"
       )
     ).toEqual([]);
+  });
+  /**
+   * The corpus sync only ever upserted, so a fiche deleted from the dataset
+   * kept its row for good — recette served fourteen such peoples for seven
+   * months. These cover the wiring; the cap and the refusal wording are the
+   * unit's own (scripts/__tests__/afrikCorpusOrphans.test.ts).
+   */
+  // @req REQ-032
+  it("reports a row the corpus no longer declares without deleting it", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_peoples: [
+          { id: betePeople.id, content: {} },
+          { id: "PPL_KHOZA_FAUXEX", content: {} },
+        ],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.corpusOrphans.afrik_peoples.orphans).toEqual([
+      "PPL_KHOZA_FAUXEX",
+    ]);
+    expect(report.corpusOrphans.afrik_peoples.deleted).toBe(0);
+    expect(database.deleted).toEqual([]);
+  });
+
+  // @req REQ-032
+  it("deletes the orphan when a run asks to prune and the drift stays small", async () => {
+    // Twenty declared peoples against one ghost: 4.8%, just inside the cap the
+    // scan refuses above. One fiche and one ghost would be a 50% drift, which
+    // the scan reads as a failed corpus load rather than an editorial deletion.
+    const declared = Array.from({ length: 20 }, (_, index) => ({
+      ...peopleFixture,
+      id: `${betePeople.id}_${index}`,
+    })) as People[];
+    vi.mocked(loadAllPeoples).mockResolvedValue(declared);
+
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_peoples: [
+          ...declared.map((people) => ({ id: people.id, content: {} })),
+          { id: "PPL_KHOZA_FAUXEX", content: {} },
+        ],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      prune: true,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.corpusOrphans.afrik_peoples.deleted).toBe(1);
+    expect(database.deleted).toEqual([
+      { table: "afrik_peoples", ids: ["PPL_KHOZA_FAUXEX"] },
+    ]);
+  });
+
+  // @req REQ-032
+  it("leaves the orphan alone in a preview, whatever the run asked for", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_peoples: [
+          { id: betePeople.id, content: {} },
+          { id: "PPL_KHOZA_FAUXEX", content: {} },
+        ],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      prune: true,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.corpusOrphans.afrik_peoples.orphans).toEqual([
+      "PPL_KHOZA_FAUXEX",
+    ]);
+    expect(database.deleted).toEqual([]);
   });
 });
