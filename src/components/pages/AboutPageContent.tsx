@@ -84,23 +84,28 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         title: "Trois manières d’entrer dans l’atlas",
         intro:
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
+        // Each description lists the modules the axis actually holds, doing
+        // the same job as the header panel's `menuBlurb`: a reader who has
+        // not opened the menu meets the three axes here first, and the
+        // previous wording stated the intention behind an axis without ever
+        // saying what was behind it.
         items: [
           {
             id: "atlas" as AccessMode,
             description:
-              "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
+              "Les fiches du site : pays, peuples, familles linguistiques et appellations, plus la recherche libre.",
             accentClass: "afh-accent-ocre",
           },
           {
             id: "dossiers" as AccessMode,
             description:
-              "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
+              "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
             accentClass: "afh-accent-teal",
           },
           {
             id: "jeux" as AccessMode,
             description:
-              "Interroger ses repères grâce aux jeux construits à partir du corpus.",
+              "Le quiz des parcours, et un jeu qui rend aux pays leur taille réelle.",
             accentClass: "afh-accent-perv",
           },
         ],
@@ -193,12 +198,18 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             {t.accessModes.items.map((mode) => (
               <li
                 key={mode.id}
+                data-testid={`about-access-mode-${mode.id}`}
                 className={`${mode.accentClass} border-l-2 border-[var(--accent)] pl-afh-md text-afh-small leading-relaxed text-afh-text-soft`}
               >
                 <p className="font-bold text-afh-text">
                   {ACCESS_MODE_LABELS[mode.id]}
                 </p>
-                <p className="mt-afh-xs">{mode.description}</p>
+                <p
+                  data-testid={`about-access-mode-description-${mode.id}`}
+                  className="mt-afh-xs"
+                >
+                  {mode.description}
+                </p>
               </li>
             ))}
           </ul>

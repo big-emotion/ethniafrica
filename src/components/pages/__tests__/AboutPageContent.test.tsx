@@ -2,7 +2,8 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import { ACCESS_MODE_LABELS, ACCESS_MODES } from "@/lib/hubs/moduleRegistry";
+import { modulesNamedIn } from "@/test/axisModuleVocabulary";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const renderAbout = () => render(<AboutPageContent language="fr" />);
@@ -113,6 +114,25 @@ describe("AboutPageContent (REQ-132)", () => {
     expect(
       screen.queryByRole("heading", { name: /Sources/i })
     ).not.toBeInTheDocument();
+  });
+
+  // The About page describes the three axes to a reader who has not opened
+  // the header menu, so it owes the same answer the panel owes: what is
+  // actually behind each entry, not the frame of mind that leads there.
+  // @req REQ-132
+  it("describes each access mode by the modules it holds", () => {
+    renderAbout();
+
+    for (const mode of ACCESS_MODES) {
+      const card = screen.getByTestId(`about-access-mode-${mode}`);
+      const description = within(card).getByTestId(
+        `about-access-mode-description-${mode}`
+      ).textContent;
+
+      expect(
+        modulesNamedIn(mode, description ?? "").length
+      ).toBeGreaterThanOrEqual(2);
+    }
   });
 
   // @req REQ-132
