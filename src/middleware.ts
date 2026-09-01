@@ -119,9 +119,9 @@ const RELOCATED_SEGMENT = /^\/([a-z]{2})\/([a-z-]+)(\/.*)?$/;
 // bookmarked. `redirectCharter.test.ts` asserts a page file behind each.
 // @req REQ-114
 export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
-  "peuples-hub": "explorer/peuples",
-  "pays-hub": "explorer/pays",
-  "familles-hub": "explorer/familles",
+  "peuples-hub": "atlas/peuples",
+  "pays-hub": "atlas/pays",
+  "familles-hub": "atlas/familles",
 };
 
 // ETNI-1458 renamed the ethnonym module from Noms to Appellations, freeing
@@ -136,20 +136,28 @@ export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
 // table two more entries, and both are *moves across* axes rather than
 // renames within one:
 //
-//   · Appellations went to Explorer, so the address ETNI-1458 published
-//     (`comprendre/appellations`) is itself now legacy. It is keyed here in
-//     its own right rather than chained behind `comprendre/noms`:
-//     redirectCharter.test.ts forbids a target that is itself a key, and a
-//     reader arriving on either published address must reach Explorer in the
-//     one hop a 308 can afford to spend.
+//   · Appellations went to Explorer (now Atlas), so the address ETNI-1458
+//     published (`comprendre/appellations`) is itself now legacy. It is
+//     keyed here in its own right rather than chained behind
+//     `comprendre/noms`: redirectCharter.test.ts forbids a target that is
+//     itself a key, and a reader arriving on either published address must
+//     reach Atlas in the one hop a 308 can afford to spend.
 //   · Doctrine left the axes entirely, and a page no axis lists carries no
 //     prefix — so it lands back at the top level, where `RELOCATED_SEGMENTS`
 //     stops holding an entry for it and starts leaving it alone.
+//
+// ETNI-1615's keys read `dossiers/...`, not the historical `comprendre/...`
+// a reader actually followed: within one middleware call, `RELOCATED_SEGMENTS`
+// already rewrote `comprendre` to `dossiers` by the time this table is
+// consulted (the two compose on `canonicalPath`, see `middleware()` below), so
+// a key still spelled `comprendre/noms` would never match and this table
+// would silently stop firing. The historical address is still honoured — it
+// just reaches this table already half-rewritten.
 // @req REQ-091
 export const RENAMED_MODULE_PATHS: Record<string, string> = {
-  "comprendre/noms": "explorer/appellations",
-  "comprendre/appellations": "explorer/appellations",
-  "comprendre/doctrine": "doctrine",
+  "dossiers/noms": "atlas/appellations",
+  "dossiers/appellations": "atlas/appellations",
+  "dossiers/doctrine": "doctrine",
 };
 
 /**
@@ -193,30 +201,48 @@ export function resolveRenamedModulePath(pathname: string): string | null {
 // `[lang]/[section]` route redirected client-side. They were the reason that
 // route existed; carried here they cost one table row each, and left behind
 // they would have died with it, silently, since nothing links to them.
+//
+// ETNI-1615 adds `explorer`, `comprendre` and `jouer` as three more keys, of a
+// different shape than the rest: those below name a *retired flat V1 address*
+// (`/fr/pays`); these three name the *whole axis prefix* the modules were
+// nested under until this rename, so a single row here carries every
+// currently-published fiche and hub address under that prefix — the tail is
+// preserved verbatim by `resolveRelocatedPath` regardless of depth. Every
+// other entry's destination is written directly against the new axis prefix
+// (`atlas/pays`, not `explorer/pays`) for the same one-hop reason: were it
+// left as `explorer/pays`, the *first* redirect would land on an address that
+// the new `explorer` entry itself now relocates, and a second request would
+// pay for a second 308 this table exists to rule out.
 // @req REQ-091
 export const RELOCATED_SEGMENTS: Record<string, string> = {
-  pays: "explorer/pays",
-  peuples: "explorer/peuples",
-  familles: "explorer/familles",
-  recherche: "explorer/recherche",
+  pays: "atlas/pays",
+  peuples: "atlas/peuples",
+  familles: "atlas/familles",
+  recherche: "atlas/recherche",
   // `doctrine` was a key here while the page lived under Comprendre. It is
   // served at the top level again, so an entry would send a live route to
   // itself — the loop the charter suite walks this table to rule out.
-  noms: "explorer/appellations",
-  migrations: "comprendre/migrations",
-  regards: "comprendre/regards",
-  quiz: "jouer/quiz",
+  noms: "atlas/appellations",
+  migrations: "dossiers/migrations",
+  regards: "dossiers/regards",
+  quiz: "jeux/quiz",
   // English spellings, published by V1 and still linked from outside.
-  countries: "explorer/pays",
-  families: "explorer/familles",
-  peoples: "explorer/peuples",
+  countries: "atlas/pays",
+  families: "atlas/familles",
+  peoples: "atlas/peuples",
   // Regions became linguistic families; ethnicities became peoples.
-  regions: "explorer/familles",
-  regiones: "explorer/familles",
-  regioes: "explorer/familles",
-  ethnicities: "explorer/peuples",
-  ethnies: "explorer/peuples",
-  etnias: "explorer/peuples",
+  regions: "atlas/familles",
+  regiones: "atlas/familles",
+  regioes: "atlas/familles",
+  ethnicities: "atlas/peuples",
+  ethnies: "atlas/peuples",
+  etnias: "atlas/peuples",
+  // The three retired axis prefixes, ETNI-1615 (REQ-138): every module moved
+  // from the verb the reader arrived with to the noun the label already
+  // named. See the block comment above.
+  explorer: "atlas",
+  comprendre: "dossiers",
+  jouer: "jeux",
 };
 
 // Which directory a relocated segment was, for the deep links that named a
@@ -250,7 +276,7 @@ const DEEP_LINK_RESOLVERS: Record<
  * Where a legacy path leads now.
  *
  * `keepQuery` is false only when the query is what produced the target: a
- * `?country=BEN` that became `/fr/explorer/pays/BEN` has been spent, and
+ * `?country=BEN` that became `/fr/atlas/pays/BEN` has been spent, and
  * carrying it along would leave the identifier stated twice, once in the path
  * and once in a query the directory it lands on would read and act on again.
  *
@@ -275,7 +301,7 @@ export function resolveRelocatedPath(
 
   const [, locale, segment] = match;
   // A trailing slash is not a tail. Left in, it would send `/fr/pays/` to
-  // `/fr/explorer/pays/` and skip the deep-link resolution below.
+  // `/fr/atlas/pays/` and skip the deep-link resolution below.
   const tail = (match[3] ?? "").replace(/\/+$/, "");
   const destination = RELOCATED_SEGMENTS[segment];
   if (!destination) return null;
@@ -356,11 +382,13 @@ export async function middleware(request: NextRequest) {
     moved = true;
   }
 
-  // The nested moves: comprendre/noms and comprendre/appellations to
-  // explorer/appellations, comprendre/doctrine back to the top level. A
-  // rewrite of its own, composing into the same single 308 as the three
-  // above for the same reason — two hops would spend the old URL's standing
-  // twice.
+  // The nested moves: the historical comprendre/noms and
+  // comprendre/appellations addresses to atlas/appellations, comprendre/
+  // doctrine back to the top level — read here as dossiers/noms,
+  // dossiers/appellations, dossiers/doctrine, because the axis-prefix rewrite
+  // above already ran (see the comment on RENAMED_MODULE_PATHS). A rewrite of
+  // its own, composing into the same single 308 as the three above for the
+  // same reason — two hops would spend the old URL's standing twice.
   const renamedModule = resolveRenamedModulePath(canonicalPath);
   if (renamedModule) {
     canonicalPath = renamedModule;

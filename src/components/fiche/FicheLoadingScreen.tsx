@@ -37,7 +37,7 @@ export interface FicheLoadingScreenProps {
  * Nothing in the wait survives into that fiche to be kept still. The plate
  * that says "Pays" is replaced by the plate that says "Afrique du Sud", and
  * the body is swapped whole. What the band did buy, measured on
- * `/fr/explorer/pays/ZAF`, is a stage the height of the globe stacked under a
+ * `/fr/atlas/pays/ZAF`, is a stage the height of the globe stacked under a
  * plate: together they took the entire viewport, so the fact — the whole
  * content of the wait — sat below the fold and was never read, on precisely
  * the routes that wait longest. One wait, one shape: the fact, and the chrome

@@ -323,7 +323,7 @@ describe("PageLayout — the section band a fiche must not raise", () => {
 describe("PageLayout — the band names the page, not the product", () => {
   // @req REQ-043
   it("carries no brand mark beside the title", () => {
-    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    mockPathname = getLocalizedRoute("fr", "dossiersHub");
     render(
       <PageLayout language="fr" title="Comprendre les peuples d'Afrique">
         <p>corps</p>
@@ -336,7 +336,7 @@ describe("PageLayout — the band names the page, not the product", () => {
 
   // @req REQ-043
   it("raises no band at all rather than falling back to the product name", () => {
-    mockPathname = getLocalizedRoute("fr", "comprendreHub");
+    mockPathname = getLocalizedRoute("fr", "dossiersHub");
     render(
       <PageLayout language="fr">
         <p data-testid="content">corps</p>

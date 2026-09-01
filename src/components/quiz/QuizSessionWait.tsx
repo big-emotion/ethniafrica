@@ -37,7 +37,7 @@ export function QuizSessionWait() {
   const [fact] = React.useState(() => pickDidYouKnowFact());
 
   return (
-    <div className={ACCENT_BY_ACCESS_MODE.jouer}>
+    <div className={ACCENT_BY_ACCESS_MODE.jeux}>
       <DidYouKnowLoader fact={fact} label={t.loadingSession} />
     </div>
   );

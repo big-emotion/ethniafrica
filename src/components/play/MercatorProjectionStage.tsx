@@ -16,7 +16,7 @@ import { getAfricaAdmin0Rings } from "@/lib/atlas/overlays";
 /**
  * The projection the game is named after, made draggable (REQ-120).
  *
- * `/fr/jouer/mercator` promised this in a comment and mounted the home's
+ * `/fr/jeux/mercator` promised this in a comment and mounted the home's
  * globe instead — the page argued about a projection while showing none of
  * it. What was missing is here: the flat map, the slider that undoes the
  * distortion, and Tissot's indicatrices holding the same real area

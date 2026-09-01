@@ -22,9 +22,9 @@ describe("axis hub routes", () => {
 
   // @req REQ-114
   it("builds each axis hub route from the routing table", () => {
-    expect(getAxisHubRoute("fr", "explorer")).toBe("/fr/explorer");
-    expect(getAxisHubRoute("fr", "comprendre")).toBe("/fr/comprendre");
-    expect(getAxisHubRoute("fr", "jouer")).toBe("/fr/jouer");
+    expect(getAxisHubRoute("fr", "atlas")).toBe("/fr/atlas");
+    expect(getAxisHubRoute("fr", "dossiers")).toBe("/fr/dossiers");
+    expect(getAxisHubRoute("fr", "jeux")).toBe("/fr/jeux");
   });
 
   // The point of the helper: a caller composing a route below an axis — a

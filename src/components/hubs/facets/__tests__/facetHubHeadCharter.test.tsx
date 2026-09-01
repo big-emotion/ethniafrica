@@ -11,7 +11,7 @@ import { FACETS, getFacet } from "@/lib/hubs/facets";
  *
  * The three facets open on a full-bleed globe some 520px tall, so a head left
  * inside the parchment is below the fold on every screen: a reader landing on
- * `/fr/explorer/peuples` met a dark sphere and a trail, and nothing else named
+ * `/fr/atlas/peuples` met a dark sphere and a trail, and nothing else named
  * the page. `FicheSequence` settled the same question for the fiches by
  * lifting their head out of the parchment and printing it above the band; this
  * is that rule applied to the hub, and the reason the head strings live in the

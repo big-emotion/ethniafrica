@@ -17,9 +17,9 @@ const counts: CorpusCounts = {
 };
 
 const modulesByAxis: Record<AccessMode, HubModule[]> = {
-  explorer: [],
-  comprendre: [],
-  jouer: [],
+  atlas: [],
+  dossiers: [],
+  jeux: [],
 };
 
 const syntheses: CountrySynthesis[] = [
@@ -155,7 +155,7 @@ describe("AboutPageContent (REQ-132)", () => {
 
     expect(screen.queryByTestId("about-access-modes")).toBeNull();
     expect(
-      screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
+      screen.getAllByTestId(/^access-axis-(atlas|dossiers|jeux)$/)
     ).toHaveLength(3);
 
     for (const name of Object.values(ACCESS_MODE_LABELS)) {

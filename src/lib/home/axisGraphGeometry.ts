@@ -50,9 +50,9 @@ export interface ProjectedNode {
  */
 // @req REQ-114
 export const LAYOUT_BY_AXIS: Record<AccessMode, AxisLayout> = {
-  explorer: "ring",
-  comprendre: "arc",
-  jouer: "pair",
+  atlas: "ring",
+  dossiers: "arc",
+  jeux: "pair",
 };
 
 /** Camera distance in unit space. Shallow enough that depth reads. */

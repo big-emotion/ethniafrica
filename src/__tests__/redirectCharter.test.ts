@@ -59,19 +59,35 @@ describe("the relocation table lands in one hop", () => {
   // @req REQ-091
   it("carries the tail verbatim, however deep", () => {
     expect(path("/fr/peuples/PPL_YORUBA/liens")!.path).toBe(
-      "/fr/explorer/peuples/PPL_YORUBA/liens"
+      "/fr/atlas/peuples/PPL_YORUBA/liens"
     );
     // Percent-encoding survives: it was in the link the reader followed.
     expect(path("/fr/peuples/PPL_%2FEVIL")!.path).toBe(
-      "/fr/explorer/peuples/PPL_%2FEVIL"
+      "/fr/atlas/peuples/PPL_%2FEVIL"
     );
     // A pinned revision is a tail like any other.
-    expect(path("/fr/pays/BEN@v3")!.path).toBe("/fr/explorer/pays/BEN@v3");
+    expect(path("/fr/pays/BEN@v3")!.path).toBe("/fr/atlas/pays/BEN@v3");
   });
 
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
-    expect(path("/fr/pays/")!.path).toBe("/fr/explorer/pays");
+    expect(path("/fr/pays/")!.path).toBe("/fr/atlas/pays");
+  });
+
+  // ETNI-1615 (REQ-138): every currently-published address under the retired
+  // verb prefix — hub, facet or fiche, at any depth — has to keep resolving,
+  // in one hop, to its noun-prefixed successor. One row per axis carries all
+  // of it; this asserts the row actually does.
+  // @req REQ-091
+  it("carries every depth of the retired axis prefix to its successor", () => {
+    expect(path("/fr/explorer")!.path).toBe("/fr/atlas");
+    expect(path("/fr/comprendre")!.path).toBe("/fr/dossiers");
+    expect(path("/fr/jouer")!.path).toBe("/fr/jeux");
+    expect(path("/fr/explorer/peuples")!.path).toBe("/fr/atlas/peuples");
+    expect(path("/fr/explorer/peuples/PPL_YORUBA")!.path).toBe(
+      "/fr/atlas/peuples/PPL_YORUBA"
+    );
+    expect(path("/fr/jouer/mercator")!.path).toBe("/fr/jeux/mercator");
   });
 });
 
@@ -94,29 +110,29 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
 
   // @req REQ-091
   it("carries the tail verbatim below the renamed module", () => {
-    expect(resolveRenamedModulePath("/fr/comprendre/noms/PPL_YORUBA")).toBe(
-      "/fr/explorer/appellations/PPL_YORUBA"
+    expect(resolveRenamedModulePath("/fr/dossiers/noms/PPL_YORUBA")).toBe(
+      "/fr/atlas/appellations/PPL_YORUBA"
     );
   });
 
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
-    expect(resolveRenamedModulePath("/fr/comprendre/noms/")).toBe(
-      "/fr/explorer/appellations"
+    expect(resolveRenamedModulePath("/fr/dossiers/noms/")).toBe(
+      "/fr/atlas/appellations"
     );
   });
 
   // Appellations was published under Comprendre before ETNI-1453 made the
-  // name a corpus entity and moved it to Explorer. The address it was
-  // published under has to reach the new one directly: chaining it through
-  // `comprendre/noms` would spend the 308 twice.
+  // name a corpus entity and moved it to Explorer (now Atlas). The address it
+  // was published under has to reach the new one directly: chaining it
+  // through `dossiers/noms` would spend the 308 twice.
   // @req REQ-114
-  it("sends both published appellations addresses to Explorer in one hop", () => {
-    expect(resolveRenamedModulePath("/fr/comprendre/appellations")).toBe(
-      "/fr/explorer/appellations"
+  it("sends both published appellations addresses to Atlas in one hop", () => {
+    expect(resolveRenamedModulePath("/fr/dossiers/appellations")).toBe(
+      "/fr/atlas/appellations"
     );
-    expect(resolveRenamedModulePath("/fr/comprendre/noms")).toBe(
-      "/fr/explorer/appellations"
+    expect(resolveRenamedModulePath("/fr/dossiers/noms")).toBe(
+      "/fr/atlas/appellations"
     );
   });
 
@@ -124,11 +140,11 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // prefix, the rule `compare` already follows.
   // @req REQ-114
   it("lifts the doctrine subtree back to the top level", () => {
-    expect(resolveRenamedModulePath("/fr/comprendre/doctrine")).toBe(
+    expect(resolveRenamedModulePath("/fr/dossiers/doctrine")).toBe(
       "/fr/doctrine"
     );
     expect(
-      resolveRenamedModulePath("/fr/comprendre/doctrine/endonymes-vs-exonymes")
+      resolveRenamedModulePath("/fr/dossiers/doctrine/endonymes-vs-exonymes")
     ).toBe("/fr/doctrine/endonymes-vs-exonymes");
     // And the address it lands on is served, not relocated again.
     expect(path("/fr/doctrine")).toBeNull();
@@ -153,7 +169,7 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // @req REQ-091
   it("agrees with the flat legacy table on where the module now lives", () => {
     expect(path("/fr/noms")!.path).toBe(
-      resolveRenamedModulePath("/fr/comprendre/noms")
+      resolveRenamedModulePath("/fr/dossiers/noms")
     );
   });
 });
@@ -207,9 +223,9 @@ describe("no target re-enters either table", () => {
   /**
    * The live routes are the other half of the same question: a page the site
    * serves must not be swept up by a table meant for pages it no longer
-   * serves. `/fr/explorer/peuples` opens on `explorer`, which is why the
-   * modules had to nest under a *verb* rather than keep their own first
-   * segment.
+   * serves. `/fr/atlas/peuples` opens on `atlas`, which is why the
+   * modules had to nest under a *verb* (now a noun) rather than keep their
+   * own first segment.
    */
   // @req REQ-091
   it("leaves every page the site actually serves alone", () => {
@@ -236,8 +252,20 @@ describe("every target is a route the app actually serves", () => {
    * answered anything itself, before the move or after. It is in the table so
    * that `/fr/regards/colonisation-et-resistances` keeps resolving — the tail
    * is the whole point of the entry, and the bare root 404s either way.
+   *
+   * The three bare axis roots are the same shape, for the same reason
+   * ETNI-1555 gave them: an access mode is a non-navigating heading, never a
+   * destination, so it was never given a `page.tsx` of its own — before this
+   * rename or after. `explorer`/`comprendre`/`jouer` are single-segment keys
+   * in `RELOCATED_SEGMENTS` precisely so every *tail* below them keeps
+   * resolving in one hop; the bare root carries no tail and 404s either way.
    */
-  const CONTAINER_ONLY = new Set(["comprendre/regards"]);
+  const CONTAINER_ONLY = new Set([
+    "dossiers/regards",
+    "atlas",
+    "dossiers",
+    "jeux",
+  ]);
 
   // @req REQ-091
   it("has a page file behind every relocation target", () => {
@@ -319,11 +347,11 @@ describe("a deep link reaches its fiche in one hop", () => {
       new URLSearchParams("country=//evil.com")
     );
 
-    expect(hostile!.path).toBe("/fr/explorer/pays/%2F%2Fevil.com");
+    expect(hostile!.path).toBe("/fr/atlas/pays/%2F%2Fevil.com");
     // The property the encoding exists for: the second character is not a
     // slash, so a browser reads a path rather than an authority.
     expect(hostile!.path.startsWith("//")).toBe(false);
-    expect(firstSegment(hostile!.path)).toBe("explorer");
+    expect(firstSegment(hostile!.path)).toBe("atlas");
   });
 
   // A query naming nothing is left for the page to read.

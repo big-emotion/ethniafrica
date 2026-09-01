@@ -94,11 +94,11 @@ describe("browser quality-gate routes", () => {
    * `lhci collect` aborts the whole run on the first URL that fails to load,
    * so one dead address does not cost one measurement — it costs every
    * measurement after it. ETNI-1555 deleted the three axis landing pages
-   * while `/fr/explorer` was still first in the list.
+   * while `/fr/atlas` was still first in the list.
    */
   // @req REQ-114
   it("audits no retired axis landing page in either browser gate", () => {
-    for (const page of ["explorerHub", "comprendreHub", "jouerHub"] as const) {
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
       const route = getLocalizedRoute("fr", page);
 
       expect(lighthouseConfig.ci.collect.url, route).not.toContain(
@@ -169,7 +169,7 @@ describe("browser quality-gate routes", () => {
    * recomposes them from the slug table -- so the two drift apart exactly
    * when a slug moves, and only the hand-written one goes stale. Moving
    * Appellations from Comprendre to Explorer left this file auditing
-   * `/fr/comprendre/appellations`, and every assertion here passed, because
+   * `/fr/dossiers/appellations`, and every assertion here passed, because
    * appellations belongs to none of the families enumerated above.
    *
    * Asked through the middleware's own resolvers rather than against a

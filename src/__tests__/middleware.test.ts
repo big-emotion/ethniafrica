@@ -224,9 +224,9 @@ describe("middleware", () => {
   describe("legacy hub redirects (REQ-114)", () => {
     // @req REQ-114
     it.each([
-      ["peuples-hub", "explorer/peuples"],
-      ["pays-hub", "explorer/pays"],
-      ["familles-hub", "explorer/familles"],
+      ["peuples-hub", "atlas/peuples"],
+      ["pays-hub", "atlas/pays"],
+      ["familles-hub", "atlas/familles"],
     ])("redirects /fr/%s to /fr/%s with 308", async (legacy, current) => {
       const request = new NextRequest(`http://localhost:3000/fr/${legacy}`);
       const response = await middleware(request);
@@ -246,7 +246,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/pays?from=newsletter"
+        "http://localhost:3000/fr/atlas/pays?from=newsletter"
       );
     });
 
@@ -257,21 +257,35 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples"
+        "http://localhost:3000/fr/atlas/peuples"
       );
     });
 
-    // The rename moved a hub, not the resource pages it groups. /fr/explorer/peuples
+    // The rename moved a hub, not the resource pages it groups. /fr/atlas/peuples
     // is a live route and must not be swept up by a prefix match on
     // "peuples".
     // @req REQ-114
     it("leaves the resource pages the hubs group untouched", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/atlas/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).not.toBe(308);
+    });
+
+    // ETNI-1615 (REQ-138): the verb-prefixed address the hub rename above
+    // still targeted (before this ticket) is now itself retired — a reader
+    // arriving on it has to reach the noun-prefixed successor, not a 404.
+    // @req REQ-091
+    it("also retires the verb-prefixed address the hub used to target", async () => {
       const request = new NextRequest(
         "http://localhost:3000/fr/explorer/peuples"
       );
       const response = await middleware(request);
 
-      expect(response.status).not.toBe(308);
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/atlas/peuples"
+      );
     });
   });
 
@@ -293,24 +307,24 @@ describe("middleware", () => {
     });
 
     // @req REQ-091
-    it("redirects /en/peuples to /fr/explorer/peuples preserving subpath", async () => {
+    it("redirects /en/peuples to /fr/atlas/peuples preserving subpath", async () => {
       const request = new NextRequest("http://localhost:3000/en/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples"
+        "http://localhost:3000/fr/atlas/peuples"
       );
     });
 
     // @req REQ-091
-    it("redirects /es/pays/zaf to /fr/explorer/pays/zaf preserving deep subpath", async () => {
+    it("redirects /es/pays/zaf to /fr/atlas/pays/zaf preserving deep subpath", async () => {
       const request = new NextRequest("http://localhost:3000/es/pays/zaf");
       const response = await middleware(request);
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/pays/zaf"
+        "http://localhost:3000/fr/atlas/pays/zaf"
       );
     });
 
@@ -322,7 +336,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples?tri=population"
+        "http://localhost:3000/fr/atlas/peuples?tri=population"
       );
     });
 
@@ -339,7 +353,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer/peuples/PPL_YORUBA"
+        "http://localhost:3000/fr/atlas/peuples/PPL_YORUBA"
       );
     });
 
@@ -352,10 +366,8 @@ describe("middleware", () => {
     });
 
     // @req REQ-091
-    it("does not redirect /fr/explorer/peuples", async () => {
-      const request = new NextRequest(
-        "http://localhost:3000/fr/explorer/peuples"
-      );
+    it("does not redirect /fr/atlas/peuples", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/atlas/peuples");
       const response = await middleware(request);
 
       expect(response.status).toBe(200);
@@ -551,8 +563,8 @@ describe("middleware", () => {
     it("allows inline style attributes only on public localized pages", async () => {
       for (const pathname of [
         "/fr",
-        "/fr/explorer/pays/SEN",
-        "/fr/explorer/familles/FLG_BANTU",
+        "/fr/atlas/pays/SEN",
+        "/fr/atlas/familles/FLG_BANTU",
       ]) {
         const response = await middleware(
           new NextRequest(`http://localhost:3000${pathname}`)

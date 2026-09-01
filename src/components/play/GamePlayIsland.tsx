@@ -95,7 +95,7 @@ export const GamePlayIsland = ({
     <div
       data-testid="game-play-island"
       className={cn(
-        ACCENT_BY_ACCESS_MODE.jouer,
+        ACCENT_BY_ACCESS_MODE.jeux,
         "flex flex-col gap-4",
         className
       )}

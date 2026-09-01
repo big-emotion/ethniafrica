@@ -121,8 +121,8 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       ],
     },
     {
-      id: "comprendre",
-      title: ACCESS_MODE_LABELS.comprendre,
+      id: "dossiers",
+      title: ACCESS_MODE_LABELS.dossiers,
       blurb:
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
@@ -148,8 +148,8 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       ],
     },
     {
-      id: "jouer",
-      title: ACCESS_MODE_LABELS.jouer,
+      id: "jeux",
+      title: ACCESS_MODE_LABELS.jeux,
       blurb:
         "Chaque partie est tirée du corpus : gagner suppose d'avoir lu quelque chose, jamais d'avoir deviné.",
       links: [
@@ -158,7 +158,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           label: "Le quiz des parcours",
         },
         ...GAME_DEFINITIONS.map((game) => ({
-          href: `${route("jouerHub")}/${game.slug}`,
+          href: `${route("jeuxHub")}/${game.slug}`,
           label: game.nameFr,
           note: game.promptFr,
         })),

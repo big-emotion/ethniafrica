@@ -48,7 +48,14 @@ const ROOT = resolve(__dirname, "../../..");
  * `/fr/explorer/pays` is as hardcoded as `/fr/pays` was — writing out the
  * post-migration form is the same mistake, one migration later.
  */
-const AXIS_SEGMENTS = ["explorer", "comprendre", "jouer"];
+const AXIS_SEGMENTS = [
+  "explorer",
+  "comprendre",
+  "jouer",
+  "atlas",
+  "dossiers",
+  "jeux",
+];
 const FORBIDDEN = [...Object.keys(RELOCATED_SEGMENTS), ...AXIS_SEGMENTS];
 
 const EXEMPT = new Set([
@@ -134,6 +141,10 @@ describe("module URLs are composed, never written out", () => {
   it("catches the shape it exists to catch, before and after the move", () => {
     expect(LITERAL.test(code('href="/fr/peuples/PPL_YORUBA"'))).toBe(true);
     expect(LITERAL.test(code('href="/fr/explorer/peuples/PPL_YORUBA"'))).toBe(
+      true
+    );
+    // ETNI-1615: the verb prefix retired, the noun prefix it retired into.
+    expect(LITERAL.test(code('href="/fr/atlas/peuples/PPL_YORUBA"'))).toBe(
       true
     );
   });

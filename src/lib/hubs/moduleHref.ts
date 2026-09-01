@@ -21,7 +21,7 @@ export function getModuleHref(
   // why it is addressed by slug — so the slug wins over any page. The axis
   // segment above it still comes from the slug table, not from this string.
   if (module.gameSlug)
-    return `${getAxisHubRoute(language, "jouer")}/${module.gameSlug}`;
+    return `${getAxisHubRoute(language, "jeux")}/${module.gameSlug}`;
   if (module.page) return getLocalizedRoute(language, module.page);
   return null;
 }

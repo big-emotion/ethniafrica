@@ -11,7 +11,7 @@ import type { HubModuleDefinition } from "@/lib/hubs/moduleRegistry";
  * it. `SiteHeader` is a client component under a client `PageLayout`, so it
  * resolved clickability from `getModuleHref` alone, which only ever answers
  * "does this route exist". The result was three surfaces disagreeing about the
- * same module: the home constellation and `/fr/comprendre` marked _Premiers
+ * same module: the home constellation and `/fr/dossiers` marked _Premiers
  * repères de migrations_ **Bientôt** while the menu above them linked it.
  *
  * So the measured half is passed in as a map and the declared half is computed

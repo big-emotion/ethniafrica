@@ -4,7 +4,7 @@ import { getPeopleCountsByCountry } from "@/lib/supabase/queries/afrik/peopleCou
 import type { CountryId } from "@/types/afrik";
 
 /**
- * Documented peoples per country, for the continent scene the /fr/explorer
+ * Documented peoples per country, for the continent scene the /fr/atlas
  * hub opens on. Cached for an hour (DEC-018): the corpus moves on an
  * editorial cadence, so paying a full walk of the join table on every hub
  * render buys nothing.

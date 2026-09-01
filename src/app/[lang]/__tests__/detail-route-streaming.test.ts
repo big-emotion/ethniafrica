@@ -16,11 +16,9 @@ describe("detail route streaming", () => {
 
   // @req REQ-046
   it("does not nest detail views in a second Suspense boundary", () => {
-    const countryPage = readSource(
-      "src/app/[lang]/explorer/pays/[slug]/page.tsx"
-    );
+    const countryPage = readSource("src/app/[lang]/atlas/pays/[slug]/page.tsx");
     const peoplePage = readSource(
-      "src/app/[lang]/explorer/peuples/[slug]/page.tsx"
+      "src/app/[lang]/atlas/peuples/[slug]/page.tsx"
     );
 
     expect(countryPage).not.toContain("<Suspense");

@@ -122,7 +122,7 @@ describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
     renderIsland([binaryRound("PPL_A")]);
 
     expect(screen.getByTestId("game-play-island").className).toContain(
-      ACCENT_BY_ACCESS_MODE.jouer
+      ACCENT_BY_ACCESS_MODE.jeux
     );
   });
 });

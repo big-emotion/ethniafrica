@@ -37,7 +37,7 @@ export async function generateMetadata({
   return {
     title: `${game.nameFr} — ${OG_TITLE}`,
     description: game.promptFr,
-    alternates: { canonical: `${getAxisHubRoute("fr", "jouer")}/${game.slug}` },
+    alternates: { canonical: `${getAxisHubRoute("fr", "jeux")}/${game.slug}` },
   };
 }
 
@@ -59,7 +59,7 @@ export default async function GamePage({ params }: GamePageProps) {
     0
   );
 
-  // The continent the Mercator stage draws. Caught the way the explorer hub
+  // The continent the Mercator stage draws. Caught the way the atlas hub
   // catches it: a failed count costs the per-country field, not the round.
   const [envelope, peopleCountsByCountry] = await Promise.all([
     getGameRoundsHandler(game, seed),
@@ -108,7 +108,7 @@ export default async function GamePage({ params }: GamePageProps) {
           BinaryChoice's selected option, GameAnswerReveal's banner and
           GameScoreCard all read it, so the whole surface has been painting
           black-or-nothing rather than pervenche (atlas-charter §2). */}
-      <div className={ACCENT_BY_ACCESS_MODE.jouer}>
+      <div className={ACCENT_BY_ACCESS_MODE.jeux}>
         <MercatorSurface
           game={game}
           rounds={envelope.data.rounds}

@@ -78,7 +78,7 @@ describe("sitemap.xml", () => {
 
   /**
    * The three axis landing pages are gone (ETNI-1555). Asserted on the exact
-   * URL rather than as a fragment, because `/fr/explorer` is a prefix of the
+   * URL rather than as a fragment, because `/fr/atlas` is a prefix of the
    * three facet routes the sitemap must keep publishing.
    */
   // @req REQ-114
@@ -86,7 +86,7 @@ describe("sitemap.xml", () => {
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
-    for (const page of ["explorerHub", "comprendreHub", "jouerHub"] as const) {
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
       expect(all, page).not.toContain(
         `${base}${getLocalizedRoute("fr", page)}`
       );

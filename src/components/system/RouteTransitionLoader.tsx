@@ -55,7 +55,7 @@ const headerBottom = () => {
  * reports, the doctrine fiches — cannot take a `loading.tsx` for the same
  * reason at their own scale: a streamed shell fixes the status at 200 before
  * `notFound()` is reached. Measured, not assumed: adding one to `jouer` moved
- * `/fr/jouer/inexistant` from 404 to 200.
+ * `/fr/jeux/inexistant` from 404 to 200.
  *
  * An overlay has neither problem. It exists only after a click, only in the
  * browser, and touches no status code at all — which is exactly why it is the

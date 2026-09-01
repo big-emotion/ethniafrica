@@ -6,15 +6,15 @@ import { describe, expect, it } from "vitest";
 const fromRoot = (relativePath: string) => resolve(process.cwd(), relativePath);
 
 const AXIS_HUB_PAGES = [
-  "src/app/[lang]/explorer/page.tsx",
-  "src/app/[lang]/comprendre/page.tsx",
-  "src/app/[lang]/jouer/page.tsx",
+  "src/app/[lang]/atlas/page.tsx",
+  "src/app/[lang]/dossiers/page.tsx",
+  "src/app/[lang]/jeux/page.tsx",
 ] as const;
 
 const REPRESENTATIVE_NESTED_PAGES = [
-  "src/app/[lang]/explorer/peuples/page.tsx",
-  "src/app/[lang]/comprendre/anecdotes/page.tsx",
-  "src/app/[lang]/jouer/[jeu]/page.tsx",
+  "src/app/[lang]/atlas/peuples/page.tsx",
+  "src/app/[lang]/dossiers/anecdotes/page.tsx",
+  "src/app/[lang]/jeux/[jeu]/page.tsx",
 ] as const;
 
 const HUB_ONLY_RENDERERS = [

@@ -83,19 +83,19 @@ export default function AboutPageContent({
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
         items: [
           {
-            id: "explorer" as AccessMode,
+            id: "atlas" as AccessMode,
             description:
               "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
             accentClass: "afh-accent-ocre",
           },
           {
-            id: "comprendre" as AccessMode,
+            id: "dossiers" as AccessMode,
             description:
               "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
             accentClass: "afh-accent-teal",
           },
           {
-            id: "jouer" as AccessMode,
+            id: "jeux" as AccessMode,
             description:
               "Interroger ses repères grâce aux jeux construits à partir du corpus.",
             accentClass: "afh-accent-perv",

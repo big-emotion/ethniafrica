@@ -17,7 +17,7 @@ describe("getSiteTree — access modes are sections, not destinations", () => {
       section.links.map((link) => link.href)
     );
 
-    for (const page of ["explorerHub", "comprendreHub", "jouerHub"] as const) {
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
       expect(hrefs, page).not.toContain(getLocalizedRoute("fr", page));
     }
   });
@@ -26,11 +26,11 @@ describe("getSiteTree — access modes are sections, not destinations", () => {
   it("still names its rubrics with the canonical access-mode labels", () => {
     const tree = getSiteTree("fr");
 
-    expect(tree.find((section) => section.id === "comprendre")?.title).toBe(
-      ACCESS_MODE_LABELS.comprendre
+    expect(tree.find((section) => section.id === "dossiers")?.title).toBe(
+      ACCESS_MODE_LABELS.dossiers
     );
-    expect(tree.find((section) => section.id === "jouer")?.title).toBe(
-      ACCESS_MODE_LABELS.jouer
+    expect(tree.find((section) => section.id === "jeux")?.title).toBe(
+      ACCESS_MODE_LABELS.jeux
     );
   });
 });
