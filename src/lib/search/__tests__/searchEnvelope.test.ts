@@ -143,6 +143,51 @@ describe("mapSearchEnvelope", () => {
     expect(people.confidence).toBe(0.71);
   });
 
+  // @req REQ-126
+  it("maps a person row, carrying roleCategory and peopleLinks untouched", () => {
+    const [person] = mapSearchEnvelope({
+      data: {
+        persons: [
+          {
+            id: "PER_DELAFOSSE",
+            fullName: "Maurice Delafosse",
+            roleCategory: "ethnographer",
+            peopleLinks: [
+              { peopleId: "PPL_BETE", relationLabel: "observation" },
+              { peopleId: "PPL_DIOULA", relationLabel: "membership" },
+            ],
+            snippet: "administrateur colonial et [[linguiste]]",
+            relevance: 0.65,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(person.type).toBe("person");
+    expect(person.id).toBe("PER_DELAFOSSE");
+    expect(person.name).toBe("Maurice Delafosse");
+    expect(person.roleCategory).toBe("ethnographer");
+    expect(person.peopleLinks).toEqual([
+      { peopleId: "PPL_BETE", relationLabel: "observation" },
+      { peopleId: "PPL_DIOULA", relationLabel: "membership" },
+    ]);
+    expect(person.snippet).toBe("administrateur colonial et [[linguiste]]");
+    expect(person.relevance).toBe(0.65);
+    expect(person.exactMatch).toBe(true);
+  });
+
+  // @req REQ-126
+  it("defaults a person's peopleLinks to an empty array when absent", () => {
+    const [person] = mapSearchEnvelope({
+      data: {
+        persons: [{ id: "PER_X", fullName: "X", roleCategory: "historian" }],
+      },
+    });
+
+    expect(person.peopleLinks).toEqual([]);
+  });
+
   // @req REQ-002
   it("prefers the match excerpt over the raw etymology for a country", () => {
     const [country] = mapSearchEnvelope({

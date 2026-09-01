@@ -13,6 +13,7 @@
  */
 
 import type { SearchResult } from "@/types/afrik-frontend";
+import type { PersonPeopleLink } from "@/types/persons";
 
 export interface SearchQueryOptions {
   limit?: number;
@@ -105,7 +106,10 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   // reading `peoples` off an Array and crashing the whole modal.
   if (!data || Array.isArray(data)) return [];
 
-  const { peoples, countries, families } = data as Record<string, unknown>;
+  const { peoples, countries, families, persons } = data as Record<
+    string,
+    unknown
+  >;
 
   return [
     ...asRows(peoples).map(
@@ -145,6 +149,22 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         type: "languageFamily",
         id: String(row.id),
         name: String(row.nameFr ?? ""),
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+      })
+    ),
+    // REQ-126: roleCategory and peopleLinks are carried through untouched —
+    // an `observation` relation must never be coerced to `membership`, which
+    // is what would make an ethnographer read as a member of the people they
+    // studied.
+    ...asRows(persons).map(
+      (row): SearchResult => ({
+        type: "person",
+        id: String(row.id),
+        name: String(row.fullName ?? ""),
+        roleCategory: String(row.roleCategory ?? ""),
+        peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
+        snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,
       })
