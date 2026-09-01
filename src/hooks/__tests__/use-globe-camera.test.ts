@@ -90,14 +90,61 @@ const CHOSEN_COUNTRY: CameraPose = {
 
 function renderCamera(
   destination: CameraPose | null = null,
-  reducedMotion = false
+  reducedMotion = false,
+  autoRotate = false
 ) {
   return renderHook(
-    (props: { destination: CameraPose | null; reducedMotion: boolean }) =>
-      useGlobeCamera(props.destination, ENTITY_FRAME, props.reducedMotion),
-    { initialProps: { destination, reducedMotion } }
+    (props: {
+      destination: CameraPose | null;
+      reducedMotion: boolean;
+      autoRotate?: boolean;
+    }) =>
+      useGlobeCamera(
+        props.destination,
+        ENTITY_FRAME,
+        props.reducedMotion,
+        props.autoRotate
+      ),
+    { initialProps: { destination, reducedMotion, autoRotate } }
   );
 }
+
+describe("useGlobeCamera — opt-in home autoplay (REQ-117)", () => {
+  // @req REQ-117
+  it("turns gently only when autoplay is explicitly enabled", () => {
+    const { result } = renderCamera(null, false, true);
+
+    runOneFrame(0);
+    const atStart = result.current.pose.yaw;
+    runOneFrame(1000);
+
+    expect(result.current.pose.yaw).not.toBe(atStart);
+    expect(result.current.autoRotating).toBe(true);
+  });
+
+  // @req REQ-117
+  it("stops autoplay permanently when the reader takes control", () => {
+    const { result } = renderCamera(null, false, true);
+
+    runOneFrame(0);
+    runOneFrame(1000);
+    act(() => result.current.stopAutoRotation());
+    const stoppedAt = result.current.pose.yaw;
+
+    expect(queuedFrames.size).toBe(0);
+    expect(result.current.autoRotating).toBe(false);
+    runOneFrame(1000);
+    expect(result.current.pose.yaw).toBe(stoppedAt);
+  });
+
+  // @req REQ-117
+  it("does not start autoplay when reduced motion is requested", () => {
+    const { result } = renderCamera(null, true, true);
+
+    expect(result.current.autoRotating).toBe(false);
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+  });
+});
 
 describe("useGlobeCamera — a fiche globe at rest (REQ-117)", () => {
   // @req REQ-117
