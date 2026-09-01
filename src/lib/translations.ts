@@ -23,6 +23,9 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   sources: "Sources",
   anecdotes: "Anecdotes",
   names: "Appellations",
+  // The public label DEC-038 gives the patronyme, which is why the trail
+  // reads "Nom" where the code says `patronymes`.
+  patronymes: "Nom",
   compare: "Comparer",
   migrations: "Migrations",
   quiz: "Quiz",
@@ -194,16 +197,24 @@ export const translations = {
       pageTitle: "Appellations",
       pageSubtitle:
         "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
+      // The note used to say the genealogy of personal names was "not covered
+      // yet". It is: the patronyme fiches exist and now have their own route
+      // (DEC-038), so the note points there instead of closing the door.
       genealogyNote:
-        "Vous cherchez l'origine d'un nom de famille ou d'un prénom ? Ce module ne couvre pas encore la généalogie des noms de personnes : il documente les noms de peuples (ethnonymes) — endonymes, exonymes et appellations imposées.",
+        "Cette page documente les noms de peuples (ethnonymes) — endonymes, exonymes et appellations imposées. Vous cherchez l'origine d'un nom de famille ? C'est la dimension Nom, qui documente les systèmes de nommage des personnes.",
       searchLabel: "Rechercher un nom",
       searchPlaceholder:
         "Rechercher un nom (endonyme, exonyme, graphie historique...)",
       searchSubmit: "Rechercher",
+      filtersLabel: "Filtrer par type de nom",
       filters: {
+        all: "tous",
         endonym: "endonyme",
         exonym: "exonyme",
         historical_spelling: "graphie historique",
+        // Kept for `NameTypeBadge`, which labels a record of that type. The
+        // filter chip it once fed is now rendered only when the corpus holds
+        // such a record, and it holds none — see migration 071.
         surname: "patronyme",
         imposed: "noms imposés",
       },
@@ -211,10 +222,30 @@ export const translations = {
       clearFilter: "Supprimer le filtre",
       resultCountSingular: "résultat",
       resultCountPlural: "résultats",
+      // The listing names a range, not just a total: the page used to print
+      // "3679 résultats" above 100 rendered rows.
+      range: {
+        none: "Aucune forme",
+        of: "sur",
+        formsSingular: "forme",
+        formsPlural: "formes",
+      },
+      alsoWritten: "Aussi écrit :",
+      bornBy: "Porté par",
+      bornByOne: "Porté par un peuple",
+      peoplesPlural: "peuples",
+      problematicLabel: "Pourquoi ce nom pose problème :",
+      pagination: {
+        label: "Pagination de la nomenclature",
+        previous: "Précédent",
+        next: "Suivant",
+        page: "Page",
+      },
       emptyState: {
         spellingGuidance:
           "Vérifiez l'orthographe : un même nom peut varier selon la graphie historique ou la langue d'origine.",
         browseByTypeLabel: "Parcourir par type de nom :",
+        clearFilters: "Retirer les filtres",
         reportMissing: "Signaler une donnée manquante",
       },
     },

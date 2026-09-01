@@ -118,3 +118,57 @@ describe("deriveAppellations", () => {
     });
   });
 });
+
+/**
+ * The corpus glosses a name in prose, and its glosses contain the very
+ * characters the grammar splits on. Splitting first and peeling the gloss
+ * afterwards tore 14 published names in half — "Habesha (አበሻ — amharique"
+ * on one side, "ሓበሻ — tigrinya)" on the other — because by the time
+ * `peelGloss` ran, the closing parenthesis was in a different segment.
+ */
+describe("deriveAppellations — separators inside a parenthesis", () => {
+  // @req REQ-057
+  it("keeps a semicolon that belongs to a gloss out of the segment split", () => {
+    const { entries } = deriveAppellations({
+      selfAppellation: "Habesha (አበሻ — amharique; ሓበሻ — tigrinya)",
+      exonyms: [],
+    });
+
+    expect(entries.map((entry) => entry.nameText)).toEqual(["Habesha"]);
+    expect(entries[0].gloss).toBe("አበሻ — amharique; ሓበሻ — tigrinya");
+  });
+
+  // @req REQ-057
+  it("never emits a name carrying an unbalanced parenthesis", () => {
+    const { entries } = deriveAppellations({
+      selfAppellation: "Abaha (endonyme; pluriel Abahaya)",
+      exonyms: [],
+    });
+
+    expect(entries.map((entry) => entry.nameText)).toEqual(["Abaha"]);
+  });
+
+  // @req REQ-057
+  it("keeps a slash that belongs to a gloss out of the spelling split", () => {
+    const { entries } = deriveAppellations({
+      selfAppellation: "Bissa (singulier : Bisa / pluriel : Bisan)",
+      exonyms: [],
+    });
+
+    expect(entries.map((entry) => entry.nameText)).toEqual(["Bissa"]);
+  });
+
+  // @req REQ-057
+  it("still splits segments and spellings when no parenthesis is open", () => {
+    const { entries } = deriveAppellations({
+      selfAppellation: "Bille / Bilé; Maasai",
+      exonyms: [],
+    });
+
+    expect(entries.map((entry) => entry.nameText)).toEqual([
+      "Bille",
+      "Bilé",
+      "Maasai",
+    ]);
+  });
+});

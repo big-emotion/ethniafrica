@@ -11,6 +11,7 @@ export type PageType =
   | "sources"
   | "anecdotes"
   | "names"
+  | "patronymes"
   | "compare"
   | "migrations"
   | "quiz"
@@ -55,6 +56,14 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     sources: "sources",
     anecdotes: "dossiers/anecdotes",
     names: "atlas/appellations",
+    // DEC-038 separates the two objects the corpus calls "name": an
+    // *appellation* is how a people is called (an ethnonym, an access point
+    // onto the people fiche), a *patronyme* is the naming system a person is
+    // named under — an entity with its own fiche. They shared the
+    // `atlas/appellations` prefix, so the second was addressed as a detail of
+    // the first while nothing ever linked the two, and the public label
+    // "Nom" appeared in no URL. `atlas/noms` is that label.
+    patronymes: "atlas/noms",
     compare: "comparer",
     migrations: "dossiers/migrations",
     quiz: "jeux/quiz",
@@ -152,7 +161,7 @@ export const getPeopleRoute = (language: Language, id: string): string =>
 
 // @req REQ-133
 export const getPatronymeRoute = (language: Language, id: string): string =>
-  `${getLocalizedRoute(language, "names")}/${id}`;
+  `${getLocalizedRoute(language, "patronymes")}/${id}`;
 
 // @req REQ-136
 export const getLanguageRoute = (language: Language, id: string): string =>

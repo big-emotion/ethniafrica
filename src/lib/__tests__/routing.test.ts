@@ -46,7 +46,7 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   // @req REQ-133
   it("builds a localized patronyme fiche href", () => {
     expect(getPatronymeRoute("fr", "PAT_KEITA")).toBe(
-      "/fr/atlas/appellations/PAT_KEITA"
+      "/fr/atlas/noms/PAT_KEITA"
     );
   });
 

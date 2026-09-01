@@ -71,7 +71,7 @@ import {
 import * as peuplesFicheRoute from "../atlas/peuples/[slug]/page";
 import * as paysFicheRoute from "../atlas/pays/[slug]/page";
 import * as famillesFicheRoute from "../atlas/familles/[slug]/page";
-import * as appellationsFicheRoute from "../atlas/appellations/[slug]/page";
+import * as patronymeFicheRoute from "../atlas/noms/[slug]/page";
 
 const FICHE_ROUTES = [
   {
@@ -96,9 +96,9 @@ const FICHE_ROUTES = [
     slug: "FLG_BANTU",
   },
   {
-    segment: "appellations",
-    routeModule: appellationsFicheRoute,
-    sourcePath: "src/app/[lang]/atlas/appellations/[slug]/page.tsx",
+    segment: "noms",
+    routeModule: patronymeFicheRoute,
+    sourcePath: "src/app/[lang]/atlas/noms/[slug]/page.tsx",
     canonical: getPatronymeRoute("fr", "PAT_KEITA"),
     slug: "PAT_KEITA",
   },

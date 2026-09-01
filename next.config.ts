@@ -36,6 +36,19 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // A patronyme fiche used to be addressed as a detail of the appellations
+  // index it was never linked from (DEC-038 separates the two objects; the
+  // routes did not). Permanent, because the old path was the canonical URL
+  // `ficheCanonical` emitted, so it is what a crawler holds.
+  async redirects() {
+    return [
+      {
+        source: "/:lang/atlas/appellations/:slug",
+        destination: "/:lang/atlas/noms/:slug",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withSentryConfig(nextConfig, {
