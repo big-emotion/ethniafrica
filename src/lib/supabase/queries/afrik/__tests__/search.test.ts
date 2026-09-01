@@ -102,6 +102,40 @@ describe("ftsSearchEntities", () => {
     ]);
   });
 
+  // @req REQ-002
+  it("surfaces a people found only through prose (DEC-028), ranked below a name match", async () => {
+    // "Soundiata" appears only in PPL_MANDINKA's historicalRole prose (weight
+    // D, migration 058); PPL_KEITA carries it as a name (weight A, migration
+    // 043). Migration 044's ranking function is what orders these — this test
+    // only proves the query layer passes the DB order through untouched.
+    peoplesPayload = {
+      total: 2,
+      rows: [
+        peopleRow("PPL_KEITA", "Soundiata Keïta", {
+          relevance: 0.9,
+          exactMatch: true,
+        }),
+        peopleRow("PPL_MANDINKA", "Mandinka", {
+          relevance: 0.12,
+          exactMatch: false,
+          snippet: "fondateur de l'empire du [[Soundiata]]",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Soundiata",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.peoples.map((p) => p.nameMain)).toEqual([
+      "Soundiata Keïta",
+      "Mandinka",
+    ]);
+    expect(result.peoplesTotal).toBe(2);
+  });
+
   // @req REQ-019
   it("calls the ranking function with p_-prefixed named parameters", async () => {
     await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
