@@ -9,6 +9,7 @@ import {
   getPageFromRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
+  getPersonRoute,
   resolveCountryDeepLink,
   resolveFamilyDeepLink,
   resolvePeopleDeepLink,
@@ -38,6 +39,13 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   it("builds a localized people links (liens) fiche href", () => {
     expect(getPeopleLinksRoute("fr", "PPL_YORUBA")).toBe(
       "/fr/atlas/peuples/PPL_YORUBA/liens"
+    );
+  });
+
+  // @req REQ-126
+  it("builds a localized person fiche href", () => {
+    expect(getPersonRoute("fr", "PER_DELAFOSSE")).toBe(
+      "/fr/atlas/personnes/PER_DELAFOSSE"
     );
   });
 });
