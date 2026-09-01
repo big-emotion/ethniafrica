@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
+
+import { loadCountryFiche } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getCountryRoute } from "@/lib/routing";
@@ -25,10 +27,7 @@ import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts"
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
-import {
-  getCountryAtlasIndex,
-  getCountryById,
-} from "@/api/v2/services/countryService";
+import { getCountryAtlasIndex } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
@@ -66,6 +65,21 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
+
+  // The existence check lives here, not in the page body, because `loading.tsx`
+  // makes this segment a Suspense boundary: the shell — and a `200` — is
+  // flushed before the body runs, so the page's own `notFound()` arrives too
+  // late to change the status. `generateMetadata` runs before the flush.
+  // `loadCountryFiche` is request-cached, so the page's own load below reuses
+  // this one rather than querying twice.
+  const parsed = parseVersionedSlug(decodeURIComponent(slug));
+  // Only the `live` mode is settled here. `latest` redirects and `pinned` reads
+  // a revision snapshot, and both already resolve before the body streams
+  // anything of their own.
+  if (parsed?.mode === "live" && !(await loadCountryFiche(parsed.slug))) {
+    notFound();
+  }
+
   return ficheCanonical("country", lang as Language, slug);
 }
 
@@ -205,7 +219,7 @@ export default async function PaysSlugPage({
 
   const [country, sourceFlags, countryAtlasIndex, peopleCounts] =
     await Promise.all([
-      getCountryById(parsed.slug),
+      loadCountryFiche(parsed.slug),
       getActiveSourceFlags("country", parsed.slug),
       getCountryAtlasIndex(),
       // The globe can now be aimed at any country, so the panel has to answer

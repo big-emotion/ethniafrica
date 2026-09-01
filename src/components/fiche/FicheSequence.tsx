@@ -32,6 +32,19 @@ import { cn } from "@/lib/utils";
  * for imposed exonyms. A fiche scoped to terre would paint that marker in the
  * page's own accent and it would stop reading as a marker at all.
  *
+ * `language` (ETNI-1507) reads under its family's pervenche hue rather than
+ * opening a fifth accent: the four categorical accents are CVD-validated as
+ * a set and terre is off-limits for a fiche scope for the reason above, so
+ * introducing a fifth hue is a brand-charter call this ticket did not make.
+ * A language sits directly under its family in the AFRIK hierarchy, which
+ * makes reusing the hue a defensible placeholder rather than an arbitrary
+ * one — revisit with the art-director skill once a fifth accent is
+ * actually designed. It is a distinct class, `afh-accent-language`, rather
+ * than a literal alias of `afh-accent-perv`: two entity types resolving to
+ * the same selector would make "no foreign accent on this page" (asserted
+ * in fiche-vivante.test.tsx) unable to tell a fiche's own root from
+ * another entity's, since both would match the identical class.
+ *
  * `name` (REQ-133) reuses `ocre` rather than allocating a fourth accent: a
  * patronyme is a naming fact about a people, the closest kinship of the three
  * existing scopes, and the atlas charter's accent table is closed at three
@@ -43,6 +56,7 @@ export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
   people: "afh-accent-ocre",
   country: "afh-accent-teal",
   "language-family": "afh-accent-perv",
+  language: "afh-accent-language",
   name: "afh-accent-ocre",
 };
 

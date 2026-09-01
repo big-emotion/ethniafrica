@@ -25,8 +25,12 @@
  *       `relevance` is comparable within an array and not between arrays;
  *       order across kinds on `exactMatch`.
  *       Each entity kind is returned in its own array — there is no flat
- *       `results` list. Rate-limited per AR11 (IP: 60 RPM, public key: 600
- *       RPM, partner key: 6 000 RPM).
+ *       `results` list. Named persons (migration 065, REQ-126) and names
+ *       (patronymes — migration 066, REQ-135) rank the same way, with
+ *       patronymes additionally folding in a dmetaphone phonetic match so a
+ *       misspelling like "Keyta" still reaches the canonical "Keïta". Both
+ *       fall back to pg_trgm typo tolerance ahead of a no-match. Rate-limited
+ *       per AR11 (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []

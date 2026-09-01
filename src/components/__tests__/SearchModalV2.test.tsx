@@ -113,6 +113,8 @@ describe("SearchModalV2", () => {
     expect(screen.getByText("Familles")).toBeInTheDocument();
     expect(screen.getByText("Peuples")).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Pays" })).toBeInTheDocument();
+    // @req REQ-126
+    expect(screen.getByRole("tab", { name: "Personnes" })).toBeInTheDocument();
   });
 
   it("should show instruction text when search query is empty", () => {
@@ -143,7 +145,7 @@ describe("SearchModalV2", () => {
 
     // Verify all tabs are rendered
     const tabs = screen.getAllByRole("tab");
-    expect(tabs).toHaveLength(4); // Tout, Familles, Peuples, Pays
+    expect(tabs).toHaveLength(5); // Tout, Familles, Peuples, Pays, Personnes
   });
 
   it("should not render when closed", () => {
@@ -158,7 +160,7 @@ describe("SearchModalV2", () => {
     // @req REQ-091
     it("each type filter is a rounded-full pill", () => {
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
+      for (const name of ["Tout", "Familles", "Peuples", "Pays", "Personnes"]) {
         expect(screen.getByRole("tab", { name }).className).toMatch(
           /rounded-full/
         );
@@ -168,7 +170,7 @@ describe("SearchModalV2", () => {
     // @req REQ-091
     it("each type filter exposes a >=44px hit area (charter §5)", () => {
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
+      for (const name of ["Tout", "Familles", "Peuples", "Pays", "Personnes"]) {
         expect(screen.getByRole("tab", { name }).className).toMatch(/min-h-11/);
       }
     });

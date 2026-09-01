@@ -16,6 +16,7 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   countries: "Pays",
   families: "Familles",
   peoples: "Peuples",
+  languages: "Langues",
   search: "Recherche",
   doctrine: "Doctrine",
   about: "À propos",

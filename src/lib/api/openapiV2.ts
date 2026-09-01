@@ -528,7 +528,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
+            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
@@ -554,6 +554,12 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 065): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
             },
+            patronymes: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PatronymeSearchResultV2" },
+              description:
+                "Matching names (REQ-135), ranked by afrik_search_patronymes (migration 066): exact name match, then a prefix/accent-insensitive lexical match, then a dmetaphone phonetic match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch and a snippet.",
+            },
             peoplesTotal: {
               type: "integer",
               description:
@@ -575,10 +581,15 @@ const options: swaggerJsdoc.Options = {
               description: "Named persons matching corpus-wide",
               example: 0,
             },
+            patronymesTotal: {
+              type: "integer",
+              description: "Names (patronymes) matching corpus-wide",
+              example: 0,
+            },
             total: {
               type: "integer",
               description:
-                "Sum of the four corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+                "Sum of the five corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
             },
           },
@@ -587,10 +598,12 @@ const options: swaggerJsdoc.Options = {
             "countries",
             "families",
             "persons",
+            "patronymes",
             "peoplesTotal",
             "countriesTotal",
             "familiesTotal",
             "personsTotal",
+            "patronymesTotal",
             "total",
           ],
         },
@@ -868,6 +881,57 @@ const options: swaggerJsdoc.Options = {
             "exactMatch",
             "snippet",
             "peopleLinks",
+          ],
+        },
+        PatronymeSearchResultV2: {
+          type: "object",
+          description:
+            "A name (patronyme) search hit (REQ-135), ranked by afrik_search_patronymes (migration 066): exact name match, then a prefix/accent-insensitive lexical match, then a dmetaphone phonetic match (bridging spellings like Keyta/Keïta), then a pg_trgm typo-tolerance fallback.",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant PATR_*",
+              example: "PATR_KEITA",
+            },
+            nameMain: {
+              type: "string",
+              example: "Keïta",
+            },
+            nameSystem: {
+              type: "string",
+              description: "DEC-039's naming-system discriminant.",
+              example: "patronymic",
+            },
+            casteOrSocialFunction: {
+              type: ["string", "null"],
+            },
+            content: {
+              type: "object",
+              description: "Evolutionary JSONB content, forwarded opaquely.",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              example: false,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over nameMain; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: [
+            "id",
+            "nameMain",
+            "nameSystem",
+            "casteOrSocialFunction",
+            "content",
+            "relevance",
+            "exactMatch",
+            "snippet",
           ],
         },
         LanguageFamilyV2: {

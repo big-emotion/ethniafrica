@@ -209,6 +209,20 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **REQ-135 (ETNI-1457).** `066` gives the name entity (`afrik_patronymes`, `053`) the search
+> apparatus every other entity already has, plus one mechanism none of them do: a
+> `name_phonetic` (fuzzystrmatch `dmetaphone()`) column and index, so a phonetic transcription
+> ("Keyta") reaches a canonically spelled name ("Keïta") that neither an accent fold nor a
+> trigram overlap would bridge. It also extends `public.afrik_unaccent` in place to fold
+> apostrophes as well as accents — a shared helper, not a `afrik_patronymes`-only fix — and adds
+> a `name_main`/`name_unaccent_vector`/`search_vector` trio and a trigram index following the
+> `afrik_search_persons` (`065`) shape exactly. Files `064` and `065` are omitted from this table
+> (added after the last full read, same as `050`); `066` is the next free version on `recette`.
+> Because the apostrophe fold only affects a `name_unaccent_vector` on the next write of an
+> existing row, `afrik_peoples`/`afrik_countries`/`persons` do not retroactively pick it up until
+> their next full corpus reload — no acceptance criterion of this ticket needs them to sooner.
 
 > **ETNI-1411 (DEC-034).** `063` is DEC-034's second mechanism: pg_trgm plus a trigram GIN index
 > on the accent-folded `afrik_peoples.name_main`, and a fallback tier inside
