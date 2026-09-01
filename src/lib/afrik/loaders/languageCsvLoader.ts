@@ -13,7 +13,9 @@
 import { parse } from "csv-parse/sync";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { loadLanguageFiches } from "@/lib/afrik/loaders/languageFicheLoader";
 import type { People } from "@/types/afrik";
+import type { SourceTier } from "@/types/sources";
 
 const CSV_PATH = join(
   process.cwd(),
@@ -36,8 +38,8 @@ interface LanguageCsvRow {
 
 export interface LanguageSource {
   title: string;
-  url: string;
-  tier: "official";
+  url: string | null;
+  tier: SourceTier;
   notes?: string;
 }
 
@@ -46,11 +48,23 @@ export type LanguageNameProvenance = "sourced" | "derived";
 export interface LanguageRecord {
   id: string;
   name: string;
+  nameFr?: string;
   familyId?: string;
   nameProvenance: LanguageNameProvenance;
-  glottocode?: string;
+  glottocode?: string | null;
   source?: LanguageSource;
+  sources?: LanguageSource[];
   spellingAliases?: string[]; // Alternate spellings of the same name (DEC-034)
+  nameEn?: string;
+  alternateNames?: string[];
+  peoples?: Array<{ name: string; peopleId?: string }>;
+  vehicularRole?: string | null;
+  dialects?: string[];
+  vitalityStatus?: {
+    status: string;
+    scale: string;
+    asOf: number;
+  } | null;
 }
 
 /** The CSV's `source_tier=1` is the only value the corpus declares today; anything else is not the official tier the corpus asserts. */
@@ -102,9 +116,8 @@ function readableName(mainLanguage: string | undefined): string | null {
 
 /**
  * The languages known only because a people fiche declares their ISO 639-3
- * code — every such code, minus the ones the CSV already carries. The CSV
- * record wins on any overlap, so this only ever adds languages the corpus
- * has no other trace of.
+ * code — every such code, minus the ones a sourced CSV row or language fiche
+ * already carries. This only adds languages the sourced corpus does not name.
  */
 // @req REQ-136
 export function deriveLanguagesFromPeoples(
@@ -133,16 +146,31 @@ export function deriveLanguagesFromPeoples(
 }
 
 /**
- * The union of the CSV's 71 sourced languages and the derived-only languages
- * the people corpus declares — the corpus's full declared language set.
+ * The union of the CSV, strict language fiches, and people-declared languages.
+ * A fiche replaces an overlapping record because it is the richer source; the
+ * ISO-keyed map keeps that precedence idempotent and duplicate-free.
  */
 // @req REQ-136
 export function loadAllLanguages(
   peoples: People[],
-  csvPath: string = CSV_PATH
+  csvPath: string = CSV_PATH,
+  fichesPath?: string
 ): LanguageRecord[] {
   const csvLanguages = loadLanguagesFromCsv(csvPath);
-  const knownCodes = new Set(csvLanguages.map((language) => language.id));
+  const ficheLanguages = loadLanguageFiches(fichesPath);
+  const languagesById = new Map(
+    csvLanguages.map((language) => [language.id, language])
+  );
+
+  for (const language of ficheLanguages) {
+    languagesById.set(language.id, language);
+  }
+
+  const knownCodes = new Set(languagesById.keys());
   const derivedLanguages = deriveLanguagesFromPeoples(peoples, knownCodes);
-  return [...csvLanguages, ...derivedLanguages];
+  for (const language of derivedLanguages) {
+    languagesById.set(language.id, language);
+  }
+
+  return [...languagesById.values()];
 }

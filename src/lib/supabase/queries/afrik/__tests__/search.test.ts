@@ -210,6 +210,57 @@ describe("ftsSearchEntities", () => {
     expect(result.peoplesTotal).toBe(1);
   });
 
+  // @req REQ-002
+  it("surfaces a people whose fiche differs from the query by a single-letter typo (DEC-034 trigram)", async () => {
+    // PPL_WOLOF's name never lexically matches "Wolog" — no alias declares
+    // it either. Migration 063's pg_trgm fallback in afrik_search_peoples is
+    // what matches and ranks this row below any lexical/exact match
+    // (lexical_match tier); this test only proves the query layer passes a
+    // trigram-only-matched row through untouched, exactly as it already does
+    // for a name, exonym or alias match.
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_WOLOF", "Wolof", {
+          relevance: 0.32,
+          exactMatch: false,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Wolog",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.peoples.map((p) => p.nameMain)).toEqual(["Wolof"]);
+    expect(result.peoplesTotal).toBe(1);
+  });
+
+  // @req REQ-002
+  it.each(["gour", "bt"])(
+    "does not conjure a match for %s through the trigram mechanism (DEC-034 non-goal)",
+    async (query) => {
+      // Migration 063's ranking rule deliberately excludes short strings
+      // ("gour", too short for reliable trigrams) and abbreviations ("bt")
+      // from its similarity threshold — those stay the alias mechanism's
+      // job (migration 060, ETNI-1408). The SQL function returns an empty
+      // payload for these queries; this test proves the query layer reports
+      // that emptiness rather than inventing a result.
+      peoplesPayload = { total: 0, rows: [] };
+
+      const result = await ftsSearchEntities({
+        q: query,
+        limit: 20,
+        offset: 0,
+      });
+
+      expect(result.peoples).toEqual([]);
+      expect(result.peoplesTotal).toBe(0);
+    }
+  );
+
   // @req REQ-019
   it("calls the ranking function with p_-prefixed named parameters", async () => {
     await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });

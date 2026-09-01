@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "lin",
+  "isoCode639_3": "lin",
+  "glottocode": "ling1263",
+  "nameFr": "Lingala",
+  "nameEn": "Kinshasa Lingala",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/ling1263",
+        "tier": "official",
+        "notes": "Glottolog name: Kinshasa Lingala; classification includes Narrow Bantu."
+      }
+    ]
+  }
+}

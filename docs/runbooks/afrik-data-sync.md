@@ -128,7 +128,7 @@ All three are applied by a human, never auto-applied. Their current state per pr
 Preview reads the target and reports missing or stale records without writing anything:
 
 ```bash
-npx tsx scripts/migrateAfrikToDatabase.ts --target=<recette|production>
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=<recette|production>
 ```
 
 Review the reported drift before approving apply mode.
@@ -150,7 +150,7 @@ ls dataset/source/afrik/noms/*.json | wc -l         # expect 1 — but see below
 Only after the preview and the snapshot have been reviewed:
 
 ```bash
-npx tsx scripts/migrateAfrikToDatabase.ts --target=<recette|production> --apply
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=<recette|production> --apply
 ```
 
 A successful run has no insertion errors and reports `hasDrift: false` in the post-sync

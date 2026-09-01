@@ -30,12 +30,10 @@ export interface FamilyTreeSkeletonFamily {
 }
 
 /**
- * Which source produced the branches. `afrik_languages` is empty in every
- * deployed database — no `langues/` corpus exists and the migration script
- * never writes that table — so the branches are normally reconstructed from
- * what the people fiches declare. The atlas charter §4 requires the fiche to
- * say which of the two it is showing rather than pass a derivation off as a
- * declaration.
+ * Which source produced the branches. Loaded language records are preferred;
+ * when a family has none, the branches are reconstructed from what its people
+ * fiches declare. The atlas charter §4 requires the fiche to say which of the
+ * two it is showing rather than pass a derivation off as a declaration.
  */
 export type FamilyBranchProvenance = "language-corpus" | "people-fiches";
 

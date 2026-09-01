@@ -44,6 +44,27 @@ function errorMessage(error: unknown): string {
   return "unknown error";
 }
 
+function persistedContent(language: LanguageRecord): Record<string, unknown> {
+  return {
+    nameProvenance: language.nameProvenance,
+    ...(language.glottocode === undefined
+      ? {}
+      : { glottocode: language.glottocode }),
+    ...(language.nameEn === undefined ? {} : { nameEn: language.nameEn }),
+    ...(language.alternateNames === undefined
+      ? {}
+      : { alternateNames: language.alternateNames }),
+    ...(language.peoples === undefined ? {} : { peoples: language.peoples }),
+    ...(language.vehicularRole === undefined
+      ? {}
+      : { vehicularRole: language.vehicularRole }),
+    ...(language.dialects === undefined ? {} : { dialects: language.dialects }),
+    ...(language.vitalityStatus === undefined
+      ? {}
+      : { vitalityStatus: language.vitalityStatus }),
+  };
+}
+
 /**
  * Upserts every language into `afrik_languages` (keyed on its ISO 639-3 id,
  * so a second run updates rather than duplicates), then writes the sources →
@@ -64,7 +85,7 @@ export async function loadLanguages(
         id: language.id,
         name: language.name,
         family_id: language.familyId ?? null,
-        content: { nameProvenance: language.nameProvenance },
+        content: persistedContent(language),
         spelling_aliases: language.spellingAliases ?? [],
         updated_at: new Date().toISOString(),
       },
@@ -87,14 +108,16 @@ export async function loadLanguages(
         (report.perFamily[language.familyId] ?? 0) + 1;
     }
 
-    if (language.nameProvenance === "sourced" && language.source) {
+    const sources =
+      language.sources ?? (language.source ? [language.source] : []);
+    if (language.nameProvenance === "sourced" && sources.length > 0) {
       await writeFicheProvenance(
         supabase,
         {
           entityType: "language",
           entityId: language.id,
           snapshot: language,
-          rawSources: [language.source],
+          rawSources: sources,
           targets: [{ fieldPath: "name", statement: language.name }],
         },
         provenanceReport

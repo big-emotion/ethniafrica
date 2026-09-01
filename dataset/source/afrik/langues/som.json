@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "som",
+  "isoCode639_3": "som",
+  "glottocode": "soma1255",
+  "nameFr": "Somali",
+  "nameEn": "Somali",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_COUCHITIQUE",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/soma1255",
+        "tier": "official",
+        "notes": "Glottolog name: Somali; classification includes Cushitic."
+      }
+    ]
+  }
+}

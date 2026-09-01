@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { loadLanguages } from "../languageProvenanceLoader";
 import type { LanguageRecord } from "../languageCsvLoader";
+import type { AdminClient } from "../provenanceWriter";
 
 vi.mock("@/lib/api/logger", () => ({
   logger: { error: vi.fn(), info: vi.fn(), warn: vi.fn(), debug: vi.fn() },
@@ -138,7 +139,7 @@ function createSupabaseDouble() {
 }
 
 const asClient = (double: ReturnType<typeof createSupabaseDouble>) =>
-  double.client as any;
+  double.client as unknown as AdminClient;
 
 describe("loadLanguages", () => {
   // AC: each CSV row's family and official-tier Glottolog source is retrievable via the provenance path.
@@ -161,6 +162,76 @@ describe("loadLanguages", () => {
       entity_id: "yor",
       source_ids: [double.sources[0].id],
     });
+  });
+
+  // AC: an enriched fiche persists all public content and every explicit source.
+  // @req REQ-136
+  it("persists enriched fiche content, aliases, and all source tiers", async () => {
+    const double = createSupabaseDouble();
+
+    await loadLanguages(asClient(double), [
+      sourced({
+        nameFr: "Yoruba",
+        nameEn: "Yoruba",
+        alternateNames: ["Yariba", "Aku"],
+        spellingAliases: ["Yorouba"],
+        peoples: [{ name: "Yoruba", peopleId: "PPL_YORUBA" }],
+        vehicularRole: "regional_lingua_franca",
+        dialects: ["Oyo", "Ijebu"],
+        vitalityStatus: {
+          status: "Institutional",
+          scale: "EGIDS (Ethnologue)",
+          asOf: 2026,
+        },
+        source: undefined,
+        sources: [
+          {
+            title: "Official registry",
+            url: "https://example.org/official",
+            tier: "official",
+          },
+          {
+            title: "Academic reference",
+            url: "https://example.org/reference",
+            tier: "referenced",
+          },
+          {
+            title: "Pending verification",
+            url: null,
+            tier: "unverified",
+          },
+        ],
+      }),
+    ]);
+
+    expect(double.languages[0]).toMatchObject({
+      id: "yor",
+      name: "Yoruba",
+      family_id: "FLG_BENOUECONGO",
+      spelling_aliases: ["Yorouba"],
+      content: {
+        nameProvenance: "sourced",
+        glottocode: "yoru1245",
+        nameEn: "Yoruba",
+        alternateNames: ["Yariba", "Aku"],
+        peoples: [{ name: "Yoruba", peopleId: "PPL_YORUBA" }],
+        vehicularRole: "regional_lingua_franca",
+        dialects: ["Oyo", "Ijebu"],
+        vitalityStatus: {
+          status: "Institutional",
+          scale: "EGIDS (Ethnologue)",
+          asOf: 2026,
+        },
+      },
+    });
+    expect(double.sources.map(({ title, tier }) => ({ title, tier }))).toEqual([
+      { title: "Official registry", tier: "official" },
+      { title: "Academic reference", tier: "referenced" },
+      { title: "Pending verification", tier: "unverified" },
+    ]);
+    expect(double.assertions[0]?.source_ids).toEqual(
+      double.sources.map(({ id }) => id)
+    );
   });
 
   // AC: a derived-only language is marked derived and carries no source.
