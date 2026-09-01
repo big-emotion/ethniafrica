@@ -11,6 +11,16 @@ import { LoadingState } from "@/components/ui/LoadingState";
 import ApiDocsLayout from "@/app/docs/api/layout";
 import { EmptyState } from "@/components/ui/EmptyState";
 
+vi.mock("@/components/layout/PageLayout", () => ({
+  PageLayout: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="global-page-layout" className="gradient-earth">
+      <header data-testid="site-header" />
+      {children}
+      <footer data-testid="site-footer" />
+    </div>
+  ),
+}));
+
 vi.mock("next/navigation", () => ({
   useParams: () => ({ lang: "fr" }),
 }));
@@ -232,7 +242,7 @@ describe("Loading state (LoadingState — used as a Suspense fallback)", () => {
 
 describe("Developer portal shell (/docs/api)", () => {
   // @req REQ-099
-  it("wraps children in token-only parchment chrome", () => {
+  it("keeps its parchment surface inside the global site shell", () => {
     const { container } = render(
       <ApiDocsLayout>
         <div data-testid="child">content</div>
@@ -242,6 +252,8 @@ describe("Developer portal shell (/docs/api)", () => {
     expect(shell).toBeTruthy();
     expect(shell!.className).not.toMatch(/gradient-earth/);
     expect(shell!.className).toMatch(/bg-afh-bg\b/);
+    expect(screen.getByTestId("site-header")).toBeTruthy();
+    expect(screen.getByTestId("site-footer")).toBeTruthy();
     expect(screen.getByTestId("child")).toBeTruthy();
   });
 
