@@ -204,6 +204,19 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `052_afrik_search_prefix_unaccent.sql`        | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `054_afrik_people_languages.sql`              | pending — human-applied via `supabase db push`, recette first | pending — human-applied via `supabase db push`, second |
 | `056_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `058_afrik_people_prose_search_vector.sql`    | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **ETNI-1402 (DEC-028).** `058` widens `afrik_peoples.search_vector` — weight D now also
+> covers `content->origins`, `->organization`, `->ethnicities`, `->culture` and
+> `->historicalRole`, on top of the `content->appellations` weighting migration `043` already
+> set (A on `name_main`/`selfAppellation`, B on `exonyms`, D on the rest of `appellations`).
+> This is position 3 of the DEC-028 migration-queue program, after `056` (ETNI-1400); per the
+> cross-cutting migration-queue rule it must not merge concurrently with any other migration in
+> the program. Rollout is two-step: recette applies automatically when this PR merges into
+> `recette`; production is manual, by hand. Until production carries `058`, the extra prose
+> recall (a term that appears only in one of the five new sections, e.g. a historical figure
+> named only in `historicalRole`) is absent on whichever project has not yet been migrated —
+> matching behaviour is unchanged there, only recall widens once applied.
 
 > **ETNI-1400 (DEC-028).** `056` adds `search_vector` to `afrik_language_families` —
 > weight A on `name_fr`/`name_en`, weight D on every string inside
