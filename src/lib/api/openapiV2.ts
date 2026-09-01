@@ -528,7 +528,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier. Order across kinds on `exactMatch`, which means the same thing everywhere.",
+            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
@@ -548,6 +548,12 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Matching language families, name-matched rather than FTS-ranked (no tsvector column on the table): accent-insensitive substring match, tiered exact > prefix > substring (REQ-129).",
             },
+            persons: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PersonSearchResultV2" },
+              description:
+                "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 065): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
+            },
             peoplesTotal: {
               type: "integer",
               description:
@@ -564,10 +570,15 @@ const options: swaggerJsdoc.Options = {
               description: "Language families matching corpus-wide",
               example: 1,
             },
+            personsTotal: {
+              type: "integer",
+              description: "Named persons matching corpus-wide",
+              example: 0,
+            },
             total: {
               type: "integer",
               description:
-                "Sum of the three corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+                "Sum of the four corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
             },
           },
@@ -575,9 +586,11 @@ const options: swaggerJsdoc.Options = {
             "peoples",
             "countries",
             "families",
+            "persons",
             "peoplesTotal",
             "countriesTotal",
             "familiesTotal",
+            "personsTotal",
             "total",
           ],
         },
@@ -790,6 +803,72 @@ const options: swaggerJsdoc.Options = {
               description: "Contenu évolutif en JSONB",
             },
           },
+        },
+        PersonPeopleLinkV2: {
+          type: "object",
+          description:
+            "A person's typed link to a people (migration 057, REQ-126): membership (belongs to the people) or observation (studied the people — e.g. an ethnographer). Never inferred — always the value the fiche declares.",
+          properties: {
+            peopleId: {
+              type: "string",
+              description: "Identifiant PPL_*",
+              example: "PPL_BAMBARA",
+            },
+            relationLabel: {
+              type: "string",
+              enum: ["membership", "observation"],
+              example: "observation",
+            },
+          },
+          required: ["peopleId", "relationLabel"],
+        },
+        PersonSearchResultV2: {
+          type: "object",
+          description:
+            "A named person search hit (ARCH-018, REQ-126) — an ethnographer, author, informant, translator, historian, etc.",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant PER_*",
+              example: "PER_MODIBO_KEITA",
+            },
+            fullName: {
+              type: "string",
+              example: "Modibo Keïta",
+            },
+            roleCategory: {
+              type: "string",
+              example: "ethnographer",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              example: false,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over fullName and roleCategory; matched terms are wrapped in [[ ]].",
+            },
+            peopleLinks: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PersonPeopleLinkV2" },
+              description:
+                "This person's typed links to studied/belonged-to peoples — never collapsed into membership.",
+            },
+          },
+          required: [
+            "id",
+            "fullName",
+            "roleCategory",
+            "relevance",
+            "exactMatch",
+            "snippet",
+            "peopleLinks",
+          ],
         },
         LanguageFamilyV2: {
           type: "object",

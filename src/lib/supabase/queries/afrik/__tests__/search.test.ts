@@ -65,6 +65,22 @@ function countryRow(
   };
 }
 
+function personRow(
+  id: string,
+  fullName: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    fullName,
+    roleCategory: "ethnographer",
+    relevance: 0.5,
+    exactMatch: false,
+    snippet: null,
+    ...over,
+  };
+}
+
 describe("ftsSearchEntities", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockSupabase: any;
@@ -72,22 +88,43 @@ describe("ftsSearchEntities", () => {
   let rpc: any;
   let peoplesPayload: { total: number; rows: unknown[] };
   let countriesPayload: { total: number; rows: unknown[] };
+  let personsPayload: { total: number; rows: unknown[] };
+  let personPeoplesRows: Record<string, unknown>[];
 
   beforeEach(() => {
     vi.clearAllMocks();
 
     peoplesPayload = { total: 0, rows: [] };
     countriesPayload = { total: 0, rows: [] };
+    personsPayload = { total: 0, rows: [] };
+    personPeoplesRows = [];
 
     rpc = vi.fn((fn: string) => {
       if (fn === "afrik_search_peoples")
         return Promise.resolve({ data: peoplesPayload, error: null });
       if (fn === "afrik_search_countries")
         return Promise.resolve({ data: countriesPayload, error: null });
+      if (fn === "afrik_search_persons")
+        return Promise.resolve({ data: personsPayload, error: null });
       throw new Error(`unexpected rpc ${fn}`);
     });
 
-    mockSupabase = { rpc };
+    mockSupabase = {
+      rpc,
+      from: vi.fn((table: string) => {
+        if (table === "person_peoples") {
+          return {
+            select: vi.fn(() => ({
+              in: vi.fn(async () => ({
+                data: personPeoplesRows,
+                error: null,
+              })),
+            })),
+          };
+        }
+        throw new Error(`unexpected table ${table}`);
+      }),
+    };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -545,5 +582,100 @@ describe("ftsSearchEntities", () => {
     await expect(
       ftsSearchEntities({ q: "bété", limit: 20, offset: 0 })
     ).rejects.toMatchObject({ message: "boom" });
+  });
+
+  // REQ-126 AC1: a person published after human review, once indexed, is
+  // findable via the unified search alongside the other natures.
+  // @req REQ-126
+  it("surfaces a published person whose name matches the query, ranked alongside other natures", async () => {
+    personsPayload = {
+      total: 1,
+      rows: [
+        personRow("PER_KEITA", "Modibo Keïta", {
+          exactMatch: true,
+          relevance: 0.9,
+        }),
+      ],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Modibo Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.persons.map((p) => p.fullName)).toEqual(["Modibo Keïta"]);
+    expect(result.personsTotal).toBe(1);
+    expect(result.peoples.map((p) => p.nameMain)).toEqual(["Bambara"]);
+    expect(result.total).toBe(2);
+  });
+
+  // REQ-126 AC1 continued: the RPC call, not a JS re-sort, is the ranking
+  // authority — this only proves the query layer passes p_q/p_limit/p_offset
+  // down and the RPC name is correct.
+  // @req REQ-126
+  it("calls afrik_search_persons with p_-prefixed named parameters", async () => {
+    await ftsSearchEntities({ q: "keita", limit: 20, offset: 0 });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_persons",
+      expect.objectContaining({ p_q: "keita", p_limit: 20, p_offset: 0 })
+    );
+  });
+
+  // REQ-126 AC2: a person whose role is that of an observer of a people
+  // (e.g. an ethnographer), linked via the inverse relation, carries that
+  // link as its typed relation label — never as membership in the people.
+  // @req REQ-126
+  it("carries an ethnographer's link to a studied people as observation, never as membership", async () => {
+    personsPayload = {
+      total: 1,
+      rows: [personRow("PER_DELAFOSSE", "Maurice Delafosse")],
+    };
+    personPeoplesRows = [
+      {
+        person_id: "PER_DELAFOSSE",
+        people_id: "PPL_BAMBARA",
+        relation_label: "observation",
+      },
+    ];
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Delafosse",
+      limit: 20,
+      offset: 0,
+    });
+
+    const [person] = result.persons;
+    expect(person.peopleLinks).toEqual([
+      { peopleId: "PPL_BAMBARA", relationLabel: "observation" },
+    ]);
+    expect(person.peopleLinks[0].relationLabel).not.toBe("membership");
+    // The observed people's own search result carries no trace of the
+    // person — the relation is never collapsed into that people's
+    // membership, it stays scoped to the person's own array.
+    expect(result.peoples).toHaveLength(1);
+    expect(result.peoples[0].id).toBe("PPL_BAMBARA");
+  });
+
+  // @req REQ-126
+  it("reports zero persons and an empty array without querying person_peoples when nothing matches", async () => {
+    const result = await ftsSearchEntities({
+      q: "nonexistent",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.persons).toEqual([]);
+    expect(result.personsTotal).toBe(0);
+    expect(mockSupabase.from).not.toHaveBeenCalled();
   });
 });
