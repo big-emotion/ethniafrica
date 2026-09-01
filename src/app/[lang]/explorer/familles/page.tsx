@@ -13,6 +13,7 @@ import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
+import { normalizeString } from "@/lib/normalize";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
@@ -52,6 +53,7 @@ const FAMILIES_PAGE_SIZES = [FAMILIES_PER_PAGE, 24] as const;
 
 const COUNTRY_PARAM = "pays";
 const PAGE_PARAM = "page";
+const SEARCH_PARAM = "q";
 const SIZE_PARAM = PAGE_SIZE_PARAM;
 
 interface PageParams {
@@ -91,9 +93,21 @@ export default async function FamillesHubPage({
   ]);
 
   const chosenCountry = definedFilter(query[COUNTRY_PARAM]);
-  const selection = chosenCountry
-    ? presence.filter((family) => family.countryIds.includes(chosenCountry))
-    : presence;
+  const chosenSearch = definedFilter(query[SEARCH_PARAM]);
+  const normalizedSearch = normalizeString(chosenSearch)
+    .replace(/\s+/g, " ")
+    .trim();
+  const selection = presence.filter((family) => {
+    const matchesCountry = chosenCountry
+      ? family.countryIds.includes(chosenCountry)
+      : true;
+    const matchesSearch = normalizedSearch
+      ? normalizeString(family.id).includes(normalizedSearch) ||
+        normalizeString(family.nameFr).includes(normalizedSearch)
+      : true;
+
+    return matchesCountry && matchesSearch;
+  });
 
   /**
    * Paged against the roster the page already holds, not a second count query:
@@ -112,7 +126,9 @@ export default async function FamillesHubPage({
     await getLanguageFamilies(
       page,
       pageSize,
-      chosenCountry ? { ids: selection.map((family) => family.id) } : {}
+      chosenCountry || chosenSearch
+        ? { ids: selection.map((family) => family.id) }
+        : {}
     );
 
   const facetRoute = getFacetRoute("fr", "families");
@@ -133,9 +149,10 @@ export default async function FamillesHubPage({
     for (const countryId of family.countryIds) {
       const key = countryId as CountryId;
       countryIndex[key] = [...(countryIndex[key] ?? []), row];
-      narrowing[key] ??= `${facetRoute}?${new URLSearchParams({
-        [COUNTRY_PARAM]: countryId,
-      }).toString()}`;
+      const narrowingQuery = new URLSearchParams();
+      if (chosenSearch) narrowingQuery.set(SEARCH_PARAM, chosenSearch);
+      narrowingQuery.set(COUNTRY_PARAM, countryId);
+      narrowing[key] ??= `${facetRoute}?${narrowingQuery.toString()}`;
     }
   }
 
@@ -150,6 +167,7 @@ export default async function FamillesHubPage({
 
   const pageHref = (target: number, size: number): string => {
     const address = new URLSearchParams();
+    if (chosenSearch) address.set(SEARCH_PARAM, chosenSearch);
     if (chosenCountry) address.set(COUNTRY_PARAM, chosenCountry);
     if (target > 1) address.set(PAGE_PARAM, String(target));
     // The default stays out of the address, so the plainest reading keeps the
@@ -206,6 +224,12 @@ export default async function FamillesHubPage({
         <FacetFilterBar
           action={facetRoute}
           className="mt-6"
+          searchField={{
+            name: SEARCH_PARAM,
+            label: "Rechercher une famille linguistique",
+            placeholder: "Nom ou identifiant de la famille",
+            value: chosenSearch,
+          }}
           // A GET form submits its own controls only, so the size chosen above
           // would be dropped by narrowing to a country without this.
           preservedParams={{
@@ -224,7 +248,10 @@ export default async function FamillesHubPage({
         />
 
         {families.length === 0 ? (
-          <p className="mt-6 text-afh-body text-afh-text-soft">
+          <p
+            data-testid="family-facet-empty"
+            className="mt-6 text-afh-body text-afh-text-soft"
+          >
             Aucune famille linguistique ne répond à cette sélection.
           </p>
         ) : (

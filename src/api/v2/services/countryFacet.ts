@@ -3,6 +3,7 @@ import { unstable_cache } from "next/cache";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryIndex } from "@/api/v2/services/countryService";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { normalizeString } from "@/lib/normalize";
 import { getLanguageFamilyIdsByCountry } from "@/lib/supabase/queries/afrik/countryLanguageFamilies";
 import { getLanguageFamilyLabels } from "@/lib/supabase/queries/afrik/languageFamilyLabels";
 import type { CountryId } from "@/types/afrik";
@@ -38,6 +39,8 @@ export interface CountryFacetFamilyOption {
 export interface CountryFacetFilters {
   /** A family id, or null when the reader set no filter. */
   languageFamilyId: string | null;
+  /** A country name or id, or null when the reader set no search. */
+  search?: string | null;
   sort: CountryFacetSort;
 }
 
@@ -116,12 +119,25 @@ export async function getCountryFacetSelection(
       getLanguageFamilyLabels(),
     ]);
 
+  const normalizedSearch = normalizeString(filters.search)
+    .replace(/\s+/g, " ")
+    .trim();
+
   const rows: CountryFacetRow[] = countries
     .filter((country) => {
-      if (!filters.languageFamilyId) return true;
-      return (familiesByCountry[country.id] ?? []).includes(
-        filters.languageFamilyId
-      );
+      const matchesFamily = filters.languageFamilyId
+        ? (familiesByCountry[country.id] ?? []).includes(
+            filters.languageFamilyId
+          )
+        : true;
+      const matchesSearch = normalizedSearch
+        ? normalizeString(country.id).includes(normalizedSearch) ||
+          normalizeString(countryLabel(country.id, country.nameFr)).includes(
+            normalizedSearch
+          )
+        : true;
+
+      return matchesFamily && matchesSearch;
     })
     .map((country) => ({
       id: country.id as CountryId,

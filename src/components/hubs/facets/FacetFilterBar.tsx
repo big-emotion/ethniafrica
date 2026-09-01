@@ -20,6 +20,15 @@ export interface FacetFilterField {
   value: string | null;
 }
 
+export interface FacetSearchField {
+  /** The query parameter this field submits under. */
+  name: string;
+  label: string;
+  placeholder: string;
+  /** The value currently in the URL, or null when no search is active. */
+  value: string | null;
+}
+
 /** An applied narrowing, and the address that lifts it. */
 export interface FacetActiveFilter {
   label: string;
@@ -39,6 +48,8 @@ export interface FacetAdvancedSlot {
 export interface FacetFilterBarProps {
   /** Where the form submits — the facet's own path, composed through the route helpers. */
   action: string;
+  /** Optional text search, kept visible before the facet selects. */
+  searchField?: FacetSearchField;
   /** The facet's own axis. Always on the line, never folded. */
   primaryField: FacetFilterField;
   /** The narrowings that fold away behind the disclosure. */
@@ -94,6 +105,7 @@ const FIELD_CLASS =
 // @req REQ-114
 export function FacetFilterBar({
   action,
+  searchField,
   primaryField,
   advancedFields = [],
   advancedSlot,
@@ -131,6 +143,21 @@ export function FacetFilterBar({
       ))}
 
       <div className="relative flex flex-wrap items-center gap-2">
+        {searchField && (
+          <div className="basis-full md:min-w-64 md:flex-1 md:basis-auto">
+            <input
+              key={searchField.value ?? ""}
+              id={`facet-filter-${searchField.name}`}
+              type="search"
+              name={searchField.name}
+              defaultValue={searchField.value ?? ""}
+              aria-label={searchField.label}
+              placeholder={searchField.placeholder}
+              className={FIELD_CLASS}
+            />
+          </div>
+        )}
+
         <div className="min-w-40 flex-1">
           <FacetSelect field={primaryField} />
         </div>
