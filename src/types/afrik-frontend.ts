@@ -363,6 +363,10 @@ export interface SearchResult {
   autonym?: string;
   /** Exonymes connus, dans l'ordre de la fiche. */
   exonyms?: string[];
+  /** Number of source entries declared by a people fiche. */
+  sourceCount?: number;
+  /** Clickable source links whose fiche entries provide a title and URL. */
+  externalLinks?: Array<{ title: string; url: string }>;
   /**
    * Identifiant partagé par les fiches d'un même peuple scindé en plusieurs
    * fiches concurrentes (ETNI-1391) — présent uniquement sur un résultat

@@ -145,6 +145,73 @@ describe("mapSearchEnvelope", () => {
     expect(people.confidence).toBe(0.71);
   });
 
+  // @req REQ-124
+  it("counts every people fiche source, including entries without a URL", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_YORUBA",
+            nameMain: "Yoruba",
+            content: {
+              sources: [
+                {
+                  title: "UNESCO — Yoruba language",
+                  url: "https://www.unesco.org/languages-atlas/en/yoruba",
+                },
+                { title: "Printed reference", url: null },
+                {
+                  title: "Ethnologue — Yoruba",
+                  url: "https://www.ethnologue.com/language/yor/",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(people.sourceCount).toBe(3);
+  });
+
+  // @req REQ-124
+  it("keeps only real people source URLs as titled external links", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_YORUBA",
+            nameMain: "Yoruba",
+            content: {
+              sources: [
+                {
+                  title: "UNESCO — Yoruba language",
+                  url: "https://www.unesco.org/languages-atlas/en/yoruba",
+                },
+                { title: "Printed reference", url: null },
+                {
+                  title: "Ethnologue — Yoruba",
+                  url: "https://www.ethnologue.com/language/yor/",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(people.externalLinks).toEqual([
+      {
+        title: "UNESCO — Yoruba language",
+        url: "https://www.unesco.org/languages-atlas/en/yoruba",
+      },
+      {
+        title: "Ethnologue — Yoruba",
+        url: "https://www.ethnologue.com/language/yor/",
+      },
+    ]);
+  });
+
   // @req REQ-002
   it("carries the people-group id and label a split fiche declares (ETNI-1391)", () => {
     const [fulani] = mapSearchEnvelope({
