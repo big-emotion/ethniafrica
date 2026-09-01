@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Dialog,
   DialogContent,
@@ -16,6 +15,11 @@ import { Language } from "@/types/shared";
 import { searchWithLeads } from "@/lib/afrikLoader";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
+import { SearchLensBar } from "@/components/search/SearchLensBar";
+import {
+  EMPTY_SEARCH_LENS_COUNTS,
+  type SearchLensCounts,
+} from "@/lib/search/searchEnvelope";
 import type {
   SearchResult,
   SearchEntityType,
@@ -37,9 +41,13 @@ export const SearchModalV2 = ({
   language,
 }: SearchModalV2Props) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<SearchEntityType | "all">("all");
+  const [activeLens, setActiveLens] = useState<SearchEntityType | "all">("all");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [leads, setLeads] = useState<SearchLead[]>([]);
+  const [counts, setCounts] = useState<SearchLensCounts>({
+    ...EMPTY_SEARCH_LENS_COUNTS,
+  });
+  const [countsReady, setCountsReady] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -47,7 +55,9 @@ export const SearchModalV2 = ({
       setSearchQuery("");
       setResults([]);
       setLeads([]);
-      setActiveTab("all");
+      setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
+      setCountsReady(false);
+      setActiveLens("all");
     }
   }, [open]);
 
@@ -56,23 +66,30 @@ export const SearchModalV2 = ({
       if (!searchQuery.trim() || searchQuery.length < 2) {
         setResults([]);
         setLeads([]);
+        setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
+        setCountsReady(false);
         return;
       }
 
       setLoading(true);
       try {
         const searchFilters: { type?: SearchEntityType } =
-          activeTab !== "all" ? { type: activeTab } : {};
-        const { results: data, leads: nearMisses } = await searchWithLeads(
-          searchQuery,
-          searchFilters
-        );
+          activeLens !== "all" ? { type: activeLens } : {};
+        const {
+          results: data,
+          leads: nearMisses,
+          counts: lensCounts,
+        } = await searchWithLeads(searchQuery, searchFilters);
         setResults(data);
         setLeads(nearMisses);
+        setCounts(lensCounts);
+        setCountsReady(true);
       } catch (error) {
         console.error("Search error:", error);
         setResults([]);
         setLeads([]);
+        setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
+        setCountsReady(false);
       } finally {
         setLoading(false);
       }
@@ -80,20 +97,7 @@ export const SearchModalV2 = ({
 
     const debounce = setTimeout(searchData, 300);
     return () => clearTimeout(debounce);
-  }, [searchQuery, activeTab]);
-
-  const getTabLabels = () => {
-    return {
-      all: "Tout",
-      families: "Familles",
-      languages: "Langues",
-      peoples: "Peuples",
-      countries: "Pays",
-      persons: "Personnes",
-    };
-  };
-
-  const tabLabels = getTabLabels();
+  }, [searchQuery, activeLens]);
 
   const dialogTitle = "Recherche";
 
@@ -138,49 +142,12 @@ export const SearchModalV2 = ({
             />
           </div>
 
-          <Tabs
-            value={activeTab}
-            onValueChange={(v) => setActiveTab(v as SearchEntityType | "all")}
-          >
-            <TabsList className="flex flex-wrap h-auto w-full gap-2 bg-transparent p-0">
-              <TabsTrigger
-                value="all"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.all}
-              </TabsTrigger>
-              <TabsTrigger
-                value="languageFamily"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.families}
-              </TabsTrigger>
-              <TabsTrigger
-                value="language"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.languages}
-              </TabsTrigger>
-              <TabsTrigger
-                value="people"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.peoples}
-              </TabsTrigger>
-              <TabsTrigger
-                value="country"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.countries}
-              </TabsTrigger>
-              <TabsTrigger
-                value="person"
-                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
-              >
-                {tabLabels.persons}
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <SearchLensBar
+            active={activeLens}
+            counts={counts}
+            showCounts={countsReady}
+            onChange={setActiveLens}
+          />
         </div>
 
         <ScrollArea className="flex-1 px-6 pb-6">

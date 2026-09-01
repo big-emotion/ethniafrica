@@ -12,7 +12,11 @@
  * impossible rather than merely fixed.
  */
 
-import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
+import type {
+  SearchEntityType,
+  SearchLead,
+  SearchResult,
+} from "@/types/afrik-frontend";
 import type { PersonPeopleLink } from "@/types/persons";
 
 export interface SearchQueryOptions {
@@ -237,6 +241,52 @@ export function mapSearchLeads(envelope: unknown): SearchLead[] {
       },
     ];
   });
+}
+
+/** Per-type match counts (REQ-124) for the named-lens chips. */
+export type SearchLensCounts = Record<SearchEntityType | "all", number>;
+
+// @req REQ-124
+export const EMPTY_SEARCH_LENS_COUNTS: SearchLensCounts = {
+  all: 0,
+  people: 0,
+  country: 0,
+  languageFamily: 0,
+  language: 0,
+  person: 0,
+};
+
+function numberOrZero(value: unknown): number {
+  return typeof value === "number" && Number.isFinite(value) ? value : 0;
+}
+
+/**
+ * Corpus-wide match counts, one per lens (REQ-124). Read straight off the
+ * totals `shapeSearchData` (handlers/search.ts) already computes. `all` is
+ * the sum of the five lenses shown here, not `data.total` — that field also
+ * folds in `patronymesTotal`, and there is no patronyme lens or result card,
+ * so reading it directly would let "Tout (N)" exceed the sum of the visible
+ * chips whenever a nom matches.
+ */
+// @req REQ-124
+export function mapSearchCounts(envelope: unknown): SearchLensCounts {
+  const data = (envelope as { data?: unknown })?.data;
+  if (!data || Array.isArray(data)) return { ...EMPTY_SEARCH_LENS_COUNTS };
+
+  const row = data as Record<string, unknown>;
+  const people = numberOrZero(row.peoplesTotal);
+  const country = numberOrZero(row.countriesTotal);
+  const languageFamily = numberOrZero(row.familiesTotal);
+  const language = numberOrZero(row.languagesTotal);
+  const person = numberOrZero(row.personsTotal);
+  return {
+    all: people + country + languageFamily + language + person,
+    people,
+    country,
+    languageFamily,
+    language,
+    person,
+  };
 }
 
 /**
