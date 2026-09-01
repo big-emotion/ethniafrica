@@ -206,4 +206,42 @@ describe("loadLanguages", () => {
       FLG_KXA: 1,
     });
   });
+
+  // AC: a record with no spellingAliases loads with an empty array, not undefined or an error.
+  // @req REQ-136
+  it("defaults spelling_aliases to an empty array when the record omits it", async () => {
+    const double = createSupabaseDouble();
+
+    await loadLanguages(asClient(double), [sourced()]);
+
+    expect(double.languages[0]).toMatchObject({ spelling_aliases: [] });
+  });
+
+  // AC: a single declared alias reaches the spelling_aliases column unchanged.
+  // @req REQ-136
+  it("maps a single spelling alias onto spelling_aliases", async () => {
+    const double = createSupabaseDouble();
+
+    await loadLanguages(asClient(double), [
+      sourced({ spellingAliases: ["Yariba"] }),
+    ]);
+
+    expect(double.languages[0]).toMatchObject({
+      spelling_aliases: ["Yariba"],
+    });
+  });
+
+  // AC: multiple declared aliases all reach the spelling_aliases column.
+  // @req REQ-136
+  it("maps multiple spelling aliases onto spelling_aliases", async () => {
+    const double = createSupabaseDouble();
+
+    await loadLanguages(asClient(double), [
+      sourced({ spellingAliases: ["Yariba", "Aku"] }),
+    ]);
+
+    expect(double.languages[0]).toMatchObject({
+      spelling_aliases: ["Yariba", "Aku"],
+    });
+  });
 });

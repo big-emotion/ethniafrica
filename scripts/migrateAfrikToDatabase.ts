@@ -323,6 +323,7 @@ async function upsertPeoples(
           language_family_id: people.languageFamilyId,
           ...(exists ? {} : { classification_status: classificationStatus }),
           content: people.content,
+          spelling_aliases: people.content.appellations?.spellingAliases ?? [],
           updated_at: new Date().toISOString(),
         },
         { onConflict: "id" }
