@@ -96,6 +96,11 @@ export const translations = {
         countries: "Pays",
         peoples: "Peuples",
         families: "Familles",
+        languages: "Langues",
+        // Same public-facing word as the trail label (TRAIL_PAGE_LABELS.patronymes
+        // above), distinct from "Appellations" so the two corpus entities never
+        // read as one entry in a menu.
+        patronymes: "Nom",
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",

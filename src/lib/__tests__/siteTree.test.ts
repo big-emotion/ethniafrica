@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
-import { getSiteTree } from "@/lib/siteTree";
+import { getSiteTree, getSiteTreePaths } from "@/lib/siteTree";
 
 describe("getSiteTree — access modes are sections, not destinations", () => {
   /**
@@ -32,5 +32,49 @@ describe("getSiteTree — access modes are sections, not destinations", () => {
     expect(tree.find((section) => section.id === "jeux")?.title).toBe(
       ACCESS_MODE_LABELS.jeux
     );
+  });
+});
+
+// The languages and patronymes index pages (ETNI-1795) ship in the same
+// corpus section as families/peoples/countries — a page nobody can navigate
+// to is not browsable (ETNI-1801).
+describe("getSiteTree — the corpus section lists languages and patronymes", () => {
+  // @req REQ-139
+  it("links to the languages index, in AFRIK hierarchy order", () => {
+    const corpus = getSiteTree("fr").find((section) => section.id === "corpus");
+    const hrefs = corpus?.links.map((link) => link.href) ?? [];
+
+    const languagesHref = getLocalizedRoute("fr", "languages");
+    expect(hrefs).toContain(languagesHref);
+    // Family -> language -> people -> country: languages sits right after
+    // families, ahead of peoples and countries.
+    expect(hrefs.indexOf(languagesHref)).toBe(
+      hrefs.indexOf(getLocalizedRoute("fr", "families")) + 1
+    );
+    expect(hrefs.indexOf(languagesHref)).toBeLessThan(
+      hrefs.indexOf(getLocalizedRoute("fr", "peoples"))
+    );
+  });
+
+  // @req REQ-139
+  it("links to the patronymes index with a French note", () => {
+    const corpus = getSiteTree("fr").find((section) => section.id === "corpus");
+    const patronymesLink = corpus?.links.find(
+      (link) => link.href === getLocalizedRoute("fr", "patronymes")
+    );
+
+    expect(patronymesLink).toBeDefined();
+    expect(patronymesLink?.note?.trim().length ?? 0).toBeGreaterThan(0);
+  });
+
+  // Same rubric-in-sitemap treatment as families/peoples/countries and the
+  // already-shipped appellations index (ETNI-1453): the tree feeds
+  // src/app/sitemap.ts too, so a reachable hub route is a crawlable one.
+  // @req REQ-139
+  it("carries the languages and patronymes hub routes into the sitemap paths", () => {
+    const paths = getSiteTreePaths("fr");
+
+    expect(paths).toContain(getLocalizedRoute("fr", "languages"));
+    expect(paths).toContain(getLocalizedRoute("fr", "patronymes"));
   });
 });

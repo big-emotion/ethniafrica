@@ -62,6 +62,27 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
+  // The languages and patronymes index pages (ETNI-1795) ship in the same
+  // rubric as pays/peuples/familles — a page nobody can navigate to is not
+  // browsable (ETNI-1801).
+  // @req REQ-139
+  it("adds the languages and patronymes index pages to the explorer rubric", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+
+    expect(
+      within(explorer).getByRole("link", { name: footer.directory.languages })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "languages"));
+    expect(
+      within(explorer).getByRole("link", {
+        name: footer.directory.patronymes,
+      })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "patronymes"));
+  });
+
   /**
    * Doctrine, À propos and Sources describe the project, not the corpus, so
    * no access mode lists them. The footer is where a page about the project

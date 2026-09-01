@@ -99,6 +99,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           note: "Le premier niveau : 24 familles, chacune avec ses langues.",
         },
         {
+          href: route("languages"),
+          label: "Langues",
+          note: "748 langues, chacune rattachée à sa famille linguistique.",
+        },
+        {
           href: route("peoples"),
           label: "Peuples",
           note: "789 fiches, rattachées à leur famille et à leurs pays.",
@@ -107,6 +112,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           href: route("countries"),
           label: "Pays",
           note: "54 fiches, chacune listant les peuples qui l'habitent.",
+        },
+        {
+          href: route("patronymes"),
+          label: "Patronymes",
+          note: "30 systèmes de nomination, distincts des appellations d'un peuple.",
         },
         {
           href: route("search"),
