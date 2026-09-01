@@ -1,9 +1,9 @@
 ---
 name: ethniafrica-release
-description: Prepare and ship an EthniAfrica production release. Bumps the semver version of the root package.json, updates CHANGELOG.md (Keep a Changelog format, creates it if missing), creates an annotated git tag on main, then asks for explicit confirmation before pushing. Tagging is a marker, not a deploy trigger — Vercel deploys from the pushed branch. Use when the user says "release ethniafrica", "cut a release", "bump version", "tag a new version", or invokes /ethniafrica-release.
+description: Prepare and ship an EthniAfrica production release. Bumps the semver version of the root package.json, updates CHANGELOG.md (Keep a Changelog format, creates it if missing), creates an annotated git tag on main, then asks for explicit confirmation before pushing and publishing the GitHub Release. Publishing that Release is the production deploy trigger — pushing main deploys nothing, and pushing the tag alone deploys nothing either. Use when the user says "release ethniafrica", "cut a release", "bump version", "tag a new version", or invokes /ethniafrica-release.
 metadata:
   author: Big Emotion
-  version: "1.0.0"
+  version: "2.0.0"
 ---
 
 # EthniAfrica Release
@@ -14,13 +14,20 @@ This skill writes to the local repo first. It only runs `git push` after the use
 
 ## Deployment reality — read this before promising anything
 
-EthniAfrica has **no GitHub deploy workflow**. There is no `deploy-production.yml`, no Dockerfile, no release pipeline in `.github/workflows/`. Hosting is Vercel, wired to the repo through the Vercel Git integration (`.vercel/` at the repo root).
+Production is **self-hosted on the OVH VPS in Frankfurt**, not on Vercel. It is built and started by `.github/workflows/deploy-production.yml`, which listens on exactly one event: **a published GitHub Release**.
 
 Consequences this skill must state truthfully, every run:
 
-- **The tag does not deploy anything.** Vercel deploys on _push to the tracked branch_. Pushing `main` is what ships; `v<version>` is a marker for humans and for the changelog.
-- **No workflow creates a GitHub Release.** If the user wants a Release page, this skill creates it with `gh release create` (Step 7.5) — nothing else will.
-- The only GitHub Actions that react to a push are the CI/quality workflows (`ci.yml`, `a11y.yml`, `lighthouse.yml`, `data-integrity.yml`, `openapi-diff.yml`, `e2e.yml`). None of them deploy.
+- **Publishing the GitHub Release is the deploy.** Not the push, not the tag. `deploy-production.yml` is keyed on `release: published`, SSHes to the VPS, checks out the released tag, and runs `docker compose build && up -d`. It has no `workflow_dispatch` — there is no button that ships production without a Release naming what shipped.
+- **Pushing `main` deploys nothing.** `vercel.json` sets `git.deploymentEnabled: false`, so no push and no pull request builds anything on Vercel any more. That was deliberate: automatic preview builds from parallel agent sessions exhausted the Hobby plan's deployment quota, and the rate limit eventually landed on `main` itself.
+- **Pushing the tag deploys nothing either.** The tag is the thing the Release will point at. It has to exist on `origin` before the Release is created, which is why Step 7 pushes it and Step 8 publishes the Release — in that order, never merged into one step.
+- **Creating the Release is therefore no longer optional.** Step 8 is part of shipping, not a nicety. A release that stops after the tag has bumped a version and shipped nothing.
+- **The AFRIK corpus sync rides on the deploy.** `production-data-sync.yml` triggers on `workflow_run` of `Deploy Production (OVH)` and only when it concluded `success`. A failed deploy leaves the production corpus untouched, which is correct.
+- **`workflow_run` only fires for workflow files that live on the default branch.** Both workflows must be on `main` for the chain to work. Precondition 6 (`recette` is an ancestor of `main`) already covers the usual way this goes wrong.
+- The recette preview still exists on Vercel but is manual: `deploy-preview-recette.yml`, `workflow_dispatch` only.
+- The CI/quality workflows (`ci.yml`, `a11y.yml`, `lighthouse.yml`, `data-integrity.yml`, `openapi-diff.yml`, `e2e.yml`) still react to pushes and pull requests. None of them deploy.
+
+Rollback is a host-side operation on the VPS, not a re-run of anything here — see [`docs/runbooks/ovh-production-deploy.md`](../../../docs/runbooks/ovh-production-deploy.md).
 
 ## When to Activate
 
@@ -52,7 +59,7 @@ Verify all of the following before any write. If any fail, **do not modify anyth
    npm test
    npm run build
    ```
-   CI (precondition 5) covers the same ground on the PR commit, but a release tags the merge result; these run against the exact tree being tagged. `npm run build` is the expensive one — it is not optional, because Vercel will run the same build on push and a failure there means a broken production deploy with the tag already published.
+   CI (precondition 5) covers the same ground on the PR commit, but a release tags the merge result; these run against the exact tree being tagged. `npm run build` is the expensive one — it is not optional, because the VPS runs the same build inside Docker during the deploy, and a failure there leaves the tag and the Release page published with production untouched.
 8. **No unapplied Supabase migrations** — compare `ls supabase/migrations/` against what the runbooks record as applied (`docs/runbooks/`). A migration present in the repo but not applied to production means the deploy ships code whose schema does not exist yet. If any is unapplied, stop and tell the user to apply it (or confirm explicitly that the release does not depend on it).
 
 ## Inputs
@@ -165,7 +172,9 @@ Then create an annotated tag:
 git tag -a v<next_version> -m "ethniafrica v<next_version>"
 ```
 
-### Step 6 — Report and ask for push confirmation
+### Step 6 — Report and ask for ship confirmation
+
+This one confirmation covers all three of Steps 7 and 8 — push, tag, publish. Say so plainly, because the third one is the one that touches production.
 
 Print a summary:
 
@@ -179,19 +188,25 @@ Files changed:
 Commit:  <short-sha>  release: v<next_version>
 Tag:     v<next_version> (annotated, local only)
 
-Ready to push `main` + `v<next_version>` to origin?
+Ready to ship v<next_version> to production?
 
-What this actually does:
-  - `git push origin main` → Vercel picks up the new commit on the tracked
-    branch and builds + deploys production. THIS is the deploy trigger.
-  - `git push origin v<next_version>` → publishes the tag. It deploys nothing;
-    no GitHub Actions workflow reacts to tags in this repo.
-  - No GitHub Release is created automatically. I can create one after the push
-    if you want a Release page (Step 7.5).
-  - CI workflows (a11y, lighthouse, data-integrity, openapi-diff, e2e) may run
-    on the pushed commit; none of them deploy.
+What this actually does, in order:
+  1. `git push origin main` → deploys NOTHING. Vercel's automatic deployments
+     are off (vercel.json, git.deploymentEnabled: false). CI and the quality
+     workflows still run on the pushed commit; none of them deploy.
+  2. `git push origin v<next_version>` → publishes the tag. Still deploys
+     nothing. The tag exists so the Release has something to point at.
+  3. `gh release create v<next_version>` → THIS is the deploy trigger. It fires
+     `deploy-production.yml`, which SSHes to the OVH VPS in Frankfurt, checks
+     out this exact tag, rebuilds the image and restarts the container on
+     ethniafrica.com. On success, `production-data-sync.yml` then loads the
+     AFRIK corpus into the production Supabase project and busts its caches.
 
-Reply `yes` / `push` / `go` / `oui` / `ok` to proceed.
+Stopping after step 2 is a valid outcome: version bumped, nothing shipped.
+Rolling back afterwards is a host-side operation on the VPS —
+docs/runbooks/ovh-production-deploy.md.
+
+Reply `yes` / `push` / `ship` / `go` / `oui` / `ok` to proceed with all three.
 Anything else → keeps commit + tag local only.
 ```
 
@@ -214,68 +229,83 @@ git push origin v<next_version>
 After both succeed, print:
 
 ```
-Pushed.
-  - origin/main now at <short-sha>  → Vercel production deploy triggered by this push
-  - tag v<next_version> published    → marker only, triggers nothing
+Pushed. Nothing is deployed yet.
+  - origin/main now at <short-sha>  → no deploy; Vercel auto-deploys are off
+  - tag v<next_version> published    → no deploy; it is what the Release will point at
 
-Watch the deploy in the Vercel dashboard for the ethniafrica project
-(the repo is linked via .vercel/ — there is no GitHub Actions deploy job to watch).
-
-CI runs on the pushed commit:
-  https://github.com/big-emotion/ethniafrica/actions
+Next step ships it: publishing the GitHub Release (Step 8).
 ```
 
-Do not print a link to a deploy workflow — there is none. Do not claim the tag deployed anything.
+Do not claim anything reached production at this point. Push and tag are both inert.
 
-### Step 7.5 — GitHub Release (optional, ask)
+### Step 8 — Publish the GitHub Release (this is the deploy)
 
-Nothing in this repo creates a GitHub Release. Ask the user:
+Not optional, and not a separate question — Step 6's confirmation already covered it. Skip this only if the user declined at Step 6, in which case Step 7 did not run either.
 
-```
-Create a GitHub Release page for v<next_version> from the CHANGELOG section?
-```
-
-If they accept:
+Extract the `[<next_version>]` section of `CHANGELOG.md` into a temporary notes file, then:
 
 ```bash
 gh release create v<next_version> \
   --repo big-emotion/ethniafrica \
   --title "v<next_version>" \
-  --notes-file <(section of CHANGELOG.md for <next_version>)
+  --notes-file <notes-file>
 ```
 
-If they decline, skip it — the tag alone is a valid release marker.
+**No `--draft` and no `--prerelease`.** A draft Release does not emit `release: published`, so it deploys nothing and looks identical to success from here. `deploy-production.yml` also skips pre-releases outright.
 
-### Step 8 — Verification checklist
+Then watch the actual deploy:
+
+```bash
+gh run watch --repo big-emotion/ethniafrica \
+  "$(gh run list --repo big-emotion/ethniafrica \
+       --workflow deploy-production.yml --limit 1 --json databaseId -q '.[0].databaseId')"
+```
+
+Report the outcome honestly:
+
+```
+Released v<next_version>.
+
+  Release:  https://github.com/big-emotion/ethniafrica/releases/tag/v<next_version>
+  Deploy:   Deploy Production (OVH) — <conclusion> — <run url>
+  Corpus:   Production AFRIK Data Sync runs next, only if the deploy succeeded
+
+Verify: docs/DEPLOYMENT.md → Post-deploy verification.
+```
+
+If the deploy run failed, say so and do not describe the release as shipped. The tag and the Release page exist either way; the site does not. Point at the rollback procedure in [`docs/runbooks/ovh-production-deploy.md`](../../../docs/runbooks/ovh-production-deploy.md) rather than attempting one from here — it is a host-side operation.
+
+### Step 9 — Verification checklist
 
 - [ ] Version in the root `package.json` matches the new tag.
 - [ ] `CHANGELOG.md` exists, is in Keep a Changelog format, and has a `[<next_version>]` section dated today.
 - [ ] Exactly one commit was created. Exactly one annotated tag was created.
-- [ ] If user confirmed: both `main` and `v<next_version>` are pushed to origin.
-- [ ] If user did not confirm: commit + tag remain local only, no `git push` was executed.
-- [ ] The report told the truth about deployment: push-to-`main` deploys via Vercel, the tag does not.
+- [ ] If user confirmed: `main` and `v<next_version>` are pushed, **and** the GitHub Release is published — not a draft.
+- [ ] If user did not confirm: commit + tag remain local only, no `git push` was executed and no Release was created.
+- [ ] The report told the truth about deployment: publishing the Release deploys via OVH; pushing `main` and pushing the tag do not.
+- [ ] The reported deploy outcome matches the actual conclusion of the `deploy-production.yml` run. A published Release with a failed deploy is not a shipped release.
 
 ## Failure Modes — Stop Without Modifying
 
-| Condition                                                                 | Action                                                                                                                              |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Not in the ethniafrica repo root                                          | Stop. Tell user to `cd` to the right directory.                                                                                     |
-| Working tree dirty                                                        | Stop. Ask user to commit or stash.                                                                                                  |
-| Not on `main` branch                                                      | Stop. Report current branch.                                                                                                        |
-| Behind `origin/main`                                                      | Stop. Tell user to `git pull`.                                                                                                      |
-| CI not green on HEAD                                                      | Stop. Print the run URL for investigation.                                                                                          |
-| `origin/recette` not an ancestor of `origin/main`                         | Stop. List the un-integrated commits.                                                                                               |
-| Any of `lint` / `typecheck` / `format:check` / `test` / `build` fails     | Stop. Report the failing gate and its output. Do not tag a tree that cannot build — Vercel would fail the same build in production. |
-| A Supabase migration in `supabase/migrations/` is not recorded as applied | Stop. Applying schema is a human decision; releasing code ahead of its schema breaks production.                                    |
-| Target version ≤ current version                                          | Stop. Ask for an explicit higher version.                                                                                           |
-| `git push origin main` fails                                              | Stop. Do not push the tag.                                                                                                          |
+| Condition                                                                 | Action                                                                                                                                                                        |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Not in the ethniafrica repo root                                          | Stop. Tell user to `cd` to the right directory.                                                                                                                               |
+| Working tree dirty                                                        | Stop. Ask user to commit or stash.                                                                                                                                            |
+| Not on `main` branch                                                      | Stop. Report current branch.                                                                                                                                                  |
+| Behind `origin/main`                                                      | Stop. Tell user to `git pull`.                                                                                                                                                |
+| CI not green on HEAD                                                      | Stop. Print the run URL for investigation.                                                                                                                                    |
+| `origin/recette` not an ancestor of `origin/main`                         | Stop. List the un-integrated commits.                                                                                                                                         |
+| Any of `lint` / `typecheck` / `format:check` / `test` / `build` fails     | Stop. Report the failing gate and its output. Do not tag a tree that cannot build — the VPS runs the same build and the deploy would fail with the Release already published. |
+| A Supabase migration in `supabase/migrations/` is not recorded as applied | Stop. Applying schema is a human decision; releasing code ahead of its schema breaks production.                                                                              |
+| Target version ≤ current version                                          | Stop. Ask for an explicit higher version.                                                                                                                                     |
+| `git push origin main` fails                                              | Stop. Do not push the tag.                                                                                                                                                    |
 
 ## Out of Scope
 
 - npm publish (package is `private: true`).
-- The build + deploy mechanics themselves — Vercel owns them, driven by the push to `main`. This skill never invokes the Vercel CLI, never touches `.vercel/`, and never triggers a redeploy.
-- Applying Supabase migrations or running `tsx scripts/migrateAfrikToDatabase.ts` against any database. Precondition 8 only _checks_.
-- Staging deploys — those follow pushes to `recette`, never a tag.
+- The build + deploy mechanics themselves — `deploy-production.yml` owns them, driven by the published Release. This skill publishes the Release and lets the workflow take over; it never SSHes to the VPS, never runs `docker compose`, and never performs a rollback. Rollback is documented in [`docs/runbooks/ovh-production-deploy.md`](../../../docs/runbooks/ovh-production-deploy.md) and is a deliberate human act.
+- Applying Supabase migrations or running `tsx scripts/migrateAfrikToDatabase.ts` against any database. Precondition 8 only _checks_. The corpus sync that follows a successful deploy is `production-data-sync.yml`'s job, not this skill's.
+- Recette previews — those are `deploy-preview-recette.yml`, run by hand from the Actions tab, and have nothing to do with a release.
 - Bumping sub-package manifests (the root `package.json` is the only version source).
 - Audit/scoring of release readiness (the preconditions above are sufficient; run `/ethniafrica-audit` separately).
 - Pushing without explicit user confirmation in Step 6.

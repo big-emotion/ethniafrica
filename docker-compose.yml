@@ -1,0 +1,64 @@
+# Production stack for the OVH VPS. Lives in the repository rather than on the host so
+# that a change to how production runs goes through a pull request like anything else.
+#
+# The host runs one compose project per application, all joined to Traefik's external
+# `proxy` network — b2b-portal and big-emotion are each their own project, and Traefik is
+# a third. This file follows that convention instead of adding a service to Traefik's own
+# compose file: nothing here can take the router down with it.
+#
+# Deployed from /srv/ethniafrica by .github/workflows/deploy-production.yml.
+# Runbook: docs/runbooks/ovh-production-deploy.md
+
+services:
+  ethniafrica:
+    container_name: ethniafrica
+    image: ethniafrica:live
+    build:
+      context: .
+      dockerfile: Dockerfile
+      secrets:
+        # Mounted as .env.production.local inside the builder, never written to a layer.
+        # It is the same file as env_file below: the NEXT_PUBLIC_* values have to be
+        # present at build time to be inlined into the client bundle, and the rest at
+        # run time. Keeping one file means the two can never disagree.
+        - build_env
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - "3000"
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+
+      # The hostname is not hard-coded because it changes three times over this
+      # migration: a test subdomain first, then the apex once DNS moves off Vercel, then
+      # possibly the apex plus www. Set ETHNIAFRICA_TRAEFIK_RULE in /srv/ethniafrica/.env
+      # — the runbook gives the literal value for each stage. Pointing this at a hostname
+      # whose DNS does not resolve here yet makes Traefik fail an ACME challenge in a
+      # retry loop, which is why the test subdomain comes first.
+      - "traefik.http.routers.ethniafrica.rule=${ETHNIAFRICA_TRAEFIK_RULE}"
+      - "traefik.http.routers.ethniafrica.entrypoints=websecure"
+      - "traefik.http.routers.ethniafrica.tls.certresolver=myresolver"
+      - "traefik.http.services.ethniafrica.loadbalancer.server.port=3000"
+
+      - "traefik.http.routers.ethniafrica-http.rule=${ETHNIAFRICA_TRAEFIK_RULE}"
+      - "traefik.http.routers.ethniafrica-http.entrypoints=web"
+      - "traefik.http.routers.ethniafrica-http.middlewares=ethniafrica-https"
+      - "traefik.http.middlewares.ethniafrica-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.ethniafrica-https.redirectscheme.permanent=true"
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+secrets:
+  build_env:
+    file: .env
+
+networks:
+  proxy:
+    external: true

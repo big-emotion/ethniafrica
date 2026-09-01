@@ -201,6 +201,14 @@ Keep colonial-era names but explain why they are problematic, and always surface
 - Never add `Co-Authored-By` trailers.
 - SHA-pin every third-party GitHub Action (`uses: org/action@<40-char-sha>  # <semver>`); `check:action-pins` enforces it and Dependabot bumps the pins weekly.
 
+### Deploying
+
+**Publishing a GitHub Release is the only thing that deploys production.** Not a push, not a tag. `deploy-production.yml` listens on `release: published`, SSHes to the OVH VPS in **Gravelines** (`51.195.82.98`, port **49152** — documents calling this host "Francfort" are using the wrong name for the right address), and rebuilds the container from the repository's `Dockerfile` + `docker-compose.yml` in `/srv/ethniafrica`. Use `/ethniafrica-release`; rollback is host-side and lives in `docs/runbooks/ovh-production-deploy.md`.
+
+Vercel no longer auto-deploys anything — `vercel.json` sets `git.deploymentEnabled: false`, because per-push preview builds from parallel agent sessions exhausted the Hobby plan's quota. The recette preview is built on demand by running `deploy-preview-recette.yml` from the Actions tab.
+
+Two couplings that fail silently: `production-data-sync.yml` chains off the deploy with `workflow_run`, which **only fires for workflow files on the default branch** — both files must be on `main`. And `UPSTASH_REDIS_REST_URL`/`_TOKEN` are mandatory in production despite reading as optional: rate limiting fails _closed_, so without them every `/api/v2/*` answers 500 while the pages render fine.
+
 ### Spec and tickets
 
 **Confluence is the source of truth** for Requirements / Decisions / Architecture — not the repo. The in-repo copies were deliberately deleted (commit `0e753c07`) because they had drifted into a competing spec; don't recreate them. Page IDs and the Jira project (`ETNI`) are in `docs/confluence-spec/config.json`. Requirements live in twelve sub-pages under the Requirements parent — reading the parent alone will make you re-allocate an existing REQ number.

@@ -1,0 +1,33 @@
+# Keeps secrets and build outputs out of the build context.
+#
+# It is deliberately *not* trimmed down to what the running server needs. `next build`
+# type-checks the whole tsconfig program — `include` is `**/*.ts` — and several test
+# files import fixtures straight out of `dataset/source/afrik/`. Excluding a directory
+# because the server never reads it at runtime breaks the build with
+# `TS2307: Cannot find module '../../dataset/source/afrik/pays/CIV.json'`.
+# Exclude build outputs, secrets and artefacts here; leave source alone.
+
+node_modules
+.next
+out
+coverage
+storybook-static
+playwright-report
+test-results
+.playwright-mcp
+
+.git
+.github
+
+# Never in the context. The build reads its variables from a BuildKit secret mounted
+# as .env.production.local (see Dockerfile), so no env file needs to be copied in and
+# none should be reachable by an accidental `COPY .`.
+.env
+.env.*
+!.env.example
+
+.vercel
+*.log
+.DS_Store
+Dockerfile
+.dockerignore

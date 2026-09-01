@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  // Production is self-hosted on the OVH VPS in a Docker image that carries no
+  // node_modules: the runner stage copies `.next/standalone` and nothing else.
+  // Removing this makes the image start and then fail on the first require of a
+  // dependency that was never copied.
+  output: "standalone",
   experimental: {
     authInterrupts: true,
   },
