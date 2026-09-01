@@ -76,6 +76,21 @@ describe("country target facts", () => {
     expect(screen.queryByText("Premières entrées")).toBeNull();
   });
 
+  // Some older fiches keep their declared peoples in `majorPeoples` while
+  // carrying an empty modern demographics array. The empty array must not
+  // erase the populated legacy field.
+  // @req REQ-117
+  it("falls back to legacy major peoples when demographics is empty", () => {
+    const country = countryWith([]);
+    country.majorPeoples = [{ name: "Yoruba" }, { name: "Igbo" }];
+
+    const facts = buildCountryTargetFacts(country);
+
+    render(<>{facts.NGA?.body}</>);
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText(/Yoruba · Igbo/)).toBeVisible();
+  });
+
   // AtlasGlobe is a client component and the route that calls this is a
   // server one. A resolver function cannot cross that boundary — passing one
   // is what put every family route on HTTP 500 once already.
@@ -142,11 +157,14 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
   // A zero here means the corpus is silent, not that a country is empty.
   // @req REQ-117
   it("reads an absent count as corpus silence rather than as none", () => {
-    render(<>{facts({}).KEN?.body}</>);
+    const kenya = facts({}).KEN;
+    render(<>{kenya?.body}</>);
 
     expect(
       screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
     ).toBeInTheDocument();
+    expect(kenya?.description).not.toContain("0 peuple");
+    expect(kenya?.description).toMatch(/^KEN ·/);
   });
 
   // @req REQ-117
@@ -238,6 +256,31 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
     expect(screen.queryByText(/undefined/)).toBeNull();
   });
 
+  // A population without a valid reference year is not a dated fact. The
+  // panel omits the pair instead of presenting an apparently current value.
+  // @req REQ-117
+  it.each([undefined, 0, 2025.5])(
+    "omits population when its reference year is %s",
+    (referenceYear) => {
+      render(
+        <>
+          {
+            facts(undefined, {
+              KEN: {
+                population: 55_339_003,
+                referenceYear,
+                languages: ["swahili"],
+              },
+            }).KEN?.body
+          }
+        </>
+      );
+
+      expect(screen.queryByText(/Population/)).toBeNull();
+      expect(screen.getByText("swahili")).toBeVisible();
+    }
+  );
+
   // @req REQ-117
   it("shows the same brief fields for the fiche country and another country", () => {
     const atlasFacts = facts(undefined, {
@@ -278,6 +321,7 @@ describe("what the panel's subtitle states", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3 },
+      countryBriefs: {},
     });
 
     expect(facts.NGA?.description).toMatch(
@@ -302,6 +346,7 @@ describe("what the panel shows it is", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3, KEN: 12 },
+      countryBriefs: {},
     });
   }
 

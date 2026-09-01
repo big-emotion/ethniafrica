@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
   getCountries,
+  getCountryAtlasIndex,
   getCountryById,
   getCountryIndex,
 } from "../countryService";
@@ -114,6 +115,58 @@ describe("Country Service", () => {
       expect(index).toEqual([
         { id: "NGA", nameFr: "Nigeria" },
         { id: "COM", nameFr: "Comores" },
+      ]);
+    });
+  });
+
+  describe("getCountryAtlasIndex", () => {
+    // @req REQ-117
+    it("returns only the compact, deduplicated facts needed by the atlas panel", async () => {
+      vi.mocked(getAllAfrikCountries).mockResolvedValue([
+        {
+          id: "NGA",
+          nameFr: "Nigeria",
+          content: {
+            demographics: {
+              totalPopulation: 237_527_782,
+              referenceYear: 2025,
+            },
+            culture: {
+              mainLanguages: [
+                { name: "haoussa" },
+                { name: "Haoussa" },
+                { name: "yoruba" },
+                { name: "igbo" },
+                { name: "anglais" },
+              ],
+            },
+          },
+        },
+        {
+          id: "KEN",
+          nameFr: "Kenya",
+          content: {
+            majorPeoples: [
+              { name: "Kikuyu", languages: ["kikuyu", "swahili"] },
+              { name: "Luo", languages: ["luo", "swahili"] },
+            ],
+          },
+        },
+      ]);
+
+      await expect(getCountryAtlasIndex()).resolves.toEqual([
+        {
+          id: "NGA",
+          population: 237_527_782,
+          referenceYear: 2025,
+          languages: ["haoussa", "yoruba", "igbo"],
+        },
+        {
+          id: "KEN",
+          population: undefined,
+          referenceYear: undefined,
+          languages: ["kikuyu", "swahili", "luo"],
+        },
       ]);
     });
   });

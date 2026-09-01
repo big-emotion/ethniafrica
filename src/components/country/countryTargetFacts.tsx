@@ -7,6 +7,7 @@ import type { CountryId } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 import { ActionLink } from "@/components/ui/ActionLink";
+import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -108,7 +109,7 @@ function principalLanguages(languages: string[] | undefined): string[] {
   const seen = new Set<string>();
 
   return (languages ?? [])
-    .map((language) => language?.trim())
+    .map((language) => language?.trim().normalize("NFC"))
     .filter((language): language is string => {
       if (!language) return false;
       const key = language.toLocaleLowerCase("fr");
@@ -129,20 +130,20 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
   const referenceYear =
     typeof brief?.referenceYear === "number" &&
     Number.isFinite(brief.referenceYear) &&
+    Number.isInteger(brief.referenceYear) &&
     brief.referenceYear > 0
       ? brief.referenceYear
       : null;
   const languages = principalLanguages(brief?.languages);
+  const hasDatedPopulation = population !== null && referenceYear !== null;
 
-  if (population === null && languages.length === 0) return null;
+  if (!hasDatedPopulation && languages.length === 0) return null;
 
   return (
     <dl style={BRIEF_GRID_STYLE}>
-      {population !== null && (
+      {hasDatedPopulation && (
         <div>
-          <dt style={LABEL_STYLE}>
-            Population{referenceYear !== null ? ` · réf. ${referenceYear}` : ""}
-          </dt>
+          <dt style={LABEL_STYLE}>Population · réf. {referenceYear}</dt>
           <dd
             style={{ ...BRIEF_VALUE_STYLE, fontVariantNumeric: "tabular-nums" }}
           >
@@ -165,7 +166,11 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
 export function buildCountryTargetFacts(
   country: CountryDetail
 ): Partial<Record<CountryId, AtlasTargetFacts>> {
-  const peoples = country.demographics?.peoples ?? country.majorPeoples ?? [];
+  const demographicPeoples = country.demographics?.peoples;
+  const peoples =
+    demographicPeoples && demographicPeoples.length > 0
+      ? demographicPeoples
+      : (country.majorPeoples ?? []);
   const names = peoples
     .map((entry) => entry.name)
     .filter((name): name is string => Boolean(name?.trim()));
@@ -234,7 +239,7 @@ export interface CountryAtlasFactsInput {
   /** Documented peoples per country, from the corpus. */
   peopleCounts: Record<string, number>;
   /** Compact corpus facts for each country, prepared by the server route. */
-  countryBriefs?: Partial<Record<CountryId, CountryAtlasBrief>>;
+  countryBriefs: Partial<Record<CountryId, CountryAtlasBrief>>;
 }
 
 /**
@@ -271,9 +276,16 @@ export function buildCountryAtlasFacts({
   country,
   targets,
   peopleCounts,
-  countryBriefs = {},
+  countryBriefs,
 }: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
   const own = buildCountryTargetFacts(country);
+  const ownBrief = countryBriefs[country.id] ?? {
+    population: country.demographics?.totalPopulation,
+    referenceYear: country.demographics?.referenceYear,
+    languages: principalLanguages(
+      deriveCountrySynthesisFromDetail(country).languages
+    ),
+  };
 
   return Object.fromEntries(
     targets.map((target) => {
@@ -288,7 +300,7 @@ export function buildCountryAtlasFacts({
             icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
-                <CountryBriefFacts brief={countryBriefs[target.countryId]} />
+                <CountryBriefFacts brief={ownBrief} />
                 {ownFacts?.body}
                 <ProvenanceChip declared />
                 <ReadTheFiche href="#fiche" />
@@ -298,7 +310,13 @@ export function buildCountryAtlasFacts({
         ];
       }
 
-      const documented = peopleCounts[target.countryId] ?? 0;
+      const rawDocumented = peopleCounts[target.countryId];
+      const documented =
+        typeof rawDocumented === "number" &&
+        Number.isFinite(rawDocumented) &&
+        rawDocumented > 0
+          ? rawDocumented
+          : null;
 
       return [
         target.countryId,
@@ -306,13 +324,15 @@ export function buildCountryAtlasFacts({
           title: target.nameFr,
           icon: flagFromISO3(target.countryId),
           description:
-            documented === 1
-              ? "1 peuple documenté"
-              : `${countFr.format(documented)} peuples documentés`,
+            documented === null
+              ? placeOf(target)
+              : documented === 1
+                ? "1 peuple documenté"
+                : `${countFr.format(documented)} peuples documentés`,
           body: (
             <div style={{ display: "grid", gap: 14 }}>
               <CountryBriefFacts brief={countryBriefs[target.countryId]} />
-              {documented === 0 && (
+              {documented === null && (
                 <span
                   style={{
                     fontSize: "var(--afh-text-small)",
