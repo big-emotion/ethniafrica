@@ -232,31 +232,3 @@ function transformMeta(
       | undefined,
   };
 }
-
-// ==========================================
-// UTILITY EXPORTS
-// ==========================================
-
-// @req REQ-108
-/**
- * Récupère toutes les familles linguistiques (sans pagination)
- */
-export async function getAllLanguageFamilies(): Promise<
-  LanguageFamilySummary[]
-> {
-  const allFamilies: LanguageFamilySummary[] = [];
-  let page = 1;
-  const perPage = 100;
-
-  while (true) {
-    const result = await getLanguageFamilies(page, perPage);
-    allFamilies.push(...result.data);
-
-    if (page >= result.meta.totalPages || result.data.length === 0) {
-      break;
-    }
-    page++;
-  }
-
-  return allFamilies;
-}
