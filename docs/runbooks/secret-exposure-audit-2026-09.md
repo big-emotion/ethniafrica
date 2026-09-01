@@ -22,6 +22,11 @@ clones it, whether or not a later commit removed it.
 
 ## Must be rotated
 
+> **Status (2026-09-01).** Finding 1 is **remediated and verified** — the leaked
+> `service_role` key was probed against Supabase and is rejected. Finding 2, the Postgres
+> password, is **not verified**. Read [Closure](#closure--remediation-carried-out-and-verified-2026-09-01)
+> before acting on anything below.
+
 Both are in the public history permanently. **Deleting files does not fix this, and neither
 does rewriting history** — a public repository can already have been cloned, forked, or
 cached by GitHub's own network view. Rotation is the only remediation that works.
@@ -132,6 +137,116 @@ done
 
 Counting prefix hits is not a finding. `UPSTASH_REDIS_REST_TOKEN=` matches 31 commits and every
 one is `.env.example` with an empty value. Decode or length-check before reporting anything.
+
+---
+
+## Closure — remediation carried out and verified (2026-09-01)
+
+The section above says **Must be rotated**. This section records what was actually done, when,
+and — the only part an audit cannot establish from the repository — **how the old credential was
+proved dead by probing Supabase**. Without that last step a reader cannot tell a real rotation
+from a secret re-pasted with its original value.
+
+### What was done
+
+| Credential                                                 | Action                                                                                    | When (UTC)                                           |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Recette **legacy API keys** (`anon` + `service_role` JWTs) | **Disabled** project-wide, in favour of the `sb_publishable_…` / `sb_secret_…` key system | `2026-09-01T09:38:34Z` — reported by Supabase itself |
+| `RECETTE_SUPABASE_DB_URL` (repo secret)                    | Rewritten                                                                                 | `2026-09-01T09:09:29Z`                               |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` (repo secret)              | Rewritten                                                                                 | `2026-09-01T09:28:08Z`                               |
+| `SUPABASE_SERVICE_ROLE_KEY` (repo secret)                  | Rewritten                                                                                 | `2026-09-01T09:29:06Z`                               |
+
+The repository-secret timestamps come from `gh secret list --json name,updatedAt`. Note what they
+do and do not prove: they establish that a value was **written**, never that the value **changed**.
+That distinction is the whole point of the next section.
+
+### How the old `service_role` key was proved dead
+
+The leaked key was recovered from history into a shell variable, sent to the recette REST API, and
+the response read. The key's value was never printed — only its claims, a truncated digest, and the
+server's verdict:
+
+```
+leaked key claims: {"iss":"supabase","ref":"shmrjtnfbqzceovroqjj","role":"service_role",
+                    "iat":1784926799,"exp":2100502799}
+leaked key sha256 (first 12): a41a4bc4c65b
+
+HTTP 401
+{"message":"Legacy API keys are disabled",
+ "hint":"Your legacy API keys (anon, service_role) were disabled on
+         2026-09-01T09:38:34.6477+00:00. Re-enable them in the Supabase dashboard, or use the
+         new publishable and secret API keys."}
+```
+
+**The exposed `service_role` key no longer grants access to the recette database.** Supabase
+returns the disablement timestamp itself, so the claim rests on the server's own record rather
+than on anyone's recollection of having clicked _Rotate_.
+
+The recette project was live at the time of the probe — `migrate-recette.yml` connected to it and
+applied migrations at `11:59:07Z` the same day — so the 401 is a verdict on the key, not a dead
+project answering uniformly.
+
+Corroborating, independently of the probe: `mcp__supabase__get_publishable_keys` on
+`shmrjtnfbqzceovroqjj` reports the legacy `anon` key with `"disabled": true`, and a new-format
+`sb_publishable_…` key as the only enabled publishable key.
+
+The digest is recorded on purpose. `a41a4bc4c65b` identifies the compromised key without storing
+it, which is what lets a future reader answer the question this section exists to answer: whether a
+key in front of them is the leaked one or a genuine replacement.
+
+### Rotation was not what happened — and the difference matters
+
+The remediation was **disablement of the legacy key system**, not rotation of the JWT signing
+secret. The practical effect today is the same: the gateway rejects the leaked key before it ever
+checks the signature. But the two differ in one respect that a future reader must not have to
+rediscover:
+
+> The leaked `service_role` JWT is still **cryptographically valid**. It is revoked at the gateway,
+> not invalidated. Its `exp` claim runs to **2036**. Re-enabling legacy API keys in the Supabase
+> dashboard — a single toggle, offered by name in the error message above — **resurrects it**, with
+> full Row Level Security bypass on recette.
+
+So: **legacy API keys on `shmrjtnfbqzceovroqjj` must stay disabled permanently.** This is now a
+standing constraint, not a completed task. Anyone tempted to re-enable them to unblock a legacy
+client is re-publishing a credential that has been readable in a public repository since it was
+committed.
+
+### Not verified — the recette Postgres password
+
+Finding 2 above is **not closed**. `RECETTE_SUPABASE_DB_URL` was rewritten at `09:09:29Z`, and
+`migrate-recette.yml` authenticated with the stored value at `11:59:07Z`, so the secret currently
+in the repository works. Neither fact says anything about the leaked password: a secret re-pasted
+unchanged also connects successfully. Disabling legacy **API** keys has no bearing on Postgres
+authentication, so the API-key probe does not cover this credential either.
+
+The equivalent probe was not run here. Run it to close the finding:
+
+```bash
+# recovers the leaked connection string from history and reports only the server's verdict
+CONN=$(git grep -h -o -E 'postgres(ql)?://[^ "]+' 6d75c125 2938bf07 -- | sort -u | head -1)
+PGCONNECT_TIMEOUT=15 psql "$CONN" -tAc 'select 1'
+# expected after a real password change:
+#   FATAL: password authentication failed for user "postgres"
+# anything that returns 1 means the leaked password is still live -> change it now
+```
+
+If that returns `1`, the leaked Postgres password is still valid and this is a **P0**: change it in
+Settings → Database, then update `RECETTE_SUPABASE_DB_URL` and re-run the probe.
+
+### Open — no CI job has exercised the new service-role key
+
+Every workflow that would prove the value now stored in `SUPABASE_SERVICE_ROLE_KEY` actually
+authenticates has been **skipped** since the legacy keys were disabled:
+
+- `data-integrity.yml` → `quiz-bank-integrity` and `migration-state`: `skipped` on all 20 most
+  recent runs (path filters).
+- `confidence-recompute.yml`: failing daily since at least 2026-08-24, i.e. a pre-existing failure,
+  and its last run (`07:48Z`) predates the disablement.
+
+The secret was written at `09:29:06Z`, **nine minutes before** legacy keys were disabled at
+`09:38:34Z`. If a legacy `service_role` JWT was pasted in that window, it is now dead and every
+consumer of that secret will fail the moment one of these jobs is no longer skipped. Confirm the
+stored value is a new-format `sb_secret_…` key rather than an `eyJ…` JWT before relying on it.
 
 ---
 
