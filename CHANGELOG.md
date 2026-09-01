@@ -10,6 +10,61 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.0.0] - 2026-09-01
+
+A major because the public API changed shape, and an infrastructure release
+because production left Vercel. 97 commits since `3.0.0`.
+
+### Changed
+
+- **BREAKING — `/api/v2/*` response envelopes are standardised.** Corpus endpoints
+  now return the Module #0 envelope: licence, attribution, pagination and typed
+  errors, consistently. Every consumer parsing a v2 payload must be updated
+  (ETNI-1377).
+- **Production is self-hosted on an OVH VPS in Gravelines and deploys only when a
+  GitHub Release is published.** Not a push, not a tag. Vercel's automatic
+  deployments are off — per-push preview builds from parallel agent sessions
+  exhausted the Hobby plan's quota until the rate limit landed on `main` itself.
+  The recette preview is now built on demand from the Actions tab.
+- The AFRIK corpus sync is chained to the new deploy rather than to a Vercel
+  deployment event that will never be emitted again.
+- Access-mode labels moved to a nominal register — _L'atlas_, _Les dossiers_,
+  _Les jeux_ — and the URL slugs follow (ETNI-1614, ETNI-1615).
+- The three axis landing pages were removed; the hubs are reached directly
+  (ETNI-1555).
+
+### Added
+
+- Language as a first-class entity: strict model, corpus directory, read service,
+  schema, serializer, handler, public detail route and OpenAPI documentation
+  (ETNI-1589 → ETNI-1594).
+- Names Atlas wave 2 — 10 new sourced dossiers, a name-granularity alliance table,
+  declared name variants, clan names harvested from fiche prose, and one strict
+  model per naming subtype (ETNI-1454 → ETNI-1460).
+- `spellingAliases` on peoples and languages, surfaced through search (DEC-034).
+- A search-first home page (ETNI-1404), an About page (ETNI-1407), prefix and
+  accent-insensitive search matching (ETNI-1397), and country-fiche and
+  language-family prose in the search index (DEC-028).
+- Atomic revision publication for moderation (ETNI-70), contributor notification
+  on flag resolution (ETNI-73), and self-service API key management (ETNI-81).
+- A person entity with a source-or-nothing trigger (ETNI-1382).
+
+### Fixed
+
+- The corpus sync's AFRIK loader never satisfied `assertions.fiche_revision_id`.
+- `next-mdx-remote` is bundled through react-server aliasing, which was making the
+  doctrine detail route 500 in a built server (ETNI-1622).
+- Language speaker relations were not populated (ETNI-1646).
+- Stale eleven-game references corrected across source, tests and the charter
+  (ETNI-1620).
+
+### Security
+
+- The one-time secret audit of the public git history that `ci.yml`'s `--no-git`
+  comment had promised was finally run. Production credentials are clean; the
+  recette service-role key and Postgres password are in the history and are being
+  rotated. See `docs/runbooks/secret-exposure-audit-2026-09.md`.
+
 ## [3.0.0] - 2026-08-31
 
 The release that turns the atlas from a set of directories into a place you can
@@ -247,7 +302,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/big-emotion/ethniafrica/compare/v2.1.0...v3.0.0
 [2.1.0]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/big-emotion/ethniafrica/compare/v1.2.0...v2.0.0
