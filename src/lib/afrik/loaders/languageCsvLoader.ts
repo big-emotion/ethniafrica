@@ -50,6 +50,7 @@ export interface LanguageRecord {
   nameProvenance: LanguageNameProvenance;
   glottocode?: string;
   source?: LanguageSource;
+  spellingAliases?: string[]; // Alternate spellings of the same name (DEC-034)
 }
 
 /** The CSV's `source_tier=1` is the only value the corpus declares today; anything else is not the official tier the corpus asserts. */

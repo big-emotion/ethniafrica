@@ -292,6 +292,70 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.errors).toEqual([]);
   });
 
+  // AC: a fiche that omits spellingAliases upserts an empty array, not undefined or an error.
+  // @req REQ-032
+  it("defaults a people's spelling_aliases to an empty array when the fiche omits it", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const peopleOperation = database.operations.find(
+      ({ table }) => table === "afrik_peoples"
+    )!;
+    expect(peopleOperation.row.spelling_aliases).toEqual([]);
+  });
+
+  // AC: a fiche's content.appellations.spellingAliases reaches the spelling_aliases
+  // column unchanged, covering more than one declared alias.
+  // @req REQ-032
+  it("maps a people's declared spelling aliases onto spelling_aliases", async () => {
+    const aliasedPeople = {
+      ...peopleFixture,
+      content: {
+        ...peopleFixture.content,
+        appellations: {
+          ...peopleFixture.content.appellations,
+          spellingAliases: ["Gour", "Gor"],
+        },
+      },
+    };
+    vi.mocked(loadAllPeoples).mockResolvedValue([aliasedPeople]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const peopleOperation = database.operations.find(
+      ({ table }) => table === "afrik_peoples"
+    )!;
+    expect(peopleOperation.row.spelling_aliases).toEqual(["Gour", "Gor"]);
+  });
+
   // @req REQ-032
   it("does not rewrite an unchanged protected classification while synchronizing content", async () => {
     const database = useSupabaseDouble({
