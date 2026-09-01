@@ -340,6 +340,16 @@ describe("migrateAfrikToDatabase", () => {
   // AC: a fiche that omits spellingAliases upserts an empty array, not undefined or an error.
   // @req REQ-032
   it("defaults a people's spelling_aliases to an empty array when the fiche omits it", async () => {
+    const appellationsWithoutAlias = { ...peopleFixture.content.appellations };
+    delete appellationsWithoutAlias.spellingAliases;
+    const peopleWithoutAlias = {
+      ...peopleFixture,
+      content: {
+        ...peopleFixture.content,
+        appellations: appellationsWithoutAlias,
+      },
+    };
+    vi.mocked(loadAllPeoples).mockResolvedValue([peopleWithoutAlias]);
     const database = useSupabaseDouble({
       rows: {
         afrik_language_families: [
