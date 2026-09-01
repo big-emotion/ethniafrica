@@ -156,6 +156,7 @@ describe("ftsSearchEntities", () => {
   let familiesPayload: { total: number; rows: unknown[] };
   let quizPayload: { total: number; rows: unknown[] };
   let languagesPayload: { total: number; rows: unknown[] };
+  let leadsPayload: { rows: unknown[] };
   let personPeoplesRows: Record<string, unknown>[];
 
   beforeEach(() => {
@@ -168,6 +169,7 @@ describe("ftsSearchEntities", () => {
     familiesPayload = { total: 0, rows: [] };
     quizPayload = { total: 0, rows: [] };
     languagesPayload = { total: 0, rows: [] };
+    leadsPayload = { rows: [] };
     personPeoplesRows = [];
 
     rpc = vi.fn((fn: string) => {
@@ -185,6 +187,8 @@ describe("ftsSearchEntities", () => {
         return Promise.resolve({ data: quizPayload, error: null });
       if (fn === "afrik_search_languages")
         return Promise.resolve({ data: languagesPayload, error: null });
+      if (fn === "afrik_search_leads")
+        return Promise.resolve({ data: leadsPayload, error: null });
       throw new Error(`unexpected rpc ${fn}`);
     });
 
@@ -1117,6 +1121,68 @@ describe("ftsSearchEntities", () => {
     });
 
     expect(result.total).toBe(2);
+  });
+
+  // @req REQ-125
+  it("fetches near-miss leads only when the combined total is zero", async () => {
+    leadsPayload = {
+      rows: [
+        { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "bamba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.total).toBe(0);
+    expect(result.leads).toEqual([
+      { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+    ]);
+    expect(rpc).toHaveBeenCalledWith("afrik_search_leads", {
+      p_q: "bamba",
+      p_limit: 3,
+    });
+  });
+
+  // @req REQ-125
+  it("never calls afrik_search_leads when a match already exists", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Bambara",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.total).toBe(1);
+    expect(result.leads).toEqual([]);
+    expect(rpc).not.toHaveBeenCalledWith(
+      "afrik_search_leads",
+      expect.anything()
+    );
+  });
+
+  // @req REQ-125
+  it("returns no leads when q is empty even with a relation scope and zero total", async () => {
+    const result = await ftsSearchEntities({
+      q: "",
+      familyId: "FLG_KROU",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.total).toBe(0);
+    expect(result.leads).toEqual([]);
+    expect(rpc).not.toHaveBeenCalledWith(
+      "afrik_search_leads",
+      expect.anything()
+    );
   });
 
   // ── the cross-kind ordered list (ETNI-1710) ───────────────────────────────

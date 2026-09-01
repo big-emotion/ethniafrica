@@ -466,6 +466,65 @@ describe("RecherchePageContent", () => {
     });
   });
 
+  // @req REQ-125
+  it("empty state renders the near-miss leads the API returns", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [],
+          countries: [],
+          families: [],
+          total: 0,
+          leads: [
+            {
+              kind: "people",
+              id: "PPL_BAMBARA",
+              name: "Bambara",
+              similarity: 0.4,
+            },
+          ],
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    const input = screen.getByRole("searchbox");
+    const submit = screen.getByRole("button", { name: /rechercher/i });
+
+    await act(async () => {
+      fireEvent.change(input, { target: { value: "bamba" } });
+      fireEvent.click(submit);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: /Bambara/ })).toHaveAttribute(
+        "href",
+        getPeopleRoute("fr", "PPL_BAMBARA")
+      );
+    });
+  });
+
+  // @req REQ-125
+  it("empty state omits the leads cartouche when the API returns none", async () => {
+    mockFetch.mockResolvedValue(okJson(emptyApiResponse));
+    render(<RecherchePageContent />);
+
+    const input = screen.getByRole("searchbox");
+    const submit = screen.getByRole("button", { name: /rechercher/i });
+
+    await act(async () => {
+      fireEvent.change(input, { target: { value: "xyzzy" } });
+      fireEvent.click(submit);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/aucun résultat/i)).toBeInTheDocument();
+    });
+    expect(screen.queryByTestId("no-results-leads")).not.toBeInTheDocument();
+  });
+
   // ── 7. results list ────────────────────────────────────────────────────────
 
   it("renders a results list after a successful search", async () => {

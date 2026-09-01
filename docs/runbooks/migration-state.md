@@ -212,6 +212,7 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 
 > **REQ-002 (ETNI-1707).** `069` is the blocking SQL contract behind cross-kind search. It adds
 > `public.afrik_search_normalized_score`, which maps each kind's own relevance onto one bounded

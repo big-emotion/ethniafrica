@@ -25,7 +25,7 @@ import {
   getLocalizedRoute,
   getPeopleRoute,
 } from "@/lib/routing";
-import type { SearchResult } from "@/types/afrik-frontend";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
 import { search as searchCorpus } from "@/lib/afrikLoader";
 
 const push = vi.fn();
@@ -34,7 +34,10 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ push, replace: vi.fn() }),
 }));
 
-vi.mock("@/lib/afrikLoader", () => ({ search: vi.fn(async () => []) }));
+vi.mock("@/lib/afrikLoader", () => ({
+  search: vi.fn(async () => []),
+  searchWithLeads: vi.fn(async () => ({ results: [], leads: [] })),
+}));
 
 const YORUBA: SearchResult = {
   type: "people",
@@ -62,9 +65,12 @@ const ALL_KINDS = [YORUBA, NIGERIA, NIGER_CONGO];
 
 function renderSearch(
   fetchResults: (query: string) => Promise<SearchResult[]> = async () =>
-    ALL_KINDS
+    ALL_KINDS,
+  fetchLeads?: (query: string) => Promise<SearchLead[]>
 ) {
-  return render(<HomeHeroSearch fetchResults={fetchResults} />);
+  return render(
+    <HomeHeroSearch fetchResults={fetchResults} fetchLeads={fetchLeads} />
+  );
 }
 
 function field() {
@@ -289,6 +295,39 @@ describe("HomeHeroSearch", () => {
     expect(
       screen.getByRole("link", { name: "Parcourir les familles linguistiques" })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
+  });
+
+  // @req REQ-125
+  it("shows near-miss leads once the corpus itself came back empty", async () => {
+    const fetchLeads = vi.fn(async () => [
+      {
+        type: "languageFamily" as const,
+        id: "FLG_MANDE",
+        name: "Mandé",
+        similarity: 0.5,
+      },
+    ]);
+    renderSearch(async () => [], fetchLeads);
+
+    await type("zzzz");
+
+    await screen.findByTestId("state-copy");
+    expect(fetchLeads).toHaveBeenCalledWith("zzzz");
+    expect(screen.getByRole("link", { name: /Mandé/ })).toHaveAttribute(
+      "href",
+      getFamilyRoute("fr", "FLG_MANDE")
+    );
+  });
+
+  // @req REQ-125
+  it("never asks for near-miss leads once the corpus already answered", async () => {
+    const fetchLeads = vi.fn(async () => []);
+    renderSearch(async () => ALL_KINDS, fetchLeads);
+
+    await type("yoruba");
+
+    await screen.findByRole("listbox");
+    expect(fetchLeads).not.toHaveBeenCalled();
   });
 
   // A seed is a shortcut to the full result page, not a second search mode.

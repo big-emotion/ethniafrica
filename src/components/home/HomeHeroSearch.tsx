@@ -8,9 +8,10 @@ import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEARCH_EMPTY_LINK_LABEL } from "@/components/ui/EmptyState";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
+import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { HomeHeroSeeds } from "./HomeHeroSeeds";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
-import { search as searchCorpus } from "@/lib/afrikLoader";
+import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -18,7 +19,11 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import { cn } from "@/lib/utils";
-import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
+import type {
+  SearchEntityType,
+  SearchLead,
+  SearchResult,
+} from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 
 /**
@@ -100,6 +105,12 @@ const GROUPS: { type: SearchEntityType; heading: string }[] = [
 // way through and so re-renders — one unstable identity is an infinite loop.
 const fetchFromCorpus = (query: string) => searchCorpus(query);
 
+// REQ-125: a second, independent request rather than a `fetchResults` return
+// shape change — every existing caller and test injects `fetchResults` as
+// `(query) => Promise<SearchResult[]>`, and that contract stays untouched.
+const fetchLeadsFromCorpus = (query: string) =>
+  searchWithLeads(query).then((r) => r.leads);
+
 function ficheHref(result: SearchResult, language: Language): string {
   if (result.type === "country") return getCountryRoute(language, result.id);
   if (result.type === "languageFamily")
@@ -111,6 +122,8 @@ export interface HomeHeroSearchProps {
   language?: Language;
   /** Injected by tests; defaults to the corpus search every other surface uses. */
   fetchResults?: (query: string) => Promise<SearchResult[]>;
+  /** Injected by tests; defaults to the corpus's near-miss leads (REQ-125). */
+  fetchLeads?: (query: string) => Promise<SearchLead[]>;
   /** Drawn from the corpus by the server on every request; see seedWords.ts. */
   seedWords?: SeedWordsByKind;
 }
@@ -119,11 +132,13 @@ export interface HomeHeroSearchProps {
 export function HomeHeroSearch({
   language = "fr",
   fetchResults = fetchFromCorpus,
+  fetchLeads = fetchLeadsFromCorpus,
   seedWords,
 }: HomeHeroSearchProps = {}) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [leads, setLeads] = useState<SearchLead[]>([]);
   const [dismissed, setDismissed] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -149,6 +164,7 @@ export function HomeHeroSearch({
       // Keeping the array's identity when it is already empty is what lets
       // React bail out instead of scheduling another render of this effect.
       setResults((current) => (current.length === 0 ? current : []));
+      setLeads((current) => (current.length === 0 ? current : []));
       setAnswered(false);
       setPending(false);
       return;
@@ -164,13 +180,24 @@ export function HomeHeroSearch({
         if (ticket !== latestQuery.current) return;
         setResults(found);
         setAnswered(true);
+        // REQ-125: only worth asking for once the corpus itself came back
+        // empty — a query that already matched never needs a near-miss.
+        // Fired without awaiting: the leads are a secondary enhancement and
+        // must never hold the busy indicator up for a second round trip.
+        if (found.length === 0) {
+          fetchLeads(trimmed).then((nearMisses) => {
+            if (ticket === latestQuery.current) setLeads(nearMisses);
+          });
+        } else {
+          setLeads([]);
+        }
       } finally {
         if (ticket === latestQuery.current) setPending(false);
       }
     }, DEBOUNCE_MS);
 
     return () => clearTimeout(timer);
-  }, [trimmed, longEnough, fetchResults]);
+  }, [trimmed, longEnough, fetchResults, fetchLeads]);
 
   useEffect(() => {
     if (pending) {
@@ -405,6 +432,7 @@ export function HomeHeroSearch({
           <p data-testid="state-copy">
             Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
           </p>
+          <NoResultsLeads leads={leads} language={language} />
           <Link href={getLocalizedRoute(language, "families")}>
             {SEARCH_EMPTY_LINK_LABEL}
           </Link>

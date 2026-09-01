@@ -620,6 +620,12 @@ const options: swaggerJsdoc.Options = {
                 "Sum of the seven corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
             },
+            leads: {
+              type: "array",
+              items: { $ref: "#/components/schemas/SearchLeadV2" },
+              description:
+                "Near-miss leads (REQ-125), populated only when total is 0: up to 3 suggestions across peoples, countries and language families, ranked by pg_trgm similarity alone (migration 069) below the main search's own fuzzy floor. Always an empty array when total is greater than 0.",
+            },
           },
           required: [
             "peoples",
@@ -638,7 +644,30 @@ const options: swaggerJsdoc.Options = {
             "quizzesTotal",
             "languagesTotal",
             "total",
+            "leads",
           ],
+        },
+        SearchLeadV2: {
+          type: "object",
+          description:
+            "A near-miss lead (REQ-125): what the search engine almost understood, only ever returned when the main search's total is 0.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: ["people", "country", "family"],
+              description:
+                "The entity kind this lead belongs to — the three kinds the search surface names to the reader.",
+            },
+            id: { type: "string", description: "The entity's own identifier." },
+            name: { type: "string", description: "The entity's display name." },
+            similarity: {
+              type: "number",
+              description:
+                "pg_trgm similarity of the folded query against this name, in [0.2, 1].",
+              example: 0.27,
+            },
+          },
+          required: ["kind", "id", "name", "similarity"],
         },
         QuizSearchResultV2: {
           type: "object",

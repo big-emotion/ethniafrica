@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { getLanguageFamilies, search } from "../afrikLoader";
+import { getLanguageFamilies, search, searchWithLeads } from "../afrikLoader";
 
 // Mock fetch globally
 const mockFetch = vi.fn();
@@ -307,6 +307,74 @@ describe("afrikLoader", () => {
       const result = await search("test");
 
       expect(result).toHaveLength(0);
+    });
+  });
+
+  describe("searchWithLeads", () => {
+    // @req REQ-125
+    it("carries near-miss leads alongside the results", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: {
+              peoples: [],
+              countries: [],
+              families: [],
+              total: 0,
+              leads: [
+                {
+                  kind: "people",
+                  id: "PPL_BAMBARA",
+                  name: "Bambara",
+                  similarity: 0.4,
+                },
+              ],
+            },
+          }),
+      });
+
+      const { results, leads } = await searchWithLeads("bamba");
+
+      expect(results).toHaveLength(0);
+      expect(leads).toEqual([
+        { type: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      ]);
+    });
+
+    // @req REQ-125
+    it("returns no leads when the search already matched", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: {
+              peoples: [{ id: "PPL_SHONA", nameMain: "Shona", content: {} }],
+              countries: [],
+              families: [],
+              total: 1,
+            },
+          }),
+      });
+
+      const { results, leads } = await searchWithLeads("shona");
+
+      expect(results).toHaveLength(1);
+      expect(leads).toEqual([]);
+    });
+
+    // @req REQ-125
+    it("returns empty results and leads on error", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: () => Promise.resolve({ error: { message: "Server error" } }),
+      });
+
+      const { results, leads } = await searchWithLeads("test");
+
+      expect(results).toHaveLength(0);
+      expect(leads).toHaveLength(0);
     });
   });
 

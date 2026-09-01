@@ -12,6 +12,7 @@ import type {
   PeopleDetail,
   CountrySummary,
   CountryDetail,
+  SearchLead,
   SearchResult,
   SearchEntityType,
   PaginationMeta,
@@ -25,6 +26,7 @@ import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import {
   buildSearchParams,
   mapSearchEnvelope,
+  mapSearchLeads,
   type SearchQueryOptions,
 } from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
@@ -187,6 +189,52 @@ export async function search(
   } catch (error) {
     logger.error("[search] Exception", error);
     return [];
+  }
+}
+
+export interface SearchWithLeads {
+  results: SearchResult[];
+  /** Near-miss leads (REQ-125) — non-empty only when the API's own total is 0. */
+  leads: SearchLead[];
+}
+
+// @req REQ-125
+/**
+ * Same single browser path as `search` (ETNI-1415, AC2), additionally carrying
+ * the near-miss leads a zero-result search returns. A distinct function rather
+ * than an added parameter, so every existing `search()` caller keeps its
+ * `SearchResult[]` return type untouched; it takes the same `SearchOptions`, so
+ * a surface that needs both leads and the server-side scopes (the /recherche
+ * page) reaches the corpus through here instead of fetching the endpoint itself.
+ */
+export async function searchWithLeads(
+  query: string,
+  options: SearchOptions = {}
+): Promise<SearchWithLeads> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/search?${buildSearchParams(query, options)}`
+    );
+
+    if (!response.ok) {
+      const error = await handleFetchError(response, "search");
+      logger.error("[searchWithLeads] Error", error);
+      return { results: [], leads: [] };
+    }
+
+    const envelope = await response.json();
+    const results = mapSearchEnvelope(envelope);
+    const leads = mapSearchLeads(envelope);
+
+    return {
+      results: options.type
+        ? results.filter((result) => result.type === options.type)
+        : results,
+      leads,
+    };
+  } catch (error) {
+    logger.error("[searchWithLeads] Exception", error);
+    return { results: [], leads: [] };
   }
 }
 

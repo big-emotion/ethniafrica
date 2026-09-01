@@ -391,6 +391,37 @@ describe("GET /api/v2/search (route)", () => {
     expect(body.data.languagesTotal).toBe(1);
   });
 
+  // REQ-125: a zero-result search surfaces near-miss leads in the envelope.
+  // @req REQ-125
+  it("returns near-miss leads in the response envelope on a zero-result search", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        peoples: [],
+        total: 0,
+        leads: [
+          {
+            kind: "people",
+            id: "PPL_BAMBARA",
+            name: "Bambara",
+            similarity: 0.4,
+          },
+        ],
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=bamba");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.total).toBe(0);
+    expect(body.data.leads).toEqual([
+      expect.objectContaining({ kind: "people", id: "PPL_BAMBARA" }),
+    ]);
+  });
+
   // ── client/route contract ───────────────────────────────────────────────
   // The site's own callers went unnoticed for two releases while every search
   // 400ed, because each side was only ever tested against its own idea of the
