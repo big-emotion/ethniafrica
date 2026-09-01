@@ -7,7 +7,10 @@
  * not order them.
  */
 
-import { searchAfrikLanguageFamilies } from "./languageFamilies";
+import {
+  searchAfrikLanguageFamilies,
+  searchAfrikLanguageFamiliesByText,
+} from "./languageFamilies";
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
 import { normalizeString } from "@/lib/normalize";
@@ -31,14 +34,18 @@ import type {
  * ranking that nothing executed. Migrations 043/044 moved both the weighting
  * and the ranking into the database; this layer now only shapes the rows.
  *
- * Language families have no tsvector and no ilike filter: they have no
- * migration to give them one, and at two dozen rows a full fetch plus an
- * accent-insensitive substring/prefix tier computed here (normalizeString —
- * REQ-129) is smaller than the migration an index would cost, and correct
- * where an ilike filter cannot be (it compares characters literally, so it
- * cannot fold "Mandé" onto "mande"). Their `relevance` is a tier, so it is
- * comparable between families and not with the other two kinds —
- * `exactMatch` is what callers sort on across kinds.
+ * Language families rank on two independent signals rather than one SQL
+ * query. Their name still ranks with a full fetch plus an accent-insensitive
+ * substring/prefix tier computed here (normalizeString — REQ-129), because
+ * `search_vector`'s French-stemmed matching (migration 055) does not carry
+ * that accent-insensitivity and an ilike filter cannot either (it compares
+ * characters literally, so it cannot fold "Mandé" onto "mande"). Their
+ * decolonial text (content->decolonialHeader) ranks separately, by asking
+ * `search_vector` directly for the ids it matches (DEC-028) — this is what
+ * lets a term that appears only in that prose, and nowhere in the name,
+ * still surface the family. `relevance` is a tier, so it is comparable
+ * between families and not with the other two kinds — `exactMatch` is what
+ * callers sort on across kinds.
  *
  * A blank `q` with a relation scope (`familyId` / `countryId`) is a browse,
  * not a search: peoples are listed for that scope, and countries and families
@@ -62,26 +69,28 @@ export async function ftsSearchEntities(
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
 
-  const [peopleResult, countryResult, familyRows] = await Promise.all([
-    supabase.rpc("afrik_search_peoples", {
-      p_q: text || null,
-      p_limit: limit,
-      p_offset: offset,
-      p_classification_status: classificationStatus ?? null,
-      p_min_confidence: minConfidence ?? null,
-      p_since_verified_after: sinceVerifiedAfter ?? null,
-      p_family_id: familyId ?? null,
-      p_country_id: countryId ?? null,
-    }),
-    text
-      ? supabase.rpc("afrik_search_countries", {
-          p_q: text,
-          p_limit: limit,
-          p_offset: offset,
-        })
-      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
-    text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
-  ]);
+  const [peopleResult, countryResult, familyRows, familyProseMatchIds] =
+    await Promise.all([
+      supabase.rpc("afrik_search_peoples", {
+        p_q: text || null,
+        p_limit: limit,
+        p_offset: offset,
+        p_classification_status: classificationStatus ?? null,
+        p_min_confidence: minConfidence ?? null,
+        p_since_verified_after: sinceVerifiedAfter ?? null,
+        p_family_id: familyId ?? null,
+        p_country_id: countryId ?? null,
+      }),
+      text
+        ? supabase.rpc("afrik_search_countries", {
+            p_q: text,
+            p_limit: limit,
+            p_offset: offset,
+          })
+        : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+      text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
+      text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
+    ]);
 
   if (peopleResult.error) {
     logger.error("Error in ranked peoples search", peopleResult.error);
@@ -97,7 +106,11 @@ export async function ftsSearchEntities(
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
-  const families = rankLanguageFamilies(familyRows, text);
+  const families = rankLanguageFamilies(
+    familyRows,
+    text,
+    new Set(familyProseMatchIds)
+  );
 
   return {
     peoples,
@@ -164,20 +177,31 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
   };
 }
 
-/** Exact name, then prefix, then anywhere. Accents and case are folded away. */
+/**
+ * Exact name, then prefix, then anywhere in the name, then only in the
+ * decolonial text (DEC-028). Name tiers fold accents and case away; the
+ * prose tier is membership in `proseMatchIds`, decided by Postgres full-text
+ * search over `search_vector` (searchAfrikLanguageFamiliesByText).
+ */
 const FAMILY_TIER_EXACT = 1;
 const FAMILY_TIER_PREFIX = 0.6;
 const FAMILY_TIER_SUBSTRING = 0.3;
+const FAMILY_TIER_PROSE = 0.1;
 
 function rankLanguageFamilies(
   families: LanguageFamily[],
-  query: string
+  query: string,
+  proseMatchIds: ReadonlySet<string>
 ): RankedLanguageFamily[] {
   const wanted = normalizeString(query);
   if (!wanted) return [];
 
   return families
-    .filter((family) => normalizeString(family.nameFr).includes(wanted))
+    .filter(
+      (family) =>
+        normalizeString(family.nameFr).includes(wanted) ||
+        proseMatchIds.has(family.id)
+    )
     .map((family) => {
       const name = normalizeString(family.nameFr);
       const exactMatch = name === wanted;
@@ -185,7 +209,9 @@ function rankLanguageFamilies(
         ? FAMILY_TIER_EXACT
         : name.startsWith(wanted)
           ? FAMILY_TIER_PREFIX
-          : FAMILY_TIER_SUBSTRING;
+          : name.includes(wanted)
+            ? FAMILY_TIER_SUBSTRING
+            : FAMILY_TIER_PROSE;
       return { ...family, relevance, exactMatch };
     })
     .sort(
