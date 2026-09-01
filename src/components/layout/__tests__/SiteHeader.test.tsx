@@ -15,11 +15,13 @@ import { HEADER_RETRACTED_ATTRIBUTE } from "@/hooks/use-header-reveal";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getTranslation } from "@/lib/translations";
-import { ACCESS_MODE_LABELS, getNavModules } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  ACCESS_MODES,
+  getNavModules,
+} from "@/lib/hubs/moduleRegistry";
 import type { ModuleAvailabilityMap } from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
-import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
-import { getFacetByPage } from "@/lib/hubs/facets";
 import { getLocalizedRoute } from "@/lib/routing";
 
 let mockPathname = "/fr";
@@ -164,7 +166,7 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
 
 describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   // @req REQ-114
-  it("leads with the axis's own hub, and reaches every entry it holds", () => {
+  it("keeps the access mode non-navigating and exposes every module as a direct entry", () => {
     renderHeader();
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
@@ -174,22 +176,27 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
       "true"
     );
     expect(panel()).toHaveTextContent(t.hubs.explorer.menuBlurb);
-
-    // The axis label is a disclosure button, so before this the page the axis
-    // is named after was reachable from no navigation surface at all.
+    expect(trigger(ACCESS_MODE_LABELS.explorer).tagName).toBe("BUTTON");
+    expect(trigger(ACCESS_MODE_LABELS.explorer)).not.toHaveAttribute("href");
     expect(
-      screen.getByRole("link", { name: t.hubs.explorer.hubEntryName })
-    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
+      within(panel()).getByRole("heading", {
+        name: ACCESS_MODE_LABELS.explorer,
+      })
+    ).not.toHaveAttribute("href");
+    expect(
+      within(panel()).queryByTestId("site-nav-hub-explorer")
+    ).not.toBeInTheDocument();
 
+    // Directory facets are modules in navigation: each one keeps its own
+    // destination, full name and availability contract under the access mode.
     for (const navModule of getNavModules("explorer")) {
       const href = getModuleHref(navModule, "fr");
-      const facet = navModule.page ? getFacetByPage(navModule.page) : null;
+      const entry = within(panel()).getByTestId(
+        `site-nav-module-${navModule.id}`
+      );
 
-      // A facet is offered under its short name, because it names a state of
-      // the hub rather than a destination competing with it.
-      expect(
-        screen.getByRole("link", { name: facet ? facet.label : navModule.name })
-      ).toHaveAttribute("href", href);
+      expect(entry).toHaveAccessibleName(navModule.name);
+      expect(entry).toHaveAttribute("href", href);
     }
   });
 
@@ -208,7 +215,6 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
-    expect(panel()).not.toHaveTextContent(getAxisHubRoute("fr", "explorer"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "search"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "peoples"));
     expect(panel()).not.toHaveTextContent(getLocalizedRoute("fr", "countries"));
@@ -265,43 +271,39 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
   });
 
   // @req REQ-114
-  it("marks the facet the reader is already reading", () => {
+  it("marks the direct module the reader is already reading", () => {
     mockPathname = getLocalizedRoute("fr", "peoples");
     renderHeader();
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
-    expect(screen.getByRole("link", { name: "Peuples" })).toHaveAttribute(
+    expect(screen.getByTestId("site-nav-module-peuples")).toHaveAttribute(
       "aria-current",
       "page"
     );
-    expect(screen.getByRole("link", { name: "Pays" })).not.toHaveAttribute(
+    expect(screen.getByTestId("site-nav-module-pays")).not.toHaveAttribute(
       "aria-current"
     );
   });
 
   // @req REQ-114
-  it("keeps the facets on a single scrolling row", () => {
-    const { container } = renderHeader();
+  it("renders Explorer directory modules in registry order without a facet sub-navigation", () => {
+    renderHeader();
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.explorer));
 
-    // happy-dom lays nothing out, so the row's shape is asserted on the
-    // declaration itself. The facets are states of one hub: stacked, they
-    // read as three destinations competing with the hub they belong to.
-    const sheet = container.querySelector("style")?.textContent ?? "";
-    const facetRow = sheet.slice(sheet.indexOf(".sh-facets {"));
-
-    expect(facetRow).toMatch(/flex-wrap:\s*nowrap/);
-    expect(facetRow).toMatch(/overflow-x:\s*auto/);
-    // The wider hub card is what keeps that scrollbar unused at the widths
-    // the panel is actually painted on.
-    expect(sheet).toMatch(
-      /\.sh-grid \.sh-hub\[data-has-facets\] \{[^}]*grid-column:\s*span 2/
+    expect(
+      within(panel())
+        .getAllByTestId(/^site-nav-module-/)
+        .map((entry) => entry.dataset.testid)
+    ).toEqual(
+      getNavModules("explorer").map(
+        (navModule) => `site-nav-module-${navModule.id}`
+      )
     );
-    expect(screen.getByTestId("site-nav-hub-explorer")).toHaveAttribute(
-      "data-has-facets"
-    );
+    expect(
+      within(panel()).queryByTestId(/^site-nav-facet-/)
+    ).not.toBeInTheDocument();
   });
 });
 
@@ -588,7 +590,7 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
   });
 
   // @req REQ-114
-  it("deploys the hub and its facets inside the tray", () => {
+  it("deploys direct module entries without a hub landing link", () => {
     renderHeader();
 
     fireEvent.click(screen.getByTestId(BURGER));
@@ -599,16 +601,67 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
       })
     );
 
-    // The tray is the only navigation below 760px, so a hub reachable in the
-    // panel and not here would be unreachable on a phone.
     expect(
-      within(tray).getByRole("link", { name: t.hubs.explorer.hubEntryName })
-    ).toHaveAttribute("href", getAxisHubRoute("fr", "explorer"));
+      within(tray).queryByTestId("site-nav-hub-explorer")
+    ).not.toBeInTheDocument();
+    expect(
+      within(tray).getByRole("heading", {
+        name: ACCESS_MODE_LABELS.explorer,
+      })
+    ).not.toHaveAttribute("href");
+    for (const navModule of getNavModules("explorer")) {
+      expect(
+        within(tray).getByTestId(`site-nav-module-${navModule.id}`)
+      ).toHaveAttribute("href", getModuleHref(navModule, "fr"));
+    }
+  });
 
-    expect(within(tray).getByRole("link", { name: "Peuples" })).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "peoples")
-    );
+  // @req REQ-114
+  it("keeps panel and tray destination contracts aligned for every access mode", () => {
+    renderHeader();
+
+    const contractsFor = (scope: HTMLElement) =>
+      within(scope)
+        .getAllByTestId(/^site-nav-module-/)
+        .map((entry) => ({
+          testId: entry.dataset.testid,
+          href: entry.getAttribute("href"),
+          disabled: entry.getAttribute("aria-disabled"),
+        }));
+
+    const panelContracts = new Map<string, ReturnType<typeof contractsFor>>();
+    for (const axis of ACCESS_MODES) {
+      fireEvent.click(trigger(ACCESS_MODE_LABELS[axis]));
+      expect(
+        within(panel()).getByRole("heading", {
+          name: ACCESS_MODE_LABELS[axis],
+        })
+      ).not.toHaveAttribute("href");
+      const contracts = contractsFor(panel());
+      expect(contracts.map(({ testId }) => testId)).toEqual(
+        getNavModules(axis).map(
+          (navModule) => `site-nav-module-${navModule.id}`
+        )
+      );
+      panelContracts.set(axis, contracts);
+    }
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.jouer));
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    for (const axis of ACCESS_MODES) {
+      expect(
+        within(tray).getByRole("heading", {
+          name: ACCESS_MODE_LABELS[axis],
+        })
+      ).not.toHaveAttribute("href");
+      fireEvent.click(
+        within(tray).getByRole("button", {
+          name: new RegExp(ACCESS_MODE_LABELS[axis]),
+        })
+      );
+      expect(contractsFor(tray)).toEqual(panelContracts.get(axis));
+    }
   });
 });
 
