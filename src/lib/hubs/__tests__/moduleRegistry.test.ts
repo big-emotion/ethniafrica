@@ -28,9 +28,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("owns the exact French label of every access mode", () => {
     expect(ACCESS_MODE_LABELS).toEqual({
-      explorer: "Consulter",
-      comprendre: "Enquêter",
-      jouer: "Jouer",
+      explorer: "L'atlas",
+      comprendre: "Les dossiers",
+      jouer: "Les jeux",
     });
   });
 
