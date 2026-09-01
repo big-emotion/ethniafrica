@@ -82,7 +82,7 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
+    "connect-src 'self' https://*.supabase.co https://supabase.ethniafrica.com https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }
