@@ -419,11 +419,18 @@ export const translations = {
       derivedLabel: "Valeur dérivée",
       derivedFromPrefix: "Dérivée de : ",
     },
-    // `blurb` opens the hub page — it says what the axis holds, to a reader
-    // who already chose it. `menuBlurb` opens the header panel — it says
-    // when to choose the axis at all, to a reader still deciding. Two jobs,
-    // so two sentences; both copied from docs/design/mockups, which is the
-    // reference when code and mockup disagree (docs/design/README.md).
+    // `blurb` opens the hub page — it says what the axis holds, in the
+    // register of the page it opens. `menuBlurb` opens the header panel,
+    // directly above the tiles of that axis, and lists what those tiles are.
+    // Two surfaces, so two sentences; both copied from docs/design/mockups,
+    // which is the reference when code and mockup disagree
+    // (docs/design/README.md).
+    //
+    // The panel sentence used to name the occasion instead of the contents —
+    // « Quand on sait ce qu'on cherche », « Quand on veut se tester » — which
+    // asks a reader looking straight at five unexplained tiles to work out
+    // for themselves what those tiles hold. It now names the modules, and
+    // `modulesNamedIn` keeps it honest as the registry changes.
     //
     // Each blurb used to open on the reader's own trajectory — « Il arrive
     // avec un nom, il repart avec une fiche » — before naming the contents.
@@ -447,7 +454,7 @@ export const translations = {
         blurb:
           "L'axe des fiches : peuples, pays, langues et familles linguistiques, chacun sous la sienne.",
         menuBlurb:
-          "Quand on sait ce qu'on cherche — un peuple, un pays, une langue, un nom.",
+          "Les fiches de pays, de peuples, de familles linguistiques et d'appellations, plus la recherche.",
         hubEntryName: "Le hub d'exploration",
       },
       dossiers: {
@@ -456,7 +463,7 @@ export const translations = {
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
-          "Quand on veut savoir d'où vient ce qu'on lit — méthode, sources, temps long.",
+          "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
         hubEntryName: "Le hub de lecture",
       },
       jeux: {
@@ -465,7 +472,7 @@ export const translations = {
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
         menuBlurb:
-          "Quand on veut se tester — mise en regard, écarts, rapprochements.",
+          "Le quiz des parcours et un jeu sur la taille réelle des pays.",
         hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
