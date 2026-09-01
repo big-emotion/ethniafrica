@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_KIKUYU",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Agĩkũyũ",
+      "nameType": "endonym",
+      "languageOfOrigin": "kik",
+      "meaning": "Littéralement « enfants du grand figuier sycomore » : dérivé de mũkũyũ, le figuier sycomore (Ficus sycomorus), l'arbre sacré du lieu d'origine mythique Mũkũrwe wa Nyagathanga où se seraient installés les ancêtres fondateurs Gĩkũyũ et Mũmbi.",
+      "periodLabel": "Usage contemporain et traditionnel",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Gĩkũyũ (ou Agĩkũyũ au pluriel) est la forme privilégiée dans les contextes culturels et identitaires kényans, à côté de la forme internationale Kikuyu.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Gikuyu (kik)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/kik/",
+          "tier": "official",
+          "notes": "Documente l'autonyme du peuple et de la langue ; ne couvre pas l'étymologie du figuier."
+        },
+        {
+          "title": "Gĩkũyũ Centre for Cultural Studies — Gikuyu Origins",
+          "author": "Gĩkũyũ Centre for Cultural Studies",
+          "year": 2008,
+          "url": "https://mukuyu.wordpress.com/2008/11/13/origins/",
+          "tier": "unverified",
+          "notes": "Seule source trouvée pour la dérivation mũkũyũ (figuier) → Gĩkũyũ ; site communautaire, non une publication académique arbitrée. Aucune source officielle ou référencée n'a pu être vérifiée pour cette étymologie précise — à réviser si une meilleure source est trouvée."
+        }
+      ]
+    },
+    {
+      "nameText": "Kikuyu",
+      "nameType": "exonym",
+      "languageOfOrigin": "swa",
+      "meaning": "Forme swahilie de Gĩkũyũ.",
+      "periodLabel": "XIXe siècle à aujourd'hui",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Kikuyu, empruntée au swahili par les administrateurs coloniaux britanniques et les explorateurs européens à partir du XIXe siècle, est devenue la forme standard dans les usages administratifs et internationaux (notamment en anglais) ; elle n'est pas perçue comme problématique par la communauté.",
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Gikuyu (kik)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/kik/",
+          "tier": "official",
+          "notes": "Ethnologue référence \"Kikuyu\" comme nom courant international de la langue, à côté de l'autonyme."
+        }
+      ]
+    }
+  ]
+}

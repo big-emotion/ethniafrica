@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_NDEBELE",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "AmaNdebele",
+      "nameType": "endonym",
+      "languageOfOrigin": "nde",
+      "meaning": null,
+      "periodLabel": "Usage contemporain, auto-désignation",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "« Ndebele » est le terme officiel au Zimbabwe ; « AmaNdebele » reste l'auto-désignation privilégiée par le peuple.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "Ethnologue: Languages of the World — Ndebele, Northern (nde)",
+          "author": "SIL International",
+          "year": 2026,
+          "url": "https://www.ethnologue.com/language/nde/",
+          "tier": "official",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "nameText": "Matabele",
+      "nameType": "exonym",
+      "languageOfOrigin": "sot",
+      "meaning": "Rendu généralement par « ceux qui se cachent derrière leur bouclier » ou « les gens aux longs boucliers » — un exonyme sotho décrivant les grands boucliers de guerre nguni des partisans de Mzilikazi.",
+      "periodLabel": "Diffusé depuis les années 1820, encore en usage aujourd'hui hors du peuple",
+      "imposedBy": "Voisins sotho-tswana, puis repris par les colons européens et la British South Africa Company",
+      "impositionPeriod": "XIXe siècle (à partir de 1823)",
+      "whyProblematic": "Perçu par les Ndebele contemporains comme un nom donné de l'extérieur, moins précis que leur auto-désignation AmaNdebele ; la région qu'il désigne, « Matabeleland », porte elle aussi un nom européen, quand le nom ndebele de leur territoire historique est Mthwakazi.",
+      "contemporaryUsage": "« Matabele »/« Matabeleland » reste courant dans l'usage historique et administratif hérité de la période coloniale, mais « Ndebele » est aujourd'hui le terme officiel et privilégié.",
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "South African History Online — Matabele Wars, 1836–1896",
+          "author": "South African History Online",
+          "year": 2026,
+          "url": "https://sahistory.org.za/article/matabele-wars-1836-1896",
+          "tier": "referenced",
+          "notes": "La page glose Matabele par « people who duck behind their shield » ; d'autres sources publiées font plutôt état de « longs boucliers ». L'image du bouclier est constante, la traduction exacte varie selon les auteurs — d'où le classement à titre de source unique, non de consensus établi."
+        }
+      ]
+    }
+  ]
+}

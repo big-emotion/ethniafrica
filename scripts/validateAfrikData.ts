@@ -18,6 +18,7 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
+import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
 import { getAdmin0Rings } from "../src/lib/atlas/overlays";
@@ -3051,9 +3052,29 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
 }
 
 /**
- * FR57-source – every name record cites ≥1 source with tier 1 or 2; every
- * Tier 2 source records a non-empty Wikipedia cross-check note in "notes"
- * (auditable chain required).
+ * Normalises a name-record source's `tier` to the current vocabulary.
+ *
+ * `dataset/source/afrik/noms/` mixes the retired numeric axis (wave 1,
+ * `PPL_YORUBA.json`, tier 1/2) with the current official/referenced/
+ * unverified vocabulary the rest of the corpus uses (see CLAUDE.md's Source
+ * Tier Policy) — `ficheSourceTierSchema` already accepts both when parsing,
+ * so this validator has to recognise both too instead of only the numeric
+ * one. Returns null for anything that is neither (missing, malformed).
+ */
+function normalizedNameRecordTier(tier: unknown): SourceTier | null {
+  if (tier === 1 || tier === "1") return "official";
+  if (tier === 2 || tier === "2") return "referenced";
+  if (tier === "official" || tier === "referenced" || tier === "unverified") {
+    return tier;
+  }
+  return null;
+}
+
+/**
+ * FR57-source – every name record cites ≥1 source at official or referenced
+ * tier (the current-vocabulary equivalent of the retired "Tier 1/2"); every
+ * referenced-tier source records a non-empty Wikipedia cross-check note in
+ * "notes" (auditable chain required).
  */
 export function checkNameRecordSources(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -3071,22 +3092,23 @@ export function checkNameRecordSources(datasetRoot: string): ValidationResult {
     const names = Array.isArray(data.names) ? data.names : [];
     names.forEach((entry, i) => {
       const sources = Array.isArray(entry?.sources) ? entry.sources : [];
-      const hasValidTierSource = sources.some(
-        (s) => s?.tier === 1 || s?.tier === 2
-      );
+      const hasValidTierSource = sources.some((s) => {
+        const tier = normalizedNameRecordTier(s?.tier);
+        return tier === "official" || tier === "referenced";
+      });
       if (!hasValidTierSource) {
         errors.push(
-          `FR57-source: ${file}: names[${i}] has no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+          `FR57-source: ${file}: names[${i}] has no source at official or referenced tier — at least one is required`
         );
       }
 
       sources.forEach((source, j) => {
         if (
-          source?.tier === 2 &&
+          normalizedNameRecordTier(source?.tier) === "referenced" &&
           (typeof source.notes !== "string" || !source.notes.trim())
         ) {
           errors.push(
-            `FR57-source: ${file}: names[${i}].sources[${j}] is Tier 2 and requires a non-empty Wikipedia cross-check note in "notes"`
+            `FR57-source: ${file}: names[${i}].sources[${j}] is referenced-tier and requires a non-empty Wikipedia cross-check note in "notes"`
           );
         }
       });

@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_OROMO",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Oromoo",
+      "nameType": "endonym",
+      "languageOfOrigin": "orm",
+      "meaning": null,
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Oromo est l'appellation officielle dans tous les contextes éthiopiens et kényans ; la langue est appelée Afaan Oromoo et la région fédérale Oromia.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Oromo (orm)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/orm/",
+          "tier": "official",
+          "notes": "Documente l'autonyme du peuple et de la langue."
+        }
+      ]
+    },
+    {
+      "nameText": "Galla",
+      "nameType": "exonym",
+      "languageOfOrigin": null,
+      "meaning": "Étymologie incertaine ; l'Oxford English Dictionary avance une origine possible en amharique ou dans l'arabe ghalīẓ, « rude, grossier », sans trancher.",
+      "periodLabel": "Attesté depuis le XVIe siècle jusqu'à son abandon officiel en 1974",
+      "imposedBy": "Groupes dominants de l'Éthiopie impériale (administration amharique), repris ensuite par les colonisateurs et voyageurs européens",
+      "impositionPeriod": "XIXe siècle – 1974",
+      "whyProblematic": "Terme jugé profondément insultant par les Oromo eux-mêmes ; employé par les groupes dominants éthiopiens pour les désigner depuis l'extérieur, jamais comme autodésignation. Le remplacement officiel du « misnomer Galla » par l'autonyme Oromo suit directement la révolution de 1974.",
+      "contemporaryUsage": "Considéré offensant et hors d'usage dans tout contexte officiel, académique ou médiatique contemporain ; « Oromo » est aujourd'hui la seule appellation employée.",
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "EthnoMed — Oromo Cultural Profile",
+          "author": "Susan Omura, MD; Oromo Community Organization — Harborview Medical Center / University of Washington",
+          "year": 2003,
+          "url": "https://ethnomed.org/culture/oromo/",
+          "tier": "referenced",
+          "notes": "Profil culturel institutionnel (rédigé 1994, dernière révision 2003) : « \"Galla\" is a derogatory term used in the past for Oromos by the ruling groups in Ethiopia. »"
+        },
+        {
+          "title": "Oxford English Dictionary — \"Galla, n. & adj.\"",
+          "author": "Oxford University Press",
+          "year": 2024,
+          "url": "https://www.oed.com/dictionary/galla_n?tl=true",
+          "tier": "referenced",
+          "notes": "Étymologie incertaine (amharique ou arabe ghalīẓ) ; confirme que le terme n'est pas une autodésignation oromo."
+        }
+      ]
+    }
+  ]
+}
