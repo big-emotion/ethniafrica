@@ -12,6 +12,7 @@ export { PeopleNamingBlock } from "./PeopleNamingBlock";
 export { PeopleFieldExplainer } from "./PeopleFieldExplainer";
 export { PeopleFieldLegend } from "./PeopleFieldLegend";
 export { PeopleOriginBlock } from "./PeopleOriginBlock";
+export { PeopleHistoricalAffiliationBlock } from "./PeopleHistoricalAffiliationBlock";
 export { PeopleLanguageSection } from "./PeopleLanguageSection";
 export { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
 export { PeopleCultureGrid } from "./PeopleCultureGrid";

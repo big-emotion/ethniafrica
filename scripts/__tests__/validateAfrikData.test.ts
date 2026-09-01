@@ -7,7 +7,7 @@
 // @req REQ-032
 // @req REQ-130
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
 import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
@@ -22,6 +22,7 @@ import {
   checkCountryNameFrDistinctFromOfficial,
   checkFamilyStructuralCompleteness,
   checkCountryCodesResolve,
+  checkHistoricalAffiliationModel,
   OFF_MAP_COUNTRIES,
   AFRICAN_REFERENCE_COUNTRY_CODES,
 } from "../validateAfrikData";
@@ -109,6 +110,31 @@ function writePplWithAppellations(
       content: {
         appellations,
         languages: { isoCodes: ["ful"] },
+        demography: { distributionByCountry: [] },
+        sources: [],
+      },
+    })
+  );
+}
+
+function writePplWithHistoricalAffiliation(
+  root: string,
+  flgFolder: string,
+  pplId: string,
+  historicalAffiliation: {
+    description?: string;
+    sources?: Array<{ title?: string; url?: string | null; tier?: string }>;
+  }
+) {
+  const dir = join(root, "peuples", flgFolder);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${pplId}.json`),
+    JSON.stringify({
+      id: pplId,
+      content: {
+        historicalAffiliation,
+        languages: { isoCodes: ["hat"] },
         demography: { distributionByCountry: [] },
         sources: [],
       },
@@ -351,6 +377,112 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.warnings.some((w) => w.includes("single fiche"))).toBe(
         true
       );
+    });
+  });
+
+  // ── FR111 : checkHistoricalAffiliationModel (REQ-127) ──────────────────────
+
+  describe("checkHistoricalAffiliationModel (FR111, REQ-127)", () => {
+    // @req REQ-127
+    it("returns ok:true when no fiche declares a historical affiliation", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePPL(tmpDir, "FLG_CREOLE", "PPL_HAITIAN");
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-127
+    it("returns ok:true for a well-formed historical affiliation, sourced and tiered", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description:
+          "Peuple afro-descendant formé par la traite transatlantique ; Glottolog classe le créole haïtien sous la famille de son lexifieur, jamais sous une famille africaine.",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-127
+    it("does not touch languageFamilyId when historicalAffiliation is present", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const dir = join(tmpDir, "peuples", "FLG_CREOLE");
+      const written = JSON.parse(
+        readFileSync(join(dir, "PPL_HAITIAN.json"), "utf-8")
+      );
+      expect(written.languageFamilyId).toBeUndefined();
+      expect(written.content.historicalAffiliation).toBeDefined();
+    });
+
+    // @req REQ-127
+    it("errors when historicalAffiliation has no description", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("description"))).toBe(true);
+    });
+
+    // @req REQ-127
+    it("errors when historicalAffiliation has no sources", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("sources"))).toBe(true);
+    });
+
+    // @req REQ-127
+    it("errors when a historicalAffiliation source carries no valid tier", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [
+          {
+            title: "Un blog non tierré",
+            url: "https://example.org/blog",
+            tier: "invented-tier",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("tier"))).toBe(true);
     });
   });
 

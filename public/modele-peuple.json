@@ -44,6 +44,17 @@
       "dialects": [],
       "vehicularRole": null
     },
+    "historicalAffiliation": {
+      "description": "<Lien historique, non linguistique, avec l'Afrique — obligatoire quand le peuple n'a pas de filiation linguistique défendable vers une famille africaine (ex. créolophones) ; omettre entièrement la section sinon>",
+      "sources": [
+        {
+          "title": "<Titre de la source, tel que cité>",
+          "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+          "tier": "official | referenced | unverified",
+          "notes": "<Provenance du tier>"
+        }
+      ]
+    },
     "culture": {
       "majorRites": null,
       "symbols": null,

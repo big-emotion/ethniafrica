@@ -19,6 +19,7 @@ import type {
   OriginsSection,
   OrganizationSection,
   LanguagesSection,
+  HistoricalAffiliationSection,
   DetailedCultureSection,
   HistoricalRoleSection,
   GlobalDemographySection,
@@ -180,6 +181,11 @@ export interface PeopleDetail {
 
   // Section 5: Langues et sous-familles
   languages?: LanguagesSection;
+
+  // Filiation historique — REQ-127. Distinct de languageFamilyId ; présent
+  // seulement pour les peuples sans filiation linguistique défendable vers
+  // une famille africaine (ex. créolophones). Voir DIRECTIVES-AFRIK.md §12.
+  historicalAffiliation?: HistoricalAffiliationSection;
 
   // Section 6: Culture, rites, traditions (A-F)
   culture?: DetailedCultureSection;
@@ -555,6 +561,7 @@ export type {
   OriginsSection,
   OrganizationSection,
   LanguagesSection,
+  HistoricalAffiliationSection,
   DetailedCultureSection,
   HistoricalRoleSection,
   GlobalDemographySection,
