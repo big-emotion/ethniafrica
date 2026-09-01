@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { HOME_HERO_IMAGES } from "@/lib/home/homeHeroVisuals";
 
 // The band carries an interactive island since the search field landed in it,
 // and useRouter throws outside an app-router tree rather than degrading.
@@ -228,5 +229,27 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(
       copy!.compareDocumentPosition(globe!) & Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
+  });
+
+  // @req REQ-115
+  it("renders a drawn project image with its alt text and visible credit", () => {
+    const image = HOME_HERO_IMAGES[0];
+
+    render(<HomeHero visual={{ kind: "image", image }} />);
+
+    expect(screen.getByRole("img", { name: image.alt })).toBeInTheDocument();
+    expect(screen.getByText(image.credit)).toBeInTheDocument();
+    expect(screen.queryByTestId("home-hero-globe")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-115
+  it("keeps the interactive globe as the default and as an explicit draw", () => {
+    const defaultView = render(<HomeHero />);
+    expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
+    defaultView.unmount();
+
+    render(<HomeHero visual={{ kind: "globe" }} />);
+    expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
+    expect(screen.queryByRole("img")).not.toBeInTheDocument();
   });
 });

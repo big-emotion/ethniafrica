@@ -10,12 +10,14 @@ const {
   getHubModulesMock,
   loadHeroPreviewMock,
   loadSynthesisRailMock,
+  drawHomeHeroVisualMock,
 } = vi.hoisted(() => ({
   getCorpusCountsMock: vi.fn(),
   getContinentPeopleCountsMock: vi.fn(),
   getHubModulesMock: vi.fn(),
   loadHeroPreviewMock: vi.fn(),
   loadSynthesisRailMock: vi.fn(),
+  drawHomeHeroVisualMock: vi.fn(),
 }));
 
 const fixtureCounts = {
@@ -57,6 +59,15 @@ vi.mock("@/lib/home/synthesisRailData", () => ({
   loadSynthesisRail: loadSynthesisRailMock,
 }));
 
+vi.mock("@/lib/home/homeHeroVisuals", async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import("@/lib/home/homeHeroVisuals")>();
+  return {
+    ...actual,
+    drawHomeHeroVisual: drawHomeHeroVisualMock,
+  };
+});
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
@@ -89,6 +100,7 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     getContinentPeopleCountsMock.mockResolvedValue({});
     getHubModulesMock.mockResolvedValue([]);
     loadSynthesisRailMock.mockResolvedValue([]);
+    drawHomeHeroVisualMock.mockReturnValue({ kind: "globe" });
   });
 
   // @req REQ-044
@@ -168,6 +180,34 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     await renderHome();
 
     expect(getContinentPeopleCountsMock).toHaveBeenCalledOnce();
+  });
+
+  // @req REQ-115
+  it("draws a fresh right-hand visual for each page request", async () => {
+    const image = {
+      id: "test-map",
+      src: "/images/home/al-idrisi-1154.jpg",
+      alt: "Une carte historique de l'Afrique.",
+      credit: "Carte de test — domaine public",
+      position: "center",
+    } as const;
+    drawHomeHeroVisualMock
+      .mockReturnValueOnce({ kind: "image", image })
+      .mockReturnValueOnce({ kind: "globe" });
+
+    const firstLoad = await renderHome();
+    expect(screen.getByRole("img", { name: image.alt })).toBeInTheDocument();
+    expect(screen.queryByTestId("home-globe-stage")).not.toBeInTheDocument();
+    expect(getContinentPeopleCountsMock).not.toHaveBeenCalled();
+    firstLoad.unmount();
+
+    await renderHome();
+    expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("img", { name: image.alt })
+    ).not.toBeInTheDocument();
+    expect(getContinentPeopleCountsMock).toHaveBeenCalledOnce();
+    expect(drawHomeHeroVisualMock).toHaveBeenCalledTimes(2);
   });
 
   // @req REQ-044

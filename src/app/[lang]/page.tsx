@@ -6,6 +6,7 @@ import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { loadSeedWords } from "@/lib/home/seedWords";
+import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
@@ -41,13 +42,20 @@ export const metadata: Metadata = {
 // @req REQ-113
 // @req REQ-115
 export default async function Home() {
+  // Drawn on the server once per request: no hydration mismatch and no visual
+  // swap after the first paint. The force-dynamic contract above prevents the
+  // result from being frozen into a prerendered page.
+  const heroVisual = drawHomeHeroVisual();
+
   const [counts, peopleCountsByCountry, seedWords] = await Promise.all([
     // A failed total read is not an empty corpus. The counter component says
     // it is unavailable instead of turning an operational failure into zero.
     getCorpusCounts().catch(() => null),
     // The shared globe owns its own unavailable state: losing its country
     // signal must not take the search or the rest of the hero with it.
-    getContinentPeopleCounts().catch(() => undefined),
+    heroVisual.kind === "globe"
+      ? getContinentPeopleCounts().catch(() => undefined)
+      : Promise.resolve(undefined),
     loadSeedWords(),
   ]);
 
@@ -61,6 +69,7 @@ export default async function Home() {
         seedWords={seedWords}
         peopleCountsByCountry={peopleCountsByCountry}
         counts={<HomeCorpusCounts counts={counts} />}
+        visual={heroVisual}
       />
       <DidYouKnow language="fr" facts={didYouKnowFacts} />
     </PageLayout>
