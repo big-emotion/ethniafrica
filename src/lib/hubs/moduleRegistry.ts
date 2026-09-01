@@ -36,9 +36,9 @@ export const ACCESS_MODES: AccessMode[] = ["explorer", "comprendre", "jouer"];
 
 // @req REQ-114
 export const ACCESS_MODE_LABELS = {
-  explorer: "Consulter",
-  comprendre: "Enquêter",
-  jouer: "Jouer",
+  explorer: "L'atlas",
+  comprendre: "Les dossiers",
+  jouer: "Les jeux",
 } satisfies Record<AccessMode, string>;
 
 // One categorical accent per mode, from the CVD-validated four (color.css
