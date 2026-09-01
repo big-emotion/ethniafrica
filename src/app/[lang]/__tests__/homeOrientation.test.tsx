@@ -6,6 +6,8 @@ const fixtureCounts = {
   peoples: 4213,
   countries: 91,
   families: 37,
+  languages: 748,
+  nameForms: 3134,
   migrations: 5,
 };
 
@@ -126,20 +128,27 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
   // Counts keep their definition-list semantics even when the display order
   // puts each number above its label.
   // @req REQ-113
-  it("presents the corpus scale as three labelled values", async () => {
+  it("presents the corpus scale as five labelled values", async () => {
     await renderHome();
 
     const counts = screen.getAllByRole("term")[0].closest("dl");
     expect(counts).toHaveAttribute("aria-label", "Le corpus en chiffres");
-    expect(within(counts!).getAllByRole("term")).toHaveLength(3);
-    expect(within(counts!).getAllByRole("definition")).toHaveLength(3);
-    for (const label of ["Peuples", "Pays", "Familles linguistiques"]) {
+    expect(within(counts!).getAllByRole("term")).toHaveLength(5);
+    expect(within(counts!).getAllByRole("definition")).toHaveLength(5);
+    for (const label of [
+      "Peuples",
+      "Langues",
+      "Pays",
+      "Familles linguistiques",
+      "Appellations",
+    ]) {
       expect(within(counts!).getByText(label).tagName).toBe("DT");
     }
   });
 
-  // The one action names the three entity types the corpus can resolve. No
-  // retired axis copy survives around it to compete for the first decision.
+  // The one action names the five entity types the corpus can resolve — the
+  // same five the tiles above count. No retired axis copy survives around it
+  // to compete for the first decision.
   // @req REQ-113
   it("names the searchable entity kinds without legacy entry-point rhetoric", async () => {
     const { container } = await renderHome();
@@ -149,7 +158,7 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(container.textContent).not.toMatch(/il arrive sans rien/i);
     expect(
       screen.getByRole("combobox", {
-        name: /peuple, un pays ou une famille linguistique/i,
+        name: /peuple, une langue, un pays, une famille linguistique ou un nom/i,
       })
     ).toBeInTheDocument();
   });
