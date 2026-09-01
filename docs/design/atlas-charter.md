@@ -168,8 +168,7 @@ generated from it, never hand-listed.
   panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
   a route under **Les dossiers**, at its still-transitional `comprendre`
   prefix — in monospace under its label. That is the router's path scheme
-  rendered as
-  editorial content — the atlas publishing its own plumbing to a reader who
+  rendered as editorial content — the atlas publishing its own plumbing to a reader who
   came for peoples and languages. The address lives in the link's `href`,
   where the browser's status bar, the crawler and the screen reader all agree
   to look for it; a URL long enough to wrap over two lines was never the thing
