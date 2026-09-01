@@ -251,14 +251,11 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "atlas",
     page: "names",
     availability: "data",
-    // This read "ready", on the reasoning that an empty `name_records`
-    // already said everything there was to say. It does not: the corpus holds
-    // one fiche — `dataset/source/afrik/noms/PPL_YORUBA.json`, alone — for 803
-    // peoples, and the loader is wired. The row count would therefore stop
-    // speaking the moment that single fiche lands, and offer an atlas of names
-    // that names one people. Readiness is what withholds the invitation while
-    // the route stays built.
-    editorialReadiness: "draft",
+    // The published people fiches now feed the index directly: their autonyms,
+    // exonyms and attested variants give this route corpus-wide coverage, while
+    // ambiguous prose remains refused rather than guessed. The invitation can
+    // therefore follow the route that was already public.
+    editorialReadiness: "ready",
     dataSource: "name_records",
   },
   // Recherche closes Explorer: it is where a reader goes once naming the
