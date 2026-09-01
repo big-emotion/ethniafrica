@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
+
+import { loadLanguageFamilyFiche } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getFamilyRoute } from "@/lib/routing";
@@ -65,6 +67,21 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
+
+  // The existence check lives here, not in the page body, because `loading.tsx`
+  // makes this segment a Suspense boundary: the shell — and a `200` — is
+  // flushed before the body runs, so the page's own `notFound()` arrives too
+  // late to change the status. `generateMetadata` runs before the flush, and
+  // `loadLanguageFamilyFiche` is request-cached so the page reuses this load.
+  const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
+  if (
+    parsedForExistence?.mode === "live" &&
+    !(await loadLanguageFamilyFiche(parsedForExistence.slug))
+  ) {
+    {
+      notFound();
+    }
+  }
   return ficheCanonical("family", lang as Language, slug);
 }
 
@@ -195,7 +212,7 @@ export default async function FamillesSlugPage({
     );
   }
 
-  const family = await getLanguageFamilyById(parsed.slug);
+  const family = await loadLanguageFamilyFiche(parsed.slug);
   if (!family) {
     notFound();
   }
