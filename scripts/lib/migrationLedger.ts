@@ -95,9 +95,38 @@ export function normaliseSql(sql: string): string {
   while (index < sql.length) {
     const char = sql[index];
 
-    if (char === "'") {
-      const end = findStringEnd(sql, index);
+    // Dollar-quoted bodies come first, because inside one the ordinary quoting
+    // rules do not apply. 018 seeds editorial doctrine as French prose inside
+    // `$mdx$ ... $mdx$`, and reading its apostrophes as string delimiters
+    // desynchronised the scanner: with an odd number of them everything after
+    // the block was misparsed, a trailing `;` survived on one side only, and
+    // three migrations reported as drifted while the database and the files
+    // agreed.
+    const dollarTag = readDollarTag(sql, index);
+    if (dollarTag !== null) {
+      const end = findDollarEnd(sql, index + dollarTag.length, dollarTag);
       out += sql.slice(index, end);
+      index = end;
+      continue;
+    }
+
+    if (char === "'") {
+      // SQL concatenates adjacent string literals separated by whitespace, so a
+      // comment written across several quoted lines in a file is a single
+      // string once the database has it. 039 writes its constraint comment that
+      // way and reported as drifted against a ledger holding the joined result.
+      // Adjacency on the same line is not valid SQL, so folding on any
+      // whitespace cannot merge two strings the parser would keep apart.
+      let end = findStringEnd(sql, index);
+      let body = sql.slice(index, end);
+      let next = skipWhitespace(sql, end);
+      while (sql[next] === "'") {
+        const nextEnd = findStringEnd(sql, next);
+        body = body.slice(0, -1) + sql.slice(next + 1, nextEnd);
+        end = nextEnd;
+        next = skipWhitespace(sql, end);
+      }
+      out += body;
       index = end;
       continue;
     }
@@ -123,6 +152,32 @@ export function normaliseSql(sql: string): string {
   }
 
   return out.replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+/**
+ * The dollar-quote tag opening at `start` (`$$`, `$mdx$`, `$fn$`), or null.
+ *
+ * Postgres allows an optional identifier between the dollars, and the closing
+ * delimiter must repeat it exactly — which is the whole point of the syntax:
+ * a body can then contain any quote character without escaping.
+ */
+function readDollarTag(sql: string, start: number): string | null {
+  if (sql[start] !== "$") return null;
+  const match = /^\$[A-Za-z_][A-Za-z0-9_]*\$|^\$\$/.exec(sql.slice(start));
+  return match ? match[0] : null;
+}
+
+/** Index just past the closing dollar tag, or the end of input if unterminated. */
+function findDollarEnd(sql: string, from: number, tag: string): number {
+  const close = sql.indexOf(tag, from);
+  return close === -1 ? sql.length : close + tag.length;
+}
+
+/** Index of the first non-whitespace character at or after `from`. */
+function skipWhitespace(sql: string, from: number): number {
+  let index = from;
+  while (index < sql.length && /\s/.test(sql[index])) index += 1;
+  return index;
 }
 
 /** Index just past the closing quote, treating `''` as an escaped quote. */
