@@ -58,8 +58,19 @@ vi.mock("@/lib/home/synthesisRailData", () => ({
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
+  PageLayout: ({
+    children,
+    flushBottom,
+  }: {
+    children: React.ReactNode;
+    flushBottom?: boolean;
+  }) => (
+    <div
+      data-testid="page-layout"
+      data-flush-bottom={String(Boolean(flushBottom))}
+    >
+      {children}
+    </div>
   ),
 }));
 
@@ -71,7 +82,7 @@ import Home, { metadata } from "../page";
 
 const renderHome = async () => render(await Home());
 
-describe("home page — search, corpus scale and one fact (ETNI-1404)", () => {
+describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     getCorpusCountsMock.mockResolvedValue(fixtureCounts);
@@ -89,7 +100,7 @@ describe("home page — search, corpus scale and one fact (ETNI-1404)", () => {
   });
 
   // @req REQ-113
-  it("shows the three real corpus totals and exactly one sourced fact", async () => {
+  it("shows the three real corpus totals and exactly two sourced facts", async () => {
     await renderHome();
 
     expect(screen.getByTestId("home-count-peoples")).toHaveTextContent(
@@ -101,8 +112,22 @@ describe("home page — search, corpus scale and one fact (ETNI-1404)", () => {
     expect(
       screen
         .getByTestId("home-did-you-know")
-        .querySelector('[data-testid="home-dyk-official-source"]')
-    ).not.toBeNull();
+        .querySelectorAll('[data-testid="home-dyk-official-source"]')
+    ).toHaveLength(2);
+    expect(screen.getAllByTestId("home-dyk-fact")).toHaveLength(2);
+  });
+
+  // The illustrated section is full bleed and is the final child of main, so
+  // it owns the seam with the footer rather than leaving main's padding as a
+  // strip of unrelated ground.
+  // @req REQ-044
+  it("lets the final section meet the footer without a bottom gap", async () => {
+    await renderHome();
+
+    expect(screen.getByTestId("page-layout")).toHaveAttribute(
+      "data-flush-bottom",
+      "true"
+    );
   });
 
   // A rejected count query means “unknown”, never “empty”. The other hero

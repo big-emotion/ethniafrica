@@ -1,8 +1,14 @@
+import Image from "next/image";
+
 import {
   AfricaTraceLoader,
   LOADER_REVEAL_DELAY_MS,
 } from "@/components/system/AfricaTraceLoader";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import {
+  illustrationFor,
+  illustrationSideFor,
+} from "@/lib/home/didYouKnowIllustrations";
 import {
   DID_YOU_KNOW_ENTITY_ACCENT,
   DID_YOU_KNOW_ENTITY_LABEL,
@@ -79,6 +85,8 @@ export function DidYouKnowLoader({
   // order a reader's eye travels in cannot drift apart.
   let step = 0;
   const nextStep = () => stepClass(step++);
+  const illustration = fact ? illustrationFor(fact.id) : undefined;
+  const imageSide = fact ? illustrationSideFor(fact.id) : "start";
 
   return (
     <div
@@ -94,52 +102,80 @@ export function DidYouKnowLoader({
       </div>
 
       {fact ? (
-        <div className="afh-dykl-inner">
-          <p className={cn("afh-dykl-eyebrow", "afh-dykl-rise", nextStep())}>
-            Saviez-vous que
-          </p>
-
-          <p className={cn("afh-dykl-headline", "afh-dykl-rise", nextStep())}>
-            {fact.headline}
-          </p>
-
-          {fact.body.map((paragraph, index) => (
-            <p
-              key={paragraph.slice(0, 32)}
-              className={cn(
-                "afh-dykl-body",
-                index === 0 && "afh-dykl-lede",
-                "afh-dykl-rise",
-                nextStep()
-              )}
-            >
-              {paragraph}
-            </p>
-          ))}
-
-          {fact.entities.length > 0 && (
-            <ul className={cn("afh-dykl-chips", "afh-dykl-rise", nextStep())}>
-              {fact.entities.map((entity) => (
-                <li
-                  key={`${entity.kind}-${entity.id}`}
-                  className={cn(
-                    "afh-dykl-chip",
-                    DID_YOU_KNOW_ENTITY_ACCENT[entity.kind]
-                  )}
-                >
-                  <span aria-hidden="true" className="afh-dykl-dot" />
-                  <span className="afh-dykl-chip-kind">
-                    {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
-                  </span>
-                  {entity.label}
-                </li>
-              ))}
-            </ul>
+        <div
+          className={cn(
+            "afh-dykl-inner",
+            "afh-dykl-split",
+            `afh-dykl-split--image-${imageSide}`
           )}
+        >
+          {illustration ? (
+            <figure
+              className={cn("afh-dykl-figure", "afh-dykl-rise", nextStep())}
+            >
+              <div className="afh-dykl-frame">
+                <Image
+                  src={illustration.src}
+                  alt={illustration.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 42vw, calc(100vw - 44px)"
+                  className="afh-dykl-image"
+                />
+              </div>
+              <figcaption className="afh-dykl-credit">
+                {illustration.credit}
+              </figcaption>
+            </figure>
+          ) : null}
 
-          <p className={cn("afh-dykl-tier", "afh-dykl-rise", nextStep())}>
-            {DID_YOU_KNOW_TIER_LABEL[fact.tier]}
-          </p>
+          <div className="afh-dykl-text">
+            <p className={cn("afh-dykl-eyebrow", "afh-dykl-rise", nextStep())}>
+              Saviez-vous que
+            </p>
+
+            <p className={cn("afh-dykl-headline", "afh-dykl-rise", nextStep())}>
+              {fact.headline}
+            </p>
+
+            {fact.body.map((paragraph, index) => (
+              <p
+                key={paragraph.slice(0, 32)}
+                className={cn(
+                  "afh-dykl-body",
+                  index === 0 && "afh-dykl-lede",
+                  "afh-dykl-rise",
+                  nextStep()
+                )}
+              >
+                {paragraph}
+              </p>
+            ))}
+
+            {fact.entities.length > 0 && (
+              <ul className={cn("afh-dykl-chips", "afh-dykl-rise", nextStep())}>
+                {fact.entities.map((entity) => (
+                  <li
+                    key={`${entity.kind}-${entity.id}`}
+                    className={cn(
+                      "afh-dykl-chip",
+                      DID_YOU_KNOW_ENTITY_ACCENT[entity.kind]
+                    )}
+                  >
+                    <span aria-hidden="true" className="afh-dykl-dot" />
+                    <span className="afh-dykl-chip-kind">
+                      {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                    </span>
+                    {entity.label}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <p className={cn("afh-dykl-tier", "afh-dykl-rise", nextStep())}>
+              {DID_YOU_KNOW_TIER_LABEL[fact.tier]}
+            </p>
+          </div>
         </div>
       ) : null}
 
@@ -164,6 +200,39 @@ export function DidYouKnowLoader({
           margin: 0 auto 18px;
         }
         .afh-dykl-inner {
+          width: 100%;
+          max-width: 1040px;
+          margin: 0 auto;
+        }
+        .afh-dykl-split {
+          display: flex;
+          flex-direction: column;
+        }
+        .afh-dykl-figure {
+          min-width: 0;
+          margin: 0 0 24px;
+        }
+        .afh-dykl-frame {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 3 / 2;
+          overflow: hidden;
+          border: 1px solid var(--afh-border);
+          border-radius: var(--afh-radius-lg);
+          background: var(--afh-bg-warm);
+        }
+        .afh-dykl-image {
+          object-fit: contain;
+        }
+        .afh-dykl-credit {
+          max-width: 56ch;
+          margin: 10px auto 0;
+          font-size: var(--afh-text-caption);
+          line-height: 1.45;
+          color: var(--afh-fg-muted);
+        }
+        .afh-dykl-text {
+          min-width: 0;
           max-width: 58ch;
           margin: 0 auto;
         }
@@ -283,6 +352,31 @@ export function DidYouKnowLoader({
         @media (min-width: 720px) {
           .afh-dykl { padding: 56px 40px; }
           .afh-dykl-mark { width: 128px; }
+        }
+        @media (min-width: 768px) {
+          .afh-dykl-split {
+            display: grid;
+            grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+          }
+          .afh-dykl-split--image-end .afh-dykl-figure {
+            order: 2;
+          }
+          .afh-dykl-figure {
+            margin: 0;
+          }
+          .afh-dykl-frame {
+            aspect-ratio: 4 / 3;
+          }
+          .afh-dykl-credit,
+          .afh-dykl-text {
+            margin-inline: 0;
+          }
+          .afh-dykl-chips {
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </div>

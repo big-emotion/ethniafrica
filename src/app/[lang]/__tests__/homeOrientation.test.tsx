@@ -72,17 +72,18 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
   });
 
   // @req REQ-113
-  it("places exactly one sourced fact after the hero and no retired section", async () => {
+  it("places exactly two sourced facts after the hero and no retired section", async () => {
     const { container } = await renderHome();
 
     const hero = container.querySelector(".home-hero");
-    const fact = screen.getByTestId("home-did-you-know");
+    const section = screen.getByTestId("home-did-you-know");
 
-    expect(precedes(hero!, fact)).toBe(true);
+    expect(precedes(hero!, section)).toBe(true);
     expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
+    expect(within(section).getAllByTestId("home-dyk-fact")).toHaveLength(2);
     expect(
-      within(fact).getByTestId("home-dyk-official-source")
-    ).toBeInTheDocument();
+      within(section).getAllByTestId("home-dyk-official-source")
+    ).toHaveLength(2);
     for (const testId of [
       "home-purpose-blocks",
       "access-axes",
@@ -107,19 +108,15 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(answer).toHaveTextContent(/sourc/i);
   });
 
-  // One page title, then the one fact's title. The corpus figures are values,
-  // not three headings competing with the page question.
+  // One page title, one section title, then the two fact titles. The corpus
+  // figures are values, not three headings competing with the page question.
   // @req REQ-113
-  it("keeps one h1 and gives the single fact the only h2", async () => {
+  it("keeps one h1 and gives the two facts a shared h2", async () => {
     await renderHome();
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(1);
-    expect(
-      within(screen.getByTestId("home-did-you-know")).getByRole("heading", {
-        level: 2,
-      })
-    ).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
   });
 
   // Counts keep their definition-list semantics even when the display order

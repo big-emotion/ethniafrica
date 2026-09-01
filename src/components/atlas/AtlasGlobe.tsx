@@ -1781,16 +1781,16 @@ export function AtlasGlobe({
             `}</style>
           </div>
         )}
-        {presentation === "standard" && (
-          <div
-            data-atlas-toolbar=""
-            className="flex flex-wrap justify-center gap-2"
-          >
-            {/* The button clears the choice, so the choice is what earns it —
+        <div
+          data-atlas-toolbar=""
+          className="pointer-events-auto flex flex-wrap justify-center gap-2"
+        >
+          {/* The button clears the choice, so the choice is what earns it —
             not the shape of the picker. Gated on the picker, a fiche offering
             pastilles had no way back to the whole area but "Recentrer", which
             also undoes the reader's own turn. */}
-            {(offersList || chosenCountryId !== null) && (
+          {presentation === "standard" &&
+            (offersList || chosenCountryId !== null) && (
               <button
                 type="button"
                 aria-pressed={chosenCountryId === null}
@@ -1801,11 +1801,12 @@ export function AtlasGlobe({
                 {wholeAreaLabel}
               </button>
             )}
-            {/* The bar and the button are two spellings of one control, so the
+          {/* The bar and the button are two spellings of one control, so the
               strip offers whichever one this stage was given — never both,
               which would let a reader flatten the map with one and be told by
               the other that it is round. */}
-            {pinnedProjection === undefined
+          {presentation === "standard" &&
+            (pinnedProjection === undefined
               ? !offersMorphBar && (
                   <button
                     type="button"
@@ -1831,50 +1832,51 @@ export function AtlasGlobe({
                   >
                     {pinnedProjectionNote}
                   </p>
-                )}
-            {/* Offered only where the discs are drawn: on a fiche it would be a
+                ))}
+          {/* Offered only where the discs are drawn: on a fiche it would be a
             switch over nothing. The label is the reader's word for them, and
             the one the retired engine printed on the same control. */}
-            {showTissot && (
-              <button
-                type="button"
-                aria-pressed={discsLit}
-                onClick={() => setDiscsLit((lit) => !lit)}
-                className={TOOLBAR_BUTTON_CLASS}
-                style={TOOLBAR_BUTTON_STYLE}
-              >
-                Pastilles
-              </button>
-            )}
-            {/* Held together in their own row so the two directions never wrap
+          {showTissot && stageIsSphere && (
+            <button
+              type="button"
+              aria-pressed={discsLit}
+              onClick={() => setDiscsLit((lit) => !lit)}
+              className={TOOLBAR_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              Pastilles
+            </button>
+          )}
+          {/* Held together in their own row so the two directions never wrap
             apart on a phone: a lone « + » with its « − » on the line below
             reads as two unrelated controls. The glyphs are hidden from the
             accessibility tree — a screen reader is told what the press does,
             not which sign is printed on it. */}
-            <div className="flex gap-1">
-              <button
-                type="button"
-                aria-label="Dézoomer"
-                title="Dézoomer"
-                disabled={atMinZoom}
-                onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
-                className={ZOOM_BUTTON_CLASS}
-                style={TOOLBAR_BUTTON_STYLE}
-              >
-                <span aria-hidden="true">−</span>
-              </button>
-              <button
-                type="button"
-                aria-label="Zoomer"
-                title="Zoomer"
-                disabled={atMaxZoom}
-                onClick={() => camera.zoomBy(ZOOM_STEP)}
-                className={ZOOM_BUTTON_CLASS}
-                style={TOOLBAR_BUTTON_STYLE}
-              >
-                <span aria-hidden="true">+</span>
-              </button>
-            </div>
+          <div className="flex gap-1">
+            <button
+              type="button"
+              aria-label="Dézoomer"
+              title="Dézoomer"
+              disabled={atMinZoom}
+              onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
+              className={ZOOM_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              <span aria-hidden="true">−</span>
+            </button>
+            <button
+              type="button"
+              aria-label="Zoomer"
+              title="Zoomer"
+              disabled={atMaxZoom}
+              onClick={() => camera.zoomBy(ZOOM_STEP)}
+              className={ZOOM_BUTTON_CLASS}
+              style={TOOLBAR_BUTTON_STYLE}
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+          </div>
+          {presentation === "standard" && (
             <button
               type="button"
               onClick={recentre}
@@ -1883,8 +1885,8 @@ export function AtlasGlobe({
             >
               Recentrer
             </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {chosenFacts && (

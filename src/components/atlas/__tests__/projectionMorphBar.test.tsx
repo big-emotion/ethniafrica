@@ -80,8 +80,9 @@ afterEach(() => {
  */
 describe("the projection morph bar", () => {
   // The homepage keeps the projection argument but gives the globe the whole
-  // visual field: the range follows the figure in normal reading order and
-  // fiche-only camera controls do not compete with the primary search.
+  // visual field: the range follows the figure in normal reading order. The
+  // two controls that act directly on that figure stay available — zoom and
+  // indicatrices — while fiche-only navigation remains absent.
   // @req REQ-112 @req REQ-115
   it("offers the homepage an external, editorial control band and a wider opening frame", async () => {
     const { container } = render(
@@ -106,9 +107,12 @@ describe("the projection morph bar", () => {
     expect(canvas).toHaveAttribute("data-zoom", "0.84");
     expect(screen.getByText("Glissez pour tourner.")).toBeInTheDocument();
     expect(morphBar()).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Pastilles" })).toBeNull();
-    expect(screen.queryByRole("button", { name: "Dézoomer" })).toBeNull();
-    expect(screen.queryByRole("button", { name: "Zoomer" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Pastilles" })).toHaveAttribute(
+      "aria-pressed",
+      "true"
+    );
+    expect(screen.getByRole("button", { name: "Dézoomer" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Zoomer" })).toBeEnabled();
     expect(screen.queryByRole("button", { name: "Recentrer" })).toBeNull();
   });
 

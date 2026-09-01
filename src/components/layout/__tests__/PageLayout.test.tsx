@@ -255,6 +255,24 @@ describe("PageLayout — flushTop", () => {
     expect(main?.className).not.toMatch(/\bpy-\d/);
     expect(main?.className).not.toMatch(/\bpt-\d/);
   });
+
+  // A full-bleed last section owns the seam with the footer just as a
+  // full-bleed first section owns the seam with the chrome. Keeping main's
+  // bottom padding inserts a strip of unrelated page ground between them.
+  // @req REQ-044
+  it("can let a full-bleed final section meet the footer without a gap", () => {
+    mockPathname = "/fr";
+    render(
+      <PageLayout language="fr" hideHeader flushTop flushBottom>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(main?.className).not.toMatch(/\bpb-\d/);
+    expect(main?.className).not.toMatch(/\bpy-\d/);
+    expect(main?.className).not.toMatch(/\bpt-\d/);
+  });
 });
 
 /**
