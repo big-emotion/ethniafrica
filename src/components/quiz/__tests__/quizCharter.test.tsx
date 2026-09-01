@@ -98,6 +98,37 @@ describe("Quiz charter contract (REQ-103)", () => {
   });
 
   /**
+   * A client component reached from a server one may only take serialisable
+   * props. `QuizScopePicker` is a server component and `QuizScopeDeck` is
+   * `"use client"`, so a builder handed across that boundary is not a type
+   * error and not a test failure — it is a 500 on the whole route, and only a
+   * production render shows it. This suite renders in happy-dom, where the
+   * boundary does not exist, so the guard has to read the source.
+   *
+   * It caught nothing when written: it was added *after* two `(id) => string`
+   * props took `/fr/jeux/quiz` down in CI. `AtlasGlobe` carries the same note
+   * for the same reason.
+   */
+  // @req REQ-121
+  it("gives the client deck no prop a server component cannot serialise", () => {
+    const source = readQuizSource("QuizScopeDeck.tsx");
+    const props = source.slice(
+      source.indexOf("export interface QuizScopeDeckProps"),
+      source.indexOf("export const QuizScopeDeck")
+    );
+
+    expect(props).not.toBe("");
+    // Every declared prop, minus the doc comments around them.
+    const declarations = props
+      .split("\n")
+      .filter((line) => /^\s{2}\w+\??:/.test(line));
+    expect(declarations.length).toBeGreaterThan(0);
+    for (const declaration of declarations) {
+      expect(declaration).not.toMatch(/=>/);
+    }
+  });
+
+  /**
    * A theme card offers a track by showing the question that track asks. A
    * theme with no specimen would fall back to a bare label — an `<option>` with
    * a border, which is the shape this surface was rebuilt to leave behind.

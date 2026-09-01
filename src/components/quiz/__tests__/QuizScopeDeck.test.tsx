@@ -23,8 +23,7 @@ function deck(
     <QuizScopeDeck
       items={items}
       themes={THEMES}
-      trackHref={(id) => `${QUIZ}?pays=${id}`}
-      crossedHref={(id, themeId) => `${QUIZ}?pays=${id}&theme=${themeId}`}
+      action={QUIZ}
       panelHintFr="Choisissez un sujet, ou jouez le pays entier."
       wholeTrackLabelFr="Jouer sans thème"
       closeLabelFr="Fermer"

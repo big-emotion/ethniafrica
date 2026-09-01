@@ -25,10 +25,14 @@ export interface QuizScopeDeckProps {
    * drag the whole translations object into the client chunk for nine labels.
    */
   themes: QuizThemePanelTheme[];
-  /** `?pays=GHA` for one item — the whole-track run. */
-  trackHref: (itemId: string) => string;
-  /** `?pays=GHA&theme=croyances`. */
-  crossedHref: (itemId: string, themeId: string) => string;
+  /**
+   * The quiz page's own path. Hrefs are composed here rather than handed in as
+   * builders: the picker is a server component and this one is a client
+   * component, and **a function cannot cross that boundary** — passing one
+   * renders the whole route as a 500. `AtlasGlobe` carries the same note for
+   * the same reason.
+   */
+  action: string;
   panelHintFr: string;
   wholeTrackLabelFr: string;
   closeLabelFr: string;
@@ -61,8 +65,7 @@ export interface QuizScopeDeckProps {
 export const QuizScopeDeck = ({
   items,
   themes,
-  trackHref,
-  crossedHref,
+  action,
   panelHintFr,
   wholeTrackLabelFr,
   closeLabelFr,
@@ -94,6 +97,10 @@ export const QuizScopeDeck = ({
 
   const themesFor = (item: QuizScopeDeckItem) =>
     themes.filter((theme) => (item.playableThemeIds ?? []).includes(theme.id));
+
+  const trackHref = (itemId: string) => `${action}?pays=${itemId}`;
+  const crossedHref = (itemId: string, themeId: string) =>
+    `${action}?pays=${itemId}&theme=${themeId}`;
 
   return (
     <ul

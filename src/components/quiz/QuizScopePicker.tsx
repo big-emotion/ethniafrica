@@ -116,10 +116,7 @@ export const QuizScopePicker = ({
             id: theme.id,
             labelFr: theme.labelFr,
           }))}
-          trackHref={(id) => trackHref(`pays=${id}`)}
-          crossedHref={(id, themeId) =>
-            trackHref(`pays=${id}&theme=${themeId}`)
-          }
+          action={action}
           panelHintFr={t.scopeThemePanelHint}
           wholeTrackLabelFr={t.scopeThemePanelNoTheme}
           closeLabelFr={translations.fr.close}
