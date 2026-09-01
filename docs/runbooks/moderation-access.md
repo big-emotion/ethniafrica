@@ -61,9 +61,16 @@ its compose project in `/home/ubuntu/supabase/docker/`. There is no Supabase
 dashboard for it: GoTrue reads `GOTRUE_SITE_URL` and `GOTRUE_URI_ALLOW_LIST`
 from `SITE_URL` and `ADDITIONAL_REDIRECT_URLS` in that directory's `.env`.
 
-Measured 2026-09-01: `SITE_URL=https://ethniafrica.com` is correct, and
-`ADDITIONAL_REDIRECT_URLS` is **empty** — so a production magic link lands on the
-home page rather than the callback, and no session is ever established.
+This was the production failure, and it is now fixed. `SITE_URL` was already
+correct; `ADDITIONAL_REDIRECT_URLS` was **empty**, so a production magic link
+landed on the home page rather than the callback and established no session at
+all. Applied 2026-09-01 — the running `supabase-auth` container reports
+`GOTRUE_URI_ALLOW_LIST=https://ethniafrica.com/api/auth/callback`, which is the
+check worth making: the file and the process can disagree until the container is
+recreated.
+
+The procedure is kept because it is how the value is changed again, and because
+`.env` is not in version control — nothing else records what production holds.
 
 ```bash
 ssh ubuntu@145.239.76.125
