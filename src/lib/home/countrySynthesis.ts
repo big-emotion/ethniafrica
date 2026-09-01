@@ -40,11 +40,35 @@ const MAX_FORMER_NAMES = 3;
 const MAX_PEOPLES = 6;
 const MAX_KINGDOMS = 3;
 const MAX_LANGUAGES = 5;
+const MAX_ATLAS_LANGUAGES = 3;
 
 function trimmed(value: unknown): string | null {
   if (typeof value !== "string") return null;
   const text = value.trim();
   return text.length > 0 ? text : null;
+}
+
+/** A small, stable language list for the atlas panel boundary. */
+// @req REQ-117
+export function compactCountryAtlasLanguages(
+  languages: readonly string[] | undefined
+): string[] {
+  const seen = new Set<string>();
+  const compact: string[] = [];
+
+  for (const candidate of languages ?? []) {
+    const language = candidate.trim().normalize("NFC");
+    if (!language) continue;
+
+    const key = language.toLocaleLowerCase("fr");
+    if (seen.has(key)) continue;
+
+    seen.add(key);
+    compact.push(language);
+    if (compact.length === MAX_ATLAS_LANGUAGES) break;
+  }
+
+  return compact;
 }
 
 /**

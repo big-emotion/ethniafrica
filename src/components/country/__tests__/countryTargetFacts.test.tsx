@@ -6,6 +6,8 @@ import {
   buildCountryTargetFacts,
 } from "@/components/country/countryTargetFacts";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
+import { deriveCountrySynthesis } from "@/lib/home/countrySynthesis";
+import type { Country } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 
@@ -74,6 +76,21 @@ describe("country target facts", () => {
     expect(screen.queryByText("Premières entrées")).toBeNull();
   });
 
+  // Some older fiches keep their declared peoples in `majorPeoples` while
+  // carrying an empty modern demographics array. The empty array must not
+  // erase the populated legacy field.
+  // @req REQ-117
+  it("falls back to legacy major peoples when demographics is empty", () => {
+    const country = countryWith([]);
+    country.majorPeoples = [{ name: "Yoruba" }, { name: "Igbo" }];
+
+    const facts = buildCountryTargetFacts(country);
+
+    render(<>{facts.NGA?.body}</>);
+    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(screen.getByText(/Yoruba · Igbo/)).toBeVisible();
+  });
+
   // AtlasGlobe is a client component and the route that calls this is a
   // server one. A resolver function cannot cross that boundary — passing one
   // is what put every family route on HTTP 500 once already.
@@ -96,11 +113,15 @@ describe("country target facts", () => {
 describe("buildCountryAtlasFacts (REQ-117)", () => {
   const targets = buildCountryPickerTargets(["NGA", "KEN", "SSD"]);
 
-  function facts(peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 }) {
+  function facts(
+    peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 },
+    countryBriefs = {}
+  ) {
     return buildCountryAtlasFacts({
       country: countryWith([{ name: "Zoulou" }]),
       targets,
       peopleCounts,
+      countryBriefs,
     });
   }
 
@@ -136,11 +157,152 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
   // A zero here means the corpus is silent, not that a country is empty.
   // @req REQ-117
   it("reads an absent count as corpus silence rather than as none", () => {
-    render(<>{facts({}).KEN?.body}</>);
+    const kenya = facts({}).KEN;
+    render(<>{kenya?.body}</>);
 
     expect(
       screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
     ).toBeInTheDocument();
+    expect(kenya?.description).not.toContain("0 peuple");
+    expect(kenya?.description).toMatch(/^KEN ·/);
+  });
+
+  // @req REQ-117
+  it("shows the selected country's formatted population, reference year, and principal languages", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: {
+              population: 55_339_003,
+              referenceYear: 2025,
+              languages: ["swahili", "anglais", "kikuyu"],
+            },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("Population · réf. 2025")).toBeInTheDocument();
+    expect(screen.getByText(/55[\s\u202f]339[\s\u202f]003/)).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeInTheDocument();
+    expect(screen.getByText("swahili · anglais · kikuyu")).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("deduplicates principal languages and shows at most three", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: {
+              languages: ["swahili", "anglais", "swahili", "kikuyu", "luo"],
+            },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("swahili · anglais · kikuyu")).toBeVisible();
+    expect(screen.queryByText(/luo/)).toBeNull();
+  });
+
+  // The shared synthesis derives languages from major peoples when the
+  // country-level culture list is silent; the panel must display that same
+  // corpus-backed fallback rather than grow its own derivation.
+  // @req REQ-117
+  it("shows the shared major-people language fallback", () => {
+    const synthesis = deriveCountrySynthesis({
+      id: "KEN",
+      nameFr: "Kenya",
+      content: {
+        culture: {},
+        majorPeoples: [
+          { name: "Kikuyu", languages: ["kikuyu", "swahili"] },
+          { name: "Luo", languages: ["luo", "swahili"] },
+        ],
+      },
+    } as Country);
+
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: { languages: synthesis.languages },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("kikuyu · swahili · luo")).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("omits unavailable brief rows without invented values", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: { languages: ["swahili"] },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.queryByText(/Population/)).toBeNull();
+    expect(screen.getByText("Langues principales")).toBeVisible();
+    expect(screen.getByText("swahili")).toBeVisible();
+    expect(screen.queryByText("0")).toBeNull();
+    expect(screen.queryByText(/undefined/)).toBeNull();
+  });
+
+  // A population without a valid reference year is not a dated fact. The
+  // panel omits the pair instead of presenting an apparently current value.
+  // @req REQ-117
+  it.each([undefined, 0, 2025.5])(
+    "omits population when its reference year is %s",
+    (referenceYear) => {
+      render(
+        <>
+          {
+            facts(undefined, {
+              KEN: {
+                population: 55_339_003,
+                referenceYear,
+                languages: ["swahili"],
+              },
+            }).KEN?.body
+          }
+        </>
+      );
+
+      expect(screen.queryByText(/Population/)).toBeNull();
+      expect(screen.getByText("swahili")).toBeVisible();
+    }
+  );
+
+  // @req REQ-117
+  it("shows the same brief fields for the fiche country and another country", () => {
+    const atlasFacts = facts(undefined, {
+      NGA: {
+        population: 237_527_782,
+        referenceYear: 2025,
+        languages: ["haoussa", "yoruba", "igbo"],
+      },
+      KEN: {
+        population: 55_339_003,
+        referenceYear: 2025,
+        languages: ["swahili", "anglais", "kikuyu"],
+      },
+    });
+    const { rerender } = render(<>{atlasFacts.NGA?.body}</>);
+
+    expect(screen.getByText("Population · réf. 2025")).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeVisible();
+
+    rerender(<>{atlasFacts.KEN?.body}</>);
+    expect(screen.getByText("Population · réf. 2025")).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeVisible();
   });
 });
 
@@ -159,6 +321,7 @@ describe("what the panel's subtitle states", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3 },
+      countryBriefs: {},
     });
 
     expect(facts.NGA?.description).toMatch(
@@ -183,6 +346,7 @@ describe("what the panel shows it is", () => {
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3, KEN: 12 },
+      countryBriefs: {},
     });
   }
 

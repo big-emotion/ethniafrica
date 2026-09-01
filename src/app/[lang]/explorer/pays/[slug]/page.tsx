@@ -17,14 +17,17 @@ import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
-import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
+import {
+  compactCountryAtlasLanguages,
+  deriveCountrySynthesisFromDetail,
+} from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import {
+  getCountryAtlasIndex,
   getCountryById,
-  getCountryIndex,
 } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
@@ -200,15 +203,16 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, allCountries, peopleCounts] = await Promise.all([
-    getCountryById(parsed.slug),
-    getActiveSourceFlags("country", parsed.slug),
-    getCountryIndex(),
-    // The globe can now be aimed at any country, so the panel has to answer
-    // for any country. A failed count costs the other countries' subtitle,
-    // never the fiche.
-    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
-  ]);
+  const [country, sourceFlags, countryAtlasIndex, peopleCounts] =
+    await Promise.all([
+      getCountryById(parsed.slug),
+      getActiveSourceFlags("country", parsed.slug),
+      getCountryAtlasIndex(),
+      // The globe can now be aimed at any country, so the panel has to answer
+      // for any country. A failed count costs the other countries' subtitle,
+      // never the fiche.
+      getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+    ]);
   if (!country) {
     notFound();
   }
@@ -221,10 +225,26 @@ export default async function PaysSlugPage({
   // supplies the name people use - `nameFr` on a country fiche is the declared
   // one, which is how the picker came to spread one Algerian option over five
   // lines. Every corpus country resolves, South Sudan included: the ISO/asset
-  // alias in overlays.ts is what makes SSD find the shape filed as SDS.
+  // alias in overlays.ts is what makes SSD find the shape filed as SDS. The
+  // atlas service returns only the compact fields that cross into the globe.
   const pickerTargets = buildCountryPickerTargets(
-    allCountries.map((entry) => entry.id)
+    countryAtlasIndex.map((entry) => entry.id)
   );
+  const countryBriefs = Object.fromEntries(
+    countryAtlasIndex.map(({ id, population, referenceYear, languages }) => [
+      id,
+      { population, referenceYear, languages },
+    ])
+  );
+  const currentSynthesis = deriveCountrySynthesisFromDetail(countryDetail);
+
+  // Prefer the current fiche over the parallel index so a cache boundary
+  // cannot make the open country contradict itself.
+  countryBriefs[countryDetail.id] = {
+    population: countryDetail.demographics?.totalPopulation,
+    referenceYear: countryDetail.demographics?.referenceYear,
+    languages: compactCountryAtlasLanguages(currentSynthesis.languages),
+  };
 
   // Live version (revalidate = 3600 at segment level).
   //
@@ -276,6 +296,7 @@ export default async function PaysSlugPage({
                 country: countryDetail,
                 targets: pickerTargets,
                 peopleCounts,
+                countryBriefs,
               })}
               missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
             />
@@ -286,9 +307,7 @@ export default async function PaysSlugPage({
             {/* The chapô goes in through `record` rather than through a new
                 FicheSequence slot: it is part of what the record says, and
                 the sequence already knows where the record belongs. */}
-            <CountrySynthesisBrief
-              synthesis={deriveCountrySynthesisFromDetail(countryDetail)}
-            />
+            <CountrySynthesisBrief synthesis={currentSynthesis} />
             <CountryRecordView
               country={countryDetail}
               hasSourceFlag={sourceFlags.length > 0}

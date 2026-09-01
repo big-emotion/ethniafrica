@@ -84,9 +84,9 @@ vi.mock("@/api/v2/services/peopleService", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => getCountryById(...args),
-  getCountryIndex: async () => [
-    { id: "NGA", nameFr: "Nigeria" },
-    { id: "KEN", nameFr: "Kenya" },
+  getCountryAtlasIndex: async () => [
+    { id: "NGA", languages: ["haoussa", "yoruba", "igbo"] },
+    { id: "KEN", languages: ["swahili", "anglais", "kikuyu"] },
   ],
 }));
 

@@ -4,13 +4,13 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
   mockGetCountryById,
-  mockGetCountryIndex,
+  mockGetCountryAtlasIndex,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
   mockGetActiveSourceFlags,
 } = vi.hoisted(() => ({
   mockGetCountryById: vi.fn(),
-  mockGetCountryIndex: vi.fn(),
+  mockGetCountryAtlasIndex: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
   mockGetActiveSourceFlags: vi.fn(),
@@ -34,7 +34,7 @@ vi.mock("@/api/v2/services/revisions", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => mockGetCountryById(...args),
-  getCountryIndex: () => mockGetCountryIndex(),
+  getCountryAtlasIndex: () => mockGetCountryAtlasIndex(),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
@@ -192,9 +192,9 @@ describe("/[lang]/pays/[slug] page", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
-    mockGetCountryIndex.mockResolvedValue([
-      { id: "NGA", nameFr: "Nigeria" },
-      { id: "KEN", nameFr: "Kenya" },
+    mockGetCountryAtlasIndex.mockResolvedValue([
+      { id: "NGA", languages: ["haoussa", "yoruba", "igbo"] },
+      { id: "KEN", languages: ["swahili", "anglais", "kikuyu"] },
     ]);
   });
 
@@ -289,6 +289,7 @@ describe("/[lang]/pays/[slug] page", () => {
       "Nigéria"
     );
     expect(mockGetCountryById).toHaveBeenCalledWith("NGA");
+    expect(mockGetCountryAtlasIndex).toHaveBeenCalledOnce();
     expect(mockGetActiveSourceFlags).toHaveBeenCalledWith("country", "NGA");
     expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
@@ -324,9 +325,9 @@ describe("/[lang]/pays/[slug] — panel sequence", () => {
     stubReducedMotion();
     mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
-    mockGetCountryIndex.mockResolvedValue([
-      { id: "NGA", nameFr: "Nigeria" },
-      { id: "KEN", nameFr: "Kenya" },
+    mockGetCountryAtlasIndex.mockResolvedValue([
+      { id: "NGA", languages: ["haoussa", "yoruba", "igbo"] },
+      { id: "KEN", languages: ["swahili", "anglais", "kikuyu"] },
     ]);
   });
 
