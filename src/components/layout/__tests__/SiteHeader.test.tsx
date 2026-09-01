@@ -793,3 +793,49 @@ describe("SiteHeader — a scroll the reader did not make cannot close the menu"
     ).toBe("true");
   });
 });
+
+/**
+ * Escape and the trigger are both aimed *at* the header. A reader who has
+ * opened an axis and then decided to read the page underneath aims at the
+ * page, and expects that to be an answer — the panel used to stay up over
+ * whatever they had just tried to reach.
+ *
+ * The dismissal reads `pointerdown`, not `click`: the panel has to be gone
+ * before the press it is covering resolves, otherwise the first press is
+ * spent closing the menu and the reader has to aim twice.
+ */
+describe("SiteHeader — a press outside dismisses the axis panel", () => {
+  // @req REQ-114
+  it("closes when the reader presses on the page below", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+    expect(panel()).toBeInTheDocument();
+
+    fireEvent.pointerDown(document.body);
+
+    expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-114
+  it("keeps the panel open for a press on a destination inside it", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+
+    fireEvent.pointerDown(panel());
+
+    expect(panel()).toBeInTheDocument();
+  });
+
+  // A dismissal that also fired for the trigger would close on the press and
+  // let the click reopen, leaving the reader a menu they cannot shut.
+  // @req REQ-114
+  it("leaves the trigger a toggle rather than reopening under it", () => {
+    renderHeader();
+
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+    fireEvent.pointerDown(trigger(ACCESS_MODE_LABELS.atlas));
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
+
+    expect(screen.queryByTestId("site-megapanel")).not.toBeInTheDocument();
+  });
+});
