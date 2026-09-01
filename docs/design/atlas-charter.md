@@ -125,13 +125,16 @@ white.
 
 ## 3. The three entry points
 
-The header carries **three intentions, not ten modules**: _Explorer_ when you
-know what you are looking for, _Comprendre_ when you want to know where what
-you are reading comes from, _Jouer_ when you want the corpus to answer.
+The header carries the atlas's **content register** through three access modes,
+not ten modules: _Consulter_ when you know what you are looking for,
+_Enquêter_ when you want to know where what you are reading comes from, and
+_Jouer_ when you want the corpus to answer. These are reader-facing labels;
+the `explorer`, `comprendre` and `jouer` identifiers and routes stay unchanged.
 
-The modules live behind the click, in a panel (desktop) or a drawer (mobile
-< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
-generated from it, never hand-listed.
+Each access-mode control opens its part of the register. The modules live
+behind the click, in a panel (desktop) or a drawer (mobile < 760 px). Both are
+driven by `src/lib/hubs/moduleRegistry.ts` — the menu is generated from it,
+never hand-listed.
 
 - A module with **no resolvable route** renders as **Bientôt** and is not
   focusable. The menu never offers a route that does not resolve.

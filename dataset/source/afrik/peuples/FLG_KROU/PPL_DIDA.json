@@ -3,6 +3,7 @@
   "nameMain": "Dida",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV"],
+  "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Dida",
@@ -14,7 +15,7 @@
         "Brabori (désignation alternative)"
       ],
       "originOfExonyms": "Le terme Dida est d'usage courant et n'a pas de connotation péjorative avérée. Le terme Brabori est utilisé comme désignation alternative dans certains contextes. Les sous-appellations Lakota et Yocoboué renvoient aux zones géographiques principales d'implantation.",
-      "whyProblematic": null,
+      "whyProblematic": "La catégorie Dida s'est stabilisée dans le cadre administratif colonial et ses limites avec la catégorie Bété ne sont pas entièrement superposables aux appartenances locales. Pour la région de Gagnoa, Jean-Pierre Dozon montre que certaines tribus classées Bété auraient aussi pu être qualifiées de Dida. Il ne faut toutefois pas assimiler l'ensemble des Bété de Gagnoa aux Dida : le dida (dic, gud) et les variétés bété, dont le bété de Gagnoa (btg), restent distingués par la classification linguistique.",
       "contemporaryUsage": "Le terme Dida est universellement utilisé en Côte d'Ivoire et dans la littérature académique pour désigner ce peuple krou du sud-ouest ivoirien.",
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Krou oriental",
@@ -121,6 +122,12 @@
         "url": "https://www.ethnologue.com/language/gud/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Dozon, Jean-Pierre — La société Bété : histoires d'une ethnie de Côte d'Ivoire. Paris : Karthala ; ORSTOM, 1985",
+        "url": "https://www.documentation.ird.fr/hor/fdi:17296",
+        "tier": "referenced",
+        "notes": "IRD-hosted academic monograph; supports the colonial Bété-Dida boundary note around Gagnoa."
       },
       {
         "title": "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire",

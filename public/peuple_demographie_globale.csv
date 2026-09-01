@@ -95,7 +95,7 @@ PPL_BARMA,Barma,FLG_SOUDANIQUECENTRAL,300000,1,N/A,300000,2025,"Estimations bas�
 PPL_BASKETO,Basketo,FLG_OMOTIQUE,125000,1,N/A,125000,2025,"AFRIK, estimations basées sur recensements et études démographiques"
 PPL_BASOGA,Basoga / Soga,FLG_BANTU,3500000,1,N/A,3500000,2025,peuple_demographie_globale.csv (PPL_BASOGA) + estimations récentes des groupes ethniques d’Ouganda
 PPL_BASOGA,Basoga,FLG_NIGERCONGO,2500000,1,N/A,2500000,2025,"Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
-PPL_BASSA,BASSA,FLG_MANDE,720000,1,N/A,720000,2025,"AFRIK, estimations basées sur recensements et études démographiques"
+PPL_BASSA,BASSA,FLG_KROU,720000,1,N/A,720000,2025,"AFRIK, estimations basées sur recensements et études démographiques"
 PPL_BASSA_CAM,Bassa du Cameroun,FLG_BANTU,421013,1,N/A,421013,2025,"peuple_demographie_globale.csv (PPL_BASSA_CAM), Ethnologue, recensements camerounais"
 PPL_BASSA_CAM,Bassa (Cameroun),FLG_NIGERCONGO,650000,1,N/A,650000,2025,"Estimations basées sur recensements camerounais, SIL Ethnologue, et études démographiques"
 PPL_BASSA_NIGERIA,BASSA_NIGERIA,FLG_BENOUECONGO,350000,1,N/A,350000,2025,"AFRIK, estimations basées sur recensements et études démographiques"
@@ -115,7 +115,7 @@ PPL_BEROM,Berom,FLG_NIGERCONGO,0,2,N/A,0,2025,N/A
 PPL_BERTA,Berta,FLG_NILOSAHARIENNE,0,2,N/A,0,2025,N/A
 PPL_BETE,PPL_WE,Krou,FLG_KROU,2970000,1,N/A,2970000,2025
 PPL_BETE,Bété,FLG_KROU,1251013,1,N/A,1251013,2025,"Ethnologue, estimations AFRIK, recensements ivoiriens"
-PPL_BETE,Bété,FLG_NIGERCONGO,2750000,1,N/A,2750000,2025,"Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+PPL_BETE,Bété,FLG_KROU,2750000,1,N/A,2750000,2025,"Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
 "PPL_BETE, PPL_WE",Krou,FLG_KROU,2970000,2,N/A,2970000,2025,N/A
 PPL_BETI,PPL_BETI_FANG,PPL_FANG,PPL_BULU,PPL_EWONDO,Beti-Fang-Bulu,FLG_BANTU,6600000,1
 PPL_BETI,Béti,FLG_BANTU,5000000,1,N/A,5000000,2025,"regroupement Beti dans peuple_demographie_globale.csv (à partir des sous-groupes Fang, Ewondo, Bulu)"
@@ -192,7 +192,7 @@ PPL_DAZA,Daza,FLG_SAHARIEN,300000,1,N/A,300000,2025,"Estimations basées sur rec
 PPL_DEI,Dei,FLG_ATLANTIQUE,105000,1,N/A,105000,2025,N/A
 PPL_DENDI,Dendi,FLG_SONGHAY,200000,1,N/A,200000,2025,"Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
 PPL_DENKYIRA,Denkyira,FLG_BENOUECONGO,0,2,N/A,0,2025,N/A
-PPL_DIDA,Dida,FLG_NIGERCONGO,640000,1,N/A,640000,2025,"Ethnologue (dic), Études krou ivoiriennes"
+PPL_DIDA,Dida,FLG_KROU,640000,1,N/A,640000,2025,"Ethnologue (dic), Études krou ivoiriennes"
 PPL_DIGO,Digo,FLG_BANTU,0,2,N/A,0,2025,N/A
 PPL_DIME,Dime,FLG_COUCHITIQUE,0,2,N/A,0,2025,N/A
 PPL_DIMME,Dimme,FLG_OMOTIQUE,75000,1,N/A,75000,2025,"Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"

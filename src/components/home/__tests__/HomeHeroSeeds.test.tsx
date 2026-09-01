@@ -1,7 +1,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, act, fireEvent } from "@testing-library/react";
+import { render, screen, within, act, fireEvent } from "@testing-library/react";
 
-import { HomeHeroSeeds, seedPools, REEL_MS } from "../HomeHeroSeeds";
+import {
+  DESKTOP_SEED_BREAKPOINT_PX,
+  HomeHeroSeeds,
+  seedPools,
+  REEL_MS,
+} from "../HomeHeroSeeds";
 import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";
 
 /** What the row turns through when the page injects nothing. */
@@ -22,7 +27,7 @@ function setReducedMotion(reduced: boolean) {
 
 /** The visible word of one reel, read the way a reader sees it. */
 function shownWord(poolIndex: number): string {
-  const chips = screen.getAllByRole("button");
+  const chips = screen.getAllByRole("button", { hidden: true });
   return chips[poolIndex]
     .querySelector("[data-reel-current]")!
     .textContent!.trim();
@@ -48,7 +53,36 @@ afterEach(() => {
   vi.useRealTimers();
 });
 
-describe("HomeHeroSeeds — the three example queries", () => {
+describe("HomeHeroSeeds — the example queries", () => {
+  // The compact mockup has one example for each searchable entity kind. The
+  // wide mockup adds a second people example, but its word still comes from
+  // the server-provided corpus pool rather than from presentation code.
+  // @req REQ-002
+  it("shows three corpus chips on mobile and adds a fourth on desktop", () => {
+    const drawn = {
+      people: ["Baoulé", "Sérère", "Yoruba"],
+      country: ["Togo", "Ghana"],
+      languageFamily: ["Songhaï", "Oubanguienne"],
+    };
+    const { container } = render(
+      <HomeHeroSeeds onPick={vi.fn()} words={drawn} />
+    );
+
+    const chips = container.querySelectorAll(".home-hero-search-seeds > li");
+    expect(chips).toHaveLength(4);
+    expect(chips[3]).toHaveClass("home-hero-seed-desktop");
+    expect(
+      within(chips[3] as HTMLElement).getByRole("button", { hidden: true })
+    ).toHaveAccessibleName("Sérère");
+
+    const css = container.querySelector("style")?.textContent ?? "";
+    expect(css).toContain(".home-hero-seed-desktop");
+    expect(css).toContain("display: none");
+    expect(css).toContain(
+      `@media (min-width: ${DESKTOP_SEED_BREAKPOINT_PX}px)`
+    );
+  });
+
   // @req REQ-002
   it("opens on the first word of each pool", () => {
     render(<HomeHeroSeeds onPick={vi.fn()} />);
@@ -56,6 +90,18 @@ describe("HomeHeroSeeds — the three example queries", () => {
     SEED_POOLS.forEach((pool, index) => {
       expect(shownWord(index)).toBe(pool.words[0]);
     });
+  });
+
+  // The desktop-only chip draws from the same people pool as the first chip.
+  // Keeping their offset stable prevents a staggered first roll from briefly
+  // presenting the same example twice in the approved four-chip layout.
+  // @req REQ-002
+  it("keeps the two desktop people examples distinct after a roll", () => {
+    render(<HomeHeroSeeds onPick={vi.fn()} />);
+
+    advancePastFirstRoll(0);
+
+    expect(shownWord(3)).not.toBe(shownWord(0));
   });
 
   // The word is the button's whole label, so it is also its accessible name —

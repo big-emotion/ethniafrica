@@ -306,8 +306,8 @@
   },
   {
     "id": "PPL_BASSA",
-    "status": "contested",
-    "rationale": "Le probleme est de classification savante : Bassa est confondu avec les Bassa du Cameroun, et le rattachement a FLG_MANDE est approximatif puisque les Bassa du Liberia sont linguistiquement Kru."
+    "status": "consensual",
+    "rationale": "The fiche distinguishes the Liberian Bassa from the unrelated Cameroonian Bassa and now follows the documented Kru linguistic classification."
   },
   {
     "id": "PPL_BASSA_CAM",
@@ -568,6 +568,11 @@
     "id": "PPL_DEI",
     "status": "contested",
     "rationale": "Prose mince : la fiche ne signale qu'une « confusion entre le nom du peuple (Dei/Dey) et le nom de la langue (Dewoin) » dans les sources, sans acteur colonial ni rejet communautaire."
+  },
+  {
+    "id": "PPL_DIDA",
+    "status": "colonial-legacy",
+    "rationale": "The fiche explains that the Dida category was stabilized through colonial administration and that its boundaries do not map cleanly onto local affiliations."
   },
   {
     "id": "PPL_DIGO",
@@ -1538,6 +1543,11 @@
     "id": "PPL_MINA",
     "status": "colonial-legacy",
     "rationale": "En francais colonial, Mina fut utilise de maniere elargie pour tous les peuples de la cote du golfe de Guinee, terme adopte par les Europeens des le 17e siecle."
+  },
+  {
+    "id": "PPL_MINYANKA",
+    "status": "contested",
+    "rationale": "The fiche records that people commonly called Minyanka may self-identify as Bamana in the documented context, while warning against automatically conflating them with the separately catalogued Bambara people."
   },
   {
     "id": "PPL_MOBE",

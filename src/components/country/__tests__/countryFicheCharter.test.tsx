@@ -75,6 +75,29 @@ function renderTitle(
 }
 
 describe("country fiche charter", () => {
+  // A missing people breakdown does not erase the independently sourced
+  // national population. Madagascar is the corpus case for this distinction.
+  // @req REQ-115
+  it("keeps the national total visible when no people rows are available", () => {
+    const { container } = renderParchment(
+      countryFixture({
+        id: "MDG",
+        demographics: {
+          totalPopulation: 32700000,
+          referenceYear: 2025,
+          source: "UNFPA – World Population Dashboard",
+          peoples: [],
+        },
+      })
+    );
+    const section = container.querySelector(
+      '[data-fiche-section="Peuples du pays"]'
+    );
+
+    expect(section).toHaveTextContent("32.7M");
+    expect(section).toHaveTextContent("Donnée manquante");
+  });
+
   // @req REQ-115
   it("opens on the country's own name, with the official name beneath it", () => {
     const { container } = renderTitle(countryFixture());

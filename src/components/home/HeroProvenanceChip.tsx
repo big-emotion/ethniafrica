@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
-import { getTranslation } from "@/lib/translations";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { Language } from "@/types/shared";
 
@@ -36,7 +36,7 @@ export function HeroProvenanceChip({
   language,
   module,
 }: HeroProvenanceChipProps) {
-  const axisLabel = getTranslation(language).hubs[module.accessMode].title;
+  const axisLabel = ACCESS_MODE_LABELS[module.accessMode];
   const href = getModuleHref(module, language);
   const label = `${axisLabel} — ${module.name}`;
 

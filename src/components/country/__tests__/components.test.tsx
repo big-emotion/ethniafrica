@@ -101,8 +101,8 @@ describe("PeoplesSection", () => {
   it("returns null when rows list is empty", () => {
     const data: PeoplesData = {
       totalPopulation: 0,
-      totalPopulationFormatted: "0",
-      everyPeopleDeclaresPopulation: true,
+      totalPopulationFormatted: undefined,
+      everyPeopleDeclaresPopulation: false,
       peopleCount: 0,
       rows: [],
     };

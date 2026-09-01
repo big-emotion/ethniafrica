@@ -54,7 +54,7 @@
         "Région d'Issia et Guibéroua (groupe occidental)",
         "Zone de la boucle du cacao entre Daloa, Soubré et Gagnoa (30 000 km²)"
       ],
-      "unificationsOrDivisions": "Les Bété n'ont jamais constitué d'entité politique unifiée. Leurs 93 sous-groupes tribaux distincts ont toujours fonctionné de façon autonome, organisés en clans et lignages. La conscience d'une identité bété commune est en grande partie un produit de l'ère coloniale et des décennies post-indépendance.",
+      "unificationsOrDivisions": "Les Bété n'ont jamais constitué d'entité politique unifiée. Leurs 93 sous-groupes tribaux distincts ont toujours fonctionné de façon autonome, organisés en clans et lignages. La conscience d'une identité bété commune est en grande partie un produit de l'ère coloniale et des décennies post-indépendance. Pour la région de Gagnoa, Jean-Pierre Dozon montre que le périmètre administratif colonial a intégré à la catégorie Bété des tribus qui auraient aussi pu être qualifiées de Dida. Cette observation décrit une frontière classificatoire coloniale ; elle ne signifie pas que tous les Bété de Gagnoa sont Dida ni que les langues bété et dida sont identiques.",
       "externalInfluences": "Contacts historiques avec les Wé (Guéré), les Dida, les Nyabwa et les Guro. Influence artistique des Wé pour les masques. Influence des Akans à Gagnoa (absence de masques dans ce sous-groupe). Colonisation française (résistance jusqu'en 1906-1936). Islamisation partielle dans les années 1970. Immigration massive de Baoulé, Dioula et Voltaïques dans les zones d'agriculture commerciale.",
       "majorHistoricalEvents": "Résistance acharnée à la pénétration coloniale française jusqu'en 1906, dernière résistance en 1936 avec la figure de Zokou Gbéouli. Mort non élucidée du sénateur Biaka Boda en 1950. Tentative de sécession en 1970 (État d'Éburnie ou République de Guébié), réprimée dans le sang par le gouvernement Houphouët-Boigny (génocide de Guébié). Laurent Gbagbo, Bété de Gagnoa, devient président de la République de Côte d'Ivoire."
     },
@@ -67,10 +67,10 @@
     },
     "languages": {
       "mainLanguage": "Bété (continuum dialectal krou)",
-      "isoCodes": ["bev", "bet", "byf"],
+      "isoCodes": ["bev", "bet", "btg"],
       "dialects": [
         "Bété de Daloa (bev) – dialecte septentrional, région de Daloa",
-        "Bété de Gagnoa / Shyen (byf) – dialecte oriental, le plus parlé",
+        "Bété de Gagnoa / Shyen (btg) – variété orientale",
         "Bété de Guibéroua / Bété occidental (bet) – dialecte central, similaire au godié",
         "Bété de Soubré – dialecte méridional",
         "Bété d'Issia – dialecte occidental",
@@ -134,10 +134,22 @@
         "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
       },
       {
+        "title": "Ethnologue – Bété, Gagnoa (btg)",
+        "url": "https://www.ethnologue.com/language/btg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"; supports the corrected ISO 639-3 code."
+      },
+      {
         "title": "Tchetche, Mathieu Obou – L'exemple des effets du KUIZI chez le peuple Bété de Côte d'Ivoire. Revue SLC, 2023",
         "url": "https://www.revue-slc.org/wp-content/uploads/2023/12/29_Mathieu-Obou-TCHETCHE.pdf",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for revue-slc.org."
+      },
+      {
+        "title": "Dozon, Jean-Pierre — La société Bété : histoires d'une ethnie de Côte d'Ivoire. Paris : Karthala ; ORSTOM, 1985",
+        "url": "https://www.documentation.ird.fr/hor/fdi:17296",
+        "tier": "referenced",
+        "notes": "IRD-hosted academic monograph; supports the colonial construction of the Bété category and the Bété-Dida boundary note around Gagnoa."
       },
       {
         "title": "Loucou, Jean-Noël – Histoire de la Côte d'Ivoire. Abidjan : CEDA, 1984",

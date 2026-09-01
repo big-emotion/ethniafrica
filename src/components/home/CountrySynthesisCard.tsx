@@ -92,7 +92,7 @@ export function CountrySynthesisCard({
           flex-direction: column;
           gap: 12px;
           padding: 18px;
-          background: var(--afh-color-card);
+          background: var(--afh-surface);
           border: 1px solid var(--afh-border);
           border-top: 3px solid var(--accent);
           border-radius: 8px;

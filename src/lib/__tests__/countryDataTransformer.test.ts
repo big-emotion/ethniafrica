@@ -20,6 +20,7 @@ import {
   transformCountryData,
 } from "../countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import capeVerdeFiche from "../../../dataset/source/afrik/pays/CPV.json";
 
 // ==========================================
 // MOCK DATA: Burkina Faso (BFA)
@@ -535,6 +536,42 @@ describe("transformTimeline", () => {
 });
 
 describe("transformPeoples", () => {
+  // The country population and the people-level coverage are different facts.
+  // Cameroon documents only part of its people breakdown, but the official
+  // national total is still known and must not disappear with row headcounts.
+  // @req REQ-001
+  it("uses the declared national total when people headcounts are incomplete", () => {
+    const result = transformPeoples({
+      totalPopulation: 29900000,
+      referenceYear: 2025,
+      source: "UNFPA – World Population Dashboard",
+      peoples: [{ name: "Beti-Fang-Bulu", percentageInCountry: 22 }],
+    });
+
+    expect(result.totalPopulation).toBe(29900000);
+    expect(result.totalPopulationFormatted).toBe("29.9M");
+    expect(result.totalPopulationIsNational).toBe(true);
+    expect(result.everyPeopleDeclaresPopulation).toBe(false);
+    expect(result.populationReferenceYear).toBe(2025);
+  });
+
+  // The Cabo Verde fiche used to provide a headcount only for its 1% row,
+  // making the country page display 6K documented residents instead of the
+  // 2025 national total already recorded in the demographic corpus.
+  // @req REQ-001
+  it("shows the complete 2025 Cabo Verde population", () => {
+    const capeVerde = capeVerdeFiche.content as unknown as CountryDetail;
+    const result = transformPeoples(
+      capeVerde.demographics,
+      capeVerde.majorPeoples
+    );
+
+    expect(result.totalPopulation).toBe(500000);
+    expect(result.totalPopulationFormatted).toBe("500K");
+    expect(result.everyPeopleDeclaresPopulation).toBe(true);
+    expect(result.populationReferenceYear).toBe(2025);
+  });
+
   it("produces people rows for BFA", () => {
     const result = transformPeoples(
       bfaCountry.demographics,

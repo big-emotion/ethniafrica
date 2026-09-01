@@ -85,8 +85,8 @@ describe("PeoplesSection — navigation links to people fiches", () => {
   it("returns null when rows is empty", () => {
     const empty: PeoplesData = {
       totalPopulation: 0,
-      totalPopulationFormatted: "0",
-      everyPeopleDeclaresPopulation: true,
+      totalPopulationFormatted: undefined,
+      everyPeopleDeclaresPopulation: false,
       peopleCount: 0,
       rows: [],
     };

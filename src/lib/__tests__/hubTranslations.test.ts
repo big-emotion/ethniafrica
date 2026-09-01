@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import { getTranslation } from "@/lib/translations";
 
 /**
@@ -69,11 +70,9 @@ describe("hub page titles", () => {
   const axes = ["explorer", "comprendre", "jouer"] as const;
 
   // @req REQ-114
-  it("opens on the axis the reader took", () => {
+  it("keeps the short axis labels on the canonical access-mode map", () => {
     for (const axis of axes) {
-      expect(hubs[axis].pageTitle).toMatch(
-        new RegExp(`^${hubs[axis].title}\\b`)
-      );
+      expect(hubs[axis].title).toBe(ACCESS_MODE_LABELS[axis]);
     }
   });
 

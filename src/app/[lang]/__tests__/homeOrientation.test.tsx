@@ -2,8 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import React from "react";
 
-import type { AccessMode } from "@/lib/hubs/moduleRegistry";
-
 const fixtureCounts = {
   peoples: 4213,
   countries: 91,
@@ -21,6 +19,10 @@ vi.mock("@/lib/home/corpusCounts", () => ({
   getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));
 
+vi.mock("@/api/v2/services/continentPeopleCounts", () => ({
+  getContinentPeopleCounts: vi.fn(async () => ({})),
+}));
+
 // Only the draw is stubbed; the curated fallback is what the chips then hold.
 vi.mock("@/lib/home/seedWords", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/lib/home/seedWords")>();
@@ -29,22 +31,6 @@ vi.mock("@/lib/home/seedWords", async (importOriginal) => {
     loadSeedWords: vi.fn(async () => actual.FALLBACK_SEED_WORDS),
   };
 });
-
-vi.mock("@/lib/hubs/moduleAvailability", async () => {
-  const registry = await import("@/lib/hubs/moduleRegistry");
-  return {
-    getHubModules: vi.fn(async (mode: AccessMode) =>
-      registry.getModulesForAccessMode(mode).map((definition) => ({
-        ...definition,
-        available: true,
-      }))
-    ),
-  };
-});
-
-vi.mock("@/lib/home/synthesisRailData", () => ({
-  loadSynthesisRail: vi.fn(async () => []),
-}));
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
@@ -58,8 +44,7 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
 
 import Home from "../page";
 
-const renderHome = async () =>
-  render(await Home({ searchParams: Promise.resolve({}) }));
+const renderHome = async () => render(await Home());
 
 /** Document order of two nodes, as the reader scrolls them. */
 const precedes = (first: Element, second: Element) =>
@@ -68,49 +53,45 @@ const precedes = (first: Element, second: Element) =>
   );
 
 describe("home — what the reader meets, and in what order (REQ-113)", () => {
-  // The doors came first while the hero's standfirst was doing the telling
-  // above the fold. The hero is now a question and one sentence, so the
-  // telling moved back down into the argument — and the argument has to
-  // reach the reader before the three doors it makes sense of.
-  //
-  // The order also settles a vocabulary problem: the Explorer card offers
-  // « familles linguistiques », a term nothing on the page glossed before
-  // the reader met it. PurposeBlocks defines a language family by example
-  // — « Bantou » names a kinship between 500 languages, not a people — so
-  // standing it first is what makes the card's own wording readable.
+  // The DOM is the phone composition: copy/search/seeds, globe, then the
+  // counters. Desktop reuses those nodes through grid areas rather than
+  // maintaining a second reading order.
   // @req REQ-113
-  it("opens on the argument, then the three entry points, then the module of the month", async () => {
+  it("orders the search-first hero for mobile before enhancing it for desktop", async () => {
     const { container } = await renderHome();
 
-    const purpose = container.querySelector(
-      '[data-testid="home-purpose-blocks"]'
-    );
-    const axes = container.querySelector('[data-testid="access-axes"]');
-    const featured = container.querySelector(
-      '[data-testid="home-featured-module"]'
-    );
+    const copy = container.querySelector(".home-hero-copy");
+    const globe = container.querySelector(".home-hero-globe");
+    const counts = container.querySelector(".home-hero-counts");
 
-    expect(purpose).not.toBeNull();
-    expect(axes).not.toBeNull();
-    expect(featured).not.toBeNull();
-    expect(precedes(purpose!, axes!)).toBe(true);
-    expect(precedes(axes!, featured!)).toBe(true);
+    expect(copy).not.toBeNull();
+    expect(globe).not.toBeNull();
+    expect(counts).not.toBeNull();
+    expect(precedes(copy!, globe!)).toBe(true);
+    expect(precedes(globe!, counts!)).toBe(true);
   });
 
   // @req REQ-113
-  it("puts the module of the month after the sample of the corpus, where the axes used to sit", async () => {
+  it("places exactly one sourced fact after the hero and no retired section", async () => {
     const { container } = await renderHome();
 
-    const purpose = container.querySelector(
-      '[data-testid="home-purpose-blocks"]'
-    );
-    const featured = container.querySelector(
-      '[data-testid="home-featured-module"]'
-    );
-    const trust = container.querySelector('[data-testid="home-trust-strip"]');
+    const hero = container.querySelector(".home-hero");
+    const fact = screen.getByTestId("home-did-you-know");
 
-    expect(precedes(purpose!, featured!)).toBe(true);
-    expect(precedes(featured!, trust!)).toBe(true);
+    expect(precedes(hero!, fact)).toBe(true);
+    expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
+    expect(
+      within(fact).getByTestId("home-dyk-official-source")
+    ).toBeInTheDocument();
+    for (const testId of [
+      "home-purpose-blocks",
+      "access-axes",
+      "home-synthesis-rail",
+      "home-featured-module",
+      "home-trust-strip",
+    ]) {
+      expect(screen.queryByTestId(testId)).not.toBeInTheDocument();
+    }
   });
 
   // @req REQ-113
@@ -126,71 +107,49 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(answer).toHaveTextContent(/sourc/i);
   });
 
-  // Every section says its own name. The three that did not were the
-  // module slot, the name-origin slices and the axes — a reader landing
-  // mid-scroll met an image, a card or a globe with nothing above it.
+  // One page title, then the one fact's title. The corpus figures are values,
+  // not three headings competing with the page question.
   // @req REQ-113
-  it("gives every section a heading, and only the hero an h1", async () => {
+  it("keeps one h1 and gives the single fact the only h2", async () => {
     await renderHome();
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
-
-    for (const testId of [
-      "home-featured-heading",
-      "home-purpose-heading",
-      "home-axes-heading",
-    ]) {
-      expect(screen.getByTestId(testId).tagName).toBe("H2");
-    }
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(1);
+    expect(
+      within(screen.getByTestId("home-did-you-know")).getByRole("heading", {
+        level: 2,
+      })
+    ).toBeInTheDocument();
   });
 
-  // The section headings are h2, so what lives inside a section is h3.
-  // Both groups were h2 before, which flattened the page into eleven
-  // siblings and left the new group titles with nothing to outrank.
+  // Counts keep their definition-list semantics even when the display order
+  // puts each number above its label.
   // @req REQ-113
-  it("drops the slice and axis titles to h3 under their section", async () => {
+  it("presents the corpus scale as three labelled values", async () => {
     await renderHome();
 
-    for (const name of ["Explorer", "Comprendre", "Jouer"]) {
-      expect(
-        screen.getByRole("heading", { level: 3, name })
-      ).toBeInTheDocument();
-      expect(screen.queryByRole("heading", { level: 2, name })).toBeNull();
+    const counts = screen.getAllByRole("term")[0].closest("dl");
+    expect(counts).toHaveAttribute("aria-label", "Le corpus en chiffres");
+    expect(within(counts!).getAllByRole("term")).toHaveLength(3);
+    expect(within(counts!).getAllByRole("definition")).toHaveLength(3);
+    for (const label of ["Peuples", "Pays", "Familles linguistiques"]) {
+      expect(within(counts!).getByText(label).tagName).toBe("DT");
     }
-
-    // Counted, not quoted. Pinning one slice's wording made this test fail
-    // the moment recette reworded them (#487) — a copy edit is not a
-    // regression in the outline, and a test that cannot tell the two apart
-    // is noise. What has to hold is that the section's heading is the only
-    // h2 among them and all three slices sit under it.
-    const purpose = screen.getByTestId("home-purpose-blocks");
-    expect(within(purpose).getAllByRole("heading", { level: 3 })).toHaveLength(
-      3
-    );
-    expect(within(purpose).getAllByRole("heading", { level: 2 })).toEqual([
-      screen.getByTestId("home-purpose-heading"),
-    ]);
   });
 
-  // The formula described the reader ("il arrive…", "il repart…") instead
-  // of the destination. A card has one line to say where the click lands;
-  // spending it on a rhetorical figure left the reader to guess.
+  // The one action names the three entity types the corpus can resolve. No
+  // retired axis copy survives around it to compete for the first decision.
   // @req REQ-113
-  it("says what each entry point holds rather than narrating the reader", async () => {
+  it("names the searchable entity kinds without legacy entry-point rhetoric", async () => {
     const { container } = await renderHome();
 
     expect(container.textContent).not.toMatch(/il arrive avec/i);
     expect(container.textContent).not.toMatch(/il repart avec/i);
     expect(container.textContent).not.toMatch(/il arrive sans rien/i);
-
-    expect(screen.getByTestId("access-axis-stake-explorer")).toHaveTextContent(
-      /peuples, pays, langues/i
-    );
     expect(
-      screen.getByTestId("access-axis-stake-comprendre")
-    ).toHaveTextContent(/sources|migrations|méthode/i);
-    expect(screen.getByTestId("access-axis-stake-jouer")).toHaveTextContent(
-      /jeux|quiz/i
-    );
+      screen.getByRole("combobox", {
+        name: /peuple, un pays ou une famille linguistique/i,
+      })
+    ).toBeInTheDocument();
   });
 });

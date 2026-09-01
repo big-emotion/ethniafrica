@@ -8,6 +8,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { AccessAxes, type AccessAxesProps } from "@/components/home/AccessAxes";
 import { getLocalizedRoute } from "@/lib/routing";
 import {
+  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   getModulesForAccessMode,
   type AccessMode,
@@ -74,13 +75,22 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     // h3: the cards are items of the section its own heading opens, not
     // siblings of it.
     expect(
-      screen.getByRole("heading", { level: 3, name: "Explorer" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.explorer,
+      })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 3, name: "Comprendre" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.comprendre,
+      })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { level: 3, name: "Jouer" })
+      screen.getByRole("heading", {
+        level: 3,
+        name: ACCESS_MODE_LABELS.jouer,
+      })
     ).toBeInTheDocument();
   });
 

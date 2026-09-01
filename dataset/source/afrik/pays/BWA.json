@@ -203,10 +203,10 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "ONU / UNFPA – Démographie Botswana 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UNFPA – World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/BW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
         "title": "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
@@ -252,6 +252,9 @@
       }
     ],
     "demographics": {
+      "totalPopulation": 2600000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Tswana",

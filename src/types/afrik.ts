@@ -383,6 +383,12 @@ export interface HistoricalFactsSection {
 }
 
 export interface DemographicsSection {
+  /** Official country population, independently of people-level coverage. */
+  totalPopulation?: number;
+  /** Reference year of `totalPopulation`. */
+  referenceYear?: number;
+  /** Human-readable provenance matching a structured country source. */
+  source?: string;
   peoples?: PeopleDemographicEntry[];
 }
 
