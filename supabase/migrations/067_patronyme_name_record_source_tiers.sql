@@ -1,4 +1,4 @@
--- Migration 066 — source-tier gate for patronyme name records (REQ-133)
+-- Migration 067 — source-tier gate for patronyme name records (REQ-133)
 --
 -- Per-name PAT_* fiches publish explicitly labelled weak evidence instead of
 -- hiding it. Their spelling rows therefore accept all three source tiers.

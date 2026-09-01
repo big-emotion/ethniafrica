@@ -6,12 +6,12 @@ import { describe, expect, it } from "vitest";
 const migration = readFileSync(
   resolve(
     process.cwd(),
-    "supabase/migrations/066_patronyme_name_record_source_tiers.sql"
+    "supabase/migrations/067_patronyme_name_record_source_tiers.sql"
   ),
   "utf8"
 );
 
-describe("066 patronyme name-record source-tier contract", () => {
+describe("067 patronyme name-record source-tier contract", () => {
   // @req REQ-133
   it("accepts all three explicit tiers only for patronyme name records", () => {
     expect(migration).toContain("NEW.entity_type = 'patronyme'");
