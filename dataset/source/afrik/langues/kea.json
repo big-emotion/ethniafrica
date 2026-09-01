@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "kea",
+  "isoCode639_3": "kea",
+  "glottocode": "kabu1256",
+  "nameFr": "Créole cap-verdien",
+  "nameEn": "Kabuverdianu",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_CREOLE",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3 - Kabuverdianu",
+        "url": "https://glottolog.org/resource/languoid/id/kabu1256",
+        "tier": "official",
+        "notes": "Glottolog direct official languoid record; source of the name and glottocode."
+      }
+    ]
+  }
+}

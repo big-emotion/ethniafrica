@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "tuq",
+  "isoCode639_3": "tuq",
+  "glottocode": "teda1241",
+  "nameFr": "Teda",
+  "nameEn": "Tedaga",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_SAHARIEN",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/teda1241",
+        "tier": "official",
+        "notes": "Glottolog name: Tedaga; Teda is an attested name and the classification includes Saharan."
+      }
+    ]
+  }
+}
