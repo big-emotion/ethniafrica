@@ -967,6 +967,83 @@ export function checkPeopleGroupConsistency(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+const HISTORICAL_AFFILIATION_TIERS: ReadonlySet<SourceTier> = new Set([
+  "official",
+  "referenced",
+  "unverified",
+]);
+
+/**
+ * FR111 (REQ-127) – `content.historicalAffiliation` is the field a Creole
+ * people fiche carries when it has no defensible linguistic-family
+ * affiliation to an African family: Glottolog classifies every creole under
+ * the family of its lexifier, never under an African family, so
+ * `languageFamilyId` cannot be made to say what this field says instead.
+ *
+ * The field is optional — most fiches have a defensible `languageFamilyId`
+ * and never fill it — but when present it must stand on its own evidence:
+ * a non-empty `description` and at least one explicitly tiered source,
+ * independently of the fiche's other `sources`. This never reads or writes
+ * `languageFamilyId`, matching the AC that the two fields never interact.
+ */
+export function checkHistoricalAffiliationModel(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        historicalAffiliation?: {
+          description?: unknown;
+          sources?: unknown;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const affiliation = data.content?.historicalAffiliation;
+    if (!affiliation) continue;
+
+    if (
+      typeof affiliation.description !== "string" ||
+      !affiliation.description.trim()
+    ) {
+      errors.push(
+        `FR111: ${file}: content.historicalAffiliation.description is missing or empty`
+      );
+    }
+
+    const sources = Array.isArray(affiliation.sources)
+      ? affiliation.sources
+      : [];
+    if (sources.length === 0) {
+      errors.push(
+        `FR111: ${file}: content.historicalAffiliation.sources must cite at least one source, sourced and tiered independently of the fiche's other sources`
+      );
+    }
+
+    sources.forEach((source, i) => {
+      const tier = (source as { tier?: unknown })?.tier;
+      if (
+        typeof tier !== "string" ||
+        !HISTORICAL_AFFILIATION_TIERS.has(tier as SourceTier)
+      ) {
+        errors.push(
+          `FR111: ${file}: content.historicalAffiliation.sources[${i}] carries no valid tier (official | referenced | unverified)`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 /**
  * The 54 UN-recognised sovereign African states, ISO 3166-1 alpha-3. This is
  * the geographic boundary for FR28/FR28-strict (REQ-131, supersedes REQ-028):
@@ -4104,6 +4181,14 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "modele-langue.json")
     ),
+  });
+
+  console.log(
+    "FR111 – Historical-affiliation model (REQ-127: sourced and tiered, distinct from languageFamilyId)..."
+  );
+  newChecks.push({
+    name: "FR111 Historical-affiliation model",
+    result: checkHistoricalAffiliationModel(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

@@ -1,4 +1,4 @@
--- Migration 072 — afrik_media: the media data model (REQ-128, DEC-032)
+-- Migration 073 — afrik_media: the media data model (REQ-128, DEC-032)
 --
 -- Context: no fiche carries an image today. Attaching one is inherently a
 -- manual, subject-by-subject editorial judgment, not a bulk data operation —
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS afrik_media (
 COMMENT ON TABLE afrik_media IS
   'Media entries (images, videos) attached to an AFRIK fiche, each carrying '
   'a mandatory licence URI. entity_type/entity_id follow the polymorphic '
-  'Module 0 fabric convention. See migration 072, REQ-128, DEC-032.';
+  'Module 0 fabric convention. See migration 073, REQ-128, DEC-032.';
 
 COMMENT ON COLUMN afrik_media.licence_uri IS
   'Mandatory. NOT NULL + non-blank CHECK is the founding gate: a media entry '

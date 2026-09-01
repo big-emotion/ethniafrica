@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { mapLanguageFamilyDetail } from "../afrikDetailMapper";
+import { mapLanguageFamilyDetail, mapPeopleDetail } from "../afrikDetailMapper";
 import type { LanguageFamily } from "@/types/afrik";
 
 /**
@@ -119,5 +119,54 @@ describe("mapLanguageFamilyDetail", () => {
     expect(detail.id).toBe("FLG_EMPTY");
     expect(detail.generalInfo).toBeUndefined();
     expect(detail.sources).toBeUndefined();
+  });
+});
+
+describe("mapPeopleDetail", () => {
+  // @req REQ-127
+  it("hoists historicalAffiliation out of the content blob, separate from languageFamilyId", () => {
+    const detail = mapPeopleDetail({
+      id: "PPL_CREOLE_EXAMPLE",
+      nameMain: "Exemple créolophone",
+      languageFamilyId: "FLG_INDOEUROPEAN",
+      content: {
+        historicalAffiliation: {
+          description:
+            "Peuple afro-descendant formé par la traite transatlantique.",
+          sources: [
+            {
+              title: "UNESCO — Mémoire du monde, route des esclaves",
+              url: "https://www.unesco.org/en/memory-world",
+              tier: "official",
+            },
+          ],
+        },
+      },
+    });
+
+    expect(detail.historicalAffiliation).toEqual({
+      description:
+        "Peuple afro-descendant formé par la traite transatlantique.",
+      sources: [
+        {
+          title: "UNESCO — Mémoire du monde, route des esclaves",
+          url: "https://www.unesco.org/en/memory-world",
+          tier: "official",
+        },
+      ],
+    });
+    expect(detail.languageFamilyId).toBe("FLG_INDOEUROPEAN");
+  });
+
+  // @req REQ-127
+  it("leaves historicalAffiliation undefined for a people the section does not apply to", () => {
+    const detail = mapPeopleDetail({
+      id: "PPL_ORDINARY",
+      nameMain: "Peuple ordinaire",
+      languageFamilyId: "FLG_BANTU",
+      content: {},
+    });
+
+    expect(detail.historicalAffiliation).toBeUndefined();
   });
 });

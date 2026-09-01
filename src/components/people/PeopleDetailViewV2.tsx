@@ -11,6 +11,7 @@ import type { SourcedRelation } from "@/types/relations";
 import {
   PeopleOriginBlock,
   PeopleLanguageSection,
+  PeopleHistoricalAffiliationBlock,
   PeopleHistoryTimeline,
   PeopleCultureGrid,
   PeopleRelatedPeoplesSection,
@@ -83,13 +84,16 @@ export interface PeopleDetailViewV2Props {
  * being silent about a people's origins is a fact about the corpus, and
  * dropping the chapter is what deletes that fact.
  *
- * Two things on this page deliberately stay conditional, because their absence
- * is not a silence. The globe's grammar section explains a map that a fiche
- * with no distribution does not draw, and colonial fragmentation only exists
- * where a people straddles a border. Neither is a rubric anyone failed to
- * fill, and marking them would invent a gap. The same line holds one level
- * down: an optional field inside a block — an exonym, a `whyProblematic` —
- * stays absent, because the model never asked every fiche for one.
+ * Three things on this page deliberately stay conditional, because their
+ * absence is not a silence. The globe's grammar section explains a map that
+ * a fiche with no distribution does not draw, colonial fragmentation only
+ * exists where a people straddles a border, and filiation historique
+ * (REQ-127) only applies to a people with no defensible linguistic-family
+ * affiliation to an African family. None of these is a rubric anyone failed
+ * to fill, and marking them would invent a gap. The same line holds one
+ * level down: an optional field inside a block — an exonym, a
+ * `whyProblematic` — stays absent, because the model never asked every
+ * fiche for one.
  */
 // @req REQ-091
 export function PeopleDetailViewV2({
@@ -164,6 +168,21 @@ export function PeopleDetailViewV2({
           <FieldProvenanceMarker state="missing" />
         )}
       </FicheSection>
+
+      {/* Filiation historique (REQ-127) — only for a people with no
+          defensible linguistic-family affiliation to an African family
+          (e.g. Creole-speaking groups). Not a rubric of the fiche model but
+          a reading that only exists where that condition holds, so its
+          absence is inapplicability, not a corpus gap, and it carries no
+          missing marker — same doctrine as the globe's grammar section and
+          colonial fragmentation below. */}
+      {people.historicalAffiliation && (
+        <FicheSection title="Filiation historique">
+          <PeopleHistoricalAffiliationBlock
+            data={people.historicalAffiliation}
+          />
+        </FicheSection>
+      )}
 
       <FicheSection title="Rôle historique">
         {data.history.kingdomsOrChiefdoms ||
