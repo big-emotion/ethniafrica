@@ -28,6 +28,12 @@ const localStorageMock = (() => {
 
 Object.defineProperty(global, "localStorage", { value: localStorageMock });
 
+/** The query the loader actually put on the wire, as a plain object. */
+function searchParamsOf(fetchMock: { mock: { calls: unknown[][] } }) {
+  const url = new URL(String(fetchMock.mock.calls[0][0]), "http://localhost");
+  return Object.fromEntries(url.searchParams);
+}
+
 describe("afrikLoader", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -208,6 +214,87 @@ describe("afrikLoader", () => {
       expect(result).toHaveLength(1);
       expect(result[0].type).toBe("people");
       expect(result[0].id).toBe("PPL_SHONA");
+    });
+
+    // @req REQ-108
+    it("forwards every query option to the route", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      await search("shona", {
+        limit: 20,
+        classificationStatus: "consensual",
+        minConfidence: "0.7",
+        familyId: "FLG_BANTU",
+        countryId: "ZWE",
+      });
+
+      expect(searchParamsOf(mockFetch)).toEqual({
+        q: "shona",
+        limit: "20",
+        classificationStatus: "consensual",
+        minConfidence: "0.7",
+        familyId: "FLG_BANTU",
+        countryId: "ZWE",
+      });
+    });
+
+    // @req REQ-121
+    it("scopes a blank query to a family without sending an empty q", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      // "The peoples of the Bantu family" is a complete question; the route
+      // rejects `q=` but accepts no `q` at all.
+      await search("", { familyId: "FLG_BANTU" });
+
+      expect(searchParamsOf(mockFetch)).toEqual({ familyId: "FLG_BANTU" });
+    });
+
+    // @req REQ-121
+    it("scopes a blank query to a country without sending an empty q", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      await search("", { countryId: "ZWE" });
+
+      expect(searchParamsOf(mockFetch)).toEqual({ countryId: "ZWE" });
+    });
+
+    // @req REQ-121
+    it("keeps every kind the envelope carries when a relation scope is set", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      // The route scopes peoples by country but ranks the other kinds on the
+      // text alone, so a country scope must not silently drop them.
+      const result = await search("shona", { countryId: "ZWE" });
+
+      expect(result.map((r) => r.type)).toEqual([
+        "people",
+        "country",
+        "languageFamily",
+      ]);
+    });
+
+    // @req REQ-108
+    it("omits options the caller left out", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(searchEnvelope),
+      });
+
+      await search("shona", { limit: 6 });
+
+      expect(searchParamsOf(mockFetch)).toEqual({ q: "shona", limit: "6" });
     });
 
     it("should return empty array on error", async () => {

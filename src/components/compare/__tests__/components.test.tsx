@@ -297,6 +297,35 @@ describe("EntityComparePicker default fetchSuggestions (DEC-027 canonical path)"
       "Manding",
     ]);
   });
+
+  // @req REQ-097
+  it("asks for the suggestion ceiling and keeps only the selected kind", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        data: {
+          families: [{ id: "FLG_MANDE", nameFr: "Mandé" }],
+          // The route ranks every kind on the same text; a family picker must
+          // not offer a people just because it matched too.
+          peoples: [{ id: "PPL_MANDINKA", nameMain: "Mandinka", content: {} }],
+        },
+      }),
+    });
+
+    render(<EntityComparePicker />, { wrapper: createWrapper() });
+    fireEvent.click(
+      screen.getByRole("radio", { name: /familles linguistiques/i })
+    );
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "man" },
+    });
+
+    await waitFor(() => expect(mockFetch).toHaveBeenCalled());
+    expect(String(mockFetch.mock.calls[0][0])).toContain("limit=6");
+
+    const options = await screen.findAllByRole("option");
+    expect(options.map((option) => option.textContent)).toEqual(["Mandé"]);
+  });
 });
 
 describe("CompareEntityHeader", () => {

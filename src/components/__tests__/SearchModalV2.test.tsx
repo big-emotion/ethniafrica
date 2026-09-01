@@ -163,6 +163,27 @@ describe("SearchModalV2", () => {
     expect(screen.queryByText("Recherche")).not.toBeInTheDocument();
   });
 
+  // The modal reaches the corpus only through the shared client (ETNI-1415
+  // AC2); it never fetches /api/v2/search itself.
+  // @req REQ-108
+  it("queries the corpus through afrikLoader.search, scoped to the active tab", async () => {
+    vi.mocked(afrikLoader.search).mockResolvedValue(mockSearchResults);
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+    // Radix activates a trigger on pointer-down, not on the synthetic click.
+    fireEvent.mouseDown(screen.getByRole("tab", { name: "Peuples" }));
+    await act(async () => {
+      fireEvent.change(screen.getByPlaceholderText(/Rechercher une famille/i), {
+        target: { value: "Shona" },
+      });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+
+    expect(afrikLoader.search).toHaveBeenCalledWith("Shona", {
+      type: "people",
+    });
+  });
+
   // ── R3 — pill type-filters (44px) ──────────────────────────────────────────
 
   describe("type-filter pills", () => {

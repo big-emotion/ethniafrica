@@ -29,6 +29,7 @@ import {
   mapSearchEnvelope,
   mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
+import { search as searchCorpus } from "@/lib/afrikLoader";
 import {
   readRelation,
   relationSearchParams,
@@ -102,6 +103,10 @@ const CONFIDENCE_OPTIONS = [
 ];
 
 const ALL_FILTER_VALUES = "__all__";
+
+/** Per-kind ceilings the route applies to each ranked query. */
+const RESULTS_PER_SEARCH = 20;
+const SUGGESTIONS_PER_KEYSTROKE = 6;
 
 type SortKey = "relevance" | "az" | "za" | "pop-desc" | "pop-asc";
 
@@ -203,7 +208,7 @@ export function RecherchePageContent() {
       setHasSearched(true);
       try {
         const params = buildSearchParams(q, {
-          limit: 20,
+          limit: RESULTS_PER_SEARCH,
           classificationStatus: cs,
           minConfidence: mc,
           ...relationSearchParams(rel),
@@ -269,17 +274,11 @@ export function RecherchePageContent() {
       return;
     }
     const timer = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `/api/v2/search?${buildSearchParams(inputValue, { limit: 6 })}`
-        );
-        if (!res.ok) return;
-        const hits = mapSearchEnvelope(await res.json());
-        setSuggestions(hits);
-        setShowSuggestions(hits.length > 0);
-      } catch {
-        // ignore suggest errors silently
-      }
+      const hits = await searchCorpus(inputValue, {
+        limit: SUGGESTIONS_PER_KEYSTROKE,
+      });
+      setSuggestions(hits);
+      setShowSuggestions(hits.length > 0);
     }, 300);
     return () => clearTimeout(timer);
   }, [inputValue]);
