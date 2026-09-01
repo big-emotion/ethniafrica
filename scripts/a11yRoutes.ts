@@ -49,6 +49,14 @@ import {
  * The quiz route (Epic 10, Story 10.11 · ETNI-500 · FR71) audits the
  * server-rendered segment picker, for the same reason and with the same
  * division of labour with e2e/quiz-journey-a11y.spec.ts.
+ *
+ * The doctrine routes (ETNI-1622) are this gate's only coverage of an MDX
+ * render through next-mdx-remote/rsc: every detail page 500'd on a built
+ * server while its unit test (which mocks next-mdx-remote entirely) stayed
+ * green, and this axe run is the one CI job that both builds+starts a real
+ * server and fails on a >= 400 status before trusting the audit. The index
+ * and one representative slug are both listed, since the index alone had
+ * stayed healthy the whole time the slug route was down.
  */
 // @req REQ-091
 export const LIVE_ROUTES = [
@@ -67,4 +75,6 @@ export const LIVE_ROUTES = [
   getLocalizedRoute("fr", "migrations"),
   getLocalizedRoute("fr", "quiz"),
   getLocalizedRoute("fr", "colonization"),
+  getLocalizedRoute("fr", "doctrine"),
+  `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`,
 ];

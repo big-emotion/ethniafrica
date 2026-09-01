@@ -68,6 +68,17 @@ module.exports = {
         // the list for the same reason as /fr/explorer/appellations above. Its tighter CLS/INP
         // budgets are in assert.assertMatrix below and are no longer inert.
         "http://localhost:3000/fr/comprendre/migrations",
+        // ETNI-1622 — every doctrine detail page 500'd on a built server
+        // ("A React Element from an older version of React was rendered",
+        // from next-mdx-remote's React resolution racing Next's own
+        // react-server bundling) while its unit test — which mocks
+        // next-mdx-remote entirely — stayed green. No CI job requested a
+        // built-server URL for this route family, so nothing caught it.
+        // This is that missing gate: the index plus one representative
+        // detail page, since `collect` aborts the whole run on the first
+        // URL that fails to load.
+        "http://localhost:3000/fr/doctrine",
+        "http://localhost:3000/fr/doctrine/classifications-contestees",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
