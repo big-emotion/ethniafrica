@@ -38,6 +38,15 @@ supabase link --project-ref shmrjtnfbqzceovroqjj
 supabase config push
 ```
 
+**Expect this command to exit non-zero, and check the auth line rather than the
+exit code.** It pushes each service in turn and the storage step fails on the
+free tier — `402: Please upgrade the project to a paid tier to enable vector
+buckets`, provoked by `[storage] enabled = true` and unrelated to auth. Auth is
+pushed first. Run it a second time and read the third line: `Remote Auth config
+is up to date.` is the confirmation.
+
+Applied to recette on 2026-09-01; the remote now matches this repository.
+
 or type the same values into the dashboard → **Authentication → URL
 Configuration**: Site URL `http://localhost:3000` is fine for a recette used from
 a developer machine; Redirect URLs must list
@@ -88,6 +97,9 @@ NEXT_PUBLIC_SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
 The address does not need a Supabase account first: `signInWithOtp` is called
 with `shouldCreateUser: true`, because the allowlist is the gate and an
 authorized person should not additionally have to have registered.
+
+Recette carries one entry as of 2026-09-01. Production carries none: the table
+arrives there with the release, and the first entry has to be written after it.
 
 ## 3. Remove a moderator
 
