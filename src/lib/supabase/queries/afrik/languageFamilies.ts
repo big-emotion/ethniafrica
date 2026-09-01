@@ -193,7 +193,7 @@ export async function searchAfrikLanguageFamilies(): Promise<LanguageFamily[]> {
 }
 
 /**
- * Ids of families whose `search_vector` (migration 055 — DEC-028) matches
+ * Ids of families whose `search_vector` (migration 056 — DEC-028) matches
  * `query` — weight A on name_fr/name_en, weight D on every string inside
  * content->decolonialHeader. This is what lets a term that appears only in a
  * family's decolonial text (whyProblematic, contemporaryUsage, …) surface

@@ -1,4 +1,4 @@
--- Migration 055 — Search vector for afrik_language_families (DEC-028, ETNI-1400)
+-- Migration 056 — Search vector for afrik_language_families (DEC-028, ETNI-1400)
 --
 -- Context: a family whose only mention of a searched term sits inside its
 -- decolonial text (content->decolonialHeader — whyProblematic,
@@ -54,7 +54,7 @@ ALTER TABLE public.afrik_language_families
   ) STORED;
 
 COMMENT ON COLUMN public.afrik_language_families.search_vector IS
-  'Weighted French tsvector: A = name_fr + name_en, D = every string in content->decolonialHeader (whyProblematic, contemporaryUsage, originOfHistoricalTerm, historicalAppellations, selfAppellation). Queried by searchAfrikLanguageFamilies (src/lib/supabase/queries/afrik/languageFamilies.ts) — DEC-028, ETNI-1400.';
+  'Weighted French tsvector: A = name_fr + name_en, D = every string in content->decolonialHeader (whyProblematic, contemporaryUsage, originOfHistoricalTerm, historicalAppellations, selfAppellation). Queried by searchAfrikLanguageFamiliesByText (src/lib/supabase/queries/afrik/languageFamilies.ts) — DEC-028, ETNI-1400.';
 
 -- Dropping the column dropped this index with it.
 CREATE INDEX IF NOT EXISTS idx_afrik_language_families_search_vector

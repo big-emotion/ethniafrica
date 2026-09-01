@@ -203,17 +203,19 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `051_revision_publication.sql`                | pending — not applied by ETNI-70                              | pending — not applied by ETNI-70                       |
 | `052_afrik_search_prefix_unaccent.sql`        | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `054_afrik_people_languages.sql`              | pending — human-applied via `supabase db push`, recette first | pending — human-applied via `supabase db push`, second |
-| `055_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `056_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 
-> **ETNI-1400 (DEC-028).** `055` adds `search_vector` to `afrik_language_families` —
+> **ETNI-1400 (DEC-028).** `056` adds `search_vector` to `afrik_language_families` —
 > weight A on `name_fr`/`name_en`, weight D on every string inside
 > `content->decolonialHeader` — plus its GIN index, so a term that appears only in a
 > family's decolonial text now surfaces that family (`searchAfrikLanguageFamiliesByText`,
-> `src/lib/supabase/queries/afrik/languageFamilies.ts`). Rollout is two-step: recette
-> applies automatically when this PR merges (no hole after `054`); production is manual.
-> Until production carries `055`, `searchAfrikLanguageFamiliesByText` answers
-> `column "search_vector" does not exist` there — deploy the migration to a project before
-> the application code that queries it reaches that project.
+> `src/lib/supabase/queries/afrik/languageFamilies.ts`). This was authored and merged as `055`,
+> but `055_afrik_language_search_vector.sql` (ETNI-1504) reached `recette` first and
+> `check:migration-files` refuses a duplicate version, so this migration was renumbered to `056`
+> in a follow-up PR. Rollout is two-step: recette applies automatically when that PR merges;
+> production is manual. Until production carries `056`, `searchAfrikLanguageFamiliesByText`
+> answers `column "search_vector" does not exist` there — deploy the migration to a project
+> before the application code that queries it reaches that project.
 
 Migration `051` adds the authenticated `publish_revision(uuid, text)` transaction boundary.
 ETNI-70 deliberately leaves it unapplied: rollout remains recette first, application verification
