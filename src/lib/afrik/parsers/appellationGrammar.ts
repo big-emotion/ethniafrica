@@ -101,14 +101,43 @@ export function deriveAppellations({
   return { entries, rejected };
 }
 
+/**
+ * Splits on `separator`, but only where no parenthesis is open.
+ *
+ * The corpus writes its glosses in prose, and that prose contains the same
+ * `;` and `/` the grammar uses as separators — "Habesha (አበሻ — amharique;
+ * ሓበሻ — tigrinya)". A plain `String.split` cut inside the gloss and left
+ * `peelGloss` with a segment whose closing parenthesis had moved to the next
+ * one, so the parenthesis survived into the published name.
+ */
+function splitOutsideParens(value: string, separator: string): string[] {
+  const segments: string[] = [];
+  let depth = 0;
+  let start = 0;
+
+  for (let index = 0; index < value.length; index += 1) {
+    const character = value[index];
+    if (character === "(") {
+      depth += 1;
+    } else if (character === ")") {
+      // Floored rather than allowed to go negative: a stray closing
+      // parenthesis must not make every later separator look nested.
+      depth = Math.max(0, depth - 1);
+    } else if (character === separator && depth === 0) {
+      segments.push(value.slice(start, index));
+      start = index + 1;
+    }
+  }
+  segments.push(value.slice(start));
+
+  return segments.map((segment) => segment.trim()).filter(Boolean);
+}
+
 function splitAppellations(raw: string | null | undefined): string[] {
   if (typeof raw !== "string") {
     return [];
   }
-  return raw
-    .split(";")
-    .map((segment) => segment.trim())
-    .filter(Boolean);
+  return splitOutsideParens(raw, ";");
 }
 
 /**
@@ -121,22 +150,24 @@ function parseSegment(
   segment: string,
   leadType: NameRecordType
 ): Omit<DerivedAppellation, "sortRank">[] | null {
-  const { head, gloss } = peelGloss(segment);
-  const spellings = head
-    .split("/")
-    .map((part) => part.trim())
-    .filter(Boolean);
+  // Split before peeling, and peel each spelling in turn. `peelGloss` only
+  // reads a *trailing* parenthesis, so peeling the segment first left the
+  // gloss of every spelling but the last buried inside a name — which is why
+  // "Habesha (አበሻ — amharique) / Habeshat (ge'ez)" was refused outright
+  // rather than read as the two names it declares.
+  const spellings = splitOutsideParens(segment, "/").map(peelGloss);
 
-  if (spellings.length === 0 || !spellings.every(readsAsName)) {
+  if (
+    spellings.length === 0 ||
+    !spellings.every(({ head }) => readsAsName(head))
+  ) {
     return null;
   }
 
-  return spellings.map((nameText, index) => ({
-    nameText,
+  return spellings.map(({ head, gloss }, index) => ({
+    nameText: head,
     nameType: index === 0 ? leadType : ("historical_spelling" as const),
-    // The gloss explains the segment, so it belongs to the lead spelling
-    // rather than being repeated on each variant.
-    gloss: index === 0 ? gloss : null,
+    gloss,
   }));
 }
 
@@ -150,6 +181,13 @@ function peelGloss(segment: string): { head: string; gloss: string | null } {
 
 function readsAsName(candidate: string): boolean {
   if (!candidate) {
+    return false;
+  }
+
+  // A parenthesis that survived `peelGloss` means the source left one
+  // unclosed. The segment is prose the grammar failed to read, not a name,
+  // and publishing it is how "Abaha (endonyme" reached the atlas.
+  if (candidate.includes("(") || candidate.includes(")")) {
     return false;
   }
 

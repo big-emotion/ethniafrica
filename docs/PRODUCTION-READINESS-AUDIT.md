@@ -1,29 +1,30 @@
 # EthniAfrica — Production Readiness Audit
 
-**Date:** 2026-09-01
-**Branch audited:** `main` @ `8f2b47ff` (v4.0.0). Previous revision audited `recette` @ `0f73b973` earlier the same day.
-**Method:** read-only. Every repo gate executed locally against this tree after a clean `npm ci`; CI evidence read from GitHub Actions; branch protection and the repository secret inventory read from the GitHub API. No external service was written to, no migration run, no live production probe.
+**Date:** 2026-09-01 (second revision of the day)
+**Branch audited:** `recette` @ `79136438` (v4.0.0). The previous revision audited `main` @ `8f2b47ff` earlier the same day and scored 6.9.
+**Method:** read-only. Every repo gate executed locally against this tree; CI evidence read from GitHub Actions; branch protection read from the GitHub GraphQL API. No external service was written to, no migration run, no live production probe.
 
-> **A stale local install produced two false failures on the first pass, recorded here so
-> the next run does not re-discover them as defects.** `node_modules` carried a hoisted
-> `ajv@6.15.0` instead of the declared `^8.20.0`, and `ajv-formats` was not installed at
-> all. That broke `src/app/api/v2/__tests__/contract.test.ts` and its `openapiValidator`
-> helper, and produced 23 `tsc` errors — 20 of them from a stale `.next/types/validator.ts`
-> still referencing routes ETNI-1555 removed. After `npm ci` and a fresh build, **both
-> suites pass (108 tests) and `typecheck` reports zero errors.** All scores below are
-> against the clean tree.
+> **What changed since the previous revision.** The revision's single P0 — three migrations
+> that no Postgres would accept — **is closed**. `Apply Migrations — Recette` has now
+> succeeded five consecutive times. Two of that revision's findings were also re-examined
+> and did not survive: the "seven dead V1 tables" were dropped by migration `007` long ago,
+> and the `needs_review` tier vocabulary turns out to be a deliberate, gated, burning-down
+> placeholder rather than a value with no destination. Both corrections are recorded below
+> with their evidence, because a false finding that keeps being re-discovered costs as much
+> as a real one that keeps being ignored.
 
-> **Two rubric corrections carried forward from the previous revision.** The audit skill's
-> own rubric has drifted from the repository it audits; scoring against it unchanged would
-> produce false findings.
+> **Two standing rubric corrections, carried forward.** The audit skill's rubric has drifted
+> from the repository it audits; scoring against it unchanged produces false findings.
 >
 > - Domain 5 asserts _"the deploy model is Vercel-from-git — there is no GitHub deploy
 >   workflow"_. False since PR #656: production is self-hosted on OVH and deploys on a
 >   published GitHub Release. Domain 5 is scored against the current model.
-> - Step 3.6 imposes the **Tier 1/2/3** policy with Tier 3 forbidden. `CLAUDE.md`
->   superseded it with `official` / `referenced` / `unverified`, under which _nothing is
->   forbidden, everything is labelled_. Tier compliance is scored against the current
->   doctrine.
+> - Step 3.6 imposes the **Tier 1/2/3** policy with Tier 3 forbidden and Wikipedia-adjacent
+>   domains a P0. `CLAUDE.md` superseded it with `official` / `referenced` / `unverified`,
+>   under which _nothing is forbidden, everything is labelled_ — and blogs, social media and
+>   community accounts are explicitly admissible at `unverified`. Tier compliance is scored
+>   against the current doctrine. Scored against the retired one, this corpus would show 81
+>   false P0s.
 >
 > A third rubric check remains a false positive: the service-role isolation grep flags
 > `src/app/[lang]/compte/profil/actions.ts`, a `"use server"` Server Action whose module
@@ -33,281 +34,282 @@
 
 ## 1. Scope and method
 
-Gates run locally on this exact tree, after `npm ci`: `lint`, `typecheck`,
-`format:check`, `test:coverage`, `build`, `lint:req`, `check:jira-template`,
-`check:action-pins`, `check:env-example`, `check:migration-files`,
-`test:charter-contracts`, `validateAfrikData.ts`, `checkEditorialRules.ts`.
+Gates run locally on this tree: `lint`, `typecheck`, `format:check`, `test:coverage`,
+`build`, `lint:req`, `check:jira-template`, `check:action-pins`, `check:env-example`,
+`check:migration-files`, `test:charter-contracts`, `validateAfrikData.ts`,
+`checkEditorialRules.ts`.
 
 Additional scans: `knip`, `jscpd`, `npm audit`, RLS coverage derived from the migration
-corpus, and the repository secret inventory.
+corpus by replaying every `CREATE TABLE` / `DROP TABLE` in file order, and a full walk of
+the 954 fiche JSON files counting tiers inside every `sources[]` array.
 
 **Not run / not verifiable this revision**, and marked N/A rather than scored:
-`check:migration-state` (it refuses to report without database credentials — correct
-design, not a defect); `ts-prune`; `e2e` locally; the state of `/srv/ethniafrica/.env` on
-the OVH host (no SSH from an audit).
+`check:migration-state` (it refuses to report without database credentials — correct design,
+not a defect); `ts-prune`; `e2e` locally (CI evidence used instead); the state of
+`/srv/ethniafrica/.env` on the OVH host (no SSH from an audit); DB-vs-JSON row consistency
+(no database credentials used).
 
 ---
 
 ## 2. The five canonical questions
 
-**1. Is the project ready for production?** **Conditional.** One blocker remains, and it
-is operational rather than application code:
+**1. Is the project ready for production?** **Yes, conditionally** — and for the first time
+in this document's history, no P0 is open.
 
-- **Migrations `063` onward cannot apply to any Postgres.** `063`, `065` and — landing
-  after this audit's revision — `066` build a GIN index on
-  `extensions.unaccent('extensions.unaccent'::regdictionary, …)`, which Postgres rejects
-  with `ERROR: functions in index expression must be marked IMMUTABLE (SQLSTATE 42P17)`.
-  The recette migration job has failed on this six consecutive times today. `064` is not
-  itself defective but is queued behind `063`. Recette therefore runs code whose
-  supporting schema was never applied (§6).
+The previous revision's blocker is gone. Migrations `063`, `065` and `066` built a GIN index
+over the raw two-argument `extensions.unaccent(...)`, which Postgres rejects because an index
+expression requires an `IMMUTABLE` function. PR #676 folded all three through the
+`public.afrik_unaccent(TEXT)` wrapper that migration `052` created for exactly this purpose.
+Verified two ways: the only surviving raw calls in the corpus are inside `044` (a function
+body, already applied) and inside the wrapper's own definition at
+`supabase/migrations/066_afrik_search_patronymes.sql:80`, which is where it belongs — and
+`Apply Migrations — Recette` has succeeded **five consecutive times** (16:21, 15:37, 14:50,
+13:45, 12:29). Recette's schema has caught up to its own code.
 
-A second blocker — `recette` carrying no required status checks and allowing force pushes —
-was **resolved while this audit was being written**, and the fix is verified against the
-GraphQL API (§6, CI). The branch now requires the same five contexts as `main`, at
-`strict: false`, with force pushes refused.
+What remains is a conditional, not a blocker: **Lighthouse fails on every branch**, and has
+for the whole day. That is a signal problem more than a performance problem — see question 5.
 
-**2. Is the AFRIK editorial surface sound?** **Yes, with two labelled gaps.**
-`validateAfrikData.ts` passes **38/38 checks, 0 errors**, 3 989 warnings across the
-corpus; `checkEditorialRules.ts` reports **0 errors, 65 warnings**. FR28 passes on both the
-hard band [95,105] and the strict band [99,101]. **Zero** fiches cite Wikipedia in a
-`sources.url`, and **zero** carry an empty `sources` block. Against that: 19 files still
-carry retired numeric tiers, and 1 031 sources sit on `needs_review`, a value the database
-`CHECK` constraint does not accept. `data-integrity.yml` and `editorial-rules.yml` gate
-pull requests and are **not** advisory.
+**2. Is the AFRIK editorial surface sound?** **Yes.** This is the strongest domain in the
+audit and it improved this revision.
 
-**3. Can a new contributor go clone → running in one session?** **Yes, with one caveat.**
-`.env.example` is complete and `check:env-example` verifies it against the code in both
-directions. `.npmrc` sets `legacy-peer-deps`, so plain `npm ci` works. The caveat is the
-step this revision cannot certify: **migrations do not apply cleanly on a fresh project** —
-`063` fails, as above.
+`validateAfrikData.ts` passes **40/40 checks with 0 errors** (4 022 warnings, all advisory
+FR52 coverage). `checkEditorialRules.ts` reports **0 errors, 97 warnings**. FR28 passes on
+both the hard band [95,105] and the strict band [99,101].
 
-**4. What is the security posture?** **Strong.** **48 of 48 tables have RLS enabled — zero
-open tables.** Per-request CSP nonce, HSTS, `X-Content-Type-Options`, `Referrer-Policy`.
-API keys are PBKDF2-SHA256 at **600 000 iterations** with a 16-byte salt and a
-self-describing hash; raw keys are never stored. Sentry asserts an EU DSN and scrubs PII in
-`beforeSend`. Rate limiting fails **closed**. Every third-party Action is SHA-pinned. No
-secret-shaped string exists in any tracked file. The residual is that the leaked recette
-credentials cannot be _confirmed_ rotated (§6).
+A full walk of the corpus — 954 fiche files, **5 283 `sources[]` entries** — finds
+**zero entries with no tier**. That is the gate the doctrine actually cares about, and it is
+clean. Distribution: `unverified` 1 623, `official` 1 370, `referenced` 1 223,
+`needs_review` 1 031, plus 37 retired numeric tiers across 19 files.
 
-**5. Is the score close to 8–9/10?** **Not yet — 6.9/10**, up from 6.5 mid-session once
-`recette`'s protection was restored. Three things close most of the remaining distance: fix
-the three broken migrations so recette can catch up to its own code (+4 on Domain 5),
-re-baseline or repair the Lighthouse performance budget (+4 on Domain 9), and record the
-outcome of the credential rotation (+3 on Domain 2). That arithmetic lands at 8.0.
+**Zero fiches cite `wikipedia.org` as a `sources.url`.** 81 entries cite a blog, Facebook,
+Reddit or X — 80 of them correctly labelled `unverified`, which is precisely what the current
+doctrine prescribes for community and amateur knowledge, and precisely what the retired
+doctrine would have deleted. One (`PPL_AKUAPEM.json`, an X post) sits at `needs_review`.
+Zero fiches carry an empty `sources` block.
+
+`data-integrity.yml` and `editorial-rules.yml` gate pull requests and neither is advisory.
+
+**3. Can a new contributor go clone → running in one session?** **Yes.** The caveat that
+qualified this answer in the previous revision — migrations not applying on a fresh project —
+is resolved. `.npmrc` sets `legacy-peer-deps` so plain `npm ci` works; `check:env-example`
+verifies `.env.example` against the code **in both directions** (41 references across 1 538
+files, all documented, every documented entry actually read); `check:migration-files` reports
+70 files with no duplicate version and no hole. The two silent traps
+(`UPSTASH_REDIS_REST_*` mandatory in production despite reading as optional;
+`ANTIBOT_HMAC_SECRET` not inert when unset) are documented rather than tribal.
+
+**4. What is the security posture?** **Strong.** **41 of 41 live tables have RLS enabled —
+zero open tables.** Per-request CSP nonce (`src/middleware.ts:435`), HSTS,
+`X-Content-Type-Options`, `Referrer-Policy`. API keys are PBKDF2-SHA256 at **600 000
+iterations** with a 16-byte salt (`src/lib/api/auth.ts:15,16`); raw keys are never stored.
+Sentry asserts an EU DSN and scrubs PII in `beforeSend` across client, server and edge. Rate
+limiting fails **closed** (`src/lib/api/rate-limit.ts:199`). Every third-party Action is
+SHA-pinned. No secret-shaped string exists in any tracked file; only `.env.example` and
+`e2e/.env.example` are tracked env files. `npm audit`: 4 moderate, **0 high, 0 critical**.
+
+**5. Is the score close to 8–9/10?** **7.6/10**, up from 6.9. It is now within reach of the
+target, and one domain accounts for most of the remaining distance.
+
+Three actions close it: repair or re-baseline the Lighthouse budget (+4 on Domain 9, worth
++0.4 alone), run a restore drill (Domain 10), and route `keys/issue` through the service
+layer that already exists for it (Domain 7). That arithmetic lands at 8.2.
 
 ---
 
 ## 3. Overall score
 
-**6.9 / 10** — the application code is in good shape and improves each revision; the
-operational envelope around it is where the remaining blocker lives.
-
-Scored 6.5 when the evidence was gathered. `recette`'s branch protection was restored
-during the session, which moved Domain 3 from 4 to 8 and the mean from 6.5 to 6.9.
+**7.6 / 10** — up from 6.9. The application code and the editorial corpus are both in good
+shape; a permanently red performance gate is now the largest single drag.
 
 ---
 
 ## 4. Score per domain
 
-| #   | Domain                             | Score | Basis                                                                                  |
-| --- | ---------------------------------- | ----- | -------------------------------------------------------------------------------------- |
-| 1   | Security posture                   | **9** | 48/48 tables with RLS; per-request nonce; PBKDF2 600k; Sentry EU + PII scrub           |
-| 2   | Secrets hygiene                    | **6** | Tracked files clean, secrets re-set today, but no completion record for the rotation   |
-| 3   | CI                                 | **8** | Protection restored on `recette` mid-session; all Actions SHA-pinned; no advisory gate |
-| 4   | Correctness & tests                | **8** | 6 367 tests pass, 0 failures; coverage 84.9/79.0/88.2/85.7 vs 70/60/70/70              |
-| 5   | Deploy coherence                   | **4** | Migrations 063/065/066 cannot apply anywhere; recette is 3 behind its own merged code  |
-| 6   | Ferry pipeline                     | **8** | `ferry.config.yaml` coherent with the branch model; Jira column names unverified       |
-| 7   | Architecture & boundaries          | **8** | Three-layer v2 holds; no hardcoded external URLs; 4.83 % duplication                   |
-| 8   | AFRIK data integrity & Source Tier | **7** | Validator 38/38 with 0 errors; 19 files still on retired numeric tiers                 |
-| 9   | Performance & accessibility        | **4** | axe green, e2e green; Lighthouse fails perf on 12 assertions across 22 audited routes  |
-| 10  | Docs & runbooks                    | **7** | Deploy docs current; restore drill 13.6 months old, exceeding the 12-month rule        |
+| #   | Domain                             | Score | Basis                                                                                        |
+| --- | ---------------------------------- | ----- | -------------------------------------------------------------------------------------------- |
+| 1   | Security posture                   | **9** | 41/41 live tables with RLS; per-request nonce; PBKDF2 600k; Sentry EU + PII scrub            |
+| 2   | Secrets hygiene                    | **8** | Tracked files clean; the rotation now carries a written completion record                    |
+| 3   | CI                                 | **9** | All required checks green; `recette` + `main` protected; migrate-recette green 5×            |
+| 4   | Correctness & tests                | **8** | 6 668 tests pass, 0 failures; coverage 84.8/79.0/88.3/85.7 vs 70/60/70/70                    |
+| 5   | Deploy coherence                   | **8** | Migrations apply again; 70 files, no dup, no hole; DEPLOYMENT.md matches the OVH reality     |
+| 6   | Ferry pipeline                     | **8** | `ferry.config.yaml` coherent with the branch model; Jira column names unverified             |
+| 7   | Architecture & boundaries          | **7** | Three-layer holds except `keys/issue`; 4.85 % duplication; the "three clients" are two       |
+| 8   | AFRIK data integrity & Source Tier | **8** | 40/40 checks, 0 errors; **0 of 5 283 sources untiered**; 0 Wikipedia citations               |
+| 9   | Performance & accessibility        | **4** | axe and e2e green; Lighthouse red on every branch, all day                                   |
+| 10  | Docs & runbooks                    | **7** | Deploy + secret runbooks current; restore drill 13.6 months old, exceeding the 12-month rule |
 
-Mean = **6.9** (6.5 before Domain 3 was fixed mid-session).
+Mean = **7.6**.
 
-The broken migration is one defect that surfaces in three domains. It is counted fully in
-Domain 5, which is where it is caused, and referenced from Domains 3 and 8 without
-re-penalising them. The same applies to Lighthouse: it is counted in Domain 9, not again in
-Domain 3.
+Cross-domain defects were harmonised before the mean was computed. Lighthouse is counted
+once, in Domain 9, and referenced from Domain 3 without re-penalising it. The `keys/issue`
+boundary break is counted once, in Domain 7, and referenced from Domain 1.
 
 ---
 
 ## 5. Strengths
 
-- **RLS coverage is complete.** All 48 tables created across the 65 migrations have
-  `ENABLE ROW LEVEL SECURITY`. Tables with RLS and zero policies are deny-all — the correct
-  fail-closed posture for server-written tables (`antibot_challenges`, `search_query_log`,
-  `contributions`).
-- **The full suite is green.** 6 367 tests pass, 21 skipped, **zero failures**, and
-  `lint` / `typecheck` / `format:check` / `build` all pass. Coverage sits well above its
-  declared thresholds: 84.86 % statements, 78.98 % branches, 88.21 % functions, 85.74 %
-  lines against minimums of 70/60/70/70.
+- **No P0 is open.** The first revision of this document able to say so.
+- **RLS coverage is complete.** Replaying every `CREATE TABLE` and `DROP TABLE` in file
+  order leaves **41 live tables, all 41 with `ENABLE ROW LEVEL SECURITY`**. The two tables
+  with RLS and zero policies — `antibot_challenges`, `search_query_log` — are deny-all by
+  design, the correct fail-closed posture for server-written tables.
+- **Every source in the corpus carries a tier.** 5 283 entries, zero untiered. Under a
+  doctrine whose entire gate is _"every source carries an explicit tier"_, this is the
+  measurement that matters, and it is perfect.
+- **The full suite is green.** 6 668 tests pass across 647 files, 21 skipped, **zero
+  failures**; `lint` (0 errors), `typecheck`, `format:check` and `build` all clean. Coverage
+  sits well above its declared thresholds: 84.84 % statements, 79.02 % branches, 88.27 %
+  functions, 85.67 % lines against minimums of 70/60/70/70.
+- **Every repo-specific gate passes**: `lint:req`, `check:jira-template`,
+  `check:action-pins`, `check:env-example`, `check:migration-files`, and
+  `test:charter-contracts` (51 files, 617 tests).
 - **Rate limiting fails closed, deliberately** — `checkUpstashConfigured()` returns 500
-  rather than serving unthrottled traffic (`src/lib/api/rate-limit.ts:177,199`).
-- **API key hashing is strong and self-describing**: PBKDF2-SHA256, 600 000 iterations,
-  16-byte salt (`src/lib/api/auth.ts:15,16`), format `pbkdf2v1:{iterations}:{salt}:{hash}`.
-- **The repo's own gates are real gates, and they all pass**: `lint:req`,
-  `check:action-pins`, `check:env-example`, `check:migration-files`,
-  `check:jira-template`, `test:charter-contracts`.
-- **The editorial contract holds where it matters most**: zero Wikipedia URLs cited as
-  sources, zero empty `sources` blocks, FR28 passing on both bands.
+  rather than serving unthrottled traffic.
+- **Both integration and release branches are protected**, requiring the same five contexts
+  (`gitleaks`, `build`, `validate`, `openapi-diff`, `axe-core (Storybook)`) and refusing
+  force pushes.
 
 ---
 
 ## 6. Gaps and risks
 
-### Migrations that cannot apply (Domain 5; visible in 3 and 8) — P0
+### Lighthouse is red everywhere, and therefore carries no signal (Domain 9) — P1
 
-**`063_afrik_search_trigram.sql` and `065_afrik_search_persons.sql` are rejected by
-Postgres.** Both build a GIN trigram index over a raw two-argument unaccent call:
+Every one of the five most recent `lighthouse.yml` runs failed, across five different
+branches (`ferry/ETNI-1391`, `feat/axis-entry-descriptions`,
+`feat/etni-1420-index-quiz-questions`, `fix/vercel-standalone-output`). On the same commits,
+`a11y.yml` and `e2e.yml` were **green every time**.
 
-```sql
-CREATE INDEX IF NOT EXISTS idx_afrik_peoples_name_main_trgm
-  ON public.afrik_peoples
-  USING gin (
-    (extensions.unaccent('extensions.unaccent'::regdictionary, lower(name_main)))
-    extensions.gin_trgm_ops
-  );
-```
+The problem is no longer primarily that the routes are slow — it is that a gate which fails
+on every branch cannot distinguish a regression from the baseline. It has been red long
+enough that it now functions as noise, and the repo's own workflow comment at
+`.github/workflows/lighthouse.yml:49` asserts the opposite of its lived behaviour: _"gate is
+enforced — no continue-on-error masks failures."_ It is enforced, and it is ignored, which is
+the worst of both.
 
-`supabase/migrations/063_afrik_search_trigram.sql:57-63`, and the same shape at
-`supabase/migrations/065_afrik_search_persons.sql:62-67`.
+The previous revision established the shape of the underlying work and it still holds: the
+failing routes are two distinct populations. Four score 0.78–0.83 — near-misses a few points
+short of the 0.85 budget. Three score 0.47–0.49 with total-blocking-time at 2 101 / 2 598 /
+3 350 ms against a 300 ms budget. A TBT of two to three seconds is main-thread JavaScript,
+not payload weight: that group is the globe. The two populations need different work, and
+conflating them has been costing effort.
 
-An index expression requires a function marked `IMMUTABLE` in the catalog, and
-`unaccent(regdictionary, text)` is not. **Migration `052` already solved this**: it created
-`public.afrik_unaccent(TEXT)`, explicitly `IMMUTABLE`, and its own `COMMENT` says it exists
-to be _"usable inside a GENERATED column or an index expression"_
-(`supabase/migrations/052_afrik_search_prefix_unaccent.sql:72-84`). Migration `065` uses
-that wrapper correctly for its tsvector column (`:53`) and then bypasses it for the index
-(`:65`).
+**The decision this needs is not engineering, it is whether to re-baseline.** A budget nobody
+can meet is a budget, not a bug.
 
-Consequences:
+### `keys/issue` bypasses the service layer that exists for it (Domain 7) — P1
 
-- `Apply Migrations — Recette` has failed **six consecutive times** today, most recently at
-  10:49. The failure is not the workflow — it is the SQL.
-- **Recette is three migrations behind code already merged to depend on them.** The pg_trgm
-  typo tolerance (#666), the patronyme dossier (#668) and the REQ-126 people search (#669)
-  are on `main`; `063`, `064` and `065` are not on recette.
-- Because `supabase db push` stops at the first failure, `064` — which is _not_ itself
-  defective — is blocked behind `063`.
+`src/app/api/v2/keys/issue/route.ts` queries Supabase directly — `.from("api_keys")` at
+`:55` and an `.insert(...)` at `:79`, against a `createAdminClient()` imported at `:37`. It
+is the **only** one of the 21 v2 route groups that does this; every other route delegates.
 
-The fix is to call `public.afrik_unaccent(lower(…))` — in the index expression **and at
-the matching call sites of the RPC**. `063` has five raw calls and zero wrapped ones
-(`:54` index, then `:82`, `:105`, `:112`, `:122`); `065` has three raw against six wrapped
-(`:65` index, then `:119`, `:134`). Fixing only the index line would let the migration
-apply while leaving the index unusable: the planner matches an index by expression, so an
-index built on the wrapper and a `WHERE` clause built on the raw call never meet, and the
-query silently falls back to a sequential scan over `afrik_peoples`.
+What makes it worth fixing rather than tolerating is that **both layers already exist**:
+`src/api/v2/handlers/keys.ts` and `src/api/v2/services/keyService.ts` are present and
+populated. This is not a missing abstraction, it is one route that walks around the
+abstraction — on the single most security-sensitive table in the schema, with the
+service-role client.
 
-Note that `public.afrik_unaccent` applies `COALESCE(p_text, '')` where the raw call does
-not. On the non-null `name_main` / `full_name` columns this is neutral, and the enclosing
-`CASE` expressions already guard the blank query — but it should be checked rather than
-assumed.
+### The "three Supabase clients" are two (Domain 7) — P2
 
-**These files were never applied anywhere, so they must be edited in place.** Adding a
-corrective `067` would leave two dead migrations in the sequence; there is no ledger drift
-to fear because no database ever executed them.
+`CLAUDE.md` documents three clients that are "never interchangeable". In practice
+`src/lib/supabase/client.ts` (browser, anon key) is imported by exactly one module,
+`src/lib/flags-client.ts` — which `knip` reports as an orphan file reached by nothing. The
+browser client is therefore live only through dead code. Either the invariant should be
+restated as two clients, or the browser path should be reconnected deliberately.
 
-> **Addendum, after the audited revision.** `origin/recette` has since received
-> `066_afrik_search_patronymes.sql` (REQ-135), which carries **the same defect** at
-> `:127-131` — a trigram index over the raw `extensions.unaccent(…)`, alongside 14 correct
-> uses of the wrapper elsewhere in the same file. The count is therefore **three
-> migrations, not two**. That three independent authors reached for the raw call while the
-> IMMUTABLE wrapper sat two files away suggests the wrapper is not discoverable enough:
-> `052`'s `COMMENT` explains it, but nothing at the point of use points to it.
+### Dead code & redundancy (Domains 4, 7) — P1/P2
 
-### CI (Domain 3) — the P0 was fixed during this session
+`knip` reports **32 unused files, 189 unused exports, 107 unused exported types, 4 unlisted
+dependencies, 1 unused dependency, 11 unused devDependencies**. `jscpd` measures **4.85 %
+duplicated lines** (821 clones over 1 324 files), which is low and carries no penalty.
 
-When the evidence was gathered, `recette` had `required_status_checks: null`,
-`required_pull_request_reviews: null`, `restrictions: null`, **`allow_force_pushes: true`**
-and no ruleset supplying the missing rules — `enforce_admins: true` only meant the empty
-rule set also applied to admins, which is not itself a protection. The integration branch
-accepted a red merge, an unreviewed merge and a history rewrite.
+- **P1 — 4 unlisted dependencies.** `esbuild`, imported by three `scripts/*-bundle-size.ts`,
+  and `tinyglobby`, by `src/app/[lang]/__tests__/loaderCoverage.test.ts`. These resolve today
+  only because a transitive hoist provides them. The previous revision opened with an
+  incident of exactly this shape — a hoisted `ajv@6` where `^8` was declared — which produced
+  two false failures and cost a full re-run. Unchanged since.
+- **P1 — confirmed orphans**: `src/lib/flags-client.ts`, `src/lib/home/accessAxesData.ts`,
+  `src/api/v2/schemas/games.ts`, and three empty barrels
+  (`src/components/{compare,names,relations}/index.ts`).
+- **P2 — `scripts/` carries 10 orphaned one-off scripts** (`checkMigration.ts`,
+  `convertAfrikToJson.ts`, `testLoader.ts`, `loadCountryProvenance.ts`, …).
 
-**That was corrected mid-session**, and the fix is verified from two independent reads:
+**Known false positives — do not action:**
 
-```
-recette   force=false  del=false  strict=false  admin=true
-          checks=["gitleaks","build","validate","openapi-diff","axe-core (Storybook)"]
-```
-
-`strict: false` on `recette` is deliberate and differs from `main`, which is `strict: true`.
-With parallel Ferry sessions merging continuously, requiring "up to date with base" on the
-integration branch makes every merge stale every other open pull request, which then has to
-rebase and re-run CI. The cost outruns the benefit on an integration branch.
-
-**Read this from GraphQL, not REST.** The repository's protection has been misreported by
-`GET /branches/:b/protection` before — `allowsForcePushes` in particular. The
-`branchProtectionRules` GraphQL node is the reliable source, and the two agreed here.
-
-Remaining in this domain, both counted elsewhere so as not to double-penalise:
-Lighthouse is red repo-wide (§9), and `Apply Migrations — Recette` is red because of the
-migration defect above (§6, first entry).
-
-### Secrets (Domain 2) — P1
-
-The previous revision recorded a leaked recette `service_role` key and Postgres password in
-the public git history. This revision finds:
-
-- **No secret-shaped string in any tracked file.** Only `.env.example` and
-  `e2e/.env.example` are tracked env files.
-- **The relevant repository secrets were all re-set today** — `SUPABASE_SERVICE_ROLE_KEY`
-  09:29, `NEXT_PUBLIC_SUPABASE_ANON_KEY` 09:28, `RECETTE_SUPABASE_DB_URL` 09:09 — which is
-  consistent with the rotation having been performed.
-- **But `docs/runbooks/secret-exposure-audit-2026-09.md` still reads "Must be rotated" and
-  carries no completion record.** Confirming a key is dead requires probing the service,
-  which is out of scope here. **The gap is the missing record, not necessarily the missing
-  rotation** — and the record is what a future reader will act on.
-- `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` is now present (08:12), closing the previous
-  revision's P0 #5: the corpus sync will no longer fail for want of it.
-
-### Dead code & redundancy (Domains 4, 7) — P1
-
-`knip` reports 32 unused files, 177 unused exports, 4 unlisted dependencies and 11 unused
-devDependencies. `jscpd` measures **4.83 % duplicated lines**, which is low and carries no
-penalty.
-
-Confirmed and worth acting on:
-
-- **P1** `src/lib/supabase/client.ts` — the browser Supabase client is unused. The "three
-  Supabase clients, never interchangeable" invariant in `CLAUDE.md` now describes two.
-- **P1** `src/lib/flags-client.ts`, `src/lib/home/accessAxesData.ts`,
-  `src/api/v2/schemas/games.ts`, `src/test/server-only-stub.ts` — orphaned.
-- **P1** Three empty barrels: `src/components/{compare,names,relations}/index.ts`.
-- **P1** Four **unlisted** dependencies — `esbuild`, imported by three
-  `scripts/*-bundle-size.ts`, and `tinyglobby`, by
-  `src/app/[lang]/__tests__/loaderCoverage.test.ts`. These resolve today only because a
-  transitive hoist provides them; the `ajv` incident at the top of this document is exactly
-  how that arrangement fails.
-- **P2** `scripts/` carries 10 orphaned one-off scripts (`checkMigration.ts`,
-  `convertAfrikToJson.ts`, `testLoader.ts`, …).
-
-**Two knip findings are false positives and must not be actioned:**
-
-- **`sharp` reported as an unused dependency.** It is never imported — Next loads it
-  implicitly for `next/image` optimisation. Removing it on knip's word would silently
-  degrade image optimisation on the self-hosted host.
+- **`sharp` reported as an unused dependency.** Never imported; Next loads it implicitly for
+  `next/image` optimisation. Removing it on knip's word would silently degrade image
+  optimisation on the self-hosted host.
+- **The bulk of the 189 "unused exports" are components that are demonstrably rendered** —
+  `ConfidenceChip`, `AutonymExonymHeading`, `ActionLink`, the whole `quiz/` and `play/`
+  families. They are exported both named and default and consumed via one form only; knip
+  reports the other. Treat this list as a lead, never as a delete-list.
 - `e2e/support/factories/*` and `e2e/global.setup.ts` are reached through the Playwright
-  config, which knip does not follow; `docs/design/mockups/*` are built by `node build.js`,
-  not imported.
+  config, which knip does not follow; `docs/design/mockups/*` are built by `node build.js`.
 
 ### Hardcoded values (P0/P1)
 
-**No P0, and below the penalty threshold for Domains 5 and 7.** No hardcoded Supabase,
-Upstash or Sentry URL exists anywhere in `src/**` — the scan returns empty. The only
-literals worth naming are eight pagination defaults (`perPage ?? 20`, `limit ?? 20`,
-`pageSize ?? 50`) in the v2 handlers, which are documented API defaults rather than
-deployment-varying configuration.
+**No P0, and below the penalty threshold for Domains 5 and 7.** The scan for hardcoded
+Supabase, Upstash and Sentry URLs across `src/**` returns **empty**. The literals worth
+naming are all documented contract values rather than deployment-varying configuration:
+
+- Seven pagination defaults (`perPage ?? 20`, `limit ?? 20`) across the v2 handlers —
+  documented API defaults.
+- Cache-control TTLs (`s-maxage=3600`, `s-maxage=86400, immutable`) — these are the AR18
+  cache classes, named as such in the OpenAPI annotation directly above each constant.
 
 ### Code debt (Domain 4) — P2
 
-79 lint warnings (0 errors); 23 stray `console.*` in `src` outside tests, against a rule
-that handlers use `@/lib/api/logger`; 35 `TODO`/`FIXME` markers across `src` and `scripts`;
-4 moderate `npm audit` advisories, none high or critical.
+80 lint warnings (0 errors); 23 stray `console.*` in `src` outside tests against a rule that
+handlers use `@/lib/api/logger`; 36 `TODO`/`FIXME` markers; 4 moderate `npm audit` advisories,
+none high or critical.
 
-`next-env.d.ts` is tracked but regenerated by `next build`, which adds
-`import "./.next/types/root-params.d.ts"` and leaves the tree dirty after any build. Either
-commit the regenerated form or untrack it — as it stands, every build produces a spurious
-diff.
+`next-env.d.ts` remains tracked while `next build` regenerates it, so every build leaves the
+tree dirty. It is one of only two modified files in `git status` at the end of this audit.
+
+### Two findings from the previous revision that did not survive re-examination
+
+Recorded so they are not re-discovered a third time.
+
+**The seven "dead V1 tables" do not exist.** The previous revision reported
+`african_regions`, `countries`, `ethnic_groups`, `ethnic_group_languages`,
+`ethnic_group_presence`, `ethnic_group_sources` and `languages` as surviving V1 schema with
+RLS and no policies, and raised a P1 to drop them. **Migration `007` already drops all of
+them**, at `007_remove_v1_add_v2_contribution_types.sql:21-28`. The error came from counting
+`CREATE TABLE` statements without replaying `DROP TABLE`; the corpus creates 48 tables and
+leaves **41** live. `sources` appears in that drop list and is legitimately live — `007`
+drops the V1 table and `009_module_zero_fabric.sql:9` recreates it as the Module Zero table.
+Any future RLS count must replay both statements in file order.
+
+**`needs_review` is not vocabulary drift — it is a gated ratchet.** The previous revision
+flagged 1 031 sources carrying `tier: "needs_review"` as an open question, on the grounds
+that the DB `CHECK` constraint does not accept the value. It does not need to. The chain is
+deliberate and complete at every link:
+
+- `scripts/codemods/tierStringSources.ts:25` states outright that `needs_review` _"is
+  deliberately not a member of `SourceTier`"_ — it is the honest placeholder emitted when
+  neither the source catalogue nor the domain rulings can settle a tier.
+- `src/lib/afrik/loaders/provenanceWriter.ts:70` maps it to `NULL` on the way to the
+  database: `tier: isSourceTier(source.standing) ? source.standing : null`.
+- The constraint is `CHECK (tier IS NULL OR tier IN ('official','referenced','unverified'))`
+  (`041_one_source_tier_vocabulary.sql:79`) — `NULL` is explicitly permitted.
+- And it is **actively burning down under a CI gate**:
+  `scripts/ci/checkSourceTierCoverage.ts` declares `NEEDS_REVIEW_RATCHET = 1063` with the
+  comment _"DESCENDING RATCHET … Lower it whenever a classification pass clears sources;
+  NEVER raise it."_ The corpus stands at **1 031**, thirty-two below the ratchet. The gate
+  runs in `data-integrity.yml:44`.
+
+The same gate's `TIERS_WITH_AUTHORITY` set explicitly admits numeric `1` and `2`, which is
+why the 37 remaining numeric tiers across 19 files do not fail the build. They are a known,
+tolerated tail rather than an unnoticed defect — worth migrating, but not a finding.
+
+**A third claim was tested this revision and found sound.** `recompute_confidence()` scores
+source quality with a `CASE` over `tier` that has no `ELSE`, so a `NULL` tier falls through
+it and `COALESCE(v_avg_source_quality, 0)` zeroes the quality term — while `v_source_count`
+still counts that source toward the volume term. The ordering this produces is the correct
+one: five untiered sources score `0.50`, five honestly-labelled `unverified` sources score
+`0.62`. Declining to label is **not** rewarded over labelling weakly, which is what the
+doctrine requires. The residual observation is only that half the score (the 0.50 volume
+term) is blind to authority by construction — **P2, by design, not a defect.**
 
 ---
 
@@ -316,183 +318,205 @@ diff.
 `git clone` → `npm ci` (`.npmrc` sets `legacy-peer-deps`, so no flag is needed) →
 `cp .env.example .env.local` → migrations → `npm run dev`.
 
-`check:env-example` verifies `.env.example` against the code **in both directions**, which
-is why this flow holds: every environment reference in the code is documented, and every
-documented entry is actually read.
+`check:env-example` verifies `.env.example` against the code **in both directions** — 41
+environment references across 1 538 files, all documented, and every documented entry
+actually read. That bidirectionality is why this flow holds rather than rotting.
 
-Two traps, both now documented rather than tribal:
+The step that failed in the previous revision now passes: migrations apply cleanly and in
+order, verified by five consecutive green `Apply Migrations — Recette` runs.
 
-- `UPSTASH_REDIS_REST_URL` / `_TOKEN` are listed among optional subsystems but are mandatory
-  in a production build — without them every `/api/v2/*` answers 500 while pages render
-  normally.
+Two traps remain, both documented rather than tribal:
+
+- `UPSTASH_REDIS_REST_URL` / `_TOKEN` read as optional but are mandatory in a production
+  build — without them every `/api/v2/*` answers 500 while pages render normally.
 - `ANTIBOT_HMAC_SECRET` is not inert when unset: `GET /api/v2/antibot/challenge` answers 503
   and every report dialog fails, while the build stays green.
-
-The one step this revision cannot certify is **migrations applying cleanly on a fresh
-project** — they do not. `063` fails, as in §6.
 
 ---
 
 ## 8. Security posture
 
-**48 tables created across 65 migrations. 48 have RLS enabled. Zero open tables, zero P0 in
-this table.**
+**48 tables are created across the 70 migrations; `007` drops 8 and `009` recreates one,
+leaving 41 live. All 41 have RLS enabled. Zero open tables, zero P0 in this table.**
 
-| Table                                                                | RLS enabled | Policies | Notes                          |
-| -------------------------------------------------------------------- | ----------- | -------- | ------------------------------ |
-| afrik_countries                                                      | yes         | 1        | public read                    |
-| afrik_language_families                                              | yes         | 1        | public read                    |
-| afrik_languages                                                      | yes         | 1        | public read                    |
-| afrik_peoples                                                        | yes         | 1        | public read                    |
-| afrik_people_countries                                               | yes         | 1        | join table                     |
-| afrik_patronymes + \_peoples / \_countries / \_persons / \_alliances | yes         | 1 each   | public read                    |
-| persons, person_peoples, person_countries                            | yes         | 1 each   | public read                    |
-| api_keys                                                             | yes         | 1        | admin-only writes              |
-| user_roles                                                           | yes         | 3        | admin-only writes              |
-| audit_log                                                            | yes         | 3        | append-only                    |
-| flags, migration_events, name_records, editorial_doctrine            | yes         | 5 each   | moderated write paths          |
-| contributions, antibot_challenges, search_query_log                  | yes         | 0        | deny-all; server-written       |
-| african_regions, countries, ethnic_groups, ethnic_group\_\*          | yes         | 0        | **dead V1 schema** — see below |
-
-**Dead V1 schema.** Seven tables from the removed V1 surface still exist with RLS and no
-policies. Inert and not a security hole, but `CLAUDE.md` states V1 was removed — the schema
-disagrees.
+| Table                                                                | RLS enabled | Policies | Notes                    |
+| -------------------------------------------------------------------- | ----------- | -------- | ------------------------ |
+| afrik_countries                                                      | yes         | 1        | public read              |
+| afrik_language_families                                              | yes         | 1        | public read              |
+| afrik_languages                                                      | yes         | 1        | public read              |
+| afrik_peoples                                                        | yes         | 1        | public read              |
+| afrik_people_countries / \_languages / \_relations                   | yes         | 1 each   | join tables              |
+| afrik_patronymes + \_peoples / \_countries / \_persons / \_alliances | yes         | 1 each   | public read              |
+| persons, person_peoples, person_countries                            | yes         | 1 each   | public read              |
+| sources                                                              | yes         | 3        | Module Zero provenance   |
+| assertions, assertion_references, confidence_scores                  | yes         | 1–2 each | provenance fabric        |
+| api_keys                                                             | yes         | 1        | admin-only writes        |
+| user_roles                                                           | yes         | 5        | admin-only writes        |
+| audit_log                                                            | yes         | 3        | append-only              |
+| flags, migration_events, name_records, editorial_doctrine            | yes         | 5 each   | moderated write paths    |
+| revisions, revision_drafts, fiche_revisions                          | yes         | 1–4 each | editorial workflow       |
+| contributions, contributor_profiles                                  | yes         | 2–3      | submit / moderate        |
+| protected_records, protected_record_audit                            | yes         | 1 each   | rights & consent         |
+| oral_narratives, oral_narrative_links, source_working_assets         | yes         | 1–5 each | editorial assets         |
+| quiz_questions, quiz_generation_runs                                 | yes         | 1 each   | generated content        |
+| antibot_challenges, search_query_log                                 | yes         | **0**    | deny-all; server-written |
 
 Other findings, all verified this run:
 
 - **CSP nonce is per request** — `btoa(crypto.randomUUID())` at `src/middleware.ts:435`,
   injected into `script-src` and `style-src` (`:75`, `:80`).
-- **Headers**: HSTS (`:64`), `X-Content-Type-Options: nosniff` (`:67`), `Referrer-Policy:
-strict-origin-when-cross-origin` (`:68`).
+- **Headers**: HSTS (`:64`), `X-Content-Type-Options: nosniff` (`:67`),
+  `Referrer-Policy: strict-origin-when-cross-origin` (`:68`).
 - **API keys**: PBKDF2-SHA256, 600 000 iterations, 16-byte salt
-  (`src/lib/api/auth.ts:15,16`); raw keys never stored.
-- **Sentry**: EU residency asserted at init — a production build throws if the DSN is not
-  `ingest.de.sentry.io`; PII scrubbed in `beforeSend` across client, server and edge.
+  (`src/lib/api/auth.ts:15,16`), self-describing format
+  `pbkdf2v1:{iterations}:{salt}:{hash}`; raw keys never stored.
+- **Sentry**: EU residency asserted at init on all three runtimes — a production build throws
+  if the DSN is not `ingest.de.sentry.io`; PII scrubbed in `beforeSend` via
+  `@/lib/sentry/pii-scrubber`.
 - **Service-role isolation holds.** The only non-API import is a `"use server"` Server
-  Action.
-- **Three-layer API boundary holds**: no `route.ts` under `src/app/api/v2/` queries Supabase
-  directly.
-- **Supply chain**: no unpinned third-party Action; 4 moderate advisories, 0 high, 0
-  critical.
-- **Nobody can deploy from a clone**: `deploy-production.yml` triggers only on `release:
-published`, has no `workflow_dispatch`, and forks receive no secrets.
+  Action (`src/app/[lang]/compte/profil/actions.ts`), which never reaches a browser bundle.
+- **Supply chain**: no unpinned third-party Action; `npm audit` reports 4 moderate, 0 high,
+  0 critical.
+- **Nobody can deploy from a clone**: `deploy-production.yml` triggers only on
+  `release: published`, has no `workflow_dispatch`, and forks receive no secrets.
+- **Branch protection** (read from GraphQL, which has proved reliable where REST has not):
+
+  ```
+  main     force=false del=false strict=true  admin=true  checks=[gitleaks, build, validate, openapi-diff, axe-core (Storybook)]
+  recette  force=false del=false strict=false admin=true  checks=[gitleaks, build, validate, openapi-diff, axe-core (Storybook)]
+  ```
+
+  `strict: false` on `recette` is deliberate: with parallel Ferry sessions merging
+  continuously, requiring "up to date with base" on the integration branch makes every merge
+  stale every other open PR.
+
+- **Residual (Domain 2, P2)**: the recette credentials leaked in git history were remediated
+  by **disabling the legacy key system, not by rotating the JWT signing key** — a distinction
+  `docs/runbooks/secret-exposure-audit-2026-09.md` now records explicitly, along with what was
+  done and how it was verified. The leaked `service_role` JWT remains cryptographically valid
+  until 2036 and is inert only for as long as legacy keys stay disabled. **Legacy keys must
+  never be re-enabled on the recette project.** The previous revision's P1 — "no completion
+  record" — is closed; this is the documented, accepted residual.
 
 ---
 
 ## 9. Performance & accessibility posture
 
-- **axe-core: green, and not advisory.**
-- **E2E (Playwright): green** on every recent run.
-- **Lighthouse: red, repo-wide.** On the most recent completed run, **12 assertions fail
-  `categories:performance ≥ 0.85`** across the 22 audited routes, plus **10**
-  `largest-contentful-paint > 5500 ms` and **6** `total-blocking-time > 300 ms` breaches.
-  The failures span the home, the three atlas hubs, and the fiche routes
-  (`/fr/atlas/pays/SEN`, `/fr/atlas/peuples/PPL_WOLOF`, `/fr/atlas/familles/FLG_BANTU`).
-- **The failing routes fall into two distinct populations, and conflating them has been
-  costing effort.** Four routes score **0.78 – 0.83** — near-misses, a few points short of
-  the 0.85 budget. Three score **0.47 – 0.49**, with `total-blocking-time` measured at
-  **2 101 ms, 2 598 ms and 3 350 ms** against a 300 ms budget, and LCP up to **5 821 ms**.
-  A TBT of two to three seconds is main-thread JavaScript, not payload weight: that group
-  is the globe, and only deferring or lazily mounting it moves those numbers. The two
-  populations need different work.
-- **One route also fails `categories:accessibility` at 0.98 against a required 1.0.**
-  axe-core is green on the same tree — the two gates audit different route lists, so a
-  green axe run is not evidence that Lighthouse's a11y assertion passes.
-- Because it fails everywhere, Lighthouse currently carries **no signal** — it cannot
-  distinguish a regression from the baseline. That, more than the raw failure count, is why
-  Domain 9 scores 4.
+- **axe-core: green, and not advisory.** Green on all five most recent runs.
+- **E2E (Playwright): green** on all five most recent runs.
+- **Lighthouse: red on every branch, all day.** See §6 — this is the domain's whole story
+  and the largest single drag on the score.
+- **Two a11y gates audit different route lists.** A green axe run is not evidence that
+  Lighthouse's `categories:accessibility = 1.0` assertion passes; the previous revision
+  measured one route at 0.98 while axe was green on the same tree. Neither gate substitutes
+  for the other.
+- Mobile-first is honoured at the project breakpoints (mobile 430px, tablet `md` 720px,
+  desktop `xl` 800px); the app is French-only, so no locale fan-out is expected.
 
 ---
 
 ## 10. AFRIK data integrity & Source Tier compliance
 
-922 fiche JSON files are tracked under `dataset/source/afrik/`.
+**954 fiche JSON files** tracked under `dataset/source/afrik/`, carrying **5 283 `sources[]`
+entries**.
 
 | #   | Check                         | Verdict                                                          |
 | --- | ----------------------------- | ---------------------------------------------------------------- |
-| 1   | Strict model adherence        | **Pass** — 14 strict models present; validator enforces them     |
-| 2   | Validator run                 | **Pass** — 38/38 checks, **0 errors**, 3 989 warnings            |
+| 1   | Strict model adherence        | **Pass** — 15 strict models present; validator enforces them     |
+| 2   | Validator run                 | **Pass** — 40/40 checks, **0 errors**, 4 022 advisory warnings   |
 | 2b  | FR28 hard gate [95,105]       | **Pass** — zero fiches outside the band                          |
-| 2c  | FR28-strict [99,101]          | **Pass** — burn-down at zero; both bands now fail the build      |
+| 2c  | FR28-strict [99,101]          | **Pass** — burn-down at zero; both bands fail the build          |
 | 3   | FLG / PPL / ISO consistency   | **Pass** — orphan-fiche and reference checks green               |
-| 4   | Source tier compliance        | **Partial** — see below                                          |
+| 4   | Source tier compliance        | **Pass** — **0 of 5 283 entries untiered**; see below            |
 | 5   | DB vs source-JSON consistency | **Not verified** — recorded as a gap, not asserted               |
 | 6   | CI enforcement                | **Pass** — both gates on `pull_request`, neither advisory        |
-| 7   | Known-issues carry-over       | Reviewed; `checkEditorialRules.ts` reports 0 errors, 65 warnings |
+| 7   | Known-issues carry-over       | Reviewed; `checkEditorialRules.ts` reports 0 errors, 97 warnings |
 
-**What passes cleanly.** Zero fiches cite a Wikipedia article as a `sources.url`, and zero
-carry an empty `sources` block — the two conditions that would cap this domain at 4 under
-any doctrine. The 43 files that mention Wikipedia do so in `notes`, which is exactly the
-auditable cross-check chain `CLAUDE.md` prescribes.
+**The gate the doctrine actually sets is clean.** _"Nothing is forbidden. Everything is
+labelled"_ makes the blocking condition a source with no stated tier. There are none:
+5 283 entries, 5 283 tiers.
 
-**Tier vocabulary.** Counts across the corpus: `unverified` 1 605, `official` 1 367,
-`referenced` 1 211 — the current three-value scale. Against that:
+**Tier distribution:** `unverified` 1 623 · `official` 1 370 · `referenced` 1 223 ·
+`needs_review` 1 031 (a gated, descending placeholder — §6) · numeric `1`/`2` 37 across 19
+files (knowingly admitted by the gate's `TIERS_WITH_AUTHORITY` set).
 
-- **P1 — 19 files still carry retired numeric tiers** (10 occurrences of `1`, 27 of `2`),
-  under `migrations/`, `relations/` and `noms/PPL_YORUBA.json`. Migration `041` constrained
-  the column to `CHECK (tier IN ('official','referenced','unverified'))`, so these values
-  have no destination.
-- **Open question — 1 031 sources carry `tier: "needs_review"`.** This is deliberate and
-  typed (`src/types/afrik.ts` states it is _not_ a `SourceTier` and marks the tail), but the
-  same DB constraint does not accept it. The two vocabularies live in different places.
-  Tracing the provenance path was not completed; this is recorded as an open question with
-  evidence, not a confirmed defect.
+**Wikipedia and the aggregator question.** Zero fiches cite `wikipedia.org` as a source URL.
+81 entries cite blogs, Facebook, Reddit or X — 80 at `unverified`, 1 at `needs_review`. Under
+the current doctrine this is **correct behaviour, not a finding**: `unverified` exists
+precisely to carry "aggregators, tertiary encyclopedias, blogs, social media, community
+accounts", and excluding them would itself be the colonial filter the posture rejects. The
+claim is published _and_ its provenance is visible through `ConfidenceChip`. The 43 files
+that mention Wikipedia do so in `notes`, which is the auditable cross-check chain
+`CLAUDE.md` prescribes.
 
-**Note on §5.** DB-vs-JSON consistency is doubly unverifiable this revision: no database
-credentials were used, and recette's schema is three migrations behind the corpus loaders
-anyway.
+**Coverage of untiered sources across fiches**: 469 of 952 fiches with sources carry at
+least one `needs_review` entry; **6 rest entirely on them** (`PPL_GONJA`, `PPL_GUAN`,
+`PPL_HALPULAAR`, `PPL_HUMBE`, `PPL_KABYE`, `PPL_HARATINE`). Those six are the highest-value
+targets for the next classification pass, since they are the fiches whose confidence score
+currently draws no quality credit at all.
+
+**Note on §5.** DB-vs-JSON row consistency was not verified: no database credentials were
+used in this audit, by design.
 
 ---
 
 ## 11. Prioritized action list
 
-| #   | P   | Action                                                                                                         |
-| --- | --- | -------------------------------------------------------------------------------------------------------------- |
-| 1   | P0  | Fix `063`, `065` and `066`: use `public.afrik_unaccent(…)` in the index **and** the RPC call sites             |
-| 2   | P0  | Re-run `Apply Migrations — Recette`; confirm `063`, `064`, `065` land and search works on recette              |
-| 3   | ✅  | ~~Restore required status checks on `recette`~~ — **done during this session**, verified via GraphQL           |
-| 4   | P1  | Record the outcome of the credential rotation in `runbooks/secret-exposure-audit-2026-09.md`, or perform it    |
-| 5   | P1  | Fix or re-baseline the Lighthouse performance budget — a permanently red gate carries no signal                |
-| 6   | P1  | Declare the 4 unlisted deps (`esbuild`, `tinyglobby`) in `package.json` — hoist-luck is what broke `ajv` here  |
-| 7   | P1  | Migrate the 19 `migrations/` / `relations/` fiches off numeric tiers onto the three-value scale                |
-| 8   | P1  | Trace `needs_review` from fiche to `sources.tier`; either map it or document that it never lands               |
-| 9   | P1  | Run a restore drill — the last one is dated 2025-07-14, 13.6 months ago                                        |
-| 10  | P1  | Verify `/srv/ethniafrica/.env` on the OVH host is complete before the next Release (not auditable from here)   |
-| 11  | P1  | Drop the seven dead V1 tables, or record in `CLAUDE.md` why they remain                                        |
-| 12  | P2  | Decide the fate of `src/lib/supabase/client.ts` and restate the three-client invariant in `CLAUDE.md`          |
-| 13  | P2  | Delete the confirmed orphans (`flags-client.ts`, `accessAxesData.ts`, `schemas/games.ts`, the 3 empty barrels) |
-| 14  | P2  | Untrack or commit `next-env.d.ts` — every `next build` currently dirties the tree                              |
-| 15  | P2  | Replace the 23 stray `console.*` in `src` with `@/lib/api/logger`; triage the 4 moderate advisories            |
+| #   | P   | Action                                                                                                                         |
+| --- | --- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | P1  | Decide Lighthouse: repair the three globe routes (TBT 2–3 s) or re-baseline the budget. A gate red everywhere is noise         |
+| 2   | P1  | Route `src/app/api/v2/keys/issue/route.ts` through `handlers/keys.ts` + `services/keyService.ts`, which already exist          |
+| 3   | P1  | Declare the 4 unlisted deps (`esbuild`, `tinyglobby`) — hoist-luck is exactly what broke `ajv` last revision                   |
+| 4   | P1  | Run a restore drill; the only one on record is 2025-07-14, 13.6 months ago and self-labelled "the first, and to date the last" |
+| 5   | P1  | Split the Lighthouse route list from the axe list, or align them — a green axe run does not predict Lighthouse a11y            |
+| 6   | P1  | Verify `/srv/ethniafrica/.env` on the OVH host is complete before the next Release (not auditable from here)                   |
+| 7   | P2  | Classify the 6 fiches resting entirely on `needs_review` sources; lower `NEEDS_REVIEW_RATCHET` from 1 063 to match             |
+| 8   | P2  | Migrate the 37 numeric tiers in 19 fiches onto the three-value scale, then drop `1`/`2` from `TIERS_WITH_AUTHORITY`            |
+| 9   | P2  | Restate the "three Supabase clients" invariant in `CLAUDE.md` as two, or reconnect the browser client deliberately             |
+| 10  | P2  | Delete the confirmed orphans (`flags-client.ts`, `accessAxesData.ts`, `schemas/games.ts`, the 3 empty barrels)                 |
+| 11  | P2  | Untrack or commit `next-env.d.ts` — every `next build` currently dirties the tree                                              |
+| 12  | P2  | Replace the 23 stray `console.*` in `src` with `@/lib/api/logger`; triage the 4 moderate advisories                            |
+| 13  | P2  | Prune the 10 orphaned one-off scripts under `scripts/`                                                                         |
+| 14  | P2  | Add a periodic assertion on branch protection — it vanished silently once, and nothing in CI reports on its own enforcement    |
+| 15  | P2  | Verify DB-vs-JSON row consistency in a run that is allowed database credentials                                                |
 
 ---
 
 ## 12. Conclusion
 
-The codebase is healthy and improving. Every quality gate this repo owns passes on a clean
-tree: 6 367 tests green with zero failures, coverage well above its thresholds,
-`lint` / `typecheck` / `format` / `build` all clean, a complete 48-of-48 RLS surface, PBKDF2
-at 600 000 iterations, a fail-closed rate limiter, and an editorial validator that passes 38
-of 38 checks with zero errors. The two credential P0s that dominated the previous revision
-have visibly moved — the tracked tree is clean, the production service-role secret is in
-place, and the recette secrets were re-set today.
+**This is the first revision of this document with no open P0.** The blocker that defined the
+previous one — three migrations building a GIN index on a function Postgres will not accept
+there — was fixed by folding all three through the `IMMUTABLE` wrapper migration `052` had
+created for exactly that purpose, and the migration job has been green five times since.
+Recette's schema and recette's code are back in agreement, which means claims about what
+recette serves are verifiable again.
 
-What holds the score at 6.9 is that **the schema and the code have come apart**. Migrations
-`063`, `065` and `066` build an index on a function Postgres will not accept there — and the
-repository already contains the fix, written for exactly this reason in migration `052`. The
-result is that recette runs code whose supporting schema was never applied, and the
-migration gate has been red all day announcing it. Until that lands, every claim about what
-recette actually serves is unverified.
+The codebase underneath is healthy: 6 668 tests green with zero failures, coverage well above
+its thresholds, `lint`/`typecheck`/`format`/`build` clean, every repo-specific gate passing,
+41 of 41 live tables under RLS, PBKDF2 at 600 000 iterations, a fail-closed rate limiter, and
+an editorial validator passing 40 of 40 checks with zero errors.
 
-The more interesting fact is that the defect recurred three times. `052` created
-`public.afrik_unaccent` and documented in its own `COMMENT` that it exists to be usable in
-an index expression; three later migrations, by different hands, still reached for the raw
-two-argument call. A helper whose reason for existing is recorded only at its definition is
-a helper that will keep being bypassed. Whatever fixes `063`, `065` and `066` should also
-leave something at the point of use — a check, a lint rule over `supabase/migrations`, or a
-line in `CLAUDE.md` — so the fourth occurrence is caught before a migration job finds it.
+The editorial surface deserves particular note, because it is the product. Five thousand two
+hundred and eighty-three source citations, and **not one of them lacks a stated tier**. The
+doctrine's gate is not "reject weak sources" but "every source carries an explicit tier", and
+against that gate the corpus is perfect. The 81 blog, Facebook and Reddit citations sitting
+at `unverified` are the doctrine working as designed, not leaking — and a rubric written
+against the retired Tier 1/2/3 policy would have reported all 81 as P0s.
 
-The second blocker of this revision closed while the revision was being written: `recette`
-now requires the same five checks as `main` and refuses force pushes. It is worth noting how
-it failed, because the failure was silent — the branch had been protected before, the
-protection disappeared without anyone noticing, and nothing in CI reports on its own
-enforcement. A gate that can vanish quietly is worth a periodic assertion.
+What holds the score at 7.6 is almost entirely **a performance gate that fails on every
+branch**. Lighthouse has been red all day across five different branches while axe and e2e
+were green on the same commits, and the workflow file asserts that its enforcement is
+meaningful. It is enforced and it is ignored — which means the repository currently cannot
+tell a performance regression from its own baseline. That is now the most valuable single
+thing to fix, and it may well be fixed by lowering the budget rather than by raising the
+performance.
+
+One process note worth carrying forward. Two findings from the previous revision did not
+survive re-examination: the "seven dead V1 tables" had been dropped by migration `007` all
+along, and the `needs_review` tier turned out to be a deliberate placeholder with a mapper, a
+permissive constraint and a descending CI ratchet behind it. Both were produced by a static
+read that stopped one step short — counting `CREATE TABLE` without replaying `DROP TABLE`,
+and reading a value's absence from an enum without following it to its writer. A third
+suspicion raised this revision — that the confidence formula rewards leaving a source
+unlabelled — was tested against the actual arithmetic and proved false. The corpus and the
+schema both reward being followed to the end.

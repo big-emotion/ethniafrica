@@ -19,7 +19,9 @@ import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import { getConfidenceMap } from "@/lib/supabase/queries/afrik/module-zero-batch";
 import type {
+  ListNameFormsQuery,
   ListNamesQuery,
+  NameForm,
   NameRecord,
   NameRecordConfidenceView,
   NameRecordImposition,
@@ -371,4 +373,141 @@ export async function listNames(
   }
 
   return { names, total: count ?? rows.length };
+}
+
+/**
+ * Folds a reader's query the same way `afrik_name_forms.form_key` is folded.
+ *
+ * The view groups on `lower(afrik_unaccent(name_text))`, so a query that is
+ * not folded identically can only match by luck — "Traoré" would miss the
+ * corpus's own "Traore". `%` and `_` are escaped because they are `ILIKE`
+ * wildcards, and a reader typing one means the character, not the operator.
+ */
+function foldNameQuery(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[\\%_]/g, (character) => `\\${character}`);
+}
+
+export interface ListNameFormsResult {
+  forms: NameForm[];
+  total: number;
+  pageCount: number;
+}
+
+function mapRowToNameForm(row: Record<string, unknown>): NameForm {
+  return {
+    formKey: row.form_key as string,
+    displayName: row.display_name as string,
+    spellings: (row.spellings as string[]) ?? [],
+    nameTypes: (row.name_types as NameForm["nameTypes"]) ?? [],
+    bearerCount: (row.bearer_count as number) ?? 0,
+    bearers: (row.bearers as NameForm["bearers"]) ?? [],
+    hasImposed: Boolean(row.has_imposed),
+    whyProblematic: (row.why_problematic as string | null) ?? null,
+    languageOfOrigin: (row.language_of_origin as string | null) ?? null,
+  };
+}
+
+/**
+ * One page of the Appellations nomenclature.
+ *
+ * Reads `afrik_name_forms` rather than `name_records`: the surface's unit is
+ * the name, and a page can only group what it has already fetched, so
+ * grouping the records here — after `range()` — would have produced a
+ * different set of entries on every page. Ordering is alphabetical on the
+ * folded key rather than on `sort_rank`, which used to sink the 2742 exonyms
+ * behind 742 rank-0 endonyms.
+ */
+// @req REQ-054
+export async function listNameForms(
+  query: ListNameFormsQuery
+): Promise<ListNameFormsResult> {
+  const supabase = createServerClient();
+  const offset = (query.page - 1) * query.perPage;
+
+  let dbQuery = supabase
+    .from("afrik_name_forms")
+    .select("*", { count: "exact" });
+
+  if (query.q) {
+    dbQuery = dbQuery.ilike("form_key", `%${foldNameQuery(query.q)}%`);
+  }
+  if (query.nameType) {
+    dbQuery = dbQuery.contains("name_types", [query.nameType]);
+  }
+  if (query.imposedOnly) {
+    dbQuery = dbQuery.eq("has_imposed", true);
+  }
+
+  const { data, error, count } = await dbQuery
+    .order("form_key")
+    .range(offset, offset + query.perPage - 1);
+
+  if (error) {
+    if (
+      error.code === "42P01" ||
+      error.code === "PGRST205" ||
+      error.code === "42P17"
+    ) {
+      throw new NamesSchemaUnavailableError(
+        `Name forms view is unavailable: ${error.message}`
+      );
+    }
+    logger.error("names.listNameForms failed", error);
+    throw new Error(`Failed to list name forms: ${error.message}`);
+  }
+
+  const rows = (data ?? []) as Array<Record<string, unknown>>;
+  const total = count ?? rows.length;
+
+  return {
+    forms: rows.map(mapRowToNameForm),
+    total,
+    pageCount: Math.max(1, Math.ceil(total / query.perPage)),
+  };
+}
+
+export interface NameTypeCounts {
+  byType: Partial<Record<NameRecordType, number>>;
+  imposed: number;
+}
+
+/**
+ * How many records each filter can reach, so the surface can stop offering
+ * one that reaches none.
+ *
+ * A type absent from the corpus is absent from the returned map rather than
+ * present at zero: the caller renders what it is given, and an explicit zero
+ * would only move the decision to drop the chip back into the component.
+ */
+// @req REQ-054
+export async function getNameTypeCounts(): Promise<NameTypeCounts> {
+  const supabase = createServerClient();
+
+  const { data, error } = await supabase
+    .from("afrik_name_type_counts")
+    .select("name_type, record_count, imposed_count");
+
+  if (error) {
+    // A missing facet view costs the chips, never the nomenclature itself.
+    logger.error("names.getNameTypeCounts failed", error);
+    return { byType: {}, imposed: 0 };
+  }
+
+  const counts: NameTypeCounts = { byType: {}, imposed: 0 };
+  for (const row of (data ?? []) as Array<{
+    name_type: NameRecordType;
+    record_count: number;
+    imposed_count: number;
+  }>) {
+    if (row.record_count > 0) {
+      counts.byType[row.name_type] = row.record_count;
+    }
+    counts.imposed += row.imposed_count ?? 0;
+  }
+
+  return counts;
 }

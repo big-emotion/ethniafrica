@@ -22,10 +22,35 @@ vi.mock("@/lib/afrikLoader", () => ({
   searchWithLeads: vi.fn(),
 }));
 
-function mockSearch(results: SearchResult[], leads: SearchLead[] = []) {
+const ZERO_LENS_COUNTS = {
+  all: 0,
+  people: 0,
+  country: 0,
+  languageFamily: 0,
+  language: 0,
+  person: 0,
+  patronyme: 0,
+};
+
+/** Approximates the corpus-wide totals the API would return, from the mocked page alone. */
+function countsOf(results: SearchResult[]) {
+  const counts = { ...ZERO_LENS_COUNTS };
+  for (const result of results) {
+    counts[result.type] += 1;
+    counts.all += 1;
+  }
+  return counts;
+}
+
+function mockSearch(
+  results: SearchResult[],
+  leads: SearchLead[] = [],
+  counts = countsOf(results)
+) {
   vi.mocked(afrikLoader.searchWithLeads).mockResolvedValue({
     results,
     leads,
+    counts,
   });
 }
 
@@ -113,7 +138,8 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
-  it("should display tab filters", () => {
+  // @req REQ-124
+  it("should display named lenses", () => {
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
     expect(screen.getByText("Tout")).toBeInTheDocument();
@@ -121,11 +147,13 @@ describe("SearchModalV2", () => {
     // @req REQ-136
     expect(screen.getByText("Langues")).toBeInTheDocument();
     expect(screen.getByText("Peuples")).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Pays" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Pays" })).toBeInTheDocument();
     // @req REQ-126
-    expect(screen.getByRole("tab", { name: "Personnes" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Personnes" })
+    ).toBeInTheDocument();
     // @req REQ-135
-    expect(screen.getByRole("tab", { name: "Noms" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Noms" })).toBeInTheDocument();
   });
 
   it("should show instruction text when search query is empty", () => {
@@ -147,16 +175,19 @@ describe("SearchModalV2", () => {
     expect(searchInput).toHaveValue("test");
   });
 
-  it("should have working tab structure", () => {
+  // @req REQ-124
+  it("should have working lens structure", () => {
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
-    // Verify the tab list structure exists
-    const tabList = screen.getByRole("tablist");
-    expect(tabList).toBeInTheDocument();
+    // Verify the lens group structure exists
+    const lensGroup = screen.getByRole("group", {
+      name: "Filtrer les résultats par type",
+    });
+    expect(lensGroup).toBeInTheDocument();
 
-    // Verify all tabs are rendered
-    const tabs = screen.getAllByRole("tab");
-    expect(tabs).toHaveLength(7); // Tout, Familles, Langues, Peuples, Pays, Personnes, Noms
+    // Verify all lenses are rendered
+    const lenses = within(lensGroup).getAllByRole("button");
+    expect(lenses).toHaveLength(7); // Tout, Familles, Langues, Peuples, Pays, Personnes, Noms
   });
 
   it("should not render when closed", () => {
@@ -168,12 +199,12 @@ describe("SearchModalV2", () => {
   // The modal reaches the corpus only through the shared client (ETNI-1415
   // AC2); it never fetches /api/v2/search itself.
   // @req REQ-108
-  it("queries the corpus through afrikLoader.searchWithLeads, scoped to the active tab", async () => {
+  // @req REQ-124
+  it("queries the corpus through afrikLoader.searchWithLeads, scoped to the active lens", async () => {
     mockSearch(mockSearchResults);
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
-    // Radix activates a trigger on pointer-down, not on the synthetic click.
-    fireEvent.mouseDown(screen.getByRole("tab", { name: "Peuples" }));
+    fireEvent.click(screen.getByRole("button", { name: "Peuples" }));
     await act(async () => {
       fireEvent.change(screen.getByPlaceholderText(/Rechercher une famille/i), {
         target: { value: "Shona" },
@@ -186,11 +217,11 @@ describe("SearchModalV2", () => {
     });
   });
 
-  // ── R3 — pill type-filters (44px) ──────────────────────────────────────────
+  // ── R3 — named-lens chips (44px) ────────────────────────────────────────────
 
-  describe("type-filter pills", () => {
+  describe("named-lens chips", () => {
     // @req REQ-091
-    it("each type filter is a rounded-full pill", () => {
+    it("each lens is a rounded-full pill", () => {
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
       for (const name of [
         "Tout",
@@ -201,14 +232,14 @@ describe("SearchModalV2", () => {
         "Personnes",
         "Noms",
       ]) {
-        expect(screen.getByRole("tab", { name }).className).toMatch(
+        expect(screen.getByRole("button", { name }).className).toMatch(
           /rounded-full/
         );
       }
     });
 
     // @req REQ-091
-    it("each type filter exposes a >=44px hit area (charter §5)", () => {
+    it("each lens exposes a >=44px hit area (charter §5)", () => {
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
       for (const name of [
         "Tout",
@@ -219,8 +250,79 @@ describe("SearchModalV2", () => {
         "Personnes",
         "Noms",
       ]) {
-        expect(screen.getByRole("tab", { name }).className).toMatch(/min-h-11/);
+        expect(screen.getByRole("button", { name }).className).toMatch(
+          /min-h-11/
+        );
       }
+    });
+
+    // @req REQ-124
+    it("carries no count before a search has resolved", () => {
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      expect(
+        screen.getByRole("button", { name: "Peuples" })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-124
+    it("shows each lens carrying its own corpus-wide count once a search resolves", async () => {
+      mockSearch(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      await act(async () => {
+        fireEvent.change(
+          screen.getByPlaceholderText(/Rechercher une famille/i),
+          { target: { value: "Shona" } }
+        );
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(
+          screen.getByRole("button", { name: "Tout (3)" })
+        ).toBeInTheDocument();
+      });
+      expect(
+        screen.getByRole("button", { name: "Peuples (1)" })
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Pays (1)" })
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Familles (1)" })
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Langues (0)" })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-124
+    it("refines the results list in place, without navigating, when a lens is chosen", async () => {
+      mockSearch(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      await act(async () => {
+        fireEvent.change(
+          screen.getByPlaceholderText(/Rechercher une famille/i),
+          { target: { value: "Shona" } }
+        );
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText("Recherche")).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByRole("button", { name: /^Peuples/ }));
+
+      await waitFor(() => {
+        expect(afrikLoader.searchWithLeads).toHaveBeenLastCalledWith("Shona", {
+          type: "people",
+        });
+      });
+      // The dialog itself never closes or navigates on a lens choice.
+      expect(screen.getByText("Recherche")).toBeInTheDocument();
     });
   });
 
