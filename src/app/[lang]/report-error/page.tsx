@@ -96,8 +96,8 @@ export default function ReportErrorPage() {
             <strong>Signaler</strong> de la barre de lecture de cette fiche vise
             directement le chapitre concerné — c&apos;est plus rapide pour vous
             et plus précis pour la modération.{" "}
-            <ActionLink href={getLocalizedRoute(language, "explorerHub")}>
-              Ouvrir l&apos;atlas
+            <ActionLink href={getLocalizedRoute(language, "peoples")}>
+              Ouvrir l&apos;atlas des peuples
             </ActionLink>
           </p>
         </section>

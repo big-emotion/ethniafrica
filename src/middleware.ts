@@ -110,11 +110,18 @@ const RELOCATED_SEGMENT = /^\/([a-z]{2})\/([a-z-]+)(\/.*)?$/;
 // indexed and bookmarked and have to keep resolving. Keyed on the whole
 // segment, never a prefix: /fr/peuples is a live resource page and must
 // not be swept up by the /fr/peuples-hub entry.
+//
+// The targets are facets, not axes. These three pointed at the axis landing
+// pages until ETNI-1555 deleted them, which turned every entry into a 308
+// into a 404 — a permanent move to nothing, as far as a crawler is concerned.
+// Each one now lands on the facet holding the resource its old name promised,
+// which is also the closest thing the site still serves to what the reader
+// bookmarked. `redirectCharter.test.ts` asserts a page file behind each.
 // @req REQ-114
 export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
-  "peuples-hub": "comprendre",
-  "pays-hub": "explorer",
-  "familles-hub": "jouer",
+  "peuples-hub": "explorer/peuples",
+  "pays-hub": "explorer/pays",
+  "familles-hub": "explorer/familles",
 };
 
 // ETNI-1458 renamed the ethnonym module from Noms to Appellations, freeing

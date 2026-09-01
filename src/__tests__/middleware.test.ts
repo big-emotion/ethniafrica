@@ -218,13 +218,15 @@ describe("middleware", () => {
 
   // The three hub URLs shipped under their resource names before the axes
   // gave them verbs. They were published, so they are indexed and
-  // bookmarked: the rename has to leave a trail rather than a 404.
+  // bookmarked: the rename has to leave a trail rather than a 404. ETNI-1555
+  // then deleted the three landing pages they had been retargeted at, so each
+  // one now lands on the facet that holds the resource it was named for.
   describe("legacy hub redirects (REQ-114)", () => {
     // @req REQ-114
     it.each([
-      ["peuples-hub", "comprendre"],
-      ["pays-hub", "explorer"],
-      ["familles-hub", "jouer"],
+      ["peuples-hub", "explorer/peuples"],
+      ["pays-hub", "explorer/pays"],
+      ["familles-hub", "explorer/familles"],
     ])("redirects /fr/%s to /fr/%s with 308", async (legacy, current) => {
       const request = new NextRequest(`http://localhost:3000/fr/${legacy}`);
       const response = await middleware(request);
@@ -244,7 +246,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/explorer?from=newsletter"
+        "http://localhost:3000/fr/explorer/pays?from=newsletter"
       );
     });
 
@@ -255,7 +257,7 @@ describe("middleware", () => {
 
       expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/comprendre"
+        "http://localhost:3000/fr/explorer/peuples"
       );
     });
 

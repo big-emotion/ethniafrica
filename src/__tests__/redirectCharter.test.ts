@@ -157,6 +157,26 @@ describe("no target re-enters either table", () => {
   });
 
   /**
+   * The same "does anything answer at the other end" question the relocation
+   * targets already face, asked of the hub table — and the reason this suite
+   * gained an entry. The three targets were the axis landing pages, and
+   * ETNI-1555 deleted them: every hub redirect was a 308 into a 404, which
+   * reads to a crawler as a permanent move to nothing.
+   */
+  // @req REQ-114
+  it("has a page file behind every hub-rename target", () => {
+    for (const destination of new Set(Object.values(RENAMED_HUB_SEGMENTS))) {
+      const route = resolve(
+        __dirname,
+        "../app/[lang]",
+        destination,
+        "page.tsx"
+      );
+      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+    }
+  });
+
+  /**
    * The live routes are the other half of the same question: a page the site
    * serves must not be swept up by a table meant for pages it no longer
    * serves. `/fr/explorer/peuples` opens on `explorer`, which is why the
