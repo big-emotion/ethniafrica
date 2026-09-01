@@ -16,12 +16,14 @@
  *         schema:
  *           type: string
  *           enum: [people, language-family]
+ *         example: people
  *       - in: path
  *         name: entityId
  *         required: true
  *         schema:
  *           type: string
  *           pattern: '^(PPL_[A-Z0-9_]+|FLG_[A-Z0-9_]+)$'
+ *         example: PPL_SHONA
  *     responses:
  *       200:
  *         description: Confidence envelope
@@ -56,6 +58,7 @@ import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-084
 export async function GET(
   _request: NextRequest,
   {
@@ -126,6 +129,7 @@ export async function GET(
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

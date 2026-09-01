@@ -120,6 +120,7 @@ const options: swaggerJsdoc.Options = {
               required: true,
               schema: { type: "string", minLength: 1, maxLength: 200 },
               description: "Reference search term.",
+              example: "Ethnologue",
             },
             {
               in: "query",
