@@ -882,6 +882,67 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+const WIKIDATA_ID_PATTERN = /^Q[1-9][0-9]*$/;
+const GLOTTOCODE_PATTERN = /^[a-z]{4}[0-9]{4}$/;
+// ISO_639_3_PATTERN is declared once, near the top of the file, and reused here.
+
+/**
+ * ETNI-1414 (DEC-033) – `content.externalIdentifiers` (wikidataId, glottocode,
+ * iso639_3) links a people fiche to Wikidata/Glottolog/ISO 639-3 once an
+ * editor has confirmed the match. All three fields are optional — most
+ * fiches have none yet — but a present field must be well-formed, since a
+ * malformed id would silently fail to resolve downstream instead of failing
+ * this build.
+ */
+export function checkExternalIdentifierFormats(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      id?: string;
+      content?: {
+        externalIdentifiers?: {
+          wikidataId?: unknown;
+          glottocode?: unknown;
+          iso639_3?: unknown;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const externalIdentifiers = data.content?.externalIdentifiers;
+    if (!externalIdentifiers) continue;
+
+    const pplId = data.id ?? fullPath;
+    const checks: Array<
+      [field: "wikidataId" | "glottocode" | "iso639_3", pattern: RegExp]
+    > = [
+      ["wikidataId", WIKIDATA_ID_PATTERN],
+      ["glottocode", GLOTTOCODE_PATTERN],
+      ["iso639_3", ISO_639_3_PATTERN],
+    ];
+
+    for (const [field, pattern] of checks) {
+      const value = externalIdentifiers[field];
+      if (value === undefined) continue;
+      if (typeof value !== "string" || !pattern.test(value)) {
+        errors.push(
+          `${pplId}: externalIdentifiers.${field} "${value}" does not match ${pattern.source}`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 /**
  * ETNI-1391 – A split people's fiches must agree on their group identity.
  *
@@ -3981,6 +4042,12 @@ async function main() {
   newChecks.push({
     name: "ETNI-1391 People-group consistency",
     result: checkPeopleGroupConsistency(datasetRoot),
+  });
+
+  console.log("ETNI-1414 – External identifier formats...");
+  newChecks.push({
+    name: "ETNI-1414 External identifier formats",
+    result: checkExternalIdentifierFormats(datasetRoot),
   });
 
   console.log("FR28 – Population sums...");

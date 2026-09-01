@@ -268,6 +268,33 @@ describe("AFRIK Peoples Queries", () => {
 
       expect(result).toBeNull();
     });
+
+    // @req REQ-128
+    it("carries content.externalIdentifiers through unchanged (DEC-033)", async () => {
+      setupMock({
+        peoplesSingleData: {
+          id: "PPL_YORUBA",
+          name_main: "Yorùbá",
+          language_family_id: "FLG_BENOUECONGO",
+          content: {
+            externalIdentifiers: {
+              wikidataId: "Q34636",
+              glottocode: "yoru1245",
+              iso639_3: "yor",
+            },
+          },
+        },
+        relationsData: [],
+      });
+
+      const result = await getAfrikPeopleById("PPL_YORUBA");
+
+      expect(result?.content.externalIdentifiers).toEqual({
+        wikidataId: "Q34636",
+        glottocode: "yoru1245",
+        iso639_3: "yor",
+      });
+    });
   });
 
   describe("getAfrikPeoplesByLanguageFamily", () => {

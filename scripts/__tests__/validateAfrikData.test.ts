@@ -12,6 +12,7 @@ import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
+  checkExternalIdentifierFormats,
   checkPeopleGroupConsistency,
   checkPopulationSums,
   checkIsoValidity,
@@ -279,6 +280,130 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPplDuplicates(tmpDir);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("PPL_ZULU"))).toBe(true);
+    });
+  });
+
+  // ── ETNI-1414 : checkExternalIdentifierFormats ─────────────────────────────
+
+  describe("checkExternalIdentifierFormats (ETNI-1414)", () => {
+    // @req REQ-128
+    it("returns ok:true when all three identifiers are well-formed", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: {
+            wikidataId: "Q34636",
+            glottocode: "yoru1245",
+            iso639_3: "yor",
+          },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-128
+    it("errors when wikidataId does not match the Q-id format", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { wikidataId: "34636" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("wikidataId") &&
+            e.includes("34636")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("errors when glottocode does not match the 4-letter/4-digit format", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { glottocode: "Yoru1245" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("glottocode") &&
+            e.includes("Yoru1245")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("errors when iso639_3 is not a 3-letter lowercase code", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { iso639_3: "YOR" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("iso639_3") &&
+            e.includes("YOR")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("returns ok:true when a fiche has no externalIdentifiers section at all", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-128
+    it("returns ok:true when externalIdentifiers is present but every field is absent", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          externalIdentifiers: {},
+          languages: { isoCodes: ["zul"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
     });
   });
 

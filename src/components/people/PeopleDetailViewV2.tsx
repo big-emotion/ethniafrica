@@ -32,6 +32,7 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
 import { MediaCreditSection } from "@/components/people/MediaCreditSection";
+import { ExternalRegistryLinksSection } from "@/components/people/ExternalRegistryLinksSection";
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
@@ -199,6 +200,8 @@ export function PeopleDetailViewV2({
       <OralNarrativesSection peopleId={data.hero.peopleId} />
 
       <MediaCreditSection peopleId={data.hero.peopleId} />
+
+      <ExternalRegistryLinksSection identifiers={people.externalIdentifiers} />
 
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
       <PeopleNamesSection data={data.names} />
