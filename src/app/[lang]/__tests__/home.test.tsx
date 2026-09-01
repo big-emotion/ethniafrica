@@ -11,6 +11,7 @@ const {
   loadHeroPreviewMock,
   loadSynthesisRailMock,
   drawHomeHeroVisualMock,
+  drawDidYouKnowMotifMock,
 } = vi.hoisted(() => ({
   getCorpusCountsMock: vi.fn(),
   getContinentPeopleCountsMock: vi.fn(),
@@ -18,6 +19,7 @@ const {
   loadHeroPreviewMock: vi.fn(),
   loadSynthesisRailMock: vi.fn(),
   drawHomeHeroVisualMock: vi.fn(),
+  drawDidYouKnowMotifMock: vi.fn(),
 }));
 
 const fixtureCounts = {
@@ -68,6 +70,15 @@ vi.mock("@/lib/home/homeHeroVisuals", async (importOriginal) => {
   };
 });
 
+vi.mock("@/lib/home/didYouKnowMotifs", async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import("@/lib/home/didYouKnowMotifs")>();
+  return {
+    ...actual,
+    drawDidYouKnowMotif: drawDidYouKnowMotifMock,
+  };
+});
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
@@ -101,6 +112,7 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     getHubModulesMock.mockResolvedValue([]);
     loadSynthesisRailMock.mockResolvedValue([]);
     drawHomeHeroVisualMock.mockReturnValue({ kind: "globe" });
+    drawDidYouKnowMotifMock.mockReturnValue("mande-kora");
   });
 
   // @req REQ-044
@@ -208,6 +220,27 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     ).not.toBeInTheDocument();
     expect(getContinentPeopleCountsMock).toHaveBeenCalledOnce();
     expect(drawHomeHeroVisualMock).toHaveBeenCalledTimes(2);
+  });
+
+  // @req REQ-115
+  it("draws one fresh cultural background for each page request", async () => {
+    drawDidYouKnowMotifMock
+      .mockReturnValueOnce("mande-kora")
+      .mockReturnValueOnce("punu-mukudj");
+
+    const firstLoad = await renderHome();
+    expect(screen.getByTestId("home-did-you-know")).toHaveAttribute(
+      "data-motif",
+      "mande-kora"
+    );
+    firstLoad.unmount();
+
+    await renderHome();
+    expect(screen.getByTestId("home-did-you-know")).toHaveAttribute(
+      "data-motif",
+      "punu-mukudj"
+    );
+    expect(drawDidYouKnowMotifMock).toHaveBeenCalledTimes(2);
   });
 
   // @req REQ-044

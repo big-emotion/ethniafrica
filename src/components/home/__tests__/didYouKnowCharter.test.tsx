@@ -93,14 +93,37 @@ describe("DidYouKnow — the band's composition (REQ-113)", () => {
   // of question marks to sit through.
   // @req REQ-113
   it("lays the background motif outside the accessible tree", () => {
-    const { container } = render(<DidYouKnow language="fr" facts={[FACT]} />);
+    const { container } = render(
+      <DidYouKnow language="fr" facts={[FACT]} motif="mande-kora" />
+    );
 
     const motif = container.querySelector(".home-dyk-motif");
 
     expect(motif).not.toBeNull();
     expect(motif).toHaveAttribute("aria-hidden", "true");
+    expect(motif).toHaveAttribute("data-motif", "mande-kora");
     expect(motif?.closest("article")).toBeNull();
   });
+
+  // Each background names one real cultural tradition in code so a generic
+  // continental shorthand cannot silently replace the curated set later.
+  // @req REQ-115
+  it.each(["mande-kora", "amazigh-fibula", "punu-mukudj"] as const)(
+    "renders the %s background as decoration",
+    (motifName) => {
+      const { container } = render(
+        <DidYouKnow language="fr" facts={[FACT]} motif={motifName} />
+      );
+
+      expect(container.querySelector(".home-dyk-motif")).toHaveAttribute(
+        "data-motif",
+        motifName
+      );
+      expect(
+        container.querySelector(`[data-cultural-symbol="${motifName}"]`)
+      ).not.toBeNull();
+    }
+  );
 
   // Mono, uppercase and tracked, the provenance line was dressed exactly like
   // the eyebrow at the top of the band — two eyebrows for one section, and the
