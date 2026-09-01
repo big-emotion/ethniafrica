@@ -63,9 +63,10 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
   });
 
   /**
-   * Doctrine and À propos describe the project, not the corpus, so no access
-   * mode lists them. The footer is where a page about the project belongs —
-   * and the only place a reader can now reach the doctrine from the chrome.
+   * Doctrine, À propos and Sources describe the project, not the corpus, so
+   * no access mode lists them. The footer is where a page about the project
+   * belongs — and the only place a reader can now reach the doctrine or the
+   * source bibliography from the chrome.
    */
   // @req REQ-132
   it("gathers the pages about the project itself under one rubric", () => {
@@ -81,6 +82,9 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     expect(
       within(project).getByRole("link", { name: footer.directory.about })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "about"));
+    expect(
+      within(project).getByRole("link", { name: footer.directory.sources })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "sources"));
   });
 
   // @req REQ-046

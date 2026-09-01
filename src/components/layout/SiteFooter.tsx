@@ -75,10 +75,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
         { label: directory.reportError, href: `/${language}/report-error` },
       ],
     },
-    // Doctrine and À propos describe the project, not the corpus, so the
-    // three access modes stopped listing them. A rubric here is where they
-    // land: the footer is the one part of the chrome that is allowed to name
-    // the site itself rather than a way into it.
+    // Doctrine, À propos and Sources describe the project, not the corpus,
+    // so the three access modes stopped listing them. A rubric here is where
+    // they land: the footer is the one part of the chrome that is allowed to
+    // name the site itself rather than a way into it.
     {
       id: "projet",
       heading: directory.projectHeading,
@@ -90,6 +90,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
         {
           label: directory.about,
           href: getLocalizedRoute(language, "about"),
+        },
+        {
+          label: directory.sources,
+          href: getLocalizedRoute(language, "sources"),
         },
       ],
     },

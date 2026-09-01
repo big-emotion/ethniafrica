@@ -189,6 +189,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       links: [
         { href: `/${language}/about`, label: "À propos" },
         {
+          href: route("sources"),
+          label: "Sources",
+          note: "La bibliographie qui documente le corpus.",
+        },
+        {
           href: "/docs/api/v2",
           label: "API publique v2",
           note: "Le corpus en JSON, sous licence ouverte.",
