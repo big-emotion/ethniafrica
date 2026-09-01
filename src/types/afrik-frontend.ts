@@ -389,6 +389,21 @@ export interface SearchResponse {
   filters: SearchFilters;
 }
 
+/**
+ * Near-miss lead (REQ-125): what the search engine almost understood, shown
+ * only when a search's `total` is 0. `type` reuses `SearchEntityType`'s
+ * naming (`languageFamily`, not the API's `family`) so a lead can share
+ * `SEARCH_ENTITY_ACCENT`'s accent and label with a real result of the same
+ * kind — languages and persons are not candidates for a lead any more than
+ * they are named in `SEARCH_LABEL`.
+ */
+export interface SearchLead {
+  type: Extract<SearchEntityType, "people" | "country" | "languageFamily">;
+  id: string;
+  name: string;
+  similarity: number;
+}
+
 // ==========================================
 // STATISTICS TYPES
 // ==========================================

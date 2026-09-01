@@ -210,6 +210,44 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **REQ-002 (ETNI-1707).** `069` is the blocking SQL contract behind cross-kind search. It adds
+> `public.afrik_search_normalized_score`, which maps each kind's own relevance onto one bounded
+> `[0,1]` scale, and threads it through every search RPC. The problem it closes is that the
+> per-kind scores were never comparable: peoples multiply `ts_rank` by a confidence weight,
+> countries return a bare `ts_rank`, and families used a JavaScript tier ladder an order of
+> magnitude larger than either — merging those numbers ranked by which kind a row came from. The
+> score gives the match class (exact / lexical / fallback) a disjoint band and places the raw
+> magnitude inside it, so the class dominates and the magnitude only breaks ties within one class.
+> `relevance` and `exactMatch` keep their current values on every RPC; `normalizedScore` is added
+> beside them, so nothing reading these functions has to change to keep working.
+>
+> `069` also gives two kinds an RPC for the first time: `afrik_search_language_families`, which
+> reproduces `rankLanguageFamilies`' four tiers in SQL over the `056` search vector, and
+> `afrik_search_quiz`, over the active bank only (`revoked_at IS NULL`, matching `036`'s RLS
+> policy) and joined to each question's subject entity so a reader who types a people's name
+> reaches the questions about it. That function's projection is a closed list: `options_fr` and
+> `correct_option` are the answer key and are never returned, and `explanation_fr` is searched but
+> never projected — including out of the snippet — because it states the answer in prose.
+>
+> Files `064`, `065` and `067` are omitted from this table (added after the last full read, same
+> as `050`); `069` is the next free version after `068_afrik_search_languages`. Until production
+> carries `069`, quiz questions and the family ladder rank on recette and not there, and a merged
+> result list on production keeps ordering by kind.
+
+> **REQ-136 (ETNI-1506).** `068` gives the language entity (`afrik_languages`) the search
+> apparatus every other atlas entity already has: a `name_unaccent_vector` column (mirroring
+> `afrik_peoples`/`afrik_countries`, `052`) and `afrik_search_languages`, modelled on
+> `afrik_search_countries` (`052`) — no confidence/classification filters, since
+> `afrik_languages` carries neither. It differs in one respect: the exact-match bonus fires on
+> the ISO 639-3 id as well as on the name, so a reader who types "swa" reaches Swahili exactly as
+> precisely as one who types its name (the language's `search_vector` already weights the ISO id
+> at tier A since migration `055`, so no new column was needed for that half). File `067` is
+> omitted from this table (added after the last full read, same as `050`/`064`/`065`); `068` is
+> the next free version on `recette`.
 
 > **REQ-135 (ETNI-1457).** `066` gives the name entity (`afrik_patronymes`, `053`) the search
 > apparatus every other entity already has, plus one mechanism none of them do: a

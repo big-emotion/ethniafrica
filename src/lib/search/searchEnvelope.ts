@@ -12,7 +12,7 @@
  * impossible rather than merely fixed.
  */
 
-import type { SearchResult } from "@/types/afrik-frontend";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
 import type { PersonPeopleLink } from "@/types/persons";
 
 export interface SearchQueryOptions {
@@ -126,7 +126,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   // reading `peoples` off an Array and crashing the whole modal.
   if (!data || Array.isArray(data)) return [];
 
-  const { peoples, countries, families, persons } = data as Record<
+  const { peoples, countries, families, persons, languages } = data as Record<
     string,
     unknown
   >;
@@ -189,7 +189,54 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         exactMatch: row.exactMatch === true,
       })
     ),
+    // REQ-136: a language reaches the unified surface as its own kind, not
+    // only through the peoples that mention it.
+    ...asRows(languages).map(
+      (row): SearchResult => ({
+        type: "language",
+        id: String(row.id),
+        name: String(row.name ?? ""),
+        languageFamilyId: row.familyId as SearchResult["languageFamilyId"],
+        languageFamilyName: (row.familyName as string) || undefined,
+        snippet: (row.snippet as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+      })
+    ),
   ];
+}
+
+const LEAD_KIND_TO_TYPE: Record<string, SearchLead["type"]> = {
+  people: "people",
+  country: "country",
+  family: "languageFamily",
+};
+
+/**
+ * Near-miss leads (REQ-125) — populated by the API only when `data.total`
+ * is 0. An unrecognised `kind` is dropped rather than surfaced with a wrong
+ * accent: this is the same defensive stance as `mapSearchEnvelope` treating
+ * a non-object `data` as no results.
+ */
+// @req REQ-125
+export function mapSearchLeads(envelope: unknown): SearchLead[] {
+  const data = (envelope as { data?: unknown })?.data;
+  if (!data || Array.isArray(data)) return [];
+
+  const { leads } = data as Record<string, unknown>;
+
+  return asRows(leads).flatMap((row): SearchLead[] => {
+    const type = LEAD_KIND_TO_TYPE[row.kind as string];
+    if (!type) return [];
+    return [
+      {
+        type,
+        id: String(row.id),
+        name: String(row.name ?? ""),
+        similarity: numberOrUndefined(row.similarity) ?? 0,
+      },
+    ];
+  });
 }
 
 /**

@@ -6,7 +6,7 @@
 
 import { ftsSearch } from "../services/searchService";
 import { createApiResponse } from "../utils/response";
-import type { FtsSearchParams } from "@/types/afrik";
+import type { FtsSearchParams, RankedSearchHit } from "@/types/afrik";
 import type { ApiEnvelope } from "../utils/response";
 
 export interface FtsSearchData {
@@ -15,6 +15,13 @@ export interface FtsSearchData {
   families: object[];
   persons: object[];
   patronymes: object[];
+  quizzes: object[];
+  languages: object[];
+  /**
+   * Every hit above, merged and ordered on `normalizedScore` (migration 069).
+   * The grouped arrays stay beside it because a facet asks about one kind.
+   */
+  results: RankedSearchHit[];
   /**
    * Corpus-wide match counts. `total` used to be the size of the returned
    * page, which made it useless for paging; the ranking functions of
@@ -25,7 +32,11 @@ export interface FtsSearchData {
   familiesTotal: number;
   personsTotal: number;
   patronymesTotal: number;
+  quizzesTotal: number;
+  languagesTotal: number;
   total: number;
+  /** Near-miss leads (REQ-125), populated only when `total` is 0. */
+  leads: object[];
 }
 
 // @req REQ-002
@@ -41,11 +52,17 @@ export async function ftsSearchHandler(
     families: (result.families ?? []) as object[],
     persons: (result.persons ?? []) as object[],
     patronymes: (result.patronymes ?? []) as object[],
+    quizzes: (result.quizzes ?? []) as object[],
+    languages: (result.languages ?? []) as object[],
+    results: result.results ?? [],
     peoplesTotal: result.peoplesTotal,
     countriesTotal: result.countriesTotal,
     familiesTotal: result.familiesTotal,
     personsTotal: result.personsTotal,
     patronymesTotal: result.patronymesTotal,
+    quizzesTotal: result.quizzesTotal,
+    languagesTotal: result.languagesTotal,
     total: result.total,
+    leads: (result.leads ?? []) as object[],
   });
 }

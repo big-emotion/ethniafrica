@@ -4,6 +4,7 @@ import {
   buildSearchParams,
   compareByRelevance,
   mapSearchEnvelope,
+  mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
 import type { SearchResult } from "@/types/afrik-frontend";
 
@@ -219,6 +220,68 @@ describe("mapSearchEnvelope", () => {
     expect(person.peopleLinks).toEqual([]);
   });
 
+  // REQ-136: a language reaches the unified surface as its own kind.
+  // @req REQ-136
+  it("maps a language row, carrying its family name and ISO id", () => {
+    const [language] = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            snippet: "[[Swahili]]",
+            relevance: 0.9,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(language.type).toBe("language");
+    expect(language.id).toBe("swa");
+    expect(language.name).toBe("Swahili");
+    expect(language.languageFamilyId).toBe("FLG_NIGER_CONGO");
+    expect(language.languageFamilyName).toBe("Niger-Congo");
+    expect(language.snippet).toBe("[[Swahili]]");
+    expect(language.relevance).toBe(0.9);
+    expect(language.exactMatch).toBe(true);
+  });
+
+  // REQ-136 AC: "Given a language name and a people name that match a query
+  // equally well, when results are rendered, then both kinds are returned,
+  // grouped by kind, and neither is silently dropped."
+  // @req REQ-136
+  it("returns a language and a people that match equally well, neither dropped", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "kon",
+            name: "Kongo",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            relevance: 1,
+            exactMatch: true,
+          },
+        ],
+        peoples: [
+          {
+            id: "PPL_KONGO",
+            nameMain: "Kongo",
+            languageFamilyId: "FLG_NIGER_CONGO",
+            relevance: 1,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(results).toHaveLength(2);
+    expect(results.map((r) => r.type).sort()).toEqual(["language", "people"]);
+  });
+
   // @req REQ-002
   it("prefers the match excerpt over the raw etymology for a country", () => {
     const [country] = mapSearchEnvelope({
@@ -287,5 +350,64 @@ describe("compareByRelevance", () => {
       "FIRST",
       "SECOND",
     ]);
+  });
+});
+
+describe("mapSearchLeads", () => {
+  // @req REQ-125
+  it("maps a people, country and family lead, renaming family to languageFamily", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          {
+            kind: "people",
+            id: "PPL_BAMBARA",
+            name: "Bambara",
+            similarity: 0.4,
+          },
+          { kind: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+          {
+            kind: "family",
+            id: "FLG_MANDE",
+            name: "Mandé",
+            similarity: 0.25,
+          },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([
+      { type: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      { type: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+      {
+        type: "languageFamily",
+        id: "FLG_MANDE",
+        name: "Mandé",
+        similarity: 0.25,
+      },
+    ]);
+  });
+
+  // @req REQ-125
+  it("drops a lead whose kind is not people, country or family", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          { kind: "language", id: "swa", name: "Swahili", similarity: 0.5 },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([]);
+  });
+
+  // @req REQ-125
+  it("returns an empty array when there is no leads field, an array data, or no data", () => {
+    expect(mapSearchLeads({ data: { total: 2 } })).toEqual([]);
+    expect(mapSearchLeads({ data: [{ id: "PPL_BETE" }] })).toEqual([]);
+    expect(mapSearchLeads({})).toEqual([]);
+    expect(mapSearchLeads(null)).toEqual([]);
   });
 });

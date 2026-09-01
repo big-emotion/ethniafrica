@@ -13,24 +13,37 @@
  *       ("bamba") matches a longer indexed name ("Bambara"), and an unaccented
  *       query ("mande") matches an accented name ("Mandé") by construction,
  *       not by stemmer coincidence (REQ-129). Relevance is multiplied for
- *       peoples by a 0.5–1.0 confidence factor. Language families have no
- *       tsvector column and are name-matched the same accent-insensitive way
- *       in the application layer, then tiered exact > prefix > substring.
+ *       peoples by a 0.5–1.0 confidence factor. Language families rank in
+ *       SQL too (migration 068): exact > prefix > substring on the folded
+ *       name, then a tier for a match found only in their decolonial prose.
  *       `q` no longer accepts websearch syntax — quoted phrases, `OR` and `-`
  *       exclusions are not recognised (DEC-034); each word except the last
  *       must now match as a complete word.
  *       Each result carries `relevance`, `exactMatch` and a `snippet` whose
  *       matched terms are wrapped in `[[` and `]]` — deliberately not HTML,
  *       because `ts_headline` does not escape the source document.
- *       `relevance` is comparable within an array and not between arrays;
- *       order across kinds on `exactMatch`.
- *       Each entity kind is returned in its own array — there is no flat
- *       `results` list. Named persons (migration 065, REQ-126) and names
+ *       `relevance` is comparable within an array and not between arrays.
+ *       Each entity kind is returned in its own array, and `results` carries
+ *       the same hits merged into one cross-kind ranking on `normalizedScore`
+ *       (migration 068) — the magnitude that, unlike `relevance`, is
+ *       comparable between kinds. Quiz questions (REQ-121) join that ranking
+ *       with their stem only: the options, the correct answer and the
+ *       explanation are searched and never returned.
+ *       Named persons (migration 065, REQ-126) and names
  *       (patronymes — migration 066, REQ-135) rank the same way, with
  *       patronymes additionally folding in a dmetaphone phonetic match so a
  *       misspelling like "Keyta" still reaches the canonical "Keïta". Both
- *       fall back to pg_trgm typo tolerance ahead of a no-match. Rate-limited
- *       per AR11 (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
+ *       fall back to pg_trgm typo tolerance ahead of a no-match. Languages
+ *       (migration 068, REQ-136) rank the same prefix/accent-insensitive way,
+ *       with an exact-match bonus that also fires on the ISO 639-3 id — a
+ *       reader who types "swa" reaches Swahili exactly as precisely as one
+ *       who types its name. When `total` is 0, `leads` (REQ-125) carries up
+ *       to 3 near-miss suggestions across peoples, countries and language
+ *       families — a trigram similarity scan (migration 069) below the main
+ *       search's own fuzzy floor, so the reader sees what the engine almost
+ *       understood instead of a bare empty result; `leads` is always empty
+ *       when `total` is greater than 0. Rate-limited per AR11 (IP: 60 RPM,
+ *       public key: 600 RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []

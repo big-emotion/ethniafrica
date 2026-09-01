@@ -14,6 +14,16 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
 }));
 
+vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
+  ContinentGlobeStage: ({ autoRotate }: { autoRotate?: boolean }) => (
+    <div
+      className="home-globe-stage"
+      data-testid="home-globe-stage"
+      data-autoplay={String(Boolean(autoRotate))}
+    />
+  ),
+}));
+
 describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // @req REQ-044
   it("renders no eyebrow and no standalone brand line", () => {
@@ -251,5 +261,15 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     render(<HomeHero visual={{ kind: "globe" }} />);
     expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
     expect(screen.queryByRole("img")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-115
+  it("opts the home globe into gentle autoplay", () => {
+    render(<HomeHero visual={{ kind: "globe" }} />);
+
+    expect(screen.getByTestId("home-globe-stage")).toHaveAttribute(
+      "data-autoplay",
+      "true"
+    );
   });
 });

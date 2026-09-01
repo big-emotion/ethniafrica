@@ -12,16 +12,16 @@ function sequence(...values: number[]): () => number {
 
 describe("drawHomeHeroVisual", () => {
   // @req REQ-115
-  it("reserves the first modulo-three slot for the globe", () => {
+  it("uses the lower half of the random draw for the globe", () => {
     expect(drawHomeHeroVisual(() => 0)).toEqual({ kind: "globe" });
-    expect(drawHomeHeroVisual(() => 1 / 3 - Number.EPSILON)).toEqual({
+    expect(drawHomeHeroVisual(() => 0.5 - Number.EPSILON)).toEqual({
       kind: "globe",
     });
   });
 
   // @req REQ-115
-  it("uses the other two modulo-three slots for an image", () => {
-    expect(drawHomeHeroVisual(sequence(1 / 3, 0))).toEqual({
+  it("uses the upper half of the random draw for an image", () => {
+    expect(drawHomeHeroVisual(sequence(0.5, 0))).toEqual({
       kind: "image",
       image: HOME_HERO_IMAGES[0],
     });
