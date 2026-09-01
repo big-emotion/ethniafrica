@@ -666,14 +666,17 @@ export interface FtsSearchParams {
  *
  * `relevance` is comparable **within** an entity kind and not across kinds —
  * a people is scored `ts_rank × confidence`, a country by bare `ts_rank`, a
- * family by a match tier. `exactMatch` is the one signal that means the same
- * thing everywhere, which is why it sorts first.
+ * family by a match tier. `normalizedScore` is the one magnitude that is
+ * comparable everywhere: migration 068 maps each kind's raw relevance onto a
+ * band of [0,1] chosen by the match class, so the six kinds can be merged
+ * into `FtsSearchResponse.results`.
  */
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
   confidence: number | null;
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   /** Match excerpt; matched terms are wrapped in `[[` and `]]`. */
   snippet: string | null;
 }
@@ -681,12 +684,15 @@ export interface RankedPeople extends People {
 export interface RankedCountry extends Country {
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   snippet: string | null;
 }
 
 export interface RankedLanguageFamily extends LanguageFamily {
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
 }
 
 /**
@@ -701,6 +707,7 @@ export interface RankedPerson {
   roleCategory: string;
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   snippet: string | null;
   peopleLinks: PersonPeopleLink[];
 }
@@ -719,6 +726,57 @@ export interface RankedPatronyme {
   content: Record<string, unknown>;
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
+}
+
+/**
+ * A quiz-bank search hit (REQ-121).
+ *
+ * The projection is deliberately narrow: `options_fr` and `correct_option`
+ * are the answer key and `explanation_fr` states the answer in prose, so
+ * migration 068 searches all three and returns none of them. A reader who
+ * finds a question through search must still have to answer it.
+ *
+ * `subjectName` is the people or country the question is about — the way a
+ * reader reaches the bank at all, since nobody searches for the wording of a
+ * question.
+ */
+export interface RankedQuizQuestion {
+  id: string;
+  /** The question stem, as asked. */
+  prompt: string;
+  entityType: string;
+  entityId: string;
+  subjectName: string | null;
+  relevance: number;
+  exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
+}
+
+export type SearchHitKind =
+  | "people"
+  | "country"
+  | "languageFamily"
+  | "person"
+  | "patronyme"
+  | "quiz";
+
+/**
+ * One row of the canonical cross-kind ranking.
+ *
+ * The grouped arrays answer "what did this query find among peoples?"; this
+ * answers "what did it find, best first, whatever the kind" — the question a
+ * single result list actually asks. `normalizedScore` is what makes the merge
+ * legitimate (migration 068); ties break on the French collation of the name,
+ * then on the id, so the order is stable across requests.
+ */
+export interface RankedSearchHit {
+  kind: SearchHitKind;
+  id: string;
+  name: string;
+  normalizedScore: number;
   snippet: string | null;
 }
 
@@ -728,12 +786,16 @@ export interface FtsSearchResponse {
   families: RankedLanguageFamily[];
   persons: RankedPerson[];
   patronymes: RankedPatronyme[];
+  quizzes: RankedQuizQuestion[];
+  /** Every hit above, merged and ordered on `normalizedScore`. */
+  results: RankedSearchHit[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
   patronymesTotal: number;
+  quizzesTotal: number;
   total: number;
 }
 
