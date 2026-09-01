@@ -513,9 +513,14 @@ describe("fiche vivante — accent scope", () => {
 
       // A second accent anywhere on the page would repaint part of the fiche
       // in another entity's colour, and the accent would stop meaning anything.
-      const foreignAccents = Object.entries(ACCENT_CLASS_BY_ENTITY)
-        .filter(([entityType]) => entityType !== route.entityType)
-        .map(([, accentClass]) => accentClass);
+      // Deduped by class value, not entity-type key: `name` deliberately
+      // reuses `people`'s ocre accent (FicheSequence.tsx), so that class is
+      // not "foreign" to a peuples fiche even though it is a second key in
+      // `ACCENT_CLASS_BY_ENTITY`.
+      const ownAccentClass = ACCENT_CLASS_BY_ENTITY[route.entityType];
+      const foreignAccents = [
+        ...new Set(Object.values(ACCENT_CLASS_BY_ENTITY)),
+      ].filter((accentClass) => accentClass !== ownAccentClass);
       for (const accentClass of foreignAccents) {
         expect(container.querySelector(`.${accentClass}`)).toBeNull();
       }

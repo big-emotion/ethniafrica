@@ -18,6 +18,7 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
+import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
@@ -3271,6 +3272,51 @@ export function checkNameRecordDuplicates(
 }
 
 /**
+ * REQ-133/REQ-134 — strict per-name PAT_* fiche model.
+ *
+ * The parser is the single shape contract. This integration only discovers
+ * corpus files and gives parser errors stable, file-qualified gate messages.
+ */
+export function checkPatronymeFicheModel(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const dir = path.join(datasetRoot, "patronymes");
+
+  if (!fs.existsSync(dir)) return { ok: true, errors, warnings };
+
+  for (const file of fs
+    .readdirSync(dir)
+    .filter((name) => /^PAT_[A-Z0-9_]+\.json$/.test(name))) {
+    const fullPath = path.join(dir, file);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`PAT-model: ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parsePatronymeFile(raw);
+    if (!parsed.success) {
+      for (const error of parsed.errors ?? []) {
+        errors.push(`PAT-model: ${file}: ${error.path}: ${error.message}`);
+      }
+      continue;
+    }
+
+    if (file !== `${parsed.data?.id}.json`) {
+      errors.push(
+        `PAT-model: ${file}: filename must match patronyme id ${parsed.data?.id}.json`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * ETNI-1460 – Naming-system model validator (docs/design/naming-subtype-taxonomy.md).
  *
  * Validates dataset/source/afrik/systemes_onomastiques/*.json fiches against
@@ -3925,6 +3971,14 @@ async function main() {
   newChecks.push({
     name: "FR55-surname Name record surname connection",
     result: checkNameRecordSurnameConnection(datasetRoot),
+  });
+
+  console.log(
+    "REQ-133/REQ-134 – Per-name PAT_* fiche model (strict shape + DEC-040)..."
+  );
+  newChecks.push({
+    name: "REQ-133/REQ-134 Patronyme fiche model",
+    result: checkPatronymeFicheModel(datasetRoot),
   });
 
   console.log(

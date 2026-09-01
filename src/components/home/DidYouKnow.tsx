@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DidYouKnowMotif } from "@/components/home/DidYouKnowMotif";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { ActionLink } from "@/components/ui/ActionLink";
 import type {
@@ -21,14 +22,15 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import type { Language } from "@/types/shared";
+import type { DidYouKnowMotif as DidYouKnowMotifName } from "@/lib/home/didYouKnowMotifs";
 
 export interface DidYouKnowProps {
   language: Language;
   /** The two distinct facts drawn for this request, or an empty list. */
   facts: DidYouKnowFact[];
+  /** The cultural line motif drawn once for this page request. */
+  motif?: DidYouKnowMotifName;
 }
-
-const MOTIF_TILE_ID = "home-dyk-motif-tile";
 
 function entityHref(language: Language, entity: DidYouKnowEntity): string {
   if (entity.kind === "country") return getCountryRoute(language, entity.id);
@@ -139,59 +141,21 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
  * predictable image-first reading order.
  */
 // @req REQ-113
-export function DidYouKnow({ language, facts }: DidYouKnowProps) {
+export function DidYouKnow({
+  language,
+  facts,
+  motif = "mande-kora",
+}: DidYouKnowProps) {
   const visibleFacts = facts.slice(0, 2);
   if (visibleFacts.length === 0) return null;
 
   return (
-    <section className="home-dyk" data-testid="home-did-you-know">
-      <div className="home-dyk-motif" aria-hidden="true">
-        <svg focusable="false">
-          <defs>
-            <pattern
-              id={MOTIF_TILE_ID}
-              width="280"
-              height="280"
-              patternUnits="userSpaceOnUse"
-              patternTransform="rotate(-9)"
-            >
-              <text
-                className="home-dyk-motif-glyph"
-                x="18"
-                y="86"
-                fontSize={64}
-              >
-                ?
-              </text>
-              <circle className="home-dyk-motif-lens" cx="196" cy="62" r="20" />
-              <line
-                className="home-dyk-motif-lens"
-                x1="210"
-                y1="76"
-                x2="230"
-                y2="96"
-              />
-              <text
-                className="home-dyk-motif-glyph"
-                x="150"
-                y="242"
-                fontSize={64}
-              >
-                ?
-              </text>
-              <circle className="home-dyk-motif-lens" cx="52" cy="206" r="13" />
-              <line
-                className="home-dyk-motif-lens"
-                x1="61"
-                y1="215"
-                x2="74"
-                y2="228"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill={`url(#${MOTIF_TILE_ID})`} />
-        </svg>
-      </div>
+    <section
+      className="home-dyk"
+      data-testid="home-did-you-know"
+      data-motif={motif}
+    >
+      <DidYouKnowMotif motif={motif} />
 
       <div className="home-dyk-inner">
         <SectionHeading
@@ -244,16 +208,13 @@ export function DidYouKnow({ language, facts }: DidYouKnowProps) {
           width: 100%;
           height: 100%;
         }
-        .home-dyk-motif-glyph {
-          font-family: var(--afh-font-display);
-          font-weight: 700;
-          fill: currentColor;
-        }
-        .home-dyk-motif-lens {
+        .home-dyk-motif-mark {
           fill: none;
           stroke: currentColor;
-          stroke-width: 3;
+          stroke-width: 2.4;
           stroke-linecap: round;
+          stroke-linejoin: round;
+          vector-effect: non-scaling-stroke;
         }
         .home-dyk-inner {
           position: relative;

@@ -32,13 +32,13 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
       title: "À propos",
       overview: {
         eyebrow: "Le projet",
-        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples, aux langues, aux familles linguistiques et aux pays d’Afrique.",
-        body: "Le corpus relie ces quatre types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
+        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples d’Afrique et aux pays, langues, familles linguistiques et appellations documentés par le corpus.",
+        body: "Le corpus relie ces cinq types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
       },
       contentFamilies: {
         title: "Ce que contient EthniAfrica",
         intro:
-          "Quatre objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
+          "Cinq objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
         items: [
           {
             title: "Peuples",
@@ -69,6 +69,14 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             accentClass: "afh-accent-teal",
             page: "countries" as PageType,
             linkLabel: "Parcourir les pays",
+          },
+          {
+            title: "Appellations",
+            description:
+              "Les autonymes, les exonymes et les autres appellations documentées sont présentés avec leur contexte et leur provenance.",
+            accentClass: "afh-accent-neutral",
+            page: "names" as PageType,
+            linkLabel: "Parcourir les appellations",
           },
         ],
       },
@@ -137,7 +145,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         </div>
         <ul
           data-testid="about-content-families"
-          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-2 min-[1240px]:grid-cols-4"
+          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-2 min-[1240px]:grid-cols-5"
           role="list"
         >
           {t.contentFamilies.items.map((family) => (

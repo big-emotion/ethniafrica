@@ -7,6 +7,7 @@ import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { loadSeedWords } from "@/lib/home/seedWords";
 import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
+import { drawDidYouKnowMotif } from "@/lib/home/didYouKnowMotifs";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
@@ -71,6 +72,7 @@ export default async function Home({ searchParams }: HomePageProps = {}) {
   // Drawn in the server component so it never re-runs during hydration and
   // cannot desynchronise the client tree.
   const didYouKnowFacts = pickDidYouKnowFacts(2);
+  const didYouKnowMotif = drawDidYouKnowMotif();
 
   return (
     <PageLayout language="fr" hideHeader flushTop flushBottom>
@@ -80,7 +82,11 @@ export default async function Home({ searchParams }: HomePageProps = {}) {
         counts={<HomeCorpusCounts counts={counts} />}
         visual={heroVisual}
       />
-      <DidYouKnow language="fr" facts={didYouKnowFacts} />
+      <DidYouKnow
+        language="fr"
+        facts={didYouKnowFacts}
+        motif={didYouKnowMotif}
+      />
     </PageLayout>
   );
 }

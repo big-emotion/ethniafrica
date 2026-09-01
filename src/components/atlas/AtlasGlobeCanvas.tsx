@@ -353,6 +353,12 @@ export function AtlasGlobeCanvas({
     let frameId: number | null = null;
     let lastTimestamp: number | null = null;
 
+    // Every buffer the overlay uploads, so the teardown can release them. The
+    // overlay is rebuilt whenever `overlay` changes, and a footprint carries
+    // one set per ring — leaking them would grow GPU memory with every country
+    // the reader opens.
+    const overlayBuffers: WebGLBuffer[] = [];
+
     // The people field has no line to draw, so nothing to reveal. Both closed
     // encodings trace themselves in.
     const progressRef = { current: overlay.kind === "people-field" ? 1 : 0 };
@@ -585,11 +591,43 @@ export function AtlasGlobeCanvas({
             loop: buildRingLineLoop(ring),
           }));
 
-      const fillBuffer = gl.createBuffer();
-      const fillFlatBuffer = gl.createBuffer();
-      const loopPositionBuffer = gl.createBuffer();
-      const loopFlatBuffer = gl.createBuffer();
-      const loopArcBuffer = gl.createBuffer();
+      /**
+       * Vertex data is immutable for the life of the overlay: the reveal moves
+       * `uProgress`, the camera moves `uRotation`, and neither rewrites a
+       * vertex. Uploading it per frame — which is what sharing five buffers
+       * across every ring forced — re-sent the whole footprint to the GPU sixty
+       * times a second and cost 80 ms a frame on FLG_BANTU. Uploaded once here,
+       * the draw loop only binds.
+       */
+      const upload = (data: Float32Array): WebGLBuffer | null => {
+        const buffer = gl.createBuffer();
+        if (!buffer) return null;
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+        overlayBuffers.push(buffer);
+        return buffer;
+      };
+
+      const ringLayers = shapes.map(
+        ({ countryId, weight, dashRepeats, fill, loop }) => ({
+          countryId,
+          weight,
+          dashRepeats,
+          fill: fill
+            ? {
+                vertexCount: fill.vertexCount,
+                positions: upload(fill.positions),
+                flatPositions: upload(fill.flatPositions),
+              }
+            : null,
+          loop: {
+            vertexCount: loop.vertexCount,
+            positions: upload(loop.positions),
+            flatPositions: upload(loop.flatPositions),
+            arcFractions: upload(loop.arcFractions),
+          },
+        })
+      );
 
       draw = () => {
         const camera = poseRef.current;
@@ -620,7 +658,7 @@ export function AtlasGlobeCanvas({
         // and any future consumer read the same curve.
         const revealed = footprintRevealEase(progressRef.current);
 
-        shapes.forEach(({ countryId, weight, dashRepeats, fill, loop }) => {
+        ringLayers.forEach(({ countryId, weight, dashRepeats, fill, loop }) => {
           const isFocused = focusedCountryId === countryId;
           const dimmed = focusedCountryId !== null && !isFocused;
 
@@ -631,12 +669,10 @@ export function AtlasGlobeCanvas({
           const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
 
           if (fill) {
-            gl.bindBuffer(gl.ARRAY_BUFFER, fillBuffer);
-            gl.bufferData(gl.ARRAY_BUFFER, fill.positions, gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, fill.positions);
             gl.enableVertexAttribArray(aSpherePos);
             gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-            gl.bindBuffer(gl.ARRAY_BUFFER, fillFlatBuffer);
-            gl.bufferData(gl.ARRAY_BUFFER, fill.flatPositions, gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, fill.flatPositions);
             gl.enableVertexAttribArray(aFlat);
             gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
             gl.disableVertexAttribArray(aArcFraction);
@@ -648,18 +684,15 @@ export function AtlasGlobeCanvas({
             gl.drawArrays(gl.TRIANGLES, 0, fill.vertexCount);
           }
 
-          gl.bindBuffer(gl.ARRAY_BUFFER, loopPositionBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, loop.positions, gl.STATIC_DRAW);
+          gl.bindBuffer(gl.ARRAY_BUFFER, loop.positions);
           gl.enableVertexAttribArray(aSpherePos);
           gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
 
-          gl.bindBuffer(gl.ARRAY_BUFFER, loopFlatBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, loop.flatPositions, gl.STATIC_DRAW);
+          gl.bindBuffer(gl.ARRAY_BUFFER, loop.flatPositions);
           gl.enableVertexAttribArray(aFlat);
           gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
 
-          gl.bindBuffer(gl.ARRAY_BUFFER, loopArcBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, loop.arcFractions, gl.STATIC_DRAW);
+          gl.bindBuffer(gl.ARRAY_BUFFER, loop.arcFractions);
           gl.enableVertexAttribArray(aArcFraction);
           gl.vertexAttribPointer(aArcFraction, 1, gl.FLOAT, false, 0, 0);
 
@@ -765,6 +798,8 @@ export function AtlasGlobeCanvas({
       if (frameId !== null) window.cancelAnimationFrame(frameId);
       sphere?.dispose();
       sphereRef.current = null;
+      overlayBuffers.forEach((buffer) => gl.deleteBuffer(buffer));
+      overlayBuffers.length = 0;
     };
   }, [overlay, accentHex]);
 

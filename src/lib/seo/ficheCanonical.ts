@@ -5,6 +5,7 @@ import {
   getCountryRoute,
   getFamilyRoute,
   getLanguageRoute,
+  getPatronymeRoute,
   getPeopleRoute,
 } from "@/lib/routing";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
@@ -35,7 +36,7 @@ import type { Language } from "@/types/shared";
  * canonicals is the window in which the duplicate gets indexed.
  */
 // @req REQ-091
-export type FicheKind = "country" | "people" | "family" | "language";
+export type FicheKind = "country" | "people" | "family" | "language" | "name";
 
 const ROUTE_BY_KIND: Record<
   FicheKind,
@@ -45,6 +46,7 @@ const ROUTE_BY_KIND: Record<
   people: getPeopleRoute,
   family: getFamilyRoute,
   language: getLanguageRoute,
+  name: getPatronymeRoute,
 };
 
 /**

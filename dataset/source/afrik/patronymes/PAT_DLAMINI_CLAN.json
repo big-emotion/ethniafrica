@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DLAMINI_CLAN",
+  "nameMain": "Dlamini",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Dlamini",
+      "attestations": [
+        {
+          "countryId": "SWZ",
+          "sourceRefs": ["corpus-ppl-swazi-organisation"]
+        },
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["corpus-ppl-swazi-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SWAZI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-swazi-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SWZ",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-swazi-organisation"]
+    },
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-swazi-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-swazi-organisation",
+      "title": "Corpus AFRIK — PPL_SWAZI, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_SWAZI.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+    }
+  ]
+}

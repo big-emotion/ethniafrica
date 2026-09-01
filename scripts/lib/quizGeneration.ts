@@ -141,11 +141,15 @@ export interface RevocationDecision {
 export interface SweepInput {
   entries: FicheEntry[];
   /**
-   * The country corpus. Optional so a caller that only has peoples — every
-   * test written before countries had templates — keeps compiling and keeps
-   * meaning the same thing.
+   * The country corpus.
+   *
+   * Required, and deliberately so. It was optional — for the convenience of
+   * tests written before countries had templates — and the one caller that
+   * matters never filled it in, so the six country templates were live in this
+   * module and absent from the bank for as long as they existed. A caller with
+   * no countries says so with `[]`; it no longer says so by forgetting.
    */
-  countryEntries?: CountryFicheEntry[];
+  countryEntries: CountryFicheEntry[];
   pools: QuizCandidatePools;
   activeQuestions: ActiveQuestionRow[];
   /**
@@ -552,7 +556,7 @@ export function decideRevocation(
  * an unchanged corpus and bank yields an empty plan.
  */
 export function computeSweepPlan(input: SweepInput): SweepPlan {
-  const countryEntries = input.countryEntries ?? [];
+  const countryEntries = input.countryEntries;
   // One map over both corpora. A people id is `PPL_*` and a country id is an
   // ISO 3166-1 alpha-3, so they cannot collide, and revocation needs to find a
   // question's subject without first knowing which kind it is.

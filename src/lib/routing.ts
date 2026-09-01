@@ -150,6 +150,10 @@ export const getFamilyRoute = (language: Language, id: string): string =>
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
 
+// @req REQ-133
+export const getPatronymeRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "names")}/${id}`;
+
 // @req REQ-136
 export const getLanguageRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "languages")}/${id}`;

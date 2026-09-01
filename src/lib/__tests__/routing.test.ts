@@ -7,6 +7,7 @@ import {
   getFamilyRoute,
   getLocalizedRoute,
   getPageFromRoute,
+  getPatronymeRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
   getPersonRoute,
@@ -39,6 +40,13 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   it("builds a localized people links (liens) fiche href", () => {
     expect(getPeopleLinksRoute("fr", "PPL_YORUBA")).toBe(
       "/fr/atlas/peuples/PPL_YORUBA/liens"
+    );
+  });
+
+  // @req REQ-133
+  it("builds a localized patronyme fiche href", () => {
+    expect(getPatronymeRoute("fr", "PAT_KEITA")).toBe(
+      "/fr/atlas/appellations/PAT_KEITA"
     );
   });
 

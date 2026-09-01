@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import { getLocalizedRoute } from "@/lib/routing";
 
 const renderAbout = () => render(<AboutPageContent language="fr" />);
 
@@ -35,7 +36,7 @@ describe("AboutPageContent (REQ-132)", () => {
   });
 
   // @req REQ-132
-  it("names the four distinct families of content in the corpus", () => {
+  it("names the five distinct families of content in the corpus", () => {
     renderAbout();
 
     const families = screen.getByTestId("about-content-families");
@@ -44,11 +45,18 @@ describe("AboutPageContent (REQ-132)", () => {
       "Langues",
       "Familles linguistiques",
       "Pays",
+      "Appellations",
     ]) {
       expect(
         within(families).getByRole("heading", { level: 3, name: family })
       ).toBeTruthy();
     }
+
+    expect(
+      within(families).getByRole("link", {
+        name: "Parcourir les appellations",
+      })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
   });
 
   // @req REQ-132
@@ -123,7 +131,7 @@ describe("AboutPageContent (REQ-132)", () => {
     const families = screen.getByTestId("about-content-families");
     expect(families.className).toMatch(/grid-cols-1/);
     expect(families.className).toMatch(/min-\[720px\]:grid-cols-2/);
-    expect(families.className).toMatch(/min-\[1240px\]:grid-cols-4/);
+    expect(families.className).toMatch(/min-\[1240px\]:grid-cols-5/);
 
     const accessModes = screen.getByTestId("about-access-mode-list");
     expect(accessModes.className).toMatch(/grid-cols-1/);

@@ -6,7 +6,7 @@
  * questions revoke, which QZ-1..QZ-5 checks fail) are pure and tested here.
  */
 import { describe, expect, it } from "vitest";
-import type { QuizPeopleFixture } from "@/types/quiz";
+import type { QuizCountryFixture, QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
 import { QUIZ_TEMPLATE_IDS, templatesFor } from "@/lib/quiz/segmentPolicy";
 import {
@@ -19,6 +19,7 @@ import {
   type ActiveQuestionRow,
   type AssertionBinding,
   type AuditableQuestion,
+  type CountryFicheEntry,
   type FicheEntry,
   type QuizCandidatePools,
 } from "../lib/quizGeneration";
@@ -280,7 +281,12 @@ describe("decideRevocation", () => {
 describe("computeSweepPlan", () => {
   // @req REQ-080
   it("succeeds with zero questions for an empty eligible corpus", () => {
-    const plan = computeSweepPlan({ entries: [], pools, activeQuestions: [] });
+    const plan = computeSweepPlan({
+      entries: [],
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
     expect(plan).toEqual({
       toInsert: [],
       toRevoke: [],
@@ -295,7 +301,12 @@ describe("computeSweepPlan", () => {
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
     ];
-    const plan = computeSweepPlan({ entries, pools, activeQuestions: [] });
+    const plan = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
 
     expect(plan.toInsert.every((r) => r.entityId === "PPL_YORUBA")).toBe(true);
     // The duplication this replaces is what made 2 504 questions into 11 879 rows.
@@ -308,7 +319,12 @@ describe("computeSweepPlan", () => {
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
     ];
-    const first = computeSweepPlan({ entries, pools, activeQuestions: [] });
+    const first = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
     const activeQuestions: ActiveQuestionRow[] = first.toInsert.map((r, i) => ({
       id: `q-${i}`,
       templateId: r.templateId,
@@ -319,7 +335,12 @@ describe("computeSweepPlan", () => {
       stimulusFr: null,
     }));
 
-    const second = computeSweepPlan({ entries, pools, activeQuestions });
+    const second = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions,
+    });
     expect(second.generatedCount).toBe(0);
     expect(second.revokedCount).toBe(0);
   });
@@ -335,7 +356,12 @@ describe("computeSweepPlan", () => {
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
     ];
-    const first = computeSweepPlan({ entries, pools, activeQuestions: [] });
+    const first = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
     const activeQuestions: ActiveQuestionRow[] = first.toInsert.map((r, i) => ({
       id: `q-${i}`,
       templateId: r.templateId,
@@ -348,6 +374,7 @@ describe("computeSweepPlan", () => {
 
     const rebuilt = computeSweepPlan({
       entries,
+      countryEntries: [],
       pools,
       activeQuestions,
       rebuildAll: true,
@@ -389,6 +416,7 @@ describe("computeSweepPlan", () => {
 
     const rebuilt = computeSweepPlan({
       entries,
+      countryEntries: [],
       pools,
       activeQuestions,
       rebuildAll: true,
@@ -420,7 +448,12 @@ describe("computeSweepPlan", () => {
     const entries: FicheEntry[] = [
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
     ];
-    const plan = computeSweepPlan({ entries, pools, activeQuestions });
+    const plan = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions,
+    });
 
     expect(plan.toRevoke).toEqual([{ id: "q-stale", reason: "stale_answer" }]);
     expect(
@@ -442,6 +475,7 @@ describe("computeSweepPlan", () => {
     ];
     const plan = computeSweepPlan({
       entries,
+      countryEntries: [],
       pools,
       activeQuestions: [],
     });
@@ -455,7 +489,12 @@ describe("computeSweepPlan", () => {
       { fiche: yoruba, assertionsByFieldPath: fullBindings() },
       { fiche: zulu, assertionsByFieldPath: fullBindings() },
     ];
-    const plan = computeSweepPlan({ entries, pools, activeQuestions: [] });
+    const plan = computeSweepPlan({
+      entries,
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
     expect(plan.toInsert.some((r) => r.entityId === "PPL_YORUBA")).toBe(true);
     expect(plan.toInsert.some((r) => r.entityId === "PPL_ZULU")).toBe(true);
   });
@@ -690,6 +729,7 @@ describe("computeSweepPlan distractor proximity", () => {
   function planForAdults() {
     return computeSweepPlan({
       entries,
+      countryEntries: [],
       pools: cohabitingPools,
       activeQuestions: [],
     });
@@ -751,5 +791,66 @@ describe("computeSweepPlan distractor proximity", () => {
     expect(plan.generatedCount + plan.rejectedCount).toBe(
       entries.length * templatesFor("people").length
     );
+  });
+});
+
+/**
+ * The country corpus reached `computeSweepPlan` as an optional field, and the
+ * sweep that calls it never filled it in — so the six country templates were
+ * live in the library and dead in the bank from the day they shipped. The
+ * field is required now, which turns that omission into a compile error; this
+ * suite is what says the plan does something with it.
+ */
+describe("computeSweepPlan over the country corpus", () => {
+  const ghana: QuizCountryFixture = {
+    id: "GHA",
+    subjectName: { autonym: "Ghana" },
+    selfAppellation: "République du Ghana",
+    exonyms: [],
+    // The rubric must not name its own subject: an inversion round whose
+    // stimulus says the answer is a coin flip, and the builder drops it.
+    rubrics: {
+      T13:
+        "Le nom reprend celui d'un empire médiéval du Sahel occidental. " +
+        "Les souverains y contrôlaient les routes de l'or entre le désert et la forêt.",
+      T16: ["Royaume Ashanti"],
+    },
+    kingdomNames: ["Royaume Ashanti", "Empire du Mali", "Sultanat de Zanzibar"],
+  };
+
+  const countryEntries: CountryFicheEntry[] = [
+    {
+      fiche: ghana,
+      assertionsByFieldPath: {
+        etymology: binding("etymology"),
+        "content.kingdoms": binding("content.kingdoms"),
+      },
+    },
+  ];
+
+  // @req REQ-121
+  it("generates questions whose subject is a country", () => {
+    const plan = computeSweepPlan({
+      entries: [],
+      countryEntries,
+      pools,
+      activeQuestions: [],
+    });
+
+    expect(plan.toInsert.map((candidate) => candidate.entityId)).toContain(
+      "GHA"
+    );
+  });
+
+  // @req REQ-121
+  it("generates nothing for a country when the sweep hands it none", () => {
+    const plan = computeSweepPlan({
+      entries: [],
+      countryEntries: [],
+      pools,
+      activeQuestions: [],
+    });
+
+    expect(plan.toInsert).toEqual([]);
   });
 });
