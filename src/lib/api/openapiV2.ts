@@ -2704,7 +2704,7 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               enum: ["language-corpus", "people-fiches"],
               description:
-                "Which source produced `branches`: the language corpus, or a reconstruction from the ISO codes the people fiches declare. `afrik_languages` is empty in every deployed database, so `people-fiches` is the normal case.",
+                "Which source produced `branches`: the language corpus, or a reconstruction from the ISO codes the people fiches declare. `afrik_languages` now holds 748 rows in recette, but coverage still varies by family, so `people-fiches` remains a common fallback.",
             },
             declaredBranches: {
               type: "array",
