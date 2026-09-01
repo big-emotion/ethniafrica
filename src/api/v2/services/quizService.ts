@@ -67,6 +67,12 @@ export interface QuizScopeOption {
   id: string;
   labelFr: string;
   activeQuestionCount: number;
+  /**
+   * The same bank, broken down by content theme, so the picker can offer a
+   * theme only on the tracks that can actually play it. Themes holding nothing
+   * are absent rather than zero — the caller reads a missing key as none.
+   */
+  questionCountByTheme: Partial<Record<QuizThemeId, number>>;
 }
 
 export interface QuizThemeOption {
@@ -190,6 +196,20 @@ async function readAllPages<T>(
   return rows;
 }
 
+/** Questions held per content theme, for one track. */
+type ThemeTally = Map<QuizThemeId, number>;
+
+function addTheme(
+  tallies: Map<string, ThemeTally>,
+  scopeId: string,
+  theme: QuizThemeId,
+  count: number
+): void {
+  const tally = tallies.get(scopeId) ?? new Map<QuizThemeId, number>();
+  tally.set(theme, (tally.get(theme) ?? 0) + count);
+  tallies.set(scopeId, tally);
+}
+
 /**
  * Counts the active bank per country and per family.
  *
@@ -202,49 +222,82 @@ async function readAllPages<T>(
 export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
   const supabase = createServerClient();
 
-  const [questionRows, peopleRows, membershipRows, countryRows, familyRows] =
-    await Promise.all([
-      readAllPages<{ entity_id: string; field_path: string }>(
-        "scopeCatalogue.questions",
-        (f, t) =>
-          supabase
-            .from("quiz_questions")
-            .select("entity_id, field_path")
-            .is("revoked_at", null)
-            .range(f, t)
-      ),
-      readAllPages<{ id: string; language_family_id: string | null }>(
-        "scopeCatalogue.peoples",
-        (f, t) =>
-          supabase
-            .from("afrik_peoples")
-            .select("id, language_family_id")
-            .range(f, t)
-      ),
-      readAllPages<{ people_id: string; country_id: string }>(
-        "scopeCatalogue.membership",
-        (f, t) =>
-          supabase
-            .from("afrik_people_countries")
-            .select("people_id, country_id")
-            .range(f, t)
-      ),
-      readAllPages<{ id: string; name_fr: string }>(
-        "scopeCatalogue.countries",
-        (f, t) =>
-          supabase.from("afrik_countries").select("id, name_fr").range(f, t)
-      ),
-      readAllPages<{ id: string; name_fr: string }>(
-        "scopeCatalogue.families",
-        (f, t) =>
-          supabase
-            .from("afrik_language_families")
-            .select("id, name_fr")
-            .range(f, t)
-      ),
-    ]);
+  const [
+    questionRows,
+    territoireRows,
+    peopleRows,
+    membershipRows,
+    countryRows,
+    familyRows,
+  ] = await Promise.all([
+    readAllPages<{ entity_id: string; field_path: string }>(
+      "scopeCatalogue.questions",
+      (f, t) =>
+        supabase
+          .from("quiz_questions")
+          .select("entity_id, field_path")
+          .is("revoked_at", null)
+          .range(f, t)
+    ),
+    // The answer key of the Territoire rounds, and of nothing else.
+    //
+    // `withoutSelfAnsweringCountryRounds` drops every round a country track
+    // would answer with its own name, and T3 — « dans quel pays ce peuple
+    // est-il présent ? » — does that for about half the corpus. Counting those
+    // rounds as playable had the picker offering sixteen country × Territoire
+    // tracks the session then refuses.
+    //
+    // Narrow on purpose: `options_fr` over the whole active bank is 937 KB
+    // against 47 KB for the T3 slice, on a read the picker makes on every
+    // visit. The two filters must stay in step — change one, change the other.
+    readAllPages<{
+      entity_id: string;
+      options_fr: QuizOptionValue[];
+      correct_option: number;
+    }>("scopeCatalogue.territoire", (f, t) =>
+      supabase
+        .from("quiz_questions")
+        .select("entity_id, options_fr, correct_option")
+        .is("revoked_at", null)
+        .like("field_path", `${TEMPLATE_FIELD_PATHS.T3}%`)
+        .range(f, t)
+    ),
+    readAllPages<{ id: string; language_family_id: string | null }>(
+      "scopeCatalogue.peoples",
+      (f, t) =>
+        supabase
+          .from("afrik_peoples")
+          .select("id, language_family_id")
+          .range(f, t)
+    ),
+    readAllPages<{ people_id: string; country_id: string }>(
+      "scopeCatalogue.membership",
+      (f, t) =>
+        supabase
+          .from("afrik_people_countries")
+          .select("people_id, country_id")
+          .range(f, t)
+    ),
+    readAllPages<{ id: string; name_fr: string }>(
+      "scopeCatalogue.countries",
+      (f, t) =>
+        supabase.from("afrik_countries").select("id, name_fr").range(f, t)
+    ),
+    readAllPages<{ id: string; name_fr: string }>(
+      "scopeCatalogue.families",
+      (f, t) =>
+        supabase
+          .from("afrik_language_families")
+          .select("id, name_fr")
+          .range(f, t)
+    ),
+  ]);
 
   const questionsBySubject = new Map<string, number>();
+  // Kept beside `questionsBySubject`, never merged into it: a question whose
+  // field path maps to no theme still counts toward `activeQuestionCount`, and
+  // one map keyed by theme would have dropped it silently.
+  const themedQuestionsBySubject = new Map<string, ThemeTally>();
   const totalByTheme = new Map<QuizThemeId, number>();
   for (const row of questionRows) {
     questionsBySubject.set(
@@ -252,14 +305,44 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
       (questionsBySubject.get(row.entity_id) ?? 0) + 1
     );
     const theme = themeOfFieldPath(row.field_path);
-    if (theme) totalByTheme.set(theme, (totalByTheme.get(theme) ?? 0) + 1);
+    if (!theme) continue;
+    totalByTheme.set(theme, (totalByTheme.get(theme) ?? 0) + 1);
+    addTheme(themedQuestionsBySubject, row.entity_id, theme, 1);
+  }
+
+  // How many Territoire rounds each subject answers with each country's name.
+  // Those are the rounds a track scoped to that country throws away.
+  const selfAnsweredTerritoire = new Map<string, Map<string, number>>();
+  for (const row of territoireRows) {
+    const answer = row.options_fr?.[row.correct_option];
+    if (answer === undefined) continue;
+    const bySubject =
+      selfAnsweredTerritoire.get(row.entity_id) ?? new Map<string, number>();
+    const label = optionLabel(answer);
+    bySubject.set(label, (bySubject.get(label) ?? 0) + 1);
+    selfAnsweredTerritoire.set(row.entity_id, bySubject);
   }
 
   const byCountry = new Map<string, number>();
+  const themesByCountry = new Map<string, ThemeTally>();
+  const countryNameById = new Map(
+    countryRows.map((row) => [row.id, row.name_fr])
+  );
   for (const row of membershipRows) {
     const held = questionsBySubject.get(row.people_id) ?? 0;
     if (held === 0) continue;
     byCountry.set(row.country_id, (byCountry.get(row.country_id) ?? 0) + held);
+
+    const selfAnswered =
+      selfAnsweredTerritoire
+        .get(row.people_id)
+        ?.get(countryNameById.get(row.country_id) ?? "") ?? 0;
+    for (const [theme, count] of themedQuestionsBySubject.get(row.people_id) ??
+      []) {
+      const playable = theme === "territoire" ? count - selfAnswered : count;
+      if (playable > 0)
+        addTheme(themesByCountry, row.country_id, theme, playable);
+    }
   }
   // A country's own questions belong to its own track. Counted here rather
   // than through the membership join, which only knows peoples — without this
@@ -269,9 +352,13 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     const held = questionsBySubject.get(row.id) ?? 0;
     if (held === 0) continue;
     byCountry.set(row.id, (byCountry.get(row.id) ?? 0) + held);
+    for (const [theme, count] of themedQuestionsBySubject.get(row.id) ?? []) {
+      addTheme(themesByCountry, row.id, theme, count);
+    }
   }
 
   const byFamily = new Map<string, number>();
+  const themesByFamily = new Map<string, ThemeTally>();
   for (const row of peopleRows) {
     if (!row.language_family_id) continue;
     const held = questionsBySubject.get(row.id) ?? 0;
@@ -280,16 +367,21 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
       row.language_family_id,
       (byFamily.get(row.language_family_id) ?? 0) + held
     );
+    for (const [theme, count] of themedQuestionsBySubject.get(row.id) ?? []) {
+      addTheme(themesByFamily, row.language_family_id, theme, count);
+    }
   }
 
   const optionFor = (
     id: string,
     labelFr: string,
-    count: number | undefined
+    count: number | undefined,
+    themes: ThemeTally | undefined
   ): QuizScopeOption => ({
     id,
     labelFr,
     activeQuestionCount: count ?? 0,
+    questionCountByTheme: Object.fromEntries(themes ?? []),
   });
 
   const byLabel = (a: QuizScopeOption, b: QuizScopeOption) =>
@@ -297,10 +389,24 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
 
   return {
     countries: countryRows
-      .map((row) => optionFor(row.id, row.name_fr, byCountry.get(row.id)))
+      .map((row) =>
+        optionFor(
+          row.id,
+          row.name_fr,
+          byCountry.get(row.id),
+          themesByCountry.get(row.id)
+        )
+      )
       .sort(byLabel),
     families: familyRows
-      .map((row) => optionFor(row.id, row.name_fr, byFamily.get(row.id)))
+      .map((row) =>
+        optionFor(
+          row.id,
+          row.name_fr,
+          byFamily.get(row.id),
+          themesByFamily.get(row.id)
+        )
+      )
       .sort(byLabel),
     // Fixed order, not sorted by count: the picker reads as a table of
     // contents, and a list that reshuffles itself as the bank grows is one a

@@ -72,7 +72,66 @@ describe("getQuizScopesHandler", () => {
       labelFr: "Khoïsan",
       activeQuestionCount: 4,
       playable: false,
+      playableThemeIds: [],
     });
+  });
+
+  /**
+   * The picker offers a theme on a track only where the track can fill a
+   * session of it. Presence, not a number: a theme the country cannot pay for
+   * is absent rather than greyed.
+   */
+  // @req REQ-121
+  it("names the themes a track can fill and omits the ones it cannot", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [
+        {
+          id: "GHA",
+          labelFr: "Ghana",
+          activeQuestionCount: 120,
+          questionCountByTheme: { croyances: 9, noms: 3, migrations: 8 },
+        },
+      ],
+      families: [],
+      themes: [],
+      totalActiveQuestionCount: 2504,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    // Ordered by QUIZ_THEME_IDS, not by count — the picker reads as a table of
+    // contents and must not reshuffle as the bank grows.
+    expect(envelope.data.countries[0].playableThemeIds).toEqual([
+      "croyances",
+      "migrations",
+    ]);
+  });
+
+  /**
+   * The picker stops rendering this field in the same lot that adds
+   * `playableThemeIds`, which is exactly when a later cleanup deletes it. It is
+   * on a public contract; `openapi:diff` would catch the removal, this catches
+   * the intent sooner.
+   */
+  // @req REQ-103
+  it("keeps activeQuestionCount on the wire", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [
+        {
+          id: "GHA",
+          labelFr: "Ghana",
+          activeQuestionCount: 120,
+          questionCountByTheme: {},
+        },
+      ],
+      families: [],
+      themes: [],
+      totalActiveQuestionCount: 2504,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    expect(envelope.data.countries[0].activeQuestionCount).toBe(120);
   });
 
   // @req REQ-103

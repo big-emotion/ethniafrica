@@ -20,7 +20,7 @@ import {
   QUIZ_SESSION_SIZE,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
-import type { QuizThemeId } from "@/lib/quiz/segmentPolicy";
+import { QUIZ_THEME_IDS, type QuizThemeId } from "@/lib/quiz/segmentPolicy";
 import type { QuizEntityType } from "@/types/quiz";
 import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
@@ -61,6 +61,14 @@ function toScopeOptionView(option: QuizScopeOption): QuizScopeOptionView {
     labelFr: option.labelFr,
     activeQuestionCount: option.activeQuestionCount,
     playable: isPlayableScope(option.activeQuestionCount),
+    // The same threshold as the track itself, deliberately: what the picker
+    // offers and what `composeQuizSessionHandler` refuses have to be one
+    // predicate, or a card appears for a pair the session then rejects.
+    // Ordered by QUIZ_THEME_IDS rather than by count — the picker is a table of
+    // contents and must not reshuffle as the bank grows.
+    playableThemeIds: QUIZ_THEME_IDS.filter((themeId) =>
+      isPlayableScope(option.questionCountByTheme?.[themeId] ?? 0)
+    ),
   };
 }
 
@@ -76,6 +84,11 @@ export async function getQuizScopesHandler(): Promise<
     labelFr: CORPUS_SCOPE_LABELS_FR[id],
     activeQuestionCount: catalogue.totalActiveQuestionCount,
     playable: isPlayableScope(catalogue.totalActiveQuestionCount),
+    // A whole-corpus track can play whatever the corpus itself can play, so
+    // this reads the same totals the `themes` axis is built from.
+    playableThemeIds: catalogue.themes
+      .filter((theme) => isPlayableScope(theme.activeQuestionCount))
+      .map((theme) => theme.id),
   });
 
   return createApiResponse({
