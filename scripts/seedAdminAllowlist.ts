@@ -1,7 +1,7 @@
 /**
  * Put an address on the moderation allowlist.
  *
- *   npx tsx scripts/seedAdminAllowlist.ts moderatrice@example.org "Rédactrice en chef"
+ *   npx tsx scripts/seedAdminAllowlist.ts moderation@example.org "Responsable éditorial de la modération"
  *
  * This is the bootstrap problem the allowlist creates and the reason it is
  * solved here rather than in the product: nobody can open the console until an

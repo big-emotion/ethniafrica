@@ -92,17 +92,43 @@ describe("middleware", () => {
     });
   });
 
-  // The atlas has no public accounts any more: reporting costs none, and the
-  // console authorizes an address rather than a role. `/fr/compte/*` is gone,
-  // and the middleware must not keep a gate standing in front of nothing.
+  /**
+   * The atlas has no public accounts any more: reporting costs none, and the
+   * console authorizes an address rather than a role. `/fr/compte/*` was
+   * published and is in readers' history — moderators' especially, since the
+   * middleware used to send them there to sign in — so it is relocated rather
+   * than left to 404.
+   */
   describe("retired account routes", () => {
-    // @req REQ-042
-    it("no longer guards /fr/compte/profil", async () => {
-      const request = new NextRequest("http://localhost:3000/fr/compte/profil");
-      const response = await middleware(request);
+    // @req REQ-091
+    it.each([
+      ["/fr/compte/connexion", "/fr/admin/connexion"],
+      ["/fr/compte/cles-api", "/fr/admin/cles-api"],
+      // Nothing to register for and no profile to hold: both land on the one
+      // sign-in left, which says reporting needs no account.
+      ["/fr/compte/inscription", "/fr/admin/connexion"],
+      ["/fr/compte/profil", "/fr/admin/connexion"],
+    ])("relocates %s to %s in one hop", async (legacy, current) => {
+      const response = await middleware(
+        new NextRequest(`http://localhost:3000${legacy}`)
+      );
 
-      expect(response.status).toBe(200);
-      expect(response.headers.get("location")).toBeNull();
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        `http://localhost:3000${current}`
+      );
+    });
+
+    // @req REQ-091
+    it("relocates the bare /fr/compte onto the console", async () => {
+      const response = await middleware(
+        new NextRequest("http://localhost:3000/fr/compte")
+      );
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/admin"
+      );
     });
   });
 

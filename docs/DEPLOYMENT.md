@@ -305,7 +305,7 @@ have the person request a link at `/fr/admin/connexion`:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
-  npx tsx scripts/seedAdminAllowlist.ts moderatrice@example.org "Rédactrice en chef"
+  npx tsx scripts/seedAdminAllowlist.ts moderation@example.org "Responsable éditorial de la modération"
 ```
 
 The magic link only works once Supabase Auth's redirect allow-list carries this

@@ -37,11 +37,11 @@ describe("isEmailAllowlisted", () => {
   // @req REQ-042
   it("admits an address the allowlist holds", async () => {
     allowlistReturning({
-      data: { email: "moderatrice@example.org" },
+      data: { email: "moderation@example.org" },
       error: null,
     });
 
-    await expect(isEmailAllowlisted("moderatrice@example.org")).resolves.toBe(
+    await expect(isEmailAllowlisted("moderation@example.org")).resolves.toBe(
       true
     );
   });
@@ -58,13 +58,13 @@ describe("isEmailAllowlisted", () => {
   // @req REQ-042
   it("looks the address up trimmed of surrounding space", async () => {
     const { query } = allowlistReturning({
-      data: { email: "moderatrice@example.org" },
+      data: { email: "moderation@example.org" },
       error: null,
     });
 
-    await isEmailAllowlisted("  moderatrice@example.org  ");
+    await isEmailAllowlisted("  moderation@example.org  ");
 
-    expect(query.eq).toHaveBeenCalledWith("email", "moderatrice@example.org");
+    expect(query.eq).toHaveBeenCalledWith("email", "moderation@example.org");
   });
 
   // @req REQ-042
@@ -83,7 +83,7 @@ describe("isEmailAllowlisted", () => {
       error: { message: "connection refused" },
     });
 
-    await expect(isEmailAllowlisted("moderatrice@example.org")).resolves.toBe(
+    await expect(isEmailAllowlisted("moderation@example.org")).resolves.toBe(
       false
     );
     expect(mocks.loggerError).toHaveBeenCalled();

@@ -158,6 +158,17 @@ export const RENAMED_MODULE_PATHS: Record<string, string> = {
   "dossiers/noms": "atlas/appellations",
   "dossiers/appellations": "atlas/appellations",
   "dossiers/doctrine": "doctrine",
+  // The two account pages with no successor. There is nothing to register for
+  // and no profile to hold, so both land on the one sign-in the atlas has left
+  // — the page that explains, in as many words, that reporting needs no
+  // account. A 404 would leave a reader to guess that.
+  //
+  // Keyed `admin/...` and not `compte/...` on purpose: RELOCATED_SEGMENTS has
+  // already rewritten `compte` to `admin` by the time this table is consulted,
+  // exactly as the `dossiers/` keys above are reached already half-rewritten
+  // from `comprendre/`.
+  "admin/inscription": "admin/connexion",
+  "admin/profil": "admin/connexion",
 };
 
 /**
@@ -226,6 +237,13 @@ export const RELOCATED_SEGMENTS: Record<string, string> = {
   migrations: "dossiers/migrations",
   regards: "dossiers/regards",
   quiz: "jeux/quiz",
+  // The account area, retired with the public accounts themselves. The subtree
+  // maps cleanly onto the admin one — `connexion` and `cles-api` both have a
+  // successor there — and the two pages that have none, `inscription` and
+  // `profil`, are caught by RENAMED_MODULE_PATHS below. This address is in
+  // moderators' history for a specific reason: until now the middleware sent
+  // them here to sign in.
+  compte: "admin",
   // English spellings, published by V1 and still linked from outside.
   countries: "atlas/pays",
   families: "atlas/familles",

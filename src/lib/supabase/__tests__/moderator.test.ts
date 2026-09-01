@@ -61,7 +61,7 @@ describe("getModeratorSession", () => {
 
   // @req REQ-042
   it("returns the session for an address the allowlist holds", async () => {
-    const user = signedInAs("moderatrice@example.org");
+    const user = signedInAs("moderation@example.org");
     mockIsEmailAllowlisted.mockResolvedValue(true);
 
     await expect(getModeratorSession()).resolves.toEqual({ user });
@@ -77,13 +77,13 @@ describe("getModeratorSession", () => {
 
   // @req REQ-042
   it("checks the address that is actually signed in", async () => {
-    signedInAs("moderatrice@example.org");
+    signedInAs("moderation@example.org");
     mockIsEmailAllowlisted.mockResolvedValue(true);
 
     await getModeratorSession();
 
     expect(mockIsEmailAllowlisted).toHaveBeenCalledWith(
-      "moderatrice@example.org"
+      "moderation@example.org"
     );
   });
 

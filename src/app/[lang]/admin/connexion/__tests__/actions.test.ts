@@ -47,9 +47,9 @@ describe("requestAdminSignInLink", () => {
   it("sends a link to an address the allowlist holds", async () => {
     mocks.isEmailAllowlisted.mockResolvedValue(true);
 
-    await expect(submit("moderatrice@example.org")).resolves.toEqual(NEUTRAL);
+    await expect(submit("moderation@example.org")).resolves.toEqual(NEUTRAL);
     expect(mocks.signInWithOtp).toHaveBeenCalledWith({
-      email: "moderatrice@example.org",
+      email: "moderation@example.org",
       options: {
         shouldCreateUser: true,
         emailRedirectTo:
@@ -70,7 +70,7 @@ describe("requestAdminSignInLink", () => {
   // @req REQ-042
   it("answers a stranger and a moderator with the very same words", async () => {
     mocks.isEmailAllowlisted.mockResolvedValue(true);
-    const allowed = await submit("moderatrice@example.org");
+    const allowed = await submit("moderation@example.org");
 
     mocks.isEmailAllowlisted.mockResolvedValue(false);
     const refused = await submit("passante@example.org");
@@ -85,7 +85,7 @@ describe("requestAdminSignInLink", () => {
       error: { message: "rate limit exceeded" },
     });
 
-    await expect(submit("moderatrice@example.org")).resolves.toEqual(NEUTRAL);
+    await expect(submit("moderation@example.org")).resolves.toEqual(NEUTRAL);
   });
 
   // @req REQ-042
@@ -101,10 +101,10 @@ describe("requestAdminSignInLink", () => {
   it("looks up the address trimmed of surrounding space", async () => {
     mocks.isEmailAllowlisted.mockResolvedValue(true);
 
-    await submit("  moderatrice@example.org  ");
+    await submit("  moderation@example.org  ");
 
     expect(mocks.isEmailAllowlisted).toHaveBeenCalledWith(
-      "moderatrice@example.org"
+      "moderation@example.org"
     );
   });
 });
