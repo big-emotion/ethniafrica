@@ -18,6 +18,7 @@ import {
   decodeFlagCursor,
   encodeFlagCursor,
   getAuthenticatedContributor,
+  getContributorEmail,
   getFlagByIdOrSlug,
   listFlags,
 } from "../flags";
@@ -131,6 +132,65 @@ describe("getAuthenticatedContributor", () => {
       "Failed to authenticate flag contributor",
       error
     );
+  });
+});
+
+describe("getContributorEmail", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-015
+  it("resolves the contributor's email via the admin API (ETNI-73)", async () => {
+    const getUserById = vi.fn().mockResolvedValue({
+      data: { user: { email: "reader@example.org" } },
+      error: null,
+    });
+    mocks.createAdminClient.mockReturnValue({
+      auth: { admin: { getUserById } },
+    });
+
+    await expect(getContributorEmail("user-123")).resolves.toBe(
+      "reader@example.org"
+    );
+    expect(getUserById).toHaveBeenCalledWith("user-123");
+  });
+
+  // @req REQ-015
+  it("returns null and logs when Supabase rejects the lookup", async () => {
+    const error = { message: "user not found" };
+    mocks.createAdminClient.mockReturnValue({
+      auth: {
+        admin: {
+          getUserById: vi
+            .fn()
+            .mockResolvedValue({ data: { user: null }, error }),
+        },
+      },
+    });
+
+    await expect(getContributorEmail("user-123")).resolves.toBeNull();
+    expect(mocks.loggerError).toHaveBeenCalledWith(
+      "Failed to resolve contributor email for flag notification",
+      error,
+      { contributorId: "user-123" }
+    );
+  });
+
+  // @req REQ-015
+  it("returns null when the user carries no email", async () => {
+    mocks.createAdminClient.mockReturnValue({
+      auth: {
+        admin: {
+          getUserById: vi.fn().mockResolvedValue({
+            data: { user: { email: null } },
+            error: null,
+          }),
+        },
+      },
+    });
+
+    await expect(getContributorEmail("user-123")).resolves.toBeNull();
   });
 });
 

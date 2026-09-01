@@ -414,3 +414,30 @@ const TERMINAL_STATUSES: ReadonlyArray<FlagStatus> = [
   "withdrawn",
   "duplicate",
 ];
+
+/**
+ * The contributor's email for a resolution notification (ETNI-73).
+ *
+ * `flags.contributor_id` references `auth.users`, which carries no public
+ * table of its own — the admin API is the only way to read an email off it,
+ * and it is deliberately the service-role client, same as the rest of this
+ * file's moderator-only reads.
+ */
+// @req REQ-015
+export async function getContributorEmail(
+  contributorId: string
+): Promise<string | null> {
+  const supabase = createAdminClient();
+  const { data, error } = await supabase.auth.admin.getUserById(contributorId);
+
+  if (error) {
+    logger.error(
+      "Failed to resolve contributor email for flag notification",
+      error,
+      { contributorId }
+    );
+    return null;
+  }
+
+  return data?.user?.email ?? null;
+}
