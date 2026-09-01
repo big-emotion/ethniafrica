@@ -213,6 +213,17 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
+> the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:
+> when `content->'historicalAffiliation'` is present, it carries a non-empty `description` and a
+> non-empty `sources` array whose every entry has a `tier` from the corpus-wide
+> `official`/`referenced`/`unverified` vocabulary. It is independent of `recompute_confidence()`
+> and the assertions/sources tables — `historicalAffiliation` is a fiche-content field, not a
+> normalized source row, so it does not participate in confidence scoring. File `071` is omitted
+> from this table (added after the last full read, same as `050`/`064`/`065`/`067`); `072` is the
+> next free version on `recette`.
 
 > **REQ-002 (ETNI-1707).** `069` is the blocking SQL contract behind cross-kind search. It adds
 > `public.afrik_search_normalized_score`, which maps each kind's own relevance onto one bounded

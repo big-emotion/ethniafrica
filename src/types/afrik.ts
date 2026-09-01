@@ -309,6 +309,17 @@ export interface PeopleContent {
   // Section 4: Languages and sub-families
   languages?: LanguagesSection;
 
+  /**
+   * The historical, non-linguistic link to Africa (REQ-127) — for a people
+   * such as a Creole-speaking group, where Glottolog classifies the language
+   * under the family of its lexifier and never under an African family.
+   * Distinct from `languageFamilyId`, which keeps reflecting Glottolog's
+   * classification unchanged; this field never substitutes for it, and is
+   * absent for the ordinary case of a fiche with a defensible linguistic
+   * affiliation. See `public/DIRECTIVES-AFRIK.md` §12.
+   */
+  historicalAffiliation?: HistoricalAffiliationSection;
+
   // Section 5: Culture, rites, traditions
   culture?: DetailedCultureSection;
 
@@ -483,6 +494,18 @@ export interface LanguagesSection {
   isoCodes?: LanguageId[];
   dialects?: string[];
   vehicularRole?: string;
+}
+
+/**
+ * `content.historicalAffiliation` (REQ-127) — sourced and tiered
+ * independently of the fiche's other `sources`, so a Creole people fiche can
+ * carry a defensible historical link to Africa without fabricating the
+ * linguistic filiation Glottolog will not support. See
+ * `PeopleContent.historicalAffiliation` for the full editorial rationale.
+ */
+export interface HistoricalAffiliationSection {
+  description: string;
+  sources: FicheSource[];
 }
 
 /**

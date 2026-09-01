@@ -170,3 +170,36 @@ soit le format étendu (`DetailedCultureSection` — sous-sections A à F).
 ```
 
 Les deux formats sont valides. Choisir selon la richesse des données disponibles.
+
+---
+
+## 12. Filiation historique (`historicalAffiliation`) — REQ-127
+
+Glottolog classe chaque créole sous la famille de son lexifieur, jamais sous une famille
+africaine. Forcer une filiation linguistique fabriquerait une filiation qu'aucune source
+savante ne soutient. Le champ `historicalAffiliation` est distinct de la famille
+linguistique et ne s'y substitue jamais.
+
+Cette section n'existe que pour un peuple sans filiation linguistique défendable vers une
+famille africaine (typiquement, un peuple créolophone) : `languageFamilyId` continue de
+refléter, sans changement, la classification Glottolog sous le lexifieur. Pour tout autre
+peuple, la section est omise entièrement — son absence n'est pas une lacune du corpus, elle
+signale que la question ne se pose pas.
+
+Quand elle est présente, `historicalAffiliation` porte ses propres sources, sourcées et
+tierées indépendamment du tableau `sources` du reste de la fiche :
+
+```json
+✅  "historicalAffiliation": {
+      "description": "Peuple afro-descendant formé par la traite transatlantique...",
+      "sources": [
+        {
+          "title": "UNESCO — Mémoire du monde, route des esclaves",
+          "url": "https://www.unesco.org/en/memory-world",
+          "tier": "official"
+        }
+      ]
+    }
+❌  "historicalAffiliation": { "description": "..." }              // sources manquantes
+❌  "languageFamilyId": "FLG_AFRICAN_FAMILY"                        // jamais forcé pour un créole
+```
