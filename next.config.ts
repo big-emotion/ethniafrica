@@ -6,7 +6,16 @@ const nextConfig: NextConfig = {
   // node_modules: the runner stage copies `.next/standalone` and nothing else.
   // Removing this makes the image start and then fail on the first require of a
   // dependency that was never copied.
-  output: "standalone",
+  //
+  // Vercel is the one target that must not get it. Its builder runs its own
+  // output tracing in `onBuildComplete` and reads `.next/next-server.js.nft.json`;
+  // a standalone build does not leave that file where it looks, so every recette
+  // preview build has died on `ENOENT … next-server.js.nft.json` since standalone
+  // landed in 77eb1f0a. The same commit is why recette then froze on a build
+  // predating it — and froze with a Supabase anon key that was disabled hours
+  // later, which is what took the atlas surface down. `VERCEL` is set by the
+  // platform itself, so nothing has to be configured for this to hold.
+  output: process.env.VERCEL ? undefined : "standalone",
   experimental: {
     authInterrupts: true,
   },
