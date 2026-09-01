@@ -438,6 +438,30 @@ describe("mapSearchCounts", () => {
   });
 
   // @req REQ-124
+  it("sums the five displayed lenses for 'all' rather than reading data.total, so a patronyme match cannot inflate it past the visible chips", () => {
+    const counts = mapSearchCounts({
+      data: {
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        languagesTotal: 5,
+        personsTotal: 1,
+        patronymesTotal: 7,
+        total: 30,
+      },
+    });
+
+    expect(counts).toEqual({
+      all: 23,
+      people: 12,
+      country: 3,
+      languageFamily: 2,
+      language: 5,
+      person: 1,
+    });
+  });
+
+  // @req REQ-124
   it("defaults every count to zero when a total is missing, an array data, or no data", () => {
     const zero = {
       all: 0,

@@ -262,8 +262,11 @@ function numberOrZero(value: unknown): number {
 
 /**
  * Corpus-wide match counts, one per lens (REQ-124). Read straight off the
- * totals `shapeSearchData` (handlers/search.ts) already computes — `total`
- * there already excludes the quiz stream, so `all` needs no re-summing here.
+ * totals `shapeSearchData` (handlers/search.ts) already computes. `all` is
+ * the sum of the five lenses shown here, not `data.total` — that field also
+ * folds in `patronymesTotal`, and there is no patronyme lens or result card,
+ * so reading it directly would let "Tout (N)" exceed the sum of the visible
+ * chips whenever a nom matches.
  */
 // @req REQ-124
 export function mapSearchCounts(envelope: unknown): SearchLensCounts {
@@ -271,13 +274,18 @@ export function mapSearchCounts(envelope: unknown): SearchLensCounts {
   if (!data || Array.isArray(data)) return { ...EMPTY_SEARCH_LENS_COUNTS };
 
   const row = data as Record<string, unknown>;
+  const people = numberOrZero(row.peoplesTotal);
+  const country = numberOrZero(row.countriesTotal);
+  const languageFamily = numberOrZero(row.familiesTotal);
+  const language = numberOrZero(row.languagesTotal);
+  const person = numberOrZero(row.personsTotal);
   return {
-    all: numberOrZero(row.total),
-    people: numberOrZero(row.peoplesTotal),
-    country: numberOrZero(row.countriesTotal),
-    languageFamily: numberOrZero(row.familiesTotal),
-    language: numberOrZero(row.languagesTotal),
-    person: numberOrZero(row.personsTotal),
+    all: people + country + languageFamily + language + person,
+    people,
+    country,
+    languageFamily,
+    language,
+    person,
   };
 }
 
