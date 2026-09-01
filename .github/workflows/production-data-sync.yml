@@ -1,7 +1,16 @@
 name: Production AFRIK Data Sync
 
+# Chained to the OVH deploy, not to a Vercel deployment_status. Production left Vercel,
+# so `vercel[bot]` will never create a deployment for it again and this workflow would
+# simply have stopped running — silently, with a green board and a corpus frozen at
+# whatever the last Vercel deploy loaded.
+#
+# workflow_run only fires for a workflow file that lives on the default branch, so this
+# file has to reach `main` for the chain to work at all; on `recette` alone it is inert.
 on:
-  deployment_status:
+  workflow_run:
+    workflows: ["Deploy Production (OVH)"]
+    types: [completed]
 
 concurrency:
   group: production-afrik-data-sync
@@ -12,14 +21,14 @@ permissions:
 
 jobs:
   sync:
-    if: >-
-      github.event.deployment_status.state == 'success' &&
-      github.event.deployment.environment == 'Production' &&
-      github.event.deployment.creator.login == 'vercel[bot]'
+    # `types: [completed]` fires on failure and cancellation too. Loading the corpus into
+    # production after a deploy that did not land would sync data to a version of the
+    # application that is not running.
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      # This job runs on a Vercel *Production* deploy of `main` and revalidates
+      # This job runs after a successful OVH production deploy and revalidates
       # ethniafrica.com, so every credential here must be the production project's.
       #
       # It used to hard-code the recette project ref, because the constant it read was
@@ -40,12 +49,15 @@ jobs:
       - name: Check out the deployed commit
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.deployment.sha }}
+          ref: ${{ github.event.workflow_run.head_sha }}
           fetch-depth: 0
 
+      # The deploy is keyed on a published Release, whose tag can in principle point at a
+      # commit that never reached main. Syncing the corpus for such a commit would load a
+      # corpus state nobody integrated.
       - name: Verify the deployed commit belongs to main
         env:
-          DEPLOYED_SHA: ${{ github.event.deployment.sha }}
+          DEPLOYED_SHA: ${{ github.event.workflow_run.head_sha }}
         run: git merge-base --is-ancestor "$DEPLOYED_SHA" origin/main
 
       - name: Set up Node.js

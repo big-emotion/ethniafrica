@@ -5,11 +5,16 @@ name: Apply Migrations — Recette
 # their pull requests merged while neither was live on any database, and the
 # corpora that depended on them loaded zero rows until somebody checked by hand.
 #
-# This closes that gap for recette. A merge into `recette` deploys the code via
-# Vercel and applies the pending migrations here, in the same beat. Production
-# stays deliberately manual — the two-step rollout rule is recette first, verify
-# on the recette application, then production — so this workflow never touches
-# the production project.
+# This closes that gap for recette: a merge into `recette` applies the pending
+# migrations here, unprompted. It no longer arrives in the same beat as a deploy —
+# `vercel.json` turned Vercel's automatic deployments off, so the recette preview
+# is now built on demand by deploy-preview-recette.yml. The schema therefore moves
+# ahead of the running preview until someone asks for a build, which is the safe
+# ordering of the two and the one the two-step rollout rule already assumes.
+#
+# Production stays deliberately manual — recette first, verify on the recette
+# application, then production — so this workflow never touches the production
+# project.
 
 on:
   push:

@@ -1,0 +1,134 @@
+name: Deploy Production (OVH)
+
+# Publishing a GitHub Release is the only thing that deploys production.
+#
+# Not `push: tags`. A tag can be pushed by accident, moved, or created by tooling that
+# has no intention of shipping; `release: published` is a deliberate, auditable act with
+# a name, notes and an author attached. `/ethniafrica-release` therefore pushes the tag
+# first and creates the Release second — the tag alone changes nothing on the VPS.
+#
+# There is no `workflow_dispatch` here on purpose. A production deploy that can be
+# started from a dropdown is a production deploy that happens without a release to point
+# at afterwards. Rolling back is a host-side operation, documented in
+# docs/runbooks/ovh-production-deploy.md, not a re-run of this workflow.
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    # A pre-release is a release too as far as GitHub is concerned. Shipping `v1.2.0-rc.1`
+    # to ethniafrica.com because someone ticked "pre-release" would be a surprise.
+    if: github.event.release.prerelease == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: production
+      url: https://ethniafrica.com
+
+    steps:
+      # The runner never checks the code out. The VPS holds the clone and builds the
+      # image itself, so the only credential this workflow carries is an SSH key — no
+      # Supabase keys, no Sentry token, nothing that could leak into a job log.
+      - name: Open an SSH session to the OVH VPS
+        env:
+          SSH_KEY: ${{ secrets.PRODUCTION_OVH_SSH_KEY }}
+          SSH_HOST: ${{ secrets.PRODUCTION_OVH_SSH_HOST }}
+          SSH_PORT: ${{ secrets.PRODUCTION_OVH_SSH_PORT }}
+          SSH_KNOWN_HOSTS: ${{ secrets.PRODUCTION_OVH_SSH_KNOWN_HOSTS }}
+        run: |
+          : "${SSH_KEY:?PRODUCTION_OVH_SSH_KEY is not set — see docs/runbooks/ovh-production-deploy.md}"
+          : "${SSH_HOST:?PRODUCTION_OVH_SSH_HOST is not set}"
+          # sshd does not listen on 22 on this host, and the known_hosts entry is keyed
+          # `[host]:port` — a default of 22 would fail host-key verification, not merely
+          # fail to connect.
+          : "${SSH_PORT:?PRODUCTION_OVH_SSH_PORT is not set}"
+          : "${SSH_KNOWN_HOSTS:?PRODUCTION_OVH_SSH_KNOWN_HOSTS is not set — pinning the host key is what stops this job from handing the deploy key to whoever answers on that address}"
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Build and start the release on the VPS
+        env:
+          SSH_HOST: ${{ secrets.PRODUCTION_OVH_SSH_HOST }}
+          SSH_USER: ${{ secrets.PRODUCTION_OVH_SSH_USER }}
+          SSH_PORT: ${{ secrets.PRODUCTION_OVH_SSH_PORT }}
+          # github.event.release.tag_name, never github.ref_name: the workflow is keyed
+          # on the Release, and this is the tag that Release actually names.
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          # The tag ends up inside a command string interpreted by the remote shell. Git
+          # permits characters there that a shell would read as syntax, so it is matched
+          # against the shape /ethniafrica-release actually produces rather than trusted.
+          case "$RELEASE_TAG" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "refusing to deploy an unexpected tag shape: $RELEASE_TAG"; exit 1 ;;
+          esac
+
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" -o BatchMode=yes "$SSH_USER@$SSH_HOST" \
+            "RELEASE_TAG='$RELEASE_TAG' bash -s" <<'REMOTE'
+          set -euo pipefail
+
+          cd /srv/ethniafrica
+
+          # A detached checkout of the exact released tag. Not `git pull`: that would
+          # deploy whatever main has drifted to since the Release was cut, which is the
+          # opposite of what publishing a Release is supposed to mean.
+          git fetch --tags --force origin
+          git checkout --force "$RELEASE_TAG"
+
+          # Name the outgoing image before the build overwrites `:live`, so the rollback
+          # in the runbook has something to point at. Only one generation is kept: after
+          # two deploys in a row the version before last is gone, and rolling back that
+          # far means rebuilding from its tag — the runbook covers both.
+          if docker image inspect ethniafrica:live >/dev/null 2>&1; then
+            docker image tag ethniafrica:live ethniafrica:previous
+          fi
+
+          # BuildKit reads the build_env secret from /srv/ethniafrica/.env, which never
+          # leaves the host. compose recreates the container because the image ID behind
+          # `:live` changed, even though the tag did not.
+          docker compose build ethniafrica
+          docker compose up -d --no-deps ethniafrica
+          REMOTE
+
+      - name: Wait for the new container to answer
+        env:
+          SSH_HOST: ${{ secrets.PRODUCTION_OVH_SSH_HOST }}
+          SSH_USER: ${{ secrets.PRODUCTION_OVH_SSH_USER }}
+          SSH_PORT: ${{ secrets.PRODUCTION_OVH_SSH_PORT }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" -o BatchMode=yes "$SSH_USER@$SSH_HOST" 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          cd /srv/ethniafrica
+
+          # Polls the container directly rather than the public hostname: this has to
+          # report on the deploy, not on DNS, Traefik or a CDN in front of them.
+          for attempt in $(seq 1 30); do
+            if docker compose exec -T ethniafrica node -e \
+                 "fetch('http://127.0.0.1:3000/fr').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"; then
+              echo "container answered on attempt $attempt"
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "the new container never answered on /fr — rolling back is a host-side"
+          echo "operation, see docs/runbooks/ovh-production-deploy.md"
+          docker compose logs --tail=100 ethniafrica
+          exit 1
+          REMOTE
+
+      - name: Revoke the deploy key from the runner
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
