@@ -131,6 +131,50 @@ describe("the peoples facet's reading", () => {
     });
     expect(index).toHaveLength(1);
   });
+
+  it("hands list and globe the same trimmed text search", async () => {
+    const filters = {
+      familyId: "FLG_NIGER_CONGO",
+      countryId: "GHA",
+      letter: "A",
+      search: "  akan  ",
+    };
+
+    await getPeoplesFacetPage(1, filters);
+    await getPeoplesFacetCountryIndex(filters);
+
+    const expected = {
+      search: "akan",
+      languageFamilyId: "FLG_NIGER_CONGO",
+      countryId: "GHA",
+      initialLetter: "A",
+    };
+    expect(mockGetPaginated).toHaveBeenCalledWith(
+      1,
+      PEOPLES_FACET_PER_PAGE,
+      expected
+    );
+    expect(mockGetCountryIndex).toHaveBeenCalledWith(expected);
+  });
+
+  it("leaves a whitespace-only search out of both database queries", async () => {
+    const filters = {
+      familyId: null,
+      countryId: null,
+      letter: null,
+      search: "   ",
+    };
+
+    await getPeoplesFacetPage(1, filters);
+    await getPeoplesFacetCountryIndex(filters);
+
+    expect(mockGetPaginated).toHaveBeenCalledWith(
+      1,
+      PEOPLES_FACET_PER_PAGE,
+      {}
+    );
+    expect(mockGetCountryIndex).toHaveBeenCalledWith({});
+  });
 });
 
 describe("the peoples facet's filter choices", () => {

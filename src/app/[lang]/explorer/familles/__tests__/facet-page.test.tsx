@@ -34,10 +34,17 @@ vi.mock("next/navigation", () => ({
  * contract to test, not this route's.
  */
 vi.mock("@/components/hubs/facets/FacetCountryIndex", () => ({
-  PublishFacetCountryIndex: ({ index }: { index: unknown }) => (
+  PublishFacetCountryIndex: ({
+    index,
+    narrowing,
+  }: {
+    index: unknown;
+    narrowing: unknown;
+  }) => (
     <div
       data-testid="published-country-index"
       data-index={JSON.stringify(index)}
+      data-narrowing={JSON.stringify(narrowing)}
     />
   ),
 }));
@@ -100,6 +107,13 @@ function publishedIndex(): Record<
   const raw = screen
     .getByTestId("published-country-index")
     .getAttribute("data-index");
+  return JSON.parse(raw ?? "{}");
+}
+
+function publishedNarrowing(): Record<string, string> {
+  const raw = screen
+    .getByTestId("published-country-index")
+    .getAttribute("data-narrowing");
   return JSON.parse(raw ?? "{}");
 }
 
@@ -221,6 +235,137 @@ describe("the families facet", () => {
       FAMILIES_PER_PAGE,
       {}
     );
+  });
+
+  it("matches a family name without accents and keeps list and globe on that selection", async () => {
+    mockGetLanguageFamilies.mockResolvedValue({
+      data: [
+        { id: "FLG_MANDE", nameFr: "Mandé", peopleCount: 41, content: {} },
+      ],
+      total: 1,
+      unclassifiedPeoplesCount: 64,
+    });
+
+    render(await renderRoute({ q: "  mande  " }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: ["FLG_MANDE"],
+    });
+    expect(Object.keys(publishedIndex())).toEqual(["MLI"]);
+    expect(
+      screen.getByRole("searchbox", {
+        name: /rechercher une famille linguistique/i,
+      })
+    ).toHaveValue("mande");
+    expect(
+      within(screen.getByTestId("family-facet-list")).getAllByRole("link")
+    ).toHaveLength(1);
+  });
+
+  it("matches a family by its identifier", async () => {
+    render(await renderRoute({ q: "flg_bantu" }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: ["FLG_BANTU"],
+    });
+    expect(Object.keys(publishedIndex()).sort()).toEqual(["MOZ", "ZWE"]);
+  });
+
+  it("does not create a match across the identifier and name boundary", async () => {
+    mockGetLanguageFamilies.mockResolvedValue({
+      data: [],
+      total: 0,
+      unclassifiedPeoplesCount: 64,
+    });
+
+    render(await renderRoute({ q: "e m" }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: [],
+    });
+    expect(publishedIndex()).toEqual({});
+  });
+
+  it("collapses repeated spaces in a multiword family search", async () => {
+    render(await renderRoute({ q: "famille   0" }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: ["FLG_W0"],
+    });
+  });
+
+  it("intersects text search with the selected country", async () => {
+    mockGetLanguageFamilies.mockResolvedValue({
+      data: [],
+      total: 0,
+      unclassifiedPeoplesCount: 64,
+    });
+
+    render(await renderRoute({ q: "bantou", pays: "MLI" }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: [],
+    });
+    expect(publishedIndex()).toEqual({});
+  });
+
+  it("treats a whitespace-only q as no search", async () => {
+    render(await renderRoute({ q: "   " }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(
+      1,
+      FAMILIES_PER_PAGE,
+      {}
+    );
+  });
+
+  it("keeps q in page-size, paging, and globe addresses while form submit resets page", async () => {
+    render(await renderRoute({ q: "famille", page: "2" }));
+
+    const form = screen.getByTestId("facet-filter-bar") as HTMLFormElement;
+    const data = new FormData(form);
+    expect(data.get("q")).toBe("famille");
+    expect(data.get("page")).toBeNull();
+
+    const pageQuery = new URLSearchParams(
+      (
+        screen
+          .getAllByRole("link", { name: "Page 1" })[0]
+          .getAttribute("href") ?? ""
+      ).split("?")[1]
+    );
+    expect(pageQuery.get("q")).toBe("famille");
+
+    const sizeQuery = new URLSearchParams(
+      (
+        screen
+          .getByRole("link", { name: "24 par page" })
+          .getAttribute("href") ?? ""
+      ).split("?")[1]
+    );
+    expect(sizeQuery.get("q")).toBe("famille");
+
+    const globeQuery = new URLSearchParams(
+      publishedNarrowing().NGA.split("?")[1]
+    );
+    expect(globeQuery.get("q")).toBe("famille");
+    expect(globeQuery.get("pays")).toBe("NGA");
+  });
+
+  it("renders the existing empty state when search has no match", async () => {
+    mockGetLanguageFamilies.mockResolvedValue({
+      data: [],
+      total: 0,
+      unclassifiedPeoplesCount: 0,
+    });
+
+    render(await renderRoute({ q: "introuvable" }));
+
+    expect(mockGetLanguageFamilies).toHaveBeenCalledWith(1, FAMILIES_PER_PAGE, {
+      ids: [],
+    });
+    expect(screen.getByTestId("family-facet-empty")).toBeInTheDocument();
+    expect(publishedIndex()).toEqual({});
   });
 
   // @req REQ-114

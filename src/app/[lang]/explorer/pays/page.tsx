@@ -51,6 +51,7 @@ type PageSearchParams = Record<string, string | string[] | undefined>;
 
 /** The query parameters the facet's filters travel under, in the reader's own language. */
 const FAMILY_PARAM = "famille";
+const SEARCH_PARAM = "q";
 const SORT_PARAM = "tri";
 
 /**
@@ -95,17 +96,24 @@ export default async function PaysHubPage({
   }
 
   const chosenFamily = definedFilter(query[FAMILY_PARAM]);
+  const chosenSearch = definedFilter(query[SEARCH_PARAM]);
   const chosenSort = parseCountryFacetSort(definedFilter(query[SORT_PARAM]));
 
   const selection = await getCountryFacetSelection({
     languageFamilyId: chosenFamily,
+    ...(chosenSearch ? { search: chosenSearch } : {}),
     sort: chosenSort,
   });
 
   /** The facet under the current family, with the order back to its default. */
-  const withoutSort = chosenFamily
-    ? `${getFacetRoute("fr", "countries")}?${new URLSearchParams({ [FAMILY_PARAM]: chosenFamily })}`
-    : getFacetRoute("fr", "countries");
+  const withoutSortQuery = new URLSearchParams();
+  if (chosenSearch) withoutSortQuery.set(SEARCH_PARAM, chosenSearch);
+  if (chosenFamily) withoutSortQuery.set(FAMILY_PARAM, chosenFamily);
+  const countryFacetRoute = getFacetRoute("fr", "countries");
+  const withoutSortSearch = withoutSortQuery.toString();
+  const withoutSort = withoutSortSearch
+    ? `${countryFacetRoute}?${withoutSortSearch}`
+    : countryFacetRoute;
 
   // The index the shared map reads is built from the *filtered* rows, never
   // from the corpus behind them: publishing everything would make a click on
@@ -144,8 +152,14 @@ export default async function PaysHubPage({
 
         <section className="afh-facet-reading-section">
           <FacetFilterBar
-            action={getFacetRoute("fr", "countries")}
+            action={countryFacetRoute}
             submitLabel="Appliquer"
+            searchField={{
+              name: SEARCH_PARAM,
+              label: "Rechercher un pays",
+              placeholder: "Nom ou identifiant du pays",
+              value: chosenSearch,
+            }}
             primaryField={{
               name: FAMILY_PARAM,
               label: "Famille linguistique",
@@ -184,7 +198,7 @@ export default async function PaysHubPage({
 
           {selection.rows.length === 0 ? (
             <p data-testid="country-facet-empty" className="mt-4">
-              Aucun pays du corpus ne porte cette famille linguistique.
+              Aucun pays du corpus ne répond à cette sélection.
             </p>
           ) : (
             // No pagination, and that is a decision rather than an omission:

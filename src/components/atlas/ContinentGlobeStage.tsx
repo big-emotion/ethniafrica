@@ -36,6 +36,11 @@ export interface ContinentGlobeStageProps {
   pinnedProjection?: "flat" | "sphere";
   /** Why the projection will not move. Required whenever it is pinned. */
   pinnedProjectionNote?: string;
+  /**
+   * The homepage treats the sphere as an editorial figure: its projection
+   * band follows the visual instead of covering it.
+   */
+  presentation?: "standard" | "hero";
 }
 
 /**
@@ -63,6 +68,7 @@ export function ContinentGlobeStage({
   peopleCountsByCountry,
   pinnedProjection,
   pinnedProjectionNote,
+  presentation = "standard",
 }: ContinentGlobeStageProps) {
   const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
 
@@ -90,7 +96,11 @@ export function ContinentGlobeStage({
   const overlay = buildContinentOverlay(peopleCountsByCountry);
 
   return (
-    <div className="home-globe-stage">
+    <div
+      className={`home-globe-stage${
+        presentation === "hero" ? " home-globe-stage--hero" : ""
+      }`}
+    >
       {webglSupported !== null && (
         <AtlasGlobe
           overlay={overlay}
@@ -98,6 +108,8 @@ export function ContinentGlobeStage({
           probedWebglSupport={webglSupported}
           pinnedProjection={pinnedProjection}
           pinnedProjectionNote={pinnedProjectionNote}
+          presentation={presentation === "hero" ? "editorial" : "standard"}
+          viewScale={presentation === "hero" ? 0.84 : 1}
           /* Tissot's indicatrices, as the engine deleted in ETNI-1360 drew
              them: on by default on the two surfaces that stand here. Both
              argue that a flat map lies about surface, and the discs are what
@@ -165,6 +177,12 @@ export function ContinentGlobeStage({
              (470/520, space.css) is shorter than the floors below. Left alone,
              the box and the figure inside it disagree at every breakpoint. */
           --afh-globe-stage-height: 560px;
+        }
+        /* The external range is absolutely anchored immediately after the
+           visual stage. Reserving its height here keeps the counters from
+           climbing underneath it on narrow screens. */
+        .home-globe-stage--hero {
+          padding-bottom: 128px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {

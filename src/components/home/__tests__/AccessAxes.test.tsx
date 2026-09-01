@@ -106,7 +106,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     const heading = screen.getByTestId("home-axes-heading");
     expect(heading.tagName).toBe("H2");
     expect(heading).toHaveTextContent(
-      "Trois entrées, selon ce que vous cherchez."
+      "Trois chemins, selon ce que vous cherchez."
     );
     expect(screen.queryByTestId("access-axes-lead")).toBeNull();
     expect(screen.queryByText(/Avec quoi le lecteur/)).toBeNull();

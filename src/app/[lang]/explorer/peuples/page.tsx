@@ -57,6 +57,7 @@ type PageSearchParams = Record<string, string | string[] | undefined>;
 
 /** Query parameters, named as the reader sees them in the address bar. */
 const PARAM = {
+  search: "q",
   family: "famille",
   country: "pays",
   letter: "lettre",
@@ -78,6 +79,7 @@ function facetHref(
   pageSize: number
 ): string {
   const query = new URLSearchParams();
+  if (filters.search) query.set(PARAM.search, filters.search);
   if (filters.familyId) query.set(PARAM.family, filters.familyId);
   if (filters.countryId) query.set(PARAM.country, filters.countryId);
   if (filters.letter) query.set(PARAM.letter, filters.letter);
@@ -114,10 +116,12 @@ export default async function PeuplesHubPage({
     permanentRedirect(fiche);
   }
 
+  const chosenSearch = definedFilter(query[PARAM.search]);
   const filters: PeoplesFacetFilters = {
     familyId: definedFilter(query[PARAM.family]),
     countryId: definedFilter(query[PARAM.country]),
     letter: definedFilter(query[PARAM.letter]),
+    ...(chosenSearch ? { search: chosenSearch } : {}),
   };
   const requestedPage = Number.parseInt(
     definedFilter(query[PARAM.page]) ?? "1",
@@ -231,6 +235,12 @@ export default async function PeuplesHubPage({
         <FacetFilterBar
           action={getFacetRoute("fr", "peoples")}
           className="mt-4"
+          searchField={{
+            name: PARAM.search,
+            label: "Rechercher un peuple",
+            placeholder: "Nom du peuple",
+            value: filters.search ?? null,
+          }}
           primaryField={{
             name: PARAM.country,
             label: "Pays",

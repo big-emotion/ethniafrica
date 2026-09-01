@@ -37,7 +37,7 @@ import type {
  * Language families rank on two independent signals rather than one SQL
  * query. Their name still ranks with a full fetch plus an accent-insensitive
  * substring/prefix tier computed here (normalizeString — REQ-129), because
- * `search_vector`'s French-stemmed matching (migration 055) does not carry
+ * `search_vector`'s French-stemmed matching (migration 056) does not carry
  * that accent-insensitivity and an ilike filter cannot either (it compares
  * characters literally, so it cannot fold "Mandé" onto "mande"). Their
  * decolonial text (content->decolonialHeader) ranks separately, by asking
