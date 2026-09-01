@@ -245,6 +245,88 @@ describe("name-record validator (FR53-FR57, Story 8.3)", () => {
 
       expect(checkNameRecordSources(tmpDir).ok).toBe(true);
     });
+
+    // @req REQ-032
+    it("checkNameRecordSources passes on the current string tier vocabulary (official), not just the retired numeric one", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              sources: [
+                {
+                  title: "T",
+                  author: "A",
+                  year: 2000,
+                  url: "https://www.ethnologue.com/language/xxx",
+                  tier: "official",
+                  notes: "",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      expect(checkNameRecordSources(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-032
+    it("checkNameRecordSources requires a cross-check note for a string-tier 'referenced' source, same as legacy tier 2", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              sources: [
+                {
+                  title: "T",
+                  author: "A",
+                  year: 2000,
+                  url: "https://fr.wikipedia.org/wiki/X",
+                  tier: "referenced",
+                  notes: "",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      const result = checkNameRecordSources(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("FR57-source"))).toBe(true);
+    });
+
+    // @req REQ-032
+    it("checkNameRecordSources treats a string-tier 'unverified' source as insufficient on its own", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              sources: [
+                {
+                  title: "T",
+                  author: "A",
+                  year: 2000,
+                  url: "https://example.org/x",
+                  tier: "unverified",
+                  notes: "",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      const result = checkNameRecordSources(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("FR57-source"))).toBe(true);
+    });
   });
 
   describe("FR54-endonym — every covered people has ≥1 endonym record", () => {

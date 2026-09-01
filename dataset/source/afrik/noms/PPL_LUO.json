@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_LUO",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Joluo",
+      "nameType": "endonym",
+      "languageOfOrigin": "luo",
+      "meaning": null,
+      "periodLabel": "Usage contemporain, auto-désignation (Jaluo au singulier)",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "En anglais kenyan courant, « Luo » désigne exclusivement ce peuple — aujourd'hui le quatrième groupe ethnique du Kenya (recensement KNBS 2019 : 5 066 966 personnes, 10,6 % de la population).",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "Ethnologue: Languages of the World — Dholuo (luo)",
+          "author": "SIL International",
+          "year": 2026,
+          "url": "https://www.ethnologue.com/language/luo/",
+          "tier": "official",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

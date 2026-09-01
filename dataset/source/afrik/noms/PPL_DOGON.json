@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_DOGON",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Dogon",
+      "nameType": "endonym",
+      "languageOfOrigin": null,
+      "meaning": null,
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme universellement utilisé en français, en anglais et par les institutions maliennes ; c'est aussi le terme que la communauté emploie pour se désigner elle-même. « Dogon » regroupe une douzaine de langues distinctes et non mutuellement intelligibles : l'unité qu'il nomme est culturelle et territoriale, pas strictement linguistique.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "UNESCO — Pays Dogon (patrimoine mondial)",
+          "author": "UNESCO World Heritage Centre",
+          "year": 1989,
+          "url": "https://whc.unesco.org/fr/list/516/",
+          "tier": "official",
+          "notes": "Année d'inscription du bien au patrimoine mondial ; atteste l'usage officiel international du nom « Dogon »."
+        }
+      ]
+    }
+  ]
+}

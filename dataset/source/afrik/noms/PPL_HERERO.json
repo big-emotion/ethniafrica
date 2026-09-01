@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_HERERO",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Ovaherero",
+      "nameType": "endonym",
+      "languageOfOrigin": "her",
+      "meaning": "Pluriel de OmuHerero, « possesseur de bétail » en otjiherero — reflet direct de l'identité pastorale du peuple, le bétail étant au centre de son économie et de sa culture.",
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Ovaherero est l'endonyme collectif préféré par la communauté elle-même dans les contextes internes.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Herero (her)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/her/",
+          "tier": "official",
+          "notes": "Référence le nom de la langue otjiherero et du peuple Ovaherero ; source déjà citée dans dataset/source/afrik/peuples/FLG_BANTU/PPL_HERERO.json."
+        }
+      ]
+    },
+    {
+      "nameText": "Herero",
+      "nameType": "exonym",
+      "languageOfOrigin": null,
+      "meaning": null,
+      "periodLabel": "Usage international depuis le contact colonial du XIXe siècle",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme universellement utilisé en anglais, en français et dans les médias internationaux ; à la différence d'autres exonymes coloniaux du corpus, aucune source ne documente de connotation péjorative attachée au mot lui-même — la violence coloniale que ce peuple a subie (génocide herero et nama, 1904-1908) porte sur d'autres registres que la dénomination.",
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Herero (her)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/her/",
+          "tier": "official",
+          "notes": "Ethnologue référence « Herero » comme nom usuel en anglais du peuple et de la langue."
+        }
+      ]
+    }
+  ]
+}
