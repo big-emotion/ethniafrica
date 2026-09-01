@@ -7,6 +7,11 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country } from "@/types/afrik";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
+import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
+import {
+  emptyLanguageLoadReport,
+  loadLanguages,
+} from "@/lib/afrik/loaders/languageProvenanceLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import {
   loadAllRelationFiles,
@@ -19,15 +24,30 @@ import {
 import { AFRIK_RECETTE_SUPABASE_URL } from "../lib/afrikSyncTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
+import type { LanguageRecord } from "@/lib/afrik/loaders/languageCsvLoader";
+import type { LanguageLoadReport } from "@/lib/afrik/loaders/languageProvenanceLoader";
 import type { RelationRecord } from "@/types/relations";
 import type { MigrationRecord } from "@/types/migrations";
 
 vi.mock("@/lib/afrik/loaders/languageFamilyLoader");
+vi.mock("@/lib/afrik/loaders/languageCsvLoader");
+vi.mock("@/lib/afrik/loaders/languageProvenanceLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
+
+function emptyLanguageReport(): LanguageLoadReport {
+  return {
+    total: 0,
+    inserted: 0,
+    sourced: 0,
+    derived: 0,
+    perFamily: {},
+    errors: [],
+  };
+}
 
 const PRODUCTION_URL = "https://ethniafrica-production.supabase.co";
 // JSON imports retain narrower inferred fields than the evolutionary AFRIK types.
@@ -119,6 +139,9 @@ describe("migrateAfrikToDatabase", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(loadAllLanguageFamilies).mockResolvedValue([familyFixture]);
+    vi.mocked(loadAllLanguages).mockReturnValue([]);
+    vi.mocked(emptyLanguageLoadReport).mockImplementation(emptyLanguageReport);
+    vi.mocked(loadLanguages).mockResolvedValue(emptyLanguageReport());
     vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture]);
     // A JSON import widens every string to `string`, so the fiche's
     // `sources[].tier` loses its literal type against FicheSource.
@@ -373,6 +396,51 @@ describe("migrateAfrikToDatabase", () => {
     });
     expect(loadRelations).toHaveBeenCalledWith(expect.anything(), [
       relationFixture,
+    ]);
+  });
+
+  // @req REQ-136
+  it("registers the language load step and reports the loader's result", async () => {
+    const languageFixture: LanguageRecord = {
+      id: "yor",
+      name: "Yoruba",
+      familyId: afroasiaticFamily.id,
+      nameProvenance: "sourced",
+    };
+    vi.mocked(loadAllLanguages).mockReturnValue([languageFixture]);
+    vi.mocked(loadLanguages).mockResolvedValue({
+      total: 1,
+      inserted: 1,
+      sourced: 1,
+      derived: 0,
+      perFamily: { [afroasiaticFamily.id]: 1 },
+      errors: [],
+    });
+    useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.languages).toMatchObject({
+      total: 1,
+      inserted: 1,
+      sourced: 1,
+      perFamily: { [afroasiaticFamily.id]: 1 },
+    });
+    expect(loadLanguages).toHaveBeenCalledWith(expect.anything(), [
+      languageFixture,
     ]);
   });
 
