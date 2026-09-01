@@ -528,7 +528,7 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
+            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match), languages by the same prefix/unaccent ranking with no confidence factor and an exact-match bonus that also fires on the ISO 639-3 id (migration 068, REQ-136). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
@@ -560,6 +560,12 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Matching names (REQ-135), ranked by afrik_search_patronymes (migration 066): exact name match, then a prefix/accent-insensitive lexical match, then a dmetaphone phonetic match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch and a snippet.",
             },
+            languages: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageSearchResultV2" },
+              description:
+                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match. Each carries relevance, exactMatch, familyName and a snippet.",
+            },
             peoplesTotal: {
               type: "integer",
               description:
@@ -586,10 +592,15 @@ const options: swaggerJsdoc.Options = {
               description: "Names (patronymes) matching corpus-wide",
               example: 0,
             },
+            languagesTotal: {
+              type: "integer",
+              description: "Languages matching corpus-wide",
+              example: 0,
+            },
             total: {
               type: "integer",
               description:
-                "Sum of the five corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+                "Sum of the six corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
             },
           },
@@ -599,11 +610,13 @@ const options: swaggerJsdoc.Options = {
             "families",
             "persons",
             "patronymes",
+            "languages",
             "peoplesTotal",
             "countriesTotal",
             "familiesTotal",
             "personsTotal",
             "patronymesTotal",
+            "languagesTotal",
             "total",
           ],
         },
@@ -928,6 +941,60 @@ const options: swaggerJsdoc.Options = {
             "nameMain",
             "nameSystem",
             "casteOrSocialFunction",
+            "content",
+            "relevance",
+            "exactMatch",
+            "snippet",
+          ],
+        },
+        LanguageSearchResultV2: {
+          type: "object",
+          description:
+            "A language search hit (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the accent/case-insensitive name, then a prefix/accent-insensitive lexical match over the weighted search_vector (migration 055) OR name_unaccent_vector (this migration).",
+          properties: {
+            id: {
+              type: "string",
+              description: "ISO 639-3 code",
+              example: "swa",
+            },
+            name: {
+              type: "string",
+              example: "Swahili",
+            },
+            familyId: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_NIGER_CONGO",
+            },
+            familyName: {
+              type: ["string", "null"],
+              example: "Niger-Congo",
+            },
+            content: {
+              type: "object",
+              description: "Evolutionary JSONB content, forwarded opaquely.",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              description:
+                'Fires on the ISO 639-3 id as well as on the name — a reader who types "swa" has named the language exactly as precisely as one who types "Swahili".',
+              example: false,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over name; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: [
+            "id",
+            "name",
+            "familyId",
+            "familyName",
             "content",
             "relevance",
             "exactMatch",

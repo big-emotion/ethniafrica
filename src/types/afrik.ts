@@ -722,18 +722,38 @@ export interface RankedPatronyme {
   snippet: string | null;
 }
 
+/**
+ * A language search hit (REQ-136). `familyName` is denormalised alongside
+ * `familyId` — same posture as `RankedPeople.languageFamilyName` — so a
+ * result card never has to issue a second fetch to render its family.
+ */
+export interface RankedLanguage {
+  id: LanguageId;
+  name: string;
+  familyId: LanguageFamilyId;
+  familyName: string | null;
+  content: LanguageContent;
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
 export interface FtsSearchResponse {
   peoples: RankedPeople[];
   countries: RankedCountry[];
   families: RankedLanguageFamily[];
   persons: RankedPerson[];
   patronymes: RankedPatronyme[];
+  languages: RankedLanguage[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
   patronymesTotal: number;
+  languagesTotal: number;
   total: number;
 }
 

@@ -99,6 +99,24 @@ function patronymeRow(
   };
 }
 
+function languageRow(
+  id: string,
+  name: string,
+  over: Record<string, unknown> = {}
+) {
+  return {
+    id,
+    name,
+    familyId: "FLG_NIGER_CONGO",
+    familyName: "Niger-Congo",
+    content: {},
+    relevance: 0.5,
+    exactMatch: false,
+    snippet: null,
+    ...over,
+  };
+}
+
 describe("ftsSearchEntities", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockSupabase: any;
@@ -108,6 +126,7 @@ describe("ftsSearchEntities", () => {
   let countriesPayload: { total: number; rows: unknown[] };
   let personsPayload: { total: number; rows: unknown[] };
   let patronymesPayload: { total: number; rows: unknown[] };
+  let languagesPayload: { total: number; rows: unknown[] };
   let personPeoplesRows: Record<string, unknown>[];
 
   beforeEach(() => {
@@ -117,6 +136,7 @@ describe("ftsSearchEntities", () => {
     countriesPayload = { total: 0, rows: [] };
     personsPayload = { total: 0, rows: [] };
     patronymesPayload = { total: 0, rows: [] };
+    languagesPayload = { total: 0, rows: [] };
     personPeoplesRows = [];
 
     rpc = vi.fn((fn: string) => {
@@ -128,6 +148,8 @@ describe("ftsSearchEntities", () => {
         return Promise.resolve({ data: personsPayload, error: null });
       if (fn === "afrik_search_patronymes")
         return Promise.resolve({ data: patronymesPayload, error: null });
+      if (fn === "afrik_search_languages")
+        return Promise.resolve({ data: languagesPayload, error: null });
       throw new Error(`unexpected rpc ${fn}`);
     });
 
@@ -832,6 +854,128 @@ describe("ftsSearchEntities", () => {
 
     const result = await ftsSearchEntities({
       q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.total).toBe(2);
+  });
+
+  // REQ-136: a language name reaches the language fiche through the unified
+  // search surface, not only the peoples that mention it.
+  // @req REQ-136
+  it("surfaces a language whose name matches the query", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [languageRow("swa", "Swahili", { exactMatch: true })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Swahili",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.languages.map((l) => l.name)).toEqual(["Swahili"]);
+    expect(result.languagesTotal).toBe(1);
+    expect(result.languages[0].familyName).toBe("Niger-Congo");
+  });
+
+  // REQ-136 AC: "a language name — or an ISO code" — a reader who types the
+  // ISO 639-3 id reaches the language exactly as precisely as one who types
+  // its name. The SQL function (migration 068) does the ISO-code matching;
+  // this only proves the query layer passes that row through untouched.
+  // @req REQ-136
+  it("surfaces a language matched by its ISO 639-3 code", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [languageRow("swa", "Swahili", { exactMatch: true })],
+    };
+
+    const result = await ftsSearchEntities({ q: "swa", limit: 20, offset: 0 });
+
+    expect(result.languages[0].id).toBe("swa");
+    expect(result.languages[0].exactMatch).toBe(true);
+  });
+
+  // @req REQ-136
+  it("calls afrik_search_languages with p_-prefixed named parameters", async () => {
+    await ftsSearchEntities({ q: "swahili", limit: 20, offset: 0 });
+
+    expect(rpc).toHaveBeenCalledWith(
+      "afrik_search_languages",
+      expect.objectContaining({ p_q: "swahili", p_limit: 20, p_offset: 0 })
+    );
+  });
+
+  // @req REQ-136
+  it("reports zero languages and an empty array when nothing matches", async () => {
+    const result = await ftsSearchEntities({
+      q: "nonexistent",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.languages).toEqual([]);
+    expect(result.languagesTotal).toBe(0);
+  });
+
+  // @req REQ-136
+  it("reports the corpus-wide language match count rather than the page size", async () => {
+    languagesPayload = {
+      total: 9,
+      rows: [languageRow("swa", "Swahili"), languageRow("lin", "Lingala")],
+    };
+
+    const result = await ftsSearchEntities({ q: "a", limit: 2, offset: 0 });
+
+    expect(result.languagesTotal).toBe(9);
+    expect(result.languages).toHaveLength(2);
+  });
+
+  // REQ-136 AC: "Given a language name and a people name that match a query
+  // equally well, when results are rendered, then both kinds are returned,
+  // grouped by kind, and neither is silently dropped." Ranking between kinds
+  // is the caller's job (exactMatch is the cross-kind sort key); this proves
+  // the query layer itself never drops or merges one kind in favour of the
+  // other.
+  // @req REQ-136
+  it("returns a language and a people that match equally well, grouped by kind, neither dropped", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [languageRow("kon", "Kongo", { exactMatch: true, relevance: 1 })],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_KONGO", "Kongo", { exactMatch: true })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Kongo",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.languages.map((l) => l.name)).toEqual(["Kongo"]);
+    expect(result.peoples.map((p) => p.nameMain)).toEqual(["Kongo"]);
+    expect(result.languagesTotal).toBe(1);
+    expect(result.peoplesTotal).toBe(1);
+    expect(result.total).toBe(2);
+  });
+
+  // @req REQ-136
+  it("counts languages in the reported total alongside the other natures", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [languageRow("swa", "Swahili", { exactMatch: true })],
+    };
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BAMBARA", "Bambara")],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Swahili",
       limit: 20,
       offset: 0,
     });

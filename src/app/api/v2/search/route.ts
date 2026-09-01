@@ -29,8 +29,12 @@
  *       (patronymes — migration 066, REQ-135) rank the same way, with
  *       patronymes additionally folding in a dmetaphone phonetic match so a
  *       misspelling like "Keyta" still reaches the canonical "Keïta". Both
- *       fall back to pg_trgm typo tolerance ahead of a no-match. Rate-limited
- *       per AR11 (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).
+ *       fall back to pg_trgm typo tolerance ahead of a no-match. Languages
+ *       (migration 068, REQ-136) rank the same prefix/accent-insensitive way,
+ *       with an exact-match bonus that also fires on the ISO 639-3 id — a
+ *       reader who types "swa" reaches Swahili exactly as precisely as one
+ *       who types its name. Rate-limited per AR11 (IP: 60 RPM, public key:
+ *       600 RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []

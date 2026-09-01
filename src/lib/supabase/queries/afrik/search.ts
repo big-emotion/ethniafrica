@@ -20,6 +20,7 @@ import type {
   FtsSearchResponse,
   LanguageFamily,
   RankedCountry,
+  RankedLanguage,
   RankedLanguageFamily,
   RankedPatronyme,
   RankedPeople,
@@ -82,6 +83,7 @@ export async function ftsSearchEntities(
     countryResult,
     personResult,
     patronymeResult,
+    languageResult,
     familyRows,
     familyProseMatchIds,
   ] = await Promise.all([
@@ -116,6 +118,13 @@ export async function ftsSearchEntities(
           p_offset: offset,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
+    text
+      ? supabase.rpc("afrik_search_languages", {
+          p_q: text,
+          p_limit: limit,
+          p_offset: offset,
+        })
+      : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     text ? searchAfrikLanguageFamilies() : Promise.resolve([]),
     text ? searchAfrikLanguageFamiliesByText(text) : Promise.resolve([]),
   ]);
@@ -136,11 +145,16 @@ export async function ftsSearchEntities(
     logger.error("Error in ranked patronymes search", patronymeResult.error);
     throw patronymeResult.error;
   }
+  if (languageResult.error) {
+    logger.error("Error in ranked languages search", languageResult.error);
+    throw languageResult.error;
+  }
 
   const peoplePayload = asRankedPayload(peopleResult.data);
   const countryPayload = asRankedPayload(countryResult.data);
   const personPayload = asRankedPayload(personResult.data);
   const patronymePayload = asRankedPayload(patronymeResult.data);
+  const languagePayload = asRankedPayload(languageResult.data);
 
   const peoples = peoplePayload.rows.map(toRankedPeople);
   const countries = countryPayload.rows.map(toRankedCountry);
@@ -157,6 +171,7 @@ export async function ftsSearchEntities(
     toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
   );
   const patronymes = patronymePayload.rows.map(toRankedPatronyme);
+  const languages = languagePayload.rows.map(toRankedLanguage);
 
   return {
     peoples,
@@ -164,17 +179,20 @@ export async function ftsSearchEntities(
     families,
     persons,
     patronymes,
+    languages,
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
     familiesTotal: families.length,
     personsTotal: personPayload.total,
     patronymesTotal: patronymePayload.total,
+    languagesTotal: languagePayload.total,
     total:
       peoplePayload.total +
       countryPayload.total +
       families.length +
       personPayload.total +
-      patronymePayload.total,
+      patronymePayload.total +
+      languagePayload.total,
   };
 }
 
@@ -292,6 +310,21 @@ function toRankedPatronyme(row: Record<string, unknown>): RankedPatronyme {
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
     snippet: (row.snippet as string) ?? null,
+  };
+}
+
+function toRankedLanguage(row: Record<string, unknown>): RankedLanguage {
+  return {
+    id: row.id as string,
+    name: row.name as string,
+    familyId: row.familyId as string,
+    familyName: (row.familyName as string) ?? null,
+    content: (row.content as RankedLanguage["content"]) || {},
+    relevance: typeof row.relevance === "number" ? row.relevance : 0,
+    exactMatch: row.exactMatch === true,
+    snippet: (row.snippet as string) ?? null,
+    createdAt: toDate(row.createdAt),
+    updatedAt: toDate(row.updatedAt),
   };
 }
 
