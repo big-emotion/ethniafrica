@@ -207,6 +207,15 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `058_afrik_people_prose_search_vector.sql`    | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `060_afrik_spelling_aliases.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **Drift closure.** `062` restores the fourteen `COMMENT ON` statements that `038` declares and
+> the database never received. `migrations:diff` reported three drifted migrations on recette;
+> only this one was real. `018` differs by a trailing `;` and `039` by adjacent string literals
+> that SQL concatenates — both produce identical state, and neither needs a migration. Every
+> function and policy in `038` is byte-identical between file and database, so `062` carries no
+> behaviour: it exists so a SECURITY DEFINER function's rationale is readable at query time
+> rather than only in a file. ETNI-1186, DEC-017.
 
 > **ETNI-1455.** `061` adds `afrik_patronyme_alliances`, a name-granularity table for sourced,
 > symmetric alliances between two names (e.g. the Manding sanankuya), modelled on

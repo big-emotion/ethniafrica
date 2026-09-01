@@ -83,11 +83,22 @@ jobs:
           CHECK_SOURCE_URLS: "false"
         run: npx tsx scripts/validateAfrikData.ts
 
+      # `--conditions=react-server` is load-bearing, not a flag someone added for
+      # taste. The loader reaches src/lib/supabase/admin.ts, which imports
+      # `server-only`; that package resolves to an empty module under the
+      # react-server condition and to a module that throws under any other. Without
+      # the flag the sync dies on "This module cannot be imported from a Client
+      # Component module" before it reads a single fiche.
+      #
+      # This never surfaced while the workflow was keyed on a Vercel
+      # deployment_status: its `if:` conditions skipped every run, so the job was
+      # inert rather than working. Chaining it to the OVH deploy is what made it
+      # execute for the first time.
       - name: Preview production synchronization
-        run: npx tsx scripts/migrateAfrikToDatabase.ts --target=production
+        run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production
 
       - name: Apply and verify production synchronization
-        run: npx tsx scripts/migrateAfrikToDatabase.ts --target=production --apply
+        run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --apply
 
       - name: Invalidate production AFRIK caches
         if: env.PRODUCTION_REVALIDATE_SECRET != ''

@@ -91,8 +91,24 @@ export function renderDiff(
     for (const entry of result.drifted) {
       say();
       say(`  ▸ ${entry.filename} (applied as version ${entry.ledgerVersion})`);
-      say(`      in the database: ${excerpt(entry.ledgerSql)}`);
-      say(`      in the file:     ${excerpt(entry.fileSql)}`);
+
+      // The 160-character excerpt is unusable here, and this is the one section
+      // where that matters: the two sides are identical for far longer than the
+      // excerpt, so it prints the same prefix twice and tells the reader nothing.
+      // Pointing at the first differing offset is what actually answers the
+      // question the section asks — what do I put in the corrective migration.
+      if (withSql) {
+        const divergence = firstDivergence(entry.ledgerSql, entry.fileSql);
+        say(`      diverges at character ${divergence}`);
+        say(`      in the database: ${entry.ledgerSql}`);
+        say(`      in the file:     ${entry.fileSql}`);
+      } else {
+        say(`      in the database: ${excerpt(entry.ledgerSql)}`);
+        say(`      in the file:     ${excerpt(entry.fileSql)}`);
+        say(
+          `      (both sides truncated to ${EXCERPT_LIMIT} chars — pass --sql)`
+        );
+      }
     }
   }
 
@@ -106,8 +122,25 @@ export function renderDiff(
   return lines.join("\n");
 }
 
-function excerpt(sql: string, limit = 160): string {
+const EXCERPT_LIMIT = 160;
+
+function excerpt(sql: string, limit = EXCERPT_LIMIT): string {
   return sql.length <= limit ? sql : `${sql.slice(0, limit)}…`;
+}
+
+/**
+ * Offset of the first differing character, or -1 when the two are equal.
+ *
+ * Drift is usually a single token buried thousands of characters into a
+ * statement — a renamed column, a changed default. Printing both sides in full
+ * leaves the reader to find it by eye; this says where to look.
+ */
+export function firstDivergence(a: string, b: string): number {
+  const shared = Math.min(a.length, b.length);
+  for (let index = 0; index < shared; index += 1) {
+    if (a[index] !== b[index]) return index;
+  }
+  return a.length === b.length ? -1 : shared;
 }
 
 async function runCli(): Promise<void> {

@@ -270,8 +270,8 @@ npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules
 Then preview, then apply:
 
 ```bash
-npx tsx scripts/migrateAfrikToDatabase.ts --target=production
-npx tsx scripts/migrateAfrikToDatabase.ts --target=production --apply
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --apply
 ```
 
 `--target` names the application environment: `recette` or `production`. `--target=recette`
