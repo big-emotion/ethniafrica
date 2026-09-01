@@ -609,6 +609,34 @@ describe("AtlasGlobeCanvas", () => {
     expect(fakeGl.createProgram.mock.calls.length).toBe(programsBefore);
   });
 
+  /**
+   * Ring geometry is immutable for the life of the overlay: the reveal moves a
+   * uniform, the camera moves a matrix, and neither touches a vertex. Uploading
+   * it inside the draw loop cost 80 ms per frame on FLG_BANTU — eleven
+   * back-to-back long tasks and a 3 494 ms total-blocking-time against a 300 ms
+   * budget — because every repaint re-sent every country's outline to the GPU.
+   * The point-field and the sphere layer already upload once at setup and only
+   * rebind per frame; this asserts the overlay does the same.
+   */
+  // @req REQ-116
+  it("uploads ring geometry once and re-sends none of it on a repaint", () => {
+    const { rerender } = render(
+      <AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />
+    );
+    fakeGl.bufferData.mockClear();
+    fakeGl.drawArrays.mockClear();
+
+    rerender(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={{ ...IDLE_POSE, yaw: IDLE_POSE.yaw + 0.5, zoom: 2 }}
+      />
+    );
+
+    expect(fakeGl.drawArrays).toHaveBeenCalled();
+    expect(fakeGl.bufferData).not.toHaveBeenCalled();
+  });
+
   // @req REQ-117
   it("hands the dolly and the panel bias to the shader as it draws", () => {
     render(
