@@ -3,9 +3,14 @@ import type { ReactNode } from "react";
 
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
+import {
+  HEADLINE_ACCESSIBLE_NAME,
+  headlineSegments,
+} from "@/lib/home/headlineSegments";
 import type { HomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 
+import { HomeHeadlineReel } from "./HomeHeadlineReel";
 import { HomeHeroSearch } from "./HomeHeroSearch";
 
 /**
@@ -27,6 +32,13 @@ export interface HomeHeroProps {
   peopleCountsByCountry?: Record<string, number>;
   /** Corpus counters supplied by the server page, after the visual in reading order. */
   counts?: ReactNode;
+  /**
+   * The classes the headline turns through, figures included, built by the
+   * server page from the same totals the counters show. Defaults to the five
+   * classes without their figures, so Storybook and a test can render the band
+   * with no database behind it.
+   */
+  headline?: string[];
   /** The visual drawn once by the server for this page request. */
   visual?: HomeHeroVisual;
 }
@@ -37,6 +49,7 @@ export function HomeHero({
   seedWords,
   peopleCountsByCountry,
   counts,
+  headline = headlineSegments(null),
   visual = { kind: "globe" },
 }: HomeHeroProps = {}) {
   return (
@@ -50,11 +63,28 @@ export function HomeHero({
       {/* The shell keeps every hero item on the page's shared content edge. */}
       <div className="afh-shell home-hero-inner">
         <header className="home-hero-copy afh-phone-centred">
-          {/* The thin no-break space is the French rule before a question
-              mark, and it is load-bearing here rather than typographic
-              politeness: the headline wraps to two lines on a phone, and a
-              plain space lets « ? » start the third one on its own. */}
-          <h1>Qui sont les peuples d&apos;Afrique&nbsp;?</h1>
+          {/* Every fragment is a string inside an expression, never bare JSX
+              text beside one: SWC drops the space between an expression and
+              the text that follows it on the same line — the bug documented
+              below, which shipped « EthniAfricapublie » and which no test in
+              this repo reproduces. Inside a string literal no whitespace rule
+              applies, so the spaces around the reel are safe.
+
+              The no-break space before « ? » is the French rule, and it is
+              load-bearing rather than typographic politeness: the headline
+              wraps on a phone, and a plain space lets « ? » start a line of
+              its own.
+
+              aria-label, not the content: the reel turns every four seconds
+              and a level-one heading is a landmark. The name states all five
+              classes once and never moves. */}
+          <h1 aria-label={HEADLINE_ACCESSIBLE_NAME}>
+            <span className="home-hero-headline-line">
+              {"Une question sur les "}
+            </span>
+            <HomeHeadlineReel segments={headline} />
+            <span className="home-hero-headline-line">{" d'Afrique ?"}</span>
+          </h1>
           {/* One string, not the product name followed by JSX text. Next's
               SWC transform drops the space between an expression and the text
               that follows it on the same line, so the band once shipped
@@ -65,7 +95,7 @@ export function HomeHero({
               believes JSX already implies. Inside a template literal no
               whitespace rule applies at all. */}
           <p className="home-hero-answer" data-testid="home-hero-answer">
-            {`${PRODUCT_NAME} y répond peuple par peuple, en accès libre, ` +
+            {`${PRODUCT_NAME} y répond fiche par fiche, en accès libre, ` +
               `et donne la source de chaque réponse.`}
           </p>
 
@@ -144,8 +174,23 @@ export function HomeHero({
           font-size: var(--home-text-hero-title);
           line-height: 1.04;
           margin: 0 0 16px;
-          text-wrap: balance;
           color: var(--afh-text);
+        }
+
+        /* Three lines, declared rather than balanced.
+
+           The reel is an inline-block sized to its longest segment — 512px of
+           the copy column's 648 at 1440 — so it cannot share a line with
+           anything, and \`text-wrap: balance\` spent its freedom on the words
+           that were left: the headline broke as « Une question / sur les /
+           790 peuples / d'Afrique ? », four lines with a widow in the middle.
+           Blocks put the break where the sentence already has its joint, and
+           give the same three lines at 430 that the phone was getting by
+           accident. \`balance\` is gone with the same change: it has nothing
+           left to balance, and leaving it would only invite the next reader to
+           think it is doing something. */
+        .home-hero-headline-line {
+          display: block;
         }
 
         /* A class, not \`.home-hero-copy p\`: a descendant selector outranks
@@ -232,7 +277,14 @@ export function HomeHero({
 
         @media (min-width: 1200px) {
           .home-hero-inner {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            /* 1.15/0.85, not an even split. The shell is 1240px less 64px of
+               page padding, so an even split leaves the left column 564px —
+               five corpus tiles at 103px, and "linguistiques" alone measures
+               more than the 79px a tile has left after its padding. Tilting
+               the columns buys the left one ~622px, which is what the five
+               tiles need. The visual gives up ~18% of its width and nothing
+               else: its 620px is a max-width, a ceiling and not a floor. */
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
             grid-template-areas:
               "copy globe"
               "counts globe";
@@ -243,7 +295,14 @@ export function HomeHero({
           }
           .home-hero-copy {
             margin: 0;
-            max-width: 36rem;
+            /* The column, not 36rem. That cap was set when the two columns
+               split evenly at 564px; the left one is 648px now, and holding
+               the copy at 576 was breaking « Une question sur les » across two
+               lines inside a column with room for it — the headline stayed at
+               four lines even after the reel got a line of its own. The prose
+               keeps its own measure through .home-hero-answer's 52ch, which is
+               what actually governs reading comfort here. */
+            max-width: 100%;
             text-align: left;
           }
           .home-hero-answer {

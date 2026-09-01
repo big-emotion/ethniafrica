@@ -26,6 +26,8 @@ const fixtureCounts = {
   peoples: 4213,
   countries: 91,
   families: 37,
+  languages: 748,
+  nameForms: 3134,
   migrations: 5,
 };
 
@@ -124,7 +126,7 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   });
 
   // @req REQ-113
-  it("shows the three real corpus totals and exactly two sourced facts", async () => {
+  it("shows the five real corpus totals and exactly two sourced facts", async () => {
     await renderHome();
 
     expect(screen.getByTestId("home-count-peoples")).toHaveTextContent(
@@ -163,7 +165,7 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     await renderHome();
 
     expect(screen.getByRole("search")).toBeInTheDocument();
-    expect(screen.getAllByText("Indisponible")).toHaveLength(3);
+    expect(screen.getAllByText("Indisponible")).toHaveLength(5);
   });
 
   // @req REQ-113
