@@ -1,9 +1,9 @@
 ---
-title: 'Restore text search in Explorer facets'
-type: 'bugfix'
-created: '2026-09-01'
-status: 'done'
-baseline_commit: '0c07a576c0a190b454a23eeda6d27ccf81b9b9b5'
+title: "Restore text search in Explorer facets"
+type: "bugfix"
+created: "2026-09-01"
+status: "done"
+baseline_commit: "0c07a576c0a190b454a23eeda6d27ccf81b9b9b5"
 context: []
 ---
 
@@ -25,12 +25,12 @@ context: []
 
 ## I/O & Edge-Case Matrix
 
-| Scenario | Input / State | Expected Output / Behavior | Error Handling |
-|----------|---------------|----------------------------|----------------|
-| Text search | Submit a non-empty `q` on any facet | URL, list, count, empty state, and globe index describe only matches; other active filters remain applied | No match renders the facet's existing empty state |
-| Normalized local match | `q=benin` for “Bénin” or `q=mande` for “Mandé” | Country/family match despite case or accents; IDs also remain searchable | N/A |
-| Blank search | Missing, empty, or whitespace-only `q` | Behaves as the unsearched facet and does not create an active narrowing | N/A |
-| Pagination/filter navigation | Search is active and reader pages, changes page size, selects a facet, uses A–Z, or uses the globe | `q` is preserved; applying a new narrowing starts at page 1 | Invalid/stale page keeps the existing clamp behavior |
+| Scenario                     | Input / State                                                                                      | Expected Output / Behavior                                                                                | Error Handling                                       |
+| ---------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Text search                  | Submit a non-empty `q` on any facet                                                                | URL, list, count, empty state, and globe index describe only matches; other active filters remain applied | No match renders the facet's existing empty state    |
+| Normalized local match       | `q=benin` for “Bénin” or `q=mande` for “Mandé”                                                     | Country/family match despite case or accents; IDs also remain searchable                                  | N/A                                                  |
+| Blank search                 | Missing, empty, or whitespace-only `q`                                                             | Behaves as the unsearched facet and does not create an active narrowing                                   | N/A                                                  |
+| Pagination/filter navigation | Search is active and reader pages, changes page size, selects a facet, uses A–Z, or uses the globe | `q` is preserved; applying a new narrowing starts at page 1                                               | Invalid/stale page keeps the existing clamp behavior |
 
 </frozen-after-approval>
 
@@ -47,6 +47,7 @@ context: []
 ## Tasks & Acceptance
 
 **Execution:**
+
 - [x] `src/components/hubs/facets/__tests__/FacetFilterBar.test.tsx` -- first add failing contracts for an accessible, URL-valued search input outside the folded filters, with a mobile-first full row and 44px minimum target.
 - [x] `src/components/hubs/facets/FacetFilterBar.tsx` -- add the smallest optional `searchField` contract and native `input type="search"` rendering.
 - [x] `src/api/v2/services/__tests__/{countryFacet,peoplesFacetService}.test.ts` -- first add failing cases for accent/case/ID matching and identical peoples filters for list and globe index.
@@ -56,6 +57,7 @@ context: []
 - [x] `e2e/explorer-facet-search.spec.ts` -- add a stable cross-viewport smoke path for the three visible controls and GET navigation if the local test data supports deterministic assertions.
 
 **Acceptance Criteria:**
+
 - Given any Explorer facet at 320–430px, when it renders, then its labelled text-search field is visible before the select controls without horizontal overflow.
 - Given a country, people, or family query, when the filter form is submitted, then the first result page and URL reflect `q` while retaining the other selected facets.
 - Given an active search, when the reader pages, changes page size, removes a folded filter, selects a letter, or narrows from the globe, then the address retains `q` and the list and globe remain consistent.
@@ -70,12 +72,14 @@ Use one native GET control in the existing server component. On mobile it takes 
 ## Verification
 
 **Commands:**
+
 - `npx vitest run src/components/hubs/facets/__tests__/FacetFilterBar.test.tsx src/api/v2/services/__tests__/countryFacet.test.ts src/api/v2/services/__tests__/peoplesFacetService.test.ts src/app/'[lang]'/explorer/pays/__tests__/facet-page.test.tsx src/app/'[lang]'/explorer/peuples/__tests__/facet-page.test.tsx src/app/'[lang]'/explorer/familles/__tests__/facet-page.test.tsx` -- all targeted regression tests pass.
 - `npm run typecheck` -- TypeScript passes.
 - `npm run lint -- --no-cache` -- affected source remains lint-clean.
 - `npx playwright test e2e/explorer-facet-search.spec.ts` -- cross-viewport smoke passes when deterministic local data is available.
 
 **Manual checks (if no CLI):**
+
 - Inspect `/fr/explorer/pays`, `/fr/explorer/peuples`, and `/fr/explorer/familles` at 320, 430, 768, and 1200px: search is visible, controls do not overflow, submission updates the URL and narrows both cards and globe content.
 
 ## Suggested Review Order

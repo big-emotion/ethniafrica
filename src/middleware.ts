@@ -27,6 +27,12 @@ import type { Language } from "@/types/shared";
 const isPublicLocalizedPage = (pathname: string) =>
   pathname === "/fr" || pathname.startsWith("/fr/");
 
+// The public developer portal sits outside the localized tree but mounts the
+// same global header. That header carries static CSS in a client-injected
+// <style> element; unlike the data-driven fiches, it uses no style attributes.
+const isDeveloperPortalPage = (pathname: string) =>
+  pathname === "/docs/api" || pathname.startsWith("/docs/api/");
+
 // Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
 // exact hash because the framework does not propagate the request nonce.
 const NEXT_RUNTIME_STYLE_HASHES = [
@@ -62,12 +68,14 @@ function applySecurityHeaders(
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
   const publicLocalizedPage = isPublicLocalizedPage(pathname);
+  const allowsInlineStyleElements =
+    publicLocalizedPage || isDeveloperPortalPage(pathname);
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'${
       process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
     }`,
-    publicLocalizedPage
+    allowsInlineStyleElements
       ? "style-src 'self' 'unsafe-inline'"
       : `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
     ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),

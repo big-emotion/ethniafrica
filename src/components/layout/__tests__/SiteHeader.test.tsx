@@ -162,6 +162,18 @@ describe("SiteHeader — three intentions, not ten modules (atlas charter §3)",
 
     expect(container.querySelector(".sh-brand img")).toHaveAttribute("alt", "");
   });
+
+  // At phone widths the three fixed-size controls need the brand lockup to
+  // yield space. A non-shrinking lockup widened the whole document to 394px
+  // in a 375px viewport as soon as this header reached the developer portal.
+  // @req REQ-111
+  it("lets the mobile brand lockup shrink before the controls overflow", () => {
+    renderHeader();
+
+    expect(declarationsFor("\\.sh-brand")).toMatch(/flex:\s*0 1 auto/);
+    expect(declarationsFor("\\.sh-brand")).not.toMatch(/flex:\s*none/);
+    expect(declarationsFor("\\.sh-controls")).toMatch(/flex:\s*none/);
+  });
 });
 
 describe("SiteHeader — the panel behind the click (REQ-114)", () => {

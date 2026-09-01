@@ -45,6 +45,42 @@ describe("DidYouKnowLoader (REQ-104 — the wait is spent reading)", () => {
     }
   });
 
+  // The image is a document supporting the anecdote, not loading chrome. It
+  // therefore keeps both its description and its visible licence credit.
+  // @req REQ-104 @req REQ-113
+  it("pairs the fact with its credited illustration", () => {
+    const { container } = render(
+      <DidYouKnowLoader fact={FACT} label="Chargement" />
+    );
+
+    expect(
+      screen.getByRole("img", {
+        name: /Défense d'éléphant sculptée/i,
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Brooklyn Museum/)).toBeInTheDocument();
+    expect(container.querySelector(".afh-dykl-split")).toHaveClass(
+      "afh-dykl-split--image-start"
+    );
+  });
+
+  // Bank order determines the side, so consecutive illustrations do not all
+  // settle into the same template on wider screens.
+  // @req REQ-104 @req REQ-113
+  it("alternates the illustration side across facts", () => {
+    const { container, rerender } = render(
+      <DidYouKnowLoader fact={FACT} label="Chargement" />
+    );
+
+    rerender(
+      <DidYouKnowLoader fact={{ ...FACT, id: "amazigh" }} label="Chargement" />
+    );
+
+    expect(container.querySelector(".afh-dykl-split")).toHaveClass(
+      "afh-dykl-split--image-end"
+    );
+  });
+
   // @req REQ-104
   it("states the tier of the source behind the fact", () => {
     render(<DidYouKnowLoader fact={FACT} label="Chargement" />);

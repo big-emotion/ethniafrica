@@ -7,6 +7,7 @@ import {
   DID_YOU_KNOW_FACTS,
   findDidYouKnowFact,
   pickDidYouKnowFact,
+  pickDidYouKnowFacts,
   pickNextDidYouKnowFact,
   shuffleDidYouKnowDeck,
   type DidYouKnowFact,
@@ -199,6 +200,34 @@ describe("pickDidYouKnowFact — the home band's draw", () => {
     expect(
       pickDidYouKnowFact(() => 0, [factWithoutOfficialSource("a")])
     ).toBeNull();
+  });
+});
+
+describe("pickDidYouKnowFacts — the home section's two-card draw", () => {
+  // @req REQ-113
+  it("draws two distinct facts backed by official sources", () => {
+    const bank = [
+      factWithoutOfficialSource("a"),
+      fact("b"),
+      fact("c"),
+      fact("d"),
+    ];
+
+    const drawn = pickDidYouKnowFacts(2, () => 0, bank);
+
+    expect(drawn).toHaveLength(2);
+    expect(new Set(drawn.map((entry) => entry.id)).size).toBe(2);
+    expect(drawn.map((entry) => entry.id)).not.toContain("a");
+  });
+
+  // @req REQ-113
+  it("returns every eligible fact when fewer than two can support the claim", () => {
+    const drawn = pickDidYouKnowFacts(2, () => 0, [
+      factWithoutOfficialSource("a"),
+      fact("b"),
+    ]);
+
+    expect(drawn.map((entry) => entry.id)).toEqual(["b"]);
   });
 });
 

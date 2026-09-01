@@ -1,11 +1,11 @@
 ---
-title: 'Fix the stale Cabo Verde population total in recette'
-type: 'bugfix'
-created: '2026-09-01'
-status: 'in-review'
-baseline_commit: 'bb640c48ef43875a24b97f18e779e909da0837e4'
+title: "Fix the stale Cabo Verde population total in recette"
+type: "bugfix"
+created: "2026-09-01"
+status: "in-review"
+baseline_commit: "bb640c48ef43875a24b97f18e779e909da0837e4"
 context:
-  - '{project-root}/docs/runbooks/afrik-data-sync.md'
+  - "{project-root}/docs/runbooks/afrik-data-sync.md"
 ---
 
 <frozen-after-approval reason="human-owned intent — do not modify unless human renegotiates">
@@ -26,11 +26,11 @@ context:
 
 ## I/O & Edge-Case Matrix
 
-| Scenario | Input / State | Expected Output / Behavior | Error Handling |
-|----------|---------------|----------------------------|----------------|
-| Stale recette projection | CPV lacks `demographics.totalPopulation`; only one row has `population: 6000` | Preview reports CPV as stale without writing | Stop if the target guard, corpus validation, or read fails |
-| Successful synchronization | Canonical CPV content has total 500,000 and row headcounts 494,000 + 6,000 | Apply completes without insertion errors and post-sync drift is false | Retain the snapshot and diagnose; restore only after explicit approval |
-| Runtime verification | Anonymous API/page read after apply | API exposes 500,000 and the page renders `500K habitants · 2025`, not `6K habitants documentés` | Revalidate or restart the local runtime cache, then re-read; do not rewrite data twice blindly |
+| Scenario                   | Input / State                                                                 | Expected Output / Behavior                                                                      | Error Handling                                                                                 |
+| -------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Stale recette projection   | CPV lacks `demographics.totalPopulation`; only one row has `population: 6000` | Preview reports CPV as stale without writing                                                    | Stop if the target guard, corpus validation, or read fails                                     |
+| Successful synchronization | Canonical CPV content has total 500,000 and row headcounts 494,000 + 6,000    | Apply completes without insertion errors and post-sync drift is false                           | Retain the snapshot and diagnose; restore only after explicit approval                         |
+| Runtime verification       | Anonymous API/page read after apply                                           | API exposes 500,000 and the page renders `500K habitants · 2025`, not `6K habitants documentés` | Revalidate or restart the local runtime cache, then re-read; do not rewrite data twice blindly |
 
 </frozen-after-approval>
 
@@ -46,6 +46,7 @@ context:
 ## Tasks & Acceptance
 
 **Execution:**
+
 - [x] `src/lib/__tests__/countryDataTransformer.test.ts` and `scripts/__tests__/populationDataCoverage.test.ts` -- run the existing test-first contracts to confirm the Git source still yields 500,000 before any database write.
 - [x] `docs/runbooks/afrik-data-sync.md` -- run canonical validation and editorial checks with the required Node runtime.
 - [x] `docs/runbooks/afrik-data-sync.md` -- create a restorable recette snapshot, execute the read-only sync preview, and review all reported drift and parsed corpus counts.
@@ -55,6 +56,7 @@ context:
 - [x] `src/app/[lang]/explorer/pays/[slug]/page.tsx` -- verify the anonymous CPV API payload and the country page after cache revalidation or local restart if necessary.
 
 **Acceptance Criteria:**
+
 - Given the canonical CPV fiche and existing regression contracts, when the targeted tests run, then they pass with a national population of 500,000 for reference year 2025.
 - Given a reviewed snapshot and preview against the pinned recette project, when the guarded sync is applied, then post-sync verification reports no residual AFRIK content drift and no insertion errors.
 - Given an anonymous request for CPV after synchronization, when the country page is rendered, then it shows `500K habitants · 2025`; the 99% row resolves to 494K and the 1% row remains 6K.
@@ -67,6 +69,7 @@ context:
 ## Verification
 
 **Commands:**
+
 - `vitest run src/lib/__tests__/countryDataTransformer.test.ts scripts/__tests__/populationDataCoverage.test.ts` -- expected: existing CPV and corpus population contracts pass.
 - `tsx scripts/validateAfrikData.ts` and `tsx scripts/ci/checkEditorialRules.ts` -- expected: canonical corpus is valid before synchronization.
 - `tsx scripts/migrateAfrikToDatabase.ts --target=recette` -- expected: read-only preview identifies stale projection data and the target guard accepts only recette.

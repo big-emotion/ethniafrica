@@ -158,8 +158,8 @@ describe("ContinentGlobeStage (ARCH-014 capability gate)", () => {
     expect(styles).toMatch(/--afh-globe-stage-height:\s*560px/);
   });
 
-  // The external projection band is 129px tall at phone width. With the
-  // hero grid's 16px row gap, 128px keeps a clear 15px seam before counters.
+  // The external projection band plus the 44px figure-tool row are about
+  // 181px tall at phone width. The reservation keeps both above the counters.
   // @req REQ-115
   it("reserves enough flow space for the homepage projection band", () => {
     const { container } = render(
@@ -171,7 +171,7 @@ describe("ContinentGlobeStage (ARCH-014 capability gate)", () => {
 
     const styles = container.querySelector("style")?.textContent ?? "";
     expect(styles).toMatch(
-      /\.home-globe-stage--hero\s*\{[^}]*padding-bottom:\s*128px/
+      /\.home-globe-stage--hero\s*\{[^}]*padding-bottom:\s*184px/
     );
   });
 });

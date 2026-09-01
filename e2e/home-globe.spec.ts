@@ -20,10 +20,7 @@ const BREAKPOINTS = [430, 720, 1200] as const;
 // map pans, and there is no third state. Matching either keeps the locator
 // honest on a runner whose WebGL is unusable, where the map is all there is.
 const GLOBE_SURFACE_NAME = /(Globe|Carte) de l'atlas\./;
-// AtlasGlobe states the projection with a toggle whose label says what
-// pressing it will do, so the two names are the two halves of one control.
-const FLATTEN_NAME = "Ce que la carte plate en fait";
-const UNFLATTEN_NAME = "Revenir au globe";
+const MORPH_NAME = "Morphing de la carte plate vers le globe";
 
 async function expectNoSeriousOrCriticalViolations(page: Page) {
   const results = await new AxeBuilder({ page })
@@ -87,14 +84,23 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
       await page.keyboard.press("ArrowRight");
       await page.keyboard.press("ArrowUp");
 
-      // The projection control is a real, independently operable button, and
-      // it renames itself once pressed rather than going quiet.
-      const flatten = page.getByRole("button", { name: FLATTEN_NAME });
-      await expect(flatten).toHaveAttribute("aria-pressed", "false");
-      await flatten.click();
-      await expect(
-        page.getByRole("button", { name: UNFLATTEN_NAME })
-      ).toHaveAttribute("aria-pressed", "true");
+      // The projection argument keeps its continuous range, while the two
+      // figure controls that disappeared from the editorial presentation are
+      // independently operable again.
+      const morph = page.getByRole("slider", { name: MORPH_NAME });
+      await expect(morph).toHaveAttribute("aria-valuetext", "Globe");
+      await morph.fill("0");
+      await expect(morph).toHaveAttribute("aria-valuetext", "Carte plate");
+
+      const pastilles = page.getByRole("button", { name: "Pastilles" });
+      await expect(pastilles).toHaveAttribute("aria-pressed", "true");
+      await pastilles.click();
+      await expect(pastilles).toHaveAttribute("aria-pressed", "false");
+
+      const zoomOut = page.getByRole("button", { name: "Dézoomer" });
+      await expect(zoomOut).toBeDisabled();
+      await page.getByRole("button", { name: "Zoomer" }).click();
+      await expect(zoomOut).toBeEnabled();
 
       expect(pageErrors).toEqual([]);
     });
@@ -125,9 +131,10 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
     await page.goto(HOME_URL);
 
     await expect(page.locator("path#africa-landmass")).toBeVisible();
-    // The flat map cannot be flattened further, so the control that would say
-    // so is not offered — the fallback is a figure, not a crippled globe.
-    await expect(page.getByRole("button", { name: FLATTEN_NAME })).toHaveCount(
+    // The flat map cannot morph or light WebGL indicatrices, so neither
+    // control is offered — the fallback is a figure, not a crippled globe.
+    await expect(page.getByRole("slider", { name: MORPH_NAME })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Pastilles" })).toHaveCount(
       0
     );
     expect(pageErrors).toEqual([]);
@@ -148,12 +155,13 @@ test.describe("Home hero interactive globe (REQ-112)", () => {
     });
     await expect(globeSurface).toBeVisible();
 
-    const flatten = page.getByRole("button", { name: FLATTEN_NAME });
-    await expect(flatten).toHaveAttribute("aria-pressed", "false");
-    await flatten.click();
-    await expect(
-      page.getByRole("button", { name: UNFLATTEN_NAME })
-    ).toHaveAttribute("aria-pressed", "true");
+    const morph = page.getByRole("slider", { name: MORPH_NAME });
+    await expect(morph).toHaveAttribute("aria-valuetext", "Globe");
+    await morph.fill("0");
+    await expect(morph).toHaveAttribute("aria-valuetext", "Carte plate");
+
+    await expect(page.getByRole("button", { name: "Pastilles" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Zoomer" })).toBeEnabled();
 
     expect(pageErrors).toEqual([]);
   });

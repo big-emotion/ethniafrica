@@ -178,11 +178,12 @@ export function ContinentGlobeStage({
              the box and the figure inside it disagree at every breakpoint. */
           --afh-globe-stage-height: 560px;
         }
-        /* The external range is absolutely anchored immediately after the
-           visual stage. Reserving its height here keeps the counters from
-           climbing underneath it on narrow screens. */
+        /* The external range and its compact figure tools are absolutely
+           anchored immediately after the visual stage. Reserving their full
+           height here keeps the counters from climbing underneath them on
+           narrow screens. */
         .home-globe-stage--hero {
-          padding-bottom: 128px;
+          padding-bottom: 184px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {

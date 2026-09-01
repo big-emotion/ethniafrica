@@ -486,7 +486,7 @@ export function SiteHeader({
           display: flex;
           align-items: center;
           gap: 9px;
-          flex: none;
+          flex: 0 1 auto;
           min-width: 0;
           text-decoration: none;
           color: inherit;

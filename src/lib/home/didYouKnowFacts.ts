@@ -12,7 +12,7 @@
  * the fiches — a chip pointing at a people the corpus does not hold is a
  * 404 the reader finds before we do.
  *
- * The band draws one fact per request (REQ-115's reasoning applies: the
+ * The home draws two facts per request (REQ-115's reasoning applies: the
  * draw runs server-side, so it never re-runs during hydration and cannot
  * desynchronise the client tree). With a bank this small, a curious reader
  * exhausts it in one sitting — growing it is the band's real maintenance
@@ -33,7 +33,7 @@ export type DidYouKnowTier = "official" | "referenced" | "unverified";
 /**
  * Where a fact comes from, in the shape the fiches already use.
  *
- * The bank asserted a tier without ever naming a source. On a band showing
+ * The bank asserted a tier without ever naming a source. When the band showed
  * one fact per visit that was survivable; on a page that lists the whole
  * bank and invites a reader to cite it, printing « Source référencée » over
  * nothing is claiming an authority we cannot produce — the exact thing the
@@ -609,6 +609,27 @@ export function pickDidYouKnowFact(
     Math.floor(random() * eligible.length)
   );
   return eligible[index];
+}
+
+/**
+ * Draw distinct, officially sourced facts for the home-page preview.
+ *
+ * Shuffling once rather than rolling once per card makes duplication
+ * impossible and keeps the operation proportional to the small editorial
+ * bank. When fewer entries qualify, the section tells every supported story
+ * instead of filling the remaining slot with a weaker claim.
+ */
+// @req REQ-113
+export function pickDidYouKnowFacts(
+  count = 2,
+  random: () => number = Math.random,
+  facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS
+): DidYouKnowFact[] {
+  if (count <= 0) return [];
+  return shuffleDidYouKnowDeck(random, facts.filter(hasOfficialSource)).slice(
+    0,
+    count
+  );
 }
 
 /**

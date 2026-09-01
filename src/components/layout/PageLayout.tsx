@@ -65,6 +65,12 @@ interface PageLayoutProps {
    */
   flushTop?: boolean;
   /**
+   * Drop main's bottom padding when its final child is full bleed and owns the
+   * visual seam with the footer. Independent from `flushTop` because fiche
+   * bands start flush but still need breathing room after their final prose.
+   */
+  flushBottom?: boolean;
+  /**
    * How the trail should name the identifier in the address, on a route whose
    * path holds one. A fiche knows its own name and nothing else does — see
    * `SiteTrail`.
@@ -83,6 +89,7 @@ export const PageLayout = ({
   hideHeader = false,
   hideTrail = false,
   flushTop = false,
+  flushBottom = false,
   trailLabel,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
@@ -176,7 +183,19 @@ export const PageLayout = ({
       {/* Main Content */}
       <main
         className={`afh-shell ${
-          flushTop ? (isMobile ? "pb-4" : "pb-8") : isMobile ? "py-4" : "py-8"
+          flushTop && flushBottom
+            ? ""
+            : flushTop
+              ? isMobile
+                ? "pb-4"
+                : "pb-8"
+              : flushBottom
+                ? isMobile
+                  ? "pt-4"
+                  : "pt-8"
+                : isMobile
+                  ? "py-4"
+                  : "py-8"
         }`}
       >
         {children}

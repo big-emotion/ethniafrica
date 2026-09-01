@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ErrorPage from "@/app/[lang]/error";
+import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 
 describe("ErrorPage ([lang]/error)", () => {
   const mockError = new Error("test error") as Error & { digest?: string };
@@ -28,6 +29,29 @@ describe("ErrorPage ([lang]/error)", () => {
   it("renders an error reference element", () => {
     render(<ErrorPage error={mockError} reset={() => {}} />);
     expect(screen.getByRole("button", { name: /copier/i })).toBeTruthy();
+  });
+
+  // @req REQ-099
+  it("draws one anecdote for each display and keeps it stable", () => {
+    const random = vi.spyOn(Math, "random").mockReturnValue(0);
+    const expected = pickDidYouKnowFact(() => 0);
+    const { rerender } = render(
+      <ErrorPage error={mockError} reset={() => {}} />
+    );
+
+    expect(expected).not.toBeNull();
+    expect(screen.getByTestId("error-anecdote").textContent).toContain(
+      expected?.headline
+    );
+
+    random.mockReturnValue(0.99);
+    rerender(<ErrorPage error={mockError} reset={() => {}} />);
+
+    expect(screen.getByTestId("error-anecdote").textContent).toContain(
+      expected?.headline
+    );
+    expect(random).toHaveBeenCalledOnce();
+    random.mockRestore();
   });
 
   it("renders no exclamation marks in default copy", () => {

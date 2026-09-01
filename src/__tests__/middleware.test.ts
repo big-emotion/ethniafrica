@@ -583,6 +583,27 @@ describe("middleware", () => {
       }
     });
 
+    // The developer portal now mounts the global header. Its static CSS is a
+    // client-injected <style> element, while the portal itself needs no style
+    // attributes. Keep the relaxation narrower than the localized pages.
+    // @req REQ-099
+    it("allows the developer portal header style element without allowing style attributes", async () => {
+      const response = await middleware(
+        new NextRequest("http://localhost:3000/docs/api/v2")
+      );
+      const directives = response.headers
+        .get("Content-Security-Policy")!
+        .split(";")
+        .map((directive) => directive.trim());
+
+      expect(
+        directives.find((directive) => directive.startsWith("style-src "))
+      ).toBe("style-src 'self' 'unsafe-inline'");
+      expect(
+        directives.find((directive) => directive.startsWith("style-src-attr"))
+      ).toBeUndefined();
+    });
+
     it("generates a different nonce for each request", async () => {
       const request1 = new NextRequest("http://localhost:3000/page1");
       const response1 = await middleware(request1);

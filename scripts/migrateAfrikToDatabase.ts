@@ -16,6 +16,12 @@ config({ path: resolve(process.cwd(), ".env.local") });
 import { logger } from "@/lib/api/logger";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
+import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
+import {
+  loadLanguages,
+  emptyLanguageLoadReport,
+  type LanguageLoadReport,
+} from "@/lib/afrik/loaders/languageProvenanceLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
 import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import {
@@ -59,6 +65,7 @@ export interface ProtectedClassificationDrift {
 
 export interface MigrationReport {
   languageFamilies: MigrationSectionReport;
+  languages: LanguageLoadReport;
   peoples: MigrationSectionReport;
   countries: MigrationSectionReport;
   relations: MigrationSectionReport;
@@ -101,6 +108,7 @@ function emptyDriftReport(): AfrikDriftReport {
 function createMigrationReport(): MigrationReport {
   return {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
+    languages: emptyLanguageLoadReport(),
     peoples: { total: 0, inserted: 0, errors: [] },
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
@@ -453,6 +461,7 @@ function countRelations(peoples: People[]): number {
 function hasErrors(report: MigrationReport): boolean {
   return (
     report.languageFamilies.errors.length > 0 ||
+    report.languages.errors.length > 0 ||
     report.peoples.errors.length > 0 ||
     report.countries.errors.length > 0 ||
     report.relations.errors.length > 0 ||
@@ -493,6 +502,9 @@ export async function migrateAfrikToDatabase(
   const peoples = await loadAllPeoples();
   report.peoples.total = peoples.length;
 
+  const languageRecords = loadAllLanguages(peoples);
+  report.languages.total = languageRecords.length;
+
   const countries = await loadAllCountries();
   report.countries.total = countries.length;
 
@@ -526,6 +538,7 @@ export async function migrateAfrikToDatabase(
     logger.info("AFRIK synchronization preview completed", {
       target: syncTarget.environment,
       languageFamilies: report.languageFamilies.total,
+      languages: report.languages.total,
       peoples: report.peoples.total,
       countries: report.countries.total,
       relations: report.relations.total,
@@ -544,6 +557,9 @@ export async function migrateAfrikToDatabase(
     report
   );
   const validFamilyIds = await readIds(supabase, "afrik_language_families");
+
+  // Families must be committed before languages so language.family_id resolves.
+  report.languages = await loadLanguages(supabase, languageRecords);
 
   await upsertPeoples(
     supabase,
@@ -600,6 +616,7 @@ export async function migrateAfrikToDatabase(
     logger.info("AFRIK synchronization completed", {
       target: syncTarget.environment,
       languageFamilies: report.languageFamilies,
+      languages: report.languages,
       peoples: report.peoples,
       countries: report.countries,
       relations: report.relations,
