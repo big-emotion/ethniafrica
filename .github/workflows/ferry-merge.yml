@@ -125,7 +125,7 @@ jobs:
           --agent merge
           --ticket-key "${{ github.event.client_payload.ticket_key }}"
           --run-id "${{ github.event.client_payload.event_id }}"
-      - uses: anthropics/claude-code-action@9d7150bc8a3dae8149739a88019d192b579ad90c # v1.0.193
+      - uses: anthropics/claude-code-action@a874e9ecd7bb36efdad65429c6b35815f5a08f10 # v1.0.210
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: ${{ steps.prompt.outputs.prompt }}
@@ -181,7 +181,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Emit audit line
-        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@39a42f9f5607d22c38f453bb33212c0c94750486 # v1.2.0
         with:
           ticket: ${{ github.event.client_payload.ticket_key }}
           phase: merge
