@@ -2,19 +2,22 @@
 
 How an EthniAfrica change reaches users, and what an operator has to do by hand.
 
-The short version: **the application deploys itself, the database does not.** Vercel builds and
-serves whatever is on the branch. Every schema change and every corpus load is a manual,
-two-step operation that no pipeline performs for you.
+The short version: **publishing a GitHub Release deploys the application; the database does
+not follow by itself.** Nothing else ships — not a push, not a tag. Every schema change is a
+manual, two-step operation that no pipeline performs for you.
 
 ---
 
 ## Environments
 
-| Environment | Branch    | Supabase project                           | Notes                                         |
-| ----------- | --------- | ------------------------------------------ | --------------------------------------------- |
-| Local       | any       | your own project, or a shared one          | `.env.local`, never committed                 |
-| Recette     | `recette` | `shmrjtnfbqzceovroqjj`                     | the integration environment; protected branch |
-| Production  | `main`    | a second project, ref not recorded in-repo | serves `ethniafrica.com`                      |
+| Environment | Ships when                                  | Hosted on                          | Supabase project                           |
+| ----------- | ------------------------------------------- | ---------------------------------- | ------------------------------------------ |
+| Local       | —                                           | your machine                       | your own project, or a shared one          |
+| Recette     | `deploy-preview-recette.yml` is run by hand | Vercel preview                     | `shmrjtnfbqzceovroqjj`                     |
+| Production  | a GitHub Release is published               | OVH VPS, Gravelines `51.195.82.98` | a second project, ref not recorded in-repo |
+
+Neither environment deploys on a push any more. `recette` is still the integration branch and
+`main` is still what a release is tagged from — but the branch no longer triggers anything.
 
 **Both Supabase projects call their environment "production", and neither label means what it
 looks like.** A Supabase project has exactly one environment, and Supabase names it
@@ -39,24 +42,47 @@ skipping, when either is missing.
 
 ## Deploying the application
 
-Vercel is connected to the repository and deploys on push:
+**Production is self-hosted on an OVH VPS in Gravelines (`51.195.82.98`), not on Vercel.**
 
-- a push to `recette` produces the recette deployment;
-- a push to `main` produces the production deployment.
+```
+git push origin main          →  nothing
+git push origin v<version>    →  nothing
+gh release create v<version>  →  deploy-production.yml  →  ethniafrica.com
+                                       │
+                                       └─ on success ─→ production-data-sync.yml
+```
 
-There is no `vercel.json` in the repository — build settings and environment variables live in
-the Vercel project. `next.config.ts` wraps the config in `withSentryConfig`, which uploads
-source maps when `SENTRY_AUTH_TOKEN` is present and deletes them after upload, so the browser
-never serves them.
+`.github/workflows/deploy-production.yml` listens on `release: published` and nothing else. It
+opens an SSH session to the VPS, checks out the released tag in `/srv/ethniafrica`, and runs
+`docker compose build && up -d` against the repository's own [`Dockerfile`](../Dockerfile) and
+[`docker-compose.yml`](../docker-compose.yml). It skips pre-releases. It has no
+`workflow_dispatch`: production is not deployable from a dropdown.
+
+Full procedure, secrets, host layout and **rollback**:
+[`runbooks/ovh-production-deploy.md`](./runbooks/ovh-production-deploy.md).
+
+Vercel still hosts the **recette preview**, but nothing about it is automatic.
+[`vercel.json`](../vercel.json) sets `git.deploymentEnabled: false`, which turns off every
+commit-triggered build — the volume that exhausted the Hobby plan's deployment quota once
+several agent sessions began pushing in parallel, until the rate limit landed on `main` itself.
+Build a preview by running `deploy-preview-recette.yml` from the Actions tab; it calls a Vercel
+Deploy Hook, which is an explicit trigger rather than a commit-driven one.
+
+`next.config.ts` sets `output: "standalone"` for the Docker image and wraps the config in
+`withSentryConfig`, which uploads source maps when `SENTRY_AUTH_TOKEN` is present and deletes
+them after upload, so the browser never serves them.
 
 Both branches are protected. Every change arrives through a pull request; `recette → main` sync
-PRs must use a **merge commit**, never a squash.
+PRs must use a **merge commit**, never a squash. `main` matters more than usual now:
+`workflow_run` only fires for workflow files that live on the default branch, so
+`production-data-sync.yml` cannot chain off the deploy until both files are on `main`.
 
 ### Tagging
 
-`npm run` has no release script. Versioning is a marker only — the tag records what shipped, it
-does not trigger the deploy. The `/ethniafrica-release` project skill bumps `package.json`,
-updates `CHANGELOG.md` and creates the annotated tag on `main`.
+`npm run` has no release script. The `/ethniafrica-release` project skill bumps
+`package.json`, updates `CHANGELOG.md`, creates the annotated tag on `main`, pushes both, and
+then publishes the GitHub Release — which is the step that actually deploys. Stopping after the
+tag bumps a version and ships nothing.
 
 ---
 
@@ -124,17 +150,23 @@ Required for a reader to report an error:
   openssl rand -base64 48 | tr -d '\n' > antibot-secret.txt   # umask 077 first
   ```
 
-  **Setting it.** The same value on all three Vercel environments, and in your own
-  `.env.local`. It is read only on the server, so it never needs a `NEXT_PUBLIC_` twin.
+  **Setting it.** In production it is a line in `/srv/ethniafrica/.env` on the VPS; on the
+  recette preview it is a Vercel environment variable; locally it is in `.env.local`. It is
+  read only on the server, so it never needs a `NEXT_PUBLIC_` twin.
 
   ```bash
-  for target in production preview development; do
-    tr -d '\n' < antibot-secret.txt | vercel env add ANTIBOT_HMAC_SECRET "$target"
-  done
-  vercel env ls | grep ANTIBOT          # expect three rows
+  # production — generate it on the host so the value never travels
+  ssh -p 49152 ubuntu@51.195.82.98
+  openssl rand -base64 48 | tr -d '\n'    # paste into /srv/ethniafrica/.env
+  cd /srv/ethniafrica && docker compose up -d ethniafrica
+
+  # recette preview
+  tr -d '\n' < antibot-secret.txt | vercel env add ANTIBOT_HMAC_SECRET preview
   ```
 
-  Then **redeploy** — a Vercel environment variable does not reach a build that already ran.
+  Then **rebuild** — neither a `.env` line nor a Vercel variable reaches a build that
+  already ran. On the VPS that means `docker compose up -d`; on Vercel, a fresh run of
+  `deploy-preview-recette.yml`.
 
   **Checking parity without printing the secret.** The value must be identical across
   environments, or a challenge minted by one and verified by another is refused. Compare
@@ -158,8 +190,22 @@ Required for a reader to report an error:
   A 200 with a `salt` proves the secret is set. It does **not** prove the two environments
   agree — only a report that actually sends does that.
 
-Optional subsystems, each inert when unset: `UPSTASH_REDIS_REST_URL` /
-`UPSTASH_REDIS_REST_TOKEN` (rate limiting), `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`,
+Required in production, whatever their reputation as an optional extra:
+
+- `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`.
+
+  Rate limiting **fails closed**. `checkUpstashConfigured()` in `src/lib/api/rate-limit.ts`
+  answers **500** on a production deployment when either is missing, rather than serving
+  unlimited traffic — a deliberate choice, since failing open would silently remove all rate
+  limiting. Outside production it logs a warning and lets the request through.
+
+  What decides "production" changed with the move off Vercel. `isProductionDeployment()`
+  prefers `VERCEL_ENV`, which no longer exists, and falls back to `NODE_ENV` — which the
+  Docker image sets to `production`. So on the VPS these two are mandatory: without them
+  every `/api/v2/*` request answers 500 while the pages themselves render perfectly, which is
+  a difficult failure to read from the outside.
+
+Optional subsystems, each genuinely inert when unset: `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`,
 `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `ANTIBOT_DIFFICULTY_BITS` (defaults to 20),
 `REVALIDATE_SECRET`, `SUPABASE_WEBHOOK_SECRET`, `NEXT_PUBLIC_FEATURE_QUIZ`,
 `CORS_ALLOWED_ORIGIN`.
@@ -236,8 +282,10 @@ hand means pointing both variables at the production project. `--target=staging`
 now throws.
 
 `.github/workflows/production-data-sync.yml` runs the same validate → preview → apply sequence
-automatically after a successful Vercel _Production_ deployment of `main`, then POSTs a cache
-revalidation to `https://ethniafrica.com/api/admin/revalidate`. It reads
+automatically after a **successful OVH production deploy** — it is chained to
+`deploy-production.yml` with `workflow_run` and runs only when that concluded `success`, so a
+failed deploy leaves the production corpus untouched. It then POSTs a cache revalidation to
+`https://ethniafrica.com/api/admin/revalidate`. It reads
 `PRODUCTION_SUPABASE_URL` and `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` — both the production
 project's, both distinct from the recette values the rest of CI uses — and fails if either is
 absent.
@@ -269,7 +317,8 @@ Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`
 
 ## Post-deploy verification
 
-- [ ] The deployment is green in Vercel and the site loads.
+- [ ] The `deploy-production.yml` run concluded `success` and the site loads. A published
+      Release with a failed deploy is not a shipped release.
 - [ ] `/fr` renders — the middleware canonicalizes every locale segment to `fr`.
 - [ ] A fiche route renders for each entity type: a country, a people, a language family.
       _A green axe check has previously masked an HTTP 500 on every fiche route for two
@@ -285,8 +334,12 @@ Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`
 
 ## Rollback
 
-**Application.** Redeploy the previous deployment from the Vercel dashboard. Nothing else is
-required — the frontend holds no state.
+**Application.** A host-side operation on the VPS, not a re-run of any workflow and not a
+re-published Release. Each deploy renames the outgoing image `ethniafrica:previous`, so going
+back is two commands and about ten seconds. Only one generation is kept. Full procedure —
+including rebuilding an older tag and the DNS fallback to Vercel — is in
+[`runbooks/ovh-production-deploy.md`](./runbooks/ovh-production-deploy.md). Nothing else is
+required: the frontend holds no state.
 
 **Database.** Migrations are not generally reversible; several drop tables and their data.
 Restore from a snapshot rather than hand-writing a down migration. See
@@ -327,6 +380,7 @@ is blocking the read. Test with the anon key, never the service role.
 
 ## Related
 
+- [`runbooks/ovh-production-deploy.md`](./runbooks/ovh-production-deploy.md) — the production host, its secrets, and **rollback**
 - [`runbooks/migration-state.md`](./runbooks/migration-state.md) — which migrations are live where
 - [`runbooks/afrik-data-sync.md`](./runbooks/afrik-data-sync.md) — loading the corpus
 - [`runbooks/restore-procedure.md`](./runbooks/restore-procedure.md) — backup restore, RTO/RPO

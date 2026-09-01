@@ -1,0 +1,47 @@
+name: Deploy Preview (recette, manual)
+
+# The recette preview stays on Vercel, but nothing about it is automatic any more.
+#
+# `vercel.json` sets `git.deploymentEnabled: false`, which stops Vercel building on every
+# push and every pull request — the volume that exhausted the Hobby plan's deployment
+# quota in the first place, once several agent sessions started pushing in parallel.
+# A Vercel Deploy Hook is an explicit trigger rather than a commit-driven one, so it
+# still works with that setting off, and this workflow is the only thing that calls it.
+#
+# Run it from the Actions tab when you actually want to look at recette.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-preview-recette
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Ask Vercel to build the current recette
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.RECETTE_VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          : "${DEPLOY_HOOK_URL:?RECETTE_VERCEL_DEPLOY_HOOK_URL is not set — create the hook in Vercel (Project Settings -> Git -> Deploy Hooks, branch: recette) and store its URL as a repository secret. See docs/runbooks/ovh-production-deploy.md}"
+
+          # The hook URL is itself the credential — anyone holding it can spend build
+          # minutes — so the body is written to a file rather than echoed with the URL.
+          curl --fail-with-body --silent --show-error \
+            --request POST "$DEPLOY_HOOK_URL" \
+            --output hook-response.json
+
+          # A 200 means Vercel accepted the request, not that the build succeeded. The
+          # build itself is watched in the Vercel dashboard; this workflow's job ends here.
+          echo "Vercel accepted the request. Deployment queued:"
+          jq -r '.job | "  id:    \(.id)\n  state: \(.state)"' hook-response.json \
+            || cat hook-response.json
+
+      - name: Drop the response
+        if: always()
+        run: rm -f hook-response.json

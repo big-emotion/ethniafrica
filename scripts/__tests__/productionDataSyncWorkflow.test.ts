@@ -12,28 +12,36 @@ function readWorkflow(): string {
 }
 
 describe("production AFRIK data sync workflow", () => {
+  // Production left Vercel for the OVH VPS, so `vercel[bot]` never creates a
+  // deployment for it again. This assertion used to pin the sync to that event; had it
+  // not been updated with the trigger, the workflow would have gone quiet permanently
+  // while every board stayed green and the production corpus froze.
   // @req REQ-032
-  it("runs only for a successful Vercel Production deployment", () => {
+  it("runs only after a successful production deploy", () => {
     const workflow = readWorkflow();
 
-    expect(workflow).toContain("deployment_status:");
+    expect(workflow).toMatch(/^\s*workflow_run:/m);
+    expect(workflow).toContain('workflows: ["Deploy Production (OVH)"]');
+    expect(workflow).toContain(
+      "github.event.workflow_run.conclusion == 'success'"
+    );
+
+    // The retired Vercel trigger, and any trigger that would fire on a mere push.
+    expect(workflow).not.toMatch(/^\s*deployment_status:/m);
+    expect(workflow).not.toContain("creator.login");
     expect(workflow).not.toMatch(/^\s+(push|pull_request):/m);
-    expect(workflow).toContain(
-      "github.event.deployment_status.state == 'success'"
-    );
-    expect(workflow).toContain(
-      "github.event.deployment.environment == 'Production'"
-    );
-    expect(workflow).toContain(
-      "github.event.deployment.creator.login == 'vercel[bot]'"
-    );
   });
 
+  // `types: [completed]` fires on failure and cancellation too, so the conclusion
+  // check above is what keeps a failed deploy from loading the corpus for a version
+  // that is not running.
   // @req REQ-032
   it("binds the sync to the deployed main commit", () => {
     const workflow = readWorkflow();
 
-    expect(workflow).toContain("ref: ${{ github.event.deployment.sha }}");
+    expect(workflow).toContain(
+      "ref: ${{ github.event.workflow_run.head_sha }}"
+    );
     expect(workflow).toContain("fetch-depth: 0");
     expect(workflow).toContain("git merge-base --is-ancestor");
     expect(workflow).not.toContain("SUPABASE_PRODUCTION_SECRET_KEY");

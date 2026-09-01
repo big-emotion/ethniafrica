@@ -4,6 +4,7 @@ import {
   decodeFlagCursor,
   getAgeConfirmedAt,
   getAuthenticatedContributor,
+  getContributorEmail,
   getFlagByIdOrSlug,
   getModeratorByAccessToken,
   listFlags,
@@ -31,6 +32,13 @@ import {
   checkFlagRateLimit,
   type FlagRateLimitResult,
 } from "@/lib/ratelimit/flagRateLimit";
+import {
+  sendFlagResolutionEmail,
+  type FlagResolutionContributor,
+  type FlagResolutionStatus,
+} from "@/lib/email/flagNotification";
+import { logger } from "@/lib/api/logger";
+import * as Sentry from "@sentry/nextjs";
 
 const FLAG_KINDS = [
   "inaccurate",
@@ -420,13 +428,37 @@ export interface FlagTransitionDependencies {
     | { ok: false; reason: "not_found" | "illegal_transition" }
   >;
   writeAuditLog: (input: AuditLogInput) => Promise<void>;
+  getContributorEmail: (contributorId: string) => Promise<string | null>;
+  sendFlagResolutionEmail: (
+    flag: {
+      public_slug: string;
+      status: FlagResolutionStatus;
+      moderator_notes: string | null;
+      target_type: string | null;
+      target_id: string | null;
+    },
+    contributor: FlagResolutionContributor | null
+  ) => Promise<void>;
 }
 
 const defaultTransitionDependencies: FlagTransitionDependencies = {
   getModeratorByAccessToken,
   transitionFlag,
   writeAuditLog: (input) => auditLog.write(input),
+  getContributorEmail,
+  sendFlagResolutionEmail,
 };
+
+/**
+ * The three terminal states a moderator's decision resolves a report to —
+ * `withdrawn` is terminal too, but the contributor withdrew it themselves,
+ * so there is no decision to notify them of (ETNI-73).
+ */
+const NOTIFIABLE_STATUSES: ReadonlyArray<FlagStatus> = [
+  "accepted",
+  "rejected",
+  "duplicate",
+];
 
 /**
  * Drive one report through the state machine (ETNI-72).
@@ -506,6 +538,39 @@ export async function handleFlagTransition(
     after: { status: result.flag.status },
     ip: context.clientIp ?? null,
   });
+
+  /**
+   * Best-effort resolution email (ETNI-73). The transition above already
+   * committed, so nothing here may roll it back — every failure, including
+   * one from the dependency itself, is caught, logged and reported rather
+   * than allowed to fail the response.
+   */
+  if (NOTIFIABLE_STATUSES.includes(result.flag.status)) {
+    try {
+      const contributorId = result.flag.contributor_id;
+      const email = contributorId
+        ? await dependencies.getContributorEmail(contributorId)
+        : null;
+      const contributor: FlagResolutionContributor | null =
+        contributorId && email ? { id: contributorId, email } : null;
+
+      await dependencies.sendFlagResolutionEmail(
+        {
+          public_slug: result.flag.public_slug,
+          status: result.flag.status as FlagResolutionStatus,
+          moderator_notes: parsed.data.moderator_notes ?? null,
+          target_type: result.flag.target_type,
+          target_id: result.flag.target_id,
+        },
+        contributor
+      );
+    } catch (error) {
+      logger.error("Flag resolution notification failed", error, {
+        flagId: result.flag.id,
+      });
+      Sentry.captureException(error);
+    }
+  }
 
   return { status: 200, body: createApiResponse(result.flag) };
 }
