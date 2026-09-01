@@ -12,7 +12,7 @@
  * impossible rather than merely fixed.
  */
 
-import type { SearchResult } from "@/types/afrik-frontend";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
 import type { PersonPeopleLink } from "@/types/persons";
 
 export interface SearchQueryOptions {
@@ -184,6 +184,39 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       })
     ),
   ];
+}
+
+const LEAD_KIND_TO_TYPE: Record<string, SearchLead["type"]> = {
+  people: "people",
+  country: "country",
+  family: "languageFamily",
+};
+
+/**
+ * Near-miss leads (REQ-125) — populated by the API only when `data.total`
+ * is 0. An unrecognised `kind` is dropped rather than surfaced with a wrong
+ * accent: this is the same defensive stance as `mapSearchEnvelope` treating
+ * a non-object `data` as no results.
+ */
+// @req REQ-125
+export function mapSearchLeads(envelope: unknown): SearchLead[] {
+  const data = (envelope as { data?: unknown })?.data;
+  if (!data || Array.isArray(data)) return [];
+
+  const { leads } = data as Record<string, unknown>;
+
+  return asRows(leads).flatMap((row): SearchLead[] => {
+    const type = LEAD_KIND_TO_TYPE[row.kind as string];
+    if (!type) return [];
+    return [
+      {
+        type,
+        id: String(row.id),
+        name: String(row.name ?? ""),
+        similarity: numberOrUndefined(row.similarity) ?? 0,
+      },
+    ];
+  });
 }
 
 /**

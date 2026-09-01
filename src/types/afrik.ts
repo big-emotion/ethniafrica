@@ -740,6 +740,20 @@ export interface RankedLanguage {
   updatedAt?: Date;
 }
 
+/**
+ * A near-miss lead (REQ-125): what the search engine almost understood,
+ * shown only when the main search's `total` is 0. `kind` is scoped to the
+ * three entities the search surface names to the reader (`SEARCH_LABEL`) —
+ * languages, persons and patronymes are not candidates for a lead any more
+ * than they are named in that label.
+ */
+export interface SearchLead {
+  kind: "people" | "country" | "family";
+  id: string;
+  name: string;
+  similarity: number;
+}
+
 export interface FtsSearchResponse {
   peoples: RankedPeople[];
   countries: RankedCountry[];
@@ -755,6 +769,8 @@ export interface FtsSearchResponse {
   patronymesTotal: number;
   languagesTotal: number;
   total: number;
+  /** Populated only when `total` is 0 (REQ-125); empty otherwise. */
+  leads: SearchLead[];
 }
 
 // ==========================================

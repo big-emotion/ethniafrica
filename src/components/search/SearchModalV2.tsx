@@ -13,9 +13,14 @@ import {
 } from "@/components/ui/dialog";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Language } from "@/types/shared";
-import { search } from "@/lib/afrikLoader";
+import { searchWithLeads } from "@/lib/afrikLoader";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
-import type { SearchResult, SearchEntityType } from "@/types/afrik-frontend";
+import { NoResultsLeads } from "@/components/search/NoResultsLeads";
+import type {
+  SearchResult,
+  SearchEntityType,
+  SearchLead,
+} from "@/types/afrik-frontend";
 
 // Selecting a result no longer travels back up to the host: each card is a
 // link and navigates on its own, so the modal only needs to close itself.
@@ -34,12 +39,14 @@ export const SearchModalV2 = ({
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<SearchEntityType | "all">("all");
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [leads, setLeads] = useState<SearchLead[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setSearchQuery("");
       setResults([]);
+      setLeads([]);
       setActiveTab("all");
     }
   }, [open]);
@@ -48,6 +55,7 @@ export const SearchModalV2 = ({
     const searchData = async () => {
       if (!searchQuery.trim() || searchQuery.length < 2) {
         setResults([]);
+        setLeads([]);
         return;
       }
 
@@ -55,11 +63,16 @@ export const SearchModalV2 = ({
       try {
         const searchFilters: { type?: SearchEntityType } =
           activeTab !== "all" ? { type: activeTab } : {};
-        const data = await search(searchQuery, searchFilters);
+        const { results: data, leads: nearMisses } = await searchWithLeads(
+          searchQuery,
+          searchFilters
+        );
         setResults(data);
+        setLeads(nearMisses);
       } catch (error) {
         console.error("Search error:", error);
         setResults([]);
+        setLeads([]);
       } finally {
         setLoading(false);
       }
@@ -183,7 +196,13 @@ export const SearchModalV2 = ({
               message={`Aucun résultat pour « ${searchQuery.trim()} ».`}
               variant="search"
               lang={language}
-            />
+            >
+              <NoResultsLeads
+                leads={leads}
+                language={language}
+                onNavigate={onClose}
+              />
+            </EmptyState>
           ) : showPrompt ? (
             <div className="flex flex-col items-center justify-center h-64 text-center gap-2">
               <Search

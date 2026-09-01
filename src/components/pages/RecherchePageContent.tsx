@@ -18,6 +18,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { SearchPivotCard } from "@/components/search/SearchPivotCard";
+import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
@@ -26,6 +27,7 @@ import {
   buildSearchParams,
   compareByRelevance,
   mapSearchEnvelope,
+  mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
 import {
   readRelation,
@@ -35,7 +37,7 @@ import {
 import { selectPivot } from "@/lib/search/pivot";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type { ClassificationStatus } from "@/types/afrik";
-import type { SearchResult } from "@/types/afrik-frontend";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
 
 // ── constants ─────────────────────────────────────────────────────────────────
 
@@ -155,6 +157,7 @@ export function RecherchePageContent() {
   );
 
   const [results, setResults] = useState<SearchHit[]>([]);
+  const [leads, setLeads] = useState<SearchLead[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(!!searchParams.get("q"));
   const [suggestions, setSuggestions] = useState<SearchHit[]>([]);
@@ -193,6 +196,7 @@ export function RecherchePageContent() {
       // family" asks something whole without any free text.
       if (!q.trim() && !rel) {
         setResults([]);
+        setLeads([]);
         return;
       }
       setLoading(true);
@@ -207,11 +211,15 @@ export function RecherchePageContent() {
         const res = await fetch(`/api/v2/search?${params}`);
         if (!res.ok) {
           setResults([]);
+          setLeads([]);
           return;
         }
-        setResults(mapSearchEnvelope(await res.json()));
+        const envelope = await res.json();
+        setResults(mapSearchEnvelope(envelope));
+        setLeads(mapSearchLeads(envelope));
       } catch {
         setResults([]);
+        setLeads([]);
       } finally {
         setLoading(false);
       }
@@ -672,6 +680,7 @@ export function RecherchePageContent() {
             <p className="text-afh-small text-afh-text-soft">
               Vérifiez l&apos;orthographe ou essayez un autre terme.
             </p>
+            <NoResultsLeads leads={leads} language={language} />
             <div className="flex flex-col gap-afh-md text-afh-small">
               <Link
                 href={getLocalizedRoute(language, "families")}

@@ -14,13 +14,20 @@ import {
 import userEvent from "@testing-library/user-event";
 import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
-import type { SearchResult } from "@/types/afrik-frontend";
-import { getPeopleRoute } from "@/lib/routing";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
+import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
 // Mock afrikLoader
 vi.mock("@/lib/afrikLoader", () => ({
-  search: vi.fn(),
+  searchWithLeads: vi.fn(),
 }));
+
+function mockSearch(results: SearchResult[], leads: SearchLead[] = []) {
+  vi.mocked(afrikLoader.searchWithLeads).mockResolvedValue({
+    results,
+    leads,
+  });
+}
 
 // Mock next/link (used by the shared EmptyState no-results CTA)
 vi.mock("next/link", () => ({
@@ -197,7 +204,7 @@ describe("SearchModalV2", () => {
   describe("entity-type marks", () => {
     // @req REQ-091
     it("pairs a color mark with a text label for every result type (never color alone)", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -230,7 +237,7 @@ describe("SearchModalV2", () => {
 
     // @req REQ-002
     it("reaches each result's fiche through a keyboard-accessible link", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -255,7 +262,7 @@ describe("SearchModalV2", () => {
 
     // @req REQ-002
     it("closes itself when a result link is activated", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -281,7 +288,7 @@ describe("SearchModalV2", () => {
   describe("no-result guidance", () => {
     // @req REQ-091
     it("shows a guidance sentence and one CTA when a real search yields zero results", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue([]);
+      mockSearch([]);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -296,6 +303,69 @@ describe("SearchModalV2", () => {
         expect(screen.getByText(/aucun résultat pour/i)).toBeInTheDocument();
       });
       expect(screen.getAllByRole("link")).toHaveLength(1);
+    });
+
+    // @req REQ-125
+    it("shows near-miss leads alongside the guidance sentence", async () => {
+      mockSearch(
+        [],
+        [
+          {
+            type: "languageFamily",
+            id: "FLG_MANDE",
+            name: "Mandé",
+            similarity: 0.3,
+          },
+        ]
+      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "mnde" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("link", { name: /Mandé/ })).toHaveAttribute(
+          "href",
+          getFamilyRoute("fr", "FLG_MANDE")
+        );
+      });
+    });
+
+    // @req REQ-125
+    it("closes the modal when a lead link is activated", async () => {
+      mockSearch(
+        [],
+        [
+          {
+            type: "languageFamily",
+            id: "FLG_MANDE",
+            name: "Mandé",
+            similarity: 0.3,
+          },
+        ]
+      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "mnde" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      await waitFor(() => {
+        expect(screen.getByRole("link", { name: /Mandé/ })).toBeInTheDocument();
+      });
+
+      fireEvent.click(screen.getByRole("link", { name: /Mandé/ }));
+
+      expect(mockOnClose).toHaveBeenCalled();
     });
   });
 

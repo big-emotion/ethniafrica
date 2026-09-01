@@ -28,6 +28,8 @@ export interface FtsSearchData {
   patronymesTotal: number;
   languagesTotal: number;
   total: number;
+  /** Near-miss leads (REQ-125), populated only when `total` is 0. */
+  leads: object[];
 }
 
 // @req REQ-002
@@ -51,5 +53,6 @@ export async function ftsSearchHandler(
     patronymesTotal: result.patronymesTotal,
     languagesTotal: result.languagesTotal,
     total: result.total,
+    leads: (result.leads ?? []) as object[],
   });
 }

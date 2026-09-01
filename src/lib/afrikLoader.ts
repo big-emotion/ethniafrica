@@ -12,6 +12,7 @@ import type {
   PeopleDetail,
   CountrySummary,
   CountryDetail,
+  SearchLead,
   SearchResult,
   SearchFilters,
   PaginationMeta,
@@ -25,6 +26,7 @@ import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import {
   buildSearchParams,
   mapSearchEnvelope,
+  mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
@@ -185,6 +187,58 @@ export async function search(
   } catch (error) {
     logger.error("[search] Exception", error);
     return [];
+  }
+}
+
+export interface SearchWithLeads {
+  results: SearchResult[];
+  /** Near-miss leads (REQ-125) — non-empty only when the API's own total is 0. */
+  leads: SearchLead[];
+}
+
+// @req REQ-125
+/**
+ * Same query as `search`, additionally carrying the near-miss leads a
+ * zero-result search returns. A distinct function rather than an added
+ * parameter, so every existing `search()` caller keeps its `SearchResult[]`
+ * return type untouched.
+ */
+export async function searchWithLeads(
+  query: string,
+  filters: Omit<SearchFilters, "query"> = {}
+): Promise<SearchWithLeads> {
+  try {
+    const params = buildSearchParams(query);
+    const response = await fetch(`${API_BASE}/search?${params}`);
+
+    if (!response.ok) {
+      const error = await handleFetchError(response, "search");
+      logger.error("[searchWithLeads] Error", error);
+      return { results: [], leads: [] };
+    }
+
+    const envelope = await response.json();
+    let results = mapSearchEnvelope(envelope);
+    const leads = mapSearchLeads(envelope);
+
+    if (filters.type) {
+      results = results.filter((result) => result.type === filters.type);
+    }
+    if (filters.languageFamilyId) {
+      results = results.filter(
+        (result) => result.languageFamilyId === filters.languageFamilyId
+      );
+    }
+    if (filters.countryId) {
+      results = results.filter((result) =>
+        result.countryIds?.includes(filters.countryId)
+      );
+    }
+
+    return { results, leads };
+  } catch (error) {
+    logger.error("[searchWithLeads] Exception", error);
+    return { results: [], leads: [] };
   }
 }
 

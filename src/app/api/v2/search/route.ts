@@ -33,8 +33,13 @@
  *       (migration 068, REQ-136) rank the same prefix/accent-insensitive way,
  *       with an exact-match bonus that also fires on the ISO 639-3 id — a
  *       reader who types "swa" reaches Swahili exactly as precisely as one
- *       who types its name. Rate-limited per AR11 (IP: 60 RPM, public key:
- *       600 RPM, partner key: 6 000 RPM).
+ *       who types its name. When `total` is 0, `leads` (REQ-125) carries up
+ *       to 3 near-miss suggestions across peoples, countries and language
+ *       families — a trigram similarity scan (migration 069) below the main
+ *       search's own fuzzy floor, so the reader sees what the engine almost
+ *       understood instead of a bare empty result; `leads` is always empty
+ *       when `total` is greater than 0. Rate-limited per AR11 (IP: 60 RPM,
+ *       public key: 600 RPM, partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []

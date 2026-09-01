@@ -25,6 +25,7 @@ import type {
   RankedPatronyme,
   RankedPeople,
   RankedPerson,
+  SearchLead,
 } from "@/types/afrik";
 import type {
   PersonPeopleLink,
@@ -173,6 +174,20 @@ export async function ftsSearchEntities(
   const patronymes = patronymePayload.rows.map(toRankedPatronyme);
   const languages = languagePayload.rows.map(toRankedLanguage);
 
+  const total =
+    peoplePayload.total +
+    countryPayload.total +
+    families.length +
+    personPayload.total +
+    patronymePayload.total +
+    languagePayload.total;
+
+  // Leads are only worth computing once the main search has already come up
+  // empty (REQ-125) — a non-empty result set is not a dead end, so it never
+  // needs a near-miss.
+  const leads =
+    text && total === 0 ? await fetchSearchLeads(supabase, text) : [];
+
   return {
     peoples,
     countries,
@@ -186,14 +201,34 @@ export async function ftsSearchEntities(
     personsTotal: personPayload.total,
     patronymesTotal: patronymePayload.total,
     languagesTotal: languagePayload.total,
-    total:
-      peoplePayload.total +
-      countryPayload.total +
-      families.length +
-      personPayload.total +
-      patronymePayload.total +
-      languagePayload.total,
+    total,
+    leads,
   };
+}
+
+async function fetchSearchLeads(
+  supabase: ReturnType<typeof createServerClient>,
+  text: string
+): Promise<SearchLead[]> {
+  const { data, error } = await supabase.rpc("afrik_search_leads", {
+    p_q: text,
+    p_limit: 3,
+  });
+
+  if (error) {
+    logger.error("Error in search leads", error);
+    throw error;
+  }
+
+  const payload = data as { rows?: Record<string, unknown>[] } | null;
+  const rows = Array.isArray(payload?.rows) ? payload.rows : [];
+
+  return rows.map((row) => ({
+    kind: row.kind as SearchLead["kind"],
+    id: row.id as string,
+    name: row.name as string,
+    similarity: typeof row.similarity === "number" ? row.similarity : 0,
+  }));
 }
 
 interface RankedPayload {

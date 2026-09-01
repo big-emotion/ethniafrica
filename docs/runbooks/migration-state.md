@@ -211,6 +211,7 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `069_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 
 > **REQ-136 (ETNI-1506).** `068` gives the language entity (`afrik_languages`) the search
 > apparatus every other atlas entity already has: a `name_unaccent_vector` column (mirroring

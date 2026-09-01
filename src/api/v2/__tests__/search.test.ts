@@ -190,4 +190,42 @@ describe("ftsSearchHandler (handler)", () => {
       ftsSearchHandler({ q: "Yoruba", limit: 20, offset: 0 })
     ).rejects.toThrow("DB error");
   });
+
+  // @req REQ-125
+  it("near-miss leads — passes leads through on a zero-total result", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      leads: [
+        { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      ],
+    });
+
+    const result = await ftsSearchHandler({
+      q: "bamba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.data.total).toBe(0);
+    expect(result.data.leads).toEqual([
+      { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+    ]);
+  });
+
+  // @req REQ-125
+  it("near-miss leads — defaults to an empty array when the service omits leads", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      peoples: [mockPeople],
+      countries: [mockCountry],
+      total: 2,
+    });
+
+    const result = await ftsSearchHandler({
+      q: "Yoruba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.data.leads).toEqual([]);
+  });
 });

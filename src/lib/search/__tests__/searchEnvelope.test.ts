@@ -4,6 +4,7 @@ import {
   buildSearchParams,
   compareByRelevance,
   mapSearchEnvelope,
+  mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
 import type { SearchResult } from "@/types/afrik-frontend";
 
@@ -318,5 +319,64 @@ describe("compareByRelevance", () => {
       "FIRST",
       "SECOND",
     ]);
+  });
+});
+
+describe("mapSearchLeads", () => {
+  // @req REQ-125
+  it("maps a people, country and family lead, renaming family to languageFamily", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          {
+            kind: "people",
+            id: "PPL_BAMBARA",
+            name: "Bambara",
+            similarity: 0.4,
+          },
+          { kind: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+          {
+            kind: "family",
+            id: "FLG_MANDE",
+            name: "Mandé",
+            similarity: 0.25,
+          },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([
+      { type: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      { type: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+      {
+        type: "languageFamily",
+        id: "FLG_MANDE",
+        name: "Mandé",
+        similarity: 0.25,
+      },
+    ]);
+  });
+
+  // @req REQ-125
+  it("drops a lead whose kind is not people, country or family", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          { kind: "language", id: "swa", name: "Swahili", similarity: 0.5 },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([]);
+  });
+
+  // @req REQ-125
+  it("returns an empty array when there is no leads field, an array data, or no data", () => {
+    expect(mapSearchLeads({ data: { total: 2 } })).toEqual([]);
+    expect(mapSearchLeads({ data: [{ id: "PPL_BETE" }] })).toEqual([]);
+    expect(mapSearchLeads({})).toEqual([]);
+    expect(mapSearchLeads(null)).toEqual([]);
   });
 });
