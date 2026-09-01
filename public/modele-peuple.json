@@ -44,6 +44,11 @@
       "dialects": [],
       "vehicularRole": null
     },
+    "externalIdentifiers": {
+      "wikidataId": "<Identifiant Wikidata du peuple, format Q[1-9][0-9]* — ou omettre si aucune correspondance non ambiguë>",
+      "glottocode": "<Glottocode Glottolog, format [a-z]{4}[0-9]{4} — ou omettre>",
+      "iso639_3": "<Code ISO 639-3, format [a-z]{3} — ou omettre>"
+    },
     "historicalAffiliation": {
       "description": "<Lien historique, non linguistique, avec l'Afrique — obligatoire quand le peuple n'a pas de filiation linguistique défendable vers une famille africaine (ex. créolophones) ; omettre entièrement la section sinon>",
       "sources": [

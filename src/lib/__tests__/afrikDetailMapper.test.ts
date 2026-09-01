@@ -158,6 +158,40 @@ describe("mapPeopleDetail", () => {
     expect(detail.languageFamilyId).toBe("FLG_INDOEUROPEAN");
   });
 
+  // @req REQ-128
+  it("hoists externalIdentifiers out of the content blob", () => {
+    const detail = mapPeopleDetail({
+      id: "PPL_YORUBA",
+      nameMain: "Yorùbá",
+      languageFamilyId: "FLG_BENOUECONGO",
+      content: {
+        externalIdentifiers: {
+          wikidataId: "Q34636",
+          glottocode: "yoru1245",
+          iso639_3: "yor",
+        },
+      },
+    });
+
+    expect(detail.externalIdentifiers).toEqual({
+      wikidataId: "Q34636",
+      glottocode: "yoru1245",
+      iso639_3: "yor",
+    });
+  });
+
+  // @req REQ-128
+  it("leaves externalIdentifiers undefined for a people with no registry match", () => {
+    const detail = mapPeopleDetail({
+      id: "PPL_ORDINARY",
+      nameMain: "Peuple ordinaire",
+      languageFamilyId: "FLG_BANTU",
+      content: {},
+    });
+
+    expect(detail.externalIdentifiers).toBeUndefined();
+  });
+
   // @req REQ-127
   it("leaves historicalAffiliation undefined for a people the section does not apply to", () => {
     const detail = mapPeopleDetail({

@@ -31,6 +31,7 @@ import type {
   DemographicsSection,
   DecolonialHeader,
   PeopleReference,
+  ExternalIdentifiersSection,
 } from "./afrik";
 import type { PersonPeopleLink } from "./persons";
 
@@ -181,6 +182,9 @@ export interface PeopleDetail {
 
   // Section 5: Langues et sous-familles
   languages?: LanguagesSection;
+
+  // Identifiants de registre externes (DEC-033) — jamais une URL stockée.
+  externalIdentifiers?: ExternalIdentifiersSection;
 
   // Filiation historique — REQ-127. Distinct de languageFamilyId ; présent
   // seulement pour les peuples sans filiation linguistique défendable vers
@@ -574,4 +578,5 @@ export type {
   Kingdom,
   DecolonialHeader,
   PeopleReference,
+  ExternalIdentifiersSection,
 } from "./afrik";

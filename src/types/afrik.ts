@@ -310,6 +310,14 @@ export interface PeopleContent {
   languages?: LanguagesSection;
 
   /**
+   * Structured registry identifiers used to build outbound links at render
+   * time (DEC-033). Never a stored URL — a registry can change its URL
+   * scheme, and a stored URL cannot be validated against the identifier
+   * format the way the identifier itself can.
+   */
+  externalIdentifiers?: ExternalIdentifiersSection;
+
+  /**
    * The historical, non-linguistic link to Africa (REQ-127) — for a people
    * such as a Creole-speaking group, where Glottolog classifies the language
    * under the family of its lexifier and never under an African family.
@@ -469,6 +477,19 @@ export interface AppellationsSection {
   peopleGroupId?: string;
   /** Display label for the group, e.g. "Peul / Fulani". Required alongside `peopleGroupId`. */
   peopleGroupLabel?: string;
+}
+
+/**
+ * Registry identifiers per external source (DEC-033). Each field is the bare
+ * identifier — never a URL — validated against its registry's own format:
+ * Wikidata `^Q[1-9][0-9]*$`, Glottolog `^[a-z]{4}[0-9]{4}$`, ISO 639-3
+ * `^[a-z]{3}$`. All optional: absence means no automatic or editorial match
+ * has been made yet.
+ */
+export interface ExternalIdentifiersSection {
+  wikidataId?: string;
+  glottocode?: string;
+  iso639_3?: string;
 }
 
 export interface OriginsSection {
