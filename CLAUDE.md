@@ -230,3 +230,13 @@ TDD (failing test first) and KISS. Tests exercise the public interface — no re
 Copy `.env.example` → `.env.local`. Required to run: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` (server-only). Required for reporting to work at all: `ANTIBOT_HMAC_SECRET` (server-only, any long random string) — **not** inert when unset, `GET /api/v2/antibot/challenge` answers 503 and every report dialog dies on "la vérification n'a pas abouti" while the build stays green. It replaced `CLOUDFLARE_TURNSTILE_SECRET_KEY`, which no longer exists. Optional subsystems: `UPSTASH_REDIS_REST_*` (rate limiting), `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `ANTIBOT_DIFFICULTY_BITS`, `REVALIDATE_SECRET`, `SUPABASE_WEBHOOK_SECRET`, `NEXT_PUBLIC_FEATURE_QUIZ`. The CI build passes placeholder Supabase values so fork and Dependabot PRs still gate.
 
 Admin auth is Supabase Auth (magic-link, GitHub, Google OAuth); roles live in `user_roles` with values `reader`, `contributor`, `moderator`, `admin`, `advisor`. First admin: `ADMIN_EMAIL=… npx tsx scripts/seedAdmin.ts`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

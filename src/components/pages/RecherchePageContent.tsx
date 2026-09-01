@@ -7,26 +7,25 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { SearchPeopleGroupCard } from "@/components/search/SearchPeopleGroupCard";
 import { SearchPivotCard } from "@/components/search/SearchPivotCard";
 import { DominantAnswerPanel } from "@/components/search/DominantAnswerPanel";
 import { SourcedHighlightBlock } from "@/components/search/SourcedHighlightBlock";
+import { SearchLensBar } from "@/components/search/SearchLensBar";
+import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
-import { classificationLabels } from "@/lib/translations";
-import { compareByRelevance } from "@/lib/search/searchEnvelope";
+import {
+  compareByRelevance,
+  EMPTY_SEARCH_LENS_COUNTS,
+  type SearchLensCounts,
+} from "@/lib/search/searchEnvelope";
 import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
   readRelation,
@@ -36,86 +35,17 @@ import {
 import { selectPivot } from "@/lib/search/pivot";
 import { groupPeopleResults } from "@/lib/search/groupPeopleResults";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
-import type { ClassificationStatus } from "@/types/afrik";
-import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
+import type {
+  SearchEntityType,
+  SearchLead,
+  SearchResult,
+} from "@/types/afrik-frontend";
 
 // ── constants ─────────────────────────────────────────────────────────────────
-
-const REGIONS: Record<string, { label: string; countries: string[] }> = {
-  west: {
-    label: "Afrique de l'Ouest",
-    countries: [
-      "NGA",
-      "GHA",
-      "SEN",
-      "MLI",
-      "CIV",
-      "GIN",
-      "BFA",
-      "BEN",
-      "NER",
-      "TGO",
-      "SLE",
-      "LBR",
-      "GMB",
-      "CPV",
-      "GNB",
-      "MRT",
-    ],
-  },
-  east: {
-    label: "Afrique de l'Est",
-    countries: [
-      "KEN",
-      "TZA",
-      "ETH",
-      "UGA",
-      "RWA",
-      "BDI",
-      "SOM",
-      "DJI",
-      "ERI",
-      "COM",
-      "SYC",
-      "MDG",
-      "MUS",
-    ],
-  },
-  central: {
-    label: "Afrique Centrale",
-    countries: ["COD", "COG", "CMR", "CAF", "GAB", "GNQ", "TCD", "AGO"],
-  },
-  southern: {
-    label: "Afrique Australe",
-    countries: ["ZAF", "ZWE", "ZMB", "MWI", "MOZ", "BWA", "NAM", "LSO", "SWZ"],
-  },
-  north: {
-    label: "Afrique du Nord",
-    countries: ["MAR", "DZA", "TUN", "LBY", "EGY", "SDN", "SSD"],
-  },
-};
-
-const CONFIDENCE_OPTIONS = [
-  { value: "0.5", label: "Confiance > 50 %" },
-  { value: "0.7", label: "Confiance > 70 %" },
-  { value: "0.9", label: "Confiance > 90 %" },
-];
-
-const ALL_FILTER_VALUES = "__all__";
 
 /** Per-kind ceilings the route applies to each ranked query. */
 const RESULTS_PER_SEARCH = 20;
 const SUGGESTIONS_PER_KEYSTROKE = 6;
-
-type SortKey = "relevance" | "az" | "za" | "pop-desc" | "pop-asc";
-
-const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: "relevance", label: "Pertinence" },
-  { value: "az", label: "A → Z" },
-  { value: "za", label: "Z → A" },
-  { value: "pop-desc", label: "Population ↓" },
-  { value: "pop-asc", label: "Population ↑" },
-];
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
@@ -123,15 +53,20 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 // declare a parallel hit shape, which is how its reader drifted off-contract.
 type SearchHit = SearchResult;
 
-// ── helpers ───────────────────────────────────────────────────────────────────
-
-function getFilterParam(
-  searchParams: { get(name: string): string | null },
-  name: string
-): string {
-  const value = searchParams.get(name) ?? "";
-  return value === ALL_FILTER_VALUES ? "" : value;
-}
+/**
+ * `idle` — nothing committed yet, the page shows its default head.
+ * `loading` — a fetch for the committed query is in flight or has not run.
+ * `loaded` — the fetch resolved (success or failure); results reflect it.
+ *
+ * A `?q=` on arrival used to initialise a `hasSearched` flag straight to
+ * `true` before any fetch had run, so the empty-state block could paint on
+ * the very first client render — the one SSR HTML is reconciled against —
+ * ahead of the results it was supposed to describe (ETNI-1793). Starting in
+ * `loading` whenever the URL already commits a query closes that gap: the
+ * empty state is gated on `loaded`, which nothing reaches before the fetch
+ * itself does.
+ */
+type SearchStatus = "idle" | "loading" | "loaded";
 
 // ── component ─────────────────────────────────────────────────────────────────
 
@@ -142,48 +77,36 @@ export function RecherchePageContent() {
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const [inputValue, setInputValue] = useState(searchParams.get("q") ?? "");
-  const [committedQuery, setCommittedQuery] = useState(
-    searchParams.get("q") ?? ""
-  );
-  const [classificationStatus, setClassificationStatus] = useState(
-    getFilterParam(searchParams, "classificationStatus")
-  );
-  const [minConfidence, setMinConfidence] = useState(
-    getFilterParam(searchParams, "minConfidence")
-  );
-  const [region, setRegion] = useState(getFilterParam(searchParams, "region"));
-  const [relation, setRelation] = useState<SearchRelation | null>(() =>
-    readRelation(searchParams)
-  );
-  const [sort, setSort] = useState<SortKey>(
-    (searchParams.get("sort") as SortKey) ?? "relevance"
+  const initialQuery = searchParams.get("q") ?? "";
+  const initialRelation = readRelation(searchParams);
+
+  const [inputValue, setInputValue] = useState(initialQuery);
+  const [committedQuery, setCommittedQuery] = useState(initialQuery);
+  const [relation, setRelation] = useState<SearchRelation | null>(
+    initialRelation
   );
 
   const [results, setResults] = useState<SearchHit[]>([]);
   const [leads, setLeads] = useState<SearchLead[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(!!searchParams.get("q"));
+  const [counts, setCounts] = useState<SearchLensCounts>(
+    EMPTY_SEARCH_LENS_COUNTS
+  );
+  const [activeLens, setActiveLens] = useState<SearchEntityType | "all">("all");
+  const [status, setStatus] = useState<SearchStatus>(
+    initialQuery || initialRelation ? "loading" : "idle"
+  );
   const [suggestions, setSuggestions] = useState<SearchHit[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  // The suggest dropdown must never open from a `?q=` the reader arrived
+  // with — only from a keystroke they actually typed.
+  const hasEditedInput = useRef(false);
 
   // ── URL sync ────────────────────────────────────────────────────────────────
 
   const syncURL = useCallback(
-    (
-      q: string,
-      cs: string,
-      mc: string,
-      r: string,
-      s: SortKey,
-      rel: SearchRelation | null
-    ) => {
+    (q: string, rel: SearchRelation | null) => {
       const params = new URLSearchParams();
       if (q) params.set("q", q);
-      if (cs) params.set("classificationStatus", cs);
-      if (mc) params.set("minConfidence", mc);
-      if (r) params.set("region", r);
-      if (s !== "relevance") params.set("sort", s);
       if (rel) params.set(rel.kind, rel.id);
       const route = getLocalizedRoute(language, "search");
       const url = params.toString() ? `${route}?${params}` : route;
@@ -195,71 +118,63 @@ export function RecherchePageContent() {
   // ── main search ─────────────────────────────────────────────────────────────
 
   const performSearch = useCallback(
-    async (q: string, cs: string, mc: string, rel: SearchRelation | null) => {
+    async (q: string, rel: SearchRelation | null) => {
+      setActiveLens("all");
       // A relation on its own is a complete search: "the peoples of the Krou
       // family" asks something whole without any free text.
       if (!q.trim() && !rel) {
         setResults([]);
         setLeads([]);
+        setCounts(EMPTY_SEARCH_LENS_COUNTS);
+        setStatus("idle");
         return;
       }
-      setLoading(true);
-      setHasSearched(true);
+      setStatus("loading");
       try {
-        const { results, leads: nearMisses } = await searchWithLeads(q, {
+        const {
+          results: hits,
+          leads: nearMisses,
+          counts: lensCounts,
+        } = await searchWithLeads(q, {
           limit: RESULTS_PER_SEARCH,
-          classificationStatus: cs,
-          minConfidence: mc,
           ...relationSearchParams(rel),
         });
-        setResults(results);
+        setResults(hits);
         setLeads(nearMisses);
+        setCounts(lensCounts);
       } catch {
         setResults([]);
         setLeads([]);
+        setCounts(EMPTY_SEARCH_LENS_COUNTS);
       } finally {
-        setLoading(false);
+        setStatus("loaded");
       }
     },
     []
   );
 
-  // On mount: if URL has a query, search immediately.
+  // On mount: if the URL carries a query or a relation, search immediately.
+  // Later relation changes (e.g. dismissing the chip) re-run the same search
+  // and sync the URL — a single effect keyed on `relation` covers both, which
+  // is what keeps a `?q=` arrival to exactly one fetch.
+  const isFirstRelationRun = useRef(true);
   useEffect(() => {
-    if (committedQuery || relation) {
-      performSearch(
-        committedQuery,
-        classificationStatus,
-        minConfidence,
-        relation
-      );
+    if (!committedQuery && !relation) {
+      isFirstRelationRun.current = false;
+      return;
     }
+    performSearch(committedQuery, relation);
+    if (!isFirstRelationRun.current) {
+      syncURL(committedQuery, relation);
+    }
+    isFirstRelationRun.current = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [relation]);
 
-  // Re-search when filters change (only if a query has already been committed).
-  useEffect(() => {
-    if (!committedQuery && !relation) return;
-    performSearch(
-      committedQuery,
-      classificationStatus,
-      minConfidence,
-      relation
-    );
-    syncURL(
-      committedQuery,
-      classificationStatus,
-      minConfidence,
-      region,
-      sort,
-      relation
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classificationStatus, minConfidence, region, sort, relation]);
-
-  // ── auto-suggest (debounced, fires on input change) ─────────────────────────
+  // ── auto-suggest (debounced, fires on input change the reader made) ─────────
 
   useEffect(() => {
+    if (!hasEditedInput.current) return;
     if (inputValue.length < 2) {
       setSuggestions([]);
       setShowSuggestions(false);
@@ -296,82 +211,32 @@ export function RecherchePageContent() {
     const q = inputValue.trim();
     setCommittedQuery(q);
     setShowSuggestions(false);
-    syncURL(q, classificationStatus, minConfidence, region, sort, relation);
-    performSearch(q, classificationStatus, minConfidence, relation);
+    syncURL(q, relation);
+    performSearch(q, relation);
   };
 
   const handleSuggestionClick = (s: SearchHit) => {
     setInputValue(s.name);
     setCommittedQuery(s.name);
     setShowSuggestions(false);
-    syncURL(
-      s.name,
-      classificationStatus,
-      minConfidence,
-      region,
-      sort,
-      relation
-    );
-    performSearch(s.name, classificationStatus, minConfidence, relation);
-  };
-
-  const clearAllFilters = () => {
-    setClassificationStatus("");
-    setMinConfidence("");
-    setRegion("");
-    setSort("relevance");
-    setRelation(null);
-    syncURL(committedQuery, "", "", "", "relevance", null);
+    syncURL(s.name, relation);
+    performSearch(s.name, relation);
   };
 
   // ── derived state ───────────────────────────────────────────────────────────
 
-  const hasActiveFilters = !!(
-    classificationStatus ||
-    minConfidence ||
-    region ||
-    relation
-  );
+  const hasActiveFilters = Boolean(relation);
 
-  // A region narrows *peoples* by where they live. Only peoples carry
-  // countryIds, so testing every result against it silently dropped every
-  // country and language-family hit the moment a region was picked.
-  const filteredResults = region
-    ? results.filter(
-        (r) =>
-          r.type !== "people" ||
-          r.countryIds?.some((id) => REGIONS[region]?.countries.includes(id))
-      )
-    : results;
+  const lensFilteredResults =
+    activeLens === "all"
+      ? results
+      : results.filter((r) => r.type === activeLens);
 
-  const sortedResults = [...filteredResults].sort((a, b) => {
-    switch (sort) {
-      case "az":
-        return a.name.localeCompare(b.name, "fr");
-      case "za":
-        return b.name.localeCompare(a.name, "fr");
-      case "pop-desc":
-        return (b.population ?? 0) - (a.population ?? 0);
-      case "pop-asc":
-        return (a.population ?? 0) - (b.population ?? 0);
-      // "Pertinence" was offered in the sort menu but had no case here, so it
-      // fell through to a no-op comparator. Cross-kind ordering also needs
-      // compareByRelevance rather than a raw relevance subtraction: the
-      // envelope groups peoples, then countries, then families, and their
-      // scores are not on one scale.
-      case "relevance":
-        return compareByRelevance(a, b);
-      default:
-        return 0;
-    }
-  });
+  // The envelope groups peoples, then countries, then families; relevance
+  // alone is not comparable across kinds, so cross-kind ordering always goes
+  // through `compareByRelevance`, which decides on `exactMatch` first.
+  const sortedResults = [...lensFilteredResults].sort(compareByRelevance);
 
-  const classStatusLabel = classificationStatus
-    ? classificationLabels[classificationStatus as ClassificationStatus]?.label
-    : "";
-  const confidenceLabel = minConfidence
-    ? (CONFIDENCE_OPTIONS.find((o) => o.value === minConfidence)?.label ?? "")
-    : "";
   // A relation-scoped list ("the peoples of the Krou family") has no single
   // answer, so it never gets a pivot.
   const pivot = relation ? null : selectPivot(sortedResults, committedQuery);
@@ -379,12 +244,14 @@ export function RecherchePageContent() {
     ? sortedResults.filter((r) => r !== pivot)
     : sortedResults;
 
-  const regionLabel = region ? (REGIONS[region]?.label ?? "") : "";
+  // A name imposed from outside never stands alone where the self-appellation
+  // exists — the same rule `SearchPivotCard` applies to its own heading.
+  const pivotHasAutonym = Boolean(
+    pivot?.autonym && pivot.autonym !== pivot.name
+  );
 
-  // A country names itself from the ISO code. A family cannot, but every
-  // people returned under a family scope already carries its name, so the
-  // chip reads it from the results rather than paying for a second request.
-  // Until the first response lands it shows the identifier, never a guess.
+  // A relation-scoped list ("the peoples of the Krou family") has no single
+  // answer, so it never gets a pivot.
   const relationLabel = !relation
     ? ""
     : relation.kind === "country"
@@ -394,10 +261,40 @@ export function RecherchePageContent() {
             ?.languageFamilyName ?? relation.id
         }`;
 
-  const resultsList = !loading && listResults.length > 0 && (
+  const resultCountLabel = `${sortedResults.length} résultat${
+    sortedResults.length > 1 ? "s" : ""
+  }${committedQuery ? ` pour « ${committedQuery} »` : ""}`;
+
+  // Only once the fetch has resolved does the page know whether it is
+  // answering with a pivot or a count — showing either ahead of that would
+  // paint a wrong or stale head for one frame.
+  const showQueryHead = status === "loaded";
+
+  const heroHead = !showQueryHead ? undefined : pivot ? (
+    <AutonymExonymHeading
+      variant="hero"
+      autonym={pivotHasAutonym ? pivot.autonym : pivot.name}
+      exonym={pivotHasAutonym ? pivot.name : undefined}
+    />
+  ) : (
+    // The brand gradient is scoped to the literal word "Recherche"
+    // (brand charter §5.3); a pivot's name or a result count is corpus
+    // content, not the brand lockup, so it never gets the gradient.
+    <h1 className="afh-hero-title" style={{ fontWeight: 900 }}>
+      {resultCountLabel}
+    </h1>
+  );
+
+  // Named lenses (REQ-124) only mean something once counts have resolved,
+  // and a corpus-wide zero would offer nothing but "Tout (0)".
+  const showLensBar = status === "loaded" && counts.all > 0;
+  const showNoNameFicheNote =
+    status === "loaded" && counts.person > 0 && counts.patronyme === 0;
+
+  const resultsList = status === "loaded" && listResults.length > 0 && (
     <ul
       data-testid="search-results-list"
-      className="grid grid-cols-1 gap-afh-lg min-[1200px]:grid-cols-2"
+      className="grid grid-cols-1 gap-afh-lg min-[720px]:grid-cols-2"
       aria-label="Résultats de recherche"
     >
       {groupPeopleResults(listResults).map((entry, i) =>
@@ -414,16 +311,40 @@ export function RecherchePageContent() {
     </ul>
   );
 
+  const refinements = (
+    <>
+      {showLensBar && (
+        <SearchLensBar
+          active={activeLens}
+          counts={counts}
+          showCounts
+          onChange={setActiveLens}
+        />
+      )}
+      {showNoNameFicheNote && <NoNameFicheNote />}
+    </>
+  );
+
   // ── render ──────────────────────────────────────────────────────────────────
 
   return (
     <PageLayout
       language={language}
       onLanguageChange={setLanguage}
-      title="Recherche"
-      subtitle="Rechercher des peuples, familles linguistiques et pays"
+      title={showQueryHead ? undefined : "Recherche"}
+      subtitle={
+        showQueryHead
+          ? undefined
+          : "Rechercher des peuples, familles linguistiques et pays"
+      }
+      heroHead={heroHead}
     >
-      <div className="afh-shell space-y-afh-5xl">
+      {/* The SERP's one page-level accent (brand charter §2): everything on
+          this route that reads var(--accent) — the lens bar's active pill,
+          in particular — resolves it from here rather than each needing its
+          own scope. A result card can still narrow to its own entity-type
+          accent (SEARCH_ENTITY_ACCENT), which wins locally by nesting. */}
+      <div className="afh-shell afh-accent-ocre space-y-afh-5xl">
         {/* ── search form ── */}
         <form
           onSubmit={handleSubmit}
@@ -443,7 +364,10 @@ export function RecherchePageContent() {
               aria-label="Rechercher un peuple, une famille linguistique ou un pays"
               placeholder="Rechercher un peuple, une famille ou un pays..."
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={(e) => {
+                hasEditedInput.current = true;
+                setInputValue(e.target.value);
+              }}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
               className="pl-10 h-12 text-afh-small"
               autoComplete="off"
@@ -474,78 +398,6 @@ export function RecherchePageContent() {
           </Button>
         </form>
 
-        {/* ── filter selects ── */}
-        <div className="flex flex-wrap gap-afh-lg">
-          <Select
-            value={classificationStatus || ALL_FILTER_VALUES}
-            onValueChange={(value) =>
-              setClassificationStatus(value === ALL_FILTER_VALUES ? "" : value)
-            }
-          >
-            <SelectTrigger
-              className="w-[210px]"
-              aria-label="Filtrer par classification"
-            >
-              <SelectValue placeholder="Classification" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL_FILTER_VALUES}>
-                Toutes les classifications
-              </SelectItem>
-              <SelectItem value="consensual">Consensuel</SelectItem>
-              <SelectItem value="contested">Contesté</SelectItem>
-              <SelectItem value="colonial-legacy">Héritage colonial</SelectItem>
-              <SelectItem value="reconstructive">Reconstructif</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Select
-            value={minConfidence || ALL_FILTER_VALUES}
-            onValueChange={(value) =>
-              setMinConfidence(value === ALL_FILTER_VALUES ? "" : value)
-            }
-          >
-            <SelectTrigger
-              className="w-[190px]"
-              aria-label="Filtrer par confiance minimale"
-            >
-              <SelectValue placeholder="Confiance min." />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL_FILTER_VALUES}>Toute confiance</SelectItem>
-              {CONFIDENCE_OPTIONS.map((o) => (
-                <SelectItem key={o.value} value={o.value}>
-                  {o.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-
-          <Select
-            value={region || ALL_FILTER_VALUES}
-            onValueChange={(value) =>
-              setRegion(value === ALL_FILTER_VALUES ? "" : value)
-            }
-          >
-            <SelectTrigger
-              className="w-[210px]"
-              aria-label="Filtrer par région"
-            >
-              <SelectValue placeholder="Région" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL_FILTER_VALUES}>
-                Toutes les régions
-              </SelectItem>
-              {Object.entries(REGIONS).map(([key, r]) => (
-                <SelectItem key={key} value={key}>
-                  {r.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
         {/* ── filter chip row (always visible) ── */}
         <div
           data-testid="filter-chip-row"
@@ -569,58 +421,10 @@ export function RecherchePageContent() {
               </button>
             </Badge>
           )}
-          {classificationStatus && classStatusLabel && (
-            <Badge
-              variant="secondary"
-              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
-            >
-              {classStatusLabel}
-              <button
-                type="button"
-                aria-label={`Supprimer le filtre ${classStatusLabel}`}
-                onClick={() => setClassificationStatus("")}
-                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
-              >
-                <X className="h-3 w-3" aria-hidden="true" />
-              </button>
-            </Badge>
-          )}
-          {minConfidence && confidenceLabel && (
-            <Badge
-              variant="secondary"
-              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
-            >
-              {confidenceLabel}
-              <button
-                type="button"
-                aria-label={`Supprimer le filtre ${confidenceLabel}`}
-                onClick={() => setMinConfidence("")}
-                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
-              >
-                <X className="h-3 w-3" aria-hidden="true" />
-              </button>
-            </Badge>
-          )}
-          {region && regionLabel && (
-            <Badge
-              variant="secondary"
-              className="flex items-center gap-afh-xs px-afh-lg py-afh-xs text-afh-small"
-            >
-              {regionLabel}
-              <button
-                type="button"
-                aria-label={`Supprimer le filtre ${regionLabel}`}
-                onClick={() => setRegion("")}
-                className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
-              >
-                <X className="h-3 w-3" aria-hidden="true" />
-              </button>
-            </Badge>
-          )}
           {hasActiveFilters && (
             <button
               type="button"
-              onClick={clearAllFilters}
+              onClick={() => setRelation(null)}
               className="text-afh-small text-afh-fg-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
               Tout effacer
@@ -628,32 +432,8 @@ export function RecherchePageContent() {
           )}
         </div>
 
-        {/* ── sort + results count ── */}
-        <div className="flex items-center justify-between gap-afh-2xl">
-          <p className="text-afh-small text-afh-text-soft" aria-live="polite">
-            {hasSearched && !loading && sortedResults.length > 0
-              ? `${sortedResults.length} résultat${sortedResults.length > 1 ? "s" : ""}`
-              : null}
-          </p>
-          <Select value={sort} onValueChange={(v) => setSort(v as SortKey)}>
-            <SelectTrigger
-              className="w-[180px]"
-              aria-label="Trier les résultats"
-            >
-              <SelectValue placeholder="Trier par" />
-            </SelectTrigger>
-            <SelectContent>
-              {SORT_OPTIONS.map((o) => (
-                <SelectItem key={o.value} value={o.value}>
-                  {o.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
         {/* ── loading indicator ── */}
-        {loading && (
+        {status === "loading" && (
           <div
             className="flex items-center justify-center h-32"
             aria-live="polite"
@@ -669,32 +449,37 @@ export function RecherchePageContent() {
         {/* Split fiches of the same people (ETNI-1391) are grouped into one
             card here, at display time only — the underlying result order and
             count are unaffected. */}
-        {!loading && pivot ? (
-          <div
-            data-testid="search-results-layout"
-            className="grid grid-cols-1 gap-afh-5xl min-[1200px]:grid-cols-[minmax(0,1fr)_minmax(18rem,20rem)] min-[1200px]:items-start"
-          >
+        {status !== "loading" &&
+          (pivot ? (
             <div
-              data-testid="search-results-main"
-              className="min-w-0 space-y-afh-5xl"
+              data-testid="search-results-layout"
+              className="grid grid-cols-1 gap-afh-5xl min-[720px]:grid-cols-[minmax(0,1fr)_minmax(18rem,20rem)] min-[720px]:items-start"
             >
-              <SearchPivotCard result={pivot} language={language} />
-              <SourcedHighlightBlock result={pivot} />
+              <div
+                data-testid="search-results-main"
+                className="min-w-0 space-y-afh-5xl"
+              >
+                <SearchPivotCard result={pivot} language={language} />
+                <SourcedHighlightBlock result={pivot} />
+                {refinements}
+                {resultsList}
+              </div>
+              <div
+                data-testid="dominant-answer-panel-wrapper"
+                className="hidden min-[720px]:block min-[720px]:self-start"
+              >
+                <DominantAnswerPanel result={pivot} />
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-afh-5xl">
+              {refinements}
               {resultsList}
             </div>
-            <div
-              data-testid="dominant-answer-panel-wrapper"
-              className="hidden min-[1200px]:sticky min-[1200px]:top-[calc(var(--afh-header-height)+var(--afh-header-shift)+var(--afh-space-5xl))] min-[1200px]:block min-[1200px]:self-start"
-            >
-              <DominantAnswerPanel result={pivot} />
-            </div>
-          </div>
-        ) : (
-          resultsList
-        )}
+          ))}
 
         {/* ── empty state (post-search, no results) ── */}
-        {!loading && hasSearched && sortedResults.length === 0 && (
+        {status === "loaded" && results.length === 0 && (
           <div className="flex flex-col items-center justify-center min-h-[16rem] gap-afh-2xl px-afh-5xl py-afh-7xl bg-afh-bg-warm rounded-afh-lg text-center">
             <p className="text-afh-small text-afh-text-soft max-w-sm">
               Aucun résultat pour « {committedQuery} ».

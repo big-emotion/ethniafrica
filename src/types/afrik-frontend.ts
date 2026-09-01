@@ -363,7 +363,11 @@ export interface SearchResult {
   autonym?: string;
   /** Exonymes connus, dans l'ordre de la fiche. */
   exonyms?: string[];
-  /** Number of source entries declared by a people fiche. */
+  /**
+   * Number of source entries the fiche declares. Set by the `people` branch
+   * (people fiche) and, since ETNI-1804, by the `patronyme` and `language`
+   * branches too (`mapSearchEnvelope`).
+   */
   sourceCount?: number;
   /** Clickable source links whose fiche entries provide a title and URL. */
   externalLinks?: Array<{ title: string; url: string }>;
@@ -389,6 +393,38 @@ export interface SearchResult {
    * fiche déclare.
    */
   peopleLinks?: PersonPeopleLink[];
+  /**
+   * Naming system the fiche declares (`clan_name`, `nisba`, …) — set by the
+   * `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  nameSystem?: string;
+  /**
+   * Caste or social function the name carries, when the fiche declares one —
+   * set by the `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  casteOrSocialFunction?: string | null;
+  /**
+   * Ids of the peoples the fiche associates this name with — set by the
+   * `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  associatedPeopleIds?: string[];
+  /**
+   * Ids of the countries the fiche marks as an `attested` (not `supposed`)
+   * attestation of this name — set by the `patronyme` branch of
+   * `mapSearchEnvelope` (ETNI-1804).
+   */
+  attestedCountryIds?: string[];
+  /**
+   * ISO 639-3 code — identical to `id` on a `language` result, carried under
+   * its own name so a consumer never has to know that. Set by the
+   * `language` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  isoCode639_3?: string;
+  /**
+   * Ids of the peoples the fiche lists as speakers, when resolved to a
+   * fiche — set by the `language` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  speakerPeopleIds?: string[];
 }
 
 /**

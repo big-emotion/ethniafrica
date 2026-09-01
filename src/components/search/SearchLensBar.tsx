@@ -12,15 +12,17 @@ interface SearchLensDef {
 // @req REQ-136
 // @req REQ-126
 // @req REQ-135
+// ETNI-1807: fixed fallback order (brand charter §2) — "Tout" first, then the
+// six kinds in descending corpus weight. A kind with zero results for the
+// current query is filtered out below rather than reordered.
 const SEARCH_LENSES: SearchLensDef[] = [
   { value: "all", label: "Tout" },
-  { value: "languageFamily", label: "Familles" },
-  { value: "language", label: "Langues" },
   { value: "people", label: "Peuples" },
+  { value: "language", label: "Langues" },
+  { value: "languageFamily", label: "Familles" },
   { value: "country", label: "Pays" },
-  { value: "person", label: "Personnes" },
-  // ETNI-1463: the name reaches the unified surface as its own lens.
   { value: "patronyme", label: "Noms" },
+  { value: "person", label: "Personnes" },
 ];
 
 interface SearchLensBarProps {
@@ -51,7 +53,9 @@ export function SearchLensBar({
       aria-label="Filtrer les résultats par type"
       className="flex flex-wrap gap-2"
     >
-      {SEARCH_LENSES.map((lens) => {
+      {SEARCH_LENSES.filter(
+        (lens) => lens.value === "all" || (counts[lens.value] ?? 0) > 0
+      ).map((lens) => {
         const count = counts[lens.value];
         const isActive = active === lens.value;
         const label = showCounts ? `${lens.label} (${count})` : lens.label;

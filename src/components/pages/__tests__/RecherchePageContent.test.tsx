@@ -11,49 +11,6 @@ import * as nextNavigation from "next/navigation";
 import { RecherchePageContent } from "../RecherchePageContent";
 import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
-// ── shadcn Select (Radix portal crashes in happy-dom) ────────────────────────
-vi.mock("@/components/ui/select", () => ({
-  Select: ({
-    value,
-    onValueChange,
-    children,
-  }: {
-    value: string;
-    onValueChange: (v: string) => void;
-    children: React.ReactNode;
-  }) => (
-    <select value={value} onChange={(e) => onValueChange(e.target.value)}>
-      {children}
-    </select>
-  ),
-  SelectTrigger: ({
-    children,
-    "aria-label": ariaLabel,
-    className,
-  }: {
-    children: React.ReactNode;
-    "aria-label"?: string;
-    className?: string;
-  }) => (
-    <button role="combobox" aria-label={ariaLabel} className={className}>
-      {children}
-    </button>
-  ),
-  SelectValue: ({ placeholder }: { placeholder?: string }) => (
-    <span>{placeholder}</span>
-  ),
-  SelectContent: ({ children }: { children: React.ReactNode }) => (
-    <>{children}</>
-  ),
-  SelectItem: ({
-    value,
-    children,
-  }: {
-    value: string;
-    children: React.ReactNode;
-  }) => <option value={value}>{children}</option>,
-}));
-
 // ── next/navigation ──────────────────────────────────────────────────────────
 vi.mock("next/navigation", () => ({
   useSearchParams: vi.fn(() => new URLSearchParams()),
@@ -66,9 +23,27 @@ vi.mock("@/hooks/use-language", () => ({
 }));
 
 // ── layout (avoid rendering nav, consent banners, etc.) ─────────────────────
+// The mock keeps `page-layout` wrapping only `children` — the
+// ".afh-shell wraps content" test below asserts on its firstElementChild —
+// and renders the hero head as a *sibling*, mirroring how the real
+// `PageHero` sits outside `<main>`. `screen` queries the whole document, so
+// tests can still find the h1 regardless of which container it lives in.
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
+  PageLayout: ({
+    children,
+    title,
+    heroHead,
+  }: {
+    children: React.ReactNode;
+    title?: string;
+    heroHead?: React.ReactNode;
+  }) => (
+    <>
+      <div data-testid="page-hero-mock">
+        {heroHead ?? (title ? <h1>{title}</h1> : null)}
+      </div>
+      <div data-testid="page-layout">{children}</div>
+    </>
   ),
 }));
 
@@ -272,104 +247,14 @@ describe("RecherchePageContent", () => {
     expect(form.className).not.toMatch(/\bsm:flex-row\b/);
   });
 
-  it("renders a sort control that is a <select>-based dropdown, not a chip row", () => {
-    render(<RecherchePageContent />);
-    // shadcn Select renders a combobox role
-    const comboboxes = screen.getAllByRole("combobox");
-    // At least one combobox must have an aria-label mentioning sort/trier
-    const sortControl = comboboxes.find((el) =>
-      (el.getAttribute("aria-label") ?? "").toLowerCase().includes("trier")
-    );
-    expect(sortControl).toBeTruthy();
-  });
-
+  // A relation is the one filter left; it renders its own dismissible chip
+  // (see "shows the active relation as a dismissible chip" below) and clears
+  // via the same chip button, so there is nothing else for a "Tout effacer"
+  // interplay test to cover once classification/confidence/region are gone.
   // @req REQ-002
-  it("never renders an empty Radix Select item value", () => {
-    render(<RecherchePageContent />);
-
-    expect(
-      screen.getAllByRole("option").every((option) => {
-        const value = option.getAttribute("value");
-        return typeof value === "string" && value.length > 0;
-      })
-    ).toBe(true);
-  });
-
-  // @req REQ-002
-  it("normalizes the internal all-filter sentinel from URL state", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams(
-        "classificationStatus=__all__&minConfidence=__all__&region=__all__"
-      ) as ReturnType<typeof nextNavigation.useSearchParams>
-    );
-
-    render(<RecherchePageContent />);
-
-    expect(screen.queryByText(/tout effacer/i)).not.toBeInTheDocument();
-  });
-
-  // ── 2. Tout effacer link ───────────────────────────────────────────────────
-
-  it("does NOT show 'Tout effacer' when no filters are active", () => {
+  it("does NOT show 'Tout effacer' when no relation is active", () => {
     render(<RecherchePageContent />);
     expect(screen.queryByText(/tout effacer/i)).not.toBeInTheDocument();
-  });
-
-  it("shows 'Tout effacer' when classificationStatus URL param is active", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("classificationStatus=consensual") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    render(<RecherchePageContent />);
-    expect(screen.getByText(/tout effacer/i)).toBeInTheDocument();
-  });
-
-  it("shows 'Tout effacer' when minConfidence URL param is active", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("minConfidence=0.7") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    render(<RecherchePageContent />);
-    expect(screen.getByText(/tout effacer/i)).toBeInTheDocument();
-  });
-
-  it("shows 'Tout effacer' when region URL param is active", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("region=west") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    render(<RecherchePageContent />);
-    expect(screen.getByText(/tout effacer/i)).toBeInTheDocument();
-  });
-
-  // ── 3. active filter chips ─────────────────────────────────────────────────
-
-  it("renders a dismissible chip for the active classificationStatus filter", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("classificationStatus=consensual") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    render(<RecherchePageContent />);
-    // The chip row (not the select option) should contain the French label
-    const chipRow = screen.getByTestId("filter-chip-row");
-    expect(within(chipRow).getByText(/consensuel/i)).toBeInTheDocument();
-  });
-
-  it("renders a dismissible chip for the active region filter", () => {
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("region=west") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    render(<RecherchePageContent />);
-    const chipRow = screen.getByTestId("filter-chip-row");
-    expect(
-      within(chipRow).getByText(/afrique de l.ouest/i)
-    ).toBeInTheDocument();
   });
 
   // ── 4. URL sync ────────────────────────────────────────────────────────────
@@ -623,39 +508,6 @@ describe("RecherchePageContent", () => {
   });
 
   // @req REQ-002
-  it("keeps country and family hits when a region filter is active", async () => {
-    // Only peoples carry countryIds, so testing every result against the
-    // region erased country and family hits the moment one was picked.
-    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams("q=Krou&region=west") as ReturnType<
-        typeof nextNavigation.useSearchParams
-      >
-    );
-    mockFetch.mockResolvedValue(
-      okJson({
-        data: {
-          peoples: [],
-          countries: [{ id: "CIV", nameFr: "Côte d'Ivoire" }],
-          families: [{ id: "FLG_KROU", nameFr: "Krou" }],
-          total: 2,
-        },
-      })
-    );
-
-    await act(async () => {
-      render(<RecherchePageContent />);
-      await new Promise((r) => setTimeout(r, 100));
-    });
-
-    await waitFor(() => {
-      expect(
-        screen.getByRole("link", { name: "Côte d'Ivoire" })
-      ).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: "Krou" })).toBeInTheDocument();
-    });
-  });
-
-  // @req REQ-002
   it("orders results by relevance across entity kinds, not peoples first", async () => {
     mockFetch.mockResolvedValue(
       okJson({
@@ -771,13 +623,15 @@ describe("RecherchePageContent", () => {
   });
 
   // The page no longer builds the query itself — it calls the shared client
-  // (ETNI-1415 AC2), which must still carry every filter to the route.
+  // (ETNI-1415 AC2). The classification/confidence filters this once also
+  // carried are retired (ETNI-1808); only the page limit and the query text
+  // reach the request now.
   // @req REQ-002
-  it("carries the page limit and both fiche filters onto the request", async () => {
+  it("carries the page limit onto the request", async () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
-      new URLSearchParams(
-        "q=Zulu&classificationStatus=consensual&minConfidence=0.7"
-      ) as ReturnType<typeof nextNavigation.useSearchParams>
+      new URLSearchParams("q=Zulu") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
     );
     mockFetch.mockResolvedValue(okJson(searchApiResponse));
 
@@ -793,8 +647,6 @@ describe("RecherchePageContent", () => {
     expect(Object.fromEntries(requested.searchParams)).toEqual({
       q: "Zulu",
       limit: "20",
-      classificationStatus: "consensual",
-      minConfidence: "0.7",
     });
   });
 
@@ -873,7 +725,7 @@ describe("RecherchePageContent", () => {
     const layout = screen.getByTestId("search-results-layout");
     const main = within(layout).getByTestId("search-results-main");
     expect(layout.className).toMatch(
-      /min-\[1200px\]:grid-cols-\[minmax\(0,1fr\)_[^\]]+\]/
+      /min-\[720px\]:grid-cols-\[minmax\(0,1fr\)_[^\]]+\]/
     );
     expect(layout.className).not.toMatch(/(?:sm|md|lg):grid-cols-/);
     expect(within(main).getByTestId("search-pivot")).toBeInTheDocument();
@@ -881,12 +733,12 @@ describe("RecherchePageContent", () => {
   });
 
   // @req REQ-124
-  it("hides the complementary answer below 1200px and reveals it at that breakpoint", async () => {
+  it("hides the complementary answer below 720px and reveals it at that breakpoint (ETNI-1807)", async () => {
     await renderPivotWithRelatedResults();
 
     const wrapper = screen.getByTestId("dominant-answer-panel-wrapper");
     expect(wrapper.className).toContain("hidden");
-    expect(wrapper.className).toContain("min-[1200px]:block");
+    expect(wrapper.className).toContain("min-[720px]:block");
     expect(wrapper.className).not.toMatch(/(?:sm|md|lg):block/);
   });
 
@@ -896,20 +748,21 @@ describe("RecherchePageContent", () => {
 
     const list = screen.getByTestId("search-results-list");
     expect(list.className).toContain("grid-cols-1");
-    expect(list.className).toContain("min-[1200px]:grid-cols-2");
+    expect(list.className).toContain("min-[720px]:grid-cols-2");
     expect(list.className).not.toMatch(/(?:sm|md|lg):grid-cols-2/);
     expect(within(list).getAllByRole("listitem")).toHaveLength(2);
   });
 
+  // The panel used to pin itself with `sticky` under the retracting header;
+  // ETNI-1807 (SERP consolidation) drops that so the panel scrolls with the
+  // page like the rest of the unified surface.
   // @req REQ-124
-  it("sticks the desktop answer below the retracting header using charter spacing", async () => {
+  it("no longer pins the complementary panel with position: sticky (ETNI-1807)", async () => {
     await renderPivotWithRelatedResults();
 
     const wrapper = screen.getByTestId("dominant-answer-panel-wrapper");
-    expect(wrapper.className).toContain("min-[1200px]:sticky");
-    expect(wrapper.className).toMatch(
-      /min-\[1200px\]:top-\[calc\(var\(--afh-header-height\)\+var\(--afh-header-shift\)\+var\(--afh-space-[a-z0-9-]+\)\)\]/
-    );
+    expect(wrapper.className).not.toMatch(/\bsticky\b/);
+    expect(wrapper.className).not.toMatch(/top-\[calc/);
   });
 
   // @req REQ-124
@@ -1036,5 +889,191 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
     const input = screen.getByRole("searchbox");
     expect(input.getAttribute("autocomplete")).toBe("off");
+  });
+
+  // ── 9. SERP consolidation (ETNI-1808) ──────────────────────────────────────
+
+  // @req REQ-124
+  it("shows the result grid and no empty-state once a ?q= arrival resolves, with the suggest dropdown closed", async () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("q=Zulu") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "PPL_ZULU", nameMain: "Zulu", relevance: 0.4, content: {} },
+            {
+              id: "PPL_XHOSA",
+              nameMain: "Xhosa",
+              relevance: 0.35,
+              content: {},
+            },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-results-list")).toBeInTheDocument();
+    });
+    expect(screen.queryByText(/aucun résultat/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-124
+  it("omits a lens whose corpus-wide count is 0 from the mounted lens bar", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "PPL_ZULU", nameMain: "Zulu", relevance: 0.4, content: {} },
+          ],
+          countries: [],
+          families: [],
+          total: 1,
+          peoplesTotal: 1,
+          countriesTotal: 0,
+          familiesTotal: 0,
+          languagesTotal: 0,
+          personsTotal: 0,
+          patronymesTotal: 0,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "peuples zoulous" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    // The page shows a count on every chip label ("Tout (1)"), so the lens
+    // name is matched as a prefix rather than an exact string.
+    await waitFor(() => {
+      expect(
+        screen.getByRole("button", { name: /^Tout\b/ })
+      ).toBeInTheDocument();
+    });
+    expect(
+      screen.getByRole("button", { name: /^Peuples\b/ })
+    ).toBeInTheDocument();
+    for (const name of ["Langues", "Familles", "Pays", "Noms", "Personnes"]) {
+      expect(
+        screen.queryByRole("button", { name: new RegExp(`^${name}\\b`) })
+      ).not.toBeInTheDocument();
+    }
+  });
+
+  // @req REQ-124
+  it("titles the page with the pivot's autonym, the exonym alongside it in the same heading", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            {
+              id: "PPL_ZULU",
+              nameMain: "Zulu",
+              content: { appellations: { selfAppellation: "amaZulu" } },
+            },
+          ],
+          countries: [],
+          families: [],
+          total: 1,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Zulu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+    });
+    // Exact rather than substring content: "Zulu" is itself a substring of
+    // "amaZulu", so a loose match would pass even without the exonym.
+    const heading = screen.getByRole("heading", { level: 1 });
+    expect(heading.textContent).toBe("amaZulu Zulu");
+  });
+
+  // @req REQ-124
+  it("titles the page with the result count when no pivot resolves", async () => {
+    mockFetch.mockResolvedValue(
+      okJson({
+        data: {
+          peoples: [
+            { id: "A", nameMain: "Bété", relevance: 0.8, content: {} },
+            { id: "B", nameMain: "BETE", relevance: 0.1, content: {} },
+          ],
+          countries: [],
+          families: [],
+          total: 2,
+        },
+      })
+    );
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Bété" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.queryByTestId("search-pivot")).not.toBeInTheDocument();
+    });
+    const heading = screen.getByRole("heading", { level: 1 });
+    expect(heading).toHaveTextContent(/2 résultats pour/i);
+  });
+
+  // @req REQ-124
+  it("titles the page 'Recherche' before any query is committed", () => {
+    render(<RecherchePageContent />);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+      "Recherche"
+    );
+  });
+
+  // @req REQ-124
+  it("renders the empty state exactly once, with no result grid, for a zero-result response", async () => {
+    mockFetch.mockResolvedValue(okJson(emptyApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "xyzzy" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((r) => setTimeout(r, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getAllByText(/aucun résultat/i)).toHaveLength(1);
+    });
+    expect(screen.queryByTestId("search-results-list")).not.toBeInTheDocument();
+    expect(
+      screen.queryByTestId("search-results-layout")
+    ).not.toBeInTheDocument();
   });
 });

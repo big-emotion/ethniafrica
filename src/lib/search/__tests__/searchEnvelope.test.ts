@@ -317,6 +317,42 @@ describe("mapSearchEnvelope", () => {
     expect(language.exactMatch).toBe(true);
   });
 
+  // ETNI-1804: DominantAnswerPanel needs the language's ISO code, speaker
+  // peoples and source count, which the RPC already returns in `content` but
+  // the mapper used to drop.
+  // @req REQ-124
+  it("carries a language's ISO 639-3 code, speaker peoples and source count", () => {
+    const [language] = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            content: {
+              peoples: [
+                { name: "Swahili (peuple)", peopleId: "PPL_SWAHILI" },
+                { name: "Comorien", peopleId: "PPL_COMORIEN" },
+                { name: "Locuteur non fiché" },
+              ],
+              sources: [
+                {
+                  title: "Glottolog — Swahili",
+                  url: "https://glottolog.org/resource/languoid/id/swah1253",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(language.isoCode639_3).toBe("swa");
+    expect(language.speakerPeopleIds).toEqual(["PPL_SWAHILI", "PPL_COMORIEN"]);
+    expect(language.sourceCount).toBe(1);
+  });
+
   // REQ-136 AC: "Given a language name and a people name that match a query
   // equally well, when results are rendered, then both kinds are returned,
   // grouped by kind, and neither is silently dropped."
@@ -371,9 +407,54 @@ describe("mapSearchEnvelope", () => {
     expect(patronyme.type).toBe("patronyme");
     expect(patronyme.id).toBe("PATR_KEITA");
     expect(patronyme.name).toBe("Keïta");
+    expect(patronyme.nameSystem).toBe("patronymic");
+    expect(patronyme.casteOrSocialFunction).toBe("royal");
     expect(patronyme.snippet).toBe("lignage [[Keïta]]");
     expect(patronyme.relevance).toBe(0.65);
     expect(patronyme.exactMatch).toBe(true);
+  });
+
+  // ETNI-1804: DominantAnswerPanel needs the patronyme's associations and
+  // source count, which the RPC already returns in `content` but the mapper
+  // used to drop.
+  // @req REQ-124
+  it("carries a patronyme's associated peoples, attested countries and source count", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "clan_name",
+            casteOrSocialFunction: "royal",
+            content: {
+              peoples: [
+                { peopleId: "PPL_MANDINGUE", status: "attested" },
+                { peopleId: "PPL_BAMBARA", status: "supposed" },
+              ],
+              countries: [
+                { countryId: "MLI", status: "attested" },
+                { countryId: "GIN", status: "supposed" },
+              ],
+              sources: [
+                {
+                  title: "Delafosse — Haut-Sénégal-Niger",
+                  url: "https://example.org/delafosse",
+                },
+                { title: "Griot oral, Ségou", url: null },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeopleIds).toEqual([
+      "PPL_MANDINGUE",
+      "PPL_BAMBARA",
+    ]);
+    expect(patronyme.attestedCountryIds).toEqual(["MLI"]);
+    expect(patronyme.sourceCount).toBe(2);
   });
 
   // ETNI-1463 AC2: a query with person hits but no name fiche must still

@@ -12,6 +12,15 @@ function people(
   return { type: "people", id, name, relevance, ...extra };
 }
 
+function language(
+  id: string,
+  name: string,
+  relevance: number,
+  extra: Partial<SearchResult> = {}
+): SearchResult {
+  return { type: "language", id, name, relevance, ...extra };
+}
+
 describe("selectPivot", () => {
   // @req REQ-002
   it("selects the head when its name matches the query ignoring accents and case", () => {
@@ -33,9 +42,27 @@ describe("selectPivot", () => {
 
   // @req REQ-124
   // @req REQ-002
-  it("selects nothing when another result shares the head's normalized name", () => {
+  it("selects nothing when another result of the same kind shares the head's normalized name", () => {
     const results = [people("A", "Bété", 0.9), people("B", "BETE", 0.1)];
     expect(selectPivot(results, "bété")).toBeNull();
+  });
+
+  // @req REQ-124
+  it("selects nothing when another people shares the head people's normalized name", () => {
+    const results = [
+      people("PPL_KEITA_1", "Keïta", 0.9),
+      people("PPL_KEITA_2", "keita", 0.1),
+    ];
+    expect(selectPivot(results, "keita")).toBeNull();
+  });
+
+  // @req REQ-124
+  it("still selects the head when a same-named result is a different kind (people vs. the language it speaks)", () => {
+    const results = [
+      people("PPL_BAMANA", "Bamana", 0.9),
+      language("bam", "Bamana", 0.1),
+    ];
+    expect(selectPivot(results, "bamana")?.id).toBe("PPL_BAMANA");
   });
 
   // @req REQ-002

@@ -1,7 +1,10 @@
 // @req REQ-091 — Charter V2 search overlay + results shell restyle (ETNI-802 · FR107)
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { SearchLensBar } from "@/components/search/SearchLensBar";
+import { EMPTY_SEARCH_LENS_COUNTS } from "@/lib/search/searchEnvelope";
 
 const SRC_DIR = join(process.cwd(), "src");
 
@@ -30,6 +33,7 @@ const IN_SCOPE_FILES = [
   "components/search/SearchSnippet.tsx",
   "components/search/SearchPivotCard.tsx",
   "components/search/DominantAnswerPanel.tsx",
+  "components/search/SearchLensBar.tsx",
   "components/pages/RecherchePageContent.tsx",
 ];
 
@@ -96,6 +100,57 @@ describe("search family tokenization (ETNI-802 · FR107)", () => {
     it("the decorative mark is always paired with a text label — never color alone", () => {
       expect(source()).toMatch(/aria-hidden=\{?"?true"?\}?/);
       expect(source()).toMatch(/getSearchEntityLabel/);
+    });
+  });
+
+  describe("lens render rule (SearchLensBar.tsx, ETNI-1807)", () => {
+    // A lens whose corpus-wide count is 0 would falsely imply the query can
+    // return that kind (e.g. "Personnes 0" on every search, since the
+    // persons table is permanently empty) — it must not render at all.
+    // @req REQ-124
+    it("never shows a lens with a zero count, and always shows the all lens", () => {
+      render(
+        <SearchLensBar
+          active="all"
+          counts={EMPTY_SEARCH_LENS_COUNTS}
+          showCounts={false}
+          onChange={vi.fn()}
+        />
+      );
+
+      expect(screen.getByRole("button", { name: "Tout" })).toBeInTheDocument();
+      for (const name of [
+        "Peuples",
+        "Langues",
+        "Familles",
+        "Pays",
+        "Noms",
+        "Personnes",
+      ]) {
+        expect(screen.queryByRole("button", { name })).not.toBeInTheDocument();
+      }
+    });
+  });
+
+  describe("one page-level accent (RecherchePageContent.tsx, ETNI-1808)", () => {
+    // The SERP consolidation gives the page a single accent scope: the wrapper
+    // sets `afh-accent-ocre` once, and everything below it — the lens bar's
+    // active pill included — reads `var(--accent)`/`var(--accent-tint)`
+    // rather than each mounting its own scope or a hardcoded hue. The
+    // per-entity-type accent a result card narrows to (SEARCH_ENTITY_ACCENT)
+    // is a separate, nested concern already covered above.
+    // @req REQ-091
+    it("sets afh-accent-ocre exactly once, on the page's own wrapper", () => {
+      const source = readSource("components/pages/RecherchePageContent.tsx");
+      const offenders = source.match(/\bafh-accent-ocre\b/g) ?? [];
+      expect(offenders).toHaveLength(1);
+    });
+
+    // @req REQ-091
+    it("reads the accent as var(--accent) / var(--accent-tint), never a second scope class", () => {
+      const source = readSource("components/search/SearchLensBar.tsx");
+      expect(source).toMatch(/var\(--accent(-tint)?\)/);
+      expect(source).not.toMatch(/\bafh-accent-(?!ocre)[a-z]+\b/);
     });
   });
 });

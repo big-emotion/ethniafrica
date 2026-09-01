@@ -2,14 +2,25 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { SearchLensBar } from "../SearchLensBar";
 import { EMPTY_SEARCH_LENS_COUNTS } from "@/lib/search/searchEnvelope";
+import type { SearchLensCounts } from "@/lib/search/searchEnvelope";
+
+const FULL_COUNTS: SearchLensCounts = {
+  all: 16,
+  people: 12,
+  language: 5,
+  languageFamily: 1,
+  country: 3,
+  patronyme: 2,
+  person: 1,
+};
 
 describe("SearchLensBar", () => {
   // @req REQ-124
-  it("renders one lens per entity type plus the all lens", () => {
+  it("renders one lens per entity type plus the all lens, when every count is positive", () => {
     render(
       <SearchLensBar
         active="all"
-        counts={EMPTY_SEARCH_LENS_COUNTS}
+        counts={FULL_COUNTS}
         showCounts={false}
         onChange={vi.fn()}
       />
@@ -17,12 +28,12 @@ describe("SearchLensBar", () => {
 
     for (const name of [
       "Tout",
-      "Familles",
-      "Langues",
       "Peuples",
+      "Langues",
+      "Familles",
       "Pays",
-      "Personnes",
       "Noms",
+      "Personnes",
     ]) {
       expect(screen.getByRole("button", { name })).toBeInTheDocument();
     }
@@ -48,15 +59,7 @@ describe("SearchLensBar", () => {
     render(
       <SearchLensBar
         active="all"
-        counts={{
-          all: 16,
-          people: 12,
-          country: 3,
-          languageFamily: 1,
-          language: 0,
-          person: 0,
-          patronyme: 0,
-        }}
+        counts={FULL_COUNTS}
         showCounts
         onChange={vi.fn()}
       />
@@ -72,7 +75,7 @@ describe("SearchLensBar", () => {
       screen.getByRole("button", { name: "Tout (16)" })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Langues (0)" })
+      screen.getByRole("button", { name: "Langues (5)" })
     ).toBeInTheDocument();
   });
 
@@ -82,7 +85,7 @@ describe("SearchLensBar", () => {
     render(
       <SearchLensBar
         active="all"
-        counts={EMPTY_SEARCH_LENS_COUNTS}
+        counts={FULL_COUNTS}
         showCounts={false}
         onChange={onChange}
       />
@@ -100,5 +103,74 @@ describe("SearchLensBar", () => {
     screen.getByRole("button", { name: "Peuples" }).click();
 
     expect(onChange).toHaveBeenCalledWith("people");
+  });
+
+  // A lens with zero results would otherwise imply the corpus can answer a
+  // query it cannot (e.g. "Personnes 0" on every search, since that table is
+  // permanently empty) — ETNI-1807.
+  // @req REQ-124
+  it("does not render a lens whose count is zero", () => {
+    render(
+      <SearchLensBar
+        active="all"
+        counts={{ ...FULL_COUNTS, languageFamily: 0 }}
+        showCounts={false}
+        onChange={vi.fn()}
+      />
+    );
+
+    expect(
+      screen.queryByRole("button", { name: "Familles" })
+    ).not.toBeInTheDocument();
+    for (const name of [
+      "Tout",
+      "Peuples",
+      "Langues",
+      "Pays",
+      "Noms",
+      "Personnes",
+    ]) {
+      expect(screen.getByRole("button", { name })).toBeInTheDocument();
+    }
+  });
+
+  // @req REQ-124
+  it("always renders the all lens regardless of its own count", () => {
+    render(
+      <SearchLensBar
+        active="all"
+        counts={EMPTY_SEARCH_LENS_COUNTS}
+        showCounts={false}
+        onChange={vi.fn()}
+      />
+    );
+
+    expect(screen.getByRole("button", { name: "Tout" })).toBeInTheDocument();
+  });
+
+  // @req REQ-124
+  it("renders lenses in the fixed order Tout, Peuples, Langues, Familles, Pays, Noms, Personnes", () => {
+    render(
+      <SearchLensBar
+        active="all"
+        counts={FULL_COUNTS}
+        showCounts={false}
+        onChange={vi.fn()}
+      />
+    );
+
+    const names = screen
+      .getAllByRole("button")
+      .map((button) => button.textContent);
+
+    expect(names).toEqual([
+      "Tout",
+      "Peuples",
+      "Langues",
+      "Familles",
+      "Pays",
+      "Noms",
+      "Personnes",
+    ]);
   });
 });
