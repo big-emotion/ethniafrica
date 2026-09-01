@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "wol",
+  "isoCode639_3": "wol",
+  "glottocode": "nucl1347",
+  "nameFr": "Wolof",
+  "nameEn": "Wolof",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_ATLANTIQUE",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/nucl1347",
+        "tier": "official",
+        "notes": "Glottolog name: Wolof; classification includes North-Central Atlantic."
+      }
+    ]
+  }
+}

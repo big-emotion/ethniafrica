@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "mos",
+  "isoCode639_3": "mos",
+  "glottocode": "moss1236",
+  "nameFr": "Mossi",
+  "nameEn": "Mossi",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_GUR",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/moss1236",
+        "tier": "official",
+        "notes": "Glottolog name: Mossi; classification includes Gur."
+      }
+    ]
+  }
+}

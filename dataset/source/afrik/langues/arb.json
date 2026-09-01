@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "arb",
+  "isoCode639_3": "arb",
+  "glottocode": "stan1318",
+  "nameFr": "Arabe standard moderne",
+  "nameEn": "Standard Arabic",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_SEMITIQUE",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/stan1318",
+        "tier": "official",
+        "notes": "Glottolog name: Standard Arabic; classification includes Semitic."
+      }
+    ]
+  }
+}

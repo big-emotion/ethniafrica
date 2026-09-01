@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "wti",
+  "isoCode639_3": "wti",
+  "glottocode": "bert1248",
+  "nameFr": "Berta",
+  "nameEn": "Berta",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_NILOSAHARIENNE",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3 - Berta",
+        "url": "https://glottolog.org/resource/languoid/id/bert1248",
+        "tier": "official",
+        "notes": "Glottolog direct official languoid record; source of the name and glottocode."
+      }
+    ]
+  }
+}

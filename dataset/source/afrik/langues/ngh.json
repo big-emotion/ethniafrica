@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "ngh",
+  "isoCode639_3": "ngh",
+  "glottocode": "nngg1234",
+  "nameFr": "Nǁng",
+  "nameEn": "N||ng",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_TUU",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": [],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/nngg1234",
+        "tier": "official",
+        "notes": "Glottolog name: N||ng; classification includes Tuu."
+      }
+    ]
+  }
+}

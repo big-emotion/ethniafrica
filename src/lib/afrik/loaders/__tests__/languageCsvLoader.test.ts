@@ -158,6 +158,8 @@ describe("loadAllLanguages", () => {
     const tmpDir = join(__dirname, `tmp_csv_${Date.now()}`);
     mkdirSync(tmpDir, { recursive: true });
     const csvPath = join(tmpDir, "langue_par_famille.csv");
+    const fichePath = join(tmpDir, "langues");
+    mkdirSync(fichePath);
     writeFileSync(
       csvPath,
       "id_langue,nom_langue,code_iso_639_3,id_famille,glottocode,source_title,source_url,source_doi,source_tier,source_access_date,source_notes\n" +
@@ -171,7 +173,7 @@ describe("loadAllLanguages", () => {
       person({ content: { languages: { isoCodes: ["wol"] } } }),
     ];
 
-    const languages = loadAllLanguages(peoples, csvPath);
+    const languages = loadAllLanguages(peoples, csvPath, fichePath);
     rmSync(tmpDir, { recursive: true, force: true });
 
     expect(languages.map((l) => l.id).sort()).toEqual(["ktz", "wol"]);
@@ -181,5 +183,77 @@ describe("loadAllLanguages", () => {
     expect(languages.find((l) => l.id === "ktz")?.nameProvenance).toBe(
       "derived"
     );
+  });
+
+  // AC: a fiche replaces overlapping CSV/people data and remains unique.
+  // @req REQ-136
+  it("gives fiche data precedence by ISO 639-3 without creating duplicates", () => {
+    const tmpDir = join(__dirname, `tmp_languages_${Date.now()}`);
+    mkdirSync(tmpDir, { recursive: true });
+    const csvPath = join(tmpDir, "langue_par_famille.csv");
+    const fichePath = join(tmpDir, "langues");
+    mkdirSync(fichePath);
+    writeFileSync(
+      csvPath,
+      "id_langue,nom_langue,code_iso_639_3,id_famille,glottocode,source_title,source_url,source_doi,source_tier,source_access_date,source_notes\n" +
+        "LANG_1,Wolof CSV,wol,FLG_CSV,wolo1242,Glottolog 5.3,https://glottolog.org/resource/languoid/id/wolo1242,,1,2026-07-29,\n"
+    );
+    writeFileSync(
+      join(fichePath, "wol.json"),
+      JSON.stringify({
+        id: "wol",
+        isoCode639_3: "wol",
+        glottocode: "nucl1347",
+        nameFr: "Wolof fiche",
+        nameEn: "Wolof",
+        alternateNames: ["Ouolof"],
+        spellingAliases: ["Volof"],
+        familyId: "FLG_ATLANTIQUE",
+        peoples: [],
+        content: {
+          vehicularRole: null,
+          dialects: [],
+          vitalityStatus: null,
+          sources: [
+            {
+              title: "Fiche source",
+              url: "https://example.org/wol",
+              tier: "referenced",
+            },
+          ],
+        },
+      })
+    );
+    const peoples = [person({ content: { languages: { isoCodes: ["wol"] } } })];
+
+    const languages = loadAllLanguages(peoples, csvPath, fichePath);
+    rmSync(tmpDir, { recursive: true, force: true });
+
+    expect(languages).toHaveLength(1);
+    expect(languages[0]).toMatchObject({
+      id: "wol",
+      name: "Wolof fiche",
+      familyId: "FLG_ATLANTIQUE",
+      glottocode: "nucl1347",
+      spellingAliases: ["Volof"],
+      sources: [{ title: "Fiche source", tier: "referenced" }],
+    });
+  });
+
+  // AC: the migration's argument-free corpus path includes language fiches.
+  // @req REQ-136
+  it("includes the language fiche corpus by default", () => {
+    const languages = loadAllLanguages([]);
+    const yoruba = languages.filter((language) => language.id === "yor");
+
+    expect(yoruba).toHaveLength(1);
+    expect(yoruba[0]).toMatchObject({
+      name: "Yoruba",
+      nameProvenance: "sourced",
+      nameEn: "Yoruba",
+      sources: expect.arrayContaining([
+        expect.objectContaining({ tier: "official" }),
+      ]),
+    });
   });
 });
