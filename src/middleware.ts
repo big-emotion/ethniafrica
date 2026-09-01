@@ -540,37 +540,23 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // /fr/admin/* is the moderator-gated admin area.
-  // /fr/admin/connexion is the public sign-in entry point and must be excluded.
+  // /fr/admin/* is the moderator area.
+  // /fr/admin/connexion is the sign-in entry point and must be excluded.
   const isAdminRoute =
     pathname.startsWith("/fr/admin") && pathname !== "/fr/admin/connexion";
-  const isContributorProfileRoute = pathname === "/fr/compte/profil";
 
-  if (isContributorProfileRoute && !user) {
-    const loginUrl = new URL("/fr/compte/connexion", request.url);
-    loginUrl.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  if (isAdminRoute) {
-    if (!user) {
-      const loginUrl = new URL("/fr/compte/connexion", request.url);
-      loginUrl.searchParams.set("redirect", pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    const { data: profileData, error } = await supabase
-      .from("contributor_profiles")
-      .select("moderator_role")
-      .eq("user_id", user.id);
-
-    const moderatorRole: string | undefined = profileData?.[0]?.moderator_role;
-
-    if (error || !profileData || !moderatorRole || moderatorRole === "none") {
-      const homeUrl = new URL("/fr", request.url);
-      homeUrl.searchParams.set("message", "acces_moderateurs_requis");
-      return NextResponse.redirect(homeUrl);
-    }
+  // Authentication here, authorization in the page.
+  //
+  // This used to read `contributor_profiles.moderator_role` on the visitor's
+  // own client. Authorization is now membership of `admin_allowlist`, a table
+  // with RLS and no policy — this client could not read it if it tried, and
+  // giving it one would publish the moderator roster. So the middleware
+  // establishes that somebody is signed in, and `getModeratorSession()` in the
+  // page decides whether that somebody may be here.
+  if (isAdminRoute && !user) {
+    const signInUrl = new URL("/fr/admin/connexion", request.url);
+    signInUrl.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(signInUrl);
   }
 
   applySecurityHeaders(supabaseResponse, nonce, pathname);

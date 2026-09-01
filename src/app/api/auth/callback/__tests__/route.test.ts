@@ -1,111 +1,91 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 
-vi.mock("@/lib/supabase/auth-server", () => ({
-  createServerSupabaseClient: vi.fn(),
+const mocks = vi.hoisted(() => ({
+  exchangeCodeForSession: vi.fn(),
+  loggerError: vi.fn(),
 }));
 
-import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
+vi.mock("@/lib/supabase/auth-server", () => ({
+  createServerSupabaseClient: vi.fn(() =>
+    Promise.resolve({
+      auth: { exchangeCodeForSession: mocks.exchangeCodeForSession },
+    })
+  ),
+}));
+
+vi.mock("@/lib/api/logger", () => ({
+  logger: { error: mocks.loggerError },
+}));
+
 import { GET } from "../route";
 
-function makeMockSupabase(
-  exchangeResult: {
-    error: null | { message: string };
-    data: { user: object | null };
-  },
-  upsertError: null | { message: string } = null
-) {
-  const upsertFn = vi.fn().mockResolvedValue({ error: upsertError });
-  const fromFn = vi.fn().mockReturnValue({
-    upsert: upsertFn,
-  });
-  return {
-    auth: {
-      exchangeCodeForSession: vi.fn().mockResolvedValue(exchangeResult),
-    },
-    from: fromFn,
-    _upsert: upsertFn,
-  };
+function callbackFor(query: string) {
+  return GET(
+    new NextRequest(`http://localhost:3000/api/auth/callback${query}`)
+  );
 }
 
 describe("GET /api/auth/callback", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mocks.exchangeCodeForSession.mockResolvedValue({ error: null });
   });
 
-  it("upserts contributor_profiles with email prefix on magic-link exchange", async () => {
-    const mockUser = {
-      id: "user-uuid-1",
-      email: "test@example.com",
-      user_metadata: {},
-      email_confirmed_at: "2026-01-01T00:00:00Z",
-    };
-    const mockSupabase = makeMockSupabase({
-      error: null,
-      data: { user: mockUser },
-    });
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      mockSupabase as never
-    );
+  // @req REQ-042
+  it("lands a signed-in moderator on the destination they asked for", async () => {
+    const response = await callbackFor("?code=abc&redirect=%2Ffr%2Fadmin");
 
-    const url =
-      "http://localhost/api/auth/callback?code=magic-code&redirect=/fr/compte/profil";
-    const response = await GET(new NextRequest(url));
-
-    expect(mockSupabase._upsert).toHaveBeenCalledWith(
-      expect.objectContaining({
-        id: "user-uuid-1",
-        display_name: "test",
-      }),
-      expect.objectContaining({ onConflict: "id", ignoreDuplicates: true })
+    expect(response.headers.get("location")).toBe(
+      "http://localhost:3000/fr/admin"
     );
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toContain("/fr/compte/profil");
   });
 
-  it("upserts contributor_profiles with provider name on OAuth exchange", async () => {
-    const mockUser = {
-      id: "user-uuid-2",
-      email: "oauth@example.com",
-      user_metadata: { full_name: "Amina Diallo" },
-      email_confirmed_at: "2026-01-01T00:00:00Z",
-    };
-    const mockSupabase = makeMockSupabase({
-      error: null,
-      data: { user: mockUser },
-    });
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      mockSupabase as never
-    );
+  // @req REQ-042
+  it("falls back to the console when no destination is given", async () => {
+    const response = await callbackFor("?code=abc");
 
-    const url =
-      "http://localhost/api/auth/callback?code=oauth-code&redirect=/fr/compte/profil";
-    const response = await GET(new NextRequest(url));
-
-    expect(mockSupabase._upsert).toHaveBeenCalledWith(
-      expect.objectContaining({
-        id: "user-uuid-2",
-        display_name: "Amina Diallo",
-      }),
-      expect.objectContaining({ onConflict: "id", ignoreDuplicates: true })
+    expect(response.headers.get("location")).toBe(
+      "http://localhost:3000/fr/admin"
     );
-    expect(response.status).toBe(307);
   });
 
-  it("redirects to error URL when code exchange fails", async () => {
-    const mockSupabase = makeMockSupabase({
-      error: { message: "Invalid code" },
-      data: { user: null },
-    });
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      mockSupabase as never
+  // @req REQ-042
+  it("refuses to forward a freshly-signed-in visitor to another origin", async () => {
+    const response = await callbackFor(
+      "?code=abc&redirect=https%3A%2F%2Fevil.example%2Fsteal"
     );
 
-    const url = "http://localhost/api/auth/callback?code=bad-code";
-    const response = await GET(new NextRequest(url));
+    expect(response.headers.get("location")).toBe(
+      "http://localhost:3000/fr/admin"
+    );
+  });
 
-    expect(mockSupabase._upsert).not.toHaveBeenCalled();
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toContain("error");
+  // @req REQ-042
+  it("refuses a protocol-relative destination, which also leaves the site", async () => {
+    const response = await callbackFor("?code=abc&redirect=%2F%2Fevil.example");
+
+    expect(response.headers.get("location")).toBe(
+      "http://localhost:3000/fr/admin"
+    );
+  });
+
+  // @req REQ-042
+  it("sends someone back to sign in when the link carries no code", async () => {
+    const response = await callbackFor("?redirect=%2Ffr%2Fadmin");
+
+    expect(response.headers.get("location")).toContain("/fr/admin/connexion");
+    expect(mocks.exchangeCodeForSession).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-042
+  it("sends someone back to sign in when the code is spent", async () => {
+    mocks.exchangeCodeForSession.mockResolvedValue({
+      error: { message: "invalid flow state" },
+    });
+
+    const response = await callbackFor("?code=stale");
+
+    expect(response.headers.get("location")).toContain("/fr/admin/connexion");
   });
 });

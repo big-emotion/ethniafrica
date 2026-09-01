@@ -1,4 +1,5 @@
 import { logger } from "@/lib/api/logger";
+import { isEmailAllowlisted } from "@/lib/auth/adminAllowlist";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export type FlagKind =
@@ -298,31 +299,25 @@ function mapFlagRow(row: FlagRow): PublicFlag {
   };
 }
 
-export type ModeratorRole = "editor" | "senior_editor" | "admin";
-
-const MODERATOR_ROLES: ReadonlyArray<ModeratorRole> = [
-  "editor",
-  "senior_editor",
-  "admin",
-];
-
 /**
  * The moderator behind a bearer token, or null.
  *
  * `getModeratorSession` in src/lib/supabase/moderator.ts answers the same
  * question for a Server Component and `redirect()`s when the answer is no —
  * which an API route must not do. This is its non-redirecting twin, and it
- * reads the same column, so the two cannot drift on who counts as a moderator.
+ * consults the same allowlist, so the two cannot drift on who counts as a
+ * moderator.
  *
- * Role membership lives in `contributor_profiles.moderator_role`. `user_roles`
- * has a moderator value too and opens no door; the moderation charter §4 takes
- * no position on unifying them, and this function deliberately reads only the
- * one the middleware already enforces.
+ * It used to read `contributor_profiles.moderator_role`, hedged across two
+ * columns (`.or(id.eq…, user_id.eq…)`) because the sign-in wrote one and every
+ * reader queried the other. That whole model is gone with the public accounts:
+ * authorization is the address, and the address is on the allowlist or it is
+ * not.
  */
 // @req REQ-042
 export async function getModeratorByAccessToken(
   accessToken: string
-): Promise<{ id: string; role: ModeratorRole } | null> {
+): Promise<{ id: string } | null> {
   const supabase = createAdminClient();
   const {
     data: { user },
@@ -334,21 +329,7 @@ export async function getModeratorByAccessToken(
     return null;
   }
 
-  const { data, error: profileError } = await supabase
-    .from("contributor_profiles")
-    .select("moderator_role")
-    .or(`id.eq.${user.id},user_id.eq.${user.id}`)
-    .maybeSingle();
-
-  if (profileError) {
-    logger.error("Failed to read moderator role", profileError);
-    return null;
-  }
-
-  const role = data?.moderator_role as ModeratorRole | "none" | undefined;
-  if (!role || !MODERATOR_ROLES.includes(role as ModeratorRole)) return null;
-
-  return { id: user.id, role: role as ModeratorRole };
+  return (await isEmailAllowlisted(user.email)) ? { id: user.id } : null;
 }
 
 /**
