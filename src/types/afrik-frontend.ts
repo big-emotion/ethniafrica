@@ -357,6 +357,14 @@ export interface SearchResult {
   /** Exonymes connus, dans l'ordre de la fiche. */
   exonyms?: string[];
   /**
+   * Identifiant partagé par les fiches d'un même peuple scindé en plusieurs
+   * fiches concurrentes (ETNI-1391) — présent uniquement sur un résultat
+   * `type: "people"` dont la fiche corpus déclare `peopleGroupId`.
+   */
+  peopleGroupId?: string;
+  /** Libellé d'affichage du groupe, ex. "Peul / Fulani". */
+  peopleGroupLabel?: string;
+  /**
    * Catégorie de rôle d'une personne (REQ-126), p. ex. `ethnographer`,
    * `head_of_state`. Toujours renseigné sur un résultat `type: "person"` —
    * `mapSearchEnvelope` ne construit jamais un tel résultat sans elle,

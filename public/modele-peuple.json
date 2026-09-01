@@ -17,7 +17,9 @@
       "spellingAliases": ["<Orthographe alternative 1 (si applicable)>"],
       "originOfExonyms": null,
       "whyProblematic": null,
-      "contemporaryUsage": null
+      "contemporaryUsage": null,
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
     },
     "ethnicities": ["<Ethnie 1>", "<Ethnie 2>"],
     "origins": {

@@ -61,14 +61,26 @@ function asRows(value: unknown): Record<string, unknown>[] {
  * already sends. Surfacing them is the whole point of the atlas: a name
  * imposed from outside should never stand alone where the self-appellation
  * exists.
+ *
+ * `peopleGroupId`/`peopleGroupLabel` (ETNI-1391) travel the same way: they
+ * already sit in `content.appellations` on the fiche, which the search RPCs
+ * pass through untouched, so no API contract change was needed to surface
+ * them here.
  */
 function appellationsOf(content: unknown): {
   autonym?: string;
   exonyms?: string[];
+  peopleGroupId?: string;
+  peopleGroupLabel?: string;
 } {
   const appellations = (
     content as {
-      appellations?: { selfAppellation?: unknown; exonyms?: unknown };
+      appellations?: {
+        selfAppellation?: unknown;
+        exonyms?: unknown;
+        peopleGroupId?: unknown;
+        peopleGroupLabel?: unknown;
+      };
     }
   )?.appellations;
 
@@ -81,8 +93,16 @@ function appellationsOf(content: unknown): {
         (name): name is string => typeof name === "string"
       )
     : undefined;
+  const peopleGroupId =
+    typeof appellations?.peopleGroupId === "string"
+      ? appellations.peopleGroupId
+      : undefined;
+  const peopleGroupLabel =
+    typeof appellations?.peopleGroupLabel === "string"
+      ? appellations.peopleGroupLabel
+      : undefined;
 
-  return { autonym, exonyms };
+  return { autonym, exonyms, peopleGroupId, peopleGroupLabel };
 }
 
 function numberOrUndefined(value: unknown): number | undefined {
