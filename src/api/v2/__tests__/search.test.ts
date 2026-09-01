@@ -162,10 +162,18 @@ describe("ftsSearch (service)", () => {
       total: 9,
     });
 
-    const result = await ftsSearch({ q: "Yoruba", limit: 20, offset: 0 });
+    const result = await ftsSearch({
+      q: "Yoruba",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+    });
 
     expect(result.quizzes).toEqual([mockQuiz]);
     expect(result.quizzesTotal).toBe(9);
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
+      expect.objectContaining({ lens: "quiz" })
+    );
   });
 
   // @req REQ-121
@@ -177,8 +185,14 @@ describe("ftsSearch (service)", () => {
       total: 1,
     });
 
-    const [quiz] = (await ftsSearch({ q: "Yoruba", limit: 20, offset: 0 }))
-      .quizzes;
+    const [quiz] = (
+      await ftsSearch({
+        q: "Yoruba",
+        limit: 20,
+        offset: 0,
+        lens: "quiz",
+      })
+    ).quizzes;
 
     for (const leak of [
       "options_fr",
@@ -198,7 +212,6 @@ describe("ftsSearch (service)", () => {
       ...emptyResult,
       peoples: [mockPeople],
       countries: [mockCountry],
-      quizzes: [mockQuiz],
       results: [
         {
           kind: "people",
@@ -206,13 +219,6 @@ describe("ftsSearch (service)", () => {
           name: "Yoruba",
           normalizedScore: 0.97,
           snippet: null,
-        },
-        {
-          kind: "quiz",
-          id: "QZ_1",
-          name: "Quel est l'autonyme des Yoruba ?",
-          normalizedScore: 0.95,
-          snippet: "[[Yoruba]] · Quel est l'autonyme",
         },
         {
           kind: "country",
@@ -229,7 +235,6 @@ describe("ftsSearch (service)", () => {
 
     expect(result.results.map((hit) => hit.kind)).toEqual([
       "people",
-      "quiz",
       "country",
     ]);
     expect(result.peoples).toHaveLength(1);
@@ -280,7 +285,6 @@ describe("ftsSearchHandler (handler)", () => {
   it("publishes the quiz bank and the ordered list in the envelope", async () => {
     (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
       ...emptyResult,
-      peoples: [mockPeople],
       quizzes: [mockQuiz],
       quizzesTotal: 9,
       results: [
@@ -292,13 +296,14 @@ describe("ftsSearchHandler (handler)", () => {
           snippet: "[[Yoruba]] · Quel est l'autonyme",
         },
       ],
-      total: 10,
+      total: 9,
     });
 
     const result = await ftsSearchHandler({
       q: "Yoruba",
       limit: 20,
       offset: 0,
+      lens: "quiz",
     });
 
     expect(result.data.quizzes).toEqual([mockQuiz]);

@@ -14,11 +14,26 @@ interface SchemaObject {
   description?: string;
 }
 
-interface OpenApiSpec {
-  components: { schemas: Record<string, SchemaObject> };
+interface OpenApiParameter {
+  in?: string;
+  name?: string;
+  required?: boolean;
+  schema?: SchemaObject;
+  description?: string;
 }
 
-const schemas = (swaggerSpecV2 as unknown as OpenApiSpec).components.schemas;
+interface OpenApiOperation {
+  description?: string;
+  parameters?: OpenApiParameter[];
+}
+
+interface OpenApiSpec {
+  components: { schemas: Record<string, SchemaObject> };
+  paths: Record<string, { get?: OpenApiOperation }>;
+}
+
+const spec = swaggerSpecV2 as unknown as OpenApiSpec;
+const schemas = spec.components.schemas;
 
 /**
  * The spec's kind enum is checked against the union the merge actually emits,
@@ -52,6 +67,48 @@ function schemaName($ref: string): string {
 }
 
 describe("OpenAPI v2 unified search contract", () => {
+  // @req REQ-121
+  it("documents the optional quiz lens as an exclusive search stream", () => {
+    const operation = spec.paths["/api/v2/search"]?.get;
+    const lens = operation?.parameters?.find(
+      (parameter) => parameter.in === "query" && parameter.name === "lens"
+    );
+
+    expect(lens).toBeDefined();
+    expect(lens?.required ?? false).toBe(false);
+    expect(lens?.schema?.enum).toEqual(["quiz"]);
+    expect(lens?.description).toMatch(/only quiz questions/i);
+    expect(lens?.description).toMatch(/not queried/i);
+    expect(lens?.description).toMatch(/main search stream/i);
+  });
+
+  // @req REQ-121
+  it("explains both sides of the exclusive quiz-lens behavior", () => {
+    const description = spec.paths["/api/v2/search"]?.get?.description;
+
+    expect(description).toMatch(/without `lens`[^.]*not queried/i);
+    expect(description).toMatch(/`lens=quiz`[^.]*only quiz questions/i);
+  });
+
+  // @req REQ-121
+  it("defines mode-aware quiz, result, and total descriptions", () => {
+    const data = schemas.SearchResponseData;
+    const properties = data.properties ?? {};
+
+    expect(properties.quizzes?.description).toMatch(
+      /empty without `lens`.*populated only with `lens=quiz`/i
+    );
+    expect(properties.results?.description).toMatch(
+      /without `lens`.*excludes quiz.*`lens=quiz`.*only quiz/i
+    );
+    expect(properties.quizzesTotal?.description).toMatch(
+      /zero without `lens`.*matching.*`lens=quiz`/i
+    );
+    expect(properties.total?.description).toMatch(
+      /without `lens`.*non-quiz.*`lens=quiz`.*quizzesTotal/i
+    );
+  });
+
   // @req REQ-002
   it("documents results as the canonical cross-kind ordered array", () => {
     const data = schemas.SearchResponseData;
