@@ -101,7 +101,7 @@ export function loadAllPatronymeDossiers(
   let files: string[];
   try {
     files = readdirSync(directory)
-      .filter((file) => file.endsWith(".json"))
+      .filter((file) => /^PAT_[A-Z0-9_]+\.json$/.test(file))
       .sort();
   } catch {
     return { dossiers: [], errors: [] };

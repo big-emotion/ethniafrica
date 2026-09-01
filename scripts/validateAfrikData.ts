@@ -3288,7 +3288,7 @@ export function checkPatronymeFicheModel(
 
   for (const file of fs
     .readdirSync(dir)
-    .filter((name) => name.endsWith(".json"))) {
+    .filter((name) => /^PAT_[A-Z0-9_]+\.json$/.test(name))) {
     const fullPath = path.join(dir, file);
     let raw: unknown;
     try {
