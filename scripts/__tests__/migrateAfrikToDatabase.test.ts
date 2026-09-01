@@ -19,6 +19,14 @@ import {
   loadPeopleAppellations,
 } from "@/lib/afrik/loaders/peopleAppellationLoader";
 import {
+  loadAllPatronymeDossiers,
+  loadPatronymes,
+} from "@/lib/afrik/loaders/patronymeJsonLoader";
+import {
+  loadAllPersonDossiers,
+  loadPersons,
+} from "@/lib/afrik/loaders/personJsonLoader";
+import {
   loadAllRelationFiles,
   loadRelations,
 } from "@/lib/afrik/loaders/relationJsonLoader";
@@ -41,6 +49,8 @@ vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
 vi.mock("@/lib/afrik/loaders/nameRecordJsonLoader");
 vi.mock("@/lib/afrik/loaders/peopleAppellationLoader");
+vi.mock("@/lib/afrik/loaders/patronymeJsonLoader");
+vi.mock("@/lib/afrik/loaders/personJsonLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
@@ -244,6 +254,27 @@ describe("migrateAfrikToDatabase", () => {
       dropped: [],
       errors: [],
     });
+    vi.mocked(loadAllPersonDossiers).mockReturnValue([]);
+    vi.mocked(loadPersons).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      dropped: [],
+      errors: [],
+    });
+    vi.mocked(loadAllPatronymeDossiers).mockReturnValue({
+      dossiers: [],
+      errors: [],
+    });
+    vi.mocked(loadPatronymes).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      spellings: 0,
+      peopleLinks: 0,
+      countryLinks: 0,
+      bearerLinks: 0,
+      alliances: 0,
+      errors: [],
+    });
   });
 
   // @req REQ-032
@@ -328,6 +359,107 @@ describe("migrateAfrikToDatabase", () => {
     });
     expect(report.verification.after).toBeNull();
     expect(database.operations).toHaveLength(0);
+  });
+
+  // @req REQ-133
+  // @req REQ-134
+  it("preflights and counts patronymes in dry-run mode without invoking any data loader writes", async () => {
+    vi.mocked(loadAllPersonDossiers).mockReturnValue([
+      { id: "PER_MODIBO_KEITA" } as never,
+    ]);
+    vi.mocked(loadAllPatronymeDossiers).mockReturnValue({
+      dossiers: [{ id: "PAT_KEITA" } as never, { id: "PAT_KONDE" } as never],
+      errors: [],
+    });
+    vi.mocked(loadPatronymes).mockResolvedValue({
+      total: 2,
+      inserted: 0,
+      spellings: 2,
+      peopleLinks: 2,
+      countryLinks: 2,
+      bearerLinks: 1,
+      alliances: 1,
+      errors: [],
+    });
+    const database = useSupabaseDouble();
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.patronymes).toMatchObject({
+      total: 2,
+      inserted: 0,
+      errors: [],
+    });
+    expect(loadPersons).not.toHaveBeenCalled();
+    expect(loadPatronymes).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        dossiers: [
+          expect.objectContaining({ id: "PAT_KEITA" }),
+          expect.objectContaining({ id: "PAT_KONDE" }),
+        ],
+      }),
+      expect.objectContaining({
+        dryRun: true,
+        references: expect.objectContaining({
+          peopleIds: new Set([peopleFixture.id]),
+          countryIds: new Set([coteDIvoire.id]),
+          personIds: new Set(["PER_MODIBO_KEITA"]),
+        }),
+      })
+    );
+    expect(database.operations).toEqual([]);
+  });
+
+  // @req REQ-133
+  // @req REQ-134
+  it("loads people and countries before persons, then patronymes", async () => {
+    const events: string[] = [];
+    vi.mocked(loadAllPersonDossiers).mockReturnValue([
+      { id: "PER_MODIBO_KEITA" } as never,
+    ]);
+    vi.mocked(loadPersons).mockImplementation(async () => {
+      events.push("persons");
+      return { total: 1, inserted: 1, dropped: [], errors: [] };
+    });
+    vi.mocked(loadPatronymes).mockImplementation(async () => {
+      events.push("patronymes");
+      return {
+        total: 1,
+        inserted: 1,
+        spellings: 1,
+        peopleLinks: 1,
+        countryLinks: 1,
+        bearerLinks: 1,
+        alliances: 0,
+        errors: [],
+      };
+    });
+    useSupabaseDouble({
+      writeError: ({ table }) => {
+        if (table === "afrik_peoples") events.push("peoples");
+        if (table === "afrik_countries") events.push("countries");
+        return null;
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(events.indexOf("peoples")).toBeLessThan(events.indexOf("countries"));
+    expect(events.indexOf("countries")).toBeLessThan(events.indexOf("persons"));
+    expect(events.indexOf("persons")).toBeLessThan(
+      events.indexOf("patronymes")
+    );
+    expect(report.persons).toMatchObject({ total: 1, inserted: 1 });
+    expect(report.patronymes).toMatchObject({ total: 1, inserted: 1 });
   });
 
   it("upserts complete source content in hierarchy order and verifies the result", async () => {

@@ -62,7 +62,7 @@ CREATE INDEX IF NOT EXISTS idx_persons_name_unaccent_vector
 CREATE INDEX IF NOT EXISTS idx_persons_full_name_trgm
   ON persons
   USING gin (
-    (extensions.unaccent('extensions.unaccent'::regdictionary, lower(full_name)))
+    (public.afrik_unaccent(lower(full_name)))
     extensions.gin_trgm_ops
   );
 
@@ -116,8 +116,7 @@ matched AS (
         -- The boolean lexical_match tier above (not this magnitude) is what
         -- keeps a lexical/prefix match ranked first.
         extensions.similarity(
-          extensions.unaccent('extensions.unaccent'::regdictionary,
-                              lower(p.full_name)),
+          public.afrik_unaccent(lower(p.full_name)),
           q.exact_key)::real
       ELSE 0::real
     END AS relevance,
@@ -131,8 +130,7 @@ matched AS (
       OR (q.tsq_unaccent IS NOT NULL
           AND p.name_unaccent_vector @@ q.tsq_unaccent)
       OR (q.exact_key IS NOT NULL AND extensions.similarity(
-            extensions.unaccent('extensions.unaccent'::regdictionary,
-                                lower(p.full_name)),
+            public.afrik_unaccent(lower(p.full_name)),
             q.exact_key) >= 0.4)
     )
 ),

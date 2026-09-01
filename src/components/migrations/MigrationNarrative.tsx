@@ -40,7 +40,11 @@ export function MigrationNarrative({
             key={event.id}
             className="border-b border-border pb-6 mb-6 last:border-b-0 last:mb-0 last:pb-0"
           >
-            <MigrationEventCard event={event} confidence={eventConfidence} />
+            <MigrationEventCard
+              event={event}
+              confidence={eventConfidence}
+              headingLevel={2}
+            />
 
             {event.paragraphs.map((paragraph, index) => (
               <p key={index} className="mt-3 text-foreground">
@@ -59,9 +63,9 @@ export function MigrationNarrative({
 
             {showDebate && (
               <div className="mt-4 rounded-md bg-muted p-4">
-                <h4 className="font-afh-display font-semibold text-afh-small">
+                <h3 className="font-afh-display font-semibold text-afh-small">
                   {t.debateLabel}
-                </h4>
+                </h3>
                 <p className="mt-1 text-afh-small text-foreground">
                   {event.debate}
                 </p>

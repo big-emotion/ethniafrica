@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DIABATE",
+  "nameMain": "Diabate",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diabate",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-dafing-organisation"]
+        },
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-dafing-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DAFING",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dafing-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-dafing-organisation",
+      "title": "Corpus AFRIK — PPL_DAFING, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DAFING.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+    }
+  ]
+}

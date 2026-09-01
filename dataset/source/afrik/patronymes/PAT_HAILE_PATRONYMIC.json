@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français distinguant un patronyme non héréditaire d'un nom de famille."
+  },
+  "id": "PAT_HAILE_PATRONYMIC",
+  "nameMain": "Haile",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Haile",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["oup-ethiopian-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["oup-ethiopian-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "oup-ethiopian-names",
+      "title": "Ethiopian Names and Titles",
+      "url": "https://academic.oup.com/book/57485/chapter-abstract/466896790",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Le chapitre explique l'ajout du nom personnel du père plutôt que d'un nom de famille héréditaire et donne Makonnen Haile comme fils de Haile Mangasha."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le lien de recherche vers une fiche amhara ne suffit pas à attribuer une identité ethnique à la personne citée par l'exemple."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "L'étymologie de Haile n'est pas nécessaire à l'attestation patronymique et n'est pas établie par cette source."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Cette fiche documente Haile comme élément du nom personnel du père, et non comme nom de famille héréditaire ; aucune lignée permanente n'est affirmée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Haile peut aussi apparaître comme nom personnel ; aucune chaîne homonyme n'est ajoutée sans source distincte."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L'exemple académique illustre une structure de nom et n'est pas traité comme une attribution ethnique ou comme une fiche de personne."
+    }
+  ]
+}

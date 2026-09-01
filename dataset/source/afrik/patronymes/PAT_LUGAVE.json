@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité aux attestations directement sourcées du clan totémique baganda."
+  },
+  "id": "PAT_LUGAVE",
+  "nameMain": "Lugave",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Lugave",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["buganda-history-2025"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GANDA",
+      "status": "attested",
+      "sourceRefs": ["buganda-history-2025"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["buganda-history-2025"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "buganda-history-2025",
+      "title": "Brief History of the Kingdom of Buganda",
+      "url": "https://buganda.or.ug/wp-content/uploads/2025/04/Final-Print-BRIEF-HISTORY-OF-THE-KINGDOM-OF-BUGANDA-3.pdf",
+      "tier": "official",
+      "source_kind": "community",
+      "notes": "Publication officielle du royaume de Buganda : Lugave y figure parmi les premiers clans, avec le pangolin comme totem ; le système clanique est décrit comme patrilinéaire."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Aucune tradition orale transcrite ni reconstruction linguistique directement vérifiable n'a été retenue."
+    },
+    {
+      "fieldPath": "totemicFoodProhibition",
+      "reason": "La source identifie le totem, mais ne documente pas un interdit alimentaire précis."
+    },
+    {
+      "fieldPath": "permittedGivenNames",
+      "reason": "Aucun prénom autorisé n'est établi par la source consultée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé n'a été ajouté sans source nominative sûre."
+    }
+  ]
+}
