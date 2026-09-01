@@ -3043,6 +3043,14 @@ const options: swaggerJsdoc.Options = {
               maxLength: 2000,
               example: "Population figure appears outdated vs. 2024 census.",
             },
+            reporter_email: {
+              type: "string",
+              format: "email",
+              maxLength: 320,
+              example: "lectrice@example.org",
+              description:
+                "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint.",
+            },
             counter_source_url: {
               type: "string",
               format: "uri",

@@ -532,9 +532,9 @@ export const translations = {
         accessibilite: "Accessibilité",
         admin: "Administration",
         connexion: "Connexion",
-        compte: "Compte",
-        inscription: "Inscription",
-        profil: "Profil",
+        // `compte`, `inscription` and `profil` were removed with the pages
+        // they named: there are no public accounts, so nothing registers, and
+        // a segment nobody can reach needs no word.
         confidentialite: "Confidentialité",
         contribute: "Contribuer",
         "mentions-legales": "Mentions légales",

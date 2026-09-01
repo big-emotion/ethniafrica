@@ -102,7 +102,6 @@ describe("sitemap.xml", () => {
 
     for (const fragment of [
       "/fr/admin",
-      "/fr/compte",
       `${getLocalizedRoute("fr", "quiz")}/score`,
       "/fr/report-error",
       "/fr/confidentialite",
@@ -171,7 +170,6 @@ describe("robots.txt", () => {
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 
     expect(disallow).toContain("/fr/admin/");
-    expect(disallow).toContain("/fr/compte/");
     expect(disallow).toContain("/fr/politique-confidentialite");
   });
 });

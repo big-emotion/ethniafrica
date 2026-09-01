@@ -1,23 +1,33 @@
 import { redirect } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
+import { isEmailAllowlisted } from "@/lib/auth/adminAllowlist";
 import { createServerSupabaseClient } from "./auth-server";
-
-export type ModeratorRole = "editor" | "senior_editor" | "admin";
 
 export interface ModeratorSession {
   user: User;
-  role: ModeratorRole;
 }
 
-const CONNEXION_URL = "/fr/compte/connexion";
+const SIGN_IN_URL = "/fr/admin/connexion";
 
 /**
- * Returns the current authenticated moderator session, or throws a redirect
- * to the sign-in page when the user is unauthenticated or has
- * contributor_profiles.moderator_role = 'none'.
+ * The current moderator, or a redirect to the sign-in page.
  *
- * Call this at the top of any admin Server Component.
+ * Two things changed here at once, and they are the same change. Authorization
+ * used to read `contributor_profiles.moderator_role`, a column on a row that
+ * only a successful sign-in created — and the sign-in wrote that row on the
+ * wrong key, so the row was never found and the role was unreachable. And the
+ * atlas no longer has public accounts to hang a role on. So the gate is now the
+ * address itself, checked against `admin_allowlist`.
+ *
+ * There is no role in the returned session because nothing downstream branches
+ * on one: the console offers the same moves to everyone who can open it.
+ *
+ * Call this at the top of any admin Server Component. It is redundant with the
+ * middleware and kept anyway — a middleware matcher is a configuration line,
+ * and an authorization that lives only in configuration is one edit away from
+ * being gone.
  */
+// @req REQ-042
 export async function getModeratorSession(): Promise<ModeratorSession> {
   const supabase = await createServerSupabaseClient();
 
@@ -27,23 +37,12 @@ export async function getModeratorSession(): Promise<ModeratorSession> {
   } = await supabase.auth.getUser();
 
   if (authError || !user) {
-    redirect(CONNEXION_URL);
+    redirect(SIGN_IN_URL);
   }
 
-  const { data, error } = await supabase
-    .from("contributor_profiles")
-    .select("moderator_role")
-    .eq("user_id", user.id);
-
-  if (error || !data || data.length === 0) {
-    redirect(CONNEXION_URL);
+  if (!(await isEmailAllowlisted(user.email))) {
+    redirect(SIGN_IN_URL);
   }
 
-  const role = data[0].moderator_role as string;
-
-  if (role === "none") {
-    redirect(CONNEXION_URL);
-  }
-
-  return { user, role: role as ModeratorRole };
+  return { user };
 }

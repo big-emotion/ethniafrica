@@ -313,12 +313,12 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
 
   // @req REQ-042
   test("keeps the anonymous protected-route redirect", async ({ page }) => {
-    await expectDirectNavigation(page, "/fr/compte/profil", async () => {
+    await expectDirectNavigation(page, "/fr/admin/cles-api", async () => {
       const url = new URL(page.url());
-      expect(url.pathname).toBe("/fr/compte/connexion");
-      expect(url.searchParams.get("redirect")).toBe("/fr/compte/profil");
+      expect(url.pathname).toBe("/fr/admin/connexion");
+      expect(url.searchParams.get("redirect")).toBe("/fr/admin/cles-api");
       await expect(
-        page.getByRole("heading", { level: 1, name: "Se connecter" })
+        page.getByRole("heading", { level: 1, name: "Accès à la modération" })
       ).toBeVisible();
     });
   });

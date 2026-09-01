@@ -148,6 +148,10 @@ describe("OpenAPI v2 flags contract", () => {
         "flag_kind",
         "proposed_rewrite",
         "reason_text",
+        // Optional, and the only personal datum a report can carry. It is
+        // documented because a client has to know it exists; the response
+        // schemas never echo it back.
+        "reporter_email",
         "target_field_path",
         "target_id",
         "target_type",
@@ -303,10 +307,16 @@ describe("OpenAPI v2 flags contract", () => {
         "X-RateLimit-Reset",
       ].sort()
     );
+    // AGE_CONFIRMATION_REQUIRED documented a 403 the handler never returned:
+    // an unconfirmed account has its report recorded anonymously rather than
+    // refused (moderation charter §2), and there are no accounts left to
+    // confirm an age on.
     expect(
-      flagCollection.post.responses["403"].content["application/json"].examples
-        .ageConfirmationRequired.value.errors[0].code
-    ).toBe("AGE_CONFIRMATION_REQUIRED");
+      Object.keys(
+        flagCollection.post.responses["403"].content["application/json"]
+          .examples
+      )
+    ).toEqual(["unauthorized"]);
     expect(
       flagCollection.post.responses["403"].content["application/json"].examples
         .unauthorized.value.errors[0].code

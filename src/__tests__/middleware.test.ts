@@ -31,7 +31,8 @@ describe("middleware", () => {
   });
 
   describe("admin auth", () => {
-    it("redirects unauthenticated user to /fr/compte/connexion with redirect param", async () => {
+    // @req REQ-042
+    it("sends an unauthenticated visitor to the admin sign-in with a return path", async () => {
       const request = new NextRequest(
         "http://localhost:3000/fr/admin/dashboard"
       );
@@ -39,41 +40,14 @@ describe("middleware", () => {
 
       expect(response.status).toBe(307);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/compte/connexion?redirect=%2Ffr%2Fadmin%2Fdashboard"
+        "http://localhost:3000/fr/admin/connexion?redirect=%2Ffr%2Fadmin%2Fdashboard"
       );
     });
 
-    it("redirects contributor with moderator_role=none to /fr with flash message", async () => {
+    // @req REQ-042
+    it("lets a signed-in visitor through and leaves authorization to the page", async () => {
       mockGetUser.mockResolvedValue({
-        data: { user: { id: "user-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({
-        data: [{ moderator_role: "none" }],
-        error: null,
-      });
-
-      const request = new NextRequest(
-        "http://localhost:3000/fr/admin/dashboard"
-      );
-      const response = await middleware(request);
-
-      expect(response.status).toBe(307);
-      expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr?message=acces_moderateurs_requis"
-      );
-      expect(mockFrom).toHaveBeenCalledWith("contributor_profiles");
-      expect(mockSelect).toHaveBeenCalledWith("moderator_role");
-      expect(mockEq).toHaveBeenCalledWith("user_id", "user-123");
-    });
-
-    it("allows authenticated moderator (editor) to pass through", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "editor-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({
-        data: [{ moderator_role: "editor" }],
+        data: { user: { id: "user-123", email: "mod@example.org" } },
         error: null,
       });
 
@@ -84,46 +58,12 @@ describe("middleware", () => {
 
       expect(response.status).toBe(200);
       expect(response.headers.get("location")).toBeNull();
+      // The allowlist is service-role-only, and this client carries the
+      // visitor's own session — it could not read the table if it tried.
+      expect(mockFrom).not.toHaveBeenCalled();
     });
 
-    it("allows authenticated moderator (senior_editor) to pass through", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "senior-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({
-        data: [{ moderator_role: "senior_editor" }],
-        error: null,
-      });
-
-      const request = new NextRequest(
-        "http://localhost:3000/fr/admin/dashboard"
-      );
-      const response = await middleware(request);
-
-      expect(response.status).toBe(200);
-      expect(response.headers.get("location")).toBeNull();
-    });
-
-    it("allows authenticated moderator (admin) to pass through", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "admin-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({
-        data: [{ moderator_role: "admin" }],
-        error: null,
-      });
-
-      const request = new NextRequest(
-        "http://localhost:3000/fr/admin/dashboard"
-      );
-      const response = await middleware(request);
-
-      expect(response.status).toBe(200);
-      expect(response.headers.get("location")).toBeNull();
-    });
-
+    // @req REQ-042
     it("allows access to /fr/admin/connexion without authentication", async () => {
       const request = new NextRequest(
         "http://localhost:3000/fr/admin/connexion"
@@ -132,42 +72,6 @@ describe("middleware", () => {
 
       expect(response.status).toBe(200);
       expect(response.headers.get("location")).toBeNull();
-    });
-
-    it("redirects to /fr with flash when contributor_profiles row is missing", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "user-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({ data: [], error: null });
-
-      const request = new NextRequest(
-        "http://localhost:3000/fr/admin/dashboard"
-      );
-      const response = await middleware(request);
-
-      expect(response.status).toBe(307);
-      expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr?message=acces_moderateurs_requis"
-      );
-    });
-
-    it("redirects to /fr with flash on database error when fetching profile", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "user-123" } },
-        error: null,
-      });
-      mockEq.mockResolvedValue({ data: null, error: new Error("DB error") });
-
-      const request = new NextRequest(
-        "http://localhost:3000/fr/admin/dashboard"
-      );
-      const response = await middleware(request);
-
-      expect(response.status).toBe(307);
-      expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr?message=acces_moderateurs_requis"
-      );
     });
 
     it("refreshes session on non-admin routes", async () => {
@@ -188,31 +92,43 @@ describe("middleware", () => {
     });
   });
 
-  describe("contributor profile auth", () => {
-    // @req REQ-042
-    it("redirects an unauthenticated visitor to sign in with the profile return path", async () => {
-      const request = new NextRequest("http://localhost:3000/fr/compte/profil");
-      const response = await middleware(request);
+  /**
+   * The atlas has no public accounts any more: reporting costs none, and the
+   * console authorizes an address rather than a role. `/fr/compte/*` was
+   * published and is in readers' history — moderators' especially, since the
+   * middleware used to send them there to sign in — so it is relocated rather
+   * than left to 404.
+   */
+  describe("retired account routes", () => {
+    // @req REQ-091
+    it.each([
+      ["/fr/compte/connexion", "/fr/admin/connexion"],
+      ["/fr/compte/cles-api", "/fr/admin/cles-api"],
+      // Nothing to register for and no profile to hold: both land on the one
+      // sign-in left, which says reporting needs no account.
+      ["/fr/compte/inscription", "/fr/admin/connexion"],
+      ["/fr/compte/profil", "/fr/admin/connexion"],
+    ])("relocates %s to %s in one hop", async (legacy, current) => {
+      const response = await middleware(
+        new NextRequest(`http://localhost:3000${legacy}`)
+      );
 
-      expect(response.status).toBe(307);
+      expect(response.status).toBe(308);
       expect(response.headers.get("location")).toBe(
-        "http://localhost:3000/fr/compte/connexion?redirect=%2Ffr%2Fcompte%2Fprofil"
+        `http://localhost:3000${current}`
       );
     });
 
-    // @req REQ-042
-    it("allows an authenticated contributor to access their profile without a moderator query", async () => {
-      mockGetUser.mockResolvedValue({
-        data: { user: { id: "contributor-123" } },
-        error: null,
-      });
+    // @req REQ-091
+    it("relocates the bare /fr/compte onto the console", async () => {
+      const response = await middleware(
+        new NextRequest("http://localhost:3000/fr/compte")
+      );
 
-      const request = new NextRequest("http://localhost:3000/fr/compte/profil");
-      const response = await middleware(request);
-
-      expect(response.status).toBe(200);
-      expect(response.headers.get("location")).toBeNull();
-      expect(mockFrom).not.toHaveBeenCalled();
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/admin"
+      );
     });
   });
 

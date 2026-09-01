@@ -1,11 +1,9 @@
 /**
- * Tests for getModeratorSession — FR41 / ETNI-66
+ * Tests for getModeratorSession.
  *
- * Coverage:
- *   - valid moderator session returns { user, role }
- *   - contributor with moderator_role = 'none' is rejected (redirect)
- *   - expired / missing session is rejected (redirect)
- *   - legacy env vars (ADMIN_USERNAME, ADMIN_PASSWORD) are absent from codebase
+ * Authorization moved from `contributor_profiles.moderator_role` to the
+ * `admin_allowlist` table: the atlas has no public accounts any more, so the
+ * gate has to attach to something that exists before anyone signs in.
  */
 // @req REQ-041
 // @req REQ-055
@@ -18,131 +16,104 @@ import path from "path";
 // Mock next/navigation redirect (throws in server components / middleware)
 // vi.hoisted ensures the variable is available when vi.mock factory runs.
 // ---------------------------------------------------------------------------
-const { mockRedirect } = vi.hoisted(() => {
+const { mockRedirect, mockIsEmailAllowlisted } = vi.hoisted(() => {
   const mockRedirect = vi.fn((url: string): never => {
     throw new Error(`REDIRECT:${url}`);
   });
-  return { mockRedirect };
+  return { mockRedirect, mockIsEmailAllowlisted: vi.fn() };
 });
 
 vi.mock("next/navigation", () => ({
   redirect: mockRedirect,
 }));
 
+vi.mock("@/lib/auth/adminAllowlist", () => ({
+  isEmailAllowlisted: mockIsEmailAllowlisted,
+}));
+
 // ---------------------------------------------------------------------------
 // Mock createServerSupabaseClient
 // ---------------------------------------------------------------------------
 const mockGetUser = vi.fn();
-const mockSelect = vi.fn();
-const mockEq = vi.fn();
 
 vi.mock("@/lib/supabase/auth-server", () => ({
   createServerSupabaseClient: vi.fn(() =>
     Promise.resolve({
       auth: { getUser: mockGetUser },
-      from: vi.fn(() => ({
-        select: mockSelect,
-      })),
     })
   ),
 }));
 
 import { getModeratorSession } from "../moderator";
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
+const SIGN_IN = "REDIRECT:/fr/admin/connexion";
 
-function setupValidSession(moderatorRole: string) {
-  const user = { id: "user-uuid-123", email: "mod@example.com" };
+function signedInAs(email: string) {
+  const user = { id: "user-uuid-123", email };
   mockGetUser.mockResolvedValue({ data: { user }, error: null });
-  mockSelect.mockReturnValue({
-    eq: mockEq,
-  });
-  mockEq.mockResolvedValue({
-    data: [{ moderator_role: moderatorRole }],
-    error: null,
-  });
   return user;
 }
-
-function setupNoSession() {
-  mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
-}
-
-function setupExpiredSession() {
-  mockGetUser.mockResolvedValue({
-    data: { user: null },
-    error: { message: "JWT expired" },
-  });
-}
-
-// ---------------------------------------------------------------------------
-// Tests
-// ---------------------------------------------------------------------------
 
 describe("getModeratorSession", () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  it("returns { user, role } for a valid moderator session (editor)", async () => {
-    const user = setupValidSession("editor");
+  // @req REQ-042
+  it("returns the session for an address the allowlist holds", async () => {
+    const user = signedInAs("moderation@example.org");
+    mockIsEmailAllowlisted.mockResolvedValue(true);
 
-    const session = await getModeratorSession();
-
-    expect(session).toEqual({ user, role: "editor" });
+    await expect(getModeratorSession()).resolves.toEqual({ user });
   });
 
-  it("returns { user, role } for a valid moderator session (senior_editor)", async () => {
-    const user = setupValidSession("senior_editor");
+  // @req REQ-042
+  it("sends a signed-in stranger back to the sign-in page", async () => {
+    signedInAs("passante@example.org");
+    mockIsEmailAllowlisted.mockResolvedValue(false);
 
-    const session = await getModeratorSession();
-
-    expect(session).toEqual({ user, role: "senior_editor" });
+    await expect(getModeratorSession()).rejects.toThrow(SIGN_IN);
   });
 
-  it("returns { user, role } for a valid moderator session (admin)", async () => {
-    const user = setupValidSession("admin");
+  // @req REQ-042
+  it("checks the address that is actually signed in", async () => {
+    signedInAs("moderation@example.org");
+    mockIsEmailAllowlisted.mockResolvedValue(true);
 
-    const session = await getModeratorSession();
+    await getModeratorSession();
 
-    expect(session).toEqual({ user, role: "admin" });
-  });
-
-  it("throws redirect when contributor has moderator_role = 'none'", async () => {
-    setupValidSession("none");
-
-    await expect(getModeratorSession()).rejects.toThrow(
-      "REDIRECT:/fr/compte/connexion"
+    expect(mockIsEmailAllowlisted).toHaveBeenCalledWith(
+      "moderation@example.org"
     );
   });
 
-  it("throws redirect when no session (unauthenticated)", async () => {
-    setupNoSession();
+  // @req REQ-042
+  it("refuses when there is no session at all", async () => {
+    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
 
-    await expect(getModeratorSession()).rejects.toThrow(
-      "REDIRECT:/fr/compte/connexion"
-    );
+    await expect(getModeratorSession()).rejects.toThrow(SIGN_IN);
+    expect(mockIsEmailAllowlisted).not.toHaveBeenCalled();
   });
 
-  it("throws redirect when session is expired", async () => {
-    setupExpiredSession();
+  // @req REQ-042
+  it("refuses when the session has expired", async () => {
+    mockGetUser.mockResolvedValue({
+      data: { user: null },
+      error: { message: "JWT expired" },
+    });
 
-    await expect(getModeratorSession()).rejects.toThrow(
-      "REDIRECT:/fr/compte/connexion"
-    );
+    await expect(getModeratorSession()).rejects.toThrow(SIGN_IN);
   });
 
-  it("throws redirect when contributor_profiles row is missing", async () => {
-    const user = { id: "user-uuid-no-profile", email: "nobody@example.com" };
-    mockGetUser.mockResolvedValue({ data: { user }, error: null });
-    mockSelect.mockReturnValue({ eq: mockEq });
-    mockEq.mockResolvedValue({ data: [], error: null });
+  // @req REQ-042
+  it("refuses a session carrying no address to check", async () => {
+    mockGetUser.mockResolvedValue({
+      data: { user: { id: "user-uuid-123", email: null } },
+      error: null,
+    });
+    mockIsEmailAllowlisted.mockResolvedValue(false);
 
-    await expect(getModeratorSession()).rejects.toThrow(
-      "REDIRECT:/fr/compte/connexion"
-    );
+    await expect(getModeratorSession()).rejects.toThrow(SIGN_IN);
   });
 });
 
