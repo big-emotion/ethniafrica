@@ -1,12 +1,21 @@
 import Link from "next/link";
 
-import { Language } from "@/types/shared";
+import { AccessAxes } from "@/components/home/AccessAxes";
+import { PurposeBlocks } from "@/components/home/PurposeBlocks";
+import { SynthesisRail } from "@/components/home/SynthesisRail";
+import type { CorpusCounts } from "@/lib/home/corpusCounts";
+import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
+import type { AccessMode } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 
 interface AboutPageContentProps {
   language: Language;
+  counts: CorpusCounts;
+  modulesByAxis: Record<AccessMode, HubModule[]>;
+  syntheses: CountrySynthesis[];
 }
 
 /**
@@ -17,7 +26,12 @@ interface AboutPageContentProps {
  * deepest heading this long-form exception allows.
  */
 // @req REQ-091 @req REQ-132
-export default function AboutPageContent({ language }: AboutPageContentProps) {
+export default function AboutPageContent({
+  language,
+  counts,
+  modulesByAxis,
+  syntheses,
+}: AboutPageContentProps) {
   const content = {
     fr: {
       title: "À propos",
@@ -69,25 +83,19 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
         items: [
           {
-            title: ACCESS_MODE_LABELS.explorer,
             description:
               "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique ou pays.",
             accentClass: "afh-accent-ocre",
-            page: "explorerHub" as PageType,
           },
           {
-            title: ACCESS_MODE_LABELS.comprendre,
             description:
               "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
             accentClass: "afh-accent-teal",
-            page: "comprendreHub" as PageType,
           },
           {
-            title: ACCESS_MODE_LABELS.jouer,
             description:
               "Interroger ses repères grâce aux jeux construits à partir du corpus.",
             accentClass: "afh-accent-perv",
-            page: "jouerHub" as PageType,
           },
         ],
       },
@@ -683,6 +691,8 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         </p>
       </header>
 
+      <PurposeBlocks language={language} />
+
       <section className="space-y-afh-xl" aria-labelledby="about-content-title">
         <div className="space-y-afh-md">
           <ChapterHeading
@@ -721,38 +731,52 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         </ul>
       </section>
 
-      <section className="space-y-afh-xl" aria-labelledby="about-access-title">
-        <div className="space-y-afh-md">
-          <ChapterHeading
-            id="about-access-title"
-            stepLabel="02 · Les accès"
-            heading={t.accessModes.title}
-          />
-          <p className="text-afh-text-soft">{t.accessModes.intro}</p>
-        </div>
-        <div
-          data-testid="about-access-modes"
-          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-3"
-        >
-          {t.accessModes.items.map((mode, index) => (
-            <Link
-              key={mode.title}
-              aria-label={mode.title}
-              href={getLocalizedRoute(language, mode.page)}
-              className={`${mode.accentClass} flex min-h-[11rem] flex-col border border-afh-border bg-afh-surface p-afh-lg no-underline`}
-            >
-              <span className="text-afh-caption font-semibold uppercase tracking-wide text-[var(--accent-ink)]">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-afh-md font-afh-display text-afh-h2 font-black">
-                {mode.title}
-              </h3>
-              <p className="mt-afh-sm text-afh-small leading-relaxed text-afh-text-soft">
+      <SynthesisRail language={language} syntheses={syntheses} />
+
+      <section
+        className="about-axes-section space-y-afh-2xl"
+        aria-labelledby="about-access-title"
+      >
+        <div className="mx-auto max-w-[1140px] space-y-afh-xl">
+          <div className="space-y-afh-md">
+            <ChapterHeading
+              id="about-access-title"
+              stepLabel="02 · Les accès"
+              heading={t.accessModes.title}
+            />
+            <p className="text-afh-text-soft">{t.accessModes.intro}</p>
+          </div>
+          <ul
+            className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-3"
+            role="list"
+          >
+            {t.accessModes.items.map((mode) => (
+              <li
+                key={mode.description}
+                className={`${mode.accentClass} border-l-2 border-[var(--accent)] pl-afh-md text-afh-small leading-relaxed text-afh-text-soft`}
+              >
                 {mode.description}
-              </p>
-            </Link>
-          ))}
+              </li>
+            ))}
+          </ul>
         </div>
+        <AccessAxes
+          language={language}
+          counts={counts}
+          modulesByAxis={modulesByAxis}
+        />
+        <style>{`
+          .about-axes-section {
+            background: var(--afh-bg);
+            padding: 30px 20px 44px;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+          }
+          @media (min-width: 720px) {
+            .about-axes-section { padding: 40px 24px 60px; }
+          }
+        `}</style>
       </section>
 
       <section

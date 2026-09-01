@@ -8,6 +8,7 @@ import {
   loadAllNameRecordDossiers,
   loadNameRecords,
 } from "../nameRecordJsonLoader";
+import type { NameRecordDossier, NameRecordSource } from "@/types/names";
 
 // ─── fixtures ─────────────────────────────────────────────────────────────
 
@@ -67,6 +68,40 @@ function validNameFile(overrides: Record<string, unknown> = {}) {
       },
     ],
     ...overrides,
+  };
+}
+
+const dialloVariantSource: NameRecordSource = {
+  title: "Waccugol Almaami Alfaajo — English translation",
+  author: "Boston University NEH Ajami project",
+  year: 2022,
+  url: "https://sites.bu.edu/nehajami/files/2022/08/Waccugol-Almaami-Alfaajo_English-translation.pdf",
+  tier: "referenced",
+  notes:
+    "Discovered and cross-checked via https://en.wikipedia.org/wiki/Diallo and https://de.wikipedia.org/wiki/Diallo.",
+};
+
+function patronymeDossierWithSources(
+  sources: NameRecordSource[]
+): NameRecordDossier {
+  return {
+    id: "PAT_DIALLO",
+    entityType: "patronyme",
+    names: [
+      {
+        nameText: "Diallo",
+        nameType: "surname",
+        languageOfOrigin: null,
+        meaning: null,
+        periodLabel: null,
+        imposedBy: null,
+        impositionPeriod: null,
+        whyProblematic: null,
+        contemporaryUsage: null,
+        sortRank: 0,
+        sources,
+      },
+    ],
   };
 }
 
@@ -309,6 +344,117 @@ describe("nameRecordJsonLoader", () => {
   });
 
   describe("loadNameRecords", () => {
+    // @req REQ-135
+    it("loads sourced patronyme spellings under one canonical entity", async () => {
+      const database = createSupabaseDouble();
+      const dossier: NameRecordDossier = {
+        id: "PAT_DIALLO",
+        entityType: "patronyme",
+        names: [
+          {
+            nameText: "Diallo",
+            nameType: "surname",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 0,
+            sources: [dialloVariantSource],
+          },
+          {
+            nameText: "Jallow",
+            nameType: "historical_spelling",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 1,
+            sources: [dialloVariantSource],
+          },
+          {
+            nameText: "Jalloh",
+            nameType: "historical_spelling",
+            languageOfOrigin: null,
+            meaning: null,
+            periodLabel: null,
+            imposedBy: null,
+            impositionPeriod: null,
+            whyProblematic: null,
+            contemporaryUsage: null,
+            sortRank: 2,
+            sources: [dialloVariantSource],
+          },
+        ],
+      };
+
+      const report = await loadNameRecords(database.client as never, [dossier]);
+
+      expect(report).toMatchObject({ total: 3, inserted: 3 });
+      expect(report.errors).toEqual([]);
+      expect(report.dropped).toEqual([]);
+      expect(database.sources).toEqual([
+        expect.objectContaining({
+          url: dialloVariantSource.url,
+          tier: "referenced",
+          notes: expect.stringContaining(
+            "https://en.wikipedia.org/wiki/Diallo"
+          ),
+        }),
+      ]);
+      expect(database.sources[0].notes).toContain(
+        "https://de.wikipedia.org/wiki/Diallo"
+      );
+      expect(database.assertions).toHaveLength(3);
+      expect(database.assertions).toEqual(
+        expect.arrayContaining(
+          dossier.names.map((entry) =>
+            expect.objectContaining({
+              entity_type: "patronyme",
+              entity_id: "PAT_DIALLO",
+              statement: entry.nameText,
+            })
+          )
+        )
+      );
+      expect(database.nameRecords).toHaveLength(3);
+      expect(database.nameRecords).toEqual(
+        expect.arrayContaining(
+          dossier.names.map((entry) =>
+            expect.objectContaining({
+              entity_type: "patronyme",
+              entity_id: "PAT_DIALLO",
+              name_text: entry.nameText,
+            })
+          )
+        )
+      );
+      expect(
+        new Set(database.nameRecords.map((record) => record.entity_id))
+      ).toEqual(new Set(["PAT_DIALLO"]));
+    });
+
+    // @req REQ-135
+    it("loads a patronyme entry sourced only at unverified (Source Tier Policy: nothing is forbidden, everything is labelled)", async () => {
+      const database = createSupabaseDouble();
+      const dossier = patronymeDossierWithSources([
+        { ...dialloVariantSource, tier: "unverified" },
+      ]);
+
+      const report = await loadNameRecords(database.client as never, [dossier]);
+
+      expect(report).toMatchObject({ total: 1, inserted: 1 });
+      expect(report.dropped).toEqual([]);
+      expect(database.assertions).toHaveLength(1);
+      expect(database.nameRecords).toHaveLength(1);
+      expect(database.sources[0]).toMatchObject({ tier: "unverified" });
+    });
+
     // @req REQ-057
     it("upserts sources, one assertion per record, then the name_records row", async () => {
       const database = createSupabaseDouble();

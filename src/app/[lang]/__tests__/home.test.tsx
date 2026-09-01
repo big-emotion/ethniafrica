@@ -118,7 +118,8 @@ describe("home page — search, corpus scale and one fact (ETNI-1404)", () => {
   });
 
   // @req REQ-113
-  it("does not render or load the retired editorial and module sections", async () => {
+  // @req REQ-132
+  it("does not render or load the presentation blocks moved to About or retired modules", async () => {
     await renderHome();
 
     for (const testId of [
