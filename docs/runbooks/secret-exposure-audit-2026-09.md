@@ -64,6 +64,14 @@ Each of these was checked, not assumed.
   token-shaped body. All 69 candidate commits were inspected, not sampled.
 - **Working tree at HEAD carries no JWT.**
 
+The strongest of these is not a pattern search. Every blob in every commit on every ref was
+decoded, and the whole history contains exactly **one** Supabase JWT identity —
+`role=service_role`, `ref=shmrjtnfbqzceovroqjj` — in three files of a single `.entire/`
+transcript directory. A fourth JWT-shaped hit is 75 characters and does not decode: it is the
+same key truncated by line wrapping in `full.jsonl`, not a second credential. Enumerating
+identities this way answers "is production exposed?" outright, where grepping for a project
+ref only ever answers "does this string appear somewhere?".
+
 ## Why nobody can deploy or reach the infrastructure from a clone
 
 - Deploying requires **publishing a GitHub Release on the upstream repository**, which requires
