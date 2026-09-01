@@ -126,10 +126,8 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   // reading `peoples` off an Array and crashing the whole modal.
   if (!data || Array.isArray(data)) return [];
 
-  const { peoples, countries, families, persons, languages } = data as Record<
-    string,
-    unknown
-  >;
+  const { peoples, countries, families, persons, patronymes, languages } =
+    data as Record<string, unknown>;
 
   return [
     ...asRows(peoples).map(
@@ -184,6 +182,19 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         name: String(row.fullName ?? ""),
         roleCategory: String(row.roleCategory ?? ""),
         peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
+        snippet: (row.snippet as string) || undefined,
+        relevance: numberOrUndefined(row.relevance),
+        exactMatch: row.exactMatch === true,
+      })
+    ),
+    // ETNI-1463: the name (patronyme) reaches the unified surface as its own
+    // kind — a query that resolves to a lineage name rather than a people,
+    // country or family must still return something.
+    ...asRows(patronymes).map(
+      (row): SearchResult => ({
+        type: "patronyme",
+        id: String(row.id),
+        name: String(row.nameMain ?? ""),
         snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,

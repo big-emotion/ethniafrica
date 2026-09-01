@@ -16,6 +16,7 @@ import { Language } from "@/types/shared";
 import { searchWithLeads } from "@/lib/afrikLoader";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
+import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
 import type {
   SearchResult,
   SearchEntityType,
@@ -90,6 +91,7 @@ export const SearchModalV2 = ({
       peoples: "Peuples",
       countries: "Pays",
       persons: "Personnes",
+      patronymes: "Noms",
     };
   };
 
@@ -114,6 +116,12 @@ export const SearchModalV2 = ({
   const hasQuery = searchQuery.trim().length >= 2;
   const showNoResultsGuidance = !loading && hasQuery && results.length === 0;
   const showPrompt = !loading && !hasQuery && results.length === 0;
+  // ETNI-1463 AC2: persons came back but the corpus holds no name fiche for
+  // this query — shown as an absence, not silence.
+  const showNoNameFicheNote =
+    !loading &&
+    results.some((result) => result.type === "person") &&
+    !results.some((result) => result.type === "patronyme");
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -179,6 +187,12 @@ export const SearchModalV2 = ({
               >
                 {tabLabels.persons}
               </TabsTrigger>
+              <TabsTrigger
+                value="patronyme"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.patronymes}
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -213,6 +227,7 @@ export const SearchModalV2 = ({
             </div>
           ) : (
             <div className="space-y-2" data-testid="search-results-list">
+              {showNoNameFicheNote && <NoNameFicheNote className="mb-2" />}
               {results.map((result, index) => (
                 <SearchResultCard
                   key={`${result.type}-${result.id}-${index}`}

@@ -282,6 +282,51 @@ describe("mapSearchEnvelope", () => {
     expect(results.map((r) => r.type).sort()).toEqual(["language", "people"]);
   });
 
+  // @req REQ-135
+  it("maps a patronyme row, carrying nameSystem and casteOrSocialFunction", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "patronymic",
+            casteOrSocialFunction: "royal",
+            snippet: "lignage [[Keïta]]",
+            relevance: 0.65,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.type).toBe("patronyme");
+    expect(patronyme.id).toBe("PATR_KEITA");
+    expect(patronyme.name).toBe("Keïta");
+    expect(patronyme.snippet).toBe("lignage [[Keïta]]");
+    expect(patronyme.relevance).toBe(0.65);
+    expect(patronyme.exactMatch).toBe(true);
+  });
+
+  // ETNI-1463 AC2: a query with person hits but no name fiche must still
+  // return the persons — the absence is rendered, not silence, but the
+  // envelope itself must never drop a kind that legitimately came back
+  // empty.
+  // @req REQ-135
+  it("returns persons with an empty patronymes array, neither dropped nor faked", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        persons: [
+          { id: "PER_X", fullName: "Someone", roleCategory: "historian" },
+        ],
+        patronymes: [],
+      },
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].type).toBe("person");
+  });
+
   // @req REQ-002
   it("prefers the match excerpt over the raw etymology for a country", () => {
     const [country] = mapSearchEnvelope({
@@ -396,6 +441,23 @@ describe("mapSearchLeads", () => {
         total: 0,
         leads: [
           { kind: "language", id: "swa", name: "Swahili", similarity: 0.5 },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([]);
+  });
+
+  // ETNI-1463 AC3 (ETNI-1744): patronymes and persons are deliberately not
+  // lead candidates, the same way languages are not.
+  // @req REQ-125
+  it("drops a lead whose kind is patronyme or person", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          { kind: "patronyme", id: "PATR_X", name: "X", similarity: 0.5 },
+          { kind: "person", id: "PER_X", name: "X", similarity: 0.5 },
         ],
       },
     });
