@@ -13,6 +13,7 @@ import {
   loadLanguages,
 } from "@/lib/afrik/loaders/languageProvenanceLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import {
   loadAllRelationFiles,
   loadRelations,
@@ -34,6 +35,7 @@ vi.mock("@/lib/afrik/loaders/languageCsvLoader");
 vi.mock("@/lib/afrik/loaders/languageProvenanceLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
+vi.mock("@/lib/afrik/loaders/nameRecordJsonLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
@@ -60,6 +62,7 @@ const recetteTarget = {
 
 type TableName =
   | "afrik_language_families"
+  | "afrik_people_languages"
   | "afrik_peoples"
   | "afrik_countries"
   | "afrik_people_countries"
@@ -70,12 +73,19 @@ interface DatabaseRow {
   content?: unknown;
   people_id?: string;
   country_id?: string;
+  language_id?: string;
   [key: string]: unknown;
 }
 
 interface UpsertOperation {
   table: TableName;
   row: DatabaseRow;
+}
+
+interface UpsertCall {
+  table: TableName;
+  rows: DatabaseRow[];
+  options?: { onConflict?: string };
 }
 
 interface SupabaseDoubleOptions {
@@ -90,49 +100,65 @@ interface SupabaseDoubleOptions {
 function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const rows: Record<TableName, DatabaseRow[]> = {
     afrik_language_families: [...(options.rows?.afrik_language_families ?? [])],
+    afrik_people_languages: [...(options.rows?.afrik_people_languages ?? [])],
     afrik_peoples: [...(options.rows?.afrik_peoples ?? [])],
     afrik_countries: [...(options.rows?.afrik_countries ?? [])],
     afrik_people_countries: [...(options.rows?.afrik_people_countries ?? [])],
     afrik_people_relations: [...(options.rows?.afrik_people_relations ?? [])],
   };
   const operations: UpsertOperation[] = [];
+  const upsertCalls: UpsertCall[] = [];
   const persistUpserts = options.persistUpserts ?? true;
 
   const from = vi.fn((table: TableName) => ({
     select: vi.fn(async () => ({ data: rows[table], error: null })),
-    upsert: vi.fn(async (row: DatabaseRow) => {
-      const operation = { table, row } satisfies UpsertOperation;
-      operations.push(operation);
+    upsert: vi.fn(
+      async (
+        payload: DatabaseRow | DatabaseRow[],
+        upsertOptions?: { onConflict?: string }
+      ) => {
+        const payloadRows = Array.isArray(payload) ? payload : [payload];
+        upsertCalls.push({ table, rows: payloadRows, options: upsertOptions });
 
-      const key =
-        table === "afrik_people_countries"
-          ? `${row.people_id}:${row.country_id}`
-          : row.id;
-      const index = rows[table].findIndex((candidate) => {
-        const candidateKey =
-          table === "afrik_people_countries"
-            ? `${candidate.people_id}:${candidate.country_id}`
-            : candidate.id;
-        return candidateKey === key;
-      });
-      const error = options.writeError?.(operation, rows[table][index]);
-      if (error) {
-        return { error };
-      }
+        for (const row of payloadRows) {
+          const operation = { table, row } satisfies UpsertOperation;
+          operations.push(operation);
 
-      if (persistUpserts) {
-        if (index === -1) {
-          rows[table].push(row);
-        } else {
-          rows[table][index] = { ...rows[table][index], ...row };
+          const key =
+            table === "afrik_people_countries"
+              ? `${row.people_id}:${row.country_id}`
+              : table === "afrik_people_languages"
+                ? `${row.people_id}:${row.language_id}`
+                : row.id;
+          const index = rows[table].findIndex((candidate) => {
+            const candidateKey =
+              table === "afrik_people_countries"
+                ? `${candidate.people_id}:${candidate.country_id}`
+                : table === "afrik_people_languages"
+                  ? `${candidate.people_id}:${candidate.language_id}`
+                  : candidate.id;
+            return candidateKey === key;
+          });
+          const error = options.writeError?.(operation, rows[table][index]);
+          if (error) {
+            return { error };
+          }
+
+          if (persistUpserts) {
+            if (index === -1) {
+              rows[table].push(row);
+            } else {
+              rows[table][index] = { ...rows[table][index], ...row };
+            }
+          }
         }
-      }
 
-      return { error: null };
-    }),
+        return { error: null };
+      }
+    ),
   }));
 
-  return { client: { from }, operations };
+  return { client: { from }, operations, rows, upsertCalls };
 }
 
 function useSupabaseDouble(options: SupabaseDoubleOptions = {}) {
@@ -148,7 +174,14 @@ describe("migrateAfrikToDatabase", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(loadAllLanguageFamilies).mockResolvedValue([familyFixture]);
-    vi.mocked(loadAllLanguages).mockReturnValue([]);
+    vi.mocked(loadAllLanguages).mockReturnValue(
+      (peopleFixture.content.languages?.isoCodes ?? []).map((id) => ({
+        id,
+        name: id,
+        familyId: peopleFixture.languageFamilyId,
+        nameProvenance: "derived" as const,
+      }))
+    );
     vi.mocked(emptyLanguageLoadReport).mockImplementation(emptyLanguageReport);
     vi.mocked(loadLanguages).mockResolvedValue(emptyLanguageReport());
     vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture]);
@@ -165,6 +198,12 @@ describe("migrateAfrikToDatabase", () => {
     vi.mocked(loadMigrations).mockResolvedValue({
       total: 0,
       inserted: 0,
+      errors: [],
+    });
+    vi.mocked(loadNameRecords).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      dropped: [],
       errors: [],
     });
   });
@@ -276,6 +315,9 @@ describe("migrateAfrikToDatabase", () => {
     expect(database.operations.map(({ table }) => table)).toEqual([
       "afrik_language_families",
       "afrik_peoples",
+      "afrik_people_languages",
+      "afrik_people_languages",
+      "afrik_people_languages",
       "afrik_countries",
       "afrik_people_countries",
     ]);
@@ -283,10 +325,13 @@ describe("migrateAfrikToDatabase", () => {
       afroasiaticFamily.content
     );
     expect(database.operations[1].row.content).toEqual(betePeople.content);
-    expect(database.operations[2].row.content).toEqual(coteDIvoire.content);
+    const countryOperation = database.operations.find(
+      ({ table }) => table === "afrik_countries"
+    )!;
+    expect(countryOperation.row.content).toEqual(coteDIvoire.content);
     expect(database.operations[0].row).not.toHaveProperty("created_at");
     expect(database.operations[1].row).not.toHaveProperty("created_at");
-    expect(database.operations[2].row).not.toHaveProperty("created_at");
+    expect(countryOperation.row).not.toHaveProperty("created_at");
     expect(report.verification.before.hasDrift).toBe(true);
     expect(report.verification.after).toMatchObject({ hasDrift: false });
     expect(report.verification.errors).toEqual([]);
@@ -619,6 +664,177 @@ describe("migrateAfrikToDatabase", () => {
     expect(loadLanguages).toHaveBeenCalledWith(expect.anything(), [
       languageFixture,
     ]);
+  });
+
+  // @req REQ-136
+  it("upserts only declared relations backed by loaded language records and reports missing codes", async () => {
+    const peopleWithMissingLanguage = {
+      ...peopleFixture,
+      content: {
+        ...peopleFixture.content,
+        languages: {
+          ...peopleFixture.content.languages,
+          isoCodes: ["bev", "missing", "bev"],
+        },
+      },
+    };
+    vi.mocked(loadAllPeoples).mockResolvedValue([peopleWithMissingLanguage]);
+    vi.mocked(loadAllLanguages).mockReturnValue([
+      {
+        id: "bev",
+        name: "Bété de Daloa",
+        familyId: peopleFixture.languageFamilyId,
+        nameProvenance: "derived",
+      },
+    ]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.peopleLanguages).toMatchObject({
+      total: 2,
+      inserted: 1,
+      errors: [expect.stringMatching(/PPL_BETE.*missing/)],
+    });
+    expect(
+      database.operations.filter(
+        ({ table }) => table === "afrik_people_languages"
+      )
+    ).toEqual([
+      {
+        table: "afrik_people_languages",
+        row: { people_id: betePeople.id, language_id: "bev" },
+      },
+    ]);
+  });
+
+  // @req REQ-136
+  it("bounds people-language relation upserts to shared Supabase chunks", async () => {
+    const languageRecords = Array.from({ length: 501 }, (_, index) => ({
+      id: `l${index}`,
+      name: `Language ${index}`,
+      familyId: peopleFixture.languageFamilyId,
+      nameProvenance: "derived" as const,
+    }));
+    vi.mocked(loadAllLanguages).mockReturnValue(languageRecords);
+    vi.mocked(loadAllPeoples).mockResolvedValue([
+      {
+        ...peopleFixture,
+        content: {
+          ...peopleFixture.content,
+          languages: {
+            ...peopleFixture.content.languages,
+            isoCodes: languageRecords.map(({ id }) => id),
+          },
+        },
+      },
+    ]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const relationCalls = database.upsertCalls.filter(
+      ({ table }) => table === "afrik_people_languages"
+    );
+    expect(relationCalls.map(({ rows }) => rows.length)).toEqual([500, 1]);
+    expect(
+      relationCalls.every(
+        ({ options }) => options?.onConflict === "people_id,language_id"
+      )
+    ).toBe(true);
+    expect(report.peopleLanguages).toMatchObject({
+      total: 501,
+      inserted: 501,
+      errors: [],
+    });
+  });
+
+  // @req REQ-136
+  it("replays people-language relation upserts without duplicating rows", async () => {
+    const languages = [
+      {
+        id: "bev",
+        name: "Bété de Daloa",
+        familyId: peopleFixture.languageFamilyId,
+        nameProvenance: "derived" as const,
+      },
+      {
+        id: "bet",
+        name: "Bété de Guibéroua",
+        familyId: peopleFixture.languageFamilyId,
+        nameProvenance: "derived" as const,
+      },
+    ];
+    vi.mocked(loadAllLanguages).mockReturnValue(languages);
+    vi.mocked(loadAllPeoples).mockResolvedValue([
+      {
+        ...peopleFixture,
+        content: {
+          ...peopleFixture.content,
+          languages: {
+            ...peopleFixture.content.languages,
+            isoCodes: languages.map(({ id }) => id),
+          },
+        },
+      },
+    ]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+    const replay = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(database.rows.afrik_people_languages).toEqual([
+      { people_id: betePeople.id, language_id: "bev" },
+      { people_id: betePeople.id, language_id: "bet" },
+    ]);
+    expect(replay.peopleLanguages).toMatchObject({
+      total: 2,
+      inserted: 2,
+      errors: [],
+    });
   });
 
   // @req REQ-032

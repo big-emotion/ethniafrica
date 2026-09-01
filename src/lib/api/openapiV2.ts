@@ -51,6 +51,10 @@ const options: swaggerJsdoc.Options = {
         description: "Opérations sur les familles linguistiques (API v2)",
       },
       {
+        name: "API v2 - Languages",
+        description: "Opérations sur les langues (API v2)",
+      },
+      {
         name: "API v2 - Keys",
         description: "API key management (issuance)",
       },
@@ -832,6 +836,78 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+        LanguageSourceV2: {
+          type: "object",
+          properties: {
+            id: { type: "string", minLength: 1 },
+            title: { type: "string", minLength: 1 },
+            url: { type: ["string", "null"] },
+            tier: {
+              type: "string",
+              enum: ["official", "referenced", "unverified"],
+            },
+            notes: { type: ["string", "null"] },
+          },
+          required: ["id", "title", "url", "tier"],
+        },
+        LanguageV2: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              pattern: "^[a-z]{3}$",
+              example: "yor",
+            },
+            name: { type: "string", minLength: 1 },
+            nameProvenance: {
+              type: "string",
+              enum: ["sourced", "derived"],
+            },
+            family: {
+              type: "object",
+              properties: {
+                id: { type: "string", minLength: 1 },
+                name: { type: "string", minLength: 1 },
+              },
+              required: ["id", "name"],
+            },
+            speakingPeoples: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", minLength: 1 },
+                  name: { type: "string", minLength: 1 },
+                },
+                required: ["id", "name"],
+              },
+            },
+            vehicularRole: { type: ["string", "null"] },
+            vitalityStatus: {
+              type: ["object", "null"],
+              properties: {
+                status: { type: "string", minLength: 1 },
+                scale: { type: "string", minLength: 1 },
+                asOf: { type: "integer", minimum: 1 },
+              },
+              required: ["status", "scale", "asOf"],
+            },
+            sources: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageSourceV2" },
+            },
+          },
+          required: [
+            "id",
+            "name",
+            "nameProvenance",
+            "family",
+            "speakingPeoples",
+            "vehicularRole",
+            "vitalityStatus",
+            "sources",
+          ],
+        },
         Error: {
           type: "object",
           properties: {
@@ -1006,6 +1082,19 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             data: { $ref: "#/components/schemas/LanguageFamilyV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        LanguageDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/LanguageV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",

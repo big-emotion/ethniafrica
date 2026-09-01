@@ -2,9 +2,9 @@
  * Synchronize canonical AFRIK JSON sources to a guarded Supabase target.
  *
  * Data is processed in AFRIK hierarchy order:
- * language families → peoples → countries → people/country relations →
- * migration events (peoples must exist first — migration_event_peoples FKs
- * afrik_peoples).
+ * language families → languages → peoples → people/language relations →
+ * countries → people/country relations → migration events (peoples must
+ * exist first — migration_event_peoples FKs afrik_peoples).
  */
 
 import { config } from "dotenv";
@@ -17,6 +17,7 @@ import { logger } from "@/lib/api/logger";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
+import type { LanguageRecord } from "@/lib/afrik/loaders/languageCsvLoader";
 import {
   loadLanguages,
   emptyLanguageLoadReport,
@@ -45,6 +46,7 @@ import {
   resolveAfrikSyncTarget,
   type AfrikSyncTargetInput,
 } from "./lib/afrikSyncTarget";
+import { chunk } from "./lib/supabasePaging";
 
 interface MigrationSectionReport {
   total: number;
@@ -67,6 +69,7 @@ export interface MigrationReport {
   languageFamilies: MigrationSectionReport;
   languages: LanguageLoadReport;
   peoples: MigrationSectionReport;
+  peopleLanguages: MigrationSectionReport;
   countries: MigrationSectionReport;
   relations: MigrationSectionReport;
   peopleRelations: PeopleRelationsSectionReport;
@@ -110,6 +113,7 @@ function createMigrationReport(): MigrationReport {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
     languages: emptyLanguageLoadReport(),
     peoples: { total: 0, inserted: 0, errors: [] },
+    peopleLanguages: { total: 0, inserted: 0, errors: [] },
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
@@ -375,6 +379,79 @@ async function upsertCountries(
   }
 }
 
+interface PeopleLanguageRow {
+  people_id: string;
+  language_id: string;
+}
+
+/** Build each unique corpus-declared edge and reject codes the language load cannot satisfy. */
+// @req REQ-136
+function collectPeopleLanguageRows(
+  peoples: People[],
+  languageRecords: LanguageRecord[],
+  report: MigrationSectionReport
+): PeopleLanguageRow[] {
+  const loadedLanguageIds = new Set(
+    languageRecords.map((language) => language.id)
+  );
+  const seen = new Set<string>();
+  const rows: PeopleLanguageRow[] = [];
+
+  for (const people of peoples) {
+    for (const languageId of people.content.languages?.isoCodes ?? []) {
+      if (!languageId) {
+        continue;
+      }
+
+      const relationId = `${people.id}:${languageId}`;
+      if (seen.has(relationId)) {
+        continue;
+      }
+      seen.add(relationId);
+      report.total += 1;
+
+      if (!loadedLanguageIds.has(languageId)) {
+        report.errors.push(
+          `${people.id} ↔ ${languageId}: language code is absent from loaded language records`
+        );
+        continue;
+      }
+
+      rows.push({ people_id: people.id, language_id: languageId });
+    }
+  }
+
+  return rows;
+}
+
+/** Persist corpus-declared people/language edges in bounded, replay-safe batches. */
+// @req REQ-136
+async function upsertPeopleLanguages(
+  supabase: AdminClient,
+  rows: PeopleLanguageRow[],
+  report: MigrationSectionReport
+): Promise<void> {
+  for (const [index, batch] of chunk(rows).entries()) {
+    if (batch.length === 0) {
+      continue;
+    }
+
+    try {
+      const { error } = await supabase
+        .from("afrik_people_languages")
+        .upsert(batch, { onConflict: "people_id,language_id" });
+
+      if (error) {
+        report.errors.push(`Batch ${index + 1}: ${error.message}`);
+      } else {
+        report.inserted += batch.length;
+      }
+    } catch (error) {
+      report.errors.push(`Batch ${index + 1}: ${errorMessage(error)}`);
+    }
+  }
+}
+
 async function upsertRelations(
   supabase: AdminClient,
   peoples: People[],
@@ -464,6 +541,7 @@ function hasErrors(report: MigrationReport): boolean {
     report.languageFamilies.errors.length > 0 ||
     report.languages.errors.length > 0 ||
     report.peoples.errors.length > 0 ||
+    report.peopleLanguages.errors.length > 0 ||
     report.countries.errors.length > 0 ||
     report.relations.errors.length > 0 ||
     report.peopleRelations.errors.length > 0 ||
@@ -505,6 +583,11 @@ export async function migrateAfrikToDatabase(
 
   const languageRecords = loadAllLanguages(peoples);
   report.languages.total = languageRecords.length;
+  const peopleLanguageRows = collectPeopleLanguageRows(
+    peoples,
+    languageRecords,
+    report.peopleLanguages
+  );
 
   const countries = await loadAllCountries();
   report.countries.total = countries.length;
@@ -541,6 +624,7 @@ export async function migrateAfrikToDatabase(
       languageFamilies: report.languageFamilies.total,
       languages: report.languages.total,
       peoples: report.peoples.total,
+      peopleLanguages: report.peopleLanguages,
       countries: report.countries.total,
       relations: report.relations.total,
       peopleRelations: report.peopleRelations.total,
@@ -568,6 +652,11 @@ export async function migrateAfrikToDatabase(
     validFamilyIds,
     peopleStatuses,
     report
+  );
+  await upsertPeopleLanguages(
+    supabase,
+    peopleLanguageRows,
+    report.peopleLanguages
   );
 
   const migrationRecords = loadAllMigrationFiles();
@@ -619,6 +708,7 @@ export async function migrateAfrikToDatabase(
       languageFamilies: report.languageFamilies,
       languages: report.languages,
       peoples: report.peoples,
+      peopleLanguages: report.peopleLanguages,
       countries: report.countries,
       relations: report.relations,
       peopleRelations: report.peopleRelations,
