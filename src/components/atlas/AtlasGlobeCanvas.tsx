@@ -781,13 +781,13 @@ export function AtlasGlobeCanvas({
     resizeObserver.observe(parent);
     window.addEventListener("resize", handleResize);
 
-    if (reducedMotionRef.current) {
-      progressRef.current = 1;
-      draw();
-    } else {
-      draw();
-      scheduleReveal();
-    }
+    // EXPERIMENT (not for merge): draw the opening state as a single still
+    // frame, exactly as reduced motion already does, to test whether the
+    // fiches’ total-blocking-time scales with the number of frames drawn
+    // during load. If TBT falls from ~3 100 ms to ~300 ms, the cost is
+    // per-frame rasterization and the reveal is what buys it.
+    progressRef.current = 1;
+    draw();
 
     return () => {
       disposed = true;
