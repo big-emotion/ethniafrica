@@ -268,7 +268,7 @@ export function AccessAxes({
           the outline gains the rung it was missing. */}
       <SectionHeading
         eyebrow="Par où commencer"
-        title="Trois entrées, selon ce que vous cherchez."
+        title="Trois chemins, selon ce que vous cherchez."
         testId="home-axes-heading"
         className="access-axes-heading"
       />
