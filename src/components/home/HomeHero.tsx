@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
+import type { HomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 
 import { HomeHeroSearch } from "./HomeHeroSearch";
@@ -10,8 +12,8 @@ import { HomeHeroSearch } from "./HomeHeroSearch";
  * The search-first opening band (REQ-115, ETNI-1404).
  *
  * Reading order stays stable across widths: question and primary search,
- * interactive globe, then corpus counters. At desktop the grid places the
- * first and third items in the left column while the globe occupies the
+ * drawn visual, then corpus counters. At desktop the grid places the first
+ * and third items in the left column while the visual occupies the
  * right; CSS never changes the accessible order.
  */
 export interface HomeHeroProps {
@@ -23,8 +25,10 @@ export interface HomeHeroProps {
   seedWords?: SeedWordsByKind;
   /** Documented peoples per country, forwarded to the globe's honest field. */
   peopleCountsByCountry?: Record<string, number>;
-  /** Corpus counters supplied by the server page, after the globe in reading order. */
+  /** Corpus counters supplied by the server page, after the visual in reading order. */
   counts?: ReactNode;
+  /** The visual drawn once by the server for this page request. */
+  visual?: HomeHeroVisual;
 }
 
 // @req REQ-044
@@ -33,6 +37,7 @@ export function HomeHero({
   seedWords,
   peopleCountsByCountry,
   counts,
+  visual = { kind: "globe" },
 }: HomeHeroProps = {}) {
   return (
     <section
@@ -69,13 +74,33 @@ export function HomeHero({
           <HomeHeroSearch seedWords={seedWords} />
         </header>
 
-        {/* Placement only: the shared stage keeps ownership of WebGL probing,
-            its SVG fallback, keyboard controls and reduced-motion behaviour. */}
-        <div className="home-hero-globe">
-          <ContinentGlobeStage
-            peopleCountsByCountry={peopleCountsByCountry}
-            presentation="hero"
-          />
+        <div
+          className={`home-hero-visual home-hero-${visual.kind}`}
+          data-testid={`home-hero-${visual.kind}`}
+        >
+          {visual.kind === "globe" ? (
+            /* Placement only: the shared stage keeps ownership of WebGL
+               probing, its SVG fallback, keyboard controls and reduced-motion
+               behaviour. */
+            <ContinentGlobeStage
+              peopleCountsByCountry={peopleCountsByCountry}
+              presentation="hero"
+            />
+          ) : (
+            <figure className="home-hero-figure" data-testid="home-hero-figure">
+              <div className="home-hero-image-frame">
+                <Image
+                  src={visual.image.src}
+                  alt={visual.image.alt}
+                  fill
+                  sizes="(min-width: 1200px) 620px, (min-width: 768px) 560px, calc(100vw - 32px)"
+                  priority
+                  style={{ objectPosition: visual.image.position }}
+                />
+              </div>
+              <figcaption>{visual.image.credit}</figcaption>
+            </figure>
+          )}
         </div>
 
         {counts && <div className="home-hero-counts">{counts}</div>}
@@ -139,7 +164,7 @@ export function HomeHero({
           color: var(--afh-text);
         }
 
-        .home-hero-globe {
+        .home-hero-visual {
           grid-area: globe;
           min-width: 0;
           width: 100%;
@@ -151,6 +176,31 @@ export function HomeHero({
           min-height: 300px;
           --afh-globe-stage-height: 300px;
           max-width: 430px;
+        }
+
+        .home-hero-figure {
+          width: 100%;
+          max-width: 430px;
+          margin: 0 auto;
+        }
+        .home-hero-image-frame {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          aspect-ratio: 1;
+          border: 1px solid var(--afh-border);
+          border-radius: var(--afh-radius-lg);
+          background: var(--afh-surface);
+          box-shadow: var(--afh-elev-warm);
+        }
+        .home-hero-image-frame img {
+          object-fit: cover;
+        }
+        .home-hero-figure figcaption {
+          margin-top: 10px;
+          font-size: var(--afh-text-caption);
+          line-height: var(--afh-leading-caption);
+          color: var(--afh-text-soft);
         }
 
         .home-hero-counts {
@@ -172,6 +222,9 @@ export function HomeHero({
           .home-hero-globe .home-globe-stage {
             min-height: 380px;
             --afh-globe-stage-height: 380px;
+            max-width: 560px;
+          }
+          .home-hero-figure {
             max-width: 560px;
           }
         }
@@ -199,6 +252,10 @@ export function HomeHero({
             min-height: 460px;
             --afh-globe-stage-height: 460px;
             max-width: 620px;
+          }
+          .home-hero-figure {
+            max-width: 620px;
+            margin-inline: 0;
           }
         }
       `}</style>
