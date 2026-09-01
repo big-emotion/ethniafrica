@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_WOLOF",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Wolof",
+      "nameType": "endonym",
+      "languageOfOrigin": "wol",
+      "meaning": null,
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme universellement adopté aujourd'hui en français et en anglais, aussi bien par la communauté elle-même que par l'extérieur.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "SIL Ethnologue — Wolof (wol)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/wol/",
+          "tier": "official",
+          "notes": "Source déjà citée dans dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json."
+        }
+      ]
+    }
+  ]
+}

@@ -5,9 +5,10 @@
  * marks the route static, then the layout's dynamic read throws
  * DYNAMIC_SERVER_USAGE at request time and the route answers 500.
  *
- * That is exactly how the eleven Jouer games went down — `/[lang]/jouer/[jeu]`
- * returned only `{ jeu }` and never enumerated `[lang]`, so nothing was
- * prerendered and every game served a 500 while the build stayed green.
+ * That is exactly how the Jouer games went down when REQ-120 shipped 11 of
+ * them — `/[lang]/jouer/[jeu]` returned only `{ jeu }` and never enumerated
+ * `[lang]`, so nothing was prerendered and every game served a 500 while the
+ * build stayed green.
  */
 
 import { readdirSync, readFileSync, statSync } from "node:fs";

@@ -5,7 +5,7 @@ import type { MigrationGeometry } from "@/types/migrations";
 import type { RelationType } from "@/types/relations";
 
 /**
- * The corpus slices the eleven round generators read (REQ-120).
+ * The corpus slices the Jouer hub's round generators read (REQ-120).
  *
  * Each generator is a pure function from one of these to a GameRound, so the
  * games are testable without Supabase and the service layer stays the only

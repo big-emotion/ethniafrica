@@ -10,6 +10,7 @@
   "nameFr": "Yoruba",
   "nameEn": "Yoruba",
   "alternateNames": ["Yariba", "Aku", "Nago"],
+  "spellingAliases": [],
   "familyId": "FLG_BENOUECONGO",
   "peoples": [{ "name": "Yoruba", "peopleId": "PPL_YORUBA" }],
   "content": {

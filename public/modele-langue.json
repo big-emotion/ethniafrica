@@ -10,6 +10,7 @@
   "nameFr": "<Nom français de la langue>",
   "nameEn": "<English name>",
   "alternateNames": ["<Nom attesté 1>", "<Nom attesté 2>"],
+  "spellingAliases": ["<Orthographe alternative 1 (si applicable)>"],
   "familyId": "FLG_XXXXX",
   "peoples": [{ "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" }],
   "content": {

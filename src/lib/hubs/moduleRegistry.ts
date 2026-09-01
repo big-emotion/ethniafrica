@@ -63,10 +63,13 @@ export type ModuleDataSource =
   | "afrik_people_relations"
   | "quiz_questions";
 
-// REQ-120 gave Jouer eleven games, and eleven peers is past what a radial
+// REQ-120 gave Jouer 11 games, and that many peers is past what a radial
 // layout can lay out and past what a reader takes in as a set. A shelf is
 // the intermediate level: the reader picks the corpus entity a game
-// questions, then the game.
+// questions, then the game. Two scope cuts since (games-charter.md §1) have
+// left two modules, `quiz` and `mercator`, each alone on its shelf — the
+// mechanism is kept because a returning game lands on a shelf without a
+// redesign.
 //
 // The filing criterion is the entity the question is *about*, not the table
 // the query reads. The two agree everywhere but one — "Range-le dans sa
@@ -151,7 +154,7 @@ export interface HubModuleDefinition {
    */
   editorialReadiness?: EditorialReadiness;
   dataSource?: ModuleDataSource;
-  /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing eleven variants. */
+  /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
   group?: ModuleGroupId;
@@ -178,7 +181,8 @@ export interface HubModuleDefinition {
  *
  * - "globe": the textured globe, self-contained, no corpus behind it.
  * - "game": the play loop itself, rounds built server-side exactly as
- *   /fr/jeux/[jeu] builds them. One branch covers all eleven games.
+ *   /fr/jeux/[jeu] builds them. One branch covers every game the registry
+ *   declares.
  * - "migration-paths": the sourced events drawn on the Africa basemap.
  * - "family-crown": the linguistic families laid out in a radial crown,
  *   each weighted by the peoples it holds.

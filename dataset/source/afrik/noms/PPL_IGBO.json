@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_IGBO",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Ndi Igbo",
+      "nameType": "endonym",
+      "languageOfOrigin": "ibo",
+      "meaning": "« Le peuple igbo » — ndi signifie « les gens de » en igbo.",
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme universellement préféré dans les contextes académiques, officiels et communautaires depuis l'indépendance du Nigeria.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "Ethnologue: Languages of the World — Igbo (ibo)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/ibo/",
+          "tier": "official",
+          "notes": "Réutilisée depuis la fiche peuple PPL_IGBO (content.sources)."
+        }
+      ]
+    },
+    {
+      "nameText": "Ibo",
+      "nameType": "exonym",
+      "languageOfOrigin": null,
+      "meaning": null,
+      "periodLabel": "Documents administratifs coloniaux, XIXe-XXe siècle ; encore en usage par méconnaissance",
+      "imposedBy": "Administration coloniale britannique",
+      "impositionPeriod": "XIXe-XXe siècle",
+      "whyProblematic": "Transcription simplifiée qui aplatit la prononciation tonale complexe du terme igbo ; imposée par l'administration coloniale britannique sans consultation des locuteurs natifs, elle a longtemps véhiculé une lecture externe et déformée de l'identité igbo.",
+      "contemporaryUsage": "N'est plus employé que dans des documents historiques ou par méconnaissance. Le code ISO 639-3 du SIL conserve néanmoins « ibo » comme identifiant technique de la langue, distinct de l'endonyme « Igbo ».",
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "Ethnologue: Languages of the World — Igbo (ibo)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/ibo/",
+          "tier": "official",
+          "notes": "Le code ISO 639-3 « ibo » atteste la reconnaissance de cette graphie historique comme identifiant technique de la langue, distinct de l'endonyme « Igbo »."
+        }
+      ]
+    },
+    {
+      "nameText": "Union Ibo",
+      "nameType": "historical_spelling",
+      "languageOfOrigin": "ibo",
+      "meaning": "Dialecte écrit standardisé, composite de plusieurs dialectes igbo, créé par les missionnaires anglicans pour la traduction de la Bible.",
+      "periodLabel": "Fin du XIXe siècle à la première moitié du XXe siècle",
+      "imposedBy": "Missionnaires de la Church Missionary Society (CMS)",
+      "impositionPeriod": "Fin XIXe siècle – première moitié du XXe siècle",
+      "whyProblematic": "Le choix du dialecte de base a été contesté par une partie de la population igbo ; l'effort missionnaire, mené sur près d'un demi-siècle avant la première traduction complète de la Bible, n'a jamais fait de l'Union Ibo la langue courante du groupe — la population s'est montrée davantage intéressée par l'éducation en anglais que par cette langue vernaculaire de mission.",
+      "contemporaryUsage": null,
+      "sortRank": 2,
+      "sources": [
+        {
+          "title": "Creating 'Union Ibo': Missionaries and the Igbo language",
+          "author": "D. van den Bersselaar (Africa, vol. 70, Cambridge University Press)",
+          "year": 1997,
+          "url": "https://www.cambridge.org/core/journals/africa/article/abs/creating-union-ibo-missionaries-and-the-igbo-language/73FE8764A3E6453222212093A75CD600",
+          "tier": "referenced",
+          "notes": "Résumé consulté en ligne (texte intégral sous péage) ; corrobore le processus missionnaire et sa contestation partielle par une partie de la population igbo."
+        }
+      ]
+    }
+  ]
+}

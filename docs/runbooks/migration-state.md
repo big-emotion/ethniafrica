@@ -205,6 +205,32 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `054_afrik_people_languages.sql`              | pending — human-applied via `supabase db push`, recette first | pending — human-applied via `supabase db push`, second |
 | `056_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `058_afrik_people_prose_search_vector.sql`    | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `060_afrik_spelling_aliases.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+
+> **ETNI-1455.** `061` adds `afrik_patronyme_alliances`, a name-granularity table for sourced,
+> symmetric alliances between two names (e.g. the Manding sanankuya), modelled on
+> `afrik_people_relations` (`030`). A canonical-ordering `CHECK (name_id_a < name_id_b)` plus a
+> `UNIQUE (name_id_a, name_id_b)` constraint make the reversed pair a rejected insert rather than
+> a duplicate row (AC1); a `NOT NULL source_id` plus a `BEFORE INSERT OR UPDATE` source-or-drop
+> trigger reject any edge with no source (AC2), and `tier` follows the one three-value vocabulary
+> from `041`. Out of scope for this migration: seeding actual alliances (editorial) and the UI
+> that renders them. Rollout is two-step: recette applies automatically when this PR merges;
+> production is manual, by hand. Until production carries `061`, no alliance data can be written
+> to either project — this migration is schema-only and ships with nothing seeded.
+
+> **ETNI-1408 (DEC-034).** `060` adds a `spelling_aliases` JSONB column to `afrik_peoples` and
+> `afrik_languages` and folds it into `search_vector` at weight B — the same weight `043`/`055`
+> already give exonyms and alternate names, so a declared alternate spelling ranks alongside them
+> rather than only at the low-weight prose tier. This PR's branch is stacked on the still-unmerged
+> `ferry/ETNI-1405` branch (which carries `059_afrik_countries_prose_search_vector.sql`), purely so
+> `check:migration-files` sees a contiguous sequence with no hole at `059`; `059`'s own row belongs
+> to ETNI-1405's PR and is not duplicated here. Per the cross-cutting migration-queue rule, `060`
+> must not merge concurrently with any other in-flight migration — in particular it should land
+> after (or together with) `059`, never before it on `recette`. Rollout is two-step: recette
+> applies automatically when this PR merges; production is manual, by hand. Until production
+> carries `060`, a people's or language's declared spelling aliases are searchable on recette but
+> not yet on production — matching behaviour is unchanged there, only recall widens once applied.
 
 > **ETNI-1402 (DEC-028).** `058` widens `afrik_peoples.search_vector` — weight D now also
 > covers `content->origins`, `->organization`, `->ethnicities`, `->culture` and

@@ -129,11 +129,13 @@ export function AxisModulePanel({
     : null;
 
   /**
-   * The nodes this level puts on the scene. Jouer holds eleven games,
-   * which is past what the layout can place and past what a reader takes
-   * in, so the first level is its shelves — except a shelf holding one
-   * game, which stands in for that game rather than costing a click that
-   * offers no choice. Every other axis has no shelves and only one level.
+   * The nodes this level puts on the scene. Jouer originally held 11 games —
+   * past what the layout can place and past what a reader takes in — so the
+   * first level is its shelves; a shelf holding one game stands in for that
+   * game rather than costing a click that offers no choice. Two scope cuts
+   * have since left Jouer with two modules, `quiz` and `mercator`, each
+   * alone on its own shelf, so every shelf today takes that singleton
+   * branch. Every other axis has no shelves and only one level.
    */
   const panelNodes = useMemo<PanelNode[]>(() => {
     if (open) {
@@ -525,7 +527,7 @@ export function AxisModulePanel({
            is a fraction of the panel's half-height, so a scene needs room
            in proportion to how tightly its modules stack. Three hand-tuned
            values here is how the pair layout kept the 420px it was given
-           for two modules while rendering eleven. */
+           for two modules while rendering 11. */
 
         .axis-graph {
           position: absolute;

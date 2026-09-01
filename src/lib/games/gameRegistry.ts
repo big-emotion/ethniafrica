@@ -8,7 +8,7 @@ import type { GameKind } from "@/lib/games/gameKinds";
  * slug against. Keeping them apart means `PageType` stays a closed union
  * instead of growing a variant per game.
  *
- * Eleven games shipped first, three survived the charter's scope cut, and the
+ * 11 games shipped first, three survived the charter's scope cut, and the
  * hub is now cut again to two surfaces: the quiz and this one. See
  * `docs/design/games-charter.md` §1 for what went and why. Every retired
  * generator is recoverable from git rather than kept unreachable here.
