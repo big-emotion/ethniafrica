@@ -66,8 +66,8 @@ import type { Language } from "@/types/shared";
 export const SEARCH_LABEL =
   "Cherchez un peuple, un pays ou une famille linguistique";
 
-/** What to type, never what will be found: that is the label's job. */
-const SEARCH_PLACEHOLDER = "Tapez un nom…";
+/** Concrete examples complement the scope named by the visible label. */
+const SEARCH_PLACEHOLDER = "Ex. Bafut, Namibie, Bantou";
 
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
@@ -412,12 +412,10 @@ export function HomeHeroSearch({
       )}
 
       <style>{`
-        /* 32 and 48 are steps of the brand charter §7 ramp, not measured
-           values: the band's job here is to read as two objects — a question
-           with its answer, then a way in — rather than as one paragraph that
-           happens to end in a text box. */
+        /* The search remains a distinct action while sitting close enough to
+           the answer to read as its way into the corpus. */
         .home-hero-search {
-          margin-top: 32px;
+          margin-top: 24px;
           text-align: left;
         }
 

@@ -117,6 +117,7 @@ describe("HomeHeroSearch", () => {
     const placeholder = field().getAttribute("placeholder") ?? "";
     expect(placeholder).not.toBe(SEARCH_LABEL);
     expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
+    expect(placeholder).toBe("Ex. Bafut, Namibie, Bantou");
   });
 
   // Opening the phone keyboard on load buries the page under it and steals

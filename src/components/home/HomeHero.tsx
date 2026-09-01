@@ -72,7 +72,10 @@ export function HomeHero({
         {/* Placement only: the shared stage keeps ownership of WebGL probing,
             its SVG fallback, keyboard controls and reduced-motion behaviour. */}
         <div className="home-hero-globe">
-          <ContinentGlobeStage peopleCountsByCountry={peopleCountsByCountry} />
+          <ContinentGlobeStage
+            peopleCountsByCountry={peopleCountsByCountry}
+            presentation="hero"
+          />
         </div>
 
         {counts && <div className="home-hero-counts">{counts}</div>}
@@ -145,8 +148,8 @@ export function HomeHero({
         /* The shared globe is intentionally compact only on this opening
            surface. Its engine and interaction model remain untouched. */
         .home-hero-globe .home-globe-stage {
-          min-height: 320px;
-          --afh-globe-stage-height: 320px;
+          min-height: 300px;
+          --afh-globe-stage-height: 300px;
           max-width: 430px;
         }
 
@@ -164,11 +167,11 @@ export function HomeHero({
         @media (min-width: 768px) {
           .home-hero-inner {
             gap: 24px;
-            padding-block: 36px 40px;
+            padding-block: 32px 36px;
           }
           .home-hero-globe .home-globe-stage {
-            min-height: 420px;
-            --afh-globe-stage-height: 420px;
+            min-height: 380px;
+            --afh-globe-stage-height: 380px;
             max-width: 560px;
           }
         }
@@ -181,8 +184,8 @@ export function HomeHero({
               "counts globe";
             align-items: center;
             column-gap: 48px;
-            row-gap: 24px;
-            padding-block: 48px;
+            row-gap: 20px;
+            padding-block: 40px;
           }
           .home-hero-copy {
             margin: 0;
@@ -193,8 +196,8 @@ export function HomeHero({
             margin-inline: 0;
           }
           .home-hero-globe .home-globe-stage {
-            min-height: 520px;
-            --afh-globe-stage-height: 520px;
+            min-height: 460px;
+            --afh-globe-stage-height: 460px;
             max-width: 620px;
           }
         }
