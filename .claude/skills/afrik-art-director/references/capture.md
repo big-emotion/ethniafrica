@@ -129,11 +129,10 @@ The public surface, for a full sweep:
 
 ```
 /fr
-/fr/explorer                       /fr/comprendre                 /fr/jouer
 /fr/explorer/peuples               /fr/comprendre/anecdotes       /fr/jouer/mercator
 /fr/explorer/pays                  /fr/comprendre/doctrine        /fr/jouer/quiz
 /fr/explorer/familles              /fr/comprendre/migrations
-/fr/explorer/peuples/PPL_KUNG      /fr/comprendre/noms
+/fr/explorer/peuples/PPL_KUNG      /fr/comprendre/appellations
 /fr/explorer/pays/ZAF              /fr/comprendre/regards/colonisation-et-resistances
 /fr/explorer/familles/FLG_ATLANTIQUE
 /fr/explorer/peuples/PPL_KUNG/liens
@@ -145,14 +144,21 @@ The public surface, for a full sweep:
 /fr/explorer/peuples/ceci-nexiste-pas        ← the 404, which has no shell
 ```
 
+**There is no `/fr/explorer`, `/fr/comprendre` or `/fr/jouer`.** ETNI-1555
+removed the three axis landing pages: an axis is a heading in the masthead that
+opens a panel of direct module links, never a page of its own, and
+`navigationCharter.test.tsx` holds that shape. Pointing the harness at one of
+them photographs the 404 and reads as a broken sweep. The axis segments survive
+only as the prefix of their children — `/fr/explorer/*`, `/fr/comprendre/*`,
+`/fr/jouer/*`.
+
 Document heights at 430 px, as a sense of scale — a page an order of magnitude
 longer than its siblings is a finding in itself:
 
-| Route                                                            | px            |
-| ---------------------------------------------------------------- | ------------- |
-| `/fr/comprendre/regards/colonisation-et-resistances`             | 29 679        |
-| `/fr/explorer/peuples/PPL_KUNG`                                  | 15 195        |
-| `/fr`                                                            | 8 381         |
-| `/fr/explorer/pays/ZAF` · `/fr/explorer/familles/FLG_ATLANTIQUE` | ~7 300        |
-| the three axis hubs                                              | 1 600 – 1 700 |
-| `/fr/comparer`                                                   | 1 106         |
+| Route                                                            | px     |
+| ---------------------------------------------------------------- | ------ |
+| `/fr/comprendre/regards/colonisation-et-resistances`             | 29 679 |
+| `/fr/explorer/peuples/PPL_KUNG`                                  | 15 195 |
+| `/fr`                                                            | 8 381  |
+| `/fr/explorer/pays/ZAF` · `/fr/explorer/familles/FLG_ATLANTIQUE` | ~7 300 |
+| `/fr/comparer`                                                   | 1 106  |

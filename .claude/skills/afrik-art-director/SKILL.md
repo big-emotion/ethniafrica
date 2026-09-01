@@ -17,7 +17,7 @@ surface charter the question touches:
 | what the map may assert, accent scope, empty states, the reading rail | `docs/design/atlas-charter.md`                                     |
 | a size, a weight, a measure, a heading rank                           | `docs/design/typography-charter.md`                                |
 | what shape a click takes, a radius, a button, a chip                  | `docs/design/actions-charter.md`                                   |
-| anything on `/fr/jouer`                                               | `docs/design/games-charter.md` (and invoke `/afrik-game-designer`) |
+| anything on `/fr/jouer/*`                                             | `docs/design/games-charter.md` (and invoke `/afrik-game-designer`) |
 | the reviewed rendering a surface answers to                           | `docs/design/mockups/`                                             |
 
 Reasoning about this surface without them re-derives conclusions that are

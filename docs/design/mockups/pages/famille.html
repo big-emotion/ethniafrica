@@ -6,9 +6,11 @@
 <style>
 /*@SHELLCSS@*/
 
-/* La fiche famille est sur terre — l'accent que accessModeHubs.ts donne
-   au module « L'arbre des familles ». C'est le seul accent dont le texte
-   posé dessus doit être sombre. */
+/* La fiche famille est sur terre — l'accent que le registre des modules
+   (src/lib/hubs/moduleRegistry.ts) donne à « L'arbre des familles ».
+   C'est le seul accent dont le texte posé dessus doit être sombre.
+   La fiche livrée, elle, est pervenche : terre y est réservée au
+   marqueur d'exonyme imposé. Voir README.md, « Lire une maquette ». */
 #frame { --accent: var(--afh-cat-terre); --accent-tint: var(--afh-cat-terre-tint); --accent-foreground: #2c2018; }
 
 .scale-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 11px; }

@@ -4,6 +4,16 @@
 **Branch audited:** `recette` @ `c7edce51`. Previous revision audited `faed1a60` on 2026-08-29 and was updated twice that day as it was acted on (PR #523 `d695cf8c`, PR #525 `34f6f11c`).
 **Method:** read-only. Every repo gate executed locally; CI evidence read from GitHub Actions; branch protection and repository secrets read from the GitHub API. No external service was written to, no migration run, no live production probe.
 
+> **Route note, added 2026-09-01.** Two routes named in the findings below have
+> since moved, and the findings are left as they were measured rather than
+> rewritten. `/fr/explorer` no longer exists — ETNI-1555 removed the three axis
+> landing pages, so `/fr/explorer`, `/fr/comprendre` and `/fr/jouer` all answer
+> 404 and no Lighthouse or axe run can be pointed at them again.
+> `/fr/comprendre/noms` is now `/fr/comprendre/appellations`. Findings 16 and 17
+> in §11 therefore need restating against the current route list before they can
+> be actioned; the scores they record stand as a record of what was measured on
+> 2026-08-30.
+
 **What this revision changed.** Three merges landed since the last one (#525, #526, #527), none structural. The score is unchanged at **7.5**, and all three blockers are unchanged. The substantive work of this pass was editorial: **§6 and §8 still listed four findings that PR #525 had already closed**, contradicting the §4 score table that had already credited them. Those are now marked closed rather than deleted, so the record shows what moved. Two new findings are added (corpus `source_kind`, `next-env.d.ts`), and the corpus breakdown is corrected.
 
 ---

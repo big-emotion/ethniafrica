@@ -207,13 +207,20 @@ masthead's own axis buttons — a legend in the chrome, not the page speaking:
 | `/fr/explorer/peuples`, and both fiches sampled | 5        | 3        | 2              |
 | **`/fr`**                                       | **13**   | 3        | **10**         |
 
+The second row is kept as measured and no longer describes a live surface: the
+three axis landing pages were removed by ETNI-1555, so `/fr/explorer`,
+`/fr/comprendre` and `/fr/jouer` answer 404. Only their `/fr/<axis>/*` children
+remain, and the count above is what an axis page did while it existed.
+
 So the rule holds on every surface but the home, and the home's ten are not
 arbitrary either: the purpose rows carry the entity mapping (pays → teal,
 peuple → ocre, famille → terre) and the axis cards carry the axis mapping
-(Explorer → ocre, Comprendre → teal, Jouer → perv).
+(Consulter → ocre, Enquêter → teal, Jouer → perv). Those three labels are
+`ACCESS_MODE_LABELS`; DEC-045 renames them again to L'atlas / Les dossiers /
+Les jeux, which ETNI-1614 will carry through this charter.
 
 What is wrong is that both are true at once. **The same hue teaches two
-lessons within one scroll**: the masthead paints `Comprendre` teal, and forty
+lessons within one scroll**: the masthead paints `Enquêter` teal, and forty
 lines down a `PAYS` chip and the "Trois pays" section are teal too. A reader
 cannot learn a code that means two things on one page.
 
@@ -244,8 +251,8 @@ does. `--gradient-warm` aliases it, because callers already read that name.
 
 **Where it is allowed.** The masthead lockup, **the footer lockup**, a brand
 mark on a share card, and **the title of a page that names an axis rather than
-a subject**. That last one is a real distinction and worth keeping: `Explorer`,
-`Comprendre`, `Jouer` and `Recherche` name parts of the apparatus; `!Kung` and
+a subject**. That last one is a real distinction and worth keeping: `Consulter`,
+`Enquêter`, `Jouer` and `Recherche` name parts of the apparatus; `!Kung` and
 `Afrique du Sud` name things in the world. A fiche title takes `--afh-text`.
 
 **And a lockup gets one treatment, not one per surface.** The footer used to
