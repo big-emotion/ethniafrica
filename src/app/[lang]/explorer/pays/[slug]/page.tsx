@@ -17,15 +17,16 @@ import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
 import { CountryRecordView } from "@/components/country/CountryRecordView";
 import { CountrySynthesisBrief } from "@/components/fiche/CountrySynthesisBrief";
-import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
+import {
+  deriveCountrySynthesis,
+  deriveCountrySynthesisFromDetail,
+} from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
 import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
-import {
-  getCountryById,
-  getCountryIndex,
-} from "@/api/v2/services/countryService";
+import { getCountryById } from "@/api/v2/services/countryService";
+import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
@@ -203,7 +204,7 @@ export default async function PaysSlugPage({
   const [country, sourceFlags, allCountries, peopleCounts] = await Promise.all([
     getCountryById(parsed.slug),
     getActiveSourceFlags("country", parsed.slug),
-    getCountryIndex(),
+    getAllAfrikCountries(),
     // The globe can now be aimed at any country, so the panel has to answer
     // for any country. A failed count costs the other countries' subtitle,
     // never the fiche.
@@ -221,9 +222,25 @@ export default async function PaysSlugPage({
   // supplies the name people use - `nameFr` on a country fiche is the declared
   // one, which is how the picker came to spread one Algerian option over five
   // lines. Every corpus country resolves, South Sudan included: the ISO/asset
-  // alias in overlays.ts is what makes SSD find the shape filed as SDS.
+  // alias in overlays.ts is what makes SSD find the shape filed as SDS. Keep
+  // the loaded rows intact so the same request can also supply the panel's
+  // population and language brief.
   const pickerTargets = buildCountryPickerTargets(
     allCountries.map((entry) => entry.id)
+  );
+  const countryBriefs = Object.fromEntries(
+    allCountries.map((entry) => {
+      const synthesis = deriveCountrySynthesis(entry);
+
+      return [
+        entry.id,
+        {
+          population: entry.content?.demographics?.totalPopulation,
+          referenceYear: entry.content?.demographics?.referenceYear,
+          languages: synthesis.languages,
+        },
+      ];
+    })
   );
 
   // Live version (revalidate = 3600 at segment level).
@@ -276,6 +293,7 @@ export default async function PaysSlugPage({
                 country: countryDetail,
                 targets: pickerTargets,
                 peopleCounts,
+                countryBriefs,
               })}
               missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
             />

@@ -6,6 +6,8 @@ import {
   buildCountryTargetFacts,
 } from "@/components/country/countryTargetFacts";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
+import { deriveCountrySynthesis } from "@/lib/home/countrySynthesis";
+import type { Country } from "@/types/afrik";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 
@@ -96,11 +98,15 @@ describe("country target facts", () => {
 describe("buildCountryAtlasFacts (REQ-117)", () => {
   const targets = buildCountryPickerTargets(["NGA", "KEN", "SSD"]);
 
-  function facts(peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 }) {
+  function facts(
+    peopleCounts: Record<string, number> = { NGA: 5, KEN: 12 },
+    countryBriefs = {}
+  ) {
     return buildCountryAtlasFacts({
       country: countryWith([{ name: "Zoulou" }]),
       targets,
       peopleCounts,
+      countryBriefs,
     });
   }
 
@@ -141,6 +147,119 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
     expect(
       screen.getByText(/Aucun peuple rattaché à ce pays dans le corpus/)
     ).toBeInTheDocument();
+  });
+
+  // @req REQ-117
+  it("shows the selected country's formatted population, reference year, and principal languages", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: {
+              population: 55_339_003,
+              referenceYear: 2025,
+              languages: ["swahili", "anglais", "kikuyu"],
+            },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("Population · réf. 2025")).toBeInTheDocument();
+    expect(screen.getByText(/55[\s\u202f]339[\s\u202f]003/)).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeInTheDocument();
+    expect(screen.getByText("swahili · anglais · kikuyu")).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("deduplicates principal languages and shows at most three", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: {
+              languages: ["swahili", "anglais", "swahili", "kikuyu", "luo"],
+            },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("swahili · anglais · kikuyu")).toBeVisible();
+    expect(screen.queryByText(/luo/)).toBeNull();
+  });
+
+  // The shared synthesis derives languages from major peoples when the
+  // country-level culture list is silent; the panel must display that same
+  // corpus-backed fallback rather than grow its own derivation.
+  // @req REQ-117
+  it("shows the shared major-people language fallback", () => {
+    const synthesis = deriveCountrySynthesis({
+      id: "KEN",
+      nameFr: "Kenya",
+      content: {
+        culture: {},
+        majorPeoples: [
+          { name: "Kikuyu", languages: ["kikuyu", "swahili"] },
+          { name: "Luo", languages: ["luo", "swahili"] },
+        ],
+      },
+    } as Country);
+
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: { languages: synthesis.languages },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.getByText("kikuyu · swahili · luo")).toBeVisible();
+  });
+
+  // @req REQ-117
+  it("omits unavailable brief rows without invented values", () => {
+    render(
+      <>
+        {
+          facts(undefined, {
+            KEN: { languages: ["swahili"] },
+          }).KEN?.body
+        }
+      </>
+    );
+
+    expect(screen.queryByText(/Population/)).toBeNull();
+    expect(screen.getByText("Langues principales")).toBeVisible();
+    expect(screen.getByText("swahili")).toBeVisible();
+    expect(screen.queryByText("0")).toBeNull();
+    expect(screen.queryByText(/undefined/)).toBeNull();
+  });
+
+  // @req REQ-117
+  it("shows the same brief fields for the fiche country and another country", () => {
+    const atlasFacts = facts(undefined, {
+      NGA: {
+        population: 237_527_782,
+        referenceYear: 2025,
+        languages: ["haoussa", "yoruba", "igbo"],
+      },
+      KEN: {
+        population: 55_339_003,
+        referenceYear: 2025,
+        languages: ["swahili", "anglais", "kikuyu"],
+      },
+    });
+    const { rerender } = render(<>{atlasFacts.NGA?.body}</>);
+
+    expect(screen.getByText("Population · réf. 2025")).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeVisible();
+
+    rerender(<>{atlasFacts.KEN?.body}</>);
+    expect(screen.getByText("Population · réf. 2025")).toBeVisible();
+    expect(screen.getByText("Langues principales")).toBeVisible();
   });
 });
 

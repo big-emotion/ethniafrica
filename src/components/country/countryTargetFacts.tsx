@@ -45,12 +45,27 @@ const NUMBER_STYLE: CSSProperties = {
   fontVariantNumeric: "tabular-nums",
 };
 
+const BRIEF_GRID_STYLE: CSSProperties = {
+  display: "grid",
+  gap: "var(--afh-space-lg)",
+  margin: 0,
+};
+
+const BRIEF_VALUE_STYLE: CSSProperties = {
+  display: "block",
+  margin: "var(--afh-space-xs) 0 0",
+  fontSize: "var(--afh-text-small)",
+  lineHeight: "var(--afh-leading-small)",
+  color: "var(--afh-text)",
+};
+
 /**
  * The panel points into the fiche; the fiche lists the peoples in full, with
  * each name paired to its autonym. Naming them all twice would make the panel
  * a second, poorer listing of the same thing.
  */
 const NAMES_SHOWN = 6;
+const BRIEF_LANGUAGES_SHOWN = 3;
 
 const CHIP_STYLE: CSSProperties = {
   justifySelf: "start",
@@ -82,6 +97,69 @@ function ProvenanceChip({ declared }: { declared: boolean }) {
 }
 
 const countFr = new Intl.NumberFormat("fr-FR");
+
+export interface CountryAtlasBrief {
+  population?: number;
+  referenceYear?: number;
+  languages?: string[];
+}
+
+function principalLanguages(languages: string[] | undefined): string[] {
+  const seen = new Set<string>();
+
+  return (languages ?? [])
+    .map((language) => language?.trim())
+    .filter((language): language is string => {
+      if (!language) return false;
+      const key = language.toLocaleLowerCase("fr");
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, BRIEF_LANGUAGES_SHOWN);
+}
+
+function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
+  const population =
+    typeof brief?.population === "number" &&
+    Number.isFinite(brief.population) &&
+    brief.population > 0
+      ? brief.population
+      : null;
+  const referenceYear =
+    typeof brief?.referenceYear === "number" &&
+    Number.isFinite(brief.referenceYear) &&
+    brief.referenceYear > 0
+      ? brief.referenceYear
+      : null;
+  const languages = principalLanguages(brief?.languages);
+
+  if (population === null && languages.length === 0) return null;
+
+  return (
+    <dl style={BRIEF_GRID_STYLE}>
+      {population !== null && (
+        <div>
+          <dt style={LABEL_STYLE}>
+            Population{referenceYear !== null ? ` · réf. ${referenceYear}` : ""}
+          </dt>
+          <dd
+            style={{ ...BRIEF_VALUE_STYLE, fontVariantNumeric: "tabular-nums" }}
+          >
+            {countFr.format(population)}
+          </dd>
+        </div>
+      )}
+
+      {languages.length > 0 && (
+        <div>
+          <dt style={LABEL_STYLE}>Langues principales</dt>
+          <dd style={BRIEF_VALUE_STYLE}>{languages.join(" · ")}</dd>
+        </div>
+      )}
+    </dl>
+  );
+}
 
 // @req REQ-117
 export function buildCountryTargetFacts(
@@ -155,17 +233,18 @@ export interface CountryAtlasFactsInput {
   targets: AtlasTarget[];
   /** Documented peoples per country, from the corpus. */
   peopleCounts: Record<string, number>;
+  /** Compact corpus facts for each country, prepared by the server route. */
+  countryBriefs?: Partial<Record<CountryId, CountryAtlasBrief>>;
 }
 
 /**
  * The panel's answer for every country the fiche's globe can be aimed at
  * (REQ-117).
  *
- * The fiche's own country keeps the full reading — the count, the first
- * entries. Every other country gets what the corpus knows about it and no
- * more: this globe is a way through the atlas, not a second fiche, and
- * inventing a richer panel for a country whose fiche is one click away would
- * be inventing content.
+ * The fiche's own country keeps the full reading — the brief, the count, the
+ * first entries. Every other country gets the same compact brief and its
+ * documented-people count, but not a second people listing: this globe is a
+ * way through the atlas, not a second fiche.
  *
  * Titles come from the targets rather than from the corpus, so the panel names
  * a country exactly as the picker that offered it did. The corpus stores the
@@ -192,6 +271,7 @@ export function buildCountryAtlasFacts({
   country,
   targets,
   peopleCounts,
+  countryBriefs = {},
 }: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
   const own = buildCountryTargetFacts(country);
 
@@ -208,6 +288,7 @@ export function buildCountryAtlasFacts({
             icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
+                <CountryBriefFacts brief={countryBriefs[target.countryId]} />
                 {ownFacts?.body}
                 <ProvenanceChip declared />
                 <ReadTheFiche href="#fiche" />
@@ -230,6 +311,7 @@ export function buildCountryAtlasFacts({
               : `${countFr.format(documented)} peuples documentés`,
           body: (
             <div style={{ display: "grid", gap: 14 }}>
+              <CountryBriefFacts brief={countryBriefs[target.countryId]} />
               {documented === 0 && (
                 <span
                   style={{
