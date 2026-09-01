@@ -19,6 +19,7 @@ import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { SearchPeopleGroupCard } from "@/components/search/SearchPeopleGroupCard";
 import { SearchPivotCard } from "@/components/search/SearchPivotCard";
+import { DominantAnswerPanel } from "@/components/search/DominantAnswerPanel";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -392,6 +393,26 @@ export function RecherchePageContent() {
             ?.languageFamilyName ?? relation.id
         }`;
 
+  const resultsList = !loading && listResults.length > 0 && (
+    <ul
+      data-testid="search-results-list"
+      className="grid grid-cols-1 gap-afh-lg min-[1200px]:grid-cols-2"
+      aria-label="Résultats de recherche"
+    >
+      {groupPeopleResults(listResults).map((entry, i) =>
+        entry.type === "peopleGroup" ? (
+          <li key={`peopleGroup-${entry.peopleGroupId}-${i}`}>
+            <SearchPeopleGroupCard group={entry} language={language} />
+          </li>
+        ) : (
+          <li key={`${entry.type}-${entry.id}-${i}`}>
+            <SearchResultCard result={entry} language={language} />
+          </li>
+        )
+      )}
+    </ul>
+  );
+
   // ── render ──────────────────────────────────────────────────────────────────
 
   return (
@@ -644,29 +665,30 @@ export function RecherchePageContent() {
           </div>
         )}
 
-        {/* ── pivot: the one entity this search is about, if there is one ── */}
-        {!loading && pivot && (
-          <SearchPivotCard result={pivot} language={language} />
-        )}
-
-        {/* ── results list ── */}
         {/* Split fiches of the same people (ETNI-1391) are grouped into one
             card here, at display time only — the underlying result order and
             count are unaffected. */}
-        {!loading && listResults.length > 0 && (
-          <ul className="space-y-afh-lg" aria-label="Résultats de recherche">
-            {groupPeopleResults(listResults).map((entry, i) =>
-              entry.type === "peopleGroup" ? (
-                <li key={`peopleGroup-${entry.peopleGroupId}-${i}`}>
-                  <SearchPeopleGroupCard group={entry} language={language} />
-                </li>
-              ) : (
-                <li key={`${entry.type}-${entry.id}-${i}`}>
-                  <SearchResultCard result={entry} language={language} />
-                </li>
-              )
-            )}
-          </ul>
+        {!loading && pivot ? (
+          <div
+            data-testid="search-results-layout"
+            className="grid grid-cols-1 gap-afh-5xl min-[1200px]:grid-cols-[minmax(0,1fr)_minmax(18rem,20rem)] min-[1200px]:items-start"
+          >
+            <div
+              data-testid="search-results-main"
+              className="min-w-0 space-y-afh-5xl"
+            >
+              <SearchPivotCard result={pivot} language={language} />
+              {resultsList}
+            </div>
+            <div
+              data-testid="dominant-answer-panel-wrapper"
+              className="hidden min-[1200px]:sticky min-[1200px]:top-[calc(var(--afh-header-height)+var(--afh-header-shift)+var(--afh-space-5xl))] min-[1200px]:block min-[1200px]:self-start"
+            >
+              <DominantAnswerPanel result={pivot} />
+            </div>
+          </div>
+        ) : (
+          resultsList
         )}
 
         {/* ── empty state (post-search, no results) ── */}

@@ -326,9 +326,8 @@ each other by a test, so the next weight added to one has to be added to the
 other.
 
 **A legal page does not outrank a fiche.** `Mentions légales` renders its `h1`
-at 52 px — `--afh-text-hero`, the scale's top step — while `!Kung, un peuple
-sans bord` renders at 40 px. The top of the scale belongs to the pages the
-atlas exists for.
+at 52 px — `--afh-text-hero`, the scale's top step — while `!Kung` renders at
+40 px. The top of the scale belongs to the pages the atlas exists for.
 
 ---
 

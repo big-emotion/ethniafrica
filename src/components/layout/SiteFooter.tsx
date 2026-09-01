@@ -37,7 +37,13 @@ const SOCIAL_NETWORKS: ReadonlyArray<{
   href: string | null;
 }> = [
   { name: "Facebook", Glyph: FacebookGlyph, href: null },
-  { name: "LinkedIn", Glyph: LinkedinGlyph, href: null },
+  // The company slug carries a typographic apostrophe (U+2019), kept
+  // percent-encoded so the URL survives copy, log and redirect untouched.
+  {
+    name: "LinkedIn",
+    Glyph: LinkedinGlyph,
+    href: "https://www.linkedin.com/company/dictionnaire-des-ethnies-d%E2%80%99afrique/",
+  },
   { name: "Instagram", Glyph: InstagramGlyph, href: null },
 ];
 

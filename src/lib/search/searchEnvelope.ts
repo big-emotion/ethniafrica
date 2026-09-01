@@ -123,6 +123,56 @@ function totalPopulationOf(content: unknown): number | undefined {
     : undefined;
 }
 
+function isHttpUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function sourceMetadataOf(
+  content: unknown
+): Pick<SearchResult, "sourceCount" | "externalLinks"> {
+  if (
+    typeof content !== "object" ||
+    content === null ||
+    Array.isArray(content)
+  ) {
+    return {};
+  }
+
+  const sources = (content as Record<string, unknown>).sources;
+  if (!Array.isArray(sources)) return {};
+
+  const externalLinks = sources.flatMap(
+    (source): NonNullable<SearchResult["externalLinks"]> => {
+      if (
+        typeof source !== "object" ||
+        source === null ||
+        Array.isArray(source)
+      ) {
+        return [];
+      }
+
+      const { title, url } = source as Record<string, unknown>;
+      if (
+        typeof title !== "string" ||
+        title.trim().length === 0 ||
+        typeof url !== "string" ||
+        !isHttpUrl(url)
+      ) {
+        return [];
+      }
+
+      return [{ title, url }];
+    }
+  );
+
+  return { sourceCount: sources.length, externalLinks };
+}
+
 // @req REQ-002
 export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
   const data = (envelope as { data?: unknown })?.data;
@@ -145,6 +195,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
         countryIds: row.currentCountries as SearchResult["countryIds"],
         population: totalPopulationOf(row.content),
         ...appellationsOf(row.content),
+        ...sourceMetadataOf(row.content),
         snippet: (row.snippet as string) || undefined,
         relevance: numberOrUndefined(row.relevance),
         exactMatch: row.exactMatch === true,

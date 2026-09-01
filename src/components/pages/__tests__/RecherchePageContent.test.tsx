@@ -135,6 +135,44 @@ const searchApiResponse = {
     total: 1,
   },
 };
+const desktopPivotApiResponse = {
+  data: {
+    peoples: [
+      {
+        id: "PPL_ZULU",
+        nameMain: "Zulu",
+        currentCountries: ["ZAF"],
+        content: {
+          demography: { totalPopulation: 12_000_000 },
+          sources: [
+            {
+              title: "Ethnologue — Zulu",
+              url: "https://www.ethnologue.com/language/zul/",
+            },
+          ],
+        },
+        relevance: 0.9,
+        exactMatch: true,
+        confidence: 0.84,
+      },
+      {
+        id: "PPL_NDEBELE",
+        nameMain: "Ndébélé",
+        content: {},
+        relevance: 0.5,
+      },
+      {
+        id: "PPL_XHOSA",
+        nameMain: "Xhosa",
+        content: {},
+        relevance: 0.4,
+      },
+    ],
+    countries: [],
+    families: [],
+    total: 3,
+  },
+};
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 function okJson(payload: unknown) {
@@ -142,6 +180,23 @@ function okJson(payload: unknown) {
     ok: true,
     json: () => Promise.resolve(payload),
   } as Response);
+}
+
+async function renderPivotWithRelatedResults() {
+  mockFetch.mockResolvedValue(okJson(desktopPivotApiResponse));
+  render(<RecherchePageContent />);
+
+  await act(async () => {
+    fireEvent.change(screen.getByRole("searchbox"), {
+      target: { value: "Zulu" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  });
+
+  await waitFor(() => {
+    expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+  });
 }
 
 // ── tests ─────────────────────────────────────────────────────────────────────
@@ -527,7 +582,8 @@ describe("RecherchePageContent", () => {
 
   // ── 7. results list ────────────────────────────────────────────────────────
 
-  it("renders a results list after a successful search", async () => {
+  // @req REQ-002
+  it("renders a result after a successful search", async () => {
     mockFetch.mockResolvedValue(okJson(searchApiResponse));
     render(<RecherchePageContent />);
 
@@ -541,7 +597,7 @@ describe("RecherchePageContent", () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText("Zulu")).toBeInTheDocument();
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
     });
   });
 
@@ -787,6 +843,73 @@ describe("RecherchePageContent", () => {
         name: /ouvrir la fiche/i,
       })
     ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_ZULU"));
+  });
+
+  // @req REQ-124
+  it("keeps the desktop complementary panel when the dominant answer is the only result", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("searchbox"), {
+        target: { value: "Zulu" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+
+    await waitFor(() => {
+      expect(screen.getByTestId("search-pivot")).toBeInTheDocument();
+    });
+    expect(
+      screen.getByTestId("dominant-answer-panel-wrapper")
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-124
+  it("keeps the pivot and result list in the flexible column of a desktop main-aside layout", async () => {
+    await renderPivotWithRelatedResults();
+
+    const layout = screen.getByTestId("search-results-layout");
+    const main = within(layout).getByTestId("search-results-main");
+    expect(layout.className).toMatch(
+      /min-\[1200px\]:grid-cols-\[minmax\(0,1fr\)_[^\]]+\]/
+    );
+    expect(layout.className).not.toMatch(/(?:sm|md|lg):grid-cols-/);
+    expect(within(main).getByTestId("search-pivot")).toBeInTheDocument();
+    expect(within(main).getByTestId("search-results-list")).toBeInTheDocument();
+  });
+
+  // @req REQ-124
+  it("hides the complementary answer below 1200px and reveals it at that breakpoint", async () => {
+    await renderPivotWithRelatedResults();
+
+    const wrapper = screen.getByTestId("dominant-answer-panel-wrapper");
+    expect(wrapper.className).toContain("hidden");
+    expect(wrapper.className).toContain("min-[1200px]:block");
+    expect(wrapper.className).not.toMatch(/(?:sm|md|lg):block/);
+  });
+
+  // @req REQ-124
+  it("turns only the remaining desktop results into a two-column grid", async () => {
+    await renderPivotWithRelatedResults();
+
+    const list = screen.getByTestId("search-results-list");
+    expect(list.className).toContain("grid-cols-1");
+    expect(list.className).toContain("min-[1200px]:grid-cols-2");
+    expect(list.className).not.toMatch(/(?:sm|md|lg):grid-cols-2/);
+    expect(within(list).getAllByRole("listitem")).toHaveLength(2);
+  });
+
+  // @req REQ-124
+  it("sticks the desktop answer below the retracting header using charter spacing", async () => {
+    await renderPivotWithRelatedResults();
+
+    const wrapper = screen.getByTestId("dominant-answer-panel-wrapper");
+    expect(wrapper.className).toContain("min-[1200px]:sticky");
+    expect(wrapper.className).toMatch(
+      /min-\[1200px\]:top-\[calc\(var\(--afh-header-height\)\+var\(--afh-header-shift\)\+var\(--afh-space-[a-z0-9-]+\)\)\]/
+    );
   });
 
   // @req REQ-002
