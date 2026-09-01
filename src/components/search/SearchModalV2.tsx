@@ -75,6 +75,7 @@ export const SearchModalV2 = ({
       families: "Familles",
       peoples: "Peuples",
       countries: "Pays",
+      persons: "Personnes",
     };
   };
 
@@ -151,6 +152,12 @@ export const SearchModalV2 = ({
                 className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
               >
                 {tabLabels.countries}
+              </TabsTrigger>
+              <TabsTrigger
+                value="person"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.persons}
               </TabsTrigger>
             </TabsList>
           </Tabs>

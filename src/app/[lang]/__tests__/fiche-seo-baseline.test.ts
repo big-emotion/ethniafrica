@@ -39,6 +39,27 @@ vi.mock("next/font/google", () => {
   };
 });
 
+// Each fiche's `generateMetadata` now also decides whether the entity exists,
+// because `loading.tsx` makes the segment a Suspense boundary and the page
+// body's own `notFound()` arrives after the 200 is already on the wire. That
+// check is a database read, so this baseline has to answer it — without these
+// mocks the three canonical assertions hang until the 5s timeout rather than
+// failing on anything meaningful.
+vi.mock("@/api/v2/services/countryService", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getCountryById: async (id: string) => ({ id, nameFr: id }),
+}));
+
+vi.mock("@/api/v2/services/peopleService", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getPeopleById: async (id: string) => ({ id, nameFr: id }),
+}));
+
+vi.mock("@/api/v2/services/languageFamilyService", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getLanguageFamilyById: async (id: string) => ({ id, nameFr: id }),
+}));
+
 import { metadata as rootLayoutMetadata } from "@/app/layout";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";

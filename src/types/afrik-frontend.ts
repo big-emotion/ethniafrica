@@ -31,6 +31,7 @@ import type {
   DecolonialHeader,
   PeopleReference,
 } from "./afrik";
+import type { PersonPeopleLink } from "./persons";
 
 // ==========================================
 // PAGINATION
@@ -307,7 +308,8 @@ export type SearchEntityType =
   | "country"
   | "people"
   | "language"
-  | "languageFamily";
+  | "languageFamily"
+  | "person";
 
 /**
  * Filtres de recherche
@@ -354,6 +356,20 @@ export interface SearchResult {
   autonym?: string;
   /** Exonymes connus, dans l'ordre de la fiche. */
   exonyms?: string[];
+  /**
+   * Catégorie de rôle d'une personne (REQ-126), p. ex. `ethnographer`,
+   * `head_of_state`. Toujours renseigné sur un résultat `type: "person"` —
+   * `mapSearchEnvelope` ne construit jamais un tel résultat sans elle,
+   * parce que le rôle doit rester visible sans action du lecteur.
+   */
+  roleCategory?: string;
+  /**
+   * Le lien typé d'une personne à chaque peuple qu'elle cite — `membership`
+   * (en est membre) ou `observation` (l'a étudié, ex. un·e ethnographe).
+   * Jamais déduit, jamais réduit à l'appartenance : c'est la valeur que la
+   * fiche déclare.
+   */
+  peopleLinks?: PersonPeopleLink[];
 }
 
 /**

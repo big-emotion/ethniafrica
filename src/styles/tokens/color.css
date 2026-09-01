@@ -454,6 +454,24 @@
   --accent-ink: var(--afh-cat-perv-ink);
 }
 
+/* A person search result (REQ-126) deliberately does NOT take a fifth
+   --afh-cat-* hue. The four categorical accents (brand charter §5.2) name
+   the corpus's peer entity kinds — pays/peuples/familles/langues — and a
+   person is not a fifth peer of that set: the whole point of this scope is
+   that a person (an ethnographer, a colonial administrator) must never read
+   as one more kind of "corpus entity" alongside the people it studied or
+   governed. So it takes the site's own neutral, parchment-and-ink palette
+   instead of a new saturated hue — semantic tokens already declared and
+   already contrast-checked elsewhere, not a new primitive needing its own
+   CVD pass. Being achromatic is also why it never needs a night-scoped
+   --accent-ink override below: --afh-text-muted/-soft/-bg-warm already
+   rebind themselves under .dark/.afh-on-night. */
+.afh-accent-neutral {
+  --accent: var(--afh-text-muted);
+  --accent-tint: var(--afh-bg-warm);
+  --accent-ink: var(--afh-text-soft);
+}
+
 /* The ink half of each accent pair flips with the surface, exactly as
    --accent-foreground does above: on a dark page the readable accent is
    the light one. Written as a night-scoped override of the same wrappers
