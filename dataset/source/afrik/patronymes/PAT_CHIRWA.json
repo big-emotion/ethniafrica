@@ -17,7 +17,7 @@
         },
         {
           "countryId": "MWI",
-          "sourceRefs": ["mapala-border-dispute-2017"]
+          "sourceRefs": ["forebears-chirwa"]
         }
       ]
     }
@@ -32,8 +32,8 @@
   "peoples": [
     {
       "peopleId": "PPL_TUMBUKA",
-      "status": "attested",
-      "sourceRefs": ["mapala-border-dispute-2017"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-chirwa"]
     }
   ],
   "countries": [
@@ -45,7 +45,7 @@
     {
       "countryId": "MWI",
       "status": "attested",
-      "sourceRefs": ["mapala-border-dispute-2017"]
+      "sourceRefs": ["forebears-chirwa"]
     }
   ],
   "alliances": [],
@@ -62,38 +62,38 @@
       "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations ou graphies encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
     },
     {
-      "sourceKey": "mapala-border-dispute-2017",
-      "title": "A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015)",
-      "url": "https://researchspace.ukzn.ac.za/bitstreams/d0ef0b3b-2f6d-4368-8fb0-6ad402b2c062/download",
-      "tier": "referenced",
-      "source_kind": "academic",
-      "notes": "Thèse de Cogitator W. Mapala, University of KwaZulu-Natal, consultée en texte intégral. La page 129 classe Chirwa parmi les noms de famille communs aux Chewa, Tumbuka et Tonga du Malawi, puis avertit qu'un nom seul ne permet pas d'assigner une identité ethnique. Une thèse de l'Université de Zambie proposant une glose a été repérée, mais son fichier a expiré avant lecture complète et n'est donc ni cité ni utilisé."
+      "sourceKey": "forebears-chirwa",
+      "title": "Chirwa Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/chirwa",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement via son résultat indexé après le refus HTTP de la page. Elle atteste Chirwa surtout au Malawi, en Zambie et au Zimbabwe. Sa signification contributive et non référencée n'est pas reprise, et la géographie n'est pas transformée en attribution ethnique. La thèse historique également consultée reste réservée à la fiche Kamanga afin qu'aucune source ne soit portée d'une fiche à une autre."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Chirwa. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Chirwa. La glose communautaire non référencée et les seules attestations géographiques ne sont pas transformées en étymologie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chirwa à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chirwa à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chirwa."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chirwa."
     },
     {
       "fieldPath": "bearers",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) », n'ont pas établi de lignée homonyme d'origine distincte."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont établi aucune règle propre à Chirwa permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont établi aucune règle propre à Chirwa permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
