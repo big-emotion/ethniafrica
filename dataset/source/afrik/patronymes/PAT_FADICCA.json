@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche par fiche : la source établit Fadija comme désignation linguistique en Nubie égyptienne, sans démontrer que Fadicca est un patronyme héréditaire."
   },
   "id": "PAT_FADICCA",
   "nameMain": "Fadicca",
@@ -17,7 +17,7 @@
     {
       "spelling": "Fadija",
       "attestations": [
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "EGY", "sourceRefs": ["horton-1964-fadija"] }
       ]
     }
   ],
@@ -26,20 +26,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Horton documente Fadija comme autre nom d'un ensemble de dialectes mahāsi parlé dans le sud de la Nubie égyptienne et au-delà de la frontière soudanaise. Cette classification ethnolinguistique est établie par la source ; elle ne constitue ni une étymologie de Fadicca ni la preuve d'une lignée patronymique.",
+        "claimStatus": "established",
+        "sourceRefs": ["horton-1964-fadija"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NUBIENS",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["horton-1964-fadija"]
     }
   ],
   "countries": [
     {
       "countryId": "EGY",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["horton-1964-fadija"]
     }
   ],
   "alliances": [],
@@ -53,37 +59,49 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de la seule graphie candidate Fadicca. Cette forme reste non vérifiée comme patronyme ; l'enquête de Horton atteste séparément Fadija comme désignation linguistique en Nubie égyptienne."
+    },
+    {
+      "sourceKey": "horton-1964-fadija",
+      "title": "The Egyptian Nubians: Some Information on Their Ethnography and Resettlement",
+      "url": "https://www.icwa.org/wp-content/uploads/2015/09/AWH-8.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Alan W. Horton, American Universities Field Staff, Northeast Africa Series XI(2), mars 1964, p. 2. Synthèse du Nubian Ethnographic Survey de l'American University in Cairo : elle situe le parler mahāsi parfois appelé Fadija dans le sud de la Nubie égyptienne. Elle n'atteste pas Fadicca comme patronyme."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'enquête de Horton et les recherches bibliographiques ciblées sur Fadicca/Fadija n'ont livré aucune tradition orale avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Horton synthétise une enquête ethnographique, mais les recherches ciblées n'ont livré aucune chronique qui atteste Fadicca comme nom personnel ou patronyme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'enquête de Horton et les recherches bibliographiques sur Fadicca/Fadija n'ont livré aucune alliance entre patronymes dont les deux fiches existent dans le corpus."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La source dédiée traite d'une langue nubienne et de son écriture, sans caste ni fonction sociale héréditaire liée à Fadicca ; les recherches ciblées n'en ont pas trouvé."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'enquête de Horton et les recherches de la graphie exacte Fadicca n'ont livré aucun porteur historique décédé documenté par une source dédiée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Horton présente Fadija comme une désignation du parler mahāsi, dans le même ancrage nubien que la fiche candidate ; aucune lignée homonyme d'origine distincte n'a été trouvée."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « nisba » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Horton n'étudie pas Fadicca comme nom familial. Les recherches dans le catalogue CAPMAS et sur « Fadicca surname » n'ont établi aucun mode de transmission ; la valeur reste other."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "Le système « nisba » ne détermine pas à lui seul l'unité sociale désignée : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La source établit une désignation linguistique, non l'unité sociale désignée par Fadicca comme patronyme ; individu, lignage et clan restent indéterminés, donc la valeur reste other."
     }
   ]
 }
