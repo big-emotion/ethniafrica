@@ -55,7 +55,7 @@ export function resolveSunsetNotice(
  * Stamp the versioning contract onto a v2 response, in place.
  *
  * A non-v2 path is returned untouched: the response helpers are shared with
- * `/api/contributions` and `/api/admin/*`, which are not the public API and
+ * `/api/entities` and `/api/revalidate`, which are not the public API and
  * must not advertise its version.
  */
 // @req REQ-035

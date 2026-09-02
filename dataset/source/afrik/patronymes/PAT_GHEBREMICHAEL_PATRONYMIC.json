@@ -11,7 +11,10 @@
     {
       "spelling": "Ghebremichael",
       "attestations": [
-        { "countryId": "ERI", "sourceRefs": ["munden-eritrean-names"] }
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["munden-eritrean-names"]
+        }
       ]
     }
   ],
@@ -33,7 +36,13 @@
       }
     ]
   },
-  "peoples": [],
+  "peoples": [
+    {
+      "peopleId": "PPL_HABESHA",
+      "status": "attested",
+      "sourceRefs": ["cultural-atlas-ethiopian-naming"]
+    }
+  ],
   "countries": [
     {
       "countryId": "ERI",

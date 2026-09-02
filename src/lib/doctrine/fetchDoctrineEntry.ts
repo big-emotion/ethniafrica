@@ -16,6 +16,7 @@
  *   );
  */
 import { createServerClient } from "@/lib/supabase/server";
+import { logger } from "@/lib/api/logger";
 
 export interface DoctrineEntry {
   id: string;
@@ -30,6 +31,7 @@ export interface DoctrineEntry {
  * Without a version, returns the highest current non-superseded entry.
  * With a version, returns the exact historical entry, including superseded rows.
  */
+// @req REQ-025
 export async function fetchDoctrineEntry(
   slug: string,
   version?: number
@@ -50,7 +52,18 @@ export async function fetchDoctrineEntry(
           .maybeSingle()
       : await query.eq("version", version).maybeSingle();
 
-  if (error || !data) {
+  // A failed read is not an absent doctrine. The caller answers `null` with
+  // `notFound()`, so folding the two together published a 404 for a page whose
+  // row was sitting in the table the whole time — a withdrawal notice to every
+  // crawler that happened to arrive during the outage. `maybeSingle()` reports
+  // "no such row" as `data: null` with no error, which is the only shape that
+  // may become a 404.
+  if (error) {
+    logger.error(`Failed to read doctrine entry ${slug}`, error);
+    throw error;
+  }
+
+  if (!data) {
     return null;
   }
 

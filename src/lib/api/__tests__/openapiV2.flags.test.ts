@@ -86,6 +86,9 @@ const FLAG_KINDS = [
   "offensive",
   "correction-proposal",
   "other",
+  // The one kind that proposes rather than reports, and therefore the one the
+  // anchor is not required from (migration 081).
+  "contribution",
 ];
 
 const FLAG_STATUSES = [

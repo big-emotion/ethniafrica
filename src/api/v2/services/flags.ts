@@ -8,20 +8,23 @@ export type FlagKind =
   | "broken-url"
   | "offensive"
   | "correction-proposal"
-  | "other";
+  | "other"
+  | "contribution";
 
 export type FlagStatus =
   "open" | "under_review" | "accepted" | "rejected" | "withdrawn" | "duplicate";
 
 export interface FlagCreateInput {
-  target_type: string;
-  target_id: string;
+  /** Absent only for a contribution, which may propose an entity that has none. */
+  target_type?: string;
+  target_id?: string;
   target_field_path?: string;
   flag_kind: FlagKind;
   reason_text: string;
   counter_source_url?: string;
   counter_source_citation?: string;
   proposed_rewrite?: string;
+  contribution_payload?: Record<string, unknown>;
 }
 
 export interface CreatedFlag {
@@ -84,10 +87,25 @@ interface FlagRow {
   created_at: string;
   updated_at: string | null;
   resolved_at: string | null;
+  contribution_payload?: Record<string, unknown> | null;
 }
 
 const PUBLIC_FLAG_COLUMNS =
   "id, public_slug, entity_type, entity_id, assertion_field_path, assertion_id, flag_kind, reason_text, counter_source_url, counter_source_citation, proposed_rewrite, contributor_id, severity, auto_generated, status, created_at, updated_at, resolved_at";
+
+/**
+ * What the moderator's console reads, and the public API deliberately does not.
+ *
+ * `contribution_payload` holds whatever the contributor typed, including the
+ * name and address they left to be reached at. Those were readable by anyone
+ * on the retired `contributions` table; they are not going to become readable
+ * on `/api/v2/flags`. The console runs server-side behind the address
+ * allowlist, so it is the one place the column is selected.
+ */
+// Spelled out rather than interpolated from PUBLIC_FLAG_COLUMNS: PostgREST's
+// typings read the select string literally, and a template kills the inference.
+const MODERATION_FLAG_COLUMNS =
+  "id, public_slug, entity_type, entity_id, assertion_field_path, assertion_id, flag_kind, reason_text, counter_source_url, counter_source_citation, proposed_rewrite, contributor_id, severity, auto_generated, status, created_at, updated_at, resolved_at, contribution_payload";
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -146,14 +164,15 @@ export async function createFlag(
   const { data, error } = await supabase
     .from("flags")
     .insert({
-      entity_type: input.target_type,
-      entity_id: input.target_id,
+      entity_type: input.target_type ?? null,
+      entity_id: input.target_id ?? null,
       assertion_field_path: input.target_field_path ?? null,
       flag_kind: input.flag_kind,
       reason_text: input.reason_text,
       counter_source_url: input.counter_source_url ?? null,
       counter_source_citation: input.counter_source_citation ?? null,
       proposed_rewrite: input.proposed_rewrite ?? null,
+      contribution_payload: input.contribution_payload ?? null,
       contributor_id: contributorId,
       status: "open",
       human_verified: true,
@@ -429,8 +448,13 @@ export interface ModerationQueueFilters {
   pageSize: number;
 }
 
+/** A queued flag as the console sees it: the public shape plus the proposal. */
+export interface ModerationFlag extends PublicFlag {
+  contribution_payload: Record<string, unknown> | null;
+}
+
 export interface ModerationQueuePage {
-  items: PublicFlag[];
+  items: ModerationFlag[];
   /** Reports in the current selection, not in the table behind it. */
   total: number;
 }
@@ -458,7 +482,7 @@ export async function listFlagsForModeration(
 
   let query = supabase
     .from("flags")
-    .select(PUBLIC_FLAG_COLUMNS, { count: "exact" })
+    .select(MODERATION_FLAG_COLUMNS, { count: "exact" })
     .order("created_at", { ascending: filters.sort === "oldest" });
 
   if (filters.statuses?.length) {
@@ -483,7 +507,10 @@ export async function listFlagsForModeration(
   }
 
   return {
-    items: (data ?? []).map(mapFlagRow),
+    items: (data ?? []).map((row) => ({
+      ...mapFlagRow(row),
+      contribution_payload: row.contribution_payload ?? null,
+    })),
     total: count ?? 0,
   };
 }

@@ -44,6 +44,11 @@
         "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
         "claimStatus": "established",
         "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Le récit d'origine des dynasties bambara fait traverser le fleuve sans pirogue aux deux frères Baramangolo et Niangolo ; de cette traversée est tiré le patronyme Kulibali (Kurubari), de kulu « pirogue » et du privatif bali. La source qui l'énonce ajoute aussitôt qu'il en existe d'autres.",
+        "claimStatus": "contested",
+        "sourceRefs": ["gha-v-16-18"]
       }
     ]
   },
@@ -85,11 +90,25 @@
     {
       "targetPatronymeId": "PAT_KEITA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["segoublog-sanankuya"]
+      "sourceRefs": ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"]
+    },
+    {
+      "targetPatronymeId": "PAT_FOFANA",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
     }
   ],
-  "casteOrSocialFunction": null,
-  "bearers": [],
+  "casteOrSocialFunction": {
+    "value": "Le dictionnaire des jamuw donne à l'entrée Kùlibàli le statut hɔ́rɔn, puis tontigi chez les Bamana, les Maninka et les Minianka, puis numu (forgeron) au Wassoulou. Le jamu porte donc à la fois une condition libre et, selon l'aire, une fonction artisanale héréditaire.",
+    "sourceRefs": ["bamadaba-jamuw"]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Mamari Kulibali, dit Biton Coulibaly (1712-1755)",
+      "sourceRefs": ["gha-v-16-18"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -115,20 +134,28 @@
       "tier": "unverified",
       "source_kind": "community",
       "notes": "Blog malien. Cité pour les paires de sanankuya nommées (Traoré/Diarra, Keïta/Coulibaly) ; le pacte est rapporté comme remontant à Soundiata, ce que la source n'établit pas elle-même."
+    },
+    {
+      "sourceKey": "gha-v-16-18",
+      "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_v",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; consulté sur le texte intégral. Chapitre 12, « From the Niger to the Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali (Kurubari) et les Keita ou les Ture, donné comme indice de relations anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu « pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, assortie par la source elle-même de la mention qu'il en existe d'autres (p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma (p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du Liberia et de la Sierra Leone (p. 375-377)."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le statut horon que lui prêtent les répertoires courants n'a donc pas été retrouvé dans une source dédiée, et n'est pas affirmé ici."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Biton Coulibaly, fondateur du royaume bambara de Ségou, est amplement documenté, mais comme figure politique : aucune source consultée ne s'appuie sur lui pour établir l'origine du jamu, et la fiche ne l'enregistre donc pas en porteur."
-    },
-    {
       "fieldPath": "homonyms",
-      "reason": "Coulibaly transcrit le mandingue Kulibali ; aucune lignée d'origine distincte n'a été trouvée sous l'une ou l'autre graphie."
+      "reason": "Coulibaly transcrit le mandingue Kulibali, que le dictionnaire des jamuw écrit aussi Kùlubàli et que l'Histoire générale de l'Afrique donne sous la forme Kurubari. Aucune de ces graphies ne recouvre une lignée d'origine distincte dans les sources consultées."
     }
   ]
 }

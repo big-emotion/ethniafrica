@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 import { logger } from "@/lib/api/logger";
+import { sendViaResend } from "@/lib/email/resend";
 import type { Language } from "@/types/shared";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
@@ -110,46 +111,8 @@ function buildEmailContent(flag: FlagResolutionInput): EmailContent {
   };
 }
 
-async function sendViaResend(
-  apiKey: string,
-  to: string,
-  content: EmailContent
-): Promise<boolean> {
-  const domain = process.env.NEXT_PUBLIC_CANONICAL_DOMAIN ?? "ethniafrica.com";
-  try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: `EthniAfrica <notifications@${domain}>`,
-        to,
-        subject: content.subject,
-        text: content.text,
-      }),
-    });
-
-    if (!response.ok) {
-      const body = await response.text();
-      logger.error("Flag resolution email send failed", undefined, {
-        status: response.status,
-        body,
-      });
-      Sentry.captureException(
-        new Error(`Resend email send failed with status ${response.status}`)
-      );
-      return false;
-    }
-
-    return true;
-  } catch (error) {
-    logger.error("Flag resolution email send threw", error);
-    Sentry.captureException(error);
-    return false;
-  }
-}
+const sendNotification = (apiKey: string, to: string, content: EmailContent) =>
+  sendViaResend(apiKey, { to, subject: content.subject, text: content.text });
 
 /**
  * Notify a contributor that their flag reached a terminal decision.
@@ -187,7 +150,7 @@ export async function sendFlagResolutionEmail(
     }
 
     const content = buildEmailContent(flag);
-    const sent = await sendViaResend(apiKey, recipient.email, content);
+    const sent = await sendNotification(apiKey, recipient.email, content);
     if (sent) {
       logger.info("Flag resolution email sent", {
         flagSlug: flag.public_slug,
@@ -238,7 +201,7 @@ export async function sendFlagVerificationEmail({
 
   const verificationLink = `${siteUrl()}/fr/signalements/verifier?token=${encodeURIComponent(token)}`;
 
-  return sendViaResend(apiKey, email, {
+  return sendNotification(apiKey, email, {
     subject: "Confirmez votre adresse pour suivre votre signalement",
     text: [
       "Votre signalement est bien enregistré et déjà consultable :",

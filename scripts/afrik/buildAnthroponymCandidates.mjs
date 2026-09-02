@@ -50,9 +50,21 @@ const MINIMUM_PER_COUNTRY = 10;
  * Bands are population, not corpus weight. Summing the corpus's own
  * `distributionByCountry` double-counts, because a macro-people and its
  * sub-peoples are both attested in the same country: that sum puts Burundi
- * ahead of Algeria, which no population figure does. The banding below is
- * therefore declared here and owed a check against the UN WPP 2025 table
- * the corpus already uses as its demographic reference year.
+ * ahead of Algeria, which no population figure does. The banding is therefore
+ * declared here rather than derived.
+ *
+ * Checked 2026-09-02 against UN World Population Prospects, 2024 Revision,
+ * medium variant, total population at 1 July 2025 (`TPopulation1July`,
+ * Time=2025) — the corpus's own demographic reference year. The 2024 Revision
+ * is the current edition: the next was postponed from 2026 to 2027.
+ * https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz
+ *
+ * The check moved one country. Burkina Faso was banded at 20 but is 24.08 M,
+ * under the 25 M threshold, so it falls back to the floor. Knowing where the
+ * thresholds actually bite spares the next reader the re-download: the 25 M
+ * line runs between Mali (25.20 M, in) and Burkina Faso (24.08 M, out), and
+ * the 100 M line has no near case at all — DR Congo is 112.83 M and Tanzania,
+ * the next country down, only 70.55 M. Nothing here moves before a revision.
  */
 const QUOTA_100M_PLUS = 30;
 const QUOTA_25M_PLUS = 20;
@@ -79,7 +91,6 @@ const QUOTAS = {
   CMR: QUOTA_25M_PLUS,
   NER: QUOTA_25M_PLUS,
   MLI: QUOTA_25M_PLUS,
-  BFA: QUOTA_25M_PLUS,
 };
 
 const quotaFor = (countryId) => QUOTAS[countryId] ?? MINIMUM_PER_COUNTRY;

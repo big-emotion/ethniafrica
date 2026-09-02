@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
+import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
+import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,11 +23,47 @@ import { FormFieldError } from "@/components/forms/FormFieldError";
 
 interface ContributionFormProps {
   language: Language;
+  /**
+   * The anti-bot control, injectable for the same reason `FlagForm` injects
+   * it: the real gate spawns a worker, which no test environment can run.
+   * Left out, the form renders the real one.
+   */
+  renderVerification?: (callbacks: {
+    onSolved: (proof: AntibotProof) => void;
+    onFailed: () => void;
+  }) => ReactNode;
 }
+
+/** The entity a correction anchors on, by the type of correction proposed. */
+const ANCHOR_TYPES: Record<string, string> = {
+  update_people: "people",
+  update_country: "country",
+  update_language_family: "language_family",
+};
+
+/**
+ * What the queue shows before anyone opens the proposal.
+ *
+ * `reason_text` is the flag's one free-text field and the column a moderator
+ * scans, so a contribution states what it proposes there. It is also why these
+ * are phrases and not bare labels: the server holds `reason_text` to ten
+ * characters, and a contributor who leaves the notes blank must still produce
+ * a line that reads.
+ */
+const CONTRIBUTION_SUMMARIES: Record<string, string> = {
+  new_people: "Proposition d'un nouveau peuple",
+  update_people: "Proposition de correction sur un peuple",
+  new_country: "Proposition d'un nouveau pays",
+  update_country: "Proposition de correction sur un pays",
+  new_language_family: "Proposition d'une nouvelle famille linguistique",
+  update_language_family:
+    "Proposition de correction sur une famille linguistique",
+};
 
 // @req REQ-092
 export function ContributionForm({
   language: _language,
+  renderVerification,
 }: ContributionFormProps) {
   void _language;
   const [type, setType] = useState<string>("");
@@ -36,6 +74,9 @@ export function ContributionForm({
   const [contributorEmail, setContributorEmail] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
   const [honeypot, setHoneypot] = useState<string>("");
+  const [proof, setProof] = useState<AntibotProof | null>(null);
+  const [verificationError, setVerificationError] = useState<string>("");
+  const openedAt = useRef(Date.now());
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -57,6 +98,11 @@ export function ContributionForm({
     success: "Contribution soumise avec succès !",
     error: "Erreur lors de la soumission",
     invalidJson: "Format JSON invalide",
+    verification: "Vérification anti-robot",
+    notVerified:
+      "La vérification anti-robot n'est pas terminée. Patientez quelques instants, puis réessayez.",
+    verificationFailed:
+      "La vérification anti-robot n'a pas abouti. Rechargez la page pour réessayer.",
     selectType: "Sélectionner un type",
     newPeople: "Nouveau peuple",
     updatePeople: "Modifier un peuple",
@@ -127,22 +173,43 @@ export function ContributionForm({
         }
       }
 
-      const response = await fetch("/api/contributions", {
+      if (!proof) {
+        setError(t.notVerified);
+        setLoading(false);
+        return;
+      }
+
+      const anchorId = parsedPayload.id;
+      const summary = CONTRIBUTION_SUMMARIES[type] ?? "Contribution";
+      const trimmedNotes = notes.trim();
+
+      const response = await fetch("/api/v2/flags", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type,
-          proposed_payload: parsedPayload,
-          contributor_name: contributorName || null,
-          contributor_email: contributorEmail || null,
-          notes: notes || null,
-          honeypot,
+          flag_kind: "contribution",
+          // Anchored only when the proposal names an entity that already
+          // exists. A new people has none, and the flags contract exempts a
+          // contribution from the anchor for exactly that case.
+          ...(ANCHOR_TYPES[type] && anchorId
+            ? { target_type: ANCHOR_TYPES[type], target_id: String(anchorId) }
+            : {}),
+          reason_text: trimmedNotes ? `${summary} — ${trimmedNotes}` : summary,
+          contribution_payload: {
+            contribution_type: type,
+            proposed: parsedPayload,
+            contributor_name: contributorName || null,
+            contributor_email: contributorEmail || null,
+          },
+          antibot: proof,
+          website: honeypot,
+          elapsedMs: Date.now() - openedAt.current,
         }),
       });
 
       if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || t.error);
+        const body = await response.json();
+        throw new Error(body?.errors?.[0]?.message || t.error);
       }
 
       setSuccess(true);
@@ -295,10 +362,46 @@ export function ContributionForm({
           autoComplete="off"
         />
 
+        <section className="space-y-afh-md">
+          <h3 className="text-afh-body font-semibold">{t.verification}</h3>
+          {/* Nothing is asked of the contributor: the browser pays a small
+              computational cost and reports when it is done. */}
+          {renderVerification ? (
+            renderVerification({
+              onSolved: (solved) => {
+                setProof(solved);
+                setVerificationError("");
+              },
+              onFailed: () => {
+                setProof(null);
+                setVerificationError(t.verificationFailed);
+              },
+            })
+          ) : (
+            <ProofOfWorkGate
+              onSolved={(solved) => {
+                setProof(solved);
+                setVerificationError("");
+              }}
+              onFailed={() => {
+                setProof(null);
+                setVerificationError(t.verificationFailed);
+              }}
+            />
+          )}
+          {verificationError && (
+            <FormFieldError>{verificationError}</FormFieldError>
+          )}
+        </section>
+
         {error && <FormFieldError>{error}</FormFieldError>}
 
         {hasUnverifiedSource && (
-          <div className="text-afh-small text-amber-700" role="status">
+          <div
+            className="text-afh-small text-amber-700"
+            data-testid="source-tier-notice"
+            role="status"
+          >
             {t.sourceUnverified}
           </div>
         )}

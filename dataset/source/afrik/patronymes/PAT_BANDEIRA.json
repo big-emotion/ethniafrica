@@ -11,7 +11,10 @@
     {
       "spelling": "Bandeira",
       "attestations": [
-        { "countryId": "STP", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "STP",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -71,7 +74,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "La file d'attente ne rattache ce nom à aucun peuple du corpus : soit le nom ne désigne aucun groupe, soit le corpus ne porte pas de fiche pour la population concernée. Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Recherche : « Bandeira » a été cherchée dans les 800 fiches peuple du corpus — appellations, ethnicités, organisation clanique, prose historique et sources — sans y trouver aucune occurrence. Aucun des 4 peuples du corpus présents dans le pays de la fiche (Sao Tomé-et-Principe) ne rattache ce nom à un groupe, et la file d'attente des candidats — seule source de la fiche — n'en identifie aucun. Piste : des quatre peuples du corpus présents à São Tomé-et-Príncipe, seul PPL_FORROS documente des patronymes d'origine portugaise, et il n'en nomme que trois — Trovoada, Espírito Santo, Vera Cruz — parmi lesquels ce nom ne figure pas. Le rattacher aux Forros au seul motif qu'il est portugais étendrait une attestation de classe à un nom qu'elle ne porte pas."
     }
   ]
 }

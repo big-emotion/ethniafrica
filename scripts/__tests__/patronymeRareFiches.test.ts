@@ -61,8 +61,17 @@ describe("ETNI-1682 rare patronyme fiches", () => {
     for (const id of Object.keys(FICHES) as Array<keyof typeof FICHES>) {
       const fiche = readFiche(id);
 
-      expect(fiche.casteOrSocialFunction, id).toBeNull();
-      expect(fiche.bearers, id).toEqual([]);
+      // The unsafe claim this guards against is an unsourced office or a
+      // living person, not a filled field. Asserting emptiness froze the
+      // selection pass's state and would have made any later research fail
+      // the build for having found something.
+      if (fiche.casteOrSocialFunction !== null) {
+        expect(fiche.casteOrSocialFunction.sourceRefs, id).not.toHaveLength(0);
+      }
+      for (const bearer of fiche.bearers) {
+        expect(bearer.status, `${id}: bearer status`).toBe("deceased");
+        expect(bearer.sourceRefs, `${id}: bearer sources`).not.toHaveLength(0);
+      }
       expect(fiche.sources.length, id).toBeGreaterThan(0);
       // Scoped to the researched citations. The candidate queue is a
       // provenance marker rather than a citable work — it has no URL to give

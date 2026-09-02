@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Dossier français prudent sur une désignation tribale historique classée provisoirement comme nisba."
+    "directives": "Dossier français prudent sur une désignation tribale zénète ; l’attestation historique est distinguée d’une étymologie lexicale non trouvée."
   },
   "id": "PAT_MAGHRAWA",
   "nameMain": "Maghrawa",
@@ -11,95 +11,105 @@
     {
       "spelling": "Maghrawa",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["brown-sale-1971"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+        }
+      ]
+    },
+    {
+      "spelling": "Maġrāwa",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["maghrawa-mcharek"] }
       ]
     }
   ],
-  "transmissionMode": "patrilineal",
-  "designatedSocialUnit": "lineage",
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [
       {
-        "claim": "Ibn Khaldûn range les Maghrawa parmi les trois grandes branches zénètes, avec les Jarawa et les Banu Ifran, et rattache leur lignage à Madghis, dans l'ensemble botr.",
-        "claimStatus": "claimed",
-        "sourceRefs": ["ibn-khaldun-ibar", "ethnonymie-berbere-ibar"]
+        "claim": "Ahmed M’Charek relève Maghrawa parmi les principales branches zénètes attestées dans les chapitres berbères du Kitāb al-ʿIbar d’Ibn Khaldûn.",
+        "claimStatus": "established",
+        "sourceRefs": ["maghrawa-mcharek"]
+      },
+      {
+        "claim": "Une étude historique consacrée au groupe situe son territoire d’origine dans le Maghreb central et documente son rôle politique et militaire du VIIe au XIe siècle.",
+        "claimStatus": "established",
+        "sourceRefs": ["maghrawa-asjp"]
       }
     ],
-    "linguisticReconstructions": [
-      {
-        "claim": "Ibn Khaldûn expose le paradigme onomastique zénète à partir de l'ancêtre éponyme Jana : Zana/Zanat, Iznaten, Zanata — la nisba tribale y est construite sur le nom de l'ancêtre.",
-        "claimStatus": "established",
-        "sourceRefs": ["ethnonymie-berbere-ibar"]
-      }
-    ]
+    "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_ZENATA",
       "status": "attested",
-      "sourceRefs": ["zenata-branches-2021"]
+      "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
     }
   ],
-  "countries": [],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+    }
+  ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "brown-sale-1971",
-      "title": "People of Salé: Tradition and Change in a Moroccan City, 1830–1930",
-      "url": "https://www.hesperis-tamuda.com/Downloads/1970-1979/Hesperis-Tamuda%201971.pdf",
+      "sourceKey": "maghrawa-mcharek",
+      "title": "Ibn Khaldûn, une source historique majeure : l’apport du Kitâb al-‘Ibar à la connaissance de l’ethnonymie berbère",
+      "url": "https://www.researchgate.net/publication/382346129_Ibn_Khaldun_une_source_historique_majeure_l%27apport_du_Kitab_al-%27Ibar_a_la_connaissance_de_l%27ethnonymie_berbere",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "L'étude publiée par l'Université Mohammed V emploie Maghrawa dans son exposé des groupes zénètes liés à Salé."
+      "notes": "Ahmed M’Charek, Études et Documents Berbères 49(1), 2024, p. 223-244, DOI 10.3917/edb.049.0223. Le résumé éditorial intégral a été vérifié ; il nomme Maghrawa parmi les branches zénètes attestées par Ibn Khaldûn. La source n’est pas réutilisée dans une autre fiche de cette vague."
     },
     {
-      "sourceKey": "zenata-branches-2021",
-      "title": "The Political and the Religious Doctrines Roles of the Zenata Tribe in Central Maghreb: The Case of Banu Yefren and Maghrawa",
-      "url": "https://asjp.cerist.dz/index.php/en/article/164273",
+      "sourceKey": "maghrawa-asjp",
+      "title": "قبيلة مغراوة وتحالفاتها العسكرية والسياسية في بلاد المغرب الأوسط، من الفتح إلى تأسيس الدولة المغراوية",
+      "url": "https://asjp.cerist.dz/en/article/244926",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "L'article universitaire présente Maghrawa comme l'une des principales branches zénètes du Maghreb central."
-    },
-    {
-      "sourceKey": "ibn-khaldun-ibar",
-      "title": "Histoire des Berbères et des dynasties musulmanes de l'Afrique septentrionale (Kitāb al-ʿIbar)",
-      "url": "https://archive.org/details/histoiredesberbe01ibnk",
-      "tier": "referenced",
-      "source_kind": "archive",
-      "notes": "Ibn Khaldūn, XIVe siècle ; traduction de William MacGuckin de Slane, Alger, Imprimerie du gouvernement, 1852. La notice sur les Zénètes et leurs branches court sur les tomes I et III ; le lien pointe le tome I. Traduction coloniale du XIXe siècle, à lire comme telle."
-    },
-    {
-      "sourceKey": "ethnonymie-berbere-ibar",
-      "title": "Ibn Khaldûn, une source historique majeure : l'apport du Kitâb al-'Ibar à la connaissance de l'ethnonymie berbère",
-      "url": "https://www.researchgate.net/publication/382346129_Ibn_Khaldun_une_source_historique_majeure_l'apport_du_Kitab_al-'Ibar_a_la_connaissance_de_l'ethnonymie_berbere",
-      "tier": "referenced",
-      "source_kind": "academic",
-      "notes": "Analyse moderne de l'ethnonymie berbère chez Ibn Khaldûn : paradigme onomastique Zana/Zanat/Iznaten/Zanata et branches principales (Jarawa, Maghrawa, Banu Ifren)."
+      "notes": "Houssam Salahi, Revue des études historiques militaires 6(1), 2024, p. 33-47, Université d’Alger 2. La page et le résumé arabes ont été vérifiés pour l’ancrage au Maghreb central, la chronologie et le statut tribal."
     }
   ],
   "gaps": [
     {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les articles dédiés, ASJP, l’Encyclopédie berbère et les recherches « Maghrawa tradition orale », « مغراوة النسب » et « ancêtre Maghrawa » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "L’étude d’ethnonymie de M’Charek, l’article historique de Salahi et les dictionnaires berbères repérés ont été vérifiés sans trouver d’étymon propre à Maghrawa ; l’étymologie des Zénètes en général n’est pas transférée à cette branche."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources traitent Maghrawa comme désignation tribale historique, mais ne décrivent pas sa règle d’affiliation nominale ; les recherches de filiation n’ont pas permis de retenir un mode de transmission."
+    },
+    {
       "fieldPath": "alliances",
-      "reason": "Les alliances entre tribus zénètes relèvent de l'histoire politique et n'ont pas été établies comme alliances entre noms lors de la passe."
+      "reason": "L’article de Salahi documente des alliances militaires et politiques entre groupes historiques, mais aucune ne constitue une alliance anthroponymique entre deux fiches PAT_* existantes ; aucune entrée n’est donc créée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau de la tribu : la nisba zénète dit une appartenance tribale, non un métier, et Ibn Khaldûn ne lui attache aucune spécialisation transmise."
+      "reason": "Les deux études et les recherches sur une fonction héréditaire des Maghrawa ne signalent ni métier transmis ni statut de caste attaché au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Ibn Khaldûn nomme les souverains des dynasties issues de ces tribus, mais une nisba tribale se porte collectivement : verser un émir au champ des porteurs ferait passer une histoire dynastique pour l'attestation d'un nom, ce que la passe s'interdit."
+      "reason": "Les sources nomment des dirigeants du groupe, sans les présenter comme porteurs individuels du nom Maghrawa ; les enregistrer comme patronymes confondrait la tribu avec un nom de famille."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'homonymie est structurelle dans un système de nisba : le nom marque l'appartenance à la tribu et non la descendance d'un lignage, de sorte que deux porteurs sans parenté le partagent normalement. Ce n'est donc pas ici une donnée à recenser."
+      "reason": "Les graphies Maghrawa, Maġrāwa et Meghrawa repérées relèvent de translittérations ; les catalogues et travaux consultés n’ont pas établi une seconde origine sous une graphie identique."
     }
   ],
   "nisbaSubtype": {
     "value": "tribal",
-    "sourceRefs": ["ethnonymie-berbere-ibar"]
+    "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
   }
 }

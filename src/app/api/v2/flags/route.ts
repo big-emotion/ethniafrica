@@ -17,7 +17,7 @@
  *         name: kind
  *         schema:
  *           type: string
- *           enum: [inaccurate, missing-source, broken-url, offensive, correction-proposal, other]
+ *           enum: [inaccurate, missing-source, broken-url, offensive, correction-proposal, other, contribution]
  *         description: Filter by flag kind.
  *       - in: query
  *         name: target_type
