@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche limité à la transformation nominale et au porteur documentés par la biographie parlementaire officielle."
   },
   "id": "PAT_RABEMANANJARA",
   "nameMain": "Rabemananjara",
@@ -11,65 +11,77 @@
     {
       "spelling": "Rabemananjara",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "MDG", "sourceRefs": ["assemblee-rabemananjara"] }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
+  "transmissionMode": "elective",
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La biographie de l'Assemblée nationale indique que Bemananjara Totoasidy était le nom originel et que ses nom et prénom furent respectivement mérinisé et francisé pour devenir Rabemananjara Jacques. Elle documente ainsi une transformation individuelle du nom, sans en fournir l'étymon.",
+        "claimStatus": "established",
+        "sourceRefs": ["assemblee-rabemananjara"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_MERINA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["assemblee-rabemananjara"]
     }
   ],
   "countries": [
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["assemblee-rabemananjara"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Jacques Rabemananjara",
+      "sourceRefs": ["assemblee-rabemananjara"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "assemblee-rabemananjara",
+      "title": "Jacques Rabemananjara — Base de données des députés français depuis 1789",
+      "url": "https://www2.assemblee-nationale.fr/sycomore/fiche?num_dept=6566",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Biographie officielle de l'Assemblée nationale française : dates 1913-2005, origine à Madagascar, filiation paternelle merina et passage de Bemananjara Totoasidy à Rabemananjara Jacques."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La biographie parlementaire et les recherches sur Rabemananjara avec tradition familiale, razana et généalogie n'ont livré aucun récit oral attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "La source officielle qualifie la transformation de mérinisation, mais n'en donne pas l'analyse morphologique ; les recherches « Rabemananjara etymology » et « Rabemananjara onomastique » n'ont livré aucune reconstruction linguistique dédiée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches Rabemananjara avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les fonctions politiques et littéraires de Jacques Rabemananjara sont individuelles ; aucune fonction héréditaire du nom n'est attestée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La biographie officielle et les catalogues consultés n'établissent pas de lignée Rabemananjara d'origine distincte."
     }
   ]
 }
