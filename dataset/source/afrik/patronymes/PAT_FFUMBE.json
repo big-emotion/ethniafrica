@@ -11,10 +11,7 @@
     {
       "spelling": "Ffumbe",
       "attestations": [
-        {
-          "countryId": "UGA",
-          "sourceRefs": ["buganda-history-2025"]
-        }
+        { "countryId": "UGA", "sourceRefs": ["buganda-history-2025"] }
       ]
     }
   ],
@@ -22,8 +19,20 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Le totem principal (omuziro) de ce clan est la civette d'Afrique. Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["roscoe-1911-baganda", "buganda-heritage-clans"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'ekika ganda est un clan totémique : chaque clan porte un totem principal (omuziro) et un totem secondaire (akabbiro), et le nom du clan est celui du totem.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -51,24 +60,45 @@
       "tier": "official",
       "source_kind": "community",
       "notes": "Publication officielle du royaume de Buganda : Ffumbe y figure parmi les premiers clans, avec la civette comme totem ; le système clanique est décrit comme patrilinéaire."
+    },
+    {
+      "sourceKey": "roscoe-1911-baganda",
+      "title": "The Baganda: An Account of their Native Customs and Beliefs",
+      "url": "https://archive.org/details/bagandaaccountof00roscuoft",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Roscoe, John, Macmillan, 1911, chapitre VI « The Clans and their Totems » (p. 133-185). Ethnographie missionnaire coloniale, à lire comme telle ; Apolo Kaggwa en fut le collecteur de traditions. Établit le système totémique (totem principal + akabbiro, interdit alimentaire). L'attribution du totem clan par clan a été atteinte via les articles de clans de la Wikipédia anglophone : la vérification page à page dans le chapitre VI reste due."
+    },
+    {
+      "sourceKey": "buganda-heritage-clans",
+      "title": "Buganda Heritage and Information Centre — Clans",
+      "url": "https://www.bugandaheritage.org.uk/culture/clans",
+      "tier": "unverified",
+      "source_kind": "community",
+      "isSelfIdentification": true,
+      "notes": "Site patrimonial ganda. Auto-identification : donne les cinq clans indigènes Banansangwa (Ffumbe, Lugave, Nggonge, Njaza, Nnyonyi), le passage à 52 clans en 1966, et l'interdit alimentaire."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Aucune tradition orale transcrite ni reconstruction linguistique directement vérifiable n'a été retenue."
+      "fieldPath": "alliances",
+      "reason": "Le système ganda ne documente pas d'alliance formelle entre ebika ; l'exogamie clanique en est l'inverse."
     },
     {
-      "fieldPath": "totemicFoodProhibition",
-      "reason": "La source identifie le totem, mais ne documente pas un interdit alimentaire précis."
-    },
-    {
-      "fieldPath": "permittedGivenNames",
-      "reason": "Aucun prénom autorisé n'est établi par la source consultée."
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les charges héréditaires attachées aux clans ganda existent mais n'ont pas été établies pour ce clan lors de la passe."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a été ajouté sans source nominative sûre."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
-  ]
+  ],
+  "totemicFoodProhibition": {
+    "value": "Il est tabou pour un Muganda de consommer son propre clan, qu'il s'agisse de nourriture, de viande fraîche, de légume, de poisson ou de fruit.",
+    "sourceRefs": ["buganda-heritage-clans", "roscoe-1911-baganda"]
+  }
 }

@@ -27,19 +27,22 @@
           "countryId": "GHA",
           "sourceRefs": ["corpus-ppl-dioula-organisation"]
         },
-        {
-          "countryId": "GNB",
-          "sourceRefs": ["corpus-ppl-dioula-organisation"]
-        }
+        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -87,32 +90,32 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le passage ne précise pas le mode de transmission du nom."
-    },
-    {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+      "reason": "Aucune paire de sanankuya nommant ce clan n'a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

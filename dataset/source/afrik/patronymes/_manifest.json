@@ -56,7 +56,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Preserve the corpus spelling Traore without silently adding an accent (REQ-135)."
     },
     {
@@ -83,7 +83,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The extractor cannot attribute this prose sentence to one fiche source; tier review remains required."
     },
     {
@@ -110,7 +110,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Keïta is an independently attested spelling and must not be collapsed into the unaccented Keita passages during selection review."
     },
     {
@@ -137,7 +137,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The family count follows the current source fiche classification, not a generalized Fula family assignment."
     },
     {
@@ -164,7 +164,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Keep this Manding clan-name entity distinct from the Amba ethnonym and individual Bamba nicknames found elsewhere in the corpus."
     },
     {
@@ -191,7 +191,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Selection records the Vai fiche occurrence without inferring that every Camara bearer belongs to this lineage."
     },
     {
@@ -218,7 +218,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "This is a search candidate only; social function must not be inferred from the string."
     },
     {
@@ -245,7 +245,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The passage supports selection, not an inference about any present-day bearer."
     },
     {
@@ -272,7 +272,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Do not infer caste or occupation from the adjacent prose; a fiche needs claim-level sourcing."
     },
     {
@@ -299,7 +299,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No source tier is inherited until an editor resolves which fiche source supports this sentence."
     },
     {
@@ -326,7 +326,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Selection retains the exact unaccented spelling in the source passage."
     },
     {
@@ -353,7 +353,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The Wolof occurrence is selected independently of same-spelling occurrences in Fula fiches."
     },
     {
@@ -380,7 +380,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The manifest records a Ndau corpus occurrence; homonymous Dube entities require separate fiche research."
     },
     {
@@ -407,7 +407,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The clan-name entity remains distinct from the Mthethwa polity and any personal bearer."
     },
     {
@@ -434,7 +434,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No linguistic meaning or totem relation is asserted at manifest stage."
     },
     {
@@ -461,7 +461,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The source phrase mixes clan names and praise poetry; subtype needs confirmation during fiche research."
     },
     {
@@ -488,7 +488,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Keep this selected spelling distinct from Sibande, which is separately attested in the corpus."
     },
     {
@@ -515,7 +515,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "This ID explicitly denotes the clan-name entity; royal persons and praise expressions remain separate homonyms."
     },
     {
@@ -542,7 +542,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Selected from a Baganda self-designation fiche; do not merge with similarly prefixed Rwanda or Burundi clan strings."
     },
     {
@@ -569,7 +569,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "The totem association is a research lead, not yet a sourced fiche assertion."
     },
     {
@@ -596,7 +596,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "PPL_BAGANDA gives a different animal gloss; the future fiche must expose and source the disagreement."
     },
     {
@@ -623,7 +623,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "PPL_BAGANDA gives a different animal gloss; this conflict remains an explicit editorial risk."
     },
     {
@@ -648,7 +648,7 @@
           "supports": "The Ethiopia table gives Kebreab as the father's personal name in the example Ermias Kebreab and explains that the father's name is not a hereditary family name."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage names this candidate. The source supports selection for research, not a completed factual fiche."
     },
     {
@@ -673,7 +673,7 @@
           "supports": "The Ethiopia table lists Wolde Mariam as a compound father's personal name in the example Habte Sellassie Wolde Mariam."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage names this candidate; compound spelling and transliteration need source-led fiche research."
     },
     {
@@ -698,7 +698,7 @@
           "supports": "The note on Eritrean names identifies Ghebremichael as Yohannes's father's name in Yohannes Ghebremichael Kifle and explains that the second element is a non-hereditary patronymic."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage names this candidate; the current family link is a search starting point, not an ethnic attribution."
     },
     {
@@ -723,7 +723,7 @@
           "supports": "The chapter explains that Ethiopians add a father's name rather than a family surname and uses Makonnen Haile as the son of Haile Mangasha."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage names this candidate. Haile may occur as a given name elsewhere and that homonym must remain distinct."
     },
     {
@@ -750,7 +750,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Nisba is provisional: the fiche research must distinguish tribal designation, dynasty, and personal nisba uses."
     },
     {
@@ -777,7 +777,7 @@
         }
       ],
       "externalSelectionSources": [],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "Nisba is provisional; Banu Ifran as a collective tribal name must not be treated as a modern hereditary surname without direct evidence."
     },
     {
@@ -802,7 +802,7 @@
           "supports": "The article identifies the genealogy line Omo Abikan as Yoruba oriki, explicitly described as a lineage praise name."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage supplies this selection. Research must distinguish Abikan as a lineage reference from the full praise poem."
     },
     {
@@ -827,7 +827,7 @@
           "supports": "The study presents Mntungwa in the Khumalo izithakazelo sequence, providing a direct academic lead for a lineage praise-name fiche."
         }
       ],
-      "reviewStatus": "selected_pending_fiche_research",
+      "reviewStatus": "fiche_research_first_pass_complete",
       "editorialNotes": "No corpus passage supplies this selection. Keep the Mntungwa praise-name candidate distinct from the Khumalo clan-name entity."
     }
   ]
