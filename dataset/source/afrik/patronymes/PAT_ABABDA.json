@@ -62,7 +62,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
     },
     {
       "sourceKey": "ababda-barnard-2009",
