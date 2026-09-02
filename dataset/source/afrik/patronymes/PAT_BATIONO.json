@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier lyélé fondé sur une analyse publiée du système d'état civil ; conserver séparées les formes sexuées Bationo et Kantiono."
   },
   "id": "PAT_BATIONO",
   "nameMain": "Bationo",
@@ -11,7 +11,19 @@
     {
       "spelling": "Bationo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["moyenga-2019-identites-lyele"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kantiono",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["moyenga-2019-identites-lyele"]
+        }
       ]
     }
   ],
@@ -20,20 +32,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'analyse du système d'identification lyélé présente Bationo comme la forme masculine et Kantiono comme la forme féminine du nom du clan Tiono ; elle donne à Tiono le sens de « lumière » en lyélé. Ces formes sexuées ne doivent donc pas être traitées comme deux clans indépendants.",
+        "claimStatus": "established",
+        "sourceRefs": ["moyenga-2019-identites-lyele"]
+      }
+    ]
   },
   "peoples": [
     {
-      "peopleId": "PPL_MOSSI",
+      "peopleId": "PPL_GOUROUNSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["moyenga-2019-identites-lyele"]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["moyenga-2019-identites-lyele"]
     }
   ],
   "alliances": [],
@@ -42,38 +60,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "moyenga-2019-identites-lyele",
+      "title": "Identités en conflit : l'état civil burkinabè dans le quotidien de la communauté lyele",
+      "url": "https://journals.openedition.org/cjm/pdf/731",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Paul-Marie Moyenga, Cahiers Jean Moulin, no 5, 2019, DOI 10.4000/cjm.731. Le texte intégral a été consulté au passage consacré aux patronymes sexués : il rattache les Lyélé à l'ensemble gourounsi, situe la communauté à Réo et décrit Bationo/Kantiono comme les formes du clan Tiono. Le passage comporte une incohérence interne entre la glose des préfixes Ba-/Kan- et les exemples sexués ; le dossier ne reprend donc que l'appariement explicite des formes et la glose de Tiono."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Moyenga et les recherches ciblées sur Bationo, Kantiono et le clan Tiono n'ont livré aucun récit attribué à un griot nommé avec transcription."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La recherche dans Cahiers Jean Moulin, les catalogues universitaires et les études lyélé repérées n'a pas livré de chronique historique du clan Tiono."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Moyenga établit la variation du patronyme selon le sexe et le maintien du nom clanique, mais le passage consulté ne décrit pas assez précisément la ligne de transmission du clan Tiono pour choisir patrilinéaire, matrilinéaire ou bilatérale."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches sur le clan Tiono dans l'article de Moyenga, les catalogues savants et les ressources communautaires lyélé n'ont pas établi de paire de parenté à plaisanterie entre deux fiches PAT_* existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les passages consultés décrivent une appartenance clanique et une variation sexuée, sans fonction sociale ni profession héréditaire propre au clan Tiono."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur Bationo et Kantiono ont livré des personnes contemporaines, mais aucune source institutionnelle consultée n'établit un porteur décédé pertinent pour l'histoire du nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Bationo et Kantiono ont été vérifiés comme formes sexuées d'un même clan, non comme homonymes ; les recherches n'ont pas établi de lignée distincte portant le même nom."
     }
   ]
 }
