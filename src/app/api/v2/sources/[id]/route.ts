@@ -7,7 +7,7 @@
  *   get:
  *     summary: Get a single Module #0 source by id
  *     tags:
- *       - "API v2 - Module #0"
+ *       - "API v2 - Source Transparency"
  *     parameters:
  *       - in: path
  *         name: id

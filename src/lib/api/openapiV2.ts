@@ -1,12 +1,13 @@
 import swaggerJsdoc from "swagger-jsdoc";
 
 import { OPENAPI_V2_TAGS } from "@/lib/api/openapiV2Tags";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.1.0",
     info: {
-      title: "Ethniafrique Atlas API v2 - AFRIK",
+      title: `${PRODUCT_NAME} API v2 - AFRIK`,
       version: "2.2.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
@@ -19,7 +20,7 @@ const options: swaggerJsdoc.Options = {
         "- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n" +
         "- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
       contact: {
-        name: "Ethniafrique Atlas",
+        name: PRODUCT_NAME,
         url: "https://github.com/big-emotion/ethniafrica",
       },
     },

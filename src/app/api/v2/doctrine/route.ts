@@ -10,7 +10,7 @@
  *     summary: List current editorial doctrine
  *     description: Returns the current version of every doctrine slug. Takes no query parameters.
  *     tags:
- *       - "API v2 - Module #0"
+ *       - "API v2 - Source Transparency"
  *     responses:
  *       200:
  *         description: Doctrine envelope
@@ -31,6 +31,7 @@ import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
+// @req REQ-092
 export async function GET() {
   const startTime = Date.now();
   try {
@@ -57,6 +58,7 @@ export async function GET() {
   }
 }
 
+// @req REQ-092
 export function OPTIONS() {
   return corsOptionsResponse();
 }
