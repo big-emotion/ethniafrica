@@ -48,6 +48,7 @@ import {
   loadMigrations,
 } from "@/lib/afrik/loaders/migrationJsonLoader";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { SUPABASE_BATCH_REQUEST_TIMEOUT_MS } from "@/lib/supabase/requestDeadline";
 import type { Country, LanguageFamily, People } from "@/types/afrik";
 import type { RelationRecord } from "@/types/relations";
 import {
@@ -731,7 +732,12 @@ export async function migrateAfrikToDatabase(
   const dryRun = options.dryRun ?? true;
   const prune = options.prune ?? false;
   const writeErrorReport = options.writeErrorReport ?? true;
-  const supabase = createAdminClient();
+  // `databaseSnapshot` reads every fiche's `content` back before diffing, which
+  // is tens of seconds of legitimate transfer — well past the deadline a page
+  // render is held to, and the reason this job aborted mid-read on every run.
+  const supabase = createAdminClient({
+    requestTimeoutMs: SUPABASE_BATCH_REQUEST_TIMEOUT_MS,
+  });
   const report = createMigrationReport();
 
   const languageFamilies = await loadAllLanguageFamilies();
