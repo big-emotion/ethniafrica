@@ -468,7 +468,7 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_DIARRA",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["segoublog-sanankuya", "bamadaba-jamuw"],
       },
     ],
     bearers: [
@@ -482,6 +482,7 @@ export const RESEARCH = {
       "niane-1960",
       "jansen-sunjata-paradigm",
       "segoublog-sanankuya",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       casteOrSocialFunction:
@@ -507,10 +508,27 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_TRAORE",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["segoublog-sanankuya", "bamadaba-jamuw"],
+      },
+      {
+        // Porté par l'entrée Jàra, qui liste Dunbuya parmi ses senankun.
+        targetPatronymeId: "PAT_DOUMBIA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        // Porté par l'entrée Jɛbatɛ, qui liste Jara ; l'entrée Jàra ne rend
+        // pas le lien, les marqueurs \sn n'étant pas réciproques.
+        targetPatronymeId: "PAT_DIABATE",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
-    sourceKeys: ["jansen-sunjata-paradigm", "segoublog-sanankuya"],
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "segoublog-sanankuya",
+      "bamadaba-jamuw",
+    ],
     gapReasons: {
       origin:
         "L'étymologie courante rattachant Diarra à jara (« lion ») n'a été " +
@@ -552,7 +570,13 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_COULIBALY",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"],
+      },
+      {
+        // Porté par l'entrée Fófana, qui liste Keyita parmi ses senankun.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
     bearers: [
@@ -566,6 +590,8 @@ export const RESEARCH = {
       "niane-1960",
       "jansen-sunjata-paradigm",
       "segoublog-sanankuya",
+      "gha-v-16-18",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       casteOrSocialFunction:
@@ -592,10 +618,21 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_KEITA",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"],
+      },
+      {
+        // Porté par l'entrée Fófana, qui liste Kulibali parmi ses senankun.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
-    sourceKeys: ["jansen-sunjata-paradigm", "segoublog-sanankuya"],
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "segoublog-sanankuya",
+      "gha-v-16-18",
+      "bamadaba-jamuw",
+    ],
     gapReasons: {
       origin:
         "Aucune source dédiée n'a été trouvée pour l'origine du jamu Kulibali " +
@@ -667,8 +704,14 @@ export const RESEARCH = {
     ],
     gapReasons: {
       alliances:
-        "Aucune paire de sanankuya nommant les Kouyaté n'a été trouvée lors de " +
-        "la passe ; la relation jeli/horon n'est pas un sanankuya.",
+        "Le dictionnaire des jamuw range Keyita, Konate et Nakalu parmi les " +
+        "senankun de Kúyate, mais annote la première de ces trois lignes d'une " +
+        "réserve : la relation aux Keïta y est donnée pour une entente amicale " +
+        "et non pour un senankuya. Konate et Nakalu n'ont pas de fiche dans le " +
+        "lot, et le schéma n'enregistre une paire que si les deux patronymes " +
+        "en ont une. Aucune paire n'est donc inscriptible ici — ce qui est un " +
+        "résultat, non une recherche restée sans réponse. La relation jeli/horon " +
+        "n'est pas davantage un sanankuya.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée : les " +
         "Kouyaté relevés par les sources consultées se rattachent tous au même " +
@@ -698,19 +741,26 @@ export const RESEARCH = {
         "tamari-1991-caste",
       ],
     },
+    alliances: [
+      {
+        // Porté par l'entrée Jɛbatɛ, qui liste Jara parmi ses senankun.
+        targetPatronymeId: "PAT_DIARRA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "jelis-multilingualism-2024",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre aux Diabaté n'a été trouvée lors de " +
         "la passe, en dehors de leur statut de clan de jeli. La geste de " +
         "Soundiata les nomme sans raconter l'origine du jamu.",
-      alliances:
-        "Aucune paire de sanankuya nommant les Diabaté n'a été trouvée.",
       bearers:
         "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
         "distincte de l'homonymie de patronyme lors de la passe : les Diabaté " +
@@ -734,17 +784,26 @@ export const RESEARCH = {
       ],
     },
     casteOrSocialFunction: NUMU_FUNCTION,
+    alliances: [
+      {
+        // La seule paire du bloc mandé que les deux entrées se rendent l'une à
+        // l'autre : Kàmara liste Fofana, Fófana liste Kamara.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Kamara n'a été trouvée lors " +
         "de la passe. La geste de Soundiata nomme les Kamara parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
       bearers:
         "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
         "distincte de l'homonymie de patronyme lors de la passe.",
@@ -757,12 +816,31 @@ export const RESEARCH = {
   PAT_FOFANA: {
     ...MANDE_JAMU,
     ...mandeThin(),
+    // L'entrée Fófana est la plus riche du bloc en senankun : elle en nomme
+    // cinq, dont trois ont une fiche dans le lot.
+    alliances: [
+      {
+        targetPatronymeId: "PAT_CAMARA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        targetPatronymeId: "PAT_KEITA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        targetPatronymeId: "PAT_COULIBALY",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
+    sourceKeys: ["jansen-sunjata-paradigm", "bamadaba-jamuw"],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Fofana n'a été trouvée lors " +
         "de la passe : seule la nature clanique et patrilinéaire du jamu est " +
         "établie.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
       casteOrSocialFunction:
         "Fofana ne figure ni dans les lignages numu ni dans les lignages jeli " +
         "que Charry énumère, ni parmi les jamuw horon qu'il nomme : le nom n'a " +
@@ -788,17 +866,26 @@ export const RESEARCH = {
       ],
     },
     casteOrSocialFunction: NUMU_FUNCTION,
+    alliances: [
+      {
+        // Porté par l'entrée Jàra, qui liste Dunbuya — variante de Dunbiya —
+        // parmi ses senankun ; l'entrée Dunbiya ne rend pas le lien.
+        targetPatronymeId: "PAT_DIARRA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Doumbia n'a été trouvée lors " +
         "de la passe. La geste de Soundiata nomme les Doumbia parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
       bearers:
         "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
         "distincte de l'homonymie de patronyme lors de la passe.",
@@ -832,7 +919,12 @@ export const RESEARCH = {
       origin:
         "Aucune tradition d'origine propre au jamu Bamba n'a été trouvée lors de " +
         "la passe.",
-      alliances: "Aucune paire de sanankuya nommant les Bamba n'a été trouvée.",
+      alliances:
+        "Le dictionnaire des jamuw donne à l'entrée Bánbà trois senankun : " +
+        "Kane, les Peuls et les Songhaï. Les deux derniers sont des peuples et " +
+        "non des patronymes ; Kane n'a pas de fiche dans le lot, et le schéma " +
+        "n'enregistre une paire que si les deux patronymes en ont une. La " +
+        "recherche a donc trouvé des senankun sans qu'aucun soit inscriptible.",
       casteOrSocialFunction:
         "Bamba ne figure dans aucune des listes de lignages numu, jeli ou horon " +
         "que Charry énumère : le nom n'a été rattaché à aucun statut par les " +

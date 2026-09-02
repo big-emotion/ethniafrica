@@ -119,7 +119,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Aucune paire de sanankuya nommant les Bamba n'a été trouvée."
+      "reason": "Le dictionnaire des jamuw donne à l'entrée Bánbà trois senankun : Kane, les Peuls et les Songhaï. Les deux derniers sont des peuples et non des patronymes ; Kane n'a pas de fiche dans le lot, et le schéma n'enregistre une paire que si les deux patronymes en ont une. La recherche a donc trouvé des senankun sans qu'aucun soit inscriptible."
     },
     {
       "fieldPath": "casteOrSocialFunction",
