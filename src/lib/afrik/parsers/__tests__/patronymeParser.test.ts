@@ -123,6 +123,24 @@ describe("parsePatronymeFile", () => {
   });
 
   // @req REQ-133
+  it("names the tier vocabulary when a source carries a tier outside it", () => {
+    const fiche = validPatronymeFiche();
+    (fiche.sources[0] as Record<string, unknown>).tier = "tier-1";
+
+    const result = parsePatronymeFile(fiche);
+
+    expect(result.success).toBe(false);
+    expect(result.errors).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          path: "sources.0.tier",
+          message: "tier must be one of official, referenced, unverified",
+        }),
+      ])
+    );
+  });
+
+  // @req REQ-133
   it("requires every nested source reference to resolve within the fiche", () => {
     const fiche = validPatronymeFiche();
     fiche.peoples[0].sourceRefs = ["missing-source"];

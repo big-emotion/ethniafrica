@@ -35,7 +35,7 @@ export const sourcePolicySchema = z.object({
 
 // @req REQ-092
 export const sourceSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   sourceKey: z.string().nullable(),
   sourceKind: sourceKindSchema.nullable(),
   tier: sourceTierSchema.nullable(),
@@ -89,7 +89,7 @@ export type ListSourcesQuery = z.infer<typeof listSourcesQuerySchema>;
  */
 // @req REQ-092
 export const sourceIdParamSchema = z.object({
-  id: z.string().uuid({ message: "Invalid source id format (uuid expected)" }),
+  id: z.uuid({ error: "Invalid source id format (uuid expected)" }),
 });
 
 export type SourceIdParam = z.infer<typeof sourceIdParamSchema>;

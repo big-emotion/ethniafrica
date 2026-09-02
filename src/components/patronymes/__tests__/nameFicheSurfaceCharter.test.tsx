@@ -34,8 +34,8 @@ const filled: PublicPatronyme = {
   nameSystem: "clan_name",
   casteOrSocialFunction: "Horon (noble)",
   associatedPeoples: [
-    { id: "PPL_MALINKE", nameMain: "Malinké" },
-    { id: "PPL_BAMANA", nameMain: "Bamana" },
+    { id: "PPL_MALINKE", nameMain: "Malinké", slug: "PPL_MALINKE" },
+    { id: "PPL_BAMANA", nameMain: "Bamana", slug: "PPL_BAMANA" },
   ],
   associatedCountries: [
     { id: "MLI", nameFr: "Mali" },

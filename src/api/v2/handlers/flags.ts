@@ -80,7 +80,7 @@ const flagCreateSchema = z.object({
   target_field_path: trimmedRequiredString.optional(),
   flag_kind: z.enum(FLAG_KINDS),
   reason_text: z.string().trim().min(10).max(2000),
-  counter_source_url: z.string().trim().url().optional(),
+  counter_source_url: z.string().trim().pipe(z.url()).optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
   proposed_rewrite: z.string().trim().max(5000).optional(),
   /**
@@ -88,7 +88,7 @@ const flagCreateSchema = z.object({
    * reader a decision in their inbox and nothing else — it is not attribution,
    * not an account, and never appears on the public queue.
    */
-  reporter_email: z.string().trim().email().max(320).optional(),
+  reporter_email: z.string().trim().pipe(z.email().max(320)).optional(),
   antibot: z.object({
     salt: trimmedRequiredString,
     nonce: trimmedRequiredString,

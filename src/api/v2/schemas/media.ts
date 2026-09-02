@@ -15,8 +15,8 @@ export const mediaSchema = z
     entityType: mediaEntityTypeSchema,
     entityId: z.string().trim().min(1),
     author: z.string().trim().min(1).nullable(),
-    licenceUri: z.string().trim().url(),
-    sourcePageUrl: z.string().trim().url(),
+    licenceUri: z.string().trim().pipe(z.url()),
+    sourcePageUrl: z.string().trim().pipe(z.url()),
     period: z.string().trim().min(1).nullable(),
     depictionTiming: mediaDepictionTimingSchema,
   })

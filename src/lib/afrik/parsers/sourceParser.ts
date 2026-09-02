@@ -26,13 +26,19 @@ export interface ParsedAssertionSourceReference {
   errors?: SourceParseFieldError[];
 }
 
-function parseErrors(issues: { path: (string | number)[]; message: string }[]) {
+/**
+ * `path` is `PropertyKey[]` to match the zod issue shape. A symbol segment
+ * would make `join` throw, but only a schema keyed by symbols can emit one and
+ * the source model has none.
+ */
+function parseErrors(issues: { path: PropertyKey[]; message: string }[]) {
   return issues.map((issue) => ({
     path: issue.path.join("."),
     message: issue.message,
   }));
 }
 
+/** @req REQ-093 */
 export function parseSourceFile(raw: unknown): ParsedSourceFile {
   const result = sourceRecordSchema.safeParse(raw);
 
@@ -43,6 +49,7 @@ export function parseSourceFile(raw: unknown): ParsedSourceFile {
   return { success: true, data: toStructuredSourceRecord(result.data) };
 }
 
+/** @req REQ-093 */
 export function parseAssertionSourceReference(
   raw: unknown
 ): ParsedAssertionSourceReference {

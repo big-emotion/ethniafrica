@@ -68,7 +68,27 @@ describe("parseNameRecordFile", () => {
 
     expect(result.success).toBe(false);
     expect(result.errors).toContainEqual(
-      expect.objectContaining({ path: "names.0.nameType" })
+      expect.objectContaining({
+        path: "names.0.nameType",
+        message:
+          "nameType must be one of endonym, exonym, historical_spelling, surname (name_record_type enum, migration 029)",
+      })
+    );
+  });
+
+  // @req REQ-056
+  it("rejects an entityType other than 'people'", () => {
+    const result = parseNameRecordFile({
+      ...validNameDossier,
+      entityType: "country",
+    });
+
+    expect(result.success).toBe(false);
+    expect(result.errors).toContainEqual(
+      expect.objectContaining({
+        path: "entityType",
+        message: "entityType must be 'people' (v1 scope, migration 029)",
+      })
     );
   });
 

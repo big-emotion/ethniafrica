@@ -204,7 +204,7 @@ describe("source tier vocabulary contract", () => {
   // @req REQ-092
   it("makes the public API serializer refuse a retired tier value", () => {
     const source = {
-      id: "11111111-1111-1111-1111-111111111111",
+      id: "11111111-1111-4111-8111-111111111111",
       sourceKey: null,
       sourceKind: null,
       identifiers: null,
