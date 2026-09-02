@@ -139,15 +139,21 @@ export function AnecdoteCard({
         {fact.sources?.length ? (
           <ul className="anecdote-sources">
             {fact.sources.map((source) => (
-              <li key={source.url}>
-                <a
-                  href={source.url}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="anecdote-source-link"
-                >
-                  {source.title}
-                </a>
+              <li key={source.title}>
+                {/* A work with no address is printed as a reference rather
+                    than as a link that goes nowhere. */}
+                {source.url ? (
+                  <a
+                    href={source.url}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    className="anecdote-source-link"
+                  >
+                    {source.title}
+                  </a>
+                ) : (
+                  <cite className="anecdote-source-cite">{source.title}</cite>
+                )}
                 <span className="anecdote-source-tier">
                   {DID_YOU_KNOW_TIER_LABEL[source.tier]}
                 </span>
@@ -311,6 +317,12 @@ export function AnecdoteCard({
           color: var(--afh-text-soft);
           text-decoration: underline;
           text-underline-offset: 2px;
+        }
+        /* Same ink as a linked source, without the underline that would
+           promise a destination this one does not have. */
+        .anecdote-source-cite {
+          color: var(--afh-text-soft);
+          font-style: italic;
         }
         .anecdote-source-tier {
           font-family: var(--font-mono, ui-monospace, monospace);
