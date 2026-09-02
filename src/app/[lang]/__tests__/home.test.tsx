@@ -126,11 +126,11 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   });
 
   // @req REQ-113
-  it("names the five real corpus classes in the headline and shows exactly two sourced facts", async () => {
+  it("states the five real corpus classes and shows exactly two sourced facts", async () => {
     await renderHome();
 
-    expect(screen.getByRole("heading", { level: 1 })).toHaveAccessibleName(
-      /peuples.*langues.*pays.*familles linguistiques.*appellations/i
+    expect(screen.getByTestId("home-hero-census").textContent).toMatch(
+      /peuples.*langues.*pays.*familles.*appellations/i
     );
     expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
     expect(
@@ -156,25 +156,29 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
 
   // A rejected count query means “unknown”, never “empty”. The other hero
   // data still renders because each server read owns its own fallback, and
-  // the headline keeps every class word while dropping its figure — see
-  // headlineSegments' own doctrine for a class whose total could not be read.
+  // the census keeps every class word while withholding its figure — see
+  // corpusCensus' own doctrine for a class whose total could not be read.
   // @req REQ-113
-  it("keeps the home usable and drops every headline figure on read failure", async () => {
+  it("keeps the home usable and withholds every census figure on read failure", async () => {
     getCorpusCountsMock.mockRejectedValueOnce(new Error("database offline"));
 
-    const { container } = await renderHome();
+    await renderHome();
 
     expect(screen.getByRole("search")).toBeInTheDocument();
-    const segments = container.querySelectorAll(
-      ".home-hero-headline-reel [data-reel-sizer] > span"
-    );
-    expect(Array.from(segments).map((el) => el.textContent)).toEqual([
+
+    const census = screen.getByTestId("home-hero-census");
+    for (const word of [
       "peuples",
       "langues",
       "pays",
       "familles",
       "appellations",
-    ]);
+    ]) {
+      expect(census.textContent).toContain(word);
+    }
+    // Every class marked unreadable, and not one of them printed as a zero.
+    expect(census.querySelectorAll(".is-unavailable")).toHaveLength(5);
+    expect(census.textContent).not.toContain("0");
   });
 
   // @req REQ-113

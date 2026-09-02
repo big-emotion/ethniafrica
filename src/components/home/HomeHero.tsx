@@ -2,14 +2,11 @@ import Image from "next/image";
 
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
-import {
-  HEADLINE_ACCESSIBLE_NAME,
-  headlineSegments,
-} from "@/lib/home/headlineSegments";
+import { corpusCensus, type CensusEntry } from "@/lib/home/corpusCensus";
 import type { HomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 
-import { HomeHeadlineReel } from "./HomeHeadlineReel";
+import { HomeCensusLine } from "./HomeCensusLine";
 import { HomeHeroSearch } from "./HomeHeroSearch";
 
 /**
@@ -30,12 +27,11 @@ export interface HomeHeroProps {
   /** Documented peoples per country, forwarded to the globe's honest field. */
   peopleCountsByCountry?: Record<string, number>;
   /**
-   * The classes the headline turns through, figures included, built by the
-   * server page from the same totals the counters show. Defaults to the five
-   * classes without their figures, so Storybook and a test can render the band
-   * with no database behind it.
+   * The five corpus classes and their sizes, counted per request by the server
+   * page. Defaults to the classes without their figures, so Storybook and a
+   * test can render the band with no database behind it.
    */
-  headline?: string[];
+  census?: CensusEntry[];
   /** The visual drawn once by the server for this page request. */
   visual?: HomeHeroVisual;
 }
@@ -45,7 +41,7 @@ export interface HomeHeroProps {
 export function HomeHero({
   seedWords,
   peopleCountsByCountry,
-  headline = headlineSegments(null),
+  census = corpusCensus(null),
   visual = { kind: "globe" },
 }: HomeHeroProps = {}) {
   return (
@@ -59,28 +55,24 @@ export function HomeHero({
       {/* The shell keeps every hero item on the page's shared content edge. */}
       <div className="afh-shell home-hero-inner">
         <header className="home-hero-copy afh-phone-centred">
-          {/* Every fragment is a string inside an expression, never bare JSX
-              text beside one: SWC drops the space between an expression and
-              the text that follows it on the same line — the bug documented
-              below, which shipped « EthniAfricapublie » and which no test in
-              this repo reproduces. Inside a string literal no whitespace rule
-              applies, so the spaces around the reel are safe.
+          {/* One string inside an expression, never bare JSX text: SWC drops
+              the space between an expression and the text that follows it on
+              the same line — the bug that shipped « EthniAfricapublie » and
+              which no test in this repo reproduces. Inside a string literal no
+              whitespace rule applies.
 
               The no-break space before « ? » is the French rule, and it is
               load-bearing rather than typographic politeness: the headline
               wraps on a phone, and a plain space lets « ? » start a line of
-              its own.
+              its own. Written as an escape because the character is invisible
+              in a diff, and a plain space typed here would survive review.
 
-              aria-label, not the content: the reel turns every four seconds
-              and a level-one heading is a landmark. The name states all five
-              classes once and never moves. */}
-          <h1 aria-label={HEADLINE_ACCESSIBLE_NAME}>
-            <span className="home-hero-headline-line">
-              {"Une question sur les "}
-            </span>
-            <HomeHeadlineReel segments={headline} />
-            <span className="home-hero-headline-line">{" d'Afrique ?"}</span>
-          </h1>
+              And no aria-label. The heading used to show one class that turned
+              every few seconds while its accessible name listed all five — a
+              landmark whose name was a different sentence from its text. The
+              census line below carries the five classes now, so the heading
+              says the one thing it means and is called by it. */}
+          <h1>{"Une question sur l'Afrique\u00a0?"}</h1>
           {/* One string, not the product name followed by JSX text. Next's
               SWC transform drops the space between an expression and the text
               that follows it on the same line, so the band once shipped
@@ -94,6 +86,13 @@ export function HomeHero({
             {`${PRODUCT_NAME} y répond fiche par fiche, en accès libre, ` +
               `et donne la source de chaque réponse.`}
           </p>
+
+          {/* What the corpus holds, counted per request by the server page.
+              This is the half of the retired reel that mattered: it named a
+              class and gave its size, one at a time. The line states all five
+              at once, and states them to every reader — the reel never armed
+              at all under prefers-reduced-motion. */}
+          <HomeCensusLine entries={census} />
 
           {/* Search is the band's primary action; seed words keep its three
               corpus entry types visible before the reader starts typing. */}
@@ -167,6 +166,15 @@ export function HomeHero({
           margin: 0 auto;
           text-align: center;
         }
+        /* \`balance\` is back, and now it has something to balance.
+
+           It was dropped when the headline carried the reel: an inline-block
+           sized to its longest segment — 512px of the copy column's 648 at
+           1440 — cannot share a line with anything, so balancing spent its
+           freedom on the three words left over and broke the band as
+           « Une question / sur les / 790 peuples / d'Afrique ? ». The
+           headline is six short words of plain text again, which is exactly
+           the case balance is for. */
         .home-hero-copy h1 {
           font-family: var(--afh-font-display);
           font-weight: 900;
@@ -174,22 +182,7 @@ export function HomeHero({
           line-height: 1.04;
           margin: 0 0 16px;
           color: var(--afh-text);
-        }
-
-        /* Three lines, declared rather than balanced.
-
-           The reel is an inline-block sized to its longest segment — 512px of
-           the copy column's 648 at 1440 — so it cannot share a line with
-           anything, and \`text-wrap: balance\` spent its freedom on the words
-           that were left: the headline broke as « Une question / sur les /
-           790 peuples / d'Afrique ? », four lines with a widow in the middle.
-           Blocks put the break where the sentence already has its joint, and
-           give the same three lines at 430 that the phone was getting by
-           accident. \`balance\` is gone with the same change: it has nothing
-           left to balance, and leaving it would only invite the next reader to
-           think it is doing something. */
-        .home-hero-headline-line {
-          display: block;
+          text-wrap: balance;
         }
 
         /* A class, not \`.home-hero-copy p\`: a descendant selector outranks
@@ -207,6 +200,54 @@ export function HomeHero({
           font-size: var(--afh-text-body);
           line-height: var(--afh-leading-body);
           color: var(--afh-text);
+        }
+
+        /* The cartouche: what the corpus holds, under the answer.
+
+           A rank below the prose it follows — small size, soft ink — because
+           these are the corpus's own measurements and not the band's argument.
+           The figures alone take full ink, so the line reads as five totals
+           rather than as a sentence.
+
+           \`balance\` rather than \`pretty\`: the entries are of very uneven
+           length ("54 pays" against "3 134 appellations") and at 430px the
+           line takes three rows, where balance keeps them even instead of
+           leaving one word alone on the last. */
+        .home-hero-census {
+          margin: 12px auto 0;
+          max-width: 52ch;
+          font-size: var(--afh-text-small);
+          line-height: var(--afh-leading-small);
+          color: var(--afh-text-soft);
+          font-variant-numeric: tabular-nums;
+          text-wrap: balance;
+        }
+        /* An entry never breaks internally: its figure, its word and the
+           separator that precedes it travel together or not at all. */
+        .home-hero-census-entry {
+          white-space: nowrap;
+        }
+        .home-hero-census-figure {
+          font-weight: 700;
+          color: var(--afh-text);
+        }
+        /* A total the server could not read drops to the quiet-text ink and
+           to book weight, so it reads as visibly not a figure and can never be
+           mistaken for one.
+
+           \`--afh-fg-muted\`, not \`--afh-text-muted\`: the two are the same
+           hue on parchment but the second is reserved for non-text marks, and
+           it measures 3.29:1 on a card — textColorContrastSweep catches the
+           substitution, which is how this line was first written. */
+        .home-hero-census-figure.is-unavailable {
+          font-weight: 400;
+          color: var(--afh-fg-muted);
+        }
+        /* No colour of its own: the separator inherits the line's soft ink.
+           A dimmer punctuation mark would have to come from the non-text
+           ramp, which is exactly the token this line may not use. */
+        .home-hero-census-sep {
+          padding-inline: 0.5ch;
         }
 
         .home-hero-visual {

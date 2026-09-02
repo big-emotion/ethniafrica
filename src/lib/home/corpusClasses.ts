@@ -1,7 +1,7 @@
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 /**
- * The five classes the home's headline declares, in one list.
+ * The five classes the home's census line declares, in one list.
  *
  * `import type` only: this list is read by a client component, and
  * `corpusCounts` reaches Supabase. The type is erased at build; the services
@@ -14,15 +14,21 @@ import type { CorpusCounts } from "@/lib/home/corpusCounts";
  */
 export interface CorpusClass {
   key: keyof CorpusCounts;
-  headlineWord: string;
+  /**
+   * The plural noun the census prints. Named for the line that carries it
+   * rather than for the h1: the headline named a class until the census line
+   * took the job, and a field called `headlineWord` outlived that by exactly
+   * as long as nobody re-read it.
+   */
+  censusWord: string;
 }
 
 // @req REQ-113
 export const CORPUS_CLASSES: readonly CorpusClass[] = [
-  { key: "peoples", headlineWord: "peuples" },
-  { key: "languages", headlineWord: "langues" },
-  { key: "countries", headlineWord: "pays" },
-  { key: "families", headlineWord: "familles" },
+  { key: "peoples", censusWord: "peuples" },
+  { key: "languages", censusWord: "langues" },
+  { key: "countries", censusWord: "pays" },
+  { key: "families", censusWord: "familles" },
   {
     // Appellations, not patronymes. This counts the folded name *forms* of the
     // peoples — 742 endonyms against 2742 exonyms — which is the corpus's own
@@ -33,6 +39,6 @@ export const CORPUS_CLASSES: readonly CorpusClass[] = [
     // group, which returns patronyme fiches — two different objects that
     // happen to both be names.
     key: "nameForms",
-    headlineWord: "appellations",
+    censusWord: "appellations",
   },
 ];
