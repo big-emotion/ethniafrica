@@ -61,8 +61,8 @@
     }
   ],
   "casteOrSocialFunction": {
-    "value": "Lignage de forgerons (numu), l'une des castes nyamakalaw ; le jamu est nommément rangé parmi les lignages numu, aux côtés de Kanté.",
-    "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste"]
+    "value": "Lignage de forgerons (numu) : Charry range nommément le jamu parmi les lignages numu, aux côtés de Kanté. Le dictionnaire des jamuw donne toutefois trois statuts pour la même entrée Kàmara — hɔ̀rɔn, finɛ et nùmu au Wassoulou —, si bien que la fonction de forgeron vaut pour une part du jamu et non pour tout ce qui le porte.",
+    "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"]
   },
   "bearers": [],
   "homonyms": [],

@@ -208,7 +208,7 @@
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. L'absence de fonction héréditaire est donc ici un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
+      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. Le dictionnaire des jamuw va dans le même sens par son silence : l'entrée Kéyità est l'une des rares du bloc mandé à ne porter aucun marqueur de statut, là où Traoré, Coulibaly, Camara, Diabaté, Kouyaté, Bamba et Fofana en portent tous au moins un. L'absence de fonction héréditaire est donc un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
     },
     {
       "fieldPath": "homonyms",

@@ -93,7 +93,10 @@
       "sourceRefs": ["bamadaba-jamuw"]
     }
   ],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Le dictionnaire des jamuw donne à l'entrée Kùlibàli le statut hɔ́rɔn, puis tontigi chez les Bamana, les Maninka et les Minianka, puis numu (forgeron) au Wassoulou. Le jamu porte donc à la fois une condition libre et, selon l'aire, une fonction artisanale héréditaire.",
+    "sourceRefs": ["bamadaba-jamuw"]
+  },
   "bearers": [],
   "homonyms": [],
   "sources": [
@@ -139,10 +142,6 @@
     }
   ],
   "gaps": [
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le statut horon que lui prêtent les répertoires courants n'a donc pas été retrouvé dans une source dédiée, et n'est pas affirmé ici."
-    },
     {
       "fieldPath": "bearers",
       "reason": "Biton Coulibaly, fondateur du royaume bambara de Ségou, est amplement documenté, mais comme figure politique : aucune source consultée ne s'appuie sur lui pour établir l'origine du jamu, et la fiche ne l'enregistre donc pas en porteur."

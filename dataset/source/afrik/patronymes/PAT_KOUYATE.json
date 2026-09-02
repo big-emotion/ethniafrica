@@ -93,11 +93,13 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": {
-    "value": "Jeli (griot) : fonction héréditaire de dépositaire de la parole, de l'histoire et de la médiation, exercée par un groupe endogame distinct des clans horon. Kouyaté est l'un des deux jamuw que Charry donne comme signalant par eux-mêmes l'appartenance jeli.",
+    "value": "Jeli (griot) : fonction héréditaire de dépositaire de la parole, de l'histoire et de la médiation, exercée par un groupe endogame distinct des clans horon. La charge est nommée jusqu'à la cour impériale — le griot du mansa était toujours pris dans le clan Kouyaté, que la tradition fait descendre de Balla Fasséké. Kouyaté est l'un des deux jamuw que Charry donne comme signalant par eux-mêmes l'appartenance jeli. Le dictionnaire des jamuw attache en outre à l'entrée le statut garanke, qu'il ne glose pas.",
     "sourceRefs": [
+      "gha-iv-mali",
       "jelis-multilingualism-2024",
       "charry-1996-jembe",
-      "tamari-1991-caste"
+      "tamari-1991-caste",
+      "bamadaba-jamuw"
     ]
   },
   "bearers": [
@@ -161,6 +163,22 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, p. 221-250 ; dépôt ouvert HAL-SHS. Établit que les groupes endogames d'artisans et de musiciens se rencontrent chez plus de quinze peuples ouest-africains et qu'ils sont attestés chez les Malinké au plus tard vers 1300. Utilisé pour l'institution de la caste, jamais pour rattacher un clan nommé à une caste : cette attribution-là vient d'une autre source."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, p. 117-171), donne lignage par lignage l'implantation des clans malinké : les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi (p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 n. 43) —, les griots Diabaté de Keyla et la réfection septennale du Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une chronique : les claims qu'il porte ici sont donc rangés hors writtenChronicles."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
     }
   ],
   "gaps": [
