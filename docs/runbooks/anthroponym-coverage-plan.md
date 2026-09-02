@@ -27,27 +27,34 @@ attested in the same country, which puts Burundi ahead of Algeria.
 
 ## Where things stand
 
-|                                   |                                    |
-| --------------------------------- | ---------------------------------: |
-| `PAT_*` fiches                    | 777 — 30 researched, 747 generated |
-| Countries with ≥ 1 fiche          |                            54 / 54 |
-| Countries with zero               |                                  0 |
-| **Countries meeting their quota** |                        **54 / 54** |
-| Candidates queued                 |                                848 |
-| Queue deficit against quota       |               0 — wave 0 is closed |
+|                                   |                                     |
+| --------------------------------- | ----------------------------------: |
+| `PAT_*` fiches                    | 777 — 242 documented, 535 remaining |
+| Countries with ≥ 1 fiche          |                             54 / 54 |
+| Countries with zero               |                                   0 |
+| **Countries meeting their quota** |                         **54 / 54** |
+| Candidates queued                 |                                 848 |
+| Queue deficit against quota       |                0 — wave 0 is closed |
 
-The coverage target is met. What it means is narrow, and worth stating plainly:
-747 of those fiches assert a name, its countries and its peoples, and nothing
-else. They cite one source — the queue — at `unverified` × `ai_generated`, which
-is 0.2, and carry a gap on every field research has not filled. Coverage is not
-knowledge, and waves 2+ are where that changes.
+The coverage target is met, and has been since wave 1. What it means is narrow,
+and worth stating plainly: a fiche can name a name, its countries and its
+peoples and assert nothing else. 207 still do — they cite one source, the queue,
+at `unverified` × `ai_generated`, which is 0.2. Coverage is not knowledge, and
+waves 2+ are where that changes.
 
-The generator prints the deficit per country on every run — it is the progress
-meter for wave 0, not an error:
+Two counts move, so neither is written here by hand. The generator prints the
+per-country deficit — the progress meter for wave 0, not an error — and the
+depth report prints how far past wave 1 each family has come:
 
 ```bash
 node scripts/afrik/buildAnthroponymCandidates.mjs
+npx tsx scripts/afrik/anthroponymDepthStatus.ts
 ```
+
+The second also prints the two `nommer` figures on the same perimeter, which is
+what `src/lib/dossiers/nommer/figures.ts` publishes. Recount them against the
+integration branch before changing them: every wave so far that edited them by
+hand published its own branch's partial count as the corpus total (#810).
 
 ## The waves
 
@@ -90,24 +97,60 @@ The table below is kept as the record of what that pass covered.
 
 The advice that stood here — run the three large families in parallel, start
 with NIGERCONGO because its first pass was thinnest — is what #774 did, in one
-pass over all six. It transfers to the 747 generated fiches, which are now the
-whole of the remaining depth work.
+pass over all six. It transfers to the generated fiches, which are the whole of
+the remaining depth work — and the ordering it argued for still holds, since
+NIGERCONGO is again the thinnest.
 
-#### After wave 1 — all 24 families, by peoples per family
+#### After wave 1 — where each family actually is
 
-| Family                    | Peoples | Fiches today | What it opens                           |
-| ------------------------- | ------: | -----------: | --------------------------------------- |
-| FLG_NIGERCONGO            |     180 |           12 | Broadest, most heterogeneous            |
-| FLG_BANTU                 |     174 |        **0** | Largest block, entirely uncovered today |
-| FLG_BENOUECONGO           |      60 |            1 | Yoruba oríkì and Igbo naming            |
-| FLG_COUCHITIQUE           |      58 |        **0** | Somali `qabiil` and the Oromo systems   |
-| FLG_MANDE                 |      32 |           10 | Already the deepest                     |
-| FLG_ATLANTIQUE            |      28 |            1 | Fulɓe and Wolof clans                   |
-| FLG_BERBERE               |      14 |            2 | Nisba                                   |
-| the remaining 17 families |       — |            0 | By size                                 |
+Seventeen depth waves have merged since wave 1. This is what they left, measured
+on `recette` after #811 — regenerate it with
+`npx tsx scripts/afrik/anthroponymDepthStatus.ts` rather than editing the
+numbers, and read the PR named in the last column before opening a session on a
+family, so you resume its wave instead of re-deriving it.
 
-Note FLG_BANTU: 174 peoples and **not one fiche**. It is the single largest gap
-in the name dimension, and no amount of depth work reaches it before wave 1.
+A fiche attested in two families counts in both, so the column does not sum to 777.
+
+| Family                  | Fiches | Documented | Remaining | Queue only |  Last wave |
+| ----------------------- | -----: | ---------: | --------: | ---------: | ---------: |
+| `FLG_BANTU`             |    176 |         38 |       138 |          0 |       #811 |
+| `FLG_NIGERCONGO`        |    126 |         12 |       114 |    **110** | #780, part |
+| `FLG_SEMITIQUE`         |    100 |         33 |        67 |          0 |       #808 |
+| `FLG_BENOUECONGO`       |     53 |         25 |        28 |          0 |       #806 |
+| `FLG_MANDE`             |     36 |         10 |        26 |     **25** | #779, part |
+| `FLG_CREOLE`            |     44 |         25 |        19 |          0 |       #802 |
+| `FLG_BERBERE`           |     16 |          1 |        15 |          0 |       #791 |
+| `FLG_AUSTRONESIENNE`    |     20 |          6 |        14 |          0 |       #795 |
+| `FLG_ATLANTIQUE`        |     25 |         14 |        11 |          0 |       #797 |
+| `FLG_COUCHITIQUE`       |     33 |         26 |         7 |          0 |       #793 |
+| `FLG_KROU`              |      6 |          0 |         6 |          0 |       #792 |
+| `FLG_NILOSAHARIENNE`    |      5 |          0 |         5 |          0 |       #801 |
+| `FLG_SONGHAY`           |     10 |          6 |         4 |          0 |       #800 |
+| `FLG_GUR`               |     19 |         16 |         3 |          0 |       #799 |
+| `FLG_NILOTIQUE`         |     24 |         22 |         2 |          0 |       #807 |
+| `FLG_TCHADIQUE`         |     16 |         16 |         0 |          0 |       #805 |
+| `FLG_SOUDANIQUECENTRAL` |      5 |          5 |         0 |          0 |       #804 |
+| `FLG_KHOE`              |      2 |          2 |         0 |          0 |       #798 |
+| `FLG_SAHARIEN`          |      1 |          1 |         0 |          0 |       #796 |
+| _no people_             |     78 |          0 |        78 |     **72** |       #789 |
+
+Two readings the table is there to give.
+
+**FLG_NIGERCONGO and FLG_MANDE are the only families that never had a wave.**
+Their rows carry the whole of the corpus's remaining `queue only` count outside
+the people-less fiches — 135 of 207. They are the last places where a fiche says
+nothing at all, and they come first for that reason.
+
+**Everywhere else the work is a tail, not a gap.** 328 fiches sit in families
+whose wave has already merged: the source usually exists and the shortfall is an
+origin chapter or an undeclared `transmissionMode`. `FLG_BERBERE` and `FLG_KROU`
+are almost entirely the second kind, so one session that settles the
+transmission question finishes them.
+
+The 78 fiches with no people are reachable by no family-ordered wave at all, by
+construction. #789 attached the eleven a source could name and recorded, on each
+of the rest, what was searched; six wait on a people fiche the corpus does not
+have yet — Coptic, Bari, Bamoun, Ja'aliyyin, Shaigiya.
 
 ---
 
@@ -354,18 +397,25 @@ deciding anything about how the section looks.
 | Wave 0, per country               | nothing                         | done — 848 queued, deficit 0      |
 | Depth on the six covered families | the 30 fiches                   | done — #774, all six in one pass  |
 | Wave 1                            | better after wave 0             | done — 747 fiches, 54/54 at quota |
-| Depth on the 747 generated fiches | wave 1, for the fiches to exist | the remaining work, by family     |
+| Depth on the generated fiches     | wave 1, for the fiches to exist | 242 documented, 535 remaining     |
 
-Everything up to and including wave 1 is closed. What is left is depth on the
-747, which is the long haul: one fiche at a time, a dedicated source per name,
-and **no source carried from one fiche to the next** — the failure #774 had to go
-back and repair.
+Everything up to and including wave 1 is closed, and seventeen depth waves have
+merged on top. What is left is the long haul: one fiche at a time, a dedicated
+source per name, and **no source carried from one fiche to the next** — the
+failure #774 had to go back and repair.
+
+A wave that lands is not the same as a family that is finished. Every merged
+wave so far has left a tail — most often a `transmissionMode` its sources did not
+establish, which is the right call to make and the wrong one to leave silent. A
+fiche that keeps `other` is finished only once a gap on that field says what was
+searched.
 
 One operational lesson from getting here: waves 0 and 1 were authored in a
 session that could not see #774 and #776 landing on `recette` in parallel, and
-the two collided on seven files. Depth over 747 fiches is far more divisible than
-that — split it by linguistic family, one branch per family, and the collisions
-stay inside a family instead of across the corpus.
+the two collided on seven files. Depth is far more divisible than that — split it
+by linguistic family, one branch per family, and the collisions stay inside a
+family instead of across the corpus. Seventeen waves have since run that way and
+none of them collided.
 
 Wave 1 is a generator, so re-running it after wave 0 grows the queue costs
 nothing — the sequencing above is about not reviewing the same 780 fiches twice,
