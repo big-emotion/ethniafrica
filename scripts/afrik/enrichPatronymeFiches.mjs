@@ -89,19 +89,27 @@ async function main() {
     join(FICHES, "PAT_KEITA.json")
   );
 
-  // A research entry with no fiche is still a hard failure: it means a claim
-  // was written for a name the corpus does not carry.
+  // A fiche the research pass silently skipped is the exact failure this whole
+  // exercise exists to correct, so the two sets must match before anything is
+  // written.
   //
-  // The reverse direction stopped being one when the candidate queue landed.
-  // A fiche with no research entry used to mean the pass had silently skipped
-  // it; it now means the queue has generated a fiche this pass has not reached
-  // yet, which is the ordinary state of the corpus and not an error. It is
-  // reported as a count so the size of the backlog stays visible.
+  // "The two sets" is the selection pass's roster, not everything on disk. The
+  // coverage waves write PAT_* fiches from the candidate queue through a
+  // different pipeline, and there are now 777 files against these 30 dossiers;
+  // comparing against the directory made every one of those a missing research
+  // entry and this script exited 1 without writing anything. _manifest.json is
+  // the selection pass's own record of what it produced, so it is what this
+  // table owes an entry for.
   const onDisk = readdirSync(FICHES)
     .filter((f) => f.startsWith("PAT_") && f.endsWith(".json"))
     .map((f) => f.replace(/\.json$/, ""));
+  const selected = JSON.parse(
+    readFileSync(join(FICHES, "_manifest.json"), "utf8")
+  ).entries.map(({ id }) => id);
   const researched = new Set(Object.keys(RESEARCH));
-  const awaitingResearch = onDisk.filter((id) => !researched.has(id)).length;
+  for (const id of selected) {
+    if (!researched.has(id)) errors.push(`${id}: fiche has no research entry`);
+  }
   for (const id of researched) {
     if (!onDisk.includes(id)) errors.push(`${id}: research entry has no fiche`);
   }
@@ -134,10 +142,6 @@ async function main() {
       "bearers",
       "homonyms",
       "spellings",
-      // A people or a country association is itself a claim, and research can
-      // replace the corpus passage that carried it with a dedicated source.
-      "peoples",
-      "countries",
       "nisbaSubtype",
       "patronymicChainDepth",
       "totemicFoodProhibition",
@@ -145,6 +149,36 @@ async function main() {
     ]) {
       if (claims[field] === undefined) continue;
       fiche[field] = claims[field];
+      filledFields += 1;
+    }
+
+    // Research can extend the reach of a name, not only explain it: a dated
+    // attestation in a country the selection pass never saw belongs in the
+    // fiche's own associations. These two merge rather than overwrite, because
+    // the coverage waves append to the same arrays from a different table —
+    // overwriting would silently delete their entries on the next run here.
+    for (const [field, key] of [
+      ["peoples", "peopleId"],
+      ["countries", "countryId"],
+    ]) {
+      if (claims[field] === undefined) continue;
+      const existing = new Map(
+        (fiche[field] ?? []).map((entry) => [entry[key], entry])
+      );
+      for (const entry of claims[field]) {
+        const already = existing.get(entry[key]);
+        // An association both waves attest keeps both citations. Dropping the
+        // researched one because the queue got there first would leave the
+        // weaker source standing alone for a claim a stronger one also makes.
+        if (already) {
+          already.sourceRefs = [
+            ...new Set([...(already.sourceRefs ?? []), ...entry.sourceRefs]),
+          ];
+          continue;
+        }
+        existing.set(entry[key], entry);
+      }
+      fiche[field] = [...existing.values()];
       filledFields += 1;
     }
 
@@ -180,8 +214,7 @@ async function main() {
 
   for (const e of errors) console.error(`ERROR ${e}`);
   console.log(
-    `${enriched} fiches enriched, ${filledFields} fields written, ` +
-      `${remainingGaps} gaps remaining, ${awaitingResearch} fiches awaiting research`
+    `${enriched} fiches enriched, ${filledFields} fields written, ${remainingGaps} gaps remaining`
   );
   if (errors.length) process.exit(1);
 }
