@@ -10,7 +10,7 @@ describe("openapiValidator", () => {
     const errors = validateAgainstSchema(
       { $ref: "#/components/schemas/CountryDetailEnvelope" },
       {
-        data: { id: "ZWE" },
+        data: { id: "ZWE", patronymes: { attested: [], borneByPeoples: [] } },
         meta: { license: "CC-BY-SA-4.0", attribution: "EthniAfrica" },
         errors: [],
       }

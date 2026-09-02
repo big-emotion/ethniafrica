@@ -22,12 +22,23 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Les Nxumalo forment une section du clan ndwandwe. Le nom de clan aba-kwa-Nxumalo, « ceux de Nxumalo », fut créé pour dénouer une infraction à l'exogamie : le chef épousa une femme de son propre clan, union prohibée, et la famille de l'épouse reçut un nom de clan neuf afin que le mariage cessât d'être incestueux. Le nom procède ici d'un acte de droit matrimonial, non d'un ancêtre ni d'un totem.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
     "linguisticReconstructions": [
       {
         "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
         "claimStatus": "established",
         "sourceRefs": ["nomina-africana-nguni-naming"]
+      },
+      {
+        "claim": "L'explication courante rattache Nxumalo à l'umNxuma, entonnoir de cuir par lequel on faisait téter un nourrisson, Manukuza ayant perdu sa mère en bas âge. Bryant rapporte cette explication comme celle qu'on donne d'ordinaire et la juge peu convaincante, sans en proposer d'autre : l'étymologie du nom reste ouverte.",
+        "claimStatus": "contested",
+        "sourceRefs": ["bryant-1929-olden-times"]
       }
     ]
   },
@@ -65,6 +76,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
     }
   ],
   "gaps": [
@@ -74,15 +93,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée : les Nxumalo sont une section d'un clan royal, statut politique et non charge de spécialistes."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Bryant nomme plusieurs Nxumalo (Mkatshwa, Malusi, Sotondose) mais la généalogie ndwandwe est, de son propre aveu, si contradictoire que la certitude n'est plus atteignable dans ses états anciens ; aucun porteur n'est donc enregistré sur cette base."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée : les occurrences relevées chez Bryant renvoient toutes à la section ndwandwe."
     }
   ]
 }

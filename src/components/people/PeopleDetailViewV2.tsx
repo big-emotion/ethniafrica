@@ -34,6 +34,8 @@ import { OralNarrativesSection } from "@/components/people/OralNarrativesSection
 import { MediaCreditSection } from "@/components/people/MediaCreditSection";
 import { ExternalRegistryLinksSection } from "@/components/people/ExternalRegistryLinksSection";
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
+import { PeopleBorneNamesSection } from "@/components/patronymes/PeopleBorneNamesSection";
+import type { PatronymeLinkSummary } from "@/api/v2/services/patronymeFicheLinks";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 import type { PeopleFicheNotes } from "@/components/people/peopleFicheNotes";
@@ -60,6 +62,12 @@ export interface PeopleDetailViewV2Props {
    */
   notes?: PeopleFicheNotes;
   bibliography?: readonly FicheSourceEntry[];
+  /**
+   * The names this people bears (REQ-133), resolved by the route. `null` says
+   * the read failed; an empty array says the corpus holds none, which is the
+   * ordinary answer today and is printed as such.
+   */
+  borneNames?: PatronymeLinkSummary[] | null;
 }
 
 /**
@@ -109,6 +117,7 @@ export function PeopleDetailViewV2({
   relations = [],
   notes,
   bibliography,
+  borneNames = null,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
   /**
@@ -217,6 +226,13 @@ export function PeopleDetailViewV2({
 
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
       <PeopleNamesSection data={data.names} />
+
+      {/* The second naming register, next to the first: the chapter above
+          holds what this people is *called* — its ethnonyms, and the exonyms
+          imposed on it — and this one what its members *bear*. Reading them
+          apart is how "nom" came to mean two unrelated things in this
+          codebase; on the page they answer each other. */}
+      <PeopleBorneNamesSection patronymes={borneNames} />
 
       <FicheSection title="Culture & spiritualité">
         {hasCultureContent(data.culture) ? (
