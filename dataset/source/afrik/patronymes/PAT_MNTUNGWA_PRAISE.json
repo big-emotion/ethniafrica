@@ -10,7 +10,12 @@
   "spellings": [
     {
       "spelling": "Mntungwa",
-      "attestations": [{ "countryId": "ZAF", "sourceRefs": ["nwu-zulu-names"] }]
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["nwu-zulu-names"]
+        }
+      ]
     }
   ],
   "transmissionMode": "patrilineal",
@@ -42,7 +47,18 @@
       }
     ]
   },
-  "peoples": [],
+  "peoples": [
+    {
+      "peopleId": "PPL_NGUNI",
+      "status": "attested",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "peopleId": "PPL_ZULU",
+      "status": "supposed",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
   "countries": [
     {
       "countryId": "ZAF",

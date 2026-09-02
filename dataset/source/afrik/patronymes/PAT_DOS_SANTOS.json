@@ -11,15 +11,27 @@
     {
       "spelling": "dos Santos",
       "attestations": [
-        { "countryId": "AGO", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "MOZ", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "AGO",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "MOZ",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Santos",
       "attestations": [
-        { "countryId": "AGO", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "MOZ", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "AGO",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "MOZ",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -84,7 +96,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "La file d'attente ne rattache ce nom à aucun peuple du corpus : soit le nom ne désigne aucun groupe, soit le corpus ne porte pas de fiche pour la population concernée. Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Recherche : « dos Santos », « Santos » ont été cherchées dans les 800 fiches peuple du corpus — appellations, ethnicités, organisation clanique, prose historique et sources — pour 7 occurrences, toutes écartées : les occurrences désignent le missionnaire portugais João dos Santos, cité comme source ancienne par les fiches ndau, non un groupe porteur du nom. Aucun des 87 peuples du corpus présents dans les pays de la fiche (Angola et Mozambique) ne rattache ce nom à un groupe, et la file d'attente des candidats — seule source de la fiche — n'en identifie aucun. Piste : les seules attestations de patronymes portugais du corpus concernent les populations créoles de Guinée-Bissau (PPL_ANAFRO_CRIOULO, PPL_PAPELO) ; aucun peuple documenté en Angola ne porte d'attestation de nom de famille portugais."
     }
   ]
 }

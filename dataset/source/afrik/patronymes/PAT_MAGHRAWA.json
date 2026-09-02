@@ -11,7 +11,10 @@
     {
       "spelling": "Maghrawa",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["brown-sale-1971"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["brown-sale-1971"]
+        }
       ]
     }
   ],
@@ -96,6 +99,10 @@
     {
       "fieldPath": "homonyms",
       "reason": "L'homonymie est structurelle dans un système de nisba : le nom marque l'appartenance à la tribu et non la descendance d'un lignage, de sorte que deux porteurs sans parenté le partagent normalement. Ce n'est donc pas ici une donnée à recenser."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Recherche : la fiche rattache le nom aux Zenata (PPL_ZENATA), documentés en Algérie, au Maroc, en Tunisie et en Libye, mais aucune des sources qu'elle déclare n'attribue à cette nisba un pays au sens des frontières actuelles — Ibn Khaldūn raisonne en aires tribales du Maghreb médiéval. La passe en cours ne portait que sur les peuples ; l'attribution par pays reste à établir."
     }
   ],
   "nisbaSubtype": {
