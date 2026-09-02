@@ -15,14 +15,19 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Eastern Kabyle",
+      "Far Western Kabyle",
+      "Tasahlit",
+      "Western Kabyle"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/kaby1243",
         "tier": "official",
-        "notes": "Glottolog name: Kabyle; classification includes Berber."
+        "notes": "Glottolog name: Kabyle; classification includes Berber. Les dialectes listés sont les sous-languoids que Glottolog rattache à kaby1243, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

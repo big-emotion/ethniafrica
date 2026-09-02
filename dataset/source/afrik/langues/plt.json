@@ -15,14 +15,22 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Antaimoro",
+      "Antambohoaka",
+      "Betsileo",
+      "Bezanozano",
+      "Merina",
+      "Sihanaka",
+      "Tañala"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/plat1254",
         "tier": "official",
-        "notes": "Glottolog name: Plateau Malagasy; classification includes Austronesian."
+        "notes": "Glottolog name: Plateau Malagasy; classification includes Austronesian. Les dialectes listés sont les sous-languoids que Glottolog rattache à plat1254, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

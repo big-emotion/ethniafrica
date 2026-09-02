@@ -15,14 +15,14 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": ["N|u", "||Ng!ke"],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/nngg1234",
         "tier": "official",
-        "notes": "Glottolog name: N||ng; classification includes Tuu."
+        "notes": "Glottolog name: N||ng; classification includes Tuu. Les dialectes listés sont les sous-languoids que Glottolog rattache à nngg1234, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }
