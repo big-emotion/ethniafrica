@@ -134,11 +134,15 @@ export function ConsentBanner() {
               fonctionnement du site. Les cookies analytiques et fonctionnels
               nous aident à améliorer nos services.
             </p>
+            {/* The canonical privacy document, the one the footer and the site
+                tree both name. This used to point at `/fr/confidentialite`, a
+                hand-written page that restated it — so the banner sent the
+                reader to a copy nothing else maintained. */}
             <Link
-              href="/fr/confidentialite"
+              href="/fr/politique-de-donnees"
               className="text-afh-small text-primary underline-offset-4 hover:underline w-fit"
             >
-              Politique de confidentialité
+              Politique de données
             </Link>
           </div>
 

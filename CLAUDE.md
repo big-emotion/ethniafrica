@@ -89,11 +89,12 @@ Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-cu
 
 Loading the corpus is `scripts/migrateAfrikToDatabase.ts --target=recette|production` (`--target=staging` is retired and throws). `scripts/lib/afrikSyncTarget.ts` checks in the recette ref only; production comes from `AFRIK_PRODUCTION_SUPABASE_URL` with **no default**, because the default used to hold the recette ref and every production deploy loaded the corpus into recette. Runbook: `docs/runbooks/afrik-data-sync.md`.
 
-### Supabase: three clients, never interchangeable
+### Supabase: two data clients, never interchangeable
 
-- `src/lib/supabase/client.ts` — browser, anon key
 - `src/lib/supabase/server.ts` — SSR / server components
 - `src/lib/supabase/admin.ts` — service-role key, **server-only**
+
+**The browser never reads the corpus from Supabase.** There used to be a third client — `client.ts`, anon key, browser — and this file described it for months after its last caller went away. Every read now goes through `/api/v2`, which is the better architecture, but it was only ever true in the code. The dead chain (`client.ts` ← `flags-client.ts` ← nobody) was removed rather than documented. `src/lib/supabase/auth-client.ts` is a separate, living thing: the browser authenticates directly, it just does not query.
 
 Migrations are numbered and sequential in `supabase/migrations/` (049 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret); production stays manual on purpose. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**; `jajggbeimfudpzcxytbb` serves **production** — invisible to this repo's Supabase token, so its ledger is read over a direct Postgres connection, never over the MCP. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
