@@ -14,7 +14,7 @@ import type { Language } from "@/types/shared";
  * the accent scope and the shell all read, so that "which facet am I on" has
  * exactly one answer instead of three that drift.
  */
-export type FacetKey = "peoples" | "families" | "countries";
+export type FacetKey = "peoples" | "families" | "countries" | "patronymes";
 
 export interface FacetDefinition {
   key: FacetKey;
@@ -96,6 +96,20 @@ export const FACETS: readonly FacetDefinition[] = [
     title: "Familles linguistiques",
     filterHint:
       "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
+  },
+  {
+    key: "patronymes",
+    page: "patronymes",
+    entityType: "patronyme",
+    // DEC-038's public word. The identifier stays `patronymes` because two
+    // other things in this repository are called "nom"; the reader sees the
+    // word a francophone types.
+    label: "Nom",
+    sectionName: "Noms",
+    eyebrow: "atlas · les noms d'Afrique",
+    title: "Les noms d'Afrique",
+    filterHint:
+      "La liste est faite de noms. Les filtres la restreignent sans changer sa nature : filtrer par peuple montre les noms que ce peuple porte, pas le peuple lui-même.",
   },
 ] as const;
 
