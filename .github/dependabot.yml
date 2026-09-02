@@ -1,10 +1,21 @@
 # https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# `target-branch: recette` on every entry, because without it Dependabot opens
+# against the default branch — `main`, the release branch. `main` only ever
+# receives merge commits from `recette`, so a bump landing there is reviewed
+# against a tree that is dozens of commits stale and is missing gates that live
+# on `recette` (`check:dead` among them). Two major-version PRs sat open for
+# weeks that way before anyone noticed they were being measured against the
+# wrong branch. Bumps belong where the code and the CI are.
+#
+# This file itself is read from the default branch, so it must stay on `main`.
 version: 2
 updates:
   # Keep SHA-pinned GitHub Actions up to date. Dependabot rewrites the SHA
   # and updates the trailing version comment on each release.
   - package-ecosystem: github-actions
     directory: "/"
+    target-branch: recette
     schedule:
       interval: weekly
       day: monday
@@ -18,6 +29,7 @@ updates:
   # npm dependencies — grouped to keep PR volume manageable.
   - package-ecosystem: npm
     directory: "/"
+    target-branch: recette
     schedule:
       interval: weekly
       day: monday
