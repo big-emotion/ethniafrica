@@ -194,7 +194,7 @@
     {
       "countryId": "GMB",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Mêmes clans que le bassin sénégambien, sous graphie anglophone : Jallow pour Diallo, Ceesay pour Cissé, Njie pour Ndiaye. La graphie, non le nom, distingue les deux pays.",
+      "onomasticNote": "Mêmes clans que le bassin sénégambien, sous graphie anglophone : Jallow pour Diallo, Ceesay pour Cissé, Njie pour Ndiaye. La graphie, non le nom, distingue les deux pays. Jallow et Bah sont rattachés à PPL_FULA alors que la fiche peule ne déclare pas la Gambie dans sa distribution par pays : les Peuls y forment pourtant près d'un cinquième de la population. La lacune est celle de la fiche de peuple, pas de l'attribution du nom.",
       "verificationLead": "Listes électorales gambiennes (IEC), Gambia Bureau of Statistics, onomastique mandingue",
       "quota": 10,
       "deficit": 0,
@@ -662,7 +662,7 @@
     {
       "countryId": "BFA",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi.",
+      "onomasticNote": "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi. Sankara reste sans peopleIds : le nom est revendiqué à la fois comme lignage silmi-mossi et comme jamu mandingue, et trancher sur la seule ascendance de Thomas Sankara reviendrait à déduire une lignée d'un porteur.",
       "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
       "quota": 20,
       "deficit": 0,
@@ -783,7 +783,7 @@
           "name": "Sanou",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_BOBO"],
           "countryId": "BFA",
           "provenance": {
             "tier": "unverified",
@@ -1420,7 +1420,7 @@
     {
       "countryId": "GNB",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Deux couches : patronymes ouest-africains sous graphie portugaise (Camará, Baldé, Djaló) et noms lusophones hérités de la colonisation (Vieira, Gomes, Pereira) portés sans ascendance européenne.",
+      "onomasticNote": "Deux couches : patronymes ouest-africains sous graphie portugaise (Camará, Baldé, Djaló) et noms lusophones hérités de la colonisation (Vieira, Gomes, Pereira) portés sans ascendance européenne. Même lacune de corpus qu'en Gambie : PPL_MALINKE et PPL_FULA ne déclarent pas la Guinée-Bissau alors que Mandingues et Peuls y pèsent chacun plus d'un dixième de la population ; l'attribution est maintenue et c'est la fiche de peuple qui reste à compléter. La strate lusophone reste sans peopleIds : imposée au baptême, elle traverse tous les groupes et n'en désigne aucun. Sanhá et Seidi le restent également, faute de rattachement établi.",
       "verificationLead": "Recenseamento Geral (INE Guiné-Bissau), listes électorales CNE, onomastique balante et manjaque",
       "quota": 10,
       "deficit": 0,
@@ -2178,7 +2178,7 @@
     {
       "countryId": "TGO",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Le sud éwé et le nord kabyè n'ont pas la même logique : au sud les noms renvoient au jour ou aux circonstances de naissance, au nord ils marquent le lignage.",
+      "onomasticNote": "Le sud éwé et le nord kabyè n'ont pas la même logique : au sud les noms renvoient au jour ou aux circonstances de naissance, au nord ils marquent le lignage. Lawson et Johnson sont les lignées marchandes mina d'Aného, pas des patronymes européens portés par hasard. Bodjona est un nom tem (kotokoli) : le corpus ne porte aucune fiche pour ce peuple, et le laisser sans peopleIds vaut mieux que le verser aux Kabyè voisins.",
       "verificationLead": "Listes électorales CENI Togo, INSEED, travaux d'onomastique éwé et kabyè",
       "quota": 10,
       "deficit": 0,
@@ -2229,7 +2229,7 @@
           "name": "Gnassingbé",
           "nameSystem": "clan_name",
           "variants": ["Gnassingbe"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_KABYE"],
           "countryId": "TGO",
           "provenance": {
             "tier": "unverified",
@@ -2299,7 +2299,7 @@
           "name": "Lawson",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_MINA"],
           "countryId": "TGO",
           "provenance": {
             "tier": "unverified",
@@ -2313,7 +2313,7 @@
           "name": "Johnson",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_MINA"],
           "countryId": "TGO",
           "provenance": {
             "tier": "unverified",
@@ -2327,7 +2327,7 @@
           "name": "Tchalla",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_KABYE"],
           "countryId": "TGO",
           "provenance": {
             "tier": "unverified",
@@ -2964,7 +2964,7 @@
     {
       "countryId": "LBR",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Deux couches irréconciliées : patronymes américano-libériens hérités des colons affranchis (Johnson, Tubman, Doe) et noms de lignage kpelle, bassa et mandé de l'intérieur.",
+      "onomasticNote": "Deux couches irréconciliées : patronymes américano-libériens hérités des colons affranchis (Johnson, Tubman, Doe) et noms de lignage kpelle, bassa et mandé de l'intérieur. Sirleaf reste sans peopleIds : le nom est venu par alliance et son rattachement gola ou kru n'est pas établi.",
       "verificationLead": "NEC voter roll, LISGIS census, travaux sur l'onomastique américano-libérienne",
       "quota": 10,
       "deficit": 0,
@@ -3029,7 +3029,7 @@
           "name": "Kamara",
           "nameSystem": "clan_name",
           "variants": ["Camara"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_VAI"],
           "countryId": "LBR",
           "provenance": {
             "tier": "unverified",
@@ -3142,7 +3142,7 @@
     {
       "countryId": "SLE",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Les patronymes krio (Cole, Coker, Wright) sont ceux de recaptifs libérés à Freetown ; l'intérieur mende et temné porte des noms de lignage sans rapport avec cette couche.",
+      "onomasticNote": "Les patronymes krio (Cole, Coker, Wright) sont ceux de recaptifs libérés à Freetown ; l'intérieur mende et temné porte des noms de lignage sans rapport avec cette couche. Les jamu mandingues passés à la graphie sierra-léonaise (Sesay, Conteh, Koroma, Turay) sont rattachés au peuple qui les porte majoritairement dans le pays — temné, limba ou kuranko — et non à leur origine mandingue : c'est le port, pas l'étymologie, qu'un lecteur cherche sur une page de peuple. Fofanah, qu'aucun des trois ne domine, va au macro-peuple mandé.",
       "verificationLead": "NEC Sierra Leone voter register, Statistics Sierra Leone, travaux sur l'onomastique krio",
       "quota": 10,
       "deficit": 0,
@@ -3151,7 +3151,7 @@
           "name": "Kamara",
           "nameSystem": "clan_name",
           "variants": ["Camara"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_KURANKO"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3165,7 +3165,7 @@
           "name": "Sesay",
           "nameSystem": "clan_name",
           "variants": ["Cissé"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TEMNE"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3179,7 +3179,7 @@
           "name": "Conteh",
           "nameSystem": "clan_name",
           "variants": ["Condé"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TEMNE"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3193,7 +3193,7 @@
           "name": "Bangura",
           "nameSystem": "clan_name",
           "variants": ["Bangoura"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TEMNE"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3207,7 +3207,7 @@
           "name": "Koroma",
           "nameSystem": "clan_name",
           "variants": ["Kourouma"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_LIMBA"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3221,7 +3221,7 @@
           "name": "Turay",
           "nameSystem": "clan_name",
           "variants": ["Touré"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TEMNE"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3235,7 +3235,7 @@
           "name": "Mansaray",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_KURANKO"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3291,7 +3291,7 @@
           "name": "Fofanah",
           "nameSystem": "clan_name",
           "variants": ["Fofana"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_MANDE_MACRO"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3305,7 +3305,7 @@
           "name": "Kargbo",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TEMNE"],
           "countryId": "SLE",
           "provenance": {
             "tier": "unverified",
@@ -3320,7 +3320,7 @@
     {
       "countryId": "MRT",
       "dominantNameSystem": "nisba",
-      "onomasticNote": "Les Bidhan portent des nisba tribales (Ould X, Ahl X) ; les Haalpulaar, Soninké et Wolof du fleuve portent des noms de clan ouest-africains. Les deux systèmes coexistent sans se mélanger.",
+      "onomasticNote": "Les Bidhan portent des nisba tribales (Ould X, Ahl X) ; les Haalpulaar, Soninké et Wolof du fleuve portent des noms de clan ouest-africains. Les deux systèmes coexistent sans se mélanger. Les nisba bidhan sont rattachées à PPL_ARABES_AFRIQUE, sous quoi le corpus range les Maures hassanophones : il ne porte pas de fiche bidhan distincte.",
       "verificationLead": "ANRPTS (registre national), ONS Mauritanie, travaux sur les nisba hassaniyya",
       "quota": 10,
       "deficit": 0,
@@ -3329,7 +3329,7 @@
           "name": "Ould Ahmed",
           "nameSystem": "nisba",
           "variants": ["Weld Ahmed"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "MRT",
           "provenance": {
             "tier": "unverified",
@@ -3343,7 +3343,7 @@
           "name": "Ould Mohamed",
           "nameSystem": "nisba",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "MRT",
           "provenance": {
             "tier": "unverified",
@@ -3357,7 +3357,7 @@
           "name": "Ould Abdallahi",
           "nameSystem": "nisba",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "MRT",
           "provenance": {
             "tier": "unverified",
@@ -3371,7 +3371,7 @@
           "name": "Ould Cheikh",
           "nameSystem": "nisba",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "MRT",
           "provenance": {
             "tier": "unverified",
@@ -3385,7 +3385,7 @@
           "name": "Ahl Sidi",
           "nameSystem": "nisba",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "MRT",
           "provenance": {
             "tier": "unverified",
@@ -3676,7 +3676,7 @@
     {
       "countryId": "CMR",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Le pays cumule quatre onomastiques : noms de lignage beti-fang (Mba, Ndongo), noms bamiléké rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à l'ouest.",
+      "onomasticNote": "Le pays cumule quatre onomastiques : noms de lignage beti-fang (Mba, Ndongo), noms bamiléké rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à l'ouest. Njoya reste sans peopleIds : c'est le nom de la dynastie bamoun de Foumban, le corpus ne porte pas de fiche bamoun, et le verser aux Bamiléké voisins serait un classement faux plutôt qu'un champ vide.",
       "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
       "quota": 20,
       "deficit": 0,
@@ -3966,7 +3966,7 @@
     {
       "countryId": "TCD",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "Le nord arabophone et toubou suit la chaîne de prénoms ; le sud sara porte des noms de clan patrilinéaires. Déby Itno fait exception : c'est un nom de lignage zaghawa.",
+      "onomasticNote": "Le nord arabophone et toubou suit la chaîne de prénoms ; le sud sara porte des noms de clan patrilinéaires. Déby Itno fait exception : c'est un nom de lignage zaghawa. La chaîne de prénoms du nord est rattachée à PPL_ARABES_AFRIQUE, comme au Soudan et en Égypte : c'est la strate arabophone qui la porte, sans que cela retire aux Toubou ou aux Kanembou musulmans de la porter aussi. Djimet reste sans peopleIds.",
       "verificationLead": "CENI Tchad, INSEED, travaux sur l'anthroponymie sara et les nisba tchadiennes",
       "quota": 10,
       "deficit": 0,
@@ -3989,7 +3989,7 @@
           "name": "Mahamat",
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Mahamad"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4003,7 +4003,7 @@
           "name": "Abdelkerim",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4017,7 +4017,7 @@
           "name": "Hassan",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4031,7 +4031,7 @@
           "name": "Youssouf",
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Yousouf"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4045,7 +4045,7 @@
           "name": "Adoum",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4059,7 +4059,7 @@
           "name": "Saleh",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "TCD",
           "provenance": {
             "tier": "unverified",
@@ -4144,7 +4144,7 @@
     {
       "countryId": "CAF",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Noms de lignage gbaya, banda et sara au centre et à l'ouest ; onomastique musulmane au nord-est, sur la frange soudanaise.",
+      "onomasticNote": "Noms de lignage gbaya, banda et sara au centre et à l'ouest ; onomastique musulmane au nord-est, sur la frange soudanaise. Six patronymes (Touadéra, Ngaïssona, Yakité, Mokom, Gaombalet, Doubane) restent sans peopleIds : les rattacher supposerait de déduire un lignage de l'ascendance d'un seul porteur politique, ce qui est précisément la mauvaise preuve pour un nom de clan.",
       "verificationLead": "ANE Centrafrique, ICASEES, travaux sur l'anthroponymie gbaya et banda",
       "quota": 10,
       "deficit": 0,
@@ -4856,7 +4856,7 @@
     {
       "countryId": "COD",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom africain : une rupture d'état civil qui rend la série des patronymes congolais datable. Deux séries échappent au nom de clan et sont classées en patronyme non héréditaire faute de valeur plus proche : les noms nande de rang de naissance (Kambale, Muhindo, Kasereka) désignent la place dans la fratrie et non une filiation, et le postnom swahiliphone de l'Est (Bahati) est un prénom repris en position de nom. Nsimba et Nzuzi forment de leur côté une paire kongo de jumeaux, aîné puis cadet.",
+      "onomasticNote": "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom africain : une rupture d'état civil qui rend la série des patronymes congolais datable. Deux séries échappent au nom de clan et sont classées en patronyme non héréditaire faute de valeur plus proche : les noms nande de rang de naissance (Kambale, Muhindo, Kasereka) désignent la place dans la fratrie et non une filiation, et le postnom swahiliphone de l'Est (Bahati) est un prénom repris en position de nom. Nsimba et Nzuzi forment de leur côté une paire kongo de jumeaux, aîné puis cadet. Bemba reste sans peopleIds, et pour une raison qu'il faut voir avant la vague 1 : le nom est homonyme du peuple bemba de Zambie sans lui être lié, et la fiche qui en naîtra ne devra pas absorber cette confusion.",
       "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
       "quota": 30,
       "deficit": 0,
@@ -4865,7 +4865,7 @@
           "name": "Kabila",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_LUBA_KATANGA"],
           "countryId": "COD",
           "provenance": {
             "tier": "unverified",
@@ -4977,7 +4977,7 @@
           "name": "Kasongo",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_LUBA"],
           "countryId": "COD",
           "provenance": {
             "tier": "unverified",
@@ -4991,7 +4991,7 @@
           "name": "Lumumba",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TETELA"],
           "countryId": "COD",
           "provenance": {
             "tier": "unverified",
@@ -5286,7 +5286,7 @@
     {
       "countryId": "AGO",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Patronymes portugais massivement imposés (dos Santos, Neto), sous lesquels subsistent des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés.",
+      "onomasticNote": "Patronymes portugais massivement imposés (dos Santos, Neto), sous lesquels subsistent des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés. Les dix patronymes portugais queués ici restent sans peopleIds : imposés au baptême sur toute la population, ils ne désignent aucun groupe. Le Cap-Vert et São Tomé ont un peuple créole à quoi les rattacher ; l'Angola n'en a pas, et lui inventer un rattachement ovimbundu ou kimbundu serait faux.",
       "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
       "quota": 20,
       "deficit": 0,
@@ -5576,7 +5576,7 @@
     {
       "countryId": "STP",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Onomastique entièrement lusophone, comme au Cap-Vert, avec une strate forra distincte de la strate angolar et des contratados venus du continent au XXe siècle.",
+      "onomasticNote": "Onomastique entièrement lusophone, comme au Cap-Vert, avec une strate forra distincte de la strate angolar et des contratados venus du continent au XXe siècle. Les patronymes portugais sont rattachés aux Forros, population créole majoritaire de l'archipel : le nom seul ne sépare pas la strate forra de la strate angolar ou tonga, et le rattachement dit qui les porte majoritairement, non qui les porte exclusivement.",
       "verificationLead": "INE São Tomé (recenseamento), registo civil, travaux sur les communautés forro et angolar",
       "quota": 10,
       "deficit": 0,
@@ -5613,7 +5613,7 @@
           "name": "Costa",
           "nameSystem": "clan_name",
           "variants": ["da Costa"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5641,7 +5641,7 @@
           "name": "Carvalho",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5655,7 +5655,7 @@
           "name": "Pinto",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5669,7 +5669,7 @@
           "name": "Vaz",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5683,7 +5683,7 @@
           "name": "Bandeira",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5697,7 +5697,7 @@
           "name": "Lima",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5711,7 +5711,7 @@
           "name": "Rita",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5725,7 +5725,7 @@
           "name": "Barros",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5739,7 +5739,7 @@
           "name": "Menezes",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_FORROS"],
           "countryId": "STP",
           "provenance": {
             "tier": "unverified",
@@ -5763,7 +5763,7 @@
           "name": "Mohamed",
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Muhammad"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5777,7 +5777,7 @@
           "name": "Ahmed",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5791,7 +5791,7 @@
           "name": "Hassan",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5805,7 +5805,7 @@
           "name": "Osman",
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Othman"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5819,7 +5819,7 @@
           "name": "Abdalla",
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Abdallah"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5833,7 +5833,7 @@
           "name": "Bashir",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5847,7 +5847,7 @@
           "name": "al-Jaʿali",
           "nameSystem": "nisba",
           "variants": ["Jaali", "Al-Jaali"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5861,7 +5861,7 @@
           "name": "al-Shaygiya",
           "nameSystem": "nisba",
           "variants": ["Shaigiya"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5889,7 +5889,7 @@
           "name": "al-Rashaida",
           "nameSystem": "nisba",
           "variants": ["Rashaida"],
-          "peopleIds": [],
+          "peopleIds": ["PPL_RASHAIDA"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -5903,7 +5903,7 @@
           "name": "Ibrahim",
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -6044,7 +6044,7 @@
     {
       "countryId": "SSD",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Les noms dinka et nuer sont des noms personnels transmis en chaîne (Salva Kiir Mayardit) et rattachés à une section clanique ; l'hérédité au sens de l'état civil y est récente.",
+      "onomasticNote": "Les noms dinka et nuer sont des noms personnels transmis en chaîne (Salva Kiir Mayardit) et rattachés à une section clanique ; l'hérédité au sens de l'état civil y est récente. Wani et Lado sont des noms bari : le corpus ne porte pas de fiche pour ce peuple d'Équatoria central, et ils restent donc sans peopleIds.",
       "verificationLead": "NBS South Sudan, registre électoral, travaux sur les sections claniques dinka et nuer",
       "quota": 10,
       "deficit": 0,
@@ -7476,7 +7476,7 @@
     {
       "countryId": "TZA",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "La côte swahilie suit la chaîne patronymique arabo-musulmane ; l'intérieur chagga, sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo).",
+      "onomasticNote": "La côte swahilie suit la chaîne patronymique arabo-musulmane ; l'intérieur chagga, sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo). Ces trois-là sont des noms du Kilimandjaro et vont aux Chagga ; Mwakasege, en pays mbeya, relève du préfixe Mwa- nyakyusa.",
       "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
       "quota": 20,
       "deficit": 0,
@@ -7555,7 +7555,7 @@
           "name": "Kimaro",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_CHAGA"],
           "countryId": "TZA",
           "provenance": {
             "tier": "unverified",
@@ -7569,7 +7569,7 @@
           "name": "Massawe",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_CHAGA"],
           "countryId": "TZA",
           "provenance": {
             "tier": "unverified",
@@ -7583,7 +7583,7 @@
           "name": "Shayo",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_CHAGA"],
           "countryId": "TZA",
           "provenance": {
             "tier": "unverified",
@@ -7597,7 +7597,7 @@
           "name": "Mwakasege",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_NYAKYUSA"],
           "countryId": "TZA",
           "provenance": {
             "tier": "unverified",
@@ -9414,7 +9414,7 @@
     {
       "countryId": "ZWE",
       "dominantNameSystem": "totemic_clan",
-      "onomasticNote": "Le mutupo shona est un totem : Moyo (cœur), Shumba (lion), Soko (singe). Il gouverne l'exogamie et se récite en salutation. Les patronymes ndebele du Matabeleland (Ncube, Sibanda, Ndlovu) relèvent, eux, du système nguni.",
+      "onomasticNote": "Le mutupo shona est un totem : Moyo (cœur), Shumba (lion), Soko (singe). Il gouverne l'exogamie et se récite en salutation. Les patronymes ndebele du Matabeleland (Ncube, Sibanda, Ndlovu) relèvent, eux, du système nguni. Chirwa reste sans peopleIds : le nom est entré au Zimbabwe avec la migration de travail malawite, et le corpus n'atteste aucun Tumbuka dans le pays.",
       "verificationLead": "ZIMSTAT (recensement), Registrar General, travaux sur le mutupo shona et les isibongo ndebele",
       "quota": 10,
       "deficit": 0,
@@ -9592,7 +9592,7 @@
     {
       "countryId": "ZMB",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Banda et Phiri, les deux patronymes les plus portés, débordent largement la Zambie : ils sont partagés avec le Malawi et le Mozambique, héritage de la diaspora ngoni et chewa.",
+      "onomasticNote": "Banda et Phiri, les deux patronymes les plus portés, débordent largement la Zambie : ils sont partagés avec le Malawi et le Mozambique, héritage de la diaspora ngoni et chewa. Lungu est rattaché aux Ngoni de l'Est, où il est le plus porté, mais il est aussi l'ethnonyme d'un peuple du Nord que le corpus porte sous PPL_LUNGU : deux choses distinctes que la fiche ne devra pas fondre.",
       "verificationLead": "Zambia Statistics Agency, Department of National Registration, travaux sur les mikowa bemba",
       "quota": 10,
       "deficit": 0,
@@ -9629,7 +9629,7 @@
           "name": "Mwanza",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_CHEWA"],
           "countryId": "ZMB",
           "provenance": {
             "tier": "unverified",
@@ -9741,7 +9741,7 @@
           "name": "Lungu",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_NGONI"],
           "countryId": "ZMB",
           "provenance": {
             "tier": "unverified",
@@ -9948,7 +9948,7 @@
     {
       "countryId": "MOZ",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Patronymes portugais imposés à l'assimilação, sous lesquels subsistent des noms makua, tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire.",
+      "onomasticNote": "Patronymes portugais imposés à l'assimilação, sous lesquels subsistent des noms makua, tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire. dos Santos reste sans peopleIds pour la même raison qu'en Angola : le patronyme portugais de l'assimilação traverse tous les peuples et n'en désigne aucun.",
       "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
       "quota": 20,
       "deficit": 0,
@@ -9999,7 +9999,7 @@
           "name": "Guebuza",
           "nameSystem": "clan_name",
           "variants": [],
-          "peopleIds": [],
+          "peopleIds": ["PPL_TSONGA"],
           "countryId": "MOZ",
           "provenance": {
             "tier": "unverified",

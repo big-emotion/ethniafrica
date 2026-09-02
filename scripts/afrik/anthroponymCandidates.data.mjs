@@ -45,7 +45,10 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Mêmes clans que le bassin sénégambien, sous graphie anglophone : Jallow pour Diallo, " +
-      "Ceesay pour Cissé, Njie pour Ndiaye. La graphie, non le nom, distingue les deux pays.",
+      "Ceesay pour Cissé, Njie pour Ndiaye. La graphie, non le nom, distingue les deux pays. " +
+      "Jallow et Bah sont rattachés à PPL_FULA alors que la fiche peule ne déclare pas la Gambie " +
+      "dans sa distribution par pays : les Peuls y forment pourtant près d'un cinquième de la " +
+      "population. La lacune est celle de la fiche de peuple, pas de l'attribution du nom.",
     verificationLead:
       "Listes électorales gambiennes (IEC), Gambia Bureau of Statistics, onomastique mandingue",
     names: [
@@ -99,7 +102,10 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la " +
-      "geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi.",
+      "geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi. " +
+      "Sankara reste sans peopleIds : le nom est revendiqué à la fois comme lignage silmi-mossi et " +
+      "comme jamu mandingue, et trancher sur la seule ascendance de Thomas Sankara reviendrait à " +
+      "déduire une lignée d'un porteur.",
     verificationLead:
       "Listes électorales CENI, INSD, onomastique mooré et dioula",
     names: [
@@ -111,7 +117,7 @@ export const COUNTRY_CANDIDATES = {
       ["Nikiéma", "clan_name", ["PPL_MOSSI"], ["Nikiema"]],
       ["Traoré", "clan_name", ["PPL_DIOULA"], ["Traore"]],
       ["Ouattara", "clan_name", ["PPL_DIOULA"], ["Watara"]],
-      ["Sanou", "clan_name", [], []],
+      ["Sanou", "clan_name", ["PPL_BOBO"], []],
       ["Bationo", "clan_name", ["PPL_MOSSI"], []],
       ["Sankara", "clan_name", [], []],
       ["Ilboudo", "clan_name", ["PPL_MOSSI"], []],
@@ -187,7 +193,13 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Deux couches : patronymes ouest-africains sous graphie portugaise (Camará, Baldé, Djaló) " +
-      "et noms lusophones hérités de la colonisation (Vieira, Gomes, Pereira) portés sans ascendance européenne.",
+      "et noms lusophones hérités de la colonisation (Vieira, Gomes, Pereira) portés sans " +
+      "ascendance européenne. Même lacune de corpus qu'en Gambie : PPL_MALINKE et PPL_FULA ne " +
+      "déclarent pas la Guinée-Bissau alors que Mandingues et Peuls y pèsent chacun plus d'un " +
+      "dixième de la population ; l'attribution est maintenue et c'est la fiche de peuple qui " +
+      "reste à compléter. La strate lusophone reste sans peopleIds : imposée au baptême, elle " +
+      "traverse tous les groupes et n'en désigne aucun. Sanhá et Seidi le restent également, " +
+      "faute de rattachement établi.",
     verificationLead:
       "Recenseamento Geral (INE Guiné-Bissau), listes électorales CNE, onomastique balante et manjaque",
     names: [
@@ -278,21 +290,24 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Le sud éwé et le nord kabyè n'ont pas la même logique : au sud les noms renvoient au jour " +
-      "ou aux circonstances de naissance, au nord ils marquent le lignage.",
+      "ou aux circonstances de naissance, au nord ils marquent le lignage. Lawson et Johnson sont " +
+      "les lignées marchandes mina d'Aného, pas des patronymes européens portés par hasard. " +
+      "Bodjona est un nom tem (kotokoli) : le corpus ne porte aucune fiche pour ce peuple, et le " +
+      "laisser sans peopleIds vaut mieux que le verser aux Kabyè voisins.",
     verificationLead:
       "Listes électorales CENI Togo, INSEED, travaux d'onomastique éwé et kabyè",
     names: [
       ["Agbo", "clan_name", ["PPL_EWE"], []],
       ["Adjei", "clan_name", ["PPL_EWE"], []],
       ["Amegan", "clan_name", ["PPL_EWE"], []],
-      ["Gnassingbé", "clan_name", [], ["Gnassingbe"]],
+      ["Gnassingbé", "clan_name", ["PPL_KABYE"], ["Gnassingbe"]],
       ["Kossi", "non_hereditary_patronymic", ["PPL_EWE"], []],
       ["Komlan", "non_hereditary_patronymic", ["PPL_EWE"], []],
       ["Ayité", "clan_name", ["PPL_EWE"], ["Ayite"]],
       ["Amoussou", "clan_name", ["PPL_EWE"], []],
-      ["Lawson", "clan_name", [], []],
-      ["Johnson", "clan_name", [], []],
-      ["Tchalla", "clan_name", [], []],
+      ["Lawson", "clan_name", ["PPL_MINA"], []],
+      ["Johnson", "clan_name", ["PPL_MINA"], []],
+      ["Tchalla", "clan_name", ["PPL_KABYE"], []],
       ["Bodjona", "clan_name", [], []],
     ],
   },
@@ -369,7 +384,9 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Deux couches irréconciliées : patronymes américano-libériens hérités des colons affranchis " +
-      "(Johnson, Tubman, Doe) et noms de lignage kpelle, bassa et mandé de l'intérieur.",
+      "(Johnson, Tubman, Doe) et noms de lignage kpelle, bassa et mandé de l'intérieur. Sirleaf " +
+      "reste sans peopleIds : le nom est venu par alliance et son rattachement gola ou kru n'est " +
+      "pas établi.",
     verificationLead:
       "NEC voter roll, LISGIS census, travaux sur l'onomastique américano-libérienne",
     names: [
@@ -377,7 +394,7 @@ export const COUNTRY_CANDIDATES = {
       ["Doe", "clan_name", ["PPL_KRU"], []],
       ["Kollie", "clan_name", ["PPL_KPELLE"], ["Kolli"]],
       ["Weah", "clan_name", ["PPL_KRU"], []],
-      ["Kamara", "clan_name", [], ["Camara"]],
+      ["Kamara", "clan_name", ["PPL_VAI"], ["Camara"]],
       ["Gbedee", "clan_name", ["PPL_BASSA"], []],
       ["Cooper", "clan_name", ["PPL_AMERICANO_LIBERIENS"], []],
       ["Tubman", "clan_name", ["PPL_AMERICANO_LIBERIENS"], []],
@@ -392,22 +409,26 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Les patronymes krio (Cole, Coker, Wright) sont ceux de recaptifs libérés à Freetown ; " +
-      "l'intérieur mende et temné porte des noms de lignage sans rapport avec cette couche.",
+      "l'intérieur mende et temné porte des noms de lignage sans rapport avec cette couche. " +
+      "Les jamu mandingues passés à la graphie sierra-léonaise (Sesay, Conteh, Koroma, Turay) sont " +
+      "rattachés au peuple qui les porte majoritairement dans le pays — temné, limba ou kuranko — " +
+      "et non à leur origine mandingue : c'est le port, pas l'étymologie, qu'un lecteur cherche " +
+      "sur une page de peuple. Fofanah, qu'aucun des trois ne domine, va au macro-peuple mandé.",
     verificationLead:
       "NEC Sierra Leone voter register, Statistics Sierra Leone, travaux sur l'onomastique krio",
     names: [
-      ["Kamara", "clan_name", [], ["Camara"]],
-      ["Sesay", "clan_name", [], ["Cissé"]],
-      ["Conteh", "clan_name", [], ["Condé"]],
-      ["Bangura", "clan_name", [], ["Bangoura"]],
-      ["Koroma", "clan_name", [], ["Kourouma"]],
-      ["Turay", "clan_name", [], ["Touré"]],
-      ["Mansaray", "clan_name", [], []],
+      ["Kamara", "clan_name", ["PPL_KURANKO"], ["Camara"]],
+      ["Sesay", "clan_name", ["PPL_TEMNE"], ["Cissé"]],
+      ["Conteh", "clan_name", ["PPL_TEMNE"], ["Condé"]],
+      ["Bangura", "clan_name", ["PPL_TEMNE"], ["Bangoura"]],
+      ["Koroma", "clan_name", ["PPL_LIMBA"], ["Kourouma"]],
+      ["Turay", "clan_name", ["PPL_TEMNE"], ["Touré"]],
+      ["Mansaray", "clan_name", ["PPL_KURANKO"], []],
       ["Jalloh", "clan_name", ["PPL_FULA"], ["Diallo"]],
       ["Cole", "clan_name", ["PPL_KRIO"], []],
       ["Coker", "clan_name", ["PPL_KRIO"], []],
-      ["Fofanah", "clan_name", [], ["Fofana"]],
-      ["Kargbo", "clan_name", [], []],
+      ["Fofanah", "clan_name", ["PPL_MANDE_MACRO"], ["Fofana"]],
+      ["Kargbo", "clan_name", ["PPL_TEMNE"], []],
     ],
   },
 
@@ -415,15 +436,17 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "nisba",
     onomasticNote:
       "Les Bidhan portent des nisba tribales (Ould X, Ahl X) ; les Haalpulaar, Soninké et Wolof " +
-      "du fleuve portent des noms de clan ouest-africains. Les deux systèmes coexistent sans se mélanger.",
+      "du fleuve portent des noms de clan ouest-africains. Les deux systèmes coexistent sans se " +
+      "mélanger. Les nisba bidhan sont rattachées à PPL_ARABES_AFRIQUE, sous quoi le corpus range " +
+      "les Maures hassanophones : il ne porte pas de fiche bidhan distincte.",
     verificationLead:
       "ANRPTS (registre national), ONS Mauritanie, travaux sur les nisba hassaniyya",
     names: [
-      ["Ould Ahmed", "nisba", [], ["Weld Ahmed"]],
-      ["Ould Mohamed", "nisba", [], []],
-      ["Ould Abdallahi", "nisba", [], []],
-      ["Ould Cheikh", "nisba", [], []],
-      ["Ahl Sidi", "nisba", [], []],
+      ["Ould Ahmed", "nisba", ["PPL_ARABES_AFRIQUE"], ["Weld Ahmed"]],
+      ["Ould Mohamed", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Ould Abdallahi", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Ould Cheikh", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Ahl Sidi", "nisba", ["PPL_ARABES_AFRIQUE"], []],
       ["Ba", "clan_name", ["PPL_HALPULAAR"], ["Bâ"]],
       ["Sow", "clan_name", ["PPL_HALPULAAR"], []],
       ["Diallo", "clan_name", ["PPL_FULA"], []],
@@ -464,7 +487,10 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Le pays cumule quatre onomastiques : noms de lignage beti-fang (Mba, Ndongo), noms bamiléké " +
-      "rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à l'ouest.",
+      "rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à " +
+      "l'ouest. Njoya reste sans peopleIds : c'est le nom de la dynastie bamoun de Foumban, le " +
+      "corpus ne porte pas de fiche bamoun, et le verser aux Bamiléké voisins serait un classement " +
+      "faux plutôt qu'un champ vide.",
     verificationLead:
       "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
     names: [
@@ -495,17 +521,30 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "non_hereditary_patronymic",
     onomasticNote:
       "Le nord arabophone et toubou suit la chaîne de prénoms ; le sud sara porte des noms de " +
-      "clan patrilinéaires. Déby Itno fait exception : c'est un nom de lignage zaghawa.",
+      "clan patrilinéaires. Déby Itno fait exception : c'est un nom de lignage zaghawa. La chaîne " +
+      "de prénoms du nord est rattachée à PPL_ARABES_AFRIQUE, comme au Soudan et en Égypte : c'est " +
+      "la strate arabophone qui la porte, sans que cela retire aux Toubou ou aux Kanembou musulmans " +
+      "de la porter aussi. Djimet reste sans peopleIds.",
     verificationLead:
       "CENI Tchad, INSEED, travaux sur l'anthroponymie sara et les nisba tchadiennes",
     names: [
       ["Déby", "clan_name", ["PPL_ZAGHAWA"], ["Deby"]],
-      ["Mahamat", "non_hereditary_patronymic", [], ["Mahamad"]],
-      ["Abdelkerim", "non_hereditary_patronymic", [], []],
-      ["Hassan", "non_hereditary_patronymic", [], []],
-      ["Youssouf", "non_hereditary_patronymic", [], ["Yousouf"]],
-      ["Adoum", "non_hereditary_patronymic", [], []],
-      ["Saleh", "non_hereditary_patronymic", [], []],
+      [
+        "Mahamat",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Mahamad"],
+      ],
+      ["Abdelkerim", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      ["Hassan", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      [
+        "Youssouf",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Yousouf"],
+      ],
+      ["Adoum", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      ["Saleh", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
       ["Ngarlejy", "clan_name", ["PPL_SARA"], []],
       ["Nadjita", "clan_name", ["PPL_SARA"], []],
       ["Doumgor", "clan_name", ["PPL_SARA"], []],
@@ -518,7 +557,10 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Noms de lignage gbaya, banda et sara au centre et à l'ouest ; onomastique musulmane " +
-      "au nord-est, sur la frange soudanaise.",
+      "au nord-est, sur la frange soudanaise. Six patronymes (Touadéra, Ngaïssona, Yakité, Mokom, " +
+      "Gaombalet, Doubane) restent sans peopleIds : les rattacher supposerait de déduire un lignage " +
+      "de l'ascendance d'un seul porteur politique, ce qui est précisément la mauvaise preuve pour " +
+      "un nom de clan.",
     verificationLead:
       "ANE Centrafrique, ICASEES, travaux sur l'anthroponymie gbaya et banda",
     names: [
@@ -614,11 +656,13 @@ export const COUNTRY_CANDIDATES = {
       "de valeur plus proche : les noms nande de rang de naissance (Kambale, Muhindo, Kasereka) " +
       "désignent la place dans la fratrie et non une filiation, et le postnom swahiliphone de " +
       "l'Est (Bahati) est un prénom repris en position de nom. Nsimba et Nzuzi forment de leur " +
-      "côté une paire kongo de jumeaux, aîné puis cadet.",
+      "côté une paire kongo de jumeaux, aîné puis cadet. Bemba reste sans peopleIds, et pour une " +
+      "raison qu'il faut voir avant la vague 1 : le nom est homonyme du peuple bemba de Zambie sans " +
+      "lui être lié, et la fiche qui en naîtra ne devra pas absorber cette confusion.",
     verificationLead:
       "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
     names: [
-      ["Kabila", "clan_name", [], []],
+      ["Kabila", "clan_name", ["PPL_LUBA_KATANGA"], []],
       ["Mukendi", "clan_name", ["PPL_LUBA"], []],
       ["Tshisekedi", "clan_name", ["PPL_LUBA"], []],
       ["Ilunga", "clan_name", ["PPL_LUBA"], []],
@@ -626,8 +670,8 @@ export const COUNTRY_CANDIDATES = {
       ["Mbuyi", "clan_name", ["PPL_LUBA"], []],
       ["Mwamba", "clan_name", ["PPL_LUBA"], []],
       ["Ngoy", "clan_name", ["PPL_LUBA"], []],
-      ["Kasongo", "clan_name", [], []],
-      ["Lumumba", "clan_name", [], []],
+      ["Kasongo", "clan_name", ["PPL_LUBA"], []],
+      ["Lumumba", "clan_name", ["PPL_TETELA"], []],
       ["Bemba", "clan_name", [], []],
       ["Mputu", "clan_name", ["PPL_KONGO"], []],
       ["Mutombo", "clan_name", ["PPL_LUBA"], []],
@@ -655,7 +699,11 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Patronymes portugais massivement imposés (dos Santos, Neto), sous lesquels subsistent " +
-      "des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés.",
+      "des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés. " +
+      "Les dix patronymes portugais queués ici restent sans peopleIds : imposés au baptême sur " +
+      "toute la population, ils ne désignent aucun groupe. Le Cap-Vert et São Tomé ont un peuple " +
+      "créole à quoi les rattacher ; l'Angola n'en a pas, et lui inventer un rattachement ovimbundu " +
+      "ou kimbundu serait faux.",
     verificationLead:
       "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
     names: [
@@ -686,22 +734,25 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Onomastique entièrement lusophone, comme au Cap-Vert, avec une strate forra distincte " +
-      "de la strate angolar et des contratados venus du continent au XXe siècle.",
+      "de la strate angolar et des contratados venus du continent au XXe siècle. Les patronymes " +
+      "portugais sont rattachés aux Forros, population créole majoritaire de l'archipel : le nom " +
+      "seul ne sépare pas la strate forra de la strate angolar ou tonga, et le rattachement dit " +
+      "qui les porte majoritairement, non qui les porte exclusivement.",
     verificationLead:
       "INE São Tomé (recenseamento), registo civil, travaux sur les communautés forro et angolar",
     names: [
       ["do Espírito Santo", "clan_name", ["PPL_FORROS"], ["Espirito Santo"]],
       ["Trovoada", "clan_name", ["PPL_FORROS"], []],
-      ["Costa", "clan_name", [], ["da Costa"]],
+      ["Costa", "clan_name", ["PPL_FORROS"], ["da Costa"]],
       ["Neves", "clan_name", ["PPL_FORROS"], []],
-      ["Carvalho", "clan_name", [], []],
-      ["Pinto", "clan_name", [], []],
-      ["Vaz", "clan_name", [], []],
-      ["Bandeira", "clan_name", [], []],
-      ["Lima", "clan_name", [], []],
-      ["Rita", "clan_name", [], []],
-      ["Barros", "clan_name", [], []],
-      ["Menezes", "clan_name", [], []],
+      ["Carvalho", "clan_name", ["PPL_FORROS"], []],
+      ["Pinto", "clan_name", ["PPL_FORROS"], []],
+      ["Vaz", "clan_name", ["PPL_FORROS"], []],
+      ["Bandeira", "clan_name", ["PPL_FORROS"], []],
+      ["Lima", "clan_name", ["PPL_FORROS"], []],
+      ["Rita", "clan_name", ["PPL_FORROS"], []],
+      ["Barros", "clan_name", ["PPL_FORROS"], []],
+      ["Menezes", "clan_name", ["PPL_FORROS"], []],
     ],
   },
 
@@ -716,17 +767,32 @@ export const COUNTRY_CANDIDATES = {
     verificationLead:
       "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
     names: [
-      ["Mohamed", "non_hereditary_patronymic", [], ["Muhammad"]],
-      ["Ahmed", "non_hereditary_patronymic", [], []],
-      ["Hassan", "non_hereditary_patronymic", [], []],
-      ["Osman", "non_hereditary_patronymic", [], ["Othman"]],
-      ["Abdalla", "non_hereditary_patronymic", [], ["Abdallah"]],
-      ["Bashir", "non_hereditary_patronymic", [], []],
-      ["al-Jaʿali", "nisba", [], ["Jaali", "Al-Jaali"]],
-      ["al-Shaygiya", "nisba", [], ["Shaigiya"]],
+      [
+        "Mohamed",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Muhammad"],
+      ],
+      ["Ahmed", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      ["Hassan", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      [
+        "Osman",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Othman"],
+      ],
+      [
+        "Abdalla",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Abdallah"],
+      ],
+      ["Bashir", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      ["al-Jaʿali", "nisba", ["PPL_ARABES_AFRIQUE"], ["Jaali", "Al-Jaali"]],
+      ["al-Shaygiya", "nisba", ["PPL_ARABES_AFRIQUE"], ["Shaigiya"]],
       ["al-Danagla", "nisba", ["PPL_NUBIENS"], ["Danagla"]],
-      ["al-Rashaida", "nisba", [], ["Rashaida"]],
-      ["Ibrahim", "non_hereditary_patronymic", [], []],
+      ["al-Rashaida", "nisba", ["PPL_RASHAIDA"], ["Rashaida"]],
+      ["Ibrahim", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
       ["Idris", "non_hereditary_patronymic", ["PPL_BEJA"], []],
       ["al-Mahdi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Mahdi", "El Mahdi"]],
       ["al-Mirghani", "nisba", ["PPL_ARABES_AFRIQUE"], ["Mirghani"]],
@@ -743,7 +809,9 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Les noms dinka et nuer sont des noms personnels transmis en chaîne (Salva Kiir Mayardit) " +
-      "et rattachés à une section clanique ; l'hérédité au sens de l'état civil y est récente.",
+      "et rattachés à une section clanique ; l'hérédité au sens de l'état civil y est récente. " +
+      "Wani et Lado sont des noms bari : le corpus ne porte pas de fiche pour ce peuple " +
+      "d'Équatoria central, et ils restent donc sans peopleIds.",
     verificationLead:
       "NBS South Sudan, registre électoral, travaux sur les sections claniques dinka et nuer",
     names: [
@@ -927,7 +995,9 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "non_hereditary_patronymic",
     onomasticNote:
       "La côte swahilie suit la chaîne patronymique arabo-musulmane ; l'intérieur chagga, " +
-      "sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo).",
+      "sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo). Ces trois-là sont " +
+      "des noms du Kilimandjaro et vont aux Chagga ; Mwakasege, en pays mbeya, relève du préfixe " +
+      "Mwa- nyakyusa.",
     verificationLead:
       "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
     names: [
@@ -936,10 +1006,10 @@ export const COUNTRY_CANDIDATES = {
       ["Mohamed", "non_hereditary_patronymic", ["PPL_SWAHILI"], []],
       ["Said", "non_hereditary_patronymic", ["PPL_SWAHILI"], ["Sayid"]],
       ["Ally", "non_hereditary_patronymic", ["PPL_SWAHILI"], ["Ali"]],
-      ["Kimaro", "clan_name", [], []],
-      ["Massawe", "clan_name", [], []],
-      ["Shayo", "clan_name", [], []],
-      ["Mwakasege", "clan_name", [], []],
+      ["Kimaro", "clan_name", ["PPL_CHAGA"], []],
+      ["Massawe", "clan_name", ["PPL_CHAGA"], []],
+      ["Shayo", "clan_name", ["PPL_CHAGA"], []],
+      ["Mwakasege", "clan_name", ["PPL_NYAKYUSA"], []],
       ["Nyerere", "clan_name", ["PPL_NYAMWEZI"], []],
       ["Masanja", "clan_name", ["PPL_SUKUMA"], []],
       ["Rutasitara", "clan_name", ["PPL_HAYA"], []],
@@ -1174,7 +1244,9 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "Le mutupo shona est un totem : Moyo (cœur), Shumba (lion), Soko (singe). Il gouverne " +
       "l'exogamie et se récite en salutation. Les patronymes ndebele du Matabeleland (Ncube, " +
-      "Sibanda, Ndlovu) relèvent, eux, du système nguni.",
+      "Sibanda, Ndlovu) relèvent, eux, du système nguni. Chirwa reste sans peopleIds : le nom est " +
+      "entré au Zimbabwe avec la migration de travail malawite, et le corpus n'atteste aucun " +
+      "Tumbuka dans le pays.",
     verificationLead:
       "ZIMSTAT (recensement), Registrar General, travaux sur le mutupo shona et les isibongo ndebele",
     names: [
@@ -1197,13 +1269,16 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Banda et Phiri, les deux patronymes les plus portés, débordent largement la Zambie : " +
-      "ils sont partagés avec le Malawi et le Mozambique, héritage de la diaspora ngoni et chewa.",
+      "ils sont partagés avec le Malawi et le Mozambique, héritage de la diaspora ngoni et chewa. " +
+      "Lungu est rattaché aux Ngoni de l'Est, où il est le plus porté, mais il est aussi " +
+      "l'ethnonyme d'un peuple du Nord que le corpus porte sous PPL_LUNGU : deux choses distinctes " +
+      "que la fiche ne devra pas fondre.",
     verificationLead:
       "Zambia Statistics Agency, Department of National Registration, travaux sur les mikowa bemba",
     names: [
       ["Banda", "clan_name", ["PPL_CHEWA"], []],
       ["Phiri", "clan_name", ["PPL_CHEWA"], []],
-      ["Mwanza", "clan_name", [], []],
+      ["Mwanza", "clan_name", ["PPL_CHEWA"], []],
       ["Tembo", "clan_name", ["PPL_NGONI"], []],
       ["Zulu", "clan_name", ["PPL_NGONI"], []],
       ["Mulenga", "clan_name", ["PPL_BEMBA"], []],
@@ -1211,7 +1286,7 @@ export const COUNTRY_CANDIDATES = {
       ["Bwalya", "clan_name", ["PPL_BEMBA"], []],
       ["Musonda", "clan_name", ["PPL_BEMBA"], []],
       ["Sakala", "clan_name", ["PPL_CHEWA"], []],
-      ["Lungu", "clan_name", [], []],
+      ["Lungu", "clan_name", ["PPL_NGONI"], []],
       ["Mwale", "clan_name", ["PPL_CHEWA"], []],
     ],
   },
@@ -1243,14 +1318,16 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "Patronymes portugais imposés à l'assimilação, sous lesquels subsistent des noms makua, " +
-      "tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire.",
+      "tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire. dos Santos reste " +
+      "sans peopleIds pour la même raison qu'en Angola : le patronyme portugais de l'assimilação " +
+      "traverse tous les peuples et n'en désigne aucun.",
     verificationLead:
       "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
     names: [
       ["Machel", "clan_name", ["PPL_TSONGA"], []],
       ["Chissano", "clan_name", ["PPL_TSONGA"], []],
       ["Nyusi", "clan_name", ["PPL_MAKUA"], []],
-      ["Guebuza", "clan_name", [], []],
+      ["Guebuza", "clan_name", ["PPL_TSONGA"], []],
       ["Mondlane", "clan_name", ["PPL_TSONGA"], []],
       ["Dhlakama", "clan_name", ["PPL_NDAU"], []],
       ["Cossa", "clan_name", ["PPL_TSONGA"], []],
