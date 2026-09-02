@@ -43,6 +43,11 @@
           "tubiana-chad-sudan-2008",
           "rosenhart-tribal-identity-2024"
         ]
+      },
+      {
+        "claim": "La monographie communautaire arabe الزغاوة: ماضٍ وحاضر recense l'entrée « إيناء ديبي حنتو » dans une liste d'autorités bideyat du Tchad et du Soudan. Cette attestation écrite confirme seulement la présence de la graphie arabe ديبي en contexte bideyat ; elle ne fournit ni étymologie du nom ni tradition orale attribuée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["suleiman-zaghawa-1988"]
       }
     ],
     "linguisticReconstructions": []
@@ -78,7 +83,15 @@
       "sourceRefs": ["elysee-idriss-deby-2021", "world-bank-chad-poverty-2021"]
     }
   ],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Deby en Alsace et en Lorraine",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le Dictionary of American Family Names décrit le Deby alsacien et lorrain comme une forme abrégée du nom personnel allemand Debus. Cette étymologie européenne concerne un homonyme et ne doit pas être transférée au Déby de la chaîne patronymique bideyat.",
+      "sourceRefs": ["familysearch-deby"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "tubiana-chad-sudan-2008",
@@ -111,6 +124,22 @@
       "tier": "official",
       "source_kind": "intergovernmental",
       "notes": "Banque mondiale, 2021, préface p. x. Le texte intégral a été vérifié : il emploie la graphie non accentuée « Idriss Deby » et date son décès du 20 avril 2021."
+    },
+    {
+      "sourceKey": "suleiman-zaghawa-1988",
+      "title": "الزغاوة: ماضٍ وحاضر (Les Zaghawa : passé et présent)",
+      "url": "https://zaghawa.org/sahifa3/wp-content/uploads/2024/04/zaghawa-past-present-first-edition-1.pdf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Ouvrage communautaire arabe, première édition, Koweït, avril 1988. Le PDF intégral et les pages physiques 100-101 ont été vérifiés visuellement. La page 101 porte l'entrée exacte « إيناء ديبي حنتو » dans une liste d'autorités bideyat ; la fiche conserve cette graphie sans traduire le titre إيناء ni en déduire une étymologie."
+    },
+    {
+      "sourceKey": "familysearch-deby",
+      "title": "Deby Name Meaning and Deby Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=deby",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire généalogique FamilySearch citant le Dictionary of American Family Names de Patrick Hanks. La page a été vérifiée directement ; elle décrit le Deby d'Alsace et de Lorraine comme une forme abrégée du nom personnel allemand Debus. Cette source faible ne porte que l'homonyme européen."
     }
   ],
   "gaps": [
@@ -129,10 +158,6 @@
     {
       "fieldPath": "casteOrSocialFunction",
       "reason": "Les recherches combinant Déby avec « caste », « Hadaheed », « fonction héréditaire », Bideyat et Zaghawa, ainsi que les passages de Tubiana et Rosenhart, n'ont établi aucune fonction sociale héréditaire attachée au nom Déby. Les charges de cheikh décrites par Tubiana concernent des personnes et leur représentation clanique, non une caste portée par ce nom."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Les travaux académiques et institutionnels consultés sur Déby, Deby et la chaîne Idriss-Déby-Itno n'ont documenté aucun homonyme distinct ; cette première passe ne transforme pas les ressemblances de graphie repérées hors contexte bideyat en identité démontrée."
     }
   ],
   "patronymicChainDepth": {
