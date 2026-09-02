@@ -11,7 +11,10 @@
     {
       "spelling": "Kebreab",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["ifla-ethiopia-names"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["ifla-ethiopia-names"]
+        }
       ]
     }
   ],
@@ -33,7 +36,13 @@
       }
     ]
   },
-  "peoples": [],
+  "peoples": [
+    {
+      "peopleId": "PPL_HABESHA",
+      "status": "attested",
+      "sourceRefs": ["cultural-atlas-ethiopian-naming"]
+    }
+  ],
   "countries": [
     {
       "countryId": "ETH",
