@@ -7,9 +7,9 @@ import {
   type ReferenceLibraryHandlerDependencies,
 } from "../reference-library";
 
-const contributor = { id: "11111111-1111-1111-1111-111111111111" };
+const contributor = { id: "11111111-1111-4111-8111-111111111111" };
 const source = {
-  id: "22222222-2222-2222-2222-222222222222",
+  id: "22222222-2222-4222-8222-222222222222",
   source_key: "wpp-2025",
   title: "World Population Prospects 2025",
   author: "United Nations",
@@ -29,15 +29,15 @@ function dependencies(
     searchReferences: vi.fn().mockResolvedValue([source]),
     createReference: vi.fn().mockResolvedValue({ source, created: true }),
     linkReferenceToAssertion: vi.fn().mockResolvedValue({
-      id: "33333333-3333-3333-3333-333333333333",
-      assertion_id: "44444444-4444-4444-4444-444444444444",
+      id: "33333333-3333-4333-8333-333333333333",
+      assertion_id: "44444444-4444-4444-8444-444444444444",
       source_id: source.id,
       locator_type: "page" as const,
       locator_value: "p. 48",
       review_status: "verified" as const,
     }),
     storeReferenceWorkingAsset: vi.fn().mockResolvedValue({
-      id: "55555555-5555-5555-5555-555555555555",
+      id: "55555555-5555-4555-8555-555555555555",
       sourceId: source.id,
       assetKind: "scan" as const,
       filename: "report.pdf",
@@ -128,7 +128,7 @@ describe("reference library handler", () => {
     const deps = dependencies();
     const result = await handleAssertionReferenceCreate(
       {
-        assertion_id: "44444444-4444-4444-4444-444444444444",
+        assertion_id: "44444444-4444-4444-8444-444444444444",
         source_id: source.id,
         locator_type: "page",
         locator_value: "p. 48",
@@ -138,7 +138,7 @@ describe("reference library handler", () => {
     );
 
     expect(deps.linkReferenceToAssertion).toHaveBeenCalledWith(
-      "44444444-4444-4444-4444-444444444444",
+      "44444444-4444-4444-8444-444444444444",
       source.id,
       { locatorType: "page", locatorValue: "p. 48" }
     );

@@ -104,7 +104,7 @@ export type PeopleSummary = z.infer<typeof peopleSummarySchema>;
 
 // @req REQ-057
 export const nameRecordSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   peopleId: z.string(),
   nameText: z.string(),
   nameType: nameRecordTypeSchema,

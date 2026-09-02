@@ -55,7 +55,7 @@ import { getPublicFlagsPage } from "@/lib/supabase/queries/flags/getPublicFlagsP
 import { queryPublicFlagsPage } from "@/lib/supabase/queries/flags/publicFlagsPageQuery";
 
 const makeFlag = (index: number, overrides: Record<string, unknown> = {}) => ({
-  id: `00000000-0000-0000-0000-${String(index).padStart(12, "0")}`,
+  id: `00000000-0000-4000-8000-${String(index).padStart(12, "0")}`,
   public_slug: `FLAG${String(index).padStart(6, "0")}`,
   flag_kind: "inaccurate",
   status: "open",
@@ -219,7 +219,7 @@ describe("queryPublicFlagsPage", () => {
         }),
         makeFlag(4, {
           entity_type: "source",
-          entity_id: "00000000-0000-0000-0000-000000000004",
+          entity_id: "00000000-0000-4000-8000-000000000004",
         }),
       ],
       error: null,
@@ -243,7 +243,7 @@ describe("queryPublicFlagsPage", () => {
     mocks.sourceLabelsQuery.in.mockResolvedValue({
       data: [
         {
-          id: "00000000-0000-0000-0000-000000000004",
+          id: "00000000-0000-4000-8000-000000000004",
           title: "UNESCO cultural report",
         },
       ],

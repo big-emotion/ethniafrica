@@ -100,10 +100,10 @@ export function getContributionSourceCitations(
 // @req REQ-092
 export const contributionSchema = z.object({
   type: contributionTypeSchema,
-  proposed_payload: z.record(z.unknown()),
+  proposed_payload: z.record(z.string(), z.unknown()),
   contributor_email: z.preprocess(
     (val) => (val === null || val === "" ? undefined : val),
-    z.string().email().optional()
+    z.email().optional()
   ),
   contributor_name: z.preprocess(
     (val) => (val === null || val === "" ? undefined : val),

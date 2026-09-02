@@ -42,7 +42,7 @@ function baseEnvelope<T>(data: T): ApiEnvelope<T> {
 }
 
 const sampleSource: Source = {
-  id: "11111111-1111-1111-1111-111111111111",
+  id: "11111111-1111-4111-8111-111111111111",
   sourceKey: null,
   sourceKind: null,
   tier: null,
@@ -175,19 +175,19 @@ describe("GET /api/v2/sources/[id]", () => {
     vi.mocked(getSourceHandler).mockResolvedValue(baseEnvelope(sampleSource));
 
     const request = new NextRequest(
-      "http://localhost/api/v2/sources/11111111-1111-1111-1111-111111111111"
+      "http://localhost/api/v2/sources/11111111-1111-4111-8111-111111111111"
     );
     const response = await itemGet(request, {
       params: Promise.resolve({
-        id: "11111111-1111-1111-1111-111111111111",
+        id: "11111111-1111-4111-8111-111111111111",
       }),
     });
     const body = await response.json();
 
     expect(response.status).toBe(200);
-    expect(body.data.id).toBe("11111111-1111-1111-1111-111111111111");
+    expect(body.data.id).toBe("11111111-1111-4111-8111-111111111111");
     expect(getSourceHandler).toHaveBeenCalledWith(
-      "11111111-1111-1111-1111-111111111111"
+      "11111111-1111-4111-8111-111111111111"
     );
   });
 
@@ -205,11 +205,11 @@ describe("GET /api/v2/sources/[id]", () => {
   it("returns 404 when the source is missing", async () => {
     vi.mocked(getSourceHandler).mockResolvedValue(null);
     const request = new NextRequest(
-      "http://localhost/api/v2/sources/11111111-1111-1111-1111-111111111111"
+      "http://localhost/api/v2/sources/11111111-1111-4111-8111-111111111111"
     );
     const response = await itemGet(request, {
       params: Promise.resolve({
-        id: "11111111-1111-1111-1111-111111111111",
+        id: "11111111-1111-4111-8111-111111111111",
       }),
     });
     expect(response.status).toBe(404);
