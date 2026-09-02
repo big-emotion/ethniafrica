@@ -364,6 +364,44 @@ export const SOURCES = {
       "Site culturel yoruba. Cité pour la distinction entre oríkì personnel et " +
       "oríkì orílẹ̀ (louange de lignage, héritée), non pour un lignage particulier.",
   },
+  "bluett-1734-job-jallo": {
+    title:
+      "Some Memoirs of the Life of Job, the Son of Solomon, the High Priest of Boonda in Africa",
+    url: "https://nationalhumanitiescenter.org/pds/maai/freedom/text1/diallo.pdf",
+    tier: "referenced",
+    source_kind: "archive",
+    notes:
+      "Bluett, Thomas, Londres, 1734. Document primaire : le récit dicté par " +
+      "Ayuba Suleiman Diallo à Bluett pendant sa captivité, imprimé de son " +
+      "vivant. C'est la plus ancienne attestation écrite connue du nom, et " +
+      "elle est explicite sur le système : « The Surname of his Family is " +
+      "Jallo », posé en regard de la chaîne patronymique « HYUBA, BOON " +
+      "SALUMENA, BOON HIBRAHEMA ». L'URL est l'édition d'extraits du National " +
+      "Humanities Center (2009), seule version dont le texte a pu être lu " +
+      "intégralement ici ; le texte complet est à Documenting the American " +
+      "South (docsouth.unc.edu/neh/bluett/menu.html), dont le serveur a refusé " +
+      "la connexion lors de la passe. Sections I et III vérifiées mot à mot. " +
+      "Source coloniale à lire comme telle : Bluett écrit en anglais, en " +
+      "abolitionniste anglican, à propos d'un homme qu'il a contribué à " +
+      "affranchir, et la graphie « Jallo » est la sienne.",
+  },
+  "lindgren-2004-ndebele-castes": {
+    title:
+      "The Internal Dynamics of Ethnicity: Clan Names, Origins and Castes in Southern Zimbabwe",
+    url: "https://doi.org/10.3366/afr.2004.74.2.173",
+    tier: "referenced",
+    source_kind: "academic",
+    notes:
+      "Lindgren, Björn, Africa (Journal of the International African " +
+      "Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la " +
+      "citation : le texte intégral est sous péage chez Cambridge Core et " +
+      "n'a pas pu être lu lors de la passe ; seuls la notice et le résumé ont " +
+      "été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en " +
+      "Matabeleland du Sud un opérateur de classement qui articule nom de " +
+      "clan, origine revendiquée et « caste », et qui découpe la catégorie " +
+      "ndébélé en parties. Aucune glose de nom particulier ne lui est " +
+      "empruntée.",
+  },
 };
 
 /** Shared across the twelve Mande fiches: the jamu is a patrilineal clan name. */
@@ -411,6 +449,25 @@ const NGUNI_ISIBONGO = {
   designatedSocialUnit: "clan",
 };
 
+/**
+ * Four fiches attach an Nguni clan name to PPL_NDEBELE_NORD, the Ndebele of
+ * Zimbabwe, while the chronicle backing them — Bryant — documents the clans of
+ * Zululand and Natal. The two are not the same object, and nothing in the
+ * fiches said so. This claim is what a source actually establishes about the
+ * Matabeleland end, and it is deliberately about the system rather than about
+ * any one name: Lindgren glosses no individual isibongo, and neither does this.
+ */
+const MATABELELAND_ISIBONGO = {
+  claim:
+    "Dans le Matabeleland du Sud, l'isibongo ne sert pas seulement à nommer " +
+    "un clan : il fonctionne comme opérateur de classement, articulant nom de " +
+    "clan, origine revendiquée et « caste », et découpant de l'intérieur la " +
+    "catégorie ndébélé plutôt que de la refléter. Un même isibongo peut donc " +
+    "y recouvrir des origines revendiquées distinctes.",
+  claimStatus: "established",
+  sourceRefs: ["lindgren-2004-ndebele-castes"],
+};
+
 const NGUNI_RECONSTRUCTION = {
   claim:
     "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de " +
@@ -421,14 +478,23 @@ const NGUNI_RECONSTRUCTION = {
 };
 
 /**
- * The one gap reason the Nguni fiches genuinely share: it states a property of
- * the naming system, not a failed lookup, so it is the same sentence for every
- * clan. Every other gap is a per-fiche search result and is written per fiche.
+ * The one gap reason the Nguni fiches genuinely share. It used to assert that
+ * the Nguni system has no inter-clan alliance at all, which Bryant's own text
+ * refutes on the page: he records the Dlamini buying protection from a named
+ * Mbata chief, and the Dube adopting a Cele family outright. The gap is real
+ * but its cause is the corpus, not the culture, and saying otherwise put an
+ * ethnographic claim nobody had checked into eight fiches at once.
  */
 const NGUNI_GAPS = {
   alliances:
-    "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient " +
-    "un clan à ses ancêtres, pas deux clans entre eux.",
+    "Deux choses distinctes, que la rédaction précédente confondait. Les " +
+    "izithakazelo lient bien un clan à ses ancêtres et non deux clans entre " +
+    "eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, " +
+    "cousinage à plaisanterie institué par paires. Mais l'alliance entre " +
+    "clans nommés existe et Bryant la documente — sujétion négociée, adoption " +
+    "d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que " +
+    "targetPatronymeId doit désigner un PAT_ existant : les partenaires " +
+    "attestés n'ont pas de fiche.",
 };
 
 export const RESEARCH = {
@@ -1105,7 +1171,147 @@ export const RESEARCH = {
         "dédiée n'a permis de rattacher une personne décédée nommément au clan " +
         "plutôt qu'au seul patronyme."
     ),
-    sourceKeys: ["bolaaro-clans-peuls"],
+    // The 1734 memoir is the oldest written attestation of the name found, and
+    // it settles the one question the clan blog could not: whether Jallo is a
+    // heritable family name or a link in the Arabic-style patronymic chain.
+    // Bluett states both forms side by side for the same man.
+    origin: {
+      oralTraditions: [],
+      writtenChronicles: [
+        {
+          claim:
+            "La plus ancienne attestation écrite du nom relevée lors de la " +
+            "passe date de 1734. Bluett y consigne que les compatriotes " +
+            "d'Ayuba Suleiman Diallo « se désignent par les noms de leurs " +
+            "ancêtres » et remontent plusieurs degrés, « bien qu'ils aient " +
+            "aussi des noms de famille pour distinguer leurs familles " +
+            "particulières » ; il donne pour le même homme la chaîne " +
+            "patronymique HYUBA, BOON SALUMENA, BOON HIBRAHEMA — Ayuba fils " +
+            "de Suleiman fils d'Ibrahim — puis, distinctement, « The Surname " +
+            "of his Family is Jallo ». Le nom est donc déjà, en 1734, un nom " +
+            "de famille héréditaire tenu pour distinct de la filiation " +
+            "énoncée degré par degré.",
+          claimStatus: "established",
+          sourceRefs: ["bluett-1734-job-jallo"],
+        },
+        {
+          claim:
+            "Bluett situe la famille à Boonda, dans le Bundu, sur le haut " +
+            "Sénégal, et rapporte que le grand-père d'Ayuba, Ibrahim, y avait " +
+            "fondé la ville une cinquantaine d'années plus tôt sous le règne " +
+            "de Bubaker, roi du Futa, cumulant la propriété éminente du lieu " +
+            "et la charge de grand prêtre (alpha) ; il y avait institué que " +
+            "nul s'y réfugiant ne pût être réduit en esclavage. La géographie " +
+            "de Bluett est celle des cartes de son temps et se contredit " +
+            "elle-même : la revendication clanique du Fouta-Djalon et cette " +
+            "lignée du Bundu ne sont pas rapportées l'une à l'autre par une " +
+            "source consultée.",
+          claimStatus: "claimed",
+          sourceRefs: ["bluett-1734-job-jallo"],
+        },
+      ],
+      linguisticReconstructions: [
+        {
+          claim:
+            "Le nom relève des quatre clans par lesquels les Fulɓe se " +
+            "reconnaissent — Diallo, Bâ, Barry et Sow — dont la quadripartition " +
+            "structure l'identification clanique du Fouta.",
+          claimStatus: "claimed",
+          sourceRefs: ["bolaaro-clans-peuls"],
+        },
+      ],
+    },
+    // Diallo is the French colonial transcription; Jallo is what the man
+    // himself gave Bluett in 1734, so the two are recorded as spellings of one
+    // name rather than the older form being folded into the newer.
+    spellings: [
+      {
+        spelling: "Diallo",
+        attestations: [
+          {
+            countryId: "GIN",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "CIV",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "CMR",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "GAB",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+        ],
+      },
+      {
+        spelling: "Jallo",
+        attestations: [
+          { countryId: "SEN", sourceRefs: ["bluett-1734-job-jallo"] },
+        ],
+      },
+    ],
+    countries: [
+      {
+        countryId: "GIN",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "CIV",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "CMR",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "GAB",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "SEN",
+        status: "attested",
+        sourceRefs: ["bluett-1734-job-jallo"],
+      },
+    ],
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Ayuba Suleiman Diallo (Hyuba boon Salumena boon Hibrahema)",
+        sourceRefs: ["bluett-1734-job-jallo"],
+      },
+    ],
+    sourceKeys: ["bolaaro-clans-peuls", "bluett-1734-job-jallo"],
+    gapReasons: {
+      alliances:
+        "Le dendiraagal (parenté à plaisanterie peule) est documenté comme " +
+        "institution mais aucune paire nommant ce clan n'a été trouvée.",
+      casteOrSocialFunction:
+        "Bluett donne à la lignée d'Ayuba une charge religieuse héréditaire — " +
+        "son grand-père puis son père sont alpha, grand prêtre de Boonda, et " +
+        "lui-même assistait son père — mais elle s'attache à une famille " +
+        "précise du Bundu, non au nom : la source ne dit rien d'une fonction " +
+        "que porteraient les Jallo comme tels. Les castes de spécialistes du " +
+        "Fouta portent par ailleurs d'autres noms.",
+      homonyms:
+        "Les répertoires onomastiques consultés laissent l'étymologie de " +
+        "Diallo inexpliquée : aucune racine pulaar établie ne la porte, et " +
+        "Bluett, qui donne pourtant la forme de 1734, n'en propose aucune. " +
+        "Les rattachements proposés — à un jallo qui vaudrait " +
+        "« commandement », ou au mandingue diala pour la noblesse — ne sont " +
+        "corroborés par aucune source linguistique primaire et ressemblent à " +
+        "des étymologies populaires nées du contact peul-mandingue. " +
+        "L'absence d'étymologie établie est ici le résultat de la recherche, " +
+        "non son défaut. Les transcriptions Jallo, Jalloh, Jallow et Djaló " +
+        "désignent le même nom et ne sont donc pas des homonymes.",
+    },
   },
   PAT_SOW: {
     ...fulbeClan(
@@ -1156,6 +1362,38 @@ export const RESEARCH = {
         displayName: "Sobhuza II",
         sourceRefs: ["un-eswatini-country-facts"],
       },
+      {
+        status: "deceased",
+        displayName:
+          "Nyanya, fils de Sogidi, chef du petit clan aba-kwa-Dlamini de l'emBekamuzi, tué par Dingiswayo",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Cintsi, arrière-petit-fils de Nyanya, tué sans postérité à la bataille d'eNdondakusuka",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
+    // Bryant states outright that he cannot reconcile the Dlamini pedigrees and
+    // that one of them must be a different man. That is the distinct-origin
+    // finding the earlier gap said it had not found.
+    homonyms: [
+      {
+        label: "Le Dlamini de l'ekuNene",
+        entityType: "patronyme",
+        entityId: null,
+        distinction:
+          "Bryant met en regard trois généalogies dlamini — celle des Hlubi, " +
+          "celle des Swazi et celle de l'ekuNene — et déclare ne pouvoir les " +
+          "faire concorder. Il conjecture que le Dlamini des Hlubi est le " +
+          "Dlamini Ier de la liste swazie, mais tient que celui de l'ekuNene " +
+          "« doit avoir été un tout autre individu ». Le même isibongo " +
+          "recouvre donc au moins deux ancêtres éponymes distincts, et " +
+          "l'aveu d'irréductibilité vient de la source elle-même, non d'un " +
+          "défaut de lecture.",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
     ],
     sourceKeys: [
       "un-eswatini-country-facts",
@@ -1163,18 +1401,20 @@ export const RESEARCH = {
       "iafrika-umlando-dlamini",
       "ngonipeople-izithakazelo",
       "zwane-2020-zulu-clan-names",
+      "bryant-1929-olden-times",
     ],
     gapReasons: {
       alliances:
-        "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo " +
-        "lient un clan à ses ancêtres, pas deux clans entre eux.",
+        "Bryant documente pour ce clan une alliance nommée : après que " +
+        "Dingiswayo eut tué Nyanya, les Dlamini de l'emBekamuzi jugèrent " +
+        "prudent de sacrifier leur indépendance et de se placer sous le chef " +
+        "mbatha voisin, Mangcengeza, fils de Kali. L'alliance nguni entre " +
+        "clans nommés existe donc bel et bien. Le champ reste vide parce que " +
+        "targetPatronymeId doit désigner un PAT_ existant et que les Mbatha " +
+        "n'ont pas de fiche.",
       casteOrSocialFunction:
         "Clan royal de l'Eswatini : la royauté n'est pas une fonction héréditaire " +
         "de caste au sens du champ.",
-      homonyms:
-        "Dlamini est porté dans les branches xhosa, zoulou, swazi et sotho du " +
-        "groupe nguni ; faute de source établissant des origines distinctes, ces " +
-        "branches ne sont pas traitées comme des homonymes.",
     },
   },
 
@@ -1195,6 +1435,7 @@ export const RESEARCH = {
       ],
       linguisticReconstructions: [
         NGUNI_RECONSTRUCTION,
+        MATABELELAND_ISIBONGO,
         {
           claim:
             "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique " +
@@ -1235,18 +1476,41 @@ export const RESEARCH = {
       "iafrika-izithakazelo-ndlovu",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
-        "Aucune fonction héréditaire attestée au niveau du clan ; Bryant décrit " +
-        "les Ndlovu comme un sous-clan territorial, non comme un corps de " +
-        "spécialistes.",
-      bearers:
-        "L'ancêtre éponyme Ndlovu fils de Kuba est nommé par Bryant mais sans " +
-        "dates ni éléments biographiques ; il est retenu comme origine du nom, " +
-        "pas comme porteur documenté.",
+        "Aucune charge héréditaire attachée au nom. Bryant montre au contraire " +
+        "que les fonctions tenues par ce lignage sont conférées et non " +
+        "transmises : Silwane puis son fils Gawozi sont chacun nommés à leur " +
+        "district par le roi Mpande, ce qui est une faveur royale renouvelée, " +
+        "non un office que le nom porterait.",
     },
+    // Bryant follows this sub-clan over three generations with named offices
+    // and a named burial place. The earlier gap kept the eponym out on the
+    // ground that he lacks dates, then kept out his son and grandson too,
+    // who have both.
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Ndlovu, fils de Kuba, éponyme du sous-clan aba-kwa-Ndlovu, inhumé près de l'isiHlahla sikaMbema",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Silwane, fils de Ndlovu, chef du district entre la Mfule et la Mfolozi sous le roi Mpande",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Gawozi, fils de Silwane, établi par le même roi sur une part de l'ancien Qwabeland",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_MTHETHWA: {
@@ -1266,27 +1530,46 @@ export const RESEARCH = {
           sourceRefs: ["bryant-1929-olden-times"],
         },
       ],
-      linguisticReconstructions: [NGUNI_RECONSTRUCTION],
+      linguisticReconstructions: [NGUNI_RECONSTRUCTION, MATABELELAND_ISIBONGO],
     },
     sourceKeys: [
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
         "La prééminence des Mthethwa sous Dingiswayo est une hégémonie " +
         "politique, non une fonction héréditaire de caste au sens du champ.",
-      bearers:
-        "Dingiswayo est amplement documenté par Bryant, mais comme souverain " +
-        "mthethwa et non comme attestation de l'origine du nom ; la fiche ne " +
-        "l'enregistre pas en porteur pour ne pas faire d'une biographie royale " +
-        "la source d'une étymologie.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée dans le " +
         "texte intégral de Bryant, qui suit pourtant le clan sur seize passages.",
     },
+    // The earlier gap refused Dingiswayo on the ground that he does not attest
+    // the etymology. Nothing in the field asks him to: bearers records people
+    // who bore the name and are documented and dead, which is a different
+    // question from where the name comes from.
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Jobe, chef mthethwa, père de Dingiswayo (mort en 1807)",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Dingiswayo (Godongwana), roi des aba-kwa-Mtetwa, tué en 1818",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Mlandela, fils de Mbila, chef du clan mthethwa démembré après 1818",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_NXUMALO: {
@@ -1309,6 +1592,7 @@ export const RESEARCH = {
       ],
       linguisticReconstructions: [
         NGUNI_RECONSTRUCTION,
+        MATABELELAND_ISIBONGO,
         {
           claim:
             "L'explication courante rattache Nxumalo à l'umNxuma, entonnoir de " +
@@ -1325,22 +1609,41 @@ export const RESEARCH = {
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
         "Aucune fonction héréditaire attestée : les Nxumalo sont une section " +
         "d'un clan royal, statut politique et non charge de spécialistes.",
-      bearers:
-        "Bryant nomme plusieurs Nxumalo (Mkatshwa, Malusi, Sotondose) mais la " +
-        "généalogie ndwandwe est, de son propre aveu, si contradictoire que la " +
-        "certitude n'est plus atteignable dans ses états anciens ; aucun porteur " +
-        "n'est donc enregistré sur cette base.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée : les " +
         "occurrences relevées chez Bryant renvoient toutes à la section " +
         "ndwandwe.",
     },
+    // Bryant's own caution bears on the deep Ndwandwe genealogy, not on the
+    // nineteenth-century men he met or met the sons of. Withholding the latter
+    // because the former is uncertain was the wrong inference.
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Mkatshwa, chef de la section nxumalo du clan ndwandwe au début du XIXe siècle",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Malusi, fils de Mkatshwa, époux d'une fille de Jobe le Mthethwa",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Sotondose Nxumalo, réfugié rallié à la traversée de Mawa vers le Natal",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_SIBANDA: {
@@ -1348,26 +1651,40 @@ export const RESEARCH = {
     origin: {
       oralTraditions: [],
       writtenChronicles: [],
-      linguisticReconstructions: [NGUNI_RECONSTRUCTION],
+      linguisticReconstructions: [NGUNI_RECONSTRUCTION, MATABELELAND_ISIBONGO],
     },
-    sourceKeys: ["nomina-africana-nguni-naming"],
+    sourceKeys: [
+      "nomina-africana-nguni-naming",
+      "lindgren-2004-ndebele-castes",
+    ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
-        "Aucune fonction héréditaire attestée au niveau du clan. Sibanda est " +
-        "aujourd'hui surtout porté au Zimbabwe, où il est donné aussi bien dans " +
-        "des familles ndébélé que sotho, ce qui écarte l'hypothèse d'un corps de " +
-        "spécialistes propre à un clan.",
+        "Le champ demande une charge héréditaire attachée au nom, et le " +
+        "Matabeleland du Sud en propose une autre lecture qu'aucune source " +
+        "consultée ne permet de trancher pour Sibanda en particulier. " +
+        "Lindgren établit que l'isibongo y indexe une « caste » — le clivage " +
+        "entre venus du Zululand, agrégés en route et incorporés sur place — " +
+        "mais c'est un rang dans l'ordre de la conquête, non un métier " +
+        "héréditaire, et son article ne glose aucun nom en particulier. Le " +
+        "rang de Sibanda dans ce classement n'a pas pu être établi : le texte " +
+        "intégral est sous péage et n'a pas été lu.",
       bearers:
-        "Le texte intégral de Bryant, qui est la source de référence pour les " +
-        "clans nguni orientaux, ne contient aucune occurrence de Sibanda : le " +
-        "nom relève de l'aire ndébélé du Zimbabwe, hors du champ géographique " +
-        "que Bryant couvre. Aucun porteur décédé n'a donc pu être établi.",
+        "Le texte intégral de Bryant, source de référence pour les clans nguni " +
+        "orientaux et déjà dépouillée pour les six autres fiches nguni de " +
+        "cette vague, ne contient pas une seule occurrence de Sibanda. Ce " +
+        "silence est un résultat et non un manque : le nom relève de l'aire " +
+        "ndébélé du Zimbabwe, hors du champ géographique de Bryant, et il " +
+        "confirme que les deux aires ne se recouvrent pas. Aucune chronique " +
+        "équivalente pour le Matabeleland n'a été trouvée en accès libre.",
       homonyms:
-        "L'absence de Sibanda chez Bryant est elle-même le résultat de la " +
-        "recherche : faute de chronique clanique le suivant lignée par lignée, " +
-        "les origines multiples que suggèrent les répertoires communautaires ne " +
-        "peuvent être ni distinguées ni écartées.",
+        "Les répertoires communautaires font remonter Sibanda tantôt à une " +
+        "lignée nguni, tantôt au Sebata des BaTau sotho-tswana dont il serait " +
+        "l'adaptation nguni. Aucune source publiée accessible ne tranche : " +
+        "Bryant ne connaît pas le nom, et Lindgren, qui traite précisément de " +
+        "la pluralité d'origines revendiquées sous un même isibongo au " +
+        "Matabeleland, n'a pu être lu au-delà de son résumé. Les deux " +
+        "filiations sont donc laissées ouvertes plutôt qu'arbitrées.",
     },
   },
 
@@ -1388,9 +1705,45 @@ export const RESEARCH = {
           claimStatus: "established",
           sourceRefs: ["bryant-1929-olden-times"],
         },
+        {
+          claim:
+            "Bryant situe les Dube sur la rive nord du lagon de la Mhlathuze, " +
+            "voisins au nord des Mbonambi, qu'il donne pour clans frères issus " +
+            "d'une même souche. Se sachant peu nombreux, ils s'abstinrent de " +
+            "s'opposer à Dingiswayo comme à Shaka, ce qui leur conserva leur " +
+            "territoire : en mars 1827, Farewell et Isaacs remontant la côte " +
+            "en quête d'ivoire y trouvèrent Nzwakele, fils de Kushwayo, " +
+            "régnant encore sur le pays d'origine.",
+          claimStatus: "established",
+          sourceRefs: ["bryant-1929-olden-times"],
+        },
+        {
+          claim:
+            "Le clan a pratiqué l'adoption d'un lignage étranger. À " +
+            "l'éclatement du clan cele sous le règne de Dingane, Mningi, père " +
+            "de Geloza, quitta la Mzimkhulu avec sa famille et se fit adopter " +
+            "par Nzwakele ; il bâtit en pays dube un kraal nommé emaNdlazini, " +
+            "dont ses descendants ont tiré leur propre nom, aba-s-emaNdlazini.",
+          claimStatus: "established",
+          sourceRefs: ["bryant-1929-olden-times"],
+        },
       ],
       linguisticReconstructions: [NGUNI_RECONSTRUCTION],
     },
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Kushwayo (Maqamehlezi), chef des Dube de la Mhlathuze avant 1827",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Nzwakele, fils de Kushwayo, chef des Dube rencontré par Farewell et Isaacs en mars 1827, tué sous Dingane",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
     sourceKeys: ["nomina-africana-nguni-naming", "bryant-1929-olden-times"],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
@@ -1398,14 +1751,16 @@ export const RESEARCH = {
         "Aucune fonction héréditaire attestée : Bryant décrit les Dube comme un " +
         "clan territorial doté de ses propres chefs, non comme un corps de " +
         "spécialistes.",
-      bearers:
-        "Le chef Nzwakele, tué sous Dingane, est nommé par Bryant, mais sans " +
-        "dates ni généalogie propre ; il documente la dispersion du clan et non " +
-        "l'origine du nom, et n'est donc pas enregistré en porteur.",
       homonyms:
-        "Bryant distingue une branche Lushozi-Dube sans lui donner d'origine " +
-        "séparée : faute de trajectoire distincte attestée, elle est traitée " +
-        "comme une subdivision et non comme un homonyme.",
+        "Deux questions distinctes, dont aucune n'est tranchée. Bryant " +
+        "distingue une branche Lushozi-Dube sans lui donner d'origine séparée, " +
+        "et faute de trajectoire distincte attestée elle est traitée comme une " +
+        "subdivision. Reste la seconde, plus lourde : la fiche rattache le nom " +
+        "aux Ndau du Mozambique, quand tout ce que Bryant documente est le " +
+        "clan du littoral zoulou. Le passage de l'un à l'autre par les " +
+        "conquêtes nguni de Soshangane est plausible et n'a été établi par " +
+        "aucune source consultée ; les deux ne sont donc ni fusionnés ni " +
+        "déclarés homonymes, faute de savoir lequel des deux ils sont.",
     },
   },
 
@@ -1460,6 +1815,17 @@ export const RESEARCH = {
         },
       ],
     },
+    // The fiche carried no peoples[] at all, so it resolved to no linguistic
+    // family and fell out of every family-scoped listing — including the query
+    // that assembled this wave. Both sources already cited attach the praise
+    // name to Zulu lineages; the association was simply never written down.
+    peoples: [
+      {
+        peopleId: "PPL_ZULU_KWA_ZULU",
+        status: "attested",
+        sourceRefs: ["bryant-1929-olden-times", "nwu-zulu-names"],
+      },
+    ],
     sourceKeys: [
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
@@ -1485,27 +1851,128 @@ export const RESEARCH = {
   // ===========================================================================
   // Buganda — ebika totémiques
   // ===========================================================================
-  PAT_FFUMBE: bugandaClan(
-    "la civette d'Afrique",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "la grenouille (kikerekere), au rang nº 6 de la liste de Roscoe"
-  ),
-  PAT_LUGAVE: bugandaClan(
-    "le pangolin",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "le champignon (butiko), au rang nº 11 de la liste de Roscoe"
-  ),
-  PAT_NGONGE: bugandaClan(
-    "la loutre",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "la genette (kasimba), au rang nº 4 de la liste de Roscoe"
-  ),
-  PAT_NJAZA: bugandaClan(
-    "le redunca (antilope des roseaux)",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "une antilope (njugulu), au rang nº 25 de la liste de Roscoe, qui glose " +
-      "lui-même le totem principal par « Roebuck » et non par le redunca"
-  ),
+  PAT_FFUMBE: bugandaClan({
+    totem: "la civette d'Afrique",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "la grenouille (kikerekere), au rang nº 6 de la liste de Roscoe",
+    forefather:
+      "Le clan de la Civette se dit établi dans le pays bien avant la venue " +
+      "de Kintu, et le plus important des clans qui l'y précédaient. Il fait " +
+      "remonter son origine à Ntege, qu'il donne pour roi de l'Ouganda : " +
+      "Kintu le déposa, lui laissa plusieurs domaines et l'autorisation de " +
+      "garder le titre de Kabaka.",
+    courtFunction:
+      "Le clan fournit au palais l'épouse royale portant le titre de Naku. " +
+      "Cwa, fils de Kintu, prit pour femme Naku, fille de Ntege, et depuis " +
+      "lors chaque Kabaka prend dans ce clan une épouse qui reçoit ce nom. " +
+      "Le clan fournit également l'homme qui administrait l'ordalie par le " +
+      "poison, ouverte en appel d'une décision du roi, et le prêtre du dieu " +
+      "Baka, toujours pris parmi ses membres — le médium, lui, pouvait venir " +
+      "de n'importe quel clan.",
+    chronicles: [
+      {
+        claim:
+          "Walusimbi, fils de Ntege, fut un favori du roi Cwa et l'un de ses " +
+          "conseillers. Sur son domaine de Baka se tenait une partie des " +
+          "cérémonies de prolongation de la vie du roi, au retour du domaine " +
+          "de Nankere.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
+  PAT_LUGAVE: bugandaClan({
+    totem: "le pangolin",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "le champignon (butiko), au rang nº 11 de la liste de Roscoe",
+    forefather:
+      "Le clan du Pangolin se donne pour l'un des plus anciens du pays et se " +
+      "dit déjà établi dans le district de Busiro quand Kintu vint. Il fait " +
+      "remonter son origine à Mukibe Sekiwunga, à qui Kintu donna la colline " +
+      "de Kapeka.",
+    courtFunction:
+      "Le clan a la garde des tambours royaux Mujaguzo, le chef titré Ntenga " +
+      "fournissant les batteurs ; il lui est confié le tapis d'apparat Kiyu, " +
+      "sur lequel le roi se tenait lors des cérémonies d'État. L'intendant en " +
+      "chef de la reine est pris dans ce clan, de même que les chefs titrés " +
+      "Nakaianza, qui avait la charge de l'épouse royale Kabeja et la garde " +
+      "du dieu Nantaba, et Nantiga, chargé de l'épouse royale Nanzigu.",
+    chronicles: [
+      {
+        claim:
+          "Le clan tenait deux temples avec leurs prêtres et leurs médiums : " +
+          "celui de Wanga sur la colline de Wasozi et celui de Wamala sur la " +
+          "colline de Sekiwunga.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
+  PAT_NGONGE: bugandaClan({
+    totem: "la loutre",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "la genette (kasimba), au rang nº 4 de la liste de Roscoe",
+    forefather:
+      "Le clan de la Loutre fait remonter son origine à Mwanga Kisole, donné " +
+      "pour katikkiro — premier ministre — de Kintu, et que ce roi aurait " +
+      "tué dans un accès de colère. À sa mort son fantôme prit un médium ; " +
+      "il fut divinisé et un temple lui fut bâti sur la colline de Nsoke, " +
+      "desservi par un prêtre du clan.",
+    courtFunction:
+      "Le clan est fabricant d'étoffes d'écorce pour le roi. Il lui fournit " +
+      "une épouse chargée de faire le lit royal, charge héréditaire dans le " +
+      "clan : à la mort du roi, cette femme gagnait son temple funéraire et " +
+      "y demeurait à vie, une autre femme du clan prenant sa place à sa " +
+      "propre mort, tandis que le nouveau roi prenait au clan une nouvelle " +
+      "épouse-lingère. Le clan fournit aussi le serviteur chargé du tabac " +
+      "royal, ainsi que les prêtres des temples des dieux Mukasa, sur la " +
+      "colline de Kyange, et Wamala, sur celle de Nsoke.",
+  }),
+  PAT_NJAZA: bugandaClan({
+    totem: "le redunca (antilope des roseaux)",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro:
+      "une antilope (njugulu), au rang nº 25 de la liste de Roscoe, qui glose " +
+      "lui-même le totem principal par « Roebuck » et non par le redunca",
+    forefather:
+      "Le clan du Redunca se dit établi de tout temps dans la forêt de " +
+      "Mabira, en Kyagwe, et donne pour ancêtre Lutimba, qui s'y trouvait " +
+      "quand Kintu s'installa en Ouganda.",
+    courtFunction:
+      "Chasseurs d'éléphants depuis leurs origines, les membres du clan " +
+      "devinrent, une fois le pays organisé en monarchie, les chasseurs du " +
+      "roi et lui payèrent tribut en ivoire. Ils avaient la garde du dieu de " +
+      "la chasse pour leur contrée — Mpaamaso au premier chef, avec ses " +
+      "prêtres. Au lendemain du couronnement, le clan apportait au nouveau " +
+      "roi une défense d'ivoire qu'il enjambait, geste censé multiplier les " +
+      "éléphants.",
+    chronicles: [
+      {
+        claim:
+          "Dans la liste de Roscoe, le clan du Redunca porte la marque (a) : " +
+          "il faisait partie des clans qui n'étaient jamais autorisés à " +
+          "présenter un prince candidat au trône. Le roi pouvait épouser une " +
+          "femme du clan, mais l'appartenance maternelle en écartait " +
+          "l'enfant ; dans la plupart des cas les garçons nés de ces unions " +
+          "étaient tués à la naissance et seules les filles vivaient.",
+        claimStatus: "established",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+      {
+        claim:
+          "L'éléphant tué, le clan extrayait le nerf de la défense, " +
+          "l'emportait au loin et l'enterrait en signalant le lieu : le " +
+          "fantôme de l'animal y étant réputé attaché, le malheur devait " +
+          "frapper qui l'enjamberait sans le savoir.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
 
   // ===========================================================================
   // Habesha — patronyme non héréditaire
@@ -1584,12 +2051,51 @@ export const RESEARCH = {
   },
 };
 
-function bugandaClan(totem, banansangwa, akabbiro) {
+/**
+ * Roscoe's chapter VI is two different documents bolted together, and the first
+ * pass only read the first. Pages 138-139 are the bare totem list — that is what
+ * the earlier fiches quote. Pages 141-171 then give each clan its own narrative
+ * section, headed by the English name of the totem rather than the Luganda one,
+ * which is why a grep for "Lugave" returns a single hit and the section headed
+ * "The Manis Clan" was missed. Those sections carry the founding ancestor, the
+ * court offices and the estates, so the four ebika fiches are written from them
+ * here rather than from the list.
+ *
+ * `courtFunction` is what the sections establish and the earlier pass declared
+ * unfound: in Buganda a clan holds named, inherited duties at the Kabaka's
+ * court, which is precisely `casteOrSocialFunction`.
+ */
+function bugandaClan({
+  totem,
+  banansangwa,
+  akabbiro,
+  forefather,
+  courtFunction,
+  chronicles = [],
+  gapReasons = {},
+}) {
   return {
     transmissionMode: "patrilineal",
     designatedSocialUnit: "clan",
     origin: {
-      oralTraditions: [],
+      oralTraditions: [
+        {
+          claim: forefather,
+          claimStatus: "claimed",
+          griot:
+            "Les chefs de clan et officiants baganda réunis pour Roscoe par " +
+            "Sir Apolo Kagwa, katikkiro du Buganda",
+          transcription:
+            "John Roscoe, The Baganda, Macmillan, 1911, chapitre VI « The " +
+            "Clans and their Totems ». Roscoe écrit dans sa préface avoir " +
+            "reçu « the principal men from each clan » plusieurs semaines " +
+            "durant, par l'entremise de Kagwa, et avoir consigné leurs " +
+            "récits ; les sections claniques rapportent donc ce que chaque " +
+            "clan dit de lui-même, au style indirect (« they assert », " +
+            "« they trace their origin to »).",
+          sourceRefs: ["roscoe-1911-baganda"],
+        },
+      ],
       writtenChronicles: [
         {
           claim: `Le totem principal (omuziro) de ce clan est ${totem}. ${banansangwa}`,
@@ -1601,6 +2107,7 @@ function bugandaClan(totem, banansangwa, akabbiro) {
           claimStatus: "established",
           sourceRefs: ["roscoe-1911-baganda"],
         },
+        ...chronicles,
       ],
       linguisticReconstructions: [
         {
@@ -1611,7 +2118,23 @@ function bugandaClan(totem, banansangwa, akabbiro) {
           claimStatus: "established",
           sourceRefs: ["roscoe-1911-baganda"],
         },
+        {
+          claim:
+            "Le clan (ekika) se subdivise en branches (essiga) puis en " +
+            "sous-branches (enda), et s'ancre sur des tenures funéraires " +
+            "(obutaka) : trois générations inhumées en un lieu y fixent le " +
+            "droit du lignage, que le Kabaka lui-même se gardait de " +
+            "contester. La tête de clan porte un titre, et non un nom : le " +
+            "titre est celui du premier détenteur de la charge et passe au " +
+            "successeur.",
+          claimStatus: "established",
+          sourceRefs: ["roscoe-1911-baganda"],
+        },
       ],
+    },
+    casteOrSocialFunction: {
+      value: courtFunction,
+      sourceRefs: ["roscoe-1911-baganda"],
     },
     totemicFoodProhibition: {
       value:
@@ -1623,22 +2146,29 @@ function bugandaClan(totem, banansangwa, akabbiro) {
     sourceKeys: ["roscoe-1911-baganda", "buganda-heritage-clans"],
     gapReasons: {
       alliances:
-        "Le système ganda ne documente pas d'alliance formelle entre ebika ; " +
-        "l'exogamie clanique en est l'inverse.",
-      casteOrSocialFunction:
-        "Les titres de chef de clan donnés par les sites patrimoniaux ganda " +
-        "(Walusimbi pour le Ffumbe, Ndugwa pour le Lugave) ont été cherchés dans " +
-        "le texte intégral de Roscoe : Walusimbi y apparaît six fois, mais comme " +
-        "détenteur de prérogatives rituelles à l'intronisation, jamais rattaché " +
-        "explicitement à son ekika ; Ndugwa n'y figure que dans une liste de noms " +
-        "de garçons. La charge héréditaire est donc plausible et non établie.",
+        "Roscoe documente bien des rattachements nommés entre ebika — le clan " +
+        "du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui " +
+        "de la Loutre — et une seconde institution d'alliance : les clans " +
+        "écartés du trône donnaient leurs filles à d'autres clans pour que " +
+        "leurs petits-fils redeviennent éligibles. L'alliance ganda existe " +
+        "donc et est attestée par paires nommées. Aucune de ces paires ne " +
+        "relie deux des quatre ebika dotés d'une fiche, et le champ exige un " +
+        "targetPatronymeId présent dans le corpus : c'est la couverture du " +
+        "corpus qui bloque, non la documentation.",
       bearers:
-        "Le texte intégral de Roscoe a été parcouru pour ce clan : il nomme des " +
-        "chefs et des officiants, mais sans généalogie permettant de rattacher " +
-        "une personne décédée au clan par une source dédiée.",
+        "Les sections claniques de Roscoe nomment abondamment — chefs, " +
+        "prêtres, médiums, épouses royales. Mais Roscoe établit au même " +
+        "chapitre que ces noms sont des titres transmis au successeur, et " +
+        "que le détenteur « parle des événements passés comme s'il y avait " +
+        "assisté », au point de se dire le père de gens morts depuis " +
+        "longtemps. Enregistrer l'un d'eux en porteur individuel décédé " +
+        "reviendrait à prendre une charge pour une personne. L'absence " +
+        "n'est pas ici un défaut de recherche mais une propriété du système.",
       homonyms:
         "Le nom de ce clan est celui de son totem, mot commun du luganda ; " +
-        "aucune lignée homonyme d'origine distincte n'a été trouvée.",
+        "aucune lignée homonyme d'origine distincte n'a été trouvée dans les " +
+        "sections claniques de Roscoe ni sur le site patrimonial ganda.",
+      ...gapReasons,
     },
   };
 }

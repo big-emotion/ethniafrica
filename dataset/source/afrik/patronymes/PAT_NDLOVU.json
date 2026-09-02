@@ -36,6 +36,11 @@
         "sourceRefs": ["nomina-africana-nguni-naming"]
       },
       {
+        "claim": "Dans le Matabeleland du Sud, l'isibongo ne sert pas seulement à nommer un clan : il fonctionne comme opérateur de classement, articulant nom de clan, origine revendiquée et « caste », et découpant de l'intérieur la catégorie ndébélé plutôt que de la refléter. Un même isibongo peut donc y recouvrir des origines revendiquées distinctes.",
+        "claimStatus": "established",
+        "sourceRefs": ["lindgren-2004-ndebele-castes"]
+      },
+      {
         "claim": "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique une descendance du troupeau d'éléphants du territoire où il s'est établi.",
         "claimStatus": "claimed",
         "sourceRefs": ["iafrika-izithakazelo-ndlovu"]
@@ -68,7 +73,23 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Ndlovu, fils de Kuba, éponyme du sous-clan aba-kwa-Ndlovu, inhumé près de l'isiHlahla sikaMbema",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Silwane, fils de Ndlovu, chef du district entre la Mfule et la Mfolozi sous le roi Mpande",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Gawozi, fils de Silwane, établi par le même roi sur une part de l'ancien Qwabeland",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
   "homonyms": [
     {
       "label": "aba-kwa-Ndlovu de la Ntsuze",
@@ -119,20 +140,24 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "lindgren-2004-ndebele-castes",
+      "title": "The Internal Dynamics of Ethnicity: Clan Names, Origins and Castes in Southern Zimbabwe",
+      "url": "https://doi.org/10.3366/afr.2004.74.2.173",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Lindgren, Björn, Africa (Journal of the International African Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la citation : le texte intégral est sous péage chez Cambridge Core et n'a pas pu être lu lors de la passe ; seuls la notice et le résumé ont été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en Matabeleland du Sud un opérateur de classement qui articule nom de clan, origine revendiquée et « caste », et qui découpe la catégorie ndébélé en parties. Aucune glose de nom particulier ne lui est empruntée."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que targetPatronymeId doit désigner un PAT_ existant : les partenaires attestés n'ont pas de fiche."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan ; Bryant décrit les Ndlovu comme un sous-clan territorial, non comme un corps de spécialistes."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'ancêtre éponyme Ndlovu fils de Kuba est nommé par Bryant mais sans dates ni éléments biographiques ; il est retenu comme origine du nom, pas comme porteur documenté."
+      "reason": "Aucune charge héréditaire attachée au nom. Bryant montre au contraire que les fonctions tenues par ce lignage sont conférées et non transmises : Silwane puis son fils Gawozi sont chacun nommés à leur district par le roi Mpande, ce qui est une faveur royale renouvelée, non un office que le nom porterait."
     }
   ]
 }

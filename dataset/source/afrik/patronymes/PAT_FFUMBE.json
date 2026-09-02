@@ -18,7 +18,15 @@
   "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
-    "oralTraditions": [],
+    "oralTraditions": [
+      {
+        "claim": "Le clan de la Civette se dit établi dans le pays bien avant la venue de Kintu, et le plus important des clans qui l'y précédaient. Il fait remonter son origine à Ntege, qu'il donne pour roi de l'Ouganda : Kintu le déposa, lui laissa plusieurs domaines et l'autorisation de garder le titre de Kabaka.",
+        "claimStatus": "claimed",
+        "griot": "Les chefs de clan et officiants baganda réunis pour Roscoe par Sir Apolo Kagwa, katikkiro du Buganda",
+        "transcription": "John Roscoe, The Baganda, Macmillan, 1911, chapitre VI « The Clans and their Totems ». Roscoe écrit dans sa préface avoir reçu « the principal men from each clan » plusieurs semaines durant, par l'entremise de Kagwa, et avoir consigné leurs récits ; les sections claniques rapportent donc ce que chaque clan dit de lui-même, au style indirect (« they assert », « they trace their origin to »).",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      }
+    ],
     "writtenChronicles": [
       {
         "claim": "Le totem principal (omuziro) de ce clan est la civette d'Afrique. Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
@@ -29,11 +37,21 @@
         "claim": "Le totem secondaire (akabbiro) de ce clan est la grenouille (kikerekere), au rang nº 6 de la liste de Roscoe.",
         "claimStatus": "established",
         "sourceRefs": ["roscoe-1911-baganda"]
+      },
+      {
+        "claim": "Walusimbi, fils de Ntege, fut un favori du roi Cwa et l'un de ses conseillers. Sur son domaine de Baka se tenait une partie des cérémonies de prolongation de la vie du roi, au retour du domaine de Nankere.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["roscoe-1911-baganda"]
       }
     ],
     "linguisticReconstructions": [
       {
         "claim": "L'ekika ganda est un clan totémique : chaque clan porte un totem principal (omuziro) et un totem secondaire (akabbiro), et le nom du clan est celui du totem.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      },
+      {
+        "claim": "Le clan (ekika) se subdivise en branches (essiga) puis en sous-branches (enda), et s'ancre sur des tenures funéraires (obutaka) : trois générations inhumées en un lieu y fixent le droit du lignage, que le Kabaka lui-même se gardait de contester. La tête de clan porte un titre, et non un nom : le titre est celui du premier détenteur de la charge et passe au successeur.",
         "claimStatus": "established",
         "sourceRefs": ["roscoe-1911-baganda"]
       }
@@ -54,7 +72,10 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Le clan fournit au palais l'épouse royale portant le titre de Naku. Cwa, fils de Kintu, prit pour femme Naku, fille de Ntege, et depuis lors chaque Kabaka prend dans ce clan une épouse qui reçoit ce nom. Le clan fournit également l'homme qui administrait l'ordalie par le poison, ouverte en appel d'une décision du roi, et le prêtre du dieu Baka, toujours pris parmi ses membres — le médium, lui, pouvait venir de n'importe quel clan.",
+    "sourceRefs": ["roscoe-1911-baganda"]
+  },
   "bearers": [],
   "homonyms": [],
   "sources": [
@@ -87,19 +108,15 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Le système ganda ne documente pas d'alliance formelle entre ebika ; l'exogamie clanique en est l'inverse."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Les titres de chef de clan donnés par les sites patrimoniaux ganda (Walusimbi pour le Ffumbe, Ndugwa pour le Lugave) ont été cherchés dans le texte intégral de Roscoe : Walusimbi y apparaît six fois, mais comme détenteur de prérogatives rituelles à l'intronisation, jamais rattaché explicitement à son ekika ; Ndugwa n'y figure que dans une liste de noms de garçons. La charge héréditaire est donc plausible et non établie."
+      "reason": "Roscoe documente bien des rattachements nommés entre ebika — le clan du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui de la Loutre — et une seconde institution d'alliance : les clans écartés du trône donnaient leurs filles à d'autres clans pour que leurs petits-fils redeviennent éligibles. L'alliance ganda existe donc et est attestée par paires nommées. Aucune de ces paires ne relie deux des quatre ebika dotés d'une fiche, et le champ exige un targetPatronymeId présent dans le corpus : c'est la couverture du corpus qui bloque, non la documentation."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Le texte intégral de Roscoe a été parcouru pour ce clan : il nomme des chefs et des officiants, mais sans généalogie permettant de rattacher une personne décédée au clan par une source dédiée."
+      "reason": "Les sections claniques de Roscoe nomment abondamment — chefs, prêtres, médiums, épouses royales. Mais Roscoe établit au même chapitre que ces noms sont des titres transmis au successeur, et que le détenteur « parle des événements passés comme s'il y avait assisté », au point de se dire le père de gens morts depuis longtemps. Enregistrer l'un d'eux en porteur individuel décédé reviendrait à prendre une charge pour une personne. L'absence n'est pas ici un défaut de recherche mais une propriété du système."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Le nom de ce clan est celui de son totem, mot commun du luganda ; aucune lignée homonyme d'origine distincte n'a été trouvée."
+      "reason": "Le nom de ce clan est celui de son totem, mot commun du luganda ; aucune lignée homonyme d'origine distincte n'a été trouvée dans les sections claniques de Roscoe ni sur le site patrimonial ganda."
     }
   ],
   "totemicFoodProhibition": {
