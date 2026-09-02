@@ -146,8 +146,11 @@ async function nameFiches(entities: SourceCitationEntity[]): Promise<void> {
     hasCountry ? getCountryIndex() : Promise.resolve([]),
   ]);
 
+  // A people's name is `nameMain`; only a country carries `nameFr`. Reading
+  // the wrong one is silent — the label simply stays the identifier — which is
+  // how `PPL_KHAINAI` reached the rendered page.
   const peopleNames = new Map(
-    peoples.map((people) => [people.id, people.nameFr])
+    peoples.map((people) => [people.id, people.nameMain])
   );
   const countryNames = new Map(
     countries.map((country) => [country.id, country.nameFr])

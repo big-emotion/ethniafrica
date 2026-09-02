@@ -165,6 +165,61 @@ describe("sources facet service", () => {
       expect(query.range).toHaveBeenLastCalledWith(20, 39);
     });
 
+    /**
+     * PostgREST answers a range beyond the table with 416 rather than with an
+     * empty page, and it still reports the row count in Content-Range. Read as
+     * a plain failure that 500s the page, which is what it did: `?page=99999`
+     * took the whole directory down instead of landing on the last page.
+     */
+    // @req REQ-108
+    it("lands on the last page when the server refuses an out-of-range slice", async () => {
+      // The refusal carries no count — measured, which is why asking for one
+      // separately is the only way back to the last page.
+      const refused = buildQuery([]);
+      refused.range = vi.fn(() =>
+        Promise.resolve({
+          data: null,
+          error: { message: "Requested range not satisfiable" },
+          count: null,
+        })
+      );
+      // A head count resolves the builder itself rather than a `range` call.
+      const counted = buildQuery([]);
+      counted.then = vi.fn((resolve: (value: unknown) => unknown) =>
+        Promise.resolve({ count: 25, error: null }).then(resolve)
+      );
+      const lastPage = buildQuery([{ id: "a", title: "A" }], 25);
+
+      fromMock
+        .mockReturnValueOnce(refused)
+        .mockReturnValueOnce(counted)
+        .mockReturnValueOnce(lastPage);
+
+      const result = await getSourcesFacetPage(99999, NO_FILTERS, 20);
+
+      expect(result.page).toBe(2);
+      expect(result.total).toBe(25);
+      expect(result.sources).toHaveLength(1);
+      expect(lastPage.range).toHaveBeenCalledWith(20, 39);
+    });
+
+    // @req REQ-108
+    it("still reports a genuine query failure rather than swallowing it", async () => {
+      const broken = buildQuery([]);
+      broken.range = vi.fn(() =>
+        Promise.resolve({
+          data: null,
+          error: { message: "column does not exist" },
+          count: null,
+        })
+      );
+      fromMock.mockReturnValue(broken);
+
+      await expect(getSourcesFacetPage(1, NO_FILTERS, 20)).rejects.toThrow(
+        "column does not exist"
+      );
+    });
+
     // @req REQ-108
     it("offers a hundred rows at most, so an address cannot ask for the corpus", () => {
       expect(SOURCES_FACET_PAGE_SIZES).toEqual([20, 50, 100]);
@@ -173,19 +228,62 @@ describe("sources facet service", () => {
 
   describe("getSourcesFacetChoices", () => {
     /**
-     * The one that bites silently: a Supabase select stops at a thousand rows
-     * by default, so counting 4 395 sources without an explicit range would
-     * report confident, wrong figures and never raise.
+     * The one that bit silently. PostgREST stops a select at a thousand rows
+     * with no error, and asking for a wider range does not lift it — measured:
+     * the directory said "4 395 sources" from the count while its facets
+     * described the first thousand, so the standings summed to exactly 1 000
+     * and provenance read "7 sur 1 000". Only paging until the table runs out
+     * gets the real figures.
      */
     // @req REQ-114
-    it("reads past the thousand-row cap a select applies by default", async () => {
-      const query = buildQuery([], 0);
+    it("pages until the table runs out, because the row cap is the server's", async () => {
+      const full = Array.from({ length: 1000 }, () => ({
+        tier: "official",
+        source_kind: null,
+        year: null,
+      }));
+      const tail = [{ tier: "referenced", source_kind: null, year: null }];
+
+      const first = buildQuery(full);
+      const second = buildQuery(tail);
+      fromMock.mockReturnValueOnce(first).mockReturnValueOnce(second);
+
+      const choices = await getSourcesFacetChoices();
+
+      expect(first.range).toHaveBeenCalledWith(0, 999);
+      expect(second.range).toHaveBeenCalledWith(1000, 1999);
+      expect(choices.total).toBe(1001);
+      expect(choices.standings).toEqual([
+        { id: "official", label: "Officielle", count: 1000 },
+        { id: "referenced", label: "Référencée", count: 1 },
+      ]);
+    });
+
+    /**
+     * A range without an order is a range over an unspecified sequence: two
+     * pages could repeat a row and miss another, and no assertion about totals
+     * would catch it.
+     */
+    // @req REQ-114
+    it("orders the paged read, so the pages describe disjoint rows", async () => {
+      const query = buildQuery([]);
       fromMock.mockReturnValue(query);
 
       await getSourcesFacetChoices();
 
-      const [, upperBound] = query.range.mock.calls[0];
-      expect(upperBound).toBeGreaterThan(4395);
+      expect(query.order).toHaveBeenCalledWith("id");
+    });
+
+    // @req REQ-114
+    it("stops after one read when the corpus fits in a single page", async () => {
+      const query = buildQuery([
+        { tier: "official", source_kind: null, year: null },
+      ]);
+      fromMock.mockReturnValue(query);
+
+      await getSourcesFacetChoices();
+
+      expect(query.range).toHaveBeenCalledTimes(1);
     });
 
     // @req REQ-114

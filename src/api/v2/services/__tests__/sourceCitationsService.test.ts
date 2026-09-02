@@ -1,5 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
+import type { People } from "@/types/afrik";
+
 const fromMock = vi.fn();
 const getPeoplesByIdsMock = vi.fn();
 const getCountryIndexMock = vi.fn();
@@ -96,8 +98,11 @@ describe("getSourceCitations", () => {
       { entity_type: "country", entity_id: "NGA" },
     ]);
     fromMock.mockReturnValueOnce(count).mockReturnValueOnce(rows);
+    // `nameMain` is the field a People carries; typing this fixture against
+    // the real interface is what stops it from inventing one that resolves to
+    // undefined and leaves the identifier on screen.
     getPeoplesByIdsMock.mockResolvedValue([
-      { id: "PPL_YORUBA", nameFr: "Yoruba" },
+      { id: "PPL_YORUBA", nameMain: "Yoruba" } as People,
     ]);
     getCountryIndexMock.mockResolvedValue([{ id: "NGA", nameFr: "Nigeria" }]);
 
