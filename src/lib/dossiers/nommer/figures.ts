@@ -1,12 +1,10 @@
 /**
  * Every number the dossier prints, and where each one comes from.
  *
- * The dossier argues from counts, so the counts have to be auditable. Four
+ * The dossier argues from counts, so the counts have to be auditable. Three
  * provenances are genuinely in play and the reader is told which is which
  * (atlas charter §4):
  *
- *   - `derived`  — read from the database at render. Never frozen into prose,
- *                  because the corpus moves and a sentence does not.
  *   - `counted`  — reproducible from `dataset/source/afrik/`. The suite
  *                  **replays** the count and fails if the corpus has moved,
  *                  so a figure cannot quietly become false.
@@ -50,13 +48,6 @@ export const PEJORATIVE_STEMS = [
 
 // @req REQ-113
 export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
-  "exonym-endonym-ratio": {
-    kind: "derived",
-    figureKey: "exonym-endonym-ratio",
-    label: "exonymes pour un endonyme",
-    method: "getNameTypeCounts() — vue afrik_name_type_counts",
-  },
-
   "corpus-peoples": {
     kind: "counted",
     figureKey: "corpus-peoples",

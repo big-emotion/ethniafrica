@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { NOMMER_BIBLIOGRAPHY } from "@/lib/dossiers/nommer/bibliography";
-import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import {
+  NOMMER_CHAPTERS,
+  getNommerChapter,
+} from "@/lib/dossiers/nommer/chapters";
 import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
 import { SOURCE_TIERS } from "@/types/sources";
 
@@ -114,6 +117,23 @@ describe("the Nommer dossier's sources", () => {
     const danglingFigures: string[] = [];
 
     for (const chapter of NOMMER_CHAPTERS) {
+      for (const key of [
+        ...chapter.standfirst.sourceRefs,
+        ...chapter.measure.sourceRefs,
+      ]) {
+        if (!NOMMER_BIBLIOGRAPHY[key]) {
+          danglingSources.push(`${chapter.key}/head → ${key}`);
+        }
+      }
+      for (const key of [
+        ...chapter.standfirst.figureRefs,
+        ...chapter.measure.figureRefs,
+      ]) {
+        if (!NOMMER_FIGURES[key]) {
+          danglingFigures.push(`${chapter.key}/head → ${key}`);
+        }
+      }
+
       for (const section of chapter.sections) {
         const blocks = [...section.blocks, ...(section.table?.rows ?? [])];
         for (const block of blocks) {
@@ -149,6 +169,26 @@ describe("the Nommer dossier's sources", () => {
     const unbacked: string[] = [];
 
     for (const chapter of NOMMER_CHAPTERS) {
+      const heads: Array<
+        [string, { text: string; sourceRefs: string[]; figureRefs: string[] }]
+      > = [
+        [`${chapter.key}/standfirst`, chapter.standfirst],
+        [
+          `${chapter.key}/measure`,
+          {
+            text: `${chapter.measure.value} ${chapter.measure.unit}`,
+            sourceRefs: chapter.measure.sourceRefs,
+            figureRefs: chapter.measure.figureRefs,
+          },
+        ],
+      ];
+
+      for (const [where, block] of heads) {
+        if (!CLAIM_PATTERN.test(block.text)) continue;
+        if (block.sourceRefs.length + block.figureRefs.length > 0) continue;
+        unbacked.push(`${where}: ${block.text.slice(0, 70)}…`);
+      }
+
       for (const section of chapter.sections) {
         for (const block of section.blocks) {
           if (!CLAIM_PATTERN.test(block.text)) continue;
@@ -161,5 +201,56 @@ describe("the Nommer dossier's sources", () => {
     }
 
     expect(unbacked).toEqual([]);
+  });
+
+  // A tile asks; the chapter answers. A number on the support line would be a
+  // claim with nowhere to put its source — and the tile has exactly three
+  // levels, so there is no fourth to hang one from.
+  // @req REQ-113
+  it("keeps digits and dates out of the question a tile asks", () => {
+    for (const chapter of NOMMER_CHAPTERS) {
+      expect(CLAIM_PATTERN.test(chapter.question), chapter.key).toBe(false);
+    }
+  });
+});
+
+describe("the Nommer dossier's chapters", () => {
+  // @req REQ-113
+  it("declares the five chapters once each, in reading order", () => {
+    expect(NOMMER_CHAPTERS.map((chapter) => chapter.key)).toEqual([
+      "le-peuple",
+      "le-pays",
+      "la-personne",
+      "la-langue",
+      "la-chose",
+    ]);
+  });
+
+  // The ordinal is printed on the tile and in each chapter's step label, so it
+  // has to follow the array rather than be typed in beside it.
+  // @req REQ-113
+  it("numbers the chapters from their own position", () => {
+    NOMMER_CHAPTERS.forEach((chapter, index) => {
+      expect(chapter.ordinal, chapter.key).toBe(
+        String(index + 1).padStart(2, "0")
+      );
+    });
+  });
+
+  // @req REQ-113
+  it("gives every chapter the three levels a tile renders", () => {
+    for (const chapter of NOMMER_CHAPTERS) {
+      expect(chapter.title, chapter.key).not.toBe("");
+      expect(chapter.question, chapter.key).not.toBe("");
+      expect(chapter.measure.value, chapter.key).not.toBe("");
+      expect(chapter.measure.unit, chapter.key).not.toBe("");
+      expect(chapter.standfirst.text, chapter.key).not.toBe("");
+    }
+  });
+
+  // @req REQ-113
+  it("finds a chapter by its key and nothing by an unknown one", () => {
+    expect(getNommerChapter("la-chose")?.title).toBe("La chose");
+    expect(getNommerChapter("le-peuple")?.ordinal).toBe("01");
   });
 });

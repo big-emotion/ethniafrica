@@ -66,18 +66,17 @@ export interface DossierSource {
 /**
  * A number the dossier prints, and where it came from.
  *
- * Four branches, because the dossier genuinely has four kinds of number and
+ * Three branches, because the dossier genuinely has three kinds of number and
  * the atlas charter §4 requires the interface to say which is which.
+ *
+ * There is deliberately no "read from the database at render" branch. The
+ * database and the git corpus disagree — `name_records` deduplicates spellings,
+ * so it answers 3,8 exonyms per endonym where the fiches answer 4 — and a
+ * dossier that quoted whichever number the page happened to reach would be
+ * unciteable. The corpus is the editorial source of truth, so the dossier
+ * counts it, and the suite replays the count.
  */
 export type CorpusFigure =
-  | {
-      /** Read from the database at render. Never frozen into prose. */
-      kind: "derived";
-      figureKey: FigureKey;
-      label: string;
-      /** The exported function that produces it, named so a reader can rerun it. */
-      method: string;
-    }
   | {
       /** Reproducible from `dataset/source/afrik/` by the stated command. */
       kind: "counted";
@@ -175,20 +174,38 @@ export interface ChapterEntity {
   label: string;
 }
 
+/**
+ * The tile's third level, and the only number a reader meets before they have
+ * read anything.
+ *
+ * It carries its own refs rather than borrowing the chapter's: a figure shown
+ * on a navigation tile is still an assertion, and the one most likely to be
+ * screenshotted out of context. Split into `value` and `unit` so a count
+ * (3 207 · exonymes recensés) and a word-and-date (« bantou » · 1862, première
+ * attestation) share one shape — a template built around a big numeral would
+ * have made the fourth tile absurd.
+ */
+export interface ChapterMeasure {
+  value: string;
+  unit: string;
+  sourceRefs: SourceKey[];
+  figureRefs: FigureKey[];
+}
+
 export interface DossierChapter {
   key: NommerChapterKey;
   /** "01" … "05". Rendered in the tile's metadata line. */
   ordinal: string;
   title: string;
-  /** The question the tile asks. One or two lines. */
+  /**
+   * The question the tile asks, in one or two lines. Deliberately free of
+   * digits and dates: a tile asks, the chapter answers, and a number on the
+   * support line would be a claim with nowhere to put its source.
+   */
   question: string;
   /** The chapter's claim, in one sentence. */
-  standfirst: string;
-  /**
-   * The tile's third level. Split so a word-and-date measure
-   * (« bantou », 1862) and a count (3 207 exonymes) share one shape.
-   */
-  measure: { value: string; unit: string };
+  standfirst: ProseBlock;
+  measure: ChapterMeasure;
   sections: ChapterSection[];
   entities: ChapterEntity[];
 }
