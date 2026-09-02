@@ -2,6 +2,7 @@ import {
   getCountryRoute,
   getFamilyRoute,
   getLocalizedRoute,
+  getNommerChapterRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
 } from "@/lib/routing";
@@ -75,6 +76,11 @@ export const LIVE_ROUTES = [
   getLocalizedRoute("fr", "migrations"),
   getLocalizedRoute("fr", "quiz"),
   getLocalizedRoute("fr", "colonization"),
+  getLocalizedRoute("fr", "nommer"),
+  // One chapter, not five: they share a renderer, so auditing the fifth would
+  // audit the same tree four more times. `la-langue` is the one carrying a
+  // table and a set of name pairs, which is where the accessibility work is.
+  getNommerChapterRoute("fr", "la-langue"),
   getLocalizedRoute("fr", "doctrine"),
   `${getLocalizedRoute("fr", "doctrine")}/classifications-contestees`,
 ];

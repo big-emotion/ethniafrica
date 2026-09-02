@@ -30,6 +30,11 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   migrations: "Migrations",
   quiz: "Quiz",
   colonization: "Colonisation & résistances",
+  // Shorter than the module's own label ("Qui a donné ce nom ?"), which is a
+  // question and would wrap the crumb on a phone. The trail names the
+  // destination; the menu asks the question.
+  nommer: "Nommer",
+  glossary: "Glossaire",
   atlasHub: ACCESS_MODE_LABELS.atlas,
   dossiersHub: ACCESS_MODE_LABELS.dossiers,
   jeuxHub: ACCESS_MODE_LABELS.jeux,
@@ -113,6 +118,7 @@ export const translations = {
         doctrine: "Doctrine éditoriale",
         about: "À propos",
         sources: "Sources",
+        glossary: "Glossaire",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },
@@ -548,7 +554,7 @@ export const translations = {
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
-          "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
+          "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
         hubEntryName: "Le hub de lecture",
       },
       jeux: {
@@ -607,6 +613,14 @@ export const translations = {
         peuples: "Peuples",
         pays: "Pays",
         familles: "Familles",
+        // The five chapters of the Nommer dossier. They are segments rather
+        // than page types on purpose (see NOMMER_CHAPTER_SLUGS in routing.ts),
+        // so this map is the only place the trail can learn their words.
+        "le-peuple": "Le peuple",
+        "le-pays": "Le pays",
+        "la-personne": "La personne",
+        "la-langue": "La langue",
+        "la-chose": "La chose",
       } as Record<string, string>,
       /**
        * Prefixes the fiche a reader arrived from. Provenance, not ancestry:

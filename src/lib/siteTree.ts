@@ -1,9 +1,14 @@
+import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
 import {
   ACCESS_MODE_LABELS,
   getModulesForAccessMode,
 } from "@/lib/hubs/moduleRegistry";
-import { getLocalizedRoute } from "@/lib/routing";
+import {
+  getLocalizedRoute,
+  getNommerChapterRoute,
+  type NommerChapterKey,
+} from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
 /**
@@ -67,6 +72,8 @@ export const UNLISTED_ROUTES = [
 export function getSiteTree(language: Language): SiteTreeSection[] {
   const route = (page: Parameters<typeof getLocalizedRoute>[1]) =>
     getLocalizedRoute(language, page);
+  const nommerChapterRoute = (chapter: NommerChapterKey) =>
+    getNommerChapterRoute(language, chapter);
 
   return [
     /**
@@ -139,6 +146,20 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
         {
+          href: route("nommer"),
+          label: "Qui a donné ce nom ?",
+          note: "Le dossier fondateur, et ses cinq chapitres.",
+        },
+        // The five chapters are listed, against this file's own rule that the
+        // map offers doorways rather than every page. A chapter is a whole
+        // reading, not one of 890 fiches, and `getSiteTreePaths` is the sole
+        // feed of the sitemap: leaving them out would publish an editorial
+        // page no crawler is told about.
+        ...NOMMER_CHAPTERS.map((chapter) => ({
+          href: nommerChapterRoute(chapter.key),
+          label: `${chapter.ordinal} · ${chapter.title}`,
+        })),
+        {
           href: route("names"),
           label: "Appellations",
           note: "Autonymes, exonymes, et ce que l'écart raconte.",
@@ -205,6 +226,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       blurb: "Qui publie, sous quelles règles, et comment lire les données.",
       links: [
         { href: `/${language}/about`, label: "À propos" },
+        {
+          href: route("glossary"),
+          label: "Glossaire",
+          note: "Les mots avec lesquels l'atlas nomme, définis une fois.",
+        },
         {
           href: route("sources"),
           label: "Sources",
