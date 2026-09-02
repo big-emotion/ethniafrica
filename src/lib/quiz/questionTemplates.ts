@@ -169,31 +169,6 @@ export function buildT4MainLanguageTemplate(
   };
 }
 
-// @req REQ-080
-export function buildT5IsoCodeTemplate(
-  fiche: QuizPeopleFixture,
-  isoCodePool: string[]
-): QuizQuestionCandidate | null {
-  const distractors = selectDistractors(fiche.isoCode, isoCodePool);
-  if (!distractors) return null;
-
-  const correctOption = correctOptionIndex(fiche.id, "T5");
-  const languageName = displayName(fiche.mainLanguage);
-  return {
-    templateId: "T5",
-    entityType: "people",
-    entityId: fiche.id,
-    fieldPath: "content.languages.isoCodes",
-    promptFr: `Quel code ISO 639-3 désigne la langue ${languageName} ?`,
-    stimulusFr: null,
-    subjectName: fiche.subjectName,
-    optionsFr: assembleOptions(fiche.isoCode, distractors, correctOption),
-    correctOption,
-    explanationFr: `Le code ISO 639-3 de la langue ${languageName} est « ${fiche.isoCode} ».`,
-    baselineDifficulty: 4,
-  };
-}
-
 /**
  * One inversion round: a verbatim rubric fragment as the stimulus, and the
  * people it belongs to as the answer.
@@ -416,7 +391,6 @@ export const questionTemplateBuilders = {
   T2: buildT2AutonymTemplate,
   T3: buildT3MainCountryTemplate,
   T4: buildT4MainLanguageTemplate,
-  T5: buildT5IsoCodeTemplate,
   T6: buildT6RitesTemplate,
   T7: buildT7SpiritualitiesTemplate,
   T8: buildT8SymbolsTemplate,

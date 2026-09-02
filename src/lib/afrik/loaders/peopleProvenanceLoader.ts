@@ -172,11 +172,6 @@ export function peopleAssertionTargets(
     targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T4, statement: language });
   }
 
-  const isoCode = nonEmpty(content.languages?.isoCodes?.[0]);
-  if (isoCode) {
-    targets.push({ fieldPath: TEMPLATE_FIELD_PATHS.T5, statement: isoCode });
-  }
-
   const exonyms = content.appellations?.exonyms ?? [];
   const tokens = subjectNameTokens({
     subjectName: {
