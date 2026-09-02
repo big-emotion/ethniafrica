@@ -234,11 +234,7 @@ export const getPersonRoute = (language: Language, id: string): string =>
  * chapter's previous/next are derived from it rather than declared twice.
  */
 export type NommerChapterKey =
-  | "le-peuple"
-  | "le-pays"
-  | "la-personne"
-  | "la-langue"
-  | "la-chose";
+  "le-peuple" | "le-pays" | "la-personne" | "la-langue" | "la-chose";
 
 const NOMMER_CHAPTER_SLUG_TABLE = {
   fr: {
@@ -281,8 +277,7 @@ export const getNommerChapterRoute = (
  */
 // @req REQ-091
 export type DeepLinkQuery =
-  | Record<string, string | string[] | undefined>
-  | URLSearchParams;
+  Record<string, string | string[] | undefined> | URLSearchParams;
 
 /**
  * The single value the query holds under `key`, or null when it holds none or

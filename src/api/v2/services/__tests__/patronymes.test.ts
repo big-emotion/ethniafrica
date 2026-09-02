@@ -267,12 +267,12 @@ describe("patronymes service — listPatronymes", () => {
       [
         {
           id: "PAT_KEITA",
-          content: { nameMain: "Keita" },
+          name_main: "Keita",
           name_system: "clan_name",
         },
         {
           id: "PAT_DIALLO",
-          content: { nameMain: "Diallo" },
+          name_main: "Diallo",
           name_system: "patronym",
         },
       ],
@@ -283,7 +283,9 @@ describe("patronymes service — listPatronymes", () => {
     const result = await listPatronymes({ page: 1, perPage: 20 });
 
     expect(fromMock).toHaveBeenCalledWith("afrik_patronymes");
-    expect(query.select).toHaveBeenCalledWith("id, content, name_system", {
+    // `name_main` rather than the `content` JSONB the name also sits in: the
+    // list keeps one string per row and the dossier body is 52 KB of it.
+    expect(query.select).toHaveBeenCalledWith("id, name_main, name_system", {
       count: "exact",
     });
     expect(result.data).toEqual([

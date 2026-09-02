@@ -2,9 +2,9 @@
  * The tiles read the class list in `corpusClasses`, so the band cannot count
  * one set of classes while the charter test names another.
  *
- * `migrations`, `families` and `nameForms` are counted alongside these and are
- * not in that list, so they are not shown — see `corpusClasses` for why three
- * and what the third-of-five omission costs.
+ * `countries`, `families`, `nameForms` and `migrations` are counted alongside
+ * these and are not in that list, so they are not shown — see `corpusClasses`
+ * for why three and what the three-of-six omission costs.
  */
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
@@ -87,7 +87,29 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
           background: var(--afh-bg-warm);
           text-align: center;
         }
+        /* Two label lines, reserved at every width, so the three figures
+           share a line. A tile is 116px of text at 430px: « peuples
+           documentés » and « langues documentées » wrap there and a
+           15-character label does not, and a centred column then dropped the
+           odd figure below the two beside it — measured 538 · 538 · 547. A row
+           of three totals that do not sit on one line reads as a rendering
+           fault rather than as the comparison the band exists to offer.
+
+           It is the band's own defect and not the newest label's: « pays
+           documentés », the label this tile carried before, fits that same one
+           line at that same width.
+
+           Reserved unconditionally rather than under a breakpoint, because the
+           width at which a label stops wrapping is a property of the label and
+           not of the viewport — it falls between 430 and 720 for these three,
+           and any rewording moves it. A media query tuned to today's strings is
+           a gate that silently stops holding.
+
+           The cost is one empty line inside each tile wherever the labels fit
+           on one, and the tile's min-height very nearly absorbs it: measured
+           92px unchanged at 430, 92 → 93 at 720, 104 → 106 at 1440. */
         .home-corpus-count dt {
+          min-height: 2lh;
           font-size: var(--afh-text-caption);
           line-height: var(--afh-leading-caption);
           color: var(--afh-text-soft);

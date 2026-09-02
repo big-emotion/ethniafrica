@@ -36,7 +36,53 @@ const NAME_SYSTEMS = new Set([
   "totemic_clan",
 ]);
 
+/**
+ * The floor every country must clear. Below it the build fails: a country with
+ * fewer than ten candidates cannot reach the coverage target at all.
+ */
 const MINIMUM_PER_COUNTRY = 10;
+
+/**
+ * Quota per country, above the floor. A flat ten would give Nigeria and the
+ * Seychelles the same representation, which is not "fairly proportioned" in any
+ * reading — so the largest populations carry more names.
+ *
+ * Bands are population, not corpus weight. Summing the corpus's own
+ * `distributionByCountry` double-counts, because a macro-people and its
+ * sub-peoples are both attested in the same country: that sum puts Burundi
+ * ahead of Algeria, which no population figure does. The banding below is
+ * therefore declared here and owed a check against the UN WPP 2025 table
+ * the corpus already uses as its demographic reference year.
+ */
+const QUOTA_100M_PLUS = 30;
+const QUOTA_25M_PLUS = 20;
+
+const QUOTAS = {
+  // ≥ 100M
+  NGA: QUOTA_100M_PLUS,
+  COD: QUOTA_100M_PLUS,
+  ETH: QUOTA_100M_PLUS,
+  EGY: QUOTA_100M_PLUS,
+  // ≥ 25M
+  TZA: QUOTA_25M_PLUS,
+  ZAF: QUOTA_25M_PLUS,
+  KEN: QUOTA_25M_PLUS,
+  UGA: QUOTA_25M_PLUS,
+  SDN: QUOTA_25M_PLUS,
+  DZA: QUOTA_25M_PLUS,
+  MAR: QUOTA_25M_PLUS,
+  AGO: QUOTA_25M_PLUS,
+  GHA: QUOTA_25M_PLUS,
+  MOZ: QUOTA_25M_PLUS,
+  CIV: QUOTA_25M_PLUS,
+  MDG: QUOTA_25M_PLUS,
+  CMR: QUOTA_25M_PLUS,
+  NER: QUOTA_25M_PLUS,
+  MLI: QUOTA_25M_PLUS,
+  BFA: QUOTA_25M_PLUS,
+};
+
+const quotaFor = (countryId) => QUOTAS[countryId] ?? MINIMUM_PER_COUNTRY;
 
 function corpusCountryIds() {
   return new Set(
@@ -130,6 +176,8 @@ async function build() {
       dominantNameSystem: block.dominantNameSystem,
       onomasticNote: block.onomasticNote,
       verificationLead: block.verificationLead,
+      quota: quotaFor(countryId),
+      deficit: Math.max(0, quotaFor(countryId) - entries.length),
       entries,
     });
   }
@@ -141,6 +189,8 @@ async function build() {
     errors.push(`no candidates for: ${missing.sort().join(", ")}`);
 
   const total = countries.reduce((n, c) => n + c.entries.length, 0);
+  const quotaTotal = countries.reduce((n, c) => n + c.quota, 0);
+  const deficitTotal = countries.reduce((n, c) => n + c.deficit, 0);
 
   const manifest = {
     schemaVersion: 1,
@@ -148,6 +198,10 @@ async function build() {
     generatedBy: "scripts/afrik/buildAnthroponymCandidates.mjs",
     countryCount: countries.length,
     candidateCount: total,
+    quotaTotal,
+    // Not an error: the queue fills over successive waves, and this is the
+    // meter that says how much of it is left.
+    deficitTotal,
     methodologyFr:
       "Le corpus AFRIK documente l'organisation clanique, pas l'anthroponymie : " +
       "l'extraction de la prose n'a livré que 30 candidats exploitables (ETNI-1680). " +
@@ -179,6 +233,12 @@ async function build() {
   console.log(
     `${total} candidates across ${countries.length} countries -> ${OUT.replace(/.*ethniafrica\//, "")}`
   );
+  console.log(`quota ${quotaTotal}, deficit ${deficitTotal}`);
+  for (const country of countries.filter((c) => c.deficit > 0)) {
+    console.log(
+      `  ${country.countryId}: ${country.entries.length}/${country.quota} (+${country.deficit})`
+    );
+  }
   if (errors.length) process.exit(1);
 }
 

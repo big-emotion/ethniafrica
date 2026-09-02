@@ -245,8 +245,7 @@ function mapPeopleRowToSummary(
 ): PatronymePeopleSummary {
   const content = (row.content as Record<string, unknown>) ?? {};
   const appellations = content.appellations as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   const autonym =
     typeof appellations?.selfAppellation === "string"
       ? appellations.selfAppellation
@@ -372,7 +371,15 @@ async function getBearers(
   }));
 }
 
-const PATRONYME_LIST_SELECT = "id, content, name_system";
+/**
+ * The three columns a row of the list draws, and no fourth.
+ *
+ * The name was read out of `content` until the atlas hub started failing its
+ * corpus reads: the dossier body is 52 KB a page of names never renders, and
+ * `name_main` holds the same string — identical on all thirty fiches, the
+ * column being what `053` filled from `content.nameMain` in the first place.
+ */
+const PATRONYME_LIST_SELECT = "id, name_main, name_system";
 
 // Index-row query for the noms hub (ETNI-1799). Selects only the
 // afrik_patronymes columns a list entry needs — no peoples/countries/bearers
@@ -408,19 +415,16 @@ export async function listPatronymes(
 
   const rows = (data ?? []) as Array<{
     id: string;
-    content: Record<string, unknown> | null;
+    name_main: string | null;
     name_system: PatronymeNameSystem;
   }>;
 
   return {
-    data: rows.map((row) => {
-      const content = row.content ?? {};
-      return {
-        id: row.id,
-        nameMain: typeof content.nameMain === "string" ? content.nameMain : "",
-        nameSystem: row.name_system,
-      };
-    }),
+    data: rows.map((row) => ({
+      id: row.id,
+      nameMain: row.name_main ?? "",
+      nameSystem: row.name_system,
+    })),
     total: count ?? rows.length,
   };
 }

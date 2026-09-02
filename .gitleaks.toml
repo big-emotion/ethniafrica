@@ -7,8 +7,38 @@ title = "ethniafrica gitleaks config"
 [extend]
 useDefault = true
 
+# One `[allowlist]` block, singular, and it has to stay that way while CI pins
+# v8.21.2. The plural `[[allowlists]]` form reads as valid TOML to that version
+# and is then **silently ignored** — the config loads, the scan runs, and the
+# findings it was meant to allow are still reported. Locally, on a newer
+# gitleaks, the same file passes. So a config split across the two forms is
+# green on a developer's machine and red in CI, which is exactly how this entry
+# was first written. For the same reason `regexes` is declared once and only
+# once below: a second declaration inside this table is a duplicate TOML key,
+# and the parse fails outright.
 [allowlist]
-description = "Global allowlist for known non-secret paths"
+description = "Global allowlist for known non-secret paths and corpus source keys"
+
+# Matched against the whole line, so the exemption can be anchored on the field
+# name rather than on the value alone.
+regexTarget = "line"
+regexes = [
+  # AFRIK fiches cite each claim through a `sourceKey` — a bibliographic handle
+  # in author-year-subject form (`roscoe-1911-baganda`). generic-api-key reads
+  # those as credentials, which reddened every PR on the branch once the first
+  # patronyme fiches landed. Four fiches actually clear the rule's entropy floor
+  # — PAT_FFUMBE, PAT_LUGAVE, PAT_NGONGE, PAT_NJAZA — out of the thirty that
+  # carry the field, which is the tell that the signal is the field name and not
+  # the value.
+  #
+  # Keyed on the field AND on the shape of its value: lowercase alphanumeric
+  # kebab-case, which all 84 sourceKeys in the corpus follow. The narrowness is
+  # the point — a real credential dropped into a sourceKey would carry
+  # uppercase, underscores or symbols and would still be caught. Exempting the
+  # corpus by path instead would have blinded the scanner to ~890 files.
+  '''"sourceKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+]
+
 paths = [
   # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
   '''^package-lock\.json$''',

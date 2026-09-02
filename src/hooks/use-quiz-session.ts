@@ -21,11 +21,7 @@ export interface UseQuizSessionOptions {
 }
 
 export type QuizSessionStatus =
-  | "loading"
-  | "error"
-  | "answering"
-  | "revealed"
-  | "finished";
+  "loading" | "error" | "answering" | "revealed" | "finished";
 
 export interface UseQuizSessionResult {
   status: QuizSessionStatus;

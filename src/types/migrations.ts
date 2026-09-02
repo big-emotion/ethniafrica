@@ -10,10 +10,7 @@ import type { SourceTier } from "@/types/sources";
 export type { MigrationEventType };
 
 export type MigrationClassificationStatus =
-  | "consensual"
-  | "contested"
-  | "colonial-legacy"
-  | "reconstructive";
+  "consensual" | "contested" | "colonial-legacy" | "reconstructive";
 
 export interface MigrationTimeRange {
   startYear: number;

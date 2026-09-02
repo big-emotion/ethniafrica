@@ -14,9 +14,7 @@ export interface CompareCandidate {
 }
 
 export type CompareAddRejectReason =
-  | "max-reached"
-  | "type-locked"
-  | "duplicate";
+  "max-reached" | "type-locked" | "duplicate";
 
 export interface CompareAddResult {
   ok: boolean;
