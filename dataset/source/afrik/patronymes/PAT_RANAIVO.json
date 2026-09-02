@@ -92,7 +92,7 @@
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La lexicographie classe la forme comme anthroponyme et la BnF atteste un porteur, mais aucune source de filiation n'a été trouvée ; « other » maintient le mode indéterminé."
+      "reason": "La notice BnF, la ressource lexicographique et les recherches exactes « Ranaivo filiation », « Ranaivo family » et « Ranaivo généalogie » n'ont livré aucune source de filiation ; « other » maintient le mode indéterminé."
     },
     {
       "fieldPath": "alliances",
@@ -100,7 +100,7 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Les activités d'écrivain et de journaliste de Flavien Ranaivo sont individuelles ; aucune fonction héréditaire du nom n'a été trouvée."
+      "reason": "Les recherches exactes associant Ranaivo à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les activités d'écrivain et de journaliste de Flavien Ranaivo sont individuelles."
     },
     {
       "fieldPath": "homonyms",

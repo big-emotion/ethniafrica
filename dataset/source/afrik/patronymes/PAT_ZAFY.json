@@ -96,7 +96,7 @@
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "Le lexème peut entrer dans des noms propres et des noms de groupes, mais aucune source dédiée ne précise l'unité sociale désignée par le patronyme Zafy."
+      "reason": "La ressource lexicographique et les recherches exactes « Zafy clan », « Zafy lineage » et « Zafy nom de groupe » n'ont livré aucune source précisant l'unité sociale désignée par le patronyme."
     },
     {
       "fieldPath": "alliances",
@@ -104,7 +104,7 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "La carrière politique d'Albert Zafy est individuelle ; aucune fonction héréditaire attachée au nom n'a été trouvée."
+      "reason": "Les recherches exactes associant Zafy à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la carrière politique d'Albert Zafy est individuelle."
     },
     {
       "fieldPath": "homonyms",
