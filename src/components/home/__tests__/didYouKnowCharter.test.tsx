@@ -147,6 +147,24 @@ describe("DidYouKnow — the band's composition (REQ-113)", () => {
     );
   });
 
+  // The two facts are drawn at random from the bank, so a sentence written
+  // over them is a constant predicate: « Deux noms, deux histoires » claimed
+  // an onomastic pairing most draws do not have, in the one slot that names
+  // the band. The kicker files the band; the facts carry the headings.
+  // @req REQ-113
+  it("files the band with a kicker rather than titling a random draw", () => {
+    render(<DidYouKnow language="fr" facts={[FACT]} />);
+
+    expect(screen.getByText("Saviez-vous que")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: "Saviez-vous que" })
+    ).toBeNull();
+    expect(screen.queryByText("Deux noms, deux histoires")).toBeNull();
+    expect(
+      screen.getByRole("heading", { level: 2, name: FACT.headline })
+    ).toBeInTheDocument();
+  });
+
   // Six centred lines is a poster, not a paragraph. Below the tablet floor the
   // measure is short enough that centring composes (src/styles/mobile-text.css);
   // above it the prose takes the left edge and the band stops being one

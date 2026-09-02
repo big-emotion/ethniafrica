@@ -477,6 +477,39 @@ whole, so there is no still thing for a band to keep still.
 Gated by `loaderCoverage.test.ts` (every wait screen, no page identity) and by
 the counterpart clause in `heroCoverageCharter.test.ts`.
 
+### 8.5 A group title must be able to be wrong
+
+The anecdote band on the home draws two facts at random from the bank on every
+request, and titled them **« Deux noms, deux histoires »**. The bank holds 24
+facts, so the band has 276 possible pairs and that sentence describes a
+fraction of them; on the rest it sat over an anecdote about a coastline, a
+prefix or a migration and said something the reader could see was not the
+case. It occupied the one slot that names the section, and it could not be
+false, because nothing computed it.
+
+This is the composition-level twin of the fiche rule already written in
+`atlas-charter.md` §1: a predicate is only a title if there is a condition that
+makes it drop. `« un peuple sans bord »` was true of all 924 peoples, so it
+distinguished none of them; a title over a random draw is the same defect run
+the other way — written for one draw, applied to every draw.
+
+**The rule.** A section title states something about the section's actual
+contents. Where the contents are drawn, filtered or otherwise unknown at write
+time, the section takes an eyebrow and no title, and its items carry the
+headings — `SectionHeading` renders no `<h2>` when given no `title`. A band
+with no group heading does not leave a hole in the outline: its items move up
+a rung, so the anecdote band contributes two `<h2>`s to the home rather than
+one `<h2>` over two `<h3>`s.
+
+**The eyebrow does not inherit the title's rank.** Promoting `Saviez-vous que`
+to the `<h2>` while keeping its 12 px kicker dress would paint a heading three
+roles below its own children — the inversion `typography-charter.md` §3 names
+as a lie rather than a divergence.
+
+Gated by `didYouKnowCharter.test.ts` (the band files itself with a kicker and
+titles nothing), `SectionHeading.test.tsx` (a title-less unit renders no
+heading) and `homeOrientation.test.tsx` (the home's document plan).
+
 ---
 
 ## 9. Imagery

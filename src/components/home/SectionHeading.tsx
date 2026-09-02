@@ -7,7 +7,11 @@ export interface SectionHeadingProps {
    * than a filler line.
    */
   eyebrow?: string;
-  title: string;
+  /**
+   * What this section says. Optional: a section whose items are its own
+   * subjects takes none rather than a sentence written over them.
+   */
+  title?: string;
   centred?: boolean;
   /** Put on the <h2>, so a test can assert the level it actually renders. */
   testId?: string;
@@ -26,6 +30,13 @@ export interface SectionHeadingProps {
  * The eyebrow is a paragraph, never a heading. Marked up as one it would
  * push every item in the section to h4 and announce two titles for one
  * section to a screen reader.
+ *
+ * Both halves are optional, for opposite reasons. A section whose title
+ * already files it takes no eyebrow. A section whose items are its own
+ * subjects — the anecdote band, which draws its two facts at random — takes
+ * no title: brand charter §8.5. Such a section contributes its items' own
+ * headings to the outline rather than a group heading, so those items move
+ * up a rung instead of the band leaving a hole in the plan.
  *
  * The dress lives in src/styles/section-heading.css rather than in a
  * <style> block here: this component renders five times on the home, and
@@ -47,9 +58,11 @@ export function SectionHeading({
       {eyebrow ? (
         <p className="afh-section-heading-eyebrow">{eyebrow}</p>
       ) : null}
-      <h2 className="afh-section-heading-title" data-testid={testId}>
-        {title}
-      </h2>
+      {title ? (
+        <h2 className="afh-section-heading-title" data-testid={testId}>
+          {title}
+        </h2>
+      ) : null}
     </div>
   );
 }
