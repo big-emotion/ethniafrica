@@ -4,7 +4,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
-import { headlineSegments } from "@/lib/home/headlineSegments";
+import { corpusCensus } from "@/lib/home/corpusCensus";
 import { loadSeedWords } from "@/lib/home/seedWords";
 import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import { drawDidYouKnowMotif } from "@/lib/home/didYouKnowMotifs";
@@ -79,7 +79,7 @@ export default async function Home({ searchParams }: HomePageProps = {}) {
       <HomeHero
         seedWords={seedWords}
         peopleCountsByCountry={peopleCountsByCountry}
-        headline={headlineSegments(counts)}
+        census={corpusCensus(counts)}
         visual={heroVisual}
       />
       <DidYouKnow

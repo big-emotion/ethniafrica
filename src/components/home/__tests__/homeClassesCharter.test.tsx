@@ -1,12 +1,11 @@
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { HomeCensusLine } from "@/components/home/HomeCensusLine";
 import { SEARCH_RESULT_GROUPS } from "@/components/home/HomeHeroSearch";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
-import {
-  HEADLINE_ACCESSIBLE_NAME,
-  headlineSegments,
-} from "@/lib/home/headlineSegments";
+import { corpusCensus } from "@/lib/home/corpusCensus";
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
@@ -22,30 +21,30 @@ const FULL_CORPUS = {
 };
 
 /**
- * The home says what the corpus holds in two places at once — the headline
- * names a class, the search panel groups what comes back — and each used to
- * keep its own list in its own file. They drifted: the band asked "Qui sont
+ * The home says what the corpus holds in two places at once — the census line
+ * states the classes, the search panel groups what comes back — and each used
+ * to keep its own list in its own file. They drifted: the band asked "Qui sont
  * les peuples d'Afrique ?" above a panel of three groups, while the corpus
  * held five classes and the API answered six kinds. A reader was told the
  * product was a third of its size.
  *
  * There are two invariants here, not one, and conflating them is its own
- * failure. The headline speaks of **corpus classes**; the panel and the
- * field's label speak of **search result kinds**. They overlap in four
- * places and part company in the fifth — appellations are name forms of
- * peoples, Noms are patronyme fiches.
+ * failure. The census speaks of **corpus classes**; the panel and the field's
+ * label speak of **search result kinds**. They overlap in four places and part
+ * company in the fifth — appellations are name forms of peoples, Noms are
+ * patronyme fiches.
  */
 describe("home charter — what the band claims the corpus is", () => {
   // @req REQ-113
   it("names exactly the classes the corpus declares, in the same order", () => {
-    const named = headlineSegments(FULL_CORPUS);
+    const census = corpusCensus(FULL_CORPUS);
 
-    expect(named).toHaveLength(CORPUS_CLASSES.length);
-    expect(named).toEqual(
-      CORPUS_CLASSES.map(
-        (entity) =>
-          `${new Intl.NumberFormat("fr-FR").format(FULL_CORPUS[entity.key])} ${entity.headlineWord}`
-      )
+    expect(census).toHaveLength(CORPUS_CLASSES.length);
+    expect(census).toEqual(
+      CORPUS_CLASSES.map((entity) => ({
+        word: entity.censusWord,
+        figure: new Intl.NumberFormat("fr-FR").format(FULL_CORPUS[entity.key]),
+      }))
     );
   });
 
@@ -60,13 +59,19 @@ describe("home charter — what the band claims the corpus is", () => {
     }
   });
 
-  // The heading is a landmark. Its name must cover every class the reel turns
-  // through, or a screen-reader user is told about fewer classes than the page
-  // shows — the exact defect this charter exists to prevent, one layer down.
+  // The band must state every class it holds, to every reader, at once. The
+  // rotating headline this replaced could not: it showed one class at a time,
+  // and none at all under prefers-reduced-motion, where its reel never armed
+  // and the home named a single class for good. The census line is what
+  // carries the invariant now, which is why the assertion is on the rendered
+  // line rather than on a heading's accessible name.
   // @req REQ-113
-  it("names every class in the heading's fixed accessible name", () => {
-    for (const { headlineWord } of CORPUS_CLASSES) {
-      expect(HEADLINE_ACCESSIBLE_NAME.toLowerCase()).toContain(headlineWord);
+  it("states every class the corpus declares, on the band itself", () => {
+    render(<HomeCensusLine entries={corpusCensus(FULL_CORPUS)} />);
+
+    const line = screen.getByTestId("home-hero-census");
+    for (const { censusWord } of CORPUS_CLASSES) {
+      expect(line.textContent).toContain(censusWord);
     }
   });
 
@@ -87,7 +92,7 @@ describe("home charter — what the band claims the corpus is", () => {
   });
 
   // The overlap is deliberate and partial. Asserting it keeps the next reader
-  // from "fixing" the asymmetry by making the headline count patronymes.
+  // from "fixing" the asymmetry by making the census count patronymes.
   // @req REQ-113
   it("shares four classes with the search panel and parts company on the fifth", () => {
     const groupedTypes = SEARCH_RESULT_GROUPS.map((group) => group.type);

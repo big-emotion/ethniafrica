@@ -6,7 +6,6 @@ import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
-import { HEADLINE_ACCESSIBLE_NAME } from "@/lib/home/headlineSegments";
 import { HOME_HERO_IMAGES } from "@/lib/home/homeHeroVisuals";
 
 // The band carries an interactive island since the search field landed in it,
@@ -35,37 +34,43 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     ).not.toBeInTheDocument();
   });
 
-  // The headline now names a class that turns, so its *text* is no longer a
-  // fixed string to compare against — the reel carries a zero-height ghost of
-  // every segment and textContent holds all five at once. What must not move
-  // is the accessible name: a level-one heading is a landmark, and this one
-  // states the five classes once and never changes.
+  // The heading's accessible name is its text now. There is no reel to hide
+  // from assistive technology and so no separate aria-label to keep in step
+  // with it — a landmark whose name was a different sentence from what it
+  // displayed is exactly the arrangement this band spent a release in.
   // @req REQ-044
-  it("renders a single H1 whose accessible name names every class and never turns", () => {
+  it("renders a single H1 whose accessible name is the question it displays", () => {
     render(<HomeHero />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
 
-    expect(
-      screen.getByRole("heading", {
-        level: 1,
-        name: HEADLINE_ACCESSIBLE_NAME,
-      })
-    ).toBeInTheDocument();
+    expect(headings[0]).not.toHaveAttribute("aria-label");
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // The frame around the reel is what a reader actually reads, and it holds
-  // the space either side of the turning class — the space SWC drops when an
-  // expression sits beside bare JSX text, which is how this band once shipped
-  // « EthniAfricapublie ».
+  // The band no longer narrows to one class, and no longer hides four. The
+  // headline asks about the continent; the census line under it states the
+  // five classes the corpus holds. \s rather than a literal space: the
+  // no-break space before « ? » is deliberate and must not be asserted as an
+  // ordinary one.
   // @req REQ-044
-  it("keeps a space either side of the class it names", () => {
+  it("asks about the continent and leaves the classes to the census line", () => {
     render(<HomeHero />);
-    const h1 = screen.getByRole("heading", { level: 1 });
 
-    expect(h1.textContent).toContain("Une question sur les ");
-    expect(h1.textContent).toMatch(/ d'Afrique\s?\?$/);
+    const h1 = screen.getByRole("heading", { level: 1 });
+    expect(h1.textContent).toMatch(/^Une question sur l'Afrique\s?\?$/);
+
+    const census = screen.getByTestId("home-hero-census");
+    for (const word of [
+      "peuples",
+      "langues",
+      "pays",
+      "familles",
+      "appellations",
+    ]) {
+      expect(h1.textContent).not.toContain(word);
+      expect(census.textContent).toContain(word);
+    }
   });
 
   // The headline is the question the reader arrives with, so it stays a
@@ -102,16 +107,23 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(answer).toHaveTextContent(/la source de chaque réponse/i);
   });
 
-  // The band holds one paragraph. A second one is how the lede and the
-  // standfirst grew back the last time.
+  // The band holds one paragraph of prose and one cartouche of figures, in
+  // that order. A third is how the lede and the standfirst grew back the last
+  // time — so this asserts the exact pair rather than a count, which a new
+  // block could quietly join by incrementing a number in a test.
   // @req REQ-044
-  it("holds one paragraph and no separating rule", () => {
+  it("holds one paragraph, one census line, and no separating rule", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(container.querySelectorAll(".home-hero-copy p")).toHaveLength(1);
+    const paragraphs = Array.from(
+      container.querySelectorAll(".home-hero-copy p")
+    );
+    expect(
+      paragraphs.map((paragraph) => paragraph.getAttribute("data-testid"))
+    ).toEqual(["home-hero-answer", "home-hero-census"]);
     expect(container.querySelector(".home-hero-lede")).toBeNull();
     expect(container.querySelector(".home-hero-standfirst")).toBeNull();
     expect(styles).not.toMatch(/\.home-hero-answer\s*\{[^}]*border-top/);
