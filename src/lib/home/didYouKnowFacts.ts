@@ -19,6 +19,8 @@
  * cost, not its integration.
  */
 
+import { shuffleAnecdoteOrder } from "@/lib/home/anecdoteDeck";
+
 export type DidYouKnowEntityKind = "people" | "country" | "family";
 
 export interface DidYouKnowEntity {
@@ -652,18 +654,13 @@ export function shuffleDidYouKnowDeck(
   facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS,
   avoidLeading: string | null = null
 ): DidYouKnowFact[] {
-  const deck = [...facts];
+  const byId = new Map(facts.map((fact) => [fact.id, fact]));
 
-  for (let index = deck.length - 1; index > 0; index -= 1) {
-    const target = Math.floor(random() * (index + 1));
-    [deck[index], deck[target]] = [deck[target], deck[index]];
-  }
-
-  if (deck.length > 1 && avoidLeading !== null && deck[0].id === avoidLeading) {
-    [deck[0], deck[1]] = [deck[1], deck[0]];
-  }
-
-  return deck;
+  return shuffleAnecdoteOrder(
+    facts.map((fact) => fact.id),
+    random,
+    avoidLeading
+  ).map((id) => byId.get(id) as DidYouKnowFact);
 }
 
 /**

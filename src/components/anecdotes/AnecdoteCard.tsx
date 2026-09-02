@@ -5,7 +5,7 @@ import type {
   DidYouKnowEntity,
   DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
-import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
+import type { DidYouKnowIllustration } from "@/lib/home/didYouKnowIllustrations";
 import {
   DID_YOU_KNOW_ENTITY_ACCENT,
   DID_YOU_KNOW_ENTITY_LABEL,
@@ -18,6 +18,11 @@ import type { Language } from "@/types/shared";
 export interface AnecdoteCardProps {
   language: Language;
   fact: DidYouKnowFact;
+  /**
+   * Resolved by the caller rather than looked up here, so that rendering a
+   * card does not oblige the surface to carry the whole illustration table.
+   */
+  illustration?: DidYouKnowIllustration;
   /** Drawn by the page, alternated by the reader. See the band note below. */
   imageSide?: AnecdoteImageSide;
 }
@@ -66,10 +71,9 @@ function entityHref(language: Language, entity: DidYouKnowEntity): string {
 export function AnecdoteCard({
   language,
   fact,
+  illustration,
   imageSide = "end",
 }: AnecdoteCardProps) {
-  const illustration = illustrationFor(fact.id);
-
   return (
     <article className="anecdote-card" id={fact.id}>
       <div className={`anecdote-split anecdote-split--image-${imageSide}`}>

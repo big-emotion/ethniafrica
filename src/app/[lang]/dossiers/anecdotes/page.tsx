@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 
 import { AnecdoteReader } from "@/components/anecdotes";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { shuffleAnecdoteOrder } from "@/lib/home/anecdoteDeck";
 import {
   DID_YOU_KNOW_FACTS,
   findDidYouKnowFact,
-  shuffleDidYouKnowDeck,
 } from "@/lib/home/didYouKnowFacts";
+import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
 import { drawAnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { getLocalizedRoute } from "@/lib/routing";
 
@@ -54,8 +55,15 @@ export default async function AnecdotesPage({
   // A link naming a retired fact opens on a fresh draw rather than a 404:
   // the address still points at a page that has something to say.
   const named = findDidYouKnowFact(requested);
-  const deck = shuffleDidYouKnowDeck();
-  // Drawn here for the same reason the deck is: a coin tossed in the client
+  const drawn = shuffleAnecdoteOrder(DID_YOU_KNOW_FACTS.map((fact) => fact.id));
+  // The named anecdote leads the order rather than being sought inside it, so
+  // the reader always opens at the first card and the page has exactly one
+  // card to serialise.
+  const deck = named
+    ? [named.id, ...drawn.filter((id) => id !== named.id)]
+    : drawn;
+  const opening = named ?? findDidYouKnowFact(deck[0]);
+  // Drawn here for the same reason the order is: a coin tossed in the client
   // would flip the band a frame after paint. The reader alternates from it.
   const openingImageSide = drawAnecdoteImageSide();
 
@@ -66,12 +74,21 @@ export default async function AnecdotesPage({
           {`${DID_YOU_KNOW_FACTS.length} anecdotes — une à la fois, tirée au hasard`}
         </p>
 
-        <AnecdoteReader
-          language="fr"
-          deck={deck}
-          initialFactId={named?.id ?? null}
-          openingImageSide={openingImageSide}
-        />
+        {opening ? (
+          <AnecdoteReader
+            language="fr"
+            deck={deck}
+            openingCard={{
+              fact: opening,
+              illustration: illustrationFor(opening.id),
+            }}
+            openingImageSide={openingImageSide}
+          />
+        ) : (
+          <p className="anecdote-empty">
+            Aucune anecdote n&apos;est publiée pour le moment.
+          </p>
+        )}
       </div>
 
       <style>{`
