@@ -725,20 +725,27 @@ describe("RecherchePageContent", () => {
     const layout = screen.getByTestId("search-results-layout");
     const main = within(layout).getByTestId("search-results-main");
     expect(layout.className).toMatch(
-      /min-\[720px\]:grid-cols-\[minmax\(0,1fr\)_[^\]]+\]/
+      /min-\[760px\]:grid-cols-\[minmax\(0,1fr\)_[^\]]+\]/
     );
     expect(layout.className).not.toMatch(/(?:sm|md|lg):grid-cols-/);
     expect(within(main).getByTestId("search-pivot")).toBeInTheDocument();
     expect(within(main).getByTestId("search-results-list")).toBeInTheDocument();
   });
 
+  // Atlas charter §5: one component, two anchorings — a bottom sheet below
+  // 760px, a side panel above, same facts either way. The panel used to be
+  // `hidden` below the breakpoint, which dropped the facts entirely at
+  // 430px; it now stays in flow and is only re-styled from a rule
+  // (border-t) into a side panel at the breakpoint.
   // @req REQ-124
-  it("hides the complementary answer below 720px and reveals it at that breakpoint (ETNI-1807)", async () => {
+  it("keeps the complementary answer in flow as a bottom sheet below 760px, and as a side panel at that breakpoint (ETNI-1796)", async () => {
     await renderPivotWithRelatedResults();
 
     const wrapper = screen.getByTestId("dominant-answer-panel-wrapper");
-    expect(wrapper.className).toContain("hidden");
-    expect(wrapper.className).toContain("min-[720px]:block");
+    expect(wrapper.className).not.toMatch(/\bhidden\b/);
+    expect(wrapper.className).toContain("border-t");
+    expect(wrapper.className).toContain("min-[760px]:border-t-0");
+    expect(wrapper.className).toContain("min-[760px]:self-start");
     expect(wrapper.className).not.toMatch(/(?:sm|md|lg):block/);
   });
 
@@ -748,7 +755,7 @@ describe("RecherchePageContent", () => {
 
     const list = screen.getByTestId("search-results-list");
     expect(list.className).toContain("grid-cols-1");
-    expect(list.className).toContain("min-[720px]:grid-cols-2");
+    expect(list.className).toContain("min-[760px]:grid-cols-2");
     expect(list.className).not.toMatch(/(?:sm|md|lg):grid-cols-2/);
     expect(within(list).getAllByRole("listitem")).toHaveLength(2);
   });

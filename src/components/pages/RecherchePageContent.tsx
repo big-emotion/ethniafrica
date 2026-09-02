@@ -294,7 +294,7 @@ export function RecherchePageContent() {
   const resultsList = status === "loaded" && listResults.length > 0 && (
     <ul
       data-testid="search-results-list"
-      className="grid grid-cols-1 gap-afh-lg min-[720px]:grid-cols-2"
+      className="grid grid-cols-1 gap-afh-lg min-[760px]:grid-cols-2"
       aria-label="Résultats de recherche"
     >
       {groupPeopleResults(listResults).map((entry, i) =>
@@ -453,7 +453,7 @@ export function RecherchePageContent() {
           (pivot ? (
             <div
               data-testid="search-results-layout"
-              className="grid grid-cols-1 gap-afh-5xl min-[720px]:grid-cols-[minmax(0,1fr)_minmax(18rem,20rem)] min-[720px]:items-start"
+              className="grid grid-cols-1 gap-afh-5xl min-[760px]:grid-cols-[minmax(0,1fr)_minmax(18rem,20rem)] min-[760px]:items-start"
             >
               <div
                 data-testid="search-results-main"
@@ -464,9 +464,13 @@ export function RecherchePageContent() {
                 {refinements}
                 {resultsList}
               </div>
+              {/* Atlas charter §5: one component, two anchorings. Above
+                  760px it sits beside the results as a side panel; below,
+                  it stays in flow as a bottom sheet — a rule (border-t),
+                  never a hidden block, so the facts survive at 430px. */}
               <div
                 data-testid="dominant-answer-panel-wrapper"
-                className="hidden min-[720px]:block min-[720px]:self-start"
+                className="border-t border-afh-border pt-afh-lg min-[760px]:border-t-0 min-[760px]:pt-0 min-[760px]:self-start"
               >
                 <DominantAnswerPanel result={pivot} />
               </div>
