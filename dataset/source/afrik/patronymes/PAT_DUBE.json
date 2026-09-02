@@ -27,6 +27,16 @@
         "claim": "Les Dube sont comptés parmi les Nguni mthethwa. Vers 1650 ils descendent avec les Mbonambi la côte du Zululand jusqu'à la Mhlathuze. Le clan traverse les règnes de Dingiswayo et de Shaka sans perdre son territoire, puis est détruit sous Dingane : son chef Nzwakele est tué et le clan dispersé, la plupart de ses membres franchissant la Thukela vers le Natal, où le nom est aujourd'hui répandu.",
         "claimStatus": "established",
         "sourceRefs": ["bryant-1929-olden-times"]
+      },
+      {
+        "claim": "Bryant situe les Dube sur la rive nord du lagon de la Mhlathuze, voisins au nord des Mbonambi, qu'il donne pour clans frères issus d'une même souche. Se sachant peu nombreux, ils s'abstinrent de s'opposer à Dingiswayo comme à Shaka, ce qui leur conserva leur territoire : en mars 1827, Farewell et Isaacs remontant la côte en quête d'ivoire y trouvèrent Nzwakele, fils de Kushwayo, régnant encore sur le pays d'origine.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      },
+      {
+        "claim": "Le clan a pratiqué l'adoption d'un lignage étranger. À l'éclatement du clan cele sous le règne de Dingane, Mningi, père de Geloza, quitta la Mzimkhulu avec sa famille et se fit adopter par Nzwakele ; il bâtit en pays dube un kraal nommé emaNdlazini, dont ses descendants ont tiré leur propre nom, aba-s-emaNdlazini.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
       }
     ],
     "linguisticReconstructions": [
@@ -53,7 +63,18 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Kushwayo (Maqamehlezi), chef des Dube de la Mhlathuze avant 1827",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Nzwakele, fils de Kushwayo, chef des Dube rencontré par Farewell et Isaacs en mars 1827, tué sous Dingane",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -84,19 +105,15 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que targetPatronymeId doit désigner un PAT_ existant : les partenaires attestés n'ont pas de fiche."
     },
     {
       "fieldPath": "casteOrSocialFunction",
       "reason": "Aucune fonction héréditaire attestée : Bryant décrit les Dube comme un clan territorial doté de ses propres chefs, non comme un corps de spécialistes."
     },
     {
-      "fieldPath": "bearers",
-      "reason": "Le chef Nzwakele, tué sous Dingane, est nommé par Bryant, mais sans dates ni généalogie propre ; il documente la dispersion du clan et non l'origine du nom, et n'est donc pas enregistré en porteur."
-    },
-    {
       "fieldPath": "homonyms",
-      "reason": "Bryant distingue une branche Lushozi-Dube sans lui donner d'origine séparée : faute de trajectoire distincte attestée, elle est traitée comme une subdivision et non comme un homonyme."
+      "reason": "Deux questions distinctes, dont aucune n'est tranchée. Bryant distingue une branche Lushozi-Dube sans lui donner d'origine séparée, et faute de trajectoire distincte attestée elle est traitée comme une subdivision. Reste la seconde, plus lourde : la fiche rattache le nom aux Ndau du Mozambique, quand tout ce que Bryant documente est le clan du littoral zoulou. Le passage de l'un à l'autre par les conquêtes nguni de Soshangane est plausible et n'a été établi par aucune source consultée ; les deux ne sont donc ni fusionnés ni déclarés homonymes, faute de savoir lequel des deux ils sont."
     }
   ]
 }

@@ -387,14 +387,23 @@ const NGUNI_RECONSTRUCTION = {
 };
 
 /**
- * The one gap reason the Nguni fiches genuinely share: it states a property of
- * the naming system, not a failed lookup, so it is the same sentence for every
- * clan. Every other gap is a per-fiche search result and is written per fiche.
+ * The one gap reason the Nguni fiches genuinely share. It used to assert that
+ * the Nguni system has no inter-clan alliance at all, which Bryant's own text
+ * refutes on the page: he records the Dlamini buying protection from a named
+ * Mbata chief, and the Dube adopting a Cele family outright. The gap is real
+ * but its cause is the corpus, not the culture, and saying otherwise put an
+ * ethnographic claim nobody had checked into eight fiches at once.
  */
 const NGUNI_GAPS = {
   alliances:
-    "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient " +
-    "un clan à ses ancêtres, pas deux clans entre eux.",
+    "Deux choses distinctes, que la rédaction précédente confondait. Les " +
+    "izithakazelo lient bien un clan à ses ancêtres et non deux clans entre " +
+    "eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, " +
+    "cousinage à plaisanterie institué par paires. Mais l'alliance entre " +
+    "clans nommés existe et Bryant la documente — sujétion négociée, adoption " +
+    "d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que " +
+    "targetPatronymeId doit désigner un PAT_ existant : les partenaires " +
+    "attestés n'ont pas de fiche.",
 };
 
 export const RESEARCH = {
@@ -999,6 +1008,38 @@ export const RESEARCH = {
         displayName: "Sobhuza II",
         sourceRefs: ["un-eswatini-country-facts"],
       },
+      {
+        status: "deceased",
+        displayName:
+          "Nyanya, fils de Sogidi, chef du petit clan aba-kwa-Dlamini de l'emBekamuzi, tué par Dingiswayo",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Cintsi, arrière-petit-fils de Nyanya, tué sans postérité à la bataille d'eNdondakusuka",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
+    // Bryant states outright that he cannot reconcile the Dlamini pedigrees and
+    // that one of them must be a different man. That is the distinct-origin
+    // finding the earlier gap said it had not found.
+    homonyms: [
+      {
+        label: "Le Dlamini de l'ekuNene",
+        entityType: "patronyme",
+        entityId: null,
+        distinction:
+          "Bryant met en regard trois généalogies dlamini — celle des Hlubi, " +
+          "celle des Swazi et celle de l'ekuNene — et déclare ne pouvoir les " +
+          "faire concorder. Il conjecture que le Dlamini des Hlubi est le " +
+          "Dlamini Ier de la liste swazie, mais tient que celui de l'ekuNene " +
+          "« doit avoir été un tout autre individu ». Le même isibongo " +
+          "recouvre donc au moins deux ancêtres éponymes distincts, et " +
+          "l'aveu d'irréductibilité vient de la source elle-même, non d'un " +
+          "défaut de lecture.",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
     ],
     sourceKeys: [
       "un-eswatini-country-facts",
@@ -1006,18 +1047,20 @@ export const RESEARCH = {
       "iafrika-umlando-dlamini",
       "ngonipeople-izithakazelo",
       "zwane-2020-zulu-clan-names",
+      "bryant-1929-olden-times",
     ],
     gapReasons: {
       alliances:
-        "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo " +
-        "lient un clan à ses ancêtres, pas deux clans entre eux.",
+        "Bryant documente pour ce clan une alliance nommée : après que " +
+        "Dingiswayo eut tué Nyanya, les Dlamini de l'emBekamuzi jugèrent " +
+        "prudent de sacrifier leur indépendance et de se placer sous le chef " +
+        "mbatha voisin, Mangcengeza, fils de Kali. L'alliance nguni entre " +
+        "clans nommés existe donc bel et bien. Le champ reste vide parce que " +
+        "targetPatronymeId doit désigner un PAT_ existant et que les Mbatha " +
+        "n'ont pas de fiche.",
       casteOrSocialFunction:
         "Clan royal de l'Eswatini : la royauté n'est pas une fonction héréditaire " +
         "de caste au sens du champ.",
-      homonyms:
-        "Dlamini est porté dans les branches xhosa, zoulou, swazi et sotho du " +
-        "groupe nguni ; faute de source établissant des origines distinctes, ces " +
-        "branches ne sont pas traitées comme des homonymes.",
     },
   },
 
@@ -1082,14 +1125,36 @@ export const RESEARCH = {
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
-        "Aucune fonction héréditaire attestée au niveau du clan ; Bryant décrit " +
-        "les Ndlovu comme un sous-clan territorial, non comme un corps de " +
-        "spécialistes.",
-      bearers:
-        "L'ancêtre éponyme Ndlovu fils de Kuba est nommé par Bryant mais sans " +
-        "dates ni éléments biographiques ; il est retenu comme origine du nom, " +
-        "pas comme porteur documenté.",
+        "Aucune charge héréditaire attachée au nom. Bryant montre au contraire " +
+        "que les fonctions tenues par ce lignage sont conférées et non " +
+        "transmises : Silwane puis son fils Gawozi sont chacun nommés à leur " +
+        "district par le roi Mpande, ce qui est une faveur royale renouvelée, " +
+        "non un office que le nom porterait.",
     },
+    // Bryant follows this sub-clan over three generations with named offices
+    // and a named burial place. The earlier gap kept the eponym out on the
+    // ground that he lacks dates, then kept out his son and grandson too,
+    // who have both.
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Ndlovu, fils de Kuba, éponyme du sous-clan aba-kwa-Ndlovu, inhumé près de l'isiHlahla sikaMbema",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Silwane, fils de Ndlovu, chef du district entre la Mfule et la Mfolozi sous le roi Mpande",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Gawozi, fils de Silwane, établi par le même roi sur une part de l'ancien Qwabeland",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_MTHETHWA: {
@@ -1121,15 +1186,33 @@ export const RESEARCH = {
       casteOrSocialFunction:
         "La prééminence des Mthethwa sous Dingiswayo est une hégémonie " +
         "politique, non une fonction héréditaire de caste au sens du champ.",
-      bearers:
-        "Dingiswayo est amplement documenté par Bryant, mais comme souverain " +
-        "mthethwa et non comme attestation de l'origine du nom ; la fiche ne " +
-        "l'enregistre pas en porteur pour ne pas faire d'une biographie royale " +
-        "la source d'une étymologie.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée dans le " +
         "texte intégral de Bryant, qui suit pourtant le clan sur seize passages.",
     },
+    // The earlier gap refused Dingiswayo on the ground that he does not attest
+    // the etymology. Nothing in the field asks him to: bearers records people
+    // who bore the name and are documented and dead, which is a different
+    // question from where the name comes from.
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Jobe, chef mthethwa, père de Dingiswayo (mort en 1807)",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Dingiswayo (Godongwana), roi des aba-kwa-Mtetwa, tué en 1818",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Mlandela, fils de Mbila, chef du clan mthethwa démembré après 1818",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_NXUMALO: {
@@ -1174,16 +1257,34 @@ export const RESEARCH = {
       casteOrSocialFunction:
         "Aucune fonction héréditaire attestée : les Nxumalo sont une section " +
         "d'un clan royal, statut politique et non charge de spécialistes.",
-      bearers:
-        "Bryant nomme plusieurs Nxumalo (Mkatshwa, Malusi, Sotondose) mais la " +
-        "généalogie ndwandwe est, de son propre aveu, si contradictoire que la " +
-        "certitude n'est plus atteignable dans ses états anciens ; aucun porteur " +
-        "n'est donc enregistré sur cette base.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée : les " +
         "occurrences relevées chez Bryant renvoient toutes à la section " +
         "ndwandwe.",
     },
+    // Bryant's own caution bears on the deep Ndwandwe genealogy, not on the
+    // nineteenth-century men he met or met the sons of. Withholding the latter
+    // because the former is uncertain was the wrong inference.
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Mkatshwa, chef de la section nxumalo du clan ndwandwe au début du XIXe siècle",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Malusi, fils de Mkatshwa, époux d'une fille de Jobe le Mthethwa",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Sotondose Nxumalo, réfugié rallié à la traversée de Mawa vers le Natal",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
   },
 
   PAT_SIBANDA: {
@@ -1231,9 +1332,45 @@ export const RESEARCH = {
           claimStatus: "established",
           sourceRefs: ["bryant-1929-olden-times"],
         },
+        {
+          claim:
+            "Bryant situe les Dube sur la rive nord du lagon de la Mhlathuze, " +
+            "voisins au nord des Mbonambi, qu'il donne pour clans frères issus " +
+            "d'une même souche. Se sachant peu nombreux, ils s'abstinrent de " +
+            "s'opposer à Dingiswayo comme à Shaka, ce qui leur conserva leur " +
+            "territoire : en mars 1827, Farewell et Isaacs remontant la côte " +
+            "en quête d'ivoire y trouvèrent Nzwakele, fils de Kushwayo, " +
+            "régnant encore sur le pays d'origine.",
+          claimStatus: "established",
+          sourceRefs: ["bryant-1929-olden-times"],
+        },
+        {
+          claim:
+            "Le clan a pratiqué l'adoption d'un lignage étranger. À " +
+            "l'éclatement du clan cele sous le règne de Dingane, Mningi, père " +
+            "de Geloza, quitta la Mzimkhulu avec sa famille et se fit adopter " +
+            "par Nzwakele ; il bâtit en pays dube un kraal nommé emaNdlazini, " +
+            "dont ses descendants ont tiré leur propre nom, aba-s-emaNdlazini.",
+          claimStatus: "established",
+          sourceRefs: ["bryant-1929-olden-times"],
+        },
       ],
       linguisticReconstructions: [NGUNI_RECONSTRUCTION],
     },
+    bearers: [
+      {
+        status: "deceased",
+        displayName:
+          "Kushwayo (Maqamehlezi), chef des Dube de la Mhlathuze avant 1827",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+      {
+        status: "deceased",
+        displayName:
+          "Nzwakele, fils de Kushwayo, chef des Dube rencontré par Farewell et Isaacs en mars 1827, tué sous Dingane",
+        sourceRefs: ["bryant-1929-olden-times"],
+      },
+    ],
     sourceKeys: ["nomina-africana-nguni-naming", "bryant-1929-olden-times"],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
@@ -1241,14 +1378,16 @@ export const RESEARCH = {
         "Aucune fonction héréditaire attestée : Bryant décrit les Dube comme un " +
         "clan territorial doté de ses propres chefs, non comme un corps de " +
         "spécialistes.",
-      bearers:
-        "Le chef Nzwakele, tué sous Dingane, est nommé par Bryant, mais sans " +
-        "dates ni généalogie propre ; il documente la dispersion du clan et non " +
-        "l'origine du nom, et n'est donc pas enregistré en porteur.",
       homonyms:
-        "Bryant distingue une branche Lushozi-Dube sans lui donner d'origine " +
-        "séparée : faute de trajectoire distincte attestée, elle est traitée " +
-        "comme une subdivision et non comme un homonyme.",
+        "Deux questions distinctes, dont aucune n'est tranchée. Bryant " +
+        "distingue une branche Lushozi-Dube sans lui donner d'origine séparée, " +
+        "et faute de trajectoire distincte attestée elle est traitée comme une " +
+        "subdivision. Reste la seconde, plus lourde : la fiche rattache le nom " +
+        "aux Ndau du Mozambique, quand tout ce que Bryant documente est le " +
+        "clan du littoral zoulou. Le passage de l'un à l'autre par les " +
+        "conquêtes nguni de Soshangane est plausible et n'a été établi par " +
+        "aucune source consultée ; les deux ne sont donc ni fusionnés ni " +
+        "déclarés homonymes, faute de savoir lequel des deux ils sont.",
     },
   },
 
@@ -1303,6 +1442,17 @@ export const RESEARCH = {
         },
       ],
     },
+    // The fiche carried no peoples[] at all, so it resolved to no linguistic
+    // family and fell out of every family-scoped listing — including the query
+    // that assembled this wave. Both sources already cited attach the praise
+    // name to Zulu lineages; the association was simply never written down.
+    peoples: [
+      {
+        peopleId: "PPL_ZULU_KWA_ZULU",
+        status: "attested",
+        sourceRefs: ["bryant-1929-olden-times", "nwu-zulu-names"],
+      },
+    ],
     sourceKeys: [
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
