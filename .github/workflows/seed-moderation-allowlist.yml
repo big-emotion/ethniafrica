@@ -1,0 +1,108 @@
+name: Seed Moderation Allowlist
+
+# Authorisation to open /fr/admin is an address on the `admin_allowlist` table
+# (migration 074) — not a role, not a profile. That creates a bootstrap problem
+# the product cannot solve on its own: there is no screen for adding the first
+# address, because adding one would need the console.
+#
+# Until now the only way through was to hold the target project's service-role
+# key on your own machine and run scripts/seedAdminAllowlist.ts by hand. Nobody
+# did it for production, so production's allowlist was still empty on
+# 1 September 2026 — reader reports were arriving into a queue no account could
+# open, and nothing anywhere said so.
+#
+# This puts the same script behind a dispatch, using the credentials the
+# repository already holds. Bind `production` in the repository's environment
+# settings to required reviewers: granting moderation on the live register is a
+# privilege change and should be approved like one.
+#
+# What this does NOT do, and still has to be checked by hand in the Supabase
+# console: the redirect allow-list must contain
+# https://ethniafrica.com/api/auth/callback, path included. A missing entry does
+# not error — GoTrue silently substitutes the Site URL and the magic link lands
+# nowhere useful. See docs/runbooks/moderation-access.md.
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: "Address to authorise (they sign in with a magic link at /fr/admin/connexion)"
+        required: true
+        type: string
+      note:
+        description: "Who this is, for the next person reading the table"
+        required: false
+        type: string
+        default: ""
+      target:
+        description: "Which project to write to — both Supabase projects label themselves production, so say which application you mean"
+        required: true
+        type: choice
+        default: recette
+        options:
+          - recette
+          - production
+
+# Two dispatches upserting the same address would race on one row.
+concurrency:
+  group: seed-moderation-allowlist-${{ inputs.target }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Binds the run to the chosen environment so its protection rules — required
+    # reviewers above all — apply before any credential is readable.
+    environment: ${{ inputs.target }}
+    env:
+      # `shmrjtnfbqzceovroqjj` serves recette; the production project is reached
+      # only through the PRODUCTION_* secrets. Writing an allowlist row into the
+      # wrong project grants moderation on a site nobody meant to touch, so the
+      # pairing is made once, here, from the declared target.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ inputs.target == 'production' && secrets.PRODUCTION_SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ inputs.target == 'production' && secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Reporting success while writing nothing would reproduce the silence this
+      # workflow exists to end.
+      - name: Require the chosen project's credentials
+        run: |
+          : "${NEXT_PUBLIC_SUPABASE_URL:?No Supabase URL for target '${{ inputs.target }}'. Set PRODUCTION_SUPABASE_URL (production) or NEXT_PUBLIC_SUPABASE_URL (recette).}"
+          : "${SUPABASE_SERVICE_ROLE_KEY:?No service-role key for target '${{ inputs.target }}'. Set PRODUCTION_SUPABASE_SERVICE_ROLE_KEY (production) or SUPABASE_SERVICE_ROLE_KEY (recette).}"
+
+      # The script upserts on email, so re-running it for an address already on
+      # the list refreshes the note rather than failing.
+      - name: Add the address to the allowlist
+        env:
+          MODERATOR_EMAIL: ${{ inputs.email }}
+          MODERATOR_NOTE: ${{ inputs.note }}
+        run: npx tsx scripts/seedAdminAllowlist.ts "$MODERATOR_EMAIL" "$MODERATOR_NOTE"
+
+      - name: Say what to do next
+        env:
+          MODERATOR_EMAIL: ${{ inputs.email }}
+        run: |
+          {
+            echo "### Moderation allowlist — ${{ inputs.target }}"
+            echo
+            echo "\`$MODERATOR_EMAIL\` may now request a sign-in link."
+            echo
+            echo "Next: open \`/fr/admin/connexion\`, request the link, and confirm it lands on the console."
+            echo "If the link lands on the home page instead, the Supabase redirect allow-list is missing the"
+            echo "\`/api/auth/callback\` path — it fails silently. See \`docs/runbooks/moderation-access.md\`."
+          } >> "$GITHUB_STEP_SUMMARY"

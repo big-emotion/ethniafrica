@@ -49,9 +49,18 @@ Resolve the target fiche(s) from the user's prompt:
 - Country: ISO 3166-1 alpha-3 (e.g. `ZAF`, `NGA`)
 - Language: ISO 639-3 (e.g. `zul`, `swa`)
 
-If the user gives a human name ("Zoulou", "Bantous", "Afrique du Sud"), use `searchAfrikAll` (see `reference/tools.md`) to resolve to an ID. Confirm the resolved ID before continuing.
+If the user gives a human name ("Zoulou", "Bantous", "Afrique du Sud"), resolve it against the corpus in git:
 
-If multiple candidates match, list them and ask which one.
+```bash
+npx tsx scripts/resolveAfrikFiche.ts "Zoulou"
+# PPL_ZULU	people	exact	nameMain=Zoulou
+```
+
+Each line is `ID · kind · match type · which declared name matched`. Match types rank `id` → `exact` → `contains` → `partial`; only the first line of an `exact` match is safe to take without asking.
+
+Confirm the resolved ID before continuing. If several candidates match, list them with the name each matched on and ask which one — the matched name is what makes the question answerable.
+
+Resolution reads `dataset/source/afrik/`, not the database, so it needs no credentials and is unaffected by a database that has not been loaded. It matches only declared names; it never guesses by similarity. **Nothing matched means ask, never invent.**
 
 ### Phase 2 — Load full context
 
