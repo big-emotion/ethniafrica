@@ -10,10 +10,26 @@ import "server-only";
  */
 import { createClient } from "@supabase/supabase-js";
 
-import { fetchWithDeadline } from "./requestDeadline";
+import {
+  SUPABASE_REQUEST_TIMEOUT_MS,
+  createFetchWithDeadline,
+} from "./requestDeadline";
+
+interface AdminClientOptions {
+  /**
+   * How long one request may take before it is abandoned. Defaults to the
+   * page deadline; a batch caller that legitimately reads for tens of seconds
+   * passes `SUPABASE_BATCH_REQUEST_TIMEOUT_MS` instead. Naming it at the call
+   * site keeps the widened deadline with the one job that needs it, rather
+   * than relaxing it for every reader of this client.
+   */
+  requestTimeoutMs?: number;
+}
 
 // @req REQ-054
-export const createAdminClient = () => {
+export const createAdminClient = ({
+  requestTimeoutMs = SUPABASE_REQUEST_TIMEOUT_MS,
+}: AdminClientOptions = {}) => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -29,7 +45,7 @@ export const createAdminClient = () => {
       persistSession: false,
     },
     global: {
-      fetch: fetchWithDeadline,
+      fetch: createFetchWithDeadline(requestTimeoutMs),
     },
   });
 };

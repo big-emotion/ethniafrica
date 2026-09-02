@@ -6,6 +6,7 @@ const {
   countAfrikLanguageFamiliesMock,
   countAfrikLanguagesMock,
   listNameFormsMock,
+  listPatronymesMock,
   listMigrationsMock,
 } = vi.hoisted(() => ({
   getPeoplesMock: vi.fn(),
@@ -13,6 +14,7 @@ const {
   countAfrikLanguageFamiliesMock: vi.fn(),
   countAfrikLanguagesMock: vi.fn(),
   listNameFormsMock: vi.fn(),
+  listPatronymesMock: vi.fn(),
   listMigrationsMock: vi.fn(),
 }));
 
@@ -35,6 +37,9 @@ vi.mock("@/lib/supabase/queries/afrik/languages", () => ({
 vi.mock("@/api/v2/services/names", () => ({
   listNameForms: listNameFormsMock,
 }));
+vi.mock("@/api/v2/services/patronymes", () => ({
+  listPatronymes: listPatronymesMock,
+}));
 
 import { getCorpusCounts } from "../corpusCounts";
 
@@ -44,6 +49,7 @@ function everyReadSucceeds() {
   countAfrikLanguageFamiliesMock.mockResolvedValue(37);
   countAfrikLanguagesMock.mockResolvedValue(748);
   listNameFormsMock.mockResolvedValue({ forms: [], total: 3134, pageCount: 1 });
+  listPatronymesMock.mockResolvedValue({ data: [], total: 33 });
   listMigrationsMock.mockResolvedValue({ data: [], total: 6 });
 }
 
@@ -64,6 +70,7 @@ describe("getCorpusCounts (ETNI-1327, REQ-113)", () => {
       families: 37,
       languages: 748,
       nameForms: 3134,
+      patronymes: 33,
       migrations: 6,
     });
   });
@@ -79,6 +86,7 @@ describe("getCorpusCounts (ETNI-1327, REQ-113)", () => {
     expect(countAfrikLanguageFamiliesMock).toHaveBeenCalledOnce();
     expect(countAfrikLanguagesMock).toHaveBeenCalledOnce();
     expect(listNameFormsMock).toHaveBeenCalledOnce();
+    expect(listPatronymesMock).toHaveBeenCalledOnce();
     expect(listMigrationsMock).toHaveBeenCalledOnce();
   });
 
@@ -96,6 +104,21 @@ describe("getCorpusCounts (ETNI-1327, REQ-113)", () => {
       perPage: 1,
       imposedOnly: false,
     });
+  });
+
+  // The two objects DEC-038 separates are read by two services, and only one
+  // of them feeds the tile the home labels « noms documentés ». They are two
+  // orders of magnitude apart — 3 134 appellations against 33 noms — so
+  // wiring the wrong one would print a figure no reader could tell was wrong.
+  // @req REQ-113
+  it("counts noms from the patronyme service, never from the appellations", async () => {
+    everyReadSucceeds();
+
+    const counts = await getCorpusCounts();
+
+    expect(listPatronymesMock).toHaveBeenCalledWith({ page: 1, perPage: 1 });
+    expect(counts.patronymes).toBe(33);
+    expect(counts.patronymes).not.toBe(counts.nameForms);
   });
 
   // The home used to promise "3 000 ans" of history the corpus never held

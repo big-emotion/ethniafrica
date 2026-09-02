@@ -187,7 +187,10 @@ export async function getPatronymesFacetChoices(): Promise<PatronymesFacetChoice
 
   const [peopleRows, countryRows, systemRows] = await Promise.all([
     peopleIds.length > 0
-      ? supabase.from("afrik_peoples").select("id, content").in("id", peopleIds)
+      ? supabase
+          .from("afrik_peoples")
+          .select("id, name_main")
+          .in("id", peopleIds)
       : Promise.resolve({ data: [], error: null }),
     countryIds.length > 0
       ? supabase
@@ -212,19 +215,17 @@ export async function getPatronymesFacetChoices(): Promise<PatronymesFacetChoice
   );
 
   return {
+    // `name_main`, not `content.nameMain`: no fiche of the 790 carries that
+    // key, so the fallback below was not a fallback — every option in the
+    // Peuple filter read `PPL_BAMBARA` where the reader expects « Bambara ».
+    // The id survives as the last resort it was meant to be.
     peoples: (
       (peopleRows.data ?? []) as Array<{
         id: string;
-        content: Record<string, unknown> | null;
+        name_main: string | null;
       }>
     )
-      .map((row) => ({
-        id: row.id,
-        label:
-          typeof row.content?.nameMain === "string"
-            ? (row.content.nameMain as string)
-            : row.id,
-      }))
+      .map((row) => ({ id: row.id, label: row.name_main || row.id }))
       .sort(byFrenchLabel),
     countries: (
       (countryRows.data ?? []) as Array<{ id: string; name_fr: string }>

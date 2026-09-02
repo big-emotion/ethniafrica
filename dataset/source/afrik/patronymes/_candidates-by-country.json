@@ -4,6 +4,8 @@
   "generatedBy": "scripts/afrik/buildAnthroponymCandidates.mjs",
   "countryCount": 54,
   "candidateCount": 648,
+  "quotaTotal": 780,
+  "deficitTotal": 200,
   "methodologyFr": "Le corpus AFRIK documente l'organisation clanique, pas l'anthroponymie : l'extraction de la prose n'a livré que 30 candidats exploitables (ETNI-1680). Cette liste étend la couverture à au moins dix anthroponymes de haute fréquence par pays à partir de connaissances externes au corpus. Conformément à la politique Source Tier, rien n'est écarté pour faiblesse : chaque entrée porte le tier le plus bas (unverified × ai_generated = 0.2) et reste un candidat tant qu'une source dédiée ne l'a pas établie. Le classement est un classement d'attestation, pas un décompte de porteurs : aucune table publique de fréquence patronymique ne couvre la majorité des 54 pays.",
   "defaultProvenance": {
     "tier": "unverified",
@@ -16,6 +18,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le sant (Wolof) et le yettoode (Haalpulaar) sont des noms de clan patrilinéaires, adossés à un système de parenté à plaisanterie (kal) entre patronymes.",
       "verificationLead": "Registre national des électeurs, annuaires ANSD, travaux d'onomastique wolof et sérère",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Diop",
@@ -192,6 +196,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Mêmes clans que le bassin sénégambien, sous graphie anglophone : Jallow pour Diallo, Ceesay pour Cissé, Njie pour Ndiaye. La graphie, non le nom, distingue les deux pays.",
       "verificationLead": "Listes électorales gambiennes (IEC), Gambia Bureau of Statistics, onomastique mandingue",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Jallow",
@@ -368,6 +374,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le jamu mandingue est le cas de référence du corpus : nom de clan patrilinéaire, adossé au sanankuya (parenté à plaisanterie) qui lie des patronymes deux à deux.",
       "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Traoré",
@@ -544,6 +552,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi.",
       "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Ouédraogo",
@@ -720,6 +730,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Chez les Hausa et les Zarma-Songhay, le second nom est massivement le prénom du père et change à chaque génération ; les noms hérités (Maïga, Kountché) restent minoritaires.",
       "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Maïga",
@@ -896,6 +908,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Trois traditions se superposent : jamu mandingue (Keïta, Kourouma), clans peuls du Fouta-Djalon (Diallo, Barry, Bah, Sow) et noms soussou du littoral (Soumah, Bangoura).",
       "verificationLead": "Fichier électoral CENI Guinée, INS Guinée, onomastique du Fouta-Djalon",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Diallo",
@@ -1072,6 +1086,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Deux couches : patronymes ouest-africains sous graphie portugaise (Camará, Baldé, Djaló) et noms lusophones hérités de la colonisation (Vieira, Gomes, Pereira) portés sans ascendance européenne.",
       "verificationLead": "Recenseamento Geral (INE Guiné-Bissau), listes électorales CNE, onomastique balante et manjaque",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Camará",
@@ -1248,6 +1264,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms akan les plus fréquents (Kouassi, Yao, Kouamé, Konan) sont des noms de jour (kradin) devenus héréditaires : ni jamu clanique ni patronyme non héréditaire au sens strict. La classification retenue ici est provisoire et doit être tranchée à la revue.",
       "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Kouassi",
@@ -1424,6 +1442,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Les noms de jour akan (Mensah, Kwame, Yaw, Kofi) coexistent avec des noms de famille hérités (Boateng, Owusu, Asante) et, au nord, des patronymes musulmans dagomba.",
       "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Mensah",
@@ -1600,6 +1620,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le sud éwé et le nord kabyè n'ont pas la même logique : au sud les noms renvoient au jour ou aux circonstances de naissance, au nord ils marquent le lignage.",
       "verificationLead": "Listes électorales CENI Togo, INSEED, travaux d'onomastique éwé et kabyè",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Agbo",
@@ -1776,6 +1798,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms fon et goun sont souvent des énoncés (Houngbédji, Adjovi) plutôt que des noms de clan ; le nord bariba et dendi relève d'une onomastique musulmane distincte.",
       "verificationLead": "Listes électorales CENA Bénin, INSAE, travaux sur l'anthroponymie fon et yoruba",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Houngbédji",
@@ -1952,6 +1976,8 @@
       "dominantNameSystem": "praise_name",
       "onomasticNote": "Trois systèmes distincts : oríkì yoruba (le nom est un énoncé sur l'òrìṣà ou le lignage), noms igbo théophores (Chukwu-, Nna-), et chaîne patronymique haoussa-peule au nord.",
       "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+      "quota": 30,
+      "deficit": 18,
       "entries": [
         {
           "name": "Adebayo",
@@ -2128,6 +2154,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Deux couches irréconciliées : patronymes américano-libériens hérités des colons affranchis (Johnson, Tubman, Doe) et noms de lignage kpelle, bassa et mandé de l'intérieur.",
       "verificationLead": "NEC voter roll, LISGIS census, travaux sur l'onomastique américano-libérienne",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Johnson",
@@ -2304,6 +2332,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les patronymes krio (Cole, Coker, Wright) sont ceux de recaptifs libérés à Freetown ; l'intérieur mende et temné porte des noms de lignage sans rapport avec cette couche.",
       "verificationLead": "NEC Sierra Leone voter register, Statistics Sierra Leone, travaux sur l'onomastique krio",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Kamara",
@@ -2480,6 +2510,8 @@
       "dominantNameSystem": "nisba",
       "onomasticNote": "Les Bidhan portent des nisba tribales (Ould X, Ahl X) ; les Haalpulaar, Soninké et Wolof du fleuve portent des noms de clan ouest-africains. Les deux systèmes coexistent sans se mélanger.",
       "verificationLead": "ANRPTS (registre national), ONS Mauritanie, travaux sur les nisba hassaniyya",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Ould Ahmed",
@@ -2656,6 +2688,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "L'anthroponymie est entièrement lusophone : les patronymes portugais ont été imposés à l'affranchissement et ne renvoient à aucune ascendance européenne. Aucun nom de clan africain n'y a survécu.",
       "verificationLead": "INE Cabo Verde (recenseamento), Conservatória dos Registos, travaux sur la créolisation onomastique",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Silva",
@@ -2832,6 +2866,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le pays cumule quatre onomastiques : noms de lignage beti-fang (Mba, Ndongo), noms bamiléké rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à l'ouest.",
       "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Mba",
@@ -3008,6 +3044,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Le nord arabophone et toubou suit la chaîne de prénoms ; le sud sara porte des noms de clan patrilinéaires. Déby Itno fait exception : c'est un nom de lignage zaghawa.",
       "verificationLead": "CENI Tchad, INSEED, travaux sur l'anthroponymie sara et les nisba tchadiennes",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Déby",
@@ -3184,6 +3222,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Noms de lignage gbaya, banda et sara au centre et à l'ouest ; onomastique musulmane au nord-est, sur la frange soudanaise.",
       "verificationLead": "ANE Centrafrique, ICASEES, travaux sur l'anthroponymie gbaya et banda",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Bozizé",
@@ -3360,6 +3400,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms fang (Nguema, Obame, Ondo) marquent le clan (ayong) et se retrouvent à l'identique en Guinée équatoriale et au sud-Cameroun : la frontière coloniale a coupé un même espace onomastique.",
       "verificationLead": "CGE Gabon, RGPL (recensement), travaux sur les clans fang (ayong)",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Nguema",
@@ -3536,6 +3578,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Nom de clan fang suivi d'un patronyme espagnol imposé à l'état civil colonial : Obiang Nguema Mbasogo enchaîne trois éléments dont deux sont des ayong distincts.",
       "verificationLead": "INEGE (censo), registro civil, travaux comparés sur les ayong fang du Gabon et du Cameroun",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Obiang",
@@ -3712,6 +3756,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Noms kongo (Nkounkou, Mabiala), téké et mbochi, doublés de prénoms français hérités de l'état civil colonial. Le clan kongo (kanda) est matrilinéaire, contrairement au jamu mandingue.",
       "verificationLead": "CNEI Congo, INS Congo, travaux sur le kanda kongo",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Nkounkou",
@@ -3888,6 +3934,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom africain : une rupture d'état civil qui rend la série des patronymes congolais datable.",
       "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+      "quota": 30,
+      "deficit": 18,
       "entries": [
         {
           "name": "Kabila",
@@ -4064,6 +4112,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Patronymes portugais massivement imposés (dos Santos, Neto), sous lesquels subsistent des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés.",
       "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "dos Santos",
@@ -4240,6 +4290,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Onomastique entièrement lusophone, comme au Cap-Vert, avec une strate forra distincte de la strate angolar et des contratados venus du continent au XXe siècle.",
       "verificationLead": "INE São Tomé (recenseamento), registo civil, travaux sur les communautés forro et angolar",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "do Espírito Santo",
@@ -4416,6 +4468,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Chaîne de prénoms arabe (ism + nasab) doublée d'une nisba tribale (al-Jaʿali, al-Shaygiya) qui, elle, se transmet. Le Darfour non arabophone (Four, Zaghawa) suit une logique de lignage distincte.",
       "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Mohamed",
@@ -4592,6 +4646,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms dinka et nuer sont des noms personnels transmis en chaîne (Salva Kiir Mayardit) et rattachés à une section clanique ; l'hérédité au sens de l'état civil y est récente.",
       "verificationLead": "NBS South Sudan, registre électoral, travaux sur les sections claniques dinka et nuer",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Deng",
@@ -4768,6 +4824,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Cas d'école du patronyme non héréditaire : le deuxième nom est le prénom du père et change à chaque génération. Abiy Ahmed Ali n'a pas de nom de famille — Ahmed est son père, Ali son grand-père. L'annuaire téléphonique d'Addis-Abeba se classe au prénom.",
       "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+      "quota": 30,
+      "deficit": 18,
       "entries": [
         {
           "name": "Tesfaye",
@@ -4944,6 +5002,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Même système qu'en Éthiopie, avec une forte proportion de noms théophores tigrigna (Ghebre-, Tesfa-, Weldu-) formés sur un saint ou une invocation.",
       "verificationLead": "Registre d'état civil érythréen, travaux sur l'anthroponymie tigrigna et tigré",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Tesfay",
@@ -5120,6 +5180,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Chaîne patronymique somali et afar (prénom + père + grand-père), doublée d'une appartenance claniqueenoncée séparément et non portée comme nom de famille.",
       "verificationLead": "INSTAD Djibouti, registre d'état civil, travaux sur les qabiil somali et les clans afar",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Guelleh",
@@ -5296,6 +5358,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Le nom est une chaîne (prénom + père + grand-père) ; l'identité collective passe par le qabiil (Darod, Hawiye, Isaaq), récité en généalogie mais jamais porté comme nom de famille. Confondre les deux est l'erreur classique des états civils étrangers.",
       "verificationLead": "Registre d'état civil somalien, travaux d'anthropologie sur les généalogies qabiil (abtirsiimo)",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mohamed",
@@ -5472,6 +5536,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Trois logiques : le kikuyu recycle les noms des grands-parents, le luo nomme selon le moment de la naissance (Otieno = né la nuit, Ochieng = né le jour), le kalenjin préfixe Kip- (garçon) ou Che- (fille). Aucune n'est un patronyme héréditaire d'origine.",
       "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Kamau",
@@ -5648,6 +5714,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "La côte swahilie suit la chaîne patronymique arabo-musulmane ; l'intérieur chagga, sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo).",
       "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Juma",
@@ -5824,6 +5892,8 @@
       "dominantNameSystem": "totemic_clan",
       "onomasticNote": "Le Buganda est le cas totémique du corpus : l'ekika est une liste fermée de clans à totem animal ou végétal, et chaque clan détient un stock de noms (amannya g'ekika) que seuls ses membres peuvent porter. Le nord acholi et langi suit une logique tout autre.",
       "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Mukasa",
@@ -6000,6 +6070,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Le nom rwandais (izina) est attribué individuellement à chaque enfant et n'est ni hérité du père ni partagé par la fratrie : frères et sœurs portent des noms différents. La classification retenue est la moins mauvaise des cinq, pas une description exacte.",
       "verificationLead": "NISR (recensement), NIDA (état civil), travaux sur le système des amazina rwandais",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Kagame",
@@ -6176,6 +6248,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Même système qu'au Rwanda : izina individuel, souvent une phrase kirundi sur Dieu ou les circonstances de la naissance (Hakizimana, « Dieu sauve »).",
       "verificationLead": "ISTEEBU (recensement), état civil burundais, travaux sur les amazina kirundi",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Ndayizeye",
@@ -6352,6 +6426,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le nom de famille nguni et l'isiduko (nom de clan) sont deux choses différentes : on demande « ubuhlobo bakho ? » pour l'isiduko, jamais le patronyme d'état civil. Les patronymes afrikaans et anglais forment une strate coloniale distincte.",
       "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Dlamini",
@@ -6528,6 +6604,8 @@
       "dominantNameSystem": "totemic_clan",
       "onomasticNote": "Le seboko sotho est un totem animal : Bakoena (crocodile), Bataung (lion), Bafokeng (rosée). Mokoena signifie « celui du crocodile » — le nom porte le totem, pas un ancêtre.",
       "verificationLead": "Bureau of Statistics Lesotho, registre d'état civil, travaux sur les liboko sotho",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mokoena",
@@ -6704,6 +6782,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Dlamini est le clan royal et le patronyme le plus porté du pays : une concentration onomastique sans équivalent ailleurs sur le continent. Chaque clan a ses tinanatelo (louanges).",
       "verificationLead": "Central Statistical Office Eswatini, registre d'état civil, travaux sur les tinanatelo swazi",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Dlamini",
@@ -6880,6 +6960,8 @@
       "dominantNameSystem": "totemic_clan",
       "onomasticNote": "Le totem tswana (seano) nomme le groupe : Bakwena (crocodile), Bangwato (duiker), Batawana. Le patronyme d'état civil, lui, dérive souvent d'un prénom d'ancêtre.",
       "verificationLead": "Statistics Botswana, registre d'état civil, travaux sur les merafe et leurs seano",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Khama",
@@ -7056,6 +7138,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Trois strates : noms ovambo (Nujoma, Shikongo), noms nama et damara à clic (Witbooi, ǁGaroëb), et patronymes afrikaans hérités de l'administration sud-africaine.",
       "verificationLead": "Namibia Statistics Agency, Ministry of Home Affairs, travaux sur l'onomastique ovambo et nama",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Nujoma",
@@ -7232,6 +7316,8 @@
       "dominantNameSystem": "totemic_clan",
       "onomasticNote": "Le mutupo shona est un totem : Moyo (cœur), Shumba (lion), Soko (singe). Il gouverne l'exogamie et se récite en salutation. Les patronymes ndebele du Matabeleland (Ncube, Sibanda, Ndlovu) relèvent, eux, du système nguni.",
       "verificationLead": "ZIMSTAT (recensement), Registrar General, travaux sur le mutupo shona et les isibongo ndebele",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Moyo",
@@ -7408,6 +7494,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Banda et Phiri, les deux patronymes les plus portés, débordent largement la Zambie : ils sont partagés avec le Malawi et le Mozambique, héritage de la diaspora ngoni et chewa.",
       "verificationLead": "Zambia Statistics Agency, Department of National Registration, travaux sur les mikowa bemba",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Banda",
@@ -7584,6 +7672,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Le sud chewa est matrilinéaire, le nord tumbuka et ngoni patrilinéaire : un même patronyme n'y désigne donc pas la même chose selon la région où il est porté.",
       "verificationLead": "National Statistical Office Malawi, National Registration Bureau, travaux sur le matriliniat chewa",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Banda",
@@ -7760,6 +7850,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Patronymes portugais imposés à l'assimilação, sous lesquels subsistent des noms makua, tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire.",
       "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Machel",
@@ -7936,6 +8028,8 @@
       "dominantNameSystem": "nisba",
       "onomasticNote": "La nisba domine : el-Fassi (de Fès), el-Alaoui (des Alaouites), er-Rifi (du Rif). Elle dit une ville, une tribu ou une lignée chérifienne, et se transmet — contrairement au nasab (« ben X ») qui, lui, désigne le père.",
       "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "El Alami",
@@ -8112,6 +8206,8 @@
       "dominantNameSystem": "nisba",
       "onomasticNote": "L'état civil de 1882 a imposé des patronymes fixes à une population qui n'en portait pas : beaucoup de noms algériens datent de cette opération administrative, parfois attribués arbitrairement voire par dérision. Les noms kabyles en Aït- ou At- marquent, eux, le lignage.",
       "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Benali",
@@ -8288,6 +8384,8 @@
       "dominantNameSystem": "nisba",
       "onomasticNote": "Nisba toponymiques (Jendoubi, Sfaxi, Gabsi) et tribales (Trabelsi, Hammami). L'état civil tunisien fixe les patronymes depuis 1957, plus tard que l'Algérie.",
       "verificationLead": "INS Tunisie (recensement), état civil, travaux sur les nisba toponymiques tunisiennes",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Ben Ali",
@@ -8464,6 +8562,8 @@
       "dominantNameSystem": "nisba",
       "onomasticNote": "L'identité tribale prime : Warfalli, Zintani, Misrati, Obeidi sont des nisba de tribu ou de ville, et structurent la vie politique autant que l'état civil.",
       "verificationLead": "Bureau of Statistics and Census Libya, état civil, travaux sur les tribus libyennes",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Al-Warfalli",
@@ -8640,6 +8740,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Le nom égyptien est une chaîne de prénoms (ism + nom du père + du grand-père) ; le nom de famille fixe reste minoritaire hors des grandes familles et des Coptes.",
       "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+      "quota": 30,
+      "deficit": 18,
       "entries": [
         {
           "name": "Mohamed",
@@ -8816,6 +8918,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "L'anarana malgache est un composé long, souvent préfixé Ra- (honorifique) ou Andrian- (noble), et n'est pas hérité de manière systématique : les cinq systèmes du modèle décrivent mal ce cas, la classification est provisoire.",
       "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+      "quota": 20,
+      "deficit": 8,
       "entries": [
         {
           "name": "Rakotomalala",
@@ -8992,6 +9096,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Quatre strates sans recouvrement : patronymes indiens (Ramgoolam, Jugnauth), créoles d'ascendance servile, franco-mauriciens et sino-mauriciens. Le nom dit la communauté, et c'est précisément ce que l'histoire mauricienne a construit.",
       "verificationLead": "Statistics Mauritius, Civil Status Division, travaux sur l'engagisme et l'onomastique indo-mauricienne",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Ramgoolam",
@@ -9168,6 +9274,8 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Patronymes français hérités des colons et de l'affranchissement, portés par une population majoritairement créole : le nom ne dit rien de l'ascendance.",
       "verificationLead": "National Bureau of Statistics Seychelles, Civil Status Office, travaux sur l'onomastique créole",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Michel",
@@ -9344,6 +9452,8 @@
       "dominantNameSystem": "non_hereditary_patronymic",
       "onomasticNote": "Chaîne de prénoms arabo-swahilie, où le nom du père sert de second élément. Les titres shirazi et les lignages matrilinéaires comoriens ne passent pas par le patronyme.",
       "verificationLead": "INSEED Comores, état civil, travaux sur les lignages matrilinéaires et l'héritage shirazi",
+      "quota": 10,
+      "deficit": 0,
       "entries": [
         {
           "name": "Abdallah",
