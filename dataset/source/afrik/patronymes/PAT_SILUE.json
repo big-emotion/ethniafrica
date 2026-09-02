@@ -2,84 +2,134 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier sénoufo documenté par fiche ; conserver les différences régionales entre Silué, Hili et Silivvé sans imposer une étymologie unique."
   },
   "id": "PAT_SILUE",
   "nameMain": "Silué",
-  "nameSystem": "clan_name",
+  "nameSystem": "totemic_clan",
   "spellings": [
     {
       "spelling": "Silué",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+        }
       ]
     },
     {
       "spelling": "Silue",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["civ-fonction-publique-2025-silue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Hili",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+        }
+      ]
+    },
+    {
+      "spelling": "Silivvé",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["tauxier-2003-etats-kong"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "bilateral",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Chez les Pallakha décrits par Louis Tauxier, deux récits sont rapportés à propos de l'antilope associée aux Silivvé : elle aurait aidé l'ancêtre à trouver de l'eau, ou elle serait leur ancêtre. L'auteur ne nomme pas ses informateurs et ces récits localisés ne peuvent être étendus à tous les Silué.",
+        "claimStatus": "contested",
+        "sourceRefs": ["tauxier-2003-etats-kong"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Les correspondances animales varient selon les sous-groupes : le tableau de Yalamoussa Coulibaly associe la ligne Zao/Silué/Hili au buffle, tandis que Tauxier affirme que Silivvé désigne une antilope en pallakha. Ces données établissent le caractère totémique et régional des formes, mais pas une étymologie unique de Silué.",
+        "claimStatus": "contested",
+        "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_SENUFO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
     }
   ],
   "countries": [
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SORO",
+      "allianceType": "parenté à plaisanterie sénoufo",
+      "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+    }
+  ],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "coulibaly-2019-noms-senoufo",
+      "title": "La perception des Sénoufo de Côte d'Ivoire de leurs noms traditionnels",
+      "url": "https://www.histoire-univdaloa.net/wp-content/uploads/2019/10/RISH-JUIN-2019-DEF.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yalamoussa Coulibaly, Revue ivoirienne des sciences historiques, no 5, juin 2019, p. 37-44. Les p. 39-43 ont été consultées : le Tienne ou Fè peut être pris du père ou de la mère, celui de la mère demeurant le plus important ; Silué figure parmi les matriclans, avec la forme régionale Hili, et la paire Soro/Silué est explicitement donnée comme relation réciproque de dépendance et de plaisanterie."
+    },
+    {
+      "sourceKey": "tauxier-2003-etats-kong",
+      "title": "Les États de Kong (Côte d'Ivoire)",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/2022-12/010075008.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Louis Tauxier, réédition Karthala de 2003 d'une enquête coloniale publiée en 1921. Les p. 188 et 203-204 ont été consultées : l'auteur donne Silivvé parmi les noms de clan sénoufo, le traduit localement par le nom d'une antilope en pallakha et rapporte deux récits divergents sur cette association. Le vocabulaire racial et les généralisations de l'ouvrage relèvent de son cadre colonial ; seuls les passages nommément localisés sont retenus."
+    },
+    {
+      "sourceKey": "civ-fonction-publique-2025-silue",
+      "title": "Cinquième édition des Journées de la Fonction publique — remise des lots de la tombola",
+      "url": "https://fonctionpublique.gouv.ci/index.php/front-page/navigator/viewpage/_alaune/2285",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle du ministère ivoirien de la Fonction publique consultée pour la seule attestation de la graphie administrative non accentuée SILUE. La personne vivante citée sur cette page n'est pas reprise comme porteuse dans le dossier."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Tauxier rapporte deux récits sans identifier d'informateur ou de griot et sans transcription attribuée ; l'article de Coulibaly ne fournit pas davantage les deux éléments exigés pour une tradition orale."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'article de Coulibaly et les chapitres localisés de Tauxier documentent un matriclan et des animaux sacrés, mais aucune profession ni fonction héréditaire propre aux Silué."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques exactes sur Silué, Hili et Silivvé ont livré des personnes contemporaines ou des individus sans statut vital vérifiable ; aucun porteur décédé pertinent pour l'histoire du nom n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Silué, Hili et Silivvé ont été comparées dans l'article de Coulibaly, l'ouvrage de Tauxier et les catalogues savants ; elles sont documentées comme correspondances régionales, sans lignée homonyme distincte établie."
     }
   ]
 }
