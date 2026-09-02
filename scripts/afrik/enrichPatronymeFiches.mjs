@@ -131,6 +131,10 @@ async function main() {
       "bearers",
       "homonyms",
       "spellings",
+      // A people or a country association is itself a claim, and research can
+      // replace the corpus passage that carried it with a dedicated source.
+      "peoples",
+      "countries",
       "nisbaSubtype",
       "patronymicChainDepth",
       "totemicFoodProhibition",

@@ -149,6 +149,85 @@ export const SOURCES = {
       "pour l'institution de la caste, jamais pour rattacher un clan nommé à " +
       "une caste : cette attribution-là vient d'une autre source.",
   },
+  "gha-iv-mali": {
+    title:
+      "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+    url: "https://archive.org/details/unesco_general_history_africa_iv",
+    tier: "official",
+    source_kind: "intergovernmental",
+    notes:
+      "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; " +
+      "consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. " +
+      "Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, " +
+      "p. 117-171), donne lignage par lignage l'implantation des clans malinké : " +
+      "les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les " +
+      "deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi " +
+      "(p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la " +
+      "correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu " +
+      "comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 " +
+      "n. 43) —, les griots Diabaté de Keyla et la réfection septennale du " +
+      "Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi " +
+      "dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une " +
+      "chronique : les claims qu'il porte ici sont donc rangés hors " +
+      "writtenChronicles.",
+  },
+  "gha-v-16-18": {
+    title:
+      "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+    url: "https://archive.org/details/unesco_general_history_africa_v",
+    tier: "official",
+    source_kind: "intergovernmental",
+    notes:
+      "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; " +
+      "consulté sur le texte intégral. Chapitre 12, « From the Niger to the " +
+      "Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali " +
+      "(Kurubari) et les Keita ou les Ture, donné comme indice de relations " +
+      "anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu " +
+      "« pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, " +
+      "assortie par la source elle-même de la mention qu'il en existe d'autres " +
+      "(p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), " +
+      "arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma " +
+      "(p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean " +
+      "coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger " +
+      "sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et " +
+      "Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du " +
+      "Liberia et de la Sierra Leone (p. 375-377).",
+  },
+  "bamadaba-jamuw": {
+    title: "Bamadaba — dictionnaire des noms claniques (jamuw)",
+    url: "http://cormand.huma-num.fr/dicos/jamuw.zip",
+    tier: "referenced",
+    source_kind: "linguistic_reference",
+    notes:
+      "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français " +
+      "supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, " +
+      "Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms " +
+      "claniques est signalée comme telle par Vydrin, « Vers une lexicographie " +
+      "mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, " +
+      "p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. " +
+      "Le fichier ne livre aucune légende de ses marqueurs, et la lecture " +
+      "retenue est celle que le fichier impose : \\ca porte les termes de statut " +
+      "mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, " +
+      "gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre " +
+      "ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une " +
+      "entente amicale et non un senankuya. Les liens \\sn ne sont pas " +
+      "systématiquement réciproques d'une entrée à l'autre : chaque paire est " +
+      "donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap.",
+  },
+  "nichols-2020-diabate-review": {
+    title:
+      "Review of Massa Makan Diabaté, The Lieutenant of Kouta (trans. Auerbach & Yost)",
+    url: "https://www.cambridge.org/core/journals/african-studies-review/article/massa-makan-diabate-the-lieutenant-of-kouta-translated-from-french-by-shane-auerbach-and-david-yost-east-lansing-michigan-state-university-press-2017-xi-113-pp-introduction-2000-paper-isbn-9781611862270/01AF0FE3900BD82768691B37BA6E998C",
+    tier: "referenced",
+    source_kind: "academic",
+    notes:
+      "Nichols, Eliza, African Studies Review 63(2), Cambridge University Press, " +
+      "2020. Donne les dates de Massa Makan Diabaté (1938-1988), son ascendance " +
+      "de griots et le fait qu'il fut le seul écrivain de sa génération à " +
+      "conserver le patronyme qui le rattache à la caste des généalogistes — " +
+      "soit une source portant sur le nom lui-même, et non sur la seule " +
+      "homonymie de patronyme.",
+  },
   "bryant-1929-olden-times": {
     title:
       "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
