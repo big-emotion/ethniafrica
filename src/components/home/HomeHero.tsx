@@ -2,11 +2,11 @@ import Image from "next/image";
 
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
-import { corpusCensus, type CensusEntry } from "@/lib/home/corpusCensus";
+import type { CorpusCounts } from "@/lib/home/corpusCounts";
 import type { HomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 
-import { HomeCensusLine } from "./HomeCensusLine";
+import { HomeCorpusCounts } from "./HomeCorpusCounts";
 import { HomeHeroSearch } from "./HomeHeroSearch";
 
 /**
@@ -27,11 +27,11 @@ export interface HomeHeroProps {
   /** Documented peoples per country, forwarded to the globe's honest field. */
   peopleCountsByCountry?: Record<string, number>;
   /**
-   * The five corpus classes and their sizes, counted per request by the server
-   * page. Defaults to the classes without their figures, so Storybook and a
-   * test can render the band with no database behind it.
+   * The corpus totals, read per request by the server page. Defaults to
+   * `null` — the tiles then say *Indisponible* rather than zero — so Storybook
+   * and a test can render the band with no database behind it.
    */
-  census?: CensusEntry[];
+  counts?: CorpusCounts | null;
   /** The visual drawn once by the server for this page request. */
   visual?: HomeHeroVisual;
 }
@@ -41,7 +41,7 @@ export interface HomeHeroProps {
 export function HomeHero({
   seedWords,
   peopleCountsByCountry,
-  census = corpusCensus(null),
+  counts = null,
   visual = { kind: "globe" },
 }: HomeHeroProps = {}) {
   return (
@@ -70,33 +70,44 @@ export function HomeHero({
               And no aria-label. The heading used to show one class that turned
               every few seconds while its accessible name listed all five — a
               landmark whose name was a different sentence from its text. The
-              census line below carries the five classes now, so the heading
-              says the one thing it means and is called by it. */}
+              tiles below carry the corpus's size now, so the heading says the
+              one thing it means and is called by it. */}
           <h1>{"Une question sur l'Afrique\u00a0?"}</h1>
-          {/* One string, not the product name followed by JSX text. Next's
-              SWC transform drops the space between an expression and the text
-              that follows it on the same line, so the band once shipped
-              « EthniAfricapublie » — in the first line of prose the site
-              offers. Neither vitest's transform nor Prettier reproduces that
-              reading: the runner keeps the space, so every test here stayed
-              green, and Prettier deletes an explicit space expression it
-              believes JSX already implies. Inside a template literal no
-              whitespace rule applies at all. */}
-          <p className="home-hero-answer" data-testid="home-hero-answer">
-            {`${PRODUCT_NAME} y répond fiche par fiche, en accès libre, ` +
-              `et donne la source de chaque réponse.`}
-          </p>
+          {/* Three imperatives, then what the site is, then what it owes.
 
-          {/* What the corpus holds, counted per request by the server page.
-              This is the half of the retired reel that mattered: it named a
-              class and gave its size, one at a time. The line states all five
-              at once, and states them to every reader — the reel never armed
-              at all under prefers-reduced-motion. */}
-          <HomeCensusLine entries={census} />
+              The band answers « what can I do here », and it used to answer
+              « how does this site work » instead: « y répond fiche par fiche,
+              en accès libre » describes a mechanism to a reader who has not
+              yet been told there is a map to turn, a dossier to read or a game
+              to play. Search stays the primary action below it — this sentence
+              is what stops the surface reading as a search engine with nothing
+              behind the field.
+
+              « atlas » does deliberate work. It borrows a category the reader
+              already holds instead of asking them to learn one, which is the
+              same move as letting the product read as a Wikipedia or a Google
+              presented differently.
+
+              One string inside one expression, never bare JSX text: SWC drops
+              the space between an expression and the text following it on the
+              same line — the bug that shipped « EthniAfricapublie » and which
+              no test in this repo reproduces. The no-break space before « : »
+              is the French rule, written as an escape because the character is
+              invisible in a diff. */}
+          <p className="home-hero-answer" data-testid="home-hero-answer">
+            {"Explorez la carte, lisez les dossiers, jouez\u00a0: " +
+              "l'atlas libre des peuples d'Afrique, sources à l'appui."}
+          </p>
 
           {/* Search is the band's primary action; seed words keep its three
               corpus entry types visible before the reader starts typing. */}
           <HomeHeroSearch seedWords={seedWords} />
+
+          {/* What the atlas documents, counted per request by the server page,
+              and placed under the field rather than over it: the figures
+              qualify the promise the sentence just made, and a reader who came
+              to search reaches the field before the corpus's size. */}
+          <HomeCorpusCounts counts={counts} />
         </header>
 
         <div
@@ -202,57 +213,20 @@ export function HomeHero({
           color: var(--afh-text);
         }
 
-        /* The cartouche: what the corpus holds, under the answer.
+        /* The tile band, under the search rather than under the prose.
 
-           A rank below the prose it follows — small size, soft ink — because
-           these are the corpus's own measurements and not the band's argument.
-           The figures alone take full ink, so the line reads as five totals
-           rather than as a sentence.
+           A rank below both — small labels, soft ink, figures in display type
+           — because these are the corpus's own measurements and not the band's
+           argument. The gap is larger than the one above the field: the tiles
+           close the copy column, and at 24px they read as its footer instead
+           of as a fourth thing the reader is being handed.
 
-           \`balance\` rather than \`pretty\`: the entries are of very uneven
-           length ("54 pays" against "3 134 appellations") and at 430px the
-           line takes three rows, where balance keeps them even instead of
-           leaving one word alone on the last. */
-        .home-hero-census {
-          margin: 12px auto 0;
-          max-width: 52ch;
-          font-size: var(--afh-text-small);
-          line-height: var(--afh-leading-small);
-          color: var(--afh-text-soft);
-          font-variant-numeric: tabular-nums;
-          text-wrap: balance;
-        }
-        /* No \`white-space: nowrap\` here, and that is the point. An entry
-           holds no breakable space of its own — the figure is tied to its word
-           and to its trailing separator by U+00A0 — so it is already
-           unbreakable, and declaring nowrap on top of that also suppressed the
-           plain space *after* each separator, which is the line's only break
-           opportunity. The census then measured 499px at a 430px viewport and
-           dragged the copy column out of the band with it. */
-        .home-hero-census-figure {
-          font-weight: 700;
-          color: var(--afh-text);
-        }
-        /* A total the server could not read drops to the quiet-text ink and
-           to book weight, so it reads as visibly not a figure and can never be
-           mistaken for one.
-
-           \`--afh-fg-muted\`, not \`--afh-text-muted\`: the two are the same
-           hue on parchment but the second is reserved for non-text marks, and
-           it measures 3.29:1 on a card — textColorContrastSweep catches the
-           substitution, which is how this line was first written. */
-        .home-hero-census-figure.is-unavailable {
-          font-weight: 400;
-          color: var(--afh-fg-muted);
-        }
-        /* Neither colour nor padding of its own. The ink is the line's soft
-           ink, because a dimmer punctuation mark would have to come from the
-           non-text ramp, which is exactly the token this line may not use; and
-           the spacing is the two real spaces the separator is written with,
-           because padding would have added air without adding the break
-           opportunity that air implies. */
-        .home-hero-census-sep {
-          font-variant-numeric: normal;
+           No max-width of its own. The prose keeps its 52ch measure through
+           .home-hero-answer; the tiles are a grid, and holding them to a text
+           measure would leave the third one hanging off the column's edge at
+           1440. */
+        .home-hero-copy .home-corpus-counts {
+          margin-top: 24px;
         }
 
         .home-hero-visual {
@@ -325,13 +299,14 @@ export function HomeHero({
 
         @media (min-width: 1200px) {
           .home-hero-inner {
-            /* 1.15/0.85, not an even split. It was set to give the rotating
-               headline the room its widest segment needed; that headline is
-               gone and the split stays, because what now claims the width is
-               the census line — 499px on one row at 1440, which an even 0.5fr
-               column would fold onto two. The visual gives up ~18% of its
-               width and nothing else: its 620px is a max-width, a ceiling and
-               not a floor. */
+            /* 1.15/0.85, not an even split. It was set for the rotating
+               headline's widest segment, then kept for the census line's
+               499px; both are gone, and the split stays for the tile band —
+               three tiles across an even 0.5fr column measure 176px each,
+               which is narrower than they are tall and reads as a row of
+               buttons rather than a row of figures. The visual gives up ~18%
+               of its width and nothing else: its 620px is a max-width, a
+               ceiling and not a floor. */
             grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
             grid-template-areas: "copy globe";
             align-items: center;
@@ -350,13 +325,13 @@ export function HomeHero({
             max-width: 100%;
             text-align: left;
           }
-          /* Both prose blocks, in one declaration. They are centred boxes on a
-             phone and flush-left here, and when the census had its own
-             \`margin: auto\` it stayed centred inside a left-aligned column —
+          /* The prose block loses its auto margins here. It is a centred box
+             on a phone and flush-left in this column, and a block that kept
+             \`margin: auto\` would stay centred inside a left-aligned column —
              a second left edge inside one block, which §8.1 of the brand
-             charter counts as a defect. One rule, so they cannot part. */
-          .home-hero-answer,
-          .home-hero-census {
+             charter counts as a defect. The tile band makes the same switch
+             for itself, in its own file, at this same width. */
+          .home-hero-answer {
             margin-inline: 0;
           }
           .home-hero-globe .home-globe-stage {

@@ -49,27 +49,20 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   });
 
   // The band no longer narrows to one class, and no longer hides four. The
-  // headline asks about the continent; the census line under it states the
-  // five classes the corpus holds. \s rather than a literal space: the
-  // no-break space before « ? » is deliberate and must not be asserted as an
-  // ordinary one.
+  // headline asks about the continent; the tile band under the search states
+  // the classes it counts. \s rather than a literal space: the no-break space
+  // before « ? » is deliberate and must not be asserted as an ordinary one.
   // @req REQ-044
-  it("asks about the continent and leaves the classes to the census line", () => {
+  it("asks about the continent and leaves the totals to the tile band", () => {
     render(<HomeHero />);
 
     const h1 = screen.getByRole("heading", { level: 1 });
     expect(h1.textContent).toMatch(/^Une question sur l'Afrique\s?\?$/);
 
-    const census = screen.getByTestId("home-hero-census");
-    for (const word of [
-      "peuples",
-      "langues",
-      "pays",
-      "familles",
-      "appellations",
-    ]) {
+    const tiles = screen.getByTestId("home-corpus-counts");
+    for (const word of ["peuples", "langues", "pays"]) {
       expect(h1.textContent).not.toContain(word);
-      expect(census.textContent).toContain(word);
+      expect(tiles.textContent).toContain(word);
     }
   });
 
@@ -93,8 +86,15 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // One sentence, not three registers. The band used to ask the reader to
   // hold seven items before the first scroll — four in the lede's list,
   // three in the standfirst's — and a reader retains one.
+  //
+  // The sentence names what a reader can do before it names what the site is.
+  // The band's job on a first visit is to answer « what is there here for me »
+  // and it spent a release answering « how does this site work » instead, in a
+  // sentence about fiches and access that named neither the map, the dossiers
+  // nor the games. An edit that drops the verbs turns the proposition of value
+  // back into a description of a mechanism.
   // @req REQ-044
-  it("answers the headline in exactly one sentence", () => {
+  it("answers the headline in one sentence, and offers something to do", () => {
     render(<HomeHero />);
 
     const answer = screen.getByTestId("home-hero-answer");
@@ -103,16 +103,19 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
       .filter((part) => part.trim().length > 0);
 
     expect(sentences).toHaveLength(1);
-    expect(answer).toHaveTextContent(/y répond fiche par fiche/i);
-    expect(answer).toHaveTextContent(/la source de chaque réponse/i);
+    expect(answer).toHaveTextContent(/explorez/i);
+    expect(answer).toHaveTextContent(/dossiers/i);
+    expect(answer).toHaveTextContent(/atlas/i);
+    expect(answer).toHaveTextContent(/sources/i);
   });
 
-  // The band holds one paragraph of prose and one cartouche of figures, in
-  // that order. A third is how the lede and the standfirst grew back the last
-  // time — so this asserts the exact pair rather than a count, which a new
-  // block could quietly join by incrementing a number in a test.
+  // The band holds exactly one paragraph of prose. A second is how the lede
+  // and the standfirst grew back the last time — so this asserts the exact
+  // list rather than a count, which a new block could quietly join by
+  // incrementing a number in a test. The figures are a definition list under
+  // the search, deliberately not a third register of prose.
   // @req REQ-044
-  it("holds one paragraph, one census line, and no separating rule", () => {
+  it("holds one paragraph, one tile band, and no separating rule", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
@@ -123,7 +126,8 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     );
     expect(
       paragraphs.map((paragraph) => paragraph.getAttribute("data-testid"))
-    ).toEqual(["home-hero-answer", "home-hero-census"]);
+    ).toEqual(["home-hero-answer"]);
+    expect(screen.getByTestId("home-corpus-counts").tagName).toBe("DL");
     expect(container.querySelector(".home-hero-lede")).toBeNull();
     expect(container.querySelector(".home-hero-standfirst")).toBeNull();
     expect(styles).not.toMatch(/\.home-hero-answer\s*\{[^}]*border-top/);
@@ -169,16 +173,25 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // runner's JSX transform keeps the space that Next's drops, so the page
   // said « EthniAfricapublie » while every assertion above stayed green.
   // What is guarded is therefore the shape that removes the question — the
-  // sentence is one string, and the name is interpolated into it.
+  // answer is string literals inside one expression, with no bare JSX text
+  // beside them. The prose no longer interpolates the product name, but the
+  // next edit reaching for it must not paste it in as adjacent JSX text.
   // @req REQ-044
-  it("carries the product name inside the sentence, not beside it", () => {
+  it("writes the answer as string literals, never as bare JSX text", () => {
     const source = readFileSync(
       join(process.cwd(), "src/components/home/HomeHero.tsx"),
       "utf8"
     );
 
-    expect(source).toMatch(/\$\{PRODUCT_NAME\} y répond/);
-    expect(source).not.toMatch(/(?<!\$)\{PRODUCT_NAME\} y répond/);
+    const answer = source.match(
+      /data-testid="home-hero-answer">([\s\S]*?)<\/p>/
+    )?.[1];
+
+    expect(answer).toBeDefined();
+    expect(answer!.trim().startsWith("{")).toBe(true);
+    // Nothing but whitespace between the closing brace and the closing tag:
+    // any character there is text SWC would butt against the expression.
+    expect(answer!.trimEnd().endsWith("}")).toBe(true);
   });
 
   // The answer is the band's only prose, so it takes the reading size and
