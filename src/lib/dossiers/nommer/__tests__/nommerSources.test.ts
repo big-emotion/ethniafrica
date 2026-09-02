@@ -17,8 +17,15 @@ import { SOURCE_TIERS } from "@/types/sources";
  * Wikipedia is not a source: a primary source found through it is cited at
  * its own tier, by its own URL, with the editions crossed recorded in the
  * entry's `notes`. Until that walk-back is done for a given work, its key
- * sits here — and the dossier cannot be declared ready while the set is
- * non-empty (`moduleRegistry` keeps `editorialReadiness: "draft"` until then).
+ * sits here.
+ *
+ * The dossier still ships `editorialReadiness: "ready"`, and the distinction
+ * is deliberate. Readiness asks whether the corpus behind a module is worth a
+ * reader's trip; this set asks whether every citation has reached its primary
+ * work. A chapter that is written, sourced and visibly tiered is worth the
+ * trip — and each entry that has not been walked back carries « En attente
+ * d'examen » on the page, which is the reader telling the reader, rather than
+ * the module hiding behind « Bientôt ».
  *
  * The set may only shrink. Adding a key is adding a citation the atlas cannot
  * yet stand behind, and the suite makes that an explicit, reviewable edit
