@@ -12,7 +12,7 @@
  *     summary: List Module #0 citation sources
  *     description: Returns a paginated list of sources backing AFRIK assertions.
  *     tags:
- *       - "API v2 - Module #0"
+ *       - "API v2 - Source Transparency"
  *     parameters:
  *       - in: query
  *         name: page

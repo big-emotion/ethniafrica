@@ -156,6 +156,25 @@ export interface HubModuleDefinition {
    */
   editorialReadiness?: EditorialReadiness;
   dataSource?: ModuleDataSource;
+  /**
+   * The plural noun a sentence uses for this class, where `name` is the label
+   * a menu entry wears. "Les peuples d'Afrique" heads a nav item; prose says
+   * "des peuples".
+   *
+   * Declared by the six corpus classes — an atlas module with a `dataSource` —
+   * and by nothing else, because only a thing the corpus *holds* belongs in a
+   * sentence describing what the corpus holds. It exists because these six
+   * nouns were written out by hand on every surface that describes the
+   * product, and each copy fell behind the corpus at its own pace: the site's
+   * own meta description still named four of them.
+   *
+   * Not to be confused with `CORPUS_CLASSES` (corpusClasses.ts), which is
+   * deliberately five. That list prints *figures*, and a figure claims
+   * exhaustiveness — "30 patronymes" beside "3 134 appellations" understates
+   * the product and misstates its coverage. Naming a class costs no such
+   * claim, so prose names all six and the census counts five.
+   */
+  corpusNoun?: string;
   /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
@@ -223,6 +242,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_countries",
+    corpusNoun: "Pays",
   },
   {
     id: "peuples",
@@ -232,6 +252,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_peoples",
+    corpusNoun: "Peuples",
   },
   {
     id: "familles",
@@ -241,6 +262,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_language_families",
+    corpusNoun: "Familles linguistiques",
     heroable: "family-crown",
   },
   // Filed directly after familles: a language is the next rung down the
@@ -255,6 +277,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_languages",
+    corpusNoun: "Langues",
   },
   // The fourth nominal entry point. A reader who arrives holding a name the
   // corpus files as an appellation — an exonym, a colonial-era spelling —
@@ -272,6 +295,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // therefore follow the route that was already public.
     editorialReadiness: "ready",
     dataSource: "name_records",
+    corpusNoun: "Appellations",
   },
   // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
   // person is named under, not a people's autonym/exonym. Filed beside it
@@ -293,6 +317,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_patronymes",
+    corpusNoun: "Nom",
   },
   // Recherche closes Explorer: it is where a reader goes once naming the
   // entity has not been enough.

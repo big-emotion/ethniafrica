@@ -19,53 +19,118 @@ type AvailabilityInputs = Pick<
   "availability" | "dataSource" | "editorialReadiness"
 >;
 
+/** The view of migration 080: one row per data source, one boolean each. */
+const CORPUS_PRESENCE_VIEW = "hub_module_corpus_presence";
+
+interface CorpusPresenceRow {
+  data_source: ModuleDataSource;
+  has_rows: boolean;
+}
+
 /**
- * REQ-106/REQ-114: a "data" module counts as live only once its backing
- * table returns at least one row. A failed or empty query both resolve to
- * `false` so an unreachable source degrades the module to unavailable
- * instead of throwing into the hub render. Restored from the deleted
- * src/lib/moduleAvailability.ts (git show f5115339^).
+ * What the database said about each data source.
+ *
+ * A source the database did not answer for is *absent from the record*, and
+ * that is the whole point: `undefined` means "we do not know", which is not
+ * `false`. Conflating the two is the defect this file was rewritten for.
  */
-async function hasAtLeastOneRow(
-  dataSource: ModuleDataSource
-): Promise<boolean> {
+type CorpusPresence = Partial<Record<ModuleDataSource, boolean>>;
+
+/**
+ * Every table some module waits on, deduplicated, in the registry's own
+ * words — so the fallback below cannot probe a table nobody declared.
+ */
+const DECLARED_DATA_SOURCES: ModuleDataSource[] = [
+  ...new Set(
+    MODULE_DEFINITIONS.map((definition) => definition.dataSource).filter(
+      (source): source is ModuleDataSource => Boolean(source)
+    )
+  ),
+];
+
+/**
+ * The fast path: the whole map in one round trip, with no count anywhere.
+ * Returns `null` — not an empty map — when the view could not be read, so the
+ * caller can tell "nothing is loaded" from "nothing answered".
+ */
+async function readPresenceView(): Promise<CorpusPresence | null> {
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from(CORPUS_PRESENCE_VIEW)
+    .select("data_source, has_rows");
+
+  if (error) {
+    logger.error("Hub module corpus presence view unreadable", error);
+    return null;
+  }
+
+  const rows = (data ?? []) as CorpusPresenceRow[];
+  return Object.fromEntries(
+    rows.map((row) => [row.data_source, row.has_rows === true])
+  );
+}
+
+/**
+ * The fallback, for a database the view has not reached yet: production
+ * applies its migrations by hand, so this code can land there first.
+ *
+ * `select("id").limit(1)` and never a count. The question is whether a first
+ * row exists, and `count: "exact"` over `select("*")` asked PostgREST to walk
+ * the whole relation to answer it — which is how a 790-row table came to blow
+ * the three-second `anon` statement timeout and report itself empty.
+ *
+ * `undefined` on failure, for the same reason `readPresenceView` returns
+ * `null`: an unanswered probe is not an empty table.
+ */
+async function probeDataSource(
+  source: ModuleDataSource
+): Promise<boolean | undefined> {
+  const columns = createServerClient().from(source).select("id");
+  // Mirrors `names.ts#listNames`, and the same filter in the view, so all
+  // three judge the noms module on the records it actually renders.
+  const query =
+    source === "name_records"
+      ? columns.eq("entity_type", "people").limit(1)
+      : columns.limit(1);
+
+  const { data, error } = await query;
+
+  if (error) {
+    logger.error(`Hub module availability probe failed for ${source}`, error);
+    return undefined;
+  }
+
+  return (data ?? []).length > 0;
+}
+
+async function readCorpusPresence(): Promise<CorpusPresence> {
   try {
-    const supabase = createServerClient();
-    let query = supabase
-      .from(dataSource)
-      .select("*", { count: "exact", head: true });
+    const fromView = await readPresenceView();
+    if (fromView) return fromView;
 
-    // Mirror the entity_type filter applied by names.ts#listNames so this
-    // probe reflects what the noms atlas actually renders.
-    if (dataSource === "name_records") {
-      query = query.eq("entity_type", "people");
-    }
-
-    const { count, error } = await query;
-
-    if (error) {
-      logger.error(
-        `Hub module availability probe failed for ${dataSource}`,
-        error
-      );
-      return false;
-    }
-
-    return (count ?? 0) > 0;
-  } catch (error) {
-    logger.error(
-      `Hub module availability probe threw for ${dataSource}`,
-      error
+    const probed = await Promise.all(
+      DECLARED_DATA_SOURCES.map(
+        async (source) => [source, await probeDataSource(source)] as const
+      )
     );
-    return false;
+    return Object.fromEntries(
+      probed.filter(([, present]) => present !== undefined)
+    );
+  } catch (error) {
+    logger.error("Hub module corpus presence threw", error);
+    return {};
   }
 }
 
-// One cached probe per data source (DEC-018): an empty/unreachable table
-// shouldn't turn into a per-request Supabase round trip for every hub view.
-const probeDataSource = unstable_cache(
-  (dataSource: ModuleDataSource) => hasAtLeastOneRow(dataSource),
-  ["hub-module-availability"],
+/**
+ * One cached read per revalidation window (DEC-018). Caching a *failure* for
+ * sixty seconds is deliberate and safe now that a failure resolves to
+ * "offered": an optimistic answer held briefly costs a reader nothing, where
+ * the pessimistic one it replaces took a built page off the site.
+ */
+const corpusPresence = unstable_cache(
+  readCorpusPresence,
+  ["hub-module-corpus-presence"],
   { revalidate: 60 }
 );
 
@@ -73,27 +138,50 @@ export interface HubModule extends HubModuleDefinition {
   available: boolean;
 }
 
-// @req REQ-106 @req REQ-114
-export async function isModuleAvailable(
-  def: AvailabilityInputs
-): Promise<boolean> {
-  // Editorial readiness is settled first, and without a query: it is
-  // declared in the registry, so no table can overturn it, and a module we
-  // have already decided is unready would only spend a round trip on an
-  // answer nobody reads. This is the "not yet worth the trip" half of the
-  // charter's §3 distinction; the probe below is the "has nothing at all"
-  // half. Both surface as the same inert Bientôt row, deliberately.
+/**
+ * The two halves of availability, in the order the charter (§3) puts them,
+ * against a presence map already read.
+ */
+function isModuleLive(
+  definition: AvailabilityInputs,
+  presence: CorpusPresence
+): boolean {
+  // Editorial readiness is settled first, and without a query: it is declared
+  // in the registry, so no table can overturn it. This is the "not yet worth
+  // the trip" half of the charter's §3 distinction; the corpus below is the
+  // "has nothing at all" half. Both surface as the same inert Bientôt row,
+  // deliberately — and the declared half must also survive an outage, or a
+  // database hiccup would talk an unready module back into the menu.
   //
   // Shared with the client resolver (`isModuleOffered`) rather than restated,
   // so the header cannot answer this half differently from the hub.
-  if (!isModuleDeclaredReady(def)) return false;
+  if (!isModuleDeclaredReady(definition)) return false;
 
-  // Only a data module's liveness depends on the corpus. A static page
-  // renders from code, and asking a row count about it could only ever take
-  // a working route away.
-  if (def.availability !== "data") return true;
-  if (!def.dataSource) return false;
-  return probeDataSource(def.dataSource);
+  // Only a data module's liveness depends on the corpus. A static page renders
+  // from code, and asking a row about it could only ever take a working route
+  // away.
+  if (definition.availability !== "data") return true;
+  if (!definition.dataSource) return false;
+
+  // Unknown is not empty. A source nothing answered for leaves the module
+  // offered: an empty list is a cheaper disappointment than a door that is
+  // not there, and the reader can see for themselves what the corpus holds.
+  return presence[definition.dataSource] ?? true;
+}
+
+// @req REQ-106 @req REQ-114
+export async function isModuleAvailable(
+  definition: AvailabilityInputs
+): Promise<boolean> {
+  // A module its declaration already settles never pays for a round trip
+  // whose answer nobody reads.
+  const settledByDeclaration =
+    !isModuleDeclaredReady(definition) || definition.availability !== "data";
+
+  return isModuleLive(
+    definition,
+    settledByDeclaration ? {} : await corpusPresence()
+  );
 }
 
 // @req REQ-114 @req REQ-106
@@ -103,12 +191,12 @@ export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
   // hub is a module a reader cannot find, and neither the environment nor
   // an editorial judgement has any say in what exists — only in what is
   // offered.
-  return Promise.all(
-    getModulesForAccessMode(mode).map(async (def) => ({
-      ...def,
-      available: await isModuleAvailable(def),
-    }))
-  );
+  const presence = await corpusPresence();
+
+  return getModulesForAccessMode(mode).map((definition) => ({
+    ...definition,
+    available: isModuleLive(definition, presence),
+  }));
 }
 
 /**
@@ -123,21 +211,22 @@ export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
  * layout keeps that threading to one place rather than to `PageLayout`'s
  * fifteen-odd callers.
  *
- * Cached whole rather than leaning on the per-table probe underneath it. The
- * difference matters because of where this is called: the `[lang]` layout
- * runs on every page under `/fr` and the shell waits on it, so the cost that
- * counts is per render, not per table. One cache entry is one lookup; the
- * seven the probes would each do are seven.
+ * Cached whole rather than leaning on the presence read underneath it. The
+ * difference matters because of where this is called: the `[lang]` layout runs
+ * on every page under `/fr` and the shell waits on it, so the cost that counts
+ * is per render, not per source.
  */
 // @req REQ-106 @req REQ-114
 export const getModuleAvailabilityMap = unstable_cache(
   async (): Promise<ModuleAvailabilityMap> => {
-    const resolved = await Promise.all(
-      MODULE_DEFINITIONS.map(
-        async (def) => [def.id, await isModuleAvailable(def)] as const
-      )
+    const presence = await corpusPresence();
+
+    return Object.fromEntries(
+      MODULE_DEFINITIONS.map((definition) => [
+        definition.id,
+        isModuleLive(definition, presence),
+      ])
     );
-    return Object.fromEntries(resolved);
   },
   ["hub-module-availability-map"],
   { revalidate: 60 }

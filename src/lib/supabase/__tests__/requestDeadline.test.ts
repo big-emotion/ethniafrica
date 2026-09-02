@@ -1,7 +1,9 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
+  SUPABASE_BATCH_REQUEST_TIMEOUT_MS,
   SUPABASE_REQUEST_TIMEOUT_MS,
+  createFetchWithDeadline,
   fetchWithDeadline,
 } from "../requestDeadline";
 
@@ -66,5 +68,72 @@ describe("supabase request deadline", () => {
     caller.abort();
 
     await expect(pending).rejects.toThrow();
+  });
+});
+
+/**
+ * The corpus loader reads whole content tables — `select("id, content")` over
+ * 37.7 MB of TOASTed JSONB in `afrik_peoples` alone. That is a legitimate read
+ * measured in tens of seconds, not a host gone silent, and the page deadline
+ * cancelled it ten seconds in: `Failed to read afrik_language_families:
+ * AbortError`, every recette sync, so the corpus stopped reaching the database.
+ *
+ * A batch run still needs *a* deadline — a hang is no better here than on a
+ * page — so the fix widens it rather than removing it.
+ */
+describe("batch request deadline", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+  });
+
+  // @req REQ-110
+  it("gives a batch read more time than a page render gets", () => {
+    expect(SUPABASE_BATCH_REQUEST_TIMEOUT_MS).toBeGreaterThan(
+      SUPABASE_REQUEST_TIMEOUT_MS
+    );
+  });
+
+  // @req REQ-110
+  it("lets a read outlive the page deadline", async () => {
+    vi.useFakeTimers();
+    const answered = new Response("[]", { status: 200 });
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(
+        (_input: unknown, init?: { signal?: AbortSignal }) =>
+          new Promise((resolve, reject) => {
+            init?.signal?.addEventListener("abort", () =>
+              reject(new Error("aborted"))
+            );
+            setTimeout(
+              () => resolve(answered),
+              SUPABASE_REQUEST_TIMEOUT_MS * 3
+            );
+          })
+      )
+    );
+
+    const pending = createFetchWithDeadline(SUPABASE_BATCH_REQUEST_TIMEOUT_MS)(
+      "https://example.test/rest/v1/afrik_peoples"
+    );
+    await vi.advanceTimersByTimeAsync(SUPABASE_REQUEST_TIMEOUT_MS * 3);
+
+    await expect(pending).resolves.toBe(answered);
+  });
+
+  // Widened, not removed: a host that never answers must still be abandoned.
+  // @req REQ-110
+  it("still abandons a batch read that never answers", async () => {
+    vi.useFakeTimers();
+    vi.stubGlobal("fetch", fetchThatNeverAnswers());
+
+    const pending = createFetchWithDeadline(SUPABASE_BATCH_REQUEST_TIMEOUT_MS)(
+      "https://example.test/rest/v1/afrik_peoples"
+    );
+    const settled = expect(pending).rejects.toThrow();
+    await vi.advanceTimersByTimeAsync(SUPABASE_BATCH_REQUEST_TIMEOUT_MS);
+
+    await settled;
   });
 });

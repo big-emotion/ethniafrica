@@ -61,7 +61,7 @@ vi.mock("@/api/v2/services/languageFamilyService", async (importOriginal) => ({
 }));
 
 import { metadata as rootLayoutMetadata } from "@/app/layout";
-import { CANONICAL_DOMAIN } from "@/lib/brand";
+import { CANONICAL_DOMAIN, OG_DESCRIPTION } from "@/lib/brand";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -159,8 +159,11 @@ describe("root layout metadata — the only <head> the fiche routes get", () => 
       // actually matters is asserted below.
       metadataBase: expect.any(URL),
       title: "EthniAfrica | Dictionnaire des Ethnies d'Afrique",
-      description:
-        "Encyclopédie des peuples, langues et familles linguistiques dans les 55 pays africains. Explorez la diversité culturelle et linguistique du continent.",
+      // Present and a string, not a frozen sentence. What the description has
+      // to *say* is siteDescription.test.ts's contract, derived from the module
+      // registry — pinning the copy in a second suite is what let it name four
+      // of the six corpus classes while two suites stayed green.
+      description: expect.any(String),
       authors: [{ name: "EthniAfrica" }],
       icons: {
         icon: "/favicon.ico",
@@ -170,8 +173,10 @@ describe("root layout metadata — the only <head> the fiche routes get", () => 
         // The site's own title, qualified: a social card carries no masthead
         // beside it to say what EthniAfrica is.
         title: "EthniAfrica — Atlas des Peuples d'Afrique",
-        description:
-          "Encyclopédie des peuples, langues et familles linguistiques d'Afrique",
+        // Read from the constant rather than copied: what is asserted here is
+        // that the layout wires the site's one OG description, not what that
+        // sentence happens to say today.
+        description: OG_DESCRIPTION,
         type: "website",
         images: ["/opengraph-image"],
       },

@@ -21,6 +21,7 @@ describe("GET /api/v2/doctrine", () => {
     vi.clearAllMocks();
   });
 
+  // @req REQ-092
   it("returns 200 with the envelope and the current doctrine entries", async () => {
     vi.mocked(listDoctrineHandler).mockResolvedValue({
       data: [
@@ -49,6 +50,7 @@ describe("GET /api/v2/doctrine", () => {
     expect(listDoctrineHandler).toHaveBeenCalled();
   });
 
+  // @req REQ-092
   it("returns 500 on handler error", async () => {
     vi.mocked(listDoctrineHandler).mockRejectedValue(new Error("rls"));
     const response = await GET();

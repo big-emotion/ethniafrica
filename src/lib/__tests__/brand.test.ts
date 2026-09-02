@@ -42,12 +42,15 @@ describe("brand", () => {
       expect(OG_TITLE).toBe("EthniAfrica — Atlas des Peuples d'Afrique");
     });
 
+    // What the sentence must *say* is siteDescription.test.ts's contract,
+    // derived from the module registry. Restating the literal here would make
+    // every corpus class that ships fail an unrelated suite with a diff of two
+    // strings, which is how the sentence came to name four of six: the copy
+    // was pinned, and what it owed the reader was not.
     // @req REQ-019
-    it("should export OG_DESCRIPTION with default value", async () => {
+    it("should export a non-empty OG_DESCRIPTION by default", async () => {
       const { OG_DESCRIPTION } = await import("../brand");
-      expect(OG_DESCRIPTION).toBe(
-        "Encyclopédie des peuples, langues et familles linguistiques d'Afrique"
-      );
+      expect(OG_DESCRIPTION.length).toBeGreaterThan(0);
     });
 
     // @req REQ-019

@@ -19,6 +19,7 @@ export type DirectoryEntityType =
   | "people"
   | "country"
   | "language-family"
+  | "language"
   | "patronyme";
 
 /**
@@ -35,5 +36,9 @@ export const DIRECTORY_ACCENT_CLASS: Record<DirectoryEntityType, string> = {
   people: "afh-accent-terre",
   country: "afh-accent-ocre",
   "language-family": "afh-accent-teal",
+  // Aliases pervenche, as `color.css` decided for the language fiche: a
+  // language sits directly under a family in the AFRIK hierarchy, and no fifth
+  // hue has been through CVD validation.
+  language: "afh-accent-language",
   patronyme: "afh-accent-name",
 };

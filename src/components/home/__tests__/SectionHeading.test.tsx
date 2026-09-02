@@ -52,6 +52,17 @@ describe("SectionHeading — the one heading unit every home section uses", () =
     expect(container.querySelector(".afh-section-heading-eyebrow")).toBeNull();
   });
 
+  // The mirror of the case above: a section whose items are its own subjects
+  // takes no group title. Forcing one on the anecdote band produced a
+  // sentence about two facts drawn at random, true of neither.
+  // @req REQ-113
+  it("omits the title when the section's items carry the headings", () => {
+    render(<SectionHeading centred eyebrow="Saviez-vous que" />);
+
+    expect(screen.getByText("Saviez-vous que")).toBeInTheDocument();
+    expect(screen.queryByRole("heading")).toBeNull();
+  });
+
   // The whole point of the unit: a section title cannot be mistaken for
   // body copy. Fraunces against Nunito Sans is the difference, and it has
   // to be asserted on the token, not on a computed style happy-dom does
