@@ -44,8 +44,11 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
 export const translations = {
   fr: {
     title: PRODUCT_NAME,
+    // Drawn into the social-card images (opengraph-image.tsx,
+    // twitter-image.tsx), so it is read far more often than it is seen on the
+    // site. Held to the six corpus classes by siteDescription.test.ts.
     subtitle:
-      "Encyclopédie des peuples, langues et familles linguistiques dans 55 pays africains",
+      "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique",
     byCountry: "Par Pays",
     byPeople: "Par Peuple",
     byFamily: "Par Famille Linguistique",
