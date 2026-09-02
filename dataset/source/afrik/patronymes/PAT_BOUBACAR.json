@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Boubacar ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_BOUBACAR",
   "nameMain": "Boubacar",
@@ -11,13 +11,19 @@
     {
       "spelling": "Boubacar",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["btn-boubacar", "gouv-niger-conseil-2024-boubacar"]
+        }
       ]
     },
     {
       "spelling": "Aboubacar",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["btn-boubacar", "gouv-niger-conseil-2024-boubacar"]
+        }
       ]
     }
   ],
@@ -26,20 +32,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Une source communautaire consacrée à Boubacar le donne comme variante ouest-africaine d'Aboubacar, lui-même rattaché à Abubakar. Ryan atteste Abubakar dans la nomenclature islamique haoussa, mais aucune étude consultée ne documente directement la chaîne graphique Boubacar > Aboubacar > Abubakar ; elle demeure donc une proposition.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-boubacar", "ryan-1981-boubacar"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, un nom personnel peut servir de patronyme au sens strict sans se transmettre comme nom de famille héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-boubacar"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["btn-boubacar", "ryan-1981-boubacar"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["gouv-niger-conseil-2024-boubacar"]
     }
   ],
   "alliances": [],
@@ -48,34 +65,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "ryan-1981-boubacar",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I consulté dans le PDF intégral atteste Abubakar parmi les noms masculins islamiques haoussa. Il n'atteste ni Boubacar ni Aboubacar."
+    },
+    {
+      "sourceKey": "chamo-2018-boubacar",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Boubacar."
+    },
+    {
+      "sourceKey": "btn-boubacar",
+      "title": "Boubacar — Behind the Name",
+      "url": "https://www.behindthename.com/name/boubacar",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle relie Boubacar à Aboubacar puis à Abubakar. Cette chaîne graphique n'étant pas documentée par une étude dédiée dans les résultats consultés, elle reste classée non vérifiée."
+    },
+    {
+      "sourceKey": "gouv-niger-conseil-2024-boubacar",
+      "title": "Conseil des ministres du 4 janvier 2024 — Portail officiel du Gouvernement du Niger",
+      "url": "https://www.gouv.ne/index.php/les-communiques-du-gouvernement/510-conseil-des-ministres-du-04-01-2024-adoption-de-plusieurs-projets-de-textes-et-mesures-nominatives",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement. Il atteste au Niger Boubacar dans les noms d'Amadou Boubacar et de Boubacar Maman, ainsi qu'Aboubacar dans ceux d'Aboubacar Abdoulkarim et d'Almou Mani Aboubacar. Il ne fournit aucune origine linguistique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Boubacar Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Boubacar."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Boubacar Hausa Arabic chronicle manuscript » et « Boubacar Niger colonial record » n'ont livré aucune chronique ou archive dédiée établissant l'histoire de la graphie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Boubacar Hausa joking relationship », « Boubacar sanankuya », « Boubacar kal » et « Boubacar dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Boubacar Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le communiqué officiel nigérien et les recherches « Boubacar Niger obituary biography » n'ont fourni aucun porteur décédé documenté par une notice dédiée ; les personnes vivantes n'ont pas été enregistrées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Boubacar homonym etymology » et les pages consacrées à Boubacar, Aboubacar et Abubakar n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

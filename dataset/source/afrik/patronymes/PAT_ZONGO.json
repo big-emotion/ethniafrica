@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier mossi documenté par fiche ; distinguer le patrilignage Zongo étudié à Dakola de l'entrée patronymique lyélé Zongo/Bazongo."
   },
   "id": "PAT_ZONGO",
   "nameMain": "Zongo",
@@ -11,69 +11,97 @@
     {
       "spelling": "Zongo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["kohler-1971-ouest-mossi"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire juxtapose pour Zongo les interprétations « respect voué à tout le monde », « maîtres de la pluie », « case à deux portes », « vestibule » et « antichambre du chef ». Faute d'analyse linguistique ou de distinction claire entre sens lexical, titre et fonction, ces propositions demeurent contestées.",
+        "claimStatus": "contested",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_MOSSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["kohler-1971-ouest-mossi", "niggli-2008-kasena-names"]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["kohler-1971-ouest-mossi", "niggli-2008-kasena-names"]
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "À Dakola, et seulement pour le groupe étudié par Jean-Marie Kohler, Zongo est le patronyme du patrilignage des tambourinaires du chef ; ce patrilignage forme le quartier de Loungo.",
+    "sourceRefs": ["kohler-1971-ouest-mossi"]
+  },
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Zongo/Bazongo lyélé",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le répertoire provisoire comporte une entrée séparée ZONGO/BAZONGO explicitement qualifiée de patronyme lyélé. Elle ne doit pas être confondue avec le patrilignage mossi Zongo étudié à Dakola.",
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
+    }
+  ],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "kohler-1971-ouest-mossi",
+      "title": "Activités agricoles et changements sociaux dans l'Ouest-Mossi",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/pleins_textes_2/memoires/04961.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jean-Marie Kohler, Mémoires ORSTOM no 46, 1971. La p. imprimée 33, note 1, a été consultée : elle identifie expressément Zongo comme le patronyme du patrilignage des tambourinaires du chef de Dakola et situe ce groupe dans le quartier de Loungo. Le passage définit aussi la famille mossi comme patrilinéaire. Cette observation locale n'est pas généralisée aux autres Zongo."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle cite Zongo parmi les exemples de noms de famille mossi, sans en proposer l'étymologie."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Les notices ZONGO et ZONGO/BAZONGO, p. 232-234, ont seules été utilisées ici. Leurs gloses multiples restent contested et l'entrée lyélé est traitée comme homonyme distinct."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La monographie de Dakola, la notice ZONGO et les recherches ciblées dans Persée, OpenEdition, Horizon IRD et Google Scholar n'ont livré aucun récit d'origine attribué à un griot nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La monographie de Kohler documente l'organisation du patrilignage à Dakola, mais ni elle ni les recherches savantes ciblées ne fournissent de chronique sur l'origine historique du patronyme Zongo."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le répertoire cite des groupes partenaires à plaisanterie pour ses entrées mossi et lyélé, mais aucune paire Zongo/PAT_* nominative, réciproque et vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La monographie nomme Zongo Kagnondo comme chef d'enclos à Dakola sans fournir de statut vital contemporain vérifiable ; les recherches biographiques n'ont pas établi de porteur décédé pertinent pour l'histoire du nom."
     }
   ]
 }

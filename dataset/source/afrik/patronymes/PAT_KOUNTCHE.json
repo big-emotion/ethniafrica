@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Kountché ; la généalogie publiée est une tradition orale attribuée, non un fait historique établi."
   },
   "id": "PAT_KOUNTCHE",
   "nameMain": "Kountché",
@@ -11,20 +11,31 @@
     {
       "spelling": "Kountché",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["bnf-seyni-kountche", "bornand-2004-kountche"]
+        }
       ]
     },
     {
       "spelling": "Kounche",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "NER", "sourceRefs": ["bornand-2004-kountche"] }
       ]
     }
   ],
   "transmissionMode": "other",
   "designatedSocialUnit": "clan",
   "origin": {
-    "oralTraditions": [],
+    "oralTraditions": [
+      {
+        "claim": "Dans le récit recueilli en 2000 auprès du jasare Jeliba Baje, la généalogie de Seyni Kountché remonte à Mali Bero, présenté comme le premier ancêtre de l'aristocratie zarma.",
+        "claimStatus": "claimed",
+        "griot": "Jeliba Baje (Djéliba Badjé)",
+        "transcription": "Zeneraal Seyni Kunce / Zarmakoy mo ga a hay / Zarmakoy Kunce / Sanda mo Maali [Beero] ize no.",
+        "sourceRefs": ["bornand-2004-kountche"]
+      }
+    ],
     "writtenChronicles": [],
     "linguisticReconstructions": []
   },
@@ -32,19 +43,25 @@
     {
       "peopleId": "PPL_ZARMA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bornand-2004-kountche"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bnf-seyni-kountche", "bornand-2004-kountche"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Seyni Kountché",
+      "sourceRefs": ["bnf-seyni-kountche"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -53,33 +70,49 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json. Conservée uniquement comme provenance de la classification initiale « clan_name » ; elle n'étaye aucune attestation, origine ou biographie de cette fiche."
+    },
+    {
+      "sourceKey": "bornand-2004-kountche",
+      "title": "L'idéologie de l'ostentation dans les sociétés zarma. L'exemple des relations entre nobles et jasare",
+      "url": "https://books.openedition.org/iheid/2375",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Sandra Bornand, dans Côté jardin, côté cour, 2004, DOI 10.4000/books.iheid.2375. Le texte et ses notes donnent la transcription zarma d'un récit de Jeliba Baje recueilli en 2000 ainsi que l'interprétation de la généalogie de Seyni Kountché. La généalogie reste enregistrée comme tradition revendiquée."
+    },
+    {
+      "sourceKey": "bnf-seyni-kountche",
+      "title": "Kountché, Seyni (1931-1987)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb149042672",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France, consultée en français. Elle atteste la graphie Kountché, les dates 1931-1987, la naissance à Fandou au Niger et la fonction de chef d'État."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La bibliographie zarma, les catalogues d'autorité et les résultats consacrés à Seyni Kountché ont été recherchés ; seule une tradition orale transcrite a été trouvée, sans chronique écrite indépendante établissant l'origine du nom."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches sur « Kountché/Kounche/Kunce » avec étymologie, langue zarma et onomastique n'ont livré aucune analyse linguistique publiée du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches associant « Kountché » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Bornand analyse la relation sociale entre nobles et jasare, mais ne fait pas de Kountché le nom d'une caste ou d'une fonction ; les recherches sur les métiers héréditaires n'ont apporté aucune autre attribution."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les graphies Kountché, Kounche et Kunce ont été recherchées dans les catalogues d'autorité et la bibliographie zarma ; aucune lignée homonyme d'origine distincte n'a été établie."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La tradition publiée établit une généalogie revendiquée de Seyni Kountché, mais ne décrit pas la règle de transmission du nom Kountché ; les recherches sur filiation, héritage et clan n'ont pas permis de remplacer « other »."
     }
   ]
 }
