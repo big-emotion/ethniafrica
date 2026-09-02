@@ -26,6 +26,7 @@ const counts = {
   countries: 54,
   families: 24,
   nameForms: 3134,
+  patronymes: 33,
   migrations: 6,
 };
 

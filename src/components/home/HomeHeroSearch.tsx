@@ -573,12 +573,16 @@ export function HomeHeroSearch({
            property of the block (brand charter §8.1), and this row sits in the
            same header as the question and its answer — a left-aligned row of
            chips under a centred headline is the third alignment in one block. */
+        /* 16px, one ramp step above the 8px between two chips (brand charter
+           §7). At 12 the row sat closer to the field than the chips sat to
+           each other, so the four of them read as a fifth row of the control
+           rather than as suggestions offered under it. */
         .home-hero-search-seeds {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           gap: 8px;
-          margin: 12px 0 0;
+          margin: 16px 0 0;
           padding: 0;
           list-style: none;
         }

@@ -13,9 +13,32 @@ useDefault = true
 # findings it was meant to allow are still reported. Locally, on a newer
 # gitleaks, the same file passes. So a config split across the two forms is
 # green on a developer's machine and red in CI, which is exactly how this entry
-# was first written.
+# was first written. For the same reason `regexes` is declared once and only
+# once below: a second declaration inside this table is a duplicate TOML key,
+# and the parse fails outright.
 [allowlist]
-description = "Global allowlist for known non-secret paths and citation slugs"
+description = "Global allowlist for known non-secret paths and corpus source keys"
+
+# Matched against the whole line, so the exemption can be anchored on the field
+# name rather than on the value alone.
+regexTarget = "line"
+regexes = [
+  # AFRIK fiches cite each claim through a `sourceKey` — a bibliographic handle
+  # in author-year-subject form (`roscoe-1911-baganda`). generic-api-key reads
+  # those as credentials, which reddened every PR on the branch once the first
+  # patronyme fiches landed. Four fiches actually clear the rule's entropy floor
+  # — PAT_FFUMBE, PAT_LUGAVE, PAT_NGONGE, PAT_NJAZA — out of the thirty that
+  # carry the field, which is the tell that the signal is the field name and not
+  # the value.
+  #
+  # Keyed on the field AND on the shape of its value: lowercase alphanumeric
+  # kebab-case, which all 84 sourceKeys in the corpus follow. The narrowness is
+  # the point — a real credential dropped into a sourceKey would carry
+  # uppercase, underscores or symbols and would still be caught. Exempting the
+  # corpus by path instead would have blinded the scanner to ~890 files.
+  '''"sourceKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+]
+
 paths = [
   # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
   '''^package-lock\.json$''',
@@ -27,23 +50,4 @@ paths = [
   # Local agent-runtime skill mirrors (gitignored, ~13MB of vendored prompts)
   # trip generic-api-key rules on their example snippets.
   '''^\.(agents|codex)/''',
-]
-
-# A citation slug is not a key, and `generic-api-key` cannot tell them apart:
-# the rule fires on the identifier, and every AFRIK source entry names itself
-# `sourceKey`. Four fiches trip it — PAT_FFUMBE, PAT_LUGAVE, PAT_NGONGE,
-# PAT_NJAZA — on values like "roscoe-1911-baganda" and "buganda-heritage-clans",
-# which are bibliographic handles a reader could type. Thirty fiches carry the
-# field and four clear the rule's entropy floor, which is the tell that the
-# signal is the field name and not the value.
-#
-# A line regex and not a path entry, which is the whole point: the corpus is
-# ~890 editorial files a curator edits by hand, and the header above is right
-# that an allowlisted path would go on hiding a real credential pasted into one
-# of them forever. This matches exactly the shape of a slug — lowercase, digits
-# and hyphens — under exactly that field name. Anything else, on any other line
-# of those same files, is still scanned.
-regexTarget = "line"
-regexes = [
-  '''"sourceKey"\s*:\s*"[a-z0-9][a-z0-9-]*"''',
 ]

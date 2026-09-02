@@ -23,9 +23,10 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   sources: "Sources",
   anecdotes: "Anecdotes",
   names: "Appellations",
-  // The public label DEC-038 gives the patronyme, which is why the trail
-  // reads "Nom" where the code says `patronymes`.
-  patronymes: "Nom",
+  // The public word DEC-038 gives the patronyme, which is why the trail
+  // reads "nom" where the code says `patronymes`. Plural because the crumb
+  // points at the index, alongside "Peuples", "Pays" and "Appellations".
+  patronymes: "Noms",
   compare: "Comparer",
   migrations: "Migrations",
   quiz: "Quiz",
@@ -108,7 +109,7 @@ export const translations = {
         // Same public-facing word as the trail label (TRAIL_PAGE_LABELS.patronymes
         // above), distinct from "Appellations" so the two corpus entities never
         // read as one entry in a menu.
-        patronymes: "Nom",
+        patronymes: "Noms",
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",
