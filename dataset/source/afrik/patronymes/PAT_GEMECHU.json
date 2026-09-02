@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une étude consacrée aux noms afaan oromo atteste Gemechu dans le nom de son auteur, sans en donner le sens."
   },
   "id": "PAT_GEMECHU",
   "nameMain": "Gemechu",
@@ -11,7 +11,10 @@
     {
       "spelling": "Gemechu",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "gemechu-ayele-2017"]
+        }
       ]
     }
   ],
@@ -48,28 +51,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "gemechu-ayele-2017",
+      "title": "An Investigation into the Patterns and Mechanisms of Naming in Afan Oromo: Focus on Personal Naming",
+      "url": "https://www.iiste.org/Journals/index.php/RHSS/article/download/36265/37261",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ayele Gizaw Gemechu et Wondimu Tegegne, Research on Humanities and Social Sciences 7(5), 2017, p. 1-9. Le PDF a été vérifié : il atteste Gemechu dans le nom de l'auteur et décrit le système oromo comme personnel puis patronymique, mais ne décompose pas Gemechu."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'étude d'Ayele Gizaw Gemechu et ses exemples, ainsi que les requêtes « Gemechu Oromo meaning/etymology », ont été examinés ; aucune analyse linguistique du nom Gemechu n'a été trouvée dans une source vérifiable."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'étude des pratiques de nomination et les recherches de parenté oromo n'ont livré aucune alliance à plaisanterie nommant Gemechu et un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les mécanismes de coinage, d'emprunt et de composition décrits par l'étude ont été vérifiés ; aucune caste ni fonction sociale héréditaire n'est attachée à Gemechu."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les notices biographiques liées aux auteurs et les recherches sur les porteurs de Gemechu n'ont pas identifié de personne décédée dont l'appartenance oromo soit explicitement sourcée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La forme Gemechu et ses graphies proches ont été recherchées dans les études onomastiques ; aucun homonyme distinct et documenté n'a été trouvé."
     }
   ]
 }

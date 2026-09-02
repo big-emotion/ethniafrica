@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Les sources attestent Bulcha dans des noms oromo et permettent un porteur décédé, mais aucune étymologie n'a été trouvée."
   },
   "id": "PAT_BULCHA",
   "nameMain": "Bulcha",
@@ -11,7 +11,14 @@
     {
       "spelling": "Bulcha",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "bulcha-oxford-1997",
+            "bulcha-advocacy-2025"
+          ]
+        }
       ]
     }
   ],
@@ -26,19 +33,25 @@
     {
       "peopleId": "PPL_OROMO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "bulcha-advocacy-2025"]
     }
   ],
   "countries": [
     {
       "countryId": "ETH",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "bulcha-advocacy-2025"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Bulcha Demeksa",
+      "sourceRefs": ["bulcha-advocacy-2025"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -48,28 +61,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "bulcha-oxford-1997",
+      "title": "The Politics of Linguistic Homogenization in Ethiopia and the Conflict over the Status of Afaan Oromoo",
+      "url": "https://academic.oup.com/afraf/article-abstract/96/384/325/21420",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mekuria Bulcha, African Affairs 96(384), 1997, p. 325-352, DOI 10.1093/oxfordjournals.afraf.a007852. La page Oxford Academic a été vérifiée : elle atteste la graphie Bulcha dans le nom de l'auteur et situe l'article dans les études oromo, sans analyser le nom."
+    },
+    {
+      "sourceKey": "bulcha-advocacy-2025",
+      "title": "Political scientist, late Bulcha Demeksa (1930-2025) in Brief",
+      "url": "https://advocacy4oromia.org/political-scientist-late-bulcha-demeksa-in-brief/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice mémorielle communautaire d'Advocacy for Oromia, vérifiée directement. Elle documente le décès, l'ancrage au Wallaga et l'auto-description publique de l'identité oromo de Bulcha Demeksa ; ses dates de naissance internes divergent, raison pour laquelle aucune date n'est reprise dans le champ bearers."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les travaux de Mekuria Bulcha, les études de noms personnels oromo et les requêtes « Bulcha meaning/etymology » ont été examinés ; aucune analyse linguistique dédiée de Bulcha n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les deux sources Bulcha et les recherches de parenté à plaisanterie oromo ne nomment aucune alliance entre Bulcha et un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les fonctions universitaires, politiques et bancaires des porteurs trouvés ont été distinguées d'une fonction héréditaire ; aucune caste ou spécialisation sociale attachée au nom n'est établie."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Bulcha a été recherché comme nom personnel, nom de famille et lexème ; aucune entité homonyme distincte satisfaisant les critères du corpus n'a été documentée."
     }
   ]
 }

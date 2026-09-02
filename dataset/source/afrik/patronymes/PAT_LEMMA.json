@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une étude bibliographique établit Lemma comme nom du père dans un exemple éthiopien, mais ne fournit ni étymologie ni attribution oromo propre."
   },
   "id": "PAT_LEMMA",
   "nameMain": "Lemma",
@@ -11,7 +11,10 @@
     {
       "spelling": "Lemma",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "lemma-giorgis-2007"]
+        }
       ]
     }
   ],
@@ -19,7 +22,13 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Giorgis donne « Mengistu Lemma » comme exemple éthiopien et précise que l'ordre normal est le nom personnel suivi du nom du père ; Lemma fonctionne donc ici comme patronymique non héréditaire, pas comme nom de famille fixe.",
+        "claimStatus": "established",
+        "sourceRefs": ["lemma-giorgis-2007"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -48,28 +57,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "lemma-giorgis-2007",
+      "title": "The entry word in Ethiopian names",
+      "url": "https://www.anzsi.org/wp-content/uploads/2019/05/indexer.2007.47.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Kebreab W. Giorgis, The Indexer 25(4), 2007, C3:8-C3:9, reprise révisée d'un article de 1974. Le PDF a été vérifié : p. C3:9 donne Mengistu Lemma et explicite l'ordre nom personnel puis nom du père. La source porte sur l'Éthiopie en général, pas sur les Oromo en particulier."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Giorgis (2007), les études de noms oromo et les requêtes « Lemma/Lamma Oromo etymology » ont été examinés ; aucune étymologie savante dédiée à Lemma n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'étude des noms éthiopiens et les recherches de parenté oromo ne nomment aucune alliance entre Lemma et un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La source bibliographique traite la fonction patronymique, sans caste ni fonction sociale héréditaire attachée à Lemma."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les biographies de porteurs Lemma/Lamma ont été recherchées ; les sources accessibles ne permettaient pas à la fois de confirmer le décès, l'identité oromo et le rôle exact de Lemma dans la chaîne de noms."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Lemma et Lamma ont été recherchées comme noms personnels, patronymiques et lexèmes ; aucun homonyme distinct répondant aux critères du corpus n'a été documenté."
     }
   ]
 }
