@@ -138,7 +138,12 @@ export const CHAPITRE_LE_PAYS: DossierChapter = {
       heading: "Trois cas qui défont la lecture simple",
       blocks: [
         {
-          text: "Le Nigeria n'a pas été nommé par une administration : il a été nommé par une journaliste. Flora Shaw, correspondante coloniale du Times, forge le mot ; il est officialisé lors de l'unification des protectorats du Nord et du Sud, en 1914. Deux cent millions de personnes portent un néologisme de presse.",
+          text: "Le Nigeria n'a pas été nommé par une administration : il a été nommé par une journaliste. Le 8 janvier 1897, Flora Shaw propose dans le Times de désigner d'un seul mot la « Niger Area » que la Royal Niger Company administrait. Le nom n'est officialisé que seize ans plus tard, en 1914, par Lugard, à l'unification des protectorats du Nord et du Sud.",
+          sourceRefs: ["shaw-times-nigeria"],
+          figureRefs: [],
+        },
+        {
+          text: "Le détail que ce chapitre ne peut pas passer sous silence est que l'attribution elle-même est nuancée. Shaw a suggéré le nom ; elle ne l'a pas imposé, et c'est l'administration qui l'a rendu réel. Des occurrences antérieures de « Nigerian » sont d'ailleurs signalées chez William Cole en 1862 et chez Richard Burton en 1863, sans qu'on sache si elles sont contemporaines ou ajoutées à l'édition. L'histoire la plus racontée du continent sur l'origine d'un nom est donc, elle aussi, un récit avec des trous.",
           sourceRefs: ["shaw-times-nigeria"],
           figureRefs: [],
         },

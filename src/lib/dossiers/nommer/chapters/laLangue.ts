@@ -111,7 +111,12 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "L'usage européen l'a coupé. Ce qui reste est un radical nu qui sert indifféremment de nom de langue, de nom de peuple et d'adjectif — et l'ambiguïté que l'atlas passe son temps à défaire est en partie née là.",
+          text: "Le tswana le montre en quatre mots sur une seule racine : Botswana le pays, Batswana le peuple, Motswana une personne, Setswana la langue. Là où le français et l'anglais disent « tswana » pour les quatre, la langue distinguait.",
+          sourceRefs: ["bantu-class-prefixes"],
+          figureRefs: [],
+        },
+        {
+          text: "L'usage européen a coupé le préfixe. Ce qui reste est un radical nu qui sert indifféremment de nom de langue, de nom de peuple et d'adjectif — et l'ambiguïté que l'atlas passe son temps à défaire est en partie née là.",
           sourceRefs: ["bantu-class-prefixes"],
           figureRefs: [],
         },

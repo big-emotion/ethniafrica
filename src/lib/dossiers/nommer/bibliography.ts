@@ -93,23 +93,23 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     standing: "needs_review",
     sourceKind: "community",
     notes:
-      "À citer par la voix qui l'a exprimée — South African San Council ou WIMSA — et non par un tiers. Une préférence collective sourcée par un observateur extérieur reproduirait l'exact défaut que le chapitre décrit.",
+      "La préférence de 2003 pour les noms de nation est attestée par plusieurs relais concordants, mais sa formulation d'origine n'a pas été retrouvée. Où chercher : les archives de WIMSA, qui rédige dès 1998 le premier Media and Research Contract des San, et le South African San Council, informel depuis 1996 et représentant trois communautés au conseil de WIMSA. Tant que le texte n'est pas retrouvé, le chapitre attribue la demande sans la citer — ce qui reproduit en petit le défaut qu'il décrit, et doit être corrigé plutôt qu'excusé.",
     discoveredVia: ["en.wikipedia"],
   },
 
   // ── Le pays ──────────────────────────────────────────────────────────────
   "shaw-times-nigeria": {
     sourceKey: "shaw-times-nigeria",
-    title: "Flora Shaw et la forge du nom « Nigeria »",
-    authors: ["Flora Shaw"],
-    publicationYear: null,
-    publisher: "The Times",
-    url: null,
-    standing: "needs_review",
-    sourceKind: "archive",
+    title: "How true is the claim that Flora Shaw coined the name Nigeria ?",
+    authors: ["Dubawa"],
+    publicationYear: 2020,
+    publisher: "Dubawa (Premium Times Centre for Investigative Journalism)",
+    url: "https://dubawa.org/nigeria60-how-true-is-claim-that-flora-shaw-british-journalist-coined-the-name-nigeria/",
+    standing: "referenced",
+    sourceKind: "academic",
     notes:
-      "Deux dates circulent et le dépôt se contredit : dataset/source/afrik/pays/NGA.json écrit 1914 (l'amalgamation), la littérature secondaire donne 1897 pour l'article du Times. Trancher sur l'article lui-même, puis corriger la fiche — sans quoi deux surfaces du site se contredisent sur le fait le plus mémorable du chapitre.",
-    discoveredVia: ["fr.wikipedia", "en.wikipedia"],
+      "Établit la date — 8 janvier 1897, The Times de Londres — et la citation de l'article. Distingue « suggérer » de « imposer » : le nom n'est officialisé qu'en 1914, par Lugard, à l'amalgamation. Signale aussi des occurrences antérieures de « Nigerian » chez William Cole (1862) et Richard Burton (1863), sans trancher si elles sont contemporaines ou ajoutées à l'édition. La fiche NGA.json disait 1914 et attribuait l'officialisation à Shaw : corrigée avec cette source, qui est la première étymologie sourcée du corpus pays.",
+    discoveredVia: [],
   },
   "afrik-pays-ben": {
     sourceKey: "afrik-pays-ben",
@@ -172,12 +172,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: [],
     publicationYear: 1972,
     publisher: null,
-    url: null,
-    standing: "needs_review",
+    url: "https://www.refworld.org/docid/440ed749a.html",
+    standing: "official",
     sourceKind: "government",
     notes:
-      "Deux dates au jour près — 27 octobre 1971 pour le recours à l'authenticité, 12 janvier 1972 pour les prénoms — exigent une source au jour près : le Journal officiel de la République du Zaïre, ou à défaut un travail académique qui cite l'instrument.",
-    discoveredVia: ["fr.wikipedia"],
+      "Réponse à une demande d'information de la Commission de l'immigration et du statut de réfugié du Canada, qui cite les instruments. Elle atteste le 12 janvier 1972 pour la décision du président et du bureau du MPR, et surtout l'ordonnance-loi du 30 août 1972 : elle introduit au Code pénal une sanction contre tout ministre du culte qui conférerait un prénom étranger lors d'un baptême. C'est cette dernière qui fait du recours à l'authenticité une contrainte de droit et non une exhortation.",
+    discoveredVia: [],
   },
   "dec-040": {
     sourceKey: "dec-040",
@@ -201,12 +201,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: ["Wilhelm Heinrich Immanuel Bleek"],
     publicationYear: 1862,
     publisher: "Trübner & Co.",
-    url: null,
-    standing: "needs_review",
+    url: "https://archive.org/details/comparativegramm00blee",
+    standing: "referenced",
     sourceKind: "academic",
     notes:
-      "L'ouvrage où « bantou » est forgé comme étiquette de classification, à partir du zoulou abantu. Domaine public : à citer par son URL de numérisation, et à vérifier sur la page où ba-ntu est effectivement construit.",
-    discoveredVia: ["en.wikipedia"],
+      "L'ouvrage où « bantou » est forgé comme étiquette de classification, à partir du zoulou abantu. Domaine public, numérisé par l'Internet Archive et cité ici par cette numérisation plutôt que par une notice. Ce qui reste ouvert est la page exacte où ba-ntu est construit : le chapitre n'en dépend pas, mais une vérification la donnerait.",
+    discoveredVia: [],
   },
   "britannica-bleek": {
     sourceKey: "britannica-bleek",
@@ -241,12 +241,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: [],
     publicationYear: null,
     publisher: null,
-    url: null,
-    standing: "needs_review",
-    sourceKind: "linguistic_reference",
+    url: "https://www2.iath.virginia.edu/swahili/sect2.html",
+    standing: "referenced",
+    sourceKind: "academic",
     notes:
-      "isi- pour la langue et ama- pour le peuple en zoulou, se- et ba- en tswana, ki- en swahili, otji- et ova- en herero. Le fait grammatical est élémentaire et bien décrit ; ce qui doit être sourcé proprement, c'est l'affirmation que l'usage européen a systématiquement supprimé le préfixe. Une grammaire de référence, pas une notice.",
-    discoveredVia: ["fr.wikipedia", "en.wikipedia"],
+      "Le système de classes nominales, décrit par le cours de swahili de l'Université de Virginie. La classe ki- / isi- / se- forme le nom de la langue et des faits de culture, la classe ba- le collectif humain, la classe mo- l'individu : Botswana le pays, Batswana le peuple, Motswana une personne, Setswana la langue — quatre mots sur une racine. L'usage anglais et français retient le radical nu (Swahili, Tswana, Ndebele) là où la langue dit Kiswahili, Setswana, Sindebele.",
+    discoveredVia: [],
   },
   "bantu-education-act-1953": {
     sourceKey: "bantu-education-act-1953",
@@ -254,12 +254,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: ["Union of South Africa"],
     publicationYear: 1953,
     publisher: "Union of South Africa",
-    url: null,
-    standing: "needs_review",
+    url: "https://sahistory.org.za/archive/bantu-education-act-act-no-47-1953",
+    standing: "official",
     sourceKind: "government",
     notes:
-      "Le texte de loi lui-même, pas sa notice : c'est l'instrument qui institutionnalise le glissement d'une classification linguistique vers une catégorie de scolarisation séparée.",
-    discoveredVia: ["en.wikipedia"],
+      "Le texte de loi lui-même, dans l'archive législative de South African History Online. Sanctionné le 5 octobre 1953, en vigueur au 1er janvier 1954. C'est l'instrument qui institutionnalise le glissement d'une classification linguistique vers une catégorie de scolarisation séparée. Également numérisé par DISA (UKZN) et par l'Internet Archive.",
+    discoveredVia: [],
   },
 
   // ── La chose ─────────────────────────────────────────────────────────────
@@ -270,12 +270,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: [],
     publicationYear: null,
     publisher: null,
-    url: null,
-    standing: "needs_review",
-    sourceKind: "archive",
+    url: "https://trc-leiden.nl/trc-digital-exhibition/index.php/out-of-asia/item/199-8-vlisco-and-asian-textiles",
+    standing: "referenced",
+    sourceKind: "academic",
     notes:
-      "La date de 1846 et le nom de Pieter Fentener van Vlissingen passent aujourd'hui par des relais tertiaires. À citer sur l'archive d'entreprise Vlisco ou sur un travail d'histoire textile.",
-    discoveredVia: ["en.wikipedia"],
+      "Le Textile Research Centre de Leyde atteste la fondation : Pieter Fentener van Vlissingen (1826-1868) rachète en 1846 une imprimerie textile à Helmond sous le nom P. Fentener van Vlissingen & Co, devenu Vlisco en 1927. Il atteste aussi le point qui compte pour le chapitre — l'imitation du batik des Indes néerlandaises est imprimée au rouleau, et non réservée à la cire.",
+    discoveredVia: [],
   },
   "trc-leiden-vlisco": {
     sourceKey: "trc-leiden-vlisco",
@@ -324,12 +324,12 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     authors: [],
     publicationYear: null,
     publisher: null,
-    url: null,
-    standing: "needs_review",
+    url: "https://en.wiktionary.org/wiki/%D9%82%D9%87%D9%88%D8%A9",
+    standing: "referenced",
     sourceKind: "linguistic_reference",
     notes:
-      "Un dictionnaire étymologique de référence, qui dira aussi que la filiation Kaffa → café est discutée, là où qahwa → kahve → café est solide. Le chapitre doit poser la première comme hypothèse et la seconde comme établie.",
-    discoveredVia: ["en.wikipedia"],
+      "La notice étymologique de l'arabe qahwa. Elle donne la chaîne solide — qahwa, emprunté en turc kahve, puis dans les langues européennes — et l'argument qui affaiblit l'autre hypothèse : qahwa désigne un vin en arabe plus d'un demi-millénaire avant l'existence du royaume de Kaffa, ce qui rend le rapprochement improbable plutôt que simplement discuté. Aucun document ne tranche définitivement, et le chapitre le dit.",
+    discoveredVia: [],
   },
   "cocobod-cocoa-story": {
     sourceKey: "cocobod-cocoa-story",
@@ -344,6 +344,20 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
       "L'institution ghanéenne du cacao atteste l'introduction de 1879 par Tetteh Quarshie depuis Fernando Po. Les plantations des missions bâloises (1857, Aburi) et la diffusion depuis São Tomé (1886) sont trois dates distinctes, à vérifier séparément.",
     discoveredVia: [],
   },
+  "basel-mission-cocoa": {
+    sourceKey: "basel-mission-cocoa",
+    title:
+      "The Introduction of Cocoa in the Gold Coast: The Roles of the Basel Mission and Tetteh Quarshie",
+    authors: [],
+    publicationYear: null,
+    publisher: "Basel Mission Forum",
+    url: "https://baselfo.ch/the-introduction-of-cocoa-in-the-gold-coast-the-roles-of-the-basel-mission-and-tetteh-quarshie/",
+    standing: "referenced",
+    sourceKind: "academic",
+    notes:
+      "Porte la nuance que le récit ghanéen officiel laisse de côté : des missionnaires néerlandais plantent du cacao sur la côte dès 1815, les missionnaires bâlois à Aburi en 1857, et Quarshie — formé dans un atelier de la mission de Bâle à Akropong — introduit ses cabosses de Fernando Po en 1879. L'attribution est disputée : un historien l'attribue au révérend Hass, tandis que le professeur Perbi reconnaît à Quarshie d'avoir popularisé la culture plutôt que de l'avoir apportée le premier.",
+    discoveredVia: [],
+  },
   "drewal-2012": {
     sourceKey: "drewal-2012",
     title:
@@ -355,7 +369,20 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
     standing: "needs_review",
     sourceKind: "academic",
     notes:
-      "Pivot du cas Mami Wata : l'affiche allemande des années 1880 représente une artiste se produisant au zoo de Hambourg sous le nom de scène samoan Nala Damajanti. À citer par son DOI. Voir aussi Drewal 2008, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas.",
+      "Pivot du cas Mami Wata : c'est Drewal qui rattache l'affiche de cirque à l'iconographie de l'esprit des eaux. Le chapitre de 2012 n'a pas été retrouvé par son DOI — c'est ce qui manque ici, et rien d'autre : l'identité de l'artiste et la maison d'impression sont établies par ailleurs. Voir aussi Drewal 2008, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas. Une première rédaction, appuyée sur un résumé de seconde main, la disait samoane et la faisait se produire au zoo de Hambourg : les deux étaient faux.",
+    discoveredVia: ["en.wikipedia"],
+  },
+  "nala-damajanti": {
+    sourceKey: "nala-damajanti",
+    title: "Nala Damajanti, de son vrai nom Mathilde Marie Amélia Poupon",
+    authors: [],
+    publicationYear: null,
+    publisher: null,
+    url: null,
+    standing: "needs_review",
+    sourceKind: "academic",
+    notes:
+      "Établit que la charmeuse de serpents de l'affiche était française — née le 4 juillet 1861 à Nantey — et se produisait sous un personnage oriental fabriqué, se disant tour à tour hindoue, des « provinces françaises de l'Inde » ou de Pondichéry. Barnum à partir de 1885, Folies Bergère le 18 février 1887. La chromolithographie est d'Adolph Friedländer, à Hambourg. À reprendre sur un travail d'histoire du spectacle plutôt que sur une notice encyclopédique.",
     discoveredVia: ["en.wikipedia"],
   },
   "mami-wata-pidgin": {

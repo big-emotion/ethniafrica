@@ -136,7 +136,12 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Le fait qui vaut d'être retenu n'est pas le décret : c'est ce qu'il en reste. Le postnom se porte encore, un demi-siècle après la chute du régime qui l'avait imposé. Une politique du nom survit à la politique qui l'a faite, parce qu'elle a été inscrite au même endroit que la précédente — le registre.",
+          text: "Ce n'était pas une exhortation. Une ordonnance-loi du 30 août 1972 introduit au Code pénal une sanction contre tout ministre du culte qui conférerait un prénom étranger lors d'un baptême. Décoloniser le nom passe ici par l'instrument même qui l'avait fixé : la loi, le registre, la peine.",
+          sourceRefs: ["zaire-authenticite-1972"],
+          figureRefs: [],
+        },
+        {
+          text: "Le fait qui vaut d'être retenu n'est pourtant pas le décret : c'est ce qu'il en reste. Le postnom se porte encore, un demi-siècle après la chute du régime qui l'avait imposé. Une politique du nom survit à la politique qui l'a faite, parce qu'elle a été inscrite au même endroit que la précédente.",
           sourceRefs: ["zaire-authenticite-1972"],
           figureRefs: [],
         },

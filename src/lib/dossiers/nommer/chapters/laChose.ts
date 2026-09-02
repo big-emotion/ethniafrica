@@ -136,17 +136,27 @@ export const CHAPITRE_LA_CHOSE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Une réserve, sur le terrain même de ce dossier : la filiation de Kaffa vers café est discutée, celle de qahwa vers kahve vers café ne l'est pas. Poser la première comme acquise parce qu'elle est jolie serait commettre l'étymologie populaire que le glossaire définit trois pages plus loin.",
+          text: "Une réserve, sur le terrain même de ce dossier. On lit souvent que « café » viendrait de Kaffa, et c'est joli parce que le lieu et le mot se ressemblent. Mais qahwa désigne un vin en arabe plus d'un demi-millénaire avant que le royaume de Kaffa n'existe : le rapprochement n'est pas seulement discuté, il est chronologiquement improbable.",
+          sourceRefs: ["coffee-qahwa"],
+          figureRefs: [],
+        },
+        {
+          text: "Ce qui reste vrai est plus intéressant que la légende : le caféier est bien éthiopien, et son nom ne vient pas de là. Il vient de la route commerciale qui l'a emporté. Poser l'étymologie de Kaffa comme acquise parce qu'elle est jolie serait commettre exactement l'étymologie populaire que le glossaire définit trois pages plus loin.",
           sourceRefs: ["coffee-qahwa"],
           figureRefs: [],
         },
         {
           text: "Le cacao ne vient pas d'Afrique : il est mésoaméricain, et son nom vient du nahuatl par l'espagnol. Mais le récit d'une plante apportée par l'Europe ne tient pas la date. En 1879, Tetteh Quarshie, forgeron ghanéen revenu de Fernando Po, rapporte des cabosses et plante à Akuapim-Mampong ; les missions bâloises avaient essayé à Aburi dès 1857, l'administration coloniale ne diffusera à grande échelle depuis São Tomé qu'à partir de 1886.",
-          sourceRefs: ["cocobod-cocoa-story"],
+          sourceRefs: ["cocobod-cocoa-story", "basel-mission-cocoa"],
           figureRefs: [],
         },
         {
-          text: "L'objet est allogène, le nom aussi, et l'agent de l'introduction ne l'est pas. Aucune des trois réponses ne commande les deux autres.",
+          text: "Là encore l'attribution se discute, et il faut le dire plutôt que de choisir le récit le plus net. Un historien attribue l'introduction au révérend Hass ; un autre reconnaît à Quarshie d'avoir popularisé la culture sans l'avoir apportée le premier. Quarshie avait d'ailleurs été formé dans un atelier de la mission de Bâle : le partage entre l'apport missionnaire et l'initiative africaine ne passe pas là où le récit national le place.",
+          sourceRefs: ["basel-mission-cocoa"],
+          figureRefs: [],
+        },
+        {
+          text: "L'objet est allogène, le nom aussi, et l'agent de l'introduction ne l'est pas. Aucune des trois réponses ne commande les deux autres — et la troisième reste ouverte.",
           sourceRefs: [],
           figureRefs: [],
         },
@@ -163,12 +173,17 @@ export const CHAPITRE_LA_CHOSE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "L'image, elle, est identifiée. La représentation canonique — la femme au serpent — est une chromolithographie allemande des années 1880, tirée du portrait d'une charmeuse de serpents qui se produisait au zoo de Hambourg sous un nom de scène samoan. L'affiche circule le long des côtes, est reconnue comme un portrait de l'esprit des eaux, et devient son visage.",
-          sourceRefs: ["drewal-2012"],
+          text: "L'image, elle, est identifiée, et elle est plus retorse encore. La représentation canonique — la femme au serpent — vient d'une affiche de cirque : une chromolithographie imprimée à Hambourg par la maison Adolph Friedländer vers 1885, portrait d'une charmeuse de serpents que le public connaissait sous le nom de Nala Damajanti.",
+          sourceRefs: ["drewal-2012", "nala-damajanti"],
           figureRefs: [],
         },
         {
-          text: "Une divinité africaine dont l'iconographie officielle est une affiche de foire européenne, et dont le nom est probablement un créole de commerce : ce n'est ni une imposture ni un vol. C'est ce que transculturation et indigénisation nomment — et c'est précisément ce que le vocabulaire de l'authenticité est incapable de dire.",
+          text: "Nala Damajanti s'appelait en réalité Mathilde Poupon, née en 1861 dans le Jura. Française, elle se produisait chez Barnum puis aux Folies Bergère dans un personnage oriental fabriqué, se disant tour à tour indienne ou originaire de Pondichéry. L'affiche circule ensuite le long des côtes africaines, est reconnue comme un portrait de l'esprit des eaux, et lui donne son visage.",
+          sourceRefs: ["nala-damajanti"],
+          figureRefs: [],
+        },
+        {
+          text: "Une divinité africaine dont l'iconographie tient à une Française déguisée en Indienne, imprimée par un lithographe allemand, et dont le nom est probablement un créole de commerce : ce n'est ni une imposture ni un vol. Trois emprunts empilés ne font pas un faux. C'est ce que transculturation et indigénisation nomment — et c'est précisément ce que le vocabulaire de l'authenticité est incapable de dire.",
           sourceRefs: ["drewal-2012", "mami-wata-pidgin"],
           figureRefs: [],
         },

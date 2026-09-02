@@ -33,18 +33,12 @@ import { SOURCE_TIERS } from "@/types/sources";
  */
 const AWAITING_PRIMARY_SOURCE = new Set([
   "san-council-2003",
-  "shaw-times-nigeria",
   "afrik-pays-ben",
   "afrik-pays-gha",
   "civil-registration-surnames",
-  "zaire-authenticite-1972",
-  "bleek-1862",
-  "bantu-class-prefixes",
-  "bantu-education-act-1953",
-  "vlisco-helmond",
   "kente-nwentoma",
-  "coffee-qahwa",
   "drewal-2012",
+  "nala-damajanti",
   "mami-wata-pidgin",
 ]);
 
