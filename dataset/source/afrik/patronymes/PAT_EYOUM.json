@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_EYOUM",
   "nameMain": "Eyoum",
@@ -11,7 +11,10 @@
     {
       "spelling": "Eyoum",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["peuplesawa-eyoum-profiles"]
+        }
       ]
     }
   ],
@@ -26,14 +29,14 @@
     {
       "peopleId": "PPL_SAWA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["peuplesawa-eyoum-profiles"]
     }
   ],
   "countries": [
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["peuplesawa-eyoum-profiles"]
     }
   ],
   "alliances": [],
@@ -42,38 +45,39 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "peuplesawa-eyoum-profiles",
+      "title": "PeupleSawa.com — Profils E",
+      "url": "https://www.peuplesawa.com/fr/bnprofiles.php?letter=E",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "isSelfIdentification": true,
+      "notes": "Page communautaire de profils consultée intégralement. Plusieurs contributions autonomes portant Eyoum se déclarent sawa, douala ou d'origine camerounaise ; l'une écrit explicitement « je suis d'origine sawa ». Ces auto-identifications sont conservées à leur niveau unverified. Elles n'établissent ni étymologie, ni clan commun, ni mode de transmission."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Eyoum. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Eyoum à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Eyoum."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « PeupleSawa.com — Profils E », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « PeupleSawa.com — Profils E », n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont établi aucune règle propre à Eyoum permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_CHIPANDE",
   "nameMain": "Chipande",
@@ -11,7 +11,10 @@
     {
       "spelling": "Chipande",
       "attestations": [
-        { "countryId": "MOZ", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MOZ",
+          "sourceRefs": ["israel-violence-voice-note-2024"]
+        }
       ]
     }
   ],
@@ -26,14 +29,17 @@
     {
       "peopleId": "PPL_MAKONDE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["israel-violence-voice-note-2024"]
     }
   ],
   "countries": [
     {
       "countryId": "MOZ",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "israel-violence-voice-note-2024",
+        "uniac-alberto-chipande"
+      ]
     }
   ],
   "alliances": [],
@@ -42,38 +48,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "israel-violence-voice-note-2024",
+      "title": "Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020)",
+      "url": "https://scielo.org.za/scielo.php?lng=en&nrm=iso&pid=S0259-01902024000100005&script=sci_arttext&tlng=en",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Paolo Israel publié dans Kronos, consulté intégralement. Dans son analyse du conflit de Cabo Delgado, l'auteur qualifie explicitement les généraux Chipande et Lidimu de représentants makonde de la direction mozambicaine. Ce passage atteste l'association d'un porteur ; il ne donne ni étymologie ni règle de transmission du patronyme."
+    },
+    {
+      "sourceKey": "uniac-alberto-chipande",
+      "title": "Universidade Alberto Chipande — General Alberto Chipande",
+      "url": "https://uniac.ac.mz/sobre-a-uniac/",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Page institutionnelle de l'Université Alberto Chipande consultée intégralement. Elle atteste le nom complet Alberto Joaquim Chipande au Mozambique et décrit son rôle historique ; l'intéressé étant vivant selon la source, il n'est pas ajouté au champ des porteurs historiques décédés."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Chipande. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chipande à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chipande."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande », n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Chipande », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Violence and the Voice Note: The War for Cabo Delgado in Social Media (Mozambique, 2020) » et « Universidade Alberto Chipande — General Alberto Chipande » n'ont établi aucune règle propre à Chipande permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

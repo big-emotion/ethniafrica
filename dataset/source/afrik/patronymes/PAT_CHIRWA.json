@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_CHIRWA",
   "nameMain": "Chirwa",
@@ -11,8 +11,14 @@
     {
       "spelling": "Chirwa",
       "attestations": [
-        { "countryId": "ZWE", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "MWI", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["mapala-border-dispute-2017"]
+        }
       ]
     }
   ],
@@ -27,19 +33,19 @@
     {
       "peopleId": "PPL_TUMBUKA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mapala-border-dispute-2017"]
     }
   ],
   "countries": [
     {
       "countryId": "ZWE",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "countryId": "MWI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mapala-border-dispute-2017"]
     }
   ],
   "alliances": [],
@@ -49,37 +55,45 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations ou graphies encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
+    },
+    {
+      "sourceKey": "mapala-border-dispute-2017",
+      "title": "A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015)",
+      "url": "https://researchspace.ukzn.ac.za/bitstreams/d0ef0b3b-2f6d-4368-8fb0-6ad402b2c062/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de Cogitator W. Mapala, University of KwaZulu-Natal, consultée en texte intégral. La page 129 classe Chirwa parmi les noms de famille communs aux Chewa, Tumbuka et Tonga du Malawi, puis avertit qu'un nom seul ne permet pas d'assigner une identité ethnique. Une thèse de l'Université de Zambie proposant une glose a été repérée, mais son fichier a expiré avant lecture complète et n'est donc ni cité ni utilisé."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Chirwa. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chirwa à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chirwa."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) », n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Chirwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « A Historical Study of the Border Dispute between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015) » n'ont établi aucune règle propre à Chirwa permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
