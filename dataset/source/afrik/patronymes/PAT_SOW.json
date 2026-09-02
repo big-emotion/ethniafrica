@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_SOW",
   "nameMain": "Sow",
@@ -11,9 +11,31 @@
     {
       "spelling": "Sow",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["corpus-ppl-wolof-organisation"] },
-        { "countryId": "GMB", "sourceRefs": ["corpus-ppl-wolof-organisation"] },
-        { "countryId": "MRT", "sourceRefs": ["corpus-ppl-wolof-organisation"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["corpus-ppl-wolof-organisation"]
+        },
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["corpus-ppl-wolof-organisation"]
+        },
+        {
+          "countryId": "MRT",
+          "sourceRefs": ["corpus-ppl-wolof-organisation"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["vieillard-fouta-clans", "straussberger-2016-futa"]
+        }
+      ]
+    },
+    {
+      "spelling": "Sô",
+      "attestations": [
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["vieillard-fouta-clans"]
+        }
       ]
     }
   ],
@@ -21,20 +43,33 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": [
+    "writtenChronicles": [
       {
-        "claim": "Le nom relève des quatre clans par lesquels les Fulɓe se reconnaissent — Diallo, Bâ, Barry et Sow — dont la quadripartition structure l'identification clanique du Fouta.",
-        "claimStatus": "claimed",
-        "sourceRefs": ["bolaaro-clans-peuls"]
+        "claim": "Au Fouta-Djalon, Sô et Sow sont donnés comme les noms du groupe classique Feroɓɓe ; Straussberger confirme Sow parmi les quatre yettore employés comme noms de famille et marqueurs fulɓe.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "vieillard-fouta-clans",
+          "straussberger-2016-futa",
+          "bolaaro-clans-peuls"
+        ]
       }
-    ]
+    ],
+    "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_WOLOF",
       "status": "attested",
       "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": [
+        "vieillard-fouta-clans",
+        "straussberger-2016-futa",
+        "bolaaro-clans-peuls"
+      ]
     }
   ],
   "countries": [
@@ -56,7 +91,7 @@
     {
       "countryId": "GIN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["vieillard-fouta-clans", "straussberger-2016-futa"]
     }
   ],
   "alliances": [],
@@ -70,7 +105,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Cette source interne maintient l’association wolof et les pays Sénégal, Gambie et Mauritanie au niveau non vérifié."
     },
     {
       "sourceKey": "bolaaro-clans-peuls",
@@ -78,33 +113,41 @@
       "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de la passe."
+      "notes": "Blog communautaire peul conservé comme source orale/publique de faible niveau : il nomme Sow parmi quatre clans du Fouta-Djalon. La fiche ne s’appuie pas sur lui seul ; Vieillard et Straussberger fournissent une triangulation académique."
     },
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "vieillard-fouta-clans",
+      "title": "Notes sur les Peuls du Fouta-Djallon — Clans et familles",
+      "url": "https://webfuuta.site/bibliotheque/gilbert_vieillard/notes/chap03.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Gilbert Vieillard, enquête ethnographique publiée en 1939 et reproduite par WebFuuta. Le chapitre donne Sô et Sow pour les Feroɓɓe et décrit la famille du Fouta-Djalon comme patrilinéaire. Cette source coloniale est utilisée comme témoignage situé."
+    },
+    {
+      "sourceKey": "straussberger-2016-futa",
+      "title": "Storming the Citadel: Decolonization and Political Contestation in Guinea's Futa Jallon, 1945–61",
+      "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/storming-the-citadel-decolonization-and-political-contestation-in-guineas-futa-jallon-194561/1F793ADC739F5A7A6B328C7CCEF585C5",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "John Straussberger, The Journal of African History 57/2, 2016, p. 231-249, DOI 10.1017/S0021853716000050. La note 35 nomme explicitement Sow parmi quatre yettore employés comme noms de famille et marqueurs fulɓe."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Le dendiraagal (parenté à plaisanterie peule) est documenté comme institution mais aucune paire nommant ce clan n'a été trouvée."
+      "reason": "Vieillard, Straussberger et la publication communautaire Bolaaro ont été recherchés pour une paire de dendiraagal nommant Sow ; aucune paire patronymique explicite n’y est fournie."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan : la quadripartition Diallo, Bâ, Barry, Sow ordonne la descendance et non le métier, et les castes de spécialistes du Fouta portent d'autres noms."
+      "reason": "Straussberger décrit les yettore comme transversaux aux rangs et Vieillard ne rattache Sow à aucun métier héréditaire ; aucune fonction de caste propre au nom n’est établie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de la simple homonymie de patronyme lors de la passe."
+      "reason": "Les sources consultées attestent Sow comme nom collectif ; elles n’établissent pas à la fois le décès et l’auto-identification lignagère d’un porteur individuel."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Sow est porté à la fois dans l'aire peule et, par contact, dans l'aire wolof du Sénégal, sans qu'une source dédiée établisse deux origines distinctes : la répartition géographique ne suffit pas à faire un homonyme, et les deux usages ne sont donc pas séparés."
+      "reason": "L’association wolof interne et l’attestation fula de Vieillard/Straussberger ont été comparées ; aucune source dédiée n’établit deux origines distinctes, donc ces usages ne sont pas séparés en homonymes."
     }
   ]
 }
