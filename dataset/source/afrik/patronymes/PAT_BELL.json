@@ -61,11 +61,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations ou graphies encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     },
     {
       "sourceKey": "balandier-duala-1975",
@@ -73,13 +73,13 @@
       "url": "https://www.persee.fr/doc/cea_0008-0055_1975_num_15_59_2576?pageId=T1_363",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Article de Georges Balandier, Cahiers d'Études africaines, vol. 15, no 59, 1975, p. 361-380, consulté intégralement. Il nomme « Bona jo dit Bell » parmi les quatre unités principales duala, décrit la patrilignée dominante et la rivalité entre Bell et Akwa. Aucune fiche PAT_AKWA n'existe dans le corpus, donc aucune alliance structurée n'est ajoutée."
+      "notes": "Article de Georges Balandier, Cahiers d'Études africaines, vol. 15, no 59, 1975, p. 361-380, consulté intégralement. Il nomme « Bona jo dit Bell » parmi les quatre unités principales duala, décrit la patrilignée dominante et la rivalité entre Bell et Akwa. L'atlas ne possède pas de fiche consacrée à Akwa, donc cette relation n'est pas ajoutée comme alliance structurée."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "L'article « Économie, société et pouvoir chez les Duala anciens » documente une rivalité entre Bell et Akwa, mais aucune fiche PAT_AKWA n'existe dans le corpus. Les recherches « Bell Duala alliance clan Akwa patronyme », « Bell Duala joking kinship » et « Bell Duala parenté à plaisanterie » n'ont révélé aucune autre paire dont les deux noms disposent de fiches PAT_* ; aucune alliance valide ne peut donc être encodée."
+      "reason": "L'article « Économie, société et pouvoir chez les Duala anciens » documente une rivalité entre Bell et Akwa, mais l'atlas ne possède pas de fiche consacrée à Akwa. Les recherches « Bell Duala alliance clan Akwa patronyme », « Bell Duala joking kinship » et « Bell Duala parenté à plaisanterie » n'ont révélé aucune autre paire dont les deux noms disposent de fiches distinctes ; aucune alliance valide ne peut donc être encodée."
     },
     {
       "fieldPath": "casteOrSocialFunction",

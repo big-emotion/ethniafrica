@@ -54,11 +54,11 @@
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Source de repérage conservée uniquement pour les associations géographiques ou ethnolinguistiques que la recherche dédiée n'a pas confirmées. Ces associations sont désormais marquées « supposed » et ne soutiennent aucune étymologie."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     }
   ],
   "gaps": [

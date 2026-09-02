@@ -64,11 +64,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations ou graphies encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     },
     {
       "sourceKey": "mbalaka-chewa-yawo-2019",
