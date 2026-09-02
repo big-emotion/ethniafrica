@@ -24,6 +24,16 @@ export const publicLanguageSchema = z.object({
   id: languageIdSchema,
   name: nonEmptyStringSchema,
   nameProvenance: z.enum(["sourced", "derived"]),
+  // Identifiers and name forms the corpus fills on every language fiche. They
+  // were absent from this payload for the same reason they were absent from
+  // the page — the aggregate below them never carried them — so a consumer
+  // could not resolve a language against Glottolog or match an English name.
+  isoCode639_3: languageIdSchema,
+  glottocode: z.string().nullable(),
+  nameEn: z.string().nullable(),
+  alternateNames: z.array(nonEmptyStringSchema),
+  spellingAliases: z.array(nonEmptyStringSchema),
+  dialects: z.array(nonEmptyStringSchema),
   family: z.object({
     id: nonEmptyStringSchema,
     name: nonEmptyStringSchema,

@@ -15,6 +15,8 @@ export interface AfrikLanguageDetail {
     name: string;
   };
   content: Record<string, unknown>;
+  /** Its own column since migration 060, not part of `content`. */
+  spellingAliases: string[];
 }
 
 // @req REQ-136
@@ -116,7 +118,7 @@ export async function getAfrikLanguageById(
   const { data, error } = await supabase
     .from("afrik_languages")
     .select(
-      "id, name, family_id, content, family:afrik_language_families(id, name_fr)"
+      "id, name, family_id, content, spelling_aliases, family:afrik_language_families(id, name_fr)"
     )
     .eq("id", id)
     .maybeSingle();
@@ -133,6 +135,7 @@ export async function getAfrikLanguageById(
     name: string;
     family_id: string;
     content: Record<string, unknown> | null;
+    spelling_aliases: unknown;
     family: { id: string; name_fr: string } | null;
   };
 
@@ -144,6 +147,11 @@ export async function getAfrikLanguageById(
       name: row.family?.name_fr ?? row.family_id,
     },
     content: row.content ?? {},
+    spellingAliases: Array.isArray(row.spelling_aliases)
+      ? row.spelling_aliases.filter(
+          (entry): entry is string => typeof entry === "string"
+        )
+      : [],
   };
 }
 

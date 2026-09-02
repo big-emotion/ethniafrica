@@ -14,6 +14,19 @@ export interface LanguageDetail {
   id: string;
   name: string;
   nameProvenance: "sourced" | "derived";
+  /**
+   * The identifiers and name forms the strict model declares at the root of
+   * a language fiche. They were absent from this aggregate, which is why the
+   * fiche printed "Donnée manquante" on chapters the corpus leaves empty
+   * while staying silent about an ISO code, a Glottocode and an English name
+   * filled on all 24 fiches. The aggregate was thin; the corpus was not.
+   */
+  isoCode639_3: string;
+  glottocode: string | null;
+  nameEn: string | null;
+  alternateNames: string[];
+  spellingAliases: string[];
+  dialects: string[];
   family: {
     id: string;
     name: string;
@@ -35,6 +48,12 @@ export interface LanguageDetail {
     tier: SourceTier;
     notes?: string | null;
   }>;
+}
+
+/** Keeps a JSONB array that should hold strings from leaking other types. */
+function stringList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((entry): entry is string => typeof entry === "string");
 }
 
 function getVitalityStatus(value: unknown): LanguageDetail["vitalityStatus"] {
@@ -80,6 +99,14 @@ export async function getLanguageById(
     name: language.name,
     nameProvenance:
       content.nameProvenance === "sourced" ? "sourced" : "derived",
+    // The row's primary key is the ISO 639-3 code — the loader keys on it.
+    isoCode639_3: language.id,
+    glottocode:
+      typeof content.glottocode === "string" ? content.glottocode : null,
+    nameEn: typeof content.nameEn === "string" ? content.nameEn : null,
+    alternateNames: stringList(content.alternateNames),
+    spellingAliases: language.spellingAliases,
+    dialects: stringList(content.dialects),
     family: language.family,
     speakingPeoples,
     vehicularRole:
@@ -88,7 +115,6 @@ export async function getLanguageById(
     sources: (sourcesMap.get(id) ?? []).map((source) => ({
       ...source,
       tier: toSourceTier(source.tier),
-      notes: null,
     })),
   };
 }

@@ -100,6 +100,15 @@ export function SourcesFooter({
             ) : (
               <span>{source.label}</span>
             )}
+            {/* Why the source carries the standing shown beside it. The
+                corpus writes it on every language fiche; until the query
+                fetched the column, no fiche could show the reasoning behind
+                a standing it was already displaying. */}
+            {source.notes && (
+              <span className="basis-full text-afh-eyebrow text-[var(--country-text-soft)]">
+                {source.notes}
+              </span>
+            )}
           </li>
         ))}
       </ul>

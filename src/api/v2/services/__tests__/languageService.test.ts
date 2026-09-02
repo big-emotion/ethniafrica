@@ -31,6 +31,10 @@ describe("Language Service", () => {
       family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
       content: {
         nameProvenance: "sourced",
+        glottocode: "yoru1245",
+        nameEn: "Yoruba",
+        alternateNames: ["Yariba"],
+        dialects: ["Ọ̀yọ́"],
         vehicularRole: "regional_lingua_franca",
         vitalityStatus: {
           status: "Institutional",
@@ -38,6 +42,7 @@ describe("Language Service", () => {
           asOf: 2025,
         },
       },
+      spellingAliases: ["Yorouba"],
     });
     vi.mocked(getAfrikSpeakingPeoples).mockResolvedValue([
       { id: "PPL_YORUBA", name: "Yoruba" },
@@ -53,12 +58,14 @@ describe("Language Service", () => {
               title: "Glottolog",
               url: "https://glottolog.org/resource/languoid/id/yoru1245",
               tier: "official",
+              notes: "Catalogue de référence, édition 2025.",
             },
             {
               id: "src-legacy",
               title: "Legacy catalogue",
               url: null,
               tier: null,
+              notes: null,
             },
           ],
         ],
@@ -73,6 +80,12 @@ describe("Language Service", () => {
       id: "yor",
       name: "Yoruba",
       nameProvenance: "sourced",
+      isoCode639_3: "yor",
+      glottocode: "yoru1245",
+      nameEn: "Yoruba",
+      alternateNames: ["Yariba"],
+      spellingAliases: ["Yorouba"],
+      dialects: ["Ọ̀yọ́"],
       family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
       speakingPeoples: [
         { id: "PPL_YORUBA", name: "Yoruba" },
@@ -90,7 +103,9 @@ describe("Language Service", () => {
           title: "Glottolog",
           url: "https://glottolog.org/resource/languoid/id/yoru1245",
           tier: "official",
-          notes: null,
+          // The tier rationale, which the service used to overwrite with null
+          // on its way out even though the corpus fills it on all 24 fiches.
+          notes: "Catalogue de référence, édition 2025.",
         },
         {
           id: "src-legacy",
@@ -120,6 +135,7 @@ describe("Language Service", () => {
       id: "nyn",
       name: "Nyankore",
       family: { id: "FLG_BANTU", name: "Bantou" },
+      spellingAliases: [],
       content: {},
     });
 
@@ -139,6 +155,7 @@ describe("Language Service", () => {
       id: "nyn",
       name: "Nyankore",
       family: { id: "FLG_BANTU", name: "Bantou" },
+      spellingAliases: [],
       content: {
         nameProvenance: "unknown",
         vehicularRole: 42,

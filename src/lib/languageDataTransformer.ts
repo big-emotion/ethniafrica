@@ -16,6 +16,12 @@ export interface LanguagePageData {
   id: string;
   name: string;
   nameProvenance: LanguageDetail["nameProvenance"];
+  isoCode639_3: LanguageDetail["isoCode639_3"];
+  glottocode: LanguageDetail["glottocode"];
+  nameEn: LanguageDetail["nameEn"];
+  alternateNames: LanguageDetail["alternateNames"];
+  spellingAliases: LanguageDetail["spellingAliases"];
+  dialects: LanguageDetail["dialects"];
   family: LanguageDetail["family"];
   speakingPeoples: LanguageDetail["speakingPeoples"];
   vehicularRole: LanguageDetail["vehicularRole"];
@@ -31,6 +37,12 @@ export function transformLanguageData(
     id: language.id,
     name: language.name,
     nameProvenance: language.nameProvenance,
+    isoCode639_3: language.isoCode639_3,
+    glottocode: language.glottocode,
+    nameEn: language.nameEn,
+    alternateNames: language.alternateNames,
+    spellingAliases: language.spellingAliases,
+    dialects: language.dialects,
     family: language.family,
     speakingPeoples: language.speakingPeoples,
     vehicularRole: language.vehicularRole,

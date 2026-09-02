@@ -35,8 +35,40 @@ export function LanguageDetailViewV2({
   data,
   hasSourceFlag = false,
 }: LanguageDetailViewV2Props) {
+  // Defensive against a payload cached before these fields existed: the
+  // segment revalidates hourly, so a stale ISR body outlives a deploy.
+  const attestedNames = [
+    ...(data.nameEn && data.nameEn !== data.name ? [data.nameEn] : []),
+    ...(data.alternateNames ?? []),
+    ...(data.spellingAliases ?? []),
+  ];
+  const dialects = data.dialects ?? [];
+
   return (
     <div className="afh-parchment" id="fiche">
+      <FicheSection title="Identifiants">
+        <dl className="afh-pairs">
+          <dt>ISO 639-3</dt>
+          <dd>{data.isoCode639_3}</dd>
+          <dt>Glottocode</dt>
+          <dd>
+            {data.glottocode ?? <FieldProvenanceMarker state="missing" />}
+          </dd>
+        </dl>
+      </FicheSection>
+
+      <FicheSection title="Autres noms attestés">
+        {attestedNames.length > 0 ? (
+          <ul className="afh-rank">
+            {attestedNames.map((form) => (
+              <li key={form}>{form}</li>
+            ))}
+          </ul>
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
       <FicheSection title="Famille linguistique">
         <Link
           href={getFamilyRoute("fr", data.family.id)}
@@ -58,6 +90,18 @@ export function LanguageDetailViewV2({
                   {people.name}
                 </Link>
               </li>
+            ))}
+          </ul>
+        ) : (
+          <FieldProvenanceMarker state="missing" />
+        )}
+      </FicheSection>
+
+      <FicheSection title="Dialectes">
+        {dialects.length > 0 ? (
+          <ul className="afh-rank">
+            {dialects.map((dialect) => (
+              <li key={dialect}>{dialect}</li>
             ))}
           </ul>
         ) : (
