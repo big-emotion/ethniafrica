@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Search, Loader2 } from "lucide-react";
@@ -20,6 +20,8 @@ import {
   getSearchEntityLabel,
 } from "@/components/search/searchEntityAccent";
 import { getLocalizedRoute } from "@/lib/routing";
+import { useAutocomplete } from "@/hooks/use-autocomplete";
+import { cn } from "@/lib/utils";
 import type { SearchResult } from "@/types/afrik-frontend";
 
 // ETNI-1809 (parent ETNI-1796): the overlay used to duplicate the full SERP —
@@ -34,6 +36,17 @@ interface SearchModalV2Props {
   language: Language;
 }
 
+/**
+ * The same ceiling the SERP's own suggest applies. The overlay used to render
+ * every hit the corpus returned: it is reachable from the masthead on every
+ * page and by a keyboard shortcut, which made it the most reachable search
+ * bar on the site and the only one that answered no arrow key at all.
+ */
+const SUGGESTIONS_PER_KEYSTROKE = 6;
+
+const fetchSuggestionsFromCorpus = (query: string): Promise<SearchResult[]> =>
+  search(query);
+
 // @req REQ-091
 export const SearchModalV2 = ({
   open,
@@ -41,56 +54,41 @@ export const SearchModalV2 = ({
   language,
 }: SearchModalV2Props) => {
   const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [loading, setLoading] = useState(false);
 
+  const goToFiche = (result: SearchResult) => {
+    router.push(ficheHrefFor(result, language));
+    onClose();
+  };
+
+  const suggest = useAutocomplete<SearchResult>({
+    fetchSuggestions: fetchSuggestionsFromCorpus,
+    onSelect: goToFiche,
+    limit: SUGGESTIONS_PER_KEYSTROKE,
+  });
+
+  const { clear } = suggest;
   useEffect(() => {
-    if (!open) {
-      setSearchQuery("");
-      setResults([]);
-    }
-  }, [open]);
-
-  useEffect(() => {
-    const searchData = async () => {
-      if (!searchQuery.trim() || searchQuery.length < 2) {
-        setResults([]);
-        return;
-      }
-
-      setLoading(true);
-      try {
-        setResults(await search(searchQuery));
-      } catch (error) {
-        console.error("Search error:", error);
-        setResults([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    const debounce = setTimeout(searchData, 300);
-    return () => clearTimeout(debounce);
-  }, [searchQuery]);
+    if (!open) clear();
+  }, [open, clear]);
 
   const getNoResultsText = () => {
-    if (!searchQuery.trim()) {
+    const trimmed = suggest.query.trim();
+    if (!trimmed) {
       return "Commencez à taper pour rechercher...";
     }
-    if (searchQuery.length < 2) {
+    if (suggest.query.length < 2) {
       return "Tapez au moins 2 caractères...";
     }
     return "Aucun résultat trouvé";
   };
 
-  const hasResults = results.length > 0;
+  const hasResults = suggest.options.length > 0;
 
   // The raw query is what the canonical SERP resolves — a suggestion click
   // never reaches this, it navigates straight to its own fiche instead.
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const trimmed = searchQuery.trim();
+    const trimmed = suggest.query.trim();
     if (!trimmed) return;
     router.push(
       `${getLocalizedRoute(language, "search")}?${new URLSearchParams({ q: trimmed })}`
@@ -113,9 +111,11 @@ export const SearchModalV2 = ({
             />
             <Input
               type="text"
+              {...suggest.comboboxProps}
               placeholder="Rechercher une famille, un peuple ou un pays..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={suggest.query}
+              onChange={(e) => suggest.setQuery(e.target.value)}
+              onKeyDown={suggest.handleKeyDown}
               className="pl-10"
               autoFocus
             />
@@ -123,7 +123,7 @@ export const SearchModalV2 = ({
         </form>
 
         <ScrollArea className="flex-1 px-6 pb-6">
-          {loading ? (
+          {suggest.pending ? (
             <div className="flex items-center justify-center h-64">
               <Loader2
                 className="h-6 w-6 animate-spin text-afh-text-muted"
@@ -131,17 +131,28 @@ export const SearchModalV2 = ({
               />
             </div>
           ) : hasResults ? (
-            <ul className="space-y-1" data-testid="search-suggestions-list">
-              {results.map((result, index) => (
+            <ul
+              id={suggest.listboxId}
+              role="listbox"
+              aria-label="Suggestions de recherche"
+              className="space-y-1"
+              data-testid="search-suggestions-list"
+            >
+              {suggest.options.map((result, index) => (
                 <li
                   key={`${result.type}-${result.id}-${index}`}
-                  className="flex items-center gap-2 rounded-afh-lg px-2 min-h-11 hover:bg-afh-bg-warm"
+                  {...suggest.getOptionProps(index)}
+                  className={cn(
+                    "flex items-center gap-2 rounded-afh-lg px-2 min-h-11 hover:bg-afh-bg-warm",
+                    index === suggest.activeIndex && "bg-afh-bg-warm"
+                  )}
                 >
                   <SearchEntityMark type={result.type} />
                   <Link
                     href={ficheHrefFor(result, language)}
                     onClick={onClose}
                     className="flex-1 truncate text-afh-text"
+                    tabIndex={-1}
                   >
                     {result.name}
                   </Link>

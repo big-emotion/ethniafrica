@@ -187,6 +187,21 @@ describe("sitemap.xml", () => {
     expect(UNLISTED_ROUTES).not.toContain("confidentialite");
     expect(UNLISTED_ROUTES).not.toContain("politique-confidentialite");
   });
+
+  // The registry no longer listing them is one half; this is the other — what
+  // the site actually emits. Hiding a second policy was never the same as not
+  // having one, and it is the emitted set a reader can reach.
+  // @req REQ-110
+  it("serves exactly one privacy policy", async () => {
+    const all = await urls();
+    const policies = all.filter((url) =>
+      /confidentialite|politique-de-donnees/.test(url)
+    );
+
+    expect(policies).toEqual([
+      `https://${CANONICAL_DOMAIN}/fr/politique-de-donnees`,
+    ]);
+  });
 });
 
 describe("robots.txt", () => {
@@ -210,5 +225,17 @@ describe("robots.txt", () => {
     expect(disallow).toContain("/fr/admin/");
     expect(disallow).not.toContain("/fr/politique-confidentialite");
     expect(disallow).not.toContain("/fr/confidentialite");
+  });
+
+  // Named routes are what a rewrite would drop; this holds the whole rule to
+  // the property instead — nothing about a privacy policy is hidden here.
+  // @req REQ-110
+  it("no longer hides a privacy policy from crawlers", () => {
+    const rule = robots().rules;
+    const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
+
+    expect(
+      (disallow as string[]).filter((path) => /confidentialite/.test(path))
+    ).toEqual([]);
   });
 });

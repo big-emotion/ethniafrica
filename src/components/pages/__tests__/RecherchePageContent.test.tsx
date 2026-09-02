@@ -162,7 +162,7 @@ async function renderPivotWithRelatedResults() {
   render(<RecherchePageContent />);
 
   await act(async () => {
-    fireEvent.change(screen.getByRole("searchbox"), {
+    fireEvent.change(screen.getByRole("combobox"), {
       target: { value: "Zulu" },
     });
     fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -202,7 +202,7 @@ describe("RecherchePageContent", () => {
 
   it("renders a text input for search", () => {
     render(<RecherchePageContent />);
-    expect(screen.getByRole("searchbox")).toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toBeInTheDocument();
   });
 
   it("renders a visible submit button labelled Rechercher", () => {
@@ -266,10 +266,88 @@ describe("RecherchePageContent", () => {
       >
     );
     render(<RecherchePageContent />);
-    expect(screen.getByRole("searchbox")).toHaveValue("Yoruba");
+    expect(screen.getByRole("combobox")).toHaveValue("Yoruba");
   });
 
   // ── 5. auto-suggest ────────────────────────────────────────────────────────
+
+  /**
+   * The field declared `role="searchbox"` over a listbox it never claimed —
+   * no `aria-expanded`, no `aria-controls`, no `aria-activedescendant`. A
+   * searchbox cannot own suggestions, so under a screen reader the canonical
+   * search surface offered none, while the accueil and the compare picker
+   * offered the same suggestions correctly.
+   */
+  // @req REQ-002
+  it("declares the combobox contract over the suggestions it owns", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(suggestApiResponse),
+    });
+    render(<RecherchePageContent />);
+    const input = screen.getByRole("combobox");
+
+    expect(input).toHaveAttribute("aria-expanded", "false");
+
+    await act(async () => {
+      fireEvent.change(input, { target: { value: "Yo" } });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+
+    const listbox = await screen.findByRole("listbox");
+    expect(input).toHaveAttribute("aria-expanded", "true");
+    expect(input).toHaveAttribute("aria-controls", listbox.id);
+    expect(input).toHaveAttribute("aria-autocomplete", "list");
+  });
+
+  // @req REQ-002
+  it("walks the suggestions with the arrow keys and points at the highlighted one", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(suggestApiResponse),
+    });
+    render(<RecherchePageContent />);
+    const input = screen.getByRole("combobox");
+
+    await act(async () => {
+      fireEvent.change(input, { target: { value: "Yo" } });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+    await screen.findByRole("listbox");
+
+    expect(input).not.toHaveAttribute("aria-activedescendant");
+
+    await act(async () => {
+      fireEvent.keyDown(input, { key: "ArrowDown" });
+    });
+
+    const [firstOption] = screen.getAllByRole("option");
+    expect(input).toHaveAttribute("aria-activedescendant", firstOption.id);
+    expect(firstOption).toHaveAttribute("aria-selected", "true");
+  });
+
+  // @req REQ-002
+  it("closes the suggestions on Escape without emptying the field", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(suggestApiResponse),
+    });
+    render(<RecherchePageContent />);
+    const input = screen.getByRole("combobox");
+
+    await act(async () => {
+      fireEvent.change(input, { target: { value: "Yo" } });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+    await screen.findByRole("listbox");
+
+    await act(async () => {
+      fireEvent.keyDown(input, { key: "Escape" });
+    });
+
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+    expect(input).toHaveValue("Yo");
+  });
 
   it("calls /api/v2/search?...&limit=6 when input reaches 2 chars", async () => {
     mockFetch.mockResolvedValue({
@@ -277,7 +355,7 @@ describe("RecherchePageContent", () => {
       json: () => Promise.resolve(suggestApiResponse),
     });
     render(<RecherchePageContent />);
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
 
     await act(async () => {
       fireEvent.change(input, { target: { value: "Yo" } });
@@ -292,7 +370,7 @@ describe("RecherchePageContent", () => {
 
   it("does NOT call the suggest API when input is shorter than 2 chars", async () => {
     render(<RecherchePageContent />);
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
 
     await act(async () => {
       fireEvent.change(input, { target: { value: "Y" } });
@@ -308,7 +386,7 @@ describe("RecherchePageContent", () => {
       json: () => Promise.resolve(suggestApiResponse),
     });
     render(<RecherchePageContent />);
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
 
     await act(async () => {
       fireEvent.change(input, { target: { value: "Yo" } });
@@ -328,7 +406,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -346,7 +424,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -365,7 +443,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -387,7 +465,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -428,7 +506,7 @@ describe("RecherchePageContent", () => {
     );
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -450,7 +528,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(emptyApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -472,7 +550,7 @@ describe("RecherchePageContent", () => {
     mockFetch.mockResolvedValue(okJson(searchApiResponse));
     render(<RecherchePageContent />);
 
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     const submit = screen.getByRole("button", { name: /rechercher/i });
 
     await act(async () => {
@@ -492,7 +570,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "peuples zoulous" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -525,7 +603,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "ivoire" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -581,7 +659,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "fulani" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -678,7 +756,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Zulu" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -703,7 +781,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Zulu" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -813,7 +891,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Peuple inconnu" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -846,7 +924,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "bet" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -877,7 +955,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Bété" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -894,7 +972,7 @@ describe("RecherchePageContent", () => {
 
   it("input uses autocomplete=off to prevent browser search history", () => {
     render(<RecherchePageContent />);
-    const input = screen.getByRole("searchbox");
+    const input = screen.getByRole("combobox");
     expect(input.getAttribute("autocomplete")).toBe("off");
   });
 
@@ -961,7 +1039,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "peuples zoulous" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -1006,7 +1084,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Zulu" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -1040,7 +1118,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "Bété" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
@@ -1068,7 +1146,7 @@ describe("RecherchePageContent", () => {
     render(<RecherchePageContent />);
 
     await act(async () => {
-      fireEvent.change(screen.getByRole("searchbox"), {
+      fireEvent.change(screen.getByRole("combobox"), {
         target: { value: "xyzzy" },
       });
       fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));

@@ -19,6 +19,7 @@ import { SearchLensBar } from "@/components/search/SearchLensBar";
 import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
+import { useAutocomplete } from "@/hooks/use-autocomplete";
 import { getLocalizedRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import {
@@ -54,6 +55,13 @@ const SUGGESTIONS_PER_KEYSTROKE = 6;
 type SearchHit = SearchResult;
 
 /**
+ * Hoisted out of the component so its identity is stable: the hook re-arms
+ * its debounce whenever the fetcher changes.
+ */
+const fetchSuggestionsFromCorpus = (query: string): Promise<SearchHit[]> =>
+  searchCorpus(query, { limit: SUGGESTIONS_PER_KEYSTROKE });
+
+/**
  * `idle` — nothing committed yet, the page shows its default head.
  * `loading` — a fetch for the committed query is in flight or has not run.
  * `loaded` — the fetch resolved (success or failure); results reflect it.
@@ -80,7 +88,6 @@ export function RecherchePageContent() {
   const initialQuery = searchParams.get("q") ?? "";
   const initialRelation = readRelation(searchParams);
 
-  const [inputValue, setInputValue] = useState(initialQuery);
   const [committedQuery, setCommittedQuery] = useState(initialQuery);
   const [relation, setRelation] = useState<SearchRelation | null>(
     initialRelation
@@ -95,11 +102,6 @@ export function RecherchePageContent() {
   const [status, setStatus] = useState<SearchStatus>(
     initialQuery || initialRelation ? "loading" : "idle"
   );
-  const [suggestions, setSuggestions] = useState<SearchHit[]>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  // The suggest dropdown must never open from a `?q=` the reader arrived
-  // with — only from a keystroke they actually typed.
-  const hasEditedInput = useRef(false);
 
   // ── URL sync ────────────────────────────────────────────────────────────────
 
@@ -171,24 +173,22 @@ export function RecherchePageContent() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [relation]);
 
-  // ── auto-suggest (debounced, fires on input change the reader made) ─────────
+  // ── auto-suggest ────────────────────────────────────────────────────────────
 
-  useEffect(() => {
-    if (!hasEditedInput.current) return;
-    if (inputValue.length < 2) {
-      setSuggestions([]);
-      setShowSuggestions(false);
-      return;
-    }
-    const timer = setTimeout(async () => {
-      const hits = await searchCorpus(inputValue, {
-        limit: SUGGESTIONS_PER_KEYSTROKE,
-      });
-      setSuggestions(hits);
-      setShowSuggestions(hits.length > 0);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [inputValue]);
+  /**
+   * The SERP's own field used to declare `role="searchbox"` over a
+   * `role="listbox"` it did not own — a searchbox cannot own suggestions, so
+   * under a screen reader the suggestions of the canonical search surface
+   * simply did not exist. The shared hook carries the combobox contract the
+   * accueil and the compare picker already honoured.
+   */
+  const suggest = useAutocomplete<SearchHit>({
+    fetchSuggestions: fetchSuggestionsFromCorpus,
+    onSelect: (hit) => handleSuggestionClick(hit),
+    initialQuery,
+    limit: SUGGESTIONS_PER_KEYSTROKE,
+  });
+  const inputValue = suggest.query;
 
   // ── keyboard shortcut: "/" → focus input (progressive enhancement) ──────────
 
@@ -210,18 +210,19 @@ export function RecherchePageContent() {
     e.preventDefault();
     const q = inputValue.trim();
     setCommittedQuery(q);
-    setShowSuggestions(false);
+    suggest.dismiss();
     syncURL(q, relation);
     performSearch(q, relation);
   };
 
-  const handleSuggestionClick = (s: SearchHit) => {
-    setInputValue(s.name);
-    setCommittedQuery(s.name);
-    setShowSuggestions(false);
-    syncURL(s.name, relation);
-    performSearch(s.name, relation);
-  };
+  function handleSuggestionClick(hit: SearchHit) {
+    // `commit`, not `setQuery`: the name goes into the field as a resolved
+    // query, so the panel does not reopen over the results it just asked for.
+    suggest.commit(hit.name);
+    setCommittedQuery(hit.name);
+    syncURL(hit.name, relation);
+    performSearch(hit.name, relation);
+  }
 
   // ── derived state ───────────────────────────────────────────────────────────
 
@@ -360,34 +361,38 @@ export function RecherchePageContent() {
             <Input
               ref={inputRef}
               type="search"
-              role="searchbox"
+              {...suggest.comboboxProps}
               aria-label="Rechercher un peuple, une famille linguistique ou un pays"
               placeholder="Rechercher un peuple, une famille ou un pays..."
               value={inputValue}
-              onChange={(e) => {
-                hasEditedInput.current = true;
-                setInputValue(e.target.value);
-              }}
-              onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+              onChange={(e) => suggest.setQuery(e.target.value)}
+              onKeyDown={suggest.handleKeyDown}
+              // The blur is delayed past the option's mousedown on purpose:
+              // closing on focus loss alone retracts the panel out from under
+              // the click that was landing on it.
+              onBlur={() => setTimeout(() => suggest.dismiss(), 150)}
               className="pl-10 h-12 text-afh-small"
               autoComplete="off"
             />
             {/* auto-suggest dropdown */}
-            {showSuggestions && suggestions.length > 0 && (
+            {suggest.isOpen && (
               <ul
+                id={suggest.listboxId}
                 role="listbox"
                 aria-label="Suggestions de recherche"
                 className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-afh-xs overflow-hidden"
               >
-                {suggestions.map((s) => (
+                {suggest.options.map((hit, index) => (
                   <li
-                    key={s.id}
-                    role="option"
-                    aria-selected={false}
-                    className="px-afh-2xl py-afh-md hover:bg-afh-bg-warm cursor-pointer text-afh-small"
-                    onMouseDown={() => handleSuggestionClick(s)}
+                    key={hit.id}
+                    {...suggest.getOptionProps(index)}
+                    className={cn(
+                      "px-afh-2xl py-afh-md hover:bg-afh-bg-warm cursor-pointer text-afh-small",
+                      index === suggest.activeIndex && "bg-afh-bg-warm"
+                    )}
+                    onMouseDown={() => handleSuggestionClick(hit)}
                   >
-                    {s.name}
+                    {hit.name}
                   </li>
                 ))}
               </ul>
