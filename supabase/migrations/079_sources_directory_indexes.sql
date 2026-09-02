@@ -1,4 +1,15 @@
--- Migration 078 — The sources directory: the missing column and its indexes
+-- Migration 079 — The sources directory: the missing column and its indexes
+--
+-- Numbered 078 when it was written, and renumbered here: #731 merged its own
+-- 078 five minutes before this one landed, so both files claimed the version
+-- and `supabase db push` orders by name rather than by intent. The collision
+-- was invisible on the pull request, whose green `check:migration-files` run
+-- predated the other merge — which is the whole failure mode: a migration
+-- number is only unique against the branch as it was when CI ran.
+--
+-- Renumbering is free here because nothing was applied under the old number:
+-- `migrate-recette.yml` failed on the duplicate, so the ledger holds only
+-- 078/revoke_iso_code_questions and no repair is owed.
 --
 -- Context: /fr/sources is a hand-written bibliography of about ninety
 -- citations, disconnected from the 4 395 rows the corpus actually rests on.
