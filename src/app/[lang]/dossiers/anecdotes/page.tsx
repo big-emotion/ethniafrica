@@ -70,12 +70,14 @@ export default async function AnecdotesPage({
   return (
     <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
       <div className="anecdotes-page">
-        {/* Not a count. « 67 anecdotes » turns the page into an inventory the
-            reader has to get through, and the number is the least interesting
-            thing about it; what the line owes the reader is how to read the
-            page, which is one card and a press. */}
+        {/* Not a count, and not reading instructions either. « 67 anecdotes »
+            turns the page into an inventory to get through; « une à la fois,
+            tirée au hasard » describes the mechanism, which the reader works
+            out from the button. The line states the claim every entry in the
+            bank makes, and the only one true of all of them — an exonym, an
+            endonym and a self-chosen name alike all had someone behind them. */}
         <p className="anecdotes-count">
-          Une à la fois, dans un ordre que le hasard décide
+          Chaque nom a été donné par quelqu&apos;un
         </p>
 
         {opening ? (
