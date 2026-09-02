@@ -73,7 +73,13 @@
       "bamadaba-jamuw"
     ]
   },
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Massa Makan Diabaté (1938-1988)",
+      "sourceRefs": ["gha-iv-mali", "nichols-2020-diabate-review"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -131,13 +137,17 @@
       "tier": "official",
       "source_kind": "intergovernmental",
       "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, p. 117-171), donne lignage par lignage l'implantation des clans malinké : les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi (p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 n. 43) —, les griots Diabaté de Keyla et la réfection septennale du Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une chronique : les claims qu'il porte ici sont donc rangés hors writtenChronicles."
+    },
+    {
+      "sourceKey": "nichols-2020-diabate-review",
+      "title": "Review of Massa Makan Diabaté, The Lieutenant of Kouta (trans. Auerbach & Yost)",
+      "url": "https://www.cambridge.org/core/journals/african-studies-review/article/massa-makan-diabate-the-lieutenant-of-kouta-translated-from-french-by-shane-auerbach-and-david-yost-east-lansing-michigan-state-university-press-2017-xi-113-pp-introduction-2000-paper-isbn-9781611862270/01AF0FE3900BD82768691B37BA6E998C",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nichols, Eliza, African Studies Review 63(2), Cambridge University Press, 2020. Donne les dates de Massa Makan Diabaté (1938-1988), son ascendance de griots et le fait qu'il fut le seul écrivain de sa génération à conserver le patronyme qui le rattache à la caste des généalogistes — soit une source portant sur le nom lui-même, et non sur la seule homonymie de patronyme."
     }
   ],
   "gaps": [
-    {
-      "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe : les Diabaté documentés le sont comme musiciens contemporains, que la règle des porteurs écarte."
-    },
     {
       "fieldPath": "homonyms",
       "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée ; la graphie Diabaté transcrit le mandingue Jabate."

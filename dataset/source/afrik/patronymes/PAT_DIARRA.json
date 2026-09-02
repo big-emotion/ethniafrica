@@ -142,7 +142,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe : les Diarra de la dynastie de Ségou relèvent de l'histoire politique et ne documentent pas le nom."
+      "reason": "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra (1766-1790) et la dynastie des Ngolosi qui lui succède, mais le présente comme un ton-jon parvenu au pouvoir : elle ne rattache à aucun moment son jamu au clan bamana Jara. Le lien serait une homonymie de patronyme, que ce champ écarte, et non une descendance. Aucun autre porteur décédé n'a été rattaché au clan."
     },
     {
       "fieldPath": "homonyms",

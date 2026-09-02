@@ -455,6 +455,16 @@ export const RESEARCH = {
           claimStatus: "contested",
           sourceRefs: ["jansen-sunjata-paradigm"],
         },
+        {
+          claim:
+            "Le nom entre dans un système de correspondances entre patronymes " +
+            "de peuples différents, établi après Soundiata : en pays wolof, un " +
+            "Traoré est reçu comme frère par les Diop et peut prendre leur nom, " +
+            "et réciproquement. Le jamu n'est donc pas seulement héréditaire, " +
+            "il est convertible d'une aire à l'autre.",
+          claimStatus: "established",
+          sourceRefs: ["gha-iv-mali"],
+        },
       ],
     },
     alliances: [
@@ -479,7 +489,7 @@ export const RESEARCH = {
       {
         status: "deceased",
         displayName: "Tiramaghan Traoré",
-        sourceRefs: ["niane-1960"],
+        sourceRefs: ["niane-1960", "gha-iv-mali"],
       },
     ],
     sourceKeys: [
@@ -488,6 +498,7 @@ export const RESEARCH = {
       "segoublog-sanankuya",
       "bamadaba-jamuw",
       "charry-1996-jembe",
+      "gha-iv-mali",
     ],
     gapReasons: {
       homonyms:
@@ -543,10 +554,12 @@ export const RESEARCH = {
         "prêtent au nom les répertoires courants reste donc introuvable dans " +
         "une source dédiée, et n'est pas affirmé ici.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe : les Diarra " +
-        "de la dynastie de Ségou relèvent de l'histoire politique et ne " +
-        "documentent pas le nom.",
+        "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra " +
+        "(1766-1790) et la dynastie des Ngolosi qui lui succède, mais le " +
+        "présente comme un ton-jon parvenu au pouvoir : elle ne rattache à " +
+        "aucun moment son jamu au clan bamana Jara. Le lien serait une " +
+        "homonymie de patronyme, que ce champ écarte, et non une descendance. " +
+        "Aucun autre porteur décédé n'a été rattaché au clan.",
       homonyms:
         "Diarra et Jara sont deux graphies d'un même jamu. Aucune lignée " +
         "d'origine distincte n'a été trouvée, mais l'étymologie du nom restant " +
@@ -618,7 +631,21 @@ export const RESEARCH = {
     origin: {
       oralTraditions: [],
       writtenChronicles: [],
-      linguisticReconstructions: [JAMU_RECONSTRUCTION],
+      linguisticReconstructions: [
+        JAMU_RECONSTRUCTION,
+        {
+          // La source pose l'étymologie et, dans la même note, dit qu'il en
+          // existe d'autres : le claimStatus suit la source, pas l'usage.
+          claim:
+            "Le récit d'origine des dynasties bambara fait traverser le fleuve " +
+            "sans pirogue aux deux frères Baramangolo et Niangolo ; de cette " +
+            "traversée est tiré le patronyme Kulibali (Kurubari), de kulu " +
+            "« pirogue » et du privatif bali. La source qui l'énonce ajoute " +
+            "aussitôt qu'il en existe d'autres.",
+          claimStatus: "contested",
+          sourceRefs: ["gha-v-16-18"],
+        },
+      ],
     },
     alliances: [
       {
@@ -641,6 +668,13 @@ export const RESEARCH = {
         "libre et, selon l'aire, une fonction artisanale héréditaire.",
       sourceRefs: ["bamadaba-jamuw"],
     },
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Mamari Kulibali, dit Biton Coulibaly (1712-1755)",
+        sourceRefs: ["gha-v-16-18"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "segoublog-sanankuya",
@@ -648,15 +682,6 @@ export const RESEARCH = {
       "bamadaba-jamuw",
     ],
     gapReasons: {
-      origin:
-        "Aucune source dédiée n'a été trouvée pour l'origine du jamu Kulibali " +
-        "lors de la passe ; le rattachement à la dynastie de Ségou relève de " +
-        "l'histoire politique, pas de l'origine du nom.",
-      bearers:
-        "Biton Coulibaly, fondateur du royaume bambara de Ségou, est amplement " +
-        "documenté, mais comme figure politique : aucune source consultée ne " +
-        "s'appuie sur lui pour établir l'origine du jamu, et la fiche ne " +
-        "l'enregistre donc pas en porteur.",
       homonyms:
         "Coulibaly transcrit le mandingue Kulibali ; aucune lignée d'origine " +
         "distincte n'a été trouvée sous l'une ou l'autre graphie.",
@@ -701,7 +726,7 @@ export const RESEARCH = {
       {
         status: "deceased",
         displayName: "Balla Fasséké Kouyaté",
-        sourceRefs: ["niane-1960"],
+        sourceRefs: ["niane-1960", "gha-iv-mali"],
       },
       {
         status: "deceased",
@@ -771,6 +796,13 @@ export const RESEARCH = {
         sourceRefs: ["bamadaba-jamuw"],
       },
     ],
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Massa Makan Diabaté (1938-1988)",
+        sourceRefs: ["gha-iv-mali", "nichols-2020-diabate-review"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "jelis-multilingualism-2024",
@@ -778,17 +810,13 @@ export const RESEARCH = {
       "tamari-1991-caste",
       "bamadaba-jamuw",
       "gha-iv-mali",
+      "nichols-2020-diabate-review",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre aux Diabaté n'a été trouvée lors de " +
         "la passe, en dehors de leur statut de clan de jeli. La geste de " +
         "Soundiata les nomme sans raconter l'origine du jamu.",
-      bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe : les Diabaté " +
-        "documentés le sont comme musiciens contemporains, que la règle des " +
-        "porteurs écarte.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée ; la " +
         "graphie Diabaté transcrit le mandingue Jabate.",
@@ -824,20 +852,52 @@ export const RESEARCH = {
         sourceRefs: ["bamadaba-jamuw"],
       },
     ],
+    // Le rattachement aux Vai et aux deux pays ne reposait que sur le passage
+    // de corpus ; l'Histoire générale de l'Afrique conduit la migration
+    // kongo-vai depuis le haut Niger sous la conduite même du clan Camara.
+    peoples: [
+      {
+        peopleId: "PPL_VAI",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+    ],
+    countries: [
+      {
+        countryId: "LBR",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+      {
+        countryId: "SLE",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+    ],
+    bearers: [
+      {
+        // La geste et l'Histoire générale de l'Afrique le donnent chef de
+        // l'une des deux branches du clan ; la même collection rattache la
+        // branche vai de ce clan au clan du haut Niger, ce qui fait tenir la
+        // mention sur une fiche rattachée aux Vai.
+        status: "deceased",
+        displayName: "Kamadian Camara, de Sibi",
+        sourceRefs: ["gha-iv-mali", "gha-v-16-18"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "charry-1996-jembe",
       "tamari-1991-caste",
       "bamadaba-jamuw",
+      "gha-iv-mali",
+      "gha-v-16-18",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Kamara n'a été trouvée lors " +
         "de la passe. La geste de Soundiata nomme les Kamara parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
-      bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
       homonyms:
         "La graphie Camara est la transcription francophone de Kamara ; ce sont " +
         "deux orthographes d'un même nom, non deux lignées, et elles ne sont " +
@@ -885,8 +945,10 @@ export const RESEARCH = {
         "de la passe : seule la nature clanique et patrilinéaire du jamu est " +
         "établie.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
+        "Aucun porteur décédé n'a été rattaché au jamu Fofana par les sources " +
+        "de cette passe : ni l'Histoire générale de l'Afrique, qui nomme " +
+        "pourtant clan par clan les lignages ralliés à Soundiata, ni le " +
+        "dictionnaire des jamuw, ni Charry ne l'attachent à une personne.",
       homonyms:
         "Fofana est porté dans les aires mandingue et soninké sans qu'une " +
         "source dédiée établisse deux origines distinctes.",
@@ -932,8 +994,13 @@ export const RESEARCH = {
         "de la passe. La geste de Soundiata nomme les Doumbia parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
+        "Le porteur que les répertoires courants rattachent au clan est Fakoli, " +
+        "le forgeron neveu de Soumaoro passé du côté de Soundiata, sous la " +
+        "forme « Fakoli Doumbia ». La transcription de Niane a été relue sur ce " +
+        "point : elle le nomme Fakoli Koroma, et l'Histoire générale de " +
+        "l'Afrique de même. Le jamu Doumbia ne lui est donc donné par aucune " +
+        "des sources consultées, et aucun autre porteur décédé n'a pu être " +
+        "rattaché au clan.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée lors de la " +
         "passe.",

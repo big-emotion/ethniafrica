@@ -38,19 +38,19 @@
     {
       "peopleId": "PPL_VAI",
       "status": "attested",
-      "sourceRefs": ["corpus-ppl-vai-organisation"]
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
     }
   ],
   "countries": [
     {
       "countryId": "LBR",
       "status": "attested",
-      "sourceRefs": ["corpus-ppl-vai-organisation"]
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
     },
     {
       "countryId": "SLE",
       "status": "attested",
-      "sourceRefs": ["corpus-ppl-vai-organisation"]
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
     }
   ],
   "alliances": [
@@ -64,7 +64,13 @@
     "value": "Lignage de forgerons (numu) : Charry range nommément le jamu parmi les lignages numu, aux côtés de Kanté. Le dictionnaire des jamuw donne toutefois trois statuts pour la même entrée Kàmara — hɔ̀rɔn, finɛ et nùmu au Wassoulou —, si bien que la fonction de forgeron vaut pour une part du jamu et non pour tout ce qui le porte.",
     "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"]
   },
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Kamadian Camara, de Sibi",
+      "sourceRefs": ["gha-iv-mali", "gha-v-16-18"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -106,13 +112,25 @@
       "tier": "referenced",
       "source_kind": "linguistic_reference",
       "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, p. 117-171), donne lignage par lignage l'implantation des clans malinké : les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi (p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 n. 43) —, les griots Diabaté de Keyla et la réfection septennale du Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une chronique : les claims qu'il porte ici sont donc rangés hors writtenChronicles."
+    },
+    {
+      "sourceKey": "gha-v-16-18",
+      "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_v",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; consulté sur le texte intégral. Chapitre 12, « From the Niger to the Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali (Kurubari) et les Keita ou les Ture, donné comme indice de relations anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu « pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, assortie par la source elle-même de la mention qu'il en existe d'autres (p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma (p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du Liberia et de la Sierra Leone (p. 375-377)."
     }
   ],
   "gaps": [
-    {
-      "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe."
-    },
     {
       "fieldPath": "homonyms",
       "reason": "La graphie Camara est la transcription francophone de Kamara ; ce sont deux orthographes d'un même nom, non deux lignées, et elles ne sont donc pas traitées en homonymes."

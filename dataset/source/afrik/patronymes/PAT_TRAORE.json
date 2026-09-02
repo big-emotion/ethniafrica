@@ -57,6 +57,11 @@
         "claim": "La forme mandingue du nom est Tarawele ; Traoré en est la transcription coloniale francophone. Aucune étymologie ne fait consensus.",
         "claimStatus": "contested",
         "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Le nom entre dans un système de correspondances entre patronymes de peuples différents, établi après Soundiata : en pays wolof, un Traoré est reçu comme frère par les Diop et peut prendre leur nom, et réciproquement. Le jamu n'est donc pas seulement héréditaire, il est convertible d'une aire à l'autre.",
+        "claimStatus": "established",
+        "sourceRefs": ["gha-iv-mali"]
       }
     ]
   },
@@ -109,7 +114,7 @@
     {
       "status": "deceased",
       "displayName": "Tiramaghan Traoré",
-      "sourceRefs": ["niane-1960"]
+      "sourceRefs": ["niane-1960", "gha-iv-mali"]
     }
   ],
   "homonyms": [],
@@ -161,6 +166,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, p. 117-171), donne lignage par lignage l'implantation des clans malinké : les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi (p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 n. 43) —, les griots Diabaté de Keyla et la réfection septennale du Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une chronique : les claims qu'il porte ici sont donc rangés hors writtenChronicles."
     }
   ],
   "gaps": [
