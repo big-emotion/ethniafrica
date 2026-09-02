@@ -49,6 +49,11 @@
         "claim": "L'entrée consultée classe Ahmed comme un nom de famille dérivé du nom personnel Ahmad et atteste la graphie arabe أحمد. Elle ne permet pas d'attribuer cette formation à un seul peuple africain.",
         "claimStatus": "claimed",
         "sourceRefs": ["btn-surname-ahmed"]
+      },
+      {
+        "claim": "Une seconde notice communautaire présente Ahmed comme une variante de Ahmad ; faute de bibliographie propre à l'entrée, cette relation ne constitue pas une reconstruction savante.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-ahmed"]
       }
     ]
   },
@@ -98,11 +103,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
     },
     {
       "sourceKey": "btn-surname-ahmed",
@@ -110,7 +115,15 @@
       "url": "https://surnames.behindthename.com/name/ahmed",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Ahmed comme nom de famille dérivé du nom personnel Ahmad et donne la graphie arabe أحمد. Elle n'établit aucun des rattachements ethniques ou nationaux."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Ahmed comme nom de famille dérivé du nom personnel Ahmad et donne la graphie arabe أحمد. Elle n'établit aucun des rattachements ethniques ou nationaux hérités de la file d'attente."
+    },
+    {
+      "sourceKey": "behindthename-ahmed",
+      "title": "Meaning, origin and history of the name Ahmed",
+      "url": "https://www.behindthename.com/name/ahmed",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice communautaire dédiée consultée intégralement. Elle traite Ahmed comme une variante de Ahmad en usage arabe, turc, bosniaque et bengali. Elle ne documente pas à elle seule les associations somalie ou comorienne de la fiche."
     }
   ],
   "gaps": [
@@ -124,7 +137,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "Les recherches exactes « Ahmed anthroponymie », « Ahmed onomastique », « Ahmed surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
+      "reason": "Les recherches exactes « Ahmed anthroponymie », « Ahmed onomastique », « Ahmed surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués par la file d'attente ; ces rattachements restent non vérifiés."
     },
     {
       "fieldPath": "alliances",
@@ -144,7 +157,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Les sources propres à « Ahmed » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "Les sources propres à « Ahmed » ne suffisent pas à confirmer les pays hérités de la file d'attente ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_ATEBA",
   "nameMain": "Ateba",
@@ -11,7 +11,10 @@
     {
       "spelling": "Ateba",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["cameroon-decree-2025-357-ateba"]
+        }
       ]
     }
   ],
@@ -25,7 +28,7 @@
   "peoples": [
     {
       "peopleId": "PPL_EWONDO",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -33,7 +36,7 @@
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["cameroon-decree-2025-357-ateba"]
     }
   ],
   "alliances": [],
@@ -43,37 +46,45 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
+    },
+    {
+      "sourceKey": "cameroon-decree-2025-357-ateba",
+      "title": "Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers",
+      "url": "https://minat.gov.cm/wp-content/uploads/2025/07/decree_n_2025_357_of_22_07_2025.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Décret camerounais consulté intégralement. La page 2 nomme M. ATEBA Pierre Christian. Le document atteste la graphie au Cameroun, mais ne donne ni peuple, ni étymologie, ni règle de transmission."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », ainsi que la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers », n'ont livré aucune étymologie ni chronique attribuable au nom lui-même. Les rapprochements plausibles non sourcés ont été écartés."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ateba à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Ateba."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », complétée par les mots-clés « transmission » et « inheritance », puis la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers », n'a pas établi de règle de transmission propre à ce nom ; la valeur « other » est donc conservée plutôt qu'une règle familiale supposée."
     }
   ]
 }

@@ -33,6 +33,11 @@
         "claim": "Une étude onomastique décrit Ali parmi les noms personnels arabes empruntés dans de nombreuses communautés musulmanes ; cette diffusion générale ne prouve pas, à elle seule, une transmission spécifique chez les Afar, Somali, Arabes d'Afrique ou Comoriens.",
         "claimStatus": "established",
         "sourceRefs": ["ali-aljarf-2023"]
+      },
+      {
+        "claim": "Le Dictionary of American Family Names, reproduit par FamilySearch, rattache également le patronyme arabe au nom personnel ʿAlī, décrit comme signifiant « élevé », « noble » ou « sublime ».",
+        "claimStatus": "established",
+        "sourceRefs": ["familysearch-ali"]
       }
     ]
   },
@@ -108,6 +113,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Reima Al-Jarf, Journal of Gender, Culture and Society 3(1), 2023. L'article a été vérifié sur la page de l'éditeur ; il cite Ali parmi les noms arabes diffusés et adaptés dans des communautés musulmanes non arabophones. Il ne fournit pas d'attestation propre aux quatre peuples de cette fiche."
+    },
+    {
+      "sourceKey": "familysearch-ali",
+      "title": "Ali Name Meaning and Ali Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=ali",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice consultée intégralement. FamilySearch reproduit l'entrée du Dictionary of American Family Names (Oxford University Press, 2022), qui rattache le nom arabe au nom personnel ʿAlī. La notice ne suffit pas à attribuer tous les porteurs africains à un même peuple."
     }
   ],
   "gaps": [

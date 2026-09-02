@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_BAHATI",
   "nameMain": "Bahati",
@@ -11,7 +11,10 @@
     {
       "spelling": "Bahati",
       "attestations": [
-        { "countryId": "COD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "COD",
+          "sourceRefs": ["bahati-shamamba-2023-south-kivu"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice communautaire consultée glose Bahati par « chance » ou « bonne fortune » en swahili et le rapproche du persan bakht ; faute de référence bibliographique propre, cette analyse reste revendiquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-bahati"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_SWAHILI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["behindthename-bahati"]
     }
   ],
   "countries": [
     {
       "countryId": "COD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bahati-shamamba-2023-south-kivu"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "bahati-shamamba-2023-south-kivu",
+      "title": "Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo",
+      "url": "https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2023.1277031/full",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Dieudonné Bahati Shamamba et al., Frontiers in Sustainable Food Systems 7, 2023, DOI 10.3389/fsufs.2023.1277031. Texte intégral consulté. L'affiliation de l'auteur à Bukavu atteste Bahati comme composant d'un nom public en RDC ; l'article ne traite ni de son étymologie, ni d'une appartenance swahilie, ni de sa transmission."
+    },
+    {
+      "sourceKey": "behindthename-bahati",
+      "title": "Meaning, origin and history of the name Bahati",
+      "url": "https://www.behindthename.com/name/bahati/",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Notice communautaire dédiée consultée intégralement. Elle donne l'usage swahili et la glose « chance, bonne fortune », avec un rapprochement au persan bakht, mais sans bibliographie propre à l'entrée. La glose reste donc une attribution revendiquée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bahati à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bahati."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'ont pas établi de lignée homonyme d'origine distincte."
     }
   ]
 }
