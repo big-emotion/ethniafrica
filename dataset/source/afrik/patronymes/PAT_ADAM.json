@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Dossier français distinguant les attestations de Adam chez les Four et aux Seychelles d'une origine commune non établie."
+    "directives": "Dossier français distinguant les attestations de Adam chez les Four et aux Seychelles d'une origine commune non établie. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_ADAM",
   "nameMain": "Adam",
@@ -32,6 +32,11 @@
         "claim": "Dans l'usage soudanais documenté, Adam peut occuper l'un des éléments d'une chaîne de noms personnels formée par le nom du porteur, celui du père et celui du grand-père ; ce n'est pas un nom de famille héréditaire.",
         "claimStatus": "established",
         "sourceRefs": ["verney-2019-sudan-names"]
+      },
+      {
+        "claim": "Pour le patronyme européen, le Dictionary of American Family Names rattache Adam au prénom biblique Adam, lui-même expliqué par l'hébreu générique pour « homme » et rapproché de adama (« terre »). Cette analyse ne doit pas être transférée au système non héréditaire associé aux Four/Fur dans la même fiche.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-adam-2022"]
       }
     ]
   },
@@ -82,6 +87,22 @@
       "tier": "official",
       "source_kind": "government",
       "notes": "Communiqué de la présidence des Seychelles du 3 juillet 2026 qui atteste la graphie Adam dans le nom de Ziggy Adam. Il n'établit pas l'appartenance créole du porteur."
+    },
+    {
+      "sourceKey": "seychelles-civil-status-act-2022",
+      "title": "Civil Status Act, Chapter 34 — section 39B, Surname of child",
+      "url": "https://seylii.org/akn/sc/act/1883/4/eng@2022-11-01/source",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Version consolidée au 1er novembre 2022. La section 39B permet, lorsque les parents portent des noms différents et sont tous deux inscrits, de choisir le nom de la mère, celui du père ou les deux. Utilisé pour qualifier la transmission d'élective, non pour une étymologie."
+    },
+    {
+      "sourceKey": "dafn-adam-2022",
+      "title": "Adam Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/adam?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice couvre le patronyme européen ; elle ne caractérise pas le patronyme non héréditaire associé aux Four/Fur."
     }
   ],
   "gaps": [

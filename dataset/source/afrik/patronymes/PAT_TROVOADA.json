@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_TROVOADA",
   "nameMain": "Trovoada",
@@ -11,12 +11,18 @@
     {
       "spelling": "Trovoada",
       "attestations": [
-        { "countryId": "STP", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "STP",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "rtp-arquivos-miguel-trovoada"
+          ]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -33,7 +39,7 @@
     {
       "countryId": "STP",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "rtp-arquivos-miguel-trovoada"]
     }
   ],
   "alliances": [],
@@ -48,32 +54,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "ohchr-stp-crc-2003",
+      "title": "Initial reports of States parties due in 1993: São Tomé and Príncipe",
+      "url": "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=wnlPh%2BG8eU62Pknyw5xbuLBEESyDSBKbuv8TN1AlTGExo3BaisIUwhHlRW4QkXzV78paKU%2BOKmKjEvn1ZMsywg%3D%3D",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Nations Unies, Comité des droits de l'enfant, CRC/C/8/Add.49, 1er décembre 2003, par. 146. Le rapport de l'État indique que la loi no 2/77 impose à l'enfant de porter les noms de sa mère et de son père."
+    },
+    {
+      "sourceKey": "rtp-arquivos-miguel-trovoada",
+      "title": "Miguel Trovoada",
+      "url": "https://arquivos.rtp.pt/conteudos/miguel-trovoada/",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Notice audiovisuelle de RTP Arquivos consacrée à Miguel Trovoada et à São Tomé-et-Príncipe. Utilisée comme attestation documentaire du patronyme dans le pays ; elle ne donne pas son étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe ont été consultés. Ils attestent le nom ou décrivent le fonds disponible, mais n'ont livré ni étymologie publiée ni chronique attribuable à une lignée précise ; l'origine reste donc vide."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Trovoada à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Trovoada. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     }
   ]
 }
