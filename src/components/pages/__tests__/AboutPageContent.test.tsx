@@ -2,9 +2,13 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
-import { ACCESS_MODE_LABELS, ACCESS_MODES } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  ACCESS_MODES,
+  MODULE_DEFINITIONS,
+} from "@/lib/hubs/moduleRegistry";
 import { modulesNamedIn } from "@/test/axisModuleVocabulary";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getLocalizedRoute, type PageType } from "@/lib/routing";
 
 const renderAbout = () => render(<AboutPageContent language="fr" />);
 
@@ -36,28 +40,36 @@ describe("AboutPageContent (REQ-132)", () => {
     );
   });
 
+  /**
+   * Derived from the registry rather than written out, which is the whole
+   * point: the hand-kept list said five for as long as the corpus had six.
+   * Langue shipped, then Nom shipped, and this page — the one that answers
+   * "what is in EthniAfrica" — went on naming the four it opened with plus
+   * Appellations.
+   *
+   * The criterion is a corpus class, not an atlas module: `recherche` is on
+   * the axis and is a way in, not a thing the corpus holds, and it is the one
+   * atlas module with no `dataSource`.
+   */
   // @req REQ-132
-  it("names the five distinct families of content in the corpus", () => {
+  it("gives every corpus class of the atlas a card", () => {
     renderAbout();
 
     const families = screen.getByTestId("about-content-families");
-    for (const family of [
-      "Peuples",
-      "Langues",
-      "Familles linguistiques",
-      "Pays",
-      "Appellations",
-    ]) {
-      expect(
-        within(families).getByRole("heading", { level: 3, name: family })
-      ).toBeTruthy();
-    }
+    const corpusClasses = MODULE_DEFINITIONS.filter(
+      (module) => module.accessMode === "atlas" && module.dataSource
+    );
 
-    expect(
-      within(families).getByRole("link", {
-        name: "Parcourir les appellations",
-      })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+    expect(corpusClasses.length).toBeGreaterThanOrEqual(6);
+
+    for (const corpusClass of corpusClasses) {
+      const href = getLocalizedRoute("fr", corpusClass.page as PageType);
+      const links = within(families)
+        .getAllByRole("link")
+        .filter((link) => link.getAttribute("href") === href);
+
+      expect(links.length, `no card links to ${href}`).toBeGreaterThan(0);
+    }
   });
 
   // @req REQ-132

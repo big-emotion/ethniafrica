@@ -32,13 +32,13 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
       title: "À propos",
       overview: {
         eyebrow: "Le projet",
-        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples d’Afrique et aux pays, langues, familles linguistiques et appellations documentés par le corpus.",
-        body: "Le corpus relie ces cinq types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
+        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples d’Afrique et aux pays, langues, familles linguistiques, appellations et noms documentés par le corpus.",
+        body: "Le corpus relie ces six types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
       },
       contentFamilies: {
         title: "Ce que contient EthniAfrica",
         intro:
-          "Cinq objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
+          "Six objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
         items: [
           {
             title: "Peuples",
@@ -52,7 +52,12 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             title: "Langues",
             description:
               "Les langues sont présentées comme des objets propres et reliées aux peuples et aux familles concernées.",
-            accentClass: "afh-accent-perv",
+            // The one card that named a class and offered no way into it: it
+            // was written before the languages index existed (ETNI-1802), and
+            // nothing sent the reader there once it did.
+            accentClass: "afh-accent-language",
+            page: "languages" as PageType,
+            linkLabel: "Parcourir les langues",
           },
           {
             title: "Familles linguistiques",
@@ -78,6 +83,18 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             page: "names" as PageType,
             linkLabel: "Parcourir les appellations",
           },
+          {
+            title: "Nom",
+            // Distinct from Appellations directly above, and the page is where
+            // a reader is most likely to conflate the two: one names a people,
+            // the other names a person. Said here rather than left to the two
+            // titles to imply.
+            description:
+              "Les systèmes de nommage des personnes — noms de clan, nisba, noms d’éloge — qui ne se lisent pas tous comme un nom de famille européen.",
+            accentClass: "afh-accent-name",
+            page: "patronymes" as PageType,
+            linkLabel: "Parcourir les noms",
+          },
         ],
       },
       accessModes: {
@@ -93,7 +110,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           {
             id: "atlas" as AccessMode,
             description:
-              "Les fiches du site : pays, peuples, familles linguistiques et appellations, plus la recherche libre.",
+              "Les fiches du site : familles, langues, peuples, pays, appellations et noms, plus la recherche libre.",
             accentClass: "afh-accent-ocre",
           },
           {
