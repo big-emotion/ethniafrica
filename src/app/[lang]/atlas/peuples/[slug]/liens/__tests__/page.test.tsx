@@ -159,6 +159,26 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     expect(metadata.title).toBeTruthy();
   });
 
+  // A rejection here cannot become a status: metadata settles after the
+  // Suspense shell and its `200` are on the wire, so Next drops the metadata
+  // instead and the page renders with no `<title>` at all. axe reports that as
+  // a serious `document-title` violation, which is what this route did during
+  // the corpus outage.
+  // @req REQ-097 FR72
+  it("still titles the page when the corpus read fails", async () => {
+    mockGetPeopleById.mockRejectedValue(
+      Object.assign(new Error("This operation was aborted"), {
+        name: "AbortError",
+      })
+    );
+
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "fr", slug: "PPL_YORUBA" }),
+    });
+
+    expect(metadata.title).toBeTruthy();
+  });
+
   // Epic 11, Story 11.11 (FR75, NFR1, UX-DR46, AR20): the graph is lazy
   // (next/dynamic ssr:false) and must never delay or reorder the SSR list.
   describe("ego-network graph integration (11.11)", () => {

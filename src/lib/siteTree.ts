@@ -241,6 +241,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           label: "API publique v2",
           note: "Le corpus en JSON, sous licence ouverte.",
         },
+        {
+          href: `/${language}/contact`,
+          label: "Contact",
+          note: "Écrire à l'équipe qui publie l'atlas.",
+        },
         { href: `/${language}/accessibilite`, label: "Accessibilité" },
         { href: `/${language}/mentions-legales`, label: "Mentions légales" },
         {

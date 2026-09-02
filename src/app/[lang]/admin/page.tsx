@@ -60,6 +60,10 @@ const KIND_OPTIONS = [
   { value: "offensive", label: "Contenu offensant" },
   { value: "correction-proposal", label: "Proposition de correction" },
   { value: "other", label: "Autre" },
+  // Not a report on an existing claim but a proposal for content the corpus
+  // does not hold — filed here since the /admin/contributions console was
+  // retired, and read-only: see ModerationQueue.
+  { value: "contribution", label: "Contribution" },
 ] as const;
 
 const ENTITY_OPTIONS = [

@@ -55,21 +55,19 @@ export function ContributionFormFields({
       try {
         if (category === "people") {
           const [peoplesRes, familiesRes] = await Promise.all([
-            fetch("/api/contributions/entities/peoples"),
-            fetch("/api/contributions/entities/language-families"),
+            fetch("/api/entities/peoples"),
+            fetch("/api/entities/language-families"),
           ]);
           const peoplesData = await peoplesRes.json();
           const familiesData = await familiesRes.json();
           setEntities(peoplesData.peoples || []);
           setFamilies(familiesData.families || []);
         } else if (category === "country") {
-          const res = await fetch("/api/contributions/entities/countries");
+          const res = await fetch("/api/entities/countries");
           const data = await res.json();
           setEntities(data.countries || []);
         } else if (category === "language_family") {
-          const res = await fetch(
-            "/api/contributions/entities/language-families"
-          );
+          const res = await fetch("/api/entities/language-families");
           const data = await res.json();
           setEntities(data.families || []);
         }
@@ -92,11 +90,11 @@ export function ContributionFormFields({
       try {
         let url = "";
         if (category === "people") {
-          url = `/api/contributions/entities/people/${selectedEntityId}`;
+          url = `/api/entities/people/${selectedEntityId}`;
         } else if (category === "country") {
-          url = `/api/contributions/entities/country/${selectedEntityId}`;
+          url = `/api/entities/country/${selectedEntityId}`;
         } else if (category === "language_family") {
-          url = `/api/contributions/entities/language-family/${selectedEntityId}`;
+          url = `/api/entities/language-family/${selectedEntityId}`;
         }
 
         const res = await fetch(url);

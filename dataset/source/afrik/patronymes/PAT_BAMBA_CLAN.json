@@ -79,7 +79,10 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Le dictionnaire des jamuw localise l'entrée Bánbà à Sikasso et lui donne deux statuts, nùmu (forgeron) et hɔ́rɔn (condition libre, non artisanale). Le jamu porte donc bien un statut, que les listes de Charry ne relevaient pas.",
+    "sourceRefs": ["bamadaba-jamuw"]
+  },
   "bearers": [],
   "homonyms": [
     {
@@ -114,20 +117,24 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Rapprochement établi par la passe elle-même, non repris d'une source consultée. Étiqueté conformément à la doctrine des tiers : texte généré, donc unverified x ai_generated, soit un poids de confiance de 0,2. Sert aux seuls constats de non-recouvrement entre deux traditions de nomination, jamais à porter une étymologie ni une généalogie. Une source dédiée reste due sur chacun des points qu'il couvre."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Aucune paire de sanankuya nommant les Bamba n'a été trouvée."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Bamba ne figure dans aucune des listes de lignages numu, jeli ou horon que Charry énumère : le nom n'a été rattaché à aucun statut par les sources consultées."
+      "reason": "Le dictionnaire des jamuw donne à l'entrée Bánbà trois senankun : Kane, les Peuls et les Songhaï. Les deux derniers sont des peuples et non des patronymes ; Kane n'a pas de fiche dans le lot, et le schéma n'enregistre une paire que si les deux patronymes en ont une. La recherche a donc trouvé des senankun sans qu'aucun soit inscriptible."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de l'homonymie signalée plus haut et non de ce jamu."
+      "reason": "Aucun porteur décédé n'a été rattaché au jamu par les sources de cette passe : ni l'Histoire générale de l'Afrique, qui ne connaît le mot Bamba que comme toponyme, ni le dictionnaire des jamuw, qui localise l'entrée à Sikasso sans nommer personne. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de l'homonymie signalée plus haut et non de ce jamu."
     }
   ]
 }

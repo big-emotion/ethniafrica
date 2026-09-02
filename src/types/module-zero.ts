@@ -62,7 +62,8 @@ export interface FlagRow {
     | "broken-url"
     | "offensive"
     | "correction-proposal"
-    | "other";
+    | "other"
+    | "contribution";
   reason_text: string | null;
   status:
     | "open"
@@ -88,4 +89,10 @@ export interface FlagRow {
   assertion_id: string | null;
   /** Optional field path within the assertion being flagged. */
   assertion_field_path: string | null;
+  /**
+   * The structured proposal behind a `contribution`, NULL for every other kind.
+   * Read by the moderator's console only — it carries the name and address the
+   * contributor left, which the public API never returns (migration 081).
+   */
+  contribution_payload: Record<string, unknown> | null;
 }

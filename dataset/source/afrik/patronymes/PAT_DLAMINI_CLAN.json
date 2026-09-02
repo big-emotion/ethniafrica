@@ -66,9 +66,27 @@
       "status": "deceased",
       "displayName": "Sobhuza II",
       "sourceRefs": ["un-eswatini-country-facts"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Nyanya, fils de Sogidi, chef du petit clan aba-kwa-Dlamini de l'emBekamuzi, tué par Dingiswayo",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Cintsi, arrière-petit-fils de Nyanya, tué sans postérité à la bataille d'eNdondakusuka",
+      "sourceRefs": ["bryant-1929-olden-times"]
     }
   ],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Le Dlamini de l'ekuNene",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Bryant met en regard trois généalogies dlamini — celle des Hlubi, celle des Swazi et celle de l'ekuNene — et déclare ne pouvoir les faire concorder. Il conjecture que le Dlamini des Hlubi est le Dlamini Ier de la liste swazie, mais tient que celui de l'ekuNene « doit avoir été un tout autre individu ». Le même isibongo recouvre donc au moins deux ancêtres éponymes distincts, et l'aveu d'irréductibilité vient de la source elle-même, non d'un défaut de lecture.",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "corpus-ppl-swazi-organisation",
@@ -101,20 +119,24 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Zwane, Celani Lucky, Department of African Languages, University of South Africa ; English Linguistics Research 9(3), Sciedu Press, 2020. Analyse morphémique des isibongo à partir de 50 entretiens dans le Kwahlathi Tribal Authority (Ladysmith, KwaZulu-Natal). Réserve : l'article glose Khumalo deux fois de façon divergente (§ 6.5.1 « mâcher ceci à sec », § 6.7.1 « manger ceci cru ») ; ses gloses par nom sont donc citées comme revendiquées, non comme établies."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
+      "reason": "Bryant documente pour ce clan une alliance nommée : après que Dingiswayo eut tué Nyanya, les Dlamini de l'emBekamuzi jugèrent prudent de sacrifier leur indépendance et de se placer sous le chef mbatha voisin, Mangcengeza, fils de Kali. L'alliance nguni entre clans nommés existe donc bel et bien. Le champ reste vide parce que targetPatronymeId doit désigner un PAT_ existant et que les Mbatha n'ont pas de fiche."
     },
     {
       "fieldPath": "casteOrSocialFunction",
       "reason": "Clan royal de l'Eswatini : la royauté n'est pas une fonction héréditaire de caste au sens du champ."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Dlamini est porté dans les branches xhosa, zoulou, swazi et sotho du groupe nguni ; faute de source établissant des origines distinctes, ces branches ne sont pas traitées comme des homonymes."
     }
   ]
 }

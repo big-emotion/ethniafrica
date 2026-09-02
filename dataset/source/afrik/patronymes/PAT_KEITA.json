@@ -138,7 +138,12 @@
     {
       "targetPatronymeId": "PAT_COULIBALY",
       "allianceType": "sanankuya",
-      "sourceRefs": ["segoublog-sanankuya"]
+      "sourceRefs": ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"]
+    },
+    {
+      "targetPatronymeId": "PAT_FOFANA",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
     }
   ],
   "casteOrSocialFunction": null,
@@ -182,16 +187,32 @@
       "tier": "unverified",
       "source_kind": "community",
       "notes": "Blog malien. Cité pour les paires de sanankuya nommées (Traoré/Diarra, Keïta/Coulibaly) ; le pacte est rapporté comme remontant à Soundiata, ce que la source n'établit pas elle-même."
+    },
+    {
+      "sourceKey": "gha-v-16-18",
+      "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_v",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; consulté sur le texte intégral. Chapitre 12, « From the Niger to the Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali (Kurubari) et les Keita ou les Ture, donné comme indice de relations anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu « pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, assortie par la source elle-même de la mention qu'il en existe d'autres (p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma (p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du Liberia et de la Sierra Leone (p. 375-377)."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
     }
   ],
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. L'absence de fonction héréditaire est donc ici un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
+      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. Le dictionnaire des jamuw va dans le même sens par son silence : l'entrée Kéyità est l'une des rares du bloc mandé à ne porter aucun marqueur de statut, là où Traoré, Coulibaly, Camara, Diabaté, Kouyaté, Bamba et Fofana en portent tous au moins un. L'absence de fonction héréditaire est donc un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu est porté bien au-delà de la descendance dynastique, par affiliation et par adoption, mais c'est là une extension du même nom et non une seconde origine."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu est porté bien au-delà de la descendance dynastique, par affiliation et par adoption, mais c'est là une extension du même nom et non une seconde origine. Le dictionnaire des jamuw réunit de même Kéyità, Kétà et Kɛ́yità sous une entrée unique et range Souma, Koné et Beawɔgi parmi ses équivalences."
     }
   ]
 }

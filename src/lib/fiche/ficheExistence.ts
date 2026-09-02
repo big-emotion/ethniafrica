@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { logger } from "@/lib/api/logger";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import { getPeopleById } from "@/api/v2/services/peopleService";
@@ -53,3 +54,38 @@ export const loadPeopleFiche = perRequest(async (id: string) =>
 export const loadLanguageFamilyFiche = perRequest(async (id: string) =>
   getLanguageFamilyById(id)
 );
+
+/**
+ * Whether the corpus positively says this fiche is not there.
+ *
+ * The existence check has three outcomes, not two, and the third one is the
+ * reason this function exists: the read can fail. Collapsing that into "absent"
+ * would answer a 404 to a fiche that is merely unreachable, but the worse cost
+ * is the one paid on the way — a rejection thrown out of `generateMetadata`.
+ *
+ * The Suspense boundary that makes the check necessary is also what makes the
+ * rejection expensive. By the time metadata settles, the shell and its `200`
+ * are already on the wire, so Next cannot turn the failure into a status; it
+ * drops the resolved metadata instead. The page keeps rendering and the
+ * document ends up with no `<title>` whatsoever — not even the root layout's,
+ * since a page's metadata and everything it inherits resolve together. axe
+ * reports that as a serious `document-title` violation, which is how the four
+ * atlas fiche routes failed the accessibility gate for hours while the corpus
+ * was unreachable, on branches that had touched none of this.
+ *
+ * So a failed read answers `false`: the fiche keeps its metadata, and the page
+ * body — which reads the corpus again for its own content — is left to surface
+ * the failure where a failure can still be shown.
+ */
+// @req REQ-019
+export async function isFicheKnownAbsent<T>(
+  load: (id: string) => Promise<T | null>,
+  id: string
+): Promise<boolean> {
+  try {
+    return (await load(id)) == null;
+  } catch (error) {
+    logger.error(`Fiche existence check failed for ${id}`, error);
+    return false;
+  }
+}

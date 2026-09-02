@@ -38,7 +38,7 @@ export const applyCorsHeaders = (response: Response) => {
   // Origin at all. The former "*" fallback was worse than useless: paired with
   // Allow-Credentials every browser rejects it outright, so credentialed calls
   // broke anyway — while a misconfigured deployment silently advertised
-  // POST /api/contributions as open to the whole web. Failing closed leaves
+  // POST /api/v2/flags as open to the whole web. Failing closed leaves
   // same-origin traffic (the frontend) untouched, since CORS never applies to
   // it, and makes the missing variable visible as a blocked cross-origin call.
   if (origin) {

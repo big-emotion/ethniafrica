@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadPeopleFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadPeopleFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getPeopleRoute } from "@/lib/routing";
@@ -70,11 +73,9 @@ export async function generateMetadata({
   const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
   if (
     parsedForExistence?.mode === "live" &&
-    !(await loadPeopleFiche(parsedForExistence.slug))
+    (await isFicheKnownAbsent(loadPeopleFiche, parsedForExistence.slug))
   ) {
-    {
-      notFound();
-    }
+    notFound();
   }
   return ficheCanonical("people", lang as Language, slug);
 }

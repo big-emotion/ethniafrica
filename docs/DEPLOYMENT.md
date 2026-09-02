@@ -316,8 +316,9 @@ project's Site URL. Full procedure and the failure modes:
 ## Legacy `user_roles`
 
 Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`, `moderator`,
-`admin`, `advisor`. They gate the legacy `/admin/contributions` workspace and open no
-door in the moderation console.
+`admin`, `advisor`. They gated the legacy `/admin/contributions` workspace, which was removed
+when contributions became flags (migration `081`), and they open no door in the moderation
+console — access there is membership of `admin_allowlist`. Nothing reads `user_roles` today.
 
 1. The person signs in once at `/fr/admin/connexion` so their auth account exists.
 2. Grant the role:
