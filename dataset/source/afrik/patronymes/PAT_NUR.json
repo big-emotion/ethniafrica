@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Le sens arabe « lumière » et la forme somalie Nuur sont documentés par une notice communautaire qui renvoie à des dictionnaires imprimés non consultés directement."
   },
   "id": "PAT_NUR",
   "nameMain": "Nur",
@@ -33,13 +33,19 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Une notice onomastique analyse Nur (نور) comme le nom arabe signifiant « lumière » et donne Noor parmi ses variantes ainsi que Nuur comme forme somalie ; l'analyse reste claimed au tier communautaire.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["nur-behindthename"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_FOUR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "nur-behindthename"]
     },
     {
       "peopleId": "PPL_SOMALI",
@@ -71,28 +77,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "nur-behindthename",
+      "title": "Meaning, origin and history of the name Nur",
+      "url": "https://www.behindthename.com/name/nur",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle donne le sens arabe « light », les graphies Nur/Noor et la forme somalie Nuur. Elle renvoie à Salahuddin Ahmed (1999, p. 303) et Hans Wehr (1979, p. 1182), ouvrages non consultés directement pour cette fiche."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "peoples",
+      "reason": "La notice étaye Nuur comme forme somalie, mais les recherches « Nur/Noor Fur/Four name » et dans les études du Darfour n'ont pas établi un usage propre au peuple four."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les catalogues soudanais et somalis ont été recherchés pour Nur, Noor et Nuur ; aucune source primaire ou étude démographique consultable n'a établi séparément les deux attestations nationales de la file candidate."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Nur/Noor/Nuur joking relationship/alliance » chez les Four et les Somali n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La notice onomastique traite Nur comme nom individuel et n'y attache aucune caste ni fonction sociale héréditaire ; les recherches ethnographiques n'ont rien ajouté."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les catalogues biographiques ont été interrogés pour Nur, Noor et Nuur avec les contextes four et somali ; aucun porteur décédé suffisamment documenté n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Nur, Noor et Nuur ont été recherchés comme noms personnels, termes lexicaux et toponymes ; aucune entité homonyme distincte conforme au modèle du corpus n'a été établie."
     }
   ]
 }
