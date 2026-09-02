@@ -32,6 +32,11 @@
         "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
         "claimStatus": "established",
         "sourceRefs": ["nomina-africana-nguni-naming"]
+      },
+      {
+        "claim": "Analysé morphémiquement, Dlamini se décompose en un verbe et un adjectif : dla, « manger », et emini, « à midi », soudés par élision de la voyelle initiale, d'où la lecture « manger à midi ». Le nom de clan est ici formé sur une pratique observée, comme nombre d'isibongo zoulou construits sur verbe et adjectif.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["zwane-2020-zulu-clan-names"]
       }
     ]
   },
@@ -88,6 +93,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "zwane-2020-zulu-clan-names",
+      "title": "The Morphological Analysis of Zulu Clan Names",
+      "url": "https://doi.org/10.5430/elr.v9n3p36",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Zwane, Celani Lucky, Department of African Languages, University of South Africa ; English Linguistics Research 9(3), Sciedu Press, 2020. Analyse morphémique des isibongo à partir de 50 entretiens dans le Kwahlathi Tribal Authority (Ladysmith, KwaZulu-Natal). Réserve : l'article glose Khumalo deux fois de façon divergente (§ 6.5.1 « mâcher ceci à sec », § 6.7.1 « manger ceci cru ») ; ses gloses par nom sont donc citées comme revendiquées, non comme établies."
     }
   ],
   "gaps": [

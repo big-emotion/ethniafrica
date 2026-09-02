@@ -107,15 +107,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Fofana ne figure ni dans les lignages numu ni dans les lignages jeli que Charry énumère, ni parmi les jamuw horon qu'il nomme : le nom n'a été rattaché à aucun statut par les sources consultées, ce qui laisse la question ouverte plutôt que tranchée par la négative."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Fofana est porté dans les aires mandingue et soninké sans qu'une source dédiée établisse deux origines distinctes."
     }
   ]
 }

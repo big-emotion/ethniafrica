@@ -69,15 +69,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée pour ce lignage."
+      "reason": "Aucune fonction héréditaire attestée pour ce lignage : l'oríkì orílẹ̀ dit l'origine et les fondateurs, non un métier transmis."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au lignage par une source dédiée lors de la passe."
+      "reason": "Une louange de lignage se récite pour le groupe et non pour un individu : les fondateurs qu'elle nomme ne sont pas datés par la source consultée, et aucun porteur décédé n'a donc pu être établi."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée. Un même oríkì orílẹ̀ pouvant être partagé par plusieurs familles se réclamant de la même localité d'origine, une homonymie ne se distinguerait ici d'une origine commune que par une source dédiée, qui manque."
     }
   ]
 }

@@ -74,15 +74,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan. Sibanda est aujourd'hui surtout porté au Zimbabwe, où il est donné aussi bien dans des familles ndébélé que sotho, ce qui écarte l'hypothèse d'un corps de spécialistes propre à un clan."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Le texte intégral de Bryant, qui est la source de référence pour les clans nguni orientaux, ne contient aucune occurrence de Sibanda : le nom relève de l'aire ndébélé du Zimbabwe, hors du champ géographique que Bryant couvre. Aucun porteur décédé n'a donc pu être établi."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "L'absence de Sibanda chez Bryant est elle-même le résultat de la recherche : faute de chronique clanique le suivant lignée par lignée, les origines multiples que suggèrent les répertoires communautaires ne peuvent être ni distinguées ni écartées."
     }
   ]
 }

@@ -187,11 +187,11 @@
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Clan royal de statut horon : la royauté n'est pas une fonction héréditaire de caste au sens du champ."
+      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. L'absence de fonction héréditaire est donc ici un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu est porté bien au-delà de la descendance dynastique, par affiliation et par adoption, mais c'est là une extension du même nom et non une seconde origine."
     }
   ]
 }
