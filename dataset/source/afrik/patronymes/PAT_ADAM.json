@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_ADAM",
   "nameMain": "Adam",
@@ -11,8 +11,14 @@
     {
       "spelling": "Adam",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "SYC", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "SYC",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -21,7 +27,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Pour le patronyme européen, le Dictionary of American Family Names rattache Adam au prénom biblique Adam, lui-même expliqué par l'hébreu générique pour « homme » et rapproché de adama (« terre »). Cette analyse peut éclairer la forme seychelloise, mais ne doit pas être transférée au système non héréditaire associé aux Four/Fur dans la même fiche.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-adam-2022"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -59,32 +71,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "seychelles-civil-status-act-2022",
+      "title": "Civil Status Act, Chapter 34 — section 39B, Surname of child",
+      "url": "https://seylii.org/akn/sc/act/1883/4/eng@2022-11-01/source",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Version consolidée au 1er novembre 2022. La section 39B permet, lorsque les parents portent des noms différents et sont tous deux inscrits, de choisir le nom de la mère, celui du père ou les deux. Utilisé pour qualifier la transmission d'élective, non pour une étymologie."
+    },
+    {
+      "sourceKey": "dafn-adam-2022",
+      "title": "Adam Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/adam?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice couvre le patronyme européen ; elle ne caractérise pas le patronyme non héréditaire associé aux Four/Fur."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Adam », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Adam à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Adam », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs d'Adam. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Adam », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "les résultats exacts « Adam », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     },
     {
       "fieldPath": "nameSystem",
-      "reason": "La file d'attente classe ce nom sous deux systèmes selon le pays — non_hereditary_patronymic (SDN) ; clan_name (SYC). La valeur la plus fréquente (non_hereditary_patronymic) a été retenue pour que la fiche existe ; l'arbitrage revient à la revue, et peut conclure qu'il s'agit de deux noms homographes."
+      "reason": "La notice du Dictionary of American Family Names établit Adam comme patronyme européen formé sur un prénom, tandis que l'association au peuple Four/Fur demeure uniquement portée par la file de candidats non vérifiée. La fiche couvre donc encore deux systèmes incompatibles ; la valeur non_hereditary_patronymic est conservée sans transférer l'analyse seychelloise aux Four/Fur."
     }
   ]
 }
