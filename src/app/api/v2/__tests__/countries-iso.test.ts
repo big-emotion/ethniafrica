@@ -35,6 +35,7 @@ describe("API v2 - Single Country Route", () => {
         id: "ZWE",
         nameFr: "Zimbabwe",
         content: {},
+        patronymes: { attested: [], borneByPeoples: [] },
       };
       const mockResponse = {
         data: mockCountry,
