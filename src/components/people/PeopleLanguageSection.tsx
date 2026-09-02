@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import type { PeopleLanguageData } from "@/lib/peopleDataTransformer";
 import { ProseWithChip } from "./ProseWithChip";
 import type { LanguageChips } from "./ProseWithChip";
@@ -7,12 +8,15 @@ import { getFamilyRoute } from "@/lib/routing";
 interface PeopleLanguageSectionProps {
   data: PeopleLanguageData;
   chips?: LanguageChips;
+  /** One note callout per sourced field, keyed as `chips` is. */
+  notes?: Partial<Record<string, ParagraphNoteData>>;
 }
 
 // @req REQ-091
 export function PeopleLanguageSection({
   data,
   chips,
+  notes,
 }: PeopleLanguageSectionProps) {
   const hasContent =
     data.mainLanguage ||
@@ -88,6 +92,7 @@ export function PeopleLanguageSection({
             <ProseWithChip
               text={data.vehicularRole}
               chip={chips?.vehicularRole}
+              note={notes?.vehicularRole}
             />
           </dd>
         </div>

@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import {
@@ -32,15 +35,48 @@ describe("directory accent scale — one hue per entity", () => {
    * Peoples takes terre here and not on a fiche, where terre is reserved for
    * IdentityPanel's colonial marker. Two scales, deliberately — and the reason
    * this one keeps the word "directory" after the directories went away.
+   *
+   * The case used to assert three entities and three hues, which conflated two
+   * claims. The one the charter makes is that the categorical set is closed at
+   * four (§5.2); the one the code satisfied by accident is one hue per entity,
+   * and that stopped being true when the name axis joined — `.afh-accent-name`
+   * aliases ocre, as `color.css` decided for the name fiche. What has to stay
+   * true is one *class* per entity: the distinct selector is what lets a "no
+   * foreign accent on this page" check tell a name's own scope from a
+   * country's leaking into it.
    */
   // @req REQ-091
-  it("gives each entity a distinct hue, and covers every one it declares", () => {
+  it("gives each entity its own class, and covers every one it declares", () => {
     const entities = Object.keys(
       DIRECTORY_ACCENT_CLASS
     ) as DirectoryEntityType[];
 
-    expect(entities).toHaveLength(3);
-    expect(new Set(Object.values(DIRECTORY_ACCENT_CLASS)).size).toBe(3);
+    expect(entities).toHaveLength(FACETS.length);
+    expect(new Set(Object.values(DIRECTORY_ACCENT_CLASS)).size).toBe(
+      entities.length
+    );
+  });
+
+  /**
+   * And the hues behind those classes stay inside the closed categorical set.
+   * Read from the stylesheet rather than restated here, so the palette has one
+   * source of truth and this cannot drift from it.
+   */
+  // @req REQ-091
+  it("resolves every class to one of the four categorical hues", () => {
+    const css = readFileSync(
+      join(__dirname, "..", "..", "..", "styles", "tokens", "color.css"),
+      "utf8"
+    );
+
+    for (const accentClass of Object.values(DIRECTORY_ACCENT_CLASS)) {
+      const block = css.slice(css.indexOf(`.${accentClass} {`));
+      const declaration = block.slice(0, block.indexOf("}"));
+
+      expect(declaration, `${accentClass} declares no --accent`).toMatch(
+        /--accent:\s*var\(--afh-cat-(ocre|teal|terre|perv)\)/
+      );
+    }
   });
 
   /**

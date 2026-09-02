@@ -2,12 +2,15 @@ import {
   hasCultureContent,
   type PeopleCultureData,
 } from "@/lib/peopleDataTransformer";
+import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "./ProseWithChip";
 import type { CultureChips } from "./ProseWithChip";
 
 interface PeopleCultureGridProps {
   data: PeopleCultureData;
   chips?: CultureChips;
+  /** One note callout per sourced field, keyed as `chips` is. */
+  notes?: Partial<Record<string, ParagraphNoteData>>;
 }
 
 /**
@@ -26,7 +29,11 @@ const FIELDS = [
 }>;
 
 // @req REQ-003
-export function PeopleCultureGrid({ data, chips }: PeopleCultureGridProps) {
+export function PeopleCultureGrid({
+  data,
+  chips,
+  notes,
+}: PeopleCultureGridProps) {
   if (!hasCultureContent(data)) return null;
   const present = FIELDS.filter(({ key }) => Boolean(data[key]));
 
@@ -36,7 +43,11 @@ export function PeopleCultureGrid({ data, chips }: PeopleCultureGridProps) {
         <div key={key}>
           <dt className="people-section-label">{label}</dt>
           <dd className="afh-prose-def">
-            <ProseWithChip text={data[key] as string} chip={chips?.[key]} />
+            <ProseWithChip
+              text={data[key] as string}
+              chip={chips?.[key]}
+              note={notes?.[key]}
+            />
           </dd>
         </div>
       ))}

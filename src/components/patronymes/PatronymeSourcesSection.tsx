@@ -44,13 +44,19 @@ export function PatronymeSourcesSection({
       id="sources"
     >
       {sources.length > 0 ? (
-        <ul>
+        <ul className="afh-sources">
           {sources.map((source) => (
-            <li key={source.title}>
-              <PatronymeSourceCitation source={source} />
-              {source.notes ? (
-                <span className="afh-parchment-note"> {source.notes}</span>
-              ) : null}
+            <li key={source.title} className="afh-source-row">
+              {/* The shared citation carries a title, a URL and a standing, and
+                  deliberately not the corpus's per-source `notes` — those are a
+                  patronyme-fiche field, not part of a citation. So the note
+                  stays here, inside the row's own cell. */}
+              <span>
+                <PatronymeSourceCitation source={source} />
+                {source.notes ? (
+                  <span className="afh-parchment-note"> {source.notes}</span>
+                ) : null}
+              </span>
             </li>
           ))}
         </ul>

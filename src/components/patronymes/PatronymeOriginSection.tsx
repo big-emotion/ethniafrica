@@ -61,8 +61,8 @@ export function PatronymeOriginSection({
       {strands.length > 0 ? (
         strands.map((strand) => (
           <div key={strand.label}>
-            <h3>{strand.label}</h3>
-            <ul>
+            <h3 className="afh-prose-heading">{strand.label}</h3>
+            <ul className="afh-prose-list">
               {strand.accounts.map((account) => (
                 <li key={account.claim}>
                   {account.claim}

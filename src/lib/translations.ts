@@ -206,8 +206,23 @@ export const translations = {
     },
     names: {
       pageTitle: "Appellations",
+      // The deck says what the page is; `purpose` below says why it exists.
+      // They used to be one sentence printed twice — once in the head band and
+      // again as the first paragraph under it — which read as a stutter and
+      // still left unsaid what a reader comes here to do.
       pageSubtitle:
-        "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
+        "Les noms sous lesquels chaque peuple d'Afrique est désigné : ceux qu'il se donne, et ceux qu'on lui a donnés.",
+      /**
+       * Why the page exists, in the reader's terms.
+       *
+       * Naming a people is contested, and the corpus takes no side: it records
+       * every attested form and says where each came from. Without this said
+       * plainly, a reader meets three thousand forms and no reason for them —
+       * and the page reads as a duplicate of the people fiches, which name one
+       * autonym each and cannot be entered from a name heard elsewhere.
+       */
+      purpose:
+        "Un peuple porte rarement un seul nom. Il en a un qu'il emploie lui-même, d'autres que ses voisins lui donnent, d'autres encore qu'une administration coloniale a fixés par écrit — et certains sont péjoratifs. Cette page les recense tous, pour qu'un nom entendu quelque part mène au peuple qu'il désigne, sans décider lequel est le bon.",
       // The note used to say the genealogy of personal names was "not covered
       // yet". It is: the patronyme fiches exist and now have their own route
       // (DEC-038), so the note points there instead of closing the door.
@@ -218,6 +233,11 @@ export const translations = {
         "Rechercher un nom (endonyme, exonyme, graphie historique...)",
       searchSubmit: "Rechercher",
       filtersLabel: "Filtrer par type de nom",
+      // The four chips are the page's own vocabulary and were glossed nowhere
+      // a reader passes through — « endonyme » and « exonyme » least of all,
+      // and they are the two that carry the page's whole argument.
+      filtersLegend:
+        "Un endonyme est le nom qu'un peuple se donne ; un exonyme, celui que d'autres lui donnent ; une graphie historique, une forme fixée par écrit à une époque ; un nom imposé, une appellation attribuée de l'extérieur.",
       filters: {
         all: "tous",
         endonym: "endonyme",
@@ -365,14 +385,12 @@ export const translations = {
       // hereditary-surname model that `nameSystem` elsewhere denies.
       nonHereditaryGuidance:
         "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
-      associationsEmpty: "Aucun peuple ou pays associé n'est documenté.",
       bearersTitle: "Porteurs et porteuses",
       // DEC-040: no code path derives a living person's ethnic origin from
       // this patronyme, and this note states that editorial guarantee to
       // the reader rather than leave it implicit in what the list omits.
       bearersEditorialNote:
         "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
-      bearersEmpty: "Aucun porteur ou porteuse n'est encore documenté.",
       roleCategoryFallback: "Rôle non renseigné",
       // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
       // listing that leads to the fiches above. Kept nested here rather than
@@ -542,10 +560,15 @@ export const translations = {
         // inside, and neither is glossed anywhere a reader passes through
         // (ETNI-857) — so the menu that is supposed to say where a click
         // lands was written in the vocabulary of the people who built it.
+        // Ordered by the corpus's own hierarchy — famille → langue → peuple →
+        // pays — then the two axes that name rather than place. Both sentences
+        // listed four of six classes, each omitting a different pair, so a
+        // reader met a different atlas depending on whether they read the menu
+        // or the page under it.
         blurb:
-          "L'axe des fiches : peuples, pays, langues et familles linguistiques, chacun sous la sienne.",
+          "L'axe des fiches : familles linguistiques, langues, peuples, pays, appellations et noms, chacun sous la sienne.",
         menuBlurb:
-          "Les fiches de pays, de peuples, de familles linguistiques et d'appellations, plus la recherche.",
+          "Les fiches de familles, langues, peuples, pays, appellations et noms, plus la recherche.",
         hubEntryName: "Le hub d'exploration",
       },
       dossiers: {

@@ -2,6 +2,8 @@
 
 import React, { lazy, Suspense, useState } from "react";
 import { FicheProse } from "@/components/fiche/FicheProse";
+import { SourceNoteCall } from "@/components/source-transparency/SourceNoteCall";
+import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import type { Source } from "@/components/source-transparency/SourceChainSheet";
 
 // Wave-2 imports — excluded from the initial bundle.
@@ -81,6 +83,78 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
   );
 }
 
+/**
+ * A sourced field: its prose, a numbered callout at the end of it, and the
+ * source chain the callout opens.
+ *
+ * The callout is rendered eagerly rather than behind Suspense like the chip.
+ * The chip is a verdict the reader can wait for; the number is part of the
+ * sentence, and a digit that appears once the lazy chunk lands reflows the
+ * paragraph under the eye that is reading it. Only the sheet stays lazy, which
+ * is where the weight actually is.
+ */
+function ProseWithNote({
+  text,
+  note,
+  anchorId,
+  paragraphClassName,
+  open,
+  onOpenChange,
+}: {
+  text: string;
+  note: ParagraphNoteData;
+  anchorId: string;
+  paragraphClassName: string;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
+  return (
+    <>
+      <FicheProse
+        text={text}
+        paragraphClassName={paragraphClassName}
+        trailing={
+          <SourceNoteCall
+            number={note.noteNumber}
+            anchorId={anchorId}
+            fieldLabel={note.fieldLabel}
+            contested={note.contested}
+            onOpen={() => onOpenChange(true)}
+          />
+        }
+      />
+      {/* Beside the prose, never inside the paragraph: the sheet is a dialog,
+          so it renders a div, and the HTML parser closes the <p> before it. */}
+      <Suspense fallback={null}>
+        <LazySourceChainSheet
+          open={open}
+          onOpenChange={onOpenChange}
+          assertion={{
+            id: note.assertionId,
+            statement: note.assertionStatement,
+            confidenceScore: 0,
+            sourceCount: note.sources.length,
+            lastHumanAuditAt: null,
+          }}
+          sources={note.sources.map((source) => ({
+            id: source.id,
+            title: source.title,
+            url: source.url ?? undefined,
+            author: source.author ?? undefined,
+            year: source.year ?? undefined,
+            // An untiered source keeps its own standing rather than being
+            // folded onto "unverified", which would state a judgement no
+            // editor made.
+            tier: source.tier ?? "needs_review",
+            bibliographyNumber: note.numberBySourceId[source.id],
+          }))}
+          anchorId={anchorId}
+        />
+      </Suspense>
+    </>
+  );
+}
+
 // ---------------------------------------------------------------------------
 // ProseWithChip
 // ---------------------------------------------------------------------------
@@ -88,6 +162,17 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
 interface ProseWithChipProps {
   text: string;
   chip?: ParagraphChipData;
+  /**
+   * A note callout for this field, when the corpus sources it.
+   *
+   * Takes precedence over `chip`: the two occupy the same character position
+   * and say different things — the chip states a confidence verdict, the
+   * callout states a reference — and a paragraph ending in both would ask the
+   * reader to tell two marks apart at six pixels tall.
+   */
+  note?: ParagraphNoteData;
+  /** Content-addressed anchor for the note, so a shared link survives an edit. */
+  noteAnchorId?: string;
   className?: string;
 }
 
@@ -103,10 +188,29 @@ interface ProseWithChipProps {
  *   The Suspense fallback also shows "voir les sources" while the lazy chunk loads.
  */
 // @req REQ-003
-export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
+export function ProseWithChip({
+  text,
+  chip,
+  note,
+  noteAnchorId,
+  className,
+}: ProseWithChipProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 
   const paraClass = className ?? "people-section-body";
+
+  if (note) {
+    return (
+      <ProseWithNote
+        text={text}
+        note={note}
+        anchorId={noteAnchorId ?? note.anchorId}
+        paragraphClassName={paraClass}
+        open={sheetOpen}
+        onOpenChange={setSheetOpen}
+      />
+    );
+  }
 
   if (!chip) {
     return <FicheProse text={text} paragraphClassName={paraClass} />;

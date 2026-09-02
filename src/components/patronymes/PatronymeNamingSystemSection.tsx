@@ -1,7 +1,6 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { FicheFieldList, type FicheField } from "@/components/fiche/FicheProse";
 import { FicheSection } from "@/components/fiche/FicheSection";
-import { PatronymeSourceCitation } from "@/components/patronymes/PatronymeSourceCitation";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import {
   readDesignatedSocialUnit,
@@ -69,7 +68,7 @@ export function PatronymeNamingSystemSection({
       label: t.attestedFormsTitle,
       node:
         spellings.length > 0 ? (
-          <ul>
+          <ul className="afh-prose-list">
             {spellings.map((form) => (
               <li key={form.spelling}>
                 <strong>{form.spelling}</strong>

@@ -120,7 +120,11 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   // would land.
   // @req REQ-113
   it.each([
-    ["atlas", /peuples, pays, langues et familles/i],
+    // The six corpus classes, in the corpus's own order. It listed four for
+    // as long as the atlas had six — see AboutPageContent's derived case,
+    // which is what now fails when a class ships without reaching the pages
+    // that claim to enumerate them.
+    ["atlas", /familles, langues, peuples, pays, appellations et noms/i],
     ["dossiers", /d'où viennent les noms/i],
     ["jeux", /jeux et des quiz tirés des fiches/i],
   ])("says what %s holds, not what the reader does", (id, contents) => {
